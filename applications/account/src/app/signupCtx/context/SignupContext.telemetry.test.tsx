@@ -21,7 +21,7 @@ import { SignupContextProvider } from './SignupContext';
 
 const checkSubscription = jest.fn();
 
-jest.mock('@proton/payments-ui/react-extensions/usePaymentsApi', () => {
+jest.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => {
     const paymentsApi = {
         checkSubscription: (...args: any[]) => checkSubscription(...args),
         cacheMultiCheck: jest.fn(),

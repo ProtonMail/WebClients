@@ -1,9 +1,9 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
+import { useSepaDirectDebit } from '@proton/payments-hooks/react-extensions/useSepaDirectDebit';
 import { PLANS } from '@proton/payments/core/constants';
 import { apiMock } from '@proton/test-api/api';
 
-import { useSepaDirectDebit } from '../../react-extensions/useSepaDirectDebit';
 import { ChargebeeIframe } from './ChargebeeIframe';
 import { SepaDirectDebit } from './SepaDirectDebit';
 

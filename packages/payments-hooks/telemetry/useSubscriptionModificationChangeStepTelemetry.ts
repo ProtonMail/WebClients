@@ -6,7 +6,7 @@
  *
  * @example
  * ```tsx
- * import { useSubscriptionModificationChangeStepTelemetry } from '@proton/payments-ui/telemetry/useSubscriptionModificationChangeStepTelemetry';
+ * import { useSubscriptionModificationChangeStepTelemetry } from '@proton/payments-hooks/telemetry/useSubscriptionModificationChangeStepTelemetry';
  *
  * const MyComponent = () => {
  *   const [step, setStep] = useState<'plan_selection' | 'checkout'>('plan_selection');

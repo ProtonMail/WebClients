@@ -1,7 +1,7 @@
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { usePreferredPlansMap } from '@proton/payments-ui/ui/hooks/usePreferredPlansMap';
+import { usePreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';
 import { PLANS } from '@proton/payments/core/constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getTestPlansMap } from '@proton/payments/testing/data-plans';
@@ -14,7 +14,7 @@ import { useHighlightPlanDowngradeStep } from '../useHighlightPlanDowngradeStep'
 jest.mock('@proton/account/plans/hooks');
 jest.mock('@proton/account/subscription/hooks');
 jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/payments-ui/ui/hooks/usePreferredPlansMap');
+jest.mock('@proton/payments-hooks/ui/hooks/usePreferredPlansMap');
 jest.mock('../../../../../components/modalTwo/useModalTwo');
 
 const mockShowModal = jest.fn();

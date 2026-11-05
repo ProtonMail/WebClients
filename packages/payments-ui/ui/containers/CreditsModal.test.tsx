@@ -14,6 +14,7 @@ import { withDeprecatedModals } from '@proton/components/testing/with-deprecated
 import { withEventManager } from '@proton/components/testing/with-event-manager';
 import { withNotifications } from '@proton/components/testing/with-notifications';
 import { withReduxStore } from '@proton/components/testing/with-redux-store';
+import { getIdealAuthorizationText } from '@proton/payments-hooks/ui/components/IdealAuthorizationText';
 import { buyCredit, createToken } from '@proton/payments/core/api/api';
 import { PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import { MOCK_PAYMENT_STATUS, mockPaymentMethods, mockPaymentStatus } from '@proton/payments/testing/api-endpoints';
@@ -21,7 +22,6 @@ import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { addApiMock } from '@proton/test-api/api';
 
-import { getIdealAuthorizationText } from '../components/IdealAuthorizationText';
 import { CreditsModal } from './CreditsModal';
 
 jest.mock('@proton/atoms/Portal/Portal');

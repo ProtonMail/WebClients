@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import type { ChargebeeIdealProcessorHook } from '../../react-extensions/useChargebeeIdeal';
+import type { ChargebeeIdealProcessorHook } from '@proton/payments-hooks/react-extensions/useChargebeeIdeal';
+
 import { IdealAccountHolderInput } from './IdealAccountHolderInput';
 
 function renderInput(overrides: Partial<ChargebeeIdealProcessorHook> = {}) {

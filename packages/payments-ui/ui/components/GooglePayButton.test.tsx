@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 
-import type { GooglePayProcessorHook } from '../../payment-processors/useGooglePay';
+import type { GooglePayProcessorHook } from '@proton/payments-hooks/payment-processors/useGooglePay';
+
 import { GooglePayButton } from './GooglePayButton';
 
 jest.mock('./ChargebeeIframe', () => ({

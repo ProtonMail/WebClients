@@ -4,8 +4,8 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 
 import { IDEAL_WERO_BRAND_NAME } from '@proton/chargebee/lib/constants';
 import { DEFAULT_DELAY } from '@proton/hooks/useStableLoading';
+import type { ChargebeeIdealProcessorHook } from '@proton/payments-hooks/react-extensions/useChargebeeIdeal';
 
-import type { ChargebeeIdealProcessorHook } from '../../react-extensions/useChargebeeIdeal';
 import { ChargebeeIdealButton } from './ChargebeeIdealButton';
 
 jest.mock('./ChargebeeIframe', () => ({

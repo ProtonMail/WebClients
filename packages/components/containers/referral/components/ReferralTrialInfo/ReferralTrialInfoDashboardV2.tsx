@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { Banner } from '@proton/atoms/Banner/Banner';
-import { useReferralTrialSubscription } from '@proton/payments-ui/ui/hooks/useReferralTrialSubscription';
+import { useReferralTrialSubscription } from '@proton/payments-hooks/ui/hooks/useReferralTrialSubscription';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { getPlanTitle, isAutoRenewTrial, isTrialRenewing } from '@proton/payments/core/subscription/helpers';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

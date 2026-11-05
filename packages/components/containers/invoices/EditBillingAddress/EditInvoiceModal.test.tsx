@@ -1,7 +1,7 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
-import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
+import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import type { FullBillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { Invoice } from '@proton/payments/core/interface';
 
@@ -12,7 +12,7 @@ jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn(),
 }));
 
-jest.mock('@proton/payments-ui/react-extensions/usePaymentsApi', () => ({
+jest.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => ({
     usePaymentsApi: jest.fn(),
 }));
 

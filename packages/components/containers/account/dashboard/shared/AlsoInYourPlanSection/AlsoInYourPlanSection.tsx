@@ -10,7 +10,7 @@ import {
     DashboardGridSection,
     DashboardGridSectionHeader,
 } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { useSubscriptionForApp } from '@proton/payments-ui/ui/hooks/useSubscriptionForApp';
+import { useSubscriptionForApp } from '@proton/payments-hooks/ui/hooks/useSubscriptionForApp';
 import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {

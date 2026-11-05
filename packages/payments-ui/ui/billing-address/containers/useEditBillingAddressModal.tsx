@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
+import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import type { FullBillingAddress } from '@proton/payments/core/billing-address/billing-address';
 
-import { usePaymentsApi } from '../../../react-extensions/usePaymentsApi';
 import type { TaxCountryHook } from '../hooks/useTaxCountry';
 import type { VatNumberHook } from '../hooks/useVatNumber';
 import { EditBillingAddressModal, type EditBillingAdressModalInputs } from './EditBillingAddress';

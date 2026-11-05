@@ -7,9 +7,9 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IDEAL_WERO_BRAND_NAME } from '@proton/chargebee/lib/constants';
 import { InfoBanner } from '@proton/components/containers/payments/subscription/confirm-button/InfoBanner';
 import useStableLoading from '@proton/hooks/useStableLoading';
+import type { ChargebeeIdealProcessorHook } from '@proton/payments-hooks/react-extensions/useChargebeeIdeal';
 import clsx from '@proton/utils/clsx';
 
-import type { ChargebeeIdealProcessorHook } from '../../react-extensions/useChargebeeIdeal';
 import { ChargebeeIframe } from './ChargebeeIframe';
 import type { ChargebeeWrapperProps } from './ChargebeeWrapper';
 import type { PayButtonOnClickPayload } from './PayButton';

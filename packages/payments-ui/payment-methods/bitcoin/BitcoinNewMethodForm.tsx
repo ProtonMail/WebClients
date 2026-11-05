@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
 
-import type { BitcoinHook } from '../../react-extensions/useBitcoin';
-import { BitcoinInfoMessage } from './BitcoinInfoMessage';
+import { BitcoinInfoMessage } from '@proton/payments-hooks/payment-methods/bitcoin/BitcoinInfoMessage';
+import type { BitcoinHook } from '@proton/payments-hooks/react-extensions/useBitcoin';
+
 import { BitcoinView } from './BitcoinView';
 
 type Props = {

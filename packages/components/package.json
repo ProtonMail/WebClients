@@ -993,6 +993,7 @@
     },
     "peerDependencies": {
         "@proton/activation": "*",
+        "@proton/payments-hooks": "workspace:^",
         "@proton/payments-ui": "*"
     }
 }

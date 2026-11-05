@@ -6,14 +6,14 @@ import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
-import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
-import type { PaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
-import type { TaxCountryHook } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
-import { GuardBanner } from '@proton/payments-ui/ui/components/GuardBanner';
+import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
+import { GuardBanner } from '@proton/payments-hooks/ui/components/GuardBanner';
 import {
     IdealAuthorizationText,
     isIdealAuthorizationNoteShown,
-} from '@proton/payments-ui/ui/components/IdealAuthorizationText';
+} from '@proton/payments-hooks/ui/components/IdealAuthorizationText';
+import type { PaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
+import type { TaxCountryHook } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
 import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import type { CheckoutModifiers } from '@proton/payments/core/checkout-modifiers';

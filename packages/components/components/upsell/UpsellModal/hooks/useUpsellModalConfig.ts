@@ -8,8 +8,8 @@ import { previousSubscriptionThunk } from '@proton/account/previousSubscription'
 import { subscriptionThunk } from '@proton/account/subscription';
 import { userThunk } from '@proton/account/user';
 import { useConfig } from '@proton/app-context/useConfig';
-import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
-import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
+import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
+import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { getSubscriptionForApp } from '@proton/payments/core/subscription/subscription-for-app';
 import type { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';

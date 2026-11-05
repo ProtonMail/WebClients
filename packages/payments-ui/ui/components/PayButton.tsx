@@ -8,6 +8,10 @@ import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button, type ButtonProps } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { InfoBanner } from '@proton/components/containers/payments/subscription/confirm-button/InfoBanner';
+import {
+    IdealAuthorizationText,
+    isIdealAuthorizationNoteShown,
+} from '@proton/payments-hooks/ui/components/IdealAuthorizationText';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PlainPaymentMethodType } from '@proton/payments/core/interface';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
@@ -26,7 +30,6 @@ import { ApplePayButton } from './ApplePayButton';
 import { ChargebeeIdealButton } from './ChargebeeIdealButton';
 import { ChargebeePaypalButton } from './ChargebeePaypalButton';
 import { GooglePayButton } from './GooglePayButton';
-import { IdealAuthorizationText, isIdealAuthorizationNoteShown } from './IdealAuthorizationText';
 
 export type PayButtonOnClickPayload = {
     type: 'paypal' | 'apple-pay' | 'google-pay' | 'card' | 'ideal';

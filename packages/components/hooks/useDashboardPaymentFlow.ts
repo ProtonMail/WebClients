@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import type { TelemetryPaymentFlow } from '@proton/payments-ui/client-extensions/usePaymentsTelemetry';
+import type { TelemetryPaymentFlow } from '@proton/payments-hooks/client-extensions/usePaymentsTelemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 

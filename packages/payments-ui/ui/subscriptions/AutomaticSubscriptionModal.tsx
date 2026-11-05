@@ -16,6 +16,7 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/subscriptionModalTypes';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoad from '@proton/components/hooks/useLoad';
+import { useCurrencies } from '@proton/payments-hooks/ui/hooks/useCurrencies';
 import {
     ADDON_PREFIXES,
     ADDON_TOTAL_PARAM_NAMES,
@@ -35,7 +36,6 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useCurrencies } from '../hooks/useCurrencies';
 import { type Eligibility, type PlanCombination, getEligibility } from './eligibility';
 
 interface Props extends ModalProps {

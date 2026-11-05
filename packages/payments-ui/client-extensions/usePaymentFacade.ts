@@ -4,6 +4,15 @@ import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useLoading from '@proton/hooks/useLoading';
+import type { ThemeCode, ThemeLike } from '@proton/payments-hooks/client-extensions/helpers';
+import { getThemeCode } from '@proton/payments-hooks/client-extensions/helpers';
+import {
+    type TelemetryPaymentFlow,
+    usePaymentsTelemetry,
+} from '@proton/payments-hooks/client-extensions/usePaymentsTelemetry';
+import type { OnMethodChangedHandler } from '@proton/payments-hooks/react-extensions/useMethods';
+import type { Operations, OperationsData } from '@proton/payments-hooks/react-extensions/usePaymentFacade';
+import { usePaymentFacade as useInnerPaymentFacade } from '@proton/payments-hooks/react-extensions/usePaymentFacade';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { type ADDON_NAMES, PAYMENT_METHOD_TYPES, type PLANS } from '@proton/payments/core/constants';
 import type {
@@ -30,15 +39,9 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 
-import type { OnMethodChangedHandler } from '../react-extensions/useMethods';
-import type { Operations, OperationsData } from '../react-extensions/usePaymentFacade';
-import { usePaymentFacade as useInnerPaymentFacade } from '../react-extensions/usePaymentFacade';
 import { useCbIframe } from '../ui/components/ChargebeeIframe';
-import type { ThemeCode, ThemeLike } from './helpers';
-import { getThemeCode } from './helpers';
 import { wrapMethods } from './useMethods';
 import { usePaymentMethodFlags } from './usePaymentMethodFlags';
-import { type TelemetryPaymentFlow, usePaymentsTelemetry } from './usePaymentsTelemetry';
 import {
     useApplePayDependencies,
     useChargebeeCardVerifyPayment,

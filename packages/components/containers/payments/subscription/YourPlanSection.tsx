@@ -6,8 +6,8 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
+import { usePreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
-import { usePreferredPlansMap } from '@proton/payments-ui/ui/hooks/usePreferredPlansMap';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
     getCanSubscriptionAccessDuoPlan,

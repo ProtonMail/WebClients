@@ -1,10 +1,10 @@
 import { type ReactNode, useMemo } from 'react';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import type { ApplePayProcessorHook } from '@proton/payments-hooks/payment-processors/useApplePay';
 import applePayIcon from '@proton/styles/assets/img/bank-icons/dark-apay.svg';
 import clsx from '@proton/utils/clsx';
 
-import type { ApplePayProcessorHook } from '../../payment-processors/useApplePay';
 import { ChargebeeIframe } from './ChargebeeIframe';
 import type { ChargebeeWrapperProps } from './ChargebeeWrapper';
 import type { PayButtonOnClickPayload } from './PayButton';

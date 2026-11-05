@@ -4,7 +4,7 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
+import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
 import { ADDON_PREFIXES, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { hasAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
 import { getHasMeetIncludedInPlan, getPlanIDs, getPlanName } from '@proton/payments/core/subscription/helpers';

@@ -8,14 +8,14 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import useLoading from '@proton/hooks/useLoading';
-import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useAutomaticCurrency';
-import type { TelemetryPaymentFlow } from '@proton/payments-ui/client-extensions/usePaymentsTelemetry';
+import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
+import type { TelemetryPaymentFlow } from '@proton/payments-hooks/client-extensions/usePaymentsTelemetry';
+import { usePreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';
 import {
     PaymentsContextProvider,
     isPaymentsPreloaded,
     usePayments,
 } from '@proton/payments-ui/ui/context/PaymentContext';
-import { usePreferredPlansMap } from '@proton/payments-ui/ui/hooks/usePreferredPlansMap';
 import { CYCLE, DEFAULT_CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';

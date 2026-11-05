@@ -1,7 +1,7 @@
 import type { Ref } from 'react';
 
 import { useConfig } from '@proton/app-context/useConfig';
-import type { ThemeCode } from '@proton/payments-ui/client-extensions/helpers';
+import type { ThemeCode } from '@proton/payments-hooks/client-extensions/helpers';
 import type { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import type { TaxCountryHook } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
 import type { VatNumberHook } from '@proton/payments-ui/ui/billing-address/hooks/useVatNumber';

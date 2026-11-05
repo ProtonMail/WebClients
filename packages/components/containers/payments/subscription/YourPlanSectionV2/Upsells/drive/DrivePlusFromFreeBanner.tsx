@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { usePreferredPlansMap } from '@proton/payments-ui/ui/hooks/usePreferredPlansMap';
+import { usePreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';

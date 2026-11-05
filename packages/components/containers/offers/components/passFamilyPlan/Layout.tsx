@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { usePreferredPlansMap } from '@proton/payments-ui/ui/hooks/usePreferredPlansMap';
+import { usePreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';
 import { COUPON_CODES, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { hasPassLaunchOffer } from '@proton/payments/core/subscription/helpers';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';

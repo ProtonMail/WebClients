@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useAutomaticCurrency';
+import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
 import type { Currency } from '@proton/payments/core/interface';
 
 import useModalState from '../../../components/modalTwo/useModalState';

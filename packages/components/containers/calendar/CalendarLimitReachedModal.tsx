@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { useSubscriptionForApp } from '@proton/payments-ui/ui/hooks/useSubscriptionForApp';
+import { useSubscriptionForApp } from '@proton/payments-hooks/ui/hooks/useSubscriptionForApp';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';

@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { usePlans } from '@proton/account/plans/hooks';
 import useLoading from '@proton/hooks/useLoading';
-import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useAutomaticCurrency';
-import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
+import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
+import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { COUPON_CODES, CYCLE, type PLANS } from '@proton/payments/core/constants';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';

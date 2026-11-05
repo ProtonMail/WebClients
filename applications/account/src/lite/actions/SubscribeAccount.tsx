@@ -21,7 +21,7 @@ import { InAppText } from '@proton/components/containers/payments/subscription/I
 import SubscriptionContainer from '@proton/components/containers/payments/subscription/SubscriptionContainer';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
-import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
+import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { loadInitialBillingAddress } from '@proton/payments/core/billing-address/load-initial-billing-address';
 import { CURRENCIES, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';

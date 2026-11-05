@@ -14,7 +14,7 @@ import useIsB2BAdmin from '@proton/components/hooks/useIsB2BAdmin';
 import { OfferModal } from '@proton/offers-delivery/components/OfferModal';
 import { useActiveOffer } from '@proton/offers-delivery/components/useActiveOffer';
 import { CampaignVariant } from '@proton/offers-delivery/interface';
-import { useTrialInfo } from '@proton/payments-ui/ui/hooks/useTrialInfo';
+import { useTrialInfo } from '@proton/payments-hooks/ui/hooks/useTrialInfo';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 import { useOfferUpgrade } from '../offers/useOfferUpgrade';

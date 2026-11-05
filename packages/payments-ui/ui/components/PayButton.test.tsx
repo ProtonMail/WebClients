@@ -3,6 +3,8 @@ import type { ReactNode } from 'react';
 import { fireEvent, screen } from '@testing-library/react';
 
 import { useConfig } from '@proton/app-context/useConfig';
+import { renderWithProviders } from '@proton/payments-hooks/testing/renderWithProviders';
+import { getIdealAuthorizationText } from '@proton/payments-hooks/ui/components/IdealAuthorizationText';
 import { BILLING_ADDRESS_VALID } from '@proton/payments/core/billing-address/billing-address';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { PaymentsApi } from '@proton/payments/core/interface';
@@ -10,11 +12,9 @@ import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { renderWithProviders } from '../../testing/renderWithProviders';
 import { useEditBillingAddressModal } from '../billing-address/containers/useEditBillingAddressModal';
 import type { TaxCountryHook } from '../billing-address/hooks/useTaxCountry';
 import type { VatNumberHook } from '../billing-address/hooks/useVatNumber';
-import { getIdealAuthorizationText } from './IdealAuthorizationText';
 import { PayButton } from './PayButton';
 
 jest.mock('@proton/app-context/useConfig');

@@ -1,6 +1,7 @@
 import { act, render } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
+import { getStoreWrapper } from '@proton/payments-hooks/testing/renderWithProviders';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { PaymentsApi } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
@@ -9,12 +10,11 @@ import type { SubscriptionEstimation } from '@proton/payments/core/subscription/
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
 
-import { getStoreWrapper } from '../../testing/renderWithProviders';
 import { PaymentsContextProvider, type PaymentsContextType, usePayments } from './PaymentContext';
 
 const checkSubscription = jest.fn();
 
-jest.mock('../../react-extensions/usePaymentsApi', () => {
+jest.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => {
     const paymentsApi = {
         checkSubscription: (...args: any[]) => checkSubscription(...args),
         cacheMultiCheck: jest.fn(),

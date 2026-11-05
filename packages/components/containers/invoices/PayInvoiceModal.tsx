@@ -6,16 +6,16 @@ import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
+import {
+    IdealAuthorizationText,
+    isIdealAuthorizationNoteShown,
+} from '@proton/payments-hooks/ui/components/IdealAuthorizationText';
 import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import { ApplePayButton } from '@proton/payments-ui/ui/components/ApplePayButton';
 import { ChargebeeIdealButton } from '@proton/payments-ui/ui/components/ChargebeeIdealButton';
 import { WALLET_BUTTON_WIDTH } from '@proton/payments-ui/ui/components/ChargebeeIframe';
 import { ChargebeePaypalButton } from '@proton/payments-ui/ui/components/ChargebeePaypalButton';
 import { GooglePayButton } from '@proton/payments-ui/ui/components/GooglePayButton';
-import {
-    IdealAuthorizationText,
-    isIdealAuthorizationNoteShown,
-} from '@proton/payments-ui/ui/components/IdealAuthorizationText';
 import { checkInvoice } from '@proton/payments/core/api/api';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { Currency, Invoice } from '@proton/payments/core/interface';
