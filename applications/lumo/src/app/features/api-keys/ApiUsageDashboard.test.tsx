@@ -18,7 +18,7 @@ jest.mock('@proton/account/bootstrap', () => ({
 }));
 jest.mock('@proton/app-context/useConfig', () => ({ useConfig: () => ({ APP_NAME: 'proton-lumo' }) }));
 jest.mock('./ApiTokenUsageChart', () => ({ ApiTokenUsageChart: () => null }));
-jest.mock('@proton/components/containers/payments/LumoCreditsModal', () => ({
+jest.mock('@proton/payments-ui/ui/containers/LumoCreditsModal', () => ({
     LumoCreditsModal: ({ open, onClose }: { open: boolean; onClose: () => void }) =>
         open ? <button onClick={onClose}>Close top-up</button> : null,
 }));

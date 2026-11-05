@@ -1,5 +1,14 @@
 import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 
+import { applyHOCs } from '@proton/components/testing/hocs/helpers';
+import { withApi } from '@proton/components/testing/hocs/with-api';
+import { withAuthentication } from '@proton/components/testing/with-authentication';
+import { withCache } from '@proton/components/testing/with-cache';
+import { withConfig } from '@proton/components/testing/with-config';
+import { withDeprecatedModals } from '@proton/components/testing/with-deprecated-modals';
+import { withEventManager } from '@proton/components/testing/with-event-manager';
+import { withNotifications } from '@proton/components/testing/with-notifications';
+import { withReduxStore } from '@proton/components/testing/with-redux-store';
 import { buyCredit } from '@proton/payments/core/api/api';
 import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { SavedPaymentMethod } from '@proton/payments/core/interface';
@@ -12,15 +21,6 @@ import {
 import { APPS } from '@proton/shared/lib/constants';
 import { addApiMock } from '@proton/test-api/api';
 
-import { applyHOCs } from '../../testing/hocs/helpers';
-import { withApi } from '../../testing/hocs/with-api';
-import { withAuthentication } from '../../testing/with-authentication';
-import { withCache } from '../../testing/with-cache';
-import { withConfig } from '../../testing/with-config';
-import { withDeprecatedModals } from '../../testing/with-deprecated-modals';
-import { withEventManager } from '../../testing/with-event-manager';
-import { withNotifications } from '../../testing/with-notifications';
-import { withReduxStore } from '../../testing/with-redux-store';
 import { CreditsModal } from './CreditsModal';
 import { LumoCreditsModal } from './LumoCreditsModal';
 
@@ -28,8 +28,8 @@ jest.mock('@proton/atoms/Portal/Portal');
 
 const mockFacadeCalls: any[] = [];
 const mockFacadeResults: any[] = [];
-jest.mock('@proton/payments-ui/client-extensions/usePaymentFacade', () => {
-    const actual = jest.requireActual('@proton/payments-ui/client-extensions/usePaymentFacade');
+jest.mock('../../client-extensions/usePaymentFacade', () => {
+    const actual = jest.requireActual('../../client-extensions/usePaymentFacade');
     return {
         ...actual,
         usePaymentFacade: (params: any) => {

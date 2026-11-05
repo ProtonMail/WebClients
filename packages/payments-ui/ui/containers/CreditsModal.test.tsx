@@ -2,7 +2,18 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { IDEAL_WERO_BRAND_NAME } from '@proton/chargebee/lib/constants';
-import { getIdealAuthorizationText } from '@proton/payments-ui/ui/components/IdealAuthorizationText';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import PaymentMethodSelector from '@proton/components/containers/payments/methods/PaymentMethodSelector';
+import { mockEventManager } from '@proton/components/testing/event-manager';
+import { applyHOCs } from '@proton/components/testing/hocs/helpers';
+import { withApi } from '@proton/components/testing/hocs/with-api';
+import { withAuthentication } from '@proton/components/testing/with-authentication';
+import { withCache } from '@proton/components/testing/with-cache';
+import { withConfig } from '@proton/components/testing/with-config';
+import { withDeprecatedModals } from '@proton/components/testing/with-deprecated-modals';
+import { withEventManager } from '@proton/components/testing/with-event-manager';
+import { withNotifications } from '@proton/components/testing/with-notifications';
+import { withReduxStore } from '@proton/components/testing/with-redux-store';
 import { buyCredit, createToken } from '@proton/payments/core/api/api';
 import { PAYMENT_TOKEN_STATUS } from '@proton/payments/core/constants';
 import { MOCK_PAYMENT_STATUS, mockPaymentMethods, mockPaymentStatus } from '@proton/payments/testing/api-endpoints';
@@ -10,25 +21,14 @@ import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { addApiMock } from '@proton/test-api/api';
 
-import { mockEventManager } from '../../testing/event-manager';
-import { applyHOCs } from '../../testing/hocs/helpers';
-import { withApi } from '../../testing/hocs/with-api';
-import { withAuthentication } from '../../testing/with-authentication';
-import { withCache } from '../../testing/with-cache';
-import { withConfig } from '../../testing/with-config';
-import { withDeprecatedModals } from '../../testing/with-deprecated-modals';
-import { withEventManager } from '../../testing/with-event-manager';
-import { withNotifications } from '../../testing/with-notifications';
-import { withReduxStore } from '../../testing/with-redux-store';
+import { getIdealAuthorizationText } from '../components/IdealAuthorizationText';
 import { CreditsModal } from './CreditsModal';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import PaymentMethodSelector from './methods/PaymentMethodSelector';
 
 jest.mock('@proton/atoms/Portal/Portal');
 
 const mockPaymentMethodSelectorRenders = { count: 0 };
-jest.mock('./methods/PaymentMethodSelector', () => {
-    const actual = jest.requireActual('./methods/PaymentMethodSelector');
+jest.mock('@proton/components/containers/payments/methods/PaymentMethodSelector', () => {
+    const actual = jest.requireActual('@proton/components/containers/payments/methods/PaymentMethodSelector');
 
     return {
         __esModule: true,

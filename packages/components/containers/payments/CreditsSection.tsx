@@ -7,6 +7,7 @@ import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { CreditsModal } from '@proton/payments-ui/ui/containers/CreditsModal';
 import { getAvailableSubscriptionActions } from '@proton/payments/core/subscription/helpers';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
@@ -19,7 +20,6 @@ import Price from '../../components/price/Price';
 import SettingsParagraph from '../account/SettingsParagraph';
 import SettingsSection from '../account/SettingsSection';
 import { openLinkInBrowser } from '../desktop/openExternalLink';
-import { CreditsModal } from './CreditsModal';
 import InAppPurchaseModal from './subscription/InAppPurchaseModal';
 
 const redirectFromDesktop = '?open=credit-modal';
