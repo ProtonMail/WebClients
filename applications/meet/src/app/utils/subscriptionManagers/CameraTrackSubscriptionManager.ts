@@ -1,6 +1,7 @@
 import { logger } from '@protontech/logger';
 import type { Room, TrackPublication } from 'livekit-client';
 import { ConnectionState, RemoteTrackPublication, Track, VideoQuality } from 'livekit-client';
+import debounce from 'lodash/debounce';
 
 import { isDocumentVisible } from '@proton/shared/lib/helpers/dom';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -30,6 +31,8 @@ const isHeld = (entry: CacheEntry) => entry.pinned || entry.spotlightPinned;
 const MAX_FROZEN_TRACK_RESETS = 3;
 
 const CHECKS_WITHOUT_FRAMES_DECODED_BEFORE_RESET = 3;
+
+const SUBSCRIPTION_SETTLE_MS = 300;
 
 const removeValueInPlace = (arr: string[], value: string) => {
     const idx = arr.indexOf(value);
@@ -66,6 +69,10 @@ export class CameraTrackSubscriptionManager {
         this.room = room;
         this.reportError = reportError;
     }
+
+    private processSubscriptionQueueWhenSettled = debounce(() => {
+        void this.runSerialized(() => this.processSubscriptionQueue());
+    }, SUBSCRIPTION_SETTLE_MS);
 
     private runSerialized(op: () => Promise<void> | void) {
         this.operationChain = this.operationChain
@@ -174,7 +181,7 @@ export class CameraTrackSubscriptionManager {
 
         if (participantIdentity) {
             this.enqueueSubscriptionWork(trackSid);
-            void this.runSerialized(() => this.processSubscriptionQueue());
+            this.processSubscriptionQueueWhenSettled();
         }
 
         this.markMostRecentlyUsed(trackSid);
@@ -216,17 +223,20 @@ export class CameraTrackSubscriptionManager {
             }
         }
 
+        if (!publication.isDesired) {
+            this.removeTrackSidEverywhere(trackSid);
+            return;
+        }
+
         this.markMostRecentlyUsed(trackSid);
 
-        if (publication.isSubscribed) {
-            void this.runSerialized(() => {
-                try {
-                    publication.setEnabled(false);
-                } catch (error) {
-                    logger.error('Error disabling publication', error);
-                }
-            });
-        }
+        void this.runSerialized(() => {
+            try {
+                publication.setEnabled(false);
+            } catch (error) {
+                logger.error('Error disabling publication', error);
+            }
+        });
 
         this.maybeEvict();
     }
@@ -262,7 +272,7 @@ export class CameraTrackSubscriptionManager {
             await wait(100);
 
             this.enqueueSubscriptionWork(publication.trackSid);
-            await this.processSubscriptionQueue();
+            this.processSubscriptionQueueWhenSettled();
         });
     }
 
@@ -405,7 +415,7 @@ export class CameraTrackSubscriptionManager {
             void this.runSerialized(() => {
                 for (const { publication } of toEvict) {
                     try {
-                        if (publication.isSubscribed) {
+                        if (publication.isDesired) {
                             publication.setEnabled(false);
                             publication.setSubscribed(false);
                         }
@@ -433,7 +443,7 @@ export class CameraTrackSubscriptionManager {
                 this.enqueueSubscriptionWork(publication.publication.trackSid);
             }
 
-            void this.runSerialized(() => this.processSubscriptionQueue());
+            this.processSubscriptionQueueWhenSettled();
         }
 
         if (this.allowResettingFrozenVideoTracks) {
@@ -575,7 +585,6 @@ export class CameraTrackSubscriptionManager {
     async resubscribeAllVideos() {
         this.videosPaused = false;
 
-        // Use the existing reconcileCameraTracks logic to resubscribe all pinned tracks
         if (this.room.state !== ConnectionState.Connected) {
             return;
         }
@@ -599,6 +608,7 @@ export class CameraTrackSubscriptionManager {
 
     destroy() {
         this.cleanupReconcileLoop();
+        this.processSubscriptionQueueWhenSettled.cancel();
 
         // Capture entries before clearing to avoid race conditions
         const entriesToCleanup = Array.from(this.entriesByTrackSid.values());

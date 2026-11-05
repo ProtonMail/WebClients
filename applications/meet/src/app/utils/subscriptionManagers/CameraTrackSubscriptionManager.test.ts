@@ -1,7 +1,7 @@
 import { waitFor } from '@testing-library/react';
 import type { Room } from 'livekit-client';
 import { ConnectionState, RemoteTrackPublication, Track, VideoQuality } from 'livekit-client';
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { CameraTrackSubscriptionManager } from './CameraTrackSubscriptionManager';
 
@@ -43,6 +43,7 @@ const createCameraPublication = (trackSid: string, overrides: Partial<Record<str
 
     defineWritable(pub, 'source', Track.Source.Camera);
     defineWritable(pub, 'trackSid', trackSid);
+    defineWritable(pub, 'subscribed', false);
     defineWritable(pub, 'isSubscribed', false);
     defineWritable(pub, 'isEnabled', false);
     defineWritable(pub, 'videoQuality', VideoQuality.HIGH);
@@ -50,6 +51,7 @@ const createCameraPublication = (trackSid: string, overrides: Partial<Record<str
     defineWritable(pub, 'isMuted', false);
 
     pub.setSubscribed = (value: boolean) => {
+        pub.subscribed = value;
         pub.isSubscribed = value;
     };
     pub.setEnabled = (value: boolean) => {
@@ -64,6 +66,10 @@ const createCameraPublication = (trackSid: string, overrides: Partial<Record<str
 };
 
 describe('CameraTrackSubscriptionCache', () => {
+    afterEach(() => {
+        vi.useRealTimers();
+    });
+
     it('register() should subscribe, enable, and apply quality based on policy', async () => {
         const manager = new CameraTrackSubscriptionManager(10, mockRoom);
         manager.setPolicy({
@@ -450,15 +456,15 @@ describe('CameraTrackSubscriptionCache', () => {
     });
 
     it('should stop resetting a track that stays frozen after the maximum number of resets', async () => {
+        vi.useFakeTimers();
         const manager = new CameraTrackSubscriptionManager(10, mockRoom);
         manager.setPolicy(lowQualityPolicy);
         manager.setAllowResettingFrozenVideoTracks(true);
 
         const pub = createCameraPublication('track-1');
         manager.register(pub, 'p1');
-        await waitFor(() => {
-            expect(pub.isSubscribed).toBe(true);
-        });
+        await vi.runAllTimersAsync();
+        expect(pub.isSubscribed).toBe(true);
 
         defineWritable(pub, 'track', {
             receiver: {
@@ -469,7 +475,7 @@ describe('CameraTrackSubscriptionCache', () => {
 
         for (let i = 0; i < 10; i++) {
             manager.reconcileCameraTracks();
-            await flushPendingWork();
+            await vi.runAllTimersAsync();
         }
 
         expect(setSubscribedSpy.mock.calls.filter(([subscribed]) => subscribed === false)).toHaveLength(3);
@@ -582,6 +588,10 @@ describe('CameraTrackSubscriptionCache', () => {
     });
 
     describe('tracks without a framesDecoded count', () => {
+        beforeEach(() => {
+            vi.useFakeTimers();
+        });
+
         const setUpHeldTrackWithoutStats = async ({ allowResettingFrozenVideoTracks = true } = {}) => {
             const manager = new CameraTrackSubscriptionManager(10, mockRoom);
             manager.setPolicy(lowQualityPolicy);
@@ -589,10 +599,9 @@ describe('CameraTrackSubscriptionCache', () => {
 
             const pub = createCameraPublication('track-1');
             manager.register(pub, 'p1');
-            await waitFor(() => {
-                expect(pub.isSubscribed).toBe(true);
-                expect(pub.isEnabled).toBe(true);
-            });
+            await vi.runAllTimersAsync();
+            expect(pub.isSubscribed).toBe(true);
+            expect(pub.isEnabled).toBe(true);
 
             defineWritable(pub, 'track', { receiver: { getStats: async () => new Map() } });
             const setSubscribedSpy = vi.spyOn(pub, 'setSubscribed');
@@ -600,7 +609,7 @@ describe('CameraTrackSubscriptionCache', () => {
             const check = async (times = 1) => {
                 for (let index = 0; index < times; index++) {
                     manager.reconcileCameraTracks();
-                    await flushPendingWork();
+                    await vi.runAllTimersAsync();
                 }
             };
             const countResets = () => setSubscribedSpy.mock.calls.filter(([subscribed]) => subscribed === false).length;
@@ -619,11 +628,9 @@ describe('CameraTrackSubscriptionCache', () => {
 
             await check(3);
 
-            await waitFor(() => {
-                expect(setSubscribedSpy).toHaveBeenCalledWith(false);
-                expect(setSubscribedSpy).toHaveBeenLastCalledWith(true);
-                expect(pub.isEnabled).toBe(true);
-            });
+            expect(setSubscribedSpy).toHaveBeenCalledWith(false);
+            expect(setSubscribedSpy).toHaveBeenLastCalledWith(true);
+            expect(pub.isEnabled).toBe(true);
         });
 
         it('should not reset a held track that has no stats on 2 consecutive checks', async () => {
@@ -741,5 +748,117 @@ describe('CameraTrackSubscriptionCache', () => {
         expect(setEnabledSpy).not.toHaveBeenCalled();
         expect(pub.isSubscribed).toBe(false);
         expect(pub.isEnabled).toBe(false);
+    });
+
+    it('unregister() should disable a track whose subscription has not arrived yet', async () => {
+        vi.useFakeTimers();
+        const manager = new CameraTrackSubscriptionManager(10, mockRoom);
+
+        const pub = createCameraPublication('track-1');
+        pub.setSubscribed = (value: boolean) => defineWritable(pub, 'subscribed', value);
+        const setEnabledSpy = vi.spyOn(pub, 'setEnabled');
+
+        manager.register(pub, 'p1');
+        await vi.runAllTimersAsync();
+        expect(pub.isSubscribed).toBe(false);
+
+        manager.unregister(pub);
+        await vi.runAllTimersAsync();
+
+        expect(setEnabledSpy).toHaveBeenLastCalledWith(false);
+    });
+
+    it('unregister() should keep cached tracks when a tile leaves before the page settles', async () => {
+        vi.useFakeTimers();
+        const manager = new CameraTrackSubscriptionManager(1, mockRoom);
+
+        const cachedPub = createCameraPublication('track-1');
+        const cachedSetSubscribedSpy = vi.spyOn(cachedPub, 'setSubscribed');
+        manager.register(cachedPub, 'p1');
+        await vi.runAllTimersAsync();
+        manager.unregister(cachedPub);
+        await vi.runAllTimersAsync();
+
+        const skippedPub = createCameraPublication('track-2');
+        const skippedSetSubscribedSpy = vi.spyOn(skippedPub, 'setSubscribed');
+        manager.register(skippedPub, 'p2');
+        manager.unregister(skippedPub);
+        await vi.runAllTimersAsync();
+
+        expect(skippedSetSubscribedSpy).not.toHaveBeenCalled();
+        expect(cachedSetSubscribedSpy).not.toHaveBeenCalledWith(false);
+        expect(cachedPub.isSubscribed).toBe(true);
+    });
+
+    it('register() should only subscribe the tiles still on screen once the page settles', async () => {
+        vi.useFakeTimers();
+        const manager = new CameraTrackSubscriptionManager(10, mockRoom);
+
+        const skippedPub = createCameraPublication('track-1');
+        const landingPub = createCameraPublication('track-2');
+        const skippedSetSubscribedSpy = vi.spyOn(skippedPub, 'setSubscribed');
+        const landingSetSubscribedSpy = vi.spyOn(landingPub, 'setSubscribed');
+
+        manager.register(skippedPub, 'p1');
+        manager.unregister(skippedPub);
+        manager.register(landingPub, 'p2');
+        await vi.advanceTimersByTimeAsync(0);
+
+        expect(landingSetSubscribedSpy).not.toHaveBeenCalled();
+
+        await vi.runAllTimersAsync();
+
+        expect(skippedSetSubscribedSpy).not.toHaveBeenCalled();
+        expect(landingSetSubscribedSpy).toHaveBeenCalledWith(true);
+    });
+
+    it('reconcileCameraTracks() should wait for the page to settle before subscribing', async () => {
+        vi.useFakeTimers();
+        const manager = new CameraTrackSubscriptionManager(10, mockRoom);
+
+        const pub = createCameraPublication('track-1');
+        const setSubscribedSpy = vi.spyOn(pub, 'setSubscribed');
+        manager.register(pub, 'p1');
+        manager.reconcileCameraTracks();
+        await vi.advanceTimersByTimeAsync(0);
+
+        expect(setSubscribedSpy).not.toHaveBeenCalled();
+
+        await vi.runAllTimersAsync();
+
+        expect(setSubscribedSpy).toHaveBeenCalledWith(true);
+    });
+
+    it('resetting a frozen track should not subscribe tiles waiting for the page to settle', async () => {
+        vi.useFakeTimers();
+        const manager = new CameraTrackSubscriptionManager(10, mockRoom);
+        manager.setPolicy(lowQualityPolicy);
+        manager.setAllowResettingFrozenVideoTracks(true);
+
+        const frozenPub = createCameraPublication('track-1');
+        manager.register(frozenPub, 'p1');
+        await vi.runAllTimersAsync();
+        defineWritable(frozenPub, 'track', {
+            receiver: {
+                getStats: async () => new Map([['inbound', { type: 'inbound-rtp', framesDecoded: 10 }]]),
+            },
+        });
+        manager.reconcileCameraTracks();
+        await vi.advanceTimersByTimeAsync(0);
+
+        const waitingPub = createCameraPublication('track-2');
+        const waitingSetSubscribedSpy = vi.spyOn(waitingPub, 'setSubscribed');
+        const frozenSetSubscribedSpy = vi.spyOn(frozenPub, 'setSubscribed');
+        manager.register(waitingPub, 'p2');
+        manager.reconcileCameraTracks();
+        await vi.advanceTimersByTimeAsync(0);
+
+        expect(frozenSetSubscribedSpy).toHaveBeenCalledWith(false);
+        expect(waitingSetSubscribedSpy).not.toHaveBeenCalled();
+
+        await vi.runAllTimersAsync();
+
+        expect(waitingSetSubscribedSpy).toHaveBeenCalledWith(true);
+        expect(frozenSetSubscribedSpy).toHaveBeenLastCalledWith(true);
     });
 });
