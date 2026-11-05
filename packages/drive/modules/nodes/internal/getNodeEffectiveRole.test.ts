@@ -3,7 +3,7 @@ import { MemberRole, NodeType } from '@protontech/drive-sdk';
 import { ProtonDrivePhotosClient } from '@protontech/drive-sdk/dist/protonDrivePhotosClient';
 
 import { sendErrorReport } from '../../../legacy/errorHandling';
-import { getHigherRole, getNodeEffectiveRole } from './getNodeEffectiveRole';
+import { getHigherRole, getNodeEffectiveRole, getNodeEffectiveRoleFromHierarchy } from './getNodeEffectiveRole';
 
 jest.mock('../../../legacy/errorHandling', () => ({
     ...jest.requireActual('../../../legacy/errorHandling'),
@@ -198,5 +198,39 @@ describe('getHigherRole', () => {
                 expect(getHigherRole(role1, role2)).toBe(expected[role1][role2]);
             }
         }
+    });
+});
+
+describe('getNodeEffectiveRoleFromHierarchy', () => {
+    const createNode = (uid: string, directRole: MemberRole) => ({ uid, directRole }) as NodeEntity;
+
+    beforeEach(() => {
+        jest.clearAllMocks();
+    });
+
+    it('should return the highest role along a deep hierarchy', () => {
+        const hierarchy = [
+            createNode('root', MemberRole.Inherited),
+            createNode('l1', MemberRole.Editor),
+            createNode('l2', MemberRole.Inherited),
+            createNode('l3', MemberRole.Viewer),
+            createNode('l4', MemberRole.Inherited),
+            createNode('l5', MemberRole.Inherited),
+        ];
+
+        expect(getNodeEffectiveRoleFromHierarchy(hierarchy)).toBe(MemberRole.Editor);
+    });
+
+    it('should return Admin when any node is Admin', () => {
+        const hierarchy = [createNode('root', MemberRole.Admin), createNode('node', MemberRole.Viewer)];
+
+        expect(getNodeEffectiveRoleFromHierarchy(hierarchy)).toBe(MemberRole.Admin);
+    });
+
+    it('should report and fall back to Viewer when every node is Inherited', () => {
+        const hierarchy = [createNode('root', MemberRole.Inherited), createNode('node', MemberRole.Inherited)];
+
+        expect(getNodeEffectiveRoleFromHierarchy(hierarchy)).toBe(MemberRole.Viewer);
+        expect(mockSendErrorReport).toHaveBeenCalledTimes(1);
     });
 });

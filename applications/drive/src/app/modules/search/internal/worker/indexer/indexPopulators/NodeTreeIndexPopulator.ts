@@ -749,28 +749,14 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
     }
 
     /**
-     * Build the full ancestor-UID path by walking up the tree via the SDK.
+     * Build the full ancestor-UID path from the SDK node hierarchy.
      * Returns a path like "/grandparent-uid/parent-uid" for the given nodeUid,
      * or '' if the node is a direct child of the root.
-     *
-     * TODO: Rewrite using hierachy methods from SDK.
      */
     private async resolveParentPathFromSdk(parentNodeUid: string, ctx: TaskContext): Promise<string> {
-        const segments: string[] = [];
-        let currentUid: string | undefined = parentNodeUid;
-
-        while (currentUid) {
-            const maybeNode = await ctx.bridge.driveSdk.getNode(currentUid);
-
-            // If the node has no parentUid it is the root — don't include it in the path.
-            if (!maybeNode.parentUid) {
-                break;
-            }
-
-            segments.unshift(currentUid);
-            currentUid = maybeNode.parentUid;
-        }
-
+        const hierarchy = await ctx.bridge.driveSdk.getNodeHierarchy(parentNodeUid);
+        // The first node is the root, which is not part of the path.
+        const segments = hierarchy.slice(1).map((node) => node.uid);
         return segments.length > 0 ? `/${segments.join('/')}` : '';
     }
 }

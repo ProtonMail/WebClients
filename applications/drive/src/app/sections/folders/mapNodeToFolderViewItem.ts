@@ -1,29 +1,29 @@
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
-import { getNodeEffectiveRole } from '@proton/drive/modules/nodes';
+import { getNodeEffectiveRoleFromHierarchy } from '@proton/drive/modules/nodes';
 import type { ProtonDriveClient } from '@proton/drive/sdk';
 import { type NodeEntity, NodeType, splitNodeUid } from '@proton/drive/sdk';
 
 import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import { getLegacyModifiedTime, getLegacyTrashedTime, legacyTimestampToDate } from '../../utils/sdk/legacyTime';
-import { getRootNode } from '../../utils/sdk/mapNodeToLegacyItem';
 import type { FolderViewItem } from './useFolder.store';
 
 // TODO: remove once we can use the Node directly without need for remapping
 export const mapNodeToFolderViewItem = async (
     maybeNode: NodeEntity,
     defaultShareId: string,
-    drive: Pick<ProtonDriveClient, 'getNode'>,
-    loadedRootNode?: NodeEntity
+    drive: Pick<ProtonDriveClient, 'getNodeHierarchy'>,
+    loadedHierarchy?: NodeEntity[]
 ): Promise<FolderViewItem> => {
     const { node } = getNodeEntity(maybeNode);
 
-    const rootNode = loadedRootNode || (await getRootNode(maybeNode, drive));
+    const hierarchy = loadedHierarchy ?? (await drive.getNodeHierarchy(node.uid));
+    const rootNode = hierarchy[0];
     const size = getNodeDisplaySize(maybeNode) ?? 0;
     const sdkSignatureIssues = getSignatureIssues(maybeNode);
     const modificationTimestamp = getLegacyModifiedTime(node);
 
-    const effectiveRole = await getNodeEffectiveRole(maybeNode, drive);
+    const effectiveRole = getNodeEffectiveRoleFromHierarchy(hierarchy);
 
     return {
         uid: node.uid,

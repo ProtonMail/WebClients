@@ -1,6 +1,10 @@
 import { when } from 'jest-when';
 
-import { type EffectiveRole, getFormattedNodeLocation, getNodeEffectiveRole } from '@proton/drive/modules/nodes';
+import {
+    type EffectiveRole,
+    getFormattedNodeLocationFromHierarchy,
+    getNodeEffectiveRoleFromHierarchy,
+} from '@proton/drive/modules/nodes';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 import type { ProtonDriveClient } from '@proton/drive/sdk';
@@ -38,14 +42,14 @@ jest.mock('@proton/drive/legacy/errorHandling');
 
 jest.mock('@proton/drive/modules/nodes', () => ({
     ...jest.requireActual('@proton/drive/modules/nodes'),
-    getNodeEffectiveRole: jest.fn(),
-    getFormattedNodeLocation: jest.fn(),
+    getNodeEffectiveRoleFromHierarchy: jest.fn(),
+    getFormattedNodeLocationFromHierarchy: jest.fn(),
 }));
 
 const mockedGetDrive = jest.mocked(getDrive);
 const mockedGetNotificationsManager = jest.mocked(getNotificationsManager);
-const mockedGetFormattedNodeLocation = jest.mocked(getFormattedNodeLocation);
-const mockedGetNodeEffectiveRole = jest.mocked(getNodeEffectiveRole);
+const mockedGetFormattedNodeLocationFromHierarchy = jest.mocked(getFormattedNodeLocationFromHierarchy);
+const mockedGetNodeEffectiveRoleFromHierarchy = jest.mocked(getNodeEffectiveRoleFromHierarchy);
 
 describe('loadNodesForSearchView', () => {
     let mockDrive: Partial<ProtonDriveClient>;
@@ -62,7 +66,8 @@ describe('loadNodesForSearchView', () => {
 
         mockDrive = {
             iterateNodes: jest.fn(),
-            getNode: jest.fn(),
+            // By default, every node is a root node.
+            getNodeHierarchy: jest.fn().mockImplementation(async (uid: string) => [createMockNodeEntity({ uid })]),
         };
 
         mockedGetDrive.mockReturnValue(mockDrive as ProtonDriveClient);
@@ -75,8 +80,8 @@ describe('loadNodesForSearchView', () => {
             addSearchResultItems: mockAddSearchResultItems,
         } as any);
 
-        mockedGetFormattedNodeLocation.mockResolvedValue('/some/location');
-        mockedGetNodeEffectiveRole.mockResolvedValue('viewer' as EffectiveRole);
+        mockedGetFormattedNodeLocationFromHierarchy.mockResolvedValue('/some/location');
+        mockedGetNodeEffectiveRoleFromHierarchy.mockReturnValue('viewer' as EffectiveRole);
     });
 
     it('should successfully load nodes and add them to the store', async () => {
@@ -126,9 +131,9 @@ describe('loadNodesForSearchView', () => {
             yield childNode;
         });
 
-        when(mockDrive.getNode as jest.Mock)
-            .calledWith('parent-1')
-            .mockResolvedValue(parentNode);
+        when(mockDrive.getNodeHierarchy as jest.Mock)
+            .calledWith('child-1')
+            .mockResolvedValue([parentNode, childNode]);
 
         await loadNodesForSearchView(['child-1'], mockAbortSignal);
 
@@ -144,15 +149,49 @@ describe('loadNodesForSearchView', () => {
             yield childNode;
         });
 
-        when(mockDrive.getNode as jest.Mock)
-            .calledWith('parent-1')
-            .mockResolvedValue(parentNode);
-        when(mockDrive.getNode as jest.Mock)
-            .calledWith('grandparent-1')
-            .mockResolvedValue(grandparentNode);
+        when(mockDrive.getNodeHierarchy as jest.Mock)
+            .calledWith('child-1')
+            .mockResolvedValue([grandparentNode, parentNode, childNode]);
 
         await loadNodesForSearchView(['child-1'], mockAbortSignal);
 
+        expect(mockAddSearchResultItems).not.toHaveBeenCalled();
+    });
+
+    it('should keep deeply nested nodes when no ancestor is trashed', async () => {
+        const hierarchy = Array.from({ length: 6 }, (_, i) =>
+            createMockNodeEntity({ uid: `node-${i}`, parentUid: i ? `node-${i - 1}` : undefined })
+        );
+        const deepNode = hierarchy[hierarchy.length - 1];
+
+        mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
+            yield deepNode;
+        });
+        when(mockDrive.getNodeHierarchy as jest.Mock)
+            .calledWith(deepNode.uid)
+            .mockResolvedValue(hierarchy);
+
+        const result = await loadNodesForSearchView([deepNode.uid], mockAbortSignal);
+
+        expect(result.hadPartialErrors).toBe(false);
+        expect(mockAddSearchResultItems).toHaveBeenCalledWith([expect.objectContaining({ nodeUid: deepNode.uid })]);
+        expect(mockDrive.getNodeHierarchy).toHaveBeenCalledTimes(1);
+        expect(mockedGetFormattedNodeLocationFromHierarchy).toHaveBeenCalledWith(mockDrive, hierarchy);
+    });
+
+    it('should skip the node and report a partial error when its ancestry cannot be loaded', async () => {
+        const childNode = createMockNodeEntity({ uid: 'child-1', parentUid: 'parent-1' });
+
+        mockDrive.iterateNodes = jest.fn().mockImplementation(async function* () {
+            yield childNode;
+        });
+        when(mockDrive.getNodeHierarchy as jest.Mock)
+            .calledWith('child-1')
+            .mockRejectedValue(new Error('Parent not accessible'));
+
+        const result = await loadNodesForSearchView(['child-1'], mockAbortSignal);
+
+        expect(result.hadPartialErrors).toBe(true);
         expect(mockAddSearchResultItems).not.toHaveBeenCalled();
     });
 
@@ -236,7 +275,7 @@ describe('loadNodesForSearchView', () => {
             yield mockNode;
         });
 
-        mockedGetNodeEffectiveRole.mockResolvedValue('admin' as EffectiveRole);
+        mockedGetNodeEffectiveRoleFromHierarchy.mockReturnValue('admin' as EffectiveRole);
 
         await loadNodesForSearchView(['node-1'], mockAbortSignal);
 
@@ -251,7 +290,7 @@ describe('loadNodesForSearchView', () => {
             yield mockNode;
         });
 
-        mockedGetNodeEffectiveRole.mockResolvedValue('editor' as EffectiveRole);
+        mockedGetNodeEffectiveRoleFromHierarchy.mockReturnValue('editor' as EffectiveRole);
 
         await loadNodesForSearchView(['node-1'], mockAbortSignal);
 

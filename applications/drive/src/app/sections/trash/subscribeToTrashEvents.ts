@@ -5,6 +5,7 @@ import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDrive
 import { getFormattedNodeLocation } from '@proton/drive/modules/nodes';
 
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
+import { getRootNode } from '../../utils/sdk/mapNodeToLegacyItem';
 import { trashLogDebug } from './trashLogger';
 import { createTrashItem, useTrashStore } from './useTrash.store';
 
@@ -12,9 +13,10 @@ const getNode = async (uid: string, client: BusDriverClient) => {
     try {
         const node = await client.getNode(uid);
         const location = await getFormattedNodeLocation(client, node);
+        const rootNode = await getRootNode(node, client);
         const { node: normalizedNode } = getNodeEntity(node);
         const haveSignatureIssues = !getSignatureIssues(node).ok;
-        return { rawNode: node, node: normalizedNode, location, haveSignatureIssues };
+        return { rawNode: node, node: normalizedNode, location, rootNode, haveSignatureIssues };
     } catch (error) {
         handleSdkError(error, { showNotification: false, fallbackMessage: 'Unhandled Error', extra: { uid } });
     }
@@ -36,9 +38,9 @@ export const subscribeToTrashEvents = () => {
                 break;
             case BusDriverEventName.TRASHED_NODES:
                 for (const uid of event.uids) {
-                    const { rawNode, node, location, haveSignatureIssues } = await getNode(uid, client);
+                    const { rawNode, node, location, rootNode, haveSignatureIssues } = await getNode(uid, client);
                     if (rawNode && node) {
-                        store.setItem(await createTrashItem(rawNode, node, location, client, haveSignatureIssues));
+                        store.setItem(createTrashItem(rawNode, node, location, rootNode, haveSignatureIssues));
                     }
                 }
                 break;

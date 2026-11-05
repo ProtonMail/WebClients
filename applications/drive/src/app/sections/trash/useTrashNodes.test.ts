@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
-import { getFormattedNodeLocation } from '@proton/drive/modules/nodes';
+import { getFormattedNodeLocation, getFormattedNodeLocationFromHierarchy } from '@proton/drive/modules/nodes';
 import { type NodeEntity, getDrive, getDriveForPhotos } from '@proton/drive/sdk';
 
 import { useTrashStore } from './useTrash.store';
@@ -17,6 +17,7 @@ jest.mock('@proton/drive/legacy/errorHandling');
 jest.mock('@proton/drive/modules/nodes', () => ({
     ...jest.requireActual('@proton/drive/modules/nodes'),
     getFormattedNodeLocation: jest.fn(),
+    getFormattedNodeLocationFromHierarchy: jest.fn(),
 }));
 
 jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity', () => ({
@@ -32,7 +33,11 @@ jest.mock('./useTrash.store', () => {
     hook.getState = jest.fn();
     return {
         useTrashStore: hook,
-        createTrashItem: async (rawNode: any, node: any, location?: string) => ({ ...node, location }),
+        createTrashItem: (rawNode: any, node: any, location: string, rootNode: NodeEntity) => ({
+            ...node,
+            location,
+            rootUid: rootNode.uid,
+        }),
     };
 });
 
@@ -40,6 +45,7 @@ const mockGetDrive = jest.mocked(getDrive);
 const mockGetDriveForPhotos = jest.mocked(getDriveForPhotos);
 const mockGetNodeEntity = jest.mocked(getNodeEntity);
 const mockGetFormattedNodeLocation = jest.mocked(getFormattedNodeLocation);
+const mockGetFormattedNodeLocationFromHierarchy = jest.mocked(getFormattedNodeLocationFromHierarchy);
 const mockUseTrashStore = useTrashStore as jest.MockedFunction<typeof useTrashStore> & { getState: jest.Mock };
 
 const createNode = (uid: string, name: string): NodeEntity =>
@@ -60,6 +66,7 @@ describe('useTrashNodes', () => {
     const setLoading = jest.fn();
     const setSorting = jest.fn();
     const iterateTrashedNodes = jest.fn();
+    const getNodeHierarchy = jest.fn();
     const iterateTrashedPhotoNodes = jest.fn();
     const handleError = jest.fn();
 
@@ -82,6 +89,7 @@ describe('useTrashNodes', () => {
 
         mockGetDrive.mockReturnValue({
             iterateTrashedNodes,
+            getNodeHierarchy,
         } as any);
 
         mockGetDriveForPhotos.mockReturnValue({
@@ -96,13 +104,17 @@ describe('useTrashNodes', () => {
 
     describe('loadTrashNodes', () => {
         it('loads trashed drive nodes and updates the store', async () => {
-            iterateTrashedNodes.mockReturnValue(
-                createAsyncIterable([
-                    { node: createNode('drive-1', 'Drive 1') },
-                    { node: createNode('drive-2', 'Drive 2') },
-                ])
-            );
-            mockGetFormattedNodeLocation
+            const rootNode = createNode('root', 'Root');
+            const trashNodes = [
+                { uid: 'drive-1', node: createNode('drive-1', 'Drive 1') },
+                { uid: 'drive-2', node: createNode('drive-2', 'Drive 2') },
+            ];
+            iterateTrashedNodes.mockReturnValue(createAsyncIterable(trashNodes));
+            getNodeHierarchy.mockImplementation(async (uid: string) => [
+                rootNode,
+                trashNodes.find((trashNode) => trashNode.uid === uid),
+            ]);
+            mockGetFormattedNodeLocationFromHierarchy
                 .mockResolvedValueOnce('/Trash/Drive 1')
                 .mockResolvedValueOnce('/Trash/Drive 2');
 
@@ -118,11 +130,24 @@ describe('useTrashNodes', () => {
             expect(setLoading).toHaveBeenLastCalledWith('drive', false);
             expect(setItem).toHaveBeenCalledTimes(2);
             expect(setItem).toHaveBeenCalledWith(
-                expect.objectContaining({ uid: 'drive-1', name: 'Drive 1', location: '/Trash/Drive 1' })
+                expect.objectContaining({
+                    uid: 'drive-1',
+                    name: 'Drive 1',
+                    location: '/Trash/Drive 1',
+                    rootUid: 'root',
+                })
             );
             expect(setItem).toHaveBeenCalledWith(
-                expect.objectContaining({ uid: 'drive-2', name: 'Drive 2', location: '/Trash/Drive 2' })
+                expect.objectContaining({
+                    uid: 'drive-2',
+                    name: 'Drive 2',
+                    location: '/Trash/Drive 2',
+                    rootUid: 'root',
+                })
             );
+            // One hierarchy load per node gives both the location and the root.
+            expect(getNodeHierarchy).toHaveBeenCalledTimes(2);
+            expect(mockGetFormattedNodeLocation).not.toHaveBeenCalled();
             expect(handleError).not.toHaveBeenCalled();
         });
     });

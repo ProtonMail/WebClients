@@ -64,6 +64,16 @@ export class FakeSdkDriveClient implements SdkDriveClient {
         return node;
     }
 
+    async getNodeHierarchy(nodeUid: string): Promise<NodeEntity[]> {
+        let node = await this.getNode(nodeUid);
+        const hierarchy = [node];
+        while (node.parentUid) {
+            node = await this.getNode(node.parentUid);
+            hierarchy.unshift(node);
+        }
+        return hierarchy;
+    }
+
     async getMyFilesRootFolder(): Promise<NodeEntity> {
         if (this.rootNode === undefined) {
             throw new Error('FakeSdkDriveClient: rootNode not set. Call setMyFilesRootNode() first.');

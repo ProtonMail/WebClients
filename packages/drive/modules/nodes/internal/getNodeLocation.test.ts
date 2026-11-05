@@ -1,7 +1,14 @@
-import type { NodeEntity, Result } from '@protontech/drive-sdk';
+import type { NodeEntity } from '@protontech/drive-sdk';
 import { MemberRole, NodeType } from '@protontech/drive-sdk';
 
-import { NodeLocation, formatNodeLocation, getFormattedNodeLocation, getNodeLocation } from './getNodeLocation';
+import {
+    NodeLocation,
+    formatNodeLocation,
+    getFormattedNodeLocation,
+    getFormattedNodeLocationFromHierarchy,
+    getFormattedNodeLocationUsingHierarchy,
+    getNodeLocation,
+} from './getNodeLocation';
 
 const createMockNode = (
     uid: string,
@@ -76,14 +83,9 @@ describe('getNodeLocation', () => {
         const lastNode = createMockNode('uid3', 'uid2');
 
         const drive = createDriveStub(true /* isPrivateDefaultClient */, rootNode);
-        drive.getNode.mockResolvedValueOnce(lastNode).mockResolvedValueOnce(childNode1).mockResolvedValueOnce(rootNode);
+        const result = await getNodeLocation(drive, [rootNode, childNode1, lastNode]);
 
-        const result = await getNodeLocation(drive, lastNode);
-
-        expect(result.ok).toBe(true);
-        assertOk(result); // Narrow TS type for rest of the test.
-
-        expect(result.value).toBe(NodeLocation.MY_FILES);
+        expect(result).toBe(NodeLocation.MY_FILES);
     });
 
     it('should return SHARED_WITH_ME when root node has membership', async () => {
@@ -92,14 +94,9 @@ describe('getNodeLocation', () => {
         const lastNode = createMockNode('uid3', 'uid2', MemberRole.Viewer, true);
 
         const drive = createDriveStub(true /* isPrivateDefaultClient */, rootNode);
-        drive.getNode.mockResolvedValueOnce(lastNode).mockResolvedValueOnce(childNode1).mockResolvedValueOnce(rootNode);
+        const result = await getNodeLocation(drive, [rootNode, childNode1, lastNode]);
 
-        const result = await getNodeLocation(drive, lastNode);
-
-        expect(result.ok).toBe(true);
-        assertOk(result); // Narrow TS type for rest of the test.
-
-        expect(result.value).toBe(NodeLocation.SHARED_WITH_ME);
+        expect(result).toBe(NodeLocation.SHARED_WITH_ME);
     });
 
     it('should not return SHARED_WITH_ME when root node has no membership', async () => {
@@ -108,14 +105,9 @@ describe('getNodeLocation', () => {
         const lastNode = createMockNode('uid3', 'uid2', MemberRole.Viewer, false);
 
         const drive = createDriveStub(true /* isPrivateDefaultClient */, rootNode);
-        drive.getNode.mockResolvedValueOnce(lastNode).mockResolvedValueOnce(childNode1).mockResolvedValueOnce(rootNode);
+        const result = await getNodeLocation(drive, [rootNode, childNode1, lastNode]);
 
-        const result = await getNodeLocation(drive, lastNode);
-
-        expect(result.ok).toBe(true);
-        assertOk(result); // Narrow TS type for rest of the test.
-
-        expect(result.value).not.toBe(NodeLocation.SHARED_WITH_ME);
+        expect(result).not.toBe(NodeLocation.SHARED_WITH_ME);
     });
 
     it('should return SHARED_WITH_ME based on root node membership, not child node membership', async () => {
@@ -124,14 +116,9 @@ describe('getNodeLocation', () => {
         const lastNode = createMockNode('uid3', 'uid2', MemberRole.Viewer, false);
 
         const drive = createDriveStub(true /* isPrivateDefaultClient */, rootNode);
-        drive.getNode.mockResolvedValueOnce(lastNode).mockResolvedValueOnce(childNode1).mockResolvedValueOnce(rootNode);
+        const result = await getNodeLocation(drive, [rootNode, childNode1, lastNode]);
 
-        const result = await getNodeLocation(drive, lastNode);
-
-        expect(result.ok).toBe(true);
-        assertOk(result); // Narrow TS type for rest of the test.
-
-        expect(result.value).toBe(NodeLocation.SHARED_WITH_ME);
+        expect(result).toBe(NodeLocation.SHARED_WITH_ME);
     });
 
     it('should return PHOTOS for an album', async () => {
@@ -139,14 +126,9 @@ describe('getNodeLocation', () => {
         rootNode.type = NodeType.Album;
 
         const drive = createDriveStub(false /* isPrivateDefaultClient */, rootNode);
-        drive.getNode.mockResolvedValueOnce(rootNode);
+        const result = await getNodeLocation(drive, [rootNode]);
 
-        const result = await getNodeLocation(drive, rootNode);
-
-        expect(result.ok).toBe(true);
-        assertOk(result); // Narrow TS type for rest of the test.
-
-        expect(result.value).toBe(NodeLocation.PHOTOS);
+        expect(result).toBe(NodeLocation.PHOTOS);
     });
 
     it('should return PHOTOS for a photo', async () => {
@@ -156,14 +138,9 @@ describe('getNodeLocation', () => {
         photoNode.type = NodeType.Photo;
 
         const drive = createDriveStub(false /* isPrivateDefaultClient */, rootNode);
-        drive.getNode.mockResolvedValueOnce(photoNode).mockResolvedValueOnce(rootNode);
+        const result = await getNodeLocation(drive, [rootNode, photoNode]);
 
-        const result = await getNodeLocation(drive, photoNode);
-
-        expect(result.ok).toBe(true);
-        assertOk(result); // Narrow TS type for rest of the test.
-
-        expect(result.value).toBe(NodeLocation.PHOTOS);
+        expect(result).toBe(NodeLocation.PHOTOS);
     });
 
     it('should return DEVICES', async () => {
@@ -172,14 +149,9 @@ describe('getNodeLocation', () => {
 
         const myFilesRootNode = createMockNode('uid1', NO_PARENT_UID);
         const drive = createDriveStub(true /* isPrivateDefaultClient */, myFilesRootNode);
-        drive.getNode.mockResolvedValueOnce(childNode1).mockResolvedValueOnce(deviceRootNode);
+        const result = await getNodeLocation(drive, [deviceRootNode, childNode1]);
 
-        const result = await getNodeLocation(drive, childNode1);
-
-        expect(result.ok).toBe(true);
-        assertOk(result); // Narrow TS type for rest of the test.
-
-        expect(result.value).toBe(NodeLocation.DEVICES);
+        expect(result).toBe(NodeLocation.DEVICES);
     });
 
     it('should return PUBLIC_PAGE', async () => {
@@ -188,14 +160,9 @@ describe('getNodeLocation', () => {
         const lastNode = createMockNode('uid3', 'uid2');
 
         const drive = createDriveStub(false /* isPrivateDefaultClient */, rootNode);
-        drive.getNode.mockResolvedValueOnce(lastNode).mockResolvedValueOnce(childNode1).mockResolvedValueOnce(rootNode);
+        const result = await getNodeLocation(drive, [rootNode, childNode1, lastNode]);
 
-        const result = await getNodeLocation(drive, lastNode);
-
-        expect(result.ok).toBe(true);
-        assertOk(result); // Narrow TS type for rest of the test.
-
-        expect(result.value).toBe(NodeLocation.PUBLIC_PAGE);
+        expect(result).toBe(NodeLocation.PUBLIC_PAGE);
     });
 
     it('should return PUBLIC_PAGE even when root node has membership on a public client', async () => {
@@ -204,14 +171,9 @@ describe('getNodeLocation', () => {
         const lastNode = createMockNode('uid3', 'uid2', MemberRole.Viewer, true);
 
         const drive = createDriveStub(false /* isPrivateDefaultClient */, rootNode);
-        drive.getNode.mockResolvedValueOnce(lastNode).mockResolvedValueOnce(childNode1).mockResolvedValueOnce(rootNode);
+        const result = await getNodeLocation(drive, [rootNode, childNode1, lastNode]);
 
-        const result = await getNodeLocation(drive, lastNode);
-
-        expect(result.ok).toBe(true);
-        assertOk(result); // Narrow TS type for rest of the test.
-
-        expect(result.value).toBe(NodeLocation.PUBLIC_PAGE);
+        expect(result).toBe(NodeLocation.PUBLIC_PAGE);
     });
 });
 
@@ -305,24 +267,63 @@ describe('getFormattedNodeLocation', () => {
         const lastNode = createMockNode('uid3', 'uid2');
 
         const drive = createDriveStub(true /* isPrivateDefaultClient */, rootNode);
-        drive.getNode
-            // First getNodeAncestry call
-            .mockResolvedValueOnce(lastNode)
-            .mockResolvedValueOnce(childNode1)
-            .mockResolvedValueOnce(rootNode)
-            // Second getNodeAncestry call
-            .mockResolvedValueOnce(lastNode)
-            .mockResolvedValueOnce(childNode1)
-            .mockResolvedValueOnce(rootNode);
+        drive.getNode.mockResolvedValueOnce(lastNode).mockResolvedValueOnce(childNode1).mockResolvedValueOnce(rootNode);
 
         const formattedLocation = await getFormattedNodeLocation(drive, lastNode);
 
         expect(formattedLocation).toBe('/My files/node-uid2');
+        // The parents are walked only once.
+        expect(drive.getNode).toHaveBeenCalledTimes(3);
     });
 });
 
-function assertOk<T, E>(result: Result<T, E>): asserts result is { ok: true; value: T } {
-    if (!result.ok) {
-        throw new Error('Expected ok result');
-    }
-}
+describe('getFormattedNodeLocationFromHierarchy', () => {
+    it('should format a deeply nested node in My files without loading any node', async () => {
+        const rootNode = createMockNode('uid0', NO_PARENT_UID);
+        const folders = Array.from({ length: 6 }, (_, i) => createMockNode(`uid${i + 1}`, `uid${i}`));
+        const drive = createDriveStub(true /* isPrivateDefaultClient */, rootNode);
+
+        const formattedLocation = await getFormattedNodeLocationFromHierarchy(drive, [rootNode, ...folders]);
+
+        expect(formattedLocation).toBe('/My files/node-uid1/node-uid2/node-uid3/node-uid4/node-uid5');
+        expect(drive.getNode).not.toHaveBeenCalled();
+    });
+
+    it('should format a photo as Photos only', async () => {
+        const albumNode = createMockNode('album', NO_PARENT_UID);
+        albumNode.type = NodeType.Album;
+        const photoNode = createMockNode('photo', 'album');
+        photoNode.type = NodeType.Photo;
+        const drive = createDriveStub(true /* isPrivateDefaultClient */, createMockNode('my-files-root'));
+
+        expect(await getFormattedNodeLocationFromHierarchy(drive, [albumNode, photoNode])).toBe('/Photos');
+    });
+});
+
+describe('getFormattedNodeLocationUsingHierarchy', () => {
+    it('should format the location from a single hierarchy load', async () => {
+        const rootNode = createMockNode('uid1', NO_PARENT_UID);
+        const childNode = createMockNode('uid2', 'uid1');
+        const lastNode = createMockNode('uid3', 'uid2');
+        const drive = {
+            ...createDriveStub(true /* isPrivateDefaultClient */, rootNode),
+            getNodeHierarchy: jest.fn().mockResolvedValue([rootNode, childNode, lastNode]),
+        };
+
+        expect(await getFormattedNodeLocationUsingHierarchy(drive, lastNode)).toBe('/My files/node-uid2');
+        expect(drive.getNodeHierarchy).toHaveBeenCalledTimes(1);
+        expect(drive.getNode).not.toHaveBeenCalled();
+    });
+
+    it('should return an unknown location when the hierarchy cannot be loaded', async () => {
+        const rootNode = createMockNode('uid1', NO_PARENT_UID);
+        const drive = {
+            ...createDriveStub(true /* isPrivateDefaultClient */, rootNode),
+            getNodeHierarchy: jest.fn().mockRejectedValue(new Error('Permission denied')),
+        };
+
+        expect(await getFormattedNodeLocationUsingHierarchy(drive, createMockNode('uid2', 'uid1'))).toBe(
+            'Unknown location'
+        );
+    });
+});

@@ -21,6 +21,7 @@ export type FetchLastEventIdForTreeScopeId = (
 export interface SdkDriveClient {
     getMyFilesRootFolder(): Promise<NodeEntity>;
     getNode(nodeUid: string): Promise<NodeEntity>;
+    getNodeHierarchy(nodeUid: string): Promise<NodeEntity[]>;
     iterateFolderChildrenNodeUids(parentNodeUid: string, filterOptions?: { type?: NodeType }): AsyncIterable<string>;
     iterateNodes(uids: string[]): AsyncIterable<MaybeMissingNode>;
 }
@@ -41,6 +42,7 @@ export interface EventIdStorage {
 export interface DriveSdkBridgeInterface {
     getMyFilesRootFolder(): Promise<NodeEntity>;
     getNode(nodeUid: string): Promise<NodeEntity>;
+    getNodeHierarchy(nodeUid: string): Promise<NodeEntity[]>;
     iterateFolderChildrenNodeUids(parentNodeUid: string, filterOptions?: { type?: NodeType }): Promise<string[]>;
     iterateNodes(uids: string[]): Promise<NodeEntity[]>;
 }
@@ -102,6 +104,11 @@ export class DriveSdkBridge {
     async getNode(nodeUid: string) {
         Logger.info(`MainThreadBridge: getNode ${nodeUid}`);
         return this.driveClient.getNode(nodeUid);
+    }
+
+    async getNodeHierarchy(nodeUid: string) {
+        Logger.info(`MainThreadBridge: getNodeHierarchy ${nodeUid}`);
+        return this.driveClient.getNodeHierarchy(nodeUid);
     }
 
     async iterateFolderChildrenNodeUids(parentNodeUid: string, filterOptions?: { type?: NodeType }) {

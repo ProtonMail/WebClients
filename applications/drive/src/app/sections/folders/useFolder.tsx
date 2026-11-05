@@ -6,7 +6,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { EnrichedError, handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { useFlagsDriveSheet } from '@proton/drive/modules/flags';
 import { driveMetrics } from '@proton/drive/modules/metrics';
-import { getNodeEffectiveRole, getNodeName } from '@proton/drive/modules/nodes';
+import { getNodeName } from '@proton/drive/modules/nodes';
 import { MemberRole, useDrive } from '@proton/drive/sdk';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -61,18 +61,17 @@ export function useFolder() {
             setIsLoading(true);
 
             try {
-                const node = await drive.getNode(folderNodeUid);
-                const folderItem = await mapNodeToFolderViewItem(node, folderShareId, drive);
+                const hierarchy = await drive.getNodeHierarchy(folderNodeUid);
+                const node = hierarchy[hierarchy.length - 1];
+                const folderItem = await mapNodeToFolderViewItem(node, folderShareId, drive, hierarchy);
                 const isDeviceRoot = !node.parentUid && !!getByRootFolderUid(folderNodeUid);
                 const isDeviceFolder = isDeviceRoot || (folderItem.rootUid && !!getByRootFolderUid(folderItem.rootUid));
-                const role = await getNodeEffectiveRole(node, drive);
+                const role = folderItem.effectiveRole;
                 const canEdit = role !== MemberRole.Viewer && !isDeviceRoot;
                 const canTrash = role !== MemberRole.Viewer;
                 const isRoot = !node.parentUid;
                 const isAdmin = role === MemberRole.Admin;
-                const canReportAbuse =
-                    Boolean(node.membership) ||
-                    Boolean((await drive.getNodeHierarchy(node.uid).then((nodes) => nodes[0])).membership);
+                const canReportAbuse = Boolean(node.membership) || Boolean(hierarchy[0].membership);
 
                 setFolder(
                     {

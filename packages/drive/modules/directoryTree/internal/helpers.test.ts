@@ -1,6 +1,9 @@
+import { sendErrorReport } from '../../../legacy/errorHandling';
 import type { NodeEntity, ProtonDriveClient } from '../../../sdk';
 import { MemberRole } from '../../../sdk';
 import { findEffectiveRole } from './helpers';
+
+jest.mock('../../../legacy/errorHandling');
 
 const createMockNode = (
     directRole: MemberRole,
@@ -25,19 +28,10 @@ describe('findEffectiveRole', () => {
 
             expect(result).toBe(MemberRole.Admin);
         });
-
-        it('should return Admin immediately even with previousHighestRole', async () => {
-            const mockDrive = {} as ProtonDriveClient;
-            const node = createMockNode(MemberRole.Admin, 'parent-1');
-
-            const result = await findEffectiveRole(mockDrive, node, MemberRole.Viewer);
-
-            expect(result).toBe(MemberRole.Admin);
-        });
     });
 
     describe('root nodes without parent', () => {
-        it('should return directRole when node has no parent and no previousHighestRole', async () => {
+        it('should return directRole when node has no parent', async () => {
             const mockDrive = {} as ProtonDriveClient;
             const node = createMockNode(MemberRole.Editor, null);
 
@@ -45,99 +39,81 @@ describe('findEffectiveRole', () => {
 
             expect(result).toBe(MemberRole.Editor);
         });
-
-        it('should return most permissive role at root when previousHighestRole is provided', async () => {
-            const mockDrive = {} as ProtonDriveClient;
-            const node = createMockNode(MemberRole.Viewer, null);
-
-            const result = await findEffectiveRole(mockDrive, node, MemberRole.Editor);
-
-            expect(result).toBe(MemberRole.Editor);
-        });
     });
 
     describe('traversing parent hierarchy', () => {
-        it('should traverse to parent when parent exists and no previousHighestRole', async () => {
+        it('should load the parent hierarchy when parent exists', async () => {
             const parentNode = createMockNode(MemberRole.Editor, null);
             const childNode = createMockNode(MemberRole.Viewer, 'parent-1');
 
             const mockDrive = {
-                getNode: jest.fn().mockResolvedValue(parentNode),
+                getNodeHierarchy: jest.fn().mockResolvedValue([parentNode]),
             } as unknown as ProtonDriveClient;
 
             const result = await findEffectiveRole(mockDrive, childNode);
 
-            expect(mockDrive.getNode).toHaveBeenCalledWith('parent-1');
+            expect(mockDrive.getNodeHierarchy).toHaveBeenCalledWith('parent-1');
             expect(result).toBe(MemberRole.Editor);
         });
 
-        it('should traverse multiple levels to find highest role', async () => {
+        it('should look at every ancestor to find highest role', async () => {
             const rootNode = createMockNode(MemberRole.Admin, null);
             const parentNode = createMockNode(MemberRole.Editor, 'root-1');
             const childNode = createMockNode(MemberRole.Viewer, 'parent-1');
 
             const mockDrive = {
-                getNode: jest.fn().mockResolvedValueOnce(parentNode).mockResolvedValueOnce(rootNode),
+                getNodeHierarchy: jest.fn().mockResolvedValue([rootNode, parentNode]),
             } as unknown as ProtonDriveClient;
 
             const result = await findEffectiveRole(mockDrive, childNode);
 
             expect(result).toBe(MemberRole.Admin);
         });
+
+        it('should propagate an error when the hierarchy cannot be loaded', async () => {
+            const childNode = createMockNode(MemberRole.Viewer, 'parent-1');
+            const error = new Error('Permission denied');
+
+            const mockDrive = {
+                getNodeHierarchy: jest.fn().mockRejectedValue(error),
+            } as unknown as ProtonDriveClient;
+
+            await expect(findEffectiveRole(mockDrive, childNode)).rejects.toBe(error);
+        });
     });
 
     describe('role comparison logic', () => {
-        it('should prefer Editor over Viewer', async () => {
-            const parentNode = createMockNode(MemberRole.Viewer, null);
-            const childNode = createMockNode(MemberRole.Editor, 'parent-1');
+        it.each([
+            [MemberRole.Editor, MemberRole.Viewer, MemberRole.Editor],
+            [MemberRole.Viewer, MemberRole.Editor, MemberRole.Editor],
+            [MemberRole.Inherited, MemberRole.Editor, MemberRole.Editor],
+            [MemberRole.Inherited, MemberRole.Viewer, MemberRole.Viewer],
+        ])('should combine parent %s and child %s into %s', async (parentRole, childRole, expected) => {
+            const parentNode = createMockNode(parentRole, null);
+            const childNode = createMockNode(childRole, 'parent-1');
 
             const mockDrive = {
-                getNode: jest.fn().mockResolvedValue(parentNode),
+                getNodeHierarchy: jest.fn().mockResolvedValue([parentNode]),
             } as unknown as ProtonDriveClient;
 
             const result = await findEffectiveRole(mockDrive, childNode);
 
-            expect(result).toBe(MemberRole.Editor);
+            expect(result).toBe(expected);
         });
+    });
 
-        it('should prefer Editor over Inherited', async () => {
-            const rootNode = createMockNode(MemberRole.Inherited, null);
-            const childNode = createMockNode(MemberRole.Editor, 'root-1');
+    it('should report an error and fall back to Viewer when every role is Inherited', async () => {
+        const parentNode = createMockNode(MemberRole.Inherited, null);
+        const childNode = createMockNode(MemberRole.Inherited, 'parent-1');
 
-            const mockDrive = {
-                getNode: jest.fn().mockResolvedValue(rootNode),
-            } as unknown as ProtonDriveClient;
+        const mockDrive = {
+            getNodeHierarchy: jest.fn().mockResolvedValue([parentNode]),
+        } as unknown as ProtonDriveClient;
 
-            const result = await findEffectiveRole(mockDrive, childNode);
+        const result = await findEffectiveRole(mockDrive, childNode);
 
-            expect(result).toBe(MemberRole.Editor);
-        });
-
-        it('should prefer Viewer over Inherited', async () => {
-            const rootNode = createMockNode(MemberRole.Inherited, null);
-            const childNode = createMockNode(MemberRole.Viewer, 'root-1');
-
-            const mockDrive = {
-                getNode: jest.fn().mockResolvedValue(rootNode),
-            } as unknown as ProtonDriveClient;
-
-            const result = await findEffectiveRole(mockDrive, childNode);
-
-            expect(result).toBe(MemberRole.Viewer);
-        });
-
-        it('should return Inherited when all nodes have Inherited role', async () => {
-            const rootNode = createMockNode(MemberRole.Inherited, null);
-            const childNode = createMockNode(MemberRole.Inherited, 'root-1');
-
-            const mockDrive = {
-                getNode: jest.fn().mockResolvedValue(rootNode),
-            } as unknown as ProtonDriveClient;
-
-            const result = await findEffectiveRole(mockDrive, childNode);
-
-            expect(result).toBe(MemberRole.Inherited);
-        });
+        expect(result).toBe(MemberRole.Viewer);
+        expect(sendErrorReport).toHaveBeenCalledTimes(1);
     });
 
     describe('nodes with name errors', () => {
@@ -150,65 +126,33 @@ describe('findEffectiveRole', () => {
             });
 
             const mockDrive = {
-                getNode: jest.fn().mockResolvedValue(parentNode),
+                getNodeHierarchy: jest.fn().mockResolvedValue([parentNode]),
             } as unknown as ProtonDriveClient;
 
             const result = await findEffectiveRole(mockDrive, childNode);
 
-            expect(mockDrive.getNode).toHaveBeenCalledWith('parent-1');
+            expect(mockDrive.getNodeHierarchy).toHaveBeenCalledWith('parent-1');
             expect(result).toBe(MemberRole.Editor);
-        });
-
-        it('should handle mix of regular and name-error nodes', async () => {
-            const parentNode = createMockNode(MemberRole.Admin, null);
-            const childNode = createMockNode(MemberRole.Viewer, 'parent-1', {
-                name: { ok: false, error: new Error('Encrypted') },
-            });
-
-            const mockDrive = {
-                getNode: jest.fn().mockResolvedValue(parentNode),
-            } as unknown as ProtonDriveClient;
-
-            const result = await findEffectiveRole(mockDrive, childNode);
-
-            expect(result).toBe(MemberRole.Admin);
         });
     });
 
     describe('complex hierarchies', () => {
-        it('should find highest role in deep hierarchy', async () => {
+        it('should find highest role in deep hierarchy with a single hierarchy call', async () => {
             const level3Node = createMockNode(MemberRole.Admin, null);
             const level2Node = createMockNode(MemberRole.Editor, 'level-3');
             const level1Node = createMockNode(MemberRole.Viewer, 'level-2');
             const level0Node = createMockNode(MemberRole.Inherited, 'level-1');
 
             const mockDrive = {
-                getNode: jest
-                    .fn()
-                    .mockResolvedValueOnce(level1Node)
-                    .mockResolvedValueOnce(level2Node)
-                    .mockResolvedValueOnce(level3Node),
+                getNode: jest.fn(),
+                getNodeHierarchy: jest.fn().mockResolvedValue([level3Node, level2Node, level1Node]),
             } as unknown as ProtonDriveClient;
 
             const result = await findEffectiveRole(mockDrive, level0Node);
 
-            expect(mockDrive.getNode).toHaveBeenCalledTimes(3);
-            expect(result).toBe(MemberRole.Admin);
-        });
-
-        it('should stop traversing once Admin is found', async () => {
-            const level2Node = createMockNode(MemberRole.Viewer, null);
-            const level1Node = createMockNode(MemberRole.Admin, 'level-2');
-            const level0Node = createMockNode(MemberRole.Viewer, 'level-1');
-
-            const mockDrive = {
-                getNode: jest.fn().mockResolvedValueOnce(level1Node).mockResolvedValueOnce(level2Node),
-            } as unknown as ProtonDriveClient;
-
-            const result = await findEffectiveRole(mockDrive, level0Node);
-
-            // Should stop after finding Admin, no need to go to level-2
-            expect(mockDrive.getNode).toHaveBeenCalledTimes(1);
+            expect(mockDrive.getNodeHierarchy).toHaveBeenCalledTimes(1);
+            expect(mockDrive.getNodeHierarchy).toHaveBeenCalledWith('level-1');
+            expect(mockDrive.getNode).not.toHaveBeenCalled();
             expect(result).toBe(MemberRole.Admin);
         });
     });

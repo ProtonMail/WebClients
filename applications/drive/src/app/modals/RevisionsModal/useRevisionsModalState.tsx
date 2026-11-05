@@ -17,7 +17,6 @@ import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { DownloadManager } from '../../modules/download/DownloadManager';
-import { getRootNode } from '../../utils/sdk/mapNodeToLegacyItem';
 import { useDetailsModal } from '../DetailsModal';
 import { useReportAbuseModal } from '../ReportAbuseModal';
 import { Preview } from '../preview';
@@ -86,7 +85,7 @@ export const useRevisionsModalState = ({
         setCurrentRevision(currentRevision);
         setOlderRevisions(olderRevisions);
 
-        const rootNode = await getRootNode(maybeNode, drive);
+        const [rootNode] = await drive.getNodeHierarchy(nodeUid);
 
         let isDeviceRoot = false;
         // Not sending an error, if this fails it will have failed in sidebar first
@@ -99,9 +98,7 @@ export const useRevisionsModalState = ({
         const { node: rootFolderNode } = getNodeEntity(rootFolder);
         setIsOwner(rootNode.uid === rootFolderNode.uid || isDeviceRoot);
 
-        const nodeCanReportAbuse =
-            Boolean(maybeNode.membership) ||
-            Boolean((await drive.getNodeHierarchy(nodeUid).then((nodes) => nodes[0])).membership);
+        const nodeCanReportAbuse = Boolean(maybeNode.membership) || Boolean(rootNode.membership);
         setCanReportAbuse(nodeCanReportAbuse);
     };
 
@@ -116,6 +113,8 @@ export const useRevisionsModalState = ({
             sendErrorReport(error);
             modalProps.onClose();
         }
+        // Load the revisions only when the node changes, not on every render of the callbacks.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [nodeUid]);
 
     const categorizedRevisions = useMemo(() => getCategorizedRevisions(olderRevisions), [olderRevisions]);

@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { driveMetrics } from '@proton/drive/modules/metrics';
-import { getFormattedNodeLocation } from '@proton/drive/modules/nodes';
-import { type ProtonDriveClient, getDrive, getDriveForPhotos } from '@proton/drive/sdk';
+import { getFormattedNodeLocation, getFormattedNodeLocationUsingHierarchy } from '@proton/drive/modules/nodes';
+import { type NodeEntity, type ProtonDriveClient, getDrive, getDriveForPhotos } from '@proton/drive/sdk';
 
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 import { useSharedByMeStore } from '../useSharedByMe.store';
@@ -12,7 +12,11 @@ import { getOldestShareCreationTime } from '../utils/getOldestShareCreationTime'
 
 type Drive = Pick<ProtonDriveClient, 'iterateSharedNodes' | 'getSharingInfo' | 'getNode' | 'iterateNodes'>;
 
-const fetchSharedByMeNodes = async (abortSignal: AbortSignal, drive: Drive): Promise<Set<string>> => {
+const fetchSharedByMeNodes = async (
+    abortSignal: AbortSignal,
+    drive: Drive,
+    getLocation: (node: NodeEntity) => Promise<string>
+): Promise<Set<string>> => {
     const { onItemsLoadedToState, onFinished } = driveMetrics.drivePerformance.startDataLoad('sharedByMe');
     const loadedUids = new Set<string>();
     for await (const sharedByMeMaybeNode of drive.iterateSharedNodes(abortSignal)) {
@@ -33,7 +37,7 @@ const fetchSharedByMeNodes = async (abortSignal: AbortSignal, drive: Drive): Pro
             });
             onItemsLoadedToState(1);
 
-            void getFormattedNodeLocation(drive, sharedByMeMaybeNode).then((location) => {
+            void getLocation(sharedByMeMaybeNode).then((location) => {
                 useSharedByMeStore.getState().updateSharedByMeItem(node.uid, {
                     location,
                 });
@@ -77,9 +81,11 @@ export const loadSharedByMeNodes = async (abortSignal: AbortSignal) => {
     }
     setLoading(true);
     try {
+        const drive = getDrive();
+        const photosDrive = getDriveForPhotos();
         const [driveUids, photosUids] = await Promise.all([
-            fetchSharedByMeNodes(abortSignal, getDrive()),
-            fetchSharedByMeNodes(abortSignal, getDriveForPhotos()),
+            fetchSharedByMeNodes(abortSignal, drive, (node) => getFormattedNodeLocationUsingHierarchy(drive, node)),
+            fetchSharedByMeNodes(abortSignal, photosDrive, (node) => getFormattedNodeLocation(photosDrive, node)),
         ]);
         const allLoadedUids = new Set([...driveUids, ...photosUids]);
         const { cleanupStaleItems } = useSharedByMeStore.getState();

@@ -1,7 +1,7 @@
 import { renderHook, waitFor } from '@testing-library/react';
 
 import { handleSdkError } from '../../../legacy/errorHandling';
-import { getNodeEffectiveRole } from '../../../modules/nodes';
+import { getNodeEffectiveRoleFromHierarchy } from '../../../modules/nodes';
 import { createMockNodeEntity } from '../../../modules/testing';
 import type { ProtonDriveClient } from '../../../sdk';
 import { MemberRole, generateNodeUid } from '../../../sdk';
@@ -13,10 +13,12 @@ jest.mock('../../../legacy/errorHandling', () => ({
 
 jest.mock('../../../modules/nodes', () => ({
     ...jest.requireActual('../../../modules/nodes'),
-    getNodeEffectiveRole: jest.fn(),
+    getNodeEffectiveRoleFromHierarchy: jest.fn(),
 }));
 
-const mockGetNodeEffectiveRole = getNodeEffectiveRole as jest.MockedFunction<typeof getNodeEffectiveRole>;
+const mockGetNodeEffectiveRoleFromHierarchy = getNodeEffectiveRoleFromHierarchy as jest.MockedFunction<
+    typeof getNodeEffectiveRoleFromHierarchy
+>;
 const mockHandleSdkError = handleSdkError as jest.MockedFunction<typeof handleSdkError>;
 
 const mockGetNode = jest.fn();
@@ -65,7 +67,7 @@ describe('useMoveEligibility', () => {
     beforeEach(() => {
         jest.clearAllMocks();
         mockGetNode.mockResolvedValue(createMockNodeEntity());
-        mockGetNodeEffectiveRole.mockResolvedValue(MemberRole.Editor);
+        mockGetNodeEffectiveRoleFromHierarchy.mockReturnValue(MemberRole.Editor);
     });
 
     describe('when no target folder is selected', () => {
@@ -181,7 +183,7 @@ describe('useMoveEligibility', () => {
                 target: targetFolderUid,
                 targetAncestors: [VOLUME_ROOT_NODE, PARENT2_UID],
             });
-            mockGetNodeEffectiveRole.mockResolvedValue(MemberRole.Viewer);
+            mockGetNodeEffectiveRoleFromHierarchy.mockReturnValue(MemberRole.Viewer);
 
             const { result } = renderHook(() => useMoveEligibility(selectedItemConfigs, targetFolderUid, drive));
 
@@ -208,6 +210,9 @@ describe('useMoveEligibility', () => {
                 expect(result.current.isInvalidMove).toBe(false);
                 expect(result.current.invalidMoveMessage).toBeUndefined();
             });
+            // The role comes from the target hierarchy, no other node is loaded.
+            expect(mockGetNodeHierarchy).toHaveBeenCalledTimes(1);
+            expect(mockGetNode).not.toHaveBeenCalled();
         });
     });
 });
