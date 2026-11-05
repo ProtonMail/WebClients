@@ -16,12 +16,12 @@ import { useApplication } from '~/utils/application-context'
 import { getFullPathFromAncestry } from '~/drive-sdk/getFullPathFromAncestry'
 import { getIsSharedWithMe } from '~/drive-sdk/getIsSharedWithMe'
 import { createDocumentItem } from './create-document-items'
-import { useRecentsStore } from './use-recents-store'
+import { useRecentsStore } from '~/homepage/use-recents-store'
 import { getRoleFromHierarchy } from '@proton/docs-core/DriveSDK/getRoleFromHierarchy'
 import type { RecentDocumentAPIItem } from '@proton/docs-core/Api/Types/GetRecentsResponse'
-import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
-import { addSentryBreadcrumb } from '@proton/shared/lib/helpers/sentry'
-import { traceRecentsError } from './traceRecentsError'
+import type { RecentDocumentsItemValue } from '~/homepage/recent-documents-item-value'
+import { addSentryBreadcrumb, traceError } from '@proton/shared/lib/helpers/sentry'
+import { traceRecentsError } from '~/homepage/traceRecentsError'
 import { getEventSubscriber, type SDKEventListener } from '~/drive-sdk/event-subscriber'
 
 export function useRecents(drive: ProtonDriveClient) {
@@ -106,7 +106,7 @@ export function useRecents(drive: ProtonDriveClient) {
         // Creating new error to capture current stack
         const errorWithCurrentStack = new Error('fetchRecents failed at iterateNodes')
         errorWithCurrentStack.cause = error
-        traceRecentsError(errorWithCurrentStack)
+        traceRecentsError(traceError, errorWithCurrentStack)
       }
 
       return { documents, nodesByUid }
@@ -139,7 +139,7 @@ export function useRecents(drive: ProtonDriveClient) {
               }
             } catch (error) {
               logger.debug('[LoadRecentsWithDriveSDK] Could not process document', { error, document })
-              traceRecentsError(error)
+              traceRecentsError(traceError, error)
             }
           }
 
@@ -160,7 +160,7 @@ export function useRecents(drive: ProtonDriveClient) {
             return
           }
 
-          traceRecentsError(error)
+          traceRecentsError(traceError, error)
           createNotification({
             type: 'error',
             text: c('Error').t`Failed to load recent documents`,
@@ -232,7 +232,7 @@ export function useRecents(drive: ProtonDriveClient) {
               if (result.status === 'fulfilled') {
                 updateDocument(result.value)
               } else {
-                traceRecentsError(result.reason)
+                traceRecentsError(traceError, result.reason)
               }
             }
           } else {

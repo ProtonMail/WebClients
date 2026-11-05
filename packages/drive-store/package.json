@@ -10,12 +10,7 @@
         "./lib/useDriveCompat": "./lib/useDriveCompat.tsx",
         "./lib/usePublicDriveCompat": "./lib/usePublicDriveCompat.tsx",
         "./store/_downloads/fileSaver/download": "./store/_downloads/fileSaver/download.ts",
-        "./store/_events/useDriveEventManager": "./store/_events/useDriveEventManager.tsx",
-        "./store/_links/interface": "./store/_links/interface.ts",
-        "./store/_shares/useDefaultShare": "./store/_shares/useDefaultShare.ts",
         "./store/_user/usePublicSessionUser": "./store/_user/usePublicSessionUser.ts",
-        "./store/_views/useTrashView": "./store/_views/useTrashView.ts",
-        "./store/_volumes/interface": "./store/_volumes/interface.ts",
         "./utils/metrics/userSuccessMetrics": "./utils/metrics/userSuccessMetrics.ts"
     },
     "scripts": {

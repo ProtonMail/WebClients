@@ -1,8 +1,6 @@
 import type { TouchEvent } from 'react'
 import { useEffect, useRef } from 'react'
 
-// Copied from Drive's `useItemInteraction`.
-
 const TOUCH_DOUBLE_TAP_MS = 500
 
 // A tap is allowed to wander a little: a finger never lands perfectly still, and a

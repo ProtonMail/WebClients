@@ -1,3 +1,7 @@
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useRouteMatch } from 'react-router'
+import { c } from 'ttag'
+
 import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
 import type { NodeEntity } from '@proton/drive/sdk'
@@ -5,9 +9,14 @@ import { getDrive } from '@proton/drive/sdk'
 import { useContactEmails } from '@proton/account/contactEmails/hooks'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { useRouteMatch } from 'react-router'
-import { HOMEPAGE_TRASH_PATH } from '../../../__utils/homepage-paths'
+import { useNotifications } from '@proton/app-context/useNotifications'
+import { useAddresses } from '@proton/account/addresses/hooks'
+import type { Address } from '@proton/shared/lib/interfaces/Address'
+import { traceError } from '@proton/shared/lib/helpers/sentry'
+
+import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
+import { getCoreEventSubscriber } from '~/drive-sdk/core-event-subscriber'
+
 import {
   filterDocuments,
   HomepageViewContext,
@@ -23,16 +32,12 @@ import {
   type HomepageViewValue,
   type ItemsSection,
   type RecentsSort,
-} from './homepage-view'
+} from './homepage-view-sdk-utils'
 import { useRecents } from './use-recents'
 import { useTrashed } from './use-trashed'
-import { c } from 'ttag'
-import { useNotifications } from '@proton/app-context/useNotifications'
-import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
-import { getCoreEventSubscriber } from '~/drive-sdk/core-event-subscriber'
-import { traceRecentsError } from './traceRecentsError'
-import { useAddresses } from '@proton/account/addresses/hooks'
-import type { Address } from '@proton/shared/lib/interfaces/Address'
+
+import { traceRecentsError } from '~/homepage/traceRecentsError'
+import { HOMEPAGE_TRASH_PATH } from '~/homepage/homepage-paths'
 
 export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
   const drive = getDrive()
@@ -98,7 +103,7 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
           type: 'error',
           text: c('Error').t`Failed to load 'My files' folder`,
         })
-        traceRecentsError(error)
+        traceRecentsError(traceError, error)
       })
   }, [createNotification, drive])
 
@@ -110,25 +115,20 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
 
     void eventSubscriber
       .initialize(myFilesNode.treeEventScopeId, [recentsListener, trashedListener], removeDocument)
-      .catch(traceRecentsError)
+      .catch((error) => traceRecentsError(traceError, error))
     return () => eventSubscriber.reset()
   }, [recentsListener, trashedListener, myFilesNode, eventSubscriber, removeDocument])
 
   const state = useMemo((): HomepageViewState => {
+    const documents = Object.values(recentDocuments) as RecentDocumentsItemValue[]
     try {
       if (isTrashRoute) {
         return buildTrashState(trashedDocumentItems, isTrashLoading)
       } else if (search && search.length > 0) {
-        return buildSearchState(
-          search,
-          isRecentsUpdating,
-          recentDocumentsInitialized,
-          Object.values(recentDocuments),
-          type,
-        )
+        return buildSearchState(search, isRecentsUpdating, recentDocumentsInitialized, documents, type)
       } else {
         return buildRecentsState(
-          Object.values(recentDocuments),
+          documents,
           recentDocumentsInitialized,
           isRecentsUpdating,
           recentsSort,
@@ -138,7 +138,7 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
         )
       }
     } catch (error) {
-      traceRecentsError(error)
+      traceRecentsError(traceError, error)
       return { view: 'unknown' }
     }
   }, [

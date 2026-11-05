@@ -1,11 +1,13 @@
-import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
 import { c } from 'ttag'
 
+export type OwnerContact = { Email: string; Name?: string }
+
+export type OwnedDocument = { createdBy: string | undefined }
+
 export function getOwnerName(
-  recentDocument: RecentDocumentsItem,
+  recentDocument: OwnedDocument,
   isMine: boolean,
-  contactEmails: ContactEmail[] | undefined,
+  contactEmails: OwnerContact[] | undefined,
 ) {
   if (isMine) {
     return c('Info').t`Me`

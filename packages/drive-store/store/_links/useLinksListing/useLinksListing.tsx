@@ -1,21 +1,16 @@
 import { createContext, useCallback, useContext, useRef } from 'react';
 
 import { queryFolderChildren } from '@proton/shared/lib/api/drive/folder';
-import { queryLinkMetaBatch } from '@proton/shared/lib/api/drive/link';
-import { BATCH_REQUEST_SIZE } from '@proton/shared/lib/drive/constants';
-import type { LinkChildrenResult, LinkMetaBatchPayload } from '@proton/shared/lib/interfaces/drive/link';
-import chunk from '@proton/utils/chunk';
+import type { LinkChildrenResult } from '@proton/shared/lib/interfaces/drive/link';
 
 import { linkMetaToEncryptedLink } from '../../_api/transformers';
 import useDebouncedRequest from '../../_api/useDebouncedRequest';
 import waitFor from '../../_utils/waitFor';
 import type { DecryptedLink } from './../interface';
-import useLinksState, { isLinkDecrypted } from './../useLinksState';
-import type { FetchLoadLinksMeta } from './interface';
+import useLinksState from './../useLinksState';
 import type { FetchMeta, FetchResponse, SortParams } from './useLinksListingHelpers';
 import { PAGE_SIZE, sortParamsToServerSortArgs, useLinksListingHelpers } from './useLinksListingHelpers';
 import { useSharedWithMeLinksListingByVolume } from './useSharedWithMeLinksListingByVolume';
-import { useTrashedLinksListing } from './useTrashedLinksListing';
 
 type FetchState = {
     [shareId: string]: FetchShareState;
@@ -32,14 +27,11 @@ type FetchShareState = {
             foldersOnly: FetchMeta;
         };
     };
-    links: {
-        [key: string]: FetchMeta;
-    };
 };
 
 /**
  * Provides way to list links, such as folder links or
- * trashed links or shared links, and ensure the links are decrypted.
+ * shared links, and ensure the links are decrypted.
  * The typical usage should be as follow:
  *
  *      const listing = useLinksListingProvider();
@@ -63,10 +55,9 @@ type FetchShareState = {
 export function useLinksListingProvider() {
     const debouncedRequest = useDebouncedRequest();
     const linksState = useLinksState();
-    const trashedLinksListing = useTrashedLinksListing();
     const sharedWithMeLinksListingByVolume = useSharedWithMeLinksListingByVolume();
 
-    const { cacheLoadedLinks, fetchNextPageWithSortingHelper, loadFullListing, getDecryptedLinksAndDecryptRest } =
+    const { fetchNextPageWithSortingHelper, loadFullListing, getDecryptedLinksAndDecryptRest } =
         useLinksListingHelpers();
     const state = useRef<FetchState>({});
 
@@ -80,7 +71,6 @@ export function useLinksListingProvider() {
         }
         state.current[shareId] = {
             folders: {},
-            links: {},
         };
 
         return state.current[shareId];
@@ -168,96 +158,6 @@ export function useLinksListingProvider() {
         );
     };
 
-    const fetchLinksMeta = async (
-        abortSignal: AbortSignal,
-        shareId: string,
-        linkIds: string[],
-        loadThumbnails: boolean = false
-    ): Promise<FetchResponse> => {
-        const { Links, Parents } = await debouncedRequest<LinkMetaBatchPayload>(
-            queryLinkMetaBatch(shareId, linkIds, loadThumbnails),
-            abortSignal
-        );
-
-        return {
-            links: Links.map((link) => linkMetaToEncryptedLink(link, shareId)),
-            parents: Parents ? Object.values(Parents).map((link) => linkMetaToEncryptedLink(link, shareId)) : [],
-        };
-    };
-
-    const loadLinksMeta: FetchLoadLinksMeta = async (abortSignal, query, shareId, linkIds, options = {}) => {
-        const shareState = getShareFetchState(shareId);
-        // Shared links use own state for fetch meta.
-        let fetchMeta = options.fetchMeta || shareState.links[query];
-        if (!fetchMeta) {
-            fetchMeta = {};
-            state.current[shareId].links[query] = fetchMeta;
-        }
-
-        if (fetchMeta.isInProgress) {
-            await fetchMeta.isInProgress;
-        }
-
-        const linksAcc: DecryptedLink[] = [];
-        const parentsAcc: DecryptedLink[] = [];
-        const errorsAcc: any[] = [];
-
-        const load = async () => {
-            const missingLinkIds: string[] = [];
-
-            // Read cache to avoid unnescesary queries
-            linkIds.forEach((linkId) => {
-                const link = linksState.getLink(shareId, linkId);
-
-                if (isLinkDecrypted(link)) {
-                    linksAcc.push(link.decrypted);
-                } else {
-                    missingLinkIds.push(linkId);
-                }
-            });
-
-            for (const pageLinkIds of chunk(missingLinkIds, BATCH_REQUEST_SIZE)) {
-                const { links, parents } = await fetchLinksMeta(
-                    abortSignal,
-                    shareId,
-                    pageLinkIds,
-                    options.loadThumbnails
-                );
-                const cached = await cacheLoadedLinks(abortSignal, shareId, links, parents);
-
-                if (cached.errors.length > 0) {
-                    errorsAcc.push(...cached.errors);
-                }
-
-                for (const { decrypted } of cached.links) {
-                    // Links should not include parents because parents need to be
-                    // processed first otherwise links would do fetch automatically
-                    // again before parents are properly handled. Normally loading
-                    // should focus on links only, but for example, not all endpoints
-                    // gives us clear separation (like listing per shared links where
-                    // we don't have info what link is parent and what is child).
-                    if (parents.find((link) => link.linkId === decrypted.linkId)) {
-                        parentsAcc.push(decrypted);
-                    } else {
-                        linksAcc.push(decrypted);
-                    }
-                }
-            }
-        };
-
-        fetchMeta.isInProgress = load().finally(() => {
-            fetchMeta.isInProgress = undefined;
-        });
-
-        await fetchMeta.isInProgress;
-
-        return {
-            links: linksAcc,
-            parents: parentsAcc,
-            errors: errorsAcc,
-        };
-    };
-
     const loadChildren = async (
         abortSignal: AbortSignal,
         shareId: string,
@@ -293,11 +193,7 @@ export function useLinksListingProvider() {
     return {
         fetchChildrenNextPage,
         loadChildren,
-        loadTrashedLinks: (signal: AbortSignal, volumeId: string) => {
-            return trashedLinksListing.loadTrashedLinks(signal, volumeId, loadLinksMeta);
-        },
         getCachedChildren,
-        getCachedTrashed: trashedLinksListing.getCachedTrashed,
 
         // TODO: Remove this with Invitation section refactor
         setShareIdsState: sharedWithMeLinksListingByVolume.setShareIdsState,
