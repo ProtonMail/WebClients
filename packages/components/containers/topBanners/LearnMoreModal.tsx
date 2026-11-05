@@ -9,12 +9,14 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { getPlanTitle } from '@proton/payments/core/subscription/helpers';
 import chronometerSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-chronometer.svg';
 import hourglassSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-hourglass.svg';
 import paymentMethodSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-payment-method.svg';
 import clsx from '@proton/utils/clsx';
 
+import SettingsLink from '../../components/link/SettingsLink';
 import ModalTwo from '../../components/modalTwo/Modal';
 import ModalTwoContent from '../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
@@ -57,7 +59,7 @@ const getTrialInfo = (planTitle: string | undefined, hasPaymentMethod: boolean):
     // translator: text between ** ** is displayed in bold
     const continueAfterTrial = getBoldFormattedText(
         c('Onboarding Trial')
-            .t`**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.`
+            .t`**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.`
     );
 
     return [
@@ -160,9 +162,23 @@ const LearnMoreModal = (props: ModalStateProps) => {
                             <TrialFeature key={id} description={description} imgSrc={img} />
                         ))}
                     </div>
+                    {!hasPaymentMethod && (
+                        <ButtonLike
+                            as={SettingsLink}
+                            color="norm"
+                            size="large"
+                            fullWidth
+                            className="mt-6"
+                            path="/dashboard#payment-methods"
+                            onClick={onClose}
+                        >
+                            {c('Action').t`Add payment method`}
+                        </ButtonLike>
+                    )}
                 </ModalTwoContent>
-                <ModalTwoFooter>
+                <ModalTwoFooter className={clsx(!hasPaymentMethod && 'border-top border-norm pt-4')}>
                     <Button
+                        shape={hasPaymentMethod ? undefined : 'ghost'}
                         onClick={async () => {
                             setShowModal(false);
                             try {
@@ -173,8 +189,11 @@ const LearnMoreModal = (props: ModalStateProps) => {
                                 onExit();
                             }
                         }}
-                    >{c('Action').t`Cancel subscription`}</Button>
-                    <Button color="norm" onClick={onClose}>{c('Action').t`Got it`}</Button>
+                    >
+                        {hasPaymentMethod ? c('Action').t`Cancel subscription` : c('Action').t`Cancel trial`}
+                    </Button>
+                    <Button color={hasPaymentMethod ? 'norm' : undefined} onClick={onClose}>{c('Action')
+                        .t`Got it`}</Button>
                 </ModalTwoFooter>
             </ModalTwo>
         </>
