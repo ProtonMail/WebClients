@@ -5015,9 +5015,6 @@ importers:
       '@proton/shared':
         specifier: workspace:^
         version: link:../shared
-      '@proton/sieve':
-        specifier: workspace:^
-        version: link:../sieve
       '@proton/styles':
         specifier: workspace:^
         version: link:../styles
@@ -9445,9 +9442,15 @@ importers:
 
   packages/redux-shared-store-types:
     dependencies:
+      '@proton/payments':
+        specifier: workspace:^
+        version: link:../payments
       '@proton/shared':
         specifier: workspace:^
         version: link:../shared
+      '@proton/sieve':
+        specifier: workspace:^
+        version: link:../sieve
       '@proton/unleash':
         specifier: workspace:^
         version: link:../unleash

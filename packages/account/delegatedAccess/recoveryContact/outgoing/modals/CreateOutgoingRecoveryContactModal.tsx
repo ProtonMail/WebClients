@@ -16,9 +16,9 @@ import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
+import type { OutgoingDelegatedAccessOutput } from '@proton/shared/lib/interfaces/DelegatedAccess';
 
 import ValidationError from '../../../ValidationError';
-import type { OutgoingDelegatedAccessOutput } from '../../../interface';
 import { addDelegatedAccessThunk } from '../../../outgoingActions';
 import ContactEmailInput from '../../../shared/outgoing/ContactEmailInput';
 import { useAddContactInputs } from '../../../shared/outgoing/useAddContactInputs';

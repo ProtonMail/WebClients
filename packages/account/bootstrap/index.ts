@@ -7,6 +7,7 @@ import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/hel
 import type { Feature } from '@proton/features/interface';
 import { eventLoopTimingTracker } from '@proton/metrics/eventLoopMetrics';
 import metrics from '@proton/metrics/metricsInstance';
+import type { EventLoop } from '@proton/redux-shared-store-types/eventLoop';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import {
     type CalendarEventV6Response,
@@ -79,7 +80,6 @@ import { createCustomFetch, getUnleashConfig } from '@proton/unleash/UnleashFlag
 import { setStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 import noop from '@proton/utils/noop';
 
-import type { EventLoop } from '../eventLoop';
 import { getCryptoWorkerOptions } from './cryptoWorkerOptions';
 import { getLastUsedLocalID, setLastUsedLocalID } from './lastUsedLocalID';
 

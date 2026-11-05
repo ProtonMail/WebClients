@@ -1,5 +1,5 @@
-import type { EventLoop } from '@proton/account/eventLoop';
 import type { WasmApiWallet, WasmApiWalletAccount, WasmApiWalletKey, WasmApiWalletSettings } from '@proton/andromeda';
+import type { EventLoop } from '@proton/redux-shared-store-types/eventLoop';
 import type { EventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
 
 export type WalletEvent = EventItemUpdate<WasmApiWallet, 'Wallet'>;

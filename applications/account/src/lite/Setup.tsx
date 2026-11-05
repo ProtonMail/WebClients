@@ -4,7 +4,6 @@ import { flushSync } from 'react-dom';
 
 import { unleashReady } from '@proton/account/bootstrap';
 import { serverEvent } from '@proton/account/eventLoop';
-import type { EventLoop } from '@proton/account/eventLoop';
 import { userThunk } from '@proton/account/user';
 import type { OAuthSession } from '@proton/activation/src/byoe/useOAuthRedirectFlow.helpers';
 import { readOAuthSession } from '@proton/activation/src/byoe/useOAuthRedirectFlow.helpers';
@@ -18,6 +17,7 @@ import useThemeQueryParameter from '@proton/components/containers/themes/useThem
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { eventLoopTimingTracker } from '@proton/metrics/eventLoopMetrics';
 import metrics from '@proton/metrics/metricsInstance';
+import type { EventLoop } from '@proton/redux-shared-store-types/eventLoop';
 import { authJwt, pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
 import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
