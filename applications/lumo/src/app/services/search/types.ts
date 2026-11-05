@@ -1,5 +1,12 @@
 import type { LumoState } from '../../redux/store';
 
+export type SearchScope = 'chats' | 'schedule-runs';
+
+export interface SearchOptions {
+    hasLumoPlus?: boolean;
+    scope?: SearchScope;
+}
+
 export type SearchResult =
     | {
           type: 'conversation';
@@ -36,7 +43,6 @@ export type SearchResult =
           timestamp: number;
       };
 
-      
 // Narrow state shape needed for search to avoid passing full Redux state
 export type SearchState = Pick<LumoState, 'conversations' | 'messages' | 'spaces'>;
 
@@ -57,4 +63,3 @@ export interface SearchServiceStatus {
         avgDocLength: number;
     };
 }
-

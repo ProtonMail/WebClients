@@ -165,7 +165,8 @@ async function shortlistConversations(
     allowed: Conversation[]
 ): Promise<ConversationId[]> {
     const allowedIds = new Set(allowed.map((conversation) => conversation.id));
-    const ranked = (await context.index?.rankConversations(query, MAX_RANKED_CONVERSATIONS * 4).catch(() => [])) ?? [];
+    const ranked =
+        (await context.index?.rankConversations(query, MAX_RANKED_CONVERSATIONS, allowedIds).catch(() => [])) ?? [];
     const matches = ranked.filter((id) => allowedIds.has(id)).slice(0, MAX_RANKED_CONVERSATIONS);
     if (matches.length === 0) {
         return [...allowedIds];

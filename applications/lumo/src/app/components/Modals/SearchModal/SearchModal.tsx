@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useHistory } from 'react-router-dom';
 
+import { isToday, isYesterday } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -11,11 +12,12 @@ import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { formatIntlDate } from '@proton/shared/lib/date/formatIntlDate';
 
 import { getProjectCategory } from '../../../features/projects/constants';
+import { getScheduleRunTimestampLabel } from '../../../features/schedules/components/utils/run-timestamp-label';
 import { useLumoPlan } from '../../../hooks/useLumoPlan';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { useLumoSelector } from '../../../redux/hooks';
 import { SearchService } from '../../../services/search/searchService';
-import type { SearchResult } from '../../../services/search/types';
+import type { SearchResult, SearchScope } from '../../../services/search/types';
 import type { Attachment } from '../../../types';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import { FilePreviewPanel } from '../../Files/Common/FilePreviewPanel';
@@ -27,10 +29,11 @@ import './SearchModal.scss';
 interface SearchResultItemProps {
     result: SearchResult;
     query: string;
+    scope: SearchScope;
     onSelect: (conversationId?: string, messageId?: string, documentId?: string, projectId?: string) => void;
 }
 
-const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) => {
+const SearchResultItem = ({ result, query, scope, onSelect }: SearchResultItemProps) => {
     const handleClick = () => {
         if (result.type === 'document') {
             onSelect(undefined, undefined, result.documentId);
@@ -44,6 +47,10 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
     };
 
     const formatDate = (timestamp: number, query: string) => {
+        if (scope === 'schedule-runs') {
+            return getScheduleRunTimestampLabel(timestamp);
+        }
+
         // If there's a search query, show relative time
         if (query.trim()) {
             const date = new Date(timestamp);
@@ -200,9 +207,10 @@ const SearchResultItem = ({ result, query, onSelect }: SearchResultItemProps) =>
 
 interface SearchModalInnerProps {
     onClose: () => void;
+    scope: SearchScope;
 }
 
-const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
+const SearchModalInner = ({ onClose, scope }: SearchModalInnerProps) => {
     // The search overlay covers the whole viewport, including the area the native
     // composer is drawn over on large screens. Hide it while the modal is mounted.
     useNativeComposerVisibilityApi({ hideComposer: true });
@@ -238,6 +246,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
             const searchService = SearchService.get(user?.ID);
             const allConversations = await searchService.getAllConversations(searchState, {
                 hasLumoPlus,
+                scope,
             });
             setResults(allConversations);
         } catch (err) {
@@ -248,7 +257,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
         } finally {
             setIsSearching(false);
         }
-    }, [searchState, user?.ID, hasLumoPlus]);
+    }, [searchState, user?.ID, hasLumoPlus, scope]);
 
     // Load conversations on mount
     useEffect(() => {
@@ -282,6 +291,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
                 const searchService = SearchService.get(user?.ID);
                 const searchResults = await searchService.searchAsync(searchQuery, searchState, {
                     hasLumoPlus,
+                    scope,
                 });
                 setResults(searchResults);
             } catch (err) {
@@ -293,7 +303,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
                 setIsSearching(false);
             }
         },
-        [searchState, loadAllConversations, user?.ID, hasLumoPlus]
+        [searchState, loadAllConversations, user?.ID, hasLumoPlus, scope]
     );
 
     // Handle search input changes with debouncing
@@ -374,9 +384,9 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
                 const age = now - result.timestamp;
                 let group = 'older';
 
-                if (age < oneDay) {
+                if (scope === 'schedule-runs' ? isToday(new Date(result.timestamp)) : age < oneDay) {
                     group = 'today';
-                } else if (age < twoDays) {
+                } else if (scope === 'schedule-runs' ? isYesterday(new Date(result.timestamp)) : age < twoDays) {
                     group = 'yesterday';
                 } else if (age < oneWeek) {
                     group = 'lastWeek';
@@ -390,7 +400,8 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
         }
 
         return groups;
-    }, [results, isDebugMode]);
+    }, [results, isDebugMode, scope]);
+
     const groupLabels: Record<string, string> = {
         // translator: Search result group heading for projects.
         projects: c('collider_2025:Label').t`Projects`,
@@ -409,6 +420,17 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
     };
     const groupOrder = Object.keys(groupLabels);
 
+    // translator: Search input for chat history or past executions of scheduled tasks.
+    const searchPlaceholder =
+        scope === 'schedule-runs'
+            ? c('collider_2025:Placeholder').t`Search task runs...`
+            : c('Placeholder').t`Search...`;
+    // translator: Empty search list before any scheduled task has run or any chat exists.
+    const emptyStateHint =
+        scope === 'schedule-runs'
+            ? c('collider_2025:Info').t`No task runs yet.`
+            : c('Info').t`No conversations yet. Start a new chat to begin.`;
+
     return (
         // eslint-disable-next-line jsx-a11y/no-static-element-interactions
         <div className="search-modal-container" onKeyDown={handleKeyDown}>
@@ -420,7 +442,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
                     type="text"
                     value={query}
                     onChange={(e) => handleSearchChange(e.target.value)}
-                    placeholder={c('Placeholder').t`Search...`}
+                    placeholder={searchPlaceholder}
                     className="search-modal-input"
                     autoFocus
                 />
@@ -435,9 +457,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
             <div className="search-modal-results">
                 {/* Empty state hint - only show when no results and no query */}
                 {!query.trim() && results.length === 0 && !isSearching && (
-                    <div className="search-modal-empty-hint">
-                        {c('Info').t`No conversations yet. Start a new chat to begin.`}
-                    </div>
+                    <div className="search-modal-empty-hint">{emptyStateHint}</div>
                 )}
 
                 {error && (
@@ -477,6 +497,7 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
                                             key={key}
                                             result={result}
                                             query={query}
+                                            scope={scope}
                                             onSelect={handleSelectResult}
                                         />
                                     );
@@ -513,9 +534,10 @@ const SearchModalInner = ({ onClose }: SearchModalInnerProps) => {
 export interface SearchModalProps {
     open: boolean;
     onClose: () => void;
+    scope?: SearchScope;
 }
 
-export const SearchModal = ({ open, onClose }: SearchModalProps) => {
+export const SearchModal = ({ open, onClose, scope = 'chats' }: SearchModalProps) => {
     const isGuest = useIsGuest();
 
     useEffect(() => {
@@ -541,7 +563,7 @@ export const SearchModal = ({ open, onClose }: SearchModalProps) => {
         <div className="search-modal-overlay" onClick={onClose}>
             {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */}
             <div className="search-modal-spotlight" onClick={(e) => e.stopPropagation()}>
-                <SearchModalInner onClose={onClose} />
+                <SearchModalInner key={scope} onClose={onClose} scope={scope} />
             </div>
         </div>,
         document.body

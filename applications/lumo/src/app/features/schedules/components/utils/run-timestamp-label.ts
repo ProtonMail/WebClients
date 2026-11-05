@@ -3,8 +3,8 @@ import { c } from 'ttag';
 
 import { formatIntlDate } from '@proton/shared/lib/date/formatIntlDate';
 
-/** Formats a run's creation time for its breadcrumb and history row. */
-export const getScheduleRunTimestampLabel = (createdAt: string): string => {
+/** Formats a run's creation time for its breadcrumb, history row, and search result. */
+export const getScheduleRunTimestampLabel = (createdAt: string | number): string => {
     const date = new Date(createdAt);
     const time = formatIntlDate(date, { timeStyle: 'short' });
     if (isToday(date)) {
