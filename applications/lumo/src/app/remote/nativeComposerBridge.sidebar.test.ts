@@ -18,6 +18,16 @@ describe('nativeComposerBridge - sidebar layout', () => {
         delete (window as any).Android;
     });
 
+    it('pushes measured right-panel space to native', () => {
+        nativeComposerApiInstance.setRightPanelWidth(420);
+
+        expect(onStateChange).toHaveBeenCalledWith(expect.stringContaining('"rightPanelWidth":420'));
+    });
+
+    it('leaves optional right geometry absent until a supporting client reports it', () => {
+        expect(nativeComposerApiInstance.getState()).not.toHaveProperty('rightPanelWidth');
+    });
+
     it('defaults to no sidebar layout', () => {
         expect(nativeComposerApiInstance.getState()).toMatchObject({ sidebar: null });
     });

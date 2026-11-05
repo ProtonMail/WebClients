@@ -7,6 +7,7 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import { useLumoSelector } from '../../../redux/hooks';
 import { selectProvisionalAttachments } from '../../../redux/selectors';
 import type { Message } from '../../../types';
+import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import type { ConversationArtifactDrawerEntry } from '../../Conversation/artifact/conversationArtifactDrawerList';
 import { KnowledgeBasePanel } from './KnowledgeBasePanel';
 
@@ -41,6 +42,7 @@ export const FilesManagementView = ({
     drawerArtifacts = [],
     onOpenArtifact,
 }: FilesManagementViewProps) => {
+    useNativeComposerVisibilityApi({ hideComposer: forceModal && (modalProps?.open ?? true) });
     const currentAttachments = useLumoSelector(selectProvisionalAttachments);
     const handleClose = modalProps?.onClose ?? onClose;
 

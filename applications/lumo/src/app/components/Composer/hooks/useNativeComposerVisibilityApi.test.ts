@@ -1,11 +1,16 @@
-import { renderHook } from '@testing-library/react';
+import { createElement } from 'react';
 
+import { act, renderHook } from '@testing-library/react';
+
+import { useNativeComposerProjectDetailVisibilityApi } from '../../../features/projects/hooks/useNativeComposerProjectDetailVisibilityApi';
 import { useIsLumoSmallScreen } from '../../../hooks/useIsLumoSmallScreen';
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
+import { ArtifactPanelHostProvider, useArtifactPanelHostActions } from '../../../providers/ArtifactPanelHostProvider';
 import { useOptionalRightPanel } from '../../../providers/RightPanelProvider';
 import { useOptionalSidebar } from '../../../providers/SidebarProvider';
 import { setNativeComposerVisibility } from '../../../remote/nativeComposerBridgeHelpers';
-import { canShowWebComposer, canUseNativeSidebarLayout } from '../../../util/userAgent';
+import type * as UserAgent from '../../../util/userAgent';
+import { canShowWebComposer, canUseNativeRightPanelLayout, canUseNativeSidebarLayout } from '../../../util/userAgent';
 import { useNativeComposerHostVisibilityApi, useNativeComposerVisibilityApi } from './useNativeComposerVisibilityApi';
 
 jest.mock('../../../hooks/useLumoFlags');
@@ -26,8 +31,8 @@ const givenSidebar = (sidebar: { isVisible: boolean; isSmallScreen: boolean } | 
     mockedUseOptionalSidebar.mockReturnValue(sidebar);
     mockedUseIsLumoSmallScreen.mockReturnValue({ isSmallScreen: sidebar?.isSmallScreen ?? false });
 };
-/** `isOverlay` is the provider's own "open and covering the screen" flag — small screens only. */
-const givenRightPanel = (rightPanel: { isOverlay: boolean } | null) => {
+/** Model both the open state and the small-screen-only overlay state. */
+const givenRightPanel = (rightPanel: { isOpen: boolean; isOverlay: boolean } | null) => {
     mockedUseOptionalRightPanel.mockReturnValue(rightPanel);
 };
 const mockedCanUseNativeSidebarLayout = canUseNativeSidebarLayout as jest.Mock;
@@ -35,9 +40,124 @@ const mockedCanUseNativeSidebarLayout = canUseNativeSidebarLayout as jest.Mock;
 describe('useNativeComposerVisibilityApi', () => {
     beforeEach(() => {
         jest.clearAllMocks();
+        (canUseNativeRightPanelLayout as jest.Mock).mockReturnValue(false);
         mockedUseLumoFlags.mockReturnValue({ nativeComposer: true });
         (canShowWebComposer as jest.Mock).mockImplementation((enabled: boolean) => !enabled);
-        givenRightPanel({ isOverlay: false });
+        givenRightPanel({ isOpen: false, isOverlay: false });
+    });
+
+    it('keeps the composer hidden when project instructions close over an open knowledge panel', () => {
+        givenSidebar({ isVisible: false, isSmallScreen: true });
+        givenRightPanel({ isOpen: true, isOverlay: true });
+        mockedCanUseNativeSidebarLayout.mockReturnValue(true);
+        const { rerender } = renderHook(({ open }) => useNativeComposerProjectDetailVisibilityApi(open), {
+            initialProps: { open: true },
+        });
+
+        rerender({ open: false });
+
+        expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(false);
+    });
+
+    it.each([false, true])(
+        'restores layout visibility after closing a docked artifact (knowledge open: %s)',
+        (isKnowledgeOpen) => {
+            givenSidebar({ isVisible: false, isSmallScreen: false });
+            givenRightPanel({ isOpen: isKnowledgeOpen, isOverlay: false });
+            mockedCanUseNativeSidebarLayout.mockReturnValue(true);
+            const { result } = renderHook(
+                () => {
+                    useNativeComposerHostVisibilityApi();
+                    return useArtifactPanelHostActions();
+                },
+                { wrapper: ({ children }) => createElement(ArtifactPanelHostProvider, null, children) }
+            );
+
+            act(() => result.current.setHostVisible(true));
+
+            expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(false);
+
+            act(() => result.current.setHostVisible(false));
+
+            expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(!isKnowledgeOpen);
+        }
+    );
+
+    it.each([false, true])(
+        'fits beside a docked artifact only when the left sidebar is closed (left sidebar: %s)',
+        (isVisible) => {
+            givenSidebar({ isVisible, isSmallScreen: false });
+            givenRightPanel({ isOpen: false, isOverlay: false });
+            mockedCanUseNativeSidebarLayout.mockReturnValue(true);
+            (canUseNativeRightPanelLayout as jest.Mock).mockReturnValue(true);
+            const { result } = renderHook(
+                () => {
+                    useNativeComposerHostVisibilityApi();
+                    return useArtifactPanelHostActions();
+                },
+                { wrapper: ({ children }) => createElement(ArtifactPanelHostProvider, null, children) }
+            );
+
+            act(() => result.current.setHostVisible(true));
+
+            expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(!isVisible);
+        }
+    );
+
+    describe('Android tablets without right-panel fitting', () => {
+        const originalUserAgent = Object.getOwnPropertyDescriptor(navigator, 'userAgent');
+
+        beforeEach(() => {
+            const actualUserAgent = jest.requireActual<typeof UserAgent>('../../../util/userAgent');
+            jest.mocked(canUseNativeSidebarLayout).mockImplementation(actualUserAgent.canUseNativeSidebarLayout);
+            jest.mocked(canUseNativeRightPanelLayout).mockImplementation(actualUserAgent.canUseNativeRightPanelLayout);
+        });
+
+        afterEach(() => {
+            if (originalUserAgent) {
+                Object.defineProperty(navigator, 'userAgent', originalUserAgent);
+            } else {
+                Reflect.deleteProperty(navigator, 'userAgent');
+            }
+        });
+
+        it.each([
+            ['2.0.4', 'artifact'],
+            ['2.2.0', 'artifact'],
+            ['2.0.4', 'files'],
+            ['2.2.0', 'files'],
+        ])('hides the composer on Android %s beside docked %s and restores it on close', (version, panel) => {
+            Object.defineProperty(navigator, 'userAgent', {
+                value: `ProtonLumo/${version} (Android 16; Pixel Tablet)`,
+                configurable: true,
+            });
+            givenSidebar({ isVisible: false, isSmallScreen: false });
+            const { result, rerender } = renderHook(
+                () => {
+                    useNativeComposerHostVisibilityApi();
+                    return useArtifactPanelHostActions();
+                },
+                { wrapper: ({ children }) => createElement(ArtifactPanelHostProvider, null, children) }
+            );
+            expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(true);
+
+            act(() => {
+                if (panel === 'artifact') {
+                    result.current.setHostVisible(true);
+                } else {
+                    givenRightPanel({ isOpen: true, isOverlay: false });
+                    rerender();
+                }
+            });
+            expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(false);
+
+            act(() => {
+                result.current.setHostVisible(false);
+                givenRightPanel({ isOpen: false, isOverlay: false });
+                rerender();
+            });
+            expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(true);
+        });
     });
 
     describe('the composer itself', () => {
@@ -108,9 +228,23 @@ describe('useNativeComposerVisibilityApi', () => {
             expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(false);
         });
 
+        it.each([false, true])(
+            'fits beside a docked knowledge panel only with the left sidebar closed (left sidebar: %s)',
+            (isVisible) => {
+                givenSidebar({ isVisible, isSmallScreen: false });
+                givenRightPanel({ isOpen: true, isOverlay: false });
+                mockedCanUseNativeSidebarLayout.mockReturnValue(true);
+                (canUseNativeRightPanelLayout as jest.Mock).mockReturnValue(true);
+
+                renderHook(() => useNativeComposerHostVisibilityApi());
+
+                expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(!isVisible);
+            }
+        );
+
         it('hides the native composer while the right panel overlays the screen', () => {
             givenSidebar({ isVisible: false, isSmallScreen: true });
-            givenRightPanel({ isOverlay: true });
+            givenRightPanel({ isOpen: true, isOverlay: true });
             mockedCanUseNativeSidebarLayout.mockReturnValue(true);
 
             renderHook(() => useNativeComposerHostVisibilityApi());
@@ -120,12 +254,12 @@ describe('useNativeComposerVisibilityApi', () => {
 
         it('brings the native composer back when the right panel closes', () => {
             givenSidebar({ isVisible: false, isSmallScreen: true });
-            givenRightPanel({ isOverlay: true });
+            givenRightPanel({ isOpen: true, isOverlay: true });
             mockedCanUseNativeSidebarLayout.mockReturnValue(true);
 
             const { rerender } = renderHook(() => useNativeComposerHostVisibilityApi());
 
-            givenRightPanel({ isOverlay: false });
+            givenRightPanel({ isOpen: false, isOverlay: false });
             rerender();
 
             expect(setNativeComposerVisibility).toHaveBeenLastCalledWith(true);

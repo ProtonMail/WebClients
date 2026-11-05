@@ -6,11 +6,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 
+import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
-import {
-    injectNativeImageGenerationHelper,
-    setNativeComposerVisibility,
-} from '../../remote/nativeComposerBridgeHelpers';
+import { injectNativeImageGenerationHelper } from '../../remote/nativeComposerBridgeHelpers';
 import { SketchCanvas } from '../drawingcanvas/SketchCanvas';
 import type { DrawingMode } from '../drawingcanvas/types';
 import { ImageDownloadButton, ImageModifyButton, ImageStyleDropdown } from './ImageActionButtons';
@@ -64,9 +62,7 @@ export const ImagePreviewOverlay = ({
     const [canvasDims, setCanvasDims] = useState<{ width: number; height: number } | null>(null);
     const [imageAspect, setImageAspect] = useState<number | null>(null);
 
-    useEffect(() => {
-        setNativeComposerVisibility(!isOpen);
-    }, [isOpen]);
+    useNativeComposerVisibilityApi({ hideComposer: isOpen });
 
     // Sync mode when overlay opens/closes
     useEffect(() => {
@@ -141,9 +137,9 @@ export const ImagePreviewOverlay = ({
         imageAspect !== null && (imageAspect > EXTREME_ASPECT_MAX || imageAspect < EXTREME_ASPECT_MIN);
 
     return createPortal(
-        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
         <div
             className="image-lightbox fixed inset-0 flex flex-column"
+            // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
             role="dialog"
             aria-modal="true"
             aria-label={filename || c('collider_2025:Label').t`Image preview`}

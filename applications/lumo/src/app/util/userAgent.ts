@@ -142,6 +142,10 @@ export const canUseNativeSidebarLayout = (): boolean => {
     return targetVersion !== null && !isNativeVersionOlderThan(appInfo.version, targetVersion);
 };
 
+/** iOS 2.2.0 also consumes the measured space occupied by docked right panels. */
+export const canUseNativeRightPanelLayout = (): boolean =>
+    getNativeAppInfo()?.platform === 'ios' && canUseNativeSidebarLayout();
+
 /**
  * Extracts the native mobile app version from the User-Agent string
  * Expected format: ProtonLumo/VERSION (Platform details)

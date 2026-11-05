@@ -13,6 +13,7 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import { IcBrandProtonDriveFilled } from '@proton/icons/icons/IcBrandProtonDriveFilled';
 import { DRIVE_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { useNativeComposerVisibilityApi } from '../../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { DriveBrowser } from '../../../components/Files';
 import type { BreadcrumbItem } from '../../../components/Files/DriveBrowser/DriveBreadcrumbs';
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
@@ -30,6 +31,7 @@ interface LinkDriveFolderModalProps extends ModalStateProps {
 }
 
 export const LinkDriveFolderModal = ({ projectId, ...modalProps }: LinkDriveFolderModalProps) => {
+    useNativeComposerVisibilityApi({ hideComposer: Boolean(modalProps.open) });
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
     const space = useLumoSelector(selectSpaceById(projectId));

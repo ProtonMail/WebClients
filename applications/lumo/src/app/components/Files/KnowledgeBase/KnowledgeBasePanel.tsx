@@ -21,7 +21,6 @@ import { getMimeTypeFromExtension } from '../../../util/filetypes';
 import { dedupeAttachmentsByDocumentKey, getAttachmentDocumentKey } from '../../../util/resolveProjectFiles';
 import { useExcelSheetSelection } from '../../Composer/ExcelSheetSelectionModal';
 import { useFileHandling } from '../../Composer/hooks/useFileHandling';
-import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
 import type { ConversationArtifactDrawerEntry } from '../../Conversation/artifact/conversationArtifactDrawerList';
 import { KnowledgeBaseGuestDriveUpsell } from '../../Guest/KnowledgeBaseGuestDriveUpsell';
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
@@ -380,7 +379,6 @@ export const KnowledgeBasePanel = ({
     const dispatch = useLumoDispatch();
     const { createNotification } = useNotifications();
     const contextFilters = useLumoSelector(selectContextFilters);
-    useNativeComposerVisibilityApi({ hideComposer: true });
 
     const [showDriveBrowser, setShowDriveBrowser] = useState(initialShowDriveBrowser);
     const [showKnowledgeExplanation, setShowKnowledgeExplanation] = useState(false);

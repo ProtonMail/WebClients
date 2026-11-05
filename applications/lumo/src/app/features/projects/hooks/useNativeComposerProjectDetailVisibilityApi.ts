@@ -1,21 +1,6 @@
-import { useEffect } from 'react';
+import { useNativeComposerVisibilityApi } from '../../../components/Composer/hooks/useNativeComposerVisibilityApi';
 
-import { setNativeComposerVisibility } from '../../../remote/nativeComposerBridgeHelpers';
-
-/**
- * Hides the native composer while a project-detail modal is open, and shows it
- * again once it closes.
- *
- * The caller passes one combined flag for all such modals instead of calling
- * this hook per modal. With a single flag the composer stays hidden while any
- * of them is open and is only restored once they're all closed.
- */
+/** Keep the composer covered until all project-detail modals close, then restore the current layout's visibility. */
 export const useNativeComposerProjectDetailVisibilityApi = (shouldHideComposer: boolean): void => {
-    useEffect(() => {
-        if (!shouldHideComposer) {
-            return;
-        }
-        setNativeComposerVisibility(false);
-        return () => setNativeComposerVisibility(true);
-    }, [shouldHideComposer]);
+    useNativeComposerVisibilityApi({ hideComposer: shouldHideComposer });
 };
