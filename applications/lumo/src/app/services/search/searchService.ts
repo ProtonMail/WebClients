@@ -16,7 +16,12 @@ import type { IndexableConversation } from '../../workers/search/SearchEngine';
 import { type ProjectKnowledgeSnapshot, findStaleProjectDocumentIds } from '../reconcileProjectSearchIndex';
 import { BM25Index } from './bm25Index';
 import { chunkDocument } from './documentChunker';
-import type { SearchResult, SearchServiceStatus, SearchState } from './types';
+import type { SearchOptions, SearchResult, SearchScope, SearchServiceStatus, SearchState } from './types';
+
+const matchesConversationScope = (conversation: Conversation, scope: SearchScope = 'chats'): boolean => {
+    if (conversation.ghost) return false;
+    return scope === 'schedule-runs' ? Boolean(conversation.scheduleRun) : !conversation.scheduleRun;
+};
 
 const WorkerMessageType = {
     Search: 0,
@@ -74,8 +79,8 @@ function hashString(text: string): string {
     return hash.toString(36);
 }
 
-/** Chats that never appear in search, so are never indexed. */
-const isIndexableConversation = (conversation: Conversation) => !conversation.ghost && !conversation.scheduleRun;
+/** Ghost chats are transient and must never be indexed. */
+const isIndexableConversation = (conversation: Conversation) => !conversation.ghost;
 
 function toIndexableConversation(conversation: Conversation, messages: Message[]): IndexableConversation {
     const indexed = messages
@@ -473,17 +478,20 @@ export class SearchService {
         }
     }
 
-    async getAllConversations(state: SearchState, options?: { hasLumoPlus?: boolean }): Promise<SearchResult[]> {
+    async getAllConversations(state: SearchState, options?: SearchOptions): Promise<SearchResult[]> {
         const { conversations, spaces } = state;
 
         const hasLumoPlus = options?.hasLumoPlus ?? true;
-        // Exclude ghost conversations from search - they are transient and should never surface in results
-        const nonGhostConversations = Object.values(conversations).filter((c) => !c.ghost && !c.scheduleRun);
-        const accessibleConversations = applyRetentionPolicy(nonGhostConversations, hasLumoPlus);
+        const scopedConversations = Object.values(conversations).filter((conversation) =>
+            matchesConversationScope(conversation, options?.scope)
+        );
+        const accessibleConversations = applyRetentionPolicy(scopedConversations, hasLumoPlus);
 
         const results: SearchResult[] = accessibleConversations.map((conversation) => {
             const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId, spaces) : {};
-            const timestamp = new Date(conversation.updatedAt).getTime();
+            const timestamp = new Date(
+                conversation.scheduleRun ? conversation.createdAt : conversation.updatedAt
+            ).getTime();
 
             return {
                 type: 'conversation',
@@ -551,10 +559,10 @@ export class SearchService {
     }
 
     /**
-     * Conversations whose indexed text matches any word of `query`, best first. Empty when the
+     * Allowed conversations whose indexed text matches any word of `query`, best first. Empty when the
      * chat index isn't available, so callers need their own fallback.
      */
-    async rankConversations(query: string, limit: number): Promise<string[]> {
+    async rankConversations(query: string, limit: number, allowedIds: ReadonlySet<string>): Promise<string[]> {
         const words = [...new Set(query.toLowerCase().match(/[\p{L}\p{N}]+/gu) ?? [])]
             .filter((word) => word.length > 1 && !WORKER_QUERY_OPERATORS.has(word))
             .slice(0, MAX_CONVERSATION_QUERY_WORDS);
@@ -562,10 +570,13 @@ export class SearchService {
             return [];
         }
         const results = await this.searchWithWorker(words.join(' OR '));
-        return results.slice(0, limit).map(([, conversationId]) => conversationId);
+        return results
+            .filter(([, conversationId]) => allowedIds.has(conversationId))
+            .slice(0, limit)
+            .map(([, conversationId]) => conversationId);
     }
 
-    async searchAsync(query: string, state: SearchState, options?: { hasLumoPlus?: boolean }): Promise<SearchResult[]> {
+    async searchAsync(query: string, state: SearchState, options?: SearchOptions): Promise<SearchResult[]> {
         const normalizedQuery = query.toLowerCase().trim();
         if (!normalizedQuery) {
             return [];
@@ -575,9 +586,10 @@ export class SearchService {
         const { conversations, messages, spaces } = state;
 
         const hasLumoPlus = options?.hasLumoPlus ?? true;
-        // Exclude ghost conversations from search - they are transient and should never surface in results
-        const nonGhostConversations = Object.values(conversations).filter((c) => !c.ghost && !c.scheduleRun);
-        const accessibleConversations = applyRetentionPolicy(nonGhostConversations, hasLumoPlus);
+        const scopedConversations = Object.values(conversations).filter((conversation) =>
+            matchesConversationScope(conversation, options?.scope)
+        );
+        const accessibleConversations = applyRetentionPolicy(scopedConversations, hasLumoPlus);
         const accessibleConversationIds = new Set(accessibleConversations.map((c) => c.id));
 
         const workerResults = await this.searchWithWorker(normalizedQuery);
@@ -590,7 +602,9 @@ export class SearchService {
 
                 foundConversationIds.add(conversationId);
                 const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId, spaces) : {};
-                const timestamp = new Date(conversation.updatedAt).getTime();
+                const timestamp = new Date(
+                    conversation.scheduleRun ? conversation.createdAt : conversation.updatedAt
+                ).getTime();
 
                 results.push({
                     type: 'conversation',
@@ -609,7 +623,9 @@ export class SearchService {
             const title = conversation.title?.toLowerCase() || '';
             if (title.includes(normalizedQuery)) {
                 const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId, spaces) : {};
-                const timestamp = new Date(conversation.updatedAt).getTime();
+                const timestamp = new Date(
+                    conversation.scheduleRun ? conversation.createdAt : conversation.updatedAt
+                ).getTime();
 
                 results.push({
                     type: 'conversation',
@@ -624,7 +640,7 @@ export class SearchService {
 
         // Search projects by name and description
         Object.values(spaces).forEach((space) => {
-            if (space.spaceType !== SpaceType.Project) {
+            if (options?.scope === 'schedule-runs' || space.spaceType !== SpaceType.Project) {
                 return;
             }
 
@@ -651,14 +667,16 @@ export class SearchService {
                 return;
             }
 
-            const content = message.content?.toLowerCase() || '';
-            if (content.includes(normalizedQuery)) {
+            const messageContent = getMessageContent(message);
+            if (messageContent.toLowerCase().includes(normalizedQuery)) {
                 const conversation = conversations[message.conversationId];
-                if (!conversation || conversation.ghost || conversation.scheduleRun) return;
+                if (!conversation || !accessibleConversationIds.has(conversation.id)) return;
 
                 const projectInfo = conversation.spaceId ? getProjectInfo(conversation.spaceId, spaces) : {};
-                const timestamp = new Date(message.createdAt).getTime();
-                const preview = message.content?.substring(0, 100) || '';
+                const timestamp = new Date(
+                    conversation.scheduleRun ? conversation.createdAt : message.createdAt
+                ).getTime();
+                const preview = messageContent.substring(0, 100);
 
                 results.push({
                     type: 'message',
@@ -700,7 +718,7 @@ export class SearchService {
             }
         });
 
-        const docCandidates = this.driveDocuments
+        const docCandidates = (options?.scope === 'schedule-runs' ? [] : this.driveDocuments)
             .filter((doc) => doc.content)
             .map((doc) => ({
                 id: doc.id,

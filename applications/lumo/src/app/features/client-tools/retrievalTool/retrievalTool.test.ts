@@ -295,7 +295,11 @@ describe('search_knowledge', () => {
             const { context, rankConversations } = withChats(['old', 'ghost-or-unknown']);
 
             expect(await searchedChats(context)).toEqual(['old', 'r1', 'r2', 'r3', 'r4', 'r5']);
-            expect(rankConversations).toHaveBeenCalledWith('budget notes', expect.any(Number));
+            expect(rankConversations).toHaveBeenCalledWith(
+                'budget notes',
+                expect.any(Number),
+                new Set(['r1', 'r2', 'r3', 'r4', 'r5', 'old', 'stale'])
+            );
         });
 
         it('searches every allowed chat when the index has no matches', async () => {

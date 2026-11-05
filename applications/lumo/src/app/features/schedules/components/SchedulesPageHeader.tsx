@@ -6,9 +6,11 @@ import { Button } from '@proton/atoms/Button/Button';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
+import { SearchModal } from '../../../components/Modals/SearchModal/SearchModal';
 import { useLumoFlags } from '../../../hooks/useLumoFlags';
 
 import './SchedulesPageHeader.scss';
@@ -19,6 +21,7 @@ interface SchedulesPageHeaderProps {
 
 export const SchedulesPageHeader = ({ onNewTaskClick }: SchedulesPageHeaderProps) => {
     const history = useHistory();
+    const searchModal = useModalStateObject();
     const { createScheduleTool: ffCreateScheduleTool } = useLumoFlags();
 
     const handleCreateWithLumo = () => {
@@ -50,8 +53,17 @@ export const SchedulesPageHeader = ({ onNewTaskClick }: SchedulesPageHeaderProps
             </div>
             <div className="flex flex-nowrap shrink-0 items-center gap-3">
                 {/* Search button */}
-                <Button aria-label={c('collider_2025:Button').t`Search`} className="shrink-0" icon shape="ghost">
-                    <LumoIcon name="Search" size={20} />
+                <Button
+                    aria-label={
+                        // translator: Opens the search modal for scheduled tasks (imperative).
+                        c('collider_2025:Button').t`Search`
+                    }
+                    className="shrink-0"
+                    icon
+                    onClick={() => searchModal.openModal(true)}
+                    shape="ghost"
+                >
+                    <LumoIcon aria-hidden name="Search" size={20} />
                 </Button>
 
                 {/* Dropdown for creating a new task with the assistant or manually */}
@@ -98,6 +110,7 @@ export const SchedulesPageHeader = ({ onNewTaskClick }: SchedulesPageHeaderProps
                     </Button>
                 )}
             </div>
+            {searchModal.render && <SearchModal {...searchModal.modalProps} scope="schedule-runs" />}
         </div>
     );
 };

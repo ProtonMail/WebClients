@@ -17,25 +17,29 @@ describe('SearchService.rankConversations', () => {
     it('matches any word, leaving out operators, repeats and single letters', async () => {
         const { service, searchWithWorker } = setup([]);
 
-        await service.rankConversations('Budget AND the budget OR Q3 report, a NOT', 10);
+        await service.rankConversations('Budget AND the budget OR Q3 report, a NOT', 10, new Set());
 
         expect(searchWithWorker).toHaveBeenCalledWith('budget OR the OR q3 OR report');
     });
 
-    it('keeps the index order and the limit', async () => {
+    it('keeps the index order and applies the limit only to allowed chats', async () => {
         const { service } = setup([
+            ...Array.from({ length: 100 }, (_, i): [number, string] => [1000 - i, `run-${i}`]),
             [9, 'best'],
             [5, 'second'],
             [1, 'third'],
         ]);
 
-        expect(await service.rankConversations('budget', 2)).toEqual(['best', 'second']);
+        expect(await service.rankConversations('budget', 2, new Set(['best', 'second', 'third']))).toEqual([
+            'best',
+            'second',
+        ]);
     });
 
     it('skips the index for a query with no words', async () => {
         const { service, searchWithWorker } = setup([[1, 'any']]);
 
-        expect(await service.rankConversations('?! -', 5)).toEqual([]);
+        expect(await service.rankConversations('?! -', 5, new Set(['any']))).toEqual([]);
         expect(searchWithWorker).not.toHaveBeenCalled();
     });
 });
