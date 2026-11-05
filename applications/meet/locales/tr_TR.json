@@ -21,7 +21,7 @@
         "Kamera açık"
       ],
       "host": [
-        "sunucu"
+        "görüşme sahibi"
       ],
       "Meeting controls": [
         "Görüşme denetimleri"
@@ -30,7 +30,7 @@
         "Mikrofon kapalı"
       ],
       "Microphone muted": [
-        "Mikrofon sessize alındı"
+        "Mikrofon kapalı"
       ],
       "Microphone on": [
         "Mikrofon açık"
@@ -39,7 +39,7 @@
         "Mikrofon açık"
       ],
       "speaking": [
-        "konuşma"
+        "konuşuyor"
       ]
     },
     "Accessibility announcement": {
@@ -359,6 +359,9 @@
       ],
       "Download": [
         "İndir"
+      ],
+      "Download app": [
+        "Uygulamayı indir"
       ],
       "Download local participant report": [
         "Yerel katılımcı raporunu indir"
@@ -2901,8 +2904,11 @@
       "Delete room": [
         "Odayı sil"
       ],
-      "Do you want people to ${ deviceContentType } you in the meeting?": [
-        "Görüşmede insanların sizinle ${ deviceContentType } yapmasını ister misiniz?"
+      "Do you want people to hear you in the meeting?": [
+        "Görüşmede insanların sizi duymasını istiyor musunuz?"
+      ],
+      "Do you want people to see you in the meeting?": [
+        "Görüşmede insanların sizi görmesini istiyor musunuz?"
       ],
       "Download current logs": [
         "Güncel günlükleri indir"
@@ -2984,6 +2990,9 @@
       ],
       "Get a secure meeting link then add it to your calendar": [
         "Bir güvenli görüşme bağlantısı oluşturun ve bunu takviminize ekleyin"
+      ],
+      "Get the best experience with the ${ protonMeet } desktop app": [
+        "${ protonMeet } bilgisayar uygulaması ile en iyi deneyimi yaşayın"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "about:config adresine gidin, media.peerconnection.enabled değerini bulun ve \"true\" olarak ayarlayın."

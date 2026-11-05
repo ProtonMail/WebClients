@@ -4064,9 +4064,6 @@
       "Attachment": [
         "Vedhæftning"
       ],
-      "Filter on": [
-        "Filtrer efter"
-      ],
       "Next": [
         "Næste"
       ],
@@ -6246,6 +6243,9 @@
       ]
     },
     "Header": {
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Hvilken e-mail brugte du mest før ${ MAIL_APP_NAME }?"
+      ],
       "Contacts": [
         "Kontakter"
       ],
@@ -6287,6 +6287,9 @@
       ],
       "Username": [
         "Brugernavn"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Hvad den primære årsag til, at du tilsluttede dig ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -6726,6 +6729,9 @@
         "${ currentProgress } ud af ${ totalProgress }",
         "${ currentProgress } ud af ${ totalProgress }"
       ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } af ${ steps }"
+      ],
       "${ dateString } at ${ formattedTime }": [
         "${ dateString } til ${ formattedTime }"
       ],
@@ -6994,6 +7000,9 @@
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30-dages fortrydelsesret: annuller indenfor 30 dage af dit køb, og kontakt vores ${ customerSupportLink } for at få en refusion."
       ],
+      "A new or separate address": [
+        "En ny eller separat adresse"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan kun bruges til at bekræfte én ${ BRAND_NAME }-konto"
       ],
@@ -7005,6 +7014,9 @@
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "En sikker forbindelse er afgørende, når der arbejdes eksternt. En VPN beskytter virksomhedsdata mod cybertrusler og holder dit arbejde privat."
+      ],
+      "A specific feature (tell us)": [
+        "En specifik funktion (fortæl os)"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruger er en konto, der er knyttet til et enkelt brugernavn, en enkelt postkasse og en enkelt person"
@@ -7107,6 +7119,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Alle dine kontakter, op til en grænse på ${ maxContact }, vil blive importeret",
         "Alle dine kontakter, op til en grænse på ${ maxContact }, vil blive importeret"
+      ],
+      "Almost done": [
+        "Næsten færdig"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
@@ -7222,6 +7237,9 @@
       "Awaiting transaction": [
         "Afventer transaktion"
       ],
+      "Back": [
+        "Tilbage"
+      ],
       "Background color": [
         "Baggrundsfarve"
       ],
@@ -7296,6 +7314,12 @@
       ],
       "Choose a plan that works best for you.": [
         "Vælg et abonnement, der passer bedst til dig."
+      ],
+      "Choose all that apply.": [
+        "Vælg alle relevante."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Vælg en. Det hjælper os med at gøre ${ MAIL_APP_NAME } bedre."
       ],
       "Choose your service to connect with": [
         "Vælg tjenesten du vil forbinde til"
@@ -7463,6 +7487,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
+      ],
+      "Dismiss": [
+        "Afvis"
       ],
       "Do you remember your password?": [
         "Kan du godt huske din adgangskode?"
@@ -7798,6 +7825,12 @@
       "How hide-my-email aliases works": [
         "Sådan virker hide-my-email-aliasser"
       ],
+      "I didn't have one": [
+        "Jeg havde ikke en"
+      ],
+      "I use other Proton products": [
+        "Jeg bruger andre Proton-produkter"
+      ],
       "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
         "Jeg gennemgår e-mails indenfor den sidste uge, og henter dem der rent faktisk kræver et svar, så du kan tage dig af det i ét hug."
       ],
@@ -7956,6 +7989,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Se hvad du skal gøre her ${ dataLeakedLink }"
       ],
+      "Leave Big Tech": [
+        "Forlad Big Tech"
+      ],
       "Left to Right": [
         "Venstre mod højre"
       ],
@@ -8106,9 +8142,6 @@
       "Move here": [
         "Flyt hertil"
       ],
-      "Move to Primary": [
-        "Flyt til primær"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
       ],
@@ -8118,11 +8151,17 @@
       "newsletter": [
         "nyhedsbrev"
       ],
+      "Next": [
+        "Næste"
+      ],
       "Next time you sign in to your other account": [
         "Næste gang du logger ind på din anden konto"
       ],
       "No action selected": [
         "Ingen handling valgt"
+      ],
+      "No ads": [
+        "Ingen reklamer"
       ],
       "No booking pages yet": [
         "Ingen bookingsider endnu"
@@ -8231,6 +8270,9 @@
       ],
       "On public WiFi networks": [
         "På offentlige WiFi-netværk"
+      ],
+      "One last step": [
+        "Ét sidste trin"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
@@ -8412,6 +8454,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
         "Beskyt din e-mail mod at blive lækket til mailinglister eller spammere med ${ hideMyEmailAliasesLink }."
+      ],
+      "Protection from hackers and leaks": [
+        "Beskyttelse fra hackere og læk"
       ],
       "Public sharing of documents is not yet supported.": [
         "Offentlig deling af dokumenter understøttes ikke endnu."
@@ -8718,6 +8763,9 @@
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Nogle websteder og streamingservices blokerer indhold efter region. En VPN giver dig mulighed for at omgå disse begrænsninger og få fri adgang til internettet."
       ],
+      "Someone recommended it": [
+        "Nogen anbefalede det"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Beklager, denne besked findes ikke eller er allerede udløbet."
       ],
@@ -8733,11 +8781,17 @@
       "Start sharing it with contacts and use it for online services.": [
         "Begynd at dele det med dine kontakter, og brug det til onlinetjenester."
       ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Begynd at bruge ${ MAIL_APP_NAME }"
+      ],
       "Start using the shorter, catchier version of your email address.": [
         "Begynd at bruge den kortere, mere catchy version af din e-mailadresse."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Hold forbindelsen ubesværet ved at aktivere følgende VPN-indstillinger:"
+      ],
+      "Stop companies reading my emails": [
+        "Forhindre virksomheder fra at læse mine e-mails"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Lagringsfunktioner understøttes ikke i denne browser, vi har brug for denne understøttelse for at kunne søge efter beskedindhold."
@@ -8784,6 +8838,9 @@
       ],
       "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
         "Fortæl mig hvornår du er væk og hvad der skal stå. Du får hele svaret at se før det bliver gemt."
+      ],
+      "Tell us more (optional)": [
+        "Uddyb (valgfrit)"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Midlertidigt utilgængelig på grund af høj efterspørgsel. Prøv igen senere."
@@ -9331,8 +9388,17 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Forbind dig til ${ VPN_APP_NAME }, når du rejser eller bruger offentlig WiFi, for at forhindre andre i at spore din onlineaktivitet eller stjæle dine data. Det er helt gratis."
       ],
+      "Which feature? (optional)": [
+        "Hvilken funktion? (valgfrit)"
+      ],
+      "Which provider?": [
+        "Hvilken udbyder?"
+      ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "Med nye e-mail-kategorier lander kun vigtige beskeder i din primære indbakke. Alt andet organiseres i kategorier."
+      ],
+      "Work or business": [
+        "Arbejde eller erhverv"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vil du gerne modtage en ny bekræftelseskode eller bruge en alternativ bekræftelsesmetode?"
@@ -16441,6 +16507,9 @@
       ],
       "Filter name cannot contain only spaces": [
         "Filternavn kan ikke kun indeholde mellemrum"
+      ],
+      "Filter on": [
+        "Filtrer efter"
       ],
       "Filter on...": [
         "Filtrer efter..."

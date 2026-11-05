@@ -8,11 +8,20 @@
       "(opens in new tab)": [
         "(ανοίγει σε νέα καρτέλα)"
       ],
+      "Camera off": [
+        "Κάμερα απενεργοποιημένη"
+      ],
       "camera off": [
         "κάμερα απενεργοποιημένη"
       ],
+      "Camera on": [
+        "Κάμερα ενεργοποιημένη"
+      ],
       "camera on": [
         "κάμερα ενεργοποιημένη"
+      ],
+      "host": [
+        "παρουσιαστής"
       ],
       "Meeting controls": [
         "Στοιχεία ελέγχου συσκέψεων"
@@ -20,8 +29,17 @@
       "microphone muted": [
         "μικρόφωνο απενεργοποιημένο"
       ],
+      "Microphone muted": [
+        "Μικρόφωνο απενεργοποιημένο"
+      ],
+      "Microphone on": [
+        "Μικρόφωνο ενεργοποιημένο"
+      ],
       "microphone on": [
         "μικρόφωνο ενεργό"
+      ],
+      "speaking": [
+        "μιλάει"
       ]
     },
     "Accessibility announcement": {
@@ -341,6 +359,9 @@
       ],
       "Download": [
         "Λήψη"
+      ],
+      "Download app": [
+        "Λήψη εφαρμογής"
       ],
       "Download local participant report": [
         "Λήψη τοπικής έκθεσης συμμετεχόντων"
@@ -2883,9 +2904,6 @@
       "Delete room": [
         "Διαγραφή αίθουσας"
       ],
-      "Do you want people to ${ deviceContentType } you in the meeting?": [
-        "Θέλετε οι άνθρωποι να σας ${ deviceContentType } στη σύσκεψη;"
-      ],
       "Download current logs": [
         "Λήψη τρεχόντων αρχείων καταγραφής"
       ],
@@ -2966,6 +2984,9 @@
       ],
       "Get a secure meeting link then add it to your calendar": [
         "Λάβετε έναν ασφαλή σύνδεσμο σύσκεψης και προσθέστε τον στο ημερολόγιό σας"
+      ],
+      "Get the best experience with the ${ protonMeet } desktop app": [
+        "Απολαύστε την καλύτερη εμπειρία με την εφαρμογή για υπολογιστές ${ protonMeet }"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Μεταβείτε στο about:config, αναζητήστε το media.peerconnection.enabled και ορίστε το σε true."

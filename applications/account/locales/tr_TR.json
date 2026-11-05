@@ -9602,6 +9602,9 @@
       "Best deal": [
         "En iyi teklif"
       ],
+      "Billing details": [
+        "Fatura bilgileri"
+      ],
       "Checkout": [
         "Ödeme yapın"
       ],
@@ -9655,6 +9658,9 @@
       ],
       "Permissions": [
         "İzinler"
+      ],
+      "Plan details": [
+        "Tarife ayrıntıları"
       ],
       "Protection": [
         "Koruma"
@@ -13003,6 +13009,9 @@
       "Signed up": [
         "Hesap açtı"
       ],
+      "Signup link no longer valid": [
+        "Hesap açma bağlantısı artık geçerli değil"
+      ],
       "Smart Routed through a different country.": [
         "Başka bir ülke üzerinden akıllı yönlendirme yapıldı."
       ],
@@ -13326,6 +13335,9 @@
       ],
       "This service is not available to users signing in with single sign-on.": [
         "Bu hizmet, tek oturum açma ile oturum açan kullanıcılar tarafından kullanılamaz."
+      ],
+      "This signup link has expired, been revoked or already been used. Please contact your ${ BRAND_NAME } representative for a new one.": [
+        "Bu hesap açma bağlantısının geçerlilik süresi dolmuş, iptal edilmiş veya daha önce kullanılmış. Yeni bir bağlantı almak için lütfen ${ BRAND_NAME } temsilciniz ile görüşün."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Bu pencereyi kapattığınızda bu kod yeniden görülemeyecek ve artık kimse ile paylaşamayacaksınız."
@@ -15134,6 +15146,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "${ PASS_APP_NAME } uygulamasına uç birimden güvenli olarak erişebilirsiniz. Betik kullanımı, otomasyon ve geliştirme iş akışları için idealdir."
       ],
+      "Account credit": [
+        "Hesap kredisi"
+      ],
       "Account holder": [
         "Hesap sahibi"
       ],
@@ -15368,6 +15383,9 @@
       "Billed monthly.": [
         "Ayda bir faturalanır."
       ],
+      "Billing contact": [
+        "Fatura ilgilisi"
+      ],
       "Billing cycle": [
         "Fatura dönemi"
       ],
@@ -15572,6 +15590,9 @@
       "Credits used": [
         "Kullanılan kredi"
       ],
+      "Currency": [
+        "Para birimi"
+      ],
       "Current display name": [
         "Geçerli görüntülenecek ad"
       ],
@@ -15583,6 +15604,9 @@
       ],
       "Custom email domain": [
         "Özel e-posta etki alanı",
+        "Özel e-posta etki alanları"
+      ],
+      "Custom email domains": [
         "Özel e-posta etki alanları"
       ],
       "Daily email notifications": [
@@ -15599,6 +15623,9 @@
       ],
       "Deals, offers, and marketing emails": [
         "İndirimler, teklifler ve pazarlama e-postaları"
+      ],
+      "Dedicated VPN servers": [
+        "Size ayrılmış VPN sunucuları"
       ],
       "Default email address": [
         "Varsayılan e-posta adresi"
@@ -15942,6 +15969,9 @@
       "Invite via email": [
         "E-posta ile davet edin"
       ],
+      "Invoice email": [
+        "Fatura e-postası"
+      ],
       "Issuer ID": [
         "Yayıncı kimliği"
       ],
@@ -16224,6 +16254,9 @@
       "Organization password": [
         "Kuruluş parolası"
       ],
+      "Organization size": [
+        "Kuruluşun büyüklüğü"
+      ],
       "Other": [
         "Diğer"
       ],
@@ -16256,6 +16289,9 @@
       ],
       "Payment method": [
         "Ödeme yöntemi"
+      ],
+      "Payment terms": [
+        "Ödeme koşulları"
       ],
       "Peak allocated licenses": [
         "Atanmış en yüksek lisans sayısı"
@@ -16594,6 +16630,9 @@
       "System information": [
         "Sistem bilgileri"
       ],
+      "Taxable": [
+        "Vergilendirilebilir"
+      ],
       "The best of ${ BRAND_NAME } with one subscription": [
         "Tek bir abonelikle en iyi ${ BRAND_NAME } hizmetleri"
       ],
@@ -16722,6 +16761,9 @@
       ],
       "Value": [
         "Değer"
+      ],
+      "VAT number": [
+        "KDV numarası"
       ],
       "Vault": [
         "Kasa"
@@ -20758,6 +20800,14 @@
         "Bu işlemi gerçekleştirmek için kuruluş anahtarına erişebilmeniz gerekir."
       ]
     },
+    "Payment method": {
+      "Bank transfer": [
+        "Banka havalesi"
+      ],
+      "Credit card": [
+        "Kredi kartı"
+      ]
+    },
     "Payment Method": {
       "Bank Account": [
         "Banka hesabı"
@@ -20778,6 +20828,15 @@
       ],
       "New credit/debit card": [
         "Yeni kredi ya da banka kartı"
+      ]
+    },
+    "Payment terms": {
+      "${ days } day": [
+        "${ days } gün",
+        "${ days } gün"
+      ],
+      "Due on receipt": [
+        "Alındı ile tamamlanacak"
       ]
     },
     "Payment.Sepa.Action": {
@@ -26917,9 +26976,6 @@
       "Grant access": [
         "Erişim ver"
       ],
-      "Group": [
-        "Grup"
-      ],
       "Group membership": [
         "Grup üyeliği"
       ],
@@ -27274,6 +27330,9 @@
       ],
       "Pay invoice": [
         "Faturayı öde"
+      ],
+      "Payment": [
+        "Ödeme"
       ],
       "Payment failed": [
         "Ödeme yapılamadı"
@@ -27729,6 +27788,9 @@
       "Switch to two-password mode": [
         "İki parola kipini aç"
       ],
+      "Tax": [
+        "Vergi"
+      ],
       "Text": [
         "Metin"
       ],
@@ -28010,6 +28072,9 @@
       ],
       "Your exposed information": [
         "Sızdırılmış bilgileriniz"
+      ],
+      "Your groups": [
+        "Gruplarınız"
       ],
       "Your import is finished!": [
         "İçe aktarma işleminiz tamamlandı!"

@@ -520,6 +520,9 @@
       "Move all items": [
         "Sposta tutti gli elementi"
       ],
+      "Move folder": [
+        "Sposta cartella"
+      ],
       "Move to": [
         "Sposta in..."
       ],
@@ -1249,6 +1252,9 @@
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" non riuscito"
+      ],
+      "Failed to move folder": [
+        "Impossibile spostare la cartella"
       ],
       "Failed to move items": [
         "Impossibile spostare gli elementi"
@@ -2365,6 +2371,9 @@
       "Folder \"${ payload.folder.name }\" created": [
         "Cartella “${ payload.folder.name }” creata"
       ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "La cartella “${ payload.folder.name }” è stata spostata"
+      ],
       "Folder deleted": [
         "Cartella eliminata"
       ],
@@ -2553,11 +2562,13 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Lo spostamento degli elementi in un altro archivio ne cancellerà i collegamenti protetti."
       ],
       "Moving items to trash": [
         "Spostamento degli elementi nel cestino"
@@ -3009,6 +3020,9 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Imposta una password aggiuntiva necessaria per accedere a ${ PASS_APP_NAME }. Verrà aggiunta una password oltre a quella dell'account ${ BRAND_NAME }."
       ],
+      "The folder is already here": [
+        "La cartella è già qui"
+      ],
       "The following ${ totalIgnored } item could not be imported:": [
         "Impossibile importare il seguente ${ totalIgnored } elemento:",
         "Impossibile importare i seguenti ${ totalIgnored } elementi:"
@@ -3221,6 +3235,9 @@
       ],
       "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
         "Quando abilitata, puoi comunque accedere ai tuoi dati ${ PASS_SHORT_APP_NAME } se perdi la connessione Internet o se i server ${ BRAND_NAME } non sono raggiungibili."
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Quando si spostano gli elementi da un archivio all'altro, verranno conservate fino alle ultime 50 modifiche apportate a ciascun elemento."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Quando invii un email da questo alias, l'email mostrerà ${ emailSender } come mittente"
@@ -5492,6 +5509,9 @@
       "Modified": [
         "Modificato"
       ],
+      "Move \"${ folderName }\" to": [
+        "Sposta “${ folderName }” in"
+      ],
       "Move ${ count } item to ${ target }": [
         "Sposta ${ count } elemento in ${ target }",
         "Sposta ${ count } elementi in ${ target }"
@@ -6032,6 +6052,9 @@
       "Move to trash": [
         "Sposta nel cestino"
       ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Spostando la cartella qui si supererebbe il livello massimo di nidificazione delle cartelle"
+      ],
       "No items": [
         "Nessun elemento"
       ],
@@ -6133,6 +6156,9 @@
       ],
       "Verification code is required": [
         "Il codice di verifica è obbligatorio"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Non è possibile spostare una cartella al suo interno o nelle sue sottocartelle"
       ],
       "You have reached the limit of members who can access this item.": [
         "Hai raggiunto il limite di membri che possono accedere a quest elemento."

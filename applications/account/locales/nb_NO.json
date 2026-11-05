@@ -1253,8 +1253,14 @@
       "Google": [
         "Google"
       ],
+      "Google Drive": [
+        "Google Drive"
+      ],
       "Got it": [
         "Skjønner"
+      ],
+      "Got it, connect my Gmail": [
+        "Skjønner, koble til min Gmail"
       ],
       "Grant access": [
         "Gi tilgang"
@@ -1381,6 +1387,9 @@
       ],
       "Learn about recovery options": [
         "Lær om gjenopprettingsalternativer"
+      ],
+      "Learn how this works": [
+        "Lær hvordan dette fungerer"
       ],
       "Learn more": [
         "Lær mer"
@@ -2027,6 +2036,9 @@
       "Switch or add account": [
         "Bytt eller legg til konto"
       ],
+      "Switch to ${ planName }": [
+        "Bytt til ${ planName }"
+      ],
       "Switch to free plan": [
         "Bytt til gratis planen"
       ],
@@ -2379,6 +2391,12 @@
       ],
       "Domains": [
         "Domener"
+      ],
+      "Managed Service Provider": [
+        "Leverandør av administrerte tjenester (MSP)"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Organisasjoner med Managed Service Provider-tillegget kan opprette og administrere datterselskaper."
       ],
       "Servers": [
         "Servere"
@@ -3421,6 +3439,11 @@
       ],
       "Take a tour": [
         "Få en omvisning"
+      ]
+    },
+    "BYOE": {
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Dine nyeste e-poster blir importert først. E-poster du allerede har importert vil ikke bli kopiert igjen."
       ]
     },
     "Calendar access select label": {
@@ -7982,6 +8005,9 @@
       "You need to have an active custom domain address in order to generate an SMTP submission token.": [
         "Du trenger å ha en aktiv egendefinert domeneadresse for å generere et SMTP-innsendingstoken."
       ],
+      "You reached the maximum number of connected addresses": [
+        "Du har nådd det maksimale antallet tilkoblede adresser"
+      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Du har nådd det maksimale tegntallet. Forkort meldingen."
       ],
@@ -10263,6 +10289,9 @@
       "**${ appName }** is not supported.": [
         "**${ appName }** støttes ikke."
       ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** brukes også til å logge på en separat ${ BRAND_NAME }-konto, utenfor ${ MAIL_APP_NAME }."
+      ],
       "**Enable automatic backups** for peace of mind": [
         "**Aktiver automatisk sikkerhetskopiering** for trygghetens skyld"
       ],
@@ -10302,6 +10331,12 @@
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } til",
         "+ ${ invisibleCount } til"
+      ],
+      "1 device per user": [
+        "1 enhet per bruker"
+      ],
+      "1 vault per user": [
+        "1 hvelv per bruker"
       ],
       "2FA disabled": [
         "2FA deaktivert"
@@ -11535,6 +11570,9 @@
       "here": [
         "her"
       ],
+      "Here's what happens when you continue:": [
+        "Her er hva som skjer når du fortsetter:"
+      ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
         "Skjuler identifiserende informasjon ved å laste fjerninnhold gjennom en proxy. Mulighet for å lagre innhold som vedlegg."
       ],
@@ -11988,6 +12026,9 @@
       "Next billing date": [
         "Neste faktureringsdato"
       ],
+      "Next time you sign in to your other account": [
+        "Neste gang du logger på den andre kontoen din"
+      ],
       "No account keys exist": [
         "Ingen kontonøkler finnes"
       ],
@@ -12033,6 +12074,9 @@
       "No payment is required at this time.": [
         "Ingen betaling kreves på dette tidspunktet."
       ],
+      "No payment is required.": [
+        "Ingen betaling kreves."
+      ],
       "No results found": [
         "Ingen resultater funnet"
       ],
@@ -12044,6 +12088,9 @@
       ],
       "Not detected correctly? Choose your provider from the list.": [
         "Ikke funnet riktig? Velg leverandøren fra listen."
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Ingenting endres i din andre ${ BRAND_NAME }-konto."
       ],
       "Number of dedicated servers in the organization": [
         "Antall dedikerte servere i organisasjonen"
@@ -13637,6 +13684,12 @@
       "You have a trial ${ planTitle } subscription. No payment is required at this time. Your subscription will be automatically renewed at the end of the trial period.": [
         "Du har et prøveabonnement på ${ planTitle }. Ingen betaling kreves på dette tidspunktet. Abonnementet ditt fornyes automatisk på slutten av prøveperioden."
       ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en ubetalt faktura: ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en ubetalt faktura: ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You have no calendars to export.": [
         "Du har ingen kalendere å eksportere."
       ],
@@ -13718,6 +13771,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Du vil ikke kunne gjenopprette låste data ved hjelp av de nedlastede gjenopprettingsfilene. Dette vil også deaktivere enhetsbasert gjenoppretting."
       ],
+      "You'll choose a new username": [
+        "Du velger et nytt brukernavn"
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du mottar kredittbelønningen én måned etter at vennen din abonnerer på en årsplan, og to måneder etter at de abonnerer på en månedlig plan."
       ],
@@ -13730,6 +13786,9 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Du vil da bli fakturert hver ${ renewCycle } måned for ${ renewAmountStr }. Du kan avbryte når som helst.",
         "Du vil da bli fakturert hver ${ renewCycle } måned for ${ renewAmountStr }. Du kan avbryte når som helst."
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "Du bruker den til å logge på fra da av. Det er den eneste endringen."
       ],
       "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
         "Du er i ferd med å logge inn på ${ BRAND_NAME }-kontoen din på denne adressen:"
@@ -13807,6 +13866,9 @@
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
       ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Din gratis prøveperiode er avsluttet. Abonner nå for å holde teamets tilgang uavbrutt og kontoene sikre."
+      ],
       "Your free trial includes 1 dedicated server.": [
         "Din gratis prøveperiode inkluderer én dedikert server."
       ],
@@ -13815,6 +13877,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis prøveperiode ble vellykket konvertert til et månedlig abonnement. Fornyelsesdatoen din er ${ nextBillingDate }."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Gmail-en din kobles til denne ${ MAIL_APP_NAME }-adressen"
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din informasjon er trygg hos oss. Vi kontakter deg kun når det kreves for å tilby våre tjenester."
@@ -14200,6 +14265,9 @@
       "Cancel / close": [
         "Avbryt / lukk"
       ],
+      "Close ${ LUMO_SHORT_APP_NAME }": [
+        "Lukk ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Close draft": [
         "Lukk utkast"
       ],
@@ -14311,6 +14379,9 @@
       "Next period": [
         "Neste periode"
       ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Åpne ${ LUMO_SHORT_APP_NAME } / gå til skrivefeltet"
+      ],
       "Open command panel": [
         "Åpne kommandopanelet"
       ],
@@ -14383,6 +14454,9 @@
       ]
     },
     "Keyboard shortcut section name": {
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "${ LUMO_SHORT_APP_NAME }-snarveier"
+      ],
       "Action shortcuts": [
         "Snarveier for handling"
       ],
@@ -15014,6 +15088,9 @@
       ],
       "Credits used": [
         "Kreditter brukt"
+      ],
+      "Currency": [
+        "Valuta"
       ],
       "Current display name": [
         "Gjeldende visningsnavn"
@@ -16609,6 +16686,9 @@
       ],
       "Pay invoice": [
         "Betal faktura"
+      ],
+      "Pay it": [
+        "Betal"
       ],
       "Privacy policy": [
         "Personvernerklæring"
@@ -18958,6 +19038,9 @@
       "Last chance to get 80% off your first month of ${ plan }.": [
         "Siste sjanse til å få 80% rabatt på den første måneden med ${ plan }."
       ],
+      "Last chance to get your first month of ${ plan } at this price.": [
+        "Siste sjanse til å få din første måned med ${ plan } til denne prisen."
+      ],
       "Last day to save": [
         "Siste dag for å spare"
       ],
@@ -19040,6 +19123,9 @@
       "Plus": [
         "Plus"
       ],
+      "Short @pm.me address": [
+        "Kort @pm.me-adresse"
+      ],
       "Storage": [
         "Lagringsplass"
       ],
@@ -19070,6 +19156,21 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         " besøk vårt ${ helpCenterLink } eller ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Legg til en betalingsmåte** for å fortsette å bruke alle funksjonene etter at prøveperioden er over."
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Avbryt når som helst før da.** Du kan bruke ${ planTitle } helt til prøveperioden avsluttes, gratis."
+      ],
+      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
+        "**Hvis du fortsetter etter prøveperioden,** kan du si opp innen 30 dager og få en forholdsmessig refusjon."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Når det fulle abonnementet ditt starter ...** Du kan fortsatt si opp innen 30 dager og få en forholdsmessig refusjon."
+      ],
+      "Add a payment method": [
+        "Legg til betalingsmåte"
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Avbryt når som helst før ${ cancelDate }."
       ],
@@ -19085,11 +19186,20 @@
       "help center": [
         "hjelpesenter"
       ],
+      "If you continue after your trial,": [
+        "Hvis du fortsetter etter prøveperioden,"
+      ],
       "If you need help,": [
         "Hvis du trenger hjelp,"
       ],
       "Once your full subscription starts...": [
         "Når ditt fulle abonnement starter..."
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "for å fortsette å bruke alle funksjonene etter at prøveperioden er over."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "du kan si opp innen 30 dager og få en forholdsmessig refusjon."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "Du kan fortsatt kansellere innen 30 dager og få en forholdsmessig refusjon."
@@ -20175,6 +20285,12 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (ekskl. MVA)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan ikke kombineres med ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } er kun tilgjengelig med forretningsplaner."
+      ],
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -20187,8 +20303,17 @@
       "Amount due after trial on ${ formattedDate }": [
         "Beløp som forfaller etter prøveperioden på ${ formattedDate }"
       ],
+      "An organization is required for this plan.": [
+        "Det kreves en organisasjon for denne planen."
+      ],
       "Billing Country": [
         "Faktureringsland"
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Å kjøpe kreditter krever et separat kjøp."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Ved å bytte sier du deg enig med våre ${ termsLink }."
       ],
       "Card number": [
         "Kortnummer"
@@ -20235,17 +20360,32 @@
       "Offer unavailable": [
         "Tilbudet er utilgjengelig"
       ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Kun én ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan kjøpes."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Betal med ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Betalingsmåte kreves for at abonnementet skal aktiveres etter at prøveperioden er over."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Planbytte er ikke kompatibel av følgende årsaker:"
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Lukk ekstra lommebokkontoer før du endrer planen din."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Lukk ekstra lommebøker før du endrer planen din."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktiver abonnementet på nytt først for å redusere antall tillegg."
       ],
       "Processing payment": [
         "Behandler betaling"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet-seter må samsvare med antall medlemmer."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Fornyelsespriser kan endres i henhold til ${ termsAndConditionsLink }."
@@ -20268,6 +20408,18 @@
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelse.",
         "Rabatten er gyldig for ${ renewalsWithCoupon } fornyelser."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Den valgte planen tilbyr ikke nok adresser for kontoen din."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Den valgte planen tilbyr ikke nok domener for kontoen din."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Den valgte planen tilbyr ikke nok medlemmer for kontoen din."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Den valgte planen tilbyr ikke nok lagringsplass for kontoen din."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Den spesielt rabatterte prisen er gyldig i ${ couponRedemptions } måned. Deretter fornyes den automatisk til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
@@ -20301,17 +20453,38 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Denne handlingen utvider det eksisterende abonnementet. Du vil kun bli belastet for de nye tilleggene og den gjenværende tiden av den nåværende faktureringssyklusen. Fornyelsesdatoen for abonnementet ditt vil ikke bli endret."
       ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Denne dedikerte serveren er tilordnet en gateway og kan ikke endres."
+      ],
       "This offer is not available with your current plan.": [
         "Dette tilbudet er ikke tilgjengelig med din nåværende plan."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Denne betalingsmåten vil bli din nye standard for alle fremtidige fornyelser."
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Denne planen støtter ikke de administrerte funksjonene på kontoen din."
+      ],
       "This plan doesn’t support the members on your account.": [
         "Dette abonnementet støtter ikke medlemmene på kontoen din."
       ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Dette abonnementet kan ikke fullføres akkurat nå. Prøv igjen."
+      ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Prøveplaner støtter ikke ${ LUMO_SHORT_APP_NAME }-seter."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Prøveplaner støtter ikke dedikerte IP-er."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Prøveplaner støtter ikke Scribe-seter."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Prøveplaner støtter ikke så mange medlemmer."
       ],
       "VAT number": [
         "MVA-nummer"
@@ -20324,6 +20497,9 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Du har allerede et abonnement på denne planen. Du kan endre abonnementet ditt på ${ subscriptionPlatform }."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Du eier allerede ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Du vil bli belastet ${ amountToCharge } fra den valgte betalingsmåten."
@@ -26095,9 +26271,6 @@
       "Grant access": [
         "Gi tilgang"
       ],
-      "Group": [
-        "Gruppe"
-      ],
       "Group membership": [
         "Gruppemedlemskap"
       ],
@@ -26836,6 +27009,9 @@
       ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "Styrk sikkerheten på alle enhetene dine med ${ passPlusPlanName }. ${ upgradeButton }"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Abonner på ${ planTitle }"
       ],
       "Subscription": [
         "Abonnement"
@@ -28114,6 +28290,9 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Du kan ikke endre dine egne roller. Be en annen administrator om å endre dem."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du vil kunne tildele roller når brukeren har godtatt invitasjonen."

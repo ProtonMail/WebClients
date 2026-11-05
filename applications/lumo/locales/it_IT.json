@@ -1114,6 +1114,9 @@
       "Manage files": [
         "Gestisci file"
       ],
+      "Manage skills": [
+        "Gestire le competenze"
+      ],
       "Manage Subscription": [
         "Gestisci abbonamento"
       ],
@@ -1204,6 +1207,9 @@
       ],
       "Upload": [
         "Carica"
+      ],
+      "Upload a skill": [
+        "Carica una competenza"
       ],
       "Upload file to Drive": [
         "Carica file su Drive"
@@ -1690,9 +1696,6 @@
       "File uploaded but failed to add to knowledge base": [
         "File aggiunto con successo alla base di conoscenza"
       ],
-      "Monthly spending limit could not be saved. Please try again.": [
-        "Impossibile salvare il limite di spesa mensile. Riprovare."
-      ],
       "Name is required": [
         "Il nome è obbligatorio"
       ],
@@ -1743,9 +1746,6 @@
       ],
       "This project is full to the whiskers. Delete a conversation to make room for a new one and keep ${ LUMO_SHORT_APP_NAME } purring.": [
         "Questo progetto è pieno fino ai baffi. Elimina una conversazione per fare spazio a una nuova e far sì che ${ LUMO_SHORT_APP_NAME } continui a fare le fusa."
-      ],
-      "Top-up amount must be between ${ formattedMinAmount } and ${ formattedMaxAmount }": [
-        "L'importo della ricarica deve essere compreso tra ${ formattedMinAmount } e ${ formattedMaxAmount }"
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited chats, extended history, access to advanced AI models, and more.": [
         "Esegui l'aggiornamento a ${ LUMO_SHORT_APP_NAME } Plus per chat illimitate, cronologia estesa, accesso a modelli AI avanzati e altro ancora."
@@ -1994,14 +1994,15 @@
         "${ fileCount } file",
         "${ fileCount } file"
       ],
-      "${ formattedSpend } of ${ formattedLimit } used this month": [
-        "${ formattedSpend } su ${ formattedLimit } spesi questo mese"
-      ],
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } è un'IA orientata alla privacy che ti aiuta a fare di più, mantenendo sicuri i tuoi dati. Sblocca tutto il suo potenziale e goditi l'accesso anticipato alle nuove funzionalità non appena saranno introdotte."
       ],
       "${ LUMO_SHORT_APP_NAME } can process a limited amount of information per conversation. This shows what's currently using that space. When it fills up, older messages are summarized — not deleted — so you can keep chatting. Your full chat history stays in the conversation.": [
         "${ LUMO_SHORT_APP_NAME } può elaborare una quantità limitata di informazioni per ogni conversazione. Qui puoi vedere cosa sta occupando quello spazio al momento. Quando lo spazio si esaurisce, i messaggi più vecchi vengono sintetizzati — non eliminati — in modo che tu possa continuare a chattare. La cronologia completa della chat rimane nella conversazione."
+      ],
+      "${ LUMO_SHORT_APP_NAME } can search ${ searchableFiles } of ${ totalFiles } file in this folder. Link a smaller folder to include the rest.": [
+        "${ LUMO_SHORT_APP_NAME } può effettuare la ricerca in ${ searchableFiles } dei ${ totalFiles } file presenti in questa cartella. Collega una cartella più piccola per includere il resto.",
+        "${ LUMO_SHORT_APP_NAME } può effettuare la ricerca in ${ searchableFiles } dei ${ totalFiles } file presenti in questa cartella. Collega una cartella più piccola per includere il resto."
       ],
       "${ onDemandCount } large file is read on demand: ${ LUMO_SHORT_APP_NAME } looks up the parts it needs instead of loading it all.": [
         "${ onDemandCount } file di grandi dimensioni viene letto su richiesta: ${ LUMO_SHORT_APP_NAME } recupera solo le parti necessarie invece di caricarle tutte.",
@@ -2269,6 +2270,9 @@
       "Loading available models…": [
         "Caricamento dei modelli disponibili…"
       ],
+      "Loading balance…": [
+        "Caricamento della bilancia…"
+      ],
       "Loading usage…": [
         "Caricamento dell'utilizzo in corso…"
       ],
@@ -2302,12 +2306,6 @@
       "Monitor your organization's API balance and token usage.": [
         "Monitora lo stato delle API della tua organizzazione e l'utilizzo dei token."
       ],
-      "Monthly spending limit reached. API requests are paused until next month.": [
-        "Limite di spesa mensile raggiunto. Le richieste API sono sospese fino al mese prossimo."
-      ],
-      "Monthly spending limit: ${ formattedSpend } of ${ formattedLimit } used (${ limitUsagePercent }%)": [
-        "Limite di spesa mensile: ${ formattedSpend } su ${ formattedLimit } utilizzati (${ limitUsagePercent }%)"
-      ],
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "Non incorporare mai le chiavi API nei pacchetti client-side. In produzione, utilizza variabili di ambiente e un proxy server-side."
       ],
@@ -2329,14 +2327,14 @@
       "No members match your search.": [
         "Nessun membro corrisponde alla tua ricerca."
       ],
-      "No monthly spending limit": [
-        "Nessun limite di spesa mensile"
-      ],
       "No new memories were found in your recent chats.": [
         "Non sono stati trovati nuovi ricordi nelle tue chat recenti."
       ],
       "No nodes in this workflow.": [
         "Nessun nodo in questo workflow."
+      ],
+      "No skills turned on": [
+        "Nessuna competenza attivata"
       ],
       "No supported files in this folder": [
         "Nessun file supportato in questa cartella"
@@ -2355,9 +2353,6 @@
       ],
       "Pass a model ID in your request. Prices are list prices in USD per million tokens (MTok).": [
         "Inserisci l'ID del modello nella tua richiesta. I prezzi indicati sono prezzi di listino in USD per milione di token (MTok)."
-      ],
-      "Pause API requests until next month once this is reached.": [
-        "Una volta raggiunto questo limite, sospendere le richieste API fino al mese prossimo."
       ],
       "Pay only for the tokens you use. Prices in USD per 1M tokens.": [
         "Paga solo i token che utilizzi. Prezzi in USD per 1 milione di token."
@@ -3476,6 +3471,9 @@
       "Web search": [
         "Ricerca web"
       ],
+      "What can ${ LUMO_SHORT_APP_NAME } see?": [
+        "Cosa può vedere ${ LUMO_SHORT_APP_NAME }?"
+      ],
       "What you can build": [
         "Cosa puoi realizzare"
       ],
@@ -3759,6 +3757,9 @@
       "Actions for ${ label }": [
         "Azioni per ${ label }"
       ],
+      "Add all": [
+        "Aggiungi tutti"
+      ],
       "Add column right": [
         "Aggiungi colonna a destra"
       ],
@@ -3768,8 +3769,14 @@
       "Add details": [
         "Aggiungi informazioni"
       ],
+      "Add file": [
+        "Aggiungi file"
+      ],
       "Add more information to improve the response": [
         "Aggiungi più informazioni per migliorare la risposta"
+      ],
+      "Add plugin": [
+        "Aggiungere plugin"
       ],
       "Add row below": [
         "Aggiungi riga sotto"
@@ -3798,6 +3805,9 @@
       "Bold": [
         "Grassetto"
       ],
+      "Browse skills from ${ BRAND_NAME }": [
+        "Scopri le competenze offerte da ${ BRAND_NAME }"
+      ],
       "Bulleted list": [
         "Elenco puntato"
       ],
@@ -3815,6 +3825,12 @@
       ],
       "Checklist": [
         "Checklist"
+      ],
+      "Choose a folder": [
+        "Scegli una cartella"
+      ],
+      "Choose files": [
+        "Scegli i file"
       ],
       "Choose project icon": [
         "Scegli un'icona per il progetto"
@@ -3837,6 +3853,9 @@
       "Code block": [
         "Blocco di codice"
       ],
+      "Connect": [
+        "Connetti"
+      ],
       "Connector settings": [
         "Impostazioni del connettore"
       ],
@@ -3855,11 +3874,17 @@
       "Create": [
         "Crea"
       ],
+      "Create a skill": [
+        "Crea una competenza"
+      ],
       "Create folder": [
         "Crea una cartella"
       ],
       "Create shareable card": [
         "Crea scheda condivisibile"
+      ],
+      "Create with ${ LUMO_SHORT_APP_NAME }": [
+        "Crea con ${ LUMO_SHORT_APP_NAME }"
       ],
       "Dark": [
         "Scuro"
@@ -3873,8 +3898,8 @@
       "Delete column": [
         "Elimina colonna"
       ],
-      "Delete conversation": [
-        "Elimina conversazione"
+      "Delete file": [
+        "Elimina file"
       ],
       "Delete project": [
         "Elimina progetto"
@@ -3882,11 +3907,11 @@
       "Delete row": [
         "Elimina riga"
       ],
+      "Delete skill": [
+        "Elimina competenza"
+      ],
       "Delete table": [
         "Elimina tabella"
-      ],
-      "Delete task": [
-        "Elimina attività"
       ],
       "Describe desired changes...": [
         "Descrivi i cambiamenti desiderati"
@@ -3896,6 +3921,9 @@
       ],
       "Discard changes": [
         "Annulla le modifiche"
+      ],
+      "Dismiss": [
+        "Ignora"
       ],
       "Dismiss questions": [
         "Ignora le domande"
@@ -3932,6 +3960,15 @@
       ],
       "Edit project": [
         "Modifica il progetto"
+      ],
+      "Edit search settings": [
+        "Modifica le impostazioni di ricerca"
+      ],
+      "Edit source": [
+        "Modifica origine"
+      ],
+      "Enable connector": [
+        "Abilita connettore"
       ],
       "Enable notifications": [
         "Attiva le notifiche"
@@ -4044,9 +4081,6 @@
       "Open chat": [
         "Apri chat"
       ],
-      "Open conversation": [
-        "Apri conversazione"
-      ],
       "Open scheduled task: ${ name }": [
         "Apri attività pianificata: ${ name }"
       ],
@@ -4058,6 +4092,9 @@
       ],
       "Open task": [
         "Apri attività"
+      ],
+      "Pause": [
+        "Pausa"
       ],
       "PDF": [
         "PDF"
@@ -4119,8 +4156,8 @@
       "Request a shorter, more focused response": [
         "Richiedi una risposta più breve e concisa."
       ],
-      "Reset": [
-        "Azzera"
+      "Resume": [
+        "Riprendi"
       ],
       "Retry": [
         "Riprova"
@@ -4130,6 +4167,9 @@
       ],
       "Reveal my profile": [
         "Rivela il mio profilo"
+      ],
+      "Run history": [
+        "Esegui la cronologia"
       ],
       "Run now": [
         "Fai partire ora"
@@ -4158,8 +4198,17 @@
       "Send": [
         "Invia"
       ],
+      "Set up": [
+        "Imposta"
+      ],
+      "Set up manually": [
+        "Configura manualmente"
+      ],
       "Share": [
         "Condividi"
+      ],
+      "Show file requirements": [
+        "Mostra i requisiti del file"
       ],
       "Show knowledge panel": [
         "Mostra pannello delle conoscenze"
@@ -4206,6 +4255,9 @@
       "Try this": [
         "Prova questo"
       ],
+      "Turn on all ${ skill.name } skills": [
+        "Attiva tutte le competenze ${ skill.name }"
+      ],
       "Undo": [
         "Annulla"
       ],
@@ -4226,6 +4278,9 @@
       ],
       "Upload your AI export": [
         "Carica la tua esportazione IA"
+      ],
+      "Use general setting": [
+        "Utilizza le impostazioni generali"
       ],
       "Versions and actions": [
         "Versioni e azioni"
@@ -4305,6 +4360,9 @@
       ]
     },
     "collider_2025:Button": {
+      "Add": [
+        "Aggiungi"
+      ],
       "Add instructions to tailor ${ LUMO_SHORT_APP_NAME }'s responses": [
         "Aggiungi istruzioni per personalizzare le risposte di ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -4331,6 +4389,9 @@
       ],
       "Create task": [
         "Crea attività"
+      ],
+      "Customize": [
+        "Personalizza"
       ],
       "Delete": [
         "Elimina"
@@ -4421,19 +4482,52 @@
       ]
     },
     "collider_2025:Description": {
+      "Allow this task to use these tools without asking each time.": [
+        "Consenti a questa attività di utilizzare questi strumenti senza chiedere conferma ogni volta."
+      ],
       "Big Tech AI built a scarily accurate profile of me from my chat history. See what yours knows about you 👀": [
         "L'intelligenza artificiale delle grandi aziende tecnologiche ha creato un profilo di me incredibilmente accurato basandosi sulla mia cronologia delle chat. Scopri cosa sa di te la tua 👀"
       ],
-      "Run without asking, using only the connectors you allow. Off: pause and notify you before each tool that requires confirmation.": [
-        "Esegui senza chiedere conferma, utilizzando solo i connettori da te autorizzati. Disattivato: mette in pausa e ti avvisa prima di ogni strumento che richiede conferma."
+      "Catch up on key details and talking points before your next scheduled meeting.": [
+        "Informati sui dettagli principali e sugli argomenti da trattare prima della tua prossima riunione in programma."
       ],
-      "Use the connectors above without asking. Off: pause and notify me before each Ask tool.": [
-        "Usa i connettori qui sopra senza chiedere. Disattivato: metti in pausa e avvisami prima di ogni strumento Ask."
+      "Explore fresh angles for content and campaigns that speak to your audience.": [
+        "Scopri nuovi approcci per creare contenuti e campagne che coinvolgano il tuo pubblico."
+      ],
+      "Get the latest news and developments on the subjects you care about.": [
+        "Rimani aggiornato sulle ultime notizie e novità relative agli argomenti che ti interessano."
+      ],
+      "Let ${ LUMO_SHORT_APP_NAME } use selected tools automatically. When off, the task pauses for your approval before using a tool that requires confirmation.": [
+        "Consenti a ${ LUMO_SHORT_APP_NAME } di utilizzare automaticamente gli strumenti selezionati. Se questa opzione è disattivata, l'attività si interrompe in attesa della tua approvazione prima di utilizzare uno strumento che richiede conferma."
+      ],
+      "See which ${ MAIL_APP_NAME } emails need a reply and draft responses in your voice.": [
+        "Scopri quali email di ${ MAIL_APP_NAME } richiedono una risposta e scrivi le bozze delle risposte nel tuo stile."
+      ],
+      "Start each morning with your schedule, priorities, and updates in one place.": [
+        "Inizia ogni mattina con il tuo programma, le tue priorità e gli aggiornamenti tutti in un unico posto."
+      ],
+      "Summarize what you achieved, what is still open, and what comes next.": [
+        "Riassumi ciò che hai realizzato, ciò che è ancora in sospeso e quali saranno i prossimi passi."
       ]
     },
     "collider_2025:Error": {
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to run, but it isn't available in this browser. This can happen when cookies or website data are blocked, in private browsing, or with Lockdown Mode enabled. Please allow website data for this site and reload.": [
         "${ LUMO_SHORT_APP_NAME } richiede l'archiviazione locale del database (IndexedDB) per funzionare, ma non è disponibile in questo browser. Questo può accadere quando i cookie o i dati del sito web sono bloccati, nella navigazione privata o con la modalità di isolamento attivata. Consenti i dati del sito web per questo sito e ricarica."
+      ],
+      "A file with this path already exists": [
+        "Esiste già un file con questo percorso"
+      ],
+      "A folder with this name already exists": [
+        "Esiste già una cartella con questo nome"
+      ],
+      "Add a description so ${ LUMO_SHORT_APP_NAME } knows when to use this skill": [
+        "Aggiungi una descrizione in modo che ${ LUMO_SHORT_APP_NAME } sappia quando utilizzare questa skill"
+      ],
+      "Add a file name after the folder, like ${ path }/notes.md": [
+        "Aggiungi un nome di file dopo la cartella, ad esempio ${ path }/notes.md"
+      ],
+      "Add a name": [
+        "Aggiungere un nome"
       ],
       "Artifact has no content to save.": [
         "Artifact non ha contenuti da salvare."
@@ -4450,8 +4544,17 @@
       "Conversation export files must contain a JSON array.": [
         "I file di esportazione delle conversazioni devono contenere un array JSON."
       ],
+      "Could not add the skill": [
+        "Impossibile aggiungere l'abilità"
+      ],
       "Could not build HTML for PDF export.": [
         "Impossibile generare il codice HTML per l'esportazione in PDF."
+      ],
+      "Could not copy to clipboard": [
+        "Impossibile copiare negli appunti"
+      ],
+      "Could not download the skill": [
+        "Impossibile scaricare la skill"
       ],
       "Could not enable desktop notifications. Please try again.": [
         "Impossibile abilitare le notifiche sul desktop. Riprova."
@@ -4468,11 +4571,23 @@
       "Could not load skills": [
         "Impossibile caricare le abilità"
       ],
+      "Could not load the skill files": [
+        "Impossibile caricare i file delle abilità"
+      ],
+      "Could not load your skills.": [
+        "Impossibile caricare le tue competenze."
+      ],
       "Could not open notification settings. Please open System Settings manually.": [
         "Impossibile aprire le impostazioni delle notifiche. Aprire manualmente le Impostazioni di sistema."
       ],
+      "Could not open the desktop settings": [
+        "Impossibile aprire le impostazioni del desktop"
+      ],
       "Could not read this file.": [
         "Impossibile leggere questo file."
+      ],
+      "Could not save the skill": [
+        "Impossibile salvare la competenza"
       ],
       "Could not save this task. Reload the page and try again.": [
         "Impossibile salvare questa attività. Aggiorna la pagina e riprova."
@@ -4482,6 +4597,9 @@
       ],
       "Could not update this task. Reload the page and try again.": [
         "Impossibile aggiornare questa attività. Aggiorna la pagina e riprova."
+      ],
+      "Could not upload the skill": [
+        "Impossibile caricare la competenza"
       ],
       "Database connection lost. Please refresh the page to continue.": [
         "Connessione al database persa. Aggiorna la pagina per continuare."
@@ -4500,6 +4618,12 @@
       ],
       "Error uploading file: ${ file.name }": [
         "Errore durante il caricamento del file: ${ file.name }"
+      ],
+      "Executable files are not allowed in skills": [
+        "I file eseguibili non sono consentiti nelle competenze"
+      ],
+      "Executable files are not allowed in skills: ${ path }": [
+        "I file eseguibili non sono consentiti nelle competenze: ${ path }"
       ],
       "Failed to browse folder": [
         "Impossibile sfogliare la cartella"
@@ -4579,14 +4703,41 @@
       "Something went wrong starting the analysis.": [
         "Si è verificato un errore durante l'avvio dell'analisi."
       ],
+      "The plugin.json file could not be read.": [
+        "Impossibile leggere il file plugin.json."
+      ],
+      "The skill description must be ${ SKILL_DESCRIPTION_MAX_LENGTH } characters or fewer.": [
+        "La descrizione dell'abilità deve contenere al massimo ${ SKILL_DESCRIPTION_MAX_LENGTH } caratteri."
+      ],
+      "The skill name must be ${ SKILL_NAME_MAX_LENGTH } characters or fewer.": [
+        "Il nome dell'abilità deve contenere al massimo ${ SKILL_NAME_MAX_LENGTH } caratteri."
+      ],
+      "The upload must include a SKILL.md file.": [
+        "Il file caricato deve includere un file SKILL.md."
+      ],
       "The uploaded file is not valid JSON.": [
         "Il file caricato non è un file JSON valido."
       ],
       "This does not look like a ChatGPT or Claude export.": [
         "Questo non sembra un file esportato da ChatGPT o Claude."
       ],
+      "This file could not be read.": [
+        "Non è stato possibile leggere questo file."
+      ],
       "This scheduled task no longer exists. Reload the page and try again.": [
         "Questa attività pianificata non esiste più. Aggiorna la pagina e riprova."
+      ],
+      "Update ${ LUMO_SHORT_APP_NAME } Desktop to use read-only connector access for this task.": [
+        "Aggiorna ${ LUMO_SHORT_APP_NAME } Desktop in modo che utilizzi l'accesso al connettore in sola lettura per questa attività."
+      ],
+      "Use ${ maxLength } characters or fewer": [
+        "Utilizza al massimo ${ maxLength } caratteri"
+      ],
+      "Use a .md, .zip or .skill file, or a folder.": [
+        "Utilizza un file .md, .zip o .skill oppure una cartella."
+      ],
+      "Use a relative path, like references/guide.md": [
+        "Utilizza un percorso relativo, ad esempio references/guide.md"
       ],
       "We could not read this file. Select it again, or move it out of cloud storage before uploading.": [
         "Non siamo riusciti a leggere questo file. Selezionalo di nuovo oppure spostalo fuori dall'archivio cloud prima di caricarlo."
@@ -4652,12 +4803,22 @@
       ]
     },
     "collider_2025:Info": {
-      " Chat in Project": [
-        " Chatta nel progetto",
-        " Chat in Progetto"
-      ],
       "\"${ file.name }\" is still being indexed. Content will be loaded when you send.": [
         "“${ file.name }” è ancora in fase di indicizzazione. Il contenuto verrà caricato al momento dell'invio."
+      ],
+      "\"${ skillName }\" and its files will be deleted. This cannot be undone.": [
+        "“${ skillName }” e i relativi file verranno eliminati. Questa operazione non può essere annullata."
+      ],
+      "${ count } skill · by ${ author }": [
+        "${ count } competenza · di ${ author }",
+        "${ count } competenze · di ${ author }"
+      ],
+      "${ finding.path }, line ${ finding.line }": [
+        "${ finding.path }, riga ${ finding.line }"
+      ],
+      "${ findingCount } thing to review": [
+        "${ findingCount } cosa da rivedere",
+        "${ findingCount } cose da rivedere"
       ],
       "${ lineCount } line": [
         "${ lineCount } riga",
@@ -4666,8 +4827,11 @@
       "${ LUMO_SHORT_APP_NAME } and edits change the latest version.": [
         "${ LUMO_SHORT_APP_NAME } e le modifiche apportate aggiornano l'ultima versione."
       ],
-      "${ LUMO_SHORT_APP_NAME } can run a prompt for you every morning, every Friday, or whenever you like.": [
-        "${ LUMO_SHORT_APP_NAME } può farti apparire un prompt ogni mattina, ogni venerdì o quando preferisci."
+      "${ LUMO_SHORT_APP_NAME } can read the scripts in a skill but won't run them.": [
+        "${ LUMO_SHORT_APP_NAME } è in grado di leggere gli script presenti in una skill, ma non li esegue."
+      ],
+      "${ LUMO_SHORT_APP_NAME } looks through this project's files. It can also look through the files of your other projects that are searchable.": [
+        "${ LUMO_SHORT_APP_NAME } effettua una ricerca tra i file di questo progetto. Può anche effettuare una ricerca tra i file degli altri tuoi progetti che sono ricercabili."
       ],
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to keep your conversations on this device, but it isn't available here.": [
         "${ LUMO_SHORT_APP_NAME } richiede l'archiviazione locale del database (IndexedDB) per conservare le tue conversazioni su questo dispositivo, ma qui non è disponibile."
@@ -4684,6 +4848,10 @@
       "${ name } completed.": [
         "${ name } completato."
       ],
+      "${ pluginCount } plugin": [
+        "${ pluginCount } plugin",
+        "${ pluginCount } plugin"
+      ],
       "${ project.conversationCount } conversation": [
         "${ project.conversationCount } conversazione"
       ],
@@ -4696,6 +4864,21 @@
       "${ project.fileCount } files": [
         "${ project.fileCount } file"
       ],
+      "${ skillCount } skill": [
+        "${ skillCount } competenza",
+        "${ skillCount } competenze"
+      ],
+      "${ skillCount } skill ready to add, including ${ pluginLabel }.": [
+        "${ skillCount } skill pronta per essere aggiunta, tra cui ${ pluginLabel }.",
+        "${ skillCount } skill pronte per essere aggiunte, tra cui ${ pluginLabel }."
+      ],
+      "${ skillCount } skill ready to add.": [
+        "${ skillCount } competenza pronta per essere aggiunta.",
+        "${ skillCount } competenze pronte per essere aggiunte."
+      ],
+      "${ target.path } isn't part of this skill": [
+        "${ target.path } non fa parte di questa skill"
+      ],
       "${ wordCount } word": [
         "${ wordCount } parola",
         "${ wordCount } parole"
@@ -4703,8 +4886,48 @@
       "(latest)": [
         "(ultimo aggiornamento)"
       ],
+      ".md, .zip, .skill or .plugin files, or folders. You can add several at once.": [
+        "File o cartelle con estensione .md, .zip, .skill o .plugin. È possibile aggiungerne diversi contemporaneamente."
+      ],
+      "1 plugin with ${ skillCount } skill ready to add.": [
+        "1 plugin con ${ skillCount } competenze pronto per essere aggiunto.",
+        "1 plugin con ${ skillCount } competenze pronto per essere aggiunto."
+      ],
+      "A .md file needs a name and description in its YAML frontmatter.": [
+        "Un file .md deve contenere un nome e una descrizione nel frontmatter YAML."
+      ],
+      "A .zip or .skill file needs a SKILL.md file.": [
+        "Un file .zip o .skill richiede la presenza di un file SKILL.md."
+      ],
+      "A command that downloads and runs code or deletes files. Don't run it without reading it first.": [
+        "Un comando che scarica ed esegue codice oppure elimina file. Non eseguirlo senza averlo prima letto."
+      ],
+      "A long block of encoded data that can't be read as it is.": [
+        "Un lungo blocco di dati codificati che non può essere letto così com’è."
+      ],
       "ad value": [
         "valore pubblicitario"
+      ],
+      "Add a file to continue.": [
+        "Aggiungi un file per continuare."
+      ],
+      "Add a letter or number to the name to invoke this skill with /": [
+        "Aggiungi una lettera o un numero al nome per attivare questa abilità con /"
+      ],
+      "Add skills you've written or downloaded. ${ LUMO_SHORT_APP_NAME } checks each one before you add it.": [
+        "Aggiungi le competenze che hai creato o scaricato. ${ LUMO_SHORT_APP_NAME } le verifica una per una prima che tu le aggiunga."
+      ],
+      "Added": [
+        "Aggiunto"
+      ],
+      "Added ${ first.name }": [
+        "Aggiunto ${ first.name }"
+      ],
+      "Added ${ saved.length } uploads to your skills": [
+        "Sono stati aggiunti ${ saved.length } file alle tue competenze"
+      ],
+      "Added ${ title } to your skills": [
+        "Abbiamo aggiunto ${ title } alle tue competenze"
       ],
       "Advanced models, a new look, new features, and the same privacy you trust. Click through to see what’s new.": [
         "Modelli avanzati, un nuovo look, nuove funzionalità e la stessa privacy di cui ti fidi. Clicca qui per scoprire le novità."
@@ -4718,6 +4941,9 @@
       "All available skills are added.": [
         "Vengono aggiunte tutte le competenze disponibili."
       ],
+      "All chats": [
+        "Tutte le chat"
+      ],
       "All messages and chat history": [
         "Tutti i messaggi e la cronologia chat"
       ],
@@ -4727,23 +4953,26 @@
       "Almost ready…": [
         "Quasi pronto…"
       ],
-      "Any images generated in these conversations will also be deleted.": [
-        "Anche tutte le immagini generate in queste conversazioni verranno eliminate."
+      "Also works for this category": [
+        "Adatto anche a questa categoria"
       ],
-      "Any images generated in this conversation will also be deleted.": [
-        "Anche tutte le immagini generate in questa conversazione verranno eliminate."
+      "An image link that could send information to another server when it loads.": [
+        "Un link a un'immagine che, al momento del caricamento, potrebbe inviare informazioni a un altro server."
+      ],
+      "Another skill is also invoked with /${ handle }, so only one of them can be used. Rename one of them.": [
+        "Anche un'altra funzione viene richiamata con /${ handle }, quindi è possibile utilizzarne solo una. Rinomina una delle due."
       ],
       "Applying your changes…": [
         "Si stanno applicando le modifiche…"
-      ],
-      "Are you sure you want to delete \"${ taskName }\"? Its run history will also be deleted. This action cannot be undone.": [
-        "Sei sicuro di voler eliminare “${ taskName }”? Verrà eliminata anche la cronologia delle esecuzioni. Questa azione non può essere annullata."
       ],
       "Are you sure you want to delete \"${ taskName }\"? This action cannot be undone.": [
         "Sei sicuro di voler eliminare “${ taskName }”? Questa azione non può essere annullata."
       ],
       "Ask a question to get started. Your conversation is private.": [
         "Fai una domanda per iniziare. La tua conversazione è privata."
+      ],
+      "Asks to run a local program": [
+        "Chiede di eseguire un programma locale"
       ],
       "Auto-retrieved": [
         "Recuperato automaticamente"
@@ -4754,17 +4983,26 @@
       "Built-in ${ BRAND_NAME } agent": [
         "Agente ${ BRAND_NAME } integrato"
       ],
+      "Can stand in for ${ pluginName }": [
+        "Può sostituire ${ pluginName }"
+      ],
       "Changed a selection": [
         "Modificata una selezione"
       ],
       "Chats from your projects will appear here.": [
         "Le chat dei tuoi progetti verranno visualizzate qui."
       ],
+      "Chats outside this project can find its chats and files when their own settings reach this far. Turn it off for sensitive work.": [
+        "Le chat esterne a questo progetto possono visualizzare le sue chat e i suoi file quando le loro impostazioni arrivano a questo punto. Disattivare questa opzione per i lavori riservati."
+      ],
       "Chats outside this project can look up its chats and files.": [
         "Le chat esterne a questo progetto possono visualizzarne le conversazioni e i file."
       ],
       "Checking your plan, try again in a moment.": [
         "Verifica il tuo piano e riprova tra un attimo."
+      ],
+      "Checking…": [
+        "Verifica..."
       ],
       "Choose a format to export \"${ conversation.title }\":": [
         "Scegli un formato per esportare “${ conversation.title }”:"
@@ -4777,6 +5015,12 @@
       ],
       "Connector unavailable": [
         "Connettore non disponibile"
+      ],
+      "Connectors can send your data to other services.": [
+        "I connettori possono inviare i tuoi dati ad altri servizi."
+      ],
+      "Connectors let ${ LUMO_SHORT_APP_NAME } use tools on this computer. Manage credentials and approval policies in desktop settings.": [
+        "I connettori consentono a ${ LUMO_SHORT_APP_NAME } di utilizzare gli strumenti presenti su questo computer. Gestisci le credenziali e le politiche di approvazione nelle impostazioni del desktop."
       ],
       "Conversation encrypted": [
         "Conversazione crittografata"
@@ -4811,6 +5055,9 @@
       "Current chat:": [
         "Chat attuale:"
       ],
+      "Custom ${ LUMO_SHORT_APP_NAME }s are now Skills": [
+        "Le ${ LUMO_SHORT_APP_NAME } personalizzate sono ora delle Skills"
+      ],
       "data points": [
         "punti dati"
       ],
@@ -4829,11 +5076,20 @@
       "Drive files are not available for guest users": [
         "I file di Drive non sono disponibili per gli utenti ospiti"
       ],
+      "Drop skill files or folders here": [
+        "Trascina qui i file o le cartelle relativi alle abilità"
+      ],
+      "Each plugin adds a set of skills. Use them with / in any chat, or let ${ LUMO_SHORT_APP_NAME } pick the right one for you.": [
+        "Ogni plugin aggiunge una serie di funzioni. Usale in qualsiasi chat oppure lascia che ${ LUMO_SHORT_APP_NAME } scelga quella più adatta a te."
+      ],
       "Edited by hand": [
         "Modificato a mano"
       ],
       "Enable notifications to get notified when a task finishes or needs your attention.": [
         "Attiva le notifiche per ricevere un avviso quando un'attività viene completata o richiede la tua attenzione."
+      ],
+      "Encoded content": [
+        "Contenuto codificato"
       ],
       "Example prompts shown when a conversation begins.": [
         "Suggerimenti di esempio mostrati all'inizio di una conversazione."
@@ -4853,8 +5109,17 @@
       "Files from all your projects.": [
         "I file di tutti i tuoi progetti."
       ],
+      "Files of all projects": [
+        "File di tutti i progetti"
+      ],
       "Files uploaded to this project will be saved to the linked Drive folder.": [
         "I file caricati in questo progetto verranno salvati nella cartella Drive collegata."
+      ],
+      "Folders and plugins can hold several skills, each in its own folder with a SKILL.md.": [
+        "Le cartelle e i plugin possono contenere diverse competenze, ciascuna nella propria cartella con un file SKILL.md."
+      ],
+      "Follows your general setting.": [
+        "Di seguito sono riportate le impostazioni generali."
       ],
       "From ${ DRIVE_APP_NAME }": [
         "Da ${ DRIVE_APP_NAME }"
@@ -4865,8 +5130,18 @@
       "Get faster, more accurate answers from the web, with citations so you can check the source.": [
         "Ottieni risposte più rapide e precise dal web, con citazioni per poter verificare la fonte."
       ],
+      "Hidden characters": [
+        "Caratteri nascosti"
+      ],
+      "Hidden from other chats": [
+        "Nascosto dalle altre chat"
+      ],
       "Image": [
         "Immagine"
+      ],
+      "Includes ${ scriptCount } script. ${ LUMO_SHORT_APP_NAME } can read it but won't run it.": [
+        "Include ${ scriptCount } script. ${ LUMO_SHORT_APP_NAME } è in grado di leggerli ma non di eseguirli.",
+        "Include ${ scriptCount } script. ${ LUMO_SHORT_APP_NAME } è in grado di leggerli ma non di eseguirli."
       ],
       "Inferred political leanings power micro-targeted messaging designed to change how you feel — and how you vote — often without you noticing.": [
         "L'orientamento politico dedotto alimenta messaggi mirati progettati per cambiare ciò che provi — e come voti — spesso senza che tu te ne accorga."
@@ -4874,11 +5149,20 @@
       "Initializing Drive...": [
         "Inizializzazione di Drive..."
       ],
+      "Invisible characters can hide instructions that you can't see but the model can read.": [
+        "I caratteri invisibili possono nascondere istruzioni che tu non riesci a vedere, ma che il modello è in grado di leggere."
+      ],
       "Learn more about how project knowledge works": [
         "Scopri di più su come funziona la conoscenza del progetto"
       ],
+      "Lets ${ LUMO_SHORT_APP_NAME } find what you discussed before, such as a decision or a figure from an earlier chat.": [
+        "Lascia che ${ LUMO_SHORT_APP_NAME } trovi ciò di cui hai parlato in precedenza, ad esempio una decisione o un dato tratto da una conversazione precedente."
+      ],
       "Link files from ${ DRIVE_APP_NAME } or upload from your computer.": [
         "Collega file da ${ DRIVE_APP_NAME } o caricali dal tuo computer."
+      ],
+      "Links to ${ domains }": [
+        "Link a ${ domains }"
       ],
       "Loading skills": [
         "Caricamento delle competenze"
@@ -4888,6 +5172,18 @@
       ],
       "Lockdown Mode is enabled on your device": [
         "La modalità di isolamento è attivata sul tuo dispositivo"
+      ],
+      "Looks for common problems such as hidden text, instructions that try to override ${ LUMO_SHORT_APP_NAME }, keys left in files and risky commands. It's an automatic, basic check and can't catch everything, so only add skills from sources you trust.": [
+        "Cerca problemi comuni quali testo nascosto, istruzioni che tentano di sovrascrivere ${ LUMO_SHORT_APP_NAME }, chiavi lasciate nei file e comandi rischiosi. Si tratta di un controllo automatico di base che non è in grado di individuare tutto, pertanto aggiungi solo competenze provenienti da fonti di cui ti fidi."
+      ],
+      "Looks like a password or key": [
+        "Sembra una password o una chiave"
+      ],
+      "No connected connectors": [
+        "Nessun connettore collegato"
+      ],
+      "No connectors match your search.": [
+        "Nessun connettore corrisponde alla tua ricerca."
       ],
       "No content generated": [
         "Nessun contenuto generato"
@@ -4904,8 +5200,15 @@
       "No matching skills": [
         "Nessuna competenza corrispondente"
       ],
+      "No past chats": [
+        "Nessuna chat precedente"
+      ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "Su questa scheda non sono presenti dettagli personali, ma solo il tuo punteggio di esposizione per area. Più è basso, meno dati hai condiviso."
+      ],
+      "No problems found in ${ checkedFileCount } file.": [
+        "Nessun problema rilevato nel file ${ checkedFileCount }.",
+        "Nessun problema rilevato nei file ${ checkedFileCount }."
       ],
       "No projects yet": [
         "Non ci sono ancora progetti"
@@ -4919,8 +5222,14 @@
       "No skills available yet. Manage skills to add or enable them.": [
         "Non sono ancora disponibili competenze. Gestisci le competenze per aggiungerle o attivarle."
       ],
+      "No skills match your search.": [
+        "Non ci sono competenze corrispondenti alla tua ricerca."
+      ],
       "No skills or tools added.": [
         "Non sono state aggiunte competenze né strumenti."
+      ],
+      "Nothing unusual found": [
+        "Non è stato riscontrato nulla di insolito"
       ],
       "Notifications are off for ${ LUMO_SHORT_APP_NAME }. ": [
         "Le notifiche sono disattivate per ${ LUMO_SHORT_APP_NAME }. "
@@ -4945,6 +5254,10 @@
       ],
       "PASTED": [
         "INCOLLATO"
+      ],
+      "Plugin with ${ subSkillCount } skill": [
+        "Plugin con ${ subSkillCount } abilità",
+        "Plugin con ${ subSkillCount } abilità"
       ],
       "Preparing questions": [
         "Preparazione delle domande"
@@ -4973,8 +5286,14 @@
       "red flags": [
         "campanelli d'allarme"
       ],
+      "Remote image with parameters": [
+        "Immagine remota con parametri"
+      ],
       "Resume to run again": [
         "Riprendere a correre"
+      ],
+      "Review the flagged items before you add them.": [
+        "Controlla gli elementi contrassegnati prima di aggiungerli."
       ],
       "Revised": [
         "Revisonato"
@@ -4982,11 +5301,17 @@
       "Revising your creation…": [
         "Rivedere la tua creazione…"
       ],
-      "Run tasks on a schedule or whenever you need them. Tasks run on this computer while ${ LUMO_SHORT_APP_NAME } is open.": [
-        "Esegui le attività secondo una pianificazione o ogni volta che ne hai bisogno. Le attività vengono eseguite su questo computer finché ${ LUMO_SHORT_APP_NAME } rimane aperto."
+      "Risky command": [
+        "Comando rischioso"
+      ],
+      "Run a small business and decide what to build next.": [
+        "Gestisci una piccola impresa e decidi quale sarà il tuo prossimo progetto."
       ],
       "Runs on an available computer while ${ LUMO_SHORT_APP_NAME } is open. Computers in the same timezone share one run for each occurrence.": [
         "Viene eseguito su un computer disponibile mentre ${ LUMO_SHORT_APP_NAME } è aperto. I computer che si trovano nello stesso fuso orario condividono un'unica esecuzione per ogni istanza."
+      ],
+      "Runs when you add files": [
+        "Viene eseguito quando si aggiungono file"
       ],
       "Saving as ${ formatLabel }. Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to use, then click \"Save here\".": [
         "Salvataggio come ${ formatLabel }. Individua la cartella ${ DRIVE_SHORT_APP_NAME } che desideri utilizzare, quindi fai clic su “Salva qui”."
@@ -5004,6 +5329,16 @@
       "Select one answer.": [
         "Seleziona una risposta."
       ],
+      "Set for this project.": [
+        "Impostazioni per questo progetto."
+      ],
+      "Set up regular tasks, then leave the rest to ${ LUMO_SHORT_APP_NAME }.": [
+        "Set up regular tasks, then leave the rest to ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Sets up ${ connectorCount } connector: ${ connectorNames }. Nothing connects until you set it up in ${ LUMO_SHORT_APP_NAME } Desktop.": [
+        "Configura ${ connectorCount } connettori: ${ connectorNames }. Nessuna connessione verrà stabilita finché non li configurerai in ${ LUMO_SHORT_APP_NAME } Desktop.",
+        "Configura ${ connectorCount } connettori: ${ connectorNames }. Nessuna connessione verrà stabilita finché non li configurerai in ${ LUMO_SHORT_APP_NAME } Desktop."
+      ],
       "Skill unavailable": [
         "Abilità non disponibile"
       ],
@@ -5015,6 +5350,9 @@
       ],
       "Some selected skills are unavailable. This task may run without them. Check your skills in settings.": [
         "Alcune competenze selezionate non sono disponibili. Questa attività potrebbe essere eseguita anche senza di esse. Controlla le tue competenze nelle impostazioni."
+      ],
+      "Something that looks like an API key or private key. Remove it before sharing the skill.": [
+        "Qualcosa che sembra una chiave API o una chiave privata. Rimuovila prima di condividere la skill."
       ],
       "Something went wrong analysing this export. Please try again.": [
         "Si è verificato un errore durante l'analisi di questa esportazione. Riprova."
@@ -5049,14 +5387,38 @@
       "Text formatted with markdown, easy to read or share": [
         "Testo formattato con Markdown, facile da leggere o condividere"
       ],
+      "Text that tells the model to ignore its rules or keep things from you.": [
+        "Testo che indica al modello di ignorare le proprie regole o di non rivelarti determinate informazioni."
+      ],
+      "The plugin sets up a connector that doesn't use HTTPS.": [
+        "Il plugin configura un connettore che non utilizza HTTPS."
+      ],
+      "The plugin sets up a connector that runs a program on your computer.": [
+        "Il plugin configura un connettore che esegue un programma sul tuo computer."
+      ],
+      "The task and its run history will be deleted. This action cannot be undone.": [
+        "L'attività e la cronologia delle sue esecuzioni verranno eliminate. Questa azione non può essere annullata."
+      ],
       "This conversation is nearly full. ${ LUMO_SHORT_APP_NAME } may summarize earlier messages to keep replying — nothing is removed from your chat history.": [
         "Questa conversazione è quasi piena. ${ LUMO_SHORT_APP_NAME } potrebbe riassumere i messaggi precedenti per continuare a rispondere: nulla verrà rimosso dalla cronologia delle chat."
       ],
       "This message is empty. Sorry about that.": [
         "Questo messaggio è vuoto. Spiacenti."
       ],
+      "This plugin works best with these kinds of tools. ${ LUMO_SHORT_APP_NAME } only uses the connectors you add yourself.": [
+        "Questo plugin funziona al meglio con questi tipi di strumenti. ${ LUMO_SHORT_APP_NAME } utilizza solo i connettori che aggiungi tu stesso."
+      ],
       "This project already has files. Please remove all files before linking a Drive folder.": [
         "Questo progetto ha già dei file. Rimuovi tutti i file prima di collegare una cartella di Drive."
+      ],
+      "This project's chats": [
+        "Le chat di questo progetto"
+      ],
+      "This project's files": [
+        "I file di questo progetto"
+      ],
+      "This skill no longer exists.": [
+        "La competenza non esiste più."
       ],
       "This usually happens when:": [
         "Di solito questo accade quando:"
@@ -5067,11 +5429,29 @@
       "Tips on how to write useful instructions": [
         "Suggerimenti su come scrivere istruzioni utili"
       ],
+      "Tries to override instructions": [
+        "Cerca di ignorare le istruzioni"
+      ],
       "Try a different search term.": [
         "Prova un termine di ricerca diverso."
       ],
+      "Try “${ example }”": [
+        "Prova “${ example }”"
+      ],
+      "Turned-off skills stay saved but ${ LUMO_SHORT_APP_NAME } won't use them.": [
+        "Le competenze disattivate rimangono salvate, ma ${ LUMO_SHORT_APP_NAME } non le utilizzerà."
+      ],
+      "Turning off the plugin turns off all of its skills. ${ LUMO_SHORT_APP_NAME } won't use them, but they stay saved.": [
+        "Disattivando il plugin si disattivano tutte le sue funzionalità. ${ LUMO_SHORT_APP_NAME } non le utilizzerà, ma rimarranno salvate."
+      ],
       "Type @filename to ask questions about a specific file": [
         "Digita @filename per porre domande su un file specifico"
+      ],
+      "Unencrypted connector": [
+        "Connettore non crittografato"
+      ],
+      "Update ${ LUMO_SHORT_APP_NAME } Desktop to use read-only connector access for this task.": [
+        "Aggiorna ${ LUMO_SHORT_APP_NAME } Desktop in modo che utilizzi l'accesso al connettore in sola lettura per questa attività."
       ],
       "Updating content…": [
         "Aggiornamento dei contenuti…"
@@ -5082,17 +5462,23 @@
       "Upgrade to ${ PLAN_NAMES[PLANS.LUMO] } to create up to 3 scheduled tasks, unlock advanced AI models, and more.": [
         "Passa al piano ${ PLAN_NAMES[PLANS.LUMO] } per creare fino a 3 attività pianificate, sbloccare modelli di IA avanzati e molto altro ancora."
       ],
+      "Use / to put it in a folder.": [
+        "Usa / per inserirlo in una cartella."
+      ],
       "Use the Max model for complex work or the Lite model for everyday tasks. Choose Fast mode for quick answers or Thinking mode for tougher questions.": [
         "Usa il modello Max per lavori complessi o il modello Lite per le attività quotidiane. Scegli la modalità Veloce per risposte rapide o la modalità Ragionamento per domande più difficili."
-      ],
-      "Use your general setting": [
-        "Utilizza le impostazioni generali"
       ],
       "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
         "Usare ${ DRIVE_APP_NAME } permette a ${ LUMO_SHORT_APP_NAME } di lavorare con file più grandi."
       ],
       "v${ versionNumber }": [
         "v${ versionNumber }"
+      ],
+      "We moved your ${ customLumoCount } Custom ${ LUMO_SHORT_APP_NAME }s here.": [
+        "Abbiamo spostato qui i tuoi ${ customLumoCount } ${ LUMO_SHORT_APP_NAME } personalizzati."
+      ],
+      "We moved your 1 Custom ${ LUMO_SHORT_APP_NAME } here.": [
+        "Abbiamo spostato qui il tuo 1 ${ LUMO_SHORT_APP_NAME } personalizzato."
       ],
       "We'll save your card so you can attach it to the post — social sites can't add the image for you.": [
         "Salveremo la tua scheda così potrai allegarla al post — i social network non possono aggiungere l'immagine al posto tuo."
@@ -5103,8 +5489,17 @@
       "What ${ LUMO_SHORT_APP_NAME } can look up from this project's chats. Follows your general settings unless changed here.": [
         "Cosa può visualizzare ${ LUMO_SHORT_APP_NAME } dalle chat di questo progetto. Segue le impostazioni generali, a meno che non vengano modificate qui."
       ],
+      "When answering in this project, ${ LUMO_SHORT_APP_NAME } can look things up in your past chats and files. These settings decide how far it looks. What you don't change here follows your general settings.": [
+        "Quando risponde in questo progetto, ${ LUMO_SHORT_APP_NAME } può cercare informazioni nelle tue chat e nei tuoi file precedenti. Queste impostazioni determinano l'ampiezza dell'area di ricerca. Le impostazioni non modificate in questa schermata seguono quelle generali."
+      ],
       "When this task ran.": [
         "Quando questa attività è stata eseguita."
+      ],
+      "Works for this category": [
+        "Opere di questa categoria"
+      ],
+      "Write, plan, learn and stay safe online.": [
+        "Scrivi, pianifica, impara e naviga in sicurezza online."
       ],
       "You": [
         "Tu"
@@ -5216,12 +5611,20 @@
         "${ file.tokenCount } token",
         "${ file.tokenCount } token"
       ],
+      "${ fileCount } file": [
+        "${ fileCount } file",
+        "${ fileCount } file"
+      ],
       "${ progress.indexed }/${ progress.total } file (${ percentage }%)": [
         "${ progress.indexed }/${ progress.total } file (${ percentage }%)",
         "${ progress.indexed }/${ progress.total } file (${ percentage }%)"
       ],
       "${ selectedCount } selected": [
         "${ selectedCount } selezionati"
+      ],
+      "${ subSkillCount } skill": [
+        "${ subSkillCount } competenza",
+        "${ subSkillCount } competenze"
       ],
       "16:9": [
         "16:9"
@@ -5246,6 +5649,9 @@
       ],
       "Auto-approve on": [
         "Attiva l'approvazione automatica"
+      ],
+      "Basic content check": [
+        "Verifica dei contenuti di base"
       ],
       "Canvas": [
         "Canvas"
@@ -5274,14 +5680,14 @@
       "Cloud Cover": [
         "Copertura del Cloud"
       ],
-      "Connectors this task can use": [
-        "Connettori che questa attività può utilizzare"
-      ],
       "Conversation starters (optional)": [
         "Spunti di conversazione (opzionali)"
       ],
       "Created": [
         "Creato"
+      ],
+      "Created by you": [
+        "Creati da te"
       ],
       "Created on": [
         "Creato il"
@@ -5306,6 +5712,9 @@
       ],
       "Describe what to change": [
         "Descrivi cosa modificare"
+      ],
+      "Description": [
+        "Descrizione"
       ],
       "Description (optional)": [
         "Descrizione (opzionale)"
@@ -5334,6 +5743,9 @@
       "Edit conversation title": [
         "Modifica titolo conversazione"
       ],
+      "Enabled": [
+        "Abilitato"
+      ],
       "ENE": [
         "ENE"
       ],
@@ -5348,6 +5760,9 @@
       ],
       "Feels Like": [
         "Temperatua Percipita"
+      ],
+      "File path": [
+        "Percorso file"
       ],
       "Files": [
         "File"
@@ -5369,6 +5784,12 @@
       ],
       "Frequency": [
         "Frequenza"
+      ],
+      "From ${ BRAND_NAME }": [
+        "Da ${ BRAND_NAME }"
+      ],
+      "From Custom ${ LUMO_SHORT_APP_NAME }s": [
+        "Da ${ LUMO_SHORT_APP_NAME } personalizzate"
       ],
       "Generated image from ${ formattedDate }": [
         "Immagine generata a partire dal ${ formattedDate }"
@@ -5475,11 +5896,17 @@
       "NE": [
         "NE"
       ],
+      "New file path": [
+        "Nuovo percorso del file"
+      ],
       "NNE": [
         "NNE"
       ],
       "NNW": [
         "NNW"
+      ],
+      "Not available in ${ LUMO_SHORT_APP_NAME }": [
+        "Non disponibile in ${ LUMO_SHORT_APP_NAME }"
       ],
       "Notify me when a run finishes": [
         "Avvisami quando una corsa è terminata"
@@ -5499,6 +5926,9 @@
       "Plotting purr-fect data…": [
         "Elaborazione di dati “fusa-tti”…"
       ],
+      "Plugin name": [
+        "Nome del plugin"
+      ],
       "Politics": [
         "Politica"
       ],
@@ -5514,20 +5944,26 @@
       "Privacy maxxing": [
         "Massimizzazione della privacy"
       ],
-      "Project content is searchable": [
-        "È possibile effettuare ricerche nei contenuti del progetto"
-      ],
       "Project Instructions (optional)": [
         "Istruzioni del progetto (opzionale)"
       ],
       "Projects": [
         "Progetti"
       ],
+      "Read-only": [
+        "Sola lettura"
+      ],
+      "Read-only access for ${ label }": [
+        "Accesso in sola lettura per ${ label }"
+      ],
       "S": [
         "S"
       ],
       "Scams": [
         "Truffe"
+      ],
+      "Schedule": [
+        "Pianifica"
       ],
       "Scheduled": [
         "Programmato"
@@ -5546,6 +5982,9 @@
       ],
       "Search skills": [
         "Cerca per competenze"
+      ],
+      "Searchable from other chats": [
+        "Ricercabile da altre chat"
       ],
       "Selected:": [
         "Selezionato:"
@@ -5571,6 +6010,9 @@
       "Skill": [
         "Competenze"
       ],
+      "Skill name": [
+        "Nome competenza"
+      ],
       "SSE": [
         "SSE"
       ],
@@ -5595,17 +6037,20 @@
       "Today, ${ time }": [
         "Oggi, ${ time }"
       ],
+      "Tools this task can use": [
+        "Strumenti che possono essere utilizzati per questa attività"
+      ],
       "Unavailable skill": [
         "Abilità non disponibile"
-      ],
-      "Untitled chat": [
-        "Chat senza titolo"
       ],
       "Untitled project": [
         "Progetto senza titolo"
       ],
       "Untitled task": [
         "Attività senza nome"
+      ],
+      "Uploaded": [
+        "Caricato"
       ],
       "Uses": [
         "Utilizza"
@@ -5628,14 +6073,14 @@
       "What AI Knows About Me": [
         "Cosa sa di me l'intelligenza artificiale"
       ],
+      "What can I upload?": [
+        "Cosa posso caricare?"
+      ],
       "What should ${ LUMO_SHORT_APP_NAME } do each time?": [
         "Cosa dovrebbe fare ${ LUMO_SHORT_APP_NAME } ogni volta?"
       ],
       "What's your AI Paper Trail? ": [
         "Qual è la tua “traccia cartacea” dell'IA? "
-      ],
-      "When to run": [
-        "Quando avviare"
       ],
       "Wind": [
         "Wind"
@@ -5654,6 +6099,14 @@
       ],
       "Your answer": [
         "La tua risposta"
+      ]
+    },
+    "collider_2025:Link": {
+      "Back to skills": [
+        "Torna alle competenze"
+      ],
+      "Skills": [
+        "Competenze"
       ]
     },
     "collider_2025:Notification": {
@@ -5754,14 +6207,134 @@
       "Search library": [
         "Cerca nella libreria"
       ],
+      "Search plugins": [
+        "Cerca plugin"
+      ],
       "Search skills": [
         "Capacità di ricerca"
+      ],
+      "Search your skills": [
+        "Cerca le tue competenze"
       ],
       "Sign in required": [
         "Login richiesto"
       ],
       "Something else…": [
         "Qualcos'altro…"
+      ],
+      "Summarize my recent work in three sections: wins, blockers, and next steps. Keep the tone professional but not stiff...": [
+        "Riassumi il mio lavoro recente in tre sezioni: risultati positivi, ostacoli e prossimi passi. Mantieni un tono professionale ma non troppo formale..."
+      ]
+    },
+    "collider_2025:Plugin description": {
+      "Build slide decks, one-pagers, interactive explainers and illustrations.": [
+        "Crea presentazioni, documenti di una pagina, guide interattive e illustrazioni."
+      ],
+      "Chase invoices, forecast cash, write quotes, answer reviews, hire fairly and check contracts.": [
+        "Gestisci le fatture, prevedi la liquidità, redigi preventivi, rispondi alle recensioni, assumi in modo equo e verifica i contratti."
+      ],
+      "Draft, edit, rephrase and translate emails, posts and documents in your own voice.": [
+        "Scrivi, modifica, riformula e traduci e-mail, post e documenti mantenendo il tuo stile personale."
+      ],
+      "Explain variances, build financial statements, reconcile accounts and prepare journal entries.": [
+        "Spiegare le variazioni, redigere i bilanci, effettuare la riconciliazione dei conti e preparare le registrazioni contabili."
+      ],
+      "Explore and clean spreadsheets, chart the results and build interactive dashboards.": [
+        "Esplora e pulisci i fogli di calcolo, crea grafici con i risultati e realizza dashboard interattive."
+      ],
+      "Plan campaigns, write email sequences, audit your site for search and keep content on brand.": [
+        "Pianifica le campagne, crea sequenze di email, verifica l'ottimizzazione del tuo sito per i motori di ricerca e assicurati che i contenuti siano in linea con l'immagine del marchio."
+      ],
+      "Research accounts, prep calls, follow up, write outreach and handle objections.": [
+        "Gestire i resoconti delle ricerche, organizzare le chiamate preparatorie, effettuare il follow-up, redigere comunicazioni di sensibilizzazione e gestire le obiezioni."
+      ],
+      "Review, debug, test and explain code, and write design docs. Reads your project on ${ LUMO_SHORT_APP_NAME } Desktop.": [
+        "Rivedere, correggere, testare e spiegare il codice, nonché redigere la documentazione di progettazione. Legge il tuo progetto su ${ LUMO_SHORT_APP_NAME } Desktop."
+      ],
+      "Search the web and come back with sourced reports, fact-checks, comparisons and news briefs.": [
+        "Effettua ricerche sul web e torna con articoli documentati, verifiche dei fatti, confronti e notizie in breve."
+      ],
+      "Spot phishing, redact personal data, decode privacy policies and take back control of your data.": [
+        "Individua i tentativi di phishing, oscura i dati personali, decifra le informative sulla privacy e riprendi il controllo dei tuoi dati."
+      ],
+      "Turn meetings, inboxes and to-do lists into decisions, plans and replies.": [
+        "Trasforma riunioni, caselle di posta e elenchi di cose da fare in decisioni, piani e risposte."
+      ],
+      "Understand new topics, quiz yourself, make flashcards and plan your studies.": [
+        "Approfondisci nuovi argomenti, mettiti alla prova con dei quiz, crea delle schede di ripasso e organizza il tuo studio."
+      ]
+    },
+    "collider_2025:Plugin example": {
+      "Build a dashboard from this sales spreadsheet": [
+        "Crea un dashboard a partire da questo foglio di calcolo delle vendite"
+      ],
+      "Compare the three best e-readers under €200": [
+        "Confronta i tre migliori e-reader sotto i 200 €"
+      ],
+      "Critique this checkout screen": [
+        "Esprimi un giudizio su questa schermata di pagamento"
+      ],
+      "Is this email a phishing attempt?": [
+        "Questa e-mail è un tentativo di phishing?"
+      ],
+      "Plan a launch campaign for our new app": [
+        "Organizza una campagna di lancio per la nostra nuova app"
+      ],
+      "Plan the first week for our new designer": [
+        "Organizza la prima settimana per il nostro nuovo designer"
+      ],
+      "Prep me for my call with Acme tomorrow": [
+        "Aiutami a prepararmi per la mia telefonata con Acme di domani"
+      ],
+      "Quiz me on the French Revolution": [
+        "Mettimi alla prova sulla Rivoluzione francese"
+      ],
+      "Reply to this email and politely say no": [
+        "Rispondi a questa e-mail e rifiuta gentilmente"
+      ],
+      "Review this diff for bugs and security issues": [
+        "Controlla questo diff per individuare eventuali bug e problemi di sicurezza"
+      ],
+      "Turn these meeting notes into actions with owners": [
+        "Trasforma questi appunti delle riunioni in azioni concrete con i responsabili"
+      ],
+      "Turn this report into a ten-slide deck": [
+        "Trasforma questo rapporto in una presentazione di dieci diapositive"
+      ],
+      "Who owes me money? Here's my invoices export": [
+        "Chi mi deve dei soldi? Ecco l'esportazione delle mie fatture"
+      ],
+      "Why are we over budget this quarter?": [
+        "Perché in questo trimestre abbiamo superato il budget?"
+      ],
+      "Write a spec for letting users export their data": [
+        "Scrivi delle specifiche per consentire agli utenti di esportare i propri dati"
+      ]
+    },
+    "collider_2025:Plugin name": {
+      "Data": [
+        "Dati"
+      ],
+      "Design": [
+        "Tema"
+      ],
+      "Finance": [
+        "Finanza"
+      ],
+      "Learning": [
+        "Tipo di insegnamento"
+      ],
+      "People and HR": [
+        "Persone e Risorse umane"
+      ],
+      "Presentations": [
+        "Presentazioni"
+      ],
+      "Privacy and security": [
+        "Privacy e sicurezza"
+      ],
+      "Sales": [
+        "Vendite"
       ]
     },
     "collider_2025:Prefill": {
@@ -5773,6 +6346,9 @@
       ],
       "Explain this selected part of the \"${ artifactTitle }\" code artifact (id: ${ artifactId }):\n\n\"${ selection }\"": [
         "Spiega questa parte selezionata dell'artefatto di codice “${ artifactTitle }” (ID: ${ artifactId }):\n\n“${ selection }”"
+      ],
+      "Help me create a scheduled task. ": [
+        "Aiutami a creare un'attività pianificata. "
       ],
       "Improve this selected part of the \"${ artifactTitle }\" code artifact (id: ${ artifactId }). Update the artifact, replacing:\n\n\"${ selection }\"\n\nwith improved code.": [
         "Migliora questa parte selezionata dell'artefatto di codice “${ artifactTitle }” (ID: ${ artifactId }). Aggiorna l'artefatto sostituendo:\n\n“${ selection }”\n\ncon il codice migliorato."
@@ -5838,11 +6414,20 @@
       "Help me draft a professional response to this email": [
         "Aiutami a creare una risposta professionale a questa email"
       ],
+      "Help me find fresh ideas for content and campaigns about [topic or industry] for [audience]. Explore recent news, trends, and useful questions, then suggest five ideas that would resonate with this audience. Give each idea a headline, a short explanation of the angle, and links to any sources that inspired it.": [
+        "Aiutami a trovare nuove idee per contenuti e campagne su [argomento o settore] rivolte a [pubblico]. Esplora le notizie recenti, le tendenze e le domande utili, quindi suggerisci cinque idee che possano trovare riscontro in questo pubblico. Assegna a ciascuna idea un titolo, una breve spiegazione dell'approccio adottato e i link alle fonti che l'hanno ispirata."
+      ],
       "Help me organize my thoughts on this decision": [
         "Aiutami a organizzare i miei pensieri su questa decisione"
       ],
       "Help me plan a 2-week itinerary for Japan with cultural experiences": [
         "Aiutami a pianificare un itinerario di 2 settimane per il Giappone con esperienze culturali"
+      ],
+      "Help me plan my day. Bring together today's schedule, priorities, important unread emails, and Slack updates in a short morning brief. Highlight anything due today, suggest what to focus on first, and include tomorrow's schedule when it helps me prepare.": [
+        "Aiutami a organizzare la mia giornata. Riunisci in un breve riassunto mattutino il programma di oggi, le priorità, le e-mail importanti non ancora lette e gli aggiornamenti su Slack. Evidenzia tutto ciò che deve essere completato oggi, suggeriscimi su cosa concentrarmi per primo e includi il programma di domani se mi aiuta a prepararmi."
+      ],
+      "Help me prepare for my next scheduled meetings. Review my calendar for the next 24 hours and summarize each meeting's time, attendees, purpose, and key details from relevant emails or Slack messages. Suggest talking points and anything I should prepare beforehand. Skip meetings I declined.": [
+        "Aiutami a prepararmi per i miei prossimi incontri in programma. Esamina il mio calendario delle prossime 24 ore e riassumi l'orario, i partecipanti, lo scopo e i dettagli chiave di ciascun incontro, attingendo dalle e-mail o dai messaggi su Slack pertinenti. Suggeriscimi alcuni spunti di discussione e tutto ciò che dovrei preparare in anticipo. Tralascia gli incontri che ho rifiutato."
       ],
       "Help me prepare questions about this diagnosis for my doctor": [
         "Aiutami a preparare delle domande su questa diagnosi per il mio medico"
@@ -5852,6 +6437,9 @@
       ],
       "Help me refine this draft to be more concise and impactful": [
         "Aiutami a perfezionare questa bozza per renderla più concisa e incisiva"
+      ],
+      "Help me review my week. Summarize what I achieved, the important conversations and decisions, and anything still open or waiting for a reply. Highlight wins and unfinished work, then suggest three priorities for next week. Keep the review short and easy to scan.": [
+        "Aiutami a fare il punto sulla mia settimana. Riassumi ciò che ho realizzato, le conversazioni e le decisioni importanti, nonché eventuali questioni ancora in sospeso o in attesa di risposta. Metti in evidenza i risultati positivi e il lavoro ancora da portare a termine, quindi suggerisci tre priorità per la prossima settimana. Cerca di mantenere il riepilogo breve e di facile consultazione."
       ],
       "Help me understand different retirement account options and their tax implications": [
         "Aiutami a capire le diverse opzioni di conti pensionistici e le loro implicazioni fiscali"
@@ -5870,6 +6458,12 @@
       ],
       "Identify research gaps and suggest future research directions": [
         "Identifica lacune di ricerca e suggerisci future direzioni di ricerca"
+      ],
+      "Keep me up to date on [topic or subject]. Find the latest news and developments from the last 24 hours, summarize the meaningful updates, and explain why they matter. Include links to sources and highlight anything I may want to follow up on.": [
+        "Tienimi aggiornato su [argomento o tema]. Trova le ultime notizie e gli sviluppi delle ultime 24 ore, riassumi gli aggiornamenti più rilevanti e spiega perché sono importanti. Includi i link alle fonti ed evidenzia tutto ciò che potrei voler approfondire."
+      ],
+      "Review my ${ MAIL_APP_NAME } inbox and identify emails that need a reply. Prioritize the messages that need my attention today and draft concise responses in my voice, using the conversation for context. Show the drafts for my review without sending anything.": [
+        "Controlla la mia casella di posta in arrivo di ${ MAIL_APP_NAME } e individua le e-mail che richiedono una risposta. Assegna la priorità ai messaggi che richiedono la mia attenzione oggi e redigi risposte concise nel mio stile, utilizzando la conversazione come contesto. Mostrami le bozze affinché io possa esaminarle senza inviare nulla."
       ],
       "Review this code for bugs and potential improvements": [
         "Revisiona questo codice per bug e miglioramenti potenziali"
@@ -5932,6 +6526,10 @@
       "${ urlCount } URL": [
         "${ urlCount } URL",
         "${ urlCount } URL"
+      ],
+      "and ${ more } more": [
+        "e ${ more } ancora",
+        "e ${ more } ancora"
       ],
       "Checked ${ BRAND_NAME } knowledge": [
         "Consultata la conoscenza di ${ BRAND_NAME }"
@@ -6119,6 +6717,9 @@
       "Market Cap": [
         "Capitalizzazione di mercato"
       ],
+      "No matches": [
+        "Nessun risultato"
+      ],
       "One moment": [
         "Un momento"
       ],
@@ -6127,6 +6728,9 @@
       ],
       "page": [
         "pagina"
+      ],
+      "page ${ page } of ${ pages }": [
+        "pagina ${ page } di ${ pages }"
       ],
       "Performance comparison": [
         "Confronto delle prestazioni"
@@ -6158,8 +6762,14 @@
       "Read ${ path } and sent contents back": [
         "Leggi ${ path } e restituisci il contenuto"
       ],
+      "Read a chat": [
+        "Leggi una chat"
+      ],
       "Read a file": [
         "Leggere un file"
+      ],
+      "Read a skill": [
+        "Leggi una competenza"
       ],
       "Read a web page": [
         "Lettura di una pagina web"
@@ -6170,8 +6780,17 @@
       "Reading ${ path }...": [
         "Lettura di ${ path }..."
       ],
+      "Reading a chat...": [
+        "Sto leggendo una chat..."
+      ],
       "Reading a file...": [
         "Lettura di un file..."
+      ],
+      "Reading a skill": [
+        "Leggere una competenza"
+      ],
+      "Reading a skill...": [
+        "Leggere una competenza..."
       ],
       "Reading a web page": [
         "Lettura di una pagina web"
@@ -6236,8 +6855,14 @@
       "Thinking...": [
         "Pensando..."
       ],
+      "This chat": [
+        "Questa chat"
+      ],
       "Thought this through": [
         "Ragionamento completato"
+      ],
+      "Untitled chat": [
+        "Chat senza titolo"
       ],
       "Updated ${ path }": [
         "Aggiornato ${ path }"
@@ -6382,17 +7007,29 @@
       ]
     },
     "collider_2025:Tab": {
+      "Connectors": [
+        "Connettori"
+      ],
+      "Contents": [
+        "Contenuti"
+      ],
       "Create": [
         "Crea"
       ],
       "Creations": [
         "Creazione"
       ],
+      "Discover plugins": [
+        "Scopri i plugin"
+      ],
       "Gallery": [
         "Galleria"
       ],
       "Images": [
         "Immagini"
+      ],
+      "Overview": [
+        "Panoramica"
       ]
     },
     "collider_2025:Time": {
@@ -6443,11 +7080,17 @@
       "Built by the team that knows privacy": [
         "Creato dal team che conosce la privacy"
       ],
+      "Business and product": [
+        "Attività e prodotti"
+      ],
       "Chat knowledge": [
         "Conoscenza della chat"
       ],
       "Chats": [
         "Chat"
+      ],
+      "Connectors & tools": [
+        "Connettori e utensili"
       ],
       "Create a custom ${ LUMO_SHORT_APP_NAME }": [
         "Crea un ${ LUMO_SHORT_APP_NAME } personalizzato"
@@ -6461,14 +7104,26 @@
       "Custom ${ LUMO_SHORT_APP_NAME }s": [
         "Personalizza ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Customize": [
+        "Personalizza"
+      ],
+      "Delete \"${ taskName }\"?": [
+        "Eliminare “${ taskName }”?"
+      ],
       "Delete project?": [
         "Eliminare il progetto?"
       ],
-      "Delete scheduled task?": [
-        "Delete scheduled task?"
+      "Delete skill?": [
+        "Eliminare la competenza?"
+      ],
+      "Description": [
+        "Descrizione"
       ],
       "Detail makes fraud convincing": [
         "I dettagli rendono la frode convincente"
+      ],
+      "Details": [
+        "Dettagli"
       ],
       "Discard changes?": [
         "Annullare le modifiche?"
@@ -6491,6 +7146,9 @@
       "Every clarification is a new data point": [
         "Ogni chiarimento è un nuovo punto dati"
       ],
+      "Everyday": [
+        "Tutti i giorni"
+      ],
       "Explore images created with ${ LUMO_SHORT_APP_NAME }": [
         "Esplora le immagini create con ${ LUMO_SHORT_APP_NAME }"
       ],
@@ -6505,6 +7163,12 @@
       ],
       "Filters": [
         "Filtri"
+      ],
+      "Focus your inbox": [
+        "Metti in evidenza la tua casella di posta"
+      ],
+      "Follow a topic": [
+        "Segui un argomento"
       ],
       "Get started by creating a new project": [
         "Inizia creando un nuovo progetto"
@@ -6593,6 +7257,15 @@
       "Oversharing blind spots": [
         "Punti ciechi della condivisione eccessiva"
       ],
+      "Plan your day": [
+        "Pianifica la tua giornata"
+      ],
+      "Plugins from ${ BRAND_NAME }": [
+        "Plugin di ${ BRAND_NAME }"
+      ],
+      "Prepare ahead": [
+        "Preparati in anticipo"
+      ],
       "Profiles can decide your future": [
         "I profili possono decidere il tuo futuro"
       ],
@@ -6604,6 +7277,9 @@
       ],
       "Remove all files?": [
         "Rimuovi tutti i file?"
+      ],
+      "Review your week": [
+        "Rifletti sulla tua settimana"
       ],
       "Runs": [
         "Esecuzioni"
@@ -6632,9 +7308,6 @@
       "Scheduled · ${ name }": [
         "In programma · ${ name }"
       ],
-      "Search": [
-        "Cerca"
-      ],
       "See your AI paper trail": [
         "Vedi la tua traccia dell'IA"
       ],
@@ -6655,6 +7328,9 @@
       ],
       "Sources": [
         "Fonti"
+      ],
+      "Spark new ideas": [
+        "Dai vita a nuove idee"
       ],
       "Start a new conversation": [
         "Inizia una nuova conversazione"
@@ -6683,11 +7359,17 @@
       "Untitled document": [
         "Documento senza titolo"
       ],
+      "Upload a skill": [
+        "Carica una competenza"
+      ],
       "Versions": [
         "Versioni"
       ],
       "We couldn't read your paper trail": [
         "Non siamo riusciti a leggere la tua traccia digitale"
+      ],
+      "What can ${ LUMO_SHORT_APP_NAME } see?": [
+        "Cosa può vedere ${ LUMO_SHORT_APP_NAME }?"
       ],
       "What do you want to create today?": [
         "Cosa vuoi creare oggi?"
@@ -6698,6 +7380,9 @@
       "What this profile exposes": [
         "Cosa rivela questo profilo"
       ],
+      "Work": [
+        "Lavoro"
+      ],
       "You might be shown a higher price": [
         "Potrebbe esserti mostrato un prezzo più alto"
       ],
@@ -6706,6 +7391,9 @@
       ],
       "Your shareable card": [
         "La tua scheda condivisibile"
+      ],
+      "Your skills": [
+        "Le tue competenze"
       ],
       "Your tasks": [
         "Le tue attività"
@@ -8522,6 +9210,9 @@
       "Index size:": [
         "Dimensione indice:"
       ],
+      "Indexed chats:": [
+        "Chat indicizzate:"
+      ],
       "Indexed content (first 2000 chars):": [
         "Contenuto indicizzato (primi 2000 caratteri):"
       ],
@@ -8714,6 +9405,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
+      ],
+      "Top up your ${ LUMO_SHORT_APP_NAME } API balance. API usage is deducted from this balance.": [
+        "Ricarica il tuo credito API di ${ LUMO_SHORT_APP_NAME }. L'utilizzo dell'API viene detratto da questo credito."
       ],
       "Total conversations:": [
         "Conversazioni totali:"
@@ -11691,6 +12385,9 @@
       "Email address copied to clipboard": [
         "Indirizzo email copiato negli appunti"
       ],
+      "Funds added": [
+        "Fondi aggiunti"
+      ],
       "Payment method added": [
         "Metodo di pagamento aggiunto"
       ],
@@ -11816,6 +12513,9 @@
       ],
       "Add credit/debit card": [
         "Aggiungi carta di credito/debito"
+      ],
+      "Add funds": [
+        "Aggiungi fondi"
       ],
       "Add user": [
         "Aggiungi utente"

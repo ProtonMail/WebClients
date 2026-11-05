@@ -8,17 +8,32 @@
       "(opens in new tab)": [
         "(s'ouvre dans un nouvel onglet)"
       ],
+      "Camera off": [
+        "Caméra éteinte"
+      ],
       "camera off": [
         "caméra éteinte"
       ],
+      "Camera on": [
+        "Caméra allumée"
+      ],
       "camera on": [
         "caméra allumée"
+      ],
+      "host": [
+        "hôte"
       ],
       "Meeting controls": [
         "Contrôles de réunion"
       ],
       "microphone muted": [
         "microphone coupé"
+      ],
+      "Microphone muted": [
+        "Microphone coupé"
+      ],
+      "Microphone on": [
+        "Microphone allumé"
       ],
       "microphone on": [
         "microphone allumé"
@@ -294,6 +309,9 @@
       ],
       "Download": [
         "Télécharger"
+      ],
+      "Download app": [
+        "Télécharger l'application"
       ],
       "Download local participant report": [
         "Télécharger le rapport des participants locaux"
@@ -2616,8 +2634,11 @@
       "Delete room": [
         "Supprimer la salle"
       ],
-      "Do you want people to ${ deviceContentType } you in the meeting?": [
-        "Souhaitez-vous que les participants vous ${ deviceContentType } pendant la réunion ?"
+      "Do you want people to hear you in the meeting?": [
+        "Souhaitez-vous que les participants vous entendent pendant la réunion ?"
+      ],
+      "Do you want people to see you in the meeting?": [
+        "Souhaitez-vous que les participants vous voient pendant la réunion ?"
       ],
       "Download current logs": [
         "Télécharger les journaux actuels"
@@ -2696,6 +2717,9 @@
       ],
       "Get a secure meeting link then add it to your calendar": [
         "Obtenez un lien de réunion sécurisé puis ajoutez-le à votre calendrier"
+      ],
+      "Get the best experience with the ${ protonMeet } desktop app": [
+        "Obtenez la meilleure expérience avec l'application de bureau ${ protonMeet }"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Accédez à about:config, recherchez media.peerconnection.enabled, et définissez-le sur true."

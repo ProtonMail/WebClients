@@ -1491,7 +1491,7 @@
         "Potser més endavant"
       ],
       "Migrate": [
-        "Migració"
+        "Migra"
       ],
       "More": [
         "Més"
@@ -7272,7 +7272,7 @@
         "L'adreça ja s'ha afegit al vostre compte"
       ],
       "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
-        "Aquesta adreça ja la utilitza un usuari de fora de la vostra organització. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
+        "Aquesta adreça ja la utilitza un usuari de fora de la vostra organització. Poseu-vos en contacte amb el servei d'atenció al client per a resoldre-ho"
       ],
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
@@ -7655,7 +7655,7 @@
         "El màxim permès és ${ displayMaxValue }"
       ],
       "Member address not found. Please contact customer support to resolve this": [
-        "No s'ha trobat l'adreça del membre. Poseu-vos en contacte amb el servei d'atenció al client per resoldre-ho"
+        "No s'ha trobat l'adreça del membre. Poseu-vos en contacte amb el servei d'atenció al client per a resoldre-ho"
       ],
       "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
         "Combineu almenys ${ calendarsToFixCount } calendari importat amb un calendari ${ BRAND_NAME } existent.",
@@ -9602,6 +9602,9 @@
       "Best deal": [
         "Millor oferta"
       ],
+      "Billing details": [
+        "Dades de facturació"
+      ],
       "Checkout": [
         "Pagament"
       ],
@@ -9655,6 +9658,9 @@
       ],
       "Permissions": [
         "Permisos"
+      ],
+      "Plan details": [
+        "Detalls del pla"
       ],
       "Protection": [
         "Protecció"
@@ -10575,10 +10581,10 @@
         "(abansTwitter)"
       ],
       "**${ applicationName }** requested to sign in from:": [
-        "**${ applicationName }** ha sol·licitat iniciar sessió des de:"
+        "**${ applicationName }** ha sol·licitat iniciar la sessió des de:"
       ],
       "**${ applicationName }** requested to sign in.": [
-        "**${ applicationName }** ha sol·licitat iniciar sessió."
+        "**${ applicationName }** ha sol·licitat iniciar la sessió."
       ],
       "**${ appName }** is not available for your account.": [
         "**${ appName }** no està disponible per al vostre compte."
@@ -12441,7 +12447,7 @@
         "Sense inici de sessió únic"
       ],
       "No users to display": [
-        "No hi ha cap usuari per mostrar"
+        "No hi ha cap usuari per a mostrar"
       ],
       "Not a valid URL": [
         "No és un URL vàlid."
@@ -13003,6 +13009,9 @@
       "Signed up": [
         "Registat"
       ],
+      "Signup link no longer valid": [
+        "L'enllaç de registre ja no és vàlid"
+      ],
       "Smart Routed through a different country.": [
         "Encaminat intel·ligentment a través d'un país diferent."
       ],
@@ -13327,6 +13336,9 @@
       "This service is not available to users signing in with single sign-on.": [
         "Aquest servei no està disponible per als usuaris que inicien la sessió amb l’inici de sessió únic."
       ],
+      "This signup link has expired, been revoked or already been used. Please contact your ${ BRAND_NAME } representative for a new one.": [
+        "Aquest enllaç de registre ha caducat, s'ha revocat o ja s'ha utilitzat. Poseu-vos en contacte amb el vostre representant de ${ BRAND_NAME } per obtenir-ne un de nou."
+      ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Aquest testimoni no estarà disponible després que tanqueu aquesta finestra i no l'hauríeu de compartir amb ningú."
       ],
@@ -13334,7 +13346,7 @@
         "Aquest enllaç d'anul·lació de la subscripció ha caducat. Obriu un correu electrònic més recent des d'aquesta llista de correu."
       ],
       "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
-        "Aquest usuari no es pot migrar perquè la seva adreça de correu electrònic no està disponible a ${ BRAND_NAME }."
+        "No es pot migrar aquest usuari perquè la seva adreça de correu electrònic no està disponible a ${ BRAND_NAME }."
       ],
       "This user can not be migrated due to platform incompatibilities.": [
         "Aquest usuari no es pot migrar a causa d'incompatibilitats de la plataforma."
@@ -13487,19 +13499,19 @@
         "Per migrar aquest usuari, habiliteu el seu compte a la vostra ${ provider.adminConsoleName }."
       ],
       "To migrate this user, enable their account under ${ usersAddressesLink }.": [
-        "Per migrar aquest usuari, habiliteu el seu compte a ${ usersAddressesLink }."
+        "Per a migrar aquest usuari, habiliteu el seu compte a ${ usersAddressesLink }."
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
         "Per migrar aquest usuari, habiliteu la seva adreça a ${ usersAddressesLink }."
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
-        "Per migrar aquest usuari, ha d'acceptar la invitació per unir-se a ${ BRAND_NAME }."
+        "Per a migrar aquest usuari, ha d'acceptar la invitació per a unir-se a ${ BRAND_NAME }."
       ],
       "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
-        "Per migrar aquest usuari, desarxiveu-lo a la vostra ${ provider.adminConsoleName }."
+        "Per a migrar aquest usuari, desarxiveu-lo a la ${ provider.adminConsoleName }."
       ],
       "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
-        "Per migrar aquest usuari, reactiveu-lo a la vostra ${ provider.adminConsoleName }."
+        "Per a migrar aquest usuari, reactiveu-lo a la ${ provider.adminConsoleName }."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "Per a evitar l'abús o el frau, us demanem una donació mínima de ${ minimumDonation }. Això contribueix a la tasca de la ${ protonFoundationLink } en la defensa de la privacitat digital a escala mundial i ajuda a protegir les generacions futures."
@@ -13523,7 +13535,7 @@
         "Per a utilitzar ${ toAppName }, necessiteu una adreça de ${ MAIL_APP_NAME }."
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address. An administrator of your organization can create one for you.": [
-        "Per utilitzar ${ toAppName }, necessiteu una adreça de ${ MAIL_APP_NAME }. Un administrador de la vostra organització en pot crear una per a vós."
+        "Per a utilitzar ${ toAppName }, necessiteu una adreça de ${ MAIL_APP_NAME }. Un administrador de la vostra organització us en pot crear una."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Per funcionar correctament, cada filtre ha de contenir com a mínim un nom i un script Sieve vàlid. Podeu ${ link }."
@@ -13910,7 +13922,7 @@
         "Quan l'inici de sessió està restringit, només ${ primaryEmailElement } i el nom d'usuari ${ usernameElement } es poden utilitzar per a iniciar la sessió. Les vostres altres adreces no es poden tornar a enllaçar al compte, fins i tot si algú les coneix."
       ],
       "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Quan l'inici de sessió està restringit, només el vostre correu ${ primaryEmailElement } es pot utilitzar per a iniciar sessió. Les vostres altres adreces no es poden tornar a enllaçar al compte, fins i tot si algú les coneix."
+        "Quan l'inici de sessió està restringit, només el vostre correu ${ primaryEmailElement } es pot utilitzar per a iniciar la sessió. Les vostres altres adreces no es poden tornar a enllaçar al compte, fins i tot si algú les coneix."
       ],
       "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Quan l'inici de sessió està restringit, només el nom d'usuari ${ usernameElement } es pot utilitzar per a iniciar la sessió. Les vostres altres adreces no es poden tornar a enllaçar al compte, fins i tot si algú les coneix."
@@ -13985,7 +13997,7 @@
         "Anual"
       ],
       "You": [
-        "Tú"
+        "Vós"
       ],
       "You already have a free account": [
         "Ja teniu un compte gratuït"
@@ -15134,6 +15146,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Accediu a ${ PASS_APP_NAME } de manera segura des del terminal, és ideal per scripts, automatització i fluxos de treball de desenvolupament."
       ],
+      "Account credit": [
+        "Crèdit del compte"
+      ],
       "Account holder": [
         "Titular del compte"
       ],
@@ -15368,6 +15383,9 @@
       "Billed monthly.": [
         "Facturat mensualment."
       ],
+      "Billing contact": [
+        "Contacte de facturació"
+      ],
       "Billing cycle": [
         "Cicle de facturació"
       ],
@@ -15572,6 +15590,9 @@
       "Credits used": [
         "Crèdits utilitzats"
       ],
+      "Currency": [
+        "Moneda"
+      ],
       "Current display name": [
         "Nom que es mostra actualment"
       ],
@@ -15583,6 +15604,9 @@
       ],
       "Custom email domain": [
         "Domini de correu electrònic personalitzat",
+        "Dominis de correu electrònic personalitzats"
+      ],
+      "Custom email domains": [
         "Dominis de correu electrònic personalitzats"
       ],
       "Daily email notifications": [
@@ -15599,6 +15623,9 @@
       ],
       "Deals, offers, and marketing emails": [
         "Promocions, ofertes i correus electrònics de màrqueting"
+      ],
+      "Dedicated VPN servers": [
+        "Servidors VPN dedicats"
       ],
       "Default email address": [
         "Adreça de correu electrònic predeterminada"
@@ -15942,6 +15969,9 @@
       "Invite via email": [
         "Convida per correu electrònic"
       ],
+      "Invoice email": [
+        "Correu electrònic de la factura"
+      ],
       "Issuer ID": [
         "ID de l'emissor"
       ],
@@ -16224,6 +16254,9 @@
       "Organization password": [
         "Contrasenya d'organització"
       ],
+      "Organization size": [
+        "Mida de l'organització"
+      ],
       "Other": [
         "Altres"
       ],
@@ -16256,6 +16289,9 @@
       ],
       "Payment method": [
         "Forma de pagament"
+      ],
+      "Payment terms": [
+        "Condicions de pagament"
       ],
       "Peak allocated licenses": [
         "Pic de llicències assignades"
@@ -16594,6 +16630,9 @@
       "System information": [
         "Informació del sistema"
       ],
+      "Taxable": [
+        "Imposable"
+      ],
       "The best of ${ BRAND_NAME } with one subscription": [
         "El millor de ${ BRAND_NAME } amb una subscripció"
       ],
@@ -16722,6 +16761,9 @@
       ],
       "Value": [
         "Valor"
+      ],
+      "VAT number": [
+        "CIF per a l'IVA"
       ],
       "Vault": [
         "Caixa forta"
@@ -20758,6 +20800,14 @@
         "Necessiteu accés a la clau de l'organització per a realitzar aquesta operació."
       ]
     },
+    "Payment method": {
+      "Bank transfer": [
+        "Transferència bancària"
+      ],
+      "Credit card": [
+        "Targeta de crèdit"
+      ]
+    },
     "Payment Method": {
       "Bank Account": [
         "Compte bancari"
@@ -20778,6 +20828,15 @@
       ],
       "New credit/debit card": [
         "Targeta de crèdit/dèbit nova"
+      ]
+    },
+    "Payment terms": {
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dies"
+      ],
+      "Due on receipt": [
+        "A pagar en el moment de la recepció"
       ]
     },
     "Payment.Sepa.Action": {
@@ -22688,10 +22747,10 @@
         "Cal l'aprovació final per a concedir accés a tots els serveis de ${ BRAND_NAME }."
       ],
       "Final approval needed to remove organization key access.": [
-        "Cal l'aprovació final per eliminar l'accés a la clau de l'organització."
+        "Cal l'aprovació final per a eliminar l'accés a la clau de l'organització."
       ],
       "Final approval needed to revoke their organization keys.": [
-        "Es requereix aprovació final per revocar les claus de la seva organització."
+        "Es requereix l'aprovació final per a revocar les claus de la seva organització."
       ],
       "From your identity provider": [
         "Del vostre proveïdor d'identitat"
@@ -24462,7 +24521,7 @@
         "Genera una frase de recuperació"
       ],
       "key removal scheduled": [
-        "S'ha programat l'eliminació de la clau"
+        "s'ha programat l'eliminació de la clau"
       ],
       "Last changed ${ formattedDate }": [
         "Última modificació el ${ formattedDate }"
@@ -24483,7 +24542,7 @@
         "Obsolet"
       ],
       "remove organization key": [
-        "Elimina les claus de l'organització"
+        "elimina la clau de l'organització"
       ],
       "Saved": [
         "S'ha desat"
@@ -26291,7 +26350,7 @@
         "Configuració del perfil de dispositiu de la VPN sempre activa"
       ],
       "Configure migration": [
-        "Configureu la migració"
+        "Configuració de la migració"
       ],
       "Configure your domain": [
         "Configureu el vostre domini"
@@ -26920,9 +26979,6 @@
       "Grant access": [
         "Concedeix l'accés"
       ],
-      "Group": [
-        "Grup"
-      ],
       "Group membership": [
         "Membres del grup"
       ],
@@ -27277,6 +27333,9 @@
       ],
       "Pay invoice": [
         "Paga la factura"
+      ],
+      "Payment": [
+        "Pagament"
       ],
       "Payment failed": [
         "El pagament no s'ha pogut processar."
@@ -27732,6 +27791,9 @@
       "Switch to two-password mode": [
         "Canviar al mode de dues contrasenyes"
       ],
+      "Tax": [
+        "Impostos"
+      ],
       "Text": [
         "Text"
       ],
@@ -28013,6 +28075,9 @@
       ],
       "Your exposed information": [
         "La vostra informació exposada"
+      ],
+      "Your groups": [
+        "Els vostres grups"
       ],
       "Your import is finished!": [
         "Ha finalitzat la importació."
@@ -28495,7 +28560,7 @@
         "Quan moveu un correu electrònic al correu brossa, se us cancel·larà automàticament la subscripció a les llistes de distribució del remitent."
       ],
       "Your ${ DRIVE_APP_NAME } storage is almost full": [
-        "L'emmagatzematge del vostre ${ DRIVE_APP_NAME } és gairebé ple"
+        "L'emmagatzematge del ${ DRIVE_APP_NAME } és gairebé ple"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "La vostra safata d'entrada de ${ MAIL_APP_NAME } està gairebé plena."

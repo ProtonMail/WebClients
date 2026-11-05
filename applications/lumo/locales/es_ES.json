@@ -1994,9 +1994,6 @@
         "${ fileCount } archivo",
         "${ fileCount } archivos"
       ],
-      "${ formattedSpend } of ${ formattedLimit } used this month": [
-        "${ formattedSpend } de ${ formattedLimit } utilizados este mes"
-      ],
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } es una IA centrada en la privacidad que te ayuda a hacer más, mientras mantiene tus datos seguros. Desbloquea todo su potencial y disfruta de acceso anticipado a nuevas funciones a medida que se introducen."
       ],
@@ -2311,12 +2308,6 @@
       "Monitor your organization's API balance and token usage.": [
         "Supervisa el saldo de la API y el uso de tokens de tu organización."
       ],
-      "Monthly spending limit reached. API requests are paused until next month.": [
-        "Se ha alcanzado el límite de gasto mensual. Las solicitudes de API están pausadas hasta el próximo mes."
-      ],
-      "Monthly spending limit: ${ formattedSpend } of ${ formattedLimit } used (${ limitUsagePercent }%)": [
-        "Límite de gasto mensual: se ha usado ${ formattedSpend } de ${ formattedLimit } (${ limitUsagePercent }%)"
-      ],
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "Nunca incrustes claves de API en paquetes del lado del cliente. Usa variables de entorno y un proxy del lado del servidor en producción."
       ],
@@ -2337,9 +2328,6 @@
       ],
       "No members match your search.": [
         "Ningún miembro coincide con tu búsqueda."
-      ],
-      "No monthly spending limit": [
-        "Sin límite de gasto mensual"
       ],
       "No new memories were found in your recent chats.": [
         "No se han encontrado recuerdos nuevos en tus chats recientes."
@@ -2367,9 +2355,6 @@
       ],
       "Pass a model ID in your request. Prices are list prices in USD per million tokens (MTok).": [
         "Incluye un ID de modelo en tu solicitud. Los precios son precios de lista en USD por millón de tokens (MTok)."
-      ],
-      "Pause API requests until next month once this is reached.": [
-        "Pausar las solicitudes de API hasta el próximo mes cuando se alcance este límite."
       ],
       "Pay only for the tokens you use. Prices in USD per 1M tokens.": [
         "Paga solo por los tokens que uses. Precios en USD por cada 1 M de tokens."
@@ -3891,9 +3876,6 @@
       "Delete column": [
         "Eliminar columna"
       ],
-      "Delete conversation": [
-        "Eliminar conversación"
-      ],
       "Delete file": [
         "Eliminar archivo"
       ],
@@ -3908,9 +3890,6 @@
       ],
       "Delete table": [
         "Eliminar tabla"
-      ],
-      "Delete task": [
-        "Eliminar tarea"
       ],
       "Describe desired changes...": [
         "Describe los cambios deseados..."
@@ -4080,9 +4059,6 @@
       "Open chat": [
         "Abrir chat"
       ],
-      "Open conversation": [
-        "Abrir conversación"
-      ],
       "Open scheduled task: ${ name }": [
         "Abrir tarea programada: ${ name }"
       ],
@@ -4154,9 +4130,6 @@
       ],
       "Request a shorter, more focused response": [
         "Solicita una respuesta más corta y enfocada"
-      ],
-      "Reset": [
-        "Restablecer"
       ],
       "Retry": [
         "Volver a intentar"
@@ -4268,9 +4241,6 @@
       ],
       "Upgrade to Plus": [
         "Pásate a Plus"
-      ],
-      "Upload": [
-        "Cargar"
       ],
       "Upload a skill": [
         "Sube una habilidad"
@@ -4489,12 +4459,6 @@
     "collider_2025:Description": {
       "Big Tech AI built a scarily accurate profile of me from my chat history. See what yours knows about you 👀": [
         "Una IA de las grandes tecnológicas elaboró a partir de mi historial de chats un perfil escalofriantemente preciso de mí. Mira lo que sabe de ti la tuya 👀"
-      ],
-      "Run without asking, using only the connectors you allow. Off: pause and notify you before each tool that requires confirmation.": [
-        "Ejecuta sin preguntar, usando solo los conectores que permitas. Desactivado: pausa y te avisa antes de cada herramienta que requiera confirmación."
-      ],
-      "Use the connectors above without asking. Off: pause and notify me before each Ask tool.": [
-        "Usa los conectores anteriores sin preguntar. Desactivado: pausa y avísame antes de cada uso de la herramienta Ask."
       ]
     },
     "collider_2025:Error": {
@@ -4808,10 +4772,6 @@
       ]
     },
     "collider_2025:Info": {
-      " Chat in Project": [
-        " Conversar en el proyecto",
-        " chats en el proyecto"
-      ],
       "\"${ file.name }\" is still being indexed. Content will be loaded when you send.": [
         "\"${ file.name }\" aún se está indexando. El contenido se cargará cuando envíes."
       ],
@@ -4831,12 +4791,6 @@
       ],
       "${ LUMO_SHORT_APP_NAME } and edits change the latest version.": [
         "${ LUMO_SHORT_APP_NAME } y las ediciones modifican la versión más reciente."
-      ],
-      "${ LUMO_SHORT_APP_NAME } can read the scripts in a skill but won't run them": [
-        "${ LUMO_SHORT_APP_NAME } puede leer los scripts de una habilidad, pero no los ejecutará"
-      ],
-      "${ LUMO_SHORT_APP_NAME } can run a prompt for you every morning, every Friday, or whenever you like.": [
-        "${ LUMO_SHORT_APP_NAME } puede ejecutar una instrucción por ti cada mañana, cada viernes o cuando quieras."
       ],
       "${ LUMO_SHORT_APP_NAME } is a private AI. Your conversations are encrypted and never used to train AI models.": [
         "${ LUMO_SHORT_APP_NAME } es una IA privada. Tus conversaciones están cifradas y nunca se usan para entrenar modelos de IA."
@@ -4872,10 +4826,6 @@
       "${ report.sensitiveCategories.length } sensitive categories": [
         "${ report.sensitiveCategories.length } categorías sensibles"
       ],
-      "${ saved.length } skill added": [
-        "${ saved.length } habilidad añadida",
-        "${ saved.length } habilidades añadidas"
-      ],
       "${ skillCount } skill": [
         "${ skillCount } habilidad",
         "${ skillCount } habilidades"
@@ -4883,22 +4833,12 @@
       "${ target.path } isn't part of this skill": [
         "${ target.path } no forma parte de esta habilidad"
       ],
-      "${ valid.length } skill ready to upload.": [
-        "${ valid.length } habilidad lista para cargar.",
-        "${ valid.length } habilidades listas para cargar."
-      ],
       "${ wordCount } word": [
         "${ wordCount } palabra",
         "${ wordCount } palabras"
       ],
       "(latest)": [
         "(más reciente)"
-      ],
-      ".md file must contain skill name and description formatted in YAML": [
-        "El archivo .md debe contener el nombre y la descripción de la habilidad en formato YAML"
-      ],
-      ".zip or .skill file must include a SKILL.md file": [
-        "El archivo .zip o .skill debe incluir un archivo SKILL.md"
       ],
       "ad value": [
         "valor publicitario"
@@ -4908,9 +4848,6 @@
       ],
       "Add a skill to tailor how ${ LUMO_SHORT_APP_NAME } helps you. Type / in any chat to use it.": [
         "Añade una habilidad para personalizar la ayuda de ${ LUMO_SHORT_APP_NAME }. Escribe / en cualquier chat para usarla."
-      ],
-      "Add a skill to your workspace. A security scan runs when you upload.": [
-        "Añade una habilidad a tu espacio de trabajo. Se realiza un análisis de seguridad al cargarla."
       ],
       "Added": [
         "Añadida"
@@ -4945,17 +4882,8 @@
       "Another skill is also invoked with /${ handle }, so only one of them can be used. Rename one of them.": [
         "Otra habilidad también se invoca con /${ handle }, así que solo se puede usar una de ellas. Cambia el nombre de una de ellas."
       ],
-      "Any images generated in these conversations will also be deleted.": [
-        "También se eliminarán las imágenes generadas en estas conversaciones."
-      ],
-      "Any images generated in this conversation will also be deleted.": [
-        "También se eliminarán las imágenes generadas en esta conversación."
-      ],
       "Applying your changes…": [
         "Aplicando tus cambios…"
-      ],
-      "Are you sure you want to delete \"${ taskName }\"? Its run history will also be deleted. This action cannot be undone.": [
-        "¿Seguro que quieres eliminar \"${ taskName }\"? También se eliminará su historial de ejecuciones. Esta acción no se puede deshacer."
       ],
       "Are you sure you want to delete \"${ taskName }\"? This action cannot be undone.": [
         "¿Seguro que quieres eliminar «${ taskName }»? Esta acción no se puede deshacer."
@@ -5004,9 +4932,6 @@
       ],
       "Checking…": [
         "Comprobando…"
-      ],
-      "Choose a file to continue.": [
-        "Elige un archivo para continuar."
       ],
       "Choose a format to export \"${ conversation.title }\":": [
         "Elige un formato para exportar «${ conversation.title }»:"
@@ -5095,17 +5020,11 @@
       "Documents, code and webpages created in your chats will appear here.": [
         "Los documentos, el código y las páginas web que crees en tus chats aparecerán aquí."
       ],
-      "Draft": [
-        "Borrador"
-      ],
       "Drafting content…": [
         "Redactando contenido…"
       ],
       "Drag and drop or click to browse": [
         "Arrastra y suelta o haz clic para examinar"
-      ],
-      "Drag and drop skill files or folders here, or browse — you can add several at once": [
-        "Arrastra y suelta aquí archivos o carpetas de habilidades, o busca en tu equipo — puedes añadir varios a la vez"
       ],
       "Drive files are not available for guest users": [
         "Los archivos de Drive no están disponibles para usuarios invitados"
@@ -5146,14 +5065,8 @@
       "File attached": [
         "Archivo adjunto"
       ],
-      "File types, paths and sizes look fine": [
-        "Los tipos, las rutas y los tamaños de archivo son correctos"
-      ],
       "Files uploaded to this project will be saved to the linked Drive folder.": [
         "Los archivos cargados en este proyecto se guardarán en la carpeta de Drive vinculada."
-      ],
-      "Folders and plugins can hold several skills, each in its own folder with a SKILL.md": [
-        "Las carpetas y los complementos pueden contener varias habilidades, cada una en su propia carpeta con un SKILL.md"
       ],
       "Follow the prompts to confirm the export": [
         "Sigue las indicaciones para confirmar la exportación"
@@ -5318,14 +5231,8 @@
       "Run a small business and decide what to build next.": [
         "Dirige un pequeño negocio y decide qué construir a continuación."
       ],
-      "Run tasks on a schedule or whenever you need them. Tasks run on this computer while ${ LUMO_SHORT_APP_NAME } is open.": [
-        "Ejecuta tareas según un horario o cuando lo necesites. Las tareas se ejecutan en este ordenador mientras ${ LUMO_SHORT_APP_NAME } esté abierto."
-      ],
       "Runs on an available computer while ${ LUMO_SHORT_APP_NAME } is open. Computers in the same timezone share one run for each occurrence.": [
         "Se ejecuta en un ordenador disponible mientras ${ LUMO_SHORT_APP_NAME } esté abierto. Los ordenadores de la misma zona horaria comparten una ejecución por cada repetición."
-      ],
-      "Runs when you upload": [
-        "Se ejecuta al subir"
       ],
       "Saving as ${ formatLabel }. Browse to the ${ DRIVE_SHORT_APP_NAME } folder you want to use, then click \"Save here\".": [
         "Guardando como ${ formatLabel }. Busca la carpeta de ${ DRIVE_SHORT_APP_NAME } que quieras usar y haz clic en «Guardar aquí»."
@@ -5354,9 +5261,6 @@
       ],
       "Some content, such as images and attachments, may not be included in the exported file.": [
         "Es posible que algunos contenidos, como imágenes y archivos adjuntos, no se incluyan en el archivo exportado."
-      ],
-      "Some files need attention": [
-        "Algunos archivos necesitan atención"
       ],
       "Some of what you pasted may cross workplace, legal, or data-protection lines. This is here to help you spot it, not to judge.": [
         "Parte de lo que has pegado puede cruzar límites laborales, legales o de protección de datos. Esto está aquí para ayudarte a detectarlo, no para juzgarte."
@@ -5734,9 +5638,6 @@
       ],
       "Connection failed": [
         "Error de conexión"
-      ],
-      "Connectors this task can use": [
-        "Conectores que puede usar esta tarea"
       ],
       "Conversation starters (optional)": [
         "Iniciadores de conversación (opcionales)"
@@ -6215,9 +6116,6 @@
       "Search library": [
         "Buscar en la biblioteca"
       ],
-      "Security scan": [
-        "Análisis de seguridad"
-      ],
       "Selected:": [
         "Seleccionado:"
       ],
@@ -6244,9 +6142,6 @@
       ],
       "Sifting through the meow-trics…": [
         "Revisando las miau-métricas…"
-      ],
-      "Skill file": [
-        "Archivo de habilidad"
       ],
       "Skill name": [
         "Nombre de la habilidad"
@@ -6298,9 +6193,6 @@
       ],
       "Unknown file": [
         "Archivo desconocido"
-      ],
-      "Untitled chat": [
-        "Conversación sin título"
       ],
       "Untitled project": [
         "Proyecto sin título"
@@ -6358,9 +6250,6 @@
       ],
       "What's your AI Paper Trail? ": [
         "¿Cuál es tu AI Paper Trail? "
-      ],
-      "When to run": [
-        "Cuándo ejecutar"
       ],
       "Wind": [
         "Viento"
@@ -6504,9 +6393,6 @@
       ],
       "Search library": [
         "Buscar en la biblioteca"
-      ],
-      "Search ready-made skills": [
-        "Buscar habilidades listas para usar"
       ],
       "Search your skills": [
         "Busca tus habilidades"
@@ -7322,9 +7208,6 @@
       "Creations": [
         "Creaciones"
       ],
-      "Discover": [
-        "Descubrir"
-      ],
       "Gallery": [
         "Galería"
       ],
@@ -7430,9 +7313,6 @@
       ],
       "Delete project?": [
         "¿Eliminar proyecto?"
-      ],
-      "Delete scheduled task?": [
-        "¿Eliminar la tarea programada?"
       ],
       "Delete skill?": [
         "¿Eliminar habilidad?"
@@ -7649,9 +7529,6 @@
       ],
       "Scheduled · ${ name }": [
         "Programada · ${ name }"
-      ],
-      "Search": [
-        "Buscar"
       ],
       "See what Big Tech AI already knows about you": [
         "Descubre lo que la IA de las grandes tecnológicas ya sabe de ti"

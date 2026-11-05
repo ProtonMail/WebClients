@@ -360,6 +360,9 @@
       "Download": [
         "Download"
       ],
+      "Download app": [
+        "Download app"
+      ],
       "Download local participant report": [
         "Download lokal-deltagerrapport"
       ],
@@ -2898,8 +2901,11 @@
       "Delete room": [
         "Slet rum"
       ],
-      "Do you want people to ${ deviceContentType } you in the meeting?": [
-        "Ønsker du, at folk skal ${ deviceContentType } dig i mødet?"
+      "Do you want people to hear you in the meeting?": [
+        "Ønsker du at folk kan høre dig i mødet?"
+      ],
+      "Do you want people to see you in the meeting?": [
+        "Ønsker du at folk kan se dig i mødet?"
       ],
       "Download current logs": [
         "Download aktuelle logs"
@@ -2981,6 +2987,9 @@
       ],
       "Get a secure meeting link then add it to your calendar": [
         "Få et sikkert mødelink, og tilføj det derefter til din kalender"
+      ],
+      "Get the best experience with the ${ protonMeet } desktop app": [
+        "Få den bedste oplevelse med ${ protonMeet } skrivebordsappen"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Gå til about:config, søg efter media.peerconnection.enabled, og sæt den til true."

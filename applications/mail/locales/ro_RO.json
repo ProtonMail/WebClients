@@ -1874,15 +1874,15 @@
         "Servere VPN dedicate: ${ ips }"
       ],
       "${ LUMO_APP_NAME } AI assistant": [
-        "Asistent de IA ${ LUMO_APP_NAME }"
+        "Asistent ${ LUMO_APP_NAME } AI"
       ],
       "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
-        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizator)",
-        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizatori)",
-        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } de utilizatori)"
+        "Asistent ${ LUMO_APP_NAME } AI (pentru ${ quantity } utilizator)",
+        "Asistent ${ LUMO_APP_NAME } AI (pentru ${ quantity } utilizatori)",
+        "Asistent ${ LUMO_APP_NAME } AI (pentru ${ quantity } de utilizatori)"
       ],
       "${ LUMO_APP_NAME } AI license": [
-        "Licențe IA ${ LUMO_APP_NAME }"
+        "Licențe ${ LUMO_APP_NAME } AI"
       ],
       "${ LUMO_APP_NAME } seats": [
         "Licențe ${ LUMO_APP_NAME }"
@@ -1910,9 +1910,9 @@
         "${ quantity } de domenii personale"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
-        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
-        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
-        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }"
+        "Licențe ${ LUMO_APP_NAME } AI: ${ seats }",
+        "Licențe ${ LUMO_APP_NAME } AI: ${ seats }",
+        "Licențe ${ LUMO_APP_NAME } AI: ${ seats }"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
@@ -2653,7 +2653,7 @@
         "Reîmprospătarea evenimentului nu este momentan suportată"
       ],
       "Event rescheduling is not supported for the moment": [
-        "Reprogramarea evenimentului nu este momentan suportată"
+        "Replanificarea evenimentului nu este momentan suportată."
       ],
       "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
         "Acest răspuns nu poate fi adăugat la ${ CALENDAR_APP_NAME } deoarece momentan sunt suportate doar răspunsuri la toate evenimentele dintr-o serie."
@@ -2830,7 +2830,7 @@
     },
     "collider_2025: feature": {
       "Access to advanced AI models": [
-        "Acces la modele AI avansate"
+        "Acces la modele de IA avansate"
       ],
       "Basic chat history": [
         "Istoric de bază conversații"
@@ -4087,9 +4087,6 @@
       "Attachment": [
         "Atașament"
       ],
-      "Filter on": [
-        "Filtrare după"
-      ],
       "Next": [
         "Următor"
       ],
@@ -4295,10 +4292,10 @@
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
       ],
       "Let people book time with you directly from your emails, without the back and forth.": [
-        "Permiteți-le oamenilor să planifice o întâlnire cu dvs. direct din e-mailuri, fără schimburi repetate de mesaje."
+        "Permiteți-le oamenilor să planifice o conferință cu dvs. direct din e-mailuri, fără schimburi repetate de mesaje."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
-        "Vă permite să adăugați imediat legături web de întâlnire în invitațiile la evenimente."
+        "Vă permite să adăugați imediat legături web de conferință în invitațiile la evenimente."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Îmbinare contacte... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
@@ -4345,7 +4342,7 @@
         "Configurați conturi pentru toți utilizatorii și invitați-i să se alăture la ${ BRAND_NAME }."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
-        "Simplificați sincronizarea și programarea cu calendare partajate."
+        "Simplificați sincronizarea și planificarea cu calendare partajate."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Acest lucru se poate întâmpla dacă permisiunile au fost eliminate sau parola a fost modificată."
@@ -6259,10 +6256,10 @@
     },
     "Google Meet": {
       "Join Google Meet": [
-        "Alăturați-vă întâlnirii de pe Google"
+        "Participare la Google Meet"
       ],
       "Joining instructions": [
-        "Instrucțiuni alăturare"
+        "Instrucțiuni de participare"
       ],
       "Less details": [
         "Mai puține detalii"
@@ -6271,7 +6268,7 @@
         "Gazdă conferință:"
       ],
       "Meeting link:": [
-        "Legătură web întâlnire:"
+        "Legătură web conferință:"
       ],
       "More details": [
         "Mai multe detalii"
@@ -6304,6 +6301,9 @@
       ]
     },
     "Header": {
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Înainte de ${ MAIL_APP_NAME }, ce fel de furnizor de e-mail ați folosit?"
+      ],
       "Contacts": [
         "Contacte"
       ],
@@ -6345,6 +6345,9 @@
       ],
       "Username": [
         "Nume de utilizator"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Care e motivul principal de a folosi ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -6805,6 +6808,9 @@
         "${ currentProgress } din ${ totalProgress }",
         "${ currentProgress } din ${ totalProgress }"
       ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } din ${ steps }"
+      ],
       "${ dateString } at ${ formattedTime }": [
         "${ dateString } la ${ formattedTime }"
       ],
@@ -7110,6 +7116,9 @@
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "Garanție de restituire a banilor în 30 de zile: anulați în termen de 30 de zile de la achiziție și contactați ${ customerSupportLink } pentru a obține o rambursare."
       ],
+      "A new or separate address": [
+        "O adresă nouă sau separată"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un număr de telefon poate fi folosit doar pentru verificarea unui cont ${ BRAND_NAME }."
       ],
@@ -7121,6 +7130,9 @@
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "O conexiune securizată este esențială atunci când lucrați la distanță. Un VPN protejează datele companiei de amenințările cibernetice și vă menține activitatea privată."
+      ],
+      "A specific feature (tell us)": [
+        "O funcție specifică (opțional)"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utilizator este un cont asociat cu un singur nume de utilizator, căsuță poștală și persoană."
@@ -7226,6 +7238,9 @@
         "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
         "Vor fi importate toate contactele, până la limita de ${ maxContact }.",
         "Vor fi importate toate contactele, până la limita de ${ maxContact }."
+      ],
+      "Almost done": [
+        "Aproape gata"
       ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
@@ -7344,6 +7359,9 @@
       "Awaiting transaction": [
         "Se așteaptă tranzacția"
       ],
+      "Back": [
+        "Înapoi"
+      ],
       "Background color": [
         "Culoare fundal"
       ],
@@ -7418,6 +7436,12 @@
       ],
       "Choose a plan that works best for you.": [
         "Alegeți un plan care vi se potrivește cel mai bine."
+      ],
+      "Choose all that apply.": [
+        "Alege toate care se aplică."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Alegeți una. Ne va ajuta să îmbunătățim ${ MAIL_APP_NAME }."
       ],
       "Choose your service to connect with": [
         "Alegeți serviciul cu care doriți să vă conectați"
@@ -7587,6 +7611,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
+      ],
+      "Dismiss": [
+        "Înlăturare"
       ],
       "Do you remember your password?": [
         "Vă amintiți parola?"
@@ -7932,6 +7959,12 @@
       "How hide-my-email aliases works": [
         "Cum funcționează aliasurile hide-my-email"
       ],
+      "I didn't have one": [
+        "Nu am mai avut"
+      ],
+      "I use other Proton products": [
+        "Folosesc alte produse Proton"
+      ],
       "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
         "Voi trece prin corespondența de săptămâna trecută și voi selecta ceea ce necesită într-adevăr un răspuns, ca să te poți ocupa de tot deodată."
       ],
@@ -8092,6 +8125,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Aflați ce aveți de făcut ${ dataLeakedLink }"
       ],
+      "Leave Big Tech": [
+        "Părăsesc marile companii tehnologice"
+      ],
       "Left to Right": [
         "De la stânga la dreapta"
       ],
@@ -8242,9 +8278,6 @@
       "Move here": [
         "Mutare aici"
       ],
-      "Move to Primary": [
-        "Mutare în principale"
-      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Denumiți noul folder și selectați folderul părinte în care doriți să îl puneți. Dacă nu selectaţi un folder părinte, acest folder nou va fi creat ca un folder de nivel superior."
       ],
@@ -8254,11 +8287,17 @@
       "newsletter": [
         "buletin informativ"
       ],
+      "Next": [
+        "Înainte"
+      ],
       "Next time you sign in to your other account": [
         "Data viitoare când vă conectați la celălalt cont"
       ],
       "No action selected": [
         "Nicio acțiune selectată"
+      ],
+      "No ads": [
+        "Fără reclame"
       ],
       "No booking pages yet": [
         "Încă nu există pagini de rezervări"
@@ -8368,6 +8407,9 @@
       "On public WiFi networks": [
         "Pe rețele Wi-Fi publice"
       ],
+      "One last step": [
+        "Ultimul pas"
+      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una sau mai multe chei de încredere au fost marcate ca fiind „compromise” de către proprietar. Vă recomandăm să „nu aprobați” aceste chei."
       ],
@@ -8397,6 +8439,9 @@
       ],
       "Organization size": [
         "Mărime organizație"
+      ],
+      "Other (tell us)": [
+        "Altul (spuneți-ne)"
       ],
       "Other accounts": [
         "Alte conturi"
@@ -8549,6 +8594,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
         "Împiedicați divulgarea adresei de e-mail către listele de mesagerie sau indivizii răuvoitori cu ${ hideMyEmailAliasesLink }."
+      ],
+      "Protection from hackers and leaks": [
+        "Protejare împotriva hackerilor și divulgărilor"
       ],
       "Public sharing of documents is not yet supported.": [
         "Partajarea publică a documentelor nu este încă implementată."
@@ -8863,6 +8911,9 @@
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Unele site-uri web și servicii de redare în flux blochează conținutul în funcție de regiune. Un VPN vă permite să ocoliți aceste restricții și să accesați internetul în mod liber."
       ],
+      "Someone recommended it": [
+        "Cineva mi l-a recomandat"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Ne pare rău, acest mesaj nu există sau a expirat deja."
       ],
@@ -8878,11 +8929,17 @@
       "Start sharing it with contacts and use it for online services.": [
         "Începeți să o partajați contactelor personale și folosiți-l pentru serviciile online."
       ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Începeți să utilizați ${ MAIL_APP_NAME }"
+      ],
       "Start using the shorter, catchier version of your email address.": [
         "Utilizați versiunea mai scurtă și mai atractivă a adresei de e-mail."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Păstrați-vă conexiunea fără efort, activând următoarele setări VPN:"
+      ],
+      "Stop companies reading my emails": [
+        "Împiedic companiile să-mi citească mesajele"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Capacitatea de stocare nu este acceptată în acest navigator web. Este nevoie de această funcție pentru a activa căutarea în conținutul mesajelor."
@@ -8930,6 +8987,9 @@
       ],
       "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
         "Spune-mi când vei pleca și ce ai vrea să scrie, iar eu îți voi arăta totul înainte de a se salva."
+      ],
+      "Tell us more (optional)": [
+        "Spuneți-ne mai multe (opțional)"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporar indisponibil din cauza solicitărilor mari. Reîncercați mai târziu."
@@ -9047,7 +9107,7 @@
         "Acest fișier este prea mare pentru a fi examinat."
       ],
       "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
-        "Această adresă de Gmail este înregistrată cu un alt cont ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } IA și altele). Lucrăm pentru a face această conexiune perfectă, dar deocamdată va trebui să parcurgeți câțiva pași."
+        "Această adresă de Gmail este înregistrată cu un alt cont ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI și altele). Lucrăm pentru a face această conexiune perfectă, dar deocamdată va trebui să parcurgeți câțiva pași."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Această invitație este salvată într-un calendar dezactivat."
@@ -9480,8 +9540,17 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Când călătoriți sau folosiți Wi-Fi public, conectați-vă la ${ VPN_APP_NAME } pentru a împiedica pe oricine să vă urmărească activitatea online sau să vă fure datele. Este gratis."
       ],
+      "Which feature? (optional)": [
+        "Ce funcționalitate? (opțional)"
+      ],
+      "Which provider?": [
+        "Care este furnizorul?"
+      ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "Cu noile categorii de mesaje, doar mesajele importante ajung în folderul principal de mesaje primite. Restul sunt organizate pe categorii."
+      ],
+      "Work or business": [
+        "Serviciu sau afaceri"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
@@ -11743,7 +11812,7 @@
         "Conferințe de 24 de ore"
       ],
       "60 minutes per meeting": [
-        "60 de minute per întâlnire"
+        "60 de minute per conferință"
       ],
       "Booking pages": [
         "Pagini de rezervare"
@@ -11758,7 +11827,7 @@
         "Partajare ecran cu criptare bilaterală și conversații temporare pe durata apelului"
       ],
       "Hosts can record meetings locally on their computers": [
-        "Gazdele pot înregistra întâlnirile local pe computerele lor"
+        "Gazdele pot înregistra conferințele local pe computerele lor"
       ],
       "Meeting recording": [
         "Înregistrare conferință"
@@ -12229,9 +12298,9 @@
         "Planificare întâlniri"
       ],
       "Appointment scheduling with ${ n } booking page": [
-        "Planificare întâlniri cu ${ n } pagină de programări",
-        "Planificare întâlniri cu ${ n } pagini de programări",
-        "Planificare întâlniri cu ${ n } de pagini de programări"
+        "Planificare întâlniri cu ${ n } pagină de planificări",
+        "Planificare întâlniri cu ${ n } pagini de planificări",
+        "Planificare întâlniri cu ${ n } de pagini de planificări"
       ],
       "Auto-delete Spam and Trash": [
         "Ștergere automată mesaje nedorite și din gunoi"
@@ -12705,7 +12774,7 @@
         "Transferați automat mesajele trimise spre contul din ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "În prezent, trimiterea mesajelor promoționale sau programate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
+        "În prezent, trimiterea mesajelor promoționale sau planificate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Alegeți un timp personal pentru a vi se reaminti despre un mesaj sau când să sosească mesajul."
@@ -12836,7 +12905,7 @@
         "Stocați în siguranță detaliile contactelor personale, cum ar fi numărul de telefon, adresa, ziua de naștere și notele personale. Criptarea cu acces zero vă garantează că nici chiar ${ BRAND_NAME } nu le poate accesa."
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
-        "Vedeți disponibilitatea participanților la întâlnire și economisiți timp programând întâlniri."
+        "Vedeți disponibilitatea participanților la conferință și economisiți timp programând conferințe."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Trimiteți e-mailuri către grupuri mari rapid și ușor prin crearea a cât mai multe grupuri de contact de care aveți nevoie (până la 100 de contacte per grup)."
@@ -16761,6 +16830,9 @@
       "Filter name cannot contain only spaces": [
         "Numele filtrului nu poate conține doar spații"
       ],
+      "Filter on": [
+        "Filtru activat"
+      ],
       "Filter on...": [
         "Filtrare după..."
       ],
@@ -18190,7 +18262,7 @@
     },
     "Zoom Meeting": {
       "Meeting ID:": [
-        "ID întâlnire:"
+        "ID conferință:"
       ],
       "Passcode:": [
         "Cod de acces:"

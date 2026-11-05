@@ -9561,6 +9561,9 @@
       "Best deal": [
         "Bedste tilbud"
       ],
+      "Billing details": [
+        "Faktureringsoplysninger"
+      ],
       "Checkout": [
         "Betaling"
       ],
@@ -9614,6 +9617,9 @@
       ],
       "Permissions": [
         "Tilladelser"
+      ],
+      "Plan details": [
+        "Abonnementsoplysninger"
       ],
       "Protection": [
         "Beskyttelse"
@@ -12947,6 +12953,9 @@
       "Signed up": [
         "Tilmelde sig"
       ],
+      "Signup link no longer valid": [
+        "Registreringslinket er ikke længere gyldigt"
+      ],
       "Smart Routed through a different country.": [
         "Smart Routet gennem et andet land."
       ],
@@ -13270,6 +13279,9 @@
       ],
       "This service is not available to users signing in with single sign-on.": [
         "Denne tjeneste er ikke tilgængelig for brugere, der logger ind med enkeltlogon."
+      ],
+      "This signup link has expired, been revoked or already been used. Please contact your ${ BRAND_NAME } representative for a new one.": [
+        "Dette registreringslink er udløbet, trukket tilbage eller er allerede blevet brugt. Kontakt din ${ BRAND_NAME }-repræsentant for at få en ny."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Dette token vil ikke være tilgængeligt, efter du har lukket dette vindue, og du bør ikke dele det med andre."
@@ -15042,6 +15054,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Få sikker adgang til ${ PASS_APP_NAME } fra terminalen, ideelt til scripting, automatisering og udviklingsarbejdsgange."
       ],
+      "Account credit": [
+        "Kontokredit"
+      ],
       "Account holder": [
         "Kontohaver"
       ],
@@ -15276,6 +15291,9 @@
       "Billed monthly.": [
         "Faktureres månedligt."
       ],
+      "Billing contact": [
+        "Kontaktoplysninger til fakturering"
+      ],
       "Billing cycle": [
         "Faktureringsperiode"
       ],
@@ -15480,6 +15498,9 @@
       "Credits used": [
         "Kredit forbrugt"
       ],
+      "Currency": [
+        "Valuta"
+      ],
       "Current display name": [
         "Nuværende vist navn"
       ],
@@ -15491,6 +15512,9 @@
       ],
       "Custom email domain": [
         "Brugerdefineret e-maildomæne",
+        "Brugerdefinerede e-maildomæner"
+      ],
+      "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
       ],
       "Daily email notifications": [
@@ -15507,6 +15531,9 @@
       ],
       "Deals, offers, and marketing emails": [
         "Tilbud, rabatter, og marketing-e-mails"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerede VPN-servere"
       ],
       "Default email address": [
         "Standard-e-mailadresse"
@@ -15850,6 +15877,9 @@
       "Invite via email": [
         "Inviter via e-mail"
       ],
+      "Invoice email": [
+        "Faktura e-mail"
+      ],
       "Issuer ID": [
         "Udsteder-ID"
       ],
@@ -16132,6 +16162,9 @@
       "Organization password": [
         "Oorganisationsadgangskode"
       ],
+      "Organization size": [
+        "Organisationsstørrelse"
+      ],
       "Other": [
         "Andet"
       ],
@@ -16164,6 +16197,9 @@
       ],
       "Payment method": [
         "Betalingsmetode"
+      ],
+      "Payment terms": [
+        "Betalingsvilkår"
       ],
       "Peak allocated licenses": [
         "Maksimalt tildelte licenser"
@@ -16502,6 +16538,9 @@
       "System information": [
         "Systemoplysninger"
       ],
+      "Taxable": [
+        "Momspligtigt"
+      ],
       "The best of ${ BRAND_NAME } with one subscription": [
         "Det bedste fra ${ BRAND_NAME } med ét abonnement"
       ],
@@ -16630,6 +16669,9 @@
       ],
       "Value": [
         "Værdi"
+      ],
+      "VAT number": [
+        "Momsnummer"
       ],
       "Vault": [
         "Boks"
@@ -20666,6 +20708,14 @@
         "Du skal have adgang til organisationsnøglen for at udføre denne handling."
       ]
     },
+    "Payment method": {
+      "Bank transfer": [
+        "Bankoverførsel"
+      ],
+      "Credit card": [
+        "Kreditkort"
+      ]
+    },
     "Payment Method": {
       "Bank Account": [
         "Bankkonto"
@@ -20686,6 +20736,15 @@
       ],
       "New credit/debit card": [
         "Nyt kredit/debetkort"
+      ]
+    },
+    "Payment terms": {
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dage"
+      ],
+      "Due on receipt": [
+        "Forfaldende på kvitteringen"
       ]
     },
     "Payment.Sepa.Action": {
@@ -26810,9 +26869,6 @@
       "Grant access": [
         "Giv adgang"
       ],
-      "Group": [
-        "Gruppe"
-      ],
       "Group membership": [
         "Gruppemedlemskab"
       ],
@@ -27167,6 +27223,9 @@
       ],
       "Pay invoice": [
         "Betal faktura"
+      ],
+      "Payment": [
+        "Betaling"
       ],
       "Payment failed": [
         "Betaling mislykkedes"
@@ -27619,6 +27678,9 @@
       "Switch to two-password mode": [
         "Skift til tilstand med to adgangskoder"
       ],
+      "Tax": [
+        "Skat"
+      ],
       "Text": [
         "Tekst"
       ],
@@ -27897,6 +27959,9 @@
       ],
       "Your exposed information": [
         "Dine blotlagte oplysninger"
+      ],
+      "Your groups": [
+        "Dine grupper"
       ],
       "Your import is finished!": [
         "Din import er afsluttet."

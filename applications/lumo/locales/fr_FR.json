@@ -1511,6 +1511,9 @@
       ]
     },
     "collider_2025: Error": {
+      "Automatic top-up could not be saved. Please try again.": [
+        "L'enregistrement de la recharge automatique n'a pas abouti. Veuillez réessayer."
+      ],
       "Could not generate a workflow. Try again.": [
         "Impossible de générer un workflow. Réessayez."
       ],
@@ -1553,11 +1556,17 @@
       "File uploaded but failed to add to knowledge base": [
         "Le fichier a été importé mais n'a pas pu être ajouté à la base de connaissances"
       ],
+      "Limit must be a whole amount of at least ${ formattedSavedAmount }": [
+        "Le montant maximal doit être un nombre entier d'au moins ${ formattedSavedAmount }"
+      ],
       "Name is required": [
         "Le nom est requis"
       ],
       "Name must be 191 characters or fewer": [
         "Le nom doit comporter 191 caractères au maximum"
+      ],
+      "Only the organization's primary admin can change these settings.": [
+        "Seul l'administrateur principal de l'organisation peut modifier ces paramètres."
       ],
       "Please select a category to describe what went wrong with the generated text": [
         "Sélectionnez une catégorie et expliquez ce qui n'a pas fonctionné avec le texte généré."
@@ -1600,6 +1609,9 @@
       ],
       "This project is full to the whiskers. Delete a conversation to make room for a new one and keep ${ LUMO_SHORT_APP_NAME } purring.": [
         "Ce projet est saturé jusqu'aux moustaches. Supprimez une conversation pour faire de la place à une nouvelle et permettre à ${ LUMO_SHORT_APP_NAME } de continuer à ronronner."
+      ],
+      "Top-up amount must be a whole amount between ${ formattedMinAmount } and ${ formattedMaxAmount }": [
+        "Le montant du rechargement doit être un nombre entier compris entre ${ formattedMinAmount } et ${ formattedMaxAmount }."
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited chats, extended history, access to advanced AI models, and more.": [
         "Passez à ${ LUMO_SHORT_APP_NAME } Plus pour des chats illimités, un historique étendu, l'accès à des modèles d'IA avancés, et bien plus encore."
@@ -1823,6 +1835,9 @@
         "${ fileCount } fichier",
         "${ fileCount } fichiers"
       ],
+      "${ formattedSpent } of ${ formattedLimit } bought automatically this month": [
+        "${ formattedSpent } sur ${ formattedLimit } ont été dépensés automatiquement ce mois-ci"
+      ],
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } est une IA axée sur la confidentialité qui vous aide à accomplir davantage tout en garantissant la sécurité de vos données. Libérez tout son potentiel et profitez d'un accès anticipé aux nouvelles fonctionnalités dès leur introduction."
       ],
@@ -2040,6 +2055,15 @@
       "Matching files": [
         "Fichiers correspondants"
       ],
+      "Missing information:": [
+        "Informations manquantes :"
+      ],
+      "Monthly spending limit reached. Automatic top-ups are paused until next month.": [
+        "La limite de dépenses mensuelle a été atteinte. Les recharges automatiques sont suspendues jusqu'au mois prochain."
+      ],
+      "Monthly spending limit: ${ formattedSpent } of ${ formattedLimit } bought automatically (${ limitSpentPercent }%)": [
+        "Limite de dépenses mensuelle : ${ formattedSpent } sur ${ formattedLimit } ont été dépensés automatiquement (${ limitSpentPercent } %)"
+      ],
       "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
         "N'intégrez jamais de clés API dans des paquets côté client. En production, utilisez des variables d'environnement et un proxy côté serveur."
       ],
@@ -2051,6 +2075,9 @@
       ],
       "No data rows found.": [
         "Aucune ligne de données n'a été trouvée."
+      ],
+      "No monthly limit on automatic top-ups": [
+        "Pas de limite mensuelle pour les recharges automatiques"
       ],
       "No new memories were found in your recent chats.": [
         "Aucune nouvelle mémoire n'a été trouvée dans vos discussions récentes."
@@ -2064,6 +2091,9 @@
       "No usage yet": [
         "Aucune utilisation pour l'instant"
       ],
+      "Notes:": [
+        "Notes :"
+      ],
       "Or pull suggestions from your recent chats.": [
         "Ou obtenez des suggestions provenant de vos discussions récentes."
       ],
@@ -2072,6 +2102,9 @@
       ],
       "Partial content": [
         "Contenu partiel"
+      ],
+      "Pause automatic top-ups until next month once they reach this amount.": [
+        "Suspendre les recharges automatiques jusqu'au mois prochain dès que ce montant est atteint."
       ],
       "PDF": [
         "PDF"
@@ -2684,6 +2717,15 @@
       "Active": [
         "Actif"
       ],
+      "Automatic payments are off for your payment method.": [
+        "Les paiements automatiques sont désactivés pour ce moyen de paiement."
+      ],
+      "Automatic top-up failed. Update your payment method to resume automatic top-ups.": [
+        "La recharge automatique n'a pas abouti. Mettez à jour votre moyen de paiement pour réactiver les recharges automatiques."
+      ],
+      "Automatic top-up paused. Update your payment method to resume automatic top-ups.": [
+        "La recharge automatique est suspendu. Mettez à jour votre moyen de paiement pour réactiver les rechargements automatiques."
+      ],
       "Blocked": [
         "Bloqué"
       ],
@@ -2695,6 +2737,9 @@
       ],
       "Expiring soon": [
         "Expire bientôt"
+      ],
+      "The last payment did not go through.": [
+        "Le dernier paiement n'a pas été pris en compte."
       ]
     },
     "collider_2025: Success": {
@@ -2788,6 +2833,12 @@
       ],
       "Auto update memory": [
         "Mise à jour automatique de la mémoire"
+      ],
+      "Automatic top-up failed": [
+        "La recharge automatique n'a pas abouti"
+      ],
+      "Automatic top-up paused": [
+        "La recharge automatique est suspendue"
       ],
       "Build intelligent apps.": [
         "Créez des applications intelligentes."
@@ -3128,6 +3179,9 @@
       "${ LUMO_SHORT_APP_NAME }'s a busy cat": [
         "${ LUMO_SHORT_APP_NAME } est un félin bien occupé !"
       ],
+      "Automatic top-up needs a card or PayPal set as default payment method with automatic payments on.": [
+        "Pour que la recharge automatique fonctionne, il faut qu'une carte bancaire ou un compte PayPal soit défini comme moyen de paiement par défaut et que l'option de paiement automatique soit activée."
+      ],
       "Conversation too long": [
         "Conversation trop longue"
       ],
@@ -3213,6 +3267,9 @@
       "Add": [
         "Ajouter"
       ],
+      "Add all": [
+        "Tout ajouter"
+      ],
       "Add column right": [
         "Ajouter une colonne à droite"
       ],
@@ -3227,6 +3284,9 @@
       ],
       "Add more information to improve the response": [
         "Ajoutez plus d'informations pour améliorer la réponse"
+      ],
+      "Add plugin": [
+        "Ajouter une extension"
       ],
       "Add row below": [
         "Ajouter une ligne en dessous"
@@ -3321,9 +3381,6 @@
       "Delete column": [
         "Supprimer la colonne"
       ],
-      "Delete conversation": [
-        "Supprimer la conversation"
-      ],
       "Delete file": [
         "Supprimer le fichier"
       ],
@@ -3335,9 +3392,6 @@
       ],
       "Delete table": [
         "Supprimer le tableau"
-      ],
-      "Delete task": [
-        "Supprimer la tâche"
       ],
       "Describe desired changes...": [
         "Décrivez les modifications souhaitées..."
@@ -3404,6 +3458,9 @@
       ],
       "Export": [
         "Exporter"
+      ],
+      "Export chat": [
+        "Exporter la discussion"
       ],
       "Full screen": [
         "Plein écran"
@@ -3483,9 +3540,6 @@
       "Open": [
         "Ouvrir"
       ],
-      "Open conversation": [
-        "Ouvrir la conversation"
-      ],
       "Open Settings": [
         "Ouvrir les paramètres"
       ],
@@ -3494,6 +3548,9 @@
       ],
       "Open task": [
         "Ouvrir une tâche"
+      ],
+      "Pause": [
+        "Suspendre"
       ],
       "PDF": [
         "PDF"
@@ -3558,8 +3615,8 @@
       "Request a shorter, more focused response": [
         "Demander une réponse plus courte et plus ciblée"
       ],
-      "Reset": [
-        "Réinitialiser"
+      "Resume": [
+        "Reprendre"
       ],
       "Retry": [
         "Réessayer"
@@ -3587,6 +3644,9 @@
       ],
       "Send": [
         "Envoyer"
+      ],
+      "Set up manually": [
+        "Configurer manuellement"
       ],
       "Share": [
         "Partager"
@@ -3648,9 +3708,6 @@
       "Upgrade to Plus": [
         "Passer à Plus"
       ],
-      "Upload": [
-        "Importer"
-      ],
       "Upload file": [
         "Importer un fichier"
       ],
@@ -3659,6 +3716,9 @@
       ],
       "Upload your AI export": [
         "Téléchargez votre exportation IA"
+      ],
+      "Use general setting": [
+        "Utiliser les paramétrages généraux"
       ],
       "View all": [
         "Tout afficher"
@@ -3962,10 +4022,6 @@
       ]
     },
     "collider_2025:Info": {
-      " Chat in Project": [
-        " Discussion dans le Projet",
-        " Discussions dans le Projet"
-      ],
       "\"${ file.name }\" is still being indexed. Content will be loaded when you send.": [
         "« ${ file.name } » est toujours en cours d'indexation. Le contenu s'affichera lorsque vous l'enverrez."
       ],
@@ -4018,17 +4074,17 @@
       "Almost ready…": [
         "Presque prêt…"
       ],
-      "Any images generated in these conversations will also be deleted.": [
-        "Les images générées dans ces conversations seront également supprimées."
-      ],
-      "Any images generated in this conversation will also be deleted.": [
-        "Les images générées dans cette conversation seront également supprimées."
-      ],
       "Applying your changes…": [
         "Application de vos modifications…"
       ],
       "Are you sure you want to delete \"${ taskName }\"? This action cannot be undone.": [
         "Voulez-vous vraiment supprimer « ${ taskName } » ? Cette action est irréversible."
+      ],
+      "Artifacts, generated images and everything else created in these conversations will also be deleted. This can't be undone.": [
+        "Les artefacts, les images générées et tout ce qui a été créé au cours de ces conversations seront également supprimés. Cette action ne peut pas être annulée."
+      ],
+      "Artifacts, generated images and everything else created in this conversation will also be deleted. This can't be undone.": [
+        "Les artefacts, les images générées et tout ce qui a été créé au cours de cette conversation seront également supprimés. Cette action ne peut pas être annulée."
       ],
       "Ask a question to get started. Your conversation is private.": [
         "Posez une question pour commencer. Votre conversation est privée."
@@ -4089,9 +4145,6 @@
       ],
       "Discover what Big Tech AI could piece together about you from your chat history — and get a privacy score you can share.": [
         "Découvrez ce que l'IA des géants de la tech pourrait déduire de votre historique de conversations — et obtenez un score de confidentialité que vous pouvez partager."
-      ],
-      "Draft": [
-        "Brouillon"
       ],
       "Drafting content…": [
         "Contenu en cours de création…"
@@ -4685,9 +4738,6 @@
       "Unknown file": [
         "Fichier inconnu"
       ],
-      "Untitled chat": [
-        "Discussion sans titre"
-      ],
       "Untitled project": [
         "Projet sans titre"
       ],
@@ -4711,6 +4761,9 @@
       ],
       "Weekly": [
         "Toutes les semaines"
+      ],
+      "What can I upload?": [
+        "Que puis-je importer ?"
       ],
       "Wind": [
         "Vent"
@@ -5100,6 +5153,9 @@
       "Market Cap": [
         "Capitalisation boursière"
       ],
+      "No matches": [
+        "Aucune correspondance."
+      ],
       "One moment": [
         "Un instant"
       ],
@@ -5334,9 +5390,6 @@
       "Delete project?": [
         "Supprimer le projet ?"
       ],
-      "Delete scheduled task?": [
-        "Supprimer la tâche planifiée ?"
-      ],
       "Description": [
         "Description"
       ],
@@ -5460,9 +5513,6 @@
       "Scheduled tasks": [
         "Tâches planifiées"
       ],
-      "Search": [
-        "Rechercher"
-      ],
       "See your AI paper trail": [
         "Consultez la piste d'audit de votre IA"
       ],
@@ -5501,6 +5551,9 @@
       ],
       "We couldn't read your paper trail": [
         "Nous n'avons pas pu déchiffrer vos documents."
+      ],
+      "What can ${ LUMO_SHORT_APP_NAME } see?": [
+        "Que peut voir ${ LUMO_SHORT_APP_NAME } ?"
       ],
       "What do you want to create today?": [
         "Que voulez-vous créer aujourd'hui ?"
@@ -7780,6 +7833,9 @@
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Accédez à ${ PASS_APP_NAME } en toute sécurité depuis le terminal, idéal pour les scripts, l'automatisation et les flux de travail de développement."
+      ],
+      "Account credit": [
+        "Crédit de compte"
       ],
       "Account holder": [
         "Titulaire du compte"
