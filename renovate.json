@@ -104,6 +104,12 @@
             "matchPackageNames": ["mdast-util-to-markdown"]
         },
         {
+            "description": "Express 4 needs the 0.1.x line. 0.2.x is an unpatched 2014 release that only looks newer (GHSA-9wv6-86v2-598j)",
+            "matchPackageNames": ["path-to-regexp"],
+            "matchCurrentVersion": "<0.2.0",
+            "allowedVersions": "<0.2.0"
+        },
+        {
             "groupName": "pass-desktop and inbox-desktop exclusions",
             "enabled": false,
             "matchPackageNames": ["@electron-forge/*", "@electron/fuses", "@vercel/webpack-asset-relocator-loader"]

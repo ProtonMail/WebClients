@@ -431,8 +431,8 @@ overrides:
     # @tpe/quark-client pins 9.0.5 and only imports nodemailer/lib/mail-composer, which 10.x still
     # exports. 10.0.0 only raised the minimum Node.js version to 20.
     'nodemailer@9.0.5': '10.3.1'
-    'path-to-regexp@0.1.12': '0.2.5'
-    'path-to-regexp@~0.1.12': '0.2.5'
+    'path-to-regexp@0.1.12': '0.1.13'
+    'path-to-regexp@~0.1.12': '0.1.13'
     'picomatch@^2.0.4': '2.3.2'
     'picomatch@^2.2.1': '2.3.2'
     'picomatch@^2.2.2': '2.3.2'
