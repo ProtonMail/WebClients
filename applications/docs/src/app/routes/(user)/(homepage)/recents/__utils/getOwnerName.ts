@@ -2,7 +2,7 @@ import { c } from 'ttag'
 
 type OwnerContact = { Email: string; Name?: string }
 
-type OwnedDocument ={ createdBy: string | undefined }
+type OwnedDocument = { createdBy: string | undefined }
 
 export function getOwnerName(
   recentDocument: OwnedDocument,

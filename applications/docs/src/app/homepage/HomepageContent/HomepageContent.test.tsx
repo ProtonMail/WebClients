@@ -13,6 +13,8 @@ import { ApplicationProvider } from '~/utils/application-context'
 import type { DocInvitesHook, HomepageViewState } from '../homepageViewContext'
 import { HomepageViewContext } from '../homepageViewContext'
 import type { MemberRole } from '@proton/drive/sdk'
+import type { ExtendedInvitationDetails } from '@proton/docs-shared/InvitationTypes'
+import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
 
 jest.mock('@proton/shared/lib/i18n', () => ({ dateLocale: { code: 'us' } }))
 
@@ -52,8 +54,9 @@ const mockBulkTrash = jest.fn()
 let mockIsTrashing = false
 const mockBulkMove = jest.fn()
 
+let mockInvitations: ExtendedInvitationDetails[] = []
 const useMockDocInvites: DocInvitesHook = () => ({
-  invitations: [],
+  invitations: mockInvitations,
   recentlyAcceptedInvites: [],
   acceptInvite: jest.fn(),
   rejectInvite: jest.fn(),
@@ -151,6 +154,25 @@ describe('HomepageContent', () => {
   test('Show no items found message when results are empty', async () => {
     renderWithProviders(<HomepageContent />, 'empty_recents')
     await screen.findByText(/Create end-to-end encrypted documents and spreadsheets./)
+  })
+
+  describe('invitations', () => {
+    afterEach(() => {
+      mockInvitations = []
+    })
+
+    test('Show pending invitations from useDocInvites', async () => {
+      mockInvitations = [
+        {
+          invitation: { invitationId: 'invitation1', createTime: Date.now(), inviterEmail: 'inviter@example.com' },
+          link: { mimeType: PROTON_DOCS_DOCUMENT_MIMETYPE },
+          decryptedLinkName: 'Invited document',
+        } as unknown as ExtendedInvitationDetails,
+      ]
+      renderWithProviders(<HomepageContent />)
+
+      expect(await screen.findByTestId('invite-document-name')).toHaveTextContent('Invited document')
+    })
   })
 
   test('Show context menu when button is clicked', async () => {

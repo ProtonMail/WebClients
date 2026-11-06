@@ -1,8 +1,7 @@
-import { getDrive } from '@proton/drive/sdk'
+import type { ProtonDriveClient } from '@proton/drive/sdk'
 import { traceErrorSDK } from './traceErrorSDK'
 
-export async function trashDocument(nodeUid: string) {
-  const drive = getDrive()
+export async function trashDocument(drive: ProtonDriveClient, nodeUid: string) {
   for await (const result of drive.trashNodes([nodeUid])) {
     if (!result.ok) {
       throw new Error(`${result.error.name}: ${result.error.message}; UID=${result.uid}`)
@@ -10,8 +9,7 @@ export async function trashDocument(nodeUid: string) {
   }
 }
 
-export async function restoreDocument(nodeUid: string) {
-  const drive = getDrive()
+export async function restoreDocument(drive: ProtonDriveClient, nodeUid: string) {
   for await (const result of drive.restoreNodes([nodeUid])) {
     if (!result.ok) {
       throw new Error(`${result.error.name}: ${result.error.message}; UID=${result.uid}`)
@@ -19,8 +17,7 @@ export async function restoreDocument(nodeUid: string) {
   }
 }
 
-export async function deleteDocument(nodeUid: string) {
-  const drive = getDrive()
+export async function deleteDocument(drive: ProtonDriveClient, nodeUid: string) {
   for await (const result of drive.deleteNodes([nodeUid])) {
     if (!result.ok) {
       throw new Error(`${result.error.name}: ${result.error.message}; UID=${result.uid}`)

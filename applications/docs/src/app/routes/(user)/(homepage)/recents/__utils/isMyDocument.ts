@@ -1,6 +1,6 @@
 type MyDocumentCandidate = { createdBy: string | undefined }
 
-type UserAddress ={ Email: string }
+type UserAddress = { Email: string }
 
 /**
  * Canonicalizes an email using the Proton scheme: drops the +alias, removes dots, underscores

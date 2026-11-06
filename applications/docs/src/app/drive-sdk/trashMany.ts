@@ -1,13 +1,13 @@
-import { getDrive, type ProtonDriveClient } from '@proton/drive/sdk'
+import type { ProtonDriveClient } from '@proton/drive/sdk'
 
 export type BatchResult = { succeeded: string[]; failed: { uid: string; error: Error }[] }
 
-export async function trashDocuments(nodeUids: string[]): Promise<BatchResult> {
-  return collectResults(nodeUids, getDrive().trashNodes(nodeUids))
+export async function trashDocuments(drive: ProtonDriveClient, nodeUids: string[]): Promise<BatchResult> {
+  return collectResults(nodeUids, drive.trashNodes(nodeUids))
 }
 
-export async function restoreDocuments(nodeUids: string[]): Promise<BatchResult> {
-  return collectResults(nodeUids, getDrive().restoreNodes(nodeUids))
+export async function restoreDocuments(drive: ProtonDriveClient, nodeUids: string[]): Promise<BatchResult> {
+  return collectResults(nodeUids, drive.restoreNodes(nodeUids))
 }
 
 // Never throws: if the SDK throws (e.g. network), all not yet seen uids are marked as failed

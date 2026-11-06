@@ -39,7 +39,7 @@ import {
   restoreDocument as restoreDocumentSDK,
   trashDocument as trashDocumentSDK,
 } from '../DriveSDK/trash'
-import { generateNodeUid } from '@proton/drive/sdk'
+import { generateNodeUid, getDrive } from '@proton/drive/sdk'
 
 /**
  * Controls the lifecycle of a single document for an authenticated user.
@@ -408,7 +408,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
       const decryptedNode = this.documentState.getProperty('decryptedNode')
 
       try {
-        await trashDocumentSDK(generateNodeUid(decryptedNode.volumeId, decryptedNode.nodeId))
+        await trashDocumentSDK(getDrive(), generateNodeUid(decryptedNode.volumeId, decryptedNode.nodeId))
       } catch (error) {
         reportTrashError(error)
         throw error
@@ -433,7 +433,7 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     try {
       const decryptedNode = this.documentState.getProperty('decryptedNode')
 
-      await restoreDocumentSDK(generateNodeUid(decryptedNode.volumeId, decryptedNode.nodeId))
+      await restoreDocumentSDK(getDrive(), generateNodeUid(decryptedNode.volumeId, decryptedNode.nodeId))
 
       await this.refreshNodeAndDocMeta({ imposeTrashState: 'not_trashed' })
     } catch (error: any) {

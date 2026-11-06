@@ -5,15 +5,17 @@ import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents
 import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
 import { ServerTime } from '@proton/docs-shared/ServerTime'
 import { generateNodeUid } from '@proton/drive/sdk'
+import type { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { ApplicationProvider } from '~/utils/application-context'
 import { HomepageViewContext, type HomepageViewValue } from '~/homepage'
 import { useBulkMove } from './useBulkMove'
 
 const mockShowMoveItemsModal = jest.fn()
-jest.mock('@proton/drive/public/moveItemsModal', () => ({
-  useMoveItemsModal: () => ({ moveItemsModal: null, showMoveItemsModal: mockShowMoveItemsModal }),
-}))
+const useMockMoveItemsModal: typeof useMoveItemsModal = () => ({
+  moveItemsModal: null,
+  showMoveItemsModal: mockShowMoveItemsModal,
+})
 
 const reportHomepageTelemetry = jest.fn()
 const updateMovedDocuments = jest.fn()
@@ -47,6 +49,8 @@ function createMockRecentDocument(data: Partial<RecentDocumentsItemValue> = {}):
 
 const d1 = createMockRecentDocument({ name: 'Document1', linkId: 'link1' })
 const d2 = createMockRecentDocument({ name: 'Document2', linkId: 'link2' })
+const renderBulkMove = () =>
+  renderHook(() => useBulkMove({ useMoveItemsModal: useMockMoveItemsModal, generateNodeUid }), { wrapper: Wrapper })
 
 describe('useBulkMove', () => {
   beforeEach(() => {
@@ -54,7 +58,7 @@ describe('useBulkMove', () => {
   })
 
   it('opens one move modal for every document and reports telemetry per document', () => {
-    const { result } = renderHook(() => useBulkMove(), { wrapper: Wrapper })
+    const { result } = renderBulkMove()
 
     act(() => result.current.move([d1, d2]))
 
@@ -69,7 +73,7 @@ describe('useBulkMove', () => {
 
   it('moves only the documents the move modal reports as moved', () => {
     const onMoved = jest.fn()
-    const { result } = renderHook(() => useBulkMove(), { wrapper: Wrapper })
+    const { result } = renderBulkMove()
     act(() => result.current.move([d1, d2], onMoved))
     const [{ onMoved: onModalMoved }] = mockShowMoveItemsModal.mock.calls[0]
 

@@ -18,6 +18,12 @@ import { DocumentUpdate } from '@proton/docs-proto/Generated/DocumentUpdate'
 import { generateNodeUid } from '@proton/drive/sdk'
 import { restoreDocument as restoreDocumentSDK, trashDocument as trashDocumentSDK } from '../DriveSDK/trash'
 
+const mockDrive = {}
+jest.mock('@proton/drive/sdk', () => ({
+  ...jest.requireActual('@proton/drive/sdk'),
+  getDrive: () => mockDrive,
+}))
+
 jest.mock('../DriveSDK/trash', () => ({
   trashDocument: jest.fn(),
   restoreDocument: jest.fn(),
@@ -90,7 +96,7 @@ describe('AuthenticatedDocController', () => {
 
     it('trashes the node through the Drive SDK', async () => {
       await controller.trashDocument()
-      expect(trashDocumentSDK).toHaveBeenCalledWith(generateNodeUid('volume-id', 'node-id'))
+      expect(trashDocumentSDK).toHaveBeenCalledWith(mockDrive, generateNodeUid('volume-id', 'node-id'))
     })
 
     it('trashState should be trashing initially', () => {
@@ -136,7 +142,7 @@ describe('AuthenticatedDocController', () => {
 
     it('restores the node through the Drive SDK', async () => {
       await controller.restoreDocument()
-      expect(restoreDocumentSDK).toHaveBeenCalledWith(generateNodeUid('volume-id', 'node-id'))
+      expect(restoreDocumentSDK).toHaveBeenCalledWith(mockDrive, generateNodeUid('volume-id', 'node-id'))
     })
 
     it('trashState should be restoring initially', () => {
