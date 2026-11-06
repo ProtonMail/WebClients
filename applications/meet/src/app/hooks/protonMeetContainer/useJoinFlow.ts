@@ -126,7 +126,6 @@ const gatherAndLogJoinStats = async ({
         tokenFetchMs: connectResult?.tokenFetchMs ?? null,
         mlsSetupMs: connectResult?.mlsSetupMs ?? null,
         livekitConnectMs: connectResult?.livekitConnectMs ?? null,
-        deviceInitMs: connectResult?.deviceInitMs ?? null,
         websocketUrl,
         totalJoinMs,
         stunFailed: connectResult?.connectionInfo.stunFailed ?? false,
@@ -135,13 +134,15 @@ const gatherAndLogJoinStats = async ({
     };
 
     try {
-        const [participantCount, iceCandidateInfo] = await Promise.all([
+        const [participantCount, iceCandidateInfo, deviceInitMs] = await Promise.all([
             connectResult?.participantCountPromise ?? Promise.resolve(undefined),
             totalJoinMs !== null ? getIceCandidateInfo(room) : Promise.resolve({}),
+            connectResult?.deviceInitMs ?? null,
         ]);
 
         logJoinStats({
             ...joinStats,
+            deviceInitMs,
             participantCount: participantCount ?? 0,
             ...iceCandidateInfo,
             ...getNetworkHints(),
@@ -257,9 +258,9 @@ export const useJoinFlow = ({
                     tokenFetchMs: connectResult.tokenFetchMs,
                     mlsSetupMs: connectResult.mlsSetupMs,
                     e2eeEnableMs: connectResult.e2eeEnableMs,
-                    deviceInitMs: connectResult.deviceInitMs,
                     livekitConnectMs: connectResult.livekitConnectMs,
                 },
+                deviceInitMs: connectResult.deviceInitMs,
                 getIceCandidateInfo: () => getIceCandidateInfo(room),
             });
 

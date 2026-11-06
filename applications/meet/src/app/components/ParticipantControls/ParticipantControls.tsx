@@ -15,6 +15,8 @@ import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
     selectCameraPermission,
     selectCameras,
+    selectIsCameraInitializing,
+    selectIsMicrophoneInitializing,
     selectMicrophonePermission,
     selectMicrophoneUnavailable,
     selectMicrophones,
@@ -57,6 +59,8 @@ export const ParticipantControls = () => {
     const { container: meetingDebugContainer, open: openMeetingDebugWindow } = useDetachedWindow('Meeting Debug');
     const { isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
     const [isCameraToggleLoading, withCameraToggleLoading] = useLoading();
+    const isMicrophoneInitializing = useMeetSelector(selectIsMicrophoneInitializing);
+    const isCameraInitializing = useMeetSelector(selectIsCameraInitializing);
     const isSpotlightLayout = useMeetSelector(selectIsSpotlightLayout);
     const page = useMeetSelector(selectPage);
     const isLargerThanMd = useIsLargerThanMd();
@@ -113,6 +117,7 @@ export const ParticipantControls = () => {
         hasPermission: hasMicrophonePermission,
         noDeviceDetected: microphones.length === 0,
         isEnabled: isMicrophoneEnabled,
+        isLoading: isMicrophoneInitializing,
     });
 
     const microphoneTooltipTitle = `${microphoneLabel} (${microphoneShortcutLabel})`;
@@ -123,6 +128,7 @@ export const ParticipantControls = () => {
         hasPermission: hasCameraPermission,
         noDeviceDetected: cameras.length === 0,
         isEnabled: isCameraEnabled,
+        isLoading: isCameraInitializing,
     });
 
     const cameraTooltipTitle = `${cameraLabel} (${cameraShortcutLabel})`;
@@ -166,6 +172,7 @@ export const ParticipantControls = () => {
                                 OnIconComponent={MicrophoneWithVolumeWithMicrophoneState}
                                 OffIconComponent={IcMeetMicrophoneOff}
                                 isOn={microphones.length === 0 ? false : isMicrophoneEnabled}
+                                loading={isMicrophoneInitializing}
                                 onClick={() => {
                                     void handleMicrophoneToggle();
                                 }}
@@ -189,7 +196,7 @@ export const ParticipantControls = () => {
                                 OnIconComponent={IcMeetCamera}
                                 OffIconComponent={IcMeetCameraOff}
                                 isOn={cameras.length === 0 ? false : isCameraEnabled}
-                                loading={isCameraToggleLoading}
+                                loading={isCameraInitializing || isCameraToggleLoading}
                                 onClick={() => {
                                     const result = handleCameraToggle();
                                     if (result) {
@@ -218,6 +225,7 @@ export const ParticipantControls = () => {
                             <CircleButton
                                 IconComponent={isMicrophoneEnabled ? IcMeetMicrophone : IcMeetMicrophoneOff}
                                 variant={isMicrophoneEnabled ? 'default' : 'danger'}
+                                loading={isMicrophoneInitializing}
                                 onClick={() => {
                                     void handleMicrophoneToggle();
                                 }}
@@ -228,7 +236,7 @@ export const ParticipantControls = () => {
                             <CircleButton
                                 IconComponent={isCameraEnabled ? IcMeetCamera : IcMeetCameraOff}
                                 variant={isCameraEnabled ? 'default' : 'danger'}
-                                loading={isCameraToggleLoading}
+                                loading={isCameraInitializing || isCameraToggleLoading}
                                 onClick={() => {
                                     const result = handleCameraToggle();
                                     if (result) {

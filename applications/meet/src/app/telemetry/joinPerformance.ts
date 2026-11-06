@@ -117,7 +117,11 @@ interface TrackJoinSucceededParams {
     connectedAt: number;
     joinSource: JoinSource;
     meetingType: MeetingTypeDimension;
-    connectPhases: Omit<JoinValues, JoinTimerPhase | 'firstRemoteAudioMs' | 'firstRemoteVideoMs' | 'totalJoinMs'>;
+    connectPhases: Omit<
+        JoinValues,
+        JoinTimerPhase | 'deviceInitMs' | 'firstRemoteAudioMs' | 'firstRemoteVideoMs' | 'totalJoinMs'
+    >;
+    deviceInitMs: Promise<number>;
     getIceCandidateInfo: () => Promise<IceCandidateInfo>;
 }
 
@@ -132,6 +136,7 @@ export const trackJoinSucceeded = ({
     joinSource,
     meetingType,
     connectPhases,
+    deviceInitMs,
     getIceCandidateInfo,
 }: TrackJoinSucceededParams) => {
     if (!isMeetTelemetryEnabled()) {
@@ -168,7 +173,10 @@ export const trackJoinSucceeded = ({
 
         const firstMedia = Math.min(firstRemoteAudio ?? Infinity, firstRemoteVideo ?? Infinity);
         const participantCount = room.remoteParticipants.size + 1;
-        const iceCandidateInfo = await getIceCandidateInfo().catch((): IceCandidateInfo => ({}));
+        const [iceCandidateInfo, deviceInit] = await Promise.all([
+            getIceCandidateInfo().catch((): IceCandidateInfo => ({})),
+            deviceInitMs.catch(() => undefined),
+        ]);
 
         sendMeetPerformanceEvent(
             TelemetryMeetPerformanceEvents.join_succeeded,
@@ -181,6 +189,7 @@ export const trackJoinSucceeded = ({
             {
                 ...joinTimer.phases,
                 ...connectPhases,
+                deviceInitMs: deviceInit,
                 firstRemoteAudioMs: firstRemoteAudio !== undefined ? firstRemoteAudio - joinStart : undefined,
                 firstRemoteVideoMs: firstRemoteVideo !== undefined ? firstRemoteVideo - joinStart : undefined,
                 totalJoinMs: (Number.isFinite(firstMedia) ? firstMedia : connectedAt) - joinStart,

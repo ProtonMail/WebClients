@@ -13,7 +13,7 @@ import { selectIsWebsocketReconnecting } from '@proton/meet/store/slices/connect
 import { selectDisplayName } from '@proton/meet/store/slices/currentMeeting';
 import {
     selectInitialCameraState,
-    selectIsMediaInitializing,
+    selectIsCameraInitializing,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import {
     selectParticipantIsHostOrAdmin,
@@ -64,9 +64,9 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
     const { disableVideos } = useMeetSelector(selectMeetSettings);
 
     // Suppress the local self-view only during that init window, afterwards it follows the real camera state
-    const isMediaInitializing = useMeetSelector(selectIsMediaInitializing);
+    const isCameraInitializing = useMeetSelector(selectIsCameraInitializing);
     const initialCameraState = useMeetSelector(selectInitialCameraState);
-    const isLocalVideoSuppressed = isMediaInitializing && !initialCameraState;
+    const isLocalVideoSuppressed = isCameraInitializing && !initialCameraState;
 
     const isWebsocketReconnecting = useMeetSelector(selectIsWebsocketReconnecting);
 

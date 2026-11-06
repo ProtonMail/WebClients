@@ -34,6 +34,8 @@ export type ToggleVideoType = (params: {
     preserveCache?: boolean;
     recoveringFromError?: boolean;
     updateUserIntent?: boolean;
+    /** Stops, instead of publishing, a new camera track whose device answers after this returns true */
+    hasLeftMeeting?: () => boolean;
 }) => Promise<boolean | undefined>;
 
 export type AudioToggleParams = {

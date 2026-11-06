@@ -39,6 +39,9 @@ const dummyMocks = vi.hoisted(() => ({
 }));
 vi.mock('../../../utils/dummyVideoTrack', () => dummyMocks);
 
+const enableDeviceTrackMock = vi.hoisted(() => ({ enableDeviceTrack: vi.fn() }));
+vi.mock('../../../utils/enableDeviceTrack', () => enableDeviceTrackMock);
+
 const setup = (isDummy: boolean, selectedCameraId?: string) => {
     storeMocks.useMeetSelector.mockImplementation((selector: unknown) =>
         selector === selectSelectedCameraId ? selectedCameraId : undefined
@@ -111,6 +114,37 @@ describe('useVideoToggle — placeholder track swap', () => {
         expect(localParticipant.setCameraEnabled).toHaveBeenCalledWith(true, { deviceId: { exact: 'device-1' } });
         expect(track.restartTrack).not.toHaveBeenCalled();
         expect(dummyMocks.markVideoTrackDeviceBacked).not.toHaveBeenCalled();
+    });
+});
+
+describe('useVideoToggle — leaving while the camera starts', () => {
+    afterEach(() => {
+        vi.clearAllMocks();
+    });
+
+    it('stops at a camera that answered after the user left', async () => {
+        const { result, localParticipant, reapplyBackgroundEffect } = setup(false);
+        const hasLeftMeeting = () => true;
+        enableDeviceTrackMock.enableDeviceTrack.mockResolvedValue(false);
+
+        let toggleResult: boolean | undefined;
+        await act(async () => {
+            toggleResult = await result.current.toggleVideo({
+                isEnabled: true,
+                videoDeviceId: 'device-1',
+                updateUserIntent: false,
+                hasLeftMeeting,
+            });
+        });
+
+        expect(enableDeviceTrackMock.enableDeviceTrack).toHaveBeenCalledWith(
+            localParticipant,
+            { source: 'camera', options: { deviceId: { exact: 'device-1' } } },
+            hasLeftMeeting
+        );
+        expect(localParticipant.setCameraEnabled).not.toHaveBeenCalled();
+        expect(reapplyBackgroundEffect).not.toHaveBeenCalled();
+        expect(toggleResult).toBe(false);
     });
 });
 

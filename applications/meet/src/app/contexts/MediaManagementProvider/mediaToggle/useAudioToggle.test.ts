@@ -37,6 +37,11 @@ vi.mock('../../../processors/noise-cancellation/useNoiseCancellationModel', () =
     useNoiseCancellationModel: () => noiseCancellationModel,
 }));
 
+const deviceTrack = vi.hoisted(() => ({
+    waitForPendingDeviceTrack: vi.fn((): Promise<boolean> => Promise.resolve(false)),
+}));
+vi.mock('../../../utils/enableDeviceTrack', () => deviceTrack);
+
 vi.mock('../../../processors/noise-cancellation/useIsNoiseCancellationDisabledByDefault', () => ({
     useIsNoiseCancellationDisabledByDefault: () => false,
 }));
@@ -147,8 +152,71 @@ const setup = ({ track, activeMicrophoneId }: { track: MicrophoneTrack; activeMi
 
     const { result } = renderHook(() => useAudioToggle(switchActiveDevice, meetAudioContext));
 
-    return { result, localParticipant };
+    return { result, localParticipant, publications };
 };
+
+describe('useAudioToggle — the join still starting the microphone', () => {
+    afterEach(() => {
+        vi.clearAllMocks();
+    });
+
+    it('acts on the track the join publishes instead of opening a second one', async () => {
+        const joinTrack = createMicrophoneTrack({ captureTrackState: 'live', sentTrackState: 'live' });
+        const { result, localParticipant, publications } = setup({
+            track: joinTrack,
+            activeMicrophoneId: BUILT_IN_MICROPHONE.deviceId,
+        });
+        const publication = publications.get('microphone')!;
+        publications.delete('microphone');
+        let publishJoinTrack = () => {};
+        deviceTrack.waitForPendingDeviceTrack.mockReturnValueOnce(
+            new Promise<boolean>((resolve) => {
+                publishJoinTrack = () => {
+                    publications.set('microphone', publication);
+                    resolve(false);
+                };
+            })
+        );
+
+        let toggleResult: boolean | undefined;
+        await act(async () => {
+            const toggling = result.current.toggleAudio({
+                isEnabled: true,
+                audioDeviceId: BUILT_IN_MICROPHONE.deviceId,
+                preserveCache: true,
+            });
+            publishJoinTrack();
+            toggleResult = await toggling;
+        });
+
+        expect(deviceTrack.waitForPendingDeviceTrack).toHaveBeenCalledWith(localParticipant, Track.Source.Microphone);
+        expect(toggleResult).toBe(true);
+        expect(publications.size).toBe(1);
+        expect(publications.get('microphone')?.audioTrack).toBe(joinTrack);
+        expect(joinTrack.unmute).toHaveBeenCalled();
+    });
+
+    it('does not open the microphone again once the join stopped it because the user left', async () => {
+        const { result, localParticipant, publications } = setup({
+            track: createMicrophoneTrack({ captureTrackState: 'live', sentTrackState: 'live' }),
+            activeMicrophoneId: BUILT_IN_MICROPHONE.deviceId,
+        });
+        publications.delete('microphone');
+        deviceTrack.waitForPendingDeviceTrack.mockResolvedValueOnce(true);
+
+        let toggleResult: boolean | undefined;
+        await act(async () => {
+            toggleResult = await result.current.toggleAudio({
+                isEnabled: true,
+                audioDeviceId: BUILT_IN_MICROPHONE.deviceId,
+                preserveCache: true,
+            });
+        });
+
+        expect(toggleResult).toBe(false);
+        expect(localParticipant.setMicrophoneEnabled).not.toHaveBeenCalled();
+    });
+});
 
 describe('useAudioToggle — microphone unplugged while muted', () => {
     afterEach(() => {
