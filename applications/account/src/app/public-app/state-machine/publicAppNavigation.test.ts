@@ -21,6 +21,7 @@ describe('createPublicAppNavigation', () => {
                 input: {
                     location: { pathname: SSO_PATHS.SIGNUP, search: '', hash: '', state: undefined, localePrefix: '' },
                     initialSessionsLength: 0,
+                    forkState: null,
                 },
             }
         ).start();
