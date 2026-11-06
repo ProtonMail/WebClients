@@ -20,7 +20,11 @@ vi.mock('@livekit/components-react', () => ({
     useLocalParticipant: () => ({ isCameraEnabled: false, isMicrophoneEnabled: false }),
 }));
 vi.mock('react-router-dom', () => ({ useHistory: vi.fn() }));
-vi.mock('@proton/meet/store/hooks', () => ({ useMeetDispatch: vi.fn(), useMeetStore: vi.fn() }));
+vi.mock('@proton/meet/store/hooks', () => ({
+    useMeetDispatch: vi.fn(),
+    useMeetStore: vi.fn(),
+    useMeetSelector: vi.fn(() => false),
+}));
 vi.mock('@proton/unleash/useFlag', () => ({ useFlag: vi.fn() }));
 vi.mock('../../contexts/MeetCoreClientContext', () => ({ useMeetCoreClient: vi.fn() }));
 vi.mock('../srp/useMeetingAuthentication', () => ({ useMeetingAuthentication: vi.fn() }));

@@ -2,7 +2,7 @@ import { useCallback, useMemo, useRef, useState } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import { logger } from '@protontech/logger';
-import { ConnectionState } from 'livekit-client';
+import { ConnectionState, Track } from 'livekit-client';
 import debounce from 'lodash/debounce';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
@@ -22,6 +22,7 @@ import { useStableCallback } from '../../../hooks/useStableCallback';
 import type { SwitchActiveDevice, ToggleVideoType } from '../../../types';
 import { getCurrentCameraTrack } from '../../../utils/cameraTrack';
 import { isDummyVideoTrack, markVideoTrackDeviceBacked } from '../../../utils/dummyVideoTrack';
+import { enableDeviceTrack } from '../../../utils/enableDeviceTrack';
 import { ERRORS_SIGNALING_POTENTIAL_STALE_DEVICE_STATE } from './constants';
 
 interface UseVideoToggleParams {
@@ -54,6 +55,7 @@ export const useVideoToggle = ({ switchActiveDevice, reapplyBackgroundEffect }: 
             preserveCache,
             recoveringFromError = false,
             updateUserIntent = true,
+            hasLeftMeeting,
         } = {}) => {
             let toggleResult = false;
 
@@ -110,6 +112,15 @@ export const useVideoToggle = ({ switchActiveDevice, reapplyBackgroundEffect }: 
                     await currentVideoTrack.restartTrack(replacementOptions);
                     await currentVideoTrack.unmute();
                     markVideoTrackDeviceBacked(currentVideoTrack);
+                } else if (isEnabled && hasLeftMeeting) {
+                    const isPublished = await enableDeviceTrack(
+                        localParticipant,
+                        { source: Track.Source.Camera, options: facingModeDependentOptions },
+                        hasLeftMeeting
+                    );
+                    if (!isPublished) {
+                        return false;
+                    }
                 } else {
                     await localParticipant.setCameraEnabled(isEnabled, facingModeDependentOptions);
                 }
@@ -145,6 +156,7 @@ export const useVideoToggle = ({ switchActiveDevice, reapplyBackgroundEffect }: 
                         videoDeviceId: fallback.deviceId,
                         recoveringFromError: true,
                         preserveCache: false,
+                        hasLeftMeeting,
                     })) as boolean;
                     toggleResult = recoveryResult ?? false;
                 } else {

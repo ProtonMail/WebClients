@@ -4,11 +4,16 @@ export const getMicrophoneButtonAriaLabel = ({
     hasPermission,
     noDeviceDetected,
     isEnabled,
+    isLoading = false,
 }: {
     hasPermission: boolean;
     noDeviceDetected: boolean;
     isEnabled: boolean;
+    isLoading?: boolean;
 }): string => {
+    if (isLoading) {
+        return c('Info').t`Microphone is starting`;
+    }
     if (!hasPermission) {
         return c('Info').t`Microphone permission denied`;
     }
@@ -22,11 +27,16 @@ export const getCameraButtonAriaLabel = ({
     hasPermission,
     noDeviceDetected,
     isEnabled,
+    isLoading = false,
 }: {
     hasPermission: boolean;
     noDeviceDetected: boolean;
     isEnabled: boolean;
+    isLoading?: boolean;
 }): string => {
+    if (isLoading) {
+        return c('Info').t`Camera is starting`;
+    }
     if (!hasPermission) {
         return c('Info').t`Camera permission denied`;
     }

@@ -4,7 +4,7 @@ import { act, renderHook } from '@testing-library/react';
 import { ConnectionError, ConnectionState } from 'livekit-client';
 import type { Mock } from 'vitest';
 
-import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
     setIsReconnecting,
     setJoinedRoom,
@@ -27,7 +27,7 @@ import {
 } from './useMeetingConnection';
 
 vi.mock('@livekit/components-react', () => ({ useRoomContext: vi.fn(), useLocalParticipant: vi.fn() }));
-vi.mock('@proton/meet/store/hooks', () => ({ useMeetDispatch: vi.fn() }));
+vi.mock('@proton/meet/store/hooks', () => ({ useMeetDispatch: vi.fn(), useMeetSelector: vi.fn() }));
 vi.mock('@proton/unleash/useFlag', () => ({ useFlag: vi.fn() }));
 vi.mock('../../contexts/MeetCoreClientContext', () => ({ useMeetCoreClient: vi.fn() }));
 vi.mock('../srp/useMeetingAuthentication', () => ({ useMeetingAuthentication: vi.fn() }));
@@ -35,6 +35,7 @@ vi.mock('../srp/useMeetingAuthentication', () => ({ useMeetingAuthentication: vi
 const useRoomContextMock = useRoomContext as unknown as Mock;
 const useLocalParticipantMock = useLocalParticipant as unknown as Mock;
 const useMeetDispatchMock = useMeetDispatch as unknown as Mock;
+const useMeetSelectorMock = useMeetSelector as unknown as Mock;
 const useFlagMock = useFlag as unknown as Mock;
 const useMeetCoreClientMock = useMeetCoreClient as unknown as Mock;
 const useMeetingAuthenticationMock = useMeetingAuthentication as unknown as Mock;
@@ -51,6 +52,18 @@ const mockRoom = {
 
 const setLocalDevices = (isCameraEnabled: boolean, isMicrophoneEnabled: boolean) =>
     useLocalParticipantMock.mockReturnValue({ isCameraEnabled, isMicrophoneEnabled });
+
+const setDevicesInitializing = (isInitializing: boolean, initialDevicesOn = false) =>
+    useMeetSelectorMock.mockImplementation((selector: (state: any) => unknown) =>
+        selector({
+            deviceManagement: {
+                isCameraInitializing: isInitializing,
+                isMicrophoneInitializing: isInitializing,
+                initialCameraState: initialDevicesOn,
+                initialAudioState: initialDevicesOn,
+            },
+        })
+    );
 
 const createDeferred = <T,>() => {
     let resolve!: (value: T) => void;
@@ -109,6 +122,7 @@ describe('useMeetingConnection', () => {
         useFlagMock.mockReturnValue(false);
         mockRoom.state = ConnectionState.Disconnected;
         setLocalDevices(true, false);
+        setDevicesInitializing(false);
         mockRoom.setE2EEEnabled.mockResolvedValue(undefined);
         mockRoom.disconnect.mockResolvedValue(undefined);
         mockMeetCoreClient.restart.mockResolvedValue(true);
@@ -138,45 +152,46 @@ describe('useMeetingConnection', () => {
             expect(result.current.websocketUrlRef.current).toBe('wss://x');
         });
 
-        it('waits for the participant list, which it requests while the devices initialize', async () => {
-            let resolveParticipantsFetch!: () => void;
-            let resolveDevices!: () => void;
+        it('waits for the participant list but not for the devices to initialize', async () => {
+            const participantsFetch = createDeferred<void>();
+            const devices = createDeferred<void>();
             const params = createParams({
-                getParticipants: vi.fn(
-                    () =>
-                        new Promise<void>((resolve) => {
-                            resolveParticipantsFetch = resolve;
-                        })
-                ),
-                initializeDevices: vi.fn(
-                    () =>
-                        new Promise<void>((resolve) => {
-                            resolveDevices = resolve;
-                        })
-                ),
+                getParticipants: vi.fn(() => participantsFetch.promise),
+                initializeDevices: vi.fn(() => devices.promise),
             });
             const { result } = renderHook(() => useMeetingConnection(params));
 
-            let isConnected = false;
+            let connectResult: Awaited<ReturnType<UseMeetingConnectionResult['connectWithMls']>> | undefined;
             await act(async () => {
-                void result.current.connectWithMls(baseConnectParams).then(() => {
-                    isConnected = true;
+                void result.current.connectWithMls(baseConnectParams).then((res) => {
+                    connectResult = res;
                 });
             });
 
+            expect(params.initializeDevices).toHaveBeenCalled();
             expect(params.getParticipants).toHaveBeenCalledWith('meeting-abc');
+            expect(connectResult).toBeUndefined();
 
             await act(async () => {
-                resolveDevices();
+                participantsFetch.resolve();
             });
 
-            expect(isConnected).toBe(false);
+            expect(connectResult).toBeDefined();
+
+            let deviceInitMs: number | undefined;
+            void connectResult!.deviceInitMs.then((ms) => {
+                deviceInitMs = ms;
+            });
+            await act(async () => {
+                await Promise.resolve();
+            });
+            expect(deviceInitMs).toBeUndefined();
 
             await act(async () => {
-                resolveParticipantsFetch();
+                devices.resolve();
             });
 
-            expect(isConnected).toBe(true);
+            expect(deviceInitMs).toEqual(expect.any(Number));
         });
 
         it('requests the participant list only once LiveKit is connected', async () => {
@@ -344,6 +359,19 @@ describe('useMeetingConnection', () => {
                 resolveParticipantsFetch();
             });
 
+            expect(mockDispatch).toHaveBeenCalledWith(setJoinedRoom(true));
+        });
+
+        it('restores the joined state without waiting for the devices', async () => {
+            const devices = createDeferred<void>();
+            const params = createParams({ initializeDevices: vi.fn(() => devices.promise) });
+            const { result } = renderHook(() => useMeetingConnection(params));
+
+            await act(async () => {
+                void result.current.performFullReconnection(RejoinReasonInfo.Other);
+            });
+
+            expect(params.initializeDevices).toHaveBeenCalled();
             expect(mockDispatch).toHaveBeenCalledWith(setJoinedRoom(true));
         });
 
@@ -762,6 +790,57 @@ describe('useMeetingConnection', () => {
                             desiredCameraState: before.camera,
                             desiredMicrophoneState: before.microphone,
                         })
+                    );
+                });
+
+                it('restores what the first join asked for when the room drops before its devices start', async () => {
+                    setDevicesInitializing(false, true);
+                    const params = createParams({
+                        initializeDevices: vi.fn(() => {
+                            setDevicesInitializing(true, true);
+                            return createDeferred<void>().promise;
+                        }),
+                    });
+                    const { result, rerender } = renderHook(() => useMeetingConnection(params));
+
+                    await act(() => result.current.connectWithMls(baseConnectParams));
+                    mockRoom.state = ConnectionState.Connected;
+                    setLocalDevices(false, false);
+                    act(() => rerender());
+                    loseConnection(rerender);
+                    await expect(
+                        result.current.performFullReconnection(RejoinReasonInfo.WebsocketDisconnected)
+                    ).resolves.toBe('joined');
+
+                    expect(params.initializeDevices).toHaveBeenLastCalledWith(
+                        expect.objectContaining({ desiredCameraState: true, desiredMicrophoneState: true })
+                    );
+                });
+
+                it('keeps the pre-loss state when the room drops again while the rejoined devices initialize', async () => {
+                    mockRoom.state = ConnectionState.Connected;
+                    setLocalDevices(true, true);
+                    const params = createParams({
+                        initializeDevices: vi.fn(() => {
+                            setDevicesInitializing(true);
+                            return createDeferred<void>().promise;
+                        }),
+                    });
+                    const { result, rerender } = renderHook(() => useMeetingConnection(params));
+                    loseConnection(rerender);
+
+                    await expect(
+                        result.current.performFullReconnection(RejoinReasonInfo.WebsocketDisconnected)
+                    ).resolves.toBe('joined');
+                    mockRoom.state = ConnectionState.Connected;
+                    act(() => rerender());
+                    loseConnection(rerender);
+                    await expect(
+                        result.current.performFullReconnection(RejoinReasonInfo.WebsocketDisconnected)
+                    ).resolves.toBe('joined');
+
+                    expect(params.initializeDevices).toHaveBeenLastCalledWith(
+                        expect.objectContaining({ desiredCameraState: true, desiredMicrophoneState: true })
                     );
                 });
 

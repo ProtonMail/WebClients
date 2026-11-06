@@ -31,6 +31,7 @@ import { useNoiseCancellationModel } from '../../../processors/noise-cancellatio
 import { audioQuality } from '../../../qualityConstants';
 import type { AudioToggleParams, SwitchActiveDevice, ToggleAudioType } from '../../../types';
 import { outputlessAudioContextOptions } from '../../../utils/browser';
+import { waitForPendingDeviceTrack } from '../../../utils/enableDeviceTrack';
 import type { MeetAudioContext } from '../../../utils/meet-audio-context';
 import { getPersistedNoiseFilter, persistNoiseFilter } from '../../../utils/noiseFilterPersistence';
 
@@ -482,6 +483,10 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, meetAudio
     const toggleAudio: ToggleAudioType = useStableCallback(async (params) => {
         let toggleResult = false;
         const operationId = ++toggleOperationId.current;
+
+        if (await waitForPendingDeviceTrack(localParticipant, Track.Source.Microphone)) {
+            return false;
+        }
 
         const currentAudioPublication = getCurrentPublication();
         const currentMuteState = currentAudioPublication?.isMuted ?? !initialAudioState;

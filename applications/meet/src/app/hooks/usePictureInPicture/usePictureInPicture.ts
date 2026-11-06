@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
+import { ConnectionState } from 'livekit-client';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -331,9 +332,15 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
         }
 
         let silentStream: MediaStream | null = null;
+        let isActive = true;
 
         const handleCreateSilentStream = async () => {
-            silentStream = await enableMediaSessionControls(reportMeetError);
+            const stream = await enableMediaSessionControls(reportMeetError);
+            if (!isActive || room.state === ConnectionState.Disconnected) {
+                stream?.getTracks().forEach((track) => track.stop());
+                return;
+            }
+            silentStream = stream;
         };
 
         const handleDestroySilentStream = () => {
@@ -357,6 +364,7 @@ export function usePictureInPicture({ isDisconnected }: { isDisconnected: boolea
         prevMediaStatus.current = currentMediaStatus;
 
         return () => {
+            isActive = false;
             room.off('connected', handleCreateSilentStream);
             room.off('disconnected', handleDestroySilentStream);
 

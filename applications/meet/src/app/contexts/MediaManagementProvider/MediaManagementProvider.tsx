@@ -14,9 +14,9 @@ import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/sto
 import {
     PermissionBlockedError,
     setActiveDevice,
+    setDevicesInitializing,
     setInitialAudioState,
     setInitialCameraState,
-    setMediaInitializing,
     setPreferredDeviceAndPersist,
     showPermissionsModal,
 } from '@proton/meet/store/slices/deviceManagementSlice';
@@ -27,6 +27,8 @@ import {
     selectCameras,
     selectInitialAudioState,
     selectInitialCameraState,
+    selectIsCameraInitializing,
+    selectIsMicrophoneInitializing,
     selectMicrophonePermission,
     selectMicrophones,
     selectRealtimeDevices,
@@ -56,6 +58,7 @@ import { requestPermissionWithTelemetry } from '../../telemetry/permissions';
 import type { InitializeDevices, SwitchActiveDevice } from '../../types';
 import { supportsSetSinkId } from '../../utils/browser';
 import { createDummyVideoTrack } from '../../utils/dummyVideoTrack';
+import { enableDeviceTrack } from '../../utils/enableDeviceTrack';
 import { isMicrophoneOnDevice } from '../../utils/isMicrophoneOnDevice';
 import type { MeetAudioContext } from '../../utils/meet-audio-context';
 import { BackgroundEffectsContext } from '../BackgroundEffects/BackgroundEffectsContext';
@@ -91,6 +94,8 @@ export const MediaManagementProvider = ({
 
     const initialCameraState = useMeetSelector(selectInitialCameraState);
     const initialAudioState = useMeetSelector(selectInitialAudioState);
+    const isMicrophoneInitializing = useMeetSelector(selectIsMicrophoneInitializing);
+    const isCameraInitializing = useMeetSelector(selectIsCameraInitializing);
 
     const activeMicrophoneDeviceId = useMeetSelector(selectActiveMicrophoneId);
     const activeCameraDeviceId = useMeetSelector(selectActiveCameraId);
@@ -278,9 +283,26 @@ export const MediaManagementProvider = ({
 
     // Read synchronously by the toggle handlers, which are shared by the buttons and the shortcuts
     const mediaToggleTriggerRef = useRef<MediaToggleTrigger>('button');
+    // A rejoin can start a device initialization while the previous one still runs
+    const latestDeviceInitializationId = useRef(0);
+
+    // The store outlives the provider: an initialization still pending at unmount must not clear the next meeting's flags
+    useEffect(
+        () => () => {
+            latestDeviceInitializationId.current++;
+            dispatch(setDevicesInitializing({ microphone: false, camera: false }));
+        },
+        [dispatch]
+    );
 
     const handleMicrophoneToggle = useCallback(() => {
         if (room.state === ConnectionState.Connected) {
+            if (isMicrophoneInitializing) {
+                if (mediaToggleTriggerRef.current === 'keyboard_shortcut') {
+                    createNotification({ text: c('Info').t`Your microphone is still starting` });
+                }
+                return;
+            }
             if (microphonePermission !== 'granted') {
                 dispatch(setPermissionPromptStatus(PermissionPromptStatus.MICROPHONE));
                 return;
@@ -315,6 +337,8 @@ export const MediaManagementProvider = ({
         dispatch(setInitialAudioState(!initialAudioState));
     }, [
         room,
+        isMicrophoneInitializing,
+        createNotification,
         microphonePermission,
         microphones.length,
         isMicrophoneEnabled,
@@ -330,6 +354,12 @@ export const MediaManagementProvider = ({
     // - On prejoin: replicates the DeviceSettings camera button.
     const handleCameraToggle = useCallback(() => {
         if (room.state === ConnectionState.Connected) {
+            if (isCameraInitializing) {
+                if (mediaToggleTriggerRef.current === 'keyboard_shortcut') {
+                    createNotification({ text: c('Info').t`Your camera is still starting` });
+                }
+                return;
+            }
             if (cameraPermission !== 'granted') {
                 dispatch(setPermissionPromptStatus(PermissionPromptStatus.CAMERA));
                 return;
@@ -365,6 +395,8 @@ export const MediaManagementProvider = ({
         dispatch(setInitialCameraState(!initialCameraState));
     }, [
         room,
+        isCameraInitializing,
+        createNotification,
         cameraPermission,
         cameras.length,
         isCameraEnabled,
@@ -409,7 +441,7 @@ export const MediaManagementProvider = ({
         }
     }, [microphonePermission, room, dispatch]);
 
-    const initializeCamera = async (camState: boolean) => {
+    const initializeCamera = async (camState: boolean, hasLeftMeeting: () => boolean) => {
         try {
             // When joining with the camera off, publish a muted placeholder track instead of acquiring the real
             // camera just to mute it. This avoids flashing the camera light and a brief self-view during join, and
@@ -446,7 +478,12 @@ export const MediaManagementProvider = ({
                 isEnabled: true,
                 preserveCache: true,
                 updateUserIntent: false,
+                hasLeftMeeting,
             });
+
+            if (hasLeftMeeting()) {
+                return;
+            }
 
             if (!result) {
                 throw new Error('Failed to initialize camera');
@@ -466,7 +503,7 @@ export const MediaManagementProvider = ({
         }
     };
 
-    const initializeMicrophone = async (audioState: boolean) => {
+    const initializeMicrophone = async (audioState: boolean, hasLeftMeeting: () => boolean) => {
         try {
             setAudioSessionType('auto');
 
@@ -476,7 +513,14 @@ export const MediaManagementProvider = ({
                 noiseSuppression: true,
             };
 
-            await room.localParticipant.setMicrophoneEnabled(true, audioConstraints);
+            const isPublished = await enableDeviceTrack(
+                room.localParticipant,
+                { source: Track.Source.Microphone, options: audioConstraints },
+                hasLeftMeeting
+            );
+            if (!isPublished) {
+                return;
+            }
 
             setAudioSessionType('play-and-record');
 
@@ -525,8 +569,27 @@ export const MediaManagementProvider = ({
         const cameraState = desiredCameraState ?? initialCameraState;
         const microphoneState = desiredMicrophoneState ?? initialAudioState;
 
+        const initializationId = ++latestDeviceInitializationId.current;
         // Suppress the local self-view while devices initialize
-        dispatch(setMediaInitializing(true));
+        dispatch(setDevicesInitializing({ microphone: true, camera: true }));
+        const settleDevice = (device: 'microphone' | 'camera') => {
+            if (initializationId === latestDeviceInitializationId.current) {
+                dispatch(setDevicesInitializing({ [device]: false }));
+            }
+        };
+
+        // A disconnect before connecting is the connection retrying another route, not a leave
+        let hasConnected = room.state === ConnectionState.Connected;
+        let hasLeft = false;
+        const handleConnected = () => {
+            hasConnected = true;
+        };
+        const handleDisconnected = () => {
+            hasLeft = hasConnected;
+        };
+        const hasLeftMeeting = () => hasLeft;
+        room.on(RoomEvent.Connected, handleConnected);
+        room.on(RoomEvent.Disconnected, handleDisconnected);
 
         const initializeDevicesInternal = async () => {
             await cleanupCameraPreview();
@@ -537,14 +600,24 @@ export const MediaManagementProvider = ({
 
             const results = await Promise.allSettled([
                 // Do not initialize camera if permission is not granted
-                cameraPermission === 'granted' ? initializeCamera(cameraState) : Promise.resolve(),
+                (cameraPermission === 'granted'
+                    ? initializeCamera(cameraState, hasLeftMeeting)
+                    : Promise.resolve()
+                ).finally(() => settleDevice('camera')),
                 // Do not initialize microphone if permission is not granted
-                microphonePermission === 'granted' ? initializeMicrophone(microphoneState) : Promise.resolve(),
+                (microphonePermission === 'granted'
+                    ? initializeMicrophone(microphoneState, hasLeftMeeting)
+                    : Promise.resolve()
+                ).finally(() => settleDevice('microphone')),
                 initializeAudioOutput(true),
             ]);
 
             const cameraError = results[0].status === 'rejected' ? results[0].reason : null;
             const microphoneError = results[1].status === 'rejected' ? results[1].reason : null;
+
+            if (hasLeft) {
+                return;
+            }
 
             if (cameraError || microphoneError) {
                 if (cameraError) {
@@ -577,25 +650,27 @@ export const MediaManagementProvider = ({
             }
         };
 
-        try {
-            if (timeoutMs !== undefined) {
-                try {
-                    const initializeDevicesPromise = initializeDevicesInternal();
-                    const timeoutPromise = new Promise<void>((resolve) => {
-                        setTimeout(() => {
-                            resolve();
-                        }, timeoutMs);
-                    });
+        const initializeDevicesPromise = initializeDevicesInternal().finally(() => {
+            room.off(RoomEvent.Connected, handleConnected);
+            room.off(RoomEvent.Disconnected, handleDisconnected);
+            settleDevice('camera');
+            settleDevice('microphone');
+        });
 
-                    await Promise.race([initializeDevicesPromise, timeoutPromise]);
-                } catch (error) {
-                    reportMeetError('Failed to initialize devices, continuing anyway', error);
-                }
-            } else {
-                await initializeDevicesInternal();
+        if (timeoutMs !== undefined) {
+            try {
+                const timeoutPromise = new Promise<void>((resolve) => {
+                    setTimeout(() => {
+                        resolve();
+                    }, timeoutMs);
+                });
+
+                await Promise.race([initializeDevicesPromise, timeoutPromise]);
+            } catch (error) {
+                reportMeetError('Failed to initialize devices, continuing anyway', error);
             }
-        } finally {
-            dispatch(setMediaInitializing(false));
+        } else {
+            await initializeDevicesPromise;
         }
     };
 

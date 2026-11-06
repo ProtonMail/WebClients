@@ -38,7 +38,8 @@ const deviceManagementInitialState: DeviceManagementState = {
     initialCameraState: false,
     initialAudioState: false,
     userCameraIntent: null,
-    isMediaInitializing: false,
+    isMicrophoneInitializing: false,
+    isCameraInitializing: false,
     uiModals: {
         permissionsModal: PermissionsModalType.NONE,
     },
@@ -162,8 +163,9 @@ const slice = createSlice({
         setUserCameraIntent: (state, action: PayloadAction<boolean | null>) => {
             state.userCameraIntent = action.payload;
         },
-        setMediaInitializing: (state, action: PayloadAction<boolean>) => {
-            state.isMediaInitializing = action.payload;
+        setDevicesInitializing: (state, action: PayloadAction<{ microphone?: boolean; camera?: boolean }>) => {
+            state.isMicrophoneInitializing = action.payload.microphone ?? state.isMicrophoneInitializing;
+            state.isCameraInitializing = action.payload.camera ?? state.isCameraInitializing;
         },
         dismissPermissionsModal: (state) => {
             state.uiModals.permissionsModal = PermissionsModalType.NONE;
@@ -294,7 +296,7 @@ export const {
     setInitialCameraState,
     setInitialAudioState,
     setUserCameraIntent,
-    setMediaInitializing,
+    setDevicesInitializing,
     dismissPermissionsModal,
     showPermissionsModal,
     resetActiveDevices,

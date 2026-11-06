@@ -80,7 +80,8 @@ export const selectDisconnectedActiveDevices = (state: MeetState) => state.devic
 export const selectInitialCameraState = (state: MeetState) => state.deviceManagement.initialCameraState;
 export const selectInitialAudioState = (state: MeetState) => state.deviceManagement.initialAudioState;
 export const selectUserCameraIntent = (state: MeetState) => state.deviceManagement.userCameraIntent;
-export const selectIsMediaInitializing = (state: MeetState) => state.deviceManagement.isMediaInitializing;
+export const selectIsMicrophoneInitializing = (state: MeetState) => state.deviceManagement.isMicrophoneInitializing;
+export const selectIsCameraInitializing = (state: MeetState) => state.deviceManagement.isCameraInitializing;
 
 export const selectPermissionsModals = (state: MeetState) => state.deviceManagement.uiModals;
 

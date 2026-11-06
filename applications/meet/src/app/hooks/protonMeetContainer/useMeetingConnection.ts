@@ -5,7 +5,7 @@ import { RejoinReasonInfo } from '@proton-meet/proton-meet-core';
 import { logger } from '@protontech/logger';
 import { ConnectionState } from 'livekit-client';
 
-import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
     setIsReconnecting,
     setJoinedRoom,
@@ -14,6 +14,12 @@ import {
     setReconnectionFailed,
 } from '@proton/meet/store/slices/connectionSlice';
 import { addKeyRotationLog } from '@proton/meet/store/slices/currentMeeting';
+import {
+    selectInitialAudioState,
+    selectInitialCameraState,
+    selectIsCameraInitializing,
+    selectIsMicrophoneInitializing,
+} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { resetParticipantMaps } from '@proton/meet/store/slices/participants/participantsSlice';
 import { encryptDisplayNameWithKey } from '@proton/meet/utils/cryptoUtils';
 import { sanitizeMessage } from '@proton/sanitize/purify';
@@ -72,7 +78,8 @@ export interface ConnectWithMlsResult {
     mlsSetupMs: number;
     e2eeEnableMs: number;
     livekitConnectMs: number;
-    deviceInitMs: number;
+    /** Resolves once the devices initialized or their timeout passed; the connection does not wait for it. */
+    deviceInitMs: Promise<number>;
     websocketUrl: string;
     participantCountPromise: Promise<number | undefined>;
 }
@@ -146,11 +153,16 @@ export const useMeetingConnection = ({
     const websocketUrlRef = useRef<string | null>(null);
     const automaticRunStartTimesMsRef = useRef<readonly number[]>([]);
     const { isCameraEnabled, isMicrophoneEnabled } = useLocalParticipant();
+    const isCameraInitializing = useMeetSelector(selectIsCameraInitializing);
+    const isMicrophoneInitializing = useMeetSelector(selectIsMicrophoneInitializing);
+    const initialCameraState = useMeetSelector(selectInitialCameraState);
+    const initialAudioState = useMeetSelector(selectInitialAudioState);
     const lastLiveDeviceStateRef = useRef({ camera: false, microphone: false });
 
     useEffect(() => () => rejoinControllerRef.current?.abort(), []);
 
     // Not recorded while Disconnected: LiveKit unpublishes local tracks before it reports Disconnected.
+    // A device still initializing keeps its last state, as its track is not published yet.
     useEffect(() => {
         const isRoomLive = [
             ConnectionState.Connected,
@@ -158,7 +170,11 @@ export const useMeetingConnection = ({
             ConnectionState.SignalReconnecting,
         ].includes(room.state);
         if (isRoomLive && !isReconnectingRef.current) {
-            lastLiveDeviceStateRef.current = { camera: isCameraEnabled, microphone: isMicrophoneEnabled };
+            const last = lastLiveDeviceStateRef.current;
+            lastLiveDeviceStateRef.current = {
+                camera: isCameraInitializing ? last.camera : isCameraEnabled,
+                microphone: isMicrophoneInitializing ? last.microphone : isMicrophoneEnabled,
+            };
         }
     });
 
@@ -245,7 +261,7 @@ export const useMeetingConnection = ({
             let connectionInfo: ConnectionInfo;
             let e2eeEnableMs: number;
             let livekitConnectMs: number;
-            let deviceInitMs: number;
+            let deviceInitMs: Promise<number>;
             let participantsFetch: Promise<void> | undefined;
             try {
                 const e2eeStart = performance.now();
@@ -254,11 +270,16 @@ export const useMeetingConnection = ({
                 // Start device init concurrently with connect so the camera track is included in the initial SDP
                 // offer rather than a post-connect renegotiation (on Safari with H264 that can fail silently).
                 const t2 = performance.now();
-                const initDevices = initializeDevices({
+                // Until the devices settle, a rejoin restores what this join asked for
+                lastLiveDeviceStateRef.current = {
+                    camera: desiredCameraState ?? initialCameraState,
+                    microphone: desiredMicrophoneState ?? initialAudioState,
+                };
+                deviceInitMs = initializeDevices({
                     timeoutMs: 5 * SECOND,
                     desiredCameraState,
                     desiredMicrophoneState,
-                });
+                }).then(() => Math.round(performance.now() - t2));
                 connectionInfo = await connectWithStunFallbackToTurnRelay(websocketUrl, accessToken, timeoutMs);
                 livekitConnectMs = Math.round(performance.now() - t2);
                 if (!signal?.aborted) {
@@ -268,8 +289,6 @@ export const useMeetingConnection = ({
                     // The backend lists the local participant only once LiveKit does, so this is the earliest it can run
                     participantsFetch = getParticipants(meetingLinkName);
                 }
-                await initDevices;
-                deviceInitMs = Math.round(performance.now() - t2);
             } catch (livekitError) {
                 if (signal?.aborted) {
                     throw livekitError;
