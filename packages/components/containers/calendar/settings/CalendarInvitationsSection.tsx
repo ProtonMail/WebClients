@@ -3,13 +3,10 @@ import { c } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
-import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
-import { AutoAddVideoConferenceLinkProvider } from '@proton/shared/lib/calendar/constants';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import Info from '../../../components/link/Info';
 import Toggle from '../../../components/toggle/Toggle';
@@ -19,6 +16,8 @@ import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';
 import SettingsSection from '../../account/SettingsSection';
 import InviteLocaleSelector from './InviteLocaleSelector';
+import { getIsAutoAddMeetLinkEnabled, getToggledAutoAddMeetLink } from './autoAddMeetLink';
+import { useIsMeetVideoConferenceEnabled } from './useIsMeetVideoConferenceEnabled';
 
 interface Props {
     calendarUserSettings: CalendarUserSettings;
@@ -37,9 +36,7 @@ const CalendarInvitationsSection = ({
     const [loadingAutoImportInvite, withLoadingAutoImportInvite] = useLoading();
     const [loadingAutoAddMeetLink, withLoading] = useLoading();
 
-    const hasMeetProductAccess = useHasMeetProductAccess();
-
-    const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption') && hasMeetProductAccess;
+    const isMeetVideoConferenceEnabled = useIsMeetVideoConferenceEnabled();
 
     const handleChange = async (data: Partial<CalendarUserSettings>) => {
         await api(updateCalendarUserSettings(data));
@@ -48,16 +45,7 @@ const CalendarInvitationsSection = ({
     };
 
     const handleAutoAddMeetLinkChange = () => {
-        const shouldDisable =
-            !AutoAddConferenceLink ||
-            (typeof AutoAddConferenceLink === 'object' &&
-                AutoAddConferenceLink.Provider === AutoAddVideoConferenceLinkProvider.Meet);
-
-        const newValue = shouldDisable
-            ? AutoAddVideoConferenceLinkProvider.None
-            : AutoAddVideoConferenceLinkProvider.Meet;
-
-        return withLoading(handleChange({ AutoAddConferenceLink: newValue }));
+        return withLoading(handleChange({ AutoAddConferenceLink: getToggledAutoAddMeetLink(AutoAddConferenceLink) }));
     };
 
     const displayedLocale = InviteLocale === null ? null : getClosestLocaleCode(InviteLocale, locales);
@@ -132,11 +120,7 @@ const CalendarInvitationsSection = ({
                             id="auto-add-meet-link"
                             aria-describedby="auto-add-meet-link"
                             loading={loadingAutoAddMeetLink}
-                            checked={
-                                !!AutoAddConferenceLink &&
-                                typeof AutoAddConferenceLink === 'object' &&
-                                AutoAddConferenceLink.Provider === AutoAddVideoConferenceLinkProvider.Meet
-                            }
+                            checked={getIsAutoAddMeetLinkEnabled(AutoAddConferenceLink)}
                             onChange={handleAutoAddMeetLinkChange}
                         />
                     </SettingsLayoutRight>
