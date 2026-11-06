@@ -1,0 +1,28 @@
+{
+    "name": "@proton/oxfmt-config",
+    "version": "0.1.0",
+    "description": "Shared oxfmt config; workspaces opt in with an oxfmt.config.ts that calls createOxfmtConfig",
+    "type": "module",
+    "exports": {
+        "./createOxfmtConfig": "./src/createOxfmtConfig.ts"
+    },
+    "scripts": {
+        "check:types": "tsc --checkers 1",
+        "lint": "oxlint --quiet",
+        "test": "vitest",
+        "test:ci": "pnpm run test --run"
+    },
+    "dependencies": {
+        "oxfmt": "catalog:"
+    },
+    "devDependencies": {
+        "@proton/oxlint-config": "workspace:^",
+        "@proton/prettier-config-proton": "workspace:^",
+        "@types/node": "catalog:",
+        "@typescript/native": "catalog:",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:",
+        "typescript": "catalog:",
+        "vitest": "catalog:"
+    }
+}

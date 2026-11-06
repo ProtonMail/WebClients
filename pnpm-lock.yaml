@@ -706,9 +706,6 @@ importers:
       '@proton/nav':
         specifier: workspace:^
         version: link:packages/nav
-      '@proton/oxlint-config':
-        specifier: workspace:^
-        version: link:packages/oxlint-config
       '@proton/payments':
         specifier: workspace:^
         version: link:packages/payments
@@ -1556,6 +1553,9 @@ importers:
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../../packages/jest-swc-preset
+      '@proton/oxfmt-config':
+        specifier: workspace:^
+        version: link:../../packages/oxfmt-config
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../../packages/oxlint-config
@@ -3279,6 +3279,9 @@ importers:
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../../packages/jest-swc-preset
+      '@proton/oxfmt-config':
+        specifier: workspace:^
+        version: link:../../packages/oxfmt-config
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../../packages/oxlint-config
@@ -4977,6 +4980,27 @@ importers:
         specifier: 'catalog:'
         version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@24.19.2)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(happy-dom@21.0.4)(jsdom@26.1.0(patch_hash=b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392)(supports-color@11.0.0))(msw@2.12.14(@types/node@24.19.2)(@typescript/typescript6@6.0.2))(vite@8.3.5(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
+  ci/bin/update-chargebee-iframe:
+    devDependencies:
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../../../packages/oxlint-config
+      '@types/node':
+        specifier: 'catalog:'
+        version: 24.19.2
+      '@typescript/native':
+        specifier: 'catalog:'
+        version: typescript@7.0.2
+      oxlint:
+        specifier: 'catalog:'
+        version: 1.90.0(oxlint-tsgolint@7.0.2005)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2005
+      typescript:
+        specifier: 'catalog:'
+        version: '@typescript/typescript6@6.0.2'
+
   packages/account:
     dependencies:
       '@proton/app-context':
@@ -5597,6 +5621,9 @@ importers:
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../jest-swc-preset
+      '@proton/oxfmt-config':
+        specifier: workspace:^
+        version: link:../oxfmt-config
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
@@ -7803,6 +7830,9 @@ importers:
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../jest-swc-preset
+      '@proton/oxfmt-config':
+        specifier: workspace:^
+        version: link:../oxfmt-config
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
@@ -8533,6 +8563,37 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
+
+  packages/oxfmt-config:
+    dependencies:
+      oxfmt:
+        specifier: 'catalog:'
+        version: 0.75.0(@astrojs/compiler-rs@0.5.1)(svelte@5.56.4(@typescript-eslint/types@8.71.2))
+    devDependencies:
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../oxlint-config
+      '@proton/prettier-config-proton':
+        specifier: workspace:^
+        version: link:../prettier-config
+      '@types/node':
+        specifier: 'catalog:'
+        version: 24.19.2
+      '@typescript/native':
+        specifier: 'catalog:'
+        version: typescript@7.0.2
+      oxlint:
+        specifier: 'catalog:'
+        version: 1.90.0(oxlint-tsgolint@7.0.2005)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2005
+      typescript:
+        specifier: 'catalog:'
+        version: '@typescript/typescript6@6.0.2'
+      vitest:
+        specifier: 'catalog:'
+        version: 5.0.5(@opentelemetry/api@1.9.1)(@types/node@24.19.2)(@vitest/browser-playwright@5.0.5)(@vitest/coverage-v8@5.0.5)(@vitest/ui@5.0.5)(happy-dom@21.0.4)(jsdom@26.1.0(patch_hash=b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392)(supports-color@11.0.0))(msw@2.12.14(@types/node@24.19.2)(@typescript/typescript6@6.0.2))(vite@8.3.5(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
   packages/oxlint-config:
     dependencies:
@@ -50939,6 +51000,21 @@ snapshots:
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
+
+  webpack-cli@7.3.1(js-yaml@4.3.2)(json5@2.2.3)(webpack-bundle-analyzer@5.4.0)(webpack-dev-server@5.2.7)(webpack@5.112.2):
+    dependencies:
+      '@discoveryjs/json-ext': 1.1.0
+      commander: 14.0.3
+      envinfo: 7.21.0
+      interpret: 3.1.1
+      rechoir: 1.0.0
+      webpack: 5.112.2(@swc/core@1.16.21(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(sharp@0.35.5(@types/node@24.19.2))(svgo@4.1.0)(webpack-cli@7.3.1)
+      webpack-merge: 6.0.1
+    optionalDependencies:
+      js-yaml: 4.3.2
+      json5: 2.2.3
+      webpack-bundle-analyzer: 5.4.0
+      webpack-dev-server: 5.2.7(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0)(webpack-cli@7.3.1)(webpack@5.112.2)
 
   webpack-cli@7.3.1(js-yaml@4.3.2)(json5@2.2.3)(webpack-bundle-analyzer@5.4.0)(webpack-dev-server@6.1.0)(webpack@5.112.2):
     dependencies:

@@ -1,14 +1,10 @@
 import path from 'node:path';
 
+import { usesOxfmt } from './utilities/repo-rules/src/shared/oxfmt.ts';
 import { usesOxlint } from './utilities/repo-rules/src/shared/oxlint.ts';
 
-// Folders formatted with oxfmt. Everything else is still formatted with prettier.
-const OXFMT_FOLDERS = ['applications/mail/', 'applications/calendar/', 'packages/mail/', 'packages/calendar/'];
-
-const usesOxfmt = (file) => {
-    const relative = path.relative(process.cwd(), path.resolve(file));
-    return OXFMT_FOLDERS.some((folder) => relative.split(path.sep).join('/').startsWith(folder));
-};
+// Workspaces with an oxfmt.config.ts are formatted with oxfmt. Everything else is still formatted with prettier.
+const usesOxfmtFile = (file) => usesOxfmt(path.dirname(path.resolve(file)));
 
 const quote = (files) => files.map((file) => JSON.stringify(file)).join(' ');
 
@@ -18,8 +14,8 @@ const quote = (files) => files.map((file) => JSON.stringify(file)).join(' ');
 export default {
     '(*.ts|*.tsx|*.js)': (files) => {
         const oxlintFiles = files.filter((file) => usesOxlint(path.dirname(file)));
-        const oxfmtFiles = files.filter(usesOxfmt);
-        const prettierFiles = files.filter((file) => !usesOxfmt(file));
+        const oxfmtFiles = files.filter(usesOxfmtFile);
+        const prettierFiles = files.filter((file) => !usesOxfmtFile(file));
         return [
             ...(oxlintFiles.length ? [`oxlint --fix --max-warnings=0 ${quote(oxlintFiles)}`] : []),
             ...(oxfmtFiles.length ? [`oxfmt --write ${quote(oxfmtFiles)}`] : []),

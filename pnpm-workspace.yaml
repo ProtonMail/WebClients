@@ -1,5 +1,6 @@
 packages:
     - applications/*
+    - ci/bin/update-chargebee-iframe
     - applications/pass-desktop/native
     - packages/*
     - packages/wasm/*

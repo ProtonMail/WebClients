@@ -5,6 +5,7 @@
     "type": "module",
     "exports": {
         "./brandNames": "./src/brandNames.ts",
+        "./compat": "./src/compat.js",
         "./createOxlintConfig": "./src/createOxlintConfig.ts",
         "./custom-rules": "./src/custom-rules/index.js",
         "./extraneousDependencies": "./src/extraneousDependencies.ts",

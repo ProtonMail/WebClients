@@ -1,0 +1,8 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "erasableSyntaxOnly": true,
+        "types": ["node", "vitest/globals"]
+    },
+    "include": ["src/**/*.ts", "vitest.config.ts", "oxlint.config.mts"]
+}
