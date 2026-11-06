@@ -1,56 +1,50 @@
-import { useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
-import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
-import type { ProductParam } from '@proton/shared/lib/apps/product';
-import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { type APP_NAMES, type CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
+import isDeepEqual from 'lodash/isEqual';
+
+import { SSO_PATHS } from '@proton/shared/lib/constants';
 
 import { isReferralSignup } from '../signup/helper';
+import { getSignupMeta } from '../signup/signupPagesJson';
 import SignupCtxRouter from '../signupCtx/SignupCtxRouter';
 import SingleSignupContainerV2 from '../single-signup-v2/SingleSignupContainerV2';
-import type { MetaTags } from '../useMetaTags';
 import type { OnLoginCallback } from './authSession';
-import type { Paths } from './helper';
+import { usePublicAppAuth } from './publicAppAuth';
+import { PublicAppContext } from './state-machine/PublicAppContext';
+import { usePublicAppServices } from './state-machine/PublicAppServices';
+import { getPublicAppActiveSessions } from './state-machine/publicAppActors';
+import {
+    selectClientType,
+    selectHasBackToSwitch,
+    selectPaths,
+    selectPreAppIntent,
+    selectToAppName,
+} from './state-machine/publicAppStateMachine';
+import { runLogin } from './state-machine/runLogin';
 
-interface Props {
-    maybePreAppIntent: APP_NAMES | undefined;
-    searchParams: URLSearchParams;
-    initialSearchParams?: URLSearchParams;
-    handleLogin: OnLoginCallback;
-    productParam: ProductParam;
-    toApp?: APP_NAMES;
-    toAppName?: string;
-    clientType: CLIENT_TYPES;
-    activeSessions?: ActiveSession[];
-    onGetActiveSessions?: Parameters<typeof SingleSignupContainerV2>[0]['onGetActiveSessions'];
-    fork: boolean;
-    metaTags: MetaTags;
-    paths: Paths;
-    onBack?: () => void;
-    onPreSubmit?: () => Promise<void>;
-    onStartAuth: () => Promise<void>;
-    initialSessionsLength: boolean;
-}
-
-const SingleSignupSwitchContainer = ({
-    maybePreAppIntent,
-    initialSearchParams,
-    handleLogin,
-    productParam,
-    toAppName,
-    clientType,
-    searchParams,
-    activeSessions,
-    onGetActiveSessions,
-    fork,
-    metaTags,
-    paths,
-    onBack,
-    onPreSubmit,
-    onStartAuth,
-    initialSessionsLength,
-}: Props) => {
+const SingleSignupSwitchContainer = () => {
+    const { onPreSubmit, onStartAuth } = usePublicAppAuth();
     const location = useLocation();
+    const history = useHistory();
+    const { api } = usePublicAppServices();
+    const publicApp = PublicAppContext.useActorRef();
+    const activeSessions = PublicAppContext.useSelector((state) => state.context.activeSessions);
+    const initialSearchParams = PublicAppContext.useSelector((state) => state.context.initialSearchParams);
+    const productParam = PublicAppContext.useSelector((state) => state.context.productParam);
+    const hasFork = PublicAppContext.useSelector((state) => !!state.context.forkState);
+    const initialSessionsLength = PublicAppContext.useSelector((state) => state.context.initialSessionsLength);
+    const toApp = PublicAppContext.useSelector(selectPreAppIntent);
+    const toAppName = PublicAppContext.useSelector(selectToAppName);
+    const clientType = PublicAppContext.useSelector(selectClientType);
+    const paths = PublicAppContext.useSelector(selectPaths, isDeepEqual);
+    const hasBackToSwitch = PublicAppContext.useSelector(selectHasBackToSwitch);
+    const searchParams = new URLSearchParams(location.search);
+    const handleLogin: OnLoginCallback = (session) => runLogin(publicApp, session);
+    const onGetActiveSessions = async () => {
+        const result = await getPublicAppActiveSessions(api, initialSearchParams);
+        publicApp.send({ type: 'sessions.updated', sessions: result.sessions });
+        return result;
+    };
 
     const isReferral = isReferralSignup(location);
 
@@ -65,16 +59,14 @@ const SingleSignupSwitchContainer = ({
 
     if (renderContextSignup) {
         return (
-            <UnAuthenticated>
-                <SignupCtxRouter
-                    onPreSubmit={onPreSubmit}
-                    onStartAuth={onStartAuth}
-                    onGetActiveSessions={onGetActiveSessions}
-                    handleLogin={handleLogin}
-                    loginUrl={paths.login}
-                    productParam={productParam}
-                />
-            </UnAuthenticated>
+            <SignupCtxRouter
+                onPreSubmit={onPreSubmit}
+                onStartAuth={onStartAuth}
+                onGetActiveSessions={onGetActiveSessions}
+                handleLogin={handleLogin}
+                loginUrl={paths.login}
+                productParam={productParam}
+            />
         );
     }
 
@@ -82,19 +74,19 @@ const SingleSignupSwitchContainer = ({
         <SingleSignupContainerV2
             initialSearchParams={initialSearchParams}
             paths={paths}
-            metaTags={metaTags}
+            metaTags={getSignupMeta(toApp)}
             activeSessions={activeSessions}
             onGetActiveSessions={onGetActiveSessions}
             productParam={productParam}
             clientType={clientType}
-            toApp={maybePreAppIntent}
+            toApp={toApp}
             toAppName={toAppName}
             onLogin={handleLogin}
-            fork={fork}
-            onBack={onBack}
+            fork={hasFork}
+            onBack={hasBackToSwitch ? () => history.push(paths.login) : undefined}
             onPreSubmit={onPreSubmit}
             onStartAuth={onStartAuth}
-            initialSessionsLength={initialSessionsLength}
+            initialSessionsLength={Boolean(initialSessionsLength)}
         />
     );
 };

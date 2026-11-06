@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react';
-import { Redirect } from 'react-router-dom';
 
 import { useFlagsStatus } from '@unleash/proxy-client-react';
 
@@ -7,11 +6,12 @@ import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import { useFlag } from '@proton/unleash/useFlag';
 
 interface Props {
-    fallbackPath: string;
+    /** What to show when Spaces isn't available. */
+    fallback: ReactNode;
     children: ReactNode;
 }
 
-const SpacesAvailableGate = ({ fallbackPath, children }: Props) => {
+const SpacesAvailableGate = ({ fallback, children }: Props) => {
     const { flagsReady } = useFlagsStatus();
     const isSpacesAvailable = useFlag('SpacesAvailable');
 
@@ -20,7 +20,7 @@ const SpacesAvailableGate = ({ fallbackPath, children }: Props) => {
     }
 
     if (!isSpacesAvailable) {
-        return <Redirect to={fallbackPath} />;
+        return <>{fallback}</>;
     }
 
     return <>{children}</>;

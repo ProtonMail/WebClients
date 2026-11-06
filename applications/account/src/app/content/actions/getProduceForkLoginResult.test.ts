@@ -38,6 +38,7 @@ jest.mock('@proton/shared/lib/authentication/fork/extension', () => ({
 const mockProduceFork = produceFork as jest.MockedFunction<typeof produceFork>;
 
 const paths = { appSwitcher: '/apps' } as Paths;
+// Only the available apps read it, and they're mocked
 
 const getSession = (source: SessionSource, user: Partial<UserModel>): AuthSession =>
     ({

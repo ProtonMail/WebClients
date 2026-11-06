@@ -1,4 +1,6 @@
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
+
+import { createBrowserHistory } from 'history';
 
 import { registerSessionListener } from '@proton/account/accountSessions/registerSessionListener';
 import { writeAccountSessions } from '@proton/account/accountSessions/storage';
@@ -29,6 +31,8 @@ import config from '../config';
 import locales from '../locales';
 import { extendStore, setupStore } from '../store/public-store';
 import { PublicAppInitial } from './PublicAppInitial';
+import { PublicAppContext, createPublicAppMachine } from './state-machine/PublicAppContext';
+import { PublicAppServicesContext } from './state-machine/PublicAppServices';
 import { LocationThemeSync } from './theme/LocationThemeSync';
 import { PublicAppThemeProvider } from './theme/PublicAppThemeProvider';
 
@@ -64,6 +68,10 @@ const bootstrapApp = () => {
     const store = setupStore();
     store.dispatch(staticExperimentsActions.set(resolveStaticExperiments(staticExperimentsConfig)));
 
+    const history = createBrowserHistory();
+    const services = { api, unauthenticatedApi, unleashClient };
+    const publicAppMachine = createPublicAppMachine({ services, history, initialSessionsLength });
+
     if (isElectronMail) {
         void import('@proton/shared/lib/desktop/bootstrapPublicAccountInboxDesktop').then((module) => {
             void module.bootstrapPublicAccountInboxDesktop(authentication);
@@ -73,31 +81,37 @@ const bootstrapApp = () => {
     return {
         authentication,
         store,
-        api,
-        sessions: {
-            initialSessionsLength,
-        },
+        history,
+        services,
+        publicAppMachine,
     };
 };
 
 const PublicApp = () => {
-    const { store, authentication, api, sessions } = useInstance(bootstrapApp);
+    const { store, authentication, history, services, publicAppMachine } = useInstance(bootstrapApp);
 
     return (
         <ProtonApp config={config} ThemeProvider={PublicAppThemeProvider}>
             <AuthenticationProvider store={authentication}>
-                <BrowserRouter>
+                <Router history={history}>
                     <LocationThemeSync />
                     <ProtonStoreProvider store={store}>
-                        <ApiProvider api={api}>
+                        <ApiProvider api={services.api}>
                             <ErrorBoundary big component={<StandardErrorPage big />}>
                                 <ModalsChildren />
                                 <NotificationsChildren />
-                                <PublicAppInitial sessions={sessions} />
+                                <PublicAppServicesContext.Provider value={services}>
+                                    <PublicAppContext.Provider
+                                        logic={publicAppMachine.logic}
+                                        options={{ input: publicAppMachine.input }}
+                                    >
+                                        <PublicAppInitial />
+                                    </PublicAppContext.Provider>
+                                </PublicAppServicesContext.Provider>
                             </ErrorBoundary>
                         </ApiProvider>
                     </ProtonStoreProvider>
-                </BrowserRouter>
+                </Router>
             </AuthenticationProvider>
         </ProtonApp>
     );

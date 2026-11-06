@@ -3,11 +3,11 @@ import type { LocationDescriptor } from 'history';
 import type { ForkCodeLocation } from '@proton/shared/lib/authentication/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
-import type { AppSwitcherState } from '../../public/AppSwitcherContainer';
 import type { AuthDesktopState } from '../../public/AuthDesktop';
 import type { AuthExtensionState } from '../../public/AuthExtension';
-import type { OAuthPartnersCallbackState, OAuthPartnersInitiateState } from '../../public/OAuthPartnersContainer';
-import type { ReAuthState } from '../../public/reauthContainerState';
+import type { AppSwitcherState } from '../../public/appSwitcher/AppSwitcherContainer';
+import type { OAuthPartnersCallbackState, OAuthPartnersInitiateState } from '../../public/oauthPartners/oauthPartners';
+import type { ReAuthState } from '../../public/reAuth/reauthContainerState';
 import type { AuthSession } from '../authSession';
 import type { ProduceForkData, SSOType } from './forkInterface';
 

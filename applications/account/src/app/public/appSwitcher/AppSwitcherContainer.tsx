@@ -1,4 +1,6 @@
 import type { ReactElement } from 'react';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -17,17 +19,19 @@ import { getForbiddenApps } from '@proton/shared/lib/apps/apps';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
-import ExploreAppsListV2 from '../components/ExploreAppsListV2/ExploreAppsListV2';
-import { getExploreApps, getForbiddenAppConfigs } from '../components/ExploreAppsListV2/exploreApps';
-import { useExploreAppsListTelemetry } from '../components/ExploreAppsListV2/exploreAppsListTelemetry';
-import type { OnLoginCallback, OnLoginCallbackArguments } from '../content/authSession';
-import Layout from './Layout';
-import PublicUserItem from './PublicUserItem';
+import ExploreAppsListV2 from '../../components/ExploreAppsListV2/ExploreAppsListV2';
+import { getExploreApps, getForbiddenAppConfigs } from '../../components/ExploreAppsListV2/exploreApps';
+import { useExploreAppsListTelemetry } from '../../components/ExploreAppsListV2/exploreAppsListTelemetry';
+import type { AuthSession, OnLoginCallbackArguments } from '../../content/authSession';
+import { PublicAppContext } from '../../content/state-machine/PublicAppContext';
+import { selectLoggingIn } from '../../content/state-machine/publicAppStateMachine';
+import Layout from '../Layout';
+import PublicUserItem from '../PublicUserItem';
 
 interface EnhancedAuthSession extends OnLoginCallbackArguments {
     data: OnLoginCallbackArguments['data'] & {
@@ -114,12 +118,17 @@ const UnsupportedAppError = ({
 };
 
 interface Props {
-    onLogin: OnLoginCallback;
-    onSwitch: () => void;
     state: AppSwitcherState;
 }
 
-const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
+const AppSwitcherContainer = ({ state }: Props) => {
+    const history = useHistory();
+    const publicApp = PublicAppContext.useActorRef();
+    const loading = PublicAppContext.useSelector(selectLoggingIn);
+    // Without a request id, a failed login shows as an error on the page
+    const onLogin = (session: AuthSession) => publicApp.send({ type: 'login.requested', session });
+    const onSwitch = () => history.push(SSO_PATHS.SWITCH);
+    const [exploredApp, setExploredApp] = useState<APP_NAMES>();
     const session = state.session;
     const error = state.error;
     const { User, Organization, persistedSession } = session.data;
@@ -140,13 +149,18 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
     const apps = getExploreApps(availableApps, User).concat(getForbiddenAppConfigs(forbiddenApps));
 
     const goToAccountSettings = (source: 'settings' | 'settings-menu') => async () => {
+        // The machine ignores a login while another one runs
+        if (loading) {
+            return;
+        }
+        setExploredApp(undefined);
         sendAppClick({
             appName: APPS.PROTONACCOUNT,
             openMethod: source,
         });
         await wait(50); // This ensures the telemetry event has time to be initiated and sent before the page redirects
 
-        await onLogin({
+        onLogin({
             ...session,
             appIntent: {
                 app: APPS.PROTONACCOUNT,
@@ -206,8 +220,10 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
                     <ExploreAppsListV2
                         apps={apps}
                         localID={persistedSession.localID}
-                        onExplore={async (app) => {
-                            await onLogin({
+                        loadingApp={loading ? (exploredApp ?? APPS.PROTONACCOUNT) : undefined}
+                        onExplore={(app) => {
+                            setExploredApp(app);
+                            onLogin({
                                 ...session,
                                 appIntent: {
                                     app,

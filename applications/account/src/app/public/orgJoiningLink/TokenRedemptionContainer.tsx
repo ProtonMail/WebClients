@@ -1,4 +1,4 @@
-import { type FC, type FormEvent, type ReactNode, useEffect, useMemo, useRef, useState } from 'react';
+import { type FormEvent, type ReactNode, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import type { PrivateKeyReference } from '@protontech/crypto';
@@ -49,9 +49,10 @@ import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys/getDecryp
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
 import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
 import { srpVerify } from '@proton/shared/lib/srp';
-import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 
-import type { LoginResult } from '../../content/actions/interface';
+import { usePublicAppAuth } from '../../content/publicAppAuth';
+import { PublicAppContext } from '../../content/state-machine/PublicAppContext';
+import { usePublicAppServices } from '../../content/state-machine/PublicAppServices';
 import Header from '../../public/Header';
 import Layout from '../../public/Layout';
 import Main from '../../public/Main';
@@ -67,12 +68,10 @@ const toApp = APPS.PROTONMAIL;
 const steps: TokenRedemptionContainerView[] = ['email', 'otp', 'password'];
 const totalSteps = steps.length;
 
-const TokenRedemptionContainer: FC<{
-    unauthenticatedApi: UnauthenticatedApi;
-    onStartAuth: () => Promise<void>;
-    onPreSubmit: () => Promise<void>;
-    onLoginResult: (result: LoginResult) => void;
-}> = ({ unauthenticatedApi, onStartAuth, onPreSubmit, onLoginResult }) => {
+const TokenRedemptionContainer = () => {
+    const { onPreSubmit, onStartAuth } = usePublicAppAuth();
+    const publicApp = PublicAppContext.useActorRef();
+    const { unauthenticatedApi } = usePublicAppServices();
     const location = useLocation();
     const history = useHistory();
     const [submitting, withSubmitting] = useLoading();
@@ -182,8 +181,8 @@ const TokenRedemptionContainer: FC<{
     const disabled = submitting || resending;
 
     const handleRedeemToken = async ({ email, token }: { email: string; token: string }) => {
-        await onPreSubmit?.();
-        await onStartAuth?.();
+        await onPreSubmit();
+        await onStartAuth();
 
         await unauthenticatedApi.apiCallback(redeemToken({ email, token }));
 
@@ -258,10 +257,13 @@ const TokenRedemptionContainer: FC<{
             source: SessionSource.Proton,
         });
 
-        onLoginResult({
-            type: 'done',
-            payload: {
-                url: new URL(getAppHref('/', toApp, authResponse.LocalID)),
+        publicApp.send({
+            type: 'login.resulted',
+            result: {
+                type: 'done',
+                payload: {
+                    url: new URL(getAppHref('/', toApp, authResponse.LocalID)),
+                },
             },
         });
     };

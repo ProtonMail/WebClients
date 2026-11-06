@@ -12,7 +12,6 @@ import { useConfig } from '@proton/app-context/useConfig';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
-import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import metrics from '@proton/metrics/metricsInstance';
@@ -1442,274 +1441,271 @@ const SingleSignupContainerV2 = ({
                     disableSpaNavigation
                 />
             )}
-            <UnAuthenticated>
-                {model.step === Steps.Account && (
-                    <Step1
-                        initialSessionsLength={initialSessionsLength}
-                        signupConfiguration={signupConfiguration}
-                        activeSessions={activeSessions}
-                        signupParameters={signupParameters}
-                        step1Ref={step1Ref}
-                        isLargeViewport={viewportWidth['>=large']}
-                        api={normalApi}
-                        measure={measure}
-                        currentPlan={model.upsell.currentPlan}
-                        onTriggerModals={triggerModals}
-                        onOpenSwitch={() => {
-                            if (model.loadingDependencies) {
-                                return;
+            {model.step === Steps.Account && (
+                <Step1
+                    initialSessionsLength={initialSessionsLength}
+                    signupConfiguration={signupConfiguration}
+                    activeSessions={activeSessions}
+                    signupParameters={signupParameters}
+                    step1Ref={step1Ref}
+                    isLargeViewport={viewportWidth['>=large']}
+                    api={normalApi}
+                    measure={measure}
+                    currentPlan={model.upsell.currentPlan}
+                    onTriggerModals={triggerModals}
+                    onOpenSwitch={() => {
+                        if (model.loadingDependencies) {
+                            return;
+                        }
+                        setSwitchModal(true);
+                    }}
+                    onOpenLogin={(options) => {
+                        setTmpLoginEmail(options.email);
+                        setLoginModal(true);
+                        void measure({
+                            event: TelemetryAccountSignupEvents.userSignIn,
+                            dimensions: { location: options.location },
+                        });
+                    }}
+                    model={model}
+                    setModel={setModel}
+                    onSignOut={handleSignOut}
+                    onChangeCurrency={changeCurrency}
+                    onComplete={async (data) => {
+                        if (data.type === 'existing') {
+                            const { subscriptionData } = data;
+
+                            if (!model.session) {
+                                throw new Error('Missing session');
                             }
-                            setSwitchModal(true);
-                        }}
-                        onOpenLogin={(options) => {
-                            setTmpLoginEmail(options.email);
-                            setLoginModal(true);
-                            void measure({
-                                event: TelemetryAccountSignupEvents.userSignIn,
-                                dimensions: { location: options.location },
+
+                            const userCacheResult: UserCacheResult = {
+                                type: 'user',
+                                subscriptionData,
+                                session: model.session,
+                                // Might be existing from the token setup
+                                setupData: model.cache?.setupData,
+                            };
+
+                            setModelDiff({
+                                subscriptionData: userCacheResult.subscriptionData,
+                                cache: userCacheResult,
+                                step: Steps.Loading,
                             });
-                        }}
-                        model={model}
-                        setModel={setModel}
-                        onSignOut={handleSignOut}
-                        onChangeCurrency={changeCurrency}
-                        onComplete={async (data) => {
-                            if (data.type === 'existing') {
-                                const { subscriptionData } = data;
 
-                                if (!model.session) {
-                                    throw new Error('Missing session');
-                                }
+                            metrics.core_single_signup_setup_total.increment({
+                                status: 'success',
+                            });
+                            return;
+                        }
 
-                                const userCacheResult: UserCacheResult = {
-                                    type: 'user',
-                                    subscriptionData,
-                                    session: model.session,
-                                    // Might be existing from the token setup
-                                    setupData: model.cache?.setupData,
+                        try {
+                            const { accountData, subscriptionData } = data;
+
+                            await onPreSubmit?.();
+                            await onStartAuth().catch(noop);
+
+                            const cache: SignupCacheResult = {
+                                type: 'signup',
+                                appName: APP_NAME,
+                                appIntent: undefined,
+                                productParam,
+                                // Internal app or oauth app or vpn
+                                ignoreExplore: toApp !== undefined,
+                                accountData,
+                                subscriptionData,
+                                inviteData: model.inviteData,
+                                referralData: model.referralData,
+                                provisioningToken: model.provisionedDeal?.token,
+                                persistent: isElectronApp,
+                                trusted: isElectronApp,
+                                clientType,
+                                ktActivation: await getKtActivation(),
+                            };
+
+                            if (data.type === 'signup-token') {
+                                const tmpCache = {
+                                    ...cache,
+                                    subscriptionData: getFreeSubscriptionData(subscriptionData),
                                 };
-
+                                const userCreationResult = await handleCreateUser({
+                                    invite: signupParameters.invite,
+                                    visitorId: signupParameters.visitorId,
+                                    cache: tmpCache,
+                                    api: silentApi,
+                                    hvMode: SignupHumanVerification.DEFERRED,
+                                });
+                                const setupCache = await handleSetupNewUser(userCreationResult.cache);
+                                const cacheWithOriginalSubscription = {
+                                    ...setupCache,
+                                    subscriptionData: cache.subscriptionData,
+                                };
                                 setModelDiff({
-                                    subscriptionData: userCacheResult.subscriptionData,
-                                    cache: userCacheResult,
+                                    session: {
+                                        ...getSessionDataFromSignup(setupCache),
+                                        defaultPaymentMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+                                    },
+                                    // Set back original subscription data
+                                    subscriptionData: cacheWithOriginalSubscription.subscriptionData,
+                                    cache: cacheWithOriginalSubscription,
+                                    signupTokenMode: true,
+                                });
+                            } else {
+                                const result = await handleCreateUser({
+                                    invite: signupParameters.invite,
+                                    visitorId: signupParameters.visitorId,
+                                    cache,
+                                    api: silentApi,
+                                    hvMode:
+                                        // Forcing email address ownership verification for Pass, Drive, and Lumo
+                                        product === APPS.PROTONPASS ||
+                                        product === APPS.PROTONDRIVE ||
+                                        product === APPS.PROTONLUMO
+                                            ? SignupHumanVerification.IMMEDIATE
+                                            : SignupHumanVerification.DEFERRED,
+                                });
+                                setModelDiff({
+                                    subscriptionData: result.cache.subscriptionData,
+                                    cache: result.cache,
                                     step: Steps.Loading,
                                 });
+                            }
 
+                            metrics.core_single_signup_setup_total.increment({
+                                status: 'success',
+                            });
+                        } catch (error: any) {
+                            observeApiError(error, (status) =>
                                 metrics.core_single_signup_setup_total.increment({
-                                    status: 'success',
-                                });
-                                return;
+                                    status,
+                                })
+                            );
+
+                            handleError(error);
+                            if (error?.config?.url?.endsWith?.('keys/setup')) {
+                                captureMessage(`Signup setup failure`);
+                            }
+                        }
+                    }}
+                    mode={signupParameters.mode}
+                    signupTrial={signupTrial}
+                    subscription={model.session?.subscription}
+                    telemetryContext={getTelemetryContext(model.session)}
+                />
+            )}
+            {model.step === Steps.Loading && (
+                <Layout logo={signupConfiguration.logo} hasDecoration={false}>
+                    <Step2
+                        logo={signupConfiguration.logo}
+                        steps={(() => {
+                            const hasPlans = hasPlanIDs(model.subscriptionData.planIDs);
+                            const hasPayment = hasPlans && model.subscriptionData.checkResult.AmountDue > 0;
+                            const hasSession = !!model.session?.resumedSessionResult.User;
+
+                            const list = [
+                                hasPayment && c('pass_signup_2023: Info').t`Verifying your payment`,
+                                !hasSession && c('pass_signup_2023: Info').t`Creating your account`,
+                                !hasPayment &&
+                                    hasSession &&
+                                    hasPlans &&
+                                    c('pass_signup_2023: Info').t`Updating your account`,
+                                canGenerateMnemonic && c('pass_signup_2023: Info').t`Preparing your recovery phrase`,
+                            ].filter(isTruthy);
+                            if (!list.length) {
+                                list.push(c('pass_signup_2023: Info').t`Updating your account`);
+                            }
+                            return list;
+                        })()}
+                        product={productAppName}
+                        img={setupImg}
+                        onSetup={async () => {
+                            const cache = model.cache;
+                            if (!cache) {
+                                throw new Error('Missing cache');
                             }
 
                             try {
-                                const { accountData, subscriptionData } = data;
-
-                                await onPreSubmit?.();
-                                await onStartAuth().catch(noop);
-
-                                const cache: SignupCacheResult = {
-                                    type: 'signup',
-                                    appName: APP_NAME,
-                                    appIntent: undefined,
-                                    productParam,
-                                    // Internal app or oauth app or vpn
-                                    ignoreExplore: toApp !== undefined,
-                                    accountData,
-                                    subscriptionData,
-                                    inviteData: model.inviteData,
-                                    referralData: model.referralData,
-                                    provisioningToken: model.provisionedDeal?.token,
-                                    persistent: isElectronApp,
-                                    trusted: isElectronApp,
-                                    clientType,
-                                    ktActivation: await getKtActivation(),
-                                };
-
-                                if (data.type === 'signup-token') {
-                                    const tmpCache = {
-                                        ...cache,
-                                        subscriptionData: getFreeSubscriptionData(subscriptionData),
-                                    };
-                                    const userCreationResult = await handleCreateUser({
-                                        invite: signupParameters.invite,
-                                        visitorId: signupParameters.visitorId,
-                                        cache: tmpCache,
-                                        api: silentApi,
-                                        hvMode: SignupHumanVerification.DEFERRED,
-                                    });
-                                    const setupCache = await handleSetupNewUser(userCreationResult.cache);
-                                    const cacheWithOriginalSubscription = {
-                                        ...setupCache,
-                                        subscriptionData: cache.subscriptionData,
-                                    };
-                                    setModelDiff({
-                                        session: {
-                                            ...getSessionDataFromSignup(setupCache),
-                                            defaultPaymentMethod: PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
-                                        },
-                                        // Set back original subscription data
-                                        subscriptionData: cacheWithOriginalSubscription.subscriptionData,
-                                        cache: cacheWithOriginalSubscription,
-                                        signupTokenMode: true,
-                                    });
-                                } else {
-                                    const result = await handleCreateUser({
-                                        invite: signupParameters.invite,
-                                        visitorId: signupParameters.visitorId,
-                                        cache,
-                                        api: silentApi,
-                                        hvMode:
-                                            // Forcing email address ownership verification for Pass, Drive, and Lumo
-                                            product === APPS.PROTONPASS ||
-                                            product === APPS.PROTONDRIVE ||
-                                            product === APPS.PROTONLUMO
-                                                ? SignupHumanVerification.IMMEDIATE
-                                                : SignupHumanVerification.DEFERRED,
-                                    });
-                                    setModelDiff({
-                                        subscriptionData: result.cache.subscriptionData,
-                                        cache: result.cache,
-                                        step: Steps.Loading,
-                                    });
+                                if (cache.type === 'user') {
+                                    const result = await handleSetupExistingUser(cache);
+                                    if (onboarding.user) {
+                                        setModelDiff({
+                                            cache: result,
+                                            step: Steps.Custom,
+                                        });
+                                    } else {
+                                        await handleLoginUser(result);
+                                    }
+                                }
+                                if (cache.type === 'signup') {
+                                    const result = await handleSetupNewUser(cache);
+                                    trackSignupAccountCreated(product);
+                                    if (onboarding.signup) {
+                                        setModelDiff({
+                                            cache: result,
+                                            step: Steps.Custom,
+                                        });
+                                    } else {
+                                        await handleFinalizeSignup(
+                                            handleDone({
+                                                cache: result,
+                                                appIntent: product ? { app: product } : undefined,
+                                            })
+                                        );
+                                    }
                                 }
 
+                                sendSignupAccountCreationTelemetry({
+                                    planIDs: cache.subscriptionData.planIDs,
+                                    flowId: 'single-page-signup',
+                                    productIntent: toApp,
+                                    currency: cache.subscriptionData.currency,
+                                    cycle: cache.subscriptionData.cycle,
+                                    signupType: cache.type === 'signup' ? cache.accountData.signupType : undefined,
+                                    amount: cache.subscriptionData.checkResult.AmountDue,
+                                });
                                 metrics.core_single_signup_setup_total.increment({
                                     status: 'success',
                                 });
-                            } catch (error: any) {
+                            } catch (error) {
                                 observeApiError(error, (status) =>
                                     metrics.core_single_signup_setup_total.increment({
                                         status,
                                     })
                                 );
 
+                                await onStartAuth().catch(noop);
                                 handleError(error);
-                                if (error?.config?.url?.endsWith?.('keys/setup')) {
-                                    captureMessage(`Signup setup failure`);
-                                }
-                            }
-                        }}
-                        mode={signupParameters.mode}
-                        signupTrial={signupTrial}
-                        subscription={model.session?.subscription}
-                        telemetryContext={getTelemetryContext(model.session)}
-                    />
-                )}
-                {model.step === Steps.Loading && (
-                    <Layout logo={signupConfiguration.logo} hasDecoration={false}>
-                        <Step2
-                            logo={signupConfiguration.logo}
-                            steps={(() => {
-                                const hasPlans = hasPlanIDs(model.subscriptionData.planIDs);
-                                const hasPayment = hasPlans && model.subscriptionData.checkResult.AmountDue > 0;
-                                const hasSession = !!model.session?.resumedSessionResult.User;
-
-                                const list = [
-                                    hasPayment && c('pass_signup_2023: Info').t`Verifying your payment`,
-                                    !hasSession && c('pass_signup_2023: Info').t`Creating your account`,
-                                    !hasPayment &&
-                                        hasSession &&
-                                        hasPlans &&
-                                        c('pass_signup_2023: Info').t`Updating your account`,
-                                    canGenerateMnemonic &&
-                                        c('pass_signup_2023: Info').t`Preparing your recovery phrase`,
-                                ].filter(isTruthy);
-                                if (!list.length) {
-                                    list.push(c('pass_signup_2023: Info').t`Updating your account`);
-                                }
-                                return list;
-                            })()}
-                            product={productAppName}
-                            img={setupImg}
-                            onSetup={async () => {
-                                const cache = model.cache;
-                                if (!cache) {
-                                    throw new Error('Missing cache');
-                                }
-
-                                try {
-                                    if (cache.type === 'user') {
-                                        const result = await handleSetupExistingUser(cache);
-                                        if (onboarding.user) {
-                                            setModelDiff({
-                                                cache: result,
-                                                step: Steps.Custom,
-                                            });
-                                        } else {
-                                            await handleLoginUser(result);
-                                        }
-                                    }
-                                    if (cache.type === 'signup') {
-                                        const result = await handleSetupNewUser(cache);
-                                        trackSignupAccountCreated(product);
-                                        if (onboarding.signup) {
-                                            setModelDiff({
-                                                cache: result,
-                                                step: Steps.Custom,
-                                            });
-                                        } else {
-                                            await handleFinalizeSignup(
-                                                handleDone({
-                                                    cache: result,
-                                                    appIntent: product ? { app: product } : undefined,
-                                                })
-                                            );
-                                        }
-                                    }
-
-                                    sendSignupAccountCreationTelemetry({
-                                        planIDs: cache.subscriptionData.planIDs,
-                                        flowId: 'single-page-signup',
-                                        productIntent: toApp,
-                                        currency: cache.subscriptionData.currency,
-                                        cycle: cache.subscriptionData.cycle,
-                                        signupType: cache.type === 'signup' ? cache.accountData.signupType : undefined,
-                                        amount: cache.subscriptionData.checkResult.AmountDue,
-                                    });
-                                    metrics.core_single_signup_setup_total.increment({
-                                        status: 'success',
-                                    });
-                                } catch (error) {
-                                    observeApiError(error, (status) =>
-                                        metrics.core_single_signup_setup_total.increment({
-                                            status,
-                                        })
-                                    );
-
-                                    await onStartAuth().catch(noop);
-                                    handleError(error);
-                                    setModelDiff({
-                                        cache: undefined,
-                                        step: Steps.Account,
-                                    });
-                                }
-                            }}
-                        />
-                    </Layout>
-                )}
-                {model.step === Steps.Custom && (
-                    <CustomStep
-                        product={product}
-                        signupParameters={signupParameters}
-                        audience={audience}
-                        measure={measure}
-                        fork={fork}
-                        model={model}
-                        onChangeModel={setModelDiff}
-                        productAppName={productAppName}
-                        setupImg={setupImg}
-                        logo={signupConfiguration.logo}
-                        onSetup={async (result) => {
-                            if (result.type === 'user') {
-                                return handleLoginUser(result);
-                            }
-                            if (result.type === 'signup') {
-                                return handleFinalizeSignup(result.payload);
+                                setModelDiff({
+                                    cache: undefined,
+                                    step: Steps.Account,
+                                });
                             }
                         }}
                     />
-                )}
-            </UnAuthenticated>
+                </Layout>
+            )}
+            {model.step === Steps.Custom && (
+                <CustomStep
+                    product={product}
+                    signupParameters={signupParameters}
+                    audience={audience}
+                    measure={measure}
+                    fork={fork}
+                    model={model}
+                    onChangeModel={setModelDiff}
+                    productAppName={productAppName}
+                    setupImg={setupImg}
+                    logo={signupConfiguration.logo}
+                    onSetup={async (result) => {
+                        if (result.type === 'user') {
+                            return handleLoginUser(result);
+                        }
+                        if (result.type === 'signup') {
+                            return handleFinalizeSignup(result.payload);
+                        }
+                    }}
+                />
+            )}
         </SignupV2ThemeProvider>
     );
 };

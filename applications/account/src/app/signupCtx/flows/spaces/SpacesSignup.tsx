@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Redirect, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -149,7 +149,7 @@ const SpacesSignupContent = (props: BaseSignupContextProps) => {
 };
 
 const SpacesSignup = (props: BaseSignupContextProps) => (
-    <SpacesAvailableGate fallbackPath={SSO_PATHS.SIGNUP}>
+    <SpacesAvailableGate fallback={<Redirect to={SSO_PATHS.SIGNUP} />}>
         <SpacesSignupContent {...props} />
     </SpacesAvailableGate>
 );

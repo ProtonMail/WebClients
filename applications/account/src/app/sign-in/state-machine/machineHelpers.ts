@@ -21,7 +21,7 @@ export const unprovidedActors = <TActors extends Record<string, AnyActorLogic>>(
 
 /** The body of an action the app provides (see `unprovidedActors`): one that wasn't provided fails loudly. */
 export const unprovidedAction = (name: string): never => {
-    throw new Error(`The sign-in's ${name} action is not provided`);
+    throw new Error(`The ${name} action is not provided`);
 };
 
 /** Hands a failed actor's error to the machine's `reportError` action. */

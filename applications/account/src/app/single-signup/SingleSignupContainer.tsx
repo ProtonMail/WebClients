@@ -6,7 +6,6 @@ import { useGetPlans } from '@proton/account/plans/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
-import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
@@ -662,243 +661,240 @@ const SingleSignupContainer = ({
             <link rel="prefetch" href={onboardingVPNWelcome} as="image" />
             <link rel="prefetch" href={onboardingVPNWelcome2} as="image" />
             <link rel="prefetch" href={vpnUpsellIllustration} as="image" />
-            <UnAuthenticated>
-                {model.step === Steps.Account && (
-                    <Step1
-                        signupParameters={signupParameters}
-                        activeBreakpoint={activeBreakpoint}
-                        mode={model.mode}
-                        selectedPlan={selectedPlan}
-                        cycleData={model.cycleData}
-                        isB2bPlan={isB2bPlan}
-                        background={background}
-                        upsellShortPlan={upsellShortPlan}
-                        model={model}
-                        setModel={setModel}
-                        measure={measure}
-                        onComplete={async (data) => {
-                            const { accountData, subscriptionData } = data;
-                            const accountType =
-                                accountData.signupType === SignupType.External ? 'external_account' : 'proton_account';
-                            try {
-                                const cache: SignupCacheResult = {
-                                    type: 'signup',
-                                    appName: APP_NAME,
-                                    appIntent: undefined,
-                                    productParam,
-                                    // Internal app or oauth app or vpn
-                                    ignoreExplore: true,
-                                    accountData,
-                                    subscriptionData,
-                                    inviteData: model.inviteData,
-                                    referralData: model.referralData,
-                                    persistent: false,
-                                    trusted: false,
-                                    clientType,
-                                    ktActivation: await getKtActivation(),
-                                };
+            {model.step === Steps.Account && (
+                <Step1
+                    signupParameters={signupParameters}
+                    activeBreakpoint={activeBreakpoint}
+                    mode={model.mode}
+                    selectedPlan={selectedPlan}
+                    cycleData={model.cycleData}
+                    isB2bPlan={isB2bPlan}
+                    background={background}
+                    upsellShortPlan={upsellShortPlan}
+                    model={model}
+                    setModel={setModel}
+                    measure={measure}
+                    onComplete={async (data) => {
+                        const { accountData, subscriptionData } = data;
+                        const accountType =
+                            accountData.signupType === SignupType.External ? 'external_account' : 'proton_account';
+                        try {
+                            const cache: SignupCacheResult = {
+                                type: 'signup',
+                                appName: APP_NAME,
+                                appIntent: undefined,
+                                productParam,
+                                // Internal app or oauth app or vpn
+                                ignoreExplore: true,
+                                accountData,
+                                subscriptionData,
+                                inviteData: model.inviteData,
+                                referralData: model.referralData,
+                                persistent: false,
+                                trusted: false,
+                                clientType,
+                                ktActivation: await getKtActivation(),
+                            };
 
-                                await onPreSubmit?.();
-                                const result = await handleCreateUser({
-                                    cache,
-                                    api: silentApi,
-                                    hvMode: SignupHumanVerification.DEFERRED,
-                                    visitorId: signupParameters.visitorId,
-                                });
-                                setModelDiff({
-                                    subscriptionData: result.cache.subscriptionData,
-                                    cache: result.cache,
-                                    step: Steps.Loading,
-                                });
+                            await onPreSubmit?.();
+                            const result = await handleCreateUser({
+                                cache,
+                                api: silentApi,
+                                hvMode: SignupHumanVerification.DEFERRED,
+                                visitorId: signupParameters.visitorId,
+                            });
+                            setModelDiff({
+                                subscriptionData: result.cache.subscriptionData,
+                                cache: result.cache,
+                                step: Steps.Loading,
+                            });
 
+                            metrics.core_vpn_single_signup_step1_accountCreation_2_total.increment({
+                                status: 'success',
+                                account_type: accountType,
+                                flow: isB2bPlan ? 'b2b' : 'b2c',
+                            });
+                        } catch (error) {
+                            handleError(error);
+                            observeApiError(error, (status) =>
                                 metrics.core_vpn_single_signup_step1_accountCreation_2_total.increment({
-                                    status: 'success',
+                                    status,
                                     account_type: accountType,
                                     flow: isB2bPlan ? 'b2b' : 'b2c',
-                                });
-                            } catch (error) {
-                                handleError(error);
-                                observeApiError(error, (status) =>
-                                    metrics.core_vpn_single_signup_step1_accountCreation_2_total.increment({
-                                        status,
-                                        account_type: accountType,
-                                        flow: isB2bPlan ? 'b2b' : 'b2c',
-                                    })
-                                );
-                            }
-                        }}
-                        onCurrencyChange={updatePlans}
-                        upsellImg={<img src={vpnUpsellIllustration} alt={upsellShortPlan?.description || ''} />}
-                        toAppName={toAppName}
-                        telemetryContext={telemetryContext}
-                        toApp={toApp}
-                    />
-                )}
-                {model.step === Steps.Loading && (
-                    <Step2
-                        hasPayment={
-                            hasPlanIDs(model.subscriptionData.planIDs) &&
-                            model.subscriptionData.checkResult.AmountDue > 0
+                                })
+                            );
                         }
-                        product={VPN_APP_NAME}
-                        isB2bPlan={isB2bPlan}
-                        background={background}
-                        img={<img src={onboardingVPNWelcome} alt={getWelcomeToText(VPN_APP_NAME)} />}
-                        onSetup={async () => {
-                            if (!cache || cache.type !== 'signup') {
-                                throw new Error('Missing cache');
-                            }
-                            const subscriptionMetricsData = getSubscriptionMetricsData(cache.subscriptionData);
-                            try {
-                                /**
-                                 * Stop the metrics batching process. This prevents a race condition where
-                                 * handleSetupUser sets an auth cookie before the metrics batch request
-                                 */
-                                metrics.stopBatchingProcess();
+                    }}
+                    onCurrencyChange={updatePlans}
+                    upsellImg={<img src={vpnUpsellIllustration} alt={upsellShortPlan?.description || ''} />}
+                    toAppName={toAppName}
+                    telemetryContext={telemetryContext}
+                    toApp={toApp}
+                />
+            )}
+            {model.step === Steps.Loading && (
+                <Step2
+                    hasPayment={
+                        hasPlanIDs(model.subscriptionData.planIDs) && model.subscriptionData.checkResult.AmountDue > 0
+                    }
+                    product={VPN_APP_NAME}
+                    isB2bPlan={isB2bPlan}
+                    background={background}
+                    img={<img src={onboardingVPNWelcome} alt={getWelcomeToText(VPN_APP_NAME)} />}
+                    onSetup={async () => {
+                        if (!cache || cache.type !== 'signup') {
+                            throw new Error('Missing cache');
+                        }
+                        const subscriptionMetricsData = getSubscriptionMetricsData(cache.subscriptionData);
+                        try {
+                            /**
+                             * Stop the metrics batching process. This prevents a race condition where
+                             * handleSetupUser sets an auth cookie before the metrics batch request
+                             */
+                            metrics.stopBatchingProcess();
 
-                                if (cache.type === 'signup') {
-                                    const result = await handleSetupNewUser(cache);
-                                    setModelDiff({
-                                        cache: result,
-                                        step: Steps.Custom,
-                                    });
-
-                                    metrics.core_vpn_single_signup_step2_setup_3_total.increment({
-                                        status: 'success',
-                                        ...subscriptionMetricsData,
-                                        flow: isB2bPlan ? 'b2b' : 'b2c',
-                                    });
-                                }
-
-                                sendSignupAccountCreationTelemetry({
-                                    planIDs: cache.subscriptionData.planIDs,
-                                    flowId: 'single-page-signup-vpn',
-                                    productIntent: toApp,
-                                    currency: cache.subscriptionData.currency,
-                                    cycle: cache.subscriptionData.cycle,
-                                    signupType: cache.accountData.signupType,
-                                    amount: cache.subscriptionData.checkResult.AmountDue,
+                            if (cache.type === 'signup') {
+                                const result = await handleSetupNewUser(cache);
+                                setModelDiff({
+                                    cache: result,
+                                    step: Steps.Custom,
                                 });
-                            } catch (error: any) {
+
+                                metrics.core_vpn_single_signup_step2_setup_3_total.increment({
+                                    status: 'success',
+                                    ...subscriptionMetricsData,
+                                    flow: isB2bPlan ? 'b2b' : 'b2c',
+                                });
+                            }
+
+                            sendSignupAccountCreationTelemetry({
+                                planIDs: cache.subscriptionData.planIDs,
+                                flowId: 'single-page-signup-vpn',
+                                productIntent: toApp,
+                                currency: cache.subscriptionData.currency,
+                                cycle: cache.subscriptionData.cycle,
+                                signupType: cache.accountData.signupType,
+                                amount: cache.subscriptionData.checkResult.AmountDue,
+                            });
+                        } catch (error: any) {
+                            observeApiError(error, (status) =>
+                                metrics.core_vpn_single_signup_step2_setup_3_total.increment({
+                                    status,
+                                    ...subscriptionMetricsData,
+                                    flow: isB2bPlan ? 'b2b' : 'b2c',
+                                })
+                            );
+
+                            if (error?.config?.url?.endsWith?.('keys/setup')) {
+                                captureMessage(`Signup setup failure`);
+                            }
+
+                            handleError(error);
+                            setModelDiff({
+                                cache: undefined,
+                                step: Steps.Account,
+                            });
+                        } finally {
+                            /**
+                             * Batch process can now resume since the auth cookie will have been set
+                             */
+                            metrics.startBatchingProcess();
+                        }
+                    }}
+                />
+            )}
+            {model.step === Steps.Custom && cache?.type === 'signup' && (
+                <Step3
+                    email={cache?.accountData.email || ''}
+                    password={cache?.accountData.password || ''}
+                    product={VPN_APP_NAME}
+                    isB2bPlan={isB2bPlan}
+                    background={background}
+                    onComplete={async (newPassword: string) => {
+                        if (!cache || cache.type !== 'signup') {
+                            throw new Error('Missing cache');
+                        }
+
+                        let newCache = model.cache;
+
+                        if (newPassword) {
+                            try {
+                                const result = await handleSetPassword({
+                                    cache,
+                                    api: silentApi,
+                                    newPassword,
+                                });
+                                newCache = result.cache;
+                            } catch (error) {
                                 observeApiError(error, (status) =>
-                                    metrics.core_vpn_single_signup_step2_setup_3_total.increment({
+                                    metrics.core_vpn_single_signup_step3_complete_2_total.increment({
                                         status,
-                                        ...subscriptionMetricsData,
                                         flow: isB2bPlan ? 'b2b' : 'b2c',
                                     })
                                 );
-
-                                if (error?.config?.url?.endsWith?.('keys/setup')) {
-                                    captureMessage(`Signup setup failure`);
-                                }
-
                                 handleError(error);
-                                setModelDiff({
-                                    cache: undefined,
-                                    step: Steps.Account,
-                                });
-                            } finally {
-                                /**
-                                 * Batch process can now resume since the auth cookie will have been set
-                                 */
-                                metrics.startBatchingProcess();
+                                return;
                             }
-                        }}
-                    />
-                )}
-                {model.step === Steps.Custom && cache?.type === 'signup' && (
-                    <Step3
-                        email={cache?.accountData.email || ''}
-                        password={cache?.accountData.password || ''}
-                        product={VPN_APP_NAME}
-                        isB2bPlan={isB2bPlan}
-                        background={background}
-                        onComplete={async (newPassword: string) => {
-                            if (!cache || cache.type !== 'signup') {
-                                throw new Error('Missing cache');
-                            }
+                        }
 
-                            let newCache = model.cache;
+                        metrics.core_vpn_single_signup_step3_complete_2_total.increment({
+                            status: 'success',
+                            flow: isB2bPlan ? 'b2b' : 'b2c',
+                        });
 
-                            if (newPassword) {
-                                try {
-                                    const result = await handleSetPassword({
-                                        cache,
-                                        api: silentApi,
-                                        newPassword,
-                                    });
-                                    newCache = result.cache;
-                                } catch (error) {
-                                    observeApiError(error, (status) =>
-                                        metrics.core_vpn_single_signup_step3_complete_2_total.increment({
-                                            status,
-                                            flow: isB2bPlan ? 'b2b' : 'b2c',
-                                        })
-                                    );
-                                    handleError(error);
-                                    return;
-                                }
-                            }
+                        const gotoB2bSetup = isB2bPlan && signupParameters.orgName;
+                        if (gotoB2bSetup) {
+                            setModelDiff({ cache: newCache, step: Steps.SetupOrg });
+                        } else {
+                            setModelDiff({ cache: newCache, step: Steps.Custom });
+                            await done(newCache);
+                        }
+                    }}
+                    measure={measure}
+                />
+            )}
+            {model.step === Steps.SetupOrg && (
+                <Step4
+                    product={VPN_APP_NAME}
+                    isB2bPlan={isB2bPlan}
+                    background={background}
+                    onSetup={async () => {
+                        if (!cache || cache.type !== 'signup' || !cache.setupData?.api) {
+                            throw new Error('Missing cache');
+                        }
 
-                            metrics.core_vpn_single_signup_step3_complete_2_total.increment({
+                        try {
+                            const password = cache.accountData.password;
+                            const user = cache.setupData.user;
+                            const keyPassword = cache.setupData.session.keyPassword;
+                            const orgName = signupParameters.orgName || '';
+
+                            await handleSetupOrg({
+                                api: silentApi,
+                                password,
+                                keyPassword,
+                                orgName,
+                                user,
+                            }).catch(noop);
+
+                            metrics.core_vpn_single_signup_step4_orgSetup_total.increment({
                                 status: 'success',
                                 flow: isB2bPlan ? 'b2b' : 'b2c',
                             });
-
-                            const gotoB2bSetup = isB2bPlan && signupParameters.orgName;
-                            if (gotoB2bSetup) {
-                                setModelDiff({ cache: newCache, step: Steps.SetupOrg });
-                            } else {
-                                setModelDiff({ cache: newCache, step: Steps.Custom });
-                                await done(newCache);
-                            }
-                        }}
-                        measure={measure}
-                    />
-                )}
-                {model.step === Steps.SetupOrg && (
-                    <Step4
-                        product={VPN_APP_NAME}
-                        isB2bPlan={isB2bPlan}
-                        background={background}
-                        onSetup={async () => {
-                            if (!cache || cache.type !== 'signup' || !cache.setupData?.api) {
-                                throw new Error('Missing cache');
-                            }
-
-                            try {
-                                const password = cache.accountData.password;
-                                const user = cache.setupData.user;
-                                const keyPassword = cache.setupData.session.keyPassword;
-                                const orgName = signupParameters.orgName || '';
-
-                                await handleSetupOrg({
-                                    api: silentApi,
-                                    password,
-                                    keyPassword,
-                                    orgName,
-                                    user,
-                                }).catch(noop);
-
+                        } catch (error) {
+                            handleError(error);
+                            observeApiError(error, (status) =>
                                 metrics.core_vpn_single_signup_step4_orgSetup_total.increment({
-                                    status: 'success',
+                                    status,
                                     flow: isB2bPlan ? 'b2b' : 'b2c',
-                                });
-                            } catch (error) {
-                                handleError(error);
-                                observeApiError(error, (status) =>
-                                    metrics.core_vpn_single_signup_step4_orgSetup_total.increment({
-                                        status,
-                                        flow: isB2bPlan ? 'b2b' : 'b2c',
-                                    })
-                                );
-                            }
+                                })
+                            );
+                        }
 
-                            await done(cache);
-                        }}
-                    />
-                )}
-            </UnAuthenticated>
+                        await done(cache);
+                    }}
+                />
+            )}
         </>
     );
 };

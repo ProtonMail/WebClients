@@ -9,7 +9,7 @@ import {
 import { type APP_NAMES, SSO_PATHS, VPN_TV_PATH_WITH_CODE } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
-import type { OAuthPartnersInitiateState } from '../../public/OAuthPartnersContainer';
+import type { OAuthPartnersInitiateState } from '../../public/oauthPartners/oauthPartners';
 import type { AuthSession } from '../authSession';
 import type { Paths } from '../helper';
 import type { LocalRedirect } from '../localRedirect';

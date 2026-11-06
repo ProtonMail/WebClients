@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
@@ -16,9 +17,12 @@ import { VPN_TV_USER_TIER } from '@proton/vpn/constants/tvUserTier';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
 import SupportDropdown from '../public/SupportDropdown';
-import type { Paths } from './helper';
+import { PublicAppContext } from './state-machine/PublicAppContext';
+import { selectPaths } from './state-machine/publicAppStateMachine';
 
-export const TvContainerNotSignedIn = ({ searchParams, paths }: { searchParams: URLSearchParams; paths: Paths }) => {
+export const TvContainerNotSignedIn = () => {
+    const paths = PublicAppContext.useSelector(selectPaths, isDeepEqual);
+    const searchParams = PublicAppContext.useSelector((state) => state.context.initialSearchParams);
     const api = useApi();
 
     useEffectOnce(() => {

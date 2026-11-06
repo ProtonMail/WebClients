@@ -1,4 +1,5 @@
-import { type Dispatch, Fragment, type SetStateAction, useCallback, useEffect, useRef, useState } from 'react';
+import { Fragment, useCallback, useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -9,34 +10,25 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useLoading from '@proton/hooks/useLoading';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
-import { revoke } from '@proton/shared/lib/api/auth';
-// eslint-disable-next-line proton/restricted-imports
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
-import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
-import {
-    type ActiveSession,
-    type GetActiveSessionsResult,
-    compareSessions,
-    resumeSession,
-} from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
+import { type ActiveSession, compareSessions } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getSessionDisplayData } from '@proton/shared/lib/authentication/sessionDisplay';
-import { APPS, type APP_NAMES, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
-import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { APPS, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getShouldProcessLinkClick } from '@proton/shared/lib/helpers/dom';
-import type { Api } from '@proton/shared/lib/interfaces/Api';
-import { getHasRecoveryMessage, removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/storage';
+import { getHasRecoveryMessage } from '@proton/shared/lib/recoveryFile/storage';
 import clamp from '@proton/utils/clamp';
 import clsx from '@proton/utils/clsx';
-import noop from '@proton/utils/noop';
 
-import type { OnLoginCallback } from '../content/authSession';
-import type { MetaTags } from '../useMetaTags';
+import { PublicAppContext } from '../content/state-machine/PublicAppContext';
+import {
+    selectPaths,
+    selectPreAppIntent,
+    selectSigningInLocalID,
+    selectToAppName,
+} from '../content/state-machine/publicAppStateMachine';
+import { getLoginMeta } from '../sign-in/loginPagesJson';
 import { useMetaTags } from '../useMetaTags';
 import type { ConfirmSignoutModalProps } from './ConfirmSignOutModal';
 import { ConfirmSignOutModal } from './ConfirmSignOutModal';
@@ -45,23 +37,6 @@ import Header from './Header';
 import Layout from './Layout';
 import Main from './Main';
 import { getContinueToString } from './helper';
-
-const clearSession = ({
-    api,
-    clearDeviceRecovery,
-    activeSession,
-}: {
-    api: Api;
-    activeSession: ActiveSession;
-    clearDeviceRecovery: boolean;
-}) => {
-    const session = activeSession.persisted;
-    removePersistedSession(session).catch(noop);
-    if (clearDeviceRecovery) {
-        removeDeviceRecovery(session.UserID);
-    }
-    api(withUIDHeaders(session.UID, revoke())).catch(noop);
-};
 
 const AccountItem = ({
     isLoading,
@@ -155,43 +130,22 @@ const AccountItem = ({
     );
 };
 
-interface Props {
-    api: Api;
-    onLogin: OnLoginCallback;
-    toApp?: APP_NAMES;
-    toAppName?: string;
-    activeSessions?: ActiveSession[];
-    onActiveSessions: Dispatch<SetStateAction<ActiveSession[] | undefined>>;
-    onGetActiveSessions: () => Promise<GetActiveSessionsResult>;
-    initialSessionsLength: number;
-    onAddAccount: () => void;
-    onEmptySessions: () => void;
-    metaTags: MetaTags;
-}
-
-const SwitchAccountContainer = ({
-    api,
-    metaTags,
-    toApp,
-    toAppName,
-    initialSessionsLength,
-    onLogin,
-    onGetActiveSessions,
-    activeSessions,
-    onAddAccount,
-    onActiveSessions,
-    onEmptySessions,
-}: Props) => {
-    const silentApi = getSilentApi(api);
-    const errorHandler = useErrorHandler();
-
-    useMetaTags(metaTags);
-
-    const [loading, withLoading] = useLoading(!activeSessions);
-    const [loadingMap, setLoadingMap] = useState<{ [key: number]: boolean }>({});
-    const [error, setError] = useState(false);
+const SwitchAccountContainer = () => {
+    const history = useHistory();
+    const publicApp = PublicAppContext.useActorRef();
     const { createNotification } = useNotifications();
-    const validRef = useRef(false);
+    const activeSessions = PublicAppContext.useSelector((state) => state.context.activeSessions);
+    const sessionsFailed = PublicAppContext.useSelector((state) => state.context.sessionsFailed);
+    const initialSessionsLength = PublicAppContext.useSelector((state) => state.context.initialSessionsLength);
+    const loginPath = PublicAppContext.useSelector((state) => selectPaths(state).login);
+    const toApp = PublicAppContext.useSelector(selectPreAppIntent);
+    const toAppName = PublicAppContext.useSelector(selectToAppName);
+    const signingInLocalID = PublicAppContext.useSelector(selectSigningInLocalID);
+    const onPickSession = (localID: number) => publicApp.send({ type: 'session.picked', localID });
+    const onAddAccount = () => history.push(loginPath);
+
+    useMetaTags(getLoginMeta(toApp));
+
     const [confirmSignOutModalProps, setConfirmSignOutModalOpen, renderConfirmSignOutModal] = useModalState();
     const [tmpConfirmSignOutState, setTmpConfirmSignOutState] = useState<{
         confirmType: ConfirmSignoutModalProps['confirmType'];
@@ -199,33 +153,18 @@ const SwitchAccountContainer = ({
     }>({ confirmType: 'single', sessions: [] });
 
     useEffect(() => {
-        if (!activeSessions) {
-            void withLoading(onGetActiveSessions().catch(() => setError(true)));
-        }
+        publicApp.send({ type: 'switch.opened' });
     }, []);
 
     useEffect(() => {
-        if (Array.isArray(activeSessions) && !activeSessions.length) {
-            onEmptySessions();
-        }
-    }, [activeSessions]);
-
-    const removeSessions = useCallback((localIDs: number[]) => {
-        const removeSet = new Set(localIDs);
-        onActiveSessions((oldActiveSessions) => {
-            const updatedActiveSessions = (oldActiveSessions || [])?.filter(
-                (session) => !removeSet.has(session.remote.LocalID)
-            );
-            return updatedActiveSessions;
-        });
-    }, []);
-
-    const handleSignOut = useCallback((activeSessions: ActiveSession[], clearDeviceRecovery: boolean) => {
-        activeSessions.forEach((activeSession) => {
-            clearSession({ api: silentApi, activeSession, clearDeviceRecovery });
-        });
-        removeSessions(activeSessions.map((session) => session.remote.LocalID));
-    }, []);
+        const subscription = publicApp.on('session.expired', () =>
+            createNotification({
+                type: 'error',
+                text: c('Error').t`The session has expired. Please sign in again.`,
+            })
+        );
+        return () => subscription.unsubscribe();
+    }, [publicApp, createNotification]);
 
     const handleSignOutMultiple = useCallback((activeSessions: ActiveSession[], type: 'all' | 'single') => {
         let confirmType: (typeof tmpConfirmSignOutState)['confirmType'];
@@ -240,36 +179,8 @@ const SwitchAccountContainer = ({
         setConfirmSignOutModalOpen(true);
     }, []);
 
-    const handleClickSession = async (localID: number) => {
-        try {
-            if (validRef.current) {
-                return;
-            }
-            validRef.current = true;
-            setLoadingMap((old) => ({ ...old, [localID]: true }));
-            const resumedSessionResult = await resumeSession({ api: silentApi, localID });
-            await onLogin({
-                data: resumedSessionResult,
-                flow: 'switch',
-            });
-        } catch (e: any) {
-            setLoadingMap((old) => ({ ...old, [localID]: false }));
-            if (e instanceof InvalidPersistentSessionError) {
-                removeSessions([localID]);
-                createNotification({
-                    type: 'error',
-                    text: c('Error').t`The session has expired. Please sign in again.`,
-                });
-                return;
-            }
-            errorHandler(e);
-        } finally {
-            validRef.current = false;
-        }
-    };
-
     const inner = () => {
-        if (error) {
+        if (sessionsFailed) {
             const refresh = (
                 <InlineLinkButton key="1" onClick={() => window.location.reload()}>
                     {
@@ -289,7 +200,7 @@ const SwitchAccountContainer = ({
             );
         }
 
-        if (loading) {
+        if (!activeSessions) {
             return (
                 <div className="flex flex-column gap-2">
                     {new Array(clamp(initialSessionsLength, 1, 4)).fill(0).map((_, idx) => {
@@ -299,14 +210,14 @@ const SwitchAccountContainer = ({
             );
         }
 
-        if (!activeSessions?.length) {
+        if (!activeSessions.length) {
             return <div className="mb-4">{c('Error').t`No active sessions`}</div>;
         }
 
         return [...activeSessions].sort(compareSessions).map((session, index) => {
             const sessionDisplayData = getSessionDisplayData(session);
             const localID = sessionDisplayData.localID;
-            const isLoading = loadingMap[sessionDisplayData.localID];
+            const isLoading = signingInLocalID === localID;
 
             return (
                 <Fragment key={localID}>
@@ -319,7 +230,7 @@ const SwitchAccountContainer = ({
                                       APPS.PROTONACCOUNT
                                   )
                         }
-                        onClick={handleClickSession}
+                        onClick={onPickSession}
                         onSignout={() => {
                             handleSignOutMultiple([session], 'single');
                         }}
@@ -362,7 +273,11 @@ const SwitchAccountContainer = ({
                     <ConfirmSignOutModal
                         confirmType={tmpConfirmSignOutState.confirmType}
                         onSignOut={(clearData) => {
-                            handleSignOut(tmpConfirmSignOutState.sessions, clearData);
+                            publicApp.send({
+                                type: 'sessions.signedOut',
+                                sessions: tmpConfirmSignOutState.sessions,
+                                clearDeviceRecovery: clearData,
+                            });
                         }}
                         {...confirmSignOutModalProps}
                         onExit={() => {

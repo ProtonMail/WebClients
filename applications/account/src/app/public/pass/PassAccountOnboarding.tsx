@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
+import UnauthenticatedApiProvider from '@proton/components/containers/api/UnauthenticatedApiProvider';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { IcDesktop } from '@proton/icons/icons/IcDesktop';
@@ -19,13 +20,14 @@ import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { PASS_WEB_APP_URL } from '@proton/shared/lib/pass/constants';
 
+import { usePublicAppServices } from '../../content/state-machine/PublicAppServices';
 import { Footer } from '../../signupCtx/flows/pass/components/Footer';
 import { getSignupFlow, measureSignupCtx } from '../../signupCtx/flows/pass/measure';
 import { getTelemetryClientType } from '../../single-signup-v2/measure';
 import { useMetaTags } from '../../useMetaTags';
 import loginPng from './pass-account-onboarding-login.png';
 
-export const PassAccountOnboarding: FC = () => {
+const PassAccountOnboardingContent: FC = () => {
     useMetaTags({
         title: c('Title').t`${PASS_APP_NAME}: Welcome`,
         description: c('Title').t`Unlock the power of autofill with ${PASS_APP_NAME} in your browser`,
@@ -131,5 +133,14 @@ export const PassAccountOnboarding: FC = () => {
                 </div>
             </TwoColumns>
         </Layout>
+    );
+};
+
+export const PassAccountOnboarding: FC = () => {
+    const services = usePublicAppServices();
+    return (
+        <UnauthenticatedApiProvider unauthenticatedApi={services.unauthenticatedApi}>
+            <PassAccountOnboardingContent />
+        </UnauthenticatedApiProvider>
     );
 };

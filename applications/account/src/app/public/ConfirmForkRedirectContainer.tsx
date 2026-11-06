@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useLoading from '@proton/hooks/useLoading';
-import { type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 
+import { PublicAppContext } from '../content/state-machine/PublicAppContext';
+import { type ConsentState, selectLoggingIn, selectPreAppIntent } from '../content/state-machine/publicAppStateMachine';
 import Content from './Content';
 import Header from './Header';
 import Layout from './Layout';
@@ -12,16 +12,18 @@ import Main from './Main';
 import Text from './Text';
 
 interface Props {
-    redirectUrl: string;
-    onConfirm: () => Promise<void>;
-    onCancel: () => void;
-    toApp?: APP_NAMES;
+    consent: Extract<ConsentState, { type: 'fork-redirect-consent' }>;
 }
 
-const ConfirmForkRedirectContainer = ({ toApp, redirectUrl, onConfirm, onCancel }: Props) => {
-    const [loading, withLoading] = useLoading();
-    const handleError = useErrorHandler();
-
+const ConfirmForkRedirectContainer = ({ consent }: Props) => {
+    const publicApp = PublicAppContext.useActorRef();
+    const toApp = PublicAppContext.useSelector(selectPreAppIntent);
+    const loading = PublicAppContext.useSelector(selectLoggingIn);
+    const { redirectUrl } = consent.payload;
+    const onConfirm = () => publicApp.send({ type: 'consent.confirmed', consent });
+    const onCancel = () => {
+        window.location.pathname = SSO_PATHS.SWITCH;
+    };
     return (
         <Layout hasDecoration={false} toApp={toApp}>
             <Main>
@@ -40,7 +42,7 @@ const ConfirmForkRedirectContainer = ({ toApp, redirectUrl, onConfirm, onCancel 
                         color="danger"
                         fullWidth
                         size="large"
-                        onClick={() => withLoading(onConfirm().catch(handleError))}
+                        onClick={onConfirm}
                         loading={loading}
                     >
                         {c('Action').t`Continue`}

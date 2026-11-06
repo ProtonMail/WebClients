@@ -5,7 +5,7 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { buildUser } from '@proton/shared/testing/buildUser';
 
-import type { AuthSession } from '../content/authSession';
+import type { AuthSession } from '../../content/authSession';
 import { getAppSwitcherState } from './appSwitcherState';
 
 jest.mock('@proton/account/availableApps/apps', () => ({
