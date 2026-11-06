@@ -133,7 +133,7 @@ export const SkillList = ({ value, onChange, headerClassName, rows }: SkillListP
             </div>
             {loading && <SkillListLoadingView />}
             {error && <SkillListErrorView />}
-            {hasUnavailable && (
+            {hasUnavailable && !rows && (
                 <Banner variant="warning" className="text-sm">
                     {
                         // translator: Warning that selected skills cannot be used by the scheduled task; removing one from the task does not delete the skill.

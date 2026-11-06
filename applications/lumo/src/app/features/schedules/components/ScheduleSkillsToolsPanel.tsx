@@ -6,7 +6,11 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import { openDesktopSettings, useDesktopManifests } from '@proton/lumo-api-client/core/desktop-tools';
+import {
+    openDesktopSettings,
+    supportsDesktopScheduleReadOnly,
+    useDesktopManifests,
+} from '@proton/lumo-api-client/core/desktop-tools';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
@@ -32,6 +36,7 @@ const ScheduleSkillsToolsPanelImpl = ({ spaceId }: { spaceId: string }) => {
 
     const [expanded, setExpanded] = useState(true);
     const panelId = useId();
+    const supportsReadOnly = supportsDesktopScheduleReadOnly();
 
     // The schedule may have been deleted while this panel was open.
     if (space?.spaceType !== SpaceType.Schedule) return null;
@@ -57,6 +62,18 @@ const ScheduleSkillsToolsPanelImpl = ({ spaceId }: { spaceId: string }) => {
     const unavailableLabel = c('collider_2025:Info').t`Connector unavailable`;
     // translator: Status below a selected connector name while desktop connector information is loading.
     const loadingLabel = c('collider_2025:Info').t`Loading connectors`;
+    const permissionOptions = [
+        {
+            readOnly: true,
+            // translator: Restricts this scheduled task's connector to tools explicitly classified as read-only.
+            label: c('collider_2025:Label').t`Read only`,
+        },
+        {
+            readOnly: false,
+            // translator: Allows this scheduled task's connector to use both read and write tools.
+            label: c('collider_2025:Label').t`Read and write`,
+        },
+    ];
 
     return (
         <section className="mb-4">
@@ -121,6 +138,8 @@ const ScheduleSkillsToolsPanelImpl = ({ spaceId }: { spaceId: string }) => {
                                           : loadingLabel}
                                 </div>
                             </div>
+
+                            {/* Dropdown menu for connectors. */}
                             <SimpleDropdown
                                 as="button"
                                 type="button"
@@ -132,6 +151,43 @@ const ScheduleSkillsToolsPanelImpl = ({ spaceId }: { spaceId: string }) => {
                                 }
                             >
                                 <DropdownMenu>
+                                    <div className="px-4 pt-2 pb-1 text-sm color-weak">{
+                                        // translator: Heading for a connector's task-specific access settings in its actions menu.
+                                        c('collider_2025:Label').t`Permission`
+                                    }</div>
+                                    {permissionOptions.map(({ readOnly, label }) => (
+                                        <DropdownMenuButton
+                                            key={label}
+                                            aria-pressed={(connector.readOnly === true) === readOnly}
+                                            className="flex flex-nowrap items-center justify-space-between gap-3 text-left"
+                                            disabled={readOnly && !supportsReadOnly}
+                                            onClick={() =>
+                                                updateSchedule({
+                                                    connectors: schedule.connectors.map((item) =>
+                                                        item.id === connector.id ? { ...item, readOnly } : item
+                                                    ),
+                                                })
+                                            }
+                                            title={
+                                                readOnly && !supportsReadOnly
+                                                    ? // translator: A scheduled task requires read-only tool permissions unsupported by this desktop version.
+                                                      c('collider_2025:Error')
+                                                          .t`Update ${LUMO_SHORT_APP_NAME} Desktop to use read-only connector access for this task.`
+                                                    : undefined
+                                            }
+                                        >
+                                            <span>{label}</span>
+                                            {(connector.readOnly === true) === readOnly && (
+                                                <LumoIcon
+                                                    aria-hidden
+                                                    className="shrink-0 color-primary"
+                                                    name="Check"
+                                                    size={16}
+                                                />
+                                            )}
+                                        </DropdownMenuButton>
+                                    ))}
+                                    <hr className="mx-3 mt-2 mb-1" />
                                     <DropdownMenuButton
                                         className="flex flex-nowrap items-center gap-2 text-left"
                                         onClick={() => {
@@ -144,6 +200,7 @@ const ScheduleSkillsToolsPanelImpl = ({ spaceId }: { spaceId: string }) => {
                                             c('collider_2025:Action').t`Connector settings`
                                         }</span>
                                     </DropdownMenuButton>
+                                    <hr className="mx-3 my-1" />
                                     <DropdownMenuButton
                                         className="flex flex-nowrap items-center gap-2 text-left color-danger"
                                         onClick={() =>

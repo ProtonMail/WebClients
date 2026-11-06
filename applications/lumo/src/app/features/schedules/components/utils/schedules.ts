@@ -53,7 +53,7 @@ export const createScheduleDetailsFrom = (template: ScheduleTemplate): ScheduleD
         recurrenceRule: copiedRecurrenceRule,
         connectors: template.connectors.map((connector) => ({
             ...connector,
-            readOnly: connector.readOnly ?? supportsDesktopScheduleReadOnly(),
+            readOnly: connector.readOnly ?? false,
         })),
         skillIdsOrSubSkillRefs: [],
         autoApprove: true,

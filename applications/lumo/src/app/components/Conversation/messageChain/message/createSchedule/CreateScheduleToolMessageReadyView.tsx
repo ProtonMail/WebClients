@@ -7,7 +7,6 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import Toggle from '@proton/components/components/toggle/Toggle';
-import { supportsDesktopScheduleReadOnly } from '@proton/lumo-api-client/core/desktop-tools';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import type { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
@@ -25,7 +24,7 @@ import { saveSchedule } from '../../../../../redux/slices/schedules';
 import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 import { ALWAYS_LOCAL_TIMEZONE_ID } from '../../../../RecurrenceRuleFieldset/types';
 
-import './CreateScheduleToolMessageCompleted.scss';
+import './CreateScheduleToolMessageReadyView.scss';
 
 function getScheduleMetadataLabel(
     schedule: Pick<ScheduleDetails, 'recurrenceRule' | 'autoApprove'>,
@@ -45,24 +44,25 @@ function getScheduleMetadataLabel(
 }
 
 /** Review a validated draft and send the user's save or cancel response. */
-export const CreateScheduleToolMessageCompleted = ({ draft }: { draft: CreateScheduleToolArguments }) => {
+export const CreateScheduleToolMessageReadyView = ({ draft }: { draft: CreateScheduleToolArguments }) => {
     const id = useId();
     const dispatch = useLumoDispatch();
     const [userSettings] = useUserSettings();
     const { handleSendCreateScheduleToolResponse } = useConversationActions();
     const { isWebSearchButtonToggled } = useWebSearch();
     const { createNotification } = useNotifications();
-    const [isClosed, setIsClosed] = useState(false);
 
+    const [isClosed, setIsClosed] = useState(false);
     const [schedule, setSchedule] = useState<ScheduleDetails>(() => ({
         name: draft.name,
         instructions: draft.instructions,
         recurrenceRule: draft.recurrenceRule,
         autoApprove: true,
         notifyOnComplete: true,
-        connectors: draft.connectors.map((id) => ({ id, label: id, readOnly: supportsDesktopScheduleReadOnly() })),
+        connectors: draft.connectors.map(({ id }) => ({ id, label: id })),
     }));
     const [showDetails, setShowDetails] = useState(true);
+
     const cadenceLabel = getScheduleCadenceLabel(schedule.recurrenceRule, getWeekStartsOn(userSettings));
     const taskName = schedule.name;
 
@@ -150,17 +150,17 @@ export const CreateScheduleToolMessageCompleted = ({ draft }: { draft: CreateSch
                         />
                     </div>
 
-                    <ConnectorList
-                        compact
-                        editMode
-                        header={
-                            // translator: Introduces the external tools and services the task uses. "Uses" is a present-tense verb with the task as its subject, not a plural noun or a command.
-                            c('collider_2025:Label').t`Uses`
-                        }
-                        headerClassName="color-hint"
-                        onChange={(connectors) => setSchedule((value) => ({ ...value, connectors }))}
-                        value={schedule.connectors}
-                    />
+                    {schedule.connectors.length > 0 && (
+                        <ConnectorList
+                            compact
+                            header={
+                                // translator: Introduces the external tools and services the task uses. "Uses" is a present-tense verb with the task as its subject, not a plural noun or a command.
+                                c('collider_2025:Label').t`Uses`
+                            }
+                            headerClassName="color-hint"
+                            value={schedule.connectors}
+                        />
+                    )}
 
                     <Button
                         aria-controls={`${id}-details`}
@@ -191,7 +191,11 @@ export const CreateScheduleToolMessageCompleted = ({ draft }: { draft: CreateSch
                 </div>
             </Scroll>
 
-            <div className="flex gap-2">
+            <div className="flex justify-end gap-2">
+                <Button onClick={handleCancel} type="button">{
+                    // translator: Button that cancels the current action and closes the editor or dialog without applying changes.
+                    c('collider_2025:Button').t`Cancel`
+                }</Button>
                 <Button
                     aria-label={
                         // translator: Button to schedule the task (imperative). ${taskName} is the user-visible task name.
@@ -203,10 +207,6 @@ export const CreateScheduleToolMessageCompleted = ({ draft }: { draft: CreateSch
                 >{
                     // translator: Button to schedule the reviewed task (imperative).
                     c('collider_2025:Button').t`Schedule`
-                }</Button>
-                <Button onClick={handleCancel} type="button">{
-                    // translator: Button that cancels the current action and closes the editor or dialog without applying changes.
-                    c('collider_2025:Button').t`Cancel`
                 }</Button>
             </div>
         </section>

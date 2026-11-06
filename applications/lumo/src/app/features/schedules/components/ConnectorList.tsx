@@ -1,15 +1,15 @@
-import { useId, useRef } from 'react';
+import { useId, useRef, useState } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Banner } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
-import Toggle from '@proton/components/components/toggle/Toggle';
 import type { DesktopConnector } from '@proton/lumo-api-client/core/desktop-tools';
 import {
     openDesktopSettings,
@@ -68,7 +68,20 @@ const ConnectorListReadyView = ({
     value: selectedConnectors,
 }: ConnectorListReadyViewProps) => {
     const addConnectorButtonRef = useRef<HTMLButtonElement>(null);
+    const [permissionsExpanded, setPermissionsExpanded] = useState(false);
     const supportsReadOnly = supportsDesktopScheduleReadOnly();
+    const permissionOptions = [
+        {
+            readOnly: true,
+            // translator: Restricts this scheduled task's connector to tools explicitly classified as read-only.
+            label: c('collider_2025:Label').t`Read only`,
+        },
+        {
+            readOnly: false,
+            // translator: Allows this scheduled task's connector to use both read and write tools.
+            label: c('collider_2025:Label').t`Read and write`,
+        },
+    ];
 
     const unselectedConnectors = connectors.filter(
         (connector) => !selectedConnectors.some(({ id }) => id === connector.id)
@@ -100,7 +113,6 @@ const ConnectorListReadyView = ({
                 {selectedConnectors.map((connector) => {
                     const manifest = connectors.find(({ id }) => id === connector.id);
                     const unavailable = !manifest || !isUsable(manifest);
-                    const label = manifest?.display_name ?? connector.label;
                     return (
                         <div className="inline-flex flex-nowrap items-center gap-2" key={connector.id}>
                             <ConnectorChip
@@ -125,34 +137,6 @@ const ConnectorListReadyView = ({
                                 }
                                 unavailable={unavailable}
                             />
-                            {editMode && (supportsReadOnly || connector.readOnly === true) ? (
-                                <div className="inline-flex flex-nowrap items-center gap-1.5 text-sm color-weak">
-                                    <span>{
-                                        // translator: Restricts this scheduled task's connector to tools explicitly classified as read-only.
-                                        c('collider_2025:Label').t`Read-only`
-                                    }</span>
-                                    <Toggle
-                                        aria-label={
-                                            // translator: Accessible label for a connector's scheduled-task read-only toggle. ${label} is the connector name.
-                                            c('collider_2025:Label').t`Read-only access for ${label}`
-                                        }
-                                        checked={connector.readOnly === true}
-                                        disabled={!supportsReadOnly}
-                                        id={`${labelId}-${connector.id}-read-only`}
-                                        onChange={() =>
-                                            onChange(
-                                                selectedConnectors.map((item) =>
-                                                    item.id === connector.id
-                                                        ? { ...item, readOnly: item.readOnly !== true }
-                                                        : item
-                                                )
-                                            )
-                                        }
-                                    />
-                                </div>
-                            ) : connector.readOnly === true ? (
-                                <span className="text-sm color-weak">{c('collider_2025:Label').t`Read-only`}</span>
-                            ) : null}
                         </div>
                     );
                 })}
@@ -196,7 +180,6 @@ const ConnectorListReadyView = ({
                                                     id: connector.id,
                                                     label: connector.display_name,
                                                     icon: connector.icon ?? undefined,
-                                                    readOnly: supportsReadOnly,
                                                 },
                                             ]);
                                         }}
@@ -245,14 +228,79 @@ const ConnectorListReadyView = ({
                 )}
             </fieldset>
 
-            {!supportsReadOnly && selectedConnectors.some(({ readOnly }) => readOnly === true) && (
-                <Banner className="text-sm" variant="warning">
-                    {
-                        // translator: A saved task requires read-only permissions that this desktop version cannot enforce.
-                        c('collider_2025:Info')
-                            .t`Update ${LUMO_SHORT_APP_NAME} Desktop to use read-only connector access for this task.`
-                    }
-                </Banner>
+            {/* Permissions settings for selected connectors. */}
+            {editMode && selectedConnectors.length > 0 && (
+                <div className="flex flex-column gap-2">
+                    <Button
+                        aria-controls={`${labelId}-permissions`}
+                        aria-expanded={permissionsExpanded}
+                        className="inline-flex self-start items-center gap-1.5 p-0 bg-transparent text-sm color-hint hover:color-weak"
+                        onClick={() => setPermissionsExpanded((expanded) => !expanded)}
+                        shape="ghost"
+                        size="small"
+                        type="button"
+                    >
+                        {
+                            // translator: Disclosure button for the scheduled task's per-connector read-only or read-and-write access settings.
+                            c('collider_2025:Label').t`Permissions`
+                        }
+                        <LumoIcon aria-hidden name={permissionsExpanded ? 'ChevronDown' : 'ChevronRight'} size={14} />
+                    </Button>
+                    <div className="flex flex-column" hidden={!permissionsExpanded} id={`${labelId}-permissions`}>
+                        {selectedConnectors.map((connector) => {
+                            const manifest = connectors.find(({ id }) => id === connector.id);
+                            const label = manifest?.display_name ?? connector.label;
+                            const nameId = `${labelId}-${connector.id}-permission-name`;
+                            return (
+                                <div
+                                    className="flex flex-wrap items-center justify-space-between gap-2 py-1"
+                                    key={connector.id}
+                                >
+                                    <span className="min-w-0 text-sm text-break" id={nameId}>
+                                        {label}
+                                    </span>
+                                    <div
+                                        aria-labelledby={nameId}
+                                        className="inline-flex flex-nowrap gap-0.5 p-0.5 border rounded-lg bg-weak"
+                                        // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
+                                        role="group"
+                                    >
+                                        {permissionOptions.map(({ readOnly, label }) => {
+                                            const selected = (connector.readOnly === true) === readOnly;
+                                            return (
+                                                <Button
+                                                    aria-pressed={selected}
+                                                    color="norm"
+                                                    disabled={readOnly && !supportsReadOnly}
+                                                    key={label}
+                                                    onClick={() =>
+                                                        onChange(
+                                                            selectedConnectors.map((item) =>
+                                                                item.id === connector.id ? { ...item, readOnly } : item
+                                                            )
+                                                        )
+                                                    }
+                                                    shape={selected ? 'solid' : 'ghost'}
+                                                    size="tiny"
+                                                    title={
+                                                        readOnly && !supportsReadOnly
+                                                            ? // translator: A scheduled task requires read-only tool permissions unsupported by this desktop version.
+                                                              c('collider_2025:Error')
+                                                                  .t`Update ${LUMO_SHORT_APP_NAME} Desktop to use read-only connector access for this task.`
+                                                            : undefined
+                                                    }
+                                                    type="button"
+                                                >
+                                                    {label}
+                                                </Button>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
             )}
 
             {editMode && showWarning && (

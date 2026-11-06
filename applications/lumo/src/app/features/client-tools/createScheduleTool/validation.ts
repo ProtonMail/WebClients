@@ -101,10 +101,21 @@ export function validateCreateScheduleToolArguments(
     if (!Array.isArray(value.connectors)) return invalidArguments('connectors: must be an array');
     for (const [index, connector] of value.connectors.entries()) {
         const path = `connectors[${index}]`;
-        if (!isNonBlankString(connector)) return invalidArguments(`${path}: must be a non-blank connector id`);
-        if (registeredConnectorIds && !registeredConnectorIds.has(connector)) {
+        if (!isRecord(connector)) return invalidArguments(`${path}: must be an object`);
+        const unexpectedConnectorProperty = getUnexpectedProperty(
+            connector,
+            schema.properties.connectors.items.properties
+        );
+        if (unexpectedConnectorProperty !== undefined) {
+            return invalidArguments(`${path}.${unexpectedConnectorProperty}: unknown field`);
+        }
+        if (!isNonBlankString(connector.id)) return invalidArguments(`${path}.id: must be a non-blank connector id`);
+        if (!Array.isArray(connector.tools) || connector.tools.some((title) => !isNonBlankString(title))) {
+            return invalidArguments(`${path}.tools: must be an array of non-blank tool titles`);
+        }
+        if (registeredConnectorIds && !registeredConnectorIds.has(connector.id)) {
             return invalidArguments(
-                `${path}: unknown connector id ${JSON.stringify(connector)}. Registered IDs: ${JSON.stringify([...registeredConnectorIds])}`
+                `${path}.id: unknown connector id ${JSON.stringify(connector.id)}. Registered IDs: ${JSON.stringify([...registeredConnectorIds])}`
             );
         }
     }

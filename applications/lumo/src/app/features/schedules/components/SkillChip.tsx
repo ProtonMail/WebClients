@@ -45,7 +45,7 @@ export const SkillChip = ({ skill, statusLabel, unavailable, rows, onRemove }: S
                           'schedule-chip schedule-chip--regular inline-flex flex-nowrap shrink-0 items-center gap-1.5 max-w-full border rounded',
                           onRemove && 'pr-1.5'
                       ),
-                unavailable && (rows ? 'color-danger' : 'schedule-chip--unavailable')
+                unavailable && !rows && 'schedule-chip--unavailable'
             )}
         >
             <Tooltip
@@ -98,16 +98,19 @@ export const SkillChip = ({ skill, statusLabel, unavailable, rows, onRemove }: S
                 >
                     <DropdownMenu>
                         {customize && (
-                            <DropdownMenuButton
-                                className="flex flex-nowrap items-center gap-2 text-left"
-                                onClick={() => history.push('/customize')}
-                            >
-                                <LumoIcon aria-hidden className="shrink-0" name="ExternalLink" size={16} />
-                                <span>{
-                                    // translator: Menu item opening Customize to manage skills used by a scheduled task.
-                                    c('collider_2025:Action').t`Skill settings`
-                                }</span>
-                            </DropdownMenuButton>
+                            <>
+                                <DropdownMenuButton
+                                    className="flex flex-nowrap items-center gap-2 text-left"
+                                    onClick={() => history.push('/customize')}
+                                >
+                                    <LumoIcon aria-hidden className="shrink-0" name="ExternalLink" size={16} />
+                                    <span>{
+                                        // translator: Menu item opening Customize to manage skills used by a scheduled task.
+                                        c('collider_2025:Action').t`Skill settings`
+                                    }</span>
+                                </DropdownMenuButton>
+                                <hr className="mx-3 my-1" />
+                            </>
                         )}
                         <DropdownMenuButton
                             className="flex flex-nowrap items-center gap-2 text-left color-danger"

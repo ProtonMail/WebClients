@@ -1,3 +1,6 @@
+import { useState } from 'react';
+
+import type { CreateScheduleToolArguments } from '../../../../../features/client-tools/createScheduleTool/createScheduleTool';
 import { CREATE_SCHEDULE_TOOL_NAME } from '../../../../../features/client-tools/createScheduleTool/createScheduleTool';
 import {
     isCreateScheduleToolSuccessResult,
@@ -8,10 +11,11 @@ import type { ContentBlock } from '../../../../../types';
 import { ComposerPreInputPortal } from '../../../../Composer/ComposerPreInputPortal';
 import { getToolCallNameFromBlock } from '../../../artifact/artifactGenerationState';
 import { getLastValidatedToolCall } from '../getLastValidatedToolCall';
-import { CreateScheduleToolMessageCompleted } from './CreateScheduleToolMessageCompleted';
+import { AccessRequestMessage } from './AccessRequestMessage';
+import { CreateScheduleToolMessageReadyView } from './CreateScheduleToolMessageReadyView';
 import { CreateScheduleToolMessageSkeleton } from './CreateScheduleToolMessageSkeleton';
 
-/** Select the pending or completed schedule draft view above the composer. */
+/** Select the pending, access request, or review step above the composer. */
 export const CreateScheduleToolMessage = ({
     blocks,
     isGenerating,
@@ -44,7 +48,24 @@ export const CreateScheduleToolMessage = ({
 
     return (
         <ComposerPreInputPortal>
-            <CreateScheduleToolMessageCompleted draft={draft.arguments} key={draft.id} />
+            <CreateScheduleToolMessageInner key={draft.id} draft={draft.arguments} />
         </ComposerPreInputPortal>
+    );
+};
+
+const CreateScheduleToolMessageInner = ({ draft }: { draft: CreateScheduleToolArguments }) => {
+    const [approvedConnectorIds, setApprovedConnectorIds] = useState<Set<string> | null>(null);
+
+    if (draft.connectors.length > 0 && approvedConnectorIds === null) {
+        return <AccessRequestMessage draft={draft} onComplete={setApprovedConnectorIds} />;
+    }
+
+    return (
+        <CreateScheduleToolMessageReadyView
+            draft={{
+                ...draft,
+                connectors: draft.connectors.filter(({ id }) => approvedConnectorIds?.has(id)),
+            }}
+        />
     );
 };
