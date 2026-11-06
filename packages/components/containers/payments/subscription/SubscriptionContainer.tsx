@@ -18,6 +18,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { IcGift } from '@proton/icons/icons/IcGift';
 import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
 import type { TelemetryPaymentFlow } from '@proton/payments-hooks/client-extensions/usePaymentsTelemetry';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import type { Operations, OperationsSubscriptionData } from '@proton/payments-hooks/react-extensions/usePaymentFacade';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import { useSubscriptionModificationChangeStepTelemetry } from '@proton/payments-hooks/telemetry/useSubscriptionModificationChangeStepTelemetry';
@@ -366,6 +367,7 @@ const SubscriptionContainerInner = ({
     const { reportSubscriptionModalInitialization, reportSubscriptionModalPayment } = useSubscriptionModalTelemetry();
 
     const latestSubscription = subscription.UpcomingSubscription ?? subscription;
+    const multiSubscriptionContext = useMultiSubscriptionContext(subscription, entitlementCatalog);
 
     const { plansMapRef, setPreferredCurrency, preferredCurrencyRef } = usePlansMapRef({
         user,
@@ -733,7 +735,14 @@ const SubscriptionContainerInner = ({
             .filter((cycle) => cycle !== checkResult.Cycle)
 
             // skip cycles of the currently active subscription, because the backend doesn't allows to check them
-            .filter((cycle) => !isSubscriptionCheckForbidden(subscription, { planIDs: newModel.planIDs, cycle }));
+            .filter(
+                (cycle) =>
+                    !isSubscriptionCheckForbidden(multiSubscriptionContext, {
+                        editedSubscription: subscription,
+                        planIDs: newModel.planIDs,
+                        cycle,
+                    })
+            );
 
         const additionalCyclesHaveCustomBilling = additionalCycles.some((cycle) => {
             const optimisticSubscriptionMode = computeOptimisticSubscriptionMode(
@@ -752,7 +761,11 @@ const SubscriptionContainerInner = ({
         const currentCycleHasCustomBilling = checkResult.SubscriptionMode === SubscriptionMode.CustomBillings;
 
         const hasForbiddenCheck = allAllowedCycles.some((cycle) =>
-            isSubscriptionCheckForbidden(subscription, { planIDs: newModel.planIDs, cycle })
+            isSubscriptionCheckForbidden(multiSubscriptionContext, {
+                editedSubscription: subscription,
+                planIDs: newModel.planIDs,
+                cycle,
+            })
         );
 
         const additionalPayloads = additionalCycles.map((Cycle) => {
@@ -840,6 +853,7 @@ const SubscriptionContainerInner = ({
         paymentsApi,
         paymentFacadeSelectedMethodType: paymentFacade.selectedMethodType,
         skipPlanTransitionChecks: skipPlanTransitionChecks ?? false,
+        multiSubscriptionContext,
         refs: { plansMapRef, giftCodeRef },
         setters: { setCheckResult, setModel, setVatReverseChargeErrorModal },
         callbacks: {
@@ -1212,6 +1226,7 @@ const SubscriptionContainerInner = ({
                     paymentsApi={paymentsApi}
                     coupon={maybeCoupon ?? undefined}
                     showShortPlan={showShortPlan}
+                    multiSubscriptionContext={multiSubscriptionContext}
                 />
             )}
             {model.step === SUBSCRIPTION_STEPS.CHECKOUT && (

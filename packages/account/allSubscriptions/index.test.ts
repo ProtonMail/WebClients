@@ -1,4 +1,4 @@
-import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
+import { PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
@@ -10,7 +10,7 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { type SubscriptionState, subscriptionReducer } from '../subscription';
 import { getModelState } from '../testing/getModelState';
 import { userReducer } from '../user';
-import { allSubscriptionsThunk, selectAllSubscriptions, toAllSubscriptions } from './index';
+import { allSubscriptionsThunk, selectAllSubscriptions } from './index';
 
 const paidAdmin = { Role: USER_ROLES.ADMIN_ROLE, Subscribed: 1 } as UserModel;
 
@@ -18,34 +18,6 @@ const getSubscriptionState = (value: Subscription | undefined): SubscriptionStat
     const modelState = getModelState(value);
     return { ...modelState, meta: { ...modelState.meta, type: 1 } };
 };
-
-describe('toAllSubscriptions', () => {
-    it('should return no subscriptions for a free subscription', () => {
-        expect(toAllSubscriptions(FREE_SUBSCRIPTION as unknown as Subscription)).toEqual([]);
-    });
-
-    it('should return no subscriptions when there is no subscription', () => {
-        expect(toAllSubscriptions(undefined)).toEqual([]);
-    });
-
-    it('should return the only subscription of a single-subscription user', () => {
-        const mailPro = buildSubscription(PLANS.MAIL_PRO);
-
-        expect(toAllSubscriptions(mailPro)).toEqual([{ ...mailPro, SecondarySubscriptions: undefined }]);
-    });
-
-    it('should flatten secondary subscriptions so that none of them is nested in another', () => {
-        const lumo = buildSubscription(PLANS.LUMO);
-        const vpn = buildSubscription(PLANS.VPN2024);
-        const mailPro = buildSubscription(PLANS.MAIL_PRO, { SecondarySubscriptions: [lumo, vpn] });
-
-        expect(toAllSubscriptions(mailPro)).toEqual([
-            { ...mailPro, SecondarySubscriptions: undefined },
-            { ...lumo, SecondarySubscriptions: undefined },
-            { ...vpn, SecondarySubscriptions: undefined },
-        ]);
-    });
-});
 
 describe('allSubscriptions model', () => {
     const apiMock = jest.fn();

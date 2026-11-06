@@ -6,6 +6,7 @@ import type { Currency, FreeSubscription, PlanIDs } from '@proton/payments/core/
 import { computeOptimisticSubscriptionMode } from '@proton/payments/core/optimisticSubscriptionMode';
 import { isSubscriptionCheckForbidden } from '@proton/payments/core/subscription/helpers';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import type { PlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import { getPlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
@@ -40,11 +41,19 @@ export async function runAdditionalCycleChecks(
     plansMap: PlansMap,
     currency: Currency,
     coupon: string | undefined,
-    checkMultiplePlans: (planToCheck: PlanToCheck[]) => Promise<SubscriptionEstimation[]>
+    checkMultiplePlans: (planToCheck: PlanToCheck[]) => Promise<SubscriptionEstimation[]>,
+    multiSubscriptionContext: MultiSubscriptionContext
 ) {
     const additionalCycles = allowedCycles
         .filter((cycle) => cycle !== checkResult.Cycle)
-        .filter((cycle) => !isSubscriptionCheckForbidden(subscription, { planIDs, cycle }));
+        .filter(
+            (cycle) =>
+                !isSubscriptionCheckForbidden(multiSubscriptionContext, {
+                    editedSubscription: subscription,
+                    planIDs,
+                    cycle,
+                })
+        );
 
     const additionalCyclesHaveCustomBilling =
         subscription &&

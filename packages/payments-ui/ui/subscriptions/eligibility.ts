@@ -7,6 +7,7 @@ import {
     isForbiddenModification,
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { User, UserModel } from '@proton/shared/lib/interfaces/User';
 import { isPlanEnabled } from '@proton/shared/lib/payments/plan/helpers';
@@ -104,9 +105,11 @@ export const getEligibility = ({
     subscription,
     plansMap,
     eligibleBlackFridayConfigs,
+    multiSubscriptionContext,
 }: {
     user: UserModel;
     subscription: Subscription | FreeSubscription | undefined;
+    multiSubscriptionContext: MultiSubscriptionContext;
     offer: { plan: Plan; cycle: CYCLE; coupon?: string };
     plansMap: PlansMap;
     eligibleBlackFridayConfigs: OfferConfig[];
@@ -253,7 +256,7 @@ export const getEligibility = ({
         return { type: 'not-eligible' };
     }
 
-    if (isForbiddenModification(subscription, offer.plan)) {
+    if (isForbiddenModification(multiSubscriptionContext, offer.plan)) {
         return { type: 'not-eligible' };
     }
 

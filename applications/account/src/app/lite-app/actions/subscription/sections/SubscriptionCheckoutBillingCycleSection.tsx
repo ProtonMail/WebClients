@@ -29,6 +29,7 @@ const SubscriptionCheckoutBillingCycleSection = ({ minimumCycle }: Props) => {
         loading,
         coupon,
         couponConfig,
+        multiSubscriptionContext,
     } = usePayments();
     const { cycle, planIDs, currency } = checkoutUi;
     const disableCycleSelector = getIsCustomCycle(cycle) || selectedPlan.name === PLANS.PASS_LIFETIME;
@@ -56,7 +57,8 @@ const SubscriptionCheckoutBillingCycleSection = ({ minimumCycle }: Props) => {
                 plansMap,
                 currency,
                 coupon,
-                checkMultiplePlans
+                checkMultiplePlans,
+                multiSubscriptionContext
             );
             setAdditionalCheckResults([...additionalChecks]);
         })();

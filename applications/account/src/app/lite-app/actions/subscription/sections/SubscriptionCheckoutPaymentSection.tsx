@@ -59,6 +59,7 @@ const SubscriptionCheckoutPaymentSection = ({
         setVatNumber,
         coupon,
         couponConfig,
+        multiSubscriptionContext,
     } = usePayments();
     const guardErrors = checkResult.GuardResult ?? [];
     const { planIDs, cycle, planName, currency } = checkoutUi;
@@ -101,7 +102,11 @@ const SubscriptionCheckoutPaymentSection = ({
     const isPaidPlanSelected = hasPlanIDs(planIDs);
     const isFreePlanSelected = !isPaidPlanSelected;
     const isFreeUserWithFreePlanSelected = user.isFree && isFreePlanSelected;
-    const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(subscription, { planIDs, cycle });
+    const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(multiSubscriptionContext, {
+        editedSubscription: subscription,
+        planIDs,
+        cycle,
+    });
     const hasPaymentMethod = !!methods.savedMethods?.length;
     const displayRenewNotice = isPaidPlanSelected && !paymentForbiddenReason.forbidden;
 

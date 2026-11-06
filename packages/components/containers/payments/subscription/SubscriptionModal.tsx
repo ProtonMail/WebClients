@@ -1,5 +1,6 @@
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import { BilledUserModal } from '@proton/payments-ui/client-extensions/billed-user/BilledUserModal';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { COUPON_CODES, PLANS } from '@proton/payments/core/constants';
@@ -67,11 +68,12 @@ const SubscriptionModal = ({
     const postSubscriptionProps = usePostSubscription();
     const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
     const { APP_NAME } = useConfig();
+    const multiSubscriptionContext = useMultiSubscriptionContext(subscription, entitlementCatalog);
 
     const { sendReportDrivePostSignup } = useDrivePostSignupOneDollarTelemetry();
     const { sendDrivePurchaseReport } = usePaidUsersNudgeTelemetry({ plan: PLANS.DRIVE });
 
-    const subscriptionActions = getAvailableSubscriptionActions(subscription);
+    const subscriptionActions = getAvailableSubscriptionActions(multiSubscriptionContext);
     if (!subscriptionActions.canModify) {
         return <InAppPurchaseModal subscription={subscription} {...modalState} />;
     } else if (isBilledUser(user)) {

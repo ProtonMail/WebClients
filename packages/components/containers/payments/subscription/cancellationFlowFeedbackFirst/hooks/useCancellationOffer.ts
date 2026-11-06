@@ -4,6 +4,7 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import useLoading from '@proton/hooks/useLoading';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import { usePaymentsApiWithCheckFallback } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
@@ -28,6 +29,7 @@ export interface OfferCheckResult {
 }
 
 export const useCancellationOffer = (subscription: Subscription): OfferCheckResult => {
+    const multiSubscriptionContext = useMultiSubscriptionContext();
     const [plans] = usePlans();
     const { paymentsApi } = usePaymentsApiWithCheckFallback();
     const [isLoading, withIsLoading] = useLoading(true);
@@ -51,7 +53,8 @@ export const useCancellationOffer = (subscription: Subscription): OfferCheckResu
 
         const planIDs = { [planName]: 1 };
 
-        const isAllowed = isDangerouslyAllowedSubscriptionEstimation(subscription, {
+        const isAllowed = isDangerouslyAllowedSubscriptionEstimation(multiSubscriptionContext, {
+            editedSubscription: subscription,
             planIDs,
             cycle,
             coupon,

@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useGetEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useGetPlans } from '@proton/account/plans/hooks';
 import { generateDeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
@@ -191,6 +192,8 @@ const SingleSignupContainerV2 = ({
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
     const isNewB2BPlanEnabled = useFlag('NewProtonBusinessBundlePlans');
+    const lumoMultiSubscriptions = useFlag('LumoMultiSubscriptions');
+    const getEntitlementCatalog = useGetEntitlementCatalog();
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
@@ -647,6 +650,8 @@ const SingleSignupContainerV2 = ({
                           .catch(() => undefined)
                     : undefined,
                 getUserInfo({
+                    lumoMultiSubscriptions,
+                    getEntitlementCatalog,
                     audience,
                     api: silentApi,
                     paymentsApi,
@@ -859,6 +864,8 @@ const SingleSignupContainerV2 = ({
 
             const paymentsApi = getPaymentsApi(silentApi);
             const userInfoPromise = getUserInfo({
+                lumoMultiSubscriptions,
+                getEntitlementCatalog,
                 audience,
                 api: silentApi,
                 paymentsApi,
@@ -969,6 +976,8 @@ const SingleSignupContainerV2 = ({
             })();
 
             const { subscriptionData, upsell, ...userInfo } = await getUserInfo({
+                lumoMultiSubscriptions,
+                getEntitlementCatalog,
                 api: silentApi,
                 audience,
                 paymentsApi: getPaymentsApi(silentApi),

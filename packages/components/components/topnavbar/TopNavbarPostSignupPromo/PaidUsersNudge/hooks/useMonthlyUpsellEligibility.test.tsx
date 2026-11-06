@@ -14,6 +14,14 @@ import { paidConfig } from '../monthlyPaidUserNudgeConfig';
 import { useMonthlyUpsellEligibility } from './useMonthlyUpsellEligibility';
 
 jest.mock('@proton/account/subscription/hooks');
+jest.mock('@proton/payments-hooks/react-extensions/useMultiSubscriptionContext', () => ({
+    useMultiSubscriptionContext: () =>
+        jest
+            .requireActual('@proton/payments/testing/buildMultiSubscriptionContext')
+            .buildMultiSubscriptionContextFromSubscription(
+                jest.requireMock('@proton/account/subscription/hooks').useSubscription()[0]
+            ),
+}));
 const mockUseSubscription = useSubscription as jest.Mock;
 
 jest.mock('@proton/features/useFeature');

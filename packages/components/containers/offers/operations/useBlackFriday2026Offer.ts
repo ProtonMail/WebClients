@@ -5,8 +5,10 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import type { Currency } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
@@ -24,6 +26,7 @@ export interface BlackFriday2026EligibilityArgs {
     protonConfig: ProtonConfig;
     offerConfig: OfferConfig;
     preferredCurrency: Currency;
+    multiSubscriptionContext: MultiSubscriptionContext;
 }
 
 interface Params {
@@ -46,6 +49,7 @@ interface Params {
 export const useBlackFriday2026Offer = ({ configuration, getIsEligible, unleashFlag }: Params): Operation => {
     const [user, loadingUser] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
+    const multiSubscriptionContext = useMultiSubscriptionContext();
     const paidSubscription = isPaidSubscription(subscription) ? subscription : undefined;
     const protonConfig = useConfig();
     const { APP_NAME } = protonConfig;
@@ -65,6 +69,7 @@ export const useBlackFriday2026Offer = ({ configuration, getIsEligible, unleashF
         protonConfig,
         offerConfig: configuration,
         preferredCurrency,
+        multiSubscriptionContext,
     });
 
     return {

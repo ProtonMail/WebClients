@@ -1,6 +1,6 @@
 import { hasIntentionalScheduledModification } from '../helpers/hasIntentionalScheduledModification';
 import { isEligibleCurrency } from '../helpers/isEligibleCurrency';
-import isSubscriptionCheckAllowed from '../helpers/isSubscriptionCheckAllowed';
+import { isSubscriptionCheckAllowed } from '../helpers/isSubscriptionCheckAllowed';
 import OfferSubscription from '../helpers/offerSubscription';
 import { isAccountOldEnoughForBlackFriday2026 } from './blackFriday2026MinimumAge';
 import type { BlackFriday2026EligibilityArgs } from './useBlackFriday2026Offer';
@@ -12,6 +12,7 @@ import type { BlackFriday2026EligibilityArgs } from './useBlackFriday2026Offer';
 export function isEligibleFreeUser({
     user,
     subscription,
+    multiSubscriptionContext,
     offerConfig,
     preferredCurrency,
 }: Omit<BlackFriday2026EligibilityArgs, 'protonConfig'>) {
@@ -33,7 +34,7 @@ export function isEligibleFreeUser({
             offerSubscription.isTrial() ||
             offerSubscription.hasVisionary() ||
             offerSubscription.usedBlackFriday2026() ||
-            !isSubscriptionCheckAllowed(subscription, offerConfig)
+            !isSubscriptionCheckAllowed(multiSubscriptionContext, subscription, offerConfig)
         ) {
             return false;
         }

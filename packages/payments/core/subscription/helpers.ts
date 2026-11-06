@@ -54,6 +54,8 @@ import type {
     SubscriptionCheckForbiddenReason,
     SubscriptionEstimation,
 } from './interface';
+import { canModifySubscriptions, isForbiddenForStoreLumoSubscriber } from './lumo-purchase-rules';
+import type { MultiSubscriptionContext } from './multi-subscription-context';
 
 // TODO: Remove these compatibility re-exports after migrating consumers to the focused helper modules.
 export type { MaybeFreeSubscription } from '../subscription/interface';
@@ -325,10 +327,17 @@ export const shouldPassIsTrial = ({
  * In some cases it's completely forbidden to buy a plan, given the current subscription and the selected plan.
  */
 export function isForbiddenModification(
-    subscription: Subscription | FreeSubscription | undefined,
+    multiSubscriptionContext: MultiSubscriptionContext,
     selectedPlan: PLANS | ADDON_NAMES | PlanIDs | Plan
 ) {
-    return hasLumoMobileSubscription(subscription) && isMultiUserPersonalPlan(selectedPlan);
+    if (multiSubscriptionContext.lumoMultiSubscriptions) {
+        return isForbiddenForStoreLumoSubscriber(multiSubscriptionContext, selectedPlan);
+    }
+
+    const hasExternallyManagedLumo = multiSubscriptionContext.subscriptions.some(
+        (subscription) => isManagedExternally(subscription) && hasLumo(subscription)
+    );
+    return hasExternallyManagedLumo && isMultiUserPersonalPlan(selectedPlan);
 }
 
 export const getHasMemberCapablePlan = (
@@ -546,6 +555,7 @@ export function getIsVariableCycleOffer(subscription: Subscription | FreeSubscri
 }
 
 type SubscriptionCheckForbiddenEstimationParameters = {
+    editedSubscription: Subscription | FreeSubscription | null | undefined;
     planIDs: PlanIDs;
     cycle: CYCLE;
     coupon?: string;
@@ -553,8 +563,8 @@ type SubscriptionCheckForbiddenEstimationParameters = {
 };
 
 export function isSubscriptionCheckForbiddenWithReason(
-    subscription: Subscription | FreeSubscription | null | undefined,
-    estimationParameters: SubscriptionCheckForbiddenEstimationParameters
+    multiSubscriptionContext: MultiSubscriptionContext,
+    { editedSubscription: subscription, ...estimationParameters }: SubscriptionCheckForbiddenEstimationParameters
 ): SubscriptionCheckForbiddenReason {
     /**
      * Consider the table with possible cases:
@@ -635,7 +645,7 @@ export function isSubscriptionCheckForbiddenWithReason(
         return { forbidden: false };
     }
 
-    const forbiddenModificationAttempt = isForbiddenModification(subscription, planIDs);
+    const forbiddenModificationAttempt = isForbiddenModification(multiSubscriptionContext, planIDs);
     if (forbiddenModificationAttempt) {
         return { forbidden: true, reason: 'offer-not-available' };
     }
@@ -705,31 +715,26 @@ export function isDangerouslyAllowedSubscriptionEstimation(
 }
 
 export function isSubscriptionCheckForbidden(
-    subscription: MaybeFreeSubscription | null,
+    multiSubscriptionContext: MultiSubscriptionContext,
     estimationParameters: SubscriptionCheckForbiddenEstimationParameters
 ): boolean {
-    return isSubscriptionCheckForbiddenWithReason(subscription, estimationParameters).forbidden;
+    return isSubscriptionCheckForbiddenWithReason(multiSubscriptionContext, estimationParameters).forbidden;
 }
 
-/**
- * Checks if the current plan can be eligible for multi-subs. It works this way: If user has a mobile Lumo subscription
- * then they can buy another subscription on web. So this function checks if another subscription can be added to the
- * existing subscription that has one of the plans listed in this function.
- */
-function isMobileMultiSubSupported(subscription: Subscription) {
-    return hasLumo(subscription);
-}
+export function canModify(multiSubscriptionContext: MultiSubscriptionContext) {
+    if (multiSubscriptionContext.lumoMultiSubscriptions) {
+        return canModifySubscriptions(multiSubscriptionContext);
+    }
 
-export function canModify(subscription: MaybeFreeSubscription | null) {
+    const { subscriptions } = multiSubscriptionContext;
     return (
-        !subscription ||
-        isFreeSubscription(subscription) ||
-        !isManagedExternally(subscription) ||
-        isMobileMultiSubSupported(subscription)
+        subscriptions.length === 0 ||
+        subscriptions.some((subscription) => !isManagedExternally(subscription)) ||
+        (subscriptions.length === 1 && hasLumo(subscriptions[0]))
     );
 }
 
-type SubscriptionActions = (
+type SubscriptionActions =
     | {
           canModify: true;
           cantModifyReason: undefined;
@@ -737,36 +742,16 @@ type SubscriptionActions = (
     | {
           canModify: false;
           cantModifyReason: 'subscription_managed_externally';
-      }
-) &
-    (
-        | {
-              canCancel: true;
-              cantCancelReason: undefined;
-          }
-        | {
-              canCancel: false;
-              cantCancelReason: 'subscription_managed_externally';
-          }
-    );
+      };
 
-/**
- * Returns the available subscription actions for the given subscription. Sometimes it's possible to modify the
- * subscription, while it's not possible to cancel it.
- *
- * For example, if user has mobile Lumo subscription then it's possible to add a web subscription (canModify == true
- * allows using the subscription modal). However it's not possible to cancel the mobile subscription on web.
- */
-export function getAvailableSubscriptionActions(subscription: Subscription | FreeSubscription): SubscriptionActions {
-    const modificationAllowed = canModify(subscription);
-    const managedExternally = isManagedExternally(subscription);
+export function getAvailableSubscriptionActions(
+    multiSubscriptionContext: MultiSubscriptionContext
+): SubscriptionActions {
+    if (canModify(multiSubscriptionContext)) {
+        return { canModify: true, cantModifyReason: undefined };
+    }
 
-    return {
-        canModify: modificationAllowed,
-        cantModifyReason: !modificationAllowed ? ('subscription_managed_externally' as const) : undefined,
-        canCancel: !managedExternally,
-        cantCancelReason: managedExternally ? ('subscription_managed_externally' as const) : undefined,
-    } as SubscriptionActions;
+    return { canModify: false, cantModifyReason: 'subscription_managed_externally' };
 }
 
 /**

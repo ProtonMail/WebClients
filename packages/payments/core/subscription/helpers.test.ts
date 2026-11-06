@@ -1,6 +1,11 @@
 import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';
 
+import {
+    buildLumoSubscription,
+    buildMultiSubscriptionContext,
+    buildMultiSubscriptionContextFromSubscription,
+} from '../../testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '../../testing/buildSubscription';
 import { ADDON_NAMES, COUPON_CODES, CYCLE, FREE_SUBSCRIPTION, PLANS, PLAN_NAMES } from '../constants';
 import type { PlanIDs } from '../interface';
@@ -16,6 +21,7 @@ import {
     hasPassLaunchOffer,
     isAddonDowngrade,
     isDangerouslyAllowedSubscriptionEstimation,
+    isForbiddenModification,
     isModifyingPaidSubscriptionSelection,
     isSubscriptionCheckForbidden,
     isSubscriptionCheckForbiddenWithReason,
@@ -26,6 +32,7 @@ import {
 import { isManagedExternally } from './helpers/external-management';
 import { getPlanIDs } from './helpers/plan-ids';
 import type { Subscription } from './interface';
+import { toSubscriptionList } from './multi-subscription-context';
 
 describe('getSubscriptionPlanTitle', () => {
     it('should return plan title and name for a paid user with subscription', () => {
@@ -255,8 +262,20 @@ describe('isModifyingPaidSubscriptionSelection', () => {
 describe('isSubscriptionCheckForbidden', () => {
     it('returns false when subscription is null or undefined', () => {
         const planIDs = { [PLANS.MAIL]: 1 };
-        expect(isSubscriptionCheckForbidden(null, { planIDs, cycle: CYCLE.MONTHLY })).toBe(false);
-        expect(isSubscriptionCheckForbidden(undefined, { planIDs, cycle: CYCLE.MONTHLY })).toBe(false);
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(null), {
+                editedSubscription: null,
+                planIDs,
+                cycle: CYCLE.MONTHLY,
+            })
+        ).toBe(false);
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(undefined), {
+                editedSubscription: undefined,
+                planIDs,
+                cycle: CYCLE.MONTHLY,
+            })
+        ).toBe(false);
     });
 
     it('returns true when selected plan is same as current with no upcoming subscription', () => {
@@ -264,7 +283,13 @@ describe('isSubscriptionCheckForbidden', () => {
         const planIDs = getPlanIDs(subscription);
 
         // No upcoming subscription scenario
-        expect(isSubscriptionCheckForbidden(subscription, { planIDs, cycle: subscription.Cycle })).toBe(true);
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
+                planIDs,
+                cycle: subscription.Cycle,
+            })
+        ).toBe(true);
     });
 
     it('returns false when selected plan is same as current but there is a coupon', () => {
@@ -274,12 +299,19 @@ describe('isSubscriptionCheckForbidden', () => {
 
         expect(
             isSubscriptionCheckForbidden(
-                buildSubscription({
-                    planIDs,
-                    cycle,
-                    currency,
-                }),
+                buildMultiSubscriptionContextFromSubscription(
+                    buildSubscription({
+                        planIDs,
+                        cycle,
+                        currency,
+                    })
+                ),
                 {
+                    editedSubscription: buildSubscription({
+                        planIDs,
+                        cycle,
+                        currency,
+                    }),
                     planIDs,
                     cycle,
                     coupon: 'TEST_COUPON',
@@ -295,12 +327,19 @@ describe('isSubscriptionCheckForbidden', () => {
 
         expect(
             isSubscriptionCheckForbidden(
-                buildSubscription({
-                    planIDs,
-                    cycle,
-                    currency,
-                }),
+                buildMultiSubscriptionContextFromSubscription(
+                    buildSubscription({
+                        planIDs,
+                        cycle,
+                        currency,
+                    })
+                ),
                 {
+                    editedSubscription: buildSubscription({
+                        planIDs,
+                        cycle,
+                        currency,
+                    }),
                     planIDs,
                     cycle,
                     Codes: ['TEST_COUPON'],
@@ -329,7 +368,8 @@ describe('isSubscriptionCheckForbidden', () => {
         );
 
         expect(
-            isSubscriptionCheckForbidden(subscription, {
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
                 planIDs,
                 cycle: CYCLE.YEARLY,
                 coupon: 'TEST_COUPON',
@@ -343,7 +383,8 @@ describe('isSubscriptionCheckForbidden', () => {
         });
 
         expect(
-            isSubscriptionCheckForbidden(subscription, {
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
                 planIDs: { [PLANS.LUMO]: 1 },
                 cycle: CYCLE.MONTHLY,
                 coupon: 'TEST_COUPON',
@@ -358,12 +399,19 @@ describe('isSubscriptionCheckForbidden', () => {
 
         expect(
             isSubscriptionCheckForbidden(
-                buildSubscription({
-                    planIDs,
-                    cycle,
-                    currency,
-                }),
+                buildMultiSubscriptionContextFromSubscription(
+                    buildSubscription({
+                        planIDs,
+                        cycle,
+                        currency,
+                    })
+                ),
                 {
+                    editedSubscription: buildSubscription({
+                        planIDs,
+                        cycle,
+                        currency,
+                    }),
                     planIDs,
                     cycle,
                     coupon: '',
@@ -376,7 +424,13 @@ describe('isSubscriptionCheckForbidden', () => {
         const freeSubscription = FREE_SUBSCRIPTION;
         const planIDs = { [PLANS.MAIL]: 1 };
 
-        expect(isSubscriptionCheckForbidden(freeSubscription, { planIDs, cycle: CYCLE.MONTHLY })).toBe(false);
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(freeSubscription), {
+                editedSubscription: freeSubscription,
+                planIDs,
+                cycle: CYCLE.MONTHLY,
+            })
+        ).toBe(false);
     });
 
     it('handles variable cycle offer correctly (automatic unpaid scheduled subscription)', () => {
@@ -405,12 +459,20 @@ describe('isSubscriptionCheckForbidden', () => {
         const currentPlanIds = getPlanIDs(subscription);
         const upcomingPlanIds = getPlanIDs(UpcomingSubscription);
 
-        expect(isSubscriptionCheckForbidden(subscription, { planIDs: currentPlanIds, cycle: CYCLE.TWO_YEARS })).toBe(
-            true
-        );
-        expect(isSubscriptionCheckForbidden(subscription, { planIDs: upcomingPlanIds, cycle: CYCLE.YEARLY })).toBe(
-            true
-        );
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
+                planIDs: currentPlanIds,
+                cycle: CYCLE.TWO_YEARS,
+            })
+        ).toBe(true);
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
+                planIDs: upcomingPlanIds,
+                cycle: CYCLE.YEARLY,
+            })
+        ).toBe(true);
     });
 
     it('handles scheduled unpaid modification correctly (addon downgrade/downcycling)', () => {
@@ -450,9 +512,21 @@ describe('isSubscriptionCheckForbidden', () => {
         const currentPlanIds = getPlanIDs(subscription);
         const upcomingPlanIds = getPlanIDs(UpcomingSubscription);
 
-        expect(isSubscriptionCheckForbidden(subscription, { planIDs: currentPlanIds, cycle: Cycle })).toBe(false);
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
+                planIDs: currentPlanIds,
+                cycle: Cycle,
+            })
+        ).toBe(false);
 
-        expect(isSubscriptionCheckForbidden(subscription, { planIDs: upcomingPlanIds, cycle: Cycle })).toBe(true);
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
+                planIDs: upcomingPlanIds,
+                cycle: Cycle,
+            })
+        ).toBe(true);
     });
 
     it('handles prepaid upcoming subscription correctly', () => {
@@ -475,12 +549,20 @@ describe('isSubscriptionCheckForbidden', () => {
         const currentPlanIds = getPlanIDs(subscription);
         const upcomingPlanIds = getPlanIDs(UpcomingSubscription);
 
-        expect(isSubscriptionCheckForbidden(subscription, { planIDs: currentPlanIds, cycle: CYCLE.MONTHLY })).toBe(
-            true
-        );
-        expect(isSubscriptionCheckForbidden(subscription, { planIDs: upcomingPlanIds, cycle: CYCLE.YEARLY })).toBe(
-            true
-        );
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
+                planIDs: currentPlanIds,
+                cycle: CYCLE.MONTHLY,
+            })
+        ).toBe(true);
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
+                planIDs: upcomingPlanIds,
+                cycle: CYCLE.YEARLY,
+            })
+        ).toBe(true);
     });
 
     it('returns false when selected plan is different from both current and upcoming', () => {
@@ -502,12 +584,20 @@ describe('isSubscriptionCheckForbidden', () => {
 
         const differentPlanIds = { [PLANS.DRIVE]: 1 };
 
-        expect(isSubscriptionCheckForbidden(subscription, { planIDs: differentPlanIds, cycle: CYCLE.MONTHLY })).toBe(
-            false
-        );
-        expect(isSubscriptionCheckForbidden(subscription, { planIDs: differentPlanIds, cycle: CYCLE.YEARLY })).toBe(
-            false
-        );
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
+                planIDs: differentPlanIds,
+                cycle: CYCLE.MONTHLY,
+            })
+        ).toBe(false);
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
+                planIDs: differentPlanIds,
+                cycle: CYCLE.YEARLY,
+            })
+        ).toBe(false);
     });
 
     it('should return true when user has externally managed Lumo subscription and selects the same plan', () => {
@@ -515,14 +605,26 @@ describe('isSubscriptionCheckForbidden', () => {
             External: SubscriptionPlatform.iOS,
         });
 
-        expect(isSubscriptionCheckForbidden(subscribtion, { planIDs: { [PLANS.LUMO]: 1 }, cycle: CYCLE.MONTHLY })).toBe(
-            true
-        );
-        expect(isSubscriptionCheckForbidden(subscribtion, { planIDs: { [PLANS.LUMO]: 1 }, cycle: CYCLE.YEARLY })).toBe(
-            true
-        );
         expect(
-            isSubscriptionCheckForbidden(subscribtion, { planIDs: { [PLANS.LUMO]: 1 }, cycle: CYCLE.TWO_YEARS })
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscribtion), {
+                editedSubscription: subscribtion,
+                planIDs: { [PLANS.LUMO]: 1 },
+                cycle: CYCLE.MONTHLY,
+            })
+        ).toBe(true);
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscribtion), {
+                editedSubscription: subscribtion,
+                planIDs: { [PLANS.LUMO]: 1 },
+                cycle: CYCLE.YEARLY,
+            })
+        ).toBe(true);
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscribtion), {
+                editedSubscription: subscribtion,
+                planIDs: { [PLANS.LUMO]: 1 },
+                cycle: CYCLE.TWO_YEARS,
+            })
         ).toBe(true);
     });
 
@@ -531,14 +633,26 @@ describe('isSubscriptionCheckForbidden', () => {
             External: SubscriptionPlatform.iOS,
         });
 
-        expect(isSubscriptionCheckForbidden(subscription, { planIDs: { [PLANS.MAIL]: 1 }, cycle: CYCLE.MONTHLY })).toBe(
-            false
-        );
-        expect(isSubscriptionCheckForbidden(subscription, { planIDs: { [PLANS.MAIL]: 1 }, cycle: CYCLE.YEARLY })).toBe(
-            false
-        );
         expect(
-            isSubscriptionCheckForbidden(subscription, { planIDs: { [PLANS.MAIL]: 1 }, cycle: CYCLE.TWO_YEARS })
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
+                planIDs: { [PLANS.MAIL]: 1 },
+                cycle: CYCLE.MONTHLY,
+            })
+        ).toBe(false);
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
+                planIDs: { [PLANS.MAIL]: 1 },
+                cycle: CYCLE.YEARLY,
+            })
+        ).toBe(false);
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
+                planIDs: { [PLANS.MAIL]: 1 },
+                cycle: CYCLE.TWO_YEARS,
+            })
         ).toBe(false);
     });
 
@@ -554,14 +668,26 @@ describe('isSubscriptionCheckForbidden', () => {
             }
         );
 
-        expect(isSubscriptionCheckForbidden(subscribtion, { planIDs: { [PLANS.LUMO]: 1 }, cycle: CYCLE.MONTHLY })).toBe(
-            true
-        );
-        expect(isSubscriptionCheckForbidden(subscribtion, { planIDs: { [PLANS.LUMO]: 1 }, cycle: CYCLE.YEARLY })).toBe(
-            false
-        );
         expect(
-            isSubscriptionCheckForbidden(subscribtion, { planIDs: { [PLANS.LUMO]: 1 }, cycle: CYCLE.TWO_YEARS })
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscribtion), {
+                editedSubscription: subscribtion,
+                planIDs: { [PLANS.LUMO]: 1 },
+                cycle: CYCLE.MONTHLY,
+            })
+        ).toBe(true);
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscribtion), {
+                editedSubscription: subscribtion,
+                planIDs: { [PLANS.LUMO]: 1 },
+                cycle: CYCLE.YEARLY,
+            })
+        ).toBe(false);
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscribtion), {
+                editedSubscription: subscribtion,
+                planIDs: { [PLANS.LUMO]: 1 },
+                cycle: CYCLE.TWO_YEARS,
+            })
         ).toBe(false);
     });
 
@@ -601,16 +727,29 @@ describe('isSubscriptionCheckForbidden', () => {
         'should return true if user has Lumo mobile subscription adn tries to subscribe to a multi-user personal plan',
         ({ subscription }) => {
             expect(
-                isSubscriptionCheckForbidden(subscription, { planIDs: { [PLANS.DUO]: 1 }, cycle: CYCLE.MONTHLY })
+                isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
+                    editedSubscription: subscription,
+                    planIDs: { [PLANS.DUO]: 1 },
+                    cycle: CYCLE.MONTHLY,
+                })
             ).toBe(true);
             expect(
-                isSubscriptionCheckForbidden(subscription, { planIDs: { [PLANS.FAMILY]: 1 }, cycle: CYCLE.MONTHLY })
+                isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
+                    editedSubscription: subscription,
+                    planIDs: { [PLANS.FAMILY]: 1 },
+                    cycle: CYCLE.MONTHLY,
+                })
             ).toBe(true);
             expect(
-                isSubscriptionCheckForbidden(subscription, { planIDs: { [PLANS.VISIONARY]: 1 }, cycle: CYCLE.MONTHLY })
+                isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
+                    editedSubscription: subscription,
+                    planIDs: { [PLANS.VISIONARY]: 1 },
+                    cycle: CYCLE.MONTHLY,
+                })
             ).toBe(true);
             expect(
-                isSubscriptionCheckForbidden(subscription, {
+                isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(subscription), {
+                    editedSubscription: subscription,
                     planIDs: { [PLANS.PASS_FAMILY]: 1 },
                     cycle: CYCLE.MONTHLY,
                 })
@@ -619,15 +758,33 @@ describe('isSubscriptionCheckForbidden', () => {
     );
 
     it('returns true when planIDs are empty', () => {
-        expect(isSubscriptionCheckForbidden(null, { planIDs: {}, cycle: CYCLE.MONTHLY })).toBe(true);
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(null), {
+                editedSubscription: null,
+                planIDs: {},
+                cycle: CYCLE.MONTHLY,
+            })
+        ).toBe(true);
     });
 
     it('returns true when FREE plan is selected', () => {
-        expect(isSubscriptionCheckForbidden(null, { planIDs: { [PLANS.FREE]: 1 }, cycle: CYCLE.MONTHLY })).toBe(true);
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(null), {
+                editedSubscription: null,
+                planIDs: { [PLANS.FREE]: 1 },
+                cycle: CYCLE.MONTHLY,
+            })
+        ).toBe(true);
     });
 
     it('returns true when all plan quantities are zero', () => {
-        expect(isSubscriptionCheckForbidden(null, { planIDs: { [PLANS.MAIL]: 0 }, cycle: CYCLE.MONTHLY })).toBe(true);
+        expect(
+            isSubscriptionCheckForbidden(buildMultiSubscriptionContextFromSubscription(null), {
+                editedSubscription: null,
+                planIDs: { [PLANS.MAIL]: 0 },
+                cycle: CYCLE.MONTHLY,
+            })
+        ).toBe(true);
     });
 });
 
@@ -638,18 +795,29 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
         const currency = 'USD';
         const subscription = buildSubscription({ planIDs, cycle, currency });
 
-        expect(isSubscriptionCheckForbiddenWithReason(subscription, { planIDs, cycle, coupon: 'TEST_COUPON' })).toEqual(
-            {
-                forbidden: false,
-                reason: 'possibly-invalid-coupon',
-            }
-        );
+        expect(
+            isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
+                planIDs,
+                cycle,
+                coupon: 'TEST_COUPON',
+            })
+        ).toEqual({
+            forbidden: false,
+            reason: 'possibly-invalid-coupon',
+        });
     });
 
     it('should return paid-plan-required when planIDs are empty', () => {
         const subscription = buildSubscription({ planIDs: { [PLANS.MAIL]: 1 }, cycle: CYCLE.MONTHLY, currency: 'USD' });
 
-        expect(isSubscriptionCheckForbiddenWithReason(subscription, { planIDs: {}, cycle: CYCLE.MONTHLY })).toEqual({
+        expect(
+            isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
+                planIDs: {},
+                cycle: CYCLE.MONTHLY,
+            })
+        ).toEqual({
             forbidden: true,
             reason: 'paid-plan-required',
         });
@@ -659,7 +827,8 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
         const subscription = buildSubscription({ planIDs: { [PLANS.MAIL]: 1 }, cycle: CYCLE.MONTHLY, currency: 'USD' });
 
         expect(
-            isSubscriptionCheckForbiddenWithReason(subscription, {
+            isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
                 planIDs: { [PLANS.MAIL]: 0 },
                 cycle: CYCLE.MONTHLY,
             })
@@ -673,7 +842,8 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
         const subscription = buildSubscription({ planIDs: { [PLANS.MAIL]: 1 }, cycle: CYCLE.MONTHLY, currency: 'USD' });
 
         expect(
-            isSubscriptionCheckForbiddenWithReason(subscription, {
+            isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
                 planIDs: { [PLANS.FREE]: 1 },
                 cycle: CYCLE.MONTHLY,
             })
@@ -684,7 +854,13 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
     });
 
     it('should return paid-plan-required when planIDs are empty even without a subscription', () => {
-        expect(isSubscriptionCheckForbiddenWithReason(null, { planIDs: {}, cycle: CYCLE.MONTHLY })).toEqual({
+        expect(
+            isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(null), {
+                editedSubscription: null,
+                planIDs: {},
+                cycle: CYCLE.MONTHLY,
+            })
+        ).toEqual({
             forbidden: true,
             reason: 'paid-plan-required',
         });
@@ -692,7 +868,8 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
 
     it('should return paid-plan-required when planIDs have negative quantities', () => {
         expect(
-            isSubscriptionCheckForbiddenWithReason(null, {
+            isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(null), {
+                editedSubscription: null,
                 planIDs: { [PLANS.MAIL]: -1 },
                 cycle: CYCLE.MONTHLY,
             })
@@ -704,7 +881,8 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
 
     it('should not return paid-plan-required when a valid paid plan is selected', () => {
         expect(
-            isSubscriptionCheckForbiddenWithReason(null, {
+            isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(null), {
+                editedSubscription: null,
                 planIDs: { [PLANS.MAIL]: 1 },
                 cycle: CYCLE.MONTHLY,
             })
@@ -717,7 +895,13 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
         const subscription = buildSubscription();
         const planIDs = getPlanIDs(subscription);
 
-        expect(isSubscriptionCheckForbiddenWithReason(subscription, { planIDs, cycle: subscription.Cycle })).toEqual({
+        expect(
+            isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
+                planIDs,
+                cycle: subscription.Cycle,
+            })
+        ).toEqual({
             forbidden: true,
             reason: 'already-subscribed',
         });
@@ -741,7 +925,13 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
             }
         );
 
-        expect(isSubscriptionCheckForbiddenWithReason(subscription, { planIDs, cycle: CYCLE.YEARLY })).toEqual({
+        expect(
+            isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
+                planIDs,
+                cycle: CYCLE.YEARLY,
+            })
+        ).toEqual({
             forbidden: true,
             reason: 'already-subscribed',
         });
@@ -766,7 +956,8 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
         );
 
         expect(
-            isSubscriptionCheckForbiddenWithReason(subscription, {
+            isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
                 planIDs,
                 cycle: CYCLE.YEARLY,
                 coupon: 'TEST_COUPON',
@@ -784,7 +975,8 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
         );
 
         expect(
-            isSubscriptionCheckForbiddenWithReason(subscription, {
+            isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
                 planIDs: { [PLANS.MAIL]: 1 },
                 cycle: CYCLE.MONTHLY,
                 coupon: 'TEST_COUPON',
@@ -802,7 +994,8 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
         );
 
         expect(
-            isSubscriptionCheckForbiddenWithReason(subscription, {
+            isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
                 planIDs: { [PLANS.MAIL]: 1 },
                 cycle: CYCLE.MONTHLY,
                 Codes: ['TEST_COUPON', 'TEST_COUPON_2'],
@@ -831,7 +1024,11 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
             );
 
             expect(
-                isSubscriptionCheckForbiddenWithReason(subscription, { planIDs: { [PLANS.LUMO]: 1 }, cycle })
+                isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
+                    editedSubscription: subscription,
+                    planIDs: { [PLANS.LUMO]: 1 },
+                    cycle,
+                })
             ).toEqual({
                 forbidden: true,
                 reason: 'already-subscribed-externally',
@@ -845,7 +1042,8 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
         });
 
         expect(
-            isSubscriptionCheckForbiddenWithReason(subscription, {
+            isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
                 planIDs: { [PLANS.LUMO]: 1 },
                 cycle: CYCLE.MONTHLY,
                 coupon: 'TEST_COUPON',
@@ -869,7 +1067,11 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
         );
 
         expect(
-            isSubscriptionCheckForbiddenWithReason(subscription, { planIDs: { [PLANS.DUO]: 1 }, cycle: CYCLE.MONTHLY })
+            isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
+                planIDs: { [PLANS.DUO]: 1 },
+                cycle: CYCLE.MONTHLY,
+            })
         ).toEqual({
             forbidden: true,
             reason: 'offer-not-available',
@@ -889,7 +1091,8 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
         );
 
         expect(
-            isSubscriptionCheckForbiddenWithReason(subscription, {
+            isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
                 planIDs: { [PLANS.DUO]: 1 },
                 cycle: CYCLE.MONTHLY,
                 coupon: 'TEST_COUPON',
@@ -907,7 +1110,12 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
         const subscription = buildSubscription({ planIDs, cycle, currency });
 
         expect(
-            isSubscriptionCheckForbiddenWithReason(subscription, { planIDs, cycle, Codes: ['TEST_COUPON'] })
+            isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
+                planIDs,
+                cycle,
+                Codes: ['TEST_COUPON'],
+            })
         ).toEqual({
             forbidden: false,
             reason: 'possibly-invalid-coupon',
@@ -923,7 +1131,12 @@ describe('isDangerouslyAllowedSubscriptionEstimation', () => {
         const subscription = buildSubscription({ planIDs, cycle, currency });
 
         expect(
-            isDangerouslyAllowedSubscriptionEstimation(subscription, { planIDs, cycle, coupon: 'TEST_COUPON' })
+            isDangerouslyAllowedSubscriptionEstimation(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
+                planIDs,
+                cycle,
+                coupon: 'TEST_COUPON',
+            })
         ).toBe(true);
     });
 
@@ -933,7 +1146,13 @@ describe('isDangerouslyAllowedSubscriptionEstimation', () => {
         const currency = 'USD';
         const subscription = buildSubscription({ planIDs, cycle, currency });
 
-        expect(isDangerouslyAllowedSubscriptionEstimation(subscription, { planIDs, cycle })).toBe(false);
+        expect(
+            isDangerouslyAllowedSubscriptionEstimation(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
+                planIDs,
+                cycle,
+            })
+        ).toBe(false);
     });
 
     it('should return false when a different plan is selected even with a coupon', () => {
@@ -944,7 +1163,8 @@ describe('isDangerouslyAllowedSubscriptionEstimation', () => {
         const subscription = buildSubscription({ planIDs: currentPlanIDs, cycle, currency });
 
         expect(
-            isDangerouslyAllowedSubscriptionEstimation(subscription, {
+            isDangerouslyAllowedSubscriptionEstimation(buildMultiSubscriptionContextFromSubscription(subscription), {
+                editedSubscription: subscription,
                 planIDs: newPlanIDs,
                 cycle,
                 coupon: 'TEST_COUPON',
@@ -956,7 +1176,14 @@ describe('isDangerouslyAllowedSubscriptionEstimation', () => {
         const planIDs = { [PLANS.MAIL]: 1 };
         const cycle = CYCLE.MONTHLY;
 
-        expect(isDangerouslyAllowedSubscriptionEstimation(null, { planIDs, cycle, coupon: 'TEST_COUPON' })).toBe(false);
+        expect(
+            isDangerouslyAllowedSubscriptionEstimation(buildMultiSubscriptionContextFromSubscription(null), {
+                editedSubscription: null,
+                planIDs,
+                cycle,
+                coupon: 'TEST_COUPON',
+            })
+        ).toBe(false);
     });
 });
 
@@ -998,29 +1225,39 @@ describe('isManagedExternally', () => {
 
 describe('canModify', () => {
     it('returns true when subscription is null', () => {
-        expect(canModify(null as any)).toBe(true);
+        expect(canModify(buildMultiSubscriptionContextFromSubscription(null as any))).toBe(true);
     });
 
     it('returns true when subscription is undefined', () => {
-        expect(canModify(undefined as any)).toBe(true);
+        expect(canModify(buildMultiSubscriptionContextFromSubscription(undefined as any))).toBe(true);
     });
 
     it('returns true for free subscription', () => {
-        expect(canModify(FREE_SUBSCRIPTION as any)).toBe(true);
+        expect(canModify(buildMultiSubscriptionContextFromSubscription(FREE_SUBSCRIPTION as any))).toBe(true);
     });
 
     it('returns false for externally managed subscription without Lumo', () => {
         const subscription = buildSubscription(undefined, {
             External: SubscriptionPlatform.Android,
         });
-        expect(canModify(subscription)).toBe(false);
+        expect(canModify(buildMultiSubscriptionContextFromSubscription(subscription))).toBe(false);
     });
 
     it('returns true for non-externally managed subscription', () => {
         const subscription = buildSubscription(undefined, {
             External: SubscriptionPlatform.Default,
         });
-        expect(canModify(subscription)).toBe(true);
+        expect(canModify(buildMultiSubscriptionContextFromSubscription(subscription))).toBe(true);
+    });
+
+    it('looks at every subscription, whichever comes first', () => {
+        const storeMailPlus = buildSubscription(PLANS.MAIL, { External: SubscriptionPlatform.Android });
+        const webPassPlus = buildSubscription(PLANS.PASS, { External: SubscriptionPlatform.Default });
+        const storeLumoPlus = buildSubscription(PLANS.LUMO, { External: SubscriptionPlatform.iOS });
+
+        expect(canModify(buildMultiSubscriptionContext([storeMailPlus, webPassPlus], false))).toBe(true);
+        expect(canModify(buildMultiSubscriptionContext([storeMailPlus, storeLumoPlus], false))).toBe(false);
+        expect(canModify(buildMultiSubscriptionContext([storeMailPlus], false))).toBe(false);
     });
 
     it('returns true for externally managed subscription with Lumo', () => {
@@ -1028,53 +1265,111 @@ describe('canModify', () => {
             External: SubscriptionPlatform.Android,
         });
 
-        expect(canModify(subscription)).toBe(true);
+        expect(canModify(buildMultiSubscriptionContextFromSubscription(subscription))).toBe(true);
+    });
+});
+
+describe('canModify with the Lumo purchase rules', () => {
+    const withFlagOn = (subscription?: Subscription) => buildMultiSubscriptionContext(toSubscriptionList(subscription));
+
+    it('lets a store Lumo Ultra subscriber add a subscription only with the flag on', () => {
+        const subscription = buildLumoSubscription(PLANS.LUMO_ULTRA, { External: SubscriptionPlatform.iOS });
+
+        expect(canModify(buildMultiSubscriptionContextFromSubscription(subscription))).toBe(false);
+        expect(canModify(withFlagOn(subscription))).toBe(true);
+    });
+
+    it('locks a user whose two subscriptions are both store-managed', () => {
+        const subscription = buildSubscription(PLANS.LUMO, {
+            External: SubscriptionPlatform.iOS,
+            SecondarySubscriptions: [buildSubscription(PLANS.MAIL, { External: SubscriptionPlatform.Android })],
+        });
+
+        expect(canModify(buildMultiSubscriptionContextFromSubscription(subscription))).toBe(false);
+        expect(canModify(withFlagOn(subscription))).toBe(false);
+    });
+
+    it('keeps a store Mail Plus subscriber locked with the flag on', () => {
+        const subscription = buildSubscription(PLANS.MAIL, { External: SubscriptionPlatform.Android });
+
+        expect(canModify(withFlagOn(subscription))).toBe(false);
+    });
+
+    it('keeps a store Lumo Ultra subscriber locked while the catalog is missing', () => {
+        const subscription = buildLumoSubscription(PLANS.LUMO_ULTRA, { External: SubscriptionPlatform.iOS });
+
+        expect(canModify({ ...withFlagOn(subscription), entitlementCatalog: undefined })).toBe(false);
+    });
+
+    it('lets a free user modify with the flag on', () => {
+        expect(canModify(withFlagOn())).toBe(true);
+    });
+});
+
+describe('isForbiddenModification with the Lumo purchase rules', () => {
+    const storeLumoPlus = buildSubscription(PLANS.LUMO, { External: SubscriptionPlatform.iOS });
+
+    it.each([
+        [PLANS.DUO, true, true],
+        [PLANS.PASS_FAMILY, true, true],
+        [PLANS.BUNDLE_PRO_2024, false, true],
+        [PLANS.LUMO_ULTRA, false, true],
+        [PLANS.MAIL, false, false],
+    ])('for a store Lumo Plus subscriber picking %s: flag off %s, flag on %s', (planName, flagOff, flagOn) => {
+        const selection = { [planName]: 1 };
+
+        expect(isForbiddenModification(buildMultiSubscriptionContext([storeLumoPlus], false), selection)).toBe(flagOff);
+        expect(isForbiddenModification(buildMultiSubscriptionContext([storeLumoPlus]), selection)).toBe(flagOn);
+    });
+
+    it('reports another Lumo tier as not available in the check', () => {
+        expect(
+            isSubscriptionCheckForbiddenWithReason(buildMultiSubscriptionContext([storeLumoPlus]), {
+                editedSubscription: storeLumoPlus,
+                planIDs: { [PLANS.LUMO_ULTRA]: 1 },
+                cycle: CYCLE.YEARLY,
+            })
+        ).toEqual({ forbidden: true, reason: 'offer-not-available' });
     });
 });
 
 describe('getAvailableActions', () => {
-    it('returns all actions available for non-externally managed subscription', () => {
+    it('lets a web subscriber modify', () => {
         const subscription = buildSubscription(undefined, {
             External: SubscriptionPlatform.Default,
         });
 
-        const result = getAvailableSubscriptionActions(subscription);
+        const result = getAvailableSubscriptionActions(buildMultiSubscriptionContextFromSubscription(subscription));
 
         expect(result).toEqual({
             canModify: true,
             cantModifyReason: undefined,
-            canCancel: true,
-            cantCancelReason: undefined,
         });
     });
 
-    it('returns no actions available for externally managed subscription without Lumo', () => {
+    it('locks an externally managed subscriber without Lumo', () => {
         const subscription = buildSubscription(undefined, {
             External: SubscriptionPlatform.Android,
         });
 
-        const result = getAvailableSubscriptionActions(subscription);
+        const result = getAvailableSubscriptionActions(buildMultiSubscriptionContextFromSubscription(subscription));
 
         expect(result).toEqual({
             canModify: false,
             cantModifyReason: 'subscription_managed_externally',
-            canCancel: false,
-            cantCancelReason: 'subscription_managed_externally',
         });
     });
 
-    it('returns only modify action available for externally managed subscription with Lumo', () => {
+    it('lets an externally managed Lumo subscriber modify', () => {
         const subscription = buildSubscription(PLANS.LUMO, {
             External: SubscriptionPlatform.Android,
         });
 
-        const result = getAvailableSubscriptionActions(subscription);
+        const result = getAvailableSubscriptionActions(buildMultiSubscriptionContextFromSubscription(subscription));
 
         expect(result).toEqual({
             canModify: true,
             cantModifyReason: undefined,
-            canCancel: false,
-            cantCancelReason: 'subscription_managed_externally',
         });
     });
 });

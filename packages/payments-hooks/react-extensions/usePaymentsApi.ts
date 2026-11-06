@@ -51,6 +51,7 @@ import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/const
 import isTruthy from '@proton/utils/isTruthy';
 
 import { usePreferredPlansMap } from '../ui/hooks/usePreferredPlansMap';
+import { useMultiSubscriptionContext } from './useMultiSubscriptionContext';
 
 const checkProduct = (data: CheckSubscriptionData) => {
     return {
@@ -437,12 +438,14 @@ export const usePaymentsApi = (
  */
 export const usePaymentsApiWithCheckFallback = () => {
     const [subscription] = useSubscription();
+    const multiSubscriptionContext = useMultiSubscriptionContext();
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
 
     const checkV5Fallback = (data: CheckSubscriptionData): SubscriptionEstimation | null => {
         const { Cycle, Currency, Plans } = data;
 
-        const checkForbidden = isSubscriptionCheckForbidden(subscription, {
+        const checkForbidden = isSubscriptionCheckForbidden(multiSubscriptionContext, {
+            editedSubscription: subscription,
             planIDs: Plans,
             cycle: Cycle,
         });

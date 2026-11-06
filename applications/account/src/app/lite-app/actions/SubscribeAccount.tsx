@@ -21,6 +21,7 @@ import { InAppText } from '@proton/components/containers/payments/subscription/I
 import SubscriptionContainer from '@proton/components/containers/payments/subscription/SubscriptionContainer';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { loadInitialBillingAddress } from '@proton/payments/core/billing-address/load-initial-billing-address';
@@ -131,6 +132,7 @@ const SubscribeAccount = ({
     const [subscription, loadingSubscription] = useSubscription();
     const [plansResult, loadingPlans] = usePlans();
     const [entitlementCatalog, loadingEntitlementCatalog] = useEntitlementCatalog();
+    const multiSubscriptionContext = useMultiSubscriptionContext();
     const plans = plansResult?.plans || [];
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const [organization, loadingOrganization] = useOrganization();
@@ -323,7 +325,7 @@ const SubscribeAccount = ({
         return <PromotionAlreadyApplied />;
     }
 
-    const subscriptionActions = getAvailableSubscriptionActions(subscription);
+    const subscriptionActions = getAvailableSubscriptionActions(multiSubscriptionContext);
     if (!subscriptionActions.canModify) {
         return (
             <div className="h-full flex flex-column justify-center items-center bg-norm text-center">

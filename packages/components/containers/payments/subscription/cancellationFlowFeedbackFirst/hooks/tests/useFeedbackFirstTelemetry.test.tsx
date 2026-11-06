@@ -22,6 +22,7 @@ jest.mock('@proton/account/user/hooks', () => ({
 }));
 
 jest.mock('@proton/account/subscription/hooks');
+jest.mock('@proton/account/entitlementCatalog/hooks', () => ({ useEntitlementCatalog: () => [undefined] }));
 const mockUseSubscription = useSubscription as jest.MockedFunction<any>;
 
 jest.mock('@proton/account/userSettings/hooks');

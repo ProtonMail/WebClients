@@ -3,6 +3,7 @@ import { computeOptimisticCheckResult } from '@proton/payments/core/computeOptim
 import type { Currency, FreeSubscription, PaymentsApi } from '@proton/payments/core/interface';
 import { isSubscriptionCheckForbidden } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { type PlanToCheck, getSubscriptionDataFromPlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -22,6 +23,7 @@ export const checkMultiplePlans = async ({
     multiCheckGroups,
     getLocalizedPlansMap,
     billingAddress,
+    multiSubscriptionContext,
 }: {
     plansToCheck: PlanToCheck[];
     subscription: Subscription | FreeSubscription;
@@ -29,6 +31,7 @@ export const checkMultiplePlans = async ({
     multiCheckGroups: ReturnType<typeof useMultiCheckGroups>;
     getLocalizedPlansMap: (params: { paramCurrency?: Currency }) => FullPlansMap;
     billingAddress: BillingAddress;
+    multiSubscriptionContext: MultiSubscriptionContext;
 }) => {
     if (plansToCheck.length === 0) {
         return [];
@@ -39,7 +42,8 @@ export const checkMultiplePlans = async ({
             getSubscriptionDataFromPlanToCheck({ ...planToCheck, BillingAddress: billingAddress, VatId: undefined })
         )
         .map((datum) =>
-            isSubscriptionCheckForbidden(subscription, {
+            isSubscriptionCheckForbidden(multiSubscriptionContext, {
+                editedSubscription: subscription,
                 planIDs: datum.Plans,
                 cycle: datum.Cycle,
             })

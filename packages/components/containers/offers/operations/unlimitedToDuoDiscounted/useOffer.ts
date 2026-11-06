@@ -5,6 +5,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { CommonFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -22,6 +23,7 @@ export const useOffer = (): Operation => {
     const [user, loadingUser] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const paidSubscription = isPaidSubscription(subscription) ? subscription : undefined;
+    const multiSubscriptionContext = useMultiSubscriptionContext();
     const protonConfig = useConfig();
     const { APP_NAME } = protonConfig;
     const { pathname } = useLocation();
@@ -39,6 +41,7 @@ export const useOffer = (): Operation => {
     const isEligible = getIsEligible({
         user,
         subscription: paidSubscription,
+        multiSubscriptionContext,
         protonConfig,
         offerConfig: configuration,
         preferredCurrency,

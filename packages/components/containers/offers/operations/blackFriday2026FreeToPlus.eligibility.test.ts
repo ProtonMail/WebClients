@@ -1,6 +1,7 @@
 import { getUnixTime, subHours } from 'date-fns';
 
 import { PLANS } from '@proton/payments/core/constants';
+import { buildMultiSubscriptionContextFromSubscription } from '@proton/payments/testing/buildMultiSubscriptionContext';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 import {
@@ -79,6 +80,7 @@ describe.each(offers)('blackFriday2026 $name eligibility', ({ getIsEligible, off
         user: freeUser,
         offerConfig,
         preferredCurrency: eligibleCurrency,
+        multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
     };
 
     it(`offers the ${plan} plan`, () => {

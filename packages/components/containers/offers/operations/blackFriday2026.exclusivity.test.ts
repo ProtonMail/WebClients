@@ -1,5 +1,6 @@
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { buildMultiSubscriptionContextFromSubscription } from '@proton/payments/testing/buildMultiSubscriptionContext';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
@@ -79,6 +80,7 @@ const getMatchingOperations = (
             return getIsEligible({
                 user,
                 subscription,
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(subscription),
                 protonConfig,
                 offerConfig,
                 preferredCurrency: eligibleCurrency,

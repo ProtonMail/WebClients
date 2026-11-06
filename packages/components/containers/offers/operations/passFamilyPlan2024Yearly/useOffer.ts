@@ -1,6 +1,7 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 
 import useOfferFlags from '../../hooks/useOfferFlags';
 import type { Operation } from '../../interface';
@@ -11,9 +12,10 @@ export const usePassFamilyPlan2024Yearly = (): Operation => {
     const [user, loadingUser] = useUser();
     const protonConfig = useConfig();
     const [subscription, subscriptionLoading] = useSubscription();
+    const multiSubscriptionContext = useMultiSubscriptionContext();
     const { isActive, loading: flagsLoading } = useOfferFlags(passFamilyPlan2024YearlyConfig);
     const isLoading = flagsLoading || loadingUser || subscriptionLoading;
-    const isEligible = getIsEligible({ subscription, user, protonConfig });
+    const isEligible = getIsEligible({ subscription, multiSubscriptionContext, user, protonConfig });
     const isValid = isEligible && isActive;
 
     return { isValid, config: passFamilyPlan2024YearlyConfig, isLoading, isEligible };

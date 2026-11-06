@@ -23,6 +23,7 @@ import {
     isSubscriptionSelectionEqual,
 } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { getApiErrorMessage, getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -58,6 +59,7 @@ export interface UseSubscriptionContainerInnerCheckProps {
     paymentsApi: PaymentsApi;
     paymentFacadeSelectedMethodType: PlainPaymentMethodType | undefined;
     skipPlanTransitionChecks: boolean;
+    multiSubscriptionContext: MultiSubscriptionContext;
     refs: {
         plansMapRef: { current: FullPlansMap };
         giftCodeRef: { current: { focus: () => void } | null };
@@ -230,7 +232,8 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
             return;
         }
 
-        const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(subscription, {
+        const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(props.multiSubscriptionContext, {
+            editedSubscription: subscription,
             planIDs: copyNewModel.planIDs,
             cycle: copyNewModel.cycle,
             coupon: getCodes(copyNewModel).at(0),

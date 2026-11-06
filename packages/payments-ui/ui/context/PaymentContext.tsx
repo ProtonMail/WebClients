@@ -52,6 +52,10 @@ import {
 } from '@proton/payments/core/subscription/helpers';
 import { getPlanIDs } from '@proton/payments/core/subscription/helpers/plan-ids';
 import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import {
+    type MultiSubscriptionContext,
+    createMultiSubscriptionContext,
+} from '@proton/payments/core/subscription/multi-subscription-context';
 import type { PlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
@@ -63,6 +67,7 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { getPlanFromPlanIDs, hasFreePlanIDs } from '@proton/shared/lib/payments/plan/helpers';
 import type { FreePlanDefault, Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
+import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import type { OnChargeable } from '../../client-extensions/usePaymentFacade';
@@ -159,6 +164,7 @@ export interface PaymentsContextType {
     coupon: string | undefined;
     selectCoupon: (coupon: string) => Promise<void>;
     couponConfig: CouponConfigRendered | undefined;
+    multiSubscriptionContext: MultiSubscriptionContext;
 }
 
 const PaymentsContext = createContext<PaymentsContextType | null>(null);
@@ -225,6 +231,7 @@ export const PaymentsContextProvider = ({
         // Avoid using model hooks to avoid fetching data
         useSelector(selectInitialPaymentData);
     const dispatch = useDispatch();
+    const lumoMultiSubscriptions = useFlag('LumoMultiSubscriptions');
 
     const { getPreferredCurrency, getAvailableCurrencies } = useCurrencies();
 
@@ -393,6 +400,15 @@ export const PaymentsContextProvider = ({
         });
     };
 
+    const getMultiSubscriptionContext = (): MultiSubscriptionContext => {
+        const { subscription, entitlementCatalog } = stateRef.current;
+        return createMultiSubscriptionContext({
+            lumoMultiSubscriptions,
+            subscription: subscription,
+            entitlementCatalog: entitlementCatalog === emptyEntitlementCatalog ? undefined : entitlementCatalog,
+        });
+    };
+
     /**
      * @throws {AbortError} if the operation is aborted
      */
@@ -403,7 +419,8 @@ export const PaymentsContextProvider = ({
         const newBillingAddress = diff.billingAddress ?? stateRef.current.billingAddress;
         const newVatNumber = diff.vatNumber ?? stateRef.current.vatNumber;
 
-        const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(stateRef.current.subscription, {
+        const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(getMultiSubscriptionContext(), {
+            editedSubscription: stateRef.current.subscription,
             planIDs: newPlanToCheck.planIDs,
             cycle: newPlanToCheck.cycle,
         });
@@ -692,6 +709,7 @@ export const PaymentsContextProvider = ({
                 subscription,
                 plansToCheck: availablePlansWithCurrencyAndAutomaticCoupon,
                 billingAddress: stateRef.current.billingAddress,
+                multiSubscriptionContext: getMultiSubscriptionContext(),
             }).catch(noop);
         }
 
@@ -885,6 +903,7 @@ export const PaymentsContextProvider = ({
     };
 
     const value: PaymentsContextType = {
+        multiSubscriptionContext: getMultiSubscriptionContext(),
         createSubscription: async () => {},
         initialize,
         initialized: getHasEssentialData(),
@@ -921,6 +940,7 @@ export const PaymentsContextProvider = ({
                 subscription: stateRef.current.subscription,
                 plansToCheck,
                 billingAddress: stateRef.current.billingAddress,
+                multiSubscriptionContext: getMultiSubscriptionContext(),
             });
         },
         plans: stateRef.current.plansData.plans,

@@ -4,6 +4,7 @@ import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { GUARD_ERROR_CODES, type GuardError } from '@proton/payments/core/subscription/guard';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { buildMultiSubscriptionContextFromSubscription } from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 
 import SubscriptionCheckoutPaymentSection from './SubscriptionCheckoutPaymentSection';
@@ -57,6 +58,9 @@ const mockPayments = (GuardResult?: GuardError[] | null) =>
         coupon: '',
         selectCurrency: jest.fn(),
         couponConfig: undefined,
+        multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(
+            buildSubscription({ planName: PLANS.BUNDLE, cycle: CYCLE.YEARLY, currency: 'USD' })
+        ),
     } as unknown as PaymentsValue);
 
 const blocked: GuardError[] = [{ Code: GUARD_ERROR_CODES.TOO_LITTLE_SPACE, Message: 'raw backend message' }];

@@ -6,6 +6,7 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import { Pill } from '@proton/atoms/Pill/Pill';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import type { ADDON_NAMES } from '@proton/payments/core/constants';
 import type { FreeSubscription } from '@proton/payments/core/interface';
 import {
@@ -44,7 +45,7 @@ import { useTrialOnlyPaymentMethods } from '../../../../hooks/useTrialOnlyPaymen
 import { REACTIVATE_SOURCE } from '../cancellationFlow/useCancellationTelemetry';
 import { getReactivateSubscriptionAction } from '../helpers/subscriptionExpires';
 import { getSubscriptionPanelText } from '../helpers/subscriptionPanelHelpers';
-import { useSubscriptionModal } from '../subscriptionModalContext';
+import { useSubscriptionModalRaw } from '../subscriptionModalContext';
 import {
     BillingDateSection,
     FreeMeetFeatures,
@@ -160,7 +161,7 @@ export const CurrentPlanInfoSection = ({
     addresses,
     editBillingCycle = false,
 }: CurrentPlanInfoSectionProps) => {
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const openSubscriptionModal = useSubscriptionModalRaw();
     const [entitlementCatalog] = useEntitlementCatalog();
     const { isFree, canPay, isMember } = user;
     const telemetryFlow = useDashboardPaymentFlow(app);
@@ -168,6 +169,7 @@ export const CurrentPlanInfoSection = ({
 
     const { MaxMembers = 1 } = organization || {};
     const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
+    const multiSubscriptionContext = useMultiSubscriptionContext(subscription, entitlementCatalog);
 
     const { userText } = getSubscriptionPanelText(user, organization, addresses, scribeToLumo);
 
@@ -185,10 +187,10 @@ export const CurrentPlanInfoSection = ({
         editBillingCycle &&
         !isManagedExternally(subscription);
 
-    const showExploreOtherPlans = user.isPaid && user.canPay && canModify(subscription);
+    const showExploreOtherPlans = user.isPaid && user.canPay && canModify(multiSubscriptionContext);
 
     const handleExplorePlans = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             telemetryFlow,
         });
