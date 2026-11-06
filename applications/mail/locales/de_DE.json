@@ -1577,7 +1577,8 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen"
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -1780,6 +1781,12 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Add payment method": [
+        "Zahlungsmethode hinzufügen"
+      ],
+      "Cancel trial": [
+        "Testphase beenden"
       ]
     },
     "action": {
@@ -6284,6 +6291,12 @@
       ],
       "Username": [
         "Benutzername"
+      ],
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Welche E-Mail-Adresse haben Sie vor ${ MAIL_APP_NAME } am häufigsten genutzt?"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Was war der Hauptgrund dafür, dass du dich bei ${ MAIL_APP_NAME } angemeldet hast?"
       ]
     },
     "Hint": {
@@ -9667,6 +9680,75 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
+      ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } von ${ steps }"
+      ],
+      "A new or separate address": [
+        "Eine neue oder zusätzliche Adresse"
+      ],
+      "A specific feature (tell us)": [
+        "Eine bestimmte Funktion (bitte angeben)"
+      ],
+      "Almost done": [
+        "Fast abgeschlossen"
+      ],
+      "Back": [
+        "Zurück"
+      ],
+      "Choose all that apply.": [
+        "Wähle alle zutreffende."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Wähle eine Option. Das hilft dabei, ${ MAIL_APP_NAME } weiter zu verbessern."
+      ],
+      "Dismiss": [
+        "Verwerfen"
+      ],
+      "I didn't have one": [
+        "Ich hatte keins"
+      ],
+      "I use other Proton products": [
+        "Ich nutze andere Proton-Produkte"
+      ],
+      "Leave Big Tech": [
+        "Verlasse „Big Tech“-Unternehmen"
+      ],
+      "Next": [
+        "Weiter"
+      ],
+      "No ads": [
+        "Keine Werbung"
+      ],
+      "One last step": [
+        "Ein letzter Schritt"
+      ],
+      "Other (tell us)": [
+        "Sonstiges (bitte angeben)"
+      ],
+      "Protection from hackers and leaks": [
+        "Schutz vor Hackern und Datenschutzverletzungen"
+      ],
+      "Someone recommended it": [
+        "Wurde mir von empfohlen"
+      ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Beginne, ${ MAIL_APP_NAME } zu nutzen"
+      ],
+      "Stop companies reading my emails": [
+        "Verhindern, dass Unternehmen meine E-Mails lesen"
+      ],
+      "Tell us more (optional)": [
+        "Erzähle uns mehr (optional)"
+      ],
+      "Which feature? (optional)": [
+        "Welche Funktion? (optional)"
+      ],
+      "Which provider?": [
+        "Welcher Anbieter?"
+      ],
+      "Work or business": [
+        "Arbeit oder Geschäft"
       ]
     },
     "info": {
@@ -13144,6 +13226,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Dein vollständiges ${ planTitle }-Abonnement beginnt am ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Hast du nach der Testphase deine Meinung geändert?** Kündige innerhalb von 30 Tagen nach deiner ersten Zahlung, und wir erstatten dir die nicht genutzte Zeit."
       ]
     },
     "Option": {

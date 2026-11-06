@@ -1577,7 +1577,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -1780,6 +1781,12 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Add payment method": [
+        "Ödeme yöntemi ekle"
+      ],
+      "Cancel trial": [
+        "Denemeyi iptal et"
       ]
     },
     "action": {
@@ -6244,7 +6251,7 @@
     },
     "Header": {
       "Before ${ MAIL_APP_NAME }, which email did you use most?": [
-        "${ MAIL_APP_NAME }'den önce en çok hangi e-posta uygulamasını kullanıyordunuz?"
+        "${ MAIL_APP_NAME } öncesinde en çok hangi e-posta uygulamasını kullanıyordunuz?"
       ],
       "Contacts": [
         "Kişiler"
@@ -6289,7 +6296,7 @@
         "Kullanıcı adı"
       ],
       "What's the main reason you joined ${ MAIL_APP_NAME }?": [
-        "${ MAIL_APP_NAME }'e katılmanızın başlıca nedeni nedir?"
+        "${ MAIL_APP_NAME } kullanmaya başlamanızın temel nedeni nedir?"
       ]
     },
     "Hint": {
@@ -7001,7 +7008,7 @@
         "30 gün içinde iptal edin ve geri ödeme almak için ${ customerSupportLink } ile görüşün."
       ],
       "A new or separate address": [
-        "Yeni veya farklı bir adres"
+        "Yeni ya da farklı bir adres"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Bir telefon numarası yalnızca bir ${ BRAND_NAME } hesabını doğrulamak için kullanılabilir"
@@ -7016,7 +7023,7 @@
         "Uzaktan çalışırken güvenli bir bağlantı kullanmak şarttır. VPN, şirket verilerini siber tehditlerden korur ve işinizin güvende kalmasını sağlar."
       ],
       "A specific feature (tell us)": [
-        "Belirli bir özellik (bize bildirin)"
+        "Belirli bir özellik (bize anlatın)"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Bir kullanıcı, tek bir kullanıcı adı, e-posta kutusu ya da kişi ile ilişkili olan bir hesaptır"
@@ -7990,7 +7997,7 @@
         "${ dataLeakedLink } ne yapacağınızı öğrenin"
       ],
       "Leave Big Tech": [
-        "Büyük Teknoloji Şirketlerinden Ayrılın"
+        "Big Tech şirketlerinden ayrılın"
       ],
       "Left to Right": [
         "Soldan sağa"
@@ -8305,7 +8312,7 @@
         "Kuruluş boyutu"
       ],
       "Other (tell us)": [
-        "Diğer (bize bildirin)"
+        "Diğer (bize anlatın)"
       ],
       "Other accounts": [
         "Diğer hesaplar"
@@ -8459,7 +8466,7 @@
         "${ hideMyEmailAliasesLink } ile e-posta adresinizin e-posta listelerine veya istenmeyen posta gönderenlere sızdırılmasını önleyin."
       ],
       "Protection from hackers and leaks": [
-        "Bilgisayar korsanlarına ve bilgi sızıntılarına karşı koruma"
+        "Bilgisayar korsanlarına ve veri sızıntılarına karşı koruma"
       ],
       "Public sharing of documents is not yet supported.": [
         "Henüz belgeleri herkese açık olarak paylaşma özelliği yok."
@@ -8767,7 +8774,7 @@
         "Bazı siteler ve yayın akışı hizmetleri, içeriklerini bölgelere göre engeller. Bir VPN, bu kısıtlamaları aşmanızı ve internete özgürce erişmenizi sağlar."
       ],
       "Someone recommended it": [
-        "Biri bunu tavsiye etti"
+        "Biri bunu önerdi"
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Ne yazık ki, bu ileti bulunamadı ya da geçerlilik süresi dolmuş."
@@ -9395,13 +9402,13 @@
         "Hangi özellik? (isteğe bağlı)"
       ],
       "Which provider?": [
-        "Hangi sağlayıcı?"
+        "Hangi hizmet sağlayıcı?"
       ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "Yeni e-posta kategorileri ile, yalnızca önemli iletiler birincil gelen kutunuza düşer. Diğer her şey kategoriler halinde düzenlenir."
       ],
       "Work or business": [
-        "İş veya ticari faaliyet"
+        "İş veya kurumsal"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -13219,6 +13226,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Tam ${ planTitle } aboneliğiniz ${ boldEndDate } tarihinde başlayacak."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Denedikten sonra fikrinizi değiştirdiniz mi? ** İlk ödemenizden sonraki 30 gün içinde iptal edebilirsiniz. Kullanılmayan süreyi geri öderiz."
       ]
     },
     "Option": {

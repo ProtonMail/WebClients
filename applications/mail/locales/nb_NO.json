@@ -1571,7 +1571,8 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarer nøkkel"
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -1774,6 +1775,12 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Add payment method": [
+        "Legg til betalingsmåte"
+      ],
+      "Cancel trial": [
+        "Avbryt prøveperioden"
       ]
     },
     "action": {
@@ -6268,6 +6275,12 @@
       ],
       "Username": [
         "Brukernavn"
+      ],
+      "Good to know before you connect": [
+        "Greit å vite før du kobler til"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Hva er hovedgrunnen til at du ble med i ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -9657,6 +9670,57 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } av ${ steps }"
+      ],
+      "A new or separate address": [
+        "En ny eller egen adresse"
+      ],
+      "A specific feature (tell us)": [
+        "En bestemt funksjon (gi oss tips)"
+      ],
+      "Almost done": [
+        "Nesten ferdig"
+      ],
+      "Choose all that apply.": [
+        "Velg alt som passer."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Velg en. Det hjelper oss å forbedre ${ MAIL_APP_NAME }."
+      ],
+      "I didn't have one": [
+        "Jeg hadde ikke en"
+      ],
+      "Leave Big Tech": [
+        "Forlate Big Tech"
+      ],
+      "One last step": [
+        "Ett siste trinn"
+      ],
+      "Someone recommended it": [
+        "Ble anbefalt av noen"
+      ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Begynn å bruke ${ MAIL_APP_NAME }"
+      ],
+      "Stop companies reading my emails": [
+        "Hindre at selskaper leser e-posten min"
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "Fortell meg når du er borte og hva du vil at den skal si, så får du se hele greia før den lagres."
+      ],
+      "Tell us more (optional)": [
+        "Fortell oss mer (valgfritt)"
+      ],
+      "Which feature? (optional)": [
+        "Hvilken funksjon? (valgfritt)"
+      ],
+      "Which provider?": [
+        "Hvilken tilbyder?"
+      ],
+      "Work or business": [
+        "Jobb eller bedrift"
       ]
     },
     "info": {
@@ -13131,6 +13195,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Ditt fullstendige ${ planTitle }-abonnement starter ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Ombestemt deg etter prøveperioden?** Si opp innen 30 dager etter første betaling, og vi refunderer den ubrukte tiden."
       ]
     },
     "Option": {
@@ -13617,6 +13684,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Scribe-seter kan ikke overstige antallet medlemmer."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Prøveplaner støtter ikke egendefinerte domener."
       ]
     },
     "Payments.Error": {

@@ -1577,7 +1577,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Confia en aquesta clau",
+        "Confia en aquestes claus"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -1780,6 +1781,12 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Add payment method": [
+        "Afegir un mètode de pagament"
+      ],
+      "Cancel trial": [
+        "Cancel·lar la prova"
       ]
     },
     "action": {
@@ -6289,7 +6296,7 @@
         "Nom d'usuari"
       ],
       "What's the main reason you joined ${ MAIL_APP_NAME }?": [
-        "Quina és la raó principal per la qual us heu unit a ${ MAIL_APP_NAME }?"
+        "Quina ha estat la raó principal d'unir-vos a ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -7016,7 +7023,7 @@
         "Una connexió segura és essencial quan es treballa a distància. Una VPN protegeix les dades de l'empresa de les amenaces cibernètiques i manté la feina privada."
       ],
       "A specific feature (tell us)": [
-        "Un altra característica (indiqueu-nos-ho)"
+        "Una altra característica (indiqueu-nos-ho)"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuari és un compte associat amb un sol nom d'usuari, una bústia de correu i una persona"
@@ -7238,7 +7245,7 @@
         "S'està esperant la transacció"
       ],
       "Back": [
-        "Torna"
+        "Tornar"
       ],
       "Background color": [
         "Color de fons"
@@ -7489,7 +7496,7 @@
         "Logo de Discover ProtectBuy"
       ],
       "Dismiss": [
-        "Descarta"
+        "Descartar-ho"
       ],
       "Do you remember your password?": [
         "Recordeu la vostra contrasenya?"
@@ -7990,7 +7997,7 @@
         "Més informació sobre què fer ${ dataLeakedLink }"
       ],
       "Leave Big Tech": [
-        "Deixeu les grans empreses tecnològiques"
+        "Abandoneu les grans empreses tecnològiques"
       ],
       "Left to Right": [
         "D'esquerra a dreta"
@@ -8794,7 +8801,7 @@
         "Mantingueu-vos connectat fàcilment activant la configuració següent de la VPN:"
       ],
       "Stop companies reading my emails": [
-        "Atureu que les empreses llegeixin els meus correus electrònics"
+        "No permeteu que les empreses llegeixin els meus correus electrònics"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Les capacitats d'emmagatzematge no són compatibles amb aquest navegador. Necessitem aquest suport per activar la cerca de contingut dels missatges."
@@ -8843,7 +8850,7 @@
         "Digueu-me quan sereu fora i què voleu que hi digui, i ho veureu tot abans que es desi."
       ],
       "Tell us more (optional)": [
-        "Explica'ns més (opcional)"
+        "Expliqueu-nos-en més (opcional)"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporalment no disponible a causa de l'alta demanda. Torneu-ho a provar més tard."
@@ -13219,6 +13226,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "La subscripció completa a ${ planTitle } comença el ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Heu canviat d'opinió després de la prova? ** Cancel·leu-la abans de 30 dies des del primer pagament i us reemborsarem el temps no utilitzat."
       ]
     },
     "Option": {

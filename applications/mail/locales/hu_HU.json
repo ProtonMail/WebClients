@@ -1484,7 +1484,8 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs"
+        "Kulcs megjelölése megbízhatóként",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -1672,6 +1673,9 @@
       ],
       "Zoom out": [
         "Távolítás"
+      ],
+      "Verify now": [
+        "Ellenőrizze most"
       ]
     },
     "action": {
@@ -1923,6 +1927,9 @@
       ],
       "You have reached the trial limit.": [
         "Elérte a próbaverzió korlátját."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "A próbaidőszak ekkor ér véget: ${ formattedDate1 }, ezután havi előfizetésre alakul át, ami automatikusan megújul ${ renewCycle } havonta. Akkor nem kerül díj felszámításra, ha lemondja ${ formattedDate2 } előtt."
       ]
     },
     "b2b_trials_Action": {
@@ -12256,7 +12263,7 @@
         "Fax"
       ],
       "Home": [
-        "Otthoni"
+        "Kezdőlap"
       ],
       "Main": [
         "Elsődleges"

@@ -1585,7 +1585,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -1790,6 +1793,12 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Add payment method": [
+        "Pridať spôsob platby"
+      ],
+      "Cancel trial": [
+        "Zrušiť skúšobné obdobie"
       ]
     },
     "action": {
@@ -6400,6 +6409,12 @@
       ],
       "Username": [
         "Používateľské meno"
+      ],
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Ktorý email ste používali najčastejšie predtým, než ste začali používať ${ MAIL_APP_NAME }?"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Aký je hlavný dôvod, prečo ste sa prihlásili do ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -10009,6 +10024,75 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } z ${ steps }"
+      ],
+      "A new or separate address": [
+        "Nová alebo samostatná adresa"
+      ],
+      "A specific feature (tell us)": [
+        "Konkrétna funkcia (napíšte nám o nej)"
+      ],
+      "Almost done": [
+        "Takmer hotovo"
+      ],
+      "Back": [
+        "Späť"
+      ],
+      "Choose all that apply.": [
+        "Vyberte všetky, ktoré sa hodia."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Vyberte si jednu možnosť. Pomôžete nám tak vylepšiť ${ MAIL_APP_NAME }."
+      ],
+      "Dismiss": [
+        "Zavrieť"
+      ],
+      "I didn't have one": [
+        "Nemám žiadny"
+      ],
+      "I use other Proton products": [
+        "Používam aj iné produkty Proton"
+      ],
+      "Leave Big Tech": [
+        "Opustite veľké technologické firmy"
+      ],
+      "Next": [
+        "Ďalej"
+      ],
+      "No ads": [
+        "Bez reklám"
+      ],
+      "One last step": [
+        "Jeden posledný krok"
+      ],
+      "Other (tell us)": [
+        "Iné (uveďte)"
+      ],
+      "Protection from hackers and leaks": [
+        "Ochrana pred hackermi a únikmi informácií"
+      ],
+      "Someone recommended it": [
+        "Niekto mi to odporučil"
+      ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Začať používať ${ MAIL_APP_NAME }"
+      ],
+      "Stop companies reading my emails": [
+        "Zabrániť firmám v čítaní mojich emailov"
+      ],
+      "Tell us more (optional)": [
+        "Povedzte nám viac (voliteľné)"
+      ],
+      "Which feature? (optional)": [
+        "Ktorá funkcia? (voliteľné)"
+      ],
+      "Which provider?": [
+        "Ktorý poskytovateľ?"
+      ],
+      "Work or business": [
+        "Práca alebo podnikanie"
       ]
     },
     "info": {
@@ -13588,6 +13672,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Vaše plné ${ planTitle } predplatné začína dňa ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Zmenili ste názor po skončení skúšobnej doby?** Ak zrušíte predplatné do 30 dní od prvej platby, vrátime vám peniaze za nevyčerpanú dobu."
       ]
     },
     "Option": {
@@ -17793,6 +17880,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Filter on": [
+        "Filter zap."
       ]
     },
     "Title header for keys table": {

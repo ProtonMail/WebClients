@@ -1568,7 +1568,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1768,6 +1769,12 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Add payment method": [
+        "Ajouter un moyen de paiement"
+      ],
+      "Cancel trial": [
+        "Annuler la version d'essai"
       ]
     },
     "action": {
@@ -13022,6 +13029,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Votre abonnement complet ${ planTitle } commence le ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Vous avez changé d'avis après la période d'essai ?** Résiliez votre abonnement dans les 30 jours suivant votre premier paiement et nous vous rembourserons la période non utilisée."
       ]
     },
     "Option": {
