@@ -1751,6 +1751,9 @@
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
         "${ MAIL_APP_NAME } デスクトップアプリ"
+      ],
+      "${ appName } Desktop application": [
+        "${ appName } デスクトップアプリ"
       ]
     },
     "Bug category": {
@@ -8789,7 +8792,7 @@
         "もしデータが漏洩した場合"
       ],
       "Learn more": [
-        "詳細"
+        "より詳しく"
       ],
       "Pay invoice": [
         "請求の支払い"

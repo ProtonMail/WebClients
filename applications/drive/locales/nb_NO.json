@@ -1374,6 +1374,27 @@
       ],
       "Google Drive": [
         "Google Drive"
+      ],
+      "Cancel trial": [
+        "Avbryt prøveperioden"
+      ],
+      "Detach": [
+        "Løsne"
+      ],
+      "Import now": [
+        "Importer nå"
+      ],
+      "Import paused": [
+        "Importen satt på vent"
+      ],
+      "Importing from Google": [
+        "Importerer fra Google"
+      ],
+      "New chat": [
+        "Ny chat"
+      ],
+      "Switch to ${ planName }": [
+        "Bytt til ${ planName }"
       ]
     },
     "Action: Docs": {
@@ -1494,6 +1515,9 @@
       ],
       "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
         "Organisasjoner med Managed Service Provider-tillegget kan opprette og administrere datterselskaper."
+      ],
+      "Managed Service Provider": [
+        "Leverandør av administrerte tjenester (MSP)"
       ]
     },
     "Alert": {
@@ -4534,6 +4558,12 @@
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Feil gjenopprettingsfrase. Prøv igjen eller bruk en annen gjenopprettingsmetode."
+      ],
+      "Not enough browser storage": [
+        "Ikke nok nettleserlagring"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Du har nådd det maksimale antallet tilkoblede adresser"
       ]
     },
     "error": {
@@ -8000,6 +8030,75 @@
       ],
       "1 vault per user": [
         "1 hvelv per bruker"
+      ],
+      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
+        "${ invitation.addedByEmail.error.claimedAuthor } (ikke bekreftet avsender)"
+      ],
+      "1 device per user": [
+        "1 enhet per bruker"
+      ],
+      "Drag your files and folders here or use the \"New\" button to upload": [
+        "Dra filene og mappene dine hit eller bruk \"Ny\"-knappen for å laste opp"
+      ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Hvis du allerede har oppgradert, kan du gjenoppta importen i ${ easySwitchSettingsLink }. Du kan også avbryte den der."
+      ],
+      "Import your files and folders": [
+        "Importer filene og mappene dine"
+      ],
+      "Know when it's done": [
+        "Få beskjed når det er ferdig"
+      ],
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Deretter logger du på Google-kontoen din og gir ${ BRAND_NAME } tilgang til Google Disk. Vi importerer filene og mappene dine til ${ DRIVE_APP_NAME }."
+      ],
+      "No payment is required.": [
+        "Ingen betaling kreves."
+      ],
+      "Or import your files from": [
+        "Eller importer filene fra"
+      ],
+      "Private and encrypted": [
+        "Privat og kryptert"
+      ],
+      "Search covers your recent items": [
+        "Søk inkluderer de siste elementene dine"
+      ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "Noen eldre filer indekseres ikke fordi Drive er for stor til å indekseres fullstendig."
+      ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Vi vil kopiere de fra Google Disk til ${ DRIVE_APP_NAME }."
+      ],
+      "We'll email you when your import is complete.": [
+        "Vi sender deg en e-post når importen er fullført."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Vi sender deg en e-post når importen er fullført. Filene dine vil vises i en mappe i ${ DRIVE_APP_NAME }."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en ubetalt faktura: ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en ubetalt faktura: ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "Drive er for stor til å indekseres helt i denne nettleseren, så søk ser på de nyeste elementene. Det kan hende at eldre filer ikke vises i resultatene."
+      ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Filene dine er kryptert og trygt lagret i ${ DRIVE_APP_NAME }."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Filene dine har blitt importert og kryptert fra Google Disk til ${ DRIVE_APP_NAME }."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Din gratis prøveperiode er avsluttet. Abonner nå for å holde teamets tilgang uavbrutt og kontoene sikre."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Google Disk kan være tom eller inneholde bare filer som ikke støttes."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "Importen er blokkert. Oppgrader nå for å ta med resten av filene dine."
       ]
     },
     "info": {
@@ -11082,6 +11181,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Ubegrenset med aliaser for å beskytte din identitet"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me-adresse"
       ]
     },
     "Onboarding": {
@@ -11303,6 +11405,21 @@
       ],
       "Add a payment method": [
         "Legg til betalingsmåte"
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Avbryt når som helst før da.** Du kan bruke ${ planTitle } helt til prøveperioden avsluttes, gratis."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Når det fulle abonnementet ditt starter ...** Du kan fortsatt si opp innen 30 dager og få en forholdsmessig refusjon."
+      ],
+      "If you continue after your trial,": [
+        "Hvis du fortsetter etter prøveperioden,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "for å fortsette å bruke alle funksjonene etter at prøveperioden er over."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "du kan si opp innen 30 dager og få en forholdsmessig refusjon."
       ]
     },
     "Option": {
@@ -11632,6 +11749,63 @@
       ],
       "Trial plans don’t support Scribe seats.": [
         "Prøveplaner støtter ikke Scribe-seter."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan ikke kombineres med ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } er kun tilgjengelig med forretningsplaner."
+      ],
+      "An organization is required for this plan.": [
+        "Det kreves en organisasjon for denne planen."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Å kjøpe kreditter krever et separat kjøp."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Ved å bytte sier du deg enig med våre ${ termsLink }."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Planbytte er ikke kompatibel av følgende årsaker:"
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Lukk ekstra lommebokkontoer før du endrer planen din."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Lukk ekstra lommebøker før du endrer planen din."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet-seter må samsvare med antall medlemmer."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Scribe-seter kan ikke overstige antallet medlemmer."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Den valgte planen tilbyr ikke nok adresser for kontoen din."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Den valgte planen tilbyr ikke nok medlemmer for kontoen din."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Denne dedikerte serveren er tilordnet en gateway og kan ikke endres."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Denne planen støtter ikke de administrerte funksjonene på kontoen din."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Dette abonnementet kan ikke fullføres akkurat nå. Prøv igjen."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Prøveplaner støtter ikke egendefinerte domener."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Prøveplaner støtter ikke dedikerte IP-er."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Prøveplaner støtter ikke så mange medlemmer."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Du eier allerede ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ]
     },
     "Payments.Error": {
@@ -13349,6 +13523,9 @@
       ],
       "We read your files once to copy them, then encrypt each one with your ${ BRAND_NAME } keys.": [
         "Vi leser filene dine én gang for å kopiere dem, og krypterer deretter hver enkelt med dine ${ BRAND_NAME }-nøkler."
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importer filene og mappene dine fra Google Disk og hold dem private i ${ DRIVE_APP_NAME }."
       ]
     },
     "Success": {
@@ -14814,6 +14991,27 @@
       ],
       "Black Friday": [
         "Black Friday"
+      ],
+      "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
+        "Ta med Google Disk-filene dine til ${ DRIVE_APP_NAME }"
+      ],
+      "Easy Switch from Google Drive": [
+        "Easy Switch fra Google Disk"
+      ],
+      "Import started": [
+        "Importen kjører"
+      ],
+      "More storage needed to finish your import": [
+        "Mer lagringsplass kreves for å fullføre importen"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Abonner på ${ planTitle }"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Velkommen til ${ DRIVE_APP_NAME }"
+      ],
+      "Your import is finished!": [
+        "Importen er ferdig!"
       ]
     },
     "Today icon tooltip in mini calendar": {
