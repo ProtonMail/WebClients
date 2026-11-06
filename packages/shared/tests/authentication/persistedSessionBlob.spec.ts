@@ -1,8 +1,12 @@
 import { generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
-import type { PersistedSession } from '../../lib/authentication/SessionInterface';
-import { getDecryptedPersistedSessionBlob } from '../../lib/authentication/persistedSessionStorage';
+import { type PersistedSession, SessionSource } from '../../lib/authentication/SessionInterface';
+import {
+    getDecryptedPersistedSessionBlob,
+    getPersistedSessionData,
+} from '../../lib/authentication/persistedSessionStorage';
+import { selfAccessTypeMask } from '../../lib/authentication/sessionAccessType';
 import { getEncryptedBlob, getEncryptedBlobV3 } from '../../lib/authentication/sessionBlobCryptoHelper';
 
 const getKey = () => importKey(generateKey());
@@ -46,4 +50,26 @@ describe('getDecryptedPersistedSessionBlob', () => {
             );
         }
     );
+});
+
+describe('getPersistedSessionData', () => {
+    it('should write a version 3 blob that can be read back', async () => {
+        const key = await getKey();
+        const { blob, payloadVersion } = await getPersistedSessionData(1, key, {
+            UserID: 'user-id',
+            UID: 'uid',
+            keyPassword: 'key-password',
+            offlineKey: undefined,
+            accessTypeMask: selfAccessTypeMask,
+            persistent: true,
+            trusted: false,
+            persistedAt: 0,
+            source: SessionSource.Proton,
+        });
+        expect(payloadVersion).toBe(3);
+        await expect(getDecryptedPersistedSessionBlob(key, blob!, payloadVersion)).resolves.toEqual({
+            type: 'default',
+            keyPassword: 'key-password',
+        });
+    });
 });
