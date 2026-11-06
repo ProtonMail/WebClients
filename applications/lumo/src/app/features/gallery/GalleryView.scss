@@ -222,22 +222,28 @@ im.$media-expressions: $media-expressions;
 	color: var(--signal-warning);
 }
 
+// Masonry: GalleryMasonryGrid positions the items and sets the height from these two properties
+// (not CSS multi-column, which breaks hover in Safari, nor grid row spans, capped by grid line limits).
 .gallery-grid {
-	column-count: 4;
-	column-gap: 12px;
+	--gallery-columns: 4;
+	--gallery-gap: 12px;
+
+	position: relative;
 
 	@include im.media('<=large') {
-		column-count: 3;
+		--gallery-columns: 3;
 	}
 
 	@include im.media('<=medium') {
-		column-count: 2;
-		column-gap: 10px;
+		--gallery-columns: 2;
+		--gallery-gap: 10px;
 	}
 
-	// @include im.media('<=small') {
-	// 	column-count: 1;
-	// }
+	// More specific than `.gallery-card { position: relative }` below. Absolute still contains the overlay.
+	> .gallery-card {
+		position: absolute;
+		inline-size: calc((100% - (var(--gallery-columns) - 1) * var(--gallery-gap)) / var(--gallery-columns));
+	}
 }
 
 // ── Suppress hover overlays while the created section is scrolling ────────────
@@ -250,14 +256,12 @@ im.$media-expressions: $media-expressions;
 
 .gallery-card {
 	display: block;
-	break-inside: avoid;
 	position: relative;
 	border-radius: 10px;
 	overflow: hidden;
 	cursor: pointer;
 	background-color: var(--background-strong);
 	border: 1px solid var(--border-weak);
-	margin-block-end: 12px;
 	transition:
 		transform 0.15s ease,
 		box-shadow 0.15s ease;
@@ -291,6 +295,11 @@ im.$media-expressions: $media-expressions;
 	inline-size: 100%;
 	block-size: auto;
 	display: block;
+
+	// Until a generated image (no stored size) loads; then its own ratio applies.
+	&--placeholder {
+		aspect-ratio: 1;
+	}
 }
 
 .gallery-card__overlay {

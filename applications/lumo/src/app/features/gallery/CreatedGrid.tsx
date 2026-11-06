@@ -6,6 +6,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import type { DrawingMode } from '../../features/drawingcanvas/types';
 import { GalleryImageCard } from './GalleryImageCard';
+import { GalleryMasonryGrid } from './GalleryMasonryGrid';
 import type { GallerySection } from './hooks/useGeneratedGalleryImages';
 
 import './GalleryView.scss';
@@ -48,7 +49,7 @@ export const CreatedGrid = ({ sections, status, hasMore, loadMore, onExport }: C
 
     return (
         <div className="gallery-created">
-            <div className="gallery-grid">
+            <GalleryMasonryGrid>
                 {allItems.map((item) => (
                     <GalleryImageCard
                         key={item.localId}
@@ -58,7 +59,7 @@ export const CreatedGrid = ({ sections, status, hasMore, loadMore, onExport }: C
                         imageSrcOverride={(item as any)._testImageSrc}
                     />
                 ))}
-            </div>
+            </GalleryMasonryGrid>
 
             {hasMore && (
                 <div className="gallery-load-more">

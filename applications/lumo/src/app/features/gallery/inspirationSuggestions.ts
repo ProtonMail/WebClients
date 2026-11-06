@@ -26,6 +26,9 @@ import yellowNumber16 from '@proton/styles/assets/img/lumo/lumo-image-inspiratio
 export type InspirationSuggestion = {
     id: string;
     img: string;
+    /** Intrinsic size, so the card reserves its space before the image loads. */
+    width: number;
+    height: number;
     getPrompt: () => string;
 };
 
@@ -33,6 +36,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'purpleglass1',
         img: purpleGlass1,
+        width: 1374,
+        height: 1551,
         // translator: Prompt sent to the AI for the purple glass inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -41,6 +46,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'yellowblock2',
         img: yellowBlock2,
+        width: 1590,
+        height: 1551,
         // translator: Prompt sent to the AI for the yellow block inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -49,6 +56,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'fastcar3',
         img: fastCar3,
+        width: 2754,
+        height: 1551,
         // translator: Prompt sent to the AI for the fast car inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -57,6 +66,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'whiteflower4',
         img: whiteFlower4,
+        width: 1551,
+        height: 1551,
         // translator: Prompt sent to the AI for the white flower inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -65,6 +76,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'whiteshirt5',
         img: whiteShirt5,
+        width: 1254,
+        height: 1551,
         // translator: Prompt sent to the AI for the white shirt inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -73,6 +86,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'purpleice7',
         img: purpleIce7,
+        width: 1743,
+        height: 1551,
         // translator: Prompt sent to the AI for the purple ice inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -81,6 +96,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'purplecircle8',
         img: purpleCircle8,
+        width: 1755,
+        height: 1551,
         // translator: Prompt sent to the AI for the purple circle inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -89,6 +106,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'purpleabstract9',
         img: purpleAbstract9,
+        width: 2970,
+        height: 1551,
         // translator: Prompt sent to the AI for the purple abstract inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -97,6 +116,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'greenfuture10',
         img: greenFuture10,
+        width: 1917,
+        height: 1551,
         // translator: Prompt sent to the AI for the green future inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -105,6 +126,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'greenhill11',
         img: greenHill11,
+        width: 2727,
+        height: 1551,
         // translator: Prompt sent to the AI for the green hill inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -113,6 +136,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'animatedboy12',
         img: animatedBoy12,
+        width: 1278,
+        height: 1551,
         // translator: Prompt sent to the AI for the animated boy inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -121,6 +146,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'futurehand13',
         img: futureHand13,
+        width: 1626,
+        height: 1551,
         // translator: Prompt sent to the AI for the future hand inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -129,6 +156,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'tealheadset14',
         img: tealHeadset14,
+        width: 1314,
+        height: 1551,
         // translator: Prompt sent to the AI for the teal headset inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -137,6 +166,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'orangeface15',
         img: orangeFace15,
+        width: 1554,
+        height: 1551,
         // translator: Prompt sent to the AI for the orange face inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -145,6 +176,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'yellownumber16',
         img: yellowNumber16,
+        width: 1554,
+        height: 1551,
         // translator: Prompt sent to the AI for the yellow number inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -153,6 +186,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'beigecouch17',
         img: beigeCouch17,
+        width: 2268,
+        height: 1551,
         // translator: Prompt sent to the AI for the beige couch inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -161,6 +196,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'whitehouse18',
         img: whiteHouse18,
+        width: 2373,
+        height: 1551,
         // translator: Prompt sent to the AI for the white house inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -169,6 +206,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'brownwood19',
         img: brownWood19,
+        width: 2283,
+        height: 1551,
         // translator: Prompt sent to the AI for the brown wood inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -177,6 +216,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'purplelaptop20',
         img: purpleLaptop20,
+        width: 1992,
+        height: 1551,
         // translator: Prompt sent to the AI for the purple laptop inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -185,6 +226,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'bluepainting21',
         img: bluePainting21,
+        width: 2268,
+        height: 1551,
         // translator: Prompt sent to the AI for the blue painting inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -193,6 +236,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'orangeboard22',
         img: orangeBoard22,
+        width: 2079,
+        height: 1551,
         // translator: Prompt sent to the AI for the orange board inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
@@ -201,6 +246,8 @@ export const INSPIRATION_SUGGESTIONS: InspirationSuggestion[] = [
     {
         id: 'whitecloud23',
         img: whiteCloud23,
+        width: 2763,
+        height: 1551,
         // translator: Prompt sent to the AI for the white cloud inspiration card
         getPrompt: () =>
             c('collider_2025:Inspiration suggestion prompt')
