@@ -64,6 +64,7 @@ const buildSubscription = (plan: PLANS, cycle: CYCLE = CYCLE.YEARLY) => {
     return {
         Cycle: cycle,
         Plans: [{ Type: PLAN_TYPES.PLAN, Name: plan }],
+        CreateTime: getUnixTime(new Date(2024, 0, 1)),
     } as unknown as Subscription;
 };
 

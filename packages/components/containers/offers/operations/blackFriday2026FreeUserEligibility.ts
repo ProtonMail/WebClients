@@ -1,13 +1,9 @@
-import { differenceInHours, fromUnixTime } from 'date-fns';
-
 import { hasIntentionalScheduledModification } from '../helpers/hasIntentionalScheduledModification';
 import { isEligibleCurrency } from '../helpers/isEligibleCurrency';
 import isSubscriptionCheckAllowed from '../helpers/isSubscriptionCheckAllowed';
 import OfferSubscription from '../helpers/offerSubscription';
+import { isAccountOldEnoughForBlackFriday2026 } from './blackFriday2026MinimumAge';
 import type { BlackFriday2026EligibilityArgs } from './useBlackFriday2026Offer';
-
-// Like the post-signup one dollar offer, accounts younger than this don't see the campaign yet.
-export const BLACK_FRIDAY_2026_FREE_USER_MIN_ACCOUNT_AGE_HOURS = 5;
 
 /**
  * The exclusions every BF 2026 free-user offer shares. Each offer adds its own app scope on top: the
@@ -23,10 +19,7 @@ export function isEligibleFreeUser({
         return false;
     }
 
-    const isAccountOldEnough =
-        differenceInHours(new Date(), fromUnixTime(user.CreateTime)) >=
-        BLACK_FRIDAY_2026_FREE_USER_MIN_ACCOUNT_AGE_HOURS;
-    if (!isAccountOldEnough) {
+    if (!isAccountOldEnoughForBlackFriday2026(user)) {
         return false;
     }
 

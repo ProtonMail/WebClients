@@ -48,6 +48,8 @@ export const paidUser = {
     isDelinquent: false,
     isPaid: true,
     isFree: false,
+    // An old account, so tests on a new subscription show the paid offers go by the subscription's age
+    CreateTime: getUnixTime(new Date(2024, 0, 1)),
 } as unknown as UserModel;
 
 export const eligibleCurrency: Currency = 'EUR';
@@ -61,6 +63,7 @@ interface SubscriptionOptions {
     isTrial?: boolean;
     external?: SubscriptionPlatform | false;
     upcoming?: Partial<Subscription> | null;
+    createTime?: number;
 }
 
 export const buildSubscription = ({
@@ -70,6 +73,8 @@ export const buildSubscription = ({
     isTrial = false,
     external = false,
     upcoming = null,
+    // Well past the campaign's minimum subscription age
+    createTime = getUnixTime(new Date(2024, 0, 1)),
 }: SubscriptionOptions = {}): Subscription => {
     return {
         ID: 'subscription-id',
@@ -84,6 +89,7 @@ export const buildSubscription = ({
             },
         ],
         UpcomingSubscription: upcoming,
+        CreateTime: createTime,
     } as unknown as Subscription;
 };
 
