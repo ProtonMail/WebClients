@@ -1784,6 +1784,12 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Add payment method": [
+        "Ödeme yöntemi ekle"
+      ],
+      "Cancel trial": [
+        "Denemeyi iptal et"
       ]
     },
     "action": {
@@ -6291,6 +6297,12 @@
       ],
       "Username": [
         "Kullanıcı adı"
+      ],
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "${ MAIL_APP_NAME } öncesinde en çok hangi e-posta uygulamasını kullanıyordunuz?"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "${ MAIL_APP_NAME } kullanmaya başlamanızın temel nedeni nedir?"
       ]
     },
     "Hint": {
@@ -9677,6 +9689,75 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } / ${ steps }"
+      ],
+      "A new or separate address": [
+        "Yeni ya da farklı bir adres"
+      ],
+      "A specific feature (tell us)": [
+        "Belirli bir özellik (bize anlatın)"
+      ],
+      "Almost done": [
+        "Neredeyse bitti"
+      ],
+      "Back": [
+        "Geri"
+      ],
+      "Choose all that apply.": [
+        "Uygun olan tüm seçenekleri işaretleyin."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Birini seçin. Bu ${ MAIL_APP_NAME } ürünümüzü geliştirmemize yardımcı olur."
+      ],
+      "Dismiss": [
+        "Kapat"
+      ],
+      "I didn't have one": [
+        "Bende yoktu"
+      ],
+      "I use other Proton products": [
+        "Diğer Proton ürünlerini kullanıyorum"
+      ],
+      "Leave Big Tech": [
+        "Big Tech şirketlerinden ayrılın"
+      ],
+      "Next": [
+        "Sonraki"
+      ],
+      "No ads": [
+        "Reklamsız"
+      ],
+      "One last step": [
+        "Son bir adım"
+      ],
+      "Other (tell us)": [
+        "Diğer (bize anlatın)"
+      ],
+      "Protection from hackers and leaks": [
+        "Bilgisayar korsanlarına ve veri sızıntılarına karşı koruma"
+      ],
+      "Someone recommended it": [
+        "Biri bunu önerdi"
+      ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } kullanmaya başlayın"
+      ],
+      "Stop companies reading my emails": [
+        "Şirketlerin e-postalarımı okumasını durdur"
+      ],
+      "Tell us more (optional)": [
+        "Bize daha fazla bilgi verin (isteğe bağlı)"
+      ],
+      "Which feature? (optional)": [
+        "Hangi özellik? (isteğe bağlı)"
+      ],
+      "Which provider?": [
+        "Hangi hizmet sağlayıcı?"
+      ],
+      "Work or business": [
+        "İş veya kurumsal"
       ]
     },
     "info": {
@@ -13160,6 +13241,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Tam ${ planTitle } aboneliğiniz ${ boldEndDate } tarihinde başlayacak."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Denedikten sonra fikrinizi değiştirdiniz mi? ** İlk ödemenizden sonraki 30 gün içinde iptal edebilirsiniz. Kullanılmayan süreyi geri öderiz."
       ]
     },
     "Option": {

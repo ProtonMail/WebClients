@@ -1784,6 +1784,12 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Add payment method": [
+        "Afegir un mètode de pagament"
+      ],
+      "Cancel trial": [
+        "Cancel·lar la prova"
       ]
     },
     "action": {
@@ -6291,6 +6297,12 @@
       ],
       "Username": [
         "Nom d'usuari"
+      ],
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Abans de ${ MAIL_APP_NAME }, quina adreça de correu electrònic fèieu servir més?"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Quina ha estat la raó principal d'unir-vos a ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -9677,6 +9689,75 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sou tot just a uns quants clics d'una safata d'entrada ordenada"
+      ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } de ${ steps }"
+      ],
+      "A new or separate address": [
+        "Una adreça nova o diferent"
+      ],
+      "A specific feature (tell us)": [
+        "Una altra característica (indiqueu-nos-ho)"
+      ],
+      "Almost done": [
+        "Gairebé hem acabat"
+      ],
+      "Back": [
+        "Tornar"
+      ],
+      "Choose all that apply.": [
+        "Trieu totes les opcions que corresponguin."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Trieu-ne una. Ens ajuda a millorar ${ MAIL_APP_NAME }."
+      ],
+      "Dismiss": [
+        "Descartar-ho"
+      ],
+      "I didn't have one": [
+        "No en tenia cap"
+      ],
+      "I use other Proton products": [
+        "Faig servir altres productes de Proton"
+      ],
+      "Leave Big Tech": [
+        "Abandoneu les grans empreses tecnològiques"
+      ],
+      "Next": [
+        "Següent"
+      ],
+      "No ads": [
+        "Sense publicitat"
+      ],
+      "One last step": [
+        "Un últim pas"
+      ],
+      "Other (tell us)": [
+        "Altres (indiqueu-nos-ho)"
+      ],
+      "Protection from hackers and leaks": [
+        "Protecció contra pirates informàtics i fuites"
+      ],
+      "Someone recommended it": [
+        "Algú us ho ha recomanat"
+      ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Comenceu a utilitzar ${ MAIL_APP_NAME }"
+      ],
+      "Stop companies reading my emails": [
+        "No permeteu que les empreses llegeixin els meus correus electrònics"
+      ],
+      "Tell us more (optional)": [
+        "Expliqueu-nos-en més (opcional)"
+      ],
+      "Which feature? (optional)": [
+        "Quines característiques? (opcional)"
+      ],
+      "Which provider?": [
+        "Quin proveïdor?"
+      ],
+      "Work or business": [
+        "Feina o negoci"
       ]
     },
     "info": {
@@ -13160,6 +13241,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "La subscripció completa a ${ planTitle } comença el ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Heu canviat d'opinió després de la prova? ** Cancel·leu-la abans de 30 dies des del primer pagament i us reemborsarem el temps no utilitzat."
       ]
     },
     "Option": {

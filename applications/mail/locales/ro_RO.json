@@ -1790,6 +1790,12 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Add payment method": [
+        "Adăugare metodă de plată"
+      ],
+      "Cancel trial": [
+        "Anulare perioadă de probare"
       ]
     },
     "action": {
@@ -2658,7 +2664,7 @@
         "Reîmprospătarea evenimentului nu este momentan suportată"
       ],
       "Event rescheduling is not supported for the moment": [
-        "Reprogramarea evenimentului nu este momentan suportată"
+        "Replanificarea evenimentului nu este momentan suportată."
       ],
       "This answer cannot be added to ${ CALENDAR_APP_NAME } as we only support answers to all events of a series for the moment": [
         "Acest răspuns nu poate fi adăugat la ${ CALENDAR_APP_NAME } deoarece momentan sunt suportate doar răspunsuri la toate evenimentele dintr-o serie."
@@ -4300,10 +4306,10 @@
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
       ],
       "Let people book time with you directly from your emails, without the back and forth.": [
-        "Permiteți-le oamenilor să planifice o întâlnire cu dvs. direct din e-mailuri, fără schimburi repetate de mesaje."
+        "Permiteți-le oamenilor să planifice o conferință cu dvs. direct din e-mailuri, fără schimburi repetate de mesaje."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
-        "Vă permite să adăugați imediat legături web de întâlnire în invitațiile la evenimente."
+        "Vă permite să adăugați imediat legături web de conferință în invitațiile la evenimente."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Îmbinare contacte... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
@@ -4350,7 +4356,7 @@
         "Configurați conturi pentru toți utilizatorii și invitați-i să se alăture la ${ BRAND_NAME }."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
-        "Simplificați sincronizarea și programarea cu calendare partajate."
+        "Simplificați sincronizarea și planificarea cu calendare partajate."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Acest lucru se poate întâmpla dacă permisiunile au fost eliminate sau parola a fost modificată."
@@ -6264,10 +6270,10 @@
     },
     "Google Meet": {
       "Join Google Meet": [
-        "Alăturați-vă întâlnirii de pe Google"
+        "Participare la Google Meet"
       ],
       "Joining instructions": [
-        "Instrucțiuni alăturare"
+        "Instrucțiuni de participare"
       ],
       "Less details": [
         "Mai puține detalii"
@@ -6276,7 +6282,7 @@
         "Gazdă conferință:"
       ],
       "Meeting link:": [
-        "Legătură web întâlnire:"
+        "Legătură web conferință:"
       ],
       "More details": [
         "Mai multe detalii"
@@ -6350,6 +6356,12 @@
       ],
       "Username": [
         "Nume de utilizator"
+      ],
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Înainte de ${ MAIL_APP_NAME }, ce fel de furnizor de e-mail ați folosit?"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Care e motivul principal de a folosi ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -9849,6 +9861,75 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate."
+      ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } din ${ steps }"
+      ],
+      "A new or separate address": [
+        "O adresă nouă sau separată"
+      ],
+      "A specific feature (tell us)": [
+        "O funcție specifică (opțional)"
+      ],
+      "Almost done": [
+        "Aproape gata"
+      ],
+      "Back": [
+        "Înapoi"
+      ],
+      "Choose all that apply.": [
+        "Alege toate care se aplică."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Alegeți una. Ne va ajuta să îmbunătățim ${ MAIL_APP_NAME }."
+      ],
+      "Dismiss": [
+        "Înlăturare"
+      ],
+      "I didn't have one": [
+        "Nu am mai avut"
+      ],
+      "I use other Proton products": [
+        "Folosesc alte produse Proton"
+      ],
+      "Leave Big Tech": [
+        "Părăsesc marile companii tehnologice"
+      ],
+      "Next": [
+        "Înainte"
+      ],
+      "No ads": [
+        "Fără reclame"
+      ],
+      "One last step": [
+        "Ultimul pas"
+      ],
+      "Other (tell us)": [
+        "Altul (spuneți-ne)"
+      ],
+      "Protection from hackers and leaks": [
+        "Protejare împotriva hackerilor și divulgărilor"
+      ],
+      "Someone recommended it": [
+        "Cineva mi l-a recomandat"
+      ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Începeți să utilizați ${ MAIL_APP_NAME }"
+      ],
+      "Stop companies reading my emails": [
+        "Împiedic companiile să-mi citească mesajele"
+      ],
+      "Tell us more (optional)": [
+        "Spuneți-ne mai multe (opțional)"
+      ],
+      "Which feature? (optional)": [
+        "Ce funcționalitate? (opțional)"
+      ],
+      "Which provider?": [
+        "Care este furnizorul?"
+      ],
+      "Work or business": [
+        "Serviciu sau afaceri"
       ]
     },
     "info": {
@@ -11748,7 +11829,7 @@
         "Conferințe de 24 de ore"
       ],
       "60 minutes per meeting": [
-        "60 de minute per întâlnire"
+        "60 de minute per conferință"
       ],
       "Booking pages": [
         "Pagini de rezervare"
@@ -11763,7 +11844,7 @@
         "Partajare ecran cu criptare bilaterală și conversații temporare pe durata apelului"
       ],
       "Hosts can record meetings locally on their computers": [
-        "Gazdele pot înregistra întâlnirile local pe computerele lor"
+        "Gazdele pot înregistra conferințele local pe computerele lor"
       ],
       "Meeting recording": [
         "Înregistrare conferință"
@@ -12240,9 +12321,9 @@
         "Planificare întâlniri"
       ],
       "Appointment scheduling with ${ n } booking page": [
-        "Planificare întâlniri cu ${ n } pagină de programări",
-        "Planificare întâlniri cu ${ n } pagini de programări",
-        "Planificare întâlniri cu ${ n } de pagini de programări"
+        "Planificare întâlniri cu ${ n } pagină de planificări",
+        "Planificare întâlniri cu ${ n } pagini de planificări",
+        "Planificare întâlniri cu ${ n } de pagini de planificări"
       ],
       "Auto-delete Spam and Trash": [
         "Ștergere automată mesaje nedorite și din gunoi"
@@ -12716,7 +12797,7 @@
         "Transferați automat mesajele trimise spre contul din ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "În prezent, trimiterea mesajelor promoționale sau programate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
+        "În prezent, trimiterea mesajelor promoționale sau planificate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Alegeți un timp personal pentru a vi se reaminti despre un mesaj sau când să sosească mesajul."
@@ -12847,7 +12928,7 @@
         "Stocați în siguranță detaliile contactelor personale, cum ar fi numărul de telefon, adresa, ziua de naștere și notele personale. Criptarea cu acces zero vă garantează că nici chiar ${ BRAND_NAME } nu le poate accesa."
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
-        "Vedeți disponibilitatea participanților la întâlnire și economisiți timp programând întâlniri."
+        "Vedeți disponibilitatea participanților la conferință și economisiți timp programând conferințe."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Trimiteți e-mailuri către grupuri mari rapid și ușor prin crearea a cât mai multe grupuri de contact de care aveți nevoie (până la 100 de contacte per grup)."
@@ -13383,6 +13464,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Abonamentul complet ${ planTitle } începe la ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**V-ați răzgândit după perioada de probare?** Anulați în termen de 30 de zile de la prima plată, iar noi vă vom rambursa contravaloarea perioadei neutilizate."
       ]
     },
     "Option": {
@@ -18210,7 +18294,7 @@
     },
     "Zoom Meeting": {
       "Meeting ID:": [
-        "ID întâlnire:"
+        "ID conferință:"
       ],
       "Passcode:": [
         "Cod de acces:"
