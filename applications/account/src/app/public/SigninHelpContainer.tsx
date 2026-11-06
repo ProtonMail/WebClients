@@ -1,5 +1,6 @@
 import { Link, useHistory, useLocation } from 'react-router-dom';
 
+import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
@@ -7,21 +8,19 @@ import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcQrCode } from '@proton/icons/icons/IcQrCode';
 import { IcQuestionCircle } from '@proton/icons/icons/IcQuestionCircle';
-import { type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import type { Paths } from '../content/helper';
+import { PublicAppContext } from '../content/state-machine/PublicAppContext';
+import { selectPaths, selectPreAppIntent } from '../content/state-machine/publicAppStateMachine';
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
 
-interface Props {
-    toApp: APP_NAMES | undefined;
-    paths: Paths;
-}
-
-const SigninHelpContainer = ({ toApp, paths }: Props) => {
+const SigninHelpContainer = () => {
+    const toApp = PublicAppContext.useSelector(selectPreAppIntent);
+    const paths = PublicAppContext.useSelector(selectPaths, isDeepEqual);
     const history = useHistory();
     const location = useLocation();
 

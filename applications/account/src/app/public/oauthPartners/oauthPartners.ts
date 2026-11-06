@@ -1,16 +1,6 @@
-import type { ReactNode } from 'react';
-import { useEffect, useState } from 'react';
-
-import { c } from 'ttag';
-
-import { useNotifications } from '@proton/app-context/useNotifications';
-import { Button } from '@proton/atoms/Button/Button';
-import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
 import { auth, revoke } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-// eslint-disable-next-line proton/restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import { oauthAuthorizePartner } from '@proton/shared/lib/authentication/fork/oauth2';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
@@ -23,18 +13,15 @@ import {
     maybeResumeSessionByUser,
     persistSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
-import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import * as sessionStorage from '@proton/shared/lib/helpers/sessionStorage';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
 import noop from '@proton/utils/noop';
 
-import type { ProtonForkData } from '../content/actions/forkInterface';
-import type { OnLoginCallback } from '../content/authSession';
-import { clearForkState, saveForkState } from './persistedForkState';
+import type { ProtonForkData } from '../../content/actions/forkInterface';
+import { clearForkState, saveForkState } from '../persistedForkState';
 
 export interface OAuthPartnersInitiateState {
     type: 'initiate';
@@ -49,16 +36,6 @@ export interface OAuthPartnersCallbackState {
         token: string;
         uid: string;
     };
-}
-
-interface Props {
-    unauthenticatedApi: UnauthenticatedApi;
-    state: OAuthPartnersInitiateState | OAuthPartnersCallbackState;
-    loader: ReactNode;
-    onLogin: OnLoginCallback;
-    onCredentials: (data: { sessions?: GetActiveSessionsResult; email: string }) => void;
-    toApp?: APP_NAMES;
-    productParam: ProductParam;
 }
 
 interface OAuthPersistedState {
@@ -114,8 +91,6 @@ const handleCallback = async ({
 }: {
     state: OAuthPartnersCallbackState;
     api: Api;
-    toApp?: APP_NAMES;
-    productParam: ProductParam;
 }): Promise<
     | { type: 'done'; payload: ResumedSessionResult }
     | {
@@ -186,68 +161,20 @@ const handleCallback = async ({
     };
 };
 
-const OAuthPartnersContainer = ({
-    toApp,
-    productParam,
-    unauthenticatedApi,
+/**
+ * Starts the partner's OAuth flow, which leaves the page, or finishes it once the partner redirects back.
+ */
+export const handleOAuthPartners = async ({
     state,
-    loader,
-    onLogin,
-    onCredentials,
-}: Props) => {
-    const [error, setError] = useState<{ message?: string } | null>(null);
-    const { createNotification } = useNotifications();
-
-    useEffect(() => {
-        const run = async () => {
-            if (state.type === 'initiate') {
-                return handleInitiate({ state, unauthenticatedApi });
-            }
-
-            if (state.type === 'callback') {
-                const result = await handleCallback({
-                    state,
-                    api: getSilentApi(unauthenticatedApi.apiCallback),
-                    toApp,
-                    productParam,
-                });
-                if (result.type === 'done') {
-                    return onLogin({ data: result.payload, flow: 'login' });
-                }
-                if (result.type === 'existing-account') {
-                    const email = result.payload.email ? `<${result.payload.email}>` : '';
-                    createNotification({
-                        type: 'info',
-                        text: c('sso')
-                            .t`The email address ${email} already exists in ${BRAND_NAME}. Sign in with your ${BRAND_NAME} credentials to continue.`,
-                    });
-                    return onCredentials(result.payload);
-                }
-            }
-
-            throw new Error('Unexpected type');
-        };
-        run().catch((error) => {
-            setError({
-                message: getNonEmptyErrorMessage(error),
-            });
-        });
-    }, []);
-
-    if (error) {
-        return (
-            <StandardErrorPage>
-                <div className="text-center">
-                    <div className="mb-4">{error.message}</div>
-                    <Button color="norm" onClick={() => onCredentials({ email: '' })}>
-                        {c('Action').t`Sign in with ${BRAND_NAME}`}
-                    </Button>
-                </div>
-            </StandardErrorPage>
-        );
+    unauthenticatedApi,
+}: {
+    state: OAuthPartnersInitiateState | OAuthPartnersCallbackState;
+    unauthenticatedApi: UnauthenticatedApi;
+}) => {
+    if (state.type === 'initiate') {
+        await handleInitiate({ state, unauthenticatedApi });
+        // The page is leaving for the partner
+        return new Promise<never>(() => {});
     }
-
-    return loader;
+    return handleCallback({ state, api: getSilentApi(unauthenticatedApi.apiCallback) });
 };
-
-export default OAuthPartnersContainer;

@@ -1,14 +1,12 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
+import { useMachine } from '@xstate/react';
+import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import SignInWithAnotherDeviceQRCode from '@proton/account/signInWithAnotherDevice/SignInWithAnotherDeviceQRCode';
-import {
-    GiveUpError,
-    type SignInWithAnotherDeviceResult,
-    signInWithAnotherDevicePull,
-} from '@proton/account/signInWithAnotherDevice/signInWithAnotherDevicePull';
+import { GiveUpError } from '@proton/account/signInWithAnotherDevice/signInWithAnotherDevicePull';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
@@ -17,19 +15,19 @@ import SkeletonLoader from '@proton/components/components/skeletonLoader/Skeleto
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import metrics from '@proton/metrics/metricsInstance';
-import observeApiError from '@proton/metrics/observeApiError';
 // eslint-disable-next-line proton/restricted-imports
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getToAppName } from '@proton/shared/lib/authentication/apps';
-import { type APP_NAMES, BRAND_NAME, MAIL_APP_NAME, SECOND } from '@proton/shared/lib/constants';
+import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { Api } from '@proton/shared/lib/interfaces/Api';
-import noop from '@proton/utils/noop';
 
 import type { OnLoginCallback } from '../../content/authSession';
-import type { Paths } from '../../content/helper';
+import { usePublicAppAuth } from '../../content/publicAppAuth';
+import { PublicAppContext } from '../../content/state-machine/PublicAppContext';
+import { usePublicAppServices } from '../../content/state-machine/PublicAppServices';
+import { selectPaths, selectPreAppIntent } from '../../content/state-machine/publicAppStateMachine';
+import { runLogin } from '../../content/state-machine/runLogin';
 import userExclamation from '../../public/user-exclamation.svg';
 import { useGetAccountKTActivation } from '../../useGetAccountKTActivation';
 import Content from '../Content';
@@ -37,103 +35,49 @@ import Header from '../Header';
 import Layout from '../Layout';
 import Main from '../Main';
 import { getContinueToString } from '../helper';
+import { createSignInWithAnotherDeviceActors } from './signInWithAnotherDeviceActors';
+import { selectQrCode, signInWithAnotherDeviceStateMachine } from './signInWithAnotherDeviceStateMachine';
 
-interface Props {
-    onLogin: OnLoginCallback;
-    productParam: ProductParam;
-    toAppName?: string;
-    toApp?: APP_NAMES;
-    onStartAuth: () => Promise<void>;
-    api: Api;
-    paths: Paths;
-}
-
-type State =
-    { type: 'init'; qrCode: string } | { type: 'error'; errorMessage: string; error: any } | { type: 'done' } | null;
-
-const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartAuth }: Props) => {
-    const [result, setResult] = useState<State>(null);
+const SignInWithAnotherDeviceContainer = () => {
+    const services = usePublicAppServices();
+    const { onStartAuth } = usePublicAppAuth();
+    const publicApp = PublicAppContext.useActorRef();
+    const toApp = PublicAppContext.useSelector(selectPreAppIntent);
+    const paths = PublicAppContext.useSelector(selectPaths, isDeepEqual);
+    const onLogin: OnLoginCallback = (session) => runLogin(publicApp, session);
     const { APP_NAME } = useConfig();
     const getKtActivation = useGetAccountKTActivation();
     const errorHandler = useErrorHandler();
-    const restartRef = useRef<null | (() => Promise<void>)>(null);
+    const [snapshot, send, actorRef] = useMachine(
+        signInWithAnotherDeviceStateMachine.provide({
+            actors: createSignInWithAnotherDeviceActors({
+                api: getSilentApi(services.api),
+                appName: APP_NAME,
+                getKtActivation,
+                startAuthSession: onStartAuth,
+                login: onLogin,
+            }),
+        })
+    );
+    const qrCode = selectQrCode(snapshot);
+    const error = snapshot.context.error;
+
+    // Once per visit: a new QR code after one expires is the same attempt
+    useEffect(() => {
+        metrics.core_edm_pull_total.increment({ status: 'init' });
+    }, []);
+
+    useEffect(() => {
+        const subscription = actorRef.on('signIn.failed', (event) => errorHandler(event.error, { notify: false }));
+        return () => subscription.unsubscribe();
+    }, [actorRef, errorHandler]);
 
     const history = useHistory();
     const backToSignIn = () => history.push(paths.login);
 
-    useEffect(() => {
-        const abortController = new AbortController();
-
-        const handleSession = async ({
-            session,
-            forkDurationTime,
-        }: Extract<SignInWithAnotherDeviceResult, { type: 'session' }>['payload']) => {
-            metrics.core_edm_pull_total.increment({ status: 'success' });
-            metrics.core_edm_pull_histogram.observe({ Value: Math.round(forkDurationTime / SECOND), Labels: {} });
-            await metrics.processAllRequests().catch(noop);
-            await onLogin({ data: session });
-        };
-
-        const initProcess = async () => {
-            await onStartAuth().catch(noop);
-
-            metrics.core_edm_pull_total.increment({ status: 'init' });
-
-            const start = signInWithAnotherDevicePull({
-                abortController,
-                config: {
-                    appName: APP_NAME,
-                    persistent: true,
-                    ktActivation: await getKtActivation(),
-                },
-                api: getSilentApi(api),
-                onResult: (data) => {
-                    if (data.type === 'init') {
-                        setResult({ type: 'init', qrCode: data.payload.qrCode });
-                    }
-                    if (data.type === 'error') {
-                        const error = data.payload.error;
-                        observeApiError(error, (status) => metrics.core_edm_pull_total.increment({ status }));
-                        errorHandler(error, { notify: false });
-                        setResult({
-                            type: 'error',
-                            errorMessage: getNonEmptyErrorMessage(error),
-                            error,
-                        });
-                    }
-                    if (data.type === 'session') {
-                        setResult({ type: 'done' });
-                        handleSession(data.payload).catch((error) => {
-                            errorHandler(error, { notify: false });
-                            setResult({
-                                type: 'error',
-                                errorMessage: getNonEmptyErrorMessage(error),
-                                error,
-                            });
-                        });
-                    }
-                },
-            });
-
-            restartRef.current = async () => {
-                await onStartAuth().catch(noop);
-                return start();
-            };
-
-            return start();
-        };
-
-        initProcess().catch(noop);
-
-        return () => {
-            restartRef.current = null;
-            abortController.abort();
-        };
-    }, []);
-
     const toAppName = getToAppName(toApp);
 
-    if (result?.type === 'error') {
+    if (snapshot.matches('failed')) {
         return (
             <Layout hasDecoration={true} toApp={toApp}>
                 <Main>
@@ -144,7 +88,7 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
                             </div>
                             <div className="h2 text-bold mb-2">
                                 {(() => {
-                                    if (result.error instanceof GiveUpError) {
+                                    if (error instanceof GiveUpError) {
                                         return c('edm').t`QR code expired`;
                                     }
                                     return c('Error').t`We couldn't sign you in`;
@@ -153,21 +97,19 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
                             <div className="mb-4 color-weak">
                                 <div className="mb-2">{c('edm').t`Try generating a new QR code.`}</div>
                                 {(() => {
-                                    if (result.error instanceof GiveUpError) {
+                                    if (error instanceof GiveUpError) {
                                         return null;
                                     }
-                                    if (result.errorMessage) {
-                                        return <div>Error: {result.errorMessage}</div>;
+                                    const errorMessage = getNonEmptyErrorMessage(error);
+                                    if (errorMessage) {
+                                        return <div>Error: {errorMessage}</div>;
                                     }
                                 })()}
                             </div>
                             <div className="flex flex-column gap-2">
                                 <Button
                                     size="large"
-                                    onClick={() => {
-                                        setResult(null);
-                                        restartRef.current?.().catch(noop);
-                                    }}
+                                    onClick={() => send({ type: 'qrCode.requested' })}
                                     color="norm"
                                     fullWidth
                                 >
@@ -195,8 +137,8 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
                 <Content>
                     <div className="ui-standard flex justify-center items-center mb-6 bg-elevated">
                         <div className="p-4 border border-weak rounded-lg lh100" style={{ backgroundColor: 'white' }}>
-                            {result?.type === 'init' ? (
-                                <SignInWithAnotherDeviceQRCode data={result.qrCode} />
+                            {qrCode ? (
+                                <SignInWithAnotherDeviceQRCode data={qrCode} />
                             ) : (
                                 <SkeletonLoader width="9rem" height="9rem" className="bg-primary" />
                             )}

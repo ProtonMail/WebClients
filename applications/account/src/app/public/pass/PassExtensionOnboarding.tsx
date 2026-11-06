@@ -1,10 +1,11 @@
 import { type FC, useEffect, useState } from 'react';
 
-import { useFlagsStatus } from '@unleash/proxy-client-react';
+import { FlagProvider, useFlagsStatus } from '@unleash/proxy-client-react';
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import UnauthenticatedApiProvider from '@proton/components/containers/api/UnauthenticatedApiProvider';
 import { Layout } from '@proton/pass/components/Onboarding/Layout/Layout';
 import { OnboardingButton } from '@proton/pass/components/Onboarding/UI/OnboardingButton';
 import {
@@ -20,6 +21,7 @@ import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
+import { usePublicAppServices } from '../../content/state-machine/PublicAppServices';
 import { PassExtensionOnboardingPinStep } from './PassExtensionOnboardingPinStep';
 import connectIllustration from './pass-extension-onboarding-connect-illustration.svg';
 
@@ -110,7 +112,7 @@ const PassExtensionOnboardingContent: FC = () => {
     );
 };
 
-export const PassExtensionOnboarding: FC = () => {
+const PassExtensionOnboardingWhenFlagsReady: FC = () => {
     const { flagsReady } = useFlagsStatus();
 
     if (!flagsReady) {
@@ -122,4 +124,15 @@ export const PassExtensionOnboarding: FC = () => {
     }
 
     return <PassExtensionOnboardingContent />;
+};
+
+export const PassExtensionOnboarding: FC = () => {
+    const services = usePublicAppServices();
+    return (
+        <UnauthenticatedApiProvider unauthenticatedApi={services.unauthenticatedApi}>
+            <FlagProvider unleashClient={services.unleashClient}>
+                <PassExtensionOnboardingWhenFlagsReady />
+            </FlagProvider>
+        </UnauthenticatedApiProvider>
+    );
 };

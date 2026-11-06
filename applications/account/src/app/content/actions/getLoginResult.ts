@@ -12,7 +12,7 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys/setupAddress';
 import noop from '@proton/utils/noop';
 
-import { getAppSwitcherState } from '../../public/appSwitcherState';
+import { getAppSwitcherState } from '../../public/appSwitcher/appSwitcherState';
 import type { AppIntent, AuthSession } from '../authSession';
 import type { Paths } from '../helper';
 import type { LocalRedirect } from '../localRedirect';

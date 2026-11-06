@@ -1,0 +1,118 @@
+import type { ReactNode } from 'react';
+import { Route, Switch } from 'react-router-dom';
+
+import { c } from 'ttag';
+
+import UnauthenticatedApiProvider from '@proton/components/containers/api/UnauthenticatedApiProvider';
+import { SSO_PATHS } from '@proton/shared/lib/constants';
+
+import AuthDesktop from '../public/AuthDesktop';
+import AuthExtension from '../public/AuthExtension';
+import CallScheduledPage from '../public/CallScheduledPage';
+import CloseTicketContainer from '../public/CloseTicketContainer';
+import DisableAccountContainer from '../public/DisableAccountContainer';
+import EmailForwardingContainer, { EmailForwardingRequest } from '../public/EmailForwardingContainer';
+import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
+import GroupInviteContainer, { GroupInviteRequest } from '../public/GroupInviteContainer';
+import GroupMembershipsContainer from '../public/GroupMembershipsContainer';
+import InboxDesktopFreeTrialEnded from '../public/InboxDesktopFreeTrialEnded';
+import RemoveEmailContainer from '../public/RemoveEmailContainer';
+import VerifyEmailContainer from '../public/VerifyEmailContainer';
+import OAuthPartnersContainer from '../public/oauthPartners/OAuthPartnersContainer';
+import { PassAccountOnboarding } from '../public/pass/PassAccountOnboarding';
+import { PassExtensionOnboarding } from '../public/pass/PassExtensionOnboarding';
+import useLocationWithoutLocale from '../useLocationWithoutLocale';
+import AccountLoaderPage from './AccountLoaderPage';
+import ExternalSSOConsumer from './ExternalSSOConsumer';
+import { UNAUTHENTICATED_ROUTES } from './helper';
+import { PublicAppContext } from './state-machine/PublicAppContext';
+import { usePublicAppServices } from './state-machine/PublicAppServices';
+
+/** The pages that render outside the public app's providers; anything else renders `children`. */
+const PublicAppStandaloneRoutes = ({ children }: { children: ReactNode }) => {
+    const services = usePublicAppServices();
+    const location = useLocationWithoutLocale();
+    const publicApp = PublicAppContext.useActorRef();
+    const locationState = PublicAppContext.useSelector((state) => state.context.locationState);
+    const loader = <AccountLoaderPage />;
+
+    return (
+        <Switch location={location}>
+            <Route path={[SSO_PATHS.EXTERNAL_SSO_LOGIN, SSO_PATHS.EXTERNAL_SSO_REAUTH]}>
+                <ExternalSSOConsumer
+                    onOAuthLogin={({ token, uid }) =>
+                        publicApp.send({ type: 'externalSSO.partnerSignedIn', token, uid })
+                    }
+                    onLogin={(data) => publicApp.send({ type: 'externalSSO.tokenReceived', ...data })}
+                >
+                    {loader}
+                </ExternalSSOConsumer>
+            </Route>
+            <Route path={`${UNAUTHENTICATED_ROUTES.UNSUBSCRIBE}/:subscriptions?`}>
+                <EmailUnsubscribeContainer />
+            </Route>
+            <Route path={`${UNAUTHENTICATED_ROUTES.EMAIL_FORWARDING}/accept`}>
+                <EmailForwardingContainer request={EmailForwardingRequest.Accept} />
+            </Route>
+            <Route path={`${UNAUTHENTICATED_ROUTES.EMAIL_FORWARDING}/decline`}>
+                <EmailForwardingContainer request={EmailForwardingRequest.Decline} />
+            </Route>
+            <Route path={`${UNAUTHENTICATED_ROUTES.GROUP_INVITE}/accept`}>
+                <GroupInviteContainer request={GroupInviteRequest.Accept} />
+            </Route>
+            <Route path={`${UNAUTHENTICATED_ROUTES.GROUP_INVITE}/decline`}>
+                <GroupInviteContainer request={GroupInviteRequest.Decline} />
+            </Route>
+            <Route path={`${UNAUTHENTICATED_ROUTES.GROUP_INVITE}/manage`}>
+                <GroupMembershipsContainer />
+            </Route>
+            <Route path={UNAUTHENTICATED_ROUTES.CLOSE_TICKET}>
+                <UnauthenticatedApiProvider unauthenticatedApi={services.unauthenticatedApi}>
+                    <CloseTicketContainer />
+                </UnauthenticatedApiProvider>
+            </Route>
+            <Route path={UNAUTHENTICATED_ROUTES.VERIFY_EMAIL}>
+                <VerifyEmailContainer />
+            </Route>
+            <Route path={UNAUTHENTICATED_ROUTES.REMOVE_EMAIL}>
+                <RemoveEmailContainer />
+            </Route>
+            <Route path={UNAUTHENTICATED_ROUTES.DISABLE_ACCOUNT}>
+                <DisableAccountContainer />
+            </Route>
+            <Route path={UNAUTHENTICATED_ROUTES.TRIAL_ENDED}>
+                <InboxDesktopFreeTrialEnded />
+            </Route>
+            <Route path={UNAUTHENTICATED_ROUTES.MSP_SETTING_UP_ACCESS}>
+                <AccountLoaderPage text={c('Info').t`Setting up your access…`} />
+            </Route>
+            {locationState?.type === 'auth-ext' && (
+                <Route path="/auth-ext">
+                    <AuthExtension state={locationState.payload} />
+                </Route>
+            )}
+            {locationState?.type === 'auth-desktop' && (
+                <Route path="/auth-desktop">
+                    <AuthDesktop state={locationState.payload} />
+                </Route>
+            )}
+            {locationState?.type === 'oauth-partners' && (
+                <Route path={SSO_PATHS.OAUTH_PARTNERS}>
+                    <OAuthPartnersContainer state={locationState.payload} />
+                </Route>
+            )}
+            <Route path="/call-scheduled">
+                <CallScheduledPage />
+            </Route>
+            <Route path={SSO_PATHS.PASS_EXTENSION_ONBOARDING}>
+                <PassExtensionOnboarding />
+            </Route>
+            <Route path={SSO_PATHS.PASS_ACCOUNT_ONBOARDING}>
+                <PassAccountOnboarding />
+            </Route>
+            <Route path="*">{children}</Route>
+        </Switch>
+    );
+};
+
+export default PublicAppStandaloneRoutes;

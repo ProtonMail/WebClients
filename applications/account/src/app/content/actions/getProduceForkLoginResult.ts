@@ -18,7 +18,7 @@ import { getRequiresAddressSetup, getRequiresProtonAddressFromAdmin } from '@pro
 
 import type { AuthDesktopState } from '../../public/AuthDesktop';
 import type { AuthExtensionState } from '../../public/AuthExtension';
-import { getReAuthState } from '../../public/reauthContainerState';
+import { getReAuthState } from '../../public/reAuth/reauthContainerState';
 import type { AuthSession } from '../authSession';
 import type { Paths } from '../helper';
 import { hasInterruption } from '../interruptions';

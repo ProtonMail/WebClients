@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Logo from '@proton/components/components/logo/Logo';
-import { useLoadingByKey } from '@proton/hooks/useLoading';
 import { getAppHref, getAppName, getAppShortName } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -36,7 +35,9 @@ const getExploreAppHref = (path: string, appName: APP_NAMES, localID?: number) =
 };
 
 interface Props {
-    onExplore: (app: APP_NAMES) => Promise<void>;
+    onExplore: (app: APP_NAMES) => void;
+    /** The app being opened, which shows a loader and blocks the others. */
+    loadingApp: APP_NAMES | undefined;
     apps: App[];
     localID?: number;
 }
@@ -88,8 +89,7 @@ const getWillLikelyOpenInNewTab = (event: MouseEvent) => {
     return middleClick || (leftClick && getIsEventModified(event));
 };
 
-const ExploreAppsListV2 = ({ onExplore, apps, localID }: Props) => {
-    const [loading, withLoading] = useLoadingByKey();
+const ExploreAppsListV2 = ({ onExplore, loadingApp, apps, localID }: Props) => {
     const { sendPageLoad, sendAppClick } = useExploreAppsListTelemetry();
 
     const { contextMenu, onContextMenu } = useExploreAppContextMenu();
@@ -110,7 +110,7 @@ const ExploreAppsListV2 = ({ onExplore, apps, localID }: Props) => {
                     const appName = app.name;
                     const name = getAppShortName(appName);
                     const description = app.description();
-                    const showLoader = loading[appName];
+                    const showLoader = loadingApp === appName;
                     const isNew = app.isNew;
                     const appHref = getExploreAppHref('/', appName, localID);
                     const settingsHref = getSettingsHref(appName, localID);
@@ -122,7 +122,7 @@ const ExploreAppsListV2 = ({ onExplore, apps, localID }: Props) => {
                                 href={appHref}
                                 data-testid={appName.replace('proton-', 'explore-')}
                                 onClick={async (event) => {
-                                    if (Object.values(loading).some((i) => i === true) || isForbidden) {
+                                    if (loadingApp !== undefined || isForbidden) {
                                         event.preventDefault();
                                         return;
                                     }
@@ -145,7 +145,7 @@ const ExploreAppsListV2 = ({ onExplore, apps, localID }: Props) => {
                                     }
 
                                     if (shouldProcessClick) {
-                                        await withLoading(appName, onExplore(appName));
+                                        onExplore(appName);
                                         return;
                                     }
                                     // Otherwise let link (e.g. new tab) clicks fall through

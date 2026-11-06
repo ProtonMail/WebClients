@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -17,20 +17,18 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import PublicFooter from '../components/PublicFooter';
 import PublicLayout from '../components/PublicLayout';
+import { UNAUTHENTICATED_ROUTES } from '../content/helper';
 import ExpiredError from './ExpiredError';
 import accountIllustration from './account-illustration.svg';
 import { stripQueryParams } from './jwt';
-
-interface Props {
-    onSubscribe: (jwt: string) => void;
-}
 
 enum ErrorType {
     Expired = 0,
     API = 1,
 }
 
-const VerifyEmailContainer = ({ onSubscribe }: Props) => {
+const VerifyEmailContainer = () => {
+    const history = useHistory();
     const silentApi = useSilentApi();
     const handleError = useErrorHandler();
     const [error, setError] = useState<{ type: ErrorType } | null>(null);
@@ -111,8 +109,14 @@ const VerifyEmailContainer = ({ onSubscribe }: Props) => {
                             </div>
                         }
                         footer={
-                            type === 'subscribe' && onSubscribe ? (
-                                <Button color="norm" fullWidth onClick={() => onSubscribe(jwt)}>
+                            type === 'subscribe' ? (
+                                <Button
+                                    color="norm"
+                                    fullWidth
+                                    onClick={() =>
+                                        history.replace({ pathname: UNAUTHENTICATED_ROUTES.UNSUBSCRIBE, hash: jwt })
+                                    }
+                                >
                                     {c('Action').t`Manage communication preferences`}
                                 </Button>
                             ) : (

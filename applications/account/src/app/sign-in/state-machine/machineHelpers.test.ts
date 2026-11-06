@@ -12,6 +12,6 @@ describe('unprovidedActors', () => {
 
 describe('unprovidedAction', () => {
     it('throws, naming the action', () => {
-        expect(() => unprovidedAction('restartSignIn')).toThrow("The sign-in's restartSignIn action is not provided");
+        expect(() => unprovidedAction('restartSignIn')).toThrow('The restartSignIn action is not provided');
     });
 });

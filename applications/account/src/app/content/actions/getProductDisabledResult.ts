@@ -1,7 +1,7 @@
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
-import { getAppSwitcherState } from '../../public/appSwitcherState';
+import { getAppSwitcherState } from '../../public/appSwitcher/appSwitcherState';
 import type { AuthSession } from '../authSession';
 import type { Paths } from '../helper';
 import type { LoginResult } from './interface';

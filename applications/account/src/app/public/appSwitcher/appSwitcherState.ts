@@ -3,7 +3,7 @@ import { getForbiddenApps } from '@proton/shared/lib/apps/apps';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { getOrganization } from '@proton/shared/lib/organization/api';
 
-import type { AuthSession } from '../content/authSession';
+import type { AuthSession } from '../../content/authSession';
 import type { AppSwitcherState } from './AppSwitcherContainer';
 
 /** `api` must be bound to the session's UID */

@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useLoading from '@proton/hooks/useLoading';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { continueToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 
+import { PublicAppContext } from '../content/state-machine/PublicAppContext';
+import { type ConsentState, selectLoggingIn, selectToAppName } from '../content/state-machine/publicAppStateMachine';
 import Content from './Content';
 import Header from './Header';
 import Layout from './Layout';
@@ -13,16 +13,19 @@ import Main from './Main';
 import Text from './Text';
 
 interface Props {
-    name?: string;
-    image?: string;
-    onConfirm: () => Promise<void>;
-    onCancel: () => void;
+    consent: Extract<ConsentState, { type: 'oauth-consent' }>;
 }
 
-const OAuthConfirmForkContainer = ({ name = '', image, onConfirm, onCancel }: Props) => {
-    const [loading, withLoading] = useLoading();
-    const handleError = useErrorHandler();
-
+const OAuthConfirmForkContainer = ({ consent }: Props) => {
+    const publicApp = PublicAppContext.useActorRef();
+    const name = PublicAppContext.useSelector(selectToAppName) || '';
+    const loading = PublicAppContext.useSelector(selectLoggingIn);
+    const image = consent.payload.data.payload.oauthData.clientInfo.Logo;
+    const onConfirm = () => publicApp.send({ type: 'consent.confirmed', consent });
+    const onCancel = () => {
+        // Force a hard refresh to get active sessions to refresh when signing up
+        window.location.pathname = SSO_PATHS.SWITCH;
+    };
     const children = (
         <Main>
             <Header
@@ -39,14 +42,7 @@ const OAuthConfirmForkContainer = ({ name = '', image, onConfirm, onCancel }: Pr
                     }
                 </Text>
                 {image && <img src={`data:image/svg+xml;base64,${image}`} alt="" className="w-full mb-6" />}
-                <Button
-                    className="mb-2"
-                    color="norm"
-                    fullWidth
-                    size="large"
-                    onClick={() => withLoading(onConfirm().catch(handleError))}
-                    loading={loading}
-                >
+                <Button className="mb-2" color="norm" fullWidth size="large" onClick={onConfirm} loading={loading}>
                     {continueToPlanOrAppNameText(name)}
                 </Button>
                 <Button shape="ghost" color="norm" fullWidth size="large" onClick={onCancel} disabled={loading}>

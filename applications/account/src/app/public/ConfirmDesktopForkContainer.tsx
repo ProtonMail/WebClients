@@ -1,16 +1,18 @@
+import { useHistory } from 'react-router-dom';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useLoading from '@proton/hooks/useLoading';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import { getApplicationNameWithPlatform } from '@proton/shared/lib/apps/getApplicationNameWithPlatform';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { ForkCodeLocation } from '@proton/shared/lib/authentication/interface';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { SSO_PATHS } from '@proton/shared/lib/constants';
 
+import { PublicAppContext } from '../content/state-machine/PublicAppContext';
+import { type ConsentState, selectLoggingIn } from '../content/state-machine/publicAppStateMachine';
 import Content from './Content';
 import Header from './Header';
 import Layout from './Layout';
@@ -18,11 +20,7 @@ import Main from './Main';
 import Text from './Text';
 
 interface Props {
-    app: APP_NAMES;
-    childClientId: string;
-    location?: ForkCodeLocation;
-    onConfirm: () => Promise<void>;
-    onCancel: () => void;
+    consent: Extract<ConsentState, { type: 'desktop-fork-consent' }>;
 }
 
 /** Where the device that asks to sign in is: its country, with its IP address below */
@@ -49,9 +47,14 @@ const LocationCard = ({ IP, CountryCode }: ForkCodeLocation) => {
     );
 };
 
-const ConfirmDesktopForkContainer = ({ app, childClientId, location, onConfirm, onCancel }: Props) => {
-    const [loading, withLoading] = useLoading();
-    const handleError = useErrorHandler();
+const ConfirmDesktopForkContainer = ({ consent }: Props) => {
+    const history = useHistory();
+    const publicApp = PublicAppContext.useActorRef();
+    const loading = PublicAppContext.useSelector(selectLoggingIn);
+    const { app, childClientId, location } = consent.payload;
+    const onConfirm = () => publicApp.send({ type: 'consent.confirmed', consent });
+    // Soft navigation keeps the desktop fork state, so another account can be picked
+    const onCancel = () => history.push(SSO_PATHS.SWITCH);
     const applicationName = getApplicationNameWithPlatform(getAppName(app), childClientId);
     const hasLocation = Boolean(location?.IP || location?.CountryCode);
 
@@ -76,14 +79,7 @@ const ConfirmDesktopForkContainer = ({ app, childClientId, location, onConfirm, 
                                 .t`If you didn't just try to sign in to **${applicationName}** on a device you own, click **Cancel**.`
                         )}
                     </Text>
-                    <Button
-                        className="mb-2"
-                        color="norm"
-                        fullWidth
-                        size="large"
-                        onClick={() => withLoading(onConfirm().catch(handleError))}
-                        loading={loading}
-                    >
+                    <Button className="mb-2" color="norm" fullWidth size="large" onClick={onConfirm} loading={loading}>
                         {c('Action').t`Confirm`}
                     </Button>
                     <Button shape="ghost" color="norm" fullWidth size="large" onClick={onCancel} disabled={loading}>

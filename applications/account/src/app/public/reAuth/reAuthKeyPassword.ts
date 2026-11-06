@@ -6,7 +6,7 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces/KeySalt';
 import type { User as tsUser } from '@proton/shared/lib/interfaces/User';
 
-import type { AuthSession } from '../content/authSession';
+import type { AuthSession } from '../../content/authSession';
 
 /** Unlocks the keys of an existing session with its password and persists it again with the key password. */
 export const handleReAuthKeyPassword = async ({
