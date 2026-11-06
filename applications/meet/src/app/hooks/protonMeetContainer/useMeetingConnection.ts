@@ -464,6 +464,7 @@ export const useMeetingConnection = ({
                     return 'cancelled';
                 }
             }
+            disallowHealthCheck();
             cleanupMlsState();
 
             dispatch(setIsReconnecting(false));

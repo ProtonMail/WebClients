@@ -7,6 +7,7 @@ import TopBanner from '@proton/components/containers/topBanners/TopBanner';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
 import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectIsWebsocketReconnecting } from '@proton/meet/store/slices/connectionSlice';
 import { selectMeetingLink } from '@proton/meet/store/slices/currentMeeting';
 import { selectParticipantSideBarOpen } from '@proton/meet/store/slices/layoutSlice';
 import { selectIsSideBarOpen } from '@proton/meet/store/slices/uiStateSlice';
@@ -40,6 +41,7 @@ import { ReactionStream } from '../ReactionStream/ReactionStream';
 import { RecordingInProgressModal } from '../RecordingInProgressModal/RecordingInProgressModal';
 import { Settings } from '../Settings/Settings';
 import { AudioRenderer } from './AudioRenderer';
+import { getConnectionBanner } from './getConnectionBanner';
 
 import './MeetingBody.scss';
 
@@ -84,6 +86,16 @@ export const MeetingBody = ({
 
     const isSideBarOpen = useMeetSelector(selectIsSideBarOpen);
 
+    const isWebsocketReconnecting = useMeetSelector(selectIsWebsocketReconnecting);
+    const connectionBanner = getConnectionBanner({
+        isReconnecting,
+        mlsRetrying,
+        isDisconnected,
+        liveKitConnectionState,
+        showReconnectedMessage,
+        isWebsocketReconnecting,
+    });
+
     // Firefox/macOS leaves focus on browser chrome after joining; move it into the page so the
     // live region is observed immediately without the user having to click first.
     const mainContainerRef = useRef<HTMLElement>(null);
@@ -118,33 +130,33 @@ export const MeetingBody = ({
                 )}
             >
                 {/* Visual-only: announced centrally by useConnectionAnnouncements. */}
-                {isReconnecting && (
+                {connectionBanner === 'fullReconnect' && (
                     <TopBanner className="bg-warning meet-radius" announce={false}>
                         {c('Info').t`Connection lost. Reconnecting…`}
                     </TopBanner>
                 )}
-                {!isReconnecting && mlsRetrying && (
+                {connectionBanner === 'mlsRetrying' && (
                     <TopBanner className="bg-warning meet-radius" announce={false}>
                         {c('Info').t`Connection issue detected. Attempting to recover…`}
                     </TopBanner>
                 )}
-                {!isReconnecting &&
-                    !mlsRetrying &&
-                    !isDisconnected &&
-                    (liveKitConnectionState === ConnectionState.SignalReconnecting ||
-                        liveKitConnectionState === ConnectionState.Reconnecting ||
-                        showReconnectedMessage) && (
-                        <TopBanner
-                            className={showReconnectedMessage ? 'bg-success meet-radius' : 'bg-warning meet-radius'}
-                            announce={false}
-                            onClose={() => {
-                                setShowReconnectedMessage(false);
-                                setLiveKitConnectionState(null);
-                            }}
-                        >
-                            {getConnectionStatusMessage(showReconnectedMessage, liveKitConnectionState)}
-                        </TopBanner>
-                    )}
+                {connectionBanner === 'liveKit' && (
+                    <TopBanner
+                        className={showReconnectedMessage ? 'bg-success meet-radius' : 'bg-warning meet-radius'}
+                        announce={false}
+                        onClose={() => {
+                            setShowReconnectedMessage(false);
+                            setLiveKitConnectionState(null);
+                        }}
+                    >
+                        {getConnectionStatusMessage(showReconnectedMessage, liveKitConnectionState)}
+                    </TopBanner>
+                )}
+                {connectionBanner === 'meetingServerReconnecting' && (
+                    <TopBanner className="bg-info meet-radius" announce={false}>
+                        {c('Info').t`Lost connection to the meeting server. Reconnecting…`}
+                    </TopBanner>
+                )}
                 {!isNarrowHeight && !isLargeDesktop && (
                     <div className="flex flex-nowrap gap-2 justify-between items-center">
                         <MeetingName classNames={{ name: 'flex-1 text-lg text-semibold' }} />

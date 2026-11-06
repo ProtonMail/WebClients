@@ -9,6 +9,7 @@ import { c } from 'ttag';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectIsWebsocketReconnecting } from '@proton/meet/store/slices/connectionSlice';
 import { selectDisplayName } from '@proton/meet/store/slices/currentMeeting';
 import {
     selectInitialCameraState,
@@ -37,6 +38,7 @@ import { ParticipantTileReaction } from './ParticipantTileReaction';
 import { AUDIO_ICON_SIZE, INDICATOR_SIZE_BY_SIZE, POSITION_BY_SIZE } from './constants';
 import { getParticipantTileAriaLabel } from './getParticipantTileAriaLabel';
 import { useDebouncedSpeakingStatus } from './useDebouncedSpeakingStatus';
+import { useIsReceivingVideoFrames } from './useIsReceivingVideoFrames';
 
 import './ParticipantTile.scss';
 
@@ -66,6 +68,8 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
     const initialCameraState = useMeetSelector(selectInitialCameraState);
     const isLocalVideoSuppressed = isMediaInitializing && !initialCameraState;
 
+    const isWebsocketReconnecting = useMeetSelector(selectIsWebsocketReconnecting);
+
     const isSpeaking = useDebouncedSpeakingStatus(participant);
 
     // Use useParticipantTracks to get camera tracks for this specific participant
@@ -82,6 +86,13 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
 
     const cameraIsOn = cameraVideoPublication?.track && !cameraVideoPublication?.track?.isMuted;
 
+    const isReceivingVideoFrames = useIsReceivingVideoFrames(
+        cameraVideoPublication as RemoteTrackPublication | undefined,
+        isWebsocketReconnecting && !isLocalParticipant && !!cameraIsOn
+    );
+    const isRemoteVideoReconnecting =
+        isWebsocketReconnecting && !isLocalParticipant && !(cameraIsOn && isReceivingVideoFrames);
+
     const {
         participantColors: { borderColor, backgroundColor, profileColor },
     } = useParticipantDisplayColors(participant.identity);
@@ -90,7 +101,8 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
         cameraIsOn: !!cameraIsOn,
         isLocalParticipant,
         isLocalVideoSuppressed,
-        isVideoDisabled: disableVideos || participantsWithDisabledVideos.includes(participant.identity),
+        isVideoDisabled:
+            disableVideos || participantsWithDisabledVideos.includes(participant.identity) || isRemoteVideoReconnecting,
     });
 
     const speakingIndicatorClassName =
@@ -336,6 +348,7 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
                     viewSize={viewSize}
                     backgroundColor={backgroundColor}
                     profileColor={profileColor}
+                    statusLabel={isRemoteVideoReconnecting ? c('Info').t`Reconnecting…` : undefined}
                 />
             )}
             <ParticipantTileReaction participantIdentity={participant.identity} position={POSITION_BY_SIZE[viewSize]} />

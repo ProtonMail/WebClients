@@ -69,4 +69,27 @@ describe('ParticipantPlaceholder', () => {
         expect(initialsContainer).toHaveClass('profile-background-1');
         expect(container).toHaveClass('meet-background-1');
     });
+
+    it('shows the status label next to the initials', () => {
+        render(<ParticipantPlaceholder participantName={participantName} statusLabel="Reconnecting…" />);
+
+        expect(screen.getByText('JD')).toBeInTheDocument();
+        const label = screen.getByText('Reconnecting…');
+        expect(label).toBeVisible();
+        expect(label).not.toHaveClass('sr-only');
+    });
+
+    it('keeps the status label for screen readers only in the extra small view', () => {
+        render(
+            <ParticipantPlaceholder participantName={participantName} statusLabel="Reconnecting…" viewSize="xsmall" />
+        );
+
+        expect(screen.getByText('Reconnecting…')).toHaveClass('sr-only');
+    });
+
+    it('shows no status label when none is given', () => {
+        const { container } = render(<ParticipantPlaceholder participantName={participantName} />);
+
+        expect(container.textContent).toBe('JD');
+    });
 });

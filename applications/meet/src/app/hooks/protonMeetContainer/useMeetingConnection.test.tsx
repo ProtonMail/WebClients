@@ -365,6 +365,22 @@ describe('useMeetingConnection', () => {
             expect(result.current.isReconnectingRef.current).toBe(false);
         });
 
+        it('stops the health check when the run fails after the MLS setup allowed it', async () => {
+            const params = createParams({
+                getParticipants: vi.fn().mockRejectedValue(new Error('participants failed')),
+            });
+            const { result } = renderHook(() => useMeetingConnection(params));
+
+            await act(async () => {
+                await result.current.performFullReconnection(RejoinReasonInfo.Other);
+            });
+
+            expect(mockDispatch).toHaveBeenCalledWith(setReconnectionFailed(true));
+            expect(params.disallowHealthCheck.mock.invocationCallOrder.at(-1)).toBeGreaterThan(
+                params.handleMlsSetup.mock.invocationCallOrder.at(-1)!
+            );
+        });
+
         describe('when leaving the MLS group hangs', () => {
             beforeEach(() => {
                 vi.useFakeTimers();

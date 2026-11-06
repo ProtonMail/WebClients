@@ -14,6 +14,7 @@ import {
     raiseHand,
     setActiveReaction,
 } from '@proton/meet/store/slices/chatAndReactionsSlice';
+import { setIsWebsocketReconnecting } from '@proton/meet/store/slices/connectionSlice';
 import {
     selectIsReconnecting,
     selectJoinedRoom,
@@ -64,6 +65,7 @@ interface MeetEventSim {
     chatMessage(name?: string, message?: string): void;
     sendChatMessage(message?: string): Promise<boolean>;
     setLocalParticipantHost(isHost?: boolean): boolean;
+    setWebsocketReconnecting(isReconnecting?: boolean): void;
 }
 
 declare global {
@@ -213,6 +215,11 @@ export const initMeetEventSim = ({
                 })
             );
             return true;
+        },
+
+        // Stays set while the real state is unchanged: the health check only dispatches when the polled state changes.
+        setWebsocketReconnecting(isReconnecting = true) {
+            dispatch(setIsWebsocketReconnecting(isReconnecting));
         },
     };
 

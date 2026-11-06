@@ -31,6 +31,9 @@ export const getConnectionPhase = (state: ConnectionAnnouncementState): Connecti
     if (state.isDisconnected) {
         return 'disconnected';
     }
+    if (state.isWebsocketReconnecting) {
+        return 'reconnecting';
+    }
     return 'connected';
 };
 
@@ -38,27 +41,31 @@ export const useConnectionAnnouncements = (state: ConnectionAnnouncementState) =
     const announce = useAnnounce();
 
     const phase = getConnectionPhase(state);
+    const isServerReconnecting = phase === 'reconnecting' && state.isWebsocketReconnecting;
     // null until first run so the initial steady state is not announced.
     const previousPhaseRef = useRef<ConnectionPhase | null>(null);
+    const wasServerReconnectingRef = useRef(false);
 
     useEffect(() => {
-        if (previousPhaseRef.current === null) {
-            previousPhaseRef.current = phase;
-            return;
-        }
-
-        if (phase === previousPhaseRef.current) {
-            return;
-        }
+        const previousPhase = previousPhaseRef.current;
+        const wasServerReconnecting = wasServerReconnectingRef.current;
         previousPhaseRef.current = phase;
+        wasServerReconnectingRef.current = isServerReconnecting;
 
-        const buildMessage = PHASE_MESSAGES[phase];
+        if (previousPhase === null || phase === previousPhase) {
+            return;
+        }
+        // LiveKit announces its own recovery through showReconnectedMessage, and its state can be
+        // cleared (banner closed) while it is still down, so only the meeting server's recovery is inferred.
+        const announcedPhase = wasServerReconnecting && phase === 'connected' ? 'reconnected' : phase;
+
+        const buildMessage = PHASE_MESSAGES[announcedPhase];
         if (!buildMessage) {
             return;
         }
 
         // Key by phase, not a shared 'connection-state', so a fast lost → reconnected
         // transition within the de-dup window does not drop the recovery announcement.
-        announce(buildMessage(), { dedupeKey: `connection-${phase}`, priority: AnnouncementPriority.High });
-    }, [phase, announce]);
+        announce(buildMessage(), { dedupeKey: `connection-${announcedPhase}`, priority: AnnouncementPriority.High });
+    }, [phase, isServerReconnecting, announce]);
 };

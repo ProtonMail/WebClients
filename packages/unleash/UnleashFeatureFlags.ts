@@ -384,6 +384,7 @@ enum MeetFeatureFlag {
     MeetScreenShareAudioSupportedElectronVersion = 'MeetScreenShareAudioSupportedElectronVersion',
     MeetSeamlessKeyRotationEnabled = 'MeetSeamlessKeyRotationEnabled',
     MeetShowMLSLogs = 'MeetShowMLSLogs',
+    MeetShowReconnectionBannerIfServerConnectionLost = 'MeetShowReconnectionBannerIfServerConnectionLost',
     MeetShowReloadTrackButton = 'MeetShowReloadTrackButton',
     MeetShowUpsellModalAfterMeeting = 'MeetShowUpsellModalAfterMeeting',
     MeetSimulcast = 'MeetSimulcast',
