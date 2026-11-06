@@ -19,7 +19,6 @@ import { getCoreEventSubscriber } from '~/drive-sdk/core-event-subscriber'
 
 import {
   filterDocuments,
-  HomepageViewContext,
   splitIntoSectionsByLocation,
   splitIntoSectionsByName,
   splitIntoSectionsByOwner,
@@ -28,16 +27,22 @@ import {
   useSearch,
   useType,
   type HomepageViewProviderProps,
+} from './homepage-view-sdk-utils'
+import {
+  HomepageViewContext,
   type HomepageViewState,
   type HomepageViewValue,
   type ItemsSection,
   type RecentsSort,
-} from './homepage-view-sdk-utils'
+} from '~/homepage'
 import { useRecents } from './use-recents'
 import { useTrashed } from './use-trashed'
 
-import { traceRecentsError } from '~/homepage/traceRecentsError'
-import { HOMEPAGE_TRASH_PATH } from '~/homepage/homepage-paths'
+import { traceRecentsError } from './traceRecentsError'
+import { HOMEPAGE_TRASH_PATH } from '../../../__utils/homepage-paths'
+import { useInvitationsSdkEnabled } from '~/utils/flags'
+import { useDocInvites as useDocInvitesSDK } from '~/drive-sdk/useDocInvites'
+import { useDocInvites as useDocInvitesLegacy } from '@proton/drive-store/lib/_invites/useDocInvites'
 
 export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
   const drive = getDrive()
@@ -50,6 +55,7 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
   const [contactEmails] = useContactEmails()
   const [addresses] = useAddresses()
   const [type] = useType()
+  const useDocInvites = useInvitationsSdkEnabled() ? useDocInvitesSDK : useDocInvitesLegacy
 
   const {
     recentDocuments,
@@ -167,6 +173,7 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
       type,
       myFilesRootUid: myFilesNode?.uid,
       updateMovedDocuments,
+      useDocInvites,
     }),
     [
       state,
@@ -178,6 +185,7 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
       type,
       myFilesNode,
       updateMovedDocuments,
+      useDocInvites,
     ],
   )
 

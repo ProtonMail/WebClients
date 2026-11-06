@@ -15,13 +15,10 @@ import clsx from '@proton/utils/clsx'
 import { type ComponentPropsWithoutRef, useState } from 'react'
 import { c, msgid } from 'ttag'
 import { useApplication } from '~/utils/application-context'
-import { useHomepageView } from '../../__utils/homepage-view-sdk-utils'
+import { useHomepageView, type DocInvitesHook } from '../homepageViewContext'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import * as Table from './table'
 import type { ExtendedInvitationDetails } from '@proton/docs-shared/InvitationTypes'
-import type { DocInvitesHook } from '@proton/drive-store/lib/_invites/useDocInvites'
-import { useDocInvites as useDocInvitesSDK } from '~/drive-sdk/useDocInvites'
-import { useDocInvites as useDocInvitesLegacy } from '@proton/drive-store/lib/_invites/useDocInvites'
 import { useInvitationsSdkEnabled } from '~/utils/flags'
 import { useOpenInvitedDocument } from '@proton/docs-core/Util/useOpenInvitedDocument'
 
@@ -34,13 +31,8 @@ export type InvitesTableProps = ComponentPropsWithoutRef<'div'>
 
 export function InvitesTable(props: InvitesTableProps) {
   const invitationsWithSDK = useInvitationsSdkEnabled()
-  return (
-    <InvitesTableContent
-      key={invitationsWithSDK ? 'SDK' : 'legacy'}
-      useDocInvites={invitationsWithSDK ? useDocInvitesSDK : useDocInvitesLegacy}
-      {...props}
-    />
-  )
+  const { useDocInvites } = useHomepageView()
+  return <InvitesTableContent key={invitationsWithSDK ? 'SDK' : 'legacy'} useDocInvites={useDocInvites} {...props} />
 }
 
 function InvitesTableContent(allProps: InvitesTableProps & { useDocInvites: DocInvitesHook }) {

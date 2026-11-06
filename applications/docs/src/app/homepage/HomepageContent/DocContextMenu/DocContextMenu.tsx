@@ -11,18 +11,18 @@ import { ShareButton } from './buttons/ShareButton'
 import { MoveToTrashButton } from './buttons/MoveToTrashButton'
 import { MoveButton } from './buttons/MoveButton'
 import { RenameButton } from './buttons/RenameButton'
-import { useDocumentActions } from '../../../__utils/document-actions'
-import { useEvent } from '~/utils/misc'
-import { useHomepageView } from '../../../__utils/homepage-view-sdk-utils'
+import { useDocumentActions } from '../../documentActionsContext'
+import { useEvent } from '../../useEvent'
+import { useHomepageView } from '../../homepageViewContext'
 import { RestoreFromTrashButton } from './buttons/RestoreFromTrash'
 import { DeletePermanentlyButton } from './buttons/DeletePermanently'
-import { MemberRole } from '@proton/drive/sdk'
+import type { MemberRole } from '@proton/drive/sdk'
 import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross'
 import { IcTrash } from '@proton/icons/icons/IcTrash'
 import { c } from 'ttag'
 import { ContextMenuButton } from './ContextMenuButton'
 
-export type SelectionActions = { move?: () => void; trash: () => void; disabled: boolean }
+type SelectionActions = { move?: () => void; trash: () => void; disabled: boolean }
 
 export type DocContextMenuProps = Omit<ContextMenuProps, 'children'> & {
   currentDocument: RecentDocumentsItem | undefined
@@ -157,9 +157,14 @@ function SelectionMenuItems({ actions: { move, trash, disabled }, close }: Selec
 }
 
 function canShare(document: RecentDocumentsItem) {
-  return document.effectiveRole === MemberRole.Admin
+  return isAdmin(document.effectiveRole)
 }
 
 export function canTrash(document: RecentDocumentsItem) {
-  return document.effectiveRole === MemberRole.Admin
+  return isAdmin(document.effectiveRole)
+}
+
+// `MemberRole` is imported as type only, so the Drive SDK isn't loaded at runtime.
+function isAdmin(role: `${MemberRole}` | undefined) {
+  return role === 'admin'
 }

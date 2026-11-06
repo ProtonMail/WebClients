@@ -1,30 +1,29 @@
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight'
-import { IcTrash } from '@proton/icons/icons/IcTrash'
 
 import { ContextMenuButton } from '../ContextMenuButton'
-import { useDocumentActions } from '../../../../__utils/document-actions'
+import { useDocumentActions } from '../../../documentActionsContext'
 import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import { c } from 'ttag'
 import { useState } from 'react'
 
-export type MoveToTrashButtonProps = {
+export type RestoreFromTrashButtonProps = {
   currentDocument: RecentDocumentsItem
 }
 
-export function MoveToTrashButton({ currentDocument }: MoveToTrashButtonProps) {
+export function RestoreFromTrashButton({ currentDocument }: RestoreFromTrashButtonProps) {
   const documentActions = useDocumentActions()
-  const [isLoading, setLoading] = useState(documentActions.currentlyTrashingId === currentDocument.uniqueId())
+  const [isLoading, setLoading] = useState(documentActions.currentlyRestoringId === currentDocument.uniqueId())
   return (
     <ContextMenuButton
       disabled={isLoading}
-      name={!isLoading ? c('Action').t`Move to trash` : c('Action').t`Trashing...`}
-      icon={!isLoading ? <IcTrash className="mr-2" /> : <IcArrowRotateRight className="mr-2 animate-spin" />}
+      name={!isLoading ? c('Action').t`Restore from trash` : c('Action').t`Restoring...`}
+      icon={!isLoading ? <IcArrowRotateRight className="mr-2" /> : <IcArrowRotateRight className="mr-2 animate-spin" />}
       action={async () => {
         if (isLoading) {
           return
         }
         setLoading(true)
-        await documentActions.trash(currentDocument)
+        await documentActions.restore(currentDocument)
         setLoading(false)
       }}
       close={() => {}}

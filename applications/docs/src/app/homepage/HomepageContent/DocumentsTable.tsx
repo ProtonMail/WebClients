@@ -39,21 +39,19 @@ import { Fragment, useEffect, useRef, useState } from 'react'
 import { c, msgid } from 'ttag'
 import { useApplication } from '~/utils/application-context'
 import { useBulkMoveEnabled, useBulkTrashEnabled } from '~/utils/flags'
-import { useEvent } from '~/utils/misc'
-import { useDocumentActions } from '../../__utils/document-actions'
-import type { RecentsSort } from '../../__utils/homepage-view-sdk-utils'
-import { useHomepageView, type ItemsSection, type ItemsSectionId } from '../../__utils/homepage-view-sdk-utils'
-import { isMyDocument } from '~/homepage/is-my-document'
-import { useBulkMove } from '../../__utils/useBulkMove'
-import { useBulkTrash } from '../../__utils/useBulkTrash'
-import { useRowSelection, type RowSelection } from '~/homepage/useRowSelection'
+import { useEvent } from '../useEvent'
+import { useDocumentActions } from '../documentActionsContext'
+import type { RecentsSort } from '../homepageViewContext'
+import { useHomepageView, type ItemsSection, type ItemsSectionId } from '../homepageViewContext'
+import { isMyDocument } from '../is-my-document'
+import { useRowSelection, type RowSelection } from '../useRowSelection'
 import { DocContextMenu, canTrash } from './DocContextMenu/DocContextMenu'
 import { useContextMenu } from './DocContextMenu/context'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import * as Table from './table'
 
-import { getOwnerName } from '~/homepage/get-owner-name'
-import { useDoubleClick } from '~/homepage/useDoubleClick'
+import { getOwnerName } from '../get-owner-name'
+import { useDoubleClick } from '../useDoubleClick'
 
 // table
 // -----
@@ -78,8 +76,7 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
   const selectableIdsSet = new Set(selectableIds)
   const resetKey = `${state.view}|${'query' in state ? state.query : ''}|${type}`
   const selection = useRowSelection(selectableIds, resetKey)
-  const { trash, isTrashing } = useBulkTrash()
-  const { move, moveItemsModal } = useBulkMove()
+  const { bulkTrash, isBulkTrashing: isTrashing, bulkMove } = useDocumentActions()
   const hasSelection = selection.selectedIds.length > 0
   const selectedDocuments = allItems.filter((item) => selection.isSelected(item.uniqueId()))
   const bulkMoveEnabled = useBulkMoveEnabled()
@@ -90,9 +87,9 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
     const ids = documents.map((document) => document.uniqueId())
     selection.set(selection.selectedIds.filter((id) => !ids.includes(id)))
   })
-  const moveSelection = () => move(selectedDocuments, deselect)
+  const moveSelection = () => bulkMove(selectedDocuments, deselect)
   const trashSelection = async () => {
-    const failed = await trash(selectedDocuments)
+    const failed = await bulkTrash(selectedDocuments)
     if (failed.length) {
       selection.set(failed.map((item) => item.uniqueId()))
     } else {
@@ -198,7 +195,6 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
         open={contextMenu.open}
         position={contextMenu.position}
       />
-      {moveItemsModal}
     </>
   )
 }

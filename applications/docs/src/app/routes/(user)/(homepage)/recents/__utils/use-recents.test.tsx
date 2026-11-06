@@ -1,7 +1,7 @@
 import type { NotificationsManager } from '@proton/app-context/notifications/manager'
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext'
 import type { Application } from '@proton/docs-core/Application/Application'
-import type { RecentDocumentsItemValue } from '~/homepage/recent-documents-item-value'
+import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
 import {
   type DriveEvent,
   DriveEventType,
@@ -16,7 +16,7 @@ import type { ReactNode } from 'react'
 import { ApplicationProvider } from '~/utils/application-context'
 import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
 import { useRecents } from './use-recents'
-import { useRecentsStore } from '~/homepage/use-recents-store'
+import { useRecentsStore } from './useRecentsStore'
 
 jest.mock('@proton/account/addresses/hooks', () => ({
   useAddresses: () => [undefined, false],

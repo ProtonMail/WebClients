@@ -9,10 +9,10 @@ import { generateNodeUid } from '@proton/drive/sdk'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { act, renderHook, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import type { ReactNode } from 'react'
+import { type ReactNode, useContext } from 'react'
 import { ApplicationProvider } from '~/utils/application-context'
-import { DocumentActionsProvider, useDocumentActions } from './document-actions'
-import { HomepageViewContext, type HomepageViewValue } from './homepage-view-sdk-utils'
+import { DocumentActionsProvider } from './document-actions'
+import { DocumentActionsContext, HomepageViewContext, type HomepageViewValue } from '~/homepage'
 
 jest.mock('@proton/docs-core/DriveSDK/trash', () => ({
   trashDocument: jest.fn(),
@@ -54,7 +54,7 @@ function renderDocumentActions() {
     metrics: { reportHomepageTelemetry },
   } as unknown as Application
 
-  const { result } = renderHook(() => useDocumentActions(), {
+  const { result } = renderHook(() => useContext(DocumentActionsContext)!, {
     wrapper: ({ children }: { children: ReactNode }) => (
       <AuthenticationContext.Provider value={{ getLocalID: () => undefined } as any}>
         <ApplicationProvider application={application}>
