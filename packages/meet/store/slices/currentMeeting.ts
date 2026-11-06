@@ -165,6 +165,7 @@ export const selectInstantMeeting = (state: MeetState) => state.currentMeeting.i
 export const selectDisplayName = (state: MeetState) => state.currentMeeting.displayName;
 
 export const selectMlsGroupState = (state: MeetState) => state.currentMeeting.mlsGroupState;
+export const selectMlsGroupEpoch = (state: MeetState) => state.currentMeeting.mlsGroupState?.epoch;
 export const selectKeyRotationLogs = (state: MeetState) => state.currentMeeting.keyRotationLogs;
 
 export const selectMeetingDurationMs = (state: MeetState) => state.currentMeeting.meetingDurationMs;

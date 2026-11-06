@@ -7,6 +7,7 @@ import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting'
 import { useMeetDispatch, useMeetStore } from '@proton/meet/store/hooks';
 import { lowerHand, raiseHand, selectRaisedHands } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { selectJoinedRoom } from '@proton/meet/store/slices/connectionSlice';
+import { selectMlsGroupEpoch } from '@proton/meet/store/slices/currentMeeting';
 import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -47,6 +48,7 @@ export const useRaiseHandReceiver = () => {
         // MeetContainer unmounting after useMeetingCleanup), so packets still decrypting from before must not apply.
         let firstArrivalOfSession = 1;
         let wasJoined = selectJoinedRoom(store.getState());
+        let lastEpoch = selectMlsGroupEpoch(store.getState());
         // A decrypt retry can finish after a later packet about the same hand, so the latest arrival wins.
         const lastAppliedArrivalBySubject = new Map<string, number>();
 
@@ -107,6 +109,9 @@ export const useRaiseHandReceiver = () => {
                     encryptedData: binaryStringToUint8Array(decoded.message),
                     reportMeetError,
                     failureLabel: 'Failed to decrypt raise hand message',
+                    isSuperseded: () =>
+                        topic === PublishableDataTypes.RaiseHand &&
+                        (lastAppliedArrivalBySubject.get(participant.identity) ?? 0) > arrivalNumber,
                 });
                 if (!decrypted) {
                     return;
@@ -201,11 +206,20 @@ export const useRaiseHandReceiver = () => {
         };
 
         const unsubscribeFromStore = store.subscribe(() => {
-            const isJoined = selectJoinedRoom(store.getState());
+            const state = store.getState();
+            const isJoined = selectJoinedRoom(state);
             if (wasJoined && !isJoined) {
                 firstArrivalOfSession = arrivalCount + 1;
             }
             wasJoined = isJoined;
+
+            const epoch = selectMlsGroupEpoch(state);
+            if (epoch !== lastEpoch) {
+                lastEpoch = epoch;
+                if (epoch !== undefined && selectRaisedHands(state).includes(room.localParticipant.identity)) {
+                    void publish(true);
+                }
+            }
         });
 
         room.on('dataReceived', handleDataReceived);

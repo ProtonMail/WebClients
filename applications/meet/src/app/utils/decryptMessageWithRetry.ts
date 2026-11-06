@@ -1,3 +1,5 @@
+import { logger } from '@protontech/logger';
+
 import type { ReportMeetError } from '@proton/meet/hooks/useMeetErrorReporting';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -11,13 +13,18 @@ export const decryptMessageWithRetry = async ({
     encryptedData,
     reportMeetError,
     failureLabel,
+    isSuperseded = () => false,
 }: {
     meetCoreClient: MeetCoreClient;
     encryptedData: Parameters<MeetCoreClient['decryptMessage']>[0];
     reportMeetError: ReportMeetError;
     failureLabel: string;
+    isSuperseded?: () => boolean;
 }): Promise<DecryptedMessageInfoData | undefined> => {
-    for (const delay of DECRYPT_RETRY_DELAYS_MS) {
+    let hasThrown = false;
+
+    for (let attempt = 1; attempt <= DECRYPT_RETRY_DELAYS_MS.length; attempt++) {
+        const delay = DECRYPT_RETRY_DELAYS_MS[attempt - 1];
         if (delay > 0) {
             await wait(delay);
         }
@@ -27,10 +34,23 @@ export const decryptMessageWithRetry = async ({
             if (result) {
                 return result;
             }
-        } catch {
-            reportMeetError(failureLabel, { level: 'error' });
+        } catch (error) {
+            hasThrown = true;
+            if (attempt < DECRYPT_RETRY_DELAYS_MS.length) {
+                logger.info(`${failureLabel}, retrying`, { attempt, error });
+            }
         }
     }
 
+    if (!hasThrown) {
+        return undefined;
+    }
+
+    if (isSuperseded()) {
+        logger.info(`${failureLabel}, superseded by a later message`);
+        return undefined;
+    }
+
+    reportMeetError(failureLabel, { level: 'error' });
     return undefined;
 };
