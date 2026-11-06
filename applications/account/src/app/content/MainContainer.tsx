@@ -34,6 +34,7 @@ import AppLink from '@proton/components/components/link/AppLink';
 import CustomLogo from '@proton/components/components/logo/CustomLogo';
 import Logo from '@proton/components/components/logo/Logo';
 import PassForBusinessLogo from '@proton/components/components/logo/PassForBusinessLogo';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import TopNavbarUpsell from '@proton/components/components/topnavbar/TopNavbarUpsell';
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
@@ -63,7 +64,12 @@ import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotific
 import useShowThemeSelection from '@proton/components/hooks/useShowThemeSelection';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
 import useToggle from '@proton/hooks/useToggle';
+import { IcBoltFilled } from '@proton/icons/icons/IcBoltFilled';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';
+import { OfferDealModal } from '@proton/offers-delivery/components/OfferDealModal';
+import { OfferNavbarButton } from '@proton/offers-delivery/components/OfferNavbarButton';
+import { useActiveOffer } from '@proton/offers-delivery/components/useActiveOffer';
+import { CampaignVariant } from '@proton/offers-delivery/interface';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getToApp } from '@proton/shared/lib/authentication/apps';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
@@ -86,6 +92,7 @@ import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
 import MspSettingsRouter from '../containers/msp/MspSettingsRouter';
 import OrganizationSettingsRouter from '../containers/organization/OrganizationSettingsRouter';
 import AccountOfferTopBanner from '../offers/AccountOfferTopBanner';
+import { useOfferUpgrade } from '../offers/useOfferUpgrade';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
 import AccountSidebar from './AccountSidebar';
@@ -377,13 +384,30 @@ const MainContainer = () => {
         </TopBanners>
     );
 
+    const onUpgrade = useOfferUpgrade();
+    const offer = useActiveOffer(CampaignVariant.MODAL, { onUpgrade });
+    const [offerModalProps, setOfferModalOpen, renderOfferModal] = useModalState();
+
+    const offerButton = offer ? (
+        <OfferNavbarButton
+            offer={offer}
+            onClick={() => setOfferModalOpen(true)}
+            icon={<IcBoltFilled size={5} />}
+            backgroundColor="linear-gradient(to right, #fa5c37 0%, #392289 55.288%, #170a31 100%)"
+            color="white"
+            className="text-uppercase text-bold"
+            label={c('Action').t`Special Offer`}
+        />
+    ) : (
+        <TopNavbarUpsell offerProps={{ ignoreOnboarding: true }} app={app} />
+    );
+
     const header = (
         <PrivateHeader
             userDropdown={
                 <UserDropdown app={app} sessionOptions={{ path: pathPrefix }} onOpenChat={handleOpenZendeskChat} />
             }
-            // No onboarding in account
-            upsellButton={<TopNavbarUpsell offerProps={{ ignoreOnboarding: true }} app={app} />}
+            upsellButton={offerButton}
             title={c('Title').t`Settings`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
@@ -497,6 +521,7 @@ const MainContainer = () => {
             <NavigationProvider prefix={pathPrefix}>
                 <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
                     <AccountStartupModals />
+                    {renderOfferModal && offer && <OfferDealModal offer={offer} {...offerModalProps} />}
                     <FeatureTour />
                     <Switch>
                         <Route path={anyAccountAppRoute}>
