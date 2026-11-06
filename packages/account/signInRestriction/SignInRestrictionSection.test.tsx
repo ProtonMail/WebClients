@@ -7,6 +7,7 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/inte
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import { updateSignInRestriction } from '@proton/shared/lib/api/settings';
+import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import {
     LOGIN_IDENTIFIER_POLICY,
     RESTRICTED_LOGIN_IDENTIFIER_POLICY,
@@ -17,6 +18,12 @@ import { mockUseAddresses } from '../testing/mockUseAddresses';
 import { mockUseUser } from '../testing/mockUseUser';
 import { useUserSettings } from '../userSettings/hooks';
 import SignInRestrictionSection from './SignInRestrictionSection';
+
+window.ResizeObserver = jest.fn().mockImplementation(() => ({
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+    disconnect: jest.fn(),
+}));
 
 jest.mock('../userSettings/hooks');
 const mockedUseUserSettings = useUserSettings as jest.Mock;
@@ -45,8 +52,18 @@ describe('SignInRestrictionSection', () => {
         mockedUseUserSettings.mockReturnValue([{ LoginIdentifierPolicy: LOGIN_IDENTIFIER_POLICY.ALL }]);
     });
 
-    it('mentions the primary email address and username when the account has an address', () => {
-        mockUseAddresses([[buildAddress({ Email: 'eric.norbert@proton.me', Status: 1, Receive: 1, Send: 1 })]]);
+    it('mentions the username and its matching Proton address', () => {
+        mockUseAddresses([
+            [
+                buildAddress({
+                    Email: 'eric.norbert@proton.me',
+                    Type: ADDRESS_TYPE.TYPE_ORIGINAL,
+                    Status: 1,
+                    Receive: 1,
+                    Send: 1,
+                }),
+            ],
+        ]);
 
         renderSection();
 
@@ -54,11 +71,53 @@ describe('SignInRestrictionSection', () => {
             screen.getByText((_, element) => {
                 return (
                     element?.textContent ===
-                    'When sign-in is restricted, only eric.norbert@proton.me and your username eric.norbert can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.'
+                    'When sign-in is restricted, you can only sign in with your original username eric.norbert, either on its own or as eric.norbert@proton.me. Your other email addresses won’t work for sign-in.'
                 );
             })
         ).toBeInTheDocument();
-        expect(screen.getByLabelText('Restrict sign-in to primary email address')).not.toBeChecked();
+        expect(screen.getByLabelText('Restrict sign-in to username and matching Proton addresses')).not.toBeChecked();
+    });
+
+    it('appends every Proton domain with an enabled original address', () => {
+        mockUseAddresses([
+            [
+                buildAddress({ Email: 'eric.norbert@proton.me', Type: ADDRESS_TYPE.TYPE_ORIGINAL, Status: 1 }),
+                buildAddress({ Email: 'eric.norbert@protonmail.com', Type: ADDRESS_TYPE.TYPE_ORIGINAL, Status: 1 }),
+                buildAddress({ Email: 'eric.norbert@protonmail.ch', Type: ADDRESS_TYPE.TYPE_ORIGINAL, Status: 1 }),
+            ],
+        ]);
+
+        renderSection();
+
+        expect(
+            screen.getByText((_, element) => {
+                return (
+                    element?.textContent ===
+                    'When sign-in is restricted, you can only sign in with your original username eric.norbert, either on its own or as eric.norbert@proton.me, @protonmail.com, or @protonmail.ch. Your other email addresses won’t work for sign-in.'
+                );
+            })
+        ).toBeInTheDocument();
+    });
+
+    it('does not append a Proton domain whose original address is disabled', () => {
+        mockUseAddresses([
+            [
+                buildAddress({ Email: 'eric.norbert@proton.me', Type: ADDRESS_TYPE.TYPE_ORIGINAL, Status: 1 }),
+                buildAddress({ Email: 'eric.norbert@protonmail.com', Type: ADDRESS_TYPE.TYPE_ORIGINAL, Status: 1 }),
+                buildAddress({ Email: 'eric.norbert@protonmail.ch', Type: ADDRESS_TYPE.TYPE_ORIGINAL, Status: 0 }),
+            ],
+        ]);
+
+        renderSection();
+
+        expect(
+            screen.getByText((_, element) => {
+                return (
+                    element?.textContent ===
+                    'When sign-in is restricted, you can only sign in with your original username eric.norbert, either on its own or as eric.norbert@proton.me, or @protonmail.com. Your other email addresses won’t work for sign-in.'
+                );
+            })
+        ).toBeInTheDocument();
     });
 
     it('mentions only the username when the account has no address', () => {
@@ -79,7 +138,17 @@ describe('SignInRestrictionSection', () => {
 
     it('mentions only the email when the account has no username', () => {
         mockUseUser([{ Name: '' }]);
-        mockUseAddresses([[buildAddress({ Email: 'eric.norbert@proton.me', Status: 1, Receive: 1, Send: 1 })]]);
+        mockUseAddresses([
+            [
+                buildAddress({
+                    Email: 'eric.norbert@proton.me',
+                    Type: ADDRESS_TYPE.TYPE_ORIGINAL,
+                    Status: 1,
+                    Receive: 1,
+                    Send: 1,
+                }),
+            ],
+        ]);
 
         renderSection();
 
@@ -121,11 +190,55 @@ describe('SignInRestrictionSection', () => {
         expect(toggle).not.toBeChecked();
 
         fireEvent.click(toggle);
+        expect(mockedApi).not.toHaveBeenCalled();
+
+        fireEvent.click(screen.getByText('Restrict sign-in', { selector: 'button' }));
 
         await waitFor(() => {
             expect(mockedApi).toHaveBeenCalledWith(
                 updateSignInRestriction({ LoginIdentifierPolicy: RESTRICTED_LOGIN_IDENTIFIER_POLICY })
             );
         });
+    });
+
+    it('names the username and its matching Proton addresses in the confirmation', () => {
+        mockUseAddresses([
+            [
+                buildAddress({
+                    Email: 'eric.norbert@proton.me',
+                    Type: ADDRESS_TYPE.TYPE_ORIGINAL,
+                    Status: 1,
+                    Receive: 1,
+                    Send: 1,
+                }),
+            ],
+        ]);
+
+        renderSection();
+        fireEvent.click(screen.getByLabelText('Restrict sign-in to username and matching Proton addresses'));
+
+        expect(
+            screen.getByText((_, element) => {
+                return (
+                    element?.tagName === 'P' &&
+                    element.textContent ===
+                        'By turning this on, you’ll only be able to sign in with your original username eric.norbert, either on its own or as eric.norbert@proton.me.'
+                );
+            })
+        ).toBeInTheDocument();
+        expect(
+            screen.getByText('Your other email addresses won’t work for sign-in until you turn this off.')
+        ).toBeInTheDocument();
+    });
+
+    it('does not restrict sign-in when the confirmation is cancelled', () => {
+        mockUseAddresses([[]]);
+
+        renderSection();
+        fireEvent.click(screen.getByLabelText('Restrict sign-in to username'));
+        fireEvent.click(screen.getByText('Cancel', { selector: 'button' }));
+
+        expect(mockedApi).not.toHaveBeenCalled();
+        expect(screen.getByLabelText('Restrict sign-in to username')).not.toBeChecked();
     });
 });

@@ -947,7 +947,7 @@ export const getAccountAppRoutes = ({
                         available:
                             flags.showSignInRestrictionToggle && getCanShowSignInRestriction({ user, addresses }),
                         keywords: [
-                            c('Label').t`Restrict sign-in to primary email address`,
+                            c('Label').t`Restrict sign-in to username and matching ${BRAND_NAME} addresses`,
                             c('Label').t`Restrict sign-in to username`,
                             c('Label').t`Restrict sign-in to email address`,
                         ],

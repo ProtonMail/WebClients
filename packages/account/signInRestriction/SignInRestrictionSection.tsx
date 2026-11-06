@@ -2,16 +2,19 @@ import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateSignInRestriction } from '@proton/shared/lib/api/settings';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import {
     LOGIN_IDENTIFIER_POLICY,
     RESTRICTED_LOGIN_IDENTIFIER_POLICY,
@@ -21,36 +24,52 @@ import { useAddresses } from '../addresses/hooks';
 import { useUser } from '../user/hooks';
 import { userSettingsActions } from '../userSettings';
 import { useUserSettings } from '../userSettings/hooks';
+import SignInRestrictionConfirmModal from './SignInRestrictionConfirmModal';
 import { getIsSignInRestricted, getSignInIdentifiers } from './helpers';
 
-const getDescriptionAndLabel = ({ username, primaryEmail }: ReturnType<typeof getSignInIdentifiers>) => {
-    const usernameElement = <strong key="username">{username}</strong>;
+const getUsernameAndAddressesDescription = (username: string, signInDomains: string[]) => {
+    const [firstDomain, secondDomain, thirdDomain] = signInDomains;
+    const firstEmail = `${username}@${firstDomain}`;
 
-    if (!primaryEmail) {
-        return {
-            // translator: full sentence is: When sign-in is restricted, only your username <eric.norbert> can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.
-            description: c('Info')
-                .jt`When sign-in is restricted, only your username ${usernameElement} can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.`,
-            label: c('Label').t`Restrict sign-in to username`,
-        };
+    if (thirdDomain) {
+        // translator: full sentence is: When sign-in is restricted, you can only sign in with your original username <eric.norbert>, either on its own or as <eric.norbert@proton.me>, <@protonmail.com>, or <@protonmail.ch>. Your other email addresses won’t work for sign-in.
+        return c('Info')
+            .t`When sign-in is restricted, you can only sign in with your original username **${username}**, either on its own or as **${firstEmail}**, **@${secondDomain}**, or **@${thirdDomain}**. Your other email addresses won’t work for sign-in.`;
     }
 
-    const primaryEmailElement = <strong key="primary-email">{primaryEmail}</strong>;
+    if (secondDomain) {
+        // translator: full sentence is: When sign-in is restricted, you can only sign in with your original username <eric.norbert>, either on its own or as <eric.norbert@proton.me>, or <@protonmail.com>. Your other email addresses won’t work for sign-in.
+        return c('Info')
+            .t`When sign-in is restricted, you can only sign in with your original username **${username}**, either on its own or as **${firstEmail}**, or **@${secondDomain}**. Your other email addresses won’t work for sign-in.`;
+    }
 
+    // translator: full sentence is: When sign-in is restricted, you can only sign in with your original username <eric.norbert>, either on its own or as <eric.norbert@proton.me>. Your other email addresses won’t work for sign-in.
+    return c('Info')
+        .t`When sign-in is restricted, you can only sign in with your original username **${username}**, either on its own or as **${firstEmail}**. Your other email addresses won’t work for sign-in.`;
+};
+
+const getDescriptionAndLabel = ({ username, primaryEmail, signInDomains }: ReturnType<typeof getSignInIdentifiers>) => {
     if (!username) {
         return {
             // translator: full sentence is: When sign-in is restricted, only your email <eric.norbert@example.com> can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.
             description: c('Info')
-                .jt`When sign-in is restricted, only your email ${primaryEmailElement} can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.`,
+                .t`When sign-in is restricted, only your email **${primaryEmail}** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.`,
             label: c('Label').t`Restrict sign-in to email address`,
         };
     }
 
+    if (!signInDomains.length) {
+        return {
+            // translator: full sentence is: When sign-in is restricted, only your username <eric.norbert> can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.
+            description: c('Info')
+                .t`When sign-in is restricted, only your username **${username}** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.`,
+            label: c('Label').t`Restrict sign-in to username`,
+        };
+    }
+
     return {
-        // translator: full sentence is: When sign-in is restricted, only <eric.norbert@proton.me> and your username <eric.norbert> can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.
-        description: c('Info')
-            .jt`When sign-in is restricted, only ${primaryEmailElement} and your username ${usernameElement} can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.`,
-        label: c('Label').t`Restrict sign-in to primary email address`,
+        description: getUsernameAndAddressesDescription(username, signInDomains),
+        label: c('Label').t`Restrict sign-in to username and matching ${BRAND_NAME} addresses`,
     };
 };
 
@@ -63,8 +82,10 @@ const SignInRestrictionSection = () => {
     const dispatch = useDispatch();
     const handleError = useErrorHandler();
     const { createNotification } = useNotifications();
+    const [confirmModalProps, setConfirmModalOpen, renderConfirmModal] = useModalState();
 
-    const { description, label } = getDescriptionAndLabel(getSignInIdentifiers(user, addresses));
+    const identifiers = getSignInIdentifiers(user, addresses);
+    const { description, label } = getDescriptionAndLabel(identifiers);
 
     const handleChange = async (restricted: boolean) => {
         try {
@@ -79,7 +100,7 @@ const SignInRestrictionSection = () => {
 
     return (
         <SettingsSectionWide>
-            <SettingsParagraph>{description}</SettingsParagraph>
+            <SettingsParagraph>{getBoldFormattedText(description, 'text-break')}</SettingsParagraph>
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="sign-in-restriction-toggle" className="text-semibold">
@@ -91,10 +112,26 @@ const SignInRestrictionSection = () => {
                         id="sign-in-restriction-toggle"
                         checked={getIsSignInRestricted(userSettings.LoginIdentifierPolicy)}
                         loading={loading}
-                        onChange={({ target }) => withLoading(handleChange(target.checked))}
+                        onChange={({ target }) => {
+                            if (target.checked) {
+                                setConfirmModalOpen(true);
+                                return;
+                            }
+                            void withLoading(handleChange(false));
+                        }}
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>
+            {renderConfirmModal && (
+                <SignInRestrictionConfirmModal
+                    {...confirmModalProps}
+                    identifiers={identifiers}
+                    onConfirm={() => {
+                        confirmModalProps.onClose();
+                        void withLoading(handleChange(true));
+                    }}
+                />
+            )}
         </SettingsSectionWide>
     );
 };
