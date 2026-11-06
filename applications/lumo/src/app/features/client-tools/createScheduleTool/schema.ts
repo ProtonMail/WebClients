@@ -92,8 +92,21 @@ export const createScheduleSchema = {
         connectors: {
             type: 'array',
             description:
-                'Connector IDs needed for the task. Choose only from the registered connector catalog in the tool description, or use an empty array if none are needed. Selecting a connector does not configure, connect, enable, or grant access to it.',
-            items: { type: 'string', pattern: '\\S' },
+                'Connectors needed for the task. Choose only from the registered connector catalog in the tool description, or use an empty array if none are needed. Selecting a connector does not configure, connect, enable, or grant access to it.',
+            items: {
+                type: 'object',
+                properties: {
+                    id: { type: 'string', pattern: '\\S', description: 'The registered connector ID.' },
+                    tools: {
+                        type: 'array',
+                        description:
+                            'Titles of tools under this connector that the task wishes to use, explaining why access is needed. These titles are explanatory only and do not restrict tool execution.',
+                        items: { type: 'string', pattern: '\\S' },
+                    },
+                },
+                required: ['id', 'tools'],
+                additionalProperties: false,
+            },
         },
     },
     required: ['name', 'instructions', 'recurrenceRule', 'connectors'],

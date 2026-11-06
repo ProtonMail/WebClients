@@ -21,33 +21,42 @@ beforeEach(() => {
 test('editing legacy access starts unrestricted and lets the user select read-only access', () => {
     const onChange = jest.fn();
     render(<ConnectorList editMode value={[{ id: 'mail', label: 'Mail' }]} onChange={onChange} />);
-    const toggle = screen.getByRole('checkbox', { name: 'Read-only access for Mail' });
-    expect(toggle).not.toBeChecked();
-    fireEvent.click(toggle);
+    expect(screen.queryByRole('button', { name: 'Read only' })).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Add connector' }).closest('fieldset')).toHaveTextContent('Mail');
+    fireEvent.click(screen.getByRole('button', { name: 'Permissions' }));
+    const readOnly = screen.getByRole('button', { name: 'Read only' });
+    expect(readOnly).toHaveAttribute('aria-pressed', 'false');
+    fireEvent.click(readOnly);
     expect(onChange).toHaveBeenCalledWith([{ id: 'mail', label: 'Mail', readOnly: true }]);
 });
 
 test('the user can allow write tools without removing the connector', () => {
     const onChange = jest.fn();
     render(<ConnectorList editMode value={[{ id: 'mail', label: 'Mail', readOnly: true }]} onChange={onChange} />);
-    fireEvent.click(screen.getByRole('checkbox', { name: 'Read-only access for Mail' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Permissions' }));
+    fireEvent.click(screen.getByRole('button', { name: 'Read and write' }));
     expect(onChange).toHaveBeenCalledWith([{ id: 'mail', label: 'Mail', readOnly: false }]);
 });
 
-test('older desktops cannot silently relax an existing read-only selection', () => {
+test('older desktops disable read-only access but allow an explicit change to read and write', () => {
     jest.mocked(supportsDesktopScheduleReadOnly).mockReturnValue(false);
-    render(<ConnectorList editMode value={[{ id: 'mail', label: 'Mail', readOnly: true }]} onChange={jest.fn()} />);
-    expect(screen.getByRole('checkbox', { name: 'Read-only access for Mail' })).toBeDisabled();
-    expect(
-        screen.getByText('Update Lumo Desktop to use read-only connector access for this task.')
-    ).toBeInTheDocument();
+    const onChange = jest.fn();
+    render(<ConnectorList editMode value={[{ id: 'mail', label: 'Mail', readOnly: true }]} onChange={onChange} />);
+    fireEvent.click(screen.getByRole('button', { name: 'Permissions' }));
+    const readOnly = screen.getByRole('button', { name: 'Read only' });
+    expect(readOnly).toBeDisabled();
+    expect(readOnly).toHaveAttribute('title', 'Update Lumo Desktop to use read-only connector access for this task.');
+    const readAndWrite = screen.getByRole('button', { name: 'Read and write' });
+    expect(readAndWrite).not.toBeDisabled();
+    fireEvent.click(readAndWrite);
+    expect(onChange).toHaveBeenCalledWith([{ id: 'mail', label: 'Mail', readOnly: false }]);
 });
 
-test.each([true, false])('new connector selections default to read-only when support is %s', (supported) => {
+test.each([true, false])('new connector selections stay unrestricted when read-only support is %s', (supported) => {
     jest.mocked(supportsDesktopScheduleReadOnly).mockReturnValue(supported);
     const onChange = jest.fn();
     render(<ConnectorList editMode value={[]} onChange={onChange} />);
     fireEvent.click(screen.getByRole('button', { name: 'Add connector' }));
     fireEvent.click(screen.getByRole('button', { name: 'Mail' }));
-    expect(onChange).toHaveBeenCalledWith([{ id: 'mail', label: 'Mail', icon: undefined, readOnly: supported }]);
+    expect(onChange).toHaveBeenCalledWith([{ id: 'mail', label: 'Mail', icon: undefined }]);
 });

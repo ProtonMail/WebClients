@@ -13,8 +13,13 @@ const CREATE_SCHEDULE_TOOL_RESPONSE_IDENTIFIER = 'create_schedule_response';
 
 /** A schedule draft for review. No schedule is saved or activated by this tool. */
 export type CreateScheduleToolArguments = Omit<ScheduleDetails, 'autoApprove' | 'notifyOnComplete' | 'connectors'> & {
-    /** Connector identifiers; display metadata and review preferences belong to the frontend. */
-    connectors: string[];
+    /** Requested connector access and explanatory tool titles for the user's review. */
+    connectors: {
+        /** Registered connector identifier. */
+        id: string;
+        /** Tool titles explaining the request; not an execution allowlist. */
+        tools: string[];
+    }[];
 };
 
 const createScheduleTool = {
@@ -26,6 +31,7 @@ const createScheduleTool = {
             '\n\nGather details with ask_user_questions:\n' +
             'Strongly prefer using the ask_user_questions client tool first, when available, unless the conversation already provides enough detail about the task instructions, recurrence rules, and any desktop tools needed. ' +
             'Clarify whether the task needs desktop tools and, if so, which connectors it should use from the registered catalog. ' +
+            'List the titles of the connector tools the task wishes to use to give user hints about why connector access is needed. These titles do not restrict execution. ' +
             'Ask for missing recurrence details, including the run time and relevant days or date, and instruction details such as what to do, which sources to read, and the desired output. ' +
             'When asking scheduling questions, offer only recurrence patterns supported by the schema. ' +
             'Default to always_local_time without asking a timezone question. Ask about a fixed timezone only when the user requests one or the task instructions strongly suggest one. ' +
@@ -73,14 +79,22 @@ export const createScheduleToolExecutor: ClientToolExecutor = {
             id,
             name: display_name,
             description,
-            tools: tools?.map(({ name, title, description }) => ({ name, title, description })) ?? [],
+            tools:
+                tools?.map(({ name, title, description }) => ({
+                    name,
+                    title: title ?? name,
+                    description,
+                })) ?? [],
         }));
         return [
             {
                 ...createScheduleTool,
                 function: {
                     ...createScheduleTool.function,
-                    description: `${createScheduleTool.function.description}\n\nCurrent user IANA timezone: ${currentTimezone}. This is context for interpreting times; keep always_local_time unless a fixed timezone is needed.\n\nRegistered connector catalog: ${JSON.stringify(catalog)}`,
+                    description:
+                        `${createScheduleTool.function.description}\n\n` +
+                        `Current user IANA timezone: ${currentTimezone}. This is context for interpreting times; keep always_local_time unless a fixed timezone is needed.\n\n` +
+                        `Registered connector catalog: ${JSON.stringify(catalog)}`,
                 },
             },
         ];
