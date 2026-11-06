@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { getIsSystemGroup } from '@proton/account/groups/groupFlags';
 import type { SectionConfig, SidebarConfig } from '@proton/components/containers/layout/interface';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
+import { getSecurityPageAvailability } from '@proton/console/organization/getSecurityPageAvailability';
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
 import { IcBuildings } from '@proton/icons/icons/IcBuildings';
 import { IcCardIdentity } from '@proton/icons/icons/IcCardIdentity';
@@ -24,7 +25,6 @@ import {
     BRAND_NAME,
     LUMO_APP_NAME,
     ORGANIZATION_STATE,
-    ORGANIZATION_TWOFA_SETTING,
     PROTON_SENTINEL_NAME,
 } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
@@ -148,11 +148,7 @@ export const getOrganizationAppRoutes = ({
         isOrgConfigured &&
         isOrganizationOneOf(organization, [PLANS.BUNDLE_BIZ_2025, PLANS.VISIONARY, PLANS.BUNDLE_PRO_2024]);
 
-    const canShowSecuritySection =
-        permissions['account.security_policy.read'] &&
-        (hasActiveOrganizationKey || hasActiveOrganization) &&
-        organization &&
-        (organization.MaxMembers > 1 || organization.TwoFactorRequired !== ORGANIZATION_TWOFA_SETTING.NOT_REQUIRED);
+    const securityPageAvailability = getSecurityPageAvailability({ organization, entitlements, permissions });
 
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`
@@ -450,12 +446,12 @@ export const getOrganizationAppRoutes = ({
             text: c('Title').t`Security`,
             to: '/authentication-security',
             icon: IcShield,
-            available: canShowSecuritySection,
+            available: securityPageAvailability.security,
             subsections: [
                 {
                     text: c('Title').t`${PROTON_SENTINEL_NAME} for organizations`,
                     id: 'sentinel',
-                    available: canShowB2BActivityMonitorEvents,
+                    available: securityPageAvailability.sentinel,
                     keywords: [
                         c('account_search_index').t`Advanced account protection`,
                         c('account_search_index').t`Protection from cyber attacks`,
