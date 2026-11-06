@@ -47,6 +47,12 @@
             "prConcurrentLimit": 0
         },
         {
+            "description": "Base of the web app images in ci/images/prod.Dockerfile. Harbor gives its tags no release timestamp, so minimumReleaseAge would hold every version back.",
+            "groupName": "apache base image",
+            "matchPackageNames": ["harbor.protontech.ch/devops/base-images/apache"],
+            "minimumReleaseAge": null
+        },
+        {
             "groupName": "Playwright",
             "matchPackageNames": ["/playwright/", "!@vitest/**"]
         },
