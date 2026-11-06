@@ -927,6 +927,12 @@
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
         "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }"
+      ],
+      "Add payment method": [
+        "Adăugare metodă de plată"
+      ],
+      "Cancel trial": [
+        "Anulare perioadă de probare"
       ]
     },
     "Actions message": {
@@ -3601,6 +3607,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nume nedecriptabil."
+      ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "O parte a documentului nu a putut fi citită, așa că modificările efectuate nu pot fi salvate."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "Unele dintre modificările efectuate recent nu au putut fi salvate, așa că editarea este dezactivată. Copiați tot ce aveți nevoie, apoi reîncarcați pagina."
+      ],
+      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
+        "Acest document a atins dimensiunea maximă, astfel că ultima modificare nu a fost salvată, iar editarea este dezactivată."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "Ultima modificare este prea mare pentru a fi salvată, așa că editarea este dezactivată. Copiați tot ce aveți nevoie, apoi reîncarcați pagina."
       ]
     },
     "error": {
@@ -5679,6 +5697,48 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Veți putea totuși să vă vizualizați datele propriului cont, dar toate conturile de utilizator vor fi eliminate din organizație."
+      ],
+      "Connected": [
+        "Conectat"
+      ],
+      "Connecting…": [
+        "Se conectează…"
+      ],
+      "Disconnected": [
+        "Deconectat"
+      ],
+      "Editing is temporarily unavailable.": [
+        "Editarea nu este disponibilă momentan."
+      ],
+      "Not connected. Editing resumes once you are back.": [
+        "Nu există conexiune. Editarea se va relua imediat după reconectare."
+      ],
+      "Reconnecting…": [
+        "Se reconectează…"
+      ],
+      "The connection to the server was lost.": [
+        "Conexiunea cu serverul a fost pierdută."
+      ],
+      "The document could not be brought up to date.": [
+        "Documentul nu a putut fi adus la zi."
+      ],
+      "The server is busy.": [
+        "Serverul este ocupat."
+      ],
+      "This version of the app is no longer supported. Reload the page to update it.": [
+        "Această versiune a aplicației nu mai este susținută. Reîncărcați pagina pentru a o actualiza."
+      ],
+      "You were disconnected after a period of inactivity.": [
+        "Conexiunea a fost deconectată după o perioadă de inactivitate."
+      ],
+      "Your access to this document has changed. Reload the page to continue.": [
+        "Accesul la acest document s-a modificat. Reîncărcați pagina pentru a continua."
+      ],
+      "Your changes could not be encrypted. Reload the page to continue.": [
+        "Modificările nu au putut fi criptate. Reîncărcați pagina pentru a continua."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "Sesiunea a expirat. Reîncărcați pagina pentru a continua."
       ]
     },
     "info": {
@@ -7869,6 +7929,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Abonamentul complet ${ planTitle } începe la ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**V-ați răzgândit după perioada de probare?** Anulați în termen de 30 de zile de la prima plată, iar noi vă vom rambursa contravaloarea perioadei neutilizate."
       ]
     },
     "Option": {
@@ -10375,6 +10438,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Perioada de evaluare se va încheia la ${ textDate }. Nu vă vom taxa dacă anulați înainte de ${ textDate }. ${ action }"
+      ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "O modificare efectuată de un alt editor nu a putut fi citită și lipsește de pe această pagină."
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "O parte a documentului nu a putut fi citită, astfel încât editarea este dezactivată."
       ]
     }
   }

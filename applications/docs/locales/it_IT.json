@@ -910,6 +910,15 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti",
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti"
+      ],
+      "Add payment method": [
+        "Aggiungi metodo di pagamento"
+      ],
+      "Cancel trial": [
+        "Annulla la prova"
+      ],
+      "Go to ${ DOCS_SHORT_APP_NAME } home": [
+        "Vai alla pagina iniziale di ${ DOCS_SHORT_APP_NAME }"
       ]
     },
     "Actions message": {
@@ -3401,6 +3410,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrabile"
+      ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "Una parte del documento non è stata letta, pertanto non è possibile salvare le modifiche apportate."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "Non è stato possibile salvare alcune delle modifiche apportate di recente, pertanto la funzione di modifica è disabilitata. Copia il lavoro che ti serve, quindi ricarica la pagina."
+      ],
+      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
+        "Questo documento ha raggiunto la dimensione massima consentita, pertanto l'ultima modifica non è stata salvata e la modifica è disabilitata."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "L'ultima modifica apportata è troppo grande per essere salvata, quindi la modifica è disabilitata. Copia il lavoro che ti serve, quindi ricarica la pagina."
       ]
     },
     "error": {
@@ -5376,6 +5397,63 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Potrai ancora visualizzare i dati del tuo account, ma tutti gli account utente verranno rimossi dalla tua organizzazione."
+      ],
+      "Connected": [
+        "Connesso"
+      ],
+      "Connecting…": [
+        "Connessione…"
+      ],
+      "Disconnected": [
+        "Disconnesso"
+      ],
+      "Editing is temporarily unavailable.": [
+        "La funzione di modifica è temporaneamente non disponibile."
+      ],
+      "Not connected. Editing resumes once you are back.": [
+        "Non connesso. La modifica riprenderà non appena ti sarai ricollegato."
+      ],
+      "Reconnecting…": [
+        "Riconessione in corso..."
+      ],
+      "Some of the document's content could not be read.": [
+        "Non è stato possibile leggere parte del contenuto del documento."
+      ],
+      "The connection to the server was lost.": [
+        "La connessione al server è stata interrotta."
+      ],
+      "The document could not be brought up to date.": [
+        "Non è stato possibile aggiornare il documento."
+      ],
+      "The document could not be created.": [
+        "Non è stato possibile creare il documento."
+      ],
+      "The document could not be loaded.": [
+        "Impossibile caricare il documento."
+      ],
+      "The editor could not be loaded.": [
+        "Impossibile caricare l'editor."
+      ],
+      "The server is busy.": [
+        "Il server è occupato."
+      ],
+      "This link is not supported on this page.": [
+        "Questo link non è supportato in questa pagina."
+      ],
+      "This version of the app is no longer supported. Reload the page to update it.": [
+        "Questa versione dell'app non è più supportata. Aggiorna la pagina per ottenere la versione più recente."
+      ],
+      "You were disconnected after a period of inactivity.": [
+        "La connessione è stata interrotta a seguito di un periodo di inattività."
+      ],
+      "Your access to this document has changed. Reload the page to continue.": [
+        "Le modalità di accesso a questo documento sono cambiate. Aggiorna la pagina per continuare."
+      ],
+      "Your changes could not be encrypted. Reload the page to continue.": [
+        "Non è stato possibile crittografare le modifiche apportate. Aggiorna la pagina per continuare."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "La tua sessione è scaduta. Aggiorna la pagina per continuare."
       ]
     },
     "info": {
@@ -7478,6 +7556,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Il tuo abbonamento completo a ${ planTitle } inizia il ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Hai cambiato idea dopo il periodo di prova? **Annulla entro 30 giorni dal primo pagamento e ti rimborseremo il periodo non utilizzato."
       ]
     },
     "Option": {
@@ -9902,6 +9983,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La tua prova finirà il ${ textDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ textDate }. ${ action }"
+      ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "Una modifica apportata da un altro editore non è stata letta e risulta mancante in questa pagina."
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "Una parte del documento non è stata letta, pertanto la modifica è disabilitata."
       ]
     }
   }

@@ -925,6 +925,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
         "No podeu enviar fitxers vCard de més de ${ maxAttachments } contactes."
+      ],
+      "Add payment method": [
+        "Afegir un mètode de pagament"
+      ],
+      "Cancel trial": [
+        "Cancel·lar la prova"
       ]
     },
     "Actions message": {
@@ -3575,6 +3581,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ No es pot desxifrar aquest nom"
+      ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "No s'ha pogut llegir part del document, per tant no es poden desar els vostres canvis."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "No s'han pogut desar alguns dels vostres canvis recents, per tant s'ha desactivat l'edició. Copieu qualsevol treball que necessiteu i torneu a carregar la pàgina."
+      ],
+      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
+        "Aquest document ha arribat a la seva mida màxima, de manera que no s'ha desat el vostre darrer canvi i s'ha desactivat l'edició."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "El vostre darrer canvi és massa gran per desar-lo i per això s'ha deshabilitat l'edició. Copieu qualsevol feina que necessiteu i recarregueu la pàgina."
       ]
     },
     "error": {
@@ -5608,6 +5626,48 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
+      ],
+      "Connected": [
+        "S'ha connectat"
+      ],
+      "Connecting…": [
+        "S'està connectant…"
+      ],
+      "Disconnected": [
+        "S'ha desconnectat"
+      ],
+      "Editing is temporarily unavailable.": [
+        "L'edició no està disponible temporalment."
+      ],
+      "Not connected. Editing resumes once you are back.": [
+        "No hi ha connexió. L'edició es reprendrà un cop torneu a estar en línia."
+      ],
+      "Reconnecting…": [
+        "S'està tornant a connectar…"
+      ],
+      "The connection to the server was lost.": [
+        "S'ha perdut la connexió amb el servidor."
+      ],
+      "The document could not be brought up to date.": [
+        "No s'ha pogut actualitzar el document."
+      ],
+      "The server is busy.": [
+        "El servidor està ocupat."
+      ],
+      "This version of the app is no longer supported. Reload the page to update it.": [
+        "Aquesta versió de l'aplicació ja no és compatible. Torneu a carregar la pàgina per actualitzar-la."
+      ],
+      "You were disconnected after a period of inactivity.": [
+        "Heu estat desconnectat després d'un període d'inactivitat."
+      ],
+      "Your access to this document has changed. Reload the page to continue.": [
+        "L'accés a aquest document ha canviat. Torneu a carregar la pàgina per continuar."
+      ],
+      "Your changes could not be encrypted. Reload the page to continue.": [
+        "No s'han pogut xifrar els vostres canvis. Torneu a carregar la pàgina per continuar."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "La vostra sessió ha expirat. Torneu a carregar la pàgina per continuar."
       ]
     },
     "info": {
@@ -7744,6 +7804,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "La subscripció completa a ${ planTitle } comença el ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Heu canviat d'opinió després de la prova? ** Cancel·leu-la abans de 30 dies des del primer pagament i us reemborsarem el temps no utilitzat."
       ]
     },
     "Option": {
@@ -10186,6 +10249,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La vostra prova finalitzarà el ${ textDate }. No se us cobrarà si cancel·leu abans del ${ textDate }. ${ action }"
+      ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "Un canvi fet per un altre editor no s'ha pogut llegir, i falta en aquesta pàgina."
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "No s'ha pogut llegir part del document, per tant s'ha desactivat l'edició."
       ]
     }
   }
