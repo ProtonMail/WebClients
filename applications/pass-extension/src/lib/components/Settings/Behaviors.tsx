@@ -10,6 +10,7 @@ import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { settingsEditIntent } from '@proton/pass/store/actions/creators/settings';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import { selectOrgPasskeyDisabled, selectOrgTOTPDisabled } from '@proton/pass/store/selectors/organization';
 import { selectProxiedSettings } from '@proton/pass/store/selectors/settings';
 import { selectFeatureFlags, selectPassPlan } from '@proton/pass/store/selectors/user';
 import type { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -41,14 +42,20 @@ type SettingsSection = {
 
 type SettingsSectionsOptions = {
     features: MaybeNull<FeatureFlagState>;
+    orgPasskeyDisabled: boolean;
+    orgTOTPDisabled: boolean;
     plan: UserPassPlan;
     settings: ProxiedSettings;
     webReqPermissions: PermissionHandles;
     dispatch: Dispatch;
 };
 
+const hasVisibleSettings = ({ settings }: SettingsSection) => settings.some(({ hidden }) => !hidden);
+
 const getSettingsSections = ({
     features,
+    orgPasskeyDisabled,
+    orgTOTPDisabled,
     settings,
     webReqPermissions,
     dispatch,
@@ -77,12 +84,14 @@ const getSettingsSections = ({
                     description: c('Info').t`Quickly autofill your 2FA tokens.`,
                     checked: settings.autofill.twofa,
                     disabled: !settings.autofill.login,
+                    hidden: orgTOTPDisabled,
                     onChange: (checked) => onSettingsUpdate({ autofill: { twofa: checked } }),
                 },
                 {
                     label: c('Label').t`Auto-copy 2FA code`,
                     description: c('Info').t`After autofilling a login, its 2FA code is copied to the clipboard.`,
                     checked: settings.autofill.twofaCopy ?? false,
+                    hidden: orgTOTPDisabled,
                     onChange: (checked) => onSettingsUpdate({ autofill: { twofaCopy: checked } }),
                 },
                 {
@@ -164,12 +173,14 @@ const getSettingsSections = ({
                     label: c('Label').t`Save passkeys`,
                     description: c('Info').t`${PASS_APP_NAME} will suggest saving passkeys.`,
                     checked: settings.passkeys.create,
+                    hidden: orgPasskeyDisabled,
                     onChange: (checked) => onSettingsUpdate({ passkeys: { create: checked } }),
                 },
                 {
                     label: c('Label').t`Authenticate with passkeys`,
                     description: c('Info').t`${PASS_APP_NAME} will suggest authenticating using saved passkeys`,
                     checked: settings.passkeys.get,
+                    hidden: orgPasskeyDisabled,
                     onChange: (checked) => onSettingsUpdate({ passkeys: { get: checked } }),
                 },
             ],
@@ -204,15 +215,26 @@ export const Behaviors: FC = () => {
     const plan = useSelector(selectPassPlan);
     const webReqPermissions = usePermissions(BASIC_AUTH_PERMISSIONS);
     const features = useSelector(selectFeatureFlags);
+    const orgPasskeyDisabled = useSelector(selectOrgPasskeyDisabled);
+    const orgTOTPDisabled = useSelector(selectOrgTOTPDisabled);
 
     const sections = useMemo(
-        () => getSettingsSections({ features, plan, settings, webReqPermissions, dispatch }),
-        [features, plan, settings, webReqPermissions]
+        () =>
+            getSettingsSections({
+                features,
+                orgPasskeyDisabled,
+                orgTOTPDisabled,
+                plan,
+                settings,
+                webReqPermissions,
+                dispatch,
+            }),
+        [features, orgPasskeyDisabled, orgTOTPDisabled, plan, settings, webReqPermissions]
     );
 
     return (
         <>
-            {sections.map((section, i) => (
+            {sections.filter(hasVisibleSettings).map((section, i) => (
                 <SettingsPanel key={`settings-section-${i}`} title={section.label}>
                     {section.settings
                         .filter((setting) => !setting.hidden)

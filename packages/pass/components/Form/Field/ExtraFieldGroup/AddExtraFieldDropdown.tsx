@@ -11,7 +11,7 @@ import { IcPlus } from '@proton/icons/icons/IcPlus';
 
 import type { ExtraFieldType } from '../../../../types/protobuf';
 import { DropdownMenuButton } from '../../../Layout/Dropdown/DropdownMenuButton';
-import { getExtraFieldOptions } from './ExtraField.utils';
+import { useExtraFieldOptions } from './useExtraFieldOptions';
 
 export type CustomButtonProps = ButtonLikeOwnProps & { label?: string };
 type CustomFieldsDropdownProps = { onAdd: (type: ExtraFieldType) => void } & CustomButtonProps;
@@ -23,6 +23,7 @@ export const AddExtraFieldDropdown: FC<CustomFieldsDropdownProps> = ({
     label,
 }) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
+    const getExtraFieldOptions = useExtraFieldOptions();
 
     return (
         <>

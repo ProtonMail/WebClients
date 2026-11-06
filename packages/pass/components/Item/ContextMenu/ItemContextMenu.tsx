@@ -32,6 +32,7 @@ import type { ItemState } from '../../../hooks/items/useItemState';
 import { useItemState } from '../../../hooks/items/useItemState';
 import { otpGenerationErrorNotifcation } from '../../../hooks/useOTPCode';
 import { getItemKey } from '../../../lib/items/item.utils';
+import { selectOrgTOTPDisabled } from '../../../store/selectors/organization';
 import { selectCanRevealSensitiveContent } from '../../../store/selectors/user';
 import type { Item, ItemRevisionWithOptimistic } from '../../../types/data/items';
 import type { ObfuscatedItemProperty } from '../../../types/data/obfuscation';
@@ -240,11 +241,12 @@ export const ItemContextMenu: FC<Props> = ({ item, share, anchorRef }) => {
     const itemState = useItemState(item, share);
     const itemActions = useItemActions(item);
     const canRevealSensitiveContent = useSelector(selectCanRevealSensitiveContent(share.shareId));
+    const orgTOTPDisabled = useSelector(selectOrgTOTPDisabled);
 
     const elements: ContextMenuElement[] = useMemo(() => {
         if (item.failed) return [];
 
-        const getOTPCode = fromOTPValue(generateOTP, createNotification);
+        const getOTPCode: GetTotp = orgTOTPDisabled ? () => undefined : fromOTPValue(generateOTP, createNotification);
         const copyBtns: ContextMenuElement[] = getItemCopyButtons(
             item.data,
             getOTPCode,
@@ -254,7 +256,7 @@ export const ItemContextMenu: FC<Props> = ({ item, share, anchorRef }) => {
         const separator = copyBtns.length > 0 && actionBtns.length > 0 ? [CONTEXT_MENU_SEPARATOR] : [];
 
         return copyBtns.concat(separator, actionBtns);
-    }, [item, itemState, itemActions, canRevealSensitiveContent]);
+    }, [item, itemState, itemActions, canRevealSensitiveContent, orgTOTPDisabled]);
 
     const itemOpened = state?.id === getItemKey(item);
     const autoClose = elements.length === 0 && itemOpened;

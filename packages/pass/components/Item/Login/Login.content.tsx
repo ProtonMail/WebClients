@@ -14,6 +14,7 @@ import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcNote } from '@proton/icons/icons/IcNote';
 import { IcPassPasskey } from '@proton/icons/icons/IcPassPasskey';
 import { IcUser } from '@proton/icons/icons/IcUser';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { UpsellRef } from '../../../constants';
 import { usePasswordStrength } from '../../../hooks/monitor/usePasswordStrength';
@@ -25,6 +26,7 @@ import { getModeDescription, isAutofillModeDataOfTypeUrl } from '../../../lib/ur
 import { isValidScheme } from '../../../lib/urls/utils/utils';
 import { selectAliasByAliasEmail } from '../../../store/selectors/alias';
 import { selectTOTPLimits } from '../../../store/selectors/limits';
+import { selectOrgPasskeyDisabled } from '../../../store/selectors/organization';
 import { selectCanRevealSensitiveContent } from '../../../store/selectors/user';
 import { TelemetryFieldType } from '../../../types/data/telemetry';
 import { AutofillMode } from '../../../types/protobuf';
@@ -34,6 +36,7 @@ import { OTPValueControl } from '../../Form/Field/Control/OTPValueControl';
 import { ValueControl } from '../../Form/Field/Control/ValueControl';
 import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '../../Form/legacy/TextAreaReadonly';
+import { OrganizationPolicyTooltip } from '../../Organization/OrganizationPolicyTooltip';
 import { PasswordStrength } from '../../Password/PasswordStrength';
 import { UpgradeButton } from '../../Upsell/UpgradeButton';
 import type { ItemContentProps } from '../../Views/types';
@@ -57,6 +60,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
     const totpAllowed = useSelector(selectTOTPLimits).totpAllowed(itemId) || secureLinkItem;
     const relatedAlias = useSelector(selectAliasByAliasEmail(itemEmail));
     const passwordRevealable = useSelector(selectCanRevealSensitiveContent(shareId));
+    const orgPasskeyDisabled = useSelector(selectOrgPasskeyDisabled);
     const passwordStrength = usePasswordStrength(password);
     const showEmptyEmailOrUsername = !(itemEmail || itemUsername);
     /** Checked against the full `autofillUrls`, not `sanitizedUrls`: `Pattern`/`RegularExpression`
@@ -75,14 +79,23 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
             {!secureLinkItem &&
                 (passkeys ?? []).map((passkey) => (
                     <FieldsetCluster mode="read" key={passkey.keyId}>
-                        <ValueControl
-                            icon={IcPassPasskey}
-                            label={`${c('Label').t`Passkey`} • ${passkey.domain}`}
-                            value={passkey.userName}
-                            onClick={() => setPasskey(passkey)}
-                            actions={[<IcChevronRight className="mt-3" size={3} />]}
-                            className="pass-value-control--standout"
-                        />
+                        <OrganizationPolicyTooltip
+                            enforced={orgPasskeyDisabled}
+                            text={c('Info')
+                                .t`Your organization does not allow using passkeys stored in ${PASS_APP_NAME}`}
+                        >
+                            <ValueControl
+                                disabled={orgPasskeyDisabled}
+                                icon={IcPassPasskey}
+                                label={`${c('Label').t`Passkey`} • ${passkey.domain}`}
+                                value={passkey.userName}
+                                onClick={() => setPasskey(passkey)}
+                                actions={
+                                    orgPasskeyDisabled ? undefined : [<IcChevronRight className="mt-3" size={3} />]
+                                }
+                                className="pass-value-control--standout"
+                            />
+                        </OrganizationPolicyTooltip>
                     </FieldsetCluster>
                 ))}
 

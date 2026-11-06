@@ -2,16 +2,27 @@ import type { WasmGeneratePasskeyResponse } from '@protontech/pass-rust-core/wor
 
 import { createPassCoreProxy } from '@proton/pass/lib/core/core.proxy';
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
+import browser from '@proton/pass/lib/globals/browser';
 import type { ItemBuilder } from '@proton/pass/lib/items/item.builder';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { sanitizePasskey } from '@proton/pass/lib/passkeys/utils';
+import { selectOrgPasskeyDisabled } from '@proton/pass/store/selectors/organization';
 import { sanitizeBuffers } from '@proton/pass/utils/buffer/sanitization';
 
+import { WorkerMessageType } from '../../../types/messages';
+import type * as ChannelMock from '../__mocks__/channel';
 import { WorkerContext } from '../context/inject';
 import { assertValidPasskeyRequest, createPasskeyService } from './passkey';
 
 jest.mock('../channel');
 jest.mock('@proton/pass/lib/core/core.proxy');
+jest.mock('@proton/pass/store/selectors/organization', () => ({
+    ...jest.requireActual('@proton/pass/store/selectors/organization'),
+    selectOrgPasskeyDisabled: jest.fn(),
+}));
+
+const { mockHandlers } = jest.requireMock('../channel') as typeof ChannelMock;
+const mockSelectOrgPasskeyDisabled = jest.mocked(selectOrgPasskeyDisabled);
 
 const TEST_RP_ID = 'proton.test';
 const TEST_CONFIG = { APP_NAME: 'proton-pass-extension', APP_VERSION: '0.0.1' } as any;
@@ -453,5 +464,44 @@ describe('PasskeyService [WASM]', () => {
             await expect(authenticate(core, UNTRUSTED, blob, options)).rejects.toThrow();
             expect(fetchSpy).toHaveBeenCalledWith(WELL_KNOWN, FETCH_OPTIONS);
         });
+    });
+});
+
+describe('PasskeyService handlers - organization passkey policy', () => {
+    const domain = TEST_RP_ID;
+    const sender = { tab: { id: 1 } };
+    const core = { generate_passkey: jest.fn(), resolve_passkey_challenge: jest.fn() };
+    const passkey = { credentialId: 'credential', itemId: 'item', shareId: 'share', name: domain, username: 'alice' };
+
+    const call = <T extends WorkerMessageType>(type: T, payload: unknown) =>
+        mockHandlers.get(type)?.({ type, payload }, sender);
+
+    beforeEach(() => {
+        (browser.tabs.get as jest.Mock).mockResolvedValue({ url: `https://${domain}/login` });
+        mockSelectOrgPasskeyDisabled.mockReturnValue(true);
+        WorkerContext.set({ service: { core, store: { getState: () => ({}) } } } as any);
+        createPasskeyService();
+    });
+
+    afterEach(() => {
+        WorkerContext.clear();
+        jest.clearAllMocks();
+    });
+
+    test('`PASSKEY_QUERY` suggests no passkeys', async () => {
+        const result = await call(WorkerMessageType.PASSKEY_QUERY, { domain, credentialIds: [] });
+        expect(result).toEqual({ passkeys: [] });
+    });
+
+    test('`PASSKEY_CREATE` falls back to native WebAuthn without generating a passkey', async () => {
+        const result = await call(WorkerMessageType.PASSKEY_CREATE, { domain, request: '{}' });
+        expect(result).toEqual({ intercept: false });
+        expect(core.generate_passkey).not.toHaveBeenCalled();
+    });
+
+    test('`PASSKEY_GET` falls back to native WebAuthn without resolving the challenge', async () => {
+        const result = await call(WorkerMessageType.PASSKEY_GET, { domain, passkey, request: '{}' });
+        expect(result).toEqual({ intercept: false });
+        expect(core.resolve_passkey_challenge).not.toHaveBeenCalled();
     });
 });

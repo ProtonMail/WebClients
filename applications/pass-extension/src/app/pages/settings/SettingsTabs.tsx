@@ -1,5 +1,6 @@
 import type { ComponentProps, FC } from 'react';
 import { useEffect, useMemo, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -18,8 +19,8 @@ import { AccountPath } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import { clientSessionLocked } from '@proton/pass/lib/client';
+import { selectOrgAliasCreationDisabled } from '@proton/pass/store/selectors/organization';
 import { PassFeature } from '@proton/pass/types/api/features';
-import { OrganizationAliasCreateMode } from '@proton/pass/types/api/pass';
 import type { Unpack } from '@proton/pass/types/utils';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -76,12 +77,12 @@ const pathnameToIndex = (pathname: string, availableTabs: SettingTab[]) => {
 const SettingsTabsContent: FC<Props> = ({ pathname }) => {
     const history = useHistory();
     const organization = useOrganization();
-    const orgAliasCreationDisabled = organization?.settings.AliasCreateMode === OrganizationAliasCreateMode.NOBODY;
+    const orgAliasCreationDisabled = useSelector(selectOrgAliasCreationDisabled);
     const accessTokensEnabled = useFeatureFlag(PassFeature.PassAccessTokens);
 
     const tabs = useMemo(
         () => getSettingsTabs(organization?.settings.enabled, orgAliasCreationDisabled, accessTokensEnabled),
-        [organization, accessTokensEnabled]
+        [organization, orgAliasCreationDisabled, accessTokensEnabled]
     );
     const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(pathname, tabs));
 

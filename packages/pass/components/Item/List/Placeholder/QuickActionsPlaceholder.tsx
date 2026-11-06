@@ -13,9 +13,9 @@ import clsx from '@proton/utils/clsx';
 
 import { useFeatureFlag } from '../../../../hooks/useFeatureFlag';
 import { isWritableVault } from '../../../../lib/vaults/vault.predicates';
+import { selectOrgAliasCreationDisabled } from '../../../../store/selectors/organization';
 import { selectAllVaults, selectCanCreateItems, selectShare } from '../../../../store/selectors/shares';
 import { PassFeature } from '../../../../types/api/features';
-import { OrganizationAliasCreateMode } from '../../../../types/api/pass';
 import type { ItemType } from '../../../../types/protobuf';
 import type { MaybeNull } from '../../../../types/utils';
 import { usePassCore } from '../../../Core/PassCoreProvider';
@@ -29,7 +29,6 @@ import { useNavigate } from '../../../Navigation/NavigationActions';
 import { useNavigationFilters } from '../../../Navigation/NavigationFilters';
 import { useItemScope } from '../../../Navigation/NavigationMatches';
 import { getNewItemRoute } from '../../../Navigation/routing';
-import { useOrganization } from '../../../Organization/OrganizationProvider';
 
 type ItemQuickAction = {
     disabled?: boolean;
@@ -64,8 +63,7 @@ export const QuickActionsPlaceholder: FC = () => {
     /** Plans without folder access cannot create items inside a folder */
     const folderLocked = isFolderSelected && !canUseFolders;
     const showCustomItem = useFeatureFlag(PassFeature.PassCustomTypeV1);
-    const org = useOrganization();
-    const orgAliasCreationDisabled = org?.settings.AliasCreateMode === OrganizationAliasCreateMode.NOBODY;
+    const orgAliasCreationDisabled = useSelector(selectOrgAliasCreationDisabled);
 
     const quickActions = useMemo<ItemQuickAction[]>(() => {
         const actions: ItemQuickAction[] = [

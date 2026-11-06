@@ -6,13 +6,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcNote } from '@proton/icons/icons/IcNote';
 import { IcPassPasskey } from '@proton/icons/icons/IcPassPasskey';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import noop from '@proton/utils/noop';
 
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '../../../constants';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../constants';
 import { useAliasForLogin } from '../../../hooks/useAliasForLogin';
 import { useDeobfuscatedItem } from '../../../hooks/useDeobfuscatedItem';
 import { useItemDraft } from '../../../hooks/useItemDraft';
@@ -26,7 +25,6 @@ import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '../../../li
 import { validateLoginForm } from '../../../lib/validation/login';
 import { isWritableVault } from '../../../lib/vaults/vault.predicates';
 import { itemCreate } from '../../../store/actions/creators/item';
-import { selectTOTPLimits } from '../../../store/selectors/limits';
 import { selectShowUsernameField } from '../../../store/selectors/settings';
 import { selectUserDefaultShareID } from '../../../store/selectors/user';
 import type { LoginItemFormValues } from '../../../types/forms/item';
@@ -42,20 +40,18 @@ import { ValueControl } from '../../Form/Field/Control/ValueControl';
 import { ExtraFieldGroup } from '../../Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '../../Form/Field/Field';
 import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
-import { TextField } from '../../Form/Field/TextField';
 import { TextAreaField } from '../../Form/Field/TextareaField';
 import { TitleField } from '../../Form/Field/TitleField';
 import { UrlGroupField } from '../../Form/Field/UrlGroup/UrlGroupField';
 import { ItemEditPanel } from '../../Layout/Panel/ItemEditPanel';
-import { UpgradeButton } from '../../Upsell/UpgradeButton';
 import type { ItemEditViewProps } from '../../Views/types';
 import { LoginEditCredentials } from './Login.edit.credentials';
+import { LoginEditTOTP } from './Login.edit.totp';
 
 const FORM_ID = 'edit-login';
 
 export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share, onSubmit, onCancel }) => {
     const dispatch = useDispatch();
-    const { needsUpgrade } = useSelector(selectTOTPLimits);
     const showUsernameField = useSelector(selectShowUsernameField);
     const defaultShareID = useSelector(selectUserDefaultShareID);
 
@@ -260,27 +256,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                             <FieldsetCluster>
                                 <LoginEditCredentials form={form} alias={alias} />
 
-                                {
-                                    /* only allow adding a new TOTP code if user
-                                     * has not reached his plan's TOTP limit. If
-                                     * the user has downgraded and this item had
-                                     * a TOTP item, allow edit so user can retrieve
-                                     * the secret or remove it */
-                                    needsUpgrade && isEmptyString(form.values.totpUri) ? (
-                                        <ValueControl icon={IcLock} label={c('Label').t`2FA secret key (TOTP)`}>
-                                            <UpgradeButton inline upsellRef={UpsellRef.LIMIT_2FA} />
-                                        </ValueControl>
-                                    ) : (
-                                        <Field
-                                            hidden
-                                            name="totpUri"
-                                            label={c('Label').t`2FA secret key (TOTP)`}
-                                            placeholder={c('Placeholder').t`Add 2FA secret key`}
-                                            component={TextField}
-                                            icon={IcLock}
-                                        />
-                                    )
-                                }
+                                <LoginEditTOTP form={form} />
                             </FieldsetCluster>
 
                             <FieldsetCluster>

@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { type ComponentProps, type FC, useEffect, useMemo, useState } from 'react';
+import { useSelector } from 'react-redux';
 import type { RouteChildrenProps } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -11,8 +12,8 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { AccountPath } from '../../../constants';
 import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
 import { useNavigateToAccount } from '../../../hooks/useNavigateToAccount';
+import { selectOrgAliasCreationDisabled } from '../../../store/selectors/organization';
 import { PassFeature } from '../../../types/api/features';
-import { OrganizationAliasCreateMode } from '../../../types/api/pass';
 import type { Unpack } from '../../../types/utils';
 import { usePassCore } from '../../Core/PassCoreProvider';
 import { useNavigate } from '../../Navigation/NavigationActions';
@@ -73,12 +74,12 @@ const SettingsTabs: FC<Props> = ({ exportTab, ...props }) => {
     const pathname = props.location.hash?.substring(1, props.location.hash.length);
 
     const organization = useOrganization();
-    const orgAliasCreationDisabled = organization?.settings.AliasCreateMode === OrganizationAliasCreateMode.NOBODY;
+    const orgAliasCreationDisabled = useSelector(selectOrgAliasCreationDisabled);
     const accessTokensEnabled = useFeatureFlag(PassFeature.PassAccessTokens);
 
     const tabs = useMemo(
         () => getSettingsTabs(exportTab, organization?.settings.enabled, orgAliasCreationDisabled, accessTokensEnabled),
-        [organization, accessTokensEnabled]
+        [organization, orgAliasCreationDisabled, accessTokensEnabled]
     );
     const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(tabs, pathname));
 

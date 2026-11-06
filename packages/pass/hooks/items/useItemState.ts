@@ -1,17 +1,16 @@
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { useOrganization } from '../../components/Organization/OrganizationProvider';
 import { isClonableItem, isItemShared, isMonitored, isPinned, isTrashed } from '../../lib/items/item.predicates';
 import { isGroupShare, isShareManageable, isVaultShare } from '../../lib/shares/share.predicates';
 import { isPaidPlan } from '../../lib/user/user.predicates';
 import { itemPinRequest, itemUnpinRequest } from '../../store/actions/requests';
 import type { ShareItem } from '../../store/reducers';
 import { selectRequestInFlight } from '../../store/request/selectors';
+import { selectOrgItemSharingDisabled, selectOrgPublicLinkDisabled } from '../../store/selectors/organization';
 import { selectAllVaults } from '../../store/selectors/shares';
 import { selectPassPlan } from '../../store/selectors/user';
 import { PassFeature } from '../../types/api/features';
-import { OrganizationItemShareMode, OrganizationPublicLinkMode } from '../../types/api/pass';
 import { UserPassPlan } from '../../types/api/plan';
 import type { ItemRevision } from '../../types/data/items';
 import { ShareRole } from '../../types/data/shares';
@@ -49,7 +48,8 @@ export const useItemState: UseItemState = (item, share) => {
     const vaults = useSelector(selectAllVaults);
     const pinInFlight = useSelector(selectRequestInFlight(itemPinRequest(shareId, itemId)));
     const unpinInFlight = useSelector(selectRequestInFlight(itemUnpinRequest(shareId, itemId)));
-    const org = useOrganization();
+    const orgItemSharingDisabled = useSelector(selectOrgItemSharingDisabled);
+    const orgPublicLinkingDisabled = useSelector(selectOrgPublicLinkDisabled);
     const cloneFeatureFlag = useFeatureFlag(PassFeature.PassItemCloning);
 
     return useMemo(() => {
@@ -63,8 +63,6 @@ export const useItemState: UseItemState = (item, share) => {
         const hasMultipleVaults = vaults.length > 1;
         const trashed = isTrashed(item);
         const pinned = isPinned(item);
-        const orgItemSharingDisabled = org?.settings.ItemShareMode === OrganizationItemShareMode.DISABLED;
-        const orgPublicLinkingDisabled = org?.settings.PublicLinkMode === OrganizationPublicLinkMode.DISABLED;
         const monitored = isMonitored(item);
         const groupShare = isGroupShare(share);
 
@@ -101,5 +99,5 @@ export const useItemState: UseItemState = (item, share) => {
             isPinned: pinned,
             isMonitored: monitored,
         };
-    }, [item, share, plan, vaults, pinInFlight, unpinInFlight, org]);
+    }, [item, share, plan, vaults, pinInFlight, unpinInFlight, orgItemSharingDisabled, orgPublicLinkingDisabled]);
 };
