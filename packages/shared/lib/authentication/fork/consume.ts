@@ -11,9 +11,10 @@ import type { ExtraSessionForkData, PullForkResponse } from '../../authenticatio
 import type { OfflineKey } from '../../authentication/offlineKey';
 import type { ResumedSessionResult } from '../../authentication/persistedSessionHelper';
 import { persistSession, resumeSession } from '../../authentication/persistedSessionHelper';
+import { removePersistedSessionByLocalIDAndUID } from '../../authentication/persistedSessionStorage';
 import type { APP_NAMES } from '../../constants';
 import { APPS, SSO_PATHS } from '../../constants';
-import { withAuthHeaders } from '../../fetch/headers';
+import { withAuthHeaders, withUIDHeaders } from '../../fetch/headers';
 import { replaceUrl } from '../../helpers/browser';
 import type { Api } from '../../interfaces/Api';
 import type { User } from '../../interfaces/User';
@@ -113,11 +114,18 @@ const maybeResumeForkedSession = async ({
     api: Api;
     pullForkResponse: PullForkResponse;
 }): Promise<ResumedSessionResult | undefined> => {
-    const { UID, AccessToken, LocalID } = pullForkResponse;
+    const { UID, AccessToken, LocalID, UserID } = pullForkResponse;
 
     try {
         // Resume and use old session if it exists
         const validatedSession = await resumeSession({ api, localID: LocalID });
+
+        // The local ID now belongs to another user, so drop the old session and use the fork
+        if (validatedSession.User.ID !== UserID) {
+            await api(withUIDHeaders(validatedSession.UID, revoke())).catch(noop);
+            await removePersistedSessionByLocalIDAndUID(LocalID, validatedSession.UID).catch(noop);
+            return;
+        }
 
         // Revoke the discarded forked session
         await api(withAuthHeaders(UID, AccessToken, revoke({ Child: 1 }))).catch(noop);
