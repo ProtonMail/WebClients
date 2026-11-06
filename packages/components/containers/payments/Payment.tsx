@@ -5,8 +5,13 @@ import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import useStableLoading from '@proton/hooks/useStableLoading';
-import { BilledUserInlineMessage } from '@proton/payments-ui/client-extensions/billed-user/BilledUserInlineMessage';
-import type { ThemeCode } from '@proton/payments-ui/client-extensions/helpers';
+import { BilledUserInlineMessage } from '@proton/payments-hooks/client-extensions/billed-user/BilledUserInlineMessage';
+import type { ThemeCode } from '@proton/payments-hooks/client-extensions/helpers';
+import type { ChargebeePaypalProcessorHook } from '@proton/payments-hooks/payment-processors/useChargebeePaypal';
+import type { BitcoinHook } from '@proton/payments-hooks/react-extensions/useBitcoin';
+import type { ChargebeeCardProcessorHook } from '@proton/payments-hooks/react-extensions/useChargebeeCard';
+import type { ChargebeeIdealProcessorHook } from '@proton/payments-hooks/react-extensions/useChargebeeIdeal';
+import type { ChargebeeDirectDebitProcessorHook } from '@proton/payments-hooks/react-extensions/useSepaDirectDebit';
 import type { ViewPaymentMethod } from '@proton/payments-ui/client-extensions/useMethods';
 import { BitcoinNewMethodForm } from '@proton/payments-ui/payment-methods/bitcoin/BitcoinNewMethodForm';
 import { CardNewMethodForm } from '@proton/payments-ui/payment-methods/card/CardNewMethodForm';
@@ -14,11 +19,6 @@ import { CashNewMethodForm } from '@proton/payments-ui/payment-methods/cash/Cash
 import { IdealNewMethodForm } from '@proton/payments-ui/payment-methods/ideal/IdealNewMethodForm';
 import { PayPalNewMethodForm } from '@proton/payments-ui/payment-methods/paypal/PayPalNewMethodForm';
 import { SepaNewMethodForm } from '@proton/payments-ui/payment-methods/sepa/SepaNewMethodForm';
-import type { ChargebeePaypalProcessorHook } from '@proton/payments-ui/payment-processors/useChargebeePaypal';
-import type { BitcoinHook } from '@proton/payments-ui/react-extensions/useBitcoin';
-import type { ChargebeeCardProcessorHook } from '@proton/payments-ui/react-extensions/useChargebeeCard';
-import type { ChargebeeIdealProcessorHook } from '@proton/payments-ui/react-extensions/useChargebeeIdeal';
-import type { ChargebeeDirectDebitProcessorHook } from '@proton/payments-ui/react-extensions/useSepaDirectDebit';
 import { TaxFields } from '@proton/payments-ui/ui/billing-address/components/TaxFields';
 import type { TaxCountryHook } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
 import type { VatNumberHook } from '@proton/payments-ui/ui/billing-address/hooks/useVatNumber';

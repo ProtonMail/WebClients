@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 
+import { PayPalInfoMessage } from '@proton/payments-hooks/payment-methods/paypal/PayPalInfoMessage';
 import type { Currency } from '@proton/payments/core/interface';
 
-import { PayPalInfoMessage } from './PayPalInfoMessage';
 import { PayPalView } from './PayPalView';
 
 const amountAndCurrency = {

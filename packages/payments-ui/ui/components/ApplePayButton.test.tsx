@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 
-import type { ApplePayProcessorHook } from '../../payment-processors/useApplePay';
+import type { ApplePayProcessorHook } from '@proton/payments-hooks/payment-processors/useApplePay';
+
 import { ApplePayButton } from './ApplePayButton';
 
 jest.mock('./ChargebeeIframe', () => ({

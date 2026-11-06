@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { useSubscriptionForApp } from '@proton/payments-ui/ui/hooks/useSubscriptionForApp';
+import { useSubscriptionForApp } from '@proton/payments-hooks/ui/hooks/useSubscriptionForApp';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { getAppName } from '@proton/shared/lib/apps/helper';

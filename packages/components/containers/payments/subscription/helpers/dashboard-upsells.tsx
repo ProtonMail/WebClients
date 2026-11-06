@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import useLoading from '@proton/hooks/useLoading';
-import type { TelemetryPaymentFlow } from '@proton/payments-ui/client-extensions/usePaymentsTelemetry';
+import type { TelemetryPaymentFlow } from '@proton/payments-hooks/client-extensions/usePaymentsTelemetry';
 import {
     type PreloadedPaymentsContextType,
     isPaymentsPreloaded,

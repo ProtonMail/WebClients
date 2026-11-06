@@ -9,10 +9,10 @@ import PaymentWrapper from '@proton/components/containers/payments/PaymentWrappe
 import { ProtonPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/ProtonPlanCustomizer';
 import { getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/helpers';
 import type { WithLoading } from '@proton/hooks/useLoading';
-import { BilledUserInlineMessage } from '@proton/payments-ui/client-extensions/billed-user/BilledUserInlineMessage';
+import { BilledUserInlineMessage } from '@proton/payments-hooks/client-extensions/billed-user/BilledUserInlineMessage';
+import { GuardBanner } from '@proton/payments-hooks/ui/components/GuardBanner';
 import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import { useBillingAddress } from '@proton/payments-ui/ui/billing-address/hooks/useBillingAddress';
-import { GuardBanner } from '@proton/payments-ui/ui/components/GuardBanner';
 import { PayButton } from '@proton/payments-ui/ui/components/PayButton';
 import { getHeadlessCheckout } from '@proton/payments-ui/ui/headless-checkout/get-headless-checkout';
 import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';

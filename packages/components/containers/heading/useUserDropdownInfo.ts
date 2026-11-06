@@ -5,7 +5,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
-import { useTrialInfo } from '@proton/payments-ui/ui/hooks/useTrialInfo';
+import { useTrialInfo } from '@proton/payments-hooks/ui/hooks/useTrialInfo';
 import { getSubscriptionPlanTitles } from '@proton/payments/core/subscription/helpers';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { type APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';

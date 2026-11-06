@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
+import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
 import { OfferPrice } from '@proton/payments-ui/ui/components/OfferPrice';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { getFallbackCurrency, isRegionalCurrency } from '@proton/payments/core/currencies';

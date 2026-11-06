@@ -22,6 +22,11 @@ import PaymentInfo from '@proton/components/containers/payments/PaymentInfo';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import CheckoutRow from '@proton/components/containers/payments/subscription/modal-components/helpers/CheckoutRow';
 import useLoading from '@proton/hooks/useLoading';
+import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
+import {
+    IdealAuthorizationText,
+    isIdealAuthorizationNoteShown,
+} from '@proton/payments-hooks/ui/components/IdealAuthorizationText';
 import { getMaxBitcoinAmount, getMinBitcoinAmount, getMinCreditAmount } from '@proton/payments/core/amount-limits';
 import type { ProductCheckResponse } from '@proton/payments/core/api/createPaymentSubscription';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
@@ -38,12 +43,10 @@ import { tracePaymentError } from '@proton/payments/sentry/capture';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { TaxMode } from '@proton/shared/lib/payments/subscription/constants';
 
-import { useAutomaticCurrency } from '../../client-extensions/useAutomaticCurrency';
 import type { OnChargeable } from '../../client-extensions/usePaymentFacade';
 import { usePaymentFacade } from '../../client-extensions/usePaymentFacade';
 import { ChargebeeIdealButton } from '../components/ChargebeeIdealButton';
 import { ChargebeePaypalButton } from '../components/ChargebeePaypalButton';
-import { IdealAuthorizationText, isIdealAuthorizationNoteShown } from '../components/IdealAuthorizationText';
 import { formatTax } from '../headless-checkout/tax-helpers';
 
 export type TopUpModalProps = {

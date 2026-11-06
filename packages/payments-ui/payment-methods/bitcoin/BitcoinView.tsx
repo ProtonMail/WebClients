@@ -7,9 +7,9 @@ import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import Bordered from '@proton/components/components/container/Bordered';
 import Price from '@proton/components/components/price/Price';
+import type { BitcoinHook } from '@proton/payments-hooks/react-extensions/useBitcoin';
 import { getMaxBitcoinAmount, getMinBitcoinAmount } from '@proton/payments/core/amount-limits';
 
-import type { BitcoinHook } from '../../react-extensions/useBitcoin';
 import { BitcoinDetails } from './BitcoinDetails';
 import type { OwnProps as BitcoinQRCodeProps } from './BitcoinQRCode';
 import { BitcoinQRCode } from './BitcoinQRCode';

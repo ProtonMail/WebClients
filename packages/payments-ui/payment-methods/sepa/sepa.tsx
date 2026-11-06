@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import Bordered from '@proton/components/components/container/Bordered';
 import { IcBank } from '@proton/icons/icons/IcBank';
+import { SepaAuthorizationText } from '@proton/payments-hooks/ui/components/SepaAuthorizationText';
 import type { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { SavedMethodDetails, SepaDetails } from '@proton/payments/core/interface';
 import { isSepaDetails } from '@proton/payments/core/type-guards';
 
-import { SepaAuthorizationText } from '../../ui/components/SepaAuthorizationText';
 import { NBSP_HTML, maskedLast4 } from '../formatters';
 import type { PaymentMethodUi } from '../paymentMethodUi';
 

@@ -4,7 +4,7 @@ import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { useGetPaymentsInit } from '@proton/account/paymentsInit/hooks';
-import { getIdealAuthorizationText } from '@proton/payments-ui/ui/components/IdealAuthorizationText';
+import { getIdealAuthorizationText } from '@proton/payments-hooks/ui/components/IdealAuthorizationText';
 import { InvoiceState, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { Invoice } from '@proton/payments/core/interface';
 import { CacheType } from '@proton/redux-utilities/interface';

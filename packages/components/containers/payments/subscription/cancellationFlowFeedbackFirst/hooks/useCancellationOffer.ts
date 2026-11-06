@@ -4,7 +4,7 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import useLoading from '@proton/hooks/useLoading';
-import { usePaymentsApiWithCheckFallback } from '@proton/payments-ui/react-extensions/usePaymentsApi';
+import { usePaymentsApiWithCheckFallback } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';

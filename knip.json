@@ -39,7 +39,7 @@
                 "oxfmt",
                 "oxlint",
                 "oxlint-tsgolint",
-                "^@proton/(account|activation|calendar|components|docs-core|nav|payments|payments-ui|redux-shared-store|shared|types)$|^@types/global-types-monorepo$"
+                "^@proton/(account|activation|calendar|components|docs-core|nav|payments|payments-hooks|payments-ui|redux-shared-store|shared|types)$|^@types/global-types-monorepo$"
             ]
         },
         "applications/account": {
@@ -457,6 +457,11 @@
             "ignoreDependencies": ["@protobuf-ts/plugin", "core-js", "json-schema-to-typescript", "tsx"]
         },
         "packages/payments": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"],
+            "ignoreDependencies": ["@proton/metrics"]
+        },
+        "packages/payments-hooks": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"],
             "ignoreDependencies": ["@proton/metrics"]

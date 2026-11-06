@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { usePreferredPlansMap } from '@proton/payments-ui/ui/hooks/usePreferredPlansMap';
+import { usePreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';
 import type { PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import { getPrice } from '@proton/payments/core/price-helpers';

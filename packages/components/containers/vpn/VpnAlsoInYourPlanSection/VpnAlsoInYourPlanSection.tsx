@@ -16,7 +16,7 @@ import {
     DashboardGridSectionHeader,
 } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
-import { useSubscriptionForApp } from '@proton/payments-ui/ui/hooks/useSubscriptionForApp';
+import { useSubscriptionForApp } from '@proton/payments-hooks/ui/hooks/useSubscriptionForApp';
 import { CYCLE, FREE_SUBSCRIPTION, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { getPricePerCycle } from '@proton/payments/core/price-helpers';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';

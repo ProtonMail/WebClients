@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 
+import { PayPalInfoMessage } from '@proton/payments-hooks/payment-methods/paypal/PayPalInfoMessage';
 import type { Currency } from '@proton/payments/core/interface';
 
-import { PayPalInfoMessage } from './PayPalInfoMessage';
 import { PayPalView } from './PayPalView';
 
 type Props = {

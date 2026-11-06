@@ -1,6 +1,6 @@
 import { useApi } from '@proton/app-context/useApi';
 import type { WithLoading } from '@proton/hooks/useLoading';
-import { usePaymentPollers } from '@proton/payments-ui/ui/hooks/usePaymentPollers';
+import { usePaymentPollers } from '@proton/payments-hooks/ui/hooks/usePaymentPollers';
 import { changeRenewState } from '@proton/payments/core/api/api';
 import { isTrial } from '@proton/payments/core/subscription/helpers';
 import { Renew, SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';

@@ -6,7 +6,7 @@ import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import { useTrialInfo } from '@proton/payments-ui/ui/hooks/useTrialInfo';
+import { useTrialInfo } from '@proton/payments-hooks/ui/hooks/useTrialInfo';
 import { getPlanTitle } from '@proton/payments/core/subscription/helpers';
 import chronometerSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-chronometer.svg';
 import helpSvg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-help.svg';

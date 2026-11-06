@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import type { IconComponent } from '@proton/icons/component';
 import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
+import type { MethodsHook } from '@proton/payments-hooks/react-extensions/useMethods';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { isSignupFlow } from '@proton/payments/core/helpers';
 import type { AvailablePaymentMethod, PaymentMethodFlow, SavedPaymentMethod } from '@proton/payments/core/interface';
@@ -9,7 +10,6 @@ import { isAndroid, isIos } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getPaymentMethodUi, getSavedMethodUi } from '../payment-methods/paymentMethodUiRegistry';
-import type { MethodsHook } from '../react-extensions/useMethods';
 
 export interface ViewPaymentMethod extends AvailablePaymentMethod {
     readonly icon?: IconComponent | undefined;

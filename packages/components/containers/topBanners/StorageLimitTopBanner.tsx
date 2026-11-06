@@ -1,6 +1,6 @@
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
-import { useSubscriptionForApp } from '@proton/payments-ui/ui/hooks/useSubscriptionForApp';
+import { useSubscriptionForApp } from '@proton/payments-hooks/ui/hooks/useSubscriptionForApp';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getSpace } from '@proton/shared/lib/user/storage';
 

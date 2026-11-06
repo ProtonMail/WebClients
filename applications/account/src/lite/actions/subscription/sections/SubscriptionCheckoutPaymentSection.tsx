@@ -10,9 +10,9 @@ import { SubscriptionConfirmButton } from '@proton/components/containers/payment
 import { getPaymentMethodRequired } from '@proton/components/containers/payments/subscription/helpers/getPaymentMethodRequired';
 import useLoading from '@proton/hooks/useLoading';
 import { IcLock } from '@proton/icons/icons/IcLock';
+import { GuardBanner } from '@proton/payments-hooks/ui/components/GuardBanner';
 import type { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import { useBillingAddress } from '@proton/payments-ui/ui/billing-address/hooks/useBillingAddress';
-import { GuardBanner } from '@proton/payments-ui/ui/components/GuardBanner';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments-ui/ui/components/RenewalNotice';
 import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 import { DisplayablePaymentError } from '@proton/payments/core/errors';

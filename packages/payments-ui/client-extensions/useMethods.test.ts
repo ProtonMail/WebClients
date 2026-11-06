@@ -10,10 +10,10 @@ import { IcBrandPaypal } from '@proton/icons/icons/IcBrandPaypal';
 import { IcBrandVisa } from '@proton/icons/icons/IcBrandVisa';
 import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
 import { IcMoneyBills } from '@proton/icons/icons/IcMoneyBills';
+import type { MethodsHook } from '@proton/payments-hooks/react-extensions/useMethods';
 import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { AvailablePaymentMethod, SavedPaymentMethod } from '@proton/payments/core/interface';
 
-import type { MethodsHook } from '../react-extensions/useMethods';
 import { wrapMethods } from './useMethods';
 
 const savedCard = (Brand: string): SavedPaymentMethod => ({

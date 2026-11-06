@@ -51,6 +51,13 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import type { ThemeCode } from '@proton/payments-hooks/client-extensions/helpers';
+import type { ApplePayProcessorHook } from '@proton/payments-hooks/payment-processors/useApplePay';
+import type { ChargebeePaypalProcessorHook } from '@proton/payments-hooks/payment-processors/useChargebeePaypal';
+import type { GooglePayProcessorHook } from '@proton/payments-hooks/payment-processors/useGooglePay';
+import type { ChargebeeCardProcessorHook } from '@proton/payments-hooks/react-extensions/useChargebeeCard';
+import type { ChargebeeIdealProcessorHook } from '@proton/payments-hooks/react-extensions/useChargebeeIdeal';
+import type { ChargebeeDirectDebitProcessorHook } from '@proton/payments-hooks/react-extensions/useSepaDirectDebit';
 import { type GetChargebeeConfigurationResponse, getChargebeeConfiguration } from '@proton/payments/core/api/api';
 import {
     getChargebeeErrorCode,
@@ -69,14 +76,6 @@ import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise';
 import { getSentryError } from '@proton/shared/lib/helpers/sentry';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { ColorScheme } from '@proton/shared/lib/themes/constants';
-
-import type { ThemeCode } from '../../client-extensions/helpers';
-import type { ApplePayProcessorHook } from '../../payment-processors/useApplePay';
-import type { ChargebeePaypalProcessorHook } from '../../payment-processors/useChargebeePaypal';
-import type { GooglePayProcessorHook } from '../../payment-processors/useGooglePay';
-import type { ChargebeeCardProcessorHook } from '../../react-extensions/useChargebeeCard';
-import type { ChargebeeIdealProcessorHook } from '../../react-extensions/useChargebeeIdeal';
-import type { ChargebeeDirectDebitProcessorHook } from '../../react-extensions/useSepaDirectDebit';
 
 /**
  * Small helper to identify the messages sent to iframe.

@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
-import { usePaymentsApi } from '@proton/payments-ui/react-extensions/usePaymentsApi';
+import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import { InvoiceState } from '@proton/payments/core/constants';
 import { isRegularInvoice } from '@proton/payments/core/helpers';
 import type { Invoice } from '@proton/payments/core/interface';

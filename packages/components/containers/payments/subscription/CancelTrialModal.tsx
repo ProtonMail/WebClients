@@ -7,7 +7,7 @@ import { useGetPlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
-import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useAutomaticCurrency';
+import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
 import type { PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getPlanName, getPlanTitle } from '@proton/payments/core/subscription/helpers';

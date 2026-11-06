@@ -1,10 +1,10 @@
 import { type ReactNode, useMemo } from 'react';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import type { GooglePayProcessorHook } from '@proton/payments-hooks/payment-processors/useGooglePay';
 import googlePayGreySvg from '@proton/styles/assets/img/bank-icons/dark-gpay.svg';
 import clsx from '@proton/utils/clsx';
 
-import type { GooglePayProcessorHook } from '../../payment-processors/useGooglePay';
 import { ChargebeeIframe } from './ChargebeeIframe';
 import type { ChargebeeWrapperProps } from './ChargebeeWrapper';
 import type { PayButtonOnClickPayload } from './PayButton';

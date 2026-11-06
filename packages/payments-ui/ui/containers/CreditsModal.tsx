@@ -4,12 +4,12 @@ import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
+import { usePaymentPollers } from '@proton/payments-hooks/ui/hooks/usePaymentPollers';
 import type { Currency } from '@proton/payments/core/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { usePaymentPollers } from '../hooks/usePaymentPollers';
 import { TopUpModal, type TopUpModalProps } from './TopUpModal';
 
 const getCurrenciesI18N = (): Record<Currency, string> => ({

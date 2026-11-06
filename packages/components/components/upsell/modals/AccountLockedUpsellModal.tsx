@@ -6,7 +6,7 @@ import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
+import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
 import { getPriceStartsFrom } from '@proton/payments/core/price-helpers';

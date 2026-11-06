@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
-
-import type { ChargebeeIdealProcessorHook } from '../../react-extensions/useChargebeeIdeal';
+import type { ChargebeeIdealProcessorHook } from '@proton/payments-hooks/react-extensions/useChargebeeIdeal';
 
 export interface IdealAccountHolderInputProps {
     chargebeeIdeal: ChargebeeIdealProcessorHook;

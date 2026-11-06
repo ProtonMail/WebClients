@@ -10,6 +10,7 @@ import { mockStatusApi } from '@proton/components/hooks/helpers/tests/usePayment
 import { mockPlansApi } from '@proton/components/hooks/helpers/tests/usePlans';
 import { mockSubscriptionApi } from '@proton/components/hooks/helpers/tests/useSubscription';
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import type { useCurrencies } from '@proton/payments-hooks/ui/hooks/useCurrencies';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import {
@@ -40,7 +41,6 @@ import { addApiMock, apiMock } from '@proton/test-api/api';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 
 import { PaymentsContextProvider } from '../context/PaymentContext';
-import type { useCurrencies } from '../hooks/useCurrencies';
 import { AutomaticSubscriptionModal, getParameters } from './AutomaticSubscriptionModal';
 import { getEligibility } from './eligibility';
 

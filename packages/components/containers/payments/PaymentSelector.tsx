@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useCurrencies } from '@proton/payments-ui/client-extensions/useCurrencies';
+import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
 import { getCurrencyFormattingConfig, getNaiveCurrencyRate } from '@proton/payments/core/currencies';
 import type { Currency, PaymentStatus } from '@proton/payments/core/interface';
 import { isNumber } from '@proton/shared/lib/helpers/validators';

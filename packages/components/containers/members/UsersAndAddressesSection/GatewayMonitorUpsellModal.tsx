@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcServers } from '@proton/icons/icons/IcServers';
 import { IcUser } from '@proton/icons/icons/IcUser';
-import { usePreferredPlansMap } from '@proton/payments-ui/ui/hooks/usePreferredPlansMap';
+import { usePreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';
 import { ADDON_NAMES, CYCLE } from '@proton/payments/core/constants';
 import { getPricePerCycle } from '@proton/payments/core/price-helpers';
 import gatewayMonitorUpsellHero from '@proton/styles/assets/img/vpn/users/users-upsell-hero.jpg';

@@ -40,7 +40,7 @@ jest.mock('./PlanCardSelector', () => ({
 // Mock AccountStepPayment to avoid act() warnings from useMethods hook.
 // The banner reads the guard like the real component does: from the optimistic-aware options.checkResult.
 jest.mock('./AccountStepPayment', () => {
-    const { GuardBanner } = jest.requireActual('@proton/payments-ui/ui/components/GuardBanner');
+    const { GuardBanner } = jest.requireActual('@proton/payments-hooks/ui/components/GuardBanner');
     return {
         __esModule: true,
         default: ({ handleOptimistic, options, renewalNotice }: any) => {

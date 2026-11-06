@@ -2,8 +2,8 @@ import type { ReactNode } from 'react';
 
 import { screen } from '@testing-library/react';
 
+import { getIdealAuthorizationText } from '@proton/payments-hooks/ui/components/IdealAuthorizationText';
 import { useTaxCountry } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
-import { getIdealAuthorizationText } from '@proton/payments-ui/ui/components/IdealAuthorizationText';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';

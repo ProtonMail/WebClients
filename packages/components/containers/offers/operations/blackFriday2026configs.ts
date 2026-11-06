@@ -1,4 +1,4 @@
-import { useHasRedeemedCoupons } from '@proton/payments-ui/client-extensions/useHasRedeemedCoupons';
+import { useHasRedeemedCoupons } from '@proton/payments-hooks/client-extensions/useHasRedeemedCoupons';
 import { BLACK_FRIDAY_2026_COUPONS } from '@proton/payments/core/subscription/helpers';
 
 import type { OfferConfig, Operation } from '../interface';

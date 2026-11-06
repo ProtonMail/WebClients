@@ -13,6 +13,10 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModals from '@proton/components/hooks/useModals';
+import { abortSignalAny } from '@proton/payments-hooks/client-extensions/validators/AbortSignalAny';
+import type { ApplePayModalHandles } from '@proton/payments-hooks/payment-processors/useApplePay';
+import type { ChargebeePaypalModalHandles } from '@proton/payments-hooks/payment-processors/useChargebeePaypal';
+import type { GooglePayModalHandles } from '@proton/payments-hooks/payment-processors/useGooglePay';
 import {
     type ApplePayFlow,
     getOfferedApplePayFlow,
@@ -36,11 +40,7 @@ import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/const
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { ApplePayModalHandles } from '../../payment-processors/useApplePay';
-import type { ChargebeePaypalModalHandles } from '../../payment-processors/useChargebeePaypal';
-import type { GooglePayModalHandles } from '../../payment-processors/useGooglePay';
 import { getDefaultTranslations } from '../ensureTokenChargeable';
-import { abortSignalAny } from './AbortSignalAny';
 import PaymentVerificationModal from './PaymentVerificationModal';
 
 type Dependencies = {

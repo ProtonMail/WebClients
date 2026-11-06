@@ -7,7 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
-import { useReferralTrialSubscription } from '@proton/payments-ui/ui/hooks/useReferralTrialSubscription';
+import { useReferralTrialSubscription } from '@proton/payments-hooks/ui/hooks/useReferralTrialSubscription';
 import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { getPlanTitle, isAutoRenewTrial, isTrialRenewing } from '@proton/payments/core/subscription/helpers';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';

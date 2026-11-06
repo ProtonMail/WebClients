@@ -1,8 +1,8 @@
 import { fireEvent, screen } from '@testing-library/react';
 
+import { renderWithProviders } from '@proton/payments-hooks/testing/renderWithProviders';
 import { PLANS } from '@proton/payments/core/constants';
 import type { PaymentsApi } from '@proton/payments/core/interface';
-import { renderWithProviders } from '../../../testing/renderWithProviders';
 
 import { useTaxCountry } from '../hooks/useTaxCountry';
 import { useVatNumber } from '../hooks/useVatNumber';
@@ -16,7 +16,7 @@ const mockPaymentsApi = {
     getFullBillingAddress: jest.fn().mockResolvedValue({}),
 } as unknown as PaymentsApi;
 
-jest.mock('../../../react-extensions/usePaymentsApi', () => ({
+jest.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => ({
     usePaymentsApi: () => ({ paymentsApi: mockPaymentsApi }),
 }));
 

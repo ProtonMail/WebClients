@@ -1,10 +1,10 @@
 import { fireEvent, screen } from '@testing-library/react';
 
 import { useConfig } from '@proton/app-context/useConfig';
+import { renderWithProviders } from '@proton/payments-hooks/testing/renderWithProviders';
 import { WrongBillingAddressError } from '@proton/payments/core/errors';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { APPS } from '@proton/shared/lib/constants';
-import { renderWithProviders } from '../../../testing/renderWithProviders';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import type { PaymentFacade } from '../../../client-extensions/usePaymentFacade';

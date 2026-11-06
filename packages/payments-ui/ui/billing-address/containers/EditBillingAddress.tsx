@@ -16,6 +16,9 @@ import { InputField as InputFieldTwo } from '@proton/components/components/v2/fi
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { InfoBanner } from '@proton/components/containers/payments/subscription/confirm-button/InfoBanner';
 import useLoading from '@proton/hooks/useLoading';
+import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
+import { useVatPrefixSync } from '@proton/payments-hooks/ui/billing-address/hooks/useVatPrefixSync';
+import { cleanBillingAddressVat } from '@proton/payments-hooks/ui/billing-address/hooks/vatPrefixHelper';
 import { type FullBillingAddress, zipCodeValidator } from '@proton/payments/core/billing-address/billing-address';
 import { getVatFormErrors } from '@proton/payments/core/billing-address/vat-helpers';
 import type { BillingAddressValidationResult } from '@proton/payments/core/errors';
@@ -27,11 +30,8 @@ import type { BillingAddressEditSource } from '@proton/payments/telemetry/billin
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
-import { usePaymentsApi } from '../../../react-extensions/usePaymentsApi';
 import { CountryStateSelector } from '../components/CountryStateSelector';
 import { type CountriesWithCustomVatName, getVatNumberName } from '../components/VatNumberInput';
-import { useVatPrefixSync } from '../hooks/useVatPrefixSync';
-import { cleanBillingAddressVat } from '../hooks/vatPrefixHelper';
 
 export interface EditBillingAdressModalInputs {
     initialFullBillingAddress: FullBillingAddress;

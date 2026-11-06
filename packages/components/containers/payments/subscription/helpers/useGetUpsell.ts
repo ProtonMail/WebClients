@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { plansThunk } from '@proton/account/plans';
 import { subscriptionThunk } from '@proton/account/subscription';
 import { userThunk } from '@proton/account/user';
-import { useAutomaticCurrency } from '@proton/payments-ui/client-extensions/useAutomaticCurrency';
+import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
 import { isPaymentsPreloaded, usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 import { getCanSubscriptionAccessDuoPlan } from '@proton/payments/core/subscription/helpers';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';

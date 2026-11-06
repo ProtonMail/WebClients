@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
-import { useSubscriptionForApp } from '@proton/payments-ui/ui/hooks/useSubscriptionForApp';
+import { useSubscriptionForApp } from '@proton/payments-hooks/ui/hooks/useSubscriptionForApp';
 import { PLANS } from '@proton/payments/core/constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { UserLockedFlags, type UserModel } from '@proton/shared/lib/interfaces/User';
@@ -31,7 +31,7 @@ jest.mock('../../components/link/AppLink', () => {
 jest.mock('@proton/account/user/hooks');
 const mockedUser = useUser as jest.Mock;
 
-jest.mock('@proton/payments-ui/ui/hooks/useSubscriptionForApp');
+jest.mock('@proton/payments-hooks/ui/hooks/useSubscriptionForApp');
 const mockedSub = useSubscriptionForApp as jest.Mock;
 
 jest.mock('@proton/app-context/useConfig');

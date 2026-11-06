@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
-import { useTrialInfo } from '@proton/payments-ui/ui/hooks/useTrialInfo';
+import { useTrialInfo } from '@proton/payments-hooks/ui/hooks/useTrialInfo';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import {
     APPS,

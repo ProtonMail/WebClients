@@ -4,13 +4,13 @@ import type { MockedFunction } from 'vitest';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useNow } from '@proton/components/hooks/useNow';
-import { useTrialInfo } from '@proton/payments-ui/ui/hooks/useTrialInfo';
+import { useTrialInfo } from '@proton/payments-hooks/ui/hooks/useTrialInfo';
 
 import { getInitialModel } from '../../functions/gatewayHelpers';
 import type { DeletedDedicatedIp, GatewayLocation } from '../../types/Gateway';
 import { GatewayCountrySelection } from './GatewayCountrySelection';
 
-vi.mock('@proton/payments-ui/ui/hooks/useTrialInfo');
+vi.mock('@proton/payments-hooks/ui/hooks/useTrialInfo');
 vi.mock('@proton/account/organization/hooks');
 vi.mock('@proton/components/hooks/useNow');
 vi.mock('ttag', () => ({

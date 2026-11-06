@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import { selectUser } from '@proton/account/user';
 import useLoading from '@proton/hooks/useLoading';
+import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
+import { cleanVatNumber, getVatPrefix } from '@proton/payments-hooks/ui/billing-address/hooks/vatPrefixHelper';
 import type {
     BillingAddressExtended,
     BillingAddressExtraProperties,
@@ -22,9 +24,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import type { PaymentFacade } from '../../../client-extensions/usePaymentFacade';
-import { usePaymentsApi } from '../../../react-extensions/usePaymentsApi';
 import type { TaxCountryHook } from './useTaxCountry';
-import { cleanVatNumber, getVatPrefix } from './vatPrefixHelper';
 
 type FullBillingAddressWithoutCountry = Omit<FullBillingAddressFlat, 'CountryCode' | 'State' | 'ZipCode'>;
 
