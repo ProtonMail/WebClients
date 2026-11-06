@@ -260,6 +260,7 @@ enum LumoFeatureFlag {
     LumoMaxAvailableFree = 'LumoMaxAvailableFree',
     LumoMaxAvailableGuest = 'LumoMaxAvailableGuest',
     LumoMeowmory = 'LumoMeowmory',
+    LumoMoveToProject = 'LumoMoveToProject',
     LumoNativeAuthAndroid = 'LumoNativeAuthAndroid',
     LumoNativeAuthIOS = 'LumoNativeAuthIOS',
     LumoNativeComposer = 'LumoNativeComposer',

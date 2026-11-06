@@ -14,8 +14,11 @@ import { LumoLink } from '../../../components/Links/LumoLink';
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 import { ConversationExportModal } from '../../../components/Modals/ConversationExportModal/ConversationExportModal';
 import { ProjectIcon } from '../../../components/ProjectIcon/ProjectIcon';
+import { MoveToProjectModal } from '../../projects/modals/MoveToProjectModal';
 import { useConversationRename } from '../../../hooks/useConversationRename';
+import { useLumoFlags } from '../../../hooks/useLumoFlags';
 import { useConversationStar } from '../../../hooks/useConversationStar';
+import { useIsGuest } from '../../../providers/IsGuestProvider';
 import { ConversationDeleteFlow } from '../../../layouts/sidepanel/ConversationDeleteFlow';
 import { ConversationExpirationIndicator } from '../../../layouts/sidepanel/ConversationExpirationIndicator';
 import { ConversationSidebarActions } from '../../../layouts/sidepanel/ConversationSidebarActions';
@@ -35,6 +38,7 @@ interface ConversationRowProps {
     onToggleBulkSelect: (conversationId: ConversationId) => void;
     sortField: ChatHistoryDateField;
     showProjectLink: boolean;
+    allowMovingProjectChats: boolean;
 }
 
 export const ConversationRow = memo(
@@ -47,9 +51,13 @@ export const ConversationRow = memo(
         onToggleBulkSelect,
         sortField,
         showProjectLink,
+        allowMovingProjectChats,
     }: ConversationRowProps) => {
         const [deleteRequested, setDeleteRequested] = useState(false);
         const conversationExportModal = useModalStateObject();
+        const moveToProjectModal = useModalStateObject();
+        const isGuest = useIsGuest();
+        const { moveToProject } = useLumoFlags();
         const {
             isRenaming,
             draftTitle,
@@ -69,6 +77,7 @@ export const ConversationRow = memo(
         const label = conversation.title.trim() || c('collider_2025:Button').t`Untitled chat`;
         const timestamp = formatChatRelativeDate(conversation[sortField]);
         const { isProject, projectIcon, projectName } = rowData;
+        const canMoveToProject = moveToProject && !isGuest && (allowMovingProjectChats || !isProject) && !conversation.ghost && !conversation.scheduleRun;
         const projectLabel = projectName?.trim() || c('collider_2025:Label').t`Untitled project`;
 
         const renderProjectLink = (placementClassName: string) => {
@@ -100,7 +109,7 @@ export const ConversationRow = memo(
             <div
                 className={clsx(
                     'all-chats-row group relative flex items-center gap-3 px-3 min-w-0 overflow-hidden',
-                    (deleteRequested || conversationExportModal.render) && 'all-chats-row-actions-pinned',
+                    (deleteRequested || conversationExportModal.render || moveToProjectModal.render) && 'all-chats-row-actions-pinned',
                     isBulkSelected && 'all-chats-row-bulk-selected'
                 )}
                 style={{ height: `${CONVERSATION_ROW_HEIGHT}px` }}
@@ -230,6 +239,22 @@ export const ConversationRow = memo(
                                 >
                                     <LumoIcon name="SquareArrowRightExit" size={15} />
                                 </Button>
+                                {canMoveToProject ? (
+                                    <Button
+                                        icon
+                                        shape="ghost"
+                                        size="small"
+                                        className="shrink-0"
+                                        aria-label={c('collider_2025:Action').t`Move to project`}
+                                        onClick={(event) => {
+                                            event.preventDefault();
+                                            event.stopPropagation();
+                                            moveToProjectModal.openModal(true);
+                                        }}
+                                    >
+                                        <LumoIcon name="FolderInput" size={15} />
+                                    </Button>
+                                ) : null}
                                 <Button
                                     icon
                                     className="shrink-0"
@@ -250,6 +275,7 @@ export const ConversationRow = memo(
                                     conversation={conversation}
                                     onRename={startRenaming}
                                     includeStarOption={false}
+                                    includeMoveToProject={allowMovingProjectChats || !isProject}
                                 />
                             </div>
                         </div>
@@ -268,6 +294,10 @@ export const ConversationRow = memo(
 
                 {conversationExportModal.render ? (
                     <ConversationExportModal {...conversationExportModal.modalProps} conversation={conversation} />
+                ) : null}
+
+                {moveToProjectModal.render ? (
+                    <MoveToProjectModal {...moveToProjectModal.modalProps} conversation={conversation} />
                 ) : null}
 
                 {showFavoritesUpsellModal ? <FavoritesUpsellPrompt {...favoritesUpsellModalProps} /> : null}

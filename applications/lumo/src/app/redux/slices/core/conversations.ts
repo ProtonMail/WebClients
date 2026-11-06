@@ -10,6 +10,7 @@ import type {
     ConversationId,
     EditConversation,
     SerializedConversation,
+    SpaceId,
     UpdateConversationStatusAction,
 } from '../../../types';
 
@@ -68,6 +69,53 @@ export const pushConversationSuccess = createAction<PushConversationSuccess>('lu
 export const pushConversationNoop = createAction<PushConversationRequest>('lumo/conversation/pushNoop');
 export const pushConversationNeedsRetry = createAction<PushConversationRequest>('lumo/conversation/pushNeedsRetry');
 export const pushConversationFailure = createAction<PushConversationFailure>('lumo/conversation/pushFailure');
+export type MoveConversationToSpaceRequest = {
+    conversationId: ConversationId;
+    targetSpaceId: SpaceId;
+    /** Identifies this attempt, so a result is never taken for another attempt at the same chat. */
+    attemptId: string;
+};
+export type MoveConversationToSpaceSuccess = MoveConversationToSpaceRequest & {
+    newConversationId: ConversationId;
+    /**
+     * The chat is safely in the project, but removing the original failed part way. The copy is kept
+     * rather than rolled back, since it is then the only complete one.
+     */
+    cleanupFailed?: boolean;
+};
+/**
+ * - `loading`: fetching the chat's messages and files from the server (slow connections wait here).
+ * - `copying`: creating the copy and waiting for it to sync.
+ * - `finishing`: removing the original.
+ */
+type MoveConversationToSpaceStage = 'loading' | 'copying' | 'finishing';
+export type MoveConversationToSpaceProgress = MoveConversationToSpaceRequest & {
+    stage: MoveConversationToSpaceStage;
+    /** Number of items the stage handles (messages and files), when known. */
+    total?: number;
+};
+export type MoveConversationToSpaceFailure = MoveConversationToSpaceRequest & {
+    error: string;
+    /** Set when the failure is a known, user-actionable condition. */
+    reason?: 'limit' | 'busy' | 'unsupported' | 'unavailable' | 'privacy';
+};
+
+// Copies a conversation (with its messages and attachments) into another space, then removes the original.
+// Space ownership can't be changed in place: the space key encrypts the data and the conversation id is
+// bound to its space, so this creates new resources under new ids.
+export const moveConversationToSpaceRequest = createAction<MoveConversationToSpaceRequest>(
+    'lumo/conversation/moveToSpaceRequest'
+);
+export const moveConversationToSpaceProgress = createAction<MoveConversationToSpaceProgress>(
+    'lumo/conversation/moveToSpaceProgress'
+);
+export const moveConversationToSpaceSuccess = createAction<MoveConversationToSpaceSuccess>(
+    'lumo/conversation/moveToSpaceSuccess'
+);
+export const moveConversationToSpaceFailure = createAction<MoveConversationToSpaceFailure>(
+    'lumo/conversation/moveToSpaceFailure'
+);
+
 export type ExpireConversationsRequest = {
     hasLumoPlus: boolean;
 };
