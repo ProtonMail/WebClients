@@ -23,6 +23,7 @@ export enum SettingsCardMaxWidth {
 
 export interface SubSectionConfig {
     text?: string;
+    /** The subsection content renders its own heading, so `text` is not rendered as a title */
     invisibleTitle?: boolean;
     id: string;
     hide?: boolean;

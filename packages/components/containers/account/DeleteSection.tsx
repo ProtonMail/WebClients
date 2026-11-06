@@ -17,6 +17,7 @@ import useModalState from '../../components/modalTwo/useModalState';
 import { DiscountWarningModal, VisionaryWarningModal } from '../payments/subscription/PlanLossWarningModal';
 import DeleteAccountModal from './DeleteAccountModal';
 import SettingsParagraph from './SettingsParagraph';
+import SettingsSectionTitle from './SettingsSectionTitle';
 
 interface Props {
     deleteButtonFullWidth?: boolean;
@@ -48,10 +49,13 @@ const DeleteSection = (props: Props) => {
         );
 
         return (
-            <SettingsParagraph>
-                {c('Info')
-                    .jt`Your ${VPN_APP_NAME} and ${MAIL_APP_NAME} accounts are linked. To delete them both, please sign in at ${loginLink} and delete your account there.`}
-            </SettingsParagraph>
+            <>
+                <SettingsSectionTitle className="sr-only">{c('Title').t`Delete account`}</SettingsSectionTitle>
+                <SettingsParagraph>
+                    {c('Info')
+                        .jt`Your ${VPN_APP_NAME} and ${MAIL_APP_NAME} accounts are linked. To delete them both, please sign in at ${loginLink} and delete your account there.`}
+                </SettingsParagraph>
+            </>
         );
     }
 
