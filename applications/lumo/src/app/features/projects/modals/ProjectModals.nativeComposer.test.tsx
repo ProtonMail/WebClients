@@ -7,10 +7,10 @@ import { type ProjectSpace, type SpaceKeyClear, SpaceType } from '../../../types
 import { ProjectLimitModal } from './ProjectLimitModal';
 import { ProjectSearchModal } from './ProjectSearchModal';
 
-jest.mock('@proton/components/containers/payments/subscription/SubscriptionModalProvider', () => ({
+jest.mock('@proton/components/containers/payments/subscription/subscriptionModalContext', () => ({
     useSubscriptionModal: () => [jest.fn(), false],
 }));
-jest.mock('@proton/payments-ui/ui/hooks/usePreferredPlansMap', () => ({
+jest.mock('@proton/payments-hooks/ui/hooks/usePreferredPlansMap', () => ({
     usePreferredPlansMap: () => ({ plansMapLoading: false }),
 }));
 jest.mock('../../../hooks', () => ({ useLumoUserSettings: () => ({ lumoUserSettings: {} }) }));
