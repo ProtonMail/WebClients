@@ -15,6 +15,7 @@ import SubscribeAccount from './actions/SubscribeAccount';
 import VPNLite from './actions/VPNLite';
 import WalletSettings from './actions/WalletSettings';
 import { BYOEMobile } from './actions/byoe-mobile/BYOEMobile';
+import CalendarSettings from './actions/calendar-settings/CalendarSettings';
 import { SignOut } from './actions/sign-out/SignOut';
 import { SupportedActions } from './helper';
 
@@ -50,6 +51,7 @@ const LegacyLiteAppBaseRoute = ({
             {action === SupportedActions.AccountSettings && <AccountSettings layout={layout} loader={loader} />}
             {action === SupportedActions.EmailSignatures && <SignatureSettings layout={layout} loader={loader} />}
             {action === SupportedActions.EmailSettings && <EmailSettings layout={layout} loader={loader} />}
+            {action === SupportedActions.CalendarSettings && <CalendarSettings layout={layout} loader={loader} />}
             {action === SupportedActions.CategoryView && <CategoriesLiteView layout={layout} loader={loader} />}
             {action === SupportedActions.BYOEMobile && (
                 <BYOEMobile layout={layout} redirect={redirect} initialSearchParams={initialSearchParams} />
