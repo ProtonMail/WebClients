@@ -12,6 +12,7 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { ChatSearchSelect, FileSearchSelect } from '../../../components/ChatSearchSelect/ChatSearchSelect';
+import { useNativeComposerVisibilityApi } from '../../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { useLumoUserSettings } from '../../../hooks';
 import { useLumoDispatch } from '../../../redux/hooks';
 import { addSpace, pushSpaceRequest } from '../../../redux/slices/core/spaces';
@@ -80,6 +81,7 @@ const chatSearchHint = (chatSearch: ChatSearchReach) => {
 /** Edits how far knowledge lookup reaches from this project's chats. Unset values follow the user's settings. */
 export const ProjectSearchModal = ({ space, ...modalProps }: ProjectSearchModalProps) => {
     const dispatch = useLumoDispatch();
+    useNativeComposerVisibilityApi({ hideComposer: Boolean(modalProps.open) });
     const { lumoUserSettings } = useLumoUserSettings();
     const [draft, setDraft] = useState<ProjectSearchSettings>({
         chatSearch: space.chatSearch,

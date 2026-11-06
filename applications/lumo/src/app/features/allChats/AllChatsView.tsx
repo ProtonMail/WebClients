@@ -3,6 +3,7 @@ import { shallowEqual } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { useIsChatHistoryHydrating } from '../../hooks/useIsChatHistoryHydrating';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
@@ -23,6 +24,7 @@ import { ConversationListPanel } from './shared/ConversationListPanel';
 import './AllChatsView.scss';
 
 export const AllChatsView = () => {
+    useNativeComposerVisibilityApi({ hideComposer: true });
     const store = useLumoStore();
     const getState = useCallback(() => store.getState(), [store]);
     const conversationsMap = useLumoSelector(selectConversations, shallowEqual);

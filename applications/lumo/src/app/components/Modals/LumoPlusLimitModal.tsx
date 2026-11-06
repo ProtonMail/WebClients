@@ -15,6 +15,7 @@ import lumoCatLoaf from '@proton/styles/assets/img/lumo/lumo-cat-loaf-upsell.svg
 
 import { LUMO_UPGRADE_TRIGGER_CLASS } from '../../constants';
 import { sendSubscriptionModalSubscribedEvent } from '../../util/telemetry';
+import { useNativeComposerVisibilityApi } from '../Composer/hooks/useNativeComposerVisibilityApi';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
 
 import './LumoPlusLimitModal.scss';
@@ -31,6 +32,7 @@ interface LumoPlusLimitModalProps extends ModalProps {
 export const LumoPlusLimitModal = ({ title, description, limitFeature, ...modalProps }: LumoPlusLimitModalProps) => {
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const { plansMapLoading } = usePreferredPlansMap();
+    useNativeComposerVisibilityApi({ hideComposer: Boolean(modalProps.open) });
 
     const handleSubscriptionModalSubscribed = () => {
         modalProps.onClose?.();

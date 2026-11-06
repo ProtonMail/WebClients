@@ -59,7 +59,9 @@ export const SketchCanvas = ({
         const exportOptions: ExportOptions = { format: 'png', quality: 1 };
         const imageData = exportCanvasAsDataURL(canvas, exportOptions);
         const text = description.trim();
-        injectNativeImageGenerationHelper(text);
+        if (text) {
+            injectNativeImageGenerationHelper(text);
+        }
         onExport?.(imageData, mode, description.trim());
     };
 

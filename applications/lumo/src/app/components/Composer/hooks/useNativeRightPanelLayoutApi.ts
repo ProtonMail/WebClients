@@ -27,12 +27,16 @@ export const useNativeRightPanelLayoutApi = (chatRef: RefObject<HTMLElement | nu
         }
         const update = () => {
             const bounds = chat.getBoundingClientRect();
-            const width = getComputedStyle(chat).direction === 'rtl' ? bounds.left : window.innerWidth - bounds.right;
+            // WebKit's innerWidth can lag behind the layout viewport during a Duo display change.
+            const viewportWidth = document.documentElement.clientWidth;
+            const width = getComputedStyle(chat).direction === 'rtl' ? bounds.left : viewportWidth - bounds.right;
             setNativeRightPanelWidth(Math.max(0, width));
         };
         update();
         const observer = new ResizeObserver(update);
         observer.observe(chat);
+        // The viewport can resize while chat keeps the same width beside a docked panel.
+        observer.observe(document.documentElement);
         window.addEventListener('resize', update);
         return () => {
             observer.disconnect();

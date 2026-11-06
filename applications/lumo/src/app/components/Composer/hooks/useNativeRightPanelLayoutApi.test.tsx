@@ -30,6 +30,7 @@ describe('useNativeRightPanelLayoutApi', () => {
         (useIsLumoSmallScreen as jest.Mock).mockReturnValue({ isSmallScreen: false });
         (canUseNativeRightPanelLayout as jest.Mock).mockReturnValue(true);
         window.innerWidth = 1024;
+        jest.spyOn(document.documentElement, 'clientWidth', 'get').mockImplementation(() => window.innerWidth);
         global.ResizeObserver = jest.fn().mockImplementation((callback: ResizeObserverCallback) => {
             resize = callback;
             observer = { observe: jest.fn(), unobserve: jest.fn(), disconnect };
@@ -38,6 +39,7 @@ describe('useNativeRightPanelLayoutApi', () => {
     });
 
     afterEach(() => {
+        jest.restoreAllMocks();
         global.ResizeObserver = originalObserver;
         window.innerWidth = originalViewportWidth;
     });
@@ -194,5 +196,60 @@ describe('useNativeRightPanelLayoutApi', () => {
         act(() => result.current.open());
 
         expect(setNativeRightPanelWidth).toHaveBeenLastCalledWith(400);
+    });
+
+    it('remeasures the viewport when chat keeps the same size after unfolding', () => {
+        const observed = new Set<Element>();
+        global.ResizeObserver = jest.fn().mockImplementation((callback: ResizeObserverCallback) => {
+            resize = callback;
+            observer = {
+                observe: (target: Element) => observed.add(target),
+                unobserve: jest.fn(),
+                disconnect,
+            };
+            return observer;
+        });
+        const chat = document.createElement('main');
+        jest.spyOn(chat, 'getBoundingClientRect').mockReturnValue(new DOMRect(8, 0, 451, 700));
+        const chatRef = { current: chat };
+        const { result } = renderHook(
+            () => {
+                useNativeRightPanelLayoutApi(chatRef);
+                return useRightPanel();
+            },
+            { wrapper }
+        );
+        act(() => result.current.open());
+
+        window.innerWidth = 466;
+        act(() => window.dispatchEvent(new Event('resize')));
+        // Only the root changes size: the docked chat happens to stay 451 points wide.
+        window.innerWidth = 867;
+        act(() => {
+            if (observed.has(document.documentElement)) {
+                resize([], observer);
+            }
+        });
+
+        expect(setNativeRightPanelWidth).toHaveBeenLastCalledWith(408);
+    });
+
+    it('measures against the layout viewport while WebKit innerWidth still describes the closed display', () => {
+        const chat = document.createElement('main');
+        jest.spyOn(chat, 'getBoundingClientRect').mockReturnValue(new DOMRect(8, 0, 451, 700));
+        window.innerWidth = 382;
+        jest.spyOn(document.documentElement, 'clientWidth', 'get').mockReturnValue(867);
+        const chatRef = { current: chat };
+        const { result } = renderHook(
+            () => {
+                useNativeRightPanelLayoutApi(chatRef);
+                return useRightPanel();
+            },
+            { wrapper }
+        );
+
+        act(() => result.current.open());
+
+        expect(setNativeRightPanelWidth).toHaveBeenLastCalledWith(408);
     });
 });
