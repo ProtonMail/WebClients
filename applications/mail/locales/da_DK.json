@@ -6587,6 +6587,12 @@
       ],
       "Username": [
         "Brugernavn"
+      ],
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Hvilken e-mail brugte du mest før ${ MAIL_APP_NAME }?"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Hvad den primære årsag til, at du tilsluttede dig ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -10033,6 +10039,72 @@
       ],
       "No booking pages yet": [
         "Ingen bookingsider endnu"
+      ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } af ${ steps }"
+      ],
+      "A new or separate address": [
+        "En ny eller separat adresse"
+      ],
+      "A specific feature (tell us)": [
+        "En specifik funktion (fortæl os)"
+      ],
+      "Almost done": [
+        "Næsten færdig"
+      ],
+      "Back": [
+        "Tilbage"
+      ],
+      "Choose all that apply.": [
+        "Vælg alle relevante."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Vælg en. Det hjælper os med at gøre ${ MAIL_APP_NAME } bedre."
+      ],
+      "Dismiss": [
+        "Afvis"
+      ],
+      "I didn't have one": [
+        "Jeg havde ikke en"
+      ],
+      "I use other Proton products": [
+        "Jeg bruger andre Proton-produkter"
+      ],
+      "Leave Big Tech": [
+        "Forlad Big Tech"
+      ],
+      "Next": [
+        "Næste"
+      ],
+      "No ads": [
+        "Ingen reklamer"
+      ],
+      "One last step": [
+        "Ét sidste trin"
+      ],
+      "Protection from hackers and leaks": [
+        "Beskyttelse fra hackere og læk"
+      ],
+      "Someone recommended it": [
+        "Nogen anbefalede det"
+      ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Begynd at bruge ${ MAIL_APP_NAME }"
+      ],
+      "Stop companies reading my emails": [
+        "Forhindre virksomheder fra at læse mine e-mails"
+      ],
+      "Tell us more (optional)": [
+        "Uddyb (valgfrit)"
+      ],
+      "Which feature? (optional)": [
+        "Hvilken funktion? (valgfrit)"
+      ],
+      "Which provider?": [
+        "Hvilken udbyder?"
+      ],
+      "Work or business": [
+        "Arbejde eller erhverv"
       ]
     },
     "info": {
@@ -17588,6 +17660,9 @@
       ],
       "Share your availability": [
         "Del din tilgængelighed"
+      ],
+      "Filter on": [
+        "Filtrer efter"
       ]
     },
     "Title header for keys table": {

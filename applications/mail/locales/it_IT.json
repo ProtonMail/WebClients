@@ -1775,6 +1775,12 @@
       ],
       "View guide": [
         "Visualizza la guida"
+      ],
+      "Add payment method": [
+        "Aggiungi metodo di pagamento"
+      ],
+      "Cancel trial": [
+        "Annulla la prova"
       ]
     },
     "action": {
@@ -6380,6 +6386,12 @@
       ],
       "Username": [
         "Utente"
+      ],
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Prima di ${ MAIL_APP_NAME }, quale servizio di posta elettronica utilizzavi maggiormente?"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Qual è il motivo principale per cui ti sei iscritto a ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -9781,6 +9793,75 @@
       ],
       "Update filter": [
         "Aggiorna filtro"
+      ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } di ${ steps }"
+      ],
+      "A new or separate address": [
+        "Un indirizzo nuovo o diverso"
+      ],
+      "A specific feature (tell us)": [
+        "Una caratteristica specifica (raccontacela)"
+      ],
+      "Almost done": [
+        "Quasi finito…"
+      ],
+      "Back": [
+        "Indietro"
+      ],
+      "Choose all that apply.": [
+        "Scegli tutte le opzioni che si applicano."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Scegline uno. Ci aiuta a migliorare ${ MAIL_APP_NAME }."
+      ],
+      "Dismiss": [
+        "Ignora"
+      ],
+      "I didn't have one": [
+        "Non ne avevo uno"
+      ],
+      "I use other Proton products": [
+        "Utilizzo altri prodotti Proton"
+      ],
+      "Leave Big Tech": [
+        "Lascia le grandi aziende tecnologiche"
+      ],
+      "Next": [
+        "Successivo"
+      ],
+      "No ads": [
+        "Nessuna pubblicità"
+      ],
+      "One last step": [
+        "Un ultimo passo"
+      ],
+      "Other (tell us)": [
+        "Altro (indicaci)"
+      ],
+      "Protection from hackers and leaks": [
+        "Protezione da hacker e fughe di informazioni"
+      ],
+      "Someone recommended it": [
+        "Me l'ha consigliato qualcuno"
+      ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Inizia a utilizzare ${ MAIL_APP_NAME }"
+      ],
+      "Stop companies reading my emails": [
+        "Stop companies reading my emails"
+      ],
+      "Tell us more (optional)": [
+        "Raccontaci di più (facoltativo)"
+      ],
+      "Which feature? (optional)": [
+        "Quale funzione? (facoltativo)"
+      ],
+      "Which provider?": [
+        "Quale operatore?"
+      ],
+      "Work or business": [
+        "Lavoro o affari"
       ]
     },
     "info": {
@@ -13246,6 +13327,9 @@
       ],
       "you can cancel within 30 days and get a pro-rata refund.": [
         "È possibile recedere dal contratto entro 30 giorni e ottenere un rimborso proporzionale."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Hai cambiato idea dopo il periodo di prova? **Annulla entro 30 giorni dal primo pagamento e ti rimborseremo il periodo non utilizzato."
       ]
     },
     "Option": {
@@ -17296,6 +17380,9 @@
       ],
       "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
         "Avviso: questo account Gmail è collegato a un altro account ${ BRAND_NAME }"
+      ],
+      "Filter on": [
+        "Filtra"
       ]
     },
     "Title header for keys table": {

@@ -1760,6 +1760,30 @@
       ],
       "Move ${ LUMO_SHORT_APP_NAME } to the left": [
         "Flytt ${ LUMO_SHORT_APP_NAME } til venstre"
+      ],
+      "Cancel trial": [
+        "Avbryt prøveperioden"
+      ],
+      "Detach": [
+        "Løsne"
+      ],
+      "Dock to side panel": [
+        "Fest til sidepanelet"
+      ],
+      "Got it, connect my Gmail": [
+        "Skjønner, koble til min Gmail"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the right": [
+        "Flytt ${ LUMO_SHORT_APP_NAME } til høyre"
+      ],
+      "New chat": [
+        "Ny chat"
+      ],
+      "Special Offer": [
+        "Spesialtilbud"
+      ],
+      "Switch to ${ planName }": [
+        "Bytt til ${ planName }"
       ]
     },
     "action": {
@@ -1918,6 +1942,9 @@
       ],
       "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
         "Organisasjoner med Managed Service Provider-tillegget kan opprette og administrere datterselskaper."
+      ],
+      "Managed Service Provider": [
+        "Leverandør av administrerte tjenester (MSP)"
       ]
     },
     "Alert": {
@@ -4335,6 +4362,9 @@
       "${ messageCount } new message": [
         "${ messageCount } ny melding",
         "${ messageCount } nye meldinger"
+      ],
+      "From: ${ sender } - ${ subject }": [
+        "Fra: ${ sender } - ${ subject }"
       ]
     },
     "Desktop notification title": {
@@ -5575,6 +5605,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Du har nådd det maksimale antallet tilkoblede adresser"
       ]
     },
     "error": {
@@ -6430,6 +6463,15 @@
       ],
       "Username": [
         "Brukernavn"
+      ],
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Før ${ MAIL_APP_NAME }, hvilken e-posttjeneste brukte du mest?"
+      ],
+      "Good to know before you connect": [
+        "Greit å vite før du kobler til"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Hva er hovedgrunnen til at du ble med i ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -9783,6 +9825,156 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "Gmail-en din kobles til denne ${ MAIL_APP_NAME }-adressen"
+      ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } av ${ steps }"
+      ],
+      "1 device per user": [
+        "1 enhet per bruker"
+      ],
+      "A new or separate address": [
+        "En ny eller egen adresse"
+      ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "En rask gjennomgang av hva jeg kan hjelpe med i postkassen din, fra å finne gammel post til å lage utkast til svar, og hva jeg ikke kan gjøre."
+      ],
+      "A specific feature (tell us)": [
+        "En bestemt funksjon (gi oss tips)"
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Etter oppdatering kan det hende at Mac-en ber om et passord. Skriv inn passordet du bruker for å låse opp Mac-en, og klikk på Tillat alltid for å forbli pålogget. ${ learnMore }"
+      ],
+      "Almost done": [
+        "Nesten ferdig"
+      ],
+      "Back": [
+        "Tilbake"
+      ],
+      "Choose all that apply.": [
+        "Velg alt som passer."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Velg en. Det hjelper oss å forbedre ${ MAIL_APP_NAME }."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter er basert på standard månedspris. Abonnementet ditt fornyes til standard årspris når faktureringssyklusen utløper."
+      ],
+      "Dismiss": [
+        "Avvis"
+      ],
+      "Draft a ${ kind }": [
+        "Skriv et utkast til ${ kind }"
+      ],
+      "Draft a ${ kind } to ${ recipient }": [
+        "Lag et utkast til ${ kind } til ${ recipient }"
+      ],
+      "Drafted a ${ kind }": [
+        "Skrev et utkast til ${ kind }"
+      ],
+      "Drafted an ${ kind }": [
+        "Skrev et utkast til ${ kind }"
+      ],
+      "forward": [
+        "videresend"
+      ],
+      "Here is my availability:": [
+        "Når jeg er tilgjengelig:"
+      ],
+      "Here's what happens when you continue:": [
+        "Her er hva som skjer når du fortsetter:"
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Hei Lumo, søk gjennom e-postene mine fra de siste 7 dagene og fortell meg hvilke som faktisk trenger svar fra meg. Gi meg én linje om hva hver av dem ber om, og utelat alt jeg kan se bort fra"
+      ],
+      "I didn't have one": [
+        "Jeg hadde ikke en"
+      ],
+      "I use other Proton products": [
+        "Jeg bruker andre Proton-produkter"
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Jeg går gjennom e-posten fra forrige uke og plukker ut det som faktisk trenger svar, så du kan ta det unna i én omgang."
+      ],
+      "Leave Big Tech": [
+        "Forlate Big Tech"
+      ],
+      "Next": [
+        "Neste"
+      ],
+      "Next time you sign in to your other account": [
+        "Neste gang du logger på den andre kontoen din"
+      ],
+      "No ads": [
+        "Ingen annonser"
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "Ingenting endres i din andre ${ BRAND_NAME }-konto."
+      ],
+      "One last step": [
+        "Ett siste trinn"
+      ],
+      "open draft": [
+        "åpne utkast"
+      ],
+      "Other (tell us)": [
+        "Annet (fortell oss)"
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Oppdater ${ MAIL_APP_NAME } for å fortsette å bruke appen. ${ downloadUpdate }"
+      ],
+      "Protection from hackers and leaks": [
+        "Beskyttelse mot hackere og lekkasjer"
+      ],
+      "Readdressed": [
+        "Omadressert"
+      ],
+      "reply": [
+        "svar"
+      ],
+      "Set my out of office": [
+        "Sett opp fraværsmeldingen min"
+      ],
+      "Someone recommended it": [
+        "Ble anbefalt av noen"
+      ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Begynn å bruke ${ MAIL_APP_NAME }"
+      ],
+      "Stop companies reading my emails": [
+        "Hindre at selskaper leser e-posten min"
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "Fortell meg når du er borte og hva du vil at den skal si, så får du se hele greia før den lagres."
+      ],
+      "Tell us more (optional)": [
+        "Fortell oss mer (valgfritt)"
+      ],
+      "Tidy up my inbox": [
+        "Rydd opp i innboksen"
+      ],
+      "What can you do?": [
+        "Hva kan man gjøre?"
+      ],
+      "Which feature? (optional)": [
+        "Hvilken funksjon? (valgfritt)"
+      ],
+      "Which provider?": [
+        "Hvilken tilbyder?"
+      ],
+      "Work or business": [
+        "Jobb eller bedrift"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en ubetalt faktura: ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en ubetalt faktura: ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "You'll choose a new username": [
+        "Du velger et nytt brukernavn"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Din gratis prøveperiode er avsluttet. Abonner nå for å holde teamets tilgang uavbrutt og kontoene sikre."
       ]
     },
     "info": {
@@ -10040,6 +10232,9 @@
       ],
       "Close ${ LUMO_SHORT_APP_NAME }": [
         "Lukk ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "Åpne ${ LUMO_SHORT_APP_NAME } / gå til skrivefeltet"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -10076,6 +10271,9 @@
       ],
       "Message shortcuts": [
         "Meldingssnarveier"
+      ],
+      "${ LUMO_SHORT_APP_NAME } shortcuts": [
+        "${ LUMO_SHORT_APP_NAME }-snarveier"
       ]
     },
     "Label": {
@@ -11131,6 +11329,18 @@
       ],
       "To": [
         "Til"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant": [
+        "${ LUMO_SHORT_APP_NAME }-assistent"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "Legg til en bestillingsside i e-posten din og la folk velge et tidspunkt som fungerer."
+      ],
+      "Booking page": [
+        "Bestillingsside"
+      ],
+      "Cc": [
+        "Kopi"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13003,6 +13213,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Ubegrenset med aliaser for å beskytte din identitet"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me-adresse"
       ]
     },
     "Onboarding List Placeholder": {
@@ -13224,6 +13437,21 @@
       ],
       "Add a payment method": [
         "Legg til betalingsmåte"
+      ],
+      "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
+        "**Avbryt når som helst før da.** Du kan bruke ${ planTitle } helt til prøveperioden avsluttes, gratis."
+      ],
+      "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
+        "**Når det fulle abonnementet ditt starter ...** Du kan fortsatt si opp innen 30 dager og få en forholdsmessig refusjon."
+      ],
+      "If you continue after your trial,": [
+        "Hvis du fortsetter etter prøveperioden,"
+      ],
+      "to keep using all of the features after your trial ends.": [
+        "for å fortsette å bruke alle funksjonene etter at prøveperioden er over."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "du kan si opp innen 30 dager og få en forholdsmessig refusjon."
       ]
     },
     "Option": {
@@ -13666,6 +13894,57 @@
       ],
       "Trial plans don’t support Scribe seats.": [
         "Prøveplaner støtter ikke Scribe-seter."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan ikke kombineres med ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } er kun tilgjengelig med forretningsplaner."
+      ],
+      "An organization is required for this plan.": [
+        "Det kreves en organisasjon for denne planen."
+      ],
+      "Buying credits requires a separate purchase.": [
+        "Å kjøpe kreditter krever et separat kjøp."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Ved å bytte sier du deg enig med våre ${ termsLink }."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Planbytte er ikke kompatibel av følgende årsaker:"
+      ],
+      "Please close extra wallet accounts before changing your plan.": [
+        "Lukk ekstra lommebokkontoer før du endrer planen din."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Lukk ekstra lommebøker før du endrer planen din."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Scribe-seter kan ikke overstige antallet medlemmer."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Den valgte planen tilbyr ikke nok adresser for kontoen din."
+      ],
+      "The selected plan doesn’t offer enough members for your account.": [
+        "Den valgte planen tilbyr ikke nok medlemmer for kontoen din."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Denne dedikerte serveren er tilordnet en gateway og kan ikke endres."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Denne planen støtter ikke de administrerte funksjonene på kontoen din."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Prøveplaner støtter ikke egendefinerte domener."
+      ],
+      "Trial plans don’t support dedicated IPs.": [
+        "Prøveplaner støtter ikke dedikerte IP-er."
+      ],
+      "Trial plans don’t support this many members.": [
+        "Prøveplaner støtter ikke så mange medlemmer."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "Du eier allerede ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ]
     },
     "Payments.Error": {
@@ -15875,6 +16154,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Du har sagt opp abonnementet."
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME }-assistent deaktivert"
+      ],
+      "${ LUMO_SHORT_APP_NAME } assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME }-assistent aktivert"
       ]
     },
     "Success notification": {
@@ -17204,6 +17489,15 @@
       ],
       "Share your availability": [
         "Del tilgjengeligheten din"
+      ],
+      "Insert a booking page": [
+        "Sett inn en bestillingsside"
+      ],
+      "Make Categories work better for you": [
+        "Få kategorier til å fungere bedre for deg"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Abonner på ${ planTitle }"
       ]
     },
     "Title header for keys table": {
@@ -17995,6 +18289,11 @@
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "Ved å bekrefte gir du ${ BRAND_NAME } og Stripe, vår betalingstjenesteleverandør, tillatelse til å innkreve fremtidige betalinger for abonnementet ditt fra denne bankkontoen via SEPA AvtaleGiro, og banken din til å debitere disse betalingene. Første betaling gjøres nå av ${ IDEAL_WERO_BRAND_NAME }. Abonnementet fornyes automatisk inntil du kansellerer. Vi varsler deg før hver innkreving. For innkreving via AvtaleGiro kan du be om refusjon fra banken innen 8 uker etter debiteringsdatoen, i henhold til vilkårene i avtalen med banken din. Dette gjelder ikke for ${ IDEAL_WERO_BRAND_NAME }-betalingen du foretar nå."
+      ]
+    },
+    "BYOE": {
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Dine nyeste e-poster blir importert først. E-poster du allerede har importert vil ikke bli kopiert igjen."
       ]
     }
   }

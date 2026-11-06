@@ -1793,6 +1793,12 @@
       ],
       "Move ${ LUMO_SHORT_APP_NAME } to the right": [
         "Μετακίνηση του ${ LUMO_SHORT_APP_NAME } προς τα δεξιά"
+      ],
+      "Add payment method": [
+        "Προσθέστε μέθοδο πληρωμής"
+      ],
+      "Cancel trial": [
+        "Ακύρωση δοκιμής"
       ]
     },
     "action": {
@@ -6585,6 +6591,12 @@
       ],
       "Username": [
         "Όνομα Χρήστη"
+      ],
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Πριν από το ${ MAIL_APP_NAME }, ποια εφαρμογή ηλεκτρονικού ταχυδρομείου χρησιμοποιούσατε περισσότερο;"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Ποιος είναι ο κύριος λόγος για τον οποίο εγγραφήκατε στο ${ MAIL_APP_NAME };"
       ]
     },
     "Hint": {
@@ -10025,6 +10037,78 @@
       ],
       "No booking pages yet": [
         "Δεν υπάρχουν ακόμα σελίδες κρατήσεων"
+      ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } από ${ steps }"
+      ],
+      "A new or separate address": [
+        "Μια νέα ή ξεχωριστή διεύθυνση"
+      ],
+      "A specific feature (tell us)": [
+        "Ένα συγκεκριμένο χαρακτηριστικό (πείτε μας)"
+      ],
+      "Almost done": [
+        "Σχεδόν τελειώσαμε"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Ζητήστε από τον διαχειριστή σας να αναβαθμίσει το πλάνο ή να αφαιρέσει μια σελίδα από την πλαϊνή στήλη των Σελίδων Κρατήσεων στο ${ CALENDAR_APP_NAME }."
+      ],
+      "Back": [
+        "Πίσω"
+      ],
+      "Choose all that apply.": [
+        "Επιλέξτε όλα όσα ισχύουν."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Επιλέξτε ένα. Μας βοηθά να βελτιώσουμε το ${ MAIL_APP_NAME }."
+      ],
+      "Dismiss": [
+        "Παράβλεψη"
+      ],
+      "I didn't have one": [
+        "Δεν είχα ένα"
+      ],
+      "I use other Proton products": [
+        "Χρησιμοποιώ άλλα προϊόντα της Proton"
+      ],
+      "Next": [
+        "Επόμενο"
+      ],
+      "No ads": [
+        "Χωρίς διαφημίσεις"
+      ],
+      "One last step": [
+        "Ένα τελευταίο βήμα"
+      ],
+      "Other (tell us)": [
+        "Άλλο (πείτε μας)"
+      ],
+      "Protection from hackers and leaks": [
+        "Προστασία από χάκερ και διαρροές"
+      ],
+      "Someone recommended it": [
+        "Κάποιος το πρότεινε"
+      ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Ξεκινήστε να χρησιμοποιείτε το ${ MAIL_APP_NAME }"
+      ],
+      "Stop companies reading my emails": [
+        "Σταματήστε τις εταιρείες από το να διαβάζουν τα μηνύματα ηλεκτρονικού ταχυδρομείου μου"
+      ],
+      "Tell us more (optional)": [
+        "Πείτε μας περισσότερα (προαιρετικά)"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Για να προσθέσετε μια νέα σελίδα κρατήσεων, αφαιρέστε μια υπάρχουσα από την πλαϊνή στήλη των Σελίδων Κρατήσεων στο ${ CALENDAR_APP_NAME }."
+      ],
+      "Which feature? (optional)": [
+        "Ποια λειτουργία; (προαιρετικό)"
+      ],
+      "Which provider?": [
+        "Ποιος πάροχος;"
+      ],
+      "Work or business": [
+        "Εργασία ή επιχείρηση"
       ]
     },
     "info": {
@@ -13508,6 +13592,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Η πλήρης συνδρομή σας ${ planTitle } ξεκινά στις ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Αλλάξατε γνώμη μετά τη δοκιμαστική περίοδο;** Ακυρώστε εντός 30 ημερών από την πρώτη σας πληρωμή και θα σας επιστρέψουμε το αντίτιμο για το διάστημα που δε χρησιμοποιήσατε."
       ]
     },
     "Option": {
