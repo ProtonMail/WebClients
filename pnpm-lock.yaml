@@ -285,8 +285,8 @@ catalogs:
       specifier: ^1.0.0
       version: 1.0.0
     '@protontech/pass-rust-core':
-      specifier: 1.6.0
-      version: 1.6.0
+      specifier: 2.3.4
+      version: 2.3.4
     '@protontech/timezone-support':
       specifier: 2.2.0
       version: 2.2.0
@@ -4228,7 +4228,7 @@ importers:
         version: link:../../packages/types
       '@protontech/pass-rust-core':
         specifier: 'catalog:'
-        version: 1.6.0
+        version: 2.3.4
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
@@ -6192,7 +6192,7 @@ importers:
         version: 1.0.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
       '@protontech/pass-rust-core':
         specifier: 'catalog:'
-        version: 1.6.0
+        version: 2.3.4
       '@reduxjs/toolkit':
         specifier: 'catalog:'
         version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -8838,7 +8838,7 @@ importers:
         version: 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
       '@protontech/pass-rust-core':
         specifier: 'catalog:'
-        version: 1.6.0
+        version: 2.3.4
       '@reduxjs/toolkit':
         specifier: 'catalog:'
         version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -17150,8 +17150,8 @@ packages:
       '@openpgp/web-stream-tools':
         optional: true
 
-  '@protontech/pass-rust-core@1.6.0':
-    resolution: {integrity: sha512-Z32e2CFJan6lARrg6aevghLlxMbZZtZOHj+M8QlBWEfTOt5/0W6iwbnJI91e2zG6iZfFYIkbUYeWDQPQhLfNOQ==}
+  '@protontech/pass-rust-core@2.3.4':
+    resolution: {integrity: sha512-mUWDTvBgds88n+jX/sVWdHABrFkzoGFjAEeaoOaJyhBaP3fo7S0FQ0ZqIzrfZxzJiyYkdPeiHF9sttypeaPDig==}
 
   '@protontech/telemetry@2.3.0':
     resolution: {integrity: sha512-hM2tJBc6DxH9fM/Zotdvp6EiuByHOMfy3C5MKaKTy7g/pVQxU2wKV5KA/r4SLcpqFPpKxo/nVEWiwV9NMEEHZQ==}
@@ -36034,7 +36034,7 @@ snapshots:
     optionalDependencies:
       '@openpgp/web-stream-tools': 0.3.1(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
 
-  '@protontech/pass-rust-core@1.6.0': {}
+  '@protontech/pass-rust-core@2.3.4': {}
 
   '@protontech/telemetry@2.3.0': {}
 

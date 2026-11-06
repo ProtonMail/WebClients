@@ -61,7 +61,7 @@ catalog:
     # Shared so that every workspace importing the Drive SDK resolves the same version.
     '@protontech/drive-sdk': ^0.23.0
     '@protontech/logger': ^1.0.0
-    '@protontech/pass-rust-core': 1.6.0
+    '@protontech/pass-rust-core': 2.3.4
     '@protontech/timezone-support': 2.2.0
     '@reduxjs/toolkit': ^2.13.0
     '@sentry/browser': ^7.120.4
