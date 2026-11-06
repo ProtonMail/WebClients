@@ -201,7 +201,9 @@ const SubscriptionCheckout = ({
                 </>
             ),
 
-            discount: (item) => {
+            discount: () => null,
+
+            planDiscount: (item) => {
                 if (loading) {
                     return null;
                 }
@@ -387,7 +389,7 @@ const SubscriptionCheckout = ({
             <div className="mb-4 flex flex-column">
                 <div className="min-h-custom" style={{ '--min-h-custom': '1.5rem' }}>
                     <strong className="mb-1">{checkoutView.checkoutData.planTitle}</strong>
-                    {checkoutView.render('discount')}
+                    {checkoutView.render('planDiscount')}
                 </div>
 
                 <div className="min-h-custom" style={{ '--min-h-custom': '1.25rem' }}>

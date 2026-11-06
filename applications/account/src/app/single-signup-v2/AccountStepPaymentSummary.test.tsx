@@ -5,7 +5,7 @@ import { screen, waitFor } from '@testing-library/react';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
-import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Coupon } from '@proton/payments/core/subscription/interface';
 import { createMockModel, mockPlans } from '@proton/payments/testing/signup';
 import { APPS } from '@proton/shared/lib/constants';
@@ -281,6 +281,39 @@ describe('AccountStepPaymentSummary - Regression Tests', () => {
             expect(screen.queryByText(/^Discount$/i)).not.toBeInTheDocument();
             expect(screen.queryByText(/amount due/i)).not.toBeInTheDocument();
             expect(document.body.textContent).toContain('7.50');
+        });
+
+        it('should show the base plan save label when a hidden coupon discounts only the base plan of a checkout with Lumo', async () => {
+            const model = createMockModel();
+            const planIDs = { [PLANS.DUO]: 1, [ADDON_NAMES.LUMO_DUO]: 1 };
+
+            model.subscriptionData.planIDs = planIDs;
+            model.subscriptionData.cycle = CYCLE.YEARLY;
+            model.subscriptionData.checkResult = {
+                ...model.subscriptionData.checkResult,
+                Cycle: CYCLE.YEARLY,
+                Amount: 17988 + 11988,
+                AmountDue: 17988 + 11988 - 3600,
+                CouponDiscount: -3600,
+                CouponDiscountBreakdown: [
+                    { Name: PLANS.DUO, Amount: -3600 },
+                    { Name: ADDON_NAMES.LUMO_DUO, Amount: 0 },
+                ],
+                Coupon: { Code: COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE } as Coupon,
+            };
+
+            renderAccountStepPaymentSummary(
+                model,
+                { couponConfig: { coupons: [COUPON_CODES.BLACK_FRIDAY_2026_BUNDLE], hidden: true } },
+                mockPlans.find((plan) => plan.Name === PLANS.DUO)
+            );
+
+            await waitFor(() => {
+                expect(screen.getByText(/Summary/i)).toBeInTheDocument();
+            });
+
+            expect(screen.getByTestId('discount.label')).toHaveTextContent('− 40%');
+            expect(screen.getByTestId('discount')).toHaveTextContent('32.98');
         });
 
         it('should show tax breakdown but hide discount when couponConfig.hidden is true with tax exclusive pricing', async () => {

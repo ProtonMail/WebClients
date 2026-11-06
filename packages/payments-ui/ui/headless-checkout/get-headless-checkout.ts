@@ -44,6 +44,7 @@ import {
     type PlanAmountWithDiscountPerMonthLineItem,
     createPlanAmountWithDiscountPerMonthItem,
 } from './items/plan-amount-with-discount-per-month';
+import { PLAN_DISCOUNT_LINE_ITEM_TYPE, type PlanDiscountLineItem, createPlanDiscountItem } from './items/plan-discount';
 import { PRORATION_LINE_ITEM_TYPE, type ProrationLineItem, createProrationItem } from './items/proration';
 import {
     RENEWAL_NOTICE_LINE_ITEM_TYPE,
@@ -76,7 +77,8 @@ export type CheckoutLineItemMandatory =
     | TaxInclusiveLineItem
     | VatReverseChargeLineItem;
 
-export type CheckoutLineItemOptional = PlanAmountWithDiscountPerMonthLineItem | BaseRenewAmount | GuardLineItem;
+export type CheckoutLineItemOptional =
+    PlanAmountWithDiscountPerMonthLineItem | BaseRenewAmount | GuardLineItem | PlanDiscountLineItem;
 
 export type CheckoutLineItem = CheckoutLineItemMandatory | CheckoutLineItemOptional;
 /**
@@ -222,6 +224,7 @@ export function getHeadlessCheckout(params: GetHeadlessCheckoutParams) {
         [PLAN_AMOUNT_WITH_DISCOUNT_PER_MONTH_LINE_ITEM_TYPE]: createPlanAmountWithDiscountPerMonthItem(ctx),
         [BASE_RENEW_AMOUNT_LINE_ITEM_TYPE]: createBaseRenewAmountItem(ctx),
         [GUARD_LINE_ITEM_TYPE]: createGuardItem(ctx),
+        [PLAN_DISCOUNT_LINE_ITEM_TYPE]: createPlanDiscountItem(ctx),
     };
 
     const isB2B = getIsB2BAudienceFromPlan(ctx.checkoutUi.planName);
