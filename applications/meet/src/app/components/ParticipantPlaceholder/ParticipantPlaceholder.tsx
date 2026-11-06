@@ -10,6 +10,7 @@ interface ParticipantPlaceholderProps {
     backgroundColor?: string;
     profileColor?: string;
     viewSize?: 'xsmall' | 'small' | 'medium' | 'large' | 'midLarge';
+    statusLabel?: string;
 }
 
 const sizeByViewSize = {
@@ -25,6 +26,7 @@ export const ParticipantPlaceholder = ({
     backgroundColor,
     profileColor,
     viewSize = 'large',
+    statusLabel,
 }: ParticipantPlaceholderProps) => {
     const getFontSizeClassName = (viewSize: 'xsmall' | 'small' | 'medium' | 'large' | 'midLarge') => {
         switch (viewSize) {
@@ -40,7 +42,7 @@ export const ParticipantPlaceholder = ({
     return (
         <div
             className={clsx(
-                'flex items-center justify-center w-full h-full rounded-xl',
+                'flex flex-column flex-nowrap items-center justify-center gap-2 w-full h-full rounded-xl',
                 backgroundColor,
                 'participant-placeholder'
             )}
@@ -59,6 +61,16 @@ export const ParticipantPlaceholder = ({
             >
                 {participantName && getParticipantInitials(participantName)}
             </div>
+            {statusLabel && (
+                <span
+                    className={clsx(
+                        'color-norm text-sm text-ellipsis max-w-full px-2',
+                        viewSize === 'xsmall' && 'sr-only'
+                    )}
+                >
+                    {statusLabel}
+                </span>
+            )}
         </div>
     );
 };

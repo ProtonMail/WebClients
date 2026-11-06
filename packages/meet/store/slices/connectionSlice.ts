@@ -9,6 +9,7 @@ export interface ConnectionState {
     isReconnecting: boolean;
     reconnectionFailed: boolean;
     mlsRetrying: boolean;
+    isWebsocketReconnecting: boolean;
     prejoinParticipantCount: number | null;
 }
 
@@ -18,6 +19,7 @@ export const initialState: ConnectionState = {
     isReconnecting: false,
     reconnectionFailed: false,
     mlsRetrying: false,
+    isWebsocketReconnecting: false,
     prejoinParticipantCount: null,
 };
 
@@ -40,6 +42,9 @@ const slice = createSlice({
         setMlsRetrying: (state, action: PayloadAction<boolean>) => {
             state.mlsRetrying = action.payload;
         },
+        setIsWebsocketReconnecting: (state, action: PayloadAction<boolean>) => {
+            state.isWebsocketReconnecting = action.payload;
+        },
         setPrejoinParticipantCount: (state, action: PayloadAction<number | null>) => {
             state.prejoinParticipantCount = action.payload;
         },
@@ -53,6 +58,7 @@ export const {
     setIsReconnecting,
     setReconnectionFailed,
     setMlsRetrying,
+    setIsWebsocketReconnecting,
     setPrejoinParticipantCount,
     resetConnection,
 } = slice.actions;
@@ -62,6 +68,7 @@ export const selectJoiningInProgress = (state: MeetState) => state.connection.jo
 export const selectIsReconnecting = (state: MeetState) => state.connection.isReconnecting;
 export const selectReconnectionFailed = (state: MeetState) => state.connection.reconnectionFailed;
 export const selectMlsRetrying = (state: MeetState) => state.connection.mlsRetrying;
+export const selectIsWebsocketReconnecting = (state: MeetState) => state.connection.isWebsocketReconnecting;
 export const selectPrejoinParticipantCount = (state: MeetState) => state.connection.prejoinParticipantCount;
 
 export const connectionReducer = { connection: slice.reducer };

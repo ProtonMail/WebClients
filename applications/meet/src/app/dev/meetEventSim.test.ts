@@ -2,6 +2,7 @@ import { ConnectionStateInfo } from '@proton-meet/proton-meet-core';
 import { ConnectionQuality, ConnectionState, type Room } from 'livekit-client';
 import { EventEmitter } from 'node:events';
 
+import { setIsWebsocketReconnecting } from '@proton/meet/store/slices/connectionSlice';
 import { mergeParticipantsMap } from '@proton/meet/store/slices/participants/participantsSlice';
 import type { MeetState } from '@proton/meet/store/store';
 import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
@@ -156,5 +157,31 @@ describe('meetEventSim.connection', () => {
         await expect(window.meetEventSim?.connection.state()).resolves.toMatchObject({
             meetCoreWebSocket: 'no answer',
         });
+    });
+});
+
+describe('meetEventSim.setWebsocketReconnecting', () => {
+    let cleanup: () => void;
+
+    afterEach(() => {
+        cleanup?.();
+    });
+
+    it('marks the meeting server as reconnecting by default', () => {
+        const dispatch = vi.fn();
+        cleanup = init({ dispatch });
+
+        window.meetEventSim?.setWebsocketReconnecting();
+
+        expect(dispatch).toHaveBeenCalledWith(setIsWebsocketReconnecting(true));
+    });
+
+    it('marks the meeting server as connected again when called with false', () => {
+        const dispatch = vi.fn();
+        cleanup = init({ dispatch });
+
+        window.meetEventSim?.setWebsocketReconnecting(false);
+
+        expect(dispatch).toHaveBeenCalledWith(setIsWebsocketReconnecting(false));
     });
 });
