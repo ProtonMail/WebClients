@@ -11,7 +11,7 @@ import {
 import type { StartupModal } from '@proton/components/components/startupModals/types';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import useIsB2BAdmin from '@proton/components/hooks/useIsB2BAdmin';
-import { OfferModal } from '@proton/offers-delivery/components/OfferModal';
+import { OfferDealModal } from '@proton/offers-delivery/components/OfferDealModal';
 import { useActiveOffer } from '@proton/offers-delivery/components/useActiveOffer';
 import { CampaignVariant } from '@proton/offers-delivery/interface';
 import { useTrialInfo } from '@proton/payments-hooks/ui/hooks/useTrialInfo';
@@ -61,7 +61,7 @@ const useOfferStartupModal: () => StartupModal = () => {
         showModal: offer !== null,
         retryUntilIdle: true,
         activateModal: () => setModal(true),
-        component: renderModal && offer ? <OfferModal offer={offer} {...modal} /> : null,
+        component: renderModal && offer ? <OfferDealModal offer={offer} {...modal} /> : null,
     };
 };
 
