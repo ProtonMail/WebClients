@@ -1,5 +1,5 @@
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
-import type { ToolDefinition } from '@proton/llm/lib/lumoAgent/contracts/types';
+import type { JSONSchema, ToolDefinition } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { LOAD_GUIDE_TOOL_NAME, resolveGuide } from '@proton/llm/lib/lumoAgent/engine/loadGuide';
 import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/referenceRegistry';
 import { LumoClientType } from '@proton/lumo-api-client/types-api';
@@ -20,6 +20,7 @@ import { MAILBOX_FILTERS, MAILBOX_SORTS } from './skills/reads/mailboxView';
 import { OPEN_FOLDER_LOCATIONS, openFolderModule } from './skills/reads/openFolder';
 import { searchModule } from './skills/reads/search';
 import { CosmeticSetting, changeSettingsModule } from './skills/settings/cosmetic';
+import { STANDALONE_DESCRIPTIONS } from './standaloneDescriptions';
 import type { LumoMailConfigTelemetry } from './telemetry/useLumoMailTelemetry';
 import type { MailToolDeps, MailToolModule } from './toolModule';
 
@@ -168,11 +169,32 @@ describe('the Mail config with the standalone prompt flag on', () => {
         );
     });
 
-    it('leaves every description and example to the prompt', () => {
+    it('describes every tool and every parameter with the standalone wording, and drops the examples', () => {
         config.definitions.forEach((tool: ToolDefinition) => {
-            expect(tool).not.toHaveProperty('toolDescription');
+            const { description, parameters } = STANDALONE_DESCRIPTIONS[tool.name];
+
+            expect(tool.toolDescription).toBe(description);
             expect(tool).not.toHaveProperty('examples');
+            Object.entries<JSONSchema>(tool.paramsSchema.properties).forEach(([key, property]) => {
+                expect(property.description).toBe(parameters[key]);
+                expect(property.description).toEqual(expect.any(String));
+            });
         });
+    });
+
+    it('describes only the tools and parameters it advertises', () => {
+        const advertised = Object.fromEntries(
+            config.definitions.map(({ name, paramsSchema }) => {
+                return [name, Object.keys(paramsSchema.properties).sort()];
+            })
+        );
+        const described = Object.fromEntries(
+            Object.entries(STANDALONE_DESCRIPTIONS).map(([name, { parameters }]) => {
+                return [name, Object.keys(parameters).sort()];
+            })
+        );
+
+        expect(described).toEqual(advertised);
     });
 
     it('keeps everything else each tool defines, guide marking included', () => {
@@ -205,7 +227,11 @@ describe('the Mail config with the standalone prompt flag on', () => {
         const moduleProperty = CHANGED_MODULES.find((module) => module.definition.name === name)!.definition
             .paramsSchema.properties[property];
 
-        expect(definition(name).paramsSchema.properties[property]).toEqual({ ...moduleProperty, enum: values });
+        expect(definition(name).paramsSchema.properties[property]).toEqual({
+            ...moduleProperty,
+            description: STANDALONE_DESCRIPTIONS[name].parameters[property],
+            enum: values,
+        });
         expect(moduleProperty).not.toHaveProperty('enum');
     });
 });
