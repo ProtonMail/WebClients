@@ -1408,6 +1408,15 @@
       ],
       "Add ${ name }": [
         "Adăugare ${ name }"
+      ],
+      "Add payment method": [
+        "Adăugare metodă de plată"
+      ],
+      "Cancel trial": [
+        "Anulare perioadă de probare"
+      ],
+      "Go to folder": [
+        "Accesare folder"
       ]
     },
     "Action: Docs": {
@@ -1454,7 +1463,7 @@
         "Servere VPN dedicate: ${ ips }"
       ],
       "${ LUMO_APP_NAME } AI license": [
-        "Licențe IA ${ LUMO_APP_NAME }"
+        "Licențe ${ LUMO_APP_NAME } AI"
       ],
       "${ LUMO_APP_NAME } seats": [
         "Licențe ${ LUMO_APP_NAME }"
@@ -1472,9 +1481,9 @@
         "${ price } per utilizator"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
-        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
-        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }",
-        "Licențe IA ${ LUMO_APP_NAME }: ${ seats }"
+        "Licențe ${ LUMO_APP_NAME } AI: ${ seats }",
+        "Licențe ${ LUMO_APP_NAME } AI: ${ seats }",
+        "Licențe ${ LUMO_APP_NAME } AI: ${ seats }"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
@@ -1520,12 +1529,12 @@
         "Asistent de scriere ${ BRAND_NAME } Scribe (pentru ${ quantity } de utilizatori)"
       ],
       "${ LUMO_APP_NAME } AI assistant": [
-        "Asistent de IA ${ LUMO_APP_NAME }"
+        "Asistent ${ LUMO_APP_NAME } AI"
       ],
       "${ LUMO_APP_NAME } AI assistant (for ${ quantity } user)": [
-        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizator)",
-        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } utilizatori)",
-        "Asistent de IA ${ LUMO_APP_NAME } (pentru ${ quantity } de utilizatori)"
+        "Asistent ${ LUMO_APP_NAME } AI (pentru ${ quantity } utilizator)",
+        "Asistent ${ LUMO_APP_NAME } AI (pentru ${ quantity } utilizatori)",
+        "Asistent ${ LUMO_APP_NAME } AI (pentru ${ quantity } de utilizatori)"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant (for ${ quantity } user)": [
         "Asistent de scriere ${ LUMO_SHORT_APP_NAME } (pentru ${ quantity } utilizator)",
@@ -2080,7 +2089,7 @@
     },
     "collider_2025: feature": {
       "Access to advanced AI models": [
-        "Acces la modele AI avansate"
+        "Acces la modele de IA avansate"
       ],
       "Basic chat history": [
         "Istoric de bază conversații"
@@ -3246,7 +3255,7 @@
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
-        "Vă permite să adăugați imediat legături web de întâlnire în invitațiile la evenimente."
+        "Vă permite să adăugați imediat legături web de conferință în invitațiile la evenimente."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Îmbinare contacte... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
@@ -3261,7 +3270,7 @@
         "Configurați conturi pentru toți utilizatorii și invitați-i să se alăture la ${ BRAND_NAME }."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
-        "Simplificați sincronizarea și programarea cu calendare partajate."
+        "Simplificați sincronizarea și planificarea cu calendare partajate."
       ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Pentru a asigura cea mai mare securitate posibilă a contului, setați o frază de recuperare."
@@ -9514,7 +9523,7 @@
         "Conferințe de 24 de ore"
       ],
       "60 minutes per meeting": [
-        "60 de minute per întâlnire"
+        "60 de minute per conferință"
       ],
       "Appointment scheduling": [
         "Planificare întâlniri"
@@ -9554,7 +9563,7 @@
         "Maxim participanți: ${ n }"
       ],
       "Hosts can record meetings locally on their computers": [
-        "Gazdele pot înregistra întâlnirile local pe computerele lor"
+        "Gazdele pot înregistra conferințele local pe computerele lor"
       ],
       "Video meetings, ${ n } participant": [
         "Conferințe video, ${ n } participant",
@@ -10349,9 +10358,9 @@
         "Planificare întâlniri"
       ],
       "Appointment scheduling with ${ n } booking page": [
-        "Planificare întâlniri cu ${ n } pagină de programări",
-        "Planificare întâlniri cu ${ n } pagini de programări",
-        "Planificare întâlniri cu ${ n } de pagini de programări"
+        "Planificare întâlniri cu ${ n } pagină de planificări",
+        "Planificare întâlniri cu ${ n } pagini de planificări",
+        "Planificare întâlniri cu ${ n } de pagini de planificări"
       ],
       "Dedicated servers optimized for speed": [
         "Servere dedicate optimizate pentru viteză"
@@ -10558,7 +10567,7 @@
         "Transferați automat mesajele trimise spre contul din ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "În prezent, trimiterea mesajelor promoționale sau programate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
+        "În prezent, trimiterea mesajelor promoționale sau planificate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Alegeți un timp personal pentru a vi se reaminti despre un mesaj sau când să sosească mesajul."
@@ -10692,7 +10701,7 @@
         "Stocați în siguranță detaliile contactelor personale, cum ar fi numărul de telefon, adresa, ziua de naștere și notele personale. Criptarea cu acces zero vă garantează că nici chiar ${ BRAND_NAME } nu le poate accesa."
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
-        "Vedeți disponibilitatea participanților la întâlnire și economisiți timp programând întâlniri."
+        "Vedeți disponibilitatea participanților la conferință și economisiți timp programând conferințe."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Trimiteți e-mailuri către grupuri mari rapid și ușor prin crearea a cât mai multe grupuri de contact de care aveți nevoie (până la 100 de contacte per grup)."
@@ -11631,6 +11640,9 @@
       ],
       "you can cancel within 30 days and get a pro-rata refund.": [
         "puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**V-ați răzgândit după perioada de probare?** Anulați în termen de 30 de zile de la prima plată, iar noi vă vom rambursa contravaloarea perioadei neutilizate."
       ]
     },
     "Option": {
