@@ -4,7 +4,9 @@ import fs from 'fs';
 
 const wasmBuffer = fs.readFileSync(require.resolve('@protontech/pass-rust-core/worker/proton_pass_web_bg.wasm'));
 const wasmModule = new WebAssembly.Module(wasmBuffer);
-const wasm = new WebAssembly.Instance(wasmModule, { './proton_pass_web_bg.js': PassRustCore });
+const wasm = new WebAssembly.Instance(wasmModule, {
+    './proton_pass_web_bg.js': PassRustCore as unknown as WebAssembly.ModuleImports,
+});
 
 __wbg_set_wasm(wasm.exports);
 
