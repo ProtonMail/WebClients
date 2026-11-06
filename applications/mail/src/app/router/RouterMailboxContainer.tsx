@@ -13,14 +13,12 @@ import { useCategoriesData } from '@proton/mail/features/categoriesView/useCateg
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import { isAdminOrLoginAsAdmin } from '@proton/shared/lib/user/helpers';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CategoriesOnboardingProvider } from '../components/categoryView/categoriesOnboarding/CategoriesOnboardingContext';
 import { CategoriesOnboardingSpotlight } from '../components/categoryView/categoriesOnboarding/CategoriesOnboardingSpotlights';
 import { OnboardingStep } from '../components/categoryView/categoriesOnboarding/onboardingInterface';
 import MailHeader from '../components/header/MailHeader';
-import { PostSignupSurvey } from '../components/postSignupSurvey/PostSignupSurvey';
 import { NewsletterSubscriptionView } from '../components/view/NewsletterSubscription/NewsletterSubscriptionView';
 import { ROUTE_LABEL } from '../constants';
 import { MailboxContainerContextProvider } from '../containers/mailbox/MailboxContainerProvider';
@@ -61,8 +59,6 @@ export const RouterMailboxContainer = () => {
 
     const { drawerSidebarButtons, showDrawerSidebar } = useMailDrawer();
     const hasLumo = useHasLumoAgentDrawer();
-
-    const isPostSignupSurveyEnabled = useFlag('PostSignupSurvey');
 
     const canShowDrawer = drawerSidebarButtons.length > 0;
     const hasRowMode = !isColumnModeActive;
@@ -163,7 +159,6 @@ export const RouterMailboxContainer = () => {
                         hasFloatingDrawerButton={canShowDrawer && !showDrawerSidebar}
                     />
                 )}
-                {isPostSignupSurveyEnabled && <PostSignupSurvey />}
             </CategoriesOnboardingProvider>
         </MailboxContainerContextProvider>
     );

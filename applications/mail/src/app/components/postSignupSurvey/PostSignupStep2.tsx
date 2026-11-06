@@ -4,16 +4,16 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Checkbox from '@proton/components/components/input/Checkbox';
+import { PREVIOUS_PROVIDERS, type PreviousProvider } from '@proton/shared/lib/api/onboardingSurvey';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { PostSignupHeader } from './components/PostSignupHeader';
 import { PostSignupOption } from './components/PostSignupOption';
 import { PostSignupStep } from './components/PostSignupStep';
-import { PREVIOUS_PROVIDERS, type PreviousProvider } from './interface';
 
 interface Props {
     onBack: () => void;
-    onSubmit: (providers: PreviousProvider[], providerDetail: string) => void;
+    onSubmit: (providers: PreviousProvider[], providerDetail?: string) => void;
 }
 
 const getLabels = (): Record<PreviousProvider, string> => ({
@@ -35,7 +35,7 @@ export const PostSignupStep2 = ({ onBack, onSubmit }: Props) => {
     const placeholders = getDetailPlaceholders();
 
     const [selected, setSelected] = useState<PreviousProvider[]>([]);
-    const [detail, setDetail] = useState('');
+    const [detail, setDetail] = useState<string | undefined>(undefined);
 
     const handleSubmit = () => {
         if (selected.length === 0) {
@@ -44,15 +44,18 @@ export const PostSignupStep2 = ({ onBack, onSubmit }: Props) => {
 
         // We send the details if at least one provider requires it
         const hasDetail = selected.some((provider) => placeholders[provider] !== undefined);
-        onSubmit(selected, hasDetail ? detail.trim() : '');
+        onSubmit(selected, hasDetail ? detail?.trim() || undefined : undefined);
     };
 
     const handleToggle = (provider: PreviousProvider, nextChecked: boolean) => {
-        if (nextChecked) {
-            setSelected((current) => [...current, provider]);
-        } else {
-            setSelected((current) => current.filter((p) => p !== provider));
-        }
+        setSelected((current) => {
+            if (!nextChecked) {
+                return current.filter((p) => p !== provider);
+            }
+
+            // The API rejects "none" combined with other values
+            return provider === 'none' ? ['none'] : [...current.filter((p) => p !== 'none'), provider];
+        });
     };
 
     return (
@@ -73,7 +76,7 @@ export const PostSignupStep2 = ({ onBack, onSubmit }: Props) => {
                             label={labels[provider]}
                             checked={checked}
                             detailPlaceholder={placeholders[provider]}
-                            detail={detail}
+                            detail={detail ?? ''}
                             onDetailChange={setDetail}
                             renderControl={(children) => (
                                 <Checkbox
@@ -89,6 +92,8 @@ export const PostSignupStep2 = ({ onBack, onSubmit }: Props) => {
                     );
                 })}
             </div>
+            <p className="color-weak text-sm mt-0 mb-4">{c('Info')
+                .t`Survey answers are not end-to-end encrypted, please do not share any sensitive information.`}</p>
             <div className="flex justify-space-between">
                 <Button shape="ghost" onClick={onBack}>{c('Info').t`Back`}</Button>
                 <Button color="norm" disabled={selected.length === 0} onClick={handleSubmit}>{c('Info')

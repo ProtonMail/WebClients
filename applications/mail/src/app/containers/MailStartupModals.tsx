@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { useUser } from '@proton/account/user/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import EasySwitchProvider from '@proton/activation/src/logic/StoreProvider';
@@ -16,30 +18,51 @@ import { NPSApplication } from '@proton/components/containers/netPromoterScore/i
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 import MailOnboardingModal from '../components/onboarding/modal/MailOnboardingModal';
+import { PostSignupSurvey } from '../components/postSignupSurvey/PostSignupSurvey';
+import { usePostSignupSurveyEligibility } from '../components/postSignupSurvey/usePostSignupSurveyEligibility';
 
 const useMailOnboardingModal: () => StartupModal = () => {
     const [modal, setModal, renderModal] = useModalState();
 
     const { welcomeFlags, setDone: setWelcomeFlagsDone } = useWelcomeFlags();
     const onboardingOpen = !welcomeFlags.isDone || welcomeFlags.isReplay;
+    const isSurveyEligible = usePostSignupSurveyEligibility();
+    const [surveyOpen, setSurveyOpen] = useState(false);
 
     return {
         showModal: onboardingOpen && !isElectronMail,
         activateModal: () => setModal(true),
-        component: renderModal ? (
-            <EasySwitchProvider>
-                <MailOnboardingModal
-                    onDone={() => {
-                        setWelcomeFlagsDone();
-                        modal.onClose();
-                    }}
-                    onExit={modal.onExit}
-                    open={modal.open}
-                    onClose={modal.onClose}
-                    hideDiscoverApps
-                />
-            </EasySwitchProvider>
-        ) : null,
+        component: (
+            <>
+                {renderModal ? (
+                    <EasySwitchProvider>
+                        <MailOnboardingModal
+                            onDone={() => {
+                                // Users in the rollout finish with the survey, they are welcomed once it is closed
+                                if (isSurveyEligible) {
+                                    setSurveyOpen(true);
+                                } else {
+                                    setWelcomeFlagsDone();
+                                }
+                                modal.onClose();
+                            }}
+                            onExit={modal.onExit}
+                            open={modal.open}
+                            onClose={modal.onClose}
+                            hideDiscoverApps
+                        />
+                    </EasySwitchProvider>
+                ) : null}
+                {surveyOpen ? (
+                    <PostSignupSurvey
+                        onClose={() => {
+                            setSurveyOpen(false);
+                            setWelcomeFlagsDone();
+                        }}
+                    />
+                ) : null}
+            </>
+        ),
     };
 };
 

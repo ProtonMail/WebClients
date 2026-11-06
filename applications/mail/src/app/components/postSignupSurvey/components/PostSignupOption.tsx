@@ -29,6 +29,7 @@ export const PostSignupOption = ({
                     <Input
                         autoFocus
                         placeholder={detailPlaceholder}
+                        maxLength={250}
                         value={detail}
                         onChange={(e) => onDetailChange(e.target.value)}
                         aria-label={label}

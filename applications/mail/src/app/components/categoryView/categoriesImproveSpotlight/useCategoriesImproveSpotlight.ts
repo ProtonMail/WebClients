@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
@@ -17,11 +18,13 @@ export const useCategoriesImproveSpotlight = () => {
     const [wasSeenOnLoad, setWasSeenOnLoad] = useState<boolean>();
     const [isClosed, setIsClosed] = useState(false);
 
+    const { welcomeFlags } = useWelcomeFlags();
+
     if (wasSeenOnLoad === undefined && !loading) {
         setWasSeenOnLoad(!!seenFeature?.Value);
     }
 
-    const isEligible = isNewEmbeddingEnabled && wasSeenOnLoad === false && !isClosed;
+    const isEligible = isNewEmbeddingEnabled && wasSeenOnLoad === false && !isClosed && welcomeFlags.isDone;
     const show = useSpotlightShow(isEligible, DISPLAY_DELAY);
 
     const onDisplayed = () => {
