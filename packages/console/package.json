@@ -6,6 +6,7 @@
     "sideEffects": false,
     "type": "module",
     "exports": {
+        "./organization/getAccessControlPageAvailability": "./src/organization/getAccessControlPageAvailability.ts",
         "./organization/getSecurityPageAvailability": "./src/organization/getSecurityPageAvailability.ts",
         "./pass/getPassOrganizationAccess": "./src/pass/getPassOrganizationAccess.ts"
     },

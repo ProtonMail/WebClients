@@ -1643,12 +1643,18 @@ importers:
       '@proton/redux-shared-store-types':
         specifier: workspace:^
         version: link:../../packages/redux-shared-store-types
+      '@proton/settings':
+        specifier: workspace:^
+        version: link:../../packages/settings
       '@proton/shared':
         specifier: workspace:^
         version: link:../../packages/shared
       '@proton/styles':
         specifier: workspace:^
         version: link:../../packages/styles
+      '@proton/unleash':
+        specifier: workspace:^
+        version: link:../../packages/unleash
       '@proton/utils':
         specifier: workspace:^
         version: link:../../packages/utils

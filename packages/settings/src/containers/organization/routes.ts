@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { getIsSystemGroup } from '@proton/account/groups/groupFlags';
 import type { SectionConfig, SidebarConfig } from '@proton/components/containers/layout/interface';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
+import { getAccessControlPageAvailability } from '@proton/console/organization/getAccessControlPageAvailability';
 import { getSecurityPageAvailability } from '@proton/console/organization/getSecurityPageAvailability';
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
 import { IcBuildings } from '@proton/icons/icons/IcBuildings';
@@ -75,7 +76,6 @@ export const getOrganizationAppRoutes = ({
     const hasActiveOrganizationKey = isOrgActive && hasOrganizationKey;
     const hasActiveOrganization = isOrgActive && hasOrganization;
     const hasMemberCapablePlan = entitlements.isMultiUser;
-    const hasSubUsers = (organization?.UsedMembers || 0) > 1;
 
     const canManageOrganization = !!organization && permissions['account.organization_identity.read'];
     const canSchedulePhoneCalls = canScheduleOrganizationPhoneCalls({ organization, user });
@@ -140,9 +140,12 @@ export const getOrganizationAppRoutes = ({
         user.hasPaidMail &&
         videoConferenceValidApplications.has(app);
 
-    const canShowLumoApiSection = isLumoApiEnabled && hasMemberCapablePlan;
-
-    const canShowAccessControl = permissions['account.access_control.read'] && (hasSubUsers || isOrgConfigured);
+    const { accessControl: canShowAccessControl, lumoApi: canShowLumoApiSection } = getAccessControlPageAvailability({
+        organization,
+        entitlements,
+        permissions,
+        isLumoApiEnabled,
+    });
 
     const canShowRetentionPolicies =
         isRetentionPoliciesEnabled &&
