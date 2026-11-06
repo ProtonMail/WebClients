@@ -39,12 +39,13 @@ const saveButton = () => screen.getByText('Save settings').closest('button')!;
 const rangeError = 'Top-up amount must be a whole amount between $25.00 and $100.00';
 
 describe('ApiBalanceSettingsModal', () => {
-    it('shows the threshold from the balance as read-only', () => {
+    it('shows the threshold from the balance as fixed', () => {
         setup();
 
         const threshold = screen.getByLabelText('When balance falls below');
         expect(threshold).toHaveValue(20);
-        expect(threshold).toHaveAttribute('readonly');
+        expect(threshold).toBeDisabled();
+        expect(screen.getByText('For now, the threshold is fixed at $20.00.')).toBeInTheDocument();
         expect(screen.getByText('Adding $50.00 when your balance falls below $20.00')).toBeInTheDocument();
     });
 

@@ -97,7 +97,7 @@ const AmountField = ({
     onValue,
     currency,
     invalid = false,
-    readOnly = false,
+    disabled = false,
 }: {
     id: string;
     label: string;
@@ -105,7 +105,7 @@ const AmountField = ({
     onValue?: (value: string) => void;
     currency: Currency;
     invalid?: boolean;
-    readOnly?: boolean;
+    disabled?: boolean;
 }) => (
     <div className="api-usage-settings-field">
         <label htmlFor={id}>{label}</label>
@@ -116,7 +116,7 @@ const AmountField = ({
             step="1"
             value={value}
             onValue={onValue}
-            readOnly={readOnly}
+            disabled={disabled}
             prefix={<span className="color-weak text-sm">{currency}</span>}
             error={invalid}
         />
@@ -170,6 +170,7 @@ export const ApiBalanceSettingsModal = ({
     const formattedSpent = formatApiCurrency(spent, currency);
     const formattedLimit = isLimitValid ? formatApiCurrency(parsedLimit, currency) : '';
     const formattedSavedAmount = formatApiCurrency(savedAmount, currency);
+    const formattedThreshold = formatApiCurrency(threshold, currency);
 
     const handleSave = async () => {
         if (!isAutoTopUpValid) {
@@ -218,8 +219,11 @@ export const ApiBalanceSettingsModal = ({
                         label={c('collider_2025: Label').t`When balance falls below`}
                         value={String(threshold)}
                         currency={currency}
-                        readOnly
+                        disabled
                     />
+                    <p className="m-0 text-sm color-weak">
+                        {c('collider_2025: Info').t`For now, the threshold is fixed at ${formattedThreshold}.`}
+                    </p>
                     <AmountField
                         id="api-auto-top-up-amount"
                         label={c('collider_2025: Label').t`Top up by`}
