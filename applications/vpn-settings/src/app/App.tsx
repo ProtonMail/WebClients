@@ -1,8 +1,8 @@
 import { Router } from 'react-router-dom';
 
 import { createBrowserHistory as createHistory } from 'history';
-import { LocationThemeSync } from 'proton-account/src/app/content/theme/LocationThemeSync';
-import { PublicAppThemeProvider } from 'proton-account/src/app/content/theme/PublicAppThemeProvider';
+import { LocationThemeSync } from 'proton-account/src/app/public-app/theme/LocationThemeSync';
+import { PublicAppThemeProvider } from 'proton-account/src/app/public-app/theme/PublicAppThemeProvider';
 
 import * as bootstrap from '@proton/account/bootstrap';
 import { initStandaloneSession } from '@proton/account/bootstrap/standaloneSession';

@@ -1,0 +1,140 @@
+import { matchPath } from 'react-router-dom';
+
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
+import {
+    GetActiveSessionType,
+    type GetActiveSessionsResult,
+} from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { type APP_NAMES, SSO_PATHS, VPN_TV_PATH_WITH_CODE } from '@proton/shared/lib/constants';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+
+import type { AuthSession } from '../authSession';
+import type { Paths } from '../helper';
+import type { LocalRedirect } from '../localRedirect';
+import type { OAuthPartnersInitiateState } from '../oauthPartners/oauthPartners';
+import { type ProduceForkData, SSOType } from './forkInterface';
+import { getLoginResult } from './getLoginResult';
+import { getProduceForkLoginResult } from './getProduceForkLoginResult';
+import { getSanitizedLocationDescriptorObject } from './getSanitizedLocationDescriptorObject';
+import type { LoginResult } from './interface';
+
+export const getActiveSessionLoginResult = async ({
+    api,
+    forkState,
+    sessionsResult,
+    localRedirect,
+    initialSearchParams,
+    preAppIntent,
+    paths,
+}: {
+    forkState: ProduceForkData | undefined | null;
+    sessionsResult: GetActiveSessionsResult;
+    api: Api;
+    localRedirect?: LocalRedirect;
+    initialSearchParams: URLSearchParams;
+    preAppIntent?: APP_NAMES;
+    paths: Paths;
+}): Promise<LoginResult> => {
+    const autoSignIn = sessionsResult.type === GetActiveSessionType.AutoPick;
+    const skipAutoSignInForTv =
+        sessionsResult.sessions.length === 1 &&
+        matchPath(localRedirect?.location.pathname ?? '', VPN_TV_PATH_WITH_CODE);
+
+    if (forkState?.type === SSOType.Proton) {
+        const forkParameters = forkState.payload.forkParameters;
+
+        if (forkParameters.forkType === ForkType.SIGNUP) {
+            return {
+                type: 'signup',
+                location: paths.signup,
+                payload: null,
+            };
+        }
+
+        if (forkParameters.forkType === ForkType.LOGIN) {
+            return {
+                type: 'login',
+                location: paths.login,
+                payload: null,
+            };
+        }
+
+        if (forkParameters.partnerId) {
+            const payload: OAuthPartnersInitiateState = {
+                type: 'initiate',
+                payload: {
+                    forkData: forkState,
+                },
+            };
+            return {
+                type: 'oauth-partners',
+                payload,
+                location: SSO_PATHS.OAUTH_PARTNERS,
+            };
+        }
+
+        if (!sessionsResult.sessions.length && forkParameters.unauthenticatedReturnUrl && preAppIntent) {
+            const url = new URL(getAppHref(forkParameters.unauthenticatedReturnUrl, preAppIntent));
+            return {
+                type: 'done',
+                payload: {
+                    url,
+                },
+            };
+        }
+
+        if (autoSignIn && forkParameters.forkType === undefined) {
+            const session: AuthSession = { data: sessionsResult.session, flow: 'auto-resume' };
+            return getProduceForkLoginResult({
+                api,
+                data: {
+                    type: SSOType.Proton,
+                    payload: {
+                        forkParameters,
+                        desktopForkParameters: forkState.payload.desktopForkParameters,
+                    },
+                },
+                session,
+                paths,
+            });
+        }
+
+        return {
+            type: 'sessions-switcher',
+            payload: null,
+            location: sessionsResult.sessions.length >= 1 ? SSO_PATHS.SWITCH : paths.login,
+        };
+    }
+
+    if (initialSearchParams.get('prompt') === 'login') {
+        return {
+            type: 'login',
+            location: getSanitizedLocationDescriptorObject({
+                pathname: paths.login,
+                search: initialSearchParams.toString(),
+                hash: window.location.hash,
+            }),
+            payload: null,
+        };
+    }
+
+    if (autoSignIn && !skipAutoSignInForTv) {
+        const session: AuthSession = { data: sessionsResult.session };
+        return getLoginResult({
+            api,
+            session,
+            localRedirect,
+            initialSearchParams,
+            forkState: undefined,
+            preAppIntent,
+            paths,
+        });
+    }
+
+    return {
+        type: 'sessions-switcher',
+        payload: null,
+        location: sessionsResult.sessions.length >= 1 ? SSO_PATHS.SWITCH : paths.login,
+    };
+};

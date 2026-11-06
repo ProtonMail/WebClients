@@ -1,9 +1,9 @@
-import { getRecoverySettings } from 'proton-account/src/app/containers/account/routes';
+import { getRecoverySettings } from 'proton-account/src/app/private-app/containers/account/routes';
 import type {
     AccountRecoveryRouterFlags,
     Flags,
     OrganizationSettingsRouterParams,
-} from 'proton-account/src/app/content/router-params';
+} from 'proton-account/src/app/private-app/router-params';
 import { c } from 'ttag';
 
 import { getCanShowSignInRestriction } from '@proton/account/signInRestriction/helpers';

@@ -29,14 +29,16 @@ jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
 // Mock locale to avoid dynamic imports and big text context
 jest.mock('./src/app/locales.ts', () => ({
     __esModule: true,
+    default: {},
+}));
+jest.mock('./src/app/public-app/localePrefix.ts', () => ({
+    __esModule: true,
     stripLocaleTagPrefix: (pathname) => ({
         fullLocale: 'en',
         localePrefix: 'en',
         pathname: pathname.replace(/^\/\w{2,3}(-\w{2})?\//, '') || '/',
     }),
     getLocaleMapping: (localeCode) => localeCode,
-    default: {},
-    localeMap: {},
 }));
 
 // That's an unresolved issue of jsdom https://github.com/jsdom/jsdom/issues/918

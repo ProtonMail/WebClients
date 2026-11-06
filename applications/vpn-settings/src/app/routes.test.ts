@@ -1,4 +1,4 @@
-import { buildOrganizationRouterParams } from 'proton-account/src/app/content/testing/buildOrganizationRouterParams';
+import { buildOrganizationRouterParams } from 'proton-account/src/app/private-app/testing/buildOrganizationRouterParams';
 
 import { PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';

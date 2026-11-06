@@ -166,11 +166,11 @@ The `Raw*` types were reconciled against the gateway (`bundles/InAppBundle/`), w
 
 ## Reference integration
 
-`applications/account/src/app/offers/` wires this into the account app:
+`applications/account/src/app/private-app/offers/` wires this into the account app:
 
 - `store/rootReducer.ts` registers `offersDeliveryReducer`, and `store/listener.ts` registers `startOffersDeliveryListener(startListening, { appReady: bootstrapEvent })`.
 - `offers/useOfferUpgrade.ts` — the app's `GoToUpsell` destination, shared by both surfaces.
 - `AccountOfferTopBanner.tsx` — `useActiveOffer(CampaignVariant.BANNER)` + `OfferBanner`, placed inside the app's `<TopBanners>` stack so it honours the `TopBanner` flex-child layout contract.
-- The modal has no standalone component. `content/AccountStartupModals.tsx` slots it into the app's own queue via a `useOfferStartupModal` hook shaped like its peers, appended **last** so every other startup modal outranks it. Its `showModal` is `offer !== null`, and it sets `retryUntilIdle: true` so `StartupModals` retries the `domIsBusy()` check itself, every second, until idle or the 20s startup window closes.
+- The modal has no standalone component. `private-app/AccountStartupModals.tsx` slots it into the app's own queue via a `useOfferStartupModal` hook shaped like its peers, appended **last** so every other startup modal outranks it. Its `showModal` is `offer !== null`, and it sets `retryUntilIdle: true` so `StartupModals` retries the `domIsBusy()` check itself, every second, until idle or the 20s startup window closes.
 
 The whole thing is inert until `CentralisedOffersDelivery` is on.

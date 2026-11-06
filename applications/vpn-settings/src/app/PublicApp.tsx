@@ -2,15 +2,17 @@ import { type ReactNode, useCallback, useEffect, useState } from 'react';
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 
 import type * as H from 'history';
-import ExternalSSOConsumer from 'proton-account/src/app/content/ExternalSSOConsumer';
-import type { Paths } from 'proton-account/src/app/content/helper';
-import { getLocaleMapping } from 'proton-account/src/app/locales';
-import AccountForgotUsernameContainer from 'proton-account/src/app/public/ForgotUsernameContainer';
-import { AuthType } from 'proton-account/src/app/sign-in/auth/interface';
-import AccountSignupInviteContainer from 'proton-account/src/app/signup/SignupInviteContainer';
-import AccountSingleSignupContainer from 'proton-account/src/app/single-signup/SingleSignupContainer';
-import { ResetPasswordPage } from 'proton-account/src/app/unauthed-forgot-password/ResetPasswordPage';
-import useLocationWithoutLocale, { getLocalePathPrefix } from 'proton-account/src/app/useLocationWithoutLocale';
+import AccountForgotUsernameContainer from 'proton-account/src/app/public-app/forgotUsername/ForgotUsernameContainer';
+import ExternalSSOConsumer from 'proton-account/src/app/public-app/fork/ExternalSSOConsumer';
+import type { Paths } from 'proton-account/src/app/public-app/helper';
+import useLocationWithoutLocale, {
+    getLocalePathPrefix,
+} from 'proton-account/src/app/public-app/hooks/useLocationWithoutLocale';
+import { getLocaleMapping } from 'proton-account/src/app/public-app/localePrefix';
+import { AuthType } from 'proton-account/src/app/public-app/sign-in/auth/interface';
+import AccountSignupInviteContainer from 'proton-account/src/app/public-app/signup/SignupInviteContainer';
+import AccountSingleSignupContainer from 'proton-account/src/app/public-app/single-signup/SingleSignupContainer';
+import { ResetPasswordPage } from 'proton-account/src/app/public-app/unauthed-forgot-password/ResetPasswordPage';
 
 import { createUnauthenticatedApi, createUnleash, loadCrypto } from '@proton/account/bootstrap';
 import UnauthenticatedApiProvider from '@proton/components/containers/api/UnauthenticatedApiProvider';

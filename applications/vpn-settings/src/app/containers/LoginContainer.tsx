@@ -1,9 +1,11 @@
 import { useLocation } from 'react-router-dom';
 
 import type * as H from 'history';
-import type { Paths } from 'proton-account/src/app/content/helper';
-import AccountSignInContainer, { type SignInLocationState } from 'proton-account/src/app/sign-in/SignInContainer';
-import type { MetaTags } from 'proton-account/src/app/useMetaTags';
+import type { Paths } from 'proton-account/src/app/public-app/helper';
+import type { MetaTags } from 'proton-account/src/app/public-app/hooks/useMetaTags';
+import AccountSignInContainer, {
+    type SignInLocationState,
+} from 'proton-account/src/app/public-app/sign-in/SignInContainer';
 
 import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import { APPS, VPN_TV_PATHS_MAP } from '@proton/shared/lib/constants';
