@@ -1,6 +1,7 @@
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import { usePreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
@@ -26,6 +27,7 @@ const UpgradeVpnSectionInner = ({ app }: Props) => {
     const [plansResult, loadingPlans] = usePlans();
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const [subscription, loadingSubscription] = useSubscription();
+    const multiSubscriptionContext = useMultiSubscriptionContext();
     const openSubscriptionModal = useSubscriptionModalRaw();
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
     const telemetryFlow = useDashboardPaymentFlow(app);
@@ -40,6 +42,7 @@ const UpgradeVpnSectionInner = ({ app }: Props) => {
         openSubscriptionModal,
         user,
         telemetryFlow,
+        multiSubscriptionContext,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
 

@@ -4,6 +4,7 @@ import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
+import { buildMultiSubscriptionContextFromSubscription } from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getTestPlans } from '@proton/payments/testing/data-plans';
 import { APPS } from '@proton/shared/lib/constants';
@@ -48,6 +49,7 @@ describe('resolveUpsellsToDisplay', () => {
             canPay: true,
             isFree: true,
             hasPaidMail: false,
+            multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(subscriptionMail),
             openSubscriptionModal: mockedOpenSubscriptionModal,
             plansMap: getPlansMap(getTestPlans('EUR'), 'EUR'),
             user: buildUser(),
@@ -311,18 +313,20 @@ describe('resolveUpsellsToDisplay', () => {
         });
 
         it('should not return multi user personal plans if user has Lumo mobile subscription', () => {
+            const subscription = buildSubscription(PLANS.BUNDLE, {
+                External: SubscriptionPlatform.Default,
+                SecondarySubscriptions: [
+                    buildSubscription(PLANS.LUMO, {
+                        External: SubscriptionPlatform.Android,
+                    }),
+                ],
+            });
             const upsells = resolveUpsellsToDisplay({
                 ...base,
                 isFree: false,
                 hasPaidMail: true,
-                subscription: buildSubscription(PLANS.BUNDLE, {
-                    External: SubscriptionPlatform.Default,
-                    SecondarySubscriptions: [
-                        buildSubscription(PLANS.LUMO, {
-                            External: SubscriptionPlatform.Android,
-                        }),
-                    ],
-                }),
+                subscription,
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(subscription),
             });
 
             expect(upsells).not.toMatchObject([familyUpsell, duoUpsell]);
@@ -400,18 +404,20 @@ describe('resolveUpsellsToDisplay', () => {
         });
 
         it('should not return multi user personal plans if user has Lumo mobile subscription', () => {
+            const subscription = buildSubscription(PLANS.DUO, {
+                External: SubscriptionPlatform.Default,
+                SecondarySubscriptions: [
+                    buildSubscription(PLANS.LUMO, {
+                        External: SubscriptionPlatform.Android,
+                    }),
+                ],
+            });
             const upsells = resolveUpsellsToDisplay({
                 ...base,
                 isFree: false,
                 hasPaidMail: true,
-                subscription: buildSubscription(PLANS.DUO, {
-                    External: SubscriptionPlatform.Default,
-                    SecondarySubscriptions: [
-                        buildSubscription(PLANS.LUMO, {
-                            External: SubscriptionPlatform.Android,
-                        }),
-                    ],
-                }),
+                subscription,
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(subscription),
             });
 
             expect(upsells).not.toMatchObject([familyUpsell, duoUpsell]);

@@ -6,6 +6,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserInvitations } from '@proton/account/userInvitations/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import { usePreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
@@ -52,6 +53,7 @@ const YourPlanSectionInner = ({ app }: Props) => {
     const [addresses] = useAddresses();
     const [calendars] = useCalendars();
     const [subscription, loadingSubscription] = useSubscription();
+    const multiSubscriptionContext = useMultiSubscriptionContext();
     const [organization, loadingOrganization] = useOrganization();
     const [entitlements, entitlementsLoading] = useEntitlementChecksForOrgAndUser();
     const [invites = []] = useUserInvitations();
@@ -72,6 +74,7 @@ const YourPlanSectionInner = ({ app }: Props) => {
         user,
         isReferralExpansionEnabled,
         telemetryFlow,
+        multiSubscriptionContext,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
 

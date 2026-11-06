@@ -1,6 +1,7 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { FeatureCode } from '@proton/features/interface';
 import useFeatures from '@proton/features/useFeatures';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import { isDangerouslyAllowedSubscriptionEstimation } from '@proton/payments/core/subscription/helpers';
 
 import type { OfferConfig, OfferId, Operation } from '../interface';
@@ -28,6 +29,7 @@ const useOfferConfig = () => {
     // Preload FF to avoid single API requests
     useFeatures([FeatureCode.Offers, ...OFFERS_FEATURE_FLAGS]);
     const [subscription, loadingSubscription] = useSubscription();
+    const multiSubscriptionContext = useMultiSubscriptionContext();
 
     const blackFriday2026Operations = useBlackFriday2026();
 
@@ -59,7 +61,8 @@ const useOfferConfig = () => {
     // At the same time, not all subscription estimation calls are dangerous, so for them we don't do any pre-fetching.
     const shouldPrefetch =
         config?.deals.some((deal) => {
-            return isDangerouslyAllowedSubscriptionEstimation(subscription, {
+            return isDangerouslyAllowedSubscriptionEstimation(multiSubscriptionContext, {
+                editedSubscription: subscription,
                 planIDs: deal.planIDs,
                 cycle: deal.cycle,
                 coupon: deal.couponCode,

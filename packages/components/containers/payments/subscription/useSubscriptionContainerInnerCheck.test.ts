@@ -7,6 +7,7 @@ import { GUARD_ERROR_CODES } from '@proton/payments/core/subscription/guard';
 import { isSubscriptionCheckForbiddenWithReason } from '@proton/payments/core/subscription/helpers';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
+import { buildMultiSubscriptionContextFromSubscription } from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 
@@ -85,6 +86,7 @@ function buildDeps(
         } as any,
         paymentFacadeSelectedMethodType: undefined,
         skipPlanTransitionChecks: true,
+        multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(buildSubscription()),
         refs: {
             plansMapRef: { current: {} as any },
             giftCodeRef: { current: null },

@@ -40,6 +40,7 @@ import {
     isTrial,
 } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap } from '@proton/payments/core/subscription/interface';
+import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
@@ -783,6 +784,7 @@ type ResolveUpsellsToDisplayProps = {
     isReferralExpansionEnabled?: boolean;
     isMeetPlansEnabled?: boolean;
     telemetryFlow: TelemetryPaymentFlow;
+    multiSubscriptionContext: MultiSubscriptionContext;
 };
 
 export const resolveUpsellsToDisplay = ({
@@ -797,6 +799,7 @@ export const resolveUpsellsToDisplay = ({
     isReferralExpansionEnabled,
     isMeetPlansEnabled,
     telemetryFlow,
+    multiSubscriptionContext,
     ...rest
 }: ResolveUpsellsToDisplayProps) => {
     if (!subscription) {
@@ -952,7 +955,7 @@ export const resolveUpsellsToDisplay = ({
         .filter(
             (upsell) =>
                 // isUpsellWithPlan is here type-safety
-                !isUpsellWithPlan(upsell) || !isForbiddenModification(subscription, upsell.plan)
+                !isUpsellWithPlan(upsell) || !isForbiddenModification(multiSubscriptionContext, upsell.plan)
         );
 
     return upsells;

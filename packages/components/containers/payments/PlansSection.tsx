@@ -14,6 +14,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { DEFAULT_CYCLE, FREE_SUBSCRIPTION } from '@proton/payments/core/constants';
@@ -67,6 +68,7 @@ const PlansSectionInner = ({ app }: Props) => {
     const [user] = useUser();
     const { APP_NAME } = useConfig();
     const [subscription = FREE_SUBSCRIPTION, loadingSubscription] = useSubscription();
+    const multiSubscriptionContext = useMultiSubscriptionContext();
     const [organization, loadingOrganization] = useOrganization();
     const [plansResult, loadingPlans] = usePlans();
     const [paymentStatus, statusLoading] = usePaymentStatus();
@@ -207,6 +209,7 @@ const PlansSectionInner = ({ app }: Props) => {
                 onChangeSelectedProductPlans={setSelectedProductPlans}
                 organization={organization}
                 paymentsApi={paymentsApi}
+                multiSubscriptionContext={multiSubscriptionContext}
             />
             {app !== APPS.PROTONWALLET && (
                 <Button

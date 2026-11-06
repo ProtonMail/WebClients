@@ -16,6 +16,7 @@ import { useSubscriptionModal } from '@proton/components/containers/payments/sub
 import type { OpenCallbackProps } from '@proton/components/containers/payments/subscription/subscriptionModalTypes';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoad from '@proton/components/hooks/useLoad';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import { useCurrencies } from '@proton/payments-hooks/ui/hooks/useCurrencies';
 import {
     ADDON_PREFIXES,
@@ -190,6 +191,7 @@ export const AutomaticSubscriptionModal = () => {
     const [plansResult, loadingPlans] = usePlans();
     const plans = plansResult?.plans;
     const [subscription, loadingSubscription] = useSubscription();
+    const multiSubscriptionContext = useMultiSubscriptionContext();
 
     const [user] = useUser();
     const tmpProps = useRef<{ props: OpenCallbackProps; eligibility: Eligibility } | undefined>(undefined);
@@ -270,6 +272,7 @@ export const AutomaticSubscriptionModal = () => {
                 coupon,
             },
             subscription,
+            multiSubscriptionContext,
             user,
             eligibleBlackFridayConfigs,
         });
@@ -373,7 +376,16 @@ export const AutomaticSubscriptionModal = () => {
                 }
             }
         }
-    }, [loadingPlans, loadingSubscription, loadingPaymentStatus, paymentStatus, subscription, user, search]);
+    }, [
+        loadingPlans,
+        loadingSubscription,
+        loadingPaymentStatus,
+        paymentStatus,
+        subscription,
+        multiSubscriptionContext,
+        user,
+        search,
+    ]);
 
     const tmp = tmpProps.current;
 

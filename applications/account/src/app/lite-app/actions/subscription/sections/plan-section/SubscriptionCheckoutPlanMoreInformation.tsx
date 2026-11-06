@@ -19,7 +19,16 @@ import SubscriptionCheckoutPlanIncludedFeaturesModal from './SubscriptionCheckou
 const SubscriptionCheckoutPlanMoreInformation = ({ checkoutView }: { checkoutView: CheckoutView }) => {
     const [showGiftCodeForm, setShowGiftCodeForm] = useState(false);
     const [planInformationModal, setPlanInformationModal, renderPlanInformationModal] = useModalState();
-    const { checkoutUi, selectedPlan, subscription, plansMap, loading, selectCoupon, couponConfig } = usePayments();
+    const {
+        checkoutUi,
+        selectedPlan,
+        subscription,
+        plansMap,
+        loading,
+        selectCoupon,
+        couponConfig,
+        multiSubscriptionContext,
+    } = usePayments();
     const { cycle, planIDs, checkResult } = checkoutUi;
     const { Coupon } = checkResult;
 
@@ -30,7 +39,11 @@ const SubscriptionCheckoutPlanMoreInformation = ({ checkoutView }: { checkoutVie
         }
     }, [Coupon, cycle]);
 
-    const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(subscription, { planIDs, cycle });
+    const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(multiSubscriptionContext, {
+        editedSubscription: subscription,
+        planIDs,
+        cycle,
+    });
     const hasGuarantee = show30DaysMoneyBackGuarantee({
         plansMap,
         subscription,

@@ -41,6 +41,7 @@ import {
     notHigherThanAvailableOnBackend,
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { isFreeSubscription as getIsFreeSubscription, isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -121,6 +122,7 @@ interface Props {
     paymentsApi: PaymentsApi;
     coupon?: string;
     showShortPlan?: boolean;
+    multiSubscriptionContext: MultiSubscriptionContext;
 }
 
 const getCycleSelectorOptions = () => {
@@ -168,7 +170,8 @@ const PlanRequiresDedicatedServerNote = ({
  */
 function excludingPlansWithAllChecksFordidden(
     subscription: Subscription | FreeSubscription | null | undefined,
-    plansMap: PlansMap
+    plansMap: PlansMap,
+    multiSubscriptionContext: MultiSubscriptionContext
 ) {
     return (plan: Plan | ShortPlanLike | PLANS) => {
         if (isShortPlanLike(plan) || !subscription || isFreeSubscription(subscription)) {
@@ -186,7 +189,7 @@ function excludingPlansWithAllChecksFordidden(
         });
 
         const allChecksForbidden = allowedCycles.every((cycle) =>
-            isSubscriptionCheckForbidden(subscription, { planIDs, cycle })
+            isSubscriptionCheckForbidden(multiSubscriptionContext, { editedSubscription: subscription, planIDs, cycle })
         );
         return !allChecksForbidden;
     };
@@ -196,7 +199,15 @@ export type AccessiblePlansHookProps = {
     user: UserModel;
 } & Pick<
     Props,
-    'app' | 'selectedProductPlans' | 'subscription' | 'planIDs' | 'paymentStatus' | 'plans' | 'currency' | 'audience'
+    | 'app'
+    | 'selectedProductPlans'
+    | 'subscription'
+    | 'planIDs'
+    | 'paymentStatus'
+    | 'plans'
+    | 'currency'
+    | 'audience'
+    | 'multiSubscriptionContext'
 >;
 
 export function useAccessiblePlans({
@@ -209,6 +220,7 @@ export function useAccessiblePlans({
     plans,
     currency,
     audience,
+    multiSubscriptionContext,
 }: AccessiblePlansHookProps) {
     const isVpnSettingsApp = app === APPS.PROTONVPN_SETTINGS;
     const isPassSettingsApp = app === APPS.PROTONPASS || app === APPS.PROTONAUTHENTICATOR;
@@ -231,7 +243,7 @@ export function useAccessiblePlans({
             : [PLANS.MAIL, PLANS.VPN2024, PLANS.DRIVE, !user.hasPassLifetime && PLANS.PASS, PLANS.LUMO]
     )
         .filter(isTruthy)
-        .filter(excludingPlansWithAllChecksFordidden(subscription, plansMap));
+        .filter(excludingPlansWithAllChecksFordidden(subscription, plansMap, multiSubscriptionContext));
 
     const enabledProductB2CPlans = enabledProductB2CPlanNames.map((planName) => plansMap[planName]).filter(isTruthy);
 
@@ -240,7 +252,9 @@ export function useAccessiblePlans({
     function filterPlans(plans: (Plan | null | undefined)[]): Plan[];
     function filterPlans(plans: (Plan | ShortPlanLike | null | undefined)[]): (Plan | ShortPlanLike)[];
     function filterPlans(plans: (Plan | ShortPlanLike | null | undefined)[]): (Plan | ShortPlanLike)[] {
-        return plans.filter(isTruthy).filter(excludingPlansWithAllChecksFordidden(subscription, plansMap));
+        return plans
+            .filter(isTruthy)
+            .filter(excludingPlansWithAllChecksFordidden(subscription, plansMap, multiSubscriptionContext));
     }
 
     let IndividualPlans: (Plan | ShortPlanLike)[] = [];

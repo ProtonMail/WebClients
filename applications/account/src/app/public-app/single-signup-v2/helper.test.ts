@@ -2,6 +2,7 @@ import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import type { PaymentsApi } from '@proton/payments/core/interface';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { buildMultiSubscriptionContextFromSubscription } from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans, getTestPlansMap } from '@proton/payments/testing/data-plans';
 import { USER_ROLES } from '@proton/shared/lib/constants';
@@ -312,6 +313,8 @@ describe('getUserInfo cycle for a signed-in user', () => {
 
     const callGetUserInfo = (paymentsApi: PaymentsApi, plansMap: PlansMap) =>
         getUserInfo({
+            lumoMultiSubscriptions: false,
+            getEntitlementCatalog: jest.fn(),
             api: jest.fn() as unknown as Api,
             audience: Audience.B2C,
             paymentsApi,
@@ -378,6 +381,7 @@ describe('getSubscriptionData guards', () => {
         currency: 'USD' as const,
         billingAddress: { CountryCode: 'CH', State: null },
         VatId: undefined,
+        multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
     };
 
     it('asks the initial check to validate guards when a paid subscription is being modified', async () => {

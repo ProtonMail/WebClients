@@ -43,6 +43,8 @@ export const entitlementChecksForSelection = {
 
     isMultiUser: (r) => r.hasEntitlement(EntitlementName.MultiUser),
 
+    isMultiUserOrB2B: (r) => r.hasEntitlement(EntitlementName.MultiUser) || r.hasEntitlement(EntitlementName.Business),
+
     hasVpn: (r) => r.hasEntitlement(EntitlementName.FlagsVpn),
 
     hasSentinel: (r) => r.hasEntitlement(EntitlementName.Sentinel),

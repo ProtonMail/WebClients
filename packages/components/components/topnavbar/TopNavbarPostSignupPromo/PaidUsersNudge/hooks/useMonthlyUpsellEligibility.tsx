@@ -4,6 +4,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import type { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import { CYCLE, type PLANS } from '@proton/payments/core/constants';
 import { canModify, hasMigrationDiscount } from '@proton/payments/core/subscription/helpers';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
@@ -30,6 +31,7 @@ export const useMonthlyUpsellEligibility = ({
 }: Props): boolean => {
     const config = useConfig();
     const [subscription] = useSubscription();
+    const multiSubscriptionContext = useMultiSubscriptionContext();
     const isNudgeDisabled = useFlag(offerDisabledFlag);
 
     const { feature } = useFeature<number>(offerTimestampFlag);
@@ -50,7 +52,7 @@ export const useMonthlyUpsellEligibility = ({
     const isEligiblePlan = !!subscription.Plans?.some(({ Name }) => Name === eligiblePlan);
     const isMigratedUser = hasMigrationDiscount(subscription);
 
-    const canModifySubscription = canModify(subscription);
+    const canModifySubscription = canModify(multiSubscriptionContext);
     const isInEligbilityWindow =
         isPaidSubscription(subscription) &&
         isInWindow(differenceInDays(Date.now(), fromUnixTime(subscription.PeriodStart)));

@@ -13,6 +13,7 @@ import {
     PLANS,
 } from '@proton/payments/core/constants';
 import { getDefaultMainCurrency } from '@proton/payments/core/currencies';
+import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
 import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
 import type {
     Currency,
@@ -38,6 +39,10 @@ import {
     isSubscriptionCheckForbidden,
 } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import {
+    type MultiSubscriptionContext,
+    createMultiSubscriptionContext,
+} from '@proton/payments/core/subscription/multi-subscription-context';
 import { hasCycle } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { isFreeSubscription, isValidPlanName } from '@proton/payments/core/type-guards';
@@ -93,19 +98,27 @@ export const getFreeSubscriptionData = (
     };
 };
 
+export const noSubscriptionContext = createMultiSubscriptionContext({
+    lumoMultiSubscriptions: false,
+    subscription: undefined,
+    entitlementCatalog: undefined,
+});
+
 export const getSubscriptionData = async (
     paymentsApi: PaymentsApi,
     options: Options & {
         info?: boolean;
         trial?: boolean;
         subscription?: Subscription | FreeSubscription;
+        multiSubscriptionContext: MultiSubscriptionContext;
     }
 ): Promise<SubscriptionData> => {
     const checkResultPromise = (async () => {
         const planIDs = options.planIDs ?? {};
 
         if (
-            isSubscriptionCheckForbidden(options.subscription, {
+            isSubscriptionCheckForbidden(options.multiSubscriptionContext, {
+                editedSubscription: options.subscription,
                 planIDs,
                 cycle: options.cycle,
             })
@@ -308,7 +321,13 @@ const getUpsell = ({
         // by showing the upsell. Insted, this situation will be handled in another function that will call
         // `isForbiddenLumoPlus()` again and will replace the plan with PlanIDs { [currentPlanName]: 1,
         // [lumo-addon-for-current-plan]: 1 }
-        if (isForbiddenLumoPlus({ subscription, newPlanName: planParameters.plan.Name, plansMap })) {
+        if (
+            isForbiddenLumoPlus({
+                subscription,
+                newPlanName: planParameters.plan.Name,
+                plansMap,
+            })
+        ) {
             return noUpsell;
         }
 
@@ -621,6 +640,8 @@ export const getUserInfo = async ({
     upsellPlanCard,
     toApp,
     availableCycles,
+    lumoMultiSubscriptions,
+    getEntitlementCatalog,
 }: {
     api: Api;
     paymentsApi: PaymentsApi;
@@ -634,11 +655,14 @@ export const getUserInfo = async ({
     signupParameters: SignupParameters2;
     toApp: APP_NAMES | undefined;
     availableCycles: CYCLE[];
+    lumoMultiSubscriptions: boolean;
+    getEntitlementCatalog: () => Promise<EntitlementCatalog>;
 }): Promise<{
     paymentMethods: SavedPaymentMethod[];
     subscription: Subscription | FreeSubscription | undefined;
     subscriptionData: SubscriptionData;
     organization: Organization | undefined;
+    multiSubscriptionContext: MultiSubscriptionContext;
     state: SessionData['state'];
     upsell: Upsell;
     defaultPaymentMethod: PAYMENT_METHOD_TYPES | undefined;
@@ -647,8 +671,12 @@ export const getUserInfo = async ({
         return {
             paymentMethods: [],
             subscription: undefined,
-            subscriptionData: await getSubscriptionData(paymentsApi, options),
+            subscriptionData: await getSubscriptionData(paymentsApi, {
+                ...options,
+                multiSubscriptionContext: noSubscriptionContext,
+            }),
             organization: undefined,
+            multiSubscriptionContext: noSubscriptionContext,
             defaultPaymentMethod: undefined,
             state: {
                 payable: true,
@@ -658,7 +686,15 @@ export const getUserInfo = async ({
                 unavailable: false,
                 vatReverseChargeNotSupported: false,
             },
-            upsell: getUpsell({ audience, plansMap, upsellPlanCard, options, planParameters, toApp, user }),
+            upsell: getUpsell({
+                audience,
+                plansMap,
+                upsellPlanCard,
+                options,
+                planParameters,
+                toApp,
+                user,
+            }),
         };
     }
 
@@ -671,11 +707,18 @@ export const getUserInfo = async ({
         vatReverseChargeNotSupported: false,
     };
 
-    const [paymentMethods, rawSubscription, organization] = await Promise.all([
+    const [paymentMethods, rawSubscription, organization, entitlementCatalog] = await Promise.all([
         state.payable ? getPaymentMethods(api) : [],
         state.payable && state.admin && state.subscribed ? getSubscription(api, user) : FREE_SUBSCRIPTION,
         state.subscribed ? getOrganization({ api }) : undefined,
+        lumoMultiSubscriptions ? getEntitlementCatalog().catch(() => undefined) : undefined,
     ]);
+
+    const multiSubscriptionContext = createMultiSubscriptionContext({
+        lumoMultiSubscriptions,
+        subscription: rawSubscription,
+        entitlementCatalog,
+    });
 
     const subscription: Subscription | FreeSubscription = rawSubscription.UpcomingSubscription ?? rawSubscription;
 
@@ -768,7 +811,10 @@ export const getUserInfo = async ({
         optionsWithSubscriptionDefaults.planIDs = replacePlanIfChangeIsForbidden.planIDs;
     }
 
-    if (state.payable && isForbiddenModification(subscription, optionsWithSubscriptionDefaults.planIDs ?? {})) {
+    if (
+        state.payable &&
+        isForbiddenModification(multiSubscriptionContext, optionsWithSubscriptionDefaults.planIDs ?? {})
+    ) {
         state.access = false;
         state.unavailable = true;
     }
@@ -778,7 +824,7 @@ export const getUserInfo = async ({
             return getFreeSubscriptionData(optionsWithSubscriptionDefaults);
         }
 
-        return getSubscriptionData(paymentsApi, optionsWithSubscriptionDefaults);
+        return getSubscriptionData(paymentsApi, { ...optionsWithSubscriptionDefaults, multiSubscriptionContext });
     })();
 
     if (subscriptionData.vatReverseChargeNotSupported) {
@@ -791,6 +837,7 @@ export const getUserInfo = async ({
         subscription,
         subscriptionData,
         organization,
+        multiSubscriptionContext,
         state,
         upsell,
     };
@@ -805,6 +852,7 @@ export const getSessionDataFromSignup = (cache: SignupCacheResult): SessionData 
         resumedSessionResult: setupData.session,
         subscription: undefined,
         organization: undefined,
+        multiSubscriptionContext: noSubscriptionContext,
         paymentMethods: [],
         defaultPaymentMethod: undefined,
         state: {
@@ -953,6 +1001,7 @@ export const getPlanCardSubscriptionData = async ({
                         info: true,
                         trial,
                         VatId: undefined,
+                        multiSubscriptionContext: noSubscriptionContext,
                     });
                     return subscriptionData;
                 })

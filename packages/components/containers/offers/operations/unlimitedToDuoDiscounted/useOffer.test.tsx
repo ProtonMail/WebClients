@@ -23,6 +23,7 @@ jest.mock('@proton/account/user/hooks');
 const mockUseUser = useUser as jest.Mock;
 
 jest.mock('@proton/account/subscription/hooks');
+jest.mock('@proton/account/entitlementCatalog/hooks', () => ({ useEntitlementCatalog: () => [undefined] }));
 const mockUseSubscription = useSubscription as jest.Mock;
 
 jest.mock('@proton/payments-hooks/client-extensions/useAutomaticCurrency', () => ({

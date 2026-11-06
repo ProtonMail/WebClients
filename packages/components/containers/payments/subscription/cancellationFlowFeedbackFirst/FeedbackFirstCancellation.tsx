@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
 import { PLANS } from '@proton/payments/core/constants';
-import { getAvailableSubscriptionActions, getPlanName } from '@proton/payments/core/subscription/helpers';
+import { getPlanName, isManagedExternally } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 
 import type { ModalProps } from '../../../../components/modalTwo/Modal';
@@ -100,7 +100,7 @@ export const FeedbackFirstCancellation = ({ subscription, onCancelled, ...modalP
     };
 
     const handleConfirmCancellation = async () => {
-        if (!getAvailableSubscriptionActions(subscription).canCancel) {
+        if (isManagedExternally(subscription)) {
             sendManagedExternally();
             setStep(CANCELLATION_STEPS.MANAGED_EXTERNALLY);
             return;

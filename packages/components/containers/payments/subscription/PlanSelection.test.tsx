@@ -5,6 +5,7 @@ import { getDefaultMainCurrency } from '@proton/payments/core/currencies';
 import type { Currency } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getPlanByName } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { buildMultiSubscriptionContextFromSubscription } from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans, getTestPlans } from '@proton/payments/testing/data-plans';
 import { APPS } from '@proton/shared/lib/constants';
@@ -49,6 +50,7 @@ describe('useAccessiblePlans', () => {
             },
             user: buildUser({ Currency: 'CHF' }),
             audience: Audience.B2C,
+            multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(FREE_SUBSCRIPTION),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -107,6 +109,7 @@ describe('useAccessiblePlans', () => {
             },
             user: buildUser({ Currency: 'CHF' }),
             audience: Audience.B2C,
+            multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(FREE_SUBSCRIPTION),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -165,6 +168,7 @@ describe('useAccessiblePlans', () => {
             },
             user: buildUser({ Currency: 'CHF' }),
             audience: Audience.B2C,
+            multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(FREE_SUBSCRIPTION),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -221,6 +225,7 @@ describe('useAccessiblePlans', () => {
             },
             user: buildUser({ Currency: 'CHF' }),
             audience: Audience.B2C,
+            multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(FREE_SUBSCRIPTION),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -274,6 +279,7 @@ describe('useAccessiblePlans', () => {
             },
             user: buildUser({ Currency: 'CHF' }),
             audience: Audience.B2C,
+            multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(FREE_SUBSCRIPTION),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -330,6 +336,7 @@ describe('useAccessiblePlans', () => {
             },
             user: buildUser({ Currency: 'CHF' }),
             audience: Audience.B2C,
+            multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(FREE_SUBSCRIPTION),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -392,6 +399,7 @@ describe('useAccessiblePlans', () => {
                 Currency: 'BRL',
             }),
             audience: Audience.B2C,
+            multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -452,6 +460,7 @@ describe('useAccessiblePlans', () => {
                 Currency: 'USD',
             }),
             audience: Audience.B2C,
+            multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -511,6 +520,7 @@ describe('useAccessiblePlans', () => {
                 Currency: 'USD',
             }),
             audience: Audience.B2C,
+            multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -564,6 +574,7 @@ describe('useAccessiblePlans', () => {
                 Currency: 'USD',
             }),
             audience: Audience.B2C,
+            multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(FREE_SUBSCRIPTION),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -627,6 +638,7 @@ describe('useAccessiblePlans', () => {
             },
             user,
             audience: Audience.B2C,
+            multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(FREE_SUBSCRIPTION),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -660,6 +672,7 @@ describe('useAccessiblePlans', () => {
             },
             user,
             audience: Audience.B2C,
+            multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(FREE_SUBSCRIPTION),
         };
 
         const { result } = renderHook(() => useAccessiblePlans(props));
@@ -695,6 +708,7 @@ describe('useAccessiblePlans', () => {
             },
             user: buildUser(),
             audience: Audience.B2C,
+            multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(FREE_SUBSCRIPTION),
         };
 
         it('should be true when all conditions are met', () => {

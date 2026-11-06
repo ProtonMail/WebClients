@@ -1,6 +1,7 @@
 import { getUnixTime, subHours } from 'date-fns';
 
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import { buildMultiSubscriptionContextFromSubscription } from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import {
@@ -19,7 +20,13 @@ import {
 } from '../blackFriday2026.test.helpers';
 import { BLACK_FRIDAY_2026_MIN_AGE_HOURS } from '../blackFriday2026MinimumAge';
 import { configuration } from './configuration';
-import { getIsEligible } from './eligibility';
+import { getIsEligible as getIsEligibleForContext } from './eligibility';
+
+const getIsEligible = (args: Omit<Parameters<typeof getIsEligibleForContext>[0], 'multiSubscriptionContext'>) =>
+    getIsEligibleForContext({
+        ...args,
+        multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(args.subscription),
+    });
 
 const baseProps = {
     user: paidUser,

@@ -51,10 +51,15 @@ const SubscriptionCheckoutPlanSection = ({
         coupon,
         selectCoupon,
         selectCurrency,
+        multiSubscriptionContext,
     } = usePayments();
     const { currency, planIDs, cycle } = checkoutUi;
     const { APP_NAME } = useConfig();
-    const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(subscription, { planIDs, cycle });
+    const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(multiSubscriptionContext, {
+        editedSubscription: subscription,
+        planIDs,
+        cycle,
+    });
 
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
 

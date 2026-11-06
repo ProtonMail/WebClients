@@ -91,7 +91,13 @@ import { ProvisioningDetails } from './ProvisioningDetails';
 import RightSummary from './RightSummary';
 import { useSignupV2Theme } from './SignupV2ThemeProvider';
 import { Step1OfferBanner } from './components/Step1OfferBanner';
-import { getAccessiblePlans, getFreeSubscriptionData, getSubscriptionMapping, getUpdatedPlanIDs } from './helper';
+import {
+    getAccessiblePlans,
+    getFreeSubscriptionData,
+    getSubscriptionMapping,
+    getUpdatedPlanIDs,
+    noSubscriptionContext,
+} from './helper';
 import {
     type Measure,
     type OnOpenLogin,
@@ -283,7 +289,8 @@ const Step1 = ({
         vatNumber?: string;
     }): Promise<SubscriptionEstimation> => {
         if (
-            isSubscriptionCheckForbidden(subscription, {
+            isSubscriptionCheckForbidden(model.session?.multiSubscriptionContext ?? noSubscriptionContext, {
+                editedSubscription: subscription,
                 planIDs: values.planIDs,
                 cycle: values.cycle,
             })

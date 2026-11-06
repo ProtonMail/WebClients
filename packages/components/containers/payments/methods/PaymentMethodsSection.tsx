@@ -7,6 +7,7 @@ import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcBrandPaypal } from '@proton/icons/icons/IcBrandPaypal';
 import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import EditCardModal from '@proton/payments-ui/ui/containers/EditCardModal';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { getAvailableSubscriptionActions } from '@proton/payments/core/subscription/helpers';
@@ -39,6 +40,7 @@ const PaymentMethodsSection = ({ app }: { app: APP_NAMES }) => {
     const [inAppPurchaseModalProps, setInAppPurchaseModalOpen, renderInAppPurchaseModal] = useModalState();
     const [subscription, loadingSubscription] = useSubscription();
     const redirectToAccountApp = useRedirectToAccountApp();
+    const multiSubscriptionContext = useMultiSubscriptionContext();
 
     if (loadingPaymentMethods || loadingSubscription || !subscription) {
         return <Loader />;
@@ -49,7 +51,7 @@ const PaymentMethodsSection = ({ app }: { app: APP_NAMES }) => {
             ? 'https://protonvpn.com/support/payment-options/'
             : getKnowledgeBaseUrl('/payment-options');
 
-    const subscriptionActions = getAvailableSubscriptionActions(subscription);
+    const subscriptionActions = getAvailableSubscriptionActions(multiSubscriptionContext);
 
     const hasSavedPaypal = paymentMethods.some((method) => method.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL);
 

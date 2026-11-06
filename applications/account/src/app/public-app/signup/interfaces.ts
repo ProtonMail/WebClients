@@ -12,6 +12,7 @@ import type {
     SavedPaymentMethod,
 } from '@proton/payments/core/interface';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -32,6 +33,7 @@ export interface SessionData {
     defaultPaymentMethod: PAYMENT_METHOD_TYPES | undefined;
     subscription: Subscription | FreeSubscription | undefined;
     organization: Organization | undefined;
+    multiSubscriptionContext: MultiSubscriptionContext;
     state: {
         /**
          * If true then the user has permission to make payments (free user or organization admin,

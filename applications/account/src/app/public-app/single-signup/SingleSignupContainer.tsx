@@ -75,6 +75,7 @@ import {
     getOptimisticPlanCardsSubscriptionData,
     getPlanCardSubscriptionData,
     getSubscriptionData,
+    noSubscriptionContext,
 } from '../single-signup-v2/helper';
 import type { SignupDefaults } from '../single-signup-v2/interface';
 import { Steps } from '../single-signup-v2/interface';
@@ -402,6 +403,7 @@ const SingleSignupContainer = ({
 
         if (!subscriptionData || subscriptionData.checkResult.optimistic) {
             subscriptionData = await getSubscriptionData(paymentsApi, {
+                multiSubscriptionContext: noSubscriptionContext,
                 plansMap,
                 planIDs,
                 currency: selectedPlanCurrency,

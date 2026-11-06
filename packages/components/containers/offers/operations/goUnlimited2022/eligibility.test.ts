@@ -2,11 +2,18 @@ import { subDays } from 'date-fns';
 
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { buildMultiSubscriptionContextFromSubscription } from '@proton/payments/testing/buildMultiSubscriptionContext';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
-import { getIsEligible } from './eligibility';
+import { getIsEligible as getIsEligibleForContext } from './eligibility';
+
+const getIsEligible = (args: Omit<Parameters<typeof getIsEligibleForContext>[0], 'multiSubscriptionContext'>) =>
+    getIsEligibleForContext({
+        ...args,
+        multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(args.subscription),
+    });
 
 const protonConfig = {
     APP_NAME: 'proton-mail',

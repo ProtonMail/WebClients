@@ -7,6 +7,7 @@ import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import { CreditsModal } from '@proton/payments-ui/ui/containers/CreditsModal';
 import { getAvailableSubscriptionActions } from '@proton/payments/core/subscription/helpers';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -27,6 +28,7 @@ const redirectFromDesktop = '?open=credit-modal';
 const CreditsSection = ({ app }: { app: APP_NAMES }) => {
     const location = useLocation();
     const [subscription] = useSubscription();
+    const multiSubscriptionContext = useMultiSubscriptionContext();
     const [creditModalProps, setCreditModalOpen, renderCreditModal] = useModalState();
     const [externalSubscriptionModal, showExternalSubscriptionModal] = useModalTwoStatic(InAppPurchaseModal);
     const [paymentStatus, paymentStatusLoading] = usePaymentStatus();
@@ -58,7 +60,7 @@ const CreditsSection = ({ app }: { app: APP_NAMES }) => {
                 <Button
                     shape="outline"
                     onClick={() => {
-                        const subscriptionActions = getAvailableSubscriptionActions(subscription);
+                        const subscriptionActions = getAvailableSubscriptionActions(multiSubscriptionContext);
                         if (!subscriptionActions.canModify) {
                             showExternalSubscriptionModal({
                                 subscription,
