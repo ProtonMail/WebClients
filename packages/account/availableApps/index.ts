@@ -3,13 +3,12 @@ import { type PayloadAction, type ThunkAction, type UnknownAction, createSlice }
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
-import { type OrganizationState, organizationThunk } from '../organization';
-import { userThunk } from '../user';
-import { getAvailableAppsForUser } from './apps';
+import { type UserState, userThunk } from '../user';
+import { queryAvailableApps } from './apps';
 
 const name = 'availableApps' as const;
 
-export interface AvailableAppsState extends OrganizationState {
+export interface AvailableAppsState extends UserState {
     [name]: APP_NAMES[];
 }
 
@@ -27,7 +26,7 @@ export const availableAppsReducer = { [name]: slice.reducer };
 export const availableAppsActions = slice.actions;
 
 /**
- * Gets the available apps and stores them. The listener does it at bootstrap; dispatch it to refresh them.
+ * Fetches the available apps and stores them. The listener does it at bootstrap; dispatch it to refresh them.
  * When the request fails, the stored list stays and the promise rejects.
  */
 export const fetchAvailableApps = (): ThunkAction<
@@ -38,12 +37,6 @@ export const fetchAvailableApps = (): ThunkAction<
 > => {
     return async (dispatch, _, extraArgument) => {
         const user = await dispatch(userThunk());
-        const organization = await dispatch(organizationThunk()).catch(() => undefined);
-        const apps = getAvailableAppsForUser({
-            user,
-            unleashClient: extraArgument.unleashClient,
-            organization,
-        });
-        dispatch(availableAppsActions.set(apps));
+        dispatch(availableAppsActions.set(await queryAvailableApps({ api: extraArgument.api, user })));
     };
 };

@@ -377,7 +377,6 @@ export enum PRODUCT_BIT {
     VPN = 4,
     PASS = 8,
     WALLET = 16,
-    SPACES = 32,
     LUMO = 64,
     MEET = 256,
 }

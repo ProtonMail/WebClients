@@ -9,6 +9,11 @@ export const getUser = () => ({
     method: 'get',
 });
 
+export const getUserAvailableApps = () => ({
+    url: 'core/v4/users/apps',
+    method: 'get',
+});
+
 export const queryCreateUser = (
     data: {
         Username: string;
