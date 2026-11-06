@@ -4,6 +4,7 @@ import type { ReactNode } from 'react';
 import { isBefore, set } from 'date-fns';
 import { c } from 'ttag';
 
+import { useHasMeetProductAccess } from '@proton/account/organization/useHasMeetProductAccess';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { createNewBookingPage, editBookingPage } from '@proton/calendar/bookings/store/actions';
@@ -15,7 +16,6 @@ import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/h
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { BookingsLimitReached } from '@proton/components/containers/calendar/BookingsLimitReached';
-import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { getPreferredActiveWritableCalendar } from '@proton/shared/lib/calendar/calendar';
 import { useFlag } from '@proton/unleash/useFlag';
 
