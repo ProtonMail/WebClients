@@ -1,4 +1,4 @@
-import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
+import { useHasMeetProductAccess } from '@proton/account/organization/useHasMeetProductAccess';
 import { useFlag } from '@proton/unleash/useFlag';
 
 /**

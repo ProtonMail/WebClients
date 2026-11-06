@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useHasMeetProductAccess } from '@proton/account/organization/useHasMeetProductAccess';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { BookingLocation } from '@proton/calendar/bookings/types';
@@ -16,7 +17,6 @@ import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcFileLines } from '@proton/icons/icons/IcFileLines';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { IcTextTitle } from '@proton/icons/icons/IcTextTitle';
-import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getBookingEventDurationOptions } from '@proton/shared/lib/calendar/eventDefaults';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';

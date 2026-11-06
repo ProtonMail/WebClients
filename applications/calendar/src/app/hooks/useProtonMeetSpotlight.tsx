@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { useHasMeetProductAccess } from '@proton/account/organization/useHasMeetProductAccess';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
@@ -12,7 +13,6 @@ import Logo from '@proton/components/components/logo/Logo';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
-import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, MEET_APP_NAME, MEET_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';

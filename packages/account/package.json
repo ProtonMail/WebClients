@@ -163,6 +163,7 @@
         "./organization/storage": "./organization/storage.ts",
         "./organization/theme/listener": "./organization/theme/listener.ts",
         "./organization/theme/slice": "./organization/theme/slice.ts",
+        "./organization/useHasMeetProductAccess": "./organization/useHasMeetProductAccess.ts",
         "./organizationKey": "./organizationKey/index.ts",
         "./organizationKey/actions": "./organizationKey/actions.ts",
         "./organizationKey/convertAddresses": "./organizationKey/convertAddresses.ts",

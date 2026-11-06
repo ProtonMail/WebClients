@@ -1,10 +1,10 @@
 import { act, renderHook } from '@testing-library/react';
 
+import { useHasMeetProductAccess } from '@proton/account/organization/useHasMeetProductAccess';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { AutoAddVideoConferenceLinkProvider } from '@proton/shared/lib/calendar/constants';
 
 import { useAutoAddMeetLinkNotification } from './useAutoAddMeetLinkNotification';
@@ -22,7 +22,7 @@ jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn(),
 }));
 
-jest.mock('@proton/meet/hooks/useHasMeetProductAccess', () => ({
+jest.mock('@proton/account/organization/useHasMeetProductAccess', () => ({
     useHasMeetProductAccess: jest.fn(),
 }));
 

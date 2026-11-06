@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useHasMeetProductAccess } from '@proton/account/organization/useHasMeetProductAccess';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ProtonMeetRow } from '@proton/calendar-video-conferencing/protonMeetIntegration/ProtonMeetRow';
@@ -20,7 +21,6 @@ import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import ZoomUpsellModal from '@proton/components/components/upsell/modals/ZoomUpsellModal';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
-import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { VIDEO_CONFERENCE_PROVIDER } from '@proton/shared/lib/interfaces/calendar/Api';
 import type { EventModel } from '@proton/shared/lib/interfaces/calendar/Event';

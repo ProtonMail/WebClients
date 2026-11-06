@@ -1,8 +1,9 @@
-import { useOrganization } from '@proton/account/organization/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import { Product } from '@proton/shared/lib/ProductEnum';
 import { USER_ROLES } from '@proton/shared/lib/constants';
 import { deserializeAllowedProducts } from '@proton/shared/lib/organization/accessControl/serialization';
+
+import { useUser } from '../user/hooks';
+import { useOrganization } from './hooks';
 
 /**
  * Check if user has access to Meet product
