@@ -241,12 +241,15 @@ export const getSupportedTimezone = (tzid: string): string | undefined => {
         return unsupportedTimezoneLinks[timezone] || timezone;
     } catch (e: any) {
         // clean tzid of offsets
-        const offsetRegex = /^\((?:UTC|GMT).*\) (.*)$|^(.*) \((?:UTC|GMT).*\)/i;
+        const offsetRegex = /^\((?:UTC|GMT)[^)]*\) (.*)$|^(.*) \((?:UTC|GMT).*\)/i;
         const match = offsetRegex.exec(tzid);
         const strippedTzid = match ? match[1] || match[2] : tzid;
         const normalizedTzid = strippedTzid.toLowerCase().replace(/\./g, '');
-        // try manual conversions
-        const timezone = MANUAL_TIMEZONE_LINKS[normalizedTzid];
+        // try manual conversions. Outlook appends a numeric suffix when exporting a calendar
+        // (e.g. "Alberta Standard Time 1"), but some real names end with a number ("Mexico Standard Time 2"),
+        // so only strip the suffix if the exact name is unknown
+        const timezone =
+            MANUAL_TIMEZONE_LINKS[normalizedTzid] || MANUAL_TIMEZONE_LINKS[normalizedTzid.replace(/\s+\d+$/, '')];
         if (timezone) {
             return timezone;
         }
