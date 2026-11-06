@@ -1046,6 +1046,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "La prova gratuïta de l'aplicació d'escriptori finalitza el ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add payment method": [
+        "Afegir un mètode de pagament"
+      ],
+      "Cancel trial": [
+        "Cancel·lar la prova"
       ]
     },
     "action": {
@@ -9260,6 +9266,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "La subscripció completa a ${ planTitle } comença el ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Heu canviat d'opinió després de la prova? ** Cancel·leu-la abans de 30 dies des del primer pagament i us reemborsarem el temps no utilitzat."
       ]
     },
     "Option": {
