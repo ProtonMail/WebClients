@@ -17,7 +17,7 @@ import {
     passAppConfig,
     setPathname,
 } from '../blackFriday2026.test.helpers';
-import { BLACK_FRIDAY_2026_FREE_USER_MIN_ACCOUNT_AGE_HOURS } from '../blackFriday2026FreeUserEligibility';
+import { BLACK_FRIDAY_2026_MIN_AGE_HOURS } from '../blackFriday2026MinimumAge';
 import { configuration } from './configuration';
 import { getIsEligible } from './eligibility';
 
@@ -105,7 +105,7 @@ describe('blackFriday2026FreeToUnlimited eligibility', () => {
         it('should not be eligible for an account younger than the minimum age', () => {
             const user = {
                 ...freeUser,
-                CreateTime: getUnixTime(subHours(new Date(), BLACK_FRIDAY_2026_FREE_USER_MIN_ACCOUNT_AGE_HOURS - 1)),
+                CreateTime: getUnixTime(subHours(new Date(), BLACK_FRIDAY_2026_MIN_AGE_HOURS - 1)),
             };
 
             expect(getIsEligible({ ...baseProps, user })).toBe(false);
@@ -114,7 +114,7 @@ describe('blackFriday2026FreeToUnlimited eligibility', () => {
         it('should be eligible once the account reaches the minimum age', () => {
             const user = {
                 ...freeUser,
-                CreateTime: getUnixTime(subHours(new Date(), BLACK_FRIDAY_2026_FREE_USER_MIN_ACCOUNT_AGE_HOURS)),
+                CreateTime: getUnixTime(subHours(new Date(), BLACK_FRIDAY_2026_MIN_AGE_HOURS)),
             };
 
             expect(getIsEligible({ ...baseProps, user })).toBe(true);
