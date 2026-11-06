@@ -465,10 +465,10 @@
         "Accesare setări"
       ],
       "Go to the first available appointment": [
-        "Salt la prima programare disponibilă"
+        "Salt la prima planificare disponibilă"
       ],
       "Go to the next available appointment": [
-        "Salt la următoarea programare disponibilă"
+        "Salt la următoarea planificare disponibilă"
       ],
       "Google Drive": [
         "Google Drive"
@@ -1053,6 +1053,12 @@
       ],
       "Add ${ name }": [
         "Adăugare ${ name }"
+      ],
+      "Add payment method": [
+        "Adăugare metodă de plată"
+      ],
+      "Cancel trial": [
+        "Anulare perioadă de probare"
       ]
     },
     "action": {
@@ -3146,7 +3152,7 @@
         "Conectați-vă CRM-ul, site-ul web, imprimantele și altele."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
-        "Creați o întâlnire pe Zoom și adăugați detaliile de conectare la evenimentul dvs. cu un singur clic."
+        "Creați o conferință pe Zoom și adăugați detaliile de conectare la eveniment cu un singur clic."
       ],
       "Create groups you can email with a single address.": [
         "Creați grupuri cărora le puteți trimite mesaje cu o singură adresă."
@@ -3197,7 +3203,7 @@
         "Se pare că lista de contacte pe care o importați conține unele grupuri. Examinați modul în care aceste grupuri ar trebui importate."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
-        "Vă permite să adăugați imediat legături web de întâlnire în invitațiile la evenimente."
+        "Vă permite să adăugați imediat legături web de conferință în invitațiile la evenimente."
       ],
       "Loading availability": [
         "Se încarcă disponibilitatea"
@@ -3215,7 +3221,7 @@
         "Configurați conturi pentru toți utilizatorii și invitați-i să se alăture la ${ BRAND_NAME }."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
-        "Simplificați sincronizarea și programarea cu calendare partajate."
+        "Simplificați sincronizarea și planificarea cu calendare partajate."
       ],
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "Aceasta ar putea dura câteva minute. Între timp, puteți continua să folosiți ${ CALENDAR_APP_NAME } ca de obicei."
@@ -4689,10 +4695,10 @@
     },
     "Google Meet": {
       "Join Google Meet": [
-        "Alăturați-vă întâlnirii de pe Google"
+        "Participare la Google Meet"
       ],
       "Joining instructions": [
-        "Instrucțiuni alăturare"
+        "Instrucțiuni de participare"
       ],
       "Less details": [
         "Mai puține detalii"
@@ -4701,7 +4707,7 @@
         "Gazdă conferință:"
       ],
       "Meeting link:": [
-        "Legătură web întâlnire:"
+        "Legătură web conferință:"
       ],
       "More details": [
         "Mai multe detalii"
@@ -5379,7 +5385,7 @@
         "Oricine are această legătură web poate vedea dacă aveți sau nu timp liber în calendar. Nu pot vedea detaliile evenimentului, cum ar fi titlul, locul sau participanții."
       ],
       "Appointment duration": [
-        "Durată programare"
+        "Durată planificare"
       ],
       "Are you sure you want to delete this booking page?": [
         "Sigur ștergeți această pagină de rezervare?"
@@ -5675,7 +5681,7 @@
         "Expirat"
       ],
       "Failed to update meeting name": [
-        "Actualizarea numelui întâlnirii a eșuat."
+        "Actualizarea numelui conferinței a eșuat."
       ],
       "Failed to update meeting schedule": [
         "Actualizarea planificării conferinței a eșuat."
@@ -5717,7 +5723,7 @@
         "Cu cât timp în avans se poate face o rezervare?"
       ],
       "How long should an appointment last?": [
-        "Cât ar trebui să dureze o întâlnire?"
+        "Cât ar trebui să dureze o conferință?"
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Dacă sunt activate combinațiile de taste, puteți utiliza următoarele taste pentru acțiuni rapide sau pentru a trece la diferite vizualizări. ${ metaKey } + K este întotdeauna activată."
@@ -6057,7 +6063,7 @@
         "Modificările anterioare ale acestei serii vor fi pierdute."
       ],
       "Previously booked events won't be deleted.": [
-        "Evenimentele programate anterior nu vor fi șterse."
+        "Evenimentele planificate anterior nu vor fi șterse."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Prețul include toate reducerile ciclice aplicabile și cupoanele neexpirate salvate în cont."
@@ -6406,7 +6412,7 @@
         "Cum doriți să numiți această pagină de rezervare?"
       ],
       "When can appointments be booked?": [
-        "Când se pot programa întâlnirile?"
+        "Când se pot programa conferințele?"
       ],
       "When working remotely": [
         "Când lucrați la distanță"
@@ -6415,7 +6421,7 @@
         "Când vă conectați la VPN, acesta utilizează tehnologia de criptare pentru a vă ascunde adresa IP (un cod unic atribuit dispozitivului)."
       ],
       "Where will the appointment take place?": [
-        "Unde va avea loc întâlnirea?"
+        "Unde va avea loc conferința?"
       ],
       "Which calendars should block bookings?": [
         "Ce calendare ar trebui să blocheze rezervările?"
@@ -6918,7 +6924,7 @@
         "Adăugare la grup"
       ],
       "Add Zoom meeting": [
-        "Adăugare întâlnire pe Zoom"
+        "Adăugare conferință pe Zoom"
       ],
       "Additional comments": [
         "Comentarii adiționale"
@@ -7459,13 +7465,13 @@
         "Ora de sfârșit a intervalului de rezervare"
       ],
       "How long should an appointment last?": [
-        "Cât ar trebui să dureze o întâlnire?"
+        "Cât ar trebui să dureze o conferință?"
       ],
       "Start time of the booking range": [
         "Oră început interval de rezervare"
       ],
       "What should people know about this appointment?": [
-        "Ce ar trebui să știe oamenii despre această întâlnire?"
+        "Ce ar trebui să știe oamenii despre această conferință?"
       ]
     },
     "Label for contact group color": {
@@ -8758,7 +8764,7 @@
         "Transferați automat mesajele trimise spre contul din ${ MAIL_APP_NAME } către orice altă adresă de e-mail."
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "În prezent, trimiterea mesajelor promoționale sau programate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
+        "În prezent, trimiterea mesajelor promoționale sau planificate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
       ],
       "Choose custom times to be reminded about an email or for your message to arrive": [
         "Alegeți un timp personal pentru a vi se reaminti despre un mesaj sau când să sosească mesajul."
@@ -8889,7 +8895,7 @@
         "Stocați în siguranță detaliile contactelor personale, cum ar fi numărul de telefon, adresa, ziua de naștere și notele personale. Criptarea cu acces zero vă garantează că nici chiar ${ BRAND_NAME } nu le poate accesa."
       ],
       "See the availability of meeting participants and save time scheduling meetings": [
-        "Vedeți disponibilitatea participanților la întâlnire și economisiți timp programând întâlniri."
+        "Vedeți disponibilitatea participanților la conferință și economisiți timp programând conferințe."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Trimiteți e-mailuri către grupuri mari rapid și ușor prin crearea a cât mai multe grupuri de contact de care aveți nevoie (până la 100 de contacte per grup)."
@@ -9431,6 +9437,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Abonamentul complet ${ planTitle } începe la ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**V-ați răzgândit după perioada de probare?** Anulați în termen de 30 de zile de la prima plată, iar noi vă vom rambursa contravaloarea perioadei neutilizate."
       ]
     },
     "Option": {
@@ -11933,7 +11942,7 @@
         "Aplicare cod cadou"
       ],
       "Appointment details": [
-        "Detalii programare"
+        "Detalii planificare"
       ],
       "Are you sure?": [
         "Confirmați?"
@@ -12389,7 +12398,7 @@
         "Salvare modificări"
       ],
       "Schedule meetings in one click": [
-        "Planificare întâlniri cu un singur clic"
+        "Planificare conferințe cu un singur clic"
       ],
       "Security center": [
         "Centru de securitate"
@@ -13330,7 +13339,7 @@
     },
     "Zoom Meeting": {
       "Meeting ID:": [
-        "ID întâlnire:"
+        "ID conferință:"
       ],
       "Passcode:": [
         "Cod de acces:"
