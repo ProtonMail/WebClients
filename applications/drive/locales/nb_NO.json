@@ -1395,6 +1395,15 @@
       ],
       "Switch to ${ planName }": [
         "Bytt til ${ planName }"
+      ],
+      "Add payment method": [
+        "Legg til betalingsmåte"
+      ],
+      "Go to folder": [
+        "Gå til mappe"
+      ],
+      "Search recent items": [
+        "Søk etter nylige elementer"
       ]
     },
     "Action: Docs": {
@@ -8099,6 +8108,15 @@
       ],
       "Your import is blocked. Upgrade now to bring the rest of your files over.": [
         "Importen er blokkert. Oppgrader nå for å ta med resten av filene dine."
+      ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } bruker bare denne tilgangen for importen. Google får aldri tilgang til ${ BRAND_NAME }-kontoen din."
+      ],
+      "Connecting to Google Drive and preparing your import.": [
+        "Kobler til Google Disk og forbereder importen."
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importer filene og mappene dine fra Google Disk og hold dem private i ${ DRIVE_APP_NAME }."
       ]
     },
     "info": {
@@ -11420,6 +11438,9 @@
       ],
       "you can cancel within 30 days and get a pro-rata refund.": [
         "du kan si opp innen 30 dager og få en forholdsmessig refusjon."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Ombestemt deg etter prøveperioden?** Si opp innen 30 dager etter første betaling, og vi refunderer den ubrukte tiden."
       ]
     },
     "Option": {
@@ -15012,6 +15033,9 @@
       ],
       "Your import is finished!": [
         "Importen er ferdig!"
+      ],
+      "Preparing your import": [
+        "Forbereder importen"
       ]
     },
     "Today icon tooltip in mini calendar": {
