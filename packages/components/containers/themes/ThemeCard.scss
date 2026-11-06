@@ -22,7 +22,7 @@
 	}
 
 	svg {
-		border-radius: calc(var(--custom-border-radius) - 1px);
+		border-radius: calc(var(--custom-border-radius) - 3px);
 	}
 
 	&-medium-wide,
@@ -45,8 +45,6 @@
 	}
 
 	&.is-active {
-		box-shadow: 0 0 0 1px var(--button-active-border-color);
-
 		// fix ghost case
 		&.button-ghost-norm {
 			.theme-card-image {
@@ -56,8 +54,12 @@
 			}
 		}
 
+		// Draw the whole selected outline as a single 2px ring (1px over the button border + 1px outside it)
+		// instead of stacking a box-shadow, the border and this border, which left light seams between them
 		&::after {
-			border: 1px solid var(--button-active-border-color);
+			inset: -2px;
+			border: 2px solid var(--button-active-border-color);
+			border-radius: calc(var(--custom-border-radius) + 1px); // concentric with the button's border
 		}
 	}
 }
