@@ -80,6 +80,37 @@ describe('getSupportedTimezone', () => {
         expect(getSupportedTimezone('/Africa/Freetown/')).toEqual('Africa/Abidjan');
     });
 
+    it('should ignore the numeric suffix Outlook adds on calendar export', () => {
+        expect(getSupportedTimezone('Alberta Standard Time 1')).toEqual('America/Edmonton');
+        expect(getSupportedTimezone('Manitoba Standard Time')).toEqual('America/Winnipeg');
+        expect(getSupportedTimezone('Pacific Time (British Columbia)')).toEqual('America/Vancouver');
+    });
+
+    it('should keep Windows names that legitimately end with a number', () => {
+        expect(getSupportedTimezone('Mexico Standard Time 2')).toEqual('America/Chihuahua');
+        expect(getSupportedTimezone('Russia Time Zone 3')).toEqual('Europe/Samara');
+        expect(getSupportedTimezone('Russia Time Zone 10')).toEqual('Asia/Srednekolymsk');
+        expect(getSupportedTimezone('Russia Time Zone 11')).toEqual('Asia/Kamchatka');
+    });
+
+    it('should strip the Outlook export suffix on top of a name ending with a number', () => {
+        expect(getSupportedTimezone('Russia Time Zone 10 1')).toEqual('Asia/Srednekolymsk');
+        expect(getSupportedTimezone('Mexico Standard Time 2 1')).toEqual('America/Chihuahua');
+    });
+
+    it('should strip the Outlook export suffix regardless of case and offset prefix', () => {
+        expect(getSupportedTimezone('alberta standard time 1')).toEqual('America/Edmonton');
+        expect(getSupportedTimezone('(UTC-07:00) Mountain Time (Alberta) 1')).toEqual('America/Edmonton');
+    });
+
+    it('should return undefined for unknown names with a numeric suffix', () => {
+        expect(getSupportedTimezone('Nowhere Standard Time 1')).toBeUndefined();
+    });
+
+    it('should convert America/Coyhaique to America/Punta_Arenas', () => {
+        expect(getSupportedTimezone('America/Coyhaique')).toEqual('America/Punta_Arenas');
+    });
+
     it('should support the bluejeans format', () => {
         expect(getSupportedTimezone('/tzurl.org/2020b/America/Chicago')).toEqual('America/Chicago');
         expect(getSupportedTimezone('/tzurl.org/2020b/Asia/Istanbul')).toEqual('Europe/Istanbul');
