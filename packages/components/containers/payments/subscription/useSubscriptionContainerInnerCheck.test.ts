@@ -1,3 +1,5 @@
+import { act } from '@testing-library/react';
+
 import { ProrationMode } from '@proton/payments/core/api/api';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
 import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
@@ -923,6 +925,81 @@ describe('useSubscriptionCheck', () => {
             await result.current.check(buildModel());
 
             expect(getIsPlanTransitionForbidden).not.toHaveBeenCalled();
+        });
+    });
+
+    describe('lastCheckFailed', () => {
+        it('is false before any check', () => {
+            const deps = buildDeps();
+            const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+            expect(result.current.lastCheckFailed).toBe(false);
+        });
+
+        it('becomes true when the check fails', async () => {
+            const deps = buildDeps({
+                paymentsApi: {
+                    checkSubscription: jest.fn().mockRejectedValue({ status: 422, data: { Code: 2000 } }),
+                } as any,
+            });
+            const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+            await act(async () => {
+                await result.current.check(buildModel());
+            });
+
+            expect(result.current.lastCheckFailed).toBe(true);
+        });
+
+        it('becomes false again when a later check succeeds', async () => {
+            const checkSubscription = jest
+                .fn()
+                .mockRejectedValueOnce({ status: 422, data: { Code: 2000 } })
+                .mockResolvedValueOnce(buildCheckResult());
+            const deps = buildDeps({ paymentsApi: { checkSubscription } as any });
+            const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+            await act(async () => {
+                await result.current.check(buildModel());
+            });
+            expect(result.current.lastCheckFailed).toBe(true);
+
+            await act(async () => {
+                await result.current.check(buildModel());
+            });
+            expect(result.current.lastCheckFailed).toBe(false);
+        });
+
+        it('stays false when the check is aborted', async () => {
+            const abortError = Object.assign(new Error('aborted'), { name: 'AbortError' });
+            const deps = buildDeps({
+                paymentsApi: { checkSubscription: jest.fn().mockRejectedValue(abortError) } as any,
+            });
+            const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+            await act(async () => {
+                await result.current.check(buildModel());
+            });
+
+            expect(result.current.lastCheckFailed).toBe(false);
+        });
+
+        it('becomes false when the selection is the free plan', async () => {
+            const deps = buildDeps({
+                paymentsApi: {
+                    checkSubscription: jest.fn().mockRejectedValue({ status: 422, data: { Code: 2000 } }),
+                } as any,
+            });
+            const { result } = componentsHookRenderer(() => useSubscriptionContainerInnerCheck(deps));
+
+            await act(async () => {
+                await result.current.check(buildModel());
+            });
+            await act(async () => {
+                await result.current.check(buildModel({ planIDs: {} }));
+            });
+
+            expect(result.current.lastCheckFailed).toBe(false);
         });
     });
 
