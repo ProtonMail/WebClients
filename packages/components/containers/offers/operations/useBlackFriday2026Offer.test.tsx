@@ -12,11 +12,16 @@ import type { Subscription } from '@proton/payments/core/subscription/interface'
 import { APPS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
+import { CommonFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import ConfigProvider from '../../config/Provider';
 import useOfferFlags from '../hooks/useOfferFlags';
 import { configuration as duoToFamilyConfig } from './blackFriday2026DuoToFamily/configuration';
 import { useOffer as useDuoToFamily } from './blackFriday2026DuoToFamily/useOffer';
+import { useOffer as useFreeToDrivePlus } from './blackFriday2026FreeToDrivePlus/useOffer';
+import { useOffer as useFreeToMailPlus } from './blackFriday2026FreeToMailPlus/useOffer';
+import { useOffer as useFreeToPassPlus } from './blackFriday2026FreeToPassPlus/useOffer';
 import { configuration as freeToUnlimitedConfig } from './blackFriday2026FreeToUnlimited/configuration';
 import { useOffer as useFreeToUnlimited } from './blackFriday2026FreeToUnlimited/useOffer';
 import { configuration as plusToUnlimitedConfig } from './blackFriday2026PlusToUnlimited/configuration';
@@ -41,6 +46,12 @@ jest.mock('../hooks/useOfferFlags', () => ({
     default: jest.fn(),
 }));
 const mockUseOfferFlags = useOfferFlags as jest.Mock;
+
+jest.mock('@proton/unleash/useFlag', () => ({
+    __esModule: true,
+    useFlag: jest.fn(),
+}));
+const mockUseFlag = useFlag as jest.Mock;
 
 const DRIVE_CONFIG = {
     APP_NAME: APPS.PROTONDRIVE,
@@ -75,6 +86,7 @@ const buildSubscription = (plan: PLANS, cycle: CYCLE = CYCLE.YEARLY) => {
 const offerHooks = [
     {
         name: 'free-to-unlimited',
+        unleashFlag: CommonFeatureFlag.BlackFriday2026FreeToUnlimitedOffer,
         useOffer: useFreeToUnlimited,
         plan: undefined,
         cycle: undefined,
@@ -84,6 +96,7 @@ const offerHooks = [
     },
     {
         name: 'plus-to-unlimited',
+        unleashFlag: CommonFeatureFlag.BlackFriday2026PlusToUnlimitedOffer,
         useOffer: usePlusToUnlimited,
         plan: PLANS.MAIL,
         cycle: undefined,
@@ -93,6 +106,7 @@ const offerHooks = [
     },
     {
         name: 'unlimited-to-duo',
+        unleashFlag: CommonFeatureFlag.BlackFriday2026UnlimitedToDuoOffer,
         useOffer: useUnlimitedToDuo,
         plan: PLANS.BUNDLE,
         cycle: undefined,
@@ -102,6 +116,7 @@ const offerHooks = [
     },
     {
         name: 'duo-to-family',
+        unleashFlag: CommonFeatureFlag.BlackFriday2026DuoToFamilyOffer,
         useOffer: useDuoToFamily,
         plan: PLANS.DUO,
         cycle: undefined,
@@ -141,6 +156,7 @@ const setupMocks = ({
     ]);
     mockUseAutomaticCurrency.mockReturnValue(['EUR', loadingSource === 'currency']);
     mockUseOfferFlags.mockReturnValue({ isActive: true, loading: loadingSource === 'offerFlags' });
+    mockUseFlag.mockReturnValue(true);
 };
 
 describe('useBlackFriday2026Offer', () => {
@@ -180,6 +196,42 @@ describe('useBlackFriday2026Offer', () => {
             expect(result.current.isLoading).toBe(false);
         }
     );
+
+    it.each(offerHooks)(
+        '$name is not valid while its Unleash flag is off, even though the user is eligible',
+        ({ useOffer, plan, cycle, isPaid, unleashFlag }) => {
+            setupMocks({ plan, cycle, isPaid });
+            // Only this offer's flag is off, so reading another offer's flag would leave it valid.
+            mockUseFlag.mockImplementation((name) => {
+                return name !== unleashFlag;
+            });
+
+            const { result } = renderHook(() => useOffer(), { wrapper });
+
+            expect(result.current.isEligible).toBe(true);
+            expect(result.current.isValid).toBe(false);
+        }
+    );
+
+    it.each([
+        { name: 'free-to-unlimited', useOffer: useFreeToUnlimited, unleashFlag: 'BlackFriday2026FreeToUnlimitedOffer' },
+        { name: 'free-to-mail-plus', useOffer: useFreeToMailPlus, unleashFlag: 'BlackFriday2026FreeToMailPlusOffer' },
+        {
+            name: 'free-to-drive-plus',
+            useOffer: useFreeToDrivePlus,
+            unleashFlag: 'BlackFriday2026FreeToDrivePlusOffer',
+        },
+        { name: 'free-to-pass-plus', useOffer: useFreeToPassPlus, unleashFlag: 'BlackFriday2026FreeToPassPlusOffer' },
+        { name: 'plus-to-unlimited', useOffer: usePlusToUnlimited, unleashFlag: 'BlackFriday2026PlusToUnlimitedOffer' },
+        { name: 'unlimited-to-duo', useOffer: useUnlimitedToDuo, unleashFlag: 'BlackFriday2026UnlimitedToDuoOffer' },
+        { name: 'duo-to-family', useOffer: useDuoToFamily, unleashFlag: 'BlackFriday2026DuoToFamilyOffer' },
+    ])('$name reads the $unleashFlag Unleash flag', ({ useOffer, unleashFlag }) => {
+        setupMocks();
+
+        renderHook(() => useOffer(), { wrapper });
+
+        expect(mockUseFlag).toHaveBeenCalledWith(unleashFlag);
+    });
 
     // One case per dependency: asserting them together would still pass if `isLoading` dropped one.
     const loadingSources: LoadingSource[] = ['user', 'subscription', 'currency', 'offerFlags'];

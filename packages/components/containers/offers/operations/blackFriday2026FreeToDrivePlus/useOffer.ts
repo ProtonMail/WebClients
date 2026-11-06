@@ -1,8 +1,14 @@
+import { CommonFeatureFlag } from '@proton/unleash/Flags';
+
 import type { Operation } from '../../interface';
 import { useBlackFriday2026Offer } from '../useBlackFriday2026Offer';
 import { configuration } from './configuration';
 import { getIsEligible } from './eligibility';
 
 export const useOffer = (): Operation => {
-    return useBlackFriday2026Offer({ configuration, getIsEligible });
+    return useBlackFriday2026Offer({
+        configuration,
+        getIsEligible,
+        unleashFlag: CommonFeatureFlag.BlackFriday2026FreeToDrivePlusOffer,
+    });
 };
