@@ -1,8 +1,8 @@
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import { EntitlementScope, EntitlementType, type Entitlements } from '@proton/payments/core/entitlements/interface';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
-import { getTestStore } from '@proton/redux-shared-store/test';
 import { CacheType } from '@proton/redux-utilities/interface';
+import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { getModelState } from '../testing/getModelState';

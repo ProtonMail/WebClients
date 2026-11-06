@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { selectAvailableRecoveryMethods } from '../../recovery/sessionRecoverySelectors';
+import { useSelector } from '../../store/hooks';
 import { IncomingDelegatedAccessActions } from '../shared/IncomingDelegatedAccessActions';
 import { IncomingDelegatedAccessProvider } from '../shared/IncomingDelegatedAccessProvider';
 import { OutgoingDelegatedAccessActions } from '../shared/OutgoingDelegatedAccessActions';

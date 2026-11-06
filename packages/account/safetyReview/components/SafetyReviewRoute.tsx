@@ -2,8 +2,8 @@ import { type ReactNode, useState } from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
 
 import { useConfig } from '@proton/app-context/useConfig';
-import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
+import { useSelector } from '../../store/hooks';
 import { useLoadRecoveryState } from '../recoveryState/useRecoveryState';
 import { SafetyReviewContainer } from './SafetyReviewContainer';
 import { getSafetyReviewBackLink } from './getSafetyReviewBackLink';

@@ -7,9 +7,9 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import TopBanner from '@proton/components/containers/topBanners/TopBanner';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import { useDispatch } from '../store/hooks';
 import PasswordReminderModal from './PasswordReminderModal';
 import { usePasswordReminder } from './hooks';
 import { dismissPasswordReminder, passwordReminderActions } from './index';

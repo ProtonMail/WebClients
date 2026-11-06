@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
 
+import { useDispatch } from '../../../../store/hooks';
 import { updateDelegatedAccess } from '../../../outgoingActions';
 import { useOutgoingController } from '../../OutgoingDelegatedAccessProvider';
 import type { ReEnableActionPayload } from '../interface';

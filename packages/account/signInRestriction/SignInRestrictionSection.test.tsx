@@ -4,8 +4,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { mockUseApi } from '@proton/app-context/testing/mockUseApi';
 import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
-import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
-import { getTestStore } from '@proton/redux-shared-store/test';
+import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
 import { updateSignInRestriction } from '@proton/shared/lib/api/settings';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import {
@@ -13,6 +12,7 @@ import {
     RESTRICTED_LOGIN_IDENTIFIER_POLICY,
 } from '@proton/shared/lib/interfaces/UserSettings';
 
+import { TestStoreProvider } from '../testing/TestStoreProvider';
 import { buildAddress } from '../testing/buildAddress';
 import { mockUseAddresses } from '../testing/mockUseAddresses';
 import { mockUseUser } from '../testing/mockUseUser';
@@ -35,9 +35,9 @@ const renderSection = () => {
     });
 
     return render(
-        <ProtonStoreProvider store={store}>
+        <TestStoreProvider store={store}>
             <SignInRestrictionSection />
-        </ProtonStoreProvider>
+        </TestStoreProvider>
     );
 };
 

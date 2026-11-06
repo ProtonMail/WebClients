@@ -10,7 +10,7 @@ import {
 } from '@proton/payments/testing/prodCatalogGrantsForTesting';
 import { getEntitlementsState, getSubscriptionState } from '@proton/payments/testing/redux-state';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
-import { getTestStore } from '@proton/redux-shared-store/test';
+import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
 import { USER_ROLES } from '@proton/shared/lib/constants';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
 import { buildUser } from '@proton/shared/testing/buildUser';

@@ -10,7 +10,8 @@
         "./helpers/safeCount": "./helpers/safeCount.ts",
         "./interface": "./asyncModelThunk/interface.ts",
         "./initialModelState": "./initialModelState/initialModelState.ts",
-        "./initialModelState/interface": "./initialModelState/interface.ts"
+        "./initialModelState/interface": "./initialModelState/interface.ts",
+        "./testing/getTestStore": "./testing/getTestStore.ts"
     },
     "scripts": {
         "check:types": "tsc --checkers 1",

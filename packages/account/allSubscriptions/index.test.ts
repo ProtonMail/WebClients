@@ -2,8 +2,8 @@ import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
-import { getTestStore } from '@proton/redux-shared-store/test';
 import { CacheType } from '@proton/redux-utilities/interface';
+import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
 import { USER_ROLES } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 

@@ -1,4 +1,4 @@
-import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
+import type { SharedStartListening } from '@proton/redux-shared-store-types/interface';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 
 import { type AddressesState, selectAddresses } from '../addresses';

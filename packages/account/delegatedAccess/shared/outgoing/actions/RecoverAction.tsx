@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
 
+import { useDispatch } from '../../../../store/hooks';
 import RetrySignedKeyListError from '../../../RetrySignedKeyListError';
 import { recoverDelegatedAccessStep1Thunk, recoverDelegatedAccessStep2Thunk } from '../../../outgoingActions';
 import { RecoverOutgoingRecoveryContactModal } from '../../../recoveryContact/outgoing/modals/RecoverOutgoingRecoveryContactModal';

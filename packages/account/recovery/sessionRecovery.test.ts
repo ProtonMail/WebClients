@@ -1,7 +1,7 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { waitFor } from '@testing-library/react';
 
-import { getTestStore } from '@proton/redux-shared-store/test';
+import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
 import { SessionRecoveryState, type UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { getServerEvent } from '../tests/getServerEvent';

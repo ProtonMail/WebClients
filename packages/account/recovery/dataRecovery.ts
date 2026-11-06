@@ -1,7 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { useSelector } from '@proton/redux-shared-store/sharedProvider';
-
+import { useSelector } from '../store/hooks';
 import { selectMnemonicData } from './mnemonic';
 import { selectRecoveryFileData } from './recoveryFile';
 

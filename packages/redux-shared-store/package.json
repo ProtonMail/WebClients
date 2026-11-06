@@ -8,12 +8,10 @@
         "./sharedSerializable": "./sharedSerializable.ts",
         "./sharedStore": "./sharedStore.ts",
         "./persist": "./persist.ts",
-        "./listenerInterface": "./listenerInterface.ts",
         "./eventLoop/calendarEventLoopV6": "./eventLoop/calendarEventLoopV6.ts",
         "./eventLoop/contactEventLoopV6": "./eventLoop/contactEventLoopV6.ts",
         "./eventLoop/coreEventLoopV6": "./eventLoop/coreEventLoopV6.ts",
         "./eventLoop/mailEventLoopV6": "./eventLoop/mailEventLoopV6.ts",
-        "./test": "./test.ts",
         "./settingsHeartbeat/mailSettingsHeartbeatListener": "./settingsHeartbeat/mailSettingsHeartbeatListener.ts",
         "./settingsHeartbeat/calendarSettingsHeartbeatListener": "./settingsHeartbeat/calendarSettingsHeartbeatListener.ts"
     },

@@ -17,7 +17,6 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { AuthVersion } from '@proton/shared/lib/authentication/interface';
@@ -26,6 +25,7 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
+import { useDispatch } from '../store/hooks';
 import { userThunk } from '../user';
 
 const PASS_INCORRECT_PASSWORD_CODE = 2011;

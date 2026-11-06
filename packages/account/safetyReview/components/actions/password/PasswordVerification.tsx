@@ -19,7 +19,6 @@ import { getReAuthTwoFactorTypes } from '@proton/components/containers/password/
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { PASSWORD_WRONG_ERROR, type TwoFactorCredentials, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { InfoAuthedResponse } from '@proton/shared/lib/authentication/interface';
@@ -29,6 +28,7 @@ import noop from '@proton/utils/noop';
 
 import { submitPasswordReminder } from '../../../../passwordReminder';
 import PasswordReminderInput from '../../../../passwordReminder/PasswordReminderInput';
+import { useDispatch } from '../../../../store/hooks';
 import type { ExtractRecoveryActionItem } from '../../../recoveryState/recoveryState';
 import { SafetyReviewCta } from '../../SafetyReviewCta';
 import illustration from '../../assets/password-verification.svg';

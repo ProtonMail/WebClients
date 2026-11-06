@@ -5,8 +5,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import Prompt, { type PromptProps } from '@proton/components/components/prompt/Prompt';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
+import { useDispatch } from '../../../../store/hooks';
 import { grantDelegatedAccessThunk } from '../../../outgoingActions';
 import type { EnrichedOutgoingDelegatedAccess } from '../../../shared/outgoing/interface';
 

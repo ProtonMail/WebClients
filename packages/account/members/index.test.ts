@@ -1,5 +1,5 @@
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
-import { getTestStore } from '@proton/redux-shared-store/test';
+import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
 import { USER_ROLES } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { Permission } from '@proton/shared/lib/interfaces/UserPermission';

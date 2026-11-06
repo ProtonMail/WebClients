@@ -5,9 +5,9 @@ import { Button } from '@proton/atoms/Button/Button';
 import Prompt, { type PromptProps } from '@proton/components/components/prompt/Prompt';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 
+import { useDispatch } from '../../../../store/hooks';
 import { deleteDelegatedAccessThunk } from '../../../incomingActions';
 import type { EnrichedIncomingDelegatedAccess } from '../../../shared/incoming/interface';
 

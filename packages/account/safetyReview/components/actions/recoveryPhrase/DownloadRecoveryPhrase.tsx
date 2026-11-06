@@ -7,7 +7,6 @@ import Loader from '@proton/components/components/loader/Loader';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
@@ -15,6 +14,7 @@ import { RecoveryKitAction } from '../../../../recovery/recoveryKit/RecoveryKitA
 import type { RecoveryKitContentProps } from '../../../../recovery/recoveryKit/RecoveryKitContent';
 import type { DeferredMnemonicData } from '../../../../recovery/recoveryKit/generateDeferredMnemonicData';
 import { generateRecoveryKitData, setRecoveryPhrase } from '../../../../recovery/recoveryKit/recoveryPhraseActions';
+import { useDispatch } from '../../../../store/hooks';
 import type { ExtractRecoveryActionItem } from '../../../recoveryState/recoveryState';
 import { SafetyReviewCta } from '../../SafetyReviewCta';
 import darkIllustration from '../../assets/recovery-phrase-dark.svg';

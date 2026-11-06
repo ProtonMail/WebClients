@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 
-import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
 
 import { contactEmailsThunk } from '../../../contactEmails';
+import { useDispatch, useSelector } from '../../../store/hooks';
 import { listIncomingDelegatedAccess } from '../../incomingActions';
 import { type EnrichedIncomingDelegatedAccessReturnValue, selectEnrichedIncomingDelegatedAccess } from './selector';
 
