@@ -17,7 +17,7 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
-import { useSubscriptionModal } from '../../SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../subscriptionModalContext';
 
 export const ActionButtons = ({
     user,

@@ -13,10 +13,8 @@ import noop from '@proton/utils/noop';
 import useSettingsLink from '../../../components/link/useSettingsLink';
 import { openLinkInBrowser } from '../../desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '../../desktop/useHasInboxDesktopInAppPayments';
-import {
-    type OpenCallbackProps,
-    useOptionalSubscriptionModal,
-} from '../../payments/subscription/SubscriptionModalProvider';
+import { useOptionalSubscriptionModal } from '../../payments/subscription/subscriptionModalContext';
+import type { OpenCallbackProps } from '../../payments/subscription/subscriptionModalTypes';
 import type { Deal, Offer } from '../interface';
 
 const useSelectDeal = (callback?: () => void) => {

@@ -19,7 +19,7 @@ import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import { useGetFlag } from '@proton/unleash/useGetFlag';
 import noop from '@proton/utils/noop';
 
-import { useOptionalSubscriptionModalRaw } from '../../../../containers/payments/subscription/SubscriptionModalProvider';
+import { useOptionalSubscriptionModalRaw } from '../../../../containers/payments/subscription/subscriptionModalContext';
 import { getUpsellConfig } from '../../config/getUpsellConfig';
 import { getMailUpsellConfig } from '../config/getUpsellModalConfig';
 import type { UpsellModalConfig } from '../interface';

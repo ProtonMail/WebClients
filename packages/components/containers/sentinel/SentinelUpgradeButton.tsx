@@ -15,7 +15,7 @@ import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
 import PromotionButton from '../../components/button/PromotionButton/PromotionButton';
 import SettingsParagraph from '../account/SettingsParagraph';
-import { useSubscriptionModal } from '../payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModal } from '../payments/subscription/subscriptionModalContext';
 
 interface Props {
     app: APP_NAMES;

@@ -7,7 +7,7 @@ import { APPS, DOCS_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constant
 
 import DriveLogo from '../../../../../../components/logo/DriveLogo';
 import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
-import { useSubscriptionModal } from '../../../../../payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../../../../payments/subscription/subscriptionModalContext';
 import type { DashboardMoreInfoSection } from '../../../shared/DashboardMoreInfoSection/DashboardMoreInfoSection';
 import {
     DashboardMoreInfoSectionTag,

@@ -51,7 +51,7 @@ mockUseGetPendingUserInvitations.mockReturnValue(async () => []);
 jest.mock('../../../hooks/useLoad');
 
 const mockOpenSubscriptionModal = jest.fn();
-jest.mock('./SubscriptionModalProvider', () => ({
+jest.mock('./subscriptionModalContext', () => ({
     __esModule: true,
     useSubscriptionModal: () => [mockOpenSubscriptionModal],
     useSubscriptionModalRaw: () => mockOpenSubscriptionModal,

@@ -39,7 +39,7 @@ import SettingsParagraph from '../../account/SettingsParagraph';
 import SettingsSectionWide from '../../account/SettingsSectionWide';
 import { PromotionBanner } from '../../banner/PromotionBanner';
 import SubSettingsSection from '../../layout/SubSettingsSection';
-import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../payments/subscription/subscriptionModalContext';
 import AdvancedSsoSettingsSection from './AdvancedSsoSettingsSection';
 import ConfigureSamlEdugainModal from './ConfigureSamlEdugainModal';
 import ConfigureSamlModal from './ConfigureSamlModal';

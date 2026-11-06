@@ -19,7 +19,7 @@ import getBoldFormattedText from '../../../../../helpers/getBoldFormattedText';
 import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import useLoad from '../../../../../hooks/useLoad';
 import { PromotionBanner } from '../../../../banner/PromotionBanner';
-import { useSubscriptionModal } from '../../SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../subscriptionModalContext';
 import bundleLogo from '../images/bundle.svg';
 
 const BundleUpsellBanner = ({ app }: { app: APP_NAMES }) => {

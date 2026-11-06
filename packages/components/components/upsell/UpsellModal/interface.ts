@@ -8,7 +8,7 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import type { useGetFlag } from '@proton/unleash/useGetFlag';
 
-import type { OpenCallbackProps } from '../../../containers/payments/subscription/SubscriptionModalProvider';
+import type { OpenCallbackProps } from '../../../containers/payments/subscription/subscriptionModalTypes';
 
 /**
  * Upsell config passed to the subscription modal

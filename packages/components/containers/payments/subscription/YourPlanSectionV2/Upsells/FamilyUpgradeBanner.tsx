@@ -8,7 +8,7 @@ import { FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
 
 import { getSimplePriceString } from '../../../../../components/price/helper';
 import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
-import { useSubscriptionModal } from '../../SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../subscriptionModalContext';
 import { PlanIcon } from '../PlanIcon';
 import PlanIconName from '../PlanIconName';
 import type { UpsellSectionBaseProps } from '../YourPlanUpsellsSectionV2';

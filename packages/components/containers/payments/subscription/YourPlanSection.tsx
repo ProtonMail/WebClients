@@ -30,12 +30,12 @@ import { useTrialOnlyPaymentMethods } from '../../../hooks/useTrialOnlyPaymentMe
 import SettingsSectionExtraWide from '../../account/SettingsSectionExtraWide';
 import SettingsSectionWide from '../../account/SettingsSectionWide';
 import ReferralTrialInfo from '../../referral/components/ReferralTrialInfo/ReferralTrialInfo';
-import { useSubscriptionModalRaw } from './SubscriptionModalProvider';
 import { useUpsellsToDisplay } from './helpers/dashboard-upsells';
 import PendingInvitationsPanel from './panels/PendingInvitationsPanel';
 import UpsellPanels from './panels/UpsellPanels';
 import UsagePanel from './panels/UsagePanel';
 import SubscriptionPanel from './panels/subscription-panel/SubscriptionPanel';
+import { useSubscriptionModalRaw } from './subscriptionModalContext';
 
 import './YourPlanSection.scss';
 

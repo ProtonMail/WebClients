@@ -23,7 +23,7 @@ import GenericError from '../../../containers/error/GenericError';
 import useErrorHandler from '../../../hooks/useErrorHandler';
 import { PromotionBanner } from '../../banner/PromotionBanner';
 import { toCamelCase } from '../../credentialLeak/helpers';
-import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../payments/subscription/subscriptionModalContext';
 import { FilterAndSortEventsBlock } from '../FilterAndSortEventBlock';
 import PassEventsTable from './PassEventsTable';
 import type { EventObject } from './helpers';

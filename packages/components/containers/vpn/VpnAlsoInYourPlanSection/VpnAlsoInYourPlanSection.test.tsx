@@ -14,7 +14,7 @@ import { buildPreloadedState } from '../../../testing/buildPreloadedState';
 import { renderWithProviders } from '../../../testing/renderWithProviders';
 import { VpnAlsoInYourPlanSection } from './VpnAlsoInYourPlanSection';
 
-jest.mock('../../payments/subscription/SubscriptionModalProvider', () => ({
+jest.mock('../../payments/subscription/subscriptionModalContext', () => ({
     useSubscriptionModal: () => [jest.fn(), false],
 }));
 

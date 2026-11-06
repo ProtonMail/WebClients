@@ -12,7 +12,7 @@ import monitorGatewaysIllustration from '@proton/styles/assets/img/vpn/users/mon
 import useModalState from '../../../components/modalTwo/useModalState';
 import TogglingMonitoringModal from '../../b2bDashboard/VPN/TogglingMonitoringModal';
 import { updateMonitoringSetting } from '../../b2bDashboard/VPN/api';
-import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../payments/subscription/subscriptionModalContext';
 import GatewayMonitorUpsellModal from './GatewayMonitorUpsellModal';
 import useUserActivityTelemetry from './useUserActivityTelemetry';
 

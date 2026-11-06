@@ -17,7 +17,7 @@ import {
 } from '@proton/shared/lib/constants';
 
 import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
-import { useSubscriptionModal } from '../../../SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../../subscriptionModalContext';
 import { PlanIcon } from '../../PlanIcon';
 import PlanIconName from '../../PlanIconName';
 import type { UpsellSectionBaseProps } from '../../YourPlanUpsellsSectionV2';

@@ -24,7 +24,7 @@ import SettingsSectionWide from '../../account/SettingsSectionWide';
 import { PromotionBanner } from '../../banner/PromotionBanner';
 import AdminRolesOnboardingModal from '../../members/rolesAndPermissions/AdminRolesOnboardingModal';
 import RoleAssignmentPausedBanner from '../../members/rolesAndPermissions/RoleAssignmentPausedBanner';
-import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../payments/subscription/subscriptionModalContext';
 import ScimSetupBannerAndModal from '../ScimSetupBannerAndModal';
 import GroupsMemberManagementPanel from './components/GroupsMemberManagementPanel';
 import { useGroupsManagement, withGroupsManagementContext } from './context/GroupsManagementContext';

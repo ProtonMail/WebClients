@@ -41,10 +41,10 @@ import SettingsLink from '../../../../components/link/SettingsLink';
 import useSettingsLink from '../../../../components/link/useSettingsLink';
 import useDashboardPaymentFlow from '../../../../hooks/useDashboardPaymentFlow';
 import { useTrialOnlyPaymentMethods } from '../../../../hooks/useTrialOnlyPaymentMethods';
-import { useSubscriptionModal } from '../SubscriptionModalProvider';
 import { REACTIVATE_SOURCE } from '../cancellationFlow/useCancellationTelemetry';
 import { getReactivateSubscriptionAction } from '../helpers/subscriptionExpires';
 import { getSubscriptionPanelText } from '../helpers/subscriptionPanelHelpers';
+import { useSubscriptionModal } from '../subscriptionModalContext';
 import {
     BillingDateSection,
     FreeMeetFeatures,

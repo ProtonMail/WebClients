@@ -10,7 +10,7 @@ import ModalTwoContent from '../../../../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../../../components/modalTwo/ModalHeader';
 import Price from '../../../../../components/price/Price';
-import { useSubscriptionModal } from '../../SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../subscriptionModalContext';
 import FreePlanCard from '../components/FreePlanCard';
 import OfferPlanCard from '../components/OfferPlanCard';
 import { getOfferConfig } from '../config/offerConfig';

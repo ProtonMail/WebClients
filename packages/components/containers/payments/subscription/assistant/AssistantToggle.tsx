@@ -21,7 +21,7 @@ import { getIsB2CUserAbleToRunScribe } from '../../../../components/upsell/modal
 import useAssistantFeatureEnabled from '../../../../hooks/assistant/useAssistantFeatureEnabled';
 import useAssistantSubscriptionStatus from '../../../../hooks/assistant/useAssistantSubscriptionStatus';
 import useAssistantUpsellConfig from '../../../../hooks/assistant/useAssistantUpsellConfig';
-import { useSubscriptionModal } from '../SubscriptionModalProvider';
+import { useSubscriptionModal } from '../subscriptionModalContext';
 import { getScribeUpsellLearnMore, getScribeUpsellText, getScribeWritingAssistantText } from './helpers';
 
 const AssistantToggle = () => {

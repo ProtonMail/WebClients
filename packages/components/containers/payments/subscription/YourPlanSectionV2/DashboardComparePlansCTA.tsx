@@ -8,7 +8,7 @@ import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscript
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import useDashboardPaymentFlow from '../../../../hooks/useDashboardPaymentFlow';
-import { useSubscriptionModal } from '../SubscriptionModalProvider';
+import { useSubscriptionModal } from '../subscriptionModalContext';
 
 interface Props {
     app: APP_NAMES;

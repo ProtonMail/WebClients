@@ -15,7 +15,7 @@ import withPermissionGuard from '@proton/components/components/orgPermissions/wi
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import EmptyViewContainer from '@proton/components/containers/app/EmptyViewContainer';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
-import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import useSortedList from '@proton/components/hooks/useSortedList';
 import { PLANS } from '@proton/payments/core/constants';
 import { getCountryOptions } from '@proton/payments/core/countries';

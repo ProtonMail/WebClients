@@ -10,7 +10,7 @@ import illustration from '@proton/styles/assets/img/illustrations/activity-monit
 
 import SettingsSectionWide from '../../account/SettingsSectionWide';
 import { PromotionBanner } from '../../banner/PromotionBanner';
-import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../payments/subscription/subscriptionModalContext';
 
 interface Props {
     organization?: Organization;

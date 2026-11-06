@@ -3,18 +3,18 @@ import { addDays, getUnixTime } from 'date-fns';
 
 import { useConfig } from '@proton/app-context/useConfig';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { renderWithProviders } from '../../../testing/renderWithProviders';
-import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import LegacyReferralTopBanner from './LegacyReferralTopBanner';
 
 jest.mock('@proton/app-context/useConfig');
 
 const mockOpenSubscriptionModal = jest.fn();
-jest.mock('../../payments/subscription/SubscriptionModalProvider', () => ({
+jest.mock('../../payments/subscription/subscriptionModalContext', () => ({
     useSubscriptionModal: () => [mockOpenSubscriptionModal, false],
 }));
 

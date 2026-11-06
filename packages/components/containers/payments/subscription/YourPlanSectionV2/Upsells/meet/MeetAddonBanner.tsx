@@ -16,7 +16,7 @@ import { getAddonNameByPlan } from '@proton/shared/lib/payments/plan/helpers';
 import NewBadge from '../../../../../../components/newBadge/NewBadge';
 import { getSimplePriceString } from '../../../../../../components/price/helper';
 import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
-import { useSubscriptionModal } from '../../../SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../../subscriptionModalContext';
 import { PlanIcon } from '../../PlanIcon';
 import PlanIconName from '../../PlanIconName';
 import type { UpsellSectionBaseProps } from '../../YourPlanUpsellsSectionV2';

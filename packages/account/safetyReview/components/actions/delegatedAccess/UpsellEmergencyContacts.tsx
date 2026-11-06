@@ -2,9 +2,8 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
 import PromotionButton from '@proton/components/components/button/PromotionButton/PromotionButton';
-import SubscriptionModalProvider, {
-    useSubscriptionModal,
-} from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';

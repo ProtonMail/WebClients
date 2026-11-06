@@ -15,7 +15,7 @@ import { isAdmin } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import type { ModalStateProps } from '../../../../components/modalTwo/useModalState';
-import type { SubscriptionOverridableStep } from '../SubscriptionModalProvider';
+import type { SubscriptionOverridableStep } from '../subscriptionModalTypes';
 import type { PostSubscriptionFlowName } from './interface';
 import {
     PostSubscriptionModalLoadingContent,

@@ -24,7 +24,7 @@ jest.mock('../../desktop/useHasInboxDesktopInAppPayments', () => ({
     useHasInboxDesktopInAppPayments: () => false,
 }));
 
-jest.mock('../../payments/subscription/SubscriptionModalProvider', () => ({
+jest.mock('../../payments/subscription/subscriptionModalContext', () => ({
     useOptionalSubscriptionModal: () => [mockHasInAppPayment ? mockOpenSubscriptionModal : undefined, false],
 }));
 

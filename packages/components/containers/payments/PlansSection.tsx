@@ -38,8 +38,9 @@ import { openLinkInBrowser, upgradeButtonClick } from '../desktop/openExternalLi
 import { useHasInboxDesktopInAppPayments } from '../desktop/useHasInboxDesktopInAppPayments';
 import { usePlansSectionTelemetry } from './plansSectionTelemetry';
 import PlanSelection from './subscription/PlanSelection';
-import { UpsellModalTelemetryProvider, useSubscriptionModal } from './subscription/SubscriptionModalProvider';
+import { UpsellModalTelemetryProvider } from './subscription/UpsellModalTelemetryProvider';
 import { getDefaultSelectedProductPlans } from './subscription/helpers/payment';
+import { useSubscriptionModal } from './subscription/subscriptionModalContext';
 
 const getSearchParams = (search: string) => {
     const params = new URLSearchParams(search);

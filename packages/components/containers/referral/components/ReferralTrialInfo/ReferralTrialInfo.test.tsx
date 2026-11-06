@@ -3,11 +3,11 @@ import { screen } from '@testing-library/react';
 import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
-import { TrialType } from '@proton/shared/lib/payments/subscription/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
+import { TrialType } from '@proton/shared/lib/payments/subscription/constants';
 
 import { renderWithProviders } from '../../../../testing/renderWithProviders';
 import ReferralTrialInfo from './ReferralTrialInfo';
@@ -22,7 +22,7 @@ jest.mock('@proton/account/referralInfo/hooks', () => ({
     useReferralInfo: jest.fn(),
 }));
 
-jest.mock('../../../payments/subscription/SubscriptionModalProvider', () => ({
+jest.mock('../../../payments/subscription/subscriptionModalContext', () => ({
     useSubscriptionModal: () => [jest.fn(), false],
 }));
 

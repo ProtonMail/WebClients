@@ -12,7 +12,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
 import noop from '@proton/utils/noop';
 
-import { useSubscriptionModalRaw } from '../SubscriptionModalProvider';
+import { useSubscriptionModalRaw } from '../subscriptionModalContext';
 import { isUpsellWithPlan, resolveUpsellsToDisplay } from './dashboard-upsells';
 
 export const useGetUpsell = () => {

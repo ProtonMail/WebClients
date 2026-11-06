@@ -6,7 +6,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 
 import type { ModalStateProps } from '../../../../components/modalTwo/useModalState';
 import { usePostSubscriptionTourTelemetry } from '../../../../hooks/mail/usePostSubscriptionTourTelemetry';
-import type { SubscriptionOverridableStep } from '../SubscriptionModalProvider';
+import type { SubscriptionOverridableStep } from '../subscriptionModalTypes';
 import type { PostSubscriptionFlowName } from './interface';
 import postSubscriptionConfig from './postSubscriptionConfig';
 

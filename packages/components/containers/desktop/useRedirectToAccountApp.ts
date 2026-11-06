@@ -9,13 +9,14 @@ import { getSubscriptionForApp } from '@proton/payments/core/subscription/subscr
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
 
-import type { SubscriptionContainerProps } from '../payments/subscription/SubscriptionContainer';
+import type { OpenCallbackProps } from '../payments/subscription/subscriptionModalTypes';
 import { openLinkInBrowser } from './openExternalLink';
 import { useHasInboxDesktopInAppPayments } from './useHasInboxDesktopInAppPayments';
 
@@ -27,7 +28,7 @@ export function useRedirectToAccountApp() {
     const [entitlementCatalog] = useEntitlementCatalog();
 
     return useCallback(
-        (params?: Partial<SubscriptionContainerProps>) => {
+        (params?: OpenCallbackProps & { app?: ProductParam }) => {
             if (isElectronApp && !hasInboxDesktopInAppPayments) {
                 if (!params) {
                     openLinkInBrowser(getAppHref(`/${getSlugFromApp(APP_NAME)}/dashboard`, APPS.PROTONACCOUNT));

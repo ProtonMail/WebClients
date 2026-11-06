@@ -2,7 +2,7 @@ import { CYCLE } from '@proton/payments/core/constants';
 import type { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
-import type { OpenCallbackProps } from '../../containers/payments/subscription/SubscriptionModalProvider';
+import type { OpenCallbackProps } from '../../containers/payments/subscription/subscriptionModalTypes';
 
 const getUpgradeCycles = (currentCycle = CYCLE.MONTHLY) => ({
     cycle: currentCycle,
