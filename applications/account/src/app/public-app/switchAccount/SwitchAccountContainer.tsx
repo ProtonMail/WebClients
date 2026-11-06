@@ -21,6 +21,7 @@ import { getHasRecoveryMessage } from '@proton/shared/lib/recoveryFile/storage';
 import clamp from '@proton/utils/clamp';
 import clsx from '@proton/utils/clsx';
 
+import { getIsIndependentFork } from '../fork/getIsIndependentFork';
 import { getContinueToString } from '../helper';
 import { useMetaTags } from '../hooks/useMetaTags';
 import Content from '../layout/Content';
@@ -47,7 +48,7 @@ const AccountItem = ({
     href,
 }: {
     onClick: (localID: number) => void;
-    onSignout: () => void;
+    onSignout?: () => void;
     isLoading: boolean;
     sessionDisplayData: ReturnType<typeof getSessionDisplayData>;
     href: string;
@@ -107,18 +108,20 @@ const AccountItem = ({
                         <div className="text-break color-weak text-ellipsis">{sessionDisplayData.email}</div>
                     )}
                 </a>
-                <div>
-                    <InlineLinkButton
-                        className="relative z-up"
-                        title={signOutText}
-                        aria-label={signOutText}
-                        onClick={() => {
-                            onSignout();
-                        }}
-                    >
-                        {c('Action').t`Sign out`}
-                    </InlineLinkButton>
-                </div>
+                {onSignout && (
+                    <div>
+                        <InlineLinkButton
+                            className="relative z-up"
+                            title={signOutText}
+                            aria-label={signOutText}
+                            onClick={() => {
+                                onSignout();
+                            }}
+                        >
+                            {c('Action').t`Sign out`}
+                        </InlineLinkButton>
+                    </div>
+                )}
             </div>
             {isLoading ? (
                 <div className="account-button-icon flex text-lg my-auto">
@@ -134,6 +137,7 @@ const AccountItem = ({
 const SwitchAccountContainer = () => {
     const history = useHistory();
     const publicApp = PublicAppContext.useActorRef();
+    const isIndependentFork = PublicAppContext.useSelector((state) => getIsIndependentFork(state.context.forkState));
     const { createNotification } = useNotifications();
     const activeSessions = PublicAppContext.useSelector((state) => state.context.activeSessions);
     const sessionsFailed = PublicAppContext.useSelector(selectSessionsFailed);
@@ -232,9 +236,7 @@ const SwitchAccountContainer = () => {
                                   )
                         }
                         onClick={onPickSession}
-                        onSignout={() => {
-                            handleSignOutMultiple([session], 'single');
-                        }}
+                        onSignout={isIndependentFork ? undefined : () => handleSignOutMultiple([session], 'single')}
                         isLoading={isLoading}
                         sessionDisplayData={sessionDisplayData}
                     />
@@ -243,6 +245,10 @@ const SwitchAccountContainer = () => {
             );
         });
     };
+
+    const addAccountLabel = isIndependentFork
+        ? c('Action').t`Sign in to a different account`
+        : c('Action').t`Add ${BRAND_NAME} Account`;
 
     const children = (
         <Main>
@@ -256,20 +262,22 @@ const SwitchAccountContainer = () => {
                 </div>
                 <div className="w-full text-center mt-7 mb-2">
                     <Button size="large" color="weak" shape="outline" fullWidth onClick={onAddAccount}>
-                        {c('Action').t`Add ${BRAND_NAME} Account`}
+                        {addAccountLabel}
                     </Button>
                 </div>
-                <div className="w-full text-center mb-2">
-                    <Button
-                        size="large"
-                        color="norm"
-                        shape="ghost"
-                        fullWidth
-                        onClick={() => {
-                            handleSignOutMultiple(activeSessions || [], 'all');
-                        }}
-                    >{c('Action').t`Sign out of all accounts`}</Button>
-                </div>
+                {!isIndependentFork && (
+                    <div className="w-full text-center mb-2">
+                        <Button
+                            size="large"
+                            color="norm"
+                            shape="ghost"
+                            fullWidth
+                            onClick={() => {
+                                handleSignOutMultiple(activeSessions || [], 'all');
+                            }}
+                        >{c('Action').t`Sign out of all accounts`}</Button>
+                    </div>
+                )}
                 {renderConfirmSignOutModal && (
                     <ConfirmSignOutModal
                         confirmType={tmpConfirmSignOutState.confirmType}
