@@ -23,7 +23,7 @@ const productsToApps: Record<OrganizationSettingsAllowedProduct, APP_NAMES[]> = 
 } as const;
 
 // This constant contains a set of all the products that are supported in the access control feature
-export const allAllowedProducts = new Set(Object.keys(productsToApps) as (keyof typeof productsToApps)[]);
+const allAllowedProducts = new Set(Object.keys(productsToApps) as (keyof typeof productsToApps)[]);
 
 /**
  * Serializes a set of allowed products into an array of strings

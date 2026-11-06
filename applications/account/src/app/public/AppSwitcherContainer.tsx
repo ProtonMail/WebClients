@@ -18,6 +18,7 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
@@ -127,11 +128,14 @@ const AppSwitcherContainer = ({ onLogin, onSwitch, state }: Props) => {
 
     const forbiddenApps = getForbiddenApps(User);
 
-    // The available apps don't account for OAuth sessions, which only VPN allows
-    const availableApps =
-        persistedSession.source === SessionSource.Oauth
-            ? state.availableApps.filter(({ app }) => app === APPS.PROTONVPN_SETTINGS)
-            : state.availableApps;
+    // The available apps don't account for OAuth sessions, which only VPN allows, nor the desktop Mail app, which only
+    // opens Mail and Calendar itself and would send other apps to the browser
+    const availableApps = state.availableApps.filter(({ app }) => {
+        if (persistedSession.source === SessionSource.Oauth) {
+            return app === APPS.PROTONVPN_SETTINGS;
+        }
+        return !isElectronMail || app === APPS.PROTONMAIL || app === APPS.PROTONCALENDAR;
+    });
 
     const apps = getExploreApps(availableApps, User).concat(getForbiddenAppConfigs(forbiddenApps));
 

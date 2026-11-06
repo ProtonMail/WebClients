@@ -479,7 +479,7 @@ const MainContainer = () => {
 
     // Redirect away from an app the user can't access, to the first one they can
     if (
-        // The list is empty while it's loading, before it's first computed
+        // The list is empty while it's loading, before the API first answers
         availableApps.length &&
         !availableApps.includes(app) &&
         appFromPathname /* wait for app in pathname to ensure replacement works */

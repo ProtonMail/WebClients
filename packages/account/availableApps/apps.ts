@@ -1,56 +1,29 @@
-import { PLANS } from '@proton/payments/core/constants';
 import { Product } from '@proton/shared/lib/ProductEnum';
-import { APPS, type APP_NAMES, PRODUCT_BIT } from '@proton/shared/lib/constants';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { getUserAvailableApps } from '@proton/shared/lib/api/user';
+import { SessionAccessTypeFlag, getSessionAccessTypeMask } from '@proton/shared/lib/authentication/sessionAccessType';
+import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import type { Organization, OrganizationExtended } from '@proton/shared/lib/interfaces/Organization';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { User } from '@proton/shared/lib/interfaces/User';
-import { getHasBusinessProductPlan, getHasPlusPlan, getHasProPlan } from '@proton/shared/lib/payments/plan/helpers';
-import { hasPassLifetime, hasPassViaSimpleLogin } from '@proton/shared/lib/user/helpers';
-import type { UnleashClient } from '@proton/unleash/UnleashClient';
 
-import { getAvailableApps } from './getAvailableApps';
-
-/** In app switcher order: each product's app, and the product bit the user's plan gives its tier through */
+/** In app switcher order */
 const appsByProduct = {
-    [Product.Mail]: { app: APPS.PROTONMAIL, bit: PRODUCT_BIT.MAIL },
-    [Product.Calendar]: { app: APPS.PROTONCALENDAR, bit: PRODUCT_BIT.MAIL },
-    [Product.VPN]: { app: APPS.PROTONVPN_SETTINGS, bit: PRODUCT_BIT.VPN },
-    [Product.Drive]: { app: APPS.PROTONDRIVE, bit: PRODUCT_BIT.DRIVE },
-    [Product.Docs]: { app: APPS.PROTONDOCS, bit: PRODUCT_BIT.DRIVE },
-    [Product.Sheets]: { app: APPS.PROTONSHEETS, bit: PRODUCT_BIT.DRIVE },
-    [Product.Pass]: { app: APPS.PROTONPASS, bit: PRODUCT_BIT.PASS },
-    [Product.Wallet]: { app: APPS.PROTONWALLET, bit: PRODUCT_BIT.WALLET },
-    [Product.Lumo]: { app: APPS.PROTONLUMO, bit: PRODUCT_BIT.LUMO },
-    [Product.Meet]: { app: APPS.PROTONMEET, bit: PRODUCT_BIT.MEET },
-    [Product.Spaces]: { app: APPS.PROTONSPACES, bit: PRODUCT_BIT.SPACES },
-} satisfies { [key in Product]?: { app: APP_NAMES; bit: PRODUCT_BIT } };
+    [Product.Mail]: APPS.PROTONMAIL,
+    [Product.Calendar]: APPS.PROTONCALENDAR,
+    [Product.VPN]: APPS.PROTONVPN_SETTINGS,
+    [Product.Drive]: APPS.PROTONDRIVE,
+    [Product.Docs]: APPS.PROTONDOCS,
+    [Product.Sheets]: APPS.PROTONSHEETS,
+    [Product.Pass]: APPS.PROTONPASS,
+    [Product.Wallet]: APPS.PROTONWALLET,
+    [Product.Lumo]: APPS.PROTONLUMO,
+    [Product.Meet]: APPS.PROTONMEET,
+    [Product.Spaces]: APPS.PROTONSPACES,
+} satisfies { [key in Product]?: APP_NAMES };
 
 /** The apps the available apps can list */
-export type AvailableAppName = (typeof appsByProduct)[keyof typeof appsByProduct]['app'];
-
-/**
- * The apps the session's user can switch to, in app switcher order.
- *
- * Computed in the client for now. Every list of available apps comes from here, so that this can be replaced by the
- * API listing them: Authenticator was never released, and only Spaces is behind its feature flag.
- */
-export const getAvailableAppsForUser = ({
-    user,
-    unleashClient,
-    organization,
-}: {
-    user: User;
-    unleashClient: UnleashClient;
-    /** Only its allowed products matter, which are in its settings */
-    organization: Pick<OrganizationExtended, 'Settings'> | undefined;
-}): APP_NAMES[] => {
-    return getAvailableApps({
-        apps: Object.values(appsByProduct).map(({ app }) => app),
-        user,
-        organization,
-        isSpacesAvailable: unleashClient.isEnabled('SpacesAvailable'),
-    });
-};
+export type AvailableAppName = (typeof appsByProduct)[keyof typeof appsByProduct];
 
 /** The tier of the plan an app comes with, which the explore apps list shows under it */
 export type PlanTier = 'Plus' | 'Essentials' | 'Professional' | 'Family';
@@ -61,67 +34,42 @@ export interface AvailableApp {
     tier: PlanTier | null;
 }
 
-const everyAppBit =
-    PRODUCT_BIT.MAIL |
-    PRODUCT_BIT.PASS |
-    PRODUCT_BIT.DRIVE |
-    PRODUCT_BIT.VPN |
-    PRODUCT_BIT.WALLET |
-    PRODUCT_BIT.LUMO |
-    PRODUCT_BIT.MEET;
+interface AvailableAppsResponse {
+    /** In no particular order */
+    Apps: { Product: string; Tier: PlanTier | null }[];
+}
 
-const getPlanTier = (plan: PLANS | undefined): PlanTier | null => {
-    if (plan === PLANS.PASS_FAMILY) {
-        return 'Family';
+/** Leaving out products this client doesn't know an app for */
+export const getAvailableAppsFromResponse = (apps: AvailableAppsResponse['Apps']): AvailableApp[] =>
+    apps.flatMap(({ Product: product, Tier: tier }) => {
+        const app = (appsByProduct as { [key in Product]?: AvailableAppName })[product as Product];
+        return app ? [{ app, tier }] : [];
+    });
+
+/** The apps the session's user can switch to, with their tiers. Silent, so callers decide what a failure means */
+export const queryAvailableAppsWithTiers = async ({ api, user }: { api: Api; user: User }): Promise<AvailableApp[]> => {
+    // An MSP session, where a manager acts in a subsidiary, is only for managing it
+    if (hasBit(getSessionAccessTypeMask(user), SessionAccessTypeFlag.OrgAccess)) {
+        return [];
     }
-    if (getHasProPlan(plan)) {
-        return 'Essentials';
-    }
-    if (getHasBusinessProductPlan(plan)) {
-        return 'Professional';
-    }
-    if (getHasPlusPlan(plan)) {
-        return 'Plus';
-    }
-    return null;
+    const { Apps } = await getSilentApi(api)<AvailableAppsResponse>(getUserAvailableApps());
+    return getAvailableAppsFromResponse(Apps);
+};
+
+/** The apps the session's user can switch to, in app switcher order. Silent, so callers decide what a failure means */
+export const queryAvailableApps = async (
+    options: Parameters<typeof queryAvailableAppsWithTiers>[0]
+): Promise<APP_NAMES[]> => {
+    const apps = (await queryAvailableAppsWithTiers(options)).map(({ app }) => app);
+    return Object.values(appsByProduct).filter((app) => apps.includes(app));
 };
 
 /**
- * The apps the session's user can switch to, with the tier of the plan each comes with.
- *
- * Computed in the client for now, in the shape the API will return them.
- */
-export const getAvailableAppsWithTiers = ({
-    apps,
-    user,
-    organization,
-}: {
-    /** From getAvailableAppsForUser */
-    apps: APP_NAMES[];
-    user: User;
-    /** Only for its plan */
-    organization: Pick<Organization, 'PlanName'> | undefined;
-}): AvailableApp[] => {
-    // A bundle includes every app, so a tier wouldn't tell them apart
-    const tier = hasBit(user.Subscribed, everyAppBit) ? null : getPlanTier(organization?.PlanName);
-    // Pass Lifetime and Pass through SimpleLogin give Pass without a plan. Only counts when no plan includes Pass, e.g.
-    // not next to a bundle, which gives it no tier.
-    const hasPassWithoutPlan =
-        !hasBit(user.Subscribed, PRODUCT_BIT.PASS) && (hasPassLifetime(user) || hasPassViaSimpleLogin(user));
-    return Object.values(appsByProduct)
-        .filter(({ app }) => apps.includes(app))
-        .map(({ app, bit }) => {
-            const appTier = hasBit(user.Subscribed, bit) ? tier : null;
-            return { app, tier: appTier ?? (app === APPS.PROTONPASS && hasPassWithoutPlan ? 'Plus' : null) };
-        });
-};
-
-/**
- * Hardcoded, because without a session there's no context to compute them from: no user, and nothing to evaluate
- * feature flags against. That's fine since this list may lag behind, being updated
+ * Hardcoded, because without a session there's no context to compute them from: no user for the available apps
+ * route, and nothing to evaluate feature flags against. That's fine since this list may lag behind, being updated
  * by hand as apps launch.
  */
-export const unauthenticatedApps: APP_NAMES[] = [
+export const unauthenticatedApps: AvailableAppName[] = [
     APPS.PROTONMAIL,
     APPS.PROTONCALENDAR,
     APPS.PROTONVPN_SETTINGS,
