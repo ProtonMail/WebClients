@@ -3,6 +3,7 @@ import type * as H from 'history';
 
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 
+import { readForkState } from '../fork/persistedForkState';
 import { stripLocaleTagPrefix } from '../localePrefix';
 import type { PublicAppServices } from './PublicAppServices';
 import { createPublicAppActors } from './publicAppActors';
@@ -25,6 +26,7 @@ export const createPublicAppMachine = ({
     const input: PublicAppMachineInput = {
         location: { ...history.location, pathname, localePrefix },
         initialSessionsLength,
+        forkState: readForkState(),
     };
     const logic = publicAppStateMachine.provide({
         actors: createPublicAppActors({

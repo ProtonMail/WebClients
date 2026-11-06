@@ -32,6 +32,7 @@ import { PublicAppContext } from '../state-machine/PublicAppContext';
 import {
     selectPaths,
     selectPreAppIntent,
+    selectSessionsFailed,
     selectSigningInLocalID,
     selectToAppName,
 } from '../state-machine/publicAppStateMachine';
@@ -135,7 +136,7 @@ const SwitchAccountContainer = () => {
     const publicApp = PublicAppContext.useActorRef();
     const { createNotification } = useNotifications();
     const activeSessions = PublicAppContext.useSelector((state) => state.context.activeSessions);
-    const sessionsFailed = PublicAppContext.useSelector((state) => state.context.sessionsFailed);
+    const sessionsFailed = PublicAppContext.useSelector(selectSessionsFailed);
     const initialSessionsLength = PublicAppContext.useSelector((state) => state.context.initialSessionsLength);
     const loginPath = PublicAppContext.useSelector((state) => selectPaths(state).login);
     const toApp = PublicAppContext.useSelector(selectPreAppIntent);

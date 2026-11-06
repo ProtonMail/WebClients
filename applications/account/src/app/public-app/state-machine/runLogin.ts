@@ -12,6 +12,12 @@ const inputResult: OnLoginCallbackResult = { state: 'input' };
 export const runLogin = (actorRef: ActorRefFrom<typeof publicAppStateMachine>, session: AuthSession) =>
     new Promise<OnLoginCallbackResult>((resolve, reject) => {
         const requestId = String(++loginRequestCount);
+        const request = { type: 'login.requested' as const, session, requestId };
+        // The machine only takes a login when it isn't busy with another one
+        if (!actorRef.getSnapshot().can(request)) {
+            reject(new Error('Another sign in is in progress'));
+            return;
+        }
         const subscriptions = [
             actorRef.on('login.completed', (event) => {
                 if (event.requestId === requestId) {
@@ -26,22 +32,17 @@ export const runLogin = (actorRef: ActorRefFrom<typeof publicAppStateMachine>, s
                 }
             }),
         ];
-        actorRef.send({ type: 'login.requested', session, requestId });
-        // The machine only takes a login when it isn't busy with another one
-        if (actorRef.getSnapshot().context.loginRequestId !== requestId) {
-            subscriptions.forEach((subscription) => subscription.unsubscribe());
-            reject(new Error('Another sign in is in progress'));
-        }
+        actorRef.send(request);
     });
 
 /** Waits for the crypto worker, loading it if no page asked for it yet; rejects with its error if it failed to load. */
 export const requireCrypto = async (actorRef: ActorRefFrom<typeof publicAppStateMachine>) => {
     actorRef.send({ type: 'crypto.requested' });
-    const { context } = await waitFor(
+    const snapshot = await waitFor(
         actorRef,
-        (snapshot) => snapshot.context.crypto === 'ready' || snapshot.context.crypto === 'failed'
+        (snapshot) => snapshot.matches({ crypto: 'ready' }) || snapshot.matches({ crypto: 'failed' })
     );
-    if (context.crypto === 'failed') {
-        throw context.cryptoError;
+    if (snapshot.matches({ crypto: 'failed' })) {
+        throw snapshot.context.cryptoError;
     }
 };

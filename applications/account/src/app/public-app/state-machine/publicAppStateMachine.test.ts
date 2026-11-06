@@ -20,8 +20,10 @@ import {
     InvalidForkError,
     getPublicAppPaths,
     publicAppStateMachine,
+    selectBlocking,
     selectClientType,
     selectLoggingIn,
+    selectSessionsFailed,
     selectSigningInLocalID,
     selectToAppName,
     selectToOAuthName,
@@ -31,8 +33,8 @@ import { requireCrypto, runLogin } from './runLogin';
 const start = ({
     pathname,
     initialSessionsLength = 1,
-    handleFork = () => Promise.reject(new Error('unexpected fork')),
-    resumeSessions = () => Promise.reject(new Error('unexpected resume')),
+    forkState = null,
+    resolve = () => Promise.reject(new Error('unexpected resolve')),
     login = () => Promise.reject(new Error('unexpected login')),
     fetchSessions = () => Promise.reject(new Error('unexpected sessions request')),
     resumeSession = () => Promise.reject(new Error('unexpected resume')),
@@ -42,8 +44,8 @@ const start = ({
 }: {
     pathname: string;
     initialSessionsLength?: number;
-    handleFork?: () => Promise<ResolvedSession>;
-    resumeSessions?: () => Promise<ResolvedSession>;
+    forkState?: ProduceForkData | null;
+    resolve?: () => Promise<ResolvedSession>;
     login?: (input: { session: AuthSession }) => Promise<LoginResult>;
     fetchSessions?: () => Promise<GetActiveSessionsResult>;
     resumeSession?: (localID: number) => Promise<ResumedSessionResult>;
@@ -56,8 +58,7 @@ const start = ({
     const actor = createActor(
         publicAppStateMachine.provide({
             actors: {
-                handleFork: fromPromise(handleFork),
-                resumeSessions: fromPromise(resumeSessions),
+                resolve: fromPromise(resolve),
                 login: fromPromise(({ input }) => login(input)),
                 fetchSessions: fromPromise(fetchSessions),
                 resumeSession: fromPromise(({ input }) => resumeSession(input)),
@@ -75,6 +76,7 @@ const start = ({
             input: {
                 location: { pathname, search: '', hash: '', state: undefined, localePrefix: '' },
                 initialSessionsLength,
+                forkState,
             },
         }
     ).start();
@@ -84,16 +86,17 @@ const start = ({
 describe('publicAppStateMachine', () => {
     it('is ready right away without persisted sessions', () => {
         const { actor } = start({ pathname: SSO_PATHS.LOGIN, initialSessionsLength: 0 });
-        expect(actor.getSnapshot().matches('ready')).toBe(true);
+        expect(actor.getSnapshot().matches({ page: 'ready' })).toBe(true);
+        expect(selectBlocking(actor.getSnapshot())).toBe(false);
     });
 
     it('resumes the sessions on a sign-in route and keeps a result that needs input', async () => {
         const loginResult: LoginResult = { type: 'sessions-switcher', location: SSO_PATHS.SWITCH, payload: null };
         const { actor, followLoginResult } = start({
             pathname: SSO_PATHS.LOGIN,
-            resumeSessions: async () => ({ forkState: null, sessions: [], loginResult }),
+            resolve: async () => ({ forkState: null, sessions: [], loginResult }),
         });
-        await waitFor(actor, (state) => state.matches('ready'));
+        await waitFor(actor, (state) => state.matches({ page: 'ready' }));
         expect(actor.getSnapshot().context).toMatchObject({ activeSessions: [], locationState: loginResult });
         expect(followLoginResult).toHaveBeenCalledWith(loginResult);
     });
@@ -102,9 +105,10 @@ describe('publicAppStateMachine', () => {
         const loginResult: LoginResult = { type: 'done', payload: { url: new URL('https://mail.proton.me') } };
         const { actor, followLoginResult } = start({
             pathname: '/',
-            resumeSessions: async () => ({ forkState: null, sessions: [], loginResult }),
+            resolve: async () => ({ forkState: null, sessions: [], loginResult }),
         });
-        await waitFor(actor, (state) => state.matches('redirecting'));
+        await waitFor(actor, (state) => state.matches({ page: 'redirecting' }));
+        expect(selectBlocking(actor.getSnapshot())).toBe(true);
         expect(actor.getSnapshot().context.locationState).toBeNull();
         expect(followLoginResult).toHaveBeenCalledWith(loginResult);
     });
@@ -112,18 +116,18 @@ describe('publicAppStateMachine', () => {
     it('goes to the login page on an invalid fork', async () => {
         const { actor, replaceLocation } = start({
             pathname: SSO_PATHS.AUTHORIZE,
-            handleFork: () => Promise.reject(new InvalidForkError()),
+            resolve: () => Promise.reject(new InvalidForkError()),
         });
-        await waitFor(actor, (state) => state.matches('ready'));
+        await waitFor(actor, (state) => state.matches({ page: 'ready' }));
         expect(replaceLocation).toHaveBeenCalledWith(expect.stringContaining(SSO_PATHS.LOGIN));
     });
 
     it('shows the error of a failed fork', async () => {
         const { actor } = start({
             pathname: SSO_PATHS.DESKTOP_SIGN_IN,
-            handleFork: () => Promise.reject(new Error('Invalid app specified')),
+            resolve: () => Promise.reject(new Error('Invalid app specified')),
         });
-        await waitFor(actor, (state) => state.matches('failed'));
+        await waitFor(actor, (state) => state.matches({ page: 'failed' }));
         expect(actor.getSnapshot().context.errorMessage).toBe('Invalid app specified');
     });
 
@@ -148,13 +152,25 @@ describe('publicAppStateMachine', () => {
         const { actor } = start({ pathname: SSO_PATHS.SWITCH, initialSessionsLength: 0, fetchSessions });
 
         actor.send({ type: 'switch.opened' });
-        await waitFor(actor, (state) => state.matches({ ready: 'idle' }));
-        expect(actor.getSnapshot().context.sessionsFailed).toBe(true);
+        await waitFor(actor, selectSessionsFailed);
 
         actor.send({ type: 'switch.opened' });
-        expect(actor.getSnapshot().context.sessionsFailed).toBe(false);
-        await waitFor(actor, (state) => state.matches({ ready: 'idle' }));
+        expect(selectSessionsFailed(actor.getSnapshot())).toBe(false);
+        expect(actor.getSnapshot().matches({ page: { ready: 'loadingSessions' } })).toBe(true);
+        await waitFor(actor, (state) => state.matches({ page: { ready: 'idle' } }));
         expect(actor.getSnapshot().context.activeSessions).toEqual(sessions);
+    });
+
+    it('signs out nothing and stays on the account switcher while its sessions load', () => {
+        const { actor, replaceLocation } = start({
+            pathname: SSO_PATHS.SWITCH,
+            fetchSessions: () => new Promise(() => {}),
+            signOut: async () => {},
+        });
+        actor.send({ type: 'switch.opened' });
+        actor.send({ type: 'sessions.signedOut', sessions: [], clearDeviceRecovery: false });
+        expect(actor.getSnapshot().context.activeSessions).toBeUndefined();
+        expect(replaceLocation).not.toHaveBeenCalled();
     });
 
     describe('an account switcher with nothing to show sends the user to sign in', () => {
@@ -167,7 +183,7 @@ describe('publicAppStateMachine', () => {
                 fetchSessions: async () => ({ sessions: [] }) as unknown as GetActiveSessionsResult,
             });
             actor.send({ type: 'switch.opened' });
-            await waitFor(actor, (state) => state.matches({ ready: 'idle' }));
+            await waitFor(actor, (state) => state.matches({ page: { ready: 'idle' } }));
             expect(replaceLocation).toHaveBeenCalledWith(expect.stringContaining(SSO_PATHS.LOGIN));
         });
 
@@ -197,7 +213,7 @@ describe('publicAppStateMachine', () => {
             });
             actor.send({ type: 'sessions.updated', sessions });
             actor.send({ type: 'session.picked', localID: 1 });
-            await waitFor(actor, (state) => state.matches('ready'));
+            await waitFor(actor, (state) => state.matches({ page: 'ready' }));
             expect(replaceLocation).toHaveBeenCalledWith(expect.stringContaining(SSO_PATHS.LOGIN));
         });
     });
@@ -256,6 +272,7 @@ describe('publicAppStateMachine', () => {
                             localePrefix: '',
                         },
                         initialSessionsLength: 0,
+                        forkState: null,
                     },
                 }
             ).start();
@@ -327,8 +344,8 @@ describe('publicAppStateMachine', () => {
             const { actor, followLoginResult } = start({ pathname: SSO_PATHS.LOGIN, initialSessionsLength: 0, login });
             actor.send({ type: 'login.resulted', result: consent });
             actor.send({ type: 'consent.confirmed', consent });
-            expect(actor.getSnapshot().matches('loggingIn')).toBe(true);
-            await waitFor(actor, (state) => state.matches({ loggingIn: 'leaving' }));
+            expect(actor.getSnapshot().matches({ page: 'loggingIn' })).toBe(true);
+            await waitFor(actor, (state) => state.matches({ page: { loggingIn: 'leaving' } }));
             expect(login).toHaveBeenCalledWith(
                 expect.objectContaining({ session: { ...session, interruptions: ['fork-redirect-consent'] } })
             );
@@ -346,7 +363,7 @@ describe('publicAppStateMachine', () => {
             actor.on('login.failed', onFailed);
             actor.send({ type: 'login.resulted', result: consent });
             actor.send({ type: 'consent.confirmed', consent });
-            await waitFor(actor, (state) => state.matches('ready'));
+            await waitFor(actor, (state) => state.matches({ page: 'ready' }));
             expect(onFailed).toHaveBeenCalledWith({ type: 'login.failed', requestId: undefined, error });
         });
 
@@ -354,17 +371,28 @@ describe('publicAppStateMachine', () => {
             const login = jest.fn(async () => doneResult);
             const { actor } = start({ pathname: SSO_PATHS.LOGIN, initialSessionsLength: 0, login });
             actor.send({ type: 'consent.confirmed', consent });
-            expect(actor.getSnapshot().matches('ready')).toBe(true);
+            expect(actor.getSnapshot().matches({ page: 'ready' })).toBe(true);
             expect(login).not.toHaveBeenCalled();
         });
     });
 
     describe('login', () => {
+        it('continues the fork saved before the page reloaded', async () => {
+            const forkState = { type: SSOType.Proton, payload: { forkParameters: {} } } as unknown as ProduceForkData;
+            const login = jest.fn(async () => doneResult);
+            const { actor } = start({ pathname: SSO_PATHS.LOGIN, initialSessionsLength: 0, forkState, login });
+            actor.send({ type: 'login.requested', session });
+            await waitFor(actor, (state) => state.matches({ page: { loggingIn: 'leaving' } }));
+            expect(login).toHaveBeenCalledWith(
+                expect.objectContaining({ context: expect.objectContaining({ forkState }) })
+            );
+        });
+
         it('keeps the screen loading while a finished login leaves the page, and takes no other login', async () => {
             const login = jest.fn(async () => doneResult);
             const { actor } = start({ pathname: SSO_PATHS.SWITCH, initialSessionsLength: 0, login });
             actor.send({ type: 'login.requested', session });
-            await waitFor(actor, (state) => state.matches({ loggingIn: 'leaving' }));
+            await waitFor(actor, (state) => state.matches({ page: { loggingIn: 'leaving' } }));
             actor.send({ type: 'login.requested', session });
             expect(login).toHaveBeenCalledTimes(1);
         });
@@ -378,7 +406,7 @@ describe('publicAppStateMachine', () => {
             const onCompleted = jest.fn();
             actor.on('login.completed', onCompleted);
             actor.send({ type: 'login.requested', session, requestId: 'a' });
-            await waitFor(actor, (state) => state.matches('ready'));
+            await waitFor(actor, (state) => state.matches({ page: 'ready' }));
             expect(actor.getSnapshot().context.locationState).toEqual(inputResult);
             expect(followLoginResult).toHaveBeenCalledWith(inputResult);
             expect(onCompleted).toHaveBeenCalledWith({ type: 'login.completed', requestId: 'a', result: inputResult });
@@ -398,12 +426,12 @@ describe('publicAppStateMachine', () => {
         it('takes a login while the sessions still load, and stops loading them', async () => {
             const { actor, followLoginResult } = start({
                 pathname: SSO_PATHS.LOGIN,
-                resumeSessions: () => new Promise(() => {}),
+                resolve: () => new Promise(() => {}),
                 login: async () => inputResult,
             });
-            expect(actor.getSnapshot().matches('resumingSessions')).toBe(true);
+            expect(actor.getSnapshot().matches({ page: 'opening' })).toBe(true);
             actor.send({ type: 'login.requested', session, requestId: 'a' });
-            await waitFor(actor, (state) => state.matches('ready'));
+            await waitFor(actor, (state) => state.matches({ page: 'ready' }));
             expect(followLoginResult).toHaveBeenCalledWith(inputResult);
         });
     });
@@ -420,10 +448,10 @@ describe('publicAppStateMachine', () => {
                 login,
             });
             actor.send({ type: 'session.picked', localID: 2 });
-            expect(actor.getSnapshot().matches('resumingSession')).toBe(true);
+            expect(actor.getSnapshot().matches({ page: 'resumingSession' })).toBe(true);
             expect(selectSigningInLocalID(actor.getSnapshot())).toBe(2);
             expect(selectLoggingIn(actor.getSnapshot())).toBe(false);
-            await waitFor(actor, (state) => state.matches({ loggingIn: 'leaving' }));
+            await waitFor(actor, (state) => state.matches({ page: { loggingIn: 'leaving' } }));
             expect(selectSigningInLocalID(actor.getSnapshot())).toBe(2);
             expect(selectLoggingIn(actor.getSnapshot())).toBe(true);
             expect(login).toHaveBeenCalledWith(expect.objectContaining({ session: { data: resumed, flow: 'switch' } }));
@@ -440,7 +468,7 @@ describe('publicAppStateMachine', () => {
             actor.on('session.expired', onExpired);
             actor.send({ type: 'sessions.updated', sessions });
             actor.send({ type: 'session.picked', localID: 2 });
-            await waitFor(actor, (state) => state.matches('ready'));
+            await waitFor(actor, (state) => state.matches({ page: 'ready' }));
             expect(actor.getSnapshot().context.activeSessions).toEqual([sessions[1]]);
             expect(onExpired).toHaveBeenCalled();
         });
@@ -455,7 +483,7 @@ describe('publicAppStateMachine', () => {
             const onFailed = jest.fn();
             actor.on('login.failed', onFailed);
             actor.send({ type: 'session.picked', localID: 2 });
-            await waitFor(actor, (state) => state.matches('ready'));
+            await waitFor(actor, (state) => state.matches({ page: 'ready' }));
             expect(selectSigningInLocalID(actor.getSnapshot())).toBeUndefined();
             expect(onFailed).toHaveBeenCalledWith({ type: 'login.failed', requestId: undefined, error });
         });
@@ -507,7 +535,7 @@ describe('publicAppStateMachine', () => {
             await requireCrypto(actor);
             await requireCrypto(actor);
             expect(loadCrypto).toHaveBeenCalledTimes(1);
-            expect(actor.getSnapshot().context.crypto).toBe('ready');
+            expect(actor.getSnapshot().matches({ crypto: 'ready' })).toBe(true);
         });
 
         it('rejects a submit when it fails to load, and loads it again on the next one', async () => {

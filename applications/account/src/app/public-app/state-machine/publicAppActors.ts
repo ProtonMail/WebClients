@@ -2,7 +2,6 @@ import type * as H from 'history';
 import { type EventObject, fromCallback, fromPromise } from 'xstate';
 
 import { loadCrypto } from '@proton/account/bootstrap';
-import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
@@ -36,6 +35,7 @@ import { stripLocaleTagPrefix } from '../localePrefix';
 import {
     InvalidForkError,
     type PublicAppMachineContext,
+    forkPaths,
     getPublicAppPaths,
     getPublicAppPreAppIntent,
 } from './publicAppStateMachine';
@@ -98,34 +98,21 @@ export const createPublicAppActors = ({
     history: H.History;
     unleashClient: UnleashClient;
 }) => ({
-    handleFork: fromPromise<ResolvedSession, PublicAppMachineContext>(({ input }) =>
-        wrapUnloadError(
-            (async () => {
-                const paths = getPublicAppPaths(input);
-                const result = await handleForkPath({ api, pathname: input.pathname, paths });
-                if (result.type === 'invalid') {
-                    throw new InvalidForkError();
-                }
-                if (result.type === 'switch') {
-                    return resolveActiveSessions(
-                        { api },
-                        input,
-                        result.payload.activeSessionsResult,
-                        result.payload.fork
-                    );
-                }
-                return { forkState: result.fork, loginResult: result.payload };
-            })()
-        )
-    ),
-    resumeSessions: fromPromise<ResolvedSession, PublicAppMachineContext>(({ input }) =>
-        wrapUnloadError(
-            (async () => {
-                const sessionsResult = await getPublicAppActiveSessions(api, input.initialSearchParams);
-                return resolveActiveSessions({ api }, input, sessionsResult, input.forkState);
-            })()
-        )
-    ),
+    /** Where opening the page leads: the fork on a fork route, else the active sessions. */
+    resolve: fromPromise<ResolvedSession, PublicAppMachineContext>(async ({ input }) => {
+        if (!forkPaths.includes(input.pathname)) {
+            const sessionsResult = await getPublicAppActiveSessions(api, input.initialSearchParams);
+            return resolveActiveSessions({ api }, input, sessionsResult, input.forkState);
+        }
+        const result = await handleForkPath({ api, pathname: input.pathname, paths: getPublicAppPaths(input) });
+        if (result.type === 'invalid') {
+            throw new InvalidForkError();
+        }
+        if (result.type === 'switch') {
+            return resolveActiveSessions({ api }, input, result.payload.activeSessionsResult, result.payload.fork);
+        }
+        return { forkState: result.fork, loginResult: result.payload };
+    }),
     login: fromPromise<LoginResult, { context: PublicAppMachineContext; session: AuthSession }>(
         ({ input: { context, session } }) =>
             getLoginResult({
