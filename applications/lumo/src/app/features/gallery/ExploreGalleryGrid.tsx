@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { ImagePreviewOverlay } from '../imageActions/ImagePreviewOverlay';
+import { GalleryMasonryGrid } from './GalleryMasonryGrid';
 import { INSPIRATION_SUGGESTIONS } from './inspirationSuggestions';
 
 import './GalleryView.scss';
@@ -24,7 +25,7 @@ export const ExploreGalleryGrid = ({ onTryPrompt }: ExploreGalleryGridProps) => 
                 <h2 className="gallery-explore__title main-text medium">
                     {c('collider_2025:Title').t`Explore images created with ${LUMO_SHORT_APP_NAME}`}
                 </h2>
-                <div className="gallery-grid">
+                <GalleryMasonryGrid>
                     {INSPIRATION_SUGGESTIONS.map((s, index) => (
                         <button
                             key={s.id}
@@ -35,6 +36,8 @@ export const ExploreGalleryGrid = ({ onTryPrompt }: ExploreGalleryGridProps) => 
                         >
                             <img
                                 src={s.img}
+                                width={s.width}
+                                height={s.height}
                                 alt=""
                                 className="gallery-card__image"
                                 loading="lazy"
@@ -43,7 +46,7 @@ export const ExploreGalleryGrid = ({ onTryPrompt }: ExploreGalleryGridProps) => 
                             />
                         </button>
                     ))}
-                </div>
+                </GalleryMasonryGrid>
             </div>
             <ImagePreviewOverlay
                 isOpen={!!openId}

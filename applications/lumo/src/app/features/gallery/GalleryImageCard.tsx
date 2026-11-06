@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from 'react';
 
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -29,6 +30,9 @@ export const GalleryImageCard = ({ attachmentId, createdAt, onExport, imageSrcOv
     const [overlayOpen, setOverlayOpen] = useState(false);
     const [overlayDefaultMode, setOverlayDefaultMode] = useState<'preview' | 'edit'>('preview');
     const [hovered, setHovered] = useState(false);
+    // Generated images have no stored size: reserve a square until the image loads, so the card
+    // takes real space in the masonry and lazy loading still applies.
+    const [imageLoaded, setImageLoaded] = useState(false);
     const navigate = useLumoNavigate();
     const { createNotification } = useNotifications();
     const { handleFilesSelected } = useFileHandling({ messageChain: [] });
@@ -116,8 +120,9 @@ export const GalleryImageCard = ({ attachmentId, createdAt, onExport, imageSrcOv
                         // translator: Accessible description of a generated image; formattedDate is its creation date.
                         c('collider_2025:Label').t`Generated image from ${formattedDate}`
                     }
-                    className="gallery-card__image"
+                    className={clsx('gallery-card__image', !imageLoaded && 'gallery-card__image--placeholder')}
                     loading="lazy"
+                    onLoad={() => setImageLoaded(true)}
                 />
                 {hovered && (
                     <div className="gallery-card__overlay">
