@@ -2,6 +2,7 @@ import NotificationButton from '@proton/components/containers/notifications/Noti
 import type { NotificationType } from '@proton/app-context/notifications/interfaces'
 import { c, msgid } from 'ttag'
 import type { ReactNode } from 'react'
+import type { ProtonDriveClient } from '@proton/drive/sdk'
 import { trashDocument, restoreDocument, reportTrashError } from '@proton/docs-core/DriveSDK/trash'
 import { trashDocuments, restoreDocuments, type BatchResult } from './trashMany'
 
@@ -20,15 +21,16 @@ export function handleRestoreError(createNotification: CreateNotification, error
 }
 
 export async function trashAndNotify(
+  drive: ProtonDriveClient,
   createNotification: CreateNotification,
   nodeUid: string,
   emitRestored: () => void,
 ) {
-  await trashDocument(nodeUid)
+  await trashDocument(drive, nodeUid)
 
   async function undo() {
     try {
-      await restoreDocument(nodeUid)
+      await restoreDocument(drive, nodeUid)
     } catch (error: any) {
       handleRestoreError(createNotification, error)
       return
@@ -49,15 +51,16 @@ export async function trashAndNotify(
 }
 
 export async function trashManyAndNotify(
+  drive: ProtonDriveClient,
   createNotification: CreateNotification,
   nodeUids: string[],
   onRestored: () => void,
 ): Promise<BatchResult> {
-  const result = await trashDocuments(nodeUids)
+  const result = await trashDocuments(drive, nodeUids)
   const { succeeded, failed } = result
 
   async function undo() {
-    const restore = await restoreDocuments(succeeded)
+    const restore = await restoreDocuments(drive, succeeded)
     const numberOfItems = restore.succeeded.length
     if (numberOfItems > 0) {
       createNotification({
@@ -113,15 +116,16 @@ export async function trashManyAndNotify(
 }
 
 export async function restoreAndNotify(
+  drive: ProtonDriveClient,
   createNotification: CreateNotification,
   nodeUid: string,
   emitTrashed: () => void,
 ) {
-  await restoreDocument(nodeUid)
+  await restoreDocument(drive, nodeUid)
 
   async function undo() {
     try {
-      await trashDocument(nodeUid)
+      await trashDocument(drive, nodeUid)
     } catch (error) {
       reportTrashError(error)
       createNotification({ type: 'error', text: c('Notification').t`Failed to trash document` })

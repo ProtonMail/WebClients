@@ -1,6 +1,6 @@
 import { act, renderHook, waitFor } from '@testing-library/react'
 import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
-import { generateNodeUid } from '@proton/drive/sdk'
+import { generateNodeUid, type ProtonDriveClient } from '@proton/drive/sdk'
 import { ServerTime } from '@proton/docs-shared/ServerTime'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
@@ -45,6 +45,8 @@ function createMockRecentDocument(data: Partial<RecentDocumentsItemValue> = {}):
 const d1 = createMockRecentDocument({ name: 'Document1', linkId: 'link1' })
 const d2 = createMockRecentDocument({ name: 'Document2', linkId: 'link2' })
 const uid = (doc: RecentDocumentsItem) => generateNodeUid(doc.volumeId, doc.linkId)
+const drive = {} as ProtonDriveClient
+const renderBulkTrash = () => renderHook(() => useBulkTrash({ drive, generateNodeUid }))
 
 describe('useBulkTrash', () => {
   beforeEach(() => {
@@ -53,19 +55,24 @@ describe('useBulkTrash', () => {
   })
 
   it('trashes node uids built from volumeId and linkId and reloads on undo', async () => {
-    const { result } = renderHook(() => useBulkTrash())
+    const { result } = renderBulkTrash()
 
     await act(() => result.current.trash([d1, d2]))
 
-    expect(trashManyAndNotify).toHaveBeenCalledWith(mockCreateNotification, [uid(d1), uid(d2)], expect.any(Function))
-    const onRestored = jest.mocked(trashManyAndNotify).mock.calls[0][2]
+    expect(trashManyAndNotify).toHaveBeenCalledWith(
+      drive,
+      mockCreateNotification,
+      [uid(d1), uid(d2)],
+      expect.any(Function),
+    )
+    const onRestored = jest.mocked(trashManyAndNotify).mock.calls[0][3]
     onRestored()
     expect(mockUpdateRecentDocuments).toHaveBeenCalled()
   })
 
   it('reloads once and reports telemetry per trashed item', async () => {
     jest.mocked(trashManyAndNotify).mockResolvedValue({ succeeded: [uid(d1), uid(d2)], failed: [] })
-    const { result } = renderHook(() => useBulkTrash())
+    const { result } = renderBulkTrash()
 
     let failed: RecentDocumentsItem[] = []
     await act(async () => {
@@ -83,7 +90,7 @@ describe('useBulkTrash', () => {
       succeeded: [],
       failed: [{ uid: uid(d2), error: new Error('nope') }],
     })
-    const { result } = renderHook(() => useBulkTrash())
+    const { result } = renderBulkTrash()
 
     let failed: RecentDocumentsItem[] = []
     await act(async () => {
@@ -98,7 +105,7 @@ describe('useBulkTrash', () => {
   it('isTrashing is true while the batch runs', async () => {
     let resolve!: (value: { succeeded: string[]; failed: never[] }) => void
     jest.mocked(trashManyAndNotify).mockReturnValue(new Promise((r) => (resolve = r)))
-    const { result } = renderHook(() => useBulkTrash())
+    const { result } = renderBulkTrash()
 
     let promise!: Promise<RecentDocumentsItem[]>
     act(() => {
@@ -113,7 +120,7 @@ describe('useBulkTrash', () => {
 
   it('isTrashing resets when trashManyAndNotify rejects', async () => {
     jest.mocked(trashManyAndNotify).mockRejectedValue(new Error('boom'))
-    const { result } = renderHook(() => useBulkTrash())
+    const { result } = renderBulkTrash()
 
     await act(async () => {
       await expect(result.current.trash([d1])).rejects.toThrow('boom')

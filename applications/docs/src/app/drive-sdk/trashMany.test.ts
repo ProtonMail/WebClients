@@ -1,12 +1,9 @@
+import type { ProtonDriveClient } from '@proton/drive/sdk'
 import { restoreDocuments, trashDocuments } from './trashMany'
 
 const mockTrashNodes = jest.fn()
 const mockRestoreNodes = jest.fn()
-
-jest.mock('@proton/drive/sdk', () => ({
-  ...jest.requireActual('@proton/drive/sdk'),
-  getDrive: () => ({ trashNodes: mockTrashNodes, restoreNodes: mockRestoreNodes }),
-}))
+const drive = { trashNodes: mockTrashNodes, restoreNodes: mockRestoreNodes } as unknown as ProtonDriveClient
 
 async function* yieldThenThrow(items: unknown[], error?: Error) {
   yield* items
@@ -28,7 +25,7 @@ describe('trashDocuments', () => {
       ]),
     )
 
-    await expect(trashDocuments(['a', 'b'])).resolves.toEqual({ succeeded: ['a', 'b'], failed: [] })
+    await expect(trashDocuments(drive, ['a', 'b'])).resolves.toEqual({ succeeded: ['a', 'b'], failed: [] })
     expect(mockTrashNodes).toHaveBeenCalledTimes(1)
     expect(mockTrashNodes).toHaveBeenCalledWith(['a', 'b'])
   })
@@ -41,7 +38,7 @@ describe('trashDocuments', () => {
       ]),
     )
 
-    const { succeeded, failed } = await trashDocuments(['a', 'b'])
+    const { succeeded, failed } = await trashDocuments(drive, ['a', 'b'])
 
     expect(succeeded).toEqual(['a'])
     expect(failed[0].uid).toBe('b')
@@ -52,7 +49,7 @@ describe('trashDocuments', () => {
     const error = new Error('network')
     mockTrashNodes.mockReturnValue(yieldThenThrow([{ uid: 'a', ok: true }], error))
 
-    const { succeeded, failed } = await trashDocuments(['a', 'b', 'c'])
+    const { succeeded, failed } = await trashDocuments(drive, ['a', 'b', 'c'])
 
     expect(succeeded).toEqual(['a'])
     expect(failed.map((f) => f.uid)).toEqual(['b', 'c'])
@@ -63,7 +60,7 @@ describe('trashDocuments', () => {
     const error = new Error('network')
     mockTrashNodes.mockReturnValue(yieldThenThrow([], error))
 
-    const { succeeded, failed } = await trashDocuments(['a', 'b'])
+    const { succeeded, failed } = await trashDocuments(drive, ['a', 'b'])
 
     expect(succeeded).toEqual([])
     expect(failed).toHaveLength(2)
@@ -84,7 +81,7 @@ describe('restoreDocuments', () => {
       ]),
     )
 
-    const { succeeded, failed } = await restoreDocuments(['a', 'b'])
+    const { succeeded, failed } = await restoreDocuments(drive, ['a', 'b'])
 
     expect(mockRestoreNodes).toHaveBeenCalledWith(['a', 'b'])
     expect(mockTrashNodes).not.toHaveBeenCalled()

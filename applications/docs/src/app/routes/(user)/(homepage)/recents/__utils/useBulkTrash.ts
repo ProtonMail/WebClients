@@ -1,14 +1,16 @@
 import { useState } from 'react'
 import { useNotifications } from '@proton/app-context/useNotifications'
 import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
-import { generateNodeUid } from '@proton/drive/sdk'
+import type { generateNodeUid, ProtonDriveClient } from '@proton/drive/sdk'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { trashManyAndNotify } from '~/drive-sdk/trash-restore-notify'
 import { useApplication } from '~/utils/application-context'
 import { useEvent } from '~/utils/misc'
 import { useHomepageView } from './homepage-view-sdk-utils'
 
-export function useBulkTrash() {
+type BulkTrashDependencies = { drive: ProtonDriveClient; generateNodeUid: typeof generateNodeUid }
+
+export function useBulkTrash({ drive, generateNodeUid }: BulkTrashDependencies) {
   const application = useApplication()
   const { createNotification } = useNotifications()
   const { updateRecentDocuments } = useHomepageView()
@@ -20,7 +22,7 @@ export function useBulkTrash() {
     setIsTrashing(true)
     let batch
     try {
-      batch = await trashManyAndNotify(createNotification, [...byUid.keys()], () => {
+      batch = await trashManyAndNotify(drive, createNotification, [...byUid.keys()], () => {
         void updateRecentDocuments()
       })
     } finally {

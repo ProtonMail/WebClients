@@ -9,9 +9,9 @@ import { type ReactNode, useCallback, useMemo, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
 import { constructDriveFolderUrl } from '~/utils/open-drive-folder'
 import { useEvent } from '~/utils/misc'
-import { getDrive, generateNodeUid } from '@proton/drive/sdk'
-import { useSharingModal } from '@proton/drive/public/sharingModal'
-import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
+import type { generateNodeUid, ProtonDriveClient } from '@proton/drive/sdk'
+import type { useSharingModal } from '@proton/drive/public/sharingModal'
+import type { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { c } from 'ttag'
 import { deleteDocument, reportTrashError } from '@proton/docs-core/DriveSDK/trash'
 import { trashAndNotify, restoreAndNotify, handleRestoreError } from '~/drive-sdk/trash-restore-notify'
@@ -23,12 +23,22 @@ import { DocumentActionsContext } from '~/homepage'
 
 export type DocumentActionsProviderProps = {
   children: ReactNode
+  drive: ProtonDriveClient
+  generateNodeUid: typeof generateNodeUid
+  useSharingModal: typeof useSharingModal
+  useMoveItemsModal: typeof useMoveItemsModal
 }
 
 const TRASHED_LISTENERS = new Set<(id: string) => void>()
 const RESTORED_LISTENERS = new Set<(id: string) => void>()
 
-export function DocumentActionsProvider({ children }: DocumentActionsProviderProps) {
+export function DocumentActionsProvider({
+  children,
+  drive,
+  generateNodeUid,
+  useSharingModal,
+  useMoveItemsModal,
+}: DocumentActionsProviderProps) {
   const application = useApplication()
   const { createNotification } = useNotifications()
   const [renamingDocument, setRenamingDocument] = useState<RecentDocumentsItem>()
@@ -37,14 +47,12 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   const [currentlyRestoringId, setCurrentlyRestoringId] = useState<string | undefined>(undefined)
   const { getLocalID } = useAuthentication()
 
-  const drive = getDrive()
-
   const { showSharingModal, sharingModal } = useSharingModal()
   const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal()
   const { updateMovedDocuments } = useHomepageView()
   const [confirmDeleteModal, showConfirmDeleteModal] = useConfirmActionModal()
-  const { trash: bulkTrash, isTrashing: isBulkTrashing } = useBulkTrash()
-  const { move: bulkMove, moveItemsModal: bulkMoveItemsModal } = useBulkMove()
+  const { trash: bulkTrash, isTrashing: isBulkTrashing } = useBulkTrash({ drive, generateNodeUid })
+  const { move: bulkMove, moveItemsModal: bulkMoveItemsModal } = useBulkMove({ useMoveItemsModal, generateNodeUid })
 
   const open = useEvent(({ type, volumeId, linkId }: RecentDocumentsItem, source = 'normal') => {
     const pathname = type === 'spreadsheet' ? 'sheet' : 'doc'
@@ -129,7 +137,7 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
 
     try {
       const nodeUid = generateNodeUid(document.volumeId, document.linkId)
-      await trashAndNotify(createNotification, nodeUid, emitRestored)
+      await trashAndNotify(drive, createNotification, nodeUid, emitRestored)
     } catch (error) {
       reportTrashError(error)
       createNotification({
@@ -159,7 +167,7 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
 
     try {
       const nodeUid = generateNodeUid(document.volumeId, document.linkId)
-      await restoreAndNotify(createNotification, nodeUid, emitTrashed)
+      await restoreAndNotify(drive, createNotification, nodeUid, emitTrashed)
     } catch (error: any) {
       handleRestoreError(createNotification, error)
       setCurrentlyRestoringId(undefined)
@@ -187,7 +195,7 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
       onSubmit: async () => {
         try {
           const nodeUid = generateNodeUid(document.volumeId, document.linkId)
-          await deleteDocument(nodeUid)
+          await deleteDocument(drive, nodeUid)
         } catch (error) {
           reportTrashError(error)
           createNotification({

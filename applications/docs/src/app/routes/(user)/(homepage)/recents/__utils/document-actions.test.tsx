@@ -5,11 +5,13 @@ import type { Application } from '@proton/docs-core/Application/Application'
 import { deleteDocument, reportTrashError, restoreDocument, trashDocument } from '@proton/docs-core/DriveSDK/trash'
 import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import { ServerTime } from '@proton/docs-shared/ServerTime'
-import { generateNodeUid } from '@proton/drive/sdk'
+import { generateNodeUid, type ProtonDriveClient } from '@proton/drive/sdk'
+import { useSharingModal } from '@proton/drive/public/sharingModal'
+import type { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { act, renderHook, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { type ReactNode, useContext } from 'react'
+import { type ReactNode, useContext, useState } from 'react'
 import { ApplicationProvider } from '~/utils/application-context'
 import { DocumentActionsProvider } from './document-actions'
 import { DocumentActionsContext, HomepageViewContext, type HomepageViewValue } from '~/homepage'
@@ -21,15 +23,11 @@ jest.mock('@proton/docs-core/DriveSDK/trash', () => ({
   reportTrashError: jest.fn(),
 }))
 
-jest.mock('@proton/drive/sdk', () => ({
-  ...jest.requireActual('@proton/drive/sdk'),
-  getDrive: jest.fn(),
-}))
-
 const mockShowMoveItemsModal = jest.fn()
-jest.mock('@proton/drive/public/moveItemsModal', () => ({
-  useMoveItemsModal: () => ({ moveItemsModal: null, showMoveItemsModal: mockShowMoveItemsModal }),
-}))
+const useMockMoveItemsModal: typeof useMoveItemsModal = () => ({
+  moveItemsModal: null,
+  showMoveItemsModal: mockShowMoveItemsModal,
+})
 
 const recentDocument = RecentDocumentsItem.create({
   type: 'document',
@@ -45,8 +43,9 @@ const recentDocument = RecentDocumentsItem.create({
   shareId: 'share1',
 })
 const nodeUid = generateNodeUid(recentDocument.volumeId, recentDocument.linkId)
+const drive = {} as ProtonDriveClient
 
-function renderDocumentActions() {
+function renderDocumentActions(moveItemsModalHook = useMockMoveItemsModal) {
   const createNotification = jest.fn()
   const reportHomepageTelemetry = jest.fn()
   const updateMovedDocuments = jest.fn()
@@ -60,7 +59,14 @@ function renderDocumentActions() {
         <ApplicationProvider application={application}>
           <NotificationsContext.Provider value={{ createNotification } as unknown as NotificationsManager}>
             <HomepageViewContext.Provider value={{ updateMovedDocuments } as unknown as HomepageViewValue}>
-              <DocumentActionsProvider>{children}</DocumentActionsProvider>
+              <DocumentActionsProvider
+                drive={drive}
+                generateNodeUid={generateNodeUid}
+                useSharingModal={useSharingModal}
+                useMoveItemsModal={moveItemsModalHook}
+              >
+                {children}
+              </DocumentActionsProvider>
             </HomepageViewContext.Provider>
           </NotificationsContext.Provider>
         </ApplicationProvider>
@@ -83,6 +89,14 @@ function subscribe(subscribeTo: (listener: (id: string) => void) => () => void) 
   const listener = jest.fn()
   unsubscribers.push(subscribeTo(listener))
   return listener
+}
+
+function useFakeMoveItemsModal(): ReturnType<typeof useMoveItemsModal> {
+  const [nodeUids, setNodeUids] = useState<string[]>()
+  return {
+    moveItemsModal: <>{nodeUids && <dialog open>{nodeUids.join(',')}</dialog>}</>,
+    showMoveItemsModal: ({ nodeUids }: { nodeUids: string[] }) => setNodeUids(nodeUids),
+  }
 }
 
 afterEach(() => {
@@ -118,7 +132,7 @@ describe('DocumentActionsProvider', () => {
     expect(result.current.currentlyTrashingId).toBeUndefined()
     expect(listener).toHaveBeenCalledWith(recentDocument.uniqueId())
     expect(reportHomepageTelemetry).toHaveBeenCalledWith(TelemetryDocsHomepageEvents.document_trashed)
-    expect(trashDocument).toHaveBeenCalledWith(nodeUid)
+    expect(trashDocument).toHaveBeenCalledWith(drive, nodeUid)
   })
 
   test('restore sets and clears currentlyRestoringId, notifies listeners and sends telemetry', async () => {
@@ -139,7 +153,7 @@ describe('DocumentActionsProvider', () => {
     expect(result.current.currentlyRestoringId).toBeUndefined()
     expect(listener).toHaveBeenCalledWith(recentDocument.uniqueId())
     expect(reportHomepageTelemetry).toHaveBeenCalledWith(TelemetryDocsHomepageEvents.document_restored)
-    expect(restoreDocument).toHaveBeenCalledWith(nodeUid)
+    expect(restoreDocument).toHaveBeenCalledWith(drive, nodeUid)
   })
 
   test('the unsubscribe function returned by subscribeTo* removes the listener', async () => {
@@ -167,6 +181,14 @@ describe('DocumentActionsProvider', () => {
 
     expect(nodeUids).toEqual([nodeUid])
     expect(updateMovedDocuments).toHaveBeenCalledWith([nodeUid])
+  })
+
+  test('bulkMove shows the move modal for the documents', () => {
+    const { result } = renderDocumentActions(useFakeMoveItemsModal)
+
+    act(() => result.current.bulkMove([recentDocument]))
+
+    expect(screen.getByRole('dialog')).toHaveTextContent(nodeUid)
   })
 
   test('trash failure shows an error toast, sends no telemetry and notifies no listeners', async () => {
@@ -215,7 +237,7 @@ describe('DocumentActionsProvider', () => {
     await waitFor(() =>
       expect(reportHomepageTelemetry).toHaveBeenCalledWith(TelemetryDocsHomepageEvents.document_permanently_deleted),
     )
-    expect(deleteDocument).toHaveBeenCalledWith(nodeUid)
+    expect(deleteDocument).toHaveBeenCalledWith(drive, nodeUid)
     expect(createNotification).toHaveBeenCalledWith({
       type: 'success',
       text: expect.stringContaining('Document deleted permanently'),
