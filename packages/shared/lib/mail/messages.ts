@@ -28,6 +28,7 @@ const {
     FLAG_SUSPICIOUS,
     FLAG_AUTO_FORWARDEE,
     FLAG_EXPIRE_BY_RETENTION_RULE,
+    FLAG_THIRD_PARTY_REGISTRATION,
 } = MESSAGE_FLAGS;
 const AUTOREPLY_HEADERS = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', 'X-Mail-Autoreply'];
 
@@ -78,6 +79,7 @@ export const isSuspicious = hasBigFlag(FLAG_SUSPICIOUS);
 export const isManualFlaggedHam = hasFlag(FLAG_HAM_MANUAL);
 export const isAutoForwardee = hasBigFlag(FLAG_AUTO_FORWARDEE);
 export const isExpiringByRetentionRule = hasBigFlag(FLAG_EXPIRE_BY_RETENTION_RULE);
+export const isThirdPartyRegistration = hasBigFlag(FLAG_THIRD_PARTY_REGISTRATION);
 
 export const inSigningPeriod = ({ Time = 0 }: Pick<Message, 'Time'>) =>
     Time >= Math.max(SIGNATURE_START.USER, SIGNATURE_START.BULK);

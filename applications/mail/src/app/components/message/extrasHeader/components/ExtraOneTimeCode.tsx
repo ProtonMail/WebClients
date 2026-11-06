@@ -4,6 +4,7 @@ import OneTimeCodeDetector from '@proton/mail-message/helpers/message/otp/OneTim
 import { shouldRunOtpExtraction } from '@proton/mail-message/helpers/message/otp/shouldRunOtpExtraction';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { isThirdPartyRegistration } from '@proton/shared/lib/mail/messages';
 
 import OneTimeCodeCopyButton from '../../../onetimecode/OneTimeCodeCopyButton';
 import { useOneTimeCodeCopy } from '../../../onetimecode/useOneTimeCodeCopy';
@@ -19,15 +20,23 @@ const ExtraOneTimeCode = ({ message }: Props) => {
     const mimeType = (message.data?.MIMEType as MIME_TYPES | undefined) ?? MIME_TYPES.DEFAULT;
     const timestamp = message.data?.Time ?? 0;
     const body = message.decryption?.decryptedBody ?? '';
+    const thirdPartyRegistration = isThirdPartyRegistration(message.data);
 
     const { code } = useMemo(() => {
-        // Gate on metadata (subject + sender + recency) before touching the body.
+        // Gate on metadata (subject + sender + recency + third-party registration flag) before touching the body.
         // `timestamp` is epoch seconds; the recency check works in milliseconds.
-        if (!shouldRunOtpExtraction({ subject, sender, timestampMs: timestamp * 1000 })) {
+        if (
+            !shouldRunOtpExtraction({
+                subject,
+                sender,
+                timestampMs: timestamp * 1000,
+                isThirdPartyRegistration: thirdPartyRegistration,
+            })
+        ) {
             return { code: null };
         }
         return OneTimeCodeDetector.extract({ subject, body, mimeType, timestamp });
-    }, [subject, sender, body, mimeType, timestamp]);
+    }, [subject, sender, body, mimeType, timestamp, thirdPartyRegistration]);
 
     if (!code || !message.data) {
         return null;

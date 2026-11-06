@@ -11,7 +11,11 @@ import { toValidHtmlId } from '@proton/shared/lib/dom/toValidHtmlId';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { getRecipients as getMessageRecipients, getSender } from '@proton/shared/lib/mail/messages';
+import {
+    getRecipients as getMessageRecipients,
+    getSender,
+    isThirdPartyRegistration,
+} from '@proton/shared/lib/mail/messages';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
@@ -19,7 +23,7 @@ import clsx from '@proton/utils/clsx';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { filterAttachmentToPreview } from '../../helpers/attachment/attachmentThumbnails';
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
-import { getDate, hasLabel, isElementMessage, isUnread } from '../../helpers/elements';
+import { getDate, hasLabel, isElementConversation, isElementMessage, isUnread } from '../../helpers/elements';
 import { getDisplayRecipients } from '../../helpers/recipients';
 import { useCategoryViewConversationPrefetch } from '../../hooks/conversation/useCategoryViewConversationPrefetch';
 import type { Element } from '../../models/element';
@@ -145,7 +149,16 @@ const Item = ({
         // not `element.Time`, which can be unset on freshly-arrived elements.
         const time = getDate(element, labelID).getTime();
 
-        if (!shouldRunOtpExtraction({ subject, sender: senderAddress, timestampMs: time })) {
+        if (
+            !shouldRunOtpExtraction({
+                subject,
+                sender: senderAddress,
+                timestampMs: time,
+                isThirdPartyRegistration: isElementConversation(element)
+                    ? !!element.IsThirdPartyRegistration
+                    : isThirdPartyRegistration(element),
+            })
+        ) {
             return null;
         }
 
