@@ -23,7 +23,7 @@ jest.mock('@proton/account/userPermissions/hooks', () => ({
 }));
 jest.mock('@proton/features/useFeature', () => () => ({ feature: undefined, update: jest.fn(), loading: false }));
 jest.mock('@proton/redux-shared-store/sharedProvider', () => ({ useDispatch: () => mockDispatch }));
-jest.mock('../../payments/subscription/SubscriptionModalProvider', () => ({
+jest.mock('../../payments/subscription/subscriptionModalContext', () => ({
     useSubscriptionModal: () => [jest.fn(), false],
 }));
 jest.mock('./context/GroupsManagementContext', () => ({

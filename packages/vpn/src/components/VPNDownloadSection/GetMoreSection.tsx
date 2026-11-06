@@ -9,7 +9,7 @@ import {
     DashboardMoreInfoSectionTag,
     DashboardMoreInfoSections,
 } from '@proton/components/containers/account/dashboard/shared/DashboardMoreInfoSection/DashboardMoreInfoSection';
-import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { getTelemetryUserTier } from '@proton/components/helpers/getTelemetryUserTier';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';

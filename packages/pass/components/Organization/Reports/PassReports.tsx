@@ -8,7 +8,7 @@ import Pagination from '@proton/components/components/pagination/Pagination';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
 import SubSettingsSection from '@proton/components/containers/layout/SubSettingsSection';
-import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';

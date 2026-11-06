@@ -36,7 +36,7 @@ import PlansSection from '@proton/components/containers/payments/PlansSection';
 import SubscriptionsSection from '@proton/components/containers/payments/SubscriptionsSection';
 import PaymentMethodsSection from '@proton/components/containers/payments/methods/PaymentMethodsSection';
 import DashboardTelemetry from '@proton/components/containers/payments/subscription/DashboardTelemetry';
-import { UpsellModalTelemetryProvider } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { UpsellModalTelemetryProvider } from '@proton/components/containers/payments/subscription/UpsellModalTelemetryProvider';
 import YourPlanSection from '@proton/components/containers/payments/subscription/YourPlanSection';
 import DashboardComparePlansCTA from '@proton/components/containers/payments/subscription/YourPlanSectionV2/DashboardComparePlansCTA';
 import YourPlanSectionV2 from '@proton/components/containers/payments/subscription/YourPlanSectionV2/YourPlanSectionV2';

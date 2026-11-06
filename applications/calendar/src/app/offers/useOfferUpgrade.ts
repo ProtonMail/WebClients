@@ -4,7 +4,7 @@ import { useConfig } from '@proton/app-context/useConfig';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import { openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
-import { useOptionalSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { useOptionalSubscriptionModal } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';

@@ -6,7 +6,7 @@ import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscript
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
 import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
-import { useSubscriptionModal } from '../../SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../subscriptionModalContext';
 import { PlanIcon } from '../PlanIcon';
 import PlanIconName from '../PlanIconName';
 import type { UpsellSectionBaseProps } from '../YourPlanUpsellsSectionV2';

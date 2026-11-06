@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 
-import { useSubscriptionModal } from '../payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModal } from '../payments/subscription/subscriptionModalContext';
 
 interface Props {
     total: number;

@@ -30,8 +30,8 @@ import { useDrivePostSignupOneDollarTelemetry } from '../../../components/topnav
 import { useHasInboxDesktopInAppPayments } from '../../desktop/useHasInboxDesktopInAppPayments';
 import InAppPurchaseModal from './InAppPurchaseModal';
 import SubscriptionContainer from './SubscriptionContainer';
-import type { OpenCallbackProps, SubscriptionOverridableStep } from './SubscriptionModalProvider';
 import { usePostSubscription } from './postSubscription/usePostSubscription';
+import type { OpenCallbackProps, SubscriptionOverridableStep } from './subscriptionModalTypes';
 
 interface Props {
     app: APP_NAMES;

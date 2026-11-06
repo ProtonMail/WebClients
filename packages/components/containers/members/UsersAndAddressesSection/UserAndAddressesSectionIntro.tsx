@@ -13,7 +13,7 @@ import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscript
 import { MAIL_APP_NAME, MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
 import { getOrganizationDenomination } from '@proton/shared/lib/organization/helper';
 
-import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../payments/subscription/subscriptionModalContext';
 
 interface Props {
     onOpenNewDomainModal: (open: boolean) => void;

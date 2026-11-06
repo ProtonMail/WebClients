@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { useCallback, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -20,7 +20,6 @@ import { fixPlanIDs } from '@proton/payments/core/helpers';
 import type { FreeSubscription, PaymentStatus } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
-import type { UpsellTelemetryContext } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
@@ -30,18 +29,8 @@ import type { FreePlanDefault, Plan } from '@proton/shared/lib/payments/plan/int
 import useModalState from '../../../components/modalTwo/useModalState';
 import { useRedirectToAccountApp } from '../../desktop/useRedirectToAccountApp';
 import SubscriptionModal from './SubscriptionModal';
-import type { OpenSubscriptionModalCallback } from './subscriptionModalContext';
-import {
-    SubscriptionModalContext,
-    useOptionalSubscriptionModal,
-    useOptionalSubscriptionModalRaw,
-    useSubscriptionModal,
-    useSubscriptionModalRaw,
-} from './subscriptionModalContext';
-import type { OpenCallbackProps, SubscriptionOverridableStep } from './subscriptionModalTypes';
-
-export type { OpenCallbackProps, OpenSubscriptionModalCallback, SubscriptionOverridableStep };
-export { useOptionalSubscriptionModal, useOptionalSubscriptionModalRaw, useSubscriptionModal, useSubscriptionModalRaw };
+import { SubscriptionModalContext } from './subscriptionModalContext';
+import type { OpenCallbackProps } from './subscriptionModalTypes';
 
 interface Props {
     children: ReactNode;
@@ -208,24 +197,3 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
 };
 
 export default SubscriptionModalProvider;
-
-export const UpsellModalTelemetryProvider = ({
-    context,
-    children,
-}: {
-    context: UpsellTelemetryContext;
-    children: ReactNode;
-}) => {
-    const [open, loadingData, isSubscriptionModalAvailable] = useSubscriptionModal();
-
-    const openCallback = useCallback<OpenSubscriptionModalCallback>(
-        (props) => open({ ...props, upsellTelemetryContext: context }),
-        [open, context]
-    );
-
-    return (
-        <SubscriptionModalContext.Provider value={[openCallback, loadingData, isSubscriptionModalAvailable]}>
-            {children}
-        </SubscriptionModalContext.Provider>
-    );
-};

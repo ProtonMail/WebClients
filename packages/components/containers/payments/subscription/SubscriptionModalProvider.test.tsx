@@ -16,8 +16,9 @@ import { mockSubscriptionApi, subscriptionDefaultResponse } from '../../../hooks
 import { userDefault } from '../../../hooks/helpers/tests/useUser';
 import { renderWithProviders } from '../../../testing/renderWithProviders';
 import SubscriptionContainer from './SubscriptionContainer';
-import type { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
-import SubscriptionModalProvider, { useSubscriptionModal } from './SubscriptionModalProvider';
+import SubscriptionModalProvider from './SubscriptionModalProvider';
+import type { OpenSubscriptionModalCallback } from './subscriptionModalContext';
+import { useSubscriptionModal } from './subscriptionModalContext';
 
 jest.mock('../../../hooks/useModals');
 jest.mock('@proton/atoms/Portal/Portal');

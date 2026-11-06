@@ -16,7 +16,8 @@ import Info from '../../../../components/link/Info';
 import useActiveBreakpoint from '../../../../hooks/useActiveBreakpoint';
 import { upgradeButtonClick } from '../../../desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '../../../desktop/useHasInboxDesktopInAppPayments';
-import type { ButtonColor, ButtonShape, UpsellCta, UpsellFeature } from '../helpers/dashboard-upsells';
+import type { UpsellFeature } from '../../features/interface';
+import type { ButtonColor, ButtonShape, UpsellCta } from '../helpers/dashboard-upsells';
 import { isUpsellCta } from '../helpers/dashboard-upsells';
 
 import './UpsellPanelV2.scss';

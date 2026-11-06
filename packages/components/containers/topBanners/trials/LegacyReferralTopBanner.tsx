@@ -27,7 +27,7 @@ import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import SettingsLink from '../../../components/link/SettingsLink';
-import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../payments/subscription/subscriptionModalContext';
 import TopBanner from '../TopBanner';
 
 const ModalAction = ({

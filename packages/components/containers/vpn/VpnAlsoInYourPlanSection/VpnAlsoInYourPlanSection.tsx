@@ -67,7 +67,7 @@ import {
     getVaultSharing,
 } from '../../payments/features/pass';
 import { PlanCardFeatureList } from '../../payments/subscription/PlanCardFeatures';
-import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../payments/subscription/subscriptionModalContext';
 import bundleLogo from './illustrations/bundle.svg';
 import drive from './illustrations/drive.jpg';
 import mail from './illustrations/mail.jpg';

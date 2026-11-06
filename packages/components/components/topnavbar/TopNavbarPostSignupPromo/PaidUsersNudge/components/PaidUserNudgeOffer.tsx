@@ -12,7 +12,7 @@ import { getUpgradePath } from '@proton/payments/core/subscription/upsell';
 import { TelemetryPaidUsersNudge } from '@proton/shared/lib/api/telemetry';
 import { APPS, APPS_WITH_IN_APP_PAYMENTS } from '@proton/shared/lib/constants';
 
-import { useSubscriptionModal } from '../../../../../containers/payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../../../../containers/payments/subscription/subscriptionModalContext';
 import useSettingsLink from '../../../../link/useSettingsLink';
 import useUpsellConfig from '../../../../upsell/config/useUpsellConfig';
 import { SpotlightWithPromo } from '../../common/SpotlightWithPromo';

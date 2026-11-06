@@ -75,7 +75,7 @@ import {
     getVersionHistory,
 } from '../../features/drive';
 import { getSentinel, getSupport, getUsersFeature } from '../../features/highlights';
-import type { PlanCardFeatureDefinition, ShortPlan } from '../../features/interface';
+import type { ShortPlan, UpsellFeature } from '../../features/interface';
 import { getB2BNDomainsFeature, getNAddressesFeature, getNDomainsFeature, getProtonScribe } from '../../features/mail';
 import {
     FREE_PASS_ALIASES,
@@ -102,16 +102,11 @@ import {
     getHighSpeedVPNConnectionsFeature,
     getVPNConnectionsFeature,
 } from '../../features/vpn';
-import type { OpenSubscriptionModalCallback } from '../SubscriptionModalProvider';
+import type { OpenSubscriptionModalCallback } from '../subscriptionModalContext';
 import { getAllowedCycles } from './getAllowedCycles';
 
 export const defaultUpsellCycleB2C = CYCLE.YEARLY;
 const defaultUpsellCycleB2B = CYCLE.YEARLY;
-
-export interface UpsellFeature extends Omit<PlanCardFeatureDefinition, 'status' | 'highlight' | 'included'> {
-    status?: PlanCardFeatureDefinition['status'];
-    included?: PlanCardFeatureDefinition['included'];
-}
 
 type MaybeUpsellFeature = UpsellFeature | undefined;
 

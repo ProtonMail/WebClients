@@ -88,3 +88,8 @@ export type ShortPlanLike = {
 export function isShortPlanLike(plan: any): plan is ShortPlanLike {
     return !!plan && plan.isPlanLike;
 }
+
+export interface UpsellFeature extends Omit<PlanCardFeatureDefinition, 'status' | 'highlight' | 'included'> {
+    status?: PlanCardFeatureDefinition['status'];
+    included?: PlanCardFeatureDefinition['included'];
+}

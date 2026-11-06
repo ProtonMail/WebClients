@@ -8,7 +8,7 @@ import lightlabellingUpsellSvg from '@proton/styles/assets/img/illustrations/acc
 
 import { useBundleProPlan } from '../../../hooks/useHasPlan';
 import { PromotionBanner } from '../../banner/PromotionBanner';
-import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../payments/subscription/subscriptionModalContext';
 
 interface UpsellBannerProps {
     organization: Organization;

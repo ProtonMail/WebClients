@@ -9,10 +9,8 @@ import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import noop from '@proton/utils/noop';
 
-import type {
-    OpenCallbackProps,
-    OpenSubscriptionModalCallback,
-} from '../../../containers/payments/subscription/SubscriptionModalProvider';
+import type { OpenSubscriptionModalCallback } from '../../../containers/payments/subscription/subscriptionModalContext';
+import type { OpenCallbackProps } from '../../../containers/payments/subscription/subscriptionModalTypes';
 
 export interface GetUpsellConfigProps {
     upsellRef?: string;

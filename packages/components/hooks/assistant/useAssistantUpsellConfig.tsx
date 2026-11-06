@@ -5,7 +5,7 @@ import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscript
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import type { OpenCallbackProps } from '../../containers/payments/subscription/SubscriptionModalProvider';
+import type { OpenCallbackProps } from '../../containers/payments/subscription/subscriptionModalTypes';
 import { getAssistantUpsellConfigPlanAndCycle } from './assistantUpsellConfig';
 
 interface Props {

@@ -46,6 +46,7 @@ import StripedItem from '../../../components/stripedList/StripedItem';
 import { StripedList } from '../../../components/stripedList/StripedList';
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
 import { getDocumentEditor, getStorageFeature, getVersionHistory } from '../../payments/features/drive';
+import type { UpsellFeature } from '../../payments/features/interface';
 import { getNAddressesFeature, getNDomainsFeature } from '../../payments/features/mail';
 import {
     get2FAAuthenticator,
@@ -53,16 +54,14 @@ import {
     getHideMyEmailAliases,
     getSecureVaultSharing,
 } from '../../payments/features/pass';
-import type { SubscriptionContainerProps } from '../../payments/subscription/SubscriptionContainer';
-import { useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
-import type { UpsellFeature } from '../../payments/subscription/helpers/dashboard-upsells';
+import { useSubscriptionModal } from '../../payments/subscription/subscriptionModalContext';
 import { ReferralTrialInfoModal } from '../../referral/components/ReferralTrialInfo/ReferralTrialInfo';
 import TopBanner from '../TopBanner';
 
 interface ModalActionProps extends Pick<ButtonProps, 'color' | 'shape'> {
     subscription: Subscription;
     upsellRef: string | undefined;
-    step: SubscriptionContainerProps['step'];
+    step?: SUBSCRIPTION_STEPS;
     closeModal: () => void;
     disablePlanSelection: boolean;
     children: ReactNode;

@@ -12,7 +12,7 @@ import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 
 import { getTelemetryUserTier } from '../../../../../helpers/getTelemetryUserTier';
 import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
-import { useSubscriptionModal } from '../../SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../subscriptionModalContext';
 import { PlanIcon } from '../PlanIcon';
 import PlanIconName from '../PlanIconName';
 import type { UpsellSectionBaseProps } from '../YourPlanUpsellsSectionV2';

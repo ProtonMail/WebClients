@@ -4,7 +4,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
-import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import { PLANS } from '@proton/payments/core/constants';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import alwaysOnSmall from '@proton/styles/assets/img/illustrations/vpn/always-on/always-on-small.svg';

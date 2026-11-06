@@ -28,7 +28,7 @@ import { Tabs } from '../../../../../../components/tabs/Tabs';
 import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
 import CycleSelector from '../../../../CycleSelector';
 import { getShortStorageFeatureB2B } from '../../../../features/drive';
-import type { PlanCardFeatureDefinition } from '../../../../features/interface';
+import type { PlanCardFeatureDefinition, UpsellFeature } from '../../../../features/interface';
 import { getNDomainsFeature } from '../../../../features/mail';
 import {
     PAID_MAX_PARTICIPANTS,
@@ -43,10 +43,10 @@ import {
     getMeetingMaxLength,
     getVideoMeetingsFeature,
 } from '../../../../features/meet';
-import { useSubscriptionModal } from '../../../SubscriptionModalProvider';
 import type { GetPlanUpsellArgs } from '../../../helpers/dashboard-upsells';
-import { type Upsell, type UpsellFeature, getUpsell } from '../../../helpers/dashboard-upsells';
+import { type Upsell, getUpsell } from '../../../helpers/dashboard-upsells';
 import UpsellPanelsV2 from '../../../panels/UpsellPanelsV2';
+import { useSubscriptionModal } from '../../../subscriptionModalContext';
 import { PlanIcon } from '../../PlanIcon';
 import type { UpsellSectionProps, UpsellsHook } from '../../YourPlanUpsellsSectionV2';
 import { getDashboardUpsellTitle } from '../../helpers';

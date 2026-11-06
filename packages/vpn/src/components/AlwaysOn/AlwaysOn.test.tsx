@@ -49,7 +49,7 @@ vi.mock('@proton/account/user/hooks', () => ({
     useUser: () => [{ isAdmin: true, isSelf: true }],
 }));
 
-vi.mock('@proton/components/containers/payments/subscription/SubscriptionModalProvider', () => ({
+vi.mock('@proton/components/containers/payments/subscription/subscriptionModalContext', () => ({
     useSubscriptionModalRaw: () => vi.fn(),
 }));
 

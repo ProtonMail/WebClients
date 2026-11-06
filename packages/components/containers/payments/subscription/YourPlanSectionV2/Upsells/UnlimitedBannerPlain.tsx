@@ -9,7 +9,7 @@ import { VPN_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { getSimplePriceString } from '../../../../../components/price/helper';
 import getBoldFormattedText from '../../../../../helpers/getBoldFormattedText';
 import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
-import { useSubscriptionModal } from '../../SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../subscriptionModalContext';
 import { PlanIcon } from '../PlanIcon';
 import PlanIconName from '../PlanIconName';
 import type { UpsellSectionBaseProps } from '../YourPlanUpsellsSectionV2';

@@ -16,7 +16,7 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, APPS_WITH_IN_APP_PAYMENTS, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/ref';
 
-import { useSubscriptionModal } from '../../../../containers/payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModal } from '../../../../containers/payments/subscription/subscriptionModalContext';
 import useSettingsLink from '../../../link/useSettingsLink';
 import { SpotlightWithPromo } from '../common/SpotlightWithPromo';
 import { GoUnlimitedOfferContent } from './components/GoUnlimitedOfferContent';

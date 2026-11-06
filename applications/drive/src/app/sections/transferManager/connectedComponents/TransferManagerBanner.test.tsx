@@ -14,7 +14,7 @@ import { TransferManagerBannerType } from '../transferManager.store';
 import { TransferManagerBanner } from './TransferManagerBanner';
 
 jest.mock('@proton/components/hooks/useDashboardPaymentFlow', () => () => 'upsell');
-jest.mock('@proton/components/containers/payments/subscription/SubscriptionModalProvider', () => ({
+jest.mock('@proton/components/containers/payments/subscription/subscriptionModalContext', () => ({
     useSubscriptionModalRaw: () => jest.fn(),
 }));
 

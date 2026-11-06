@@ -17,7 +17,7 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
 import GenericError from '@proton/components/containers/error/GenericError';
 import SubSettingsSection from '@proton/components/containers/layout/SubSettingsSection';
-import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';

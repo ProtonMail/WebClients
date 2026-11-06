@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import MemberUsageColumnPrompt from './MemberUsageColumnPrompt';
 
 const openSubscriptionModal = jest.fn();
-jest.mock('../../payments/subscription/SubscriptionModalProvider', () => ({
+jest.mock('../../payments/subscription/subscriptionModalContext', () => ({
     useSubscriptionModal: () => [openSubscriptionModal, false],
 }));
 
