@@ -60,6 +60,7 @@
         "./core/payment-methods/helpers": "./core/payment-methods/helpers.ts",
         "./core/payment-methods/methodCurrencies": "./core/payment-methods/methodCurrencies.ts",
         "./core/payment-methods/paymentMethodAvailability": "./core/payment-methods/paymentMethodAvailability.ts",
+        "./core/payment-methods/registry": "./core/payment-methods/registry.ts",
         "./core/payment-processors/chargebeeCardPayment": "./core/payment-processors/chargebeeCardPayment.ts",
         "./core/payment-processors/chargebeePaypalPayment": "./core/payment-processors/chargebeePaypalPayment.ts",
         "./core/payment-processors/interface": "./core/payment-processors/interface.ts",

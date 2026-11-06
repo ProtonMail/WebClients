@@ -23,9 +23,8 @@ import type {
     SavedPaymentMethod,
 } from '@proton/payments/core/interface';
 import type { PaymentMethodFlags } from '@proton/payments/core/payment-methods/paymentMethodAvailability';
-import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
+import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
-import { isExistingPaymentMethod } from '@proton/payments/core/type-guards';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -38,6 +37,7 @@ import { useApplePay as useApplePayLegacy } from '../payment-processors/useApple
 import { type ChargebeePaypalModalHandles, useChargebeePaypal } from '../payment-processors/useChargebeePaypal';
 import { type GooglePayModalHandles, useGooglePay } from '../payment-processors/useGooglePay';
 import { useGooglePay as useGooglePayLegacy } from '../payment-processors/useGooglePayLegacy';
+import { resetPaymentProcessors, selectPaymentProcessor } from './paymentProcessorSelection';
 import useBitcoin from './useBitcoin';
 import { useChargebeeCard } from './useChargebeeCard';
 import { type ChargebeeIdealModalHandles, useChargebeeIdeal } from './useChargebeeIdeal';
@@ -570,73 +570,23 @@ export const usePaymentFacade = (
         }
     );
 
-    const paymentMethodType: PlainPaymentMethodType | undefined = methods.selectedMethod?.type;
-    const selectedProcessor = useMemo(() => {
-        if (isExistingPaymentMethod(paymentMethodValue)) {
-            if (
-                paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD ||
-                paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL ||
-                paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL ||
-                paymentMethodType === PAYMENT_METHOD_TYPES.APPLE_PAY ||
-                paymentMethodType === PAYMENT_METHOD_TYPES.GOOGLE_PAY ||
-                paymentMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-            ) {
-                return savedChargebeeMethod;
-            }
-        }
+    const newMethodProcessors = {
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]: chargebeeCard,
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: chargebeePaypal,
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL]: chargebeeIdeal,
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN]: bitcoinChargebee,
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: directDebit,
+        [PAYMENT_METHOD_TYPES.APPLE_PAY]: applePay,
+        [PAYMENT_METHOD_TYPES.GOOGLE_PAY]: googlePay,
+        [PAYMENT_METHOD_TYPES.CASH]: undefined,
+        [PAYMENT_METHOD_TYPES.TOKEN]: undefined,
+    } satisfies Record<PlainPaymentMethodType, PaymentProcessorHook | undefined>;
 
-        if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
-            return chargebeeCard;
-        }
-
-        if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
-            return chargebeePaypal;
-        }
-
-        if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN) {
-            return bitcoinChargebee;
-        }
-
-        if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT) {
-            return directDebit;
-        }
-
-        if (paymentMethodValue === PAYMENT_METHOD_TYPES.APPLE_PAY) {
-            return applePay;
-        }
-
-        if (paymentMethodValue === PAYMENT_METHOD_TYPES.GOOGLE_PAY) {
-            return googlePay;
-        }
-
-        if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL) {
-            return chargebeeIdeal;
-        }
-    }, [
-        paymentMethodValue,
-        paymentMethodType,
-        savedChargebeeMethod,
-        chargebeeCard,
-        chargebeePaypal,
-        chargebeeIdeal,
-        applePay,
-        googlePay,
-    ]);
+    const selectedProcessor = selectPaymentProcessor(methods.selectedMethod, savedChargebeeMethod, newMethodProcessors);
 
     const initialized = !methods.loading;
 
-    const reset = () => {
-        [
-            savedChargebeeMethod,
-            chargebeeCard,
-            chargebeePaypal,
-            chargebeeIdeal,
-            bitcoinChargebee,
-            directDebit,
-            applePay,
-            googlePay,
-        ].forEach((paymentProcessor) => paymentProcessor.reset());
-    };
+    const reset = () => resetPaymentProcessors(savedChargebeeMethod, newMethodProcessors);
 
     return {
         methods,
