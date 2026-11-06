@@ -17,7 +17,11 @@ const javaScriptGlobs = ['**/*.js', '**/*.jsx', '**/*.mjs', '**/*.cjs'];
  */
 export const base = defineConfig({
     plugins: ['typescript', 'import'],
-    jsPlugins: ['@proton/oxlint-config/plugin', '@proton/oxlint-config/custom-rules', 'eslint-plugin-compat'],
+    jsPlugins: [
+        '@proton/oxlint-config/plugin',
+        '@proton/oxlint-config/custom-rules',
+        { name: 'compat', specifier: '@proton/oxlint-config/compat' },
+    ],
     categories: { correctness: 'off' },
     options: { typeAware: true },
     env: { builtin: true, browser: true },

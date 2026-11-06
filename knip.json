@@ -28,7 +28,7 @@
     "ignoreWorkspaces": ["packages/wasm/andromeda"],
     "workspaces": {
         ".": {
-            "entry": ["ci/bin/update-chargebee-iframe/oxlint.config.mts"],
+            "entry": [],
             "project": [],
             "ignoreDependencies": [
                 "turbo",
@@ -470,6 +470,10 @@
         "packages/polyfill": {
             "entry": [],
             "project": ["**/*.{js,ts,tsx}"]
+        },
+        "packages/oxfmt-config": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/prettier-config": {
             "entry": [],
