@@ -10653,9 +10653,18 @@ importers:
 
   tests/mail-composer:
     dependencies:
+      '@proton/app-context':
+        specifier: workspace:^
+        version: link:../../packages/app-context
+      '@proton/calendar':
+        specifier: workspace:^
+        version: link:../../packages/calendar
       '@proton/components':
         specifier: workspace:^
         version: link:../../packages/components
+      '@proton/llm':
+        specifier: workspace:^
+        version: link:../../packages/llm
       '@proton/mail-composer':
         specifier: workspace:^
         version: link:../../packages/mail-composer
@@ -10665,6 +10674,21 @@ importers:
       '@proton/mail-renderer':
         specifier: workspace:^
         version: link:../../packages/mail-renderer
+      '@proton/payments-ui':
+        specifier: workspace:^
+        version: link:../../packages/payments-ui
+      '@proton/react-redux-store':
+        specifier: workspace:^
+        version: link:../../packages/react-redux-store
+      '@proton/redux-shared-store':
+        specifier: workspace:^
+        version: link:../../packages/redux-shared-store
+      '@proton/redux-shared-store-types':
+        specifier: workspace:^
+        version: link:../../packages/redux-shared-store-types
+      '@proton/redux-utilities':
+        specifier: workspace:^
+        version: link:../../packages/redux-utilities
       '@proton/shared':
         specifier: workspace:^
         version: link:../../packages/shared
@@ -10674,6 +10698,12 @@ importers:
       '@proton/utils':
         specifier: workspace:^
         version: link:../../packages/utils
+      '@reduxjs/toolkit':
+        specifier: 'catalog:'
+        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+      '@unleash/proxy-client-react':
+        specifier: ^5.1.0
+        version: 5.1.0(unleash-proxy-client@3.8.0)
       diff-dom:
         specifier: ^5.2.1
         version: 5.2.1
