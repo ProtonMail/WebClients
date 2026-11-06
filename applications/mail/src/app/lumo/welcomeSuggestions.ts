@@ -4,7 +4,7 @@ import { IcBroom } from '@proton/icons/icons/IcBroom';
 import { IcClockPaperPlane } from '@proton/icons/icons/IcClockPaperPlane';
 import { IcInbox } from '@proton/icons/icons/IcInbox';
 import { IcLightbulb } from '@proton/icons/icons/IcLightbulb';
-import type { WelcomeSuggestionCard } from '@proton/lumo-ui/WelcomeSuggestions';
+import type { WelcomeSuggestionCard } from '@proton/lumo-ui/shared-components/WelcomeSuggestions/WelcomeSuggestions';
 
 export const WELCOME_SUGGESTIONS: WelcomeSuggestionCard[] = [
     {

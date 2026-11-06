@@ -6,7 +6,7 @@ import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ActionRequest, ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { CardBodyProps, CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
-import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
+import sentenceValue from '@proton/lumo-ui/shared-components/sentenceValue/sentenceValue';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
 import { prepareForSaving } from '@proton/shared/lib/contacts/surgery';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';

@@ -1,7 +1,7 @@
 import { Href } from '@proton/atoms/Href/Href';
 
-import Disclosure from './primitives/Disclosure';
-import type { IconComponent } from './types';
+import type { IconComponent } from '../../types/IconComponent';
+import Disclosure from '../Disclosure/Disclosure';
 
 export interface ServerToolSource {
     url: string;

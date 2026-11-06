@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import type { ActionRequest, ReferenceLabels } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
-import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
+import sentenceValue from '@proton/lumo-ui/shared-components/sentenceValue/sentenceValue';
 
 import { recipientList } from './cardHelpers';
 

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import { IcPencil } from '@proton/icons/icons/IcPencil';
-import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
+import sentenceValue from '@proton/lumo-ui/shared-components/sentenceValue/sentenceValue';
 
 import type { ActionRequest } from '../contracts/types';
 import ResultTile from './ResultTile';

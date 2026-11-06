@@ -5,9 +5,9 @@ import { c, msgid } from 'ttag';
 
 import type { ActionRequest, ReferenceLabel, ReferenceLabels } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { CardBodyProps } from '@proton/llm/lib/lumoAgent/ui/types';
-import MoveItemsCard from '@proton/lumo-ui/confirmCards/MoveItemsCard';
-import type { CheckListItem } from '@proton/lumo-ui/primitives/ItemCheckList';
-import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
+import type { CheckListItem } from '@proton/lumo-ui/shared-components/ItemCheckList/ItemCheckList';
+import MoveItemsCard from '@proton/lumo-ui/shared-components/MoveItemsCard/MoveItemsCard';
+import sentenceValue from '@proton/lumo-ui/shared-components/sentenceValue/sentenceValue';
 import { formatSimpleDate } from '@proton/mail-message/helpers/date';
 
 export const referenceName = (reference: unknown, labels: ReferenceLabels): string => {

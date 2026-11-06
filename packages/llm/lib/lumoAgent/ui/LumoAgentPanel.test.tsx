@@ -4,7 +4,7 @@ import type { RenderResult } from '@testing-library/react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { IcPencil } from '@proton/icons/icons/IcPencil';
-import ItemCheckList from '@proton/lumo-ui/primitives/ItemCheckList';
+import ItemCheckList from '@proton/lumo-ui/shared-components/ItemCheckList/ItemCheckList';
 
 import type { ActionRequest } from '../contracts/types';
 import LumoAgentPanel from './LumoAgentPanel';

@@ -6,7 +6,7 @@ import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ActionRequest, ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import DateTimeBody from '@proton/llm/lib/lumoAgent/ui/cardBodies/DateTimeBody';
 import type { CardBodyProps, CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
-import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
+import sentenceValue from '@proton/lumo-ui/shared-components/sentenceValue/sentenceValue';
 import { formatDateToHuman } from '@proton/mail-message/helpers/date';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { isValidDate } from '@proton/shared/lib/date/date';

@@ -1,5 +1,5 @@
-import ItemCheckList from '../primitives/ItemCheckList';
-import type { CheckListItem } from '../primitives/ItemCheckList';
+import ItemCheckList from '../ItemCheckList/ItemCheckList';
+import type { CheckListItem } from '../ItemCheckList/ItemCheckList';
 
 interface Props {
     /** The items an action can apply to (e.g. emails to move), by stable id + human label. */

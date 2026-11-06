@@ -1,7 +1,7 @@
 import LumoAgentPanel from './LumoAgentPanel';
 import { useLumoAgentDrawer } from './lumoAgentDrawerContext';
 
-import '@proton/lumo-ui/lumo-ui.scss';
+import '@proton/lumo-ui/styles/lumo-ui.scss';
 
 import './lumoAgent.scss';
 
