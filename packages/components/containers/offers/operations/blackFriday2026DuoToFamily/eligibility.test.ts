@@ -1,3 +1,5 @@
+import { getUnixTime, subHours } from 'date-fns';
+
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
 
@@ -15,6 +17,7 @@ import {
     passAppConfig,
     setPathname,
 } from '../blackFriday2026.test.helpers';
+import { BLACK_FRIDAY_2026_MIN_AGE_HOURS } from '../blackFriday2026MinimumAge';
 import { configuration } from './configuration';
 import { getIsEligible } from './eligibility';
 
@@ -129,6 +132,24 @@ describe('blackFriday2026DuoToFamily eligibility', () => {
 
         it('should not be eligible when the user cannot pay', () => {
             expect(getIsEligible({ ...baseProps, user: { ...paidUser, canPay: false }, subscription })).toBe(false);
+        });
+
+        it('should not be eligible when the subscription is younger than the minimum age', () => {
+            const subscription = buildSubscription({
+                plan: PLANS.DUO,
+                createTime: getUnixTime(subHours(new Date(), BLACK_FRIDAY_2026_MIN_AGE_HOURS - 1)),
+            });
+
+            expect(getIsEligible({ ...baseProps, subscription })).toBe(false);
+        });
+
+        it('should be eligible once the subscription reaches the minimum age', () => {
+            const subscription = buildSubscription({
+                plan: PLANS.DUO,
+                createTime: getUnixTime(subHours(new Date(), BLACK_FRIDAY_2026_MIN_AGE_HOURS)),
+            });
+
+            expect(getIsEligible({ ...baseProps, subscription })).toBe(true);
         });
 
         it('should not be eligible with an ineligible currency', () => {

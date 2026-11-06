@@ -3,6 +3,7 @@ import { isCampaignApp } from '../../helpers/isCampaignApp';
 import { isEligibleCurrency } from '../../helpers/isEligibleCurrency';
 import isSubscriptionCheckAllowed from '../../helpers/isSubscriptionCheckAllowed';
 import OfferSubscription from '../../helpers/offerSubscription';
+import { isSubscriptionOldEnoughForBlackFriday2026 } from '../blackFriday2026MinimumAge';
 import type { BlackFriday2026EligibilityArgs } from '../useBlackFriday2026Offer';
 
 // Targets paid single-product users (Mail Plus, Drive Plus, VPN Plus or Pass Plus), offering Unlimited
@@ -23,6 +24,10 @@ export function getIsEligible({
         hasIntentionalScheduledModification(subscription) ||
         !isSubscriptionCheckAllowed(subscription, offerConfig)
     ) {
+        return false;
+    }
+
+    if (!isSubscriptionOldEnoughForBlackFriday2026(subscription)) {
         return false;
     }
 

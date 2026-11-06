@@ -3,6 +3,7 @@ import { isCampaignApp } from '../../helpers/isCampaignApp';
 import { isEligibleCurrency } from '../../helpers/isEligibleCurrency';
 import isSubscriptionCheckAllowed from '../../helpers/isSubscriptionCheckAllowed';
 import OfferSubscription from '../../helpers/offerSubscription';
+import { isSubscriptionOldEnoughForBlackFriday2026 } from '../blackFriday2026MinimumAge';
 import type { BlackFriday2026EligibilityArgs } from '../useBlackFriday2026Offer';
 
 // Targets Duo users on any cycle, offering Family 12M. Duo is an account-level plan, so the audience
@@ -16,6 +17,10 @@ export function getIsEligible({
     preferredCurrency,
 }: BlackFriday2026EligibilityArgs) {
     if (user.isDelinquent || !user.canPay || !subscription || hasIntentionalScheduledModification(subscription)) {
+        return false;
+    }
+
+    if (!isSubscriptionOldEnoughForBlackFriday2026(subscription)) {
         return false;
     }
 
