@@ -64,7 +64,7 @@ const result = async (opts: WebpackEnvArguments): Promise<webpack.Configuration>
     if (webpackOptions.appMode === 'standalone') {
         config.entry = {
             pre,
-            ['private-index']: [path.resolve('./src/app/private.tsx'), getSupportedEntry()],
+            ['private-index']: [path.resolve('./src/app/private-app/index.tsx'), getSupportedEntry()],
             unsupported,
         };
 
@@ -88,9 +88,9 @@ const result = async (opts: WebpackEnvArguments): Promise<webpack.Configuration>
 
     config.entry = {
         pre,
-        ['private-index']: [path.resolve('./src/app/private.tsx'), getSupportedEntry()],
-        ['public-index']: [path.resolve('./src/app/public.tsx'), getSupportedEntry()],
-        ['lite-index']: [path.resolve('./src/lite/index.tsx'), getSupportedEntry()],
+        ['private-index']: [path.resolve('./src/app/private-app/index.tsx'), getSupportedEntry()],
+        ['public-index']: [path.resolve('./src/app/public-app/index.tsx'), getSupportedEntry()],
+        ['lite-index']: [path.resolve('./src/app/lite-app/index.tsx'), getSupportedEntry()],
         storage: path.resolve('./src/app/hostStorage.ts'),
         unsupported,
     };

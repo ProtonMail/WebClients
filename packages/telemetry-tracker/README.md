@@ -3,7 +3,7 @@
 One tracker, reachable from anywhere, with type-safe event definitions owned by each consumer. No hook per measurement group.
 
 - Entry points: `/lib/defineEvent`, `/lib/dimensions` and `/lib/timers` (define events and timers), `/lib/tracker` (`initTracker`, `tracker`), `/testing`. No barrels.
-- Initialised once in the app bootstrap: `initTracker({ api })` (account: `applications/account/src/app/content/bootstrap.ts`).
+- Initialised once in the app bootstrap: `initTracker({ api })` (account: `applications/account/src/app/private-app/bootstrap.ts`).
 - Sending, batching, random delay and the user opt-out are delegated to `sendTelemetryReport` (`@proton/shared/lib/helpers/metrics`). No feature flag logic here.
 - Used before `initTracker`: throws outside of production, reports once to Sentry and no-ops in production.
 

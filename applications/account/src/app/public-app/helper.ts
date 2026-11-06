@@ -1,0 +1,240 @@
+import type { ReactNode } from 'react';
+
+import { c } from 'ttag';
+
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import {
+    getIsCalendarApp,
+    getIsDocsApp,
+    getIsDriveApp,
+    getIsLumoApp,
+    getIsMailApp,
+    getIsMeetApp,
+    getIsPassApp,
+    getIsSpacesApp,
+    getIsVPNApp,
+    getIsWalletApp,
+} from '@proton/shared/lib/authentication/apps';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, SSO_PATHS, VPN_TV_SIGNUP_REDIRECT } from '@proton/shared/lib/constants';
+import { getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
+import { localeCode } from '@proton/shared/lib/i18n';
+
+import { type ProduceForkData, SSOType } from './actions/forkInterface';
+import { getLocalePathPrefix } from './hooks/useLocationWithoutLocale';
+import type { LocalRedirect } from './localRedirect';
+import { getLocaleMapping } from './localePrefix';
+
+const getLoginUrl = (localePath: string, app: APP_NAMES | undefined) => {
+    const { path } = (() => {
+        if (getIsMailApp(app)) {
+            return { path: SSO_PATHS.MAIL_SIGN_IN };
+        }
+        if (getIsCalendarApp(app)) {
+            return { path: SSO_PATHS.CALENDAR_SIGN_IN };
+        }
+        if (getIsDriveApp(app)) {
+            return { path: SSO_PATHS.DRIVE_SIGN_IN };
+        }
+        if (getIsDocsApp(app)) {
+            return { path: SSO_PATHS.DOCS_SIGN_IN };
+        }
+        if (getIsPassApp(app)) {
+            return { path: SSO_PATHS.PASS_SIGN_IN };
+        }
+        if (getIsVPNApp(app)) {
+            return { path: SSO_PATHS.VPN_SIGN_IN };
+        }
+        if (getIsWalletApp(app)) {
+            return { path: SSO_PATHS.WALLET_SIGN_IN };
+        }
+        if (getIsLumoApp(app)) {
+            return { path: SSO_PATHS.LUMO_SIGN_IN };
+        }
+        if (getIsMeetApp(app)) {
+            return { path: SSO_PATHS.MEET_SIGN_IN };
+        }
+        if (getIsSpacesApp(app)) {
+            return { path: SSO_PATHS.SPACES_SIGN_IN };
+        }
+
+        return { path: SSO_PATHS.LOGIN };
+    })();
+    return `${localePath}${path}`;
+};
+
+const getReauthUrl = (localePath: string) => {
+    return `${localePath}${SSO_PATHS.REAUTH}`;
+};
+
+const getAppSwitcherUrl = (localePath: string) => {
+    return `${localePath}${SSO_PATHS.APP_SWITCHER}`;
+};
+
+const getSignupUrl = (
+    localePath: string,
+    forkState: ProduceForkData | undefined | null,
+    app: APP_NAMES | undefined,
+    productParam: ProductParam,
+    searchParams: URLSearchParams
+) => {
+    const { path, params } = (() => {
+        if (forkState?.type === SSOType.OAuth) {
+            return { path: SSO_PATHS.SIGNUP, params: {} };
+        }
+
+        let params: { [key: string]: string | null } = {};
+
+        for (const key of ['plan', 'cycle', 'currency', 'mode']) {
+            params[key] = searchParams.get(key);
+        }
+
+        if (forkState?.type === SSOType.Proton) {
+            params = forkState.payload.forkParameters.plan ? { plan: forkState.payload.forkParameters.plan } : {};
+        }
+
+        if (getIsMailApp(app)) {
+            return { path: SSO_PATHS.MAIL_SIGNUP, params };
+        }
+        if (getIsCalendarApp(app)) {
+            return { path: SSO_PATHS.CALENDAR_SIGNUP, params };
+        }
+        if (getIsDriveApp(app)) {
+            return { path: SSO_PATHS.DRIVE_SIGNUP, params };
+        }
+        if (getIsDocsApp(app)) {
+            return { path: SSO_PATHS.DOCS_SIGNUP, params };
+        }
+        if (getIsPassApp(app)) {
+            return { path: SSO_PATHS.PASS_SIGNUP, params };
+        }
+        if (getIsVPNApp(app)) {
+            return { path: SSO_PATHS.VPN_SIGNUP, params };
+        }
+        if (getIsWalletApp(app)) {
+            return { path: SSO_PATHS.WALLET_SIGNUP, params };
+        }
+        if (getIsLumoApp(app)) {
+            return { path: SSO_PATHS.LUMO_SIGNUP, params };
+        }
+        if (getIsMeetApp(app)) {
+            return { path: SSO_PATHS.MEET_SIGNUP, params };
+        }
+        if (getIsSpacesApp(app)) {
+            return { path: SSO_PATHS.SPACES_SIGNUP, params };
+        }
+
+        if (productParam === 'business') {
+            return { path: SSO_PATHS.BUSINESS_SIGNUP, params };
+        }
+        return { path: SSO_PATHS.SIGNUP, params };
+    })();
+
+    return `${localePath}${path}${stringifySearchParams(params, '?')}`;
+};
+
+/**
+ * Note: These are paths, and may contain query strings.
+ */
+export interface Paths {
+    login: string;
+    signup: string;
+    reauth: string;
+    appSwitcher: string;
+    reset: string;
+    forgotUsername: string;
+    signinHelp: string;
+    signinAnotherDevice: string;
+    tvSignup: string;
+}
+
+export const getPaths = ({
+    maybeLocalePrefix,
+    productParam,
+    app,
+    forkState,
+    searchParams,
+}: {
+    maybeLocalePrefix: string;
+    forkState: ProduceForkData | undefined | null;
+    app: APP_NAMES | undefined;
+    productParam: ProductParam;
+    searchParams: URLSearchParams;
+}): Paths => {
+    const localePrefix = maybeLocalePrefix || getLocaleMapping(localeCode);
+    const prefix = getLocalePathPrefix(localePrefix);
+    return {
+        login: getLoginUrl(prefix, app),
+        reauth: getReauthUrl(prefix),
+        appSwitcher: getAppSwitcherUrl(prefix),
+        signup: getSignupUrl(prefix, forkState, app, productParam, searchParams),
+        forgotUsername: `${prefix}${SSO_PATHS.FORGOT_USERNAME}`,
+        reset: `${prefix}${SSO_PATHS.RESET_PASSWORD}`,
+        signinHelp: `${prefix}${SSO_PATHS.SIGNIN_HELP}`,
+        signinAnotherDevice: `${prefix}${SSO_PATHS.SIGN_IN_WITH_ANOTHER_DEVICE}`,
+        tvSignup: `${VPN_TV_SIGNUP_REDIRECT}`,
+    };
+};
+
+export const getLocaleTermsURL = (app: APP_NAMES | undefined) => {
+    return getTermsURL(app, getLocaleMapping(localeCode));
+};
+
+export const UNAUTHENTICATED_ROUTES = {
+    UNSUBSCRIBE: '/unsubscribe',
+    VERIFY_EMAIL: '/verify-email',
+    REMOVE_EMAIL: '/remove-email',
+    DISABLE_ACCOUNT: '/disable-account',
+    EMAIL_FORWARDING: '/email-forwarding',
+    GROUP_INVITE: '/groups',
+    CLOSE_TICKET: '/close-ticket',
+    TRIAL_ENDED: '/trial-ended',
+    MSP_SETTING_UP_ACCESS: '/msp/setting-up-access',
+};
+
+export const getPreAppIntent = ({
+    forkState,
+    localRedirect: maybeLocalRedirect,
+    queryAppIntent: maybeQueryAppIntent,
+}: {
+    localRedirect: LocalRedirect | undefined;
+    forkState: ProduceForkData | undefined | null;
+    queryAppIntent: APP_NAMES | undefined;
+}) => {
+    return (
+        (forkState?.type === SSOType.Proton && forkState.payload.forkParameters.app) ||
+        maybeLocalRedirect?.toApp ||
+        maybeQueryAppIntent
+    );
+};
+
+export const getEmailVerificationCodeText = (emailAddress: ReactNode) => {
+    return c('Info')
+        .jt`An email with a verification code was just sent to ${emailAddress}. If you can’t find the message in your inbox, please check your spam folder.`;
+};
+
+export const getSMSVerificationCodeText = (phoneNumber: ReactNode) => {
+    return c('Info').jt`An SMS with a verification code was just sent to ${phoneNumber}.`;
+};
+
+export const getResendSMSVerificationCodeText = (phoneNumber: ReactNode) => {
+    return c('Info')
+        .jt`${BRAND_NAME} will send a verification code to ${phoneNumber}. Standard message rates may apply.`;
+};
+
+/**
+ * Get the correct settings href for each app
+ * Pass has its own settings page, other apps use the account settings
+ */
+export const getSettingsHref = (appName: APP_NAMES, localID?: number): string => {
+    if (appName === APPS.PROTONPASS) {
+        return getAppHref('/settings', APPS.PROTONPASS, localID);
+    }
+    return getAppHref(`/${getSlugFromApp(appName)}`, APPS.PROTONACCOUNT, localID);
+};
+
+export const getContinueToString = (product: string) => {
+    return c('Info').t`To continue to ${product}`;
+};

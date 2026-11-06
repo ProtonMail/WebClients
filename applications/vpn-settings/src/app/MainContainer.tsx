@@ -3,15 +3,15 @@ import { useEffect, useState } from 'react';
 import { Route } from 'react-router';
 import { Redirect, Switch, useLocation } from 'react-router-dom';
 
-import RecoverySettingsRouter from 'proton-account/src/app/containers/account/recovery/RecoverySettingsRouter';
-import OrganizationSettingsRouter from 'proton-account/src/app/containers/organization/OrganizationSettingsRouter';
-import { getOrganizationAppRoutes } from 'proton-account/src/app/containers/organization/routes';
-import { AutocompleteSettingsSearch } from 'proton-account/src/app/content/SettingsSearch';
+import { AutocompleteSettingsSearch } from 'proton-account/src/app/private-app/SettingsSearch';
+import RecoverySettingsRouter from 'proton-account/src/app/private-app/containers/account/recovery/RecoverySettingsRouter';
+import OrganizationSettingsRouter from 'proton-account/src/app/private-app/containers/organization/OrganizationSettingsRouter';
+import { getOrganizationAppRoutes } from 'proton-account/src/app/private-app/containers/organization/routes';
 import type {
     AccountRecoveryRouterFlags,
     Flags,
     OrganizationSettingsRouterParams,
-} from 'proton-account/src/app/content/router-params';
+} from 'proton-account/src/app/private-app/router-params';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';

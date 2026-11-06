@@ -45,10 +45,10 @@
         "applications/account": {
             "entry": [
                 "src/app/hostStorage.ts",
-                "src/app/private.tsx",
-                "src/app/public.tsx",
-                "src/lite/index.{ts,tsx}",
-                "src/app/signupCtx/flows/spaces/*",
+                "src/app/private-app/index.tsx",
+                "src/app/public-app/index.tsx",
+                "src/app/lite-app/index.{ts,tsx}",
+                "src/app/public-app/signupCtx/flows/spaces/*",
                 "src/pages/**/*.{ts,tsx}",
                 "webpack.config.{js,ts}"
             ],

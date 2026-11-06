@@ -1,0 +1,326 @@
+import type { ReactNode } from 'react';
+import { useEffect, useState } from 'react';
+import { flushSync } from 'react-dom';
+
+import { unleashReady } from '@proton/account/bootstrap';
+import { serverEvent } from '@proton/account/eventLoop';
+import { userThunk } from '@proton/account/user';
+import type { OAuthSession } from '@proton/activation/src/byoe/useOAuthRedirectFlow.helpers';
+import { readOAuthSession } from '@proton/activation/src/byoe/useOAuthRedirectFlow.helpers';
+import { useConfig } from '@proton/app-context/useConfig';
+import ApiProvider from '@proton/components/containers/api/ApiProvider';
+import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
+import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
+import ModalsChildren from '@proton/components/containers/modals/Children';
+import NotificationsChildren from '@proton/components/containers/notifications/Children';
+import useThemeQueryParameter from '@proton/components/containers/themes/useThemeQueryParameter';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import { eventLoopTimingTracker } from '@proton/metrics/eventLoopMetrics';
+import metrics from '@proton/metrics/metricsInstance';
+import type { EventLoop } from '@proton/redux-shared-store-types/eventLoop';
+import { authJwt, pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
+import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
+import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork/constants';
+import { consumeFork } from '@proton/shared/lib/authentication/fork/consume';
+import { getConsumeForkParameters } from '@proton/shared/lib/authentication/fork/getConsumeForkParameters';
+import { getLocalIDForkSearchParameter } from '@proton/shared/lib/authentication/fork/validation';
+import type { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
+import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
+import { getGenericErrorPayload } from '@proton/shared/lib/broadcast/helper';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import createEventManager from '@proton/shared/lib/eventManager/eventManager';
+import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
+import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
+import { setSentryEnabled } from '@proton/shared/lib/helpers/sentry';
+import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
+import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
+import { loadLocales as loadLocalesI18n } from '@proton/shared/lib/i18n/loadLocale';
+import { locales } from '@proton/shared/lib/i18n/locales';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
+import { telemetry } from '@proton/shared/lib/telemetry';
+import { UnleashClient } from '@proton/unleash/UnleashClient';
+import { createCustomFetch, getUnleashConfig } from '@proton/unleash/UnleashFlagProvider';
+import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
+import getRandomString from '@proton/utils/getRandomString';
+
+import { useAccountDispatch } from '../private-app/store/hooks';
+import { extendStore } from '../private-app/store/store';
+import { extraThunkArguments } from '../private-app/store/thunk';
+import broadcast, { MessageType } from './broadcast';
+import ExpiredLink from './components/ExpiredLink';
+import { SupportedActions } from './helper';
+
+const initializeTelemetry = (config: ProtonConfig, UID: string) => {
+    // Deliberately ignoring user settings as lite app uses JWT token for auth and the token does not have permissions to fetch user settings
+    // There are very few users for lite app, so the impact is very low
+    setSentryEnabled(true);
+    setMetricsEnabled(true);
+    metrics.setReportMetrics(true);
+
+    telemetry.init({
+        config,
+        uid: UID,
+        eventOptions: {
+            pageView: true,
+            click: false,
+            form: false,
+            performance: false,
+            modal: false,
+            exit: false,
+        },
+        overriddenPageTitle: 'Account',
+    });
+};
+
+interface Props {
+    onLogin: (UID: string) => void;
+    UID?: string;
+    children: ReactNode;
+    api: ApiWithListener;
+    loader: ReactNode;
+    action: SupportedActions | null;
+}
+
+const Setup = ({ api, onLogin, UID, children, loader, action }: Props) => {
+    const config = useConfig();
+    const errorHandler = useErrorHandler();
+    const dispatch = useAccountDispatch();
+
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<{ message?: string } | null>(null);
+    const [expiredLinkError, setExpiredLinkError] = useState<boolean>(false);
+
+    useThemeQueryParameter();
+
+    const searchParams = new URLSearchParams(location.search);
+
+    useEffect(() => {
+        const setupCookies = async ({ UID, RefreshToken }: { UID: string; RefreshToken: string }) => {
+            const { AccessToken: newAccessToken, RefreshToken: newRefreshToken } = await api<RefreshSessionResponse>(
+                withUIDHeaders(UID, setRefreshCookies({ RefreshToken }))
+            );
+
+            await api(
+                withAuthHeaders(
+                    UID,
+                    newAccessToken,
+                    setCookies({
+                        Persistent: false,
+                        UID,
+                        RefreshToken: newRefreshToken,
+                        State: getRandomString(24),
+                    })
+                )
+            );
+        };
+
+        const setupFork = async (selector: string) => {
+            const { UID, RefreshToken } = await api<PullForkResponse>(pullForkSession(selector));
+
+            await setupCookies({ UID, RefreshToken });
+
+            return UID;
+        };
+
+        const setupJwt = async (jwt: string) => {
+            const { UID, RefreshToken } = await api<{
+                UID: string;
+                AccessToken: string;
+                RefreshToken?: string;
+            }>(authJwt({ Token: jwt }));
+
+            if (!RefreshToken) {
+                throw new Error('Invalid JWT token');
+            }
+
+            await setupCookies({ UID, RefreshToken });
+
+            return UID;
+        };
+
+        const setupApp = async (UID: string) => {
+            api.UID = UID;
+
+            const unleashClient = new UnleashClient(getUnleashConfig({ fetch: createCustomFetch(api) }));
+
+            extendStore({ unleashClient });
+
+            const eventManager = createEventManager<EventLoop>({
+                getLatestEventID: (options) =>
+                    api<{
+                        EventID: string;
+                    }>({ ...getLatestID(), ...options }).then(({ EventID }) => EventID),
+                getEvents: ({ eventID, ...rest }) => {
+                    return api<EventLoop>({ ...getEvents(eventID), ...rest });
+                },
+                onProcessingStart: () => eventLoopTimingTracker.startV5Processing(),
+                onProcessingEnd: (hasMore) => eventLoopTimingTracker.endV5Processing(hasMore),
+            });
+
+            const setupModels = async () => {
+                const [user] = await Promise.all([dispatch(userThunk())]);
+                initializeTelemetry(config, UID);
+
+                return { user };
+            };
+
+            const loadLocales = () => {
+                const languageParams = searchParams.get('language');
+                const browserLocaleCode = getBrowserLocale();
+                const locale = languageParams || browserLocaleCode;
+                return loadLocalesI18n({ locales, locale, browserLocaleCode, userSettings: undefined });
+            };
+
+            await Promise.all([
+                setupModels(),
+                loadLocales(),
+                loadCryptoWorker({ poolSize: 1 }),
+                unleashReady({ unleashClient }),
+            ]);
+
+            extendStore({ eventManager });
+            eventManager.subscribe((event) => {
+                dispatch(serverEvent(event));
+            });
+            eventManager.start();
+
+            flushSync(() => {
+                onLogin(UID);
+                setLoading(false);
+                broadcast({ type: MessageType.LOADED });
+            });
+        };
+
+        /**
+         * Resumes the session stored before leaving for the OAuth provider. A forked session is persisted with its key
+         * password encrypted by a client key that only the API holds, so it is resumed like any persisted session.
+         * Sessions from a selector or a JWT are not persisted and have no key password: only the UID is restored.
+         */
+        const resumeOAuthSession = async ({ UID, localID }: OAuthSession) => {
+            if (localID === undefined) {
+                return UID;
+            }
+
+            const session = await resumeSession({ api, localID, options: { user: false } });
+            if (session.UID !== UID) {
+                throw new Error('Session mismatch after the OAuth redirect');
+            }
+
+            extraThunkArguments.authentication.login(session);
+            return session.UID;
+        };
+
+        const handleSetupError = (error: any) => {
+            broadcast({ type: MessageType.ERROR, payload: getGenericErrorPayload(error) });
+
+            const { code } = getApiError(error);
+            if (code === API_CUSTOM_ERROR_CODES.JWT_EXPIRED) {
+                setExpiredLinkError(true);
+            } else {
+                errorHandler(error);
+                setError({
+                    message: getNonEmptyErrorMessage(error),
+                });
+            }
+        };
+
+        const hashParams = new URLSearchParams(window.location.hash.slice(1));
+        const selector = hashParams.get(ForkSearchParameters.Selector);
+        const jwtToken = hashParams.get(ForkSearchParameters.Token);
+
+        const sessionForkParametersWithPayload = getConsumeForkParameters(hashParams);
+
+        window.location.hash = '';
+
+        if (sessionForkParametersWithPayload) {
+            consumeFork({
+                parameters: sessionForkParametersWithPayload,
+                mode: extraThunkArguments.authentication.mode,
+                api,
+            })
+                .then((result) => {
+                    extraThunkArguments.authentication.login(result.session);
+                    return setupApp(result.session.UID);
+                })
+                .catch(handleSetupError);
+            return;
+        }
+
+        if (selector) {
+            setupFork(selector)
+                .then((UID) => setupApp(UID))
+                .catch(handleSetupError);
+
+            return;
+        }
+
+        if (jwtToken) {
+            setupJwt(jwtToken)
+                .then((UID) => setupApp(UID))
+                .catch(handleSetupError);
+
+            return;
+        }
+
+        if (UID) {
+            setupApp(UID).catch(handleSetupError);
+            return;
+        }
+
+        // Only when the URL names a local ID: `Number(null)` is 0, which would pick up whatever session is saved there,
+        // e.g. the forked session when coming back from the OAuth provider
+        const localIdParam = getLocalIDForkSearchParameter(searchParams);
+        if (localIdParam !== undefined) {
+            const persistedSession = getPersistedSession(localIdParam);
+            if (persistedSession) {
+                setupApp(persistedSession.UID).catch(handleSetupError);
+                return;
+            }
+        }
+
+        // Coming back from the OAuth provider: the hash and the in-memory session are gone.
+        // Resume the session saved with the OAuth state.
+        const oauthSession = action === SupportedActions.BYOEMobile ? readOAuthSession(searchParams) : undefined;
+        if (oauthSession) {
+            resumeOAuthSession(oauthSession)
+                .then((UID) => setupApp(UID))
+                .catch(handleSetupError);
+            return;
+        }
+
+        setError({
+            message: 'No selector or JWT token found',
+        });
+        broadcast({ type: MessageType.ERROR, payload: { message: 'No selector or JWT token found' } });
+    }, []);
+
+    if (expiredLinkError) {
+        return <ExpiredLink action={action} />;
+    }
+
+    if (error) {
+        return <StandardLoadErrorPage errorMessage={error.message} />;
+    }
+
+    if (loading) {
+        return loader;
+    }
+
+    return (
+        <UnleashFlagProviderWithToolbar unleashClient={extraThunkArguments.unleashClient}>
+            <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                <ApiProvider api={extraThunkArguments.api}>
+                    <ModalsChildren />
+                    <NotificationsChildren />
+                    {children}
+                </ApiProvider>
+            </EventManagerProvider>
+        </UnleashFlagProviderWithToolbar>
+    );
+};
+
+export default Setup;

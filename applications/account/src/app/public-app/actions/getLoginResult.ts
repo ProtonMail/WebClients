@@ -1,0 +1,284 @@
+import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
+import { getToApp } from '@proton/shared/lib/authentication/apps';
+import { getOAuthSettingsUrl } from '@proton/shared/lib/authentication/fork/oauth2SettingsUrl';
+import { getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
+import { APPS, type APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
+import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
+import { joinPaths } from '@proton/shared/lib/helpers/url';
+import type { Api } from '@proton/shared/lib/interfaces/Api';
+import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys/setupAddress';
+import noop from '@proton/utils/noop';
+
+import { getAppSwitcherState } from '../appSwitcher/appSwitcherState';
+import type { AppIntent, AuthSession } from '../authSession';
+import type { Paths } from '../helper';
+import type { LocalRedirect } from '../localRedirect';
+import { type ProduceForkData, SSOType } from './forkInterface';
+import { getProduceForkLoginResult } from './getProduceForkLoginResult';
+import { getSetupAddressLoginResult } from './getSetupAddressLoginResult';
+import type { LoginResult } from './interface';
+
+const getDefaultPath = (toApp: APP_NAMES) => {
+    if (toApp === APPS.PROTONMAIL) {
+        return '/inbox';
+    }
+    return '/';
+};
+
+const addSignupSearchParams = (searchParams: URLSearchParams, { appIntent }: { appIntent?: AppIntent }) => {
+    searchParams.append('welcome', 'true');
+    if (appIntent?.ref !== undefined) {
+        searchParams.append('ref', appIntent.ref);
+    }
+};
+
+const getLocalRedirectWithApp = ({
+    localRedirect: maybeLocalRedirect,
+    session,
+    toApp,
+}: {
+    localRedirect?: LocalRedirect;
+    session: AuthSession;
+    toApp: APP_NAMES;
+}): LocalRedirect | undefined => {
+    if (maybeLocalRedirect?.toApp) {
+        return maybeLocalRedirect;
+    }
+
+    if (maybeLocalRedirect) {
+        return {
+            ...maybeLocalRedirect,
+            location: {
+                ...maybeLocalRedirect.location,
+                pathname: joinPaths(getSlugFromApp(toApp), maybeLocalRedirect.location.pathname),
+            },
+            toApp: toApp,
+        };
+    }
+
+    // Handle special case going for internal vpn on account settings.
+    if (toApp === APPS.PROTONVPN_SETTINGS) {
+        const url = new URL(session.flow === 'signup' ? '/vpn-apps?prompt=true' : '/', window.location.origin);
+        return {
+            location: {
+                pathname: joinPaths(getSlugFromApp(toApp), url.pathname),
+                hash: url.hash,
+                search: url.search,
+            },
+            toApp: toApp,
+        };
+    }
+};
+
+const getUrlFromLocation = ({
+    location,
+    toApp,
+    context,
+    localID,
+}: {
+    location: LocalRedirect['location'];
+    toApp: APP_NAMES;
+    context: LocalRedirect['context'];
+    localID: number;
+}) => {
+    const url = new URL(getAppHref(location.pathname, toApp, context === 'public' ? undefined : localID));
+    url.search = location.search;
+    url.hash = location.hash;
+    return url;
+};
+
+const getRedirectUrl = ({
+    localRedirect: maybeLocalRedirect,
+    session,
+    initialSearchParams,
+    toApp,
+}: {
+    localRedirect?: LocalRedirect;
+    session: AuthSession;
+    initialSearchParams: URLSearchParams;
+    toApp: APP_NAMES;
+}) => {
+    const localID = session.data.localID;
+
+    const localRedirect = getLocalRedirectWithApp({ localRedirect: maybeLocalRedirect, session, toApp });
+    if (localRedirect) {
+        return getUrlFromLocation({
+            location: localRedirect.location,
+            toApp: APPS.PROTONACCOUNT,
+            context: localRedirect.context,
+            localID,
+        });
+    }
+
+    const returnUrl = getReturnUrl(initialSearchParams);
+    if (returnUrl) {
+        return getUrlFromLocation({ location: returnUrl.location, toApp, context: returnUrl.context, localID });
+    }
+
+    const path = getDefaultPath(toApp);
+    const url = new URL(getAppHref(path, toApp, localID));
+    if (session.flow === 'signup') {
+        addSignupSearchParams(url.searchParams, { appIntent: session.appIntent });
+    }
+
+    return url;
+};
+
+const goToAppSwitcher = async ({
+    session,
+    api,
+    paths,
+}: {
+    session: AuthSession;
+    api: Api;
+    paths: Paths;
+}): Promise<LoginResult> => {
+    const uidApi = getUIDApi(session.data.UID, api);
+    return {
+        type: 'app-switcher',
+        location: paths.appSwitcher,
+        payload: await getAppSwitcherState({ session, api: uidApi }),
+    };
+};
+
+export const getLoginResult = async ({
+    api,
+    session,
+    forkState,
+    localRedirect: maybeLocalRedirect,
+    initialSearchParams,
+    preAppIntent: maybePreAppIntent,
+    paths,
+}: {
+    api: Api;
+    session: AuthSession;
+    forkState?: ProduceForkData | null;
+    localRedirect?: LocalRedirect;
+    initialSearchParams: URLSearchParams;
+    preAppIntent?: APP_NAMES;
+    paths: Paths;
+}): Promise<LoginResult> => {
+    const {
+        loginPassword,
+        data: { User: user, clientKey, persistedSession },
+        appIntent,
+    } = session;
+
+    invokeInboxDesktopIPC({ type: 'userLogin' }).catch(noop);
+
+    const maybeToApp = appIntent?.app || maybePreAppIntent;
+
+    // In any forking scenario, ignore the app switcher
+    if (!maybeToApp && !forkState) {
+        // Skip app switcher when accessing generic settings
+        if (maybeLocalRedirect) {
+            const url = getUrlFromLocation({
+                location: maybeLocalRedirect.location,
+                toApp: APPS.PROTONACCOUNT,
+                context: maybeLocalRedirect.context,
+                localID: session.data.localID,
+            });
+
+            return {
+                type: 'done',
+                payload: {
+                    session,
+                    url,
+                },
+            };
+        }
+        return goToAppSwitcher({ session, api, paths });
+    }
+
+    const toApp = getToApp(maybeToApp, user);
+    // OAuth sessions are only allowed for the VPN browser extension at the moment. Go to the restricted settings view.
+    if (persistedSession.source === SessionSource.Oauth && toApp !== APPS.PROTONVPNBROWSEREXTENSION) {
+        const url = getOAuthSettingsUrl(session.data.localID);
+        return {
+            type: 'done',
+            payload: {
+                session,
+                url,
+            },
+        };
+    }
+
+    // Msp sessions are only allowed for account.
+    if (persistedSession.source === SessionSource.Msp) {
+        const url = new URL(getAppHref(`/${getSlugFromApp(toApp)}`, APPS.PROTONACCOUNT, session.data.localID));
+        return {
+            type: 'done',
+            payload: {
+                session,
+                url,
+            },
+        };
+    }
+
+    if (
+        getRequiresAddressSetup(toApp, user) &&
+        !maybeLocalRedirect?.location.pathname.includes(SETUP_ADDRESS_PATH) &&
+        maybeLocalRedirect?.context !== 'public'
+    ) {
+        const blob =
+            loginPassword && clientKey ? await getEncryptedSetupBlob(clientKey, loginPassword).catch(noop) : undefined;
+        return getSetupAddressLoginResult({ app: toApp, session, blob });
+    }
+
+    if (forkState?.type === SSOType.OAuth && !appIntent?.app) {
+        return getProduceForkLoginResult({
+            data: {
+                type: SSOType.OAuth,
+                payload: { oauthData: forkState.payload.oauthData },
+            },
+            session,
+            api,
+            paths,
+        });
+    }
+
+    if (
+        forkState?.type === SSOType.Proton &&
+        // If there is an app-intent, the app from the intent has priority over the app from the fork state.
+        // This may be different if a product is disabled in producing a fork, and then another product
+        // is selected. In those cases, the fork state should be ignored. However, the fork state shouldn't be completely
+        // reset as another user might get picked at some point.
+        (!appIntent?.app || appIntent.app === forkState.payload.forkParameters.app)
+    ) {
+        const searchParameters = new URLSearchParams();
+        if (session.flow === 'signup') {
+            addSignupSearchParams(searchParameters, { appIntent });
+        }
+        return getProduceForkLoginResult({
+            data: {
+                type: SSOType.Proton,
+                payload: {
+                    searchParameters,
+                    forkParameters: forkState.payload.forkParameters,
+                    desktopForkParameters: forkState.payload.desktopForkParameters,
+                },
+            },
+            session,
+            api,
+            paths,
+        });
+    }
+
+    const url = getRedirectUrl({
+        localRedirect: maybeLocalRedirect,
+        session,
+        initialSearchParams,
+        toApp,
+    });
+
+    return {
+        type: 'done',
+        payload: {
+            session,
+            url,
+        },
+    };
+};
