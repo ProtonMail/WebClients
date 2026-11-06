@@ -11,6 +11,7 @@ import {
     getPlanInclusionLimit,
     getTransferOrder,
     isSyntheticFeatureLimitKey,
+    planOffersAddonAtSignup,
 } from './addons';
 import type { AddonTransferStrategy } from './interfaces';
 
@@ -258,5 +259,22 @@ describe('getPlanInclusionLimit', () => {
         expect(getPlanInclusionLimit(PLANS.MAIL, 'MaxIPs')).toBeNull();
         expect(getPlanInclusionLimit(PLANS.VPN_BUSINESS, 'MaxMembers')).toBeNull();
         expect(getPlanInclusionLimit(PLANS.FREE, 'MaxIPs')).toBeNull();
+    });
+});
+
+describe('planOffersAddonAtSignup', () => {
+    it('follows the plans each addon is sold for', () => {
+        // mailpro2022 sells no domain addon; bundlepro2024 does sell VPN servers.
+        expect(planOffersAddonAtSignup(PLANS.MAIL_PRO, ADDON_PREFIXES.DOMAIN)).toBe(false);
+        expect(planOffersAddonAtSignup(PLANS.BUNDLE_PRO_2024, ADDON_PREFIXES.DOMAIN)).toBe(true);
+        expect(planOffersAddonAtSignup(PLANS.BUNDLE_PRO_2024, ADDON_PREFIXES.IP)).toBe(true);
+        expect(planOffersAddonAtSignup(PLANS.PASS_BUSINESS, ADDON_PREFIXES.MSP)).toBe(true);
+        expect(planOffersAddonAtSignup(PLANS.PASS_PRO, ADDON_PREFIXES.MSP)).toBe(false);
+    });
+
+    it("applies the addon's visibility rules at signup", () => {
+        // vpnbiz2023 has a domain addon, but domainVpnBusinessGate hides it at signup.
+        expect(planOffersAddonAtSignup(PLANS.VPN_BUSINESS, ADDON_PREFIXES.DOMAIN)).toBe(false);
+        expect(planOffersAddonAtSignup(PLANS.VPN_BUSINESS, ADDON_PREFIXES.IP)).toBe(true);
     });
 });

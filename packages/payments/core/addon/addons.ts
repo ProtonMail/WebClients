@@ -1,7 +1,7 @@
 import type { PLANS } from '../constants';
-import { ADDON_NAMES, ADDON_PREFIXES } from '../constants';
+import { ADDON_NAMES, ADDON_PREFIXES, FREE_SUBSCRIPTION } from '../constants';
 import type { FeatureLimitKey } from '../interface';
-import { getAddonType, getSupportedAddons } from '../plan/addons';
+import { getAddonType, getSupportedAddons, supportsAddonType } from '../plan/addons';
 import { DOMAIN_ADDON_CONFIG } from './configs/domainAddonConfig';
 import { IP_ADDON_CONFIG } from './configs/ipAddonConfig';
 import { LUMO_ADDON_CONFIG } from './configs/lumoAddonConfig';
@@ -39,6 +39,28 @@ export const getAddonConfigByType = (addonType: ADDON_PREFIXES | undefined | nul
     }
 
     return ADDON_CONFIGS[addonType];
+};
+
+/**
+ * Whether a new organization signing up for this plan can buy addons of this type: the plan sells
+ * the addon and the addon's visibility rules pass at signup (e.g. `domainVpnBusinessGate` hides
+ * domains on VPN Business). Feature flags and coupon gates count as off.
+ */
+export const planOffersAddonAtSignup = (plan: PLANS, addonType: ADDON_PREFIXES): boolean => {
+    const planIDs = { [plan]: 1 };
+    if (!supportsAddonType(planIDs, addonType)) {
+        return false;
+    }
+
+    const context = {
+        subscription: FREE_SUBSCRIPTION,
+        planIDs,
+        bannerHiddenByCoupon: false,
+        featureFlagEnabled: false,
+        isSignup: true,
+    };
+
+    return (getAddonConfigByType(addonType)?.visibility?.rules ?? []).every((rule) => rule(context));
 };
 
 export const getAddonConfigByName = (addonName: ADDON_NAMES): AddonConfig | undefined => {

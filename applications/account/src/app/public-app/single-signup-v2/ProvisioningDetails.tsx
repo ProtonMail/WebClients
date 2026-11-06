@@ -3,10 +3,12 @@ import type { ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 
 import { getFlagSvg } from '@proton/components/components/v2/phone/flagSvgs';
-import type { CYCLE } from '@proton/payments/core/constants';
+import { planOffersAddonAtSignup } from '@proton/payments/core/addon/addons';
+import { ADDON_PREFIXES, type CYCLE } from '@proton/payments/core/constants';
 import { getCountryByAbbrMap } from '@proton/payments/core/countries';
 import type { Currency, PlanIDs } from '@proton/payments/core/interface';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
+import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
 import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
 import type { SignupProvisioning } from '../signup/orgProvisioning';
@@ -72,6 +74,10 @@ export const ProvisioningDetails = ({ provisioning, planIDs, plansMap, cycle, cu
     const selectedPlan = new SelectedPlan(planIDs, plansMap, cycle, currency);
     const domains = selectedPlan.getTotalDomains();
     const vpnServers = selectedPlan.getTotalIPs();
+    // Rows only for addons the plan sells; amounts a plan bundles but can't add to stay hidden.
+    const planName = getPlanNameFromIDs(planIDs);
+    const showDomains = !!planName && planOffersAddonAtSignup(planName, ADDON_PREFIXES.DOMAIN);
+    const showVpnServers = !!planName && planOffersAddonAtSignup(planName, ADDON_PREFIXES.IP);
     const contact = [BillingAddress.FirstName, BillingAddress.LastName].filter(Boolean).join(' ');
     const address = [
         BillingAddress.Address,
@@ -86,8 +92,8 @@ export const ProvisioningDetails = ({ provisioning, planIDs, plansMap, cycle, cu
             <BoxHeader step={step} title={c('Header').t`Plan details`} />
             <BoxContent>
                 <Row label={c('Label').t`Organization size`}>{selectedPlan.getTotalUsers()}</Row>
-                {domains > 0 && <Row label={c('Label').t`Custom email domains`}>{domains}</Row>}
-                {vpnServers > 0 && <Row label={c('Label').t`Dedicated VPN servers`}>{vpnServers}</Row>}
+                {showDomains && <Row label={c('Label').t`Custom email domains`}>{domains}</Row>}
+                {showVpnServers && <Row label={c('Label').t`Dedicated VPN servers`}>{vpnServers}</Row>}
             </BoxContent>
 
             <div className="mt-12">
