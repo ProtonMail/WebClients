@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useEffect, type ReactNode } from 'react'
+import { useCallback, useContext, useEffect, type ReactNode } from 'react'
 import { useHistory } from 'react-router'
 import { useLocation } from 'react-router-dom-v5-compat'
 
@@ -7,8 +7,9 @@ import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contac
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { Address } from '@proton/shared/lib/interfaces/Address'
 
-import { isMyDocument } from '~/homepage/is-my-document'
-import { getOwnerName } from '~/homepage/get-owner-name'
+import { HomepageViewContext, type ItemsSection, type ItemsSectionId, type RecentsSort } from '~/homepage'
+import { isMyDocument } from './isMyDocument'
+import { getOwnerName } from './getOwnerName'
 
 const ALLOWED_SORT_VALUES = [
   'viewed',
@@ -16,7 +17,7 @@ const ALLOWED_SORT_VALUES = [
   'name',
   'owner',
   'location',
-] as const
+] as const satisfies readonly RecentsSort[]
 const DEFAULT_RECENTS_SORT = 'viewed' satisfies RecentsSort
 const ORDERED_SECTION_IDS = [
   'search-results',
@@ -26,44 +27,7 @@ const ORDERED_SECTION_IDS = [
   'previous7Days',
   'previous30Days',
   'earlier',
-] as const
-
-export type RecentsSort = (typeof ALLOWED_SORT_VALUES)[number]
-export type ItemsSectionId = (typeof ORDERED_SECTION_IDS)[number]
-export type ItemsSection = { id: ItemsSectionId; items: RecentDocumentsItem[] }
-
-export type HomepageViewState =
-  | { view: 'unknown' }
-  // Search.
-  | { view: 'search-initial'; query: string }
-  | { view: 'search-loading'; query: string }
-  | { view: 'search-empty'; query: string }
-  | { view: 'search'; itemSections: ItemsSection[]; query: string }
-  // Recents.
-  | { view: 'recents-initial' }
-  | { view: 'recents-loading' }
-  | { view: 'recents-empty' }
-  | { view: 'recents'; itemSections: ItemsSection[]; sort: RecentsSort }
-  // Trash.
-  | { view: 'trash-empty' }
-  | { view: 'trash-loading' }
-  | { view: 'trash'; itemSections: ItemsSection[] }
-
-export type HomepageViewValue = {
-  state: HomepageViewState
-  setRecentsSort: (value: RecentsSort) => void
-  setSearch: (value: string | undefined, exclusive?: boolean) => void
-  updateRecentDocuments: () => Promise<void>
-  updateRenamedDocumentInCache: (uniqueId: string, name: string) => Promise<void>
-  isRecentsUpdating: boolean
-  type: ProtonDocumentType | undefined
-  /** Known once the My files folder has loaded. */
-  myFilesRootUid?: string
-  /** Only with recents loaded through the Drive SDK. */
-  updateMovedDocuments?: (nodeUids: string[]) => Promise<void>
-}
-
-export const HomepageViewContext = createContext<HomepageViewValue | undefined>(undefined)
+] as const satisfies readonly ItemsSectionId[]
 
 export type HomepageViewProviderProps = {
   children: ReactNode
@@ -72,7 +36,7 @@ export type HomepageViewProviderProps = {
 export function useHomepageView() {
   const value = useContext(HomepageViewContext)
   if (!value) {
-    throw new Error('Missing View context')
+    throw new Error('Missing HomepageViewProvider')
   }
   return value
 }

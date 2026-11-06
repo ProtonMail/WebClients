@@ -1,6 +1,5 @@
-import { HomepageLayout } from './__components/HomepageLayout'
+import { HomepageContent, HomepageLayout } from '~/homepage'
 import { DocumentActionsProvider } from './__utils/document-actions'
-import { HomepageContent } from './__components/HomepageContent/HomepageContent'
 import { HomepageViewProvider } from './__utils/homepage-view-sdk'
 
 export default function HomepagePage() {

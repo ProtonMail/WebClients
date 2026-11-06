@@ -23,7 +23,7 @@ const jestConfig: Config = {
     '^~/drive-sdk/(.*)$': '<rootDir>/src/app/drive-sdk/$1',
     '^~/utils/(.*)$': '<rootDir>/src/app/utils/$1',
     '^~/redux-store/(.*)$': '<rootDir>/src/app/redux-store/$1',
-    '^~/homepage/(.*)$': '<rootDir>/src/app/homepage/$1',
+    '^~/homepage$': '<rootDir>/src/app/homepage',
     '^~/config$': '<rootDir>/src/app/config',
   },
   coverageReporters: ['text-summary', 'json'],

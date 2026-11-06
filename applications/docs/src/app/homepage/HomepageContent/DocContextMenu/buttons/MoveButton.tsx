@@ -1,7 +1,7 @@
 import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross'
 
 import { ContextMenuButton } from '../ContextMenuButton'
-import { useDocumentActions } from '../../../../__utils/document-actions'
+import { useDocumentActions } from '../../../documentActionsContext'
 import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import { c } from 'ttag'
 

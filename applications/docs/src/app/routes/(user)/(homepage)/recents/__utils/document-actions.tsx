@@ -5,7 +5,7 @@ import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-docu
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
-import { type ReactNode, createContext, useCallback, useContext, useMemo, useState } from 'react'
+import { type ReactNode, useCallback, useMemo, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
 import { constructDriveFolderUrl } from '~/utils/open-drive-folder'
 import { useEvent } from '~/utils/misc'
@@ -17,33 +17,9 @@ import { deleteDocument, reportTrashError } from '@proton/docs-core/DriveSDK/tra
 import { trashAndNotify, restoreAndNotify, handleRestoreError } from '~/drive-sdk/trash-restore-notify'
 import { traceErrorSDK } from '@proton/docs-core/DriveSDK/traceErrorSDK'
 import { useHomepageView } from './homepage-view-sdk-utils'
-
-export type DocumentActionsContextValue = {
-  open: (document: RecentDocumentsItem, type?: 'normal' | 'trash') => void
-  share: (document: RecentDocumentsItem) => void
-  move: (document: RecentDocumentsItem) => void
-  openParent: (document: RecentDocumentsItem) => void
-  startRename: (document: RecentDocumentsItem) => void
-  cancelRename: (force?: boolean) => void
-  rename: (document: RecentDocumentsItem, newName: string) => Promise<void>
-  isRenaming: (document: RecentDocumentsItem) => boolean
-  isRenameSaving: boolean
-  trash: (document: RecentDocumentsItem) => Promise<void>
-  currentlyTrashingId?: string
-  /**
-   * Returns a f-n that removes listener on unmount
-   */
-  subscribeToTrashed: (listener: (id: string) => void) => () => void
-  restore: (document: RecentDocumentsItem) => Promise<void>
-  currentlyRestoringId?: string
-  /**
-   * Returns a f-n that removes listener on unmount
-   */
-  subscribeToRestored: (listener: (id: string) => void) => () => void
-  deletePermanently: (document: RecentDocumentsItem) => Promise<void>
-}
-
-export const DocumentActionsContext = createContext<DocumentActionsContextValue | undefined>(undefined)
+import { useBulkTrash } from './useBulkTrash'
+import { useBulkMove } from './useBulkMove'
+import { DocumentActionsContext } from '~/homepage'
 
 export type DocumentActionsProviderProps = {
   children: ReactNode
@@ -67,6 +43,8 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
   const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal()
   const { updateMovedDocuments } = useHomepageView()
   const [confirmDeleteModal, showConfirmDeleteModal] = useConfirmActionModal()
+  const { trash: bulkTrash, isTrashing: isBulkTrashing } = useBulkTrash()
+  const { move: bulkMove, moveItemsModal: bulkMoveItemsModal } = useBulkMove()
 
   const open = useEvent(({ type, volumeId, linkId }: RecentDocumentsItem, source = 'normal') => {
     const pathname = type === 'spreadsheet' ? 'sheet' : 'doc'
@@ -245,6 +223,9 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
       currentlyRestoringId,
       subscribeToRestored,
       deletePermanently,
+      bulkTrash,
+      isBulkTrashing,
+      bulkMove,
     }),
     [
       open,
@@ -263,6 +244,9 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
       currentlyRestoringId,
       subscribeToRestored,
       deletePermanently,
+      bulkTrash,
+      isBulkTrashing,
+      bulkMove,
     ],
   )
   return (
@@ -270,15 +254,8 @@ export function DocumentActionsProvider({ children }: DocumentActionsProviderPro
       {children}
       {sharingModal}
       {moveItemsModal}
+      {bulkMoveItemsModal}
       {confirmDeleteModal}
     </DocumentActionsContext.Provider>
   )
-}
-
-export function useDocumentActions() {
-  const context = useContext(DocumentActionsContext)
-  if (!context) {
-    throw new Error('Missing DocumentActions context')
-  }
-  return context
 }

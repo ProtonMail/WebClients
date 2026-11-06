@@ -7,7 +7,7 @@ import { ServerTime } from '@proton/docs-shared/ServerTime'
 import { generateNodeUid } from '@proton/drive/sdk'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { ApplicationProvider } from '~/utils/application-context'
-import { HomepageViewContext, type HomepageViewValue } from './homepage-view-sdk-utils'
+import { HomepageViewContext, type HomepageViewValue } from '~/homepage'
 import { useBulkMove } from './useBulkMove'
 
 const mockShowMoveItemsModal = jest.fn()

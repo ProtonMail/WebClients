@@ -2,7 +2,7 @@ import '@testing-library/jest-dom'
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { HomepageContent } from './HomepageContent'
 import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
-import { DocumentActionsContext } from '../../__utils/document-actions'
+import { DocumentActionsContext } from '../documentActionsContext'
 import { ServerTime } from '@proton/docs-shared/ServerTime'
 import { type ReactNode, useEffect, useState } from 'react'
 import type { Application } from '@proton/docs-core/Application/Application'
@@ -10,20 +10,11 @@ import type { RecentDocumentsItemLocation, RecentDocumentsItemValue } from '@pro
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import userEvent from '@testing-library/user-event'
 import { ApplicationProvider } from '~/utils/application-context'
-import type { HomepageViewState } from '../../__utils/homepage-view-sdk-utils'
-import { HomepageViewContext } from '../../__utils/homepage-view-sdk-utils'
-import { MemberRole } from '@proton/drive/sdk'
+import type { DocInvitesHook, HomepageViewState } from '../homepageViewContext'
+import { HomepageViewContext } from '../homepageViewContext'
+import type { MemberRole } from '@proton/drive/sdk'
 
 jest.mock('@proton/shared/lib/i18n', () => ({ dateLocale: { code: 'us' } }))
-
-jest.mock('@proton/drive-store/lib/_invites/useDocInvites', () => ({
-  ...jest.requireActual('@proton/drive-store/lib/_invites/useDocInvites'),
-  useDocInvites: () => ({
-    invitations: [],
-    recentlyAcceptedInvites: [],
-    loading: false,
-  }),
-}))
 
 jest.mock('@proton/account/contactEmails/hooks', () => ({
   useContactEmails: () => [[], false],
@@ -59,14 +50,15 @@ jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
 
 const mockBulkTrash = jest.fn()
 let mockIsTrashing = false
-jest.mock('../../__utils/useBulkTrash', () => ({
-  useBulkTrash: () => ({ trash: mockBulkTrash, isTrashing: mockIsTrashing }),
-}))
-
 const mockBulkMove = jest.fn()
-jest.mock('../../__utils/useBulkMove', () => ({
-  useBulkMove: () => ({ move: mockBulkMove, moveItemsModal: null }),
-}))
+
+const useMockDocInvites: DocInvitesHook = () => ({
+  invitations: [],
+  recentlyAcceptedInvites: [],
+  acceptInvite: jest.fn(),
+  rejectInvite: jest.fn(),
+  confirmModal: null,
+})
 
 function createMockRecentDocument(data: Partial<RecentDocumentsItemValue> = {}): RecentDocumentsItem {
   return RecentDocumentsItem.create({
@@ -94,7 +86,7 @@ const MOCK_DATA = [
     parentLinkId: 'parentLink1',
     location: { type: 'path', path: ['location', 'Document1'] },
     isSharedWithMe: false,
-    effectiveRole: MemberRole.Admin,
+    effectiveRole: 'admin' as MemberRole,
     ancestorsNodeUids: ['volume1~parentLink1', 'volume1~location', MY_FILES_ROOT_UID],
   }),
   createMockRecentDocument({
@@ -102,7 +94,7 @@ const MOCK_DATA = [
     linkId: 'link2',
     location: { type: 'root' },
     isSharedWithMe: false,
-    effectiveRole: MemberRole.Admin,
+    effectiveRole: 'admin' as MemberRole,
     ancestorsNodeUids: [MY_FILES_ROOT_UID],
   }),
   createMockRecentDocument({
@@ -111,7 +103,7 @@ const MOCK_DATA = [
     createdBy: 'Creator',
     location: { type: 'shared-with-me' },
     isSharedWithMe: true,
-    effectiveRole: MemberRole.Viewer,
+    effectiveRole: 'viewer' as MemberRole,
     ancestorsNodeUids: ['volume2~sharedFolder'],
   }),
 ]
@@ -122,7 +114,7 @@ const SHARED_ADMIN_DOCUMENT = createMockRecentDocument({
   createdBy: 'Creator',
   location: { type: 'shared-with-me' },
   isSharedWithMe: true,
-  effectiveRole: MemberRole.Admin,
+  effectiveRole: 'admin' as MemberRole,
   ancestorsNodeUids: ['volume2~sharedFolder'],
 })
 
@@ -132,7 +124,7 @@ const DEVICE_DOCUMENT = createMockRecentDocument({
   parentLinkId: 'deviceFolder',
   location: { type: 'path', path: ['Documents'] },
   isSharedWithMe: false,
-  effectiveRole: MemberRole.Admin,
+  effectiveRole: 'admin' as MemberRole,
   ancestorsNodeUids: ['volume1~deviceFolder', 'volume1~deviceRoot'],
 })
 
@@ -723,6 +715,12 @@ describe('HomepageContent', () => {
           subscribeToRestored: jest.fn(),
           currentlyRestoringId: undefined,
           deletePermanently: jest.fn(),
+          bulkTrash: mockBulkTrash,
+          // Read when the table renders, so that tests can change it after rendering.
+          get isBulkTrashing() {
+            return mockIsTrashing
+          },
+          bulkMove: mockBulkMove,
         }}
       >
         {children}
@@ -769,6 +767,7 @@ describe('HomepageContent', () => {
           state,
           type: undefined,
           myFilesRootUid: mockMyFilesRootUid,
+          useDocInvites: useMockDocInvites,
         }}
       >
         {children}
