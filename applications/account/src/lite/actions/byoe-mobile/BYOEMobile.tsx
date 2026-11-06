@@ -83,7 +83,7 @@ const BYOEMobileContent = () => {
                     </MobileSectionLabel>
                     <Toggle id="import-toggle" checked={shouldImportEmails} onChange={toggle} disabled={isLoading} />
                 </MobileSectionRow>
-                <MobileSectionRow>
+                <MobileSectionRow stackContent>
                     <Button
                         fullWidth
                         size="large"
@@ -96,6 +96,10 @@ const BYOEMobileContent = () => {
                     >
                         {getButtonCopy()}
                     </Button>
+                    {limitReached === 'free-limit' && (
+                        <p className="mb-2 mt-4 text-center color-weak">{c('Info')
+                            .t`Your free plan includes one connected account. Upgrade to connect more.`}</p>
+                    )}
                 </MobileSectionRow>
             </MobileSection>
             <ErrorPrompt />
