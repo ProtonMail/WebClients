@@ -1049,6 +1049,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Η δωρεάν δοκιμή της εφαρμογής για υπολογιστές λήγει στις ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Add payment method": [
+        "Προσθέστε μέθοδο πληρωμής"
+      ],
+      "Cancel trial": [
+        "Ακύρωση δοκιμής"
       ]
     },
     "action": {
@@ -6587,6 +6593,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Έχετε φτάσει στο όριο των διαθέσιμων θέσεων κράτησης (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Ζητήστε από τον διαχειριστή σας να αναβαθμίσει το πλάνο ή να αφαιρέσει μια σελίδα από την πλαϊνή στήλη των Σελίδων Κρατήσεων στο ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Για να προσθέσετε μια νέα σελίδα κρατήσεων, αφαιρέστε μια υπάρχουσα από την πλαϊνή στήλη των Σελίδων Κρατήσεων στο ${ CALENDAR_APP_NAME }."
       ]
     },
     "info": {
@@ -9263,6 +9275,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Η πλήρης συνδρομή σας ${ planTitle } ξεκινά στις ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Αλλάξατε γνώμη μετά τη δοκιμαστική περίοδο;** Ακυρώστε εντός 30 ημερών από την πρώτη σας πληρωμή και θα σας επιστρέψουμε το αντίτιμο για το διάστημα που δε χρησιμοποιήσατε."
       ]
     },
     "Option": {

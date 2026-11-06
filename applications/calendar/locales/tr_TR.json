@@ -1049,6 +1049,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bilgisayar uygulamasını ücretsiz deneme süreniz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
+      ],
+      "Add payment method": [
+        "Ödeme yöntemi ekle"
+      ],
+      "Cancel trial": [
+        "Denemeyi iptal et"
       ]
     },
     "action": {
@@ -9269,6 +9275,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Tam ${ planTitle } aboneliğiniz ${ boldEndDate } tarihinde başlayacak."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Denedikten sonra fikrinizi değiştirdiniz mi? ** İlk ödemenizden sonraki 30 gün içinde iptal edebilirsiniz. Kullanılmayan süreyi geri öderiz."
       ]
     },
     "Option": {
