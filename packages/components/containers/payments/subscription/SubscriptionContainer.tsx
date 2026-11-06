@@ -639,7 +639,12 @@ const SubscriptionContainerInner = ({
         selectedPlanName,
         billingAddress: model.taxBillingAddress,
         paymentStatus,
-        onChargeable: (operations, { paymentProcessorType, source, sourceType }) => {
+        onChargeable: async (operations, { paymentProcessorType, source, sourceType }) => {
+            // eslint-disable-next-line @typescript-eslint/no-use-before-define
+            if (lastCheckFailed) {
+                return;
+            }
+
             const context: SubscriptionContext = {
                 operationsSubscriptionData: {
                     Plans: model.planIDs,
@@ -845,7 +850,7 @@ const SubscriptionContainerInner = ({
     const [vatReverseChargeErrorModalProps, setVatReverseChargeErrorModal, renderVatReverseChargeErrorModal] =
         useModalState();
 
-    const { check, loadingCheck } = useSubscriptionContainerInnerCheck({
+    const { check, loadingCheck, lastCheckFailed } = useSubscriptionContainerInnerCheck({
         model,
         checkResult,
         subscriptionCouponCode: subscriptionCouponCode ?? undefined,
@@ -1114,7 +1119,7 @@ const SubscriptionContainerInner = ({
             loading={loading || subscribing || paymentFacade.bitcoinChargebee.bitcoinLoading}
             checkResult={checkResult}
             className="w-full"
-            disabled={isFreeUserWithFreePlanSelected || isGuardBlocked}
+            disabled={isFreeUserWithFreePlanSelected || isGuardBlocked || lastCheckFailed}
             paymentForbiddenReason={model.paymentForbiddenReason}
             subscription={subscription}
             hasPaymentMethod={hasPaymentMethod}

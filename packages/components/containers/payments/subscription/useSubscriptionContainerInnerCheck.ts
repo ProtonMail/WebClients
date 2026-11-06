@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -159,10 +159,12 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
         selectedMethod?: PlainPaymentMethodType
     ) => Promise<SubscriptionEstimation | undefined>;
     loadingCheck: boolean;
+    lastCheckFailed: boolean;
 } {
     const abortControllerRef = useRef<AbortController | undefined>(undefined);
     const latestValidCouponCodeRef = useRef('');
     const [loadingCheck, withLoadingCheck] = useLoading();
+    const [lastCheckFailed, setLastCheckFailed] = useState(false);
     const { createNotification } = useNotifications();
 
     const check = async (
@@ -192,6 +194,7 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
         if (!hasPlanIDs(copyNewModel.planIDs)) {
             setCheckResult(getFreeCheckResult(model.currency, model.cycle));
             setModel(copyNewModel);
+            setLastCheckFailed(false);
             return;
         }
 
@@ -229,6 +232,7 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
                 PeriodEnd: 0,
             });
             setModel(copyNewModel);
+            setLastCheckFailed(false);
             return;
         }
 
@@ -254,6 +258,7 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
                 ...copyNewModel,
                 paymentForbiddenReason,
             });
+            setLastCheckFailed(false);
             return;
         }
 
@@ -368,11 +373,14 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
 
                 setCheckResult(checkResultWithGuards);
                 setModel(copyNewModel);
+                setLastCheckFailed(false);
                 onCheck?.({ model, newModel: copyNewModel, type: 'success', result: checkResultWithGuards });
             } catch (error: any) {
                 if (error?.name === 'AbortError') {
                     return;
                 }
+
+                setLastCheckFailed(true);
 
                 if (error.name === 'OfflineError') {
                     setModel({ ...model, step: SUBSCRIPTION_STEPS.NETWORK_ERROR });
@@ -409,5 +417,5 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
         return checkPromise;
     };
 
-    return { check, loadingCheck };
+    return { check, loadingCheck, lastCheckFailed };
 }

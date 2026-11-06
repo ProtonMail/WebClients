@@ -402,7 +402,7 @@ describe('SubscriptionContainer subscription guards', () => {
         expect(screen.queryByText(/enough storage for your account/i)).not.toBeInTheDocument();
     });
 
-    it('keeps Continue enabled after a check error and does not claim the purchase is allowed', async () => {
+    it('disables Continue after a check error and does not claim the purchase is allowed', async () => {
         addApiMock(
             'payments/v5/subscription/check',
             () => {
@@ -415,10 +415,46 @@ describe('SubscriptionContainer subscription guards', () => {
         renderWithProviders(<ContextSubscriptionContainer {...props} />);
 
         await waitFor(() => {
-            expect(screen.getByTestId('confirm')).toBeEnabled();
+            expect(screen.getByTestId('confirm')).toBeDisabled();
         });
 
         expect(screen.queryByText(/enough storage for your account/i)).not.toBeInTheDocument();
+    });
+
+    it('enables Continue again when a later check succeeds', async () => {
+        addApiMock(
+            'payments/v5/subscription/check',
+            ({ data }: { data: CheckSubscriptionData }) => {
+                if (data.Cycle === CYCLE.YEARLY) {
+                    throw {
+                        data: { Code: 2000, Error: 'Unable to combine the new plan with the existing subscriptions.' },
+                    };
+                }
+
+                const result = getOptimisticCheckResult({
+                    planIDs: data.Plans,
+                    cycle: data.Cycle,
+                    currency: data.Currency,
+                    plansMap: getPlansMap(getLongTestPlans(), data.Currency, false),
+                });
+
+                return { ...result, AmountDue: result.Amount, requestData: data };
+            },
+            'post'
+        );
+        enableSepaFeatureFlag();
+
+        renderWithProviders(<ContextSubscriptionContainer {...props} />);
+
+        await waitFor(() => {
+            expect(screen.getByTestId('confirm')).toBeDisabled();
+        });
+
+        fireEvent.click(screen.getByTestId(`cycle-${CYCLE.MONTHLY}`).querySelector('button')!);
+
+        await waitFor(() => {
+            expect(screen.getByTestId('confirm')).toBeEnabled();
+        });
     });
 
     it('sends ValidateGuards: false when only currency changes', async () => {
