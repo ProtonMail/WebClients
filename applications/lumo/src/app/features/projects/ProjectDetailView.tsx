@@ -362,6 +362,7 @@ const ProjectDetailViewInner = () => {
                                         isMobileLayout={isMobileViewport}
                                         isLoading={false}
                                         showProjectLink={false}
+                                        allowMovingProjectChats
                                         emptyState={
                                             <AllChatsEmptyState variant={getAllChatsEmptyVariant('', filter)} />
                                         }

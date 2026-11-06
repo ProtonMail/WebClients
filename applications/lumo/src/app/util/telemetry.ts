@@ -243,6 +243,39 @@ export const sendConversationFavoriteEvent = (guest: boolean, favorited?: boolea
     });
 };
 
+export type ConversationMoveFailureReason = 'limit' | 'busy' | 'unsupported' | 'unavailable' | 'privacy' | 'other';
+
+export type ConversationMoveDurationBucket = '0-2s' | '2s-10s' | '10s-30s' | '30s+';
+
+export const bucketConversationMoveDuration = (durationMs: number): ConversationMoveDurationBucket => {
+    if (durationMs < 2_000) {
+        return '0-2s';
+    }
+    if (durationMs < 10_000) {
+        return '2s-10s';
+    }
+    if (durationMs < 30_000) {
+        return '10s-30s';
+    }
+    return '30s+';
+};
+
+/**
+ * One per finished move of a chat into a project (success or failure), so success and failure
+ * counts give the denominator. Outcome, failure category and duration only, never ids or content.
+ */
+export const sendConversationMoveToProjectEvent = (
+    payload:
+        | { result: 'success'; durationMs: number }
+        | { result: 'failure'; reason: ConversationMoveFailureReason; durationMs: number }
+) => {
+    const { durationMs, ...rest } = payload;
+    sendLumoConversationEvent('move-to-project', {
+        ...rest,
+        durationBucket: bucketConversationMoveDuration(durationMs),
+    });
+};
+
 export const sendConversationEditTitleEvent = (location?: 'sidebar' | 'header') => {
     sendLumoConversationEvent('edit-title', {
         location,

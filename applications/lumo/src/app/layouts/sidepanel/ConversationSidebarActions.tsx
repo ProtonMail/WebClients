@@ -9,6 +9,8 @@ import DropdownMenu from '../../components/DropdownMenu';
 import FavoritesUpsellPrompt from '../../components/Guest/FavoritesUpsellPrompt';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { ConversationExportModal } from '../../components/Modals/ConversationExportModal/ConversationExportModal';
+import { MoveToProjectModal } from '../../features/projects/modals/MoveToProjectModal';
+import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useConversationStar } from '../../hooks/useConversationStar';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import type { Conversation } from '../../types';
@@ -21,6 +23,7 @@ interface Props {
     onOverlayActiveChange?: (active: boolean) => void;
     visibleOnHover?: boolean;
     includeStarOption?: boolean;
+    includeMoveToProject?: boolean;
 }
 
 export const ConversationSidebarActions = ({
@@ -30,8 +33,10 @@ export const ConversationSidebarActions = ({
     onOverlayActiveChange,
     visibleOnHover,
     includeStarOption = true,
+    includeMoveToProject = true,
 }: Props) => {
     const isGuest = useIsGuest();
+    const { moveToProject } = useLumoFlags();
     const [showDeleteFlow, setShowDeleteFlow] = useState(false);
     const { handleStarToggle, showFavoritesUpsellModal, favoritesUpsellModalProps, isStarred } = useConversationStar({
         conversation,
@@ -40,6 +45,10 @@ export const ConversationSidebarActions = ({
     const conversationExportModalState = useModalStateObject({
         onClose: () => onOverlayActiveChange?.(false),
     });
+    const moveToProjectModalState = useModalStateObject({
+        onClose: () => onOverlayActiveChange?.(false),
+    });
+    const canMoveToProject = moveToProject && includeMoveToProject && !isGuest && !conversation.ghost && !conversation.scheduleRun;
 
     const options: DropdownOptions[] = useMemo(
         () => [
@@ -79,6 +88,19 @@ export const ConversationSidebarActions = ({
                     conversationExportModalState.openModal(true);
                 },
             },
+            ...(canMoveToProject
+                ? [
+                      {
+                          label: c('Option').t`Move to project`,
+                          icon: <LumoIcon name="FolderInput" size={16} />,
+                          onClick: (e?: React.MouseEvent) => {
+                              e?.stopPropagation();
+                              onOverlayActiveChange?.(true);
+                              moveToProjectModalState.openModal(true);
+                          },
+                      },
+                  ]
+                : []),
             {
                 label: c('Option').t`Delete`,
                 icon: <LumoIcon name="Trash" size={16} />,
@@ -90,7 +112,9 @@ export const ConversationSidebarActions = ({
             },
         ],
         [
+            canMoveToProject,
             conversationExportModalState.openModal,
+            moveToProjectModalState.openModal,
             handleStarToggle,
             includeStarOption,
             isGuest,
@@ -114,6 +138,9 @@ export const ConversationSidebarActions = ({
             )}
             {conversationExportModalState.render && (
                 <ConversationExportModal {...conversationExportModalState.modalProps} conversation={conversation} />
+            )}
+            {moveToProjectModalState.render && (
+                <MoveToProjectModal {...moveToProjectModalState.modalProps} conversation={conversation} />
             )}
             {showFavoritesUpsellModal && (
                 <FavoritesUpsellPrompt

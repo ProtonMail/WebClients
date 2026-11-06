@@ -71,6 +71,8 @@ interface ConversationListPanelProps {
     isLoading: boolean;
     emptyState: React.ReactNode;
     showProjectLink?: boolean;
+    /** Offer "Move to project" for chats that already live in a project (off in the All chats list). */
+    allowMovingProjectChats?: boolean;
     className?: string;
 }
 
@@ -91,6 +93,7 @@ export const ConversationListPanel = ({
     isLoading,
     emptyState,
     showProjectLink = true,
+    allowMovingProjectChats = false,
     className,
 }: ConversationListPanelProps) => {
     const dispatch = useLumoDispatch();
@@ -321,6 +324,7 @@ export const ConversationListPanel = ({
                                             onToggleBulkSelect={toggleSelectConversation}
                                             sortField={sortField}
                                             showProjectLink={showProjectLink}
+                                            allowMovingProjectChats={allowMovingProjectChats}
                                         />
                                     </div>
                                 );

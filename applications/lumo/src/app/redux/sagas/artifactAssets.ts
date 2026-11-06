@@ -13,6 +13,7 @@ import { selectConversationById } from '../selectors';
 import type { SyncArtifactAssetRequest } from '../slices/artifactAssetSync';
 import { addAttachment, locallyDeleteAttachmentFromLocalRequest, newAttachmentId } from '../slices/core/attachments';
 import { pushConversationRequest, setConversationArtifactAsset } from '../slices/core/conversations';
+import { getArtifactSyncKey, pendingArtifactSyncKeys, syncingArtifactKeys } from './artifactAssetSyncState';
 import { pushAttachment } from './attachments';
 
 function* syncArtifactAsset({ payload }: { payload: SyncArtifactAssetRequest }): SagaIterator<void> {
@@ -95,11 +96,6 @@ function* syncArtifactAsset({ payload }: { payload: SyncArtifactAssetRequest }):
     }
 }
 
-const getArtifactSyncKey = ({ conversationId, artifactId }: SyncArtifactAssetRequest): string => {
-    return `${conversationId}:${artifactId}`;
-};
-
-const syncingArtifactKeys = new Set<string>();
 const pendingArtifactSyncRequests = new Map<string, SyncArtifactAssetRequest>();
 
 /**
@@ -112,6 +108,7 @@ export function* syncArtifactAssetSerialized({ payload }: { payload: SyncArtifac
     const key = getArtifactSyncKey(payload);
     if (syncingArtifactKeys.has(key)) {
         pendingArtifactSyncRequests.set(key, payload);
+        pendingArtifactSyncKeys.add(key);
         return;
     }
 
@@ -130,9 +127,11 @@ export function* syncArtifactAssetSerialized({ payload }: { payload: SyncArtifac
             }
             next = pendingArtifactSyncRequests.get(key);
             pendingArtifactSyncRequests.delete(key);
+            pendingArtifactSyncKeys.delete(key);
         }
     } finally {
         syncingArtifactKeys.delete(key);
         pendingArtifactSyncRequests.delete(key);
+        pendingArtifactSyncKeys.delete(key);
     }
 }

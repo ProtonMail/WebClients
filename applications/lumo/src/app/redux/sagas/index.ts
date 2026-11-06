@@ -46,6 +46,7 @@ import {
     expireConversationsRequest,
     locallyDeleteConversationFromLocalRequest,
     locallyDeleteConversationFromRemoteRequest,
+    moveConversationToSpaceRequest,
     locallyRefreshConversationFromRemoteRequest,
     pullConversationFailure,
     pullConversationRequest,
@@ -129,6 +130,7 @@ import {
 } from './conversations';
 import { guestMigrationSaga } from './guestMigration';
 import { considerSavingIdMapToIdb } from './idmap';
+import { moveConversationToSpace } from './moveConversation';
 import {
     loadMessageLimitReached,
     persistAllMessageLimitsCleared,
@@ -515,6 +517,7 @@ export function* rootSaga(opts?: { crashIfErrors: boolean }) {
         function*() { yield takeEvery(pullConversationSuccess, processPullConversationResult)},
         function*() { yield takeEvery(pullConversationFailure, logPullConversationFailure)},
         function*() { yield takeLeading(expireConversationsRequest, expireConversations)},
+        function*() { yield takeEvery(moveConversationToSpaceRequest, moveConversationToSpace)},
         function*() { yield takeEvery(locallyDeleteConversationFromLocalRequest, softDeleteConversationFromLocal)},
         function*() { yield takeEvery(locallyDeleteConversationFromRemoteRequest, softDeleteConversationFromRemote)},
         function*() { yield takeEvery(locallyRefreshConversationFromRemoteRequest, refreshConversationFromRemote)},
