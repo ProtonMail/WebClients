@@ -122,7 +122,7 @@ const maybeResumeForkedSession = async ({
 
         // The local ID now belongs to another user, so drop the old session and use the fork
         if (validatedSession.User.ID !== UserID) {
-            await api(withUIDHeaders(validatedSession.UID, revoke())).catch(noop);
+            await api(withUIDHeaders(validatedSession.UID, revoke({ Child: 1 }))).catch(noop);
             await removePersistedSessionByLocalIDAndUID(LocalID, validatedSession.UID).catch(noop);
             return;
         }

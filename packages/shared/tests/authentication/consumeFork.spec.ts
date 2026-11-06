@@ -92,7 +92,7 @@ describe('consumeFork', () => {
         const { session } = await consumeFork({ api, mode: 'sso', parameters });
 
         expect(session.UID).toBe(pullForkResponse.UID);
-        expect(api).toHaveBeenCalledWith(withUIDHeaders('existing-uid', revoke()));
+        expect(api).toHaveBeenCalledWith(withUIDHeaders('existing-uid', revoke({ Child: 1 })));
         expect(removePersistedSessionByLocalIDAndUID).toHaveBeenCalledWith(0, 'existing-uid');
         expect(persistSession).toHaveBeenCalledWith(
             expect.objectContaining({ UID: pullForkResponse.UID, User: { ID: pullForkResponse.UserID } })
