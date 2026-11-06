@@ -22,7 +22,7 @@ import { configuration as freeToMailPlusConfig } from './blackFriday2026FreeToMa
 import { getIsEligible as isFreeToMailPlusEligible } from './blackFriday2026FreeToMailPlus/eligibility';
 import { configuration as freeToPassPlusConfig } from './blackFriday2026FreeToPassPlus/configuration';
 import { getIsEligible as isFreeToPassPlusEligible } from './blackFriday2026FreeToPassPlus/eligibility';
-import { BLACK_FRIDAY_2026_FREE_USER_MIN_ACCOUNT_AGE_HOURS } from './blackFriday2026FreeUserEligibility';
+import { BLACK_FRIDAY_2026_MIN_AGE_HOURS } from './blackFriday2026MinimumAge';
 
 type Context = [label: string, protonConfig: ProtonConfig, pathname: string];
 
@@ -124,7 +124,7 @@ describe.each(offers)('blackFriday2026 $name eligibility', ({ getIsEligible, off
         it('is not eligible for an account younger than the minimum age', () => {
             const user = {
                 ...freeUser,
-                CreateTime: getUnixTime(subHours(new Date(), BLACK_FRIDAY_2026_FREE_USER_MIN_ACCOUNT_AGE_HOURS - 1)),
+                CreateTime: getUnixTime(subHours(new Date(), BLACK_FRIDAY_2026_MIN_AGE_HOURS - 1)),
             };
 
             expect(getIsEligible({ ...baseProps, protonConfig, user })).toBe(false);
@@ -133,7 +133,7 @@ describe.each(offers)('blackFriday2026 $name eligibility', ({ getIsEligible, off
         it('is eligible once the account reaches the minimum age', () => {
             const user = {
                 ...freeUser,
-                CreateTime: getUnixTime(subHours(new Date(), BLACK_FRIDAY_2026_FREE_USER_MIN_ACCOUNT_AGE_HOURS)),
+                CreateTime: getUnixTime(subHours(new Date(), BLACK_FRIDAY_2026_MIN_AGE_HOURS)),
             };
 
             expect(getIsEligible({ ...baseProps, protonConfig, user })).toBe(true);
