@@ -1,4 +1,4 @@
-import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
+import type { SharedStartListening } from '@proton/redux-shared-store-types/interface';
 
 import type { ContactEmailsState } from '../../contactEmails';
 import type { DelegatedAccessState } from '../../delegatedAccess';

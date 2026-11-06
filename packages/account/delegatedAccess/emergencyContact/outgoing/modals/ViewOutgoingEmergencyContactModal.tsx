@@ -12,8 +12,8 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
+import { useDispatch } from '../../../../store/hooks';
 import { grantDelegatedAccessThunk, resetDelegatedAccessThunk } from '../../../outgoingActions';
 import { getMetaOutgoingDelegatedAccess } from '../../../shared/outgoing/helper';
 import type { EnrichedOutgoingDelegatedAccess } from '../../../shared/outgoing/interface';

@@ -13,11 +13,11 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 import type { OutgoingDelegatedAccessOutput } from '@proton/shared/lib/interfaces/DelegatedAccess';
 
+import { useDispatch } from '../../../../store/hooks';
 import ValidationError from '../../../ValidationError';
 import { addDelegatedAccessThunk } from '../../../outgoingActions';
 import ContactEmailInput from '../../../shared/outgoing/ContactEmailInput';

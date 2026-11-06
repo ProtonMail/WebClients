@@ -3,10 +3,10 @@ import { c } from 'ttag';
 import FormattedPhoneValue from '@proton/components/components/v2/phone/LazyFormattedPhoneValue';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
 
 import { toggleRecoveryPhoneReset } from '../../../../../recovery/accountRecoveryActions';
+import { useDispatch } from '../../../../../store/hooks';
 import type { ExtractRecoveryActionItem } from '../../../../recoveryState/recoveryState';
 import { SafetyReviewCta } from '../../../SafetyReviewCta';
 import darkRecoveryPhoneIllustration from '../../../assets/recovery-phone-dark.svg';

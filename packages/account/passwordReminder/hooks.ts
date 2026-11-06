@@ -1,5 +1,4 @@
-import { useSelector } from '@proton/redux-shared-store/sharedProvider';
-
+import { useSelector } from '../store/hooks';
 import { selectPasswordReminder } from './index';
 
 export const usePasswordReminder = () => {

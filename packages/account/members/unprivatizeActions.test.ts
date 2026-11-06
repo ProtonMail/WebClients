@@ -1,6 +1,6 @@
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
-import { getTestStore } from '@proton/redux-shared-store/test';
+import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { KTUserContext } from '@proton/shared/lib/interfaces/KeyTransparency';

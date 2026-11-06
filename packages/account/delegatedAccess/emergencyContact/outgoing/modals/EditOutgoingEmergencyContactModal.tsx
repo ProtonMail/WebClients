@@ -13,9 +13,9 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { SECOND } from '@proton/shared/lib/constants';
 
+import { useDispatch } from '../../../../store/hooks';
 import { editDelegatedAccessThunk } from '../../../outgoingActions';
 import type { EnrichedOutgoingDelegatedAccess } from '../../../shared/outgoing/interface';
 import { getDefaultWaitTimeOptionValue, getWaitTimeOptions } from './getWaitTimeOptions';

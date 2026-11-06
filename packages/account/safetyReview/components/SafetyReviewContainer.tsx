@@ -10,11 +10,11 @@ import {
     getRecoveryScoreState,
 } from '@proton/components/containers/recovery/RecoveryScoreBanner/recoveryScoreState';
 import useAppTitle from '@proton/components/hooks/useAppTitle';
-import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import { useStore } from '../../store/hooks';
 import { selectRecoveryState } from '../recoveryState/recoveryState';
 import { useSafetyReviewCtrTelemetry } from '../telemetry/useSafetyReviewCtrTelemetry';
 import { useSafetyReviewScoreDiffTelemetry } from '../telemetry/useSafetyReviewScoreDiffTelemetry';

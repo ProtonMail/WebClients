@@ -12,9 +12,9 @@ import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
-import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
 
+import { useDispatch, useSelector } from '../../store/hooks';
 import { selectMnemonicData } from '../mnemonic';
 import { RecoveryKitContent, type RecoveryKitContentProps } from './RecoveryKitContent';
 import type { DeferredMnemonicData } from './generateDeferredMnemonicData';

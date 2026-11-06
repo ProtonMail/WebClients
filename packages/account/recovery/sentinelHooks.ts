@@ -1,5 +1,4 @@
-import { useSelector } from '@proton/redux-shared-store/sharedProvider';
-
+import { useSelector } from '../store/hooks';
 import { selectLegacySentinel } from './sentinelSelectors';
 
 export const useIsSentinelUser = () => {

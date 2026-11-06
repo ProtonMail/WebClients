@@ -5154,6 +5154,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2005
+      react-redux:
+        specifier: 'catalog:'
+        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'

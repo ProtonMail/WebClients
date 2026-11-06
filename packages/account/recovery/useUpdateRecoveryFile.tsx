@@ -1,8 +1,8 @@
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import VoidRecoveryFilesModal from '@proton/components/containers/recovery/VoidRecoveryFilesModal';
 import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
+import { useDispatch } from '../store/hooks';
 import { updateDeviceRecoverySettingsThunk } from './deviceRecovery';
 import type { selectRecoveryFileData } from './recoveryFile';
 

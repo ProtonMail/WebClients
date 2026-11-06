@@ -3,9 +3,9 @@ import type { ReactNode } from 'react';
 import { act, renderHook } from '@testing-library/react';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
-import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
-import { getTestStore } from '@proton/redux-shared-store/test';
+import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
 
+import { TestStoreProvider } from '../testing/TestStoreProvider';
 import { staticExperimentsActions, staticExperimentsReducer } from './slice';
 import type { StaticExperimentName } from './types';
 import { useStaticExperiment } from './useStaticExperiment';
@@ -20,7 +20,7 @@ const createWrapper = (preloadedState: Record<string, string> = {}) => {
     });
 
     const wrapper = ({ children }: { children: ReactNode }) => (
-        <ProtonStoreProvider store={store}>{children}</ProtonStoreProvider>
+        <TestStoreProvider store={store}>{children}</TestStoreProvider>
     );
 
     return { store, wrapper };

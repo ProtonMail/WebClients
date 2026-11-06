@@ -6,11 +6,11 @@ import { InputField as InputFieldTwo } from '@proton/components/components/v2/fi
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
 import { updateRecoveryEmailValue } from '../../../../../recovery/accountRecoveryActions';
+import { useDispatch } from '../../../../../store/hooks';
 import type { ExtractRecoveryActionItem } from '../../../../recoveryState/recoveryState';
 import { SafetyReviewCta } from '../../../SafetyReviewCta';
 import darkRecoveryEmailIllustration from '../../../assets/recovery-email-dark.svg';

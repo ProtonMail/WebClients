@@ -8,11 +8,11 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useMyCountry from '@proton/components/hooks/useMyCountry';
 import useLoading from '@proton/hooks/useLoading';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
 import { updateRecoveryPhoneValue } from '../../../../../recovery/accountRecoveryActions';
+import { useDispatch } from '../../../../../store/hooks';
 import type { ExtractRecoveryActionItem } from '../../../../recoveryState/recoveryState';
 import { SafetyReviewCta } from '../../../SafetyReviewCta';
 import darkRecoveryPhoneIllustration from '../../../assets/recovery-phone-dark.svg';

@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 
-import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import noop from '@proton/utils/noop';
 
 import { contactEmailsThunk } from '../../contactEmails';
 import { selectIsDelegatedAccessSupported } from '../../delegatedAccess';
 import { listOutgoingDelegatedAccess } from '../../delegatedAccess/outgoingActions';
+import { useDispatch, useSelector } from '../../store/hooks';
 import { type RecoveryStateResult, selectRecoveryState } from './recoveryState';
 
 /**

@@ -3,7 +3,7 @@ import type { Currency, PaymentStatus } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
-import { getTestStore } from '@proton/redux-shared-store/test';
+import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 

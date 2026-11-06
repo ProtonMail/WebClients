@@ -4,7 +4,7 @@ import { combineReducers, createAction } from '@reduxjs/toolkit';
 import { waitFor } from '@testing-library/react';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
-import { getTestStore } from '@proton/redux-shared-store/test';
+import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { type EnhancedGroup, GroupFlags } from '@proton/shared/lib/interfaces/Group';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';

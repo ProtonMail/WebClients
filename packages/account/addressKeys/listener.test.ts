@@ -4,7 +4,7 @@ import { combineReducers } from '@reduxjs/toolkit';
 import { waitFor } from '@testing-library/react';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
-import { getTestStore } from '@proton/redux-shared-store/test';
+import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { AddressKey, DecryptedAddressKey } from '@proton/shared/lib/interfaces/Key';

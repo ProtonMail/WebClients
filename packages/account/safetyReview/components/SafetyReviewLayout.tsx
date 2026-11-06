@@ -7,10 +7,10 @@ import AppLink from '@proton/components/components/link/AppLink';
 import Logo from '@proton/components/components/logo/Logo';
 import PublicTopBanners from '@proton/components/containers/topBanners/PublicTopBanners';
 import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
-import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
+import { useSelector } from '../../store/hooks';
 import { selectUser } from '../../user';
 import { type SafetyReviewBackLink, getBackCopy } from './getSafetyReviewBackLink';
 

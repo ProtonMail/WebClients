@@ -12,7 +12,6 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateSignInRestriction } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import {
@@ -21,6 +20,7 @@ import {
 } from '@proton/shared/lib/interfaces/UserSettings';
 
 import { useAddresses } from '../addresses/hooks';
+import { useDispatch } from '../store/hooks';
 import { useUser } from '../user/hooks';
 import { userSettingsActions } from '../userSettings';
 import { useUserSettings } from '../userSettings/hooks';

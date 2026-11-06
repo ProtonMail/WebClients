@@ -6,7 +6,7 @@ import {
     type Entitlements,
 } from '@proton/payments/core/entitlements/interface';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
-import { getTestStore } from '@proton/redux-shared-store/test';
+import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import { entitlementCatalogReducer } from '../entitlementCatalog';

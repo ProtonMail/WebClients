@@ -359,11 +359,11 @@
         "jest": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react-redux": "catalog:",
         "typescript": "catalog:"
     },
     "peerDependencies": {
         "@proton/components": "*",
-        "@proton/payments": "*",
-        "@proton/redux-shared-store": "*"
+        "@proton/payments": "*"
     }
 }

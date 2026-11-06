@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import getRandomString from '@proton/utils/getRandomString';
 
+import { useSelector } from '../../../store/hooks';
 import {
     getDefaultWaitTimeOptionValue,
     getWaitTimeOptions,

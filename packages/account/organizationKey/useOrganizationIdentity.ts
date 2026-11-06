@@ -5,8 +5,8 @@ import { c } from 'ttag';
 import type { IconComponent } from '@proton/icons/component';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
+import { useDispatch } from '../store/hooks';
 import { useOrganizationKey } from './hooks';
 import { OrganizationSignatureState, validateOrganizationIdentity } from './organizationIdentityActions';
 

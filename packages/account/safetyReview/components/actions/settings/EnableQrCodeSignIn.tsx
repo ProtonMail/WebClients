@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useLoading from '@proton/hooks/useLoading';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { toggleQrCodeSignIn } from '../../../../recovery/userSettingsActions';
+import { useDispatch } from '../../../../store/hooks';
 import type { ExtractRecoveryActionItem } from '../../../recoveryState/recoveryState';
 import { SafetyReviewCta } from '../../SafetyReviewCta';
 import darkIllustration from '../../assets/recovery-qr-code-dark.svg';
