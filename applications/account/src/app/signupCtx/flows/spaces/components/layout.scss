@@ -1,0 +1,90 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+@mixin spaces-fields {
+	.field-two-label-container {
+		margin-block-end: calc(6 * var(--1px));
+		font-size: calc(14 * var(--1px));
+		font-weight: 500;
+		line-height: calc(20 * var(--1px));
+	}
+
+	.field-two-assist {
+		font-size: calc(12 * var(--1px));
+		line-height: calc(16 * var(--1px));
+	}
+
+	.input {
+		border-radius: calc(16 * var(--1px));
+	}
+
+	.field-two .input-element {
+		padding-block: calc(13 * var(--1px));
+		padding-inline: calc(14 * var(--1px));
+		font-size: calc(15 * var(--1px));
+		line-height: calc(24 * var(--1px));
+	}
+}
+
+.spaces-card {
+	border-radius: calc(32 * var(--1px));
+
+	&-single {
+		max-inline-size: calc(480 * var(--1px));
+	}
+
+	&-invite {
+		min-block-size: calc(480 * var(--1px));
+		max-inline-size: calc(880 * var(--1px));
+	}
+
+	&-aside {
+		background-color: color-mix(in srgb, var(--text-norm) 2%, transparent);
+
+		@include im.media('>small') {
+			flex: none;
+			inline-size: calc(400 * var(--1px));
+		}
+	}
+
+	@include spaces-fields;
+
+	.button.button-large {
+		min-block-size: calc(52 * var(--1px));
+		border-radius: calc(16 * var(--1px));
+		font-size: calc(15 * var(--1px));
+		font-weight: 500;
+	}
+}
+
+.spaces-signup-input {
+	@include spaces-fields;
+}
+
+.spaces-title {
+	font-size: calc(30 * var(--1px));
+	font-weight: 500;
+	line-height: calc(36 * var(--1px));
+}
+
+.spaces-text-md {
+	font-size: calc(15 * var(--1px));
+	line-height: calc(24 * var(--1px));
+}
+
+.spaces-invite-pill {
+	padding: calc(12 * var(--1px));
+	border-radius: calc(16 * var(--1px));
+	background-color: color-mix(in srgb, var(--text-norm) 3%, transparent);
+	font-size: calc(13 * var(--1px));
+	line-height: calc(20 * var(--1px));
+}
+
+.spaces-invite-avatar {
+	inline-size: calc(96 * var(--1px));
+	block-size: calc(96 * var(--1px));
+	border-radius: calc(28 * var(--1px));
+	background-color: white;
+}

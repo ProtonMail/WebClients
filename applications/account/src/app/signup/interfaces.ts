@@ -101,7 +101,11 @@ export type SignupInviteParameters =
     | { type: 'mail'; data: { referrer: string; invite: string | undefined } }
     | { type: 'lumo'; data: { invitee: string; preVerifiedAddressToken?: string } }
     | { type: 'porkbun'; data: { invitee: string; preVerifiedAddressToken?: string; porkbunToken: string } }
-    | { type: 'provisioning'; data: { token: string } };
+    | { type: 'provisioning'; data: { token: string } }
+    | {
+          type: 'spaces';
+          data: { invitee: string; orgJoinLink: string; preVerifiedAddressToken: string };
+      };
 
 export interface InviteData {
     selector: string;

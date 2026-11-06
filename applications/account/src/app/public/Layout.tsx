@@ -63,6 +63,8 @@ const getStaticAppUrl = (appName: APP_NAMES | undefined) => {
             return getStaticURL('/pass');
         case APPS.PROTONMEET:
             return getAppHref('/', APPS.PROTONMEET);
+        case APPS.PROTONSPACES:
+            return getAppHref('/', APPS.PROTONSPACES);
         default:
             return getStaticURL('');
     }

@@ -113,6 +113,7 @@ export const getActiveSessionLoginResult = async ({
             location: getSanitizedLocationDescriptorObject({
                 pathname: paths.login,
                 search: initialSearchParams.toString(),
+                hash: window.location.hash,
             }),
             payload: null,
         };

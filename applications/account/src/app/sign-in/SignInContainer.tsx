@@ -54,6 +54,9 @@ interface Props {
     layout?: SignInLayout;
     /** The compact credentials form, without the sign-up and support links; the default in the Pass desktop app. */
     compactForm?: boolean;
+    /** Locks the username to its initial value, for sign-ins that arrive with the account already chosen. */
+    usernameReadOnly?: boolean;
+    showSignUpPrompt?: boolean;
     metaTags: MetaTags | null;
     testflight?: 'vpn';
     externalRedirect?: string;
@@ -93,6 +96,8 @@ const SignInFlow = ({
     paths,
     layout,
     compactForm,
+    usernameReadOnly,
+    showSignUpPrompt,
     testflight,
     externalRedirect,
     onPreSubmit,
@@ -183,6 +188,8 @@ const SignInFlow = ({
                     showRememberCheckbox={showsRememberCheckbox(rememberMode)}
                     testflight={testflight}
                     isPorkbun={isPorkbun}
+                    usernameReadOnly={usernameReadOnly}
+                    showSignUpPrompt={showSignUpPrompt}
                     onError={handleError}
                 >
                     <SignInWizard />

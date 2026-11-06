@@ -18,6 +18,8 @@ export interface SignInProps {
     showRememberCheckbox: boolean;
     testflight: 'vpn' | undefined;
     isPorkbun: boolean;
+    usernameReadOnly?: boolean;
+    showSignUpPrompt?: boolean;
     /** Shows an API error to the user; opens the abuse modal for disabled accounts. */
     onError: (error: unknown) => void;
 }

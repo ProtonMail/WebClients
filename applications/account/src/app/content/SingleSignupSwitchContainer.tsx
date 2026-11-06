@@ -60,6 +60,7 @@ const SingleSignupSwitchContainer = ({
         location.pathname === SSO_PATHS.BORN_PRIVATE ||
         location.pathname === SSO_PATHS.MEET_SIGNUP ||
         location.pathname === SSO_PATHS.MEET_SIGNUP_B2C ||
+        location.pathname === SSO_PATHS.SPACES_SIGNUP ||
         isReferral;
 
     if (renderContextSignup) {

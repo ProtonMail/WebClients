@@ -49,6 +49,10 @@ export const getIsMeetApp = (toApp?: APP_NAMES) => {
     return toApp === APPS.PROTONMEET;
 };
 
+export const getIsSpacesApp = (toApp?: APP_NAMES) => {
+    return toApp === APPS.PROTONSPACES;
+};
+
 export const getRequiresAddress = (toApp: APP_NAMES) => {
     return requiresAddress.includes(toApp);
 };

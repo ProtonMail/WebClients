@@ -456,6 +456,8 @@ export const SSO_PATHS = {
     MEET_SIGNUP_B2C: '/meet/signup/plan',
     MEET_SIGNUP_B2B: '/meet/signup/business',
     MEET_SIGN_IN: '/meet',
+    SPACES_SIGNUP: '/spaces/signup',
+    SPACES_SIGN_IN: '/spaces',
     SIGNUP: '/signup',
     START: '/start',
     INVITE: '/pre-invite',

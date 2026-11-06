@@ -22,7 +22,7 @@ export const CredentialsUsernameField = ({
     const actorRef = CredentialsContext.useActorRef();
     const submitting = CredentialsContext.useSelector(selectSubmitting);
     // Porkbun sign-ins come with the email already set
-    const { isPorkbun } = useSignInProps();
+    const { isPorkbun, usernameReadOnly } = useSignInProps();
     return (
         <UsernameField
             label={label}
@@ -30,7 +30,7 @@ export const CredentialsUsernameField = ({
             onValue={onValue}
             error={error}
             disabled={submitting}
-            readOnly={isPorkbun}
+            readOnly={isPorkbun || usernameReadOnly}
             inputRef={usernameRef}
             onChange={() => {
                 // Clears the inline error once the user changes the field

@@ -36,7 +36,7 @@ import noop from '@proton/utils/noop';
 
 import sendRecoveryPhrasePayloadHelper from '../../containers/recoveryPhrase/sendRecoveryPhrasePayload';
 import type { OnLoginCallback } from '../../content/authSession';
-import type { AccountData, SignupHumanVerification, SignupType } from '../../signup/interfaces';
+import type { AccountData, SignupHumanVerification, SignupInviteParameters, SignupType } from '../../signup/interfaces';
 import { handleSetupOrg } from '../../signup/signupActions';
 import {
     sendSignupAccountCreationTelemetry,
@@ -181,6 +181,8 @@ interface SignupContextProviderProps extends Omit<BaseSignupContextProps, 'onLog
     onReferralCheckError?: () => void;
 
     hvMode?: SignupHumanVerification;
+
+    invite?: SignupInviteParameters;
 }
 
 const getPaymentDataFromChargeableCallback = (
@@ -238,6 +240,7 @@ const InnerSignupContextProvider = ({
     unverifiedReferralData,
     onReferralCheckError,
     hvMode,
+    invite,
 }: SignupContextProviderProps) => {
     const { APP_NAME } = useConfig();
     const clientType = getClientType(app);
@@ -429,7 +432,7 @@ const InnerSignupContextProvider = ({
                 productParam: app,
                 humanVerificationResult: undefined,
                 inviteData: undefined,
-                invite: undefined,
+                invite,
                 visitorId: undefined,
                 hvMode,
             });

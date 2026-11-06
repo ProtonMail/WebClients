@@ -14,6 +14,7 @@ import MeetB2CSignup from './flows/meet/MeetB2CSignup';
 import MeetB2CPlanSignup from './flows/meetB2CPlan/MeetB2CPlanSignup';
 import PassSignup from './flows/pass/PassSignup';
 import ReferralSignup from './flows/referral/ReferralSignup';
+import { SpacesSignup } from './flows/spacesFlows';
 
 const DriveSignupController = (props: BaseSignupContextProps) => (
     <Switch>
@@ -70,6 +71,11 @@ const SignupCtxRouter = (props: BaseSignupContextProps) => {
                 <Route path={SSO_PATHS.MAIL_SIGNUP}>
                     <MailSignup {...props} />
                 </Route>
+                {SpacesSignup && (
+                    <Route path={SSO_PATHS.SPACES_SIGNUP}>
+                        <SpacesSignup {...props} />
+                    </Route>
+                )}
                 <Route>
                     <GenericSignupController {...props} />
                 </Route>
