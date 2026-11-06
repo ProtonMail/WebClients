@@ -18,10 +18,10 @@ import { useVaultCreationPolicy } from '../../../hooks/organization/useVaultCrea
 import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
 import { useNewItemShortcut } from '../../../hooks/useNewItemShortcut';
 import { selectAliasLimits } from '../../../store/selectors/limits';
+import { selectOrgAliasCreationDisabled } from '../../../store/selectors/organization';
 import { selectCanCreateItems } from '../../../store/selectors/shares';
 import { selectPassPlan } from '../../../store/selectors/user';
 import { PassFeature } from '../../../types/api/features';
-import { OrganizationAliasCreateMode } from '../../../types/api/pass';
 import { UserPassPlan } from '../../../types/api/plan';
 import type { ItemType } from '../../../types/protobuf';
 import type { MaybeNull } from '../../../types/utils';
@@ -37,7 +37,6 @@ import { useNavigate } from '../../Navigation/NavigationActions';
 import { useItemScope } from '../../Navigation/NavigationMatches';
 import { getNewItemRoute } from '../../Navigation/routing';
 import { OrganizationPolicyTooltip } from '../../Organization/OrganizationPolicyTooltip';
-import { useOrganization } from '../../Organization/OrganizationProvider';
 import { usePasswordGeneratorAction } from '../../Password/PasswordGeneratorAction';
 import { usePasswordHistoryActions } from '../../Password/PasswordHistoryActions';
 import { useCopyToClipboard } from '../../Settings/Clipboard/ClipboardProvider';
@@ -67,8 +66,7 @@ export const ItemQuickActions: FC<Props> = ({ origin = null }) => {
 
     const onCreate = useCallback((type: ItemType) => navigate(getNewItemRoute(type, scope)), [scope]);
 
-    const org = useOrganization();
-    const orgAliasCreationDisabled = org?.settings.AliasCreateMode === OrganizationAliasCreateMode.NOBODY;
+    const orgAliasCreationDisabled = useSelector(selectOrgAliasCreationDisabled);
 
     const { needsUpgrade, aliasLimit, aliasLimited, aliasTotalCount } = useSelector(selectAliasLimits);
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;

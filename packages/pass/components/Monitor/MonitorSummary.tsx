@@ -20,6 +20,7 @@ import {
     selectCanUseDarkWebMonitoring,
     selectMonitorPreview,
 } from '../../store/selectors/monitor';
+import { selectOrgTOTPDisabled } from '../../store/selectors/organization';
 import { PassFeature } from '../../types/api/features';
 import { TelemetryEventName } from '../../types/data/telemetry';
 import { PillBadge } from '../Layout/Badge/PillBadge';
@@ -49,6 +50,7 @@ export const MonitorSummary: FC = () => {
     const compromisedPasswordsAllowed = useSelector(selectCanCheckCompromisedPasswords);
     const duplicatePasswordsAllowed = useSelector(selectCanCheckDuplicatePasswords);
     const preview = useSelector(selectMonitorPreview);
+    const orgTOTPDisabled = useSelector(selectOrgTOTPDisabled);
     const [upsellModalOpen, setUpsellModalOpen] = useState(false);
     const onUpsell = () => setUpsellModalOpen(true);
 
@@ -172,13 +174,15 @@ export const MonitorSummary: FC = () => {
                                         />
                                     ))}
 
-                                <ButtonCard
-                                    actions={twofasReady && <PillBadge label={missing2FAs.count} />}
-                                    disabled={missing2FAs.loading && missing2FAs.count === 0}
-                                    onClick={() => navigate(`${getLocalPath('monitor/2fa')}`)}
-                                    subtitle={c('Description').t`Set up 2FA for more security`}
-                                    title={c('Title').t`Inactive 2FA`}
-                                />
+                                {!orgTOTPDisabled && (
+                                    <ButtonCard
+                                        actions={twofasReady && <PillBadge label={missing2FAs.count} />}
+                                        disabled={missing2FAs.loading && missing2FAs.count === 0}
+                                        onClick={() => navigate(`${getLocalPath('monitor/2fa')}`)}
+                                        subtitle={c('Description').t`Set up 2FA for more security`}
+                                        title={c('Title').t`Inactive 2FA`}
+                                    />
+                                )}
 
                                 <ButtonCard
                                     actions={<PillBadge label={excluded.count} />}

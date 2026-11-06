@@ -1,4 +1,5 @@
 import type { FC, ReactNode } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -8,11 +9,10 @@ import clsx from '@proton/utils/clsx';
 
 import { type AccessDTO, AccessTarget } from '../../../lib/access/types';
 import { isGroupInvite } from '../../../lib/invites/invite.utils';
-import { OrganizationItemShareMode } from '../../../types/api/pass';
+import { selectOrgItemSharingDisabled } from '../../../store/selectors/organization';
 import type { NewUserPendingInvite, PendingInvite, ShareMember as ShareMemberType } from '../../../types/data/invites';
 import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
 import { OrganizationPolicyTooltip } from '../../Organization/OrganizationPolicyTooltip';
-import { useOrganization } from '../../Organization/OrganizationProvider';
 import { ShareMember } from '../Member/ShareMember';
 import { PendingExistingMember, PendingNewMember } from '../Member/SharePendingMember';
 
@@ -46,8 +46,7 @@ export const AccessList: FC<Props> = ({
     title,
     onInvite,
 }) => {
-    const org = useOrganization();
-    const orgItemSharingDisabled = org?.settings.ItemShareMode === OrganizationItemShareMode.DISABLED;
+    const orgItemSharingDisabled = useSelector(selectOrgItemSharingDisabled);
     const inviteDisabled = !canManage || (target === AccessTarget.Item && orgItemSharingDisabled);
 
     return (

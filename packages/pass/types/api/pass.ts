@@ -494,6 +494,14 @@ export enum OrganizationAliasCreateMode {
     ALLOWEDFORALLMEMBERS = 0,
     NOBODY = 1,
 }
+export enum OrganizationCanStoreTotpMode {
+    ALLOWED = 0,
+    DISABLED = 1,
+}
+export enum OrganizationCanStorePasskeyMode {
+    ALLOWED = 0,
+    DISABLED = 1,
+}
 export type OrganizationUpdateInput = {
     /* Allowed ways to share within the organization. */
     ShareMode?: OrganizationShareMode | null;
@@ -511,6 +519,10 @@ export type OrganizationUpdateInput = {
     VaultCreateMode?: OrganizationVaultCreateMode | null;
     /* If it is allowed to create aliases in the organization. */
     AliasCreateMode?: OrganizationAliasCreateMode | null;
+    /* If it is allowed to store TOTP in the organization. */
+    CanStoreTotp?: OrganizationCanStoreTotpMode | null;
+    /* If it is allowed to store passkeys in the organization. */
+    CanStorePasskey?: OrganizationCanStorePasskeyMode | null;
 };
 export type OrganizationUpdatePasswordPolicyInput = {
     /* Whether subusers are allowed to generate random passwords */
@@ -1606,6 +1618,8 @@ export type OrganizationSettingsGetResponse = {
     PasswordPolicy: OrganizationUpdatePasswordPolicyInput;
     VaultCreateMode: OrganizationVaultCreateMode;
     AliasCreateMode: OrganizationAliasCreateMode;
+    CanStoreTotp: OrganizationCanStoreTotpMode;
+    CanStorePasskey: OrganizationCanStorePasskeyMode;
 };
 export type OrganizationGetResponse = {
     /* Whether this user can update the organization */

@@ -2,6 +2,7 @@ import { getItemTOTPUri, intoLoginItemPreview } from '@proton/pass/lib/items/ite
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { selectOTPCandidate } from '@proton/pass/store/selectors/autofill';
 import { selectItem } from '@proton/pass/store/selectors/items';
+import { selectOrgTOTPDisabled } from '@proton/pass/store/selectors/organization';
 import type { Maybe } from '@proton/pass/types/utils';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -23,6 +24,10 @@ export const createOTPService = () => {
     const onOTPRequest = withContext<MessageHandlerCallback<WorkerMessageType.OTP_CODE_GENERATE>>(
         (ctx, { payload }) => {
             try {
+                if (selectOrgTOTPDisabled(ctx.service.store.getState())) {
+                    throw new Error('TOTP is disabled by the organization');
+                }
+
                 const totpUri: Maybe<string> = (() => {
                     if (payload.type === 'uri') return payload.totpUri;
                     if (payload.type === 'item') {
@@ -54,6 +59,8 @@ export const createOTPService = () => {
             const { url, tabId } = await parseSender(sender);
             const submission = ctx.service.formTracker.get(tabId, url);
             const state = ctx.service.store.getState();
+            if (selectOrgTOTPDisabled(state)) return { shouldPrompt: false };
+
             const match = selectOTPCandidate(url.url ?? undefined, submission)(state);
 
             if (match) {

@@ -89,6 +89,20 @@ const getPolicies = (): PolicyItem[] => [
             .t`If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.`,
         isBooleanInverted: true,
     } as const,
+    {
+        setting: 'CanStoreTotp',
+        label: c('Label').t`Allow storing 2FA codes`,
+        description: c('Info')
+            .t`If disabled, organization members won't be able to add 2FA codes to their items, and existing ones won't be generated or autofilled. Nothing is deleted.`,
+        isBooleanInverted: true,
+    } as const,
+    {
+        setting: 'CanStorePasskey',
+        label: c('Label').t`Allow storing passkeys`,
+        description: c('Info')
+            .t`If disabled, organization members won't be able to save passkeys in ${PASS_APP_NAME} or sign in with them. Nothing is deleted.`,
+        isBooleanInverted: true,
+    } as const,
 ];
 
 const PassPolicies = ({ upgradeRequired }: { upgradeRequired: boolean }) => {

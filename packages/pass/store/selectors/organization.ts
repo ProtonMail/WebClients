@@ -2,7 +2,15 @@ import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 
 import { isB2BAdmin } from '../../lib/organization/helpers';
 import { getPassPlan } from '../../lib/user/user.plan';
-import type { OrganizationUpdatePasswordPolicyInput, OrganizationVaultCreateMode } from '../../types/api/pass';
+import {
+    OrganizationAliasCreateMode,
+    OrganizationCanStorePasskeyMode,
+    OrganizationCanStoreTotpMode,
+    OrganizationItemShareMode,
+    OrganizationPublicLinkMode,
+    type OrganizationUpdatePasswordPolicyInput,
+    type OrganizationVaultCreateMode,
+} from '../../types/api/pass';
 import type { OrganizationSettings } from '../../types/data/organization';
 import type { MaybeNull } from '../../types/utils';
 import type { OrganizationState } from '../reducers/organization';
@@ -22,3 +30,18 @@ export const selectOrganizationVaultCreationPolicy = ({
     user: { user, plan },
 }: State): MaybeNull<OrganizationVaultCreateMode> =>
     user !== null && !isB2BAdmin(user, getPassPlan(plan)) ? (organization?.settings?.VaultCreateMode ?? null) : null;
+
+export const selectOrgAliasCreationDisabled = (state: State): boolean =>
+    selectOrganizationSettings(state)?.AliasCreateMode === OrganizationAliasCreateMode.NOBODY;
+
+export const selectOrgItemSharingDisabled = (state: State): boolean =>
+    selectOrganizationSettings(state)?.ItemShareMode === OrganizationItemShareMode.DISABLED;
+
+export const selectOrgPublicLinkDisabled = (state: State): boolean =>
+    selectOrganizationSettings(state)?.PublicLinkMode === OrganizationPublicLinkMode.DISABLED;
+
+export const selectOrgTOTPDisabled = (state: State): boolean =>
+    selectOrganizationSettings(state)?.CanStoreTotp === OrganizationCanStoreTotpMode.DISABLED;
+
+export const selectOrgPasskeyDisabled = (state: State): boolean =>
+    selectOrganizationSettings(state)?.CanStorePasskey === OrganizationCanStorePasskeyMode.DISABLED;

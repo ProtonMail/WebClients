@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import browser from '@proton/pass/lib/globals/browser';
 import { selectPasskeys } from '@proton/pass/store/selectors/autofill';
 import { selectItem } from '@proton/pass/store/selectors/items';
+import { selectOrgPasskeyDisabled } from '@proton/pass/store/selectors/organization';
 import type { Maybe } from '@proton/pass/types/utils';
 import type { TabId } from '@proton/pass/types/worker/runtime';
 import { logger } from '@proton/pass/utils/logger';
@@ -51,7 +52,10 @@ export const createPasskeyService = () => {
             const tabUrl = await getTabURL(tab?.id);
             assertValidPasskeyRequest(payload.domain, tabUrl);
 
-            return { passkeys: selectPasskeys(payload)(ctx.service.store.getState()) };
+            const state = ctx.service.store.getState();
+            if (selectOrgPasskeyDisabled(state)) return { passkeys: [] };
+
+            return { passkeys: selectPasskeys(payload)(state) };
         })
     );
 
@@ -60,6 +64,7 @@ export const createPasskeyService = () => {
         withContext(async (ctx, { payload: { request, domain } }, { tab }) => {
             const tabUrl = await getTabURL(tab?.id);
             assertValidPasskeyRequest(domain, tabUrl);
+            if (selectOrgPasskeyDisabled(ctx.service.store.getState())) return { intercept: false };
 
             logger.debug(`[PasskeyService] registration on ${tabUrl.origin}`);
             const response = await ctx.service.core.generate_passkey(tabUrl.origin, request, true);
@@ -74,10 +79,12 @@ export const createPasskeyService = () => {
             const tabUrl = await getTabURL(tab?.id);
             assertValidPasskeyRequest(domain, tabUrl);
 
+            const state = ctx.service.store.getState();
+            if (selectOrgPasskeyDisabled(state)) return { intercept: false };
             if (!selectedPasskey) throw new Error(c('Error').t`Missing passkey`);
 
             const { shareId, itemId, credentialId } = selectedPasskey;
-            const item = selectItem<'login'>(shareId, itemId)(ctx.service.store.getState());
+            const item = selectItem<'login'>(shareId, itemId)(state);
             if (!item) throw new Error(c('Error').t`Unknown item`);
 
             const { passkeys } = item.data.content;

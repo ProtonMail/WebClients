@@ -3,9 +3,8 @@ import { useSelector } from 'react-redux';
 
 import type { FormikContextType } from 'formik';
 
-import { useOrganization } from '../components/Organization/OrganizationProvider';
 import { selectAliasByAliasEmail } from '../store/selectors/alias';
-import { OrganizationAliasCreateMode } from '../types/api/pass';
+import { selectOrgAliasCreationDisabled } from '../store/selectors/organization';
 import type { ItemRevision } from '../types/data/items';
 import type { LoginItemFormValues } from '../types/forms/item';
 import type { Maybe } from '../types/utils';
@@ -30,8 +29,7 @@ export const useAliasForLogin = <T extends LoginItemFormValues>(form: FormikCont
     const { values } = form;
     const { withAlias, itemEmail, aliasPrefix } = values;
 
-    const org = useOrganization();
-    const orgAliasCreationDisabled = org?.settings.AliasCreateMode === OrganizationAliasCreateMode.NOBODY;
+    const orgAliasCreationDisabled = useSelector(selectOrgAliasCreationDisabled);
 
     const aliasOptions = useAliasOptions({ shareId: form.values.shareId, lazy: true });
     const relatedAlias = useSelector(selectAliasByAliasEmail(itemEmail));

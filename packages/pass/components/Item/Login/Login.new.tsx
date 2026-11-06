@@ -5,10 +5,9 @@ import { useHistory } from 'react-router-dom';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcNote } from '@proton/icons/icons/IcNote';
 
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '../../../constants';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '../../../constants';
 import { useInitialValues } from '../../../hooks/items/useInitialValues';
 import { useAliasForLogin } from '../../../hooks/useAliasForLogin';
 import { useItemDraft } from '../../../hooks/useItemDraft';
@@ -22,7 +21,6 @@ import { sanitizeURL } from '../../../lib/urls/utils/sanitize';
 import { intoDomainWithPort, resolveSubdomain } from '../../../lib/urls/utils/utils';
 import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '../../../lib/validation/alias';
 import { validateLoginForm } from '../../../lib/validation/login';
-import { selectTOTPLimits } from '../../../store/selectors/limits';
 import { selectShowUsernameField } from '../../../store/selectors/settings';
 import type { LoginWithAliasCreationDTO } from '../../../types/data/items.dto';
 import type { LoginItemFormValues } from '../../../types/forms/item';
@@ -32,25 +30,21 @@ import { obfuscate } from '../../../utils/obfuscate/xor';
 import { isEmptyString } from '../../../utils/string/is-empty-string';
 import { uniqueId } from '../../../utils/string/unique-id';
 import { FileAttachmentsField } from '../../FileAttachments/FileAttachmentsField';
-import { ValueControl } from '../../Form/Field/Control/ValueControl';
 import { ExtraFieldGroup } from '../../Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '../../Form/Field/Field';
 import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
-import { TextField } from '../../Form/Field/TextField';
 import { TextAreaField } from '../../Form/Field/TextareaField';
 import { TitleField } from '../../Form/Field/TitleField';
 import { UrlGroupField } from '../../Form/Field/UrlGroup/UrlGroupField';
 import { VaultFolderPickerField } from '../../Form/Field/VaultFolderPickerField';
 import { ItemCreatePanel } from '../../Layout/Panel/ItemCreatePanel';
-import { UpgradeButton } from '../../Upsell/UpgradeButton';
 import type { ItemNewViewProps } from '../../Views/types';
 import { LoginEditCredentials } from './Login.edit.credentials';
+import { LoginEditTOTP } from './Login.edit.totp';
 
 const FORM_ID = 'new-login';
 
 export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, folderId, url: currentUrl, onCancel, onSubmit }) => {
-    const { needsUpgrade } = useSelector(selectTOTPLimits);
-
     const history = useHistory();
     const { ParentPortal, openPortal } = usePortal();
 
@@ -219,24 +213,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, folderId, url
                             <FieldsetCluster>
                                 <LoginEditCredentials form={form} alias={alias} />
 
-                                {
-                                    /* only allow adding a new TOTP code if user
-                                     * has not reached his plan's TOTP limit */
-                                    needsUpgrade ? (
-                                        <ValueControl icon={IcLock} label={c('Label').t`2FA secret key (TOTP)`}>
-                                            <UpgradeButton inline upsellRef={UpsellRef.LIMIT_2FA} />
-                                        </ValueControl>
-                                    ) : (
-                                        <Field
-                                            hidden
-                                            name="totpUri"
-                                            label={c('Label').t`2FA secret key (TOTP)`}
-                                            placeholder={c('Placeholder').t`Add 2FA secret key`}
-                                            component={TextField}
-                                            icon={IcLock}
-                                        />
-                                    )
-                                }
+                                <LoginEditTOTP form={form} />
                             </FieldsetCluster>
 
                             <FieldsetCluster>

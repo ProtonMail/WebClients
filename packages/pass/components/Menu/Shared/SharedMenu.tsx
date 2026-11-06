@@ -9,14 +9,13 @@ import { IcUserArrowLeft } from '@proton/icons/icons/IcUserArrowLeft';
 import { IcUserArrowRight } from '@proton/icons/icons/IcUserArrowRight';
 
 import { UpsellRef } from '../../../constants';
+import { selectOrgPublicLinkDisabled } from '../../../store/selectors/organization';
 import { selectActiveSecureLinksCount, selectVisibleSecureLinksCount } from '../../../store/selectors/secure-links';
 import { selectSharedByMeCount, selectSharedWithMeCount } from '../../../store/selectors/shared';
 import { selectPassPlan } from '../../../store/selectors/user';
-import { OrganizationPublicLinkMode } from '../../../types/api/pass';
 import { UserPassPlan } from '../../../types/api/plan';
 import { truthy } from '../../../utils/fp/predicates';
 import { useItemScope } from '../../Navigation/NavigationMatches';
-import { useOrganization } from '../../Organization/OrganizationProvider';
 import { PassPlusPromotionButton } from '../../Upsell/PassPlusPromotionButton';
 import { useUpselling } from '../../Upsell/UpsellingProvider';
 import { SharedMenuItem } from './SharedMenuItem';
@@ -28,13 +27,12 @@ type Props = {
 
 export const SharedMenuContent: FC<Props> = ({ heading, onAction }) => {
     const scope = useItemScope();
-    const org = useOrganization();
 
     const sharedWithMeCount = useSelector(selectSharedWithMeCount);
     const sharedByMeCount = useSelector(selectSharedByMeCount);
     const secureLinksCount = useSelector(selectVisibleSecureLinksCount);
     const activeSecureLinksCount = useSelector(selectActiveSecureLinksCount);
-    const orgPublicLinkingDisabled = org?.settings.PublicLinkMode === OrganizationPublicLinkMode.DISABLED;
+    const orgPublicLinkingDisabled = useSelector(selectOrgPublicLinkDisabled);
 
     const elements = [
         sharedWithMeCount > 0 && (

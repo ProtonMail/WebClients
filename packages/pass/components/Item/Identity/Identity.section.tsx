@@ -20,7 +20,8 @@ import type { ExtraFieldType } from '../../../types/protobuf';
 import type { Maybe } from '../../../types/utils';
 import { autofocusInput } from '../../../utils/dom/input';
 import { ExtraFieldComponent } from '../../Form/Field/ExtraFieldGroup/ExtraField';
-import { createExtraField, getExtraFieldOptions } from '../../Form/Field/ExtraFieldGroup/ExtraField.utils';
+import { createExtraField } from '../../Form/Field/ExtraFieldGroup/ExtraField.utils';
+import { useExtraFieldOptions } from '../../Form/Field/ExtraFieldGroup/useExtraFieldOptions';
 import { Field } from '../../Form/Field/Field';
 import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
 import { TextField } from '../../Form/Field/TextField';
@@ -45,6 +46,7 @@ export const IdentitySection: FC<IdentityCollapsibleSectionProps> = ({
 }) => {
     const { ParentPortal: AddNewPortal, openPortal } = usePortal();
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
+    const getExtraFieldOptions = useExtraFieldOptions();
     const upsell = useUpselling();
     const canCreateField = Boolean(optionalFields || customFieldsKey);
 

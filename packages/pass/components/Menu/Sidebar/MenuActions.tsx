@@ -23,9 +23,9 @@ import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
 import { useNavigateToAccount } from '../../../hooks/useNavigateToAccount';
 import { useNotificationEnhancer } from '../../../hooks/useNotificationEnhancer';
 import { isPaidPlan } from '../../../lib/user/user.predicates';
+import { selectOrgAliasCreationDisabled } from '../../../store/selectors/organization';
 import { selectPassPlan } from '../../../store/selectors/user';
 import { PassFeature } from '../../../types/api/features';
-import { OrganizationAliasCreateMode } from '../../../types/api/pass';
 import { SpotlightMessage } from '../../../types/worker/spotlight';
 import { usePassCore } from '../../Core/PassCoreProvider';
 import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
@@ -52,7 +52,7 @@ export const MenuActions: FC<Props> = ({ onLogout }) => {
     const enhance = useNotificationEnhancer();
     const org = useOrganization();
     const orgEnabled = org?.settings.enabled ?? false;
-    const orgAliasCreationDisabled = org?.settings.AliasCreateMode === OrganizationAliasCreateMode.NOBODY;
+    const orgAliasCreationDisabled = useSelector(selectOrgAliasCreationDisabled);
 
     const navigateToAccount = useNavigateToAccount(AccountPath.DASHBOARD);
     const navigateToOrganization = useNavigateToAccount(AccountPath.POLICIES);

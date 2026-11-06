@@ -5,6 +5,8 @@ import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import { isPassB2BPlan } from '../../lib/b2b/b2b.utils';
 import {
     OrganizationAliasCreateMode,
+    OrganizationCanStorePasskeyMode,
+    OrganizationCanStoreTotpMode,
     OrganizationExportMode,
     OrganizationItemShareMode,
     OrganizationPublicLinkMode,
@@ -29,6 +31,8 @@ export const INITIAL_ORGANIZATION_SETTINGS: OrganizationSettings = {
     ItemShareMode: OrganizationItemShareMode.DISABLED,
     PublicLinkMode: OrganizationPublicLinkMode.DISABLED,
     AliasCreateMode: OrganizationAliasCreateMode.ALLOWEDFORALLMEMBERS,
+    CanStoreTotp: OrganizationCanStoreTotpMode.ALLOWED,
+    CanStorePasskey: OrganizationCanStorePasskeyMode.ALLOWED,
 };
 
 export type OrganizationState = {
