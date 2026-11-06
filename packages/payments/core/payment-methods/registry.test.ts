@@ -1,8 +1,20 @@
 import { PAYMENT_METHOD_TYPES } from '../constants';
-import { isDirectDebitPaymentMethod, isSavablePaymentMethod } from './helpers';
+import { isDirectDebitPaymentMethod, isSavablePaymentMethod, isSavedChargebeePaymentMethod } from './helpers';
 import { type PaymentMethodConfig, paymentMethodRegistry } from './registry';
 
 const rows = Object.entries(paymentMethodRegistry) as [PAYMENT_METHOD_TYPES, PaymentMethodConfig][];
+
+const savedChargebeeMethods = {
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]: true,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: true,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL]: true,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: true,
+    [PAYMENT_METHOD_TYPES.APPLE_PAY]: true,
+    [PAYMENT_METHOD_TYPES.GOOGLE_PAY]: true,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN]: false,
+    [PAYMENT_METHOD_TYPES.CASH]: false,
+    [PAYMENT_METHOD_TYPES.TOKEN]: false,
+} satisfies Record<PAYMENT_METHOD_TYPES, boolean>;
 
 /**
  * Row completeness and key/name validity are already enforced by `satisfies` on the registry, so
@@ -29,4 +41,9 @@ describe('payment method registry', () => {
             new Set([PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT, PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL])
         );
     });
+
+    it.each(Object.values(PAYMENT_METHOD_TYPES))(
+        'isSavedChargebeePaymentMethod(%s) matches the saved Chargebee methods',
+        (type) => expect(isSavedChargebeePaymentMethod(type)).toBe(savedChargebeeMethods[type])
+    );
 });

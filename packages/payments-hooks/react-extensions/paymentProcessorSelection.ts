@@ -1,31 +1,20 @@
 import type { AvailablePaymentMethod, PlainPaymentMethodType } from '@proton/payments/core/interface';
-import { getPaymentMethodConfig } from '@proton/payments/core/payment-methods/registry';
+import { isSavedChargebeePaymentMethod } from '@proton/payments/core/payment-methods/helpers';
+import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { isExistingPaymentMethod } from '@proton/payments/core/type-guards';
 
-export const isSavedChargebeeMethodType = (type: AvailablePaymentMethod['type']): boolean => {
-    const config = getPaymentMethodConfig(type);
-    return config?.system === 'chargebee' && config.savable;
-};
-
-export const selectPaymentProcessor = <TSaved, TNewProcessors extends Record<PlainPaymentMethodType, unknown>>(
+export const selectPaymentProcessor = (
     selectedMethod: AvailablePaymentMethod | undefined,
-    savedProcessor: TSaved,
-    newMethodProcessors: TNewProcessors
-): TSaved | TNewProcessors[PlainPaymentMethodType] | undefined => {
+    savedProcessor: PaymentProcessorHook,
+    newMethodProcessors: Record<PlainPaymentMethodType, PaymentProcessorHook | undefined>
+): PaymentProcessorHook | undefined => {
     if (!selectedMethod) {
         return undefined;
     }
 
     if (isExistingPaymentMethod(selectedMethod.value)) {
-        return isSavedChargebeeMethodType(selectedMethod.type) ? savedProcessor : undefined;
+        return isSavedChargebeePaymentMethod(selectedMethod.type) ? savedProcessor : undefined;
     }
 
     return newMethodProcessors[selectedMethod.type];
-};
-
-export const resetPaymentProcessors = (
-    savedProcessor: { reset: () => void },
-    newMethodProcessors: Record<PlainPaymentMethodType, { reset: () => void } | undefined>
-) => {
-    [savedProcessor, ...Object.values(newMethodProcessors)].forEach((processor) => processor?.reset());
 };

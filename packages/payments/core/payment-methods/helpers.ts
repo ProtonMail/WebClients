@@ -12,3 +12,8 @@ export function isSavablePaymentMethod(type: PAYMENT_METHOD_TYPES): boolean {
 export function isDirectDebitPaymentMethod(type: PAYMENT_METHOD_TYPES): boolean {
     return getPaymentMethodConfig(type)?.directDebit ?? false;
 }
+
+export function isSavedChargebeePaymentMethod(type: PAYMENT_METHOD_TYPES): boolean {
+    const config = getPaymentMethodConfig(type);
+    return config?.system === 'chargebee' && config.savable;
+}

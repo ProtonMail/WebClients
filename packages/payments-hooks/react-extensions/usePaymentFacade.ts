@@ -37,7 +37,7 @@ import { useApplePay as useApplePayLegacy } from '../payment-processors/useApple
 import { type ChargebeePaypalModalHandles, useChargebeePaypal } from '../payment-processors/useChargebeePaypal';
 import { type GooglePayModalHandles, useGooglePay } from '../payment-processors/useGooglePay';
 import { useGooglePay as useGooglePayLegacy } from '../payment-processors/useGooglePayLegacy';
-import { resetPaymentProcessors, selectPaymentProcessor } from './paymentProcessorSelection';
+import { selectPaymentProcessor } from './paymentProcessorSelection';
 import useBitcoin from './useBitcoin';
 import { useChargebeeCard } from './useChargebeeCard';
 import { type ChargebeeIdealModalHandles, useChargebeeIdeal } from './useChargebeeIdeal';
@@ -586,7 +586,8 @@ export const usePaymentFacade = (
 
     const initialized = !methods.loading;
 
-    const reset = () => resetPaymentProcessors(savedChargebeeMethod, newMethodProcessors);
+    const reset = () =>
+        [savedChargebeeMethod, ...Object.values(newMethodProcessors)].forEach((processor) => processor?.reset());
 
     return {
         methods,

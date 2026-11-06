@@ -1,26 +1,34 @@
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { AvailablePaymentMethod, PlainPaymentMethodType } from '@proton/payments/core/interface';
+import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
 
-import {
-    isSavedChargebeeMethodType,
-    resetPaymentProcessors,
-    selectPaymentProcessor,
-} from './paymentProcessorSelection';
+import { selectPaymentProcessor } from './paymentProcessorSelection';
 
-const buildProcessors = () => ({
-    saved: { name: 'saved', reset: jest.fn() },
-    newMethods: {
-        [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]: { name: 'card', reset: jest.fn() },
-        [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: { name: 'paypal', reset: jest.fn() },
-        [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL]: { name: 'ideal', reset: jest.fn() },
-        [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN]: { name: 'bitcoin', reset: jest.fn() },
-        [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: { name: 'directDebit', reset: jest.fn() },
-        [PAYMENT_METHOD_TYPES.APPLE_PAY]: { name: 'applePay', reset: jest.fn() },
-        [PAYMENT_METHOD_TYPES.GOOGLE_PAY]: { name: 'googlePay', reset: jest.fn() },
-        [PAYMENT_METHOD_TYPES.CASH]: undefined,
-        [PAYMENT_METHOD_TYPES.TOKEN]: undefined,
-    } satisfies Record<PlainPaymentMethodType, { name: string; reset: jest.Mock } | undefined>,
+const processor = (type: PaymentProcessorType): PaymentProcessorHook => ({
+    fetchPaymentToken: jest.fn(),
+    fetchingToken: false,
+    verifyPaymentToken: jest.fn(),
+    verifyingToken: false,
+    processPaymentToken: jest.fn(),
+    processingToken: false,
+    reset: jest.fn(),
+    userInitiatedProcessing: false,
+    meta: { type },
 });
+
+const savedProcessor = processor('saved-chargebee');
+
+const newMethodProcessors: Record<PlainPaymentMethodType, PaymentProcessorHook | undefined> = {
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]: processor('chargebee-card'),
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: processor('chargebee-paypal'),
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL]: processor(PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL),
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN]: processor('chargebee-bitcoin'),
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: processor(PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT),
+    [PAYMENT_METHOD_TYPES.APPLE_PAY]: processor(PAYMENT_METHOD_TYPES.APPLE_PAY),
+    [PAYMENT_METHOD_TYPES.GOOGLE_PAY]: processor(PAYMENT_METHOD_TYPES.GOOGLE_PAY),
+    [PAYMENT_METHOD_TYPES.CASH]: undefined,
+    [PAYMENT_METHOD_TYPES.TOKEN]: undefined,
+};
 
 const newMethod = (type: PAYMENT_METHOD_TYPES): AvailablePaymentMethod => ({
     type,
@@ -37,48 +45,29 @@ const savedMethod = (type: PAYMENT_METHOD_TYPES): AvailablePaymentMethod => ({
     isDefault: false,
 });
 
-describe('isSavedChargebeeMethodType', () => {
-    it('matches the method types the facade hard-coded for the saved Chargebee processor', () => {
-        expect(Object.values(PAYMENT_METHOD_TYPES).filter(isSavedChargebeeMethodType).sort()).toEqual(
-            [
-                PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
-                PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
-                PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
-                PAYMENT_METHOD_TYPES.APPLE_PAY,
-                PAYMENT_METHOD_TYPES.GOOGLE_PAY,
-                PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
-            ].sort()
-        );
-    });
-});
-
 describe('selectPaymentProcessor', () => {
     it('returns undefined when no method is selected', () => {
-        const { saved, newMethods } = buildProcessors();
-
-        expect(selectPaymentProcessor(undefined, saved, newMethods)).toBeUndefined();
+        expect(selectPaymentProcessor(undefined, savedProcessor, newMethodProcessors)).toBeUndefined();
     });
 
     it.each([
-        [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD, 'card'],
-        [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL, 'paypal'],
-        [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL, 'ideal'],
-        [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN, 'bitcoin'],
-        [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT, 'directDebit'],
-        [PAYMENT_METHOD_TYPES.APPLE_PAY, 'applePay'],
-        [PAYMENT_METHOD_TYPES.GOOGLE_PAY, 'googlePay'],
-    ])('returns the %s processor for a new method', (type, name) => {
-        const { saved, newMethods } = buildProcessors();
-
-        expect(selectPaymentProcessor(newMethod(type), saved, newMethods)?.name).toBe(name);
+        PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+        PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
+        PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL,
+        PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN,
+        PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+        PAYMENT_METHOD_TYPES.APPLE_PAY,
+        PAYMENT_METHOD_TYPES.GOOGLE_PAY,
+    ])('returns the processor mapped to a new %s method', (type) => {
+        expect(selectPaymentProcessor(newMethod(type), savedProcessor, newMethodProcessors)).toBe(
+            newMethodProcessors[type]
+        );
     });
 
     it.each([PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.TOKEN])(
-        'returns undefined for a new %s method',
+        'returns undefined for a new %s method, which has no processor',
         (type) => {
-            const { saved, newMethods } = buildProcessors();
-
-            expect(selectPaymentProcessor(newMethod(type), saved, newMethods)).toBeUndefined();
+            expect(selectPaymentProcessor(newMethod(type), savedProcessor, newMethodProcessors)).toBeUndefined();
         }
     );
 
@@ -90,31 +79,13 @@ describe('selectPaymentProcessor', () => {
         PAYMENT_METHOD_TYPES.GOOGLE_PAY,
         PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
     ])('returns the saved Chargebee processor for a saved %s method', (type) => {
-        const { saved, newMethods } = buildProcessors();
-
-        expect(selectPaymentProcessor(savedMethod(type), saved, newMethods)).toBe(saved);
+        expect(selectPaymentProcessor(savedMethod(type), savedProcessor, newMethodProcessors)).toBe(savedProcessor);
     });
 
     it.each([PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN, PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.TOKEN])(
         'returns undefined for a saved %s method',
         (type) => {
-            const { saved, newMethods } = buildProcessors();
-
-            expect(selectPaymentProcessor(savedMethod(type), saved, newMethods)).toBeUndefined();
+            expect(selectPaymentProcessor(savedMethod(type), savedProcessor, newMethodProcessors)).toBeUndefined();
         }
     );
-});
-
-describe('resetPaymentProcessors', () => {
-    it('resets the saved processor and every new-method processor, including direct debit', () => {
-        const { saved, newMethods } = buildProcessors();
-
-        resetPaymentProcessors(saved, newMethods);
-
-        expect(saved.reset).toHaveBeenCalledTimes(1);
-        Object.values(newMethods)
-            .filter((processor) => processor !== undefined)
-            .forEach((processor) => expect(processor.reset).toHaveBeenCalledTimes(1));
-        expect(newMethods[PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT].reset).toHaveBeenCalledTimes(1);
-    });
 });
