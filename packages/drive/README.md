@@ -79,7 +79,7 @@ The package exposes exactly two entry points to the rest of the monorepo:
 - **`@proton/drive/sdk`** - the SDK facade, with the core client and shared types. Importable by any app, including `applications/drive`.
 - **`@proton/drive/public/*`** - the public modals and helpers (`sharingModal`, `moveItemsModal`, `publicDocsSharing`, `thumbnails`, etc). Importable by external apps only, **not** `applications/drive`.
 
-Everything else (`modules/`, `components/`, `internal/`) is private and off-limits to external apps.
+Everything else (`modules/`, `modals/`, `components/`, `internal/`, `legacy/`) is private and off-limits to external apps.
 
 These import boundaries are enforced by the oxlint rule `proton/restricted-imports`, configured in `packages/oxlint-config/src/restrictedImports.ts`.
 
@@ -88,6 +88,8 @@ The Drive team is responsbile to provide stable interfaces for the Drive SDK and
 Only the public interface of each module is guaranteed to be stable. The team deserves the right to change the internal implementation details without a warning. Usage of non-exported features is not guaranteed to work and will not be supported, or warned about the change. Any failure because of that will not be considered as a bug and will not be fixed, it will up for the consumer to deal with the consequences.
 
 To use only the public interface, import from `@proton/drive/sdk`, or from the public module entry points (e.g., `@proton/drive/public/thumbnails`). See [External API](#external-api) above.
+
+If a shared modal or component you need is not public yet, add it to this package and expose it through `public/*`. Custom integrations, such as using `@protontech/drive-sdk` directly, are not supported by the Drive team.
 
 ## Core Events
 
