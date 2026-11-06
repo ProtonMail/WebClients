@@ -49,6 +49,7 @@ import { readAutoReplyModule, setAutoReplyModule } from './skills/settings/autoR
 import { CosmeticSetting, changeSettingsModule, readSettingsModule } from './skills/settings/cosmetic';
 import { changeSignatureModule, readSignatureModule, removeSignatureModule } from './skills/settings/signature';
 import { openSupportTicketModule } from './skills/support/openSupportTicket';
+import { STANDALONE_DESCRIPTIONS } from './standaloneDescriptions';
 import type { LumoMailConfigTelemetry } from './telemetry/useLumoMailTelemetry';
 import type { MailToolDeps, MailToolModule } from './toolModule';
 import { WELCOME_SUGGESTIONS } from './welcomeSuggestions';
@@ -150,9 +151,21 @@ const withEnums = (schema: JSONSchema, enums: Record<string, readonly unknown[]>
     },
 });
 
+const withDescriptions = (schema: JSONSchema, descriptions: Record<string, string>): JSONSchema => {
+    return {
+        ...schema,
+        properties: Object.fromEntries(
+            Object.entries<JSONSchema>(schema.properties).map(([key, property]) => {
+                return [key, { ...property, description: descriptions[key] }];
+            })
+        ),
+    };
+};
+
 /**
- * The standalone prompt's `<functions>` block, served by the Lumo backend, describes every tool, so the definitions
- * carry no prose of their own. Their schemas must match that block.
+ * The definitions carry the standalone descriptions instead of the modules' own wording and examples, so the chat
+ * template renders them in the model's native tool block. Their schemas must match the `<functions>` block the Lumo
+ * backend still serves to Mail bundles that send no descriptions.
  */
 const toStandaloneDefinition = (
     { toolDescription, examples, ...definition }: ToolDefinition,
@@ -160,11 +173,14 @@ const toStandaloneDefinition = (
 ): ToolDefinition => {
     const guide = STANDALONE_GUIDES[definition.name];
     const enums = STANDALONE_ENUMS[definition.name];
+    const { description, parameters } = STANDALONE_DESCRIPTIONS[definition.name];
+    const paramsSchema = withDescriptions(definition.paramsSchema, parameters);
 
     return {
         ...definition,
+        toolDescription: description,
+        paramsSchema: enums ? withEnums(paramsSchema, enums) : paramsSchema,
         ...(guide && { guide: () => guide(deps) }),
-        ...(enums && { paramsSchema: withEnums(definition.paramsSchema, enums) }),
     };
 };
 
