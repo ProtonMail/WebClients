@@ -114,6 +114,7 @@ describe('getHeadlessCheckout', () => {
                 'planAmountWithDiscountPerMonth',
                 'baseRenewAmount',
                 'guard',
+                'planDiscount',
             ]);
         });
     });

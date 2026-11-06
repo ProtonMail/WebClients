@@ -140,7 +140,8 @@ const PaymentSummary = ({ model, options, loadingPaymentDetails, giftCode, planI
                     </>
                 );
             },
-            discount: (item) => (
+            discount: () => null,
+            planDiscount: (item) => (
                 <SaveLabel2 className="text-sm inline-block" highlightPrice dir="ltr">
                     {`− ${item.discountPercent}%`}
                 </SaveLabel2>
@@ -234,7 +235,7 @@ const PaymentSummary = ({ model, options, loadingPaymentDetails, giftCode, planI
                                 <div className="flex-1 flex items-center gap-2">
                                     <div className="flex-1 text-sm">
                                         {checkoutView.render('billingCycle')}
-                                        {checkoutView.render('discount')}
+                                        {checkoutView.render('planDiscount')}
                                     </div>
 
                                     {!isB2bPlan && discountItem.discountPercent > 0 && (

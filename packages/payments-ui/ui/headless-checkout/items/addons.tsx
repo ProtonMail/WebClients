@@ -3,12 +3,12 @@ import type { ReactNode } from 'react';
 import Price from '@proton/components/components/price/Price';
 import { getAddonTitleWithQuantity, getAddonTitleWithoutQuantity } from '@proton/payments/core/checkout';
 import type { ADDON_NAMES, ADDON_PREFIXES } from '@proton/payments/core/constants';
-import { CYCLE } from '@proton/payments/core/constants';
 import type { Currency, Pricing } from '@proton/payments/core/interface';
 import { getAddonType } from '@proton/payments/core/plan/addons';
 
 import type { HeadlessCheckoutContextInner } from '../get-headless-checkout';
 import type { BaseLineItem } from './base-line-item';
+import { getAddonLinePricing } from './line-discounts';
 
 interface AddonItem {
     addonName: ADDON_NAMES;
@@ -45,30 +45,18 @@ function formatAddons(ctx: HeadlessCheckoutContextInner) {
     const { couponDiscountBreakdown } = checkoutUi;
 
     const addons: AddonItem[] = checkoutUi.addons.map((addon) => {
-        const basePricePerOnePerMonth = addon.pricing[CYCLE.MONTHLY] || 0;
-        const basePriceForAllPerMonth = addon.quantity * basePricePerOnePerMonth;
-        const basePricePerOnePerCycle = addon.pricing[cycle] || 0;
-        const basePriceForAllPerCycle = addon.quantity * basePricePerOnePerCycle;
-        // Worst-case scenario price. How much would user pay if they didn't have any discount and decided to pay for
-        // the selected cycle as a set of monthly renewals instead of just bying the selected cycle once. Example: item
-        // costs 9.99/month or 95.88/year (7.99/month). In this case the extrapolated price would be 119.88/year.
-        const extrapolatedPriceForAllPerCycle = basePriceForAllPerMonth * cycle;
+        const {
+            basePricePerOnePerCycle,
+            basePriceForAllPerMonth,
+            basePriceForAllPerCycle,
+            monthlyRenewalsPriceForAllPerCycle,
+            withDiscountForAllPerCycle,
+            discountPerCycle,
+            discountPercent,
+        } = getAddonLinePricing(addon, cycle, couponDiscountBreakdown);
 
-        // Per-line breakdown lets us apply the addon's coupon share; 0 when absent. The breakdown covers whatever
-        // the rendered check included. For an addon the user hasn't added to the base plan, the discounted figure
-        // comes from a secondary check that includes it — see runSecondarySubscriptionEstimation
-        // (core/secondary-estimation.ts).
-        const couponDiscountPerCycle = Math.abs(couponDiscountBreakdown?.perAddonPerCycleDiscount[addon.name] ?? 0);
-
-        const withDiscountForAllPerCycle = basePriceForAllPerCycle - couponDiscountPerCycle;
         const withDiscountForAllPerMonth = withDiscountForAllPerCycle / cycle;
         const withDiscountPerOnePerMonth = withDiscountForAllPerMonth / addon.quantity;
-
-        const discountPerCycle = extrapolatedPriceForAllPerCycle - withDiscountForAllPerCycle;
-        const discountPercent =
-            extrapolatedPriceForAllPerCycle > 0
-                ? Math.round(100 * (discountPerCycle / extrapolatedPriceForAllPerCycle))
-                : 0;
 
         // If the coupon is hidden from the user, then we need to display the discounted price per one per month in the
         // line item. For other cases, we display the undiscounted price, because checkout will display the aggregated
@@ -89,7 +77,7 @@ function formatAddons(ctx: HeadlessCheckoutContextInner) {
             pricePerOnePerMonthElement,
             priceForAllPerMonth,
             withoutDiscountPerMonth: basePriceForAllPerMonth,
-            withoutDiscountPerCycle: extrapolatedPriceForAllPerCycle,
+            withoutDiscountPerCycle: monthlyRenewalsPriceForAllPerCycle,
             withDiscountPerCycle: withDiscountForAllPerCycle,
             withDiscountPerMonth: withDiscountForAllPerMonth,
             discountPerCycle,

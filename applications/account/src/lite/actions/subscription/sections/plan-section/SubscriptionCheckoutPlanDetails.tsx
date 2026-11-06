@@ -69,7 +69,7 @@ const SubscriptionCheckoutFixedPlanSectionHeader = ({
     showDiscountItem,
 }: CheckoutViewProps & { showDiscountItem: boolean }) => {
     const { checkoutData } = checkoutView;
-    const discountItem = checkoutView.getItem('discount');
+    const planDiscountItem = checkoutView.getItem('planDiscount');
     const planAmountItem = checkoutView.getItem('planAmount');
     const membersItem = checkoutView.getItem('members');
 
@@ -101,7 +101,7 @@ const SubscriptionCheckoutFixedPlanSectionHeader = ({
                 </div>
                 {showDiscountItem && (
                     <div className="flex gap-2 text-semibold text-sm color-success">
-                        {c('Subscription').jt`${discountItem.discountPercent}% discount applied`}
+                        {c('Subscription').jt`${planDiscountItem.discountPercent}% discount applied`}
                     </div>
                 )}
             </div>
@@ -123,7 +123,7 @@ const SubscriptionCheckoutPlanPriceSection = ({
     paymentInitialized,
 }: SubscriptionCheckoutPlanPriceSectionProps) => {
     const { checkoutData } = checkoutView;
-    const discountItem = checkoutView.getItem('discount');
+    const planDiscountItem = checkoutView.getItem('planDiscount');
 
     return (
         <div className="flex bg-weak p-4 w-full justify-space-between" ref={planSectionRef}>
@@ -156,7 +156,7 @@ const SubscriptionCheckoutPlanPriceSection = ({
                                     .t`Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.`}
                                 className="text-semibold"
                             >
-                                {c('Subscription').jt`${discountItem.discountPercent}% off`}
+                                {c('Subscription').jt`${planDiscountItem.discountPercent}% off`}
                             </Badge>
                         )}
                     </WithLoadingIndicator>
@@ -441,8 +441,8 @@ const SubscriptionCheckoutPlanDetails = ({
         return null;
     }
 
-    const discountItem = checkoutView.getItem('discount');
-    const showDiscountItem = !loading && discountItem.visible && !checkoutView.checkoutData.isTrial;
+    const planDiscountItem = checkoutView.getItem('planDiscount');
+    const showDiscountItem = !loading && planDiscountItem.visible && !checkoutView.checkoutData.isTrial;
 
     return (
         <>

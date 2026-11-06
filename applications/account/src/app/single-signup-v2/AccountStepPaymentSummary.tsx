@@ -145,6 +145,7 @@ const AccountStepPaymentSummary = ({
             checkResult,
             isTaxInclusive,
             hasInvisibleCoupon,
+            items,
         }) => {
             const hasBreakdown =
                 isTaxExclusive || hasCredits || hasProration || (hasDiscount && !hasInvisibleCoupon) || isTrial;
@@ -182,7 +183,8 @@ const AccountStepPaymentSummary = ({
                         />
                     );
                 },
-                discount: (item) => (
+                discount: () => null,
+                planDiscount: (item) => (
                     <>
                         <div className="flex-auto">
                             <LoadingWrapper loading={loading}>
@@ -192,8 +194,11 @@ const AccountStepPaymentSummary = ({
                         {isB2C && (
                             <LoadingWrapper loading={loading}>
                                 <span data-testid="discount" className="inline-flex">
-                                    <Price className="color-weak text-strike text-ellipsis" currency={item.currency}>
-                                        {item.withoutDiscountPerMonth}
+                                    <Price
+                                        className="color-weak text-strike text-ellipsis"
+                                        currency={items.discount.currency}
+                                    >
+                                        {items.discount.withoutDiscountPerMonth}
                                     </Price>
                                     <span className="color-weak ml-1">{` ${c('Suffix').t`/month`}`}</span>
                                 </span>
@@ -405,7 +410,7 @@ const AccountStepPaymentSummary = ({
                         </div>
                         <div className="flex flex-1 items-center gap-1 text-sm">
                             {checkoutView.render('billingCycle')}
-                            {checkoutView.render('discount')}
+                            {checkoutView.render('planDiscount')}
                         </div>
                     </div>
                 </div>
