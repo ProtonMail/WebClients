@@ -235,9 +235,7 @@ export const getPersistedSessionData = async (
         source: PersistedSession['source'];
     }
 ): Promise<PersistedSession> => {
-    /* Versions 2 and 3 can be read, but only version 1 is written (safe for rollback). */
-    /* TODO: Make this change after 2026-10-16. */
-    const payloadVersion: PersistedSession['payloadVersion'] = 1;
+    const payloadVersion: PersistedSession['payloadVersion'] = 3;
 
     const { clearTextPayloadData, encryptedPayloadData } = ((): {
         clearTextPayloadData:
