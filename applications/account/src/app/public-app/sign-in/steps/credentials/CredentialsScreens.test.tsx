@@ -43,12 +43,14 @@ const paths = {
 const renderForm = ({
     authTypeData = { type: AuthType.Auto },
     compactForm = false,
+    showSignUpPrompt,
     testflight,
     authenticateWithPassword = jest.fn((_values: CredentialsFormValues) => new Promise<PrimaryAuthResult>(() => {})),
     authenticateWithSSOToken,
 }: {
     authTypeData?: AuthTypeData;
     compactForm?: boolean;
+    showSignUpPrompt?: boolean;
     testflight?: 'vpn';
     authenticateWithPassword?: jest.Mock;
     /** Also signs in with the identity provider right away, without its window. */
@@ -102,6 +104,7 @@ const renderForm = ({
                 showRememberCheckbox
                 testflight={testflight}
                 isPorkbun={false}
+                showSignUpPrompt={showSignUpPrompt}
                 onError={jest.fn()}
             >
                 <SignInWizard />
@@ -221,6 +224,12 @@ describe('the credentials screens', () => {
     it('hides the sign-up prompt and help links in the compact form', () => {
         renderForm({ compactForm: true });
         expect(screen.queryByText('Trouble signing in?')).not.toBeInTheDocument();
+        expect(screen.queryByText(/New to/)).not.toBeInTheDocument();
+    });
+
+    it('hides only the sign-up prompt when the page turns it off', () => {
+        renderForm({ showSignUpPrompt: false });
+        expect(screen.getByText('Trouble signing in?')).toBeInTheDocument();
         expect(screen.queryByText(/New to/)).not.toBeInTheDocument();
     });
 
