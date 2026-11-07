@@ -23,6 +23,7 @@ import type { SignInLayout } from './components/SignInLayout';
 import { SignInPageLayout } from './components/SignInPageLayout';
 import { SignInPassDesktopLayout } from './components/SignInPassDesktopLayout';
 import { RememberMode, getRememberModeSearchParameter, showsRememberCheckbox } from './rememberMode';
+import { getHidesSignUpPrompt } from './signUpSearchParameter';
 import { useSignInMachine } from './useSignInMachine';
 import { SignInContext } from './wizard/SignInContext';
 import { SignInProvider } from './wizard/SignInProvider';
@@ -189,7 +190,9 @@ const SignInFlow = ({
                     testflight={testflight}
                     isPorkbun={isPorkbun}
                     usernameReadOnly={usernameReadOnly}
-                    showSignUpPrompt={showSignUpPrompt}
+                    showSignUpPrompt={
+                        showSignUpPrompt !== false && !getHidesSignUpPrompt(searchParams, initialSearchParams)
+                    }
                     onError={handleError}
                 >
                     <SignInWizard />
