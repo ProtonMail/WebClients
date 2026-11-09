@@ -1,52 +1,43 @@
-import { useRef } from 'react';
-
 import { c } from 'ttag';
 
-import { Popper } from '@proton/atoms/Popper/Popper';
-import { usePopper } from '@proton/atoms/Popper/usePopper';
+import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
+import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import { IcEmoji } from '@proton/icons/icons/IcEmoji';
-import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectEmojiReactionPopupOpen, setEmojiReactionPopupOpen } from '@proton/meet/store/slices/uiStateSlice';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { EmojiReactionPopup } from '../EmojiReactionPopup/EmojiReactionPopup';
 
 export const EmojiReactionButton = () => {
-    const dispatch = useMeetDispatch();
-    const emojiReactionPopupOpen = useMeetSelector(selectEmojiReactionPopupOpen);
-    const anchorRef = useRef<HTMLButtonElement>(null);
-
-    const { floating, position } = usePopper({
-        reference: {
-            mode: 'element',
-            value: anchorRef.current,
-        },
-        isOpen: emojiReactionPopupOpen,
-        originalPlacement: 'top',
-        availablePlacements: ['top'],
-        offset: 16,
-    });
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     return (
         <>
             <CircleButton
                 anchorRef={anchorRef}
                 IconComponent={IcEmoji}
-                onClick={() => dispatch(setEmojiReactionPopupOpen(!emojiReactionPopupOpen))}
-                variant={emojiReactionPopupOpen ? 'active' : 'default'}
+                onClick={toggle}
+                variant={isOpen ? 'active' : 'default'}
                 ariaLabel={c('Alt').t`Toggle emoji reactions`}
-                ariaPressed={emojiReactionPopupOpen}
-                ariaExpanded={emojiReactionPopupOpen}
+                ariaPressed={isOpen}
+                ariaExpanded={isOpen}
                 ariaHasPopup="true"
             />
-            <Popper
-                className="fixed w-fit-content h-fit-content z-up"
-                divRef={floating}
-                isOpen={emojiReactionPopupOpen}
-                style={position}
+            <Dropdown
+                isOpen={isOpen}
+                anchorRef={anchorRef}
+                onClose={close}
+                className="meet-dropdown meet-radius border-card"
+                originalPlacement="top"
+                availablePlacements={['top', 'top-end', 'top-start']}
+                offset={16}
+                size={{ width: DropdownSizeUnit.Dynamic, maxWidth: DropdownSizeUnit.Viewport }}
+                autoClose={false}
+                aria-label={c('Label').t`Reactions`}
+                noCaret
             >
-                <EmojiReactionPopup />
-            </Popper>
+                <EmojiReactionPopup onClose={close} />
+            </Dropdown>
         </>
     );
 };
