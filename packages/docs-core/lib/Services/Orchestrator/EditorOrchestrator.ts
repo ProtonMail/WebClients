@@ -21,7 +21,6 @@ import { DocParticipantTracker } from '../../ParticipantTracker/DocParticipantTr
 import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import type { FeatureFlag } from '@proton/unleash/Flags'
 import { getUnleashReadyPromise } from '@proton/unleash/getUnleashReadyPromise'
-import type { UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
 import type { SheetsPatchesType } from '@proton/docs-shared/SheetsPatchesType'
 import metrics from '@proton/metrics/metricsInstance'
 import type { SheetsActionType } from '@proton/docs-shared/SheetsActionType'
@@ -269,11 +268,7 @@ export class EditorOrchestrator implements EditorOrchestratorInterface {
     return this.unleashClient.isEnabled(featureFlag)
   }
 
-  async storeSpreadsheetPatches(
-    patches: Parameters<NonNullable<UseSpreadsheetProps['onChangeHistory']>>[0],
-    updateHash: string,
-    type?: SheetsPatchesType,
-  ): Promise<void> {
+  async storeSpreadsheetPatches(patches: unknown, updateHash: string, type?: SheetsPatchesType): Promise<void> {
     if (!this.editor) {
       throw new Error('Editor not initialized')
     }
