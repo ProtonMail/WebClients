@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { generateNodeUid, getDrive } from '@proton/drive/sdk'
+import { type NodeEntity, generateNodeUid, getDrive } from '@proton/drive/sdk'
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype'
 import type { PrivateNodeMeta, Session } from '@proton-docs/realtime-sdk'
 
@@ -11,11 +11,11 @@ import type { useRealtimeClient } from './useRealtimeClient'
 
 export type DocumentSessionState =
   | { status: 'loading' }
-  | { status: 'ready'; session: Session; role: DocumentRole }
+  | { status: 'ready'; session: Session; role: DocumentRole; node: NodeEntity }
   | { status: 'failed'; reason: 'unsupported' | 'bootstrapFailed' | 'unreadableUpdate' }
 
 /**
- * Bootstraps a session for the text document `nodeMeta`, with the user's role on it, under an abort signal tied to
+ * Bootstraps a session for the text document `nodeMeta`, with the user's role on it and its Drive node, under an abort signal tied to
  * the hook's lifetime. On unmount it removes its listeners and disconnects the session, once bootstrapped if it was
  * still bootstrapping.
  * A base state with an unreadable update fails, since showing the rest would pass an incomplete document as whole.
@@ -75,7 +75,7 @@ export function useDocumentSession(
         return
       }
       session = bootstrapped
-      setState({ status: 'ready', session, role: getDocumentRole(hierarchy) })
+      setState({ status: 'ready', session, role: getDocumentRole(hierarchy), node })
     }
 
     bootstrap().catch((error) => {

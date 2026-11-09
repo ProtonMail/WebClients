@@ -7,9 +7,11 @@ import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { version as realtimeSdkVersion } from '@proton-docs/realtime-sdk'
 
 import { useApplication } from '~/utils/application-context'
+import { DebugModeProvider } from '~/utils/debug-mode-context'
 import { parseOpenAction, useDocsUrlBar } from '~/utils/docs-url-bar'
 import { DocumentCreator } from './__components/DocumentCreator'
 import { DocumentLoader } from './__components/DocumentLoader'
+import { DocumentShell } from './__components/DocumentShell'
 import { DocumentViewerV2 } from './__components/DocumentViewerV2'
 import { OpenActionError } from './__components/OpenActionError'
 import { resolveOpenAction } from './__utils/resolveOpenAction'
@@ -42,18 +44,26 @@ export default function DocumentPageV2({ driveCompat }: DocumentPageV2Props) {
     }
   }, [navigateToAction, openAction, resolution.kind])
 
-  switch (resolution.kind) {
-    case 'error':
-      return <OpenActionError reason={resolution.reason} />
-    case 'create':
-      return <DocumentCreator key={attempt} parent={resolution.parent} driveCompat={driveCompat} onRetry={retry} />
-    case 'open': {
-      const { volumeId, linkId } = resolution.nodeMeta
-      return (
-        <DocumentViewerV2 key={`${volumeId}/${linkId}/${attempt}`} nodeMeta={resolution.nodeMeta} onRetry={retry} />
-      )
+  return <DebugModeProvider>{renderResolution()}</DebugModeProvider>
+
+  function renderResolution() {
+    switch (resolution.kind) {
+      case 'error':
+        return <OpenActionError reason={resolution.reason} />
+      case 'create':
+        return <DocumentCreator key={attempt} parent={resolution.parent} driveCompat={driveCompat} onRetry={retry} />
+      case 'open': {
+        const { volumeId, linkId } = resolution.nodeMeta
+        return (
+          <DocumentViewerV2 key={`${volumeId}/${linkId}/${attempt}`} nodeMeta={resolution.nodeMeta} onRetry={retry} />
+        )
+      }
+      case 'redirect':
+        return (
+          <DocumentShell header={null}>
+            <DocumentLoader />
+          </DocumentShell>
+        )
     }
-    case 'redirect':
-      return <DocumentLoader />
   }
 }

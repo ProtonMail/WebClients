@@ -1,14 +1,20 @@
 import { EditorBridgeMessageType } from '@proton/docs-shared/Bridge/EditorBridgeMessageType'
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings'
 
 import { ClientEditorBridge } from './ClientEditorBridge'
 import { EDITOR_CALL_TIMEOUT_MS } from './EditorInvoker'
 import { createClientHandler } from './createClientHandler'
+
+const USER_SETTINGS = { Locale: 'fr_FR' } as UserSettings
 
 const logger = { debug: jest.fn(), warn: jest.fn(), error: jest.fn() } as unknown as ConstructorParameters<
   typeof ClientEditorBridge
 >[2]
 
 const sendUpdate = jest.fn()
+const onWordCount = jest.fn()
+const showModal = jest.fn()
+const onFileMenuAction = jest.fn()
 
 describe('ClientEditorBridge', () => {
   let frame: HTMLIFrameElement
@@ -22,7 +28,16 @@ describe('ClientEditorBridge', () => {
     const isFlagEnabled = (flag: string) => flag === 'DocsEditorPackageEnabled'
     bridge = new ClientEditorBridge(
       frame,
-      createClientHandler({ editorFrame: frame, sendUpdate, isFlagEnabled, onEditorError: jest.fn(), logger }),
+      createClientHandler({
+        editorFrame: frame,
+        sendUpdate,
+        isFlagEnabled,
+        onEditorError: jest.fn(),
+        onWordCount,
+        showModal,
+        onFileMenuAction,
+        logger,
+      }),
       logger,
     )
   })
@@ -82,6 +97,64 @@ describe('ClientEditorBridge', () => {
     await waitForReply()
 
     expect(frame.style.getPropertyValue('--print-min-height')).toBe('480px')
+  })
+
+  test('passes the word count the editor reports on', async () => {
+    const wordCount = { document: { wordCount: 2, characterCount: 9, nonWhitespaceCharacterCount: 8 } }
+    receiveFromEditor({
+      type: EditorBridgeMessageType.EditorToClientInvokation,
+      functionName: 'reportWordCount',
+      args: [wordCount],
+      messageId: 'message-1',
+    })
+
+    await waitForReply()
+
+    expect(onWordCount).toHaveBeenCalledWith(wordCount)
+  })
+
+  test("shows the editor's alert in a modal", async () => {
+    receiveFromEditor({
+      type: EditorBridgeMessageType.EditorToClientInvokation,
+      functionName: 'showGenericAlertModal',
+      args: ['The export failed.'],
+      messageId: 'message-1',
+    })
+
+    await waitForReply()
+
+    expect(showModal).toHaveBeenCalledWith({ title: 'Something went wrong', translatedMessage: 'The export failed.' })
+  })
+
+  test("shows the editor's info in a modal", async () => {
+    const info = { title: 'Table of contents', translatedMessage: 'Add headings to fill it.' }
+    receiveFromEditor({
+      type: EditorBridgeMessageType.EditorToClientInvokation,
+      functionName: 'showGenericInfoModal',
+      args: [info],
+      messageId: 'message-1',
+    })
+
+    await waitForReply()
+
+    expect(showModal).toHaveBeenCalledWith(info)
+  })
+
+  test('passes a file menu action from the editor on, and answers it', async () => {
+    receiveFromEditor({
+      type: EditorBridgeMessageType.EditorToClientInvokation,
+      functionName: 'handleFileMenuAction',
+      args: [{ type: 'help' }],
+      messageId: 'message-1',
+    })
+
+    await waitForReply()
+
+    expect(onFileMenuAction).toHaveBeenCalledWith({ type: 'help' })
+    expect(postToEditor).toHaveBeenCalledWith(
+      { type: EditorBridgeMessageType.ClientToEditorReply, messageId: 'message-1', returnValue: undefined },
+      expect.any(String),
+    )
   })
 
   test('sends an update the editor asks to propagate, and answers it', async () => {
@@ -156,6 +229,40 @@ describe('ClientEditorBridge', () => {
     receiveFromEditor({ type: EditorBridgeMessageType.EditorToClientReply, messageId, returnValue: undefined })
 
     await expect(shown).resolves.toBeUndefined()
+  })
+
+  test.each<{
+    functionName: string
+    call: (invoker: ClientEditorBridge['editorInvoker']) => Promise<void>
+    args: unknown[]
+  }>([
+    {
+      functionName: 'setTableOfContentsVisible',
+      call: (invoker) => invoker.setTableOfContentsVisible(true),
+      args: [true],
+    },
+    {
+      functionName: 'loadUserSettings',
+      call: (invoker) => invoker.loadUserSettings(USER_SETTINGS),
+      args: [USER_SETTINGS],
+    },
+    { functionName: 'setDarkMode', call: (invoker) => invoker.setDarkMode(true), args: [true] },
+    {
+      functionName: 'syncProperty',
+      call: (invoker) => invoker.syncProperty('suggestionsEnabled', false),
+      args: ['suggestionsEnabled', false],
+    },
+  ])("calls the editor's $functionName, and resolves with its reply", async ({ functionName, call, args }) => {
+    const called = call(bridge.editorInvoker)
+
+    expect(postToEditor).toHaveBeenCalledWith(
+      { type: EditorBridgeMessageType.ClientToEditorInvokation, functionName, args, messageId: expect.any(String) },
+      expect.any(String),
+    )
+    const [{ messageId }] = postToEditor.mock.lastCall
+    receiveFromEditor({ type: EditorBridgeMessageType.EditorToClientReply, messageId, returnValue: undefined })
+
+    await expect(called).resolves.toBeUndefined()
   })
 
   test('rejects an editor call the editor does not answer in time', async () => {

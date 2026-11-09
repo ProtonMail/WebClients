@@ -8,12 +8,21 @@ import type { DocumentRoleType } from '@proton/docs-shared/Doc/DocumentRole'
 import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayload'
 import type { EditorInitializationConfig } from '@proton/docs-shared/EditorInitializationConfig'
 import { GenerateUUID } from '@proton/docs-shared/GenerateUuid'
+import type { SyncedEditorStateValues } from '@proton/docs-shared/State/SyncedEditorState'
+import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings'
 
 export const EDITOR_CALL_TIMEOUT_MS = 10_000
 
 type EditorMethodsCalledByDoc2 = Pick<
   ClientRequiresEditorMethods,
-  'initializeEditor' | 'receiveMessage' | 'showEditor' | 'changeLockedState'
+  | 'initializeEditor'
+  | 'receiveMessage'
+  | 'showEditor'
+  | 'changeLockedState'
+  | 'setTableOfContentsVisible'
+  | 'loadUserSettings'
+  | 'setDarkMode'
+  | 'syncProperty'
 >
 
 // Copied from docs-core `Bridge/EditorInvoker.ts`, which doc2 must not import, with only the methods doc2 calls.
@@ -33,6 +42,25 @@ export class EditorInvoker implements EditorMethodsCalledByDoc2 {
 
   async changeLockedState(locked: boolean): Promise<void> {
     return this.invokeEditorMethod('changeLockedState', [locked])
+  }
+
+  async setTableOfContentsVisible(visible: boolean): Promise<void> {
+    return this.invokeEditorMethod('setTableOfContentsVisible', [visible])
+  }
+
+  async loadUserSettings(settings: UserSettings): Promise<void> {
+    return this.invokeEditorMethod('loadUserSettings', [settings])
+  }
+
+  async setDarkMode(isDarkMode: boolean): Promise<void> {
+    return this.invokeEditorMethod('setDarkMode', [isDarkMode])
+  }
+
+  async syncProperty(
+    property: keyof SyncedEditorStateValues,
+    value: SyncedEditorStateValues[keyof SyncedEditorStateValues],
+  ): Promise<void> {
+    return this.invokeEditorMethod('syncProperty', [property, value])
   }
 
   async initializeEditor(

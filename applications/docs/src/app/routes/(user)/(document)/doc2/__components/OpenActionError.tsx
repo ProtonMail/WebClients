@@ -5,6 +5,8 @@ import { c } from 'ttag'
 
 import { HOMEPAGE_RECENTS_PATH } from '../../../__utils/homepage-paths'
 import type { OpenResolution } from '../__utils/resolveOpenAction'
+import { DocumentShell } from './DocumentShell'
+import { ErrorHeader } from './ErrorHeader'
 
 export type OpenActionErrorReason =
   | Extract<OpenResolution, { kind: 'error' }>['reason']
@@ -31,16 +33,18 @@ export function OpenActionError({ reason, onRetry }: OpenActionErrorProps) {
   const navigate = useNavigate()
 
   return (
-    <div className="flex h-full w-full flex-col items-center justify-center gap-4">
-      <div className="max-w-prose text-center" data-testid="invalid-openaction-error">
-        {messages[reason]()}
+    <DocumentShell header={<ErrorHeader />}>
+      <div className="flex h-full w-full flex-col items-center justify-center gap-4">
+        <div className="max-w-prose text-center" data-testid="invalid-openaction-error">
+          {messages[reason]()}
+        </div>
+        <div className="flex gap-2">
+          {onRetry && <Button onClick={onRetry}>{c('Action').t`Try again`}</Button>}
+          <Button color="norm" onClick={() => navigate(HOMEPAGE_RECENTS_PATH)}>
+            {c('Action').t`Go to ${DOCS_SHORT_APP_NAME} home`}
+          </Button>
+        </div>
       </div>
-      <div className="flex gap-2">
-        {onRetry && <Button onClick={onRetry}>{c('Action').t`Try again`}</Button>}
-        <Button color="norm" onClick={() => navigate(HOMEPAGE_RECENTS_PATH)}>
-          {c('Action').t`Go to ${DOCS_SHORT_APP_NAME} home`}
-        </Button>
-      </div>
-    </div>
+    </DocumentShell>
   )
 }
