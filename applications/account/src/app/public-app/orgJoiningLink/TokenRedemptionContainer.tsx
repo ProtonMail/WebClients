@@ -1,8 +1,7 @@
 import { type FormEvent, type ReactNode, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import type { PrivateKeyReference } from '@protontech/crypto';
-import { computeKeyPassword } from '@protontech/crypto/srp';
+import { useMachine } from '@xstate/react';
 import { c } from 'ttag';
 
 import { parseJoiningLinkConfig } from '@proton/account/orgJoiningLink/helpers';
@@ -16,20 +15,10 @@ import { InputField as InputFieldTwo } from '@proton/components/components/v2/fi
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import TotpInput from '@proton/components/components/v2/input/TotpInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useLoading from '@proton/hooks/useLoading';
-import { getAllAddresses } from '@proton/shared/lib/api/addresses';
-import { redeemToken, verifyCode } from '@proton/shared/lib/api/authLoginLink';
-import { getAuthAPI } from '@proton/shared/lib/api/helpers/customConfig';
-import { getKeySalts, updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
-import { getPasswordPolicies } from '@proton/shared/lib/api/passwordPolicies';
-import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
-import { getUser } from '@proton/shared/lib/authentication/getUser';
-import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
-import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { APPS, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import {
     confirmPasswordValidator,
@@ -38,17 +27,6 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import type { Address } from '@proton/shared/lib/interfaces/Address';
-import type { Api } from '@proton/shared/lib/interfaces/Api';
-import type { DecryptedAddressKey, DecryptedKey } from '@proton/shared/lib/interfaces/Key';
-import type { KeySalt } from '@proton/shared/lib/interfaces/KeySalt';
-import type { PasswordPolicies } from '@proton/shared/lib/interfaces/PasswordPolicy';
-import type { User } from '@proton/shared/lib/interfaces/User';
-import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
-import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys/getDecryptedAddressKeys';
-import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecryptedUserKeys';
-import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
-import { srpVerify } from '@proton/shared/lib/srp';
 
 import Header from '../layout/Header';
 import Layout from '../layout/Layout';
@@ -57,16 +35,23 @@ import { usePublicAppAuth } from '../publicAppAuth';
 import PasswordStrengthIndicatorSpotlight, {
     usePasswordStrengthIndicatorSpotlight,
 } from '../signup/PasswordStrengthIndicatorSpotlight';
+import ExpiredError from '../standalone/ExpiredError';
 import { PublicAppContext } from '../state-machine/PublicAppContext';
 import { usePublicAppServices } from '../state-machine/PublicAppServices';
+import { runLogin } from '../state-machine/runLogin';
+import { createTokenRedemptionActors } from './tokenRedemptionActors';
+import {
+    selectResending,
+    selectStep,
+    selectSubmitting,
+    tokenRedemptionStateMachine,
+    tokenRedemptionSteps,
+} from './tokenRedemptionStateMachine';
 
 import './TokenRedemptionContainer.scss';
 
-type TokenRedemptionContainerView = 'email' | 'otp' | 'password';
-
 const toApp = APPS.PROTONMAIL;
-const steps: TokenRedemptionContainerView[] = ['email', 'otp', 'password'];
-const totalSteps = steps.length;
+const totalSteps = tokenRedemptionSteps.length;
 
 const TokenRedemptionContainer = () => {
     const { onPreSubmit, onStartAuth } = usePublicAppAuth();
@@ -74,67 +59,65 @@ const TokenRedemptionContainer = () => {
     const { unauthenticatedApi } = usePublicAppServices();
     const location = useLocation();
     const history = useHistory();
-    const [submitting, withSubmitting] = useLoading();
-    const [resending, withResending] = useLoading();
 
     const passwordStrengthIndicatorSpotlight = usePasswordStrengthIndicatorSpotlight();
     const { createNotification } = useNotifications();
     const { validator, onFormSubmit, reset } = useFormErrors();
+    const errorHandler = useErrorHandler();
 
-    const [config, setConfig] = useState<{
-        token: string;
-        password: string;
-        domain: string;
-        orgName: string;
-        username: string;
-    }>();
-    const [emailLocal, setEmailLocal] = useState('');
+    const [snapshot, send, actorRef] = useMachine(
+        tokenRedemptionStateMachine.provide({
+            actors: createTokenRedemptionActors({
+                unauthenticatedApi,
+                onPreSubmit,
+                onStartAuth,
+                login: (session) => runLogin(publicApp, { ...session, appIntent: { app: toApp } }),
+            }),
+            actions: {
+                clearLinkFromUrl: () => history.replace({ ...location, hash: '' }),
+            },
+        }),
+        { input: { config: parseJoiningLinkConfig({ hash: location.hash }) } }
+    );
+    const { config, passwordPolicies } = snapshot.context;
+    const submitting = selectSubmitting(snapshot);
+    const resending = selectResending(snapshot);
+    const view = selectStep(snapshot);
+
+    useEffect(() => {
+        const subscriptions = [
+            actorRef.on('error', ({ error }) => errorHandler(error)),
+            actorRef.on('code.resent', () =>
+                createNotification({
+                    text: c('Info').t`Code has been re-sent.`,
+                    type: 'success',
+                    showCloseButton: false,
+                })
+            ),
+            actorRef.on('session.expired', () =>
+                createNotification({
+                    type: 'error',
+                    text: (
+                        <>
+                            <span>{c('Error').t`Session expired. Please refresh the page.`}</span>
+                            <NotificationButton onClick={() => window.location.reload()}>
+                                {c('Action').t`Refresh the page`}
+                            </NotificationButton>
+                        </>
+                    ),
+                })
+            ),
+        ];
+        return () => subscriptions.forEach((subscription) => subscription.unsubscribe());
+    }, [actorRef, errorHandler, createNotification]);
+
+    const [emailLocal, setEmailLocal] = useState(config?.username ?? '');
     const [otp, setOtp] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const passwordContainerRef = useRef<HTMLInputElement>(null);
     const [confirmNewPassword, setConfirmNewPassword] = useState('');
-    const [view, setView] = useState<TokenRedemptionContainerView>('email');
-    const [passwordPolicies, setPasswordPolicies] = useState<PasswordPolicies>([]);
     const passwordPolicyValidation = usePasswordPolicyValidation(newPassword, passwordPolicies);
     const firstPolicyError = passwordPolicyValidation.result.find((result) => !result.valid)?.errorMessage || '';
-    const errorHandler = useErrorHandler();
-
-    const authRef = useRef<{
-        api: Api;
-        authResponse: AuthResponse;
-        addressesKeys: { address: Address; keys: DecryptedAddressKey<PrivateKeyReference>[] }[];
-        user: User;
-        userKeys: DecryptedKey<PrivateKeyReference>[];
-    }>();
-
-    useEffect(() => {
-        if (config) {
-            return;
-        }
-
-        const fallbackHref = getAppHref(SSO_PATHS.APP_SWITCHER, APPS.PROTONACCOUNT);
-
-        const parsedConfig = parseJoiningLinkConfig({ hash: location.hash });
-
-        if (!parsedConfig) {
-            createNotification({
-                type: 'error',
-                text: c('Error').t`Invalid joining link. Please contact your administrator.`,
-            });
-            return history.replace(fallbackHref);
-        }
-
-        history.replace({
-            ...location,
-            hash: '',
-        });
-
-        setConfig(parsedConfig);
-
-        if (parsedConfig.username) {
-            setEmailLocal(parsedConfig.username);
-        }
-    }, [config]);
 
     const viewConfig = useMemo<{ title: string; subTitle: ReactNode; button: string }>(() => {
         switch (view) {
@@ -171,102 +154,18 @@ const TokenRedemptionContainer = () => {
     useDocumentTitle(`${viewConfig.title} - ${BRAND_NAME}`);
 
     if (!config) {
-        return null;
+        return (
+            <div className="absolute inset-center text-center">
+                <ExpiredError type="joining-link" />
+            </div>
+        );
     }
 
-    const { token, domain } = config;
+    const { domain } = config;
 
     const email = !domain.length ? emailLocal : `${getEmailParts(emailLocal)[0]}@${domain}`;
 
     const disabled = submitting || resending;
-
-    const handleRedeemToken = async ({ email, token }: { email: string; token: string }) => {
-        await onPreSubmit();
-        await onStartAuth();
-
-        await unauthenticatedApi.apiCallback(redeemToken({ email, token }));
-
-        setView('otp');
-    };
-
-    const handleVerifyOtp = async (code: string) => {
-        const authResponse = await unauthenticatedApi.apiCallback<AuthResponse>(verifyCode({ code }));
-
-        const api = getAuthAPI(authResponse.UID, authResponse.AccessToken, unauthenticatedApi.apiCallback);
-
-        const [user, addresses, keySalts, passwordPolicies] = await Promise.all([
-            getUser(api),
-            getAllAddresses(api),
-            api<{ KeySalts: KeySalt[] }>(getKeySalts()).then(({ KeySalts }) => KeySalts),
-            getPasswordPolicies({ api }),
-        ]);
-
-        if (!keySalts.length) {
-            throw new Error('Missing key salts');
-        }
-
-        const keyPassword = await computeKeyPassword(config.password, keySalts[0].KeySalt);
-        const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
-        const addressesKeys = await Promise.all(
-            addresses.map(async (address) => ({
-                address,
-                keys: await getDecryptedAddressKeysHelper(address.Keys, user, userKeys, keyPassword),
-            }))
-        );
-
-        authRef.current = {
-            api,
-            addressesKeys,
-            authResponse,
-            userKeys,
-            user,
-        };
-
-        setPasswordPolicies(passwordPolicies);
-        setView('password');
-    };
-
-    const handleChangePassword = async () => {
-        const { api, user, addressesKeys, userKeys, authResponse } = authRef.current!;
-
-        const { passphrase: newKeyPassword, salt: newKeySalt } = await generateKeySaltAndPassphrase(newPassword);
-
-        const updateKeysPayload = await getUpdateKeysPayload({
-            addressesKeys,
-            userKeys,
-            // Joining member do not have access to the org key
-            organizationKey: undefined,
-            keyPassword: newKeyPassword,
-            keySalt: newKeySalt,
-        });
-
-        await srpVerify({
-            api,
-            credentials: { password: newPassword },
-            config: updatePrivateKeyRoute(updateKeysPayload),
-        });
-
-        await persistSession({
-            ...authResponse,
-            clearKeyPassword: newPassword,
-            keyPassword: newKeyPassword,
-            User: user,
-            api,
-            persistent: false,
-            trusted: false,
-            source: SessionSource.Proton,
-        });
-
-        publicApp.send({
-            type: 'login.resulted',
-            result: {
-                type: 'done',
-                payload: {
-                    url: new URL(getAppHref('/', toApp, authResponse.LocalID)),
-                },
-            },
-        });
-    };
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
@@ -277,40 +176,24 @@ const TokenRedemptionContainer = () => {
 
         reset();
 
-        const handler = (() => {
-            switch (view) {
-                case 'email':
-                    return () => handleRedeemToken({ token, email }).catch(errorHandler);
-                case 'otp':
-                    return () => handleVerifyOtp(otp).catch(errorHandler);
-                case 'password':
-                    return () => handleChangePassword().catch(errorHandler);
-            }
-        })();
-
-        return withSubmitting(handler());
-    };
-
-    const handleResend = async () => {
-        try {
-            await withResending(handleRedeemToken({ email, token }));
-
-            createNotification({
-                text: c('Info').t`Code has been re-sent.`,
-                type: 'success',
-                showCloseButton: false,
-            });
-        } catch (err) {
-            errorHandler(err);
+        switch (view) {
+            case 'email':
+                return send({ type: 'email.submitted', email });
+            case 'otp':
+                return send({ type: 'code.submitted', code: otp });
+            case 'password':
+                return send({ type: 'password.submitted', password: newPassword });
         }
     };
 
+    const handleResend = () => send({ type: 'code.resendRequested' });
+
     const handleBack = () => {
         setOtp('');
-        setView('email');
+        send({ type: 'back' });
     };
 
-    const step = steps.indexOf(view) + 1;
+    const step = tokenRedemptionSteps.indexOf(view) + 1;
 
     return (
         <Layout hasDecoration toApp={toApp} layoutClassName="token-redemption-container">
@@ -445,7 +328,7 @@ const TokenRedemptionContainer = () => {
                     )}
                     <div className="flex-1"></div>
                     <div className="w-full">
-                        <Progress className="progress-bar--norm mb-4 w-full" value={step} max={steps.length} />
+                        <Progress className="progress-bar--norm mb-4 w-full" value={step} max={totalSteps} />
                     </div>
                     <div className="w-full flex gap-2 items-center">
                         <p className="m-0 color-hint flex-1">
