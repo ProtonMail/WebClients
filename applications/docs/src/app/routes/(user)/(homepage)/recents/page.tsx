@@ -1,32 +1,27 @@
-import { generateNodeUid, getDrive } from '@proton/drive/sdk'
-import { useSharingModal } from '@proton/drive/public/sharingModal'
-import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
-import { useDocInvites as useDocInvitesLegacy } from '@proton/drive-store/lib/_invites/useDocInvites'
 import { HomepageContent, HomepageLayout } from '~/homepage'
-import { getCoreEventSubscriber } from '~/drive-sdk/core-event-subscriber'
-import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
-import { useDocInvites as useDocInvitesSDK } from '~/drive-sdk/useDocInvites'
-import { useInvitationsSdkEnabled } from '~/utils/flags'
-import { DocumentActionsProvider } from './__utils/document-actions'
+import { DocumentActionsProvider, type DocumentActionsProviderProps } from './__utils/document-actions'
 import { HomepageViewProvider } from './__utils/homepage-view-sdk'
+import type { HomepageViewProviderProps } from './__utils/homepage-view-sdk-utils'
 
-export default function HomepagePage() {
-  const drive = getDrive()
-  const useDocInvites = useInvitationsSdkEnabled() ? useDocInvitesSDK : useDocInvitesLegacy
+export type HomepagePageProps = Omit<HomepageViewProviderProps, 'children'> &
+  Omit<DocumentActionsProviderProps, 'children'>
 
+export default function HomepagePage({
+  drive,
+  eventSubscriber,
+  coreEventSubscriber,
+  useDocInvites,
+  useSharingModal,
+  useMoveItemsModal,
+}: HomepagePageProps) {
   return (
     <HomepageViewProvider
       drive={drive}
-      getEventSubscriber={getEventSubscriber}
-      getCoreEventSubscriber={getCoreEventSubscriber}
+      eventSubscriber={eventSubscriber}
+      coreEventSubscriber={coreEventSubscriber}
       useDocInvites={useDocInvites}
     >
-      <DocumentActionsProvider
-        drive={drive}
-        generateNodeUid={generateNodeUid}
-        useSharingModal={useSharingModal}
-        useMoveItemsModal={useMoveItemsModal}
-      >
+      <DocumentActionsProvider drive={drive} useSharingModal={useSharingModal} useMoveItemsModal={useMoveItemsModal}>
         <HomepageLayout>
           <HomepageContent />
         </HomepageLayout>

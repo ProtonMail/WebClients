@@ -61,7 +61,6 @@ function renderDocumentActions(moveItemsModalHook = useMockMoveItemsModal) {
             <HomepageViewContext.Provider value={{ updateMovedDocuments } as unknown as HomepageViewValue}>
               <DocumentActionsProvider
                 drive={drive}
-                generateNodeUid={generateNodeUid}
                 useSharingModal={useSharingModal}
                 useMoveItemsModal={moveItemsModalHook}
               >

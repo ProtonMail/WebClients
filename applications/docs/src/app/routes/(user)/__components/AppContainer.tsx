@@ -4,6 +4,10 @@ import LocationErrorBoundary from '@proton/components/containers/app/LocationErr
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import { DriveStoreProvider } from '@proton/drive-store/lib/DriveStoreProvider'
 import { useDriveCompat } from '@proton/drive-store/lib/useDriveCompat'
+import { useDocInvites as useDocInvitesLegacy } from '@proton/drive-store/lib/_invites/useDocInvites'
+import { getDrive } from '@proton/drive/sdk'
+import { useSharingModal } from '@proton/drive/public/sharingModal'
+import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { Suspense, lazy } from 'react'
 import { Routes, Route, useSearchParams, Navigate } from 'react-router-dom-v5-compat'
 
@@ -15,9 +19,11 @@ import {
   DOCUMENT_V2_PATHS,
   DocsUrlContextProvider,
 } from '~/utils/docs-url-bar'
-import { useRealtimeSdkEnabled } from '~/utils/flags'
+import { useInvitationsSdkEnabled, useRealtimeSdkEnabled } from '~/utils/flags'
 import { useInitializeApplication } from './useInitializeApplication'
-import { useCoreEventSubscription } from '~/drive-sdk/core-event-subscriber'
+import { getCoreEventSubscriber, useCoreEventSubscription } from '~/drive-sdk/core-event-subscriber'
+import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
+import { useDocInvites as useDocInvitesSDK } from '~/drive-sdk/useDocInvites'
 import OpenTracer from '@proton/docs-shared/Tracer/Module'
 import { HOMEPAGE_PATHS, HOMEPAGE_RECENTS_PATH } from '../__utils/homepage-paths'
 
@@ -70,6 +76,7 @@ type AppRoutesProps = { driveCompat: DriveCompat }
 
 function AppRoutes({ driveCompat }: AppRoutesProps) {
   const isRealtimeSdkEnabled = useRealtimeSdkEnabled()
+  const useDocInvites = useInvitationsSdkEnabled() ? useDocInvitesSDK : useDocInvitesLegacy
 
   const documentPage = (
     <Suspense>
@@ -85,7 +92,14 @@ function AppRoutes({ driveCompat }: AppRoutesProps) {
 
   const homepagePage = (
     <Suspense>
-      <HomepagePage />
+      <HomepagePage
+        drive={getDrive()}
+        eventSubscriber={getEventSubscriber()}
+        coreEventSubscriber={getCoreEventSubscriber()}
+        useDocInvites={useDocInvites}
+        useSharingModal={useSharingModal}
+        useMoveItemsModal={useMoveItemsModal}
+      />
     </Suspense>
   )
 

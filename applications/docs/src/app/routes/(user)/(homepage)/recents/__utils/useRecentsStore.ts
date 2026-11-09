@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-import { generateNodeUid } from '@proton/drive/sdk'
+import { generateNodeUid } from '@protontech/drive-sdk'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
 
 interface RecentsStore {

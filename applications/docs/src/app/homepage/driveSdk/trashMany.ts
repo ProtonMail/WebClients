@@ -1,4 +1,4 @@
-import type { ProtonDriveClient } from '@proton/drive/sdk'
+import type { ProtonDriveClient } from '@protontech/drive-sdk'
 
 export type BatchResult = { succeeded: string[]; failed: { uid: string; error: Error }[] }
 

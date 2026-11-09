@@ -1,4 +1,4 @@
-import type { NodeEntity } from '@proton/drive/sdk'
+import type { NodeEntity } from '@protontech/drive-sdk'
 
 export function getIsSharedWithMe(node: NodeEntity) {
   if (!node.membership) {

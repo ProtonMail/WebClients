@@ -1,16 +1,16 @@
 import { useState } from 'react'
 import { useNotifications } from '@proton/app-context/useNotifications'
 import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
-import type { generateNodeUid, ProtonDriveClient } from '@proton/drive/sdk'
+import { generateNodeUid, type ProtonDriveClient } from '@protontech/drive-sdk'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
-import { trashManyAndNotify } from '~/drive-sdk/trash-restore-notify'
+import { trashManyAndNotify } from '~/homepage'
 import { useApplication } from '~/utils/application-context'
 import { useEvent } from '~/utils/misc'
 import { useHomepageView } from './homepage-view-sdk-utils'
 
-type BulkTrashDependencies = { drive: ProtonDriveClient; generateNodeUid: typeof generateNodeUid }
+type BulkTrashDependencies = { drive: ProtonDriveClient }
 
-export function useBulkTrash({ drive, generateNodeUid }: BulkTrashDependencies) {
+export function useBulkTrash({ drive }: BulkTrashDependencies) {
   const application = useApplication()
   const { createNotification } = useNotifications()
   const { updateRecentDocuments } = useHomepageView()

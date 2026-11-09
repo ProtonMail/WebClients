@@ -4,10 +4,10 @@ import { generateNodeUid, type ProtonDriveClient } from '@proton/drive/sdk'
 import { ServerTime } from '@proton/docs-shared/ServerTime'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
-import { trashManyAndNotify } from '~/drive-sdk/trash-restore-notify'
+import { trashManyAndNotify } from '~/homepage'
 import { useBulkTrash } from './useBulkTrash'
 
-jest.mock('~/drive-sdk/trash-restore-notify', () => ({ trashManyAndNotify: jest.fn() }))
+jest.mock('~/homepage', () => ({ ...jest.requireActual('~/homepage'), trashManyAndNotify: jest.fn() }))
 
 const mockCreateNotification = jest.fn()
 jest.mock('@proton/app-context/useNotifications', () => ({
@@ -46,7 +46,7 @@ const d1 = createMockRecentDocument({ name: 'Document1', linkId: 'link1' })
 const d2 = createMockRecentDocument({ name: 'Document2', linkId: 'link2' })
 const uid = (doc: RecentDocumentsItem) => generateNodeUid(doc.volumeId, doc.linkId)
 const drive = {} as ProtonDriveClient
-const renderBulkTrash = () => renderHook(() => useBulkTrash({ drive, generateNodeUid }))
+const renderBulkTrash = () => renderHook(() => useBulkTrash({ drive }))
 
 describe('useBulkTrash', () => {
   beforeEach(() => {

@@ -10,3 +10,5 @@ export {
   type RecentsSort,
 } from './homepageViewContext'
 export { DocumentActionsContext } from './documentActionsContext'
+export { handleRestoreError, restoreAndNotify, trashAndNotify, trashManyAndNotify } from './driveSdk/trashRestoreNotify'
+export { getFullPathFromAncestry } from './driveSdk/getFullPathFromAncestry'

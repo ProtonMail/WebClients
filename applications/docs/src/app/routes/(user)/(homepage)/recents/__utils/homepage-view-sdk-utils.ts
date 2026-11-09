@@ -7,7 +7,7 @@ import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contac
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { Address } from '@proton/shared/lib/interfaces/Address'
 
-import type { ProtonDriveClient } from '@proton/drive/sdk'
+import type { DriveEvent, ProtonDriveClient } from '@protontech/drive-sdk'
 
 import {
   type DocInvitesHook,
@@ -16,8 +16,6 @@ import {
   type ItemsSectionId,
   type RecentsSort,
 } from '~/homepage'
-import type { getEventSubscriber } from '~/drive-sdk/event-subscriber'
-import type { getCoreEventSubscriber } from '~/drive-sdk/core-event-subscriber'
 import { isMyDocument } from './isMyDocument'
 import { getOwnerName } from './getOwnerName'
 
@@ -39,11 +37,27 @@ const ORDERED_SECTION_IDS = [
   'earlier',
 ] as const satisfies readonly ItemsSectionId[]
 
+export type SDKEventListener = (event: DriveEvent) => Promise<void>
+
+export type EventSubscriber = {
+  initialize: (
+    rootScope: string,
+    listeners: SDKEventListener[],
+    handleRemoveDocument?: (nodeUid: string) => void,
+  ) => Promise<void>
+  reset: () => void
+  subscribeToSharedDocument: (nodeUid: string, eventScope: string) => void
+}
+
+type CoreEventSubscriber = {
+  addListener: (listener: () => void) => () => void
+}
+
 export type HomepageViewProviderProps = {
   children: ReactNode
   drive: ProtonDriveClient
-  getEventSubscriber: typeof getEventSubscriber
-  getCoreEventSubscriber: typeof getCoreEventSubscriber
+  eventSubscriber: EventSubscriber
+  coreEventSubscriber: CoreEventSubscriber
   useDocInvites: DocInvitesHook
 }
 
