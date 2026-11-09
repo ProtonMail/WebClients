@@ -35,7 +35,7 @@ import CalendarSubpageHeaderSection from './CalendarSubpageHeaderSection';
 
 interface Props {
     calendars: VisualCalendar[];
-    subscribedCalendars: SubscribedCalendar[];
+    subscribedCalendars: (VisualCalendar | SubscribedCalendar)[];
     holidaysCalendars: VisualCalendar[];
     defaultCalendar?: VisualCalendar;
     addresses?: Address[];
@@ -162,7 +162,8 @@ const CalendarSubpage = ({
         >
             <div className="container-section-sticky-section container-section-sticky-section--single-calendar-section">
                 <CalendarSubpageHeaderSection
-                    calendar={calendar}
+                    // The subscription parameters can arrive after the page opened
+                    calendar={subscribedCalendars.find(({ ID }) => ID === calendar.ID) || calendar}
                     holidaysCalendars={holidaysCalendars}
                     defaultCalendar={defaultCalendar}
                     onEdit={reRender}

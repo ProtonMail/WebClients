@@ -11,7 +11,7 @@ import updateObject from '@proton/shared/lib/helpers/updateObject';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 const name = 'calendarUserSettings' as const;
-interface CalendarSettingState {
+export interface CalendarSettingState {
     calendarUserSettings: ModelState<CalendarUserSettings>;
 }
 

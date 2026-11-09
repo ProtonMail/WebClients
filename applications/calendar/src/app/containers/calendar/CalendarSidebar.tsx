@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { useSubscribedCalendars } from '@proton/calendar/calendarSubscriptions/hooks';
 import SidebarDrawerItems from '@proton/components/components/drawer/SidebarDrawerItems';
 import Sidebar from '@proton/components/components/sidebar/Sidebar';
 import SidebarLogo from '@proton/components/components/sidebar/SidebarLogo';
@@ -15,7 +16,6 @@ import AppsDropdown from '@proton/components/containers/app/AppsDropdown';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useDisplayContactsWidget from '@proton/components/hooks/useDisplayContactsWidget';
 import useLocalState from '@proton/components/hooks/useLocalState';
-import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import { IcChevronsLeft } from '@proton/icons/icons/IcChevronsLeft';
 import { IcChevronsRight } from '@proton/icons/icons/IcChevronsRight';
 import { groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';
@@ -98,7 +98,7 @@ const CalendarSidebar = ({
         subscribedCalendarsWithoutParams
     );
     const otherCalendars = sortCalendars([
-        ...(loadingSubscribedCalendars ? subscribedCalendarsWithoutParams : subscribedCalendars),
+        ...subscribedCalendars,
         ...sharedCalendars,
         ...holidaysCalendars,
         ...unknownCalendars,

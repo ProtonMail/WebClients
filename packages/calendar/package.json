@@ -30,6 +30,8 @@
         "./calendars/hooks": "./calendars/hooks.ts",
         "./calendars/listener": "./calendars/listener.ts",
         "./calendarServerEvent": "./calendarServerEvent.ts",
+        "./calendarSubscriptions": "./calendarSubscriptions/index.ts",
+        "./calendarSubscriptions/hooks": "./calendarSubscriptions/hooks.ts",
         "./calendarUserSettings": "./calendarUserSettings/index.ts",
         "./calendarUserSettings/hooks": "./calendarUserSettings/hooks.ts",
         "./constants": "./constants.ts",
@@ -84,6 +86,7 @@
         "oxfmt": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react-redux": "catalog:",
         "typescript": "catalog:"
     }
 }

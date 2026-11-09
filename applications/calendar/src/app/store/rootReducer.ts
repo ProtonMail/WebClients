@@ -4,6 +4,7 @@ import { breachesCountReducer } from '@proton/account/breaches/breachNotificatio
 import { oauthTokenReducer } from '@proton/activation/src/logic/oauthToken';
 import { internalBookingReducer } from '@proton/calendar/bookings/store';
 import { calendarsBootstrapReducer } from '@proton/calendar/calendarBootstrap';
+import { calendarSubscriptionsReducer } from '@proton/calendar/calendarSubscriptions';
 import { calendarSettingsReducer } from '@proton/calendar/calendarUserSettings';
 import { calendarsReducer } from '@proton/calendar/calendars';
 import { holidaysDirectoryReducer } from '@proton/calendar/holidaysDirectory';
@@ -19,6 +20,7 @@ export const rootReducer = combineReducers({
     ...calendarsReducer,
     ...calendarsBootstrapReducer,
     ...calendarSettingsReducer,
+    ...calendarSubscriptionsReducer,
     ...holidaysDirectoryReducer,
     ...busySlotsReducer,
     ...breachesCountReducer,

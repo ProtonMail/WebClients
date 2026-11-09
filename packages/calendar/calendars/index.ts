@@ -8,7 +8,7 @@ import { getInitialModelState } from '@proton/redux-utilities/initialModelState'
 import type { ModelState } from '@proton/redux-utilities/initialModelState/interface';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { getCalendar, queryCalendars, queryMembers } from '@proton/shared/lib/api/calendars';
-import type { CalendarEventV6Response } from '@proton/shared/lib/api/events';
+import { ActionEventV6, type CalendarEventV6Response } from '@proton/shared/lib/api/events';
 import { CALENDAR_DISPLAY } from '@proton/shared/lib/calendar/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
@@ -132,9 +132,19 @@ export const calendarsEventLoopV6Thunk = ({
     event: CalendarEventV6Response;
     api: Api;
 }): ThunkAction<Promise<void>, CalendarsState, ProtonThunkArguments, UnknownAction> => {
-    return async (dispatch) => {
+    return async (dispatch, getState) => {
+        // Member markers only carry the member ID, so refetch the calendars holding those members
+        const calendars = selectCalendars(getState()).value || [];
+        const calendarEventIDs = new Set((event.Calendars || []).map(({ ID }) => ID));
+        const memberCalendarIDs = new Set(
+            (event.CalendarMembers || []).flatMap(({ ID }) => {
+                const calendar = calendars.find(({ Members }) => Members.some((member) => member.ID === ID));
+                return calendar && !calendarEventIDs.has(calendar.ID) ? [calendar.ID] : [];
+            })
+        );
+        const memberCalendarUpdates = [...memberCalendarIDs].map((ID) => ({ ID, Action: ActionEventV6.Update }));
         await updateCollectionAsyncV6({
-            events: event.Calendars,
+            events: [...(event.Calendars || []), ...memberCalendarUpdates],
             get: (calendarID) => fetchCalendarWithOwnMembers({ api, calendarID }),
             refetch: () => dispatch(calendarsThunk({ cache: CacheType.None })),
             update: (result) => dispatch(calendarsActions.eventLoopV6(result)),

@@ -185,7 +185,7 @@ jest.mock('@proton/components/hooks/useAuthentication', () => () => ({}));
 jest.mock('@proton/app-context/useConfig', () => ({
     useConfig: () => ({ APP_NAME: 'proton-calendar', APP_VERSION: 'test' }),
 }));
-jest.mock('@proton/components/hooks/useSubscribedCalendars', () => () => ({}));
+jest.mock('@proton/calendar/calendarSubscriptions/hooks', () => ({ useSubscribedCalendars: () => ({}) }));
 jest.mock('@proton/account/contactEmails/hooks', () => ({
     useContactEmails: () => () => {
         call: jest.fn();

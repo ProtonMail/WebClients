@@ -7,7 +7,6 @@ import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { coreEventLoopV6 } from '@proton/account/coreEventLoop';
 import { delegatedAccessActions } from '@proton/account/delegatedAccess';
 import { getIsDelegatedAccessSupportedInApp } from '@proton/account/delegatedAccess/available';
-import { serverEvent } from '@proton/account/eventLoop';
 import { initEvent } from '@proton/account/init';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { startLogoutListener } from '@proton/account/persist/listener';
@@ -31,7 +30,6 @@ import {
     getPersistedSession,
     registerSessionRemovalListener,
 } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { listenFreeTrialSessionExpiration } from '@proton/shared/lib/desktop/endOfTrialHelpers';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
@@ -189,65 +187,43 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
 
         const calendarModelEventManager = createCalendarModelEventManager({ api: silentApi });
 
-        let coreEventV6Manager: ReturnType<typeof bootstrap.coreEventManagerV6> | undefined;
-        let mailEventV6Manager: ReturnType<typeof bootstrap.mailEventManagerV6> | undefined;
-        let contactEventV6Manager: ReturnType<typeof bootstrap.contactEventManagerV6> | undefined;
-        let calendarEventV6Manager: ReturnType<typeof bootstrap.calendarEventManagerV6> | undefined;
-        let eventManager: ReturnType<typeof bootstrap.eventManager> | undefined;
+        const coreEventV6Manager = bootstrap.coreEventManagerV6({ api: silentApi });
+        const mailEventV6Manager = bootstrap.mailEventManagerV6({ api: silentApi });
+        const contactEventV6Manager = bootstrap.contactEventManagerV6({ api: silentApi });
+        const calendarEventV6Manager = bootstrap.calendarEventManagerV6({ api: silentApi });
 
-        // Calendar isn't supported due to it needing custom handling in supporting v6 events properly
-        const eventLoopV6ExcludedApps = [APPS.PROTONCALENDAR];
-        const hasEventLoopV6Enabled = !eventLoopV6ExcludedApps.some((app) =>
-            pathname.includes(APPS_CONFIGURATION[app].settingsSlug)
-        );
+        const eventManager = bootstrap.compatEventManagerV6({
+            eventManagers: [coreEventV6Manager, mailEventV6Manager, contactEventV6Manager, calendarEventV6Manager],
+        });
 
-        if (hasEventLoopV6Enabled) {
-            coreEventV6Manager = bootstrap.coreEventManagerV6({ api: silentApi });
-            mailEventV6Manager = bootstrap.mailEventManagerV6({ api: silentApi });
-            contactEventV6Manager = bootstrap.contactEventManagerV6({ api: silentApi });
-            calendarEventV6Manager = bootstrap.calendarEventManagerV6({ api: silentApi });
+        coreEventV6Manager.subscribe(async (event) => {
+            const promises: Promise<void>[] = [];
+            dispatch(coreEventLoopV6({ event, promises }));
+            await Promise.all(promises);
+        });
 
-            eventManager = bootstrap.compatEventManagerV6({
-                eventManagers: [coreEventV6Manager, mailEventV6Manager, contactEventV6Manager, calendarEventV6Manager],
-            });
+        mailEventV6Manager.subscribe(async (event) => {
+            const promises: Promise<void>[] = [];
+            dispatch(mailEventLoopV6({ event, promises }));
+            await Promise.all(promises);
+        });
 
-            coreEventV6Manager?.subscribe(async (event) => {
-                const promises: Promise<void>[] = [];
-                dispatch(coreEventLoopV6({ event, promises }));
-                await Promise.all(promises);
-            });
+        contactEventV6Manager.subscribe(async (event) => {
+            const promises: Promise<void>[] = [];
+            dispatch(contactEventLoopV6({ event, promises }));
+            await Promise.all(promises);
+        });
 
-            mailEventV6Manager?.subscribe(async (event) => {
-                const promises: Promise<void>[] = [];
-                dispatch(mailEventLoopV6({ event, promises }));
-                await Promise.all(promises);
-            });
+        calendarEventV6Manager.subscribe(async (event) => {
+            const promises: Promise<void>[] = [];
+            dispatch(calendarEventLoopV6({ event, promises }));
+            await Promise.all(promises);
+        });
 
-            contactEventV6Manager?.subscribe(async (event) => {
-                const promises: Promise<void>[] = [];
-                dispatch(contactEventLoopV6({ event, promises }));
-                await Promise.all(promises);
-            });
-
-            calendarEventV6Manager?.subscribe(async (event) => {
-                const promises: Promise<void>[] = [];
-                dispatch(calendarEventLoopV6({ event, promises }));
-                await Promise.all(promises);
-            });
-
-            coreEventV6Manager.start();
-            mailEventV6Manager.start();
-            contactEventV6Manager.start();
-            calendarEventV6Manager.start();
-        } else {
-            eventManager = bootstrap.eventManager({ api: silentApi });
-
-            eventManager?.subscribe((event) => {
-                dispatch(serverEvent(event));
-            });
-
-            eventManager.start();
-        }
+        coreEventV6Manager.start();
+        mailEventV6Manager.start();
+        contactEventV6Manager.start();
+        calendarEventV6Manager.start();
 
         extendStore({
             eventManager,

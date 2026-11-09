@@ -118,4 +118,6 @@ export interface ContactEventV6Response extends EventV6Defaults {
 
 export interface CalendarEventV6Response extends EventV6Defaults {
     Calendars: EventV6Response;
+    CalendarMembers: EventV6Response;
+    CalendarUserSettings: EventV6Response;
 }

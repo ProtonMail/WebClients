@@ -4,10 +4,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
 import { getCalendarSubpagePath } from '@proton/shared/lib/calendar/settingsRoutes';
+import { getCalendarHasSubscriptionParameters } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
@@ -32,6 +34,7 @@ interface Props {
     addresses: Address[];
     onSetDefault?: (id: string) => Promise<void>;
     nameHeader?: string;
+    loadingSubscriptionParameters?: boolean;
 }
 
 const CalendarsTable = ({
@@ -40,6 +43,7 @@ const CalendarsTable = ({
     addresses,
     onSetDefault,
     nameHeader: inputNameHeader,
+    loadingSubscriptionParameters = false,
 }: Props) => {
     const [isLoading, setIsLoading] = useState<string>();
 
@@ -98,15 +102,21 @@ const CalendarsTable = ({
                             </TableCell>
                             <TableCell label={statusHeader}>
                                 <div data-testid="calendar-settings-page:calendar-status" key="status">
-                                    {badges.map(({ statusType, badgeType, text, tooltipText }) => (
-                                        <CalendarBadge
-                                            key={statusType}
-                                            badgeType={badgeType}
-                                            text={text}
-                                            tooltipText={tooltipText}
-                                            className="mb-1 mr-2"
-                                        />
-                                    ))}
+                                    {isSubscribed &&
+                                    loadingSubscriptionParameters &&
+                                    !getCalendarHasSubscriptionParameters(calendar) ? (
+                                        <CircleLoader />
+                                    ) : (
+                                        badges.map(({ statusType, badgeType, text, tooltipText }) => (
+                                            <CalendarBadge
+                                                key={statusType}
+                                                badgeType={badgeType}
+                                                text={text}
+                                                tooltipText={tooltipText}
+                                                className="mb-1 mr-2"
+                                            />
+                                        ))
+                                    )}
                                 </div>
                             </TableCell>
                             <TableCell>

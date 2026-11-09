@@ -7,6 +7,7 @@ import { getModelState } from '@proton/account/testing/getModelState';
 import { getServerEvent } from '@proton/account/tests/getServerEvent';
 import { userReducer } from '@proton/account/user';
 import { userKeysReducer } from '@proton/account/userKeys';
+import { ActionEventV6, type CalendarEventV6Response } from '@proton/shared/lib/api/events';
 import { CALENDAR_SHARE_BUSY_TIME_SLOTS, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
@@ -21,6 +22,7 @@ import { CalendarKeyFlags } from '@proton/shared/lib/interfaces/calendar/Calenda
 import type { CalendarMember } from '@proton/shared/lib/interfaces/calendar/CalendarMember';
 
 import { calendarsBootstrapReducer } from '../calendarBootstrap';
+import { calendarEventLoopV6 } from '../calendarEventLoop';
 import { createCalendarModelEventManager } from '../calendarModelEventManager';
 import { type CalendarEventLoop, calendarServerEvent } from '../calendarServerEvent';
 import type { CalendarThunkArguments } from '../interface';
@@ -279,6 +281,28 @@ describe('calendar listener', () => {
             })
         );
         expect(getCalendarBootstrap('123')).toEqual(undefined);
+    });
+
+    it('should clean up after calendars deleted in event loop v6', async () => {
+        const initialCalendar = getCalendarModelState(getMockBootstrap({ CalendarID: '123' }));
+        const { store, extraThunkArguments } = setup({
+            calendarsBootstrap: {
+                '123': initialCalendar,
+            },
+        });
+        const reset = jest.spyOn(extraThunkArguments.calendarModelEventManager, 'reset');
+
+        store.dispatch(
+            calendarEventLoopV6({
+                event: {
+                    Calendars: [{ ID: '123', Action: ActionEventV6.Delete }],
+                } as CalendarEventV6Response,
+                promises: [],
+            })
+        );
+
+        expect(store.getState().calendarsBootstrap['123']?.value).toEqual(undefined);
+        expect(reset).toHaveBeenCalledWith(['123']);
     });
 
     it('should update calendar bootstrap settings', async () => {

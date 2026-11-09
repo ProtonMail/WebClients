@@ -2,11 +2,12 @@ import { eventLoopTimingTracker } from '@proton/metrics/eventLoopMetrics';
 import type { SharedStartListening } from '@proton/redux-shared-store-types/interface';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 
+import { calendarUserSettingsLoop } from '../calendarUserSettings/eventLoopV6';
 import { calendarsLoop } from '../calendars/eventLoopV6';
 import { calendarEventLoopV6 } from './index';
 import type { CalendarEventLoopV6Callback, CalendarEventLoopV6RequiredState } from './interface';
 
-const loops: CalendarEventLoopV6Callback[] = [calendarsLoop];
+const loops: CalendarEventLoopV6Callback[] = [calendarsLoop, calendarUserSettingsLoop];
 Object.freeze(loops);
 
 export const calendarEventLoopV6Listener = (startListening: SharedStartListening<CalendarEventLoopV6RequiredState>) => {

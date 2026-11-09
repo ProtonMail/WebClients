@@ -3,6 +3,7 @@ import { createNextState } from '@reduxjs/toolkit';
 import { selectAddresses } from '@proton/account/addresses';
 import { serverEvent } from '@proton/account/eventLoop';
 import { CacheType } from '@proton/redux-utilities/interface';
+import { ActionEventV6 } from '@proton/shared/lib/api/events';
 import {
     findMemberIndices,
     getIsCalendarEventManagerCreate,
@@ -22,6 +23,7 @@ import {
     selectCalendarsBootstrap,
 } from '../calendarBootstrap';
 import { deleteCalendarFromKeyCache } from '../calendarBootstrap/keyCache';
+import { calendarEventLoopV6 } from '../calendarEventLoop';
 import { calendarServerEvent } from '../calendarServerEvent';
 import type { CalendarStartListening } from '../interface';
 import type { CalendarsState } from './index';
@@ -51,6 +53,23 @@ export const startCalendarEventListener = (
                     }
                 });
             }
+        },
+    });
+
+    startListening({
+        actionCreator: calendarEventLoopV6,
+        effect: async (action, listenerApi) => {
+            const deletedCalendarIDs = (action.payload.event.Calendars || [])
+                .filter(({ Action }) => Action === ActionEventV6.Delete)
+                .map(({ ID }) => ID);
+            if (!deletedCalendarIDs.length) {
+                return;
+            }
+            deletedCalendarIDs.forEach((calendarID) => {
+                listenerApi.dispatch(calendarsBootstrapActions.remove({ id: calendarID }));
+                deleteCalendarFromKeyCache(calendarID);
+            });
+            listenerApi.extra.calendarModelEventManager.reset(deletedCalendarIDs);
         },
     });
 

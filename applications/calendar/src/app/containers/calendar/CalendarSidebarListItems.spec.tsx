@@ -406,6 +406,7 @@ describe('CalendarSidebarListItems', () => {
     });
 
     it(`doesn't let you open the dropdown for a subscribed calendar when loading subscription parameters`, () => {
+        mockedGetCalendarHasSubscriptionParameters.mockImplementation(() => false);
         render(renderComponent({ calendars: [mockSubscribedCalendar], loadingSubscriptionParameters: true }));
 
         const dropdownButton = screen.getAllByRole('button')[0];

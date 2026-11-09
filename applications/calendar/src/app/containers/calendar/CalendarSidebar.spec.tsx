@@ -5,8 +5,8 @@ import { getUnixTime } from 'date-fns';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { createMemoryHistory } from 'history';
 
+import { useSubscribedCalendars } from '@proton/calendar/calendarSubscriptions/hooks';
 import { CacheProvider } from '@proton/components/containers/cache/Provider';
-import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import { mockUseAuthentication } from '@proton/components/testing/mockUseAuthentication';
 import { CALENDAR_FLAGS, CALENDAR_TYPE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
@@ -63,9 +63,8 @@ jest.mock('@proton/app-context/useNotifications', () => ({
 
 jest.mock('@proton/components/hooks/useAuthentication', () => () => ({}));
 
-jest.mock('@proton/components/hooks/useSubscribedCalendars', () => ({
-    __esModule: true,
-    default: jest.fn(() => ({ loading: true })),
+jest.mock('@proton/calendar/calendarSubscriptions/hooks', () => ({
+    useSubscribedCalendars: jest.fn(() => ({ loading: true })),
 }));
 
 jest.mock('@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider', () => ({

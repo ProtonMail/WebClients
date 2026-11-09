@@ -44,7 +44,8 @@ type ModalsMap = {
 };
 
 interface OtherCalendarsSectionProps extends ComponentPropsWithoutRef<'div'> {
-    subscribedCalendars: SubscribedCalendar[];
+    subscribedCalendars: (VisualCalendar | SubscribedCalendar)[];
+    loadingSubscribedCalendars?: boolean;
     sharedCalendars: VisualCalendar[];
     calendarInvitations: CalendarMemberInvitation[];
     holidaysCalendars: VisualCalendar[];
@@ -58,6 +59,7 @@ interface OtherCalendarsSectionProps extends ComponentPropsWithoutRef<'div'> {
 
 const OtherCalendarsSection = ({
     subscribedCalendars,
+    loadingSubscribedCalendars,
     sharedCalendars,
     calendarInvitations,
     holidaysCalendars,
@@ -209,6 +211,7 @@ const OtherCalendarsSection = ({
             )}
             <CalendarsSection
                 calendars={subscribedCalendars}
+                loadingSubscriptionParameters={loadingSubscribedCalendars}
                 addresses={addresses}
                 nameHeader={c('Header; Table with list of calendars arranged by type').t`Subscribed`}
                 onEdit={handleEdit}
