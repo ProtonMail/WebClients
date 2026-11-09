@@ -543,7 +543,11 @@ const ComposerComponentInner = ({
                                 className,
                                 isGhostChatMode && 'ghost-mode'
                             )}
-                            style={{ '--min-h-custom': '4.375rem' /* 70px */ }}
+                            style={{
+                                '--min-h-custom': '4.375rem' /* 70px */,
+                                // Reserve the hidden input's footprint below banners; the native editor overlays it.
+                                position: nativeComposerVisibilityApi.showWebComposer() ? undefined : 'static',
+                            }}
                             aria-label={c('collider_2025: Info').t`Ask anything to ${LUMO_SHORT_APP_NAME}`}
                         >
                             <h2 className="sr-only">{c('collider_2025: Info')
