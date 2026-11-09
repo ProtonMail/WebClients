@@ -5,10 +5,10 @@ import {
     useCancellationReminderModal,
     useLightLabellingFeatureModal,
     useNetPromoterScoreModal,
-    useTrialEndedModal,
 } from '@proton/components/components/startupModals/startupModalHooks';
 import type { StartupModal } from '@proton/components/components/startupModals/types';
 import { NPSApplication } from '@proton/components/containers/netPromoterScore/interface';
+import { useTrialEndedModal } from '@proton/components/containers/subscription/useTrialEndedModal';
 import useNewFeatureOnboarding from '@proton/components/hooks/useNewFeatureOnboarding';
 
 import { useDriveDocsFeatureFlag } from '../../../legacy/store/_documents';

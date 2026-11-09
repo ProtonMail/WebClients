@@ -1,5 +1,4 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 
@@ -15,7 +14,6 @@ import { useShowScimGroupsOnboardingModal } from '../../containers/organization/
 import CancellationReminderModal from '../../containers/payments/subscription/cancellationReminder/CancellationReminderModal';
 import type { ReminderFlag } from '../../containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
 import { shouldOpenReminderModal } from '../../containers/payments/subscription/cancellationReminder/cancellationReminderHelper';
-import TrialEndedModal from '../../containers/subscription/TrialEndedModal';
 import useModalState from '../modalTwo/useModalState';
 import type { StartupModal } from './types';
 
@@ -54,22 +52,6 @@ export const useCancellationReminderModal: () => StartupModal = () => {
         showModal: showReminderModal,
         activateModal: () => setModal(true),
         component: renderModal ? <CancellationReminderModal {...modal} /> : null,
-    };
-};
-
-export const useTrialEndedModal: () => StartupModal = () => {
-    const [modal, setModal, renderModal] = useModalState();
-
-    const [userSettings] = useUserSettings();
-
-    const displayTrialEndModal = !!userSettings?.Flags?.DisplayTrialEndModal;
-
-    const showModal = displayTrialEndModal;
-
-    return {
-        showModal,
-        activateModal: () => setModal(true),
-        component: renderModal ? <TrialEndedModal {...modal} /> : null,
     };
 };
 

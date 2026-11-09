@@ -6,10 +6,10 @@ import StartupModals from '@proton/components/components/startupModals/StartupMo
 import {
     useLightLabellingFeatureModal,
     useScimGroupsOnboardingModal,
-    useTrialEndedModal,
 } from '@proton/components/components/startupModals/startupModalHooks';
 import type { StartupModal } from '@proton/components/components/startupModals/types';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import { useTrialEndedModal } from '@proton/components/containers/subscription/useTrialEndedModal';
 import useIsB2BAdmin from '@proton/components/hooks/useIsB2BAdmin';
 import { OfferDealModal } from '@proton/offers-delivery/components/OfferDealModal';
 import { useActiveOffer } from '@proton/offers-delivery/components/useActiveOffer';

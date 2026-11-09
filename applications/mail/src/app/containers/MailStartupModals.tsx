@@ -9,12 +9,12 @@ import {
     useCancellationReminderModal,
     useLightLabellingFeatureModal,
     useNetPromoterScoreModal,
-    useTrialEndedModal,
 } from '@proton/components/components/startupModals/startupModalHooks';
 import type { StartupModal } from '@proton/components/components/startupModals/types';
 import { InboxDesktopFreeTrialOnboardingModal } from '@proton/components/containers/desktop/freeTrial/InboxDesktopFreeTrialOnboardingModal';
 import useInboxFreeTrial from '@proton/components/containers/desktop/freeTrial/useInboxFreeTrial';
 import { NPSApplication } from '@proton/components/containers/netPromoterScore/interface';
+import { useTrialEndedModal } from '@proton/components/containers/subscription/useTrialEndedModal';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 import MailOnboardingModal from '../components/onboarding/modal/MailOnboardingModal';

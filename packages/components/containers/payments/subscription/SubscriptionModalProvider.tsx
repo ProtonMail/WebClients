@@ -13,6 +13,7 @@ import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
+import { OfferRenewNoticeProvider } from '@proton/payments-ui/ui/components/OfferRenewNoticeProvider';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { loadInitialBillingAddress } from '@proton/payments/core/billing-address/load-initial-billing-address';
 import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
@@ -190,7 +191,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                 />
             )}
             <SubscriptionModalContext.Provider value={[openSubscriptionModal, loadingData, true]}>
-                {children}
+                <OfferRenewNoticeProvider>{children}</OfferRenewNoticeProvider>
             </SubscriptionModalContext.Provider>
         </>
     );
