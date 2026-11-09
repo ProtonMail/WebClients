@@ -81,7 +81,7 @@ import type {
 import { SignupHumanVerification } from '../signup/interfaces';
 import { InvalidProvisioningLinkError, getProvisionedDeal, resolveProvisioning } from '../signup/orgProvisioning';
 import { getPlanIDsFromParamsWithForcedAddons } from '../signup/searchParams';
-import { handleDone, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
+import { SubscriptionSetupError, handleDone, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
 import {
     sendSignupAccountCreationTelemetry,
@@ -240,6 +240,7 @@ const SingleSignupContainerV2 = ({
         flow: 'signup-pass',
     });
     const [error, setError] = useState<any>();
+    const [setupError, setSetupError] = useState<string>();
     const handleError = useErrorHandler();
     const [tmpLoginEmail, setTmpLoginEmail] = useState('');
     const [switchModalProps, setSwitchModal, renderSwitchModal] = useModalState();
@@ -1262,7 +1263,7 @@ const SingleSignupContainerV2 = ({
         };
     };
 
-    const handleSetupNewUser = async (cache: SignupCacheResult): Promise<SignupCacheResult> => {
+    const handleSetupNewUser = async (cache: SignupCacheResult, isRetry = false): Promise<SignupCacheResult> => {
         const isAuthenticated = !!model.session?.resumedSessionResult.UID;
 
         const [result] = await Promise.all([
@@ -1274,6 +1275,7 @@ const SingleSignupContainerV2 = ({
                 telemetryContext: getTelemetryContext(model.session),
                 reportPaymentSuccess: getReportPaymentSuccess(cache.subscriptionData, isAuthenticated),
                 reportPaymentFailure: getReportPaymentFailure(cache.subscriptionData, isAuthenticated),
+                isRetry,
             }),
             wait(3500),
         ]);
@@ -1297,6 +1299,79 @@ const SingleSignupContainerV2 = ({
         void measure(getSignupTelemetryData(model.plansMap, cache));
 
         return result.cache;
+    };
+
+    const runSetup = async (isRetry: boolean) => {
+        const cache = model.cache;
+        if (!cache) {
+            throw new Error('Missing cache');
+        }
+
+        try {
+            if (cache.type === 'user') {
+                const result = await handleSetupExistingUser(cache);
+                if (onboarding.user) {
+                    setModelDiff({
+                        cache: result,
+                        step: Steps.Custom,
+                    });
+                } else {
+                    await handleLoginUser(result);
+                }
+            }
+            if (cache.type === 'signup') {
+                const result = await handleSetupNewUser(cache, isRetry);
+                trackSignupAccountCreated(product);
+                if (onboarding.signup) {
+                    setModelDiff({
+                        cache: result,
+                        step: Steps.Custom,
+                    });
+                } else {
+                    await handleFinalizeSignup(
+                        handleDone({
+                            cache: result,
+                            appIntent: product ? { app: product } : undefined,
+                        })
+                    );
+                }
+            }
+
+            sendSignupAccountCreationTelemetry({
+                planIDs: cache.subscriptionData.planIDs,
+                flowId: 'single-page-signup',
+                productIntent: toApp,
+                currency: cache.subscriptionData.currency,
+                cycle: cache.subscriptionData.cycle,
+                signupType: cache.type === 'signup' ? cache.accountData.signupType : undefined,
+                amount: cache.subscriptionData.checkResult.AmountDue,
+            });
+            metrics.core_single_signup_setup_total.increment({
+                status: 'success',
+            });
+        } catch (error) {
+            const apiError = error instanceof SubscriptionSetupError ? error.cause : error;
+            observeApiError(apiError, (status) =>
+                metrics.core_single_signup_setup_total.increment({
+                    status,
+                })
+            );
+
+            // The account exists by now, so going back to the form would only fail on the taken username.
+            // A failed subscription of a provisioned deal stays on this step instead, with a retry.
+            // Later steps already set up keys, so running the setup again isn't safe.
+            if (error instanceof SubscriptionSetupError) {
+                setSetupError(error.message);
+                return;
+            }
+
+            await onStartAuth().catch(noop);
+            handleError(error);
+            setModelDiff({
+                cache: undefined,
+                step: Steps.Account,
+            });
+        }
     };
 
     const loginModalDefaultUsername = isPorkbun ? '' : tmpLoginEmail;
@@ -1629,68 +1704,11 @@ const SingleSignupContainerV2 = ({
                         })()}
                         product={productAppName}
                         img={setupImg}
-                        onSetup={async () => {
-                            const cache = model.cache;
-                            if (!cache) {
-                                throw new Error('Missing cache');
-                            }
-
-                            try {
-                                if (cache.type === 'user') {
-                                    const result = await handleSetupExistingUser(cache);
-                                    if (onboarding.user) {
-                                        setModelDiff({
-                                            cache: result,
-                                            step: Steps.Custom,
-                                        });
-                                    } else {
-                                        await handleLoginUser(result);
-                                    }
-                                }
-                                if (cache.type === 'signup') {
-                                    const result = await handleSetupNewUser(cache);
-                                    trackSignupAccountCreated(product);
-                                    if (onboarding.signup) {
-                                        setModelDiff({
-                                            cache: result,
-                                            step: Steps.Custom,
-                                        });
-                                    } else {
-                                        await handleFinalizeSignup(
-                                            handleDone({
-                                                cache: result,
-                                                appIntent: product ? { app: product } : undefined,
-                                            })
-                                        );
-                                    }
-                                }
-
-                                sendSignupAccountCreationTelemetry({
-                                    planIDs: cache.subscriptionData.planIDs,
-                                    flowId: 'single-page-signup',
-                                    productIntent: toApp,
-                                    currency: cache.subscriptionData.currency,
-                                    cycle: cache.subscriptionData.cycle,
-                                    signupType: cache.type === 'signup' ? cache.accountData.signupType : undefined,
-                                    amount: cache.subscriptionData.checkResult.AmountDue,
-                                });
-                                metrics.core_single_signup_setup_total.increment({
-                                    status: 'success',
-                                });
-                            } catch (error) {
-                                observeApiError(error, (status) =>
-                                    metrics.core_single_signup_setup_total.increment({
-                                        status,
-                                    })
-                                );
-
-                                await onStartAuth().catch(noop);
-                                handleError(error);
-                                setModelDiff({
-                                    cache: undefined,
-                                    step: Steps.Account,
-                                });
-                            }
+                        error={setupError}
+                        onSetup={() => runSetup(false)}
+                        onRetry={() => {
+                            setSetupError(undefined);
+                            runSetup(true).catch(noop);
                         }}
                     />
                 </Layout>

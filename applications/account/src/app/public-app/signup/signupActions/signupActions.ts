@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { MAX_CHARS_API } from '@proton/account/organization';
 import { getStorageRange } from '@proton/account/organization/storage';
 import {
@@ -16,7 +18,7 @@ import type { Subscription } from '@proton/payments/core/subscription/interface'
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAllMembers, updateQuota, updateVPN } from '@proton/shared/lib/api/members';
 import {
     createPasswordlessOrganizationKeys,
@@ -46,7 +48,7 @@ import { generatePasswordlessOrganizationKey } from '@proton/shared/lib/keys/org
 import { handleSetupKeys } from '@proton/shared/lib/keys/setupKeys';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import { srpAuth } from '@proton/shared/lib/srp';
-import { hasPaidVpn } from '@proton/shared/lib/user/helpers';
+import { hasPaidVpn, isPaid } from '@proton/shared/lib/user/helpers';
 import clamp from '@proton/utils/clamp';
 import noop from '@proton/utils/noop';
 
@@ -418,6 +420,18 @@ export const handleSubscribeUser = async ({
     }
 };
 
+/**
+ * Thrown when the subscription of a provisioned signup fails. Keys aren't set up yet at that point,
+ * so the whole setup can run again.
+ */
+export class SubscriptionSetupError extends Error {
+    name = 'SubscriptionSetupError';
+
+    constructor(cause: unknown) {
+        super(getApiErrorMessage(cause) || (cause as Error)?.message || c('Error').t`Unknown error`, { cause });
+    }
+}
+
 export const handleSetupUser = async ({
     cache,
     api,
@@ -427,6 +441,7 @@ export const handleSetupUser = async ({
     reportPaymentSuccess,
     reportPaymentFailure,
     telemetryContext,
+    isRetry,
 }: {
     cache: SignupCacheResult;
     api: Api;
@@ -436,6 +451,8 @@ export const handleSetupUser = async ({
     reportPaymentSuccess: () => void;
     reportPaymentFailure: () => void;
     telemetryContext?: PaymentTelemetryContext;
+    /** A previous attempt may have subscribed before failing, so the subscription is skipped if the user is paid. */
+    isRetry?: boolean;
 }): Promise<SignupActionResponse> => {
     const {
         accountData: { username, email, domain, password, signupType },
@@ -472,7 +489,8 @@ export const handleSetupUser = async ({
     // The backend now takes care of this for us,
     // so we don't need to subscribe anymore on the frontend
     let subscription: Subscription | undefined;
-    if (!referralData) {
+    const alreadySubscribed = isRetry && isPaid(await getUser(api));
+    if (!referralData && !alreadySubscribed) {
         subscription = await handleSubscribeUser({
             api,
             subscriptionData,
@@ -481,6 +499,8 @@ export const handleSetupUser = async ({
             reportPaymentFailure,
             telemetryContext,
             provisioningToken,
+        }).catch((error) => {
+            throw provisioningToken ? new SubscriptionSetupError(error) : error;
         });
     }
 
