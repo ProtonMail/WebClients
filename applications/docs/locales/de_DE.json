@@ -922,6 +922,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten.",
         "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten."
+      ],
+      "Add payment method": [
+        "Zahlungsmethode hinzufügen"
+      ],
+      "Cancel trial": [
+        "Testphase beenden"
       ]
     },
     "Actions message": {
@@ -3572,6 +3578,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nicht entschlüsselbarer Name"
+      ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "Ein Teil des Dokuments konnte nicht gelesen werden, daher können deine Änderungen nicht gespeichert werden."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "Einige deiner zuletzt vorgenommenen Änderungen konnten nicht gespeichert werden, daher ist das Bearbeiten deaktiviert. Kopiere alle erforderlichen Inhalte und lade die Seite anschließend neu."
+      ],
+      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
+        "Dieses Dokument hat seine maximale Größe erreicht, daher wurde Ihre letzte Änderung nicht gespeichert und das Bearbeiten ist deaktiviert."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "Deine letzte Änderung ist zu umfangreich, um gespeichert werden zu können. Daher ist das Bearbeiten deaktiviert. Kopiere alle erforderlichen Änderungen und lade die Seite anschließend neu."
       ]
     },
     "error": {
@@ -5605,6 +5623,48 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kannst weiterhin deine eigenen Kontodaten ansehen, aber alle Benutzerkonten werden aus deiner Organisation entfernt."
+      ],
+      "Connected": [
+        "Verbunden"
+      ],
+      "Connecting…": [
+        "Verbindung wird hergestellt…"
+      ],
+      "Disconnected": [
+        "Verbindung getrennt"
+      ],
+      "Editing is temporarily unavailable.": [
+        "Bearbeiten ist vorübergehend nicht möglich."
+      ],
+      "Not connected. Editing resumes once you are back.": [
+        "Keine Verbindung. Das Bearbeiten wird fortgesetzt, sobald du wieder mit dem Internet verbunden bist."
+      ],
+      "Reconnecting…": [
+        "Verbindung wird wiederhergestellt …"
+      ],
+      "The connection to the server was lost.": [
+        "Die Verbindung zum Server ist abgebrochen."
+      ],
+      "The document could not be brought up to date.": [
+        "Das Dokument konnte nicht aktualisiert werden."
+      ],
+      "The server is busy.": [
+        "Der Server ist ausgelastet."
+      ],
+      "This version of the app is no longer supported. Reload the page to update it.": [
+        "Diese Version der App wird nicht mehr unterstützt. Lade die Seite neu, um sie zu aktualisieren."
+      ],
+      "You were disconnected after a period of inactivity.": [
+        "Nach einer gewissen Zeit der Inaktivität wurde deine Verbindung getrennt."
+      ],
+      "Your access to this document has changed. Reload the page to continue.": [
+        "Dein Zugriff auf dieses Dokument hat sich geändert. Bitte laden Sie die Seite neu, um fortzufahren."
+      ],
+      "Your changes could not be encrypted. Reload the page to continue.": [
+        "Deine Änderungen konnten nicht verschlüsselt werden. Lade die Seite neu, um fortzufahren."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "Deine Sitzung wurde beendet. Lade die Seite neu, um fortzufahren."
       ]
     },
     "info": {
@@ -7741,6 +7801,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Dein vollständiges ${ planTitle }-Abonnement beginnt am ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Hast du nach der Testphase deine Meinung geändert?** Kündige innerhalb von 30 Tagen nach deiner ersten Zahlung, und wir erstatten dir die nicht genutzte Zeit."
       ]
     },
     "Option": {
@@ -10183,6 +10246,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deine Testversion endet am ${ textDate }. Dir werden keine Kosten berechnet, wenn du vor dem ${ textDate } kündigst. ${ action }"
+      ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "Eine Änderung eines anderen Bearbeiters konnte nicht eingelesen werden und fehlt daher auf dieser Seite."
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "Ein Teil des Dokuments konnte nicht gelesen werden, daher wurde das Bearbeiten deaktiviert."
       ]
     }
   }

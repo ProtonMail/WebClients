@@ -3334,6 +3334,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nerozšifrovatelný název"
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "Vaše poslední změna je příliš rozsáhlá na to, aby se dala uložit, proto je úprava deaktivována. Zkopírujte si vše, co potřebujete, a poté stránku znovu načtěte."
       ]
     },
     "error": {
@@ -5361,6 +5364,39 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále budete moci prohlížet data vlastního účtu, ale všechny uživatelské účty budou z vaší organizace odebrány."
+      ],
+      "${ selection.selectedIds.length } selected": [
+        "${ selection.selectedIds.length } vybrán",
+        "${ selection.selectedIds.length } vybrány",
+        "${ selection.selectedIds.length } vybráno",
+        "${ selection.selectedIds.length } vybráno"
+      ],
+      "Editing is temporarily unavailable.": [
+        "Upravování je dočasně nedostupné."
+      ],
+      "Get Notified About Comments": [
+        "Dostávat upozornění na komentáře"
+      ],
+      "Making a copy...": [
+        "Vytváření kopie..."
+      ],
+      "Reconnecting…": [
+        "Opětovné připojování…"
+      ],
+      "The document could not be created.": [
+        "Vytvoření dokumentu selhalo."
+      ],
+      "The server is busy.": [
+        "Server je zaneprázdněn."
+      ],
+      "This link is not supported on this page.": [
+        "Tento odkaz není na této stránce podporován."
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "Abychom mohli tento problém vyřešit, budou informace potřebné pro odstranění chyb nahrány na váš Drive a bezpečně sdíleny s týmem podpory ${ BRAND_NAME }. Mohou zahrnovat obsah souborů. Sdílení můžete kdykoli zrušit a sdílená data budou po dokončení kontroly smazána."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "Vaše relace vypršela. Prosím, přihlaste se znovu pro pokračování."
       ]
     },
     "info": {
@@ -7282,6 +7318,21 @@
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavení bylo úspěšně změněno"
+      ],
+      "${ count } item could not be moved to trash": [
+        "${ count } položku se nepodařilo přesunout do koše",
+        "${ count } položky se nepodařilo přesunout do koše",
+        "${ count } položek se nepodařilo přesunout do koše",
+        "${ count } položek se nepodařilo přesunout do koše"
+      ],
+      "Failed to apply file. Check the file and try again.": [
+        "Nepodařilo se použít soubor. Zkontrolujte soubor a zkuste to znovu."
+      ],
+      "Failed to load saved items": [
+        "Načtení uložených položek selhalo"
+      ],
+      "Failed to submit report": [
+        "Odeslání nahlášení selhalo"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9503,6 +9554,9 @@
       ],
       "Your exposed information": [
         "Vaše uniklé informace"
+      ],
+      "Report issue": [
+        "Nahlásit problém"
       ]
     },
     "Title header for keys table": {

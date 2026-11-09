@@ -916,6 +916,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts.",
         "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts."
+      ],
+      "Add payment method": [
+        "Ajouter un moyen de paiement"
+      ],
+      "Cancel trial": [
+        "Annuler la version d'essai"
       ]
     },
     "Actions message": {
@@ -3480,6 +3486,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nom indéchiffrable"
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "Certaines de vos modifications récentes n'ont pas pu être enregistrées, l'édition est donc désactivée. Copiez le contenu souhaité, puis actualisez."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "Votre dernière modification est trop volumineuse pour être enregistrée, la fonction d'édition est donc désactivée. Copiez le contenu souhaité, puis actualisez."
       ]
     },
     "error": {
@@ -5468,6 +5480,30 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Vous pourrez toujours consulter les données de votre propre compte, mais tous les comptes utilisateur seront retirés de votre organisation."
+      ],
+      "Connected": [
+        "Connecté"
+      ],
+      "Connecting…": [
+        "Connexion en cours…"
+      ],
+      "Disconnected": [
+        "Déconnecté"
+      ],
+      "Editing is temporarily unavailable.": [
+        "La fonction d'édition est temporairement indisponible."
+      ],
+      "Reconnecting…": [
+        "Reconnexion en cours…"
+      ],
+      "The server is busy.": [
+        "Le serveur est occupé."
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Vous avez une facture à régler au ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "Votre session a expiré. Actualisez la page pour continuer."
       ]
     },
     "info": {
@@ -6079,6 +6115,9 @@
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
+      ],
+      "Pay it": [
+        "Payer avec"
       ]
     },
     "List title": {
@@ -7573,6 +7612,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Votre abonnement complet ${ planTitle } commence le ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Vous avez changé d'avis après la période d'essai ?** Résiliez votre abonnement dans les 30 jours suivant votre premier paiement et nous vous rembourserons la période non utilisée."
       ]
     },
     "Option": {
@@ -7814,6 +7856,9 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "Votre compte est trop ancien pour bénéficier de l'initiative Born Private."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Le nombre de places Proton Meet doit correspondre au nombre de membres."
       ]
     },
     "PGP key encryption warning": {
@@ -10000,6 +10045,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Votre version d'essai se terminera le ${ textDate }. Vous ne serez pas facturé si vous annulez avant le ${ textDate }. ${ action }"
+      ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "Une modification apportée par un autre contributeur n'a pas pu être lue et n'apparaît pas sur cette page."
       ]
     }
   }

@@ -929,6 +929,15 @@
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
         "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov"
+      ],
+      "Add payment method": [
+        "Pridať spôsob platby"
+      ],
+      "Cancel trial": [
+        "Zrušiť skúšobné obdobie"
+      ],
+      "Go to ${ DOCS_SHORT_APP_NAME } home": [
+        "Prejsť na hlavnú stránku ${ DOCS_SHORT_APP_NAME }"
       ]
     },
     "Actions message": {
@@ -3627,6 +3636,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nerozšifrovateľný názov"
+      ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "Časť dokumentu sa nepodarilo prečítať, preto nie je možné uložiť vaše zmeny."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "Niektoré z vašich posledných zmien sa nepodarilo uložiť, preto je úprava deaktivovaná. Skopírujte si všetko, čo potrebujete, a potom stránku znovu načítajte."
+      ],
+      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
+        "Tento dokument dosiahol maximálnu veľkosť, preto sa vaša posledná zmena neuložila a úpravy sú deaktivované."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "Vaša posledná zmena je príliš rozsiahla na to, aby sa dala uložiť, preto je úprava deaktivovaná. Skopírujte si všetko, čo potrebujete, a potom stránku znovu načítajte."
       ]
     },
     "error": {
@@ -5735,6 +5756,63 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále si budete môcť prezerať svoje vlastné údaje, ale všetky používateľské účty budú z vašej organizácie odstránené."
+      ],
+      "Connected": [
+        "Pripojené"
+      ],
+      "Connecting…": [
+        "Pripájanie…"
+      ],
+      "Disconnected": [
+        "Odpojené"
+      ],
+      "Editing is temporarily unavailable.": [
+        "Upravovanie je dočasne nedostupné."
+      ],
+      "Not connected. Editing resumes once you are back.": [
+        "Bez pripojenia. Úprava bude pokračovať, keď sa opäť pripojíte."
+      ],
+      "Reconnecting…": [
+        "Obnovuje sa spojenie…"
+      ],
+      "Some of the document's content could not be read.": [
+        "Časť obsahu dokumentu sa nepodarilo prečítať."
+      ],
+      "The connection to the server was lost.": [
+        "Pripojenie k serveru bolo prerušené."
+      ],
+      "The document could not be brought up to date.": [
+        "Dokument sa nepodarilo aktualizovať."
+      ],
+      "The document could not be created.": [
+        "Dokument sa nepodarilo vytvoriť."
+      ],
+      "The document could not be loaded.": [
+        "Dokument sa nepodarilo načítať."
+      ],
+      "The editor could not be loaded.": [
+        "Editor sa nepodarilo načítať."
+      ],
+      "The server is busy.": [
+        "Server je vyťažený."
+      ],
+      "This link is not supported on this page.": [
+        "Tento odkaz nie je na tejto stránke podporovaný."
+      ],
+      "This version of the app is no longer supported. Reload the page to update it.": [
+        "Táto verzia aplikácie už nie je podporovaná. Na aktualizáciu stránky ju znovu načítajte."
+      ],
+      "You were disconnected after a period of inactivity.": [
+        "Po určitej dobe nečinnosti došlo k prerušeniu spojenia."
+      ],
+      "Your access to this document has changed. Reload the page to continue.": [
+        "Váš prístup k tomuto dokumentu sa zmenil. Na pokračovanie obnovte stránku."
+      ],
+      "Your changes could not be encrypted. Reload the page to continue.": [
+        "Vaše zmeny sa nepodarilo zašifrovať. Na pokračovanie obnovte stránku."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "Vaša relácia vypršala. Obnovte stránku pre pokračovanie."
       ]
     },
     "info": {
@@ -7979,6 +8057,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Vaše plné ${ planTitle } predplatné začína dňa ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Zmenili ste názor po skončení skúšobnej doby?** Ak zrušíte predplatné do 30 dní od prvej platby, vrátime vám peniaze za nevyčerpanú dobu."
       ]
     },
     "Option": {
@@ -10549,6 +10630,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaše skúšobné obdobie skončí dňa ${ textDate }. Ak ho zrušíte pred ${ textDate }, nebudú vám účtované žiadne poplatky. ${ action }"
+      ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "Zmena vykonaná v inom editore sa nepodarilo načítať a na tejto stránke chýba."
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "Časť dokumentu nebolo možné prečítať, preto je úprava zakázaná."
       ]
     }
   }

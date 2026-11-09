@@ -910,6 +910,24 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti",
         "Non puoi inviare file vCard contenenti più di ${ maxAttachments } contatti"
+      ],
+      "Add payment method": [
+        "Aggiungi metodo di pagamento"
+      ],
+      "Ask me next time": [
+        "Chiedimelo la prossima volta"
+      ],
+      "Cancel trial": [
+        "Annulla la prova"
+      ],
+      "Go to ${ DOCS_SHORT_APP_NAME } home": [
+        "Vai alla pagina iniziale di ${ DOCS_SHORT_APP_NAME }"
+      ],
+      "Preview logs": [
+        "Mostra anteprima log."
+      ],
+      "Save preferences": [
+        "Salva preferenze"
       ]
     },
     "Actions message": {
@@ -1088,6 +1106,9 @@
       ],
       "You cannot add custom domains during the trial period.": [
         "Non puoi aggiungere domini personalizzati durante il periodo di prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Durante il periodo di prova puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze per l'assistente alla scrittura ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "b2b_trials_Action": {
@@ -3401,6 +3422,48 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrabile"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Impossibile verificare chi ha caricato questo file."
+      ],
+      "File download failed due to empty response": [
+        "Download del file non riuscito a causa di una risposta vuota."
+      ],
+      "Operation failed, try again later": [
+        "Operazione non riuscita. Riprova più tardi."
+      ],
+      "Photo is already in the target album": [
+        "La foto è già presente nell'album di destinazione."
+      ],
+      "Photo not found": [
+        "Foto non trovata"
+      ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "Una parte del documento non è stata letta, pertanto non è possibile salvare le modifiche apportate."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "Non è stato possibile salvare alcune delle modifiche apportate di recente, pertanto la funzione di modifica è disabilitata. Copia il lavoro che ti serve, quindi ricarica la pagina."
+      ],
+      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
+        "Questo documento ha raggiunto la dimensione massima consentita, pertanto l'ultima modifica non è stata salvata e la modifica è disabilitata."
+      ],
+      "This file has missing crypto material": [
+        "Questo file ha materiale crittografico mancante."
+      ],
+      "This file version could not be uploaded": [
+        "Questa versione del file non può essere caricata."
+      ],
+      "Too many server requests, please try again later": [
+        "Troppe richieste. Riprova più tardi"
+      ],
+      "You can create public links for your own files only": [
+        "Puoi creare link pubblici solo per i tuoi file."
+      ],
+      "You can update a public link for your own files only": [
+        "Puoi aggiornare un link pubblico solo per i tuoi file."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "L'ultima modifica apportata è troppo grande per essere salvata, quindi la modifica è disabilitata. Copia il lavoro che ti serve, quindi ricarica la pagina."
       ]
     },
     "error": {
@@ -5376,6 +5439,106 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Potrai ancora visualizzare i dati del tuo account, ma tutti gli account utente verranno rimossi dalla tua organizzazione."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ selection.selectedIds.length } selected": [
+        "${ selection.selectedIds.length } selezionato",
+        "${ selection.selectedIds.length } selezionati"
+      ],
+      "Author is not provided on public link": [
+        "L’autore non è indicato nel link pubblico."
+      ],
+      "Connected": [
+        "Connesso"
+      ],
+      "Connecting…": [
+        "Connessione…"
+      ],
+      "Converting document...": [
+        "Conversione del documento..."
+      ],
+      "Creating new document...": [
+        "Creazione di un nuovo documento..."
+      ],
+      "Disconnected": [
+        "Disconnesso"
+      ],
+      "Editing is temporarily unavailable.": [
+        "La funzione di modifica è temporaneamente non disponibile."
+      ],
+      "Error converting document: ${ errorMessage }": [
+        "Errore durante la conversione del documento: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Errore durante caricamento del documento: ${ errorDetail }"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Ricevi aggiornamenti via email per commenti e suggerimenti aggiunti ai tuoi documenti."
+      ],
+      "Get Notified About Comments": [
+        "Ricevi notifiche sui commenti"
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "I log ci aiutano a capire cosa è successo prima che si verificasse il problema. Includono le azioni eseguite nell'app e i messaggi di errore, ma non il contenuto dei messaggi."
+      ],
+      "Making a copy...": [
+        "Creazione di una copia..."
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Nessun documento fornito nell'URL. Torna a ${ DRIVE_APP_NAME } e selezionane uno."
+      ],
+      "Not connected. Editing resumes once you are back.": [
+        "Non connesso. La modifica riprenderà non appena ti sarai ricollegato."
+      ],
+      "Reconnecting…": [
+        "Riconessione in corso..."
+      ],
+      "Some of the document's content could not be read.": [
+        "Non è stato possibile leggere parte del contenuto del documento."
+      ],
+      "The connection to the server was lost.": [
+        "La connessione al server è stata interrotta."
+      ],
+      "The document could not be brought up to date.": [
+        "Non è stato possibile aggiornare il documento."
+      ],
+      "The document could not be created.": [
+        "Non è stato possibile creare il documento."
+      ],
+      "The document could not be loaded.": [
+        "Impossibile caricare il documento."
+      ],
+      "The editor could not be loaded.": [
+        "Impossibile caricare l'editor."
+      ],
+      "The server is busy.": [
+        "Il server è occupato."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "L'URL inserito non sembra essere stato copiato correttamente. Quando copi link lunghi da Slack, usa tasto destro e \"Copia link\" invece di copiarlo direttamente."
+      ],
+      "This link is not supported on this page.": [
+        "Questo link non è supportato in questa pagina."
+      ],
+      "This version of the app is no longer supported. Reload the page to update it.": [
+        "Questa versione dell'app non è più supportata. Aggiorna la pagina per ottenere la versione più recente."
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "Per aiutarci a risolvere il problema, le informazioni di debug verranno caricate sul tuo Drive e condivise in modo sicuro con il team di assistenza di ${ BRAND_NAME }. Potrebbero includere il contenuto dei file. Puoi interrompere la condivisione in qualsiasi momento e i dati condivisi verranno eliminati al termine della revisione."
+      ],
+      "You were disconnected after a period of inactivity.": [
+        "La connessione è stata interrotta a seguito di un periodo di inattività."
+      ],
+      "Your access to this document has changed. Reload the page to continue.": [
+        "Le modalità di accesso a questo documento sono cambiate. Aggiorna la pagina per continuare."
+      ],
+      "Your changes could not be encrypted. Reload the page to continue.": [
+        "Non è stato possibile crittografare le modifiche apportate. Aggiorna la pagina per continuare."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "La tua sessione è scaduta. Aggiorna la pagina per continuare."
       ]
     },
     "info": {
@@ -5853,6 +6016,21 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome non decifrabile"
+      ],
+      "Enable email notifications": [
+        "Attiva notifiche email"
+      ],
+      "Include debug information": [
+        "Includi le informazioni di debug"
+      ],
+      "Include document name in notification": [
+        "Includi il nome del documento nella notifica"
+      ],
+      "Select ${ document.name }": [
+        "Seleziona ${ document.name }"
+      ],
+      "Select all": [
+        "Seleziona tutto"
       ]
     },
     "Label for contact group color": {
@@ -6076,6 +6254,9 @@
       ],
       "Add-on with free trial": [
         "Componente aggiuntivo con prova gratuita"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "meet_2025: Addon": {
@@ -6699,6 +6880,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Monitoriamo il dark web per verificare se i tuoi indirizzi o alias ${ BRAND_NAME } vengono diffusi e ti avvisiamo immediatamente se troviamo qualcosa."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME } con accesso esteso"
       ]
     },
     "new_plans: feature highlight": {
@@ -7267,6 +7454,16 @@
       ],
       "Your settings have been changed successfully": [
         "Le impostazioni sono state modificate con successo"
+      ],
+      "${ count } item could not be moved to trash": [
+        "Impossibile spostare ${ count } elemento nel cestino.",
+        "Impossibile spostare ${ count } elementi nel cestino."
+      ],
+      "Failed to submit report": [
+        "Invio della segnalazione non riuscito."
+      ],
+      "Report submitted successfully": [
+        "Segnalazione inviata correttamente."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7478,6 +7675,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Il tuo abbonamento completo a ${ planTitle } inizia il ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Hai cambiato idea dopo il periodo di prova? **Annulla entro 30 giorni dal primo pagamento e ti rimborseremo il periodo non utilizzato."
       ]
     },
     "Option": {
@@ -7891,6 +8091,9 @@
       ],
       "key": [
         "chiave"
+      ],
+      "name": [
+        "nome"
       ]
     },
     "Property type": {
@@ -8338,6 +8541,9 @@
       ],
       "Your current spreadsheet, including all sheets within it, will be replaced with this version.": [
         "Il tuo foglio di calcolo corrente, inclusi tutti i fogli al suo interno, verrà sostituito con questa versione."
+      ],
+      "Creating new spreadsheet...": [
+        "Creazione di un nuovo foglio di calcolo"
       ]
     },
     "sheets_2025:Label": {
@@ -9515,6 +9721,9 @@
       ],
       "Your exposed information": [
         "Le tue informazioni rese pubbliche"
+      ],
+      "Report issue": [
+        "Segnala un problema"
       ]
     },
     "Title header for keys table": {
@@ -9902,6 +10111,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La tua prova finirà il ${ textDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ textDate }. ${ action }"
+      ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "Una modifica apportata da un altro editore non è stata letta e risulta mancante in questa pagina."
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "Una parte del documento non è stata letta, pertanto la modifica è disabilitata."
       ]
     }
   }

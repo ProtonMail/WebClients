@@ -403,7 +403,7 @@
         "Torna enrere"
       ],
       "Go to ${ DOCS_SHORT_APP_NAME } home": [
-        "Aneu a l'inici de ${ DOCS_SHORT_APP_NAME }"
+        "Vés a l'inici de ${ DOCS_SHORT_APP_NAME }"
       ],
       "Go to ${ planOrAppName }": [
         "Aneu a ${ planOrAppName }"
@@ -925,6 +925,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
         "No podeu enviar fitxers vCard de més de ${ maxAttachments } contactes."
+      ],
+      "Add payment method": [
+        "Afegir un mètode de pagament"
+      ],
+      "Cancel trial": [
+        "Cancel·lar la prova"
       ]
     },
     "Actions message": {
@@ -1128,7 +1134,7 @@
     },
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
-        "Garantia de devolució de 30 dies: cancel·leu-ho en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per obtenir un reemborsament."
+        "Garantia de devolució de 30 dies: cancel·leu en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per a obtenir un reemborsament."
       ]
     },
     "BF2024: Deal details": {
@@ -2893,7 +2899,7 @@
         "Ja existeix un grup amb aquest nom"
       ],
       "A message is required when reporting copyright infringement or stolen data": [
-        "Cal un missatge quan s'informa d'una infracció de drets d'autor o de dades robades"
+        "El missatge és requerit quan s'informa d'una infracció de drets d'autor o de dades robades"
       ],
       "Address could not be added.": [
         "No s'ha pogut afegir l'adreça."
@@ -2932,7 +2938,7 @@
         "Com que aquest document es trobava en una carpeta compartida, només el propietari de la carpeta el pot restaurar"
       ],
       "Bookmark password is not available": [
-        "La contrasenya del marcador de pàgina no està disponible"
+        "La contrasenya de l'adreça d'interès no està disponible"
       ],
       "Calendar limit reached": [
         "Límit de calendari assolit"
@@ -2950,7 +2956,7 @@
         "No s'ha pogut trobar la destinació"
       ],
       "Cannot move item without a valid name, please rename the item first": [
-        "No es pot moure l'element sense un nom vàlid, canvieu-ne el nom primer"
+        "No es pot moure l'element sense un nom vàlid. Canvieu-ne el nom primer"
       ],
       "Cannot share root folder": [
         "No es pot compartir la carpeta arrel"
@@ -3051,10 +3057,10 @@
         "No s\"ha pogut crear el node de compartició públic"
       ],
       "Failed to decrypt bookmark key: ${ message }": [
-        "No s'ha pogut desxifrar la clau del marcador de pàgina: ${ message }"
+        "No s'ha pogut desxifrar la clau de l'adreça d'interès: ${ message }"
       ],
       "Failed to decrypt bookmark name: ${ message }": [
-        "No s'ha pogut desxifrar el nom del marcador de pàgina: ${ message }"
+        "No s'ha pogut desxifrar el nom de l'adreça d'interès: ${ message }"
       ],
       "Failed to decrypt bookmark password: ${ message }": [
         "No s'ha pogut desxifrar la contrasenya de l'adreça d'interès: ${ message }"
@@ -3193,10 +3199,10 @@
         "Signatura no trobada"
       ],
       "Missing signature for ${ signatureType }": [
-        "Falta la signatura per ${ signatureType }"
+        "Falta la signatura per a ${ signatureType }"
       ],
       "Move operation aborted": [
-        "S'ha cancel·lat l'operació de moviment"
+        "S'ha avortat l'operació de desplaçament"
       ],
       "Moving item to a non-folder is not allowed": [
         "No es permet moure un element a un element que no sigui una carpeta"
@@ -3247,7 +3253,7 @@
         "S'ha cancel·lat l'operació"
       ],
       "Operation failed, try again later": [
-        "Ha fallat l'operació, torneu-ho a provar més tard"
+        "Ha fallat l'operació. Torneu-ho a provar més tard"
       ],
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
@@ -3336,10 +3342,10 @@
         "Ha fallat la verificació de la signatura: ${ errorMessage }"
       ],
       "Signature verification for ${ signatureType } failed": [
-        "Ha fallat la verificació de la signatura per ${ signatureType }"
+        "No s'ha pogut verificar la signatura per a ${ signatureType }"
       ],
       "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
-        "La verificació de la signatura per ${ signatureType } ha fallat: ${ errorMessage }"
+        "No s'ha pogut verificar la signatura per a ${ signatureType }: ${ errorMessage }"
       ],
       "Some contacts could not be deleted": [
         "Alguns contactes no poden ser esborrats"
@@ -3444,10 +3450,10 @@
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
       ],
       "This file has missing crypto material": [
-        "Aquest fitxer no té el material criptogràfic necessari"
+        "Falta material criptogràfic en aquest fitxer"
       ],
       "This file has no version available to download": [
-        "Aquest fitxer no té cap versió disponible per descarregar"
+        "Aquest fitxer no té cap versió disponible per a descarregar"
       ],
       "This file version could not be uploaded": [
         "No s'ha pogut carregar aquesta versió del fitxer"
@@ -3471,10 +3477,10 @@
         "Aquest missatge pot contenir adreces URL que no es puguin obrir amb el navegador actual."
       ],
       "Too many server errors, please try again later": [
-        "Hi ha massa errors del servidor, torneu-ho a provar més tard"
+        "S'han produït massa errors del servidor. Torneu-ho a provar més tard"
       ],
       "Too many server requests, please try again later": [
-        "Hi ha massa sol·licituds al servidor, torneu-ho a provar més tard"
+        "Hi ha hagut massa sol·licituds al servidor. Torneu-ho a provar més tard"
       ],
       "Try using only letters, numerals, and _.-": [
         "Intenteu utilitzar només lletres, numerals i _.-"
@@ -3513,7 +3519,7 @@
         "Les claus de verificació no estan disponibles"
       ],
       "Verification keys for ${ signatureType } are not available": [
-        "Les claus de verificació per ${ signatureType } no estan disponibles"
+        "Les claus de verificació per a ${ signatureType } no estan disponibles"
       ],
       "We are having trouble saving recent edits. Please refresh the page.": [
         "Estem tenint problemes per a desar les edicions recents. Actualitzeu la pàgina."
@@ -3575,6 +3581,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ No es pot desxifrar aquest nom"
+      ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "No s'ha pogut llegir part del document i, per tant, no es poden desar els canvis."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "No s'han pogut desar alguns dels canvis recents i, per tant, s'ha desactivat l'edició. Copieu qualsevol feina que necessiteu i torneu a carregar la pàgina."
+      ],
+      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
+        "Aquest document ha arribat a la seva mida màxima, de manera que no s'ha desat el darrer canvi i s'ha desactivat l'edició."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "El darrer canvi és massa gran per a desar-lo i, per tant, s'ha deshabilitat l'edició. Copieu qualsevol feina que necessiteu i recarregueu la pàgina."
       ]
     },
     "error": {
@@ -4459,8 +4477,8 @@
         "${ selectedFoldersCountLocalized } etiquetes seleccionades"
       ],
       "${ selection.selectedIds.length } selected": [
-        "${ selection.selectedIds.length } de seleccionat",
-        "${ selection.selectedIds.length } de seleccionats"
+        "Se n'ha seleccionat ${ selection.selectedIds.length }",
+        "Se n'han seleccionat ${ selection.selectedIds.length }"
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
         "Us queda ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per no perdre'n l'accés. ${ learnMoreLink }"
@@ -5290,7 +5308,7 @@
         "Aquest és un nom o un sobrenom per a la vostra organització que els usuaris veuran. Podeu canviar-lo en qualsevol moment."
       ],
       "This link is not supported on this page.": [
-        "Aquest enllaç no és compatible en aquesta pàgina."
+        "Aquest enllaç no és compatible amb aquesta pàgina."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Aquest enllaç porta a un lloc web que us podria estar intentant robar la informació, com ara contrasenyes i detalls de targetes de crèdit."
@@ -5608,6 +5626,48 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
+      ],
+      "Connected": [
+        "S'ha connectat"
+      ],
+      "Connecting…": [
+        "S'està connectant…"
+      ],
+      "Disconnected": [
+        "S'ha desconnectat"
+      ],
+      "Editing is temporarily unavailable.": [
+        "L'edició no està disponible temporalment."
+      ],
+      "Not connected. Editing resumes once you are back.": [
+        "No hi ha connexió. L'edició es reprendrà un cop torneu a estar en línia."
+      ],
+      "Reconnecting…": [
+        "S'està tornant a connectar…"
+      ],
+      "The connection to the server was lost.": [
+        "S'ha perdut la connexió amb el servidor."
+      ],
+      "The document could not be brought up to date.": [
+        "No s'ha pogut actualitzar el document."
+      ],
+      "The server is busy.": [
+        "El servidor està ocupat."
+      ],
+      "This version of the app is no longer supported. Reload the page to update it.": [
+        "Aquesta versió de l'aplicació ja no és compatible. Torneu a carregar la pàgina per a actualitzar-la."
+      ],
+      "You were disconnected after a period of inactivity.": [
+        "Se us ha desconnectat després d'un període d'inactivitat."
+      ],
+      "Your access to this document has changed. Reload the page to continue.": [
+        "L'accés a aquest document ha canviat. Torneu a carregar la pàgina per a continuar."
+      ],
+      "Your changes could not be encrypted. Reload the page to continue.": [
+        "No s'han pogut xifrar els canvis. Torneu a carregar la pàgina per a continuar."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "La sessió ha expirat. Torneu a carregar la pàgina per a continuar."
       ]
     },
     "info": {
@@ -6003,7 +6063,7 @@
         "Selecciona ${ document.name }"
       ],
       "Select all": [
-        "Seleccionar-ho tot"
+        "Selecciona-ho tot"
       ],
       "Selected": [
         "Seleccionat"
@@ -7469,7 +7529,7 @@
         "No s'ha pogut restaurar el document"
       ],
       "Failed to save for later": [
-        "Ha fallat indicar desar-ho més endavant."
+        "No s'ha pogut desar per a més endavant"
       ],
       "Failed to submit report": [
         "No s'ha pogut enviar l'informe"
@@ -7744,6 +7804,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "La subscripció completa a ${ planTitle } comença el ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Heu canviat d'opinió després de la prova? ** Cancel·leu-la abans de 30 dies des del primer pagament i us reemborsarem el temps no utilitzat."
       ]
     },
     "Option": {
@@ -7882,7 +7945,7 @@
         "Es requereix una organització per a aquest pla."
       ],
       "Born Private accounts can’t be purchased with an active subscription.": [
-        "Els comptes de Born Private no es poden adquirir amb una subscripció activa."
+        "Els comptes de Born Private no es poden comprar amb una subscripció activa."
       ],
       "Buying credits requires a separate purchase.": [
         "L'adquisició de crèdits requereix una compra independent."
@@ -8159,7 +8222,7 @@
         "clau de contingut"
       ],
       "hash key": [
-        "clau d'empremta electrònica"
+        "empremta electrònica"
       ],
       "key": [
         "clau"
@@ -9977,7 +10040,7 @@
     },
     "user_modal": {
       "This user gets administrator rights the next time they sign in.": [
-        "Aquest usuari obtindrà drets d'administrador la pròxima vegada que iniciïn sessió."
+        "Aquest usuari obtindrà drets d'administrador la pròxima vegada que iniciï la sessió."
       ],
       "Upgrade to a supported plan to use admin roles.": [
         "Milloreu a un pla compatible per utilitzar rols d'administrador/a."
@@ -10186,6 +10249,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "La vostra prova finalitzarà el ${ textDate }. No se us cobrarà si cancel·leu abans del ${ textDate }. ${ action }"
+      ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "Un canvi fet per un altre editor no s'ha pogut llegir i falta en aquesta pàgina."
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "No s'ha pogut llegir part del document i, per tant, s'ha desactivat l'edició."
       ]
     }
   }

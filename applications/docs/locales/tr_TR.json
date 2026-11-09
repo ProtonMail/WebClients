@@ -922,6 +922,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz",
         "En fazla ${ maxAttachments } kişinin vCard dosyasını gönderebilirsiniz"
+      ],
+      "Add payment method": [
+        "Ödeme yöntemi ekle"
+      ],
+      "Cancel trial": [
+        "Denemeyi iptal et"
       ]
     },
     "Actions message": {
@@ -3572,6 +3578,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Şifresi çözülemeyen ad"
+      ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "Belgenin bir bölümü okunamadığından değişiklikleriniz kaydedilemiyor."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "Son değişikliklerinizin bir kısmı kaydedilemedi. Bu yüzden düzenleme kapatıldı. Gerek duyduğunuz içeriği kopyalayın, ardından sayfayı yeniden yükleyin."
+      ],
+      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
+        "Bu belge olabilecek en büyük boyuta ulaştı. Bu yüzden son değişikliğiniz kaydedilmedi ve düzenleme kapatıldı."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "Son değişikliğiniz kaydedilemeyecek kadar büyük. Bu yüzden düzenleme kapatıldı. Gerek duyduğunuz içeriği kopyalayın, ardından sayfayı yeniden yükleyin."
       ]
     },
     "error": {
@@ -5605,6 +5623,48 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Kendi hesap bilgilerinizi görmeyi sürdürebileceksiniz. Ancak kuruluşunuzun tüm kullanıcı hesapları silinecek."
+      ],
+      "Connected": [
+        "Bağlı"
+      ],
+      "Connecting…": [
+        "Bağlantı kuruluyor…"
+      ],
+      "Disconnected": [
+        "Bağlı değil"
+      ],
+      "Editing is temporarily unavailable.": [
+        "Düzenleme geçici olarak kullanılamıyor."
+      ],
+      "Not connected. Editing resumes once you are back.": [
+        "Bağlantı yok. Geri döndüğünüzde düzenleme sürdürülecek."
+      ],
+      "Reconnecting…": [
+        "Yeniden bağlantı kuruluyor…"
+      ],
+      "The connection to the server was lost.": [
+        "Sunucu bağlantısı kesildi."
+      ],
+      "The document could not be brought up to date.": [
+        "Belgenin güncel durumu getirilemedi."
+      ],
+      "The server is busy.": [
+        "Sunucu meşgul."
+      ],
+      "This version of the app is no longer supported. Reload the page to update it.": [
+        "Uygulamanın bu sürümü artık desteklenmiyor. Güncellemek için sayfayı yeniden yükleyin."
+      ],
+      "You were disconnected after a period of inactivity.": [
+        "Bağlantınız bir süre işlem yapılmadığı için kesildi."
+      ],
+      "Your access to this document has changed. Reload the page to continue.": [
+        "Bu belgeye erişme izniniz değiştirildi. İlerlemek için sayfayı yeniden yükleyin."
+      ],
+      "Your changes could not be encrypted. Reload the page to continue.": [
+        "Değişiklikleriniz şifrelenemedi. İlerlemek için sayfayı yeniden yükleyin."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "Oturumunuzun süresi doldu. İlerlemek için sayfayı yeniden yükleyin."
       ]
     },
     "info": {
@@ -7741,6 +7801,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Tam ${ planTitle } aboneliğiniz ${ boldEndDate } tarihinde başlayacak."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Denedikten sonra fikrinizi değiştirdiniz mi? ** İlk ödemenizden sonraki 30 gün içinde iptal edebilirsiniz. Kullanılmayan süreyi geri öderiz."
       ]
     },
     "Option": {
@@ -10183,6 +10246,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Deneme süreniz ${ textDate } tarihinde sona erecek. ${ textDate } tarihinden önce iptal ederseniz sizden ücret alınmayacak. ${ action }"
+      ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "Başka bir düzenleyiciden gelen bir değişiklik okunamadı ve bu sayfada eksik."
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "Belgenin bir bölümü okunamadığından düzenleme kapatıldı."
       ]
     }
   }
