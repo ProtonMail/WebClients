@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import useLoading from '@proton/hooks/useLoading';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import type { SignInScreen, SignInScreenProps } from '../../../routes/signInRoute';
 import { useSignInProps } from '../../../wizard/SignInProvider';
 import { CredentialsContext } from '../CredentialsContext';
+import { useLoginChallengeContext } from '../LoginChallengeContext';
 import { SignInFormHeader } from '../SignInFormHeader';
 import { TestflightBanner } from '../Testflight';
 import { CancelSSOButton } from '../fields/CancelSSOButton';
@@ -43,7 +45,10 @@ export const AutoScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
     } = useSignInProps();
     const actorRef = CredentialsContext.useActorRef();
     const errorMessage = CredentialsContext.useSelector(selectErrorMessage);
-    const submitting = CredentialsContext.useSelector(selectSubmitting);
+    const { getPayload } = useLoginChallengeContext();
+    // Covers the wait for the challenge result, before the machine takes over
+    const [collecting, withCollecting] = useLoading();
+    const submitting = CredentialsContext.useSelector(selectSubmitting) || collecting;
     // Starts with the machine's username, so it carries over between modes
     const initialUsername = CredentialsContext.useSelector(selectUsername);
 
@@ -54,10 +59,12 @@ export const AutoScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
     const initialPersistentValue = CredentialsContext.useSelector(selectPersistent);
     const staySignedIn = useStaySignedIn(initialPersistentValue);
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
+        // Waiting is intentional: the auth info request is going to need the challenge result too
+        const payload = await getPayload();
         actorRef.send({
             type: 'credentials.usernameSubmitted',
-            payload: { username, persistent: staySignedIn.persistent },
+            payload: { username, persistent: staySignedIn.persistent, payload },
         });
     };
 
@@ -72,7 +79,7 @@ export const AutoScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
                     onSubmit={(event) => {
                         event.preventDefault();
                         if (!submitting && onFormSubmit()) {
-                            handleSubmit();
+                            void withCollecting(handleSubmit());
                         }
                     }}
                 >

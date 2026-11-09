@@ -27,17 +27,26 @@ import { rethrowCredentialsError, rethrowSSOTokenError } from './credentialsErro
 export interface UsernameFormValues {
     username: string;
     persistent: boolean;
-}
-
-/** What the password forms submit. */
-export interface CredentialsFormValues extends UsernameFormValues {
-    password: string;
-    /** Anti-abuse challenge result, sent with the password authentication; the form collects it on submit. */
+    /**
+     * Anti-abuse challenge result, sent with the password authentication. It only observes the username, so the form
+     * collects it on submit.
+     */
     payload: ChallengeResult;
 }
 
-/** The password login; with the account type check's auth info, it skips fetching it again. */
+/** What the password forms submit. */
+export interface CredentialsFormValues {
+    username: string;
+    persistent: boolean;
+    password: string;
+}
+
+/**
+ * The password login, with the challenge result submitted with the username; with the account type check's auth info,
+ * it skips fetching it again.
+ */
 export interface PasswordLoginInput extends CredentialsFormValues {
+    payload: ChallengeResult;
     info?: InfoResponse;
 }
 

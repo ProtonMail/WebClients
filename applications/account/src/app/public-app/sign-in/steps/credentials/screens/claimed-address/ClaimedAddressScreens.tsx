@@ -1,12 +1,9 @@
 import { c } from 'ttag';
 
-import useLoading from '@proton/hooks/useLoading';
-
 import { UserNameWithIcon } from '../../../../../components/username/UserNameWithIcon';
 import type { SignInScreen, SignInScreenProps } from '../../../../routes/signInRoute';
 import { useSignInProps } from '../../../../wizard/SignInProvider';
 import { CredentialsContext } from '../../CredentialsContext';
-import { useLoginChallengeContext } from '../../LoginChallengeContext';
 import { CancelSSOButton } from '../../fields/CancelSSOButton';
 import {
     selectAwaitingProvider,
@@ -63,15 +60,6 @@ export const ClaimedAddressVerifyScreen: SignInScreen = ({ onBack }: SignInScree
     const email = CredentialsContext.useSelector(selectUsername);
     const errorMessage = CredentialsContext.useSelector(selectErrorMessage);
     const submitting = CredentialsContext.useSelector(selectSubmitting);
-    const { getPayload } = useLoginChallengeContext();
-    // Covers the wait for the challenge result, before the machine takes over
-    const [collecting, withCollecting] = useLoading();
-
-    const handleSubmit = async (password: string) => {
-        const payload = await getPayload();
-        actorRef.send({ type: 'claimed.submitted', payload: { password, payload } });
-    };
-
     return (
         <>
             <layout.Header
@@ -82,12 +70,10 @@ export const ClaimedAddressVerifyScreen: SignInScreen = ({ onBack }: SignInScree
             <layout.Body>
                 <ClaimedAddressPasswordForm
                     email={email}
-                    loading={submitting || collecting}
+                    loading={submitting}
                     error={errorMessage}
                     onChangePassword={() => actorRef.send({ type: 'credentials.edited' })}
-                    onSubmit={(password) => {
-                        void withCollecting(handleSubmit(password));
-                    }}
+                    onSubmit={(password) => actorRef.send({ type: 'claimed.submitted', payload: { password } })}
                 />
             </layout.Body>
         </>

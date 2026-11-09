@@ -90,20 +90,25 @@ interface CredentialsMachineContext {
     errorMessage: string | undefined;
     /** The account type check's auth info and when it came, for the password step's first try only. */
     authInfo: { info: InfoResponse; fetchedAt: number } | undefined;
+    /**
+     * The anti-abuse challenge result submitted with the username, which the password logins send. It only observes
+     * the username, so it's the same for every password tried; a new username replaces it.
+     */
+    challengePayload: ChallengeResult | undefined;
 }
 
 type CredentialsEvent =
     | { type: 'credentials.submitted'; payload: CredentialsFormValues }
     | { type: 'credentials.usernameSubmitted'; payload: UsernameFormValues }
     | { type: 'credentials.edited' }
-    | { type: 'credentials.passwordSignInRequested'; payload: { username: string } }
+    | { type: 'credentials.passwordSignInRequested'; payload: { username: string; payload: ChallengeResult } }
     | { type: 'externalSSO.cancelled' }
     /** From the claimed-address choice: continue to the organization's identity provider after all. */
     | { type: 'claimed.ssoRequested' }
     /** From the claimed-address choice: recover the personal account rather than use the identity provider. */
     | { type: 'claimed.recoveryChosen' }
     /** Proving ownership of the claimed address, with the password of the account it belonged to. */
-    | { type: 'claimed.submitted'; payload: { password: string; payload: ChallengeResult } }
+    | { type: 'claimed.submitted'; payload: { password: string } }
     | { type: 'decision.back' }
     /** From the sign-in: the attempt ended without signing in; show the form again. */
     | { type: 'credentials.reopened' };
@@ -163,7 +168,7 @@ const credentialsSetup = setup({
          * A new submission starts from scratch: no error and no leftover SSO state. Only the username and remember
          * choice are kept; the password stays in the submitted event, which starts the login request.
          */
-        storeForm: assign((_, params: { form: UsernameFormValues }) => ({
+        storeForm: assign((_, params: { form: Pick<UsernameFormValues, 'username' | 'persistent'> }) => ({
             // The next form (password after the username step, SSO after a switch) starts with it
             username: params.form.username,
             persistent: params.form.persistent,
@@ -171,6 +176,9 @@ const credentialsSetup = setup({
             ssoInfo: undefined,
             ssoProviderResult: undefined,
             claimedAddresses: [],
+        })),
+        storeChallengePayload: assign((_, params: { payload: ChallengeResult }) => ({
+            challengePayload: params.payload,
         })),
         /** After `errorOf(InvalidLoginError)` or `errorOf(SSOSignInRejectedError)`: the API's message, or a fallback. */
         setErrorMessage: assign((_, params: { error: unknown }) => ({
@@ -263,10 +271,11 @@ const signingIn = credentialsSetup.createStateConfig({
     invoke: {
         src: 'authenticateWithPassword',
         // Only the password step's submission gets here; its password goes to the request only
-        input: ({ context: { authInfo }, event }) => {
+        input: ({ context: { authInfo, challengePayload }, event }) => {
             assertEvent(event, 'credentials.submitted');
             return {
                 ...event.payload,
+                payload: challengePayload,
                 info: authInfo && Date.now() - authInfo.fetchedAt < AUTH_INFO_TTL ? authInfo.info : undefined,
             };
         },
@@ -421,6 +430,7 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
         claimedAddresses: [],
         errorMessage: undefined,
         authInfo: undefined,
+        challengePayload: undefined,
     }),
     entry: enqueueActions(({ enqueue, check }) => {
         if (check('shouldShowSSONotice')) {
@@ -477,10 +487,13 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                                     on: {
                                         'credentials.usernameSubmitted': {
                                             target: 'checkingAccountType',
-                                            actions: {
-                                                type: 'storeForm',
-                                                params: ({ event }) => ({ form: event.payload }),
-                                            },
+                                            actions: [
+                                                { type: 'storeForm', params: ({ event }) => ({ form: event.payload }) },
+                                                {
+                                                    type: 'storeChallengePayload',
+                                                    params: ({ event }) => ({ payload: event.payload.payload }),
+                                                },
+                                            ],
                                         },
                                     },
                                 },
@@ -587,10 +600,13 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                                     on: {
                                         'credentials.usernameSubmitted': {
                                             target: 'loadingSSOInfo',
-                                            actions: {
-                                                type: 'storeForm',
-                                                params: ({ event }) => ({ form: event.payload }),
-                                            },
+                                            actions: [
+                                                { type: 'storeForm', params: ({ event }) => ({ form: event.payload }) },
+                                                {
+                                                    type: 'storeChallengePayload',
+                                                    params: ({ event }) => ({ payload: event.payload.payload }),
+                                                },
+                                            ],
                                         },
                                         // The form asks for the email first, so only the password is left to ask
                                         'credentials.passwordSignInRequested': {
@@ -600,7 +616,10 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                                             actions: [
                                                 'resetAttempt',
                                                 'clearErrorMessage',
-                                                assign(({ event }) => ({ username: event.payload.username })),
+                                                assign(({ event }) => ({
+                                                    username: event.payload.username,
+                                                    challengePayload: event.payload.payload,
+                                                })),
                                             ],
                                         },
                                     },
@@ -687,7 +706,7 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                                                 claimedAddresses: context.claimedAddresses,
                                                 email: context.username,
                                                 password: event.payload.password,
-                                                payload: event.payload.payload,
+                                                payload: context.challengePayload,
                                                 persistent: context.persistent,
                                             };
                                         },
