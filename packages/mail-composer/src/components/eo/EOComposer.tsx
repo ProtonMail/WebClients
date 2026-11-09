@@ -1,13 +1,10 @@
+import type { ReactNode } from 'react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { PublicKeyReference } from '@protontech/crypto';
 
 import type { EditorMetadata } from '@proton/components/components/editor/interface';
 import { useHandler } from '@proton/hooks/useHandler';
-import type { MessageChange } from '@proton/mail-composer/components/composer/Composer';
-import ComposerContent from '@proton/mail-composer/components/composer/ComposerContent';
-import type { ExternalEditorActions } from '@proton/mail-composer/components/composer/editor/EditorWrapper';
-import ComposerInsertImageModal from '@proton/mail-composer/components/composer/modals/ComposerInsertImageModal';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { setContent } from '@proton/mail-message/helpers/message/messageContent';
 import { createNewDraft } from '@proton/mail-message/helpers/message/messageDraft';
@@ -18,19 +15,31 @@ import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
-import { useEOAttachments } from '../../../hooks/eo/useEOAttachments';
-import EOReplyFooter from './EOReplyFooter';
-import EOReplyHeader from './EOReplyHeader';
+import { useEOAttachments } from '../../hooks/eo/useEOAttachments';
+import type { MessageChange } from '../composer/Composer';
+import ComposerContent from '../composer/ComposerContent';
+import type { ExternalEditorActions } from '../composer/editor/EditorWrapper';
+import ComposerInsertImageModal from '../composer/modals/ComposerInsertImageModal';
+
+import './EOComposer.scss';
+
+export interface EOComposerFooterProps {
+    message: MessageState;
+    onAddAttachments: (files: File[]) => void;
+}
 
 interface Props {
     referenceMessage: MessageState;
-    id: string;
     encryptionKey?: PublicKeyReference;
     outsideKey?: OutsideKey;
-    numberOfReplies: number;
+    /** Above the editor, for example the reference message's subject and recipients */
+    header: ReactNode;
+    /** Below the editor, with the reply being written, for example to send it */
+    renderFooter: (props: EOComposerFooterProps) => ReactNode;
 }
 
-const EOComposer = ({ referenceMessage, id, encryptionKey, outsideKey, numberOfReplies }: Props) => {
+/** The reply editor of the page where people outside Proton answer an encrypted message */
+const EOComposer = ({ referenceMessage, encryptionKey, outsideKey, header, renderFooter }: Props) => {
     // Indicates that the composer is in its initial opening
     // Needed to be able to force focus only at first time
     const [opening, setOpening] = useState(true);
@@ -138,7 +147,7 @@ const EOComposer = ({ referenceMessage, id, encryptionKey, outsideKey, numberOfR
                     mailSettings={EO_DEFAULT_MAILSETTINGS}
                 />
             )}
-            <EOReplyHeader message={referenceMessage} />
+            {header}
             <div className="composer-body-container eo-composer flex flex-column flex-nowrap flex-auto max-w-full">
                 <ComposerContent
                     message={modelMessage}
@@ -157,14 +166,7 @@ const EOComposer = ({ referenceMessage, id, encryptionKey, outsideKey, numberOfR
                     isInlineImageReuploadDisabled={true}
                 />
             </div>
-            <EOReplyFooter
-                id={id}
-                onAddAttachments={handleAddAttachments}
-                message={modelMessage}
-                encryptionKey={encryptionKey}
-                outsideKey={outsideKey}
-                numberOfReplies={numberOfReplies}
-            />
+            {renderFooter({ message: modelMessage, onAddAttachments: handleAddAttachments })}
         </>
     );
 };
