@@ -1395,6 +1395,9 @@
       ],
       "Go to folder": [
         "Vai alla cartella"
+      ],
+      "Preview logs": [
+        "Mostra anteprima log."
       ]
     },
     "Action: Docs": {
@@ -1591,6 +1594,9 @@
       ],
       "You have reached the trial limit.": [
         "Hai raggiunto il limite della prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Durante il periodo di prova puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze per l'assistente alla scrittura ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "b2b_trials_Action": {
@@ -4397,6 +4403,36 @@
       ],
       "A contact with this email address already exists": [
         "Esiste già un contatto con questo indirizzo e-mail"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Impossibile verificare chi ha caricato questo file."
+      ],
+      "File download failed due to empty response": [
+        "Download del file non riuscito a causa di una risposta vuota."
+      ],
+      "Operation failed, try again later": [
+        "Operazione non riuscita. Riprova più tardi."
+      ],
+      "Photo is already in the target album": [
+        "La foto è già presente nell'album di destinazione."
+      ],
+      "Photo not found": [
+        "Foto non trovata"
+      ],
+      "This file has missing crypto material": [
+        "Questo file ha materiale crittografico mancante."
+      ],
+      "This file version could not be uploaded": [
+        "Questa versione del file non può essere caricata."
+      ],
+      "Too many server requests, please try again later": [
+        "Troppe richieste. Riprova più tardi"
+      ],
+      "You can create public links for your own files only": [
+        "Puoi creare link pubblici solo per i tuoi file."
+      ],
+      "You can update a public link for your own files only": [
+        "Puoi aggiornare un link pubblico solo per i tuoi file."
       ]
     },
     "error": {
@@ -7878,6 +7914,15 @@
       ],
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "${ LUMO_APP_NAME } include l'assistente di scrittura."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Author is not provided on public link": [
+        "L’autore non è indicato nel link pubblico."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "I log ci aiutano a capire cosa è successo prima che si verificasse il problema. Includono le azioni eseguite nell'app e i messaggi di errore, ma non il contenuto dei messaggi."
       ]
     },
     "info": {
@@ -9075,6 +9120,9 @@
       ],
       "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Aggiungi assistente di scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "meet_2025: Feature": {
@@ -9968,6 +10016,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
         "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } con accesso limitato"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME } con accesso esteso"
       ]
     },
     "new_plans: feature highlight": {
@@ -15567,6 +15621,9 @@
       ],
       "key": [
         "chiave"
+      ],
+      "name": [
+        "nome"
       ]
     },
     "tryduo2026: Info": {

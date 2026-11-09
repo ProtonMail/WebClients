@@ -211,7 +211,7 @@
         "Collaborer sur des documents"
       ],
       "Collapse folder": [
-        "Réduire le dossier"
+        "Replier le dossier"
       ],
       "Collapse navigation bar": [
         "Réduire la barre de navigation"
@@ -1062,7 +1062,7 @@
         "Ignorer la vérification"
       ],
       "Start": [
-        "Commencer"
+        "Démarrer"
       ],
       "Start import": [
         "Démarrer l'importation"
@@ -1404,6 +1404,9 @@
       ],
       "Cancel trial": [
         "Annuler la version d'essai"
+      ],
+      "Go to folder": [
+        "Aller au dossier"
       ]
     },
     "Action: Docs": {
@@ -4164,7 +4167,7 @@
         "Une erreur de validation s'est produite."
       ],
       "We cannot retrieve this item": [
-        "Cet élément n'a pas pu être récupéré."
+        "Nous ne pouvons pas récupérer cet élément"
       ],
       "We were not able to load some invitations": [
         "Nous n'avons pas pu charger certaines invitations."
@@ -4425,7 +4428,7 @@
         "Des parties de fichier n'ont pas pu être importées. Veuillez réessayer."
       ],
       "Something went wrong, please try again later": [
-        "Une erreur est survenue, veuillez réessayer ultérieurement."
+        "Un problème est survenu, veuillez réessayer plus tard"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Le fichier importé ne correspond pas à l'original. Veuillez réessayer."
@@ -5485,7 +5488,7 @@
         "${ DRIVE_APP_NAME } sur l'App Store"
       ],
       "${ DRIVE_APP_NAME } on Play Store": [
-        "${ DRIVE_APP_NAME } sur le Play Store"
+        "${ DRIVE_APP_NAME } sur Play Store"
       ],
       "${ email } invited you to join ${ albumName }": [
         "${ email } vous a invité à rejoindre ${ albumName }."
@@ -5740,7 +5743,7 @@
         "Voulez-vous vraiment vider le dossier Corbeille et définitivement supprimer tous les éléments ?"
       ],
       "Are you sure you want to permanently delete": [
-        "Voulez-vous vraiment supprimer définitivement "
+        "Êtes-vous sûr de vouloir supprimer définitivement"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Voulez-vous vraiment définitivement supprimer ${ itemName } du dossier Corbeille ?"
@@ -5809,7 +5812,7 @@
         "Impossible de déplacer un dossier dans lui-même"
       ],
       "Can't rename to same name": [
-        "Impossible de modifier le nom avec le même nom"
+        "Impossible de renommer avec le même nom"
       ],
       "Can't write into folder": [
         "Impossible d'écrire dans le dossier"
@@ -6143,7 +6146,7 @@
         "Le dossier ne sera pas importé."
       ],
       "Folders you sync from your computer will appear here.": [
-        "Les dossiers que vous synchronisez depuis votre ordinateur apparaissent ici."
+        "Les dossiers que vous synchronisez depuis votre ordinateur apparaîtront ici."
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Pour de meilleurs résultats, évitez les activités de streaming et gourmandes en mémoire ou réduisez la taille de votre envoi."
@@ -6412,7 +6415,7 @@
         "Déplacement de fichiers"
       ],
       "My Links": [
-        "Mes liens"
+        "Mes Liens"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nommez votre nouveau dossier et sélectionnez éventuellement un dossier dans lequel vous voulez en faire un sous-dossier. Si vous ne sélectionnez aucun dossier, votre nouveau dossier sera créé comme un dossier de premier niveau."
@@ -6427,7 +6430,7 @@
         "Non"
       ],
       "No Albums": [
-        "Il n'y a pas d'album"
+        "Pas d'album"
       ],
       "No contacts added yet": [
         "Aucun contact n'a encore été ajouté."
@@ -7042,7 +7045,7 @@
         "Pour utiliser la vérification d’adresse, vous devez approuver une ou plusieurs clés publiques disponibles, y compris celle que vous voulez utiliser pour l’envoi. Cela empêche la falsification des clés de chiffrement."
       ],
       "Today": [
-        "Aujourd'hui"
+        "Aujourd’hui"
       ],
       "Total email addresses": [
         "Nombre total d'adresses e-mail"
@@ -7240,7 +7243,7 @@
         "Lorsque vous vous connectez au VPN, il utilise une technologie de chiffrement pour masquer votre adresse IP (un code unique attribué à votre appareil)."
       ],
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
-        "Lorsque vous retirez ${ deviceName } en tant qu'appareil synchronisé, tous les dossiers ajoutés à Mes ordinateurs depuis cet appareil seront définitivement supprimés de ${ DRIVE_APP_NAME }."
+        "Lorsque vous retirez ${ deviceName } en tant qu'appareil synchronisé, tous les dossiers ajoutés à Mes Ordinateurs depuis cet appareil seront définitivement supprimés de ${ DRIVE_APP_NAME }."
       ],
       "who": [
         "qui"
@@ -7608,7 +7611,7 @@
         "Le fichier a été détecté comme potentiellement malveillant."
       ],
       "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
-        "L'indexation a atteint un état inattendu et ne peut pas se poursuivre. Régénérez l'index pour la rétablir."
+        "L'indexation a atteint un état inattendu et ne peut pas continuer. Régénérez l'index pour la rétablir."
       ],
       "Not enough storage space": [
         "Espace de stockage insuffisant"
@@ -7658,8 +7661,8 @@
         "Les photos ont été enregistrées dans votre Drive."
       ],
       "We couldn't save this photo to your Drive": [
-        "Une photo n'a pas été enregistrée dans votre Drive.",
-        "Plusieurs photos n'ont pas été enregistrées dans votre Drive."
+        "Nous n'avons pas pu sauvegarder cette photo dans votre Drive",
+        "Nous n'avons pas pu sauvegarder plusieurs photos dans votre Drive"
       ],
       "We were not able to add this photo to your album": [
         "Cette photo n'a pas pu être ajoutée à votre album.",
@@ -8814,7 +8817,7 @@
         "Version obsolète"
       ],
       "Searchable": [
-        "Consultable"
+        "Recherchable"
       ],
       "User opted in": [
         "L'utilisateur a accepté"
@@ -9121,6 +9124,9 @@
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
+      ],
+      "Pay it": [
+        "Payer avec"
       ]
     },
     "List title": {
@@ -10779,13 +10785,13 @@
         "L'invitation au partage n'a pas pu être refusée."
       ],
       "Failed to remove device": [
-        "L'appareil n'a pas pu être retiré."
+        "Échec de la suppression de l'appareil"
       ],
       "Failed to remove the file": [
         "Le fichier n'a pu être retiré."
       ],
       "Failed to rename device": [
-        "Le nom de l'appareil n'a pas pu être modifié."
+        "Échec du renommage de l'appareil"
       ],
       "Failed to upload files: ${ err }": [
         "Les fichiers n'ont pas pu être chargés : ${ err }"
@@ -10831,12 +10837,12 @@
         "Le dossier racine n'a pas pu être chargé."
       ],
       "Selected item was not removed from your list": [
-        "L'élément sélectionné n'a pas été supprimé votre liste",
-        "Les éléments sélectionnés n'ont pas pu être supprimés de votre liste."
+        "L'élément sélectionné n'a pas été retiré de votre liste",
+        "Les éléments sélectionnés n'ont pas pu être retirés de votre liste"
       ],
       "Selected item was successfully removed from your list": [
-        "L'élément sélectionné a été retiré de votre liste",
-        "Les éléments sélectionnés ont été retirés de votre liste"
+        "L'élément sélectionné à été retiré de votre liste avec succès",
+        "Les éléments sélectionnés ont été retirés de votre liste avec succès"
       ],
       "Selected items were successfully removed from your list": [
         "La suppression des éléments sélectionnés de votre liste ont été prises en charge",
@@ -10941,19 +10947,19 @@
         "« ${ ellipsedName } » a été déplacé"
       ],
       "${ numberOfItems } item copied": [
-        "${ numberOfItems } élément a été copié",
-        "${ numberOfItems } éléments ont été copiés"
+        "${ numberOfItems } élément copié",
+        "${ numberOfItems } éléments copiés"
       ],
       "${ numberOfItems } item moved": [
         "${ numberOfItems } élément a été déplacé",
         "${ numberOfItems } éléments ont été déplacés"
       ],
       "Copy of \"${ ellipsedName }\" moved to trash": [
-        "La copie de « ${ ellipsedName } » a été déplacée dans la Corbeille"
+        "Copie de « ${ ellipsedName } » déplacée dans la Corbeille"
       ],
       "${ addedUids.length } photo have been added to \"${ albumName }\"": [
         "${ addedUids.length } photo a été ajoutée à « ${ albumName } ».",
-        "${ addedUids.length } photos ont étés ajoutés à « ${ albumName } »."
+        "${ addedUids.length } photos ont été ajoutées à « ${ albumName } »."
       ],
       "${ removed } photo have been removed from \"${ albumName }\"": [
         "${ removed } photo a été retirée de « ${ albumName } ».",
@@ -11155,7 +11161,7 @@
         "Essayez l'application"
       ],
       "Upload file": [
-        "Importez un fichier"
+        "Téléverser un fichier"
       ],
       "Upload folder": [
         "Importez un dossier"
@@ -11190,7 +11196,7 @@
         "Glisser et déposez vos fichiers ici"
       ],
       "Edit documents online": [
-        "Éditez vos documents en ligne"
+        "Éditer des documents en ligne"
       ],
       "End-to-end encrypted storage for your files": [
         "Stockage chiffré de bout en bout pour vos fichiers"
@@ -11756,6 +11762,15 @@
       ],
       "Your account is too old for the Born Private initiative.": [
         "Votre compte est trop ancien pour bénéficier de l'initiative Born Private."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Le changement de plan est incompatible pour les raisons suivantes :"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Le nombre de places Proton Meet doit correspondre au nombre de membres."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "La souscription ne peut aboutir pour le moment. Merci de réessayer ultérieurement."
       ]
     },
     "Payments.Error": {
@@ -11955,7 +11970,7 @@
         "Adresse e-mail"
       ],
       "Enter a new file name": [
-        "Saisissez un nouveau nom de fichier."
+        "Entrez un nouveau nom de fichier"
       ],
       "Enter a new folder name": [
         "Saisissez un nouveau nom de dossier."
@@ -13914,7 +13929,7 @@
         "Confirmer la perte des bonus ${ BRAND_NAME }"
       ],
       "Confirmation required": [
-        "Confirmation requise "
+        "Confirmation requise"
       ],
       "Connect apps and devices": [
         "Connecter les applications et les appareils"
