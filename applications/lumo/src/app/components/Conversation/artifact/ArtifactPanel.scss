@@ -59,6 +59,15 @@
 	animation: artifact-loading-icon-pulse 1.6s ease-in-out infinite;
 }
 
+// The global reset stops the shimmer but leaves the white stop of the gradient
+// parked at the bar's edge, so flatten it to the base tint
+@media (prefers-reduced-motion: reduce) {
+	.artifact-panel-loading-skeleton .rectangle-skeleton,
+	.artifact-panel-title-skeleton.rectangle-skeleton {
+		background: rgb(167 146 255 / 0.3);
+	}
+}
+
 @keyframes artifact-loading-icon-pulse {
 	0%,
 	100% {

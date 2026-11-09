@@ -127,7 +127,7 @@ const isWholeArtifactCopyShortcut = (event: KeyboardEvent): boolean => {
     return !selection || selection.isCollapsed;
 };
 
-const PanelHeader = ({
+export const PanelHeader = ({
     type,
     language,
     title,
@@ -179,7 +179,7 @@ const PanelHeader = ({
             return (
                 <span className="flex-1 min-w-0 ml-1">
                     <span
-                        className="rectangle-skeleton keep-motion rounded inline-block"
+                        className="artifact-panel-title-skeleton rectangle-skeleton rounded inline-block"
                         style={{ width: '8rem', height: '0.875rem' }}
                     />
                 </span>

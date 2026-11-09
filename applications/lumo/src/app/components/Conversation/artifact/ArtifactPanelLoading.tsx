@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useReducedMotion } from '@proton/components/hooks/useReducedMotion';
+
 import { useEncryptedTextAnimation } from '../../../hooks/useEncryptedTextAnimation';
 import { ARTIFACT_TYPE_CONFIG } from './artifactTypeConfig';
 import type { ArtifactType } from './parseArtifacts';
@@ -23,8 +25,14 @@ export const ArtifactPanelLoading = () => {
     const [messageIndex, setMessageIndex] = useState(0);
     const message = LOADING_MESSAGES[messageIndex]?.() ?? LOADING_MESSAGES[0]();
     const { displayText } = useEncryptedTextAnimation(message, { animateOnChange: true, duration: 520 });
+    const reducedMotion = useReducedMotion();
 
     useEffect(() => {
+        // One static icon and label; aria-busy/aria-live still convey progress
+        if (reducedMotion) {
+            return;
+        }
+
         const iconTimer = window.setInterval(() => {
             setIconIndex((current) => {
                 return (current + 1) % ARTIFACT_ICON_TYPES.length;
@@ -41,7 +49,7 @@ export const ArtifactPanelLoading = () => {
             window.clearInterval(iconTimer);
             window.clearInterval(messageTimer);
         };
-    }, []);
+    }, [reducedMotion]);
 
     const iconType = ARTIFACT_ICON_TYPES[iconIndex] ?? 'document';
     const Icon = ARTIFACT_TYPE_CONFIG[iconType].icon;
@@ -60,10 +68,10 @@ export const ArtifactPanelLoading = () => {
                 className="artifact-panel-loading-skeleton flex flex-column gap-3 w-full max-w-custom"
                 style={{ '--max-w-custom': '28rem' } as React.CSSProperties}
             >
-                <div className="rectangle-skeleton keep-motion rounded w-full" style={{ height: '0.875rem' }} />
-                <div className="rectangle-skeleton keep-motion rounded w-full" style={{ height: '0.875rem' }} />
-                <div className="rectangle-skeleton keep-motion rounded w-3/4" style={{ height: '0.875rem' }} />
-                <div className="rectangle-skeleton keep-motion rounded w-full mt-2" style={{ height: '6rem' }} />
+                <div className="rectangle-skeleton rounded w-full" style={{ height: '0.875rem' }} />
+                <div className="rectangle-skeleton rounded w-full" style={{ height: '0.875rem' }} />
+                <div className="rectangle-skeleton rounded w-3/4" style={{ height: '0.875rem' }} />
+                <div className="rectangle-skeleton rounded w-full mt-2" style={{ height: '6rem' }} />
             </div>
         </div>
     );
