@@ -32,6 +32,10 @@
 		display: grid;
 		grid-template-columns: minmax(0, 1fr);
 		isolation: isolate;
+
+		// The block's spacing sits here, outside the grid cell, so the cell's edges are the block's border
+		// and the copy button's margin is measured from the border, not from empty space above it.
+		margin-block: 0.75rem;
 	}
 
 	.lumo-code-block-copy {
@@ -41,14 +45,9 @@
 		position: sticky;
 		inset-block-start: 0.5rem;
 		z-index: 10;
-		margin: 0.5rem;
+		margin: 0.75rem;
 		inline-size: max-content;
 		block-size: max-content;
-		background: rgb(0 0 0 / 0);
-		backdrop-filter: blur(8px);
-		backdrop-filter: blur(8px);
-
-		// pointer-events: none;
 
 		.group-hover-opacity-container:hover &,
 		.group-hover-opacity-container:focus-within &,
@@ -58,11 +57,15 @@
 		}
 	}
 
+	// Same box as the highlighted block, so nothing shifts when highlighting loads.
 	.lumo-code-block-fallback {
 		grid-column: 1;
 		grid-row: 1;
 		min-inline-size: 0;
 		overflow-x: auto;
+		background: var(--background-norm);
+		border: 1px solid var(--border);
+		color: var(--glyph);
 	}
 
 	.lumo-code-block-copy-source {
@@ -78,11 +81,16 @@
 		position: relative;
 		z-index: 0;
 		min-inline-size: 0;
-		background: var(--markdown-pre-background) !important;
+
+		// Fill, stroke and base text colour from the code block design (Panel/panel, Border/border, glyph).
+		// !important beats the Prism theme's inline styles; token colours (keywords, strings…) are unchanged.
+		background: var(--background-norm) !important;
+		border: 1px solid var(--border);
+		color: var(--glyph) !important;
 		border-radius: 0.5rem;
 		overflow-x: auto;
-		margin-block: 0.75rem;
-		padding: 0 !important;
+		margin-block: 0;
+		padding: 1rem !important;
 		font-family: 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
 		font-size: 0.8125rem;
 		line-height: 1.6;
@@ -93,6 +101,9 @@
 		// token spans don't each paint their own box (visible as white patches).
 		background: none !important;
 		background-color: transparent !important;
+
+		// Prism sets its own base colour here too; take the block's glyph colour instead.
+		color: inherit !important;
 
 		// Global reset sets `code { line-height: 1 }`, which collapses multi-line blocks.
 		white-space: pre-wrap !important;

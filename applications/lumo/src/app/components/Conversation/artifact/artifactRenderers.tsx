@@ -3,6 +3,7 @@ import { Suspense, lazy, memo, useMemo } from 'react';
 import { c } from 'ttag';
 
 import { useLumoTheme } from '../../../providers';
+import { ArtifactCodeCopyButton } from './ArtifactCodeCopyButton';
 import { ArtifactMarkdownPre } from './ArtifactMarkdownPre';
 import { normalizeDocumentCardFences } from './artifactVizCards';
 import type { ParsedArtifact } from './parseArtifacts';
@@ -60,21 +61,27 @@ export const CodeRenderer = memo(function CodeRenderer({ artifact, showLineNumbe
         return <p className="color-hint text-sm p-4">{c('collider_2025:Info').t`No content generated`}</p>;
     }
 
+    // Copy sits outside the scroller so it stays pinned to the corner while the code scrolls.
     return (
-        <div className="artifact-code-content overflow-auto flex-1 min-h-0 min-w-0 w-full h-full">
-            <Suspense
-                fallback={
-                    <pre className="text-monospace text-sm m-0 p-4 overflow-auto color-norm">{artifact.content}</pre>
-                }
-            >
-                <div className={showLineNumbers ? 'artifact-code--line-numbers' : undefined}>
-                    <LumoMarkdownCodeBlockHighlighter
-                        code={artifact.content}
-                        language={artifact.language ?? 'text'}
-                        theme={theme}
-                    />
-                </div>
-            </Suspense>
+        <div className="relative group-hover-opacity-container flex flex-column flex-1 min-h-0 min-w-0 w-full h-full">
+            <div className="artifact-code-content overflow-auto flex-1 min-h-0 min-w-0 w-full h-full">
+                <Suspense
+                    fallback={
+                        <pre className="text-monospace text-sm m-0 p-4 overflow-auto color-norm">
+                            {artifact.content}
+                        </pre>
+                    }
+                >
+                    <div className={showLineNumbers ? 'artifact-code--line-numbers' : undefined}>
+                        <LumoMarkdownCodeBlockHighlighter
+                            code={artifact.content}
+                            language={artifact.language ?? 'text'}
+                            theme={theme}
+                        />
+                    </div>
+                </Suspense>
+            </div>
+            <ArtifactCodeCopyButton code={artifact.content} className="absolute top-0 right-0 m-2" />
         </div>
     );
 });

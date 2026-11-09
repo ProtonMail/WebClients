@@ -27,21 +27,16 @@ export function chartPlaceholderHtml(specJson: string): string {
 }
 
 /**
- * Strict on purpose: only an explicitly labelled ```vega / ```vega-lite fence is a chart in a
- * document. Chat also sniffs ```json and unlabelled blocks for spec-like JSON, but a document may
- * quote a spec as an example, and that must stay code. Takes the hast `pre` node react-markdown passes.
+ * A fenced block's language ('' when unlabelled) and its source exactly as written, minus the
+ * newline markdown adds before the closing fence. Takes the hast `pre` node react-markdown passes.
  */
-export function readArtifactChartFence(node: Element | undefined): { language: string; code: string } | null {
+export function readArtifactCodeFence(node: Element | undefined): { language: string; code: string } | null {
     const code = node?.children[0];
     if (!code || code.type !== 'element' || code.tagName !== 'code') {
         return null;
     }
 
     const language = getCodeBlockLanguage(undefined, code as { properties?: { className?: string[] } });
-    if (!isVegaLanguage(language)) {
-        return null;
-    }
-
     const text = code.children
         .map((child) => {
             return child.type === 'text' ? child.value : '';
@@ -50,6 +45,20 @@ export function readArtifactChartFence(node: Element | undefined): { language: s
         .replace(/\n$/, '');
 
     return { language, code: text };
+}
+
+/**
+ * Strict on purpose: only an explicitly labelled ```vega / ```vega-lite fence is a chart in a
+ * document. Chat also sniffs ```json and unlabelled blocks for spec-like JSON, but a document may
+ * quote a spec as an example, and that must stay code.
+ */
+export function readArtifactChartFence(node: Element | undefined): { language: string; code: string } | null {
+    const fence = readArtifactCodeFence(node);
+    if (!fence || !isVegaLanguage(fence.language)) {
+        return null;
+    }
+
+    return fence;
 }
 
 // Text fallback for a chart that couldn't be rendered to an image (Word export): its title, subtitle and
