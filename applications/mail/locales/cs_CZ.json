@@ -1522,10 +1522,7 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -7784,10 +7781,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -9312,6 +9306,54 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } email → ${ dest }",
+        "${ count } emaily → ${ dest }",
+        "${ count } emailů → ${ dest }",
+        "${ count } emailů → ${ dest }"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } problém při importu:",
+        "${ issues.length } problémy při importu:",
+        "${ issues.length } problémů při importu:",
+        "${ issues.length } problémů při importu:"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Byl nalezen aktuální šifrovaný vyhledávací index s ${ oldIndexSize } zprávou.",
+        "Byl nalezen aktuální šifrovaný vyhledávací index s ${ oldIndexSize } zprávama.",
+        "Byl nalezen aktuální šifrovaný vyhledávací index s ${ oldIndexSize } zprávama.",
+        "Byl nalezen aktuální šifrovaný vyhledávací index s ${ oldIndexSize } zprávama."
+      ],
+      "Read ${ count } email": [
+        "Přečíst ${ count } email",
+        "Přečíst ${ count } emaily ",
+        "Přečíst ${ count } emailů",
+        "Přečíst ${ count } emailů"
+      ],
+      "Read ${ count } email on screen": [
+        "Přečíst ${ count } email na obrazovce",
+        "Přečíst ${ count } emaily na obrazovce",
+        "Přečíst ${ count } emailů na obrazovce",
+        "Přečíst ${ count } na obrazovce"
+      ],
+      "Read your ${ count } filter": [
+        "Přečtěte ${ count } svůj filtr",
+        "Přečtěte ${ count } své filtry",
+        "Přečtěte ${ count } svých filtrů",
+        "Přečtěte ${ count } svých filtrů"
+      ],
+      "Read your ${ count } folder": [
+        "Přečtěte ${ count } svou složku",
+        "Přečtěte ${ count } své složky",
+        "Přečtěte ${ count } svých složek",
+        "Přečtěte ${ count } svých složek"
+      ],
+      "Read your ${ count } label": [
+        "Přečtěte ${ count } svůj štítek",
+        "Přečtěte ${ count } své štítky",
+        "Přečtěte ${ count } svých štítků",
+        "Přečtěte ${ count } svých štítků"
       ]
     },
     "info": {
@@ -17455,6 +17497,14 @@
       ],
       "Passcode:": [
         "Přístupový kód:"
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } nová zpráva",
+        "${ messageCount } nové zprávy",
+        "${ messageCount } nových zpráv",
+        "${ messageCount } nových zpráv"
       ]
     }
   }

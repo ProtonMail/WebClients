@@ -1565,8 +1565,7 @@
         "भरोसा करें"
       ],
       "Trust key": [
-        "ट्रस्ट की",
-        "ट्रस्ट कीज़"
+        "ट्रस्ट की"
       ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
@@ -4425,6 +4424,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "आप पहले ही 10 छद्म बना चुके हैं। ${ BRAND_NAME } Unlimited के साथ असीमित छद्म और 500 जीबी स्टोरेज प्राप्त करें।"
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "लोगों को अपने ईमेल से सीधे आपके साथ समय बुक करने दें, बिना बार-बार संदेश भेजे।"
       ]
     },
     "description": {
@@ -9578,6 +9580,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "आप एक व्यवस्थित और साफ इन्बॉक्स से बस कुछ ही क्लिक दूर हैं"
+      ],
+      "No ads": [
+        "कोई विज्ञापन नहीं"
+      ],
+      "No booking pages yet": [
+        "अभी कोई बुकिंग पेज नहीं है"
+      ],
+      "Other (tell us)": [
+        "अन्य (हमें बताएं)"
       ]
     },
     "info": {
@@ -16931,6 +16942,9 @@
       ],
       "Your shorter address is now ready": [
         "आपका छोटा पता अब तैयार है"
+      ],
+      "Filter on": [
+        "पर फ़िल्टर करें"
       ]
     },
     "Title header for keys table": {
@@ -17597,6 +17611,11 @@
       ],
       "Passcode:": [
         "पासकोड:"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "पुष्टि करके, ${ BRAND_NAME } और Stripe, हमारे भुगतान सेवा प्रदाता, को आपकी सदस्यता के लिए भविष्य के पेमेंट SEPA Direct Debit के ज़रिए इस बैंक खाते से लेने की और आपके बैंक को वो पेमेंट काटने की अनुमति दी जाती है। आपका पहला पेमेंट अभी ${ IDEAL_WERO_BRAND_NAME } के ज़रिए होगा। आपका प्लान ऑटो-रीन्यू होता रहेगा, जब तक आप रद्द न करें; हर कलेक्शन से पहले हम आपको सूचित करेंगे। डायरेक्ट डेबिट कलेक्शन के लिए, अपने बैंक से किए गए समझौते की शर्तों के तहत डेबिट की तारीख़ से 8 हफ़्तों के भीतर बैंक से रिफ़ंड मांगा जा सकता है। ये अभी किए जा रहे ${ IDEAL_WERO_BRAND_NAME } पेमेंट पर लागू नहीं होता।"
       ]
     }
   }

@@ -136,7 +136,7 @@
         "Toteuta"
       ],
       "Archive": [
-        "Pakattu"
+        "Arkistoi"
       ],
       "As Scheduled": [
         "Kuten ajoitettu"
@@ -1526,8 +1526,7 @@
         "Luota"
       ],
       "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
+        "Luota avaimeen"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -7457,7 +7456,7 @@
         "Vapaasti kokeiltavissa ${ ASSISTANT_TRIAL_TIME_DAYS } päivän ajan"
       ],
       "From": [
-        "Osoitteesta"
+        "Lähettäjä"
       ],
       "Generate text": [
         "Luo tekstiä"
@@ -7576,8 +7575,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -8799,7 +8797,7 @@
         "Olet nyt kirjautuneena ${ username } tilille."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
-        "Käytät enemmän tallennustilaa kuin ${ downgradedPlanName }-tilaus sisältyy. Sinun on poistettava tietoja tilauksesi alentamiseksi."
+        "Käytät enemmän tallennustilaa kuin ${ downgradedPlanName }-tilaukseen sisältyy. Sinun on poistettava sisältöä tilauksesi alentamiseksi."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "Voit lisätä kuvan liitteenä tai viestin tekstin sekaan upotettuna."
@@ -9080,6 +9078,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Olet vain muutaman klikkauksen päässä siististä postilaatikosta"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Pyydä ylläpitoasi päivittämään tilauksesi tai poista sivu Varaussivut-sivupalkista ${ CALENDAR_APP_NAME }ssa."
+      ],
+      "Back": [
+        "Takaisin"
+      ],
+      "Next": [
+        "Seuraava"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Lisätäksesi varaussivun, poista jokin nykyisistä sivuista Varaussivut-sivupalkista ${ CALENDAR_APP_NAME }ssa."
       ]
     },
     "info": {
@@ -10369,7 +10379,7 @@
     },
     "Label Recipient": {
       "From": [
-        "Osoitteesta"
+        "Lähettäjä"
       ],
       "To": [
         "Vastaanottaja"
@@ -10412,7 +10422,7 @@
     },
     "Labels": {
       "Loading your newsletter subscriptions...": [
-        "Lataan uutiskirjeiden tilauksiasi..."
+        "Ladataan uutiskirjeiden tilauksia..."
       ],
       "Newsletters or mailing lists you unsubscribe from will show up here.": [
         "Uutiskirjeet tai postituslistat, joiden tilauksen peruutat, näkyvät täällä."
@@ -10792,7 +10802,7 @@
         "Saapuneet"
       ],
       "Spam": [
-        "Roskapostia"
+        "Roskaposti"
       ],
       "Trash": [
         "Poista"
@@ -14272,7 +14282,7 @@
         "Tilauksesi ostettiin Android-sovelluksella. Jos haluat muuttaa tilaustasi tai päivittää maksutietojasi, sinun on siirryttävä Google Play Storeen."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "Tilauksesi ostettiin iOS-sovelluksella. Jos haluat muuttaa tilaustasi tai päivittää maksutietojasi, sinun on siirryttävä Apple App Storeen."
+        "Tilaus ostettiin iOS-sovelluksella. Muuta tilausta tai päivitä maksutietoja Applen App Storessa."
       ]
     },
     "subscription downgrading info": {
