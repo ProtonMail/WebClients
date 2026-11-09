@@ -15,6 +15,7 @@ import type {
     WireTurn,
 } from '../types-api';
 import { LumoClientType, Role } from '../types-api';
+import { isDesktopEnvironment } from './desktop-tools';
 
 export const DEFAULT_CHAT_MODEL = 'lumo-lite';
 export const LUMO_LITE_MODEL = 'lumo-lite';
@@ -44,7 +45,7 @@ export type ToChatCompletionsOptions = {
     serverTools?: ToolName[];
     /** Lumo Unleash toggles attached to `lumo.feature_flags` for observability. */
     featureFlags?: ChatCompletionsFeatureFlags;
-    /** Sent as `lumo.client_type`. Defaults to `Frontend`. */
+    /** Sent as `lumo.client_type`. Defaults to `LumoDesktop` inside the desktop shell, otherwise `Frontend`. */
     clientType?: LumoClientType;
 };
 
@@ -218,7 +219,8 @@ function buildLumoExtension(
     options: ToChatCompletionsOptions
 ): ChatCompletionsLumoExtension {
     const lumo: ChatCompletionsLumoExtension = {
-        client_type: options.clientType ?? LumoClientType.Frontend,
+        client_type:
+            options.clientType ?? (isDesktopEnvironment() ? LumoClientType.LumoDesktop : LumoClientType.Frontend),
     };
 
     if (options.target) {

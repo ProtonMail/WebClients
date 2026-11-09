@@ -102,35 +102,60 @@ beforeEach(() => {
 });
 
 describe('callAssistant client type', () => {
-    it('identifies the caller on every request it sends, tool rounds, title and suggestions included', async () => {
-        let messageRounds = 0;
-        mockedCallChatEndpoint.mockImplementation(async (_api, payload) => {
-            const isMessage = (payload as ChatCompletionsRequest).lumo?.target === 'message';
-            return isMessage && messageRounds++ === 0 ? toolCallResponse('search') : proseResponse('Here it is.');
-        });
-        const recordRequestCallback = jest.fn();
+    const originalWindow = Object.getOwnPropertyDescriptor(globalThis, 'window');
 
-        await newClient().callAssistant(api, userTurns, {
-            clientToolExecutor: executor,
-            clientTools: [searchTool],
-            generateTitle: true,
-            enableSuggestedQuestions: true,
-            recordRequestCallback,
-            clientType: LumoClientType.LumoMail,
-        });
-
-        expect(sentRequests().map((request) => request.lumo?.target)).toEqual(
-            expect.arrayContaining(['title', 'suggested_questions', 'message'])
-        );
-        expect(sentRequests()).toHaveLength(4);
-        expect(sentRequests().map((request) => request.lumo?.client_type)).toEqual(
-            Array(4).fill(LumoClientType.LumoMail)
-        );
-        expect(recordRequestCallback.mock.calls.map(([request]) => request.lumo?.client_type)).toEqual([
-            LumoClientType.LumoMail,
-            LumoClientType.LumoMail,
-        ]);
+    afterEach(() => {
+        if (originalWindow) {
+            Object.defineProperty(globalThis, 'window', originalWindow);
+        } else {
+            Reflect.deleteProperty(globalThis, 'window');
+        }
     });
+
+    it.each([
+        {
+            name: 'explicit caller',
+            desktopWindow: undefined,
+            clientType: LumoClientType.LumoMail,
+            expected: LumoClientType.LumoMail,
+        },
+        {
+            name: 'desktop default',
+            desktopWindow: { LumoConnectors: {} },
+            clientType: undefined,
+            expected: LumoClientType.LumoDesktop,
+        },
+    ])(
+        'preserves $name through tool rounds, title and suggestions',
+        async ({ desktopWindow, clientType, expected }) => {
+            Object.defineProperty(globalThis, 'window', { configurable: true, value: desktopWindow });
+            let messageRounds = 0;
+            mockedCallChatEndpoint.mockImplementation(async (_api, payload) => {
+                const isMessage = (payload as ChatCompletionsRequest).lumo?.target === 'message';
+                return isMessage && messageRounds++ === 0 ? toolCallResponse('search') : proseResponse('Here it is.');
+            });
+            const recordRequestCallback = jest.fn();
+
+            await newClient().callAssistant(api, userTurns, {
+                clientToolExecutor: executor,
+                clientTools: [searchTool],
+                generateTitle: true,
+                enableSuggestedQuestions: true,
+                recordRequestCallback,
+                clientType,
+            });
+
+            expect(sentRequests().map((request) => request.lumo?.target)).toEqual(
+                expect.arrayContaining(['title', 'suggested_questions', 'message'])
+            );
+            expect(sentRequests()).toHaveLength(4);
+            expect(sentRequests().map((request) => request.lumo?.client_type)).toEqual(Array(4).fill(expected));
+            expect(recordRequestCallback.mock.calls.map(([request]) => request.lumo?.client_type)).toEqual([
+                expected,
+                expected,
+            ]);
+        }
+    );
 });
 
 const nativeFile = {

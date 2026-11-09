@@ -299,3 +299,44 @@ describe('formatRequestedModel', () => {
         expect(formatRequestedModel(DEFAULT_CHAT_MODEL, false)).toBe('lumo-lite (fast)');
     });
 });
+
+describe('client type environment defaults', () => {
+    const originalWindow = Object.getOwnPropertyDescriptor(globalThis, 'window');
+
+    afterEach(() => {
+        if (originalWindow) {
+            Object.defineProperty(globalThis, 'window', originalWindow);
+        } else {
+            Reflect.deleteProperty(globalThis, 'window');
+        }
+    });
+
+    it.each([
+        ['Tauri', { __TAURI__: { external_tools: {} } }],
+        ['connectors', { LumoConnectors: {} }],
+    ])('identifies every generation target inside the %s desktop shell', (_name, desktopWindow) => {
+        Object.defineProperty(globalThis, 'window', { configurable: true, value: desktopWindow });
+
+        for (const target of [undefined, 'message', 'title', 'suggested_questions'] as const) {
+            expect(toChatCompletionsBody(baseRequest, { target }).lumo?.client_type).toBe(LumoClientType.LumoDesktop);
+        }
+        for (const clientType of [LumoClientType.Frontend, LumoClientType.LumoMail, LumoClientType.LumoDesktop]) {
+            expect(toChatCompletionsBody(baseRequest, { clientType }).lumo?.client_type).toBe(clientType);
+        }
+    });
+
+    it.each([
+        ['web', {}],
+        ['iOS', { webkit: { messageHandlers: {} } }],
+        ['Android', { Android: { postMessage: jest.fn() } }],
+        ['Tauri without the Lumo bridge', { __TAURI__: {} }],
+    ])('keeps the frontend default in %s', (_name, nonDesktopWindow) => {
+        Object.defineProperty(globalThis, 'window', { configurable: true, value: nonDesktopWindow });
+        expect(toChatCompletionsBody(baseRequest).lumo?.client_type).toBe(LumoClientType.Frontend);
+    });
+
+    it('keeps the frontend default without a browser window', () => {
+        Reflect.deleteProperty(globalThis, 'window');
+        expect(toChatCompletionsBody(baseRequest).lumo?.client_type).toBe(LumoClientType.Frontend);
+    });
+});

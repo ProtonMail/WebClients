@@ -182,6 +182,7 @@ export type ChatCompletionsFeatureFlags = Record<string, string>;
 /** Which Lumo client is calling. `LumoMail` sends its own whole system prompt, so the backend adds none. */
 export enum LumoClientType {
     Frontend = 'frontend',
+    LumoDesktop = 'lumo_desktop',
     LumoMail = 'lumo_mail',
 }
 

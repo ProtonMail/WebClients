@@ -236,7 +236,7 @@ export interface AssistantCallOptions {
     recordRequestCallback?: RecordRequestCallback;
     /** Lumo Unleash toggles; forwarded on the wire as `lumo.feature_flags`. */
     featureFlags?: ChatCompletionsFeatureFlags;
-    /** Sent as `lumo.client_type` on every generation of the call. Defaults to `Frontend`. */
+    /** Sent as `lumo.client_type` on every generation of the call. Defaults to `LumoDesktop` inside the desktop shell, otherwise `Frontend`. */
     clientType?: LumoClientType;
 }
 
