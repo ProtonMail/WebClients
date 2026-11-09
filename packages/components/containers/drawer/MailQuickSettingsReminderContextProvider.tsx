@@ -18,7 +18,7 @@ interface Props {
 const MailQuickSettingsReminderContextProvider = ({ defaultReminders = [], children }: Props) => {
     const [user] = useUser();
 
-    const [keyTransparencyNotificationSeen, toggleKeyTransparencyNotificationSeen] = useLocalState(
+    const [keyTransparencyNotificationSeen, setKeyTransparencyNotificationSeen] = useLocalState(
         false,
         `${user.ID || 'item'}-seen-key-transparency-notification`
     );
@@ -32,18 +32,15 @@ const MailQuickSettingsReminderContextProvider = ({ defaultReminders = [], child
     }, [keyTransparencyNotification, keyTransparencyNotificationSeen, defaultReminders]);
 
     useEffect(() => {
-        const resetKeyTransparencyReminder = (event: CustomEvent) => {
-            const value = event.detail.value || true;
-            if (value) {
-                toggleKeyTransparencyNotificationSeen(value);
-            }
+        const updateKeyTransparencyReminder = (event: CustomEvent<{ value: boolean }>) => {
+            setKeyTransparencyNotificationSeen(event.detail.value);
         };
 
-        document.addEventListener(KEY_TRANSPARENCY_REMINDER_UPDATE, resetKeyTransparencyReminder as EventListener);
+        document.addEventListener(KEY_TRANSPARENCY_REMINDER_UPDATE, updateKeyTransparencyReminder as EventListener);
         return () => {
             document.removeEventListener(
                 KEY_TRANSPARENCY_REMINDER_UPDATE,
-                resetKeyTransparencyReminder as EventListener
+                updateKeyTransparencyReminder as EventListener
             );
         };
     }, []);
