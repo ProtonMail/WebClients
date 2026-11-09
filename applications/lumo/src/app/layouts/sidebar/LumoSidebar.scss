@@ -119,6 +119,16 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
+// Guest account actions can be taller than the space left above the keyboard.
+// Scroll the guest navigation and footer together instead of clipping the footer.
+.lumo-sidebar--guest {
+	overflow-y: auto;
+
+	> .sidebar-main-scroll {
+		flex: 1 0 auto;
+	}
+}
+
 // Scrollable main content — uses @proton/atoms Scroll for overflow edge borders.
 .sidebar-main-scroll {
 	flex: 1 1 0;

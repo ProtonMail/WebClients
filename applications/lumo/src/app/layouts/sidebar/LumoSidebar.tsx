@@ -62,7 +62,12 @@ const LumoSidebarContent = () => {
 
     return (
         <>
-            <div className="lumo-sidebar flex flex-column flex-1 min-h-0 overflow-hidden">
+            <div
+                className={clsx(
+                    'lumo-sidebar flex flex-column flex-nowrap flex-1 min-h-0',
+                    isGuest && 'lumo-sidebar--guest'
+                )}
+            >
                 {showMobileHeader && (
                     <div className="lumo-sidebar-mobile-header flex flex-row flex-nowrap items-center py-3 px-4 border-bottom border-weak shrink-0">
                         <img src={lumoCatIcon} alt="Lumo" className="lumo-sidebar-mobile-header-logo shrink-0" />
