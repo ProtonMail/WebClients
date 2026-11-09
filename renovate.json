@@ -110,6 +110,11 @@
             "matchPackageNames": ["mdast-util-to-markdown"]
         },
         {
+            "description": "Owned by the Docs team, who update them themselves. Kept in their own MR so they don't block or get bundled with the non-major group.",
+            "groupName": "proton-docs",
+            "matchPackageNames": ["@proton-docs/**"]
+        },
+        {
             "description": "Express 4 needs the 0.1.x line. 0.2.x is an unpatched 2014 release that only looks newer (GHSA-9wv6-86v2-598j)",
             "matchPackageNames": ["path-to-regexp"],
             "matchCurrentVersion": "<0.2.0",
