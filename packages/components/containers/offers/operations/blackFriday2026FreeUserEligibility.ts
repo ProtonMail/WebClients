@@ -1,4 +1,5 @@
 import { hasIntentionalScheduledModification } from '../helpers/hasIntentionalScheduledModification';
+import { hasPassOutsideSubscription } from '../helpers/hasPassOutsideSubscription';
 import { isEligibleCurrency } from '../helpers/isEligibleCurrency';
 import isSubscriptionCheckAllowed from '../helpers/isSubscriptionCheckAllowed';
 import OfferSubscription from '../helpers/offerSubscription';
@@ -16,6 +17,13 @@ export function isEligibleFreeUser({
     preferredCurrency,
 }: Omit<BlackFriday2026EligibilityArgs, 'protonConfig'>) {
     if (user.isDelinquent || !user.canPay || user.isPaid || hasIntentionalScheduledModification(subscription)) {
+        return false;
+    }
+
+    // Pass Lifetime and Pass-via-SimpleLogin accounts look free here, but their lifetime purchase counts as
+    // payment history, so the backend drops the free-user coupon and the offer would show without its discount.
+    // The paid upgrade offers still apply to them when they also pay for a plan.
+    if (hasPassOutsideSubscription(user)) {
         return false;
     }
 
