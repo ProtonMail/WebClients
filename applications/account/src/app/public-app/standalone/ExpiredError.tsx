@@ -23,7 +23,15 @@ const ReportLink = () => {
 
 interface Props {
     type:
-        'report' | 'email' | 'unsubscribe' | 'forwarding' | 'group' | 'magic-link' | 'magic-link-used' | 'provisioning';
+        | 'report'
+        | 'email'
+        | 'unsubscribe'
+        | 'forwarding'
+        | 'group'
+        | 'magic-link'
+        | 'magic-link-used'
+        | 'joining-link'
+        | 'provisioning';
 }
 
 const getTexts = (type: Props['type']) => {
@@ -70,6 +78,12 @@ const getTexts = (type: Props['type']) => {
         return {
             title: c('Info').t`Invitation link used`,
             description: c('Info').t`This invitation link is already used. Please sign in directly instead.`,
+        };
+    }
+    if (type === 'joining-link') {
+        return {
+            title: c('Info').t`Invalid joining link`,
+            description: c('Info').t`This joining link isn't valid. Please contact your administrator for a new one.`,
         };
     }
     if (type === 'provisioning') {
