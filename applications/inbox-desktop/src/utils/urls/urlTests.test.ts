@@ -1,4 +1,4 @@
-import { isCalendarCreateBookingURL, isSameURL, trimLocalID } from "./urlTests";
+import { isCalendarCreateBookingURL, isHostAllowed, isSameURL, isURLAllowed, trimLocalID } from "./urlTests";
 
 jest.mock("../config", () => {});
 
@@ -49,6 +49,58 @@ describe("urlTests", () => {
             expect(
                 isSameURL("https://calendar.proton.me/u/0/?action=create-booking", "https://calendar.proton.me/u/0/"),
             ).toBe(true);
+        });
+    });
+
+    describe("isURLAllowed", () => {
+        it("should allow https app URLs", () => {
+            expect(isURLAllowed("https://mail.proton.me/u/0/inbox")).toBe(true);
+            expect(isURLAllowed("https://account.proton.me")).toBe(true);
+        });
+
+        it("should not allow other schemes pointing at an app host", () => {
+            expect(isURLAllowed("evilapp:payload@mail.proton.me")).toBe(false);
+            expect(isURLAllowed("mailto:x@mail.proton.me")).toBe(false);
+            expect(isURLAllowed("evilapp://mail.proton.me/x")).toBe(false);
+            expect(isURLAllowed("http://mail.proton.me")).toBe(false);
+        });
+
+        it("should compare the normalised host", () => {
+            expect(isURLAllowed("https://MAIL.PROTON.ME/")).toBe(true);
+            expect(isURLAllowed("https://mail.proton.me:443/")).toBe(true);
+            expect(isURLAllowed("https://mail.proton.me./")).toBe(false);
+        });
+
+        it("should not allow credentials in app URLs", () => {
+            expect(isURLAllowed("https://user:pass@mail.proton.me/")).toBe(false);
+            expect(isURLAllowed("https://user@mail.proton.me/")).toBe(false);
+        });
+
+        it("should not allow unrelated hosts", () => {
+            expect(isURLAllowed("https://evil.com/")).toBe(false);
+            expect(isURLAllowed("https://mail.proton.me.evil.com/")).toBe(false);
+        });
+
+        it("should not throw on data or invalid URLs", () => {
+            expect(isURLAllowed("data:text/html,<h1>x</h1>")).toBe(false);
+            expect(isURLAllowed("not a url")).toBe(false);
+        });
+    });
+
+    describe("isHostAllowed", () => {
+        it("should allow app hosts", () => {
+            expect(isHostAllowed("mail.proton.me")).toBe(true);
+            expect(isHostAllowed("calendar.proton.me")).toBe(true);
+        });
+
+        it("should not allow app hosts with a different port", () => {
+            expect(isHostAllowed("mail.proton.me:8080")).toBe(false);
+        });
+
+        it("should not allow unrelated hosts or URL-like input", () => {
+            expect(isHostAllowed("evil.com")).toBe(false);
+            expect(isHostAllowed("evilapp:payload@mail.proton.me")).toBe(false);
+            expect(isHostAllowed("https://mail.proton.me")).toBe(false);
         });
     });
 });

@@ -34,8 +34,8 @@ import {
     isAccountSwitch,
     isCalendarCreateBookingURL,
     isHomePage,
-    isHostAllowed,
     isSameURL,
+    isURLAllowed,
     trimLocalID,
 } from "../urls/urlTests";
 import { getWindowConfig, getWindowPlaywrightConfig } from "../view/windowHelpers";
@@ -333,7 +333,7 @@ const debouncedUpdateViewsBounds = debounce(() => {
 }, 0);
 
 async function updateLocalID(urlString: string) {
-    if (!isHostAllowed(urlString) || isAccountSwitch(urlString) || isAccountLogin(urlString)) {
+    if (!isURLAllowed(urlString) || isAccountSwitch(urlString) || isAccountLogin(urlString)) {
         return urlString;
     }
 

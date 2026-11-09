@@ -8,9 +8,9 @@ import {
     isAccountSwitch,
     isCalendar,
     isHome,
-    isHostAllowed,
     isMail,
     isUpgradeURL,
+    isURLAllowed,
 } from "../urls/urlTests";
 import {
     getAccountView,
@@ -62,7 +62,7 @@ export function handleWebContents(contents: WebContents) {
 
         updateViewURL(contents, url);
 
-        if (isHostAllowed(url)) {
+        if (isURLAllowed(url)) {
             // We need to ensure that the zoom is consistent for all URLs.
             // Currently electron stores the zoom factor for each URL (this is chromium's behavior)
             // and it is not able to have a default zoom factor (lack of API).
@@ -120,7 +120,7 @@ export function handleWebContents(contents: WebContents) {
             return;
         }
 
-        if (!isHostAllowed(url)) {
+        if (!isURLAllowed(url)) {
             return ev.preventDefault();
         }
 
@@ -185,7 +185,7 @@ export function handleWebContents(contents: WebContents) {
 
         if (isOAuthWindow(contents.id)) return details;
 
-        if (!isHostAllowed(details.url) && !global.subscriptionProcess) {
+        if (!isURLAllowed(details.url) && !global.subscriptionProcess) {
             logger().info("opening external URL", details.url);
             void openExternalRedirect(details.url);
             return details.preventDefault();
@@ -276,7 +276,7 @@ export function handleWebContents(contents: WebContents) {
             return denyAndShowView(url, "account", `account link in account view ${url}`);
         }
 
-        if (isHostAllowed(url)) {
+        if (isURLAllowed(url)) {
             // We probably want to disable this case, this will only happen with proton URLs
             // that are not calendar/mail/account domains and should be handled as a regular
             // unknown link. We are keeping it enabled for now to detect error cases.

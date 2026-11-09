@@ -144,22 +144,16 @@ export const isUpgradeURL = (host: string) => {
 };
 
 export const isHostAllowed = (host: string) => {
+    return Object.values(getAppURL()).some((item) => {
+        return new URL(item).host === host;
+    });
+};
+
+export const isURLAllowed = (urlString: string) => {
     try {
-        const appURL = getAppURL();
-        let finalURL = host;
-        if (!finalURL.startsWith("https://")) {
-            finalURL = "https://" + finalURL;
-        }
-
-        const hostURl = new URL(finalURL);
-
-        return Object.values(appURL)
-            .map((item) => new URL(item))
-            .some((url) => {
-                return url.host === hostURl.host;
-            });
+        const url = new URL(urlString);
+        return url.protocol === "https:" && !url.username && !url.password && isHostAllowed(url.host);
     } catch (error) {
-        mainLogger.error("isHostAllowed", host, error);
         return false;
     }
 };
