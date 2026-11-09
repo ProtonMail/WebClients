@@ -1519,10 +1519,7 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufany klucz",
-        "Zaufane klucze",
-        "Zaufanych kluczy",
-        "Zaufane klucze"
+        "Zaufaj kluczowi"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -7709,10 +7706,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -9237,6 +9231,36 @@
       ],
       "You've reached the maximum number of booking pages available in your plan.": [
         "Osiągnięto maksymalną liczbę stron rezerwacji dostępnych w Twoim planie."
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } e-mail → ${ dest }",
+        "${ count } e-maile → ${ dest }",
+        "${ count } e-maili → ${ dest }",
+        "${ count } e-maile → ${ dest }"
+      ],
+      "${ issues.length } issue during import:": [
+        "W trakcie procesu importowania wystąpił ${ issues.length } błąd.",
+        "W trakcie procesu importowania wystąpiły ${ issues.length } błędy.",
+        "W trakcie procesu importowania wystąpiło ${ issues.length } błędów.",
+        "W trakcie procesu importowania wystąpił/y ${ issues.length } błąd/błędy."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Poproś administratora o ulepszenia planu lub usuniecie strony z sekcji rezerwacji na pasku bocznym w aplikacji ${ CALENDAR_APP_NAME }."
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Znaleziono obecny zaszyfrowany indeks wyszukiwania z ${ oldIndexSize } wiadomością.",
+        "Znaleziono obecny zaszyfrowany indeks wyszukiwania z ${ oldIndexSize } wiadomościami.",
+        "Znaleziono obecny zaszyfrowany indeks wyszukiwania z ${ oldIndexSize } wiadomościami.",
+        "Znaleziono obecny zaszyfrowany indeks wyszukiwania z ${ oldIndexSize } wiadomościami."
+      ],
+      "Read ${ count } email on screen": [
+        "Odczytaj ${ count } e-mail na ekranie",
+        "Odczytaj ${ count } e-maile na ekranie",
+        "Odczytaj ${ count } e-maili na ekranie",
+        "Odczytaj e-maile (${ count }) na ekranie"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Aby dodać nową stronę rezerwacji, najpierw w aplikacji ${ CALENDAR_APP_NAME } usuń istniejącą w sekcji rezerwacji na pasku bocznym."
       ]
     },
     "info": {
@@ -17500,6 +17524,14 @@
     "collider_2025: Error": {
       "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
         "Ten wątek jest zbyt długi, aby go kontynuować. Rozpocznij nowy czat, aby ${ LUMO_SHORT_APP_NAME } działał płynnie i szybko odpowiadał."
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } nowa wiadomość",
+        "${ messageCount } nowe wiadomości",
+        "${ messageCount } nowych wiadomości",
+        "Nowe wiadomości (${ messageCount })"
       ]
     }
   }

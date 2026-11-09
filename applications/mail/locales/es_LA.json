@@ -1574,8 +1574,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1793,6 +1792,12 @@
       ],
       "Create a booking page": [
         "Crear una página de reservas"
+      ],
+      "Add payment method": [
+        "Añadir método de pago"
+      ],
+      "Cancel trial": [
+        "Cancelar prueba"
       ]
     },
     "action": {
@@ -6485,6 +6490,12 @@
       ],
       "Username": [
         "Nombre de usuario"
+      ],
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Antes de ${ MAIL_APP_NAME }, ¿cuál correo electrónico usaba más?"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "¿Cuál es la razón principal por la que se unió a ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -8097,8 +8108,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9931,6 +9941,78 @@
       ],
       "No booking pages yet": [
         "Aún no hay páginas de reservas"
+      ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } de ${ steps }"
+      ],
+      "A new or separate address": [
+        "Una dirección nueva o separada"
+      ],
+      "A specific feature (tell us)": [
+        "Una función específica (cuéntenos)"
+      ],
+      "Almost done": [
+        "Casi terminado"
+      ],
+      "Back": [
+        "Regresar"
+      ],
+      "Choose all that apply.": [
+        "Elija todas las que apliquen."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Elija una. Nos ayuda a mejorar ${ MAIL_APP_NAME }."
+      ],
+      "Dismiss": [
+        "Descartar"
+      ],
+      "I didn't have one": [
+        "No tenía una"
+      ],
+      "I use other Proton products": [
+        "Uso los otros productos de Proton"
+      ],
+      "Leave Big Tech": [
+        "Abandone las grandes empresas tecnológicas"
+      ],
+      "Next": [
+        "Siguiente"
+      ],
+      "No ads": [
+        "Sin anuncios"
+      ],
+      "One last step": [
+        "Un último paso"
+      ],
+      "Other (tell us)": [
+        "Otro (cuéntenos)"
+      ],
+      "Protection from hackers and leaks": [
+        "Protección contra hackers y filtraciones"
+      ],
+      "Someone recommended it": [
+        "Alguien lo recomendó"
+      ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Comenzar a usar ${ MAIL_APP_NAME }"
+      ],
+      "Stop companies reading my emails": [
+        "Impide que las empresas lean mis correos"
+      ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "Las respuestas de encuestas no están cifradas de extremo a extremo, no comparta ninguna información confidencial."
+      ],
+      "Tell us more (optional)": [
+        "Cuéntenos más (opcional)"
+      ],
+      "Which feature? (optional)": [
+        "¿Cuál función? (opcional)"
+      ],
+      "Which provider?": [
+        "¿Cuál proveedor?"
+      ],
+      "Work or business": [
+        "Trabajo o negocio"
       ]
     },
     "info": {
@@ -13414,6 +13496,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Su suscripción completa a ${ planTitle } comienza el ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**¿Cambió de parecer después de la prueba?** Cancele dentro de 30 días de su primer pago y le reembolsaremos el tiempo no usado."
       ]
     },
     "Option": {

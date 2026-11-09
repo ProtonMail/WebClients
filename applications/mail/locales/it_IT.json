@@ -1547,8 +1547,7 @@
         "Considera attendibile"
       ],
       "Trust key": [
-        "chiave attendibile",
-        "chiavi attendibili"
+        "Affida chiave"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -1781,6 +1780,18 @@
       ],
       "Cancel trial": [
         "Annulla la prova"
+      ],
+      "Lookup document": [
+        "Cerca documento"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the left": [
+        "Sposta ${ LUMO_SHORT_APP_NAME } a sinistra"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the right": [
+        "Sposta ${ LUMO_SHORT_APP_NAME } a destra"
+      ],
+      "Preview logs": [
+        "Mostra anteprima log."
       ]
     },
     "action": {
@@ -2095,6 +2106,9 @@
       ],
       "You have reached the trial limit.": [
         "Hai raggiunto il limite della prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Durante il periodo di prova puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze per l'assistente alla scrittura ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "b2b_trials_Action": {
@@ -5528,6 +5542,9 @@
       ],
       "A contact with this email address already exists": [
         "Esiste già un contatto con questo indirizzo e-mail"
+      ],
+      "Something went wrong, close the modal and try again.": [
+        "Si è verificato un problema. Chiudi questa finestra e riprova."
       ]
     },
     "error": {
@@ -7890,8 +7907,7 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine",
-        "Inserisci immagini"
+        "Inserisci immagine"
       ],
       "Insert link": [
         "Inserisci link"
@@ -9593,7 +9609,7 @@
         "Darò un'occhiata alla posta della settimana scorsa e selezionerò ciò a cui è davvero necessario rispondere, così potrai occupartene tutto in una volta sola."
       ],
       "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
-        "Darò un'occhiata a ciò che ricevi più spesso e alle cartelle e ai filtri che hai già, poi ti suggerirò cosa migliorare e cosa manca. Non cambierò nulla finché non me lo dirai tu."
+        "Darò un'occhiata a ciò che ricevi più spesso, alle cartelle e ai filtri che hai già, poi ti suggerirò cosa migliorare e cosa manca. Non cambierò nulla finché non me lo dirai tu."
       ],
       "Label ${ emails }": [
         "Etichetta ${ emails }"
@@ -9862,6 +9878,33 @@
       ],
       "Work or business": [
         "Lavoro o affari"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } minuti rimanenti…"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Chiedi all'amministratore di aggiornare il piano oppure elimina una pagina dalla sezione Pagine di prenotazione in ${ CALENDAR_APP_NAME }."
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Importazione in corso. Puoi chiudere questa finestra e tornare più tardi, ma non chiudere la scheda del browser."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "I log ci aiutano a capire cosa è successo prima che si verificasse il problema. Includono le azioni eseguite nell'app e i messaggi di errore, ma non il contenuto dei messaggi."
+      ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "Le risposte al sondaggio non sono crittografate end-to-end. Ti invitiamo a non condividere dati sensibili."
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Questo indirizzo Gmail è registrato con un altro account ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI e altri). Stiamo lavorando per rendere questo collegamento immediato ma, per il momento, dovrai completare alcuni passaggi."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Per aggiungere una pagina di prenotazione, eliminane una dalla sezione Pagine di prenotazione in ${ CALENDAR_APP_NAME }."
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "È possibile importarlo come nuovo indice \"foundation-search\" per attività di sviluppo."
       ]
     },
     "info": {
@@ -11182,7 +11225,7 @@
         "${ LUMO_SHORT_APP_NAME } assistente"
       ],
       "Away message": [
-        "Tono messaggio"
+        "Risposta automatica"
       ],
       "Cc": [
         "Cc"
@@ -11219,6 +11262,15 @@
       ],
       "v2": [
         "v2"
+      ],
+      "Content search version to use": [
+        "Versione da usare per la ricerca di contenuti"
+      ],
+      "Sieve script": [
+        "Script Sieve"
+      ],
+      "v1": [
+        "v1"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11681,6 +11733,9 @@
       ],
       "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Aggiungi assistente di scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "Mailbox": {
@@ -12505,6 +12560,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
         "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } con accesso limitato"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME } con accesso esteso"
       ]
     },
     "new_plans: feature highlight": {
