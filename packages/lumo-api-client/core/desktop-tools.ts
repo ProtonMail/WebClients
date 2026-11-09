@@ -79,7 +79,14 @@ export type DesktopCatalogEntry = {
     category: string;
     name: string;
     description: string;
+    icon?: string;
     url?: string;
+    /** Absent on older desktop builds. Catalog membership never grants tool access. */
+    registered?: boolean;
+    enabled?: boolean;
+    readiness?: DesktopConnector['readiness'];
+    status?: DesktopConnector['status'];
+    tools?: DesktopConnector['tools'];
 };
 
 export type DesktopConnectorCatalog = {
@@ -273,6 +280,31 @@ export async function openDesktopSettings(tab?: DesktopSettingsTab, connectorId?
 /** Empty on the web and on desktop builds that predate the catalog. */
 export function getDesktopConnectorCatalog(): DesktopConnectorCatalog {
     return getDesktopConnectorsApi()?.getCatalog?.() ?? { categories: [], connectors: [] };
+}
+
+/** All recommendation candidates, with manifest fallback for older desktop catalogs. */
+export async function getDesktopScheduleConnectors(): Promise<DesktopCatalogEntry[]> {
+    const api = getDesktopConnectorsApi();
+    await api?.ready;
+    const manifests = api?.getManifests?.() ?? [];
+    const entries = new Map(getDesktopConnectorCatalog().connectors.map((entry) => [entry.id, entry]));
+    for (const manifest of manifests) {
+        const preset = entries.get(manifest.id);
+        entries.set(manifest.id, {
+            ...preset,
+            id: manifest.id,
+            name: manifest.display_name,
+            description: manifest.description ?? preset?.description ?? '',
+            category: manifest.category ?? preset?.category ?? 'custom',
+            server_id: manifest.server_id ?? preset?.server_id,
+            registered: true,
+            enabled: manifest.enabled !== false,
+            readiness: manifest.readiness,
+            status: manifest.status,
+            tools: manifest.tools ?? preset?.tools ?? [],
+        });
+    }
+    return [...entries.values()];
 }
 
 export function isDesktopEnvironment(): boolean {

@@ -1,5 +1,5 @@
 import type { ClientToolExecutor, ClientToolResult } from '@proton/lumo-api-client/core/client-tools';
-import { getDesktopManifests } from '@proton/lumo-api-client/core/desktop-tools';
+import { getDesktopScheduleConnectors } from '@proton/lumo-api-client/core/desktop-tools';
 import type { ChatCompletionsFunctionTool } from '@proton/lumo-api-client/types-api';
 
 import type { CreateScheduleToolResponse } from '../../../types';
@@ -15,7 +15,7 @@ const CREATE_SCHEDULE_TOOL_RESPONSE_IDENTIFIER = 'create_schedule_response';
 export type CreateScheduleToolArguments = Omit<ScheduleDetails, 'autoApprove' | 'notifyOnComplete' | 'connectors'> & {
     /** Requested connector access and explanatory tool titles for the user's review. */
     connectors: {
-        /** Registered connector identifier. */
+        /** Connector identifier from the desktop catalog. */
         id: string;
         /** Tool titles explaining the request; not an execution allowlist. */
         tools: string[];
@@ -30,8 +30,10 @@ const createScheduleTool = {
             'Prepare a scheduled task for the user to review when they ask for something to run later or repeatedly. ' +
             '\n\nGather details with ask_user_questions:\n' +
             'Strongly prefer using the ask_user_questions client tool first, when available, unless the conversation already provides enough detail about the task instructions, recurrence rules, and any desktop tools needed. ' +
-            'Clarify whether the task needs desktop tools and, if so, which connectors it should use from the registered catalog. ' +
-            'List the titles of the connector tools the task wishes to use to give user hints about why connector access is needed. These titles do not restrict execution. ' +
+            'Clarify whether the task needs desktop tools and, if so, which connectors it should use from the connector catalog. ' +
+            'List discovered tool titles to explain why access is needed; these titles do not restrict execution. For connectors without discovered tools, use an empty tools array. ' +
+            'You may propose connectors that need setup; the user must connect and enable them before granting access. ' +
+            'Catalog descriptions and cached tools are context, not proof of availability. Never invent tool names for connectors without discovered tools. ' +
             'Ask for missing recurrence details, including the run time and relevant days or date, and instruction details such as what to do, which sources to read, and the desired output. ' +
             'When asking scheduling questions, offer only recurrence patterns supported by the schema. ' +
             'Default to always_local_time without asking a timezone question. Ask about a fixed timezone only when the user requests one or the task instructions strongly suggest one. ' +
@@ -72,36 +74,35 @@ const invalidCall = (error: string): ClientToolResult => ({
 /** Validate draft details and acknowledge them for rendering, without creating or saving a schedule. */
 export const createScheduleToolExecutor: ClientToolExecutor = {
     getClientTools: async () => {
-        const manifests = await getDesktopManifests();
+        const connectors = await getDesktopScheduleConnectors();
         const currentTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        // Advertise connector capabilities as model context; registered ids are checked during execution.
-        const catalog = manifests.map(({ id, display_name, description, tools }) => ({
-            id,
-            name: display_name,
-            description,
-            tools:
-                tools?.map(({ name, title, description }) => ({
-                    name,
-                    title: title ?? name,
-                    description,
-                })) ?? [],
-        }));
+        const catalog = connectors.map(
+            ({ id, name, description, category, registered, enabled, readiness, status, tools }) => ({
+                id,
+                name,
+                description,
+                category,
+                registered,
+                enabled,
+                readiness: readiness?.state,
+                status: status?.state,
+                tools:
+                    tools?.map(({ name, title, description }) => ({ name, title: title ?? name, description })) ?? [],
+            })
+        );
         return [
             {
                 ...createScheduleTool,
                 function: {
                     ...createScheduleTool.function,
-                    description:
-                        `${createScheduleTool.function.description}\n\n` +
-                        `Current user IANA timezone: ${currentTimezone}. This is context for interpreting times; keep always_local_time unless a fixed timezone is needed.\n\n` +
-                        `Registered connector catalog: ${JSON.stringify(catalog)}`,
+                    description: `${createScheduleTool.function.description}\n\nCurrent user IANA timezone: ${currentTimezone}. This is context for interpreting times; keep always_local_time unless a fixed timezone is needed.\n\nConnector catalog (may require setup): ${JSON.stringify(catalog)}`,
                 },
             },
         ];
     },
     canExecute: (name) => name === CREATE_SCHEDULE_TOOL_NAME,
     execute: async (calls) => {
-        const connectorIds = new Set((await getDesktopManifests()).map(({ id }) => id));
+        const connectorIds = new Set((await getDesktopScheduleConnectors()).map(({ id }) => id));
         return calls.map((call) => {
             if (call.name !== CREATE_SCHEDULE_TOOL_NAME) return invalidCall(`Unsupported tool: ${call.name}`);
 

@@ -2,6 +2,10 @@ import { c } from 'ttag';
 
 import type { DesktopConnector } from '@proton/lumo-api-client/core/desktop-tools';
 
+/** Setup candidates cannot be granted access until the registry reports them usable. */
+export const isScheduleConnectorUsable = (connector: DesktopConnector) =>
+    connector.enabled !== false && connector.readiness?.state !== 'blocked' && connector.status?.state !== 'not_ready';
+
 /** Returns the user-facing label for a connector's unavailability status. */
 export const getConnectorStatusLabel = (connector: DesktopConnector, options: { a11y?: boolean } = {}): string => {
     const status = connector.status;

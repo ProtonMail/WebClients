@@ -3,6 +3,7 @@ import { useId, useRef, useState } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
@@ -11,22 +12,18 @@ import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdow
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import type { DesktopConnector } from '@proton/lumo-api-client/core/desktop-tools';
-import {
-    openDesktopSettings,
-    supportsDesktopScheduleReadOnly,
-    useDesktopManifests,
-} from '@proton/lumo-api-client/core/desktop-tools';
+import { openDesktopSettings, supportsDesktopScheduleReadOnly } from '@proton/lumo-api-client/core/desktop-tools';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 import type { ScheduleConnector } from '../types';
+import { useScheduleConnectors } from '../useScheduleConnectors';
 import { ConnectorChip, ConnectorIcon } from './ConnectorChip';
-import { getConnectorStatusLabel } from './utils/connectors';
+import { getConnectorStatusLabel, isScheduleConnectorUsable } from './utils/connectors';
 
 import './ChipList.scss';
 
-const isUsable = (connector: DesktopConnector) =>
-    connector.enabled !== false && connector.readiness?.state !== 'blocked';
+const isUsable = isScheduleConnectorUsable;
 
 const isUsableWithWarningStatus = (connector: DesktopConnector) =>
     isUsable(connector) && connector.status?.state === 'warning';
@@ -82,16 +79,27 @@ const ConnectorListReadyView = ({
             label: c('collider_2025:Label').t`Read and write`,
         },
     ];
+    const { createNotification } = useNotifications();
+
+    const openConnectorSettings = async (connectorId: string) => {
+        try {
+            await openDesktopSettings('connectors', connectorId);
+        } catch {
+            createNotification({
+                type: 'error',
+                text: c('collider_2025:Error').t`Could not open connector settings. Please try again.`,
+            });
+        }
+    };
 
     const unselectedConnectors = connectors.filter(
         (connector) => !selectedConnectors.some(({ id }) => id === connector.id)
     );
 
-    const showWarning = selectedConnectors.some(({ id }) =>
-        connectors.some(
-            (connector) => connector.id === id && (!isUsable(connector) || isUsableWithWarningStatus(connector))
-        )
-    );
+    const showWarning = selectedConnectors.some(({ id }) => {
+        const connector = connectors.find((candidate) => candidate.id === id);
+        return !connector || !isUsable(connector) || isUsableWithWarningStatus(connector);
+    });
 
     return (
         <>
@@ -113,8 +121,15 @@ const ConnectorListReadyView = ({
                 {selectedConnectors.map((connector) => {
                     const manifest = connectors.find(({ id }) => id === connector.id);
                     const unavailable = !manifest || !isUsable(manifest);
+                    const label = manifest?.display_name ?? connector.label;
                     return (
-                        <div className="inline-flex flex-nowrap items-center gap-2" key={connector.id}>
+                        <div
+                            className={clsx(
+                                'inline-flex flex-nowrap items-center gap-2',
+                                editMode && unavailable && 'schedule-chip-list__setup-row w-full'
+                            )}
+                            key={connector.id}
+                        >
                             <ConnectorChip
                                 compact={compact}
                                 connector={
@@ -137,6 +152,25 @@ const ConnectorListReadyView = ({
                                 }
                                 unavailable={unavailable}
                             />
+                            {editMode && unavailable && (
+                                <Button
+                                    aria-label={
+                                        // translator: Opens setup for the selected connector. ${label} is the connector name.
+                                        c('collider_2025:Action').t`Set up ${label}`
+                                    }
+                                    className="schedule-chip-list__connect-button shrink-0"
+                                    color="weak"
+                                    onClick={() => {
+                                        void openConnectorSettings(connector.id);
+                                    }}
+                                    shape="outline"
+                                    type="button"
+                                >
+                                    {manifest?.enabled === false && manifest?.readiness?.state === 'ready'
+                                        ? c('collider_2025:Action').t`Manage`
+                                        : c('collider_2025:Action').t`Connect`}
+                                </Button>
+                            )}
                         </div>
                     );
                 })}
@@ -336,7 +370,7 @@ const ConnectorListErrorView = () => (
 export const ConnectorList = (props: ConnectorListProps) => {
     const id = useId();
     const labelId = `${id}-label`;
-    const { manifests, status } = useDesktopManifests();
+    const { connectors, status } = useScheduleConnectors();
 
     // translator: Heading for the scheduled task's allowed connectors (external tools and services).
     const header = props.header ?? c('collider_2025:Label').t`Tools this task can use`;
@@ -348,7 +382,7 @@ export const ConnectorList = (props: ConnectorListProps) => {
             case 'error':
                 return <ConnectorListErrorView />;
             case 'ready':
-                return <ConnectorListReadyView {...props} connectors={manifests} header={header} labelId={labelId} />;
+                return <ConnectorListReadyView {...props} connectors={connectors} header={header} labelId={labelId} />;
         }
     };
 

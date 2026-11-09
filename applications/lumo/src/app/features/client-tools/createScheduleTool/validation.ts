@@ -15,12 +15,12 @@ import { createScheduleSchema } from './schema';
  * Keep these checks aligned with the advertised schema, including unknown fields, frequency-specific
  * recurrence fields, valid dates and timezones, and connector ids.
  * Return the first invalid field to the model for correction without runtime code generation.
- * When registered connector ids are supplied, reject ids outside that catalog.
- * Omit the catalog when rendering persisted drafts so changes to the registry do not hide existing cards.
+ * When catalog connector ids are supplied, reject ids outside that catalog.
+ * Omit the catalog when rendering persisted drafts so changes to the catalog do not hide existing cards.
  */
 export function validateCreateScheduleToolArguments(
     value: unknown,
-    registeredConnectorIds?: ReadonlySet<string>
+    catalogConnectorIds?: ReadonlySet<string>
 ): ValidationResult<CreateScheduleToolArguments> {
     if (!isRecord(value)) return invalidArguments('arguments: must be an object');
     const schema = createScheduleSchema;
@@ -113,9 +113,9 @@ export function validateCreateScheduleToolArguments(
         if (!Array.isArray(connector.tools) || connector.tools.some((title) => !isNonBlankString(title))) {
             return invalidArguments(`${path}.tools: must be an array of non-blank tool titles`);
         }
-        if (registeredConnectorIds && !registeredConnectorIds.has(connector.id)) {
+        if (catalogConnectorIds && !catalogConnectorIds.has(connector.id)) {
             return invalidArguments(
-                `${path}.id: unknown connector id ${JSON.stringify(connector.id)}. Registered IDs: ${JSON.stringify([...registeredConnectorIds])}`
+                `${path}.id: unknown connector id ${JSON.stringify(connector.id)}. Catalog IDs: ${JSON.stringify([...catalogConnectorIds])}`
             );
         }
     }

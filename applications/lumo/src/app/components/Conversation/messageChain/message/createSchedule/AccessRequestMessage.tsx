@@ -2,16 +2,20 @@ import { useId, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import Checkbox from '@proton/components/components/input/Checkbox';
-import { useDesktopManifests } from '@proton/lumo-api-client/core/desktop-tools';
+import { openDesktopSettings } from '@proton/lumo-api-client/core/desktop-tools';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { CreateScheduleToolArguments } from '../../../../../features/client-tools/createScheduleTool/createScheduleTool';
 import { ConnectorIcon } from '../../../../../features/schedules/components/ConnectorChip';
+import { isScheduleConnectorUsable } from '../../../../../features/schedules/components/utils/connectors';
+import { useScheduleConnectors } from '../../../../../features/schedules/useScheduleConnectors';
 import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 
+import '../../../../../features/schedules/components/ChipList.scss';
 import './AccessRequestMessage.scss';
 
 interface AccessRequestMessageProps {
@@ -23,21 +27,38 @@ interface AccessRequestMessageProps {
     onComplete: (connectorIds: Set<string>) => void;
 }
 
+// translator: Opens setup for the selected connector. ${label} is the connector name.
+const getConnectorSetupLabel = (label: string) => c('collider_2025:Action').t`Set up ${label}`;
+
 export const AccessRequestMessage = ({ draft, note, onComplete }: AccessRequestMessageProps) => {
     const id = useId();
-    const { manifests } = useDesktopManifests();
+    const { connectors, status } = useScheduleConnectors();
     const [selectedConnectorIds, setSelectedConnectorIds] = useState(
         () => new Set(draft.connectors.map(({ id }) => id))
     );
 
+    const { createNotification } = useNotifications();
+    const openConnectorSettings = async (connectorId: string) => {
+        try {
+            await openDesktopSettings('connectors', connectorId);
+        } catch {
+            createNotification({
+                type: 'error',
+                text: c('collider_2025:Error').t`Could not open connector settings. Please try again.`,
+            });
+        }
+    };
+
     const taskName = draft.name;
     const tools = draft.connectors.map(({ id, tools }) => {
-        const manifest = manifests.find((connector) => connector.id === id);
+        const manifest = connectors.find((connector) => connector.id === id);
         return {
             id,
             name: manifest?.display_name ?? id,
             tools,
             icon: manifest?.icon ?? undefined,
+            unavailable: !manifest || !isScheduleConnectorUsable(manifest),
+            disabled: manifest?.enabled === false && manifest?.readiness?.state === 'ready',
         };
     });
 
@@ -49,7 +70,12 @@ export const AccessRequestMessage = ({ draft, note, onComplete }: AccessRequestM
             return next;
         });
     };
-    const handleAllow = () => onComplete(selectedConnectorIds);
+    const canAllow =
+        selectedConnectorIds.size === 0 ||
+        (status === 'ready' && tools.every((tool) => !selectedConnectorIds.has(tool.id) || !tool.unavailable));
+    const handleAllow = () => {
+        if (canAllow) onComplete(selectedConnectorIds);
+    };
     const handleDeny = () => onComplete(new Set());
 
     return (
@@ -101,6 +127,22 @@ export const AccessRequestMessage = ({ draft, note, onComplete }: AccessRequestM
                                         </span>
                                     )}
                                 </div>
+                                {tool.unavailable && (
+                                    <Button
+                                        aria-label={getConnectorSetupLabel(tool.name)}
+                                        className="schedule-chip-list__connect-button shrink-0"
+                                        color="weak"
+                                        onClick={() => {
+                                            void openConnectorSettings(tool.id);
+                                        }}
+                                        shape="outline"
+                                        type="button"
+                                    >
+                                        {tool.disabled
+                                            ? c('collider_2025:Action').t`Manage`
+                                            : c('collider_2025:Action').t`Connect`}
+                                    </Button>
+                                )}
                                 <Checkbox
                                     aria-describedby={tool.tools.length > 0 ? `${id}-${tool.id}-tools` : undefined}
                                     aria-label={
@@ -116,6 +158,12 @@ export const AccessRequestMessage = ({ draft, note, onComplete }: AccessRequestM
                             </li>
                         ))}
                     </ul>
+                    {!canAllow && (
+                        <p className="m-0 text-sm text-break color-hint">
+                            {c('collider_2025:Info')
+                                .t`Connect and enable the selected connectors before allowing access, or uncheck them.`}
+                        </p>
+                    )}
                     {note && <p className="m-0 text-sm text-break color-hint">{note}</p>}
                 </div>
             </Scroll>
@@ -126,7 +174,7 @@ export const AccessRequestMessage = ({ draft, note, onComplete }: AccessRequestM
                     // translator: Defers the scheduled task's tool access request.
                     c('collider_2025:Action').t`Not now`
                 }</Button>
-                <Button color="norm" onClick={handleAllow} type="button">{
+                <Button color="norm" disabled={!canAllow} onClick={handleAllow} type="button">{
                     // translator: Grants the selected tools access for this scheduled task.
                     c('collider_2025:Action').t`Allow for this task`
                 }</Button>
