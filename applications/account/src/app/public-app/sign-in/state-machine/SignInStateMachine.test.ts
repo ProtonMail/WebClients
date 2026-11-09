@@ -38,6 +38,7 @@ import {
 import {
     credentialsStateMachine,
     selectCredentialsForm,
+    selectSessionExpired,
     selectSubmitting,
 } from '../steps/credentials/state-machine/credentialsStateMachine';
 import { lost2FAStateMachine } from '../steps/password-account/screens/lost-two-factor/state-machine/lost2FAStateMachine';
@@ -217,9 +218,13 @@ function startActor(overrides: Overrides = {}, input: Partial<SignInMachineInput
     const passwordPolicies = [{ PolicyName: 'length' }] as unknown as OrganizationData['passwordPolicies'];
     /** Each device-approval poll the machine starts; the test answers through `sendBack`. */
     const polls: { sendBack: (event: SSODeviceEvent) => void; stopped: boolean }[] = [];
+    let expireSession = () => {};
     const machine = SignInStateMachine.provide({
         actors: {
             prepareSignIn: fromPromise(() => spies.prepareSignIn()),
+            watchSession: fromCallback(({ sendBack }) => {
+                expireSession = () => sendBack({ type: 'session.expired' });
+            }),
             createAuthState: fromPromise(() => Promise.resolve(created)),
             credentialsFlow: credentialsStateMachine.provide({
                 actors: {
@@ -326,7 +331,16 @@ function startActor(overrides: Overrides = {}, input: Partial<SignInMachineInput
     actor.start();
     const errors = () => emitted.flatMap((event) => (event.type === 'error' ? [event.error] : []));
     const notices = () => noticeEvents;
-    return { actor, spies, errors, notices, polls, auth, ssoData };
+    return {
+        actor,
+        spies,
+        errors,
+        notices,
+        expireSession: () => expireSession(),
+        polls,
+        auth,
+        ssoData,
+    };
 }
 
 type Actor = ReturnType<typeof startActor>['actor'];
@@ -339,6 +353,9 @@ const credentialsFlow = (actor: Actor) => {
     }
     return child;
 };
+
+/** The credentials form says the session expired under the attempt. */
+const showsSessionExpired = (actor: Actor) => selectSessionExpired(credentialsFlow(actor).getSnapshot());
 
 /** The account flow the sign-in runs as a child after the first authentication, if any. */
 const accountFlow = (actor: Actor) => actor.getSnapshot().children.passwordAccount ?? actor.getSnapshot().children.sso;
@@ -470,6 +487,77 @@ describe('SignInStateMachine', () => {
                 credentialsFlow(started.actor).send({ type: 'claimed.recoveryChosen' });
                 return started;
             };
+
+            it.each([
+                ['on the choice', [], 'choice'],
+                ['on the password screen', [{ type: 'claimed.recoveryChosen' }], { verify: 'idle' }],
+                [
+                    'under the password check',
+                    [
+                        { type: 'claimed.recoveryChosen' },
+                        { type: 'claimed.submitted', payload: { password: 'old-password' } },
+                    ],
+                    { verify: 'verifying' },
+                ],
+                [
+                    "while the identity provider's window is open",
+                    [{ type: 'claimed.ssoRequested' }],
+                    { ssoProvider: 'awaitingProvider' },
+                ],
+                [
+                    'while it loads new SSO info, after a window used up the last',
+                    [
+                        { type: 'claimed.ssoRequested' },
+                        { type: 'externalSSO.cancelled' },
+                        { type: 'claimed.ssoRequested' },
+                    ],
+                    'loadingSSOInfo',
+                ],
+            ] as const)(
+                'starts over from the username, which says why, when the session expires %s',
+                async (_, events, step) => {
+                    const { actor, expireSession } = startWith(
+                        { type: AuthType.Auto },
+                        {
+                            fetchAccountType: claimedSSOAccount,
+                            fetchSSOInfo: () => new Promise(() => {}),
+                            authenticateWithClaimedAddress: () => new Promise(() => {}),
+                            authorizeWithSSOProvider: () => new Promise(() => {}),
+                        }
+                    );
+                    await submitUsername(actor);
+                    events.forEach((event) => credentialsFlow(actor).send(event));
+                    expect(
+                        credentialsFlow(actor)
+                            .getSnapshot()
+                            .matches({ form: { claimedAddress: step } })
+                    ).toBe(true);
+
+                    expireSession();
+
+                    expect(claimedScreen(actor)).toBe('auto');
+                    expect(showsSessionExpired(actor)).toBe(true);
+                    expect(credentialsFlow(actor).getSnapshot().context.username).toBe(usernameForm.username);
+                }
+            );
+
+            it('starts over from the username when the session expires after the recovery signed in', async () => {
+                const { actor, expireSession } = await startRecovery({
+                    created: makeCreatedAuth({ twoFactor: true }),
+                });
+                credentialsFlow(actor).send({
+                    type: 'claimed.submitted',
+                    payload: { password: 'old-password' },
+                });
+                await waitUntilSettled(actor);
+                expect(actor.getSnapshot().matches('passwordAccount')).toBe(true);
+
+                expireSession();
+
+                expect(actor.getSnapshot().matches('awaitingCredentials')).toBe(true);
+                expect(claimedScreen(actor)).toBe('auto');
+                expect(showsSessionExpired(actor)).toBe(true);
+            });
 
             it('signs in with the claimed address and hands it to the sign-in like any other', async () => {
                 const { actor, spies } = await startRecovery();
@@ -1021,6 +1109,120 @@ describe('SignInStateMachine', () => {
             await submitCredentials(actor);
             expect(isSignedIn(actor)).toBe(true);
             expect(errors()).toEqual([]);
+        });
+    });
+
+    describe('session expiry', () => {
+        it('keeps a form where nothing runs, without its SRP challenge, and tells the user nothing', async () => {
+            const { actor, expireSession } = startWith({ type: AuthType.Auto });
+            await submitUsername(actor);
+            expect(credentialsFlow(actor).getSnapshot().context.authInfo).toBeDefined();
+
+            expireSession();
+
+            expect(
+                credentialsFlow(actor)
+                    .getSnapshot()
+                    .matches({ form: { signIn: { autoSrp: 'idle' } } })
+            ).toBe(true);
+            expect(credentialsFlow(actor).getSnapshot().context.authInfo).toBeUndefined();
+            expect(showsSessionExpired(actor)).toBe(false);
+        });
+
+        it('checks the account type again on the new session when the session expires under it', async () => {
+            const fetchAccountType = jest.fn(() => Promise.resolve<AccountType>({ type: 'srp', info: authInfo }));
+            fetchAccountType.mockReturnValueOnce(new Promise<AccountType>(() => {}));
+            const { actor, expireSession } = startWith({ type: AuthType.Auto }, { fetchAccountType });
+            credentialsFlow(actor).send({ type: 'credentials.usernameSubmitted', payload: usernameForm });
+
+            expireSession();
+            await waitUntilSettled(actor);
+
+            expect(fetchAccountType).toHaveBeenCalledTimes(2);
+            expect(
+                credentialsFlow(actor)
+                    .getSnapshot()
+                    .matches({ form: { signIn: { autoSrp: 'idle' } } })
+            ).toBe(true);
+            expect(showsSessionExpired(actor)).toBe(false);
+        });
+
+        it('loads the SSO info again on the new session when the session expires under it', async () => {
+            const fetchSSOInfo = jest.fn(() => Promise.resolve({ SSOChallengeToken: 'challenge' } as SSOInfoResponse));
+            fetchSSOInfo.mockReturnValueOnce(new Promise<SSOInfoResponse>(() => {}));
+            const { actor, expireSession } = startWith(
+                { type: AuthType.ExternalSSO },
+                { fetchSSOInfo, authorizeWithSSOProvider: () => new Promise(() => {}) }
+            );
+            credentialsFlow(actor).send({ type: 'credentials.usernameSubmitted', payload: usernameForm });
+
+            expireSession();
+            await waitUntil(() => credentialsFlow(actor).getSnapshot().hasTag('awaitingProvider'));
+
+            expect(fetchSSOInfo).toHaveBeenCalledTimes(2);
+            expect(showsSessionExpired(actor)).toBe(false);
+        });
+
+        it('lets the password login go on when the session expires under it, since it sends itself again', async () => {
+            const pending = deferred<PrimaryAuthResult>();
+            const { actor, errors, expireSession, spies } = startActor({
+                authenticateWithPassword: () => pending.promise,
+            });
+            credentialsFlow(actor).send({ type: 'credentials.submitted', payload: form });
+
+            expireSession();
+
+            expect(
+                credentialsFlow(actor)
+                    .getSnapshot()
+                    .matches({ form: { signIn: { autoSrp: 'signingIn' } } })
+            ).toBe(true);
+            pending.resolve(primaryAuth);
+            await waitUntilSettled(actor);
+            expect(isSignedIn(actor)).toBe(true);
+            expect(spies.authenticateWithPassword).toHaveBeenCalledTimes(1);
+            expect(errors()).toEqual([]);
+        });
+
+        it("closes the identity provider's window, whose challenge came with the expired session", async () => {
+            const { actor, expireSession } = startWith(
+                { type: AuthType.ExternalSSO },
+                { authorizeWithSSOProvider: () => new Promise(() => {}) }
+            );
+            credentialsFlow(actor).send({ type: 'credentials.usernameSubmitted', payload: usernameForm });
+            await waitUntil(() => credentialsFlow(actor).getSnapshot().hasTag('awaitingProvider'));
+
+            expireSession();
+
+            expect(
+                credentialsFlow(actor)
+                    .getSnapshot()
+                    .matches({ form: { signIn: { externalSSO: 'idle' } } })
+            ).toBe(true);
+            expect(showsSessionExpired(actor)).toBe(true);
+        });
+
+        it('starts over from the form with the username when the session expires in an account flow', async () => {
+            const { actor, expireSession } = startActor({
+                created: makeCreatedAuth({ twoFactor: true }),
+            });
+            await submitCredentials(actor);
+            expect(actor.getSnapshot().matches('passwordAccount')).toBe(true);
+
+            expireSession();
+
+            expect(actor.getSnapshot().matches('awaitingCredentials')).toBe(true);
+            expect(actor.getSnapshot().children.passwordAccount).toBeUndefined();
+            expect(
+                credentialsFlow(actor)
+                    .getSnapshot()
+                    .matches({ form: { signIn: { autoSrp: 'idle' } } })
+            ).toBe(true);
+            expect(credentialsFlow(actor).getSnapshot().context.username).toBe(form.username);
+            expect(showsSessionExpired(actor)).toBe(true);
+            // Until the user types again, like the form's errors
+            credentialsFlow(actor).send({ type: 'credentials.edited' });
+            expect(showsSessionExpired(actor)).toBe(false);
         });
     });
 

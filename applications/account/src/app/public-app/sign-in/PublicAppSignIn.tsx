@@ -21,7 +21,7 @@ import SignInContainer from './SignInContainer';
 import { getLoginMeta } from './loginPagesJson';
 
 const PublicAppSignIn = () => {
-    const { onPreSubmit, onStartAuth } = usePublicAppAuth();
+    const { onPreSubmit, onStartAuth, onSessionExpired } = usePublicAppAuth();
     const history = useHistory();
     const publicApp = PublicAppContext.useActorRef();
     const initialSearchParams = PublicAppContext.useSelector((state) => state.context.initialSearchParams);
@@ -46,6 +46,7 @@ const PublicAppSignIn = () => {
         paths,
         onPreSubmit,
         onStartAuth,
+        onSessionExpired,
     };
 
     const signIn = <SignInContainer {...signInProps} />;

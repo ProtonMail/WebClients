@@ -6,13 +6,14 @@ import { c } from 'ttag';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
+import { LoginErrorBlock } from '../../../../components/LoginErrorBlock';
 import { UserNameButton } from '../../../../components/username/UserNameButton';
+import { getSessionExpiredMessage } from '../../../../helper';
 import type { SignInScreen, SignInScreenProps } from '../../../routes/signInRoute';
 import { useSignInProps } from '../../../wizard/SignInProvider';
 import { CredentialsContext } from '../CredentialsContext';
 import { TestflightBanner } from '../Testflight';
 import { getSignInText } from '../continueTo';
-import { LoginErrorBlock } from '../fields/LoginErrorBlock';
 import { PasswordField } from '../fields/PasswordField';
 import { SubmitButton, getSignInButtonText } from '../fields/SubmitButton';
 import { getHelpLinks } from '../helpLinks';
@@ -20,6 +21,7 @@ import {
     selectCanGoBack,
     selectErrorMessage,
     selectPersistent,
+    selectSessionExpired,
     selectSubmitting,
     selectUsername,
 } from '../state-machine/credentialsStateMachine';
@@ -29,6 +31,9 @@ export const AutoPasswordScreen: SignInScreen = ({ onBack }: SignInScreenProps) 
     const { layout, paths, compactForm, showContinueTo, toAppName } = useSignInProps();
     const actorRef = CredentialsContext.useActorRef();
     const errorMessage = CredentialsContext.useSelector(selectErrorMessage);
+    const sessionExpired = CredentialsContext.useSelector(selectSessionExpired);
+    // Shown the same way, but the password isn't wrong
+    const blockMessage = errorMessage || (sessionExpired ? getSessionExpiredMessage() : undefined);
     const submitting = CredentialsContext.useSelector(selectSubmitting);
     // Submitted in the username step
     const username = CredentialsContext.useSelector(selectUsername);
@@ -91,9 +96,9 @@ export const AutoPasswordScreen: SignInScreen = ({ onBack }: SignInScreenProps) 
                             {c('Link').t`Forgot password?`}
                         </Link>
                     </div>
-                    {errorMessage && (
+                    {blockMessage && (
                         <div className="mt-4">
-                            <LoginErrorBlock message={errorMessage} />
+                            <LoginErrorBlock message={blockMessage} />
                         </div>
                     )}
                     <SubmitButton submitting={submitting} compactForm={compactForm}>

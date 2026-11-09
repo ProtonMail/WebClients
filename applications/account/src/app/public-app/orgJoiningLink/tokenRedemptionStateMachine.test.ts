@@ -1,10 +1,11 @@
-import { createActor, fromPromise, waitFor } from 'xstate';
+import { createActor, fromCallback, fromPromise, waitFor } from 'xstate';
 
 import type { TokenRedemptionSession } from './tokenRedemptionActors';
 import {
     type TokenRedemptionConfig,
     type TokenRedemptionEmitted,
     selectResending,
+    selectSessionExpired,
     selectStep,
     selectSubmitting,
     tokenRedemptionStateMachine,
@@ -35,9 +36,14 @@ const start = ({
 }) => {
     const actions = { clearLinkFromUrl: jest.fn() };
     const emitted: TokenRedemptionEmitted[] = [];
+    // Set while a step listens for the session expiring
+    let expireSession = () => {};
     const actor = createActor(
         tokenRedemptionStateMachine.provide({
             actors: {
+                watchSession: fromCallback(({ sendBack }) => {
+                    expireSession = () => sendBack({ type: 'session.expired' });
+                }),
                 redeemToken: fromPromise(({ input }) => redeemToken(input)),
                 verifyCode: fromPromise(({ input }) => verifyCode(input)),
                 changePassword: fromPromise(({ input }) => changePassword(input)),
@@ -50,7 +56,7 @@ const start = ({
     );
     actor.on('*', (event) => emitted.push(event));
     actor.start();
-    return { actor, actions, emitted };
+    return { actor, actions, emitted, expireSession: () => expireSession() };
 };
 
 describe('tokenRedemptionStateMachine', () => {
@@ -125,5 +131,59 @@ describe('tokenRedemptionStateMachine', () => {
         actor.send({ type: 'password.submitted', password: 'new-password' });
         await waitFor(actor, (state) => state.matches({ password: 'idle' }));
         expect(emitted).toEqual([{ type: 'session.expired' }]);
+    });
+
+    describe('when the unauthenticated session expires on the code step', () => {
+        const toCodeStep = async (actor: ReturnType<typeof start>['actor']) => {
+            actor.send({ type: 'email.submitted', email: 'jane@example.com' });
+            await waitFor(actor, (state) => state.matches({ otp: 'idle' }));
+        };
+
+        it('goes back to the email step, which says why', async () => {
+            const { actor, emitted, expireSession } = start({});
+            await toCodeStep(actor);
+
+            expireSession();
+
+            expect(actor.getSnapshot().matches({ email: 'idle' })).toBe(true);
+            expect(selectSessionExpired(actor.getSnapshot())).toBe(true);
+            expect(emitted).toEqual([]);
+        });
+
+        it("drops the code check that met it, so that check's 401 isn't reported as well", async () => {
+            let failCodeCheck: (error: unknown) => void = () => {};
+            const { actor, emitted, expireSession } = start({
+                verifyCode: () =>
+                    new Promise<never>((_, reject) => {
+                        failCodeCheck = reject;
+                    }),
+            });
+            await toCodeStep(actor);
+            actor.send({ type: 'code.submitted', code: '123456' });
+
+            expireSession();
+            failCodeCheck(Object.assign(new Error('Unauthorized'), { status: 401, data: {} }));
+            await new Promise((resolve) => setTimeout(resolve, 0));
+
+            expect(actor.getSnapshot().matches({ email: 'idle' })).toBe(true);
+            expect(emitted).toEqual([]);
+        });
+
+        it('stops saying why once the member edits or submits the email', async () => {
+            const { actor, expireSession } = start({});
+            const expireOnCodeStep = async () => {
+                await toCodeStep(actor);
+                expireSession();
+                expect(selectSessionExpired(actor.getSnapshot())).toBe(true);
+            };
+
+            await expireOnCodeStep();
+            actor.send({ type: 'email.edited' });
+            expect(selectSessionExpired(actor.getSnapshot())).toBe(false);
+
+            await expireOnCodeStep();
+            actor.send({ type: 'email.submitted', email: 'jane@example.com' });
+            expect(selectSessionExpired(actor.getSnapshot())).toBe(false);
+        });
     });
 });

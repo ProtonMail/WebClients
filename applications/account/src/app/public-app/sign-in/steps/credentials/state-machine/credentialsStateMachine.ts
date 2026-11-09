@@ -88,6 +88,11 @@ interface CredentialsMachineContext {
     claimedAddresses: ClaimedAddressID[];
     /** Shown inline in the credentials form (wrong username or password, or the API refused the SSO sign-in). */
     errorMessage: string | undefined;
+    /**
+     * The session expired under the attempt, which went back to the form: shown like the error, without marking a
+     * field, until the next submission or edit.
+     */
+    sessionExpired: boolean;
     /** The account type check's auth info and when it came, for the password step's first try only. */
     authInfo: { info: InfoResponse; fetchedAt: number } | undefined;
     /**
@@ -111,7 +116,9 @@ type CredentialsEvent =
     | { type: 'claimed.submitted'; payload: { password: string } }
     | { type: 'decision.back' }
     /** From the sign-in: the attempt ended without signing in; show the form again. */
-    | { type: 'credentials.reopened' };
+    | { type: 'credentials.reopened' }
+    /** From the sign-in: the unauthenticated session expired, taking what the requests did on it. */
+    | { type: 'session.expired' };
 
 /** Sent to the sign-in machine. */
 export type CredentialsParentEvent =
@@ -173,6 +180,7 @@ const credentialsSetup = setup({
             username: params.form.username,
             persistent: params.form.persistent,
             errorMessage: undefined,
+            sessionExpired: false,
             ssoInfo: undefined,
             ssoProviderResult: undefined,
             claimedAddresses: [],
@@ -187,7 +195,9 @@ const credentialsSetup = setup({
                     ? params.error.message
                     : undefined,
         })),
-        clearErrorMessage: assign({ errorMessage: undefined }),
+        /** Also the session expiry, which shows the same way. */
+        clearErrorMessage: assign({ errorMessage: undefined, sessionExpired: false }),
+        showSessionExpired: assign({ sessionExpired: true }),
         setAuthInfo: assign((_, params: { accountType: AccountType }) => ({
             authInfo:
                 params.accountType.type === 'srp'
@@ -259,12 +269,17 @@ const submitted = credentialsSetup.createStateConfig({
     tags: [CredentialsStateMachineTags.submitting],
     on: {
         'credentials.reopened': { target: 'idle', actions: 'resetAttempt' },
+        // The sign-in starts over from the form, which says why
+        'session.expired': { actions: 'showSessionExpired' },
         // The sign-in may complete and leave the page from here, so back no longer works
         'decision.back': {},
     },
 });
 
-/** The password login, for the password step (`autoSrp`). */
+/**
+ * The password login, for the password step (`autoSrp`). The session expiring under it doesn't stop it: the login has
+ * the password, which the machine doesn't keep, so it sends itself again on the new session.
+ */
 const signingIn = credentialsSetup.createStateConfig({
     tags: [CredentialsStateMachineTags.submitting],
     exit: 'discardAuthInfo',
@@ -305,7 +320,8 @@ const signingIn = credentialsSetup.createStateConfig({
  * over. The window opens with the challenge token of the SSO info in context, which it uses up, so it's entered right
  * after that info is loaded (or at `exchangingToken`, with a token from the provider's redirect). Cancel, or leaving
  * the state, aborts the window. It's done (`closed`) when the window closes or a request fails, or once signed in, when
- * the attempt ends without signing in; the state that uses it decides where to go then, with its `onDone`.
+ * the attempt ends without signing in; the state that uses it decides where to go then, with its `onDone`, and when
+ * the session expires under it.
  */
 const ssoProvider = credentialsSetup.createStateConfig({
     tags: [CredentialsStateMachineTags.submitting],
@@ -373,10 +389,17 @@ const ssoProvider = credentialsSetup.createStateConfig({
     },
 });
 
-/** The forms' sign-in with the identity provider: back, which leaves the page, waits for it; then the form starts over. */
+/**
+ * The forms' sign-in with the identity provider: back, which leaves the page, waits for it; then the form starts over.
+ * It also does when the session expires under it, since the window's challenge token came with that session, and it
+ * says why.
+ */
 const formSSOProvider = credentialsSetup.createStateConfig({
     ...ssoProvider,
-    on: { 'decision.back': {} },
+    on: {
+        'decision.back': {},
+        'session.expired': { target: 'idle', actions: ['resetAttempt', 'showSessionExpired'] },
+    },
     onDone: { target: 'idle', actions: 'resetAttempt' },
 });
 
@@ -387,7 +410,8 @@ const formSSOProvider = credentialsSetup.createStateConfig({
  */
 const loadingSSOInfo = credentialsSetup.createStateConfig({
     tags: [CredentialsStateMachineTags.submitting],
-    on: { 'decision.back': {} },
+    // Only the username is needed, so it's sent again on the new session
+    on: { 'decision.back': {}, 'session.expired': { target: 'loadingSSOInfo', reenter: true } },
     invoke: {
         src: 'fetchSSOInfo',
         input: ({ context }) => ({ username: context.username }),
@@ -429,6 +453,7 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
         ssoProviderResult: undefined,
         claimedAddresses: [],
         errorMessage: undefined,
+        sessionExpired: false,
         authInfo: undefined,
         challengePayload: undefined,
     }),
@@ -437,6 +462,9 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
             enqueue('notifySSORequired');
         }
     }),
+    // Nothing runs, or the password login, which sends itself again: the form stays as it is, but the SRP and SSO
+    // challenges came with the expired session
+    on: { 'session.expired': { actions: ['discardAuthInfo', 'discardSSOInfo'] } },
     states: {
         /**
          * Preemptively starts the auth session, and again when the form reopens after a later step. Best-effort: a
@@ -499,8 +527,12 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                                 },
                                 checkingAccountType: {
                                     tags: [CredentialsStateMachineTags.submitting],
-                                    // The page's back, which leaves the page, waits for the request
-                                    on: { 'decision.back': {} },
+                                    // The page's back, which leaves the page, waits for the request. Only the
+                                    // username is needed, so it's sent again on the new session
+                                    on: {
+                                        'decision.back': {},
+                                        'session.expired': { target: 'checkingAccountType', reenter: true },
+                                    },
                                     invoke: {
                                         src: 'fetchAccountType',
                                         input: ({ context }) => ({ username: context.username }),
@@ -639,7 +671,7 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                  * disables the addresses on it, so the address can no longer be found by email, and the candidate IDs
                  * found for it are the way into the account it belonged to. Both destinations are legitimate, so it
                  * asks. (Without an identity provider, the password step signs in to that account directly.) Back
-                 * returns to the form it came from.
+                 * returns to the form it came from, and so does the session expiring on any of its steps.
                  */
                 claimedAddress: {
                     initial: 'choice',
@@ -648,6 +680,8 @@ export const credentialsStateMachine = credentialsSetup.createMachine({
                     exit: 'clearErrorMessage',
                     on: {
                         'decision.back': { target: 'signIn.previous' },
+                        // The recovery starts over from that form, which says why: set after the exit clears it
+                        'session.expired': { target: 'signIn.previous', actions: 'showSessionExpired' },
                     },
                     states: {
                         /** The identity provider, or the personal account the address used to belong to. */
@@ -780,6 +814,9 @@ export const selectAwaitingProvider = (snapshot: CredentialsSnapshot) =>
 
 /** Shown inline in the form: a wrong username or password, or why the API refused the SSO sign-in. */
 export const selectErrorMessage = (snapshot: CredentialsSnapshot) => snapshot.context.errorMessage;
+
+/** The session expired under the attempt, which went back to the form: shown like the error, marking no field. */
+export const selectSessionExpired = (snapshot: CredentialsSnapshot) => snapshot.context.sessionExpired;
 
 /** The username the forms start with, carried over between them. */
 export const selectUsername = (snapshot: CredentialsSnapshot) => snapshot.context.username;

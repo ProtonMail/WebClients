@@ -7,6 +7,8 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useLoading from '@proton/hooks/useLoading';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
+import { LoginErrorBlock } from '../../../../components/LoginErrorBlock';
+import { getSessionExpiredMessage } from '../../../../helper';
 import type { SignInScreen, SignInScreenProps } from '../../../routes/signInRoute';
 import { useSignInProps } from '../../../wizard/SignInProvider';
 import { CredentialsContext } from '../CredentialsContext';
@@ -24,6 +26,7 @@ import {
     selectAwaitingProvider,
     selectErrorMessage,
     selectPersistent,
+    selectSessionExpired,
     selectSubmitting,
     selectUsername,
 } from '../state-machine/credentialsStateMachine';
@@ -45,6 +48,7 @@ export const AutoScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
     } = useSignInProps();
     const actorRef = CredentialsContext.useActorRef();
     const errorMessage = CredentialsContext.useSelector(selectErrorMessage);
+    const sessionExpired = CredentialsContext.useSelector(selectSessionExpired);
     const { getPayload } = useLoginChallengeContext();
     // Covers the wait for the challenge result, before the machine takes over
     const [collecting, withCollecting] = useLoading();
@@ -97,6 +101,11 @@ export const AutoScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
                             </Link>
                         )}
                     </div>
+                    {sessionExpired && (
+                        <div className="mt-4">
+                            <LoginErrorBlock message={getSessionExpiredMessage()} />
+                        </div>
+                    )}
                     {showRememberCheckbox && <StaySignedInCheckbox staySignedIn={staySignedIn} disabled={submitting} />}
                     <SubmitButton submitting={submitting} compactForm={compactForm}>
                         {c('Action').t`Continue`}

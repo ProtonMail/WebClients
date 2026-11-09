@@ -58,7 +58,7 @@ describe('waitForDeviceApproval', () => {
         jest.useRealTimers();
     });
 
-    // A 401 comes once the API layer failed to refresh the session; retried with a new one, the request gets a 403
+    // A session that can't read the device any more; an expired one has started the sign-in over before this
     it.each([401, 403])('ends the attempt when a poll gets a %i, and stops polling', async (status) => {
         const pending = { status: 422 };
         const error = { status };

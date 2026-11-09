@@ -20,6 +20,7 @@ const options = {
     externalRedirect: undefined,
     onPreSubmit: undefined,
     onStartAuth: () => Promise.resolve(),
+    onSessionExpired: () => () => {},
     onLogin: jest.fn(),
     paths: {} as Paths,
 };

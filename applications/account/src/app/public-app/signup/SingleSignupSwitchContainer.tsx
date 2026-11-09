@@ -23,7 +23,7 @@ import { isReferralSignup } from './helper';
 import { getSignupMeta } from './signupPagesJson';
 
 const SingleSignupSwitchContainer = () => {
-    const { onPreSubmit, onStartAuth } = usePublicAppAuth();
+    const { onPreSubmit, onStartAuth, onSessionExpired } = usePublicAppAuth();
     const location = useLocation();
     const history = useHistory();
     const { api } = usePublicAppServices();
@@ -86,6 +86,7 @@ const SingleSignupSwitchContainer = () => {
             onBack={hasBackToSwitch ? () => history.push(paths.login) : undefined}
             onPreSubmit={onPreSubmit}
             onStartAuth={onStartAuth}
+            onSessionExpired={onSessionExpired}
             initialSessionsLength={Boolean(initialSessionsLength)}
         />
     );

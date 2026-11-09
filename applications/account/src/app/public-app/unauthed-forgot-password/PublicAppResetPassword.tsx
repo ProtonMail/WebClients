@@ -7,7 +7,7 @@ import { runLogin } from '../state-machine/runLogin';
 import { ResetPasswordPage } from './ResetPasswordPage';
 
 const PublicAppResetPassword = () => {
-    const { onPreSubmit, onStartAuth } = usePublicAppAuth();
+    const { onPreSubmit, onStartAuth, onSessionExpired } = usePublicAppAuth();
     const publicApp = PublicAppContext.useActorRef();
     const toApp = PublicAppContext.useSelector(selectPreAppIntent);
     const loginPath = PublicAppContext.useSelector((state) => selectPaths(state).login);
@@ -24,6 +24,7 @@ const PublicAppResetPassword = () => {
             productParam={productParam}
             onPreSubmit={onPreSubmit}
             onStartAuth={onStartAuth}
+            onSessionExpired={onSessionExpired}
         />
     );
 };

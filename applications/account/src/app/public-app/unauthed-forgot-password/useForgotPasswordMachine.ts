@@ -12,6 +12,7 @@ import { type ForgotPasswordServices, createForgotPasswordActors } from './state
 interface Options {
     onPreSubmit: () => Promise<void>;
     onStartAuth: () => Promise<void>;
+    onSessionExpired: (listener: () => void) => () => void;
     onLogin: OnLoginCallback;
     productParam: ProductParam;
     setupVPN: boolean;
@@ -42,6 +43,7 @@ export const useForgotPasswordMachine = (options: Options) => {
                 await latestRef.current.onPreSubmit();
                 await latestRef.current.onStartAuth();
             },
+            onSessionExpired: (listener) => latestRef.current.onSessionExpired(listener),
             // "Keep me signed in" is always on for the session the reset signs in with
             getPersistent: () => true,
             getKtActivation,

@@ -170,6 +170,8 @@ interface Props {
     paths: Paths;
     onPreSubmit?: () => Promise<void>;
     onStartAuth: () => Promise<void>;
+    /** For the sign-in modal: subscribes to the unauthenticated session's expiry; returns the unsubscribe. */
+    onSessionExpired: (listener: () => void) => () => void;
     initialSessionsLength: boolean;
 }
 
@@ -186,6 +188,7 @@ const SingleSignupContainerV2 = ({
     clientType,
     onPreSubmit,
     onStartAuth,
+    onSessionExpired,
     initialSessionsLength,
 }: Props) => {
     const getKtActivation = useGetAccountKTActivation();
@@ -1394,6 +1397,7 @@ const SingleSignupContainerV2 = ({
                     productParam={productParam}
                     paths={paths}
                     onStartAuth={onStartAuth}
+                    onSessionExpired={onSessionExpired}
                     {...loginModalProps}
                     defaultUsername={loginModalDefaultUsername}
                     onLogin={async (props) => {

@@ -129,6 +129,11 @@ describe('performPasswordReset', () => {
             failure: 'a ban',
             error: apiError(API_CUSTOM_ERROR_CODES.NOT_ALLOWED, HTTP_ERROR_CODES.TOO_MANY_REQUESTS),
         },
+        // The session expired before the token was taken
+        {
+            failure: 'an expired session',
+            error: apiError(HTTP_ERROR_CODES.UNAUTHORIZED, HTTP_ERROR_CODES.UNAUTHORIZED),
+        },
         // Whether the token was taken is unknown: a retry tells
         { failure: 'a server error', error: apiError(API_CUSTOM_ERROR_CODES.INVALID_VALUE, 500) },
     ])('fails with any other error of the reset as it is ($failure)', async ({ error }) => {

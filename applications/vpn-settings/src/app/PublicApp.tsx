@@ -177,6 +177,7 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
                                         productParam={APPS.PROTONVPN_SETTINGS}
                                         onPreSubmit={handlePreSubmit}
                                         onStartAuth={handleStartAuth}
+                                        onSessionExpired={unauthenticatedApi.onSessionExpired}
                                         onLogin={async (data) => {
                                             handleLoginWithDefaultPath(data);
                                             return completeResult;
@@ -261,6 +262,7 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
                                         onPreSubmit={handlePreSubmit}
                                         paths={paths}
                                         onStartAuth={handleStartAuth}
+                                        onSessionExpired={unauthenticatedApi.onSessionExpired}
                                     />
                                 </Route>
                                 <Route path="*">

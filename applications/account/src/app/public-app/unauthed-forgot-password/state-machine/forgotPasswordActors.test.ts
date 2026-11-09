@@ -63,6 +63,7 @@ function makeServices() {
         prepareAttempt: jest.fn(async () => {
             calls.push('prepareAttempt');
         }),
+        onSessionExpired: jest.fn(() => () => {}),
         getPersistent: jest.fn(() => true),
         getKtActivation: jest.fn(async () => ktActivation),
         productParam: 'business' as const,

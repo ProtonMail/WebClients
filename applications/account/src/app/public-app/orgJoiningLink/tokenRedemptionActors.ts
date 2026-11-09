@@ -1,6 +1,6 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
 import { computeKeyPassword } from '@protontech/crypto/srp';
-import { fromPromise } from 'xstate';
+import { fromCallback, fromPromise } from 'xstate';
 
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { redeemToken, verifyCode } from '@proton/shared/lib/api/authLoginLink';
@@ -49,6 +49,10 @@ export const createTokenRedemptionActors = ({
     onStartAuth,
     login,
 }: TokenRedemptionServices) => ({
+    /** Tells the machine when the unauthenticated session expires, taking the code sent for it. */
+    watchSession: fromCallback(({ sendBack }) =>
+        unauthenticatedApi.onSessionExpired(() => sendBack({ type: 'session.expired' }))
+    ),
     /** Sends the code to the member's email. */
     redeemToken: fromPromise<void, { email: string; config: TokenRedemptionConfig | undefined }>(
         async ({ input: { email, config } }) => {

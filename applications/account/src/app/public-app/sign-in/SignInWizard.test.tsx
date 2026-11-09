@@ -168,6 +168,7 @@ const renderSignInOnSSO = ({
                 },
             }),
             prepareSignIn: fromPromise(() => Promise.resolve()),
+            watchSession: fromCallback(() => {}),
             createAuthState: fromPromise(() =>
                 Promise.resolve<CreatedAuth>({
                     auth: { ...auth, credentials: { ...auth.credentials, authResponse } } as SignInAuthState,
@@ -230,6 +231,7 @@ const renderPasswordSignIn = (
                 },
             }),
             prepareSignIn: fromPromise(() => Promise.resolve()),
+            watchSession: fromCallback(() => {}),
             passwordAccountFlow: passwordAccountStateMachine.provide({
                 // The real lost-2FA flow; its requests stay pending (see the verification mock above)
                 actors: {
@@ -444,6 +446,7 @@ describe('SignInWizard', () => {
                     },
                 }),
                 prepareSignIn: fromPromise(() => Promise.resolve()),
+                watchSession: fromCallback(() => {}),
                 // The next step is being prepared: the password step stays up, loading
                 createAuthState: fromPromise(createAuthState),
             },

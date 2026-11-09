@@ -54,6 +54,7 @@ function ForgotPasswordHarness() {
             onLogin={jest.fn()}
             onPreSubmit={() => Promise.resolve()}
             onStartAuth={() => Promise.resolve()}
+            onSessionExpired={() => () => {}}
             productParam="generic"
             setupVPN={false}
             toApp={undefined}

@@ -224,6 +224,11 @@ export const getResendSMSVerificationCodeText = (phoneNumber: ReactNode) => {
         .jt`${BRAND_NAME} will send a verification code to ${phoneNumber}. Standard message rates may apply.`;
 };
 
+/** Why a flow went back to its first step: its unauthenticated session expired. */
+export const getSessionExpiredMessage = () => {
+    return c('Error').t`The session has expired. Please try again.`;
+};
+
 /**
  * Get the correct settings href for each app
  * Pass has its own settings page, other apps use the account settings

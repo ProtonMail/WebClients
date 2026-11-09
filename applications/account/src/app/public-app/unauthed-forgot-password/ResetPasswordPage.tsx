@@ -32,6 +32,8 @@ interface Props {
     productParam: ProductParam;
     onPreSubmit: () => Promise<void>;
     onStartAuth: () => Promise<void>;
+    /** Subscribes to the unauthenticated session's expiry, after which an attempt starts over; returns the unsubscribe. */
+    onSessionExpired: (listener: () => void) => () => void;
     metaTags: MetaTags;
 }
 
@@ -87,6 +89,7 @@ export const ResetPasswordPage = ({
     loginUrl,
     onPreSubmit,
     onStartAuth,
+    onSessionExpired,
     onLogin,
     setupVPN,
     productParam,
@@ -102,6 +105,7 @@ export const ResetPasswordPage = ({
     const machine = useForgotPasswordMachine({
         onPreSubmit,
         onStartAuth,
+        onSessionExpired,
         onLogin,
         productParam,
         setupVPN,

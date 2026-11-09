@@ -49,6 +49,8 @@ interface UnauthedForgotPasswordMachineContext {
     apiErrorMessage: string | undefined;
     /** The last code was wrong; cleared once the user edits it or a new one is sent. */
     invalidCode: boolean;
+    /** The attempt started over because its session expired: the entry step says so until the user types or submits. */
+    sessionExpired: boolean;
 }
 
 /**
@@ -63,6 +65,7 @@ type UnauthedForgotPasswordMachineEvent =
     | { type: 'decision.yes' }
     /** The entry step: the account to recover, or a link that opened the page. */
     | { type: 'username.submitted'; payload: { username: string } }
+    | { type: 'username.edited' }
     | { type: 'username.prefilled'; payload: { username: string } }
     | { type: 'resetLink.opened'; payload: { username: string; token: string } }
     | { type: 'recoveryLink.opened'; payload: { username: string; mnemonic: string } }
@@ -76,7 +79,9 @@ type UnauthedForgotPasswordMachineEvent =
     | { type: 'newCode.dismissed' }
     | { type: 'phrase.submitted'; payload: { mnemonic: string } }
     | { type: 'password.submitted'; payload: { password: string } }
-    | { type: 'socialRecovery.started' };
+    | { type: 'socialRecovery.started' }
+    /** From `watchSession`: the unauthenticated session expired, taking the attempt's codes, proofs and sign-ins. */
+    | { type: 'session.expired' };
 
 export type UnauthedForgotPasswordMachineEmitted =
     /** A request failed in a way the step doesn't show itself; the page shows it. */
@@ -153,6 +158,7 @@ const forgotPasswordSetup = setup({
     },
     actors: {
         ...unprovidedActors<ForgotPasswordActors>({
+            watchSession: true,
             requestRecoveryMethods: true,
             validateResetLink: true,
             validateRecoveryLink: true,
@@ -213,6 +219,7 @@ const forgotPasswordSetup = setup({
             ownershipVerificationMethod: undefined,
             ownershipVerificationCode: '',
             resetResponse: undefined,
+            mnemonicData: undefined,
             delegatedAccessContacts: [],
             deviceRecoveryLevel: DeviceRecoveryLevel.NONE,
             invalidCode: false,
@@ -229,6 +236,8 @@ const forgotPasswordSetup = setup({
         /** Hands the error to the page to show. */
         reportError: emit((_, params: { error: unknown }) => ({ type: 'error' as const, error: params.error })),
         notifyCodeResent: emit({ type: 'code.resent' as const }),
+        showSessionExpired: assign({ sessionExpired: true }),
+        clearSessionExpired: assign({ sessionExpired: false }),
         /** After `errorOf(SignInAfterResetError)`: hands what failed to the page, to trace. */
         traceSignInFailure: emit((_, params: { error: unknown }) => ({
             type: 'signIn.failed' as const,
@@ -357,6 +366,13 @@ export const UnauthedForgotPasswordStateMachine = forgotPasswordSetup.createMach
         redactedRecoveryEmail: undefined,
         redactedRecoveryPhoneNumber: undefined,
         invalidCode: false,
+        sessionExpired: false,
+    },
+    invoke: { src: 'watchSession' },
+    on: {
+        // The attempt can't go on without what it did on the session, so it starts over, with the username, and the
+        // entry step says why
+        'session.expired': { target: '.entry', actions: 'showSessionExpired' },
     },
 
     states: {
@@ -374,10 +390,16 @@ export const UnauthedForgotPasswordStateMachine = forgotPasswordSetup.createMach
             states: {
                 idle: {
                     on: {
+                        // Nothing to start over
+                        'session.expired': {},
                         'username.submitted': {
                             target: 'requestingMethods',
-                            actions: { type: 'setUsername', params: ({ event }) => event.payload },
+                            actions: [
+                                { type: 'setUsername', params: ({ event }) => event.payload },
+                                'clearSessionExpired',
+                            ],
                         },
+                        'username.edited': { actions: 'clearSessionExpired' },
                         'username.prefilled': {
                             actions: { type: 'setUsername', params: ({ event }) => event.payload },
                         },
@@ -796,6 +818,8 @@ export const UnauthedForgotPasswordStateMachine = forgotPasswordSetup.createMach
                 },
                 resetting: {
                     tags: [UnauthedForgotPasswordStateMachineTags.submitting],
+                    // The password may be changed already, and the request goes on anyway: its outcome decides
+                    on: { 'session.expired': {} },
                     invoke: {
                         src: 'resetPassword',
                         input: ({ context, event }) => {
@@ -835,6 +859,7 @@ export const UnauthedForgotPasswordStateMachine = forgotPasswordSetup.createMach
                 /** The app takes the session and leaves the page; the form stays up, loading, meanwhile. */
                 signedIn: {
                     tags: [UnauthedForgotPasswordStateMachineTags.submitting],
+                    on: { 'session.expired': {} },
                 },
                 /**
                  * The password is changed, but signing in with it failed: the page leaves for the sign-in, and the
@@ -842,12 +867,14 @@ export const UnauthedForgotPasswordStateMachine = forgotPasswordSetup.createMach
                  */
                 passwordChanged: {
                     tags: [UnauthedForgotPasswordStateMachineTags.submitting],
+                    on: { 'session.expired': {} },
                 },
             },
         },
 
         recoveryFailed: {
             on: {
+                'session.expired': {},
                 'decision.back': [
                     {
                         // Ownership was proven in this attempt (`resetResponse` is cleared on entry), so this came from
@@ -865,6 +892,8 @@ export const UnauthedForgotPasswordStateMachine = forgotPasswordSetup.createMach
 
         recoveryMethodVerificationError: {
             on: {
+                // The API's reason is about the account, not the session
+                'session.expired': {},
                 'decision.back': {
                     target: '#forgotPassword.entry',
                     actions: 'clearApiErrorMessage',
@@ -905,6 +934,9 @@ export const selectResetWithDataLoss = ({ context }: ContextOnly) => context.res
 
 /** The last code was wrong. */
 export const selectInvalidCode = ({ context }: ContextOnly) => context.invalidCode;
+
+/** The attempt started over because its session expired; the entry step says so without marking the field. */
+export const selectSessionExpired = ({ context }: ContextOnly) => context.sessionExpired;
 
 /** A request runs; the step shows its loading state. */
 export const selectSubmitting = (snapshot: UnauthedForgotPasswordSnapshot) =>
