@@ -8,6 +8,7 @@ import Logo from '@proton/components/components/logo/Logo'
 import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/app-context/notifications/constants'
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer'
 import PrivateHeader from '@proton/components/containers/heading/PrivateHeader'
+import { OfferRenewNoticeProvider } from '@proton/payments-ui/ui/components/OfferRenewNoticeProvider'
 import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea'
 import ProtonSidebar from '@proton/components/components/sidebar/Sidebar'
 import SidebarList from '@proton/components/components/sidebar/SidebarList'
@@ -102,39 +103,41 @@ function Header({ isHeaderExpanded, toggleHeaderExpanded }: HeaderProps) {
 
   return (
     <div className="homepage-header shrink-0 items-center justify-center small:pe-[.625rem]">
-      <PrivateHeader
-        className={clsx('flex items-center small:!px-0', USER_DROPDOWN_OVERRIDES)}
-        app={APPS.PROTONDRIVE}
-        userDropdown={
-          <UserDropdown
-            app={APPS.PROTONDOCS}
-            reportDescriptionContext={getDocsReportContextLines({
-              appVersion: APP_VERSION,
-              clientType: CLIENT_TYPE,
-            })}
-          />
-        }
-        title={c('Title').t`Docs`}
-        expanded={isHeaderExpanded}
-        onToggleExpand={toggleHeaderExpanded}
-        isSmallViewport={viewportWidth['<=small']}
-        actionArea={
-          <>
-            <MobileSearch
-              className="mobile-search-hack small:!hidden"
-              value={searchValue}
-              onChange={(value) => setSearch(value, false)}
-              type={type}
+      <OfferRenewNoticeProvider>
+        <PrivateHeader
+          className={clsx('flex items-center small:!px-0', USER_DROPDOWN_OVERRIDES)}
+          app={APPS.PROTONDRIVE}
+          userDropdown={
+            <UserDropdown
+              app={APPS.PROTONDOCS}
+              reportDescriptionContext={getDocsReportContextLines({
+                appVersion: APP_VERSION,
+                clientType: CLIENT_TYPE,
+              })}
             />
-            <Search
-              className="!hidden ps-1 small:!flex"
-              value={searchValue}
-              onChange={(value) => setSearch(value, false)}
-              type={type}
-            />
-          </>
-        }
-      />
+          }
+          title={c('Title').t`Docs`}
+          expanded={isHeaderExpanded}
+          onToggleExpand={toggleHeaderExpanded}
+          isSmallViewport={viewportWidth['<=small']}
+          actionArea={
+            <>
+              <MobileSearch
+                className="mobile-search-hack small:!hidden"
+                value={searchValue}
+                onChange={(value) => setSearch(value, false)}
+                type={type}
+              />
+              <Search
+                className="!hidden ps-1 small:!flex"
+                value={searchValue}
+                onChange={(value) => setSearch(value, false)}
+                type={type}
+              />
+            </>
+          }
+        />
+      </OfferRenewNoticeProvider>
     </div>
   )
 }

@@ -5,12 +5,12 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import useLoading from '@proton/hooks/useLoading';
 import { usePaymentsApiWithCheckFallback } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
-import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments-ui/ui/components/RenewalNotice';
 import type { Currency } from '@proton/payments/core/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 
 import { fetchDealPrices } from '../helpers/dealPrices';
 import type { Offer, OfferConfig } from '../interface';
+import { useOfferRenewNotice } from '../offerRenewNoticeContext';
 
 interface Props {
     offerConfig: OfferConfig | undefined;
@@ -30,6 +30,7 @@ function useFetchOffer({ offerConfig, currency, onSuccess, onError }: Props) {
     const plansMap = plans ? getPlansMap(plans, currency, false) : {};
     const [hasEstimationError, setHasEstimationError] = useState(false);
     const [initialized, setInitialized] = useState(false);
+    const getOfferRenewNotice = useOfferRenewNotice();
 
     useEffect(() => {
         if (!offerConfig || !plans) {
@@ -50,13 +51,13 @@ function useFetchOffer({ offerConfig, currency, onSuccess, onError }: Props) {
                     ...offerConfig,
                     deals: offerConfig.deals.map((deal, index) => {
                         const [withCoupon, withoutCoupon, withoutCouponMonthly] = result[index];
-                        const renew = getCheckoutRenewNoticeTextFromCheckResult({
+                        const renew = getOfferRenewNotice?.({
                             checkResult: withCoupon,
                             planIDs: deal.planIDs,
                             subscription,
                             plansMap,
                             app: APP_NAME,
-                        }) as string;
+                        });
 
                         // In long-term, we might encounter 2 types of errors: recoverable and non-recoverable.
                         // Recoverable errors are treated in the frontend payments network layer, they don't throw an
