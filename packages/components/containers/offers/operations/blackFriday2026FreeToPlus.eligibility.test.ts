@@ -1,6 +1,7 @@
 import { getUnixTime, subHours } from 'date-fns';
 
 import { PLANS } from '@proton/payments/core/constants';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 import {
@@ -116,6 +117,15 @@ describe.each(offers)('blackFriday2026 $name eligibility', ({ getIsEligible, off
                 })
             ).toBe(false);
         });
+
+        it.each([{ 'pass-lifetime': true }, { 'pass-from-sl': true }])(
+            'is not eligible for a user with flags %o',
+            (Flags) => {
+                expect(
+                    getIsEligible({ ...baseProps, protonConfig, user: { ...freeUser, Flags } as unknown as UserModel })
+                ).toBe(false);
+            }
+        );
 
         it('is not eligible with an ineligible currency', () => {
             expect(getIsEligible({ ...baseProps, protonConfig, preferredCurrency: ineligibleCurrency })).toBe(false);
