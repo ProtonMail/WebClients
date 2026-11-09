@@ -276,6 +276,69 @@
       ],
       "VPN session details": [
         "Dettagli della sessione VPN"
+      ],
+      "Active sessions": [
+        "Sessioni attive"
+      ],
+      "Allow list": [
+        "Elenco autorizzati"
+      ],
+      "Automatically delete data": [
+        "Elimina i dati automaticamente"
+      ],
+      "Connection events": [
+        "Eventi di connessione"
+      ],
+      "Dark mode": [
+        "Tema scuro"
+      ],
+      "Enable or disable apps for members": [
+        "Attiva o disattiva applicazioni per i membri"
+      ],
+      "Encryption backup file": [
+        "File di backup della crittografia"
+      ],
+      "Group invitations": [
+        "Inviti al gruppo"
+      ],
+      "IMAP and SMTP": [
+        "IMAP e SMTP"
+      ],
+      "Light mode": [
+        "Tema chiaro"
+      ],
+      "Mnemonic": [
+        "Mnemonico"
+      ],
+      "Password reminder": [
+        "Promemoria password"
+      ],
+      "Permanently delete data": [
+        "Elimina i dati definitivamente"
+      ],
+      "Privacy services": [
+        "Servizi per la privacy"
+      ],
+      "Scan QR code": [
+        "Scansiona codice QR"
+      ],
+      "Server access policy": [
+        "Politica di accesso al server"
+      ],
+      "Sign out other devices": [
+        "Esci dagli altri dispositivi"
+      ],
+      "Stop subscription renewal": [
+        "Interrompi il rinnovo dell'abbonamento"
+      ],
+      "Storage usage": [
+        "Utilizzo dello spazio di archiviazione"
+      ],
+      "Vacation responder": [
+        "Risponditore automatico"
+      ],
+      "Video conferencing": [
+        "Videoconferenza"
       ]
     },
     "Accounts": {
@@ -2266,6 +2329,9 @@
       ],
       "Special Offer": [
         "Offerta speciale"
+      ],
+      "Sign in to a different account": [
+        "Accedi a un altro account"
       ]
     },
     "action": {
@@ -8077,6 +8143,9 @@
       ],
       "You can update a public link for your own files only": [
         "Puoi aggiornare un link pubblico solo per i tuoi file."
+      ],
+      "Organization does not have enough storage available": [
+        "L'organizzazione non dispone di spazio di archiviazione sufficiente"
       ]
     },
     "error": {
@@ -14231,6 +14300,15 @@
       ],
       "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
         "Stai per accedere al tuo Account ${ BRAND_NAME } con questo indirizzo:"
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "Attivando questa opzione, potrai accedere solo con il tuo nome utente originale **${ username }**, da solo o come **${ firstEmail }**."
+      ],
+      "Secure and end-to-end encrypted": [
+        "Sicuro e con crittografia end-to-end"
+      ],
+      "Your free plan includes one connected account. Upgrade to connect more.": [
+        "Il tuo piano gratuito include un account connesso. Aggiorna il tuo piano per connetterne di più."
       ]
     },
     "info": {
@@ -25480,6 +25558,12 @@
       ],
       "Migration status": [
         "Stato della migrazione"
+      ],
+      "Activated": [
+        "Attivato"
+      ],
+      "User": [
+        "Utente"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -27821,6 +27905,18 @@
       ],
       "Your groups": [
         "I tuoi gruppi"
+      ],
+      "Configure migration": [
+        "Configura la migrazione"
+      ],
+      "Manage managers": [
+        "Gestisci i manager"
+      ],
+      "Select users to migrate": [
+        "Seleziona gli utenti da migrare"
+      ],
+      "You need a ${ BRAND_NAME } address": [
+        "Hai bisogno di un indirizzo ${ BRAND_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27910,6 +28006,9 @@
       ],
       "Last app activity": [
         "Ultima attività dell'app"
+      ],
+      "Last connection": [
+        "Ultima connessione"
       ]
     },
     "Title subscription": {
@@ -29495,6 +29594,15 @@
       ],
       "Pending": [
         "In attesa"
+      ],
+      "Errors": [
+        "Errori"
+      ],
+      "Migrated": [
+        "Migrato"
+      ],
+      "Not activated": [
+        "Non attivato"
       ]
     },
     "Gateway monitor upsell": {
@@ -29515,6 +29623,15 @@
       ],
       "User - ${ userPrice }": [
         "Utente - ${ userPrice }"
+      ],
+      "Dedicated server - ${ serverPrice }": [
+        "Server dedicato - ${ serverPrice }"
+      ],
+      "Get real-time connection insights, monitor suspicious activity and export data to SIEM tools for your private gateways": [
+        "Ottieni informazioni in tempo reale sulle connessioni, monitora attività sospette ed esporta i dati verso gli strumenti SIEM per i tuoi gateway privati"
+      ],
+      "Real-time connection insights": [
+        "Informazioni in tempo reale sulle connessioni"
       ]
     },
     "Members table usage": {
@@ -29532,6 +29649,15 @@
       ],
       "Yesterday, ${ time }": [
         "Ieri, ${ time }"
+      ],
+      "Gateway Monitor is off": [
+        "Il monitoraggio dei gateway è disabilitato"
+      ],
+      "Today": [
+        "Oggi"
+      ],
+      "Turn it on to track when and where users connect.": [
+        "Attivalo per tracciare quando e dove gli utenti si connettono."
       ]
     },
     "Payment method": {
