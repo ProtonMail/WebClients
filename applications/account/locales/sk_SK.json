@@ -2326,6 +2326,30 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Add payment method": [
+        "Pridať spôsob platby"
+      ],
+      "Cancel trial": [
+        "Zrušiť skúšobné obdobie"
+      ],
+      "Create account": [
+        "Vytvoriť účet"
+      ],
+      "Don't show this offer again": [
+        "Túto ponuku už nezobrazovať"
+      ],
+      "Go to folder": [
+        "Prejsť do priečinka"
+      ],
+      "Restrict sign-in": [
+        "Obmedziť prihlásenie"
+      ],
+      "Sign in to a different account": [
+        "Prihlásiť sa do iného konta"
+      ],
+      "Special Offer": [
+        "Špeciálna ponuka"
       ]
     },
     "action": {
@@ -9840,6 +9864,12 @@
       ],
       "Username": [
         "Používateľské meno"
+      ],
+      "Billing details": [
+        "Fakturačné údaje"
+      ],
+      "Plan details": [
+        "Podrobnosti plánu"
       ]
     },
     "Header for addresses table": {
@@ -14757,6 +14787,57 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou **${ primaryEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pod svojím pôvodným používateľským menom **${ username }** – buď samostatne, alebo v tvare **${ firstEmail }**, **@${ secondDomain }** alebo **@${ thirdDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pod svojím pôvodným používateľským menom **${ username }** – buď samostatne, alebo v kombinácii s **${ firstEmail }** alebo **@${ secondDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pod svojím pôvodným používateľským menom **${ username }** – buď samostatne, alebo v tvare **${ firstEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou vášho používateľského mena **${ username }**."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zľavy sa vzťahujú na štandardné mesačné ceny. Vaše predplatné sa po skončení fakturačného cyklu obnoví za štandardnú ročnú sadzbu."
+      ],
+      "If disabled, organization members won't be able to add 2FA codes to their items, and existing ones won't be generated or autofilled. Nothing is deleted.": [
+        "Ak bude táto funkcia deaktivovaná, členovia organizácie nebudú môcť pridávať 2FA kódy k svojim položkám a existujúce kódy sa nebudú generovať ani automaticky vypĺňať. Nič sa nevymaže."
+      ],
+      "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
+        "Ak bude táto funkcia vypnutá, členovia organizácie nebudú môcť ukladať prístupové kľúče v ${ PASS_APP_NAME } ani sa pomocou nich prihlasovať. Žiadne údaje sa nevymažú."
+      ],
+      "Signup link no longer valid": [
+        "Odkaz na registráciu už nie je platný"
+      ],
+      "This signup link has expired, been revoked or already been used. Please contact your ${ BRAND_NAME } representative for a new one.": [
+        "Platnosť tohto registračného odkazu vypršala, bol zrušený alebo už bol použitý. Ak potrebujete nový odkaz, obráťte sa na zástupcu ${ BRAND_NAME }."
+      ],
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Ak je prihlásenie obmedzené, na prihlásenie je možné použiť iba váš email **${ primaryEmail }**. Vaše ostatné adresy nie je možné prepojiť s vaším účtom, ani keby ich niekto poznal."
+      ],
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Ak je prihlásenie obmedzené, na prihlásenie je možné použiť iba vaše používateľské meno **${ username }**. Vaše ostatné adresy nie je možné prepojiť s vaším účtom, ani keby ich niekto poznal."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho pôvodného používateľského mena **${ username }**, a to buď samostatne, alebo v tvare **${ firstEmail }**, **@${ secondDomain }** alebo **@${ thirdDomain }**. Ostatné emailové adresy nebudú na prihlásenie fungovať."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho pôvodného používateľského mena **${ username }** – buď samostatne, alebo v kombinácii s **${ firstEmail }** alebo **@${ secondDomain }**. Vaše ostatné emailové adresy nebudú na prihlásenie fungovať."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho pôvodného používateľského mena **${ username }** – buď samostatne, alebo v kombinácii s **${ firstEmail }**. Vaše ostatné emailové adresy nebudú na prihlásenie fungovať."
+      ],
+      "Your free plan includes one connected account. Upgrade to connect more.": [
+        "Váš bezplatný plán zahŕňa jeden prepojený účet. Zvýšte úroveň predplatného, ak chcete prepojiť viac účtov."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Vaše ostatné emailové adresy nebudú fungovať na prihlásenie, kým túto funkciu nevypnete."
       ]
     },
     "info": {
@@ -17157,6 +17238,42 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Account credit": [
+        "Kredit na konte"
+      ],
+      "Allow storing 2FA codes": [
+        "Povoliť ukladanie 2FA kódov"
+      ],
+      "Allow storing passkeys": [
+        "Povoliť ukladanie prístupových kľúčov"
+      ],
+      "Billing contact": [
+        "Fakturačný kontakt"
+      ],
+      "Custom email domains": [
+        "Vlastné emailové domény"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikované VPN servery"
+      ],
+      "Invoice email": [
+        "Fakturačný email"
+      ],
+      "Organization size": [
+        "Veľkosť organizácie"
+      ],
+      "Payment terms": [
+        "Platobné podmienky"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Obmedziť prihlásenie na používateľské meno a adresy zodpovedajúce ${ BRAND_NAME }"
+      ],
+      "Taxable": [
+        "Zdaniteľné"
+      ],
+      "VAT number": [
+        "DIČ/IČ DPH"
       ]
     },
     "label": {
@@ -17594,6 +17711,9 @@
       ],
       "What’s this?": [
         "Čo je to?"
+      ],
+      "terms and conditions": [
+        "zmluvnými podmienkami používania"
       ]
     },
     "Link (Scribe)": {
@@ -20150,6 +20270,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Vaše plné ${ planTitle } predplatné začína dňa ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Zmenili ste názor po skončení skúšobnej doby?** Ak zrušíte predplatné do 30 dní od prvej platby, vrátime vám peniaze za nevyčerpanú dobu."
       ]
     },
     "Option": {
@@ -25302,6 +25425,12 @@
       ],
       "Total due today": [
         "Celková suma splatná dnes"
+      ],
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "Zľava ${ planDiscountItem.discountPercent }% bola uplatnená"
+      ],
+      "${ planDiscountItem.discountPercent }% off": [
+        "${ planDiscountItem.discountPercent }% zľava"
       ]
     },
     "Subscription attribute": {
@@ -28708,6 +28837,18 @@
       ],
       "Your subscriptions": [
         "Vaše predplatné"
+      ],
+      "Payment": [
+        "Platba"
+      ],
+      "Restrict sign-in?": [
+        "Obmedziť prihlásenie?"
+      ],
+      "Tax": [
+        "Daň"
+      ],
+      "Your groups": [
+        "Vaše skupiny"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -30484,6 +30625,25 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročne, ${ untilString }"
+      ]
+    },
+    "Payment method": {
+      "Bank transfer": [
+        "Bankový prevod"
+      ],
+      "Credit card": [
+        "Platobná karta"
+      ]
+    },
+    "Payment terms": {
+      "${ days } day": [
+        "${ days } deň",
+        "${ days } dni",
+        "${ days } dní",
+        "${ days } dní"
+      ],
+      "Due on receipt": [
+        "Platné po doručení"
       ]
     }
   }

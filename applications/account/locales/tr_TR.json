@@ -2326,6 +2326,30 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Add payment method": [
+        "Ödeme yöntemi ekle"
+      ],
+      "Cancel trial": [
+        "Denemeyi iptal et"
+      ],
+      "Create account": [
+        "Hesap aç"
+      ],
+      "Don't show this offer again": [
+        "Bu teklif bir daha görüntülenmesin"
+      ],
+      "Go to folder": [
+        "Klasöre git"
+      ],
+      "Restrict sign-in": [
+        "Oturum açma kısıtlansın"
+      ],
+      "Sign in to a different account": [
+        "Başka bir hesapta oturum aç"
+      ],
+      "Special Offer": [
+        "Özel teklif"
       ]
     },
     "action": {
@@ -14463,6 +14487,51 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "Bu seçeneği açtığınızda, yalnızca **${ primaryEmail }** adresiyle oturum açabilirsiniz."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "Bu seçeneği açtığınızda, yalnızca özgün kullanıcı adınız olan **${ username }** ile oturum açabilirsiniz. Bu tek başına ya da **${ firstEmail }**, **@${ secondDomain }** veya **@${ thirdDomain }** biçiminde olabilir."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "Bu seçeneği açtığınızda, yalnızca özgün kullanıcı adınız **${ username }** ile oturum açabileceksiniz. Bu tek başına **${ firstEmail }** şeklinde veya **@${ secondDomain }** şeklinde olabilir."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "Bu seçeneği açtığınızda, yalnızca özgün kullanıcı adınız **${ username }** ile tek başına ya da **${ firstEmail }** şeklinde oturum açabileceksiniz."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "Bu seçeneği açtığınızda, yalnızca **${ username }** kullanıcı adınızla oturum açabileceksiniz."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret ile yenilenir."
+      ],
+      "If disabled, organization members won't be able to add 2FA codes to their items, and existing ones won't be generated or autofilled. Nothing is deleted.": [
+        "Kapatıldığında, kuruluş üyeleri ögelerine iki adımlı doğrulama kodları ekleyemez ve var olanlar oluşturulmaz veya otomatik olarak doldurulmaz. Hiçbir şey silinmedi."
+      ],
+      "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
+        "Kapatıldığında, kuruluş üyeleri geçiş anahtarlarını ${ PASS_APP_NAME } içine kaydedemez veya onlarla oturum açamaz. Hiçbir şey silinmedi."
+      ],
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Oturum açma kısıtlandığında, oturum açmak için yalnızca **${ primaryEmail }** e-posta adresiniz kullanılabilir. Diğer adresleriniz, biri bunları biliyor olsa bile hesabınız ile ilişkilendirilemez."
+      ],
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Oturum açma kısıtlandığında, oturum açmak için yalnızca **${ username }** kullanıcı adınız kullanılabilir. Diğer adresleriniz biri bunları biliyor olsa bile hesabınız ile ilişkilendirilemez."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Oturum açma kısıtlandığında, yalnızca özgün kullanıcı adınız olan **${ username }** ile oturum açabilirsiniz. Bunu tek başına ya da **${ firstEmail }**, **@${ secondDomain }** veya **@${ thirdDomain }** biçiminde kullanabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Oturum açma kısıtlandığında yalnızca özgün kullanıcı adınız **${ username }** ile oturum açabilirsiniz. Bunu tek başına **${ firstEmail }** şeklinde veya **@${ secondDomain }** şeklinde kullanabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Oturum açma kısıtlandığında, yalnızca özgün kullanıcı adınız **${ username }** ile tek başına ya da **${ firstEmail }** biçiminde oturum açabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
+      ],
+      "Your free plan includes one connected account. Upgrade to connect more.": [
+        "Ücretsiz tarifenizde bir adet bağlı hesap bulunur. Daha fazla hesap bağlamak için tarifenizi yükseltin."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Bu özelliği kapatana kadar diğer e-posta adreslerinizle oturum açamazsınız."
       ]
     },
     "info": {
@@ -16872,6 +16941,15 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Allow storing 2FA codes": [
+        "İki adımlı doğrulama kodları kaydedilebilsin"
+      ],
+      "Allow storing passkeys": [
+        "Geçiş anahtarları kaydedilebilsin"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Oturum açma işlemini kullanıcı adı ve eşleşen ${ BRAND_NAME } adresleri ile kısıtlayın"
       ]
     },
     "label": {
@@ -17307,6 +17385,9 @@
       ],
       "What’s this?": [
         "Bu nedir?"
+      ],
+      "terms and conditions": [
+        "hüküm ve koşullar"
       ]
     },
     "Link (Scribe)": {
@@ -19761,6 +19842,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Tam ${ planTitle } aboneliğiniz ${ boldEndDate } tarihinde başlayacak."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Denedikten sonra fikrinizi değiştirdiniz mi? ** İlk ödemenizden sonraki 30 gün içinde iptal edebilirsiniz. Kullanılmayan süreyi geri öderiz."
       ]
     },
     "Option": {
@@ -24774,6 +24858,12 @@
       ],
       "Total due today": [
         "Bugün ödenecek toplam tutar"
+      ],
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "%${ planDiscountItem.discountPercent } indirim uygulandı"
+      ],
+      "${ planDiscountItem.discountPercent }% off": [
+        "%${ planDiscountItem.discountPercent } indirim"
       ]
     },
     "Subscription attribute": {
@@ -28105,6 +28195,9 @@
       ],
       "Your subscriptions": [
         "Abonelikleriniz"
+      ],
+      "Restrict sign-in?": [
+        "Oturum açma kısıtlansın mı?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

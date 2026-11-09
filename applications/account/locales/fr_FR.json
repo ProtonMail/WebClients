@@ -2119,6 +2119,30 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Add payment method": [
+        "Ajouter un moyen de paiement"
+      ],
+      "Cancel trial": [
+        "Annuler la version d'essai"
+      ],
+      "Create account": [
+        "Créer un compte"
+      ],
+      "Don't show this offer again": [
+        "Ne plus afficher cette offre"
+      ],
+      "Go to folder": [
+        "Aller au dossier"
+      ],
+      "Restrict sign-in": [
+        "Limiter la connexion"
+      ],
+      "Sign in to a different account": [
+        "Se connecter à un autre compte"
+      ],
+      "Special Offer": [
+        "Offre spéciale"
       ]
     },
     "action": {
@@ -13808,6 +13832,48 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "En activant cette option, vous ne pourrez vous connecter qu'avec **${ primaryEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "En activant cette option, vous ne pourrez vous connecter qu'avec votre nom d'utilisateur d'origine **${ username }**, soit tel quel, soit sous la forme **${ firstEmail }**, **@${ secondDomain }** ou **@${ thirdDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "En activant cette option, vous ne pourrez vous connecter qu'avec votre nom d'utilisateur d'origine **${ username }**, soit tel quel, soit sous la forme **${ firstEmail }**, ou **@ ${ secondDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "En activant cette option, vous ne pourrez vous connecter qu'avec votre nom d'utilisateur d'origine **${ username }**, soit tel quel, soit sous la forme **${ firstEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "En activant cette option, vous ne pourrez vous connecter qu'avec votre nom d’utilisateur **${ username }**."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+      ],
+      "Today": [
+        "Aujourd’hui"
+      ],
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Lorsque la connexion est restreinte, seule votre adresse e-mail **${ primaryEmail }** peut être utilisée pour vous connecter. Vos autres adresses ne peuvent pas être associées à votre compte, même si quelqu'un les connaît."
+      ],
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Lorsque la connexion est restreinte, seul votre nom d’utilisateur **${ username }** peut être utilisée pour vous connecter. Vos autres adresses ne peuvent pas être associées à votre compte, même si quelqu'un les connaît."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Lorsque la connexion est limitée, vous ne pouvez vous connecter qu'avec votre nom d'utilisateur d'origine **${ username }**, soit tel quel, soit sous la forme **${ firstEmail }**, **@${ secondDomain }** ou **@${ thirdDomain }**. Vos autres adresses e-mail ne fonctionneront pas pour vous connecter."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Lorsque la connexion est limitée, vous ne pouvez vous connecter qu'avec votre nom d'utilisateur d'origine **${ username }**, soit tel quel, soit sous la forme **${ firstEmail }**, soit **@${ secondDomain }**. Vos autres adresses e-mail ne fonctionneront pas pour vous connecter."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Lorsque la connexion est limitée, vous ne pouvez vous connecter qu'avec votre nom d'utilisateur d'origine **${ username }**, soit tel quel, soit sous la forme **${ firstEmail }**. Vos autres adresses e-mail ne fonctionneront pas pour vous connecter."
+      ],
+      "Your free plan includes one connected account. Upgrade to connect more.": [
+        "Votre abonnement gratuit comprend un compte connecté. Changer d'abonnement pour en connecter davantage."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Vos autres adresses e-mail ne fonctionneront pas pour vous connecter tant que vous n'aurez pas désactivé cette option."
       ]
     },
     "info": {
@@ -16182,6 +16248,15 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Allow storing 2FA codes": [
+        "Autoriser l'enregistrement des codes A2F"
+      ],
+      "Allow storing passkeys": [
+        "Autoriser l'enregistrement des clés d'accès"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Limiter la connexion aux noms d'utilisateur et aux adresses correspondant à ${ BRAND_NAME }"
       ]
     },
     "label": {
@@ -16608,6 +16683,12 @@
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
+      ],
+      "Pay it": [
+        "Payer avec"
+      ],
+      "terms and conditions": [
+        "conditions générales d'utilisation"
       ]
     },
     "Link (Scribe)": {
@@ -19044,6 +19125,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Votre abonnement complet ${ planTitle } commence le ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Vous avez changé d'avis après la période d'essai ?** Résiliez votre abonnement dans les 30 jours suivant votre premier paiement et nous vous rembourserons la période non utilisée."
       ]
     },
     "Option": {
@@ -20288,6 +20372,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Le changement de plan est incompatible pour les raisons suivantes :"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Le nombre de places Proton Meet doit correspondre au nombre de membres."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "La souscription ne peut aboutir pour le moment. Merci de réessayer ultérieurement."
       ]
     },
     "Payments.Error": {
@@ -23904,6 +23997,12 @@
       ],
       "Total due today": [
         "Total à payer aujourd'hui"
+      ],
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "${ planDiscountItem.discountPercent } % de réduction appliquée"
+      ],
+      "${ planDiscountItem.discountPercent }% off": [
+        "${ planDiscountItem.discountPercent } % de réduction"
       ]
     },
     "Subscription attribute": {
@@ -27133,6 +27232,9 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "Restrict sign-in?": [
+        "Limiter la connexion ?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

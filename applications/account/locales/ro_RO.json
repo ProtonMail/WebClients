@@ -2326,6 +2326,30 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Add payment method": [
+        "Adăugare metodă de plată"
+      ],
+      "Cancel trial": [
+        "Anulare perioadă de probare"
+      ],
+      "Create account": [
+        "Creare cont"
+      ],
+      "Don't show this offer again": [
+        "Nu mai afișa această ofertă"
+      ],
+      "Go to folder": [
+        "Accesare folder"
+      ],
+      "Restrict sign-in": [
+        "Restricționare autentificare"
+      ],
+      "Sign in to a different account": [
+        "Conecta la alt cont"
+      ],
+      "Special Offer": [
+        "Ofertă specială"
       ]
     },
     "action": {
@@ -14611,6 +14635,51 @@
       ],
       "Zoom meeting": [
         "o conferință pe Zoom"
+      ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "Activând această opțiune, vă veți putea autentifica doar cu **${ primaryEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "Activând această opțiune, vă veți putea autentifica doar folosind numele de utilizator inițial **${ username }** — fie ca atare, fie sub forma **${ firstEmail }**, **@${ secondDomain }** sau **@${ thirdDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "Prin activarea acestei opțiuni, vă veți putea autentifica doar folosind numele de utilizator inițial **${ username }** – fie ca atare, fie sub forma **${ firstEmail }** sau **@${ secondDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "Prin activarea acestei opțiuni, vă veți putea autentifica doar folosind numele de utilizator inițial **${ username }** — fie ca atare, fie sub forma **${ firstEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "Activând această opțiune, vă veți putea autentifica doar folosind numele de utilizator **${ username }**."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Reducerile se bazează pe prețurile lunare standard. Abonamentul se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+      ],
+      "If disabled, organization members won't be able to add 2FA codes to their items, and existing ones won't be generated or autofilled. Nothing is deleted.": [
+        "Dacă este dezactivată, membrii organizației nu vor putea adăuga coduri de A2F la articolele lor, iar cele existente nu vor mai fi generate și nici completate automat. Nu se șterge nimic."
+      ],
+      "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
+        "Dacă este dezactivată, membrii organizației nu vor putea salva chei de acces în ${ PASS_APP_NAME } și nici nu se vor putea autentifica folosindu-le. Nu se șterge nimic."
+      ],
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Atunci când autentificarea este restricționată, doar adresa de e-mail **${ primaryEmail }** poate fi utilizată pentru a vă autentifica. Celelalte adrese deținute nu vă pot fi asociate contului, chiar dacă cineva le cunoaște."
+      ],
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Atunci când autentificarea este restricționată, doar numele de utilizator **${ username }** poate fi utilizat pentru a vă autentifica. Celelalte adrese deținute nu mai pot fi asociate cu contul, chiar dacă cineva le cunoaște."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Atunci când autentificarea este restricționată, vă puteți autentifica doar folosind numele de utilizator inițial **${ username }** – fie ca atare, fie sub forma **${ firstEmail }**, **@${ secondDomain }** sau **@${ thirdDomain }**. Celelalte adrese de e-mail deținute nu vor funcționa pentru autentificare."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Atunci când autentificarea este restricționată, vă poți autentifica doar folosind numele de utilizator inițial **${ username }** – fie ca atare, fie sub forma **${ firstEmail }** sau **@${ secondDomain }**. Celelalte adrese de e-mail deținute nu vor funcționa pentru autentificare."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Atunci când autentificarea este restricționată, vă puteți autentifica doar folosind numele de utilizator inițial **${ username }** – fie ca atare, fie sub forma **${ firstEmail }**. Celelalte adrese de e-mail deținute nu vor funcționa pentru autentificare."
+      ],
+      "Your free plan includes one connected account. Upgrade to connect more.": [
+        "Planul gratuit deținut include un cont conectat. Treceți la un plan superior pentru a conecta mai multe."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Celelalte adrese de e-mail pe care le dețineți nu vor funcționa pentru autentificare până când nu dezactivați acest lucru."
       ]
     },
     "info": {
@@ -17029,6 +17098,15 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Allow storing 2FA codes": [
+        "Permitere stocare coduri A2F"
+      ],
+      "Allow storing passkeys": [
+        "Permitere stocare chei de securitate"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Restricționează autentificarea la numele de utilizator și la adresele ${ BRAND_NAME } corespondente"
       ]
     },
     "label": {
@@ -17465,6 +17543,9 @@
       ],
       "What’s this?": [
         "Ce este asta?"
+      ],
+      "terms and conditions": [
+        "termenii și condițiile"
       ]
     },
     "Link (Scribe)": {
@@ -19970,6 +20051,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Abonamentul complet ${ planTitle } începe la ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**V-ați răzgândit după perioada de probare?** Anulați în termen de 30 de zile de la prima plată, iar noi vă vom rambursa contravaloarea perioadei neutilizate."
       ]
     },
     "Option": {
@@ -25062,6 +25146,12 @@
       ],
       "Total due today": [
         "Total de plată astăzi"
+      ],
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "Reducere de ${ planDiscountItem.discountPercent } % aplicată"
+      ],
+      "${ planDiscountItem.discountPercent }% off": [
+        "Reducere ${ planDiscountItem.discountPercent } %"
       ]
     },
     "Subscription attribute": {
@@ -28435,6 +28525,9 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "Restrict sign-in?": [
+        "Restricționați autentificarea?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

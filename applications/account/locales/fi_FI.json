@@ -810,7 +810,7 @@
         "Syötä koodi"
       ],
       "Explore ${ target }": [
-        "Tutustu ${ target }:ään"
+        "Tutustu: ${ target }"
       ],
       "Explore business plans": [
         "Tutustu yritystilauksiin"
@@ -1948,6 +1948,9 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Invoice options": [
+        "Laskuasetukset"
       ]
     },
     "action": {
@@ -2728,7 +2731,7 @@
         "Ottakaa selvää, miten voitte poistaa kuvia Google Kuvista ja käyttää sen sijaan yksityistä pilvitallennussovellusta."
       ],
       "Get a clean inbox with filters": [
-        "Saa siisti postilaatikko suodattimilla"
+        "Siistimpi postilaatikko suodattimilla"
       ],
       "Get enough storage for over 40,000 photos.": [
         "Saa riittävästi tallennustilaa yli 40 000 kuvalle."
@@ -2752,10 +2755,10 @@
         "Miten viedä salasanat Chromesta"
       ],
       "How to get a custom email domain": [
-        "Miten hankkia mukautettu sähköpostin verkkotunnus"
+        "Näin hankitaan mukautettu sähköpostin verkkotunnus"
       ],
       "How to get to inbox zero: Privacy-first inbox organization tips": [
-        "Miten saavuttaa tyhjä saapuneet-kansio: Yksityisyys edellä tehtävän järjestämisen vinkit"
+        "Tavoitteena tyhjä saapuneet-kansio: vinkit organisointiin yksityisyys edellä"
       ],
       "How to prevent data breaches in your business": [
         "Miten estää tietomurrot yrityksessänne"
@@ -2908,7 +2911,7 @@
         "Mikä on päästä päähän -salaus ja miten se toimii?"
       ],
       "What to do if your data is leaked in a data breach": [
-        "Miten toimia, jos tietonne vuotavat tietomurrossa"
+        "Näin toimit tietojen vuodettua tietomurrossa"
       ],
       "Which VPN protocol is the best?": [
         "Mikä VPN-protokolla on paras?"
@@ -4906,7 +4909,7 @@
         "Estä Googlen mahdollisuus profiloida sinua. Gmail ei näe, mitä teet ${ MAIL_APP_NAME }-palvelussa"
       ],
       "Bring over your email, calendar events, and contacts from another provider.": [
-        "Tuo sähköpostinne, kalenteritapahtumanne ja yhteystietonne toiselta palveluntarjoajalta."
+        "Tuo sähköpostit, kalenteritapahtumat ja yhteystiedot toiselta palveluntarjoajalta."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Rakenna luottamusta ja brändin tunnettuutta ammattimaisilla sähköpostiosoitteilla omassa verkkotunnuksessasi."
@@ -7717,7 +7720,7 @@
         "Määritä perheryhmä"
       ],
       "Show all (${ invites.length })": [
-        "Näyt kaikki ${ invites.length }"
+        "Näytä kaikki ${ invites.length }"
       ],
       "Show less": [
         "Näytä vähemmän"
@@ -8813,7 +8816,7 @@
         "Maksat tällä hetkellä"
       ],
       "Your plan": [
-        "Sinun tilauksesi"
+        "Tilauksesi"
       ]
     },
     "Hint": {
@@ -9994,7 +9997,7 @@
         "Keskitä"
       ],
       "Changes to your default language and time are reflected on the web. To change the default for mobile apps, go to the settings on your device.": [
-        "Muutokset oletuskieleesi ja aikaan koskevat verkkosovelluksia. Muuttaaksesi mobiilisovelluksten oletuksia, avaa asetukset laitteellasi."
+        "Valitse verkkosovelluksissa käytettävä kieli ja aika. Mobiilisovellusten asetuksia vaihdetaan laitteella."
       ],
       "Check if your recovery phrase can be used to fully recover your account.": [
         "Tarkista, voidaanko palautuslauseesi avulla palauttaa tilisi kokonaan."
@@ -12513,7 +12516,7 @@
         "Olet kirjautunut tunnuksella ${ memberAddress }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
-        "Käytät enemmän tallennustilaa kuin ${ downgradedPlanName }-tilaus sisältyy. Sinun on poistettava tietoja tilauksesi alentamiseksi."
+        "Käytät enemmän tallennustilaa kuin ${ downgradedPlanName }-tilaukseen sisältyy. Sinun on poistettava sisältöä tilauksesi alentamiseksi."
       ],
       "You can add your own custom domain to ${ MAIL_APP_NAME }": [
         "Voit lisätä oman verkkotunnuksesi sinun ${ MAIL_APP_NAME }"
@@ -12888,6 +12891,9 @@
       ],
       "Zoom meeting": [
         "Zoom-kokousta"
+      ],
+      "You": [
+        "Sinä"
       ]
     },
     "info": {
@@ -15157,6 +15163,12 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Item": [
+        "Kohde"
+      ],
+      "Vault": [
+        "Holvi"
       ]
     },
     "label": {
@@ -15580,6 +15592,9 @@
       ],
       "What’s this?": [
         "Mikä tämä on?"
+      ],
+      "terms and conditions": [
+        "käyttöehdot"
       ]
     },
     "Link (Scribe)": {
@@ -16009,7 +16024,7 @@
         "Lisää ${ planName }"
       ],
       "Confidential video conferencing for the conversations that matter. Only ${ priceString } more each month.": [
-        "Luottamukselliset videoneuvottelut tärkeille keskusteluille. Vain ${ priceString } enemmän kuukaudessa."
+        "Luottamukselliset videoneuvottelut tärkeille keskusteluille. Vain ${ priceString } lisää kuussa."
       ],
       "Talk privately with ${ planName }": [
         "Keskustelkaa yksityisesti tilauksella ${ planName }"
@@ -18546,7 +18561,7 @@
         "Mutta voit avata **${ unlockPlanTitle }**-tilauksen ja lisää ${ BRAND_NAME } -palveluita päivittämällä **${ upsellPlanTitle }**-tilaukseen."
       ],
       "But you can upgrade to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
-        "Mutta voitte päivittää tilauskautenne tasoon **${ upsellPlanTitle }** — se maksaa vain ${ relativePrice } enemmän kuukaudessa."
+        "Voitte kuitenkin päivittää tilauskautenne tasoon **${ upsellPlanTitle }** — se maksaa vain ${ relativePrice } lisää kuussa."
       ],
       "But you can upgrade to **${ upsellPlanTitle }**.": [
         "Mutta voitte päivittää tilaukseen **${ upsellPlanTitle }**."
@@ -20542,7 +20557,7 @@
         "Voitte käyttää sähköpostivahvistusta päästäksenne takaisin tilillenne, jos unohdatte salasananne."
       ],
       "You can use SMS verification to regain access to your account if you forget your password.": [
-        "Voitte käyttää SMS-vahvistusta päästäksenne takaisin tilillenne, jos unohdatte salasananne."
+        "Jos unohdatte salasananne, voitte palauttaa pääsyn tilillenne tekstiviestitse tehtävällä vahvistuksella."
       ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "Voitte käyttää palautussähköpostianne päästäksenne takaisin tilillenne, jos unohdatte salasananne."
@@ -21632,7 +21647,7 @@
         "Tiliisi sisältyy pääsy ilmaisiin ominaisuuksiin palveluissa ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ja ${ LUMO_SHORT_APP_NAME }."
       ],
       "Your plan": [
-        "Sinun tilauksesi"
+        "Tilauksesi"
       ],
       "Your trial": [
         "Kokeilujaksosi"
@@ -22653,7 +22668,7 @@
         "Tilauksesi ostettiin Android-sovelluksella. Jos haluat muuttaa tilaustasi tai päivittää maksutietojasi, sinun on siirryttävä Google Play Storeen."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "Tilauksesi ostettiin iOS-sovelluksella. Jos haluat muuttaa tilaustasi tai päivittää maksutietojasi, sinun on siirryttävä Apple App Storeen."
+        "Tilaus ostettiin iOS-sovelluksella. Muuta tilausta tai päivitä maksutietoja Applen App Storessa."
       ]
     },
     "subscription downgrading info": {
@@ -23500,6 +23515,9 @@
       ],
       "Status": [
         "Tila"
+      ],
+      "User": [
+        "Käyttäjä"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -25260,7 +25278,7 @@
         "Kertakirjautuminen"
       ],
       "SMS verification": [
-        "SMS-vahvistus"
+        "Tekstiviestivahvistus"
       ],
       "SMTP submission": [
         "SMTP-lähetys"
@@ -25619,6 +25637,9 @@
       ],
       "Your subscriptions": [
         "Tilauksesi"
+      ],
+      "Tax": [
+        "Vero"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25718,10 +25739,13 @@
         "Hinta"
       ],
       "Start date": [
-        "Aloituspäivä"
+        "Alkamispäivä"
       ],
       "Status": [
         "Tila"
+      ],
+      "Billing": [
+        "Laskutus"
       ]
     },
     "Title; create calendar modal": {
@@ -27197,6 +27221,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Vuosittain, ${ untilString }"
+      ]
+    },
+    "Filter": {
+      "All": [
+        "Kaikki"
       ]
     }
   }

@@ -2326,6 +2326,30 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Add payment method": [
+        "Zahlungsmethode hinzufügen"
+      ],
+      "Cancel trial": [
+        "Testphase beenden"
+      ],
+      "Create account": [
+        "Konto erstellen"
+      ],
+      "Don't show this offer again": [
+        "Dieses Angebot nicht erneut anzeigen"
+      ],
+      "Go to folder": [
+        "Zum Ordner wechseln"
+      ],
+      "Restrict sign-in": [
+        "Anmeldung einschränken"
+      ],
+      "Sign in to a different account": [
+        "Bei einem anderen Konto anmelden"
+      ],
+      "Special Offer": [
+        "Sonderangebot"
       ]
     },
     "action": {
@@ -14463,6 +14487,51 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit **${ primaryEmail }** anmelden."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem ursprünglichen Benutzernamen **${ username }** anmelden – entweder allein oder in der Form **${ firstEmail }**, **@${ secondDomain }** oder **@${ thirdDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem ursprünglichen Benutzernamen **${ username }** anmelden – entweder allein oder in Kombination mit **${ firstEmail }** oder **@${ secondDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem ursprünglichen Benutzernamen **${ username }** anmelden, entweder allein oder in Kombination mit **${ firstEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem Benutzernamen **${ username }** anmelden."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Die Rabatte beziehen sich auf die regulären monatlichen Preise. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum regulären Jahrespreis."
+      ],
+      "If disabled, organization members won't be able to add 2FA codes to their items, and existing ones won't be generated or autofilled. Nothing is deleted.": [
+        "Wenn diese Funktion deaktiviert ist, können Organisationsmitglieder keine 2FA-Codes zu ihren Einträgen hinzufügen, und bereits vorhandene Codes werden weder generiert noch automatisch ausgefüllt. Es werden keine Daten gelöscht."
+      ],
+      "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
+        "Wenn diese Option deaktiviert ist, können Mitglieder der Organisation keine Passkeys in ${ PASS_APP_NAME } speichern oder sich damit anmelden. Es werden keine Daten gelöscht."
+      ],
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Wenn die Anmeldung eingeschränkt ist, kann nur deine E-Mail-Adresse **${ primaryEmail }** zur Anmeldung verwendet werden. Deine sonstigen Adressen können nicht mit deinem Konto verknüpft werden, selbst wenn sie jemandem bekannt sind."
+      ],
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Wenn die Anmeldung eingeschränkt ist, kann nur dein Benutzername **${ username }** zur Anmeldung verwendet werden. Deine sonstigen Adressen können nicht mit deinem Konto verknüpft werden, selbst wenn sie jemand kennt."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem ursprünglichen Benutzernamen **${ username }** anmelden – entweder allein oder in der Form **${ firstEmail }**, **@${ secondDomain }** oder **@${ thirdDomain }**. Deine anderen E-Mail-Adressen können nicht zur Anmeldung verwendet werden."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem ursprünglichen Benutzernamen **${ username }** anmelden – entweder allein oder in Kombination mit **${ firstEmail }** oder **@${ secondDomain }**. Deine sonstigen E-Mail-Adressen können nicht zur Anmeldung genutzt werden."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem ursprünglichen Benutzernamen **${ username }** anmelden, entweder allein oder in Kombination mit **${ firstEmail }**. Deine sonstigen E-Mail-Adressen können nicht zur Anmeldung verwendet werden."
+      ],
+      "Your free plan includes one connected account. Upgrade to connect more.": [
+        "Dein kostenloses Abonnement erlaubt dir ein verbundenes Konto. Steige auf ein kostenpflichtiges Abo um, um weitere Konten verbinden zu können."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Deine anderen E-Mail-Adressen können erst dann zur Anmeldung verwendet werden, wenn diese Funktion deaktiviert ist."
       ]
     },
     "info": {
@@ -16872,6 +16941,15 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Allow storing 2FA codes": [
+        "Speichern von 2FA-Codes zulassen"
+      ],
+      "Allow storing passkeys": [
+        "Speichern von Passkeys zulassen"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Das Anmelden auf Benutzernamen und übereinstimmende ${ BRAND_NAME }-Adressen beschränken"
       ]
     },
     "label": {
@@ -17307,6 +17385,9 @@
       ],
       "What’s this?": [
         "Was ist das?"
+      ],
+      "terms and conditions": [
+        "Allgemeine Geschäftsbedingungen"
       ]
     },
     "Link (Scribe)": {
@@ -19761,6 +19842,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Dein vollständiges ${ planTitle }-Abonnement beginnt am ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Hast du nach der Testphase deine Meinung geändert?** Kündige innerhalb von 30 Tagen nach deiner ersten Zahlung, und wir erstatten dir die nicht genutzte Zeit."
       ]
     },
     "Option": {
@@ -24774,6 +24858,12 @@
       ],
       "Total due today": [
         "Heute fälliger Gesamtbetrag"
+      ],
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "${ planDiscountItem.discountPercent }% Rabatt gewährt"
+      ],
+      "${ planDiscountItem.discountPercent }% off": [
+        "-${ planDiscountItem.discountPercent } %"
       ]
     },
     "Subscription attribute": {
@@ -28105,6 +28195,9 @@
       ],
       "Your subscriptions": [
         "Deine Abonnements"
+      ],
+      "Restrict sign-in?": [
+        "Anmeldung einschränken?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

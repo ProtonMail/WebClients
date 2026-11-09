@@ -2275,6 +2275,75 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Add payment method": [
+        "Legg til betalingsmåte"
+      ],
+      "Cancel import": [
+        "Avbryt import"
+      ],
+      "Cancel trial": [
+        "Avbryt prøveperioden"
+      ],
+      "Connect and import": [
+        "Koble til og importer"
+      ],
+      "Connect Gmail": [
+        "Koble til Gmail"
+      ],
+      "Continue with single sign-on": [
+        "Fortsett med enkel pålogging"
+      ],
+      "Create a ${ ACCOUNT_APP_NAME }": [
+        "Opprett en ${ ACCOUNT_APP_NAME }."
+      ],
+      "Create account": [
+        "Opprett konto"
+      ],
+      "Don't show this offer again": [
+        "Ikke vis dette tilbudet igjen"
+      ],
+      "Dropbox": [
+        "Dropbox"
+      ],
+      "Go to folder": [
+        "Gå til mappe"
+      ],
+      "Import actions": [
+        "Importhandlinger"
+      ],
+      "Migrate": [
+        "Migrer"
+      ],
+      "OneDrive": [
+        "OneDrive"
+      ],
+      "Recover previous account": [
+        "Gjenopprett tidligere konto"
+      ],
+      "Remove from the list": [
+        "Fjern fra listen"
+      ],
+      "Restrict sign-in": [
+        "Begrens pålogging"
+      ],
+      "Sign in to ${ PASS_APP_NAME }": [
+        "Logg inn på ${ PASS_APP_NAME }"
+      ],
+      "Sign in to a different account": [
+        "Logg inn på en annen konto"
+      ],
+      "Special Offer": [
+        "Spesialtilbud"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Begynn å bruke ${ PASS_APP_NAME }"
+      ],
+      "Take the survey": [
+        "Ta undersøkelsen"
+      ],
+      "Upgrade to connect": [
+        "Oppgrader for å koble til"
       ]
     },
     "action": {
@@ -2300,6 +2369,9 @@
     "Action subscription": {
       "Reactivate": [
         "Aktiver på nytt"
+      ],
+      "View breakdown": [
+        "Vis oversikt"
       ]
     },
     "Action: Sheets": {
@@ -2552,6 +2624,18 @@
       ],
       "User admin:": [
         "Brukeradministrator:"
+      ],
+      "Assign admin roles to groups. Manage access for many users at once and update it automatically when people join or leave.": [
+        "Tildel adminroller til grupper. Administrer tilgang for mange brukere samtidig og oppdater den automatisk når folk blir med eller forlater."
+      ],
+      "Assign specific admin roles. Give each admin only the access they need to limit the impact of compromised accounts and accidental errors.": [
+        "Tildel spesifikke administratorroller. Gi hver administrator bare tilgangen de trenger for å begrense virkningen av kompromitterte kontoer og utilsiktede feil."
+      ],
+      "Choose from three new admin roles. Each admin receives only the access they need.": [
+        "Velg mellom tre nye administratorroller. Hver administrator får bare tilgangen de trenger."
+      ],
+      "Choose from two new admin roles. Each admin receives only the access they need.": [
+        "Velg mellom to nye administratorroller. Hver administrator får bare tilgangen de trenger."
       ]
     },
     "Alert": {
@@ -2775,6 +2859,12 @@
       ],
       "You have reached the trial limit.": [
         "Du har nådd prøveperiodegrensen."
+      ],
+      "Up to ${ TRIAL_MAX_USERS } users, during the trial period": [
+        "Opptil ${ TRIAL_MAX_USERS } brukere i prøveperioden"
+      ],
+      "Your trial ends on ${ trialEndDate }. Add a payment method whenever you’re ready to keep using all ${ planTitle } features. You’ll only be charged once it’s added.": [
+        "Prøveperioden din avsluttes ${ trialEndDate }. Legg til en betalingsmåte når du er klar, så kan du fortsette å bruke alle funksjonene i ${ planTitle }. Du belastes først når betalingsmåten er lagt til."
       ]
     },
     "b2b_trials_Action": {
@@ -2853,6 +2943,9 @@
       ],
       "Premium versions of all ${ BRAND_NAME } services": [
         "Premiumversjoner av alle ${ BRAND_NAME }-tjenester"
+      ],
+      "The ${ planName } plan is back for a limited time only": [
+        "Planen ${ planName } er bare tilbake i en begrenset periode"
       ]
     },
     "bf2023: info": {
@@ -2993,6 +3086,32 @@
     "Billing cycle": {
       "Renews automatically on ${ subscriptionManagerName }": [
         "Fornyes automatisk på ${ subscriptionManagerName }"
+      ],
+      "Free renewal": [
+        "Gratis fornyelse"
+      ],
+      "Free renewal, for ${ nextCycle } month, on ${ when }": [
+        "Gratis fornyelse den ${ when } for ${ nextCycle } måned.",
+        "Gratis fornyelse den ${ when } for ${ nextCycle } måneder."
+      ],
+      "Renews automatically at ${ introPrice }, for ${ nextCycle } month, on ${ when }": [
+        "Fornyes automatisk den ${ when } til ${ introPrice } for ${ nextCycle } måned",
+        "Fornyes automatisk den ${ when } til ${ introPrice } for ${ nextCycle } måneder"
+      ],
+      "Renews automatically at ${ price }, for ${ cycle } month": [
+        "Fornyes automatisk til ${ price }, for ${ cycle } måned",
+        "Fornyes automatisk til ${ price }, for ${ cycle } måneder"
+      ],
+      "Switches to ${ nextCycle } month on ${ when } (${ paidPrice } already paid)": [
+        "Bytter til ${ nextCycle } måned den ${ when } (${ paidPrice } allerede betalt)",
+        "Bytter til ${ nextCycle } måneder den ${ when } (${ paidPrice } allerede betalt)"
+      ],
+      "Then ${ price }, for ${ cycle } month": [
+        "Deretter ${ price } for ${ cycle } måned",
+        "Deretter ${ price } for ${ cycle } måneder"
+      ],
+      "Will be replaced by your upcoming subscription on ${ replacementDate }": [
+        "Erstattes av det kommende abonnementet ditt den ${ replacementDate }"
       ]
     },
     "Billing cycle option": {
@@ -5572,6 +5691,21 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Planen din støtter totalt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
         "Planen din støtter totalt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "Access your passwords on all your devices": [
+        "Få tilgang til passordene på alle enhetene dine"
+      ],
+      "Autofill logins instantly on any site": [
+        "Autofyll pålogginger umiddelbart på alle nettsteder"
+      ],
+      "Bring over your files and folders from another provider.": [
+        "Overfør filene og mappene dine fra en annen leverandør."
+      ],
+      "Create strong password with one click": [
+        "Lag et sterkt passord med ett klikk"
+      ],
+      "No ads, no tracking. Use your Gmail in ${ BRAND_NAME }. Nothing there gets edited or deleted.": [
+        "Ingen annonser, ingen sporing. Bruk Gmail i ${ BRAND_NAME }. Ingenting der blir redigert eller slettet."
       ]
     },
     "description": {
@@ -6027,6 +6161,9 @@
       ],
       "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
         "Du videresender e-poster fra én ekstern konto til ${ MAIL_APP_NAME }."
+      ],
+      "Sign in to ${ providerName }": [
+        "Logg inn på ${ providerName }"
       ]
     },
     "Edit billing address form note": {
@@ -7022,6 +7159,22 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Dine gjenopprettingskontakter bør være personer du kjenner og kan kontakte enkelt."
+      ],
+      "Add contact": [
+        "Legg til kontakt"
+      ],
+      "Recover your data before adding a new contact.": [
+        "Gjenopprett dataene dine før du legger til en ny kontakt."
+      ],
+      "They will receive access automatically **today**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "Vedkommende får tilgang automatisk **i dag**, **${ formattedAccessibleAt }**. Du kan når som helst avslå forespørselen eller gi tilgang umiddelbart."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "Vedkommende får automatisk tilgang om **${ days } dag**, den **${ formattedAccessibleAt }**. Du kan når som helst avslå forespørselen eller gi vedkommende tilgang med en gang.",
+        "Vedkommende får automatisk tilgang om **${ days }** dager, den **${ formattedAccessibleAt }**. Du kan når som helst avslå forespørselen eller gi vedkommende tilgang med en gang."
+      ],
+      "Your data is still locked from a password reset. A contact added now won't be able to restore it.": [
+        "Dataene dine er fortsatt låst fra tilbakestilling av passord. En kontakt som er lagt til nå, vil ikke kunne gjenopprette den."
       ]
     },
     "Empty group name": {
@@ -8022,6 +8175,54 @@
       ],
       "Zero keys reactivated": [
         "Null nøkler aktivert på nytt"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adresse er allerede i bruk av en bruker på utsiden av organisasjonen. Kontakt kundestøtte for å løse dette."
+      ],
+      "Couldn't load your account": [
+        "Kunne ikke laste inn kontoen din"
+      ],
+      "Couldn't load your connections": [
+        "Kunne ikke laste inn tilkoblingene dine"
+      ],
+      "Failed to get the organization domains": [
+        "Kunne ikke hente domenene til organisasjonen"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadressen ble ikke funnet. Ta kontakt med kundestøtte for å løse dette."
+      ],
+      "Missing organization private key": [
+        "Mangler privat nøkkel for organisasjonen"
+      ],
+      "Missing organization public key": [
+        "Mangler offentlig nøkkel for organisasjonen"
+      ],
+      "No verified domain found in your ${ providerName } account. Verify your domain with ${ providerName }, then try again.": [
+        "Ingen bekreftet domene funnet i ${ providerName }-kontoen. Bekreft domenet ditt med ${ providerName }, og prøv på nytt."
+      ],
+      "Organization does not have enough seats available": [
+        "Organisasjonen har ikke nok ledige seter"
+      ],
+      "Organization does not have enough storage available": [
+        "Organisasjonen har ikke nok lagringsplass tilgjengelig"
+      ],
+      "Role changes were not saved because the user's roles could not be loaded.": [
+        "Rolleendringer ble ikke lagret fordi brukerens roller ikke kunne lastes."
+      ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "Totalen kunne ikke beregnes. Endre beløpet for å prøve igjen."
+      ],
+      "This code or link is no longer valid. Please try again.": [
+        "Denne koden eller koblingen er ikke lenger gyldig. Prøv igjen."
+      ],
+      "We couldn't disconnect this address. Please try again.": [
+        "Vi kunne ikke koble fra denne adressen. Prøv igjen."
+      ],
+      "We couldn't reconnect this address.": [
+        "Vi kunne ikke koble til denne adressen på nytt."
+      ],
+      "Your password couldn't be reset. Please try again.": [
+        "Passordet ditt kunne ikke tilbakestilles. Prøv igjen."
       ]
     },
     "error": {
@@ -9418,6 +9619,15 @@
       ],
       "Username": [
         "Brukernavn"
+      ],
+      "Billing details": [
+        "Faktureringsinformasjon"
+      ],
+      "Good to know before you connect": [
+        "Greit å vite før du kobler til"
+      ],
+      "Plan details": [
+        "Plandetaljer"
       ]
     },
     "Header for addresses table": {
@@ -9921,6 +10131,15 @@
       "Skipped ${ count } event due to incompatibilities": [
         "Hoppet over ${ count } hendelse på grunn av inkompatibiliteter",
         "Hoppet over ${ count } hendelser på grunn av inkompatibiliteter"
+      ],
+      "Has errors": [
+        "Inneholder feil"
+      ],
+      "Pending": [
+        "Venter"
+      ],
+      "Queued": [
+        "I kø"
       ]
     },
     "Import type": {
@@ -13974,6 +14193,228 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } bruker bare denne tilgangen for importen. Google får aldri tilgang til ${ BRAND_NAME }-kontoen din."
+      ],
+      "${ emailAddress } is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "${ emailAddress } brukes til å logge på en annen ${ BRAND_NAME }-konto. Vi gjør tilkoblingen sømløs, men for nå må du ta noen få trinn."
+      ],
+      "${ reason.email } is used to sign in to another ${ BRAND_NAME } account. You'll pick a new username for that account next time you sign in. Nothing else changes.": [
+        "${ reason.email } brukes til å logge på en annen ${ BRAND_NAME }-konto. Du velger et nytt brukernavn for den kontoen neste gang du logger på. Ingenting annet endres."
+      ],
+      "**${ applicationName }** requested to sign in from:": [
+        "**${ applicationName }** har bedt om å logge på fra:"
+      ],
+      "**${ applicationName }** requested to sign in.": [
+        "**${ applicationName }** ba om å logge inn."
+      ],
+      "Added to ${ BRAND_NAME }": [
+        "Lagt til i ${ BRAND_NAME }"
+      ],
+      "Allow your organization to use the ${ LUMO_APP_NAME } API": [
+        "Tillat organisasjonen din å bruke ${ LUMO_APP_NAME }-API"
+      ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "Ved å slå dette på, vil du kun kunne logge på med **${ primaryEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "Ved å slå på dette, vil du bare kunne logge inn med ditt opprinnelige brukernavn **${ username }**, enten alene eller som **${ firstEmail }**, **@${ secondDomain }**, eller **@${ thirdDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "Ved å slå på dette, vil du bare kunne logge inn med ditt opprinnelige brukernavn **${ username }**, enten alene eller som **${ firstEmail }** eller **@${ secondDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "Hvis du slår på dette, kan du bare logge inn med det opprinnelige brukernavnet ditt **${ username }**, enten alene eller som **${ firstEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "Ved å slå dette på, vil du kun kunne logge på med brukernavnet **${ username }**."
+      ],
+      "Cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Avbryt innen 30 dager etter kjøpet og kontakt vår ${ customerSupportLink } for å få refusjon."
+      ],
+      "Connected": [
+        "Tilkoblet"
+      ],
+      "Connecting to Google Drive and preparing your import.": [
+        "Kobler til Google Disk og forbereder importen."
+      ],
+      "Disconnected": [
+        "Frakoblet"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter er basert på standard månedspris. Abonnementet ditt fornyes til standard årspris når faktureringssyklusen utløper."
+      ],
+      "Enter your old password for ${ boldEmail }.": [
+        "Skriv inn det gamle passordet for ${ boldEmail }."
+      ],
+      "Find out what can be migrated.": [
+        "Finn ut hva som kan migreres."
+      ],
+      "For security, business accounts sign in with a code instead. On your TV, select 'Trouble signing in?' and follow the steps.": [
+        "Av sikkerhetshensyn logger bedriftskontoer inn med en kode i stedet. På TV-en velger du \"Problemer med å logge inn?\" og følger trinnene."
+      ],
+      "If you didn't just try to sign in to **${ applicationName }** on a device you own, click **Cancel**.": [
+        "Hvis du ikke nettopp prøvde å logge på **${ applicationName }** på en enhet du eier, klikker du på **Avbryt**."
+      ],
+      "If you previously had a personal ${ BRAND_NAME } account with this address, you can recover your data separately.": [
+        "Hvis du tidligere hadde en personlig ${ BRAND_NAME }-konto med denne adressen, kan du gjenopprette dataene dine separat."
+      ],
+      "Import show one-time transfers of email, calendars, contacts, or files into your ${ BRAND_NAME } account.": [
+        "Import viser engangsoverføringer av e-post, kalendere, kontakter eller filer til ${ BRAND_NAME }-kontoen din."
+      ],
+      "Import your files and folders": [
+        "Importer filene og mappene dine"
+      ],
+      "IP address: ${ IP }": [
+        "IP-addresse: ${ IP }"
+      ],
+      "Know when it's done": [
+        "Få beskjed når det er ferdig"
+      ],
+      "Messages from other ${ BRAND_NAME } users also lose end-to-end encryption.": [
+        "Meldinger fra andre ${ BRAND_NAME }-brukere mister også ende-til-ende-kryptering."
+      ],
+      "More cards": [
+        "Flerer korter"
+      ],
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Deretter logger du på Google-kontoen din og gir ${ BRAND_NAME } tilgang til Google Disk. Vi importerer filene og mappene dine til ${ DRIVE_APP_NAME }."
+      ],
+      "No users to display": [
+        "Ingen brukere å vise"
+      ],
+      "Not added to ${ BRAND_NAME }": [
+        "Ikke lagt til i ${ BRAND_NAME }"
+      ],
+      "Please sign in with ${ emailAddress } to continue.": [
+        "Logg på med ${ emailAddress } for å fortsette."
+      ],
+      "Please sign in with the Gmail account you want to connect to continue.": [
+        "Logg på med Gmail-kontoen du vil koble til for å fortsette."
+      ],
+      "Private and encrypted": [
+        "Privat og kryptert"
+      ],
+      "Recommended on trusted devices. ${ learnMoreLink }": [
+        "Anbefalt på klarerte enheter. ${ learnMoreLink }"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Velg nøyaktig hva du vil migrere. Det vil gjelde for alle brukere i organisasjonen."
+      ],
+      "SEPA Bank transfer": [
+        "SEPA-bankoverføring"
+      ],
+      "Signup link no longer valid": [
+        "Registreringskoblingen er ikke lenger gyldig"
+      ],
+      "This address now signs in through your organization's identity provider.": [
+        "Denne adressen logger nå på gjennom organisasjonens identitetsleverandør."
+      ],
+      "This Gmail is already connected to your ${ BRAND_NAME } account. There's nothing else you need to do.": [
+        "Denne Gmail-kontoen er allerede koblet til din ${ BRAND_NAME }-konto. Du trenger ikke å gjøre noe mer."
+      ],
+      "This Gmail is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "Denne Gmail-kontoen brukes til å logge på en annen ${ BRAND_NAME }-konto. Vi gjør tilkoblingen sømløs, men for nå må du ta noen få trinn."
+      ],
+      "This signup link has expired, been revoked or already been used. Please contact your ${ BRAND_NAME } representative for a new one.": [
+        "Denne registreringskoblingen har utløpt, blitt tilbakekalt eller allerede blitt brukt. Kontakt ${ BRAND_NAME }-representanten din for å få en ny."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Denne brukeren kan ikke migreres fordi e-postadressen deres ikke er tilgjengelig på ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Denne brukeren kan ikke migreres på grunn av plattformuforenlighet."
+      ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Dette gir deg rask og sikker tilgang til ${ BRAND_NAME }-kontoen din, slik at du kan endre passordet ditt."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "For å migrere denne brukeren, legg til og bekreft e-postdomenet under ${ domainNamesLink }."
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "For å migrere denne brukeren må du aktivere kontoen deres i ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "For å migrere denne brukeren må du aktivere kontoen deres under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "For å migrere denne brukeren må du aktivere adressen deres under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "For å migrere denne brukeren må de godta invitasjonen sin til å bli med i ${ BRAND_NAME }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "For å migrere denne brukeren må du fjerne brukeren fra arkivet i ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "For å migrere denne brukeren må du oppheve suspensjonen deres i ${ provider.adminConsoleName }."
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address. An administrator of your organization can create one for you.": [
+        "For å bruke ${ toAppName } trenger du en ${ MAIL_APP_NAME }-adresse. En administrator for organisasjonen din kan opprette en for deg."
+      ],
+      "We couldn't connect ${ emailAddress }. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "Vi kunne ikke koble til ${ emailAddress }. Prøv på nytt og velg alle boksene når Google ber om tilgang. ${ BRAND_NAME } bruker bare denne tilgangen til å koble til Gmail."
+      ],
+      "We couldn't connect your Gmail right now. Please try again in a few minutes.": [
+        "Vi kunne ikke koble til Gmail-kontoen din akkurat nå. Prøv igjen om noen minutter."
+      ],
+      "We couldn't connect your Gmail. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "Vi kunne ikke koble til Gmail. Prøv på nytt og velg alle boksene når Google ber om tilgang. ${ BRAND_NAME } bruker bare denne tilgangen til å koble til Gmail."
+      ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Vi vil kopiere de fra Google Disk til ${ DRIVE_APP_NAME }."
+      ],
+      "We'll email you when your import is complete.": [
+        "Vi sender deg en e-post når importen er fullført."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Vi sender deg en e-post når importen er fullført. Filene dine vil vises i en mappe i ${ DRIVE_APP_NAME }."
+      ],
+      "We're building a new way for you to manage your organization, and we're looking for specific users to join a video call and try an early version. Curious if you'd be a good match? Answer a few quick questions to see if you can participate.": [
+        "Vi bygger en ny måte for deg å administrere organisasjonen din på, og vi ser etter spesifikke brukere til å bli med i en videosamtale og prøve en tidlig versjon. Lurer du på om du vil være en god match? Svar på noen raske spørsmål for å se om du kan delta."
+      ],
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Når pålogging er begrenset, kan bare e-posten **${ primaryEmail }** brukes til å logge inn. De andre adressene dine kan ikke spores tilbake til kontoen din, selv om noen kjenner til dem."
+      ],
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Når pålogging er begrenset, kan bare brukernavnet **${ username }** brukes til å logge inn. De andre adressene dine kan ikke spores tilbake til kontoen din, selv om noen kjenner til dem."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Når påloggingen er begrenset, kan du bare logge på med det opprinnelige brukernavnet ditt **${ username }**, enten alene eller som **${ firstEmail }**, **@${ secondDomain }** eller **@${ thirdDomain }**. De andre e-postadressene dine kan ikke brukes til pålogging."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Når pålogging er begrenset, kan du bare logge inn med det opprinnelige brukernavnet ditt, **${ username }**, enten alene eller som **${ firstEmail }** eller **@${ secondDomain }**. De andre e-postadressene dine fungerer ikke for pålogging."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når pålogging er begrenset, kan du bare logge inn med det opprinnelige brukernavnet ditt, **${ username }**, enten alene eller som **${ firstEmail }** . De andre e-postadressene dine fungerer ikke for pålogging."
+      ],
+      "You": [
+        "Du"
+      ],
+      "You won't be able to send or receive as ${ email } in ${ BRAND_NAME } anymore.": [
+        "Du vil ikke lenger kunne sende eller motta e-post som ${ email } i ${ BRAND_NAME }."
+      ],
+      "Your address was connected": [
+        "Adressen din ble tilkoblet"
+      ],
+      "Your address was connected. We're importing your emails.": [
+        "Din adresse ble koblet til. Vi importerer e-postene dine."
+      ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Filene dine er kryptert og trygt lagret i ${ DRIVE_APP_NAME }."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Filene dine har blitt importert og kryptert fra Google Disk til ${ DRIVE_APP_NAME }."
+      ],
+      "Your free plan includes one connected account. Upgrade to connect more.": [
+        "Gratisplanen din inkluderer én tilkoblet konto. Oppgrader for å koble til flere."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Google Disk kan være tom eller inneholde bare filer som ikke støttes."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "De andre e-postadressene dine fungerer ikke for pålogging før du slår av dette."
       ]
     },
     "info": {
@@ -14119,6 +14560,9 @@
       ],
       "Void": [
         "Ugyldig"
+      ],
+      "Open": [
+        "Ubetalt"
       ]
     },
     "Invoice type display as badge": {
@@ -16329,6 +16773,57 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Account credit": [
+        "Kontokreditt"
+      ],
+      "Auto-delete trash and spam": [
+        "Slett automatisk fra papirkurv og søppelpost"
+      ],
+      "Billing contact": [
+        "Faktureringskontakt"
+      ],
+      "Custom email domains": [
+        "Egendefinerte e-postdomener"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerte VPN-servere"
+      ],
+      "Invoice email": [
+        "E-post for fakturaer"
+      ],
+      "Item": [
+        "Element"
+      ],
+      "Organization size": [
+        "Organisasjonsstørrelse"
+      ],
+      "Payment terms": [
+        "Betalingsvilkår"
+      ],
+      "Restrict sign-in to email address": [
+        "Begrens pålogging til e-postadresse"
+      ],
+      "Restrict sign-in to username": [
+        "Begrens pålogging til brukernavn"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Begrens pålogging til brukernavn og samsvarende ${ BRAND_NAME }-adresser"
+      ],
+      "Start with your most recent": [
+        "Start med det nyeste"
+      ],
+      "Taxable": [
+        "Skattepliktig"
+      ],
+      "Total": [
+        "Totalt"
+      ],
+      "VAT number": [
+        "MVA-nummer"
+      ],
+      "Vault": [
+        "Hvelv"
       ]
     },
     "label": {
@@ -16758,6 +17253,12 @@
       ],
       "What’s this?": [
         "Hva er det der?"
+      ],
+      "terms and conditions": [
+        "vilkår og betingelser"
+      ],
+      "Want to import email, calendar and contacts?": [
+        "Vil du importere e-post, kalender og kontakter?"
       ]
     },
     "Link (Scribe)": {
@@ -19212,6 +19713,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Ditt fullstendige ${ planTitle }-abonnement starter ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Ombestemt deg etter prøveperioden?** Si opp innen 30 dager etter første betaling, og vi refunderer den ubrukte tiden."
       ]
     },
     "Option": {
@@ -20515,6 +21019,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
+      ],
+      "Paid from your account credit.": [
+        "Betalt fra kontokreditten din."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Scribe-seter kan ikke overstige antallet medlemmer."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Prøveplaner støtter ikke egendefinerte domener."
       ]
     },
     "Payments.Error": {
@@ -22168,6 +22681,27 @@
       ],
       "You can now sync groups alongside users. Changes push **automatically** when you update your groups on your identity provider.": [
         "Du kan nå synkronisere grupper sammen med brukere. Endringer sendes **automatisk** når du oppdaterer gruppene hos identitetsleverandøren din."
+      ],
+      "${ cleanUpCount } clean up action required.": [
+        "${ cleanUpCount } handling for opprydding kreves.",
+        "${ cleanUpCount } handlinger for opprydding kreves."
+      ],
+      "${ cleanUpCount } user's permissions have changed.": [
+        "Tillatelsene til ${ cleanUpCount } bruker er endret.",
+        "Tillatelsene til ${ cleanUpCount } brukere er endret."
+      ],
+      "${ numberOfCleanUps } clean up action required": [
+        "${ numberOfCleanUps } handling for opprydding kreves",
+        "${ numberOfCleanUps } handlinger for opprydding kreves"
+      ],
+      "Approve permission changes for your organization": [
+        "Godkjenn tillatelsesendringer for organisasjonen din"
+      ],
+      "Final approval needed to remove organization key access.": [
+        "Endelig godkjenning kreves for å fjerne organisasjonsnøkkeltilgang."
+      ],
+      "Final approval needed to revoke their organization keys.": [
+        "Endelig godkjenning kreves for å tilbakekalle organisasjonsnøklene deres."
       ]
     },
     "scim: Action": {
@@ -23798,6 +24332,21 @@
       ],
       "Your SSO configuration will be deleted.": [
         "SSO-konfigurasjonen din vil bli slettet."
+      ],
+      "Approved": [
+        "Godkjent"
+      ],
+      "Enter your password": [
+        "Skriv inn passordet"
+      ],
+      "Signing in": [
+        "Logger på"
+      ],
+      "To make sure it's really you trying to sign-in, please enter your password.": [
+        "For å være sikker på at det virkelig er du som prøver å logge på, skriv inn passordet ditt."
+      ],
+      "Your old password will become your **backup password**. You will be able to use it to authorize single sign-on (SSO) on new devices in the future.": [
+        "Ditt gamle passord blir **reservepassordet**. Du vil kunne bruke det til å autorisere enkel pålogging (SSO) på nye enheter i fremtiden."
       ]
     },
     "sso: auth device state": {
@@ -23910,6 +24459,15 @@
       ],
       "Waiting for MX...": [
         "Venter på MX..."
+      ],
+      "failed": [
+        "mislyktes"
+      ],
+      "key removal scheduled": [
+        "nøkkelfjerning planlagt"
+      ],
+      "remove organization key": [
+        "fjern organisasjonsnøkkel"
       ]
     },
     "Step": {
@@ -24129,6 +24687,12 @@
       ],
       "Total due today": [
         "Totalt forfalt i dag"
+      ],
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "${ planDiscountItem.discountPercent }% rabatt brukt"
+      ],
+      "${ planDiscountItem.discountPercent }% off": [
+        "${ planDiscountItem.discountPercent }% rabatt"
       ]
     },
     "Subscription attribute": {
@@ -24628,6 +25192,9 @@
       ],
       "Free Trial": [
         "Gratis prøveperiode"
+      ],
+      "Upcoming": [
+        "Kommende"
       ]
     },
     "Subtitle": {
@@ -24684,6 +25251,9 @@
       ],
       "View VPN session details for your organization.": [
         "Vis VPN-øktdetaljer for organisasjonen din."
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importer filene og mappene dine fra Google Disk og hold dem private i ${ DRIVE_APP_NAME }."
       ]
     },
     "Success": {
@@ -25092,6 +25662,18 @@
       ],
       "Status": [
         "Status"
+      ],
+      "Activated": [
+        "Aktivert"
+      ],
+      "Estimated size": [
+        "Estimert størrelse"
+      ],
+      "Migration status": [
+        "Migreringsstatus"
+      ],
+      "User": [
+        "Bruker"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -27334,6 +27916,117 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "${ LUMO_APP_NAME } API": [
+        "${ LUMO_APP_NAME }-API"
+      ],
+      "${ PASS_APP_NAME }: Welcome": [
+        "${ PASS_APP_NAME }: Velkommen"
+      ],
+      "${ planTitle } breakdown": [
+        "Spesifikasjon av ${ planTitle }"
+      ],
+      "Add ${ PASS_APP_NAME } to ${ browserName }": [
+        "Legg ${ PASS_APP_NAME } til i ${ browserName }"
+      ],
+      "Add ${ PASS_APP_NAME } to your browser": [
+        "Legg ${ PASS_APP_NAME } til i nettleseren din"
+      ],
+      "Allow access to connect your Gmail": [
+        "Gi tilgang til å koble til Gmail"
+      ],
+      "Configure migration": [
+        "Konfigurer migrering"
+      ],
+      "Confirm sign in": [
+        "Bekreft pålogging"
+      ],
+      "Connect your ${ ACCOUNT_APP_NAME }": [
+        "Koble din ${ ACCOUNT_APP_NAME }"
+      ],
+      "Connect your Gmail": [
+        "Koble til Gmail-kontoen din"
+      ],
+      "Connecting...": [
+        "Kobler til..."
+      ],
+      "Disconnect this address?": [
+        "Koble fra denne adressen?"
+      ],
+      "Easy Switch from Google Drive": [
+        "Easy Switch fra Google Disk"
+      ],
+      "Good to know before you connect": [
+        "Greit å vite før du kobler til"
+      ],
+      "Help shape ${ BRAND_NAME }'s admin experience": [
+        "Bidra til å forme administratoropplevelsen i ${ BRAND_NAME }"
+      ],
+      "Import started": [
+        "Importen kjører"
+      ],
+      "Over 95% of users love our extension": [
+        "Over 95 % av brukerne elsker utvidelsen vår"
+      ],
+      "Payment": [
+        "Betaling"
+      ],
+      "Preparing your import": [
+        "Forbereder importen"
+      ],
+      "QR sign-in isn't available for business accounts": [
+        "QR-innlogging er ikke tilgjengelig for bedriftskontoer"
+      ],
+      "Restrict sign-in?": [
+        "Begrense pålogging?"
+      ],
+      "Save time:": [
+        "Spar tid:"
+      ],
+      "Select users to migrate": [
+        "Velg brukere som skal migreres"
+      ],
+      "Sign-in protection": [
+        "Påloggingsbeskyttelse"
+      ],
+      "Skip for now": [
+        "Hopp over for nå"
+      ],
+      "Stay connected:": [
+        "Forbli tilkoblet:"
+      ],
+      "Stay safe:": [
+        "Forbli trygg:"
+      ],
+      "Subscription breakdown": [
+        "Abonnementsoversikt"
+      ],
+      "Tax": [
+        "Avgift"
+      ],
+      "This Gmail is already connected": [
+        "Denne Gmail-kontoen er allerede koblet til"
+      ],
+      "This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Denne Gmail-kontoen er koblet til en annen ${ BRAND_NAME }-konto"
+      ],
+      "Unlock the power of autofill with ${ PASS_APP_NAME } in your browser": [
+        "Få fullt utbytte av autofyll med ${ PASS_APP_NAME } i nettleseren"
+      ],
+      "What are you migrating?": [
+        "Hva migrerer du?"
+      ],
+      "Wrong Gmail account": [
+        "Feil Gmail-konto"
+      ],
+      "You need a ${ BRAND_NAME } address": [
+        "Du trenger en ${ BRAND_NAME }-adresse"
+      ],
+      "Your groups": [
+        "Gruppene dine"
+      ],
+      "Your import is finished!": [
+        "Importen er ferdig!"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27437,6 +28130,15 @@
       ],
       "Status": [
         "Status"
+      ],
+      "Billing": [
+        "Fakturering"
+      ],
+      "Price": [
+        "Pris"
+      ],
+      "Start date": [
+        "Startdato"
       ]
     },
     "Title; create calendar modal": {
@@ -27778,6 +28480,15 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Din eksterne konto kan ha nådd båndbreddegrensen for 24 timer. ${ BRAND_NAME } vil forsøke å gjenoppta importen så snart som mulig."
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status for dataoverføring fra ${ providerName } til ${ BRAND_NAME }"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Brukere som har aktivert ${ BRAND_NAME }-kontoen"
+      ],
+      "Your ${ DRIVE_APP_NAME } storage is almost full": [
+        "Lagringskapasiteten til ${ DRIVE_APP_NAME } er nesten brukt opp"
       ]
     },
     "tooltip": {
@@ -27822,6 +28533,15 @@
       ],
       "Waiting for user to accept the invitation": [
         "Venter på at brukeren godtar invitasjonen"
+      ],
+      "Assigned by a group. Remove the user from the group to change this role": [
+        "Tildelt av en gruppe. Fjern brukeren fra gruppen for å endre denne rollen"
+      ],
+      "External address - cannot be granted the roles and permissions assigned to this group.": [
+        "Ekstern adresse – kan ikke gis rollene og tillatelsene som er tildelt denne gruppen."
+      ],
+      "External address — No end-to-end encryption or resource sharing, and roles and permissions can't be assigned.": [
+        "Ekstern adresse — Ingen ende-til-ende-kryptering eller ressursdeling, og roller og tillatelser kan ikke tildeles."
       ]
     },
     "Tooltip automatically attach public key": {
@@ -28726,6 +29446,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. Du blir ikke belastet hvis du avbryter før ${ textDate }. ${ action }"
+      ],
+      "This organization has more users than we can currently migrate. Please contact customer support for assistance.": [
+        "Denne organisasjonen har flere brukere enn vi kan migrere for øyeblikket. Kontakt kundestøtten for å få hjelp."
       ]
     },
     "Warning for domain modal": {
@@ -28981,6 +29704,116 @@
       ],
       "Yearly, ${ untilString }": [
         "Årlig, ${ untilString }"
+      ]
+    },
+    "Billing type": {
+      "Billed at renewal": [
+        "Faktureres ved fornyelse"
+      ],
+      "Prepaid": [
+        "Forhåndsbetalt"
+      ]
+    },
+    "claimed address": {
+      "Sign in with your organization?": [
+        "Logge på med organisasjonen din?"
+      ],
+      "The address ${ boldClaimedEmail } has been claimed and can no longer be used for this account. Your data is safe and hasn't been shared with anyone. To migrate it to a new account, create a new ${ BRAND_NAME } email address.": [
+        "Det er gjort krav på adressen ${ boldClaimedEmail }, og den kan ikke lenger brukes med denne kontoen. Dataene dine er trygge og har ikke blitt delt med noen. Opprett en ny e-postadresse i ${ BRAND_NAME } for å overføre dem til en ny konto."
+      ],
+      "The address ${ boldClaimedEmail } has been claimed and can no longer be used for this account. Your data was migrated to the address below and remains private.": [
+        "Adressen ${ boldClaimedEmail } er overtatt og kan ikke lenger brukes for denne kontoen. Dataene dine er flyttet til adressen nedenfor og forblir private."
+      ],
+      "The address ${ boldClaimedEmail } has been claimed by another organization and can no longer be used for this account. Your data is safe and remains private.": [
+        "Adressen ${ boldClaimedEmail } har blitt gjort krav på av en annen organisasjon og kan ikke lenger brukes for denne kontoen. Dine data er trygge og forblir private."
+      ],
+      "Verify it's you": [
+        "Bekreft at det er deg"
+      ],
+      "You're all set": [
+        "Alt er klart"
+      ],
+      "Your address": [
+        "Adressen din"
+      ],
+      "Your address has been claimed": [
+        "Adressen din er gjort krav på"
+      ],
+      "Your address has changed": [
+        "Adressen din er endret"
+      ],
+      "Your administrator can give you a new address.": [
+        "Administratoren din kan gi deg en ny adresse."
+      ],
+      "Your data was migrated to the address below and remains private.": [
+        "Dine data ble migrert til adressen nedenfor og forblir private."
+      ],
+      "Your new address": [
+        "Den nye adressen din"
+      ],
+      "Your password remains the same.": [
+        "Passordet ditt forblir det samme."
+      ],
+      "Your previous username, ${ boldClaimedEmail }, can no longer be used to sign in to this account.": [
+        "Ditt tidligere brukernavn, ${ boldClaimedEmail }, kan ikke lenger brukes til å logge på denne kontoen."
+      ]
+    },
+    "Coupon": {
+      "Coupon applied": [
+        "Kupong er brukt"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "Aktivert"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Errors": [
+        "Feil"
+      ],
+      "In progress": [
+        "Pågår"
+      ],
+      "Migrated": [
+        "Migrert"
+      ],
+      "Not activated": [
+        "Ikke aktivert"
+      ],
+      "Pending": [
+        "Venter"
+      ]
+    },
+    "Payment method": {
+      "Bank transfer": [
+        "Bankoverføring"
+      ],
+      "Credit card": [
+        "Kredittkort"
+      ]
+    },
+    "Payment terms": {
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dager"
+      ],
+      "Due on receipt": [
+        "Forfaller ved mottak"
+      ]
+    },
+    "Rollback state": {
+      "Undo finished": [
+        "Angre fullført"
+      ],
+      "Undo in progress": [
+        "Angre pågår"
+      ]
+    },
+    "Sign out": {
+      "Sign in to ${ providerName }": [
+        "Logg inn på ${ providerName }"
       ]
     }
   }

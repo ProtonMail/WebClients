@@ -2326,6 +2326,30 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Add payment method": [
+        "Añadir método de pago"
+      ],
+      "Cancel trial": [
+        "Cancelar prueba"
+      ],
+      "Create account": [
+        "Crear una cuenta"
+      ],
+      "Don't show this offer again": [
+        "No volver a mostrar esta oferta"
+      ],
+      "Go to folder": [
+        "Ir a la carpeta"
+      ],
+      "Restrict sign-in": [
+        "Restringir inicio de sesión"
+      ],
+      "Sign in to a different account": [
+        "Iniciar sesión con una cuenta diferente"
+      ],
+      "Special Offer": [
+        "Oferta especial"
       ]
     },
     "action": {
@@ -14466,6 +14490,51 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "Al activar esto, solo podrá iniciar sesión con **${ primaryEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "Al activar esto, solo podrá iniciar sesión con su nombre de usuario original **${ username }**, por sí mismo o como **${ firstEmail }**, **@${ secondDomain }** o **@${ thirdDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "Al activar esto, solo podrá iniciar sesión con su nombre de usuario original **${ username }**, por sí mismo o como **${ firstEmail }** o **@${ secondDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "Al activar esto, solo podrá iniciar sesión con su nombre de usuario original **${ username }**, por sí mismo o como **${ firstEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "Al activar esto, solo podrá iniciar sesión con su nombre de usuario **${ username }**."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ],
+      "If disabled, organization members won't be able to add 2FA codes to their items, and existing ones won't be generated or autofilled. Nothing is deleted.": [
+        "Si se desactiva, los miembros de la organización no podrán añadir códigos de 2FA a sus elementos y los códigos existentes no se generarán ni se completarán automáticamente. No se eliminará nada."
+      ],
+      "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
+        "Si se desactiva, los miembros de la organización no podrán guardar claves de acceso en ${ PASS_APP_NAME } o iniciar sesión con ellas. Nada se eliminará."
+      ],
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Cuando el inicio de sesión está restringido, solo puede usar su dirección de correo **${ primaryEmail }** para iniciar sesión. Sus otras direcciones no se pueden vincular a su cuenta, incluso si alguien las conoce."
+      ],
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Cuando el inicio de sesión está restringido, solo puede usar su nombre de usuario **${ username }** para iniciar sesión. Sus otras direcciones no se pueden vincular a su cuenta, incluso si alguien las conoce."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Cuando el inicio de sesión está restringido, solo puede iniciar sesión con su nombre de usuario original **${ username }**, ya sea por sí mismo o como **${ firstEmail }**, **@${ secondDomain }** o **@${ thirdDomain }**. Sus otras direcciones no funcionarán para iniciar sesión."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Cuando el inicio de sesión está restringido, solo puede iniciar sesión con su nombre de usuario original **${ username }**, ya sea por sí mismo o como **${ firstEmail }**, o **@${ secondDomain }**. Sus otras direcciones no funcionarán para iniciar sesión."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Cuando el inicio de sesión está restringido, solo puede iniciar sesión con su nombre de usuario original **${ username }**, ya sea por sí mismo o como **${ firstEmail }**. Sus otras direcciones no funcionarán para iniciar sesión."
+      ],
+      "Your free plan includes one connected account. Upgrade to connect more.": [
+        "Su plan gratuito incluye una cuenta conectada. Actualice para conectar más."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Sus otras direcciones de correo no funcionarán para iniciar sesión hasta que desactive esto."
       ]
     },
     "info": {
@@ -16875,6 +16944,15 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Allow storing 2FA codes": [
+        "Permitir almacenar códigos de 2FA"
+      ],
+      "Allow storing passkeys": [
+        "Permitir almacenar claves de acceso"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Restringir el inicio de sesión al nombre de usuario y direcciones de ${ BRAND_NAME } coincidentes."
       ]
     },
     "label": {
@@ -17310,6 +17388,9 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ],
+      "terms and conditions": [
+        "términos y condiciones"
       ]
     },
     "Link (Scribe)": {
@@ -19764,6 +19845,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Su suscripción completa a ${ planTitle } comienza el ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**¿Cambió de parecer después de la prueba?** Cancele dentro de 30 días de su primer pago y le reembolsaremos el tiempo no usado."
       ]
     },
     "Option": {
@@ -24777,6 +24861,12 @@
       ],
       "Total due today": [
         "Total por pagar hoy"
+      ],
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "${ planDiscountItem.discountPercent }% de descuento aplicado"
+      ],
+      "${ planDiscountItem.discountPercent }% off": [
+        "${ planDiscountItem.discountPercent }% de descuento"
       ]
     },
     "Subscription attribute": {
@@ -28108,6 +28198,9 @@
       ],
       "Your subscriptions": [
         "Sus suscripciones"
+      ],
+      "Restrict sign-in?": [
+        "¿Restringir inicio de sesión?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

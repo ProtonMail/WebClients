@@ -2326,6 +2326,30 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Add payment method": [
+        "Afegir un mètode de pagament"
+      ],
+      "Cancel trial": [
+        "Cancel·lar la prova"
+      ],
+      "Create account": [
+        "Crear un compte"
+      ],
+      "Don't show this offer again": [
+        "No em torneu a mostrar aquesta oferta"
+      ],
+      "Go to folder": [
+        "Anar a la carpeta"
+      ],
+      "Restrict sign-in": [
+        "Restringiu l'inici de sessió"
+      ],
+      "Sign in to a different account": [
+        "Inicieu sessió amb un compte diferent"
+      ],
+      "Special Offer": [
+        "Oferta especial"
       ]
     },
     "action": {
@@ -14463,6 +14487,51 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "En activar aquesta opció, només podreu iniciar sessió amb **${ primaryEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "En activar aquesta opció, només podreu iniciar sessió amb el vostre nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**, **@${ secondDomain }** o **@${ thirdDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "En activar aquesta opció, només podreu iniciar sessió amb el vostre nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**, o bé **@${ secondDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "En activar aquesta opció, només podreu iniciar sessió amb el vostre nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "En activar aquesta opció, només podreu iniciar sessió amb el vostre nom d'usuari **${ username }**."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Els descomptes es basen en el preu mensual estàndard. La vostra subscripció es renovarà a la tarifa anual estàndard quan finalitzi el cicle de facturació."
+      ],
+      "If disabled, organization members won't be able to add 2FA codes to their items, and existing ones won't be generated or autofilled. Nothing is deleted.": [
+        "Si es desactiva, els membres de l'organització no podran afegir codis 2FA als seus elements, i els existents no es generaran ni s'emplenaran automàticament. No s'elimina res."
+      ],
+      "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
+        "Si es desactiva, els membres de l'organització no podran desar claus d'accés a ${ PASS_APP_NAME } ni iniciar-hi sessió. No s'elimina res."
+      ],
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Quan la connexió estigui restringida, només podreu utilitzar el vostre correu electrònic **${ primaryEmail }** per iniciar sessió. Les altres adreces no es podran enllaçar amb el vostre compte, encara que algunes persones les coneguin."
+      ],
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Quan l'inici de sessió estigui restringit, només podreu utilitzar el vostre nom d'usuari **${ username }** per iniciar sessió. Les altres adreces no es podran enllaçar amb el vostre compte, ni tan sols si algú les coneix."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Quan l'inici de sessió estigui restringit, només podreu iniciar sessió amb el vostre nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**, **@${ secondDomain }** o **@${ thirdDomain }**. Les altres adreces de correu electrònic no funcionaran per iniciar sessió."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Quan l'inici de sessió estigui restringit, només podreu iniciar sessió amb el vostre nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**, o bé **@${ secondDomain }**. Les altres adreces de correu electrònic no funcionaran per iniciar sessió."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Quan l'inici de sessió estigui restringit, només podreu iniciar sessió amb el vostre nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**. Les altres adreces de correu electrònic no funcionaran per iniciar sessió."
+      ],
+      "Your free plan includes one connected account. Upgrade to connect more.": [
+        "El vostre pla gratuït inclou un compte connectat. Milloreu-lo per connectar-ne més."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Les vostres altres adreces de correu electrònic no funcionaran per iniciar sessió fins que desactiveu aquesta opció."
       ]
     },
     "info": {
@@ -16872,6 +16941,15 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Allow storing 2FA codes": [
+        "Permet emmagatzemar codis 2FA"
+      ],
+      "Allow storing passkeys": [
+        "Permet emmagatzemar claus d'accés"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Restringir l'inici de sessió al nom d'usuari i a les adreces ${ BRAND_NAME } coincidents"
       ]
     },
     "label": {
@@ -17307,6 +17385,9 @@
       ],
       "What’s this?": [
         "Què és això?"
+      ],
+      "terms and conditions": [
+        "termes i condicions"
       ]
     },
     "Link (Scribe)": {
@@ -19761,6 +19842,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "La subscripció completa a ${ planTitle } comença el ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Heu canviat d'opinió després de la prova? ** Cancel·leu-la abans de 30 dies des del primer pagament i us reemborsarem el temps no utilitzat."
       ]
     },
     "Option": {
@@ -24777,6 +24861,12 @@
       ],
       "Total due today": [
         "Total a pagar avui"
+      ],
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "S'ha aplicat un descompte del ${ planDiscountItem.discountPercent }%"
+      ],
+      "${ planDiscountItem.discountPercent }% off": [
+        "${ planDiscountItem.discountPercent }% de descompte"
       ]
     },
     "Subscription attribute": {
@@ -28108,6 +28198,9 @@
       ],
       "Your subscriptions": [
         "Les vostres subscripcions"
+      ],
+      "Restrict sign-in?": [
+        "Voleu restringir l'inici de sessió?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

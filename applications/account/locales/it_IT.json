@@ -210,6 +210,72 @@
       ],
       "Zoom meeting links": [
         "Link alle riunioni Zoom"
+      ],
+      "Account events": [
+        "Eventi dell'account"
+      ],
+      "Block sender": [
+        "Blocca mittente"
+      ],
+      "Block sender for the organization": [
+        "Blocca il mittente per l'organizzazione"
+      ],
+      "Blog articles": [
+        "Articoli del blog"
+      ],
+      "Bulk user import": [
+        "Importa più utenti"
+      ],
+      "Create organization": [
+        "Crea organizzazione"
+      ],
+      "Data breach alerts": [
+        "Allerta violazione dei dati"
+      ],
+      "Download apps": [
+        "Scarica le app"
+      ],
+      "Download recovery file": [
+        "Scarica il file di recupero"
+      ],
+      "Email aliases": [
+        "Alias dell'email"
+      ],
+      "Export messages": [
+        "Esporta messaggi"
+      ],
+      "External mailbox": [
+        "Casella di posta elettronica esterna"
+      ],
+      "Group members": [
+        "Membri del gruppo"
+      ],
+      "Group plan invitation": [
+        "Invito al piano di gruppo"
+      ],
+      "Linux desktop app": [
+        "App Linux per desktop"
+      ],
+      "One-time code": [
+        "Codice monouso"
+      ],
+      "Privacy guides": [
+        "Guide alla privacy"
+      ],
+      "Protection from cyber attacks": [
+        "Protezione dagli attacchi informatici"
+      ],
+      "Restrict app access": [
+        "Accesso limitato all'app"
+      ],
+      "Shared server access": [
+        "Accesso condiviso ai server"
+      ],
+      "Verify domain": [
+        "Verifica dominio"
+      ],
+      "VPN session details": [
+        "Dettagli della sessione VPN"
       ]
     },
     "Accounts": {
@@ -2173,6 +2239,33 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Add payment method": [
+        "Aggiungi metodo di pagamento"
+      ],
+      "Cancel trial": [
+        "Annulla la prova"
+      ],
+      "Create account": [
+        "Crea un account"
+      ],
+      "Don't show this offer again": [
+        "Non mostrare più quest'offerta"
+      ],
+      "Go to folder": [
+        "Vai alla cartella"
+      ],
+      "Migrate": [
+        "Migrazione"
+      ],
+      "Preview logs": [
+        "Mostra anteprima log."
+      ],
+      "Restrict sign-in": [
+        "Accesso limitato"
+      ],
+      "Special Offer": [
+        "Offerta speciale"
       ]
     },
     "action": {
@@ -2688,6 +2781,9 @@
       ],
       "Your trial ends on ${ trialEndDate }. Add a payment method whenever you’re ready to keep using all ${ planTitle } features. You’ll only be charged once it’s added.": [
         "Il tuo periodo di prova scade il ${ trialEndDate }. Aggiungi un metodo di pagamento quando sei pronto a continuare a utilizzare tutte le funzionalità del piano ${ planTitle }. L'addebito avverrà solo dopo averlo aggiunto."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Durante il periodo di prova puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze per l'assistente alla scrittura ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "b2b_trials_Action": {
@@ -5649,6 +5745,9 @@
       ],
       "Disable address?": [
         "Vuoi disabilitare l'indirizzo?"
+      ],
+      "By disabling this address ${ address }, the member will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Disattivando questo indirizzo ${ address }, l'utente non potrà più inviare o ricevere email utilizzando questo indirizzo e tutti i prodotti ${ BRAND_NAME } collegati saranno disabilitati."
       ]
     },
     "dollar_offer": {
@@ -7055,6 +7154,13 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "I tuoi contatti di recupero dovrebbero essere persone che conosci e che puoi contattare facilmente."
+      ],
+      "They will receive access automatically **today**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "Riceveranno automaticamente accesso **oggi**, in **${ formattedAccessibleAt }**. Puoi rifiutare la loro richiesta o concedere loro subito l'accesso in qualsiasi momento."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "Riceveranno automaticamente accesso in **${ days } giorno**, il **${ formattedAccessibleAt }**. Puoi rifiutare la loro richiesta o concedere loro subito l'accesso in qualsiasi momento.",
+        "Riceveranno automaticamente accesso in **${ days } giorni**, il **${ formattedAccessibleAt }**. Puoi rifiutare la loro richiesta o concedere loro subito l'accesso in qualsiasi momento."
       ]
     },
     "Empty group name": {
@@ -7929,6 +8035,48 @@
       ],
       "Zero keys reactivated": [
         "Chiavi zero riattivate"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Impossibile verificare chi ha caricato questo file."
+      ],
+      "File download failed due to empty response": [
+        "Download del file non riuscito a causa di una risposta vuota."
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Indirizzo utente non trovato. Per favore contatta l'assistenza clienti per risolvere il problema"
+      ],
+      "Missing organization private key": [
+        "Chiave privata dell'organizzazione mancante"
+      ],
+      "Missing organization public key": [
+        "Chiave pubblica dell'organizzazione mancante"
+      ],
+      "Operation failed, try again later": [
+        "Operazione non riuscita. Riprova più tardi."
+      ],
+      "Organization does not have enough seats available": [
+        "L'organizzazione non dispone di licenze sufficienti"
+      ],
+      "Photo is already in the target album": [
+        "La foto è già presente nell'album di destinazione."
+      ],
+      "Photo not found": [
+        "Foto non trovata"
+      ],
+      "This file has missing crypto material": [
+        "Questo file ha materiale crittografico mancante."
+      ],
+      "This file version could not be uploaded": [
+        "Questa versione del file non può essere caricata."
+      ],
+      "Too many server requests, please try again later": [
+        "Troppe richieste. Riprova più tardi"
+      ],
+      "You can create public links for your own files only": [
+        "Puoi creare link pubblici solo per i tuoi file."
+      ],
+      "You can update a public link for your own files only": [
+        "Puoi aggiornare un link pubblico solo per i tuoi file."
       ]
     },
     "error": {
@@ -9299,6 +9447,12 @@
       ],
       "Username": [
         "Utente"
+      ],
+      "Billing details": [
+        "Dettagli di fatturazione"
+      ],
+      "Plan details": [
+        "Dettagli Piano"
       ]
     },
     "Header for addresses table": {
@@ -9805,6 +9959,12 @@
       "Skipped ${ count } event due to incompatibilities": [
         "Ignorato ${ count } evento a causa di incompatibilità",
         "Ignorati ${ count } eventi a causa di incompatibilità"
+      ],
+      "Has errors": [
+        "Ci sono errori"
+      ],
+      "Pending": [
+        "In attesa"
       ]
     },
     "Import type": {
@@ -13984,6 +14144,93 @@
       ],
       "Zoom meeting": [
         "Meeting Zoom"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Add additional users to **${ company.name }** from your organization to manage this company.": [
+        "Aggiungi altri utenti della tua organizzazione a **${ company.name }** per gestire questa azienda."
+      ],
+      "Author is not provided on public link": [
+        "L’autore non è indicato nel link pubblico."
+      ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "Attivandolo, potrai solo fare l'accesso con **${ primaryEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "Attivandolo, potrai fare l'accesso solo con il tuo nome utente originale **${ username }**, o da solo o come **${ firstEmail }**, **@${ secondDomain }** oppure **${ thirdDomain }**."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Gli sconti si basano sui prezzi mensili standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
+      ],
+      "Find out what can be migrated.": [
+        "Scopri cosa può essere migrato."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "I log ci aiutano a capire cosa è successo prima che si verificasse il problema. Includono le azioni eseguite nell'app e i messaggi di errore, ma non il contenuto dei messaggi."
+      ],
+      "No users to display": [
+        "Nessun utente da visualizzare"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Seleziona esattamente cosa migrare. Si applicherà a tutti gli utenti dell'organizzazione."
+      ],
+      "Signup link no longer valid": [
+        "Il link di registrazione non è più valido"
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Questo indirizzo Gmail è registrato con un altro account ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI e altri). Stiamo lavorando per rendere questo collegamento immediato ma, per il momento, dovrai completare alcuni passaggi."
+      ],
+      "This signup link has expired, been revoked or already been used. Please contact your ${ BRAND_NAME } representative for a new one.": [
+        "Questo link di registrazione è scaduto, è stato revocato o è già stato utilizzato. Contatta il tuo referente ${ BRAND_NAME } per ottenerne uno nuovo."
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Non è possibile migrare questo utente perché il suo indirizzo email non è disponibile su ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Questo utente non può essere migrato a causa d'incompatibilità tra le piattaforme."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Per migrare questo utente, aggiungi e verifica il dominio e-mail alla pagina ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "Per eseguire la migrazione di questo utente, abilita il suo account nella tua ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "Per migrare questo utente, attiva il suo account in ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "Per migrare questo utente, attiva il suo indirizzo in ${ usersAddressesLink }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Per migrare questo utente, riattivalo nella tua ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Per migrare questo utente, riattivalo nella tua ${ provider.adminConsoleName }"
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address. An administrator of your organization can create one for you.": [
+        "Per usare ${ toAppName }, hai bisogno di un indirizzo ${ MAIL_APP_NAME }. Un amministratore della tua organizzazione può crearne uno per te."
+      ],
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Quando l'accesso è limitato, puoi utilizzare solo la tua email **${ primaryEmail }** per accedere. Gli altri tuoi indirizzi non possono essere associati al tuo account, anche se qualcuno li conosce."
+      ],
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Quando l'accesso è limitato, puoi utilizzare solo il tuo nome utente **${ username }** per accedere. Gli altri tuoi indirizzi non possono essere associati al tuo account, anche se qualcuno li conosce."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Quando l'accesso è limitato, puoi accedere solo con il tuo nome utente originale **${ username }**, o da solo o come **${ firstEmail }**, oppure **@${ secondDomain }**. Gli altri tuoi indirizzi email non funzionerebbero per l'accesso."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Quando l'accesso è limitato, puoi accedere solo con il tuo nome utente originale **${ username }**, o da solo o come **${ firstEmail }**. Gli altri tuoi indirizzi email non funzionerebbero per l'accesso."
+      ],
+      "Whoever controls this address would get full access to your account and your data. Only continue if you recognize it and started this yourself.": [
+        "Chiunque controlli questo indirizzo avrà completo accesso al tuo account e ai tuoi dati. Continua solo se lo riconosci e hai iniziato tu il procedimento."
+      ],
+      "You": [
+        "Tu"
+      ],
+      "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
+        "Stai per accedere al tuo Account ${ BRAND_NAME } con questo indirizzo:"
       ]
     },
     "info": {
@@ -16363,6 +16610,39 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Account credit": [
+        "Credito account"
+      ],
+      "Billing contact": [
+        "Contatto di fatturazione"
+      ],
+      "Custom email domains": [
+        "Domini e-mail personalizzati"
+      ],
+      "Dedicated VPN servers": [
+        "Server VPN dedicati"
+      ],
+      "In progress": [
+        "In corso"
+      ],
+      "Invoice email": [
+        "Email per la fattura"
+      ],
+      "Organization size": [
+        "Dimensioni dell'organizzazione"
+      ],
+      "Payment terms": [
+        "Termini di pagamento"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Limita registrazione a username e indirizzi ${ BRAND_NAME } corrispondenti"
+      ],
+      "Taxable": [
+        "Tassabile"
+      ],
+      "VAT number": [
+        "Numero VAT"
       ]
     },
     "label": {
@@ -16798,6 +17078,9 @@
       ],
       "What’s this?": [
         "Cos'è questo?"
+      ],
+      "terms and conditions": [
+        "termini e condizioni"
       ]
     },
     "Link (Scribe)": {
@@ -17037,6 +17320,9 @@
       ],
       "You’ve been invited to try ${ MAIL_APP_NAME }": [
         "Sei stato invitato a provare ${ MAIL_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "mail_signup_2024: title": {
@@ -18255,6 +18541,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Monitoriamo il dark web per verificare se i tuoi indirizzi o alias ${ BRAND_NAME } vengono diffusi e ti avvisiamo immediatamente se troviamo qualcosa."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME } con accesso esteso"
       ]
     },
     "new_plans: feature highlight": {
@@ -19217,6 +19509,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Il tuo abbonamento completo a ${ planTitle } inizia il ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Hai cambiato idea dopo il periodo di prova? **Annulla entro 30 giorni dal primo pagamento e ti rimborseremo il periodo non utilizzato."
       ]
     },
     "Option": {
@@ -21096,6 +21391,9 @@
       ],
       "key": [
         "chiave"
+      ],
+      "name": [
+        "nome"
       ]
     },
     "Property type": {
@@ -22199,6 +22497,18 @@
       ],
       "You can now sync groups alongside users. Changes push **automatically** when you update your groups on your identity provider.": [
         "Ora puoi sincronizzare i gruppi insieme agli utenti. Le modifiche vengono inviate **automaticamente** quando aggiorni i tuoi gruppi sul tuo provider di identità."
+      ],
+      "**You'll be able to review** group changes before they take effect to confirm they're intentional": [
+        "**Potrai controllare** i cambiamenti del gruppo prima che abbiano effetto per confermare che sono intenzionali"
+      ],
+      "New: Manage groups via your identity provider": [
+        "Nuovo: Gestisci gruppi nel tuo provider di identità"
+      ],
+      "This approval prompt will **appear every time you update** groups through your identity provider": [
+        "Questa richiesta di approvazione **apparirà ogni volta che aggiornerai** i gruppi tramite il tuo provider di identità."
+      ],
+      "What to expect now that group sync is enabled": [
+        "Cosa aspettarsi ora che la sincronizzazione di gruppo è attivata"
       ]
     },
     "scim: Action": {
@@ -24189,6 +24499,12 @@
       ],
       "Total due today": [
         "Totale dovuto oggi"
+      ],
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "${ planDiscountItem.discountPercent }% sconto applicato"
+      ],
+      "${ planDiscountItem.discountPercent }% off": [
+        "${ planDiscountItem.discountPercent }% disattivato"
       ]
     },
     "Subscription attribute": {
@@ -25158,6 +25474,12 @@
       ],
       "Status": [
         "Stato"
+      ],
+      "Estimated size": [
+        "Dimensione stimata"
+      ],
+      "Migration status": [
+        "Stato della migrazione"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -27481,6 +27803,24 @@
       ],
       "Your subscriptions": [
         "I tuoi abbonamenti"
+      ],
+      "Confirm where to sign in": [
+        "Conferma dove fare l'accesso"
+      ],
+      "Payment": [
+        "Pagamento"
+      ],
+      "Restrict sign-in?": [
+        "Accesso limitato?"
+      ],
+      "Tax": [
+        "Tasse"
+      ],
+      "What are you migrating?": [
+        "Cosa stai migrando?"
+      ],
+      "Your groups": [
+        "I tuoi gruppi"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27567,6 +27907,9 @@
       ],
       "Role": [
         "Ruolo"
+      ],
+      "Last app activity": [
+        "Ultima attività dell'app"
       ]
     },
     "Title subscription": {
@@ -27978,6 +28321,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "In attesa che l'utente accetti l'invito"
+      ],
+      "External address — No end-to-end encryption or resource sharing, and roles and permissions can't be assigned.": [
+        "Indirizzo esterno — Crittografia end-to-end, condivisione di risorse e assegnazione di ruoli e permessi non disponibili."
       ]
     },
     "Tooltip automatically attach public key": {
@@ -29135,6 +29481,79 @@
       ],
       "Yearly, ${ untilString }": [
         "Ogni anno, ${ untilString }"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "Attivato"
+      ],
+      "All": [
+        "Tutto"
+      ],
+      "In progress": [
+        "In corso"
+      ],
+      "Pending": [
+        "In attesa"
+      ]
+    },
+    "Gateway monitor upsell": {
+      "Advanced security controls": [
+        "Controlli di sicurezza avanzati"
+      ],
+      "Enforce identity-based access controls": [
+        "Applica i controlli di accesso basati sull'identità"
+      ],
+      "In addition to connection monitoring, private gateways let you grant access by user or group - all running on dedicated servers with static IPs.": [
+        "In aggiunta al monitoraggio della connessione, le porte private ti permettono di accedere come utente o gruppo - tutti su server dedicati con IP statici."
+      ],
+      "Monitor gateway connections with VPN Professional": [
+        "Monitora la connessione delle porte con VPN Professional"
+      ],
+      "Unlock Single-Sign-on (SSO), admin policies, monitoring, enforced two-factor authentication and more.": [
+        "Sblocca il Single Sign-On (SSO), i criteri amministrativi, il monitoraggio, imposta l'autenticazione a due fattori e molto altro."
+      ],
+      "User - ${ userPrice }": [
+        "Utente - ${ userPrice }"
+      ]
+    },
+    "Members table usage": {
+      "Monitor gateways connections": [
+        "Monitora connessione delle porte"
+      ],
+      "Setup your own private gateways to monitor VPN connection activity within your organization.": [
+        "Configura la tua porta privata per monitorare l'attività della connessione VPN nella tua organizzazione"
+      ],
+      "Today, ${ time }": [
+        "Oggi, ${ time }"
+      ],
+      "Yesterday": [
+        "Ieri"
+      ],
+      "Yesterday, ${ time }": [
+        "Ieri, ${ time }"
+      ]
+    },
+    "Payment method": {
+      "Bank transfer": [
+        "Bonifico"
+      ],
+      "Credit card": [
+        "Carta di credito"
+      ]
+    },
+    "Payment terms": {
+      "${ days } day": [
+        "${ days } giorno",
+        "${ days } giorni"
+      ],
+      "Due on receipt": [
+        "Da pagare alla ricezione"
+      ]
+    },
+    "Tooltip for members table": {
+      "Last time this user signed in or used the ${ VPN_APP_NAME } app on their device.": [
+        "L'ultimo accesso dell'utente o l'utilizzo dell'app ${ VPN_APP_NAME } su questo dispositivo."
       ]
     }
   }

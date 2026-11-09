@@ -2326,6 +2326,15 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Don't show this offer again": [
+        "No volver a mostrar esta oferta"
+      ],
+      "Restrict sign-in": [
+        "Restringir el inicio de sesión"
+      ],
+      "Special Offer": [
+        "Oferta especial"
       ]
     },
     "action": {
@@ -8266,6 +8275,12 @@
       ],
       "Zero keys reactivated": [
         "Ninguna clave reactivada"
+      ],
+      "Couldn't load your account": [
+        "No se ha podido cargar tu cuenta."
+      ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "No se ha podido calcular el total. Cambia el importe para volver a intentarlo."
       ]
     },
     "error": {
@@ -9691,6 +9706,12 @@
       ],
       "Username": [
         "Nombre de usuario"
+      ],
+      "Billing details": [
+        "Detalles de facturación"
+      ],
+      "Plan details": [
+        "Detalles del plan"
       ]
     },
     "Header for addresses table": {
@@ -14448,6 +14469,18 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "Al activar esta opción, solo podrás iniciar sesión con tu nombre de usuario **${ username }**."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se calculan sobre el precio mensual estándar. Tu suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ],
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Cuando se restringe el inicio de sesión, solo se puede utilizar tu dirección de correo electrónico **${ primaryEmail }** para iniciar sesión. Tus otras direcciones no se pueden vincular a tu cuenta, aunque alguien las conozca."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Tus otras direcciones de correo electrónico no se podrán utilizar para iniciar sesión hasta que desactives esta opción."
       ]
     },
     "info": {
@@ -16827,6 +16860,21 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Billing contact": [
+        "Contacto de facturación"
+      ],
+      "Invoice email": [
+        "Correo electrónico de la factura"
+      ],
+      "Payment terms": [
+        "Condiciones de pago"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Restringir el inicio de sesión al nombre de usuario y a las direcciones de correo electrónico de ${ BRAND_NAME } correspondientes"
+      ],
+      "Total": [
+        "Total"
       ]
     },
     "label": {
@@ -17262,6 +17310,9 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ],
+      "terms and conditions": [
+        "términos y condiciones"
       ]
     },
     "Link (Scribe)": {
@@ -28034,6 +28085,15 @@
       ],
       "Your subscriptions": [
         "Tus suscripciones"
+      ],
+      "Payment": [
+        "Pago"
+      ],
+      "Tax": [
+        "Impuestos"
+      ],
+      "Your groups": [
+        "Tus grupos"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29714,6 +29774,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Payment method": {
+      "Bank transfer": [
+        "Transferencia bancaria"
+      ]
+    },
+    "Payment terms": {
+      "${ days } day": [
+        "${ days } día",
+        "${ days } días"
       ]
     }
   }

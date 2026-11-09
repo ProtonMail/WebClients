@@ -1441,6 +1441,9 @@
       ],
       "Zoom out": [
         "Távolítás"
+      ],
+      "Verify now": [
+        "Ellenőrizze most"
       ]
     },
     "action": {
@@ -1714,6 +1717,9 @@
       ],
       "You have reached the trial limit.": [
         "Elérte a próbaverzió korlátját."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "A próbaidőszak ekkor ér véget: ${ formattedDate1 }, ezután havi előfizetésre alakul át, ami automatikusan megújul ${ renewCycle } havonta. Akkor nem kerül díj felszámításra, ha lemondja ${ formattedDate2 } előtt."
       ]
     },
     "b2b_trials_Action": {
@@ -1917,6 +1923,14 @@
     "Billing cycle": {
       "Renews automatically on ${ subscriptionManagerName }": [
         "Automatikusan megújul: ${ subscriptionManagerName }"
+      ],
+      "Renews automatically at ${ introPrice }, for ${ nextCycle } month, on ${ when }": [
+        "Automatikusan megújul ${ introPrice } áron, ${ nextCycle } hónapra, ekkor: ${ when }",
+        "Automatikusan megújul ${ introPrice } áron, ${ nextCycle } hónapra, ekkor: ${ when }"
+      ],
+      "Renews automatically at ${ price }, for ${ cycle } month": [
+        "Automatikusan megújul ${ price } áron, ${ cycle } hónapra",
+        "Automatikusan megújul ${ price } áron, ${ cycle } hónapra"
       ]
     },
     "Billing cycle option": {
@@ -5782,6 +5796,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "A kétlépcsős hitelesítés készen áll a használatra."
+      ],
+      "Still waiting?": [
+        "Még mindíg várakozik?"
       ]
     },
     "fido2: Label": {
@@ -9199,6 +9216,12 @@
       ],
       "Zoom meeting": [
         "Zoom találkozót"
+      ],
+      "Billed at ${ monthlyDiscountedPriceElement } for the first 6 months, renews at ${ monthlyRenewalPriceElement }.": [
+        "Számlázva ${ monthlyDiscountedPriceElement } áron az első 6 hónapban, megújul ${ monthlyRenewalPriceElement } áron."
+      ],
+      "Billed at ${ yearlyDiscountedPriceElement } for the first 12 months, renews at ${ yearlyRenewalPriceElement }.": [
+        "Számlázva ${ yearlyDiscountedPriceElement } áron az első 12 hónapban, megújul ${ yearlyRenewalPriceElement } áron."
       ]
     },
     "info": {
@@ -10708,6 +10731,9 @@
       ],
       "ZIP code": [
         "Irányítószám"
+      ],
+      "Renews at ${ renewalPrice }, cancel anytime.": [
+        "Megújul ${ renewalPrice } áron, de bármikor lemondhatja."
       ]
     },
     "label": {
@@ -12637,6 +12663,27 @@
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Vegyen részt felmérésekben a ${ BRAND_NAME } szolgáltatások javítása érdekében"
+      ],
+      "${ BRAND_NAME } for Business communications": [
+        "${ BRAND_NAME } for Business értesítések"
+      ],
+      "1-4 emails per year. Reminders to keep your recovery methods up to date.": [
+        "1-4 e-mail évente. Emlékeztetők arról, hogy tartsa frissen a fiókja helyreállítási módszereit."
+      ],
+      "Account email updates": [
+        "A fiókhoz kapcsolódó értesítések"
+      ],
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Ha ezt kikapcsolja, nem fog az alkalmazásban értesítéseket kapni akciókról, új lehetőségekről, új ${ BRAND_NAME } szolgáltatásokról és emlékeztetőkről."
+      ],
+      "Email communications": [
+        "E-mail kommunikáció"
+      ],
+      "Product email updates": [
+        "Termékről szóló hírek"
+      ],
+      "Recovery checklist": [
+        "Helyreállítási ellenőrzőlista"
       ]
     },
     "Notification": {
@@ -14095,7 +14142,7 @@
         "Fax"
       ],
       "Home": [
-        "Otthoni"
+        "Kezdőlap"
       ],
       "Main": [
         "Elsődleges"
@@ -17437,7 +17484,7 @@
         "Súgóközpont"
       ],
       "Home": [
-        "Otthon"
+        "Kezdőlap"
       ],
       "How to choose a good logo": [
         "Hogyan válasszon egy jó logót"
@@ -19239,6 +19286,21 @@
       ],
       "Yearly, ${ untilString }": [
         "Évente, ${ untilString }"
+      ]
+    },
+    "dollar_offer": {
+      "${ offerPrice } for the first month. Renews at ${ regularPrice }/month, cancel anytime.": [
+        "${ offerPrice } az első hónapra. Megújul havi ${ regularPrice } áron, de bármikor lemondhatja."
+      ]
+    },
+    "Password reminder": {
+      "Do you remember your ${ BRAND_NAME } password?": [
+        "Emlékszik a ${ BRAND_NAME } jelszavára?"
+      ]
+    },
+    "safety_review": {
+      "Your recovery checklist": [
+        "Az ön helyreállítási ellenőrzőlistája"
       ]
     }
   }

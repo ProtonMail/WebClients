@@ -2326,6 +2326,24 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Add payment method": [
+        "Дадаць спосаб аплаты"
+      ],
+      "Cancel trial": [
+        "Скасаваць пробны перыяд"
+      ],
+      "Create account": [
+        "Стварыць уліковы запіс"
+      ],
+      "Don't show this offer again": [
+        "Больш не паказваць гэту прапанову"
+      ],
+      "Restrict sign-in": [
+        "Абмежаваць доступ"
+      ],
+      "Special Offer": [
+        "Спецыяльная прапанова"
       ]
     },
     "action": {
@@ -3893,6 +3911,12 @@
       ],
       "Your password remains the same.": [
         "Ваш пароль застаецца без змяненняў."
+      ],
+      "The address ${ boldClaimedEmail } has been claimed by another organization and can no longer be used for this account. Your data is safe and remains private.": [
+        "Адрас электроннай пошты ${ boldClaimedEmail } заяўлены іншай арганізацыі і больш не можа выкарыстоўвацца для гэтага ўліковага запісу. Ваша інфармацыя знаходзіцца ў бяспецы і застаецца прыватнай."
+      ],
+      "Your data was migrated to the address below and remains private.": [
+        "Вашы даныя былі перанесены на адрас, які ўказаны ніжэй, і яны застаюцца прыватнымі."
       ]
     },
     "Collapsible tooltip": {
@@ -5746,6 +5770,9 @@
         "Ваш тарыфны план агулам падтрымлівае ${ MAX_SYNC_PAID_USER } адрасы Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail"
+      ],
+      "Your other sessions have been ended. You can now sign in on this device.": [
+        "Вашы іншыя сеансы завершаны. Цяпер вы можаце ўвайсці на гэтай прыладзе."
       ]
     },
     "description": {
@@ -8252,6 +8279,12 @@
       ],
       "Zero keys reactivated": [
         "Нуль ключоў паўторна актывавана"
+      ],
+      "Couldn't load your account": [
+        "Немагчыма загрузіць ваш уліковы запіс"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Вы дасягнулі абмежавання па колькасці падключаных адрасоў"
       ]
     },
     "error": {
@@ -9707,6 +9740,9 @@
       ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "Billing details": [
+        "Падрабязнасці аплаты"
       ]
     },
     "Header for addresses table": {
@@ -14402,6 +14438,48 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "${ emailAddress } is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "Адрас электроннай пошты ${ emailAddress } выкарыстоўваецца для ўваходу ў іншы ўліковы запіс ${ BRAND_NAME }. У цяперашні час вядзецца праца над тым, каб падключэнне адбывалася ў бясшковым рэжыме, але цяпер вам спатрэбіцца выканаць некалькі крокаў."
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "Адрас электроннай пошты **${ emailAddress }** таксама выкарыстоўваецца для ўваходу ў асобны ўліковы запіс ${ BRAND_NAME } па-за межамі ${ MAIL_APP_NAME }."
+      ],
+      "Added to ${ BRAND_NAME }": [
+        "Дададзена ў ${ BRAND_NAME }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Ваша падпіска будзе аўтаматычна падаўжацца па стандартнай гадавой стаўцы пасля заканчэння перыяду аплаты."
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "У вашым іншым уліковым запісе ${ BRAND_NAME } нічога не зменіцца."
+      ],
+      "This Gmail is already connected to your ${ BRAND_NAME } account. There's nothing else you need to do.": [
+        "Гэты Gmail ужо падключаны да вашага ўліковага запісу ${ BRAND_NAME }. Ніякія дадатковыя дзеянні не патрабуюцца."
+      ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Гэта функцыя дазволіць вам хутка бяспечна атрымаць доступ да свайго ўліковага запісу ${ BRAND_NAME }, каб вы маглі змяніць свой пароль."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Дадайце і праверце дамен электроннай пошты ў ${ domainNamesLink } для пераносу гэтага карыстальніка"
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address. An administrator of your organization can create one for you.": [
+        "Вам спатрэбіцца адрас ${ MAIL_APP_NAME }, каб выкарыстоўваць ${ toAppName }. Адміністратар вашай арганізацыі можа стварыць яго для вас."
+      ],
+      "We couldn't connect your Gmail right now. Please try again in a few minutes.": [
+        "У цяперашні час ваш Gmail не можа быць падключаны. Паспрабуйце паўтарыць спробу праз некалькі хвілін."
+      ],
+      "We couldn't connect your Gmail. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "Не ўдалося падключыцца да Gmail. Паўтарыце спробу і пазначце ўсе птушкі ва ўсіх палях, калі Google запытае доступ. ${ BRAND_NAME } выкарыстоўвае гэты доступ толькі для падключэння да вашага Gmail."
+      ],
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Толькі ваша імя карыстальніка **${ username }** можна будзе выкарыстоўваць для ўваходу, калі ўваход забаронены. Вашы іншыя адрасы нельга будзе звязаць з вашым уліковым запісам, нават калі нехта будзе ведаць пра іх."
+      ],
+      "Your address was connected. We're importing your emails.": [
+        "Ваш адрас быў падключаны. Адбываецца імпартаванне вашых лістоў."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Ваш Gmail падключаны да гэтага адраса ${ MAIL_APP_NAME }"
       ]
     },
     "info": {
@@ -16814,6 +16892,15 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Account credit": [
+        "Крэдыты ўліковага запісу"
+      ],
+      "Billing contact": [
+        "Кантакт для аплаты"
+      ],
+      "Dedicated VPN servers": [
+        "Вылучаныя серверы VPN"
       ]
     },
     "label": {
@@ -17251,6 +17338,9 @@
       ],
       "What’s this?": [
         "Што гэта?"
+      ],
+      "terms and conditions": [
+        "умовамі выкарыстання"
       ]
     },
     "Link (Scribe)": {
@@ -19807,6 +19897,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Ваша поўная падпіска на тарыфны план ${ planTitle } пачнецца ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Змянілі сваё меркаванне пасля пробнага перыяду?** Вы можаце скасаваць падпіску на працягу 30 дзён з моманту першага плацяжу, і вам будуць вернуты грошы за нявыкарыстаны час."
       ]
     },
     "Option": {
@@ -20880,6 +20973,9 @@
         "${ days } дні",
         "${ days } дзён",
         "${ days } дзён"
+      ],
+      "Due on receipt": [
+        "Дзейнічае пры дастаўцы"
       ]
     },
     "Payment.Sepa.Action": {
@@ -21112,6 +21208,39 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } не можа быць аб'яднаны з ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } даступна толькі на тарыфных планах, якія арыентаваны на бізнес."
+      ],
+      "Paid from your account credit.": [
+        "Аплачана з крэдытаў вашага ўліковага запісу."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Змена тарыфнага плана несумяшчальная па наступнай прычыне:"
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Закрыйце дадатковыя кашалькі перад змяненнем свайго тарыфнага плана."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Ліцэнзіі Proton Meet павінны адпавядаць колькасці ўдзельнікаў."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць адрасоў для вашага ўліковага запісу."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Гэты вылучаны сервер прызначаны шлюзу і не можа быць зменены."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Гэты тарыфны план не падтрымлівае кіруемыя функцыі ў вашым уліковым запісе."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Гэта падпіска не можа быць завершана цяпер. Паўтарыце спробу зноў."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "У вас ужо ёсць ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ]
     },
     "Payments.Error": {
@@ -22801,6 +22930,9 @@
       ],
       "What to expect now that group sync is enabled": [
         "Чаго цяпер чакаць, калі сінхранізацыя групы ўключана"
+      ],
+      "Final approval needed to remove organization key access.": [
+        "Для выдалення доступу да ключа арганізацыі патрабуецца канчатковае ўхваленне."
       ]
     },
     "scim: Action": {
@@ -28274,6 +28406,9 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Гэты Gmail звязаны з іншым уліковым запісам ${ BRAND_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29084,7 +29219,7 @@
     },
     "Upsell": {
       "${ BRAND_NAME } for Business": [
-        "Рассылка ${ BRAND_NAME } for Business"
+        "${ BRAND_NAME } for Business"
       ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Зэканомце да ${ priceString }** з працяглай падпіскай. Тыя ж самыя прэміяльныя функцыі за меншую плату."
@@ -30008,6 +30143,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Штогод, ${ untilString }"
+      ]
+    },
+    "BYOE": {
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Вашы самыя апошнія лісты будуць імпартаваны першымі. Ужо імпартаваныя лісты паўторна капіявацца не будуць."
       ]
     }
   }

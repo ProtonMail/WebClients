@@ -1856,6 +1856,12 @@
       ],
       "Zoom out": [
         "Thu nhỏ"
+      ],
+      "About ${ name }": [
+        "Về ${ name }"
+      ],
+      "Add ${ name }": [
+        "Thêm ${ name }"
       ]
     },
     "action": {
@@ -12522,6 +12528,18 @@
       ],
       "Zoom meeting": [
         "Cuộc họp Zoom"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Đảm bảo hoàn tiền trong 30 ngày: hủy trong vòng 30 ngày kể từ ngày mua và liên hệ với ${ customerSupportLink } của chúng tôi để được hoàn lại tiền."
+      ],
+      "If disabled, organization members won't be able to add 2FA codes to their items, and existing ones won't be generated or autofilled. Nothing is deleted.": [
+        "Nếu bị tắt, các thành viên của tổ chức sẽ không thể thêm mã 2FA và các mã hiện có sẽ không được tạo hoặc tự động điền. Sẽ không xóa gì."
+      ],
+      "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
+        "Nếu bị tắt, các thành viên của tổ chức sẽ không thể lưu passkey trong ${ PASS_APP_NAME } hoặc đăng nhập bằng passkey đó. Sẽ không xóa gì."
+      ],
+      "UnionPay logo": [
+        "Logo UnionPay"
       ]
     },
     "info": {
@@ -14749,6 +14767,12 @@
       ],
       "ZIP code": [
         "Mã bưu chính"
+      ],
+      "Allow storing 2FA codes": [
+        "Cho phép lưu trữ mã 2FA"
+      ],
+      "Allow storing passkeys": [
+        "Cho phép lưu trữ passkey"
       ]
     },
     "label": {
@@ -15168,6 +15192,12 @@
       ],
       "What’s this?": [
         "Đây là gì?"
+      ],
+      "Customer Support": [
+        "Hỗ trợ khách hàng"
+      ],
+      "terms and conditions": [
+        "các điều khoản và điều kiện"
       ]
     },
     "Link (Scribe)": {
@@ -18571,6 +18601,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Gói đăng ký hiện có giảm giá. Chuyển sang khuyến mãi mới này đồng nghĩa với việc mức giảm giá hiện tại sẽ không còn được áp dụng."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Không thể mua tài khoản Born Private khi đang đăng ký gói khác."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Yêu cầu quyên góp để sử dụng ​​Born Private."
+      ],
+      "You already own a Born Private account.": [
+        "Bạn đã có tài khoản Born Private rồi."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Tài khoản của bạn đã quá cũ để sử dụng ​​Born Private."
       ]
     },
     "Payments.Error": {
@@ -25818,6 +25860,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Có thể chỉ định vai trò sau khi người dùng chấp nhận lời mời."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Người dùng này có quyền quản trị viên vào lần đăng nhập tiếp theo"
       ]
     },
     "Users table: badge": {
@@ -26423,6 +26468,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Hàng năm, ${ untilString }"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Đảm bảo hoàn tiền trong 30 ngày: hủy trong vòng 30 ngày kể từ ngày mua và liên hệ với ${ customerSupportLink } của chúng tôi để được hoàn lại tiền."
       ]
     }
   }

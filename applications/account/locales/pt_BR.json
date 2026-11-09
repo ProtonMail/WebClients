@@ -672,7 +672,7 @@
         "Conectar endereço do Gmail"
       ],
       "Connect to video conferencing": [
-        "Conectar-se à videoconferência.\n"
+        "Conectar-se à videoconferência"
       ],
       "Connect your email": [
         "Conecte seu e-mail"
@@ -2320,6 +2320,21 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Cancel trial": [
+        "Cancelar avaliação"
+      ],
+      "Create account": [
+        "Criar conta"
+      ],
+      "Don't show this offer again": [
+        "Não mostrar mais esta oferta"
+      ],
+      "Go to folder": [
+        "Ir para pasta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
       ]
     },
     "action": {
@@ -14093,6 +14108,9 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Os descontos são baseados no preço mensal padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
       ]
     },
     "info": {
@@ -16922,6 +16940,9 @@
       ],
       "What’s this?": [
         "O que é isso?"
+      ],
+      "terms and conditions": [
+        "termos e condições"
       ]
     },
     "Link (Scribe)": {
@@ -24247,6 +24268,12 @@
       ],
       "Total due today": [
         "Preço total hoje"
+      ],
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "Desconto de ${ planDiscountItem.discountPercent }% aplicado"
+      ],
+      "${ planDiscountItem.discountPercent }% off": [
+        "${ planDiscountItem.discountPercent }% de desconto"
       ]
     },
     "Subscription attribute": {

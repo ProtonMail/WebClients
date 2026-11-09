@@ -2326,6 +2326,30 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Add payment method": [
+        "Προσθέστε μέθοδο πληρωμής"
+      ],
+      "Cancel trial": [
+        "Ακύρωση δοκιμής"
+      ],
+      "Create account": [
+        "Δημιουργία λογαριασμού"
+      ],
+      "Don't show this offer again": [
+        "Να μην εμφανιστεί ξανά αυτή η προσφορά"
+      ],
+      "Go to folder": [
+        "Μετάβαση στο φάκελο"
+      ],
+      "Restrict sign-in": [
+        "Περιορισμός σύνδεσης"
+      ],
+      "Sign in to a different account": [
+        "Σύνδεση σε διαφορετικό λογαριασμό"
+      ],
+      "Special Offer": [
+        "Ειδική Προσφορά"
       ]
     },
     "action": {
@@ -14463,6 +14487,51 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το **${ primaryEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το αρχικό σας όνομα χρήστη **${ username }**, είτε αυτόνομα είτε ως **${ firstEmail }**, **@${ secondDomain }** ή **@${ thirdDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "Ενεργοποιώντας αυτήν την επιλογή, θα μπορείτε να συνδεθείτε μόνο με το αρχικό σας όνομα χρήστη **${ username }**, είτε μόνο του είτε ως **${ firstEmail }** ή **@${ secondDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το αρχικό σας όνομα χρήστη **${ username }**, είτε από μόνο του είτε ως **${ firstEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη **${ username }**."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια χρέωση όταν λήξει ο κύκλος χρέωσης."
+      ],
+      "If disabled, organization members won't be able to add 2FA codes to their items, and existing ones won't be generated or autofilled. Nothing is deleted.": [
+        "Εάν απενεργοποιηθεί, τα μέλη του οργανισμού δε θα μπορούν να προσθέσουν κωδικούς 2FA στα στοιχεία τους, ενώ οι υπάρχοντες κωδικοί δε θα παράγονται ούτε θα συμπληρώνονται αυτόματα. Δε διαγράφεται τίποτα."
+      ],
+      "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
+        "Εάν απενεργοποιηθεί, τα μέλη του οργανισμού δε θα μπορούν να αποθηκεύουν κλειδιά πρόσβασης στο ${ PASS_APP_NAME } ούτε να συνδέονται με αυτά. Δε διαγράφεται τίποτα."
+      ],
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Όταν η είσοδος είναι περιορισμένη, μόνο η διεύθυνση ηλεκτρονικού ταχυδρομείου σας **${ primaryEmail }** μπορεί να χρησιμοποιηθεί για την είσοδο. Οι άλλες διευθύνσεις σας δεν μπορούν να συνδεθούν με τον λογαριασμό σας, ακόμα κι αν κάποιος τις γνωρίζει."
+      ],
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Όταν η είσοδος είναι περιορισμένη, μόνο το όνομα χρήστη σας **${ username }** μπορεί να χρησιμοποιηθεί για την είσοδο. Οι άλλες διευθύνσεις σας δεν μπορούν να συνδεθούν με τον λογαριασμό σας, ακόμα κι αν κάποιος τις γνωρίζει."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Όταν η είσοδος είναι περιορισμένη, μπορείτε να συνδεθείτε μόνο με το αρχικό όνομα χρήστη σας **${ username }**, είτε από μόνο του είτε ως **${ firstEmail }**, **@${ secondDomain }** ή **@${ thirdDomain }**. Οι άλλες διευθύνσεις ηλεκτρονικού ταχυδρομείου σας δε θα λειτουργούν για τη σύνδεση."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Όταν η είσοδος είναι περιορισμένη, μπορείτε να συνδεθείτε μόνο με το αρχικό σας όνομα χρήστη **${ username }** είτε από μόνο του, είτε ως **${ firstEmail }**, είτε ως **@${ secondDomain }**. Οι άλλες διευθύνσεις ηλεκτρονικού ταχυδρομείου σας δε θα λειτουργούν για τη σύνδεση."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Όταν η είσοδος είναι περιορισμένη, μπορείτε να συνδεθείτε μόνο με το αρχικό σας όνομα χρήστη **${ username }**, είτε ως έχει είτε ως **${ firstEmail }**. Οι άλλες διευθύνσεις ηλεκτρονικού ταχυδρομείου σας δε θα λειτουργούν για τη σύνδεση."
+      ],
+      "Your free plan includes one connected account. Upgrade to connect more.": [
+        "Το δωρεάν πλάνο σας περιλαμβάνει έναν συνδεδεμένο λογαριασμό. Κάντε αναβάθμιση για να συνδέσετε περισσότερους."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Οι άλλες διευθύνσεις ηλεκτρονικού ταχυδρομείου σας δε θα λειτουργούν για τη σύνδεση, μέχρι να απενεργοποιήσετε αυτή τη ρύθμιση."
       ]
     },
     "info": {
@@ -16872,6 +16941,15 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Allow storing 2FA codes": [
+        "Να επιτρέπεται η αποθήκευση κωδικών 2FA"
+      ],
+      "Allow storing passkeys": [
+        "Να επιτρέπεται η αποθήκευση κλειδιών πρόσβασης"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Περιορίστε τη σύνδεση σε όνομα χρήστη και αντίστοιχες διευθύνσεις ${ BRAND_NAME }"
       ]
     },
     "label": {
@@ -17307,6 +17385,9 @@
       ],
       "What’s this?": [
         "Τι είναι αυτό;"
+      ],
+      "terms and conditions": [
+        "όροι και προϋποθέσεις"
       ]
     },
     "Link (Scribe)": {
@@ -19761,6 +19842,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Η πλήρης συνδρομή σας ${ planTitle } ξεκινά στις ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Αλλάξατε γνώμη μετά τη δοκιμαστική περίοδο;** Ακυρώστε εντός 30 ημερών από την πρώτη σας πληρωμή και θα σας επιστρέψουμε το αντίτιμο για το διάστημα που δε χρησιμοποιήσατε."
       ]
     },
     "Option": {
@@ -24774,6 +24858,12 @@
       ],
       "Total due today": [
         "Συνολικό οφειλόμενο ποσό σήμερα"
+      ],
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "Εφαρμόστηκε έκπτωση ${ planDiscountItem.discountPercent }%"
+      ],
+      "${ planDiscountItem.discountPercent }% off": [
+        "${ planDiscountItem.discountPercent }% έκπτωση"
       ]
     },
     "Subscription attribute": {
@@ -28105,6 +28195,9 @@
       ],
       "Your subscriptions": [
         "Οι συνδρομές σας"
+      ],
+      "Restrict sign-in?": [
+        "Περιορισμός σύνδεσης;"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

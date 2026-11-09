@@ -2323,6 +2323,30 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Add payment method": [
+        "Tilføj betalingsmetode"
+      ],
+      "Cancel trial": [
+        "Annuller prøveperiode"
+      ],
+      "Create account": [
+        "Opret konto"
+      ],
+      "Don't show this offer again": [
+        "Vis ikke dette tilbud igen"
+      ],
+      "Go to folder": [
+        "Gå til mappe"
+      ],
+      "Restrict sign-in": [
+        "Begræns login"
+      ],
+      "Sign in to a different account": [
+        "Log ind med en anden konto"
+      ],
+      "Special Offer": [
+        "Særtilbud"
       ]
     },
     "action": {
@@ -8251,6 +8275,9 @@
       ],
       "Zero keys reactivated": [
         "Nul nøgler genaktiveret"
+      ],
+      "Missing organization public key": [
+        "Organisationens offentlige nøgle mangler."
       ]
     },
     "error": {
@@ -14371,6 +14398,51 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "Ved at slå dette til, vil du kun kunne logge ind med **${ primaryEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "Ved at slå dette til vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller med **${ firstEmail }**, **@${ secondDomain }** eller **@${ thirdDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "Ved at slå dette til vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller med **${ firstEmail }** eller **@${ secondDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "Ved at slå dette til vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller med **${ firstEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "Ved at slå dette til, vil du kun kunne logge ind med dit brugernavn **${ username }**."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatter beregnes ud fra den normale månedspris. Dit abonnement fornyes til den årlige standardpris når faktureringsperioden udløber."
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Vælg præcis hvad du vil migrere. Det gælder for alle organisationens brugere."
+      ],
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Kun din e-mail **${ primaryEmail }** kan bruges til logge ind når login er begrænset. Dine andre adresser kan ikke spores tilbage til din konto, selv hvis nogen kender dem."
+      ],
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Kun dit brugernavn **${ username }** kan bruges til at logge ind, når login er begrænset. Dine andre adresser kan ikke knyttes tilbage til din konto, selv om nogen kender dem."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Når login er begrænset, vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller som **${ firstEmail }**, **@${ secondDomain }** eller **@${ thirdDomain }**. Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Når login er begrænset, vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller som **${ firstEmail }** eller **@${ secondDomain }**. Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når login er begrænset, vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller som **${ firstEmail }** Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
+      ],
+      "You": [
+        "Du"
+      ],
+      "Your free plan includes one connected account. Upgrade to connect more.": [
+        "Dit gratis abonnement inkluderer én forbundet konto. Opgrader for at forbinde flere."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Din andre e-mailadresser vil ikke længere kunne bruges til at logge ind medmindre du slår dette fra."
       ]
     },
     "info": {
@@ -16780,6 +16852,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Begræns login til brugernavn og tilsvarende ${ BRAND_NAME }-adresser"
       ]
     },
     "label": {
@@ -17215,6 +17290,9 @@
       ],
       "What’s this?": [
         "Hvad er dette?"
+      ],
+      "terms and conditions": [
+        "vilkår og betingelser"
       ]
     },
     "Link (Scribe)": {
@@ -19669,6 +19747,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Dit fulde ${ planTitle }-abonnement starter ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Har du ændret mening efter prøveperioden?** Annuller indenfor 30 dage fra din første betaling for at få den resterende tid refunderet."
       ]
     },
     "Option": {
@@ -24682,6 +24763,12 @@
       ],
       "Total due today": [
         "I alt til betaling nu"
+      ],
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "${ planDiscountItem.discountPercent }% rabat anvendt"
+      ],
+      "${ planDiscountItem.discountPercent }% off": [
+        "${ planDiscountItem.discountPercent }% rabat"
       ]
     },
     "Subscription attribute": {
@@ -25651,6 +25738,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "Estimated size": [
+        "Anslået størrelse"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -27992,6 +28082,9 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Restrict sign-in?": [
+        "Begræns login?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29666,6 +29759,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligt, ${ untilString }"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "Aktiveret"
       ]
     }
   }
