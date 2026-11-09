@@ -179,7 +179,7 @@ const DriveSignup = (props: BaseSignupContextProps) => {
             app={APPS.PROTONDRIVE}
             flowId="drive-generic"
             onLogin={async (session) => {
-                await props.handleLogin({ data: session, flow: 'signup', appIntent: { app: APPS.PROTONDRIVE } });
+                return props.handleLogin({ data: session, flow: 'signup', appIntent: { app: APPS.PROTONDRIVE } });
             }}
             paymentsDataConfig={{
                 availablePlans,

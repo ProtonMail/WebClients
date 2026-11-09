@@ -1096,11 +1096,16 @@ const SingleSignupContainerV2 = ({
                 return await new Promise<void>(() => {});
             }
 
-            await onLogin(result.session);
+            const loginResult = await onLogin(result.session);
 
             metrics.core_single_signup_complete_total.increment({
                 status: 'success',
             });
+
+            if (loginResult.state === 'complete') {
+                // The page is leaving for the app: keep the step loading until it unloads
+                return await new Promise<void>(() => {});
+            }
         } catch (error) {
             observeApiError(error, (status) =>
                 metrics.core_single_signup_complete_total.increment({
@@ -1125,7 +1130,7 @@ const SingleSignupContainerV2 = ({
                 return await new Promise<void>(() => {});
             }
 
-            await onLogin({
+            const loginResult = await onLogin({
                 data: cache.session.resumedSessionResult,
                 flow: 'login',
             });
@@ -1133,6 +1138,11 @@ const SingleSignupContainerV2 = ({
             metrics.core_single_signup_complete_total.increment({
                 status: 'success',
             });
+
+            if (loginResult.state === 'complete') {
+                // The page is leaving for the app: keep the step loading until it unloads
+                return await new Promise<void>(() => {});
+            }
         } catch (error) {
             observeApiError(error, (status) =>
                 metrics.core_single_signup_complete_total.increment({

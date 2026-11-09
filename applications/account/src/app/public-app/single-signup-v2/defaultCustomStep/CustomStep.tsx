@@ -183,7 +183,7 @@ const CustomStep = ({
                             if (validateFlow()) {
                                 cacheRef.current = updatedCache;
                                 trackSignupDisplayNameCompleted(product, telemetryPlan);
-                                void handleNextStep();
+                                await handleNextStep();
                             }
                         } catch (error) {
                             handleError(error);
@@ -211,7 +211,7 @@ const CustomStep = ({
                             });
                             if (validateFlow()) {
                                 cacheRef.current = cache;
-                                void handleNextStep();
+                                await handleNextStep();
                             }
                         } catch (error) {
                             handleError(error);
@@ -238,7 +238,7 @@ const CustomStep = ({
                             await handleSetupOrg({ api, user, password, keyPassword, orgName });
 
                             if (validateFlow()) {
-                                void handleNextStep();
+                                await handleNextStep();
                             }
                         } catch (error) {
                             handleError(error);

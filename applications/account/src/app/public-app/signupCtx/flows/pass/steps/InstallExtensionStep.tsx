@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import useLoading from '@proton/hooks/useLoading';
 import { clients } from '@proton/pass/clients';
 import { Clients } from '@proton/pass/constants';
 import { getBrowserClient } from '@proton/pass/lib/extension/utils/browser';
@@ -22,6 +23,7 @@ type Props = {
 
 export const InstallExtensionStep: FC<Props> = ({ onContinue }) => {
     const api = useApi();
+    const [loading, withLoading] = useLoading();
 
     const browserType = useMemo(getBrowserClient, []);
     const browser = browserType ? clients[browserType] : null;
@@ -69,7 +71,14 @@ export const InstallExtensionStep: FC<Props> = ({ onContinue }) => {
                     {c('Action').t`Get the extension for ${browser.title}`}
                 </ButtonLike>
             )}
-            <Button className="mt-4" shape="ghost" color="norm" pill onClick={onContinue}>
+            <Button
+                className="mt-4"
+                shape="ghost"
+                color="norm"
+                pill
+                loading={loading}
+                onClick={() => withLoading(onContinue())}
+            >
                 {c('Action').t`Open ${PASS_APP_NAME} in your browser`}
             </Button>
             <div className="divider-gradient mt-20 w-full h-custom" style={{ '--h-custom': '1px' }} />

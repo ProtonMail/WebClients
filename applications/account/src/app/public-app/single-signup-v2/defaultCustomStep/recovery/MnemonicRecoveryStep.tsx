@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import type { DeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
 import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
+import useLoading from '@proton/hooks/useLoading';
 
 import RecoveryStepUnderstoodCheckbox from '../../../../private-app/containers/recoveryPhrase/RecoveryStepUnderstoodCheckbox';
 import SetRecoveryPhraseOnSignupContainer from '../../../../private-app/containers/recoveryPhrase/SetRecoveryPhraseOnSignupContainer';
@@ -15,7 +16,7 @@ import Main from '../../../layout/Main';
 import type { AccountData } from '../../../signup/interfaces';
 
 interface Props {
-    onContinue: () => void;
+    onContinue: () => Promise<void> | void;
     mnemonicData: DeferredMnemonicData;
     accountData: AccountData | undefined | null;
     onMeasureClick: (type: 'recovery_download' | 'recovery_download_again' | 'recovery_continue') => void;
@@ -25,6 +26,7 @@ const MnemonicRecoveryStep = ({ onContinue, accountData, mnemonicData, onMeasure
     const [understood, setUnderstood] = useState(false);
 
     const api = useApi();
+    const [loading, withLoading] = useLoading();
 
     return (
         <Main>
@@ -54,9 +56,10 @@ const MnemonicRecoveryStep = ({ onContinue, accountData, mnemonicData, onMeasure
                                     size="large"
                                     fullWidth
                                     disabled={!understood}
+                                    loading={loading}
                                     onClick={() => {
                                         onMeasureClick('recovery_continue');
-                                        onContinue();
+                                        void withLoading(async () => onContinue());
                                     }}
                                 >
                                     {c('pass_signup_2023: Action').t`Continue`}
