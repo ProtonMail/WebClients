@@ -1060,6 +1060,9 @@
       ],
       "Cancel trial": [
         "Скасаваць пробны перыяд"
+      ],
+      "Add payment method": [
+        "Дадаць спосаб аплаты"
       ]
     },
     "action": {
@@ -4202,6 +4205,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Ваша падключэнне па Zoom пратэрмінавана. Перападключыцеся, каб працягнуць."
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Вы дасягнулі абмежавання па колькасці падключаных адрасоў"
       ]
     },
     "error": {
@@ -6745,6 +6751,15 @@
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
         "Выдаліце існуючую старонку з бакавой панэлі браніравання старонак у ${ CALENDAR_APP_NAME }, каб дадаць новую старонку браніравання."
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Ваш Mac можа папрасіць увесці пароль пасля абнаўлення. Увядзіце свой бягучы пароль для яго разблакіроўкі, а потым націсніце «Заўсёды дазваляць» (гэта дазволіць заставацца ў сістэме). ${ learnMore }"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Ваша падпіска будзе аўтаматычна падаўжацца па стандартнай гадавой стаўцы пасля заканчэння перыяду аплаты."
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Абнавіце ${ MAIL_APP_NAME }, каб мець магчыма далей карыстацца праграмай. ${ downloadUpdate }"
       ]
     },
     "info": {
@@ -9561,6 +9576,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Ваша поўная падпіска на тарыфны план ${ planTitle } пачнецца ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Змянілі сваё меркаванне пасля пробнага перыяду?** Вы можаце скасаваць падпіску на працягу 30 дзён з моманту першага плацяжу, і вам будуць вернуты грошы за нявыкарыстаны час."
       ]
     },
     "Option": {
@@ -9985,6 +10003,36 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } не можа быць аб'яднаны з ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } даступна толькі на тарыфных планах, якія арыентаваны на бізнес."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Змена тарыфнага плана несумяшчальная па наступнай прычыне:"
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Закрыйце дадатковыя кашалькі перад змяненнем свайго тарыфнага плана."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Ліцэнзіі Proton Meet павінны адпавядаць колькасці ўдзельнікаў."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць адрасоў для вашага ўліковага запісу."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Гэты вылучаны сервер прызначаны шлюзу і не можа быць зменены."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Гэты тарыфны план не падтрымлівае кіруемыя функцыі ў вашым уліковым запісе."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Гэта падпіска не можа быць завершана цяпер. Паўтарыце спробу зноў."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "У вас ужо ёсць ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ]
     },
     "Payments.Error": {

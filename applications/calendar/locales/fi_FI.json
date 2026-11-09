@@ -6255,7 +6255,7 @@
         "Olet nyt kirjautuneena ${ username } tilille."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
-        "Käytät enemmän tallennustilaa kuin ${ downgradedPlanName }-tilaus sisältyy. Sinun on poistettava tietoja tilauksesi alentamiseksi."
+        "Käytät enemmän tallennustilaa kuin ${ downgradedPlanName }-tilaukseen sisältyy. Sinun on poistettava sisältöä tilauksesi alentamiseksi."
       ],
       "You can also merge imported calendars with existing ${ BRAND_NAME } calendars.": [
         "Voit myös yhdistää tuotavat kalenterit olemassaoleviin ${ BRAND_NAME }-kalentereihin."
@@ -6449,6 +6449,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Olet saavuttanut varausaikojen enimmäismäärän (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Pyydä ylläpitoasi päivittämään tilauksesi tai poista sivu Varaussivut-sivupalkista ${ CALENDAR_APP_NAME }ssa."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Lisätäksesi varaussivun, poista jokin nykyisistä sivuista Varaussivut-sivupalkista ${ CALENDAR_APP_NAME }ssa."
       ]
     },
     "info": {
@@ -6662,7 +6668,7 @@
         "Tilinhaltijan nimi"
       ],
       "Add ${ MEET_APP_NAME } conferencing": [
-        "Lisää ${ MEET_APP_NAME } -konferenssi"
+        "Lisää ${ MEET_APP_NAME } -verkkokokous"
       ],
       "Add email address": [
         "Lisää sähköpostiosoite"
@@ -10596,7 +10602,7 @@
         "Tilauksesi ostettiin Android-sovelluksella. Jos haluat muuttaa tilaustasi tai päivittää maksutietojasi, sinun on siirryttävä Google Play Storeen."
       ],
       "Your plan was purchased using an iOS app. So to make changes to your plan or update your payment details, you’ll need to go to the Apple App Store.": [
-        "Tilauksesi ostettiin iOS-sovelluksella. Jos haluat muuttaa tilaustasi tai päivittää maksutietojasi, sinun on siirryttävä Apple App Storeen."
+        "Tilaus ostettiin iOS-sovelluksella. Muuta tilausta tai päivitä maksutietoja Applen App Storessa."
       ]
     },
     "subscription downgrading info": {
