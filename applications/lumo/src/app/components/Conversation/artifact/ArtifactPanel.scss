@@ -1,3 +1,5 @@
+@use '~@proton/styles/scss/lib/config';
+
 .artifact-fullscreen-brand {
 	opacity: 0.85;
 }
@@ -169,6 +171,32 @@
 			code {
 				background: none;
 				padding: 0;
+			}
+		}
+
+		// Fenced code and its copy button share one grid cell, which is the box the sticky button is held
+		// inside — so it never runs past the block's top or bottom. No utility covers a shared grid cell.
+		.artifact-code-fence {
+			display: grid;
+			grid-template-columns: minmax(0, 1fr);
+
+			// The <pre>'s margins (top from the reset, bottom from above) move to the wrapper; inside the cell
+			// they'd put empty space above and below the visible block that the button could drift into.
+			margin-block: config.$base-line-height * 1em 0.75em;
+
+			> pre,
+			> .artifact-code-fence-copy {
+				grid-area: 1 / 1;
+			}
+
+			> pre {
+				margin-block: 0;
+			}
+
+			> .artifact-code-fence-copy {
+				position: sticky;
+				inset-block-start: 0;
+				place-self: start end;
 			}
 		}
 
