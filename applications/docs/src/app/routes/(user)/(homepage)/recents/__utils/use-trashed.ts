@@ -1,6 +1,6 @@
 import { useNotifications } from '@proton/app-context/useNotifications'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
-import { generateNodeUid, getDrive } from '@proton/drive/sdk'
+import { generateNodeUid } from '@proton/drive/sdk'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { DriveEvent, NodeEntity, ProtonDriveClient } from '@proton/drive/sdk'
 import { useCallback, useState } from 'react'
@@ -44,25 +44,26 @@ export function useTrashed(drive: ProtonDriveClient) {
     [createNotification, drive],
   )
 
-  const trashedListener: SDKEventListener = useCallback(async (event: DriveEvent) => {
-    const drive = getDrive()
-
-    if (event.type === 'node_updated') {
-      if (event.isTrashed) {
-        const node = await drive.getNode(event.nodeUid)
-        if (!mimeTypeToProtonDocumentType(node.mediaType)) {
-          return
+  const trashedListener: SDKEventListener = useCallback(
+    async (event: DriveEvent) => {
+      if (event.type === 'node_updated') {
+        if (event.isTrashed) {
+          const node = await drive.getNode(event.nodeUid)
+          if (!mimeTypeToProtonDocumentType(node.mediaType)) {
+            return
+          }
+          setTrashedDocumentItems((items) => createOrUpdateItem(items, node))
+        } else {
+          setTrashedDocumentItems((items) => removeMissingItems(items, event.nodeUid))
         }
-        setTrashedDocumentItems((items) => createOrUpdateItem(items, node))
-      } else {
+      }
+
+      if (event.type === 'node_deleted') {
         setTrashedDocumentItems((items) => removeMissingItems(items, event.nodeUid))
       }
-    }
-
-    if (event.type === 'node_deleted') {
-      setTrashedDocumentItems((items) => removeMissingItems(items, event.nodeUid))
-    }
-  }, [])
+    },
+    [drive],
+  )
 
   return {
     fetchTrashed,

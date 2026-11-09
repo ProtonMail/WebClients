@@ -4,4 +4,6 @@ The purpose of this module is to provide a dependency-free implementation of Doc
 
 Files inside this path import each other with relative paths, never through the `~/homepage` alias.
 
+Drive SDK: the `ProtonDriveClient` instance (from `getDrive`) is injected by the host. Everything else (functions, enums, error classes, types) is imported from `@protontech/drive-sdk`, never from `@proton/drive`.
+
 Files outside this path import only from its public entry, `index.ts` (`~/homepage`), never from deeper paths. Code needed on both sides is duplicated.
