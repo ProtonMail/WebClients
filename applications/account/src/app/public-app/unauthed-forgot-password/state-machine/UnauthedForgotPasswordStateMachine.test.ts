@@ -1,4 +1,4 @@
-import { type AnyActorLogic, createActor, fromPromise, waitFor } from 'xstate';
+import { type AnyActorLogic, createActor, fromCallback, fromPromise, waitFor } from 'xstate';
 import type { StateValue } from 'xstate';
 
 import type {
@@ -17,6 +17,7 @@ import {
     UnauthedForgotPasswordStateMachine,
     UnauthedForgotPasswordStateMachineTags,
     selectCanGoBack,
+    selectSessionExpired,
 } from './UnauthedForgotPasswordStateMachine';
 import type {
     CodeInput,
@@ -87,6 +88,8 @@ interface Harness {
     emitted: UnauthedForgotPasswordMachineEmitted[];
     /** Each time the machine left for the sign-in page, with its username then, which the sign-in form starts with. */
     signInRedirects: string[];
+    /** Expires the unauthenticated session the attempt runs on. */
+    expireSession: () => void;
 }
 
 const harnesses = new WeakMap<object, Harness>();
@@ -100,6 +103,7 @@ function startActor(overrides: Partial<Record<keyof ForgotPasswordActors, AnyAct
         resets: [],
         emitted: [],
         signInRedirects: [],
+        expireSession: () => {},
     };
     const machine = UnauthedForgotPasswordStateMachine.provide({
         actions: {
@@ -108,6 +112,9 @@ function startActor(overrides: Partial<Record<keyof ForgotPasswordActors, AnyAct
             },
         },
         actors: {
+            watchSession: fromCallback(({ sendBack }) => {
+                harness.expireSession = () => sendBack({ type: 'session.expired' });
+            }),
             requestRecoveryMethods: fromPromise(async ({ input }: { input: { username: string } }) => ({
                 methods: harness.methods,
                 username: input.username,
@@ -1070,6 +1077,97 @@ describe('UnauthedForgotPasswordStateMachine', () => {
 
             actor.send({ type: 'decision.skip' });
             expect(harnessOf(actor).signInRedirects).toEqual(['user@example.com']);
+        });
+    });
+
+    describe('session expiry', () => {
+        const showsSessionExpired = (actor: ForgotPasswordActor) => selectSessionExpired(actor.getSnapshot());
+
+        it('starts the attempt over, with the username, and tells the user', async () => {
+            const actor = startActor();
+            await verifyByEmail(actor, DeviceRecoveryLevel.FULL);
+            expect(actor.getSnapshot().matches('setNewPassword')).toBe(true);
+
+            harnessOf(actor).expireSession();
+
+            const snap = actor.getSnapshot();
+            expect(snap.matches({ entry: 'idle' })).toBe(true);
+            expect(snap.context.username).toBe('user@example.com');
+            expect(snap.context.resetResponse).toBeUndefined();
+            expect(showsSessionExpired(actor)).toBe(true);
+        });
+
+        it('stops telling the user once they type or submit again', () => {
+            const actor = startActor({ requestRecoveryMethods: fromPromise(() => new Promise(() => {})) });
+            const expireUnderTheRequest = () => {
+                actor.send({ type: 'username.submitted', payload: { username: 'user@example.com' } });
+                harnessOf(actor).expireSession();
+                expect(showsSessionExpired(actor)).toBe(true);
+            };
+
+            expireUnderTheRequest();
+            actor.send({ type: 'username.edited' });
+            expect(showsSessionExpired(actor)).toBe(false);
+
+            expireUnderTheRequest();
+            actor.send({ type: 'username.submitted', payload: { username: 'user@example.com' } });
+            expect(showsSessionExpired(actor)).toBe(false);
+        });
+
+        it("drops the recovery phrase's sign-in, which ran on the expired session", async () => {
+            const actor = startActor();
+            actor.send({
+                type: 'recoveryLink.opened',
+                payload: { username: 'prefilled@example.com', mnemonic: 'recovery phrase' },
+            });
+            await waitUntilSettled(actor);
+
+            harnessOf(actor).expireSession();
+
+            expect(actor.getSnapshot().matches({ entry: 'idle' })).toBe(true);
+            expect(actor.getSnapshot().context.mnemonicData).toBeUndefined();
+        });
+
+        it('stops a request that runs on the expired session', async () => {
+            const actor = startActor({ requestRecoveryMethods: fromPromise(() => new Promise(() => {})) });
+            actor.send({ type: 'username.submitted', payload: { username: 'user@example.com' } });
+
+            harnessOf(actor).expireSession();
+
+            expect(actor.getSnapshot().matches({ entry: 'idle' })).toBe(true);
+            expect(showsSessionExpired(actor)).toBe(true);
+        });
+
+        it('says nothing before the attempt asked for anything', () => {
+            const actor = startActor();
+
+            harnessOf(actor).expireSession();
+
+            expect(actor.getSnapshot().matches({ entry: 'idle' })).toBe(true);
+            expect(showsSessionExpired(actor)).toBe(false);
+        });
+
+        it('lets a running reset decide, since the password may be changed already', async () => {
+            const actor = startActor({ resetPassword: fromPromise(() => new Promise<void>(() => {})) });
+            await verifyByEmail(actor, DeviceRecoveryLevel.FULL);
+            actor.send({ type: 'password.submitted', payload: { password: 'new password' } });
+
+            harnessOf(actor).expireSession();
+
+            expect(actor.getSnapshot().matches({ setNewPassword: 'resetting' })).toBe(true);
+            expect(showsSessionExpired(actor)).toBe(false);
+        });
+
+        it('stays while the app signs in with the changed password', async () => {
+            const actor = startActor();
+            await verifyByEmail(actor, DeviceRecoveryLevel.FULL);
+            actor.send({ type: 'password.submitted', payload: { password: 'new password' } });
+            await waitForState(actor, { setNewPassword: 'signedIn' });
+
+            harnessOf(actor).expireSession();
+
+            expect(actor.getSnapshot().matches({ setNewPassword: 'signedIn' })).toBe(true);
+            expect(showsSessionExpired(actor)).toBe(false);
         });
     });
 

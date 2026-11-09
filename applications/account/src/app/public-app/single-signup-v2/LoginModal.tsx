@@ -30,9 +30,19 @@ interface Props extends ModalProps {
     paths: Paths;
     productParam: ProductParam;
     onStartAuth: () => Promise<void>;
+    /** Subscribes to the unauthenticated session's expiry, after which an attempt starts over; returns the unsubscribe. */
+    onSessionExpired: (listener: () => void) => () => void;
 }
 
-const LoginModal = ({ productParam, paths, onLogin, onStartAuth, defaultUsername, ...rest }: Props) => {
+const LoginModal = ({
+    productParam,
+    paths,
+    onLogin,
+    onStartAuth,
+    onSessionExpired,
+    defaultUsername,
+    ...rest
+}: Props) => {
     return (
         <ModalTwo size="small" {...rest}>
             <SignInContainer
@@ -46,6 +56,7 @@ const LoginModal = ({ productParam, paths, onLogin, onStartAuth, defaultUsername
                 compactForm
                 remember={RememberMode.Hidden}
                 onStartAuth={onStartAuth}
+                onSessionExpired={onSessionExpired}
             />
         </ModalTwo>
     );

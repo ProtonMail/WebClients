@@ -28,6 +28,8 @@ import {
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 
+import { LoginErrorBlock } from '../components/LoginErrorBlock';
+import { getSessionExpiredMessage } from '../helper';
 import Header from '../layout/Header';
 import Layout from '../layout/Layout';
 import Main from '../layout/Main';
@@ -42,6 +44,7 @@ import { runLogin } from '../state-machine/runLogin';
 import { createTokenRedemptionActors } from './tokenRedemptionActors';
 import {
     selectResending,
+    selectSessionExpired,
     selectStep,
     selectSubmitting,
     tokenRedemptionStateMachine,
@@ -83,6 +86,7 @@ const TokenRedemptionContainer = () => {
     const submitting = selectSubmitting(snapshot);
     const resending = selectResending(snapshot);
     const view = selectStep(snapshot);
+    const sessionExpired = selectSessionExpired(snapshot);
 
     useEffect(() => {
         const subscriptions = [
@@ -178,6 +182,8 @@ const TokenRedemptionContainer = () => {
 
         switch (view) {
             case 'email':
+                // A new code is on its way, maybe after the session expired on the code step
+                setOtp('');
                 return send({ type: 'email.submitted', email });
             case 'otp':
                 return send({ type: 'code.submitted', code: otp });
@@ -201,18 +207,25 @@ const TokenRedemptionContainer = () => {
                 <Header title={viewConfig.title} subTitle={viewConfig.subTitle} />
                 <form onSubmit={handleSubmit} className="flex flex-column items-start w-full grow">
                     {view === 'email' && (
-                        <InputFieldTwo
-                            autoFocus
-                            name="email"
-                            label={c('Label').t`Email address`}
-                            placeholder={c('Signup label').t`Your email`}
-                            value={emailLocal}
-                            onChange={({ target: { value } }) => setEmailLocal(value)}
-                            disableChange={disabled}
-                            suffix={domain && <span className="color-hint">@{domain}</span>}
-                            bigger
-                            error={validator([requiredValidator(emailLocal), emailValidator(email)])}
-                        />
+                        <>
+                            <InputFieldTwo
+                                autoFocus
+                                name="email"
+                                label={c('Label').t`Email address`}
+                                placeholder={c('Signup label').t`Your email`}
+                                value={emailLocal}
+                                onChange={({ target: { value } }) => {
+                                    setEmailLocal(value);
+                                    send({ type: 'email.edited' });
+                                }}
+                                disableChange={disabled}
+                                suffix={domain && <span className="color-hint">@{domain}</span>}
+                                bigger
+                                error={validator([requiredValidator(emailLocal), emailValidator(email)])}
+                            />
+                            {/* Shown like an error, but the email isn't wrong, so the field isn't marked */}
+                            <LoginErrorBlock message={sessionExpired ? getSessionExpiredMessage() : undefined} />
+                        </>
                     )}
                     {view === 'otp' && (
                         <>

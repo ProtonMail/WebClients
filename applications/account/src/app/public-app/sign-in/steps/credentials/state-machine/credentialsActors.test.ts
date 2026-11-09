@@ -1,6 +1,6 @@
 import { createActor, toPromise } from 'xstate';
 
-import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
+import type { AuthResponse, InfoResponse } from '@proton/shared/lib/authentication/interface';
 import { handleExternalSSOLogin } from '@proton/shared/lib/authentication/ssoExternalLogin';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
@@ -226,11 +226,11 @@ describe('createCredentialsActors', () => {
         const invalidLogin = {
             data: { Code: API_CUSTOM_ERROR_CODES.INVALID_LOGIN, Error: 'Incorrect login credentials' },
         };
-        const run = () => {
+        const run = (info?: InfoResponse) => {
             const actors = createCredentialsActors(
                 makeServices(() => Promise.resolve()) as unknown as SignInActorServices
             );
-            const input = { username: 'eric@domain.com', password: 'secret', persistent: false, payload: {} };
+            const input = { username: 'eric@domain.com', password: 'secret', persistent: false, payload: {}, info };
             return toPromise(createActor(actors.authenticateWithPassword, { input }).start());
         };
 
@@ -262,6 +262,26 @@ describe('createCredentialsActors', () => {
             mockLoginWithPassword.mockRejectedValueOnce(invalidLogin);
 
             await expect(run()).rejects.toThrow(InvalidLoginError);
+        });
+
+        it('signs in again on the new session, with its own auth info, when the session expired under it', async () => {
+            const info = { Modulus: 'm' } as InfoResponse;
+            mockLoginWithPassword.mockClear();
+            mockLoginWithPassword.mockRejectedValueOnce({ status: 401 }).mockResolvedValueOnce({
+                result: {} as AuthResponse,
+                authVersion: 4,
+                claimedAddressID: undefined,
+            });
+
+            await expect(run(info)).resolves.toEqual(expect.objectContaining({ username: 'eric@domain.com' }));
+            expect(mockLoginWithPassword.mock.calls.map(([args]) => args.info)).toEqual([info, undefined]);
+        });
+
+        it('fails when the session expires again under the second try', async () => {
+            const expired = { status: 401 };
+            mockLoginWithPassword.mockRejectedValueOnce(expired).mockRejectedValueOnce(expired);
+
+            await expect(run()).rejects.toBe(expired);
         });
     });
 });

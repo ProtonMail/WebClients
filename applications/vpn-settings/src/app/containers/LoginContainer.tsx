@@ -19,9 +19,18 @@ interface Props {
     initialLocation?: H.Location;
     onPreSubmit?: () => Promise<void>;
     onStartAuth: () => Promise<void>;
+    onSessionExpired: (listener: () => void) => () => void;
 }
 
-const LoginContainer = ({ metaTags, onLogin, paths, initialLocation, onPreSubmit, onStartAuth }: Props) => {
+const LoginContainer = ({
+    metaTags,
+    onLogin,
+    paths,
+    initialLocation,
+    onPreSubmit,
+    onStartAuth,
+    onSessionExpired,
+}: Props) => {
     const location = useLocation<{ from?: H.Location }>();
     const searchParams = new URLSearchParams(location.search);
     const vpnTestflight = searchParams.get('redirect') === 'ios-beta';
@@ -38,6 +47,7 @@ const LoginContainer = ({ metaTags, onLogin, paths, initialLocation, onPreSubmit
             externalRedirect={initialLocation?.pathname || ''}
             onPreSubmit={onPreSubmit}
             onStartAuth={onStartAuth}
+            onSessionExpired={onSessionExpired}
             redirectsSSOToAccount
             onLogin={async (session) => {
                 if (vpnTestflight) {

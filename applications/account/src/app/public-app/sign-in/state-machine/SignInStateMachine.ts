@@ -60,6 +60,8 @@ export type SignInMachineEvent =
     | CredentialsParentEvent
     /** From any step (a child actor): an error to show while it continues. */
     | StepErrorEvent
+    /** From `watchSession`: the unauthenticated session expired, taking what the steps did on it. */
+    | { type: 'session.expired' }
     /**
      * `createAuthState` built the auth state. Listed so the account flows can read it from the event that started
      * them rather than from context: the auth state holds the password, and nothing else needs it.
@@ -127,7 +129,7 @@ export const SignInStateMachine = setup({
         children: {} as { credentials: 'credentialsFlow'; passwordAccount: 'passwordAccountFlow'; sso: 'ssoFlow' },
     },
     actors: {
-        ...unprovidedActors<SignInActors>({ prepareSignIn: true, createAuthState: true }),
+        ...unprovidedActors<SignInActors>({ prepareSignIn: true, watchSession: true, createAuthState: true }),
         credentialsFlow: credentialsStateMachine,
         passwordAccountFlow: passwordAccountStateMachine,
         ssoFlow: ssoStateMachine,
@@ -135,6 +137,7 @@ export const SignInStateMachine = setup({
     actions: {
         setStep: assign((_, params: { step: SignInStep }) => ({ step: params.step })),
         reopenCredentials: sendTo('credentials', { type: 'credentials.reopened' as const }),
+        forwardSessionExpired: sendTo('credentials', { type: 'session.expired' as const }),
         /**
          * The credentials step crashed: start a new one, on the form. Without the SSO redirect's token, which was
          * already used, and its notice.
@@ -173,10 +176,16 @@ export const SignInStateMachine = setup({
             // Also catches a restarted step's crash: its errors carry the same id
             onError: { actions: [reportActorError, 'restartCredentials'] },
         },
+        { src: 'watchSession' },
     ],
     on: {
         'step.errorReported': {
             actions: { type: 'reportError', params: ({ event }) => ({ error: event.payload.error }) },
+        },
+        // The attempt can't go on without what it did on the session, so it starts over from the form, which says why
+        'session.expired': {
+            target: '.awaitingCredentials',
+            actions: ['forwardSessionExpired', 'reopenCredentials'],
         },
     },
     states: {
@@ -184,6 +193,8 @@ export const SignInStateMachine = setup({
             entry: { type: 'setStep', params: { step: 'credentials' } },
             on: {
                 'credentials.authenticated': { target: 'authenticated' },
+                // The credentials step knows whether a request of its own was running
+                'session.expired': { actions: 'forwardSessionExpired' },
             },
         },
 

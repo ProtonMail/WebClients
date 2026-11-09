@@ -11,6 +11,7 @@ export const usePublicAppAuth = () => {
         // The crypto worker must be loaded when a signup, login or reset submits
         onPreSubmit: () => requireCrypto(publicApp),
         onStartAuth: () => unauthenticatedApi.startUnAuthFlow(),
+        onSessionExpired: unauthenticatedApi.onSessionExpired,
     };
 };
 

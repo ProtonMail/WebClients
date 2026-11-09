@@ -1,4 +1,4 @@
-import { createSession, setCookies } from '../../lib/api/auth';
+import { auth, createSession, setCookies } from '../../lib/api/auth';
 import type { ApiEvent } from '../../lib/api/createApi';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../lib/errors';
 import { ApiError } from '../../lib/fetch/ApiError';
@@ -131,12 +131,14 @@ describe('unauthenticated api human verification', () => {
         let sendCodeCalls = 0;
         const { unauthenticatedApi } = setupUnauthenticatedApi((config) => {
             if (config.url !== 'send-code') {
-                // The refresh call
+                // The sign-in, then the refresh call
                 return Promise.resolve('refreshed');
             }
             sendCodeCalls += 1;
             return sendCodeCalls === 1 ? Promise.reject(error) : Promise.resolve('ok');
         });
+        // Only a signed in session can be refreshed
+        await unauthenticatedApi.apiCallback(auth({ Username: 'user' }, false));
 
         await expect(unauthenticatedApi.apiCallback({ url: 'send-code' })).resolves.toBe('ok');
         expect(sendCodeCalls).toBe(2);

@@ -71,7 +71,8 @@ export const createSSOActors = (services: SignInActorServices) => {
                     if (error instanceof AuthDeviceInvalidError) {
                         sendBack({ type: 'sso.device.rejected' });
                     } else if (getIs401Error(error) || getApiError(error).status === HTTP_STATUS_CODE.FORBIDDEN) {
-                        // The session is gone (the API layer already tried to refresh it), or no longer allowed
+                        // The session can't read the device any more, so the attempt ends rather than polling on. An
+                        // expired session doesn't get here: the sign-in has already started over, stopping the polling
                         sendBack({ type: 'sso.device.failed', payload: { error } });
                     }
                     // Other errors are transient; polling continues.

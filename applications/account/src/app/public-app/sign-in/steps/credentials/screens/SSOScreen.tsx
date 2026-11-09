@@ -7,6 +7,8 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useLoading from '@proton/hooks/useLoading';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
+import { LoginErrorBlock } from '../../../../components/LoginErrorBlock';
+import { getSessionExpiredMessage } from '../../../../helper';
 import type { SignInScreen, SignInScreenProps } from '../../../routes/signInRoute';
 import { useSignInProps } from '../../../wizard/SignInProvider';
 import { CredentialsContext } from '../CredentialsContext';
@@ -15,12 +17,12 @@ import { TestflightBanner, useTestflightSubTitle, useTestflightTitle } from '../
 import { getContinueTo, getSignInText } from '../continueTo';
 import { CancelSSOButton } from '../fields/CancelSSOButton';
 import { CredentialsUsernameField } from '../fields/CredentialsUsernameField';
-import { LoginErrorBlock } from '../fields/LoginErrorBlock';
 import { SubmitButton, getSignInButtonText } from '../fields/SubmitButton';
 import {
     selectAwaitingProvider,
     selectErrorMessage,
     selectPersistent,
+    selectSessionExpired,
     selectSubmitting,
     selectUsername,
 } from '../state-machine/credentialsStateMachine';
@@ -35,6 +37,7 @@ export const SSOScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
     const subTitle = useTestflightSubTitle() ?? (getContinueTo(signInProps) || undefined);
     const actorRef = CredentialsContext.useActorRef();
     const errorMessage = CredentialsContext.useSelector(selectErrorMessage);
+    const sessionExpired = CredentialsContext.useSelector(selectSessionExpired);
     const { getPayload } = useLoginChallengeContext();
     // Covers the wait for the challenge result, before the machine takes over
     const [collecting, withCollecting] = useLoading();
@@ -85,7 +88,10 @@ export const SSOScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
                         onValue={setUsername}
                         error={validator([requiredValidator(username)]) || !!errorMessage}
                     />
-                    <LoginErrorBlock message={errorMessage} />
+                    {/* The session expiry shows the same way, but the email isn't wrong */}
+                    <LoginErrorBlock
+                        message={errorMessage || (sessionExpired ? getSessionExpiredMessage() : undefined)}
+                    />
                     <SubmitButton submitting={submitting} compactForm={compactForm}>
                         {getSignInButtonText(submitting, signInText)}
                     </SubmitButton>

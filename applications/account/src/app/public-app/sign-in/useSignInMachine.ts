@@ -47,6 +47,7 @@ interface Options {
     externalRedirect: string | undefined;
     onPreSubmit: (() => Promise<void>) | undefined;
     onStartAuth: () => Promise<void>;
+    onSessionExpired: (listener: () => void) => () => void;
     onLogin: OnLoginCallback;
     onBack: (() => void) | undefined;
     paths: Paths;
@@ -88,6 +89,7 @@ export const useSignInMachine = (options: Options) => {
                 await latestRef.current.onStartAuth();
             },
             startAuthSession: () => latestRef.current.onStartAuth(),
+            onSessionExpired: (listener) => latestRef.current.onSessionExpired(listener),
             onLogin: (session) => latestRef.current.onLogin(session),
         };
 

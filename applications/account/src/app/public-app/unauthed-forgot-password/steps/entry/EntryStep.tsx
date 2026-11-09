@@ -8,13 +8,19 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
+import { LoginErrorBlock } from '../../../components/LoginErrorBlock';
+import { getSessionExpiredMessage } from '../../../helper';
 import Content from '../../../layout/Content';
 import Header from '../../../layout/Header';
 import Text from '../../../layout/Text';
 import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import { useAutomaticMnemonicVerification } from '../../hooks/useAutomaticMnemonicVerification';
 import { useAutomaticRecoveryVerification } from '../../hooks/useAutomaticRecoveryVerification';
-import { selectSubmitting, selectUsername } from '../../state-machine/UnauthedForgotPasswordStateMachine';
+import {
+    selectSessionExpired,
+    selectSubmitting,
+    selectUsername,
+} from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { ForgotPasswordContext } from '../../wizard/ForgotPasswordContext';
 import type { ForgotPasswordStepProps } from '../../wizard/forgotPasswordStep';
 
@@ -23,6 +29,7 @@ export const EntryStep = ({ onBack }: ForgotPasswordStepProps) => {
     const { send } = ForgotPasswordContext.useActorRef();
     // The recovery methods are being requested, or a link that opened the page is being checked
     const loading = ForgotPasswordContext.useSelector(selectSubmitting);
+    const sessionExpired = ForgotPasswordContext.useSelector(selectSessionExpired);
 
     const { validator, onFormSubmit } = useFormErrors();
     // Back here, or starting over, the form starts with the username the user gave
@@ -60,9 +67,14 @@ export const EntryStep = ({ onBack }: ForgotPasswordStepProps) => {
                         error={validator([requiredValidator(username)])}
                         disableChange={loading}
                         value={username}
-                        onValue={setUsername}
+                        onValue={(value: string) => {
+                            setUsername(value);
+                            send({ type: 'username.edited' });
+                        }}
                         autoFocus
                     />
+                    {/* Shown like an error, but the username isn't wrong, so the field isn't marked */}
+                    <LoginErrorBlock message={sessionExpired ? getSessionExpiredMessage() : undefined} />
                     <Button size="large" color="norm" loading={loading} type="submit" fullWidth className="mt-6">
                         {c('Action').t`Next`}
                     </Button>

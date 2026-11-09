@@ -63,6 +63,8 @@ interface Props {
     externalRedirect?: string;
     onPreSubmit?: () => Promise<void>;
     onStartAuth: () => Promise<void>;
+    /** Subscribes to the unauthenticated session's expiry, after which an attempt starts over; returns the unsubscribe. */
+    onSessionExpired: (listener: () => void) => () => void;
     /**
      * Send SSO users to account's SSO page instead of signing them in here. For apps other than account
      * (vpn-settings), which can't open the identity provider window themselves.
@@ -103,6 +105,7 @@ const SignInFlow = ({
     externalRedirect,
     onPreSubmit,
     onStartAuth,
+    onSessionExpired,
     redirectsSSOToAccount = false,
 }: Omit<Props, 'layout' | 'compactForm'> & {
     layout: SignInLayout;
@@ -118,6 +121,7 @@ const SignInFlow = ({
         externalRedirect,
         onPreSubmit,
         onStartAuth,
+        onSessionExpired,
         onLogin,
         onBack,
         paths,

@@ -21,10 +21,13 @@ export type TokenRedemptionStep = (typeof tokenRedemptionSteps)[number];
 
 export type TokenRedemptionEvent =
     | { type: 'email.submitted'; email: string }
+    | { type: 'email.edited' }
     | { type: 'code.submitted'; code: string }
     | { type: 'code.resendRequested' }
     | { type: 'back' }
-    | { type: 'password.submitted'; password: string };
+    | { type: 'password.submitted'; password: string }
+    /** From `watchSession`: the unauthenticated session expired, taking the code sent for it. */
+    | { type: 'session.expired' };
 
 export type TokenRedemptionEmitted =
     { type: 'error'; error: unknown } | { type: 'code.resent' } | { type: 'session.expired' };
@@ -38,6 +41,11 @@ interface TokenRedemptionContext {
     session: TokenRedemptionSession | undefined;
     /** The organization's password policies, for the password step's form. */
     passwordPolicies: PasswordPolicies;
+    /**
+     * Back on the email step because the session expired under the code step: the email step says so until the member
+     * types or submits.
+     */
+    sessionExpired: boolean;
 }
 
 enum TokenRedemptionStateMachineTags {
@@ -55,7 +63,12 @@ export const tokenRedemptionStateMachine = setup({
         emitted: {} as TokenRedemptionEmitted,
         tags: {} as `${TokenRedemptionStateMachineTags}`,
     },
-    actors: unprovidedActors<TokenRedemptionActors>({ redeemToken: true, verifyCode: true, changePassword: true }),
+    actors: unprovidedActors<TokenRedemptionActors>({
+        watchSession: true,
+        redeemToken: true,
+        verifyCode: true,
+        changePassword: true,
+    }),
     actions: {
         assignEmail: assign((_, { email }: { email: string }) => ({ email })),
         assignSession: assign(
@@ -65,6 +78,8 @@ export const tokenRedemptionStateMachine = setup({
         reportError: emit((_, { error }: { error: unknown }) => ({ type: 'error' as const, error })),
         notifyCodeResent: emit({ type: 'code.resent' as const }),
         notifySessionExpired: emit({ type: 'session.expired' as const }),
+        showSessionExpired: assign({ sessionExpired: true }),
+        clearSessionExpired: assign({ sessionExpired: false }),
         // Provided by the page (or a test)
         /** Removes the link's secrets from the address bar. */
         clearLinkFromUrl: () => unprovidedAction('clearLinkFromUrl'),
@@ -77,7 +92,13 @@ export const tokenRedemptionStateMachine = setup({
 }).createMachine({
     id: 'tokenRedemption',
     initial: 'starting',
-    context: ({ input }) => ({ config: input.config, email: '', session: undefined, passwordPolicies: [] }),
+    context: ({ input }) => ({
+        config: input.config,
+        email: '',
+        session: undefined,
+        passwordPolicies: [],
+        sessionExpired: false,
+    }),
     states: {
         starting: {
             entry: 'clearLinkFromUrl',
@@ -90,8 +111,12 @@ export const tokenRedemptionStateMachine = setup({
                     on: {
                         'email.submitted': {
                             target: 'requestingCode',
-                            actions: { type: 'assignEmail', params: ({ event }) => ({ email: event.email }) },
+                            actions: [
+                                { type: 'assignEmail', params: ({ event }) => ({ email: event.email }) },
+                                'clearSessionExpired',
+                            ],
                         },
+                        'email.edited': { actions: 'clearSessionExpired' },
                     },
                 },
                 requestingCode: {
@@ -107,6 +132,10 @@ export const tokenRedemptionStateMachine = setup({
         },
         otp: {
             initial: 'idle',
+            // The code was sent for the session, which the API looks it up by: once it expires, the member has to ask for
+            // a new one. Leaving stops the code's requests, so their own 401 isn't reported as well
+            invoke: { src: 'watchSession' },
+            on: { 'session.expired': { target: '#tokenRedemption.email', actions: 'showSessionExpired' } },
             states: {
                 idle: {
                     on: {
@@ -182,3 +211,6 @@ export const selectSubmitting = (snapshot: TokenRedemptionSnapshot) =>
 /** The code is being sent again. */
 export const selectResending = (snapshot: TokenRedemptionSnapshot) =>
     snapshot.hasTag(TokenRedemptionStateMachineTags.resending);
+
+/** Back on the email step because the session expired; the step says so without marking the field. */
+export const selectSessionExpired = (snapshot: TokenRedemptionSnapshot) => snapshot.context.sessionExpired;

@@ -107,7 +107,12 @@ export const rethrowResetKeysError = (error: unknown): never => {
     if (status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY && code === API_CUSTOM_ERROR_CODES.INVALID_VALUE) {
         throw new ResetTokenRejectedError(error);
     }
-    if (status >= 400 && status < 500 && status !== HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
+    if (
+        status >= 400 &&
+        status < 500 &&
+        status !== HTTP_ERROR_CODES.TOO_MANY_REQUESTS &&
+        status !== HTTP_ERROR_CODES.UNAUTHORIZED
+    ) {
         throw new ResetKeysRejectedError(error);
     }
     throw error;

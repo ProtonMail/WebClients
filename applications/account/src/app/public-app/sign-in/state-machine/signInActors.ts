@@ -3,7 +3,7 @@
  * (`credentialsActors`, `passwordAccountActors`, `ssoActors`), built from the same services.
  * `useSignInMachine` provides them; the machines only take their types, so tests provide fakes.
  */
-import { fromPromise } from 'xstate';
+import { fromCallback, fromPromise } from 'xstate';
 
 import { createKeyMigrationKTVerifier } from '@proton/key-transparency/shared/createKeyMigrationKTVerifier';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared/createPreAuthKTVerifier';
@@ -28,6 +28,8 @@ export interface SignInActorServices extends SignInServices {
     prepareAttempt: () => Promise<void>;
     /** Starts the unauthenticated session, ahead of any attempt. */
     startAuthSession: () => Promise<void>;
+    /** Calls `listener` when the unauthenticated session expires; returns the unsubscribe. */
+    onSessionExpired: (listener: () => void) => () => void;
     onLogin: (session: AuthSession) => Promise<unknown>;
 }
 
@@ -35,6 +37,9 @@ export const createSignInActors = (services: SignInActorServices) => {
     return {
         /** The domains request that prepares the sign-in; the requests wait for it (see `createCredentialsActors`). */
         prepareSignIn: fromPromise<void>(() => services.preparePage()),
+        watchSession: fromCallback(({ sendBack }) =>
+            services.onSessionExpired(() => sendBack({ type: 'session.expired' }))
+        ),
         createAuthState: fromPromise<CreatedAuth, PrimaryAuthResult>(async ({ input }) => {
             const activation = await services.getKtActivation();
             const auth: SignInAuthState = {

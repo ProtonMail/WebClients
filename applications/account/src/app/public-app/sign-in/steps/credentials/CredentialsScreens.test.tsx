@@ -1,6 +1,6 @@
-import { screen, waitFor } from '@testing-library/react';
+import { act, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { fromPromise } from 'xstate';
+import { fromCallback, fromPromise } from 'xstate';
 
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import type { InfoResponse, SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
@@ -56,9 +56,13 @@ const renderForm = ({
     /** Also signs in with the identity provider right away, without its window. */
     authenticateWithSSOToken?: jest.Mock;
 } = {}) => {
+    let expireSession = () => {};
     const machine = SignInStateMachine.provide({
         actors: {
             prepareSignIn: fromPromise(() => Promise.resolve()),
+            watchSession: fromCallback(({ sendBack }) => {
+                expireSession = () => sendBack({ type: 'session.expired' });
+            }),
             credentialsFlow: credentialsStateMachine.provide({
                 actors: {
                     startAuthSession: fromPromise(() => Promise.resolve()),
@@ -111,7 +115,7 @@ const renderForm = ({
             </SignInProvider>
         </SignInContext.Provider>
     );
-    return { authenticateWithPassword };
+    return { authenticateWithPassword, expireSession: () => act(() => expireSession()) };
 };
 
 /** The username step's Continue, to the password step (the account type check finds a password account). */
@@ -261,6 +265,28 @@ describe('the credentials screens', () => {
         await user.click(screen.getByRole('button', { name: 'Sign in' }));
 
         expect(await screen.findByTestId('login:error-block')).toHaveTextContent(message);
+        await user.type(screen.getByLabelText('Email'), 'x');
+        await waitFor(() => expect(screen.queryByTestId('login:error-block')).not.toBeInTheDocument());
+    });
+
+    it('says inline that the session expired, without marking the email, and clears it when the user edits it', async () => {
+        const authenticateWithSSOToken = jest.fn(() => new Promise<PrimaryAuthResult>(() => {}));
+        const { expireSession } = renderForm({
+            authTypeData: { type: AuthType.ExternalSSO },
+            authenticateWithSSOToken,
+        });
+        const user = userEvent.setup();
+
+        await user.type(screen.getByLabelText('Email'), 'member@company.com');
+        await user.click(screen.getByRole('button', { name: 'Sign in' }));
+        // The identity provider's token came with the session that now expires
+        await waitFor(() => expect(authenticateWithSSOToken).toHaveBeenCalled());
+        expireSession();
+
+        expect(await screen.findByTestId('login:error-block')).toHaveTextContent(
+            'The session has expired. Please try again.'
+        );
+        expect(screen.getByLabelText('Email').closest('.field-two--invalid')).toBeNull();
         await user.type(screen.getByLabelText('Email'), 'x');
         await waitFor(() => expect(screen.queryByTestId('login:error-block')).not.toBeInTheDocument());
     });

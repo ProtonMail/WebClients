@@ -163,25 +163,40 @@ export const createUnauthenticatedApi = (api: Api, { onUID }: UnauthenticatedApi
         return response;
     });
 
-    const refreshHandler = createRefreshHandlers((UID: string) => {
-        return refresh(
-            () =>
-                context.api({
-                    ...withUIDHeaders(UID, setRefreshCookies()),
-                    ignoreHandler: [HTTP_ERROR_CODES.UNAUTHORIZED],
-                    output: 'raw',
-                    silence: 'true',
-                }),
-            1,
-            3
-        ).catch((e) => {
-            if (getIsRefreshFailure(e)) {
-                return init().then((result) => {
-                    return result;
-                });
+    // The sessions that answered a request on this page: a flow on the page may keep state on them, so their requests
+    // fail and the flows start over. One that never answered, like a dead session restored from sessionStorage after a
+    // reload, has nothing on it, so its requests are sent again on the new session. Kept per UID because it's read
+    // after `init()` has switched to the new session.
+    const answeredUIDs = new Set<string>();
+    const expiryListeners = new Set<() => void>();
+
+    const refreshHandler = createRefreshHandlers(async (UID: string) => {
+        // Only a session that signed in through this api can be refreshed: the API keeps no record of an unauthenticated one
+        if (context.auth.set) {
+            try {
+                return await refresh(
+                    () =>
+                        context.api({
+                            ...withUIDHeaders(UID, setRefreshCookies()),
+                            ignoreHandler: [HTTP_ERROR_CODES.UNAUTHORIZED],
+                            output: 'raw',
+                            silence: 'true',
+                        }),
+                    1,
+                    3
+                );
+            } catch (e: any) {
+                if (!getIsRefreshFailure(e)) {
+                    throw e;
+                }
             }
-            throw e;
-        });
+        }
+        const result = await init();
+        // Nothing relies on a session that never answered, like one restored after a reload
+        if (answeredUIDs.has(UID)) {
+            expiryListeners.forEach((listener) => listener());
+        }
+        return result;
     });
 
     const setup = async () => {
@@ -306,6 +321,7 @@ export const createUnauthenticatedApi = (api: Api, { onUID }: UnauthenticatedApi
                 })
             );
 
+            answeredUIDs.add(UID);
             return result;
         } catch (e: any) {
             if (isAuthUrl && context.auth.id === id) {
@@ -332,9 +348,16 @@ export const createUnauthenticatedApi = (api: Api, { onUID }: UnauthenticatedApi
                 if (config.url === auth2FAConfig.url && code === PASSWORD_WRONG_ERROR) {
                     throw e;
                 }
-                return await refreshHandler(UID).then(() => {
-                    return apiCallback(config);
-                });
+                // 401s that come in while the session is refreshed or replaced share that one run. A late 401, from a
+                // session that was already replaced, leaves the sessions alone: it would replace the new one too
+                if (context.UID === UID) {
+                    await refreshHandler(UID);
+                }
+                // The new session has nothing the page did on one that answered, so its request isn't sent again
+                if (context.UID !== UID && answeredUIDs.has(UID)) {
+                    throw e;
+                }
+                return await apiCallback(config);
             }
             throw e;
         } finally {
@@ -390,6 +413,13 @@ export const createUnauthenticatedApi = (api: Api, { onUID }: UnauthenticatedApi
         startUnAuthFlow,
         setup: initSetup,
         getUID: () => context.UID,
+        /** Called when a session that answered requests expires: a flow started on it has to start over. */
+        onSessionExpired: (listener: () => void) => {
+            expiryListeners.add(listener);
+            return () => {
+                expiryListeners.delete(listener);
+            };
+        },
     };
 };
 

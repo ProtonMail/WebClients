@@ -6,6 +6,7 @@ import { fromPromise } from 'xstate';
 
 import type { ChallengeResult } from '@proton/challenge/interface';
 import { auth, getInfo } from '@proton/shared/lib/api/auth';
+import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type {
     AuthResponse,
     AuthVersion,
@@ -123,9 +124,17 @@ export const createCredentialsActors = (services: SignInActorServices) => {
          */
         authenticateWithPassword: fromPromise<PrimaryAuthResult, PasswordLoginInput>(async ({ input, signal }) => {
             await beforeRequest();
-            const { result, authVersion, claimedAddressID } = await loginWithPassword({ ...input, api, signal }).catch(
-                rethrowCredentialsError
-            );
+            const login = (info: InfoResponse | undefined) => loginWithPassword({ ...input, info, api, signal });
+            const { result, authVersion, claimedAddressID } = await login(input.info)
+                .catch((error) => {
+                    // The session expired under it and the API already made a new one: the login has everything it
+                    // needs to start over there, with that session's auth info
+                    if (getIs401Error(error)) {
+                        return login(undefined);
+                    }
+                    throw error;
+                })
+                .catch(rethrowCredentialsError);
             return {
                 authType: AuthType.Srp,
                 authResponse: result,

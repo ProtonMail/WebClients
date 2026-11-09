@@ -3,7 +3,7 @@
  * tests provide fakes. The telemetry for what a request found goes with the request, and the API's answers the machine
  * acts on come as their own errors (`forgotPasswordErrors`).
  */
-import { fromPromise } from 'xstate';
+import { fromCallback, fromPromise } from 'xstate';
 
 import type { AutoResetTokenPayload, RecoveryMethod, ValidateResetTokenResponse } from '@proton/shared/lib/api/reset';
 import { requestLoginResetToken, validateResetToken } from '@proton/shared/lib/api/reset';
@@ -72,6 +72,8 @@ export interface ForgotPasswordServices {
     api: Api;
     /** Before the first request of an attempt: loads the crypto worker, then starts the auth session. */
     prepareAttempt: () => Promise<void>;
+    /** Calls `listener` when the unauthenticated session expires; returns the unsubscribe. */
+    onSessionExpired: (listener: () => void) => () => void;
     /** The "keep me signed in" choice, for the session the reset signs in with. */
     getPersistent: () => boolean;
     getKtActivation: () => Promise<KeyTransparencyActivation>;
@@ -82,6 +84,9 @@ export interface ForgotPasswordServices {
 }
 
 export const createForgotPasswordActors = (services: ForgotPasswordServices) => ({
+    watchSession: fromCallback(({ sendBack }) =>
+        services.onSessionExpired(() => sendBack({ type: 'session.expired' }))
+    ),
     /** The account's recovery methods. An account without any is not an error: the flow offers the other ways. */
     requestRecoveryMethods: fromPromise<RecoveryMethods, { username: string }>(async ({ input: { username } }) => {
         const { api, telemetry } = services;
