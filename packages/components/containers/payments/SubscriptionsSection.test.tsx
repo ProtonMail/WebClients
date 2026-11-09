@@ -1,3 +1,5 @@
+import { within } from '@testing-library/react';
+
 import { getModelState } from '@proton/account/testing/getModelState';
 import { getOrganizationState } from '@proton/account/testing/redux-state';
 import { changeRenewState } from '@proton/payments/core/api/api';
@@ -14,7 +16,8 @@ import type { Subscription } from '@proton/payments/core/subscription/interface'
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import { Renew, SubscriptionPlatform, TrialType } from '@proton/shared/lib/payments/subscription/constants';
-import { apiMock } from '@proton/test-api/api';
+import { buildUser } from '@proton/shared/testing/buildUser';
+import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/api';
 
 import { plansDefaultResponse } from '../../hooks/helpers/tests/usePlans';
 import { renderWithProviders } from '../../testing/renderWithProviders';
@@ -132,6 +135,7 @@ describe('SubscriptionsSection', () => {
         );
 
         jest.clearAllMocks();
+        clearApiMocks();
         mockGetPaymentMethods.mockResolvedValue([{ ID: 'pm1' }]);
     });
 
@@ -152,6 +156,7 @@ describe('SubscriptionsSection', () => {
         expect(getByTestId('subscriptionStatusId')).toHaveTextContent('Active');
         expect(getByTestId('planStartTimeId')).toHaveTextContent('October 6th, 2023');
         expect(getByTestId('planEndTimeId')).toHaveTextContent('November 6th, 2023');
+        expect(getByTestId('currentTermId')).toHaveTextContent('October 6th, 2023 – November 6th, 2023');
     });
 
     it('should display Expiring badge if renew is disabled', () => {
@@ -301,6 +306,20 @@ describe('SubscriptionsSection', () => {
         expect(getByText('Reactivate')).toBeInTheDocument();
     });
 
+    it('offers only reactivate in the renewal cell of a subscription that does not renew', () => {
+        subscription.Renew = Renew.Disabled;
+        const { getByTestId } = renderWithProviders(<SubscriptionsSection />, {
+            preloadedState: {
+                user: getModelState(buildUser({ isPaid: true, isFree: false, canPay: true })),
+                subscription: getSubscriptionState(subscription),
+                plans: defaultPlansState,
+            },
+        });
+
+        const buttons = within(getByTestId('subscriptionActionsId')).getAllByRole('button');
+        expect(buttons.map((button) => button.textContent)).toEqual(['Reactivate']);
+    });
+
     it('should display warning icon when renewal is disabled', () => {
         subscription.Renew = Renew.Disabled;
         const { queryByTestId } = renderWithProviders(<SubscriptionsSection />, {
@@ -328,6 +347,7 @@ describe('SubscriptionsSection', () => {
 
     it('should call API when user presses reactivate button', async () => {
         subscription.Renew = Renew.Disabled;
+        addApiMock('payments/v4/subscription', () => ({ Subscription: { ...subscription, Renew: Renew.Enabled } }));
 
         const { getByText } = renderWithProviders(<SubscriptionsSection />, {
             preloadedState: {
@@ -341,9 +361,12 @@ describe('SubscriptionsSection', () => {
 
         expect(mockGetPaymentMethods).toHaveBeenCalled();
         expect(apiMock).toHaveBeenCalledWith(
-            changeRenewState({
-                RenewalState: Renew.Enabled,
-            })
+            changeRenewState(
+                {
+                    RenewalState: Renew.Enabled,
+                },
+                subscription.ID
+            )
         );
     });
 
@@ -533,6 +556,33 @@ describe('SubscriptionsSection', () => {
 
         const planNames = getAllByTestId('planNameId').map((el) => el.textContent);
         expect(planNames).toEqual(['Proton Unlimited', 'Pass Plus']);
+    });
+
+    describe('row content', () => {
+        const paidUser = buildUser({ isPaid: true, isFree: false, canPay: true });
+
+        const renderRows = (root: Subscription) =>
+            renderWithProviders(<SubscriptionsSection />, {
+                preloadedState: {
+                    user: getModelState(paidUser),
+                    subscription: getSubscriptionState(root),
+                    plans: defaultPlansState,
+                },
+            });
+
+        it('offers no actions menu, only the renewal cell', () => {
+            const { queryByRole, getByTestId } = renderRows(yearlySub);
+
+            expect(queryByRole('button', { name: 'More options' })).not.toBeInTheDocument();
+            expect(getByTestId('renewalNotice')).toHaveTextContent('Renews automatically');
+        });
+
+        it('shows the price and billing of a store-managed row like any other row', () => {
+            const { getByTestId } = renderRows({ ...yearlySub, External: SubscriptionPlatform.Android });
+
+            expect(getByTestId('planPriceId')).toHaveTextContent('CHF 119.88');
+            expect(getByTestId('billingTypeId')).toHaveTextContent('Prepaid');
+        });
     });
 
     it('shows a "View breakdown" link that opens the addon breakdown when the subscription has addons', async () => {
@@ -738,10 +788,11 @@ describe('SubscriptionsSection', () => {
             expect(getByTestId('renewalNotice')).toHaveTextContent('Renews automatically at CHF 9.09, for 1 month');
         });
 
-        it('Row 13 — LIFETIME coupon: end date is "Never" and renewal text mentions transfer', () => {
+        it('Row 13 — LIFETIME coupon: current term is "From <start>" and renewal text mentions transfer', () => {
             subscription.CouponCode = COUPON_CODES.LIFETIME;
-            const { getByTestId, getByText } = render(subscription);
-            expect(getByText('Never')).toBeInTheDocument();
+            const { getByTestId, queryByTestId } = render(subscription);
+            expect(getByTestId('currentTermId')).toHaveTextContent(/^From /);
+            expect(queryByTestId('planEndTimeId')).not.toBeInTheDocument();
             expect(getByTestId('renewalNotice')).toHaveTextContent('Lifetime accounts can be transferred or sold');
         });
 

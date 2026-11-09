@@ -46,7 +46,7 @@ export const TemporaryNeedContent = ({ subscription, onKeepPlan, onContinueCance
     return (
         <>
             <ModalTwoHeader
-                title={c('Title').t`What changes if you switch to the Free plan`}
+                title={c('Title').t`What changes if you cancel ${planDisplayName}`}
                 titleClassName="text-4xl"
             />
             <ModalTwoContent>

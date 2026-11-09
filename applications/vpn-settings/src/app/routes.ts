@@ -18,13 +18,14 @@ import { IcPaintRoller } from '@proton/icons/icons/IcPaintRoller';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { IcSquaresInSquare } from '@proton/icons/icons/IcSquaresInSquare';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
+import { isCancelSubscriptionSectionAvailable } from '@proton/payments/core/subscription/cancellable-subscriptions';
 import {
     type MaybeFreeSubscription,
     getHasVpnB2BPlan,
-    hasCancellablePlan,
     isCancellableOnlyViaSupport,
     isManagedExternally,
 } from '@proton/payments/core/subscription/helpers';
+import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PROTON_SENTINEL_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
@@ -33,13 +34,13 @@ import {
     getIsGlobalSSOAccount,
     getIsSSOVPNOnlyAccount,
 } from '@proton/shared/lib/keys/accountType';
-import { isSubscriptionRenewEnabled } from '@proton/shared/lib/payments/subscription/helpers/renew';
 import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVariants';
 
 interface Arguments {
     user: UserModel;
     addresses: Address[] | undefined;
     subscription: MaybeFreeSubscription;
+    allSubscriptions: Subscription[];
     showVPNDashboard: boolean;
     showVPNDashboardVariant: VPNDashboardVariant | 'disabled' | undefined;
     recoveryNotification?: ThemeColor;
@@ -57,6 +58,7 @@ export const getRoutes = ({
     user,
     addresses,
     subscription,
+    allSubscriptions,
     showVPNDashboard,
     showVPNDashboardVariant,
     referralInfo,
@@ -66,7 +68,7 @@ export const getRoutes = ({
     accountRecoveryRouterFlags,
 }: Arguments) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
-    const cancellablePlan = hasCancellablePlan(subscription);
+    const cancelSubscriptionAvailable = isCancelSubscriptionSectionAvailable(allSubscriptions);
     const cancellableOnlyViaSupport = isCancellableOnlyViaSupport(subscription);
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
     const planIsManagedExternally = isManagedExternally(subscription);
@@ -165,11 +167,7 @@ export const getRoutes = ({
                 {
                     text: c('Title').t`Cancel subscription`,
                     id: 'cancel-subscription',
-                    available:
-                        user.isPaid &&
-                        cancellablePlan &&
-                        isSubscriptionRenewEnabled(subscription) &&
-                        !cancellableOnlyViaSupport,
+                    available: user.isPaid && cancelSubscriptionAvailable,
                     variant: SettingsLayoutVariant.Card,
                 },
                 {
@@ -226,11 +224,7 @@ export const getRoutes = ({
                 {
                     text: c('Title').t`Cancel subscription`,
                     id: 'cancel-subscription',
-                    available:
-                        user.isPaid &&
-                        cancellablePlan &&
-                        isSubscriptionRenewEnabled(subscription) &&
-                        !cancellableOnlyViaSupport,
+                    available: user.isPaid && cancelSubscriptionAvailable,
                 },
                 {
                     text: c('Title').t`Cancel subscription`,

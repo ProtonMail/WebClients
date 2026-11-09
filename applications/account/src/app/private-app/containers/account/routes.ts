@@ -16,10 +16,9 @@ import { IcPassGroup } from '@proton/icons/icons/IcPassGroup';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { IcSquaresInSquare } from '@proton/icons/icons/IcSquaresInSquare';
 import { IcUser } from '@proton/icons/icons/IcUser';
+import { isCancelSubscriptionSectionAvailable } from '@proton/payments/core/subscription/cancellable-subscriptions';
 import {
-    type MaybeFreeSubscription,
     getHasVpnB2BPlan,
-    hasCancellablePlan,
     isCancellableOnlyViaSupport,
     isManagedExternally,
 } from '@proton/payments/core/subscription/helpers';
@@ -43,7 +42,6 @@ import {
 } from '@proton/shared/lib/keys/accountType';
 import { getOrganizationDenomination, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 import { getIsConsumerPassPlan } from '@proton/shared/lib/payments/plan/helpers';
-import { isSubscriptionRenewEnabled } from '@proton/shared/lib/payments/subscription/helpers/renew';
 import { getHasStorageSplit } from '@proton/shared/lib/user/storage';
 
 import type { AccountRecoveryRouterFlags, AccountRouterParams } from '../../router-params';
@@ -126,8 +124,7 @@ function getV1DashboardSections(
     assistantKillSwitch: boolean,
     isPaid: boolean,
     isMember: boolean,
-    cancellablePlan: boolean,
-    subscription: MaybeFreeSubscription,
+    cancelSubscriptionAvailable: boolean,
     cancellableOnlyViaSupport: boolean
 ) {
     return [
@@ -216,12 +213,7 @@ function getV1DashboardSections(
         {
             text: c('Title').t`Cancel subscription`,
             id: 'cancel-subscription',
-            available:
-                isPaid &&
-                canPay &&
-                cancellablePlan &&
-                isSubscriptionRenewEnabled(subscription) &&
-                !cancellableOnlyViaSupport,
+            available: isPaid && canPay && cancelSubscriptionAvailable,
             keywords: [
                 c('account_search_index').t`Cancel plan`,
                 c('account_search_index').t`Stop subscription renewal`,
@@ -416,6 +408,7 @@ export const getAccountAppRoutes = ({
     user,
     addresses,
     subscription,
+    allSubscriptions,
     organization,
     recoveryNotification,
     showVPNDashboard,
@@ -452,7 +445,7 @@ export const getAccountAppRoutes = ({
     const isVisionaryPlan = !!organization && isOrganizationVisionary(organization);
     const isMemberProton = Type === UserType.PROTON;
 
-    const cancellablePlan = hasCancellablePlan(subscription);
+    const cancelSubscriptionAvailable = isCancelSubscriptionSectionAvailable(allSubscriptions);
     const cancellableOnlyViaSupport = isCancellableOnlyViaSupport(subscription);
 
     const planIsManagedExternally = isManagedExternally(subscription);
@@ -597,8 +590,7 @@ export const getAccountAppRoutes = ({
                           assistantKillSwitch,
                           isPaid,
                           isMember,
-                          cancellablePlan,
-                          subscription,
+                          cancelSubscriptionAvailable,
                           cancellableOnlyViaSupport
                       ),
             },
@@ -693,12 +685,7 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Cancel subscription`,
                         id: 'cancel-subscription',
-                        available:
-                            isPaid &&
-                            canPay &&
-                            cancellablePlan &&
-                            isSubscriptionRenewEnabled(subscription) &&
-                            !cancellableOnlyViaSupport,
+                        available: isPaid && canPay && cancelSubscriptionAvailable,
                         variant: SettingsLayoutVariant.Card,
                         keywords: [
                             c('account_search_index').t`Cancel plan`,

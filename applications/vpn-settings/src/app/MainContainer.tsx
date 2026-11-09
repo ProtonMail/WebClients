@@ -192,6 +192,7 @@ const MainContainer: FunctionComponent = () => {
         user,
         addresses,
         subscription,
+        allSubscriptions,
         showVPNDashboard,
         showVPNDashboardVariant: showVPNDashboardVariant.name,
         referralInfo: referralInfo.uiData,

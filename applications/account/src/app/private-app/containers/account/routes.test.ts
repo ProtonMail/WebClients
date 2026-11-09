@@ -87,13 +87,30 @@ function getTwoFaSubsection(result: ReturnType<typeof getAccountAppRoutes>) {
 
 describe('getAccountAppRoutes', () => {
     describe('cancel-subscription subsection available property', () => {
+        const renewing = { ID: 'sub-mail', Renew: Renew.Enabled } as Subscription;
+        const buildParams = (overrides: Overrides = {}) =>
+            buildDefaultParams({ allSubscriptions: [renewing], ...overrides });
+
         beforeEach(() => {
             mockedHasCancellablePlan.mockReturnValue(true);
             mockedIsCancellableOnlyViaSupport.mockReturnValue(false);
         });
 
         it('should be available when all conditions are met', () => {
-            const result = getAccountAppRoutes(buildDefaultParams());
+            const result = getAccountAppRoutes(buildParams());
+            expect(getCancelSubscriptionSubsection(result)?.available).toBe(true);
+        });
+
+        it('is available while one subscription renews, whatever useSubscription returns', () => {
+            const result = getAccountAppRoutes(
+                buildParams({
+                    subscription: { ID: 'sub-lumo', Renew: Renew.Disabled } as Subscription,
+                    allSubscriptions: [
+                        { ID: 'sub-mail', Renew: Renew.Enabled },
+                        { ID: 'sub-lumo', Renew: Renew.Disabled },
+                    ] as Subscription[],
+                })
+            );
             expect(getCancelSubscriptionSubsection(result)?.available).toBe(true);
         });
 
@@ -115,16 +132,15 @@ describe('getAccountAppRoutes', () => {
             },
             {
                 description: 'subscription renewal is disabled',
-                overrides: { subscription: { Renew: Renew.Disabled } as Subscription },
+                overrides: { allSubscriptions: [{ ...renewing, Renew: Renew.Disabled }] },
                 mockSetup: {},
             },
             {
                 description: 'upcoming subscription renewal is disabled',
                 overrides: {
-                    subscription: {
-                        Renew: Renew.Enabled,
-                        UpcomingSubscription: { Renew: Renew.Disabled },
-                    } as Subscription,
+                    allSubscriptions: [
+                        { ...renewing, UpcomingSubscription: { Renew: Renew.Disabled } } as Subscription,
+                    ],
                 },
                 mockSetup: {},
             },
@@ -134,8 +150,8 @@ describe('getAccountAppRoutes', () => {
                 mockSetup: { isCancellableOnlyViaSupport: true },
             },
             {
-                description: 'subscription is undefined',
-                overrides: { subscription: undefined },
+                description: 'there is no subscription',
+                overrides: { allSubscriptions: [] },
                 mockSetup: {},
             },
         ])('should not be available when $description', ({ overrides, mockSetup }) => {
@@ -146,7 +162,7 @@ describe('getAccountAppRoutes', () => {
                 mockedIsCancellableOnlyViaSupport.mockReturnValue(mockSetup.isCancellableOnlyViaSupport as boolean);
             }
 
-            const result = getAccountAppRoutes(buildDefaultParams(overrides));
+            const result = getAccountAppRoutes(buildParams(overrides));
             expect(getCancelSubscriptionSubsection(result)?.available).toBeFalsy();
         });
     });
