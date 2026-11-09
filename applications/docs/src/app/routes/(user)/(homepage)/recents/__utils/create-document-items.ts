@@ -1,5 +1,5 @@
 import { ServerTime } from '@proton/docs-shared/ServerTime'
-import { type MemberRole, type NodeEntity, splitNodeUid } from '@proton/drive/sdk'
+import type { MemberRole, NodeEntity } from '@protontech/drive-sdk'
 import { getAuthorName } from '~/drive-sdk/getAuthorName'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
@@ -79,4 +79,14 @@ export function nodeToTrashedDocumentItem(node: NodeEntity): RecentDocumentsItem
     location: { type: 'root' },
     effectiveRole: node.directRole,
   }
+}
+
+// Local copy of the SDK's splitNodeUid, which the SDK does not export publicly.
+function splitNodeUid(nodeUid: string) {
+  const parts = nodeUid.split('~')
+  if (parts.length !== 2) {
+    throw new Error(`"${nodeUid}" is not a valid node UID`)
+  }
+  const [volumeId, nodeId] = parts
+  return { volumeId, nodeId }
 }

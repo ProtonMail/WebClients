@@ -9,24 +9,25 @@ import { type ReactNode, useCallback, useMemo, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
 import { constructDriveFolderUrl } from '~/utils/open-drive-folder'
 import { useEvent } from '~/utils/misc'
-import type { generateNodeUid, ProtonDriveClient } from '@proton/drive/sdk'
-import type { useSharingModal } from '@proton/drive/public/sharingModal'
-import type { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
+import { generateNodeUid, type ProtonDriveClient } from '@protontech/drive-sdk'
 import { c } from 'ttag'
 import { deleteDocument, reportTrashError } from '@proton/docs-core/DriveSDK/trash'
-import { trashAndNotify, restoreAndNotify, handleRestoreError } from '~/drive-sdk/trash-restore-notify'
+import { DocumentActionsContext, trashAndNotify, restoreAndNotify, handleRestoreError } from '~/homepage'
 import { traceErrorSDK } from '@proton/docs-core/DriveSDK/traceErrorSDK'
 import { useHomepageView } from './homepage-view-sdk-utils'
 import { useBulkTrash } from './useBulkTrash'
-import { useBulkMove } from './useBulkMove'
-import { DocumentActionsContext } from '~/homepage'
+import { useBulkMove, type UseMoveItemsModal } from './useBulkMove'
+
+type UseSharingModal = () => {
+  sharingModal: ReactNode
+  showSharingModal: (props: { drive: ProtonDriveClient; nodeUid: string }) => void
+}
 
 export type DocumentActionsProviderProps = {
   children: ReactNode
   drive: ProtonDriveClient
-  generateNodeUid: typeof generateNodeUid
-  useSharingModal: typeof useSharingModal
-  useMoveItemsModal: typeof useMoveItemsModal
+  useSharingModal: UseSharingModal
+  useMoveItemsModal: UseMoveItemsModal
 }
 
 const TRASHED_LISTENERS = new Set<(id: string) => void>()
@@ -35,7 +36,6 @@ const RESTORED_LISTENERS = new Set<(id: string) => void>()
 export function DocumentActionsProvider({
   children,
   drive,
-  generateNodeUid,
   useSharingModal,
   useMoveItemsModal,
 }: DocumentActionsProviderProps) {
@@ -51,8 +51,8 @@ export function DocumentActionsProvider({
   const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal()
   const { updateMovedDocuments } = useHomepageView()
   const [confirmDeleteModal, showConfirmDeleteModal] = useConfirmActionModal()
-  const { trash: bulkTrash, isTrashing: isBulkTrashing } = useBulkTrash({ drive, generateNodeUid })
-  const { move: bulkMove, moveItemsModal: bulkMoveItemsModal } = useBulkMove({ useMoveItemsModal, generateNodeUid })
+  const { trash: bulkTrash, isTrashing: isBulkTrashing } = useBulkTrash({ drive })
+  const { move: bulkMove, moveItemsModal: bulkMoveItemsModal } = useBulkMove({ useMoveItemsModal })
 
   const open = useEvent(({ type, volumeId, linkId }: RecentDocumentsItem, source = 'normal') => {
     const pathname = type === 'spreadsheet' ? 'sheet' : 'doc'

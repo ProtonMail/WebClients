@@ -4,7 +4,7 @@ import { c } from 'ttag'
 
 import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
-import type { NodeEntity } from '@proton/drive/sdk'
+import type { NodeEntity } from '@protontech/drive-sdk'
 import { useContactEmails } from '@proton/account/contactEmails/hooks'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
@@ -40,12 +40,10 @@ import { HOMEPAGE_TRASH_PATH } from '../../../__utils/homepage-paths'
 export function HomepageViewProvider({
   children,
   drive,
-  getEventSubscriber,
-  getCoreEventSubscriber,
+  eventSubscriber,
+  coreEventSubscriber,
   useDocInvites,
 }: HomepageViewProviderProps) {
-  const eventSubscriber = getEventSubscriber()
-
   const { createNotification } = useNotifications()
 
   const [search, setSearch] = useSearch()
@@ -88,11 +86,10 @@ export function HomepageViewProvider({
 
   // Shared documents can appear or disappear
   useEffect(() => {
-    const coreSubscriber = getCoreEventSubscriber()
     const reloadOnCoreEvent = () => loadData()
-    const removeListener = coreSubscriber.addListener(reloadOnCoreEvent)
+    const removeListener = coreEventSubscriber.addListener(reloadOnCoreEvent)
     return removeListener
-  }, [loadData, getCoreEventSubscriber])
+  }, [loadData, coreEventSubscriber])
 
   // Loading it once here to avoid doing it every time we subscribe
   const [myFilesNode, setMyFilesNode] = useState<NodeEntity>()

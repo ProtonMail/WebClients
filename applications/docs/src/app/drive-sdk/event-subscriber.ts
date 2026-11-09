@@ -2,7 +2,7 @@ import { getDrive, ValidationError } from '@proton/drive/sdk'
 import { traceErrorSDK } from '@proton/docs-core/DriveSDK/traceErrorSDK'
 import type { DriveEvent, EventScheduler, ProtonDriveClient } from '@protontech/drive-sdk'
 
-export type SDKEventListener = (event: DriveEvent) => Promise<void>
+type SDKEventListener = (event: DriveEvent) => Promise<void>
 
 /**
  * Registers listeners with Drive SDK to recieve events.

@@ -8,11 +8,11 @@ import {
   NodeType,
   ProtonDriveError,
   generateNodeUid,
-} from '@proton/drive/sdk'
+} from '@protontech/drive-sdk'
 import { useCallback, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
-import { getFullPathFromAncestry } from '~/drive-sdk/getFullPathFromAncestry'
+import { getFullPathFromAncestry } from '~/homepage'
 import { getIsSharedWithMe } from '~/drive-sdk/getIsSharedWithMe'
 import { createDocumentItem } from './create-document-items'
 import { useRecentsStore } from './useRecentsStore'
@@ -21,9 +21,9 @@ import type { RecentDocumentAPIItem } from '@proton/docs-core/Api/Types/GetRecen
 import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
 import { addSentryBreadcrumb, traceError } from '@proton/shared/lib/helpers/sentry'
 import { traceRecentsError } from './traceRecentsError'
-import type { getEventSubscriber, SDKEventListener } from '~/drive-sdk/event-subscriber'
+import type { EventSubscriber, SDKEventListener } from './homepage-view-sdk-utils'
 
-export function useRecents(drive: ProtonDriveClient, eventSubscriber: ReturnType<typeof getEventSubscriber>) {
+export function useRecents(drive: ProtonDriveClient, eventSubscriber: EventSubscriber) {
   const app = useApplication()
   const { docsApi, logger } = app
   const { createNotification } = useNotifications()

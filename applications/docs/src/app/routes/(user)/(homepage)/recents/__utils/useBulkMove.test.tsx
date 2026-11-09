@@ -50,7 +50,7 @@ function createMockRecentDocument(data: Partial<RecentDocumentsItemValue> = {}):
 const d1 = createMockRecentDocument({ name: 'Document1', linkId: 'link1' })
 const d2 = createMockRecentDocument({ name: 'Document2', linkId: 'link2' })
 const renderBulkMove = () =>
-  renderHook(() => useBulkMove({ useMoveItemsModal: useMockMoveItemsModal, generateNodeUid }), { wrapper: Wrapper })
+  renderHook(() => useBulkMove({ useMoveItemsModal: useMockMoveItemsModal }), { wrapper: Wrapper })
 
 describe('useBulkMove', () => {
   beforeEach(() => {

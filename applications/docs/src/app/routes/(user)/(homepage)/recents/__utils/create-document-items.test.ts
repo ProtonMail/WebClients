@@ -7,6 +7,18 @@ describe('createDocumentItem', () => {
 
     expect(item.location).toEqual({ type: 'shared-with-me' })
   })
+
+  test('takes volume, link and parent link IDs from node UIDs', () => {
+    const item = createDocumentItem({ ...createNode(), parentUid: 'volume1~folder' }, documentDetails)
+
+    expect(item).toMatchObject({ volumeId: 'volume1', linkId: 'doc', parentLinkId: 'folder' })
+  })
+
+  test('throws on a malformed node UID', () => {
+    expect(() => createDocumentItem({ ...createNode(), uid: 'volume1' }, documentDetails)).toThrow(
+      '"volume1" is not a valid node UID',
+    )
+  })
 })
 
 const documentDetails = {

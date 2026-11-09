@@ -2,7 +2,7 @@ import NotificationButton from '@proton/components/containers/notifications/Noti
 import type { NotificationType } from '@proton/app-context/notifications/interfaces'
 import { c, msgid } from 'ttag'
 import type { ReactNode } from 'react'
-import type { ProtonDriveClient } from '@proton/drive/sdk'
+import type { ProtonDriveClient } from '@protontech/drive-sdk'
 import { trashDocument, restoreDocument, reportTrashError } from '@proton/docs-core/DriveSDK/trash'
 import { trashDocuments, restoreDocuments, type BatchResult } from './trashMany'
 

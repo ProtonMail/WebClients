@@ -1,4 +1,4 @@
-import type { NodeEntity } from '@proton/drive/sdk'
+import type { NodeEntity } from '@protontech/drive-sdk'
 import { c } from 'ttag'
 
 export function getAuthorName(author: NodeEntity['keyAuthor']) {

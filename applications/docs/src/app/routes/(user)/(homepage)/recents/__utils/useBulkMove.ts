@@ -1,19 +1,24 @@
 import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
-import type { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
-import type { generateNodeUid } from '@proton/drive/sdk'
+import type { ReactNode } from 'react'
+import { generateNodeUid } from '@protontech/drive-sdk'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { useApplication } from '~/utils/application-context'
 import { useEvent } from '~/utils/misc'
 import { useHomepageView } from './homepage-view-sdk-utils'
 
-type BulkMoveDependencies = { useMoveItemsModal: typeof useMoveItemsModal; generateNodeUid: typeof generateNodeUid }
+export type UseMoveItemsModal = () => {
+  moveItemsModal: ReactNode
+  showMoveItemsModal: (props: { nodeUids: string[]; onMoved?: (result: { movedUids: string[] }) => void }) => void
+}
+
+type BulkMoveDependencies = { useMoveItemsModal: UseMoveItemsModal }
 
 /**
  * The move modal needs every node under one root, so pass only documents in My files.
  * It notifies successes and failures itself. The documents it moved show in their new folder right away, rather than on their events.
  * `onMoved` gets the documents that moved, as soon as the move finishes.
  */
-export function useBulkMove({ useMoveItemsModal, generateNodeUid }: BulkMoveDependencies) {
+export function useBulkMove({ useMoveItemsModal }: BulkMoveDependencies) {
   const application = useApplication()
   const { updateMovedDocuments } = useHomepageView()
   const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal()

@@ -25,7 +25,7 @@ For managing files and folders we use Drive SDK instead of legacy `drive-store` 
 
 Drive SDK documentation is available at https://drive.gitlab-pages.protontech.ch/sdk/ and TypeScript API documentation at https://drive.gitlab-pages.protontech.ch/sdk/client/reference/typescript/
 
-We are not allowed to import "private" code from @proton/drive e.g. @proton/drive/modules - use only what's exported for public
+Import only public entry points: `@proton/drive/sdk`, `@proton/drive/public/*` and the `@protontech/drive-sdk` root. Never import deeper paths such as `@proton/drive/modules/...` or `@protontech/drive-sdk/dist/...`; if what you need isn't exported, make a local copy.
 
 ### Scope of modifications
 
