@@ -71,7 +71,7 @@ const MeetB2CSignup = (props: BaseSignupContextProps) => {
             flowId="meet-b2c"
             hvMode={SignupHumanVerification.DEFERRED}
             onLogin={async (session) => {
-                await props.handleLogin({
+                return props.handleLogin({
                     data: session,
                     flow: 'signup',
                     appIntent: { app: APPS.PROTONMEET },

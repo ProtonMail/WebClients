@@ -144,7 +144,7 @@ const PassSignupPage = (props: BaseSignupContextProps) => {
                 app={APPS.PROTONPASS}
                 flowId="pass-generic"
                 onLogin={async (session) => {
-                    await props.handleLogin({ data: session, flow: 'signup', appIntent: { app: APPS.PROTONPASS } });
+                    return props.handleLogin({ data: session, flow: 'signup', appIntent: { app: APPS.PROTONPASS } });
                 }}
                 paymentsDataConfig={{
                     availablePlans,

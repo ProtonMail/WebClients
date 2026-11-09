@@ -138,7 +138,7 @@ const MeetB2CPlanSignup = (props: BaseSignupContextProps) => {
             app={APPS.PROTONMEET}
             flowId="meet-b2c-plan"
             onLogin={async (session) => {
-                await props.handleLogin({ data: session, flow: 'signup', appIntent: { app: APPS.PROTONMEET } });
+                return props.handleLogin({ data: session, flow: 'signup', appIntent: { app: APPS.PROTONMEET } });
             }}
             paymentsDataConfig={{
                 availablePlans,
