@@ -113,6 +113,23 @@ export const generateBlockquote = (
     </div>`;
 };
 
+/**
+ * A `mailto:` body is plain text, so it takes the user's default font, like the lines the composer adds around it.
+ * The body is parsed in an inert document so that it is never rendered in the page.
+ */
+const applyFontStyle = (content: string, fontStyle: string) => {
+    if (!fontStyle) {
+        return content;
+    }
+
+    const document = parseStringToDOM(content);
+    const wrapper = document.createElement('div');
+    wrapper.setAttribute('style', fontStyle);
+    wrapper.append(...Array.from(document.body.childNodes));
+
+    return wrapper.outerHTML;
+};
+
 export const createHTMLDraftContent = ({
     action,
     referenceMessage,
@@ -139,7 +156,7 @@ export const createHTMLDraftContent = ({
     if (action === MESSAGE_ACTIONS.NEW && messageBody) {
         // For mailto bodies, place it first then the signature after.
         const signatureOnly = insertSignature('', senderAddress?.Signature, mailSettings, userSettings, fontStyle);
-        messageWithSignature = messageBody + signatureOnly;
+        messageWithSignature = applyFontStyle(messageBody, fontStyle) + signatureOnly;
     } else {
         messageWithSignature = insertSignature(
             messageBody,
