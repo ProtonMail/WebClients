@@ -1,6 +1,13 @@
-import type { EditorRequiresClientMethods } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
+import type {
+  EditorRequiresClientMethods,
+  FileMenuAction,
+} from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
+import type { WordCountInfoCollection } from '@proton/docs-shared/WordCount/WordCountTypes'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { FeatureFlag } from '@proton/unleash/Flags'
+import { c } from 'ttag'
+
+import { isRunningInNativeMobileWeb } from './isRunningInNativeMobileWeb'
 
 export type ClientHandler = EditorRequiresClientMethods
 
@@ -10,10 +17,11 @@ export type ClientHandlerDependencies = {
   sendUpdate: (update: Uint8Array<ArrayBuffer>) => void
   isFlagEnabled: (flag: FeatureFlag) => boolean
   onEditorError: (error: Error) => void
+  onWordCount: (wordCount: WordCountInfoCollection) => void
+  showModal: (props: { title: string; translatedMessage: string }) => void
+  onFileMenuAction: (action: FileMenuAction) => void
   logger: LoggerInterface
 }
-
-type NativeMobileWindow = Window & { Android?: unknown; webkit?: { messageHandlers?: { iOS?: unknown } } }
 
 /**
  * Answers every call from the editor for a text document, after docs-core `Bridge/EditorToClientRequestHandler.ts`.
@@ -25,6 +33,9 @@ export function createClientHandler({
   sendUpdate,
   isFlagEnabled,
   onEditorError,
+  onWordCount,
+  showModal,
+  onFileMenuAction,
   logger,
 }: ClientHandlerDependencies): ClientHandler {
   return {
@@ -44,12 +55,13 @@ export function createClientHandler({
 
     editorReportingEvent: async () => {},
     editorReportingTelemetry: async () => {},
-    reportWordCount: async () => {},
+    reportWordCount: async (wordCount) => onWordCount(wordCount),
     updateFrameSize: (size) => {
       editorFrame.style.setProperty('--print-min-height', `${size}px`)
     },
-    showGenericAlertModal: (message) => logger.warn('Editor alert not shown', { message }),
-    showGenericInfoModal: ({ title }) => logger.warn('Editor info not shown', { title }),
+    showGenericAlertModal: (message) =>
+      showModal({ title: c('Title').t`Something went wrong`, translatedMessage: message }),
+    showGenericInfoModal: (props) => showModal(props),
 
     getAllThreads: async () => [],
     getTypersExcludingSelf: async () => [],
@@ -79,12 +91,9 @@ export function createClientHandler({
     getDocumentUrl: async () => window.location.href,
     replaceDocumentUrl: async (url) => window.history.replaceState(null, '', url),
     reloadClient: async () => window.location.reload(),
-    getAppPlatform: async () => {
-      const { Android, webkit } = window as NativeMobileWindow
-      return Android != null || webkit?.messageHandlers?.iOS != null ? 'nativeMobileWeb' : 'web'
-    },
+    getAppPlatform: async () => (isRunningInNativeMobileWeb() ? 'nativeMobileWeb' : 'web'),
     fetchExternalImageAsBase64: async () => undefined,
-    handleFileMenuAction: async () => {},
+    handleFileMenuAction: async (action) => onFileMenuAction(action),
 
     // Sheets only, and doc2 opens text documents only
     storeSpreadsheetPatches: async () => {},

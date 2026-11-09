@@ -80,7 +80,7 @@ describe('useDocumentSession', () => {
     jest.clearAllMocks()
   })
 
-  test('creates a doc session, listens for unreadable updates before bootstrapping, and is ready with the session and role', async () => {
+  test('creates a doc session, listens for unreadable updates before bootstrapping, and is ready with the session, role and node', async () => {
     const fake = createFakeClient()
     const { result } = renderHook(() => useDocumentSession(fake.client, nodeMeta), { wrapper })
 
@@ -91,7 +91,12 @@ describe('useDocumentSession', () => {
     expect(getNodeHierarchy).toHaveBeenCalledWith(generateNodeUid('volume-1', 'link-1'))
     expect(fake.client.createSession).toHaveBeenCalledWith({ documentType: 'doc', nodeMeta })
     expect(fake.calls).toEqual(['on:updateUnreadable', 'bootstrap'])
-    expect(result.current).toEqual({ status: 'ready', session: fake.session, role: 'Editor' })
+    expect(result.current).toEqual({
+      status: 'ready',
+      session: fake.session,
+      role: 'Editor',
+      node: { mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE },
+    })
   })
 
   test('an unreadable base state update fails the load, leaves no listener and disconnects the session', async () => {

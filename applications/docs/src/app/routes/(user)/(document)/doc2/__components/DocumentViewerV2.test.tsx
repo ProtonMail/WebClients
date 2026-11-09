@@ -2,11 +2,15 @@ import { act, render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
 import { ConfigContext } from '@proton/app-context/configContext'
+import type { NodeEntity } from '@proton/drive/sdk'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config'
 import type { SessionStatus } from '@proton-docs/realtime-sdk'
+import type { ReactNode } from 'react'
 
 import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/application-context'
+import { DebugModeProvider } from '~/utils/debug-mode-context'
 
+import type { ClientHandler } from '../__utils/createClientHandler'
 import { createFakeSession } from '../__utils/createFakeSession'
 import type { DocumentSessionState } from '../__utils/useDocumentSession'
 import { DocumentViewerV2 } from './DocumentViewerV2'
@@ -20,24 +24,59 @@ jest.mock('@proton/app-context/useNotifications', () => ({
   useNotifications: () => ({ createNotification: jest.fn() }),
 }))
 
+jest.mock('~/utils/flags', () => ({ useIsDarkThemeEnabled: () => false }))
+jest.mock('~/drive-sdk/event-subscriber', () => ({
+  getEventSubscriber: () => ({ initialize: async () => {}, reset: () => {} }),
+}))
+jest.mock('@proton/account/userSettings/hooks', () => ({ useGetUserSettings: () => async () => ({ Locale: 'fr_FR' }) }))
+// The app shell and the header need the whole app around them; the header has its own tests
+jest.mock('./DocumentShell', () => ({
+  DocumentShell: ({ header, children }: { header: ReactNode; children: ReactNode }) => (
+    <>
+      <div data-testid="shell-header">{header}</div>
+      {children}
+    </>
+  ),
+}))
+jest.mock('./DocumentHeaderV2', () => ({
+  DocumentHeaderV2: ({
+    node,
+    role,
+    editorInvoker,
+  }: {
+    node: { uid: string }
+    role: string
+    editorInvoker?: object
+  }) => <div>{`Header for ${node.uid} as ${role}, ${editorInvoker ? 'with' : 'without'} the editor`}</div>,
+}))
+
 const mockEditorCalls: string[] = []
 const mockDestroyBridge = jest.fn()
+const mockLoadUserSettings = jest.fn(async () => {})
+let mockClientHandler: ClientHandler
 jest.mock('../__utils/ClientEditorBridge', () => ({
-  ClientEditorBridge: jest.fn().mockImplementation(() => ({
-    editorInvoker: {
-      initializeEditor: jest.fn(async () => {
-        mockEditorCalls.push('initializeEditor')
-      }),
-      receiveMessage: jest.fn(async ({ content }: { content: Uint8Array<ArrayBuffer> }) => {
-        mockEditorCalls.push(`receiveMessage:${content[0]}`)
-      }),
-      showEditor: jest.fn(async () => {
-        mockEditorCalls.push('showEditor')
-      }),
-      changeLockedState: jest.fn(async () => {}),
-    },
-    destroy: mockDestroyBridge,
-  })),
+  ClientEditorBridge: jest.fn().mockImplementation((_frame, clientHandler: ClientHandler) => {
+    mockClientHandler = clientHandler
+    return {
+      editorInvoker: {
+        initializeEditor: jest.fn(async () => {
+          mockEditorCalls.push('initializeEditor')
+        }),
+        receiveMessage: jest.fn(async ({ content }: { content: Uint8Array<ArrayBuffer> }) => {
+          mockEditorCalls.push(`receiveMessage:${content[0]}`)
+        }),
+        showEditor: jest.fn(async () => {
+          mockEditorCalls.push('showEditor')
+        }),
+        changeLockedState: jest.fn(async () => {}),
+        setDarkMode: jest.fn(async () => {}),
+        loadUserSettings: mockLoadUserSettings,
+        syncProperty: jest.fn(async () => {}),
+        setTableOfContentsVisible: jest.fn(async () => {}),
+      },
+      destroy: mockDestroyBridge,
+    }
+  }),
 }))
 jest.mock('~/components/document/EditorFrame', () => {
   const { useEffect } = jest.requireActual('react')
@@ -69,7 +108,12 @@ function update(firstByte: number) {
 }
 
 function renderViewer(fake: ReturnType<typeof createFakeSession>) {
-  mockSessionState = { status: 'ready', session: fake.session, role: 'Viewer' }
+  mockSessionState = {
+    status: 'ready',
+    session: fake.session,
+    role: 'Viewer',
+    node: { uid: 'VOLUME~LINK' } as NodeEntity,
+  }
   const application = {
     logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn() },
   } as unknown as ApplicationProviderProps['application']
@@ -77,7 +121,9 @@ function renderViewer(fake: ReturnType<typeof createFakeSession>) {
   return render(
     <ConfigContext.Provider value={{ APP_VERSION: '0.0.0' } as ProtonConfig}>
       <ApplicationProvider application={application}>
-        <DocumentViewerV2 nodeMeta={{ volumeId: 'VOLUME', linkId: 'LINK' }} onRetry={jest.fn()} />
+        <DebugModeProvider>
+          <DocumentViewerV2 nodeMeta={{ volumeId: 'VOLUME', linkId: 'LINK' }} onRetry={jest.fn()} />
+        </DebugModeProvider>
       </ApplicationProvider>
     </ConfigContext.Provider>,
   )
@@ -140,6 +186,63 @@ describe('DocumentViewerV2', () => {
 
     expect(fake.mocks.retry).toHaveBeenCalled()
     await waitFor(() => expect(mockEditorCalls).toContain('showEditor'))
+  })
+
+  test('shows no header while the session loads, then the header for its node and role, with the editor once there', async () => {
+    mockSessionState = { status: 'loading' }
+    const application = {
+      logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn() },
+    } as unknown as ApplicationProviderProps['application']
+    const viewer = () => (
+      <ConfigContext.Provider value={{ APP_VERSION: '0.0.0' } as ProtonConfig}>
+        <ApplicationProvider application={application}>
+          <DebugModeProvider>
+            <DocumentViewerV2 nodeMeta={{ volumeId: 'VOLUME', linkId: 'LINK' }} onRetry={jest.fn()} />
+          </DebugModeProvider>
+        </ApplicationProvider>
+      </ConfigContext.Provider>
+    )
+    const { rerender } = render(viewer())
+    expect(screen.getByTestId('shell-header')).toBeEmptyDOMElement()
+
+    const fake = createSession()
+    mockSessionState = {
+      status: 'ready',
+      session: fake.session,
+      role: 'Editor',
+      node: { uid: 'VOLUME~LINK' } as NodeEntity,
+    }
+    rerender(viewer())
+
+    await waitFor(() =>
+      expect(screen.getByTestId('shell-header')).toHaveTextContent('Header for VOLUME~LINK as Editor, with the editor'),
+    )
+  })
+
+  test("gives a private Viewer's editor their user settings, as /doc does", async () => {
+    renderViewer(createSession())
+
+    await waitFor(() => expect(mockLoadUserSettings).toHaveBeenCalledWith({ Locale: 'fr_FR' }))
+  })
+
+  test("shows the editor's alerts in a modal", async () => {
+    renderViewer(createSession())
+    await waitFor(() => expect(mockClientHandler).toBeDefined())
+
+    act(() => mockClientHandler.showGenericAlertModal('The export failed.'))
+
+    expect(await screen.findByText('Something went wrong')).toBeInTheDocument()
+    expect(screen.getByText('The export failed.')).toBeInTheDocument()
+  })
+
+  test("the editor's toggle-debug-mode action flips debug mode", async () => {
+    localStorage.removeItem('proton-docs-debug')
+    renderViewer(createSession())
+    await waitFor(() => expect(mockClientHandler).toBeDefined())
+
+    await act(() => mockClientHandler.handleFileMenuAction({ type: 'toggle-debug-mode' }))
+
+    expect(localStorage.getItem('proton-docs-debug')).toBe('true')
   })
 
   test('unmounting while waiting to catch up never initializes the editor', async () => {

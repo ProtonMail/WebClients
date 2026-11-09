@@ -1,5 +1,6 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import type { ReactNode } from 'react'
 import { MemoryRouter } from 'react-router-dom'
 import { CompatRouter, Link, Route, Routes, useLocation } from 'react-router-dom-v5-compat'
 
@@ -16,7 +17,22 @@ import { EDITOR_FRAME_READY_TIMEOUT_MS } from './__components/DocumentViewerV2'
 import DocumentPageV2 from './page'
 
 let mockIsDriveCompatSDK = false
-jest.mock('~/utils/flags', () => ({ useIsSheetsEnabled: () => true, useDriveCompatSDK: () => mockIsDriveCompatSDK }))
+jest.mock('~/utils/flags', () => ({
+  useIsSheetsEnabled: () => true,
+  useDriveCompatSDK: () => mockIsDriveCompatSDK,
+  useIsDarkThemeEnabled: () => false,
+}))
+jest.mock('@proton/account/userSettings/hooks', () => ({ useGetUserSettings: () => async () => ({}) }))
+// The app shell and its headers need the whole app around them
+jest.mock('./__components/DocumentShell', () => ({
+  DocumentShell: ({ header, children }: { header: ReactNode; children: ReactNode }) => (
+    <>
+      {header}
+      {children}
+    </>
+  ),
+}))
+jest.mock('./__components/ErrorHeader', () => ({ ErrorHeader: () => <div>Error header</div> }))
 // The SDK ships ES modules only, which jest does not transform.
 jest.mock('@proton-docs/realtime-sdk', () => ({ version: '0.0.0' }))
 const mockCreateSession = jest.fn()
@@ -74,6 +90,7 @@ describe('DocumentPageV2', () => {
     renderAt('/doc2?mode=history&volumeId=VOLUME&linkId=LINK')
 
     expect(screen.getByTestId('invalid-openaction-error')).toHaveTextContent('This link is not supported on this page.')
+    expect(screen.getByText('Error header')).toBeInTheDocument()
 
     await userEvent.click(screen.getByRole('button', { name: 'Go to Docs home' }))
 
@@ -194,6 +211,7 @@ describe('DocumentPageV2', () => {
       expect(await screen.findByTestId('invalid-openaction-error')).toHaveTextContent(
         'The document could not be loaded.',
       )
+      expect(screen.getByText('Error header')).toBeInTheDocument()
 
       await userEvent.click(screen.getByRole('button', { name: 'Try again' }))
 
