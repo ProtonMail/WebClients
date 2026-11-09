@@ -19,7 +19,11 @@ jest.mock('../../../../modules/busDriver', () => ({
 }));
 
 jest.mock('../../../../legacy/sdkUtils/getNodeEntity');
-jest.mock('../../../nodes');
+jest.mock('../../../nodes', () => ({
+    ...jest.requireActual('../../../nodes'),
+    getDeviceName: jest.fn(),
+    getNodeName: jest.fn(),
+}));
 
 const mockedGetBusDriver = jest.mocked(getBusDriver);
 const mockedGetDrive = jest.mocked(getDrive);
@@ -131,6 +135,15 @@ function collapseFolderScope(
     store.getState().setExpanded(folder.treeItemId, false);
     manager.syncSubscriptions();
 }
+
+const makeSharedWithMeDrive = (nodes: ({ uid: string } & Record<string, unknown>)[]) => ({
+    iterateSharedWithMeNodeUids: jest.fn().mockReturnValue(makeAsyncIterator(nodes.map((node) => node.uid))),
+    iterateNodes: jest
+        .fn()
+        .mockImplementation((uids: string[]) =>
+            makeAsyncIterator(uids.map((uid) => nodes.find((node) => node.uid === uid) ?? { missingUid: uid }))
+        ),
+});
 
 describe('TreeEventManager', () => {
     // Shared event subscriber list – simulates BusDriver fanout
@@ -445,21 +458,19 @@ describe('TreeEventManager', () => {
                 .getState()
                 .addItem(makeItem({ nodeUid: 'old-shared', parentUid: SHARED_WITH_ME_ROOT_ID, isSharedWithMe: true }));
             mockedGetNodeName.mockImplementation((node: any) => node.name);
-            mockedGetDrive.mockReturnValue({
-                iterateSharedNodesWithMe: jest.fn().mockReturnValue(
-                    makeAsyncIterator([
-                        {
-                            uid: 'new-shared',
-                            name: 'New Item',
-                            type: NodeType.Folder,
-                            deprecatedShareId: 'share-new',
-                            membership: {},
-                            keyAuthor: { ok: true },
-                            nameAuthor: { ok: true },
-                        },
-                    ])
-                ),
-            } as any);
+            mockedGetDrive.mockReturnValue(
+                makeSharedWithMeDrive([
+                    {
+                        uid: 'new-shared',
+                        name: 'New Item',
+                        type: NodeType.Folder,
+                        deprecatedShareId: 'share-new',
+                        membership: {},
+                        keyAuthor: { ok: true },
+                        nameAuthor: { ok: true },
+                    },
+                ]) as any
+            );
             expandSection(store, manager, 'shared');
 
             await fireEvent({ type: BusDriverEventName.REFRESH_SHARED_WITH_ME });
@@ -471,14 +482,12 @@ describe('TreeEventManager', () => {
         it('REFRESH_SHARED_WITH_ME – onlyFolders → shared files filtered out, folders kept', async () => {
             const { store, manager } = createManager(directoryTreeStoreFactory(), true);
             mockedGetNodeName.mockImplementation((node: any) => node.name);
-            mockedGetDrive.mockReturnValue({
-                iterateSharedNodesWithMe: jest.fn().mockReturnValue(
-                    makeAsyncIterator([
-                        { uid: 'shared-folder', name: 'A Folder', type: NodeType.Folder },
-                        { uid: 'shared-file', name: 'A File', type: NodeType.File },
-                    ])
-                ),
-            } as any);
+            mockedGetDrive.mockReturnValue(
+                makeSharedWithMeDrive([
+                    { uid: 'shared-folder', name: 'A Folder', type: NodeType.Folder },
+                    { uid: 'shared-file', name: 'A File', type: NodeType.File },
+                ]) as any
+            );
             expandSection(store, manager, 'shared');
 
             await fireEvent({ type: BusDriverEventName.REFRESH_SHARED_WITH_ME });
@@ -490,11 +499,9 @@ describe('TreeEventManager', () => {
         it('REFRESH_SHARED_WITH_ME – without onlyFolders → shared files kept', async () => {
             const { store, manager } = createManager();
             mockedGetNodeName.mockImplementation((node: any) => node.name);
-            mockedGetDrive.mockReturnValue({
-                iterateSharedNodesWithMe: jest
-                    .fn()
-                    .mockReturnValue(makeAsyncIterator([{ uid: 'shared-file', name: 'A File', type: NodeType.File }])),
-            } as any);
+            mockedGetDrive.mockReturnValue(
+                makeSharedWithMeDrive([{ uid: 'shared-file', name: 'A File', type: NodeType.File }]) as any
+            );
             expandSection(store, manager, 'shared');
 
             await fireEvent({ type: BusDriverEventName.REFRESH_SHARED_WITH_ME });

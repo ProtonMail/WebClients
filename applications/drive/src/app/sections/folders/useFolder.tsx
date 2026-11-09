@@ -6,7 +6,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { EnrichedError, handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { useFlagsDriveSheet } from '@proton/drive/modules/flags';
 import { driveMetrics } from '@proton/drive/modules/metrics';
-import { getNodeName } from '@proton/drive/modules/nodes';
+import { getNodeName, iterateNodesFromUidsGenerator } from '@proton/drive/modules/nodes';
 import { MemberRole, useDrive } from '@proton/drive/sdk';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -122,7 +122,10 @@ export function useFolder() {
                 const intervalId = setInterval(flushBatch, 30);
 
                 try {
-                    for await (const maybeNode of drive.iterateFolderChildren(folderNodeUid, undefined, ac.signal)) {
+                    const childUidsIterator = drive.iterateFolderChildrenNodeUids(folderNodeUid, undefined, ac.signal);
+                    for await (const maybeNode of iterateNodesFromUidsGenerator(childUidsIterator, drive, {
+                        signal: ac.signal,
+                    })) {
                         try {
                             if (ac.signal.aborted) {
                                 clearInterval(intervalId);

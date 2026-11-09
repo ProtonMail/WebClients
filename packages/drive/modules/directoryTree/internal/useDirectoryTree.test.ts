@@ -76,15 +76,29 @@ const findTreeItem = (treeRoots: any[], nodeUid: string): any => {
 describe('useDirectoryTree', () => {
     const mockGetMyFilesRootFolder = jest.fn();
     const mockIterateDevices = jest.fn();
-    const mockIterateSharedNodesWithMe = jest.fn();
-    const mockIterateFolderChildren = jest.fn();
+    const mockSharedWithMeNodes = jest.fn();
+    const mockFolderChildren = jest.fn();
     const mockGetNode = jest.fn();
+
+    // The tests mock the listed nodes; the UID listings and iterateNodes are derived from them, like in the SDK.
+    const listedNodes = new Map<string, any>();
+    async function* toNodeUids(nodes: AsyncIterable<any>) {
+        for await (const node of nodes) {
+            listedNodes.set(node.uid, node);
+            yield node.uid;
+        }
+    }
 
     const mockDrive = {
         getMyFilesRootFolder: mockGetMyFilesRootFolder,
         iterateDevices: mockIterateDevices,
-        iterateSharedNodesWithMe: mockIterateSharedNodesWithMe,
-        iterateFolderChildren: mockIterateFolderChildren,
+        iterateSharedWithMeNodeUids: (...args: unknown[]) => toNodeUids(mockSharedWithMeNodes(...args)),
+        iterateFolderChildrenNodeUids: (...args: unknown[]) => toNodeUids(mockFolderChildren(...args)),
+        async *iterateNodes(nodeUids: string[]) {
+            for (const nodeUid of nodeUids) {
+                yield listedNodes.get(nodeUid) ?? { missingUid: nodeUid };
+            }
+        },
         getNode: mockGetNode,
         // Walks up the parents through getNode, like the SDK, so tests only need to mock getNode.
         async getNodeHierarchy(nodeUid: string) {
@@ -104,6 +118,7 @@ describe('useDirectoryTree', () => {
 
     beforeEach(() => {
         jest.clearAllMocks();
+        listedNodes.clear();
 
         mockedUseDrive.mockReturnValue({
             drive: mockDrive,
@@ -272,7 +287,7 @@ describe('useDirectoryTree', () => {
                 createMockNode('shared-2', 'Shared Folder 2', NodeType.Folder),
             ];
 
-            mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
+            mockSharedWithMeNodes.mockReturnValue(createMockIterator(sharedNodes));
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
@@ -296,7 +311,7 @@ describe('useDirectoryTree', () => {
                 createMockNode('shared-2', 'Shared File', NodeType.File),
             ];
 
-            mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
+            mockSharedWithMeNodes.mockReturnValue(createMockIterator(sharedNodes));
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore({ onlyFolders: true }));
@@ -329,7 +344,7 @@ describe('useDirectoryTree', () => {
                 },
             ];
 
-            mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
+            mockSharedWithMeNodes.mockReturnValue(createMockIterator(sharedNodes));
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
@@ -353,7 +368,7 @@ describe('useDirectoryTree', () => {
                 createMockNode('shared-file', 'Shared File', NodeType.File),
             ];
 
-            mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
+            mockSharedWithMeNodes.mockReturnValue(createMockIterator(sharedNodes));
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
@@ -371,7 +386,7 @@ describe('useDirectoryTree', () => {
 
         it('should handle errors when loading shared items', async () => {
             createMyFilesRoot();
-            mockIterateSharedNodesWithMe.mockImplementation(async function* () {
+            mockSharedWithMeNodes.mockImplementation(async function* () {
                 throw new Error('Failed to load shared items');
             });
 
@@ -391,7 +406,7 @@ describe('useDirectoryTree', () => {
 
             const children = [createMockNode('child-1', 'Child 1', NodeType.Folder)];
 
-            mockIterateFolderChildren.mockReturnValue(createMockIterator(children));
+            mockFolderChildren.mockReturnValue(createMockIterator(children));
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
@@ -429,7 +444,7 @@ describe('useDirectoryTree', () => {
                 await result.current.toggleExpand('some-parent___non-existent-uid');
             });
 
-            expect(mockIterateFolderChildren).not.toHaveBeenCalled();
+            expect(mockFolderChildren).not.toHaveBeenCalled();
         });
 
         it('should expand a collapsed item and load its children', async () => {
@@ -440,7 +455,7 @@ describe('useDirectoryTree', () => {
                 createMockNode('child-2', 'Child 2', NodeType.File),
             ];
 
-            mockIterateFolderChildren.mockReturnValue(createMockIterator(children));
+            mockFolderChildren.mockReturnValue(createMockIterator(children));
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
@@ -450,7 +465,7 @@ describe('useDirectoryTree', () => {
                 await result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
             });
 
-            expect(mockIterateFolderChildren).toHaveBeenCalledWith(MY_FILES_ROOT_UID, undefined, expect.any(Object));
+            expect(mockFolderChildren).toHaveBeenCalledWith(MY_FILES_ROOT_UID, undefined, expect.any(Object));
 
             const myFiles = findTreeItem(result.current.treeRoots, MY_FILES_ROOT_UID);
             expect(myFiles.children).not.toBeNull();
@@ -475,7 +490,7 @@ describe('useDirectoryTree', () => {
                 },
             ];
 
-            mockIterateFolderChildren.mockReturnValue(createMockIterator(children));
+            mockFolderChildren.mockReturnValue(createMockIterator(children));
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
@@ -499,7 +514,7 @@ describe('useDirectoryTree', () => {
                 createMockNode('child-file', 'Child File', NodeType.File),
             ];
 
-            mockIterateFolderChildren.mockReturnValue(createMockIterator(children));
+            mockFolderChildren.mockReturnValue(createMockIterator(children));
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
@@ -518,7 +533,7 @@ describe('useDirectoryTree', () => {
         it('should handle errors when loading folder children', async () => {
             createMyFilesRoot();
 
-            mockIterateFolderChildren.mockImplementation(async function* () {
+            mockFolderChildren.mockImplementation(async function* () {
                 throw new Error('Failed to load children');
             });
 
@@ -548,7 +563,7 @@ describe('useDirectoryTree', () => {
 
             const children = [createMockNode('child-file', 'Child File', NodeType.File)];
 
-            mockIterateFolderChildren.mockReturnValue(createMockIterator(children));
+            mockFolderChildren.mockReturnValue(createMockIterator(children));
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
@@ -591,7 +606,7 @@ describe('useDirectoryTree', () => {
             createMyFilesRoot();
 
             let abortSignalReceived: AbortSignal | undefined;
-            mockIterateSharedNodesWithMe.mockImplementation(async function* (signal: AbortSignal) {
+            mockSharedWithMeNodes.mockImplementation(async function* (signal: AbortSignal) {
                 abortSignalReceived = signal;
                 yield createMockNode('shared-1', 'Shared 1', NodeType.Folder);
             });
@@ -615,11 +630,7 @@ describe('useDirectoryTree', () => {
             createMyFilesRoot();
 
             let abortSignalReceived: AbortSignal | undefined;
-            mockIterateFolderChildren.mockImplementation(async function* (
-                _uid: string,
-                _options: any,
-                signal: AbortSignal
-            ) {
+            mockFolderChildren.mockImplementation(async function* (_uid: string, _options: any, signal: AbortSignal) {
                 abortSignalReceived = signal;
                 yield createMockNode('child-1', 'Child 1', NodeType.Folder);
             });
@@ -651,17 +662,13 @@ describe('useDirectoryTree', () => {
             });
 
             // Setup shared nodes iterator to track its abort signal
-            mockIterateSharedNodesWithMe.mockImplementation(async function* (signal: AbortSignal) {
+            mockSharedWithMeNodes.mockImplementation(async function* (signal: AbortSignal) {
                 abortSignals.set('shared', signal);
                 yield createMockNode('shared-1', 'Shared 1', NodeType.Folder);
             });
 
             // Setup folder children iterator to track its abort signal
-            mockIterateFolderChildren.mockImplementation(async function* (
-                _uid: string,
-                _options: any,
-                signal: AbortSignal
-            ) {
+            mockFolderChildren.mockImplementation(async function* (_uid: string, _options: any, signal: AbortSignal) {
                 abortSignals.set('myfiles', signal);
                 yield createMockNode('child-1', 'Child 1', NodeType.Folder);
             });
@@ -719,7 +726,7 @@ describe('useDirectoryTree', () => {
 
             const children = [createMockNode('child-1', 'Child 1', NodeType.Folder)];
 
-            mockIterateFolderChildren.mockReturnValue(createMockIterator(children));
+            mockFolderChildren.mockReturnValue(createMockIterator(children));
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
@@ -760,7 +767,7 @@ describe('useDirectoryTree', () => {
                 createMockNode('child-2', 'Child 2', NodeType.File),
             ];
 
-            mockIterateFolderChildren.mockReturnValue(createMockIterator(children));
+            mockFolderChildren.mockReturnValue(createMockIterator(children));
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
@@ -800,7 +807,7 @@ describe('useDirectoryTree', () => {
         it('should return empty children object for expanded folder with no children', async () => {
             createMyFilesRoot();
 
-            mockIterateFolderChildren.mockReturnValue(createMockIterator([]));
+            mockFolderChildren.mockReturnValue(createMockIterator([]));
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
@@ -828,7 +835,7 @@ describe('useDirectoryTree', () => {
                 },
             ];
 
-            mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
+            mockSharedWithMeNodes.mockReturnValue(createMockIterator(sharedNodes));
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore({ loadPermissions: true }));
@@ -855,7 +862,7 @@ describe('useDirectoryTree', () => {
                 },
             ];
 
-            mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
+            mockSharedWithMeNodes.mockReturnValue(createMockIterator(sharedNodes));
             mockGetNode.mockResolvedValue({ uid: 'parent-editor', directRole: MemberRole.Editor, parentUid: null });
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
@@ -882,7 +889,7 @@ describe('useDirectoryTree', () => {
                 },
             ];
 
-            mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
+            mockSharedWithMeNodes.mockReturnValue(createMockIterator(sharedNodes));
             mockGetNode
                 .mockResolvedValueOnce({ uid: 'parent', directRole: MemberRole.Viewer, parentUid: 'grandparent' })
                 .mockResolvedValueOnce({ uid: 'grandparent', directRole: MemberRole.Editor, parentUid: null });
@@ -912,7 +919,7 @@ describe('useDirectoryTree', () => {
                 },
             ];
 
-            mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
+            mockSharedWithMeNodes.mockReturnValue(createMockIterator(sharedNodes));
             mockGetNode.mockResolvedValue({ uid: 'viewer-parent', directRole: MemberRole.Viewer, parentUid: null });
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
@@ -938,7 +945,7 @@ describe('useDirectoryTree', () => {
                 },
             ];
 
-            mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
+            mockSharedWithMeNodes.mockReturnValue(createMockIterator(sharedNodes));
             mockGetNode.mockResolvedValue({ uid: 'degraded-parent', directRole: MemberRole.Editor, parentUid: null });
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
@@ -974,7 +981,7 @@ describe('useDirectoryTree', () => {
             });
             mockDrive.getNode = localMockGetNode;
 
-            mockIterateSharedNodesWithMe.mockReturnValue(
+            mockSharedWithMeNodes.mockReturnValue(
                 createMockIterator([
                     createMockNode('shared-parent', 'Shared Parent', NodeType.Folder),
                     {
@@ -999,7 +1006,7 @@ describe('useDirectoryTree', () => {
             expect(sharedRoot.children['leaf-shared'].highestEffectiveRole).toBe(MemberRole.Editor);
 
             // Expand parent shows middle folder (not shared)
-            mockIterateFolderChildren.mockReturnValue(
+            mockFolderChildren.mockReturnValue(
                 createMockIterator([createMockNode('middle-non-shared', 'Middle Non-Shared', NodeType.Folder)])
             );
             await act(async () => {
@@ -1014,7 +1021,7 @@ describe('useDirectoryTree', () => {
             });
 
             // Expand middle shows leaf again
-            mockIterateFolderChildren.mockReturnValue(
+            mockFolderChildren.mockReturnValue(
                 createMockIterator([
                     { ...createMockNode('leaf-shared', 'Leaf Shared', NodeType.Folder), isShared: true },
                 ])
@@ -1039,8 +1046,8 @@ describe('useDirectoryTree', () => {
             const sharedNodes = [createMockNode('shared-1', 'Shared Folder 1', NodeType.Folder)];
             const myFilesChildren = [createMockNode('my-file', 'My File', NodeType.File)];
 
-            mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator(sharedNodes));
-            mockIterateFolderChildren.mockReturnValue(createMockIterator(myFilesChildren));
+            mockSharedWithMeNodes.mockReturnValue(createMockIterator(sharedNodes));
+            mockFolderChildren.mockReturnValue(createMockIterator(myFilesChildren));
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
@@ -1099,7 +1106,7 @@ describe('useDirectoryTree', () => {
 
         it('should resync subscriptions when MyFiles root is expanded and collapsed', async () => {
             createMyFilesRoot();
-            mockIterateFolderChildren.mockReturnValue(createMockIterator([]));
+            mockFolderChildren.mockReturnValue(createMockIterator([]));
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
@@ -1160,7 +1167,7 @@ describe('useDirectoryTree', () => {
 
         it('should resync subscriptions when Shared root is expanded and collapsed', async () => {
             createMyFilesRoot();
-            mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator([]));
+            mockSharedWithMeNodes.mockReturnValue(createMockIterator([]));
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
@@ -1185,10 +1192,10 @@ describe('useDirectoryTree', () => {
 
         it('should resync subscriptions when a shared folder with a scope toggles', async () => {
             createMyFilesRoot();
-            mockIterateSharedNodesWithMe.mockReturnValue(
+            mockSharedWithMeNodes.mockReturnValue(
                 createMockIterator([createSharedFolderNode('shared-folder', 'Shared Folder')])
             );
-            mockIterateFolderChildren.mockReturnValue(createMockIterator([]));
+            mockFolderChildren.mockReturnValue(createMockIterator([]));
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result } = renderHook(() => useDirectoryTreeWithStore());
@@ -1214,9 +1221,9 @@ describe('useDirectoryTree', () => {
 
         it('should unregister all event subscriptions on unmount', async () => {
             createMyFilesRoot();
-            mockIterateFolderChildren.mockReturnValue(createMockIterator([]));
+            mockFolderChildren.mockReturnValue(createMockIterator([]));
             mockIterateDevices.mockReturnValue(createMockIterator([]));
-            mockIterateSharedNodesWithMe.mockReturnValue(createMockIterator([]));
+            mockSharedWithMeNodes.mockReturnValue(createMockIterator([]));
 
             const useDirectoryTreeWithStore = createDirectoryTreeHookForTest();
             const { result, unmount } = renderHook(() => useDirectoryTreeWithStore());
@@ -1266,7 +1273,7 @@ describe('useDirectoryTree', () => {
             });
 
             // Simulate long-running jobs for shared with me
-            mockIterateSharedNodesWithMe.mockImplementation(async function* (signal: AbortSignal) {
+            mockSharedWithMeNodes.mockImplementation(async function* (signal: AbortSignal) {
                 abortSignals.set('shared', signal);
                 for (let i = 1; i <= 10; i++) {
                     if (signal.aborted) {
@@ -1287,11 +1294,7 @@ describe('useDirectoryTree', () => {
             });
 
             // Simulate long-running jobs for folder children
-            mockIterateFolderChildren.mockImplementation(async function* (
-                _uid: string,
-                _options: any,
-                signal: AbortSignal
-            ) {
+            mockFolderChildren.mockImplementation(async function* (_uid: string, _options: any, signal: AbortSignal) {
                 abortSignals.set('myfiles', signal);
                 for (let i = 1; i <= 10; i++) {
                     if (signal.aborted) {

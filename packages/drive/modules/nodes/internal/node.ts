@@ -1,6 +1,6 @@
 import type { MaybeMissingNode, MissingNode } from '@protontech/drive-sdk';
 
-export const isMissingNode = (maybeMissingNode: MaybeMissingNode): maybeMissingNode is MissingNode => {
+export const isMissingNode = <T extends object>(maybeMissingNode: T | MissingNode): maybeMissingNode is MissingNode => {
     return 'missingUid' in maybeMissingNode;
 };
 

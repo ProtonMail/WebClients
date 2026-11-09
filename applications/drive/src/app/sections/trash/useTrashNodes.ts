@@ -3,7 +3,11 @@ import { useCallback } from 'react';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { driveMetrics } from '@proton/drive/modules/metrics';
-import { getFormattedNodeLocation, getFormattedNodeLocationFromHierarchy } from '@proton/drive/modules/nodes';
+import {
+    getFormattedNodeLocation,
+    getFormattedNodeLocationFromHierarchy,
+    iterateNodesFromUidsGenerator,
+} from '@proton/drive/modules/nodes';
 import { getDrive, getDriveForPhotos } from '@proton/drive/sdk';
 
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
@@ -19,7 +23,10 @@ export const useTrashNodes = () => {
             setLoading('drive', true);
             let shownErrorNotification = false;
             const { onItemsLoadedToState, onFinished } = driveMetrics.drivePerformance.startDataLoad('trash');
-            for await (const trashNode of drive.iterateTrashedNodes(abortSignal)) {
+            const trashedUidsIterator = drive.iterateTrashedNodeUids(abortSignal);
+            for await (const trashNode of iterateNodesFromUidsGenerator(trashedUidsIterator, drive, {
+                signal: abortSignal,
+            })) {
                 try {
                     const hierarchy = await drive.getNodeHierarchy(trashNode.uid);
                     const location = await getFormattedNodeLocationFromHierarchy(drive, hierarchy);
@@ -46,7 +53,10 @@ export const useTrashNodes = () => {
             const drive = getDriveForPhotos();
             setLoading('photos', true);
             let shownErrorNotification = false;
-            for await (const trashNode of drive.iterateTrashedNodes(abortSignal)) {
+            const trashedUidsIterator = drive.iterateTrashedNodeUids(abortSignal);
+            for await (const trashNode of iterateNodesFromUidsGenerator(trashedUidsIterator, drive, {
+                signal: abortSignal,
+            })) {
                 try {
                     const location = await getFormattedNodeLocation(drive, trashNode);
                     const rootNode = await getRootNode(trashNode, drive);

@@ -13,6 +13,11 @@ jest.mock('@proton/drive/legacy/sdkUtils/getNodeEntity');
 jest.mock('../../../utils/sdk/getSignatureIssues');
 jest.mock('../../../utils/sdk/mapNodeToLegacyItem');
 jest.mock('../useSharedByMe.store');
+jest.mock('@proton/drive/modules/nodes', () => ({
+    ...jest.requireActual('@proton/drive/modules/nodes'),
+    getFormattedNodeLocation: jest.fn().mockResolvedValue('/location'),
+    getFormattedNodeLocationUsingHierarchy: jest.fn().mockResolvedValue('/location'),
+}));
 
 const mockHandleSdkErrorHandler = jest.mocked(handleSdkError);
 const mockGetDrive = jest.mocked(getDrive);
@@ -23,7 +28,7 @@ const mockGetRootNode = jest.mocked(getRootNode);
 const mockUseSharedByMeStore = jest.mocked(useSharedByMeStore);
 
 const mockDrive = {
-    iterateSharedNodes: jest.fn(),
+    iterateSharedNodeUids: jest.fn(),
     getSharingInfo: jest.fn(),
     getNode: jest.fn(),
     iterateNodes: jest.fn(),
@@ -114,11 +119,11 @@ describe('useSharedByMeNodesLoader', () => {
             await loadSharedByMeNodes(abortSignal);
 
             expect(mockSetLoading).not.toHaveBeenCalled();
-            expect(mockDrive.iterateSharedNodes).not.toHaveBeenCalled();
+            expect(mockDrive.iterateSharedNodeUids).not.toHaveBeenCalled();
         });
 
-        it('should set loading state and call iterateSharedNodes', async () => {
-            mockDrive.iterateSharedNodes.mockImplementation(async function* () {
+        it('should set loading state and call iterateSharedNodeUids', async () => {
+            mockDrive.iterateSharedNodeUids.mockImplementation(async function* () {
                 // Empty generator for basic state testing
             });
 
@@ -126,13 +131,13 @@ describe('useSharedByMeNodesLoader', () => {
             await loadSharedByMeNodes(abortSignal);
 
             expect(mockSetLoading).toHaveBeenCalledWith(true);
-            expect(mockDrive.iterateSharedNodes).toHaveBeenCalledWith(abortSignal);
+            expect(mockDrive.iterateSharedNodeUids).toHaveBeenCalledWith(abortSignal);
             expect(mockSetLoading).toHaveBeenCalledWith(false);
         });
 
         it('should handle errors and ensure loading state is reset', async () => {
             const error = new Error('Test error');
-            mockDrive.iterateSharedNodes.mockImplementation(async function* () {
+            mockDrive.iterateSharedNodeUids.mockImplementation(async function* () {
                 throw error;
             });
 
@@ -145,6 +150,35 @@ describe('useSharedByMeNodesLoader', () => {
             });
             expect(mockSetLoading).toHaveBeenCalledWith(true);
             expect(mockSetLoading).toHaveBeenCalledWith(false);
+        });
+
+        it('should skip nodes deleted between the listing and the loading without an error', async () => {
+            const node = createMockNode();
+            mockDrive.getSharingInfo.mockResolvedValue(undefined);
+            mockGetDrive.mockReturnValue({
+                ...mockDrive,
+                iterateSharedNodeUids: jest.fn(async function* () {
+                    yield node.uid;
+                    yield 'deleted-node';
+                }),
+                iterateNodes: jest.fn(async function* (uids: string[]) {
+                    for (const uid of uids) {
+                        yield uid === node.uid ? node : { missingUid: uid };
+                    }
+                }),
+            } as any);
+            mockGetDriveForPhotos.mockReturnValue({
+                ...mockDrive,
+                iterateSharedNodeUids: jest.fn(async function* () {
+                    yield* [];
+                }),
+            } as any);
+
+            await loadSharedByMeNodes(new AbortController().signal);
+
+            expect(mockSetSharedByMeItem).toHaveBeenCalledTimes(1);
+            expect(mockSetSharedByMeItem).toHaveBeenCalledWith(expect.objectContaining({ nodeUid: node.uid }));
+            expect(mockHandleSdkErrorHandler).not.toHaveBeenCalled();
         });
     });
 });

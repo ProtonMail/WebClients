@@ -1,5 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { getFormattedNodeLocation, getFormattedNodeLocationFromHierarchy } from '@proton/drive/modules/nodes';
 import { type NodeEntity, getDrive, getDriveForPhotos } from '@proton/drive/sdk';
@@ -61,13 +62,28 @@ const createAsyncIterable = <T>(items: T[]) =>
         }
     })();
 
+// Mocks the trash UID listing and the loading of those UIDs, like the SDK does.
+const mockTrashListing = (
+    listUids: jest.Mock,
+    loadNodes: jest.Mock,
+    nodes: { uid: string }[],
+    missingUids: string[] = []
+) => {
+    listUids.mockReturnValue(createAsyncIterable([...nodes.map((node) => node.uid), ...missingUids]));
+    loadNodes.mockImplementation((uids: string[]) =>
+        createAsyncIterable(uids.map((uid) => nodes.find((node) => node.uid === uid) ?? { missingUid: uid }))
+    );
+};
+
 describe('useTrashNodes', () => {
     const setItem = jest.fn();
     const setLoading = jest.fn();
     const setSorting = jest.fn();
-    const iterateTrashedNodes = jest.fn();
+    const iterateTrashedNodeUids = jest.fn();
+    const iterateNodes = jest.fn();
     const getNodeHierarchy = jest.fn();
-    const iterateTrashedPhotoNodes = jest.fn();
+    const iterateTrashedPhotoNodeUids = jest.fn();
+    const iteratePhotoNodes = jest.fn();
     const handleError = jest.fn();
 
     beforeEach(() => {
@@ -88,12 +104,14 @@ describe('useTrashNodes', () => {
         });
 
         mockGetDrive.mockReturnValue({
-            iterateTrashedNodes,
+            iterateTrashedNodeUids,
+            iterateNodes,
             getNodeHierarchy,
         } as any);
 
         mockGetDriveForPhotos.mockReturnValue({
-            iterateTrashedNodes: iterateTrashedPhotoNodes,
+            iterateTrashedNodeUids: iterateTrashedPhotoNodeUids,
+            iterateNodes: iteratePhotoNodes,
         } as any);
 
         mockGetNodeEntity.mockImplementation((trashNode: any) => ({
@@ -109,7 +127,7 @@ describe('useTrashNodes', () => {
                 { uid: 'drive-1', node: createNode('drive-1', 'Drive 1') },
                 { uid: 'drive-2', node: createNode('drive-2', 'Drive 2') },
             ];
-            iterateTrashedNodes.mockReturnValue(createAsyncIterable(trashNodes));
+            mockTrashListing(iterateTrashedNodeUids, iterateNodes, trashNodes);
             getNodeHierarchy.mockImplementation(async (uid: string) => [
                 rootNode,
                 trashNodes.find((trashNode) => trashNode.uid === uid),
@@ -125,7 +143,7 @@ describe('useTrashNodes', () => {
                 await result.current.loadTrashNodes(abortController.signal);
             });
 
-            expect(iterateTrashedNodes).toHaveBeenCalledWith(abortController.signal);
+            expect(iterateTrashedNodeUids).toHaveBeenCalledWith(abortController.signal);
             expect(setLoading).toHaveBeenNthCalledWith(1, 'drive', true);
             expect(setLoading).toHaveBeenLastCalledWith('drive', false);
             expect(setItem).toHaveBeenCalledTimes(2);
@@ -150,16 +168,32 @@ describe('useTrashNodes', () => {
             expect(mockGetFormattedNodeLocation).not.toHaveBeenCalled();
             expect(handleError).not.toHaveBeenCalled();
         });
+
+        it('skips nodes deleted between the listing and the loading without an error', async () => {
+            const rootNode = createNode('root', 'Root');
+            const trashNodes = [{ uid: 'drive-1', node: createNode('drive-1', 'Drive 1') }];
+            mockTrashListing(iterateTrashedNodeUids, iterateNodes, trashNodes, ['deleted-node']);
+            getNodeHierarchy.mockResolvedValue([rootNode, trashNodes[0]]);
+            mockGetFormattedNodeLocationFromHierarchy.mockResolvedValue('/Trash/Drive 1');
+
+            const { result } = renderHook(() => useTrashNodes());
+
+            await act(async () => {
+                await result.current.loadTrashNodes(new AbortController().signal);
+            });
+
+            expect(setItem).toHaveBeenCalledTimes(1);
+            expect(setItem).toHaveBeenCalledWith(expect.objectContaining({ uid: 'drive-1' }));
+            expect(handleSdkError).not.toHaveBeenCalled();
+        });
     });
 
     describe('loadTrashPhotoNodes', () => {
         it('loads trashed photo nodes and updates the store', async () => {
-            iterateTrashedPhotoNodes.mockReturnValue(
-                createAsyncIterable([
-                    { node: createNode('photo-1', 'Photo 1') },
-                    { node: createNode('photo-2', 'Photo 2') },
-                ])
-            );
+            mockTrashListing(iterateTrashedPhotoNodeUids, iteratePhotoNodes, [
+                { uid: 'photo-1', node: createNode('photo-1', 'Photo 1') },
+                { uid: 'photo-2', node: createNode('photo-2', 'Photo 2') },
+            ] as any);
             mockGetFormattedNodeLocation
                 .mockResolvedValueOnce('/Trash/Photo 1')
                 .mockResolvedValueOnce('/Trash/Photo 2');
@@ -171,7 +205,7 @@ describe('useTrashNodes', () => {
                 await result.current.loadTrashPhotoNodes(abortController.signal);
             });
 
-            expect(iterateTrashedPhotoNodes).toHaveBeenCalledWith(abortController.signal);
+            expect(iterateTrashedPhotoNodeUids).toHaveBeenCalledWith(abortController.signal);
             expect(setLoading).toHaveBeenNthCalledWith(1, 'photos', true);
             expect(setLoading).toHaveBeenLastCalledWith('photos', false);
             expect(setItem).toHaveBeenCalledTimes(2);

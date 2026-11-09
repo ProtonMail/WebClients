@@ -19,24 +19,31 @@ const makeNode = (overrides = {}) => ({
     ...overrides,
 });
 
-async function* makeIterator(nodes: ReturnType<typeof makeNode>[]) {
-    for (const node of nodes) {
-        yield node;
+async function* makeIterator<T>(items: T[]) {
+    for (const item of items) {
+        yield item;
     }
 }
 
+const makeDrive = (nodes: ReturnType<typeof makeNode>[], missingUids: string[] = []) => ({
+    iterateSharedWithMeNodeUids: jest
+        .fn()
+        .mockReturnValue(makeIterator([...nodes.map((node) => node.uid), ...missingUids])),
+    iterateNodes: jest
+        .fn()
+        .mockImplementation((uids: string[]) =>
+            makeIterator(uids.map((uid) => nodes.find((node) => node.uid === uid) ?? { missingUid: uid }))
+        ),
+});
+
 beforeEach(() => {
     jest.clearAllMocks();
-    mockedGetDrive.mockReturnValue({
-        iterateSharedNodesWithMe: jest.fn().mockReturnValue(makeIterator([])),
-    } as any);
+    mockedGetDrive.mockReturnValue(makeDrive([]) as any);
 });
 
 describe('iterateSharedWithMeNodes', () => {
     it('returns valid nodes with signatureIssues', async () => {
-        mockedGetDrive.mockReturnValue({
-            iterateSharedNodesWithMe: jest.fn().mockReturnValue(makeIterator([makeNode()])),
-        } as any);
+        mockedGetDrive.mockReturnValue(makeDrive([makeNode()]) as any);
 
         const result = await iterateSharedWithMeNodes();
 
@@ -44,9 +51,18 @@ describe('iterateSharedWithMeNodes', () => {
         expect(result[0].node.uid).toBe('node-1');
     });
 
+    it('skips nodes that are missing when loaded', async () => {
+        mockedGetDrive.mockReturnValue(makeDrive([makeNode()], ['deleted-node']) as any);
+
+        const result = await iterateSharedWithMeNodes();
+
+        expect(result.map(({ node }) => node.uid)).toEqual(['node-1']);
+        expect(mockedSendErrorReport).not.toHaveBeenCalled();
+    });
+
     it('reports iterator errors and returns partial results without throwing', async () => {
         mockedGetDrive.mockReturnValue({
-            iterateSharedNodesWithMe: jest.fn().mockReturnValue(
+            iterateSharedWithMeNodeUids: jest.fn().mockReturnValue(
                 (async function* () {
                     throw new Error('network failure');
                 })()

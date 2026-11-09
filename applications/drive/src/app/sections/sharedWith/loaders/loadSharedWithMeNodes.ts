@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { EnrichedError, handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { driveMetrics } from '@proton/drive/modules/metrics';
+import { iterateNodesFromUidsGenerator } from '@proton/drive/modules/nodes';
 import { getNotificationsManager } from '@proton/drive/modules/notifications';
 import { getDrive, getDriveForPhotos, splitNodeUid } from '@proton/drive/sdk';
 
@@ -22,7 +23,11 @@ export const loadSharedWithMeNodes = async (abortSignal: AbortSignal) => {
         const volumeShareMap = new Map<string, string[]>();
 
         try {
-            for await (const sharedWithMeMaybeNode of getDrive().iterateSharedNodesWithMe(abortSignal)) {
+            const drive = getDrive();
+            const sharedUidsIterator = drive.iterateSharedWithMeNodeUids(abortSignal);
+            for await (const sharedWithMeMaybeNode of iterateNodesFromUidsGenerator(sharedUidsIterator, drive, {
+                signal: abortSignal,
+            })) {
                 const { node } = getNodeEntity(sharedWithMeMaybeNode);
                 const signatureResult = getSignatureIssues(sharedWithMeMaybeNode);
                 // User can open via public link, then be invited directly, and that direct share
@@ -75,7 +80,11 @@ export const loadSharedWithMeNodes = async (abortSignal: AbortSignal) => {
 
         // TODO: Quick fix, we should combine with logic above
         try {
-            for await (const sharedWithMeMaybeNode of getDriveForPhotos().iterateSharedNodesWithMe(abortSignal)) {
+            const drive = getDriveForPhotos();
+            const sharedUidsIterator = drive.iterateSharedWithMeNodeUids(abortSignal);
+            for await (const sharedWithMeMaybeNode of iterateNodesFromUidsGenerator(sharedUidsIterator, drive, {
+                signal: abortSignal,
+            })) {
                 const { node } = getNodeEntity(sharedWithMeMaybeNode);
                 const signatureResult = getSignatureIssues(sharedWithMeMaybeNode);
                 // User can open via public link, then be invited directly, and that direct share

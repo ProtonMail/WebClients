@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
+import { iterateNodesFromUidsGenerator } from '@proton/drive/modules/nodes';
 import { MemberRole } from '@proton/drive/sdk';
 
 import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
@@ -38,7 +39,10 @@ export const usePublicFolderLoader = () => {
 
                 let showErrorNotification = false;
 
-                for await (const maybeNode of driveClient.iterateFolderChildren(nodeUid, undefined, abortSignal)) {
+                const childUidsIterator = driveClient.iterateFolderChildrenNodeUids(nodeUid, undefined, abortSignal);
+                for await (const maybeNode of iterateNodesFromUidsGenerator(childUidsIterator, driveClient, {
+                    signal: abortSignal,
+                })) {
                     try {
                         const { node } = getNodeEntity(maybeNode);
                         const { isLoggedIn, publicRole } = usePublicAuthStore.getState();
