@@ -43,7 +43,7 @@ im.$media-expressions: $media-expressions;
 .prejoin-background {
 	--prejoin-glow-unit: max(100vw / 1440, 100vh / 900);
 
-	position: absolute;
+	position: fixed; // Covers the Electron top padding set in App.tsx too
 	inset: 0;
 	overflow: hidden;
 	z-index: -1;
