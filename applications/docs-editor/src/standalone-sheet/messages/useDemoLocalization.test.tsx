@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react'
 import { createSheetsMessages } from '../../app/Containers/adapters/sheets/sheetsMessages/createSheetsMessages'
-import type { SheetsMessages } from '../../app/Containers/Spreadsheet/messages/SheetsMessages'
+import type { SheetsMessages } from '@proton-docs/sheets-editor'
 import { loadDemoMessageFactory } from './demoMessages'
 import { useDemoLocalization } from './useDemoLocalization'
 

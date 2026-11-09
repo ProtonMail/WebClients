@@ -15,6 +15,7 @@ import { useIsDarkThemeEnabled } from '~/utils/flags'
 import { EventTypeEnum } from '@proton/docs-proto/Event/EventTypeEnum'
 import type { FeatureFlag } from '@proton/unleash/Flags'
 import { useFlag } from '@proton/unleash/useFlag'
+import { c } from 'ttag'
 
 export type SingleRevisionViewerProps = {
   state: YjsState
@@ -28,9 +29,10 @@ export function SingleRevisionViewer({ state, onEditorInvokerRef, documentType }
   const isDarkThemeEnabled = useIsDarkThemeEnabled()
   const { information } = useTheme()
   const [editorInvoker, setEditorInvoker] = useState<EditorInvoker | null>(null)
+  /** Set when the editor reports it cannot show this version, such as when its code fails to load. */
+  const [hasIrrecoverableError, setHasIrrecoverableError] = useState(false)
   const isDarkMode = isDarkThemeEnabled && information.dark
   const isSheetsMountAfterInitialLoadDisabled = useFlag('SheetsMountAfterInitialLoadDisabled')
-  const isSheetsEditorPackageEnabled = useFlag('SheetsEditorPackageEnabled')
 
   useEffect(() => {
     if (editorInvoker) {
@@ -42,8 +44,14 @@ export function SingleRevisionViewer({ state, onEditorInvokerRef, documentType }
       const orchestrator = {
         provideEditorInvoker: () => {},
         checkIfFeatureFlagIsEnabled: async (featureFlag: FeatureFlag) =>
-          (featureFlag === 'SheetsMountAfterInitialLoadDisabled' && isSheetsMountAfterInitialLoadDisabled) ||
-          (featureFlag === 'SheetsEditorPackageEnabled' && isSheetsEditorPackageEnabled),
+          featureFlag === 'SheetsMountAfterInitialLoadDisabled' && isSheetsMountAfterInitialLoadDisabled,
+        editorReportingError: (_error: string, extraInfo: { irrecoverable?: boolean }) => {
+          // Not `logger.error`, which sends its arguments to Sentry: the editor's message may quote document content.
+          logger.warn('Revision editor reported an error', { irrecoverable: Boolean(extraInfo.irrecoverable) })
+          if (extraInfo.irrecoverable) {
+            setHasIrrecoverableError(true)
+          }
+        },
       } as unknown as EditorOrchestratorInterface
 
       const bridge = new ClientToEditorBridge(frame, orchestrator, new InternalEventBus(), new SyncedEditorState())
@@ -80,8 +88,16 @@ export function SingleRevisionViewer({ state, onEditorInvokerRef, documentType }
 
       onEditorInvokerRef(newEditorInvoker)
     },
-    [APP_VERSION, isSheetsEditorPackageEnabled, isSheetsMountAfterInitialLoadDisabled, onEditorInvokerRef, state],
+    [APP_VERSION, isSheetsMountAfterInitialLoadDisabled, logger, onEditorInvokerRef, state],
   )
+
+  if (hasIrrecoverableError) {
+    return (
+      <div className="flex h-full items-center justify-center p-8 text-center text-[--text-weak]" role="alert">
+        {c('Error').t`This version could not be loaded. Close the history and try again.`}
+      </div>
+    )
+  }
 
   return (
     <EditorFrame

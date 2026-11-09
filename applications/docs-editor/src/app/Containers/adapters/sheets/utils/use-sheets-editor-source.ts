@@ -2,9 +2,9 @@ import type { EditorRequiresClientMethods } from '@proton/docs-shared/Bridge/Edi
 import { useEffect, useState } from 'react'
 
 import { reportErrorToSentry } from '../../../../Utils/errorMessage'
-import { loadSheetsEditorPackage, sheetsContainerSource, type SheetsEditorSource } from '../sheets-editor-source'
+import { loadSheetsEditorPackage, type SheetsEditorSource } from '../sheets-editor-source'
 
-/** The editor `SheetsEditorPackageEnabled` picks, resolved before a sheet mounts. */
+/** The Sheets editor, loaded before a sheet mounts. A failed load is irrecoverable: nothing else can render the sheet. */
 export function useSheetsEditorSource(
   clientInvoker: EditorRequiresClientMethods,
   enabled: boolean,
@@ -18,17 +18,15 @@ export function useSheetsEditorSource(
 
     let disposed = false
 
-    void clientInvoker
-      .checkIfFeatureFlagIsEnabled('SheetsEditorPackageEnabled')
-      .then((isEnabled) => (isEnabled ? loadSheetsEditorPackage() : sheetsContainerSource))
-      .catch((error) => {
-        reportErrorToSentry(error)
-        return sheetsContainerSource
-      })
+    loadSheetsEditorPackage()
       .then((source) => {
         if (!disposed) {
           setSheetsEditor(source)
         }
+      })
+      .catch((error) => {
+        reportErrorToSentry(error)
+        void clientInvoker.reportUserInterfaceError(error, { irrecoverable: true })
       })
 
     return () => {

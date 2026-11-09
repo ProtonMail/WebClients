@@ -13,6 +13,7 @@ To run another instance alongside it:
 pnpm --filter proton-docs-editor run standalone-sheet --port 8091
 ```
 
+It renders the installed `@proton-docs/sheets-editor` version, styled only by the package's `style.css` and the demo's `standalone-sheet.css`.
 The demo uses an in-memory workbook; reloading resets it. File actions, remote
 collaboration, and persistent storage are unavailable.
 

@@ -1,17 +1,22 @@
-import { SheetsDependenciesProvider, StandaloneSheetsEditor } from '../../Spreadsheet/public'
+import type {
+  resolveDefaultWorkbookLocale,
+  SheetsDependenciesProvider,
+  StandaloneSheetsEditor,
+} from '@proton-docs/sheets-editor'
 
-/** The editor and its dependencies context must come from the same editor, so they are picked together. */
+/**
+ * The Sheets editor exports the app uses at runtime. They come from one lazily loaded chunk, so Docs
+ * never downloads the Sheets editor.
+ */
 export type SheetsEditorSource = {
   SheetsDependenciesProvider: typeof SheetsDependenciesProvider
   StandaloneSheetsEditor: typeof StandaloneSheetsEditor
+  resolveDefaultWorkbookLocale: typeof resolveDefaultWorkbookLocale
 }
 
-/** The Sheets editor in `Containers/Spreadsheet`, used while `SheetsEditorPackageEnabled` is off. */
-export const sheetsContainerSource: SheetsEditorSource = { SheetsDependenciesProvider, StandaloneSheetsEditor }
-
 /**
- * The stylesheet loads only once the code has: it carries Tailwind preflight, which must stay off the
- * page when a failed load falls back to `Containers/Spreadsheet`.
+ * Loads `@proton-docs/sheets-editor` and its stylesheet in their own chunks. The stylesheet carries
+ * Tailwind preflight, which must stay off the page for Docs.
  */
 export async function loadSheetsEditorPackage(): Promise<SheetsEditorSource> {
   const sheetsEditorPackage = await import(/* webpackChunkName: "sheets-editor-package" */ '@proton-docs/sheets-editor')
@@ -20,5 +25,6 @@ export async function loadSheetsEditorPackage(): Promise<SheetsEditorSource> {
   return {
     SheetsDependenciesProvider: sheetsEditorPackage.SheetsDependenciesProvider,
     StandaloneSheetsEditor: sheetsEditorPackage.StandaloneSheetsEditor,
+    resolveDefaultWorkbookLocale: sheetsEditorPackage.resolveDefaultWorkbookLocale,
   }
 }

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useLocale as activateLocale } from 'ttag'
-import type { SheetsMessages } from '../../app/Containers/Spreadsheet/public'
+import type { SheetsMessages } from '@proton-docs/sheets-editor'
 import { loadDemoMessageFactory } from './demoMessages'
 
 export function useDemoLocalization() {
