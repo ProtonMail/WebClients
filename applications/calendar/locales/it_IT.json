@@ -1052,6 +1052,9 @@
       ],
       "Cancel trial": [
         "Annulla la prova"
+      ],
+      "Preview logs": [
+        "Mostra anteprima log."
       ]
     },
     "action": {
@@ -1303,6 +1306,9 @@
       ],
       "You have reached the trial limit.": [
         "Hai raggiunto il limite della prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Durante il periodo di prova puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze per l'assistente alla scrittura ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "b2b_trials_Action": {
@@ -6576,6 +6582,18 @@
       ],
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "${ LUMO_APP_NAME } include l'assistente di scrittura."
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Chiedi all'amministratore di aggiornare il piano oppure elimina una pagina dalla sezione Pagine di prenotazione in ${ CALENDAR_APP_NAME }."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "I log ci aiutano a capire cosa è successo prima che si verificasse il problema. Includono le azioni eseguite nell'app e i messaggi di errore, ma non il contenuto dei messaggi."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Per aggiungere una pagina di prenotazione, eliminane una dalla sezione Pagine di prenotazione in ${ CALENDAR_APP_NAME }."
       ]
     },
     "info": {
@@ -7627,6 +7645,9 @@
       ],
       "Add ${ LUMO_SHORT_APP_NAME } writing assistant": [
         "Aggiungi assistente di scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
       ]
     },
     "meet_2025: Addon": {
@@ -8436,6 +8457,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
         "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } con accesso limitato"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME } con accesso esteso"
       ]
     },
     "new_plans: feature highlight": {

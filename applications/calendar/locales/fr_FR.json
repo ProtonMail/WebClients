@@ -6567,6 +6567,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Vous avez atteint la limite de créneaux de réservation (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Vous avez une facture à régler au ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -7504,6 +7507,9 @@
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
+      ],
+      "Pay it": [
+        "Payer avec"
       ]
     },
     "Link label (optional)": {
@@ -9672,6 +9678,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Le changement de plan est incompatible pour les raisons suivantes :"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Le nombre de places Proton Meet doit correspondre au nombre de membres."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "La souscription ne peut aboutir pour le moment. Merci de réessayer ultérieurement."
       ]
     },
     "Payments.Error": {
