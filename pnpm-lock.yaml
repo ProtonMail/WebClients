@@ -10566,6 +10566,9 @@ importers:
       '@proton/app-context':
         specifier: workspace:^
         version: link:../../packages/app-context
+      '@proton/atoms':
+        specifier: workspace:^
+        version: link:../../packages/atoms
       '@proton/calendar':
         specifier: workspace:^
         version: link:../../packages/calendar
