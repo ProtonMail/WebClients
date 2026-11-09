@@ -23,8 +23,8 @@ import { useLoginChallenge } from './useLoginChallenge';
 
 /**
  * What's kept around the credentials screens while they switch: the notice of an organization that uses SSO, the
- * anti-abuse challenge, which keeps its data (each screen takes its result on submit and sends it with the
- * credentials). The testflight banner is at the top of each screen's body.
+ * anti-abuse challenge, which keeps its data (the username screens take its result on submit and send it with the
+ * username, for the password logins). The testflight banner is at the top of each screen's body.
  */
 const CredentialsFrame = ({ children }: { children: ReactNode }) => {
     const actorRef = CredentialsContext.useActorRef();

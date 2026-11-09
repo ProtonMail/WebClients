@@ -60,9 +60,9 @@ const form: CredentialsFormValues = {
     username: 'user@example.com',
     password: 'secret',
     persistent: false,
-    payload: { challenge: 'result' },
 };
-const usernameForm: UsernameFormValues = { username: form.username, persistent: false };
+const challengePayload = { challenge: 'result' };
+const usernameForm: UsernameFormValues = { username: form.username, persistent: false, payload: challengePayload };
 const authInfo = { Modulus: 'modulus' } as InfoResponse;
 const session = { data: { User: { Flags: {} } } } as unknown as AuthSession;
 /** The password step, for the username the page starts with (`startActor`'s); the password login's tests start here. */
@@ -476,7 +476,7 @@ describe('SignInStateMachine', () => {
 
                 credentialsFlow(actor).send({
                     type: 'claimed.submitted',
-                    payload: { password: 'old-password', payload: {} },
+                    payload: { password: 'old-password' },
                 });
                 await waitUntil(() => spies.authenticateWithClaimedAddress.mock.calls.length === 1);
                 expect(spies.authenticateWithClaimedAddress).toHaveBeenCalledWith(
@@ -497,7 +497,7 @@ describe('SignInStateMachine', () => {
 
                 credentialsFlow(actor).send({
                     type: 'claimed.submitted',
-                    payload: { password: 'old-password', payload: {} },
+                    payload: { password: 'old-password' },
                 });
 
                 // The credentials step passes the error on to the sign-in
@@ -514,7 +514,7 @@ describe('SignInStateMachine', () => {
 
                 credentialsFlow(actor).send({
                     type: 'claimed.submitted',
-                    payload: { password: 'wrong', payload: {} },
+                    payload: { password: 'wrong' },
                 });
                 await waitUntil(() => credentialsFlow(actor).getSnapshot().context.errorMessage !== undefined);
 
@@ -545,7 +545,7 @@ describe('SignInStateMachine', () => {
 
                 credentialsFlow(actor).send({
                     type: 'claimed.submitted',
-                    payload: { password: 'old-password', payload: {} },
+                    payload: { password: 'old-password' },
                 });
                 expect(credentialsFlow(actor).getSnapshot().can({ type: 'decision.back' })).toBe(false);
                 credentialsFlow(actor).send({ type: 'decision.back' });
@@ -720,7 +720,7 @@ describe('SignInStateMachine', () => {
                 credentialsFlow(actor).send({ type: 'claimed.recoveryChosen' });
                 credentialsFlow(actor).send({
                     type: 'claimed.submitted',
-                    payload: { password: 'old-password', payload: {} },
+                    payload: { password: 'old-password' },
                 });
                 await waitUntil(() => spies.authenticateWithClaimedAddress.mock.calls.length === 1);
 
@@ -777,7 +777,7 @@ describe('SignInStateMachine', () => {
 
                 credentialsFlow(actor).send({
                     type: 'credentials.passwordSignInRequested',
-                    payload: { username: 'other@example.com' },
+                    payload: { username: 'other@example.com', payload: challengePayload },
                 });
 
                 const { context } = credentialsFlow(actor).getSnapshot();
@@ -971,6 +971,23 @@ describe('SignInStateMachine', () => {
                     .getSnapshot()
                     .matches({ form: { signIn: { auto: 'checkingAccountType' } } })
             ).toBe(true);
+        });
+
+        it('sends the challenge result submitted with the username with every password tried', async () => {
+            const { actor, spies } = startWith({ type: AuthType.Auto });
+
+            await submitUsername(actor);
+            expect(selectCredentialsForm(credentialsFlow(actor).getSnapshot())).toBe('autoSrp');
+
+            spies.authenticateWithPassword.mockRejectedValueOnce(
+                new InvalidLoginError(apiError(API_CUSTOM_ERROR_CODES.INVALID_LOGIN))
+            );
+            await submitCredentials(actor);
+            await submitCredentials(actor);
+            expect(spies.authenticateWithPassword).toHaveBeenCalledTimes(2);
+            for (const [input] of spies.authenticateWithPassword.mock.calls) {
+                expect(input.payload).toBe(challengePayload);
+            }
         });
 
         it('emits the SSO notice on start when asked to', () => {
@@ -1215,7 +1232,7 @@ describe('SignInStateMachine', () => {
 
             credentials.send({
                 type: 'credentials.passwordSignInRequested',
-                payload: { username: 'typed@example.com' },
+                payload: { username: 'typed@example.com', payload: challengePayload },
             });
             expect(credentials.getSnapshot().matches({ form: { signIn: { autoSrp: 'idle' } } })).toBe(true);
             expect(credentials.getSnapshot().context.errorMessage).toBeUndefined();
@@ -1243,7 +1260,7 @@ describe('SignInStateMachine', () => {
             const { actor } = startWith({ type: AuthType.ExternalSSO });
             credentialsFlow(actor).send({
                 type: 'credentials.passwordSignInRequested',
-                payload: { username: 'typed@example.com' },
+                payload: { username: 'typed@example.com', payload: challengePayload },
             });
             expect(
                 credentialsFlow(actor)

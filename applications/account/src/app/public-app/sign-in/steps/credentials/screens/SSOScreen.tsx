@@ -4,11 +4,13 @@ import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import useLoading from '@proton/hooks/useLoading';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import type { SignInScreen, SignInScreenProps } from '../../../routes/signInRoute';
 import { useSignInProps } from '../../../wizard/SignInProvider';
 import { CredentialsContext } from '../CredentialsContext';
+import { useLoginChallengeContext } from '../LoginChallengeContext';
 import { TestflightBanner, useTestflightSubTitle, useTestflightTitle } from '../Testflight';
 import { getContinueTo, getSignInText } from '../continueTo';
 import { CancelSSOButton } from '../fields/CancelSSOButton';
@@ -33,7 +35,10 @@ export const SSOScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
     const subTitle = useTestflightSubTitle() ?? (getContinueTo(signInProps) || undefined);
     const actorRef = CredentialsContext.useActorRef();
     const errorMessage = CredentialsContext.useSelector(selectErrorMessage);
-    const submitting = CredentialsContext.useSelector(selectSubmitting);
+    const { getPayload } = useLoginChallengeContext();
+    // Covers the wait for the challenge result, before the machine takes over
+    const [collecting, withCollecting] = useLoading();
+    const submitting = CredentialsContext.useSelector(selectSubmitting) || collecting;
     // Starts with the machine's username, so it carries over between modes
     const initialUsername = CredentialsContext.useSelector(selectUsername);
     const [username, setUsername] = useState(initialUsername);
@@ -43,11 +48,19 @@ export const SSOScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
     const awaitingSSOProvider = CredentialsContext.useSelector(selectAwaitingProvider);
     const { validator, onFormSubmit } = useFormErrors();
 
-    const handleSubmit = () => {
+    // Waiting for the challenge result is intentional: the auth info request is going to need it too, and the password
+    // step may follow (password sign-in, or the server switching to it) and sends it
+    const handleSubmit = async () => {
+        const payload = await getPayload();
         actorRef.send({
             type: 'credentials.usernameSubmitted',
-            payload: { username, persistent },
+            payload: { username, persistent, payload },
         });
+    };
+
+    const handlePasswordSignIn = async () => {
+        const payload = await getPayload();
+        actorRef.send({ type: 'credentials.passwordSignInRequested', payload: { username, payload } });
     };
 
     return (
@@ -61,7 +74,7 @@ export const SSOScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
                     onSubmit={(event) => {
                         event.preventDefault();
                         if (!submitting && onFormSubmit()) {
-                            handleSubmit();
+                            void withCollecting(handleSubmit());
                         }
                     }}
                 >
@@ -87,10 +100,7 @@ export const SSOScreen: SignInScreen = ({ onBack }: SignInScreenProps) => {
                                 onClick={() => {
                                     // The password step only asks for the password, so the email comes first
                                     if (onFormSubmit()) {
-                                        actorRef.send({
-                                            type: 'credentials.passwordSignInRequested',
-                                            payload: { username },
-                                        });
+                                        void withCollecting(handlePasswordSignIn());
                                     }
                                 }}
                             >

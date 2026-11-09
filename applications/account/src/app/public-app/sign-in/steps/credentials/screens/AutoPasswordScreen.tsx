@@ -4,14 +4,12 @@ import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useLoading from '@proton/hooks/useLoading';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { UserNameButton } from '../../../../components/username/UserNameButton';
 import type { SignInScreen, SignInScreenProps } from '../../../routes/signInRoute';
 import { useSignInProps } from '../../../wizard/SignInProvider';
 import { CredentialsContext } from '../CredentialsContext';
-import { useLoginChallengeContext } from '../LoginChallengeContext';
 import { TestflightBanner } from '../Testflight';
 import { getSignInText } from '../continueTo';
 import { LoginErrorBlock } from '../fields/LoginErrorBlock';
@@ -31,10 +29,7 @@ export const AutoPasswordScreen: SignInScreen = ({ onBack }: SignInScreenProps) 
     const { layout, paths, compactForm, showContinueTo, toAppName } = useSignInProps();
     const actorRef = CredentialsContext.useActorRef();
     const errorMessage = CredentialsContext.useSelector(selectErrorMessage);
-    const { getPayload } = useLoginChallengeContext();
-    // Covers the wait for the challenge result, before the machine takes over
-    const [collecting, withCollecting] = useLoading();
-    const submitting = CredentialsContext.useSelector(selectSubmitting) || collecting;
+    const submitting = CredentialsContext.useSelector(selectSubmitting);
     // Submitted in the username step
     const username = CredentialsContext.useSelector(selectUsername);
     // Back to the username works until the password is accepted; after that the sign-in may leave the page
@@ -46,11 +41,10 @@ export const AutoPasswordScreen: SignInScreen = ({ onBack }: SignInScreenProps) 
     const [password, setPassword] = useState('');
     const { validator, onFormSubmit } = useFormErrors();
 
-    const handleSubmit = async () => {
-        const payload = await getPayload();
+    const handleSubmit = () => {
         actorRef.send({
             type: 'credentials.submitted',
-            payload: { username, password, persistent, payload },
+            payload: { username, password, persistent },
         });
     };
 
@@ -70,7 +64,7 @@ export const AutoPasswordScreen: SignInScreen = ({ onBack }: SignInScreenProps) 
                     onSubmit={(event) => {
                         event.preventDefault();
                         if (!submitting && onFormSubmit()) {
-                            void withCollecting(handleSubmit());
+                            handleSubmit();
                         }
                     }}
                 >
