@@ -2,6 +2,7 @@ import { getUnixTime, subHours } from 'date-fns';
 
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import { SubscriptionPlatform } from '@proton/payments/core/subscription/constants';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
 import {
     accountAppConfig,
@@ -101,6 +102,15 @@ describe('blackFriday2026FreeToUnlimited eligibility', () => {
         it('should not be eligible when the user cannot pay', () => {
             expect(getIsEligible({ ...baseProps, user: { ...freeUser, canPay: false } })).toBe(false);
         });
+
+        it.each([{ 'pass-lifetime': true }, { 'pass-from-sl': true }])(
+            'should not be eligible for a user with flags %o',
+            (Flags) => {
+                expect(getIsEligible({ ...baseProps, user: { ...freeUser, Flags } as unknown as UserModel })).toBe(
+                    false
+                );
+            }
+        );
 
         it('should not be eligible for an account younger than the minimum age', () => {
             const user = {
