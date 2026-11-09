@@ -650,7 +650,6 @@ export const AccountFormDataContextProvider = ({
             if (firstField) {
                 scrollInto(result.fields[0]);
             }
-            throw new Error('Invalid state');
         }
         return { state, result };
     }, []);
