@@ -1,16 +1,26 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { supportsDesktopScheduleReadOnly, useDesktopManifests } from '@proton/lumo-api-client/core/desktop-tools';
+import {
+    getDesktopConnectorCatalog,
+    supportsDesktopScheduleReadOnly,
+    useDesktopManifests,
+} from '@proton/lumo-api-client/core/desktop-tools';
 
 import { ConnectorList } from './ConnectorList';
 
+jest.mock('@proton/app-context/useNotifications', () => ({
+    useNotifications: () => ({ createNotification: jest.fn() }),
+}));
+
 jest.mock('@proton/lumo-api-client/core/desktop-tools', () => ({
+    getDesktopConnectorCatalog: jest.fn(),
     supportsDesktopScheduleReadOnly: jest.fn(),
     useDesktopManifests: jest.fn(),
     openDesktopSettings: jest.fn(),
 }));
 
 beforeEach(() => {
+    jest.mocked(getDesktopConnectorCatalog).mockReturnValue({ categories: [], connectors: [] });
     jest.mocked(supportsDesktopScheduleReadOnly).mockReturnValue(true);
     jest.mocked(useDesktopManifests).mockReturnValue({
         status: 'ready',

@@ -1,6 +1,32 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
 .schedule-chip-list {
+	&__setup-row > .schedule-chip {
+		flex-shrink: 1;
+		min-inline-size: 0;
+	}
+
+	&__connect-button.button.button-outline-weak {
+		--button-default-background-color: var(--panel-elevated);
+		--button-default-border-color: var(--border-mid);
+		--button-hover-background-color: var(--control-fill-low);
+		--button-hover-border-color: var(--border-mid);
+		--button-active-background-color: var(--control-fill-mid);
+		--button-active-border-color: var(--border-mid);
+		--button-default-text-color: var(--glyph);
+		--button-hover-text-color: var(--glyph);
+		--button-active-text-color: var(--glyph);
+
+		margin-inline-start: auto;
+		min-block-size: rem(40);
+		padding-block: rem(9);
+		padding-inline: rem(16);
+		border-radius: rem(8);
+		font-size: rem(14);
+		font-weight: normal;
+		line-height: rem(20);
+	}
+
 	&__header--compact {
 		font-weight: 500;
 	}

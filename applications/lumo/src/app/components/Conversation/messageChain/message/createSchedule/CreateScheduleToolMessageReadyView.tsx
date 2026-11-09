@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -14,8 +15,10 @@ import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import type { CreateScheduleToolArguments } from '../../../../../features/client-tools/createScheduleTool/createScheduleTool';
 import { ConnectorList } from '../../../../../features/schedules/components/ConnectorList';
 import { getScheduleCadenceLabel } from '../../../../../features/schedules/components/utils/cadence-label';
+import { isScheduleConnectorUsable } from '../../../../../features/schedules/components/utils/connectors';
 import { getScheduleDetailsValidationErrors } from '../../../../../features/schedules/components/utils/schedules';
 import type { ScheduleDetails } from '../../../../../features/schedules/types';
+import { useScheduleConnectors } from '../../../../../features/schedules/useScheduleConnectors';
 import { useConversationActions } from '../../../../../providers/ConversationActionsProvider';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import { useLumoDispatch } from '../../../../../redux/hooks';
@@ -65,10 +68,19 @@ export const CreateScheduleToolMessageReadyView = ({ draft }: { draft: CreateSch
 
     const cadenceLabel = getScheduleCadenceLabel(schedule.recurrenceRule, getWeekStartsOn(userSettings));
     const taskName = schedule.name;
+    const { connectors, status: connectorStatus } = useScheduleConnectors();
+    const connectorsReady =
+        schedule.connectors.length === 0 ||
+        (connectorStatus === 'ready' &&
+            schedule.connectors.every(({ id }) => {
+                const connector = connectors.find((candidate) => candidate.id === id);
+                return connector && isScheduleConnectorUsable(connector);
+            }));
 
     if (isClosed) return null;
 
     const handleSave = () => {
+        if (!connectorsReady) return;
         const errors = getScheduleDetailsValidationErrors(schedule);
         const error = Object.values(errors)[0];
         if (error) {
@@ -76,7 +88,19 @@ export const CreateScheduleToolMessageReadyView = ({ draft }: { draft: CreateSch
             return;
         }
 
-        const savedSchedule = { ...schedule, name: schedule.name.trim(), instructions: schedule.instructions.trim() };
+        const savedSchedule = {
+            ...schedule,
+            name: schedule.name.trim(),
+            instructions: schedule.instructions.trim(),
+            connectors: schedule.connectors.map((selection) => {
+                const connector = connectors.find(({ id }) => id === selection.id);
+                return {
+                    ...selection,
+                    label: connector?.display_name ?? selection.label,
+                    icon: connector?.icon ?? selection.icon,
+                };
+            }),
+        };
         const scheduleId = newSpaceId();
         try {
             // Generate the schedule id locally when the user confirms the draft.
@@ -191,6 +215,16 @@ export const CreateScheduleToolMessageReadyView = ({ draft }: { draft: CreateSch
                 </div>
             </Scroll>
 
+            {!connectorsReady && (
+                <Banner variant="warning">
+                    {
+                        // translator: Selected connectors must be usable before the user confirms a schedule.
+                        c('collider_2025:Info')
+                            .t`Connect and enable the selected connectors before scheduling this task.`
+                    }
+                </Banner>
+            )}
+
             <div className="flex justify-end gap-2">
                 <Button onClick={handleCancel} type="button">{
                     // translator: Button that cancels the current action and closes the editor or dialog without applying changes.
@@ -202,6 +236,7 @@ export const CreateScheduleToolMessageReadyView = ({ draft }: { draft: CreateSch
                         c('collider_2025:Action').t`Schedule task: ${taskName}`
                     }
                     color="norm"
+                    disabled={!connectorsReady}
                     onClick={handleSave}
                     type="button"
                 >{
