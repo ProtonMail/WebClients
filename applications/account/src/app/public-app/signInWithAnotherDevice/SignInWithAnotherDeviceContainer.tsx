@@ -6,7 +6,10 @@ import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import SignInWithAnotherDeviceQRCode from '@proton/account/signInWithAnotherDevice/SignInWithAnotherDeviceQRCode';
-import { GiveUpError } from '@proton/account/signInWithAnotherDevice/signInWithAnotherDevicePull';
+import {
+    GiveUpError,
+    IncorrectPayloadError,
+} from '@proton/account/signInWithAnotherDevice/signInWithAnotherDevicePull';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
@@ -24,6 +27,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import userExclamation from '../assets/user-exclamation.svg';
 import type { OnLoginCallback } from '../authSession';
+import { LoginErrorBlock } from '../components/LoginErrorBlock';
 import { getContinueToString } from '../helper';
 import { useGetAccountKTActivation } from '../hooks/useGetAccountKTActivation';
 import Content from '../layout/Content';
@@ -94,18 +98,24 @@ const SignInWithAnotherDeviceContainer = () => {
                                     return c('Error').t`We couldn't sign you in`;
                                 })()}
                             </div>
-                            <div className="mb-4 color-weak">
-                                <div className="mb-2">{c('edm').t`Try generating a new QR code.`}</div>
-                                {(() => {
-                                    if (error instanceof GiveUpError) {
-                                        return null;
-                                    }
-                                    const errorMessage = getNonEmptyErrorMessage(error);
-                                    if (errorMessage) {
-                                        return <div>Error: {errorMessage}</div>;
-                                    }
-                                })()}
-                            </div>
+                            <div className="mb-4 color-weak">{c('edm').t`Try generating a new QR code.`}</div>
+                            {(() => {
+                                if (error instanceof GiveUpError) {
+                                    return null;
+                                }
+                                return (
+                                    <div className="text-left">
+                                        <LoginErrorBlock
+                                            message={
+                                                error instanceof IncorrectPayloadError
+                                                    ? c('Error')
+                                                          .t`The device you scanned the QR code with didn't send your sign-in details. Update the app on that device and try again.`
+                                                    : getNonEmptyErrorMessage(error)
+                                            }
+                                        />
+                                    </div>
+                                );
+                            })()}
                             <div className="flex flex-column gap-2">
                                 <Button
                                     size="large"

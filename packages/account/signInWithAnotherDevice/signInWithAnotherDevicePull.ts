@@ -1,5 +1,5 @@
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared/createPreAuthKTVerifier';
-import { getForks, pullForkSession, revoke } from '@proton/shared/lib/api/auth';
+import { getForks, pullForkSession, querySessions, revoke } from '@proton/shared/lib/api/auth';
 import { getApiError, getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAuthAPI } from '@proton/shared/lib/api/helpers/customConfig';
 import { getClientID } from '@proton/shared/lib/apps/helper';
@@ -13,6 +13,7 @@ import {
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { type APP_NAMES, HTTP_STATUS_CODE, MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
@@ -39,6 +40,11 @@ class RestartError extends Error {
 }
 
 class TryAgainError extends Error {
+    public trace = false;
+}
+
+// Reported where it's thrown, with the pushing client, so the page's error handler doesn't trace it again
+export class IncorrectPayloadError extends Error {
     public trace = false;
 }
 
@@ -177,6 +183,19 @@ const fetchForkResponse = async ({
     }
 };
 
+// The device that scanned the QR code owns the parent session of the forked one, for tracing what pushed a bad fork.
+const getParentClientID = async (authApi: Api, UID: string) => {
+    try {
+        const { Sessions } = await authApi<{ Sessions: { UID: string; ParentUID: string | null; ClientID: string }[] }>(
+            querySessions()
+        );
+        const parentUID = Sessions.find((session) => session.UID === UID)?.ParentUID;
+        return Sessions.find((session) => session.UID === parentUID)?.ClientID;
+    } catch {
+        return undefined;
+    }
+};
+
 // Once a fork has been generated, this function either resumes an already existing session, or persists and initiates a new session.
 const consumeForkSession = async ({
     api: unAuthApi,
@@ -212,7 +231,9 @@ const consumeForkSession = async ({
     });
 
     if (!keyPassword) {
-        throw new Error('Incorrect payload');
+        const parentClientID = await getParentClientID(authApi, pullForkResponse.UID);
+        captureMessage('Incorrect fork payload', { level: 'info', extra: { parentClientID } });
+        throw new IncorrectPayloadError('Incorrect fork payload');
     }
 
     const decryptedKeys = await getDecryptedUserKeysHelper(user, keyPassword);
