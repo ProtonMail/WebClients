@@ -262,31 +262,25 @@ const isChargebeeIdealAvailable = (context: PaymentMethodsContext) => {
  * New (i.e. non-saved) payment methods, in display order. Each one is individually checked for availability, which is
  * controlled by the payment status, the selected flow and the amount.
  */
-const availabilityByMethodType: [PAYMENT_METHOD_TYPES, (context: PaymentMethodsContext) => boolean][] = [
-    [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD, isChargebeeCardAvailable],
-    [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL, isChargebeePaypalAvailable],
-    [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN, isChargebeeBitcoinAvailable],
-    [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT, isSepaDirectDebitAvailable],
-    [PAYMENT_METHOD_TYPES.CASH, isCashAvailable],
-    [PAYMENT_METHOD_TYPES.APPLE_PAY, isApplePayAvailable],
-    [PAYMENT_METHOD_TYPES.GOOGLE_PAY, isGooglePayAvailable],
-    [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL, isChargebeeIdealAvailable],
-];
+const availabilityByMethodType: Record<PAYMENT_METHOD_TYPES, (context: PaymentMethodsContext) => boolean> = {
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]: isChargebeeCardAvailable,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: isChargebeePaypalAvailable,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN]: isChargebeeBitcoinAvailable,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT]: isSepaDirectDebitAvailable,
+    [PAYMENT_METHOD_TYPES.CASH]: isCashAvailable,
+    [PAYMENT_METHOD_TYPES.APPLE_PAY]: isApplePayAvailable,
+    [PAYMENT_METHOD_TYPES.GOOGLE_PAY]: isGooglePayAvailable,
+    [PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL]: isChargebeeIdealAvailable,
+    [PAYMENT_METHOD_TYPES.TOKEN]: () => false,
+};
 
-const isNewMethodAvailable = (
-    context: PaymentMethodsContext,
-    [type, isAvailable]: (typeof availabilityByMethodType)[number]
-): boolean => isCurrencySupportedByMethod(type, context.currency) && isAvailable(context);
+export const isMethodTypeEnabled = (context: PaymentMethodsContext, methodType: PlainPaymentMethodType): boolean =>
+    isCurrencySupportedByMethod(methodType, context.currency) && availabilityByMethodType[methodType](context);
 
 export const getNewMethods = (context: PaymentMethodsContext): AvailablePaymentMethod[] =>
-    availabilityByMethodType
-        .filter((availability) => isNewMethodAvailable(context, availability))
-        .map(([type]) => ({ type, value: type, isSaved: false, isDefault: false }));
-
-export const isMethodTypeEnabled = (context: PaymentMethodsContext, methodType: PlainPaymentMethodType): boolean => {
-    const availability = availabilityByMethodType.find(([type]) => type === methodType);
-    return !!availability && isNewMethodAvailable(context, availability);
-};
+    (Object.keys(availabilityByMethodType) as PAYMENT_METHOD_TYPES[])
+        .filter((type) => isMethodTypeEnabled(context, type))
+        .map((type) => ({ type, value: type, isSaved: false, isDefault: false }));
 
 /**
  * Formats the list of saved payment methods. It can be then used to render the list of payment methods.
