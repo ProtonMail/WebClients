@@ -92,7 +92,9 @@ const AccountDetailsForm = ({ onSuccess }: { onSuccess: () => Promise<void> }) =
     const handleSubmit = async () => {
         try {
             setSubmitting(true);
-            await signup.accountForm.getIsValid({ passwords: false });
+            if (!(await signup.accountForm.getIsValid({ passwords: false }))) {
+                return;
+            }
             const accountData = await signup.accountForm.getValidAccountData({ passwords: true });
             signup.submitAccountData(accountData);
             await onSuccess();
