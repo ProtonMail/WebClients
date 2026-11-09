@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { CYCLE } from '@proton/payments/core/constants';
 import { APPS } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
 
 import bornPrivatePage from '../../../../../../pages/born-private';
 import { useMetaTags } from '../../../../hooks/useMetaTags';
@@ -59,7 +60,7 @@ const EmailReservationFlow = () => {
 
     return (
         <>
-            {step === Steps.Reservation && <EmailReservation onContinue={onReservationContinue} />}
+            {step === Steps.Reservation && <EmailReservation onContinue={() => onReservationContinue().catch(noop)} />}
             {step === Steps.ParentEmail && (
                 <ParentEmail defaultEmail={formData.parentEmail} onBack={onBack} onContinue={onParentEmailContinue} />
             )}

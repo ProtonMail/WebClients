@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, renderHook, screen } from '@testing-library/react';
 
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 
@@ -126,5 +126,21 @@ describe('AccountFormDataContextProvider', () => {
 
         expect(mockValidateUsername).toHaveBeenCalledTimes(1);
         expect(mockValidateUsername.mock.calls[0][0]).toBe(`${USERNAME}@${USERNAME_DOMAIN}`);
+    });
+
+    it('resolves getIsValid to false instead of throwing when the username is empty', async () => {
+        const { result } = renderHook(() => useAccountFormDataContext(), {
+            wrapper: ({ children }) => (
+                <AccountFormDataContextProvider
+                    availableSignupTypes={new Set([SignupType.Proton])}
+                    domains={[USERNAME_DOMAIN]}
+                    domainsLoaded
+                >
+                    {children}
+                </AccountFormDataContextProvider>
+            ),
+        });
+
+        await expect(act(() => result.current.getIsValid({ passwords: false }))).resolves.toBe(false);
     });
 });

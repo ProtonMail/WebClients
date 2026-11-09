@@ -1,4 +1,3 @@
-import type { FormEvent } from 'react';
 import { type FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -9,6 +8,7 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import MailLogo from '@proton/components/components/logo/MailLogo';
 import { IcShield2CheckFilled } from '@proton/icons/icons/IcShield2CheckFilled';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
 
 import { type AccountData, SignupType } from '../../../../signup/interfaces';
 import { usePasswordInputSpotlight } from '../../../containers/password/usePasswordInput';
@@ -76,12 +76,8 @@ export const AccountDetailsStep: FC<Props> = ({ onContinue }) => {
     });
     const { passwordInputs } = usePasswordInputSpotlight({ loading });
 
-    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async () => {
         try {
-            event.preventDefault();
-            if (loading) {
-                return;
-            }
             setLoading(true);
             const accountData = await signup.accountForm.getValidAccountData({ passwords: true });
             signup.submitAccountData(accountData);
@@ -102,7 +98,13 @@ export const AccountDetailsStep: FC<Props> = ({ onContinue }) => {
             <form
                 ref={signup.accountForm.refs.form}
                 name="accountForm"
-                onSubmit={handleSubmit}
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    if (loading) {
+                        return;
+                    }
+                    handleSubmit().catch(noop);
+                }}
                 method="post"
                 autoComplete="off"
                 noValidate
