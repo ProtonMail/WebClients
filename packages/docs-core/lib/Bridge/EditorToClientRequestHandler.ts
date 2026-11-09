@@ -18,7 +18,6 @@ import { ApplicationEvent, type GenericInfoEventPayload } from '../Application/A
 import { WordCountEvent } from './Events'
 import type { CustomWindow } from '../Application/Window'
 import type { FeatureFlag } from '@proton/unleash/Flags'
-import type { UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
 import type { SheetsPatchesType } from '@proton/docs-shared/SheetsPatchesType'
 import type { SheetsActionType } from '@proton/docs-shared/SheetsActionType'
 import type { TelemetryDocsEditorEvents } from '@proton/shared/lib/api/telemetry'
@@ -197,11 +196,7 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
     window.location.reload()
   }
 
-  async storeSpreadsheetPatches(
-    patches: Parameters<NonNullable<UseSpreadsheetProps['onChangeHistory']>>[0],
-    updateHash: string,
-    type?: SheetsPatchesType,
-  ): Promise<void> {
+  async storeSpreadsheetPatches(patches: unknown, updateHash: string, type?: SheetsPatchesType): Promise<void> {
     return this.docOrchestrator.storeSpreadsheetPatches(patches, updateHash, type)
   }
 
