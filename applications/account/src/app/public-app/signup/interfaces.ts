@@ -148,6 +148,8 @@ export interface UserCacheResult {
     };
     subscriptionData: SubscriptionData;
     session: SessionData;
+    /** Sales-provisioned signup finished from an existing account, e.g. one an earlier attempt created. */
+    provisioningToken?: string;
 }
 
 interface HumanVerificationResult {
