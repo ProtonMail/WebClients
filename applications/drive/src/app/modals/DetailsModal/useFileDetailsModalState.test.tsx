@@ -1,11 +1,18 @@
 import { renderHook, waitFor } from '@testing-library/react';
 
+import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { recentlyAccessed } from '@proton/drive/modules/recentlyAccessed';
 import { createMockNodeEntity } from '@proton/drive/modules/testing';
 import type { NodeEntity } from '@proton/drive/sdk';
 import { NodeType, RevisionState } from '@proton/drive/sdk';
 
 import { useFileDetailsModalState } from './useFileDetailsModalState';
+
+// The real handler logs and reports to Sentry, which under CI load can block long enough for waitFor to time out.
+jest.mock('@proton/drive/legacy/errorHandling', () => ({
+    ...jest.requireActual('@proton/drive/legacy/errorHandling'),
+    handleSdkError: jest.fn(),
+}));
 
 const noop = () => {};
 
@@ -103,15 +110,17 @@ describe('useFileDetailsModalState - recently accessed reporting', () => {
     it('does not report when loading the node fails', async () => {
         const reportSpy = jest.spyOn(recentlyAccessed, 'report');
         const node = createMockNodeEntity({ type: NodeType.File });
+        const error = new Error('load error');
         const drive = {
             getNode: async () => {
-                throw new Error('load error');
+                throw error;
             },
         };
 
         const { result } = renderDetails(node, drive);
 
-        await waitFor(() => expect(result.current.isLoading).toBe(false));
+        await waitFor(() => expect(result.current.hasError).toBe(true));
+        expect(handleSdkError).toHaveBeenCalledWith(error, expect.objectContaining({ extra: { nodeUid: node.uid } }));
         expect(reportSpy).not.toHaveBeenCalled();
     });
 });
