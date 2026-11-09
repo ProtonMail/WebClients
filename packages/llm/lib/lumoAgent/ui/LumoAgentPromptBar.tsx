@@ -1,4 +1,4 @@
-import PromptInput from '@proton/lumo-ui/PromptInput';
+import PromptInput from '@proton/lumo-ui/shared-components/PromptInput/PromptInput';
 
 interface Props {
     draft: string;

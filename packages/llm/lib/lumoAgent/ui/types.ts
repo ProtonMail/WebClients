@@ -3,9 +3,9 @@ import type { ComponentType, ReactNode } from 'react';
 import type { LumoApiModelTier } from '@proton/lumo-api-client/core/chat-completions';
 import type { ToolName as ServerToolName } from '@proton/lumo-api-client/core/types';
 import type { LumoClientType } from '@proton/lumo-api-client/types-api';
-import type { ServerToolSource } from '@proton/lumo-ui/ServerToolChip';
-import type { WelcomeSuggestionCard } from '@proton/lumo-ui/WelcomeSuggestions';
-import type { IconComponent } from '@proton/lumo-ui/types';
+import type { ServerToolSource } from '@proton/lumo-ui/shared-components/ServerToolChip/ServerToolChip';
+import type { WelcomeSuggestionCard } from '@proton/lumo-ui/shared-components/WelcomeSuggestions/WelcomeSuggestions';
+import type { IconComponent } from '@proton/lumo-ui/types/IconComponent';
 
 import type { ActionRequest, ReferenceLabels, ToolDefinition, ToolHandlers, ToolName } from '../contracts/types';
 

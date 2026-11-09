@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import DictationControl from '@proton/lumo-ui/DictationControl';
+import DictationControl from '@proton/lumo-ui/shared-components/DictationControl/DictationControl';
 
 import { useArtifactCreateSpotlight } from '../../hooks/useArtifactCreateSpotlight';
 import { useLumoFlags } from '../../hooks/useLumoFlags';

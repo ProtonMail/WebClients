@@ -7,7 +7,7 @@ import DrawerView from '@proton/components/components/drawer/views/DrawerView';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
-import LumoWordmark from '@proton/lumo-ui/LumoWordmark';
+import LumoWordmark from '@proton/lumo-ui/shared-components/LumoWordmark/LumoWordmark';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 

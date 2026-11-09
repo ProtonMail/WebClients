@@ -1,6 +1,6 @@
 import { Button } from '@proton/atoms/Button/Button';
 
-import type { IconComponent } from './types';
+import type { IconComponent } from '../../types/IconComponent';
 
 /** One card in the empty state: fixed copy over a fixed prompt, sent verbatim when the card is picked. */
 export interface WelcomeSuggestionCard {

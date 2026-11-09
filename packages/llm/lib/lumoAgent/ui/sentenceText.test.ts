@@ -1,4 +1,4 @@
-import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
+import sentenceValue from '@proton/lumo-ui/shared-components/sentenceValue/sentenceValue';
 
 import sentenceText from './sentenceText';
 

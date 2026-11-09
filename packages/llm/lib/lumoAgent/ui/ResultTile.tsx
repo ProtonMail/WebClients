@@ -2,8 +2,8 @@ import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
-import Disclosure from '@proton/lumo-ui/primitives/Disclosure';
-import type { IconComponent } from '@proton/lumo-ui/types';
+import Disclosure from '@proton/lumo-ui/shared-components/Disclosure/Disclosure';
+import type { IconComponent } from '@proton/lumo-ui/types/IconComponent';
 import clsx from '@proton/utils/clsx';
 
 import type { ActionRequest, ReferenceLabels } from '../contracts/types';

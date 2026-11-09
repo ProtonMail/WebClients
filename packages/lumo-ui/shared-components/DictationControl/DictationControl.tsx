@@ -107,6 +107,7 @@ const DictationControl = ({
                 )}
             >
                 <span className="lumo-dictation-control__status text-sm color-hint text-nowrap">
+                    {/* eslint-disable-next-line no-nested-ternary */}
                     {hasError
                         ? resolvedLabels.connectionError
                         : isConnected

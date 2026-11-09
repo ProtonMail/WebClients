@@ -5,7 +5,7 @@ import { IcFilter } from '@proton/icons/icons/IcFilter';
 import { ToolInputError } from '@proton/llm/lib/lumoAgent/contracts/errors';
 import type { ToolDefinition, ToolHandler } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
-import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
+import sentenceValue from '@proton/lumo-ui/shared-components/sentenceValue/sentenceValue';
 
 import { PROTON_SIEVE_DIALECT_REFERENCE } from '../../guides/sieveGuide';
 import { resolveTypedId } from '../../helpers/references';

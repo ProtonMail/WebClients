@@ -16,7 +16,7 @@ import type {
 import type { WireImage } from '@proton/lumo-api-client/types-api';
 import { isContextLengthExceededMessage } from '@proton/lumo-api-client/types-api';
 import { lumoImageMarker } from '@proton/lumo-api-client/utils';
-import type { ServerToolSource } from '@proton/lumo-ui/ServerToolChip';
+import type { ServerToolSource } from '@proton/lumo-ui/shared-components/ServerToolChip/ServerToolChip';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { ToolImage, ToolName } from '../contracts/types';

@@ -5,7 +5,7 @@ import { focusLumoPrompt } from './focusLumoPrompt';
 import { useLumoAgentDrawer } from './lumoAgentDrawerContext';
 import { isAgentGenerating } from './pendingConfirm';
 
-import '@proton/lumo-ui/lumo-ui.scss';
+import '@proton/lumo-ui/styles/lumo-ui.scss';
 
 import './lumoAgent.scss';
 

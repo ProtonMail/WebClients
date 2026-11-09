@@ -10,7 +10,7 @@ import type {
 } from '@proton/llm/lib/lumoAgent/contracts/types';
 import TextFieldBody from '@proton/llm/lib/lumoAgent/ui/cardBodies/TextFieldBody';
 import type { CardBodyProps, CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
-import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
+import sentenceValue from '@proton/lumo-ui/shared-components/sentenceValue/sentenceValue';
 
 import { resolveTypedId } from '../../helpers/references';
 import type { MailToolDeps, MailToolModule } from '../../toolModule';

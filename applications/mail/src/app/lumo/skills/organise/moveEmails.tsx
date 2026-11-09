@@ -8,7 +8,7 @@ import type {
     ToolHandler,
 } from '@proton/llm/lib/lumoAgent/contracts/types';
 import type { CardRenderer } from '@proton/llm/lib/lumoAgent/ui/types';
-import sentenceValue from '@proton/lumo-ui/primitives/sentenceValue';
+import sentenceValue from '@proton/lumo-ui/shared-components/sentenceValue/sentenceValue';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { APPLY_LOCATION_TYPES } from '../../../hooks/actions/applyLocation/interface';

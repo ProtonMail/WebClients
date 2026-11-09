@@ -1,4 +1,4 @@
-import Disclosure from './primitives/Disclosure';
+import Disclosure from '../Disclosure/Disclosure';
 
 interface Props {
     /** The one-line trigger, e.g. the name of the tool or payload being disclosed. */
