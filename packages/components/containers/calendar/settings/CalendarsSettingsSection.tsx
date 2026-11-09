@@ -22,7 +22,8 @@ export interface CalendarsSettingsSectionProps {
     addresses: Address[];
     calendars: VisualCalendar[];
     myCalendars: VisualCalendar[];
-    subscribedCalendars: SubscribedCalendar[];
+    subscribedCalendars: (VisualCalendar | SubscribedCalendar)[];
+    loadingSubscribedCalendars?: boolean;
     sharedCalendars: VisualCalendar[];
     holidaysCalendars: VisualCalendar[];
     holidaysDirectory?: HolidaysDirectoryCalendar[];
@@ -37,6 +38,7 @@ const CalendarsSettingsSection = ({
     calendars,
     myCalendars,
     subscribedCalendars,
+    loadingSubscribedCalendars,
     sharedCalendars,
     holidaysCalendars,
     holidaysDirectory,
@@ -66,6 +68,7 @@ const CalendarsSettingsSection = ({
             />
             <OtherCalendarsSection
                 subscribedCalendars={subscribedCalendars}
+                loadingSubscribedCalendars={loadingSubscribedCalendars}
                 sharedCalendars={sharedCalendars}
                 calendarInvitations={filterOutExpiredInvitations(getPendingInvitations(calendarInvitations))}
                 holidaysCalendars={holidaysCalendars}

@@ -13,6 +13,7 @@ import { memberAuthDevicesReducer } from '@proton/account/sso/memberAuthDevices'
 import { userOrganizationsReducer } from '@proton/account/userOrganizations';
 import { oauthTokenReducer } from '@proton/activation/src/logic/oauthToken';
 import { calendarsBootstrapReducer } from '@proton/calendar/calendarBootstrap';
+import { calendarSubscriptionsReducer } from '@proton/calendar/calendarSubscriptions';
 import { calendarSettingsReducer } from '@proton/calendar/calendarUserSettings';
 import { calendarsReducer } from '@proton/calendar/calendars';
 import { holidaysDirectoryReducer } from '@proton/calendar/holidaysDirectory';
@@ -31,6 +32,7 @@ export const rootReducer = combineReducers({
     ...outgoingAddressForwardingsReducer,
     ...domainsAddressesReducer,
     ...calendarSettingsReducer,
+    ...calendarSubscriptionsReducer,
     ...calendarsReducer,
     ...calendarsBootstrapReducer,
     ...holidaysDirectoryReducer,

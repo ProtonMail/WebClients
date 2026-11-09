@@ -17,6 +17,7 @@ export interface CalendarsSectionProps {
     onDelete?: (id: string) => Promise<void>;
     onExport?: (calendar: VisualCalendar) => void;
     nameHeader?: string;
+    loadingSubscriptionParameters?: boolean;
 }
 const CalendarsSection = ({
     calendars,
@@ -28,6 +29,7 @@ const CalendarsSection = ({
     onDelete,
     onExport,
     nameHeader,
+    loadingSubscriptionParameters,
     ...rest
 }: CalendarsSectionProps) => {
     return (
@@ -42,6 +44,7 @@ const CalendarsSection = ({
                         defaultCalendarID={defaultCalendarID}
                         addresses={addresses}
                         onSetDefault={onSetDefault}
+                        loadingSubscriptionParameters={loadingSubscriptionParameters}
                     />
                 </>
             )}

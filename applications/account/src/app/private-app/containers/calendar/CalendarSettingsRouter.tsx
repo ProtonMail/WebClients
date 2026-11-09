@@ -4,6 +4,7 @@ import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { VideoConferenceToggle } from '@proton/calendar-video-conferencing/zoomIntegration/VideoConferenceToggle';
+import { useSubscribedCalendars } from '@proton/calendar/calendarSubscriptions/hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
@@ -23,7 +24,6 @@ import { getSectionPath } from '@proton/components/containers/layout/helper';
 import MobileAppSettingsSection from '@proton/components/containers/mobile/MobileAppSettingsSection';
 import useIsInboxElectronApp from '@proton/components/hooks/useIsInboxElectronApp';
 import { useLoadAllowedTimeZones } from '@proton/components/hooks/useLoadAllowedTimeZones';
-import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getDefaultCalendar,
@@ -97,7 +97,7 @@ const CalendarSettingsRouter = ({ user, calendarAppRoutes, redirect }: Props) =>
 
     useCalendarsInfoListener(allCalendarIDs);
 
-    if (loadingAddresses || loadingCalendars || loadingCalendarUserSettings || loadingSubscribedCalendars) {
+    if (loadingAddresses || loadingCalendars || loadingCalendarUserSettings) {
         return <PrivateMainAreaLoading />;
     }
 
@@ -130,6 +130,7 @@ const CalendarSettingsRouter = ({ user, calendarAppRoutes, redirect }: Props) =>
                     calendars={visualCalendars}
                     myCalendars={myCalendars}
                     subscribedCalendars={subscribedCalendars}
+                    loadingSubscribedCalendars={loadingSubscribedCalendars}
                     sharedCalendars={sharedCalendars}
                     holidaysCalendars={holidaysCalendars}
                     unknownCalendars={unknownCalendars}
