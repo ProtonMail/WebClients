@@ -7,12 +7,18 @@ import { orderAddresses } from '@proton/account/addresses/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { mockUseFeature } from '@proton/features/testing/mockUseFeature';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { ADDRESS_FLAGS, ADDRESS_STATUS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import {
+    LOGIN_IDENTIFIER_POLICY,
+    RESTRICTED_LOGIN_IDENTIFIER_POLICY,
+    type UserSettings,
+} from '@proton/shared/lib/interfaces/UserSettings';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { SortableList } from '../../components/dnd/SortableList';
@@ -57,6 +63,12 @@ const mockedUseNotifications = useNotifications as jest.MockedFunction<typeof us
 
 jest.mock('@proton/account/user/hooks');
 const mockedUseUser = useUser as jest.MockedFunction<typeof useUser>;
+
+jest.mock('@proton/account/userSettings/hooks');
+const mockedUseUserSettings = useUserSettings as jest.MockedFunction<typeof useUserSettings>;
+const mockLoginIdentifierPolicy = (LoginIdentifierPolicy: number) => {
+    mockedUseUserSettings.mockReturnValue([{ LoginIdentifierPolicy } as UserSettings, false, undefined]);
+};
 
 jest.mock('@proton/account/addressKeys/hooks');
 const mockedUseAddressesKeys = useAddressesKeys as jest.MockedFunction<typeof useAddressesKeys>;
@@ -129,6 +141,7 @@ describe('addresses with user', () => {
     mockedUseKTVerifier.mockReturnValue({} as any);
     mockedUseOrganizationKey.mockReturnValue([{}] as any);
     mockedUseFlag.mockReturnValue(true);
+    mockLoginIdentifierPolicy(LOGIN_IDENTIFIER_POLICY.ALL);
     mockedUseAddressFlags.mockReturnValue({
         data: {
             permissions: {} as any,
@@ -219,6 +232,60 @@ describe('addresses with user', () => {
             const getLabel = (email: string) => within(getByText(email).closest('button')!).queryByText('Sign in only');
             expect(getLabel('a@foo.bar')).not.toBeNull();
             expect(getLabel('b@foo.bar')).toBeNull();
+        });
+    });
+
+    describe('sign-in restriction', () => {
+        const disabledOriginal = {
+            ...addresses[0],
+            ID: '6',
+            Email: 'a@protonmail.ch',
+            Status: ADDRESS_STATUS.STATUS_DISABLED,
+        };
+
+        const renderAddresses = () => {
+            mockedUseAddresses.mockReturnValue([[...addresses, disabledOriginal], false]);
+            const { getByText } = render(<AddressesWithUser user={user} allowAddressDeletion={false} />);
+            const getRow = (email: string) => within(getByText(email).closest('tr')!);
+            return {
+                getSignInPill: (email: string) => getRow(email).queryByText('Sign-in'),
+                getSignInOnlyLabel: (email: string) => getRow(email).queryByText('Sign in only'),
+            };
+        };
+
+        afterEach(() => {
+            mockedUseAddresses.mockReturnValue([addresses, false]);
+            mockedUseFlag.mockReturnValue(true);
+            mockLoginIdentifierPolicy(LOGIN_IDENTIFIER_POLICY.ALL);
+        });
+
+        it('marks only enabled original addresses and hides the sign in only label when restricted', () => {
+            mockLoginIdentifierPolicy(RESTRICTED_LOGIN_IDENTIFIER_POLICY);
+
+            const { getSignInPill, getSignInOnlyLabel } = renderAddresses();
+
+            expect(getSignInPill('a@proton.me')).not.toBeNull();
+            expect(getSignInPill('a@protonmail.ch')).toBeNull();
+            expect(getSignInPill('a@foo.bar')).toBeNull();
+            expect(getSignInPill('a1@proton.me')).toBeNull();
+            expect(getSignInOnlyLabel('a@foo.bar')).toBeNull();
+        });
+
+        it('keeps the current labels when not restricted', () => {
+            const { getSignInPill, getSignInOnlyLabel } = renderAddresses();
+
+            expect(getSignInPill('a@proton.me')).toBeNull();
+            expect(getSignInOnlyLabel('a@foo.bar')).not.toBeNull();
+        });
+
+        it('keeps the current labels when restricted but the flag is off', () => {
+            mockLoginIdentifierPolicy(RESTRICTED_LOGIN_IDENTIFIER_POLICY);
+            mockedUseFlag.mockReturnValue(false);
+
+            const { getSignInPill, getSignInOnlyLabel } = renderAddresses();
+
+            expect(getSignInPill('a@proton.me')).toBeNull();
+            expect(getSignInOnlyLabel('a@foo.bar')).not.toBeNull();
         });
     });
 });

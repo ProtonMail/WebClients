@@ -20,12 +20,18 @@ const AddressStatus = ({
     isBYOE,
     isBYOESyncLost,
     isBYOEDisconnected,
-}: Partial<AddressStatuses>) => {
+    isSignInAddress,
+}: Partial<AddressStatuses> & { isSignInAddress?: boolean }) => {
     const list = [
         isDefault &&
             ({
                 text: c('Address status').t`Default`,
                 type: 'primary',
+            } as const),
+        isSignInAddress &&
+            ({
+                text: c('Address status').t`Sign-in`,
+                type: 'info',
             } as const),
         isExternal &&
             ({
