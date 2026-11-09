@@ -40,7 +40,6 @@ import TwoFactorSection from '@proton/components/containers/account/TwoFactorSec
 import UsernameSection from '@proton/components/containers/account/UsernameSection';
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
-import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
 import CredentialLeakSection from '@proton/components/containers/credentialLeak/CredentialLeakSection';
 import LanguageSection, { LanguageTranslationHelp } from '@proton/components/containers/general/LanguageSection';
 import PrivateHeader from '@proton/components/containers/heading/PrivateHeader';
@@ -289,9 +288,7 @@ const MainContainer: FunctionComponent = () => {
         <SubscriptionModalProvider app={app}>
             <Switch>
                 <Route path={VPN_TV_PATHS}>
-                    <UnAuthenticated>
-                        <TVContainer />
-                    </UnAuthenticated>
+                    <TVContainer />
                 </Route>
                 {/* Mounted outside of the settings layout so that the safety review gets the full page. */}
                 <Route path={SECURITY_CHECKUP_PATHS.ROOT}>
