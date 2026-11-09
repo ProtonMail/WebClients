@@ -1,6 +1,7 @@
 import { getUnixTime, subHours } from 'date-fns';
 
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import {
@@ -63,6 +64,17 @@ describe('blackFriday2026DuoToFamily eligibility', () => {
                 })
             ).toBe(false);
         });
+
+        it.each([{ 'pass-lifetime': true }, { 'pass-from-sl': true }])(
+            'should be eligible for a Duo user with flags %o',
+            (Flags) => {
+                const user = { ...paidUser, Flags } as unknown as UserModel;
+
+                expect(
+                    getIsEligible({ ...baseProps, user, subscription: buildSubscription({ plan: PLANS.DUO }) })
+                ).toBe(true);
+            }
+        );
 
         it('should not be eligible without a subscription', () => {
             expect(getIsEligible({ ...baseProps })).toBe(false);
