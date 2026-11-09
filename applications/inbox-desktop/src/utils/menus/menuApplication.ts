@@ -304,6 +304,7 @@ export const setApplicationMenu = () => {
         {
             label: c("Menu").t`Window`,
             key: "window",
+            role: "window",
             submenu: [
                 { role: "minimize", label: c("App menu").t`Minimize` },
                 { role: "close", label: c("App menu").t`Close Window` },
