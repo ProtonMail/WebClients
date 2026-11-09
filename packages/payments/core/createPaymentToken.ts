@@ -90,11 +90,6 @@ export type ChargebeeCardParams = {
     zip: string;
 };
 
-type ChargebeePaypalParams = {
-    type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
-    amountAndCurrency: AmountAndCurrency;
-};
-
 type ChargebeeIdealParams = {
     type: PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL;
     amountAndCurrency: AmountAndCurrency;
@@ -298,48 +293,6 @@ export async function createPaymentTokenV5CreditCard(
         v: 5,
         PaymentToken,
         chargeable,
-    };
-}
-
-export async function createPaymentTokenV5Paypal(
-    params: ChargebeePaypalParams,
-    { api }: Dependencies,
-    abortController?: AbortController
-): Promise<
-    {
-        paymentIntent: PaymentIntent;
-    } & ChargebeeFetchedPaymentToken
-> {
-    const { type, amountAndCurrency } = params;
-
-    const data: CreatePaymentIntentData = {
-        ...amountAndCurrency,
-        Payment: {
-            Type: 'paypal',
-        },
-    };
-
-    const {
-        Token: PaymentToken,
-        Status,
-        Data: paymentIntentData,
-    } = await fetchPaymentIntentV5(api, data, abortController?.signal);
-
-    const paymentIntent = convertPaymentIntentData(paymentIntentData);
-    const authorizedStatus: AuthorizedV5PaymentToken = {
-        authorized: true,
-    };
-
-    const chargeable = Status === PAYMENT_TOKEN_STATUS.CHARGEABLE;
-
-    return {
-        ...amountAndCurrency,
-        ...authorizedStatus,
-        type,
-        v: 5,
-        PaymentToken,
-        chargeable,
-        paymentIntent,
     };
 }
 

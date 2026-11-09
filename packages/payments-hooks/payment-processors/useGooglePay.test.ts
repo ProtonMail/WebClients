@@ -133,7 +133,7 @@ describe('useGooglePay', () => {
         );
         expect(tracePaymentError).toHaveBeenCalledWith(
             expect.objectContaining({ message: 'Payment token not chargeable' }),
-            expect.objectContaining({ component: 'use-chargebee-wallet', featureFlag: 'PaymentProcessorsRefactor' })
+            { component: 'use-chargebee-wallet', tags: { paymentMethod: PAYMENT_METHOD_TYPES.GOOGLE_PAY } }
         );
     });
 

@@ -38,10 +38,14 @@ type WalletModalHandles = {
 };
 
 type WalletPaymentIntentData =
-    CreatePaymentIntentPaypalData | CreatePaymentIntentApplePayData | CreatePaymentIntentGooglePayData;
+    | CreatePaymentIntentPaypalData
+    | CreatePaymentIntentApplePayData
+    | CreatePaymentIntentGooglePayData;
 
 type WalletMethodType =
-    PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL | PAYMENT_METHOD_TYPES.APPLE_PAY | PAYMENT_METHOD_TYPES.GOOGLE_PAY;
+    | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL
+    | PAYMENT_METHOD_TYPES.APPLE_PAY
+    | PAYMENT_METHOD_TYPES.GOOGLE_PAY;
 
 type InitializeHandle = 'initializePaypal' | 'initializeApplePay' | 'initializeGooglePay';
 type SetIntentHandle = 'setPaypalPaymentIntent' | 'setApplePayPaymentIntent' | 'setGooglePayPaymentIntent';
@@ -134,7 +138,6 @@ export const useChargebeeWallet = (
 
     const captureOptions: PaymentsCaptureOptions = {
         component: 'use-chargebee-wallet',
-        featureFlag: 'PaymentProcessorsRefactor',
         tags: { paymentMethod: cfg.type },
     };
 
