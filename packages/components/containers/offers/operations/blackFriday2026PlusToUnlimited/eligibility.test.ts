@@ -62,6 +62,21 @@ describe('blackFriday2026PlusToUnlimited eligibility', () => {
                 ).toBe(false);
             }
         );
+
+        it.each([{ 'pass-lifetime': true }, { 'pass-from-sl': true }])(
+            'should be eligible for a Mail Plus user with flags %o',
+            (Flags) => {
+                const user = { ...paidUser, Flags } as unknown as UserModel;
+
+                expect(
+                    getIsEligible({
+                        ...baseProps,
+                        user,
+                        subscription: buildSubscription({ plan: PLANS.MAIL }),
+                    })
+                ).toBe(true);
+            }
+        );
     });
 
     describe('plans already at or above Unlimited', () => {
