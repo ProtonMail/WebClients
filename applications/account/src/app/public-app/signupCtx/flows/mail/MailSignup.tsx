@@ -80,7 +80,7 @@ const MailSignup = (props: BaseSignupContextProps) => {
             app={APPS.PROTONMAIL}
             flowId={`mail-free-${variant}`}
             onLogin={async (session) => {
-                await props.handleLogin({ data: session, flow: 'signup', appIntent: { app: APPS.PROTONMAIL } });
+                return props.handleLogin({ data: session, flow: 'signup', appIntent: { app: APPS.PROTONMAIL } });
             }}
             paymentsDataConfig={{
                 availablePlans: [],

@@ -35,7 +35,7 @@ import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/const
 import noop from '@proton/utils/noop';
 
 import sendRecoveryPhrasePayloadHelper from '../../../private-app/containers/recoveryPhrase/sendRecoveryPhrasePayload';
-import type { OnLoginCallback } from '../../authSession';
+import type { OnLoginCallback, OnLoginCallbackResult } from '../../authSession';
 import { useGetAccountKTActivation } from '../../hooks/useGetAccountKTActivation';
 import type { AccountData, SignupHumanVerification, SignupInviteParameters, SignupType } from '../../signup/interfaces';
 import { handleSetupOrg } from '../../signup/signupActions';
@@ -170,7 +170,7 @@ interface SignupContextProviderProps extends Omit<BaseSignupContextProps, 'onLog
      */
     // accountSetupSteps?: AccountSetupSteps[];
 
-    onLogin: (session: ResumedSessionResult) => Promise<void>;
+    onLogin: (session: ResumedSessionResult) => Promise<OnLoginCallbackResult | void>;
 
     /**
      * Configuration for the account form (username/email and password input form)
@@ -782,7 +782,7 @@ const InnerSignupContextProvider = ({
                 traceSentryError
             );
 
-            await onLogin(setupUserResponseRef.current.session);
+            const loginResult = await onLogin(setupUserResponseRef.current.session);
 
             /**
              * TODO: [CP-10334]
@@ -794,6 +794,11 @@ const InnerSignupContextProvider = ({
             metrics.core_signup_ctx_login_total.increment({
                 status: 'success',
             });
+
+            if (loginResult?.state === 'complete') {
+                // The page is leaving for the app: keep the step loading until it unloads
+                return await new Promise<void>(() => {});
+            }
         } catch (error) {
             traceSentryError(error);
 

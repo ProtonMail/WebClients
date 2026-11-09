@@ -186,7 +186,7 @@ const ReferralSignup = (props: BaseSignupContextProps) => {
             app="generic"
             flowId="referral-generic"
             onLogin={async (session) => {
-                await props.handleLogin({
+                return props.handleLogin({
                     data: session,
                     flow: 'signup',
                     appIntent: getAppIntentFromReferralPlan(payments.selectedPlan.getPlanName()),

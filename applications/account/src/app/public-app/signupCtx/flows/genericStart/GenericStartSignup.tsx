@@ -78,7 +78,7 @@ const GenericStartSignup = (props: BaseSignupContextProps) => {
             app="generic"
             flowId="generic"
             onLogin={async (session) => {
-                await props.handleLogin({ data: session, flow: 'signup', appIntent: undefined });
+                return props.handleLogin({ data: session, flow: 'signup', appIntent: undefined });
             }}
             paymentsDataConfig={{
                 availablePlans: [],
