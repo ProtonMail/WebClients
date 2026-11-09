@@ -1,6 +1,6 @@
 import { DocState } from '@proton/docs-shared/Doc/DocState'
 import { Doc, Array as YArray, Map as YMap, encodeStateAsUpdate } from 'yjs'
-import type { SheetsDocumentAdapter } from '../app/Containers/Spreadsheet/public'
+import type { SheetsDocumentAdapter } from '@proton-docs/sheets-editor'
 
 const docStateLogger = {
   // eslint-disable-next-line no-console

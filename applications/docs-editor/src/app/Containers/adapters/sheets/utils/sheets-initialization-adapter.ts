@@ -1,6 +1,6 @@
 import type { EditorInitializationConfig } from '@proton/docs-shared/EditorInitializationConfig'
 
-import type { SheetsImportDataType, SheetsInitialization } from '../../../Spreadsheet/public'
+import type { SheetsImportDataType, SheetsInitialization } from '@proton-docs/sheets-editor'
 
 const supportedSheetsImportDataTypes = {
   csv: true,

@@ -11,6 +11,7 @@ import { reportErrorToSentry } from '../Utils/errorMessage'
 import { App } from './App'
 import { EditorSystemMode, StandaloneDocsEditor } from './Docs/public'
 import { StandaloneDocsEditor as PackageStandaloneDocsEditor } from '@proton-docs/docs-editor'
+import { StandaloneSheetsEditor } from '@proton-docs/sheets-editor'
 import { EditorStateProvider } from './EditorStateProvider'
 
 jest.mock('@proton/docs-shared/Bridge/BridgeOriginProvider', () => ({
@@ -45,7 +46,7 @@ jest.mock('@proton-docs/docs-editor', () => ({
   PreviewModeEditor: () => null,
   StandaloneDocsEditor: jest.fn(() => null),
 }))
-jest.mock('./Spreadsheet/public', () => ({ StandaloneSheetsEditor: () => null }))
+jest.mock('@proton-docs/sheets-editor', () => ({ StandaloneSheetsEditor: jest.fn(() => null) }))
 jest.mock('./adapters/docs/DocsAdapter', () => ({ DocsAdapter: ({ children }: { children: ReactNode }) => children }))
 jest.mock('./adapters/sheets/SheetsAdapter', () => ({
   SheetsAdapter: ({ children }: { children: ReactNode }) => children,
@@ -54,8 +55,7 @@ jest.mock('./SheetsLayout', () => ({ __esModule: true, default: ({ children }: {
 
 function setup(
   documentType: DocumentType = 'doc',
-  isFeatureFlagEnabled = async (flag: string) =>
-    flag !== 'DocsEditorPackageEnabled' && flag !== 'SheetsEditorPackageEnabled',
+  isFeatureFlagEnabled = async (flag: string) => flag !== 'DocsEditorPackageEnabled',
 ) {
   const reportUserInterfaceError = jest.fn().mockResolvedValue(undefined)
   const clientInvoker = {
@@ -237,6 +237,42 @@ describe('App bridge initialization', () => {
     await waitFor(() => expect(StandaloneDocsEditor).toHaveBeenCalled())
     expect(reportErrorToSentry).toHaveBeenCalledWith(error)
     expect(PackageStandaloneDocsEditor).not.toHaveBeenCalled()
+  })
+
+  it('loads the Sheets editor stylesheet for a sheet only', async () => {
+    const loadStylesheet = jest.fn(() => ({}))
+    jest.resetModules()
+    jest.doMock('@proton-docs/sheets-editor/style.css', loadStylesheet)
+
+    const doc = setup('doc')
+    await doc.initialize()
+    doc.rerender()
+    await waitFor(() => expect(StandaloneDocsEditor).toHaveBeenCalled())
+    expect(loadStylesheet).not.toHaveBeenCalled()
+
+    const sheet = setup('sheet')
+    await sheet.initialize()
+    sheet.rerender()
+    // The reset registry gives the lazily loaded editor a fresh mock.
+    const loadedSheetsEditor = jest.requireMock<{ StandaloneSheetsEditor: jest.Mock }>('@proton-docs/sheets-editor')
+    await waitFor(() => expect(loadedSheetsEditor.StandaloneSheetsEditor).toHaveBeenCalled())
+    expect(loadStylesheet).toHaveBeenCalledTimes(1)
+  })
+
+  it('reports a failed Sheets stylesheet load as irrecoverable and does not mount the sheet', async () => {
+    const error = new Error('Loading CSS chunk failed')
+    jest.resetModules()
+    jest.doMock('@proton-docs/sheets-editor/style.css', () => {
+      throw error
+    })
+    const { reportUserInterfaceError, initialize, rerender } = setup('sheet')
+
+    await initialize()
+    rerender()
+
+    await waitFor(() => expect(reportUserInterfaceError).toHaveBeenCalledWith(error, { irrecoverable: true }))
+    expect(reportErrorToSentry).toHaveBeenCalledWith(error)
+    expect(StandaloneSheetsEditor).not.toHaveBeenCalled()
   })
 
   it('continues accepting spreadsheet conversions for Sheets', async () => {

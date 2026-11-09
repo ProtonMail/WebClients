@@ -1984,21 +1984,6 @@ importers:
       '@ariakit/react':
         specifier: 0.4.29
         version: 0.4.29(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@ariakit/react-components':
-        specifier: 0.1.2
-        version: 0.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@dnd-kit/abstract':
-        specifier: 'catalog:'
-        version: 0.5.3
-      '@dnd-kit/collision':
-        specifier: 'catalog:'
-        version: 0.5.3
-      '@dnd-kit/dom':
-        specifier: 'catalog:'
-        version: 0.5.3
-      '@dnd-kit/react':
-        specifier: 'catalog:'
-        version: 0.5.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@emoji-mart/data':
         specifier: 1.2.1
         version: 1.2.1
@@ -2095,42 +2080,9 @@ importers:
       '@protontech/crypto':
         specifier: 'catalog:'
         version: 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
-      '@rowsncolumns/charts':
-        specifier: workspace:^
-        version: link:../../vendor/rowsncolumns/charts
-      '@rowsncolumns/common-types':
-        specifier: workspace:^
-        version: link:../../vendor/rowsncolumns/common-types
-      '@rowsncolumns/fast-formula-parser':
-        specifier: workspace:^
-        version: link:../../vendor/rowsncolumns/fast-formula-parser
-      '@rowsncolumns/functions':
-        specifier: workspace:^
-        version: link:../../vendor/rowsncolumns/functions
-      '@rowsncolumns/grid':
-        specifier: workspace:^
-        version: link:../../vendor/rowsncolumns/grid
-      '@rowsncolumns/spreadsheet':
-        specifier: workspace:^
-        version: link:../../vendor/rowsncolumns/spreadsheet
       '@rowsncolumns/spreadsheet-state':
         specifier: workspace:^
         version: link:../../vendor/rowsncolumns/spreadsheet-state
-      '@rowsncolumns/toolkit':
-        specifier: workspace:^
-        version: link:../../vendor/rowsncolumns/toolkit
-      '@rowsncolumns/ui':
-        specifier: workspace:^
-        version: link:../../vendor/rowsncolumns/ui
-      '@rowsncolumns/utils':
-        specifier: workspace:^
-        version: link:../../vendor/rowsncolumns/utils
-      '@rowsncolumns/y-spreadsheet':
-        specifier: workspace:^
-        version: link:../../vendor/rowsncolumns/y-spreadsheet
-      '@tanstack/react-virtual':
-        specifier: 'catalog:'
-        version: 3.14.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx:
         specifier: 'catalog:'
         version: 2.1.1
@@ -2146,9 +2098,6 @@ importers:
       fflate:
         specifier: ^0.8.3
         version: 0.8.3
-      immer:
-        specifier: 11.2.9
-        version: 11.2.9
       lexical:
         specifier: 'catalog:'
         version: 0.31.2
@@ -2164,12 +2113,6 @@ importers:
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
-      react-hook-form:
-        specifier: ^7.91.0
-        version: 7.91.0(@types/react@18.3.31)(react@18.3.1)
-      tailwind-merge:
-        specifier: ^3.7.0
-        version: 3.7.0
       tinycolor2:
         specifier: 'catalog:'
         version: 1.6.0

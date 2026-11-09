@@ -1,11 +1,13 @@
 import { useEffect, useMemo, useState } from 'react'
 import { localeCode, subscribeToLocaleChange } from '@proton/shared/lib/i18n'
 import { getIntlLocale } from '@proton/shared/lib/i18n/helper'
-import { resolveDefaultWorkbookLocale } from '../../Spreadsheet/public'
+import type { SheetsEditorSource } from './sheets-editor-source'
 import { createSheetsMessages } from './sheetsMessages/createSheetsMessages'
 
 /** Rebuild host messages and workbook Auto preferences when the account locale changes. */
-export function useSheetsLocalization() {
+export function useSheetsLocalization(
+  resolveDefaultWorkbookLocale: SheetsEditorSource['resolveDefaultWorkbookLocale'],
+) {
   const [messages, setMessages] = useState(createSheetsMessages)
   const [uiLocale, setUiLocale] = useState(() => getIntlLocale(localeCode).toLowerCase())
   useEffect(() => {
@@ -25,7 +27,7 @@ export function useSheetsLocalization() {
       uiLocale,
       defaultWorkbookLocale: resolveDefaultWorkbookLocale(uiLocale, navigator.languages),
     }),
-    [uiLocale],
+    [resolveDefaultWorkbookLocale, uiLocale],
   )
   return { messages, localization }
 }

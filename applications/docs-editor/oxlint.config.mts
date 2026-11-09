@@ -5,12 +5,6 @@ import { createRestrictedImportRule } from '@proton/oxlint-config/restrictedImpo
 
 const hostImports = ['@proton/**', 'ttag'];
 
-const sheetsIconsPattern = {
-    group: ['@proton/icons', '@proton/icons/**', '@rowsncolumns/icons', '@rowsncolumns/icons/**'],
-    message:
-        'Use icons from Spreadsheet/components/icons so standalone Sheets does not depend on an external icon registry or package.',
-};
-
 const driveStorePattern = {
     group: ['@proton/drive-store*'],
     message: 'docs-editor should not import from drive-store. Use @proton/docs-shared or @proton/docs-core instead.',
@@ -68,27 +62,6 @@ export default createOxlintConfig({
             rules: {
                 'proton/no-extraneous-dependencies': createExtraneousDependenciesRule({
                     devDependencies: [...extraneousDependenciesDevDependencies, '**/TestUtils/**'],
-                }),
-            },
-        },
-        {
-            files: ['src/standalone-sheet/**/*.{ts,tsx}'],
-            rules: {
-                'proton/restricted-imports': createRestrictedImportRule({ patterns: [sheetsIconsPattern] }),
-            },
-        },
-        {
-            files: ['src/app/Containers/Spreadsheet/**/*.{ts,tsx}'],
-            rules: {
-                'proton/restricted-imports': createRestrictedImportRule({
-                    patterns: [
-                        sheetsIconsPattern,
-                        {
-                            group: hostImports,
-                            message:
-                                'Containers/Spreadsheet is host-independent: get host values from useSheetsDependencies() and strings from useSheetsMessages().',
-                        },
-                    ],
                 }),
             },
         },

@@ -1,5 +1,5 @@
 import { c, msgid } from 'ttag'
-import type { SheetsMessages } from '../../../Spreadsheet/public'
+import type { SheetsMessages } from '@proton-docs/sheets-editor'
 
 export function createMenusMessages(): Pick<
   SheetsMessages,

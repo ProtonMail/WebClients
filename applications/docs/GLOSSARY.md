@@ -1,6 +1,6 @@
 # Glossary
 
-Domain and architecture terms for Proton Docs and Sheets, covering the client (`applications/docs`), the editor (`applications/docs-editor`) and their packages. Paths are relative to the repo root; `core` = `packages/docs-core/lib`, `shared` = `packages/docs-shared/lib`, `editor` = `applications/docs-editor/src/app`, `app` = `applications/docs/src/app`.
+Domain and architecture terms for Proton Docs and Sheets, covering the client (`applications/docs`), the editor (`applications/docs-editor`) and their packages. Paths are relative to the repo root; `core` = `packages/docs-core/lib`, `shared` = `packages/docs-shared/lib`, `editor` = `applications/docs-editor/src/app`, `app` = `applications/docs/src/app`, `sheets-editor` = `packages/sheets-editor/src` in the realtime repo, published as `@proton-docs/sheets-editor`.
 
 When a term has more than one meaning in code, the **Ambiguous** note says which one to use in new code.
 
@@ -33,7 +33,7 @@ When a term has more than one meaning in code, the **Ambiguous** note says which
 ## Client and editor split
 
 - **Client**: `applications/docs`, the parent window.
-- **Editor / editor sandbox / editor iframe**: `applications/docs-editor`, loaded in a sandboxed iframe. It renders text documents with **Lexical** and sheets with **rowsncolumns** (`@rowsncolumns/*`).
+- **Editor / editor sandbox / editor iframe**: `applications/docs-editor`, loaded in a sandboxed iframe. It renders text documents with **Lexical** and sheets with **rowsncolumns** (bundled in `@proton-docs/sheets-editor`).
 - **Bridge**: the `postMessage` RPC between client and editor. `ClientToEditorBridge` (`core/Bridge/`) lives in the client; `EditorToClientBridge` (`editor/Bridge/`) lives in the iframe and rejects messages from anywhere but the parent. The method contracts are `ClientRequiresEditorMethods` and `EditorRequiresClientMethods` (`shared/Bridge/`). The editor cannot reach Unleash, the API or Drive directly; it asks the client over the bridge.
   - **`ClientInvoker`** (`editor/Bridge/ClientInvoker.ts`): the editor's side of `EditorRequiresClientMethods`; turns calls into messages and matches replies by `messageId`.
   - **`EditorInvoker`** (`core/Bridge/EditorInvoker.ts`): the client's side of `ClientRequiresEditorMethods`.
@@ -47,10 +47,10 @@ When a term has more than one meaning in code, the **Ambiguous** note says which
 ## Editor architecture
 
 - **Host shell**: the editor code outside the standalone editors (`editor/Bridge/`, `editor/Lib/`, `editor/Containers/App.tsx`). It knows about the client and the bridge.
-- **Standalone editor**: `StandaloneDocsEditor` (`editor/Containers/Docs/`) and `StandaloneSheetsEditor` (`editor/Containers/Spreadsheet/`), the host-independent editors. `src/standalone-doc` and `src/standalone-sheet` run them on localhost without the client, bridge or RTS.
+- **Standalone editor**: `StandaloneDocsEditor` (`editor/Containers/Docs/`) and `StandaloneSheetsEditor` (`@proton-docs/sheets-editor`), the host-independent editors. `src/standalone-doc` and `src/standalone-sheet` run them on localhost without the client, bridge or RTS.
 - **Adapter** (`DocsAdapter` / `SheetsAdapter`, `editor/Containers/adapters/`): the boundary that turns the bridge, the editor `Application` and synced state into a standalone editor's dependencies.
 - **`DocsDependencies` / `SheetsDependencies`**: everything host-provided that a standalone editor uses (logger, `reportError`, comments, flags, messages...), read with `useDocsDependencies()` / `useSheetsDependencies()`.
-- **`public.ts` / `contract/`**: a standalone editor's export surface, and the host-facing types copied into it so it doesn't depend on docs-shared or docs-core.
+- **`public.ts` / `contract/`**: `Containers/Docs`' export surface, and the host-facing types copied into it so it doesn't depend on docs-shared or docs-core. The Sheets editor package has the same pair in `sheets-editor/`.
 - **`testing.ts`**: `Containers/Docs`' test-only entry, the helpers that tests outside the container need. Only test files may import it.
 
 ### Lexical (text documents)
@@ -66,10 +66,10 @@ When a term has more than one meaning in code, the **Ambiguous** note says which
 
 ### rowsncolumns (sheets)
 
-- **`SheetsMessages`**: the typed catalogue of every Sheets UI string (`typeof defaultSheetsMessages`), translated in the adapter and read with `useSheetsMessages()`. `editor/Containers/Spreadsheet/messages/`.
-- **Sheets patch** (`Base` / `Delta` / `Drifted`): spreadsheet changes the editor sends to the client for local storage (`storeSpreadsheetPatches`); stored by `SheetsStorageService` in IndexedDB. `editor/Containers/Spreadsheet/contract/SheetsPatch.ts`.
-- **Yjs drift**: local spreadsheet state that no longer matches the Yjs document, found by the local update audit. `editor/Containers/Spreadsheet/yjs-local-update-audit.ts`.
-- **`SheetsAction`**: named spreadsheet actions (`FreezeRows`, `SetLocale`...) recorded through `storeSpreadsheetAction`. `editor/Containers/Spreadsheet/contract/SheetsAction.ts`.
+- **`SheetsMessages`**: the typed catalogue of every Sheets UI string (`typeof defaultSheetsMessages`), translated in the adapter and read with `useSheetsMessages()`. `sheets-editor/messages/`, translated in `editor/Containers/adapters/sheets/sheetsMessages/`.
+- **Sheets patch** (`Base` / `Delta` / `Drifted`): spreadsheet changes the editor sends to the client for local storage (`storeSpreadsheetPatches`); stored by `SheetsStorageService` in IndexedDB. `sheets-editor/contract/SheetsPatch.ts`.
+- **Yjs drift**: local spreadsheet state that no longer matches the Yjs document, found by the local update audit. `sheets-editor/yjs-local-update-audit.ts`.
+- **`SheetsAction`**: named spreadsheet actions (`FreezeRows`, `SetLocale`...) recorded through `storeSpreadsheetAction`. `sheets-editor/contract/SheetsAction.ts`.
 
 ## docs-core architecture
 

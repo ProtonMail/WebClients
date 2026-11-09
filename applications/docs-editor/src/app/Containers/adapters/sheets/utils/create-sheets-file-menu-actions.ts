@@ -1,6 +1,6 @@
 import type { EditorRequiresClientMethods } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
 
-import type { SheetsFileMenuActions } from '../../../Spreadsheet/public'
+import type { SheetsFileMenuActions } from '@proton-docs/sheets-editor'
 
 type FileMenuClient = Pick<EditorRequiresClientMethods, 'handleFileMenuAction'>
 

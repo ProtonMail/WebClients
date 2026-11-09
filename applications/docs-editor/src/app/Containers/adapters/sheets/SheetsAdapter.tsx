@@ -20,7 +20,7 @@ import type {
   SheetsShellToEditorActions,
   SpreadsheetImportDestination,
   SpreadsheetImportRequest,
-} from '../../Spreadsheet/public'
+} from '@proton-docs/sheets-editor'
 import { useSheetsLocalization } from './useSheetsLocalization'
 import { useResolvedAppPlatform } from './utils/use-resolved-app-platform'
 import { createSheetsFileMenuActions } from './utils/create-sheets-file-menu-actions'
@@ -49,8 +49,8 @@ function toStoredSheetsPatchesType(type: SheetsPatchCategory | undefined): Store
  * Docs host glue that collects SheetsDependencies and provides them to the sheets editor.
  */
 export function SheetsAdapter({ children, clientInvoker, sheetsEditor }: SheetsAdapterProps) {
-  const { SheetsDependenciesProvider } = sheetsEditor
-  const { messages, localization } = useSheetsLocalization()
+  const { SheetsDependenciesProvider, resolveDefaultWorkbookLocale } = sheetsEditor
+  const { messages, localization } = useSheetsLocalization(resolveDefaultWorkbookLocale)
   const { createNotification } = useNotifications()
   const { application } = useApplication()
   const { theme } = useEditorTheme()

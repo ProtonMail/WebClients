@@ -1,4 +1,4 @@
-import type { SheetsMessages } from '../../../Spreadsheet/public'
+import type { SheetsMessages } from '@proton-docs/sheets-editor'
 import { createMenusMessages } from './menus'
 import { createWorkbookMessages } from './workbook'
 import { createFormattingMessages } from './formatting'

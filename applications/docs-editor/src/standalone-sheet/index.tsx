@@ -1,4 +1,4 @@
-import './standalone-sheet.tailwind.scss'
+import '@proton-docs/sheets-editor/style.css'
 import './standalone-sheet.css'
 import { createRoot } from 'react-dom/client'
 import { useCallback, useEffect, useMemo, useState } from 'react'
@@ -7,7 +7,7 @@ import {
   SheetsDependenciesProvider,
   StandaloneSheetsEditor,
   type SheetsDependencies,
-} from '../app/Containers/Spreadsheet/public'
+} from '@proton-docs/sheets-editor'
 import { EditorThemeProvider, useEditorTheme } from '../app/Theme/EditorThemeProvider'
 import { createStandaloneSession } from './session'
 import { useDemoLocalization } from './messages/useDemoLocalization'
