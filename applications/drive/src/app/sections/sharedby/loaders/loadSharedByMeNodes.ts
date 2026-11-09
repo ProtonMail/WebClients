@@ -3,14 +3,18 @@ import { c } from 'ttag';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { driveMetrics } from '@proton/drive/modules/metrics';
-import { getFormattedNodeLocation, getFormattedNodeLocationUsingHierarchy } from '@proton/drive/modules/nodes';
+import {
+    getFormattedNodeLocation,
+    getFormattedNodeLocationUsingHierarchy,
+    iterateNodesFromUidsGenerator,
+} from '@proton/drive/modules/nodes';
 import { type NodeEntity, type ProtonDriveClient, getDrive, getDriveForPhotos } from '@proton/drive/sdk';
 
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 import { useSharedByMeStore } from '../useSharedByMe.store';
 import { getOldestShareCreationTime } from '../utils/getOldestShareCreationTime';
 
-type Drive = Pick<ProtonDriveClient, 'iterateSharedNodes' | 'getSharingInfo' | 'getNode' | 'iterateNodes'>;
+type Drive = Pick<ProtonDriveClient, 'iterateSharedNodeUids' | 'getSharingInfo' | 'getNode' | 'iterateNodes'>;
 
 const fetchSharedByMeNodes = async (
     abortSignal: AbortSignal,
@@ -19,7 +23,10 @@ const fetchSharedByMeNodes = async (
 ): Promise<Set<string>> => {
     const { onItemsLoadedToState, onFinished } = driveMetrics.drivePerformance.startDataLoad('sharedByMe');
     const loadedUids = new Set<string>();
-    for await (const sharedByMeMaybeNode of drive.iterateSharedNodes(abortSignal)) {
+    const sharedUidsIterator = drive.iterateSharedNodeUids(abortSignal);
+    for await (const sharedByMeMaybeNode of iterateNodesFromUidsGenerator(sharedUidsIterator, drive, {
+        signal: abortSignal,
+    })) {
         try {
             const { node } = getNodeEntity(sharedByMeMaybeNode);
             const signatureResult = getSignatureIssues(sharedByMeMaybeNode);

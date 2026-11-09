@@ -1,30 +1,13 @@
 import { handleSdkError, sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
-import { getNodeAncestry, isMissingNode } from '@proton/drive/modules/nodes';
-import { type MaybeMissingNode, getDriveForPhotos } from '@proton/drive/sdk';
+import { getNodeAncestry, iterateNodesFromUidsGenerator } from '@proton/drive/modules/nodes';
+import { type PhotoNode, getDriveForPhotos } from '@proton/drive/sdk';
 
 import { createDebouncedBuffer } from '../../utils/createDebouncedBuffer';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import { type AlbumItem, useAlbumsStore } from '../useAlbums.store';
 
-const BATCH_SIZE = 10;
-
-// Batch to prevent iterateNodes one by one.
-async function* batchUidsToNodes(iterator: AsyncIterable<string>, drive: ReturnType<typeof getDriveForPhotos>) {
-    let batch: string[] = [];
-    for await (const uid of iterator) {
-        batch.push(uid);
-        if (batch.length >= BATCH_SIZE) {
-            yield* drive.iterateNodes(batch);
-            batch = [];
-        }
-    }
-    if (batch.length > 0) {
-        yield* drive.iterateNodes(batch);
-    }
-}
-
-const loadAlbumsFromIterator = async (iterator: AsyncIterable<MaybeMissingNode>): Promise<Set<string>> => {
+const loadAlbumsFromIterator = async (iterator: AsyncIterable<PhotoNode>): Promise<Set<string>> => {
     const drive = getDriveForPhotos();
     const fetchedUids = new Set<string>();
     const { push, drain } = createDebouncedBuffer<AlbumItem>((albums) =>
@@ -32,9 +15,6 @@ const loadAlbumsFromIterator = async (iterator: AsyncIterable<MaybeMissingNode>)
     );
 
     for await (const maybeAlbum of iterator) {
-        if (isMissingNode(maybeAlbum)) {
-            continue;
-        }
         const { node: albumNode, albumAttributes } = getNodeEntity(maybeAlbum);
         if (!albumAttributes) {
             continue;
@@ -73,7 +53,11 @@ export const loadSharedWithMeAlbums = async (abortSignal?: AbortSignal) => {
     const drive = getDriveForPhotos();
     useAlbumsStore.getState().setLoadingList(true);
     try {
-        const fetchedUids = await loadAlbumsFromIterator(drive.iterateSharedNodesWithMe(abortSignal));
+        const fetchedUids = await loadAlbumsFromIterator(
+            iterateNodesFromUidsGenerator(drive.iterateSharedWithMeNodeUids(abortSignal), drive, {
+                signal: abortSignal,
+            })
+        );
         useAlbumsStore.getState().cleanupStaleAlbums(fetchedUids, false);
     } catch (e) {
         handleSdkError(e);
@@ -87,8 +71,16 @@ export const loadAllAlbums = async (abortSignal?: AbortSignal) => {
     try {
         useAlbumsStore.getState().setLoadingList(true);
         const [ownedSeenUids, sharedSeenUids] = await Promise.all([
-            loadAlbumsFromIterator(batchUidsToNodes(drive.experimental.iterateAlbumUids(abortSignal), drive)),
-            loadAlbumsFromIterator(drive.iterateSharedNodesWithMe(abortSignal)),
+            loadAlbumsFromIterator(
+                iterateNodesFromUidsGenerator(drive.experimental.iterateAlbumUids(abortSignal), drive, {
+                    signal: abortSignal,
+                })
+            ),
+            loadAlbumsFromIterator(
+                iterateNodesFromUidsGenerator(drive.iterateSharedWithMeNodeUids(abortSignal), drive, {
+                    signal: abortSignal,
+                })
+            ),
         ]);
         const fetchedUids = new Set([...ownedSeenUids, ...sharedSeenUids]);
         useAlbumsStore.getState().cleanupStaleAlbums(fetchedUids);

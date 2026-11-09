@@ -1,6 +1,7 @@
 export { getNodeName, getNodeNameFallback, getBookmarkNodeName, getDeviceName } from './internal/getNodeName';
 export { isMissingNode, getMissingUid } from './internal/node';
 export { getNodeAncestry } from './internal/getNodeAncestry';
+export { iterateNodesFromUidsGenerator } from './internal/iterateNodesFromUidsGenerator';
 export {
     getNodeEffectiveRole,
     getNodeEffectiveRoleFromHierarchy,

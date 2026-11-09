@@ -129,7 +129,6 @@ jest.mock('@proton/drive/sdk', () => {
             };
         }),
         getFileDownloader: jest.fn(),
-        iterateFolderChildren: jest.fn(),
     };
     class AbortError extends Error {
         name = 'AbortError';
@@ -198,7 +197,6 @@ const sdkMock = require('@proton/drive/sdk') as {
     driveMock: {
         onMessage: jest.Mock;
         getFileDownloader: jest.Mock;
-        iterateFolderChildren: jest.Mock;
     };
     emitSDKEvent: (event: string, ...args: unknown[]) => void;
     resetSDKListeners: () => void;

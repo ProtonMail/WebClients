@@ -5,7 +5,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { handleSdkError, sendErrorReport } from '../../../legacy/errorHandling';
 import { MemberRole, NodeType, useDrive } from '../../../sdk';
-import { getDeviceName, getNodeName } from '../../nodes';
+import { getDeviceName, getNodeName, iterateNodesFromUidsGenerator } from '../../nodes';
 import { directoryTreeStoreFactory } from './directoryTreeStoreFactory';
 import { iterateSharedWithMeNodes } from './events/iterateSharedWithMeNodes';
 import { TreeEventManager } from './events/treeEventManager';
@@ -156,7 +156,10 @@ function useDirectoryTree(
 
             try {
                 const iterateOptions = options?.onlyFolders ? { type: NodeType.Folder } : undefined;
-                for await (const node of drive.iterateFolderChildren(parentUid, iterateOptions, abortSignal)) {
+                const childUidsIterator = drive.iterateFolderChildrenNodeUids(parentUid, iterateOptions, abortSignal);
+                for await (const node of iterateNodesFromUidsGenerator(childUidsIterator, drive, {
+                    signal: abortSignal,
+                })) {
                     const { uid, type, treeEventScopeId, deprecatedShareId } = node;
                     const name = getNodeName(node);
                     const highestEffectiveRole = options?.loadPermissions
