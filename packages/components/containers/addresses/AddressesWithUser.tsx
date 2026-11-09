@@ -6,6 +6,8 @@ import { c, msgid } from 'ttag';
 
 import { orderAddresses } from '@proton/account/addresses/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { getIsSignInAddress, getIsSignInRestricted } from '@proton/account/signInRestriction/helpers';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modals/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
 import ConnectGmailButton from '@proton/activation/src/components/SettingsArea/ConnectGmailButton';
 import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
@@ -37,6 +39,7 @@ import type { CachedOrganizationKey } from '@proton/shared/lib/interfaces/Organi
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresses';
 import addressesImg from '@proton/styles/assets/img/illustrations/new-upsells-img/addresses.svg';
+import { useFlag } from '@proton/unleash/useFlag';
 import move from '@proton/utils/move';
 
 import Alert from '../../components/alert/Alert';
@@ -85,6 +88,7 @@ const SortableListItem = ({
     onClickEmail,
     onSetDefault,
     disableSort,
+    isSignInRestricted,
 }: {
     address: Address;
     index: number;
@@ -97,6 +101,7 @@ const SortableListItem = ({
     addressPermissions: AddressPermissions;
     addressStatuses: AddressStatuses;
     disableSort?: boolean;
+    isSignInRestricted: boolean;
 }) => {
     const {
         isDragging,
@@ -127,12 +132,16 @@ const SortableListItem = ({
                         onClick={() => onClickEmail(address.Email)}
                     >
                         <div>{address.Email}</div>
-                        <ExternalAddressInfo address={address} />
+                        {!isSignInRestricted && <ExternalAddressInfo address={address} />}
                     </button>
                 </Tooltip>
             </TableCell>
             <TableCell>
-                <AddressStatus key={1} {...addressStatuses} />
+                <AddressStatus
+                    key={1}
+                    {...addressStatuses}
+                    isSignInAddress={isSignInRestricted && getIsSignInAddress(address)}
+                />
             </TableCell>
             <TableCell>
                 <AddressActions
@@ -171,6 +180,9 @@ const AddressesUser = ({
     const [claimProtonAddressModalProps, setClaimProtonAddressModalOpen, renderClaimProtonAddressModal] =
         useModalState();
     const { byoeAddressesAvailableCount, maxBYOEAddresses } = useBYOEAddressesCounts();
+    const [userSettings] = useUserSettings();
+    const showSignInRestrictionToggle = useFlag('ShowSignInRestrictionToggle');
+    const isSignInRestricted = showSignInRestrictionToggle && getIsSignInRestricted(userSettings.LoginIdentifierPolicy);
 
     const showClaimProtonAddressButton =
         getIsBYOEOnlyAccount(addresses) && user.isFree && getIsBYOEOnlyAccount(addresses);
@@ -332,6 +344,7 @@ const AddressesUser = ({
                                     savingIndex={savingIndex}
                                     disableSort={disabledSortItems.has(address.ID)}
                                     allowAddressDeletion={allowAddressDeletion}
+                                    isSignInRestricted={isSignInRestricted}
                                     addressStatuses={getStatus(address, index)}
                                     addressPermissions={getPermissions({
                                         addressIndex: index,

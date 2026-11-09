@@ -9,10 +9,12 @@ import { getIsSSOAccount } from '@proton/shared/lib/keys/accountType';
 
 const SIGN_IN_DOMAINS = ['proton.me', 'protonmail.com', 'protonmail.ch'];
 
+export const getIsSignInAddress = (address: Address) => {
+    return address.Type === ADDRESS_TYPE.TYPE_ORIGINAL && getIsAddressEnabled(address);
+};
+
 export const getSignInIdentifiers = (user: User, addresses: Address[] = []) => {
-    const enabledOriginalAddresses = addresses.filter(
-        (address) => address.Type === ADDRESS_TYPE.TYPE_ORIGINAL && getIsAddressEnabled(address)
-    );
+    const enabledOriginalAddresses = addresses.filter(getIsSignInAddress);
     const enabledOriginalDomains = new Set(
         enabledOriginalAddresses.map((address) => getEmailParts(address.Email)[1].toLowerCase())
     );
