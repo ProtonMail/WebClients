@@ -2,7 +2,9 @@ import type { RefObject } from 'react';
 import { useCallback, useState } from 'react';
 
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 
+import { isInDeletedFolder } from '../../helpers/elements';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import useBlockSender from '../../hooks/useBlockSender';
 import type { Element } from '../../models/element';
@@ -37,6 +39,9 @@ export const useItemContextMenu = ({
     const closeContextMenu = useCallback(() => setIsOpen(false), [setIsOpen]);
     const openContextMenu = useCallback(() => setIsOpen(true), [setIsOpen]);
 
+    const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
+    const isDeletedFolder = isInDeletedFolder(isRetentionPoliciesEnabled, labelID);
+
     const getElementsFromIDs = useGetElementsFromIDs();
     const { canShowBlockSender, handleClickBlockSender, blockSenderModal } = useBlockSender({
         elements: [...(getElementsFromIDs([selectedElement?.ID || '']) || ({} as Element))],
@@ -45,6 +50,10 @@ export const useItemContextMenu = ({
 
     const handleContextMenu = useCallback(
         (e: React.MouseEvent<HTMLDivElement>, element: Element) => {
+            if (isDeletedFolder) {
+                return;
+            }
+
             e.stopPropagation();
             e.preventDefault();
 
@@ -57,7 +66,7 @@ export const useItemContextMenu = ({
             openContextMenu();
         },
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-3996E7
-        [checkedIDs]
+        [checkedIDs, isDeletedFolder]
     );
 
     const contextMenu = (
