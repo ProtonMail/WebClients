@@ -3,7 +3,7 @@ import type { NotificationType } from '@proton/app-context/notifications/interfa
 import { c, msgid } from 'ttag'
 import type { ReactNode } from 'react'
 import type { ProtonDriveClient } from '@protontech/drive-sdk'
-import { trashDocument, restoreDocument, reportTrashError } from '@proton/docs-core/DriveSDK/trash'
+import { trashDocument, restoreDocument, reportTrashError } from './trash'
 import { trashDocuments, restoreDocuments, type BatchResult } from './trashMany'
 
 type CreateNotification = ({ type, text }: { type: NotificationType; text: ReactNode }) => void

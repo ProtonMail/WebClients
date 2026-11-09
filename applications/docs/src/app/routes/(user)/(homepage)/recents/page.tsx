@@ -1,5 +1,4 @@
-import { HomepageContent, HomepageLayout } from '~/homepage'
-import { DocumentActionsProvider, type DocumentActionsProviderProps } from './__utils/document-actions'
+import { DocumentActionsProvider, type DocumentActionsProviderProps, HomepageContent, HomepageLayout } from '~/homepage'
 import { HomepageViewProvider } from './__utils/homepage-view-sdk'
 import type { HomepageViewProviderProps } from './__utils/homepage-view-sdk-utils'
 

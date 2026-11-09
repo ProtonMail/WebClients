@@ -4,15 +4,14 @@ import type { Application } from '@proton/docs-core/Application/Application'
 import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
 import { ServerTime } from '@proton/docs-shared/ServerTime'
-import { generateNodeUid } from '@proton/drive/sdk'
-import type { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
+import { generateNodeUid } from '@protontech/drive-sdk'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { ApplicationProvider } from '~/utils/application-context'
-import { HomepageViewContext, type HomepageViewValue } from '~/homepage'
-import { useBulkMove } from './useBulkMove'
+import { HomepageViewContext, type HomepageViewValue } from './homepageViewContext'
+import { useBulkMove, type UseMoveItemsModal } from './useBulkMove'
 
 const mockShowMoveItemsModal = jest.fn()
-const useMockMoveItemsModal: typeof useMoveItemsModal = () => ({
+const useMockMoveItemsModal: UseMoveItemsModal = () => ({
   moveItemsModal: null,
   showMoveItemsModal: mockShowMoveItemsModal,
 })

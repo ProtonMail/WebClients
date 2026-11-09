@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, type ReactNode } from 'react'
+import { useCallback, useEffect, type ReactNode } from 'react'
 import { useHistory } from 'react-router'
 import { useLocation } from 'react-router-dom-v5-compat'
 
@@ -9,13 +9,7 @@ import type { Address } from '@proton/shared/lib/interfaces/Address'
 
 import type { DriveEvent, ProtonDriveClient } from '@protontech/drive-sdk'
 
-import {
-  type DocInvitesHook,
-  HomepageViewContext,
-  type ItemsSection,
-  type ItemsSectionId,
-  type RecentsSort,
-} from '~/homepage'
+import type { DocInvitesHook, ItemsSection, ItemsSectionId, RecentsSort } from '~/homepage'
 import { isMyDocument } from './isMyDocument'
 import { getOwnerName } from './getOwnerName'
 
@@ -59,14 +53,6 @@ export type HomepageViewProviderProps = {
   eventSubscriber: EventSubscriber
   coreEventSubscriber: CoreEventSubscriber
   useDocInvites: DocInvitesHook
-}
-
-export function useHomepageView() {
-  const value = useContext(HomepageViewContext)
-  if (!value) {
-    throw new Error('Missing HomepageViewProvider')
-  }
-  return value
 }
 
 function useQueryState<T extends string | undefined>(name: string, defaultValue: T, allowedValues?: readonly T[]) {
