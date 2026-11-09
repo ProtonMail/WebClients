@@ -20,7 +20,12 @@ global.File = File;
 // @ts-ignore
 global.ENV = 'test';
 // @ts-ignore
-global.matchMedia = () => ({});
+global.matchMedia = (media) => ({
+    matches: false,
+    media,
+    addEventListener: () => {},
+    removeEventListener: () => {},
+});
 
 // JSDOM does not provide ResizeObserver, which Scroll uses to update its shadows.
 window.ResizeObserver = jest.fn().mockImplementation(() => ({
