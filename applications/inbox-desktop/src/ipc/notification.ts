@@ -14,6 +14,7 @@ import { DEEPLINK_PROTOCOL, DeepLinkActions } from "../utils/protocol/deep_links
 import { isWindowValid } from "../utils/view/windowUtils";
 import { getFileResourcePath } from "../constants/resources";
 import { escapeXML } from "../utils/xml";
+import { stripBidiControls } from "../utils/bidi";
 import { sentryReport } from "../utils/sentryReport";
 
 const notifications: Map<string, Notification> = new Map();
@@ -191,7 +192,11 @@ export const showNotification = (payload: ElectronNotification) => {
         notificationLogger.error("Ignoring invalid notification payload", parsed.error.flatten());
         return;
     }
-    const safePayload = parsed.data;
+    const safePayload = {
+        ...parsed.data,
+        title: stripBidiControls(parsed.data.title),
+        body: stripBidiControls(parsed.data.body),
+    };
 
     const uuid: string = crypto.randomUUID();
     const localID = getCurrentLocalID();

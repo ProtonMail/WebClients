@@ -89,6 +89,14 @@ describe("showNotification", () => {
         expect(mockShow).toHaveBeenCalledTimes(1);
     });
 
+    it("strips bidi control characters before showing the notification", () => {
+        showNotification({ ...baseMailPayload, body: "From: Bob\u202E - Invoice txt.exe" });
+
+        const { toastXml } = mockedNotification.mock.calls[0][0];
+        expect(toastXml).toContain("From: Bob - Invoice txt.exe");
+        expect(toastXml).not.toContain("\u202E");
+    });
+
     it("rejects a payload with an unknown app without building a toast", () => {
         showNotification({ ...baseMailPayload, app: "drive" as ElectronNotification["app"] });
 
