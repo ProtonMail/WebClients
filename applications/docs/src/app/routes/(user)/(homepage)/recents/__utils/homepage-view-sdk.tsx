@@ -5,7 +5,6 @@ import { c } from 'ttag'
 import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
 import type { NodeEntity } from '@proton/drive/sdk'
-import { getDrive } from '@proton/drive/sdk'
 import { useContactEmails } from '@proton/account/contactEmails/hooks'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
@@ -13,9 +12,6 @@ import { useNotifications } from '@proton/app-context/useNotifications'
 import { useAddresses } from '@proton/account/addresses/hooks'
 import type { Address } from '@proton/shared/lib/interfaces/Address'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
-
-import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
-import { getCoreEventSubscriber } from '~/drive-sdk/core-event-subscriber'
 
 import {
   filterDocuments,
@@ -40,12 +36,14 @@ import { useTrashed } from './use-trashed'
 
 import { traceRecentsError } from './traceRecentsError'
 import { HOMEPAGE_TRASH_PATH } from '../../../__utils/homepage-paths'
-import { useInvitationsSdkEnabled } from '~/utils/flags'
-import { useDocInvites as useDocInvitesSDK } from '~/drive-sdk/useDocInvites'
-import { useDocInvites as useDocInvitesLegacy } from '@proton/drive-store/lib/_invites/useDocInvites'
 
-export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
-  const drive = getDrive()
+export function HomepageViewProvider({
+  children,
+  drive,
+  getEventSubscriber,
+  getCoreEventSubscriber,
+  useDocInvites,
+}: HomepageViewProviderProps) {
   const eventSubscriber = getEventSubscriber()
 
   const { createNotification } = useNotifications()
@@ -55,7 +53,6 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
   const [contactEmails] = useContactEmails()
   const [addresses] = useAddresses()
   const [type] = useType()
-  const useDocInvites = useInvitationsSdkEnabled() ? useDocInvitesSDK : useDocInvitesLegacy
 
   const {
     recentDocuments,
@@ -66,7 +63,7 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
     removeDocument,
     recentsListener,
     updateMovedDocuments,
-  } = useRecents(drive)
+  } = useRecents(drive, eventSubscriber)
   const { fetchTrashed, trashedDocumentItems, isTrashLoading, trashedListener } = useTrashed(drive)
 
   const isTrashRoute = Boolean(useRouteMatch(HOMEPAGE_TRASH_PATH))
@@ -95,7 +92,7 @@ export function HomepageViewProvider({ children }: HomepageViewProviderProps) {
     const reloadOnCoreEvent = () => loadData()
     const removeListener = coreSubscriber.addListener(reloadOnCoreEvent)
     return removeListener
-  }, [loadData])
+  }, [loadData, getCoreEventSubscriber])
 
   // Loading it once here to avoid doing it every time we subscribe
   const [myFilesNode, setMyFilesNode] = useState<NodeEntity>()

@@ -9,7 +9,6 @@ import {
   type ProtonDriveClient,
   MemberRole,
   NodeType,
-  getDrive,
 } from '@proton/drive/sdk'
 import { act, cleanup, renderHook } from '@testing-library/react'
 import type { ReactNode } from 'react'
@@ -20,11 +19,6 @@ import { useRecentsStore } from './useRecentsStore'
 
 jest.mock('@proton/account/addresses/hooks', () => ({
   useAddresses: () => [undefined, false],
-}))
-
-jest.mock('@proton/drive/sdk', () => ({
-  ...jest.requireActual('@proton/drive/sdk'),
-  getDrive: jest.fn(),
 }))
 
 const DOC_MIMETYPE = 'application/vnd.proton.doc'
@@ -399,12 +393,11 @@ function renderRecents({ documents, nodes }: { documents: ApiDocument[]; nodes: 
     fetchRecentDocuments: jest.fn().mockResolvedValue({ getValue: () => ({ RecentDocuments: documents }) }),
   }
   const drive = createFakeDrive(nodes)
-  jest.mocked(getDrive).mockReturnValue(drive as unknown as ProtonDriveClient)
 
   const createNotification = jest.fn()
   const application = { docsApi, logger: { debug: jest.fn() } } as unknown as Application
 
-  const { result } = renderHook(() => useRecents(drive as unknown as ProtonDriveClient), {
+  const { result } = renderHook(() => useRecents(drive as unknown as ProtonDriveClient, getEventSubscriber()), {
     wrapper: ({ children }: { children: ReactNode }) => (
       <ApplicationProvider application={application}>
         <NotificationsContext.Provider value={{ createNotification } as unknown as NotificationsManager}>

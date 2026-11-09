@@ -1,15 +1,10 @@
 import type { NotificationsManager } from '@proton/app-context/notifications/manager'
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext'
-import { type DriveEvent, DriveEventType, type NodeEntity, type ProtonDriveClient, getDrive } from '@proton/drive/sdk'
+import { type DriveEvent, DriveEventType, type NodeEntity, type ProtonDriveClient } from '@proton/drive/sdk'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE, PROTON_DOCS_SPREADSHEET_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
 import { act, renderHook } from '@testing-library/react'
 import type { ReactNode } from 'react'
 import { useTrashed } from './use-trashed'
-
-jest.mock('@proton/drive/sdk', () => ({
-  ...jest.requireActual('@proton/drive/sdk'),
-  getDrive: jest.fn(),
-}))
 
 const doc = createNode('volume1~doc', 'Doc', PROTON_DOCS_DOCUMENT_MIMETYPE)
 const sheet = createNode('volume1~sheet', 'Sheet', PROTON_DOCS_SPREADSHEET_MIMETYPE)
@@ -118,7 +113,6 @@ describe('useTrashed', () => {
 
 function renderTrashed() {
   const drive = { iterateTrashedNodes: jest.fn(), getNode: jest.fn() }
-  jest.mocked(getDrive).mockReturnValue(drive as unknown as ProtonDriveClient)
   const createNotification = jest.fn()
 
   const { result } = renderHook(() => useTrashed(drive as unknown as ProtonDriveClient), {

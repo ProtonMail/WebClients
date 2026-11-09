@@ -7,7 +7,17 @@ import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contac
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { Address } from '@proton/shared/lib/interfaces/Address'
 
-import { HomepageViewContext, type ItemsSection, type ItemsSectionId, type RecentsSort } from '~/homepage'
+import type { ProtonDriveClient } from '@proton/drive/sdk'
+
+import {
+  type DocInvitesHook,
+  HomepageViewContext,
+  type ItemsSection,
+  type ItemsSectionId,
+  type RecentsSort,
+} from '~/homepage'
+import type { getEventSubscriber } from '~/drive-sdk/event-subscriber'
+import type { getCoreEventSubscriber } from '~/drive-sdk/core-event-subscriber'
 import { isMyDocument } from './isMyDocument'
 import { getOwnerName } from './getOwnerName'
 
@@ -31,6 +41,10 @@ const ORDERED_SECTION_IDS = [
 
 export type HomepageViewProviderProps = {
   children: ReactNode
+  drive: ProtonDriveClient
+  getEventSubscriber: typeof getEventSubscriber
+  getCoreEventSubscriber: typeof getCoreEventSubscriber
+  useDocInvites: DocInvitesHook
 }
 
 export function useHomepageView() {

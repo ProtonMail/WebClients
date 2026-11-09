@@ -12,7 +12,7 @@ import userEvent from '@testing-library/user-event'
 import { ApplicationProvider } from '~/utils/application-context'
 import type { DocInvitesHook, HomepageViewState } from '../homepageViewContext'
 import { HomepageViewContext } from '../homepageViewContext'
-import type { MemberRole } from '@proton/drive/sdk'
+import type { MemberRole } from '@protontech/drive-sdk'
 import type { ExtendedInvitationDetails } from '@proton/docs-shared/InvitationTypes'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
 
