@@ -3,8 +3,8 @@ import type { ReactNode } from 'react'
 import { generateNodeUid } from '@protontech/drive-sdk'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { useApplication } from '~/utils/application-context'
-import { useEvent } from '~/utils/misc'
-import { useHomepageView } from './homepage-view-sdk-utils'
+import { useEvent } from './useEvent'
+import { useHomepageView } from './homepageViewContext'
 
 export type UseMoveItemsModal = () => {
   moveItemsModal: ReactNode

@@ -3,10 +3,10 @@ import { useNotifications } from '@proton/app-context/useNotifications'
 import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import { generateNodeUid, type ProtonDriveClient } from '@protontech/drive-sdk'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
-import { trashManyAndNotify } from '~/homepage'
+import { trashManyAndNotify } from './driveSdk/trashRestoreNotify'
 import { useApplication } from '~/utils/application-context'
-import { useEvent } from '~/utils/misc'
-import { useHomepageView } from './homepage-view-sdk-utils'
+import { useEvent } from './useEvent'
+import { useHomepageView } from './homepageViewContext'
 
 type BulkTrashDependencies = { drive: ProtonDriveClient }
 

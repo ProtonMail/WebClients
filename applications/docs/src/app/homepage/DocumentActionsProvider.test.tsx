@@ -2,21 +2,21 @@ import type { NotificationsManager } from '@proton/app-context/notifications/man
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext'
 import AuthenticationContext from '@proton/components/containers/authentication/authenticationContext'
 import type { Application } from '@proton/docs-core/Application/Application'
-import { deleteDocument, reportTrashError, restoreDocument, trashDocument } from '@proton/docs-core/DriveSDK/trash'
+import { deleteDocument, reportTrashError, restoreDocument, trashDocument } from './driveSdk/trash'
 import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import { ServerTime } from '@proton/docs-shared/ServerTime'
-import { generateNodeUid, type ProtonDriveClient } from '@proton/drive/sdk'
-import { useSharingModal } from '@proton/drive/public/sharingModal'
-import type { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
+import { generateNodeUid, type ProtonDriveClient } from '@protontech/drive-sdk'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { act, renderHook, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { type ReactNode, useContext, useState } from 'react'
 import { ApplicationProvider } from '~/utils/application-context'
-import { DocumentActionsProvider } from './document-actions'
-import { DocumentActionsContext, HomepageViewContext, type HomepageViewValue } from '~/homepage'
+import { DocumentActionsProvider, type DocumentActionsProviderProps } from './DocumentActionsProvider'
+import { DocumentActionsContext } from './documentActionsContext'
+import { HomepageViewContext, type HomepageViewValue } from './homepageViewContext'
+import type { UseMoveItemsModal } from './useBulkMove'
 
-jest.mock('@proton/docs-core/DriveSDK/trash', () => ({
+jest.mock('./driveSdk/trash', () => ({
   trashDocument: jest.fn(),
   restoreDocument: jest.fn(),
   deleteDocument: jest.fn(),
@@ -24,7 +24,12 @@ jest.mock('@proton/docs-core/DriveSDK/trash', () => ({
 }))
 
 const mockShowMoveItemsModal = jest.fn()
-const useMockMoveItemsModal: typeof useMoveItemsModal = () => ({
+const useMockSharingModal: DocumentActionsProviderProps['useSharingModal'] = () => ({
+  sharingModal: null,
+  showSharingModal: jest.fn(),
+})
+
+const useMockMoveItemsModal: UseMoveItemsModal = () => ({
   moveItemsModal: null,
   showMoveItemsModal: mockShowMoveItemsModal,
 })
@@ -61,7 +66,7 @@ function renderDocumentActions(moveItemsModalHook = useMockMoveItemsModal) {
             <HomepageViewContext.Provider value={{ updateMovedDocuments } as unknown as HomepageViewValue}>
               <DocumentActionsProvider
                 drive={drive}
-                useSharingModal={useSharingModal}
+                useSharingModal={useMockSharingModal}
                 useMoveItemsModal={moveItemsModalHook}
               >
                 {children}
@@ -90,7 +95,7 @@ function subscribe(subscribeTo: (listener: (id: string) => void) => () => void) 
   return listener
 }
 
-function useFakeMoveItemsModal(): ReturnType<typeof useMoveItemsModal> {
+function useFakeMoveItemsModal(): ReturnType<UseMoveItemsModal> {
   const [nodeUids, setNodeUids] = useState<string[]>()
   return {
     moveItemsModal: <>{nodeUids && <dialog open>{nodeUids.join(',')}</dialog>}</>,

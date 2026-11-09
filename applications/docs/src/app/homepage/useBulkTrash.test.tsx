@@ -1,13 +1,15 @@
 import { act, renderHook, waitFor } from '@testing-library/react'
+import type { ReactNode } from 'react'
 import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
-import { generateNodeUid, type ProtonDriveClient } from '@proton/drive/sdk'
+import { generateNodeUid, type ProtonDriveClient } from '@protontech/drive-sdk'
 import { ServerTime } from '@proton/docs-shared/ServerTime'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
 import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
-import { trashManyAndNotify } from '~/homepage'
+import { trashManyAndNotify } from './driveSdk/trashRestoreNotify'
+import { HomepageViewContext, type HomepageViewValue } from './homepageViewContext'
 import { useBulkTrash } from './useBulkTrash'
 
-jest.mock('~/homepage', () => ({ ...jest.requireActual('~/homepage'), trashManyAndNotify: jest.fn() }))
+jest.mock('./driveSdk/trashRestoreNotify', () => ({ trashManyAndNotify: jest.fn() }))
 
 const mockCreateNotification = jest.fn()
 jest.mock('@proton/app-context/useNotifications', () => ({
@@ -16,9 +18,6 @@ jest.mock('@proton/app-context/useNotifications', () => ({
 }))
 
 const mockUpdateRecentDocuments = jest.fn()
-jest.mock('./homepage-view-sdk-utils', () => ({
-  useHomepageView: () => ({ updateRecentDocuments: mockUpdateRecentDocuments }),
-}))
 
 const mockReportHomepageTelemetry = jest.fn()
 jest.mock('~/utils/application-context', () => ({
@@ -46,7 +45,16 @@ const d1 = createMockRecentDocument({ name: 'Document1', linkId: 'link1' })
 const d2 = createMockRecentDocument({ name: 'Document2', linkId: 'link2' })
 const uid = (doc: RecentDocumentsItem) => generateNodeUid(doc.volumeId, doc.linkId)
 const drive = {} as ProtonDriveClient
-const renderBulkTrash = () => renderHook(() => useBulkTrash({ drive }))
+function Wrapper({ children }: { children: ReactNode }) {
+  return (
+    <HomepageViewContext.Provider
+      value={{ updateRecentDocuments: mockUpdateRecentDocuments } as unknown as HomepageViewValue}
+    >
+      {children}
+    </HomepageViewContext.Provider>
+  )
+}
+const renderBulkTrash = () => renderHook(() => useBulkTrash({ drive }), { wrapper: Wrapper })
 
 describe('useBulkTrash', () => {
   beforeEach(() => {
