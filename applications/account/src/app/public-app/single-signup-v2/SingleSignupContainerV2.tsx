@@ -1240,6 +1240,7 @@ const SingleSignupContainerV2 = ({
                 reportPaymentSuccess: getReportPaymentSuccess(cache.subscriptionData, isAuthenticated),
                 reportPaymentFailure: getReportPaymentFailure(cache.subscriptionData, isAuthenticated),
                 telemetryContext: getTelemetryContext(cache.session),
+                provisioningToken: cache.provisioningToken,
             });
 
             if (cache.setupData) {
@@ -1494,6 +1495,7 @@ const SingleSignupContainerV2 = ({
                                 session: model.session,
                                 // Might be existing from the token setup
                                 setupData: model.cache?.setupData,
+                                provisioningToken: model.provisionedDeal?.token,
                             };
 
                             setModelDiff({
