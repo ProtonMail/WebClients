@@ -919,6 +919,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakt.",
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakter."
+      ],
+      "Add payment method": [
+        "Legg til betalingsmåte"
+      ],
+      "Cancel trial": [
+        "Avbryt prøveperioden"
       ]
     },
     "Actions message": {
@@ -5573,6 +5579,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil fortsatt kunne se dine egne kontodata, men alle brukerkontoer vil bli fjernet fra organisasjonen din."
+      ],
+      "Connected": [
+        "Tilkoblet"
+      ],
+      "Connecting…": [
+        "Kobler til..."
+      ],
+      "Disconnected": [
+        "Frakoblet"
       ]
     },
     "info": {
@@ -7675,6 +7690,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Ditt fullstendige ${ planTitle }-abonnement starter ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Ombestemt deg etter prøveperioden?** Si opp innen 30 dager etter første betaling, og vi refunderer den ubrukte tiden."
       ]
     },
     "Option": {
@@ -7904,6 +7922,12 @@
       ],
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Du eier allerede ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Scribe-seter kan ikke overstige antallet medlemmer."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Prøveplaner støtter ikke egendefinerte domener."
       ]
     },
     "PGP key encryption warning": {

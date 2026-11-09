@@ -922,6 +922,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφή",
         "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
+      ],
+      "Add payment method": [
+        "Προσθέστε μέθοδο πληρωμής"
+      ],
+      "Cancel trial": [
+        "Ακύρωση δοκιμής"
       ]
     },
     "Actions message": {
@@ -3572,6 +3578,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Μη αποκρυπτογραφήσιμο όνομα"
+      ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "Δεν ήταν δυνατή η ανάγνωση μέρους του εγγράφου, επομένως οι αλλαγές σας δεν μπορούν να αποθηκευτούν."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "Ορισμένες από τις πρόσφατες αλλαγές σας δεν ήταν δυνατό να αποθηκευτούν, επομένως η επεξεργασία είναι απενεργοποιημένη. Αντιγράψτε όποιο περιεχόμενο χρειάζεστε και, στη συνέχεια, επαναφορτώστε τη σελίδα."
+      ],
+      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
+        "Αυτό το έγγραφο έχει φτάσει στο μέγιστο μέγεθός του, επομένως η τελευταία σας αλλαγή δεν αποθηκεύτηκε και η επεξεργασία είναι απενεργοποιημένη."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "Η τελευταία σας αλλαγή είναι πολύ μεγάλη για να αποθηκευτεί, επομένως η επεξεργασία έχει απενεργοποιηθεί. Αντιγράψτε όποιο περιεχόμενο χρειάζεστε και, στη συνέχεια, επαναφορτώστε τη σελίδα."
       ]
     },
     "error": {
@@ -5593,6 +5611,60 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Θα εξακολουθείτε να μπορείτε να βλέπετε τα δικά σας δεδομένα λογαριασμού, αλλά όλοι οι λογαριασμοί χρηστών θα καταργηθούν από τον οργανισμό σας."
+      ],
+      "Connected": [
+        "Συνδεδεμένο"
+      ],
+      "Connecting…": [
+        "Γίνεται σύνδεση"
+      ],
+      "Disconnected": [
+        "Αποσυνδεδεμένο"
+      ],
+      "Editing is temporarily unavailable.": [
+        "Η επεξεργασία δεν είναι διαθέσιμη προσωρινά."
+      ],
+      "Not connected. Editing resumes once you are back.": [
+        "Δεν υπάρχει σύνδεση. Η επεξεργασία θα συνεχιστεί μόλις επανέλθει η σύνδεση."
+      ],
+      "Reconnecting…": [
+        "Επανασύνδεση…"
+      ],
+      "Some of the document's content could not be read.": [
+        "Δεν ήταν δυνατή η ανάγνωση μέρους του περιεχομένου του εγγράφου."
+      ],
+      "The connection to the server was lost.": [
+        "Η σύνδεση με τον διακομιστή χάθηκε."
+      ],
+      "The document could not be brought up to date.": [
+        "Το έγγραφο δεν κατέστη δυνατό να ενημερωθεί."
+      ],
+      "The document could not be created.": [
+        "Απέτυχε η δημιουργία του εγγράφου."
+      ],
+      "The document could not be loaded.": [
+        "Απέτυχε η φόρτωση του εγγράφου."
+      ],
+      "The editor could not be loaded.": [
+        "Δεν ήταν δυνατή η φόρτωση του προγράμματος επεξεργασίας."
+      ],
+      "The server is busy.": [
+        "Ο διακομιστής είναι απασχολημένος."
+      ],
+      "This version of the app is no longer supported. Reload the page to update it.": [
+        "Αυτή η έκδοση της εφαρμογής δεν υποστηρίζεται πλέον. Επαναφορτώστε τη σελίδα για να την ενημερώσετε."
+      ],
+      "You were disconnected after a period of inactivity.": [
+        "Αποσυνδεθήκατε μετά από μια περίοδο αδράνειας."
+      ],
+      "Your access to this document has changed. Reload the page to continue.": [
+        "Η πρόσβασή σας σε αυτό το έγγραφο έχει αλλάξει. Ανανεώστε τη σελίδα για να συνεχίσετε."
+      ],
+      "Your changes could not be encrypted. Reload the page to continue.": [
+        "Δεν ήταν δυνατή η κρυπτογράφηση των αλλαγών σας. Επαναφορτώστε τη σελίδα για να συνεχίσετε."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "Η συνεδρία σας έχει λήξει. Επαναφορτώστε τη σελίδα για να συνεχίσετε."
       ]
     },
     "info": {
@@ -7729,6 +7801,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Η πλήρης συνδρομή σας ${ planTitle } ξεκινά στις ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Αλλάξατε γνώμη μετά τη δοκιμαστική περίοδο;** Ακυρώστε εντός 30 ημερών από την πρώτη σας πληρωμή και θα σας επιστρέψουμε το αντίτιμο για το διάστημα που δε χρησιμοποιήσατε."
       ]
     },
     "Option": {
@@ -10171,6 +10246,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Η δοκιμαστική περίοδος θα λήξει στις ${ textDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ textDate }. ${ action }"
+      ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "Μια αλλαγή από άλλον συντάκτη δεν κατέστη δυνατό να αναγνωστεί και λείπει από αυτή τη σελίδα."
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "Δεν ήταν δυνατή η ανάγνωση μέρους του εγγράφου, επομένως η επεξεργασία είναι απενεργοποιημένη."
       ]
     }
   }

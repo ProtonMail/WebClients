@@ -925,6 +925,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner",
         "Du kan højst sende vCard-filer med ${ maxAttachments } kontaktpersoner"
+      ],
+      "Add payment method": [
+        "Tilføj betalingsmetode"
+      ],
+      "Cancel trial": [
+        "Annuller prøveperiode"
       ]
     },
     "Actions message": {
@@ -3575,6 +3581,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn, der ikke kan dekrypteres"
+      ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "Noget af dokumentet kunne ikke læses, så dine ændringer kan ikke ændres."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "Nogle af dine seneste ændringer kunne ikke gemmes, så redigering er deaktiveret. Kopiér alt arbejde, som du skal bruge, og genindlæs siden."
+      ],
+      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
+        "Dette dokument har nået dets maksimale størrelse, så dine seneste ændringer blev ikke gemt, og redigering er deaktiveret."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "Din sidste ændring er for stor til at gemme, så redigering er deaktiveret. Kopiér alt arbejde, som du skal bruge, og genindlæs siden."
       ]
     },
     "error": {
@@ -5608,6 +5626,48 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil stadig kunne se dine egne kontodata, men alle brugerkonti vil blive fjernet fra din organisation."
+      ],
+      "Connected": [
+        "Forbundet"
+      ],
+      "Connecting…": [
+        "Forbinder…"
+      ],
+      "Disconnected": [
+        "Frakoblet"
+      ],
+      "Editing is temporarily unavailable.": [
+        "Redigering er midlertidigt utilgængeligt."
+      ],
+      "Not connected. Editing resumes once you are back.": [
+        "Du er ikke forbundet. Redigering aktiveres igen så snart du er tilbage."
+      ],
+      "Reconnecting…": [
+        "Genopretter forbindelsen…"
+      ],
+      "The connection to the server was lost.": [
+        "Forbindelsen til serveren blev afbrudt."
+      ],
+      "The document could not be brought up to date.": [
+        "Dokumentet kunne ikke opdateres."
+      ],
+      "The server is busy.": [
+        "Serveren er optaget."
+      ],
+      "This version of the app is no longer supported. Reload the page to update it.": [
+        "Denne version af appen understøttes ikke længere. Gendindlæs siden for at opdatere den."
+      ],
+      "You were disconnected after a period of inactivity.": [
+        "Din forbindelse blev afbrudt på grund af inaktivitet."
+      ],
+      "Your access to this document has changed. Reload the page to continue.": [
+        "Din adgang til dette dokument er blev ændret. Genindlæs siden for at fortsætte."
+      ],
+      "Your changes could not be encrypted. Reload the page to continue.": [
+        "Dine ændringer kunne ikke krypteres. Genindlæs siden for at forsætte."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "Din session er udløbet. Genindlæs siden for at fortsætte."
       ]
     },
     "info": {
@@ -7744,6 +7804,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Dit fulde ${ planTitle }-abonnement starter ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Har du ændret mening efter prøveperioden?** Annuller indenfor 30 dage fra din første betaling for at få den resterende tid refunderet."
       ]
     },
     "Option": {
@@ -10186,6 +10249,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din prøveperiode udløber den ${ textDate }. Du vil ikke blive opkrævet, hvis du opsiger før den ${ textDate }. ${ action }"
+      ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "En ændring fra en anden redaktør kunne ikke læses, og mangler fra denne side."
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "Noget af dokumentet kunne ikke læses, så redigering er deaktiveret."
       ]
     }
   }
