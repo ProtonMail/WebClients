@@ -16,8 +16,8 @@ import {
   type DocsCommentThread,
   type DocsDependencies,
   type DocsComments,
-} from '../app/Containers/Docs/public'
-import { polyfillSelectionRelatedThingsForTests } from '../app/Containers/Docs/testing'
+} from '@proton-docs/docs-editor'
+import { polyfillSelectionRelatedThingsForTests } from '@proton-docs/docs-editor/testing'
 import { createStandaloneDocClient } from './client'
 import { createStandaloneDocSession } from './session'
 

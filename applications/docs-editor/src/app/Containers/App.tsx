@@ -45,12 +45,20 @@ import { useSheetsEditorSource } from './adapters/sheets/utils/use-sheets-editor
 import SheetsLayout from './SheetsLayout'
 import { useEditorTheme } from '../Theme/EditorThemeProvider'
 import { DocsAdapter } from './adapters/docs/DocsAdapter'
-import { docsContainerSource, loadDocsEditorPackage, type DocsEditorSource } from './adapters/docs/docs-editor-source'
 import {
+  DocsLayoutContainer,
   EditorSystemMode,
   EditorUserMode,
+  exportDataFromEditorState,
+  getDocsLayoutScrollContainer,
+  getEditorStateFromSerializedNodes,
+  PreviewModeEditor,
+  rejectAllSuggestions,
+  removeCommentThreadMarks,
+  SHOW_ALL_COMMENTS_COMMAND,
+  StandaloneDocsEditor,
   type EditorInitializationConfig as DocsEditorInitializationConfig,
-} from './Docs/public'
+} from '@proton-docs/docs-editor'
 import { toDocsExportFormat, toDocsInitialization } from './adapters/docs/utils/docs-conversion-adapter'
 
 type AppProps = {
@@ -97,35 +105,20 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   const [tableOfContentsVisibleState, setTableOfContentsVisibleState] = useState(false)
 
   /**
-   * The editor `DocsEditorPackageEnabled` picks, resolved before a Doc mounts. The ref holds the same
-   * value for the bridge handlers and callbacks, which only reach it once the editor has mounted.
+   * Loaded only for a Doc, before it mounts: the editor's stylesheet carries Tailwind preflight, which
+   * must stay off the page for Sheets.
    */
-  const [docsEditor, setDocsEditor] = useState<DocsEditorSource>()
-  const docsEditorRef = useRef<DocsEditorSource>(docsContainerSource)
+  const [isDocsStylesheetLoaded, setIsDocsStylesheetLoaded] = useState(false)
   useEffect(() => {
     if (!didSetInitialConfig || documentType !== 'doc') {
       return
     }
-    let disposed = false
-    bridge
-      .getClientInvoker()
-      .checkIfFeatureFlagIsEnabled('DocsEditorPackageEnabled')
-      .then((isEnabled) => (isEnabled ? loadDocsEditorPackage() : docsContainerSource))
+    import(/* webpackChunkName: "docs-editor-package-style" */ '@proton-docs/docs-editor/style.css')
+      .then(() => setIsDocsStylesheetLoaded(true))
       .catch((error) => {
         reportErrorToSentry(error)
-        return docsContainerSource
+        void bridge.getClientInvoker().reportUserInterfaceError(error, { irrecoverable: true })
       })
-      .then((source) => {
-        if (disposed) {
-          return
-        }
-        docsEditorRef.current = source
-        setDocsEditor(source)
-      })
-      .catch(noop)
-    return () => {
-      disposed = true
-    }
   }, [bridge, didSetInitialConfig, documentType])
 
   const [sheetsInitializationMode, setSheetsInitializationMode] = useState<SheetsInitializationMode>('resolving')
@@ -199,8 +192,8 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
         (systemMode === EditorSystemMode.Revision || systemMode === EditorSystemMode.PublicView) &&
         editorRef.current
       ) {
-        docsEditorRef.current.removeCommentThreadMarks(editorRef.current)
-        docsEditorRef.current.rejectAllSuggestions(editorRef.current)
+        removeCommentThreadMarks(editorRef.current)
+        rejectAllSuggestions(editorRef.current)
       }
     },
     [systemMode, updateFrameSize],
@@ -228,7 +221,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
      * So we store the current scroll position so that we can restore it ourselves.
      */
     const rootElement = editor.getRootElement()
-    const scrollContainer = docsEditorRef.current.getDocsLayoutScrollContainer(rootElement)
+    const scrollContainer = getDocsLayoutScrollContainer(rootElement)
     if (scrollContainer) {
       scrollPositionBeforePrint.current = scrollContainer.scrollTop
     }
@@ -303,7 +296,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
         if (!editor) {
           return
         }
-        editor.dispatchCommand(docsEditorRef.current.SHOW_ALL_COMMENTS_COMMAND, undefined)
+        editor.dispatchCommand(SHOW_ALL_COMMENTS_COMMAND, undefined)
       },
 
       async getClientId() {
@@ -436,14 +429,10 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
           const editorState = editorRef.current.getEditorState().toJSON()
 
           try {
-            const result = await docsEditorRef.current.exportDataFromEditorState(
-              editorState,
-              toDocsExportFormat(format),
-              {
-                fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
-                reportError: (error, extra) => reportErrorToSentry(error, undefined, extra),
-              },
-            )
+            const result = await exportDataFromEditorState(editorState, toDocsExportFormat(format), {
+              fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
+              reportError: (error, extra) => reportErrorToSentry(error, undefined, extra),
+            })
             return result
           } catch (error) {
             void bridge.getClientInvoker().showGenericAlertModal(c('Error').t`Failed to export document.`)
@@ -512,7 +501,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
             editor.update(
               () => {
                 const { nodes } = $generateJSONFromSelectedNodes(editor, selection)
-                editorState = docsEditorRef.current.getEditorStateFromSerializedNodes(nodes, (error, extra) =>
+                editorState = getEditorStateFromSerializedNodes(nodes, (error, extra) =>
                   reportErrorToSentry(error, undefined, extra),
                 )
               },
@@ -527,14 +516,10 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
             return null
           }
 
-          const result = await docsEditorRef.current.exportDataFromEditorState(
-            editorState,
-            toDocsExportFormat(format),
-            {
-              fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
-              reportError: (error, extra) => reportErrorToSentry(error, undefined, extra),
-            },
-          )
+          const result = await exportDataFromEditorState(editorState, toDocsExportFormat(format), {
+            fetchExternalImageAsBase64: async (url) => bridge.getClientInvoker().fetchExternalImageAsBase64(url),
+            reportError: (error, extra) => reportErrorToSentry(error, undefined, extra),
+          })
           const resultString = uint8ArrayToUtf8String(result)
 
           if (selection) {
@@ -642,7 +627,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
 
       if (mode === EditorUserMode.Preview) {
         scrollPositionBeforePreview.current =
-          docsEditorRef.current.getDocsLayoutScrollContainer(editorRef.current?.getRootElement())?.scrollTop ?? null
+          getDocsLayoutScrollContainer(editorRef.current?.getRootElement())?.scrollTop ?? null
       }
 
       setUserMode(mode)
@@ -686,7 +671,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
           selectionBeforePrint.current = null
         })
         const rootElement = editorRef.current?.getRootElement()
-        const scrollContainer = docsEditorRef.current.getDocsLayoutScrollContainer(rootElement)
+        const scrollContainer = getDocsLayoutScrollContainer(rootElement)
         const scrollPositionBefore = scrollPositionBeforePrint.current
         if (scrollContainer && scrollPositionBefore !== null) {
           const scrollPositionAfter = scrollContainer.scrollTop
@@ -737,7 +722,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   )
 
   const isResolvingSheetsInitializationMode = documentType === 'sheet' && sheetsInitializationMode === 'resolving'
-  const isResolvingDocsEditor = documentType === 'doc' && !docsEditor
+  const isLoadingDocsStylesheet = documentType === 'doc' && !isDocsStylesheetLoaded
   const hostEditorInitializationConfig = editorConfig.current?.editorInitializationConfig
   const sheetsInitialization = useMemo(
     () => toSheetsInitialization(hostEditorInitializationConfig),
@@ -749,14 +734,14 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     !editorConfig.current ||
     !docState ||
     isResolvingSheetsInitializationMode ||
-    isResolvingDocsEditor
+    isLoadingDocsStylesheet
   ) {
     application.logger.debug('Attempting to render editor before it is ready', {
       didSetInitialConfig,
       editorConfig: editorConfig.current,
       docState,
       isResolvingSheetsInitializationMode,
-      isResolvingDocsEditor,
+      isLoadingDocsStylesheet,
     })
 
     return (
@@ -769,12 +754,11 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   const isPreviewMode = systemMode === EditorSystemMode.Edit && userMode === EditorUserMode.Preview
   const showPreviewModeEditor = isPreviewMode && clonedEditorState
 
-  if (documentType === 'doc' && docsEditor) {
-    const { DocsLayoutContainer, PreviewModeEditor, StandaloneDocsEditor } = docsEditor
+  if (documentType === 'doc') {
     return (
       <DocsLayoutContainer isSuggestionMode={isSuggestionMode}>
         {showPreviewModeEditor && (
-          <DocsAdapter clientInvoker={bridge.getClientInvoker()} docsEditor={docsEditor}>
+          <DocsAdapter clientInvoker={bridge.getClientInvoker()}>
             <PreviewModeEditor
               clonedEditorState={clonedEditorState}
               onUserModeChange={onUserModeChange}
@@ -786,7 +770,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
         )}
 
         <div style={{ display: isPreviewMode ? 'none' : 'contents' }}>
-          <DocsAdapter clientInvoker={bridge.getClientInvoker()} docsEditor={docsEditor}>
+          <DocsAdapter clientInvoker={bridge.getClientInvoker()}>
             <StandaloneDocsEditor
               docMap={docMap}
               docState={docState}

@@ -7,7 +7,7 @@ body,
 }
 
 /* The header and `DocsLayoutContainer` sit outside `.docs-editor-root`, so the page sets the tokens they read.
-   Keep the values equal to `Containers/Docs/docs.scss`, or the area around the page drifts from the editor. */
+   Keep the values equal to the editor's own tokens in `@proton-docs/docs-editor/style.css`, or the area around the page drifts from the editor. */
 .app-root {
   --background-norm: white;
   --border-weak: #eae7e4;

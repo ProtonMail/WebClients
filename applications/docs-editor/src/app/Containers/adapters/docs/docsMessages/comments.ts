@@ -1,5 +1,5 @@
 import { c, msgid } from 'ttag'
-import type { DocsMessages } from '../../../Docs/public'
+import type { DocsMessages } from '@proton-docs/docs-editor'
 
 // Parameter names stay as the components had them because ttag builds the existing msgids from them.
 export function createCommentsMessages(): Pick<DocsMessages, 'comments'> {

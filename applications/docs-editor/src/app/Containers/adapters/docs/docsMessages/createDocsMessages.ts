@@ -1,4 +1,4 @@
-import type { DocsMessages } from '../../../Docs/public'
+import type { DocsMessages } from '@proton-docs/docs-editor'
 import { createColorMenuMessages } from './colorMenu'
 import { createCommentsMessages } from './comments'
 import { createDocsLayoutMessages } from './docsLayout'

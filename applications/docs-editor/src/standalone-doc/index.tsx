@@ -11,12 +11,11 @@ import {
   StandaloneDocsEditor,
   type DocsDependencies,
   type EditorProps,
-} from '../app/Containers/Docs/public'
+} from '@proton-docs/docs-editor'
 import { EditorThemeProvider, useEditorTheme } from '../app/Theme/EditorThemeProvider'
 import { createStandaloneDocClient } from './client'
 import { createStandaloneDocSession } from './session'
-// Keep these last so Tailwind utilities override the editor's component styles, as in the hosted app.
-import './standalone-doc.tailwind.scss'
+import '@proton-docs/docs-editor/style.css'
 import './standalone-doc.css'
 
 document.title = 'Standalone Docs'

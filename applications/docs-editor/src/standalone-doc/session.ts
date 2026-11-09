@@ -1,5 +1,5 @@
 import { DocState } from '@proton/docs-shared/Doc/DocState'
-import type { EditorInitializationConfig, SafeDocsUserState } from '../app/Containers/Docs/public'
+import type { EditorInitializationConfig, SafeDocsUserState } from '@proton-docs/docs-editor'
 
 const docStateLogger = {
   // eslint-disable-next-line no-console

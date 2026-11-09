@@ -5,7 +5,7 @@ import type {
   ConvertibleDataType,
   DataTypesThatDocumentCanBeExportedAs,
   EditorInitializationConfig,
-} from '../../../Docs/public'
+} from '@proton-docs/docs-editor'
 
 const supportedDocsImportDataTypes = {
   txt: true,

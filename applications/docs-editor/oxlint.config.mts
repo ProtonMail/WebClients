@@ -1,9 +1,6 @@
 import { createExtraneousDependenciesRule, extraneousDependenciesDevDependencies } from '@proton/oxlint-config/extraneousDependencies';
 import { createOxlintConfig } from '@proton/oxlint-config/createOxlintConfig';
 import { allGlobs } from '@proton/oxlint-config/globs';
-import { createRestrictedImportRule } from '@proton/oxlint-config/restrictedImports';
-
-const hostImports = ['@proton/**', 'ttag'];
 
 const driveStorePattern = {
     group: ['@proton/drive-store*'],
@@ -12,14 +9,7 @@ const driveStorePattern = {
 
 export default createOxlintConfig({
     restrictedImports: {
-        patterns: [
-            driveStorePattern,
-            {
-                group: ['**/Docs/**', '!**/Docs/public'],
-                caseSensitive: true,
-                message: 'Import Containers/Docs only through its public.ts, or its testing.ts from tests.',
-            },
-        ],
+        patterns: [driveStorePattern],
     },
     overrides: [
         {
@@ -36,21 +26,6 @@ export default createOxlintConfig({
             },
         },
         {
-            files: ['**/*.{test,spec}.{ts,tsx}'],
-            rules: {
-                'proton/restricted-imports': createRestrictedImportRule({
-                    patterns: [
-                        driveStorePattern,
-                        {
-                            group: ['**/Docs/**', '!**/Docs/public', '!**/Docs/testing'],
-                            caseSensitive: true,
-                            message: 'Import Containers/Docs only through its public.ts or testing.ts.',
-                        },
-                    ],
-                }),
-            },
-        },
-        {
             files: ['**/*.test.ts'],
             rules: {
                 'max-classes-per-file': 'off',
@@ -62,25 +37,6 @@ export default createOxlintConfig({
             rules: {
                 'proton/no-extraneous-dependencies': createExtraneousDependenciesRule({
                     devDependencies: [...extraneousDependenciesDevDependencies, '**/TestUtils/**'],
-                }),
-            },
-        },
-        {
-            files: ['src/app/Containers/Docs/**/*.{ts,tsx}'],
-            rules: {
-                'proton/restricted-imports': createRestrictedImportRule({
-                    patterns: [
-                        {
-                            group: ['@proton/icons', '@proton/icons/**'],
-                            message:
-                                'Use Docs/Components/Icon with data from Docs/Components/icons so the Docs editor does not depend on the Proton icon registry.',
-                        },
-                        {
-                            group: hostImports,
-                            message:
-                                'Containers/Docs is host-independent: get host values from useDocsDependencies() and strings from useDocsMessages().',
-                        },
-                    ],
                 }),
             },
         },

@@ -7,7 +7,7 @@ import { CommentsEvent } from '@proton/docs-shared/CommentsEvent'
 import { DocAwarenessEvent } from '@proton/docs-shared/DocAwarenessEvent'
 import { LiveCommentsEvent } from '@proton/docs-shared/LiveCommentsEvent'
 import { mergeRegister } from '@lexical/utils'
-import type { DocsComments } from '../../Docs/public'
+import type { DocsComments } from '@proton-docs/docs-editor'
 
 /** Host bridge and event enums terminate at the adapter boundary. */
 export function createDocsCommentsService(

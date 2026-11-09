@@ -1,9 +1,4 @@
-import {
-  CommentThreadStates,
-  CommentThreadTypes,
-  CommentTypes,
-  type DocsCommentEvent,
-} from '../app/Containers/Docs/public'
+import { CommentThreadStates, CommentThreadTypes, CommentTypes, type DocsCommentEvent } from '@proton-docs/docs-editor'
 import { createStandaloneDocClient } from './client'
 
 function setup() {
