@@ -23,6 +23,8 @@ type EditorMethodsCalledByDoc2 = Pick<
   | 'loadUserSettings'
   | 'setDarkMode'
   | 'syncProperty'
+  | 'getClientId'
+  | 'broadcastPresenceState'
 >
 
 // Copied from docs-core `Bridge/EditorInvoker.ts`, which doc2 must not import, with only the methods doc2 calls.
@@ -61,6 +63,14 @@ export class EditorInvoker implements EditorMethodsCalledByDoc2 {
     value: SyncedEditorStateValues[keyof SyncedEditorStateValues],
   ): Promise<void> {
     return this.invokeEditorMethod('syncProperty', [property, value])
+  }
+
+  async getClientId(): Promise<number> {
+    return this.invokeEditorMethod('getClientId', [])
+  }
+
+  async broadcastPresenceState(): Promise<void> {
+    return this.invokeEditorMethod('broadcastPresenceState', [])
   }
 
   async initializeEditor(

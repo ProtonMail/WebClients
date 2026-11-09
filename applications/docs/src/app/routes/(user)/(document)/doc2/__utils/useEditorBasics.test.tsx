@@ -12,6 +12,8 @@ let mockIsDarkThemeEnabled = true
 jest.mock('~/utils/flags', () => ({ useIsDarkThemeEnabled: () => mockIsDarkThemeEnabled }))
 const USER_SETTINGS = { Locale: 'fr_FR' } as UserSettings
 jest.mock('@proton/account/userSettings/hooks', () => ({ useGetUserSettings: () => async () => USER_SETTINGS }))
+let mockUser = { DisplayName: 'Alice A.', Name: 'alice', Email: 'alice@example.com' }
+jest.mock('@proton/account/user/hooks', () => ({ useUser: () => [mockUser] }))
 
 function createInvoker() {
   return {
@@ -60,6 +62,19 @@ describe('useEditorBasics', () => {
     renderBasics(invoker)
 
     expect(invoker.syncProperty).toHaveBeenCalledWith('suggestionsEnabled', false)
+  })
+
+  test.each([
+    [{ DisplayName: 'Alice A.', Name: 'alice', Email: 'alice@example.com' }, 'Alice A.'],
+    [{ DisplayName: '', Name: 'alice', Email: 'alice@example.com' }, 'alice'],
+    [{ DisplayName: '', Name: '', Email: 'alice@example.com' }, 'alice@example.com'],
+  ])("gives the editor the user's name for presence from %j: %s", (user, userName) => {
+    mockUser = user
+    const invoker = createInvoker()
+
+    renderBasics(invoker)
+
+    expect(invoker.syncProperty).toHaveBeenCalledWith('userName', userName)
   })
 
   test.each<[boolean, boolean, boolean]>([

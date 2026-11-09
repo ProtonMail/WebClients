@@ -2,8 +2,11 @@ import { act, render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
 import { ConfigContext } from '@proton/app-context/configContext'
+import { BroadcastSource } from '@proton/docs-shared/Bridge/BroadcastSource'
+import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayload'
 import type { NodeEntity } from '@proton/drive/sdk'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config'
+import { decodeAwarenessUpdate, encodeAwarenessUpdate } from '@proton-docs/realtime-sdk'
 import type { SessionStatus } from '@proton-docs/realtime-sdk'
 import type { ReactNode } from 'react'
 
@@ -29,6 +32,9 @@ jest.mock('~/drive-sdk/event-subscriber', () => ({
   getEventSubscriber: () => ({ initialize: async () => {}, reset: () => {} }),
 }))
 jest.mock('@proton/account/userSettings/hooks', () => ({ useGetUserSettings: () => async () => ({ Locale: 'fr_FR' }) }))
+jest.mock('@proton/account/user/hooks', () => ({
+  useUser: () => [{ DisplayName: 'Alice', Name: 'alice', Email: 'alice@example.com' }],
+}))
 // The app shell and the header need the whole app around them; the header has its own tests
 jest.mock('./DocumentShell', () => ({
   DocumentShell: ({ header, children }: { header: ReactNode; children: ReactNode }) => (
@@ -50,9 +56,17 @@ jest.mock('./DocumentHeaderV2', () => ({
   }) => <div>{`Header for ${node.uid} as ${role}, ${editorInvoker ? 'with' : 'without'} the editor`}</div>,
 }))
 
+jest.mock('./OpenActionError', () => ({
+  OpenActionError: ({ reason }: { reason: string }) => <div>{`Open failed: ${reason}`}</div>,
+}))
+
 const mockEditorCalls: string[] = []
 const mockDestroyBridge = jest.fn()
 const mockLoadUserSettings = jest.fn(async () => {})
+const EDITOR_CLIENT_ID = 7
+const mockReceiveMessage = jest.fn(async ({ content }: RtsMessagePayload) => {
+  mockEditorCalls.push(`receiveMessage:${content[0]}`)
+})
 let mockClientHandler: ClientHandler
 jest.mock('../__utils/ClientEditorBridge', () => ({
   ClientEditorBridge: jest.fn().mockImplementation((_frame, clientHandler: ClientHandler) => {
@@ -62,17 +76,21 @@ jest.mock('../__utils/ClientEditorBridge', () => ({
         initializeEditor: jest.fn(async () => {
           mockEditorCalls.push('initializeEditor')
         }),
-        receiveMessage: jest.fn(async ({ content }: { content: Uint8Array<ArrayBuffer> }) => {
-          mockEditorCalls.push(`receiveMessage:${content[0]}`)
-        }),
+        receiveMessage: mockReceiveMessage,
         showEditor: jest.fn(async () => {
           mockEditorCalls.push('showEditor')
         }),
         changeLockedState: jest.fn(async () => {}),
         setDarkMode: jest.fn(async () => {}),
         loadUserSettings: mockLoadUserSettings,
-        syncProperty: jest.fn(async () => {}),
+        syncProperty: jest.fn(async (property: string) => {
+          mockEditorCalls.push(`syncProperty:${property}`)
+        }),
         setTableOfContentsVisible: jest.fn(async () => {}),
+        getClientId: jest.fn(async () => EDITOR_CLIENT_ID),
+        broadcastPresenceState: jest.fn(async () => {
+          mockEditorCalls.push('broadcastPresenceState')
+        }),
       },
       destroy: mockDestroyBridge,
     }
@@ -146,18 +164,30 @@ describe('DocumentViewerV2', () => {
     })
     await act(async () => {})
 
-    expect(mockEditorCalls).toEqual([`receiveMessage:${BASE_UPDATE}`, `receiveMessage:${REPLAYED_UPDATE}`])
+    const beforeCatchUp = [
+      `receiveMessage:${BASE_UPDATE}`,
+      'syncProperty:suggestionsEnabled',
+      'syncProperty:userName',
+      `receiveMessage:${REPLAYED_UPDATE}`,
+    ]
+    expect(mockEditorCalls).toEqual(beforeCatchUp)
 
     act(() => fake.setSnapshot({ caughtUp: true }))
 
     await waitFor(() =>
-      expect(mockEditorCalls).toEqual([
-        `receiveMessage:${BASE_UPDATE}`,
-        `receiveMessage:${REPLAYED_UPDATE}`,
-        'initializeEditor',
-        'showEditor',
-      ]),
+      expect(mockEditorCalls).toEqual([...beforeCatchUp, 'initializeEditor', 'showEditor', 'broadcastPresenceState']),
     )
+  })
+
+  test('gives the editor the user name before initializing it when the session has already caught up', async () => {
+    const fake = createSession()
+    fake.setSnapshot({ caughtUp: true })
+    renderViewer(fake)
+
+    await waitFor(() => expect(mockEditorCalls).toContain('broadcastPresenceState'))
+
+    expect(mockEditorCalls.indexOf('syncProperty:userName')).toBeGreaterThan(-1)
+    expect(mockEditorCalls.indexOf('syncProperty:userName')).toBeLessThan(mockEditorCalls.indexOf('initializeEditor'))
   })
 
   test.each<[SessionStatus, string]>([
@@ -223,6 +253,66 @@ describe('DocumentViewerV2', () => {
     renderViewer(createSession())
 
     await waitFor(() => expect(mockLoadUserSettings).toHaveBeenCalledWith({ Locale: 'fr_FR' }))
+  })
+
+  test("bridges presence: the editor's own entry to the session, and the other participants to the editor", async () => {
+    const fake = createSession()
+    renderViewer(fake)
+    await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
+    await act(async () => {})
+    const alice = { name: 'Alice', color: '#f00', anchorPos: null, focusPos: null }
+    const bob = { name: 'Bob', color: '#00f', anchorPos: null, focusPos: null }
+
+    await act(() =>
+      mockClientHandler.editorRequestsPropagationOfUpdate(
+        {
+          type: { wrapper: 'events', eventType: 2 },
+          content: encodeAwarenessUpdate([
+            { clientId: EDITOR_CLIENT_ID, clock: 1, state: alice },
+            { clientId: 3, clock: 1, state: bob },
+          ]),
+        },
+        BroadcastSource.AwarenessUpdateHandler,
+      ),
+    )
+    act(() =>
+      fake.setSnapshot({
+        participants: [
+          { id: 100, isSelf: true, state: alice, lastSeenAt: 1 },
+          { id: 3, isSelf: false, state: bob, lastSeenAt: 1 },
+        ],
+      }),
+    )
+
+    expect(fake.mocks.setPresence.mock.calls).toEqual([[alice]])
+    expect(fake.mocks.sendUpdate).not.toHaveBeenCalled()
+    const [[presence]] = mockReceiveMessage.mock.calls.filter(([{ type }]) => type.wrapper === 'events')
+    expect(presence.type).toEqual({ wrapper: 'events', eventType: 2 })
+    expect(decodeAwarenessUpdate(presence.content)).toEqual([{ clientId: 3, clock: 1, state: bob }])
+  })
+
+  test("stops bridging presence and clears the user's presence once the editor fails", async () => {
+    const fake = createSession()
+    renderViewer(fake)
+    await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
+    await act(async () => {})
+    const alice = { name: 'Alice', color: '#f00', anchorPos: null, focusPos: null }
+    await act(() =>
+      mockClientHandler.editorRequestsPropagationOfUpdate(
+        {
+          type: { wrapper: 'events', eventType: 2 },
+          content: encodeAwarenessUpdate([{ clientId: EDITOR_CLIENT_ID, clock: 1, state: alice }]),
+        },
+        BroadcastSource.AwarenessUpdateHandler,
+      ),
+    )
+
+    await act(() => mockClientHandler.reportUserInterfaceError(new Error('The editor crashed')))
+    act(() => fake.setSnapshot({ participants: [{ id: 3, isSelf: false, state: { name: 'Bob' }, lastSeenAt: 1 }] }))
+
+    expect(screen.getByText('Open failed: editorFailed')).toBeInTheDocument()
+    expect(fake.mocks.setPresence.mock.calls).toEqual([[alice], [null]])
+    expect(mockReceiveMessage.mock.calls.filter(([{ type }]) => type.wrapper === 'events')).toEqual([])
   })
 
   test("shows the editor's alerts in a modal", async () => {

@@ -21,6 +21,7 @@ import { useEditorBasics, useIsEditorDarkMode } from '../__utils/useEditorBasics
 import { useLiveDocumentNode } from '../__utils/useLiveDocumentNode'
 import { useLiveEditing } from '../__utils/useLiveEditing'
 import { usePauseWhileAway } from '../__utils/usePauseWhileAway'
+import { usePresenceBridge } from '../__utils/usePresenceBridge'
 import { useRealtimeClient } from '../__utils/useRealtimeClient'
 import { DocumentHeaderV2 } from './DocumentHeaderV2'
 import { DocumentLoader } from './DocumentLoader'
@@ -65,7 +66,9 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
 
   const snapshot = useLiveEditing({ session, editorInvoker, role, onEditorError: failEditor })
   usePauseWhileAway(session)
+  // Before the effect that initializes the editor, so the user name reaches the editor first
   useEditorBasics(editorInvoker, isDarkMode)
+  const receivePresenceFromEditor = usePresenceBridge(session, editorStatus === 'failed' ? undefined : editorInvoker)
 
   useEffect(() => {
     if (editorFrame) {
@@ -105,6 +108,7 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
         onWordCount: setWordCountInfo,
         showModal,
         onFileMenuAction,
+        onPresenceUpdate: receivePresenceFromEditor,
         logger,
       }),
       logger,
@@ -121,7 +125,17 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
       bridge.destroy()
       setEditorInvoker(undefined)
     }
-  }, [editorFrame, failEditor, isFlagEnabled, logger, onFileMenuAction, session, setWordCountInfo, showModal])
+  }, [
+    editorFrame,
+    failEditor,
+    isFlagEnabled,
+    logger,
+    onFileMenuAction,
+    receivePresenceFromEditor,
+    session,
+    setWordCountInfo,
+    showModal,
+  ])
 
   // As docs-core's EditorController, wait for RTS to replay the edits it has not committed yet: before that the
   // editor may hold nothing. While reconnecting or stopped before then, the loader stays, under SessionStatus.
@@ -133,14 +147,31 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
 
     let cancelled = false
     showDocument(editorInvoker, session, role, APP_VERSION).then(
-      () => !cancelled && setEditorStatus('shown'),
+      () => {
+        if (cancelled) {
+          return
+        }
+        setEditorStatus('shown')
+        // So peers see the user at once rather than at the editor's next change; not worth failing the editor for
+        editorInvoker
+          .broadcastPresenceState()
+          .catch((error) => logger.warn('Failed to have the editor broadcast its presence', error))
+      },
       (error) => !cancelled && failEditor(error),
     )
 
     return () => {
       cancelled = true
     }
-  }, [APP_VERSION, caughtUp, editorInvoker, failEditor, role, session])
+  }, [APP_VERSION, caughtUp, editorInvoker, failEditor, logger, role, session])
+
+  // A failed editor is gone, so peers must stop seeing its last cursor, which the session would keep broadcasting
+  const editorFailed = editorStatus === 'failed'
+  useEffect(() => {
+    if (editorFailed) {
+      session?.setPresence(null)
+    }
+  }, [editorFailed, session])
 
   if (sessionState.status === 'failed') {
     const canRetry = sessionState.reason === 'bootstrapFailed' || sessionState.reason === 'unreadableUpdate'
