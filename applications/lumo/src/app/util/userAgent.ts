@@ -147,6 +147,17 @@ export const canUseNativeRightPanelLayout = (): boolean =>
     getNativeAppInfo()?.platform === 'ios' && canUseNativeSidebarLayout();
 
 /**
+ * Skills replaces the legacy Custom Lumos picker from these mobile releases onward.
+ * Keep both bridge paths until older clients are no longer supported.
+ */
+export const canUseNativeSkills = (): boolean => {
+    const appInfo = getNativeAppInfo();
+    if (!appInfo) return false;
+    const targetVersion = appInfo.platform === 'android' ? '2.2.0' : appInfo.platform === 'ios' ? '2.2.0' : null;
+    return targetVersion !== null && !isNativeVersionOlderThan(appInfo.version, targetVersion);
+};
+
+/**
  * Extracts the native mobile app version from the User-Agent string
  * Expected format: ProtonLumo/VERSION (Platform details)
  *

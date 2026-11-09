@@ -9,16 +9,19 @@ import {
     setNativeCustomLumos,
     setNativeSelectedCustomLumo,
 } from '../../../remote/nativeComposerBridgeHelpers';
+import { canUseNativeSkills } from '../../../util/userAgent';
 import { toCustomLumo, toCustomLumos } from './toCustomLumos';
 
 /**
  * Bridges the "Custom Lumos" agent picker to native: pushes the available list and the
  * active selection, and forwards native select/clear taps into the same
- * `activateAgent`/`clearAgent` the web picker uses. `enabled` should reflect
+ * `activateAgent`/`clearAgent` the web picker uses. `contextEnabled` should reflect
  * `canUseAgents` (same guard hiding `ComposerAgentBar`/`AgentPickerModal` on web) so
- * guests/projects never see the list.
+ * guests/projects never see the list. Skills-capable mobile versions receive no legacy
+ * catalog, selection or event handlers; older clients retain the existing flow.
  */
-export const useNativeComposerCustomLumoApi = (conversationId: string | undefined, enabled: boolean) => {
+export const useNativeComposerCustomLumoApi = (conversationId: string | undefined, contextEnabled: boolean) => {
+    const enabled = contextEnabled && !canUseNativeSkills();
     const { personalAgents, protonAgents } = useCustomAgents();
     const { activeAgent, activeAgentId, activateAgent, clearAgent } = useConversationAgent(conversationId);
 

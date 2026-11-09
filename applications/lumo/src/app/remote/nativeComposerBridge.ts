@@ -23,6 +23,12 @@ import {
     getSelectedModelTier,
 } from '../providers/modelTierConstants';
 import { IMAGE_ASPECT_RATIOS, type ImageAspectRatio, LUMO_API_ERRORS } from '../types';
+import { canUseNativeSkills } from '../util/userAgent';
+import {
+    type NativeSkillInvocationHandler,
+    type NativeSkillsState,
+    unavailableNativeSkills,
+} from './nativeComposerSkills';
 
 /**
  * Legacy model tier vocabulary kept for already-released native clients that
@@ -252,6 +258,7 @@ interface State {
     attachedFiles: LumoFile[];
     featureFlags: FeatureFlags;
     editMode: EditMode;
+    skills: NativeSkillsState;
     customLumos: CustomLumo[];
     /**
      * The full active Custom Lumo, or `null`. Sent as the full object (rather than
@@ -300,7 +307,7 @@ export const limitResourceToErrorType = (resource: LimitReachedResource): LUMO_A
  */
 const sendResultToNative = (callId: string, payload: any) => {
     const message = { callId, ...payload };
-    console.log(`Native Composer Bridge: Sending message for callId ${callId}`, message);
+    console.log('Native Composer Bridge: Sending result');
     try {
         if ((window as any).webkit?.messageHandlers?.nativeComposerHandler) {
             // iOS bridge
@@ -309,7 +316,7 @@ const sendResultToNative = (callId: string, payload: any) => {
             // Android bridge
             (window as any).Android.postMessage(JSON.stringify(message));
         } else {
-            console.warn(`Native Composer Bridge: Native bridge not detected for callId ${callId}. Payload:`, payload);
+            console.warn('Native Composer Bridge: Native bridge not detected for result');
         }
     } catch (e) {
         console.error(`Native Composer Bridge: Error sending message to native for callId ${callId}:`, e);
@@ -362,7 +369,7 @@ const injectImageGenerationHelperPrompt = (prompt: string) => {
  * Sends state updates to the native side
  */
 const sendStateToNative = (state: State) => {
-    console.log('Native Composer Bridge: Sending state update to native', state);
+    console.log('Native Composer Bridge: Sending state update to native');
     try {
         if ((window as any).webkit?.messageHandlers?.nativeComposerStateHandler) {
             // iOS bridge - state updates
@@ -371,7 +378,7 @@ const sendStateToNative = (state: State) => {
             // Android bridge - state updates
             (window as any).Android.onStateChange(JSON.stringify(state));
         } else {
-            console.log('Native Composer Bridge: Native bridge not detected for state update. State:', state);
+            console.log('Native Composer Bridge: Native bridge not detected for state update');
         }
     } catch (e) {
         console.log('Native Composer Bridge: Error sending state to native:', e);
@@ -407,12 +414,36 @@ class NativeComposerApi {
             isApertusModelEnabled: false,
         },
         editMode: { active: false },
+        skills: unavailableNativeSkills(),
         customLumos: [],
         selectedCustomLumo: null,
     };
 
+    private skillsHandler?: NativeSkillInvocationHandler;
+
+    public setSkills(skills: NativeSkillsState): void {
+        this.updateState({ skills: canUseNativeSkills() ? skills : unavailableNativeSkills() });
+    }
+
+    public registerSkillsHandler(handler: NativeSkillInvocationHandler): () => void {
+        this.skillsHandler = handler;
+        return () => {
+            if (this.skillsHandler === handler) {
+                this.skillsHandler = undefined;
+                this.setSkills(unavailableNativeSkills());
+            }
+        };
+    }
+
+    public invokeSkill(request: unknown): { text: string } {
+        if (!canUseNativeSkills() || !this.skillsHandler || this.state.editMode.active) {
+            throw new Error('skills_unavailable');
+        }
+        return this.skillsHandler(request);
+    }
+
     constructor() {
-        console.log('NativeComposerApi instance created with default state:', this.state);
+        console.log('NativeComposerApi instance created');
     }
 
     /**
@@ -579,15 +610,16 @@ class NativeComposerApi {
 
     public setCustomLumos(list: CustomLumo[]): void {
         console.log(`NativeComposerApi: Setting custom lumos list (${list.length} items)`);
-        this.updateState({ customLumos: list });
+        this.updateState({ customLumos: canUseNativeSkills() ? [] : list });
     }
 
     public setSelectedCustomLumo(lumo: CustomLumo | null): void {
-        console.log(`NativeComposerApi: Setting selected custom lumo to`, lumo);
-        this.updateState({ selectedCustomLumo: lumo });
+        console.log('NativeComposerApi: Setting selected custom lumo');
+        this.updateState({ selectedCustomLumo: canUseNativeSkills() ? null : lumo });
     }
 
     public async selectCustomLumo(id: string): Promise<any> {
+        if (canUseNativeSkills()) throw new Error('custom_lumos_unavailable');
         console.log('NativeComposerApi: Select custom lumo', { id });
         const event = new CustomEvent('lumo:selectCustomLumo', {
             detail: { id },
@@ -599,6 +631,7 @@ class NativeComposerApi {
     }
 
     public async clearCustomLumo(): Promise<any> {
+        if (canUseNativeSkills()) throw new Error('custom_lumos_unavailable');
         console.log('NativeComposerApi: Clear custom lumo');
         const event = new CustomEvent('lumo:clearCustomLumo', {
             detail: null,
@@ -721,7 +754,7 @@ class NativeComposerApi {
      * Files should be picked up by the Web API since they're still uploaded through it
      */
     public async sendPrompt(text: string): Promise<any> {
-        console.log('NativeComposerApi: Sending prompt to Lumo', { text, files: this.state.attachedFiles });
+        console.log('NativeComposerApi: Sending prompt to Lumo');
         // Dispatch a custom event that the web app can listen to
         const event = new CustomEvent('lumo:sendPrompt', {
             detail: {
@@ -799,11 +832,13 @@ class NativeComposerApi {
         console.log('NativeComposerApi: Setting edit mode with prefill text');
         injectEditModePrompt(prefillText);
         this.updateState({ editMode: { active: true } });
+        window.dispatchEvent(new CustomEvent('lumo:nativeEditChanged'));
     }
 
     public clearEditMode(): void {
         console.log('NativeComposerApi: Clearing edit mode');
         this.updateState({ editMode: { active: false } });
+        window.dispatchEvent(new CustomEvent('lumo:nativeEditChanged'));
         window.dispatchEvent(new CustomEvent('lumo:nativeEditCleared'));
     }
 
@@ -910,6 +945,7 @@ try {
         // exposed here (mirrors setNativeModelTier/setNativeResponseMode above) — they
         // must only ever be pushed by web, never written by native, or the write would
         // be silently clobbered by the next real state push.
+        invokeSkill: createNativeWrapper('invokeSkill'),
         selectCustomLumo: createNativeWrapper('selectCustomLumo'),
         clearCustomLumo: createNativeWrapper('clearCustomLumo'),
 

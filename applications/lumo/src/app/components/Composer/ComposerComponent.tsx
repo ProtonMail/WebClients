@@ -55,6 +55,7 @@ import { useNativeComposerCustomLumoApi } from './hooks/useNativeComposerCustomL
 import { useNativeComposerFeatureFlagsApi } from './hooks/useNativeComposerFeatureFlagsApi';
 import { useNativeComposerFileApi } from './hooks/useNativeComposerFileApi';
 import { useNativeComposerLumoStateApi } from './hooks/useNativeComposerLumoStateApi';
+import { useNativeComposerSkillsApi } from './hooks/useNativeComposerSkillsApi';
 import { useNativeComposerHostVisibilityApi } from './hooks/useNativeComposerVisibilityApi';
 import { shouldShowLegalDisclaimer } from './legalDisclaimer';
 
@@ -311,6 +312,12 @@ const ComposerComponentInner = ({
     });
 
     const { isEmpty, clear, textareaRef, setValue, handleSubmit } = composerInput;
+    useNativeComposerSkillsApi({
+        accountId: driveContext?.userId,
+        context: JSON.stringify([composerMode, conversationId, spaceId]),
+        enabled: canUseAgents && !isConversationClosed,
+        setDraft: setValue,
+    });
 
     // The dictation transcript is mutable (segments are replace-in-place), so each update carries
     // the full current transcript rather than an incremental delta. Combine it with whatever the

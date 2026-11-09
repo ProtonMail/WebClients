@@ -20,12 +20,15 @@ const mockedOnNativeSelectCustomLumo = onNativeSelectCustomLumo as jest.Mock;
 const mockedOnNativeClearCustomLumo = onNativeClearCustomLumo as jest.Mock;
 
 describe('useNativeComposerCustomLumoApi', () => {
+    const originalUA = navigator.userAgent;
+    afterEach(() => Object.defineProperty(navigator, 'userAgent', { configurable: true, value: originalUA }));
     const activateAgent = jest.fn();
     const clearAgent = jest.fn();
     const personalAgent = { id: 'p1', name: 'Mine', source: 'personal' as const, createdAt: 0, updatedAt: 0 };
     const protonAgent = { id: 'b1', name: 'Built-in', source: 'published' as const, createdAt: 0, updatedAt: 0 };
 
     beforeEach(() => {
+        Object.defineProperty(navigator, 'userAgent', { configurable: true, value: 'ProtonLumo/2.1.5 (Android 16)' });
         jest.clearAllMocks();
         mockedUseCustomAgents.mockReturnValue({ personalAgents: [personalAgent], protonAgents: [protonAgent] });
         mockedUseConversationAgent.mockReturnValue({
@@ -113,6 +116,23 @@ describe('useNativeComposerCustomLumoApi', () => {
         expect(clearAgent).toHaveBeenCalled();
     });
 
+    it.each(['ProtonLumo/2.2.0 (Android 16)', 'ProtonLumo/2.2.0 (iOS 26.0)'])(
+        'removes legacy catalog, badge and listeners on %s',
+        (ua) => {
+            Object.defineProperty(navigator, 'userAgent', { configurable: true, value: ua });
+            mockedUseConversationAgent.mockReturnValue({
+                activeAgent: personalAgent,
+                activeAgentId: 'p1',
+                activateAgent,
+                clearAgent,
+            });
+            renderHook(() => useNativeComposerCustomLumoApi('conv-1', true));
+            expect(setNativeCustomLumos).toHaveBeenLastCalledWith([]);
+            expect(setNativeSelectedCustomLumo).toHaveBeenLastCalledWith(null);
+            expect(onNativeSelectCustomLumo).not.toHaveBeenCalled();
+            expect(onNativeClearCustomLumo).not.toHaveBeenCalled();
+        }
+    );
     it('does not subscribe to native events when disabled', () => {
         renderHook(() => useNativeComposerCustomLumoApi('conv-1', false));
 
