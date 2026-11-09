@@ -38,7 +38,14 @@ export const parseUrl = (url?: string, customPrivateDomains?: MaybeNull<Set<stri
         };
     }
 
-    let { domain, subdomain, domainWithoutSuffix, hostname, isPrivate, publicSuffix } = parse(url ?? '', {
+    /* the WHATWG URL parse (through sanitizeURL) is the single authority on the
+     * origin: its hostname is normalized (backslash-as-slash for special schemes,
+     * punycode, userinfo stripped) and consistent with `cleanUrl` & `protocol`.
+     * tldts is only consulted on that hostname for public-suffix semantics
+     * (domain, subdomain, displayName, isPrivate) — never on the raw input, so
+     * both layers cannot diverge (see SECBTY-1891) */
+    const hostname = check.hostname ?? '';
+    let { domain, subdomain, domainWithoutSuffix, isPrivate, publicSuffix } = parse(hostname, {
         allowIcannDomains: true,
         allowPrivateDomains: true,
         detectIp: true,
