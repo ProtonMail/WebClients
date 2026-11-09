@@ -83,6 +83,7 @@ export async function initializeSentry() {
         getSessions: () => [appSession(), updateSession()],
         maxBreadcrumbs: 100,
         attachStacktrace: true,
+        includeLocalVariables: false,
         // Fraction of events sent to sentry (0.0 - 1.0). Set to 1.0 since the desktop app uses explicit
         // opt-in reporting, so volume is already controlled at call sites. If we hit Sentry rate limits we should consider toggling this.
         sampleRate: 1.0,
@@ -100,6 +101,9 @@ export async function initializeSentry() {
                 // Disable injecting Sentry preload into renderer sessions. Our renderers load Proton
                 // web apps that already have their own Sentry setup, and point to the Desktop app DSN.
                 "PreloadInjection",
+                // LocalVariablesAsync and ANR captureStackTrace open an unauthenticated Node inspector port; keep both off.
+                "LocalVariables",
+                "LocalVariablesAsync",
             ]);
 
             return [
