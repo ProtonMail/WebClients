@@ -539,6 +539,12 @@
       ],
       "with \"${ replaceWith }\"": [
         "tekstillä \"${ replaceWith }\""
+      ],
+      "Emoji": [
+        "Emoji"
+      ],
+      "Table": [
+        "Taulukko"
       ]
     },
     "Placeholder": {
@@ -2161,6 +2167,63 @@
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "Koodilohkojen sisälle ei ole mahdollista tehdä ehdotuksia"
+      ]
+    },
+    "Emoji category": {
+      "Flags": [
+        "Liput"
+      ]
+    },
+    "sheets_2025:Spreadsheet cellFormatOptions": {
+      "Left": [
+        "Vasen"
+      ],
+      "Number": [
+        "Numero"
+      ],
+      "Right": [
+        "Oikea"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartAggregates": {
+      "Sum": [
+        "Summa"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartTypes": {
+      "Column": [
+        "Sarake"
+      ]
+    },
+    "sheets_2025:Spreadsheet conditions": {
+      "August": [
+        "Elokuu"
+      ],
+      "Today": [
+        "Tänään"
+      ]
+    },
+    "sheets_2025:Spreadsheet customCurrencyFormatDialog": {
+      "Format": [
+        "Muoto"
+      ]
+    },
+    "sheets_2025:Spreadsheet formulaBar": {
+      "Edit": [
+        "Muokkaa"
+      ],
+      "Remove": [
+        "Poista"
+      ]
+    },
+    "sheets_2025:Spreadsheet gridFooter": {
+      "Add": [
+        "Lisää"
+      ]
+    },
+    "sheets_2025:Spreadsheet viewMenu": {
+      "2 rows": [
+        "2 riviä"
       ]
     }
   }
