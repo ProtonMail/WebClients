@@ -23,6 +23,7 @@ jest.mock('~/utils/flags', () => ({
   useIsDarkThemeEnabled: () => false,
 }))
 jest.mock('@proton/account/userSettings/hooks', () => ({ useGetUserSettings: () => async () => ({}) }))
+jest.mock('@proton/account/user/hooks', () => ({ useUser: () => [{ DisplayName: '', Name: 'member', Email: '' }] }))
 // The app shell and its headers need the whole app around them
 jest.mock('./__components/DocumentShell', () => ({
   DocumentShell: ({ header, children }: { header: ReactNode; children: ReactNode }) => (

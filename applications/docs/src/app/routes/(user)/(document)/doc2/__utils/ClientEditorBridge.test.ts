@@ -15,6 +15,7 @@ const sendUpdate = jest.fn()
 const onWordCount = jest.fn()
 const showModal = jest.fn()
 const onFileMenuAction = jest.fn()
+const onPresenceUpdate = jest.fn()
 
 describe('ClientEditorBridge', () => {
   let frame: HTMLIFrameElement
@@ -36,6 +37,7 @@ describe('ClientEditorBridge', () => {
         onWordCount,
         showModal,
         onFileMenuAction,
+        onPresenceUpdate,
         logger,
       }),
       logger,
@@ -176,16 +178,36 @@ describe('ClientEditorBridge', () => {
     )
   })
 
-  test('answers a presence event the editor asks to propagate without sending it', async () => {
+  test("passes the editor's presence broadcast on as presence, not as an update, and answers it", async () => {
+    const content = new Uint8Array([1])
     receiveFromEditor({
       type: EditorBridgeMessageType.EditorToClientInvokation,
       functionName: 'editorRequestsPropagationOfUpdate',
-      args: [{ type: { wrapper: 'events', eventType: 2 }, content: new Uint8Array([1]) }, 'DocState'],
+      args: [{ type: { wrapper: 'events', eventType: 2 }, content }, 'DocState'],
       messageId: 'message-1',
     })
 
     await waitForReply()
 
+    expect(onPresenceUpdate).toHaveBeenCalledWith(content)
+    expect(sendUpdate).not.toHaveBeenCalled()
+    expect(postToEditor).toHaveBeenCalledWith(
+      { type: EditorBridgeMessageType.ClientToEditorReply, messageId: 'message-1', returnValue: undefined },
+      expect.any(String),
+    )
+  })
+
+  test("drops the editor's request for other clients' presence, and answers it", async () => {
+    receiveFromEditor({
+      type: EditorBridgeMessageType.EditorToClientInvokation,
+      functionName: 'editorRequestsPropagationOfUpdate',
+      args: [{ type: { wrapper: 'events', eventType: 10 }, content: new Uint8Array([1]) }, 'DocState'],
+      messageId: 'message-1',
+    })
+
+    await waitForReply()
+
+    expect(onPresenceUpdate).not.toHaveBeenCalled()
     expect(sendUpdate).not.toHaveBeenCalled()
     expect(postToEditor).toHaveBeenCalledWith(
       { type: EditorBridgeMessageType.ClientToEditorReply, messageId: 'message-1', returnValue: undefined },
@@ -233,8 +255,9 @@ describe('ClientEditorBridge', () => {
 
   test.each<{
     functionName: string
-    call: (invoker: ClientEditorBridge['editorInvoker']) => Promise<void>
+    call: (invoker: ClientEditorBridge['editorInvoker']) => Promise<unknown>
     args: unknown[]
+    returnValue?: unknown
   }>([
     {
       functionName: 'setTableOfContentsVisible',
@@ -252,18 +275,23 @@ describe('ClientEditorBridge', () => {
       call: (invoker) => invoker.syncProperty('suggestionsEnabled', false),
       args: ['suggestionsEnabled', false],
     },
-  ])("calls the editor's $functionName, and resolves with its reply", async ({ functionName, call, args }) => {
-    const called = call(bridge.editorInvoker)
+    { functionName: 'getClientId', call: (invoker) => invoker.getClientId(), args: [], returnValue: 42 },
+    { functionName: 'broadcastPresenceState', call: (invoker) => invoker.broadcastPresenceState(), args: [] },
+  ])(
+    "calls the editor's $functionName, and resolves with its reply",
+    async ({ functionName, call, args, returnValue }) => {
+      const called = call(bridge.editorInvoker)
 
-    expect(postToEditor).toHaveBeenCalledWith(
-      { type: EditorBridgeMessageType.ClientToEditorInvokation, functionName, args, messageId: expect.any(String) },
-      expect.any(String),
-    )
-    const [{ messageId }] = postToEditor.mock.lastCall
-    receiveFromEditor({ type: EditorBridgeMessageType.EditorToClientReply, messageId, returnValue: undefined })
+      expect(postToEditor).toHaveBeenCalledWith(
+        { type: EditorBridgeMessageType.ClientToEditorInvokation, functionName, args, messageId: expect.any(String) },
+        expect.any(String),
+      )
+      const [{ messageId }] = postToEditor.mock.lastCall
+      receiveFromEditor({ type: EditorBridgeMessageType.EditorToClientReply, messageId, returnValue })
 
-    await expect(called).resolves.toBeUndefined()
-  })
+      await expect(called).resolves.toBe(returnValue)
+    },
+  )
 
   test('rejects an editor call the editor does not answer in time', async () => {
     jest.useFakeTimers()

@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 
+import { useUser } from '@proton/account/user/hooks'
 import { useGetUserSettings } from '@proton/account/userSettings/hooks'
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider'
 
@@ -15,12 +16,16 @@ export function useIsEditorDarkMode() {
 }
 
 /**
- * Gives the editor what /doc's `DocumentViewer.tsx` gives it once it is there: dark mode, the user's settings (not in a
- * public-link session), and Suggesting turned off.
+ * Gives the editor what /doc gives it once it is there: dark mode, the user's settings (not in a public-link session),
+ * Suggesting turned off, and the user's name, which its presence carries. The editor is initialized only later, so the
+ * name is there by then.
  */
 export function useEditorBasics(editorInvoker: EditorInvoker | undefined, isDarkMode: boolean) {
   const { isPublicMode, logger } = useApplication()
   const getUserSettings = useGetUserSettings()
+  const [user] = useUser()
+  // As /doc's PrivateHookChangesToEvents
+  const userName = user.DisplayName || user.Name || user.Email
 
   useEffect(() => {
     editorInvoker?.setDarkMode(isDarkMode).catch((error) => logger.warn('Failed to set the editor theme', error))
@@ -41,4 +46,10 @@ export function useEditorBasics(editorInvoker: EditorInvoker | undefined, isDark
       ?.syncProperty('suggestionsEnabled', false)
       .catch((error) => logger.warn('Failed to turn off suggestions in the editor', error))
   }, [editorInvoker, logger])
+
+  useEffect(() => {
+    editorInvoker
+      ?.syncProperty('userName', userName)
+      .catch((error) => logger.warn('Failed to give the editor the user name', error))
+  }, [editorInvoker, logger, userName])
 }

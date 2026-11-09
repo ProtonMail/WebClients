@@ -36,6 +36,7 @@ export function createFakeSession(snapshot: Partial<SessionSnapshot> = {}) {
     resume: jest.fn(async () => {}),
     retry: jest.fn(async () => {}),
     sendUpdate: jest.fn(),
+    setPresence: jest.fn(),
   }
 
   return {

@@ -2,6 +2,7 @@ import type {
   EditorRequiresClientMethods,
   FileMenuAction,
 } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
+import { EventTypeEnum } from '@proton/docs-proto/Event/EventTypeEnum'
 import type { WordCountInfoCollection } from '@proton/docs-shared/WordCount/WordCountTypes'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { FeatureFlag } from '@proton/unleash/Flags'
@@ -20,13 +21,15 @@ export type ClientHandlerDependencies = {
   onWordCount: (wordCount: WordCountInfoCollection) => void
   showModal: (props: { title: string; translatedMessage: string }) => void
   onFileMenuAction: (action: FileMenuAction) => void
+  /** Where the editor's awareness broadcasts go */
+  onPresenceUpdate: (update: Uint8Array<ArrayBuffer>) => void
   logger: LoggerInterface
 }
 
 /**
  * Answers every call from the editor for a text document, after docs-core `Bridge/EditorToClientRequestHandler.ts`.
- * The editor never times out a call to the client, so each one gets a reply. With no comments or presence yet, the
- * calls for those change nothing and answer as if there were none.
+ * The editor never times out a call to the client, so each one gets a reply. With no comments yet, the calls for those
+ * change nothing and answer as if there were none.
  */
 export function createClientHandler({
   editorFrame,
@@ -36,6 +39,7 @@ export function createClientHandler({
   onWordCount,
   showModal,
   onFileMenuAction,
+  onPresenceUpdate,
   logger,
 }: ClientHandlerDependencies): ClientHandler {
   return {
@@ -44,12 +48,18 @@ export function createClientHandler({
     reportUserInterfaceError: async (error) => onEditorError(error),
 
     editorRequestsPropagationOfUpdate: async (message) => {
-      // The other wrappers are presence events, which doc2 doesn't send yet, and conversions, which it never opens
-      if (message.type.wrapper !== 'du') {
-        logger.debug('Editor message not sent', { wrapper: message.type.wrapper })
-        return
+      if (message.type.wrapper === 'du') {
+        sendUpdate(message.content)
+      } else if (
+        message.type.wrapper === 'events' &&
+        message.type.eventType === EventTypeEnum.ClientIsBroadcastingItsPresenceState
+      ) {
+        onPresenceUpdate(message.content)
+      } else {
+        // Requests for the other clients' presence, which the SDK makes itself on every ready, and conversions, which
+        // doc2 never opens
+        logger.debug('Editor message not sent', { type: message.type })
       }
-      sendUpdate(message.content)
     },
     handleAwarenessStateUpdate: async () => {},
 
