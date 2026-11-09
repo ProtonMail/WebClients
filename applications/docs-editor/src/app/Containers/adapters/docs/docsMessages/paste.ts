@@ -1,5 +1,5 @@
 import { c } from 'ttag'
-import type { DocsMessages } from '../../../Docs/public'
+import type { DocsMessages } from '@proton-docs/docs-editor'
 
 export function createPasteMessages(): Pick<DocsMessages, 'paste'> {
   return {

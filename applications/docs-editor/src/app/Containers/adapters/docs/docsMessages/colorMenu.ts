@@ -1,5 +1,5 @@
 import { c } from 'ttag'
-import type { DocsMessages } from '../../../Docs/public'
+import type { DocsMessages } from '@proton-docs/docs-editor'
 
 // The label parameters stay `name` because ttag builds the existing msgids from it.
 export function createColorMenuMessages(): Pick<DocsMessages, 'colorMenu'> {

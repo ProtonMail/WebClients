@@ -6,11 +6,12 @@ import { useMemo, useCallback, useEffect, useState } from 'react'
 
 import {
   type DocsDependencies,
+  DocsDependenciesProvider,
   DocsEditorTelemetryEvents,
   type DocsEditorTelemetryEvent,
   type DocsLogger,
   type SuggestionSummaryType,
-} from '../../Docs/public'
+} from '@proton-docs/docs-editor'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
 import { EditorEvent } from '@proton/docs-shared/Bridge/EditorEvent'
 import { reportErrorToSentry } from '../../../Utils/errorMessage'
@@ -21,7 +22,6 @@ import { useContactEmails } from '../../../Hooks/useContactEmails'
 import { createDocsCommentsService } from './create-docs-comments-service'
 import { toDocsDateFormat } from './toDocsDateFormat'
 import { useDocsLocalization } from './useDocsLocalization'
-import type { DocsEditorSource } from './docs-editor-source'
 
 const hostTelemetryEvents: Record<DocsEditorTelemetryEvent, TelemetryDocsEditorEvents> = {
   [DocsEditorTelemetryEvents.table_of_contents_available]: TelemetryDocsEditorEvents.table_of_contents_available,
@@ -37,13 +37,9 @@ const hostTelemetryEvents: Record<DocsEditorTelemetryEvent, TelemetryDocsEditorE
 export function DocsAdapter({
   children,
   clientInvoker,
-  docsEditor,
 }: PropsWithChildren<{
   clientInvoker: EditorRequiresClientMethods
-  /** The editor whose dependencies context the children read. */
-  docsEditor: DocsEditorSource
 }>) {
-  const { DocsDependenciesProvider } = docsEditor
   const { application } = useApplication()
   const { userName, suggestionsEnabled } = useSyncedState()
   const { displayNameForEmail } = useContactEmails()

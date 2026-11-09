@@ -25,7 +25,7 @@ describe('ClientEditorBridge', () => {
     frame = document.createElement('iframe')
     document.body.appendChild(frame)
     postToEditor = jest.spyOn(frame.contentWindow!, 'postMessage').mockImplementation(() => {})
-    const isFlagEnabled = (flag: string) => flag === 'DocsEditorPackageEnabled'
+    const isFlagEnabled = (flag: string) => flag === 'DocsDarkTheme'
     bridge = new ClientEditorBridge(
       frame,
       createClientHandler({
@@ -53,7 +53,7 @@ describe('ClientEditorBridge', () => {
     receiveFromEditor({
       type: EditorBridgeMessageType.EditorToClientInvokation,
       functionName: 'checkIfFeatureFlagIsEnabled',
-      args: ['DocsEditorPackageEnabled'],
+      args: ['DocsDarkTheme'],
       messageId: 'message-1',
     })
 
@@ -198,7 +198,7 @@ describe('ClientEditorBridge', () => {
       {
         type: EditorBridgeMessageType.EditorToClientInvokation,
         functionName: 'checkIfFeatureFlagIsEnabled',
-        args: ['DocsEditorPackageEnabled'],
+        args: ['DocsDarkTheme'],
         messageId: 'message-1',
       },
       window,

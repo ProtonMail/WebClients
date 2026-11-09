@@ -52,11 +52,11 @@ It is advised not to modify monorepo-wide shared packages e.g. `packages/compone
   ```
 
 - Give every component that takes props a `<ComponentName>Props` type, exported if the component is.
-- Contexts: `createContext<T | undefined>(undefined)`, a `useX()` hook that throws an error naming the missing provider, and an `XProvider` with exported `XProviderProps`. Models: `applications/docs/src/app/utils/application-context.tsx`, `applications/docs-editor/src/app/Containers/Docs/DocsDependenciesProvider.tsx`.
+- Contexts: `createContext<T | undefined>(undefined)`, a `useX()` hook that throws an error naming the missing provider, and an `XProvider` with exported `XProviderProps`. Model: `applications/docs/src/app/utils/application-context.tsx`.
 
 ### Errors
 
-- Operations that can fail return `Result<T>` from `@proton/docs-shared` (`Result.ok(value)` / `Result.fail(message)`); callers check `isFailed()` before `getValue()`. `Containers/Docs` uses its own copy (`Containers/Docs/Utils/Result.ts`) to stay host-independent.
+- Operations that can fail return `Result<T>` from `@proton/docs-shared` (`Result.ok(value)` / `Result.fail(message)`); callers check `isFailed()` before `getValue()`.
 
 ### i18n
 
@@ -171,23 +171,21 @@ It is advised not to modify monorepo-wide shared packages e.g. `packages/compone
 
 The editor has three layers. Each change belongs in exactly one:
 
-- **Host shell** (`src/app/` outside `Containers/Docs`): the bridge, the editor `Application`, `Containers/App.tsx`. It knows about the client.
+- **Host shell** (`src/app/` outside `Containers/adapters/`): the bridge, the editor `Application`, `Containers/App.tsx`. It knows about the client.
 - **Adapters** (`Containers/adapters/docs/`, `Containers/adapters/sheets/`): turn the bridge, the editor `Application` and synced state into `DocsDependencies` / `SheetsDependencies`. This is where translated strings, feature flags and client calls are wired in.
 - **Standalone editors**: host-independent. They read everything host-provided through `useDocsDependencies()` / `useSheetsDependencies()`.
-  - Docs: `Containers/Docs/`. It exposes its API to the rest of the app only through `public.ts` (and test helpers through `testing.ts`), and keeps host-facing types in its `contract/` directory.
+  - Docs: the published `@proton-docs/docs-editor` package, built from `packages/docs-editor` in the realtime repo. This repo has no Docs editor code.
   - Sheets: the published `@proton-docs/sheets-editor` package, built from `packages/sheets-editor` in the realtime repo. This repo has no Sheets editor code.
 
 Rules that follow:
 
+- Change the Docs editor in the realtime repo, then bump `@proton-docs/docs-editor` in `applications/docs-editor/package.json` once the new version is published. Import it only from its entry points: `@proton-docs/docs-editor`, `@proton-docs/docs-editor/testing` (test files only) and `@proton-docs/docs-editor/style.css`. `Containers/App.tsx` loads the stylesheet only for a Doc, because it carries Tailwind preflight, which would restyle Sheets.
 - Change the Sheets editor in the realtime repo, then bump `@proton-docs/sheets-editor` in `applications/docs-editor/package.json` once the new version is published. Load it only through `Containers/adapters/sheets/sheets-editor-source.ts`, which imports the package and its `style.css` lazily when a sheet opens; everywhere else, import only its types (`import type`). That keeps the Sheets editor out of the Docs download and its Tailwind preflight off Docs pages. The package loads its own `fonts.css`.
-- In `Containers/Docs`, imports stay inside the directory: no `@proton/*`, no `ttag`, no `ClientInvoker`, no editor `Application`. `pnpm --filter proton-docs-editor lint` keeps it so: oxlint bans `@proton/*` and `ttag` in it, and lint runs `docs:scan-imports`, which fails on any of these or on an import leaving the directory. The Docs scan also reads `require` and Jest module paths (`jest.mock`, `jest.requireActual`...), and its stylesheets, so `@use`/`@import` of `@proton/styles`, `url()` form included, fails it.
-- Outside `Containers/Docs`, import it only from `Containers/Docs/public.ts`, in `jest.mock` paths too. Test helpers that tests outside the container need go in `Containers/Docs/testing.ts`, which only test files may import. `docs:scan-imports` fails on any other script path into the container, `require` and Jest paths included, and oxlint flags such import statements in most of the editor.
-- A new host capability (a client call, a flag, a setting) goes into the `DocsDependencies` / `SheetsDependencies` type and is supplied by the adapter. For Sheets, the type changes in the package first.
-- When Docs and its consumer (the adapter or host shell) need the same type, define it once in `Containers/Docs/contract/`, export it from `public.ts`, and import it from there in the consumer. Sheets types come from the package.
-- When a `contract/` type mirrors one in `packages/docs-shared` (e.g. `SuggestionType`), change both together.
+- A new host capability (a client call, a flag, a setting) goes into the `DocsDependencies` / `SheetsDependencies` type and is supplied by the adapter. The type changes in the package first.
+- Types an editor shares with its adapter or the host shell come from the editor's package.
+- When a package type mirrors one in `packages/docs-shared` (e.g. Docs' `SuggestionType`), change both together.
 - Use relative imports; the editor has no path aliases.
-- Name files and directories in `camelCase`, as in the client. Files whose main purpose is exporting one component, class or Lexical node take its name in PascalCase (`ProtonNode.ts`). Older kebab-case and PascalCase directories exist (`Containers/`, `adapters/sheets/utils/use-sheets-feature-flags.ts`); use camelCase for new ones and when renaming.
-- Icons in `Containers/Docs` come from `Containers/Docs/Components/icons`; lint enforces it.
+- Name files and directories in `camelCase`, as in the client. Files whose main purpose is exporting one component or class take its name in PascalCase (`SheetsLayout.tsx`). Older kebab-case and PascalCase directories exist (`Containers/`, `adapters/sheets/utils/use-sheets-feature-flags.ts`); use camelCase for new ones and when renaming.
 
 ### Bridge
 
@@ -201,22 +199,10 @@ Rules that follow:
 - Bridge arguments cross `postMessage`, so pass plain data only.
 - `postMessage` always targets `BridgeOriginProvider.GetClientOrigin()`, and incoming messages are accepted only from `window.parent`.
 
-### Docs (`Containers/Docs`)
+### Docs (`@proton-docs/docs-editor`)
 
-- UI strings live in the typed `DocsMessages` catalogue (`messages/`); components read them with `useDocsMessages()`. To add a string, add its key to the defaults object exported next to the component and spread in `defaultDocsMessages`, and its ttag translation in `Containers/adapters/docs/docsMessages/`. A host passes the translated catalogue as `DocsDependencies.messages`; `defaultMessages` is the fallback when neither it nor an outer `DocsDependenciesProvider` supplies one.
-- Style scope: `StandaloneDocsEditor` and `PreviewModeEditor` render inside `DocsStyleScope`, the `.docs-editor-root` element that loads `docs.scss` and holds the portal root for Ariakit popovers and dialogs, so they stay inside the scope. UI rendered outside it, such as `DocsLayoutContainer`, reads the host's variables instead.
-- Tokens: `docs.scss` defines the colour, border, radius and shadow variables on `.docs-editor-root`, light by default and dark under `[data-theme-mode='dark']`. A host only selects the mode; Docs owns the values.
-
-### Lexical (`Containers/Docs`)
-
-- A node's `createDOM` runs outside React, so it cannot read `useDocsMessages()`. Set translated DOM text from the node's decorator component instead. Model: `Plugins/PageBreak/PageBreakNode.tsx`.
-- A plugin is a function component named `<Feature>Plugin` in `Plugins/<Feature>/`. It gets the editor from `useLexicalComposerContext()`, registers listeners in a `useEffect` that returns the unregister function (combine with `mergeRegister`), and returns `null` unless it renders UI. Mount it in `Containers/Docs/Editor.tsx`. Model: `Plugins/PageBreak/PageBreakPlugin.tsx`.
-- Commands: `export const X_COMMAND = createCommand('X_COMMAND')`, in a `Commands.ts` next to the feature.
-- Nodes: `<Name>Node.ts(x)` with `$create<Name>Node` / `$is<Name>Node`, registered in `Containers/Docs/AllNodes.ts` (the single list used by the editor, exporters and tests).
-- Saved documents refer to nodes by their `getType()` string, so a node class and its type string are permanent once shipped. `ProtonNode` in particular backs every suggestion.
-- Functions prefixed with `$` must run inside `editor.update()` / `editor.read()`.
-- A new editing operation needs a suggestion-mode counterpart (`*AsSuggestion`, handled in `Plugins/Suggestions/SuggestionModePlugin.tsx`).
-- Run user-supplied URLs through `Containers/Docs/Utils/sanitizeUrl.ts` and comment content through `Containers/Docs/Utils/SanitizeLexicalState.ts`.
+- The editor's components, Lexical nodes and plugins, styles and tokens live in the package. Follow the realtime repo's guide for changes to them.
+- UI strings: the package defines the typed `DocsMessages` catalogue and its English defaults. Each key's ttag translation lives in `Containers/adapters/docs/docsMessages/`, and the adapter passes the translated catalogue as `DocsDependencies.messages`. A version that adds keys fails `check:types` here until their translations are added.
 
 ### Sheets (`@proton-docs/sheets-editor`)
 
@@ -227,8 +213,7 @@ Rules that follow:
 ### Logging and styling
 
 - Host shell: log with the editor `Application`'s `logger`. Standalone editors: use the injected `logger` and `reportError` from their dependencies.
-- Combine classes with bare `clsx` inside `Containers/Docs`, `@proton/utils/clsx` elsewhere.
-- `Containers/Docs` uses no Proton classes, since `src/standalone-doc` loads only Tailwind. Write colours, borders and shadows as CSS-variable utilities (`bg-[--background-norm]`, `border-[--border-weak]`, `text-[--text-weak]`, `shadow-[shadow:--shadow-norm]`); Docs defines its variables in `Containers/Docs/docs.scss`. A shadow variable needs the `shadow:` hint, or Tailwind reads it as a shadow colour.
+- Combine classes with `@proton/utils/clsx`.
 
 ## Documentation
 

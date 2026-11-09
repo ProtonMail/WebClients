@@ -7,7 +7,7 @@ pnpm --filter proton-docs-editor run standalone-doc
 ```
 
 Open <http://127.0.0.1:8091/>. No login, Docs parent iframe, Drive, API, or RTS process is needed.
-The Markdown fixture is imported through the real Docs editor into an in-memory `DocState`.
+The Markdown fixture is imported through the Docs editor, the installed `@proton-docs/docs-editor` version, into an in-memory `DocState`.
 Reloading resets the document. The header lets you switch between editing, suggesting and viewing and between light and dark themes.
 You can also start with <http://127.0.0.1:8091/?theme=dark>.
 
@@ -23,7 +23,7 @@ There are no other users, so no typing indicators, unread threads, or comments f
 Host file operations are unavailable.
 The outline (table of contents) shows once the document has headings. Its heading links point at this page with `?headingKey=…`.
 The harness supplies local Docs dependencies directly, including the in-memory comments client and awareness subscriptions.
-It loads no Proton styles, only Tailwind (`standalone-doc.tailwind.scss`) and the editor's own tokens in `Containers/Docs/docs.scss`, so a Proton class in `Containers/Docs` shows up here as missing styling.
+It loads no Proton styles, only the package's `style.css`, which carries its Tailwind utilities and tokens.
 `standalone-doc.css` sets the same tokens on `.app-root` for what renders outside `.docs-editor-root`: the header and `DocsLayoutContainer`.
 
 `StandaloneDocsEditor` needs no Proton providers, styles or translations, only a surrounding `DocsDependenciesProvider`.

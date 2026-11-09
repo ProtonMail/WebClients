@@ -5,7 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
-// Sheets and the host shell still rely on these; Docs keeps its own copy in Containers/Docs/docs.scss.
+// Sheets and the host shell still rely on these; the Docs editor package ships its own in its style.css.
 *:focus,
 *:focus-visible {
 	outline-color: var(--primary-major-3);

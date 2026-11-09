@@ -6,7 +6,7 @@ import {
   type DocsCommentEvent,
   type DocsComments,
   type DocsCommentThread,
-} from '../app/Containers/Docs/public'
+} from '@proton-docs/docs-editor'
 
 /**
  * Keeps comment threads in page memory, emitting the events the full app's host emits for each change.

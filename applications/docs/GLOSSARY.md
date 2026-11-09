@@ -1,6 +1,6 @@
 # Glossary
 
-Domain and architecture terms for Proton Docs and Sheets, covering the client (`applications/docs`), the editor (`applications/docs-editor`) and their packages. Paths are relative to the repo root; `core` = `packages/docs-core/lib`, `shared` = `packages/docs-shared/lib`, `editor` = `applications/docs-editor/src/app`, `app` = `applications/docs/src/app`, `sheets-editor` = `packages/sheets-editor/src` in the realtime repo, published as `@proton-docs/sheets-editor`.
+Domain and architecture terms for Proton Docs and Sheets, covering the client (`applications/docs`), the editor (`applications/docs-editor`) and their packages. Paths are relative to the repo root; `core` = `packages/docs-core/lib`, `shared` = `packages/docs-shared/lib`, `editor` = `applications/docs-editor/src/app`, `app` = `applications/docs/src/app`, `docs-editor` = `packages/docs-editor/src` and `sheets-editor` = `packages/sheets-editor/src` in the realtime repo, published as `@proton-docs/docs-editor` and `@proton-docs/sheets-editor`.
 
 When a term has more than one meaning in code, the **Ambiguous** note says which one to use in new code.
 
@@ -40,29 +40,29 @@ When a term has more than one meaning in code, the **Ambiguous** note says which
   - **`EditorToClientRequestHandler`** (`core/Bridge/`): answers editor calls in the client, delegating to `EditorOrchestrator`. Its editor-side counterpart is the `requestHandler` object in `editor/Containers/App.tsx`.
   - **`BridgeOriginProvider`** (`shared/Bridge/`): the expected client and editor origins, used as every `postMessage` target.
 - **`SyncedEditorState`**: properties the client mirrors into the editor (`userName`, `suggestionsEnabled`, `receivedEverythingFromRTS`...). `shared/State/SyncedEditorState.ts`.
-- **`EditorSystemMode`** (`Edit`, `Revision`, `PublicView`): the presentation mode, set by context, not the user. The client uses `shared/EditorSystemMode.ts` and sends the value in the editor URL's `mode` parameter; the editor uses its copy in `editor/Containers/Docs/contract/EditorSystemMode.ts`. Change both together.
-- **`EditorUserMode`** (`Edit`, `Preview`, `Suggest`): the mode the user picks, limited by the system mode. `editor/Containers/Docs/contract/EditorUserMode.ts`.
+- **`EditorSystemMode`** (`Edit`, `Revision`, `PublicView`): the presentation mode, set by context, not the user. The client uses `shared/EditorSystemMode.ts` and sends the value in the editor URL's `mode` parameter; the Docs editor package has its copy in `docs-editor/contract/EditorSystemMode.ts`. Change both together.
+- **`EditorUserMode`** (`Edit`, `Preview`, `Suggest`): the mode the user picks, limited by the system mode. `docs-editor/contract/EditorUserMode.ts`.
   - **Ambiguous**: `EditorSystemMode.Edit` and `EditorUserMode.Edit` are different values. `EditorInitializationConfig.mode` (`creation` / `conversion`) and `DocumentAction` `mode` are unrelated to both.
 
 ## Editor architecture
 
 - **Host shell**: the editor code outside the standalone editors (`editor/Bridge/`, `editor/Lib/`, `editor/Containers/App.tsx`). It knows about the client and the bridge.
-- **Standalone editor**: `StandaloneDocsEditor` (`editor/Containers/Docs/`) and `StandaloneSheetsEditor` (`@proton-docs/sheets-editor`), the host-independent editors. `src/standalone-doc` and `src/standalone-sheet` run them on localhost without the client, bridge or RTS.
+- **Standalone editor**: `StandaloneDocsEditor` (`@proton-docs/docs-editor`) and `StandaloneSheetsEditor` (`@proton-docs/sheets-editor`), the host-independent editors. `src/standalone-doc` and `src/standalone-sheet` run them on localhost without the client, bridge or RTS.
 - **Adapter** (`DocsAdapter` / `SheetsAdapter`, `editor/Containers/adapters/`): the boundary that turns the bridge, the editor `Application` and synced state into a standalone editor's dependencies.
 - **`DocsDependencies` / `SheetsDependencies`**: everything host-provided that a standalone editor uses (logger, `reportError`, comments, flags, messages...), read with `useDocsDependencies()` / `useSheetsDependencies()`.
-- **`public.ts` / `contract/`**: `Containers/Docs`' export surface, and the host-facing types copied into it so it doesn't depend on docs-shared or docs-core. The Sheets editor package has the same pair in `sheets-editor/`.
-- **`testing.ts`**: `Containers/Docs`' test-only entry, the helpers that tests outside the container need. Only test files may import it.
+- **`public.ts` / `contract/`**: an editor package's export surface (in `docs-editor/` and `sheets-editor/`), and the host-facing types copied into it so it doesn't depend on docs-shared or docs-core.
+- **`@proton-docs/docs-editor/testing`**: the Docs editor package's test-only entry. Only test files may import it.
 
 ### Lexical (text documents)
 
-- **Plugin**: a React component inside the Lexical composer that registers listeners and commands on the editor. `editor/Containers/Docs/Plugins/`.
+- **Plugin**: a React component inside the Lexical composer that registers listeners and commands on the editor. `docs-editor/Plugins/`.
 - **Command**: a typed event created with `createCommand('X_COMMAND')` and handled with `editor.registerCommand`.
-- **Node**: a Lexical node class; its `getType()` string is how saved documents refer to it. All nodes are listed in `AllNodes` (`editor/Containers/Docs/AllNodes.ts`).
+- **Node**: a Lexical node class; its `getType()` string is how saved documents refer to it. All nodes are listed in `AllNodes` (`docs-editor/AllNodes.ts`).
 - **`$` function**: Lexical's naming for functions that must run inside `editor.update()` / `editor.read()` (`$createProtonNode`).
-- **`CommentThreadMarkNode` / mark node**: the node (`'comment-thread-mark'`) wrapping the text a comment thread refers to. `editor/Containers/Docs/Plugins/Comments/`.
-- **`MarkNodeMap`**: map from comment or suggestion id to the keys of its nodes; drives hover and active state. `editor/Containers/Docs/Plugins/MarkNodesContext.tsx`.
-- **`*AsSuggestion` operations**: suggestion-mode versions of edits (`formatTextAsSuggestion`, `setBlocksTypeAsSuggestion`...). `editor/Containers/Docs/Plugins/Suggestions/`.
-- **`DocsMessages`**: the typed catalogue of Docs UI strings (`typeof defaultDocsMessages`), translated in the adapter and read with `useDocsMessages()`. `editor/Containers/Docs` calls no ttag itself. `editor/Containers/Docs/messages/`.
+- **`CommentThreadMarkNode` / mark node**: the node (`'comment-thread-mark'`) wrapping the text a comment thread refers to. `docs-editor/Plugins/Comments/`.
+- **`MarkNodeMap`**: map from comment or suggestion id to the keys of its nodes; drives hover and active state. `docs-editor/Plugins/MarkNodesContext.tsx`.
+- **`*AsSuggestion` operations**: suggestion-mode versions of edits (`formatTextAsSuggestion`, `setBlocksTypeAsSuggestion`...). `docs-editor/Plugins/Suggestions/`.
+- **`DocsMessages`**: the typed catalogue of Docs UI strings (`typeof defaultDocsMessages`), translated in the adapter and read with `useDocsMessages()`. The package calls no ttag itself. `docs-editor/messages/`, translated in `editor/Containers/adapters/docs/docsMessages/`.
 
 ### rowsncolumns (sheets)
 
@@ -104,7 +104,7 @@ When a term has more than one meaning in code, the **Ambiguous** note says which
 ## Collaboration
 
 - **Role**: a user's permission on a document (`DocumentRole`: `Viewer`, `Commenter`, `Editor`, `Admin`, `PublicViewer`, `PublicEditor`...). Check capabilities with its methods (`canEdit()`, `canComment()`, `canShare()`...). `shared/Doc/DocumentRole.ts`.
-- **Comment thread**: `CommentThreadType` is `Comment` or `Suggestion`. Comment threads are `Active` or `Resolved`; suggestion threads are `Active`, `Accepted` or `Rejected`. `shared/CommentThread*.ts`, and as `DocsCommentThread` / `DocsComment` in `editor/Containers/Docs/contract/DocsCommentThread.ts` for the standalone editor.
-- **Suggestion mode**: editing where changes become suggestions others accept or reject (`EditorUserMode.Suggest`). Suggested content is wrapped in `ProtonNode` (`editor/Containers/Docs/Plugins/Suggestions/`); saved documents depend on it.
+- **Comment thread**: `CommentThreadType` is `Comment` or `Suggestion`. Comment threads are `Active` or `Resolved`; suggestion threads are `Active`, `Accepted` or `Rejected`. `shared/CommentThread*.ts`, and as `DocsCommentThread` / `DocsComment` in `docs-editor/contract/DocsCommentThread.ts` for the standalone editor.
+- **Suggestion mode**: editing where changes become suggestions others accept or reject (`EditorUserMode.Suggest`). Suggested content is wrapped in `ProtonNode` (`docs-editor/Plugins/Suggestions/`); saved documents depend on it.
 - **Live comments**: who is currently typing in each comment thread, broadcast over RTS. `core/Realtime/LiveComments/`.
 - **Version history**: past revisions, built by grouping DUs (`core/VersionHistory/`), shown in `HistoryViewerModal`.

@@ -1981,12 +1981,6 @@ importers:
 
   applications/docs-editor:
     dependencies:
-      '@ariakit/react':
-        specifier: 0.4.29
-        version: 0.4.29(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@emoji-mart/data':
-        specifier: 1.2.1
-        version: 1.2.1
       '@lexical/clipboard':
         specifier: 'catalog:'
         version: 0.31.2
@@ -2083,48 +2077,21 @@ importers:
       '@rowsncolumns/spreadsheet-state':
         specifier: workspace:^
         version: link:../../vendor/rowsncolumns/spreadsheet-state
-      clsx:
-        specifier: 'catalog:'
-        version: 2.1.1
-      docx:
-        specifier: ^8.5.0
-        version: 8.5.0
-      docx-preview-cjs:
-        specifier: 0.3.7
-        version: 0.3.7
-      dompurify:
-        specifier: 'catalog:'
-        version: 3.4.17
-      fflate:
-        specifier: ^0.8.3
-        version: 0.8.3
       lexical:
         specifier: 'catalog:'
         version: 0.31.2
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
-      odf-kit:
-        specifier: ^0.14.5
-        version: 0.14.5
       react:
         specifier: 'catalog:'
         version: 18.3.1
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
-      tinycolor2:
-        specifier: 'catalog:'
-        version: 1.6.0
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
-      ua-parser-js:
-        specifier: ^1.0.41
-        version: 1.0.41
-      uuid:
-        specifier: 'catalog:'
-        version: 14.0.3
       yjs:
         specifier: 'catalog:'
         version: 13.6.27
@@ -2174,12 +2141,6 @@ importers:
       '@types/react-dom':
         specifier: 'catalog:'
         version: 18.3.7(@types/react@18.3.31)
-      '@types/tinycolor2':
-        specifier: 'catalog:'
-        version: 1.4.6
-      '@types/ua-parser-js':
-        specifier: ^0.7.39
-        version: 0.7.39
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
@@ -51085,21 +51046,6 @@ snapshots:
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
-
-  webpack-cli@7.3.1(js-yaml@4.3.2)(json5@2.2.3)(webpack-bundle-analyzer@5.4.0)(webpack-dev-server@5.2.7)(webpack@5.112.2):
-    dependencies:
-      '@discoveryjs/json-ext': 1.1.0
-      commander: 14.0.3
-      envinfo: 7.21.0
-      interpret: 3.1.1
-      rechoir: 1.0.0
-      webpack: 5.112.2(@swc/core@1.16.21(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(sharp@0.35.5(@types/node@24.19.2))(svgo@4.1.0)(webpack-cli@7.3.1)
-      webpack-merge: 6.0.1
-    optionalDependencies:
-      js-yaml: 4.3.2
-      json5: 2.2.3
-      webpack-bundle-analyzer: 5.4.0
-      webpack-dev-server: 5.2.7(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0)(webpack-cli@7.3.1)(webpack@5.112.2)
 
   webpack-cli@7.3.1(js-yaml@4.3.2)(json5@2.2.3)(webpack-bundle-analyzer@5.4.0)(webpack-dev-server@6.1.0)(webpack@5.112.2):
     dependencies:

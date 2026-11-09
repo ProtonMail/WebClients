@@ -9,8 +9,7 @@ import { enGBLocale, enUSLocale } from '@proton/shared/lib/i18n/dateFnLocales'
 import type { EditorConfig } from '../Lib/useBridge'
 import { reportErrorToSentry } from '../Utils/errorMessage'
 import { App } from './App'
-import { EditorSystemMode, StandaloneDocsEditor } from './Docs/public'
-import { StandaloneDocsEditor as PackageStandaloneDocsEditor } from '@proton-docs/docs-editor'
+import { EditorSystemMode, StandaloneDocsEditor } from '@proton-docs/docs-editor'
 import { StandaloneSheetsEditor } from '@proton-docs/sheets-editor'
 import { EditorStateProvider } from './EditorStateProvider'
 
@@ -33,18 +32,13 @@ jest.mock('../Theme/EditorThemeProvider', () => {
   const setTheme = jest.fn()
   return { useEditorTheme: () => ({ setTheme }) }
 })
-jest.mock('./Docs/public', () => ({
-  ...jest.requireActual('./Docs/public'),
+jest.mock('@proton-docs/docs-editor', () => ({
+  ...jest.requireActual('@proton-docs/docs-editor'),
   exportDataFromEditorState: jest.fn(),
   PreviewModeEditor: () => null,
   StandaloneDocsEditor: jest.fn(() => null),
   DocsLayoutContainer: ({ children }: { children: ReactNode }) => children,
   getDocsLayoutScrollContainer: () => null,
-}))
-jest.mock('@proton-docs/docs-editor', () => ({
-  DocsLayoutContainer: ({ children }: { children: ReactNode }) => children,
-  PreviewModeEditor: () => null,
-  StandaloneDocsEditor: jest.fn(() => null),
 }))
 jest.mock('@proton-docs/sheets-editor', () => ({ StandaloneSheetsEditor: jest.fn(() => null) }))
 jest.mock('./adapters/docs/DocsAdapter', () => ({ DocsAdapter: ({ children }: { children: ReactNode }) => children }))
@@ -53,10 +47,7 @@ jest.mock('./adapters/sheets/SheetsAdapter', () => ({
 }))
 jest.mock('./SheetsLayout', () => ({ __esModule: true, default: ({ children }: { children: ReactNode }) => children }))
 
-function setup(
-  documentType: DocumentType = 'doc',
-  isFeatureFlagEnabled = async (flag: string) => flag !== 'DocsEditorPackageEnabled',
-) {
+function setup(documentType: DocumentType = 'doc', isFeatureFlagEnabled = async (_flag: string) => true) {
   const reportUserInterfaceError = jest.fn().mockResolvedValue(undefined)
   const clientInvoker = {
     reportUserInterfaceError,
@@ -111,6 +102,9 @@ describe('App bridge initialization', () => {
   })
   afterEach(() => {
     setDateLocales({ dateLocale: enUSLocale })
+    // `jest.doMock` factories outlive `jest.resetModules()`: drop the stylesheet tests' ones.
+    jest.dontMock('@proton-docs/docs-editor/style.css')
+    jest.dontMock('@proton-docs/sheets-editor/style.css')
   })
 
   it.each([
@@ -212,31 +206,37 @@ describe('App bridge initialization', () => {
     expect(bridgeState.application.setDateLocale).toHaveBeenCalledWith(enGBLocale)
   })
 
-  it('mounts the package editor instead of the Docs container when DocsEditorPackageEnabled is on', async () => {
-    const { initialize, rerender } = setup('doc', async () => true)
+  it('loads the Docs editor stylesheet for a Doc only', async () => {
+    const loadStylesheet = jest.fn(() => ({}))
+    jest.resetModules()
+    jest.doMock('@proton-docs/docs-editor/style.css', loadStylesheet)
 
-    await initialize()
-    rerender()
+    const sheet = setup('sheet')
+    await sheet.initialize()
+    sheet.rerender()
+    expect(loadStylesheet).not.toHaveBeenCalled()
 
-    await waitFor(() => expect(PackageStandaloneDocsEditor).toHaveBeenCalled())
-    expect(StandaloneDocsEditor).not.toHaveBeenCalled()
+    const doc = setup('doc')
+    await doc.initialize()
+    doc.rerender()
+    await waitFor(() => expect(StandaloneDocsEditor).toHaveBeenCalled())
+    expect(loadStylesheet).toHaveBeenCalledTimes(1)
   })
 
-  it('reports a failed DocsEditorPackageEnabled check and mounts the Docs container', async () => {
-    const error = new Error('Bridge unavailable')
-    const { initialize, rerender } = setup('doc', async (flag) => {
-      if (flag === 'DocsEditorPackageEnabled') {
-        throw error
-      }
-      return false
+  it('reports a failed Docs stylesheet load as irrecoverable and does not mount the Doc', async () => {
+    const error = new Error('Loading CSS chunk failed')
+    jest.resetModules()
+    jest.doMock('@proton-docs/docs-editor/style.css', () => {
+      throw error
     })
+    const { reportUserInterfaceError, initialize, rerender } = setup('doc')
 
     await initialize()
     rerender()
 
-    await waitFor(() => expect(StandaloneDocsEditor).toHaveBeenCalled())
+    await waitFor(() => expect(reportUserInterfaceError).toHaveBeenCalledWith(error, { irrecoverable: true }))
     expect(reportErrorToSentry).toHaveBeenCalledWith(error)
-    expect(PackageStandaloneDocsEditor).not.toHaveBeenCalled()
+    expect(StandaloneDocsEditor).not.toHaveBeenCalled()
   })
 
   it('loads the Sheets editor stylesheet for a sheet only', async () => {

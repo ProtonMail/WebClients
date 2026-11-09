@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useState } from 'react'
 import { useStore, createStore } from 'zustand'
-import { EditorSystemMode, EditorUserMode } from './Docs/public'
+import { EditorSystemMode, EditorUserMode } from '@proton-docs/docs-editor'
 import type { StoreApi } from 'zustand'
 
 type EditorState = {

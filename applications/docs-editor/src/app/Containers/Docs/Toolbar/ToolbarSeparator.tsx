@@ -1,5 +1,0 @@
-import clsx from 'clsx'
-
-export function ToolbarSeparator({ className }: { className?: string }) {
-  return <hr className={clsx('mx-1.5 my-0 h-7 min-w-px border-0 bg-[--border-norm]', className)} />
-}
