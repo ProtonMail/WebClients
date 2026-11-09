@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 
 import ViewEOMessage from '../../components/eo/message/ViewEOMessage';
@@ -26,22 +25,20 @@ const PageContainer = () => {
     }, []);
 
     return (
-        <UnAuthenticated>
-            <Switch>
-                <Route path={`${EO_MESSAGE_REDIRECT_PATH}/:id?`}>
-                    <ViewEOMessage setSessionStorage={set} />
-                </Route>
-                <Route path={`${EO_REPLY_REDIRECT_PATH}/:id?`}>
-                    <EOReply setSessionStorage={set} />
-                </Route>
-                <Route path={`${EO_REDIRECT_PATH}/:id?`}>
-                    <EOUnlock setSessionStorage={set} />
-                </Route>
-                <Route path="*">
-                    <EOUnlock setSessionStorage={set} />
-                </Route>
-            </Switch>
-        </UnAuthenticated>
+        <Switch>
+            <Route path={`${EO_MESSAGE_REDIRECT_PATH}/:id?`}>
+                <ViewEOMessage setSessionStorage={set} />
+            </Route>
+            <Route path={`${EO_REPLY_REDIRECT_PATH}/:id?`}>
+                <EOReply setSessionStorage={set} />
+            </Route>
+            <Route path={`${EO_REDIRECT_PATH}/:id?`}>
+                <EOUnlock setSessionStorage={set} />
+            </Route>
+            <Route path="*">
+                <EOUnlock setSessionStorage={set} />
+            </Route>
+        </Switch>
     );
 };
 

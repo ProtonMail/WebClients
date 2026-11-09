@@ -1,5 +1,4 @@
 import LocationErrorBoundary from '@proton/components/containers/app/LocationErrorBoundary'
-import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated'
 import {
   PublicDriveStoreProvider,
   PublicDriveStoreProviderWithAuthenticatedUser,
@@ -76,9 +75,7 @@ export function PublicAppRootContainer({
   return (
     <LocationErrorBoundary>
       <ApplicableDriveStoreProvider>
-        <UnAuthenticated>
-          {replaceDriveCompat ? content : <PublicCompatProvider session={session}>{content}</PublicCompatProvider>}
-        </UnAuthenticated>
+        {replaceDriveCompat ? content : <PublicCompatProvider session={session}>{content}</PublicCompatProvider>}
       </ApplicableDriveStoreProvider>
     </LocationErrorBoundary>
   )
