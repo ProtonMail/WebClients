@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { changeRenewState } from '@proton/payments/core/api/api';
-import { PLANS } from '@proton/payments/core/constants';
+import { PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
@@ -27,11 +27,11 @@ interface Props {
 }
 
 const FeedbackFirstFlow = ({ subscription }: Props) => {
-    const { startFlow, modals } = useFeedbackFirstCancellationFlow(subscription);
+    const { startFlow, modals } = useFeedbackFirstCancellationFlow();
 
     return (
         <>
-            <button type="button" onClick={startFlow}>
+            <button type="button" onClick={() => startFlow(subscription)}>
                 Start
             </button>
             {modals}
@@ -57,8 +57,13 @@ describe('useFeedbackFirstCancellationFlow', () => {
         await userEvent.click(screen.getByText('I use a different Proton account'));
         await userEvent.click(screen.getByTestId('submitFeedback'));
 
-        expect(await screen.findByText('What changes if you switch to the Free plan')).toBeInTheDocument();
+        expect(await screen.findByText(`What changes if you cancel ${PLAN_NAMES[PLANS.DRIVE]}`)).toBeInTheDocument();
         await userEvent.click(screen.getByRole('button', { name: 'Continue cancelling' }));
+        expect(
+            screen.getByText(
+                new RegExp(`^When your ${PLAN_NAMES[PLANS.DRIVE]} subscription ends on .+, you'll lose its features\\.`)
+            )
+        ).toBeInTheDocument();
         await userEvent.click(screen.getByRole('button', { name: 'Cancel subscription' }));
         await wait(0);
 

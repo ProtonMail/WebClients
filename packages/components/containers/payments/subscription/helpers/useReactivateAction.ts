@@ -65,9 +65,12 @@ export const useReactivateAction = (row: SubscriptionRow): DropdownActionProps[]
                     sendDashboardReactivateReport(reactivationSource || 'default');
 
                     await api(
-                        changeRenewState({
-                            RenewalState: Renew.Enabled,
-                        })
+                        changeRenewState(
+                            {
+                                RenewalState: Renew.Enabled,
+                            },
+                            subscription.ID
+                        )
                     );
 
                     await eventManager.call();

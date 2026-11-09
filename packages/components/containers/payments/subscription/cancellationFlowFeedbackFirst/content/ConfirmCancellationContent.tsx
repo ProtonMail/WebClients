@@ -8,6 +8,7 @@ import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
 import { IcEnvelopeDot } from '@proton/icons/icons/IcEnvelopeDot';
 import { IcFolderArrowUp } from '@proton/icons/icons/IcFolderArrowUp';
 import { IcPaperClip } from '@proton/icons/icons/IcPaperClip';
+import { getPlanName, getPlanTitle } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -17,6 +18,7 @@ import ModalTwoFooter from '../../../../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../../../../components/modalTwo/ModalHeader';
 import StripedItem from '../../../../../components/stripedList/StripedItem';
 import { StripedList } from '../../../../../components/stripedList/StripedList';
+import { getPlanDisplayName } from '../helpers/getPlanDisplayName';
 
 interface Props {
     subscription: Subscription;
@@ -28,6 +30,13 @@ export const ConfirmCancellationContent = ({ subscription, onKeepPlan, onCancelS
     const endDate = subscription.PeriodEnd
         ? format(fromUnixTime(subscription.PeriodEnd), 'PPP', { locale: dateLocale })
         : '';
+    const planName = getPlanName(subscription);
+    const planDisplayName = planName ? getPlanDisplayName(planName, getPlanTitle(subscription)) : undefined;
+    const endText = planDisplayName
+        ? c('Confirm cancellation')
+              .t`When your ${planDisplayName} subscription ends on ${endDate}, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.`
+        : c('Confirm cancellation')
+              .t`When your subscription ends on ${endDate}, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.`;
 
     const warningItems = [
         { icon: <IcEnvelopeDot />, text: c('Confirm cancellation').t`Receive new emails` },
@@ -42,13 +51,11 @@ export const ConfirmCancellationContent = ({ subscription, onKeepPlan, onCancelS
             <ModalTwoHeader title={c('Confirm cancellation').t`Confirm cancellation`} />
             <ModalTwoContent>
                 <p>
-                    {c('Confirm cancellation')
-                        .t`When your subscription ends on ${endDate}, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.`}{' '}
-                    <Href href={getKnowledgeBaseUrl('/free-plan-limits')}>{c('Link').t`Learn more`}</Href>
+                    {endText} <Href href={getKnowledgeBaseUrl('/free-plan-limits')}>{c('Link').t`Learn more`}</Href>
                 </p>
 
                 <p className="mb-4 mt-6 text-lg text-bold">
-                    {c('Confirm cancellation').t`If you exceed free plan limits, you won't be able to:`}
+                    {c('Confirm cancellation').t`If you exceed your plan limits, you won't be able to:`}
                 </p>
 
                 <StripedList alternate="odd" className="mt-0">

@@ -32,12 +32,12 @@ const getCancellationReason = (feedback: FeedbackDowngradeFormData) => {
     return feedback.Reason || SKIPPED_CANCELLATION_REASON;
 };
 
-export const useFeedbackFirstTelemetry = (subscription: Subscription) => {
+export const useSendFeedbackFirstReport = () => {
     const silentApi = useSilentApi();
     const [user] = useUser();
     const [userSettings] = useUserSettings();
 
-    const sendReport = (event: TelemetryEvents, dimensions?: Record<string, string>) => {
+    return (subscription: Subscription, event: TelemetryEvents, dimensions?: Record<string, string>) => {
         void silentApi(
             sendTelemetryData({
                 MeasurementGroup: TelemetryMeasurementGroups.accountCancellationFeedbackFirst,
@@ -51,6 +51,12 @@ export const useFeedbackFirstTelemetry = (subscription: Subscription) => {
             })
         );
     };
+};
+
+export const useFeedbackFirstTelemetry = (subscription: Subscription) => {
+    const sendFeedbackFirstReport = useSendFeedbackFirstReport();
+    const sendReport = (event: TelemetryEvents, dimensions?: Record<string, string>) =>
+        sendFeedbackFirstReport(subscription, event, dimensions);
 
     const startCancellation = () => {
         sendReport(TelemetryAccountCancellationFlowFeedbackEvents.startCancellation);

@@ -14,7 +14,7 @@ import {
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 
-export const useFeedbackFirstEligibility = (subscription: Subscription) => {
+export const getFeedbackFirstEligibility = (subscription: Subscription) => {
     const getHasB2BAccess = () => {
         if (
             hasMailPro(subscription) ||
@@ -50,3 +50,5 @@ export const useFeedbackFirstEligibility = (subscription: Subscription) => {
         hasB2BAccess: getHasB2BAccess(),
     };
 };
+
+export const useFeedbackFirstEligibility = (subscription: Subscription) => getFeedbackFirstEligibility(subscription);
