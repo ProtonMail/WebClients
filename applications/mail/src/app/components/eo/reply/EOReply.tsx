@@ -1,9 +1,12 @@
 import { useRouteMatch } from 'react-router-dom';
 
+import EOComposer from '@proton/mail-composer/components/eo/EOComposer';
+
 import type { EOUrlParams } from '../../../helpers/eo/eoUrl';
 import { useLoadEOMessage } from '../../../hooks/eo/useLoadEOMessage';
 import EORedirect from '../EORedirect';
-import EOComposer from './EOComposer';
+import EOReplyFooter from './EOReplyFooter';
+import EOReplyHeader from './EOReplyHeader';
 
 import './EOreply.scss';
 
@@ -31,10 +34,19 @@ const EOReply = ({ setSessionStorage }: Props) => {
                 >
                     <EOComposer
                         referenceMessage={messageState}
-                        id={id}
                         encryptionKey={message.PublicKey}
                         outsideKey={outsideKey}
-                        numberOfReplies={message.Replies.length}
+                        header={<EOReplyHeader message={messageState} />}
+                        renderFooter={({ message: reply, onAddAttachments }) => (
+                            <EOReplyFooter
+                                id={id}
+                                onAddAttachments={onAddAttachments}
+                                message={reply}
+                                encryptionKey={message.PublicKey}
+                                outsideKey={outsideKey}
+                                numberOfReplies={message.Replies.length}
+                            />
+                        )}
                     />
                 </main>
             )}
