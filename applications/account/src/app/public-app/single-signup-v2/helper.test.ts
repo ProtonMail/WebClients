@@ -2,6 +2,7 @@ import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import type { PaymentsApi } from '@proton/payments/core/interface';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { tracePaymentError } from '@proton/payments/sentry/capture';
 import {
     buildMultiSubscriptionContextFromSubscription,
     multiSubscriptionTestCatalog,
@@ -21,6 +22,10 @@ import type { PlanCard, SignupParameters2 } from './interface';
 jest.mock('@proton/payments/core/api/api', () => ({
     ...jest.requireActual('@proton/payments/core/api/api'),
     getPaymentMethods: jest.fn().mockResolvedValue([]),
+}));
+
+jest.mock('@proton/payments/sentry/capture', () => ({
+    tracePaymentError: jest.fn(),
 }));
 
 describe('getAccessiblePlans', () => {
@@ -289,6 +294,98 @@ describe('getSessionCycle', () => {
         });
 
         expect(cycle).toBe(CYCLE.YEARLY);
+    });
+});
+
+describe('getUserInfo entitlement catalog for a signed-in user', () => {
+    const plansMap = getTestPlansMap('EUR');
+    const planIDs = { [PLANS.LUMO]: 1 };
+    const user = { ID: 'user-id', Role: USER_ROLES.ADMIN_ROLE, Subscribed: 1 } as User;
+    const mailPlus = buildSubscription(PLANS.MAIL);
+
+    const signedInApi = jest.fn(async ({ url }: { url: string }) => {
+        if (url === 'payments/v4/subscription') {
+            return { Subscription: mailPlus, UpcomingSubscription: undefined };
+        }
+        if (url.includes('organizations')) {
+            return { Organization: { MaxMembers: 1, UsedLumo: 0, MaxLumo: 0 } };
+        }
+        return { PaymentMethods: [] };
+    }) as unknown as Api;
+
+    const checkSubscription = jest.fn(async (data: CheckSubscriptionData): Promise<SubscriptionEstimation> => ({
+        Amount: 0,
+        AmountDue: 0,
+        CouponDiscount: 0,
+        Cycle: data.Cycle,
+        Coupon: null,
+        Currency: data.Currency,
+        SubscriptionMode: SubscriptionMode.Regular,
+        BaseRenewAmount: null,
+        RenewCycle: null,
+        PeriodEnd: 0,
+        requestData: data,
+    }));
+
+    const callGetUserInfo = (
+        getEntitlementCatalog: (options: { api: Api }) => Promise<typeof multiSubscriptionTestCatalog>,
+        lumoMultiSubscriptions = true
+    ) =>
+        getUserInfo({
+            lumoMultiSubscriptions,
+            getEntitlementCatalog,
+            api: signedInApi,
+            audience: Audience.B2C,
+            paymentsApi: { checkSubscription } as unknown as PaymentsApi,
+            user,
+            options: {
+                plansMap,
+                planIDs,
+                cycle: CYCLE.YEARLY,
+                currency: 'EUR',
+                billingAddress: { CountryCode: 'CH', State: null },
+                VatId: undefined,
+            },
+            plansMap,
+            plans: Object.values(plansMap) as Plan[],
+            planParameters: { defined: true, planIDs, plan: plansMap[PLANS.LUMO] as Plan },
+            signupParameters: {} as SignupParameters2,
+            toApp: APPS.PROTONLUMO,
+            availableCycles: [CYCLE.MONTHLY, CYCLE.YEARLY],
+        });
+
+    beforeEach(() => {
+        jest.mocked(tracePaymentError).mockClear();
+    });
+
+    it('loads the catalog with the signed-in api and turns the Lumo rules on', async () => {
+        const getEntitlementCatalog = jest.fn().mockResolvedValue(multiSubscriptionTestCatalog);
+
+        const { multiSubscriptionContext } = await callGetUserInfo(getEntitlementCatalog);
+
+        expect(getEntitlementCatalog).toHaveBeenCalledWith({ api: signedInApi });
+        expect(multiSubscriptionContext.lumoMultiSubscriptions).toBe(true);
+        expect(multiSubscriptionContext.entitlementCatalog).toBe(multiSubscriptionTestCatalog);
+    });
+
+    it('reports a failed catalog request and falls back to the rules without the flag', async () => {
+        const unauthorized = new Error('Invalid access token');
+        const getEntitlementCatalog = jest.fn().mockRejectedValue(unauthorized);
+
+        const { multiSubscriptionContext } = await callGetUserInfo(getEntitlementCatalog);
+
+        expect(multiSubscriptionContext.lumoMultiSubscriptions).toBe(false);
+        expect(multiSubscriptionContext.entitlementCatalog).toBeUndefined();
+        expect(tracePaymentError).toHaveBeenCalledWith(unauthorized, { component: 'single-signup-v2-user-info' });
+    });
+
+    it('does not load the catalog with the flag off', async () => {
+        const getEntitlementCatalog = jest.fn();
+
+        const { multiSubscriptionContext } = await callGetUserInfo(getEntitlementCatalog, false);
+
+        expect(getEntitlementCatalog).not.toHaveBeenCalled();
+        expect(multiSubscriptionContext.lumoMultiSubscriptions).toBe(false);
     });
 });
 

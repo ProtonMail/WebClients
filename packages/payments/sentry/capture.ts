@@ -33,6 +33,7 @@ export type PaymentsComponent =
     | 'referral-ctx-payment-step'
     | 'single-signup-v1-step1'
     | 'single-signup-v2-account-step-payment'
+    | 'single-signup-v2-user-info'
     | 'subscription-container'
     | 'subscription-modal-provider'
     | 'use-chargebee-wallet'
