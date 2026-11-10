@@ -182,7 +182,9 @@ describe('useSetupGmailBYOEAddress', () => {
 
             expect(mockDispatch).toHaveBeenCalled();
             expect(mockApi).toHaveBeenCalled();
-            expect(mockStartImportTask).toHaveBeenCalledWith(expect.objectContaining({ AutomaticImport: true }));
+            expect(mockStartImportTask).toHaveBeenCalledWith(
+                expect.objectContaining({ AutomaticImport: true, Byoe: true })
+            );
             expect(mockShowSuccessModal).toHaveBeenCalledWith('test@gmail.com', true);
         });
 
@@ -596,7 +598,12 @@ describe('useSetupGmailBYOEAddress', () => {
 
             expect(claimed).toBe(true);
             expect(mockStartImportTask).toHaveBeenCalledWith(
-                expect.objectContaining({ Account: 'test@gmail.com', AutomaticImport: true, ClaimAddress: true })
+                expect.objectContaining({
+                    Account: 'test@gmail.com',
+                    AutomaticImport: true,
+                    ClaimAddress: true,
+                    Byoe: true,
+                })
             );
             expect(mockShowSuccessModal).toHaveBeenCalledWith('test@gmail.com', true);
         });
