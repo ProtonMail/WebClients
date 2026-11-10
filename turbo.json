@@ -36,7 +36,9 @@
         "test:coverage": {
             "outputs": ["coverage/**"]
         },
-        "lint": {},
+        "lint": {
+            "inputs": ["$TURBO_DEFAULT$", "$TURBO_ROOT$/oxlint.local.mts"]
+        },
         "i18n:validate": {},
         "i18n:extract:web": {
             "dependsOn": ["build:web"],

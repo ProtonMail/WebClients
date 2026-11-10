@@ -3,6 +3,9 @@ import path from 'node:path';
 import { usesOxfmt } from './utilities/repo-rules/src/shared/oxfmt.ts';
 import { usesOxlint } from './utilities/repo-rules/src/shared/oxlint.ts';
 
+// Personal opt-in rules (oxlint.local.mts) must never block or autofix a commit
+process.env.PROTON_OXLINT_NO_LOCAL = '1';
+
 // Workspaces with an oxfmt.config.ts are formatted with oxfmt. Everything else is still formatted with prettier.
 const usesOxfmtFile = (file) => usesOxfmt(path.dirname(path.resolve(file)));
 

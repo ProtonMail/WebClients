@@ -125,5 +125,6 @@ const config = createOxlintConfig({
 
 export default defineConfig({
     ...config,
-    jsPlugins: [{ name: "inbox-desktop", specifier: "./oxlint-plugin.mjs" }],
+    // Keep the plugins already set by createOxlintConfig (e.g. the optional local overlay)
+    jsPlugins: [...(config.jsPlugins ?? []), { name: "inbox-desktop", specifier: "./oxlint-plugin.mjs" }],
 });

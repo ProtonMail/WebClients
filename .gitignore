@@ -56,3 +56,6 @@ AGENTS.override.md
 .pi/
 quark-mcp.log
 .playwright-mcp
+
+# Personal opt-in lint rules, see packages/oxlint-config/README.md
+oxlint.local.mts

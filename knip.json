@@ -24,7 +24,7 @@
         "packages/pass/types/api/events.ts": ["enumMembers"],
         "packages/pass/types/data/invites.ts": ["enumMembers"]
     },
-    "ignore": ["**/*.d.ts", "**/vendor/**"],
+    "ignore": ["**/*.d.ts", "**/vendor/**", "packages/oxlint-config/src/optional/**"],
     "ignoreWorkspaces": ["packages/wasm/andromeda"],
     "workspaces": {
         ".": {
