@@ -49,6 +49,10 @@ const contextBridgeApi: ContextBridgeApi = {
     navigate: (href) => invoke('router:navigate', href),
 
     /* secrets */
+    /** Only the macOS keychain scopes a stored item to the requesting app signature.
+     * On Windows any same-user process can read the store — and drive Hello — so no
+     * key material may live there. */
+    biometricsKeyAppBound: process.platform === 'darwin',
     canCheckPresence: () => invoke('biometrics:canCheckPresence'),
     checkPresence: (reason) => invoke('biometrics:checkPresence', reason),
     getSecret: (key, version) => invoke('biometrics:getSecret', key, version),

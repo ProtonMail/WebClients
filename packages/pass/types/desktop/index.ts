@@ -30,6 +30,11 @@ export type ContextBridgeApi = {
     canCheckPresence: () => Promise<boolean>;
     checkPresence: (reason?: string) => Promise<void>;
 
+    /** Resolved by the preload script from the running OS. Do not deduce it in the
+     * renderer from `BUILD_TARGET`: webpack inlines that constant from the build
+     * host's platform, so a macOS-built package would claim `true` on Windows. */
+    biometricsKeyAppBound: boolean;
+
     getSecret: (key: string, version: number) => Promise<MaybeNull<string>>;
     setSecret: (key: string, data: Uint8Array<ArrayBuffer>) => Promise<void>;
     deleteSecret: (key: string) => Promise<void>;

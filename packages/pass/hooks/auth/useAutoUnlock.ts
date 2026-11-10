@@ -11,11 +11,13 @@ import { useVisibleEffect } from '../useVisibleEffect';
 type Props = {
     loading: boolean;
     onUnlock: () => Promise<void>;
+    /** Set when the last attempt failed or was declined without `onUnlock` throwing */
+    error?: boolean;
 };
 
 /** Triggers unlock automatically for biometrics related unlocks
  * Consider visibility and if lock has been user initiated */
-export const useAutoUnlock = ({ loading, onUnlock }: Props) => {
+export const useAutoUnlock = ({ loading, onUnlock, error = false }: Props) => {
     const history = useHistory<MaybeNull<AuthRouteState>>();
     const { unlockDeclined = false } = useAppState();
     const [isError, setIsError] = useState(false);
@@ -32,7 +34,7 @@ export const useAutoUnlock = ({ loading, onUnlock }: Props) => {
         /** if unlock errored, stop triggering automatically. `unlockDeclined` carries
          * a dismissed prompt across popup re-opens: the popup closes when the OS
          * prompt takes focus, losing `isError`. */
-        if (isError || unlockDeclined) return;
+        if (isError || error || unlockDeclined) return;
 
         /** if user has triggered the lock - don't auto-prompt.  */
         const { userInitiatedLock = false } = history?.location.state ?? {};

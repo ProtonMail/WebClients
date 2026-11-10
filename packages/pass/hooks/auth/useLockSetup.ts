@@ -16,6 +16,7 @@ import { usePinUnlock } from '../../components/Lock/PinUnlockProvider';
 import { useUnlock } from '../../components/Lock/UnlockProvider';
 import { useOrganization } from '../../components/Organization/OrganizationProvider';
 import { DEFAULT_LOCK_TTL } from '../../constants';
+import { getBiometricsUnlockKey } from '../../lib/auth/lock/biometrics/adapter';
 import { ensureDesktopLockPermissions } from '../../lib/auth/lock/desktop/logic.extension';
 import type { UnlockDTO } from '../../lib/auth/lock/types';
 import { LockMode } from '../../lib/auth/lock/types';
@@ -25,6 +26,8 @@ import { lockCreateRequest } from '../../store/actions/requests';
 import { selectLockMode, selectLockTTL } from '../../store/selectors/settings';
 import { PassFeature } from '../../types/api/features';
 import type { Maybe, MaybeNull, Result } from '../../types/utils';
+import { SilentError, UnlockDeclinedError } from '../../utils/errors/errors';
+import { getErrorMessage } from '../../utils/errors/get-error-message';
 import { cloneObfuscation } from '../../utils/obfuscate/xor';
 import { useFeatureFlag } from '../useFeatureFlag';
 import { useActionRequest } from '../useRequest';
@@ -67,7 +70,8 @@ interface LockSetup {
 }
 
 export const useLockSetup = (): LockSetup => {
-    const { getBiometricsKey, supportsBiometrics } = usePassCore();
+    const core = usePassCore();
+    const { supportsBiometrics } = core;
     const { createNotification } = useNotifications();
 
     const permissions = usePermissionsProvider();
@@ -93,7 +97,21 @@ export const useLockSetup = (): LockSetup => {
     const [nextLock, setNextLock] = useState<MaybeNull<{ ttl: number; mode: LockMode }>>(null);
     const [biometricsEnabled, setBiometricsEnabled] = useState(currentLockMode === LockMode.BIOMETRICS);
 
-    const unlock = useUnlock((err) => createNotification({ type: 'error', text: err.message }));
+    /** The OS prompt of the current biometric lock is not a modal of ours: the settings
+     * stay clickable, and a second `setLockMode` would cancel the prompt on screen. */
+    const [verifyingBiometrics, setVerifyingBiometrics] = useState(false);
+
+    /** Only a declined prompt is reported as such. Other `SilentError`s carry
+     * no message to show and stay silent. */
+    const notifyUnlockError = (err: Error) => {
+        if (err instanceof UnlockDeclinedError) {
+            createNotification({ type: 'info', text: c('Info').t`Canceled by user` });
+        } else if (!(err instanceof SilentError)) {
+            createNotification({ type: 'error', text: getErrorMessage(err) });
+        }
+    };
+
+    const unlock = useUnlock(notifyUnlockError);
 
     const createLock = useActionRequest(lockCreateIntent, {
         requestId: lockCreateRequest(),
@@ -123,13 +141,27 @@ export const useLockSetup = (): LockSetup => {
                     });
 
                 case LockMode.BIOMETRICS: {
-                    const key = (await getBiometricsKey?.(authStore!).catch(noop)) ?? '';
-                    if (!key) return resolve({ ok: false });
+                    setVerifyingBiometrics(true);
+
+                    /** Not app-bound: the empty key is expected, the adapter unlock checks
+                     * the gesture itself. App-bound: a failed or cancelled platform store
+                     * read, or an empty key, refuses the switch. */
+                    const key = await getBiometricsUnlockKey(core, authStore!).catch((err: Error) => {
+                        notifyUnlockError(err);
+                        return null;
+                    });
+
+                    if (key === null || (core.biometricsKeyAppBound && !key)) {
+                        setVerifyingBiometrics(false);
+                        return resolve({ ok: false });
+                    }
+
                     const dto: UnlockDTO = { mode: LockMode.BIOMETRICS, key, offline: false };
 
                     return unlock(dto)
                         .then(() => resolve({ ok: true, ...dto }))
-                        .catch(() => resolve({ ok: false }));
+                        .catch(() => resolve({ ok: false }))
+                        .finally(() => setVerifyingBiometrics(false));
                 }
 
                 case LockMode.PASSWORD: {
@@ -330,14 +362,14 @@ export const useLockSetup = (): LockSetup => {
     const lock = useMemo(
         () => ({
             orgControlled: Boolean(orgLockTTL),
-            loading: createLock.loading,
+            loading: createLock.loading || verifyingBiometrics,
             mode: nextLock?.mode ?? currentLockMode,
             ttl: {
                 value: nextLock?.ttl || orgLockTTL || lockTTL,
                 disabled: Boolean(currentLockMode === LockMode.NONE || orgLockTTL),
             },
         }),
-        [currentLockMode, nextLock, orgLockTTL, lockTTL, createLock.loading]
+        [currentLockMode, nextLock, orgLockTTL, lockTTL, createLock.loading, verifyingBiometrics]
     );
 
     const biometrics = useMemo(() => ({ enabled: biometricsEnabled }), [biometricsEnabled]);

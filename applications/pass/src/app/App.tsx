@@ -56,6 +56,7 @@ import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { QA_SERVICE } from '@proton/pass/lib/qa/service';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
 import type { Maybe } from '@proton/pass/types/utils';
+import { UnlockDeclinedError } from '@proton/pass/utils/errors/errors';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import sentry from '@proton/shared/lib/helpers/sentry';
@@ -81,6 +82,11 @@ exposeApi(api);
 
 sentry({ config: PASS_CONFIG });
 connectivity.init();
+
+/** WebAuthn reports a dismissed or timed out prompt as `NotAllowedError` */
+const declineDismissedPrompt = (err: unknown): never => {
+    throw err instanceof DOMException && err.name === 'NotAllowedError' ? new UnlockDeclinedError() : err;
+};
 
 const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProviderProps => {
     const cache = new Map<string, Maybe<string>>();
@@ -147,12 +153,16 @@ const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProviderProps
 
         supportsBiometrics: isPRFSupported,
 
+        /** WebAuthn PRF keys are produced by the authenticator after a gesture and
+         * are bound to this origin — nothing key-shaped is readable at rest. */
+        biometricsKeyAppBound: true,
+
         getBiometricsKey: async (store) => {
             const { storageKey } = inferBiometricsStorageKey(store);
             const encodedId = localStorage.getItem(storageKey) ?? '';
             const credentialId = Uint8Array.fromBase64(encodedId, { alphabet: 'base64url' });
 
-            return getSerializedCredential(credentialId);
+            return getSerializedCredential(credentialId).catch(declineDismissedPrompt);
         },
 
         generateBiometricsKey: async () => {

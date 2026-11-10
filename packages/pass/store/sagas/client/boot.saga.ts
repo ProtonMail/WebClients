@@ -55,8 +55,14 @@ function* bootWorker({ payload }: ReturnType<typeof bootIntent>, options: RootSa
 
         /** Gate on the crypto material rather than the `offlineEnabled` setting: the
          * setting is a projection of it, and reading it can fail into defaults that
-         * read as "disabled" (`settings.resolve` never rejects). */
-        if (offline && !authStore.hasOfflineComponents()) throw new Error('Unauthorized offline boot');
+         * read as "disabled" (`settings.resolve` never rejects).
+         *
+         * `hasOfflinePassword` and not `hasOfflineComponents`: booting offline must imply
+         * holding the password-derived `offlineKD`. It proves the user knew the password
+         * in this process, and the cache writer needs it to keep the `encryptedCacheKey`
+         * that the next offline cold boot decrypts the cache with. Callers are expected to
+         * route to the password lock instead — this is the invariant, not the UX. */
+        if (offline && !authStore.hasOfflinePassword()) throw new Error('Unauthorized offline boot');
 
         options.setAppStatus(AppStatus.BOOTING);
         yield put(stopEventPolling());

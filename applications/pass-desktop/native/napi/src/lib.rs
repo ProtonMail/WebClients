@@ -28,9 +28,11 @@ pub mod biometric {
         napi_res!(Biometrics::can_check_presence())
     }
 
+    /// Resolves `true` when verified and `false` when the user cancelled the prompt.
+    /// Rejects with the platform message for any other failure.
     #[napi]
-    pub async fn check_presence(handle: Buffer, reason: String) -> napi::Result<()> {
-        napi_res!(Biometrics::check_presence(handle.into(), reason))
+    pub async fn check_presence(handle: Buffer, reason: String) -> napi::Result<bool> {
+        napi_res!(presence_outcome(Biometrics::check_presence(handle.into(), reason)))
     }
 
     #[napi]

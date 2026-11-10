@@ -65,6 +65,33 @@ describe('Boot saga', () => {
         });
     });
 
+    describe('Offline boot gate', () => {
+        const bootOffline = async (hasOfflinePassword: boolean) => {
+            const saga = sagaSetup();
+            const authStore = { getUserID: () => 'user-id', hasOfflinePassword: () => hasOfflinePassword };
+            const task = runSaga(saga.options, watcher, { ...options, getAuthStore: () => authStore } as any);
+            saga.options.dispatch(bootIntent({ offline: true }));
+            await saga.nextTick();
+            task.cancel();
+            await task.toPromise();
+            return saga;
+        };
+
+        beforeEach(() => setAppStatus.mockClear());
+
+        test('booting offline without the password-derived `offlineKD` is refused', async () => {
+            const saga = await bootOffline(false);
+
+            expect(setAppStatus).not.toHaveBeenCalledWith(AppStatus.BOOTING);
+            expect(saga.dispatched).toContainEqual(bootFailure(new Error('Unauthorized offline boot')));
+        });
+
+        test('booting offline with the password-derived `offlineKD` proceeds', async () => {
+            await bootOffline(true);
+            expect(setAppStatus).toHaveBeenCalledWith(AppStatus.BOOTING);
+        });
+    });
+
     describe('Cancellation', () => {
         beforeEach(() => {
             setAppStatus.mockClear();

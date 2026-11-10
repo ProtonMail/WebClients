@@ -12,7 +12,7 @@
 //! the native messaging host becomes a UX problem, or if the Mac App Store build needs
 //! native messaging.
 
-use anyhow::{bail, Error, Result};
+use anyhow::{Error, Result};
 use objc2_local_authentication::{LAContext, LAPolicy};
 use security_framework::passwords::{delete_generic_password, get_generic_password, set_generic_password};
 
@@ -32,8 +32,8 @@ impl super::BiometricsTrait for Biometrics {
         }
     }
 
-    fn check_presence(_handle: Vec<u8>, _reason: String) -> Result<()> {
-        bail!("Not implemented")
+    fn check_presence(_handle: Vec<u8>, reason: String) -> Result<()> {
+        generic_check_presence(reason)
     }
 
     fn new_check_presence(reason: String) -> Result<()> {

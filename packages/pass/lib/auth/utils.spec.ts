@@ -19,22 +19,57 @@ const makeAuthStore = (overrides: AuthStoreOverrides = {}): AuthStore =>
 describe('getInitialLockedAppStatus', () => {
     test('returns undefined when no offline components', () => {
         const store = makeAuthStore({ hasOfflineComponents: false, lockMode: LockMode.PASSWORD });
-        expect(getInitialLockedAppStatus(store, { offline: false })).toBeUndefined();
-        expect(getInitialLockedAppStatus(store, { offline: true })).toBeUndefined();
+        expect(getInitialLockedAppStatus(store, { offline: false, keyAppBound: true })).toBeUndefined();
+        expect(getInitialLockedAppStatus(store, { offline: true, keyAppBound: true })).toBeUndefined();
+    });
+
+    describe('app-bound key (macOS, web PRF)', () => {
+        test('BIOMETRICS with encryptedOfflineKD → BIOMETRICS_LOCKED', () => {
+            const store = makeAuthStore({ lockMode: LockMode.BIOMETRICS, encryptedOfflineKD: 'kd' });
+            expect(getInitialLockedAppStatus(store, { offline: false, keyAppBound: true })).toBe(
+                AppStatus.BIOMETRICS_LOCKED
+            );
+            expect(getInitialLockedAppStatus(store, { offline: true, keyAppBound: true })).toBe(
+                AppStatus.BIOMETRICS_LOCKED
+            );
+        });
+
+        test('BIOMETRICS without encryptedOfflineKD → PASSWORD_LOCKED (broken lock recovery)', () => {
+            const store = makeAuthStore({ lockMode: LockMode.BIOMETRICS });
+            expect(getInitialLockedAppStatus(store, { offline: false, keyAppBound: true })).toBe(
+                AppStatus.PASSWORD_LOCKED
+            );
+            expect(getInitialLockedAppStatus(store, { offline: true, keyAppBound: true })).toBe(
+                AppStatus.PASSWORD_LOCKED
+            );
+        });
+    });
+
+    describe('app-unbound key (Windows)', () => {
+        test('BIOMETRICS online → BIOMETRICS_LOCKED (UI lock)', () => {
+            const store = makeAuthStore({ lockMode: LockMode.BIOMETRICS });
+            expect(getInitialLockedAppStatus(store, { offline: false, keyAppBound: false })).toBe(
+                AppStatus.BIOMETRICS_LOCKED
+            );
+        });
+
+        test('BIOMETRICS offline → PASSWORD_LOCKED', () => {
+            const store = makeAuthStore({ lockMode: LockMode.BIOMETRICS });
+            expect(getInitialLockedAppStatus(store, { offline: true, keyAppBound: false })).toBe(
+                AppStatus.PASSWORD_LOCKED
+            );
+        });
+
+        test('a stale envelope does not restore the app-bound behaviour', () => {
+            const store = makeAuthStore({ lockMode: LockMode.BIOMETRICS, encryptedOfflineKD: 'kd' });
+            expect(getInitialLockedAppStatus(store, { offline: true, keyAppBound: false })).toBe(
+                AppStatus.PASSWORD_LOCKED
+            );
+        });
     });
 
     describe('offline', () => {
-        const params = { offline: true };
-
-        test('BIOMETRICS with encryptedOfflineKD → BIOMETRICS_LOCKED', () => {
-            const store = makeAuthStore({ lockMode: LockMode.BIOMETRICS, encryptedOfflineKD: 'kd' });
-            expect(getInitialLockedAppStatus(store, params)).toBe(AppStatus.BIOMETRICS_LOCKED);
-        });
-
-        test('BIOMETRICS without encryptedOfflineKD → PASSWORD_LOCKED', () => {
-            const store = makeAuthStore({ lockMode: LockMode.BIOMETRICS });
-            expect(getInitialLockedAppStatus(store, params)).toBe(AppStatus.PASSWORD_LOCKED);
-        });
+        const params = { offline: true, keyAppBound: true };
 
         test('PASSWORD → PASSWORD_LOCKED', () => {
             const store = makeAuthStore({ lockMode: LockMode.PASSWORD });
@@ -53,17 +88,7 @@ describe('getInitialLockedAppStatus', () => {
     });
 
     describe('online', () => {
-        const params = { offline: false };
-
-        test('BIOMETRICS with encryptedOfflineKD → BIOMETRICS_LOCKED', () => {
-            const store = makeAuthStore({ lockMode: LockMode.BIOMETRICS, encryptedOfflineKD: 'kd' });
-            expect(getInitialLockedAppStatus(store, params)).toBe(AppStatus.BIOMETRICS_LOCKED);
-        });
-
-        test('BIOMETRICS without encryptedOfflineKD → PASSWORD_LOCKED (password fallback)', () => {
-            const store = makeAuthStore({ lockMode: LockMode.BIOMETRICS });
-            expect(getInitialLockedAppStatus(store, params)).toBe(AppStatus.PASSWORD_LOCKED);
-        });
+        const params = { offline: false, keyAppBound: true };
 
         test('PASSWORD → PASSWORD_LOCKED', () => {
             const store = makeAuthStore({ lockMode: LockMode.PASSWORD });

@@ -15,6 +15,17 @@ impl fmt::Display for PresenceCheckCancelled {
 
 impl std::error::Error for PresenceCheckCancelled {}
 
+/// Splits a presence check result for the JS bridge: `true` verified, `false` cancelled by
+/// the user, an error for every other failure. The error code is language independent,
+/// unlike the message of an OS prompt.
+pub fn presence_outcome(result: Result<()>) -> Result<bool> {
+    match result {
+        Ok(()) => Ok(true),
+        Err(error) if error.is::<PresenceCheckCancelled>() => Ok(false),
+        Err(error) => Err(error),
+    }
+}
+
 /// Shared presence check. Declared here rather than inside each platform module so the
 /// macOS and Windows implementations sit side by side.
 #[cfg(any(target_os = "macos", target_os = "windows"))]
@@ -35,3 +46,26 @@ pub trait BiometricsTrait {
 }
 
 pub use biometrics_platform::*;
+
+#[cfg(test)]
+mod tests {
+    use anyhow::anyhow;
+
+    use super::*;
+
+    #[test]
+    fn verified_check_is_true() {
+        assert!(presence_outcome(Ok(())).unwrap());
+    }
+
+    #[test]
+    fn cancelled_check_is_false() {
+        assert!(!presence_outcome(Err(PresenceCheckCancelled.into())).unwrap());
+    }
+
+    #[test]
+    fn failed_check_keeps_its_message() {
+        let error = presence_outcome(Err(anyhow!("There have been too many failed attempts."))).unwrap_err();
+        assert_eq!(error.to_string(), "There have been too many failed attempts.");
+    }
+}

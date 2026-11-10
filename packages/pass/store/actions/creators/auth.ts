@@ -10,7 +10,7 @@ import { getNativeMessageErrorType } from '../../../lib/native-messaging/errors'
 import { NativeMessageErrorType } from '../../../types/desktop/extension-unlock-with-desktop';
 import { NotificationKey } from '../../../types/worker/notification';
 import type { ClientEndpoint } from '../../../types/worker/runtime';
-import { SilentError } from '../../../utils/errors/errors';
+import { SilentError, UnlockFailedError } from '../../../utils/errors/errors';
 import { getErrorMessage } from '../../../utils/errors/get-error-message';
 import { pipe } from '../../../utils/fp/pipe';
 import { withRequest, withRequestFailure, withRequestSuccess } from '../../request/enhancers';
@@ -117,6 +117,8 @@ export const unlock = requestActionsFactory<UnlockDTO, LockMode, LockMode>('auth
             }
 
             const reason = (() => {
+                if (error instanceof UnlockFailedError) return error.message;
+
                 switch (mode) {
                     case LockMode.SESSION:
                         if (error instanceof Error) {
