@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 
 import {
     selectCanManageWaitingRoom,
@@ -7,6 +7,12 @@ import {
     selectMeetingLink,
     selectMeetingName,
 } from '@proton/meet/store/slices/currentMeeting';
+import {
+    selectCameraPermission,
+    selectMicrophonePermission,
+    selectPermissionsModals,
+} from '@proton/meet/store/slices/deviceManagementSlice/selectors';
+import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import { selectWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import { selectIsGuest, selectUserId } from '@proton/meet/store/slices/userSlice';
 import { selectIsWaitingRoomAdmissionActive } from '@proton/meet/store/slices/waitingRoomSlice';
@@ -50,6 +56,9 @@ vi.mock('@proton/meet/store/hooks', () => ({
             [selectWaitingRoomSetting, mocks.waitingRoomEnabled],
             [selectIsGuest, mocks.isGuest],
             [selectUserId, mocks.userId],
+            [selectPermissionsModals, { permissionsModal: PermissionsModalType.NONE }],
+            [selectCameraPermission, 'granted'],
+            [selectMicrophonePermission, 'granted'],
         ]);
         return values.get(selector);
     },
@@ -88,11 +97,11 @@ const USER_STORAGE_KEY = 'openInDesktopApp.user.user-1';
 const OTHER_USER_STORAGE_KEY = 'openInDesktopApp.user.user-2';
 const GUEST_STORAGE_KEY = 'openInDesktopApp.guest';
 
-const renderPreJoinDetails = ({ instantMeeting = false, onJoinMeeting = vi.fn() } = {}) =>
+const renderPreJoinDetails = ({ instantMeeting = false, onJoinMeeting = vi.fn(), displayName = 'Alice' } = {}) =>
     render(
         <PreJoinDetails
             meetingLinkName="meeting-abc"
-            displayName="Alice"
+            displayName={displayName}
             keepDisplayName={false}
             onDisplayNameChange={vi.fn()}
             onJoinMeeting={onJoinMeeting}
@@ -274,6 +283,94 @@ describe('PreJoinDetails', () => {
 
             expect(getDesktopAppPreference(GUEST_STORAGE_KEY)).toBe(true);
             expect(getDesktopAppPreference(USER_STORAGE_KEY)).toBe(false);
+        });
+    });
+
+    describe.each([
+        { screen: 'participant', isHost: false, instantMeeting: false, action: 'Join in browser' },
+        { screen: 'host', isHost: true, instantMeeting: false, action: 'Start meeting in browser' },
+        { screen: 'instant meeting', isHost: false, instantMeeting: true, action: 'Start meeting' },
+    ])('name field on the $screen screen', ({ isHost, instantMeeting, action }) => {
+        const renderScreen = ({ displayName = 'Alice', onJoinMeeting = vi.fn() } = {}) => {
+            mocks.isHost = isHost;
+            return renderPreJoinDetails({ instantMeeting, displayName, onJoinMeeting });
+        };
+        const getNameField = () => screen.getByRole('textbox', { name: 'Name' });
+        const getActionButton = () => screen.getByRole('button', { name: action });
+
+        it('asks for a name to join', () => {
+            renderScreen({ displayName: '' });
+
+            expect(getNameField()).toHaveAttribute('placeholder', 'Enter your name to join');
+        });
+
+        it.each([
+            { case: 'is empty', displayName: '' },
+            { case: 'only has spaces', displayName: '   ' },
+        ])('keeps the button reachable but disabled when the name $case', ({ displayName }) => {
+            renderScreen({ displayName });
+
+            expect(getActionButton()).toHaveAttribute('aria-disabled', 'true');
+            expect(getActionButton()).not.toHaveAttribute('disabled');
+        });
+
+        it('enables the button once there is a name', () => {
+            renderScreen();
+
+            expect(getActionButton()).toBeEnabled();
+            expect(getActionButton()).not.toHaveAttribute('aria-disabled');
+        });
+
+        it('focuses the name field instead of joining when the button is used without a name', () => {
+            const onJoinMeeting = vi.fn();
+            renderScreen({ displayName: '', onJoinMeeting });
+            act(() => getActionButton().focus());
+            expect(getActionButton()).toHaveFocus();
+
+            fireEvent.click(getActionButton());
+
+            expect(getNameField()).toHaveFocus();
+            expect(onJoinMeeting).not.toHaveBeenCalled();
+        });
+
+        it('returns focus to the empty name field after a click on an empty area', () => {
+            renderScreen({ displayName: '' });
+            act(() => getNameField().blur());
+            expect(getNameField()).not.toHaveFocus();
+
+            fireEvent.click(document.body);
+
+            expect(getNameField()).toHaveFocus();
+        });
+
+        it('joins with the name as typed when Enter is pressed in the name field', () => {
+            const onJoinMeeting = vi.fn();
+            renderScreen({ displayName: ' Alice ', onJoinMeeting });
+
+            fireEvent.keyDown(getNameField(), { key: 'Enter' });
+
+            expect(onJoinMeeting).toHaveBeenCalledWith(' Alice ', false);
+        });
+
+        it.each([
+            { case: 'is empty', displayName: '' },
+            { case: 'only has spaces', displayName: '   ' },
+        ])('does not join when Enter is pressed and the name $case', ({ displayName }) => {
+            const onJoinMeeting = vi.fn();
+            renderScreen({ displayName, onJoinMeeting });
+
+            fireEvent.keyDown(getNameField(), { key: 'Enter' });
+
+            expect(onJoinMeeting).not.toHaveBeenCalled();
+        });
+
+        it('does not join when Enter commits an input method composition', () => {
+            const onJoinMeeting = vi.fn();
+            renderScreen({ onJoinMeeting });
+
+            fireEvent.keyDown(getNameField(), { key: 'Enter', isComposing: true });
+
+            expect(onJoinMeeting).not.toHaveBeenCalled();
         });
     });
 });

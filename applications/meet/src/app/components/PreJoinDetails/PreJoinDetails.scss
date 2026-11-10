@@ -91,3 +91,12 @@
 .remember-my-name-on-this-device {
 	line-height: 2.4375rem;
 }
+
+.button.is-disabled.pre-join-details-join-button-awaiting-name {
+	pointer-events: auto;
+	cursor: default;
+
+	&:focus-visible {
+		opacity: 1;
+	}
+}
