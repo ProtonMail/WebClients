@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { useConfig } from '@proton/app-context/useConfig'
 import { EditorSystemMode } from '@proton/docs-shared/EditorSystemMode'
@@ -24,16 +24,25 @@ import { useLiveEditing } from '../__utils/useLiveEditing'
 import { usePauseWhileAway } from '../__utils/usePauseWhileAway'
 import { usePresenceBridge } from '../__utils/usePresenceBridge'
 import { useRealtimeClient } from '../__utils/useRealtimeClient'
+import { useRetryOnActivity } from '../__utils/useRetryOnActivity'
+import { useStopFollowUps } from '../__utils/useStopFollowUps'
+import { BootstrapErrorPage } from './BootstrapErrorPage'
 import { DocumentHeaderV2 } from './DocumentHeaderV2'
 import { DocumentLoader } from './DocumentLoader'
 import { DocumentShell } from './DocumentShell'
+import { DocumentSizeLimitModal } from './DocumentSizeLimitModal'
+import { IdleActivityCatcher } from './IdleActivityCatcher'
 import { OpenActionError } from './OpenActionError'
 import { SessionStatus } from './SessionStatus'
 import { WordCountOverlay, useWordCountState } from './WordCount'
 
 export const EDITOR_FRAME_READY_TIMEOUT_MS = 30_000
 
-export type DocumentViewerV2Props = { nodeMeta: PrivateNodeMeta; onRetry: () => void }
+export type DocumentViewerV2Props = {
+  nodeMeta: PrivateNodeMeta
+  /** Opens the document again from the start */
+  onRetry: () => void
+}
 
 /** Opens the text document `nodeMeta` for live editing, as far as the user's role allows. */
 export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
@@ -51,6 +60,11 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
   const isDarkMode = useIsEditorDarkMode()
   const session = sessionState.status === 'ready' ? sessionState.session : undefined
   const role = sessionState.status === 'ready' ? sessionState.role : 'Viewer'
+  const roleReads = sessionState.status === 'ready' ? sessionState.roleReads : 0
+  // The editor is initialized once, for the role read first: a role read again after a rebootstrap changes the lock
+  // and the header, never initializes the editor again
+  const roleRef = useRef(role)
+  roleRef.current = role
   const node = useLiveDocumentNode(sessionState.status === 'ready' ? sessionState.node : undefined)
 
   const failEditor = useCallback(
@@ -65,8 +79,10 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
     [logger, toggleDebugMode],
   )
 
-  const snapshot = useLiveEditing({ session, editorInvoker, role, onEditorError: failEditor })
+  const snapshot = useLiveEditing({ session, editorInvoker, role, roleReads, onEditorError: failEditor })
   usePauseWhileAway(session)
+  const waitingForActivity = useRetryOnActivity(session)
+  useStopFollowUps(session, showModal)
   useLeaveWarning(session)
   // Before the effect that initializes the editor, so the user name reaches the editor first
   useEditorBasics(editorInvoker, isDarkMode)
@@ -148,7 +164,7 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
     }
 
     let cancelled = false
-    showDocument(editorInvoker, session, role, APP_VERSION).then(
+    showDocument(editorInvoker, session, roleRef.current, APP_VERSION).then(
       () => {
         if (cancelled) {
           return
@@ -165,7 +181,7 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
     return () => {
       cancelled = true
     }
-  }, [APP_VERSION, caughtUp, editorInvoker, failEditor, logger, role, session])
+  }, [APP_VERSION, caughtUp, editorInvoker, failEditor, logger, session])
 
   // A failed editor is gone, so peers must stop seeing its last cursor, which the session would keep broadcasting
   const editorFailed = editorStatus === 'failed'
@@ -176,8 +192,11 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
   }, [editorFailed, session])
 
   if (sessionState.status === 'failed') {
-    const canRetry = sessionState.reason === 'bootstrapFailed' || sessionState.reason === 'unreadableUpdate'
-    return <OpenActionError reason={sessionState.reason} onRetry={canRetry ? onRetry : undefined} />
+    const { reason } = sessionState
+    if (reason === 'unsupported' || reason === 'unreadableUpdate') {
+      return <OpenActionError reason={reason} onRetry={reason === 'unreadableUpdate' ? onRetry : undefined} />
+    }
+    return <BootstrapErrorPage failure={reason} onRetry={onRetry} />
   }
 
   if (editorStatus === 'failed') {
@@ -185,7 +204,11 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
   }
 
   const retryConnection = () => {
-    session?.retry().catch((error) => logger.warn('Failed to reconnect the document session', error))
+    // A second click, or a retry on activity after an idle eviction, may have left `stopped` already
+    if (session?.getSnapshot().status.name !== 'stopped') {
+      return
+    }
+    session.retry().catch((error) => logger.warn('Failed to reconnect the document session', error))
   }
 
   const header = node && (
@@ -210,9 +233,11 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
             isDarkMode={isDarkMode}
           />
           {editorStatus === 'loading' && <DocumentLoader className="bg-norm absolute left-0 top-0" />}
+          {waitingForActivity && <IdleActivityCatcher />}
         </div>
         {editorStatus === 'shown' && <WordCountOverlay wordCount={wordCount} />}
         {modal}
+        <DocumentSizeLimitModal session={session} />
       </div>
     </DocumentShell>
   )

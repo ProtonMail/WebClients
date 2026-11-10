@@ -140,7 +140,6 @@ describe('useLiveEditing', () => {
 
   test.each<[Refusal, string]>([
     [{ reason: 'updateTooLarge', attemptedBytes: 2, limitBytes: 1 }, 'Your last change is too large to save'],
-    [{ reason: 'documentSizeLimitReached', attemptedBytes: 2, limitBytes: 1 }, 'reached its maximum size'],
     [{ reason: 'incompleteBaseState' }, 'Some of the document could not be read'],
   ])('a refusal for %j tells the user and locks the editor', (refusal, text) => {
     const fake = createFakeSession()
@@ -151,6 +150,19 @@ describe('useLiveEditing', () => {
     act(() => fake.emit('refusal', refusal))
 
     expect(mockCreateNotification).toHaveBeenCalledWith({ type: 'error', text: expect.stringContaining(text) })
+    expect(logger.warn).toHaveBeenCalledWith(expect.any(String), refusal)
+    expect(editorInvoker.changeLockedState).toHaveBeenLastCalledWith(true)
+  })
+
+  test('a refusal for the document size locks the editor and leaves telling the user to the size-limit modal', () => {
+    const fake = createFakeSession()
+    const editorInvoker = createEditorInvoker()
+    renderLiveEditing({ session: fake.session, editorInvoker })
+    const refusal: Refusal = { reason: 'documentSizeLimitReached', attemptedBytes: 2, limitBytes: 1 }
+
+    act(() => fake.emit('refusal', refusal))
+
+    expect(mockCreateNotification).not.toHaveBeenCalled()
     expect(logger.warn).toHaveBeenCalledWith(expect.any(String), refusal)
     expect(editorInvoker.changeLockedState).toHaveBeenLastCalledWith(true)
   })

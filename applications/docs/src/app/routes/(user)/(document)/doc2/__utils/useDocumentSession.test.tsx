@@ -1,9 +1,10 @@
 import { act, renderHook, waitFor } from '@testing-library/react'
 import type { ReactNode } from 'react'
 
-import { MemberRole, generateNodeUid, getDrive } from '@proton/drive/sdk'
+import { MemberRole, ValidationError, generateNodeUid, getDrive } from '@proton/drive/sdk'
 import { isDevOrBlack } from '@proton/shared/lib/env'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
+import { DocsApiError, DocsApiErrorCode, type SessionStatus } from '@proton-docs/realtime-sdk'
 
 import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/application-context'
 
@@ -33,10 +34,19 @@ const wrapper = ({ children }: { children: ReactNode }) => (
 function createFakeClient() {
   const calls: string[] = []
   const listeners = new Map<string, (payload: unknown) => void>()
+  const snapshotListeners = new Set<(snapshot: { status: SessionStatus }) => void>()
+  let snapshot: { status: SessionStatus } = { status: { name: 'ready' } }
   const session = {
     disconnect: jest.fn(async () => {
       calls.push('disconnect')
     }),
+    getSnapshot: () => snapshot,
+    subscribe: (listener: (snapshot: { status: SessionStatus }) => void) => {
+      snapshotListeners.add(listener)
+      return () => {
+        snapshotListeners.delete(listener)
+      }
+    },
   }
   let resolveBootstrap: () => void = () => {}
   let rejectBootstrap: (error: Error) => void = () => {}
@@ -63,6 +73,11 @@ function createFakeClient() {
     calls,
     listeners,
     emit: (event: string, payload: unknown) => listeners.get(event)?.(payload),
+    setStatus: (status: SessionStatus) => {
+      snapshot = { status }
+      snapshotListeners.forEach((listener) => listener(snapshot))
+    },
+    snapshotListenerCount: () => snapshotListeners.size,
     resolveBootstrap: async () => {
       resolveBootstrap()
       await bootstrapped
@@ -101,6 +116,7 @@ describe('useDocumentSession', () => {
       session: fake.session,
       role: 'Editor',
       node: { mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE },
+      roleReads: 1,
     })
   })
 
@@ -175,6 +191,7 @@ describe('useDocumentSession', () => {
     unmount()
 
     expect(fake.listeners.size).toBe(0)
+    expect(fake.snapshotListenerCount()).toBe(0)
     expect(fake.session.disconnect).toHaveBeenCalledTimes(1)
   })
 
@@ -208,15 +225,129 @@ describe('useDocumentSession', () => {
     expect(fake.client.createSession).not.toHaveBeenCalled()
   })
 
-  test('a bootstrap failure fails with its reason and logs the cause', async () => {
+  test('a node Drive does not find for the user fails as no access, and creates no session', async () => {
+    getNode.mockRejectedValue(new ValidationError('Item not found', 2501))
+    const fake = createFakeClient()
+    const { result } = renderHook(() => useDocumentSession(fake.client, nodeMeta), { wrapper })
+
+    await waitFor(() => expect(result.current).toEqual({ status: 'failed', reason: 'noAccess' }))
+    expect(fake.client.createSession).not.toHaveBeenCalled()
+  })
+
+  test.each<[string, unknown, string]>([
+    ['no access', new DocsApiError('getDocumentMeta', 403), 'noAccess'],
+    ['no access', new DocsApiError('getDocumentMeta', 422, DocsApiErrorCode.InsufficientPermissions), 'noAccess'],
+    ['not found', new DocsApiError('getDocumentMeta', 404), 'notFound'],
+    ['not found', new DocsApiError('getDocumentMeta', 400, DocsApiErrorCode.InvalidID), 'notFound'],
+    ['an unreachable Docs API', new DocsApiError('getCommitData'), 'unreachable'],
+    ['any other Docs API failure', new DocsApiError('getCommitData', 500), 'bootstrapFailed'],
+    ['any other failure', new Error('Drive failed'), 'bootstrapFailed'],
+  ])('a bootstrap failure for %s fails with its reason and logs the cause', async (_, cause, reason) => {
     const fake = createFakeClient()
     const { result } = renderHook(() => useDocumentSession(fake.client, nodeMeta), { wrapper })
     await waitFor(() => expect(fake.calls).toContain('bootstrap'))
-    const cause = new Error('Docs API failed')
 
-    await act(() => fake.rejectBootstrap(cause))
+    await act(() => fake.rejectBootstrap(cause as Error))
 
-    expect(result.current).toEqual({ status: 'failed', reason: 'bootstrapFailed' })
+    expect(result.current).toEqual({ status: 'failed', reason })
     expect(logger.error).toHaveBeenCalledWith(expect.any(String), cause)
+  })
+
+  describe('after a rebootstrap', () => {
+    async function renderReady() {
+      const fake = createFakeClient()
+      const rendered = renderHook(() => useDocumentSession(fake.client, nodeMeta), { wrapper })
+      await waitFor(() => expect(fake.calls).toContain('bootstrap'))
+      await act(() => fake.resolveBootstrap())
+      expect(rendered.result.current).toMatchObject({ status: 'ready', role: 'Editor', roleReads: 1 })
+      getNodeHierarchy.mockClear()
+      return { fake, ...rendered }
+    }
+
+    test('re-reads the role once the session leaves opening, and keeps the session and node', async () => {
+      const { fake, result } = await renderReady()
+      getNodeHierarchy.mockResolvedValue([{ directRole: MemberRole.Viewer }])
+
+      act(() =>
+        fake.setStatus({ name: 'reconnecting', condition: 'permissionsChanged', nextAttemptAt: 0, budgetExpiresAt: 0 }),
+      )
+      act(() => fake.setStatus({ name: 'opening' }))
+      expect(getNodeHierarchy).not.toHaveBeenCalled()
+
+      act(() => fake.setStatus({ name: 'connecting' }))
+
+      await waitFor(() => expect(result.current).toMatchObject({ status: 'ready', role: 'Viewer', roleReads: 2 }))
+      expect(getNodeHierarchy).toHaveBeenCalledTimes(1)
+      expect(getNodeHierarchy).toHaveBeenCalledWith(generateNodeUid('volume-1', 'link-1'))
+      expect(result.current).toMatchObject({
+        session: fake.session,
+        node: { mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE },
+      })
+    })
+
+    test('counts a re-read that finds the same role, so the lock is applied again', async () => {
+      const { fake, result } = await renderReady()
+
+      act(() => fake.setStatus({ name: 'opening' }))
+      act(() => fake.setStatus({ name: 'connected' }))
+
+      await waitFor(() => expect(result.current).toMatchObject({ role: 'Editor', roleReads: 2 }))
+    })
+
+    test('does not re-read the role on status changes that skip opening', async () => {
+      const { fake, result } = await renderReady()
+
+      act(() => fake.setStatus({ name: 'connecting' }))
+      act(() => fake.setStatus({ name: 'connected' }))
+      act(() => fake.setStatus({ name: 'reconnecting', condition: 'transient', nextAttemptAt: 0, budgetExpiresAt: 0 }))
+      act(() => fake.setStatus({ name: 'connected' }))
+      await act(async () => {})
+
+      expect(getNodeHierarchy).not.toHaveBeenCalled()
+      expect(result.current).toMatchObject({ roleReads: 1 })
+    })
+
+    test('applies only the latest of two overlapping re-reads', async () => {
+      const { fake, result } = await renderReady()
+      let resolveFirst: (hierarchy: unknown) => void = () => {}
+      getNodeHierarchy
+        .mockReturnValueOnce(new Promise((resolve) => (resolveFirst = resolve)))
+        .mockResolvedValueOnce([{ directRole: MemberRole.Admin }])
+
+      act(() => fake.setStatus({ name: 'opening' }))
+      act(() => fake.setStatus({ name: 'connecting' }))
+      act(() => fake.setStatus({ name: 'opening' }))
+      act(() => fake.setStatus({ name: 'connected' }))
+      await waitFor(() => expect(result.current).toMatchObject({ role: 'Admin' }))
+
+      await act(async () => resolveFirst([{ directRole: MemberRole.Viewer }]))
+
+      expect(result.current).toMatchObject({ role: 'Admin' })
+    })
+
+    test('keeps the role when the re-read fails', async () => {
+      const { fake, result } = await renderReady()
+      getNodeHierarchy.mockRejectedValue(new Error('Drive failed'))
+
+      act(() => fake.setStatus({ name: 'opening' }))
+      act(() => fake.setStatus({ name: 'connected' }))
+      await act(async () => {})
+
+      expect(result.current).toMatchObject({ status: 'ready', role: 'Editor', roleReads: 1 })
+      expect(logger.warn).toHaveBeenCalledWith(expect.any(String), expect.any(Error))
+    })
+
+    test('a re-read that settles after unmount changes nothing', async () => {
+      const { fake, result, unmount } = await renderReady()
+      let resolveHierarchy: (hierarchy: unknown) => void = () => {}
+      getNodeHierarchy.mockReturnValue(new Promise((resolve) => (resolveHierarchy = resolve)))
+      act(() => fake.setStatus({ name: 'opening' }))
+      act(() => fake.setStatus({ name: 'connected' }))
+
+      unmount()
+      await act(async () => resolveHierarchy([{ directRole: MemberRole.Viewer }]))
+
+      expect(result.current).toMatchObject({ role: 'Editor', roleReads: 1 })
+    })
   })
 })

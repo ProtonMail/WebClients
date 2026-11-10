@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react'
+import { type ReactNode, useEffect, useState } from 'react'
 
 import { Button } from '@proton/atoms/Button/Button'
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight'
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle'
 import { IcLock } from '@proton/icons/icons/IcLock'
 import { IcLockCheck } from '@proton/icons/icons/IcLockCheck'
-import type { RecoveryCondition, SessionSnapshot } from '@proton-docs/realtime-sdk'
+import type { SessionSnapshot } from '@proton-docs/realtime-sdk'
 import { c } from 'ttag'
 
 import { Pill } from '~/components/document/DocumentLayout/DocumentHeader/Pill'
@@ -20,20 +20,6 @@ export const SAVING_SHOWN_FOR_AT_LEAST_MS = 1_000
 /** A pill's label, which /doc's header hides on narrow screens, leaving the icon */
 const LABEL_CLASS = 'head-max-1199:!sr-only'
 
-const stopMessages: Record<RecoveryCondition, () => string> = {
-  transient: () => c('Info').t`The connection to the server was lost.`,
-  closedNormally: () => c('Info').t`The connection to the server was lost.`,
-  overloaded: () => c('Info').t`The server is busy.`,
-  staleBaseCommit: () => c('Info').t`The document could not be brought up to date.`,
-  divergedFromServer: () => c('Info').t`The document could not be brought up to date.`,
-  infrastructureDegraded: () => c('Info').t`Editing is temporarily unavailable.`,
-  idleEvicted: () => c('Info').t`You were disconnected after a period of inactivity.`,
-  authExpired: () => c('Info').t`Your session has expired. Reload the page to continue.`,
-  permissionsChanged: () => c('Info').t`Your access to this document has changed. Reload the page to continue.`,
-  clientRejected: () => c('Info').t`This version of the app is no longer supported. Reload the page to update it.`,
-  encryptionFailed: () => c('Info').t`Your changes could not be encrypted. Reload the page to continue.`,
-}
-
 export type SessionStatusProps = {
   snapshot: SessionSnapshot
   /** Retries a stopped session's connection */
@@ -43,7 +29,10 @@ export type SessionStatusProps = {
 /**
  * /doc's header pills (`ConnectionStatus.tsx`, which imports docs-core), mapped from the session's snapshot: its
  * connection, whether it can be edited, and how far its edits are delivered. The element carries the snapshot's
- * `data-status` and `data-delivery` as they are, for verification. A stopped session gets a retry.
+ * `data-status` and `data-delivery` as they are, for verification. A stopped session shows /doc's Offline pill, as /doc
+ * does whatever closed its connection, with the condition as its disconnection code, and a retry when the SDK calls the
+ * stop retryable; what /doc does past that for some conditions, such as an alert or the app's sign-in, happens in
+ * `useStopFollowUps`.
  */
 export function SessionStatus({ snapshot, onRetry }: SessionStatusProps) {
   const { status, delivery } = snapshot
@@ -73,21 +62,16 @@ export function SessionStatus({ snapshot, onRetry }: SessionStatusProps) {
       >
         {connectionPill}
         {readOnlyPill}
-        {/* A stop's reason stays in sight, since some ask the user to reload */}
-        {status.name === 'stopped' && <span className={`color-weak text-sm ${LABEL_CLASS}`}>{readOnlyReason}</span>}
         {deliveryPill}
       </output>
-      {status.name === 'stopped' && (
+      {status.name === 'stopped' && status.retryable && (
         <Button size="small" shape="ghost" onClick={onRetry}>{c('Action').t`Try again`}</Button>
       )}
     </div>
   )
 }
 
-/**
- * The pill for the connection once the session has opened; none while connected, once stopped (the Read-only pill says
- * why), or for a status not known yet
- */
+/** The pill for the connection once the session has opened; none while connected, or for a status not known yet */
 function getConnectionPill({ status }: SessionSnapshot) {
   switch (status.name) {
     case 'idle':
@@ -107,6 +91,16 @@ function getConnectionPill({ status }: SessionSnapshot) {
         <OfflinePill>{c('Info')
           .t`Looks like you're offline. You can keep editing: your changes are saved once you are back online.`}</OfflinePill>
       )
+    case 'stopped':
+      return (
+        <OfflinePill>
+          <div>{c('Info')
+            .t`Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.`}</div>
+          <div className="color-weak pt-4" data-testid="network-status-offline-info">
+            Disconnection error code: {status.condition}
+          </div>
+        </OfflinePill>
+      )
     default:
       return null
   }
@@ -121,11 +115,12 @@ function OpeningPill() {
   )
 }
 
-function OfflinePill({ children }: { children: string }) {
+/** /doc's Offline pill, which /doc shows whatever closed its connection */
+function OfflinePill({ children }: { children: ReactNode }) {
   return (
     <PopoverPill
       title={
-        <div className="flex gap-2">
+        <div className="flex gap-2" data-testid="network-status-offline">
           <CloudSlashIcon className="h-6 w-6 fill-current" />
           <span>{c('Title').t`Offline`}</span>
         </div>
@@ -138,10 +133,13 @@ function OfflinePill({ children }: { children: string }) {
   )
 }
 
-/** Why the session can't be edited, for the Read-only pill; none while it can, or before it holds a base state */
+/**
+ * Why the session can't be edited, for the Read-only pill; none while it can, before it holds a base state, or once
+ * stopped, which the Offline pill shows as /doc does
+ */
 function getReadOnlyReason({ status, editing }: SessionSnapshot): string | undefined {
   if (status.name === 'stopped') {
-    return stopMessages[status.condition]?.() ?? stopMessages.transient()
+    return undefined
   }
   if (editing.allowed || editing.reason === 'noBaseState' || editing.reason === 'stopped') {
     return undefined

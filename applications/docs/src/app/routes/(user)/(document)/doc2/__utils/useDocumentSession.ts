@@ -7,19 +7,30 @@ import type { PrivateNodeMeta, Session } from '@proton-docs/realtime-sdk'
 
 import { useApplication } from '~/utils/application-context'
 
+import { type BootstrapFailure, classifyBootstrapError } from './classifyBootstrapError'
 import { type DocumentRole, getDocumentRole } from './getDocumentRole'
 import type { useRealtimeClient } from './useRealtimeClient'
 
 export type DocumentSessionState =
   | { status: 'loading' }
-  | { status: 'ready'; session: Session; role: DocumentRole; node: NodeEntity }
-  | { status: 'failed'; reason: 'unsupported' | 'bootstrapFailed' | 'unreadableUpdate' }
+  | {
+      status: 'ready'
+      session: Session
+      role: DocumentRole
+      node: NodeEntity
+      /** How many times the role was read, so that a re-read applies the editor lock again even when it is unchanged */
+      roleReads: number
+    }
+  | { status: 'failed'; reason: 'unsupported' | 'unreadableUpdate' | BootstrapFailure }
 
 /**
  * Bootstraps a session for the text document `nodeMeta`, with the user's role on it and its Drive node, under an abort signal tied to
  * the hook's lifetime. On unmount it removes its listeners and disconnects the session, once bootstrapped if it was
  * still bootstrapping.
  * A base state with an unreadable update fails, since showing the rest would pass an incomplete document as whole.
+ * A failed bootstrap says why, by `classifyBootstrapError`.
+ * The role is read again after each rebootstrap, when the status leaves `opening` after the first ready, since the
+ * SDK rebootstraps when the user's access changes. Only the latest read counts, and one that fails keeps the role.
  */
 export function useDocumentSession(
   client: ReturnType<typeof useRealtimeClient>,
@@ -81,7 +92,46 @@ export function useDocumentSession(
         return
       }
       session = bootstrapped
-      setState({ status: 'ready', session, role: getDocumentRole(hierarchy), node })
+      setState({ status: 'ready', session, role: getDocumentRole(hierarchy), node, roleReads: 1 })
+      removeListeners.push(rereadRoleAfterRebootstraps(bootstrapped, nodeUid))
+    }
+
+    function rereadRoleAfterRebootstraps(session: Session, nodeUid: string): () => void {
+      let rebootstrapping = session.getSnapshot().status.name === 'opening'
+      let latestRead = 0
+
+      return session.subscribe(({ status }) => {
+        if (status.name === 'opening') {
+          rebootstrapping = true
+          return
+        }
+        if (!rebootstrapping) {
+          return
+        }
+        rebootstrapping = false
+        const read = ++latestRead
+        getDrive()
+          .getNodeHierarchy(nodeUid)
+          .then(
+            (hierarchy) => {
+              if (signal.aborted || read !== latestRead) {
+                return
+              }
+              const role = getDocumentRole(hierarchy)
+              logger.info('Read the role again after a rebootstrap', { role })
+              setState((state) =>
+                state.status === 'ready' && state.session === session
+                  ? { ...state, role, roleReads: state.roleReads + 1 }
+                  : state,
+              )
+            },
+            (error) => {
+              if (!signal.aborted) {
+                logger.warn('Failed to read the role again after a rebootstrap', error)
+              }
+            },
+          )
+      })
     }
 
     bootstrap().catch((error) => {
@@ -89,7 +139,7 @@ export function useDocumentSession(
         return
       }
       logger.error('Failed to bootstrap the document session', error)
-      setState({ status: 'failed', reason: 'bootstrapFailed' })
+      setState({ status: 'failed', reason: classifyBootstrapError(error) })
     })
 
     return () => {

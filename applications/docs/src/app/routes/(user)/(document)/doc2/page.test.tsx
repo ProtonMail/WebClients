@@ -34,8 +34,8 @@ jest.mock('./__components/DocumentShell', () => ({
   ),
 }))
 jest.mock('./__components/ErrorHeader', () => ({ ErrorHeader: () => <div>Error header</div> }))
-// The SDK ships ES modules only, which jest does not transform.
-jest.mock('@proton-docs/realtime-sdk', () => ({ version: '0.0.0' }))
+// A fixed version for the page's log line; the rest of the SDK, such as DocsApiError, stays real.
+jest.mock('@proton-docs/realtime-sdk', () => ({ ...jest.requireActual('@proton-docs/realtime-sdk'), version: '0.0.0' }))
 const mockCreateSession = jest.fn()
 const mockClient = { createSession: mockCreateSession }
 jest.mock('./__utils/useRealtimeClient', () => ({ useRealtimeClient: () => mockClient }))
@@ -211,15 +211,13 @@ describe('DocumentPageV2', () => {
       mockCreateSession.mockReturnValueOnce(pendingSession(() => Promise.reject(new Error('Bootstrap failed'))))
       renderAt('/doc2?mode=open&volumeId=VOLUME&linkId=LINK')
 
-      expect(await screen.findByTestId('invalid-openaction-error')).toHaveTextContent(
-        'The document could not be loaded.',
-      )
+      expect(await screen.findByTestId('document-load-error')).toHaveTextContent('Something went wrong')
       expect(screen.getByText('Error header')).toBeInTheDocument()
 
-      await userEvent.click(screen.getByRole('button', { name: 'Try again' }))
+      await userEvent.click(screen.getByRole('button', { name: 'Reload' }))
 
       await waitFor(() => expect(mockCreateSession).toHaveBeenCalledTimes(2))
-      expect(screen.queryByTestId('invalid-openaction-error')).not.toBeInTheDocument()
+      expect(screen.queryByTestId('document-load-error')).not.toBeInTheDocument()
     })
 
     test('a base state with an unreadable update shows the error page, and retry bootstraps again', async () => {
