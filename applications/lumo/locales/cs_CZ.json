@@ -2299,6 +2299,9 @@
       ],
       "90 days": [
         "90 dní"
+      ],
+      "This project": [
+        "Tento projekt"
       ]
     },
     "collider_2025: Personality": {
@@ -2840,6 +2843,12 @@
       "Ask the model to be more careful and thorough": [
         "Požádejte model, aby byl opatrnější a důkladnější"
       ],
+      "Back": [
+        "Zpět"
+      ],
+      "Back to chat": [
+        "Zpátky do chatu"
+      ],
       "Cancel": [
         "Zrušit"
       ],
@@ -2860,6 +2869,9 @@
       ],
       "Close": [
         "Zavřít"
+      ],
+      "Code": [
+        "Code"
       ],
       "Copy link & caption": [
         "Kopírovat odkaz a popisek"
@@ -2902,6 +2914,9 @@
       ],
       "Expand": [
         "Rozbalit"
+      ],
+      "Export chat": [
+        "Exportovat chat"
       ],
       "Go to all projects": [
         "Přejít na všechny projekty"
@@ -2972,6 +2987,9 @@
       "Reveal my profile": [
         "Odhalit můj profil"
       ],
+      "Run now": [
+        "Spustit nyní"
+      ],
       "Select all": [
         "Vybrat vše"
       ],
@@ -2998,6 +3016,9 @@
       ],
       "Try this": [
         "Vyzkoušet"
+      ],
+      "Undo": [
+        "Vrátit"
       ],
       "Unlink Folder": [
         "Odpojit složku"
@@ -3211,6 +3232,12 @@
       ]
     },
     "collider_2025:Info": {
+      "${ lineCount } line": [
+        "${ lineCount } řádek",
+        "${ lineCount } řádky",
+        "${ lineCount } řádků",
+        "${ lineCount } řádků"
+      ],
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to keep your conversations on this device, but it isn't available here.": [
         "${ LUMO_SHORT_APP_NAME } potřebuje místní databázové úložiště (IndexedDB), aby mohla uchovávat vaše konverzace v tomto zařízení, ale toto úložiště není k dispozici."
       ],
@@ -3337,6 +3364,9 @@
       "Something went wrong analysing this export. Please try again.": [
         "Při analýze tohoto exportu došlo k chybě. Zkuste to prosím znovu."
       ],
+      "Status: ${ statusAccessibleLabel }": [
+        "Status: ${ statusAccessibleLabel }"
+      ],
       "This message is empty. Sorry about that.": [
         "Tato zpráva je prázdná. Omlouváme se."
       ],
@@ -3411,6 +3441,9 @@
       "Edit conversation title": [
         "Upravit název konverzace"
       ],
+      "File": [
+        "Soubor"
+      ],
       "Fine": [
         "Tenký"
       ],
@@ -3449,6 +3482,9 @@
       ],
       "Politics": [
         "Politika"
+      ],
+      "Read only": [
+        "Pouze pro čtení"
       ],
       "Scams": [
         "Podvody"
@@ -7669,6 +7705,9 @@
       ],
       "Go to project": [
         "Přejít na projekt"
+      ],
+      "Move to project": [
+        "Přesunout do projektu"
       ],
       "No parent folder": [
         "Žádná nadřazená složka"

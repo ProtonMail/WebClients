@@ -1021,6 +1021,9 @@
       "Already in KB": [
         "Zaten bilgi bankasında"
       ],
+      "Apply changes": [
+        "Değişiklikleri uygula"
+      ],
       "Back": [
         "Geri"
       ],
@@ -1064,7 +1067,7 @@
         "Yapıtlar"
       ],
       "Custom ${ LUMO_SHORT_APP_NAME }s": [
-        "Özel ${ LUMO_SHORT_APP_NAME }'lar"
+        "Özel ${ LUMO_SHORT_APP_NAME } uygulamaları"
       ],
       "Dark": [
         "Koyu"
@@ -1085,7 +1088,7 @@
         "CSV olarak dışa aktar"
       ],
       "Fix with ${ LUMO_SHORT_APP_NAME }": [
-        "${ LUMO_SHORT_APP_NAME } ile düzeltin"
+        "${ LUMO_SHORT_APP_NAME } ile düzelt"
       ],
       "Generate from chats": [
         "Sohbetlerden oluştur"
@@ -1101,6 +1104,9 @@
       ],
       "I like this response": [
         "Bu yanıtı beğendim"
+      ],
+      "Keep current memories": [
+        "Var olan bellekler tutulsun"
       ],
       "Let ${ LUMO_SHORT_APP_NAME } out": [
         "${ LUMO_SHORT_APP_NAME } kedisini dışarı çıkar"
@@ -1511,8 +1517,8 @@
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "${ LUMO_SHORT_APP_NAME } yanıtları, iletişim tarzı, uzmanlık, yinelenen araçlar ve uzun süreli projelere göre uyarlamak için kayıtlı belleklerinize başvurur."
       ],
-      "${ LUMO_SHORT_APP_NAME } will review chat-based memories, remove duplicates, and merge related entries into clearer ones. Memories you wrote yourself are left unchanged.": [
-        "${ LUMO_SHORT_APP_NAME } sohbet temelli anıları gözden geçirecek, kopyaları kaldıracak ve ilgili kayıtları daha net olanlarla birleştirecek. Sizin yazdığınız anılar değişmeden bırakılır."
+      "${ LUMO_SHORT_APP_NAME } will review chat-based memories and suggest merging duplicates and related entries. You'll see a preview and can approve or discard the changes before anything is replaced. Memories you wrote yourself are left unchanged.": [
+        "${ LUMO_SHORT_APP_NAME } sohbet temelli bellekleri gözden geçirecek ve kopyaları ve ilgili kayıtları birleştirmeyi önerecek. Bir ön izleme göreceksiniz ve herhangi bir şey değiştirilmeden önce değişiklikleri onaylayabilir ya da atabilirsiniz. Sizin yazdığınız bellekler değişmeden kalır."
       ],
       "Add connectors, manage credentials, and set tool approval policies.": [
         "Bağlayıcılar ekleyin, kimlik doğrulama bilgilerini yönetin ve araç onay ilkeleri belirleyin."
@@ -1582,6 +1588,9 @@
       ],
       "More thorough answers, but can take longer": [
         "Daha kapsamlı yanıt, ancak daha uzun sürebilir"
+      ],
+      "Nothing has changed yet. Review the proposed changes below, then apply them or keep your current memories. Memories you wrote yourself are never changed.": [
+        "Henüz bir şey değiştirilmedi. Aşağıda önerilen değişiklikleri gözden geçirin, ardından uygulayın veya var olan belleklerinizi tutun. Kendi yazdığınız bellekler asla değiştirilmez."
       ],
       "Permanently delete your projects, chats, and saved memories. This cannot be undone.": [
         "Projelerinizi, sohbetlerinizi ve kaydedilen anılarınızı kalıcı olarak siler. Bu işlem geri alınamaz."
@@ -2045,9 +2054,13 @@
         "${ onDemandCount } büyük dosya istek üzerine okundu: ${ LUMO_SHORT_APP_NAME } tümünü yüklemek yerine gerek duyduğu parçaları arar.",
         "${ onDemandCount } büyük dosya istek üzerine okundu: ${ LUMO_SHORT_APP_NAME } tümünü yüklemek yerine gerek duyduğu parçaları arar."
       ],
+      "${ unchangedCount } chat-based memory stays the same.": [
+        "${ unchangedCount } sohbet temelli bellek aynı kalır.",
+        "${ unchangedCount } sohbet temelli bellek aynı kalır."
+      ],
       "${ unsourcedCount } number isn't in your messages, files or web results. Check it before you share.": [
-        "${ unsourcedCount } numarası iletilerinizde, dosyalarınızda veya web sonuçlarınızda yer almıyor. Paylaşmadan önce kontrol edin.",
-        "${ unsourcedCount } numarası iletilerinizde, dosyalarınızda veya web sonuçlarınızda yer almıyor. Paylaşmadan önce kontrol edin."
+        "${ unsourcedCount } numarası iletilerinizde, dosyalarınızda veya internet sonuçlarınızda yok. Paylaşmadan önce kontrol edin.",
+        "${ unsourcedCount } numarası iletilerinizde, dosyalarınızda veya internet sonuçlarınızda yok. Paylaşmadan önce kontrol edin."
       ],
       "${ urgentTotal } chat will expire within 24 hours": [
         "${ urgentTotal } sohbetin geçerlilik süresi 24 saat içinde sona erecek",
@@ -2256,6 +2269,9 @@
       ],
       "Files automatically retrieved based on your questions.": [
         "Sorularınıza göre otomatik olarak alınan dosyalar."
+      ],
+      "For now, the threshold is fixed at ${ formattedThreshold }.": [
+        "Şimdilik, eşik ${ formattedThreshold } olarak sabitlendi."
       ],
       "For this chat": [
         "Bu sohbet için"
@@ -2546,10 +2562,10 @@
         "${ LUMO_SHORT_APP_NAME } API kullanımını ve hesapta kalan tutarı görüntülemek için oturum açın."
       ],
       "Slide ${ slideNumber }": [
-        "${ slideNumber } numaralı slayt"
+        "${ slideNumber }. slayt"
       ],
       "slide ${ slideNumber }": [
-        "${ slideNumber } numaralı slayt"
+        "${ slideNumber }. slayt"
       ],
       "Sorted by creation time": [
         "Oluşturulma zamanına göre sıralandı"
@@ -2757,6 +2773,9 @@
       "${ formattedAmount } per 1M tokens": [
         "1 milyon belirteç başına ${ formattedAmount }"
       ],
+      "Added": [
+        "Eklendi"
+      ],
       "AI model": [
         "Yapay zeka modeli"
       ],
@@ -2847,6 +2866,9 @@
       "Merge": [
         "Birleştir"
       ],
+      "Merged": [
+        "Birleştirildi"
+      ],
       "Method": [
         "Yöntem"
       ],
@@ -2858,6 +2880,9 @@
       ],
       "Monthly spending limit": [
         "Aylık harcama sınırı"
+      ],
+      "New": [
+        "Yeni"
       ],
       "Not billed": [
         "Fatura kesilmedi"
@@ -2895,6 +2920,9 @@
       "Remaining balance": [
         "Hesabın kalan tutarı"
       ],
+      "Removed": [
+        "Kaldırıldı"
+      ],
       "required": [
         "zorunlu"
       ],
@@ -2903,6 +2931,9 @@
       ],
       "Response": [
         "Yanıt"
+      ],
+      "Reworded": [
+        "Yeniden ifade edildi"
       ],
       "Rust": [
         "Rust"
@@ -3161,7 +3192,7 @@
     },
     "collider_2025: Prefill": {
       "Rewrite the deck JSON to fix these parse errors and produce a valid slide deck.": [
-        "Bu ayrıştırma hatalarını gidermek ve geçerli bir slayt sunumu oluşturmak için slayt sunumu JSON dosyasını yeniden yaz."
+        "Bu işleme sorunlarını gidermek ve geçerli bir slayt sunumu oluşturmak için slayt sunumu JSON dosyasını yeniden yaz."
       ]
     },
     "collider_2025: Settings Item": {
@@ -3517,6 +3548,9 @@
       "Required headers": [
         "Gerekli üst bilgiler"
       ],
+      "Review optimized memories": [
+        "İyileştirilmiş bellekleri gözden geçir"
+      ],
       "Save your favorites": [
         "Beğendiklerinizi kaydedin"
       ],
@@ -3826,6 +3860,9 @@
       ],
       "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for priority access during peak times.": [
         "Her zamankinden daha yoğun bir trafik var. Bu nedenle yanıtlar normalden biraz daha yavaş olabilir. Yoğun zamanlarda öncelikli erişim için ${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
+      ],
+      "Your memories changed while reviewing. Please run Optimize again.": [
+        "İnceleme sırasında bellekleriniz değişti. Lütfen iyileştirme işlemini yeniden yapın."
       ]
     },
     "collider_2025: Web Extract": {
@@ -3889,6 +3926,9 @@
       ],
       "All": [
         "Tümü"
+      ],
+      "Allow for this task": [
+        "Bu görev için izin ver"
       ],
       "Analyze another export": [
         "Başka bir dışa aktarma dosyasını incele"
@@ -4052,6 +4092,9 @@
       "Download image": [
         "Görseli indir"
       ],
+      "Download the desktop app": [
+        "Bilgisayar uygulamasını indirin"
+      ],
       "Edit": [
         "Düzenle"
       ],
@@ -4142,6 +4185,9 @@
       "Keep editing": [
         "Düzenlemeyi sürdür"
       ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
+      ],
       "Light": [
         "Açık"
       ],
@@ -4150,6 +4196,9 @@
       ],
       "Make a copy": [
         "Kopyasını oluştur"
+      ],
+      "Manage": [
+        "Yönet"
       ],
       "Manage chats": [
         "Sohbet yönetimi"
@@ -4184,11 +4233,17 @@
       "More options": [
         "Daha fazla seçenek"
       ],
+      "Move to project": [
+        "Projeye taşı"
+      ],
       "Next message": [
         "Sonraki ileti"
       ],
       "Next question": [
         "Sonraki soru"
+      ],
+      "Not now": [
+        "Şimdi değil"
       ],
       "Numbered list": [
         "Numaralı liste"
@@ -4324,6 +4379,9 @@
       ],
       "Set up": [
         "Ayarla"
+      ],
+      "Set up ${ label }": [
+        "${ label } ayarla"
       ],
       "Set up manually": [
         "El ile ayarla"
@@ -4662,6 +4720,9 @@
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to run, but it isn't available in this browser. This can happen when cookies or website data are blocked, in private browsing, or with Lockdown Mode enabled. Please allow website data for this site and reload.": [
         "${ LUMO_SHORT_APP_NAME } uygulamasının çalışması için yerel veri tabanı depolama alanı (IndexedDB) gereklidir. Ancak bu tarayıcıda bu özellik bulunmuyor. Bu durum tanımlama bilgileri veya site verileri engellendiğinde, gizli gezinme kipinde veya kilitleme kipi açıldığında ortaya çıkabilir. Lütfen bu site için site verilerine izin verin ve sayfayı yeniden yükleyin."
       ],
+      "${ projectName } has reached its limit of chats or files.": [
+        "${ projectName } sohbet veya dosya sayısı sınırına ulaştı."
+      ],
       "A file with this path already exists": [
         "Bu yolu kullanan bir dosya zaten var"
       ],
@@ -4688,6 +4749,9 @@
       ],
       "Chart unavailable": [
         "Çizelge kullanılamıyor"
+      ],
+      "Chats in a private project can only be moved to another private project.": [
+        "Özel bir projedeki sohbetler yalnızca başka bir özel projeye taşınabilir."
       ],
       "Choose a date and time in the future": [
         "Gelecekte bir tarih ve saat seçin"
@@ -4731,6 +4795,9 @@
       "Could not load your skills.": [
         "Yetenekleriniz yüklenemedi."
       ],
+      "Could not open connector settings. Please try again.": [
+        "Bağlayıcı ayarları açılamadı. Lütfen yeniden deneyin."
+      ],
       "Could not open notification settings. Please open System Settings manually.": [
         "Bildirim ayarları açılamadı. Lütfen Sistem Ayarları bölümünü el ile açın."
       ],
@@ -4754,6 +4821,9 @@
       ],
       "Could not upload the skill": [
         "Yetenek yüklenemedi"
+      ],
+      "Couldn't move the chat. Please try again.": [
+        "Sohbet taşınamadı. Lütfen yeniden deneyin."
       ],
       "Database connection lost. Please refresh the page to continue.": [
         "Veri tabanı bağlantısı kesildi. İlerlemek için sayfayı yenileyin."
@@ -4866,6 +4936,9 @@
       "Select at least one day of the week": [
         "Haftanın en az bir gününü seçin"
       ],
+      "Some of this chat's files aren't available yet. Try again in a moment.": [
+        "Bu sohbetin bazı dosyaları henüz yok. Bir süre sonra yeniden deneyin."
+      ],
       "Something went wrong starting the analysis.": [
         "İnceleme başlatılırken bir sorun çıktı."
       ],
@@ -4913,6 +4986,9 @@
       ],
       "Use a relative path, like references/guide.md": [
         "references/guide.md gibi göreceli bir yol kullanın"
+      ],
+      "Wait for the response to finish before moving this chat.": [
+        "Bu sohbeti taşımadan önce yanıtın tamamlanmasını bekleyin."
       ],
       "We could not read this Excel workbook. It may be encrypted, corrupted, or not a valid .xlsx file. Please save it as .xlsx or CSV and try again.": [
         "Bu Excel çalışma kitabı okunamadı. Şifrelenmiş, bozuk veya geçersiz bir .xlsx dosyası olabilir. Lütfen .xlsx veya CSV olarak kaydedip yeniden deneyin."
@@ -5146,6 +5222,9 @@
       "Almost ready…": [
         "Neredeyse hazır…"
       ],
+      "Already have it? Open the ${ LUMO_SHORT_APP_NAME } desktop app and go to Customize › Connectors.": [
+        "Zaten var mı? ${ LUMO_SHORT_APP_NAME } bilgisayar uygulamasını açın ve Özelleştir › Bağlayıcılar bölümüne gidin."
+      ],
       "Also works for this category": [
         "Bu kategori için de çalışır"
       ],
@@ -5233,6 +5312,9 @@
       "Choose or drop your .zip or conversations.json file. We analyze your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts.": [
         ".zip ya da conversations.json dosyanızı seçin veya sürükleyip bırakın. ${ PAPER_TRAIL_LIMITS.maxPrompts } son istemlerinizi inceliyoruz."
       ],
+      "Choose the connectors this task can use. Uncheck a connector to remove it from the schedule. You can change this anytime in the task's settings.": [
+        "Bu görevin kullanabileceği bağlayıcıları seçin. Bir bağlayıcının işaretini kaldırarak onu zamanlamadan kaldırabilirsiniz. Bunu istediğiniz zaman görevin ayarlarından değiştirebilirsiniz."
+      ],
       "Click Settings → Data controls": [
         "Ayarlar → Veri denetimleri üzerine tıklayın"
       ],
@@ -5248,17 +5330,23 @@
       "Code · ${ langLabel }": [
         "Kod · ${ langLabel }"
       ],
+      "Connect and enable the selected connectors before allowing access, or uncheck them.": [
+        "Erişme izni vermeden önce seçilmiş bağlayıcıları bağlayın ve kullanıma alın ya da işaretlerini kaldırın."
+      ],
+      "Connect and enable the selected connectors before scheduling this task.": [
+        "Bu görevi zamanlamadan önce seçilmiş bağlayıcıları bağlayın ve kullanıma alın."
+      ],
       "Connector unavailable": [
         "Bağlayıcı kullanılamıyor"
       ],
       "Connectors can send your data to other services.": [
         "Bağlayıcılar verilerinizi diğer hizmetlere gönderebilir."
       ],
+      "Connectors let ${ LUMO_SHORT_APP_NAME } answer using your files, ${ MAIL_APP_NAME }, Slack and more.": [
+        "Bağlayıcılar, ${ LUMO_SHORT_APP_NAME } uygulamasının dosyalarınızı, ${ MAIL_APP_NAME }, Slack ve diğer şeyleri kullanarak yanıt vermesini sağlar."
+      ],
       "Connectors let ${ LUMO_SHORT_APP_NAME } use tools on this computer. Manage credentials and approval policies in desktop settings.": [
         "Bağlayıcılar, ${ LUMO_SHORT_APP_NAME } uygulamasının bu bilgisayardaki araçları kullanmasını sağlar. Bilgisayar ayarlarından kimlik doğrulama bilgilerini ve onay ilkelerini yönetin."
-      ],
-      "Connectors let ${ LUMO_SHORT_APP_NAME } work with apps and tools on your computer, so they're only available in the ${ LUMO_SHORT_APP_NAME } Desktop app. Open ${ LUMO_SHORT_APP_NAME } Desktop to connect and manage them.": [
-        "Bağlayıcılar ${ LUMO_SHORT_APP_NAME } uygulamasının bilgisayarınızdaki uygulamalar ve araçlarla çalışmasını sağlar. Yalnızca Bilgisayar için ${ LUMO_SHORT_APP_NAME } uygulamasında kullanılabilirler. Bunları bağlamak ve yönetmek için Bilgisayar için ${ LUMO_SHORT_APP_NAME } uygulamasını açın."
       ],
       "Conversation encrypted": [
         "Sohbet şifrelendi"
@@ -5368,6 +5456,9 @@
       "File attached": [
         "Dosya eklendi"
       ],
+      "Files and apps are read on your computer, not the cloud": [
+        "Dosyalar ve uygulamalar bulutta değil, bilgisayarınızda okunur"
+      ],
       "Files from all your projects.": [
         "Tüm projelerinizdeki dosyalar."
       ],
@@ -5469,6 +5560,19 @@
       "Looks like a password or key": [
         "Bir parola ya da anahtar gibi görünüyor"
       ],
+      "Moving chat to ${ projectName }: downloading its messages and files. This can take a while on a slow connection.": [
+        "Sohbet ${ projectName } üzerine taşınıyor: İletiler ve dosyalar indiriliyor. Bu işlemin tamamlanması, yavaş bir bağlantıda biraz zaman alabilir."
+      ],
+      "Moving chat to ${ projectName }: finishing up…": [
+        "Sohbet ${ projectName } üzerine taşınıyor: Tamamlanıyor…"
+      ],
+      "Moving chat to ${ projectName }: saving ${ total } item…": [
+        "Sohbet ${ projectName } üzerine taşınıyor: ${ total } öge kaydediliyor…",
+        "Sohbet ${ projectName } üzerine taşınıyor: ${ total } öge kaydediliyor…"
+      ],
+      "Moving chat to ${ projectName }: saving the copy…": [
+        "Sohbet ${ projectName } üzerine taşınıyor: Kopya kaydediliyor…"
+      ],
       "Next run in ${ count } day": [
         "Sonraki yürütülme ${ count } gün içinde",
         "Sonraki yürütülme ${ count } gün içinde"
@@ -5532,6 +5636,9 @@
       ],
       "No skills or tools added.": [
         "Herhangi bir yetenek veya araç eklenmemiş."
+      ],
+      "No task runs yet.": [
+        "Henüz bir görev yürütülmemiş."
       ],
       "Nothing unusual found": [
         "Olağandışı bir durum bulunamadı"
@@ -5655,6 +5762,9 @@
       ],
       "Sign in to your Claude account at claude.ai": [
         "claude.ai adresinden Claude hesabınızda oturum açın"
+      ],
+      "Sign-ins and keys stay in your computer's keychain": [
+        "Oturum açma bilgileri ve anahtarlar bilgisayarınızın anahtar zincirinde kalır"
       ],
       "Skill unavailable": [
         "Yetenek kullanılamıyor"
@@ -5797,9 +5907,6 @@
       "Unencrypted connector": [
         "Şifrelenmemiş bağlayıcı"
       ],
-      "Update ${ LUMO_SHORT_APP_NAME } Desktop to use read-only connector access for this task.": [
-        "Bu görevin salt okunur bağlayıcı erişimini kullanmak için.${ LUMO_SHORT_APP_NAME } bilgisayar uygulamasını güncelleyin."
-      ],
       "updated ${ updated }": [
         "güncellendi: ${ updated }"
       ],
@@ -5856,6 +5963,12 @@
       ],
       "You": [
         "Siz"
+      ],
+      "You choose exactly what each connector can access": [
+        "Her bağlayıcının tam olarak neye erişebileceğini siz seçersiniz"
+      ],
+      "You don't have any other projects yet.": [
+        "Henüz başka bir projeniz yok."
       ],
       "You edited ${ meta.artifactTitle }": [
         "${ meta.artifactTitle } yapıtını oluşturdunuz"
@@ -6297,6 +6410,9 @@
       "Image preview": [
         "Görsel ön izlemesi"
       ],
+      "Include ${ tool.name } in this task": [
+        "Bu görevde ${ tool.name } aracı kullanılsın"
+      ],
       "Include full conversation": [
         "Tam yazışma katılsın"
       ],
@@ -6477,6 +6593,12 @@
       "Perl File": [
         "Perl dosyası"
       ],
+      "Permission": [
+        "İzin"
+      ],
+      "Permissions": [
+        "İzinler"
+      ],
       "Personalized pricing": [
         "Kişiye özel fiyatlar"
       ],
@@ -6528,11 +6650,11 @@
       "R File": [
         "R dosyası"
       ],
-      "Read-only": [
-        "Salt okunur"
+      "Read and write": [
+        "Okuma ve yazma"
       ],
-      "Read-only access for ${ label }": [
-        "${ label } için salt okunur erişim"
+      "Read only": [
+        "Salt okunur"
       ],
       "reStructuredText": [
         "reStructuredText"
@@ -6881,6 +7003,9 @@
       "Search skills": [
         "Yetenek ara"
       ],
+      "Search task runs...": [
+        "Görev yürütülmesi ara..."
+      ],
       "Search your skills": [
         "Yeteneklerinizi arayın"
       ],
@@ -7043,7 +7168,7 @@
         "\"${ artifactTitle }\" yapıtını düzenleyin (kimlik: ${ artifactId }). Şu parçayı bulun:\n\n\"${ selection }\"\n\nve şununla değiştirin: ${ instruction }"
       ],
       "Edit the \"${ artifactTitle }\" slide deck artifact (id: ${ artifactId }). The user selected:\n\n${ locations }\n\nChange: ${ instruction }\n\nUpdate the artifact with the whole deck JSON. Change only what this asks for and keep every other slide as it is. The deck rules still apply: never invent numbers, list calculated numbers in \"calculated\", and report missing data in \"gaps\".": [
-        "\"${ artifactTitle }\" slayt sunumu yapay olgusunu (id: ${ artifactId }) düzenle. Kullanıcı şunları seçti:\n\n${ locations }\n\nDeğişiklik: ${ instruction }\n\nYapay olguyu sunumun tamamını içeren JSON dosyasıyla güncelle. Yalnızca istenen kısımları değiştir, diğer tüm slaytları olduğu gibi bırak. Sunum kuralları hâlâ geçerlidir: asla sayı uydurma, hesaplanmış sayıları \"hesaplanan\" bölümünde listele ve eksik verileri \"eksik yönler\" bölümünde bildir."
+        "\"${ artifactTitle }\" slayt sunumu yapıtını (kimlik: ${ artifactId }) düzenle. Kullanıcı şunları seçti:\n\n${ locations }\n\nDeğişiklik: ${ instruction }\n\nYapıtı sunumun tümünün bulunduğu JSON dosyasıyla güncelle. Yalnızca istenen bölümleri değiştir, diğer tüm slaytları olduğu gibi bırak. Sunum kuralları geçerli kalsın: Asla sayı uydurma, hesaplanmış sayıları \"hesaplanmış\" bölümünde listele ve eksik verileri \"boşluklar\" bölümünde bildir."
       ],
       "Edit this image:": [
         "Bu görseli düzenle:"
@@ -7055,7 +7180,7 @@
         "Bir zamanlanmış görev oluşturmama yardım et. "
       ],
       "If the change gives the missing data, replace \"missing\" with the chart's data, say in \"source\" that the user provided it, and remove the matching entry from \"gaps\".": [
-        "Değişiklik eksik verileri sağlıyorsa “eksik” ifadesini grafiğin verileriyle değiştirin, “kaynak” kısmında bu verilerin kullanıcı tarafından sağlandığını belirtin ve “boşluklar” kısmından eşleşen girişi silin."
+        "Değişiklik eksik verileri sağlıyorsa “eksik” ifadesini çizelgenin verileri ile değiştirin, “kaynak” bölümünde bu verilerin kullanıcı tarafından verildiğini belirtin ve “boşluklar” bölümünden eşleşen kaydı silin."
       ],
       "Improve this selected part of the \"${ artifactTitle }\" code artifact (id: ${ artifactId }). Update the artifact, replacing:\n\n\"${ selection }\"\n\nwith improved code.": [
         "\"${ artifactTitle }\" kod yapıtının bu seçilmiş bölümünü iyileştirin (kimlik: ${ artifactId }). Şunu değiştirerek yapıtı güncelleyin:\n\n\"${ selection }\"\n\nve kodu iyileştirin."
@@ -7703,6 +7828,9 @@
       "All files removed from project": [
         "Tüm dosyalar projeden kaldırıldı"
       ],
+      "Chat moved to ${ projectName }": [
+        "Sohbet ${ projectName } üzerine taşındı"
+      ],
       "Conversation exported": [
         "Yazışma dışa aktarıldı"
       ],
@@ -7796,6 +7924,9 @@
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "${ LUMO_SHORT_APP_NAME } başlatılamadı"
       ],
+      "${ LUMO_SHORT_APP_NAME } needs these tools to run \"${ taskName }\"": [
+        "${ LUMO_SHORT_APP_NAME }, \"${ taskName }\" komutunu yürütebilmek için şu araçlara gerek duyuyor"
+      ],
       "About search": [
         "Arama hakkında"
       ],
@@ -7834,6 +7965,9 @@
       ],
       "Connectors & tools": [
         "Bağlayıcılar ve araçlar"
+      ],
+      "Connectors run in the ${ LUMO_SHORT_APP_NAME } desktop app": [
+        "Bağlayıcılar ${ LUMO_SHORT_APP_NAME } bilgisayar uygulamasında çalışır"
       ],
       "Create a custom ${ LUMO_SHORT_APP_NAME }": [
         "Özel bir ${ LUMO_SHORT_APP_NAME } oluşturun"
@@ -7993,6 +8127,9 @@
       ],
       "Most revealing": [
         "En çok bilgi açığan çıkaran"
+      ],
+      "Move to project": [
+        "Projeye taşı"
       ],
       "My AI paper trail": [
         "Yapay zeka veri izim"
@@ -8162,9 +8299,6 @@
       "Upload your data export": [
         "Verileri dışa aktarma dosyanızı yükleyin"
       ],
-      "Use ${ LUMO_SHORT_APP_NAME } Desktop to use connectors": [
-        "Bağlayıcıları kullanmak için Bilgisayar için ${ LUMO_SHORT_APP_NAME } kullanın"
-      ],
       "Use AI on your terms": [
         "Yapay zekayı kendi belirleyeceğiniz koşullar ile kullanın"
       ],
@@ -8236,6 +8370,9 @@
     "collider_2025:Warning": {
       "Cannot Link Drive Folder": [
         "Drive Klasörü bağlanamadı"
+      ],
+      "Chat moved to ${ projectName }, but the original couldn't be fully removed. You can delete it manually.": [
+        "Sohbet ${ projectName } üzerine taşındı. Ancak özgün kopya tümüyle kaldırılamadı. El ile silebilirsiniz."
       ],
       "Preview unavailable": [
         "Ön izleme kullanılamıyor"
@@ -12311,6 +12448,9 @@
       ],
       "Go to project": [
         "Projeye git"
+      ],
+      "Move to project": [
+        "Projeye taşı"
       ],
       "No parent folder": [
         "Üst klasör yok"

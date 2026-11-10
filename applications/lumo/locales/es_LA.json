@@ -1021,6 +1021,9 @@
       "Already in KB": [
         "Ya en la base de conocimiento"
       ],
+      "Apply changes": [
+        "Aplicar cambios"
+      ],
       "Back": [
         "Regresar"
       ],
@@ -1063,6 +1066,9 @@
       "Creations": [
         "Creaciones"
       ],
+      "Custom ${ LUMO_SHORT_APP_NAME }s": [
+        "${ LUMO_SHORT_APP_NAME } personalizados"
+      ],
       "Dark": [
         "Oscuro"
       ],
@@ -1081,6 +1087,9 @@
       "Export CSV": [
         "Exportar CSV"
       ],
+      "Fix with ${ LUMO_SHORT_APP_NAME }": [
+        "Reparar con ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Generate from chats": [
         "Generar desde chats"
       ],
@@ -1095,6 +1104,9 @@
       ],
       "I like this response": [
         "Me gusta esta respuesta."
+      ],
+      "Keep current memories": [
+        "Mantener memorias actuales"
       ],
       "Let ${ LUMO_SHORT_APP_NAME } out": [
         "Dejar salir a ${ LUMO_SHORT_APP_NAME }"
@@ -1505,8 +1517,8 @@
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "${ LUMO_SHORT_APP_NAME } consulta su memoria guardada para personalizar las respuestas, estilo de comunicación, experiencia, herramientas concurrentes y proyectos de larga duración."
       ],
-      "${ LUMO_SHORT_APP_NAME } will review chat-based memories, remove duplicates, and merge related entries into clearer ones. Memories you wrote yourself are left unchanged.": [
-        "${ LUMO_SHORT_APP_NAME } revisará los recuerdos basados ​​en chats, eliminará los duplicados y fusionará las entradas relacionadas en otras más claras. Los recuerdos que usted mismo haya escrito permanecerán sin cambios."
+      "${ LUMO_SHORT_APP_NAME } will review chat-based memories and suggest merging duplicates and related entries. You'll see a preview and can approve or discard the changes before anything is replaced. Memories you wrote yourself are left unchanged.": [
+        "${ LUMO_SHORT_APP_NAME } revisará las memorias basadas ​​en chat y sugerirá fusionar duplicados y entradas relacionadas. Verá una vista previa y podrá aprobar o descartar los cambios antes de que se reemplacen. Las memorias que haya escrito usted permanecerán sin cambios."
       ],
       "Add connectors, manage credentials, and set tool approval policies.": [
         "Añada conectores, gestione credenciales y configure políticas de aprobación de herramientas."
@@ -1576,6 +1588,9 @@
       ],
       "More thorough answers, but can take longer": [
         "Respuestas más completas, pero pueden tardar más"
+      ],
+      "Nothing has changed yet. Review the proposed changes below, then apply them or keep your current memories. Memories you wrote yourself are never changed.": [
+        "Aún no ha cambiado nada. Revise los cambios propuestos a continuación y luego aplíquelos o conserve sus memorias actuales. Las memorias que escribió usted nunca se modifican."
       ],
       "Permanently delete your projects, chats, and saved memories. This cannot be undone.": [
         "Elimine permanentemente sus proyectos, chats y memorias guardadas. Esto no se puede revertir."
@@ -1764,6 +1779,9 @@
       ],
       "This project is full to the whiskers. Delete a conversation to make room for a new one and keep ${ LUMO_SHORT_APP_NAME } purring.": [
         "Este proyecto está por explotar. Elimine una conversación para poder iniciar otra y mantener ${ LUMO_SHORT_APP_NAME } impoluto."
+      ],
+      "This slide deck couldn't be read.": [
+        "No se pudo leer esta presentación de diapositivas."
       ],
       "Top-up amount must be a whole amount between ${ formattedMinAmount } and ${ formattedMaxAmount }": [
         "La cantidad de recarga debe ser un monto entero entre ${ formattedMinAmount } y ${ formattedMaxAmount }"
@@ -1985,6 +2003,10 @@
       "\"${ fileName }\" has multiple sheets. Select the sheets to include in the conversation context.": [
         "«${ fileName }» tiene múltiples hojas. Seleccione las hojas para incluir en el contexto de la conversación."
       ],
+      "${ calculatedCount } number was calculated from your material.": [
+        "${ calculatedCount } número fue calculado de su material.",
+        "${ calculatedCount } números fueron calculados de su material."
+      ],
       "${ characterCount } character processed": [
         "${ characterCount } caracter procesado",
         "${ characterCount } caracteres procesados"
@@ -2031,6 +2053,14 @@
       "${ onDemandCount } large file is read on demand: ${ LUMO_SHORT_APP_NAME } looks up the parts it needs instead of loading it all.": [
         "${ onDemandCount } archivo grande se lee bajo demanda: ${ LUMO_SHORT_APP_NAME } busca las partes que necesita en lugar de cargarlo todo.",
         "${ onDemandCount } archivos grandes se leen bajo demanda: ${ LUMO_SHORT_APP_NAME } busca las partes que necesita en lugar de cargarlos todos."
+      ],
+      "${ unchangedCount } chat-based memory stays the same.": [
+        "${ unchangedCount } memoria basada en chat permanece igual.",
+        "${ unchangedCount } memorias basadas en chats permanecen iguales."
+      ],
+      "${ unsourcedCount } number isn't in your messages, files or web results. Check it before you share.": [
+        "${ unsourcedCount } número no está en sus mensajes, archivos o resultados web. Compruébelo antes de compartir.",
+        "${ unsourcedCount } números no están en sus mensajes, archivos o resultados web. Compruébelos antes de compartir."
       ],
       "${ urgentTotal } chat will expire within 24 hours": [
         "${ urgentTotal } chat expirará en 24 horas",
@@ -2168,6 +2198,9 @@
       "Daily usage by token type": [
         "Uso diario por tipo de token"
       ],
+      "Data needed: ${ missing }": [
+        "Datos necesarios: ${ missing }"
+      ],
       "Describe a workflow in plain language and get a graph plus runnable code. Sign in to use this feature.": [
         "Describa un flujo de trabajo en lenguaje sencillo y obtenga un gráfico con código ejecutable. Inicie sesión para usar esta función."
       ],
@@ -2236,6 +2269,9 @@
       ],
       "Files automatically retrieved based on your questions.": [
         "Archivos recuperados automáticamente en función de sus preguntas."
+      ],
+      "For now, the threshold is fixed at ${ formattedThreshold }.": [
+        "Por ahora, el umbral está fijado en ${ formattedThreshold }."
       ],
       "For this chat": [
         "Para este chat"
@@ -2321,6 +2357,9 @@
       "Matching files": [
         "Archivos coincidentes"
       ],
+      "Missing information:": [
+        "Información faltante:"
+      ],
       "Model responses": [
         "Respuestas del modelo"
       ],
@@ -2380,6 +2419,9 @@
       ],
       "No usage yet": [
         "Aún no se ha usado"
+      ],
+      "Notes:": [
+        "Notas:"
       ],
       "Or pull suggestions from your recent chats.": [
         "O bien, obtenga sugerencias de sus chats recientes."
@@ -2518,6 +2560,12 @@
       ],
       "Sign in to view API usage and balance for ${ LUMO_SHORT_APP_NAME }.": [
         "Inicie sesión para ver el uso y balance de la API para ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Slide ${ slideNumber }": [
+        "Diapositiva ${ slideNumber }"
+      ],
+      "slide ${ slideNumber }": [
+        "diapositiva ${ slideNumber }"
       ],
       "Sorted by creation time": [
         "Ordenado por fecha de creación"
@@ -2725,6 +2773,9 @@
       "${ formattedAmount } per 1M tokens": [
         "${ formattedAmount } por 1M de tokens"
       ],
+      "Added": [
+        "Añadido"
+      ],
       "AI model": [
         "Modelo de IA"
       ],
@@ -2815,6 +2866,9 @@
       "Merge": [
         "Fusionar"
       ],
+      "Merged": [
+        "Fusionado"
+      ],
       "Method": [
         "Método"
       ],
@@ -2826,6 +2880,9 @@
       ],
       "Monthly spending limit": [
         "Límite de consumo mensual"
+      ],
+      "New": [
+        "Nueva"
       ],
       "Not billed": [
         "Sin facturar"
@@ -2863,6 +2920,9 @@
       "Remaining balance": [
         "Balance restante"
       ],
+      "Removed": [
+        "Eliminada"
+      ],
       "required": [
         "obligatorio"
       ],
@@ -2871,6 +2931,9 @@
       ],
       "Response": [
         "Respuesta"
+      ],
+      "Reworded": [
+        "Reformulada"
       ],
       "Rust": [
         "Rust"
@@ -3125,6 +3188,11 @@
       ],
       "Plus": [
         "Plus"
+      ]
+    },
+    "collider_2025: Prefill": {
+      "Rewrite the deck JSON to fix these parse errors and produce a valid slide deck.": [
+        "Modifique el archivo JSON de la presentación para corregir estos errores de análisis y generar una presentación de diapositivas válida."
       ]
     },
     "collider_2025: Settings Item": {
@@ -3480,6 +3548,9 @@
       "Required headers": [
         "Encabezados obligatorios"
       ],
+      "Review optimized memories": [
+        "Revisar memorias optimizadas"
+      ],
       "Save your favorites": [
         "Guarde sus favoritos."
       ],
@@ -3789,6 +3860,9 @@
       ],
       "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for priority access during peak times.": [
         "Estamos experimentando un tráfico superior al habitual por lo que las respuestas pueden ser un poco más lentas de lo normal. Mejore a ${ LUMO_SHORT_APP_NAME } Plus para obtener acceso prioritario durante las horas pico."
+      ],
+      "Your memories changed while reviewing. Please run Optimize again.": [
+        "Sus memorias cambiaron mientras se revisaban. Ejecute la optimización de nuevo."
       ]
     },
     "collider_2025: Web Extract": {
@@ -3852,6 +3926,9 @@
       ],
       "All": [
         "Todo"
+      ],
+      "Allow for this task": [
+        "Permitir para esta tarea"
       ],
       "Analyze another export": [
         "Analizar otra exportación"
@@ -4015,6 +4092,9 @@
       "Download image": [
         "Descargar imagen"
       ],
+      "Download the desktop app": [
+        "Descargar la aplicación de escritorio"
+      ],
       "Edit": [
         "Editar"
       ],
@@ -4105,6 +4185,9 @@
       "Keep editing": [
         "Seguir editando"
       ],
+      "Learn more": [
+        "Más información"
+      ],
       "Light": [
         "Claro"
       ],
@@ -4113,6 +4196,9 @@
       ],
       "Make a copy": [
         "Hacer una copia"
+      ],
+      "Manage": [
+        "Administrar"
       ],
       "Manage chats": [
         "Gestionar chats"
@@ -4147,11 +4233,17 @@
       "More options": [
         "Más opciones"
       ],
+      "Move to project": [
+        "Mover al proyecto"
+      ],
       "Next message": [
         "Mensaje siguiente"
       ],
       "Next question": [
         "Pregunta siguiente"
+      ],
+      "Not now": [
+        "Ahora no"
       ],
       "Numbered list": [
         "Lista numerada"
@@ -4288,6 +4380,9 @@
       "Set up": [
         "Configurar"
       ],
+      "Set up ${ label }": [
+        "Configurar ${ label }"
+      ],
       "Set up manually": [
         "Configurar manualmente"
       ],
@@ -4314,6 +4409,9 @@
       ],
       "Skip": [
         "Omitir"
+      ],
+      "Slide data": [
+        "Datos de la diapositiva"
       ],
       "Slides": [
         "Diapositivas"
@@ -4622,6 +4720,9 @@
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to run, but it isn't available in this browser. This can happen when cookies or website data are blocked, in private browsing, or with Lockdown Mode enabled. Please allow website data for this site and reload.": [
         "${ LUMO_SHORT_APP_NAME } necesita almacenamiento de base de datos local (IndexedDB) para ejecutarse, pero no está disponible en este navegador. Esto puede pasar cuando las cookies o los datos de sitio web están bloqueados, en navegación privada, o con modo hermético activado. Permita los datos de sitio web para esta página y actualícela."
       ],
+      "${ projectName } has reached its limit of chats or files.": [
+        "${ projectName } alcanzó su límite de chats o archivos."
+      ],
       "A file with this path already exists": [
         "Ya existe un archivo con esta ruta"
       ],
@@ -4648,6 +4749,9 @@
       ],
       "Chart unavailable": [
         "Gráfico no disponible"
+      ],
+      "Chats in a private project can only be moved to another private project.": [
+        "Los chats en un proyecto privado solo se pueden mover a otro proyecto privado."
       ],
       "Choose a date and time in the future": [
         "Elija una fecha y hora en el futuro"
@@ -4714,6 +4818,9 @@
       ],
       "Could not upload the skill": [
         "No se pudo cargar la habilidad"
+      ],
+      "Couldn't move the chat. Please try again.": [
+        "No se pudo mover el chat. Intente de nuevo."
       ],
       "Database connection lost. Please refresh the page to continue.": [
         "Se perdió la conexión con la base de datos. Actualice la página para continuar."
@@ -4826,6 +4933,9 @@
       "Select at least one day of the week": [
         "Seleccione al menos un día de la semana"
       ],
+      "Some of this chat's files aren't available yet. Try again in a moment.": [
+        "Algunos de los archivos de este chat aún no están disponibles. Intente de nuevo en un momento."
+      ],
       "Something went wrong starting the analysis.": [
         "Algo salió mal al iniciar el análisis."
       ],
@@ -4873,6 +4983,9 @@
       ],
       "Use a relative path, like references/guide.md": [
         "Use una ruta relativa, como references/guide.md"
+      ],
+      "Wait for the response to finish before moving this chat.": [
+        "Espere a que la respuesta finalice antes de mover este chat."
       ],
       "We could not read this Excel workbook. It may be encrypted, corrupted, or not a valid .xlsx file. Please save it as .xlsx or CSV and try again.": [
         "No pudimos leer este libro de Excel. Es posible que esté cifrado, dañado o que no sea un archivo .xlsx válido. Guárdelo como .xlsx o CSV e intente de nuevo."
@@ -5106,6 +5219,9 @@
       "Almost ready…": [
         "Casi listo…"
       ],
+      "Already have it? Open the ${ LUMO_SHORT_APP_NAME } desktop app and go to Customize › Connectors.": [
+        "¿Ya la tiene? Abra la aplicación de escritorio de ${ LUMO_SHORT_APP_NAME } y vaya a Personalizar › Conectores."
+      ],
       "Also works for this category": [
         "También funciona para esta categoría"
       ],
@@ -5193,6 +5309,9 @@
       "Choose or drop your .zip or conversations.json file. We analyze your ${ PAPER_TRAIL_LIMITS.maxPrompts } most recent prompts.": [
         "Seleccione o suelte su archivo .zip o conversations.json. Analizaremos sus ${ PAPER_TRAIL_LIMITS.maxPrompts } prompts más recientes."
       ],
+      "Choose the connectors this task can use. Uncheck a connector to remove it from the schedule. You can change this anytime in the task's settings.": [
+        "Elija los conectores que puede usar esta tarea. Desmarque un conector o elimínelo de la programación. Puede cambiar esto en los ajustes de la tarea en cualquier momento."
+      ],
       "Click Settings → Data controls": [
         "Pulse Ajustes → Controles de datos"
       ],
@@ -5208,17 +5327,23 @@
       "Code · ${ langLabel }": [
         "Código · ${ langLabel }"
       ],
+      "Connect and enable the selected connectors before allowing access, or uncheck them.": [
+        "Conecta y activa los conectores seleccionados antes de permitir el acceso, o deshabilítalos."
+      ],
+      "Connect and enable the selected connectors before scheduling this task.": [
+        "Conecta y activa los conectores seleccionados antes de programar esta tarea."
+      ],
       "Connector unavailable": [
         "Conector no disponible"
       ],
       "Connectors can send your data to other services.": [
         "Los conectores pueden enviar sus datos a otros servicios."
       ],
+      "Connectors let ${ LUMO_SHORT_APP_NAME } answer using your files, ${ MAIL_APP_NAME }, Slack and more.": [
+        "Los conectores permiten a ${ LUMO_SHORT_APP_NAME } responder usando sus archivos, ${ MAIL_APP_NAME }, Slack y más."
+      ],
       "Connectors let ${ LUMO_SHORT_APP_NAME } use tools on this computer. Manage credentials and approval policies in desktop settings.": [
         "Los conectores permiten que ${ LUMO_SHORT_APP_NAME } use herramientas en este ordenador. Gestione las credenciales y las políticas de aprobación en los ajustes de escritorio."
-      ],
-      "Connectors let ${ LUMO_SHORT_APP_NAME } work with apps and tools on your computer, so they're only available in the ${ LUMO_SHORT_APP_NAME } Desktop app. Open ${ LUMO_SHORT_APP_NAME } Desktop to connect and manage them.": [
-        "Los conectores permiten que ${ LUMO_SHORT_APP_NAME } trabaje con aplicaciones y herramientas de su computadora, así que solo están disponibles en la aplicación ${ LUMO_SHORT_APP_NAME } Desktop. Abra ${ LUMO_SHORT_APP_NAME } Desktop para conectarlos y gestionarlos."
       ],
       "Conversation encrypted": [
         "Conversación cifrada"
@@ -5328,6 +5453,9 @@
       "File attached": [
         "Archivo adjuntado"
       ],
+      "Files and apps are read on your computer, not the cloud": [
+        "Los archivos y aplicaciones son leídos en su computadora, no en la nube"
+      ],
       "Files from all your projects.": [
         "Archivos de todos sus proyectos."
       ],
@@ -5429,6 +5557,19 @@
       "Looks like a password or key": [
         "Parece una contraseña o clave"
       ],
+      "Moving chat to ${ projectName }: downloading its messages and files. This can take a while on a slow connection.": [
+        "Moviendo el chat a ${ projectName }: descargando sus mensajes y archivos. Esto puede tomar un tiempo en una conexión lenta."
+      ],
+      "Moving chat to ${ projectName }: finishing up…": [
+        "Moviendo el chat a ${ projectName }: finalizando…"
+      ],
+      "Moving chat to ${ projectName }: saving ${ total } item…": [
+        "Moviendo el chat a ${ projectName }: guardando ${ total } elemento…",
+        "Moviendo el chat a ${ projectName }: guardando ${ total } elementos…"
+      ],
+      "Moving chat to ${ projectName }: saving the copy…": [
+        "Moviendo el chat a ${ projectName }: guardando la copia…"
+      ],
       "Next run in ${ count } day": [
         "Próxima ejecución en ${ count } día",
         "Próxima ejecución en ${ count } días"
@@ -5492,6 +5633,9 @@
       ],
       "No skills or tools added.": [
         "No se añadieron habilidades o herramientas."
+      ],
+      "No task runs yet.": [
+        "Aún no se ejecuta ninguna tarea."
       ],
       "Nothing unusual found": [
         "Nada inusual encontrado"
@@ -5615,6 +5759,9 @@
       ],
       "Sign in to your Claude account at claude.ai": [
         "Inicie sesión en su cuenta de Claude en claude.ai"
+      ],
+      "Sign-ins and keys stay in your computer's keychain": [
+        "Los inicios de sesión y las claves permanecen en el llavero de su computadora."
       ],
       "Skill unavailable": [
         "Habilidad no disponible"
@@ -5757,9 +5904,6 @@
       "Unencrypted connector": [
         "Conector sin cifrar"
       ],
-      "Update ${ LUMO_SHORT_APP_NAME } Desktop to use read-only connector access for this task.": [
-        "Actualice ${ LUMO_SHORT_APP_NAME } Desktop para usar el acceso de solo lectura al conector para esta tarea."
-      ],
       "updated ${ updated }": [
         "actualizada ${ updated }"
       ],
@@ -5816,6 +5960,12 @@
       ],
       "You": [
         "Usted"
+      ],
+      "You choose exactly what each connector can access": [
+        "Elija exactamente a qué puede acceder cada conector"
+      ],
+      "You don't have any other projects yet.": [
+        "Aún no tiene otros proyectos."
       ],
       "You edited ${ meta.artifactTitle }": [
         "Editó ${ meta.artifactTitle }"
@@ -6257,6 +6407,9 @@
       "Image preview": [
         "Vista previa de imagen"
       ],
+      "Include ${ tool.name } in this task": [
+        "Incluir ${ tool.name } en esta tarea"
+      ],
       "Include full conversation": [
         "Incluir conversación completa"
       ],
@@ -6437,6 +6590,12 @@
       "Perl File": [
         "Archivo Perl"
       ],
+      "Permission": [
+        "Permiso"
+      ],
+      "Permissions": [
+        "Permisos"
+      ],
       "Personalized pricing": [
         "Precio personalizado"
       ],
@@ -6488,11 +6647,11 @@
       "R File": [
         "Archivo R"
       ],
-      "Read-only": [
-        "Solo lectura"
+      "Read and write": [
+        "Leer y escribir"
       ],
-      "Read-only access for ${ label }": [
-        "Acceso de solo lectura para ${ label }"
+      "Read only": [
+        "Solo lectura"
       ],
       "reStructuredText": [
         "reStructuredText"
@@ -6841,6 +7000,9 @@
       "Search skills": [
         "Buscar habilidades"
       ],
+      "Search task runs...": [
+        "Buscar ejecuciones de tareas..."
+      ],
       "Search your skills": [
         "Buscar sus habilidades"
       ],
@@ -7002,6 +7164,9 @@
       "Edit the \"${ artifactTitle }\" artifact (id: ${ artifactId }). Replace this part:\n\n\"${ selection }\"\n\nwith: ${ instruction }": [
         "Edite el artefacto «${ artifactTitle }» (id: ${ artifactId }). Reemplace esta parte:\n\n«${ selection }»\n\ncon: ${ instruction }"
       ],
+      "Edit the \"${ artifactTitle }\" slide deck artifact (id: ${ artifactId }). The user selected:\n\n${ locations }\n\nChange: ${ instruction }\n\nUpdate the artifact with the whole deck JSON. Change only what this asks for and keep every other slide as it is. The deck rules still apply: never invent numbers, list calculated numbers in \"calculated\", and report missing data in \"gaps\".": [
+        "Edite el artefacto de presentación de diapositivas «${ artifactTitle }» (id: ${ artifactId }). El usuario seleccionó:\n\n${ locations }\n\nCambio: ${ instruction }\n\nActualice el artefacto con el JSON completo de la presentación. Modifique solo lo que se solicita y mantenga las demás diapositivas sin cambios. Las reglas de la presentación siguen vigentes: nunca invente números, enumere los números calculados en «calculados» e informe los datos faltantes en «gaps»."
+      ],
       "Edit this image:": [
         "Editar esta imagen:"
       ],
@@ -7010,6 +7175,9 @@
       ],
       "Help me create a scheduled task. ": [
         "Ayúdeme a crear una tarea programada. "
+      ],
+      "If the change gives the missing data, replace \"missing\" with the chart's data, say in \"source\" that the user provided it, and remove the matching entry from \"gaps\".": [
+        "Si el cambio genera datos faltantes, reemplace «missing» con los datos del gráfico, indique en «source» que el usuario los proporcionó y elimine la entrada correspondiente de «gaps»."
       ],
       "Improve this selected part of the \"${ artifactTitle }\" code artifact (id: ${ artifactId }). Update the artifact, replacing:\n\n\"${ selection }\"\n\nwith improved code.": [
         "Mejore esta parte seleccionada del código de «${ artifactTitle }» (id: ${ artifactId }). Actualice el artefacto reemplazando:\n\n«${ selection }»\n\ncon código mejorado."
@@ -7657,6 +7825,9 @@
       "All files removed from project": [
         "Todos los archivos se eliminaron del proyecto"
       ],
+      "Chat moved to ${ projectName }": [
+        "Chat movido a ${ projectName }"
+      ],
       "Conversation exported": [
         "Conversación exportada"
       ],
@@ -7750,6 +7921,9 @@
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "${ LUMO_SHORT_APP_NAME } no se puede iniciar"
       ],
+      "${ LUMO_SHORT_APP_NAME } needs these tools to run \"${ taskName }\"": [
+        "${ LUMO_SHORT_APP_NAME } necesita estas herramientas para ejecutar «${ taskName }»"
+      ],
       "About search": [
         "Acerca de la búsqueda"
       ],
@@ -7788,6 +7962,9 @@
       ],
       "Connectors & tools": [
         "Conectores y herramientas"
+      ],
+      "Connectors run in the ${ LUMO_SHORT_APP_NAME } desktop app": [
+        "Los conectores se ejecutan en la aplicación de escritorio de ${ LUMO_SHORT_APP_NAME }"
       ],
       "Create a custom ${ LUMO_SHORT_APP_NAME }": [
         "Crear un ${ LUMO_SHORT_APP_NAME } personalizado"
@@ -7947,6 +8124,9 @@
       ],
       "Most revealing": [
         "Lo más revelador"
+      ],
+      "Move to project": [
+        "Mover al proyecto"
       ],
       "My AI paper trail": [
         "Mi rastro digital de IA"
@@ -8116,9 +8296,6 @@
       "Upload your data export": [
         "Cargue su exportación de datos"
       ],
-      "Use ${ LUMO_SHORT_APP_NAME } Desktop to use connectors": [
-        "Use ${ LUMO_SHORT_APP_NAME } Desktop para usar conectores"
-      ],
       "Use AI on your terms": [
         "Use la IA bajo sus términos"
       ],
@@ -8190,6 +8367,9 @@
     "collider_2025:Warning": {
       "Cannot Link Drive Folder": [
         "No se puede vincular la carpeta de Drive"
+      ],
+      "Chat moved to ${ projectName }, but the original couldn't be fully removed. You can delete it manually.": [
+        "Chat movido a ${ projectName }, pero el original no se pudo eliminar por completo. Puede eliminarlo manualmente."
       ],
       "Preview unavailable": [
         "Vista previa no disponible"
@@ -12265,6 +12445,9 @@
       ],
       "Go to project": [
         "Ir al proyecto"
+      ],
+      "Move to project": [
+        "Mover al proyecto"
       ],
       "No parent folder": [
         "No hay carpeta principal"

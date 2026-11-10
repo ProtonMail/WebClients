@@ -94,7 +94,7 @@
         "Conectar aplicativos e dispositivos"
       ],
       "Connect to video conferencing": [
-        "Conectar-se à videoconferência.\n"
+        "Conectar-se à videoconferência"
       ],
       "Continue": [
         "Continuar"
@@ -1015,6 +1015,9 @@
       ],
       "Already in KB": [
         "Já na KB"
+      ],
+      "Apply changes": [
+        "Aplicar alterações"
       ],
       "Back": [
         "Voltar"
@@ -2434,6 +2437,9 @@
       "${ formattedAmount } per 1M tokens": [
         "${ formattedAmount } por 1M de tokens"
       ],
+      "Added": [
+        "Adicionado"
+      ],
       "AI model": [
         "Modelo de IA"
       ],
@@ -2518,6 +2524,9 @@
       "Merge": [
         "Mesclar"
       ],
+      "Merged": [
+        "Mesclada"
+      ],
       "Method": [
         "Método"
       ],
@@ -2529,6 +2538,9 @@
       ],
       "Monthly spending limit": [
         "Limite de gasto mensal"
+      ],
+      "New": [
+        "Novo"
       ],
       "Not billed": [
         "Não faturado"
@@ -2565,6 +2577,9 @@
       ],
       "Remaining balance": [
         "Saldo restante"
+      ],
+      "Removed": [
+        "Removido"
       ],
       "required": [
         "obrigatório"
@@ -2729,6 +2744,9 @@
       ],
       "Off": [
         "Desativado"
+      ],
+      "Same project only": [
+        "Apenas o mesmo projeto"
       ],
       "This project": [
         "Este projeto"
@@ -3120,6 +3138,9 @@
       "Required headers": [
         "Cabeçalhos obrigatórios"
       ],
+      "Review optimized memories": [
+        "Revisar otimização de memória"
+      ],
       "Save your favorites": [
         "Salve seus favoritos"
       ],
@@ -3490,6 +3511,9 @@
       "All": [
         "Todos"
       ],
+      "Allow for this task": [
+        "Permitir para esta tarefa"
+      ],
       "Analyze another export": [
         "Analisar outra exportação"
       ],
@@ -3727,6 +3751,9 @@
       "Keep editing": [
         "Continuar editando"
       ],
+      "Learn more": [
+        "Saiba mais"
+      ],
       "Light": [
         "Claro"
       ],
@@ -3735,6 +3762,9 @@
       ],
       "Make a copy": [
         "Fazer uma cópia"
+      ],
+      "Manage": [
+        "Gerenciar"
       ],
       "Manage chats": [
         "Gerenciar bate-papos"
@@ -3769,11 +3799,17 @@
       "More options": [
         "Mais opções"
       ],
+      "Move to project": [
+        "Mover para projeto"
+      ],
       "Next message": [
         "Próxima mensagem"
       ],
       "Next question": [
         "Próxima pergunta"
+      ],
+      "Not now": [
+        "Agora não"
       ],
       "Numbered list": [
         "Lista numerada"
@@ -3906,6 +3942,9 @@
       ],
       "Set up": [
         "Configurar"
+      ],
+      "Set up ${ label }": [
+        "Configure o ${ label }"
       ],
       "Share": [
         "Compartilhar"
@@ -4459,6 +4498,9 @@
       "Applying your changes…": [
         "Aplicando suas alterações…"
       ],
+      "Are you sure you want to delete \"${ taskName }\"? This action cannot be undone.": [
+        "Você tem certeza de que deseja excluir \"${ taskName }\"? Esta ação não pode ser desfeita."
+      ],
       "Ask a question to get started. Your conversation is private.": [
         "Faça uma pergunta para começar. Sua conversa é privada."
       ],
@@ -4663,6 +4705,9 @@
       "No matching skills": [
         "Nenhuma habilidade correspondente"
       ],
+      "No past chats": [
+        "Não há bate-papos anteriores"
+      ],
       "No personal details are on this card — just your exposure score by area. Lower means you gave away less.": [
         "Não há detalhes pessoais neste cartão — apenas sua pontuação de exposição por área. Quanto menor ela for, menos você revelou."
       ],
@@ -4674,6 +4719,9 @@
       ],
       "On iPhone or iPad, open Settings → Apps → Safari and make sure \"Block All Cookies\" is turned off, then reload.": [
         "No iPhone ou iPad, abra Ajustes → Apps → Safari e certifique-se de que a opção \"Bloquear Todos os Cookies\" esteja desativada e, em seguida, recarregue a página."
+      ],
+      "Only this project's files.": [
+        "Apenas os arquivos deste projeto."
       ],
       "Open in panel • v${ versionNumber }": [
         "Abrir no painel • v${ versionNumber }"
@@ -4787,6 +4835,12 @@
       ],
       "This project already has files. Please remove all files before linking a Drive folder.": [
         "Esse projeto já tem arquivos. Remova todos os arquivos antes de vincular uma pasta do Drive."
+      ],
+      "This project's chats": [
+        "Bate-papos deste projeto"
+      ],
+      "This project's files": [
+        "Arquivos deste projeto"
       ],
       "This skill no longer exists.": [
         "Esta habilidade não existe mais."
@@ -5417,6 +5471,12 @@
       "Perl File": [
         "Arquivo Perl"
       ],
+      "Permission": [
+        "Permissão"
+      ],
+      "Permissions": [
+        "Permissões"
+      ],
       "Personalized pricing": [
         "Preços personalizados"
       ],
@@ -5465,7 +5525,10 @@
       "R File": [
         "Arquivo R"
       ],
-      "Read-only": [
+      "Read and write": [
+        "Ler e escrever"
+      ],
+      "Read only": [
         "Somente leitura"
       ],
       "reStructuredText": [
@@ -6694,6 +6757,9 @@
       "Most revealing": [
         "Mais revelador"
       ],
+      "Move to project": [
+        "Mover para projeto"
+      ],
       "My AI paper trail": [
         "Meu rastro digital de IA"
       ],
@@ -6849,6 +6915,9 @@
       ],
       "We couldn't read your paper trail": [
         "Não conseguimos ler seu rastro digital"
+      ],
+      "What can ${ LUMO_SHORT_APP_NAME } see?": [
+        "O que o ${ LUMO_SHORT_APP_NAME } consegue ver?"
       ],
       "What do you want to create today?": [
         "O que você quer criar hoje?"
@@ -10936,6 +11005,9 @@
       ],
       "Go to project": [
         "Ir para o projeto"
+      ],
+      "Move to project": [
+        "Mover para projeto"
       ],
       "No parent folder": [
         "Nenhuma pasta acima"
