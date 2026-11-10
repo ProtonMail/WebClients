@@ -253,6 +253,7 @@ const getDefaultIgnoreErrors = (): SentryIgnoreErrors => {
         /chrome-extension/,
         /moz-extension/,
         /window\.ethereum/, // Uncaught errors from browser-injected wallet scripts (see brave/brave-browser#58670).
+        /Invalid call to runtime\./, // WebKit errors from extension scripts messaging their extension (see WebKit bug 246620).
         'TransferCancel', // User action to interrupt upload or download in Drive.
         'UploadConflictError', // User uploading the same file again in Drive.
         'UploadUserError', // Upload error on user's side in Drive.
