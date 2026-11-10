@@ -167,6 +167,11 @@ const validateInvitationData = async ({
     return result;
 };
 
+export class UnprivatizationRevisionError extends Error {}
+
+/** The organization identity, the admin's signature of the organization key, doesn't verify. */
+export class UnprivatizationIdentityError extends Error {}
+
 export const validateInvitationDataValues = async ({
     invitationData,
     invitationAddress,
@@ -182,7 +187,7 @@ export const validateInvitationDataValues = async ({
     if (options.validateRevision) {
         const revision = (invitationAddress.SignedKeyList?.Revision ?? 0) + (options.newMemberCreation ? 1 : 0);
         if (revision !== invitationData.Revision) {
-            throw new Error('Invalid invitation signed key list revision state');
+            throw new UnprivatizationRevisionError('Invalid invitation signed key list revision state');
         }
     }
 };
@@ -283,10 +288,7 @@ export const validateUnprivatizationData = async ({
         api,
         email: AdminEmail,
         ktUserContext,
-    }).catch(noop);
-    if (!verifiedPublicKeysResult) {
-        throw new Error('Unable to fetch public keys of admin');
-    }
+    });
 
     const verifiedPublicKeys = verifiedPublicKeysResult.map(({ publicKey }) => publicKey);
 
@@ -294,6 +296,8 @@ export const validateUnprivatizationData = async ({
         organizationKey: orgPublicKey,
         armoredSignature: OrgKeyFingerprintSignature,
         verificationKeys: verifiedPublicKeys,
+    }).catch((error) => {
+        throw new UnprivatizationIdentityError(error.message, { cause: error });
     });
 
     // There is no invitation data in the global sso case so we can stop here
@@ -540,8 +544,6 @@ export const unprivatizeMemberHelper = async ({
         OrganizationKeyActivation,
     };
 };
-
-export class UnprivatizationRevisionError extends Error {}
 
 export const getUnprivatizeMemberPayload = async ({
     api,

@@ -6,10 +6,11 @@ import { c } from 'ttag';
 
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
-import GenericError from '@proton/components/containers/error/GenericError';
+import GenericError, { GenericErrorDisplay } from '@proton/components/containers/error/GenericError';
 import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { APPS, type APP_NAMES, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
@@ -81,6 +82,7 @@ const JoinMagicLinkContainer = () => {
     useEffect(() => {
         const subscriptions = [
             actorRef.on('error', ({ error }) => handleError(error)),
+            actorRef.on('invitation.invalid', ({ error }) => handleError(error, { notify: false })),
             actorRef.on('link.used', ({ message }) => createNotification({ type: 'info', text: message })),
             actorRef.on('session.expired', () =>
                 createNotification({
@@ -109,13 +111,36 @@ const JoinMagicLinkContainer = () => {
                     if (snapshot.context.error === 'used') {
                         return <ExpiredError type="magic-link-used" />;
                     }
+                    const adminEmail =
+                        snapshot.context.data?.parsedUnprivatizationData.payload.unprivatizationData.AdminEmail;
+                    if (snapshot.context.error === 'identity') {
+                        return <ExpiredError type="magic-link-identity" adminEmail={adminEmail} />;
+                    }
+                    if (snapshot.context.error === 'invalid') {
+                        return <ExpiredError type="magic-link-invalid" adminEmail={adminEmail} />;
+                    }
+                    if (snapshot.context.error === 'connection') {
+                        return (
+                            <GenericErrorDisplay
+                                isNetworkError
+                                title={c('Error message').t`We couldn't load your invitation`}
+                            >
+                                <div className="text-weak text-sm">
+                                    {c('Error message').t`Check your internet connection and try again.`}
+                                </div>
+                                <div className="mt-8">
+                                    <Button onClick={() => send({ type: 'retry' })}>{c('Action').t`Try again`}</Button>
+                                </div>
+                            </GenericErrorDisplay>
+                        );
+                    }
                     return <GenericError />;
                 })()}
             </div>
         );
     }
 
-    if (snapshot.matches('preparing')) {
+    if (snapshot.matches('preparing') || snapshot.matches({ joining: 'validating' })) {
         return (
             <div className="absolute inset-center text-center">
                 <CircleLoader size="large" />
