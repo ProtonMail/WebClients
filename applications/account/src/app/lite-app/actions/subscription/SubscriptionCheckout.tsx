@@ -4,6 +4,7 @@ import { useAppName } from '@proton/account/appName';
 import CalendarDowngradeModal from '@proton/components/containers/payments/subscription/CalendarDowngradeModal';
 import type { Model } from '@proton/components/containers/payments/subscription/SubscriptionContainer';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import { usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { PLANS } from '@proton/payments/core/constants';
@@ -46,6 +47,7 @@ const SubscriptionCheckoutWithPayments = ({
     const api = useSilentApi();
     const app = useAppName();
     const [paymentInitialized, setPaymentInitialized] = useState(false);
+    const multiSubscriptionContext = useMultiSubscriptionContext();
     const {
         shouldDisableCurrencySelection,
         availableCurrencies,
@@ -87,6 +89,7 @@ const SubscriptionCheckoutWithPayments = ({
         plansMap,
         subscription,
         onPlusUpgrade: handleUnlimitedUpgrade,
+        multiSubscriptionContext,
     });
     const lifetimePlan = isLifetimePlanSelected(checkoutModel.planIDs);
 

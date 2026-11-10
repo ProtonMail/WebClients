@@ -45,6 +45,7 @@ interface PlanTransitionCallbacks {
 
 interface NormalizeModelProps {
     skipPlanTransitionChecks: boolean;
+    multiSubscriptionContext: MultiSubscriptionContext;
     subscription: Subscription | FreeSubscription;
     plansMap: FullPlansMap;
     currentStep: SUBSCRIPTION_STEPS;
@@ -99,6 +100,7 @@ async function normalizeModel(newModel: Model, props: NormalizeModelProps): Prom
             subscription: props.subscription,
             plansMap: props.plansMap,
             planIDs: newModel.planIDs,
+            multiSubscriptionContext: props.multiSubscriptionContext,
         });
 
         if (planTransitionForbidden?.type === 'lumo-plus' || planTransitionForbidden?.type === 'meet-plus') {
@@ -200,6 +202,7 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
 
         const shouldContinue = await normalizeModel(copyNewModel, {
             skipPlanTransitionChecks: props.skipPlanTransitionChecks,
+            multiSubscriptionContext: props.multiSubscriptionContext,
             subscription: props.subscription,
             plansMap: props.refs.plansMapRef.current,
             currentStep: props.model.step,

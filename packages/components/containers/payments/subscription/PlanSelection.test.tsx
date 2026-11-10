@@ -1,11 +1,14 @@
 import { renderHook } from '@testing-library/react';
 
-import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
+import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import { getDefaultMainCurrency } from '@proton/payments/core/currencies';
 import type { Currency } from '@proton/payments/core/interface';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getPlanByName } from '@proton/payments/core/subscription/plans-map-wrapper';
-import { buildMultiSubscriptionContextFromSubscription } from '@proton/payments/testing/buildMultiSubscriptionContext';
+import {
+    buildMultiSubscriptionContext,
+    buildMultiSubscriptionContextFromSubscription,
+} from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans, getTestPlans } from '@proton/payments/testing/data-plans';
 import { APPS } from '@proton/shared/lib/constants';
@@ -838,5 +841,46 @@ describe('getMaximumCycle', () => {
         const currency = getDefaultMainCurrency();
 
         expect(getMaximumCycle(maximumCycle, audience, app, currency)).toBe(CYCLE.YEARLY);
+    });
+
+    describe('Lumo Plus card in the Lumo app', () => {
+        const plans = getTestPlans('USD');
+        const lumoPlus = getPlanByName(plans, PLANS.LUMO, 'USD', undefined, false);
+
+        const getIndividualPlans = (subscription: Subscription, lumoMultiSubscriptions: boolean) => {
+            const props: AccessiblePlansHookProps = {
+                selectedProductPlans: { b2c: PLANS.LUMO, b2b: PLANS.MAIL_PRO, family: PLANS.FAMILY },
+                subscription,
+                plans,
+                currency: 'USD',
+                planIDs: {},
+                app: APPS.PROTONLUMO,
+                paymentStatus: { CountryCode: 'CH', VendorStates: {} as any },
+                user: buildUser({ Currency: 'USD' }),
+                audience: Audience.B2C,
+                multiSubscriptionContext: buildMultiSubscriptionContext([subscription], lumoMultiSubscriptions),
+            };
+
+            const { result } = renderHook(() => useAccessiblePlans(props));
+            return result.current.IndividualPlans;
+        };
+
+        it('shows Lumo Plus to a Mail Plus subscriber with the flag on', () => {
+            expect(getIndividualPlans(buildSubscription(PLANS.MAIL), true)).toContainEqual(lumoPlus);
+        });
+
+        it('hides Lumo Plus from a Mail Plus subscriber who has the Lumo addon, with the flag off and on', () => {
+            const subscription = buildSubscription({ [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 });
+
+            expect(getIndividualPlans(subscription, false)).not.toContainEqual(lumoPlus);
+            expect(getIndividualPlans(subscription, true)).not.toContainEqual(lumoPlus);
+        });
+
+        it('hides Lumo Plus from a Family subscriber only with the flag on', () => {
+            const subscription = buildSubscription(PLANS.FAMILY);
+
+            expect(getIndividualPlans(subscription, false)).toContainEqual(lumoPlus);
+            expect(getIndividualPlans(subscription, true)).not.toContainEqual(lumoPlus);
+        });
     });
 });

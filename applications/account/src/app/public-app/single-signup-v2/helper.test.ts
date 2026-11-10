@@ -1,16 +1,19 @@
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
-import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
+import { ADDON_NAMES, CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import type { PaymentsApi } from '@proton/payments/core/interface';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
-import { buildMultiSubscriptionContextFromSubscription } from '@proton/payments/testing/buildMultiSubscriptionContext';
+import {
+    buildMultiSubscriptionContextFromSubscription,
+    multiSubscriptionTestCatalog,
+} from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans, getTestPlansMap } from '@proton/payments/testing/data-plans';
-import { USER_ROLES } from '@proton/shared/lib/constants';
+import { APPS, USER_ROLES } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
-import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
+import { SubscriptionMode, SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
 import { getAccessiblePlans, getSessionCycle, getSubscriptionData, getUserInfo } from './helper';
 import type { PlanCard, SignupParameters2 } from './interface';
@@ -387,7 +390,10 @@ describe('getSubscriptionData guards', () => {
     it('asks the initial check to validate guards when a paid subscription is being modified', async () => {
         const { paymentsApi, checkSubscription } = getPaymentsApiMock();
 
-        await getSubscriptionData(paymentsApi, { ...options, subscription: buildSubscription(PLANS.BUNDLE) });
+        await getSubscriptionData(paymentsApi, {
+            ...options,
+            subscription: buildSubscription(PLANS.BUNDLE),
+        });
 
         expect(checkSubscription).toHaveBeenCalledTimes(1);
         expect(checkSubscription.mock.calls[0][0].ValidateGuards).toBe(true);
@@ -399,5 +405,114 @@ describe('getSubscriptionData guards', () => {
         await getSubscriptionData(paymentsApi, options);
 
         expect(checkSubscription.mock.calls[0][0]).not.toHaveProperty('ValidateGuards');
+    });
+});
+
+describe('getUserInfo with the Lumo purchase rules', () => {
+    const plansMap = getTestPlansMap('EUR');
+    const lumoPlanIDs = { [PLANS.LUMO]: 1 };
+    const user = { ID: 'user-id', Role: USER_ROLES.ADMIN_ROLE, Subscribed: 1 } as User;
+
+    const getApi = (subscription: Subscription) => {
+        return jest.fn(async ({ url }: { url: string }) => {
+            if (url === 'payments/v4/subscription') {
+                return { Subscription: subscription, UpcomingSubscription: undefined };
+            }
+            if (url.includes('organizations')) {
+                return { Organization: { MaxMembers: 1, UsedLumo: 0, MaxLumo: 0 } };
+            }
+            return { PaymentMethods: [] };
+        }) as unknown as Api;
+    };
+
+    const runGetUserInfo = async (
+        subscription: Subscription,
+        lumoMultiSubscriptions: boolean,
+        selectedPlanName: PLANS = PLANS.LUMO
+    ) => {
+        const selectedPlanIDs = { [selectedPlanName]: 1 };
+        const checkSubscription = jest.fn(async (data: CheckSubscriptionData): Promise<SubscriptionEstimation> => ({
+            Amount: 0,
+            AmountDue: 0,
+            CouponDiscount: 0,
+            Cycle: data.Cycle,
+            Coupon: null,
+            Currency: data.Currency,
+            SubscriptionMode: SubscriptionMode.Regular,
+            BaseRenewAmount: null,
+            RenewCycle: null,
+            PeriodEnd: 0,
+            requestData: data,
+        }));
+
+        const { subscriptionData, upsell } = await getUserInfo({
+            api: getApi(subscription),
+            audience: Audience.B2C,
+            paymentsApi: { checkSubscription } as unknown as PaymentsApi,
+            user,
+            options: {
+                plansMap,
+                planIDs: selectedPlanIDs,
+                cycle: CYCLE.YEARLY,
+                currency: 'EUR',
+                billingAddress: { CountryCode: 'CH', State: null },
+                VatId: undefined,
+            },
+            plansMap,
+            plans: Object.values(plansMap) as Plan[],
+            planParameters: { defined: true, planIDs: selectedPlanIDs, plan: plansMap[selectedPlanName] as Plan },
+            signupParameters: {} as SignupParameters2,
+            toApp: APPS.PROTONLUMO,
+            availableCycles: [CYCLE.MONTHLY, CYCLE.YEARLY],
+            lumoMultiSubscriptions,
+            getEntitlementCatalog: jest.fn().mockResolvedValue(multiSubscriptionTestCatalog),
+        });
+
+        return { subscriptionData, upsell, checkSubscription };
+    };
+
+    const getSelectedPlanIDs = async (subscription: Subscription, lumoMultiSubscriptions: boolean) => {
+        const { subscriptionData } = await runGetUserInfo(subscription, lumoMultiSubscriptions);
+        return subscriptionData.planIDs;
+    };
+
+    it('gives a Mail Plus subscriber Lumo Plus only with the flag on', async () => {
+        const subscription = buildSubscription(PLANS.MAIL);
+
+        expect(await getSelectedPlanIDs(subscription, false)).toEqual({
+            [PLANS.MAIL]: 1,
+            [ADDON_NAMES.LUMO_MAIL]: 1,
+        });
+        expect(await getSelectedPlanIDs(subscription, true)).toEqual(lumoPlanIDs);
+    });
+
+    it('keeps the Lumo addon for a Mail Plus subscriber who already has it, with the flag on', async () => {
+        const subscription = buildSubscription({ [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 });
+
+        expect(await getSelectedPlanIDs(subscription, true)).toEqual({
+            [PLANS.MAIL]: 1,
+            [ADDON_NAMES.LUMO_MAIL]: 1,
+        });
+    });
+
+    it('offers Unlimited to a web Mail Plus subscriber who picks Drive Plus, with the flag on', async () => {
+        const { upsell } = await runGetUserInfo(buildSubscription(PLANS.MAIL), true, PLANS.DRIVE);
+
+        expect(upsell.plan?.Name).toBe(PLANS.BUNDLE);
+    });
+
+    it('offers no upsell when Drive Plus is refused next to a store Mail Plus subscription, with the flag on', async () => {
+        const storeMailPlus = buildSubscription(PLANS.MAIL, { External: SubscriptionPlatform.iOS });
+
+        const { upsell } = await runGetUserInfo(storeMailPlus, true, PLANS.DRIVE);
+
+        expect(upsell.plan).toBeUndefined();
+    });
+
+    it('gives a Family subscriber the Lumo addon with the flag on', async () => {
+        expect(await getSelectedPlanIDs(buildSubscription(PLANS.FAMILY), true)).toEqual({
+            [PLANS.FAMILY]: 1,
+            [ADDON_NAMES.LUMO_FAMILY]: 1,
+        });
     });
 });

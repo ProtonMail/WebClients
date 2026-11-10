@@ -44,6 +44,7 @@ import {
     createMultiSubscriptionContext,
 } from '@proton/payments/core/subscription/multi-subscription-context';
 import { hasCycle } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { getPurchaseOutcome } from '@proton/payments/core/subscription/purchase-outcome';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { isFreeSubscription, isValidPlanName } from '@proton/payments/core/type-guards';
 import { partnerWhitelist } from '@proton/shared/lib/api/partner';
@@ -253,6 +254,14 @@ const getUpsellDataHelper = (
     };
 };
 
+const needsPlusToPlusUpsell = (
+    multiSubscriptionContext: MultiSubscriptionContext,
+    selectedPlanName: PLANS | ADDON_NAMES
+): boolean => {
+    const outcome = getPurchaseOutcome(multiSubscriptionContext, { [selectedPlanName]: 1 });
+    return outcome.type === 'replaces' && !!getHasPlusPlan(getPlan(outcome.subscription)?.Name);
+};
+
 const getUpsell = ({
     audience,
     currentPlan,
@@ -262,6 +271,7 @@ const getUpsell = ({
     planParameters,
     toApp,
     user,
+    multiSubscriptionContext,
 }: {
     audience: Audience;
     currentPlan?: SubscriptionPlan | undefined;
@@ -272,6 +282,7 @@ const getUpsell = ({
     planParameters: PlanParameters;
     toApp: APP_NAMES | undefined;
     user: User | undefined;
+    multiSubscriptionContext: MultiSubscriptionContext;
 }): Upsell => {
     const noUpsell = getDefaultUpsellData({ plansMap, currentPlan, toApp });
 
@@ -326,6 +337,7 @@ const getUpsell = ({
                 subscription,
                 newPlanName: planParameters.plan.Name,
                 plansMap,
+                multiSubscriptionContext,
             })
         ) {
             return noUpsell;
@@ -379,10 +391,17 @@ const getUpsell = ({
                 }
 
                 if (getHasPlusPlan(currentPlan.Name)) {
+                    const selectedPlanName = planParameters.plan.Name;
                     if (
                         hasSelectedPlan(planParameters.plan, [PLANS.PASS_FAMILY, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY])
                     ) {
                         return getUpsellData();
+                    }
+                    if (
+                        multiSubscriptionContext.lumoMultiSubscriptions &&
+                        !needsPlusToPlusUpsell(multiSubscriptionContext, selectedPlanName)
+                    ) {
+                        return noUpsell;
                     }
                     return getUpsellData({ [PLANS.BUNDLE]: 1 });
                 }
@@ -486,11 +505,13 @@ export const getUpdatedPlanIDs = ({
     toApp,
     plans,
     organization,
+    multiSubscriptionContext,
 }: {
     options: {
         planIDs: PlanIDs | undefined;
         cycle: CYCLE;
     };
+    multiSubscriptionContext: MultiSubscriptionContext;
     plansMap: PlansMap;
     plans: Plan[];
     toApp: APP_NAMES | undefined;
@@ -505,6 +526,7 @@ export const getUpdatedPlanIDs = ({
         subscription,
         plansMap,
         planIDs: options.planIDs,
+        multiSubscriptionContext,
     });
 
     if (planTransitionForbidden?.type === 'lumo-plus') {
@@ -694,6 +716,7 @@ export const getUserInfo = async ({
                 planParameters,
                 toApp,
                 user,
+                multiSubscriptionContext: noSubscriptionContext,
             }),
         };
     }
@@ -742,6 +765,7 @@ export const getUserInfo = async ({
         planParameters,
         toApp,
         user,
+        multiSubscriptionContext,
     });
 
     if (user && hasAccess({ toApp, user, audience, currentPlan })) {
@@ -803,6 +827,7 @@ export const getUserInfo = async ({
         currentPlan,
         options: optionsWithSubscriptionDefaults,
         plansMap,
+        multiSubscriptionContext,
     });
     if (replacePlanIfChangeIsForbidden?.upsell) {
         upsell = replacePlanIfChangeIsForbidden.upsell;
