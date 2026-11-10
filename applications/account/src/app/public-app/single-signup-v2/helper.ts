@@ -47,6 +47,7 @@ import { hasCycle } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { getPurchaseOutcome } from '@proton/payments/core/subscription/purchase-outcome';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { isFreeSubscription, isValidPlanName } from '@proton/payments/core/type-guards';
+import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { partnerWhitelist } from '@proton/shared/lib/api/partner';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -650,6 +651,20 @@ export const getSessionCycle = ({
     return Math.max(...availableCycles);
 };
 
+type GetEntitlementCatalog = (options: { api: Api }) => Promise<EntitlementCatalog>;
+
+const loadEntitlementCatalog = async (
+    getEntitlementCatalog: GetEntitlementCatalog,
+    api: Api
+): Promise<EntitlementCatalog | undefined> => {
+    try {
+        return await getEntitlementCatalog({ api });
+    } catch (error) {
+        tracePaymentError(error, { component: 'single-signup-v2-user-info' });
+        return undefined;
+    }
+};
+
 export const getUserInfo = async ({
     api,
     audience,
@@ -679,7 +694,7 @@ export const getUserInfo = async ({
     toApp: APP_NAMES | undefined;
     availableCycles: CYCLE[];
     lumoMultiSubscriptions: boolean;
-    getEntitlementCatalog: () => Promise<EntitlementCatalog>;
+    getEntitlementCatalog: GetEntitlementCatalog;
 }): Promise<{
     paymentMethods: SavedPaymentMethod[];
     subscription: Subscription | FreeSubscription | undefined;
@@ -735,7 +750,7 @@ export const getUserInfo = async ({
         state.payable ? getPaymentMethods(api) : [],
         state.payable && state.admin && state.subscribed ? getSubscription(api, user) : FREE_SUBSCRIPTION,
         state.subscribed ? getOrganization({ api }) : undefined,
-        lumoMultiSubscriptions ? getEntitlementCatalog().catch(() => undefined) : undefined,
+        lumoMultiSubscriptions ? loadEntitlementCatalog(getEntitlementCatalog, api) : undefined,
     ]);
 
     const multiSubscriptionContext = createMultiSubscriptionContext({
