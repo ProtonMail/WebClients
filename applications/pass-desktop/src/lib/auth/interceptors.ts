@@ -1,6 +1,6 @@
 import { shell } from 'electron';
 
-import { ForkSearchParameters, ForkType } from '@proton/shared/lib/authentication/fork/constants';
+import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppUrlFromApiUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
@@ -8,19 +8,8 @@ import noop from '@proton/utils/noop';
 import config from '../../app/config';
 import type { PassElectronContext } from '../../types';
 import logger from '../../utils/logger';
-import { isMainWindowEntry } from '../../utils/navigation';
-import { PLATFORM_CLIENT_ID } from '../env';
-import {
-    deepLinkAuthCallback,
-    getExternalLoginUrl,
-    getLoginUrl,
-    handleDeepLink,
-    isDeepLinkSupported,
-    loadWithReload,
-} from './deep-link';
-
-/** `RememberMode.HiddenEnabled` from the account app */
-const REMEMBER_MODE_HIDDEN_ENABLED = '3';
+import { getLoggableUrl, getOriginHref, isMainWindowEntry } from '../../utils/navigation';
+import { getLoginUrl, handleDeepLink } from './deep-link';
 
 export const authInterceptors = (app: Electron.App, ctx: PassElectronContext) => {
     app.addListener('web-contents-created', (_, contents) => {
@@ -45,37 +34,15 @@ export const authInterceptors = (app: Electron.App, ctx: PassElectronContext) =>
                 url.searchParams.get('t') === ForkType.SIGNUP
             ) {
                 evt.preventDefault();
-                logger.debug(`[will-navigate] allow (external): ${url.toString()}`);
-                void loadWithReload(ctx, getExternalLoginUrl());
+                logger.debug(`[will-navigate] allow (external): ${getLoggableUrl(url.href)}`);
                 return shell.openExternal(url.href).catch(noop);
             }
 
-            // External login flow: route /authorize and /login to external browser
+            // In-app sign in: /authorize and /login load in the main frame
             if (allowedHosts.includes(url.host) && ['/authorize', '/login'].includes(url.pathname)) {
-                if (!isDeepLinkSupported()) {
-                    logger.info(`[will-navigate] allow (main frame): ${url.href}`);
-                    return;
-                }
-
-                evt.preventDefault();
-
-                // Add redirectUrl parameter for deep link callback
-                url.searchParams.set('redirectUrl', deepLinkAuthCallback);
-
-                // Add app parameter so account knows which app the fork is for
-                url.searchParams.set(ForkSearchParameters.App, APPS.PROTONPASS);
-
-                // Push the fork to the desktop client ID instead of the web one
-                url.searchParams.set(ForkSearchParameters.ChildClientID, PLATFORM_CLIENT_ID);
-
-                // Force "Keep me signed in" without showing it: the desktop session inherits the account login's persistence
-                url.searchParams.set('remember', REMEMBER_MODE_HIDDEN_ENABLED);
-
-                logger.info(`[will-navigate] external login with redirect: ${url.href}`);
-
-                void loadWithReload(ctx, getExternalLoginUrl());
-
-                return shell.openExternal(url.href).catch(noop);
+                logger.info(`[will-navigate] allow (main frame): ${getLoggableUrl(url.href)}`);
+                if (isMainWindowEntry(contents.getURL())) ctx.originHref = getOriginHref(contents.getURL());
+                return;
             }
 
             // Allow SSO flows (happens in a dedicated window)
@@ -83,13 +50,13 @@ export const authInterceptors = (app: Electron.App, ctx: PassElectronContext) =>
                 evt.initiator?.url?.startsWith(config.SSO_URL) ||
                 ctx.window?.webContents.getURL().startsWith(config.SSO_URL)
             ) {
-                logger.info(`[will-navigate] allow (external frame): ${url.href}`);
+                logger.info(`[will-navigate] allow (external frame): ${getLoggableUrl(url.href)}`);
                 return;
             }
 
             // Let OS handle anything else
             evt.preventDefault();
-            logger.info(`[will-navigate] allow (external): ${url.href}`);
+            logger.info(`[will-navigate] allow (external): ${getLoggableUrl(url.href)}`);
             return shell.openExternal(evt.url).catch(noop);
         });
 
@@ -98,13 +65,13 @@ export const authInterceptors = (app: Electron.App, ctx: PassElectronContext) =>
 
             // Open a new window for SSO
             if (url.origin === config.SSO_URL && url.pathname.match(/(\/api)?\/auth\/sso/)) {
-                logger.info(`[setWindowOpenHandler] opening url in window: ${href}`);
+                logger.info(`[setWindowOpenHandler] opening url in window: ${getLoggableUrl(href)}`);
                 return { action: 'allow' };
             }
 
             // Shell out to the OS handler for http(s) and mailto
             if (['http:', 'https:', 'mailto:'].includes(url.protocol)) {
-                logger.info(`[setWindowOpenHandler] opening url externally: ${href}`);
+                logger.info(`[setWindowOpenHandler] opening url externally: ${getLoggableUrl(href)}`);
                 shell.openExternal(href).catch(noop);
             }
 
@@ -123,9 +90,6 @@ export const authInterceptors = (app: Electron.App, ctx: PassElectronContext) =>
     const filter = { urls: [`${getAppUrlFromApiUrl(config.API_URL, APPS.PROTONPASS)}*`] };
 
     ctx.session?.webRequest.onBeforeRequest(filter, async (details, callback) => {
-        // If deep links are supported, allow external redirection and stop there
-        if (isDeepLinkSupported()) return callback({ cancel: false });
-
         const url = new URL(details.url);
         if (url.pathname !== '/login') return callback({ cancel: false });
 

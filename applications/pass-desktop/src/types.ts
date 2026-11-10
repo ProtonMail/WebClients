@@ -6,4 +6,5 @@ export type PassElectronContext = {
     session: MaybeNull<Session>;
     window: MaybeNull<BrowserWindow>;
     quitting: boolean;
+    originHref: string;
 };

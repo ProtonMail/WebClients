@@ -20,3 +20,14 @@ const canonical = (url: string) => {
 
 /** Return true for internal url and false for any navigation outside the app. */
 export const isMainWindowEntry = (url: string) => canonical(url).startsWith(canonical(MAIN_WINDOW_WEBPACK_ENTRY));
+
+/** App route to come back to after leaving the app for Account: the account of
+ * the `/u/<localID>` route, or of the `localID` param of the add account routes. */
+export const getOriginHref = (appUrl: string) => {
+    const { hash } = new URL(appUrl);
+    const [, localID] = hash.match(/^#\/u\/(\d+)(?:[/?]|$)/) ?? hash.match(/[?&]localID=(\d+)(?:&|$)/) ?? [];
+    return localID ? `/u/${localID}` : '/';
+};
+
+/** Logged instead of the full URL: the query and fragment can carry fork keys. */
+export const getLoggableUrl = (url: string) => url.split(/[?#]/)[0];

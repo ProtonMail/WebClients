@@ -2,8 +2,11 @@ import { type BrowserWindow, Menu, type MenuItemConstructorOptions, app, shell }
 import { c } from 'ttag';
 
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
 
 import config from '../app/config';
+import { getBackLabel, goBackFromAccount } from '../lib/navigation';
+import type { PassElectronContext } from '../types';
 import { uninstallProton } from '../uninstallers/macos/uninstall';
 import { isMAS, isMac, isProdEnv } from '../utils/platform';
 
@@ -39,7 +42,7 @@ const reloadGuard = (mainWindow: BrowserWindow) => (handler: () => void) => () =
     if (!currentUrl.startsWith(config.SSO_URL)) handler();
 };
 
-export const setApplicationMenu = (mainWindow: BrowserWindow) => {
+export const setApplicationMenu = (mainWindow: BrowserWindow, ctx: PassElectronContext) => {
     const temp: MenuProps[] = [
         {
             label: c('Menu').t`File`,
@@ -73,6 +76,12 @@ export const setApplicationMenu = (mainWindow: BrowserWindow) => {
             label: c('Menu').t`View`,
             key: 'view',
             submenu: [
+                {
+                    label: getBackLabel(),
+                    accelerator: isMac() ? 'Cmd+[' : 'Alt+Left',
+                    click: () => goBackFromAccount(ctx).catch(noop),
+                },
+                { type: 'separator' },
                 {
                     label: c('App menu').t`Reload`,
                     accelerator: isMac() ? 'Cmd+R' : 'Ctrl+R',

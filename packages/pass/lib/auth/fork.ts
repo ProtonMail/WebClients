@@ -11,6 +11,7 @@ import { InvalidForkConsumeError } from '@proton/shared/lib/authentication/error
 import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
 import {
     ExtraSessionForkSearchParameters,
+    type ForkPayloadVersion,
     ForkSearchParameters,
     type ForkType,
 } from '@proton/shared/lib/authentication/fork/constants';
@@ -44,6 +45,7 @@ export type RequestForkOptions = {
     forkChallenge?: string;
     forkType?: ForkType;
     host?: string;
+    independent?: boolean;
     localID?: number;
     payloadType?: 'offline' | 'default';
     payloadVersion?: AuthSessionVersion;
@@ -91,6 +93,7 @@ export const requestFork = ({
     forkChallenge,
     host = getAppHref('/', APPS.PROTONACCOUNT),
     forkType,
+    independent = false,
     localID,
     payloadType = 'offline',
     payloadVersion,
@@ -108,7 +111,7 @@ export const requestFork = ({
 
     searchParams.append(ForkSearchParameters.App, app);
     searchParams.append(ForkSearchParameters.State, state);
-    searchParams.append(ForkSearchParameters.Independent, '0');
+    searchParams.append(ForkSearchParameters.Independent, independent ? '1' : '0');
 
     if (prompt === 'login') {
         searchParams.append(ForkSearchParameters.Prompt, 'login');
@@ -143,7 +146,8 @@ export type ConsumeForkPayload =
           key?: Uint8Array<ArrayBuffer>;
           localState: MaybeNull<string>;
           mode: 'web';
-          payloadVersion: AuthSessionVersion;
+          /** Version of the fork blob encryption. Not the session version. */
+          payloadVersion: ForkPayloadVersion;
           persistent: boolean;
           selector: string;
           state: string;
@@ -268,7 +272,10 @@ export const consumeFork = async (options: ConsumeForkOptions): Promise<Consumed
                     if (!decryptedBlob?.keyPassword) throw new Error('Missing `keyPassword`');
 
                     const { keyPassword } = decryptedBlob;
-                    const data: BaseSession = { keyPassword, payloadVersion };
+                    const data: BaseSession = {
+                        keyPassword,
+                        payloadVersion: payloadVersion === 3 ? SESSION_VERSION : payloadVersion,
+                    };
 
                     if (decryptedBlob?.type === 'offline' && offlineKeySupported) {
                         try {

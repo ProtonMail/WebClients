@@ -26,7 +26,7 @@ export const startup = async (app: Electron.App, ctx: PassElectronContext) => {
     window(() => ctx.window);
     system(() => ctx.window);
     biometrics(() => ctx.window);
-    navigation(() => ctx.window);
+    navigation(ctx);
     sessionStorage(() => ctx.session);
     client();
     clipboard();

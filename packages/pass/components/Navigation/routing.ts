@@ -8,7 +8,7 @@ import { getAppUrlFromApiUrl } from '@proton/shared/lib/helpers/url';
 import { authStore } from '../../lib/auth/store';
 import type { ItemFilters } from '../../types/data/items';
 import type { ItemType } from '../../types/protobuf';
-import type { MaybeNull, Unpack } from '../../types/utils';
+import type { Maybe, MaybeNull, Unpack } from '../../types/utils';
 import { objectFilter } from '../../utils/object/filter';
 import { partialMerge } from '../../utils/object/merge';
 
@@ -19,7 +19,8 @@ export type ItemScope = Unpack<typeof ItemScopes>;
 
 export enum PublicRoutes {
     SecureLink = '/secure-link/:token',
-    ExternalLogin = '/auth/external',
+    DeviceLogin = '/auth/device',
+    AddAccount = '/auth/add',
 }
 
 /** URL prefixes that define different item scopes.
@@ -126,6 +127,14 @@ export const setSearchFilters = (search: URLSearchParams, update: Partial<ItemFi
 export const getPassWebUrl = (apiUrl: string, subPath: string = '') => {
     const appUrl = getAppUrlFromApiUrl(apiUrl, APPS.PROTONPASS);
     return appUrl.toString() + subPath;
+};
+
+export const getAddAccountHref = (localID: Maybe<number>) =>
+    localID === undefined ? PublicRoutes.AddAccount : `${PublicRoutes.AddAccount}?localID=${localID}`;
+
+export const getOriginAccountHref = (search: string) => {
+    const localID = new URLSearchParams(search).get('localID');
+    return localID !== null && /^\d+$/.test(localID) ? `/u/${localID}` : '/';
 };
 
 export const getRouteError = (search: string) => new URLSearchParams(search).get('error');

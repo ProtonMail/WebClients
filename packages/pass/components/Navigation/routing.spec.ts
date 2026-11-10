@@ -1,4 +1,12 @@
-import { decodeFilters, encodeFilters, getInitialFilters, removeLocalPath, setSearchFilters } from './routing';
+import {
+    decodeFilters,
+    encodeFilters,
+    getAddAccountHref,
+    getInitialFilters,
+    getOriginAccountHref,
+    removeLocalPath,
+    setSearchFilters,
+} from './routing';
 
 describe('routing utils', () => {
     test('removeLocalPath', () => {
@@ -39,5 +47,25 @@ describe('setSearchFilters', () => {
         setSearchFilters(search, { selectedShareId: 'share-1' });
 
         expect(decodeFilters(search.get('filters'))).toEqual({ ...getInitialFilters(), selectedShareId: 'share-1' });
+    });
+});
+
+describe('add account routes', () => {
+    test('getAddAccountHref carries the local ID of the account the user comes from', () => {
+        expect(getAddAccountHref(3)).toBe('/auth/add?localID=3');
+        expect(getAddAccountHref(0)).toBe('/auth/add?localID=0');
+        expect(getAddAccountHref(undefined)).toBe('/auth/add');
+    });
+
+    test('getOriginAccountHref goes back to the account the user comes from', () => {
+        expect(getOriginAccountHref('?localID=3')).toBe('/u/3');
+        expect(getOriginAccountHref('?localID=0')).toBe('/u/0');
+    });
+
+    test('getOriginAccountHref goes back to the lobby without a valid local ID', () => {
+        expect(getOriginAccountHref('')).toBe('/');
+        expect(getOriginAccountHref('?localID=')).toBe('/');
+        expect(getOriginAccountHref('?localID=abc')).toBe('/');
+        expect(getOriginAccountHref('?localID=3/../../x')).toBe('/');
     });
 });

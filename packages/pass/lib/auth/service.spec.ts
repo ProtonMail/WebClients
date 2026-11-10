@@ -328,5 +328,15 @@ describe('Core AuthService', () => {
             expect(forkSecret).toMatch(/^[a-f0-9]{64}$/);
             expect(new URL(result.url).searchParams.get('forkChallenge')).toEqual(await getForkChallenge(forkSecret));
         });
+
+        test('should request an independent fork without fork challenge nor fork secret', async () => {
+            const result = await auth.requestFork({ app: APPS.PROTONPASS, independent: true });
+            const [{ forkSecret }] = onForkRequest.mock.calls[0];
+            const { searchParams } = new URL(result.url);
+
+            expect(forkSecret).toBeNull();
+            expect(searchParams.get('independent')).toEqual('1');
+            expect(searchParams.has('forkChallenge')).toBe(false);
+        });
     });
 });

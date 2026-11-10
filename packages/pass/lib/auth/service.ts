@@ -139,8 +139,9 @@ export interface AuthServiceConfig {
     /** Handle the result of a fork request call. Can be used to redirect the
      * user automatically when requesting a fork from account. Optional `data`
      * object should be persisted for the `result.state` key. `forkSecret` must
-     * be persisted too and passed back when consuming the fork. */
-    onForkRequest?: (result: RequestForkResult & { forkSecret: string }, data?: RequestForkData) => void;
+     * be persisted too and passed back when consuming the fork. It is `null`
+     * for independent forks, which carry no fork challenge. */
+    onForkRequest?: (result: RequestForkResult & { forkSecret: MaybeNull<string> }, data?: RequestForkData) => void;
     /** Optional hook when session resuming starts. Returning `false` from this
      * function will halt the session resume sequence. */
     onResumeStart?: (data: {
@@ -304,7 +305,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
         consumeFork: async (
             payload: ConsumeForkPayload,
-            apiUrl?: string
+            apiUrl?: string,
+            pullForkOverride: Maybe<PullForkCall> = config.pullFork
         ): Promise<{ ok: boolean; reauth: boolean }> => {
             const data = safeCall(() => JSON.parse(payload.localState ?? ''))();
 
@@ -313,7 +315,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                     const encryptedSession = await config.getPersistedSession(data.localID);
                     if (!encryptedSession) throw new Error('No session matching reauth');
 
-                    const { UserID, Payload } = await pullFork({ api, apiUrl, payload, pullFork: config.pullFork });
+                    const { UserID, Payload } = await pullFork({ api, apiUrl, payload, pullFork: pullForkOverride });
                     if (UserID !== encryptedSession.UserID) throw new Error('Reauth session mismatch');
 
                     const decryptedBlob: Maybe<ForkEncryptedBlob> = await (async () => {
@@ -345,7 +347,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             await config.onForkConsumeStart?.();
 
             try {
-                const { session, Scopes } = await consumeFork({ api, apiUrl, payload, pullFork: config.pullFork });
+                const { session, Scopes } = await consumeFork({ api, apiUrl, payload, pullFork: pullForkOverride });
                 const validScope = Scopes.includes('pass');
 
                 if (!validScope) {
@@ -394,8 +396,9 @@ export const createAuthService = (config: AuthServiceConfig) => {
         },
 
         requestFork: async (options: RequestForkOptions, data?: RequestForkData): Promise<RequestForkResult> => {
-            const forkSecret = generateForkSecret();
-            const result = requestFork({ ...options, forkChallenge: await getForkChallenge(forkSecret) });
+            const forkSecret = options.independent ? null : generateForkSecret();
+            const forkChallenge = forkSecret ? await getForkChallenge(forkSecret) : undefined;
+            const result = requestFork({ ...options, forkChallenge });
             config.onForkRequest?.({ ...result, forkSecret }, data);
 
             return result;

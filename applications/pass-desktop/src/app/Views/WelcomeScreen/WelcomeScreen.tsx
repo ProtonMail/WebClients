@@ -13,6 +13,7 @@ import onboarding7 from '@proton/pass/assets/desktop-onboarding/onboarding-7.png
 import { Carousel, type CarouselItem } from '@proton/pass/components/Carousel/Carousel';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { PassTextLogo } from '@proton/pass/components/Layout/Logo/PassTextLogo';
+import { PublicRoutes, reloadHref } from '@proton/pass/components/Navigation/routing';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS, BRAND_NAME, DARK_WEB_MONITORING_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -35,6 +36,11 @@ export const WelcomeScreen: FC = () => {
     };
 
     const onFork = () => {
+        dismissFirstLaunch();
+        reloadHref(PublicRoutes.DeviceLogin);
+    };
+
+    const onForkInApp = () => {
         dismissFirstLaunch();
         void authService.requestFork({ host, app: APPS.PROTONPASS, forkType: ForkType.SWITCH });
     };
@@ -113,6 +119,10 @@ export const WelcomeScreen: FC = () => {
 
                 <Button pill shape="ghost" color="norm" onClick={onRegister} disabled={!online}>
                     {c('Action').t`Create a ${BRAND_NAME} account`}
+                </Button>
+
+                <Button pill shape="ghost" color="norm" className="mt-4" onClick={onForkInApp} disabled={!online}>
+                    {c('Action').t`Sign in in the app instead`}
                 </Button>
             </div>
         </div>
