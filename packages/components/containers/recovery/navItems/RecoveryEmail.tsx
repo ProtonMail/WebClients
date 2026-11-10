@@ -74,10 +74,7 @@ const RecoveryEmail = ({ to }: Props) => {
         >
             <NavItemStatus>
                 <RecoveryEmailBadge />
-                <LastChanged
-                    date={emailRecovery.value ? emailRecovery.updateTime : null}
-                    data-testid="account:recovery-email:last-changed-date"
-                />
+                <LastChanged date={emailRecovery.updateTime} data-testid="account:recovery-email:last-changed-date" />
             </NavItemStatus>
         </SettingsNavItem>
     );

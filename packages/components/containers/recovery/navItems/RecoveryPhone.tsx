@@ -75,10 +75,7 @@ const RecoveryPhone = ({ to }: Props) => {
         >
             <NavItemStatus>
                 <RecoveryPhoneBadge />
-                <LastChanged
-                    date={phoneRecovery.value ? phoneRecovery.updateTime : null}
-                    data-testid="account:recovery-phone:last-changed-date"
-                />
+                <LastChanged date={phoneRecovery.updateTime} data-testid="account:recovery-phone:last-changed-date" />
             </NavItemStatus>
         </SettingsNavItem>
     );
