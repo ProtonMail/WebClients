@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 
+import { GlobalBYOEInboxCleanupModal } from './GlobalBYOEInboxCleanupModal';
 import { GlobalBYOESpotlightModal } from './GlobalBYOESpotlightModal';
 import { GlobalCategoriesB2BOnboarding } from './GlobalCategoriesB2BOnboarding';
 import { GlobalCategoriesB2COnboarding } from './GlobalCategoriesB2COnboarding';
@@ -43,6 +44,7 @@ export const GlobalModalProvider = ({ children }: { children: React.ReactNode })
             <GlobalCategoriesB2BOnboarding />
             <GlobalCategoriesB2COnboarding />
             <GlobalBYOESpotlightModal />
+            <GlobalBYOEInboxCleanupModal />
             {children}
         </GlobalModalContext.Provider>
     );
