@@ -121,8 +121,6 @@ export enum CommonFeatureFlag {
     InboxBringYourOwnEmailClient = 'InboxBringYourOwnEmailClient',
     InboxBringYourOwnEmailImportPeriod = 'InboxBringYourOwnEmailImportPeriod',
     InboxBringYourOwnEmailImportPeriodExperiment = 'InboxBringYourOwnEmailImportPeriodExperiment',
-    // INDA-782: Remove this
-    InboxDesktopAppSessionCacheDisabled = 'InboxDesktopAppSessionCacheDisabled',
     InboxDesktopDefaultEmailSetupHelperDisabled = 'InboxDesktopDefaultEmailSetupHelperDisabled',
     InboxDesktopDefaultEmailSetupHelperDisabledV2 = 'InboxDesktopDefaultEmailSetupHelperDisabledV2',
     InboxDesktopInAppPayments = 'InboxDesktopInAppPayments',
