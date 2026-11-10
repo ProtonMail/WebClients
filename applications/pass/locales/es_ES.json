@@ -1939,6 +1939,9 @@
       "Didn't receive the code?": [
         "¿No has recibido el código?"
       ],
+      "Disabled by your organization": [
+        "Desactivado por tu organización"
+      ],
       "Disabling auto-lock": [
         "Desactivando el bloqueo automático"
       ],
@@ -2256,7 +2259,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte borrará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
+        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -2319,6 +2323,24 @@
       "Only ${ count } item will be moved. Items in folders will not be moved.": [
         "Solo se moverá ${ count } elemento. Los elementos de las carpetas no se moverán.",
         "Solo se moverán ${ count } elementos. Los elementos de las carpetas no se moverán."
+      ],
+      "Only aliases are shown": [
+        "Solo se muestran los alias"
+      ],
+      "Only cards are shown": [
+        "Solo se muestran las tarjetas"
+      ],
+      "Only custom items are shown": [
+        "Solo se muestran los elementos personalizados"
+      ],
+      "Only identities are shown": [
+        "Solo se muestran las identidades"
+      ],
+      "Only logins are shown": [
+        "Solo se muestran los inicios de sesión"
+      ],
+      "Only notes are shown": [
+        "Solo se muestran las notas"
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Solo se muestran los tokens que expiraron en los últimos 30 días. Los tokens más antiguos se eliminan automáticamente."
@@ -2970,6 +2992,12 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Se han encontrado tus datos el ${ displayedDate }."
+      ],
+      "Your organization does not allow using 2FA codes stored in ${ PASS_APP_NAME }": [
+        "Tu organización no permite utilizar códigos de autenticación de dos factores (2FA) almacenados en ${ PASS_APP_NAME }"
+      ],
+      "Your organization does not allow using passkeys stored in ${ PASS_APP_NAME }": [
+        "Tu organización no permite el uso de claves de acceso almacenadas en ${ PASS_APP_NAME }"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Tu organización requiere que asegures tu acceso a ${ PASS_APP_NAME }"

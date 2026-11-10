@@ -1927,6 +1927,9 @@
       "Didn't receive the code?": [
         "Vous n’avez pas reçu le code ?"
       ],
+      "Disabled by your organization": [
+        "Désactivé par votre organisation"
+      ],
       "Disabling auto-lock": [
         "Désactivation du verrouillage automatique"
       ],
@@ -2241,7 +2244,8 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort supprimera ses liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2961,6 +2965,12 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Vos informations ont été trouvées le ${ displayedDate }."
+      ],
+      "Your organization does not allow using 2FA codes stored in ${ PASS_APP_NAME }": [
+        "Votre organisation n'autorise pas l'utilisation des codes A2F enregistrés dans ${ PASS_APP_NAME }"
+      ],
+      "Your organization does not allow using passkeys stored in ${ PASS_APP_NAME }": [
+        "Votre organisation n'autorise pas l'utilisation de clés d'accès stockées dans ${ PASS_APP_NAME }"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Votre organisation vous demande de sécuriser votre accès à ${ PASS_APP_NAME }."

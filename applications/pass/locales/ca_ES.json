@@ -1939,6 +1939,9 @@
       "Didn't receive the code?": [
         "No heu rebut el codi?"
       ],
+      "Disabled by your organization": [
+        "La vostra organització ho ha desactivat"
+      ],
       "Disabling auto-lock": [
         "S'està desactivant el bloqueig automàtic"
       ],
@@ -2256,7 +2259,8 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborraran els enllaços segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2988,6 +2992,12 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "La vostra informació es va trobar el ${ displayedDate }"
+      ],
+      "Your organization does not allow using 2FA codes stored in ${ PASS_APP_NAME }": [
+        "La vostra organització no permet utilitzar els codis 2FA emmagatzemats a ${ PASS_APP_NAME }"
+      ],
+      "Your organization does not allow using passkeys stored in ${ PASS_APP_NAME }": [
+        "La vostra organització no permet utilitzar les claus d'accés emmagatzemades a ${ PASS_APP_NAME }"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La vostra organització us demana que assegureu el vostre accés a ${ PASS_APP_NAME }."

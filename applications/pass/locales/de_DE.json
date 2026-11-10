@@ -1939,6 +1939,9 @@
       "Didn't receive the code?": [
         "Code nicht erhalten?"
       ],
+      "Disabled by your organization": [
+        "Durch deine Organisation deaktiviert"
+      ],
       "Disabling auto-lock": [
         "Automatische Sperre deaktivieren"
       ],
@@ -2256,7 +2259,8 @@
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Wenn du einen Eintrag in einen anderen Tresor verschiebst, werden seine sicheren Links gelöscht."
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
@@ -2988,6 +2992,12 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Deine Informationen wurden am ${ displayedDate } gefunden."
+      ],
+      "Your organization does not allow using 2FA codes stored in ${ PASS_APP_NAME }": [
+        "Deine Organisation verbietet das Verwenden von 2FA-Codes, die in ${ PASS_APP_NAME } hinterlegt wurden."
+      ],
+      "Your organization does not allow using passkeys stored in ${ PASS_APP_NAME }": [
+        "Deine Organisation verbietet das Verwenden von Passkeys, die in ${ PASS_APP_NAME } hinterlegt wurden."
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Deine Organisation verlangt, dass du deinen Zugang zu ${ PASS_APP_NAME } absicherst."

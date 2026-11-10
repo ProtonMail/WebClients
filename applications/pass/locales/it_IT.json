@@ -1939,6 +1939,9 @@
       "Didn't receive the code?": [
         "Non hai ricevuto il codice?"
       ],
+      "Disabled by your organization": [
+        "Disabilitato dalla tua organizzazione"
+      ],
       "Disabling auto-lock": [
         "Disabilitazione del blocco automatico"
       ],
@@ -2256,7 +2259,8 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -2985,6 +2989,12 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Le tue informazioni sono state trovate il ${ displayedDate }"
+      ],
+      "Your organization does not allow using 2FA codes stored in ${ PASS_APP_NAME }": [
+        "La tua organizzazione non consente di utilizzare i codici di autenticazione a due fattori (2FA) memorizzati in ${ PASS_APP_NAME }."
+      ],
+      "Your organization does not allow using passkeys stored in ${ PASS_APP_NAME }": [
+        "La tua organizzazione non consente di utilizzare le passkey memorizzate in ${ PASS_APP_NAME }."
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La tua organizzazione richiede che tu protegga l'accesso a ${ PASS_APP_NAME }"
