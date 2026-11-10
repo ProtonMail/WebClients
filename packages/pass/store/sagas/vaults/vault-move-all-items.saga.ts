@@ -10,7 +10,7 @@ import {
     vaultMoveAllItemsSuccess,
 } from '../../actions/creators/vault';
 import { selectItemsInFolder } from '../../selectors/items';
-import { isShareLocked } from '../../selectors/shares';
+import { isShareLocked, selectShareOrThrow } from '../../selectors/shares';
 import { type BulkMoveItemsChannel, bulkMoveChannel } from '../items/item-bulk-move.saga';
 
 function* moveAllItemsWorker({ payload, meta }: ReturnType<typeof vaultMoveAllItemsIntent>) {
@@ -23,6 +23,8 @@ function* moveAllItemsWorker({ payload, meta }: ReturnType<typeof vaultMoveAllIt
     try {
         const sharesLocked: boolean[] = yield all(lockedShareIds.map((id) => select(isShareLocked(id))));
         if (sharesLocked.some(Boolean)) throw new Error();
+
+        yield all(lockedShareIds.map((id) => select(selectShareOrThrow(id))));
 
         yield all(lockedShareIds.map((id) => put(lockShare(id))));
 
