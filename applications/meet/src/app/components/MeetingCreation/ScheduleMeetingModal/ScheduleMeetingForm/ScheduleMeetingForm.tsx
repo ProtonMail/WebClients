@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
+import { isValid } from 'date-fns';
 import { utcToZonedTime } from 'date-fns-tz';
 import { c } from 'ttag';
 
@@ -378,6 +379,11 @@ export const ScheduleMeetingForm = ({
         };
 
         const startDateTime = combineDateAndTime(newValues.startDate, newValues.startTime, newValues.timeZone);
+
+        if (!isValid(startDateTime)) {
+            setValues(newValues);
+            return;
+        }
 
         if (fieldName === 'startDate' || fieldName === 'startTime') {
             const previousStart = combineDateAndTime(values.startDate, values.startTime, values.timeZone);
