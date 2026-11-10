@@ -28,24 +28,23 @@ import SignInRestrictionConfirmModal from './SignInRestrictionConfirmModal';
 import { getIsSignInRestricted, getSignInIdentifiers } from './helpers';
 
 const getUsernameAndAddressesDescription = (username: string, signInDomains: string[]) => {
-    const [firstDomain, secondDomain, thirdDomain] = signInDomains;
-    const firstEmail = `${username}@${firstDomain}`;
+    const [firstEmail, secondEmail, thirdEmail] = signInDomains.map((domain) => `${username}@${domain}`);
 
-    if (thirdDomain) {
-        // translator: full sentence is: When sign-in is restricted, you can only sign in with your original username <eric.norbert>, either on its own or as <eric.norbert@proton.me>, <@protonmail.com>, or <@protonmail.ch>. Your other email addresses won’t work for sign-in.
+    if (thirdEmail) {
+        // translator: full sentence is: When sign-in is restricted, you can only sign in with your username, <eric.norbert>, or with <eric.norbert@proton.me>, <eric.norbert@protonmail.com>, or <eric.norbert@protonmail.ch>. Your other email addresses won’t work for sign-in.
         return c('Info')
-            .t`When sign-in is restricted, you can only sign in with your original username **${username}**, either on its own or as **${firstEmail}**, **@${secondDomain}**, or **@${thirdDomain}**. Your other email addresses won’t work for sign-in.`;
+            .t`When sign-in is restricted, you can only sign in with your username, **${username}**, or with **${firstEmail}**, **${secondEmail}**, or **${thirdEmail}**. Your other email addresses won’t work for sign-in.`;
     }
 
-    if (secondDomain) {
-        // translator: full sentence is: When sign-in is restricted, you can only sign in with your original username <eric.norbert>, either on its own or as <eric.norbert@proton.me>, or <@protonmail.com>. Your other email addresses won’t work for sign-in.
+    if (secondEmail) {
+        // translator: full sentence is: When sign-in is restricted, you can only sign in with your username, <eric.norbert>, or with <eric.norbert@proton.me> or <eric.norbert@protonmail.com>. Your other email addresses won’t work for sign-in.
         return c('Info')
-            .t`When sign-in is restricted, you can only sign in with your original username **${username}**, either on its own or as **${firstEmail}**, or **@${secondDomain}**. Your other email addresses won’t work for sign-in.`;
+            .t`When sign-in is restricted, you can only sign in with your username, **${username}**, or with **${firstEmail}** or **${secondEmail}**. Your other email addresses won’t work for sign-in.`;
     }
 
-    // translator: full sentence is: When sign-in is restricted, you can only sign in with your original username <eric.norbert>, either on its own or as <eric.norbert@proton.me>. Your other email addresses won’t work for sign-in.
+    // translator: full sentence is: When sign-in is restricted, you can only sign in with your username, <eric.norbert>, or with <eric.norbert@proton.me>. Your other email addresses won’t work for sign-in.
     return c('Info')
-        .t`When sign-in is restricted, you can only sign in with your original username **${username}**, either on its own or as **${firstEmail}**. Your other email addresses won’t work for sign-in.`;
+        .t`When sign-in is restricted, you can only sign in with your username, **${username}**, or with **${firstEmail}**. Your other email addresses won’t work for sign-in.`;
 };
 
 const getDescriptionAndLabel = ({ username, primaryEmail, signInDomains }: ReturnType<typeof getSignInIdentifiers>) => {
