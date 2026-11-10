@@ -102,7 +102,8 @@ function getLockCauses({
     // The SDK refused an edit, so later ones would build on content the server lacks
     editRefused,
     viewer: role === 'Viewer',
-    participantLimitReached,
+    // As /doc's EditorController: admins keep editing at the limit
+    participantLimitReached: participantLimitReached && role !== 'Admin',
   }
 }
 

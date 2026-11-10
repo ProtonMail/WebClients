@@ -7,7 +7,7 @@ import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayloa
 import type { NodeEntity } from '@proton/drive/sdk'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config'
 import { decodeAwarenessUpdate, encodeAwarenessUpdate } from '@proton-docs/realtime-sdk'
-import type { RecoveryCondition, SessionStatus } from '@proton-docs/realtime-sdk'
+import type { Participant, RecoveryCondition, SessionStatus } from '@proton-docs/realtime-sdk'
 import type { ReactNode } from 'react'
 import { MemoryRouter } from 'react-router-dom'
 import { CompatRouter } from 'react-router-dom-v5-compat'
@@ -151,6 +151,16 @@ function update(firstByte: number) {
     signature: new Uint8Array(),
     aad: '',
   }
+}
+
+/** `count` users, one client each, the user's own first */
+function users(count: number): Participant[] {
+  return Array.from({ length: count }, (_, user) => ({
+    id: user,
+    isSelf: user === 0,
+    state: { name: `user ${user}`, anchorPos: null, focusPos: null, awarenessData: { userId: `user-${user}` } },
+    lastSeenAt: 0,
+  }))
 }
 
 function renderViewer(
@@ -322,6 +332,21 @@ describe('DocumentViewerV2', () => {
     await waitFor(() =>
       expect(screen.getByTestId('shell-header')).toHaveTextContent('Header for VOLUME~LINK as Editor, with the editor'),
     )
+  })
+
+  test.each<[DocumentRole, boolean]>([
+    ['Editor', true],
+    ['Admin', false],
+  ])('with 20 users, a %s is locked: %s, and below 20 nobody is', async (role, lockedAtLimit) => {
+    const fake = createSession()
+    renderViewer(fake, { role })
+    await waitFor(() => expect(mockChangeLockedState).toHaveBeenLastCalledWith(false))
+
+    act(() => fake.setSnapshot({ participants: users(20) }))
+    await waitFor(() => expect(mockChangeLockedState).toHaveBeenLastCalledWith(lockedAtLimit))
+
+    act(() => fake.setSnapshot({ participants: users(19) }))
+    await waitFor(() => expect(mockChangeLockedState).toHaveBeenLastCalledWith(false))
   })
 
   test("gives a private Viewer's editor their user settings, as /doc does", async () => {

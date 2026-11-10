@@ -1,4 +1,5 @@
 import { EditorBridgeMessageType } from '@proton/docs-shared/Bridge/EditorBridgeMessageType'
+import type { SyncedEditorEvent } from '@proton/docs-shared/State/SyncedEditorState'
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings'
 
 import { ClientEditorBridge } from './ClientEditorBridge'
@@ -6,6 +7,19 @@ import { EDITOR_CALL_TIMEOUT_MS } from './EditorInvoker'
 import { createClientHandler } from './createClientHandler'
 
 const USER_SETTINGS = { Locale: 'fr_FR' } as UserSettings
+const SCROLL_TO_USER_CURSOR: SyncedEditorEvent = {
+  name: 'ScrollToUserCursorData',
+  payload: {
+    state: {
+      name: 'alice',
+      color: 'hsl(0, 0%, 0%)',
+      focusing: true,
+      anchorPos: null,
+      focusPos: null,
+      awarenessData: undefined,
+    },
+  },
+}
 
 const logger = { debug: jest.fn(), warn: jest.fn(), error: jest.fn() } as unknown as ConstructorParameters<
   typeof ClientEditorBridge
@@ -277,6 +291,11 @@ describe('ClientEditorBridge', () => {
     },
     { functionName: 'getClientId', call: (invoker) => invoker.getClientId(), args: [], returnValue: 42 },
     { functionName: 'broadcastPresenceState', call: (invoker) => invoker.broadcastPresenceState(), args: [] },
+    {
+      functionName: 'syncEvent',
+      call: (invoker) => invoker.syncEvent(SCROLL_TO_USER_CURSOR),
+      args: [SCROLL_TO_USER_CURSOR],
+    },
   ])(
     "calls the editor's $functionName, and resolves with its reply",
     async ({ functionName, call, args, returnValue }) => {

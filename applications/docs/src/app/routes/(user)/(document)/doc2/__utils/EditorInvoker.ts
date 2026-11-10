@@ -8,7 +8,7 @@ import type { DocumentRoleType } from '@proton/docs-shared/Doc/DocumentRole'
 import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayload'
 import type { EditorInitializationConfig } from '@proton/docs-shared/EditorInitializationConfig'
 import { GenerateUUID } from '@proton/docs-shared/GenerateUuid'
-import type { SyncedEditorStateValues } from '@proton/docs-shared/State/SyncedEditorState'
+import type { SyncedEditorEvent, SyncedEditorStateValues } from '@proton/docs-shared/State/SyncedEditorState'
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings'
 
 export const EDITOR_CALL_TIMEOUT_MS = 10_000
@@ -25,6 +25,7 @@ type EditorMethodsCalledByDoc2 = Pick<
   | 'syncProperty'
   | 'getClientId'
   | 'broadcastPresenceState'
+  | 'syncEvent'
 >
 
 // Copied from docs-core `Bridge/EditorInvoker.ts`, which doc2 must not import, with only the methods doc2 calls.
@@ -71,6 +72,10 @@ export class EditorInvoker implements EditorMethodsCalledByDoc2 {
 
   async broadcastPresenceState(): Promise<void> {
     return this.invokeEditorMethod('broadcastPresenceState', [])
+  }
+
+  async syncEvent(event: SyncedEditorEvent): Promise<void> {
+    return this.invokeEditorMethod('syncEvent', [event])
   }
 
   async initializeEditor(
