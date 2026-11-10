@@ -20,6 +20,7 @@ interface SubSettingsSectionProps extends ComponentPropsWithoutRef<'div'> {
     id: string;
     className?: string;
     title?: string;
+    /** The child renders its own heading, so no title is rendered for this section */
     invisibleTitle?: boolean;
     beta?: boolean;
     children: ReactNode;
@@ -105,7 +106,7 @@ const SubSettingsSection = ({
             {title && !invisibleTitle && (
                 <SettingsSectionTitle className="group-hover-opacity-container relative">
                     {linkElement}
-                    <span className={clsx(invisibleTitle && 'sr-only')}>{title}</span>
+                    <span>{title}</span>
                     {beta && (
                         <ProtonBadge
                             className="align-middle"
