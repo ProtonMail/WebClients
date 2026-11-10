@@ -30,12 +30,10 @@ import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useDebouncedRequest } from '../_api';
-import { useDriveEventManager } from '../_events';
 import { ShareType } from '../_shares/interface';
 import { useDefaultShare } from '../_shares/useDefaultShare';
 import useShare from '../_shares/useShare';
 import { useBatchHelper } from '../_utils/useBatchHelper';
-import { useVolumesState } from '../_volumes';
 import type { DecryptedLink } from './interface';
 import useLink from './useLink';
 import useLinks from './useLinks';
@@ -62,14 +60,12 @@ export function useLinksActions({
 }) {
     const { preventLeave } = usePreventLeave();
     const debouncedRequest = useDebouncedRequest();
-    const events = useDriveEventManager();
     const { getLink, getLinkPassphraseAndSessionKey, getLinkPrivateKey, getLinkHashKey } = useLink();
     const { getLinks } = useLinks();
     const { lockLinks, lockTrash, unlockLinks } = useLinksState();
     const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
 
     const { getShareCreatorKeys, getShare, getSharePrivateKey } = useShare();
-    const volumeState = useVolumesState();
 
     const { batchAPIHelper, batchPromiseHelper } = useBatchHelper();
 
@@ -80,22 +76,13 @@ export function useLinksActions({
      */
     const withLinkLock = async <T>({
         shareId,
-        volumeId,
         linkIds,
         callback,
-    }:
-        | {
-              shareId: string;
-              volumeId?: string;
-              linkIds: string[];
-              callback: () => Promise<T>;
-          }
-        | {
-              shareId?: string;
-              volumeId: string;
-              linkIds: string[];
-              callback: () => Promise<T>;
-          }): Promise<T> => {
+    }: {
+        shareId?: string;
+        linkIds: string[];
+        callback: () => Promise<T>;
+    }): Promise<T> => {
         if (shareId) {
             lockLinks(shareId, linkIds);
         }
@@ -103,16 +90,6 @@ export function useLinksActions({
         try {
             return await callback();
         } finally {
-            let resolvedVolumeId = volumeId;
-
-            if (shareId && !volumeId) {
-                resolvedVolumeId = volumeState.findVolumeId(shareId);
-            }
-
-            if (resolvedVolumeId) {
-                await events.pollEvents.volumes(resolvedVolumeId);
-            }
-
             if (shareId) {
                 unlockLinks(shareId, linkIds);
             }
@@ -837,7 +814,6 @@ export function useLinksActions({
             groupedByVolumeId.map((group) => {
                 const linkIds = group.map(({ linkId }) => linkId);
                 return withLinkLock({
-                    volumeId: group[0].volumeId,
                     linkIds,
                     callback: () =>
                         batchAPIHelper(abortSignal, {
@@ -943,10 +919,8 @@ export function useLinksActions({
         const photosShare = await getDefaultPhotosShare();
         lockTrash();
         await debouncedRequest(queryVolumeEmptyTrash(volumeId), abortSignal);
-        await events.pollEvents.volumes(volumeId);
         if (photosShare && volumeId !== photosShare.volumeId) {
             await debouncedRequest(queryVolumeEmptyTrash(photosShare.volumeId), abortSignal);
-            await events.pollEvents.volumes(photosShare.volumeId);
         }
     };
 

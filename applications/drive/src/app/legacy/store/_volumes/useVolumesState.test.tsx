@@ -6,7 +6,7 @@ import { useVolumesStateProvider } from './useVolumesState';
 const VOLUME_ID_1 = 'volumeId-1';
 const VOLUME_ID_2 = 'volumeId-2';
 
-describe('useDriveEventManager', () => {
+describe('useVolumesState', () => {
     let hook: RenderResult<ReturnType<typeof useVolumesStateProvider>>;
 
     const renderTestHook = () => {

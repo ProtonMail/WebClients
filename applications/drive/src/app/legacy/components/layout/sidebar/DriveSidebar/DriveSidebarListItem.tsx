@@ -4,12 +4,12 @@ import * as React from 'react';
 import SidebarListItem from '@proton/components/components/sidebar/SidebarListItem';
 import SidebarListItemContent from '@proton/components/components/sidebar/SidebarListItemContent';
 import SidebarListItemContentIcon from '@proton/components/components/sidebar/SidebarListItemContentIcon';
+import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
 import type { IconComponent } from '@proton/icons/component';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import clsx from '@proton/utils/clsx';
 
-import { useDriveEventManager } from '../../../../../legacy/store';
 import { useVolumesState } from '../../../../../legacy/store/_volumes';
 import SidebarListItemLink from '../SidebarListItemLink';
 
@@ -40,7 +40,7 @@ const DriveSidebarListItem = ({
     forceReload,
     collapsed,
 }: DriveSidebarListItemProps) => {
-    const driveEventManager = useDriveEventManager();
+    const coreEventManager = useEventManager();
     const volumeState = useVolumesState();
     const [refreshing, withRefreshing] = useLoading(false);
 
@@ -53,9 +53,7 @@ const DriveSidebarListItem = ({
             const volumeId = volumeState.findVolumeId(shareId);
 
             if (volumeId) {
-                withRefreshing(
-                    Promise.all([driveEventManager.pollEvents.driveEvents({ includeCommon: true }), wait(1000)])
-                ).catch(console.warn);
+                withRefreshing(Promise.all([coreEventManager.call(), wait(1000)])).catch(console.warn);
             }
         }
     };

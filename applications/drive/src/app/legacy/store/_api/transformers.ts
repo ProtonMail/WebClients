@@ -1,15 +1,8 @@
 import { getUnixTime } from 'date-fns';
 
-import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import type { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
-import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 import { type DriveFileRevisionPayload, PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
-import type {
-    ShareExternalInvitationPayload,
-    ShareInvitationDetailsPayload,
-    ShareInvitationPayload,
-} from '@proton/shared/lib/interfaces/drive/invitation';
 import type { LinkMeta, LinkSharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import type { ShareMembershipPayload } from '@proton/shared/lib/interfaces/drive/member';
@@ -17,17 +10,9 @@ import type { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/dr
 import type { ShareURL as ShareURLPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import type { Device } from '../_devices';
-import type { DriveEvents } from '../_events';
 import type { EncryptedLink } from '../_links/interface';
 import type { DriveFileRevision } from '../_revisions';
-import type {
-    Share,
-    ShareExternalInvitation,
-    ShareInvitation,
-    ShareInvitationDetails,
-    ShareMembership,
-    ShareWithKey,
-} from '../_shares/interface';
+import type { Share, ShareMembership, ShareWithKey } from '../_shares/interface';
 import { ShareType } from '../_shares/interface';
 
 enum ThumbnailType {
@@ -214,33 +199,6 @@ export function shareMetaToShareWithKey(share: ShareMeta): ShareWithKey {
     };
 }
 
-export function driveEventsResultToDriveEvents({ EventID, Events, Refresh }: DriveEventsResult): DriveEvents {
-    return {
-        eventId: EventID,
-        events: Events.map((event) => ({
-            eventType: event.EventType,
-            data: event.Data
-                ? {
-                      externalInvitationSignup: event.Data.ExternalInvitationSignup,
-                  }
-                : undefined,
-            // ContextShareID is guaranteed to be on the event for all types
-            // besides delete (after link is deleted, it is not possible to
-            // find the share it was part of). For delete operation, it is
-            // fine to keep rootShareId empty as its only for deleting data
-            // from cache. In future, once the cache is volume oriented, it
-            // will not be a problem, because we will always know proper
-            // volume ID.
-            encryptedLink:
-                event.EventType === EVENT_TYPES.DELETE
-                    ? linkMetaToEncryptedLink(event.Link, '')
-                    : linkMetaToEncryptedLink(event.Link, event.ContextShareID),
-            originShareId: event.EventType === EVENT_TYPES.DELETE ? undefined : event.FromContextShareID,
-        })),
-        refresh: Refresh !== 0,
-    };
-}
-
 export const deviceInfoToDevices = (info: DevicePayload): Device => {
     return {
         id: info.Device.DeviceID,
@@ -269,56 +227,5 @@ export const revisionPayloadToRevision = (revision: DriveFileRevisionPayload): D
             size: Thumbnail.Size,
         })),
         xAttr: revision.XAttr,
-    };
-};
-
-export const shareInvitationPayloadToShareInvitation = (shareInvitation: ShareInvitationPayload): ShareInvitation => {
-    return {
-        invitationId: shareInvitation.InvitationID,
-        inviterEmail: shareInvitation.InviterEmail,
-        inviteeEmail: shareInvitation.InviteeEmail,
-        permissions: shareInvitation.Permissions,
-        keyPacket: shareInvitation.KeyPacket,
-        keyPacketSignature: shareInvitation.KeyPacketSignature,
-        createTime: shareInvitation.CreateTime,
-        state: shareInvitation.State,
-    };
-};
-
-export const shareExternalInvitationPayloadToShareExternalInvitation = (
-    shareExternalInvitation: ShareExternalInvitationPayload
-): ShareExternalInvitation => {
-    return {
-        externalInvitationId: shareExternalInvitation.ExternalInvitationID,
-        inviterEmail: shareExternalInvitation.InviterEmail,
-        inviteeEmail: shareExternalInvitation.InviteeEmail,
-        permissions: shareExternalInvitation.Permissions,
-        createTime: shareExternalInvitation.CreateTime,
-        state: shareExternalInvitation.State,
-        externalInvitationSignature: shareExternalInvitation.ExternalInvitationSignature,
-    };
-};
-
-export const shareInvitationDetailsPayloadToShareInvitationDetails = (
-    shareInvitationDetails: ShareInvitationDetailsPayload
-): ShareInvitationDetails => {
-    return {
-        invitation: shareInvitationPayloadToShareInvitation(shareInvitationDetails.Invitation),
-        share: {
-            shareId: shareInvitationDetails.Share.ShareID,
-            volumeId: shareInvitationDetails.Share.VolumeID,
-            passphrase: shareInvitationDetails.Share.Passphrase,
-            shareKey: shareInvitationDetails.Share.ShareKey,
-            creatorEmail: shareInvitationDetails.Share.CreatorEmail,
-        },
-        link: {
-            linkId: shareInvitationDetails.Link.LinkID,
-            name: shareInvitationDetails.Link.Name,
-            mimeType:
-                shareInvitationDetails.Link.MIMEType ||
-                (shareInvitationDetails.Link.Type === LinkType.ALBUM ? 'Album' : ''),
-            isFile: shareInvitationDetails.Link.Type === LinkType.FILE,
-            type: shareInvitationDetails.Link.Type,
-        },
     };
 };

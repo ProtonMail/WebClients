@@ -1,32 +1,8 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
-
-import type { DriveEvents } from '../_events';
 import type { DecryptedLink, EncryptedLink, LinkShareUrl } from './interface';
 import type { Link, LinksState } from './useLinksState';
-import {
-    addOrUpdate,
-    deleteLinks,
-    setCachedThumbnailUrl,
-    setLock,
-    updateByEvents,
-    useLinksStateProvider,
-} from './useLinksState';
-
-jest.mock('../_events/useDriveEventManager', () => {
-    const useDriveEventManager = () => {
-        return {
-            eventHandlers: {
-                register: () => 'id',
-                unregister: () => false,
-            },
-        };
-    };
-    return {
-        useDriveEventManager,
-    };
-});
+import { addOrUpdate, deleteLinks, setCachedThumbnailUrl, setLock, useLinksStateProvider } from './useLinksState';
 
 function generateTestLink({
     id,
@@ -69,14 +45,6 @@ function getLockedIds(state: LinksState): string[] {
     return Object.values(state.shareId.links)
         .filter(({ decrypted }) => decrypted?.isLocked)
         .map(({ encrypted }) => encrypted.linkId);
-}
-
-function generateEvents(events: any[]): DriveEvents {
-    return {
-        eventId: 'eventId',
-        events: events.map(([eventType, encryptedLink]) => ({ eventType, encryptedLink })),
-        refresh: false,
-    };
 }
 
 describe('useLinksState', () => {
@@ -586,53 +554,6 @@ describe('useLinksState', () => {
         expect(result.shareId.links.linkId7.decrypted?.shareUrl?.numAccesses).toBe(0);
         // Whereas link 8 had shareUrl before, so the update is about something else, and we need to keep undefined.
         expect(result.shareId.links.linkId8.decrypted?.shareUrl?.numAccesses).toBe(undefined);
-    });
-
-    it('processes events', () => {
-        const result = updateByEvents(
-            state,
-            generateEvents([
-                [
-                    EVENT_TYPES.CREATE,
-                    { linkId: 'newLink', name: 'newLink', parentLinkId: 'linkId0', rootShareId: 'shareId' },
-                ],
-                [EVENT_TYPES.DELETE, { linkId: 'linkId1' }],
-                [EVENT_TYPES.DELETE, { linkId: 'linkId4' }],
-                [
-                    EVENT_TYPES.UPDATE,
-                    { linkId: 'linkId7', name: 'new name', parentLinkId: 'linkId0', rootShareId: 'shareId' },
-                ],
-            ]),
-            jest.fn()
-        );
-
-        expect(Object.keys(result.shareId.links)).toMatchObject([
-            'linkId0',
-            'linkId7',
-            'linkId8',
-            'linkId9',
-            'newLink',
-        ]);
-        expect(Object.keys(result.shareId.tree)).toMatchObject(['linkId0', 'linkId7']);
-        expect(result.shareId.links.linkId7).toMatchObject({
-            decrypted: { linkId: 'linkId7', name: 'linkId7', isStale: true },
-            encrypted: { linkId: 'linkId7' },
-        });
-    });
-
-    it('skips events from non-present share', () => {
-        const result = updateByEvents(
-            state,
-            generateEvents([
-                [
-                    EVENT_TYPES.CREATE,
-                    { linkId: 'newLink', name: 'newLink', parentLinkId: 'linkId0', rootShareId: 'shareId2' },
-                ],
-            ]),
-            jest.fn()
-        );
-
-        expect(Object.keys(result)).toMatchObject(['shareId']);
     });
 
     describe('hook', () => {
