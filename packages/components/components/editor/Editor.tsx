@@ -34,6 +34,11 @@ export interface EditorProps {
     onFocus?: () => void;
     onAddAttachments?: (files: File[]) => void;
     /**
+     * Images pasted or dropped in the editor are left out when it returns false.
+     * Should keep the same identity, the editor reads it once when it is created.
+     */
+    isPastedImageAllowed?: (image: HTMLImageElement) => boolean;
+    /**
      * Are used for editor default font value
      * It's optionnal but if passed it should be passed
      * at same time component is first rendered
@@ -92,6 +97,7 @@ const Editor = ({
     showBlockquoteToggle,
     onBlockquoteToggleClick = noop,
     onAddAttachments,
+    isPastedImageAllowed,
     mailSettings,
     userSettings,
     isPlainText,
@@ -132,6 +138,11 @@ const Editor = ({
             onPasteFiles={onPasteFiles}
         />
     );
+    const plaintextEditorWithDropzone = onAddAttachments ? (
+        <Dropzone onDrop={onAddAttachments}>{plaintextEditor}</Dropzone>
+    ) : (
+        plaintextEditor
+    );
 
     return (
         <>
@@ -151,11 +162,7 @@ const Editor = ({
                     ])}
                 >
                     {metadata.isPlainText ? (
-                        !!onAddAttachments ? (
-                            <Dropzone onDrop={onAddAttachments}>{plaintextEditor}</Dropzone>
-                        ) : (
-                            plaintextEditor
-                        )
+                        plaintextEditorWithDropzone
                     ) : (
                         <RoosterEditor
                             onChange={onChange}
@@ -164,6 +171,7 @@ const Editor = ({
                             onBlockquoteToggleClick={onBlockquoteToggleClick}
                             setToolbarConfig={setToolbarConfig}
                             onPasteFiles={onPasteFiles}
+                            isPastedImageAllowed={isPastedImageAllowed}
                             showModalLink={modalLink.showCallback}
                             onFocus={onFocus}
                             mailSettings={mailSettings}

@@ -23,6 +23,7 @@ interface Options {
     iframeRef: RefObject<HTMLIFrameElement>;
     mailSettings?: MailSettings;
     onPasteFiles: (files: File[]) => void;
+    isPastedImageAllowed?: (image: HTMLImageElement) => boolean;
     openEmojiPicker: () => void;
 }
 
@@ -63,7 +64,7 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
         new CutPasteListChain(),
         new HyperLink(),
         new EditorEventListener(options.onEditorEvent),
-        new EditorCustomPastePlugin(options.onPasteFiles),
+        new EditorCustomPastePlugin(options.onPasteFiles, options.isPastedImageAllowed),
         new ImageEdit({
             disableRotate: true,
             preserveRatio: true,

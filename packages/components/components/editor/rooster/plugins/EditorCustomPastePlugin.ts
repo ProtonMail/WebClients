@@ -7,7 +7,7 @@ import type {
     IEditor,
     PluginEvent,
 } from 'roosterjs-editor-types';
-import { KnownPasteSourceType, PluginEventType } from 'roosterjs-editor-types';
+import { ChangeSource, KnownPasteSourceType, PluginEventType } from 'roosterjs-editor-types';
 
 import { transformLinkify } from '@proton/shared/lib/mail/transformLinkify';
 
@@ -21,11 +21,21 @@ class EditorCustomPastePlugin implements EditorPlugin {
 
     private onPasteFiles: ((files: File[]) => void) | undefined;
 
+    private isPastedImageAllowed: ((image: HTMLImageElement) => boolean) | undefined;
+
+    private imagesBeforeDrop: Set<HTMLImageElement> | undefined;
+
+    private disposeDropHandler: (() => void) | undefined;
+
     private readonly PROTOCOLS = ['http:', 'https:', 'mailto:', 'tel:'];
 
-    constructor(onPasteFiles: (files: File[]) => void) {
+    /**
+     * @param isPastedImageAllowed Images pasted or dropped in the editor are left out when it returns false
+     */
+    constructor(onPasteFiles: (files: File[]) => void, isPastedImageAllowed?: (image: HTMLImageElement) => boolean) {
         this.editor = undefined;
         this.onPasteFiles = onPasteFiles;
+        this.isPastedImageAllowed = isPastedImageAllowed;
     }
 
     getName() {
@@ -34,12 +44,30 @@ class EditorCustomPastePlugin implements EditorPlugin {
 
     initialize(editor: IEditor) {
         this.editor = editor;
+
+        if (this.isPastedImageAllowed) {
+            this.disposeDropHandler = editor.addDomEventHandler('drop', () => {
+                this.imagesBeforeDrop = new Set(editor.queryElements('img'));
+            });
+        }
     }
 
-    dispose() {}
+    dispose() {
+        this.disposeDropHandler?.();
+        this.disposeDropHandler = undefined;
+    }
 
     onPluginEvent(event: PluginEvent) {
-        if (!this.editor || event.eventType !== PluginEventType.BeforePaste) {
+        if (!this.editor) {
+            return;
+        }
+
+        if (event.eventType === PluginEventType.ContentChanged && event.source === ChangeSource.Drop) {
+            this.removeDroppedImagesNotAllowed();
+            return;
+        }
+
+        if (event.eventType !== PluginEventType.BeforePaste) {
             return;
         }
 
@@ -49,7 +77,38 @@ class EditorCustomPastePlugin implements EditorPlugin {
 
         this.updateSanitizingOptions(event);
         this.linkifyPlainTextContent(event);
+        this.removePastedImagesNotAllowed(event);
         this.handlePasteImage(event);
+    }
+
+    private getImagesNotAllowed(images: HTMLImageElement[]) {
+        const isPastedImageAllowed = this.isPastedImageAllowed;
+        return isPastedImageAllowed ? images.filter((image) => !isPastedImageAllowed(image)) : [];
+    }
+
+    private removePastedImagesNotAllowed(event: BeforePasteEvent) {
+        this.getImagesNotAllowed(Array.from(event.fragment.querySelectorAll('img'))).forEach((image) => image.remove());
+    }
+
+    /**
+     * A drop is inserted by the browser, without a paste event, so its images are removed once they are in the content
+     */
+    private removeDroppedImagesNotAllowed() {
+        const imagesBeforeDrop = this.imagesBeforeDrop;
+        this.imagesBeforeDrop = undefined;
+
+        if (!imagesBeforeDrop) {
+            return;
+        }
+
+        const droppedImages = (this.editor?.queryElements('img') || []).filter((image) => !imagesBeforeDrop.has(image));
+        const images = this.getImagesNotAllowed(droppedImages);
+
+        if (images.length) {
+            this.editor?.addUndoSnapshot(() => {
+                images.forEach((image) => image.remove());
+            }, ChangeSource.Drop);
+        }
     }
 
     private validateUrl(urlString: string): URL | undefined {
