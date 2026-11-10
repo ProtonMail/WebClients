@@ -7,6 +7,7 @@ import { Input } from '@proton/atoms/Input/Input';
 
 import { LumoLink } from '../../components/Links/LumoLink';
 import { useConversationRename } from '../../hooks/useConversationRename';
+import { useIsConversationGenerating } from '../../hooks/useIsConversationGenerating';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import { useIsTouchDevice } from '../../hooks/useIsTouchDevice';
 import type { Conversation, ConversationId } from '../../types';
@@ -25,6 +26,7 @@ export const ConversationListItem = memo(
         const label = conversation.title.trim() || c('collider_2025:Button').t`Untitled chat`;
         const { isSmallScreen } = useIsLumoSmallScreen();
         const isTouchDevice = useIsTouchDevice();
+        const isGenerating = useIsConversationGenerating(conversation.id);
         const [isHovered, setIsHovered] = useState(false);
         const [isDropdownOpen, setIsDropdownOpen] = useState(false);
         const [hasActiveOverlay, setHasActiveOverlay] = useState(false);
@@ -82,9 +84,23 @@ export const ConversationListItem = memo(
                         onClick={onItemClick}
                     >
                         <ConversationExpirationIndicator conversation={conversation} />
-                        <span className="sidebar-nav-list--label text-ellipsis min-w-0 flex-1" title={label}>
+                        <span
+                            className={clsx(
+                                'sidebar-nav-list--label text-ellipsis min-w-0 flex-1',
+                                isGenerating && 'sidebar-chat-generating'
+                            )}
+                            title={label}
+                        >
                             {label}
                         </span>
+                        {isGenerating && (
+                            <span className="sr-only">
+                                {
+                                    // translator: Read out after a chat's title in the sidebar while a reply is being written.
+                                    c('collider_2025:Info').t`Generating a reply`
+                                }
+                            </span>
+                        )}
                     </LumoLink>
                 )}
                 {shouldMountActions && (

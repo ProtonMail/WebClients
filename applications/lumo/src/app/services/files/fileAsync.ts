@@ -65,6 +65,7 @@ export const handleFileAsync =
         // All files go through the worker for processing
         try {
             const result = await fileProcessingService.processFile(file, {
+                includePdfPageImages: true,
                 ...processingOptions,
                 fileData: fileBuffer,
             });
@@ -74,6 +75,7 @@ export const handleFileAsync =
                 processedAttachment = {
                     ...processedAttachment,
                     markdown: result.content,
+                    ...(result.pageImages && { pageImages: result.pageImages }),
                     truncated: result.metadata?.truncated,
                     originalRowCount: result.metadata?.rowCount?.original,
                     processedRowCount: result.metadata?.rowCount?.processed,

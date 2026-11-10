@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import {
+    ANALYZE_FILE_TOOL_NAME,
     READ_KNOWLEDGE_TOOL_NAME,
     SEARCH_KNOWLEDGE_TOOL_NAME,
 } from '../../../../../../features/client-tools/retrievalTool/schema';
@@ -34,6 +35,7 @@ type ThinkingPhase =
     | 'create_artifact'
     | 'use_skill'
     | 'knowledge'
+    | 'analyze'
     | 'other';
 
 function hashString(value: string): number {
@@ -76,6 +78,8 @@ function toolCallToPhase(toolCall: ToolCallData | ToolCallAnnouncement): Thinkin
         case SEARCH_KNOWLEDGE_TOOL_NAME:
         case READ_KNOWLEDGE_TOOL_NAME:
             return 'knowledge';
+        case ANALYZE_FILE_TOOL_NAME:
+            return 'analyze';
         default:
             return 'other';
     }
@@ -161,6 +165,7 @@ const PHASE_ACTIVE: Record<ThinkingPhase, readonly (() => string)[]> = {
     ],
     use_skill: [() => c('collider_2025:Reasoning').t`Reading a skill`],
     knowledge: [() => c('collider_2025:Reasoning').t`Searching your files and chats`],
+    analyze: [() => c('collider_2025:Reasoning').t`Analysing a file`],
     other: [() => c('collider_2025:Reasoning').t`Using a tool`],
 };
 
@@ -204,6 +209,7 @@ const PHASE_COMPLETE: Record<ThinkingPhase, readonly (() => string)[]> = {
     ],
     use_skill: [() => c('collider_2025:Reasoning').t`Read a skill`],
     knowledge: [() => c('collider_2025:Reasoning').t`Searched your files and chats`],
+    analyze: [() => c('collider_2025:Reasoning').t`Analysed a file`],
     other: [() => c('collider_2025:Reasoning').t`Used a tool`],
 };
 

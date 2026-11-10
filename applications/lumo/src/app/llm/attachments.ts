@@ -5,12 +5,15 @@ import type { User } from '@proton/shared/lib/interfaces/User';
 import type { AesGcmCryptoKey } from '../crypto/types';
 import { DbApi } from '../indexedDb/db';
 import type { AttachmentMap } from '../redux/slices/core/attachments';
+import { MAX_PDF_PAGE_IMAGES_PER_REQUEST } from '../lib/attachments/pdfPageLimits';
 import { deserializeAttachment } from '../serialization';
+import { attachmentDataCache } from '../services/attachmentDataCache';
 import { SearchService } from '../services/search/searchService';
 import {
     type Attachment,
     type AttachmentId,
     type Message,
+    type PdfPageImage,
     type ShallowAttachment,
     isShallowAttachment,
 } from '../types';
@@ -22,6 +25,17 @@ import { collapseCompactedChain } from './compaction/collapse';
 // are dropped). Kept in one place so the request-building logic (prepareTurns) and
 // the UI warning use the exact same boundary.
 export const MAX_IMAGES_PER_REQUEST = 10;
+
+/** Keeps the most recent `maxImages` uploaded images and the most recent `maxPageImages` PDF pages. */
+export function selectKeptImageIds(
+    imageIds: string[],
+    pdfPageImageIds: string[],
+    maxImages: number = MAX_IMAGES_PER_REQUEST,
+    maxPageImages: number = MAX_PDF_PAGE_IMAGES_PER_REQUEST
+): Set<string> {
+    const mostRecent = (ids: string[], max: number) => ids.slice(Math.max(0, ids.length - max));
+    return new Set([...mostRecent(imageIds, maxImages), ...mostRecent(pdfPageImageIds, maxPageImages)]);
+}
 
 // Supported image MIME types
 const IMAGE_MIME_TYPES = [
@@ -60,15 +74,38 @@ export function countOmittedImageAttachments(
     const filter = contextFilters.find((f) => f.messageId === messageId);
     const excludedByFilter = filter?.excludedFiles.length ? new Set(filter.excludedFiles) : new Set<string>();
 
-    return attachments.filter((att) => {
+    return attachments.reduce((count, att) => {
         if (!isImageAttachment(att as Attachment)) {
-            return false;
+            // A PDF the user removed is simply gone; only pages cut by the image limit leave a placeholder.
+            if (keptImageIds === undefined || excludedByFilter.has(att.filename)) {
+                return count;
+            }
+            return count + getPdfPageImageRefs(att).filter((ref) => !keptImageIds.has(ref.id)).length;
         }
         if (excludedByFilter.has(att.filename)) {
-            return true;
+            return count + 1;
         }
-        return keptImageIds !== undefined && !keptImageIds.has(att.id);
-    }).length;
+        return count + (keptImageIds !== undefined && !keptImageIds.has(att.id) ? 1 : 0);
+    }, 0);
+}
+
+export type PdfPageImageRef = { id: string; page: number; data: Uint8Array<ArrayBuffer> };
+
+/**
+ * The rendered pages of a PDF attachment, as image refs with stable ids (`<attachmentId>-p<page>`).
+ * Binary data lives in the attachment cache (it never reaches Redux); a full attachment is the fallback.
+ * Page images take part in the same most-recent-images limit as image attachments.
+ */
+export function getPdfPageImageRefs(attachment: {
+    id: string;
+    mimeType?: string;
+    pageImages?: PdfPageImage[];
+}): PdfPageImageRef[] {
+    if (attachment.mimeType !== 'application/pdf') {
+        return [];
+    }
+    const pages = attachmentDataCache.getPageImages(attachment.id) ?? attachment.pageImages ?? [];
+    return pages.map(({ page, data }) => ({ id: `${attachment.id}-p${page}`, page, data }));
 }
 
 /**
@@ -86,6 +123,8 @@ export type ImageLimitInfo = {
     totalImages: number;
     /** True when included images exceed the most-recent-N limit. */
     exceedsLimit: boolean;
+    /** True when the rendered pages of PDFs exceed their own, separate most-recent-N limit. */
+    exceedsPageLimit: boolean;
     /** The IDs of the images that will actually be sent (the most recent ones). */
     keptImageIds: Set<AttachmentId>;
     /** The IDs of the images that are too old to be sent (everything before the boundary). */
@@ -111,40 +150,39 @@ export function getImageLimitInfo(
     // (prepareTurns -> computeKeptImageIds). Summarized messages are dropped from the
     // chain before sending, so their images must not count toward the limit/warning.
     const { chain: effectiveChain } = collapseCompactedChain(messageChain);
-    const orderedImageIds: AttachmentId[] = [];
+    const uploadedImageIds: AttachmentId[] = [];
+    const pageImageIds: AttachmentId[] = [];
+    const collect = (attachment: ShallowAttachment | Attachment) => {
+        // Shallow attachments retain `mimeType`, so image detection works here.
+        if (isImageAttachment(attachment as Attachment)) {
+            uploadedImageIds.push(attachment.id);
+        } else {
+            pageImageIds.push(...getPdfPageImageRefs(attachment).map((ref) => ref.id));
+        }
+    };
     for (const message of effectiveChain) {
         const filter = contextFilters.find((f) => f.messageId === message.id);
         const excludedFilenames = filter?.excludedFiles ?? [];
         for (const attachment of message.attachments ?? []) {
-            // Shallow attachments retain `mimeType`, so image detection works here.
-            if (!isImageAttachment(attachment as Attachment)) {
-                continue;
+            if (!excludedFilenames.includes(attachment.filename)) {
+                collect(attachment);
             }
-            if (excludedFilenames.includes(attachment.filename)) {
-                continue;
-            }
-            orderedImageIds.push(attachment.id);
         }
     }
-    for (const attachment of provisionalAttachments) {
-        if (isImageAttachment(attachment)) {
-            orderedImageIds.push(attachment.id);
-        }
-    }
+    provisionalAttachments.forEach(collect);
 
+    const orderedImageIds = [...uploadedImageIds, ...pageImageIds];
     const totalImages = orderedImageIds.length;
-    const exceedsLimit = totalImages > maxImages;
-    const splitIndex = exceedsLimit ? totalImages - maxImages : 0;
-    const excludedIds = orderedImageIds.slice(0, splitIndex);
-    const keptIds = orderedImageIds.slice(splitIndex);
+    // PDF pages have their own, separate budget, so they are reported separately.
+    const exceedsLimit = uploadedImageIds.length > maxImages;
+    const exceedsPageLimit = pageImageIds.length > MAX_PDF_PAGE_IMAGES_PER_REQUEST;
+    const keptImageIds = selectKeptImageIds(uploadedImageIds, pageImageIds, maxImages);
+    const excludedImageIds = new Set(orderedImageIds.filter((id) => !keptImageIds.has(id)));
+    const boundaryImageId = exceedsLimit
+        ? uploadedImageIds.slice(uploadedImageIds.length - maxImages)[0]
+        : undefined;
 
-    return {
-        totalImages,
-        exceedsLimit,
-        keptImageIds: new Set(keptIds),
-        excludedImageIds: new Set(excludedIds),
-        boundaryImageId: exceedsLimit ? keptIds[0] : undefined,
-    };
+    return { totalImages, exceedsLimit, exceedsPageLimit, keptImageIds, excludedImageIds, boundaryImageId };
 }
 
 /**

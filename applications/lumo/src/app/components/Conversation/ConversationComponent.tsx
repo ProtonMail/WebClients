@@ -37,6 +37,7 @@ import { MessageChainComponent } from './messageChain/MessageChainComponent';
 import DesktopApprovalCards from './messageChain/message/DesktopToolApproval/DesktopApprovalCards';
 import { WebSearchSourcesView } from './messageChain/message/toolCall/WebSearchSourcesView';
 import { useImageLimitInfo } from './useImageLimitInfo';
+import { usePrefetchPdfPageImages } from './usePrefetchPdfPageImages';
 
 import './ConversationComponent.scss';
 
@@ -112,7 +113,8 @@ const ConversationLayout = ({
         }
     }, [conversation?.spaceId, isScheduledRun, location.key, location.state?.expandedScheduleRuns, showFilesDrawer]);
 
-    const { exceedsLimit: imageLimitExceeded } = useImageLimitInfo(messageChain);
+    const { exceedsLimit: imageLimitExceeded, exceedsPageLimit: pageLimitExceeded } = useImageLimitInfo(messageChain);
+    usePrefetchPdfPageImages(messageChain);
 
     const conversationErrors = useLumoSelector((state) =>
         conversationId ? selectConversationErrors(state, conversationId) : []
@@ -345,7 +347,7 @@ const ConversationLayout = ({
                             className="lumo-chat-item flex flex-column flex-nowrap shrink-0 w-full max-w-custom mx-auto no-print md:w-2/3"
                             style={{ '--max-w-custom': '51.25rem' } as React.CSSProperties}
                         >
-                            <ImageLimitNotice exceedsLimit={imageLimitExceeded} />
+                            <ImageLimitNotice exceedsLimit={imageLimitExceeded} exceedsPageLimit={pageLimitExceeded} />
                             <ComposerComponent
                                 composerMode={ComposerMode.CONVERSATION}
                                 handleSendMessage={handleSendMessage}

@@ -1,6 +1,11 @@
 import type { Message } from '../types';
 import { Role } from '../types';
-import { MAX_IMAGES_PER_REQUEST, getImageLimitInfo } from './attachments';
+import { MAX_PDF_PAGE_IMAGES_PER_REQUEST } from '../lib/attachments/pdfPageLimits';
+import {
+    MAX_IMAGES_PER_REQUEST,
+    getImageLimitInfo,
+    selectKeptImageIds,
+} from './attachments';
 
 describe('getImageLimitInfo — compaction interaction', () => {
     const makeImageMessage = (id: string, messageId = `msg-${id}`): Message =>
@@ -75,5 +80,42 @@ describe('getImageLimitInfo — compaction interaction', () => {
         expect(info.totalImages).toBe(MAX_IMAGES_PER_REQUEST + 1);
         expect(info.exceedsLimit).toBe(true);
         expect(info.excludedImageIds.has('img-0')).toBe(true);
+    });
+});
+
+describe('selectKeptImageIds', () => {
+    it('never lets PDF pages push uploaded images out of the request', () => {
+        const images = Array.from({ length: MAX_IMAGES_PER_REQUEST }, (_, i) => `img-${i}`);
+        const pages = Array.from({ length: MAX_PDF_PAGE_IMAGES_PER_REQUEST + 4 }, (_, i) => `pdf-p${i}`);
+
+        const kept = selectKeptImageIds(images, pages);
+
+        expect(images.every((id) => kept.has(id))).toBe(true);
+        expect([...kept].filter((id) => id.startsWith('pdf'))).toEqual(pages.slice(-MAX_PDF_PAGE_IMAGES_PER_REQUEST));
+    });
+});
+
+describe('getImageLimitInfo with PDF pages', () => {
+    const pdfWithPages = (id: string, pages: number) =>
+        ({
+            id,
+            filename: `${id}.pdf`,
+            mimeType: 'application/pdf',
+            uploadedAt: '2026-01-01',
+            pageImages: Array.from({ length: pages }, (_, i) => ({ page: i + 1, data: new Uint8Array([i]) })),
+        }) as any;
+
+    it('reports the page limit separately from the image limit', () => {
+        const info = getImageLimitInfo([], [pdfWithPages('a', MAX_PDF_PAGE_IMAGES_PER_REQUEST + 1)]);
+
+        expect(info.exceedsPageLimit).toBe(true);
+        expect(info.exceedsLimit).toBe(false);
+        expect(info.keptImageIds.size).toBe(MAX_PDF_PAGE_IMAGES_PER_REQUEST);
+    });
+
+    it('does not report anything while the pages fit', () => {
+        const info = getImageLimitInfo([], [pdfWithPages('a', MAX_PDF_PAGE_IMAGES_PER_REQUEST)]);
+
+        expect(info.exceedsPageLimit).toBe(false);
     });
 });

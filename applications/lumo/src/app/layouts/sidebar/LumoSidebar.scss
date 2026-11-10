@@ -522,3 +522,56 @@ im.$media-expressions: $media-expressions;
 		}
 	}
 }
+
+// A chat that is generating a reply: a soft sheen travels across its title in the sidebar.
+// Both ends of the gradient come from the theme, so it reads in light and dark mode alike.
+.sidebar-chat-generating {
+	// Without text clipping the title simply breathes instead.
+	animation: sidebar-chat-breathe 2s ease-in-out infinite;
+
+	@supports (background-clip: text) or (-webkit-background-clip: text) {
+		animation: none;
+		color: transparent !important;
+		background-image: linear-gradient(
+			100deg,
+			var(--text-weak) 0%,
+			var(--text-weak) 38%,
+			var(--text-norm) 50%,
+			var(--text-weak) 62%,
+			var(--text-weak) 100%
+		);
+		background-size: 300% 100%;
+		background-position: 100% 0;
+		-webkit-background-clip: text;
+		background-clip: text;
+		animation: sidebar-chat-sheen 2.4s linear infinite;
+	}
+
+	// No travelling highlight for people who asked for less motion: the title is just dimmer.
+	@media (prefers-reduced-motion: reduce) {
+		animation: none !important;
+		color: var(--text-weak) !important;
+		background-image: none !important;
+	}
+}
+
+@keyframes sidebar-chat-sheen {
+	from {
+		background-position: 100% 0;
+	}
+
+	to {
+		background-position: 0% 0;
+	}
+}
+
+@keyframes sidebar-chat-breathe {
+	0%,
+	100% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.55;
+	}
+}

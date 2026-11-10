@@ -124,7 +124,7 @@ function findToolResult(
 }
 
 /** Tool call id of a tool_call block, when the stream provided one. */
-function getToolCallBlockId(block: ToolCallBlock): string | undefined {
+export function getToolCallBlockId(block: ToolCallBlock): string | undefined {
     return getToolCallId(block.toolCall) ?? getToolCallId(tryParseJSON(block.content));
 }
 

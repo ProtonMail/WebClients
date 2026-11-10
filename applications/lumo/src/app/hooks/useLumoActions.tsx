@@ -38,6 +38,7 @@ import type { MessageMap } from '../redux/slices/core/messages';
 import { addMessage, createDate, newMessageId, pushMessageRequest } from '../redux/slices/core/messages';
 import type { ConversationError } from '../redux/slices/meta/errors';
 import { useActionErrorHandler } from '../services/errors/useActionErrorHandler';
+import { SEND_PAGE_IMAGES_MAX_WAIT_MS, ensureRecentPdfPageImages } from '../services/files/pdfPageImages';
 import { cancelConversationGeneration, isAbortError } from '../services/generation/abortGeneration';
 import { OPERATION_IN_PROGRESS_MESSAGE, generationRegistry } from '../services/generation/generationRegistry';
 import { SearchService } from '../services/search/searchService';
@@ -233,6 +234,8 @@ export const useLumoActions = ({
                 }
             }
         }
+
+        await ensureRecentPdfPageImages(allAttachments, { maxWaitMs: SEND_PAGE_IMAGES_MAX_WAIT_MS });
 
         console.log('all attachments:', allAttachments);
 
@@ -485,6 +488,7 @@ export const useLumoActions = ({
             space?.id
         );
         const allAttachments = [...historyAttachments, ...editedMessageAttachments];
+        await ensureRecentPdfPageImages(editedMessageAttachments, { maxWaitMs: SEND_PAGE_IMAGES_MAX_WAIT_MS });
 
         await dispatch(
             sendMessage({

@@ -16,6 +16,9 @@ export const LUMO_TO_WORKSPACE_PATH = '/business/plans';
 // add-to-KB, and linked-folder uploads). All of these paths download + process + index
 // the file on the main thread, so the same limit must apply everywhere to avoid freezes.
 export const MAX_ASSET_SIZE = 25 * 1024 * 1024; // 25MB
+// The backend rejects an asset whose encrypted blob exceeds 50MB (Slim-API CreateAssetRequest). The blob holds the
+// original file plus its markdown and previews, so it is larger than MAX_ASSET_SIZE. Keep a margin for the AES-GCM overhead.
+export const MAX_SERIALIZED_ASSET_BYTES = 50 * 1024 * 1024 - 1024;
 
 // Maximum number of attachments that can be staged in the composer at once.
 // Mirrors the limit used by other assistants (e.g. Claude allows 20).

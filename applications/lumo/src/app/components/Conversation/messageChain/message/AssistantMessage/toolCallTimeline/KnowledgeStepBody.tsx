@@ -5,6 +5,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import { useLumoSelector } from '../../../../../../redux/hooks';
 import { LumoLink } from '../../../../../Links/LumoLink';
 import { LumoIcon } from '../../../../../LumoIcon/LumoIcon';
+import { AnalysisProgressBody } from './AnalysisProgressBody';
 import type { KnowledgeItem, KnowledgeStepDetails } from './knowledgeStepDetails';
 
 /** "2026-10-23" as a short local date, with the year only when it isn't this year's. */
@@ -79,8 +80,11 @@ const KnowledgeItemRow = ({ item }: { item: KnowledgeItem }) => {
 };
 
 /** What a knowledge lookup searched for and what it found or read, under the step's label. */
-export const KnowledgeStepBody = ({ details }: { details: KnowledgeStepDetails }) => {
-    const { query, items, more, noMatches } = details;
+export const KnowledgeStepBody = ({ details, isActive }: { details: KnowledgeStepDetails; isActive?: boolean }) => {
+    const { query, items, more, noMatches, analyzesFile, callId } = details;
+    if (analyzesFile && isActive) {
+        return <AnalysisProgressBody callId={callId} />;
+    }
     if (!query && items.length === 0 && !noMatches) {
         return null;
     }

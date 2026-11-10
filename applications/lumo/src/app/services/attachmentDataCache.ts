@@ -9,11 +9,12 @@
  * - `imagePreview`: Thumbnail preview data for image attachments
  */
 
-import type { AttachmentId } from '../types';
+import type { AttachmentId, PdfPageImage } from '../types';
 
 interface AttachmentDataEntry {
     data?: Uint8Array<ArrayBuffer>;
     imagePreview?: Uint8Array<ArrayBuffer>;
+    pageImages?: PdfPageImage[];
 }
 
 class AttachmentDataCache {
@@ -49,6 +50,22 @@ class AttachmentDataCache {
      */
     getImagePreview(attachmentId: AttachmentId): Uint8Array<ArrayBuffer> | undefined {
         return this.cache.get(attachmentId)?.imagePreview;
+    }
+
+    /**
+     * Store the rendered pages of a PDF attachment
+     */
+    setPageImages(attachmentId: AttachmentId, pageImages: PdfPageImage[]): void {
+        const entry = this.cache.get(attachmentId) || {};
+        entry.pageImages = pageImages;
+        this.cache.set(attachmentId, entry);
+    }
+
+    /**
+     * Get the rendered pages of a PDF attachment
+     */
+    getPageImages(attachmentId: AttachmentId): PdfPageImage[] | undefined {
+        return this.cache.get(attachmentId)?.pageImages;
     }
 
     /**
@@ -91,6 +108,9 @@ class AttachmentDataCache {
             if (entry.imagePreview) {
                 totalBytes += entry.imagePreview.byteLength;
             }
+            entry.pageImages?.forEach((p) => {
+                totalBytes += p.data.byteLength;
+            });
         });
         return {
             size: this.cache.size,

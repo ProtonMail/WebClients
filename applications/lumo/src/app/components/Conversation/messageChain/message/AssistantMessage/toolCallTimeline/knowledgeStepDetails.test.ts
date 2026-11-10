@@ -29,6 +29,8 @@ describe('getKnowledgeStepDetails', () => {
             more: 0,
             noMatches: false,
             readsChat: false,
+            analyzesFile: false,
+            callId: undefined,
         });
     });
 
@@ -61,7 +63,15 @@ describe('getKnowledgeStepDetails', () => {
             JSON.stringify({ ok: false, error: 'Search is unavailable' })
         );
 
-        expect(details).toEqual({ query: 'proposal', items: [], more: 0, noMatches: false, readsChat: false });
+        expect(details).toEqual({
+            query: 'proposal',
+            items: [],
+            more: 0,
+            noMatches: false,
+            readsChat: false,
+            analyzesFile: false,
+            callId: undefined,
+        });
     });
 
     it('marks a read of a chat message, before and after it returns', () => {
@@ -98,6 +108,8 @@ describe('getKnowledgeStepDetails', () => {
             more: 0,
             noMatches: false,
             readsChat: false,
+            analyzesFile: false,
+            callId: undefined,
         });
     });
 });

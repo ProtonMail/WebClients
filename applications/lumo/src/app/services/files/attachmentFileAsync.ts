@@ -5,6 +5,7 @@ import type { LumoDispatch, LumoState } from '../../redux/store';
 import type { Attachment, SpaceId } from '../../types';
 import type { DriveDocument } from '../../types/documents';
 import { sendFileUploadFinishEvent } from '../../util/telemetry';
+import { attachmentDataCache } from '../attachmentDataCache';
 import type { FileProcessingService } from '../fileProcessingService';
 import { SearchService } from '../search/searchService';
 import { storePendingAttachment } from './pendingAttachments';
@@ -63,12 +64,13 @@ export const handleSpaceAttachmentFileAsync =
         let isUnsupported = false;
 
         try {
-            const result = await fileProcessingService.processFile(file);
+            const result = await fileProcessingService.processFile(file, { includePdfPageImages: true });
 
             if (result.type === 'text') {
                 processedAttachment = {
                     ...processedAttachment,
                     markdown: result.content,
+                    ...(result.pageImages && { pageImages: result.pageImages }),
                     truncated: result.metadata?.truncated,
                     originalRowCount: result.metadata?.rowCount?.original,
                     processedRowCount: result.metadata?.rowCount?.processed,
@@ -103,7 +105,10 @@ export const handleSpaceAttachmentFileAsync =
 
         // Remove binary data before storing in Redux (but keep Markdown for LLM context)
         // Use destructuring instead of delete to ensure a clean object
-        const { data, ...attachmentForRedux } = processedAttachment;
+        const { data, pageImages, ...attachmentForRedux } = processedAttachment;
+        if (pageImages) {
+            attachmentDataCache.setPageImages(processedAttachment.id, pageImages);
+        }
 
         // Add attachment to Redux store (without binary data, but with Markdown for LLM)
         dispatch(upsertAttachment(attachmentForRedux));

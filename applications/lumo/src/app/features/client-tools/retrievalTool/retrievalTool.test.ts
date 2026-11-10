@@ -1,9 +1,12 @@
 import type { ClientToolResult } from '@proton/lumo-api-client/core/client-tools';
 
+import { buildChangeDigest } from '../../../lib/attachments/pdfChangeMarkup';
 import { type Attachment, type Conversation, type Message, Role } from '../../../types';
 import { formatFileCard, formatRetrievalInstructions } from './instructions';
 import { PAGE_CHARS, splitIntoPages } from './pages';
 import {
+    MAX_ANALYSES_PER_REPLY,
+    MAX_READ_CHARS_PER_REPLY,
     MAX_READS_PER_REPLY,
     MAX_RETRIEVAL_CALLS_PER_REPLY,
     type RetrievalContext,
@@ -12,7 +15,7 @@ import {
     distinctWords,
     findRelatedChats,
 } from './retrievalTool';
-import { READ_KNOWLEDGE_TOOL_NAME, SEARCH_KNOWLEDGE_TOOL_NAME } from './schema';
+import { ANALYZE_FILE_TOOL_NAME, READ_KNOWLEDGE_TOOL_NAME, SEARCH_KNOWLEDGE_TOOL_NAME } from './schema';
 
 const now = new Date().toISOString();
 
@@ -629,6 +632,200 @@ describe('per-reply limits', () => {
     });
 });
 
+describe('analyze_file', () => {
+    const longFile = attachment('long', 'long.md', Array.from({ length: 7 }, (_, i) => `PAGE-${i + 1} ${'x '.repeat(PAGE_CHARS / 2 - 12)}`).join('\n\n'));
+    const analyzeContext = (reply: (prompt: string) => string = () => 'a note on page 2') => {
+        const prompts: string[] = [];
+        const context = makeContext({
+            chatAttachments: [longFile],
+            analyze: async (prompt) => {
+                prompts.push(prompt);
+                return reply(prompt);
+            },
+        });
+        return { context, prompts };
+    };
+
+    it('is only offered when a helper is available', async () => {
+        const without = createRetrievalToolExecutor(makeContext());
+        const withHelper = createRetrievalToolExecutor(analyzeContext().context);
+
+        expect((await without.getClientTools?.())?.map((tool) => tool.function.name)).toEqual([
+            SEARCH_KNOWLEDGE_TOOL_NAME,
+            READ_KNOWLEDGE_TOOL_NAME,
+        ]);
+        expect(withHelper.canExecute?.(ANALYZE_FILE_TOOL_NAME)).toBe(true);
+        expect(without.canExecute?.(ANALYZE_FILE_TOOL_NAME)).toBe(false);
+    });
+
+    it('has the helper read the whole file for the goal and returns its notes with the file', async () => {
+        const { context, prompts } = analyzeContext();
+
+        const { body } = await call(context, ANALYZE_FILE_TOOL_NAME, { file_id: 'long', goal: 'list the risks' });
+
+        expect(body).toMatchObject({ ok: true, file_id: 'long', file_name: 'long.md', pages: 7 });
+        expect(body.notes).toContain('a note on page 2');
+        expect(body.warnings).toBeUndefined();
+        expect(prompts.join('\n')).toContain('list the risks');
+        expect(prompts.join('\n')).toContain('PAGE-7');
+    });
+
+    it('finds the file by name, and rejects a missing goal, a missing file and unknown ids', async () => {
+        const { context } = analyzeContext();
+        const executor = createRetrievalToolExecutor(context);
+
+        expect((await call(executor, ANALYZE_FILE_TOOL_NAME, { file_name: 'long', goal: 'g' })).body.ok).toBe(true);
+        for (const args of [{ file_id: 'long' }, { file_id: 'long', goal: '  ' }, { goal: 'g' }, { file_id: 'nope', goal: 'g' }]) {
+            const bad = await call(executor, ANALYZE_FILE_TOOL_NAME, args);
+            expect(bad.result.is_error).toBe(true);
+        }
+    });
+
+    it('tells the model which pages the helper missed, and fails clearly when it read nothing', async () => {
+        const partial = analyzeContext((prompt) => {
+            if (prompt.includes('PAGE-7')) {
+                throw new Error('down');
+            }
+            return 'ok';
+        });
+        const { body } = await call(partial.context, ANALYZE_FILE_TOOL_NAME, { file_id: 'long', goal: 'g' });
+        expect(body.ok).toBe(true);
+        expect(body.warnings[0]).toContain('pages 7');
+
+        const broken = analyzeContext(() => {
+            throw new Error('down');
+        });
+        const failed = await call(broken.context, ANALYZE_FILE_TOOL_NAME, { file_id: 'long', goal: 'g' });
+        expect(failed.result.is_error).toBe(true);
+        expect(failed.body.error).toContain('read_knowledge');
+    });
+
+    it('fails when the reply is stopped, rather than reporting an empty analysis', async () => {
+        const controller = new AbortController();
+        const { context } = analyzeContext(() => {
+            controller.abort();
+            return 'late';
+        });
+
+        const { result, body } = await call({ ...context, signal: controller.signal }, ANALYZE_FILE_TOOL_NAME, {
+            file_id: 'long',
+            goal: 'g',
+        });
+
+        expect(result.is_error).toBe(true);
+        expect(body.ok).toBe(false);
+    });
+
+    it('does not read files the user switched off', async () => {
+        const { context } = analyzeContext();
+        const { result } = await call(
+            { ...context, exclusions: { attachmentIds: new Set(['long']), documentIds: new Set() } },
+            ANALYZE_FILE_TOOL_NAME,
+            { file_id: 'long', goal: 'g' }
+        );
+
+        expect(result.is_error).toBe(true);
+    });
+
+    it('allows a few analyses per reply', async () => {
+        const executor = createRetrievalToolExecutor(analyzeContext().context);
+
+        for (let i = 0; i < MAX_ANALYSES_PER_REPLY; i += 1) {
+            expect((await call(executor, ANALYZE_FILE_TOOL_NAME, { file_id: 'long', goal: 'g' })).body.ok).toBe(true);
+        }
+        const over = await call(executor, ANALYZE_FILE_TOOL_NAME, { file_id: 'long', goal: 'g' });
+        expect(over.result.is_error).toBe(true);
+        expect(over.body.error).toContain('Analysis limit');
+    });
+
+    it('is mentioned in the instructions only when offered', () => {
+        const base: Parameters<typeof formatRetrievalInstructions>[0] = {
+            isProject: false,
+            allowWideScopes: true,
+            chatSearch: 'all',
+            searchOtherSpaces: true,
+            projectFiles: [],
+        };
+
+        expect(formatRetrievalInstructions({ ...base, canAnalyze: true })).toContain(ANALYZE_FILE_TOOL_NAME);
+        expect(formatRetrievalInstructions(base)).not.toContain(ANALYZE_FILE_TOOL_NAME);
+    });
+});
+
+describe('reading several pages', () => {
+    // 30 pages of PAGE_CHARS, each starting with its own number so reads are easy to check.
+    const pageText = (n: number) => `PAGE-${n} ${'x '.repeat(PAGE_CHARS / 2 - 12)}`.trimEnd();
+    const book = attachment('book', 'book.md', Array.from({ length: 30 }, (_, i) => pageText(i + 1)).join('\n\n'));
+    const bookContext = () => makeContext({ chatAttachments: [book] });
+    const pagesIn = (content: string) => [...content.matchAll(/PAGE-(\d+)/g)].map((match) => Number(match[1]));
+
+    it('returns consecutive pages in one read and says where to continue', async () => {
+        const { body } = await call(bookContext(), READ_KNOWLEDGE_TOOL_NAME, {
+            file_id: 'book',
+            page: 3,
+            page_count: 4,
+        });
+
+        expect(body).toMatchObject({ ok: true, page: 3, last_page: 6, next_page: 7, pages: splitIntoPages(book.markdown!).length });
+        expect(pagesIn(body.content)).toEqual([3, 4, 5, 6]);
+    });
+
+    it('omits next_page at the end of the file and clamps a range that runs past it', async () => {
+        const total = splitIntoPages(book.markdown!).length;
+        const { body } = await call(bookContext(), READ_KNOWLEDGE_TOOL_NAME, {
+            file_id: 'book',
+            page: total - 1,
+            page_count: 5,
+        });
+
+        expect(body).toMatchObject({ ok: true, page: total - 1, last_page: total });
+        expect(body.next_page).toBeUndefined();
+    });
+
+    it('still reads one page by default, and rejects a bad page_count', async () => {
+        const executor = createRetrievalToolExecutor(bookContext());
+
+        const single = await call(executor, READ_KNOWLEDGE_TOOL_NAME, { file_id: 'book', page: 2 });
+        expect(single.body).toMatchObject({ page: 2, last_page: 2, next_page: 3 });
+
+        for (const badCount of [0, 6, 1.5, '2']) {
+            const bad = await call(executor, READ_KNOWLEDGE_TOOL_NAME, { file_id: 'book', page_count: badCount });
+            expect(bad.result.is_error).toBe(true);
+            expect(bad.body.error).toContain('page_count');
+        }
+    });
+
+    it('goes through a long file in a few reads, then stops at the reply budget and says where it got to', async () => {
+        const executor = createRetrievalToolExecutor(bookContext());
+        let next: number | undefined = 1;
+        let reads = 0;
+        const seen: number[] = [];
+
+        while (next !== undefined) {
+            const { body, result }: { body: any; result: ClientToolResult } = await call(executor, READ_KNOWLEDGE_TOOL_NAME, {
+                file_id: 'book',
+                page: next,
+                page_count: 5,
+            });
+            if (result.is_error) {
+                expect(body.error).toContain('Read limit');
+                break;
+            }
+            seen.push(...pagesIn(body.content));
+            next = body.next_page;
+            reads += 1;
+        }
+
+        // The budget (300K characters, 15 pages of 20K) ends the walk before all 30 pages are read,
+        // in far fewer calls than one per page.
+        expect(seen).toEqual(Array.from({ length: seen.length }, (_, i) => i + 1));
+        expect(seen.length * PAGE_CHARS).toBeLessThanOrEqual(MAX_READ_CHARS_PER_REPLY + PAGE_CHARS);
+        expect(seen.length).toBeGreaterThanOrEqual(Math.floor(MAX_READ_CHARS_PER_REPLY / PAGE_CHARS) - 1);
+        expect(reads).toBeLessThanOrEqual(MAX_READS_PER_REPLY);
+        expect(executor.getUsage().readLimitHit).toBe(true);
+    });
+});
+
 describe('pages and cards', () => {
     it('splits long text into bounded pages that keep all of it', () => {
         const paragraph = 'word '.repeat(400).trim();
@@ -638,6 +835,26 @@ describe('pages and cards', () => {
         expect(pages.length).toBeGreaterThan(1);
         pages.forEach((page) => expect(page.length).toBeLessThanOrEqual(PAGE_CHARS));
         expect(pages.join(' ').replace(/\s+/g, ' ')).toBe(text.replace(/\s+/g, ' '));
+    });
+
+    it('puts the tracked changes of a PDF in its card, so they need no paging', () => {
+        const digest = buildChangeDigest(['Kurs [-Refinitiv-] [+FTSE+] Index']);
+        const markdown = `legend\n${digest}\n${'text '.repeat(6_000)}`;
+        const card = formatFileCard({ id: 'big', filename: 'big.pdf', markdown, tokenCount: 7_600 });
+
+        expect(card).toContain('[-Refinitiv-] [+FTSE+]');
+        expect(card).toContain('is struck through (deleted)');
+        expect(formatFileCard({ id: 'plain', filename: 'p.md', markdown: 'text '.repeat(6_000) })).not.toContain(
+            'Tracked changes'
+        );
+    });
+
+    it('tells a PDF card its real page count apart from the pages read_knowledge counts', () => {
+        const markdown = ['[Page 1]', 'text '.repeat(3_000), '[Page 2]', 'text '.repeat(3_000), '[Page 3]', 'end'].join('\n');
+        const card = formatFileCard({ id: 'pdf', filename: 'a.pdf', markdown, tokenCount: 7_600 });
+
+        expect(card).toContain('3 PDF pages');
+        expect(card).toContain(`${splitIntoPages(markdown).length} pages of about 20,000 characters`);
     });
 
     it('points a file card at the lookup tools with the file id and page count', () => {

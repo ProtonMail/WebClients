@@ -25,7 +25,10 @@ export function createToolFileProcessor(
         }
         const service = await loadService();
         const file = new File([source.data.buffer], source.name, { type: mimeType });
-        const result = await service.processFile(file, { fileData: source.data.buffer });
+        const result = await service.processFile(file, {
+            fileData: source.data.buffer,
+            includePdfPageImages: mimeType === 'application/pdf',
+        });
         if (result.type === 'error') {
             return {
                 content: JSON.stringify({ error: result.message, unsupported: result.unsupported }),
@@ -33,7 +36,14 @@ export function createToolFileProcessor(
             };
         }
         if (result.type === 'text') {
-            if (mimeType === 'application/pdf' && !result.content.trim()) {
+            const images: ToolImage[] = (result.pageImages ?? []).flatMap(({ page, data }) => {
+                const base64 = data.toBase64();
+                const imageMime = toolImageMimeType(base64);
+                return imageMime
+                    ? [{ image_id: `${source.id}-p${page}`, path: `${source.path}#page=${page}`, mime_type: imageMime, data: base64 }]
+                    : [];
+            });
+            if (mimeType === 'application/pdf' && !result.content.trim() && images.length === 0) {
                 return {
                     content: JSON.stringify({
                         error: 'File contains no extractable text. Scanned PDFs may require OCR.',
@@ -47,7 +57,9 @@ export function createToolFileProcessor(
                     mime_type: mimeType,
                     content: { encoding: 'utf-8', content: result.content },
                     metadata: result.metadata,
+                    ...(images.length > 0 && { page_images: images.map((image) => image.path) }),
                 }),
+                ...(images.length > 0 && { images }),
             };
         }
         if (result.type === 'image') {

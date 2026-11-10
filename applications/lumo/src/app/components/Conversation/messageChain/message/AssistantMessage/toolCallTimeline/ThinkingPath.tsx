@@ -7,6 +7,7 @@ import { c, msgid } from 'ttag';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import {
+    ANALYZE_FILE_TOOL_NAME,
     READ_KNOWLEDGE_TOOL_NAME,
     SEARCH_KNOWLEDGE_TOOL_NAME,
 } from '../../../../../../features/client-tools/retrievalTool/schema';
@@ -65,6 +66,7 @@ function getToolCallIcon(toolCall: ToolCallData | ToolCallAnnouncement): IconNam
             return 'BookOpen';
         case SEARCH_KNOWLEDGE_TOOL_NAME:
         case READ_KNOWLEDGE_TOOL_NAME:
+        case ANALYZE_FILE_TOOL_NAME:
             return 'FileSearch';
         default:
             return 'Wrench';
@@ -236,6 +238,9 @@ function getToolCallLabel(toolCall: ToolCallData | ToolCallAnnouncement): [strin
         case READ_KNOWLEDGE_TOOL_NAME:
             // translator: Assistant activity status, while reading one of the user's files or earlier messages.
             return [c('collider_2025:Reasoning').t`Reading a file...`, c('collider_2025:Reasoning').t`Read a file`];
+        case ANALYZE_FILE_TOOL_NAME:
+            // translator: Assistant activity status, while a long file of the user's is being read through for notes.
+            return [c('collider_2025:Reasoning').t`Analysing a file...`, c('collider_2025:Reasoning').t`Analysed a file`];
         default:
             // translator: Assistant activity status.
             return [c('collider_2025:Reasoning').t`Executing tool...`, c('collider_2025:Reasoning').t`Executed tool`];
@@ -488,6 +493,9 @@ function getToolCallShortLabel(toolCall: ToolCallData | ToolCallAnnouncement): [
         case READ_KNOWLEDGE_TOOL_NAME:
             // translator: Assistant activity status, while reading one of the user's files or earlier messages.
             return [c('collider_2025:Reasoning').t`Reading a file...`, c('collider_2025:Reasoning').t`Read a file`];
+        case ANALYZE_FILE_TOOL_NAME:
+            // translator: Assistant activity status, while a long file of the user's is being read through for notes.
+            return [c('collider_2025:Reasoning').t`Analysing a file...`, c('collider_2025:Reasoning').t`Analysed a file`];
         default:
             // translator: Assistant activity status.
             return [c('collider_2025:Reasoning').t`Executing tool...`, c('collider_2025:Reasoning').t`Executed tool`];
@@ -1134,7 +1142,7 @@ const ToolCallStep = ({
                 ) : knowledge ? (
                     <>
                         <ThinkingStepLabel isActive={isActive}>{stateLabel}</ThinkingStepLabel>
-                        <KnowledgeStepBody details={knowledge} />
+                        <KnowledgeStepBody details={knowledge} isActive={isActive} />
                     </>
                 ) : (
                     <>

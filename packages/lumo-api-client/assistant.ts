@@ -20,6 +20,7 @@ export async function quickChat(
         enableWebSearch?: boolean;
         config?: Partial<LumoApiClientConfig>;
         signal?: AbortSignal;
+        modelTier?: AssistantCallOptions['modelTier'];
     } = {}
     // todo: consider including an optional system prompt as an argument or an option
 ): Promise<string> {

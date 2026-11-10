@@ -1,11 +1,14 @@
+import { MAX_SERIALIZED_ASSET_BYTES } from './constants';
 import { base64ToMasterKey, decryptString, encryptString } from './crypto';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from './crypto/testing';
 import {
+    deserializeAttachment,
     deserializeConversation,
     deserializeMessage,
     deserializeSpace,
     deserializeSpaceWithMasterKeys,
     serializeConversation,
+    serializeAttachment,
     serializeMessage,
     serializeSpace,
 } from './serialization';
@@ -33,6 +36,45 @@ describe('serialization', () => {
         const deserialized = await deserializeSpace(serialized!, masterKey);
 
         expect(deserialized).toEqual(mockSpace);
+    });
+
+    describe('attachment size guard', () => {
+        const attachment = (size: number) =>
+            ({
+                id: 'att',
+                spaceId: 'SpaceId',
+                filename: 'big.bin',
+                uploadedAt: 'now',
+                data: new Uint8Array(size),
+            }) as any;
+
+        it('refuses a payload the backend would reject', async () => {
+            const spaceDek = await getSpaceDek(mockSpace);
+            const warn = jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+            expect(await serializeAttachment(attachment(MAX_SERIALIZED_ASSET_BYTES + 1), spaceDek)).toBeNull();
+            warn.mockRestore();
+        });
+
+        it('never persists the rendered pages of a PDF', async () => {
+            const spaceDek = await getSpaceDek(mockSpace);
+            const withPages = {
+                ...attachment(16),
+                mimeType: 'application/pdf',
+                pageImages: [{ page: 1, data: new Uint8Array(1024) }],
+            };
+
+            const serialized = await serializeAttachment(withPages, spaceDek);
+            const restored = await deserializeAttachment(serialized!, spaceDek);
+
+            expect(restored?.pageImages).toBeUndefined();
+        });
+
+        it('serializes a payload within the limit', async () => {
+            const spaceDek = await getSpaceDek(mockSpace);
+
+            expect(await serializeAttachment(attachment(1024), spaceDek)).not.toBeNull();
+        });
     });
 
     it('round-trips schedule skill and sub-skill references only inside encrypted metadata', async () => {

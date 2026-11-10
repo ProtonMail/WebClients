@@ -4,7 +4,7 @@
  * chunks) so every read stays small, and deterministic so file cards and reads agree on
  * page numbers.
  */
-export const PAGE_CHARS = 12_000;
+export const PAGE_CHARS = 20_000;
 /** Look back this far from the page limit for a paragraph or line break to cut at. */
 const BREAK_SEARCH_CHARS = 2_000;
 
@@ -51,3 +51,9 @@ export function snippetAround(text: string, terms: string[], radius = 160): stri
     const snippet = text.slice(start, end).replace(/\s+/g, ' ').trim();
     return `${start > 0 ? '…' : ''}${snippet}${end < text.length ? '…' : ''}`;
 }
+
+/** How a file's size is put to the model: the PDF's own pages, and the pages read_knowledge counts. */
+export const describeFileSize = (pages: number, pdfPages: number | undefined) =>
+    pdfPages
+        ? `${pdfPages} PDF pages, which read_knowledge counts as ${pages} pages of about 20,000 characters each`
+        : `${pages} pages of about 20,000 characters each, as read_knowledge counts them`;

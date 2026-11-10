@@ -216,7 +216,7 @@ const messagesReducer = createReducer<MessageMap>(EMPTY_MESSAGE_MAP, (builder) =
             }
             message.attachments ??= [];
             // Remove non-serializable fields before storing in Redux
-            const { imagePreview, data, ...serializableAttachment } = attachment as any;
+            const { imagePreview, data, pageImages, ...serializableAttachment } = attachment as any;
             message.attachments.push(serializableAttachment);
         })
         .addCase(finishMessage, (state, action) => {
