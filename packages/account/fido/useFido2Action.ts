@@ -11,8 +11,17 @@ const SENTRY_MESSAGE: Record<Fido2ActionContext, string> = {
     registration: 'Security key registration',
 };
 
-const reportFido2Error = (error: unknown, context: Fido2ActionContext) => {
-    captureMessage(SENTRY_MESSAGE[context], { level: 'error', extra: { error } });
+const reportFido2Error = (error: unknown, context: Fido2ActionContext, durationMs: number) => {
+    const name = error instanceof Error ? error.name : 'unknown';
+    // Browsers merge cancels, timeouts and missing keys into NotAllowedError, timing separates refused requests
+    const timing = durationMs < 2000 ? 'instant' : 'user';
+    const extension = error instanceof Error && /-extension:\/\/|webkit-masked-url:\/\//.test(error.stack || '');
+    captureMessage(SENTRY_MESSAGE[context], {
+        level: 'error',
+        fingerprint: [SENTRY_MESSAGE[context], name, timing],
+        tags: { fido2Error: name, fido2Timing: timing, fido2Extension: extension },
+        extra: { error, durationMs, hasFocus: document.hasFocus(), visibility: document.visibilityState },
+    });
     // Purposefully logging the error for somewhat easier debugging
     // eslint-disable-next-line no-console
     console.error(error);
@@ -42,6 +51,7 @@ export const useFido2Action = () => {
             const abortController = new AbortController();
             abortControllerRef.current = abortController;
             const isCurrent = () => abortControllerRef.current === abortController;
+            const start = Date.now();
 
             try {
                 setFidoError(false);
@@ -50,7 +60,7 @@ export const useFido2Action = () => {
             } catch (error) {
                 if (isCurrent()) {
                     setFidoError(true);
-                    reportFido2Error(error, context);
+                    reportFido2Error(error, context, Date.now() - start);
                 }
                 throw error;
             } finally {
