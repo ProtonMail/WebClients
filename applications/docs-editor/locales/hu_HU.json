@@ -170,6 +170,9 @@
       "Outdent": [
         "Behúzás csökkentése"
       ],
+      "Page break": [
+        "Oldaltörés"
+      ],
       "Quote": [
         "Idézet"
       ],
@@ -211,6 +214,9 @@
       ],
       "Strike-through": [
         "Áthúzás"
+      ],
+      "Superscript": [
+        "Felső index"
       ],
       "Table options": [
         "Táblázat beállítások"
@@ -268,6 +274,14 @@
       ],
       "Read or print final document": [
         "A végleges dokumentum elolvasása vagy kinyomtatása"
+      ]
+    },
+    "Emoji category": {
+      "Objects": [
+        "Objektumok"
+      ],
+      "Symbols": [
+        "Jelek"
       ]
     },
     "Error": {
@@ -370,6 +384,9 @@
       "No comments": [
         "Nincsenek hozzászólások"
       ],
+      "No emoji found": [
+        "Nem található hangulatjel"
+      ],
       "Something went wrong:": [
         "Hiba történt:"
       ],
@@ -447,6 +464,12 @@
       "Duplicate table row": [
         "Sor duplikálása"
       ],
+      "Emoji": [
+        "Hangulatjel"
+      ],
+      "Emoji suggestions": [
+        "Hangulatjel javaslatok"
+      ],
       "Format": [
         "Formátum"
       ],
@@ -516,6 +539,232 @@
         "Szöveg"
       ]
     },
+    "sheets_2025:Bottom bar": {
+      "New sheet": [
+        "Új lap"
+      ]
+    },
+    "sheets_2025:Color picker": {
+      "Theme colors": [
+        "Téma színei"
+      ]
+    },
+    "sheets_2025:Sheet tab options": {
+      "Rename": [
+        "Átnevez"
+      ]
+    },
+    "sheets_2025:Spreadsheet border editor menu": {
+      "Dotted": [
+        "Pontozott"
+      ],
+      "Inner borders": [
+        "Belső szegélyek"
+      ],
+      "Right border": [
+        "Jobb szegély"
+      ]
+    },
+    "sheets_2025:Spreadsheet cellFormatOptions": {
+      "Accounting": [
+        "Számvitel"
+      ],
+      "Bottom": [
+        "Alsó"
+      ],
+      "Date": [
+        "Dátum"
+      ],
+      "Percentage": [
+        "Százalék"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartAggregates": {
+      "Average": [
+        "Átlag"
+      ],
+      "Median": [
+        "Medián"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartTypes": {
+      "Clustered Column": [
+        "Csoportosított oszlop"
+      ],
+      "Doughnut": [
+        "Fánk"
+      ],
+      "Hierarchy": [
+        "Hierarchia"
+      ],
+      "Line": [
+        "Vonal"
+      ],
+      "Pie": [
+        "Körcikk"
+      ]
+    },
+    "sheets_2025:Spreadsheet conditions": {
+      "Bottom N percent": [
+        "Alsó N százalék"
+      ],
+      "Date is equal to": [
+        "Dátum egyenlő"
+      ],
+      "Date is not equal to": [
+        "Dátum nem egyenlő"
+      ],
+      "Dropdown": [
+        "Legördülő lista"
+      ],
+      "Greater than": [
+        "Nagyobb, mint"
+      ],
+      "Is not empty": [
+        "Nem üres"
+      ],
+      "Last 7 days": [
+        "Utolsó 7 nap"
+      ],
+      "Last quarter": [
+        "Utolsó negyed"
+      ],
+      "Less than or equal to previous": [
+        "Kevesebb vagy egyenlő az előzővel"
+      ],
+      "March": [
+        "Március"
+      ],
+      "Next week": [
+        "Következő hét"
+      ],
+      "November": [
+        "November"
+      ],
+      "Quarter 2": [
+        "2. negyed"
+      ],
+      "Quarter 3": [
+        "3. negyed"
+      ],
+      "Quarter 4": [
+        "4. negyed"
+      ],
+      "This month": [
+        "Ez a hónap"
+      ],
+      "Today": [
+        "Ma"
+      ],
+      "Tomorrow": [
+        "Holnap"
+      ],
+      "Yesterday": [
+        "Tegnap"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu": {
+      "AI Quick Edit": [
+        "AI Gyors Szerkesztés"
+      ],
+      "Cell value": [
+        "Cella értéke"
+      ],
+      "Clear formatting": [
+        "Formázás törlése"
+      ],
+      "Create a filter": [
+        "Szűrő létrehozása"
+      ],
+      "Delete column": [
+        "Oszlop törlése"
+      ],
+      "Edit table": [
+        "Táblázat szerkesztése"
+      ],
+      "Formatting only": [
+        "Csak formázás"
+      ],
+      "Pipe": [
+        "Cső"
+      ],
+      "Values only": [
+        "Csak érték"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu (columns/rows)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } oszlop",
+        "${ numberOfColumns } oszlop"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } sor",
+        "${ numberOfRows } sor"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats dialog": {
+      "Apply": [
+        "Alkalmaz"
+      ]
+    },
+    "sheets_2025:Spreadsheet custom date and time formats editor": {
+      "Date": [
+        "Dátum"
+      ],
+      "Day as abbreviation": [
+        "Nap rövidítve"
+      ],
+      "Duration": [
+        "Időtartam"
+      ],
+      "First letter of the month": [
+        "Hónap első betűje"
+      ],
+      "Full": [
+        "Teljes"
+      ],
+      "Millisecond": [
+        "Ezredmásodperc"
+      ],
+      "Minute": [
+        "Perc"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor cell merge options": {
+      "Merge all": [
+        "Az összes egyesítése"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu": {
+      "Create a filter": [
+        "Szűrő létrehozása"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
+      "column ${ columnLetter }": [
+        "oszlop ${ columnLetter }"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar edit menu": {
+      "Copy": [
+        "Másol"
+      ],
+      "Formatting only": [
+        "Csak formázás"
+      ],
+      "Link only": [
+        "Csak hivatkozás"
+      ],
+      "Paste": [
+        "Beillesztés"
+      ],
+      "Redo": [
+        "Visszacsinál"
+      ],
+      "Values only": [
+        "Csak érték"
+      ]
+    },
     "sheets_2025:Spreadsheet editor menubar file menu": {
       "Download": [
         "Letöltés"
@@ -537,6 +786,67 @@
       ],
       "See version history": [
         "Változatelőzmények megjelenítése"
+      ],
+      "Settings": [
+        "Beállítások"
+      ],
+      "Toggle debug mode": [
+        "Váltás a hibakeresési módra"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu": {
+      "Alignment": [
+        "Igazítás"
+      ],
+      "Clear": [
+        "Töröl"
+      ],
+      "Clear content": [
+        "Tartalom törlése"
+      ],
+      "Italic": [
+        "Dőlt"
+      ],
+      "Strikethrough": [
+        "Áthúzott"
+      ],
+      "Table formatting": [
+        "Tábla formázása"
+      ],
+      "Wrapping": [
+        "Csomagolás"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
+      "Bottom": [
+        "Alsó"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu": {
+      "Dropdown": [
+        "Legördülő lista"
+      ],
+      "Function": [
+        "Funkció"
+      ],
+      "Rows": [
+        "Sorok"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } oszlop",
+        "${ numberOfColumns } oszlop"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } sor",
+        "${ numberOfRows } sor"
+      ],
+      "Insert": [
+        "Beilleszt"
+      ],
+      "right": [
+        "jobb"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar title": {
@@ -557,6 +867,231 @@
       ],
       "View": [
         "Nézet"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu": {
+      "Show": [
+        "Mutat"
+      ],
+      "Zoom": [
+        "Nagyítás"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
+      "column ${ columnLetter }": [
+        "oszlop ${ columnLetter }"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor number formats menu": {
+      "Financial": [
+        "Pénzügyi"
+      ],
+      "General": [
+        "Általános"
+      ],
+      "Plain text": [
+        "Egyszerű szöveg"
+      ],
+      "Time": [
+        "Idő"
+      ],
+      "¥ Yen": [
+        "¥ jen"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor search dialog": {
+      "Go to previous": [
+        "Ugrás az előzőre"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
+      "Locale": [
+        "Terület"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor toolbar": {
+      "Apply border": [
+        "Szegély alkalmazása"
+      ],
+      "Border": [
+        "Szegély"
+      ],
+      "Choose text color": [
+        "Válasszon szöveg színt"
+      ],
+      "Fill color": [
+        "Kitöltőszín"
+      ],
+      "Font size": [
+        "Betűméret"
+      ],
+      "Format as currency": [
+        "Formázás pénznemként"
+      ],
+      "Increase decimal places": [
+        "Tizedesjegyek növelése"
+      ],
+      "Insert note": [
+        "Jegyzet beillesztése"
+      ],
+      "More": [
+        "Több"
+      ],
+      "Unmerge cells": [
+        "Cellák szétválasztása"
+      ]
+    },
+    "sheets_2025:Spreadsheet filter menu": {
+      "Enter value": [
+        "Érték megadása"
+      ],
+      "Paste": [
+        "Beillesztés"
+      ],
+      "Select all": [
+        "Összes kijelölése"
+      ]
+    },
+    "sheets_2025:Spreadsheet formulaBar": {
+      "Edit": [
+        "Szerkesztés"
+      ]
+    },
+    "sheets_2025:Spreadsheet insert link dialog": {
+      "Apply": [
+        "Alkalmaz"
+      ]
+    },
+    "sheets_2025:Spreadsheet link tooltip": {
+      "Edit link": [
+        "Hivatkozás szerkesztése"
+      ]
+    },
+    "sheets_2025:Spreadsheet resize dimension dialog": {
+      "Cancel": [
+        "Mégsem"
+      ]
+    },
+    "sheets_2025:Spreadsheet sheet status bar": {
+      "Count": [
+        "Mennyiség"
+      ],
+      "Max": [
+        "Maximum"
+      ],
+      "Min": [
+        "Perc"
+      ],
+      "Sum": [
+        "Összeg"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
+      "Alignment": [
+        "Igazítás"
+      ],
+      "Bold": [
+        "Félkövér"
+      ],
+      "Border style": [
+        "Szegélystílus"
+      ],
+      "Decimal places": [
+        "Tizedesjegyek"
+      ],
+      "Font size": [
+        "Betűméret"
+      ],
+      "Merge all": [
+        "Az összes egyesítése"
+      ],
+      "Merge vertically": [
+        "Vertikálisan összevon"
+      ],
+      "Preview": [
+        "Előnézet"
+      ],
+      "Strikethrough": [
+        "Áthúzás"
+      ],
+      "Thousands separator": [
+        "Ezreselválasztó"
+      ],
+      "Underline": [
+        "Aláhúzás"
+      ],
+      "Use 1000 Separator (,)": [
+        "Használjon 1000 -es elválasztót (,)"
+      ],
+      "Vertical Alignment": [
+        "Függőleges igazítás"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar chart editor dialog": {
+      "Name": [
+        "Név"
+      ],
+      "Save": [
+        "Mentés"
+      ],
+      "Select a range": [
+        "Tartomány kiválasztása"
+      ],
+      "Series ${ seriesNumber }": [
+        "Sorozat ${ seriesNumber }"
+      ],
+      "Value": [
+        "Érték"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog": {
+      "Add rule": [
+        "Szabály hozzáadása"
+      ],
+      "Apply to range": [
+        "Tartomány alkalmazása"
+      ],
+      "Enter value": [
+        "Érték megadása"
+      ],
+      "Mid point": [
+        "Közép pont"
+      ],
+      "Preview": [
+        "Előnézet"
+      ],
+      "Single color": [
+        "Egyszínű"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom number format dialog": {
+      "Text": [
+        "Szöveg"
+      ],
+      "Zero": [
+        "Nulla"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar data validation dialog": {
+      "Enter value": [
+        "Érték megadása"
+      ],
+      "Formula": [
+        "Képlet"
+      ],
+      "Validation rules": [
+        "Ellenőrzési szabály"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar table editor dialog": {
+      "Banded rows": [
+        "Sávozott sorok"
+      ],
+      "Edit table": [
+        "Táblázat szerkesztése"
+      ],
+      "Table title": [
+        "Táblázat címe"
       ]
     },
     "Title": {

@@ -288,6 +288,23 @@
         "Les eller skriv ut endelig dokument"
       ]
     },
+    "Emoji category": {
+      "Activities": [
+        "Aktiviteter"
+      ],
+      "Animals and nature": [
+        "Dyr og natur"
+      ],
+      "Food and drink": [
+        "Mat og drikke"
+      ],
+      "Objects": [
+        "Objekter"
+      ],
+      "Symbols": [
+        "Symboler"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
         "Det oppstod en feil under lasting av dokumentet. For å forhindre dokumentkorrupsjon er redigeringsprogrammet låst. Last inn siden på nytt og prøv igjen. Hvis feilen vedvarer, kan du åpne Versjonshistorikk fra menyalternativene for å prøve å gjenopprette dokumentet til en tidligere versjon."
@@ -406,6 +423,9 @@
       "No comments": [
         "Ingen kommentarer"
       ],
+      "No emoji found": [
+        "Ingen emoji funnet"
+      ],
       "No title": [
         "Ingen tittel"
       ],
@@ -494,6 +514,9 @@
       ],
       "Duplicate table row": [
         "Dupliser tabellrad"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "Format": [
         "Format"
@@ -700,6 +723,148 @@
       ],
       "Note": [
         "Merk"
+      ]
+    },
+    "sheets_2025:Spreadsheet cellFormatOptions": {
+      "Center": [
+        "Midtstille"
+      ],
+      "Currency": [
+        "Valuta"
+      ],
+      "Date": [
+        "Dato"
+      ],
+      "General": [
+        "Generelt"
+      ],
+      "Left": [
+        "Venstre"
+      ],
+      "Overflow": [
+        "Overflyt"
+      ],
+      "Right": [
+        "Høyre"
+      ],
+      "Text": [
+        "Tekst"
+      ],
+      "Time": [
+        "Tid"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartAggregates": {
+      "Sum": [
+        "Sum"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartEditorDialog": {
+      "None": [
+        "Ingen"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartTypes": {
+      "Line": [
+        "Linje"
+      ]
+    },
+    "sheets_2025:Spreadsheet conditions": {
+      "Above average": [
+        "Over gjennomsnitt"
+      ],
+      "August": [
+        "August"
+      ],
+      "Between": [
+        "Mellom"
+      ],
+      "Date is between": [
+        "Dato er mellom"
+      ],
+      "Date is not between": [
+        "Dato er ikke mellom"
+      ],
+      "December": [
+        "Desember"
+      ],
+      "July": [
+        "Juli"
+      ],
+      "June": [
+        "Juni"
+      ],
+      "Last 7 days": [
+        "Siste 7 dager"
+      ],
+      "Last month": [
+        "Siste måned"
+      ],
+      "Last week": [
+        "Forrige uke"
+      ],
+      "Last year": [
+        "I fjor"
+      ],
+      "Less than": [
+        "Mindre enn"
+      ],
+      "March": [
+        "Mars"
+      ],
+      "May": [
+        "Mai"
+      ],
+      "Next month": [
+        "Neste måned"
+      ],
+      "Next quarter": [
+        "Neste kvartal"
+      ],
+      "Next week": [
+        "Neste uke"
+      ],
+      "Next year": [
+        "Neste år"
+      ],
+      "Not between": [
+        "Ikke mellom"
+      ],
+      "November": [
+        "November"
+      ],
+      "October": [
+        "Oktober"
+      ],
+      "September": [
+        "September"
+      ],
+      "Text contains": [
+        "Tekst inneholder"
+      ],
+      "Text is URL": [
+        "Tekst er URL"
+      ],
+      "Text starts with": [
+        "Tekst starter med"
+      ],
+      "This month": [
+        "Denne måneden"
+      ],
+      "This week": [
+        "Denne uken"
+      ],
+      "This year": [
+        "I år"
+      ],
+      "Today": [
+        "I dag"
+      ],
+      "Year to date": [
+        "År til dato"
+      ],
+      "Yesterday": [
+        "I går"
       ]
     },
     "sheets_2025:Spreadsheet context menu": {
@@ -1048,6 +1213,11 @@
         "År"
       ]
     },
+    "sheets_2025:Spreadsheet customCurrencyFormatDialog": {
+      "Symbol": [
+        "Symbol"
+      ]
+    },
     "sheets_2025:Spreadsheet delete sheet dialog": {
       "Are you sure you want to delete ${ sheetName }?": [
         "Er du sikker på at du vil slette ${ sheetName }?"
@@ -1209,6 +1379,9 @@
       ],
       "New spreadsheet": [
         "Nytt regneark"
+      ],
+      "Open Proton Drive": [
+        "Åpne Proton Drive"
       ],
       "OpenDocument Spreadsheet (.ods) (Beta)": [
         "OpenDocument-regneark (.ods) (beta)"
@@ -1556,6 +1729,9 @@
       "Default (${ defaultFont })": [
         "Standard (${ defaultFont })"
       ],
+      "Fill color": [
+        "Fyllfarge"
+      ],
       "Find": [
         "Finn"
       ],
@@ -1619,6 +1795,9 @@
       "Strikethrough": [
         "Gjennomstreking"
       ],
+      "Text color": [
+        "Tekstfarge"
+      ],
       "Text wrapping": [
         "Tekstbryting"
       ],
@@ -1680,6 +1859,21 @@
       ],
       "Sort Z → A": [
         "Sorter Å → A"
+      ]
+    },
+    "sheets_2025:Spreadsheet filterByCondition": {
+      "None": [
+        "Ingen"
+      ]
+    },
+    "sheets_2025:Spreadsheet formulaBar": {
+      "View": [
+        "Vis"
+      ]
+    },
+    "sheets_2025:Spreadsheet gridFooter": {
+      "Add": [
+        "Legg til"
       ]
     },
     "sheets_2025:Spreadsheet insert link dialog": {
