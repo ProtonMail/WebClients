@@ -15,12 +15,11 @@ const useBYOEFeatureStatus = (
 
     /*
      * The feature will be enabled with different experiments:
-     * - Exp 1: See BYOE during signup -> Based on InboxBringYourOwnEmailSignup feature flag
-     * - Exp 2: New signups see BYOE in checklist -> Based on InboxBringYourOwnEmailClient feature flag, targeting new user IDs
-     * - Exp 3: Show BYOE to existing users -> Based on InboxBringYourOwnEmailClient feature flag, targeting old user IDs
+     * - Exp 1: New signups see BYOE in checklist -> Based on InboxBringYourOwnEmailClient feature flag, targeting new user IDs
+     * - Exp 2: Show BYOE to existing users -> Based on InboxBringYourOwnEmailClient feature flag, targeting old user IDs
      *
-     * Note, both InboxBringYourOwnEmailSignup & InboxBringYourOwnEmailClient are children feature flags of InboxBringYourOwnEmail, that we use as a kill switch.
-     * So disabling the kill switch will disable the 2 children feature flags too.
+     * Note, InboxBringYourOwnEmailClient is a child feature flag of InboxBringYourOwnEmail, that we use as a kill switch.
+     * So disabling the kill switch will disable the child feature flag too.
      *
      * So, only users having the client feature OR users who created an account using BYOE (and who have the BYOE account flag).
      * Of course, we need to make sure that the kill switch is ON to see the feature for BYOE accounts.

@@ -6,8 +6,9 @@ import type { PublicKeyReference } from '@protontech/crypto';
 import type { EditorMetadata } from '@proton/components/components/editor/interface';
 import { useHandler } from '@proton/hooks/useHandler';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
-import { setContent } from '@proton/mail-message/helpers/message/messageContent';
+import { getContent, setContent } from '@proton/mail-message/helpers/message/messageContent';
 import { createNewDraft } from '@proton/mail-message/helpers/message/messageDraft';
+import { prepareExport } from '@proton/mail-message/helpers/message/messageExport';
 import { mergeMessages } from '@proton/mail-message/helpers/message/messages';
 import type { MessageState, OutsideKey } from '@proton/mail-message/store/messages/messagesTypes';
 import { EO_DEFAULT_MAILSETTINGS, EO_DEFAULT_USER_SETTINGS } from '@proton/shared/lib/mail/eo/constants';
@@ -26,6 +27,8 @@ import './EOComposer.scss';
 export interface EOComposerFooterProps {
     message: MessageState;
     onAddAttachments: (files: File[]) => void;
+    /** Realigns the reply with the editor, then exports its content, ready to be encrypted and sent */
+    exportReplyContent: () => string;
 }
 
 interface Props {
@@ -133,6 +136,38 @@ const EOComposer = ({ referenceMessage, encryptionKey, outsideKey, header, rende
         editorActionsRef.current = editorActions;
     }, []);
 
+    /** Mirrors `ensureMessageContent` in the main composer: Rooster can miss an input event,
+     *  and EditorWrapper deliberately swallows the one that follows a programmatic setContent.
+     *  The main composer recovers because it re-reads the editor before sending, and because
+     *  autosave has already persisted the draft. EO has neither, so without this the reply is
+     *  encrypted from a model that never received what the recipient typed.
+     *
+     *  Two conditions keep the realignment from *removing* content:
+     *  - `editorReady` means EditorWrapper has run its initialisation, so `getContent` appends
+     *    the saved blockquote. The ref alone is not enough: it is assigned in the same callback
+     *    that queues `editorReady`, so a fast click can read an editor that still reports only
+     *    the content before the blockquote.
+     *  - an empty editor is never adopted; the model is the better source at that point, and
+     *    `send` refuses an empty body anyway.
+     *
+     *  The realignment has to be synchronous: `setModelMessage` would not have run by the time
+     *  the content is exported below.
+     */
+    const exportReplyContent = () => {
+        const editorActions = editorActionsRef.current;
+
+        if (editorReady && editorActions && !editorActions.isDisposed()) {
+            const editorContent = editorActions.getContent();
+
+            if (editorContent.trim() !== '' && editorContent.trim() !== getContent(modelMessage).trim()) {
+                setContent(modelMessage, editorContent);
+                setModelMessage({ ...modelMessage });
+            }
+        }
+
+        return prepareExport(modelMessage);
+    };
+
     const handleCloseInsertImageModal = () => {
         setImagesToInsert([]);
     };
@@ -166,7 +201,7 @@ const EOComposer = ({ referenceMessage, encryptionKey, outsideKey, header, rende
                     isInlineImageReuploadDisabled={true}
                 />
             </div>
-            {renderFooter({ message: modelMessage, onAddAttachments: handleAddAttachments })}
+            {renderFooter({ message: modelMessage, onAddAttachments: handleAddAttachments, exportReplyContent })}
         </>
     );
 };

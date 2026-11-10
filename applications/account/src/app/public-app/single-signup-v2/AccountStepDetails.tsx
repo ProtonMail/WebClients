@@ -19,7 +19,6 @@ import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getMinPasswordLengthMessage } from '@proton/shared/lib/helpers/formValidators';
 import type { StrictPlan } from '@proton/shared/lib/payments/plan/interface';
-import { useVariant } from '@proton/unleash/useVariant';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -28,7 +27,6 @@ import { getThemeData } from '../signup/challenge-theme';
 import { type AccountData, SignupType } from '../signup/interfaces';
 import { useAccountFormDataContext } from '../signupCtx/context/accountData/AccountFormDataContext';
 import { AsyncValidationStateValue } from '../signupCtx/context/accountData/asyncValidator/createAsyncValidator';
-import BYOESignupButton from './BYOESignupButton';
 import { useSignupV2Theme } from './SignupV2ThemeProvider';
 import type { BaseMeasure, SignupModelV2 } from './interface';
 import type { AvailableExternalEvents, InteractCreateEvents, UserCheckoutEvents } from './measure';
@@ -101,10 +99,6 @@ const AccountStepDetails = ({
     const [, setRerender] = useState<any>();
     const [loadingChallenge, setLoadingChallenge] = useState(true);
     const [isRTL] = useRightToLeft();
-
-    const variant = useVariant('InboxBringYourOwnEmailSignup');
-    const hasAccessToBYOE =
-        (variant.name === 'Light' || variant.name === 'Bold') && state.signupTypes.has(SignupType.BringYourOwnEmail);
 
     useEffect(() => {
         if (
@@ -413,19 +407,6 @@ const AccountStepDetails = ({
                             />
                         </div>
                     ) : null}
-
-                    {hasAccessToBYOE && (
-                        <BYOESignupButton
-                            onEmailValue={(value) => onValue.onEmailValue(value, state.domains)}
-                            onImportEmailsValue={(importEmails) => onValue.onDetailsDiff({ importEmails })}
-                            signupType={state.signupType}
-                            setSignupType={(signupType) => onValue.onDetailsDiff({ signupType })}
-                            onUseInternalAddress={() =>
-                                onValue.onDetailsDiff({ signupType: SignupType.Proton, email: '', username: '' })
-                            }
-                            passwordInputRef={refs.password}
-                        />
-                    )}
 
                     {passwordFields && (
                         <>

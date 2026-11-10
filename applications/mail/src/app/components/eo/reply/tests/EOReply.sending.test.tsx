@@ -1,8 +1,13 @@
 import { CryptoProxy } from '@protontech/crypto';
+import { fireEvent, waitFor } from '@testing-library/react';
 
+import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
+
+import { addApiMock } from '../../../../helpers/tests/api';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';
 import { EOClearAll, EOPassword, validID } from '../../../../helpers/tests/eo/helpers';
-import { send } from './EOReply.test.helpers';
+import { waitForNotification } from '../../../../helpers/tests/helper';
+import { send, setup } from './EOReply.test.helpers';
 
 jest.setTimeout(20000);
 
@@ -47,5 +52,43 @@ describe('EO Reply send', () => {
         expect(formattedReplyBody).toContain(formattedExpectedBody);
 
         expect(history.location.pathname).toBe(`/eo/message/${validID}`);
+    });
+
+    /** A paste lands in the editor as a single content change. If that change never reaches
+     *  the model, which is what `skipNextInputRef` does to the first one, the whole reply is
+     *  lost rather than a single keystroke. The send has to read the editor, not the model.
+     */
+    it('should send content that only ever reached the editor', async () => {
+        const pastedText = 'PASTED_REPLY_TEXT';
+        const renderResult = await setup();
+
+        const iframe = (await renderResult.findByTestId('rooster-iframe')) as HTMLIFrameElement;
+        await waitFor(() => {
+            expect(iframe.contentDocument?.getElementById(ROOSTER_EDITOR_ID)?.innerHTML).toBeTruthy();
+        });
+
+        const editorDocument = iframe.contentDocument as Document;
+        const editorElement = editorDocument.getElementById(ROOSTER_EDITOR_ID) as HTMLElement;
+
+        // Reproduce what a paste leaves behind without telling the model about it
+        const pastedNode = editorDocument.createElement('span');
+        pastedNode.textContent = pastedText;
+        editorElement.insertBefore(pastedNode, editorElement.firstChild);
+
+        const sendSpy = jest.fn(() => Promise.resolve({ Reply: {} }));
+        addApiMock('mail/v4/eo/reply', sendSpy, 'post');
+
+        fireEvent.click(await renderResult.findByTestId('send-eo'));
+        await waitForNotification('Message sent');
+
+        const sendRequest = (sendSpy.mock.calls[0] as any[])[0];
+        const { data: decryptedReplyBody } = await CryptoProxy.decryptMessage({
+            armoredMessage: sendRequest.data.ReplyBody,
+            passwords: [EOPassword],
+        });
+
+        expect(decryptedReplyBody).toContain(pastedText);
+        // The realignment must add the missing text without dropping the quoted original
+        expect(decryptedReplyBody).toContain('protonmail_quote');
     });
 });
