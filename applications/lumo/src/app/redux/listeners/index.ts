@@ -11,6 +11,7 @@ import { lumoEventLoopListener } from '../eventLoop/listener';
 import type { AppStartListening, LumoListener, LumoState } from '../store';
 import type { LumoThunkArguments } from '../thunk';
 import { startFeatureFlagsListeners } from './featureFlagsListener';
+import { startFileNotesListeners } from './fileNotesListener';
 import { startLumoUserSettingsListeners } from './lumoUserSettingsListener';
 import { startPersonalizationListeners } from './personalizationListener';
 import { startSkillsSyncListeners } from './skillsSyncListener';
@@ -37,6 +38,7 @@ export const start = (startListening: AppStartListening) => {
     startFeatureFlagsListeners(startListening);
     startLumoUserSettingsListeners(startListening);
     startSkillsSyncListeners(startListening);
+    startFileNotesListeners(startListening);
 };
 
 export const createLumoListenerMiddleware = ({ extra }: { extra: LumoThunkArguments }): LumoListener => {

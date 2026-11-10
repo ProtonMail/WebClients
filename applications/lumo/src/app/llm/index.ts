@@ -50,7 +50,9 @@ import {
     MAX_IMAGES_PER_REQUEST,
     countOmittedImageAttachments,
     formatOmittedImagePlaceholders,
+    getPdfPageImageRefs,
     isImageAttachment,
+    selectKeptImageIds,
     separateAttachmentsByType,
 } from './attachments';
 import { collapseCompactedChain } from './compaction';
@@ -85,16 +87,17 @@ type TurnInProgress = Turn & {
     toolResult?: string;
 };
 
-/**
- * Convert Uint8Array to base64 string
- */
-function uint8ArrayToBase64(buffer: Uint8Array<ArrayBuffer>): string {
-    let binary = '';
-    const len = buffer.byteLength;
-    for (let i = 0; i < len; i++) {
-        binary += String.fromCharCode(buffer[i]!);
+// A page's bytes never change, but the request is rebuilt on every turn: encode each page once.
+// Keyed on the bytes so the string is released together with the page.
+const pageImageBase64 = new WeakMap<Uint8Array<ArrayBuffer>, string>();
+
+function pageImageToBase64(data: Uint8Array<ArrayBuffer>): string {
+    let encoded = pageImageBase64.get(data);
+    if (encoded === undefined) {
+        encoded = data.toBase64();
+        pageImageBase64.set(data, encoded);
     }
-    return btoa(binary);
+    return encoded;
 }
 
 /**
@@ -109,7 +112,7 @@ function attachmentToWireImage(attachment: Attachment): WireImage {
     return {
         encrypted: false, // Will be set during encryption phase
         image_id: attachment.id,
-        data: uint8ArrayToBase64(data),
+        data: data.toBase64(),
     };
 }
 
@@ -147,7 +150,8 @@ function getArtifactToolNudge(mode: Exclude<ArtifactToolMode, 'off'>, presentati
 
 /**
  * Determine which image attachments should be sent to the backend, keeping only the
- * most recent {@link MAX_IMAGES_PER_REQUEST} images across the whole conversation.
+ * most recent {@link MAX_IMAGES_PER_REQUEST} uploaded images (plus a separate, smaller budget of PDF
+ * page images) across the whole conversation.
  *
  * Images are ordered chronologically by walking the (post-compaction) chain and
  * applying the same context-filter exclusions used when building turns, so the result
@@ -155,20 +159,21 @@ function getArtifactToolNudge(mode: Exclude<ArtifactToolMode, 'off'>, presentati
  * IDs to keep; non-image attachments are unaffected.
  */
 function computeKeptImageIds(effectiveChain: Message[], contextFilters: ContextFilter[]): Set<string> {
-    const orderedImageIds: string[] = [];
+    const uploadedImageIds: string[] = [];
+    const pageImageIds: string[] = [];
     for (const message of effectiveChain) {
         const filtered = filterMessageAttachments(message.attachments, message.id, contextFilters) ?? [];
         for (const attachment of filtered) {
             if (isImageAttachment(attachment as Attachment)) {
-                orderedImageIds.push(attachment.id);
+                uploadedImageIds.push(attachment.id);
+            } else {
+                pageImageIds.push(...getPdfPageImageRefs(attachment).map((ref) => ref.id));
             }
         }
     }
 
-    if (orderedImageIds.length <= MAX_IMAGES_PER_REQUEST) {
-        return new Set(orderedImageIds);
-    }
-    return new Set(orderedImageIds.slice(orderedImageIds.length - MAX_IMAGES_PER_REQUEST));
+    // PDF pages have their own, smaller budget so they never displace uploaded images.
+    return selectKeptImageIds(uploadedImageIds, pageImageIds);
 }
 
 export function prepareTurns(
@@ -437,7 +442,11 @@ function formatTextAttachmentContent(attachment: Attachment): string | null {
 }
 
 /** A single text-file turn produced from an attachment. */
-function createTextAttachmentTurn(shallowAttachment: ShallowAttachment, allAttachments: Attachment[]): Turn | null {
+function createTextAttachmentTurn(
+    shallowAttachment: ShallowAttachment,
+    allAttachments: Attachment[],
+    keptImageIds: Set<string>
+): Turn | null {
     const fullAttachment = allAttachments.find((a) => a.id === shallowAttachment.id);
     if (!fullAttachment) return null;
 
@@ -446,12 +455,33 @@ function createTextAttachmentTurn(shallowAttachment: ShallowAttachment, allAttac
         return null; // images are handled separately (grouped into one turn)
     }
 
+    // A PDF carries its rendered pages in the same turn as its text: each <lumo-image> marker
+    // must sit in the same turn as its bytes. Pages beyond the image limit are left out.
+    const pages = getPdfPageImageRefs(fullAttachment).filter((ref) => keptImageIds.has(ref.id));
+    const images: WireImage[] = [];
+    const markers: string[] = [];
+    for (const ref of pages) {
+        try {
+            images.push({ encrypted: false, image_id: ref.id, data: pageImageToBase64(ref.data) });
+            markers.push(lumoImageMarker(ref.id, 'user', `${fullAttachment.filename} (page ${ref.page})`));
+        } catch (error) {
+            console.error(`Failed to convert page ${ref.page} of ${fullAttachment.id} to WireImage:`, error);
+        }
+    }
+
     // Skip when there is no usable content so the model doesn't receive an empty
     // file block (which it interprets as "file is empty").
-    const content = formatTextAttachmentContent(fullAttachment);
-    if (!content) return null;
+    const text = formatTextAttachmentContent(fullAttachment);
+    if (images.length === 0) {
+        return text ? { role: Role.User, content: text } : null;
+    }
 
-    return { role: Role.User, content };
+    const intro = `Filename: ${fullAttachment.filename}\nThe following are rendered pages of this PDF (pages with images or little text).`;
+    return {
+        role: Role.User,
+        content: [text ?? intro, text ? intro : undefined, ...markers].filter(Boolean).join('\n'),
+        images,
+    };
 }
 
 /**
@@ -529,7 +559,7 @@ function expandAttachmentsIntoTurns(
     const omittedText = formatOmittedImagePlaceholders(omittedImageCount);
 
     const textTurns = shallowAttachments
-        .map((att) => createTextAttachmentTurn(att, allAttachments))
+        .map((att) => createTextAttachmentTurn(att, allAttachments, keptImageIds))
         .filter((t): t is Turn => t !== null);
 
     const imageTurn = createGroupedImageTurn(shallowAttachments, allAttachments, turn.role, keptImageIds);

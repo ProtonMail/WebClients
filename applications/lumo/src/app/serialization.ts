@@ -5,6 +5,7 @@ import stableStringify from 'json-stable-stringify';
 import isNil from 'lodash/isNil';
 import isObject from 'lodash/isObject';
 
+import { MAX_SERIALIZED_ASSET_BYTES } from './constants';
 import {
     base64ToSpaceKey,
     cryptoKeyToBase64,
@@ -346,7 +347,7 @@ export async function deserializeMessage(
                         );
                         // Try to recover by removing data, markdown and imagePreview if they exist
                         if (att && typeof att === 'object' && att.id && att.uploadedAt) {
-                            const { data, markdown, imagePreview, ...shallowAtt } = att;
+                            const { data, markdown, imagePreview, pageImages, ...shallowAtt } = att;
                             if (isShallowAttachment(shallowAtt)) {
                                 validAttachments.push(shallowAtt);
                             }
@@ -378,6 +379,7 @@ export async function serializeAttachment(
 ): Promise<SerializedAttachment | null> {
     try {
         const ad = getAttachmentAd(attachment);
+        // `splitAttachment` leaves out the in-memory `pageImages`: they are never persisted.
         const { attachmentPriv, attachmentPub } = splitAttachment(attachment);
         const { processing, ...attachmentPubRest } = attachmentPub;
 
@@ -396,6 +398,10 @@ export async function serializeAttachment(
         };
 
         const packed = msgpackEncode(privPlus) as Uint8Array<ArrayBuffer>;
+        // Fail here, with a clear reason, rather than on an upload the backend is certain to reject.
+        if (packed.byteLength > MAX_SERIALIZED_ASSET_BYTES) {
+            throw new Error(`payload of ${packed.byteLength} bytes exceeds the ${MAX_SERIALIZED_ASSET_BYTES} byte limit`);
+        }
         const encrypted: EncryptedData = await encryptUint8Array(packed, spaceDek, ad);
         return {
             ...attachmentPubRest,

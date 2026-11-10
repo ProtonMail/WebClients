@@ -1,6 +1,6 @@
 import { isGeneratedImageAttachment } from '../lib/imageAttachment';
 import type { ContextFilter } from './contextFilter';
-import { getImageLimitInfo, isImageAttachment } from './attachments';
+import { getImageLimitInfo, getPdfPageImageRefs, isImageAttachment } from './attachments';
 import { getAttachmentDocumentKey } from '../util/resolveProjectFiles';
 import { calculateAttachmentContextSize, countAttachmentToken } from './utils';
 import type { Attachment, Message, ShallowAttachment } from '../types';
@@ -30,6 +30,10 @@ function hasSendableFileContent(attachment: Attachment): boolean {
         return true;
     }
     if (attachment.markdown?.trim()) {
+        return true;
+    }
+    // A scanned PDF has no text but its rendered pages are still worth sending.
+    if (getPdfPageImageRefs(attachment).length > 0) {
         return true;
     }
     return Boolean(attachment.error);

@@ -1073,12 +1073,32 @@ export type AttachmentPriv = {
     generatedArtifactAsset?: GeneratedArtifactAssetMeta;
 };
 
+/** A rendered PDF page (1-based page number), already reduced for the model. */
+export type PdfPageImage = {
+    page: number;
+    data: Uint8Array<ArrayBuffer>;
+};
+
+function isPdfPageImage(value: any): value is PdfPageImage {
+    return (
+        typeof value === 'object' &&
+        value !== null &&
+        Number.isInteger(value.page) &&
+        value.data instanceof Uint8Array
+    );
+}
+
 // This contains metadata as well as the complete blob data.
 // It is a decrypted version of what will ultimately go into IndexedDB
-export type Attachment = AttachmentPub & AttachmentPriv;
+// Held in memory only, never part of the encrypted payload (see AttachmentPriv): the rendered pages of a PDF,
+// sent to the model next to `markdown`. They are cheap to render again from `data`, so they are not persisted.
+type AttachmentInMemory = {
+    pageImages?: PdfPageImage[];
+};
+export type Attachment = AttachmentPub & AttachmentPriv & AttachmentInMemory;
 // `imagePreview` is a Uint8Array (non-serializable) and is excluded so shallow attachments stored
 // in Redux/message state stay serializable. The full preview lives in the attachmentDataCache.
-export type ShallowAttachment = Omit<Attachment, 'data' | 'markdown' | 'imagePreview'>;
+export type ShallowAttachment = Omit<Attachment, 'data' | 'markdown' | 'imagePreview' | 'pageImages'>;
 
 // This is how objects are serialized into both IndexedDB and the remote persistence API.
 // The Encrypted part reflects AttachmentPriv and thus contains "heavy" fields like the data blob
@@ -1125,8 +1145,12 @@ export function isAttachmentPriv(value: any): value is AttachmentPriv {
     );
 }
 
+function isAttachmentInMemory(value: any): value is AttachmentInMemory {
+    return value.pageImages === undefined || (Array.isArray(value.pageImages) && value.pageImages.every(isPdfPageImage));
+}
+
 export function isAttachment(value: any): value is Attachment {
-    return isAttachmentPub(value) && isAttachmentPriv(value);
+    return isAttachmentPub(value) && isAttachmentPriv(value) && isAttachmentInMemory(value);
 }
 
 export function isShallowAttachment(value: any): value is ShallowAttachment {
@@ -1134,7 +1158,8 @@ export function isShallowAttachment(value: any): value is ShallowAttachment {
         isAttachment(value) &&
         value.data === undefined &&
         value.markdown === undefined &&
-        value.imagePreview === undefined
+        value.imagePreview === undefined &&
+        value.pageImages === undefined
     );
 }
 

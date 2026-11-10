@@ -1,13 +1,14 @@
 import { Suspense, lazy, useCallback, useState } from 'react';
 
 import {
+    ANALYZE_FILE_TOOL_NAME,
     READ_KNOWLEDGE_TOOL_NAME,
     SEARCH_KNOWLEDGE_TOOL_NAME,
 } from '../../../../../../features/client-tools/retrievalTool/schema';
 import { READ_SKILL_FILE_TOOL_NAME, USE_SKILL_TOOL_NAME } from '../../../../../../features/skills/skillTool';
 import type { NativeToolCallData } from '../../../../../../lib/toolCall/types';
 import { tryParseToolCall, tryParseToolCallAnnouncement } from '../../../../../../lib/toolCall/types';
-import { findToolResultForCall } from '../../../../../../messageHelpers';
+import { findToolResultForCall, getToolCallBlockId } from '../../../../../../messageHelpers';
 import type { ContentBlock, Message, ThinkingTimelineEvent, ToolCallBlock } from '../../../../../../types';
 import { isToolCallBlock } from '../../../../../../types';
 import StreamingMarkdownRenderer from '../../../../../LumoMarkdown/StreamingMarkdownRenderer';
@@ -186,7 +187,11 @@ function toToolCallStep(
 
     if (!toolCall) {
         const toolCallName = getToolCallNameFromBlock(block);
-        if (toolCallName === SEARCH_KNOWLEDGE_TOOL_NAME || toolCallName === READ_KNOWLEDGE_TOOL_NAME) {
+        if (
+            toolCallName === SEARCH_KNOWLEDGE_TOOL_NAME ||
+            toolCallName === READ_KNOWLEDGE_TOOL_NAME ||
+            toolCallName === ANALYZE_FILE_TOOL_NAME
+        ) {
             return {
                 type: 'tool_call',
                 toolCall: { name: toolCallName },
@@ -194,7 +199,8 @@ function toToolCallStep(
                 knowledge: getKnowledgeStepDetails(
                     toolCallName,
                     getToolCallArguments(block),
-                    findToolResultForCall(allBlocks, block)?.content
+                    findToolResultForCall(allBlocks, block)?.content,
+                    getToolCallBlockId(block)
                 ),
             };
         }

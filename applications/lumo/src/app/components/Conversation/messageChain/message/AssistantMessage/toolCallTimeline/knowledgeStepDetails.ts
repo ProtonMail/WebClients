@@ -1,4 +1,5 @@
 import {
+    ANALYZE_FILE_TOOL_NAME,
     READ_KNOWLEDGE_TOOL_NAME,
     SEARCH_KNOWLEDGE_TOOL_NAME,
 } from '../../../../../../features/client-tools/retrievalTool/schema';
@@ -20,6 +21,10 @@ export type KnowledgeStepDetails = {
     noMatches: boolean;
     /** A read of a chat message rather than of a file. */
     readsChat: boolean;
+    /** A whole file read through by a helper, which takes long enough to show progress. */
+    analyzesFile: boolean;
+    /** Id of the tool call, to find its progress. */
+    callId?: string;
 };
 
 const parseObject = (value: unknown): Record<string, unknown> | undefined => {
@@ -60,7 +65,8 @@ const itemKey = (item: KnowledgeItem) =>
 export function getKnowledgeStepDetails(
     name: string,
     rawArguments: unknown,
-    rawResult: string | undefined
+    rawResult: string | undefined,
+    callId?: string
 ): KnowledgeStepDetails {
     const args = parseObject(rawArguments);
     const result = parseObject(rawResult);
@@ -69,6 +75,8 @@ export function getKnowledgeStepDetails(
         more: 0,
         noMatches: false,
         readsChat: name === READ_KNOWLEDGE_TOOL_NAME && !!asText(args?.message_id),
+        analyzesFile: name === ANALYZE_FILE_TOOL_NAME,
+        callId,
     };
 
     if (name === SEARCH_KNOWLEDGE_TOOL_NAME) {
@@ -98,6 +106,12 @@ export function getKnowledgeStepDetails(
         if (item) {
             details.items = [item];
             details.readsChat = item.kind === 'chat';
+        }
+    }
+    if (name === ANALYZE_FILE_TOOL_NAME && result?.ok === true) {
+        const item = toItem(result, 'file');
+        if (item) {
+            details.items = [item];
         }
     }
     return details;

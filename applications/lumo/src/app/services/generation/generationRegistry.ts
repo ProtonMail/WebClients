@@ -17,6 +17,19 @@ export const OPERATION_IN_PROGRESS_MESSAGE = 'Another operation is already in pr
  */
 class GenerationRegistry {
     private controllers = new Map<ConversationId, AbortController>();
+    private listeners = new Set<() => void>();
+
+    /** Calls `listener` whenever a conversation starts or stops generating. Returns the unsubscribe. */
+    subscribe = (listener: () => void): (() => void) => {
+        this.listeners.add(listener);
+        return () => {
+            this.listeners.delete(listener);
+        };
+    };
+
+    private notify(): void {
+        this.listeners.forEach((listener) => listener());
+    }
 
     /**
      * Register and return a fresh AbortController for the given conversation.
@@ -28,12 +41,15 @@ class GenerationRegistry {
         }
         const controller = new AbortController();
         this.controllers.set(conversationId, controller);
+        this.notify();
         return controller;
     }
 
     /** Remove the controller for a conversation once its generation settles. */
     finish(conversationId: ConversationId): void {
-        this.controllers.delete(conversationId);
+        if (this.controllers.delete(conversationId)) {
+            this.notify();
+        }
     }
 
     /** Abort the in-flight generation for a conversation (explicit user stop). */
@@ -42,6 +58,7 @@ class GenerationRegistry {
         if (controller) {
             controller.abort();
             this.controllers.delete(conversationId);
+            this.notify();
         }
     }
 
@@ -51,6 +68,7 @@ class GenerationRegistry {
             controller.abort();
         }
         this.controllers.clear();
+        this.notify();
     }
 
     isInProgress(conversationId: ConversationId): boolean {

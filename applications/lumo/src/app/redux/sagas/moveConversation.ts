@@ -483,6 +483,10 @@ function* copyConversation(request: MoveConversationToSpaceRequest, created: Cre
         if (imagePreview) {
             attachmentDataCache.setImagePreview(newId, imagePreview);
         }
+        const pageImages = attachmentDataCache.getPageImages(oldId);
+        if (pageImages) {
+            attachmentDataCache.setPageImages(newId, pageImages);
+        }
         newAttachments.push(
             cleanAttachment({
                 ...full,

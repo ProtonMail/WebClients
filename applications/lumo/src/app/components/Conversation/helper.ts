@@ -1,3 +1,4 @@
+import { quickChat } from '@proton/lumo-api-client/assistant';
 import type { ClientToolExecutor } from '@proton/lumo-api-client/core/client-tools';
 import {
     getDesktopConnectorCatalog,
@@ -11,7 +12,14 @@ import { generateSpaceKeyBase64 } from '../../crypto';
 import { findAgentById } from '../../features/agents/registry';
 import { collectRetrievalExclusions } from '../../features/client-tools/retrievalTool/exclusions';
 import { formatRetrievalInstructions } from '../../features/client-tools/retrievalTool/instructions';
+import {
+    formatPrefetchedNotes,
+    isLargeTextFile,
+    prefetchFileNotes,
+    selectFilesToAnalyze,
+} from '../../features/client-tools/retrievalTool/prefetchAnalysis';
 import { type RetrievalContext, findRelatedChats } from '../../features/client-tools/retrievalTool/retrievalTool';
+import { ANALYZE_FILE_TOOL_NAME } from '../../features/client-tools/retrievalTool/schema';
 import { isOpenToOtherSpaces, resolveSearchReach } from '../../features/client-tools/retrievalTool/searchReach';
 import type { DesktopConnectorState } from '../../features/skills/connectorMatching';
 import { formatSkillCatalogue } from '../../features/skills/skillInvocation';
@@ -49,6 +57,8 @@ import {
     finishMessage,
     newMessageId,
     pushMessageRequest,
+    setToolCall,
+    setToolResult,
 } from '../../redux/slices/core/messages';
 import { addSpace, newSpaceId, pushSpaceRequest } from '../../redux/slices/core/spaces';
 import type { Memory } from '../../redux/slices/lumoUserSettings';
@@ -95,6 +105,8 @@ import type { ConversationContext } from './conversationContext';
 const MAX_RELATED_QUERY_CHARS = 500;
 /** The message is sent without the related-chats hint rather than wait longer for it. */
 const RELATED_CHATS_BUDGET_MS = 500;
+/** The small, fast model that takes notes when the main model has a whole file read for it. */
+const FILE_ANALYSIS_MODEL_TIER = 'lumo-lite';
 
 /** `promise`'s value, or `fallback` if it fails or takes longer than `ms`. */
 function withinBudget<T>(promise: Promise<T>, ms: number, fallback: T): Promise<T> {
@@ -159,8 +171,19 @@ async function resolveRetrieval({
     chatAttachments,
     contextFilters,
     hasLumoPlus,
+    api,
+    signal,
+    prefetch,
 }: {
     enabled: boolean;
+    /**
+     * Read the large files this message is about before the model answers, showing the work as
+     * a step of this assistant message. Only for a new message: retries and regenerations reuse the notes.
+     */
+    prefetch?: { assistantMessageId: MessageId; dispatch: LumoDispatch };
+    /** Lets the model have a whole file read by a small model (analyze_file). */
+    api: Api;
+    signal: AbortSignal;
     getState: () => LumoState;
     conversationId: ConversationId;
     spaceId: SpaceId;
@@ -201,8 +224,74 @@ async function resolveRetrieval({
         exclusions,
         getState,
         index,
+        signal,
+        analyze: (prompt) =>
+            quickChat(api, prompt, {
+                signal,
+                modelTier: FILE_ANALYSIS_MODEL_TIER,
+                config: { enableU2LEncryption: ENABLE_U2L_ENCRYPTION },
+            }),
     };
     const latestUserMessage = chain.findLast((message) => message.role === Role.User);
+    if (prefetch && tools.analyze && latestUserMessage) {
+        const files = selectFilesToAnalyze({
+            chatAttachments,
+            exclusions,
+            message: {
+                content: getMessageContent(latestUserMessage),
+                attachmentIds: (latestUserMessage.attachments ?? []).map((attachment) => attachment.id),
+            },
+        });
+        const { assistantMessageId, dispatch } = prefetch;
+        await prefetchFileNotes({
+            files,
+            goal: getMessageContent(latestUserMessage),
+            ask: tools.analyze,
+            signal,
+            onStart: ({ callId, fileId, goal }) => {
+                dispatch(
+                    setToolCall({
+                        messageId: assistantMessageId,
+                        content: JSON.stringify({
+                            id: callId,
+                            name: ANALYZE_FILE_TOOL_NAME,
+                            arguments: { file_id: fileId, goal },
+                        }),
+                    })
+                );
+            },
+            onFinish: ({ callId }, result) => {
+                dispatch(
+                    setToolResult({
+                        messageId: assistantMessageId,
+                        callId,
+                        // The notes are the result, as when the model calls the tool itself, so later
+                        // turns replay them from the chat's history.
+                        content: JSON.stringify(
+                            result.ok
+                                ? {
+                                      ok: true,
+                                      file_id: result.notes.fileId,
+                                      file_name: result.notes.fileName,
+                                      pages: result.notes.pages,
+                                      ...(result.notes.pdfPages && { pdf_pages: result.notes.pdfPages }),
+                                      notes: result.notes.notes,
+                                      ...(result.notes.warnings.length > 0 && { warnings: result.notes.warnings }),
+                                  }
+                                : { ok: false, error: 'The file could not be read through.' }
+                        ),
+                    })
+                );
+            },
+        });
+        throwIfAborted(signal);
+    }
+    const fileNotes = latestUserMessage
+        ? formatPrefetchedNotes(
+              chatAttachments.filter(isLargeTextFile).map((file) => file.id),
+              getMessageContent(latestUserMessage)
+          )
+        : undefined;
     const relatedChats = latestUserMessage
         ? await withinBudget(
               findRelatedChats(tools, getMessageContent(latestUserMessage).slice(0, MAX_RELATED_QUERY_CHARS)),
@@ -219,6 +308,8 @@ async function resolveRetrieval({
             searchOtherSpaces,
             projectFiles,
             relatedChats,
+            canAnalyze: true,
+            fileNotes,
         }),
     };
 }
@@ -862,7 +953,7 @@ export function executeConversationTurn({
                 const newShallowAttachments: ShallowAttachment[] = ragResult.attachments
                     .filter((att) => !existingAttachmentIds.has(att.id))
                     .map((att) => {
-                        const { data, markdown, imagePreview, ...shallow } = att;
+                        const { data, markdown, imagePreview, pageImages, ...shallow } = att;
                         return shallow as ShallowAttachment;
                     });
 
@@ -954,6 +1045,9 @@ export function executeConversationTurn({
                 chatAttachments: updatedC.allConversationAttachments,
                 contextFilters: updatedC.contextFilters,
                 hasLumoPlus: !!s.hasLumoPlus,
+                api: a.api,
+                signal: a.signal,
+                prefetch: { assistantMessageId: assistantMessage.id, dispatch },
             });
 
             const buildTurns = (chain: Message[]) =>
@@ -1116,7 +1210,7 @@ export function regenerateMessage({
                 const newShallowAttachments: ShallowAttachment[] = ragResult.attachments
                     .filter((att) => !existingAttachmentIds.has(att.id))
                     .map((att) => {
-                        const { data, markdown, imagePreview, ...shallow } = att;
+                        const { data, markdown, imagePreview, pageImages, ...shallow } = att;
                         return shallow as ShallowAttachment;
                     });
 
@@ -1200,6 +1294,8 @@ export function regenerateMessage({
                 chatAttachments: c.allConversationAttachments,
                 contextFilters: c.contextFilters,
                 hasLumoPlus: !!s.hasLumoPlus,
+                api: a.api,
+                signal: a.signal,
             });
 
             const buildTurns = (chain: Message[]) => {
@@ -1378,7 +1474,7 @@ export function retrySendMessage({
             const newShallowAttachments: ShallowAttachment[] = ragResult.attachments
                 .filter((att) => !existingAttachmentIds.has(att.id))
                 .map((att) => {
-                    const { data, markdown, imagePreview, ...shallow } = att;
+                    const { data, markdown, imagePreview, pageImages, ...shallow } = att;
                     return shallow as ShallowAttachment;
                 });
 
@@ -1469,6 +1565,8 @@ export function retrySendMessage({
             chatAttachments: c2.allConversationAttachments,
             contextFilters: c2.contextFilters,
             hasLumoPlus: !!s.hasLumoPlus,
+            api: a.api,
+            signal: a.signal,
         });
 
         const buildTurns = (chain: Message[]) =>

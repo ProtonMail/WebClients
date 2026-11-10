@@ -57,7 +57,8 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
     const { isGhostChatMode } = useGhostChat();
     const filePreviewModal = useModalStateObject();
     const [previewAttachment, setPreviewAttachment] = useState<Attachment | null>(null);
-    const { exceedsLimit: imageLimitExceeded } = useImageLimitInfo(EMPTY_MESSAGE_CHAIN);
+    const { exceedsLimit: imageLimitExceeded, exceedsPageLimit: pageLimitExceeded } =
+        useImageLimitInfo(EMPTY_MESSAGE_CHAIN);
     const handleOpenFilePreview = useCallback(
         (attachment: Attachment) => {
             setPreviewAttachment(attachment);
@@ -113,7 +114,7 @@ const MainContainer = ({ isProcessingAttachment, initialQuery, prefillQuery }: M
                         )}
 
                         <div className="composer-container md:px-4 w-full relative">
-                            <ImageLimitNotice exceedsLimit={imageLimitExceeded} />
+                            <ImageLimitNotice exceedsLimit={imageLimitExceeded} exceedsPageLimit={pageLimitExceeded} />
                             <ComposerComponent
                                 composerMode={ComposerMode.NEW_CONVERSATION}
                                 handleSendMessage={handleSendMessage}

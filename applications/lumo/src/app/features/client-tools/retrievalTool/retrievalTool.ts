@@ -4,6 +4,7 @@ import { languageCode } from '@proton/shared/lib/i18n';
 import { applyRetentionPolicy } from '../../../layouts/sidepanel/helpers';
 import { isImageAttachment } from '../../../llm/attachments';
 import type { LumoState } from '../../../redux/store';
+import { clearAnalysisProgress, setAnalysisProgress } from '../../../services/analysisProgressStore';
 import { BM25Index } from '../../../services/search/bm25Index';
 import type { SearchService } from '../../../services/search/searchService';
 import { STOPWORDS } from '../../../services/search/stopwords';
@@ -26,17 +27,23 @@ import {
     findMentionedFiles,
     normalizeFileName,
 } from './fileNames';
+import { countPdfPages } from '../../../lib/attachments/pdfChangeMarkup';
+import { type AskModel, analyzeFile } from './fileAnalysis';
 import { snippetAround, splitIntoPages } from './pages';
 import {
+    ANALYZE_FILE_TOOL_NAME,
     DEFAULT_RESULTS,
+    MAX_GOAL_CHARS,
     MAX_FILE_IDS,
     MAX_QUERY_CHARS,
+    MAX_PAGES_PER_READ,
     MAX_RESULTS,
     READ_KNOWLEDGE_TOOL_NAME,
     RETRIEVAL_SCOPES,
     RETRIEVAL_SOURCES,
     type RetrievalScope,
     type RetrievalSource,
+    analyzeFileTool,
     readKnowledgeTool,
     searchKnowledgeTool,
 } from './schema';
@@ -45,8 +52,16 @@ import {
  * Per reply, so retrieval rounds (which count against usage limits) stay bounded. Shared
  * across compaction retries of the same send because the executor is created once per send.
  */
-export const MAX_RETRIEVAL_CALLS_PER_REPLY = 8;
-export const MAX_READS_PER_REPLY = 4;
+export const MAX_RETRIEVAL_CALLS_PER_REPLY = 16;
+export const MAX_READS_PER_REPLY = 10;
+/** Whole-file analyses per reply; each runs a model call per few pages. */
+export const MAX_ANALYSES_PER_REPLY = 3;
+/**
+ * What one reply may read in total, about 75K tokens. Reads are limited by how much text they
+ * return, not only by how many calls were made, so a long document costs a few multi-page reads
+ * instead of one call per page. Whatever is left unread is reported with next_page.
+ */
+export const MAX_READ_CHARS_PER_REPLY = 300_000;
 /** Indexed documents shortlisted before their pages are ranked. */
 const MAX_INDEXED_DOCUMENTS = 8;
 /** Newest messages considered when searching chats, so a long history stays fast. */
@@ -100,6 +115,13 @@ export type RetrievalContext = {
     getState: () => Pick<LumoState, 'conversations' | 'messages'>;
     /** The user's search index; absent for guests and ghost chats. */
     index?: RetrievalIndex;
+    /**
+     * Asks a small model one question and returns its reply. When present the model may have a
+     * whole file read for it (analyze_file); without it the tool is not offered.
+     */
+    analyze?: AskModel;
+    /** Stops the reply; a file analysis in progress throws instead of reporting what it had read. */
+    signal?: AbortSignal;
 };
 
 type FileSource = { id: string; name: string; text: string };
@@ -257,6 +279,16 @@ function parsePage(value: unknown): Parsed<number> {
     return { value };
 }
 
+function parsePageCount(value: unknown): Parsed<number> {
+    if (value === undefined) {
+        return { value: 1 };
+    }
+    if (typeof value !== 'number' || !Number.isInteger(value) || value < 1 || value > MAX_PAGES_PER_READ) {
+        return { error: `page_count must be an integer from 1 to ${MAX_PAGES_PER_READ}` };
+    }
+    return { value };
+}
+
 /** Counts for one reply's lookups. Never queries, names or results. */
 export type RetrievalUsage = {
     searches: number;
@@ -270,11 +302,13 @@ export type RetrievalUsage = {
 export type RetrievalToolExecutor = ClientToolExecutor & { getUsage: () => RetrievalUsage };
 
 export const createRetrievalToolExecutor = (context: RetrievalContext): RetrievalToolExecutor => {
-    const tools = [searchKnowledgeTool, readKnowledgeTool];
+    const tools = [searchKnowledgeTool, readKnowledgeTool, ...(context.analyze ? [analyzeFileTool] : [])];
     const toolNames = new Set(tools.map((tool) => tool.function.name));
     const pagesById = new Map<string, string[]>();
     let calls = 0;
+    let analyses = 0;
     let reads = 0;
+    let readChars = 0;
     const usage: RetrievalUsage = {
         searches: 0,
         emptySearches: 0,
@@ -568,7 +602,37 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): Retrieva
         };
     };
 
-    const readFile = async (fileId: string, page: number): Promise<ClientToolResult> => {
+    /**
+     * Up to `count` consecutive pages from `start`, stopping early when the reply's read budget
+     * would be exceeded (the first page is always returned). `next_page` says where to continue.
+     */
+    const takePages = (pages: string[], start: number, count: number) => {
+        const budget = MAX_READ_CHARS_PER_REPLY - readChars;
+        const lastWanted = Math.min(pages.length, start + count - 1);
+        let last = start - 1;
+        let chars = 0;
+        for (let page = start; page <= lastWanted; page += 1) {
+            const length = pages[page - 1]!.length;
+            if (page > start && chars + length > budget) {
+                break;
+            }
+            chars += length;
+            last = page;
+        }
+        readChars += chars;
+        const content = pages.slice(start - 1, last).join('\n\n');
+        return {
+            content,
+            window: {
+                page: start,
+                last_page: last,
+                pages: pages.length,
+                ...(last < pages.length && { next_page: last + 1 }),
+            },
+        };
+    };
+
+    const lookupFile = async (fileId: string): Promise<FileSource | undefined> => {
         let file: FileSource | undefined = findChatFile(fileId);
         if (!file && context.allowWideScopes && context.index && !context.exclusions.documentIds.has(fileId)) {
             const document = await context.index.getIndexedDocument(fileId);
@@ -577,6 +641,11 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): Retrieva
                 file = { id: document.id, name: document.name, text: document.text };
             }
         }
+        return file;
+    };
+
+    const readFile = async (fileId: string, page: number, pageCount: number): Promise<ClientToolResult> => {
+        const file = await lookupFile(fileId);
         if (!file) {
             return errorResult('Unknown file_id. Use an id from the file list or from search_knowledge results.');
         }
@@ -584,20 +653,21 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): Retrieva
         if (page > pages.length) {
             return errorResult(`This file has ${pages.length} page(s).`);
         }
+        const { content, window } = takePages(pages, page, pageCount);
         return {
             content: JSON.stringify({
                 ok: true,
                 file_id: file.id,
                 file_name: file.name,
-                page,
-                pages: pages.length,
-                content: pages[page - 1],
-                ...(await mentionedFiles(pages[page - 1]!, file.id)),
+                ...(countPdfPages(file.text) && { pdf_pages: countPdfPages(file.text) }),
+                ...window,
+                content,
+                ...(await mentionedFiles(content, file.id)),
             }),
         };
     };
 
-    const readMessage = async (messageId: string, page: number): Promise<ClientToolResult> => {
+    const readMessage = async (messageId: string, page: number, pageCount: number): Promise<ClientToolResult> => {
         const message = context.getState().messages[messageId];
         if (!message || !isReadableConversation(message.conversationId)) {
             return errorResult('Unknown message_id. Use an id from search_knowledge results.');
@@ -606,6 +676,7 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): Retrieva
         if (page > pages.length) {
             return errorResult(`This message has ${pages.length} page(s).`);
         }
+        const { content, window } = takePages(pages, page, pageCount);
         return {
             content: JSON.stringify({
                 ok: true,
@@ -616,10 +687,9 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): Retrieva
                 in_this_chat: message.conversationId === context.conversationId,
                 role: message.role,
                 date: message.createdAt.slice(0, 10),
-                page,
-                pages: pages.length,
-                content: pages[page - 1],
-                ...(await mentionedFiles(pages[page - 1]!, '')),
+                ...window,
+                content,
+                ...(await mentionedFiles(content, '')),
             }),
         };
     };
@@ -629,12 +699,16 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): Retrieva
         if ('error' in page) {
             return errorResult(page.error);
         }
+        const pageCount = parsePageCount(args?.page_count);
+        if ('error' in pageCount) {
+            return errorResult(pageCount.error);
+        }
         const given = ['file_id', 'file_name', 'message_id'].filter((key) => args?.[key] !== undefined);
         if (given.length === 1 && isId(args?.file_id)) {
-            return readFile(args.file_id, page.value);
+            return readFile(args.file_id, page.value, pageCount.value);
         }
         if (given.length === 1 && isId(args?.message_id)) {
-            return readMessage(args.message_id, page.value);
+            return readMessage(args.message_id, page.value, pageCount.value);
         }
         const fileName = args?.file_name;
         if (
@@ -644,14 +718,86 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): Retrieva
             fileName.length <= MAX_FILE_NAME_CHARS
         ) {
             const resolved = await resolveFileName(fileName);
-            return 'fileId' in resolved ? readFile(resolved.fileId, page.value) : resolved.result;
+            return 'fileId' in resolved ? readFile(resolved.fileId, page.value, pageCount.value) : resolved.result;
         }
         return errorResult(
-            'arguments: expected one of {"file_id": "<id>"}, {"file_name": "<name>"} or {"message_id": "<id>"}, and optionally "page"'
+            'arguments: expected one of {"file_id": "<id>"}, {"file_name": "<name>"} or {"message_id": "<id>"}, and optionally "page" and "page_count"'
         );
     };
 
-    const runCall = async (name: string, rawArguments: string): Promise<ClientToolResult> => {
+    const runAnalyze = async (
+        args: Record<string, unknown> | undefined,
+        callId: string | undefined
+    ): Promise<ClientToolResult> => {
+        const goal = typeof args?.goal === 'string' ? args.goal.trim() : '';
+        if (!goal || goal.length > MAX_GOAL_CHARS) {
+            return errorResult(`goal must say what you need from the file, in at most ${MAX_GOAL_CHARS} characters`);
+        }
+        const given = ['file_id', 'file_name'].filter((key) => args?.[key] !== undefined);
+        let fileId: string | undefined;
+        if (given.length === 1 && isId(args?.file_id)) {
+            fileId = args.file_id;
+        } else if (
+            given.length === 1 &&
+            typeof args?.file_name === 'string' &&
+            args.file_name.trim() &&
+            args.file_name.length <= MAX_FILE_NAME_CHARS
+        ) {
+            const resolved = await resolveFileName(args.file_name);
+            if (!('fileId' in resolved)) {
+                return resolved.result;
+            }
+            fileId = resolved.fileId;
+        }
+        if (!fileId) {
+            return errorResult('arguments: expected one of {"file_id": "<id>"} or {"file_name": "<name>"}, and a "goal"');
+        }
+        const file = await lookupFile(fileId);
+        if (!file) {
+            return errorResult('Unknown file_id. Use an id from the file list or from search_knowledge results.');
+        }
+        const pages = pagesOf(`file:${file.id}`, file.text);
+        const pdfPages = countPdfPages(file.text);
+        const analysis = await analyzeFile({
+            pages,
+            fileName: file.name,
+            goal,
+            ask: context.analyze!,
+            signal: context.signal,
+            onProgress: callId ? (step) => setAnalysisProgress(callId, step) : undefined,
+        }).finally(() => callId && clearAnalysisProgress(callId));
+        if (analysis.failedPages.length === analysis.parts) {
+            return errorResult(
+                'The helper could not read this file. Read it yourself with read_knowledge, or tell the user it could not be analysed.'
+            );
+        }
+        const warnings = [
+            ...(analysis.failedPages.length > 0
+                ? [
+                      `The helper failed on pages ${analysis.failedPages.join(', ')}, so the notes leave them out. Read them with read_knowledge or say they were not covered.`,
+                  ]
+                : []),
+            ...(analysis.notReachedFromPage !== undefined
+                ? [
+                      `The file is longer than one analysis covers: pages ${analysis.notReachedFromPage} to ${pages.length} were not analysed. Say so, or read them with read_knowledge.`,
+                  ]
+                : []),
+            ...(analysis.trimmed ? ['The notes were cut to fit, so they end early.'] : []),
+        ];
+        return {
+            content: JSON.stringify({
+                ok: true,
+                file_id: file.id,
+                file_name: file.name,
+                pages: pages.length,
+                ...(pdfPages && { pdf_pages: pdfPages }),
+                notes: analysis.notes || 'Nothing in the file matched the goal.',
+                ...(warnings.length > 0 && { warnings }),
+            }),
+        };
+    };
+
+    const runCall = async (name: string, rawArguments: string, callId?: string): Promise<ClientToolResult> => {
         calls += 1;
         if (calls > MAX_RETRIEVAL_CALLS_PER_REPLY) {
             usage.callLimitHit = true;
@@ -660,8 +806,24 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): Retrieva
             );
         }
         const args = parseArguments(rawArguments);
+        if (name === ANALYZE_FILE_TOOL_NAME) {
+            if (analyses >= MAX_ANALYSES_PER_REPLY) {
+                usage.callLimitHit = true;
+                return errorResult(
+                    'Analysis limit for this reply reached. Answer with what you have, and tell the user which files you could not analyse.'
+                );
+            }
+            analyses += 1;
+            const result = await runAnalyze(args, callId);
+            if (result.is_error) {
+                usage.errors += 1;
+            } else {
+                usage.reads += 1;
+            }
+            return result;
+        }
         if (name === READ_KNOWLEDGE_TOOL_NAME) {
-            if (reads >= MAX_READS_PER_REPLY) {
+            if (reads >= MAX_READS_PER_REPLY || readChars >= MAX_READ_CHARS_PER_REPLY) {
                 usage.readLimitHit = true;
                 return errorResult(
                     'Read limit for this reply reached. Answer with what you have, and tell the user which parts you could not read.'
@@ -696,7 +858,7 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): Retrieva
             const results: ClientToolResult[] = [];
             for (const call of toolCalls) {
                 results.push(
-                    await runCall(call.name, call.arguments).catch(() => {
+                    await runCall(call.name, call.arguments, call.id).catch(() => {
                         usage.errors += 1;
                         return errorResult('The lookup failed. Answer without it.');
                     })

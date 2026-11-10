@@ -110,17 +110,25 @@ function processCsvFile(fileData: FileData): InternalTextResult {
     };
 }
 
-async function processPdfFile(fileData: FileData): Promise<InternalTextResult> {
+async function processPdfFile(
+    fileData: FileData,
+    includePageImages: boolean,
+    pagesOnly: boolean
+): Promise<InternalTextResult> {
     try {
-        const parseResult = await pdfParse(fileData.data);
+        const parseResult = await pdfParse(fileData.data, {
+            renderPageImages: includePageImages || pagesOnly,
+            pagesOnly,
+        });
 
-        if (!parseResult || !parseResult.text) {
+        if (!parseResult || (!pagesOnly && !parseResult.text)) {
             throw new Error('PDF parsing returned empty result');
         }
 
         return {
             type: 'text',
             content: parseResult.text,
+            ...(parseResult.pageImages.length > 0 && { pageImages: parseResult.pageImages }),
         };
     } catch (error) {
         workerLogger.error(`PDF parsing failed for ${fileData.name}:`, error);
@@ -147,7 +155,9 @@ async function processExcelFile(fileData: FileData, selectedExcelSheetNames?: st
 async function processFile(
     fileData: FileData,
     isLumoPaid: boolean = false,
-    selectedExcelSheetNames?: string[]
+    selectedExcelSheetNames?: string[],
+    includePdfPageImages: boolean = false,
+    pdfPagesOnly: boolean = false
 ): Promise<InternalFileResult> {
     const startTime = performance.now();
     console.log(`[Performance] Starting processing for ${fileData.name} (${fileData.type})`);
@@ -168,7 +178,7 @@ async function processFile(
                 return await processExcelFile(fileData, selectedExcelSheetNames);
 
             case 'pdf':
-                return await processPdfFile(fileData);
+                return await processPdfFile(fileData, includePdfPageImages, pdfPagesOnly);
 
             case 'document': {
                 const pandocFormat = mimeTypeToPandocFormat(fileData.type);
@@ -220,7 +230,9 @@ async function processWithPandoc(fileData: FileData, inputFormat: string): Promi
 }
 
 const sendResponse = (response: FileProcessingResponse) => {
-    self.postMessage(response);
+    // Move the rendered page buffers instead of copying them.
+    const transfer = response.type === 'text' ? (response.pageImages?.map((p) => p.data.buffer) ?? []) : [];
+    self.postMessage(response, { transfer });
 };
 
 // Handle messages from the main thread
@@ -254,10 +266,17 @@ self.addEventListener(
             return;
         }
 
-        const { id, file, isLumoPaid = false, selectedExcelSheetNames } = event.data as FileProcessingRequest;
+        const {
+            id,
+            file,
+            isLumoPaid = false,
+            selectedExcelSheetNames,
+            includePdfPageImages = false,
+            pdfPagesOnly = false,
+        } = event.data as FileProcessingRequest;
 
         try {
-            const result = await processFile(file, isLumoPaid, selectedExcelSheetNames);
+            const result = await processFile(file, isLumoPaid, selectedExcelSheetNames, includePdfPageImages, pdfPagesOnly);
 
             // Add id to result and send
             const response: FileProcessingResponse = { id, ...result };

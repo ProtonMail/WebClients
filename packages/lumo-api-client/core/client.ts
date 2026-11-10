@@ -774,15 +774,18 @@ export class LumoApiClient {
             enableWebSearch?: boolean;
             onChunk?: (content: string) => void;
             signal?: AbortSignal;
+            /** Model to answer with; the default lets the backend choose. */
+            modelTier?: AssistantCallOptions['modelTier'];
         } = {}
     ): Promise<string> {
-        const { enableWebSearch = false, onChunk, signal } = options;
+        const { enableWebSearch = false, onChunk, signal, modelTier } = options;
         let response = '';
 
         await this.callAssistant(api, [{ role: Role.User, content: message }], {
             enableExternalTools: enableWebSearch,
             enableReasoning: false,
             signal,
+            ...(modelTier && { modelTier }),
             chunkCallback: async (msg) => {
                 if (msg.type === 'token_data' && msg.target === 'message') {
                     response += msg.content;

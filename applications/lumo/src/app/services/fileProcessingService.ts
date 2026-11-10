@@ -2,6 +2,7 @@ import { ThumbnailType } from '@protontech/drive-sdk';
 
 import { generateThumbnail } from '@proton/drive/public/thumbnails';
 
+import type { PdfPageImage } from '../types';
 import { getProcessingCategory } from '../util/filetypes';
 import type { ExcelSheetInfo } from './files/excelSheets';
 import type { InternalImageResult } from './files/types';
@@ -18,12 +19,22 @@ export interface FileProcessingRequest {
     file: FileData;
     isLumoPaid?: boolean; // User tier information for tiered processing limits
     selectedExcelSheetNames?: string[];
+    /** PDFs only: also render the pages that contain images (or hardly any text). */
+    includePdfPageImages?: boolean;
+    /** PDFs only: skip the text and just render the pages (see `includePdfPageImages`). */
+    pdfPagesOnly?: boolean;
 }
 
 export type FileProcessingOptions = {
     selectedExcelSheetNames?: string[];
+    /** PDFs only: also return rendered pages so a model can see figures and scans. Off for indexing flows. */
+    includePdfPageImages?: boolean;
+    /** PDFs only: render the pages without extracting the text, to restore pages that were not persisted. */
+    pdfPagesOnly?: boolean;
     /** Reuse a buffer already read on the main thread to avoid parsing the file twice. */
     fileData?: ArrayBuffer;
+    /** Move `fileData` to the worker instead of copying it. The buffer is unusable afterwards, so it must be one nobody else reads. */
+    transferFileData?: boolean;
 };
 
 interface ExcelSheetsListResult {
@@ -46,6 +57,8 @@ export interface TextProcessingResult {
         truncated?: boolean;
         rowCount?: { original: number; processed: number };
     };
+    /** PDFs only, when requested: rendered pages (1-based) as JPEG bytes. */
+    pageImages?: PdfPageImage[];
 }
 
 export interface ImageProcessingResult {
@@ -125,6 +138,11 @@ export type FileProcessingServiceProps = {
 
 export class FileProcessingService {
     private static instance: FileProcessingService | null = null;
+
+    /** The shared instance, created if needed, without touching the options of an existing one. */
+    static getShared(): FileProcessingService {
+        return FileProcessingService.instance ?? FileProcessingService.getInstance({ enableImageTools: false });
+    }
 
     private enableImageTools: boolean;
 
@@ -307,7 +325,7 @@ export class FileProcessingService {
 
             // Convert file to ArrayBuffer and send to worker
             this.makeRequest(id, file, options)
-                .then((request) => this.process(request))
+                .then((request) => this.process(request, options?.transferFileData && options.fileData ? [request.file.data] : []))
                 .catch((error) => {
                     // Clean up pending request on error
                     this.pendingRequests.delete(id);
@@ -315,16 +333,19 @@ export class FileProcessingService {
                 });
 
             // Set a timeout to prevent hanging requests
-            const timeout = this.getTimeout(file.size, file.type);
+            let timeout = this.getTimeout(options?.fileData?.byteLength ?? file.size, file.type);
+            if ((options?.includePdfPageImages || options?.pdfPagesOnly) && file.type === 'application/pdf') {
+                timeout = Math.max(timeout, 90000); // rendering pages is much slower than extracting text
+            }
             this.ensureFinishedAfterTimeout(id, reject, timeout);
         });
     }
 
-    private async process(request: FileProcessingRequest) {
+    private async process(request: FileProcessingRequest, transfer: Transferable[] = []) {
         if (this.needsMainThread(request)) {
             await this.processOnMainThread(request);
         } else {
-            this.sendToWorker(request);
+            this.sendToWorker(request, transfer);
         }
     }
 
@@ -360,10 +381,12 @@ export class FileProcessingService {
             file: {
                 name: file.name,
                 type: file.type,
-                size: file.size,
+                size: options?.fileData?.byteLength ?? file.size,
                 data,
             },
             selectedExcelSheetNames: options?.selectedExcelSheetNames,
+            includePdfPageImages: options?.includePdfPageImages,
+            pdfPagesOnly: options?.pdfPagesOnly,
         };
     }
 
@@ -405,13 +428,13 @@ export class FileProcessingService {
         }, timeout);
     }
 
-    private sendToWorker(request: FileProcessingRequest | ExcelSheetsListRequest) {
+    private sendToWorker(request: FileProcessingRequest | ExcelSheetsListRequest, transfer: Transferable[] = []) {
         if (!this.worker) {
             throw new Error('File processing worker failed to initialize. Please refresh the page and try again.');
         }
 
         // Message is received in fileProcessingWorker.ts
-        this.worker.postMessage(request);
+        this.worker.postMessage(request, { transfer });
     }
 
     cleanup() {

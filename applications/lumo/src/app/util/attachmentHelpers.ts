@@ -146,7 +146,11 @@ export function storeAttachmentInRedux(dispatch: LumoDispatch, attachment: Attac
         attachmentDataCache.setImagePreview(attachment.id, attachment.imagePreview);
     }
 
-    // Remove data and imagePreview fields to avoid Redux serialization issues
-    const { data, imagePreview, ...attachmentForRedux } = attachment;
+    if (attachment.pageImages) {
+        attachmentDataCache.setPageImages(attachment.id, attachment.pageImages);
+    }
+
+    // Remove binary fields to avoid Redux serialization issues
+    const { data, imagePreview, pageImages, ...attachmentForRedux } = attachment;
     dispatch(upsertAttachment(attachmentForRedux));
 }
