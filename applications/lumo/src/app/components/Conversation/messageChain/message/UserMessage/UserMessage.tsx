@@ -320,6 +320,7 @@ const UserMessage = ({
                                     isCollapsed && 'line-clamp-1'
                                 )}
                                 ref={contentRef}
+                                dir="auto"
                             >
                                 <MessageContentWithMentions
                                     content={messageContent || ''}

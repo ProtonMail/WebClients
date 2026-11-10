@@ -713,6 +713,7 @@ const ArtifactPanel = ({ isGenerating = false, layout = 'docked', onBackToFiles 
                     </ArtifactPreviewErrorBoundary>
                 ) : manualEditActive ? (
                     <TextareaAutosize
+                        dir="auto"
                         value={draftContent}
                         onChange={(e) => {
                             setDraftContent(e.target.value);

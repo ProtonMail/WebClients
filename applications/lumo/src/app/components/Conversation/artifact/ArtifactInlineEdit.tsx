@@ -202,6 +202,7 @@ export const ArtifactInlineEdit = ({
             ) : (
                 <div className="flex flex-row items-end gap-2">
                     <TextareaAutosize
+                        dir="auto"
                         ref={inputRef}
                         value={editPrompt}
                         onChange={(e) => {
