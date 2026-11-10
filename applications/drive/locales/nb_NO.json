@@ -85,6 +85,9 @@
       "Add note": [
         "Legg til notat"
       ],
+      "Add payment method": [
+        "Legg til betalingsmåte"
+      ],
       "Add people or groups to share": [
         "Legg til personer eller grupper til delt ressurs"
       ],
@@ -155,6 +158,9 @@
       ],
       "Cancel transfers": [
         "Avbryt overføringer"
+      ],
+      "Cancel trial": [
+        "Avbryt prøveperioden"
       ],
       "Cancel trial and pay": [
         "Avbryt prøveperioden og betal"
@@ -524,6 +530,9 @@
       "Go to ${ planOrAppName }": [
         "Gå til ${ planOrAppName }"
       ],
+      "Go to folder": [
+        "Gå til mappe"
+      ],
       "Go to label": [
         "Gå til etikett"
       ],
@@ -589,6 +598,15 @@
       ],
       "Import from Outlook": [
         "Importer fra Outlook"
+      ],
+      "Import now": [
+        "Importer nå"
+      ],
+      "Import paused": [
+        "Importen satt på vent"
+      ],
+      "Importing from Google": [
+        "Importerer fra Google"
       ],
       "Increase": [
         "Øk"
@@ -946,6 +964,9 @@
       ],
       "Search is unavailable": [
         "Søk er ikke tilgjengelig"
+      ],
+      "Search recent items": [
+        "Søk etter nylige elementer"
       ],
       "See how": [
         "Se hvordan"
@@ -1642,6 +1663,11 @@
       ],
       "Yearly": [
         "Årlig"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName }-skrivebordsapplikasjon"
       ]
     },
     "Bug category": {
@@ -3754,6 +3780,9 @@
       "Not a valid number": [
         "Ikke et gyldig tall"
       ],
+      "Not enough browser storage": [
+        "Ikke nok nettleserlagring"
+      ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "En av kontaktene har ingen e-postadresse: ${ noEmailsContactNamesList }.",
         "Noen av kontaktene har ingen e-postadresser: ${ noEmailsContactNamesList }. "
@@ -5034,6 +5063,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } bruker bare denne tilgangen for importen. Google får aldri tilgang til ${ BRAND_NAME }-kontoen din."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skriveassistent"
       ],
@@ -5114,6 +5146,9 @@
       ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "${ IDEAL_WERO_BRAND_NAME }-logo"
+      ],
+      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
+        "${ invitation.addedByEmail.error.claimedAuthor } (ikke bekreftet avsender)"
       ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } invitasjon venter",
@@ -5473,6 +5508,9 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Koble til ${ VPN_APP_NAME } for å surfe privat"
       ],
+      "Connecting to Google Drive and preparing your import.": [
+        "Kobler til Google Disk og forbereder importen."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilordnet gruppe ${ contactGroupName }"
       ],
@@ -5602,6 +5640,9 @@
       ],
       "Downloading": [
         "Laster ned"
+      ],
+      "Drag your files and folders here or use the \"New\" button to upload": [
+        "Dra filene og mappene dine hit eller bruk \"Ny\"-knappen for å laste opp"
       ],
       "Drop file here to upload": [
         "Slipp fil her for å laste opp"
@@ -5777,6 +5818,9 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Hvis du fjerner deg selv, mister du tilgangen til \"${ fileName }\" og kan ikke åpne den igjen med mindre eieren deler den med deg på nytt."
       ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Hvis du allerede har oppgradert, kan du gjenoppta importen i ${ easySwitchSettingsLink }. Du kan også avbryte den der."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ calendarCount } av ${ totalCalendarsCount } kalender",
         "Importer ${ calendarCount } av ${ totalCalendarsCount } kalendere"
@@ -5789,6 +5833,12 @@
       ],
       "Import mailbox": [
         "Importer postboks"
+      ],
+      "Import your files and folders": [
+        "Importer filene og mappene dine"
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importer filene og mappene dine fra Google Disk og hold dem private i ${ DRIVE_APP_NAME }."
       ],
       "Important note": [
         "Viktig merknad"
@@ -5894,6 +5944,9 @@
       ],
       "Key fingerprint": [
         "Nøkkelfingeravtrykk"
+      ],
+      "Know when it's done": [
+        "Få beskjed når det er ferdig"
       ],
       "Label all imported messages as": [
         "Merk alle importerte meldinger som"
@@ -6013,6 +6066,9 @@
       "New": [
         "Ny"
       ],
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Deretter logger du på Google-kontoen din og gir ${ BRAND_NAME } tilgang til Google Disk. Vi importerer filene og mappene dine til ${ DRIVE_APP_NAME }."
+      ],
       "No": [
         "Nei"
       ],
@@ -6099,6 +6155,9 @@
       ],
       "or discover other features:": [
         "eller oppdag andre funksjoner:"
+      ],
+      "Or import your files from": [
+        "Eller importer filene fra"
       ],
       "Or use the \"+ New\" button": [
         "Eller bruk \"+ Ny\"-knappen"
@@ -6249,6 +6308,9 @@
       "Primary": [
         "Primær"
       ],
+      "Private and encrypted": [
+        "Privat og kryptert"
+      ],
       "Private browsing (or “incognito” mode) is only useful for keeping your activity hidden on your device. It stops your browser from saving history and cookies, but it doesn’t make you invisible. Your ISP, network administrator, and the websites you visit can still see what you do online.": [
         "Privat surfing (eller \"inkognitomodus\") er bare nyttig for å holde aktiviteten din skjult på enheten din. Det hindrer nettleseren din i å lagre historikk og informasjonskapsler, men det gjør deg ikke usynlig. Internett-leverandøren, nettverksadministratoren og nettstedene du besøker, kan fortsatt se hva du gjør på nettet."
       ],
@@ -6320,6 +6382,9 @@
       ],
       "Scan to download": [
         "Skann for å laste ned"
+      ],
+      "Search covers your recent items": [
+        "Søk inkluderer de siste elementene dine"
       ],
       "Search data can't be read": [
         "Søkedataene kan ikke leses"
@@ -6428,6 +6493,9 @@
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Noen av filene dine er ikke lenger tilgjengelige. Gjenopprett tilgangen til filene. ${ StartRecoveryButton }"
+      ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "Noen eldre filer indekseres ikke fordi Drive er for stor til å indekseres fullstendig."
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "Noen bilder i dette albumet er ikke lagret på tidslinjen din. Hvis du sletter dette albumet, slettes disse bildene permanent."
@@ -6779,8 +6847,17 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Vi vil sende deg til PayPal i en ny nettleserfane for å fullføre denne transaksjonen. Dersom du blokkerer sprettoppvinduer, deaktiver blokkeringen for å fortsette."
       ],
+      "We'll copy them from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Vi vil kopiere de fra Google Disk til ${ DRIVE_APP_NAME }."
+      ],
       "We'll email you once import is complete.": [
         "Vi sender deg en e-post når importen er fullført."
+      ],
+      "We'll email you when your import is complete.": [
+        "Vi sender deg en e-post når importen er fullført."
+      ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Vi sender deg en e-post når importen er fullført. Filene dine vil vises i en mappe i ${ DRIVE_APP_NAME }."
       ],
       "We'll get back to you shortly.": [
         "Vi vil komme tilbake til deg innen kort tid."
@@ -6986,6 +7063,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dataene dine er klare til import fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "Drive er for stor til å indekseres helt i denne nettleseren, så søk ser på de nyeste elementene. Det kan hende at eldre filer ikke vises i resultatene."
+      ],
       "Your email address and password were leaked:": [
         "Din e-postadresse og passord ble lekket:"
       ],
@@ -6998,8 +7078,14 @@
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Filene dine blir indeksert på nytt. Du kan fortsette å søke – treffene kan være ufullstendige før det er ferdig. Vi gir deg beskjed når det er ferdig."
       ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Filene dine er kryptert og trygt lagret i ${ DRIVE_APP_NAME }."
+      ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Filene dine er ikke lenger tilgjengelige på grunn av en tilbakestilling av passord. Last opp den gamle krypteringsnøkkelen på nytt for å få tilgang igjen. ${ KeyReactivationButton }"
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Filene dine har blitt importert og kryptert fra Google Disk til ${ DRIVE_APP_NAME }."
       ],
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
@@ -7015,6 +7101,12 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Din gratis prøveperiode ble vellykket konvertert til et månedlig abonnement. Fornyelsesdatoen din er ${ nextBillingDate }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Google Disk kan være tom eller inneholde bare filer som ikke støttes."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "Importen er blokkert. Oppgrader nå for å ta med resten av filene dine."
       ],
       "Your information was found on ${ displayedDate }": [
         "Informasjonen din ble funnet den ${ displayedDate }."
@@ -9981,8 +10073,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Avbryt når som helst før da.** Du kan bruke ${ planTitle } helt til prøveperioden avsluttes, gratis."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Hvis du fortsetter etter prøveperioden,** kan du si opp innen 30 dager og få en forholdsmessig refusjon."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Ombestemt deg etter prøveperioden?** Si opp innen 30 dager etter første betaling, og vi refunderer den ubrukte tiden."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Når det fulle abonnementet ditt starter ...** Du kan fortsatt si opp innen 30 dager og få en forholdsmessig refusjon."
@@ -10294,6 +10386,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, avbryt når som helst."
       ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Scribe-seter kan ikke overstige antallet medlemmer."
+      ],
       "Tax ${ rate }%": [
         "MVA ${ rate }%"
       ],
@@ -10371,6 +10466,9 @@
       ],
       "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
         "Prøveplaner støtter ikke ${ LUMO_SHORT_APP_NAME }-seter."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Prøveplaner støtter ikke egendefinerte domener."
       ],
       "Trial plans don’t support dedicated IPs.": [
         "Prøveplaner støtter ikke dedikerte IP-er."
@@ -11909,6 +12007,9 @@
       "Albums you've shared will appear here": [
         "Albumene du har delt vises her"
       ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Importer filene og mappene dine fra Google Disk og hold dem private i ${ DRIVE_APP_NAME }."
+      ],
       "Shared by ${ sharedBy }": [
         "Delt av ${ sharedBy }"
       ],
@@ -12276,6 +12377,9 @@
       "Black Friday": [
         "Black Friday"
       ],
+      "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
+        "Ta med Google Disk-filene dine til ${ DRIVE_APP_NAME }"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Avbryt ${ MAIL_SHORT_APP_NAME }-abonnement"
       ],
@@ -12495,6 +12599,9 @@
       "Easy switch": [
         "Easy switch"
       ],
+      "Easy Switch from Google Drive": [
+        "Easy Switch fra Google Disk"
+      ],
       "Edit billing address": [
         "Rediger faktureringsadresse"
       ],
@@ -12632,6 +12739,9 @@
       "Import groups": [
         "Importer grupper"
       ],
+      "Import started": [
+        "Importen kjører"
+      ],
       "Import started, but your storage won't be enough for this import": [
         "Importen er startet, men lagringsplassen vil ikke være tilstrekkelig for denne importen."
       ],
@@ -12697,6 +12807,9 @@
       ],
       "Modified": [
         "Endret"
+      ],
+      "More storage needed to finish your import": [
+        "Mer lagringsplass kreves for å fullføre importen"
       ],
       "My files": [
         "Mine filer"
@@ -12811,6 +12924,9 @@
       ],
       "Photos": [
         "Bilder"
+      ],
+      "Preparing your import": [
+        "Forbereder importen"
       ],
       "Preview": [
         "Forhåndsvis"
@@ -13146,6 +13262,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Velkommen til ${ BRAND_NAME } for Business"
       ],
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Velkommen til ${ DRIVE_APP_NAME }"
+      ],
       "What can a VPN protect you from?": [
         "Hva kan et VPN beskytte deg mot?"
       ],
@@ -13184,6 +13303,9 @@
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
+      ],
+      "Your import is finished!": [
+        "Importen er ferdig!"
       ],
       "Your plan": [
         "Din plan"
