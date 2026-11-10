@@ -17,8 +17,8 @@ import { useLumoUserSettings } from '../../../hooks';
 import { useIsTouchDevice } from '../../../hooks/useIsTouchDevice';
 import { useMemoryGeneration } from '../../../hooks/useMemoryGeneration';
 import { useLumoDispatch, useLumoStore } from '../../../redux/hooks';
-import { appendGeneratedMemoriesThunk } from '../../../redux/slices/lumoUserSettings';
 import type { Memory } from '../../../redux/slices/lumoUserSettings';
+import { appendGeneratedMemoriesThunk } from '../../../redux/slices/lumoUserSettings';
 import {
     MEMORY_AUTO_SAVE_PROMPT_THRESHOLD,
     MEMORY_MAX_CONTENT_LENGTH,
@@ -697,8 +697,8 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                         )}
 
                         <section className="memory-panel-main flex flex-column flex-nowrap flex-1 min-h-0 rounded-lg border border-weak bg-weak overflow-hidden">
-                            <header className="memory-panel-toolbar shrink-0 flex flex-row flex-wrap items-center justify-space-between gap-x-2 gap-y-1 py-2 px-3 border-bottom border-weak bg-norm">
-                                <div className="flex flex-row flex-wrap items-center gap-1 min-w-0">
+                            <header className="memory-panel-toolbar shrink-0 flex flex-row flex-nowrap items-center justify-space-between gap-x-2 gap-y-1 py-2 px-3 border-bottom border-weak bg-norm overflow-auto">
+                                <div className="flex flex-row flex-nowrap items-center gap-1 shrink-0">
                                     {showUpdateFromChatsButton && (
                                         <Button
                                             shape="ghost"
@@ -714,7 +714,7 @@ const MemoryPanel = ({ onClose: _onClose }: MemoryPanelProps) => {
                                         </Button>
                                     )}
                                 </div>
-                                <div className="flex flex-row flex-wrap items-center justify-end gap-1 shrink-0">
+                                <div className="flex flex-row flex-nowrap items-center justify-end gap-1 shrink-0">
                                     {canOptimize && (
                                         <Button
                                             shape="ghost"
