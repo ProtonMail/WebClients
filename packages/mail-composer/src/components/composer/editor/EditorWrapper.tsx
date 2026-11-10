@@ -34,7 +34,12 @@ import diff from '@proton/utils/diff';
 import type { AddAttachmentsParams } from '../../../attachments/uploadTypes';
 import type { ComposerStoreState } from '../../../store/hooks';
 import type { MessageChange } from '../Composer';
-import { getAttachedCIDs, getInlineImagesToRestore, getRemovedInlineImageData } from './editorWrapperHelpers';
+import {
+    getAttachedCIDs,
+    getInlineImagesToRestore,
+    getRemovedInlineImageData,
+    isPastedImageAvailable,
+} from './editorWrapperHelpers';
 
 export interface ExternalEditorActions extends Pick<
     EditorActions,
@@ -230,6 +235,15 @@ const EditorWrapper = ({
         { debounce: 500 }
     );
 
+    const handleIsPastedImageAllowed = useHandler((image: HTMLImageElement) =>
+        isPastedImageAvailable(image, {
+            message,
+            restorableCIDs: canReuploadInlineImages
+                ? new Set([...removedInlineImagesRef.current.keys(), ...reuploadingCIDsRef.current])
+                : new Set(),
+        })
+    );
+
     const handleSetContent = (message: MessageState) => {
         let content;
 
@@ -406,6 +420,7 @@ const EditorWrapper = ({
             onReady={handleEditorReady}
             mailSettings={mailSettings}
             onAddAttachments={onAddAttachments}
+            isPastedImageAllowed={handleIsPastedImageAllowed}
             isPlainText={isPlainText}
             openEmojiPickerRef={openEmojiPickerRef}
             toolbarConfig={toolbarConfig}

@@ -17,6 +17,33 @@ export const getAttachedCIDs = (message: MessageState) => {
 };
 
 /**
+ * Embedded images only work in a draft that has their attachment. Copied from a received message, they would show
+ * because the browser has them cached, but would not be sent, so they are kept only when the draft has their attachment
+ * or the composer can upload it again.
+ */
+export const isPastedImageAvailable = (
+    image: HTMLImageElement,
+    { message, restorableCIDs }: { message: MessageState; restorableCIDs: Set<string> }
+) => {
+    const embedded = image.getAttribute('data-embedded-img');
+
+    if (!embedded) {
+        const src = image.getAttribute('src') || '';
+        return !src.startsWith('blob:') && !src.startsWith('cid:');
+    }
+
+    const attachments = getAttachments(message.data).map(readContentIDandLocation);
+
+    if (embedded.startsWith('cloc:')) {
+        const cloc = embedded.slice('cloc:'.length);
+        return !!cloc && attachments.some((attachment) => attachment.cloc === cloc);
+    }
+
+    const cid = embedded.replace(/^cid:/, '');
+    return !!cid && (restorableCIDs.has(cid) || attachments.some((attachment) => attachment.cid === cid));
+};
+
+/**
  * Decrypted data of an inline image the composer is removing from the draft, kept so that undo can re-upload it.
  * The attachments store is shared by every message and CIDs are not unique across messages,
  * so the data is only ever looked up by attachment ID.

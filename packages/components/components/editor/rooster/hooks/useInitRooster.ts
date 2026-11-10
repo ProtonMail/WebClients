@@ -35,6 +35,7 @@ interface Props {
     mailSettings?: MailSettings;
     showModalLink: (props: ModalLinkProps) => void;
     onPasteFiles: (files: File[]) => void;
+    isPastedImageAllowed?: (image: HTMLImageElement) => boolean;
     openEmojiPicker: () => void;
 }
 
@@ -47,6 +48,7 @@ const useInitRooster = ({
     onFocus,
     mailSettings,
     onPasteFiles,
+    isPastedImageAllowed,
     openEmojiPicker,
 }: Props) => {
     const editorRef = useRef<IEditor>();
@@ -117,6 +119,7 @@ const useInitRooster = ({
             iframeRef,
             mailSettings,
             onPasteFiles,
+            isPastedImageAllowed,
             openEmojiPicker,
         });
 

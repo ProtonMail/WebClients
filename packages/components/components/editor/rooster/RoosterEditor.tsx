@@ -29,6 +29,7 @@ interface Props {
     onReady: (editorActions: EditorActions) => void;
     setToolbarConfig: SetEditorToolbarConfig;
     onPasteFiles: (files: File[]) => void;
+    isPastedImageAllowed?: (image: HTMLImageElement) => boolean;
     mailSettings?: MailSettings;
     showModalLink: (props: ModalLinkProps) => void;
     onFocus?: () => void;
@@ -48,6 +49,7 @@ const RoosterEditor = ({
     onBlockquoteToggleClick,
     setToolbarConfig,
     onPasteFiles,
+    isPastedImageAllowed,
     showModalLink,
     onFocus,
     mailSettings,
@@ -75,6 +77,7 @@ const RoosterEditor = ({
         onFocus,
         mailSettings,
         onPasteFiles,
+        isPastedImageAllowed,
         openEmojiPicker,
     });
 
