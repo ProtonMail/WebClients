@@ -142,6 +142,8 @@ describe('DocumentPageV2', () => {
       expect(mockCreateSession).toHaveBeenCalledWith({
         documentType: 'doc',
         nodeMeta: { volumeId: 'MY_VOLUME', linkId: 'NEW_DOC' },
+        // The page runs on a dev host.
+        commitDuLimit: 50,
       })
     })
 
@@ -281,9 +283,9 @@ describe('DocumentPageV2', () => {
 
   function renderAt(path: string, hash = '') {
     const href = `${ORIGIN}${path}${hash}`
-    const { pathname, hostname, protocol, port } = new URL(href)
+    const { pathname, host, hostname, protocol, port } = new URL(href)
     Object.defineProperty(window, 'location', {
-      value: { href, origin: ORIGIN, pathname, hash, hostname, protocol, port, assign },
+      value: { href, origin: ORIGIN, pathname, hash, host, hostname, protocol, port, assign },
       writable: true,
     })
     const application = {

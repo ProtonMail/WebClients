@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import { type NodeEntity, generateNodeUid, getDrive } from '@proton/drive/sdk'
+import { isDevOrBlack } from '@proton/shared/lib/env'
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype'
 import type { PrivateNodeMeta, Session } from '@proton-docs/realtime-sdk'
 
@@ -50,7 +51,12 @@ export function useDocumentSession(
         return
       }
 
-      const pending = client.createSession({ documentType: 'doc', nodeMeta: { volumeId, linkId } })
+      const pending = client.createSession({
+        documentType: 'doc',
+        nodeMeta: { volumeId, linkId },
+        // As /doc squashes on dev and black (GetCommitDULimit in packages/docs-core/lib/Types/SquashingConstants.ts).
+        ...(isDevOrBlack() && { commitDuLimit: 50 }),
+      })
       const unreadableBaseStateUuids: string[] = []
       removeListeners.push(
         pending.on('updateUnreadable', ({ uuid, origin }) => {

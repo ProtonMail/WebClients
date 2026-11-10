@@ -85,11 +85,27 @@ describe('useRealtimeClient', () => {
       baseUrl: '/api',
       appVersion: 'web-docs@0.0.2.89-dev',
       uid: 'session-uid',
+      fetch: expect.any(Function),
     })
     expect(result.current.config.rts).toMatchObject({
       appVersion: 'web-docs@0.0.2.89-dev',
       subProtocol: '0.0.2.89',
     })
+  })
+
+  test('sends Docs API requests through the app API', async () => {
+    const response = new Response('{}')
+    api.mockResolvedValue(response)
+    const { result } = renderHook(() => useRealtimeClient(), { wrapper })
+
+    const fetched = await result.current.config.api.fetch?.('/api/docs/volumes/volume-1/documents/link-1/meta', {
+      method: 'GET',
+    })
+
+    expect(fetched).toBe(response)
+    expect(api).toHaveBeenCalledWith(
+      expect.objectContaining({ url: 'docs/volumes/volume-1/documents/link-1/meta', method: 'GET', output: 'raw' }),
+    )
   })
 
   test('getDocumentKeys signs with the member address of the given node, not the primary one', async () => {
