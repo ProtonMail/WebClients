@@ -36,7 +36,7 @@ export const CreatedGrid = ({ sections, status, hasMore, loadMore, onExport }: C
         return (
             <div className="gallery-created">
                 <div className="gallery-error">
-                    <LumoIcon name="CircleAlert" size={24} className="gallery-error__icon" />
+                    <LumoIcon name="CircleExclamationPoint" size={24} className="gallery-error__icon" />
                     <p>{c('collider_2025:Error').t`Failed to load images. Please try again.`}</p>
                 </div>
             </div>

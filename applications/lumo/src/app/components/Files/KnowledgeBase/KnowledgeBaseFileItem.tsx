@@ -111,10 +111,10 @@ export const KnowledgeBaseFileItem: React.FC<KnowledgeBaseFileItemProps> = ({
                 <div className="flex flex-row flex-nowrap items-center gap-2 ml-2">
                     {/* Status indicators - always visible */}
                     {file.processing && <LumoIcon name="RefreshCw" className="color-primary animate-spin" size={16} />}
-                    {file.error && <LumoIcon name="TriangleAlert" className="color-danger" size={16} />}
+                    {file.error && <LumoIcon name="TriangleExclamationPoint" className="color-danger" size={16} />}
                     {isTooLargeForPreview && (
                         <Tooltip title={c('collider_2025: Info').t`File too large for preview (>150k tokens)`}>
-                            <LumoIcon name="TriangleAlert" className="color-warning" size={16} />
+                            <LumoIcon name="TriangleExclamationPoint" className="color-warning" size={16} />
                         </Tooltip>
                     )}
 

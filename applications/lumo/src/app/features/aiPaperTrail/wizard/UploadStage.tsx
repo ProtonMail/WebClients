@@ -106,7 +106,7 @@ export const UploadStage = ({ error, saveLocallyEnabled, onSaveLocallyChange, on
 
             {displayError && (
                 <div className="ai-paper-trail__error flex flex-row flex-nowrap items-start gap-2 mt-0 p-3 rounded">
-                    <LumoIcon name="CircleAlert" size={16} className="color-danger shrink-0 mt-0.5" />
+                    <LumoIcon name="CircleExclamationPoint" size={16} className="color-danger shrink-0 mt-0.5" />
                     <span>{displayError}</span>
                 </div>
             )}

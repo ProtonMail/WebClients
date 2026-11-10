@@ -159,7 +159,7 @@ interface ErrorDisplayProps {
 
 const ErrorDisplay = ({ errorMessage }: ErrorDisplayProps) => (
     <span className="flex flex-row flex-nowrap gap-2 mt-1 items-start">
-        <LumoIcon name="TriangleAlert" size={16} className="mt-0.5 shrink-0 color-danger" />
+        <LumoIcon name="TriangleExclamationPoint" size={16} className="mt-0.5 shrink-0 color-danger" />
         <p className="text-sm m-0 color-danger">
             {errorMessage || c('collider_2025: Info').t`Error processing attachment`}
         </p>

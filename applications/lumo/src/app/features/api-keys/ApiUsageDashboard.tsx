@@ -456,7 +456,7 @@ const ApiBalanceStatusMessage = ({ balance, isOrgMember }: { balance: number; is
         <output
             className={`api-usage-balance-status api-usage-balance-status--${status} flex flex-nowrap items-center gap-2 rounded-lg text-sm`}
         >
-            <LumoIcon name={status === 'empty' ? 'Pause' : 'TriangleAlert'} size={14} className="shrink-0" />
+            <LumoIcon name={status === 'empty' ? 'Pause' : 'TriangleExclamationPoint'} size={14} className="shrink-0" />
             {message}
         </output>
     );
@@ -494,7 +494,7 @@ const ApiAutoTopUpStatusMessage = ({
     const reasonMessage = getAutoTopUpReasonMessage(reason);
     return (
         <output className="api-usage-balance-status api-usage-balance-status--low flex flex-nowrap items-center gap-2 rounded-lg text-sm">
-            <LumoIcon name="TriangleAlert" size={14} className="shrink-0" />
+            <LumoIcon name="TriangleExclamationPoint" size={14} className="shrink-0" />
             <span>
                 {status === 'Failed'
                     ? c('collider_2025: Status')

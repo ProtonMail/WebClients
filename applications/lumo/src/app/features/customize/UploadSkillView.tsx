@@ -121,7 +121,7 @@ const ResultDetails = ({ report }: { report: SkillCheckReport }) => {
                     <div key={`${finding.kind}:${finding.path}`} className="flex flex-nowrap items-start gap-2">
                         <LumoIcon
                             aria-hidden
-                            name="TriangleAlert"
+                            name="TriangleExclamationPoint"
                             size={14}
                             className="shrink-0 mt-0.5 color-warning"
                         />
@@ -381,7 +381,7 @@ export const UploadSkillView = () => {
                                 <div className="flex flex-nowrap items-start gap-3">
                                     <LumoIcon
                                         aria-hidden
-                                        name={result.error ? 'CircleAlert' : 'Puzzle'}
+                                        name={result.error ? 'CircleExclamationPoint' : 'Puzzle'}
                                         size={18}
                                         className={clsx(
                                             'shrink-0 mt-0.5',
@@ -417,7 +417,7 @@ export const UploadSkillView = () => {
                 <Card rounded className="flex flex-nowrap items-start gap-3">
                     <LumoIcon
                         aria-hidden
-                        name={findingCount ? 'ShieldAlert' : 'ShieldCheck'}
+                        name={findingCount ? 'ShieldExclamationPoint' : 'ShieldCheck'}
                         size={18}
                         className={clsx('shrink-0 mt-0.5', findingCount ? 'color-warning' : 'color-weak')}
                     />

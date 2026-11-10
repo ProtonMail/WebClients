@@ -76,7 +76,7 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                 const exceedsFileSizeLimit = child.size && child.size > MAX_ASSET_SIZE;
 
                 const CheckmarkIcon = () => <LumoIcon name="CircleCheck" />;
-                const ErrorIcon = () => <LumoIcon name="TriangleAlert" className="color-danger" size={16} />;
+                const ErrorIcon = () => <LumoIcon name="TriangleExclamationPoint" className="color-danger" size={16} />;
                 const ProgressIcon = () => (
                     <CircularProgress progress={fileData.downloadProgress || 0} size={16} className="text-primary" />
                 );

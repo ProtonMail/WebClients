@@ -418,7 +418,7 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                     <ModalTwoContent className="pt-flag-modal">
                         <div className="pt-flag-modal__hero">
                             <div className="pt-flag-modal__badge" aria-hidden="true">
-                                <LumoIcon name="ShieldAlert" size={28} />
+                                <LumoIcon name="ShieldExclamationPoint" size={28} />
                             </div>
                             <p className="pt-flag-modal__count">
                                 {c('collider_2025:Info').t`${report.sensitiveCategories.length} sensitive categories`}
@@ -431,7 +431,7 @@ export const PaperTrailReportView = ({ report, onStartOver, onTryLumo }: Props) 
                         <ul className="pt-flag-modal__list">
                             {report.sensitiveCategories.map((category, i) => (
                                 <li key={i} className="pt-flag-modal__item">
-                                    <LumoIcon name="CircleAlert" size={18} className="pt-flag-modal__item-icon" />
+                                    <LumoIcon name="CircleExclamationPoint" size={18} className="pt-flag-modal__item-icon" />
                                     <span className="pt-flag-modal__item-text">{category}</span>
                                 </li>
                             ))}
