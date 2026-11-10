@@ -307,8 +307,11 @@ Subject: ${Subject}\nTo: ${recipient1.Address} <${recipient1.Address}>
 
         it('should verify signature placement with correct newlines', () => {
             const result = createPlaintextDraftContent({
-                action: MESSAGE_ACTIONS.NEW,
-                referenceMessage: { decryption: { decryptedBody: 'Body content' } } as any,
+                action: MESSAGE_ACTIONS.REPLY,
+                referenceMessage: {
+                    data: { ID, Time, Subject, Sender: sender, MIMEType: 'text/plain' },
+                    decryption: { decryptedBody: 'Body content' },
+                } as any,
                 senderAddress,
                 mailSettings,
                 userSettings,
@@ -344,6 +347,50 @@ Subject: ${Subject}\nTo: ${recipient1.Address} <${recipient1.Address}>
             expect(result.plainText).toBeDefined();
             // Should only have the 4 newlines at the start
             expect(result.plainText).toBe('\n\n\n\n');
+        });
+
+        describe('mailto body', () => {
+            // What `mailtoParser` gives for `body=Hello%20world%2C%0D%0A%0D%0ASee%20you%20soon`
+            const mailtoBody = 'Hello world,<br><br>See you soon';
+
+            const createMailtoDraft = (body: string, signature = senderAddress.Signature) =>
+                createPlaintextDraftContent({
+                    action: MESSAGE_ACTIONS.NEW,
+                    referenceMessage: { decryption: { decryptedBody: body } } as any,
+                    senderAddress: { Signature: signature },
+                    mailSettings,
+                    userSettings,
+                    fontStyle,
+                }).plainText;
+
+            it('should put the body first, then two empty lines and the signature', () => {
+                expect(createMailtoDraft(mailtoBody)).toBe('Hello world,\n\nSee you soon\n\n\nTest Signature');
+            });
+
+            it('should only have the body without a signature', () => {
+                expect(createMailtoDraft(mailtoBody, '')).toBe('Hello world,\n\nSee you soon');
+            });
+
+            it('should keep the text of the body, not its HTML', () => {
+                const plainText = createMailtoDraft('1 &lt; 2 &amp; <b>bold</b> MONO_TLS_PROVIDER', '');
+
+                expect(plainText).toBe('1 < 2 & bold MONO_TLS_PROVIDER');
+            });
+
+            it('should start like a draft without a body when the body has no text', () => {
+                const withoutBody = createPlaintextDraftContent({
+                    action: MESSAGE_ACTIONS.NEW,
+                    referenceMessage: undefined,
+                    senderAddress,
+                    mailSettings,
+                    userSettings,
+                    fontStyle,
+                }).plainText;
+
+                expect(createMailtoDraft(' ')).toBe(withoutBody);
+                expect(createMailtoDraft('<img proton-src="https://example.com/a.png">')).toBe(withoutBody);
+                expect(createMailtoDraft(' ', '')).toBe('\n\n\n\n');
+            });
         });
     });
 });
