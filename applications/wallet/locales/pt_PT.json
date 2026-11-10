@@ -2475,7 +2475,7 @@
         "O número de IVA deve começar por ${ prefixes }"
       ],
       "We couldn’t send a verification code using this method.": [
-        "Não conseguimos enviar um código de verificação através deste método."
+        "Nós não conseguimos enviar um código de verificação utilizando este método."
       ],
       "Wrong billing address": [
         "Endereço de faturação incorreto"
@@ -2707,7 +2707,7 @@
         "Assistente de escrita ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
-        "O ${ MEET_APP_NAME } é uma solução de videoconferência encriptada de ponto a ponto. Adicione-o ao seu plano para realizar reuniões seguras."
+        "O ${ MEET_APP_NAME } é uma solução de videoconferência encriptada de ponto a ponto. Adicione-a ao seu plano para realizar reuniões seguras."
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licenças"
@@ -2736,6 +2736,12 @@
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/mês)"
+      ],
+      "1 device per user": [
+        "1 dispositivo por utilizador"
+      ],
+      "1 vault per user": [
+        "1 cofre por utilizador"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Um número de telemóvel pode ser utilizado para verificar apenas uma conta ${ BRAND_NAME }"
@@ -3210,6 +3216,9 @@
       ],
       "Account holder": [
         "Titular da conta"
+      ],
+      "Account holder name": [
+        "Nome do titular da conta"
       ],
       "Additional comments": [
         "Comentários adicionais"
@@ -4600,6 +4609,9 @@
       "Billing Country": [
         "País de faturação"
       ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Ao mudar, concorda com os nossos ${ termsLink }."
+      ],
       "Card number": [
         "Número do cartão"
       ],
@@ -4638,6 +4650,9 @@
       ],
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis noutras moedas."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Pagar com ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pagamento necessário para que a subscrição seja ativada após o término do período de avaliação."
