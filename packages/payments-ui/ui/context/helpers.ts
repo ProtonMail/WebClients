@@ -1,3 +1,4 @@
+import type { useMultiCheckGroups } from '@proton/payments-hooks/ui/context/useMultiCheckGroups';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { computeOptimisticCheckResult } from '@proton/payments/core/computeOptimisticCheckResult';
 import type { Currency, FreeSubscription, PaymentsApi } from '@proton/payments/core/interface';
@@ -6,8 +7,6 @@ import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton
 import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { type PlanToCheck, getSubscriptionDataFromPlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import isTruthy from '@proton/utils/isTruthy';
-
-import type { useMultiCheckGroups } from './useMultiCheckGroups';
 
 export type { PlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 export { getPlanToCheck, getSubscriptionDataFromPlanToCheck } from '@proton/payments/core/subscription/plan-to-check';

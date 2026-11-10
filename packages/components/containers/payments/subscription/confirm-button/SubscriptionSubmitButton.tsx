@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
+import type { CouponConfigRendered } from '@proton/payments-hooks/ui/coupon-config/interface';
 import type { PaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import type { TaxCountryHook } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
 import type { VatNumberHook } from '@proton/payments-ui/ui/billing-address/hooks/useVatNumber';
 import { PayButton } from '@proton/payments-ui/ui/components/PayButton';
-import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { PAYMENT_METHOD_TYPES, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Currency, FreeSubscription } from '@proton/payments/core/interface';
 import { hasMigrationDiscount, isTrial } from '@proton/payments/core/subscription/helpers';

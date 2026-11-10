@@ -1,7 +1,7 @@
+import type { CouponConfig } from '@proton/payments-hooks/ui/coupon-config/interface';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 
-import type { CouponConfig } from './interface';
 import { useCouponConfig } from './useCouponConfig';
 
 const testMonthlyNudgeConfig: CouponConfig = {

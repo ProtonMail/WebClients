@@ -1,4 +1,4 @@
-import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
+import type { CouponConfigRendered } from '@proton/payments-hooks/ui/coupon-config/interface';
 import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
 import { isLifetimePlanSelected } from '@proton/shared/lib/payments/plan/helpers';
 

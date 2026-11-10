@@ -11,13 +11,12 @@ import {
     usePaymentsTelemetry,
 } from '@proton/payments-hooks/client-extensions/usePaymentsTelemetry';
 import type { OnMethodChangedHandler } from '@proton/payments-hooks/react-extensions/useMethods';
-import type { Operations, OperationsData } from '@proton/payments-hooks/react-extensions/usePaymentFacade';
+import type { OnChargeable } from '@proton/payments-hooks/react-extensions/usePaymentFacade';
 import { usePaymentFacade as useInnerPaymentFacade } from '@proton/payments-hooks/react-extensions/usePaymentFacade';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { type ADDON_NAMES, PAYMENT_METHOD_TYPES, type PLANS } from '@proton/payments/core/constants';
 import type {
     AvailablePaymentMethod,
-    ChargeablePaymentParameters,
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
     Currency,
@@ -29,7 +28,6 @@ import type {
     PlanIDs,
     SavedPaymentMethod,
 } from '@proton/payments/core/interface';
-import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type { PaymentStage } from '@proton/payments/telemetry/shared-checkout-telemetry';
@@ -49,26 +47,6 @@ import {
     useChargebeePaypalHandles,
     useGooglePayDependencies,
 } from './validators/validators';
-
-/**
- * The main callback that will be called when the payment is ready to be charged
- * after the payment token is fetched and verified with 3DS or other confirmation from the user.
- * @param operations - provides a common set of actions that can be performed with the verified payment token.
- * For example, the verified (that is, chargeable) payment token can be used to create a subscription or buy
- * credits.
- * @param data - provides the raw payment token, the payment source (or processor type) and operation context
- * like Plan or Cycle for subscription.
- */
-export type OnChargeable = (
-    operations: Operations,
-    data: {
-        chargeablePaymentParameters: ChargeablePaymentParameters;
-        source: PaymentMethodType;
-        sourceType: PlainPaymentMethodType;
-        context: OperationsData;
-        paymentProcessorType: PaymentProcessorType;
-    }
-) => Promise<unknown>;
 
 type PaymentFacadeProps = {
     amount: number;

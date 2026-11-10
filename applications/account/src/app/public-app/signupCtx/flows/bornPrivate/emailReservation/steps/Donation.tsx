@@ -10,10 +10,11 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import useLoading from '@proton/hooks/useLoading';
-import { type OnChargeable, usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
+import type { OnChargeable } from '@proton/payments-hooks/react-extensions/usePaymentFacade';
+import { usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
+import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import { useTaxCountry } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
 import { PayButton } from '@proton/payments-ui/ui/components/PayButton';
-import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { getMinDonationAmount } from '@proton/payments/core/amount-limits';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';

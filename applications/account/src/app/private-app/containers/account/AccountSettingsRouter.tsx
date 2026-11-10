@@ -110,7 +110,9 @@ const AccountSettingsRouter = ({
                             maxWidth={SettingsCardMaxWidth.Wide}
                         >
                             <YourPlanSectionV2 app={app} />
-                            <YourPlanUpsellsSectionV2 app={app} />
+                            <PaymentsContextProvider>
+                                <YourPlanUpsellsSectionV2 app={app} />
+                            </PaymentsContextProvider>
                             <VPNDownloadAndInfoSection app={app} />
                             <VpnAlsoInYourPlanSection app={app} />
                             <VpnBlogSection />
@@ -132,7 +134,9 @@ const AccountSettingsRouter = ({
                     <DashboardLinkRedirect path={path} subscription={subscription}>
                         <DashboardTelemetry app={app} />
                         <AutomaticSubscriptionModal />
-                        <AccountDashboard app={app} config={dashboard} />
+                        <PaymentsContextProvider>
+                            <AccountDashboard app={app} config={dashboard} />
+                        </PaymentsContextProvider>
                     </DashboardLinkRedirect>
                 </Route>
             )}

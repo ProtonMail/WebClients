@@ -12,9 +12,9 @@ import {
     IdealAuthorizationText,
     isIdealAuthorizationNoteShown,
 } from '@proton/payments-hooks/ui/components/IdealAuthorizationText';
+import type { CouponConfigRendered } from '@proton/payments-hooks/ui/coupon-config/interface';
 import type { PaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import type { TaxCountryHook } from '@proton/payments-ui/ui/billing-address/hooks/useTaxCountry';
-import type { CouponConfigRendered } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import type { CheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
 import { PLANS } from '@proton/payments/core/constants';

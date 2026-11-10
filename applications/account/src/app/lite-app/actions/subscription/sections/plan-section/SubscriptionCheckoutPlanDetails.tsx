@@ -16,7 +16,7 @@ import PlanIconName from '@proton/components/containers/payments/subscription/Yo
 import { getPlanTitlePlusMaybeBrand } from '@proton/components/containers/payments/subscription/YourPlanSectionV2/helpers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { IcCreditCards } from '@proton/icons/icons/IcCreditCards';
-import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
+import { usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import type { CheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import type { FreeSubscription } from '@proton/payments/core/interface';
 import { isTrial } from '@proton/payments/core/subscription/helpers';

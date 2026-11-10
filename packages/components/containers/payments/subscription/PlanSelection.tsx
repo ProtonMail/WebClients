@@ -6,7 +6,6 @@ import { useUser } from '@proton/account/user/hooks';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
-import { OfferPrice } from '@proton/payments-ui/ui/components/OfferPrice';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { getFallbackCurrency, isRegionalCurrency } from '@proton/payments/core/currencies';
 import type {
@@ -71,6 +70,7 @@ import SelectTwo from '../../../components/selectTwo/SelectTwo';
 import { Tabs } from '../../../components/tabs/Tabs';
 import CurrencySelector from '../CurrencySelector';
 import CycleSelector, { getRestrictedCycle } from '../CycleSelector';
+import { OfferPrice } from '../OfferPrice';
 import { getAllFeatures } from '../features';
 import type { ShortPlanLike } from '../features/interface';
 import { isShortPlanLike } from '../features/interface';

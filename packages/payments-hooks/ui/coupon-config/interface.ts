@@ -23,3 +23,11 @@ export type CyclePriceCompareReturnType = ReturnType<NonNullable<CouponConfig['c
 
 export type CycleTitleFirstParam = Parameters<NonNullable<CouponConfig['cycleTitle']>>[0];
 export type CycleTitleReturnType = ReturnType<NonNullable<CouponConfig['cycleTitle']>>;
+
+export type CouponConfigRendered = Omit<CouponConfig, 'amountDueMessage' | 'cyclePriceCompare' | 'cycleTitle'> & {
+    renderAmountDueMessage?: () => ReactNode;
+    renderCyclePriceCompare?: (params: CyclePriceCompareFirstParam) => CyclePriceCompareReturnType;
+    renderCycleTitle?: (params: CycleTitleFirstParam) => CycleTitleReturnType;
+    renderShowMigrationDiscountLossWarning?: () => boolean;
+    renderPayCTA?: () => string;
+};

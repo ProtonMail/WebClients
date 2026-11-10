@@ -7,7 +7,7 @@ import { DashboardCard, DashboardCardContent, DashboardCardImage } from '@proton
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { usePopper } from '@proton/atoms/Popper/usePopper';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
+import { usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Currency, Cycle } from '@proton/payments/core/interface';
 import { getSubscriptionPlanTitle } from '@proton/payments/core/subscription/helpers';

@@ -28,7 +28,7 @@ export function useRedirectToAccountApp() {
     const [entitlementCatalog] = useEntitlementCatalog();
 
     return useCallback(
-        (params?: OpenCallbackProps & { app?: ProductParam }) => {
+        (params?: Omit<OpenCallbackProps, 'app'> & { app?: ProductParam }) => {
             if (isElectronApp && !hasInboxDesktopInAppPayments) {
                 if (!params) {
                     openLinkInBrowser(getAppHref(`/${getSlugFromApp(APP_NAME)}/dashboard`, APPS.PROTONACCOUNT));

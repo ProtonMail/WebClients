@@ -12,6 +12,7 @@ dist
 .turbo/*
 !.turbo/config.json
 applications/**/.turbo
+ci/**/.turbo
 packages/**/.turbo
 tests/**/.turbo
 tsconfig.tsbuildinfo

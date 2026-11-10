@@ -2,6 +2,7 @@ import { act, render } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { getStoreWrapper } from '@proton/payments-hooks/testing/renderWithProviders';
+import { type PaymentsContextType, usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { PaymentsApi } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
@@ -10,7 +11,7 @@ import type { SubscriptionEstimation } from '@proton/payments/core/subscription/
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
 
-import { PaymentsContextProvider, type PaymentsContextType, usePayments } from './PaymentContext';
+import { PaymentsContextProvider } from './PaymentContext';
 
 const checkSubscription = jest.fn();
 

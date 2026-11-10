@@ -1,10 +1,10 @@
+import type { CouponConfig } from '@proton/payments-hooks/ui/coupon-config/interface';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
 import { getStaticCouponConfig } from '../../coupon-config/get-static-coupon-config';
-import type { CouponConfig } from '../../coupon-config/interface';
 import { createHeadlessCheckoutContextInner, getHeadlessCheckout } from '../get-headless-checkout';
 import { createAddonItem } from './addons';
 import { defaultApp as app, makeAddon, makeCheckResult, makePlan, makePricing } from './test-helpers';

@@ -1,4 +1,4 @@
-import type { PaymentsContextType } from '@proton/payments-ui/ui/context/PaymentContext';
+import type { PaymentsContextType } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { PLANS } from '@proton/payments/core/constants';
 import type { SizeUnits } from '@proton/shared/lib/helpers/humanSize';
 import humanSize from '@proton/shared/lib/helpers/humanSize';

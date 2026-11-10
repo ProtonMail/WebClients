@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { ProtonPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/ProtonPlanCustomizer';
 import { getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/helpers';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
-import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
+import { usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { ADDON_PREFIXES } from '@proton/payments/core/constants';
 
 const SubscriptionCheckoutAddonSection = () => {

@@ -10,12 +10,8 @@ import { useConfig } from '@proton/app-context/useConfig';
 import useLoading from '@proton/hooks/useLoading';
 import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
 import type { TelemetryPaymentFlow } from '@proton/payments-hooks/client-extensions/usePaymentsTelemetry';
+import { isPaymentsPreloaded, usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { usePreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';
-import {
-    PaymentsContextProvider,
-    isPaymentsPreloaded,
-    usePayments,
-} from '@proton/payments-ui/ui/context/PaymentContext';
 import { CYCLE, DEFAULT_CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
@@ -763,7 +759,8 @@ interface YourPlanSectionV2Props {
     app: APP_NAMES;
 }
 
-const YourPlanUpsellsSectionV2Inner = ({ app }: YourPlanSectionV2Props) => {
+/** Expects a `PaymentsContextProvider` above it. */
+export const YourPlanUpsellsSectionV2 = ({ app }: YourPlanSectionV2Props) => {
     const [user] = useUser();
     const { APP_NAME } = useConfig();
     const [plansResult, loadingPlans] = usePlans();
@@ -817,12 +814,4 @@ const YourPlanUpsellsSectionV2Inner = ({ app }: YourPlanSectionV2Props) => {
     }
 
     return upsellSection;
-};
-
-export const YourPlanUpsellsSectionV2 = (props: YourPlanSectionV2Props) => {
-    return (
-        <PaymentsContextProvider>
-            <YourPlanUpsellsSectionV2Inner {...props} />
-        </PaymentsContextProvider>
-    );
 };

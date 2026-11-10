@@ -23,6 +23,7 @@ import PaymentWrapper from '@proton/components/containers/payments/PaymentWrappe
 import CheckoutRow from '@proton/components/containers/payments/subscription/modal-components/helpers/CheckoutRow';
 import useLoading from '@proton/hooks/useLoading';
 import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
+import type { OnChargeable } from '@proton/payments-hooks/react-extensions/usePaymentFacade';
 import {
     IdealAuthorizationText,
     isIdealAuthorizationNoteShown,
@@ -43,7 +44,6 @@ import { tracePaymentError } from '@proton/payments/sentry/capture';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { TaxMode } from '@proton/shared/lib/payments/subscription/constants';
 
-import type { OnChargeable } from '../../client-extensions/usePaymentFacade';
 import { usePaymentFacade } from '../../client-extensions/usePaymentFacade';
 import { ChargebeeIdealButton } from '../components/ChargebeeIdealButton';
 import { ChargebeePaypalButton } from '../components/ChargebeePaypalButton';

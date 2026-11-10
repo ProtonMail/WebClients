@@ -2,14 +2,13 @@ import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
 import { getShortBillingText } from '@proton/components/containers/payments/subscription/helpers/getTotalBillingText';
+import type { CouponConfig } from '@proton/payments-hooks/ui/coupon-config/interface';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { ADDON_PREFIXES } from '@proton/payments/core/constants';
 import { vpn15mMetadata } from '@proton/payments/core/coupon-config/configs/vpn15m';
 import { hasAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
-
-import type { CouponConfig } from './interface';
 
 export const vpn15mConfig: CouponConfig = {
     ...vpn15mMetadata,

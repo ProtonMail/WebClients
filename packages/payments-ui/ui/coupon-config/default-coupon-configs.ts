@@ -1,6 +1,7 @@
+import type { CouponConfig } from '@proton/payments-hooks/ui/coupon-config/interface';
+
 import { blackFriday2026Config } from './blackFriday2026';
 import { cancellationFlow } from './cancellation-flow';
-import type { CouponConfig } from './interface';
 import { monthlyNudgeConfig } from './monthlyNudge';
 import { porkbunConfig } from './porkbun';
 import { tryDuo2026Config } from './tryDuo2026';

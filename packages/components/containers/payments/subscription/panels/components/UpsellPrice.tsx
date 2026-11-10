@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { OfferPrice } from '@proton/payments-ui/ui/components/OfferPrice';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpers';
 
 import Price from '../../../../../components/price/Price';
+import { OfferPrice } from '../../../OfferPrice';
 import type { UpsellWithPlan } from '../../helpers/dashboard-upsells';
 
 interface UpsellPriceProps {

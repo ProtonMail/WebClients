@@ -6,7 +6,7 @@ import { useAppName } from '@proton/account/appName';
 import SubscriptionCheckoutCycleItem from '@proton/components/containers/payments/subscription/cycle-selector/SubscriptionCheckoutCycleItem';
 import SubscriptionCycleSelector from '@proton/components/containers/payments/subscription/cycle-selector/SubscriptionCycleSelector';
 import { getAllowedCycles } from '@proton/components/containers/payments/subscription/helpers/getAllowedCycles';
-import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
+import { usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { getIsCustomCycle } from '@proton/payments/core/checkout';
 import { PLANS } from '@proton/payments/core/constants';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';

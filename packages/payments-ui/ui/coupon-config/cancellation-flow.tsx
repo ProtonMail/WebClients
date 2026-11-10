@@ -1,6 +1,5 @@
+import type { CouponConfig } from '@proton/payments-hooks/ui/coupon-config/interface';
 import { cancellationFlowMetadata } from '@proton/payments/core/coupon-config/configs/cancellation-flow';
-
-import type { CouponConfig } from './interface';
 
 export const cancellationFlow: CouponConfig = {
     ...cancellationFlowMetadata,
