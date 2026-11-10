@@ -11,6 +11,7 @@ import accessTokens from './access-tokens';
 import alias from './alias';
 import assignedModelId from './assigned-model-id';
 import compromisedPasswords from './compromised-passwords';
+import folderExpanded from './folder-expanded';
 import files from './files';
 import filters from './filters';
 import folders from './folders';
@@ -47,6 +48,7 @@ export const reducerMap = {
     alias,
     assignedModelId,
     compromisedPasswords,
+    folderExpanded,
     files,
     filters,
     groups,
