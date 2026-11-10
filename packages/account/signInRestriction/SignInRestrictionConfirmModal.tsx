@@ -12,24 +12,23 @@ interface Props extends Omit<PromptProps, 'children' | 'buttons' | 'title'> {
 }
 
 const getUsernameAndAddressesDescription = (username: string, signInDomains: string[]) => {
-    const [firstDomain, secondDomain, thirdDomain] = signInDomains;
-    const firstEmail = `${username}@${firstDomain}`;
+    const [firstEmail, secondEmail, thirdEmail] = signInDomains.map((domain) => `${username}@${domain}`);
 
-    if (thirdDomain) {
-        // translator: full sentence is: By turning this on, you’ll only be able to sign in with your original username <eric.norbert>, either on its own or as <eric.norbert@proton.me>, <@protonmail.com>, or <@protonmail.ch>.
+    if (thirdEmail) {
+        // translator: full sentence is: By turning this on, you’ll only be able to sign in with your username, <eric.norbert>, or with <eric.norbert@proton.me>, <eric.norbert@protonmail.com>, or <eric.norbert@protonmail.ch>.
         return c('Info')
-            .t`By turning this on, you’ll only be able to sign in with your original username **${username}**, either on its own or as **${firstEmail}**, **@${secondDomain}**, or **@${thirdDomain}**.`;
+            .t`By turning this on, you’ll only be able to sign in with your username, **${username}**, or with **${firstEmail}**, **${secondEmail}**, or **${thirdEmail}**.`;
     }
 
-    if (secondDomain) {
-        // translator: full sentence is: By turning this on, you’ll only be able to sign in with your original username <eric.norbert>, either on its own or as <eric.norbert@proton.me>, or <@protonmail.com>.
+    if (secondEmail) {
+        // translator: full sentence is: By turning this on, you’ll only be able to sign in with your username, <eric.norbert>, or with <eric.norbert@proton.me> or <eric.norbert@protonmail.com>.
         return c('Info')
-            .t`By turning this on, you’ll only be able to sign in with your original username **${username}**, either on its own or as **${firstEmail}**, or **@${secondDomain}**.`;
+            .t`By turning this on, you’ll only be able to sign in with your username, **${username}**, or with **${firstEmail}** or **${secondEmail}**.`;
     }
 
-    // translator: full sentence is: By turning this on, you’ll only be able to sign in with your original username <eric.norbert>, either on its own or as <eric.norbert@proton.me>.
+    // translator: full sentence is: By turning this on, you’ll only be able to sign in with your username, <eric.norbert>, or with <eric.norbert@proton.me>.
     return c('Info')
-        .t`By turning this on, you’ll only be able to sign in with your original username **${username}**, either on its own or as **${firstEmail}**.`;
+        .t`By turning this on, you’ll only be able to sign in with your username, **${username}**, or with **${firstEmail}**.`;
 };
 
 const getDescription = ({ username, primaryEmail, signInDomains }: ReturnType<typeof getSignInIdentifiers>) => {

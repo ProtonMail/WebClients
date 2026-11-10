@@ -71,7 +71,7 @@ describe('SignInRestrictionSection', () => {
             screen.getByText((_, element) => {
                 return (
                     element?.textContent ===
-                    'When sign-in is restricted, you can only sign in with your original username eric.norbert, either on its own or as eric.norbert@proton.me. Your other email addresses won’t work for sign-in.'
+                    'When sign-in is restricted, you can only sign in with your username, eric.norbert, or with eric.norbert@proton.me. Your other email addresses won’t work for sign-in.'
                 );
             })
         ).toBeInTheDocument();
@@ -93,7 +93,7 @@ describe('SignInRestrictionSection', () => {
             screen.getByText((_, element) => {
                 return (
                     element?.textContent ===
-                    'When sign-in is restricted, you can only sign in with your original username eric.norbert, either on its own or as eric.norbert@proton.me, @protonmail.com, or @protonmail.ch. Your other email addresses won’t work for sign-in.'
+                    'When sign-in is restricted, you can only sign in with your username, eric.norbert, or with eric.norbert@proton.me, eric.norbert@protonmail.com, or eric.norbert@protonmail.ch. Your other email addresses won’t work for sign-in.'
                 );
             })
         ).toBeInTheDocument();
@@ -114,7 +114,7 @@ describe('SignInRestrictionSection', () => {
             screen.getByText((_, element) => {
                 return (
                     element?.textContent ===
-                    'When sign-in is restricted, you can only sign in with your original username eric.norbert, either on its own or as eric.norbert@proton.me, or @protonmail.com. Your other email addresses won’t work for sign-in.'
+                    'When sign-in is restricted, you can only sign in with your username, eric.norbert, or with eric.norbert@proton.me or eric.norbert@protonmail.com. Your other email addresses won’t work for sign-in.'
                 );
             })
         ).toBeInTheDocument();
@@ -222,7 +222,7 @@ describe('SignInRestrictionSection', () => {
                 return (
                     element?.tagName === 'P' &&
                     element.textContent ===
-                        'By turning this on, you’ll only be able to sign in with your original username eric.norbert, either on its own or as eric.norbert@proton.me.'
+                        'By turning this on, you’ll only be able to sign in with your username, eric.norbert, or with eric.norbert@proton.me.'
                 );
             })
         ).toBeInTheDocument();
