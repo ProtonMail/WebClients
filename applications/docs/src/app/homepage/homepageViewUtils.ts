@@ -9,9 +9,9 @@ import type { Address } from '@proton/shared/lib/interfaces/Address'
 
 import type { DriveEvent, ProtonDriveClient } from '@protontech/drive-sdk'
 
-import type { DocInvitesHook, ItemsSection, ItemsSectionId, RecentsSort } from '~/homepage'
-import { isMyDocument } from './isMyDocument'
-import { getOwnerName } from './getOwnerName'
+import type { DocInvitesHook, ItemsSection, ItemsSectionId, RecentsSort } from './homepageViewContext'
+import { isMyDocument } from './is-my-document'
+import { getOwnerName } from './get-owner-name'
 
 const ALLOWED_SORT_VALUES = [
   'viewed',

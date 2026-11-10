@@ -12,16 +12,16 @@ import {
 import { useCallback, useState } from 'react'
 import { c } from 'ttag'
 import { useApplication } from '~/utils/application-context'
-import { getFullPathFromAncestry } from '~/homepage'
-import { getIsSharedWithMe } from '~/drive-sdk/getIsSharedWithMe'
-import { createDocumentItem } from './create-document-items'
+import { getFullPathFromAncestry } from './driveSdk/getFullPathFromAncestry'
+import { getIsSharedWithMe } from './driveSdk/getIsSharedWithMe'
+import { createDocumentItem } from './createDocumentItems'
 import { useRecentsStore } from './useRecentsStore'
-import { getRoleFromHierarchy } from '@proton/docs-core/DriveSDK/getRoleFromHierarchy'
+import { getRoleFromHierarchy } from './driveSdk/getRoleFromHierarchy'
 import type { RecentDocumentAPIItem } from '@proton/docs-core/Api/Types/GetRecentsResponse'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
 import { addSentryBreadcrumb, traceError } from '@proton/shared/lib/helpers/sentry'
 import { traceRecentsError } from './traceRecentsError'
-import type { EventSubscriber, SDKEventListener } from './homepage-view-sdk-utils'
+import type { EventSubscriber, SDKEventListener } from './homepageViewUtils'
 
 export function useRecents(drive: ProtonDriveClient, eventSubscriber: EventSubscriber) {
   const app = useApplication()

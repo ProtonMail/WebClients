@@ -1,6 +1,11 @@
-import { DocumentActionsProvider, type DocumentActionsProviderProps, HomepageContent, HomepageLayout } from '~/homepage'
-import { HomepageViewProvider } from './__utils/homepage-view-sdk'
-import type { HomepageViewProviderProps } from './__utils/homepage-view-sdk-utils'
+import {
+  DocumentActionsProvider,
+  type DocumentActionsProviderProps,
+  HomepageContent,
+  HomepageLayout,
+  HomepageViewProvider,
+  type HomepageViewProviderProps,
+} from '~/homepage'
 
 export type HomepagePageProps = Omit<HomepageViewProviderProps, 'children'> &
   Omit<DocumentActionsProviderProps, 'children'>

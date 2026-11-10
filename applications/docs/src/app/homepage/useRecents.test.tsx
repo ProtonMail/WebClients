@@ -9,12 +9,12 @@ import {
   type ProtonDriveClient,
   MemberRole,
   NodeType,
-} from '@proton/drive/sdk'
+} from '@protontech/drive-sdk'
 import { act, cleanup, renderHook } from '@testing-library/react'
 import type { ReactNode } from 'react'
 import { ApplicationProvider } from '~/utils/application-context'
-import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
-import { useRecents } from './use-recents'
+import type { EventSubscriber } from './homepageViewUtils'
+import { useRecents } from './useRecents'
 import { useRecentsStore } from './useRecentsStore'
 
 jest.mock('@proton/account/addresses/hooks', () => ({
@@ -75,11 +75,10 @@ describe('useRecents', () => {
     })
 
     test('subscribes to events of documents shared with me', async () => {
-      const subscribeToSharedDocument = jest.spyOn(getEventSubscriber(), 'subscribeToSharedDocument')
       const nodes = createNodes([
         createNode({ uid: 'volume1~doc', membership: {}, treeEventScopeId: 'scope1', directRole: MemberRole.Editor }),
       ])
-      const { result } = renderRecents({ documents: [createApiDocument('doc')], nodes })
+      const { result, eventSubscriber } = renderRecents({ documents: [createApiDocument('doc')], nodes })
 
       await act(() => result.current.fetchRecentDocuments(new AbortController().signal))
 
@@ -88,7 +87,7 @@ describe('useRecents', () => {
         location: { type: 'shared-with-me' },
         effectiveRole: MemberRole.Editor,
       })
-      expect(subscribeToSharedDocument).toHaveBeenCalledWith('volume1~doc', 'scope1')
+      expect(eventSubscriber.subscribeToSharedDocument).toHaveBeenCalledWith('volume1~doc', 'scope1')
     })
 
     test('skips documents with missing node or missing ancestor and notifies', async () => {
@@ -396,8 +395,13 @@ function renderRecents({ documents, nodes }: { documents: ApiDocument[]; nodes: 
 
   const createNotification = jest.fn()
   const application = { docsApi, logger: { debug: jest.fn() } } as unknown as Application
+  const eventSubscriber: EventSubscriber = {
+    initialize: jest.fn(),
+    reset: jest.fn(),
+    subscribeToSharedDocument: jest.fn(),
+  }
 
-  const { result } = renderHook(() => useRecents(drive as unknown as ProtonDriveClient, getEventSubscriber()), {
+  const { result } = renderHook(() => useRecents(drive as unknown as ProtonDriveClient, eventSubscriber), {
     wrapper: ({ children }: { children: ReactNode }) => (
       <ApplicationProvider application={application}>
         <NotificationsContext.Provider value={{ createNotification } as unknown as NotificationsManager}>
@@ -407,7 +411,7 @@ function renderRecents({ documents, nodes }: { documents: ApiDocument[]; nodes: 
     ),
   })
 
-  return { result, drive, docsApi, createNotification }
+  return { result, drive, docsApi, createNotification, eventSubscriber }
 }
 
 /**

@@ -1,5 +1,5 @@
-import { MemberRole, type NodeEntity } from '@proton/drive/sdk'
-import { createDocumentItem } from './create-document-items'
+import { MemberRole, type NodeEntity } from '@protontech/drive-sdk'
+import { createDocumentItem } from './createDocumentItems'
 
 describe('createDocumentItem', () => {
   test('location is shared with me even if document has path', () => {

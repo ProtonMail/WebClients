@@ -23,19 +23,19 @@ import {
   useSearch,
   useType,
   type HomepageViewProviderProps,
-} from './homepage-view-sdk-utils'
+} from './homepageViewUtils'
 import {
   HomepageViewContext,
   type HomepageViewState,
   type HomepageViewValue,
   type ItemsSection,
   type RecentsSort,
-} from '~/homepage'
-import { useRecents } from './use-recents'
-import { useTrashed } from './use-trashed'
+} from './homepageViewContext'
+import { useRecents } from './useRecents'
+import { useTrashed } from './useTrashed'
 
 import { traceRecentsError } from './traceRecentsError'
-import { HOMEPAGE_TRASH_PATH } from '../../../__utils/homepage-paths'
+import { HOMEPAGE_TRASH_PATH } from './homepage-paths'
 
 export function HomepageViewProvider({
   children,

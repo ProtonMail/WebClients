@@ -4,9 +4,9 @@ import { type DriveEvent, type NodeEntity, type ProtonDriveClient, generateNodeU
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import { useCallback, useState } from 'react'
 import { c } from 'ttag'
-import { nodeToTrashedDocumentItem } from './create-document-items'
-import { traceErrorSDK } from '@proton/docs-core/DriveSDK/traceErrorSDK'
-import type { SDKEventListener } from './homepage-view-sdk-utils'
+import { nodeToTrashedDocumentItem } from './createDocumentItems'
+import { traceErrorSDK } from './driveSdk/traceErrorSDK'
+import type { SDKEventListener } from './homepageViewUtils'
 
 export function useTrashed(drive: ProtonDriveClient) {
   const { createNotification } = useNotifications()
