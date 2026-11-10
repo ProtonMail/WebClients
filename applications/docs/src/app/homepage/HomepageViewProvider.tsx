@@ -32,6 +32,7 @@ import {
   type RecentsSort,
 } from './homepageViewContext'
 import { useRecents } from './useRecents'
+import { useUnloadGuardedApi } from './docsApi/useUnloadGuardedApi'
 import { useTrashed } from './useTrashed'
 
 import { traceRecentsError } from './traceRecentsError'
@@ -43,6 +44,9 @@ export function HomepageViewProvider({
   eventSubscriber,
   coreEventSubscriber,
   useDocInvites,
+  api,
+  logger,
+  reportTelemetry,
 }: HomepageViewProviderProps) {
   const { createNotification } = useNotifications()
 
@@ -52,6 +56,7 @@ export function HomepageViewProvider({
   const [addresses] = useAddresses()
   const [type] = useType()
 
+  const guardedApi = useUnloadGuardedApi(api)
   const {
     recentDocuments,
     recentDocumentsInitialized,
@@ -61,7 +66,7 @@ export function HomepageViewProvider({
     removeDocument,
     recentsListener,
     updateMovedDocuments,
-  } = useRecents(drive, eventSubscriber)
+  } = useRecents({ drive, eventSubscriber, api: guardedApi, logger })
   const { fetchTrashed, trashedDocumentItems, isTrashLoading, trashedListener } = useTrashed(drive)
 
   const isTrashRoute = Boolean(useRouteMatch(HOMEPAGE_TRASH_PATH))
@@ -168,6 +173,8 @@ export function HomepageViewProvider({
       myFilesRootUid: myFilesNode?.uid,
       updateMovedDocuments,
       useDocInvites,
+      reportTelemetry,
+      logger,
     }),
     [
       state,
@@ -180,6 +187,8 @@ export function HomepageViewProvider({
       myFilesNode,
       updateMovedDocuments,
       useDocInvites,
+      reportTelemetry,
+      logger,
     ],
   )
 

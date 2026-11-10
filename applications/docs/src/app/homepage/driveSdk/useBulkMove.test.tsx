@@ -1,14 +1,12 @@
 import { act, renderHook } from '@testing-library/react'
 import type { ReactNode } from 'react'
-import type { Application } from '@proton/docs-core/Application/Application'
 import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
 import { ServerTime } from '@proton/docs-shared/ServerTime'
 import { generateNodeUid } from '@protontech/drive-sdk'
-import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
-import { ApplicationProvider } from '~/utils/application-context'
-import { HomepageViewContext, type HomepageViewValue } from './homepageViewContext'
+import { HomepageViewContext, type HomepageViewValue } from '../homepageViewContext'
 import { useBulkMove, type UseMoveItemsModal } from './useBulkMove'
+import { TelemetryEvent } from '../utils/telemetry'
 
 const mockShowMoveItemsModal = jest.fn()
 const useMockMoveItemsModal: UseMoveItemsModal = () => ({
@@ -16,16 +14,14 @@ const useMockMoveItemsModal: UseMoveItemsModal = () => ({
   showMoveItemsModal: mockShowMoveItemsModal,
 })
 
-const reportHomepageTelemetry = jest.fn()
+const reportTelemetry = jest.fn()
 const updateMovedDocuments = jest.fn()
 
 function Wrapper({ children }: { children: ReactNode }) {
   return (
-    <ApplicationProvider application={{ metrics: { reportHomepageTelemetry } } as unknown as Application}>
-      <HomepageViewContext.Provider value={{ updateMovedDocuments } as unknown as HomepageViewValue}>
-        {children}
-      </HomepageViewContext.Provider>
-    </ApplicationProvider>
+    <HomepageViewContext.Provider value={{ updateMovedDocuments, reportTelemetry } as unknown as HomepageViewValue}>
+      {children}
+    </HomepageViewContext.Provider>
   )
 }
 
@@ -66,8 +62,8 @@ describe('useBulkMove', () => {
       nodeUids: [generateNodeUid('volume1', 'link1'), generateNodeUid('volume1', 'link2')],
       onMoved: expect.any(Function),
     })
-    expect(reportHomepageTelemetry).toHaveBeenCalledTimes(2)
-    expect(reportHomepageTelemetry).toHaveBeenCalledWith(TelemetryDocsHomepageEvents.document_moved)
+    expect(reportTelemetry).toHaveBeenCalledTimes(2)
+    expect(reportTelemetry).toHaveBeenCalledWith(TelemetryEvent.document_moved)
   })
 
   it('moves only the documents the move modal reports as moved', () => {

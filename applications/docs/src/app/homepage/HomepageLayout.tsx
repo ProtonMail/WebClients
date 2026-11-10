@@ -47,16 +47,15 @@ import { useHomepageView } from './homepageViewContext'
 import { useHistory, useRouteMatch } from 'react-router'
 import { getDocsReportContextLines } from '~/utils/report-context'
 import { HOMEPAGE_RECENTS_PATH } from './homepage-paths'
-import { useEvent } from './useEvent'
+import { useEvent } from './utils/useEvent'
 import { useIsSheetsEnabled } from '~/utils/flags'
 import clsx from '@proton/utils/clsx'
-import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
-import { useApplication } from '~/utils/application-context'
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag'
 import * as Ariakit from '@ariakit/react'
 import { COLOR_BY_TYPE } from './HomepageContent/shared'
 import { NewDocumentMenu } from './HomepageContent/NewDocumentMenu'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
+import { TelemetryEvent } from './utils/telemetry'
 
 const USER_DROPDOWN_OVERRIDES =
   '[&_.user-dropdown-displayName]:font-[0.8571428571em] [&_.user-dropdown-displayName]:leading-[1.2] [&_.user-initials]:!leading-[1.0714rem]'
@@ -268,11 +267,10 @@ function MobileSearch({ value, onChange, type, className }: SearchProps) {
 type SidebarProps = { expanded: boolean; onToggle: () => void; setExpanded: (value: boolean) => void }
 
 function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
-  const application = useApplication()
   const { getLocalID } = useAuthentication()
   const isRecents = useRouteMatch(HOMEPAGE_RECENTS_PATH)
   const history = useHistory()
-  const { updateRecentDocuments, isRecentsUpdating, type } = useHomepageView()
+  const { updateRecentDocuments, isRecentsUpdating, type, reportTelemetry } = useHomepageView()
   const { createNotification } = useNotifications()
   const { APP_VERSION } = useConfig()
   const appVersion = getAppVersion(APP_VERSION)
@@ -424,7 +422,7 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
               href={getAppHref('/', APPS.PROTONDRIVE, getLocalID())}
               target="_blank"
               onClick={() => {
-                application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.drive_opened)
+                reportTelemetry(TelemetryEvent.drive_opened)
               }}
             >
               <SidebarListItemDiv className="flex items-center gap-2">

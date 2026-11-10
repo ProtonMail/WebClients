@@ -5,16 +5,14 @@ import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents
 import { DocumentActionsContext } from '../documentActionsContext'
 import { ServerTime } from '@proton/docs-shared/ServerTime'
 import { type ReactNode, useEffect, useState } from 'react'
-import type { Application } from '@proton/docs-core/Application/Application'
 import type { RecentDocumentsItemLocation, RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
-import type { LoggerInterface } from '@proton/shared/lib/logs'
 import userEvent from '@testing-library/user-event'
-import { ApplicationProvider } from '~/utils/application-context'
 import type { DocInvitesHook, HomepageViewState } from '../homepageViewContext'
 import { HomepageViewContext } from '../homepageViewContext'
 import type { MemberRole } from '@protontech/drive-sdk'
 import type { ExtendedInvitationDetails } from '@proton/docs-shared/InvitationTypes'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
+import { TelemetryEvent } from '../utils/telemetry'
 
 jest.mock('@proton/shared/lib/i18n', () => ({ dateLocale: { code: 'us' } }))
 
@@ -55,13 +53,23 @@ let mockIsTrashing = false
 const mockBulkMove = jest.fn()
 
 let mockInvitations: ExtendedInvitationDetails[] = []
+const mockAcceptInvite = jest.fn()
+const mockRejectInvite = jest.fn()
 const useMockDocInvites: DocInvitesHook = () => ({
   invitations: mockInvitations,
   recentlyAcceptedInvites: [],
-  acceptInvite: jest.fn(),
-  rejectInvite: jest.fn(),
+  acceptInvite: mockAcceptInvite,
+  rejectInvite: mockRejectInvite,
   confirmModal: null,
 })
+
+const mockOpenInvitedDocument = jest.fn()
+jest.mock('@proton/docs-core/Util/useOpenInvitedDocument', () => ({
+  useOpenInvitedDocument: () => mockOpenInvitedDocument,
+}))
+
+const mockReportTelemetry = jest.fn()
+const mockLogger = { debug: jest.fn(), error: jest.fn() }
 
 function createMockRecentDocument(data: Partial<RecentDocumentsItemValue> = {}): RecentDocumentsItem {
   return RecentDocumentsItem.create({
@@ -172,6 +180,94 @@ describe('HomepageContent', () => {
       renderWithProviders(<HomepageContent />)
 
       expect(await screen.findByTestId('invite-document-name')).toHaveTextContent('Invited document')
+    })
+
+    describe('telemetry and logging', () => {
+      const invitation = {
+        invitation: { invitationId: 'invitation1', createTime: Date.now(), inviterEmail: 'inviter@example.com' },
+        link: { mimeType: PROTON_DOCS_DOCUMENT_MIMETYPE },
+        decryptedLinkName: 'Invited document',
+      } as unknown as ExtendedInvitationDetails
+
+      beforeEach(() => {
+        mockInvitations = [invitation]
+        mockAcceptInvite.mockReset()
+        mockRejectInvite.mockReset()
+        mockOpenInvitedDocument.mockReset()
+        mockReportTelemetry.mockReset()
+        mockLogger.error.mockReset()
+      })
+
+      test('reports invite.accepted and opens the document when an invitation is accepted', async () => {
+        mockAcceptInvite.mockResolvedValue(undefined)
+        renderWithProviders(<HomepageContent />)
+
+        fireEvent.click(within(await screen.findByTestId('invite-actions-cell')).getByTestId('accept-invite-button'))
+
+        await waitFor(() => expect(mockReportTelemetry).toHaveBeenCalledWith(TelemetryEvent.invite_accepted))
+        expect(mockAcceptInvite).toHaveBeenCalledWith(invitation)
+        expect(mockOpenInvitedDocument).toHaveBeenCalledWith(invitation)
+        expect(mockLogger.error).not.toHaveBeenCalled()
+      })
+
+      test('logs an error and reports nothing when accepting an invitation fails', async () => {
+        mockAcceptInvite.mockRejectedValue(new Error('Network error'))
+        renderWithProviders(<HomepageContent />)
+
+        fireEvent.click(within(await screen.findByTestId('invite-actions-cell')).getByTestId('accept-invite-button'))
+
+        await waitFor(() => expect(mockLogger.error).toHaveBeenCalledWith('Could not accept invite'))
+        expect(mockReportTelemetry).not.toHaveBeenCalled()
+        expect(mockOpenInvitedDocument).not.toHaveBeenCalled()
+      })
+
+      test('reports invite.rejected when an invitation is declined', async () => {
+        mockRejectInvite.mockResolvedValue(undefined)
+        renderWithProviders(<HomepageContent />)
+
+        fireEvent.click(within(await screen.findByTestId('invite-actions-cell')).getByTestId('reject-invite-button'))
+
+        await waitFor(() => expect(mockReportTelemetry).toHaveBeenCalledWith(TelemetryEvent.invite_rejected))
+        expect(mockRejectInvite).toHaveBeenCalledWith(invitation)
+        expect(mockLogger.error).not.toHaveBeenCalled()
+      })
+
+      test('logs an error and reports nothing when declining an invitation fails', async () => {
+        mockRejectInvite.mockRejectedValue(new Error('Network error'))
+        renderWithProviders(<HomepageContent />)
+
+        fireEvent.click(within(await screen.findByTestId('invite-actions-cell')).getByTestId('reject-invite-button'))
+
+        await waitFor(() => expect(mockLogger.error).toHaveBeenCalledWith('Could not reject invite'))
+        expect(mockReportTelemetry).not.toHaveBeenCalled()
+      })
+    })
+  })
+
+  describe('telemetry', () => {
+    beforeEach(() => {
+      mockReportTelemetry.mockReset()
+    })
+
+    test.each([
+      ['Name', TelemetryEvent.sorting_changed_to_name],
+      ['Created by', TelemetryEvent.sorting_changed_to_owner],
+      ['Location', TelemetryEvent.sorting_changed_to_location],
+    ])('reports %s sorting as %s', async (option, event) => {
+      renderWithProviders(<HomepageContent />)
+
+      fireEvent.click(await screen.findByRole('button', { name: 'Change sort order' }))
+      fireEvent.click(await screen.findByRole('button', { name: option }))
+
+      expect(mockReportTelemetry).toHaveBeenCalledWith(event)
+    })
+
+    test('reports document.created from the empty recents state', async () => {
+      renderWithProviders(<HomepageContent />, 'empty_recents')
+
+      fireEvent.click(await screen.findByRole('link', { name: /New document/ }))
+
+      expect(mockReportTelemetry).toHaveBeenCalledWith(TelemetryEvent.document_created)
     })
   })
 
@@ -790,6 +886,8 @@ describe('HomepageContent', () => {
           type: undefined,
           myFilesRootUid: mockMyFilesRootUid,
           useDocInvites: useMockDocInvites,
+          reportTelemetry: mockReportTelemetry,
+          logger: mockLogger,
         }}
       >
         {children}
@@ -806,15 +904,11 @@ describe('HomepageContent', () => {
     const mockTrash = jest.fn()
 
     render(
-      <ApplicationProvider
-        application={{ logger: { debug: jest.fn() } as unknown as LoggerInterface } as unknown as Application}
-      >
-        <HomepageViewMockProvider flow={flow}>
-          <DocumentActionsMockProvider mockOpen={mockOpen} mockOpenParent={mockOpenParent} mockTrash={mockTrash}>
-            {node}
-          </DocumentActionsMockProvider>
-        </HomepageViewMockProvider>
-      </ApplicationProvider>,
+      <HomepageViewMockProvider flow={flow}>
+        <DocumentActionsMockProvider mockOpen={mockOpen} mockOpenParent={mockOpenParent} mockTrash={mockTrash}>
+          {node}
+        </DocumentActionsMockProvider>
+      </HomepageViewMockProvider>,
     )
     return { mockOpen, mockOpenParent, mockTrash }
   }

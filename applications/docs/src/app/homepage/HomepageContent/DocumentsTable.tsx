@@ -26,7 +26,6 @@ import { IcUser } from '@proton/icons/icons/IcUser'
 import { IcUserFilled } from '@proton/icons/icons/IcUserFilled'
 import { IcUsers } from '@proton/icons/icons/IcUsers'
 import { useContactEmails } from '@proton/account/contactEmails/hooks'
-import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
@@ -37,21 +36,21 @@ import clsx from '@proton/utils/clsx'
 import type { ComponentPropsWithoutRef, KeyboardEvent, MouseEvent, ReactNode } from 'react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { c, msgid } from 'ttag'
-import { useApplication } from '~/utils/application-context'
 import { useBulkMoveEnabled, useBulkTrashEnabled } from '~/utils/flags'
-import { useEvent } from '../useEvent'
+import { useEvent } from '../utils/useEvent'
 import { useDocumentActions } from '../documentActionsContext'
 import type { RecentsSort } from '../homepageViewContext'
 import { useHomepageView, type ItemsSection, type ItemsSectionId } from '../homepageViewContext'
 import { isMyDocument } from '../is-my-document'
-import { useRowSelection, type RowSelection } from '../useRowSelection'
+import { useRowSelection, type RowSelection } from './useRowSelection'
 import { DocContextMenu, canTrash } from './DocContextMenu/DocContextMenu'
 import { useContextMenu } from './DocContextMenu/context'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import * as Table from './table'
 
 import { getOwnerName } from '../get-owner-name'
-import { useDoubleClick } from '../useDoubleClick'
+import { useDoubleClick } from '../utils/useDoubleClick'
+import { TelemetryEvent } from '../utils/telemetry'
 
 // table
 // -----
@@ -363,18 +362,17 @@ const SORT_SELECT_OPTIONS = [
   { value: 'location', label: () => c('Sort menu options').t`Location` },
 ] satisfies { value: RecentsSort; label: () => string }[]
 
-const TELEMETRY_EVENT_BY_SORT: Record<RecentsSort, TelemetryDocsHomepageEvents> = {
-  viewed: TelemetryDocsHomepageEvents.sorting_changed_to_time,
-  //   modified: TelemetryDocsHomepageEvents.sorting_changed_to_modified,
-  name: TelemetryDocsHomepageEvents.sorting_changed_to_name,
-  owner: TelemetryDocsHomepageEvents.sorting_changed_to_owner,
-  location: TelemetryDocsHomepageEvents.sorting_changed_to_location,
+const TELEMETRY_EVENT_BY_SORT: Record<RecentsSort, TelemetryEvent> = {
+  viewed: TelemetryEvent.sorting_changed_to_time,
+  //   modified: TelemetryEvent.sorting_changed_to_modified,
+  name: TelemetryEvent.sorting_changed_to_name,
+  owner: TelemetryEvent.sorting_changed_to_owner,
+  location: TelemetryEvent.sorting_changed_to_location,
 }
 
 function SortSelect() {
-  const application = useApplication()
   const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>()
-  const { state, setRecentsSort } = useHomepageView()
+  const { state, setRecentsSort, reportTelemetry } = useHomepageView()
   const sortValue = state.view === 'recents' ? state.sort : undefined
 
   return (
@@ -400,7 +398,7 @@ function SortSelect() {
               onClick={() => {
                 setRecentsSort(value)
                 close()
-                application.metrics.reportHomepageTelemetry(TELEMETRY_EVENT_BY_SORT[value])
+                reportTelemetry(TELEMETRY_EVENT_BY_SORT[value])
               }}
               className="flex items-center gap-2"
             >

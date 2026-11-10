@@ -12,6 +12,9 @@ import type { DriveEvent, ProtonDriveClient } from '@protontech/drive-sdk'
 import type { DocInvitesHook, ItemsSection, ItemsSectionId, RecentsSort } from './homepageViewContext'
 import { isMyDocument } from './is-my-document'
 import { getOwnerName } from './get-owner-name'
+import type { Api } from './docsApi/api'
+import type { Logger } from './utils/logger'
+import type { ReportTelemetry } from './utils/telemetry'
 
 const ALLOWED_SORT_VALUES = [
   'viewed',
@@ -53,6 +56,9 @@ export type HomepageViewProviderProps = {
   eventSubscriber: EventSubscriber
   coreEventSubscriber: CoreEventSubscriber
   useDocInvites: DocInvitesHook
+  api: Api
+  logger: Logger
+  reportTelemetry: ReportTelemetry
 }
 
 function useQueryState<T extends string | undefined>(name: string, defaultValue: T, allowedValues?: readonly T[]) {

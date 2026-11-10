@@ -7,20 +7,19 @@ import { IcChevronDown } from '@proton/icons/icons/IcChevronDown'
 import { IcCross } from '@proton/icons/icons/IcCross'
 import { DateFormatter } from '@proton/docs-core/VersionHistory/DateFormatter'
 import { ServerTime } from '@proton/docs-shared/ServerTime'
-import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { getInitials } from '@proton/shared/lib/helpers/string'
 import clsx from '@proton/utils/clsx'
 import { type ComponentPropsWithoutRef, useState } from 'react'
 import { c, msgid } from 'ttag'
-import { useApplication } from '~/utils/application-context'
 import { useHomepageView, type DocInvitesHook } from '../homepageViewContext'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import * as Table from './table'
 import type { ExtendedInvitationDetails } from '@proton/docs-shared/InvitationTypes'
 import { useInvitationsSdkEnabled } from '~/utils/flags'
 import { useOpenInvitedDocument } from '@proton/docs-core/Util/useOpenInvitedDocument'
+import { TelemetryEvent } from '../utils/telemetry'
 
 const MAX_INVITES_WHEN_COLLAPSED = 3
 const WAIT_AFTER_ACCEPT_INVITE = 5000 // ms
@@ -203,8 +202,7 @@ interface InviteActionsProps {
 function InviteActions({ invite, onRejectInvite, acceptInvite, openInvitedDocument }: InviteActionsProps) {
   const [isAcceptingInvite, setIsAcceptingInvite] = useState(false)
 
-  const application = useApplication()
-  const { updateRecentDocuments } = useHomepageView()
+  const { updateRecentDocuments, reportTelemetry, logger } = useHomepageView()
 
   async function handleAcceptInvite(invite: ExtendedInvitationDetails) {
     try {
@@ -212,9 +210,9 @@ function InviteActions({ invite, onRejectInvite, acceptInvite, openInvitedDocume
       await acceptInvite(invite)
       openInvitedDocument(invite)
       setTimeout(updateRecentDocuments, WAIT_AFTER_ACCEPT_INVITE)
-      application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.invite_accepted)
+      reportTelemetry(TelemetryEvent.invite_accepted)
     } catch (error) {
-      application.logger.error('Could not accept invite')
+      logger.error('Could not accept invite')
       traceError(error)
     } finally {
       setIsAcceptingInvite(false)
@@ -224,9 +222,9 @@ function InviteActions({ invite, onRejectInvite, acceptInvite, openInvitedDocume
   async function handleRejectInvite(invite: ExtendedInvitationDetails) {
     try {
       await onRejectInvite(invite)
-      application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.invite_rejected)
+      reportTelemetry(TelemetryEvent.invite_rejected)
     } catch (error) {
-      application.logger.error('Could not reject invite')
+      logger.error('Could not reject invite')
       traceError(error)
     }
   }

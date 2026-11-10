@@ -1,6 +1,5 @@
 import type { NotificationsManager } from '@proton/app-context/notifications/manager'
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext'
-import type { Application } from '@proton/docs-core/Application/Application'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
 import {
   type DriveEvent,
@@ -12,10 +11,16 @@ import {
 } from '@protontech/drive-sdk'
 import { act, cleanup, renderHook } from '@testing-library/react'
 import type { ReactNode } from 'react'
-import { ApplicationProvider } from '~/utils/application-context'
+import { ApiError } from '@proton/shared/lib/fetch/ApiError'
 import type { EventSubscriber } from './homepageViewUtils'
 import { useRecents } from './useRecents'
 import { useRecentsStore } from './useRecentsStore'
+
+const mockTraceError = jest.fn()
+jest.mock('@proton/shared/lib/helpers/sentry', () => ({
+  ...jest.requireActual('@proton/shared/lib/helpers/sentry'),
+  traceError: (...args: unknown[]) => mockTraceError(...args),
+}))
 
 jest.mock('@proton/account/addresses/hooks', () => ({
   useAddresses: () => [undefined, false],
@@ -31,6 +36,14 @@ describe('useRecents', () => {
   })
 
   describe('fetchRecentDocuments', () => {
+    test('requests recent documents through the injected api', async () => {
+      const { result, api } = renderRecents({ documents: [], nodes: createNodes([]) })
+
+      await act(() => result.current.fetchRecentDocuments(new AbortController().signal))
+
+      expect(api).toHaveBeenCalledWith({ method: 'get', url: 'docs/recent' })
+    })
+
     test('stores documents with path, ancestors and effective role', async () => {
       const nodes = createNodes([
         createNode({ uid: 'volume1~root', type: NodeType.Folder, directRole: MemberRole.Admin }),
@@ -130,13 +143,28 @@ describe('useRecents', () => {
     })
 
     test('notifies and does not initialize when fetching recents fails', async () => {
-      const { result, docsApi, createNotification } = renderRecents({ documents: [], nodes: createNodes([]) })
-      docsApi.fetchRecentDocuments.mockRejectedValue(new Error('Network error'))
+      const { result, api, createNotification } = renderRecents({ documents: [], nodes: createNodes([]) })
+      api.mockRejectedValue(new Error('Network error'))
 
       await act(() => result.current.fetchRecentDocuments(new AbortController().signal))
 
       expect(useRecentsStore.getState().recentDocumentsInitialized).toBe(false)
       expect(createNotification).toHaveBeenCalledWith({ type: 'error', text: 'Failed to load recent documents' })
+    })
+
+    // Sentry's beforeSend (packages/shared/lib/helpers/sentry.ts) drops every ApiError, so a failed request
+    // must reach traceError as another error to be reported, as it did when DocsApi wrapped it in an ApiResult.
+    test('reports a failed recents request to Sentry as an error Sentry does not drop', async () => {
+      const { result, api } = renderRecents({ documents: [], nodes: createNodes([]) })
+      api.mockRejectedValue(new ApiError('Internal error', 500, 'StatusCodeError'))
+      mockTraceError.mockClear()
+
+      await act(() => result.current.fetchRecentDocuments(new AbortController().signal))
+
+      expect(mockTraceError).toHaveBeenCalledTimes(1)
+      const [reported, details] = mockTraceError.mock.calls[0]
+      expect(reported).not.toBeInstanceOf(ApiError)
+      expect(details).toEqual({ tags: { initiative: 'realtime-sdk-switch', feature: 'DocsLoadRecentsWithDriveSDK' } })
     })
 
     test('ignores abort errors', async () => {
@@ -388,30 +416,29 @@ function locationsOf(recentDocuments: { [nodeUid: string]: RecentDocumentsItemVa
 }
 
 function renderRecents({ documents, nodes }: { documents: ApiDocument[]; nodes: Map<string, NodeEntity> }) {
-  const docsApi = {
-    fetchRecentDocuments: jest.fn().mockResolvedValue({ getValue: () => ({ RecentDocuments: documents }) }),
-  }
+  const api = jest.fn().mockResolvedValue({ RecentDocuments: documents })
   const drive = createFakeDrive(nodes)
 
   const createNotification = jest.fn()
-  const application = { docsApi, logger: { debug: jest.fn() } } as unknown as Application
+  const logger = { debug: jest.fn(), error: jest.fn() }
   const eventSubscriber: EventSubscriber = {
     initialize: jest.fn(),
     reset: jest.fn(),
     subscribeToSharedDocument: jest.fn(),
   }
 
-  const { result } = renderHook(() => useRecents(drive as unknown as ProtonDriveClient, eventSubscriber), {
-    wrapper: ({ children }: { children: ReactNode }) => (
-      <ApplicationProvider application={application}>
+  const { result } = renderHook(
+    () => useRecents({ drive: drive as unknown as ProtonDriveClient, eventSubscriber, api, logger }),
+    {
+      wrapper: ({ children }: { children: ReactNode }) => (
         <NotificationsContext.Provider value={{ createNotification } as unknown as NotificationsManager}>
           {children}
         </NotificationsContext.Provider>
-      </ApplicationProvider>
-    ),
-  })
+      ),
+    },
+  )
 
-  return { result, drive, docsApi, createNotification, eventSubscriber }
+  return { result, drive, api, createNotification, eventSubscriber }
 }
 
 /**

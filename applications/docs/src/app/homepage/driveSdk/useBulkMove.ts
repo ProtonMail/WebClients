@@ -1,10 +1,9 @@
 import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import type { ReactNode } from 'react'
 import { generateNodeUid } from '@protontech/drive-sdk'
-import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
-import { useApplication } from '~/utils/application-context'
-import { useEvent } from './useEvent'
-import { useHomepageView } from './homepageViewContext'
+import { useEvent } from '../utils/useEvent'
+import { useHomepageView } from '../homepageViewContext'
+import { TelemetryEvent } from '../utils/telemetry'
 
 export type UseMoveItemsModal = () => {
   moveItemsModal: ReactNode
@@ -19,8 +18,7 @@ type BulkMoveDependencies = { useMoveItemsModal: UseMoveItemsModal }
  * `onMoved` gets the documents that moved, as soon as the move finishes.
  */
 export function useBulkMove({ useMoveItemsModal }: BulkMoveDependencies) {
-  const application = useApplication()
-  const { updateMovedDocuments } = useHomepageView()
+  const { updateMovedDocuments, reportTelemetry } = useHomepageView()
   const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal()
 
   const move = useEvent((documents: RecentDocumentsItem[], onMoved?: (moved: RecentDocumentsItem[]) => void) => {
@@ -31,7 +29,7 @@ export function useBulkMove({ useMoveItemsModal }: BulkMoveDependencies) {
         onMoved?.(documents.filter(({ volumeId, linkId }) => movedUids.includes(generateNodeUid(volumeId, linkId))))
       },
     })
-    documents.forEach(() => application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_moved))
+    documents.forEach(() => reportTelemetry(TelemetryEvent.document_moved))
   })
 
   return { move, moveItemsModal }

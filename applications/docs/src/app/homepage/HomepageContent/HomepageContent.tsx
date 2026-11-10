@@ -16,9 +16,8 @@ import clsx from '@proton/utils/clsx'
 import * as Ariakit from '@ariakit/react'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
-import { useApplication } from '~/utils/application-context'
-import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { useIsSheetsEnabled } from '~/utils/flags'
+import { TelemetryEvent } from '../utils/telemetry'
 
 export function HomepageContent() {
   return (
@@ -136,9 +135,8 @@ const HomepageButton = forwardRef<HTMLButtonElement, Ariakit.ButtonProps>(functi
 })
 
 function RecentsEmptyStateButtons() {
-  const application = useApplication()
   const { getLocalID } = useAuthentication()
-  const { updateRecentDocuments } = useHomepageView()
+  const { updateRecentDocuments, reportTelemetry } = useHomepageView()
   const isSheetsEnabled = useIsSheetsEnabled()
 
   return (
@@ -146,7 +144,7 @@ function RecentsEmptyStateButtons() {
       <HomepageButton
         render={<Ariakit.Role.a href={getAppHref('/doc', APPS.PROTONDOCS, getLocalID())} target="_blank" />}
         onClick={() => {
-          application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_created)
+          reportTelemetry(TelemetryEvent.document_created)
           setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)
         }}
       >
