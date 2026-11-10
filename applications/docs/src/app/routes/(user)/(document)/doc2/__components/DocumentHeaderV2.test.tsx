@@ -13,13 +13,22 @@ import { DocumentHeaderV2 } from './DocumentHeaderV2'
 jest.mock('@proton/components/containers/heading/UserDropdown', () => () => <div>User menu</div>)
 jest.mock('~/components/document/DocumentViewer/WorkspacePromoBanner', () => ({ WorkspacePromoBanner: () => null }))
 jest.mock('./DocumentTitleMenu', () => ({ DocumentTitleMenu: () => <div>Title menu</div> }))
+const mockShowSharingModal = jest.fn()
+jest.mock('@proton/drive/public/sharingModal', () => ({
+  useSharingModal: () => ({ sharingModal: <div>Sharing modal</div>, showSharingModal: mockShowSharingModal }),
+}))
+const mockDrive = { name: 'drive' }
+jest.mock('@proton/drive/sdk', () => ({ getDrive: () => mockDrive }))
 jest.mock('~/utils/application-context', () => ({ useApplication: () => ({ logger: { warn: jest.fn() } }) }))
 
 // The atoms Tooltip's default open delay
 const TOOLTIP_OPEN_DELAY_MS = 1000
 
 describe('DocumentHeaderV2', () => {
-  afterEach(() => jest.useRealTimers())
+  afterEach(() => {
+    jest.useRealTimers()
+    jest.clearAllMocks()
+  })
 
   test('links to Docs home, and holds the title menu and the user menu', () => {
     renderHeader('Editor')
@@ -88,8 +97,42 @@ describe('DocumentHeaderV2', () => {
   })
 })
 
+describe('DocumentHeaderV2 sharing', () => {
+  afterEach(() => jest.clearAllMocks())
+
+  test('an Admin gets the Share button, which opens the Drive sharing modal on the document', async () => {
+    renderHeader('Admin')
+
+    await userEvent.click(screen.getByTestId('share-button'))
+
+    expect(mockShowSharingModal).toHaveBeenCalledTimes(1)
+    // No onShareSnapshot: sharing never rewrites the address bar to the public link
+    expect(mockShowSharingModal).toHaveBeenCalledWith({ drive: mockDrive, nodeUid: 'VOLUME~LINK' })
+    expect(screen.getByText('Sharing modal')).toBeInTheDocument()
+  })
+
+  test.each<DocumentRole>(['Editor', 'Viewer'])('a %s gets no Share button', (role) => {
+    renderHeader(role)
+
+    expect(screen.queryByTestId('share-button')).not.toBeInTheDocument()
+  })
+
+  test('the Share button goes when the role drops from Admin', () => {
+    const { rerender } = renderHeader('Admin')
+    expect(screen.getByTestId('share-button')).toBeInTheDocument()
+
+    rerender(headerElement('Editor'))
+
+    expect(screen.queryByTestId('share-button')).not.toBeInTheDocument()
+  })
+})
+
 function renderHeader(role: DocumentRole, status?: ReactNode) {
-  render(
+  return render(headerElement(role, status))
+}
+
+function headerElement(role: DocumentRole, status?: ReactNode) {
+  return (
     <ConfigContext.Provider value={{ APP_VERSION: '1.2.3', APP_NAME: 'proton-docs' } as ProtonConfig}>
       <DocumentHeaderV2
         node={{ uid: 'VOLUME~LINK', parentUid: 'VOLUME~PARENT', name: { ok: true, value: 'Plans' } }}
@@ -97,10 +140,12 @@ function renderHeader(role: DocumentRole, status?: ReactNode) {
         participants={[]}
         editorInvoker={undefined}
         wordCount={{ isShown: false, setIsShown: jest.fn() }}
+        trashState="not_trashed"
+        isCreatingSpreadsheet={false}
         onFileMenuAction={jest.fn()}
         status={status}
       />
-    </ConfigContext.Provider>,
+    </ConfigContext.Provider>
   )
 }
 
@@ -126,6 +171,8 @@ function headerWithParticipants(
         participants={activeParticipants}
         editorInvoker={editorInvoker}
         wordCount={{ isShown: false, setIsShown: jest.fn() }}
+        trashState="not_trashed"
+        isCreatingSpreadsheet={false}
         onFileMenuAction={jest.fn()}
       />
     </ConfigContext.Provider>

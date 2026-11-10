@@ -2,6 +2,7 @@ import { type MouseEvent, type ReactNode, useCallback, useEffect, useRef, useSta
 
 import { useConfig } from '@proton/app-context/useConfig'
 import { useNotifications } from '@proton/app-context/useNotifications'
+import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import Dropdown from '@proton/components/components/dropdown/Dropdown'
@@ -44,6 +45,7 @@ import type { EditorInvoker } from '../__utils/EditorInvoker'
 import type { DocumentRole } from '../__utils/getDocumentRole'
 import { getNodeName } from '../__utils/getNodeName'
 import { renameDocument } from '../__utils/renameDocument'
+import type { TrashState } from '../__utils/useDocumentFileActions'
 import type { WordCount } from './WordCount'
 
 export type DocumentTitleMenuProps = {
@@ -51,6 +53,8 @@ export type DocumentTitleMenuProps = {
   role: DocumentRole
   editorInvoker: Pick<EditorInvoker, 'setTableOfContentsVisible'> | undefined
   wordCount: WordCount
+  trashState: TrashState
+  isCreatingSpreadsheet: boolean
   onFileMenuAction: (action: FileMenuAction) => void
 }
 
@@ -58,7 +62,15 @@ export type DocumentTitleMenuProps = {
  * The document name, which opens /doc's title menu (`DocumentTitleDropdown.tsx`) with every docs item in its order.
  * Items whose doc2 ticket hasn't landed are stubs; the sheets-only ones are left out.
  */
-export function DocumentTitleMenu({ node, role, editorInvoker, wordCount, onFileMenuAction }: DocumentTitleMenuProps) {
+export function DocumentTitleMenu({
+  node,
+  role,
+  editorInvoker,
+  wordCount,
+  trashState,
+  isCreatingSpreadsheet,
+  onFileMenuAction,
+}: DocumentTitleMenuProps) {
   const { logger } = useApplication()
   const { APP_VERSION } = useConfig()
   const { createNotification } = useNotifications()
@@ -226,23 +238,40 @@ export function DocumentTitleMenu({ node, role, editorInvoker, wordCount, onFile
             </DropdownMenuButton>
           )}
 
-          <StubMenuItem waitsFor="T6" icon={<IcBrandProtonDocs />} data-testid="dropdown-new-document">
+          <DropdownMenuButton
+            className="flex items-center text-left"
+            onClick={() => onFileMenuAction({ type: 'new-document' })}
+            data-testid="dropdown-new-document"
+          >
+            <IcBrandProtonDocs className="color-weak mr-2" />
             {c('Action').t`New document`}
-          </StubMenuItem>
+          </DropdownMenuButton>
 
           {isSheetsEnabled && (
-            <StubMenuItem waitsFor="T6" icon={<IcBrandProtonSheets />} data-testid="dropdown-new-spreadsheet">
+            <DropdownMenuButton
+              className="flex items-center text-left"
+              disabled={isCreatingSpreadsheet}
+              onClick={() => onFileMenuAction({ type: 'new-spreadsheet' })}
+              data-testid="dropdown-new-spreadsheet"
+            >
+              <IcBrandProtonSheets className="color-weak mr-2" />
               {c('sheets_2025:Action').t`New spreadsheet`}
-            </StubMenuItem>
+              {isCreatingSpreadsheet && <CircleLoader size="small" className="ml-auto" />}
+            </DropdownMenuButton>
           )}
 
           <StubMenuItem waitsFor="T13" icon={<IcSquares />} data-testid="dropdown-duplicate">
             {c('Action').t`Make a copy`}
           </StubMenuItem>
 
-          <StubMenuItem waitsFor="T6" icon={<IcArrowsCross />} data-testid="dropdown-move-to-folder">
+          <DropdownMenuButton
+            className="flex items-center text-left"
+            onClick={() => onFileMenuAction({ type: 'move-to-folder' })}
+            data-testid="dropdown-move-to-folder"
+          >
+            <IcArrowsCross className="color-weak mr-2" />
             {c('Action').t`Move to folder`}
-          </StubMenuItem>
+          </DropdownMenuButton>
 
           <StubMenuItem waitsFor="version history" icon={<IcClockRotateLeft />} data-testid="dropdown-versioning">
             {c('Action').t`See version history`}
@@ -260,9 +289,16 @@ export function DocumentTitleMenu({ node, role, editorInvoker, wordCount, onFile
           </DropdownMenuButton>
 
           {canTrash && (
-            <StubMenuItem waitsFor="T6" icon={<IcTrash />} data-testid="dropdown-trash">
+            <DropdownMenuButton
+              className="flex items-center text-left"
+              disabled={trashState !== 'not_trashed'}
+              onClick={() => onFileMenuAction({ type: 'move-to-trash' })}
+              data-testid="dropdown-trash"
+            >
+              <IcTrash className="color-weak mr-2" />
               {c('Action').t`Move to trash`}
-            </StubMenuItem>
+              {trashState === 'trashing' && <CircleLoader size="small" className="ml-auto" />}
+            </DropdownMenuButton>
           )}
 
           <hr className="my-1 min-h-px" />
@@ -297,9 +333,14 @@ export function DocumentTitleMenu({ node, role, editorInvoker, wordCount, onFile
             )}
           </DropdownMenuButton>
 
-          <StubMenuItem waitsFor="T6" icon={<IcBrandProtonDrive />} data-testid="dropdown-open-drive">
+          <DropdownMenuButton
+            className="flex items-center text-left"
+            onClick={() => onFileMenuAction({ type: 'open-proton-drive' })}
+            data-testid="dropdown-open-drive"
+          >
+            <IcBrandProtonDrive className="color-weak mr-2" />
             {c('Action').t`Open ${DRIVE_APP_NAME}`}
-          </StubMenuItem>
+          </DropdownMenuButton>
 
           {isDownloadLogsAllowed && (
             <StubMenuItem waitsFor="T10" icon={<IcArrowDownToSquare />} data-testid="dropdown-download-logs">
@@ -343,10 +384,10 @@ export function DocumentTitleMenu({ node, role, editorInvoker, wordCount, onFile
 }
 
 /**
- * The doc2 plan ticket a stub waits for: T6 file actions and sharing, T7 download, print and export, T10 the debug
- * menu, T13 make a copy. Version history has no ticket: it is kept for later.
+ * The doc2 plan ticket a stub waits for: T7 download, print and export, T10 the debug menu, T13 make a copy. Version
+ * history has no ticket: it is kept for later.
  */
-type StubTicket = 'T6' | 'T7' | 'T10' | 'T13' | 'version history'
+type StubTicket = 'T7' | 'T10' | 'T13' | 'version history'
 
 type StubMenuItemProps = { waitsFor: StubTicket; icon: ReactNode; children: ReactNode; 'data-testid': string }
 

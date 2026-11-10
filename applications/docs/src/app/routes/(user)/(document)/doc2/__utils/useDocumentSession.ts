@@ -21,6 +21,8 @@ export type DocumentSessionState =
       /** How many times the role was read, so that a re-read applies the editor lock again even when it is unchanged */
       roleReads: number
     }
+  /** In the trash: RTS refuses a trashed document a token, so no session opens until it is restored */
+  | { status: 'trashed'; role: DocumentRole; node: NodeEntity }
   | { status: 'failed'; reason: 'unsupported' | 'unreadableUpdate' | BootstrapFailure }
 
 /**
@@ -28,6 +30,7 @@ export type DocumentSessionState =
  * the hook's lifetime. On unmount it removes its listeners and disconnects the session, once bootstrapped if it was
  * still bootstrapping.
  * A base state with an unreadable update fails, since showing the rest would pass an incomplete document as whole.
+ * A document in the trash bootstraps nothing: it reads `trashed`, with its role and node.
  * A failed bootstrap says why, by `classifyBootstrapError`.
  * The role is read again after each rebootstrap, when the status leaves `opening` after the first ready, since the
  * SDK rebootstraps when the user's access changes. Only the latest read counts, and one that fails keeps the role.
@@ -59,6 +62,11 @@ export function useDocumentSession(
       if (!isProtonDocsDocument(node.mediaType ?? '')) {
         logger.info('Node is not a text document', { mediaType: node.mediaType })
         setState({ status: 'failed', reason: 'unsupported' })
+        return
+      }
+      if (node.trashTime) {
+        logger.info('Document is in trash, opening no session')
+        setState({ status: 'trashed', role: getDocumentRole(hierarchy), node })
         return
       }
 

@@ -4,12 +4,14 @@ import { useConfig } from '@proton/app-context/useConfig'
 import { EditorSystemMode } from '@proton/docs-shared/EditorSystemMode'
 import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
 import type { FileMenuAction } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
+import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import { useGetFlag } from '@proton/unleash/useGetFlag'
 import type { PrivateNodeMeta } from '@proton-docs/realtime-sdk'
 
 import { EditorFrame } from '~/components/document/EditorFrame'
 import { useApplication } from '~/utils/application-context'
 import { useDebugMode } from '~/utils/debug-mode-context'
+import { useEvent } from '~/utils/misc'
 
 import { ClientEditorBridge } from '../__utils/ClientEditorBridge'
 import { isParticipantLimitReached } from '../__utils/activeUsers'
@@ -17,6 +19,7 @@ import type { EditorInvoker } from '../__utils/EditorInvoker'
 import { createClientHandler } from '../__utils/createClientHandler'
 import { handleFileMenuAction, openHelp } from '../__utils/handleFileMenuAction'
 import { sendBaseState, showDocument } from '../__utils/showDocument'
+import { useDocumentFileActions } from '../__utils/useDocumentFileActions'
 import { useDocumentSession } from '../__utils/useDocumentSession'
 import { useEditorBasics, useIsEditorDarkMode } from '../__utils/useEditorBasics'
 import { useLiveDocumentNode } from '../__utils/useLiveDocumentNode'
@@ -41,12 +44,14 @@ export const EDITOR_FRAME_READY_TIMEOUT_MS = 30_000
 
 export type DocumentViewerV2Props = {
   nodeMeta: PrivateNodeMeta
+  /** Creates the new spreadsheet the title menu offers */
+  driveCompat: DriveCompat
   /** Opens the document again from the start */
   onRetry: () => void
 }
 
 /** Opens the text document `nodeMeta` for live editing, as far as the user's role allows. */
-export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
+export function DocumentViewerV2({ nodeMeta, driveCompat, onRetry }: DocumentViewerV2Props) {
   const { logger } = useApplication()
   const { APP_VERSION } = useConfig()
   const isFlagEnabled = useGetFlag()
@@ -60,13 +65,23 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
   const { toggleDebugMode } = useDebugMode()
   const isDarkMode = useIsEditorDarkMode()
   const session = sessionState.status === 'ready' ? sessionState.session : undefined
-  const role = sessionState.status === 'ready' ? sessionState.role : 'Viewer'
+  // A document opened in the trash has a role and a node, for the header and the trashed modal, and no session
+  const openedTrashed = sessionState.status === 'trashed'
+  const role = sessionState.status === 'ready' || openedTrashed ? sessionState.role : 'Viewer'
   const roleReads = sessionState.status === 'ready' ? sessionState.roleReads : 0
   // The editor is initialized once, for the role read first: a role read again after a rebootstrap changes the lock
   // and the header, never initializes the editor again
   const roleRef = useRef(role)
   roleRef.current = role
-  const node = useLiveDocumentNode(sessionState.status === 'ready' ? sessionState.node : undefined)
+  const node = useLiveDocumentNode(sessionState.status === 'ready' || openedTrashed ? sessionState.node : undefined)
+
+  const retryConnection = () => {
+    // A second click, or a retry on activity after an idle eviction, may have left `stopped` already
+    if (session?.getSnapshot().status.name !== 'stopped') {
+      return
+    }
+    session.retry().catch((error) => logger.warn('Failed to reconnect the document session', error))
+  }
 
   const failEditor = useCallback(
     (error: Error) => {
@@ -75,9 +90,23 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
     },
     [logger],
   )
-  const onFileMenuAction = useCallback(
-    (action: FileMenuAction) => handleFileMenuAction(action, { openHelp, toggleDebugMode }, logger),
-    [logger, toggleDebugMode],
+  const fileActions = useDocumentFileActions({ node, role, driveCompat })
+  // Out of the trash, restored here or elsewhere: a document opened trashed opens now, and a session that stopped
+  // while RTS refused the trashed document reconnects (one still trying reconnects by itself)
+  const leaveTrash = useEvent(() => (openedTrashed ? onRetry() : retryConnection()))
+  const inTrash = fileActions.trashState === 'trashed' || fileActions.trashState === 'restoring'
+  const wasInTrashRef = useRef(false)
+  useEffect(() => {
+    if (inTrash) {
+      wasInTrashRef.current = true
+    } else if (wasInTrashRef.current && fileActions.trashState === 'not_trashed') {
+      wasInTrashRef.current = false
+      leaveTrash()
+    }
+  }, [fileActions.trashState, inTrash, leaveTrash])
+  // Stable, since the editor bridge is built with it: it runs the latest actions, for the latest node and role
+  const onFileMenuAction = useEvent((action: FileMenuAction) =>
+    handleFileMenuAction(action, { ...fileActions, openHelp, toggleDebugMode }, logger),
   )
 
   // Read here too, since useLiveEditing takes the participant limit and only then returns the snapshot
@@ -216,14 +245,6 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
     return <OpenActionError reason="editorFailed" onRetry={onRetry} />
   }
 
-  const retryConnection = () => {
-    // A second click, or a retry on activity after an idle eviction, may have left `stopped` already
-    if (session?.getSnapshot().status.name !== 'stopped') {
-      return
-    }
-    session.retry().catch((error) => logger.warn('Failed to reconnect the document session', error))
-  }
-
   const header = node && (
     <DocumentHeaderV2
       node={node}
@@ -231,6 +252,8 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
       participants={participants ?? []}
       editorInvoker={editorInvoker}
       wordCount={wordCount}
+      trashState={fileActions.trashState}
+      isCreatingSpreadsheet={fileActions.isCreatingSpreadsheet}
       onFileMenuAction={onFileMenuAction}
       status={editorInvoker && snapshot && <SessionStatus snapshot={snapshot} onRetry={retryConnection} />}
     />
@@ -251,6 +274,7 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
         </div>
         {editorStatus === 'shown' && <WordCountOverlay wordCount={wordCount} />}
         {modal}
+        {fileActions.modals}
         <DocumentSizeLimitModal session={session} />
       </div>
     </DocumentShell>

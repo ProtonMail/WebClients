@@ -216,6 +216,17 @@ describe('useDocumentSession', () => {
     expect(fake.client.createSession).not.toHaveBeenCalled()
   })
 
+  test('a document in the trash is trashed, with its role and node, and creates no session', async () => {
+    const trashed = { mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE, trashTime: new Date(0) }
+    getNode.mockResolvedValue(trashed)
+    const fake = createFakeClient()
+
+    const { result } = renderHook(() => useDocumentSession(fake.client, nodeMeta), { wrapper })
+
+    await waitFor(() => expect(result.current).toEqual({ status: 'trashed', role: 'Editor', node: trashed }))
+    expect(fake.client.createSession).not.toHaveBeenCalled()
+  })
+
   test('a node whose role cannot be read fails to bootstrap, and creates no session', async () => {
     getNodeHierarchy.mockRejectedValue(new Error('Drive failed'))
     const fake = createFakeClient()

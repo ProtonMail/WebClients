@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event'
 import { ConfigContext } from '@proton/app-context/configContext'
 import { BroadcastSource } from '@proton/docs-shared/Bridge/BroadcastSource'
 import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayload'
+import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import type { NodeEntity } from '@proton/drive/sdk'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config'
 import { decodeAwarenessUpdate, encodeAwarenessUpdate } from '@proton-docs/realtime-sdk'
@@ -15,6 +16,7 @@ import { CompatRouter } from 'react-router-dom-v5-compat'
 import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/application-context'
 import { DebugModeProvider } from '~/utils/debug-mode-context'
 
+import { ClientEditorBridge } from '../__utils/ClientEditorBridge'
 import type { ClientHandler } from '../__utils/createClientHandler'
 import { createFakeSession } from '../__utils/createFakeSession'
 import type { DocumentRole } from '../__utils/getDocumentRole'
@@ -48,6 +50,24 @@ jest.mock('./DocumentShell', () => ({
   ),
 }))
 jest.mock('./ErrorHeader', () => ({ ErrorHeader: () => null }))
+// The file actions have their own tests; here, that the viewer feeds them and routes the file menu to them
+const mockFileActions = {
+  trashState: 'not_trashed',
+  isCreatingSpreadsheet: false,
+  newDocument: jest.fn(),
+  newSpreadsheet: jest.fn(),
+  moveToFolder: jest.fn(),
+  moveToTrash: jest.fn(),
+  openProtonDrive: jest.fn(),
+  modals: <div>File action modals</div>,
+}
+const mockUseDocumentFileActions = jest.fn(
+  (_options: unknown): Omit<typeof mockFileActions, 'trashState'> & { trashState: string } => mockFileActions,
+)
+jest.mock('../__utils/useDocumentFileActions', () => ({
+  useDocumentFileActions: (options: unknown) => mockUseDocumentFileActions(options),
+}))
+const DRIVE_COMPAT = { name: 'driveCompat' } as unknown as DriveCompat
 const mockApi = jest.fn(async (_request: unknown): Promise<unknown> => ({}))
 jest.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }))
 jest.mock('./DocumentHeaderV2', () => ({
@@ -187,7 +207,11 @@ function renderViewer(
         <ConfigContext.Provider value={{ APP_VERSION: '0.0.0' } as ProtonConfig}>
           <ApplicationProvider application={application}>
             <DebugModeProvider>
-              <DocumentViewerV2 nodeMeta={{ volumeId: 'VOLUME', linkId: 'LINK' }} onRetry={onRetry} />
+              <DocumentViewerV2
+                nodeMeta={{ volumeId: 'VOLUME', linkId: 'LINK' }}
+                driveCompat={DRIVE_COMPAT}
+                onRetry={onRetry}
+              />
             </DebugModeProvider>
           </ApplicationProvider>
         </ConfigContext.Provider>
@@ -311,7 +335,11 @@ describe('DocumentViewerV2', () => {
       <ConfigContext.Provider value={{ APP_VERSION: '0.0.0' } as ProtonConfig}>
         <ApplicationProvider application={application}>
           <DebugModeProvider>
-            <DocumentViewerV2 nodeMeta={{ volumeId: 'VOLUME', linkId: 'LINK' }} onRetry={jest.fn()} />
+            <DocumentViewerV2
+              nodeMeta={{ volumeId: 'VOLUME', linkId: 'LINK' }}
+              driveCompat={DRIVE_COMPAT}
+              onRetry={jest.fn()}
+            />
           </DebugModeProvider>
         </ApplicationProvider>
       </ConfigContext.Provider>
@@ -433,6 +461,128 @@ describe('DocumentViewerV2', () => {
     await act(() => mockClientHandler.handleFileMenuAction({ type: 'toggle-debug-mode' }))
 
     expect(localStorage.getItem('proton-docs-debug')).toBe('true')
+  })
+
+  test.each([
+    ['new-document', 'newDocument'],
+    ['new-spreadsheet', 'newSpreadsheet'],
+    ['move-to-folder', 'moveToFolder'],
+    ['move-to-trash', 'moveToTrash'],
+    ['open-proton-drive', 'openProtonDrive'],
+  ] as const)("the editor's %s action runs the file action %s", async (type, handler) => {
+    renderViewer(createSession(), { role: 'Admin' })
+    await waitFor(() => expect(mockClientHandler).toBeDefined())
+
+    await act(() => mockClientHandler.handleFileMenuAction({ type }))
+
+    expect(mockFileActions[handler]).toHaveBeenCalledTimes(1)
+  })
+
+  test('feeds the file actions the node, role and Drive compat, and shows their modals', async () => {
+    renderViewer(createSession(), { role: 'Admin' })
+
+    expect(await screen.findByText('File action modals')).toBeInTheDocument()
+    expect(mockUseDocumentFileActions).toHaveBeenLastCalledWith({
+      node: { uid: 'VOLUME~LINK' },
+      role: 'Admin',
+      driveCompat: DRIVE_COMPAT,
+    })
+  })
+
+  describe('a document opened in the trash', () => {
+    const trashedNode = { uid: 'VOLUME~LINK', trashTime: new Date(0) } as NodeEntity
+
+    test('shows the header for its role and the file actions, with no session', async () => {
+      renderViewer(createSession(), { state: { status: 'trashed', role: 'Admin', node: trashedNode } })
+
+      expect(await screen.findByText('Header for VOLUME~LINK as Admin, without the editor')).toBeInTheDocument()
+      expect(screen.getByText('File action modals')).toBeInTheDocument()
+      await act(async () => {})
+      // No session, so no editor bridge
+      expect(ClientEditorBridge).not.toHaveBeenCalled()
+      expect(mockUseDocumentFileActions).toHaveBeenLastCalledWith(
+        expect.objectContaining({ node: trashedNode, role: 'Admin' }),
+      )
+    })
+
+    test('opens once out of the trash, restored here or elsewhere', async () => {
+      const onRetry = jest.fn()
+      mockUseDocumentFileActions.mockReturnValue({ ...mockFileActions, trashState: 'trashed' })
+      const { rerender } = renderViewer(createSession(), {
+        onRetry,
+        state: { status: 'trashed', role: 'Admin', node: trashedNode },
+      })
+      await screen.findByText('File action modals')
+      mockUseDocumentFileActions.mockReturnValue({ ...mockFileActions, trashState: 'restoring' })
+      rerender()
+      expect(onRetry).not.toHaveBeenCalled()
+
+      mockUseDocumentFileActions.mockReturnValue(mockFileActions)
+      rerender()
+
+      expect(onRetry).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('a document trashed while open, then out of the trash', () => {
+    afterEach(() => mockUseDocumentFileActions.mockReturnValue(mockFileActions))
+
+    const trashThenRestore = async (fake: ReturnType<typeof createSession>, stopped: boolean) => {
+      const { rerender } = renderViewer(fake, { role: 'Admin' })
+      await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
+      mockUseDocumentFileActions.mockReturnValue({ ...mockFileActions, trashState: 'trashed' })
+      rerender()
+      if (stopped) {
+        act(() => fake.setSnapshot({ status: { name: 'stopped', condition: 'transient', retryable: true } }))
+      }
+      mockUseDocumentFileActions.mockReturnValue(mockFileActions)
+      rerender()
+    }
+
+    test('retries a session that stopped while RTS refused the trashed document', async () => {
+      const fake = createSession()
+
+      await trashThenRestore(fake, true)
+
+      expect(fake.mocks.retry).toHaveBeenCalledTimes(1)
+    })
+
+    test('leaves a session still trying alone', async () => {
+      const fake = createSession()
+
+      await trashThenRestore(fake, false)
+
+      expect(fake.mocks.retry).not.toHaveBeenCalled()
+    })
+
+    test('a trash that fails, never trashed, retries nothing', async () => {
+      const fake = createSession()
+      const { rerender } = renderViewer(fake, { role: 'Admin' })
+      await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
+      act(() => fake.setSnapshot({ status: { name: 'stopped', condition: 'transient', retryable: true } }))
+      mockUseDocumentFileActions.mockReturnValue({ ...mockFileActions, trashState: 'trashing' })
+      rerender()
+
+      mockUseDocumentFileActions.mockReturnValue(mockFileActions)
+      rerender()
+
+      expect(fake.mocks.retry).not.toHaveBeenCalled()
+    })
+  })
+
+  test('new file actions on a rerender reach the editor without rebuilding the bridge', async () => {
+    const { rerender } = renderViewer(createSession(), { role: 'Admin' })
+    await waitFor(() => expect(mockClientHandler).toBeDefined())
+    const bridges = jest.mocked(ClientEditorBridge).mock.calls.length
+    const moveToTrash = jest.fn()
+    mockUseDocumentFileActions.mockReturnValue({ ...mockFileActions, moveToTrash })
+
+    rerender()
+    await act(() => mockClientHandler.handleFileMenuAction({ type: 'move-to-trash' }))
+
+    expect(moveToTrash).toHaveBeenCalledTimes(1)
+    expect(jest.mocked(ClientEditorBridge).mock.calls.length).toBe(bridges)
+    mockUseDocumentFileActions.mockReturnValue(mockFileActions)
   })
 
   test('unmounting while waiting to catch up never initializes the editor', async () => {
