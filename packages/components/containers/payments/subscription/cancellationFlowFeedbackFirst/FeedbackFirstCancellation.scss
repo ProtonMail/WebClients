@@ -1,0 +1,10 @@
+// One height for every step so the modal doesn't resize between them. It fits all steps except the plan
+// comparisons, which scroll, and the dialog still shrinks to fit shorter screens.
+.feedback-first-cancellation-modal {
+	block-size: 41rem;
+
+	// The same gap above the buttons on every step, including the shared feedback step
+	.modal-two-footer {
+		margin-block-start: 2rem;
+	}
+}
