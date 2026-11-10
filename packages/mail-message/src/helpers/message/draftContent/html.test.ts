@@ -398,5 +398,52 @@ describe('draft content html', () => {
             expect(signatureIndex).toBeGreaterThan(-1);
             expect(bodyIndex).toBeLessThan(signatureIndex);
         });
+
+        const createMailtoDraft = (decryptedBody: string, style = fontStyle) =>
+            createHTMLDraftContent({
+                action: MESSAGE_ACTIONS.NEW,
+                referenceMessage: {
+                    data: { ID: 'test-id', Time: Date.now() / 1000, Sender: sender, MIMEType: 'text/html' },
+                    decryption: { decryptedBody },
+                } as any,
+                mailSettings,
+                userSettings,
+                addresses,
+                senderAddress,
+                fontStyle: style,
+            });
+
+        it('should give the mailto body the default font style', () => {
+            const result = createMailtoDraft('Dear Jan,<br><br>See you soon');
+
+            const body = result.document?.firstElementChild as HTMLElement;
+            expect(body.tagName).toBe('DIV');
+            expect(body.getAttribute('style')).toBe(fontStyle);
+            expect(body.innerHTML).toBe('Dear Jan,<br><br>See you soon');
+        });
+
+        it('should keep all the mailto body inside the font style', () => {
+            const result = createMailtoDraft('<div>First</div>Second</div><div>Third</div>');
+
+            const body = result.document?.firstElementChild as HTMLElement;
+            expect(body.getAttribute('style')).toBe(fontStyle);
+            expect(body.textContent).toBe('FirstSecondThird');
+        });
+
+        it('should keep the font style in its attribute', () => {
+            const style = 'font-family: "Comic Sans MS"><img src=x>';
+            const result = createMailtoDraft('Hello', style);
+
+            const body = result.document?.firstElementChild as HTMLElement;
+            expect(body.getAttribute('style')).toBe(style);
+            expect(body.innerHTML).toBe('Hello');
+            expect(result.document?.querySelector('img')).toBeNull();
+        });
+
+        it('should leave the mailto body as is without a font style', () => {
+            const result = createMailtoDraft('<div>Mailto body content</div>', '');
+
+            expect(result.document?.firstElementChild?.outerHTML).toBe('<div>Mailto body content</div>');
+        });
     });
 });
