@@ -572,6 +572,7 @@ export const handleSetupUser = async ({
                 Provider: OAUTH_PROVIDER.GOOGLE,
                 AutomaticImport: newCache.accountData.importEmails ?? true,
                 QuotaThresholdRatio: BYOE_QUOTA_THRESHOLD_RATIO,
+                Byoe: true,
             })
         );
     }
