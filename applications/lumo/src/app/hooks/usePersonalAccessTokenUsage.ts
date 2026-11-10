@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
+import { DAY } from '@proton/shared/lib/constants';
 
-import type { PersonalAccessTokenUsageDay } from '../remote/personalAccessToken';
-import { getPersonalAccessTokenUsageRequest } from '../remote/personalAccessToken';
+import type { UsageSummaryBreakdownRow, UsageSummaryResponse } from '../remote/usage';
+import { getUsageSummaryRequest } from '../remote/usage';
 
 export interface TokenUsageDay {
     Date: string;
@@ -25,60 +26,44 @@ export interface TokenUsageState {
 
 const toISODate = (date: Date) => date.toISOString().slice(0, 10);
 
-const toValidCount = (value: unknown) =>
-    typeof value === 'number' && Number.isFinite(value) && value >= 0 ? value : 0;
+export const getLastUtcDates = (dayCount: number, now: Date): string[] =>
+    Array.from({ length: dayCount }, (_, i) => toISODate(new Date(now.getTime() - (dayCount - 1 - i) * DAY)));
 
-export const normalizePersonalAccessTokenUsageDay = (
-    day: PersonalAccessTokenUsageDay,
-    fallbackDate?: string
-): TokenUsageDay => {
-    const inputTokenCount = toValidCount(day.InputTokenCount);
-    const outputTokenCount = toValidCount(day.OutputTokenCount ?? day.TokenCount);
+export const getTokenUsageDays = (breakdown: UsageSummaryBreakdownRow[], dates: string[]): TokenUsageDay[] =>
+    dates.map((date) => {
+        const rows = breakdown.filter((row) => row.Date === date);
+        const inputTokenCount = rows.reduce((sum, row) => sum + row.TokensIn + row.TokensInCached, 0);
+        const outputTokenCount = rows.reduce((sum, row) => sum + row.TokensGenerated, 0);
+        return {
+            Date: date,
+            InputTokenCount: inputTokenCount,
+            OutputTokenCount: outputTokenCount,
+            TokenCount: inputTokenCount + outputTokenCount,
+            ApiCalls: rows.reduce((sum, row) => sum + row.ApiCalls, 0),
+        };
+    });
 
-    return {
-        Date: typeof day.Date === 'string' ? day.Date : (fallbackDate ?? ''),
-        InputTokenCount: inputTokenCount,
-        OutputTokenCount: outputTokenCount,
-        TokenCount: inputTokenCount + outputTokenCount,
-        ApiCalls: toValidCount(day.ApiCalls),
-    };
-};
-
-/**
- * Fetches usage for one PAT (shared by the per-token hook and aggregate overview).
- */
 const fetchPersonalAccessTokenUsage = async (
     api: ReturnType<typeof useApi>,
     tokenId: string,
     windowDays: number
 ): Promise<TokenUsageState> => {
     try {
-        const to = new Date();
-        const from = new Date(to);
-        from.setDate(from.getDate() - (windowDays - 1));
-
-        const response = await api<{ Code: number; Usage: PersonalAccessTokenUsageDay[] }>(
-            getPersonalAccessTokenUsageRequest(tokenId, {
-                from: toISODate(from),
-                to: toISODate(to),
-            })
-        );
-
-        const rawDays = response.Usage ?? [];
-        const dateMap = new Map(rawDays.map((d) => [d.Date, d]));
-        const paddedDays: TokenUsageDay[] = Array.from({ length: windowDays }, (_, i) => {
-            const d = new Date(from);
-            d.setDate(from.getDate() + i);
-            const dateStr = toISODate(d);
-            return normalizePersonalAccessTokenUsageDay(
-                dateMap.get(dateStr) ?? { Date: dateStr, TokenCount: 0, ApiCalls: 0 },
-                dateStr
-            );
+        const dates = getLastUtcDates(windowDays, new Date());
+        const response = await api<UsageSummaryResponse>({
+            ...getUsageSummaryRequest({
+                From: dates[0],
+                To: dates[dates.length - 1],
+                PersonalAccessTokenID: tokenId,
+            }),
+            silence: true,
         });
+
+        const paddedDays = getTokenUsageDays(response.Breakdown, dates);
         const totalTokenCount = paddedDays.reduce((sum, day) => sum + day.TokenCount, 0);
         const totalInputTokenCount = paddedDays.reduce((sum, day) => sum + day.InputTokenCount, 0);
         const totalOutputTokenCount = paddedDays.reduce((sum, day) => sum + day.OutputTokenCount, 0);
-        const totalApiCalls = paddedDays.reduce((sum, day) => sum + (day.ApiCalls ?? 0), 0);
+        const totalApiCalls = paddedDays.reduce((sum, day) => sum + day.ApiCalls, 0);
         return {
             days: paddedDays,
             totalTokenCount,
@@ -103,7 +88,6 @@ const fetchPersonalAccessTokenUsage = async (
 
 /**
  * Fetches usage for every token ID in one parallel batch (one request per key).
- * Powers the overview totals and per-key cards without duplicate fetches.
  */
 export const useAllPersonalAccessTokensUsage = (tokenIds: string[], windowDays = 30) => {
     const api = useApi();
@@ -136,15 +120,11 @@ export const useAllPersonalAccessTokensUsage = (tokenIds: string[], windowDays =
             if (ignore) {
                 return;
             }
-            if (pairs.some((p) => p.u.error)) {
-                setState({ byId: {}, isLoading: false, error: true });
-                return;
-            }
             const byId: Record<string, TokenUsageState> = {};
             for (const { id, u } of pairs) {
                 byId[id] = u;
             }
-            setState({ byId, isLoading: false, error: false });
+            setState({ byId, isLoading: false, error: pairs.some((p) => p.u.error) });
         });
 
         return () => {
@@ -152,16 +132,7 @@ export const useAllPersonalAccessTokensUsage = (tokenIds: string[], windowDays =
         };
     }, [idsKey, windowDays, tokenIds.length]);
 
-    const aggregate = useMemo(() => {
-        const list = Object.values(state.byId);
-        const totalTokens = list.reduce((s, u) => s + u.totalTokenCount, 0);
-        const totalInputTokens = list.reduce((s, u) => s + u.totalInputTokenCount, 0);
-        const totalOutputTokens = list.reduce((s, u) => s + u.totalOutputTokenCount, 0);
-        const totalApiCalls = list.reduce((s, u) => s + u.totalApiCalls, 0);
-        return { totalTokens, totalInputTokens, totalOutputTokens, totalApiCalls };
-    }, [state.byId]);
-
-    return { ...state, aggregate };
+    return state;
 };
 
 export const getLoadingUsageState = (): TokenUsageState => ({

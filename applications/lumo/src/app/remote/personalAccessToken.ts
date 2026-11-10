@@ -30,21 +30,7 @@ export interface ListPersonalAccessTokensResponse {
     };
 }
 
-export interface PersonalAccessTokenUsageDay {
-    /** ISO date string e.g. "2026-03-11" */
-    Date: string;
-    /** Legacy output-token count; used when OutputTokenCount is absent. */
-    TokenCount: number;
-    /** Input-token count, once supplied by the API. */
-    InputTokenCount?: number;
-    /** Explicit output-token count, once supplied by the API. */
-    OutputTokenCount?: number;
-    /** Number of API calls made on this day */
-    ApiCalls: number;
-}
-
 const PAT_BASE_URL = 'account/4/personal-access-token';
-const LUMO_PAT_BASE_URL = 'lumo/v1/personal-access-token';
 
 export const createPersonalAccessTokenRequest = (payload: CreatePersonalAccessTokenPayload) => ({
     url: PAT_BASE_URL,
@@ -61,10 +47,4 @@ export const listPersonalAccessTokensRequest = (params?: { Since?: string; PageS
 export const deletePersonalAccessTokenRequest = (id: string) => ({
     url: `${PAT_BASE_URL}/${id}`,
     method: 'delete' as const,
-});
-
-export const getPersonalAccessTokenUsageRequest = (id: string, params?: { from?: string; to?: string }) => ({
-    url: `${LUMO_PAT_BASE_URL}/${id}/usage`,
-    method: 'get' as const,
-    params,
 });
