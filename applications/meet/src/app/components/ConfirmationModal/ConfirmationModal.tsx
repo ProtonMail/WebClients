@@ -23,6 +23,8 @@ interface ConfirmationModalProps {
     onSecondaryAction?: () => void;
     secondaryButtonClass?: MeetButtonClass;
     onClose?: () => void;
+    /** Escape still calls `onClose` when the close button is hidden. */
+    showCloseButton?: boolean;
     /** `row` places the secondary action to the left of the primary one. */
     buttonsLayout?: 'column' | 'row';
     /** Rendered below the action buttons. */
@@ -45,6 +47,7 @@ const ConfirmationModalContent = ({
     secondaryButtonClass = 'tertiary',
     onSecondaryAction,
     onClose,
+    showCloseButton = true,
     buttonsLayout = 'column',
     footer,
 }: ConfirmationModalProps) => {
@@ -80,7 +83,7 @@ const ConfirmationModalContent = ({
 
     return (
         <>
-            {onClose && (
+            {onClose && showCloseButton && (
                 <Button
                     onClick={onClose}
                     className="absolute top-custom right-custom rounded-full w-custom h-custom shrink-0 p-0 border-none"

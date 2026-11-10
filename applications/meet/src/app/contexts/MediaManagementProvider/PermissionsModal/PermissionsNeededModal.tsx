@@ -108,6 +108,7 @@ export const PermissionsNeededModal = () => {
             secondaryText={secondaryText()}
             onSecondaryAction={handleContinueWithout}
             onClose={handleContinueWithout}
+            showCloseButton={false}
         />
     );
 };
