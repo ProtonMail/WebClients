@@ -13,8 +13,9 @@ import { type MaybeFreeSubscription, getPlan } from '@proton/payments/core/subsc
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { telemetry } from '@proton/shared/lib/telemetry';
 
-import { getFeedbackSurveyOptions } from '../../../constants/feedbackSurveyOptions';
 import { RadioElements } from './RadioElements';
+import { getOptions } from './getOptions';
+import { normalizeSupplementaryValue } from './normalizeSupplementaryValue';
 
 type Props = Omit<ModalProps, 'onClose'> & {
     onClose: (discarted: boolean) => void;
@@ -28,19 +29,23 @@ const getSubscriptionPlan = (subscription: MaybeFreeSubscription) => {
 
 const sendFeedback = (data: Record<string, unknown>) => telemetry.sendCustomEvent('feedbackPurchaseSurvey', data);
 
-const choicesRequiringInput = ['Other', 'Podcast', 'YouTube', 'Twitch'];
-
 export const FeedbackSurveyModal = ({ subscription, ...props }: Props) => {
+    const options = useMemo(getOptions, []);
     const [userChoice, setUserChoice] = useState<string | null>(null);
     const [supplementaryInputs, setSupplementaryInputs] = useState<Record<string, string>>({});
-    const options = useMemo(getFeedbackSurveyOptions, []);
+    const supplementaryValue = userChoice ? supplementaryInputs[userChoice]?.trim() : undefined;
 
     const isSubmitDisabled = () => {
         if (!userChoice) {
             return true;
         }
 
-        if (choicesRequiringInput.includes(userChoice) && !supplementaryInputs[userChoice]) {
+        if (userChoice === 'Other' && !supplementaryValue) {
+            return true;
+        }
+
+        const selectedOption = options.find((option) => option.value === userChoice);
+        if (selectedOption?.options && selectedOption.options.length > 0 && !supplementaryValue) {
             return true;
         }
 
@@ -52,22 +57,22 @@ export const FeedbackSurveyModal = ({ subscription, ...props }: Props) => {
             return;
         }
 
-        const channelCategory = options.find((option) => option.value === userChoice)?.category;
-        if (!channelCategory) {
+        const selectedOption = options.find((option) => option.value === userChoice);
+        if (!selectedOption) {
             props.onClose(false);
             return;
         }
 
         const telemetryData: Record<string, unknown> = {
-            channel_category: channelCategory,
-            channel_source: channelCategory === 'other' ? supplementaryInputs.Other : userChoice,
+            channel_category: selectedOption.category,
+            channel_source: userChoice === 'Other' ? supplementaryValue : selectedOption.value,
             subscription_plan: getSubscriptionPlan(subscription),
             platform: 'web',
         };
 
-        if (supplementaryInputs[userChoice] && userChoice !== 'Other') {
+        if (supplementaryValue && userChoice !== 'Other') {
             const key = userChoice.toLowerCase() + '_value';
-            telemetryData[key] = supplementaryInputs[userChoice];
+            telemetryData[key] = normalizeSupplementaryValue(supplementaryValue);
         }
 
         sendFeedback(telemetryData);
@@ -95,20 +100,7 @@ export const FeedbackSurveyModal = ({ subscription, ...props }: Props) => {
                             setSupplementaryInputs((prev) => ({ ...prev, [choice]: value }))
                         }
                         supplementaryInputs={supplementaryInputs}
-                        options={options.map((option) => {
-                            return {
-                                value: option.value,
-                                label: option.content.hint ? (
-                                    <span className="flex">
-                                        <span>{option.content.label()}</span>
-                                        &nbsp;
-                                        <i className="color-hint">{option.content.hint()}</i>
-                                    </span>
-                                ) : (
-                                    option.content.label()
-                                ),
-                            };
-                        })}
+                        options={options}
                         className="flex-nowrap"
                     />
                 </div>
