@@ -63,7 +63,7 @@ class EventSubscriber {
         if (this.rootScope) {
           this.eventScheduler.removeScope(this.rootScope)
         }
-        for (const eventScope of this.sharedDocumentScopes.values()) {
+        for (const eventScope of this.sharedDocumentScopes.keys()) {
           this.eventScheduler.removeScope(eventScope)
         }
       }
