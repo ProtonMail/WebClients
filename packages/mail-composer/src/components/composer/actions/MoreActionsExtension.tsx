@@ -16,7 +16,7 @@ import {
 } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import { getSwitchToHTMLChange, getSwitchToPlainTextChange } from '../../../helpers/composer/mimeTypeSwitch';
+import { getSwitchToHTMLChange } from '../../../helpers/composer/mimeTypeSwitch';
 import { useComposerMessageHost } from '../../../host/composerMessageHost';
 import type { MessageChange, MessageChangeFlag } from '../Composer';
 import type { ExternalEditorActions } from '../editor/EditorWrapper';
@@ -29,9 +29,17 @@ interface Props {
     editorActionsRef: MutableRefObject<ExternalEditorActions | undefined>;
     editorMetadata: EditorMetadata;
     onChange: MessageChange;
+    onSwitchToPlainText: (getEditorContent: () => string) => void;
 }
 
-const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorMetadata, onChange }: Props) => {
+const MoreActionsExtension = ({
+    message,
+    onChangeFlag,
+    editorActionsRef,
+    editorMetadata,
+    onChange,
+    onSwitchToPlainText,
+}: Props) => {
     const { useMailSettings } = useComposerMessageHost();
     const [mailSettings] = useMailSettings();
     const [addresses] = useAddresses();
@@ -50,18 +58,13 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
 
     const handleChangeMetadata = useCallback(
         (change: Partial<EditorMetadata>) => {
-            const switchToPlainText = () => {
-                onChange(getSwitchToPlainTextChange(message, editorActionsRef.current?.getContent() || ''));
-            };
-
             const switchToHTML = () => {
                 onChange(getSwitchToHTMLChange(message, mailSettings, userSettings, addresses || []));
             };
 
             if (change.isPlainText !== undefined) {
                 if (change.isPlainText) {
-                    switchToPlainText();
-                    editorMetadata.setBlockquoteExpanded?.(true);
+                    onSwitchToPlainText(() => editorActionsRef.current?.getContent() || '');
                 } else {
                     switchToHTML();
                 }

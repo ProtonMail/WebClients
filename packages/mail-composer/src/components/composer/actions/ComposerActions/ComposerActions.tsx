@@ -59,6 +59,7 @@ interface Props {
     message: MessageState;
     onAddAttachments: (files: File[]) => void;
     onChange: MessageChange;
+    onSwitchToPlainText: (getEditorContent: () => string) => void;
     onChangeFlag: MessageChangeFlag;
     onDelete: () => void;
     onExpiration: () => void;
@@ -89,6 +90,7 @@ const ComposerActions = ({
     message,
     onAddAttachments,
     onChange,
+    onSwitchToPlainText,
     onChangeFlag,
     onDelete,
     onExpiration,
@@ -331,6 +333,7 @@ const ComposerActions = ({
                             editorActionsRef={editorActionsRef}
                             editorMetadata={editorMetadata}
                             onChange={onChange}
+                            onSwitchToPlainText={onSwitchToPlainText}
                             isPassword={isPassword}
                             onPassword={onPassword}
                             onRemoveOutsideEncryption={handleRemoveOutsideEncryption}

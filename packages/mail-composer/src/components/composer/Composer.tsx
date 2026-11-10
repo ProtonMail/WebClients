@@ -168,6 +168,7 @@ const Composer = (
         metadata,
         opening,
         handleChange,
+        handleSwitchToPlainText,
         handleChangeContent,
         handleSend,
         handleDeleteDraft,
@@ -500,6 +501,7 @@ const Composer = (
                     message={modelMessage}
                     onAddAttachments={handleAddAttachmentsStart}
                     onChange={handleChange}
+                    onSwitchToPlainText={handleSwitchToPlainText}
                     onChangeFlag={handleChangeFlag}
                     onDelete={handleDeleteDraft}
                     onExpiration={handleExpiration}
