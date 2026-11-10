@@ -33,7 +33,7 @@ When a term has more than one meaning in code, the **Ambiguous** note says which
 ## Client and editor split
 
 - **Client**: `applications/docs`, the parent window.
-- **Editor / editor sandbox / editor iframe**: `applications/docs-editor`, loaded in a sandboxed iframe. It renders text documents with **Lexical** and sheets with **rowsncolumns** (bundled in `@proton-docs/sheets-editor`).
+- **Editor / editor sandbox / editor iframe**: `applications/docs-editor`, loaded in a sandboxed iframe. It renders text documents with **Lexical** and sheets with **Rows & Columns**, which `@proton-docs/sheets-editor` bundles.
 - **Bridge**: the `postMessage` RPC between client and editor. `ClientToEditorBridge` (`core/Bridge/`) lives in the client; `EditorToClientBridge` (`editor/Bridge/`) lives in the iframe and rejects messages from anywhere but the parent. The method contracts are `ClientRequiresEditorMethods` and `EditorRequiresClientMethods` (`shared/Bridge/`). The editor cannot reach Unleash, the API or Drive directly; it asks the client over the bridge.
   - **`ClientInvoker`** (`editor/Bridge/ClientInvoker.ts`): the editor's side of `EditorRequiresClientMethods`; turns calls into messages and matches replies by `messageId`.
   - **`EditorInvoker`** (`core/Bridge/EditorInvoker.ts`): the client's side of `ClientRequiresEditorMethods`.
@@ -64,7 +64,7 @@ When a term has more than one meaning in code, the **Ambiguous** note says which
 - **`*AsSuggestion` operations**: suggestion-mode versions of edits (`formatTextAsSuggestion`, `setBlocksTypeAsSuggestion`...). `docs-editor/Plugins/Suggestions/`.
 - **`DocsMessages`**: the typed catalogue of Docs UI strings (`typeof defaultDocsMessages`), translated in the adapter and read with `useDocsMessages()`. The package calls no ttag itself. `docs-editor/messages/`, translated in `editor/Containers/adapters/docs/docsMessages/`.
 
-### rowsncolumns (sheets)
+### Rows & Columns (sheets)
 
 - **`SheetsMessages`**: the typed catalogue of every Sheets UI string (`typeof defaultSheetsMessages`), translated in the adapter and read with `useSheetsMessages()`. `sheets-editor/messages/`, translated in `editor/Containers/adapters/sheets/sheetsMessages/`.
 - **Sheets patch** (`Base` / `Delta` / `Drifted`): spreadsheet changes the editor sends to the client for local storage (`storeSpreadsheetPatches`); stored by `SheetsStorageService` in IndexedDB. `sheets-editor/contract/SheetsPatch.ts`.

@@ -25,5 +25,5 @@ are draft wording.
 host actions and session settings. Supply a complete `SheetsMessages` object via
 `dependencies.messages` to localize the UI, and use `dependencies.defaultMessages`
 to supply fallback messages. The demo supplies English defaults. Workbook number and date
-formatting uses its own locale, independently of UI language. Supply the rowsncolumns
+formatting uses its own locale, independently of UI language. Supply the Rows & Columns
 license via `dependencies.licenseKey`; the demo supplies none.

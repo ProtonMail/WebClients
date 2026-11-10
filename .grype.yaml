@@ -78,21 +78,6 @@ ignore:
       type: npm
       version: 2.0.1
 
-  ## maplibre-gl@4.7.1 (via plotly.js in vendor/rowsncolumns/charts)
-  # Accepted risk: plotly.js 3.x pins maplibre-gl ^4.7.1; patch is only in >=6.4.1 which breaks
-  # plotly's mapbox traces (maplibre 5/6 dropped/renamed public APIs and @mapbox/* deps).
-  # plotly.js is a dev/peer dep of vendored @rowsncolumns/charts; reachable only through the
-  # unused ./plotly/basic-chart export subpath — no application imports it, never bundled.
-  - vulnerability: GHSA-jrc7-96c5-q579
-    reason: >-
-      Accepted: transitive via plotly.js dev/peer dep of @rowsncolumns/charts; unused
-      ./plotly/basic-chart export, never bundled. Patched only in maplibre-gl >=6.4.1, which
-      is incompatible with plotly.js 3.x mapbox trace APIs.
-    package:
-      name: maplibre-gl
-      type: npm
-      version: 4.7.1
-
   ## @protontech/fathom legacy chain (pass-extension build tooling via jsdom@11)
   # Accepted risk: internal pinned package (0.0.38040317) with no newer registry release.
   # jsdom@11 → request/tough-cookie are test/build-time deps, not production runtime.
