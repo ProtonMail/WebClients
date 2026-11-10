@@ -36,17 +36,41 @@
       "12-word phrase": [
         "Frase di recupero di 12 parole"
       ],
+      "Account events": [
+        "Eventi dell'account"
+      ],
+      "Active sessions": [
+        "Sessioni attive"
+      ],
       "Advanced account protection": [
         "Protezione avanzata dell'account"
       ],
       "AI assistant": [
         "Assistente IA"
       ],
+      "Allow list": [
+        "Elenco autorizzati"
+      ],
+      "Audit log": [
+        "Registro di audit"
+      ],
       "Authentication logs": [
         "Log d'autenticazione"
       ],
       "Automatic renewal": [
         "Rinnovo automatico"
+      ],
+      "Automatically delete data": [
+        "Elimina i dati automaticamente"
+      ],
+      "Block sender for the organization": [
+        "Blocca il mittente per l'organizzazione"
+      ],
+      "Blog articles": [
+        "Articoli del blog"
+      ],
+      "Bulk user import": [
+        "Importa più utenti"
       ],
       "Cancel plan": [
         "Annulla piano"
@@ -60,11 +84,23 @@
       "Connected addresses": [
         "Indirizzi collegati"
       ],
+      "Connection events": [
+        "Eventi di connessione"
+      ],
+      "Create organization": [
+        "Crea organizzazione"
+      ],
       "Custom domain": [
         "Dominio personalizzato"
       ],
       "Customer support": [
         "Assistenza clienti"
+      ],
+      "Dark mode": [
+        "Tema scuro"
+      ],
+      "Data breach alerts": [
+        "Allerta violazione dei dati"
       ],
       "Desktop and mobile apps": [
         "App per desktop e dispositivi mobili"
@@ -72,8 +108,35 @@
       "Downgrade to Free": [
         "Effettua il downgrade al piano Free"
       ],
+      "Download apps": [
+        "Scarica le app"
+      ],
+      "Download recovery file": [
+        "Scarica il file di recupero"
+      ],
+      "Enable or disable apps for members": [
+        "Attiva o disattiva applicazioni per i membri"
+      ],
+      "Encryption backup file": [
+        "File di backup della crittografia"
+      ],
       "Encryption backup in this browser": [
         "Backup della crittografia in questo browser"
+      ],
+      "External mailbox": [
+        "Casella di posta elettronica esterna"
+      ],
+      "Gateway logs": [
+        "Log di gateway"
+      ],
+      "Group invitations": [
+        "Inviti al gruppo"
+      ],
+      "Group members": [
+        "Membri del gruppo"
+      ],
+      "Group plan invitation": [
+        "Invito al piano di gruppo"
       ],
       "High-security mode": [
         "Modalità ad alta sicurezza"
@@ -96,11 +159,35 @@
       "Leave organization": [
         "Abbandona l'organizzazione"
       ],
+      "Light mode": [
+        "Tema chiaro"
+      ],
+      "Mnemonic": [
+        "Mnemonico"
+      ],
+      "One-time code": [
+        "Codice monouso"
+      ],
+      "Password reminder": [
+        "Promemoria password"
+      ],
       "Password reminders": [
         "Promemoria password"
       ],
       "Password reset request": [
         "Richiesta di ripristino password"
+      ],
+      "Permanently delete data": [
+        "Elimina i dati definitivamente"
+      ],
+      "Privacy guides": [
+        "Guide alla privacy"
+      ],
+      "Privacy services": [
+        "Servizi per la privacy"
+      ],
+      "Protection from cyber attacks": [
+        "Protezione dagli attacchi informatici"
       ],
       "Receive misaddressed emails": [
         "Ricevi email inviate per errore"
@@ -114,17 +201,44 @@
       "Recovery score": [
         "Punteggio di recupero"
       ],
+      "Redeem discount code": [
+        "Inserisci un codice sconto"
+      ],
+      "Referral credits": [
+        "Credito da inviti"
+      ],
       "Referral link": [
         "Il link di riferimento"
       ],
       "Referral rewards": [
         "Ricompensa per la segnalazione"
       ],
+      "Restrict app access": [
+        "Accesso limitato all'app"
+      ],
+      "Scan QR code": [
+        "Scansiona codice QR"
+      ],
+      "Server access policy": [
+        "Politica di accesso al server"
+      ],
+      "Shared server access": [
+        "Accesso condiviso ai server"
+      ],
+      "Sign out other devices": [
+        "Esci dagli altri dispositivi"
+      ],
       "Sign-in history": [
         "Cronologia degli accessi"
       ],
+      "Stop subscription renewal": [
+        "Interrompi il rinnovo dell'abbonamento"
+      ],
       "Storage space": [
         "Spazio di archiviazione"
+      ],
+      "Storage usage": [
+        "Utilizzo dello spazio di archiviazione"
       ],
       "Subscription end date": [
         "Data di sottoscrizione"
@@ -141,8 +255,20 @@
       "Upgrade plan": [
         "Aggiorna piano"
       ],
+      "Verify domain": [
+        "Verifica dominio"
+      ],
       "Verify password": [
         "Verifica password"
+      ],
+      "Video conferencing": [
+        "Videoconferenza"
+      ],
+      "VPN session details": [
+        "Dettagli della sessione VPN"
+      ],
+      "Writing assistant": [
+        "Assistente per la scrittura"
       ]
     },
     "Accounts": {
@@ -211,6 +337,9 @@
       "Add external address": [
         "Aggiungi indirizzo esterno"
       ],
+      "Add payment method": [
+        "Aggiungi metodo di pagamento"
+      ],
       "Add PayPal": [
         "Aggiungi PayPal"
       ],
@@ -268,11 +397,20 @@
       "Cancel": [
         "Annulla"
       ],
+      "Cancel ${ planTitle }": [
+        "Annulla ${ planTitle }"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "Annulla prova ${ planTitle }"
+      ],
       "Cancel request": [
         "Annulla richiesta"
       ],
       "Cancel subscription": [
         "Annulla abbonamento"
+      ],
+      "Cancel trial": [
+        "Annulla la prova"
       ],
       "Cancel trial and pay": [
         "Annulla la prova e paga"
@@ -946,6 +1084,9 @@
       "Pay ${ price } now": [
         "Paga ${ price } adesso"
       ],
+      "Preview logs": [
+        "Mostra anteprima log."
+      ],
       "Previous": [
         "Precedente"
       ],
@@ -1059,6 +1200,9 @@
       ],
       "Restore": [
         "Ripristina"
+      ],
+      "Restrict sign-in": [
+        "Accesso limitato"
       ],
       "Resume membership": [
         "Riprendi l'abbonamento"
@@ -1515,6 +1659,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "Annulla l'abbonamento"
+      ],
       "Reactivate": [
         "Riattiva"
       ],
@@ -1725,6 +1872,9 @@
       ],
       "Permission revoked": [
         "Permesso revocato"
+      ],
+      "Sign-in": [
+        "Accedi"
       ]
     },
     "Admin": {
@@ -1874,11 +2024,17 @@
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Quando annulli, la tua prova gratuita non verrà convertita in un abbonamento a pagamento, ma potrai comunque usufruire dei benefici del piano fino alla fine del periodo di prova. Successivamente, verrà effettuato il downgrade al piano ${ BRAND_NAME } Free."
       ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "Quando si annulla, non sarà possibile convertire il periodo di prova in abbonamento a pagamento."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_DEDICATED_IPS } server dedicati durante il periodo di prova."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_LUMO_SEATS } licenze ${ LUMO_SHORT_APP_NAME } durante il periodo di prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Durante il periodo di prova puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze per l'assistente alla scrittura ${ LUMO_SHORT_APP_NAME }."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze Scribe durante il periodo di prova."
@@ -2655,8 +2811,8 @@
       "Confirm cancellation": [
         "Conferma l'annullamento"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Se superi i limiti del piano gratuito, non potrai:"
+      "If you exceed your plan limits, you won't be able to:": [
+        "Se si superano i limiti del proprio piano, non sarà possibile:"
       ],
       "Keep current plan": [
         "Mantieni il piano corrente"
@@ -2673,8 +2829,11 @@
       "Upload any new files": [
         "Carica qualsiasi nuovo file"
       ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Quando il tuo abbonamento scadrà il ${ endDate }, il tuo account passerà al Free plan. Se il tuo utilizzo supera i limiti del Free plan, alcune funzionalità potrebbero essere temporaneamente non disponibili."
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Quando l'abbonamento ${ planDisplayName } scadrà il ${ endDate }, le sue funzionalità andranno perse. Inoltre, se l'utilizzo supera i limiti del proprio piano, alcune funzionalità potrebbero essere temporaneamente non disponibili."
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Quando l'abbonamento scadrà il ${ endDate }, le sue funzionalità andranno perse. Inoltre, se l'utilizzo supera i limiti del proprio piano, alcune funzionalità potrebbero essere temporaneamente non disponibili."
       ]
     },
     "Confirm modal title": {
@@ -4005,6 +4164,9 @@
       "Are you sure you want to disable this address?": [
         "Sei sicuro di voler disabilitare questo indirizzo?"
       ],
+      "By disabling this address ${ address }, the member will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Disattivando questo indirizzo ${ address }, l'utente non potrà più inviare o ricevere email utilizzando questo indirizzo e tutti i prodotti ${ BRAND_NAME } collegati saranno disabilitati."
+      ],
       "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
         "Disabilitando l'indirizzo ${ address }, non sarai più in grado di inviare o ricevere email utilizzando questo indirizzo e tutti i prodotti ${ BRAND_NAME } collegati verranno disabilitati."
       ],
@@ -4769,6 +4931,13 @@
       "They may ask to access your account in case of an emergency.": [
         "Potrebbero chiedere di accedere al tuo account in caso di emergenza."
       ],
+      "They will receive access automatically **today**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "Riceveranno automaticamente accesso **oggi**, in **${ formattedAccessibleAt }**. Puoi rifiutare la loro richiesta o concedere loro subito l'accesso in qualsiasi momento."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "Riceveranno automaticamente accesso in **${ days } giorno**, il **${ formattedAccessibleAt }**. Puoi rifiutare la loro richiesta o concedere loro subito l'accesso in qualsiasi momento.",
+        "Riceveranno automaticamente accesso in **${ days } giorni**, il **${ formattedAccessibleAt }**. Puoi rifiutare la loro richiesta o concedere loro subito l'accesso in qualsiasi momento."
+      ],
       "This will take effect immediately.": [
         "Questo avrà effetto immediatamente."
       ],
@@ -5343,6 +5512,9 @@
       "The policy name must be between 3 and 40 characters.": [
         "Il nome della policy deve essere compreso tra 3 e 40 caratteri."
       ],
+      "The session has expired. Please try again.": [
+        "La sessione è scaduta. Per favore riprova."
+      ],
       "The total could not be calculated. Change the amount to try again.": [
         "Non è stato possibile calcolare il totale. Modifica l'importo e riprova."
       ],
@@ -5855,14 +6027,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Solo una prova gratuita per utente. Successivamente si applica il prezzo normale."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Dopo aver abbandonato il tuo piano, questo utente verrà spostato in un piano ${ BRAND_NAME } gratuito."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Dopo aver abbandonato il tuo piano, questo utente verrà trasferito a un piano ${ BRAND_NAME } Unlimited con una prova gratuita di 30 giorni.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Assegna lo spazio di archiviazione all'account amministratore. Potrai distribuire lo spazio per gli utenti aggiuntivi in un secondo momento."
@@ -6315,6 +6481,35 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Gateway monitor upsell": {
+      "Advanced security controls": [
+        "Controlli di sicurezza avanzati"
+      ],
+      "Dedicated server - ${ serverPrice }": [
+        "Server dedicato - ${ serverPrice }"
+      ],
+      "Enforce identity-based access controls": [
+        "Applica i controlli di accesso basati sull'identità"
+      ],
+      "Get real-time connection insights, monitor suspicious activity and export data to SIEM tools for your private gateways": [
+        "Ottieni informazioni in tempo reale sulle connessioni, monitora attività sospette ed esporta i dati verso gli strumenti SIEM per i tuoi gateway privati"
+      ],
+      "In addition to connection monitoring, private gateways let you grant access by user or group - all running on dedicated servers with static IPs.": [
+        "In aggiunta al monitoraggio della connessione, le porte private ti permettono di accedere come utente o gruppo - tutti su server dedicati con IP statici."
+      ],
+      "Monitor gateway connections with VPN Professional": [
+        "Monitora la connessione delle porte con VPN Professional"
+      ],
+      "Real-time connection insights": [
+        "Informazioni in tempo reale sulle connessioni"
+      ],
+      "Unlock Single-Sign-on (SSO), admin policies, monitoring, enforced two-factor authentication and more.": [
+        "Sblocca il Single Sign-On (SSO), i criteri amministrativi, il monitoraggio, imposta l'autenticazione a due fattori e molto altro."
+      ],
+      "User - ${ userPrice }": [
+        "Utente - ${ userPrice }"
       ]
     },
     "Get help": {
@@ -6966,6 +7161,9 @@
       "${ LUMO_APP_NAME } includes the writing assistant": [
         "${ LUMO_APP_NAME } include l'assistente di scrittura."
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
       ],
@@ -7457,6 +7655,21 @@
       ],
       "By leaving now, changes may not be saved": [
         "Uscendo ora, le modifiche potrebbero non essere salvate"
+      ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "Attivandolo, potrai solo fare l'accesso con **${ primaryEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "Attivandolo, potrai fare l'accesso solo con il tuo nome utente originale **${ username }**, o da solo o come **${ firstEmail }**, **@${ secondDomain }** oppure **${ thirdDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "Attivando questa opzione, potrai accedere solo con il tuo nome utente originale **${ username }**, da solo o come **${ firstEmail }**, oppure **@${ secondDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "Attivando questa opzione, potrai accedere solo con il tuo nome utente originale **${ username }**, da solo o come **${ firstEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "Attivandolo, potrai fare l'accesso solo con il tuo nome utente **${ username }**."
       ],
       "Can you access your active session?": [
         "Riesci ad accedere alla tua sessione attiva?"
@@ -8267,6 +8480,9 @@
       "Loading...": [
         "Caricamento in corso..."
       ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "I log ci aiutano a capire cosa è successo prima che si verificasse il problema. Includono le azioni eseguite nell'app e i messaggi di errore, ma non il contenuto dei messaggi."
+      ],
       "Low Priority": [
         "Priorità bassa"
       ],
@@ -8712,6 +8928,9 @@
       "SCIM token active": [
         "Token SCIM attivo"
       ],
+      "Secure and end-to-end encrypted": [
+        "Sicuro e con crittografia end-to-end"
+      ],
       "Secure your ${ BRAND_NAME } Account": [
         "Proteggi il tuo account ${ BRAND_NAME }"
       ],
@@ -8984,6 +9203,9 @@
       ],
       "This file is too large to preview": [
         "Questo file è troppo grande per l'anteprima"
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Questo indirizzo Gmail è registrato con un altro account ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI e altri). Stiamo lavorando per rendere questo collegamento immediato ma, per il momento, dovrai completare alcuni passaggi."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Questa è una frase di 12 parole che ti è stato chiesto di impostare."
@@ -9417,17 +9639,26 @@
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quando abiliti SAML per ${ appName } nel tuo fornitore di identità, ti potrebbe essere chiesto di usare l'issuer ID e l'URL (ACS) di callback. Copia e incolla i dati seguenti nei campi del tuo fornitore di identità."
       ],
-      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Quando l'accesso è limitato, per effettuare l'accesso è possibile utilizzare solo ${ primaryEmailElement } e il tuo nome utente ${ usernameElement }. Gli altri tuoi indirizzi non possono essere ricondotti al tuo account, anche se qualcuno li conoscesse."
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Quando l'accesso è limitato, puoi utilizzare solo la tua email **${ primaryEmail }** per accedere. Gli altri tuoi indirizzi non possono essere associati al tuo account, anche se qualcuno li conosce."
       ],
-      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Quando l'accesso è limitato, per effettuare l'accesso è possibile utilizzare solo il tuo indirizzo e-mail ${ primaryEmailElement }. Gli altri tuoi indirizzi non possono essere associati al tuo account, anche se qualcuno li conosce."
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Quando l'accesso è limitato, puoi utilizzare solo il tuo nome utente **${ username }** per accedere. Gli altri tuoi indirizzi non possono essere associati al tuo account, anche se qualcuno li conosce."
       ],
-      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Quando l'accesso è limitato, è possibile accedere solo con il tuo nome utente ${ usernameElement }. Gli altri tuoi indirizzi non possono essere ricondotti al tuo account, anche se qualcuno li conoscesse."
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Quando l'accesso è limitato, puoi accedere solo con il tuo nome utente originale **${ username }**, da solo o come **${ firstEmail }**, **@${ secondDomain }**, oppure **@${ thirdDomain }**. Gli altri tuoi indirizzi email non funzionerebbero per l'accesso."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Quando l'accesso è limitato, puoi accedere solo con il tuo nome utente originale **${ username }**, o da solo o come **${ firstEmail }**, oppure **@${ secondDomain }**. Gli altri tuoi indirizzi email non funzionerebbero per l'accesso."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Quando l'accesso è limitato, puoi accedere solo con il tuo nome utente originale **${ username }**, o da solo o come **${ firstEmail }**. Gli altri tuoi indirizzi email non funzionerebbero per l'accesso."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Quando annulli, il tuo abbonamento non verrà rinnovato, ma potrai comunque usufruire dei benefici del piano fino alla fine del periodo di abbonamento. Successivamente, verrà effettuato il downgrade al piano ${ BRAND_NAME } Free."
+      ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "Quando si annulla, non sarà possibile avviare l'abbonamento dopo il periodo di prova."
       ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Quando annulli, il tuo abbonamento non verrà rinnovato, ma potrai comunque usufruire dei benefici del piano fino alla fine del periodo di abbonamento. Successivamente, verrà effettuato il downgrade al piano ${ BRAND_NAME } Free."
@@ -9568,6 +9799,9 @@
         "Non puoi inviare più di ${ emailSendLimitNumber } invito email per le prossime 24 ore",
         "Non puoi inviare più di ${ emailSendLimitNumber } inviti email per le prossime 24 ore"
       ],
+      "You cancel it in the store.": [
+        "Si annulla nel negozio."
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Non puoi fare riferimento a utenti ${ MAIL_APP_NAME }"
       ],
@@ -9611,6 +9845,9 @@
       ],
       "You have no transactions.": [
         "Non hai transazioni."
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "Hai molti abbonamenti attivi. Scegli quello da annullare: gli altri abbonamenti non ne risentiranno. Un abbonamento annullato non verrà rinnovato e potrai continuare a usufruire dei suoi vantaggi fino alla fine del periodo di sottoscrizione."
       ],
       "You have unpublished changes": [
         "Hai modifiche non pubblicate"
@@ -9760,6 +9997,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Le email della tua organizzazione sono protette con crittografia end-to-end utilizzando la chiave dell'organizzazione. Questa impronta digitale può essere utilizzata per verificare che tutti gli amministratori del tuo account abbiano la stessa chiave."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "I tuoi altri indirizzi email non funzioneranno per accedere finché non disabiliti questo."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "I tuoi dati di pagamento sono protetti dalla crittografia TLS e dalle leggi svizzere sulla privacy."
@@ -10036,6 +10276,9 @@
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Accedi a ${ PASS_APP_NAME } in modo sicuro dal terminale, ideale per script, automazione e flussi di lavoro di sviluppo."
+      ],
+      "Account credit": [
+        "Credito account"
       ],
       "Account holder": [
         "Titolare del conto"
@@ -10776,11 +11019,11 @@
       "Restrict sign-in to email address": [
         "Limita l'accesso all'indirizzo e-mail"
       ],
-      "Restrict sign-in to primary email address": [
-        "Limita l'accesso all'indirizzo e-mail principale"
-      ],
       "Restrict sign-in to username": [
         "Limita l'accesso al nome utente"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Limita registrazione a username e indirizzi ${ BRAND_NAME } corrispondenti"
       ],
       "Reveal password": [
         "Mostra la password"
@@ -11498,6 +11741,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente alla scrittura ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Aggiungi l'assistente alla scrittura ${ BRAND_NAME } Scribe"
       ],
@@ -11694,6 +11940,32 @@
       ],
       "Sign in": [
         "Accedi"
+      ]
+    },
+    "Members table usage": {
+      "Gateway Monitor is off": [
+        "Il monitoraggio dei gateway è disabilitato"
+      ],
+      "Monitor gateways connections": [
+        "Monitora connessione delle porte"
+      ],
+      "Setup your own private gateways to monitor VPN connection activity within your organization.": [
+        "Configura la tua porta privata per monitorare l'attività della connessione VPN nella tua organizzazione"
+      ],
+      "Today": [
+        "Oggi"
+      ],
+      "Today, ${ time }": [
+        "Oggi, ${ time }"
+      ],
+      "Turn it on to track when and where users connect.": [
+        "Attivalo per tracciare quando e dove gli utenti si connettono."
+      ],
+      "Yesterday": [
+        "Ieri"
+      ],
+      "Yesterday, ${ time }": [
+        "Ieri, ${ time }"
       ]
     },
     "Message": {
@@ -11916,6 +12188,12 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME } con accesso esteso"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
         "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } con accesso limitato"
@@ -13193,8 +13471,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Puoi disdire in qualsiasi momento prima di allora.** Potrai utilizzare ${ planTitle } gratuitamente fino al termine del periodo di prova."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Se decidi di continuare dopo il periodo di prova,** puoi annullare l'abbonamento entro 30 giorni e ottenere un rimborso proporzionale."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Hai cambiato idea dopo il periodo di prova? **Annulla entro 30 giorni dal primo pagamento e ti rimborseremo il periodo non utilizzato."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Una volta che l'abbonamento completo avrà inizio...** Potrai comunque disdirlo entro 30 giorni e ottenere un rimborso proporzionale."
@@ -14090,11 +14368,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Contatta l'Assistenza clienti per confermare il cambio di proprietà"
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Mai"
       ]
     },
     "Payments.ModificationWarning": {
@@ -17179,6 +17452,14 @@
         "In programma"
       ]
     },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "Da ${ startTime }"
+      ]
+    },
     "Subtitle": {
       "${ DRIVE_PLUS_NAME } offers 1 TB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ DRIVE_PLUS_NAME } offre 1 TB di archiviazione per i tuoi file e foto. Hai anche diritto a bonus annuali di spazio di archiviazione."
@@ -18667,6 +18948,9 @@
       "Restore administrator privileges": [
         "Ripristina i privilegi di amministratore"
       ],
+      "Restrict sign-in?": [
+        "Accesso limitato?"
+      ],
       "Reverse charge not supported": [
         "Inversione contabile non supportata"
       ],
@@ -19001,8 +19285,8 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Benvenuto in ${ BRAND_NAME } for Business"
       ],
-      "What changes if you switch to the Free plan": [
-        "Cosa cambia se passi al piano gratuito"
+      "What changes if you cancel ${ planDisplayName }": [
+        "Cosa cambia se si annulla ${ planDisplayName }"
       ],
       "What is an alias?": [
         "Cos'è un alias?"
@@ -19113,6 +19397,12 @@
       "Features": [
         "Caratteristiche"
       ],
+      "Last app activity": [
+        "Ultima attività dell'app"
+      ],
+      "Last connection": [
+        "Ultima connessione"
+      ],
       "Name": [
         "Nome"
       ],
@@ -19124,20 +19414,20 @@
       "Billing": [
         "Fatturazione"
       ],
-      "End date": [
-        "Data di fine"
-      ],
       "Plan": [
         "Piano"
       ],
       "Price": [
         "Prezzo"
       ],
-      "Start date": [
-        "Data Inizio"
+      "Renewal": [
+        "Rinnovo"
       ],
       "Status": [
         "Stato"
+      ],
+      "Subscription term": [
+        "Periodo di abbonamento"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -19352,8 +19642,14 @@
       "Disables end-to-end email encryption for this group": [
         "Disabilita la crittografia end-to-end delle email per questo gruppo"
       ],
+      "External address - cannot be granted the roles and permissions assigned to this group.": [
+        "Indirizzo esterno - impossibile concedere ruoli e permessi assegnati a questo gruppo."
+      ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Indirizzo esterno - disabilita la crittografia email end-to-end per questo gruppo e nessuna risorsa crittografata verrà condivisa con questo utente."
+      ],
+      "External address — No end-to-end encryption or resource sharing, and roles and permissions can't be assigned.": [
+        "Indirizzo esterno — Crittografia end-to-end, condivisione di risorse e assegnazione di ruoli e permessi non disponibili."
       ],
       "Group membership paused": [
         "L'appartenenza al gruppo è stata sospesa"
@@ -19384,6 +19680,14 @@
       ],
       "Waiting for user to accept the invitation": [
         "In attesa che l'utente accetti l'invito"
+      ]
+    },
+    "Tooltip for members table": {
+      "Last time this user connected to one of your organization's Gateways.": [
+        "L'ultima volta che questo utente si è connesso a uno dei gateway della tua organizzazione."
+      ],
+      "Last time this user signed in or used the ${ VPN_APP_NAME } app on their device.": [
+        "L'ultimo accesso dell'utente o l'utilizzo dell'app ${ VPN_APP_NAME } su questo dispositivo."
       ]
     },
     "Tor out of date": {

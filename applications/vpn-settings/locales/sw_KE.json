@@ -2723,9 +2723,6 @@
       "Confirm cancellation": [
         "Thibitisha kughairi"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Ikiwa utavuka mipaka ya Free plan, hutaweza:"
-      ],
       "Keep current plan": [
         "Endelea na mpango wa sasa"
       ],
@@ -2740,9 +2737,6 @@
       ],
       "Upload any new files": [
         "Kupakia faili mpya yoyote"
-      ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Usajili wako unapokwisha tarehe ${ endDate }, akaunti yako itahamia kwenye Free plan. Ikiwa matumizi yako yazidi mipaka ya Free plan, baadhi ya vipengele huenda visipatikane kwa muda."
       ]
     },
     "Confirm modal title": {
@@ -5908,14 +5902,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Jaribio moja tu la bure kwa kila mtumiaji. Bei ya kawaida itatumika baada ya hapo."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Baada ya kuondoka kwenye mpango wako, mtumiaji huyu atahamishiwa kwenye mpango wa ${ BRAND_NAME } Free plan."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Baada ya kuondoka kwenye mpango wako, mtumiaji huyu atahamishiwa kwenye mpango wa ${ BRAND_NAME } Unlimited yenye jaribio la bure la siku 30.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Weka hifadhi kwa akaunti ya msimamizi. Unaweza kusambaza hifadhi kwa watumiaji wa ziada baadaye."
@@ -13232,9 +13220,6 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Ghairi wakati wowote kabla ya hapo.** Utaweza kutumia ${ planTitle } hadi jaribio liishe, bila malipo."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Ikiwa utaendelea baada ya jaribio lako,** unaweza kughairi ndani ya siku 30 na kupata marejesho kwa kiwango cha muda uliotumia."
-      ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Usajili wako kamili unapoanza...** Bado unaweza kughairi ndani ya siku 30 na kupata marejesho ya kiasi kinacholingana."
       ],
@@ -14097,11 +14082,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Wasiliana na Huduma kwa Wateja ili kuthibitisha mabadiliko ya umiliki."
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Katu"
       ]
     },
     "Payments.ModificationWarning": {
@@ -18944,9 +18924,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Karibu kwenye ${ BRAND_NAME } for Business"
       ],
-      "What changes if you switch to the Free plan": [
-        "Nini kinabadilika unapohamia kwenye Free plan"
-      ],
       "What is an alias?": [
         "Lakabu ni nini?"
       ],
@@ -19073,17 +19050,11 @@
       "Billing": [
         "Malipo"
       ],
-      "End date": [
-        "Tarehe ya mwisho"
-      ],
       "Plan": [
         "Mpango"
       ],
       "Price": [
         "Bei"
-      ],
-      "Start date": [
-        "Tarehe ya kuanza"
       ],
       "Status": [
         "Hali"

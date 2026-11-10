@@ -2763,9 +2763,6 @@
       "Confirm cancellation": [
         "确认取消"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "如果您超出免费套餐限制，您将无法："
-      ],
       "Keep current plan": [
         "保留当前套餐"
       ],
@@ -2780,9 +2777,6 @@
       ],
       "Upload any new files": [
         "上传任意文件"
-      ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "当您的订阅在 ${ endDate } 结束时，您的账户将切换到免费套餐。如果您的使用量超过免费套餐限制，某些功能可能会暂时不可用。"
       ]
     },
     "Confirm modal title": {
@@ -5933,14 +5927,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*每个用户只能免费试用一次，之后适用常规定价。"
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "退出您的套餐后，该用户将被移至 ${ BRAND_NAME } 免费套餐。"
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "退出您的套餐后，该用户将被移至 ${ BRAND_NAME } Unlimited 套餐，并享有 30 天免费试用。*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "为管理员账户分配存储空间，您可以稍后为其他用户分配存储。"
@@ -9460,12 +9448,6 @@
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "在身份提供商中为 ${ appName } 启用 SAML 时，系统可能会提示您使用回调 (ACS) URL 和颁发者 ID。只需将以下数据复制粘贴到您的身份提供商字段中即可。"
       ],
-      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "当登录受限时，仅可使用 ${ primaryEmailElement } 和您的用户名 ${ usernameElement } 登录。即使他人知晓，您的其他地址也无法关联到您的账户。"
-      ],
-      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "当登录受限时，仅可使用您的用户名 ${ usernameElement } 登录。即使他人知晓，您的其他地址也无法关联到您的账户。"
-      ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "取消后，您的订阅将不会续订，但您仍可享受套餐优惠，直至订阅期结束。之后，您将降级到 ${ BRAND_NAME } 的免费套餐。"
       ],
@@ -10793,9 +10775,6 @@
       ],
       "Require password check-ins": [
         "要求密码检查"
-      ],
-      "Restrict sign-in to primary email address": [
-        "限制仅使用主邮箱地址登录"
       ],
       "Restrict sign-in to username": [
         "限制仅使用用户名登录"
@@ -13200,9 +13179,6 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**在此之前可随时取消。** 在试用期结束前，您可以免费使用 ${ planTitle }。"
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**如果您在试用期结束后继续使用，** 可以在 30 天内取消，并获得按比例退款。"
-      ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**您的完整订阅开始后…** 您仍可在 30 天内取消，并获得按比例退款。"
       ],
@@ -14078,11 +14054,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "请联系客服支持以确认所有权变更"
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "永不"
       ]
     },
     "Payments.ModificationWarning": {
@@ -18878,9 +18849,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "欢迎使用 ${ BRAND_NAME } 商业版"
       ],
-      "What changes if you switch to the Free plan": [
-        "切换到免费套餐会有什么变化"
-      ],
       "What is an alias?": [
         "什么是邮箱别名？"
       ],
@@ -19007,17 +18975,11 @@
       "Billing": [
         "账单"
       ],
-      "End date": [
-        "结束日期"
-      ],
       "Plan": [
         "等级"
       ],
       "Price": [
         "价格"
-      ],
-      "Start date": [
-        "开始日期"
       ],
       "Status": [
         "状态"

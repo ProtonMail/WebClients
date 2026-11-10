@@ -2310,9 +2310,6 @@
       "Confirm cancellation": [
         "ยืนยันการยกเลิก"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "หากใช้งานเกินขีดจำกัดของ Free plan จะไม่สามารถ:"
-      ],
       "Keep current plan": [
         "ใช้แผนปัจจุบันต่อไป"
       ],
@@ -2327,9 +2324,6 @@
       ],
       "Upload any new files": [
         "อัปโหลดไฟล์ใหม่"
-      ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "เมื่อการสมัครสมาชิกสิ้นสุดลงในวันที่ ${ endDate } บัญชีจะสลับไปใช้ Free plan หากการใช้งานเกินขีดจำกัดของ Free plan คุณสมบัติบางอย่างอาจไม่สามารถใช้งานได้ชั่วคราว"
       ]
     },
     "Confirm modal title": {
@@ -5424,14 +5418,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*หนึ่งการทดลองใช้ฟรีต่อผู้ใช้หนึ่งรายเท่านั้น หลังจากนั้นจะคิดราคาปกติ"
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "หลังจากออกจากแผน ผู้ใช้นี้จะถูกย้ายไปยัง ${ BRAND_NAME } Free plan"
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "หลังจากออกจากแผน ผู้ใช้นี้จะถูกย้ายไปยังแผน ${ BRAND_NAME } Unlimited พร้อมทดลองใช้ฟรี 30 วัน*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "กำหนดพื้นที่จัดเก็บให้กับบัญชีผู้ดูแลระบบ สามารถจัดสรรพื้นที่จัดเก็บให้กับผู้ใช้เพิ่มเติมในภายหลังได้"
@@ -12865,11 +12853,6 @@
         "ติดต่อฝ่ายสนับสนุนลูกค้าเพื่อยืนยันการเปลี่ยนความเป็นเจ้าของ"
       ]
     },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "ไม่มีกำหนด"
-      ]
-    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "แน่ใจหรือไม่ว่าต้องการดำเนินการต่อ?"
@@ -17500,9 +17483,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "ยินดีต้อนรับสู่ ${ BRAND_NAME } สำหรับธุรกิจ"
       ],
-      "What changes if you switch to the Free plan": [
-        "สิ่งที่จะเปลี่ยนไปเมื่อสลับไปใช้ Free plan"
-      ],
       "What is an alias?": [
         "นามแฝงคืออะไร?"
       ],
@@ -17617,9 +17597,6 @@
       ]
     },
     "Title subscription": {
-      "End date": [
-        "วันที่สิ้นสุด"
-      ],
       "Plan": [
         "แผน"
       ],

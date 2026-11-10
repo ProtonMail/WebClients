@@ -62,6 +62,9 @@
       "Add ${ BRAND_NAME } address": [
         "Adicionar endereço do ${ BRAND_NAME }"
       ],
+      "Add a payment method": [
+        "Adicionar um método de pagamento"
+      ],
       "Add account": [
         "Adicionar uma conta"
       ],
@@ -88,6 +91,9 @@
       ],
       "Add external address": [
         "Adicionar um endereço externo"
+      ],
+      "Add payment method": [
+        "Adicionar método de pagamento"
       ],
       "Add PayPal": [
         "Adicionar PayPal"
@@ -673,6 +679,9 @@
       ],
       "Learn about recovery options": [
         "Saiba mais sobre as opções de recuperação"
+      ],
+      "Learn how this works": [
+        "Saiba como isto funciona"
       ],
       "Learn more": [
         "Saber mais"
@@ -2330,9 +2339,6 @@
       "Confirm cancellation": [
         "Confirmar cancelamento"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Se exceder os limites do plano Free, não poderá:"
-      ],
       "Keep current plan": [
         "Manter o plano atual"
       ],
@@ -2347,9 +2353,6 @@
       ],
       "Upload any new files": [
         "Carregar quaisquer novos ficheiros"
-      ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Quando a sua subscrição terminar a ${ endDate }, a sua conta mudará para o plano Free. Se a sua utilização exceder os limites do plano Free, algumas funcionalidades podem ficar temporariamente indisponíveis."
       ]
     },
     "Confirm modal title": {
@@ -3525,6 +3528,9 @@
       ],
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "A maior parte dos problemas pode ser resolvida em poucos minutos com os nossos guias passo a passo."
+      ],
+      "No ads. No trackers": [
+        "Sem anúncios. Sem rastreadores"
       ],
       "No one in your organization can connect to shared servers.": [
         "Ninguém na sua organização pode conectar-se a servidores partilhados."
@@ -4975,6 +4981,9 @@
       "The policy name must be between 3 and 40 characters.": [
         "O nome da política deve ter entre 3 e 40 caracteres."
       ],
+      "The session has expired. Please try again.": [
+        "A sessão expirou. Por favor, tente novamente."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Há pastas demais na sua conta externa. Personalize a importação para excluir algumas pastas."
       ],
@@ -5048,7 +5057,7 @@
         "A verificação não funcionou. Tente novamente dentro de uma hora."
       ],
       "We couldn’t send a verification code using this method.": [
-        "Não conseguimos enviar um código de verificação através deste método."
+        "Nós não conseguimos enviar um código de verificação utilizando este método."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Parámos de assinar com DKIM devido a problemas com a sua configuração DNS. Siga as instruções abaixo para retomar a assinatura."
@@ -5469,14 +5478,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Apenas uma avaliação gratuita por utilizador. Os preços regulares serão aplicados a seguir."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Após deixar o seu plano, este utilizador será movido para um plano ${ BRAND_NAME } Free."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Após deixar o seu plano, este utilizador será transferido para um plano ${ BRAND_NAME } Unlimited com um teste gratuito de 30 dias.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Atribua armazenamento à conta do administrador. Pode distribuir o armazenamento por outros utilizadores mais tarde."
@@ -6557,7 +6560,7 @@
         "O ${ MAIL_APP_NAME } também pode ser utilizado com uma palavra-passe única que substitui a palavra-passe de início de sessão e da caixa de correio e a segunda palavra-passe. Para mudar para o modo de palavra-passe única, introduza a palavra-passe única que pretende utilizar e clique em Guardar."
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
-        "O ${ MEET_APP_NAME } é uma solução de videoconferência encriptada de ponto a ponto. Adicione-o ao seu plano para realizar reuniões seguras."
+        "O ${ MEET_APP_NAME } é uma solução de videoconferência encriptada de ponto a ponto. Adicione-a ao seu plano para realizar reuniões seguras."
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licenças"
@@ -6730,6 +6733,12 @@
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } mais",
         "+ ${ invisibleCount } mais"
+      ],
+      "1 device per user": [
+        "1 dispositivo por utilizador"
+      ],
+      "1 vault per user": [
+        "1 cofre por utilizador"
       ],
       "2FA disabled": [
         "A 2FA foi desativada."
@@ -7211,6 +7220,9 @@
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NÃO se esqueça desta palavra-passe. Caso se esqueça, não será capaz de gerir a sua organização."
       ],
+      "Do you remember your password?": [
+        "Lembra-se da sua palavra-passe?"
+      ],
       "Do you want to revoke all other sessions than the current one?": [
         "Quer revogar todas as outras sessões que não a atual?"
       ],
@@ -7414,7 +7426,7 @@
         "Erro na obtenção dos registos."
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Apenas ficheiros (sem fotos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) - até 100 GB no total, 100.000 ficheiros e 50 GB por ficheiro"
+        "Apenas ficheiros (sem fotos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) até 100 GB no total, 100.000 ficheiros e 50 GB por ficheiro"
       ],
       "Fill in user details": [
         "Preencher dados de utilizador"
@@ -8528,6 +8540,9 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Para proteger a sua conexão de internet, Transfere e instale a aplicação ${ VPN_APP_NAME } no seu dispositivo e ligar-se a um servidor."
       ],
+      "Today": [
+        "Hoje"
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregue a sua conta com créditos que poderá utilizar para subscrever um novo plano ou renovar o plano atual. Recebe um crédito por cada ${ i18nCurrency } gasto."
       ],
@@ -9356,6 +9371,9 @@
       ],
       "Account holder": [
         "Titular da conta"
+      ],
+      "Account holder name": [
+        "Nome do titular da conta"
       ],
       "Account storage": [
         "Armazenamento da conta"
@@ -10623,7 +10641,7 @@
         "atualize para obter mais armazenamento"
       ],
       "Upgrade to restore full access": [
-        "Melhore o eu plano para restaurar o acesso completo."
+        "Atualize para restaurar o acesso completo"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "O seu ${ driveStorage } está cheio. Para enviar ou sincronizar ficheiros, liberte espaço ou ${ cta }."
@@ -12392,6 +12410,9 @@
       "Plus": [
         "Plus"
       ],
+      "Short @pm.me address": [
+        "Endereço curto @pm.me"
+      ],
       "Storage": [
         "Armazenamento"
       ],
@@ -12885,6 +12906,9 @@
       "Billing Country": [
         "País de faturação"
       ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Ao mudar, concorda com os nossos ${ termsLink }."
+      ],
       "Card number": [
         "Número do cartão"
       ],
@@ -12923,6 +12947,9 @@
       ],
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis noutras moedas."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Pagar com ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pagamento necessário para que a subscrição seja ativada após o término do período de avaliação."
@@ -13063,11 +13090,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Contacte o Apoio ao Cliente para confirmar a alteração de propriedade"
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Nunca"
       ]
     },
     "Payments.ModificationWarning": {
@@ -16100,7 +16122,7 @@
         "Endereço adicionado"
       ],
       "Administrator privileges restored": [
-        "Os privilégios de administrador foram restaurados."
+        "Privilégios de administrador restaurados"
       ],
       "Backup password updated": [
         "A palavra-passe de backup foi atualizada."
@@ -17649,7 +17671,7 @@
         "Para pré-visualizar esta folha de cálculo, transfira-a."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
-        "Para fazer uma pré-visualização desta folha de cálculo, abra-a em ${ SHEETS_APP_NAME } ou faça a sua transferência."
+        "Para pré-visualizar esta folha de cálculo, abra-a em ${ SHEETS_APP_NAME } ou transfira-a."
       ],
       "Troubleshoot with ${ LUMO_SHORT_APP_NAME }": [
         "Resolver problemas com o ${ LUMO_SHORT_APP_NAME }"
@@ -17777,9 +17799,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Boas-vindas ao ${ BRAND_NAME } for Business"
       ],
-      "What changes if you switch to the Free plan": [
-        "O que muda se mudar para o plano Free"
-      ],
       "What is an alias?": [
         "O que é um alias?"
       ],
@@ -17894,9 +17913,6 @@
       ]
     },
     "Title subscription": {
-      "End date": [
-        "Data final"
-      ],
       "Plan": [
         "Plano"
       ],

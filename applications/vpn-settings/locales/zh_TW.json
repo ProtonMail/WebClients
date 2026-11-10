@@ -2325,9 +2325,6 @@
       "Confirm cancellation": [
         "確認取消"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "如果您超過 Free plan 限制，您將無法："
-      ],
       "Keep current plan": [
         "維持目前方案"
       ],
@@ -2342,9 +2339,6 @@
       ],
       "Upload any new files": [
         "上載任何新檔案"
-      ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "當您的訂閱於 ${ endDate } 結束時，您的帳號將切換至 Free plan。如果您的使用量超過 Free plan 限制，某些功能可能會暫時無法使用。"
       ]
     },
     "Confirm modal title": {
@@ -5442,14 +5436,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*每位使用者僅限一次免費試用。此後將適用一般定價。"
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "退出您的方案後，此使用者將轉移到 ${ BRAND_NAME } Free plan。"
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "退出您的方案後，此使用者將轉移到 ${ BRAND_NAME } Unlimited 方案，並享有 30 天的免費試用。*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "分配儲存空間給管理員帳號。您可以在稍後為其他使用者分配儲存空間。"
@@ -6665,6 +6653,9 @@
       ],
       "1 device per user": [
         "1 台裝置每位使用者"
+      ],
+      "1 vault per user": [
+        "每人 1 個保管庫"
       ],
       "2FA disabled": [
         "已停用 2FA"
@@ -10448,6 +10439,9 @@
       "Pay invoice": [
         "繳付帳單"
       ],
+      "Pay it": [
+        "繳款"
+      ],
       "Privacy policy": [
         "隱私權政策"
       ],
@@ -12961,11 +12955,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "聯絡客戶支援服務以確認所有權變更"
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "從不"
       ]
     },
     "Payments.ModificationWarning": {
@@ -17618,9 +17607,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "歡迎使用 ${ BRAND_NAME } 商務版"
       ],
-      "What changes if you switch to the Free plan": [
-        "切換至 Free plan 的變化"
-      ],
       "What is an alias?": [
         "甚麼是別名?"
       ],
@@ -17735,9 +17721,6 @@
       ]
     },
     "Title subscription": {
-      "End date": [
-        "結束日期"
-      ],
       "Plan": [
         "方案"
       ],

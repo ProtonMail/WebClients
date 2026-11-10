@@ -337,6 +337,9 @@
       "Add external address": [
         "Pridať externú adresu"
       ],
+      "Add payment method": [
+        "Pridať spôsob platby"
+      ],
       "Add PayPal": [
         "Pridať PayPal"
       ],
@@ -394,11 +397,20 @@
       "Cancel": [
         "Zrušiť"
       ],
+      "Cancel ${ planTitle }": [
+        "Zrušiť ${ planTitle }"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "Zrušiť skúšobné obdobie ${ planTitle }"
+      ],
       "Cancel request": [
         "Zrušiť žiadosť"
       ],
       "Cancel subscription": [
         "Zrušiť predplatné"
+      ],
+      "Cancel trial": [
+        "Zrušiť skúšobné obdobie"
       ],
       "Cancel trial and pay": [
         "Zrušiť skúšobné obdobie a zaplatiť"
@@ -1189,6 +1201,9 @@
       "Restore": [
         "Obnoviť"
       ],
+      "Restrict sign-in": [
+        "Obmedziť prihlásenie"
+      ],
       "Resume membership": [
         "Pokračovať v členstve"
       ],
@@ -1644,6 +1659,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "Zrušiť predplatné"
+      ],
       "Reactivate": [
         "Znovu aktivovať"
       ],
@@ -1876,6 +1894,9 @@
       ],
       "Permission revoked": [
         "Povolenie zrušené"
+      ],
+      "Sign-in": [
+        "Prihlásiť sa"
       ]
     },
     "Admin": {
@@ -2026,6 +2047,9 @@
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Po zrušení sa vaša bezplatná skúšobná verzia neprevedie na platené predplatné, ale výhody plánu môžete využívať až do konca skúšobného obdobia. Po uplynutí tejto lehoty dôjde k zníženiu na ${ BRAND_NAME } Free plán."
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "Ak zrušíte predplatné, vaša bezplatná skúšobná verzia sa nepremení na platené predplatné."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Môžete mať až ${ TRIAL_MAX_DEDICATED_IPS } vyhradených serverov počas skúšobného obdobia."
@@ -2835,8 +2859,8 @@
       "Confirm cancellation": [
         "Potvrďte zrušenie"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Ak prekročíte limity bezplatného plánu nebudete môcť:"
+      "If you exceed your plan limits, you won't be able to:": [
+        "Ak prekročíte limity vášho plánu nebudete môcť:"
       ],
       "Keep current plan": [
         "Ponechať aktuálny plán"
@@ -2853,8 +2877,11 @@
       "Upload any new files": [
         "Nahrávať nové súbory"
       ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Keď vaše predplatné dňa ${ endDate } vyprší a váš účet prejde na plán Free. Ak vaša spotreba prekročí limity plánu Free, niektoré funkcie môžu byť dočasne nedostupné."
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Keď vám predplatné ${ planDisplayName } dňa ${ endDate } skončí, stratíte prístup k jeho funkciám. Ak potom vaše využitie prekročí limity vášho balíka, niektoré funkcie môžu byť dočasne nedostupné."
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Keď vaše predplatné dňa ${ endDate } skončí, stratíte prístup k jeho funkciám. Ak potom vaše využitie prekročí limity vášho balíka, niektoré funkcie môžu byť dočasne nedostupné."
       ]
     },
     "Confirm modal title": {
@@ -5577,6 +5604,9 @@
       "The policy name must be between 3 and 40 characters.": [
         "Názov politiky musí mať 3 až 40 znakov."
       ],
+      "The session has expired. Please try again.": [
+        "Platnosť relácie vypršala. Skúste to znova."
+      ],
       "The total could not be calculated. Change the amount to try again.": [
         "Celková suma sa nedala vypočítať. Zmeňte sumu a skúste to znova."
       ],
@@ -6101,14 +6131,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Na jedného používateľa sa vzťahuje len jedna bezplatná skúšobná verzia. Potom platí bežný cenník."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Po opustení vášho plánu bude tento používateľ presunutý do ${ BRAND_NAME } Free."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Po opustení vášho plánu bude tento používateľ presunutý na plán ${ BRAND_NAME } Unlimited s 30-dňovou bezplatnou skúšobnou verziou.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Priradťte úložisko k účtu správcu. Neskôr môžete distribuovať úložisko pre ďalších používateľov."
@@ -7845,6 +7869,21 @@
       ],
       "By leaving now, changes may not be saved": [
         "Pokiaľ teraz opustíte stránku, zmeny nemusia byť uložené"
+      ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou **${ primaryEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pod svojím pôvodným používateľským menom **${ username }** – buď samostatne, alebo v tvare **${ firstEmail }**, **@${ secondDomain }** alebo **@${ thirdDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pod svojím pôvodným používateľským menom **${ username }** – buď samostatne, alebo v kombinácii s **${ firstEmail }** alebo **@${ secondDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pod svojím pôvodným používateľským menom **${ username }** – buď samostatne, alebo v tvare **${ firstEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou vášho používateľského mena **${ username }**."
       ],
       "Can you access your active session?": [
         "Môžete pristupovať k svojej aktívnej relácii?"
@@ -9850,17 +9889,26 @@
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Pri povolení SAML pre ${ appName } u poskytovateľa identity sa môže zobraziť výzva na použitie URL adresy spätného volania (ACS) a ID vydavateľa. Stačí skopírovať a vložiť nižšie uvedené údaje do polí poskytovateľa identity."
       ],
-      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Ak je prihlásenie obmedzené, na prihlásenie je možné použiť iba ${ primaryEmailElement } a vaše používateľské meno ${ usernameElement }. Vaše ostatné emailové adresy nie je možné prepojiť s vaším účtom, ani keby ich niekto poznal."
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Ak je prihlásenie obmedzené, na prihlásenie je možné použiť iba váš email **${ primaryEmail }**. Vaše ostatné adresy nie je možné prepojiť s vaším účtom, ani keby ich niekto poznal."
       ],
-      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Ak je prihlásenie obmedzené, na prihlásenie je možné použiť iba váš email ${ primaryEmailElement }. Vaše ostatné adresy nie je možné prepojiť s vaším účtom, ani keby ich niekto poznal."
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Ak je prihlásenie obmedzené, na prihlásenie je možné použiť iba vaše používateľské meno **${ username }**. Vaše ostatné adresy nie je možné prepojiť s vaším účtom, ani keby ich niekto poznal."
       ],
-      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Ak je prihlásenie obmedzené, na prihlásenie je možné použiť iba vaše používateľské meno ${ usernameElement }. Vaše ostatné emailové adresy nie je možné prepojiť s vaším účtom, ani keby ich niekto poznal."
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho pôvodného používateľského mena **${ username }**, a to buď samostatne, alebo v tvare **${ firstEmail }**, **@${ secondDomain }** alebo **@${ thirdDomain }**. Ostatné emailové adresy nebudú na prihlásenie fungovať."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho pôvodného používateľského mena **${ username }** – buď samostatne, alebo v kombinácii s **${ firstEmail }** alebo **@${ secondDomain }**. Vaše ostatné emailové adresy nebudú na prihlásenie fungovať."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho pôvodného používateľského mena **${ username }** – buď samostatne, alebo v kombinácii s **${ firstEmail }**. Vaše ostatné emailové adresy nebudú na prihlásenie fungovať."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Po zrušení sa vaše predplatné neobnoví, ale výhody plánu môžete využívať až do konca predplatného obdobia. Po uplynutí tejto lehoty dôjde k zníženiu na ${ BRAND_NAME } bezplatný plán."
+      ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "Ak predplatné zrušíte, po uplynutí skúšobného obdobia sa už nezačne."
       ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Po zrušení sa vaše predplatné nezačne, ale výhody plánu môžete využívať až do konca skúšobného obdobia. Potom dôjde k zníženiu na ${ BRAND_NAME } bezplatný plán."
@@ -10015,6 +10063,9 @@
         "Počas nasledujúcich 24 hodín nemôžete odoslať viac ako ${ emailSendLimitNumber } emailových pozvánok",
         "Počas nasledujúcich 24 hodín nemôžete odoslať viac ako ${ emailSendLimitNumber } emailových pozvánok"
       ],
+      "You cancel it in the store.": [
+        "Zrušíte ho v obchode."
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Nemôžete odporúčať používateľom ${ MAIL_APP_NAME }"
       ],
@@ -10062,6 +10113,9 @@
       ],
       "You have no transactions.": [
         "Nemáte žiadne transakcie."
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "Máte niekoľko predplatných. Vyberte si to, ktoré chcete zrušiť: ostatné predplatné to neovplyvní. Zrušené predplatné sa nebude obnovovať a jeho výhody budete môcť využívať až do konca predplatného obdobia."
       ],
       "You have unpublished changes": [
         "Máte nezverejnené zmeny"
@@ -10215,6 +10269,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Emaily vašej organizácie sú chránené end-to-end šifrovaním pomocou kľúča organizácie. Tento odtlačok možno použiť na overenie, či všetci správcovia vo vašom účte majú rovnaký kľúč."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Vaše ostatné emailové adresy nebudú fungovať na prihlásenie, kým túto funkciu nevypnete."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Vaše platobné údaje sú chránené TLS šifrovaním a švajčiarskymi zákonmi o ochrane súkromia."
@@ -10505,6 +10562,9 @@
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Bezpečný prístup k ${ PASS_APP_NAME } z terminálu, ideálny pre skriptovanie, automatizáciu a vývojárske pracovné postupy."
+      ],
+      "Account credit": [
+        "Kredit na konte"
       ],
       "Account holder": [
         "Vlastník účtu"
@@ -11247,11 +11307,11 @@
       "Restrict sign-in to email address": [
         "Obmedziť prihlásenie na emailovú adresu"
       ],
-      "Restrict sign-in to primary email address": [
-        "Obmedziť prihlásenie na primárnu emailovú adresu"
-      ],
       "Restrict sign-in to username": [
         "Obmedziť prihlásenie na používateľské meno"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Obmedziť prihlásenie na používateľské meno a adresy zodpovedajúce ${ BRAND_NAME }"
       ],
       "Reveal password": [
         "Odkryť heslo"
@@ -13785,8 +13845,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Zrušiť môžete kedykoľvek pred týmto termínom.** ${ planTitle } budete môcť bezplatne využívať až do konca skúšobného obdobia."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Ak budete pokračovať aj po skončení skúšobnej doby,** môžete službu zrušiť do 30 dní a získať pomernú refundáciu."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Zmenili ste názor po skončení skúšobnej doby?** Ak zrušíte predplatné do 30 dní od prvej platby, vrátime vám peniaze za nevyčerpanú dobu."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Po začatí platnosti predplatného...** môžete do 30 dní predplatné zrušiť a získať pomernú refundáciu."
@@ -14714,11 +14774,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Obráťte sa na zákaznícku podporu pre potvrdenie zmeny vlastníctva."
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Nikdy"
       ]
     },
     "Payments.ModificationWarning": {
@@ -17941,6 +17996,14 @@
         "Nadchádzajúce"
       ]
     },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "Od ${ startTime }"
+      ]
+    },
     "Subtitle": {
       "${ DRIVE_PLUS_NAME } offers 1 TB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ DRIVE_PLUS_NAME } ponúka 1 TB úložiska pre vaše súbory a fotografie. Máte tiež nárok na každoročný bonusový priestor na úložisku."
@@ -19451,6 +19514,9 @@
       "Restore administrator privileges": [
         "Obnoviť oprávnenia správcu"
       ],
+      "Restrict sign-in?": [
+        "Obmedziť prihlásenie?"
+      ],
       "Reverse charge not supported": [
         "Obrátené zdanenie nie je podporované"
       ],
@@ -19787,8 +19853,8 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Vitajte v službe ${ BRAND_NAME } pre Business"
       ],
-      "What changes if you switch to the Free plan": [
-        "Čo sa zmení, keď prejdete na plán Free"
+      "What changes if you cancel ${ planDisplayName }": [
+        "Čo sa zmení, ak zrušíte ${ planDisplayName }"
       ],
       "What is an alias?": [
         "Čo je alias?"
@@ -19916,20 +19982,20 @@
       "Billing": [
         "Fakturácia"
       ],
-      "End date": [
-        "Dátum ukončenia"
-      ],
       "Plan": [
         "Plán"
       ],
       "Price": [
         "Cena"
       ],
-      "Start date": [
-        "Dátum začiatku"
+      "Renewal": [
+        "Obnova"
       ],
       "Status": [
         "Stav"
+      ],
+      "Subscription term": [
+        "Doba trvania predplatného"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -388,11 +388,20 @@
       "Cancel": [
         "Cancelar"
       ],
+      "Cancel ${ planTitle }": [
+        "Cancelar de ${ planTitle }"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "Cancelar avaliação de ${ planTitle }"
+      ],
       "Cancel request": [
         "Cancelar solicitação"
       ],
       "Cancel subscription": [
         "Cancelar assinatura"
+      ],
+      "Cancel trial": [
+        "Cancelar avaliação"
       ],
       "Cancel trial and pay": [
         "Cancelar avaliação e pagar"
@@ -482,7 +491,7 @@
         "Conectar endereço do Gmail"
       ],
       "Connect to video conferencing": [
-        "Conectar-se à videoconferência.\n"
+        "Conectar-se à videoconferência"
       ],
       "Connect your email": [
         "Conecte seu e-mail"
@@ -1638,6 +1647,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "Cancelar assinatura"
+      ],
       "Reactivate": [
         "Reativar"
       ],
@@ -1848,6 +1860,9 @@
       ],
       "Permission revoked": [
         "Permissão revogada"
+      ],
+      "Sign-in": [
+        "Iniciar sessão"
       ]
     },
     "Admin": {
@@ -1990,6 +2005,9 @@
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ao cancelar, sua avaliação gratuita não será convertida em uma assinatura paga, mas você ainda pode aproveitar os benefícios do plano até o final do período de avaliação. Depois disso, você fará o downgrade para o plano ${ BRAND_NAME } Free."
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "Quando você cancelar, sua avaliação gratuita não será convertida em uma assinatura paga."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Você pode ter até ${ TRIAL_MAX_DEDICATED_IPS } servidor dedicado durante o período de avaliação."
@@ -2733,8 +2751,8 @@
       "Confirm cancellation": [
         "Confirmar cancelamento"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Se você exceder os limites do plano gratuito, não será possível:"
+      "If you exceed your plan limits, you won't be able to:": [
+        "Se você exceder os limites do seu plano, não será possível:"
       ],
       "Keep current plan": [
         "Manter plano atual"
@@ -2751,8 +2769,11 @@
       "Upload any new files": [
         "Enviar novos arquivos"
       ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Quando sua assinatura terminar em ${ endDate }, sua conta mudará para o Free plan. Se o seu uso exceder os limites do Free plan, alguns recursos podem ficar temporariamente indisponíveis."
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Quando a assinatura do ${ planDisplayName } encerrar em ${ endDate }, você perderá suas funcionalidades. Se, após o encerramento, seu uso exceder os limites do plano, alguns recursos poderão ficar temporariamente indisponíveis."
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Quando sua assinatura se encerrar em ${ endDate }, você perderá suas funcionalidades. Se, após o encerramento, seu uso exceder os limites do plano, alguns recursos poderão ficar temporariamente indisponíveis."
       ]
     },
     "Confirm modal title": {
@@ -5412,6 +5433,9 @@
       "The policy name must be between 3 and 40 characters.": [
         "O nome da política deve ter entre 3 e 40 caracteres."
       ],
+      "The session has expired. Please try again.": [
+        "A sessão expirou. Por favor, tente novamente."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Existem muitas pastas em sua conta externa. Personalize a importação para excluir algumas pastas."
       ],
@@ -5918,14 +5942,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Apenas uma avaliação gratuita por usuário. Depois disso, aplica-se o preço normal."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Após sair do plano dele, esse usuário será transferido para um plano gratuito ${ BRAND_NAME }."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Após sair do seu plano, este usuário será movido para o plano ${ BRAND_NAME } Unlimited com 30 dias de avaliação gratuita."
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Atribua armazenamento à conta do administrador. Você pode distribuir armazenamento para usuários adicionais mais tarde."
@@ -9452,6 +9470,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ao cancelar, sua assinatura não será renovada, mas você ainda pode aproveitar os benefícios do plano até o final do período da sua assinatura. Depois disso, você fará o downgrade para o plano ${ BRAND_NAME } Free."
       ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "Quando você cancelar, sua assinatura não iniciará após o período de avaliação."
+      ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ao cancelar, sua assinatura não começará, mas você ainda pode aproveitar os benefícios do plano até o final do período de avaliação. Depois disso, você fará o downgrade para o plano ${ BRAND_NAME } Free."
       ],
@@ -9588,6 +9609,9 @@
         "Você não pode enviar mais de ${ emailSendLimitNumber } convite por e-mail nas próximas 24 horas",
         "Você não pode enviar mais de ${ emailSendLimitNumber } convites por e-mail nas próximas 24 horas"
       ],
+      "You cancel it in the store.": [
+        "Cancele isso na loja."
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Você não pode indicar usuários do ${ MAIL_APP_NAME }."
       ],
@@ -9631,6 +9655,9 @@
       ],
       "You have no transactions.": [
         "Você não tem transações."
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "Você tem múltiplas assinaturas. Escolha a que deve ser cancelada. As demais assinaturas não serão afetadas. Uma assinatura canelada não será renovada, mas seus benefícios serão mantidos até o fim do período de vigência."
       ],
       "You have unpublished changes": [
         "Você tem alterações não publicadas"
@@ -10792,9 +10819,6 @@
       ],
       "Require password check-ins": [
         "Exigir a verificação da senha"
-      ],
-      "Restrict sign-in to primary email address": [
-        "Restringir início de sessão para o endereço de e-mail principal"
       ],
       "Reveal password": [
         "Mostrar senha"
@@ -13233,9 +13257,6 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Cancele a qualquer momento antes disso. ** Você poderá usar ${ planTitle } até que a avaliação termine, gratuitamente."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Se você continuar após o seu teste, ** você pode cancelar dentro de 30 dias e obter um reembolso pro-rata."
-      ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Uma vez que sua assinatura completa começa... ** Você ainda pode cancelar dentro de 30 dias e obter um reembolso proporcional."
       ],
@@ -14066,11 +14087,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Entre em contato com o suporte ao cliente para confirmar a mudança de titularidade"
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Nunca"
       ]
     },
     "Payments.ModificationWarning": {
@@ -17108,6 +17124,14 @@
         "Em breve"
       ]
     },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "Da ${ startTime }"
+      ]
+    },
     "Subtitle": {
       "${ DRIVE_PLUS_NAME } offers 1 TB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ DRIVE_PLUS_NAME } oferece 1 TB de armazenamento para os seus arquivos e fotos. Você também está elegível para bônus anuais de armazenamento."
@@ -18924,8 +18948,8 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Boas-vindas ao ${ BRAND_NAME } for Business"
       ],
-      "What changes if you switch to the Free plan": [
-        "O que muda se você mudar para o plano Free"
+      "What changes if you cancel ${ planDisplayName }": [
+        "O que muda se você cancelar ${ planDisplayName }"
       ],
       "What is an alias?": [
         "O que é um alias?"
@@ -19056,20 +19080,20 @@
       "Billing": [
         "Faturação"
       ],
-      "End date": [
-        "Data de término"
-      ],
       "Plan": [
         "Plano"
       ],
       "Price": [
         "Preço"
       ],
-      "Start date": [
-        "Data de início"
+      "Renewal": [
+        "Renovação"
       ],
       "Status": [
         "Status"
+      ],
+      "Subscription term": [
+        "Termo de assinatura"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -307,6 +307,9 @@
       "Add external address": [
         "Lägg till extern adress"
       ],
+      "Add payment method": [
+        "Lägg till betalningsmetod"
+      ],
       "Add PayPal": [
         "Lägg till PayPal"
       ],
@@ -363,6 +366,12 @@
       ],
       "Cancel": [
         "Avbryt"
+      ],
+      "Cancel ${ planTitle }": [
+        "Avsluta ${ planTitle }"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "Avsluta ${ planTitle } försöksperiod"
       ],
       "Cancel request": [
         "Avbryt begäran"
@@ -1611,6 +1620,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "Avsluta prenumeration"
+      ],
       "Reactivate": [
         "Återaktivera"
       ]
@@ -1812,6 +1824,9 @@
       ],
       "Permission revoked": [
         "Behörighet återkallad"
+      ],
+      "Sign-in": [
+        "Logga-in"
       ]
     },
     "Admin": {
@@ -1945,6 +1960,9 @@
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "När du avbryter kommer din gratis provperiod inte att omvandlas till en betald prenumeration, men du kan fortfarande dra nytta av paketförmåner fram till slutet av provperioden. Därefter kommer du att nedgraderas till ${ BRAND_NAME } Free-paketet."
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "När du avslutar, din fria provperiod kommer inte att konverteras till en betald prenumeration."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha upp till ${ TRIAL_MAX_DEDICATED_IPS } dedikerad server under provperioden."
@@ -2667,8 +2685,8 @@
       "Confirm cancellation": [
         "Bekräfta uppsägning"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Om du överskrider gränserna för Free plan kommer du inte att kunna:"
+      "If you exceed your plan limits, you won't be able to:": [
+        "Om du överskrider gränserna för din plan, kommer du inte att kunna:"
       ],
       "Keep current plan": [
         "Behåll nuvarande paket"
@@ -2685,8 +2703,11 @@
       "Upload any new files": [
         "Ladda upp alla nya filer"
       ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "När din prenumeration löper ut den ${ endDate } kommer ditt konto att byta till Free plan. Om din användning överskrider gränserna för Free plan kan vissa funktioner vara tillfälligt otillgängliga."
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "När din  ${ planDisplayName } prenumeration avslutas på ${ endDate }förlorar du dess funktioner. Om din användning överstiger dina planbegränsningar, kommer vissa funktioner att vara tillfälligt otillgängliga."
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "När din  prenumeration avslutas på ${ endDate }förlorar du dess funktioner. Om din användning överstiger dina planbegränsningar, kan vissa funktioner vara tillfälligt otillgängliga."
       ]
     },
     "Confirm modal title": {
@@ -5343,6 +5364,9 @@
       "The policy name must be between 3 and 40 characters.": [
         "Policynamnet måste vara mellan 3 och 40 tecken."
       ],
+      "The session has expired. Please try again.": [
+        "Sessionen har löpt ut. Vänligen försök igen."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det finns för många mappar i ditt externa konto. Anpassa importen för att ta bort vissa mappar."
       ],
@@ -5846,14 +5870,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Endast en gratis provperiod per användare. Ordinarie priser tillämpas därefter."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Efter att ha lämnat ditt paket kommer denna användare att flyttas till ett ${ BRAND_NAME } Free-paket."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Efter att ha lämnat ditt paket kommer denna användare att flyttas till ett ${ BRAND_NAME } Unlimited-paket med en 30-dagars gratis provperiod.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Tilldela lagringsutrymme till administratörskontot. Du kan distribuera lagringsutrymme för ytterligare användare senare."
@@ -9324,6 +9342,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "När du avbryter kommer din prenumeration inte att förnyas, men du kan fortfarande dra nytta av paketförmåner fram till slutet av prenumerationsperioden. Efter det kommer du att nedgraderas till ${ BRAND_NAME } Free-paketet."
       ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "När du avslutar, din prenumeration kommer inte att påbörjas efter provtiden."
+      ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "När du avbryter kommer din prenumeration inte att starta, men du kan fortfarande dra nytta av paketförmåner fram till slutet av provperioden. Efter det kommer du att nedgraderas till ${ BRAND_NAME } Free-paketet."
       ],
@@ -9460,6 +9481,9 @@
         "Du kan inte skicka mer än ${ emailSendLimitNumber } e-postinbjudning under de kommande 24 timmarna",
         "Du kan inte skicka mer än ${ emailSendLimitNumber } e-postinbjudningar under de kommande 24 timmarna"
       ],
+      "You cancel it in the store.": [
+        "Du avslutar den i butiken."
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Du kan inte hänvisa ${ MAIL_APP_NAME }-användare"
       ],
@@ -9497,6 +9521,9 @@
       ],
       "You have no transactions.": [
         "Du har inga transaktioner."
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "Du har flera prenumerationer. Välj den du vill avsluta: dina andra prenumerationer påverkas ej.\nEn avslutad prenumeration kommer inte att förnyas, och du behåller dess fördelar till slutet av prenumerationsperioden."
       ],
       "You have unpublished changes": [
         "Du har opublicerade ändringar"
@@ -13660,6 +13687,9 @@
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "Endast ett ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan köpas."
       ],
+      "Paid from your account credit.": [
+        "Betalt från din kontokredit."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Betala med ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -13811,11 +13841,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Kontakta kundsupport för att bekräfta ägarskapsbyte"
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Aldrig"
       ]
     },
     "Payments.ModificationWarning": {
@@ -16858,6 +16883,14 @@
         "Kommande"
       ]
     },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "Från  ${ startTime }"
+      ]
+    },
     "Subtitle": {
       "${ DRIVE_PLUS_NAME } offers 1 TB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ DRIVE_PLUS_NAME } erbjuder 1 TB lagringsutrymme för dina filer och foton. Du är också berättigad till årliga bonusar på lagringsutrymme."
@@ -18650,8 +18683,8 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Välkommen till ${ BRAND_NAME } för Business"
       ],
-      "What changes if you switch to the Free plan": [
-        "Vad som ändras om du byter till Free plan"
+      "What changes if you cancel ${ planDisplayName }": [
+        "Vad ändras om du avslutar ${ planDisplayName }"
       ],
       "What is an alias?": [
         "Vad är ett alias?"
@@ -18782,20 +18815,20 @@
       "Billing": [
         "Fakturering"
       ],
-      "End date": [
-        "Slutdatum"
-      ],
       "Plan": [
         "Paket"
       ],
       "Price": [
         "Pris"
       ],
-      "Start date": [
-        "Startdatum"
+      "Renewal": [
+        "Förnyelse"
       ],
       "Status": [
         "Status"
+      ],
+      "Subscription term": [
+        "Prenumerationspaket"
       ]
     },
     "Today icon tooltip in mini calendar": {

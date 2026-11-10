@@ -281,7 +281,7 @@
         "Botiga de ${ BRAND_NAME }"
       ],
       "About ${ name }": [
-        "Pel que fa a ${ name }"
+        "Quant a ${ name }"
       ],
       "activate": [
         "activar"
@@ -305,7 +305,7 @@
         "Afegiu l'adreça de ${ BRAND_NAME }"
       ],
       "Add ${ name }": [
-        "Afegir ${ name }"
+        "Afegeix ${ name }"
       ],
       "Add a payment method": [
         "Afegiu un mètode de pagament"
@@ -336,6 +336,9 @@
       ],
       "Add external address": [
         "Afegeix una adreça externa"
+      ],
+      "Add payment method": [
+        "Afegir un mètode de pagament"
       ],
       "Add PayPal": [
         "Afegeix PayPal"
@@ -394,11 +397,20 @@
       "Cancel": [
         "Cancel·la"
       ],
+      "Cancel ${ planTitle }": [
+        "Cancel·lar ${ planTitle }"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "Cancel·lar la prova de ${ planTitle }"
+      ],
       "Cancel request": [
         "Cancel·la la sol·licitud"
       ],
       "Cancel subscription": [
         "Cancel·la la subscripció"
+      ],
+      "Cancel trial": [
+        "Cancel·lar la prova"
       ],
       "Cancel trial and pay": [
         "Cancel·la la prova i paga"
@@ -1189,6 +1201,9 @@
       "Restore": [
         "Restaura"
       ],
+      "Restrict sign-in": [
+        "Restringeix l'inici de sessió"
+      ],
       "Resume membership": [
         "Reprèn la subscripció"
       ],
@@ -1644,6 +1659,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "Cancel·lar la subscripció"
+      ],
       "Reactivate": [
         "Reactiva"
       ],
@@ -1854,6 +1872,9 @@
       ],
       "Permission revoked": [
         "S'ha revocat el permís"
+      ],
+      "Sign-in": [
+        "Iniciar sessió"
       ]
     },
     "Admin": {
@@ -2003,6 +2024,9 @@
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "En cas que cancel·leu, la prova gratuïta no es convertirà en una subscripció de pagament, però podreu gaudir dels avantatges del pla fins al final del període de prova. Després, passareu al pla gratuït ${ BRAND_NAME }."
       ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "Quan cancel·leu, la vostra prova gratuïta no es convertirà en una subscripció de pagament."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Podeu tenir fins a ${ TRIAL_MAX_DEDICATED_IPS } servidors dedicats durant el període de prova."
       ],
@@ -2094,7 +2118,7 @@
     },
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
-        "Garantia de devolució de 30 dies: cancel·leu-ho en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per obtenir un reemborsament."
+        "Garantia de devolució de 30 dies: cancel·leu en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per a obtenir un reemborsament."
       ]
     },
     "bf2023: Title": {
@@ -2787,8 +2811,8 @@
       "Confirm cancellation": [
         "Confirma la cancel·lació"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Si supereu els límits del pla gratuït, no podreu:"
+      "If you exceed your plan limits, you won't be able to:": [
+        "Si supereu els límits del vostre pla, ja no podreu:"
       ],
       "Keep current plan": [
         "Manté el pla actual"
@@ -2805,8 +2829,11 @@
       "Upload any new files": [
         "Carrega qualsevol fitxer nou"
       ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Quan la subscripció finalitzi el ${ endDate }, el compte passarà al pla gratuït. Si el vostre ús supera els límits del pla gratuït, és possible que algunes característiques no es trobin disponibles temporalment."
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Quan s'acabi la vostra subscripció ${ planDisplayName } el ${ endDate }, perdreu les característiques incloses. Si l'ús que en feu excedeix els límits del pla, és possible que algunes deixin d'estar disponibles temporalment."
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Quan s'acabi la vostra subscripció el ${ endDate }, perdreu les característiques incloses. Si l'ús que en feu excedeix els límits del pla, és possible que algunes deixin d'estar disponibles temporalment."
       ]
     },
     "Confirm modal title": {
@@ -3890,7 +3917,7 @@
         "Porteu el vostre correu electrònic, els esdeveniments del calendari i els contactes des d'un altre proveïdor."
       ],
       "Bring over your files and folders from another provider.": [
-        "Porteu els vostres fitxers i carpetes d'un altre proveïdor."
+        "Porteu els vostres fitxers i carpetes des d'un altre proveïdor."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Genereu confiança i reconeixement de marca amb adreces de correu electrònic professionals al vostre propi domini."
@@ -5485,6 +5512,9 @@
       "The policy name must be between 3 and 40 characters.": [
         "El nom de la política ha de tenir entre 3 i 40 caràcters."
       ],
+      "The session has expired. Please try again.": [
+        "La sessió ha caducat. Torneu-ho a provar."
+      ],
       "The total could not be calculated. Change the amount to try again.": [
         "No s'ha pogut calcular el total. Modifiqueu l'import i torneu-ho a intentar."
       ],
@@ -5997,14 +6027,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Només una prova gratuïta per usuari. Després, s'aplica el preu habitual."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Després de deixar el pla, aquest usuari es traslladarà a un pla de ${ BRAND_NAME } Free."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Després de deixar el pla, aquest usuari es traslladarà a un pla ${ BRAND_NAME } Unlimited amb una prova gratuïta de 30 dies.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Assigneu emmagatzematge al compte d'administrador. Podreu distribuir l'emmagatzematge per a usuaris addicionals més endavant."
@@ -7347,7 +7371,7 @@
         "30 dies de garantia de reemborsament"
       ],
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
-        "Garantia de devolució de 30 dies: cancel·leu-ho en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per obtenir un reemborsament."
+        "Garantia de devolució de 30 dies: cancel·leu-ho en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per a obtenir un reemborsament."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ BRAND_NAME } allotja un ${ protonSubdomain } que us permet configurar ràpidament un subdomini. ${ learnMoreLink }"
@@ -7631,6 +7655,21 @@
       ],
       "By leaving now, changes may not be saved": [
         "Si surt ara, és possible que els canvis no es desin"
+      ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "En activar aquesta opció, només podreu iniciar la sessió amb **${ primaryEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "En activar aquesta opció, només podreu iniciar la sessió amb el nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**, **@${ secondDomain }** o **@${ thirdDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "En activar aquesta opció, només podreu iniciar la sessió amb el nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**, o bé **@${ secondDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "En activar aquesta opció, només podreu iniciar la sessió amb el nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "En activar aquesta opció, només podreu iniciar la sessió amb el nom d'usuari **${ username }**."
       ],
       "Can you access your active session?": [
         "Podeu accedir a la vostra sessió activa?"
@@ -9600,17 +9639,26 @@
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quan activeu SAML per a ${ appName } al vostre proveïdor d'identitat, és possible que se us demani que utilitzeu l'URL de la crida de retorn (ACS) i l'identificador de l'emissor. Només cal copiar i enganxar les dades de sota als camps del proveïdor d'identitat."
       ],
-      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Quan l'inici de sessió està restringit, només ${ primaryEmailElement } i el nom d'usuari ${ usernameElement } es poden utilitzar per a iniciar la sessió. Les vostres altres adreces no es poden tornar a enllaçar al compte, fins i tot si algú les coneix."
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Quan l'inici de sessió estigui restringit, només podreu utilitzar el correu electrònic **${ primaryEmail }** per a iniciar la sessió. Les altres adreces no es podran enllaçar amb el vostre compte, encara que algunes persones les coneguin."
       ],
-      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Quan l'inici de sessió està restringit, només el vostre correu ${ primaryEmailElement } es pot utilitzar per a iniciar la sessió. Les vostres altres adreces no es poden tornar a enllaçar al compte, fins i tot si algú les coneix."
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Quan l'inici de sessió estigui restringit, només podreu utilitzar el nom d'usuari **${ username }** per a iniciar la sessió. Les altres adreces no es podran enllaçar amb el vostre compte, ni tan sols si algú les coneix."
       ],
-      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Quan l'inici de sessió està restringit, només el nom d'usuari ${ usernameElement } es pot utilitzar per a iniciar la sessió. Les vostres altres adreces no es poden tornar a enllaçar al compte, fins i tot si algú les coneix."
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Quan l'inici de sessió estigui restringit, només podreu iniciar la sessió amb el nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**, **@${ secondDomain }** o **@${ thirdDomain }**. Les altres adreces de correu electrònic no funcionaran per a iniciar la sessió."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Quan l'inici de sessió estigui restringit, només podreu iniciar la sessió amb el nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**, o bé **@${ secondDomain }**. Les altres adreces de correu electrònic no funcionaran per a iniciar la sessió."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Quan l'inici de sessió estigui restringit, només podreu iniciar la sessió amb el nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**. Les altres adreces de correu electrònic no funcionaran per a iniciar la sessió."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Quan cancel·leu, la subscripció no es renovarà, però encara podreu gaudir dels avantatges del pla fins al final del període de subscripció. Després d'això, passarà al pla gratuït de ${ BRAND_NAME }."
+      ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "Si cancel·leu, la subscripció no començarà un cop hagi passat el període de prova."
       ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Quan la cancel·leu, la subscripció no es renovarà, però encara podreu gaudir dels avantatges del pla fins al final del període de prova. Després, passareu al pla gratuït de ${ BRAND_NAME }."
@@ -9751,6 +9799,9 @@
         "No podeu enviar més d'${ emailSendLimitNumber } correu electrònic d'invitació durant les pròximes 24 hores",
         "No podeu enviar més de ${ emailSendLimitNumber } correus electrònics d'invitació durant les pròximes 24 hores"
       ],
+      "You cancel it in the store.": [
+        "La cancel·leu a la botiga."
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "No podeu recomanar usuaris de ${ MAIL_APP_NAME }"
       ],
@@ -9794,6 +9845,9 @@
       ],
       "You have no transactions.": [
         "No teniu cap transacció."
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "Teniu diverses subscripcions. Trieu quina una voleu cancel·lar, les altres no es veuran afectades. Una subscripció cancel·lada no es renovarà, i en conservareu els avantatges fins al final del període de subscripció."
       ],
       "You have unpublished changes": [
         "Teniu canvis sense publicar."
@@ -9943,6 +9997,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Els correus electrònics de la vostra organització es protegeixen amb xifratge d'extrem a extrem mitjançant la clau d’organització. Aquesta empremta digital es pot utilitzar per verificar que tots els administradors del vostre compte tinguin la mateixa clau."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Les vostres altres adreces de correu electrònic no funcionaran per a iniciar la sessió fins que desactiveu aquesta opció."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Les dades de pagament estan protegides amb el xifratge TLS i les lleis de privadesa de Suïssa."
@@ -10962,11 +11019,11 @@
       "Restrict sign-in to email address": [
         "Restringeix l'inici de sessió a l'adreça de correu electrònic"
       ],
-      "Restrict sign-in to primary email address": [
-        "Restringeix l'inici de sessió a l'adreça de correu electrònic principal"
-      ],
       "Restrict sign-in to username": [
         "Restringiu l'inici de sessió al nom d'usuari"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Restringeix l'inici de sessió a noms d'usuari i a les adreces ${ BRAND_NAME } coincidents"
       ],
       "Reveal password": [
         "Mostra la contrasenya"
@@ -13414,8 +13471,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Cancel·leu-ho en qualsevol moment. ** Podreu utilitzar ${ planTitle } fins que acabi el període de prova, de franc."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Si continueu després del període de prova,** podreu cancel·lar-ho en un termini de 30 dies i rebre un reemborsament prorratejat."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Heu canviat d'opinió després de la prova? ** Cancel·leu-la abans de 30 dies des del primer pagament i us reemborsarem el temps no utilitzat."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Un cop comenci la vostra subscripció completa...** Encara podreu cancel·lar-la en un termini de 30 dies i rebre un reemborsament prorratejat."
@@ -14034,7 +14091,7 @@
         "País de facturació"
       ],
       "Born Private accounts can’t be purchased with an active subscription.": [
-        "Els comptes de Born Private no es poden adquirir amb una subscripció activa."
+        "Els comptes de Born Private no es poden comprar amb una subscripció activa."
       ],
       "Buying credits requires a separate purchase.": [
         "L'adquisició de crèdits requereix una compra independent."
@@ -14311,11 +14368,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Poseu-vos en contacte amb atenció al client per a confirmar el canvi de titularitat"
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Mai"
       ]
     },
     "Payments.ModificationWarning": {
@@ -15623,7 +15675,7 @@
         "Aproveu els canvis del vostre proveïdor d'identitat"
       ],
       "Approve permission changes for your organization": [
-        "Aprova els canvis de permisos de la vostra organització"
+        "Aproveu els canvis de permisos de la vostra organització"
       ],
       "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
         "Cal l'aprovació final per a concedir accés a tots els serveis de ${ BRAND_NAME }."
@@ -17403,6 +17455,14 @@
         "Pròximament"
       ]
     },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "De ${ startTime }"
+      ]
+    },
     "Subtitle": {
       "${ DRIVE_PLUS_NAME } offers 1 TB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ DRIVE_PLUS_NAME } ofereix 1 TB d'emmagatzematge per als vostres fitxers i fotos. També teniu dret a bonificacions anuals d'emmagatzematge."
@@ -18891,6 +18951,9 @@
       "Restore administrator privileges": [
         "Restaurar els privilegis d'administrador"
       ],
+      "Restrict sign-in?": [
+        "Voleu restringir l'inici de sessió?"
+      ],
       "Reverse charge not supported": [
         "No s'admet la inversió del subjecte passiu"
       ],
@@ -19225,8 +19288,8 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Us donem la benvinguda a ${ BRAND_NAME } for Business"
       ],
-      "What changes if you switch to the Free plan": [
-        "Què canvia si us passeu al pla gratuït"
+      "What changes if you cancel ${ planDisplayName }": [
+        "Què canviarà si cancel·leu ${ planDisplayName }:"
       ],
       "What is an alias?": [
         "Què és un àlies?"
@@ -19354,20 +19417,20 @@
       "Billing": [
         "Facturació"
       ],
-      "End date": [
-        "Data de fi"
-      ],
       "Plan": [
         "Pla"
       ],
       "Price": [
         "Preu"
       ],
-      "Start date": [
-        "Data d'inici"
+      "Renewal": [
+        "Renovació"
       ],
       "Status": [
         "Estat"
+      ],
+      "Subscription term": [
+        "Període de subscripció"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -19981,7 +20044,7 @@
         "Envieu l'enllaç d'invitació per correu electrònic"
       ],
       "This user gets administrator rights the next time they sign in.": [
-        "Aquest usuari obtindrà drets d'administrador la pròxima vegada que iniciïn sessió."
+        "Aquest usuari obtindrà drets d'administrador la pròxima vegada que iniciï la sessió."
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Això crearà un adreçaa nova de ${ MAIL_APP_NAME }."

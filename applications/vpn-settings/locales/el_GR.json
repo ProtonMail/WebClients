@@ -337,6 +337,9 @@
       "Add external address": [
         "Προσθήκη εξωτερικής διεύθυνσης ηλεκτρονικού ταχυδρομείου"
       ],
+      "Add payment method": [
+        "Προσθέστε μέθοδο πληρωμής"
+      ],
       "Add PayPal": [
         "Προσθήκη PayPal"
       ],
@@ -394,11 +397,20 @@
       "Cancel": [
         "Ακύρωση"
       ],
+      "Cancel ${ planTitle }": [
+        "Ακύρωση ${ planTitle }"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "Ακύρωση δοκιμής ${ planTitle }"
+      ],
       "Cancel request": [
         "Ακύρωση αιτήματος"
       ],
       "Cancel subscription": [
         "Ακύρωση συνδρομής"
+      ],
+      "Cancel trial": [
+        "Ακύρωση δοκιμής"
       ],
       "Cancel trial and pay": [
         "Ακύρωση δοκιμής και πληρωμή"
@@ -1189,6 +1201,9 @@
       "Restore": [
         "Επαναφορά"
       ],
+      "Restrict sign-in": [
+        "Περιορισμός σύνδεσης"
+      ],
       "Resume membership": [
         "Συνέχιση συνδρομής"
       ],
@@ -1644,6 +1659,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "Ακύρωση συνδρομής"
+      ],
       "Reactivate": [
         "Επανενεργοποίηση"
       ],
@@ -1854,6 +1872,9 @@
       ],
       "Permission revoked": [
         "Η άδεια έχει ανακληθεί"
+      ],
+      "Sign-in": [
+        "Σύνδεση"
       ]
     },
     "Admin": {
@@ -2002,6 +2023,9 @@
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Όταν ακυρώσετε, η δωρεάν δοκιμή σας δε θα μετατραπεί σε συνδρομή επί πληρωμή, αλλά θα εξακολουθείτε να απολαμβάνετε τα οφέλη του πλάνου μέχρι το τέλος της δοκιμαστικής περιόδου. Μετά από αυτό, θα υποβαθμιστείτε στο ${ BRAND_NAME } Free πλάνο."
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "Όταν ακυρώσετε, η δωρεάν δοκιμή σας δε θα μετατραπεί σε συνδρομή επί πληρωμή."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Μπορείτε να έχετε έως ${ TRIAL_MAX_DEDICATED_IPS } αφιερωμένο διακομιστή κατά τη διάρκεια της δοκιμαστικής περιόδου."
@@ -2787,8 +2811,8 @@
       "Confirm cancellation": [
         "Επιβεβαίωση ακύρωσης"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Αν υπερβείτε τα όρια του δωρεάν πλάνου, δε θα μπορείτε να κάνετε τα εξής:"
+      "If you exceed your plan limits, you won't be able to:": [
+        "Αν υπερβείτε τα όρια του πλάνου, δε θα μπορείτε να κάνετε τα εξής:"
       ],
       "Keep current plan": [
         "Διατηρήστε το τρέχον πλάνο"
@@ -2805,8 +2829,11 @@
       "Upload any new files": [
         "Ανεβάστε τυχόν νέα αρχεία"
       ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Όταν η συνδρομή σας λήξει στις ${ endDate }, ο λογαριασμός σας θα μεταβεί στο δωρεάν πλάνο. Εάν η χρήση σας ξεπεράσει τα όρια του δωρεάν πλάνου, ορισμένες λειτουργίες ενδέχεται να μην είναι προσωρινά διαθέσιμες."
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Όταν η συνδρομή σας στο ${ planDisplayName } λήξει στις ${ endDate }, θα χάσετε τις δυνατότητές της. Εάν, στη συνέχεια, η χρήση σας υπερβεί τα όρια του πλάνου σας, ορισμένες δυνατότητες ενδέχεται να μην είναι προσωρινά διαθέσιμες."
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Όταν η συνδρομή σας λήξει στις ${ endDate }, θα χάσετε τις δυνατότητές της. Εάν, στη συνέχεια, η χρήση σας υπερβεί τα όρια του πλάνου σας, ορισμένες δυνατότητες ενδέχεται να μην είναι προσωρινά διαθέσιμες."
       ]
     },
     "Confirm modal title": {
@@ -5485,6 +5512,9 @@
       "The policy name must be between 3 and 40 characters.": [
         "Το όνομα πολιτικής πρέπει να αποτελείται από 3 έως 40 χαρακτήρες."
       ],
+      "The session has expired. Please try again.": [
+        "Η συνεδρία έχει λήξει. Παρακαλούμε προσπαθήστε ξανά."
+      ],
       "The total could not be calculated. Change the amount to try again.": [
         "Δεν ήταν δυνατός ο υπολογισμός του συνόλου. Αλλάξτε το ποσό για να προσπαθήσετε ξανά."
       ],
@@ -5997,14 +6027,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Μόνο μία δωρεάν δοκιμή ανά χρήστη. Στη συνέχεια ισχύει κανονική τιμολόγηση."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Όταν αποχωρήσει από το πλάνο σας, αυτός ο χρήστης θα μετακινηθεί σε στο πλάνο Free του ${ BRAND_NAME }."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Όταν αποχωρήσει από το πλάνο σας, αυτός ο χρήστης θα μετακινηθεί σε ένα πρόγραμμα ${ BRAND_NAME } Unlimited με δωρεάν δοκιμή 30 ημερών.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Αναθέστε χώρο αποθήκευσης στον λογαριασμό διαχειριστή. Μπορείτε να διανείμετε χώρο αποθήκευσης σε επιπλέον χρήστες αργότερα."
@@ -7631,6 +7655,21 @@
       ],
       "By leaving now, changes may not be saved": [
         "Φεύγοντας τώρα, οι αλλαγές ενδέχεται να μην αποθηκευτούν"
+      ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το **${ primaryEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το αρχικό σας όνομα χρήστη **${ username }**, είτε αυτόνομα είτε ως **${ firstEmail }**, **@${ secondDomain }** ή **@${ thirdDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "Ενεργοποιώντας αυτήν την επιλογή, θα μπορείτε να συνδεθείτε μόνο με το αρχικό σας όνομα χρήστη **${ username }**, είτε μόνο του είτε ως **${ firstEmail }** ή **@${ secondDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το αρχικό σας όνομα χρήστη **${ username }**, είτε από μόνο του είτε ως **${ firstEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη **${ username }**."
       ],
       "Can you access your active session?": [
         "Μπορείτε να έχετε πρόσβαση στην ενεργή σας συνεδρία;"
@@ -9600,17 +9639,26 @@
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Όταν ενεργοποιείτε το SAML για ${ appName } στην υπηρεσία παροχής ταυτότητας, ενδέχεται να σας ζητηθεί να χρησιμοποιήσετε τη διεύθυνση URL επιστροφής κλήσης (ACS) και το αναγνωριστικό εκδότη. Απλώς αντιγράψτε-επικολλήστε τα παρακάτω δεδομένα στα πεδία της υπηρεσίας παροχής ταυτότητάς σας."
       ],
-      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Όταν η είσοδος είναι περιορισμένη, μόνο το ${ primaryEmailElement } και το όνομα χρήστη σας ${ usernameElement } μπορούν να χρησιμοποιηθούν για την είσοδο. Οι άλλες διευθύνσεις σας δεν μπορούν να συνδεθούν με τον λογαριασμό σας, ακόμα κι αν κάποιος τις γνωρίζει."
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Όταν η είσοδος είναι περιορισμένη, μόνο η διεύθυνση ηλεκτρονικού ταχυδρομείου σας **${ primaryEmail }** μπορεί να χρησιμοποιηθεί για την είσοδο. Οι άλλες διευθύνσεις σας δεν μπορούν να συνδεθούν με τον λογαριασμό σας, ακόμα κι αν κάποιος τις γνωρίζει."
       ],
-      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Όταν η είσοδος είναι περιορισμένη, μόνο η διεύθυνση ηλεκτρονικού ταχυδρομείου σας ${ primaryEmailElement } μπορεί να χρησιμοποιηθεί για την είσοδο. Οι άλλες διευθύνσεις σας δεν μπορούν να συνδεθούν με τον λογαριασμό σας, ακόμα κι αν κάποιος τις γνωρίζει."
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Όταν η είσοδος είναι περιορισμένη, μόνο το όνομα χρήστη σας **${ username }** μπορεί να χρησιμοποιηθεί για την είσοδο. Οι άλλες διευθύνσεις σας δεν μπορούν να συνδεθούν με τον λογαριασμό σας, ακόμα κι αν κάποιος τις γνωρίζει."
       ],
-      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Όταν η είσοδος είναι περιορισμένη, μόνο το όνομα χρήστη σας ${ usernameElement } μπορεί να χρησιμοποιηθεί για την είσοδο. Οι άλλες διευθύνσεις σας δεν μπορούν να συνδεθούν με τον λογαριασμό σας, ακόμα κι αν κάποιος τις γνωρίζει."
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Όταν η είσοδος είναι περιορισμένη, μπορείτε να συνδεθείτε μόνο με το αρχικό όνομα χρήστη σας **${ username }**, είτε από μόνο του είτε ως **${ firstEmail }**, **@${ secondDomain }** ή **@${ thirdDomain }**. Οι άλλες διευθύνσεις ηλεκτρονικού ταχυδρομείου σας δε θα λειτουργούν για τη σύνδεση."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Όταν η είσοδος είναι περιορισμένη, μπορείτε να συνδεθείτε μόνο με το αρχικό σας όνομα χρήστη **${ username }** είτε από μόνο του, είτε ως **${ firstEmail }**, είτε ως **@${ secondDomain }**. Οι άλλες διευθύνσεις ηλεκτρονικού ταχυδρομείου σας δε θα λειτουργούν για τη σύνδεση."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Όταν η είσοδος είναι περιορισμένη, μπορείτε να συνδεθείτε μόνο με το αρχικό σας όνομα χρήστη **${ username }**, είτε ως έχει είτε ως **${ firstEmail }**. Οι άλλες διευθύνσεις ηλεκτρονικού ταχυδρομείου σας δε θα λειτουργούν για τη σύνδεση."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Όταν ακυρώσετε, η συνδρομή σας δε θα ανανεωθεί, αλλά θα εξακολουθείτε να απολαμβάνετε προνόμια προγράμματος μέχρι το τέλος της περιόδου συνδρομής. Μετά από αυτό, θα υποβαθμιστείτε στο ${ BRAND_NAME } Free πλάνο."
+      ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "Όταν ακυρώσετε, η συνδρομή σας δε θα ξεκινήσει μετά τη δοκιμαστική περίοδο."
       ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Όταν ακυρώσετε, η συνδρομή σας δε θα ξεκινήσει, αλλά θα μπορείτε να συνεχίσετε να απολαμβάνετε τα οφέλη του προγράμματος μέχρι το τέλος της δοκιμαστικής περιόδου. Μετά από αυτό, θα υποβαθμιστείτε στο ${ BRAND_NAME } Free πλάνο."
@@ -9751,6 +9799,9 @@
         "Δεν μπορείτε να αποστέλλετε περισσότερες από ${ emailSendLimitNumber } πρόσκληση email για τις επόμενες 24 ώρες",
         "Δεν μπορείτε να αποστέλλετε περισσότερες από ${ emailSendLimitNumber } προσκλήσεις email για τις επόμενες 24 ώρες"
       ],
+      "You cancel it in the store.": [
+        "Το ακυρώνετε στο κατάστημα."
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Δεν μπορείτε να προτείνετε χρήστες του ${ MAIL_APP_NAME }."
       ],
@@ -9794,6 +9845,9 @@
       ],
       "You have no transactions.": [
         "Δεν έχετε συναλλαγές."
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "Έχετε αρκετές συνδρομές. Επιλέξτε ποια θέλετε να ακυρώσετε, οι υπόλοιπες συνδρομές σας δεν επηρεάζονται. Μια συνδρομή που ακυρώνεται δε θα ανανεωθεί, ενώ εσείς διατηρείτε τα προνόμιά της μέχρι το τέλος της συνδρομητικής περιόδου."
       ],
       "You have unpublished changes": [
         "Έχετε μη δημοσιευμένες αλλαγές"
@@ -9943,6 +9997,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Τα ηλ. μηνύματα της εταιρείας σας προστατεύονται με διατερματική κρυπτογράφηση, χρησιμοποιώντας το κλειδί του οργανισμού. Αυτό το δακτυλικό αποτύπωμα μπορεί να χρησιμοποιηθεί για να επαληθεύσει ότι όλοι οι διαχειριστές στον λογαριασμό σας έχουν το ίδιο κλειδί."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Οι άλλες διευθύνσεις ηλεκτρονικού ταχυδρομείου σας δε θα λειτουργούν για τη σύνδεση, μέχρι να απενεργοποιήσετε αυτή τη ρύθμιση."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Τα στοιχεία πληρωμών σας είναι προστατευμένα με κρυπτογράφηση TLS καθώς και με νόμους της Ελβετίας περί ιδιωτικότητας."
@@ -10962,11 +11019,11 @@
       "Restrict sign-in to email address": [
         "Περιορισμός της σύνδεσης σε διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
-      "Restrict sign-in to primary email address": [
-        "Περιορισμός της σύνδεσης στην κύρια διεύθυνση ηλεκτρονικού ταχυδρομείου"
-      ],
       "Restrict sign-in to username": [
         "Περιορισμός της σύνδεσης σε όνομα χρήστη"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Περιορίστε τη σύνδεση σε όνομα χρήστη και αντίστοιχες διευθύνσεις ${ BRAND_NAME }"
       ],
       "Reveal password": [
         "Εμφάνιση κωδικού"
@@ -13414,8 +13471,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή πριν από τότε.** Θα μπορείτε να χρησιμοποιείτε το ${ planTitle } δωρεάν μέχρι τη λήξη της δοκιμαστικής περιόδου."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Αν συνεχίσετε μετά τη δοκιμαστική περίοδο,** μπορείτε να ακυρώσετε εντός 30 ημερών και να λάβετε επιστροφή χρημάτων κατ' αναλογία."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Αλλάξατε γνώμη μετά τη δοκιμαστική περίοδο;** Ακυρώστε εντός 30 ημερών από την πρώτη σας πληρωμή και θα σας επιστρέψουμε το αντίτιμο για το διάστημα που δε χρησιμοποιήσατε."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Μόλις ξεκινήσει η πλήρης συνδρομή σας...** Μπορείτε ακόμα να την ακυρώσετε εντός 30 ημερών και να λάβετε επιστροφή χρημάτων κατ' αναλογία."
@@ -14311,11 +14368,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Επικοινωνήστε με την Υποστήριξη Πελατών για να επιβεβαιώσετε την αλλαγή ιδιοκτησίας"
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Ποτέ"
       ]
     },
     "Payments.ModificationWarning": {
@@ -17400,6 +17452,14 @@
         "Προσεχή"
       ]
     },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "Από ${ startTime }"
+      ]
+    },
     "Subtitle": {
       "${ DRIVE_PLUS_NAME } offers 1 TB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "Το ${ DRIVE_PLUS_NAME } προσφέρει 1 TB χώρο αποθήκευσης για τα αρχεία και τις φωτογραφίες σας. Δικαιούστε επίσης ετήσια μπόνους αποθήκευσης."
@@ -18888,6 +18948,9 @@
       "Restore administrator privileges": [
         "Επαναφορά δικαιωμάτων διαχειριστή"
       ],
+      "Restrict sign-in?": [
+        "Περιορισμός σύνδεσης;"
+      ],
       "Reverse charge not supported": [
         "Αντιστροφή χρέωσης δεν υποστηρίζεται"
       ],
@@ -19222,8 +19285,8 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Καλώς ορίσατε στο ${ BRAND_NAME } για Business"
       ],
-      "What changes if you switch to the Free plan": [
-        "Τι αλλάζει αν μεταβείτε στο Free πλάνο"
+      "What changes if you cancel ${ planDisplayName }": [
+        "Τι αλλάζει αν ακυρώσετε το ${ planDisplayName }"
       ],
       "What is an alias?": [
         "Τι είναι το ψευδώνυμο;"
@@ -19351,20 +19414,20 @@
       "Billing": [
         "Χρεώσεις"
       ],
-      "End date": [
-        "Ημερομηνία Λήξης"
-      ],
       "Plan": [
         "Πρόγραμμα"
       ],
       "Price": [
         "Τιμή"
       ],
-      "Start date": [
-        "Ημερομηνία έναρξης"
+      "Renewal": [
+        "Ανανέωση"
       ],
       "Status": [
         "Κατάσταση"
+      ],
+      "Subscription term": [
+        "Διάρκεια συνδρομής"
       ]
     },
     "Today icon tooltip in mini calendar": {
