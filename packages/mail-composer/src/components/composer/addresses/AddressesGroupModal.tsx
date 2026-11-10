@@ -1,7 +1,7 @@
 import type { ChangeEvent } from 'react';
 import { useMemo, useState } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
@@ -92,11 +92,20 @@ const AddressesGroupModal = ({ recipientGroup, contacts, messageSendInfo, onSubm
         onClose();
     };
 
-    const members = c('Info').t`Members`;
+    // Copy variables to give explicit naming in the translation string
+    const contactGroupName = recipientGroup?.group?.Name || '';
+    const numberOfContacts = contacts.length;
+
+    // translator: The final string looks like "Work (10 members)"
+    const title = c('Info').ngettext(
+        msgid`${contactGroupName} (${numberOfContacts} member)`,
+        `${contactGroupName} (${numberOfContacts} members)`,
+        numberOfContacts
+    );
 
     return (
         <ModalTwo as={Form} onSubmit={handleSubmit} onClose={onClose} {...rest}>
-            <ModalTwoHeader title={`${recipientGroup?.group?.Name} (${contacts.length} ${members})`} />
+            <ModalTwoHeader title={title} />
             <ModalTwoContent>
                 <ul className="unstyled">
                     {contacts.map((contact) => (
