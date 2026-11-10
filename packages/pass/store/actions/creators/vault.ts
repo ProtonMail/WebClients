@@ -5,6 +5,7 @@ import type { ShareId } from '../../../types/crypto/pass-types';
 import type { BatchItemRevisions, ItemRevision } from '../../../types/data/items';
 import type { Share, ShareContent, ShareType } from '../../../types/data/shares';
 import type { VaultTransferOwnerIntent } from '../../../types/data/vault.dto';
+import type { MaybeNull } from '../../../types/utils';
 import { pipe } from '../../../utils/fp/pipe';
 import { uniqueId } from '../../../utils/string/unique-id';
 import { withRequest, withRequestFailure, withRequestProgress, withRequestSuccess } from '../../request/enhancers';
@@ -123,7 +124,7 @@ export const vaultDeleteSuccess = createAction(
 
 export const vaultMoveAllItemsIntent = createAction(
     'vault::move::items::intent',
-    (payload: { shareId: string; content: ShareContent<ShareType.Vault>; targetShareId: string }) =>
+    (payload: { shareId: string; content: ShareContent<ShareType.Vault>; targetShareId: string; targetFolderId?: MaybeNull<string> }) =>
         pipe(
             withRequest({ status: 'start', id: vaultMoveAllItemsRequest(payload.shareId) }),
             withNotification({

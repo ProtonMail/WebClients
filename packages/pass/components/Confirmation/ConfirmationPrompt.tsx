@@ -43,7 +43,7 @@ export const ConfirmationPrompt: FC<Props> = ({
                 </Button>,
             ]}
         >
-            {message}
+            <div className="text-break">{message}</div>
         </Prompt>
     );
 };

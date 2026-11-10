@@ -79,8 +79,16 @@ export const secureLinksReducer: Reducer<SecureLinkState> = (state = {}, action)
         return removeSecureLinksForItems(state, shareId, [itemId]);
     }
 
-    if (or(itemBulkMoveProgress.match, vaultMoveAllItemsProgress.match, itemBulkDeleteProgress.match)(action)) {
+    if (itemBulkDeleteProgress.match(action)) {
         const { shareId, batch } = action.payload;
+        return removeSecureLinksForItems(state, shareId, batch.map(prop('ItemID')));
+    }
+
+    if (or(itemBulkMoveProgress.match, vaultMoveAllItemsProgress.match)(action)) {
+        const { shareId, batch, targetShareId } = action.payload;
+        /** Only cross vault move erases secure links */
+        if (targetShareId === shareId) return state;
+
         const itemIds = batch.map(prop('itemId'));
         return removeSecureLinksForItems(state, shareId, itemIds);
     }

@@ -7,21 +7,20 @@ import { c } from 'ttag';
 import { useConfirm } from '../../hooks/useConfirm';
 import { vaultMoveAllItemsIntent } from '../../store/actions/creators/vault';
 import type { VaultShareItem } from '../../store/reducers';
-import type { MaybeNull } from '../../types/utils';
+import type { ItemDestination } from '../../types/data/items.dto';
 import { pipe, tap } from '../../utils/fp/pipe';
 import { ConfirmVaultMove } from './Actions/ConfirmVaultMove';
 import { VaultSelect, VaultSelectMode } from './VaultSelect';
 
 type Props = { vault: VaultShareItem; onClose: () => void };
-type VaultMoveSteps = { view: 'select' | 'confirm'; targetShareId: MaybeNull<string> };
 
 export const VaultMove: FC<Props> = ({ vault, onClose }) => {
     const dispatch = useDispatch();
-    const [step, setStep] = useState<VaultMoveSteps>({ view: 'select', targetShareId: null });
+    const [selecting, setSelecting] = useState(true);
 
     const vaultMove = useConfirm(
         useCallback(
-            (options: { targetShareId: string }) => {
+            (options: ItemDestination) => {
                 const { shareId, content } = vault;
                 dispatch(vaultMoveAllItemsIntent({ ...options, content, shareId }));
             },
@@ -36,13 +35,15 @@ export const VaultMove: FC<Props> = ({ vault, onClose }) => {
         <>
             <VaultSelect
                 shareId={vault.shareId}
+                folderId={null}
+                showFolders
                 mode={VaultSelectMode.Writable}
-                open={step.view === 'select'}
+                open={selecting}
                 title={c('Info').t`Select destination vault`}
                 onClose={onClose}
-                onSubmit={(targetShareId) => {
-                    setStep({ view: 'confirm', targetShareId });
-                    vaultMove.prompt({ targetShareId });
+                onSubmit={(targetShareId, targetFolderId) => {
+                    setSelecting(false);
+                    vaultMove.prompt({ targetShareId, targetFolderId });
                 }}
                 downgradeMessage={c('Info')
                     .t`You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.`}
@@ -51,6 +52,7 @@ export const VaultMove: FC<Props> = ({ vault, onClose }) => {
             {vaultMove.pending && (
                 <ConfirmVaultMove
                     targetShareId={vaultMove.param.targetShareId}
+                    targetFolderId={vaultMove.param.targetFolderId}
                     shareId={vault.shareId}
                     onConfirm={onConfirm}
                     onCancel={onCancel}
