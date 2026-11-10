@@ -5,13 +5,14 @@ import { c } from 'ttag';
 import { syncDomain } from '@proton/account/domains/actions';
 import { Button } from '@proton/atoms/Button/Button';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { getDomainDnsRecords } from '@proton/shared/lib/domains/dnsRecords';
 import { DMARC_STATE } from '@proton/shared/lib/interfaces/Domain';
 
 import DNSGroupRecords, { type DNSGroup } from './DNSGroupRecords';
 import DomainHelp from './DomainHelp';
 import type { StepComponentProps } from './MigrationSetup';
 
-const StepDomainDMARC: FC<StepComponentProps> = ({ model: { domain, domainRegistrarId, subdomain }, onNext }) => {
+const StepDomainDMARC: FC<StepComponentProps> = ({ model: { domain, domainRegistrarId }, onNext }) => {
     const dispatch = useDispatch();
     const handleCheck = async () => {
         await dispatch(syncDomain(domain!));
@@ -21,9 +22,7 @@ const StepDomainDMARC: FC<StepComponentProps> = ({ model: { domain, domainRegist
         name: 'DMARC',
         records: [
             {
-                dnsType: 'TXT',
-                value: 'v=DMARC1; p=quarantine',
-                host: '_dmarc',
+                ...getDomainDnsRecords(domain ?? {}).dmarc,
                 state: (() => {
                     if (domain?.DmarcState === DMARC_STATE.DMARC_STATE_DEFAULT) {
                         return 'not-found';
@@ -73,7 +72,7 @@ const StepDomainDMARC: FC<StepComponentProps> = ({ model: { domain, domainRegist
                 <p className="color-weak mt-0">{c('Info')
                     .t`Copy the below code and paste it in the DNS section of your domain host.`}</p>
 
-                <DNSGroupRecords group={group} subdomain={subdomain} onRefresh={handleCheck} />
+                <DNSGroupRecords group={group} onRefresh={handleCheck} />
             </div>
 
             <DomainHelp registrarId={domainRegistrarId} />

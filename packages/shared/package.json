@@ -311,6 +311,8 @@
         "./lib/docs/utils/isDefaultDocumentName": "./lib/docs/utils/isDefaultDocumentName.ts",
         "./lib/dom/runAfterScroll": "./lib/dom/runAfterScroll.ts",
         "./lib/dom/toValidHtmlId": "./lib/dom/toValidHtmlId.ts",
+        "./lib/domains/constants": "./lib/domains/constants.ts",
+        "./lib/domains/dnsRecords": "./lib/domains/dnsRecords.ts",
         "./lib/drawer/calendar": "./lib/drawer/calendar.ts",
         "./lib/drawer/createDrawerApi": "./lib/drawer/createDrawerApi.ts",
         "./lib/drawer/helpers": "./lib/drawer/helpers.ts",
@@ -706,6 +708,7 @@
         "papaparse": "^5.7.0",
         "react": "catalog:",
         "tinycolor2": "catalog:",
+        "tldts": "^7.4.19",
         "ttag": "catalog:",
         "ua-parser-js": "^1.0.41",
         "zod": "catalog:"

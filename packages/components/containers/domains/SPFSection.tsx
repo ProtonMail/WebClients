@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
+import type { DnsRecord } from '@proton/shared/lib/domains/dnsRecords';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
 
 import Alert from '../../components/alert/Alert';
@@ -12,7 +13,11 @@ import TableBody from '../../components/table/TableBody';
 import TableHeader from '../../components/table/TableHeader';
 import TableRow from '../../components/table/TableRow';
 
-const SPFSection = () => {
+interface Props {
+    record: DnsRecord;
+}
+
+const SPFSection = ({ record }: Props) => {
     const { createNotification } = useNotifications();
     const handleCopy = () => createNotification({ text: c('Success').t`SPF value copied to clipboard` });
 
@@ -23,7 +28,6 @@ const SPFSection = () => {
             v=spf1 <strong>include:_spf.protonmail.ch</strong> include:spf.example.com ~all
         </code>
     );
-    const valueToCopy = 'v=spf1 include:_spf.protonmail.ch ~all';
 
     return (
         <>
@@ -54,12 +58,12 @@ const SPFSection = () => {
                             c('Header for domain modal').t`Value / Data / Points to`,
                         ]}
                         cells={[
-                            <code key="txt">TXT</code>,
-                            <code key="at">@</code>,
+                            <code key="type">{record.type}</code>,
+                            <code key="hostname">{record.hostname}</code>,
                             <div className="flex flex-nowrap items-center" key="value">
-                                <Copy size="small" onCopy={handleCopy} className="shrink-0 mr-2" value={valueToCopy} />{' '}
-                                <code className="text-ellipsis lh-rg" title={valueToCopy}>
-                                    {valueToCopy}
+                                <Copy size="small" onCopy={handleCopy} className="shrink-0 mr-2" value={record.value} />{' '}
+                                <code className="text-ellipsis lh-rg" title={record.value}>
+                                    {record.value}
                                 </code>
                             </div>,
                         ]}

@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import type { DnsRecord } from '@proton/shared/lib/domains/dnsRecords';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
 import type { Domain } from '@proton/shared/lib/interfaces/Domain';
 import { DKIM_STATE } from '@proton/shared/lib/interfaces/Domain';
@@ -17,12 +18,13 @@ import TableRow from '../../components/table/TableRow';
 
 interface Props {
     domain: Partial<Domain>;
+    records: DnsRecord[];
 }
 
-const DKIMSection = ({ domain }: Props) => {
+const DKIMSection = ({ domain, records }: Props) => {
     const { createNotification } = useNotifications();
     const handleCopy = () => createNotification({ text: c('Success').t`Value copied to clipboard` });
-    const { Config, State } = domain?.DKIM || { Config: [], State: DKIM_STATE.DKIM_STATE_DEFAULT };
+    const State = domain?.DKIM?.State ?? DKIM_STATE.DKIM_STATE_DEFAULT;
 
     return (
         <>
@@ -64,10 +66,10 @@ const DKIMSection = ({ domain }: Props) => {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    {Config.map((row) => (
-                        <TableRow key={row.Hostname}>
+                    {records.map((record) => (
+                        <TableRow key={record.hostname}>
                             <TableCell label={c('Header for domain modal').t`Type`}>
-                                <code>CNAME</code>
+                                <code>{record.type}</code>
                             </TableCell>
                             <TableCell label={c('Header for domain modal').t`Host name`}>
                                 <div className="flex flex-nowrap items-center">
@@ -75,10 +77,10 @@ const DKIMSection = ({ domain }: Props) => {
                                         onCopy={handleCopy}
                                         size="small"
                                         className="shrink-0 mr-2"
-                                        value={row.Hostname}
+                                        value={record.hostname}
                                     />{' '}
                                     <div className="text-ellipsis">
-                                        <code title={row.Hostname}>{row.Hostname}</code>
+                                        <code title={record.hostname}>{record.hostname}</code>
                                     </div>
                                 </div>
                             </TableCell>
@@ -88,10 +90,10 @@ const DKIMSection = ({ domain }: Props) => {
                                         onCopy={handleCopy}
                                         size="small"
                                         className="shrink-0 mr-2"
-                                        value={row.CNAME}
+                                        value={record.value}
                                     />{' '}
                                     <div className="text-ellipsis">
-                                        <code title={row.CNAME}>{row.CNAME}</code>
+                                        <code title={record.value}>{record.value}</code>
                                     </div>
                                 </div>
                             </TableCell>
