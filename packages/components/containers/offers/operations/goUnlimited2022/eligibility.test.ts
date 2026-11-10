@@ -34,7 +34,7 @@ describe('go unlimites 2022 tests', () => {
                     subscription: {
                         External: false,
                         Cycle: CYCLE.YEARLY,
-                        CreateTime: subDays(Date.now(), 7).getTime() / 1000,
+                        CreateTime: subDays(Date.now(), 8).getTime() / 1000,
                         Plans: [
                             {
                                 Type: PLAN_TYPES.PLAN,
@@ -54,7 +54,7 @@ describe('go unlimites 2022 tests', () => {
                     subscription: {
                         External: false,
                         Cycle: CYCLE.MONTHLY,
-                        CreateTime: subDays(Date.now(), 7).getTime() / 1000,
+                        CreateTime: subDays(Date.now(), 8).getTime() / 1000,
                         Plans: [
                             {
                                 Type: PLAN_TYPES.PLAN,
@@ -76,7 +76,7 @@ describe('go unlimites 2022 tests', () => {
                     subscription: {
                         External: false,
                         Cycle: CYCLE.YEARLY,
-                        CreateTime: subDays(Date.now(), 7).getTime() / 1000,
+                        CreateTime: subDays(Date.now(), 8).getTime() / 1000,
                         Plans: [
                             {
                                 Type: PLAN_TYPES.PLAN,
@@ -96,7 +96,7 @@ describe('go unlimites 2022 tests', () => {
                     subscription: {
                         External: false,
                         Cycle: CYCLE.MONTHLY,
-                        CreateTime: subDays(Date.now(), 7).getTime() / 1000,
+                        CreateTime: subDays(Date.now(), 8).getTime() / 1000,
                         Plans: [
                             {
                                 Type: PLAN_TYPES.PLAN,
@@ -119,7 +119,7 @@ describe('go unlimites 2022 tests', () => {
                         IsTrial: true,
                         External: false,
                         Cycle: CYCLE.MONTHLY,
-                        CreateTime: subDays(Date.now(), 7).getTime() / 1000,
+                        CreateTime: subDays(Date.now(), 8).getTime() / 1000,
                         Plans: [
                             {
                                 Type: PLAN_TYPES.PLAN,
@@ -138,7 +138,7 @@ describe('go unlimites 2022 tests', () => {
                         IsTrial: false,
                         External: false,
                         Cycle: CYCLE.MONTHLY,
-                        CreateTime: subDays(Date.now(), 7).getTime() / 1000,
+                        CreateTime: subDays(Date.now(), 8).getTime() / 1000,
                         Plans: [
                             {
                                 Type: PLAN_TYPES.PLAN,
@@ -178,7 +178,7 @@ describe('go unlimites 2022 tests', () => {
                     subscription: {
                         External: false,
                         Cycle: CYCLE.MONTHLY,
-                        CreateTime: subDays(Date.now(), 7).getTime() / 1000,
+                        CreateTime: subDays(Date.now(), 8).getTime() / 1000,
                         Plans: [
                             {
                                 Type: PLAN_TYPES.PLAN,
@@ -198,7 +198,7 @@ describe('go unlimites 2022 tests', () => {
                     subscription: {
                         External: false,
                         Cycle: CYCLE.MONTHLY,
-                        CreateTime: subDays(Date.now(), 7).getTime() / 1000,
+                        CreateTime: subDays(Date.now(), 8).getTime() / 1000,
                         Plans: [
                             {
                                 Type: PLAN_TYPES.PLAN,
@@ -218,7 +218,7 @@ describe('go unlimites 2022 tests', () => {
                     subscription: {
                         External: SubscriptionPlatform.Android,
                         Cycle: CYCLE.MONTHLY,
-                        CreateTime: subDays(Date.now(), 7).getTime() / 1000,
+                        CreateTime: subDays(Date.now(), 8).getTime() / 1000,
                         Plans: [
                             {
                                 Type: PLAN_TYPES.PLAN,
@@ -236,7 +236,7 @@ describe('go unlimites 2022 tests', () => {
                     subscription: {
                         External: SubscriptionPlatform.iOS,
                         Cycle: CYCLE.MONTHLY,
-                        CreateTime: subDays(Date.now(), 7).getTime() / 1000,
+                        CreateTime: subDays(Date.now(), 8).getTime() / 1000,
                         Plans: [
                             {
                                 Type: PLAN_TYPES.PLAN,
