@@ -111,6 +111,7 @@ const setup = async ({
             editorActionsRef={{ current: undefined }}
             editorMetadata={{ isPlainText } as any}
             onChange={jest.fn()}
+            onSwitchToPlainText={jest.fn()}
             isPassword={false}
             onPassword={jest.fn()}
             onRemoveOutsideEncryption={jest.fn()}

@@ -64,6 +64,7 @@ import { useDraftSenderVerification } from './useDraftSenderVerification';
 import { useHandleMessageAlreadySent } from './useHandleMessageAlreadySent';
 import useReduxRefac from './useReduxRefac';
 import { useSendHandler } from './useSendHandler';
+import { useSwitchToPlainText } from './useSwitchToPlainText';
 
 export type EditorArgs = {
     onClose: () => void;
@@ -375,6 +376,16 @@ export const useComposerContent = (args: EditorArgs) => {
         });
     });
 
+    const { handleSwitchToPlainText, pendingSwitch } = useSwitchToPlainText({
+        modelMessage,
+        getModelMessage,
+        syncedMessageID: syncedMessage.data?.ID,
+        pendingSave,
+        editorRef: args.editorRef,
+        onChange: handleChange,
+        setBlockquoteExpanded,
+    });
+
     // Reduce message updates in redux. Add debounce instead of doing in on every key stroke.
     const debouncedDispatch = useMemo(
         () =>
@@ -629,6 +640,7 @@ export const useComposerContent = (args: EditorArgs) => {
         ensureMessageContent,
         mapSendInfo: messageSendInfo.mapSendInfo,
         promiseUpload,
+        pendingSwitch,
         pendingSave,
         pendingAutoSave,
         autoSave,
@@ -696,6 +708,7 @@ export const useComposerContent = (args: EditorArgs) => {
         isSending,
         opening,
         handleChange,
+        handleSwitchToPlainText,
         handleChangeContent,
         handleSend,
         getContentBeforeBlockquote,

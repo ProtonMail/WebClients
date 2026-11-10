@@ -64,6 +64,7 @@ interface Props {
     editorActionsRef: MutableRefObject<ExternalEditorActions | undefined>;
     editorMetadata: EditorMetadata;
     onChange: MessageChange;
+    onSwitchToPlainText: (getEditorContent: () => string) => void;
     isPassword: boolean;
     onPassword: () => void;
     onRemoveOutsideEncryption: () => void;
@@ -79,6 +80,7 @@ const ComposerMoreActions = ({
     editorActionsRef,
     editorMetadata,
     onChange,
+    onSwitchToPlainText,
     isPassword,
     onPassword,
     onRemoveOutsideEncryption,
@@ -125,6 +127,7 @@ const ComposerMoreActions = ({
                 editorActionsRef={editorActionsRef}
                 editorMetadata={editorMetadata}
                 onChange={onChange}
+                onSwitchToPlainText={onSwitchToPlainText}
             />
         ),
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-CB37E4

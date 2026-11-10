@@ -39,6 +39,7 @@ export interface UseSendHandlerParameters {
     ensureMessageContent: () => void;
     mapSendInfo: MapSendInfo;
     promiseUpload?: Promise<void>;
+    pendingSwitch?: PromiseHandlers<void>;
     pendingSave: PromiseHandlers<void>;
     pendingAutoSave: PromiseHandlers<void>;
     autoSave: ((message: MessageState) => Promise<void>) & Cancellable;
@@ -60,6 +61,7 @@ export const useSendHandler = ({
     ensureMessageContent,
     mapSendInfo,
     promiseUpload,
+    pendingSwitch,
     pendingSave,
     pendingAutoSave,
     autoSave,
@@ -241,6 +243,9 @@ export const useSendHandler = ({
             dispatch(startSending(localID));
 
             onSendAssistantReport?.();
+
+            // The switch to plain text runs in the composer once the draft is created, so it must not be closed before
+            await pendingSwitch?.promise;
 
             // If the user has no internet connection, do not close the composer on send, or we will lose last updates made on the draft
             const isOnline = getOnlineStatus();
