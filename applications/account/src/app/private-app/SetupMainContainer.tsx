@@ -5,7 +5,9 @@ import { SafetyReviewRoute } from '@proton/account/safetyReview/components/Safet
 import { AccountSpotlightsProvider } from '@proton/components/containers/account/spotlights/AccountSpotlightsProvider';
 import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
 import KeyTransparencyManager from '@proton/components/containers/keyTransparency/KeyTransparencyManager';
+import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
+import { APPS } from '@proton/shared/lib/constants';
 
 import AccountLoaderPage from '../AccountLoaderPage';
 import MainContainer from './MainContainer';
@@ -24,9 +26,11 @@ const SetupMainContainer: FunctionComponent = () => {
                             <SetupAddressContainer />
                         </Route>
                         <Route path={routes.securityCheckup}>
-                            <PaymentsContextProvider>
-                                <SafetyReviewRoute loader={<AccountLoaderPage />} />
-                            </PaymentsContextProvider>
+                            <SubscriptionModalProvider app={APPS.PROTONACCOUNT}>
+                                <PaymentsContextProvider>
+                                    <SafetyReviewRoute loader={<AccountLoaderPage />} />
+                                </PaymentsContextProvider>
+                            </SubscriptionModalProvider>
                         </Route>
                         <Route path={routes.legacySecurityCheckup}>
                             <Redirect to={`${routes.securityCheckup}${location.search}`} />

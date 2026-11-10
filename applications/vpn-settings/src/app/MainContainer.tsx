@@ -324,7 +324,9 @@ const MainContainer: FunctionComponent = () => {
                                                 style={{ '--max-w-custom': SettingsCardMaxWidth.Wide }}
                                             >
                                                 <YourPlanSectionV2 app={app} />
-                                                <YourPlanUpsellsSectionV2 app={app} />
+                                                <PaymentsContextProvider>
+                                                    <YourPlanUpsellsSectionV2 app={app} />
+                                                </PaymentsContextProvider>
                                                 <VPNDownloadAndInfoSection app={app} />
                                                 <VpnAlsoInYourPlanSection app={app} />
                                                 <VpnBlogSection />

@@ -16,6 +16,7 @@ import { IcBagPercent } from '@proton/icons/icons/IcBagPercent';
 import { BilledUserInlineMessage } from '@proton/payments-hooks/client-extensions/billed-user/BilledUserInlineMessage';
 import { BitcoinInfoMessage } from '@proton/payments-hooks/payment-methods/bitcoin/BitcoinInfoMessage';
 import { PayPalInfoMessage } from '@proton/payments-hooks/payment-methods/paypal/PayPalInfoMessage';
+import { usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import type { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import { BitcoinView } from '@proton/payments-ui/payment-methods/bitcoin/BitcoinView';
 import { PayPalView } from '@proton/payments-ui/payment-methods/paypal/PayPalView';
@@ -30,7 +31,6 @@ import {
 } from '@proton/payments-ui/ui/components/ChargebeeWrapper';
 import { IdealAccountHolderInput } from '@proton/payments-ui/ui/components/IdealAccountHolderInput';
 import { type DirectDebitProps, SepaDirectDebit } from '@proton/payments-ui/ui/components/SepaDirectDebit';
-import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { savedMethodRequires3DS } from '@proton/payments/core/createPaymentToken';
 import type { Currency } from '@proton/payments/core/interface';

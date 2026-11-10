@@ -12,10 +12,10 @@ import { useAvailableCurrenciesForPlan } from '@proton/components/containers/pay
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
 import type { Operations, OperationsSubscriptionData } from '@proton/payments-hooks/react-extensions/usePaymentFacade';
+import { usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { usePaymentPollers } from '@proton/payments-hooks/ui/hooks/usePaymentPollers';
 import { sortMethodsBasedOnDevice } from '@proton/payments-ui/client-extensions/useMethods';
 import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
-import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 import { ProrationMode } from '@proton/payments/core/api/api';
 import { FREE_SUBSCRIPTION } from '@proton/payments/core/constants';
 import type { PaymentMethodType } from '@proton/payments/core/interface';

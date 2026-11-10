@@ -1,9 +1,9 @@
+import type { CouponConfig } from '@proton/payments-hooks/ui/coupon-config/interface';
 import { defaultCouponConfigMetadata } from '@proton/payments/core/coupon-config/default-coupon-configs';
 import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
 import { omit } from '@proton/shared/lib/helpers/object';
 
 import { defaultCouponConfigs } from './default-coupon-configs';
-import type { CouponConfig } from './interface';
 
 type RendererKey = Exclude<keyof CouponConfig, keyof CouponConfigMetadata>;
 

@@ -77,6 +77,26 @@ export interface Operations {
     savePaymentMethod: () => Promise<unknown>;
 }
 
+/**
+ * The main callback that will be called when the payment is ready to be charged
+ * after the payment token is fetched and verified with 3DS or other confirmation from the user.
+ * @param operations - provides a common set of actions that can be performed with the verified payment token.
+ * For example, the verified (that is, chargeable) payment token can be used to create a subscription or buy
+ * credits.
+ * @param data - provides the raw payment token, the payment source (or processor type) and operation context
+ * like Plan or Cycle for subscription.
+ */
+export type OnChargeable = (
+    operations: Operations,
+    data: {
+        chargeablePaymentParameters: ChargeablePaymentParameters;
+        source: PaymentMethodType;
+        sourceType: PlainPaymentMethodType;
+        context: OperationsData;
+        paymentProcessorType: PaymentProcessorType;
+    }
+) => Promise<unknown>;
+
 function getOperations(
     api: Api,
     params: ChargeablePaymentParameters,
@@ -213,16 +233,7 @@ export const usePaymentFacade = (
     }: {
         amount: number;
         currency: Currency;
-        onChargeable: (
-            operations: Operations,
-            data: {
-                chargeablePaymentParameters: ChargeablePaymentParameters;
-                source: PaymentMethodType;
-                sourceType: PlainPaymentMethodType;
-                context: OperationsData;
-                paymentProcessorType: PaymentProcessorType;
-            }
-        ) => Promise<unknown>;
+        onChargeable: OnChargeable;
         coupon?: string;
         flow: PaymentMethodFlow;
         onMethodChanged?: OnMethodChangedHandler;

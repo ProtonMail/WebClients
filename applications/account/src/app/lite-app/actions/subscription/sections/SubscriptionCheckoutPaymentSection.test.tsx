@@ -1,6 +1,6 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
-import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
+import { usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { GUARD_ERROR_CODES, type GuardError } from '@proton/payments/core/subscription/guard';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
@@ -21,7 +21,7 @@ jest.mock('@proton/payments-ui/ui/billing-address/hooks/useBillingAddress', () =
 jest.mock('@proton/payments-ui/ui/components/RenewalNotice', () => ({
     getCheckoutRenewNoticeTextFromCheckResult: () => 'renew notice',
 }));
-jest.mock('@proton/payments-ui/ui/context/PaymentContext', () => ({ usePayments: jest.fn() }));
+jest.mock('@proton/payments-hooks/ui/context/paymentsContext', () => ({ usePayments: jest.fn() }));
 jest.mock('@proton/components/containers/payments/subscription/confirm-button/SubscriptionConfirmButton', () => ({
     SubscriptionConfirmButton: ({ disabled }: { disabled: boolean }) => (
         <button type="submit" data-testid="confirm" disabled={disabled}>

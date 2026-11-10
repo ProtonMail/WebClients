@@ -8,7 +8,7 @@ import { shouldTraceError, useNotifyErrorHandler } from '@proton/components/hook
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import metrics from '@proton/metrics/metricsInstance';
 import { observeError } from '@proton/metrics/observeApiError';
-import type { OnChargeable } from '@proton/payments-ui/client-extensions/usePaymentFacade';
+import type { OnChargeable } from '@proton/payments-hooks/react-extensions/usePaymentFacade';
 import {
     type PaymentsContextOptimisticType,
     usePaymentOptimistic,

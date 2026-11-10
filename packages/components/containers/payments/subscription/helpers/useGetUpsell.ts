@@ -5,7 +5,7 @@ import { plansThunk } from '@proton/account/plans';
 import { subscriptionThunk } from '@proton/account/subscription';
 import { userThunk } from '@proton/account/user';
 import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
-import { isPaymentsPreloaded, usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
+import { isPaymentsPreloaded, usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { getCanSubscriptionAccessDuoPlan } from '@proton/payments/core/subscription/helpers';
 import { createMultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';

@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
 import PromotionButton from '@proton/components/components/button/PromotionButton/PromotionButton';
-import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
@@ -23,7 +22,7 @@ type Props = SafetyReviewAllProps & {
     recoveryItem: ExtractRecoveryActionItem<'upsellEmergencyContacts'>;
 };
 
-const BaseUpsellEmergencyContacts = (props: Props) => {
+export const UpsellEmergencyContacts = (props: Props) => {
     const theme = useTheme();
     const isDarkTheme = theme.information.dark;
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
@@ -36,6 +35,7 @@ const BaseUpsellEmergencyContacts = (props: Props) => {
         });
 
         openSubscriptionModal({
+            app: props.safetyReview.state.backLink.appName,
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             upsellRef,
             disableThanksStep: true,
@@ -84,13 +84,5 @@ const BaseUpsellEmergencyContacts = (props: Props) => {
 
             <SafetyReviewCta {...props} cta={c('safety_review').t`Got it`} />
         </form>
-    );
-};
-
-export const UpsellEmergencyContacts = (props: Props) => {
-    return (
-        <SubscriptionModalProvider app={props.safetyReview.state.backLink.appName}>
-            <BaseUpsellEmergencyContacts {...props} />
-        </SubscriptionModalProvider>
     );
 };

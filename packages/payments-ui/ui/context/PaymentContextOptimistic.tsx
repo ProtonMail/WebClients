@@ -1,19 +1,21 @@
 import { type ReactNode, createContext, useContext, useRef, useState } from 'react';
 
 import { useHandler } from '@proton/hooks/useHandler';
+import type { InitializeProps } from '@proton/payments-hooks/ui/context/paymentsContext';
+import { type PaymentsContextType, usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { CYCLE } from '@proton/payments/core/constants';
 import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import type { PlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import type { InitializeProps } from './PaymentContext';
-import { PaymentsContextProvider, type PaymentsContextType, type PlanToCheck, usePayments } from './PaymentContext';
+import { PaymentsContextProvider } from './PaymentContext';
 
 interface InitializationStatus {
     /**

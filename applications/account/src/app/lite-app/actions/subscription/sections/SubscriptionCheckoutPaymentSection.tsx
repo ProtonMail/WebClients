@@ -11,10 +11,10 @@ import { getPaymentMethodRequired } from '@proton/components/containers/payments
 import useLoading from '@proton/hooks/useLoading';
 import { IcLock } from '@proton/icons/icons/IcLock';
 import { GuardBanner } from '@proton/payments-hooks/ui/components/GuardBanner';
+import { usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import type { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import { useBillingAddress } from '@proton/payments-ui/ui/billing-address/hooks/useBillingAddress';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments-ui/ui/components/RenewalNotice';
-import { usePayments } from '@proton/payments-ui/ui/context/PaymentContext';
 import { DisplayablePaymentError } from '@proton/payments/core/errors';
 import type { PaymentMethodType } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';

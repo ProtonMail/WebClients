@@ -100,10 +100,12 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
     };
 
     const openSubscriptionModal = async (subscriptionModalProps: OpenCallbackProps) => {
+        const modalApp = subscriptionModalProps.app ?? app;
+
         if (
             redirectToAccountApp({
-                app: app,
                 ...subscriptionModalProps,
+                app: modalApp,
             })
         ) {
             return;
@@ -135,6 +137,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
 
         subscriptionPropsRef.current = {
             ...subscriptionModalProps,
+            app: modalApp,
             plan: fixedPlanName,
             planIDs: fixedPlanIDs,
         };
@@ -150,7 +153,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
                 subscription,
                 selectedPlanIDs: subscriptionModalProps.planIDs,
                 build: APP_NAME,
-                product: app,
+                product: modalApp,
             });
         }
     };
@@ -178,7 +181,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
             {showModal && (
                 <SubscriptionModal
                     onClose={handleClose}
-                    app={app}
+                    app={subscriptionProps.app ?? app}
                     modalState={modalState}
                     subscription={subscription}
                     initialBillingAddress={initialBillingAddress}

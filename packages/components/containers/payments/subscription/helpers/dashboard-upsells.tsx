@@ -9,7 +9,7 @@ import {
     type PreloadedPaymentsContextType,
     isPaymentsPreloaded,
     usePayments,
-} from '@proton/payments-ui/ui/context/PaymentContext';
+} from '@proton/payments-hooks/ui/context/paymentsContext';
 import { ADDON_PREFIXES, CYCLE, PLANS } from '@proton/payments/core/constants';
 import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
 import { getPrice } from '@proton/payments/core/price-helpers';
