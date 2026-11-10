@@ -1,5 +1,6 @@
 import { createActor, fromCallback, fromPromise, waitFor } from 'xstate';
 
+import { UnprivatizationIdentityError, UnprivatizationRevisionError } from '@proton/account/members/unprivatization';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import type { JoinMagicLinkData } from './joinMagicLinkActors';
@@ -13,9 +14,11 @@ const data = { organizationData: { logo: { url: 'blob:logo', cleanup } } } as un
 
 const start = ({
     prepare = async () => data,
+    validate = async () => {},
     setUp = async () => {},
 }: {
     prepare?: () => Promise<JoinMagicLinkData>;
+    validate?: () => Promise<void>;
     setUp?: (input: { password: string }) => Promise<void>;
 }) => {
     const redirectToSignIn = jest.fn();
@@ -24,6 +27,7 @@ const start = ({
         joinMagicLinkStateMachine.provide({
             actors: {
                 prepare: fromPromise(prepare),
+                validate: fromPromise(validate),
                 holdLogo: fromCallback(
                     ({ input }) =>
                         () =>
@@ -66,10 +70,59 @@ describe('joinMagicLinkStateMachine', () => {
             'used',
         ],
         ['a link without a token', new MissingTokenError(), 'unknown'],
+        ['a connection problem', Object.assign(new Error(), { name: 'OfflineError' }), 'connection'],
     ])('shows %s', async (_, error, expected) => {
         const { actor, emitted } = start({ prepare: () => Promise.reject(error) });
         await waitFor(actor, (state) => state.matches('failed'));
         expect(actor.getSnapshot().context.error).toBe(expected);
+        expect(emitted).toEqual([]);
+    });
+
+    it('reads the link again on retry', async () => {
+        const prepare = jest
+            .fn<Promise<JoinMagicLinkData>, []>()
+            .mockRejectedValueOnce(Object.assign(new Error(), { name: 'TimeoutError' }))
+            .mockResolvedValueOnce(data);
+        const { actor } = start({ prepare });
+        await waitFor(actor, (state) => state.matches('failed'));
+        actor.send({ type: 'retry' });
+        await waitFor(actor, (state) => state.matches({ joining: 'awaitingPassword' }));
+        expect(prepare).toHaveBeenCalledTimes(2);
+    });
+
+    it.each([
+        ['identity', new UnprivatizationIdentityError('Signature verification failed'), 'identity'],
+        ['signature', Object.assign(new Error('Signature verification failed'), { name: 'SignatureError' }), 'invalid'],
+        ['revision', new UnprivatizationRevisionError('Invalid invitation signed key list revision state'), 'invalid'],
+    ])(
+        'reports an invitation with an invalid %s without a notification, and keeps its data',
+        async (_, error, expected) => {
+            const { actor, emitted } = start({ validate: () => Promise.reject(error) });
+            await waitFor(actor, (state) => state.matches('failed'));
+            expect(actor.getSnapshot().context).toEqual({ data, error: expected });
+            expect(emitted).toEqual([{ type: 'invitation.invalid', error }]);
+        }
+    );
+
+    it('releases the logo of an invitation that does not verify, once, before reading the link again', async () => {
+        const validate = jest
+            .fn<Promise<void>, []>()
+            .mockRejectedValueOnce(new UnprivatizationIdentityError('Signature verification failed'))
+            .mockResolvedValueOnce();
+        const { actor } = start({ validate });
+        await waitFor(actor, (state) => state.matches('failed'));
+        expect(cleanup).toHaveBeenCalledTimes(1);
+        actor.send({ type: 'retry' });
+        await waitFor(actor, (state) => state.matches({ joining: 'awaitingPassword' }));
+        expect(cleanup).toHaveBeenCalledTimes(1);
+    });
+
+    it('shows a connection problem while verifying the invitation', async () => {
+        const { actor, emitted } = start({
+            validate: () => Promise.reject(Object.assign(new Error(), { name: 'OfflineError' })),
+        });
+        await waitFor(actor, (state) => state.matches('failed'));
+        expect(actor.getSnapshot().context.error).toBe('connection');
         expect(emitted).toEqual([]);
     });
 
@@ -83,7 +136,7 @@ describe('joinMagicLinkStateMachine', () => {
     });
 
     it('reports an unexpected error', async () => {
-        const error = new Error('Network error');
+        const error = new Error('Unexpected');
         const { actor, emitted } = start({ prepare: () => Promise.reject(error) });
         await waitFor(actor, (state) => state.matches('failed'));
         expect(actor.getSnapshot().context.error).toBe('unknown');

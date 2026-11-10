@@ -73,6 +73,14 @@ export const createJoinMagicLinkActors = (services: JoinMagicLinkServices) => ({
         ]);
         const parsedUnprivatizationData = await parseUnprivatizationData({ unprivatizationData, addresses });
         const ktActivation = await services.getKtActivation();
+        return { user, organizationData, addresses, parsedUnprivatizationData, authApi, ktActivation };
+    }),
+    /** Verifies that the invitation comes from the organization's admin. */
+    validate: fromPromise<void, { data: JoinMagicLinkData | undefined }>(async ({ input }) => {
+        if (!input.data) {
+            throw new Error('missing data');
+        }
+        const { user, authApi, parsedUnprivatizationData, ktActivation } = input.data;
         await validateUnprivatizationData({
             ktUserContext: {
                 ktActivation,
@@ -87,7 +95,6 @@ export const createJoinMagicLinkActors = (services: JoinMagicLinkServices) => ({
                 newMemberCreation: true,
             },
         });
-        return { user, organizationData, addresses, parsedUnprivatizationData, authApi, ktActivation };
     }),
     /** Releases the organization's logo when it's no longer shown. */
     holdLogo: fromCallback<EventObject, OrganizationData['logo'] | undefined>(

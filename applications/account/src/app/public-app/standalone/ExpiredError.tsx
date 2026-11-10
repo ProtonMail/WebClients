@@ -30,11 +30,20 @@ interface Props {
         | 'group'
         | 'magic-link'
         | 'magic-link-used'
+        | 'magic-link-identity'
+        | 'magic-link-invalid'
         | 'joining-link'
         | 'provisioning';
+    /** The admin to contact, for the magic link types that need them. */
+    adminEmail?: string;
 }
 
-const getTexts = (type: Props['type']) => {
+const getTexts = (type: Props['type'], adminEmail = '') => {
+    const admin = (
+        <strong key="admin" className="text-break">
+            {adminEmail}
+        </strong>
+    );
     if (type === 'report') {
         return {
             title: c('Info').t`Report link expired`,
@@ -80,6 +89,20 @@ const getTexts = (type: Props['type']) => {
             description: c('Info').t`This invitation link is already used. Please sign in directly instead.`,
         };
     }
+    if (type === 'magic-link-identity') {
+        return {
+            title: c('Info').t`Invalid invitation link`,
+            description: c('Info')
+                .jt`We couldn't verify your organization's identity. Please ask your administrator, ${admin}, to check the organization identity in the organization settings. Then open this link again.`,
+        };
+    }
+    if (type === 'magic-link-invalid') {
+        return {
+            title: c('Info').t`Invalid invitation link`,
+            description: c('Info')
+                .jt`We couldn't verify this invitation. Please ask your administrator, ${admin}, to remove you from the organization and add you again.`,
+        };
+    }
     if (type === 'joining-link') {
         return {
             title: c('Info').t`Invalid joining link`,
@@ -100,8 +123,8 @@ const getTexts = (type: Props['type']) => {
     };
 };
 
-const ExpiredError = ({ type }: Props) => {
-    const { title, description, cta } = getTexts(type);
+const ExpiredError = ({ type, adminEmail }: Props) => {
+    const { title, description, cta } = getTexts(type, adminEmail);
     return (
         <div className="m-auto text-center max-w-custom" style={{ '--max-w-custom': '20em' }}>
             <div className="mb-8">

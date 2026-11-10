@@ -1,10 +1,11 @@
 /**
- * Joining an organization through a magic link: reads the link's token and the organization's data, then sets the
- * member's password and keys and signs them in. `createJoinMagicLinkActors` provides the actors.
+ * Joining an organization through a magic link: reads the link's token and the organization's data, verifies the
+ * invitation, then sets the member's password and keys and signs them in. `createJoinMagicLinkActors` provides the actors.
  */
 import { assertEvent, assign, emit, setup } from 'xstate';
 
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { UnprivatizationIdentityError, UnprivatizationRevisionError } from '@proton/account/members/unprivatization';
+import { getApiError, getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
@@ -18,12 +19,15 @@ import {
 import type { JoinMagicLinkActors, JoinMagicLinkData } from './joinMagicLinkActors';
 
 /** Why the link can't be used. */
-export type JoinMagicLinkError = 'expired' | 'used' | 'unknown';
+export type JoinMagicLinkError = 'expired' | 'used' | 'connection' | 'identity' | 'invalid' | 'unknown';
 
-export type JoinMagicLinkEvent = { type: 'password.submitted'; password: string };
+export type JoinMagicLinkEvent = { type: 'password.submitted'; password: string } | { type: 'retry' };
 
 export type JoinMagicLinkEmitted =
-    { type: 'error'; error: unknown } | { type: 'link.used'; message: string } | { type: 'session.expired' };
+    | { type: 'error'; error: unknown }
+    | { type: 'invitation.invalid'; error: unknown }
+    | { type: 'link.used'; message: string }
+    | { type: 'session.expired' };
 
 interface JoinMagicLinkContext {
     /** The link's data and session API: the password step needs them later, so unlike the sign-in they're in context. */
@@ -45,12 +49,17 @@ export const joinMagicLinkStateMachine = setup({
         events: {} as JoinMagicLinkEvent,
         emitted: {} as JoinMagicLinkEmitted,
     },
-    actors: unprovidedActors<JoinMagicLinkActors>({ prepare: true, holdLogo: true, setUp: true }),
+    actors: unprovidedActors<JoinMagicLinkActors>({ prepare: true, validate: true, holdLogo: true, setUp: true }),
     actions: {
         assignData: assign((_, { data }: { data: JoinMagicLinkData }) => ({ data })),
         assignError: assign((_, { error }: { error: JoinMagicLinkError }) => ({ error })),
         /** Hands the error to the page to show. */
         reportError: emit((_, { error }: { error: unknown }) => ({ type: 'error' as const, error })),
+        /** The invitation didn't verify: the page reports it, the failed screen explains it. */
+        notifyInvitationInvalid: emit((_, { error }: { error: unknown }) => ({
+            type: 'invitation.invalid' as const,
+            error,
+        })),
         /** The member already joined: tells them to sign in. */
         notifyLinkUsed: emit((_, { message }: { message: string }) => ({ type: 'link.used' as const, message })),
         notifySessionExpired: emit({ type: 'session.expired' as const }),
@@ -59,6 +68,11 @@ export const joinMagicLinkStateMachine = setup({
     guards: {
         isApiErrorCode,
         isErrorOf,
+        isConnectionIssue: ({ event }) => 'error' in event && getIsConnectionIssue(event.error),
+        isInvalidInvitation: ({ event }) =>
+            'error' in event &&
+            event.error instanceof Error &&
+            (event.error.name === 'SignatureError' || event.error instanceof UnprivatizationRevisionError),
         isUnauthorized: ({ event }) =>
             'error' in event && getApiError(event.error).status === HTTP_STATUS_CODE.UNAUTHORIZED,
     },
@@ -98,15 +112,54 @@ export const joinMagicLinkStateMachine = setup({
                         target: 'failed',
                         actions: failWith('used'),
                     },
+                    { guard: 'isConnectionIssue', target: 'failed', actions: failWith('connection') },
                     { target: 'failed', actions: [reportActorError, failWith('unknown')] },
                 ],
             },
         },
         joining: {
-            // The organization's logo lives as long as the page shows it
+            // The organization's logo lives until the page leaves the invitation, retries included
             invoke: { src: 'holdLogo', input: ({ context }) => context.data?.organizationData.logo },
-            initial: 'awaitingPassword',
+            initial: 'validating',
             states: {
+                validating: {
+                    // The data stays in context on failure: the failed screen names the admin to contact
+                    invoke: {
+                        src: 'validate',
+                        input: ({ context }) => ({ data: context.data }),
+                        onDone: 'awaitingPassword',
+                        onError: [
+                            {
+                                guard: 'isConnectionIssue',
+                                target: '#joinMagicLink.failed',
+                                actions: failWith('connection'),
+                            },
+                            {
+                                guard: errorOf(UnprivatizationIdentityError),
+                                target: '#joinMagicLink.failed',
+                                actions: [
+                                    {
+                                        type: 'notifyInvitationInvalid',
+                                        params: ({ event }) => ({ error: event.error }),
+                                    },
+                                    failWith('identity'),
+                                ],
+                            },
+                            {
+                                guard: 'isInvalidInvitation',
+                                target: '#joinMagicLink.failed',
+                                actions: [
+                                    {
+                                        type: 'notifyInvitationInvalid',
+                                        params: ({ event }) => ({ error: event.error }),
+                                    },
+                                    failWith('invalid'),
+                                ],
+                            },
+                            { target: '#joinMagicLink.failed', actions: [reportActorError, failWith('unknown')] },
+                        ],
+                    },
+                },
                 awaitingPassword: {
                     on: { 'password.submitted': 'settingUp' },
                 },
@@ -126,6 +179,9 @@ export const joinMagicLinkStateMachine = setup({
                 },
             },
         },
-        failed: {},
+        failed: {
+            // The link stays valid until the member's keys are set up, so reading it again is safe
+            on: { retry: 'preparing' },
+        },
     },
 });
