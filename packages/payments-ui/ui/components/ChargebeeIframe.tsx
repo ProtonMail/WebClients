@@ -72,6 +72,7 @@ import type {
     RemoveEventListener,
 } from '@proton/payments/core/interface';
 import { capturePaymentMessage } from '@proton/payments/sentry/capture';
+import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise';
 import { getSentryError } from '@proton/shared/lib/helpers/sentry';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
@@ -156,7 +157,11 @@ export function isInitializationFailureReportable(error: any) {
     const alreadyReportedByIframe =
         getInitializationFailureReason(error) === 'reported-by-iframe' && error.type === 'set-configuration-response';
 
-    return !alreadyReportedByIframe && !!getSentryError(error);
+    return !alreadyReportedByIframe && !getIs401Error(error) && !!getSentryError(error);
+}
+
+export function getUnhandledIframeErrorLevel(stage: string) {
+    return stage.endsWith('_timed_out') ? 'warning' : 'error';
 }
 
 function iframeAction<T>(
@@ -853,7 +858,7 @@ export const useCbIframe = (): CbIframeHandles => {
                 `Payments: Unhandled Chargebee error at ${stage}`,
                 {
                     component: 'chargebee-iframe',
-                    level: 'error',
+                    level: getUnhandledIframeErrorLevel(stage),
                     tags: {
                         chargebeeStage: stage,
                         chargebeeWrapperVersion: rawError?.chargebeeWrapperVersion ?? 'unknown',

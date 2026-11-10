@@ -2,10 +2,13 @@ import { act, renderHook } from '@testing-library/react';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import type { PaymentIntent } from '@proton/chargebee/lib/types';
+import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
+import { createApiError } from '@proton/shared/lib/fetch/ApiError';
 
 import {
     getIframeUrl,
     getInitializationFailureReason,
+    getUnhandledIframeErrorLevel,
     isInitializationFailureReportable,
     useCbIframe,
 } from './ChargebeeIframe';
@@ -122,6 +125,44 @@ describe('isInitializationFailureReportable', () => {
     it('should report a parent-side Error', () => {
         expect(isInitializationFailureReportable(new Error('Apple Pay session aborted'))).toBe(true);
     });
+
+    it('should skip a 401 from the API because the session is gone', () => {
+        const unauthorized = createApiError('StatusCodeError', new Response(null, { status: 401 }), {}, {
+            Code: 401,
+            Error: 'Invalid access token',
+        });
+
+        expect(isInitializationFailureReportable(unauthorized)).toBe(false);
+    });
+
+    it('should skip an inactive session after the token refresh failed', () => {
+        expect(isInitializationFailureReportable(InactiveSessionError())).toBe(false);
+    });
+
+    it('should report another 4xx from the API with a message', () => {
+        const unprocessable = createApiError('StatusCodeError', new Response(null, { status: 422 }), {}, {
+            Code: 422,
+            Error: 'Invalid input',
+        });
+
+        expect(isInitializationFailureReportable(unprocessable)).toBe(true);
+    });
+});
+
+describe('getUnhandledIframeErrorLevel', () => {
+    it.each(['card_load_components_timed_out', 'card_mount_timed_out', 'initialize_timed_out'])(
+        'should report the %s stage as a warning',
+        (stage) => {
+            expect(getUnhandledIframeErrorLevel(stage)).toBe('warning');
+        }
+    );
+
+    it.each(['chargebee.load_failed', 'card_loaded_components', 'unknown'])(
+        'should report the %s stage as an error',
+        (stage) => {
+            expect(getUnhandledIframeErrorLevel(stage)).toBe('error');
+        }
+    );
 });
 
 describe('validateSavedCreditCard', () => {
