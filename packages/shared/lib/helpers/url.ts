@@ -199,10 +199,6 @@ export const isURLProtonInternal = (url: string, hostname: string) => {
     ].some((domain) => isSubDomain(targetOriginHostname, domain));
 };
 
-export const getIsConvertHostname = (hostname: string) => {
-    return hostname === 'join.protonvpn.com';
-};
-
 const doesHostnameLookLikeIP = (hostname: string) => {
     // Quick helper function to tells us if hostname string seems to be IP address or DNS name.
     // Relies on a fact, that no TLD ever will probably end with a digit. So if last char is

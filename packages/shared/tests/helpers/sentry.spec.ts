@@ -26,7 +26,6 @@ describe('isProduction', () => {
         expect(isProduction('wallet.proton.me')).toEqual(true);
         expect(isProduction(VPN_HOSTNAME)).toEqual(true);
         expect(isProduction('account.protonvpn.com')).toEqual(true);
-        expect(isProduction('join.protonvpn.com')).toEqual(true);
     });
 });
 

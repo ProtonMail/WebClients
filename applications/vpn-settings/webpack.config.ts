@@ -1,7 +1,5 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import template from 'lodash/template';
-import { readFileSync } from 'node:fs';
-import * as path from 'node:path';
 import type { HrefLang } from 'proton-account/pages/interface';
 import { getPages } from 'proton-account/pages/pages';
 import type { Parameters } from 'proton-account/src/pages/interface';
@@ -97,19 +95,7 @@ const result = async (opts: WebpackEnvArguments): Promise<Configuration> => {
                 };
             });
 
-            const result = [index, ...rest];
-            const convertSnippet = readFileSync(path.resolve('./src/convert-snippet.html'))
-                .toString()
-                .replace(/\n/g, '');
-
-            return result.flatMap((result) => {
-                const convertEntry = {
-                    name: result.name.replace('.html', '.convert.html'),
-                    data: result.data.replace('</title>', `</title>${convertSnippet}`),
-                };
-
-                return [result, convertEntry];
-            });
+            return [index, ...rest];
         })
     );
 
