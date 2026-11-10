@@ -3,6 +3,7 @@ applications/**/public/assets/sandbox.js
 applications/authenticator/src/lib/tauri/generated/__bindings__.ts
 applications/wallet/src/pkg/
 packages/metrics/types/**/*.d.ts
+packages/oxlint-config/src/optional/**
 packages/styles/scss/**/_index.scss
 packages/wasm/**/*
 tests/account/poms/LoginPage/challenge.html

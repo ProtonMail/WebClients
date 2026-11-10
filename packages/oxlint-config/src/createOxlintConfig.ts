@@ -3,6 +3,7 @@ import { type OxlintOverride, defineConfig } from 'oxlint';
 import { brandNameSelectors } from './brandNames.ts';
 import { createExtraneousDependenciesRule } from './extraneousDependencies.ts';
 import { allGlobs, typescriptGlobs } from './globs.ts';
+import { getLocalOverlayConfig } from './localOverlay.ts';
 import { namingConventionOptions } from './namingConvention.ts';
 import { type RestrictedImportsOptions, createRestrictedImportRule } from './restrictedImports.ts';
 
@@ -36,6 +37,8 @@ export const base = defineConfig({
         '**/public/assets/**',
         '**/coverage/**',
         '**/__snapshots__/**',
+        // Vendored third-party rules, not held to our lint rules
+        '**/src/optional/anti-slop/**',
     ],
     rules: {
         'custom-rules/no-package-self-import': 'error',
@@ -295,5 +298,6 @@ export function createOxlintConfig({
         env: shared.env,
         settings: shared.settings,
         overrides: [...restrictedImportsOverrides, ...overrides],
+        ...getLocalOverlayConfig(shared),
     });
 }
