@@ -757,6 +757,12 @@
     "sheets_2025:Spreadsheet chartAggregates": {
       "Sum": [
         "Sum"
+      ],
+      "Average": [
+        "Gjennomsnitt"
+      ],
+      "Min": [
+        "Min"
       ]
     },
     "sheets_2025:Spreadsheet chartEditorDialog": {
@@ -865,6 +871,21 @@
       ],
       "Yesterday": [
         "I går"
+      ],
+      "April": [
+        "April"
+      ],
+      "February": [
+        "Februar"
+      ],
+      "Is empty": [
+        "Er tom"
+      ],
+      "Is not empty": [
+        "Er ikke tom"
+      ],
+      "January": [
+        "Januar"
       ]
     },
     "sheets_2025:Spreadsheet context menu": {
@@ -1688,6 +1709,9 @@
       ],
       "Go to previous": [
         "Gå til forrige"
+      ],
+      "${ current } of ${ total }": [
+        "${ current } av ${ total }"
       ]
     },
     "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
