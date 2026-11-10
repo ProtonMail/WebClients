@@ -12,7 +12,9 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
+import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
+import { getAddAccountHref, reloadHref } from '@proton/pass/components/Navigation/routing';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useRerender } from '@proton/pass/hooks/useRerender';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
@@ -28,12 +30,18 @@ export const AccountSwitcherTooltip: FC<AccountSwitcherTooltipProps> = ({ childr
     const online = useOnline();
 
     const authService = useAuthService();
+    const authStore = useAuthStore();
 
     const dropdown = usePopperAnchor<HTMLButtonElement>();
     const [key, rerender] = useRerender();
     const canSwitch = sessions.length > 0;
 
     useEffect(rerender, [sessions]);
+
+    const handleAddAccount = () =>
+        DESKTOP_BUILD
+            ? reloadHref(getAddAccountHref(authStore?.getLocalID()))
+            : authService.requestFork({ app: APPS.PROTONPASS, host: SSO_URL, forkType: ForkType.SWITCH });
 
     return (
         <>
@@ -63,13 +71,7 @@ export const AccountSwitcherTooltip: FC<AccountSwitcherTooltipProps> = ({ childr
                         color="weak"
                         disabled={!online}
                         icon
-                        onClick={() =>
-                            authService.requestFork({
-                                app: APPS.PROTONPASS,
-                                host: SSO_URL,
-                                forkType: ForkType.SWITCH,
-                            })
-                        }
+                        onClick={handleAddAccount}
                     >
                         <span className="flex gap-2 items-center px-2">
                             <IcUserPlus />

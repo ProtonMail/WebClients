@@ -3,7 +3,9 @@ import { contextBridge, ipcRenderer } from 'electron';
 
 import type { ContextBridgeApi } from '@proton/pass/types/desktop';
 import { disableMouseNavigation } from '@proton/shared/lib/desktop/disableMouseNavigation';
+import noop from '@proton/utils/noop';
 
+import { setupAccountBackButton } from './lib/account-back-button';
 import type { IPCChannelResult, IPCChannels } from './lib/ipc';
 
 const invoke = <T extends keyof IPCChannels, P extends IPCChannels[T]['args'], R extends IPCChannels[T]['result']>(
@@ -91,3 +93,9 @@ const contextBridgeApi: ContextBridgeApi = {
 
 contextBridge.exposeInMainWorld('ctxBridge', contextBridgeApi);
 disableMouseNavigation();
+setupAccountBackButton({
+    getLabel: () => invoke('router:getBackLabel'),
+    goBack: () => {
+        invoke('router:goBackFromAccount').catch(noop);
+    },
+});

@@ -6,7 +6,7 @@ import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 
 import config from './app/config';
 import { WINDOWS_APP_ID } from './constants';
-import { handleDeepLink, pickDeepLinkFromArgv, testDeepLinkSupport } from './lib/auth/deep-link';
+import { handleDeepLink, pickDeepLinkFromArgv } from './lib/auth/deep-link';
 import { authInterceptors } from './lib/auth/interceptors';
 import { migrateSameSiteCookies, upgradeSameSiteCookies } from './lib/cookies';
 import { PLATFORM_CLIENT_ID } from './lib/env';
@@ -26,7 +26,7 @@ import type { PassElectronContext } from './types';
 import logger from './utils/logger';
 import { isE2E, isMac, isProdEnv, isWindows } from './utils/platform';
 
-const ctx: PassElectronContext = { session: null, window: null, quitting: false };
+const ctx: PassElectronContext = { session: null, window: null, quitting: false, originHref: '/' };
 
 const DOMAIN = getSecondLevelDomain(new URL(config.API_URL).hostname);
 
@@ -117,7 +117,7 @@ const createWindow = async (session: Session): Promise<BrowserWindow> => {
         ctx.window.webContents.setZoomLevel(zoomLevel);
     }
 
-    setApplicationMenu(ctx.window);
+    setApplicationMenu(ctx.window, ctx);
     registerWindowManagementHandlers(ctx.window);
 
     ctx.window.on('show', () => {
@@ -198,9 +198,7 @@ if (!isE2E() && REMOTE_DEBUGGING_SWITCHES.some((name) => app.commandLine.hasSwit
 
 if (!app.requestSingleInstanceLock()) {
     // Hard-exit: app.quit() is async and would let the rest of this module
-    // keep running — including testDeepLinkSupport(), which would fire
-    // another protonpass://test and spawn yet another instance. Fork-bomb.
-    // It would also race the primary instance to bind the native-messaging
+    // keep running and race the primary instance to bind the native-messaging
     // socket (EADDRINUSE on Windows, socket file stolen on macOS/Linux).
     // Nothing has been initialised yet at this point so no cleanup is owed.
     process.exit(0);
@@ -223,8 +221,6 @@ app.configureHostResolver({
 ctx.session = createSession();
 
 authInterceptors(app, ctx);
-
-if (!isE2E()) testDeepLinkSupport();
 
 // Match title bar with the saved (or default) theme
 nativeTheme.themeSource = getTheme();

@@ -477,7 +477,7 @@ export const createAuthService = ({
 
             const sessionState = JSON.stringify(data ?? redirect.data);
             sessionStorage.setItem(getStateKey(state), sessionState);
-            sessionStorage.setItem(getForkSecretKey(state), forkSecret);
+            if (forkSecret) sessionStorage.setItem(getForkSecretKey(state), forkSecret);
 
             /** Clear SSH keys before navigating to SSO */
             void sshAgent?.clear();

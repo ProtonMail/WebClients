@@ -41,6 +41,8 @@ type Props = {
     warning?: string;
     onFork: () => void;
     onLogin: (options: AuthOptions) => void;
+    /** Desktop only: signs in inside the app window instead of the browser */
+    onLoginInApp?: () => void;
     onLogout: (options: { soft: boolean }) => void;
     /** Called when the user explicitly requests to switch to offline
      * password unlock. Only relevant when the app is locked, the device
@@ -58,6 +60,7 @@ export const LobbyContent: FC<Props> = ({
     warning,
     onFork,
     onLogin,
+    onLoginInApp,
     onLogout,
     onOfflineFallback,
     onRegister,
@@ -129,7 +132,7 @@ export const LobbyContent: FC<Props> = ({
     }
 
     return (
-        <div key="lobby" className="anime-fade-in" style={{ '--anime-delay': '250ms' }}>
+        <div key="lobby" className="anime-fade-in flex flex-column h-full" style={{ '--anime-delay': '250ms' }}>
             <div className="flex flex-column items-center gap-3">
                 <span className="pass-lobby--heading w-full text-bold text-norm text-no-wrap flex flex-nowrap gap-2 items-end justify-center user-select-none">
                     {locked || passwordLocked || missingScope
@@ -249,6 +252,19 @@ export const LobbyContent: FC<Props> = ({
                         </Button>
                     ))}
             </div>
+
+            {onLoginInApp && !canSignOut && !busy && (
+                <Button
+                    pill
+                    shape="ghost"
+                    color="norm"
+                    className="w-full mt-6"
+                    onClick={onLoginInApp}
+                    disabled={!online}
+                >
+                    {c('Action').t`Sign in in the app instead`}
+                </Button>
+            )}
 
             {renderFooter?.()}
         </div>

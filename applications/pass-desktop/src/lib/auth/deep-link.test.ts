@@ -2,7 +2,6 @@ import noop from '@proton/utils/noop';
 
 import type * as DeepLink from './deep-link';
 
-jest.mock('electron', () => ({ shell: { openExternal: jest.fn(() => Promise.resolve()) } }));
 jest.mock('../../utils/logger', () => ({ log: noop, debug: noop, info: noop, warn: noop, error: noop }));
 
 const WEBPACK_ENTRY = 'file:///app/index.html';
@@ -17,8 +16,6 @@ const getMockCtx = () => ({
     },
 });
 
-const authCallback = (selector: string) => `protonpass://login#selector=${selector}&sk=secret-key&v=2`;
-
 describe('deep-link', () => {
     let deepLink: typeof DeepLink;
 
@@ -29,69 +26,24 @@ describe('deep-link', () => {
     });
 
     describe('handleDeepLink', () => {
-        test('consumes an auth callback by loading the login route with the fork hash', async () => {
+        test.each([
+            ['without data', 'protonpass://login'],
+            ['with a legacy fork hash', 'protonpass://login#selector=sel-1&sk=secret-key&v=2'],
+        ])('shows the window on an auth callback %s without navigating', (_, url) => {
             const ctx = getMockCtx();
-            deepLink.handleDeepLink(authCallback('sel-1'), ctx as any);
+            deepLink.handleDeepLink(url, ctx as any);
 
-            expect(ctx.window.loadURL).toHaveBeenCalledTimes(1);
-            expect(ctx.window.loadURL).toHaveBeenCalledWith(`${WEBPACK_ENTRY}#/login#selector=sel-1&sk=secret-key&v=2`);
-            expect(ctx.window.show).not.toHaveBeenCalled();
-
-            await Promise.resolve();
-            expect(ctx.window.reload).toHaveBeenCalledTimes(1);
-        });
-
-        test('shows the window instead of re-consuming an already used selector', () => {
-            const ctx = getMockCtx();
-            deepLink.handleDeepLink(authCallback('sel-1'), ctx as any);
-            ctx.window.loadURL.mockClear();
-
-            deepLink.handleDeepLink(authCallback('sel-1'), ctx as any);
-
-            expect(ctx.window.loadURL).not.toHaveBeenCalled();
             expect(ctx.window.show).toHaveBeenCalledTimes(1);
-        });
-
-        test('recognises any previously consumed selector, not only the most recent', () => {
-            const ctx = getMockCtx();
-            deepLink.handleDeepLink(authCallback('sel-1'), ctx as any);
-            deepLink.handleDeepLink(authCallback('sel-2'), ctx as any);
-            ctx.window.loadURL.mockClear();
-
-            deepLink.handleDeepLink(authCallback('sel-1'), ctx as any);
-
             expect(ctx.window.loadURL).not.toHaveBeenCalled();
-            expect(ctx.window.show).toHaveBeenCalledTimes(1);
+            expect(ctx.window.reload).not.toHaveBeenCalled();
         });
 
-        test('consumes a distinct selector after an earlier login', () => {
-            const ctx = getMockCtx();
-            deepLink.handleDeepLink(authCallback('sel-1'), ctx as any);
-            ctx.window.loadURL.mockClear();
-
-            deepLink.handleDeepLink(authCallback('sel-2'), ctx as any);
-
-            expect(ctx.window.loadURL).toHaveBeenCalledWith(`${WEBPACK_ENTRY}#/login#selector=sel-2&sk=secret-key&v=2`);
-            expect(ctx.window.show).not.toHaveBeenCalled();
-        });
-
-        test('flags deep link support from the test url without touching the window', () => {
-            const ctx = getMockCtx();
-            expect(deepLink.isDeepLinkSupported()).toBe(false);
-
-            deepLink.handleDeepLink('protonpass://test', ctx as any);
-
-            expect(deepLink.isDeepLinkSupported()).toBe(true);
-            expect(ctx.window.loadURL).not.toHaveBeenCalled();
-            expect(ctx.window.show).not.toHaveBeenCalled();
-        });
-
-        test('ignores an auth callback with no hash', () => {
+        test('shows the window on every auth callback', () => {
             const ctx = getMockCtx();
             deepLink.handleDeepLink('protonpass://login', ctx as any);
+            deepLink.handleDeepLink('protonpass://login', ctx as any);
 
-            expect(ctx.window.loadURL).not.toHaveBeenCalled();
-            expect(ctx.window.show).not.toHaveBeenCalled();
+            expect(ctx.window.show).toHaveBeenCalledTimes(2);
         });
 
         test('ignores urls outside the protonpass protocol', () => {
@@ -102,13 +54,20 @@ describe('deep-link', () => {
             expect(ctx.window.show).not.toHaveBeenCalled();
         });
 
-        test('dispatches an auth callback without a selector rather than deduping it', () => {
+        test('ignores unhandled protonpass urls', () => {
             const ctx = getMockCtx();
-            deepLink.handleDeepLink('protonpass://login#sk=secret-key', ctx as any);
-            deepLink.handleDeepLink('protonpass://login#sk=secret-key', ctx as any);
+            deepLink.handleDeepLink('protonpass://test', ctx as any);
 
-            expect(ctx.window.loadURL).toHaveBeenCalledTimes(2);
+            expect(ctx.window.loadURL).not.toHaveBeenCalled();
             expect(ctx.window.show).not.toHaveBeenCalled();
+        });
+    });
+
+    describe('getLoginUrl', () => {
+        test('loads the login route of the bundled app with the fork hash', () => {
+            expect(deepLink.getLoginUrl('#selector=sel-1&sk=secret-key&v=2')).toBe(
+                `${WEBPACK_ENTRY}#/login#selector=sel-1&sk=secret-key&v=2`
+            );
         });
     });
 

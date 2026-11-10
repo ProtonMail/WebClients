@@ -6,7 +6,6 @@ import { AccountSwitcherList } from 'proton-pass-web/app/Views/AccountSwitcher/A
 import { AccountSwitcherTooltip } from 'proton-pass-web/app/Views/AccountSwitcher/AccountSwitcherTooltip';
 import { c } from 'ttag';
 
-import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import { IcUser } from '@proton/icons/icons/IcUser';
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
@@ -16,7 +15,7 @@ import { useLobbyConnectivityBar } from '@proton/pass/components/Core/Connectivi
 import { useAvailableSessions } from '@proton/pass/components/Core/SessionsProvider';
 import { LobbyContent } from '@proton/pass/components/Layout/Lobby/LobbyContent';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
-import type { AuthRouteState } from '@proton/pass/components/Navigation/routing';
+import { type AuthRouteState, PublicRoutes } from '@proton/pass/components/Navigation/routing';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { clientBooted, clientBusy, clientErrored } from '@proton/pass/lib/client';
 import type { MaybeNull } from '@proton/pass/types/utils';
@@ -34,6 +33,8 @@ export const Lobby: FC = () => {
 
     const history = useHistory<MaybeNull<AuthRouteState>>();
     const connectivityBar = useLobbyConnectivityBar();
+
+    const requestSwitchFork = () => authService.requestFork({ host, app: APPS.PROTONPASS, forkType: ForkType.SWITCH });
 
     const warning = useMemo(() => {
         const err = history.location.state?.error;
@@ -58,7 +59,8 @@ export const Lobby: FC = () => {
                     return authService.init(options);
                 }}
                 onLogout={() => authService.logout({ soft: false })}
-                onFork={() => authService.requestFork({ host, app: APPS.PROTONPASS, forkType: ForkType.SWITCH })}
+                onFork={() => (DESKTOP_BUILD ? history.push(PublicRoutes.DeviceLogin) : requestSwitchFork())}
+                onLoginInApp={DESKTOP_BUILD ? requestSwitchFork : undefined}
                 onOfflineFallback={() => AppStateManager.setStatus(AppStatus.PASSWORD_LOCKED)}
                 onRegister={() => authService.requestFork({ host, app: APPS.PROTONPASS, forkType: ForkType.SIGNUP })}
                 renderError={() => <></>}
@@ -69,14 +71,12 @@ export const Lobby: FC = () => {
                     if (!authStore?.hasSession()) {
                         return (
                             sessions.length > 0 && (
-                                <Scroll
-                                    className="overflow-auto mb-4 max-h-custom max-w-full"
+                                <div
+                                    className="flex flex-column gap-2 overflow-auto mb-4 max-h-custom max-w-full"
                                     style={{ '--max-h-custom': '11.5em' }}
                                 >
-                                    <div className="flex flex-column gap-2">
-                                        <AccountSwitcherList sessions={sessions} />
-                                    </div>
-                                </Scroll>
+                                    <AccountSwitcherList sessions={sessions} />
+                                </div>
                             )
                         );
                     }

@@ -31,6 +31,16 @@ describe('fork', () => {
             const { url } = requestFork({ app: APPS.PROTONPASS });
             expect(new URL(url).searchParams.has('forkChallenge')).toBe(false);
         });
+
+        test('should request a dependent fork by default', () => {
+            const { url } = requestFork({ app: APPS.PROTONPASS });
+            expect(new URL(url).searchParams.get('independent')).toEqual('0');
+        });
+
+        test('should request an independent fork when asked', () => {
+            const { url } = requestFork({ app: APPS.PROTONPASS, independent: true });
+            expect(new URL(url).searchParams.get('independent')).toEqual('1');
+        });
     });
 
     describe('pullFork', () => {
