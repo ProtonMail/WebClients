@@ -10,11 +10,13 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import metrics from '@proton/metrics/metricsInstance';
 import observeApiError from '@proton/metrics/observeApiError';
+import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import type { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
 import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { User } from '@proton/shared/lib/interfaces/User';
 
 import AccountSwitcherItem from './AccountSwitcherItem';
+import { getOtherUserSessions } from './helper';
 
 interface Props extends ModalProps {
     onSwitchSession: (session: ActiveSession) => Promise<void>;
@@ -30,51 +32,52 @@ const SwitchModal = ({ onSwitchSession, user, sessions = [], ...rest }: Props) =
             <ModalTwoHeader title={c('Title').t`Switch account`} titleClassName="text-4xl mb-1" />
             <ModalTwoContent>
                 <div className="flex flex-column gap-1 pb-2">
-                    {sessions
-                        .filter((session) => session.remote.UserID !== user?.ID)
-                        .map((session) => {
-                            const user = {
-                                ID: session.remote.UserID,
-                                Name: session.remote.Username,
-                                Email: session.remote.PrimaryEmail,
-                                DisplayName: session.remote.DisplayName,
-                            };
-                            return (
-                                <AccountSwitcherItem
-                                    key={session.remote.LocalID}
-                                    border={false}
-                                    onClick={() => {
-                                        if (tmpUser) {
-                                            return;
-                                        }
-                                        const run = async () => {
-                                            setTmpUser(session.remote);
-                                            try {
-                                                await onSwitchSession(session);
+                    {getOtherUserSessions(sessions, user?.ID).map((session) => {
+                        const user = {
+                            ID: session.remote.UserID,
+                            Name: session.remote.Username,
+                            Email: session.remote.PrimaryEmail,
+                            DisplayName: session.remote.DisplayName,
+                        };
+                        return (
+                            <AccountSwitcherItem
+                                key={session.remote.LocalID}
+                                border={false}
+                                onClick={() => {
+                                    if (tmpUser) {
+                                        return;
+                                    }
+                                    const run = async () => {
+                                        setTmpUser(session.remote);
+                                        try {
+                                            await onSwitchSession(session);
+                                            metrics.core_single_signup_switchSession_total.increment({
+                                                status: 'success',
+                                            });
+                                        } catch (error) {
+                                            // An expired session is expected here, the user is notified and it leaves the list
+                                            errorHandler(error, {
+                                                trace: !(error instanceof InvalidPersistentSessionError),
+                                            });
+                                            observeApiError(error, (status) =>
                                                 metrics.core_single_signup_switchSession_total.increment({
-                                                    status: 'success',
-                                                });
-                                            } catch (error) {
-                                                errorHandler(error);
-                                                observeApiError(error, (status) =>
-                                                    metrics.core_single_signup_switchSession_total.increment({
-                                                        status,
-                                                    })
-                                                );
-                                            } finally {
-                                                setTmpUser(null);
-                                            }
-                                        };
+                                                    status,
+                                                })
+                                            );
+                                        } finally {
+                                            setTmpUser(null);
+                                        }
+                                    };
 
-                                        void run();
-                                    }}
-                                    as="button"
-                                    user={user}
-                                    className="w-full interactive"
-                                    right={tmpUser?.LocalID === session.remote.LocalID ? <CircleLoader /> : undefined}
-                                />
-                            );
-                        })}
+                                    void run();
+                                }}
+                                as="button"
+                                user={user}
+                                className="w-full interactive"
+                                right={tmpUser?.LocalID === session.remote.LocalID ? <CircleLoader /> : undefined}
+                            />
+                        );
+                    })}
                 </div>
             </ModalTwoContent>
         </ModalTwo>

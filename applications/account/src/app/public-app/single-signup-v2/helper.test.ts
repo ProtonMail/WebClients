@@ -9,6 +9,7 @@ import {
 } from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans, getTestPlansMap } from '@proton/payments/testing/data-plans';
+import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, USER_ROLES } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
@@ -16,7 +17,7 @@ import type { User } from '@proton/shared/lib/interfaces/User';
 import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import { SubscriptionMode, SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
-import { getAccessiblePlans, getSessionCycle, getSubscriptionData, getUserInfo } from './helper';
+import { getAccessiblePlans, getOtherUserSessions, getSessionCycle, getSubscriptionData, getUserInfo } from './helper';
 import type { PlanCard, SignupParameters2 } from './interface';
 
 jest.mock('@proton/payments/core/api/api', () => ({
@@ -27,6 +28,19 @@ jest.mock('@proton/payments/core/api/api', () => ({
 jest.mock('@proton/payments/sentry/capture', () => ({
     tracePaymentError: jest.fn(),
 }));
+
+describe('getOtherUserSessions', () => {
+    const session = (LocalID: number, UserID: string) => ({ remote: { LocalID, UserID } }) as ActiveSession;
+    const sessions = [session(0, 'a'), session(1, 'b'), session(2, 'a')];
+
+    it('drops every session of the given user', () => {
+        expect(getOtherUserSessions(sessions, 'a')).toEqual([session(1, 'b')]);
+    });
+
+    it('keeps every session without a user', () => {
+        expect(getOtherUserSessions(sessions, undefined)).toEqual(sessions);
+    });
+});
 
 describe('getAccessiblePlans', () => {
     const mockPlanCards = {
