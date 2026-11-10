@@ -800,6 +800,9 @@
       "Skip verification": [
         "Ellenőrzés átugrása"
       ],
+      "Special Offer": [
+        "Akciós ajánlat"
+      ],
       "Start import": [
         "Importálás indítása"
       ],
@@ -904,6 +907,9 @@
       ],
       "Verify account": [
         "Fiók ellenőrzése"
+      ],
+      "Verify now": [
+        "Ellenőrizze most"
       ],
       "View": [
         "Megtekintés"
@@ -1117,6 +1123,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "A próbaidőszak ekkor ér véget: ${ formattedDate1 }, ezután havi előfizetésre alakul át, ami automatikusan megújul ${ renewCycle } havonta. Akkor nem kerül díj felszámításra, ha lemondja ${ formattedDate2 } előtt."
+      ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "A próbaidőszak ekkor ér véget: ${ formattedDate1 }, ezután automatikusan megújuló havi előfizetésre alakul át. Akkor nem kerül díj felszámításra, ha lemondja ${ formattedDate2 } előtt."
       ],
@@ -1663,6 +1672,9 @@
       "${ users } user": [
         "${ users } felhasználó",
         "${ users } felhasználó"
+      ],
+      "Amount due now": [
+        "Az esedékes összeg"
       ],
       "Subtotal for ${ cycle } month": [
         "Összesen, ${ cycle } hónapra",
@@ -3162,6 +3174,9 @@
       ]
     },
     "Duration": {
+      "15 minutes": [
+        "15 perc"
+      ],
       "60 minutes": [
         "60 perc"
       ]
@@ -3420,6 +3435,9 @@
       "Failed to open to contact": [
         "A névjegy megnyitása sikertelen"
       ],
+      "Failed to update settings": [
+        "Nem sikerült frissíteni a beállításokat"
+      ],
       "First name is too long": [
         "A keresztnév túl hosszú"
       ],
@@ -3507,6 +3525,9 @@
       ],
       "No contacts found to import": [
         "Nincs importálandó névjegy"
+      ],
+      "No drive found to import": [
+        "Nem található meghajtó az importáláshoz"
       ],
       "No emails found to import - the account does not have an inbox": [
         "Nincs importálandó e-mail - a fiókban nincsenek beérkezett levelek"
@@ -3731,6 +3752,9 @@
       "Unexpected error, we can't import the contacts": [
         "Váratlan hiba történt, a névjegyek importálása nem sikerült"
       ],
+      "Unexpected error, we can't import the files": [
+        "Váratlan hiba, nem tudjuk importálni a fájlokat"
+      ],
       "Unknown error": [
         "Ismeretlen hiba"
       ],
@@ -3761,6 +3785,9 @@
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nem küldhet emailt több, mint ${ maxContacts } címzettnek",
         "Nem küldhet emailt több, mint ${ maxContacts } címzettnek"
+      ],
+      "You cannot enter the organizer's email": [
+        "Nem tudja megadni a szervező e-mail címét"
       ],
       "You have reached the maximum number of calendars.": [
         "Elérte a naptárak maximális számát."
@@ -4180,6 +4207,9 @@
     "fido2: Info": {
       "Security key": [
         "Hitelesítési kulcs"
+      ],
+      "Still waiting?": [
+        "Még mindíg várakozik?"
       ]
     },
     "fido2: Label": {
@@ -4698,6 +4728,9 @@
         "${ groupCounts } csoport található",
         "${ groupCounts } csoport található"
       ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenc"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "A ${ PASS_SHORT_APP_NAME } élethosszig tartó szerződésnek nincs megújítási ára, ez egy egyszeri fizetés a ${ PASS_SHORT_APP_NAME } élethosszig tartó hozzáférésért."
       ],
@@ -4764,6 +4797,9 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Vészkapcsoló**: Megállítja az adatszivárgást azáltal, hogy blokkolja az internetet, ha a VPN kapcsolat váratlanul megszakad."
       ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**${ refereeRewardAmount }-t kapnak** kreditként, ha előfizetnek."
+      ],
       "A cancellation email will be sent to removed participants.": [
         "Egy lemondó értesítés kerül elküldésre az eltávolított résztvevőknek."
       ],
@@ -4796,6 +4832,9 @@
       ],
       "Ad targeting": [
         "Célzott hirdetések"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hozzáadása"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "A felvett és eltávolított résztvevők értesítést kapnak a sorozat összes eseményéről."
@@ -4859,6 +4898,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "Biztos, hogy elveti az importálást?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Kérje meg a rendszergazdát a csomag frissítésére vagy az oldal eltávolítását a Foglalási oldalak oldalsávon a ${ CALENDAR_APP_NAME }."
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Legalább ${ BETTER_PASSWORD_LENGTH } karakter"
@@ -5113,6 +5155,9 @@
       "High Priority": [
         "Magas prioritású"
       ],
+      "How far in advance can someone book?": [
+        "Mennyivel korábban tud valaki időpontot foglalni?"
+      ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Ha a gyorsbillentyűk engedélyezve vannak, a következő billentyűkkel gyors műveleteket végezhet, illetve különböző nézetekre ugorhat. ${ metaKey } + K mindig engedélyezve van."
       ],
@@ -5246,6 +5291,9 @@
       "Messages to all your email addresses will go to your inbox.": [
         "Az üzenetek bármelyik e-mail címre érkezhetnek, ugyanabban a postafiókban leszek olvashatók."
       ],
+      "Min. 2 hours before": [
+        "Min. 2 órával előtte"
+      ],
       "Min. 48 hours before": [
         "Min. 48 órával előtte"
       ],
@@ -5291,6 +5339,9 @@
       "Not connected": [
         "Nincs kapcsolódva"
       ],
+      "Not on the same day": [
+        "Nem ugyanazon a napon"
+      ],
       "Number of dedicated servers in the organization": [
         "A dedikált szerverek száma a szervezeténél"
       ],
@@ -5323,6 +5374,9 @@
       ],
       "Other accounts": [
         "Egyéb fiókok"
+      ],
+      "Other location": [
+        "Másik helyszín"
       ],
       "Other users within your organization will see your busy slots. No event details are shared.": [
         "Más felhasználók az ön szervezetében látni fogják az elfoglalt időszakait. Semmilyen más esemény részlet lesz megosztva."
@@ -6062,6 +6116,11 @@
         "Heti nézet"
       ]
     },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } megnyitása"
+      ]
+    },
     "Keyboard shortcut section name": {
       "Basic actions": [
         "Alapműveletek"
@@ -6229,6 +6288,9 @@
       ],
       "Don't show this again": [
         "Ne jelenjen meg többet"
+      ],
+      "Drive": [
+        "Drive"
       ],
       "Email": [
         "E-mail"
@@ -7318,6 +7380,9 @@
       "Data breach monitoring": [
         "Adatvédelmi incidensek figyelése"
       ],
+      "Data retention policies": [
+        "Adatmegőrzési házirendek"
+      ],
       "Desktop app": [
         "Asztali alkalmazás"
       ],
@@ -7556,6 +7621,9 @@
       "Vault sharing with up to ${ n } person": [
         "Tároló megosztás ${ n } személlyel",
         "Tároló megosztás akár ${ n } személlyel"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN, hirdetésblokkolóval és rosszindulatú programok elleni védelemmel"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Átvizsgáljuk a sötét webet, hogy ellenőrizzük, kiszivárogtak-e a ${ BRAND_NAME } címei vagy e-mail álnevei, és azonnal értesítjük, ha bármit találunk."
@@ -7918,6 +7986,11 @@
         "${ n } saját e-mail domain név használata"
       ]
     },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Most már használhatja az új ${ CALENDAR_APP_NAME }-t. ${ link }"
+      ]
+    },
     "Note": {
       "Note:": [
         "Jegyzet:"
@@ -8259,6 +8332,9 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         "látogassa meg: ${ helpCenterLink } vagy ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Adjon meg egy fizetési módot**, hogy a próbaidőszak után is használhassa az összes funkciót."
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Bármikor lemondhatja ${ cancelDate } előtt."
       ],
@@ -8279,6 +8355,9 @@
       ],
       "Once your full subscription starts...": [
         "Miután elindul a teljes előfizetése..."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "30 napon belül lemondhatja, és időarányos visszatérítést kap."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "30 napon belül még mindig lemondhatja a szerződést, és időarányos visszatérítést kaphat."
@@ -8520,6 +8599,12 @@
       ],
       "More plans are available in other currencies": [
         "További csomagok érhetők el más pénznemekben"
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Csak egy ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } vásárolható."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Fizetés ${ IDEAL_WERO_BRAND_NAME }val"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Fizetési mód szükséges az előfizetés aktiválásához a próbaverzió lejárta után."
@@ -8908,7 +8993,7 @@
         "Fax"
       ],
       "Home": [
-        "Otthoni"
+        "Kezdőlap"
       ],
       "Main": [
         "Elsődleges"
@@ -10342,6 +10427,9 @@
       "${ feature } is now active": [
         "A(z) ${ feature } mostantól aktív"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } író segéd"
+      ],
       "Account recovery": [
         "Fiók helyreállítás"
       ],
@@ -11203,6 +11291,11 @@
       ],
       "The user must have an address to request data access": [
         "A felhasználónak rendelkeznie kell egy címmel az adathozzáférés igényléséhez."
+      ]
+    },
+    "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Adminisztrátor szerepkörök használatához váltson egy erre alkalmas csomagra."
       ]
     },
     "Validation": {

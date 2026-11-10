@@ -95,6 +95,9 @@
       "Add notification": [
         "Legg til varsel"
       ],
+      "Add payment method": [
+        "Legg til betalingsmåte"
+      ],
       "Add phone number": [
         "Legg til telefonnummer"
       ],
@@ -131,6 +134,9 @@
       ],
       "Cancel subscription": [
         "Avbryt abonnement"
+      ],
+      "Cancel trial": [
+        "Avbryt prøveperioden"
       ],
       "Cancel trial and pay": [
         "Avbryt prøveperioden og betal"
@@ -1478,6 +1484,11 @@
       ],
       "Yearly": [
         "Årlig"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName }-skrivebordsapplikasjon"
       ]
     },
     "Bug category": {
@@ -5285,6 +5296,9 @@
       "Are you sure you want to discard your import?": [
         "Er du sikker på at du vil forkaste importen din?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Be administratoren din om å oppgradere planen eller fjerne en side fra sidefeltet for bestillingssider i ${ CALENDAR_APP_NAME }."
+      ],
       "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
         "Be administratoren din om å oppgradere planen eller fjerne en side fra sidefeltet for bestillingssider."
       ],
@@ -6159,6 +6173,9 @@
       ],
       "To add a new booking page, ask your admin to upgrade your plan.": [
         "For å legge til en ny bestillingsside, be administratoren om å oppgradere planen din."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "For å legge til en ny bestillingsside, fjern en besillingsside fra sidemenyen i ${ CALENDAR_APP_NAME }."
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
         "For å legge til en ny bestillingsside, fjern en eksisterende fra sidefeltet for bestillingssider."
@@ -9179,8 +9196,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Avbryt når som helst før da.** Du kan bruke ${ planTitle } helt til prøveperioden avsluttes, gratis."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Hvis du fortsetter etter prøveperioden,** kan du si opp innen 30 dager og få en forholdsmessig refusjon."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Ombestemt deg etter prøveperioden?** Si opp innen 30 dager etter første betaling, og vi refunderer den ubrukte tiden."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Når det fulle abonnementet ditt starter ...** Du kan fortsatt si opp innen 30 dager og få en forholdsmessig refusjon."
@@ -9536,6 +9553,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, avbryt når som helst."
       ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Scribe-seter kan ikke overstige antallet medlemmer."
+      ],
       "Tax ${ rate }%": [
         "MVA ${ rate }%"
       ],
@@ -9613,6 +9633,9 @@
       ],
       "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
         "Prøveplaner støtter ikke ${ LUMO_SHORT_APP_NAME }-seter."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Prøveplaner støtter ikke egendefinerte domener."
       ],
       "Trial plans don’t support dedicated IPs.": [
         "Prøveplaner støtter ikke dedikerte IP-er."
