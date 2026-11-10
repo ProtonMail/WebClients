@@ -31,7 +31,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 import { androidMarketplaceUrl, iosMarketplaceUrl } from '../../../constants/downloadLinks';
 import { useFetchDownloadLinks } from '../../hooks/useFetchDownloadLinks';
 import DownloadModal from './DownloadModal';
-import { FeedbackSurveyModal } from './FeedbackSurveyModal';
+import { FeedbackSurveyModal } from './FeedbackSurvey/FeedbackSurveyModal';
 import { FeedbackSurveyModalWrapper } from './FeedbackSurveyModalWrapper';
 
 const LinkItem = ({ href, text, onClick }: { href: string; text: string; onClick?: () => void }) => {
