@@ -83,16 +83,24 @@ export const createPlaintextDraftContent = ({
     userSettings: UserSettings;
     fontStyle: string;
 }) => {
-    const messageBody =
-        action === MESSAGE_ACTIONS.NEW
-            ? referenceMessage?.decryption?.decryptedBody || ''
-            : generatePlaintextBlockquote(referenceMessage || {}, action);
-
+    const isNewDraft = action === MESSAGE_ACTIONS.NEW;
     const signatureTemplate = templateBuilder(senderAddress?.Signature, mailSettings, userSettings, fontStyle, true);
     const plaintextSignature = exportPlainTextSignature(signatureTemplate);
 
+    // A `mailto:` body comes as HTML, and may have no text at all (only spaces or images)
+    const mailtoBodyText = isNewDraft ? exportPlainText(referenceMessage?.decryption?.decryptedBody || '') : '';
+
+    if (mailtoBodyText) {
+        // Like in HTML drafts, the body goes first, then two empty lines and the signature
+        const plainText = plaintextSignature ? `${mailtoBodyText}\n\n\n${plaintextSignature}` : mailtoBodyText;
+
+        return { plainText, document: undefined };
+    }
+
+    const blockquote = isNewDraft ? '' : generatePlaintextBlockquote(referenceMessage || {}, action);
+
     // Plaintext drafts are starting with 4 empty lines
-    const plainText = plaintextSignature ? `\n\n\n\n${plaintextSignature}\n\n${messageBody}` : `\n\n\n\n${messageBody}`;
+    const plainText = plaintextSignature ? `\n\n\n\n${plaintextSignature}\n\n${blockquote}` : `\n\n\n\n${blockquote}`;
 
     return { plainText, document: undefined };
 };
