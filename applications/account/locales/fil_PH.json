@@ -3597,9 +3597,6 @@
       "Confirm cancellation": [
         "Kumpirmahin ang pagkansela"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Kung lumampas ka sa mga limitasyon ng free plan, hindi mo magagawang:"
-      ],
       "Keep current plan": [
         "Panatilihin ang kasalukuyang plano"
       ],
@@ -3614,9 +3611,6 @@
       ],
       "Upload any new files": [
         "I-upload ang anumang mga bagong file"
-      ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Kapag nagtapos ang iyong subscription sa ${ endDate }, lilipat ang iyong account sa Free plan. Kung ang iyong paggamit ay lumampas sa mga limitasyon ng Free plan, maaaring pansamantalang hindi magamit ang ilang feature."
       ]
     },
     "Confirm modal title": {
@@ -6746,9 +6740,6 @@
       "Invalid invitation link": [
         "Hindi valid na link ng imbitasyon"
       ],
-      "Invalid joining link. Please contact your administrator.": [
-        "Hindi valid na joining link. Pakikontak ang administrator."
-      ],
       "Invalid name": [
         "Hindi valid na pangalan"
       ],
@@ -7608,9 +7599,6 @@
       "${ BRAND_NAME } groups": [
         "Mga pangkat ng ${ BRAND_NAME }"
       ],
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Isang libreng pagsubok lang bawat user. Ilalapat na ang regular na presyo pagkatapos."
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Hindi makakasali ang mga account na may mga custom na domain sa family plan."
       ],
@@ -7676,9 +7664,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Sisingilin ang subscription sa pangunahing admin ng planong ito."
       ],
-      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
-        "Para mapadali ang paglipat, bibigyan ka namin ng 30-araw na libreng pagsubok ng ${ BRAND_NAME } Unlimited*."
-      ],
       "View the invitation": [
         "Tingnan ang imbitasyon",
         "Tingnan ang mga imbitasyon"
@@ -7735,14 +7720,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Isang libreng pagsubok lang bawat user. Ilalapat na ang regular na presyo pagkatapos."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Pagkaalis sa iyong plano, ililipat ang user na ito sa ${ BRAND_NAME } Free plan."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Pagkaalis sa plano, ililipat ang user na ito sa ${ BRAND_NAME } Unlimited na plano na may 30-araw na libreng pagsubok.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Italaga ang storage sa administrator account. Maaari mong ipamahagi ang storage para sa mga karagdagang user sa ibang pagkakataon."
@@ -15282,6 +15261,9 @@
       "Terms": [
         "Mga Tuntunin"
       ],
+      "terms and conditions": [
+        "mga tuntunin at kondisyon"
+      ],
       "terms of our referral program": [
         "mga tuntunin ng aming referral program"
       ],
@@ -18822,11 +18804,6 @@
         "Makipag-ugnayan sa Suporta sa Customer upang kumpirmahin ang pagbabago ng pagmamay-ari"
       ]
     },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Hindi kailanman"
-      ]
-    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Sigurado ka bang gusto mong magpatuloy?"
@@ -22191,12 +22168,6 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "Inilapat ang ${ discountItem.discountPercent }% na diskwento"
-      ],
-      "${ discountItem.discountPercent }% off": [
-        "${ discountItem.discountPercent }% discount"
-      ],
       "${ trialCycleText } free": [
         "${ trialCycleText } libre"
       ],
@@ -25145,9 +25116,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Maligayang pagdating sa ${ BRAND_NAME } for Business"
       ],
-      "What changes if you switch to the Free plan": [
-        "Anong mga pagbabago kung lilipat ka sa Free plan"
-      ],
       "What is an alias?": [
         "Ano ang alias?"
       ],
@@ -25317,9 +25285,6 @@
       ]
     },
     "Title subscription": {
-      "End date": [
-        "Petsa ng pagtatapos"
-      ],
       "Plan": [
         "Plano"
       ],

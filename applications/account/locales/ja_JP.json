@@ -606,6 +606,9 @@
       "Don't show again": [
         "次回から表示しない"
       ],
+      "Don't show this offer again": [
+        "このオファーを今後表示しない"
+      ],
       "Donate": [
         "寄付"
       ],
@@ -1625,6 +1628,9 @@
       ],
       "Spam": [
         "迷惑メール"
+      ],
+      "Special Offer": [
+        "特別オファー"
       ],
       "Start free trial": [
         "無料トライアルを開始"
@@ -3651,9 +3657,6 @@
       "Confirm cancellation": [
         "キャンセルを確認"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Free planの制限を超えた場合、以下のことができなくなります："
-      ],
       "Keep current plan": [
         "現在のプランを維持"
       ],
@@ -3668,9 +3671,6 @@
       ],
       "Upload any new files": [
         "新しいファイルをアップロードする"
-      ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "サブスクリプションが ${ endDate } に終了すると、アカウントはFree planに切り替わります。使用量がFree planの制限を超えている場合、一部の機能が一時的に利用できなくなることがあります。"
       ]
     },
     "Confirm modal title": {
@@ -6888,9 +6888,6 @@
       "Invalid invitation link": [
         "無効な招待リンクです"
       ],
-      "Invalid joining link. Please contact your administrator.": [
-        "無効な参加リンクです。管理者にお問い合わせください。"
-      ],
       "Invalid name": [
         "無効な名前です"
       ],
@@ -7298,6 +7295,9 @@
       ],
       "The session has expired. Please sign in again.": [
         "セッションがタイムアウトしました。再度サインインしてください。"
+      ],
+      "The session has expired. Please try again.": [
+        "セッションの有効期限が切れました。再度ログインしてください。"
       ],
       "The uploaded file does not match the original. Please try again.": [
         "アップロードされたファイルが元のファイルと一致しません。もう一度お試しください。"
@@ -7876,9 +7876,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } グループ"
       ],
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "ユーザーにつき1度だけの無料トライアル。その後は通常料金が適用されます。"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "カスタムドメインのアカウントはファミリープランに加入することはできません。"
       ],
@@ -7942,9 +7939,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "サブスクリプションはこのプランのプライマリー管理者に請求されます。"
       ],
-      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
-        "移行をスムーズにするために、${ BRAND_NAME } 無制限*の 30 日間の無料トライアルを提供しています。"
-      ],
       "View the invitation": [
         "招待を表示"
       ],
@@ -8001,14 +7995,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "ユーザーにつき1度の無料トライアル*。その後は通常料金が適用されます。"
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "プランを離れた後、このユーザーは${ BRAND_NAME }の無料プランに移行されます。"
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "プランを離れた後、このユーザーは 30 日の無料トライアル付きの${ BRAND_NAME }無制限プラン*に移行されます。"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "管理者アカウントにストレージを割り当てます。追加ユーザーのストレージは、後から分配することができます。"
@@ -10313,6 +10301,9 @@
       ],
       "Discount": [
         "割引"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "割引は通常の月払い料金を基準としています。請求サイクルが終了すると、サブスクリプションは通常の年額料金で更新されます。"
       ],
       "Discover new features unlocked and start using them right away!": [
         "アンロックされた新機能を見つけて、すぐに使い始めましょう！"
@@ -15573,6 +15564,9 @@
       "Terms": [
         "利用規約"
       ],
+      "terms and conditions": [
+        "利用規約"
+      ],
       "terms of our referral program": [
         "紹介プログラムの規約"
       ],
@@ -17920,9 +17914,6 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**それまではいつでもキャンセルできます。** トライアルが終了するまで、無料で ${ planTitle } をご利用いただけます。"
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**トライアル終了後も継続してご利用いただく場合、** 30日以内にキャンセルすれば日割り計算による返金を受けることができます。"
-      ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**正式なサブスクリプションの開始後も…** 30日以内であればキャンセルして日割り計算による返金を受けることができます。"
       ],
@@ -19216,11 +19207,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "カスタマーサポートに連絡し、所有権の変更を確認してください"
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "一度もない"
       ]
     },
     "Payments.ModificationWarning": {
@@ -22563,12 +22549,6 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "${ discountItem.discountPercent }% の割引が適用されました"
-      ],
-      "${ discountItem.discountPercent }% off": [
-        "${ discountItem.discountPercent }％オフ"
-      ],
       "${ trialCycleText } free": [
         "${ trialCycleText } 無料"
       ],
@@ -25483,9 +25463,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Businessへようこそ"
       ],
-      "What changes if you switch to the Free plan": [
-        "Free planに移行した場合の変更点"
-      ],
       "What is an alias?": [
         "エイリアスとは？"
       ],
@@ -25655,9 +25632,6 @@
       ]
     },
     "Title subscription": {
-      "End date": [
-        "終了日"
-      ],
       "Plan": [
         "プラン"
       ],

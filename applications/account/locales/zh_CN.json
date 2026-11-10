@@ -947,6 +947,9 @@
       "Don't show again": [
         "不再显示"
       ],
+      "Don't show this offer again": [
+        "不再显示此优惠"
+      ],
       "Donate": [
         "捐赠"
       ],
@@ -2026,6 +2029,9 @@
       ],
       "Spam": [
         "垃圾邮件"
+      ],
+      "Special Offer": [
+        "超值特惠"
       ],
       "Start free trial": [
         "开始免费试用"
@@ -4206,9 +4212,6 @@
       "Confirm cancellation": [
         "确认取消"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "如果您超出免费套餐限制，您将无法："
-      ],
       "Keep current plan": [
         "保留当前套餐"
       ],
@@ -4223,9 +4226,6 @@
       ],
       "Upload any new files": [
         "上传任意文件"
-      ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "当您的订阅在 ${ endDate } 结束时，您的账户将切换到免费套餐。如果您的使用量超过免费套餐限制，某些功能可能会暂时不可用。"
       ]
     },
     "Confirm modal title": {
@@ -7534,9 +7534,6 @@
       "Invalid invitation link": [
         "无效的邀请链接"
       ],
-      "Invalid joining link. Please contact your administrator.": [
-        "无效的加入链接。请联系您的管理员。"
-      ],
       "Invalid name": [
         "名称无效"
       ],
@@ -8555,9 +8552,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } 团体账户"
       ],
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*每个用户只能免费试用一次，之后适用常规定价。"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "带有自定义域的账户无法加入家庭套餐。"
       ],
@@ -8621,9 +8615,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "订购费用将向该计划的主要管理员收取。"
       ],
-      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
-        "为了方便过渡，我们给你 30 天免费试用 ${ BRAND_NAME } 无限制*。"
-      ],
       "View the invitation": [
         "查看邀请"
       ],
@@ -8680,14 +8671,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*每个用户只能免费试用一次，之后适用常规定价。"
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "退出您的套餐后，该用户将被移至 ${ BRAND_NAME } 免费套餐。"
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "退出您的套餐后，该用户将被移至 ${ BRAND_NAME } Unlimited 套餐，并享有 30 天免费试用。*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "为管理员账户分配存储空间，您可以稍后为其他用户分配存储。"
@@ -11189,6 +11174,9 @@
       "Discount": [
         "优惠"
       ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "折扣基于标准月度价格。结算周期结束时，您的订阅将按标准年度费率续订。"
+      ],
       "Discover new features unlocked and start using them right away!": [
         "发现解锁的新功能，并立即开始使用！"
       ],
@@ -13615,12 +13603,6 @@
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "开启通知后，我们将通过密保邮箱提醒您 ${ MAIL_APP_NAME } 收到的新邮件。"
-      ],
-      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "当登录受限时，仅可使用 ${ primaryEmailElement } 和您的用户名 ${ usernameElement } 登录。即使他人知晓，您的其他地址也无法关联到您的账户。"
-      ],
-      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "当登录受限时，仅可使用您的用户名 ${ usernameElement } 登录。即使他人知晓，您的其他地址也无法关联到您的账户。"
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "取消后，您的订阅将不会续订，但您仍可享受套餐优惠，直至订阅期结束。之后，您将降级到 ${ BRAND_NAME } 的免费套餐。"
@@ -16070,9 +16052,6 @@
       "Reserved email address": [
         "预留的邮箱地址"
       ],
-      "Restrict sign-in to primary email address": [
-        "限制仅使用主邮箱地址登录"
-      ],
       "Restrict sign-in to username": [
         "限制仅使用用户名登录"
       ],
@@ -16904,6 +16883,9 @@
         "切换账户"
       ],
       "Terms": [
+        "服务条款"
+      ],
+      "terms and conditions": [
         "服务条款"
       ],
       "terms of our referral program": [
@@ -19291,9 +19273,6 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**在此之前可随时取消。** 在试用期结束前，您可以免费使用 ${ planTitle }。"
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**如果您在试用期结束后继续使用，** 可以在 30 天内取消，并获得按比例退款。"
-      ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**您的完整订阅开始后…** 您仍可在 30 天内取消，并获得按比例退款。"
       ],
@@ -20702,11 +20681,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "请联系客服支持以确认所有权变更"
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "永不"
       ]
     },
     "Payments.ModificationWarning": {
@@ -24200,12 +24174,6 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "已应用 ${ discountItem.discountPercent }% 折扣"
-      ],
-      "${ discountItem.discountPercent }% off": [
-        "立减 ${ discountItem.discountPercent }%"
-      ],
       "${ trialCycleText } free": [
         "免费 ${ trialCycleText }"
       ],
@@ -27384,9 +27352,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "欢迎使用 ${ BRAND_NAME } 商业版"
       ],
-      "What changes if you switch to the Free plan": [
-        "切换到免费套餐会有什么变化"
-      ],
       "What is an alias?": [
         "什么是邮箱别名？"
       ],
@@ -27577,17 +27542,11 @@
       "Billing": [
         "账单"
       ],
-      "End date": [
-        "结束日期"
-      ],
       "Plan": [
         "等级"
       ],
       "Price": [
         "价格"
-      ],
-      "Start date": [
-        "开始日期"
       ],
       "Status": [
         "状态"

@@ -12537,6 +12537,9 @@
       "Terms": [
         "Pogoji"
       ],
+      "terms and conditions": [
+        "pravili in pogoji"
+      ],
       "Trouble signing in?": [
         "Imate težave s prijavo?"
       ],
@@ -17679,12 +17682,6 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "Uporabljen je bil ${ discountItem.discountPercent }% popust"
-      ],
-      "${ discountItem.discountPercent }% off": [
-        "${ discountItem.discountPercent }% popusta"
-      ],
       "${ trialCycleText } free": [
         "${ trialCycleText } brezplačno"
       ],
@@ -20210,9 +20207,6 @@
       ]
     },
     "Title subscription": {
-      "End date": [
-        "Končni datum"
-      ],
       "Plan": [
         "Paket"
       ],

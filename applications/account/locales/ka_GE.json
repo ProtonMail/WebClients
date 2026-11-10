@@ -3600,9 +3600,6 @@
       "Confirm cancellation": [
         "გაუქმების დადასტურება"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "თუ გადააჭარბებთ უფასო პაკეტის ლიმიტებს, ვეღარ შეძლებთ შემდეგ მოქმედებებს:"
-      ],
       "Keep current plan": [
         "მიმდინარე პაკეტის შენარჩუნება"
       ],
@@ -3617,9 +3614,6 @@
       ],
       "Upload any new files": [
         "ატვირთეთ ნებისმიერი ახალი ფაილი"
-      ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "როდესაც თქვენი გამოწერა დასრულდება ${ endDate }-ზე, თქვენი ანგარიში გადავა Free plan-ზე. თუ თქვენი გამოყენება გადააჭარბებს Free plan-ის ლიმიტებს, ზოგიერთი ფუნქცია შეიძლება დროებით მიუწვდომელი გახდეს."
       ]
     },
     "Confirm modal title": {
@@ -6749,9 +6743,6 @@
       "Invalid invitation link": [
         "არასწორი მოსაწვევის ბმული"
       ],
-      "Invalid joining link. Please contact your administrator.": [
-        "ჯგუფში გაწევრიანების ბმული არასწორია. გთხოვთ, დაუკავშირდეთ თქვენს ადმინისტრატორს."
-      ],
       "Invalid name": [
         "არასწორი სახელი"
       ],
@@ -7611,9 +7602,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ჯგუფები"
       ],
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*მხოლოდ, ერთი უფასო სატესტო დრო ერთი მომხმარებლისთვის. შემდეგ კი ჩვეულებრივი ფასებით გადაიხდით."
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "მომხმარებლის დომენის მქონე ანგარიშები ოჯახის ტარიფს ვერ მიიღებენ."
       ],
@@ -7679,9 +7667,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "გამოწერის გადასახადს ამ გეგმის ძირითადი ადამინისტრატორი გადაიხდის."
       ],
-      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
-        "გადასვლის გასაადვილებლად ${ BRAND_NAME } Unlimited-თან 30 დღიან გამოსაცდელ წვდომას მოგცემთ*."
-      ],
       "View the invitation": [
         "მოსაწვევის ნახვა",
         "მოსაწვევების ნახვა"
@@ -7738,14 +7723,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*მხოლოდ, ერთი უფასო სატესტო დრო ერთი მომხმარებლისთვის. შემდეგ კი ჩვეულებრივი ფასებით გადაიხდით."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "სატარიფო გეგმიდან გასვლის შემდეგ მომხმარებელი ${ BRAND_NAME }-ის უფასო სატარიფო გეგმაე გადავა"
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "თქვენი სატარიფო გეგმის მიტოვების შემდეგ ეს მომხმრებელი გადატანილი იქნება სატარიფო გეგმაზე ${ BRAND_NAME } Unlimited 30-დღიანი გამოსაცდელი პერიოდით. *"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "მიანიჭეთ საცავი ადმინისტრატორის ანგარიშს. თქვენ შეგიძლიათ გადაანაწილოთ საცავი დამატებითი მომხმარებლებისთვის მოგვიანებით."
@@ -15291,6 +15270,9 @@
       "Terms": [
         "წესები"
       ],
+      "terms and conditions": [
+        "წესები და პირობები"
+      ],
       "terms of our referral program": [
         "რეფერალური პროგრამის პირობები"
       ],
@@ -18831,11 +18813,6 @@
         "მიწერეთ კლიენტის მხარდაჭერის ცენტრს მფლობელობის შეცვლის დასადასტურებლად"
       ]
     },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "არასოდეს"
-      ]
-    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, გააგრძელოთ?"
@@ -22206,12 +22183,6 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "გამოყენებულია ${ discountItem.discountPercent }%-იანი ფასდაკლება"
-      ],
-      "${ discountItem.discountPercent }% off": [
-        "${ discountItem.discountPercent }%-იანი ფასდაკლება"
-      ],
       "${ trialCycleText } free": [
         "${ trialCycleText } free"
       ],
@@ -25166,9 +25137,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "მოგესალმებათ ${ BRAND_NAME } for Business"
       ],
-      "What changes if you switch to the Free plan": [
-        "რა იცვლება, თუ გადახვალთ Free plan-ზე"
-      ],
       "What is an alias?": [
         "რა არის ფსევდონიმი?"
       ],
@@ -25338,9 +25306,6 @@
       ]
     },
     "Title subscription": {
-      "End date": [
-        "დასასრულის დრო"
-      ],
       "Plan": [
         "ტარიფი"
       ],

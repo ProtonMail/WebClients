@@ -464,6 +464,9 @@
       "Add notification": [
         "Benachrichtigung hinzufügen"
       ],
+      "Add payment method": [
+        "Zahlungsmethode hinzufügen"
+      ],
       "Add PayPal": [
         "Paypal hinzufügen"
       ],
@@ -554,6 +557,12 @@
       "Cancel": [
         "Abbrechen"
       ],
+      "Cancel ${ planTitle }": [
+        "${ planTitle } kündigen"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "${ planTitle }-Testversion kündigen"
+      ],
       "Cancel import": [
         "Import abbrechen"
       ],
@@ -562,6 +571,9 @@
       ],
       "Cancel subscription": [
         "Abonnement kündigen"
+      ],
+      "Cancel trial": [
+        "Testphase beenden"
       ],
       "Cancel trial and pay": [
         "Testversion beenden und bezahlen"
@@ -770,6 +782,9 @@
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Link erstellen, um mit Personen außerhalb von ${ BRAND_NAME } zu teilen"
       ],
+      "Create account": [
+        "Konto erstellen"
+      ],
       "Create calendar": [
         "Kalender erstellen"
       ],
@@ -946,6 +961,9 @@
       ],
       "Don't show again": [
         "Nicht wieder anzeigen"
+      ],
+      "Don't show this offer again": [
+        "Dieses Angebot nicht erneut anzeigen"
       ],
       "Donate": [
         "Spende"
@@ -1264,6 +1282,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Gehe zu ${ planOrAppName }"
+      ],
+      "Go to folder": [
+        "Zum Ordner wechseln"
       ],
       "Go to label": [
         "Zu Kategorie wechseln"
@@ -1763,6 +1784,9 @@
       "Restore": [
         "Wiederherstellen"
       ],
+      "Restrict sign-in": [
+        "Anmeldung einschränken"
+      ],
       "Resume": [
         "Fortsetzen"
       ],
@@ -1991,6 +2015,9 @@
       "Sign in to ${ PASS_APP_NAME }": [
         "Bei ${ PASS_APP_NAME } anmelden"
       ],
+      "Sign in to a different account": [
+        "Bei einem anderen Konto anmelden"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Mit ${ BRAND_NAME } anmelden"
       ],
@@ -2035,6 +2062,9 @@
       ],
       "Spam": [
         "Spam"
+      ],
+      "Special Offer": [
+        "Sonderangebot"
       ],
       "Start free trial": [
         "Kostenlose Testversion starten"
@@ -2349,6 +2379,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "Abonnement kündigen"
+      ],
       "Reactivate": [
         "Reaktivieren"
       ],
@@ -2569,6 +2602,9 @@
       ],
       "Permission revoked": [
         "Berechtigung widerrufen"
+      ],
+      "Sign-in": [
+        "Anmelden"
       ]
     },
     "Admin": {
@@ -2823,6 +2859,9 @@
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wenn du kündigst, wird deine kostenlose Testversion nicht in ein kostenpflichtiges Abonnement umgewandelt, aber du kannst die Vorteile des Abonnements noch bis zum Ende des Testzeitraums nutzen. Danach wirst du auf das ${ BRAND_NAME } Free-Abonnement zurückgestuft."
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "Wenn du kündigst, wird dein Probeabonnement nicht in ein kostenpflichtiges Abonnement umgewandelt."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_DEDICATED_IPS } dedizierte Server haben."
@@ -4245,8 +4284,8 @@
       "Confirm cancellation": [
         "Kündigung bestätigen"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Wenn du die Limiten der kostenlosen Abonnements überschreitest, ist Folgendes nicht mehr möglich:"
+      "If you exceed your plan limits, you won't be able to:": [
+        "Wenn du die Speichergrenzen deines Abonnements überschreitest, ist Folgendes nicht mehr möglich:"
       ],
       "Keep current plan": [
         "Aktuelles Abonnement beibehalten"
@@ -4263,8 +4302,11 @@
       "Upload any new files": [
         "Neue Dateien hochladen"
       ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Wenn dein Abonnement am ${ endDate } ausläuft, wird dein Konto auf das kostenlose Abonnement umgestellt. Sollte deine Nutzung die Grenzen des kostenlosen Abonnements überschreiten, sind einige Funktionen möglicherweise vorübergehend nicht verfügbar."
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Wenn dein ${ planDisplayName }-Abonnement am ${ endDate } ausläuft, stehen dir die entsprechenden Funktionen nicht mehr zur Verfügung. Sollte deine Nutzung danach die Limits deines Tarifs überschreiten, sind einige Funktionen möglicherweise vorübergehend nicht verfügbar."
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Wenn dein Abonnement am ${ endDate } endet, wirst du seine Vorteile verlieren. Wenn dein Verbrauch dann deine Speichergrenze überschreitet, werden einige Funktionen vorübergehend nicht verfügbar sein."
       ]
     },
     "Confirm modal title": {
@@ -5488,7 +5530,7 @@
         "Verbinde dein CRM, deine Website, Drucker und mehr."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
-        "Erstelle ein Zoom-Meeting und füge deine Veranstaltung mit einem Klick Details zur Teilnahme hinzu."
+        "Erstelle ein Zoom-Meeting und füge deiner Veranstaltung mit einem Klick Details zur Teilnahme hinzu."
       ],
       "Create as many labels or folders as you need to keep your inbox tidy.": [
         "Lege so viele Etiketten oder Ordner an, wie du brauchst, um deinen Posteingang in übersichtlich zu halten."
@@ -7612,9 +7654,6 @@
       "Invalid invitation link": [
         "Ungültiger Einladungslink"
       ],
-      "Invalid joining link. Please contact your administrator.": [
-        "Ungültiger Zugangs-Link. Bitte kontaktiere deinen Administrator."
-      ],
       "Invalid name": [
         "Ungültiger Name"
       ],
@@ -8024,6 +8063,9 @@
       "The amount due has changed. Please try again.": [
         "Der fällige Betrag hat sich geändert. Bitte versuche es erneut."
       ],
+      "The device you scanned the QR code with didn't send your sign-in details. Update the app on that device and try again.": [
+        "Das Gerät, von dem aus du den QR-Code eingelesen hast, hat deine Anmeldedaten nicht übermittelt. Aktualisiere die App auf diesem Gerät und versuche es erneut."
+      ],
       "The email addresses do not match": [
         "Die E-Mail-Adressen stimmen nicht überein"
       ],
@@ -8065,6 +8107,9 @@
       ],
       "The session has expired. Please sign in again.": [
         "Die Sitzung ist abgelaufen. Bitte melde dich erneut an."
+      ],
+      "The session has expired. Please try again.": [
+        "Die Sitzung ist abgelaufen. Bitte versuche es erneut."
       ],
       "The total could not be calculated. Change the amount to try again.": [
         "Der Gesamtbetrag konnte nicht berechnet werden. Ändere den Betrag und versuche es erneut."
@@ -8663,9 +8708,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-Gruppen"
       ],
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Nur eine kostenlose Testphase pro Benutzer. Danach gelten die regulären Preise."
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Konten mit eigenen Domains können keinem Familienabonnement beitreten."
       ],
@@ -8731,9 +8773,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Das Abonnement wird dem Hauptadministrator dieses Plans in Rechnung gestellt."
       ],
-      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
-        "Um dir den Übergang zu erleichtern, bieten wir dir eine kostenlose 30-tägige Testversion von ${ BRAND_NAME } Unlimited*."
-      ],
       "View the invitation": [
         "Einladung ansehen",
         "Einladungen ansehen"
@@ -8793,14 +8832,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Nur eine kostenlose Testphase pro Benutzer. Danach gelten die regulären Preise."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Nach dem Verlassen deines Abonnements wird diesem Benutzer ein ${ BRAND_NAME } Free-Abonnement zugewiesen."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Nach dem Verlassen deines Abonnements wird diesem Benutzer ein ${ BRAND_NAME } Unlimited-Abonnement mit 30-tägiger Testphase zugewiesen.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Dem Administratorkonto Speicher zuweisen. Du kannst den Speicher für zusätzliche Benutzer später verteilen."
@@ -11108,6 +11141,21 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Indem du die vollständigen Termindetails dieses Kalenders freigibst, erklärst du dich damit einverstanden, ${ BRAND_NAME } Zugriff auf diese verschlüsselten Informationen des Kalenders zu gewähren."
       ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit **${ primaryEmail }** anmelden."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem ursprünglichen Benutzernamen **${ username }** anmelden – entweder allein oder in der Form **${ firstEmail }**, **@${ secondDomain }** oder **@${ thirdDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem ursprünglichen Benutzernamen **${ username }** anmelden – entweder allein oder in Kombination mit **${ firstEmail }** oder **@${ secondDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem ursprünglichen Benutzernamen **${ username }** anmelden, entweder allein oder in Kombination mit **${ firstEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem Benutzernamen **${ username }** anmelden."
+      ],
       "Can you access your active session?": [
         "Kannst du auf deine aktive Sitzung zugreifen?"
       ],
@@ -11415,6 +11463,9 @@
       ],
       "Discount": [
         "Rabatt"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Die Rabatte beziehen sich auf die regulären monatlichen Preise. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum regulären Jahrespreis."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Entdecke die neuen Funktionen, die freigeschaltet wurden, und probiere sie gleich aus!"
@@ -11945,11 +11996,17 @@
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Wenn diese Option deaktiviert ist, können Organisationsmitglieder nur Tresore oder Einträge innerhalb der Organisation freigeben."
       ],
+      "If disabled, organization members won't be able to add 2FA codes to their items, and existing ones won't be generated or autofilled. Nothing is deleted.": [
+        "Wenn diese Funktion deaktiviert ist, können Organisationsmitglieder keine 2FA-Codes zu ihren Einträgen hinzufügen, und bereits vorhandene Codes werden weder generiert noch automatisch ausgefüllt. Es werden keine Daten gelöscht."
+      ],
       "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
         "Wenn deaktiviert, können Organisationsmitglieder keine neuen Aliase erstellen. Bestehende Aliase bleiben aktiv."
       ],
       "If disabled, organization members won't be able to create secure links. Previously active secure links remain valid until their expiration.": [
         "Wenn diese Option deaktiviert ist, können Mitglieder der Organisation keine geschützen Links erstellen. Zuvor aktive geschützte Links bleiben bis zu ihrem Ablaufdatum gültig."
+      ],
+      "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
+        "Wenn diese Option deaktiviert ist, können Mitglieder der Organisation keine Passkeys in ${ PASS_APP_NAME } speichern oder sich damit anmelden. Es werden keine Daten gelöscht."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Wenn aktiviert, können Organisationsmitglieder neben Tresoren auch einzelne Einträge teilen."
@@ -12117,6 +12174,9 @@
       ],
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Ungültiger Code. ${ RequestNewCodeLink } und versuche es erneut."
+      ],
+      "Invalid joining link": [
+        "Ungültiger Meeting-Link"
       ],
       "Invitation link expired": [
         "Einladungslink abgelaufen"
@@ -13321,6 +13381,9 @@
       "This is the password you used before the password reset.": [
         "Es handelt sich dabei um das Passwort, das du vor dem Zurücksetzen des Passworts verwendet hast."
       ],
+      "This joining link isn't valid. Please contact your administrator for a new one.": [
+        "Dieser Link ist ungültig. Bitte deinen Administrator um einen neuen Link."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dieser Link führt zu einer Website, die möglicherweise versucht, deine Informationen wie Passwörter und Kreditkartendaten zu stehlen."
       ],
@@ -13918,17 +13981,26 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Wenn Benachrichtigungen aktiviert sind, senden wir eine Benachrichtigung an deine Wiederherstellungs-E-Mail-Adresse, wenn du neue Nachrichten in deinem ${ MAIL_APP_NAME }-Konto hast."
       ],
-      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Wenn die Anmeldung eingeschränkt ist, können nur ${ primaryEmailElement } und dein Benutzername ${ usernameElement } zur Anmeldung verwendet werden. Deine anderen E-Mail-Adressen können nicht mit deinem Konto verknüpft werden, selbst wenn jemand sie kennt."
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Wenn die Anmeldung eingeschränkt ist, kann nur deine E-Mail-Adresse **${ primaryEmail }** zur Anmeldung verwendet werden. Deine sonstigen Adressen können nicht mit deinem Konto verknüpft werden, selbst wenn sie jemandem bekannt sind."
       ],
-      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Wenn die Anmeldung eingeschränkt ist, kann nur deine E-Mail-Adresse ${ primaryEmailElement } zur Anmeldung verwendet werden. Deine weiteren E-Mail-Adressen können nicht mit deinem Konto verknüpft werden, selbst wenn jemand sie kennen sollte."
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Wenn die Anmeldung eingeschränkt ist, kann nur dein Benutzername **${ username }** zur Anmeldung verwendet werden. Deine sonstigen Adressen können nicht mit deinem Konto verknüpft werden, selbst wenn sie jemand kennt."
       ],
-      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Wenn die Anmeldung eingeschränkt ist, kann nur dein Benutzername ${ usernameElement } zur Anmeldung verwendet werden. Deine anderen E-Mail-Adressen können nicht mit deinem Konto in Verbindung gebracht werden, selbst wenn jemand sie kennt."
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem ursprünglichen Benutzernamen **${ username }** anmelden – entweder allein oder in der Form **${ firstEmail }**, **@${ secondDomain }** oder **@${ thirdDomain }**. Deine anderen E-Mail-Adressen können nicht zur Anmeldung verwendet werden."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem ursprünglichen Benutzernamen **${ username }** anmelden – entweder allein oder in Kombination mit **${ firstEmail }** oder **@${ secondDomain }**. Deine sonstigen E-Mail-Adressen können nicht zur Anmeldung genutzt werden."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem ursprünglichen Benutzernamen **${ username }** anmelden, entweder allein oder in Kombination mit **${ firstEmail }**. Deine sonstigen E-Mail-Adressen können nicht zur Anmeldung verwendet werden."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wenn du kündigst, wird dein Abonnement nicht verlängert, aber du kannst die Vorteile des Abonnements noch bis zum Ende des Abonnementzeitraums nutzen. Danach wirst du auf das ${ BRAND_NAME } Free-Abonnement zurückgestuft."
+      ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "Wenn du kündigst, wird dein Abonnement nach Ablauf der Probezeit nicht fortgesetzt."
       ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wenn du kündigst, wird dein Abonnement nicht verlängert, aber du kannst die Vorteile des Abonnements noch bis zum Ende der Testphase nutzen. Danach wirst du auf den ${ BRAND_NAME } Free-Abonnement zurückgestuft."
@@ -14114,6 +14186,9 @@
         "Du kannst in den nächsten 24 Stunden nicht mehr als ${ emailSendLimitNumber } E-Mail-Einladung versenden",
         "Du kannst in den nächsten 24 Stunden nicht mehr als ${ emailSendLimitNumber } E-Mail-Einladungen versenden"
       ],
+      "You cancel it in the store.": [
+        "Du kannst es im Store kündigen."
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Du kannst keine ${ MAIL_APP_NAME }-Benutzer empfehlen."
       ],
@@ -14172,6 +14247,9 @@
       ],
       "You have no transactions.": [
         "Du hast keine Transaktionen."
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "Du hast mehrere Abonnements. Wähle das aus, das du kündigen möchtest; deine anderen Abonnements sind davon nicht betroffen. Ein gekündigtes Abonnement wird nicht verlängert, und du behältst deine Vorteile bis zum Ende des Abrechnungszeitraums."
       ],
       "You have unpublished changes": [
         "Du hast unveröffentlichte Änderungen"
@@ -14310,6 +14388,9 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Dein Konto ist derzeit so konfiguriert, dass die Rückerstattung der Umsatzsteuer nicht angewendet wird. Dies wird für das ausgewählte Abonnement nicht unterstützt. Um fortzufahren, entferne entweder die Umsatzsteuer-Identifikationsnummer aus der Rechnungsadresse oder wähle anderes Abonnement."
       ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "Dein Konto wurde erstellt, aber die Einrichtung deines Abonnements konnte nicht abgeschlossen werden."
+      ],
       "Your account was successfully updated with this promotion": [
         "Dein Konto wurde erfolgreich durch diese Werbeaktion aktualisiert"
       ],
@@ -14352,6 +14433,9 @@
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
       ],
+      "Your free plan includes one connected account. Upgrade to connect more.": [
+        "Dein kostenloses Abonnement erlaubt dir ein verbundenes Konto. Steige auf ein kostenpflichtiges Abo um, um weitere Konten verbinden zu können."
+      ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
         "Deine kostenlose Testphase ist abgelaufen. Abonniere jetzt, damit dein Team weiterhin uneingeschränkten Zugriff hat und die Konten geschützt bleiben."
       ],
@@ -14390,6 +14474,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Die E-Mails deiner Organisation werden durch eine Ende-zu-Ende-Verschlüsselung mit dem Organisationsschlüssel geschützt. Dieser Fingerabdruck kann verwendet werden, um sicherzustellen, dass alle Administratoren in deinem Konto einen identischen Schlüssel verwenden."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Deine anderen E-Mail-Adressen können erst dann zur Anmeldung verwendet werden, wenn diese Funktion deaktiviert ist."
       ],
       "Your payment details are encrypted and secure": [
         "Deine Zahlungsdaten sind verschlüsselt und geschützt"
@@ -15256,6 +15343,12 @@
       ],
       "Allow sharing outside the organization": [
         "Teilen außerhalb der Organisation erlauben"
+      ],
+      "Allow storing 2FA codes": [
+        "Speichern von 2FA-Codes zulassen"
+      ],
+      "Allow storing passkeys": [
+        "Speichern von Passkeys zulassen"
       ],
       "Allow users to set a backup password": [
         "Benutzern die Möglichkeit geben, ein Backup-Passwort festzulegen"
@@ -16425,11 +16518,11 @@
       "Restrict sign-in to email address": [
         "Anmeldung auf E-Mail-Adresse beschränken"
       ],
-      "Restrict sign-in to primary email address": [
-        "Anmeldung auf die Haupt-E-Mail-Adresse beschränken"
-      ],
       "Restrict sign-in to username": [
         "Anmeldung auf Benutzernamen beschränken"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Das Anmelden auf Benutzernamen und übereinstimmende ${ BRAND_NAME }-Adressen beschränken"
       ],
       "Reveal password": [
         "Passwort anzeigen"
@@ -17271,6 +17364,9 @@
       ],
       "Terms": [
         "AGB"
+      ],
+      "terms and conditions": [
+        "Allgemeine Geschäftsbedingungen"
       ],
       "terms of our referral program": [
         "Bedingungen unseres Empfehlungsprogramms"
@@ -19711,8 +19807,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Jederzeit vorher kündigen.** Du kannst ${ planTitle } bis zum Ende der Testversion kostenlos nutzen."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Wenn du nach Ablauf der Testversion fortfährst,** kannst du innerhalb von 30 Tagen kündigen und erhältst eine anteilige Rückerstattung."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Hast du nach der Testphase deine Meinung geändert?** Kündige innerhalb von 30 Tagen nach deiner ersten Zahlung, und wir erstatten dir die nicht genutzte Zeit."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Sobald dein volles Abonnement beginnt,** kannst du immer noch innerhalb von 30 Tagen kündigen und eine anteilige Rückerstattung erhalten."
@@ -21159,11 +21255,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Wende dich an den Kundensupport, um den Eigentümerwechsel zu bestätigen."
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Niemals"
       ]
     },
     "Payments.ModificationWarning": {
@@ -24745,11 +24836,11 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "${ discountItem.discountPercent }% Rabatt gewährt"
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "${ planDiscountItem.discountPercent }% Rabatt gewährt"
       ],
-      "${ discountItem.discountPercent }% off": [
-        "${ discountItem.discountPercent }% Rabatt"
+      "${ planDiscountItem.discountPercent }% off": [
+        "-${ planDiscountItem.discountPercent } %"
       ],
       "${ trialCycleText } free": [
         "${ trialCycleText } kostenlos"
@@ -25276,6 +25367,14 @@
       ],
       "Upcoming": [
         "Demnächst"
+      ]
+    },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "Ab ${ startTime }"
       ]
     },
     "Subtitle": {
@@ -27502,6 +27601,9 @@
       "Restore administrator privileges": [
         "Administrationsprivilegien wiederherstellen"
       ],
+      "Restrict sign-in?": [
+        "Anmeldung einschränken?"
+      ],
       "Reused passwords": [
         "Wiederverwendete Passwörter"
       ],
@@ -28004,8 +28106,8 @@
       "What are you migrating?": [
         "Was möchtest du übertragen?"
       ],
-      "What changes if you switch to the Free plan": [
-        "Was sich ändert, wenn du zum kostenlosen Abonnement wechselst"
+      "What changes if you cancel ${ planDisplayName }": [
+        "Dies ändert sich, wenn du ${ planDisplayName } kündigst"
       ],
       "What is an alias?": [
         "Was ist ein Alias?"
@@ -28203,20 +28305,20 @@
       "Billing": [
         "Abrechnung"
       ],
-      "End date": [
-        "Enddatum"
-      ],
       "Plan": [
         "Abonnement"
       ],
       "Price": [
         "Preis"
       ],
-      "Start date": [
-        "Startdatum"
+      "Renewal": [
+        "Verlängerung"
       ],
       "Status": [
         "Status"
+      ],
+      "Subscription term": [
+        "Mindestvertragslaufzeit"
       ]
     },
     "Title; create calendar modal": {

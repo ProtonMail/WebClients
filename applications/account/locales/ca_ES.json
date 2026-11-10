@@ -369,7 +369,7 @@
         "Botiga de ${ BRAND_NAME }"
       ],
       "About ${ name }": [
-        "Pel que fa a ${ name }"
+        "Quant a ${ name }"
       ],
       "Accept": [
         "Accepta"
@@ -411,7 +411,7 @@
         "Afegiu l'adreça de ${ BRAND_NAME }"
       ],
       "Add ${ name }": [
-        "Afegir ${ name }"
+        "Afegeix ${ name }"
       ],
       "Add a payment method": [
         "Afegiu un mètode de pagament"
@@ -463,6 +463,9 @@
       ],
       "Add notification": [
         "Afegeix una notificació"
+      ],
+      "Add payment method": [
+        "Afegir un mètode de pagament"
       ],
       "Add PayPal": [
         "Afegeix PayPal"
@@ -554,6 +557,12 @@
       "Cancel": [
         "Cancel·la"
       ],
+      "Cancel ${ planTitle }": [
+        "Cancel·lar ${ planTitle }"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "Cancel·lar la prova de ${ planTitle }"
+      ],
       "Cancel import": [
         "Cancel·la la importació"
       ],
@@ -562,6 +571,9 @@
       ],
       "Cancel subscription": [
         "Cancel·la la subscripció"
+      ],
+      "Cancel trial": [
+        "Cancel·lar la prova"
       ],
       "Cancel trial and pay": [
         "Cancel·la la prova i paga"
@@ -770,6 +782,9 @@
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Creeu un enllaç per compartir amb qualsevol persona de fora de ${ BRAND_NAME }"
       ],
+      "Create account": [
+        "Crea un compte"
+      ],
       "Create calendar": [
         "Crea un calendari"
       ],
@@ -946,6 +961,9 @@
       ],
       "Don't show again": [
         "No mostrar de nou"
+      ],
+      "Don't show this offer again": [
+        "No em torneu a mostrar aquesta oferta"
       ],
       "Donate": [
         "Fes un donatiu"
@@ -1264,6 +1282,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Aneu a ${ planOrAppName }"
+      ],
+      "Go to folder": [
+        "Ves a la carpeta"
       ],
       "Go to label": [
         "Ves a l'etiqueta"
@@ -1763,6 +1784,9 @@
       "Restore": [
         "Restaura"
       ],
+      "Restrict sign-in": [
+        "Restringeix l'inici de sessió"
+      ],
       "Resume": [
         "Continuar"
       ],
@@ -1991,6 +2015,9 @@
       "Sign in to ${ PASS_APP_NAME }": [
         "Inicia la sessió a ${ PASS_APP_NAME }"
       ],
+      "Sign in to a different account": [
+        "Inicia la sessió amb un compte diferent"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Inicia sessió amb ${ BRAND_NAME }"
       ],
@@ -2035,6 +2062,9 @@
       ],
       "Spam": [
         "Correu brossa"
+      ],
+      "Special Offer": [
+        "Oferta especial"
       ],
       "Start free trial": [
         "Inicia el període de prova gratuït"
@@ -2349,6 +2379,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "Cancel·lar la subscripció"
+      ],
       "Reactivate": [
         "Reactiva"
       ],
@@ -2569,6 +2602,9 @@
       ],
       "Permission revoked": [
         "S'ha revocat el permís"
+      ],
+      "Sign-in": [
+        "Iniciar sessió"
       ]
     },
     "Admin": {
@@ -2824,6 +2860,9 @@
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "En cas que cancel·leu, la prova gratuïta no es convertirà en una subscripció de pagament, però podreu gaudir dels avantatges del pla fins al final del període de prova. Després, passareu al pla gratuït ${ BRAND_NAME }."
       ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "Quan cancel·leu, la vostra prova gratuïta no es convertirà en una subscripció de pagament."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Podeu tenir fins a ${ TRIAL_MAX_DEDICATED_IPS } servidors dedicats durant el període de prova."
       ],
@@ -2938,7 +2977,7 @@
     },
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
-        "Garantia de devolució de 30 dies: cancel·leu-ho en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per obtenir un reemborsament."
+        "Garantia de devolució de 30 dies: cancel·leu en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per a obtenir un reemborsament."
       ]
     },
     "bf2023: Title": {
@@ -4245,8 +4284,8 @@
       "Confirm cancellation": [
         "Confirma la cancel·lació"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Si supereu els límits del pla gratuït, no podreu:"
+      "If you exceed your plan limits, you won't be able to:": [
+        "Si supereu els límits del vostre pla, ja no podreu:"
       ],
       "Keep current plan": [
         "Manté el pla actual"
@@ -4263,8 +4302,11 @@
       "Upload any new files": [
         "Carrega qualsevol fitxer nou"
       ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Quan la subscripció finalitzi el ${ endDate }, el compte passarà al pla gratuït. Si el vostre ús supera els límits del pla gratuït, és possible que algunes característiques no es trobin disponibles temporalment."
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Quan s'acabi la vostra subscripció ${ planDisplayName } el ${ endDate }, perdreu les característiques incloses. Si l'ús que en feu excedeix els límits del pla, és possible que algunes deixin d'estar disponibles temporalment."
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Quan s'acabi la vostra subscripció el ${ endDate }, perdreu les característiques incloses. Si l'ús que en feu excedeix els límits del pla, és possible que algunes deixin d'estar disponibles temporalment."
       ]
     },
     "Confirm modal title": {
@@ -5476,7 +5518,7 @@
         "Porteu el vostre correu electrònic, els esdeveniments del calendari i els contactes des d'un altre proveïdor."
       ],
       "Bring over your files and folders from another provider.": [
-        "Porteu els vostres fitxers i carpetes d'un altre proveïdor."
+        "Porteu els vostres fitxers i carpetes des d'un altre proveïdor."
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Genereu confiança i reconeixement de marca amb adreces de correu electrònic professionals al vostre propi domini."
@@ -7248,7 +7290,7 @@
         "Ja existeix un grup amb aquest nom"
       ],
       "A message is required when reporting copyright infringement or stolen data": [
-        "Cal un missatge quan s'informa d'una infracció de drets d'autor o de dades robades"
+        "El missatge és requerit quan s'informa d'una infracció de drets d'autor o de dades robades"
       ],
       "Account does not exist": [
         "El compte no existeix."
@@ -7308,7 +7350,7 @@
         "Les respostes automàtiques són una característica de pagament. Milloreu el pla a un compte de pagament per a utilitzar-la."
       ],
       "Bookmark password is not available": [
-        "La contrasenya del marcador de pàgina no està disponible"
+        "La contrasenya de l'adreça d'interès no està disponible"
       ],
       "Calendar cannot be found": [
         "No es pot trobar el calendari"
@@ -7323,7 +7365,7 @@
         "No es pot descarregar una carpeta"
       ],
       "Cannot move item without a valid name, please rename the item first": [
-        "No es pot moure l'element sense un nom vàlid, canvieu-ne el nom primer"
+        "No es pot moure l'element sense un nom vàlid. Canvieu-ne el nom primer"
       ],
       "Cannot share root folder": [
         "No es pot compartir la carpeta arrel"
@@ -7481,10 +7523,10 @@
         "No s'ha pogut afegir el membre del grup"
       ],
       "Failed to decrypt bookmark key: ${ message }": [
-        "No s'ha pogut desxifrar la clau del marcador de pàgina: ${ message }"
+        "No s'ha pogut desxifrar la clau de l'adreça d'interès: ${ message }"
       ],
       "Failed to decrypt bookmark name: ${ message }": [
-        "No s'ha pogut desxifrar el nom del marcador de pàgina: ${ message }"
+        "No s'ha pogut desxifrar el nom de l'adreça d'interès: ${ message }"
       ],
       "Failed to decrypt bookmark password: ${ message }": [
         "No s'ha pogut desxifrar la contrasenya de l'adreça d'interès: ${ message }"
@@ -7612,9 +7654,6 @@
       "Invalid invitation link": [
         "L'enllaç d'invitació no és vàlid"
       ],
-      "Invalid joining link. Please contact your administrator.": [
-        "L'enllaç d'unió no és vàlid. Contacteu amb el vostre administrador."
-      ],
       "Invalid name": [
         "Nom no vàlid"
       ],
@@ -7677,10 +7716,10 @@
         "Signatura no trobada"
       ],
       "Missing signature for ${ signatureType }": [
-        "Falta la signatura per ${ signatureType }"
+        "Falta la signatura per a ${ signatureType }"
       ],
       "Move operation aborted": [
-        "S'ha cancel·lat l'operació de moviment"
+        "S'ha avortat l'operació de desplaçament"
       ],
       "Moving item to a non-folder is not allowed": [
         "No es permet moure un element a un element que no sigui una carpeta"
@@ -7753,7 +7792,7 @@
         "S'ha cancel·lat l'operació"
       ],
       "Operation failed, try again later": [
-        "Ha fallat l'operació, torneu-ho a provar més tard"
+        "Ha fallat l'operació. Torneu-ho a provar més tard"
       ],
       "Organization does not have enough seats available": [
         "L'organització no té prou llicències disponibles"
@@ -7959,10 +7998,10 @@
         "Ha fallat la verificació de la signatura: ${ errorMessage }"
       ],
       "Signature verification for ${ signatureType } failed": [
-        "Ha fallat la verificació de la signatura per ${ signatureType }"
+        "No s'ha pogut verificar la signatura per a ${ signatureType }"
       ],
       "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
-        "La verificació de la signatura per ${ signatureType } ha fallat: ${ errorMessage }"
+        "No s'ha pogut verificar la signatura per a ${ signatureType }: ${ errorMessage }"
       ],
       "Some file data failed to upload. Please try again.": [
         "No s'han pogut carregar algunes dades del fitxer. Torneu-ho a provar."
@@ -8024,6 +8063,9 @@
       "The amount due has changed. Please try again.": [
         "L'import que cal pagar ha canviat. Torneu-ho a provar."
       ],
+      "The device you scanned the QR code with didn't send your sign-in details. Update the app on that device and try again.": [
+        "El dispositiu amb què vau escanejar el codi QR no ha enviat les vostres dades d'inici de sessió. Actualitzeu l'aplicació en aquest dispositiu i torneu-ho a provar."
+      ],
       "The email addresses do not match": [
         "Les adreces de correu electrònic no coincideixen."
       ],
@@ -8066,6 +8108,9 @@
       "The session has expired. Please sign in again.": [
         "La sessió ha caducat. Torneu a accedir."
       ],
+      "The session has expired. Please try again.": [
+        "La sessió ha caducat. Torneu-ho a provar."
+      ],
       "The total could not be calculated. Change the amount to try again.": [
         "No s'ha pogut calcular el total. Modifiqueu l'import i torneu-ho a intentar."
       ],
@@ -8094,10 +8139,10 @@
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
       ],
       "This file has missing crypto material": [
-        "Aquest fitxer no té el material criptogràfic necessari"
+        "Falta material criptogràfic en aquest fitxer"
       ],
       "This file has no version available to download": [
-        "Aquest fitxer no té cap versió disponible per descarregar"
+        "Aquest fitxer no té cap versió disponible per a descarregar"
       ],
       "This file version could not be uploaded": [
         "No s'ha pogut carregar aquesta versió del fitxer"
@@ -8133,10 +8178,10 @@
         "S'han rebut massa sol·licituds. Torneu-ho a provar més tard."
       ],
       "Too many server errors, please try again later": [
-        "Hi ha massa errors del servidor, torneu-ho a provar més tard"
+        "S'han produït massa errors del servidor. Torneu-ho a provar més tard"
       ],
       "Too many server requests, please try again later": [
-        "Hi ha massa sol·licituds al servidor, torneu-ho a provar més tard"
+        "Hi ha hagut massa sol·licituds al servidor. Torneu-ho a provar més tard"
       ],
       "Trusted keys are not valid for sending": [
         "Les claus de confiança no són vàlides per enviar-les"
@@ -8187,7 +8232,7 @@
         "Les claus de verificació no estan disponibles"
       ],
       "Verification keys for ${ signatureType } are not available": [
-        "Les claus de verificació per ${ signatureType } no estan disponibles"
+        "Les claus de verificació per a ${ signatureType } no estan disponibles"
       ],
       "We couldn't disconnect this address. Please try again.": [
         "No s'ha pogut desconnectar aquesta adreça. Torneu-ho a provar."
@@ -8663,9 +8708,6 @@
       "${ BRAND_NAME } groups": [
         "Grups de ${ BRAND_NAME }"
       ],
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Només una prova gratuïta per usuari. Després, s'aplica el preu habitual."
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Els comptes amb dominis personalitzats no poden unir-se a un pla familiar."
       ],
@@ -8731,9 +8773,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "La subscripció es facturarà a l'administrador principal d'aquest pla."
       ],
-      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
-        "Per facilitar la transició, us oferim una prova gratuïta de 30 dies de ${ BRAND_NAME } Unlimited*."
-      ],
       "View the invitation": [
         "Mostra la invitació",
         "Veure les invitacions"
@@ -8793,14 +8832,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Només una prova gratuïta per usuari. Després, s'aplica el preu habitual."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Després de deixar el pla, aquest usuari es traslladarà a un pla de ${ BRAND_NAME } Free."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Després de deixar el pla, aquest usuari es traslladarà a un pla ${ BRAND_NAME } Unlimited amb una prova gratuïta de 30 dies.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Assigneu emmagatzematge al compte d'administrador. Podreu distribuir l'emmagatzematge per a usuaris addicionals més endavant."
@@ -10651,7 +10684,7 @@
         "30 dies de garantia de reemborsament"
       ],
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
-        "Garantia de devolució de 30 dies: cancel·leu-ho en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per obtenir un reemborsament."
+        "Garantia de devolució de 30 dies: cancel·leu-ho en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per a obtenir un reemborsament."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ BRAND_NAME } allotja un ${ protonSubdomain } que us permet configurar ràpidament un subdomini. ${ learnMoreLink }"
@@ -11108,6 +11141,21 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Pel fet de compartir tots els detalls dels esdeveniments d'aquest calendari, accepteu donar a ${ BRAND_NAME } accés a la informació xifrada d'aquest calendari."
       ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "En activar aquesta opció, només podreu iniciar la sessió amb **${ primaryEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "En activar aquesta opció, només podreu iniciar la sessió amb el nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**, **@${ secondDomain }** o **@${ thirdDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "En activar aquesta opció, només podreu iniciar la sessió amb el nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**, o bé **@${ secondDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "En activar aquesta opció, només podreu iniciar la sessió amb el nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "En activar aquesta opció, només podreu iniciar la sessió amb el nom d'usuari **${ username }**."
+      ],
       "Can you access your active session?": [
         "Podeu accedir a la vostra sessió activa?"
       ],
@@ -11415,6 +11463,9 @@
       ],
       "Discount": [
         "Descompte"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Els descomptes es basen en el preu mensual estàndard. La vostra subscripció es renovarà a la tarifa anual estàndard quan finalitzi el cicle de facturació."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Descobriu les noves característiques desbloquejades i comenceu a utilitzar-les de seguida!"
@@ -11945,11 +11996,17 @@
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Si ho desactiveu, els membres de l'organització només podran compartir caixes fortes o elements dins de l'organització."
       ],
+      "If disabled, organization members won't be able to add 2FA codes to their items, and existing ones won't be generated or autofilled. Nothing is deleted.": [
+        "Si es desactiva, els membres de l'organització no podran afegir codis 2FA als seus elements i els existents no es generaran ni s'emplenaran automàticament. No s'elimina res."
+      ],
       "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
         "Si es desactiva, els membres de l'organització no podran crear àlies nous. Els àlies existents romandran actius."
       ],
       "If disabled, organization members won't be able to create secure links. Previously active secure links remain valid until their expiration.": [
         "Si està inhabilitat, els membres de l'organització no podran crear enllaços segurs. Els enllaços segurs que anteriorment estaven actius continuaran sent vàlids fins a la seva caducitat."
+      ],
+      "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
+        "Si es desactiva, els membres de l'organització no podran desar claus d'accés a ${ PASS_APP_NAME } ni iniciar la sessió amb elles. No s'elimina res."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "En habilitar-ho, els membres de l'organització podran compartir elements individuals, a més de caixes fortes."
@@ -11982,7 +12039,7 @@
         "Si canvieu d'opinió, us podeu tornar a subscriure en qualsevol moment. Ens sap greu que marxeu!"
       ],
       "If you didn't just try to sign in to **${ applicationName }** on a device you own, click **Cancel**.": [
-        "Si no heu intentat iniciar sessió recentment a **${ applicationName }** en un dispositiu vostre, feu clic a **Cancel·la**."
+        "Si no heu intentat iniciar la sessió recentment a **${ applicationName }** en un dels vostres dispositius, feu clic a **Cancel·la**."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
@@ -12117,6 +12174,9 @@
       ],
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "El codi no és vàlid. ${ RequestNewCodeLink } i torneu-ho a provar."
+      ],
+      "Invalid joining link": [
+        "L'enllaç d'unió no és vàlid"
       ],
       "Invitation link expired": [
         "Ha caducat l'enllaç d'invitació."
@@ -13321,6 +13381,9 @@
       "This is the password you used before the password reset.": [
         "Això és la contrasenya que utilitzàveu abans del restabliment de contrasenya."
       ],
+      "This joining link isn't valid. Please contact your administrator for a new one.": [
+        "Aquest enllaç d'unió no és vàlid. Poseu-vos en contacte amb l'administrador per obtenir-ne un de nou."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Aquest enllaç porta a un lloc web que us podria estar intentant robar la informació, com ara contrasenyes i detalls de targetes de crèdit."
       ],
@@ -13337,7 +13400,7 @@
         "Aquest servei no està disponible per als usuaris que inicien la sessió amb l’inici de sessió únic."
       ],
       "This signup link has expired, been revoked or already been used. Please contact your ${ BRAND_NAME } representative for a new one.": [
-        "Aquest enllaç de registre ha caducat, s'ha revocat o ja s'ha utilitzat. Poseu-vos en contacte amb el vostre representant de ${ BRAND_NAME } per obtenir-ne un de nou."
+        "Aquest enllaç de registre ha caducat, s'ha revocat o ja s'ha utilitzat. Poseu-vos en contacte amb el vostre representant de ${ BRAND_NAME } per a obtenir-ne un de nou."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Aquest testimoni no estarà disponible després que tanqueu aquesta finestra i no l'hauríeu de compartir amb ningú."
@@ -13502,7 +13565,7 @@
         "Per a migrar aquest usuari, habiliteu el seu compte a ${ usersAddressesLink }."
       ],
       "To migrate this user, enable their address under ${ usersAddressesLink }.": [
-        "Per migrar aquest usuari, habiliteu la seva adreça a ${ usersAddressesLink }."
+        "Per a migrar aquest usuari, habiliteu la seva adreça a ${ usersAddressesLink }."
       ],
       "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
         "Per a migrar aquest usuari, ha d'acceptar la invitació per a unir-se a ${ BRAND_NAME }."
@@ -13918,17 +13981,26 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Quan les notificacions estiguin activades, us enviarem una alerta a l'adreça de correu electrònic de recuperació si teniu missatges nous al compte de ${ MAIL_APP_NAME }."
       ],
-      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Quan l'inici de sessió està restringit, només ${ primaryEmailElement } i el nom d'usuari ${ usernameElement } es poden utilitzar per a iniciar la sessió. Les vostres altres adreces no es poden tornar a enllaçar al compte, fins i tot si algú les coneix."
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Quan l'inici de sessió estigui restringit, només podreu utilitzar el correu electrònic **${ primaryEmail }** per a iniciar la sessió. Les altres adreces no es podran enllaçar amb el vostre compte, encara que algunes persones les coneguin."
       ],
-      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Quan l'inici de sessió està restringit, només el vostre correu ${ primaryEmailElement } es pot utilitzar per a iniciar la sessió. Les vostres altres adreces no es poden tornar a enllaçar al compte, fins i tot si algú les coneix."
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Quan l'inici de sessió estigui restringit, només podreu utilitzar el nom d'usuari **${ username }** per a iniciar la sessió. Les altres adreces no es podran enllaçar amb el vostre compte, ni tan sols si algú les coneix."
       ],
-      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Quan l'inici de sessió està restringit, només el nom d'usuari ${ usernameElement } es pot utilitzar per a iniciar la sessió. Les vostres altres adreces no es poden tornar a enllaçar al compte, fins i tot si algú les coneix."
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Quan l'inici de sessió estigui restringit, només podreu iniciar la sessió amb el nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**, **@${ secondDomain }** o **@${ thirdDomain }**. Les altres adreces de correu electrònic no funcionaran per a iniciar la sessió."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Quan l'inici de sessió estigui restringit, només podreu iniciar la sessió amb el nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**, o bé **@${ secondDomain }**. Les altres adreces de correu electrònic no funcionaran per a iniciar la sessió."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Quan l'inici de sessió estigui restringit, només podreu iniciar la sessió amb el nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**. Les altres adreces de correu electrònic no funcionaran per a iniciar la sessió."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Quan cancel·leu, la subscripció no es renovarà, però encara podreu gaudir dels avantatges del pla fins al final del període de subscripció. Després d'això, passarà al pla gratuït de ${ BRAND_NAME }."
+      ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "Si cancel·leu, la subscripció no començarà un cop hagi passat el període de prova."
       ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Quan la cancel·leu, la subscripció no es renovarà, però encara podreu gaudir dels avantatges del pla fins al final del període de prova. Després, passareu al pla gratuït de ${ BRAND_NAME }."
@@ -14114,6 +14186,9 @@
         "No podeu enviar més d'${ emailSendLimitNumber } correu electrònic d'invitació durant les pròximes 24 hores",
         "No podeu enviar més de ${ emailSendLimitNumber } correus electrònics d'invitació durant les pròximes 24 hores"
       ],
+      "You cancel it in the store.": [
+        "La cancel·leu a la botiga."
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "No podeu recomanar usuaris de ${ MAIL_APP_NAME }"
       ],
@@ -14172,6 +14247,9 @@
       ],
       "You have no transactions.": [
         "No teniu cap transacció."
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "Teniu diverses subscripcions. Trieu quina una voleu cancel·lar, les altres no es veuran afectades. Una subscripció cancel·lada no es renovarà, i en conservareu els avantatges fins al final del període de subscripció."
       ],
       "You have unpublished changes": [
         "Teniu canvis sense publicar."
@@ -14310,6 +14388,9 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "El vostre compte està configurat actualment per aplicar el règim de facturació inversa. Això no és compatible amb el pla seleccionat. Per continuar, o bé elimineu el número d'IVA de l'adreça de facturació o bé seleccioneu un pla diferent."
       ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "S'ha creat el vostre compte, però no hem pogut completar la configuració del pla."
+      ],
       "Your account was successfully updated with this promotion": [
         "S'ha actualitzat el vostre compte amb aquesta promoció"
       ],
@@ -14352,6 +14433,9 @@
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
       ],
+      "Your free plan includes one connected account. Upgrade to connect more.": [
+        "El vostre pla gratuït inclou un compte connectat. Milloreu-lo per a connectar-ne més."
+      ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
         "La prova gratuïta ha finalitzat. Subscriviu-vos ara per mantenir l'accés del vostre equip sense interrupcions i els comptes segurs."
       ],
@@ -14390,6 +14474,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Els correus electrònics de la vostra organització es protegeixen amb xifratge d'extrem a extrem mitjançant la clau d’organització. Aquesta empremta digital es pot utilitzar per verificar que tots els administradors del vostre compte tinguin la mateixa clau."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Les vostres altres adreces de correu electrònic no funcionaran per a iniciar la sessió fins que desactiveu aquesta opció."
       ],
       "Your payment details are encrypted and secure": [
         "Les vostres dades de pagament estan xifrades i són segures"
@@ -15257,6 +15344,12 @@
       "Allow sharing outside the organization": [
         "Permet la compartició fora de l'organització"
       ],
+      "Allow storing 2FA codes": [
+        "Permet emmagatzemar codis 2FA"
+      ],
+      "Allow storing passkeys": [
+        "Permet emmagatzemar claus d'accés"
+      ],
       "Allow users to set a backup password": [
         "Permet als usuaris establir una contrasenya de recuperació"
       ],
@@ -15970,7 +16063,7 @@
         "Convida per correu electrònic"
       ],
       "Invoice email": [
-        "Correu electrònic de la factura"
+        "Correu electrònic de facturació"
       ],
       "Issuer ID": [
         "ID de l'emissor"
@@ -16425,11 +16518,11 @@
       "Restrict sign-in to email address": [
         "Restringeix l'inici de sessió a l'adreça de correu electrònic"
       ],
-      "Restrict sign-in to primary email address": [
-        "Restringeix l'inici de sessió a l'adreça de correu electrònic principal"
-      ],
       "Restrict sign-in to username": [
         "Restringiu l'inici de sessió al nom d'usuari"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Restringeix l'inici de sessió a noms d'usuari i a les adreces ${ BRAND_NAME } coincidents"
       ],
       "Reveal password": [
         "Mostra la contrasenya"
@@ -16631,7 +16724,7 @@
         "Informació del sistema"
       ],
       "Taxable": [
-        "Imposable"
+        "Subjecte a impostos"
       ],
       "The best of ${ BRAND_NAME } with one subscription": [
         "El millor de ${ BRAND_NAME } amb una subscripció"
@@ -16763,7 +16856,7 @@
         "Valor"
       ],
       "VAT number": [
-        "CIF per a l'IVA"
+        "Número d'IVA"
       ],
       "Vault": [
         "Caixa forta"
@@ -17271,6 +17364,9 @@
       ],
       "Terms": [
         "Termes"
+      ],
+      "terms and conditions": [
+        "termes i condicions"
       ],
       "terms of our referral program": [
         "termes del nostre programa de recomanacions"
@@ -19711,8 +19807,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Cancel·leu-ho en qualsevol moment. ** Podreu utilitzar ${ planTitle } fins que acabi el període de prova, de franc."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Si continueu després del període de prova,** podreu cancel·lar-ho en un termini de 30 dies i rebre un reemborsament prorratejat."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Heu canviat d'opinió després de la prova? ** Cancel·leu-la abans de 30 dies des del primer pagament i us reemborsarem el temps no utilitzat."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Un cop comenci la vostra subscripció completa...** Encara podreu cancel·lar-la en un termini de 30 dies i rebre un reemborsament prorratejat."
@@ -20876,7 +20972,7 @@
         "País de facturació"
       ],
       "Born Private accounts can’t be purchased with an active subscription.": [
-        "Els comptes de Born Private no es poden adquirir amb una subscripció activa."
+        "Els comptes de Born Private no es poden comprar amb una subscripció activa."
       ],
       "Buying credits requires a separate purchase.": [
         "L'adquisició de crèdits requereix una compra independent."
@@ -21159,11 +21255,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Poseu-vos en contacte amb atenció al client per a confirmar el canvi de titularitat"
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Mai"
       ]
     },
     "Payments.ModificationWarning": {
@@ -21659,7 +21750,7 @@
         "clau de contingut"
       ],
       "hash key": [
-        "clau d'empremta electrònica"
+        "empremta electrònica"
       ],
       "key": [
         "clau"
@@ -22741,7 +22832,7 @@
         "Aproveu els canvis del vostre proveïdor d'identitat"
       ],
       "Approve permission changes for your organization": [
-        "Aprova els canvis de permisos de la vostra organització"
+        "Aproveu els canvis de permisos de la vostra organització"
       ],
       "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
         "Cal l'aprovació final per a concedir accés a tots els serveis de ${ BRAND_NAME }."
@@ -24748,11 +24839,11 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "S'ha aplicat un descompte del ${ discountItem.discountPercent }%"
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "S'ha aplicat un descompte del ${ planDiscountItem.discountPercent }%"
       ],
-      "${ discountItem.discountPercent }% off": [
-        "${ discountItem.discountPercent }% de descompte"
+      "${ planDiscountItem.discountPercent }% off": [
+        "${ planDiscountItem.discountPercent }% de descompte"
       ],
       "${ trialCycleText } free": [
         "${ trialCycleText } gratuït"
@@ -25279,6 +25370,14 @@
       ],
       "Upcoming": [
         "Pròximament"
+      ]
+    },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "De ${ startTime }"
       ]
     },
     "Subtitle": {
@@ -26359,7 +26458,7 @@
         "Confirma"
       ],
       "Confirm sign in": [
-        "Confirmeu l'inici de sessió"
+        "Confirmació d'inici de sessió"
       ],
       "Confirm where to sign in": [
         "Confirmeu on iniciar sessió"
@@ -27505,6 +27604,9 @@
       "Restore administrator privileges": [
         "Restaurar els privilegis d'administrador"
       ],
+      "Restrict sign-in?": [
+        "Voleu restringir l'inici de sessió?"
+      ],
       "Reused passwords": [
         "Contrasenyes reutilitzades"
       ],
@@ -28007,8 +28109,8 @@
       "What are you migrating?": [
         "Què esteu migrant?"
       ],
-      "What changes if you switch to the Free plan": [
-        "Què canvia si us passeu al pla gratuït"
+      "What changes if you cancel ${ planDisplayName }": [
+        "Què canviarà si cancel·leu ${ planDisplayName }:"
       ],
       "What is an alias?": [
         "Què és un àlies?"
@@ -28206,20 +28308,20 @@
       "Billing": [
         "Facturació"
       ],
-      "End date": [
-        "Data de fi"
-      ],
       "Plan": [
         "Pla"
       ],
       "Price": [
         "Preu"
       ],
-      "Start date": [
-        "Data d'inici"
+      "Renewal": [
+        "Renovació"
       ],
       "Status": [
         "Estat"
+      ],
+      "Subscription term": [
+        "Període de subscripció"
       ]
     },
     "Title; create calendar modal": {
@@ -29078,7 +29180,7 @@
         "Envieu l'enllaç d'invitació per correu electrònic"
       ],
       "This user gets administrator rights the next time they sign in.": [
-        "Aquest usuari obtindrà drets d'administrador la pròxima vegada que iniciïn sessió."
+        "Aquest usuari obtindrà drets d'administrador la pròxima vegada que iniciï la sessió."
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Això crearà un adreçaa nova de ${ MAIL_APP_NAME }."

@@ -929,6 +929,9 @@
       "Don't show again": [
         "Má fi hàn mọ́"
       ],
+      "Don't show this offer again": [
+        "Má fi ìpèsè yìí hàn mọ́"
+      ],
       "Donate": [
         "Gbọnwọ́ sáwo"
       ],
@@ -1996,6 +1999,9 @@
       ],
       "Spam": [
         "Spáàmù"
+      ],
+      "Special Offer": [
+        "Àkànṣe ìfifúnni"
       ],
       "Start free trial": [
         "Bẹ̀rẹ̀ ìdánwò ọ̀fẹ́"
@@ -4118,9 +4124,6 @@
       "Confirm cancellation": [
         "Jẹ́rìísí fífagilé"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Tí ẹ bá kọjá àwọn àpọ̀nà Free plan, ẹ kò ní anfàní láti:"
-      ],
       "Keep current plan": [
         "Tọjú ètò lọ́wọ́lọ́wọ́"
       ],
@@ -4135,9 +4138,6 @@
       ],
       "Upload any new files": [
         "Gbé fáìlì tuntun kan bẹ́ẹ̀ sókè"
-      ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Nígbà tí ìforúkọsílẹ̀ yín bá parí ní ${ endDate }, àkántì yín yóò yí padà sí Free plan. Tí lílo yín bá kọjá àwọn àlà Free plan, díẹ̀ nínú àwọn àbùdá lè máa wà ní àní fún ìgbà díẹ̀."
       ]
     },
     "Confirm modal title": {
@@ -7422,9 +7422,6 @@
       "Invalid invitation link": [
         "Ojú òpó ìpè kò tọ́."
       ],
-      "Invalid joining link. Please contact your administrator.": [
-        "Ojú òpó ìdarapọ̀ kò tọ́. Jọ̀wọ́, ẹ kàn sí alábòójútó yín."
-      ],
       "Invalid name": [
         "Orúkọ kò tọ́."
       ],
@@ -8446,9 +8443,6 @@
       "${ BRAND_NAME } groups": [
         "Àwọn ẹgbẹ́ ${ BRAND_NAME }"
       ],
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Ìdánwò ọ̀fẹ́ kan ṣoṣo ní fún olùmúlò kọ̀ọ̀kan. Iye owó ìgbà gbogbo ni yóò wọ̀ lẹ́yìn èyí."
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Àwọn àkántì tí wọ́n ní àgbègbè ìkápá àkànṣe kò lè dàpọ̀ mọ́ Family plan."
       ],
@@ -8512,9 +8506,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Alákòóso ìṣáájú ètò yìí ni yóò san owó ìforúkọsílẹ̀ náà."
       ],
-      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
-        "Láti jẹ́ kí ìyípadà rọrùn, a ń fúnni yín ní ìdánwò ọ̀fẹ́ ti ọjọ́ 30 fún ${ BRAND_NAME } Unlimited*."
-      ],
       "View the invitation": [
         "Wo àwọn ìpè"
       ],
@@ -8571,14 +8562,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Ìdánwò ọ̀fẹ́ kan ṣoṣo ní fún olùmúlò kọ̀ọ̀kan. Iye owó ìgbà gbogbo ni yóò wọ̀ lẹ́yìn èyí."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Lẹ́yìn títí kúrò nínú ètò yín, olùmúlò yìí yóò gbé padà só ${ BRAND_NAME } Free plan."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Lẹ́yìn tí olùmúlò yìí bá fi ètò yín sílẹ̀, a yóò gbé e lọ sí ètò ${ BRAND_NAME } Unlimited pẹ̀lú ìdánwò ọ̀fẹ́ ti ọjọ́ 30.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Fi ìfipamọ́ sí àkántì alábòójútó. Ẹ lè pín ìfipamọ́ fún àwọn olùmúlò àfikún nígbà mìíràn."
@@ -11064,6 +11049,9 @@
       ],
       "Discount": [
         "Ẹ̀dínwó"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Àwọn ẹ̀dínwó wà nípasẹ̀ owó oṣùòṣù àṣà. Ìforúkọsílẹ̀ yín á tún gbilẹ̀ ní owó ọdún àṣà nígbà tí sáà ìdíyeléni bá parí."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Ẹ ṣe àwárí àwọn àbùdá tuntun tí a ṣí, kí ẹ sì bẹ̀rẹ̀ sí lílo wọn lẹ́sẹ̀kẹ́sẹ̀!"
@@ -16725,6 +16713,9 @@
       "Terms": [
         "Àwọn ìlànà"
       ],
+      "terms and conditions": [
+        "àwọn àdéhùn àti ọ̀rọ̀ àjọsọ"
+      ],
       "terms of our referral program": [
         "àwọn ìlànà ètò ìdárúkọ wa"
       ],
@@ -19110,9 +19101,6 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Ẹ lè fagi lé e nígbàkigbà ṣáájú àkókò yẹn.** Ẹ yóò lè lo ${ planTitle } títí ìdánwò yóò fi parí, lọ́fẹ̀ẹ́."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Bí ẹ bá tẹ̀síwájú lẹ́yìn ìdánwò yín,** ẹ lè fagi lé e láàárín ọjọ́ 30 kí ẹ sì gba ìdápadà owó tí ó bá ìwọ̀n àkókò mu."
-      ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Nígbà tí ìforúkọsílẹ̀ kíkún yín bá bẹ̀rẹ̀...** Ẹ ṣì lè fagi lé e láàárín ọjọ́ 30, kí ẹ sì gba ìdápadà owó ìpín."
       ],
@@ -20492,11 +20480,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Kàn sí ẹ̀ka àtìlẹ́yìn oníbàárà láti jẹ́rìísí ìyípadà oníní àkántì"
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Níì"
       ]
     },
     "Payments.ModificationWarning": {
@@ -23968,12 +23951,6 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "A ti fi ẹ̀dínwó ${ discountItem.discountPercent }% sílò."
-      ],
-      "${ discountItem.discountPercent }% off": [
-        "Ìdínkù owó ${ discountItem.discountPercent }%"
-      ],
       "${ trialCycleText } free": [
         "${ trialCycleText } ọ̀fẹ́"
       ],
@@ -27095,9 +27072,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Kú àbọ̀ sí ${ BRAND_NAME } for Business"
       ],
-      "What changes if you switch to the Free plan": [
-        "Ohun tí yóò yí padà tí ẹ bá padà sí Free plan"
-      ],
       "What is an alias?": [
         "Kí ni orúkọ ìnagijẹ́?"
       ],
@@ -27285,17 +27259,11 @@
       "Billing": [
         "Ìsanwó"
       ],
-      "End date": [
-        "Ọjọ́ ìparí"
-      ],
       "Plan": [
         "Ètò"
       ],
       "Price": [
         "Iye owó"
-      ],
-      "Start date": [
-        "Ọjọ́ ìbẹ̀rẹ̀"
       ],
       "Status": [
         "Ìpò"

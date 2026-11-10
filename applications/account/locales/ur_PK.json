@@ -929,6 +929,9 @@
       "Don't show again": [
         "دوبارہ نہ دکھائیں"
       ],
+      "Don't show this offer again": [
+        "یہ پیشکش دوبارہ نہ دکھائیں"
+      ],
       "Donate": [
         "عطیہ دیں"
       ],
@@ -1996,6 +1999,9 @@
       ],
       "Spam": [
         "اسپام"
+      ],
+      "Special Offer": [
+        "خصوصی پیشکش"
       ],
       "Start free trial": [
         "مفت ٹرائل شروع کریں"
@@ -4141,9 +4147,6 @@
       "Confirm cancellation": [
         "منسوخی کی تصدیق کریں"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "اگر آپ Free plan کی حدود سے تجاوز کرتے ہیں تو آپ یہ کام نہیں کر پائیں گے:"
-      ],
       "Keep current plan": [
         "موجودہ پلان برقرار رکھیں"
       ],
@@ -4158,9 +4161,6 @@
       ],
       "Upload any new files": [
         "کوئی بھی نئی فائل اپ لوڈ کریں"
-      ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "آپ کی سبسکرپشن ${ endDate } کو ختم ہونے پر آپ کا اکاؤنٹ Free plan پر منتقل ہو جائے گا۔ اگر آپ کا استعمال Free plan کی حدود سے تجاوز کرے تو کچھ خصوصیات عارضی طور پر دستیاب نہیں رہ سکتی ہیں۔"
       ]
     },
     "Confirm modal title": {
@@ -7462,9 +7462,6 @@
       "Invalid invitation link": [
         "دعوتی لنک غلط ہے۔"
       ],
-      "Invalid joining link. Please contact your administrator.": [
-        "جوائننگ لنک غلط ہے۔ براہِ کرم اپنے ایڈمن سے رابطہ کریں۔"
-      ],
       "Invalid name": [
         "غلط نام"
       ],
@@ -8479,9 +8476,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } گروپس"
       ],
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*ہر صارف کے لیے صرف ایک مفت ٹرائل۔ اس کے بعد باقاعدہ قیمت لاگو ہوں گی۔"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "حسب ضرورت ڈومین والے اکاؤنٹس کسی Family plan میں شامل نہیں ہو سکتے۔"
       ],
@@ -8547,9 +8541,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "سبسکرپشن کی بلنگ اس پلان کے پرائمری ایڈمن سے کی جائے گی۔"
       ],
-      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
-        "تبدیلی میں آسانی کے لیے ہم آپ کو ${ BRAND_NAME } Unlimited کا 30 دن کا مفت ٹرائل دے رہے ہیں*۔"
-      ],
       "View the invitation": [
         "دعوت دیکھیں",
         "دعوتیں دیکھیں"
@@ -8609,14 +8600,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*ہر صارف کے لیے صرف ایک مفت ٹرائل۔ اس کے بعد باقاعدہ قیمت لاگو ہوں گی۔"
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "آپ کا پلان چھوڑنے کے بعد یہ صارف ${ BRAND_NAME } Free plan پر منتقل کر دیا جائے گا۔"
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "آپ کا پلان چھوڑنے کے بعد یہ صارف 30 دن کے مفت ٹرائل کے ساتھ ${ BRAND_NAME } Unlimited پلان پر منتقل کر دیا جائے گا۔*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "ایڈمن اکاؤنٹ کو اسٹوریج تفویض کریں۔ آپ بعد میں اضافی صارفین کے لیے اسٹوریج تقسیم کر سکتے ہیں۔"
@@ -11153,6 +11138,9 @@
       ],
       "Discount": [
         "رعایت"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "رعایتیں معیاری ماہانہ قیمتوں کی بنیاد پر دی جاتی ہیں۔ بلنگ سائیکل کے اختتام پر آپ کا سبسکرپشن معیاری سالانہ قیمت پر تجدید ہو جائے گا۔"
       ],
       "Discover new features unlocked and start using them right away!": [
         "ان لاک ہوئی نئی خصوصیات دریافت کریں اور ان کا فوری طور پر استعمال شروع کریں۔"
@@ -16827,6 +16815,9 @@
       "Terms": [
         "شرائط"
       ],
+      "terms and conditions": [
+        "شرائط و ضوابط"
+      ],
       "terms of our referral program": [
         "ہمارے ریفرل پروگرام کی شرائط"
       ],
@@ -19247,9 +19238,6 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**اس سے پہلے کسی بھی وقت منسوخ کریں۔** ٹرائل ختم ہونے تک آپ ${ planTitle } مفت استعمال کر سکیں گے۔"
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**اگر آپ ٹرائل کے بعد جاری رکھیں،** تو آپ 30 دن کے اندر منسوخ کر کے متناسب رقم کی واپسی حاصل کر سکتے ہیں۔"
-      ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**جب آپ کی مکمل سبسکرپشن شروع ہو جائے...** تب بھی آپ 30 دن کے اندر منسوخ کر کے متناسب رقم کی واپسی حاصل کر سکتے ہیں۔"
       ],
@@ -20646,11 +20634,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "ملکیت کی تبدیلی کی تصدیق کے لیے کسٹمر سپورٹ سے رابطہ کریں"
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "کبھی نہیں"
       ]
     },
     "Payments.ModificationWarning": {
@@ -24180,12 +24163,6 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "${ discountItem.discountPercent }% رعایت لاگو ہے"
-      ],
-      "${ discountItem.discountPercent }% off": [
-        "${ discountItem.discountPercent }% رعایت"
-      ],
       "${ trialCycleText } free": [
         "${ trialCycleText } مفت"
       ],
@@ -27335,9 +27312,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business میں خوش آمدید"
       ],
-      "What changes if you switch to the Free plan": [
-        "Free plan پر منتقل ہونے سے کیا تبدیل ہوگا"
-      ],
       "What is an alias?": [
         "عرف کیا ہے؟"
       ],
@@ -27525,17 +27499,11 @@
       "Billing": [
         "بلنگ"
       ],
-      "End date": [
-        "اختتامی تاریخ"
-      ],
       "Plan": [
         "پلان"
       ],
       "Price": [
         "قیمت"
-      ],
-      "Start date": [
-        "آغاز کی تاریخ"
       ],
       "Status": [
         "حالت"

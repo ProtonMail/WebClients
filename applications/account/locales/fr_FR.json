@@ -296,6 +296,9 @@
       "Add notification": [
         "Ajouter une notification"
       ],
+      "Add payment method": [
+        "Ajouter un moyen de paiement"
+      ],
       "Add PayPal": [
         "Ajouter PayPal"
       ],
@@ -383,6 +386,12 @@
       "Cancel": [
         "Annuler"
       ],
+      "Cancel ${ planTitle }": [
+        "Annuler ${ planTitle }"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "Annuler la version d'essai ${ planTitle }"
+      ],
       "Cancel import": [
         "Annuler l'importation"
       ],
@@ -391,6 +400,9 @@
       ],
       "Cancel subscription": [
         "Annuler l'abonnement"
+      ],
+      "Cancel trial": [
+        "Annuler la version d'essai"
       ],
       "Cancel trial and pay": [
         "Annuler l'essai et payer"
@@ -593,6 +605,9 @@
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Créez un lien de partage que vous pouvez transmettre à des personnes qui n'utilisent pas ${ BRAND_NAME }"
       ],
+      "Create account": [
+        "Créer un compte"
+      ],
       "Create calendar": [
         "Créer un calendrier"
       ],
@@ -769,6 +784,9 @@
       ],
       "Don't show again": [
         "Ne plus afficher"
+      ],
+      "Don't show this offer again": [
+        "Ne plus afficher cette offre"
       ],
       "Donate": [
         "Faire un don"
@@ -1084,6 +1102,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Accéder à ${ planOrAppName }"
+      ],
+      "Go to folder": [
+        "Aller au dossier"
       ],
       "Go to label": [
         "Afficher le label"
@@ -1571,6 +1592,9 @@
       "Restore": [
         "Restaurer"
       ],
+      "Restrict sign-in": [
+        "Limiter la connexion"
+      ],
       "Resume": [
         "Reprendre"
       ],
@@ -1796,6 +1820,9 @@
       "Sign in": [
         "Se connecter"
       ],
+      "Sign in to a different account": [
+        "Se connecter à un autre compte"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Se connecter avec ${ BRAND_NAME }"
       ],
@@ -1837,6 +1864,9 @@
       ],
       "Spam": [
         "Indésirables/spam"
+      ],
+      "Special Offer": [
+        "Offre spéciale"
       ],
       "Start free trial": [
         "Commencer votre essai gratuit"
@@ -2142,6 +2172,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "Annuler l'abonnement "
+      ],
       "Reactivate": [
         "Réactiver"
       ]
@@ -2359,6 +2392,9 @@
       ],
       "Permission revoked": [
         "Autorisation révoquée"
+      ],
+      "Sign-in": [
+        "Se connecter"
       ]
     },
     "Admin": {
@@ -4017,9 +4053,6 @@
       "Confirm cancellation": [
         "Confirmer l'annulation"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Si vous dépassez les limites de l'abonnement gratuit, vous ne pourrez plus :"
-      ],
       "Keep current plan": [
         "Conserver l'abonnement actuel"
       ],
@@ -4034,9 +4067,6 @@
       ],
       "Upload any new files": [
         "Importer tout nouveau fichier"
-      ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Lorsque votre abonnement se termine le ${ endDate }, votre compte passera au plan gratuit. Si vous utilisation dépasse les limites du plan gratuit, certaines fonctionnalités pourront être temporairement indisponibles."
       ]
     },
     "Confirm modal title": {
@@ -7284,9 +7314,6 @@
       "Invalid invitation link": [
         "Le lien d'invitation n'est pas valide."
       ],
-      "Invalid joining link. Please contact your administrator.": [
-        "Le lien d'invitation n'est pas valide. Veuillez contacter votre administrateur."
-      ],
       "Invalid name": [
         "Le nom n'est pas valide."
       ],
@@ -7660,6 +7687,9 @@
       "The amount due has changed. Please try again.": [
         "Le montant a changé. Nous vous invitons à réessayer."
       ],
+      "The device you scanned the QR code with didn't send your sign-in details. Update the app on that device and try again.": [
+        "L'appareil avec lequel vous avez scanné le QR code n'a pas transmis vos identifiants de connexion. Mettez à jour l'application sur cet appareil, puis réessayez."
+      ],
       "The email addresses do not match": [
         "Les adresses e-mail ne correspondent pas."
       ],
@@ -7701,6 +7731,9 @@
       ],
       "The session has expired. Please sign in again.": [
         "La session a expiré. Nous vous invitons à vous reconnecter."
+      ],
+      "The session has expired. Please try again.": [
+        "La session a expiré. Veuillez réessayer."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Le fichier importé ne correspond pas à l'original. Veuillez réessayer."
@@ -8278,9 +8311,6 @@
       "${ BRAND_NAME } groups": [
         "Groupes ${ BRAND_NAME }"
       ],
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Une seule période d'essai gratuite par utilisateur. Les tarifs réguliers s'appliquent par la suite."
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Les comptes avec des domaines personnalisés ne peuvent pas rejoindre un abonnement familial."
       ],
@@ -8346,9 +8376,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "L'abonnement sera facturé à l'administrateur principal."
       ],
-      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
-        "Pour faciliter la transition, nous vous offrons un essai gratuit de 30 jours pour ${ BRAND_NAME } Unlimited*."
-      ],
       "View the invitation": [
         "Voir l'invitation",
         "Voir les invitations"
@@ -8408,14 +8435,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Une seule période d'essai gratuite par utilisateur. Les tarifs réguliers s'appliquent par la suite."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Après avoir quitté votre abonnement, cet utilisateur passera à un abonnement ${ BRAND_NAME } Free."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Après avoir quitté votre abonnement, cet utilisateur sera transféré à un abonnement ${ BRAND_NAME } Unlimited avec une période d'essai gratuite de 30 jours.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Attribuez un espace de stockage au compte administrateur. Vous pourrez ultérieurement attribuer un espace de stockage à d'autres utilisateurs."
@@ -10615,6 +10636,21 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "En partageant toutes les informations des événements de ce calendrier, vous acceptez d'accorder à ${ BRAND_NAME } l'accès aux informations chiffrées de ce calendrier."
       ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "En activant cette option, vous ne pourrez vous connecter qu'avec **${ primaryEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "En activant cette option, vous ne pourrez vous connecter qu'avec votre nom d'utilisateur d'origine **${ username }**, soit tel quel, soit sous la forme **${ firstEmail }**, **@${ secondDomain }** ou **@${ thirdDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "En activant cette option, vous ne pourrez vous connecter qu'avec votre nom d'utilisateur d'origine **${ username }**, soit tel quel, soit sous la forme **${ firstEmail }**, ou **@ ${ secondDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "En activant cette option, vous ne pourrez vous connecter qu'avec votre nom d'utilisateur d'origine **${ username }**, soit tel quel, soit sous la forme **${ firstEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "En activant cette option, vous ne pourrez vous connecter qu'avec votre nom d’utilisateur **${ username }**."
+      ],
       "Can you access your active session?": [
         "Pouvez-vous accéder à votre session active ?"
       ],
@@ -10910,6 +10946,9 @@
       ],
       "Discount": [
         "Réduction"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Découvrez les nouvelles fonctionnalités disponibles et utilisez-les dès maintenant !"
@@ -11588,6 +11627,9 @@
       ],
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Le code n'est pas valide. ${ RequestNewCodeLink } et réessayez."
+      ],
+      "Invalid joining link": [
+        "Le lien d'invitation n'est pas valide."
       ],
       "Invitation link expired": [
         "Le lien d'invitation est arrivé à expiration."
@@ -12750,6 +12792,9 @@
       "This is the password you used before the password reset.": [
         "Il s'agit du mot de passe que vous avez utilisé avant la réinitialisation du mot de passe."
       ],
+      "This joining link isn't valid. Please contact your administrator for a new one.": [
+        "Ce lien d'invitation n'est pas valide. Veuillez contacter votre administrateur pour en obtenir un nouveau."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme des mots de passe et des informations de carte de paiement."
       ],
@@ -12932,6 +12977,9 @@
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Pour fonctionner correctement, chaque filtre doit contenir au moins un nom et un script Sieve valide. Vous pouvez ${ link }."
+      ],
+      "Today": [
+        "Aujourd’hui"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Rechargez votre compte avec des crédits que vous pouvez utiliser pour vous abonner ou renouveler votre abonnement actuel. Vous obtenez un crédit pour chaque ${ i18nCurrency } dépensé."
@@ -13287,8 +13335,20 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Quand les notifications sont activées, nous envoyons une alerte à votre adresse de récupération si vous recevez de nouveaux messages sur votre compte ${ MAIL_APP_NAME }."
       ],
-      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Lorsque la connexion est restreinte, seule votre adresse e-mail ${ primaryEmailElement } peut être utilisée pour vous connecter. Vos autres adresses ne peuvent pas être associées à votre compte, même si quelqu'un les connaît."
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Lorsque la connexion est restreinte, seule votre adresse e-mail **${ primaryEmail }** peut être utilisée pour vous connecter. Vos autres adresses ne peuvent pas être associées à votre compte, même si quelqu'un les connaît."
+      ],
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Lorsque la connexion est restreinte, seul votre nom d’utilisateur **${ username }** peut être utilisée pour vous connecter. Vos autres adresses ne peuvent pas être associées à votre compte, même si quelqu'un les connaît."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Lorsque la connexion est limitée, vous ne pouvez vous connecter qu'avec votre nom d'utilisateur d'origine **${ username }**, soit tel quel, soit sous la forme **${ firstEmail }**, **@${ secondDomain }** ou **@${ thirdDomain }**. Vos autres adresses e-mail ne fonctionneront pas pour vous connecter."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Lorsque la connexion est limitée, vous ne pouvez vous connecter qu'avec votre nom d'utilisateur d'origine **${ username }**, soit tel quel, soit sous la forme **${ firstEmail }**, soit **@${ secondDomain }**. Vos autres adresses e-mail ne fonctionneront pas pour vous connecter."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Lorsque la connexion est limitée, vous ne pouvez vous connecter qu'avec votre nom d'utilisateur d'origine **${ username }**, soit tel quel, soit sous la forme **${ firstEmail }**. Vos autres adresses e-mail ne fonctionneront pas pour vous connecter."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Lorsque vous annulez votre abonnement, ce dernier ne sera pas renouvelé. Toutefois, vous pourrez toujours profiter des avantages jusqu'à la fin de la période. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free."
@@ -13518,6 +13578,9 @@
       "You have an open invoice ${ payInvoiceLink }": [
         "Vous avez une facture ouverte ${ payInvoiceLink }"
       ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Vous avez une facture à régler au ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You have no calendars to export.": [
         "Vous n'avez aucun calendrier à exporter."
       ],
@@ -13697,6 +13760,9 @@
       "Your files will be encrypted and then saved": [
         "Vos fichiers seront chiffrés puis sauvegardés."
       ],
+      "Your free plan includes one connected account. Upgrade to connect more.": [
+        "Votre abonnement gratuit comprend un compte connecté. Changer d'abonnement pour en connecter davantage."
+      ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
         "Votre période d’essai gratuite est terminée. Abonnez-vous dès maintenant pour maintenir l’accès de votre équipe sans interruption et assurer la sécurité de vos comptes."
       ],
@@ -13735,6 +13801,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Les messages de votre organisation sont protégés par un chiffrement de bout en bout grâce à la clé de l'organisation. Cette empreinte peut être utilisée pour vérifier que tous les administrateurs de votre compte ont la même clé."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Vos autres adresses e-mail ne fonctionneront pas pour vous connecter tant que vous n'aurez pas désactivé cette option."
       ],
       "Your payment details are encrypted and secure": [
         "Vos informations de paiement sont chiffrées et sécurisées"
@@ -14590,6 +14659,12 @@
       ],
       "Allow sharing outside the organization": [
         "Autoriser le partage en dehors de l'organisation"
+      ],
+      "Allow storing 2FA codes": [
+        "Autoriser l'enregistrement des codes A2F"
+      ],
+      "Allow storing passkeys": [
+        "Autoriser l'enregistrement des clés d'accès"
       ],
       "Allow users to set a backup password": [
         "Permettre aux utilisateurs de définir un mot de passe de secours"
@@ -15750,6 +15825,9 @@
       "Restrict sign-in to email address": [
         "Restreindre la connexion à l'adresse e-mail"
       ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Limiter la connexion aux noms d'utilisateur et aux adresses correspondant à ${ BRAND_NAME }"
+      ],
       "Reveal password": [
         "Afficher le mot de passe"
       ],
@@ -16537,6 +16615,9 @@
       "Pay invoice": [
         "Payer la facture"
       ],
+      "Pay it": [
+        "Payer avec"
+      ],
       "Privacy policy": [
         "Politique de confidentialité"
       ],
@@ -16572,6 +16653,9 @@
       ],
       "Terms": [
         "Conditions générales d'utilisation"
+      ],
+      "terms and conditions": [
+        "conditions générales d'utilisation"
       ],
       "terms of our referral program": [
         "conditions de notre programme de parrainage"
@@ -18994,8 +19078,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Résiliez à tout moment avant l'échéance.** Vous pourrez utiliser ${ planTitle } jusqu'à la fin de la période d'essai, gratuitement."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Si vous continuez après votre période d'essai, ** vous pouvez annuler dans les 30 jours et recevoir un remboursement au prorata."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Vous avez changé d'avis après la période d'essai ?** Résiliez votre abonnement dans les 30 jours suivant votre premier paiement et nous vous rembourserons la période non utilisée."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Une fois que votre abonnement complet débuté... ** Vous pouvez toujours annuler dans les 30 jours et recevoir un remboursement au prorata."
@@ -20139,6 +20223,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Un moyen de paiement est requis pour que l'abonnement soit activé après la fin de la version d'essai."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Le changement de plan est incompatible pour les raisons suivantes :"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Veuillez clôturer les comptes de portefeuille supplémentaires avant de changer d'abonnement."
       ],
@@ -20150,6 +20237,9 @@
       ],
       "Processing payment": [
         "Traitement du paiement"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Le nombre de places Proton Meet doit correspondre au nombre de membres."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Le tarif du renouvellement est susceptible de changer en accord avec ${ termsAndConditionsLink }."
@@ -20234,6 +20324,9 @@
       ],
       "This plan doesn’t support the members on your account.": [
         "Cet abonnement ne prend pas en charge les membres sur votre compte."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "La souscription ne peut aboutir pour le moment. Merci de réessayer ultérieurement."
       ],
       "Timeout exceeded": [
         "Le délai est dépassé."
@@ -20345,11 +20438,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Contactez le service client pour confirmer le changement de propriétaire."
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Jamais"
       ]
     },
     "Payments.ModificationWarning": {
@@ -23875,11 +23963,11 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "${ discountItem.discountPercent } % de réduction appliquée"
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "${ planDiscountItem.discountPercent } % de réduction appliquée"
       ],
-      "${ discountItem.discountPercent }% off": [
-        "${ discountItem.discountPercent } % de réduction"
+      "${ planDiscountItem.discountPercent }% off": [
+        "${ planDiscountItem.discountPercent } % de réduction"
       ],
       "${ trialCycleText } free": [
         "${ trialCycleText } gratuit"
@@ -24406,6 +24494,11 @@
       ],
       "Upcoming": [
         "À venir"
+      ]
+    },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
       ]
     },
     "Subtitle": {
@@ -26569,6 +26662,9 @@
       "Restore administrator privileges": [
         "Restaurer les droits administrateur"
       ],
+      "Restrict sign-in?": [
+        "Limiter la connexion ?"
+      ],
       "Reused passwords": [
         "Mots de passe réutilisés"
       ],
@@ -27038,9 +27134,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Bienvenue dans ${ BRAND_NAME } for Business"
       ],
-      "What changes if you switch to the Free plan": [
-        "Ce qui change si vous passez au plan gratuit"
-      ],
       "What is an alias?": [
         "Qu'est-ce qu'un alias ?"
       ],
@@ -27231,17 +27324,14 @@
       "Billing": [
         "Facturation"
       ],
-      "End date": [
-        "Date de fin"
-      ],
       "Plan": [
         "Abonnement"
       ],
       "Price": [
         "Prix"
       ],
-      "Start date": [
-        "Date de début "
+      "Renewal": [
+        "Renouvellement"
       ],
       "Status": [
         "Statut"

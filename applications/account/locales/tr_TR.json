@@ -464,6 +464,9 @@
       "Add notification": [
         "Bildirim ekle"
       ],
+      "Add payment method": [
+        "Ödeme yöntemi ekle"
+      ],
       "Add PayPal": [
         "PayPal ekle"
       ],
@@ -554,6 +557,12 @@
       "Cancel": [
         "İptal"
       ],
+      "Cancel ${ planTitle }": [
+        "${ planTitle } aboneliğini iptal et"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "${ planTitle } deneme sürümünü iptal et"
+      ],
       "Cancel import": [
         "İçe aktarmayı iptal et"
       ],
@@ -562,6 +571,9 @@
       ],
       "Cancel subscription": [
         "Aboneliği iptal et"
+      ],
+      "Cancel trial": [
+        "Denemeyi iptal et"
       ],
       "Cancel trial and pay": [
         "Deneme süresini iptal et ve öde"
@@ -770,6 +782,9 @@
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "${ BRAND_NAME } kullanmayan kişilerle paylaşmak için bir bağlantı oluştur"
       ],
+      "Create account": [
+        "Hesap aç"
+      ],
       "Create calendar": [
         "Takvim ekle"
       ],
@@ -946,6 +961,9 @@
       ],
       "Don't show again": [
         "Bir daha görüntülenmesin"
+      ],
+      "Don't show this offer again": [
+        "Bu teklif bir daha görüntülenmesin"
       ],
       "Donate": [
         "Bağış yapın"
@@ -1264,6 +1282,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "${ planOrAppName } uygulamasına git"
+      ],
+      "Go to folder": [
+        "Klasöre git"
       ],
       "Go to label": [
         "Etikete git"
@@ -1763,6 +1784,9 @@
       "Restore": [
         "Geri yükle"
       ],
+      "Restrict sign-in": [
+        "Oturum açma kısıtlansın"
+      ],
       "Resume": [
         "Sürdür"
       ],
@@ -1991,6 +2015,9 @@
       "Sign in to ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } oturumu açın"
       ],
+      "Sign in to a different account": [
+        "Başka bir hesapta oturum aç"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME } ile oturum aç"
       ],
@@ -2035,6 +2062,9 @@
       ],
       "Spam": [
         "İstenmeyen"
+      ],
+      "Special Offer": [
+        "Özel teklif"
       ],
       "Start free trial": [
         "Ücretsiz deneme süresini başlat"
@@ -2349,6 +2379,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "Aboneliği iptal et"
+      ],
       "Reactivate": [
         "Yenile"
       ],
@@ -2569,6 +2602,9 @@
       ],
       "Permission revoked": [
         "İzin geri alındı"
+      ],
+      "Sign-in": [
+        "Giriş yap"
       ]
     },
     "Admin": {
@@ -2823,6 +2859,9 @@
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "İptal ettiğinizde, ücretsiz deneme süreniz ücretli aboneliğe dönüştürülmez. Ancak deneme süresinin sonuna kadar tarifenizdeki özellikleri kullanmayı sürdürebilirsiniz. Bundan sonra, ${ BRAND_NAME } Free tarifesine düşürüleceksiniz."
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "Aboneliğinizi iptal ettiğinizde ücretsiz deneme süreniz ücretli aboneliğe dönüştürülmez."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucunuz olabilir."
@@ -4245,8 +4284,8 @@
       "Confirm cancellation": [
         "İptal işlemini onayla"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Free tarifesinin sınırlarını aşarsanız şunları yapamazsınız:"
+      "If you exceed your plan limits, you won't be able to:": [
+        "Tarife sınırlarınızı aşarsanız şunları yapamazsınız:"
       ],
       "Keep current plan": [
         "Geçerli tarifede kal"
@@ -4263,8 +4302,11 @@
       "Upload any new files": [
         "Yeni dosyalar yükleyemezsiniz"
       ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Aboneliğiniz ${ endDate } tarihinde sona erdiğinde,hesabınız Free tarifesine geçirilecek. Kullanımınız Free tarifesinin sınırlarını aşarsa bazı özellikleri geçici olarak kullanamayabilirsiniz."
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "${ planDisplayName } aboneliğiniz ${ endDate } tarihinde sona erdiğinde bu aboneliğin sunduğu özellikleri kullanamayacaksınız. Bu tarihten sonra kullanımınız tarifenizin sınırlarını aşarsa bazı özellikler geçici olarak kullanılamayabilir."
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Aboneliğiniz ${ endDate } tarihinde sona erdiğinde aboneliğinizin özelliklerini kullanamayacaksınız. Bu tarihten sonra kullanımınız tarife sınırlarınızı aşarsa bazı özellikler geçici olarak kullanılamayabilir."
       ]
     },
     "Confirm modal title": {
@@ -7612,9 +7654,6 @@
       "Invalid invitation link": [
         "Davet bağlantısı geçersiz"
       ],
-      "Invalid joining link. Please contact your administrator.": [
-        "Katılma bağlantısı geçersiz. Lütfen yöneticiniz ile görüşün."
-      ],
       "Invalid name": [
         "Ad geçersiz"
       ],
@@ -8024,6 +8063,9 @@
       "The amount due has changed. Please try again.": [
         "Ödenecek tutar değişti. Lütfen yeniden deneyin."
       ],
+      "The device you scanned the QR code with didn't send your sign-in details. Update the app on that device and try again.": [
+        "Kendisine kare kodu tarattığınız cihaz, oturum açma bilgilerinizi göndermedi. Cihazaki uygulamayı güncelleyin ve tekrar deneyin."
+      ],
       "The email addresses do not match": [
         "E-posta adresleri eşleşmiyor"
       ],
@@ -8065,6 +8107,9 @@
       ],
       "The session has expired. Please sign in again.": [
         "Oturumun geçerlilik süresi dolmuş. Lütfen yeniden oturum açın."
+      ],
+      "The session has expired. Please try again.": [
+        "Oturum süresi doldu. Lütfen tekrar deneyin."
       ],
       "The total could not be calculated. Change the amount to try again.": [
         "Toplam tutar hesaplanamadı. Yeniden denemek için tutarı değiştirin."
@@ -8663,9 +8708,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } grupları"
       ],
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Her kullanıcı için yalnızca bir ücretsiz deneme süresi olabilir. Bundan sonra normal fiyatlandırma geçerli olur."
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Özel etki alanları olan hesaplar, bir aile tarifesine katılamaz."
       ],
@@ -8731,9 +8773,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonelik ücreti faturası bu tarifenin birincil yöneticisine kesilir."
       ],
-      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
-        "Geçişi kolaylaştırmak için size 30 günlük ücretsiz ${ BRAND_NAME } Unlimited* deneme süresi sunuyoruz."
-      ],
       "View the invitation": [
         "Daveti görüntüle",
         "Davetleri görüntüle"
@@ -8793,14 +8832,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Her kullanıcı için yalnızca bir ücretsiz deneme süresi olabilir. Bundan sonra normal fiyatlandırma geçerli olur."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Tarifenizden ayrıldıktan sonra bu kullanıcı ${ BRAND_NAME } Free tarifesine geçirilir."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Tarifenizden ayrıldıktan sonra bu kullanıcı 30 günlük deneme süresi ile ${ BRAND_NAME } Unlimited tarifesine geçirilecek.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Yönetici hesabına depolama alanı atayın. Daha sonra depolama alanını diğer kullanıcılara paylaştırabilirsiniz."
@@ -11108,6 +11141,21 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Bu takvimin tüm etkinlik bilgilerini paylaşarak, bu takvimin şifrelenmiş bilgilerine ${ BRAND_NAME } tarafından erişilmesine izin vermiş olursunuz."
       ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "Bu seçeneği açtığınızda, yalnızca **${ primaryEmail }** adresiyle oturum açabilirsiniz."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "Bu seçeneği açtığınızda, yalnızca özgün kullanıcı adınız olan **${ username }** ile oturum açabilirsiniz. Bu tek başına ya da **${ firstEmail }**, **@${ secondDomain }** veya **@${ thirdDomain }** biçiminde olabilir."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "Bu seçeneği açtığınızda, yalnızca özgün kullanıcı adınız **${ username }** ile oturum açabileceksiniz. Bu tek başına **${ firstEmail }** şeklinde veya **@${ secondDomain }** şeklinde olabilir."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "Bu seçeneği açtığınızda, yalnızca özgün kullanıcı adınız **${ username }** ile tek başına ya da **${ firstEmail }** şeklinde oturum açabileceksiniz."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "Bu seçeneği açtığınızda, yalnızca **${ username }** kullanıcı adınızla oturum açabileceksiniz."
+      ],
       "Can you access your active session?": [
         "Etkin oturumunuza erişebiliyor musunuz?"
       ],
@@ -11415,6 +11463,9 @@
       ],
       "Discount": [
         "İndirim"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret ile yenilenir."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Erişebileceğiniz yeni özellikleri keşfedin ve hemen kullanmaya başlayın!"
@@ -11945,11 +11996,17 @@
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Bu seçenek kapalıysa, kuruluş üyeleri kasaları veya ögeleri yalnızca kuruluş içinde paylaşabilir."
       ],
+      "If disabled, organization members won't be able to add 2FA codes to their items, and existing ones won't be generated or autofilled. Nothing is deleted.": [
+        "Kapatıldığında, kuruluş üyeleri ögelerine iki adımlı doğrulama kodları ekleyemez ve var olanlar oluşturulmaz veya otomatik olarak doldurulmaz. Hiçbir şey silinmedi."
+      ],
       "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
         "Kapatıldığında, kuruluş üyeleri yeni takma adlar oluşturamaz. Var olan takma adlar kullanımda kalır."
       ],
       "If disabled, organization members won't be able to create secure links. Previously active secure links remain valid until their expiration.": [
         "Kapatıldığında, kuruluş üyeleri güvenli bağlantılar oluşturamaz. Daha önce kullanılan güvenli bağlantılar, geçerlilik süresi dolana kadar geçerli kalır."
+      ],
+      "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
+        "Kapatıldığında, kuruluş üyeleri geçiş anahtarlarını ${ PASS_APP_NAME } içine kaydedemez veya onlarla oturum açamaz. Hiçbir şey silinmedi."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Bu seçenek açıksa, kuruluş üyeleri kasalara ek olarak tekil ögeleri de paylaşabilir."
@@ -12117,6 +12174,9 @@
       ],
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Kod geçersiz. ${ RequestNewCodeLink } ve yeniden deneyin."
+      ],
+      "Invalid joining link": [
+        "Katılma bağlantısı geçersiz"
       ],
       "Invitation link expired": [
         "Davet bağlantısının geçerlilik süresi dolmuş"
@@ -13321,6 +13381,9 @@
       "This is the password you used before the password reset.": [
         "Bu parola, sıfırlama öncesinde kullandığınız paroladır."
       ],
+      "This joining link isn't valid. Please contact your administrator for a new one.": [
+        "Bu katılma bağlantısı geçersiz. Lütfen yeni bir bağlantı için yöneticiniz ile görüşün."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir siteye gidiyor olabilir."
       ],
@@ -13918,17 +13981,26 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Bildirimler etkinleştirildiğinde, ${ MAIL_APP_NAME } hesabınızda yeni ileti varsa, kurtarma/bildirim adresinize bir uyarı göndeririz."
       ],
-      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Oturum açma kısıtlandığında, oturum açmak için yalnızca ${ primaryEmailElement } ve ${ usernameElement } kullanıcı adınız kullanılabilir. Diğer adresleriniz, birileri onları bilse bile hesabınıza bağlanamaz."
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Oturum açma kısıtlandığında, oturum açmak için yalnızca **${ primaryEmail }** e-posta adresiniz kullanılabilir. Diğer adresleriniz, biri bunları biliyor olsa bile hesabınız ile ilişkilendirilemez."
       ],
-      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Oturum açma kısıtlandığında oturum açmak için yalnızca ${ primaryEmailElement } e-posta adresiniz kullanılabilir. Diğer adresleriniz birisi bunları biliyor olsa bile hesabınızla ilişkilendirilemez."
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Oturum açma kısıtlandığında, oturum açmak için yalnızca **${ username }** kullanıcı adınız kullanılabilir. Diğer adresleriniz biri bunları biliyor olsa bile hesabınız ile ilişkilendirilemez."
       ],
-      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Oturum açma kısıtlandığında, oturum açmak için yalnızca ${ usernameElement } kullanıcı adınız kullanılabilir. Diğer adresleriniz, birileri onları bilse bile hesabınıza bağlanamaz."
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Oturum açma kısıtlandığında, yalnızca özgün kullanıcı adınız olan **${ username }** ile oturum açabilirsiniz. Bunu tek başına ya da **${ firstEmail }**, **@${ secondDomain }** veya **@${ thirdDomain }** biçiminde kullanabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Oturum açma kısıtlandığında yalnızca özgün kullanıcı adınız **${ username }** ile oturum açabilirsiniz. Bunu tek başına **${ firstEmail }** şeklinde veya **@${ secondDomain }** şeklinde kullanabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Oturum açma kısıtlandığında, yalnızca özgün kullanıcı adınız **${ username }** ile tek başına ya da **${ firstEmail }** biçiminde oturum açabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "İptal ettiğinizde aboneliğiniz yenilenmez ancak abonelik süresinin sonuna kadar tarifenizin özelliklerinden yararlanmayı sürdürürsünüz. Bundan sonra ${ BRAND_NAME } Free tarifesine geçersiniz."
+      ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "Aboneliğinizi iptal ettiğinizde deneme süresi sona erdikten sonra aboneliğiniz yeniden başlatılmaz."
       ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "İptal ettiğinizde aboneliğiniz başlamayacak ancak deneme süresinin sonuna kadar tarifenizin avantajlarından yararlanmayı sürdürebilirsiniz. Deneme süresi sona erdikten sonra ${ BRAND_NAME } Free tarifesine geçirileceksiniz."
@@ -14114,6 +14186,9 @@
         "Önümüzdeki 24 saat boyunca ${ emailSendLimitNumber } taneden daha fazla davet e-postası gönderemezsiniz",
         "Önümüzdeki 24 saat boyunca ${ emailSendLimitNumber } taneden daha fazla davet e-postası gönderemezsiniz"
       ],
+      "You cancel it in the store.": [
+        "Bunu mağazadan iptal edebilirsiniz."
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "${ MAIL_APP_NAME } kullanıcılarını kaynak gösteremezsiniz"
       ],
@@ -14172,6 +14247,9 @@
       ],
       "You have no transactions.": [
         "Herhangi bir hesap işleminiz yok."
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "Birkaç aboneliğiniz var. İptal edilecek aboneliği seçin. Diğer abonelikleriniz etkilenmez. İptal edilen bir abonelik yenilenmez ve abonelik süresinin sonuna kadar özelliklerini kullanabilirsiniz."
       ],
       "You have unpublished changes": [
         "Yayınlanmamış değişiklikleriniz var"
@@ -14310,6 +14388,9 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Hesabınızda şu anda tersine KDV uygulaması yapılandırılmış. Seçilmiş tarifede bu uygulama desteklenmiyor. İlerlemek için fatura adresinden KDV numarasını kaldırabilir ya da farklı bir tarife seçebilirsiniz."
       ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "Hesabınız oluşturuldu ancak tarifenizin kurulumu tamamlanamadı."
+      ],
       "Your account was successfully updated with this promotion": [
         "Hesabınız bu fırsata göre güncellendi"
       ],
@@ -14352,6 +14433,9 @@
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
       ],
+      "Your free plan includes one connected account. Upgrade to connect more.": [
+        "Ücretsiz tarifenizde bir adet bağlı hesap bulunur. Daha fazla hesap bağlamak için tarifenizi yükseltin."
+      ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
         "Ücretsiz deneme süreniz sona erdi. Ekibinizin erişimini sürdürmek ve hesaplarını güvende tutmak için şimdi abone olun."
       ],
@@ -14390,6 +14474,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Kuruluşunuzun e-posta adresleri, kuruluş anahtarı ile uçtan uca şifreleme ile korunur. Bu parmak izi, hesabınızdaki tüm yöneticilerin aynı anahtara sahip olduğunu doğrulamak için kullanılabilir."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Bu özelliği kapatana kadar diğer e-posta adreslerinizle oturum açamazsınız."
       ],
       "Your payment details are encrypted and secure": [
         "Ödeme bilgileriniz şifrelenerek korunur"
@@ -15256,6 +15343,12 @@
       ],
       "Allow sharing outside the organization": [
         "Kuruluş dışına paylaşım yapılabilsin"
+      ],
+      "Allow storing 2FA codes": [
+        "İki adımlı doğrulama kodları kaydedilebilsin"
+      ],
+      "Allow storing passkeys": [
+        "Geçiş anahtarları kaydedilebilsin"
       ],
       "Allow users to set a backup password": [
         "Kullanıcılar yedek parola belirleyebilsin"
@@ -16425,11 +16518,11 @@
       "Restrict sign-in to email address": [
         "Oturum açma e-posta adresi ile kısıtlansın"
       ],
-      "Restrict sign-in to primary email address": [
-        "Oturum açma birincil e-posta adresi ile kısıtlansın"
-      ],
       "Restrict sign-in to username": [
         "Oturum açma kullanıcı adıyla kısıtlansın"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Oturum açma işlemini kullanıcı adı ve eşleşen ${ BRAND_NAME } adresleri ile kısıtlayın"
       ],
       "Reveal password": [
         "Parolayı görüntüle"
@@ -17271,6 +17364,9 @@
       ],
       "Terms": [
         "Koşullar"
+      ],
+      "terms and conditions": [
+        "hüküm ve koşullar"
       ],
       "terms of our referral program": [
         "öneri programımızın koşulları"
@@ -19711,8 +19807,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Ondan önce istediğiniz zaman iptal edebilirsiniz.** Deneme süresi sona erene kadar ${ planTitle } tarifesini ücretsiz olarak kullanabileceksiniz."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Deneme süreniz bittikten sonra kullanmayı sürdürürseniz** 30 gün içinde iptal edebilir ve ödediğiniz kalan gün sayısına göre geri ödeme alabilirsiniz."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Denedikten sonra fikrinizi değiştirdiniz mi? ** İlk ödemenizden sonraki 30 gün içinde iptal edebilirsiniz. Kullanılmayan süreyi geri öderiz."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Tam aboneliğiniz başladığında...** 30 gün içinde aboneliğinizi iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
@@ -21159,11 +21255,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Sahiplik değişikliğini onaylamak için müşteri destek ekibi ile görüşün."
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Asla"
       ]
     },
     "Payments.ModificationWarning": {
@@ -24745,11 +24836,11 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "%${ discountItem.discountPercent } indirim uygulandı"
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "%${ planDiscountItem.discountPercent } indirim uygulandı"
       ],
-      "${ discountItem.discountPercent }% off": [
-        "%${ discountItem.discountPercent } indirim"
+      "${ planDiscountItem.discountPercent }% off": [
+        "%${ planDiscountItem.discountPercent } indirim"
       ],
       "${ trialCycleText } free": [
         "${ trialCycleText } ücretsiz"
@@ -25276,6 +25367,14 @@
       ],
       "Upcoming": [
         "Yaklaşan"
+      ]
+    },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "${ startTime } ile başlayarak"
       ]
     },
     "Subtitle": {
@@ -27502,6 +27601,9 @@
       "Restore administrator privileges": [
         "Yönetici yetkilerini geri yükle"
       ],
+      "Restrict sign-in?": [
+        "Oturum açma kısıtlansın mı?"
+      ],
       "Reused passwords": [
         "Yeniden kullanılmış parolalar"
       ],
@@ -28004,8 +28106,8 @@
       "What are you migrating?": [
         "Neyi aktarıyorsunuz?"
       ],
-      "What changes if you switch to the Free plan": [
-        "Free tarifesine geçerseniz ne değişir?"
+      "What changes if you cancel ${ planDisplayName }": [
+        "${ planDisplayName } tarifesini iptal ederseniz neler değişir"
       ],
       "What is an alias?": [
         "Takma ad nedir?"
@@ -28203,20 +28305,20 @@
       "Billing": [
         "Faturalama"
       ],
-      "End date": [
-        "Bitiş tarihi"
-      ],
       "Plan": [
         "Tarife"
       ],
       "Price": [
         "Fiyat"
       ],
-      "Start date": [
-        "Başlangıç tarihi"
+      "Renewal": [
+        "Yenile"
       ],
       "Status": [
         "Durum"
+      ],
+      "Subscription term": [
+        "Abonelik süresi"
       ]
     },
     "Title; create calendar modal": {

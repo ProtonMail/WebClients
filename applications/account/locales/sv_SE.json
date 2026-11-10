@@ -419,6 +419,9 @@
       "Add notification": [
         "Lägg till avisering"
       ],
+      "Add payment method": [
+        "Lägg till betalningsmetod"
+      ],
       "Add PayPal": [
         "Lägg till PayPal"
       ],
@@ -508,6 +511,12 @@
       ],
       "Cancel": [
         "Avbryt"
+      ],
+      "Cancel ${ planTitle }": [
+        "Avsluta ${ planTitle }"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "Avsluta ${ planTitle } försöksperiod"
       ],
       "Cancel import": [
         "Avbryt import"
@@ -722,6 +731,9 @@
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Skapa en länk att dela med alla utanför ${ BRAND_NAME }"
       ],
+      "Create account": [
+        "Skapa konto"
+      ],
       "Create calendar": [
         "Skapa kalender"
       ],
@@ -898,6 +910,9 @@
       ],
       "Don't show again": [
         "Visa inte igen"
+      ],
+      "Don't show this offer again": [
+        "Visa inte detta erbjudande igen"
       ],
       "Donate": [
         "Donera"
@@ -1213,6 +1228,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Gå till ${ planOrAppName }"
+      ],
+      "Go to folder": [
+        "Gå till mapp"
       ],
       "Go to label": [
         "Gå till etikett"
@@ -1979,6 +1997,9 @@
       "Spam": [
         "Skräppost"
       ],
+      "Special Offer": [
+        "Specialerbjudande"
+      ],
       "Start free trial": [
         "Starta gratis provperiod"
       ],
@@ -2292,6 +2313,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "Avsluta prenumeration"
+      ],
       "Reactivate": [
         "Återaktivera"
       ]
@@ -2503,6 +2527,9 @@
       ],
       "Permission revoked": [
         "Behörighet återkallad"
+      ],
+      "Sign-in": [
+        "Logga-in"
       ]
     },
     "Admin": {
@@ -2742,6 +2769,9 @@
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "När du avbryter kommer din gratis provperiod inte att omvandlas till en betald prenumeration, men du kan fortfarande dra nytta av paketförmåner fram till slutet av provperioden. Därefter kommer du att nedgraderas till ${ BRAND_NAME } Free-paketet."
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "När du avslutar, din fria provperiod kommer inte att konverteras till en betald prenumeration."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha upp till ${ TRIAL_MAX_DEDICATED_IPS } dedikerad server under provperioden."
@@ -4092,8 +4122,8 @@
       "Confirm cancellation": [
         "Bekräfta uppsägning"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Om du överskrider gränserna för Free plan kommer du inte att kunna:"
+      "If you exceed your plan limits, you won't be able to:": [
+        "Om du överskrider gränserna för din plan, kommer du inte att kunna:"
       ],
       "Keep current plan": [
         "Behåll nuvarande paket"
@@ -4110,8 +4140,11 @@
       "Upload any new files": [
         "Ladda upp alla nya filer"
       ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "När din prenumeration löper ut den ${ endDate } kommer ditt konto att byta till Free plan. Om din användning överskrider gränserna för Free plan kan vissa funktioner vara tillfälligt otillgängliga."
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "När din  ${ planDisplayName } prenumeration avslutas på ${ endDate }förlorar du dess funktioner. Om din användning överstiger dina planbegränsningar, kommer vissa funktioner att vara tillfälligt otillgängliga."
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "När din  prenumeration avslutas på ${ endDate }förlorar du dess funktioner. Om din användning överstiger dina planbegränsningar, kan vissa funktioner vara tillfälligt otillgängliga."
       ]
     },
     "Confirm modal title": {
@@ -7389,9 +7422,6 @@
       "Invalid invitation link": [
         "Ogiltig inbjudningslänk"
       ],
-      "Invalid joining link. Please contact your administrator.": [
-        "Ogiltig länk för att gå med. Kontakta din administratör."
-      ],
       "Invalid name": [
         "Ogiltigt namn"
       ],
@@ -7780,6 +7810,9 @@
       "The amount due has changed. Please try again.": [
         "Det förfallna beloppet har ändrats. Försök igen."
       ],
+      "The device you scanned the QR code with didn't send your sign-in details. Update the app on that device and try again.": [
+        "Apparaten du skannade QR koden med skickade inte dina inloggningsdetaljer. Uppdatera appen på den apparaten och försök igen."
+      ],
       "The email addresses do not match": [
         "E-postadresserna matchar inte"
       ],
@@ -7821,6 +7854,9 @@
       ],
       "The session has expired. Please sign in again.": [
         "Sessionen har löpt ut. Logga in igen."
+      ],
+      "The session has expired. Please try again.": [
+        "Sessionen har löpt ut. Vänligen försök igen."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Den uppladdade filen matchar inte originalet. Försök igen."
@@ -8404,9 +8440,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-grupper"
       ],
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Endast en gratis provperiod per användare. Ordinarie priser tillämpas därefter."
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Konton med anpassade domäner kan inte gå med i ett familjepaket."
       ],
@@ -8472,9 +8505,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Prenumerationen kommer att faktureras till den primära administratören av detta paket."
       ],
-      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
-        "För att underlätta övergången ger vi dig en 30-dagars gratis provperiod på ${ BRAND_NAME } Unlimited*."
-      ],
       "View the invitation": [
         "Visa inbjudan",
         "Visa inbjudningarna"
@@ -8534,14 +8564,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Endast en gratis provperiod per användare. Ordinarie priser tillämpas därefter."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Efter att ha lämnat ditt paket kommer denna användare att flyttas till ett ${ BRAND_NAME } Free-paket."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Efter att ha lämnat ditt paket kommer denna användare att flyttas till ett ${ BRAND_NAME } Unlimited-paket med en 30-dagars gratis provperiod.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Tilldela lagringsutrymme till administratörskontot. Du kan distribuera lagringsutrymme för ytterligare användare senare."
@@ -11727,6 +11751,9 @@
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Ogiltig kod. ${ RequestNewCodeLink } och försök igen."
       ],
+      "Invalid joining link": [
+        "Ogiltig möteslänk"
+      ],
       "Invitation link expired": [
         "Inbjudningslänk löpt ut"
       ],
@@ -12848,6 +12875,9 @@
       "This is the password you used before the password reset.": [
         "Det här är lösenordet som du hade innan lösenordsåterställningen."
       ],
+      "This joining link isn't valid. Please contact your administrator for a new one.": [
+        "Den här möteslänken är inte giltig. Vänligen kontakta din administratör för en ny."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Denna länk leder till en webbplats som kanske försöker stjäla din information, såsom lösenord och kreditkortsuppgifter."
       ],
@@ -13352,6 +13382,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "När du avbryter kommer din prenumeration inte att förnyas, men du kan fortfarande dra nytta av paketförmåner fram till slutet av prenumerationsperioden. Efter det kommer du att nedgraderas till ${ BRAND_NAME } Free-paketet."
       ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "När du avslutar, din prenumeration kommer inte att påbörjas efter provtiden."
+      ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "När du avbryter kommer din prenumeration inte att starta, men du kan fortfarande dra nytta av paketförmåner fram till slutet av provperioden. Efter det kommer du att nedgraderas till ${ BRAND_NAME } Free-paketet."
       ],
@@ -13530,6 +13563,9 @@
         "Du kan inte skicka mer än ${ emailSendLimitNumber } e-postinbjudning under de kommande 24 timmarna",
         "Du kan inte skicka mer än ${ emailSendLimitNumber } e-postinbjudningar under de kommande 24 timmarna"
       ],
+      "You cancel it in the store.": [
+        "Du avslutar den i butiken."
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Du kan inte hänvisa ${ MAIL_APP_NAME }-användare"
       ],
@@ -13582,6 +13618,9 @@
       ],
       "You have no transactions.": [
         "Du har inga transaktioner."
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "Du har flera prenumerationer. Välj den du vill avsluta: dina andra prenumerationer påverkas ej.\nEn avslutad prenumeration kommer inte att förnyas, och du behåller dess fördelar till slutet av prenumerationsperioden."
       ],
       "You have unpublished changes": [
         "Du har opublicerade ändringar"
@@ -13707,6 +13746,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Ditt konto är för närvarande konfigurerat för att tillämpa systemet för omvänd skattskyldighet. Detta stöds inte för det valda paketet. För att fortsätta, ta antingen bort momsregistreringsnumret från faktureringsadressen eller välj ett annat paket."
+      ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "Ditt konto skapades, men vi kunde inte fullfölja att installera din plan."
       ],
       "Your account was successfully updated with this promotion": [
         "Ditt konto har uppdaterats med denna kampanj"
@@ -14969,6 +15011,9 @@
         "Anpassad e-postdomän",
         "Anpassade e-postdomäner"
       ],
+      "Custom email domains": [
+        "Anpassade e-domäner"
+      ],
       "Daily email notifications": [
         "Dagliga e-postaviseringar"
       ],
@@ -14983,6 +15028,9 @@
       ],
       "Deals, offers, and marketing emails": [
         "Erbjudanden, kampanjer, och e-postmarknadsföring"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikerade VPN-servrar"
       ],
       "Default email address": [
         "Standard e-postadress"
@@ -15640,6 +15688,9 @@
       ],
       "Payment method": [
         "Betalningsmetod"
+      ],
+      "Payment terms": [
+        "Betalningsvillkor"
       ],
       "Pending": [
         "Väntande"
@@ -16592,6 +16643,9 @@
       ],
       "Terms": [
         "Villkor"
+      ],
+      "terms and conditions": [
+        "användarvillkor"
       ],
       "terms of our referral program": [
         "villkoren för vårt hänvisningsprogram"
@@ -20147,6 +20201,9 @@
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "Endast ett ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } kan köpas."
       ],
+      "Paid from your account credit.": [
+        "Betalt från din kontokredit."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Betala med ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -20298,11 +20355,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Kontakta kundsupport för att bekräfta ägarskapsbyte"
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Aldrig"
       ]
     },
     "Payments.ModificationWarning": {
@@ -23827,12 +23879,6 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "${ discountItem.discountPercent } % rabatt tillämpad"
-      ],
-      "${ discountItem.discountPercent }% off": [
-        "${ discountItem.discountPercent } % rabatt"
-      ],
       "${ trialCycleText } free": [
         "${ trialCycleText } gratis"
       ],
@@ -24358,6 +24404,14 @@
       ],
       "Upcoming": [
         "Kommande"
+      ]
+    },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "Från  ${ startTime }"
       ]
     },
     "Subtitle": {
@@ -27023,8 +27077,8 @@
       "What are you migrating?": [
         "Vad migrerar du?"
       ],
-      "What changes if you switch to the Free plan": [
-        "Vad som ändras om du byter till Free plan"
+      "What changes if you cancel ${ planDisplayName }": [
+        "Vad ändras om du avslutar ${ planDisplayName }"
       ],
       "What is an alias?": [
         "Vad är ett alias?"
@@ -27225,20 +27279,20 @@
       "Billing": [
         "Fakturering"
       ],
-      "End date": [
-        "Slutdatum"
-      ],
       "Plan": [
         "Paket"
       ],
       "Price": [
         "Pris"
       ],
-      "Start date": [
-        "Startdatum"
+      "Renewal": [
+        "Förnyelse"
       ],
       "Status": [
         "Status"
+      ],
+      "Subscription term": [
+        "Prenumerationspaket"
       ]
     },
     "Title; create calendar modal": {
