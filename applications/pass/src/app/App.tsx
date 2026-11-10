@@ -103,7 +103,7 @@ const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProviderProps
             },
         }),
 
-        generateOTP: (payload) => (payload.type === 'uri' ? generateTOTPCode(payload.totpUri) : null),
+        generateOTP: (payload) => (payload.type === 'uri' ? generateTOTPCode(core, payload.totpUri) : null),
 
         /** If service worker support is unavailable, use a fallback caching strategy for
          * domain images. When service worker is enabled, utilize abort message passing to

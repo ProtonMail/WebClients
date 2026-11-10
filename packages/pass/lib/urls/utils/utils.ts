@@ -10,7 +10,7 @@ export { MAX_HOSTNAME_LENGTH, RegexURL, UNSUPPORTED_SCHEMES, isValidURLScheme } 
 
 const URL_COMPONENTS = ['domain', 'port', 'protocol'] as const;
 
-export const isTotpUri = (maybeUri: string): boolean => maybeUri.startsWith('otpauth://');
+export const isTotpUri = (maybeUri: string): boolean => /^otpauth:\/\//i.test(maybeUri);
 
 export const isValidScheme = (url: string) => !UNSUPPORTED_SCHEMES_REGEX.test(url.trim());
 

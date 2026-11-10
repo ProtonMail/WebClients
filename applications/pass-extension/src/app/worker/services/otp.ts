@@ -22,7 +22,7 @@ import { onContextReady, withContext } from '../context/inject';
  * Each of the following OTP-related operations may throw. */
 export const createOTPService = () => {
     const onOTPRequest = withContext<MessageHandlerCallback<WorkerMessageType.OTP_CODE_GENERATE>>(
-        (ctx, { payload }) => {
+        async (ctx, { payload }) => {
             try {
                 if (selectOrgTOTPDisabled(ctx.service.store.getState())) {
                     throw new Error('TOTP is disabled by the organization');
@@ -39,7 +39,7 @@ export const createOTPService = () => {
                 })();
 
                 if (totpUri) {
-                    const otp = generateTOTPCode(totpUri);
+                    const otp = await generateTOTPCode(ctx.service.core, totpUri);
                     if (otp) return otp;
                 }
 
@@ -77,7 +77,7 @@ export const createOTPService = () => {
         })
     );
 
-    return { generateTOTPCode };
+    return {};
 };
 
 export type OTPService = ReturnType<typeof createOTPService>;
