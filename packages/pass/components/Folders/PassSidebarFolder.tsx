@@ -12,6 +12,7 @@ import { IcFolderPlus } from '@proton/icons/icons/IcFolderPlus';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
+import { useFolderExpanded } from '../../hooks/useFolderExpanded';
 import { useItemDrop } from '../../hooks/useItemDrag';
 import { useMemoSelector } from '../../hooks/useMemoSelector';
 import { intoBulkSelection } from '../../lib/items/item.utils';
@@ -40,7 +41,7 @@ type Props = {
 };
 
 export const PassSidebarFolder: FC<Props> = ({ folderId, shareId, name, level = 1, onAction = noop }) => {
-    const [isExpanded, setIsExpanded] = useState(false);
+    const [isExpanded, setIsExpanded] = useFolderExpanded(folderId);
     const [isOptionDropdownOpened, setIsOptionDropdownOpened] = useState(false);
 
     const folderCreate = useFolderCreate(shareId, folderId);

@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useMemo, useState } from 'react';
+import React, { memo, useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
@@ -17,6 +17,7 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { UpsellRef } from '../../../constants';
+import { useFolderExpanded } from '../../../hooks/useFolderExpanded';
 import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
 import { useItemDrop } from '../../../hooks/useItemDrag';
 import { useMemoSelector } from '../../../hooks/useMemoSelector';
@@ -85,7 +86,7 @@ export const VaultMenuItem = memo(
         withExpandButton,
         onAction = noop,
     }: Props) => {
-        const [isExpanded, setIsExpanded] = useState(false);
+        const [isExpanded, setIsExpanded] = useFolderExpanded(vault.shareId);
 
         const foldersEnabled = useFeatureFlag(PassFeature.PassFolder);
         const vaultActions = useVaultActions();
