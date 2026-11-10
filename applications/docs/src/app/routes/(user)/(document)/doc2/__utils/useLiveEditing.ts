@@ -24,20 +24,23 @@ export type LiveEditingOptions = {
   /** Undefined until the editor holds the base state */
   editorInvoker: Pick<EditorInvoker, 'receiveMessage' | 'changeLockedState'> | undefined
   role: DocumentRole
+  /** Whether the document has more participants than a non-admin may edit with */
+  participantLimitReached?: boolean
   onEditorError: (error: Error) => void
 }
 
 /**
  * Connects `session` once the editor holds its base state, and keeps the editor in step with it: updates from other
- * clients and replaced base states go to the editor, which stays locked unless the role can edit, the session allows
- * editing and it isn't paused. Tells the user about the edits the SDK refuses, discards or can't read, and locks the
- * editor for good after one is refused or discarded, since later edits would build on content the server lacks.
- * Returns the session's snapshot.
+ * clients and replaced base states go to the editor, which is locked while any of `getLockCauses` holds, and stays
+ * editable while paused or reconnecting, since the SDK's outbox carries the edits (ADR-0012). Tells the user about the
+ * edits the SDK refuses, discards or can't read, and locks the editor for good after one is refused or discarded,
+ * since later edits would build on content the server lacks. Returns the session's snapshot.
  */
 export function useLiveEditing({
   session,
   editorInvoker,
   role,
+  participantLimitReached = false,
   onEditorError,
 }: LiveEditingOptions): SessionSnapshot | undefined {
   const { logger } = useApplication()
@@ -66,18 +69,40 @@ export function useLiveEditing({
     return () => removeListeners.forEach((removeListener) => removeListener())
   }, [editorInvoker, logger, onEditorError, session])
 
-  const locked =
-    role === 'Viewer' ||
-    editRefused ||
-    !snapshot?.editing.allowed ||
-    snapshot.status.name === 'paused' ||
-    snapshot.delivery === 'failed'
+  const locked = Object.values(getLockCauses({ snapshot, role, editRefused, participantLimitReached })).some(Boolean)
 
   useEffect(() => {
     editorInvoker?.changeLockedState(locked).catch(onEditorError)
   }, [editorInvoker, locked, onEditorError])
 
   return snapshot
+}
+
+/**
+ * Every reason doc2 locks the editor; any one locks it. Neither a lost connection nor undelivered work is one: the
+ * editor stays editable while paused or reconnecting.
+ */
+function getLockCauses({
+  snapshot,
+  role,
+  editRefused,
+  participantLimitReached,
+}: {
+  snapshot: SessionSnapshot | undefined
+  role: DocumentRole
+  editRefused: boolean
+  participantLimitReached: boolean
+}) {
+  return {
+    stopped: snapshot?.status.name === 'stopped',
+    deliveryFailed: snapshot?.delivery === 'failed',
+    // sizeLocked, incompleteBaseState, and noBaseState or stopped, which the causes above cover too
+    editingNotAllowed: !snapshot?.editing.allowed,
+    // The SDK refused an edit, so later ones would build on content the server lacks
+    editRefused,
+    viewer: role === 'Viewer',
+    participantLimitReached,
+  }
 }
 
 /** Returns whether the SDK has refused an edit */
