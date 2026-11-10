@@ -2,6 +2,7 @@ import type { RenderResult } from '@testing-library/react';
 import { fireEvent, render, within } from '@testing-library/react';
 
 import Option from '../option/Option';
+import { InputField as InputFieldTwo } from '../v2/field/InputField';
 import SelectTwo from './SelectTwo';
 
 function renderBasicSelect() {
@@ -317,5 +318,98 @@ describe('SelectTwo component', () => {
 
         fireEvent.click(output.getByText('three'));
         expect(onChangeSpy).toHaveBeenCalledWith({ selectedIndex: 2, value: [options[0], options[2]] });
+    });
+
+    describe('accessible name', () => {
+        const options = [<Option title="one" value="one" key="one" />, <Option title="two" value="two" key="two" />];
+
+        it('uses the selected value as the name when unlabelled', () => {
+            const output = render(
+                <SelectTwo value="two" data-testid="dropdown-button">
+                    {options}
+                </SelectTwo>
+            );
+
+            expect(getAnchor(output)).toHaveAccessibleName('two');
+            expect(getAnchor(output)).not.toHaveAttribute('aria-describedby');
+        });
+
+        it('uses the selected value as the name when it has an id but no label', () => {
+            const output = render(
+                <SelectTwo id="unlabelled" value="two" loading data-testid="dropdown-button">
+                    {options}
+                </SelectTwo>
+            );
+
+            expect(getAnchor(output)).toHaveAccessibleName('two');
+            expect(getAnchor(output)).not.toHaveAttribute('aria-describedby');
+        });
+
+        it('is named by its field label and described by its selected value', () => {
+            const output = render(
+                <InputFieldTwo as={SelectTwo} label="Language" value="two" assistiveText="Pick one">
+                    {options}
+                </InputFieldTwo>
+            );
+
+            const button = output.getByRole('button', { name: 'Language' });
+            expect(button).toHaveAccessibleDescription('two Pick one');
+        });
+
+        it('uses the selected value as the name in a field without a label', () => {
+            const output = render(
+                <InputFieldTwo as={SelectTwo} value="two" data-testid="dropdown-button">
+                    {options}
+                </InputFieldTwo>
+            );
+
+            expect(output.getByTestId('dropdown-button')).toHaveAccessibleName('two');
+        });
+
+        it('is named by aria-labelledby and described by its selected value', () => {
+            const output = render(
+                <>
+                    <span id="external-label">Font size</span>
+                    <SelectTwo value="two" aria-labelledby="external-label" data-testid="dropdown-button">
+                        {options}
+                    </SelectTwo>
+                </>
+            );
+
+            expect(getAnchor(output)).toHaveAccessibleName('Font size');
+            expect(getAnchor(output)).toHaveAccessibleDescription('two');
+        });
+
+        it('keeps an aria-label passed by the caller and describes the selected value', () => {
+            const output = render(
+                <SelectTwo value="two" aria-label="Theme" data-testid="dropdown-button">
+                    {options}
+                </SelectTwo>
+            );
+
+            expect(getAnchor(output)).toHaveAccessibleName('Theme');
+            expect(getAnchor(output)).toHaveAccessibleDescription('two');
+        });
+
+        it('describes the placeholder when labelled and nothing is selected', () => {
+            const output = render(
+                <InputFieldTwo as={SelectTwo} label="Language" placeholder="Choose a language" assistiveText="Pick one">
+                    {options}
+                </InputFieldTwo>
+            );
+
+            const button = output.getByRole('button', { name: 'Language' });
+            expect(button).toHaveAccessibleDescription('Choose a language Pick one');
+        });
+
+        it('lists every selected value in multiple selection mode', () => {
+            const output = render(
+                <SelectTwo multiple value={['one', 'two']} data-testid="dropdown-button">
+                    {options}
+                </SelectTwo>
+            );
+
+            expect(getAnchor(output)).toHaveAccessibleName('one, two');
+        });
     });
 });

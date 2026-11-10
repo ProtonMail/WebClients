@@ -49,7 +49,7 @@ const CalendarLayoutSection = ({ calendarUserSettings: { ViewPreference, Display
                 <SettingsLayoutRight>
                     <ViewPreferenceSelector
                         id="view-select"
-                        aria-describedby="label-view-select"
+                        aria-labelledby="label-view-select"
                         view={ViewPreference}
                         loading={loadingView}
                         onChange={(ViewPreference) => withLoadingView(handleChange({ ViewPreference }))}
@@ -63,7 +63,7 @@ const CalendarLayoutSection = ({ calendarUserSettings: { ViewPreference, Display
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight>
-                    <WeekStartSelector />
+                    <WeekStartSelector aria-labelledby="label-week-start-select" />
                 </SettingsLayoutRight>
             </SettingsLayout>
             <SettingsLayout>

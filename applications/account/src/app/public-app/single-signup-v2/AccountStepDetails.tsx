@@ -327,6 +327,7 @@ const AccountStepDetails = ({
                                         return (
                                             <>
                                                 <SelectTwo
+                                                    aria-label={c('Label').t`Domain`}
                                                     id="select-domain"
                                                     originalPlacement={isRTL ? 'bottom-start' : 'bottom-end'}
                                                     anchorRef={anchorRef}

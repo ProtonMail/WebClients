@@ -53,7 +53,7 @@ export const PageSizeSelector = ({ id, size, loading }: Props) => {
                 value={mailSettings.PageSize}
                 onValue={handleChange}
                 size={size}
-                aria-describedby={`label-${id}`}
+                aria-labelledby={`label-${id}`}
             >
                 {PAGE_SIZE_OPTIONS.map((option) => (
                     <Option key={option.value} title={option.label} value={option.value} />

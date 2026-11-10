@@ -130,7 +130,7 @@ const MessagesOtherSection = () => {
                     <div className="flex-1 pr-2">
                         <FontFaceSelect
                             id="fontFace"
-                            aria-describedby="label-composer-default-font-size"
+                            aria-labelledby="label-composer-default-font-size"
                             fontFace={fontFaceValue}
                             onChange={(value) => withLoadingFontFace(handleChangeFontFace(value))}
                             loading={loadingFontFace}
@@ -139,7 +139,7 @@ const MessagesOtherSection = () => {
                     <div className="shrink-0">
                         <FontSizeSelect
                             id="fontSize"
-                            aria-describedby="label-composer-default-font-size"
+                            aria-labelledby="label-composer-default-font-size"
                             fontSize={FontSize || DEFAULT_FONT_SIZE}
                             onChange={(value) => withLoadingFontSize(handleChangeFontSize(value))}
                             loading={loadingFontSize}

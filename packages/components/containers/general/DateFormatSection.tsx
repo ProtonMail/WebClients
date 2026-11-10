@@ -39,17 +39,12 @@ const DateFormatSection = () => {
         <SettingsIconRow icon={IcCalendarToday}>
             <SettingsSelectRow
                 id="date-format-select"
-                label={
-                    <SettingsSelectRow.Label id="label-date-format-select">
-                        {c('Label').t`Date format`}
-                    </SettingsSelectRow.Label>
-                }
+                label={<SettingsSelectRow.Label>{c('Label').t`Date format`}</SettingsSelectRow.Label>}
                 select={
                     <SettingsSelectRow.Select
                         value={userSettings.DateFormat}
                         loading={loading}
                         onChange={({ value }) => withLoading(handleDateFormat(value))}
-                        aria-describedby="label-date-format-select"
                     >
                         <Option title={getAutomaticText(defaultFormat)} value={SETTINGS_DATE_FORMAT.LOCALE_DEFAULT} />
                         <Option title="DD/MM/YYYY" value={SETTINGS_DATE_FORMAT.DDMMYYYY} />

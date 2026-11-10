@@ -106,11 +106,12 @@ export const FilterAndSortEventsBlock = ({
                                 className="flex flex-column leading-10 mb-2 w-custom"
                                 style={{ '--w-custom': '10rem' }}
                             >
-                                <Label className="text-semibold p-0 h-6 mb-1" htmlFor="search">
+                                <Label className="text-semibold p-0 h-6 mb-1" htmlFor="search" id="label-eventType">
                                     {c('Label').t`Event`}
                                 </Label>
                                 <SelectTwo
                                     id="eventType"
+                                    aria-labelledby="label-eventType"
                                     value={filter.eventType}
                                     onValue={handleSetEventType}
                                     className="w-full"

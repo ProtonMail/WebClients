@@ -22,9 +22,15 @@ interface Props {
     className?: string;
     unstyledSelect?: boolean;
     shortText?: boolean;
+    'aria-labelledby'?: string;
 }
 
-const WeekStartSelector = ({ className, unstyledSelect, shortText = false }: Props) => {
+const WeekStartSelector = ({
+    className,
+    unstyledSelect,
+    shortText = false,
+    'aria-labelledby': ariaLabelledBy,
+}: Props) => {
     const api = useApi();
     const [userSettings] = useUserSettings();
     const dispatch = useDispatch();
@@ -65,7 +71,7 @@ const WeekStartSelector = ({ className, unstyledSelect, shortText = false }: Pro
             loading={loading}
             disabled={loading}
             onChange={({ value }) => withLoading(handleWeekStart(value))}
-            aria-describedby="label-week-start-select"
+            aria-labelledby={ariaLabelledBy}
             unstyled={unstyledSelect}
             size={{ width: DropdownSizeUnit.Dynamic }}
             renderSelected={

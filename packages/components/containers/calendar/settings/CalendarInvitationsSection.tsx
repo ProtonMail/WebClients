@@ -68,7 +68,7 @@ const CalendarInvitationsSection = ({
                 <SettingsLayoutRight>
                     <InviteLocaleSelector
                         id="invite-locale"
-                        aria-describedby="label-invite-local"
+                        aria-labelledby="label-invite-local"
                         locale={displayedLocale}
                         locales={locales}
                         loading={loadingInviteLocale}

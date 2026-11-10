@@ -12,6 +12,7 @@ import Option from '../option/Option';
 import SelectButton from './SelectButton';
 import { SelectDisplayValue } from './SelectDisplayValue';
 import SelectOptions from './SelectOptions';
+import { getSelectedValueLabel } from './helpers';
 import type { SelectProps } from './select';
 import useSelect, { SelectProvider } from './useSelect';
 
@@ -195,7 +196,7 @@ const SelectTwo = <V extends any>({
     };
 
     const selectedChildren = (selectedIndexes ?? []).map((i) => optionChildren[i]);
-    const ariaLabel = selectedChildren?.map((child) => child.props.title).join(', ');
+    const valueLabel = getSelectedValueLabel(selectedChildren);
 
     const allowOptionToggling = multiple && optionChildren.length > 1;
 
@@ -210,7 +211,7 @@ const SelectTwo = <V extends any>({
                 noCaret={noDropdownCaret}
                 caretIcon={caretIcon}
                 caretClassName={caretClassName}
-                aria-label={ariaLabel}
+                valueLabel={valueLabel}
                 ref={anchorRef}
                 fullWidth={fullWidth}
                 {...rest}

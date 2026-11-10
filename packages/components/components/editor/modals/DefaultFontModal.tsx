@@ -77,6 +77,7 @@ const DefaultFontModal = ({ onChange, onClose, ...rest }: Props) => {
                     <div className="flex flex-row">
                         <div className="mr-4">
                             <FontFaceSelect
+                                aria-label={c('Label').t`Font family`}
                                 id="fontFace"
                                 fontFace={fontFace}
                                 onChange={setFontFace}
@@ -85,6 +86,7 @@ const DefaultFontModal = ({ onChange, onClose, ...rest }: Props) => {
                         </div>
                         <div>
                             <FontSizeSelect
+                                aria-label={c('Label').t`Font size`}
                                 id="fontSize"
                                 fontSize={fontSize}
                                 onChange={setFontSize}

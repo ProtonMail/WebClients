@@ -82,6 +82,9 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
     const { dense } = useContext(FormContext) || {};
     const id = useInstance(() => idProp || generateUID());
     const assistiveUid = useInstance(() => generateUID());
+    const labelId = useInstance(() => generateUID('label'));
+    const hasLabel = Boolean(label || hint);
+    const callerAriaLabel = (rest as { 'aria-label'?: string })['aria-label'];
     const labelRef = useRef<HTMLLabelElement>(null);
     const isDense = denseProp || dense;
     const classes = {
@@ -182,8 +185,8 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
             }}
             ref={rootRef}
         >
-            {label || hint ? (
-                <label htmlFor={id} className={classes.labelContainer} ref={labelRef}>
+            {hasLabel ? (
+                <label htmlFor={id} id={labelId} className={classes.labelContainer} ref={labelRef}>
                     {labelElement}
                     {hintElement}
                 </label>
@@ -198,6 +201,9 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
                     error={error}
                     disabled={disabled}
                     aria-describedby={assistiveUid}
+                    // Same name as `htmlFor` gives, but visible to controls that only read props, like SelectTwo.
+                    // An explicit `aria-label` from the caller keeps precedence, as it would with `htmlFor` alone.
+                    aria-labelledby={hasLabel && !callerAriaLabel ? labelId : undefined}
                     {...rest}
                     {...testIdProps}
                     suffix={getSuffix()}
