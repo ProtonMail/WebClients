@@ -839,6 +839,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Eikö salasanahallintaasi ole listattu? Pyydä sitä."
+      ],
+      "Try again": [
+        "Yritä uudelleen"
       ]
     },
     "Activity": {
@@ -2259,7 +2262,8 @@
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirtäminen toiseen holviin pyyhkii sen suojatut linkit."
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -5337,6 +5341,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Olet poistamassa ${ aliasCount } aliaksen pysyvästi.",
         "Olet poistamassa ${ aliasCount } aliasta pysyvästi."
+      ],
+      "Something went wrong": [
+        "Jotain meni pieleen"
       ]
     },
     "Title_cloned_item": {

@@ -836,6 +836,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Uw wachtwoordbeheerder staat hier niet tussen? Vraag het aan."
+      ],
+      "Try again": [
+        "Opnieuw proberen"
       ]
     },
     "Activity": {
@@ -2265,7 +2268,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -5361,6 +5365,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "U staat op het punt ${ aliasCount } alias permanent te verwijderen.",
         "U staat op het punt ${ aliasCount } aliassen permanent te verwijderen."
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan."
       ]
     },
     "Title_cloned_item": {

@@ -856,6 +856,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ],
+      "Try again": [
+        "Reîncercați"
       ]
     },
     "Activity": {
@@ -2379,7 +2382,9 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui element într-un alt seif îi va șterge linkurile securizate."
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -5652,6 +5657,9 @@
         "Urmează să ștergeți definitiv ${ aliasCount } alias.",
         "Urmează să ștergeți definitiv ${ aliasCount } aliasuri.",
         "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
+      ],
+      "Something went wrong": [
+        "Ceva nu a mers bine."
       ]
     },
     "Title_cloned_item": {

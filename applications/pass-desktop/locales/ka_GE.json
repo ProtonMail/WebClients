@@ -821,6 +821,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "თქვენი პაროლების მმართველი აქ არაა? მოითხოვეთ ის."
+      ],
+      "Try again": [
+        "კიდევ ცდა"
       ]
     },
     "Activity": {
@@ -2226,7 +2229,8 @@
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა სეიფში წაშლის მის უსაფრთხო ბმულებს."
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -5289,6 +5293,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი.",
         "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი."
+      ],
+      "Something went wrong": [
+        "რაღაც არასწორად წავიდა"
       ]
     },
     "Title_cloned_item": {

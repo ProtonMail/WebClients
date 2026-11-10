@@ -848,6 +848,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Seu gerenciador de senhas não está aqui? Solicite."
+      ],
+      "Try again": [
+        "Tentar novamente"
       ]
     },
     "Activity": {
@@ -2313,7 +2316,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outra pasta apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -5479,6 +5483,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Você está prestes a excluir permanentemente ${ aliasCount } alias.",
         "Você está prestes a excluir permanentemente ${ aliasCount } aliases."
+      ],
+      "Something went wrong": [
+        "Algo deu errado"
       ]
     },
     "Title_cloned_item": {

@@ -845,6 +845,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Är din lösenordshanterare inte här? Begär den."
+      ],
+      "Try again": [
+        "Försök igen"
       ]
     },
     "Activity": {
@@ -2310,7 +2313,8 @@
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -5497,6 +5501,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du håller på att ta bort ${ aliasCount } alias permanent.",
         "Du håller på att ta bort ${ aliasCount } alias permanent."
+      ],
+      "Something went wrong": [
+        "Något gick fel"
       ]
     },
     "Title_cloned_item": {

@@ -825,6 +825,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Nie ma Twojego menadżera haseł? Zgłoś to."
+      ],
+      "Try again": [
+        "Spróbuj ponownie"
       ]
     },
     "Activity": {
@@ -2278,7 +2281,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -5401,6 +5407,9 @@
         "Zamierzasz trwale usunąć ${ aliasCount } aliasy.",
         "Zamierzasz trwale usunąć ${ aliasCount } aliasów.",
         "Zamierzasz trwale usunąć ${ aliasCount } aliasów."
+      ],
+      "Something went wrong": [
+        "Coś poszło nie tak"
       ]
     },
     "Title_cloned_item": {

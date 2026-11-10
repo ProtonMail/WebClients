@@ -854,6 +854,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Il tuo gestore di password non è presente? Richiedilo."
+      ],
+      "Try again": [
+        "Riprova"
       ]
     },
     "Activity": {
@@ -2352,7 +2355,8 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -3114,6 +3118,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La tua organizzazione richiede che tu protegga l'accesso a ${ PASS_APP_NAME }"
+      ],
+      "None of your saved passwords have appeared in a known data breach.": [
+        "Nessuna delle tue password salvata è stata coinvolta in una violazione dei dati nota."
       ]
     },
     "Keyboard key": {
@@ -5589,6 +5596,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Stai per eliminare definitivamente ${ aliasCount } alias.",
         "Stai per eliminare definitivamente ${ aliasCount } alias."
+      ],
+      "Something went wrong": [
+        "Qualcosa è andato storto"
       ]
     },
     "Title_cloned_item": {
