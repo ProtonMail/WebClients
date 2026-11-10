@@ -1,4 +1,4 @@
-import { act, render, screen, waitFor } from '@testing-library/react'
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
 import { ConfigContext } from '@proton/app-context/configContext'
@@ -7,14 +7,17 @@ import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayloa
 import type { NodeEntity } from '@proton/drive/sdk'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config'
 import { decodeAwarenessUpdate, encodeAwarenessUpdate } from '@proton-docs/realtime-sdk'
-import type { SessionStatus } from '@proton-docs/realtime-sdk'
+import type { RecoveryCondition, SessionStatus } from '@proton-docs/realtime-sdk'
 import type { ReactNode } from 'react'
+import { MemoryRouter } from 'react-router-dom'
+import { CompatRouter } from 'react-router-dom-v5-compat'
 
 import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/application-context'
 import { DebugModeProvider } from '~/utils/debug-mode-context'
 
 import type { ClientHandler } from '../__utils/createClientHandler'
 import { createFakeSession } from '../__utils/createFakeSession'
+import type { DocumentRole } from '../__utils/getDocumentRole'
 import type { DocumentSessionState } from '../__utils/useDocumentSession'
 import { DocumentViewerV2 } from './DocumentViewerV2'
 
@@ -44,6 +47,9 @@ jest.mock('./DocumentShell', () => ({
     </>
   ),
 }))
+jest.mock('./ErrorHeader', () => ({ ErrorHeader: () => null }))
+const mockApi = jest.fn(async (_request: unknown): Promise<unknown> => ({}))
+jest.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }))
 jest.mock('./DocumentHeaderV2', () => ({
   DocumentHeaderV2: ({
     node,
@@ -64,10 +70,25 @@ jest.mock('./DocumentHeaderV2', () => ({
 }))
 
 jest.mock('./OpenActionError', () => ({
-  OpenActionError: ({ reason }: { reason: string }) => <div>{`Open failed: ${reason}`}</div>,
+  OpenActionError: ({ reason, onRetry }: { reason: string; onRetry?: () => void }) => (
+    <div>
+      {`Open failed: ${reason}`}
+      {onRetry && <button onClick={onRetry}>Try again</button>}
+    </div>
+  ),
+}))
+// It has its own tests; here, only which failure it gets and that Reload opens the document again
+jest.mock('./BootstrapErrorPage', () => ({
+  BootstrapErrorPage: ({ failure, onRetry }: { failure: string; onRetry: () => void }) => (
+    <div>
+      {`Bootstrap failed: ${failure}`}
+      <button onClick={onRetry}>Try again</button>
+    </div>
+  ),
 }))
 
 const mockEditorCalls: string[] = []
+const mockChangeLockedState = jest.fn(async (_locked: boolean) => {})
 const mockDestroyBridge = jest.fn()
 const mockLoadUserSettings = jest.fn(async () => {})
 const EDITOR_CLIENT_ID = 7
@@ -87,7 +108,7 @@ jest.mock('../__utils/ClientEditorBridge', () => ({
         showEditor: jest.fn(async () => {
           mockEditorCalls.push('showEditor')
         }),
-        changeLockedState: jest.fn(async () => {}),
+        changeLockedState: mockChangeLockedState,
         setDarkMode: jest.fn(async () => {}),
         loadUserSettings: mockLoadUserSettings,
         syncProperty: jest.fn(async (property: string) => {
@@ -132,26 +153,49 @@ function update(firstByte: number) {
   }
 }
 
-function renderViewer(fake: ReturnType<typeof createFakeSession>) {
-  mockSessionState = {
+function renderViewer(
+  fake: ReturnType<typeof createFakeSession>,
+  {
+    role = 'Viewer',
+    onRetry = jest.fn(),
+    state,
+  }: { role?: DocumentRole; onRetry?: () => void; state?: DocumentSessionState } = {},
+) {
+  mockSessionState = state ?? {
     status: 'ready',
     session: fake.session,
-    role: 'Viewer',
+    role,
     node: { uid: 'VOLUME~LINK' } as NodeEntity,
+    roleReads: 1,
   }
   const application = {
     logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn() },
   } as unknown as ApplicationProviderProps['application']
-
-  return render(
-    <ConfigContext.Provider value={{ APP_VERSION: '0.0.0' } as ProtonConfig}>
-      <ApplicationProvider application={application}>
-        <DebugModeProvider>
-          <DocumentViewerV2 nodeMeta={{ volumeId: 'VOLUME', linkId: 'LINK' }} onRetry={jest.fn()} />
-        </DebugModeProvider>
-      </ApplicationProvider>
-    </ConfigContext.Provider>,
+  const viewer = () => (
+    <MemoryRouter>
+      <CompatRouter>
+        <ConfigContext.Provider value={{ APP_VERSION: '0.0.0' } as ProtonConfig}>
+          <ApplicationProvider application={application}>
+            <DebugModeProvider>
+              <DocumentViewerV2 nodeMeta={{ volumeId: 'VOLUME', linkId: 'LINK' }} onRetry={onRetry} />
+            </DebugModeProvider>
+          </ApplicationProvider>
+        </ConfigContext.Provider>
+      </CompatRouter>
+    </MemoryRouter>
   )
+
+  const rendered = render(viewer())
+  return { ...rendered, rerender: () => rendered.rerender(viewer()) }
+}
+
+/** Renders a viewer whose editor shows the document */
+async function renderShown(fake: ReturnType<typeof createFakeSession>, options?: Parameters<typeof renderViewer>[1]) {
+  const rendered = renderViewer(fake, options)
+  await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
+  act(() => fake.setSnapshot({ status: { name: 'connected' }, caughtUp: true }))
+  await waitFor(() => expect(mockEditorCalls).toContain('showEditor'))
+  return rendered
 }
 
 describe('DocumentViewerV2', () => {
@@ -199,7 +243,7 @@ describe('DocumentViewerV2', () => {
 
   test.each<[SessionStatus, string]>([
     [{ name: 'reconnecting', condition: 'transient', nextAttemptAt: 0, budgetExpiresAt: 0 }, 'Reconnecting…'],
-    [{ name: 'stopped', condition: 'transient', retryable: true }, 'Read-onlyThe connection to the server was lost.'],
+    [{ name: 'stopped', condition: 'transient', retryable: true }, 'Offline'],
   ])('keeps loading while %j before catching up, and shows "%s"', async (status, text) => {
     const fake = createSession()
     renderViewer(fake)
@@ -271,6 +315,7 @@ describe('DocumentViewerV2', () => {
       session: fake.session,
       role: 'Editor',
       node: { uid: 'VOLUME~LINK' } as NodeEntity,
+      roleReads: 1,
     }
     rerender(viewer())
 
@@ -376,5 +421,141 @@ describe('DocumentViewerV2', () => {
 
     expect(mockDestroyBridge).toHaveBeenCalled()
     expect(mockEditorCalls).not.toContain('initializeEditor')
+  })
+  test.each<[DocumentSessionState & { status: 'failed' }, string, boolean]>([
+    [{ status: 'failed', reason: 'noAccess' }, 'Bootstrap failed: noAccess', true],
+    [{ status: 'failed', reason: 'notFound' }, 'Bootstrap failed: notFound', true],
+    [{ status: 'failed', reason: 'unreachable' }, 'Bootstrap failed: unreachable', true],
+    [{ status: 'failed', reason: 'bootstrapFailed' }, 'Bootstrap failed: bootstrapFailed', true],
+    [{ status: 'failed', reason: 'unreadableUpdate' }, 'Open failed: unreadableUpdate', true],
+    [{ status: 'failed', reason: 'unsupported' }, 'Open failed: unsupported', false],
+  ])('a session that failed with %j shows "%s", given a retry: %s', async (state, text, canRetry) => {
+    const onRetry = jest.fn()
+    renderViewer(createSession(), { onRetry, state })
+
+    expect(screen.getByText(text)).toBeInTheDocument()
+    const retryButtons = screen.queryAllByRole('button', { name: 'Try again' })
+    expect(retryButtons).toHaveLength(canRetry ? 1 : 0)
+    if (canRetry) {
+      await userEvent.click(retryButtons[0])
+      expect(onRetry).toHaveBeenCalledTimes(1)
+    }
+  })
+
+  test('an idle-evicted session covers and unfocuses the editor until the next activity, which retries it', async () => {
+    const fake = createSession()
+    fake.mocks.retry.mockImplementation(async () => fake.setSnapshot({ status: { name: 'connecting' } }))
+    await renderShown(fake)
+    expect(screen.queryByTestId('idle-activity-catcher')).not.toBeInTheDocument()
+
+    act(() => fake.setSnapshot({ status: { name: 'stopped', condition: 'idleEvicted', retryable: true } }))
+
+    const catcher = screen.getByTestId('idle-activity-catcher')
+    expect(catcher).toHaveFocus()
+
+    fireEvent.wheel(catcher)
+
+    expect(fake.mocks.retry).toHaveBeenCalledTimes(1)
+    expect(screen.queryByTestId('idle-activity-catcher')).not.toBeInTheDocument()
+  })
+
+  test.each<RecoveryCondition>(['permissionsChanged', 'authExpired', 'clientRejected'])(
+    "a session stopped for %s shows /doc's Offline pill, with no action of its own",
+    async (condition) => {
+      const onRetry = jest.fn()
+      const fake = createSession()
+      await renderShown(fake, { onRetry })
+
+      act(() => fake.setSnapshot({ status: { name: 'stopped', condition, retryable: false } }))
+
+      expect(screen.getByTestId('session-status')).toHaveTextContent('Offline')
+      expect(screen.queryByRole('button', { name: /Try again|Reopen|Reload|Sign in/ })).not.toBeInTheDocument()
+      expect(onRetry).not.toHaveBeenCalled()
+    },
+  )
+
+  test("a session stopped for an encryption failure shows /doc's alert", async () => {
+    const fake = createSession()
+    await renderShown(fake, { role: 'Editor' })
+
+    act(() => fake.setSnapshot({ status: { name: 'stopped', condition: 'encryptionFailed', retryable: false } }))
+
+    expect(
+      await screen.findByText('We are having trouble saving recent edits. Please refresh the page.'),
+    ).toBeInTheDocument()
+  })
+
+  test("a session stopped for expired credentials checks the app session through the app's API client, then retries", async () => {
+    mockApi.mockResolvedValue({ User: {} })
+    const fake = createSession()
+    await renderShown(fake)
+
+    await act(async () => fake.setSnapshot({ status: { name: 'stopped', condition: 'authExpired', retryable: false } }))
+
+    expect(mockApi).toHaveBeenCalledWith(expect.objectContaining({ url: 'core/v4/users' }))
+    expect(fake.mocks.retry).toHaveBeenCalledTimes(1)
+  })
+
+  test.each<RecoveryCondition>(['idleEvicted', 'transient'])(
+    'Try again after a %s stop retries the session once',
+    async (condition) => {
+      const fake = createSession()
+      fake.mocks.retry.mockImplementation(async () => fake.setSnapshot({ status: { name: 'connecting' } }))
+      await renderShown(fake)
+      act(() => fake.setSnapshot({ status: { name: 'stopped', condition, retryable: true } }))
+
+      // For idleEvicted, the pointer press of the click is activity that retries too
+      await userEvent.click(screen.getByRole('button', { name: 'Try again' }))
+
+      expect(fake.mocks.retry).toHaveBeenCalledTimes(1)
+    },
+  )
+
+  test('an idle-evicted session retries on the next key press', async () => {
+    const fake = createSession()
+    await renderShown(fake)
+    act(() => fake.setSnapshot({ status: { name: 'stopped', condition: 'idleEvicted', retryable: true } }))
+
+    act(() => {
+      window.dispatchEvent(new KeyboardEvent('keydown', { key: 'a' }))
+    })
+
+    expect(fake.mocks.retry).toHaveBeenCalledTimes(1)
+  })
+
+  test('a role read again locks or unlocks the editor, and applies the lock again when unchanged, without initializing it again', async () => {
+    const fake = createSession()
+    const { rerender } = await renderShown(fake, { role: 'Editor' })
+    await waitFor(() => expect(mockChangeLockedState).toHaveBeenLastCalledWith(false))
+    mockChangeLockedState.mockClear()
+
+    mockSessionState = {
+      ...(mockSessionState as DocumentSessionState & { status: 'ready' }),
+      role: 'Viewer',
+      roleReads: 2,
+    }
+    rerender()
+    await waitFor(() => expect(mockChangeLockedState).toHaveBeenLastCalledWith(true))
+    expect(screen.getByTestId('shell-header')).toHaveTextContent('as Viewer')
+
+    mockChangeLockedState.mockClear()
+    mockSessionState = { ...mockSessionState, roleReads: 3 }
+    rerender()
+    await waitFor(() => expect(mockChangeLockedState).toHaveBeenCalledWith(true))
+
+    mockSessionState = { ...mockSessionState, role: 'Editor', roleReads: 4 }
+    rerender()
+    await waitFor(() => expect(mockChangeLockedState).toHaveBeenLastCalledWith(false))
+
+    expect(mockEditorCalls.filter((call) => call === 'initializeEditor')).toHaveLength(1)
+  })
+
+  test('opens the size-limit modal when the SDK refuses an edit for the document size', async () => {
+    const fake = createSession()
+    await renderShown(fake, { role: 'Editor' })
+
+    act(() => fake.emit('refusal', { reason: 'documentSizeLimitReached', attemptedBytes: 2, limitBytes: 1 }))
+
+    expect(await screen.findByText('Document Size Limit Exceeded')).toBeInTheDocument()
   })
 })

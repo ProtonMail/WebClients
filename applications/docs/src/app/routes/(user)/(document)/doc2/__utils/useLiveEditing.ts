@@ -10,12 +10,10 @@ import { useApplication } from '~/utils/application-context'
 import type { EditorInvoker } from './EditorInvoker'
 import type { DocumentRole } from './getDocumentRole'
 
-const refusalMessages: Record<Refusal['reason'], () => string> = {
+/** No toast for `documentSizeLimitReached`: the size-limit modal says it */
+const refusalMessages: Record<Exclude<Refusal['reason'], 'documentSizeLimitReached'>, () => string> = {
   updateTooLarge: () =>
     c('Error').t`Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.`,
-  documentSizeLimitReached: () =>
-    c('Error')
-      .t`This document has reached its maximum size, so your last change was not saved and editing is disabled.`,
   incompleteBaseState: () => c('Error').t`Some of the document could not be read, so your changes can't be saved.`,
 }
 
@@ -26,6 +24,8 @@ export type LiveEditingOptions = {
   role: DocumentRole
   /** Whether the document has more participants than a non-admin may edit with */
   participantLimitReached?: boolean
+  /** Each new value applies the lock again, as after the role is read again */
+  roleReads?: number
   onEditorError: (error: Error) => void
 }
 
@@ -41,6 +41,7 @@ export function useLiveEditing({
   editorInvoker,
   role,
   participantLimitReached = false,
+  roleReads,
   onEditorError,
 }: LiveEditingOptions): SessionSnapshot | undefined {
   const { logger } = useApplication()
@@ -73,7 +74,7 @@ export function useLiveEditing({
 
   useEffect(() => {
     editorInvoker?.changeLockedState(locked).catch(onEditorError)
-  }, [editorInvoker, locked, onEditorError])
+  }, [editorInvoker, locked, onEditorError, roleReads])
 
   return snapshot
 }
@@ -120,7 +121,9 @@ function useSessionNotices(session: Session | undefined): boolean {
       session.on('refusal', (refusal) => {
         logger.warn('Edit refused by the realtime SDK', refusal)
         setEditRefused(true)
-        createNotification({ type: 'error', text: refusalMessages[refusal.reason]() })
+        if (refusal.reason !== 'documentSizeLimitReached') {
+          createNotification({ type: 'error', text: refusalMessages[refusal.reason]() })
+        }
       }),
       // The SDK fails `delivery` for the rest of the session in the same step, which locks the editor
       session.on('invalidation', (invalidation) => {

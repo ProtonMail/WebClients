@@ -220,38 +220,72 @@ describe('SessionStatus', () => {
     expect(await screen.findByText(/You can keep editing/)).toBeInTheDocument()
   })
 
-  test.each<[RecoveryCondition, boolean, string]>([
-    ['transient', true, 'The connection to the server was lost.'],
-    ['closedNormally', true, 'The connection to the server was lost.'],
-    ['overloaded', true, 'The server is busy.'],
-    ['staleBaseCommit', true, 'The document could not be brought up to date.'],
-    ['divergedFromServer', true, 'The document could not be brought up to date.'],
-    ['infrastructureDegraded', true, 'Editing is temporarily unavailable.'],
-    ['idleEvicted', true, 'You were disconnected after a period of inactivity.'],
-    ['authExpired', false, 'Your session has expired. Reload the page to continue.'],
-    ['permissionsChanged', false, 'Your access to this document has changed. Reload the page to continue.'],
-    ['clientRejected', false, 'This version of the app is no longer supported. Reload the page to update it.'],
-    ['encryptionFailed', false, 'Your changes could not be encrypted. Reload the page to continue.'],
-  ])('a stop for %s (retryable: %s) shows Read-only and says why, and retries', async (condition, retryable, text) => {
-    const { onRetry } = renderStatus({
-      status: { name: 'stopped', condition, retryable },
-      editing: { allowed: false, reason: 'stopped' },
-    })
+  const ALL_CONDITIONS: RecoveryCondition[] = [
+    'transient',
+    'closedNormally',
+    'overloaded',
+    'staleBaseCommit',
+    'divergedFromServer',
+    'infrastructureDegraded',
+    'idleEvicted',
+    'authExpired',
+    'permissionsChanged',
+    'clientRejected',
+    'encryptionFailed',
+  ]
+  const stopped = (condition: RecoveryCondition, retryable: boolean): Partial<SessionSnapshot> => ({
+    status: { name: 'stopped', condition, retryable },
+    editing: { allowed: false, reason: 'stopped' },
+  })
+  /** The buttons besides the pills, which are buttons in /doc's header */
+  const actions = () =>
+    screen
+      .queryAllByRole('button')
+      .filter((button) => !button.closest('output'))
+      .map((button) => button.textContent)
 
-    expect(status()).toHaveTextContent(`Read-only${text}`)
-    expect(status()).not.toHaveTextContent('Offline')
+  test.each(ALL_CONDITIONS)(
+    "a retryable stop for %s shows /doc's Offline pill alone, and retries",
+    async (condition) => {
+      const { onRetry } = renderStatus(stopped(condition, true))
 
-    await userEvent.click(screen.getByRole('button', { name: 'Try again' }))
-    expect(onRetry).toHaveBeenCalledTimes(1)
+      expect(
+        screen
+          .getAllByRole('button')
+          .filter((button) => button.closest('output'))
+          .map((pill) => pill.textContent),
+      ).toEqual(['Offline'])
+      expect(actions()).toEqual(['Try again'])
+
+      await userEvent.click(screen.getByRole('button', { name: 'Try again' }))
+      expect(onRetry).toHaveBeenCalledTimes(1)
+    },
+  )
+
+  test.each(ALL_CONDITIONS)(
+    "a stop for %s that is not retryable shows /doc's Offline pill and no action",
+    (condition) => {
+      renderStatus(stopped(condition, false))
+
+      expect(status()).toHaveTextContent(/^Offline$/)
+      expect(actions()).toEqual([])
+    },
+  )
+
+  test("a stop's Offline pill has /doc's explanation and the condition as its disconnection code", async () => {
+    renderStatus(stopped('authExpired', false))
+
+    await userEvent.hover(screen.getByRole('button', { name: /Offline/ }))
+
+    expect(await screen.findByText(/The document can not be edited while you are offline/)).toBeInTheDocument()
+    expect(screen.getByTestId('network-status-offline-info')).toHaveTextContent('Disconnection error code: authExpired')
   })
 
-  test('a stop for a condition this app does not know yet still shows Read-only with a reason', () => {
-    renderStatus({
-      status: { name: 'stopped', condition: 'someFutureCondition' as RecoveryCondition, retryable: true },
-      editing: { allowed: false, reason: 'stopped' },
-    })
+  test('a stop for a condition this app does not know yet still shows the Offline pill', () => {
+    renderStatus(stopped('someFutureCondition' as RecoveryCondition, true))
 
-    expect(status()).toHaveTextContent('Read-onlyThe connection to the server was lost.')
+    expect(status()).toHaveTextContent(/^Offline$/)
+    expect(actions()).toEqual(['Try again'])
   })
 
   test('a status or delivery state this app does not know yet shows no pill, and still carries its name', () => {
