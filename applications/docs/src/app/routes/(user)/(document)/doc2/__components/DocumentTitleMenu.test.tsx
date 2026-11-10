@@ -2,6 +2,7 @@ import { act, fireEvent, render, renderHook, screen, waitFor, within } from '@te
 import userEvent from '@testing-library/user-event'
 
 import { ConfigContext } from '@proton/app-context/configContext'
+import type { FileMenuAction } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
 import { NodeType, getDrive } from '@proton/drive/sdk'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config'
 
@@ -36,17 +37,20 @@ const NODE = { uid: 'VOLUME~LINK', parentUid: 'VOLUME~PARENT', name: { ok: true,
 const TOOLTIP_OPEN_DELAY_MS = 1000
 
 const STUB_ITEMS: [string, string][] = [
-  ['New document', 'T6'],
-  ['New spreadsheet', 'T6'],
   ['Make a copy', 'T13'],
-  ['Move to folder', 'T6'],
   ['See version history', 'version history'],
-  ['Move to trash', 'T6'],
   ['Print', 'T7'],
   ['Download', 'T7'],
   ['Copy as markdown', 'T7'],
-  ['Open Proton Drive', 'T6'],
   ['Download logs', 'T10'],
+]
+
+const FILE_ACTION_ITEMS: [string, FileMenuAction][] = [
+  ['New document', { type: 'new-document' }],
+  ['New spreadsheet', { type: 'new-spreadsheet' }],
+  ['Move to folder', { type: 'move-to-folder' }],
+  ['Move to trash', { type: 'move-to-trash' }],
+  ['Open Proton Drive', { type: 'open-proton-drive' }],
 ]
 
 describe('DocumentTitleMenu', () => {
@@ -148,6 +152,40 @@ describe('DocumentTitleMenu', () => {
       expect(menuItem(name)).toBeInTheDocument()
     },
   )
+
+  test.each(FILE_ACTION_ITEMS)('%s runs its file menu action', async (name, action) => {
+    const { onFileMenuAction } = await openMenu('Admin')
+
+    await userEvent.click(menuItem(name))
+
+    expect(onFileMenuAction).toHaveBeenCalledWith(action)
+    expect(onFileMenuAction).toHaveBeenCalledTimes(1)
+  })
+
+  test.each(['New document', 'Move to folder', 'Open Proton Drive'])('a Viewer gets %s too', async (name) => {
+    const { onFileMenuAction } = await openMenu('Viewer')
+
+    await userEvent.click(menuItem(name))
+
+    expect(onFileMenuAction).toHaveBeenCalledTimes(1)
+  })
+
+  test.each(['trashing', 'trashed', 'restoring'] as const)('Move to trash is disabled while %s', async (trashState) => {
+    const { onFileMenuAction } = await openMenu('Admin', { trashState })
+
+    // By test ID: the name also holds the loader's while trashing
+    expect(screen.getByTestId('dropdown-trash')).toBeDisabled()
+    await userEvent.click(screen.getByTestId('dropdown-trash'))
+    expect(onFileMenuAction).not.toHaveBeenCalled()
+  })
+
+  test('New spreadsheet is disabled while one is being created', async () => {
+    const { onFileMenuAction } = await openMenu('Admin', { isCreatingSpreadsheet: true })
+
+    expect(screen.getByTestId('dropdown-new-spreadsheet')).toBeDisabled()
+    await userEvent.click(screen.getByTestId('dropdown-new-spreadsheet'))
+    expect(onFileMenuAction).not.toHaveBeenCalled()
+  })
 
   test('Help runs the help action', async () => {
     const { onFileMenuAction } = await openMenu('Viewer')
@@ -417,6 +455,8 @@ function menuElement(role: DocumentRole, overrides: MenuOverrides = {}) {
           role={role}
           editorInvoker={undefined}
           wordCount={{ isShown: false, setIsShown: jest.fn() }}
+          trashState="not_trashed"
+          isCreatingSpreadsheet={false}
           onFileMenuAction={jest.fn()}
           {...overrides}
         />

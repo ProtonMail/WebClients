@@ -55,7 +55,12 @@ export default function DocumentPageV2({ driveCompat }: DocumentPageV2Props) {
       case 'open': {
         const { volumeId, linkId } = resolution.nodeMeta
         return (
-          <DocumentViewerV2 key={`${volumeId}/${linkId}/${attempt}`} nodeMeta={resolution.nodeMeta} onRetry={retry} />
+          <DocumentViewerV2
+            key={`${volumeId}/${linkId}/${attempt}`}
+            nodeMeta={resolution.nodeMeta}
+            driveCompat={driveCompat}
+            onRetry={retry}
+          />
         )
       }
       case 'redirect':

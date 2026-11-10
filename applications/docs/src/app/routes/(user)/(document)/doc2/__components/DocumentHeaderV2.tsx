@@ -3,6 +3,8 @@ import { Button } from '@proton/atoms/Button/Button'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import UserDropdown from '@proton/components/containers/heading/UserDropdown'
 import { DocumentRole } from '@proton/docs-shared/Doc/DocumentRole'
+import { useSharingModal } from '@proton/drive/public/sharingModal'
+import { getDrive } from '@proton/drive/sdk'
 import { MimeProtonDoc } from '@proton/file-icons/icons/MimeProtonDoc'
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle'
 import { IcEye } from '@proton/icons/icons/IcEye'
@@ -12,6 +14,7 @@ import { APPS } from '@proton/shared/lib/constants'
 import type { ReactNode } from 'react'
 import { c } from 'ttag'
 
+import { HeaderShareButton } from '~/components/document/DocumentLayout/DocumentHeader/HeaderShareButton'
 import { PopoverPill } from '~/components/document/DocumentLayout/DocumentHeader/PopoverPill'
 import { WorkspacePromoBanner } from '~/components/document/DocumentViewer/WorkspacePromoBanner'
 import { getDocsReportContextLines } from '~/utils/report-context'
@@ -28,11 +31,14 @@ export type DocumentHeaderV2Props = DocumentTitleMenuProps & {
 
 /**
  * /doc's header for a document (`DocsHeaderForDocument` in `DocumentHeader.tsx`): the Docs home link, the title menu,
- * the status pills, the view-only pill, the comments button and the user menu, under the workspace promo banner.
+ * the status pills, the view-only pill, the Share button (Admin only), the comments button and the user menu, under the
+ * workspace promo banner. Sharing never rewrites the address bar to the public link, as /doc does: doc2 can't open
+ * that URL, and the link is copied from the sharing modal.
  */
 export function DocumentHeaderV2(props: DocumentHeaderV2Props & ActiveUsersProps) {
   const { APP_VERSION, CLIENT_TYPE } = useConfig()
   const { role, status, ...titleMenuProps } = props
+  const { sharingModal, showSharingModal } = useSharingModal()
 
   return (
     <>
@@ -59,6 +65,9 @@ export function DocumentHeaderV2(props: DocumentHeaderV2Props & ActiveUsersProps
             participants={props.participants}
             editorInvoker={props.editorInvoker}
           />
+          {role === 'Admin' && (
+            <HeaderShareButton onClick={() => showSharingModal({ drive: getDrive(), nodeUid: props.node.uid })} />
+          )}
           {role !== 'Viewer' && <CommentsButtonStub />}
           <div className="w-2" />
           <UserDropdown
@@ -73,6 +82,7 @@ export function DocumentHeaderV2(props: DocumentHeaderV2Props & ActiveUsersProps
           />
         </div>
       </div>
+      {sharingModal}
     </>
   )
 }
