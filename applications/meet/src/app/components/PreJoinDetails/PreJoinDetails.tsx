@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import type { KeyboardEvent } from 'react';
+import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -32,6 +33,7 @@ import { PreJoinDetailsHeader } from './PreJoinDetailsHeader';
 import { WaitingRoomAdmission } from './WaitingRoomAdmission/WaitingRoomAdmission';
 import { WaitingRoomDropdown } from './WaitingRoomDropdown';
 import { PreJoinDetailsShell } from './shared/PreJoinDetailsShell';
+import { focusKeepingSelection, useFocusEmptyNameField } from './useFocusEmptyNameField';
 
 import './PreJoinDetails.scss';
 
@@ -66,7 +68,12 @@ export const PreJoinDetails = ({
 
     const [keepDisplayNameOnDevice, setKeepDisplayNameOnDevice] = useState(keepDisplayName);
 
+    const nameInputRef = useRef<HTMLInputElement>(null);
+
     const showHostScreen = instantMeeting || isHost;
+    const isNameEmpty = displayName.trim() === '';
+
+    useFocusEmptyNameField(nameInputRef, isNameEmpty);
 
     const getActionLabel = () => {
         if (instantMeeting) {
@@ -87,6 +94,20 @@ export const PreJoinDetails = ({
         onJoinMeeting(displayName, keepDisplayNameOnDevice);
     };
 
+    const focusNameField = () => {
+        if (nameInputRef.current) {
+            focusKeepingSelection(nameInputRef.current);
+        }
+    };
+
+    const handleNameKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+        // Safari fires the IME-committing Enter after compositionend, with keyCode 229
+        const isComposing = event.nativeEvent.isComposing || event.keyCode === 229;
+        if (event.key === 'Enter' && !isComposing && !isNameEmpty) {
+            handleJoinMeeting();
+        }
+    };
+
     const NameInput = (
         <InputFieldStacked isGroupElement classname={clsx(!showHostScreen && viewportWidth['<=small'] && 'rounded-xl')}>
             <InputFieldTwo
@@ -94,9 +115,11 @@ export const PreJoinDetails = ({
                 type="text"
                 unstyled
                 inputClassName="rounded-none"
+                ref={nameInputRef}
                 value={displayName}
                 onChange={(e) => onDisplayNameChange(e.target.value)}
-                placeholder={c('Placeholder').t`Enter your name`}
+                onKeyDown={handleNameKeyDown}
+                placeholder={c('Placeholder').t`Enter your name to join`}
                 maxLength={64}
                 autoFocus={true}
             />
@@ -124,11 +147,14 @@ export const PreJoinDetails = ({
                     : []),
                 <Button
                     key="join-meeting"
-                    className="secondary py-4 px-5 md:py-5 rounded-full"
+                    className={clsx(
+                        'secondary py-4 px-5 md:py-5 rounded-full',
+                        isNameEmpty && 'is-disabled pre-join-details-join-button-awaiting-name'
+                    )}
                     size="large"
                     fullWidth
-                    onClick={handleJoinMeeting}
-                    disabled={displayName.trim() === ''}
+                    onClick={isNameEmpty ? focusNameField : handleJoinMeeting}
+                    aria-disabled={isNameEmpty || undefined}
                 >
                     {getActionLabel()}
                 </Button>,
