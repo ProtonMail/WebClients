@@ -2063,6 +2063,9 @@
       "Didn't receive the code?": [
         "Nedostali ste kód?"
       ],
+      "Disabled by your organization": [
+        "Deaktivované vašou organizáciou"
+      ],
       "Disabling auto-lock": [
         "Vypnutie automatického uzamykania"
       ],
@@ -3175,6 +3178,12 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Vaše informácie boli nájdené dňa ${ displayedDate }"
+      ],
+      "Your organization does not allow using 2FA codes stored in ${ PASS_APP_NAME }": [
+        "Vaša organizácia neumožňuje používanie kódov 2FA uložených v ${ PASS_APP_NAME }"
+      ],
+      "Your organization does not allow using passkeys stored in ${ PASS_APP_NAME }": [
+        "Vaša organizácia neumožňuje používanie prístupových kľúčov uložených v ${ PASS_APP_NAME }"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Vaša organizácia vyžaduje, aby ste zabezpečili svoj prístup k ${ PASS_APP_NAME }"

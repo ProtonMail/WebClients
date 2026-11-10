@@ -340,6 +340,9 @@
       "Done": [
         "Utført"
       ],
+      "Download for Linux": [
+        "Last ned for Linux"
+      ],
       "Download for macOS": [
         "Last ned for macOS"
       ],
@@ -417,6 +420,9 @@
       ],
       "Hide": [
         "Skjul"
+      ],
+      "Hide passwords": [
+        "Skjul passord"
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Hvordan eksporterer jeg mine data fra ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
@@ -520,6 +526,9 @@
       "Move all items": [
         "Flytt alle elementer"
       ],
+      "Move folder": [
+        "Flytt mappe"
+      ],
       "Move to": [
         "Flytt til"
       ],
@@ -555,6 +564,9 @@
       ],
       "Open navigation": [
         "Åpne navigasjonsmeny"
+      ],
+      "Open platform selection dropdown": [
+        "Åpne nedtrekksmeny for valg av plattform"
       ],
       "Organize vaults": [
         "Organiser hvelv"
@@ -887,6 +899,11 @@
         "Avinstaller ${ PASS_APP_NAME }"
       ]
     },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName }-skrivebordsapplikasjon"
+      ]
+    },
     "Button": {
       "More info": [
         "Mer informasjon"
@@ -933,6 +950,9 @@
       ],
       "Change your passwords": [
         "Endre passordene dine"
+      ],
+      "Check if you're reusing passwords": [
+        "Sjekk om du gjenbruker passord"
       ],
       "Check if your passwords have been exposed": [
         "Sjekk om passordene dine har blitt eksponert"
@@ -1057,6 +1077,9 @@
       ],
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Autentisering mislyktes. Bekreft ditt andre passord for å fortsette med eksporteringen"
+      ],
+      "Biometric authentication cancelled.": [
+        "Biometrisk autentisering avbrutt."
       ],
       "Biometric authentication failed.": [
         "Biometrisk autentisering mislyktes."
@@ -1207,6 +1230,10 @@
       "Failed to delete email address from monitoring": [
         "Kunne ikke slette e-postadresse fra overvåking"
       ],
+      "Failed to delete folder": [
+        "Kunne ikke slette mappen.",
+        "Kunne ikke slette mapper"
+      ],
       "Failed to delete selected items": [
         "Kunne ikke slette valgte elementer"
       ],
@@ -1239,6 +1266,9 @@
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Kunne ikke flytte alle elementer fra \"${ payload.content.name }\""
+      ],
+      "Failed to move folder": [
+        "Kunne ikke flytte mappen"
       ],
       "Failed to move items": [
         "Kunne ikke flytte elementer"
@@ -1294,6 +1324,9 @@
       "Failed to update domain name.": [
         "Kunne ikke oppdatere domenenavnet."
       ],
+      "Failed to update folder": [
+        "Kunne ikke oppdatere mappen."
+      ],
       "Failed to update monitoring settings": [
         "Kunne ikke oppdatere overvåkingsinnstillingene"
       ],
@@ -1323,6 +1356,9 @@
       ],
       "File does not match expected format": [
         "Fil samsvarer ikke med forventet format"
+      ],
+      "Folder name does not match": [
+        "Mappenavn samsvarer ikke"
       ],
       "Import failed for vault \"${ vaultData.name }\": ${ errorMessage }": [
         "Import mislyktes for hvelv \"${ vaultData.name }\": ${ errorMessage }"
@@ -1684,6 +1720,9 @@
         "${ forwardedEmailsCount } videresendt",
         "${ forwardedEmailsCount } videresendte"
       ],
+      "${ importantBold } This doesn't prevent viewers from retrieving passwords through other means.": [
+        "${ importantBold } Dette hindrer ikke brukere i å få tak i passord på andre måter."
+      ],
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } ønsker å dele et element med en gruppe du administrerer."
       ],
@@ -1785,6 +1824,9 @@
       ],
       "Access tokens, used together with ${ passCliLink }, allow you to automate CI/CD or give your AI agent scoped access to what it needs to run its job.": [
         "Tilgangstokener, brukt sammen med ${ passCliLink }, lar deg automatisere CI/CD eller gi KI-agenten din tilgang til det den trenger for å kjøre jobben sin."
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Legg til en betalingsmåte, slik at abonnementet ditt fortsetter når prøveperioden er over."
       ],
       "Add your custom email address to monitor:": [
         "Legg til den tilpassede e-postadressen din for å overvåke:"
@@ -1951,6 +1993,9 @@
       "Created item": [
         "Opprettet element"
       ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, folder structure etc.). For a complete export, we recommend using a different format.": [
+        "CSV er et praktisk format for å se dataene dine. Men fordi formatet er så enkelt, blir noen data ikke tatt med (egendefinerte felt, mappestruktur osv.). For en fullstendig eksport anbefaler vi å bruke et annet format."
+      ],
       "Current version": [
         "Gjeldende versjon"
       ],
@@ -1971,6 +2016,9 @@
       ],
       "Didn't receive the code?": [
         "Fikk du ikke koden?"
+      ],
+      "Disabled by your organization": [
+        "Deaktivert av organisasjonen din"
       ],
       "Disabling auto-lock": [
         "Deaktiverer auto-lås"
@@ -2086,11 +2134,29 @@
       "Failed updating your vault organization": [
         "Oppdateringen av hvelvorganisasjonen din mislyktes"
       ],
+      "Field hidden. You can still autofill it.": [
+        "Feltet er skjult. Du kan likevel autoutfylle det."
+      ],
       "Fill in the CSV with your data": [
         "Fyll ut CSV-filen med dataene dine"
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Finn \"OpenSSH Authentication Agent\", høyreklikk på Egenskaper."
+      ],
+      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Fullfør påloggingen i nettleservinduet som nettopp ble åpnet. ${ PASS_APP_NAME } vil plukke opp automatisk så snart du er ferdig."
+      ],
+      "Folder \"${ payload.folder.name }\" created": [
+        "Mappen «${ payload.folder.name }» opprettet"
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Mappen «${ payload.folder.name }» er flyttet"
+      ],
+      "Folder deleted": [
+        "Mappe slettet"
+      ],
+      "Folder renamed to \"${ payload.folder.name }\"": [
+        "Mappe omdøpt til \"${ payload.folder.name }\""
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Følg disse trinnene for å importere dataene dine med en generisk CSV-fil:"
@@ -2107,6 +2173,9 @@
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "Adressen for videresending kopiert til utklippstavlen. Send en e-post til denne adressen, og ${ Email } vil motta den."
+      ],
+      "Full data sync to improve app performance. Thank you for your patience.": [
+        "Full datasynkronisering for å forbedre appens ytelse. Takk for tålmodigheten."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "Genererte passord vil bli lagret i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uke.",
@@ -2141,6 +2210,9 @@
       ],
       "Import the CSV file below.": [
         "Importer CSV-filen nedenfor."
+      ],
+      "Important:": [
+        "Viktig:"
       ],
       "Imported on ${ date }": [
         "Importert den ${ date }."
@@ -2285,6 +2357,9 @@
       "Moving items": [
         "Flytter elementer"
       ],
+      "Moving items to another vault will erase their secure links.": [
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
+      ],
       "Moving items to trash": [
         "Flytter elementer til papirkurven"
       ],
@@ -2336,6 +2411,32 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Nettilgang til ${ PASS_APP_NAME } krever en PIN-kode. Du blir logget ut etter 3 mislykkede forsøk."
       ],
+      "Only ${ count } item in \"${ folderName }\" will be moved. Items in subfolders will not be moved.": [
+        "Bare ${ count } element i «${ folderName }» vil bli flyttet. Elementer i undermapper vil ikke bli flyttet.",
+        "Bare ${ count } elementer i «${ folderName }» vil bli flyttet. Elementer i undermapper vil ikke bli flyttet."
+      ],
+      "Only ${ count } item will be moved. Items in folders will not be moved.": [
+        "Bare ${ count } element vil bli flyttet. Elementer i mapper vil ikke bli flyttet.",
+        "Bare ${ count } elementer i «» vil bli flyttet. Elementer i undermapper vil ikke bli flyttet."
+      ],
+      "Only aliases are shown": [
+        "Bare aliaser vises"
+      ],
+      "Only cards are shown": [
+        "Bare kort vises"
+      ],
+      "Only custom items are shown": [
+        "Bare tilpasset elementer vises"
+      ],
+      "Only identities are shown": [
+        "Bare identiteter vises"
+      ],
+      "Only logins are shown": [
+        "Bare pålogginger vises"
+      ],
+      "Only notes are shown": [
+        "Bare notater vises"
+      ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Bare tokener som har utløpt i løpet av de siste 30 dagene vises. Eldre tokener slettes automatisk."
       ],
@@ -2356,6 +2457,9 @@
       ],
       "Pass Plus trial": [
         "Pass Plus-prøveperiode"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Passord er skjult. Du kan fortsatt fylle det automatisk."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Passordlås er registrert. Bruk den til å låse opp ${ PASS_APP_NAME }"
@@ -2565,6 +2669,9 @@
       "Scan to download": [
         "Skann for å laste ned"
       ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Skann for å laste ned ${ PASS_APP_NAME } for iOS og Android"
+      ],
       "Secure links": [
         "Sikre koblinger"
       ],
@@ -2646,6 +2753,9 @@
       "Suggested": [
         "Foreslått"
       ],
+      "Switch to another folder or create an item in this folder": [
+        "Bytt til en annen mappe, eller opprett et element i denne mappen"
+      ],
       "Switch to another vault or create an item in this vault": [
         "Bytt til et annet hvelv eller opprett et element i dette hvelvet."
       ],
@@ -2681,6 +2791,9 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Det ekstra passordet kreves for å bruke ${ PASS_APP_NAME }. Det fungerer som et ekstra passord på toppen av ${ BRAND_NAME }-passordet ditt."
+      ],
+      "The folder is already here": [
+        "Mappen er allerede her"
       ],
       "The following ${ totalIgnored } item could not be imported:": [
         "Følgende ${ totalIgnored } element kunne ikke importeres:",
@@ -2763,6 +2876,9 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "For å se gjennom de importerte dataene dine, klikk på ${ PASS_APP_NAME }-ikonet i nettleserens verktøylinje."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission.": [
+        "For å aktivere opplåsing med biometri krever ${ PASS_APP_NAME } en ny nettlesertillatelse."
       ],
       "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
         "For å konfigurere biometrisk opplåsing krever ${ PASS_APP_NAME } en ny nettlesertillatelse. Etter at du har godtatt den, lastes utvidelsen inn på nytt. Åpne denne siden på nytt etterpå."
@@ -2855,6 +2971,12 @@
       "Viewer": [
         "Leser"
       ],
+      "Viewers can still autofill passwords, but won't see them in ${ PASS_APP_NAME }. This discourages casual viewing and reduces the risk of accidental disclosure.": [
+        "Lesere kan fortsatt fylle ut passord automatisk, men ser dem ikke i ${ PASS_APP_NAME }. Dette motvirker tilfeldig innsyn og reduserer risikoen for at de avsløres ved et uhell."
+      ],
+      "Viewers can still autofill. Editors and admins always see passwords.": [
+        "Brukere kan fortsatt benytte seg av autofyll. Redaktører og administratorer ser alltid passordene."
+      ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Vi har problemer med å synkronisere data til din lokale lagring. Forsikre deg om at du har nok diskplass til at ${ PASS_SHORT_APP_NAME } kan fungere problemfritt."
       ],
@@ -2873,6 +2995,9 @@
       ],
       "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
         "Når aktivert, kan du fortsatt få tilgang til dine ${ PASS_SHORT_APP_NAME }-data hvis du mister internettilkoblingen eller hvis ${ BRAND_NAME }-servere er utilgjengelige."
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Når elementer flyttes mellom hvelv, beholder vi opptil de 50 siste endringene som er gjort i hvert element."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Når du sender en e-post fra dette aliaset, vil e-posten vise ${ emailSender } som avsender."
@@ -2983,6 +3108,12 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Informasjonen din ble funnet den ${ displayedDate }."
+      ],
+      "Your organization does not allow using 2FA codes stored in ${ PASS_APP_NAME }": [
+        "Organisasjonen din tillater ikke bruk av 2FA-koder som er lagret i ${ PASS_APP_NAME }"
+      ],
+      "Your organization does not allow using passkeys stored in ${ PASS_APP_NAME }": [
+        "Organisasjonen din tillater ikke bruk av passnøkler som er lagret i ${ PASS_APP_NAME }"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisasjonen krever at du sikrer tilgangen til ${ PASS_APP_NAME }"
@@ -3146,6 +3277,9 @@
       "Account Type": [
         "Kontotype"
       ],
+      "Add a payment method": [
+        "Legg til betalingsmåte"
+      ],
       "Add a random prefix for this domain when creating a new alias.": [
         "Legg til et tilfeldig prefiks for dette domenet når du oppretter et nytt alias."
       ],
@@ -3181,6 +3315,9 @@
       ],
       "All items": [
         "Alle elementer"
+      ],
+      "Allow viewers to see passwords": [
+        "La seerne se passordene"
       ],
       "Alphabetical": [
         "Alfabetisk"
@@ -3272,6 +3409,9 @@
       "Company": [
         "Firma"
       ],
+      "Confirm folder name": [
+        "Bekreft mappenavn"
+      ],
       "Confirm vault name": [
         "Bekreft hvelvnavn"
       ],
@@ -3301,6 +3441,9 @@
       ],
       "Create a custom item": [
         "Opprett et tilpasset element"
+      ],
+      "Create a folder": [
+        "Opprett en mappe"
       ],
       "Create a hide-my-email alias": [
         "Opprett et hide-my-email-alias"
@@ -3475,6 +3618,9 @@
       ],
       "Folder": [
         "Mappe"
+      ],
+      "Folders": [
+        "Mapper"
       ],
       "For a one-off sharing": [
         "For en engangsdeling"
@@ -3668,11 +3814,17 @@
       "LinkedIn account": [
         "LinkedIn-konto"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Pålogging"
       ],
       "Logins": [
         "Pålogginger"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Postbokser"
@@ -4262,6 +4414,9 @@
       "WiFi network": [
         "WiFi-nettverk"
       ],
+      "Windows": [
+        "Windows"
+      ],
       "Work details": [
         "Arbeidsdetaljer"
       ],
@@ -4592,6 +4747,9 @@
       "Enter username": [
         "Angi brukernavn"
       ],
+      "Folder name": [
+        "Mappenavn"
+      ],
       "Full Name": [
         "Fullt navn"
       ],
@@ -4618,6 +4776,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Beskriv problemet og inkluder eventuelle feilmeldinger"
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Skriv inn \"${ name }\" for å bekrefte sletting"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Søk ${ pluralItemType } i ${ vaultName }"
@@ -4937,17 +5098,26 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Continue in your browser": [
+        "Fortsett i nettleseren din"
+      ],
       "Create a vault": [
         "Opprett et hvelv"
       ],
       "Create contact": [
         "Opprett kontakt"
       ],
+      "Create folder in \"${ vaultName }\"": [
+        "Opprett mappe i \"${ vaultName }\""
+      ],
       "Create new access token": [
         "Opprett nytt tilgangstoken"
       ],
       "Create PIN code": [
         "Opprett PIN-kode"
+      ],
+      "Create subfolder in \"${ folderName }\"": [
+        "Opprett undermappe i \"${ folderName }\""
       ],
       "Created": [
         "Opprettet"
@@ -4983,11 +5153,17 @@
       "Delete domain": [
         "Slett domene"
       ],
+      "Delete folder \"${ name }\"?": [
+        "Slett mappe “${ name }\"?"
+      ],
       "Delete mailbox": [
         "Slett postboks"
       ],
       "Delete this item?": [
         "Slette dette elementet?"
+      ],
+      "Delete vault \"${ name }\"?": [
+        "Slett hvelv \"${ name }\"?"
       ],
       "Did you know?": [
         "Visste du at?"
@@ -5043,11 +5219,17 @@
       "Get mobile and desktop apps": [
         "Skaff deg mobil- og skrivebordsapper"
       ],
+      "Get mobile apps": [
+        "Hent mobilapper"
+      ],
       "Get Started": [
         "Kom i gang"
       ],
       "Hidden vaults": [
         "Skjulte hvelv"
+      ],
+      "Hide passwords from viewers?": [
+        "Skjule passord for lesere?"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliaser"
@@ -5078,6 +5260,9 @@
       ],
       "Item": [
         "Element"
+      ],
+      "Keep your subscription active": [
+        "Hold abonnementet ditt aktivt"
       ],
       "Last autofill": [
         "Siste autofyll"
@@ -5121,12 +5306,25 @@
       "Modified": [
         "Endret"
       ],
+      "Move \"${ folderName }\" to": [
+        "Flytt \"${ folderName }\" til"
+      ],
+      "Move ${ count } item to ${ target }": [
+        "Flytt ${ count } element til ${ target }",
+        "Flytt ${ count } elementer til ${ target }"
+      ],
       "Move ${ trashedItemsCount } item to trash?": [
         "Flytte ${ trashedItemsCount } element til papirkurven?",
         "Flytte ${ trashedItemsCount } elementer til papirkurven?"
       ],
       "Move all items to \"${ vaultName }\"?": [
         "Flytte alle elementer til \"${ vaultName }\"?"
+      ],
+      "Move all items?": [
+        "Flytt alle elementer?"
+      ],
+      "Move item to \"${ target }\"": [
+        "Flytt element til «${ target }»"
       ],
       "MX record": [
         "MX-post"
@@ -5221,6 +5419,9 @@
       ],
       "Remove secure link?": [
         "Fjerne sikker kobling?"
+      ],
+      "Rename folder": [
+        "Endre mappenavn"
       ],
       "Reset history for this item?": [
         "Tilbakestille historikken for dette elementet?"
@@ -5328,6 +5529,9 @@
       "Upgrade to check for compromised passwords": [
         "Oppgrader for å sjekke etter kompromitterte passord"
       ],
+      "Upgrade to check for reused passwords": [
+        "Oppgrader for å sjekke etter gjenbrukte passord"
+      ],
       "URL matching": [
         "URL-samsvar"
       ],
@@ -5372,6 +5576,9 @@
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
+      ],
+      "Your folder is empty": [
+        "Mappen din er tom"
       ],
       "Your new access token": [
         "Ditt nye tilgangstoken"
@@ -5454,6 +5661,22 @@
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-passord kreves"
       ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "${ count } mappe ble slått sammen med overordnet mappe fordi maksimalt antall mappenivåer var nådd.",
+        "${ count } mapper ble slått sammen med overordnet mappe fordi maksimalt antall mappenivåer var nådd."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "${ count } mappe ble ikke importert fordi den overordnede mappen har nådd maksimalt antall undermapper. Elementene i den ble importert til nærmeste tilgjengelige mappe.",
+        "${ count } mapper ble ikke importert fordi den overordnede mappen har nådd maksimalt antall undermapper. Elementene i den ble importert til nærmeste tilgjengelige mappe."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "${ count } mappe ble ikke importert fordi dette hvelvet har nådd grensen for antall mapper. Elementene i mappen ble importert til nærmeste tilgjengelige mappe.",
+        "${ count } mapper ble ikke importert fordi dette hvelvet har nådd grensen for antall mapper. Elementene i mappene ble importert til nærmeste tilgjengelige mappe."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "${ failed } mappe kunne ikke opprettes. Elementene i den ble importert til nærmeste tilgjengelige mappe.",
+        "${ failed } mapper kunne ikke opprettes. Elementene i dem ble importert til nærmeste tilgjengelige mappe."
+      ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
         "${ modeLabelStong } gir kraftig kontroll, men én enkelt feil kan føre til at autofyll samsvarer med og fyller ut data på svindel- eller nettfisking-nettsteder."
       ],
@@ -5471,6 +5694,9 @@
       ],
       "Aliases in trash will continue forwarding emails.": [
         "Aliaser i papirkurven fortsetter å videresende e-poster."
+      ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "Alle elementene i denne mappen, inkludert undermappene, vil bli slettet. Du kan ikke angre denne handlingen."
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Alle dine elementer i papirkurven blir slettet permanent. Du kan ikke angre denne handlingen."
@@ -5555,6 +5781,9 @@
       "Failed to load breaches.": [
         "Kunne ikke laste inn brudd."
       ],
+      "Folder name is required": [
+        "Mappe navn kreves"
+      ],
       "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
         "Gi tilgang til utklippstavlen for å aktivere automatisk fjerning av kopierte passord og data."
       ],
@@ -5588,6 +5817,9 @@
       ],
       "Move to trash": [
         "Flytt til papirkurven"
+      ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Hvis mappen flyttes hit, overskrides maksimalt antall mappenivåer"
       ],
       "No items": [
         "Ingen elementer"
@@ -5688,11 +5920,17 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Ikke i stand til å logge på ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
+      "Vault \"${ name }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Hvelv \"${ name }\" og alle dets elementer vil slettes permanent. Du kan ikke angre denne handlingen."
+      ],
       "Vault name is required": [
         "Hvelvnavn kreves"
       ],
       "Verification code is required": [
         "Bekreftelseskode er påkrevd"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Du kan ikke flytte en mappe inn i seg selv eller inn i undermappene sine"
       ],
       "You have reached the limit of members who can access this item.": [
         "Du har nådd grensen for medlemmer som kan ha tilgang til dette elementet."
@@ -5720,6 +5958,15 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Du vil ikke lenger ha tilgang til dette hvelvet. For å bli med i det igjen, trenger du en ny invitasjon."
+      ],
+      "You've reached the maximum folder nesting level": [
+        "Du har nådd det maksimale nøstingsnivået for mapper"
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "Du har nådd maksimalt antall mapper på dette nivået"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Du har nådd maksimalt antall mapper på dette hvelvet"
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "Administratoren må opprette et hvelv for deg før du kan opprette elementer"

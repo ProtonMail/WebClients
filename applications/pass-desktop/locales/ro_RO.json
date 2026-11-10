@@ -2040,6 +2040,9 @@
       "Didn't receive the code?": [
         "Nu ați primit codul?"
       ],
+      "Disabled by your organization": [
+        "Dezactivat de către organizație"
+      ],
       "Disabling auto-lock": [
         "Se dezactivează autoblocarea."
       ],
@@ -3140,6 +3143,12 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Informațiile v-au fost găsite la ${ displayedDate }"
+      ],
+      "Your organization does not allow using 2FA codes stored in ${ PASS_APP_NAME }": [
+        "Organizația nu vă permite utilizarea codurilor A2F stocate în ${ PASS_APP_NAME }."
+      ],
+      "Your organization does not allow using passkeys stored in ${ PASS_APP_NAME }": [
+        "Organizația nu vă permite utilizarea cheilor de acces stocate în ${ PASS_APP_NAME }."
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizația vă solicită să vă securizați accesul la ${ PASS_APP_NAME }"
