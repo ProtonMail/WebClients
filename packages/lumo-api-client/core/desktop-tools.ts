@@ -308,7 +308,7 @@ export async function getDesktopScheduleConnectors(): Promise<DesktopCatalogEntr
 }
 
 export function isDesktopEnvironment(): boolean {
-    return getDesktopBridge() !== null;
+    return typeof window !== 'undefined' && getDesktopBridge() !== null;
 }
 
 /** Older desktop builds may ignore unknown registration fields; require explicit support. */
