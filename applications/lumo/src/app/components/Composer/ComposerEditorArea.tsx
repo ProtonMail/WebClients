@@ -211,6 +211,7 @@ export const ComposerEditorArea = ({
             <div className={clsx('composer-text-wrapper', skillTokens.isActive && 'has-skill-tokens')}>
                 {skillTokens.isActive && <SkillTokenHighlight textareaRef={textareaRef} parts={skillTokens.parts} />}
                 <TextareaAutosize
+                    dir="auto"
                     ref={textareaRef}
                     value={value}
                     onChange={handleChange}

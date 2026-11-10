@@ -32,6 +32,7 @@ import { renderCardAwareSegment } from './card/renderCardSegments';
 import { LUMO_MARKDOWN_CARD_SHELL_CLASS, TRAILING_VEGA_CHART_KEY } from './lumoMarkdownCardShell';
 import { findSingleLineParagraphEnd, isPathologicalMarkdown } from './markdownSafety';
 import { normalizeGfmTableSpacing } from './normalizeGfmTableSpacing';
+import { rehypeAutoDirection } from './rehypeAutoDirection';
 import { remarkLatexDelimiters } from './remarkLatexDelimiters';
 import { VegaChartLoading } from './vega/VegaChartLoading';
 import { extractCodeBlockText, getCodeBlockLanguage } from './vega/codeBlockUtils';
@@ -438,7 +439,7 @@ const MarkdownBlock: React.FC<{
                         remarkLatexDelimiters,
                         remarkBrToBreak,
                     ]}
-                    rehypePlugins={[() => rehypeKatex({ output: 'mathml' })]}
+                    rehypePlugins={[rehypeAutoDirection, () => rehypeKatex({ output: 'mathml' })]}
                     components={components}
                     urlTransform={(url) => {
                         // Preserve attachment: URLs, sanitize everything else

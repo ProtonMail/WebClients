@@ -17,11 +17,19 @@ const LumoMarkdownCodeBlockHighlighter = lazy(() => import('../../LumoMarkdown/L
 const MARKDOWN_COMPONENTS = { pre: ArtifactMarkdownPre };
 
 const MarkdownRenderer = lazy(() =>
-    Promise.all([import('react-markdown'), import('remark-gfm')]).then(([markdownModule, gfmModule]) => ({
+    Promise.all([
+        import('react-markdown'),
+        import('remark-gfm'),
+        import('../../LumoMarkdown/rehypeAutoDirection'),
+    ]).then(([markdownModule, gfmModule, directionModule]) => ({
         default: (props: { children: string }) => {
             const Markdown = markdownModule.default;
             return (
-                <Markdown remarkPlugins={[gfmModule.default]} components={MARKDOWN_COMPONENTS}>
+                <Markdown
+                    remarkPlugins={[gfmModule.default]}
+                    rehypePlugins={[directionModule.rehypeAutoDirection]}
+                    components={MARKDOWN_COMPONENTS}
+                >
                     {props.children}
                 </Markdown>
             );

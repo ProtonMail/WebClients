@@ -57,6 +57,7 @@ const MessageEditor = ({ messageContent, handleEditMessage, handleCancel }: Mess
     return (
         <div className="flex flex-column w-full gap-2">
             <textarea
+                dir="auto"
                 ref={textareaRef}
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
