@@ -8,7 +8,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { ConditionalTooltip } from '../../../atoms/ConditionalTooltip/ConditionalTooltip';
 
-type MoreMenuIcon = (props: Pick<IconComponentProps, 'size' | 'className'>) => JSX.Element;
+type MoreMenuIcon = (props: Pick<IconComponentProps, 'size' | 'className'>) => ReactNode;
 
 const itemClassName =
     'more-menu-item flex flex-nowrap items-center gap-3 w-full min-h-custom py-2 px-3 rounded-lg text-lg color-norm';

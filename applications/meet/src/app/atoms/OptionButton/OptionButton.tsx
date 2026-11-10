@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import type { IconComponentProps } from '@proton/icons/component';
@@ -14,8 +16,8 @@ interface OptionButtonProps {
     label: string;
     description?: string;
     onClick: () => void;
-    Icon?: (props: Pick<IconComponentProps, 'size' | 'style'>) => JSX.Element;
-    LabelIcon?: (props: Pick<IconComponentProps, 'size' | 'style'>) => JSX.Element;
+    Icon?: (props: Pick<IconComponentProps, 'size' | 'style'>) => ReactNode;
+    LabelIcon?: (props: Pick<IconComponentProps, 'size' | 'style'>) => ReactNode;
     iconSize?: IconComponentProps['size'];
     loading?: boolean;
     role?: string;
@@ -35,7 +37,7 @@ const CheckComponent = ({
     loading,
 }: {
     showIcon: boolean;
-    Icon?: (props: Pick<IconComponentProps, 'size' | 'style'>) => JSX.Element;
+    Icon?: (props: Pick<IconComponentProps, 'size' | 'style'>) => ReactNode;
     iconSize?: IconComponentProps['size'];
     iconOnTheRight?: boolean;
     loading?: boolean;

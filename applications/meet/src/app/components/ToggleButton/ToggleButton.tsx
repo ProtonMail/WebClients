@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { ReactNode, RefObject } from 'react';
 import { useRef } from 'react';
 
 import { c } from 'ttag';
@@ -17,8 +17,8 @@ import clsx from '@proton/utils/clsx';
 import './ToggleButton.scss';
 
 interface ToggleButtonProps {
-    OnIconComponent: (props: Pick<IconComponentProps, 'size'>) => JSX.Element;
-    OffIconComponent: (props: Pick<IconComponentProps, 'size'>) => JSX.Element;
+    OnIconComponent: (props: Pick<IconComponentProps, 'size'>) => ReactNode;
+    OffIconComponent: (props: Pick<IconComponentProps, 'size'>) => ReactNode;
     isOn: boolean;
     onClick: () => void;
     isOpen: boolean;

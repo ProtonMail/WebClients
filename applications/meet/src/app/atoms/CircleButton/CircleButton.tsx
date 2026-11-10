@@ -15,7 +15,7 @@ type CircleButtonVariant = 'default' | 'active' | 'danger' | 'transparent' | 'hi
 type IndicatorStatus = 'warning' | 'default' | 'success' | 'danger';
 
 interface CircleButtonProps {
-    IconComponent: (props: Pick<IconComponentProps, 'viewBox' | 'size'>) => JSX.Element;
+    IconComponent: (props: Pick<IconComponentProps, 'viewBox' | 'size'>) => ReactNode;
     onClick?: () => void;
     className?: string;
     indicatorContent?: string | ReactNode;

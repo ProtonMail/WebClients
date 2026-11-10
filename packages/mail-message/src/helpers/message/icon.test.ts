@@ -669,7 +669,7 @@ describe('icon', () => {
             ${'external'} | ${'on-delivery'} | ${[fakeKey1]} | ${false}           | ${MAIL_VERIFICATION_STATUS.SIGNED_AND_INVALID} | ${'color-success'} | ${IcLockOpenExclamationFilled} | ${'PGP-signed message. Sender verification failed'}
             ${'external'} | ${'on-delivery'} | ${[]}         | ${false}           | ${MAIL_VERIFICATION_STATUS.NOT_SIGNED}         | ${'color-norm'}    | ${IcLockFilled}                | ${'Stored with zero-access encryption'}
         `(
-            'should use color $colorClassName, lock $icon.name when origin $origin, encryption $encryption, verified pinned keys $pinnedKeysVerified and verification status $verificationStatus',
+            'should use color $colorClassName, lock $icon.render.name when origin $origin, encryption $encryption, verified pinned keys $pinnedKeysVerified and verification status $verificationStatus',
             ({
                 origin,
                 encryption,

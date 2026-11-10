@@ -21,9 +21,7 @@ const ImporterRowStatus = ({ state, errorCode, product }: Props) => {
                 <span>{getImporterString(state)}</span>
                 {errorCode === ApiImporterError.ERROR_CODE_IMAP_CONNECTION && (
                     <Tooltip title={c('Tooltip').t`Account is disconnected`} data-testid="ImporterRowStatus:IMAP_Error">
-                        <span className="inline-flex ">
-                            <IcInfoCircle />
-                        </span>
+                        <IcInfoCircle />
                     </Tooltip>
                 )}
                 {errorCode === ApiImporterError.ERROR_CODE_QUOTA_LIMIT && (
@@ -35,9 +33,7 @@ const ImporterRowStatus = ({ state, errorCode, product }: Props) => {
                         }
                         data-testid="ImporterRowStatus:quota_Error"
                     >
-                        <span className="inline-flex ">
-                            <IcInfoCircle />
-                        </span>
+                        <IcInfoCircle />
                     </Tooltip>
                 )}
             </div>
@@ -56,9 +52,7 @@ const ImporterRowStatus = ({ state, errorCode, product }: Props) => {
                     title={c('Tooltip')
                         .t`Your external account may have reached its 24-hour bandwidth limit. ${BRAND_NAME} will try to resume the import as soon as possible.`}
                 >
-                    <span className="inline-flex">
-                        <IcInfoCircle />
-                    </span>
+                    <IcInfoCircle />
                 </Tooltip>
             </div>
         );
