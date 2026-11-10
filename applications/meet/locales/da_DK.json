@@ -2311,6 +2311,9 @@
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "Optagelsen blev stoppet, fordi den ikke kunne gemmes. Vi har gemt den hidtidige optagelse."
       ],
+      "Recording stopped because of an error.": [
+        "Mødet stoppede på grund af en fejl."
+      ],
       "Renaming root item is not allowed": [
         "Omdøbning af rodelementet er ikke tilladt"
       ],
@@ -3081,6 +3084,9 @@
       "Loop an uploaded video or your live camera through background blur.": [
         "Loop en uploadet video eller dit live kamera gennem baggrundssløring."
       ],
+      "Lost connection to the meeting server. Reconnecting…": [
+        "Forbindelsen til mødeserveren blev afbrudt. Genopretter forbindelse..."
+      ],
       "Lower participant's hand": [
         "Tag deltagerens hånd ned"
       ],
@@ -3090,8 +3096,14 @@
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
         "Møder uden begrænsninger. Opgrader for at fjerne tidsbegrænsningen på 1 time og vær vært for op til 100 deltagere."
       ],
+      "Meeting almost full": [
+        "Mødet er næsten fuldt"
+      ],
       "Meeting ended": [
         "Møde afsluttet"
+      ],
+      "Meeting full": [
+        "Mødet er fuldt"
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Mødet er fuldt (${ maxParticipants } deltagere)"
@@ -3293,6 +3305,9 @@
       ],
       "Reconnecting to meeting...": [
         "Genskaber forbindelse til mødet..."
+      ],
+      "Reconnecting…": [
+        "Genopretter forbindelsen…"
       ],
       "Record your meetings": [
         "Optag dine møder"
@@ -3548,6 +3563,9 @@
       ],
       "Yesterday — ${ absoluteDate }": [
         "I går — ${ absoluteDate }"
+      ],
+      "You": [
+        "Du"
       ],
       "You are almost there": [
         "Du er der næsten"
@@ -3858,6 +3876,9 @@
       "Raw": [
         "Raw"
       ],
+      "Reactions": [
+        "Reaktioner"
+      ],
       "Remember my name on this device": [
         "Husk mit navn på denne enhed"
       ],
@@ -4111,6 +4132,22 @@
       "Repeats daily": [
         "Gentages dagligt"
       ],
+      "Repeats every ${ interval } day": [
+        "Gentages ${ interval } om dagen",
+        "Gentages hver ${ interval }. dag"
+      ],
+      "Repeats every ${ interval } month on the ${ ordinalDay }": [
+        "Gentages ${ interval } gang om måneden den ${ ordinalDay }",
+        "Gentages hver ${ interval }. måned den ${ ordinalDay }"
+      ],
+      "Repeats every ${ interval } week on ${ weekdayName }": [
+        "Gentages ${ interval } gang om ugen hver ${ weekdayName }",
+        "Gentages hver ${ interval }. uge hver ${ weekdayName }"
+      ],
+      "Repeats every ${ interval } year on ${ monthDay }": [
+        "Gentages ${ interval } gang om året den ${ monthDay }",
+        "Gentages hvert ${ interval }. år den ${ monthDay }"
+      ],
       "Repeats every ${ weekdayName }": [
         "Gentages hver ${ weekdayName }"
       ],
@@ -4140,6 +4177,10 @@
       ]
     },
     "Meeting schedule, several weekdays": {
+      "Repeats every ${ interval } week on ${ weekdayList }": [
+        "Gentages ${ interval } gang om ugen ${ weekdayList }",
+        "Gentages hver ${ interval }. uge ${ weekdayList }"
+      ],
       "Repeats every ${ weekdayList }": [
         "Gentages hver ${ weekdayList }"
       ]

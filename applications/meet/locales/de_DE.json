@@ -2314,6 +2314,9 @@
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "Die Aufzeichnung wurde beendet, da sie nicht gespeichert werden konnte. Bis zu diesem Zeitpunkt wurden sie behalten."
       ],
+      "Recording stopped because of an error.": [
+        "Die Aufzeichnung wurde aufgrund eines Fehlers unterbrochen."
+      ],
       "Renaming root item is not allowed": [
         "Das Umbenennen des Stammeintrags ist nicht zulässig"
       ],
@@ -2829,6 +2832,9 @@
       "Camera effects": [
         "Kameraeffekte"
       ],
+      "Camera is starting": [
+        "Kamera wird gestartet"
+      ],
       "Camera permission denied": [
         "Kamerazugriff verweigert"
       ],
@@ -3084,6 +3090,9 @@
       "Loop an uploaded video or your live camera through background blur.": [
         "Lass ein hochgeladenes Video oder dein Live-Kamerabild mit Hintergrundunschärfe in einer Schleife ablaufen."
       ],
+      "Lost connection to the meeting server. Reconnecting…": [
+        "Die Verbindung zum Konferenzserver wurde unterbrochen. Verbindung wird wiederhergestellt …"
+      ],
       "Lower participant's hand": [
         "Hand des Teilnehmers senken"
       ],
@@ -3093,8 +3102,14 @@
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
         "Triff dich ohne Einschränkungen. Upgrade, um die 1-Stunden-Beschränkung aufzuheben und bis zu 100 Teilnehmer zuzulassen."
       ],
+      "Meeting almost full": [
+        "Meeting fast ausgebucht"
+      ],
       "Meeting ended": [
         "Meeting beendet"
+      ],
+      "Meeting full": [
+        "Meeting ist ausgebucht"
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Meeting ist voll (${ maxParticipants } Teilnehmer)"
@@ -3143,6 +3158,9 @@
       ],
       "Microphone effects": [
         "Mikrofoneffekte"
+      ],
+      "Microphone is starting": [
+        "Mikrofon wird gestartet"
       ],
       "Microphone permission denied": [
         "Mikrofonzugriff verweigert"
@@ -3296,6 +3314,9 @@
       ],
       "Reconnecting to meeting...": [
         "Verbindung zum Meeting wird wiederhergestellt..."
+      ],
+      "Reconnecting…": [
+        "Verbindung wird wiederhergestellt …"
       ],
       "Record your meetings": [
         "Meetings aufzeichnen"
@@ -3618,11 +3639,17 @@
       "Your browser or device isn’t supported": [
         "Dein Browser oder Gerät wird nicht unterstützt"
       ],
+      "Your camera is still starting": [
+        "Deine Kamera wird noch vorbereitet"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
       "Your meeting is ready": [
         "Dein Meeting ist bereit"
+      ],
+      "Your microphone is still starting": [
+        "Dein Mikrofon wird noch vorbereitet"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
@@ -3863,6 +3890,9 @@
       ],
       "Raw": [
         "Roh"
+      ],
+      "Reactions": [
+        "Reaktionen"
       ],
       "Remember my name on this device": [
         "Meinen Namen auf diesem Gerät merken"

@@ -361,7 +361,7 @@
         "Baixa"
       ],
       "Download app": [
-        "Descarregueu l'aplicació"
+        "Descarrega l'aplicació"
       ],
       "Download local participant report": [
         "Descarrega l'informe de participants locals"
@@ -1972,7 +1972,7 @@
     },
     "Error": {
       "A message is required when reporting copyright infringement or stolen data": [
-        "Cal un missatge quan s'informa d'una infracció de drets d'autor o de dades robades"
+        "El missatge és requerit quan s'informa d'una infracció de drets d'autor o de dades robades"
       ],
       "An error occurred": [
         "S'ha produït un error"
@@ -1981,7 +1981,7 @@
         "Ha fallat la inicialització del desenfocament del fons. Torneu a activar la càmera o el desenfocament del fons"
       ],
       "Bookmark password is not available": [
-        "La contrasenya del marcador de pàgina no està disponible"
+        "La contrasenya de l'adreça d'interès no està disponible"
       ],
       "Cannot add photo to album without a valid name": [
         "No es pot afegir la foto a l'àlbum sense un nom vàlid"
@@ -1990,7 +1990,7 @@
         "No es pot descarregar una carpeta"
       ],
       "Cannot move item without a valid name, please rename the item first": [
-        "No es pot moure l'element sense un nom vàlid, canvieu-ne el nom primer"
+        "No es pot moure l'element sense un nom vàlid. Canvieu-ne el nom primer"
       ],
       "Cannot share root folder": [
         "No es pot compartir la carpeta arrel"
@@ -2098,10 +2098,10 @@
         "No s'ha pogut crear la reunió personal. Actualitzeu la pàgina."
       ],
       "Failed to decrypt bookmark key: ${ message }": [
-        "No s'ha pogut desxifrar la clau del marcador de pàgina: ${ message }"
+        "No s'ha pogut desxifrar la clau de l'adreça d'interès: ${ message }"
       ],
       "Failed to decrypt bookmark name: ${ message }": [
-        "No s'ha pogut desxifrar el nom del marcador de pàgina: ${ message }"
+        "No s'ha pogut desxifrar el nom de l'adreça d'interès: ${ message }"
       ],
       "Failed to decrypt bookmark password: ${ message }": [
         "No s'ha pogut desxifrar la contrasenya de l'adreça d'interès: ${ message }"
@@ -2254,10 +2254,10 @@
         "Signatura no trobada"
       ],
       "Missing signature for ${ signatureType }": [
-        "Falta la signatura per ${ signatureType }"
+        "Falta la signatura per a ${ signatureType }"
       ],
       "Move operation aborted": [
-        "S'ha cancel·lat l'operació de moviment"
+        "S'ha avortat l'operació de desplaçament"
       ],
       "Moving item to a non-folder is not allowed": [
         "No es permet moure un element a un element que no sigui una carpeta"
@@ -2288,7 +2288,7 @@
         "S'ha cancel·lat l'operació"
       ],
       "Operation failed, try again later": [
-        "Ha fallat l'operació, torneu-ho a provar més tard"
+        "Ha fallat l'operació. Torneu-ho a provar més tard"
       ],
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
@@ -2313,6 +2313,9 @@
       ],
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "La gravació s'ha aturat perquè no es podia desar. L'hem mantinguda fins a aquest punt."
+      ],
+      "Recording stopped because of an error.": [
+        "S'ha aturat la gravació a causa d'un error."
       ],
       "Renaming root item is not allowed": [
         "No es permet canviar el nom de l'element arrel"
@@ -2342,10 +2345,10 @@
         "Ha fallat la verificació de la signatura: ${ errorMessage }"
       ],
       "Signature verification for ${ signatureType } failed": [
-        "Ha fallat la verificació de la signatura per ${ signatureType }"
+        "No s'ha pogut verificar la signatura per a ${ signatureType }"
       ],
       "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
-        "La verificació de la signatura per ${ signatureType } ha fallat: ${ errorMessage }"
+        "No s'ha pogut verificar la signatura per a ${ signatureType }: ${ errorMessage }"
       ],
       "Some file data failed to upload. Please try again.": [
         "No s'han pogut carregar algunes dades del fitxer. Torneu-ho a provar."
@@ -2402,10 +2405,10 @@
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
       ],
       "This file has missing crypto material": [
-        "Aquest fitxer no té el material criptogràfic necessari"
+        "Falta material criptogràfic en aquest fitxer"
       ],
       "This file has no version available to download": [
-        "Aquest fitxer no té cap versió disponible per descarregar"
+        "Aquest fitxer no té cap versió disponible per a descarregar"
       ],
       "This file name is too long. Rename the image and try again.": [
         "Aquest nom de fitxer és massa llarg. Canvieu el nom de la imatge i torneu-ho a intentar."
@@ -2435,10 +2438,10 @@
         "Aquesta reunió té lloc en una versió antiga. L'amfitrió ha de finalitzar-la i actualitzar el Meet per reiniciar-la amb la darrera versió."
       ],
       "Too many server errors, please try again later": [
-        "Hi ha massa errors del servidor, torneu-ho a provar més tard"
+        "S'han produït massa errors del servidor. Torneu-ho a provar més tard"
       ],
       "Too many server requests, please try again later": [
-        "Hi ha massa sol·licituds al servidor, torneu-ho a provar més tard"
+        "Hi ha hagut massa sol·licituds al servidor. Torneu-ho a provar més tard"
       ],
       "Try turning live captions off and on again.": [
         "Proveu de desactivar i tornar a activar els subtítols en directe."
@@ -2462,7 +2465,7 @@
         "Les claus de verificació no estan disponibles"
       ],
       "Verification keys for ${ signatureType } are not available": [
-        "Les claus de verificació per ${ signatureType } no estan disponibles"
+        "Les claus de verificació per a ${ signatureType } no estan disponibles"
       ],
       "Virtual background initialization failed. Please toggle your camera or pick a background again": [
         "Ha fallat la inicialització del fons virtual. Canvieu la càmera o torneu a seleccionar un fons"
@@ -2829,6 +2832,9 @@
       "Camera effects": [
         "Efectes de càmera"
       ],
+      "Camera is starting": [
+        "S'està iniciant la càmera"
+      ],
       "Camera permission denied": [
         "S'ha denegat el permís de la càmera"
       ],
@@ -3084,6 +3090,9 @@
       "Loop an uploaded video or your live camera through background blur.": [
         "Repetiu en bucle un vídeo carregat o la càmera en directe amb difuminació de fons."
       ],
+      "Lost connection to the meeting server. Reconnecting…": [
+        "S'ha perdut la connexió amb el servidor de la reunió. S'està reconnectant…"
+      ],
       "Lower participant's hand": [
         "Abaixa la mà del participant"
       ],
@@ -3093,8 +3102,14 @@
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
         "Reuniu-vos sense restriccions. Milloreu de pla per eliminar el límit d'una hora i organitzar reunions de fins a 100 participants."
       ],
+      "Meeting almost full": [
+        "La reunió està gairebé plena"
+      ],
       "Meeting ended": [
         "La reunió ha finalitzat"
+      ],
+      "Meeting full": [
+        "La reunió està plena"
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "La reunió està completa (${ maxParticipants } participants)"
@@ -3143,6 +3158,9 @@
       ],
       "Microphone effects": [
         "Efectes del micròfon"
+      ],
+      "Microphone is starting": [
+        "S'està iniciant el micròfon"
       ],
       "Microphone permission denied": [
         "S'ha denegat el permís del micròfon"
@@ -3296,6 +3314,9 @@
       ],
       "Reconnecting to meeting...": [
         "S'està tornant a connectar amb la reunió..."
+      ],
+      "Reconnecting…": [
+        "S'està tornant a connectar…"
       ],
       "Record your meetings": [
         "Enregistreu les vostres reunions"
@@ -3618,11 +3639,17 @@
       "Your browser or device isn’t supported": [
         "El vostre navegador o dispositiu no és compatible"
       ],
+      "Your camera is still starting": [
+        "La càmera encara s'està iniciant"
+      ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
       "Your meeting is ready": [
         "La reunió està a punt"
+      ],
+      "Your microphone is still starting": [
+        "El micròfon encara s'està iniciant"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
@@ -3864,6 +3891,9 @@
       "Raw": [
         "En brut"
       ],
+      "Reactions": [
+        "Reaccions"
+      ],
       "Remember my name on this device": [
         "Recorda el meu nom en aquest dispositiu"
       ],
@@ -4040,7 +4070,7 @@
         "Seu"
       ],
       "Slay": [
-        "Triomf"
+        "Triomfar"
       ],
       "Sleepy": [
         "Amb son"
@@ -4302,7 +4332,7 @@
         "clau de contingut"
       ],
       "hash key": [
-        "clau d'empremta electrònica"
+        "empremta electrònica"
       ],
       "key": [
         "clau"

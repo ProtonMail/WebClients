@@ -366,6 +366,9 @@
       "Download": [
         "Stiahnuť"
       ],
+      "Download app": [
+        "Stiahnuť aplikáciu"
+      ],
       "Download local participant report": [
         "Stiahnuť správu miestneho účastníka"
       ],
@@ -2323,6 +2326,9 @@
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "Nahrávanie sa zastavilo, pretože sa nedalo uložiť. Do tohto bodu sme v ňom pokračovali."
       ],
+      "Recording stopped because of an error.": [
+        "Nahrávanie sa zastavilo kvôli chybe."
+      ],
       "Renaming root item is not allowed": [
         "Pomenovanie koreňovej položky nie je povolené"
       ],
@@ -2860,6 +2866,9 @@
       "Camera effects": [
         "Efekty kamery"
       ],
+      "Camera is starting": [
+        "Spúšťa sa kamera"
+      ],
       "Camera permission denied": [
         "Povolenie kamery zamietnuté"
       ],
@@ -2934,6 +2943,12 @@
       ],
       "Delete room": [
         "Vymazať miestnosť"
+      ],
+      "Do you want people to hear you in the meeting?": [
+        "Chcete, aby vás ľudia na schôdzi počuli?"
+      ],
+      "Do you want people to see you in the meeting?": [
+        "Chcete, aby vás ľudia na schôdzi videli?"
       ],
       "Download current logs": [
         "Stiahnuť aktuálne záznamy"
@@ -3015,6 +3030,9 @@
       ],
       "Get a secure meeting link then add it to your calendar": [
         "Získajte bezpečný odkaz na schôdzu a potom ho pridajte do svojho kalendára"
+      ],
+      "Get the best experience with the ${ protonMeet } desktop app": [
+        "Získajte ten najlepší zážitok s desktopovou aplikáciou ${ protonMeet }."
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Prejdite na about:config, vyhľadajte media.peerconnection.enabled a nastavte ho na true."
@@ -3106,6 +3124,9 @@
       "Loop an uploaded video or your live camera through background blur.": [
         "Nastavte prehrávanie nahratého videa alebo záberu z kamery v režime živého vysielania s rozmazaným pozadím."
       ],
+      "Lost connection to the meeting server. Reconnecting…": [
+        "Došlo k prerušeniu spojenia so serverom schôdze. Prebieha opätovné pripájanie…"
+      ],
       "Lower participant's hand": [
         "Spustiť ruku účastníka"
       ],
@@ -3115,8 +3136,14 @@
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
         "Stretávajte sa bez obmedzení. Prejdite na vyššiu verziu, aby ste odstránili 1-hodinový limit a mohli hostiť až 100 účastníkov."
       ],
+      "Meeting almost full": [
+        "Schôdza je takmer plná"
+      ],
       "Meeting ended": [
         "Schôdzka sa skončila"
+      ],
+      "Meeting full": [
+        "Schôdza je plná"
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Stretnutie je plné (${ maxParticipants } účastníkov)"
@@ -3165,6 +3192,9 @@
       ],
       "Microphone effects": [
         "Efekty mikrofónu"
+      ],
+      "Microphone is starting": [
+        "Spúšťa sa mikrofón"
       ],
       "Microphone permission denied": [
         "Prístup k mikrofónu zamietnutý"
@@ -3318,6 +3348,9 @@
       ],
       "Reconnecting to meeting...": [
         "Opätovné pripájanie k schôdzi..."
+      ],
+      "Reconnecting…": [
+        "Obnovuje sa spojenie…"
       ],
       "Record your meetings": [
         "Nahrajte svoje schôdze"
@@ -3640,11 +3673,17 @@
       "Your browser or device isn’t supported": [
         "Váš prehliadač alebo zariadenie nie je podporované."
       ],
+      "Your camera is still starting": [
+        "Vaša kamera sa stále spúšťa"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Váš email bude použitý iba pre toto jednorazové overenie."
       ],
       "Your meeting is ready": [
         "Vaša schôdza je pripravená."
+      ],
+      "Your microphone is still starting": [
+        "Vaša mikrofón sa stále spúšťa"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefónne číslo bude použité iba pre toto jednorazové overenie."
@@ -3887,6 +3926,9 @@
       ],
       "Raw": [
         "Raw"
+      ],
+      "Reactions": [
+        "Reakcie"
       ],
       "Remember my name on this device": [
         "Zapamätať si moje meno na tomto zariadení"

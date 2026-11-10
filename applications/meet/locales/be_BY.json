@@ -29,6 +29,9 @@
       "microphone muted": [
         "мікрафон адключаны"
       ],
+      "Microphone on": [
+        "Мікрафон уключаны"
+      ],
       "microphone on": [
         "мікрафон уключаны"
       ],
@@ -2302,6 +2305,9 @@
       "Please allow screen sharing in your system permissions, then try again": [
         "Дазвольце абагульванне экрана ў сістэмных дазволах, а потым паўтарыце спробу"
       ],
+      "Recording stopped because of an error.": [
+        "Запіс спынены, бо адбылася памылка."
+      ],
       "Renaming root item is not allowed": [
         "Перайменаванне элемента суперкарыстальніка забаронена"
       ],
@@ -2752,6 +2758,9 @@
       "Admitting": [
         "Прыняцце"
       ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Ваш Mac можа папрасіць увесці пароль пасля абнаўлення. Увядзіце свой бягучы пароль для яго разблакіроўкі, а потым націсніце «Заўсёды дазваляць» (гэта дазволіць заставацца ў сістэме). ${ learnMore }"
+      ],
       "Allow camera access to preview your background": [
         "Дазвольце камеры атрымаць доступ да папярэдняга прагляду фону"
       ],
@@ -3046,6 +3055,9 @@
       "Meeting ended": [
         "Сустрэча завершана"
       ],
+      "Meeting full": [
+        "Сустрэча запоўнена"
+      ],
       "Meeting full (${ maxParticipants } participants)": [
         "Сустрэча запоўнена (удзельнікаў: ${ maxParticipants })"
       ],
@@ -3221,7 +3233,7 @@
         "Папярэдні прагляд недаступны"
       ],
       "privacy": [
-        "прыватнасць"
+        "прыватнасці"
       ],
       "Quick reactions": [
         "Хуткія рэакцыі"
@@ -3234,6 +3246,9 @@
       ],
       "Reconnecting to meeting...": [
         "Перападключэнне да сустрэчы..."
+      ],
+      "Reconnecting…": [
+        "Перападключэнне…"
       ],
       "Record your meetings": [
         "Запісвайце свае сустрэчы"
@@ -3425,7 +3440,7 @@
         "неабмежаваную колькасць сустрэч"
       ],
       "Unlock ${ unlimitedMeeting } and premium features": [
-        "Разблакуйце ${ unlimitedMeeting } і прэміяльныя функцыі"
+        "Разблакіруйце ${ unlimitedMeeting } і прэміяльныя функцыі"
       ],
       "Unmute microphone": [
         "Уключыць мікрафон"
@@ -4033,6 +4048,9 @@
       "Repeats every ${ weekdayName }": [
         "Паўтараецца кожны ${ weekdayName }"
       ],
+      "Repeats every weekday": [
+        "Паўтараецца кожны будні дзень"
+      ],
       "Repeats every year on ${ monthDay }": [
         "Паўтараецца кожны год у ${ monthDay }"
       ],
@@ -4047,6 +4065,12 @@
       ],
       "Repeats yearly": [
         "Паўтараць штогод"
+      ],
+      "Today · ${ monthDay }": [
+        "Сёння · ${ monthDay }"
+      ],
+      "Tomorrow · ${ monthDay }": [
+        "Заўтра · ${ monthDay }"
       ]
     },
     "Meeting schedule, several weekdays": {
