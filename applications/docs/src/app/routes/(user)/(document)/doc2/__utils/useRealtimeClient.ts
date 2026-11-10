@@ -10,6 +10,7 @@ import { type PrivateNodeMeta, createClient } from '@proton-docs/realtime-sdk'
 
 import { useApplication } from '~/utils/application-context'
 
+import { createDocsApiFetch } from './createDocsApiFetch'
 import { getWebSocketServerURL } from './getWebSocketServerURL'
 import { useGetMemberAddressKeys } from './useGetMemberAddressKeys'
 import { signRealtimeDocumentUpdate } from './signRealtimeDocumentUpdate'
@@ -18,7 +19,8 @@ export function useRealtimeClient() {
   const application = useApplication()
   const { API_URL, APP_NAME, APP_VERSION } = useConfig()
   const { UID } = useAuthentication()
-  const getMemberAddressKeys = useGetMemberAddressKeys(useApi())
+  const api = useApi()
+  const getMemberAddressKeys = useGetMemberAddressKeys(api)
 
   const [client] = useState(() => {
     // The x-pm-appversion value the docs-core api and websocket send, such as `web-docs@0.0.2.89`
@@ -28,8 +30,7 @@ export function useRealtimeClient() {
 
     return createClient({
       mode: 'private',
-      // No api.fetch: the app has no fetch that refreshes the session on 401, only the `useApi()` client.
-      api: { baseUrl: API_URL, appVersion, uid: UID },
+      api: { baseUrl: API_URL, appVersion, uid: UID, fetch: createDocsApiFetch(api, API_URL) },
       rts: {
         serverUrl: getWebSocketServerURL(),
         appVersion,

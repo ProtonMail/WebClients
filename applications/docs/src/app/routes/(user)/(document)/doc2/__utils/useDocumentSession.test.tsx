@@ -2,6 +2,7 @@ import { act, renderHook, waitFor } from '@testing-library/react'
 import type { ReactNode } from 'react'
 
 import { MemberRole, generateNodeUid, getDrive } from '@proton/drive/sdk'
+import { isDevOrBlack } from '@proton/shared/lib/env'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
 
 import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/application-context'
@@ -12,6 +13,10 @@ import type { useRealtimeClient } from './useRealtimeClient'
 jest.mock('@proton/drive/sdk', () => ({
   ...jest.requireActual('@proton/drive/sdk'),
   getDrive: jest.fn(),
+}))
+jest.mock('@proton/shared/lib/env', () => ({
+  ...jest.requireActual('@proton/shared/lib/env'),
+  isDevOrBlack: jest.fn(() => false),
 }))
 
 const nodeMeta = { volumeId: 'volume-1', linkId: 'link-1' }
@@ -97,6 +102,26 @@ describe('useDocumentSession', () => {
       role: 'Editor',
       node: { mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE },
     })
+  })
+
+  test('squashes at 50 document updates on dev and black, as /doc does', async () => {
+    jest.mocked(isDevOrBlack).mockReturnValue(true)
+    const fake = createFakeClient()
+    renderHook(() => useDocumentSession(fake.client, nodeMeta), { wrapper })
+
+    await waitFor(() => expect(fake.calls).toContain('bootstrap'))
+
+    expect(fake.client.createSession).toHaveBeenCalledWith({ documentType: 'doc', nodeMeta, commitDuLimit: 50 })
+  })
+
+  test('leaves the commit limit to the SDK elsewhere', async () => {
+    jest.mocked(isDevOrBlack).mockReturnValue(false)
+    const fake = createFakeClient()
+    renderHook(() => useDocumentSession(fake.client, nodeMeta), { wrapper })
+
+    await waitFor(() => expect(fake.calls).toContain('bootstrap'))
+
+    expect(jest.mocked(fake.client.createSession).mock.calls[0][0]).not.toHaveProperty('commitDuLimit')
   })
 
   test('an unreadable base state update fails the load, leaves no listener and disconnects the session', async () => {
