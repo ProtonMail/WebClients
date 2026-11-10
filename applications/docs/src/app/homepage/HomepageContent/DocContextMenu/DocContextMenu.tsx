@@ -1,6 +1,7 @@
 import ContextMenu from '@proton/components/components/contextMenu/ContextMenu'
 import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator'
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils'
+import type { ReactNode } from 'react'
 import { useEffect } from 'react'
 
 import { OpenButton } from './buttons/OpenButton'
@@ -12,7 +13,7 @@ import { MoveToTrashButton } from './buttons/MoveToTrashButton'
 import { MoveButton } from './buttons/MoveButton'
 import { RenameButton } from './buttons/RenameButton'
 import { useDocumentActions } from '../../documentActionsContext'
-import { useEvent } from '../../useEvent'
+import { useEvent } from '../../utils/useEvent'
 import { useHomepageView } from '../../homepageViewContext'
 import { RestoreFromTrashButton } from './buttons/RestoreFromTrash'
 import { DeletePermanentlyButton } from './buttons/DeletePermanently'
@@ -45,16 +46,23 @@ export function DocContextMenu({
 }: DocContextMenuProps) {
   // NOTE: this effect was copied from packages/drive-store/components/sections/ContextMenu/ItemContextMenu.tsx
   // I'm not actually sure it's necessary here, but I'm leaving it in for now just in case.
-  useEffect(() => {
-    if (position) {
-      // Close event doesn't fire on mobile when clicking on another context menu target.
-      // Unless menu is manually closed, it retains its position.
-      if (isOpen) {
-        close()
-      }
-      open()
+  // Only a new position should reopen the menu, so `isOpen`, `open` and `close` are read through
+  // `useEvent` instead of being dependencies: `isOpen` changes on every open and close.
+  const reopen = useEvent(() => {
+    // Close event doesn't fire on mobile when clicking on another context menu target.
+    // Unless menu is manually closed, it retains its position.
+    if (isOpen) {
+      close()
     }
-  }, [position?.left, position?.top])
+    open()
+  })
+  const top = position?.top
+  const left = position?.left
+  useEffect(() => {
+    if (top !== undefined && left !== undefined) {
+      reopen()
+    }
+  }, [top, left, reopen])
 
   const {
     updateRecentDocuments,
@@ -89,7 +97,14 @@ export function DocContextMenu({
     return null
   }
 
-  const separator = <ContextSeparator className="my-1" />
+  let menuItems: ReactNode
+  if (selectionActions) {
+    menuItems = <SelectionMenuItems actions={selectionActions} close={close} />
+  } else if (isTrash) {
+    menuItems = <TrashedDocumentMenuItems currentDocument={currentDocument} close={close} />
+  } else {
+    menuItems = <DocumentMenuItems currentDocument={currentDocument} close={close} />
+  }
 
   return (
     <>
@@ -100,30 +115,40 @@ export function DocContextMenu({
         size={{ maxHeight: DropdownSizeUnit.Viewport, maxWidth: DropdownSizeUnit.Viewport }}
         anchorRef={anchorRef}
       >
-        {selectionActions ? (
-          <SelectionMenuItems actions={selectionActions} close={close} />
-        ) : !isTrash ? (
-          <>
-            <OpenButton currentDocument={currentDocument} close={close} />
-            {canShare(currentDocument) ? <ShareButton currentDocument={currentDocument} close={close} /> : null}
-            {separator}
-            <MoveButton currentDocument={currentDocument} close={close} />
-            <OpenFolderButton currentDocument={currentDocument} close={close} />
-            <RenameButton currentDocument={currentDocument} close={close} />
-            {canTrash(currentDocument) ? (
-              <>
-                {separator}
-                <MoveToTrashButton currentDocument={currentDocument} />
-              </>
-            ) : null}
-          </>
-        ) : (
-          <>
-            <RestoreFromTrashButton currentDocument={currentDocument} />
-            <DeletePermanentlyButton currentDocument={currentDocument} close={close} />
-          </>
-        )}
+        {menuItems}
       </ContextMenu>
+    </>
+  )
+}
+
+type DocumentMenuItemsProps = { currentDocument: RecentDocumentsItem; close: () => void }
+
+function DocumentMenuItems({ currentDocument, close }: DocumentMenuItemsProps) {
+  const separator = <ContextSeparator className="my-1" />
+
+  return (
+    <>
+      <OpenButton currentDocument={currentDocument} close={close} />
+      {canShare(currentDocument) ? <ShareButton currentDocument={currentDocument} close={close} /> : null}
+      {separator}
+      <MoveButton currentDocument={currentDocument} close={close} />
+      <OpenFolderButton currentDocument={currentDocument} close={close} />
+      <RenameButton currentDocument={currentDocument} close={close} />
+      {canTrash(currentDocument) ? (
+        <>
+          {separator}
+          <MoveToTrashButton currentDocument={currentDocument} />
+        </>
+      ) : null}
+    </>
+  )
+}
+
+function TrashedDocumentMenuItems({ currentDocument, close }: DocumentMenuItemsProps) {
+  return (
+    <>
+      <RestoreFromTrashButton currentDocument={currentDocument} />
+      <DeletePermanentlyButton currentDocument={currentDocument} close={close} />
     </>
   )
 }

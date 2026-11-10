@@ -4,6 +4,9 @@ import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-docu
 import type { ExtendedInvitationDetails } from '@proton/docs-shared/InvitationTypes'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 
+import type { Logger } from './utils/logger'
+import type { ReportTelemetry } from './utils/telemetry'
+
 export type RecentsSort = 'viewed' | 'name' | 'owner' | 'location'
 export type ItemsSectionId =
   'search-results' | 'name' | 'today' | 'yesterday' | 'previous7Days' | 'previous30Days' | 'earlier'
@@ -50,6 +53,8 @@ export type HomepageViewValue = {
    * Hooks can't be swapped in place, `InvitesTable` remounts when the invitations flag changes.
    */
   useDocInvites: DocInvitesHook
+  reportTelemetry: ReportTelemetry
+  logger: Logger
 }
 
 export const HomepageViewContext = createContext<HomepageViewValue | undefined>(undefined)

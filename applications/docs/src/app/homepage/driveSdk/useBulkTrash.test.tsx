@@ -4,12 +4,12 @@ import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents
 import { generateNodeUid, type ProtonDriveClient } from '@protontech/drive-sdk'
 import { ServerTime } from '@proton/docs-shared/ServerTime'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
-import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
-import { trashManyAndNotify } from './driveSdk/trashRestoreNotify'
-import { HomepageViewContext, type HomepageViewValue } from './homepageViewContext'
+import { trashManyAndNotify } from './trashRestoreNotify'
+import { HomepageViewContext, type HomepageViewValue } from '../homepageViewContext'
 import { useBulkTrash } from './useBulkTrash'
+import { TelemetryEvent } from '../utils/telemetry'
 
-jest.mock('./driveSdk/trashRestoreNotify', () => ({ trashManyAndNotify: jest.fn() }))
+jest.mock('./trashRestoreNotify', () => ({ trashManyAndNotify: jest.fn() }))
 
 const mockCreateNotification = jest.fn()
 jest.mock('@proton/app-context/useNotifications', () => ({
@@ -19,10 +19,7 @@ jest.mock('@proton/app-context/useNotifications', () => ({
 
 const mockUpdateRecentDocuments = jest.fn()
 
-const mockReportHomepageTelemetry = jest.fn()
-jest.mock('~/utils/application-context', () => ({
-  useApplication: () => ({ metrics: { reportHomepageTelemetry: mockReportHomepageTelemetry } }),
-}))
+const mockReportTelemetry = jest.fn()
 
 function createMockRecentDocument(data: Partial<RecentDocumentsItemValue> = {}): RecentDocumentsItem {
   return RecentDocumentsItem.create({
@@ -48,7 +45,12 @@ const drive = {} as ProtonDriveClient
 function Wrapper({ children }: { children: ReactNode }) {
   return (
     <HomepageViewContext.Provider
-      value={{ updateRecentDocuments: mockUpdateRecentDocuments } as unknown as HomepageViewValue}
+      value={
+        {
+          updateRecentDocuments: mockUpdateRecentDocuments,
+          reportTelemetry: mockReportTelemetry,
+        } as unknown as HomepageViewValue
+      }
     >
       {children}
     </HomepageViewContext.Provider>
@@ -88,8 +90,8 @@ describe('useBulkTrash', () => {
     })
 
     expect(mockUpdateRecentDocuments).toHaveBeenCalledTimes(1)
-    expect(mockReportHomepageTelemetry).toHaveBeenCalledTimes(2)
-    expect(mockReportHomepageTelemetry).toHaveBeenCalledWith(TelemetryDocsHomepageEvents.document_trashed)
+    expect(mockReportTelemetry).toHaveBeenCalledTimes(2)
+    expect(mockReportTelemetry).toHaveBeenCalledWith(TelemetryEvent.document_trashed)
     expect(failed).toEqual([])
   })
 
@@ -107,7 +109,7 @@ describe('useBulkTrash', () => {
 
     expect(failed).toEqual([d2])
     expect(mockUpdateRecentDocuments).not.toHaveBeenCalled()
-    expect(mockReportHomepageTelemetry).not.toHaveBeenCalled()
+    expect(mockReportTelemetry).not.toHaveBeenCalled()
   })
 
   it('isTrashing is true while the batch runs', async () => {

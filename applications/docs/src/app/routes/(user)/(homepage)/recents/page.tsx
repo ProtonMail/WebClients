@@ -15,6 +15,9 @@ export default function HomepagePage({
   eventSubscriber,
   coreEventSubscriber,
   useDocInvites,
+  api,
+  logger,
+  reportTelemetry,
   useSharingModal,
   useMoveItemsModal,
 }: HomepagePageProps) {
@@ -24,6 +27,9 @@ export default function HomepagePage({
       eventSubscriber={eventSubscriber}
       coreEventSubscriber={coreEventSubscriber}
       useDocInvites={useDocInvites}
+      api={api}
+      logger={logger}
+      reportTelemetry={reportTelemetry}
     >
       <DocumentActionsProvider drive={drive} useSharingModal={useSharingModal} useMoveItemsModal={useMoveItemsModal}>
         <HomepageLayout>

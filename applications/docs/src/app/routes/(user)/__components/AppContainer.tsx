@@ -8,7 +8,10 @@ import { useDocInvites as useDocInvitesLegacy } from '@proton/drive-store/lib/_i
 import { getDrive } from '@proton/drive/sdk'
 import { useSharingModal } from '@proton/drive/public/sharingModal'
 import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
-import { Suspense, lazy } from 'react'
+import { useApi } from '@proton/app-context/useApi'
+import type { Application } from '@proton/docs-core/Application/Application'
+import type { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
+import { Suspense, lazy, useCallback } from 'react'
 import { Routes, Route, useSearchParams, Navigate } from 'react-router-dom-v5-compat'
 
 import { ApplicationProvider } from '~/utils/application-context'
@@ -58,7 +61,7 @@ function Content() {
   return (
     <ApplicationProvider application={application}>
       <DocsNotificationsProvider>
-        <AppRoutes driveCompat={driveCompat} />
+        <AppRoutes driveCompat={driveCompat} application={application} />
         {driveCompat.modals}
       </DocsNotificationsProvider>
     </ApplicationProvider>
@@ -72,9 +75,14 @@ const HomepagePage = lazy(() => import('../(homepage)/recents/page'))
 const DocumentPage = lazy(() => import('../(document)/doc/page'))
 const DocumentPageV2 = lazy(() => import('../(document)/doc2/page'))
 
-type AppRoutesProps = { driveCompat: DriveCompat }
+type AppRoutesProps = { driveCompat: DriveCompat; application: Application }
 
-function AppRoutes({ driveCompat }: AppRoutesProps) {
+function AppRoutes({ driveCompat, application }: AppRoutesProps) {
+  const api = useApi()
+  const reportHomepageTelemetry = useCallback(
+    (event: string) => application.metrics.reportHomepageTelemetry(event as TelemetryDocsHomepageEvents),
+    [application],
+  )
   const isRealtimeSdkEnabled = useRealtimeSdkEnabled()
   const useDocInvites = useInvitationsSdkEnabled() ? useDocInvitesSDK : useDocInvitesLegacy
 
@@ -97,6 +105,9 @@ function AppRoutes({ driveCompat }: AppRoutesProps) {
         eventSubscriber={getEventSubscriber()}
         coreEventSubscriber={getCoreEventSubscriber()}
         useDocInvites={useDocInvites}
+        api={api}
+        logger={application.logger}
+        reportTelemetry={reportHomepageTelemetry}
         useSharingModal={useSharingModal}
         useMoveItemsModal={useMoveItemsModal}
       />

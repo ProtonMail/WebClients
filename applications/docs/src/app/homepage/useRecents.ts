@@ -11,21 +11,27 @@ import {
 } from '@protontech/drive-sdk'
 import { useCallback, useState } from 'react'
 import { c } from 'ttag'
-import { useApplication } from '~/utils/application-context'
 import { getFullPathFromAncestry } from './driveSdk/getFullPathFromAncestry'
 import { getIsSharedWithMe } from './driveSdk/getIsSharedWithMe'
 import { createDocumentItem } from './createDocumentItems'
 import { useRecentsStore } from './useRecentsStore'
 import { getRoleFromHierarchy } from './driveSdk/getRoleFromHierarchy'
-import type { RecentDocumentAPIItem } from '@proton/docs-core/Api/Types/GetRecentsResponse'
 import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
 import { addSentryBreadcrumb, traceError } from '@proton/shared/lib/helpers/sentry'
 import { traceRecentsError } from './traceRecentsError'
 import type { EventSubscriber, SDKEventListener } from './homepageViewUtils'
+import type { Api } from './docsApi/api'
+import type { Logger } from './utils/logger'
+import { getRecentDocuments, type GetRecentsResponse, type RecentDocumentAPIItem } from './docsApi/getRecentDocuments'
 
-export function useRecents(drive: ProtonDriveClient, eventSubscriber: EventSubscriber) {
-  const app = useApplication()
-  const { docsApi, logger } = app
+type UseRecentsProps = {
+  drive: ProtonDriveClient
+  eventSubscriber: EventSubscriber
+  api: Api
+  logger: Logger
+}
+
+export function useRecents({ drive, eventSubscriber, api, logger }: UseRecentsProps) {
   const { createNotification } = useNotifications()
 
   const recentDocuments = useRecentsStore((state) => state.recentDocuments)
@@ -35,8 +41,12 @@ export function useRecents(drive: ProtonDriveClient, eventSubscriber: EventSubsc
 
   const fetchRecents = useCallback(
     async (abort: AbortSignal) => {
-      const response = await docsApi.fetchRecentDocuments()
-      const { RecentDocuments: documents } = response.getValue()
+      const { RecentDocuments: documents } = await api<GetRecentsResponse>(getRecentDocuments()).catch(
+        (error: unknown) => {
+          // Sentry drops ApiErrors (beforeSend in packages/shared/lib/helpers/sentry.ts): wrap it to get the failure reported.
+          throw new Error('Failed to fetch recent documents', { cause: error })
+        },
+      )
 
       // Gather nodes to load
       const uidsToLoad = new Set<string>()
@@ -108,7 +118,7 @@ export function useRecents(drive: ProtonDriveClient, eventSubscriber: EventSubsc
 
       return { documents, nodesByUid }
     },
-    [docsApi, drive, logger],
+    [api, drive, logger],
   )
 
   const fetchRecentDocuments = useCallback(

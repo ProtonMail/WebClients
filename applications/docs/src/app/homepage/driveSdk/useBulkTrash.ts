@@ -2,18 +2,16 @@ import { useState } from 'react'
 import { useNotifications } from '@proton/app-context/useNotifications'
 import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import { generateNodeUid, type ProtonDriveClient } from '@protontech/drive-sdk'
-import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
-import { trashManyAndNotify } from './driveSdk/trashRestoreNotify'
-import { useApplication } from '~/utils/application-context'
-import { useEvent } from './useEvent'
-import { useHomepageView } from './homepageViewContext'
+import { trashManyAndNotify } from './trashRestoreNotify'
+import { useEvent } from '../utils/useEvent'
+import { useHomepageView } from '../homepageViewContext'
+import { TelemetryEvent } from '../utils/telemetry'
 
 type BulkTrashDependencies = { drive: ProtonDriveClient }
 
 export function useBulkTrash({ drive }: BulkTrashDependencies) {
-  const application = useApplication()
   const { createNotification } = useNotifications()
-  const { updateRecentDocuments } = useHomepageView()
+  const { updateRecentDocuments, reportTelemetry } = useHomepageView()
   const [isTrashing, setIsTrashing] = useState(false)
 
   const trash = useEvent(async (documents: RecentDocumentsItem[]): Promise<RecentDocumentsItem[]> => {
@@ -32,7 +30,7 @@ export function useBulkTrash({ drive }: BulkTrashDependencies) {
 
     if (succeeded.length > 0) {
       void updateRecentDocuments()
-      succeeded.forEach(() => application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_trashed))
+      succeeded.forEach(() => reportTelemetry(TelemetryEvent.document_trashed))
     }
 
     return failed.flatMap(({ uid }) => byUid.get(uid) ?? [])

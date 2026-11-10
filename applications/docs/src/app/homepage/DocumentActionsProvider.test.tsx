@@ -1,20 +1,18 @@
 import type { NotificationsManager } from '@proton/app-context/notifications/manager'
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext'
 import AuthenticationContext from '@proton/components/containers/authentication/authenticationContext'
-import type { Application } from '@proton/docs-core/Application/Application'
 import { deleteDocument, reportTrashError, restoreDocument, trashDocument } from './driveSdk/trash'
 import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
 import { ServerTime } from '@proton/docs-shared/ServerTime'
 import { generateNodeUid, type ProtonDriveClient } from '@protontech/drive-sdk'
-import { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { act, renderHook, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { type ReactNode, useContext, useState } from 'react'
-import { ApplicationProvider } from '~/utils/application-context'
 import { DocumentActionsProvider, type DocumentActionsProviderProps } from './DocumentActionsProvider'
 import { DocumentActionsContext } from './documentActionsContext'
 import { HomepageViewContext, type HomepageViewValue } from './homepageViewContext'
-import type { UseMoveItemsModal } from './useBulkMove'
+import type { UseMoveItemsModal } from './driveSdk/useBulkMove'
+import { TelemetryEvent } from './utils/telemetry'
 
 jest.mock('./driveSdk/trash', () => ({
   trashDocument: jest.fn(),
@@ -52,33 +50,30 @@ const drive = {} as ProtonDriveClient
 
 function renderDocumentActions(moveItemsModalHook = useMockMoveItemsModal) {
   const createNotification = jest.fn()
-  const reportHomepageTelemetry = jest.fn()
+  const reportTelemetry = jest.fn()
   const updateMovedDocuments = jest.fn()
-  const application = {
-    metrics: { reportHomepageTelemetry },
-  } as unknown as Application
 
   const { result } = renderHook(() => useContext(DocumentActionsContext)!, {
     wrapper: ({ children }: { children: ReactNode }) => (
       <AuthenticationContext.Provider value={{ getLocalID: () => undefined } as any}>
-        <ApplicationProvider application={application}>
-          <NotificationsContext.Provider value={{ createNotification } as unknown as NotificationsManager}>
-            <HomepageViewContext.Provider value={{ updateMovedDocuments } as unknown as HomepageViewValue}>
-              <DocumentActionsProvider
-                drive={drive}
-                useSharingModal={useMockSharingModal}
-                useMoveItemsModal={moveItemsModalHook}
-              >
-                {children}
-              </DocumentActionsProvider>
-            </HomepageViewContext.Provider>
-          </NotificationsContext.Provider>
-        </ApplicationProvider>
+        <NotificationsContext.Provider value={{ createNotification } as unknown as NotificationsManager}>
+          <HomepageViewContext.Provider
+            value={{ updateMovedDocuments, reportTelemetry } as unknown as HomepageViewValue}
+          >
+            <DocumentActionsProvider
+              drive={drive}
+              useSharingModal={useMockSharingModal}
+              useMoveItemsModal={moveItemsModalHook}
+            >
+              {children}
+            </DocumentActionsProvider>
+          </HomepageViewContext.Provider>
+        </NotificationsContext.Provider>
       </AuthenticationContext.Provider>
     ),
   })
 
-  return { result, createNotification, reportHomepageTelemetry, updateMovedDocuments }
+  return { result, createNotification, reportTelemetry, updateMovedDocuments }
 }
 
 function deferred() {
@@ -110,16 +105,16 @@ afterEach(() => {
 
 describe('DocumentActionsProvider', () => {
   test('move opens the move modal for the document and sends telemetry', () => {
-    const { result, reportHomepageTelemetry } = renderDocumentActions()
+    const { result, reportTelemetry } = renderDocumentActions()
 
     act(() => result.current.move(recentDocument))
 
     expect(mockShowMoveItemsModal).toHaveBeenCalledWith({ nodeUids: [nodeUid], onMoved: expect.any(Function) })
-    expect(reportHomepageTelemetry).toHaveBeenCalledWith(TelemetryDocsHomepageEvents.document_moved)
+    expect(reportTelemetry).toHaveBeenCalledWith(TelemetryEvent.document_moved)
   })
 
   test('trash sets and clears currentlyTrashingId, notifies listeners and sends telemetry', async () => {
-    const { result, reportHomepageTelemetry } = renderDocumentActions()
+    const { result, reportTelemetry } = renderDocumentActions()
     const trashing = deferred()
     jest.mocked(trashDocument).mockReturnValue(trashing.promise)
     const listener = subscribe(result.current.subscribeToTrashed)
@@ -135,12 +130,12 @@ describe('DocumentActionsProvider', () => {
 
     expect(result.current.currentlyTrashingId).toBeUndefined()
     expect(listener).toHaveBeenCalledWith(recentDocument.uniqueId())
-    expect(reportHomepageTelemetry).toHaveBeenCalledWith(TelemetryDocsHomepageEvents.document_trashed)
+    expect(reportTelemetry).toHaveBeenCalledWith(TelemetryEvent.document_trashed)
     expect(trashDocument).toHaveBeenCalledWith(drive, nodeUid)
   })
 
   test('restore sets and clears currentlyRestoringId, notifies listeners and sends telemetry', async () => {
-    const { result, reportHomepageTelemetry } = renderDocumentActions()
+    const { result, reportTelemetry } = renderDocumentActions()
     const restoring = deferred()
     jest.mocked(restoreDocument).mockReturnValue(restoring.promise)
     const listener = subscribe(result.current.subscribeToRestored)
@@ -156,7 +151,7 @@ describe('DocumentActionsProvider', () => {
 
     expect(result.current.currentlyRestoringId).toBeUndefined()
     expect(listener).toHaveBeenCalledWith(recentDocument.uniqueId())
-    expect(reportHomepageTelemetry).toHaveBeenCalledWith(TelemetryDocsHomepageEvents.document_restored)
+    expect(reportTelemetry).toHaveBeenCalledWith(TelemetryEvent.document_restored)
     expect(restoreDocument).toHaveBeenCalledWith(drive, nodeUid)
   })
 
@@ -198,7 +193,7 @@ describe('DocumentActionsProvider', () => {
   test('trash failure shows an error toast, sends no telemetry and notifies no listeners', async () => {
     const error = new Error('e1')
     jest.mocked(trashDocument).mockRejectedValue(error)
-    const { result, createNotification, reportHomepageTelemetry } = renderDocumentActions()
+    const { result, createNotification, reportTelemetry } = renderDocumentActions()
     const listener = subscribe(result.current.subscribeToTrashed)
 
     await act(() => result.current.trash(recentDocument))
@@ -206,14 +201,14 @@ describe('DocumentActionsProvider', () => {
     expect(createNotification).toHaveBeenCalledWith({ type: 'error', text: 'Failed to trash document' })
     expect(reportTrashError).toHaveBeenCalledWith(error)
     expect(result.current.currentlyTrashingId).toBeUndefined()
-    expect(reportHomepageTelemetry).not.toHaveBeenCalled()
+    expect(reportTelemetry).not.toHaveBeenCalled()
     expect(listener).not.toHaveBeenCalled()
   })
 
   test('restore failure shows an error toast, sends no telemetry and notifies no listeners', async () => {
     const error = new Error('e1')
     jest.mocked(restoreDocument).mockRejectedValue(error)
-    const { result, createNotification, reportHomepageTelemetry } = renderDocumentActions()
+    const { result, createNotification, reportTelemetry } = renderDocumentActions()
     const listener = subscribe(result.current.subscribeToRestored)
 
     await act(() => result.current.restore(recentDocument))
@@ -221,13 +216,13 @@ describe('DocumentActionsProvider', () => {
     expect(createNotification).toHaveBeenCalledWith({ type: 'error', text: 'Failed to restore document' })
     expect(reportTrashError).toHaveBeenCalledWith(error)
     expect(result.current.currentlyRestoringId).toBeUndefined()
-    expect(reportHomepageTelemetry).not.toHaveBeenCalled()
+    expect(reportTelemetry).not.toHaveBeenCalled()
     expect(listener).not.toHaveBeenCalled()
   })
 
   test('deletePermanently deletes once confirmed, shows a success toast and sends telemetry', async () => {
     jest.mocked(deleteDocument).mockResolvedValue(undefined)
-    const { result, createNotification, reportHomepageTelemetry } = renderDocumentActions()
+    const { result, createNotification, reportTelemetry } = renderDocumentActions()
 
     await act(() => result.current.deletePermanently(recentDocument))
 
@@ -238,9 +233,7 @@ describe('DocumentActionsProvider', () => {
 
     await userEvent.click(screen.getByRole('button', { name: 'Delete permanently', hidden: true }))
 
-    await waitFor(() =>
-      expect(reportHomepageTelemetry).toHaveBeenCalledWith(TelemetryDocsHomepageEvents.document_permanently_deleted),
-    )
+    await waitFor(() => expect(reportTelemetry).toHaveBeenCalledWith(TelemetryEvent.document_permanently_deleted))
     expect(deleteDocument).toHaveBeenCalledWith(drive, nodeUid)
     expect(createNotification).toHaveBeenCalledWith({
       type: 'success',
@@ -251,7 +244,7 @@ describe('DocumentActionsProvider', () => {
   test('deletePermanently failure shows an error toast and sends no telemetry', async () => {
     const error = new Error('e1')
     jest.mocked(deleteDocument).mockRejectedValue(error)
-    const { result, createNotification, reportHomepageTelemetry } = renderDocumentActions()
+    const { result, createNotification, reportTelemetry } = renderDocumentActions()
 
     await act(() => result.current.deletePermanently(recentDocument))
     await userEvent.click(await screen.findByRole('button', { name: 'Delete permanently', hidden: true }))
@@ -260,6 +253,6 @@ describe('DocumentActionsProvider', () => {
       expect(createNotification).toHaveBeenCalledWith({ type: 'error', text: 'Failed to delete document' }),
     )
     expect(reportTrashError).toHaveBeenCalledWith(error)
-    expect(reportHomepageTelemetry).not.toHaveBeenCalled()
+    expect(reportTelemetry).not.toHaveBeenCalled()
   })
 })
