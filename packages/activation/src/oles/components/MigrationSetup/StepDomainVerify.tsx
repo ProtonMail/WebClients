@@ -5,13 +5,14 @@ import { c } from 'ttag';
 import { syncDomain } from '@proton/account/domains/actions';
 import { Button } from '@proton/atoms/Button/Button';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { getDomainDnsRecords } from '@proton/shared/lib/domains/dnsRecords';
 import { VERIFY_STATE } from '@proton/shared/lib/interfaces/Domain';
 
 import DNSGroupRecords, { type DNSGroup } from './DNSGroupRecords';
 import DomainHelp from './DomainHelp';
 import type { StepComponentProps } from './MigrationSetup';
 
-const StepDomainVerify: FC<StepComponentProps> = ({ model: { domain, domainRegistrarId, subdomain }, onNext }) => {
+const StepDomainVerify: FC<StepComponentProps> = ({ model: { domain, domainRegistrarId }, onNext }) => {
     const dispatch = useDispatch();
 
     const handleCheck = async () => {
@@ -22,8 +23,7 @@ const StepDomainVerify: FC<StepComponentProps> = ({ model: { domain, domainRegis
         name: 'verification',
         records: [
             {
-                dnsType: 'TXT',
-                value: domain?.VerifyCode ?? '',
+                ...getDomainDnsRecords(domain ?? {}).verify,
                 state: (() => {
                     if (domain?.VerifyState === VERIFY_STATE.VERIFY_STATE_DEFAULT) {
                         return 'not-found';
@@ -57,7 +57,7 @@ const StepDomainVerify: FC<StepComponentProps> = ({ model: { domain, domainRegis
                 <p className="color-weak mt-0">{c('Info')
                     .t`Copy the below code and paste it in the DNS section of your domain host.`}</p>
 
-                <DNSGroupRecords group={group} subdomain={subdomain} onRefresh={handleCheck} />
+                <DNSGroupRecords group={group} onRefresh={handleCheck} />
             </div>
 
             <DomainHelp registrarId={domainRegistrarId} />

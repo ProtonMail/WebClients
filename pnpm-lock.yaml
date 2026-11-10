@@ -5157,9 +5157,6 @@ importers:
       react-redux:
         specifier: 'catalog:'
         version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
-      tldts:
-        specifier: ^7.4.19
-        version: 7.4.19
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
@@ -9771,6 +9768,9 @@ importers:
       tinycolor2:
         specifier: 'catalog:'
         version: 1.6.0
+      tldts:
+        specifier: ^7.4.19
+        version: 7.4.19
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
@@ -48890,21 +48890,6 @@ snapshots:
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
-
-  webpack-cli@7.3.1(js-yaml@4.3.2)(json5@2.2.3)(webpack-bundle-analyzer@5.4.0)(webpack-dev-server@5.2.7)(webpack@5.112.2):
-    dependencies:
-      '@discoveryjs/json-ext': 1.1.0
-      commander: 14.0.3
-      envinfo: 7.21.0
-      interpret: 3.1.1
-      rechoir: 1.0.0
-      webpack: 5.112.2(@swc/core@1.16.21(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(sharp@0.35.5(@types/node@24.19.2))(svgo@4.1.0)(webpack-cli@7.3.1)
-      webpack-merge: 6.0.1
-    optionalDependencies:
-      js-yaml: 4.3.2
-      json5: 2.2.3
-      webpack-bundle-analyzer: 5.4.0
-      webpack-dev-server: 5.2.7(debug@4.4.3(supports-color@11.0.0))(supports-color@11.0.0)(webpack-cli@7.3.1)(webpack@5.112.2)
 
   webpack-cli@7.3.1(js-yaml@4.3.2)(json5@2.2.3)(webpack-bundle-analyzer@5.4.0)(webpack-dev-server@6.1.0)(webpack@5.112.2):
     dependencies:

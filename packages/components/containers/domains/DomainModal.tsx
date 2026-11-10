@@ -1,5 +1,5 @@
 import type { FormEvent } from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -13,6 +13,7 @@ import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { getDomainDnsRecords } from '@proton/shared/lib/domains/dnsRecords';
 import type { DomainAddress } from '@proton/shared/lib/interfaces/Address';
 import type { Domain } from '@proton/shared/lib/interfaces/Domain';
 import {
@@ -217,6 +218,7 @@ interface Props extends ModalProps {
 const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
     const [customDomains, loadingCustomDomains] = useCustomDomains();
     const [domainModel, setDomain] = useState<Domain | undefined>(domain);
+    const dnsRecords = useMemo(() => getDomainDnsRecords(domainModel ?? {}), [domainModel]);
     const dispatch = useDispatch();
 
     const { createNotification } = useNotifications();
@@ -283,7 +285,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
             };
 
             return {
-                section: <VerifySection domain={domainModel} />,
+                section: <VerifySection domain={domainModel} record={dnsRecords.verify} />,
                 submit: undefined,
                 onSubmit: () => withLoading(handleSubmit().catch(handleError)),
             };
@@ -299,7 +301,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
 
         if (step === STEPS.MX) {
             return {
-                section: <MXSection />,
+                section: <MXSection records={dnsRecords.mx} />,
                 submit: undefined,
                 onSubmit: next,
             };
@@ -307,7 +309,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
 
         if (step === STEPS.SPF) {
             return {
-                section: <SPFSection />,
+                section: <SPFSection record={dnsRecords.spf} />,
                 submit: undefined,
                 onSubmit: next,
             };
@@ -315,7 +317,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
 
         if (step === STEPS.DKIM && domainModel) {
             return {
-                section: <DKIMSection domain={domainModel} />,
+                section: <DKIMSection domain={domainModel} records={dnsRecords.dkim} />,
                 submit: undefined,
                 onSubmit: next,
             };
@@ -323,7 +325,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
 
         if (step === STEPS.DMARC) {
             return {
-                section: <DMARCSection />,
+                section: <DMARCSection record={dnsRecords.dmarc} />,
                 submit: c('Action').t`Done`,
                 onSubmit: rest.onClose,
             };

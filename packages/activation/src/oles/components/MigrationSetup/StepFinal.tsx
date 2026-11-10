@@ -17,6 +17,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { getDomainDnsRecords } from '@proton/shared/lib/domains/dnsRecords';
 import { MX_STATE } from '@proton/shared/lib/interfaces/Domain';
 
 import { ApiImporterOrganizationState } from '../../../api/api.interface';
@@ -65,36 +66,18 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
     const group: DNSGroup = {
         name: 'MX',
         hideState: true,
-        records: [
-            {
-                dnsType: 'MX',
-                value: 'mail.protonmail.ch',
-                priority: 10,
-                state: (() => {
-                    if (model.domain?.MxState === MX_STATE.MX_STATE_DEFAULT) {
-                        return 'not-found';
-                    }
-                    if (model.domain?.MxState === MX_STATE.MX_STATE_GOOD) {
-                        return 'valid';
-                    }
-                    return 'invalid';
-                })(),
-            },
-            {
-                dnsType: 'MX',
-                value: 'mailsec.protonmail.ch',
-                priority: 20,
-                state: (() => {
-                    if (model.domain?.MxState === MX_STATE.MX_STATE_DEFAULT) {
-                        return 'not-found';
-                    }
-                    if (model.domain?.MxState === MX_STATE.MX_STATE_GOOD) {
-                        return 'valid';
-                    }
-                    return 'invalid';
-                })(),
-            },
-        ],
+        records: getDomainDnsRecords({ ...model.domain, DomainName: model.domainName }).mx.map((record) => ({
+            ...record,
+            state: (() => {
+                if (model.domain?.MxState === MX_STATE.MX_STATE_DEFAULT) {
+                    return 'not-found';
+                }
+                if (model.domain?.MxState === MX_STATE.MX_STATE_GOOD) {
+                    return 'valid';
+                }
+                return 'invalid';
+            })(),
+        })),
     };
 
     const hasInactiveUsers =
@@ -170,7 +153,7 @@ const StepFinal: FC<StepComponentProps> = ({ model: migrationConfiguration }) =>
                 {c('Info')
                     .t`Delete any pre-existing MX codes, then copy the below codes and paste it in the DNS section of your domain host.`}
             </p>
-            <DNSGroupRecords group={group} subdomain={model.subdomain} />
+            <DNSGroupRecords group={group} />
             <BorderedContainer className="mb-4 mt-2">
                 <BorderedContainerItem
                     className="flex flex-row flex-nowrap items-center gap-2 justify-space-between"

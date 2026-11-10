@@ -5,13 +5,14 @@ import { c } from 'ttag';
 import { syncDomain } from '@proton/account/domains/actions';
 import { Button } from '@proton/atoms/Button/Button';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { getDomainDnsRecords } from '@proton/shared/lib/domains/dnsRecords';
 import { DKIM_STATE } from '@proton/shared/lib/interfaces/Domain';
 
 import DNSGroupRecords, { type DNSGroup } from './DNSGroupRecords';
 import DomainHelp from './DomainHelp';
 import type { StepComponentProps } from './MigrationSetup';
 
-const StepDomainDKIM: FC<StepComponentProps> = ({ model: { domain, domainRegistrarId, subdomain }, onNext }) => {
+const StepDomainDKIM: FC<StepComponentProps> = ({ model: { domain, domainRegistrarId }, onNext }) => {
     const dispatch = useDispatch();
     const handleCheck = async () => {
         await dispatch(syncDomain(domain!));
@@ -19,24 +20,20 @@ const StepDomainDKIM: FC<StepComponentProps> = ({ model: { domain, domainRegistr
 
     const group: DNSGroup = {
         name: 'DKIM',
-        records:
-            domain?.DKIM.Config.map((dkimConfig) => ({
-                host: dkimConfig.Hostname,
-                dnsType: 'CNAME',
-                group: 'DKIM',
-                value: dkimConfig.CNAME,
-                state: (() => {
-                    if (domain?.DKIM?.State === DKIM_STATE.DKIM_STATE_GOOD) {
-                        return 'valid';
-                    }
+        records: getDomainDnsRecords(domain ?? {}).dkim.map((record) => ({
+            ...record,
+            state: (() => {
+                if (domain?.DKIM?.State === DKIM_STATE.DKIM_STATE_GOOD) {
+                    return 'valid';
+                }
 
-                    if (domain?.DKIM.State === DKIM_STATE.DKIM_STATE_DEFAULT) {
-                        return 'not-found';
-                    }
+                if (domain?.DKIM.State === DKIM_STATE.DKIM_STATE_DEFAULT) {
+                    return 'not-found';
+                }
 
-                    return 'invalid';
-                })(),
-            })) ?? [],
+                return 'invalid';
+            })(),
+        })),
     };
 
     return (
@@ -72,7 +69,7 @@ const StepDomainDKIM: FC<StepComponentProps> = ({ model: { domain, domainRegistr
                 <p className="color-weak mt-0">{c('Info')
                     .t`Copy the below code and paste it in the DNS section of your domain host.`}</p>
 
-                <DNSGroupRecords group={group} subdomain={subdomain} onRefresh={handleCheck} />
+                <DNSGroupRecords group={group} onRefresh={handleCheck} />
             </div>
 
             <DomainHelp registrarId={domainRegistrarId} />

@@ -12,27 +12,19 @@ import Copy from '@proton/components/components/button/Copy';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
+import { ZONE_APEX } from '@proton/shared/lib/domains/constants';
+import type { DnsRecord } from '@proton/shared/lib/domains/dnsRecords';
 import capitalize from '@proton/utils/capitalize';
-
-import { getRecordHost } from '../../domains';
 
 export type DNSGroup = {
     name: 'verification' | 'SPF' | 'DMARC' | 'DKIM' | 'MX';
     hideState?: boolean;
-    records: {
-        host?: string;
-        priority?: number;
-        dnsType: string;
-        value: string;
+    records: (DnsRecord & {
         state: 'valid' | 'invalid' | 'not-found';
-    }[];
+    })[];
 };
 
-const DNSGroupRecords: FC<{ group: DNSGroup; subdomain?: string; onRefresh?: () => Promise<void> }> = ({
-    group,
-    subdomain,
-    onRefresh,
-}) => {
+const DNSGroupRecords: FC<{ group: DNSGroup; onRefresh?: () => Promise<void> }> = ({ group, onRefresh }) => {
     const { createNotification } = useNotifications();
     const handleCopy = () => createNotification({ text: c('Success').t`Value copied to clipboard` });
     const hostDefaultValue = c('Label for domain setup').t`Use default value (e.g. “@”)`;
@@ -43,7 +35,8 @@ const DNSGroupRecords: FC<{ group: DNSGroup; subdomain?: string; onRefresh?: () 
     return (
         <>
             {group.records.map((r, ix) => {
-                const host = getRecordHost(r.host, subdomain);
+                const isApex = r.hostname === ZONE_APEX;
+                const hostLabel = isApex ? hostDefaultValue : r.hostname;
 
                 return (
                     <BorderedContainer key={ix} className="mb-4 mt-2">
@@ -55,17 +48,17 @@ const DNSGroupRecords: FC<{ group: DNSGroup; subdomain?: string; onRefresh?: () 
                             <span className="text-semibold w-1/6 min-w-custom" style={{ '--min-w-custom': '6rem' }}>{c(
                                 'Label for domain setup'
                             ).t`Host name`}</span>
-                            <span className="color-weak flex-1 text-ellipsis py-3" title={host || hostDefaultValue}>
-                                {host || hostDefaultValue}
+                            <span className="color-weak flex-1 text-ellipsis py-3" title={hostLabel}>
+                                {hostLabel}
                             </span>
-                            {Boolean(host) && (
+                            {!isApex && (
                                 <Copy
                                     onCopy={handleCopy}
                                     shape="ghost"
                                     size="small"
                                     color="norm"
                                     className="shrink-0"
-                                    value={host}
+                                    value={r.hostname}
                                 />
                             )}
                         </BorderedContainerItem>
@@ -76,7 +69,7 @@ const DNSGroupRecords: FC<{ group: DNSGroup; subdomain?: string; onRefresh?: () 
                             paddingClassName="py-0.5 px-5"
                         >
                             <span className="text-semibold w-1/6 min-w-custom" style={{ '--min-w-custom': '6rem' }}>
-                                {c('Label for domain setup').t`Type`} {r.dnsType}
+                                {c('Label for domain setup').t`Type`} {r.type}
                             </span>
                             <span className="color-weak flex-1 text-ellipsis py-3" title={r.value}>
                                 {r.value}

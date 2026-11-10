@@ -6,18 +6,15 @@ import { syncDomain } from '@proton/account/domains/actions';
 import { Button } from '@proton/atoms/Button/Button';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { getDomainDnsRecords } from '@proton/shared/lib/domains/dnsRecords';
 import { SPF_STATE } from '@proton/shared/lib/interfaces/Domain';
 
 import DNSGroupRecords, { type DNSGroup } from './DNSGroupRecords';
 import DomainHelp from './DomainHelp';
 import type { StepComponentProps } from './MigrationSetup';
 
-const StepDomainSPF: FC<StepComponentProps> = ({
-    model: { domain, domainRegistrarId, subdomain, provider },
-    onNext,
-}) => {
+const StepDomainSPF: FC<StepComponentProps> = ({ model: { domain, domainRegistrarId, provider }, onNext }) => {
     const dispatch = useDispatch();
-    const spfPolicy = `v=spf1 include:_spf.protonmail.ch include:${provider.spfInclude} ~all`;
     const providerBrand = provider.brandName;
     const handleCheck = async () => {
         await dispatch(syncDomain(domain!));
@@ -27,8 +24,7 @@ const StepDomainSPF: FC<StepComponentProps> = ({
         name: 'SPF',
         records: [
             {
-                dnsType: 'TXT',
-                value: spfPolicy,
+                ...getDomainDnsRecords(domain ?? {}, { extraSpfIncludes: [provider.spfInclude] }).spf,
                 state: (() => {
                     if (domain?.SpfState === SPF_STATE.SPF_STATE_DEFAULT) {
                         return 'not-found';
@@ -75,7 +71,7 @@ const StepDomainSPF: FC<StepComponentProps> = ({
                 <p className="color-weak mt-0">{c('Info')
                     .t`Copy the below code and paste it in the DNS section of your domain host.`}</p>
 
-                <DNSGroupRecords group={group} subdomain={subdomain} onRefresh={handleCheck} />
+                <DNSGroupRecords group={group} onRefresh={handleCheck} />
             </div>
 
             <DomainHelp registrarId={domainRegistrarId} />

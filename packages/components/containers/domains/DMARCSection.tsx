@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
+import type { DnsRecord } from '@proton/shared/lib/domains/dnsRecords';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
 
 import Alert from '../../components/alert/Alert';
@@ -15,14 +16,17 @@ import TableBody from '../../components/table/TableBody';
 import TableHeader from '../../components/table/TableHeader';
 import TableRow from '../../components/table/TableRow';
 
-const DMARCSection = () => {
+interface Props {
+    record: DnsRecord;
+}
+
+const DMARCSection = ({ record }: Props) => {
     const none = <strong key="none">p=none</strong>;
     const reject = <strong key="reject">p=reject</strong>;
     const quarantine = <strong key="quarantine">p=quarantine</strong>;
     const { createNotification } = useNotifications();
     const handleCopy = () => createNotification({ text: c('Success').t`DMARC value copied to clipboard` });
-    const dmarcValue = 'v=DMARC1; p=quarantine';
-    const [value, setValue] = useState(dmarcValue);
+    const [value, setValue] = useState(record.value);
     return (
         <>
             <Alert className="mb-4">
@@ -52,14 +56,14 @@ const DMARCSection = () => {
                             c('Header for domain modal').t`Value / Data / Points to`,
                         ]}
                         cells={[
-                            <code key="txt">TXT</code>,
-                            <code key="dmarc">_dmarc</code>,
+                            <code key="type">{record.type}</code>,
+                            <code key="hostname">{record.hostname}</code>,
                             <div className="flex flex-nowrap items-center" key="value">
                                 <Copy onCopy={handleCopy} className="shrink-0 mr-2" size="small" value={value} />{' '}
                                 <Input
                                     value={value}
                                     onChange={({ target }) => setValue(target.value)}
-                                    placeholder={dmarcValue}
+                                    placeholder={record.value}
                                 />
                             </div>,
                         ]}

@@ -13,7 +13,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { ApiImporterOrganizationState } from '../../api/api.interface';
 import { EASY_SWITCH_FEATURES } from '../../interface';
-import { getSubdomain, resolveMigrationDomainName } from '../domains';
+import { resolveMigrationDomainName } from '../domains';
 import type { OlesProvider } from '../providers';
 import { setupMigration } from '../thunk';
 import type { MigrationConfiguration, MigrationModel, MigrationSetupModel } from '../types';
@@ -39,7 +39,6 @@ const SETUP_DEFAULTS: Omit<MigrationConfiguration, 'provider'> = {
     importerOrganizationId: undefined,
     domain: undefined,
     domainName: undefined,
-    subdomain: '',
     state: undefined,
     joiningLink: undefined,
     domainRegistrarId: 0,
@@ -113,7 +112,6 @@ const MigrationFlow = ({ provider }: { provider: OlesProvider }) => {
         ...(migrationConfig || SETUP_DEFAULTS),
         provider,
         domainName,
-        subdomain: getSubdomain(domainName),
         domain,
         tokens,
         connectionState,

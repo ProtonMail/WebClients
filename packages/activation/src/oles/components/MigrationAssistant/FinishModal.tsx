@@ -11,6 +11,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { getDomainDnsRecords } from '@proton/shared/lib/domains/dnsRecords';
 
 import type { MigrationConfiguration } from '../../types';
 import DNSGroupRecords, { type DNSGroup } from '../MigrationSetup/DNSGroupRecords';
@@ -56,20 +57,10 @@ const FinishModal: FC<{
         const group: DNSGroup = {
             name: 'MX',
             hideState: true,
-            records: [
-                {
-                    dnsType: 'MX',
-                    value: 'mail.protonmail.ch',
-                    priority: 10,
-                    state: 'invalid',
-                },
-                {
-                    dnsType: 'MX',
-                    value: 'mailsec.protonmail.ch',
-                    priority: 20,
-                    state: 'invalid',
-                },
-            ],
+            records: getDomainDnsRecords({ ...model.domain, DomainName: model.domainName }).mx.map((record) => ({
+                ...record,
+                state: 'invalid',
+            })),
         };
 
         return (
@@ -82,7 +73,7 @@ const FinishModal: FC<{
                         {c('Info').t`Copy the below code and paste it in the DNS section of your domain host.`}
                     </p>
 
-                    <DNSGroupRecords group={group} subdomain={model.subdomain} />
+                    <DNSGroupRecords group={group} />
                 </ModalTwoContent>
             </>
         );

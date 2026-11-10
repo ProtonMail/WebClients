@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import type { DnsRecord } from '@proton/shared/lib/domains/dnsRecords';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import Alert from '../../components/alert/Alert';
@@ -13,7 +14,11 @@ import TableBody from '../../components/table/TableBody';
 import TableHeader from '../../components/table/TableHeader';
 import TableRow from '../../components/table/TableRow';
 
-const MXSection = () => {
+interface Props {
+    records: DnsRecord[];
+}
+
+const MXSection = ({ records }: Props) => {
     const { createNotification } = useNotifications();
     const boldAddresses = <strong key="addresses">{c('Tab in domain modal').t`Addresses`}</strong>;
     const tableTitles = [
@@ -29,8 +34,6 @@ const MXSection = () => {
      */
     const kbLink = <Href key="kb" href={getKnowledgeBaseUrl('/custom-domain')}>{c('Link').t`here`}</Href>;
     const handleCopy = () => createNotification({ text: c('Success').t`Value copied to clipboard` });
-    const mailDomain = 'mail.protonmail.ch';
-    const mailsecDomain = 'mailsec.protonmail.ch';
     return (
         <>
             <Alert className="mb-4">
@@ -48,39 +51,28 @@ const MXSection = () => {
             <Table responsive="cards" className="mt-4">
                 <TableHeader cells={tableTitles} />
                 <TableBody>
-                    <TableRow
-                        labels={tableTitles}
-                        cells={[
-                            <code key="mx">MX</code>,
-                            <code key="at">@</code>,
-                            <div className="flex flex-nowrap items-center" key="value">
-                                <Copy size="small" onCopy={handleCopy} className="shrink-0 mr-2" value={mailDomain} />{' '}
-                                <code className="text-ellipsis lh-rg" title={mailDomain}>
-                                    {mailDomain}
-                                </code>
-                            </div>,
-                            <code key="ten">10</code>,
-                        ]}
-                    />
-                    <TableRow
-                        labels={tableTitles}
-                        cells={[
-                            <code key="mx">MX</code>,
-                            <code key="at">@</code>,
-                            <div className="flex flex-nowrap items-center" key="value">
-                                <Copy
-                                    size="small"
-                                    onCopy={handleCopy}
-                                    className="shrink-0 mr-2"
-                                    value={mailsecDomain}
-                                />{' '}
-                                <code className="text-ellipsis lh-rg" title={mailsecDomain}>
-                                    {mailsecDomain}
-                                </code>
-                            </div>,
-                            <code key="twenty">20</code>,
-                        ]}
-                    />
+                    {records.map((record) => (
+                        <TableRow
+                            key={record.value}
+                            labels={tableTitles}
+                            cells={[
+                                <code key="type">{record.type}</code>,
+                                <code key="hostname">{record.hostname}</code>,
+                                <div className="flex flex-nowrap items-center" key="value">
+                                    <Copy
+                                        size="small"
+                                        onCopy={handleCopy}
+                                        className="shrink-0 mr-2"
+                                        value={record.value}
+                                    />{' '}
+                                    <code className="text-ellipsis lh-rg" title={record.value}>
+                                        {record.value}
+                                    </code>
+                                </div>,
+                                <code key="priority">{record.priority}</code>,
+                            ]}
+                        />
+                    ))}
                 </TableBody>
             </Table>
             <Alert className="mb-4">
