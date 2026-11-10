@@ -8,7 +8,6 @@ import type { FeatureFlag } from './UnleashFeatureFlags';
 export const FLAGS_WITH_VARIANT = [
     'VPNDashboard',
     'DriveDashboard',
-    'InboxBringYourOwnEmailSignup',
     'WebApiRateLimiter',
     'MaxContactsImport',
     'ShowLiteAppCheckoutV2',
@@ -32,7 +31,6 @@ export const FLAGS_WITH_VARIANT = [
 export type VPNDashboardVariant = 'Control' | 'A' | 'B';
 export type DriveDashboardVariant = 'A' | 'B';
 export type MeetSpotlightTypeVariant = 'no-cta' | 'cta';
-export type InboxBringYourOwnEmailSignupVariant = 'Control' | 'Bold' | 'Light';
 export type WebApiRateLimiterVariant = 'Config';
 export type MaxContactsImportVariant = 'Config';
 export type ShowLiteAppCheckoutV2Variant = 'A' | 'B';
@@ -65,7 +63,6 @@ type VariantReturnType<TVariantNameValue extends string> = Partial<
 type FeatureFlagVariantMap = {
     VPNDashboard: VariantReturnType<VPNDashboardVariant>;
     DriveDashboard: VariantReturnType<DriveDashboardVariant>;
-    InboxBringYourOwnEmailSignup: VariantReturnType<InboxBringYourOwnEmailSignupVariant>;
     WebApiRateLimiter: VariantReturnType<WebApiRateLimiterVariant>;
     MaxContactsImport: VariantReturnType<MaxContactsImportVariant>;
     ShowLiteAppCheckoutV2: VariantReturnType<ShowLiteAppCheckoutV2Variant>;
