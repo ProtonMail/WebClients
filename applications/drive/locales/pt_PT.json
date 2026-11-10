@@ -196,7 +196,7 @@
         "Colabore em documentos"
       ],
       "Collapse folder": [
-        "Fechar a pasta"
+        "Ocultar pasta"
       ],
       "Collapse navigation bar": [
         "Recolher a barra de navegação"
@@ -540,7 +540,7 @@
         "Aumentar"
       ],
       "Join album": [
-        "Juntar-se ao álbum"
+        "Aderir ao álbum"
       ],
       "Keep my subscription": [
         "Manter a minha assinatura"
@@ -831,7 +831,7 @@
         "Restaurar esta versão"
       ],
       "Restore version": [
-        "Restaurar a versão"
+        "Restaurar versão"
       ],
       "Resume all": [
         "Reiniciar tudo"
@@ -1217,7 +1217,7 @@
         "Transferir para Windows"
       ],
       "Download info": [
-        "Transferir informações"
+        "Transferir informação"
       ],
       "Download results": [
         "Transferir resultados"
@@ -1265,7 +1265,7 @@
         "Tentar novamente os itens que falharam"
       ],
       "Run diagnostics": [
-        "Executar diagnósticos"
+        "Executar diagnóstico"
       ],
       "Save photo to your gallery": [
         "Guardar foto na sua galeria"
@@ -1329,6 +1329,21 @@
       ],
       "Subscribe": [
         "Subscrever"
+      ],
+      "Add a payment method": [
+        "Adicionar um método de pagamento"
+      ],
+      "Add payment method": [
+        "Adicionar método de pagamento"
+      ],
+      "Detach": [
+        "Desanexar"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "New chat": [
+        "Nova conversação"
       ]
     },
     "Actions": {
@@ -3945,7 +3960,7 @@
         "Não conseguimos obter este item"
       ],
       "We couldn’t send a verification code using this method.": [
-        "Não conseguimos enviar um código de verificação através deste método."
+        "Nós não conseguimos enviar um código de verificação utilizando este método."
       ],
       "We were not able to load some invitations": [
         "Não nos foi possível carregar alguns convites"
@@ -5060,7 +5075,7 @@
         "${ pausedCount } pausados"
       ],
       "${ photoCount } item": [
-        " ${ photoCount } item",
+        "${ photoCount } item",
         "${ photoCount } itens"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
@@ -5223,7 +5238,7 @@
         "um utilizador anónimo"
       ],
       "An issue occurred during the restore process.": [
-        "Ocorreu um problema durante o processo de recuperação."
+        "Ocorreu um problema durante o processo de restauro."
       ],
       "and": [
         "e"
@@ -5832,7 +5847,7 @@
         "A mover ficheiros"
       ],
       "My Links": [
-        "As minhas ligações"
+        "Minhas Hiperligações"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie a sua nova pasta e selecione a pasta principal onde deseja colocá-la. Se não selecionar uma pasta principal, esta nova pasta será criada como uma pasta de nível superior."
@@ -6097,7 +6112,7 @@
         "Restaurar"
       ],
       "Restore Photos": [
-        "Recuperar fotos"
+        "Restaurar Fotografias"
       ],
       "Restored files ${ formattedDate }": [
         "Ficheiros restaurados ${ formattedDate }"
@@ -6432,7 +6447,7 @@
         "Lixo"
       ],
       "Trash is empty": [
-        "O lixo está vazio"
+        "A reciclagem está vazia"
       ],
       "Try ${ DRIVE_APP_NAME }: Free forever": [
         "Teste o ${ DRIVE_APP_NAME }: grátis para sempre"
@@ -6507,7 +6522,7 @@
         "A versão é eliminada."
       ],
       "Version is restored": [
-        "A versão foi restaurada."
+        "A versão foi restaurada"
       ],
       "Version number successfully copied to clipboard": [
         "O número da versão foi copiado para a área de transferência."
@@ -6879,7 +6894,7 @@
         "O ${ CALENDAR_APP_NAME } requer um endereço ${ BRAND_NAME } para a sincronização segura de eventos e para a encriptação. ${ claimAddressButton }."
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
-        "O ${ MEET_APP_NAME } é uma solução de videoconferência encriptada de ponto a ponto. Adicione-o ao seu plano para realizar reuniões seguras."
+        "O ${ MEET_APP_NAME } é uma solução de videoconferência encriptada de ponto a ponto. Adicione-a ao seu plano para realizar reuniões seguras."
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
         "O ${ VPN_SHORT_APP_NAME } oculta o seu tráfego. O ${ PASS_SHORT_APP_NAME } oculta a sua identidade\n— **alias hide-my-email** ilimitados e **alertas da dark web** caso os seus dados sejam alguma vez alvo de uma fuga."
@@ -7038,7 +7053,7 @@
         "Ficheiro sinalizado como potencialmente malicioso"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Apenas ficheiros (sem fotos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) - até 100 GB no total, 100.000 ficheiros e 50 GB por ficheiro"
+        "Apenas ficheiros (sem fotos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) até 100 GB no total, 100.000 ficheiros e 50 GB por ficheiro"
       ],
       "Get logs and other information for technical support and troubleshooting": [
         "Obtenha registos e outras informações para apoio ao cliente técnico e resolução de problemas"
@@ -7156,7 +7171,7 @@
         "Erro do motor de pesquisa"
       ],
       "Search error": [
-        "Erro de pesquisa"
+        "Erro de procura"
       ],
       "Search is in an invalid state": [
         "A pesquisa encontra-se num estado inválido"
@@ -7277,6 +7292,15 @@
       ],
       "We'll get back to you shortly.": [
         "Entraremos em contacto consigo em breve."
+      ],
+      "1 device per user": [
+        "1 dispositivo por utilizador"
+      ],
+      "1 vault per user": [
+        "1 cofre por utilizador"
+      ],
+      "Do you remember your password?": [
+        "Lembra-se da sua palavra-passe?"
       ]
     },
     "info": {
@@ -7396,7 +7420,7 @@
         "${ nbYear } anos"
       ],
       "(Expired)": [
-        "(expirou)"
+        "(Expirou)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Tente mais tarde.)"
@@ -8060,7 +8084,7 @@
         "pode ver"
       ],
       "Created ${ created }": [
-        "Criado em ${ created }"
+        "Criado ${ created }"
       ],
       "Delete link and remove access for everyone": [
         "Eliminar ligação e remover o acesso para todos"
@@ -8090,7 +8114,7 @@
         "Expirou a ${ formatted }"
       ],
       "Expires ${ formatted }": [
-        "Expira a ${ formatted }"
+        "Expira ${ formatted }"
       ],
       "Expiry": [
         "Expiração"
@@ -8184,6 +8208,9 @@
       ],
       "Why would you like to cancel?": [
         "Por que motivo pretende cancelar?"
+      ],
+      "Account holder name": [
+        "Nome do titular da conta"
       ]
     },
     "Label for contact group color": {
@@ -8388,7 +8415,7 @@
         "atualize para obter mais armazenamento"
       ],
       "Upgrade to restore full access": [
-        "Melhore o eu plano para restaurar o acesso completo."
+        "Atualize para restaurar o acesso completo"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "O seu ${ driveStorage } está cheio. Para enviar ou sincronizar ficheiros, liberte espaço ou ${ cta }."
@@ -9848,7 +9875,7 @@
         "Erro ao remover o ficheiro"
       ],
       "Failed to rename device": [
-        "Erro ao renomear o dispositivo."
+        "Não foi possível renomear o dispositivo"
       ],
       "Failed to upload files: ${ err }": [
         "Erro ao enviar ficheiros: ${ err }"
@@ -10188,6 +10215,9 @@
       ],
       "File version history (over 1 week)": [
         "Histórico de versões do ficheiro (mais de 1 semana)"
+      ],
+      "Short @pm.me address": [
+        "Endereço curto @pm.me"
       ]
     },
     "Onboarding": {
@@ -10256,7 +10286,7 @@
         "Escolha o seu tema favorito"
       ],
       "Collaborate on documents": [
-        "Colabore em documentos"
+        "Colaborar nos documentos"
       ],
       "Do you prefer ${ DRIVE_APP_NAME } in light or dark mode? Select the color that inspires you the most.": [
         "Prefere o ${ DRIVE_APP_NAME } no modo claro ou escuro? Selecione a cor que mais lhe inspira."
@@ -10298,7 +10328,7 @@
         "Aguente firme"
       ],
       "Invitation accepted": [
-        "O convite foi aceite."
+        "Convite aceite"
       ],
       "Invitation received": [
         "O convite foi recebido."
@@ -10307,7 +10337,7 @@
         "Convidar os membros da equipa"
       ],
       "Manage access": [
-        "Gerir o acesso"
+        "Gerir acesso"
       ],
       "Organize files right from your desktop": [
         "Organize os seus ficheiros diretamente da sua área de trabalho"
@@ -10337,7 +10367,7 @@
         "Envie o seu primeiro ficheiro"
       ],
       "Work faster, smarter": [
-        "Trabalhe mais rapidamente e de maneira mais eficiente"
+        "Trabalhar mais rápido, e mais eficiente"
       ],
       "Work together": [
         "Trabalhar em conjunto"
@@ -10708,6 +10738,12 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Será brevemente redirecionado para verificar o seu pagamento."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Ao mudar, concorda com os nossos ${ termsLink }."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Pagar com ${ IDEAL_WERO_BRAND_NAME }"
       ]
     },
     "Payments.Error": {
@@ -10848,7 +10884,7 @@
         "Introduza um nome para a pasta"
       ],
       "Enter device name": [
-        "Introduzir o nome do dispositivo"
+        "Inserir nome do dispositivo"
       ],
       "Enter your email address": [
         "Introduza o seu endereço de e-mail"
@@ -10960,6 +10996,9 @@
       ],
       "Please select the main reason": [
         "Selecione o motivo principal"
+      ],
+      "Ask anything…": [
+        "Pergunte qualquer coisa..."
       ]
     },
     "Placeholder for contact group name": {
@@ -12293,7 +12332,7 @@
         "Partilhe de forma segura os seus momentos favoritos com amigos e família com os álbuns."
       ],
       "Your favorited photos will appear here": [
-        "As suas fotos favoritas aparecerão aqui."
+        "As suas fotografias favoritas aparecerão aqui"
       ],
       "Your Live Photos will appear here": [
         "As suas fotos ao vivo aparecerão aqui."
@@ -13003,7 +13042,7 @@
         "Registrador"
       ],
       "Logs": [
-        "Diários"
+        "Registos"
       ],
       "Make a secure connection your default": [
         "Escolha uma ligação segura como opção predeterminada"
@@ -13505,7 +13544,7 @@
         "Para pré-visualizar esta folha de cálculo, transfira-a."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
-        "Para fazer uma pré-visualização desta folha de cálculo, abra-a em ${ SHEETS_APP_NAME } ou faça a sua transferência."
+        "Para pré-visualizar esta folha de cálculo, abra-a em ${ SHEETS_APP_NAME } ou transfira-a."
       ],
       "${ freeUploadLength } of free uploads.": [
         "${ freeUploadLength } de carregamentos gratuitos."
@@ -13529,7 +13568,7 @@
         "Alterar acesso para visualizador?"
       ],
       "Diagnostics": [
-        "Diagnósticos"
+        "Diagnóstico"
       ],
       "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Assinatura digital parcialmente verificada. Este ficheiro foi criado com uma ligação de partilha acessível publicamente por um utilizador sem uma conta ${ BRAND_NAME }, pelo que a sua identidade não pode ser verificada."
@@ -13696,6 +13735,9 @@
       ],
       "Black Friday": [
         "Black Friday"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Bem-vindo(a) ao ${ DRIVE_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {

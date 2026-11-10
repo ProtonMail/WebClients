@@ -1421,6 +1421,9 @@
       ],
       "Add payment method": [
         "Дадаць спосаб аплаты"
+      ],
+      "Go to folder": [
+        "Перайсці ў папку"
       ]
     },
     "Action: Docs": {
@@ -1563,6 +1566,9 @@
       ],
       "Managed Service Provider": [
         "Пастаўшчык кіраваных паслуг"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Арганізацыі з дадатковым кампанентам «Пастаўшчык кіраваных паслуг» могуць стварыць і кіраваць дапаможнымі арганізацыямі."
       ]
     },
     "Alert": {
@@ -8305,6 +8311,30 @@
       ],
       "UnionPay logo": [
         "Лагатып UnionPay"
+      ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } выкарыстоўвае гэты доступ толькі для імпарту. Google ніколі не зможа атрымаць доступ да вашага ўліковага запісу ${ BRAND_NAME }."
+      ],
+      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
+        "${ invitation.addedByEmail.error.claimedAuthor } (неправераны адпраўнік)"
+      ],
+      "Connecting to Google Drive and preparing your import.": [
+        "Падлучэнне да Google Drive і падрыхтоўка вашага імпарту."
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Імпартуйце свае файлы і папкі з Google Drive, каб забяспечыць прыватнасць для іх у ${ DRIVE_APP_NAME }."
+      ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "Некаторыя больш старэйшыя файлы не былі праіндэксаваны, бо ваш Drive занадта вялікі для поўнай індэксацыі."
+      ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Вашы файлы зашыфраваны і бяспечна захоўваюцца ў ${ DRIVE_APP_NAME }."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Вашы файлы былі паспяхова імпартаваны і зашыфраваны з Google Drive у ${ DRIVE_APP_NAME }."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "Ваш імпарт заблакіраваны. Абнавіце тарыфны план, каб перанесці астатнія файлы."
       ]
     },
     "info": {
@@ -12203,6 +12233,9 @@
       ],
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "У вас ужо ёсць ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Гэты тарыфны план не падтрымлівае ўдзельнікаў у вашым уліковым запісе."
       ]
     },
     "Payments.Error": {
@@ -15418,6 +15451,9 @@
       ],
       "Subscribe to ${ planTitle }": [
         "Падпіска на тарыфны план ${ planTitle }"
+      ],
+      "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
+        "Перанясіце свае файлы з Google Drive у ${ DRIVE_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1364,6 +1364,18 @@
       ],
       "Subscribe": [
         "सब्सक्राइब करें"
+      ],
+      "Add payment method": [
+        "भुगतान विधि जोड़ें"
+      ],
+      "Cancel trial": [
+        "ट्रायल रद्द करें"
+      ],
+      "Go to folder": [
+        "फ़ोल्डर पर जाएँ"
+      ],
+      "Import paused": [
+        "इम्पोर्ट रोका गया"
       ]
     },
     "Actions": {
@@ -4171,6 +4183,9 @@
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "गलत रिकवरी फ्रेज़। पुन: प्रयास करें या किसी अन्य पुनर्प्राप्ति विधि का उपयोग करें।"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "आप कनेक्ट किए गए पतों की अधिकतम संख्या तक पहुँच गए हैं"
       ]
     },
     "Error importing calendar": {
@@ -7584,6 +7599,15 @@
       ],
       "We'll get back to you shortly.": [
         "हम शीघ्र ही आपसे संपर्क करेंगे।"
+      ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "यदि आपने पहले से ही अपग्रेड कर लिया है, तो आप ${ easySwitchSettingsLink } में अपना इम्पोर्ट फिर से शुरू कर सकते हैं। आप इसे वहाँ रद्द भी कर सकते हैं।"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "आपका निःशुल्क ट्रायल समाप्त हो गया है। अपनी टीम की एक्सेस बिना रुकावट जारी रखने और खातों को सुरक्षित रखने के लिए अभी सब्सक्राइब करें।"
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "आपका इम्पोर्ट ब्लॉक हो गया है। अपनी बाकी फ़ाइलें लाने के लिए अभी अपग्रेड करें।"
       ]
     },
     "info": {
@@ -10706,6 +10730,9 @@
       ],
       "you can cancel within 30 days and get a pro-rata refund.": [
         "तो 30 दिनों के भीतर रद्द करके आनुपातिक रिफंड पाया जा सकता है।"
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**ट्रायल के बाद मन बदल गया?** अपने पहले भुगतान के 30 दिनों के भीतर रद्द करें और हम बिना इस्तेमाल किए गए समय का रिफंड कर देंगे।"
       ]
     },
     "Option": {
@@ -11084,6 +11111,18 @@
       ],
       "Your account is too old for Born Private.": [
         "Born Private के लिए आपका खाता बहुत पुराना है।"
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "निम्नलिखित कारणों से प्लान बदलना संभव नहीं है:"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet की सीटें सदस्यों की संख्या के बराबर होनी चाहिए।"
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "यह प्लान आपके खाते पर प्रबंधित सुविधाओं का समर्थन नहीं करता है।"
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "यह सदस्यता अभी पूरी नहीं हो सकती। कृपया पुनः प्रयास करें।"
       ]
     },
     "Payments.Error": {
@@ -13814,6 +13853,12 @@
       ],
       "Black Friday": [
         "ब्लैक फ्राइडे"
+      ],
+      "More storage needed to finish your import": [
+        "अपना इम्पोर्ट पूरा करने के लिए और स्टोरेज चाहिए"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "${ planTitle } की सदस्यता लें"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15287,6 +15332,9 @@
     },
     "Payments.iDEAL": {
       "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "पुष्टि करके, ${ BRAND_NAME } और Stripe, हमारे भुगतान सेवा प्रदाता, को आपकी सदस्यता के लिए भविष्य के पेमेंट SEPA Direct Debit के ज़रिए इस बैंक खाते से लेने की और आपके बैंक को वो पेमेंट काटने की अनुमति दी जाती है। आपका पहला पेमेंट अभी ${ IDEAL_WERO_BRAND_NAME } के ज़रिए होगा। आपका प्लान ऑटो-रीन्यू होता रहेगा, जब तक आप रद्द न करें; हर कलेक्शन से पहले हम आपको सूचित करेंगे। डायरेक्ट डेबिट कलेक्शन के लिए, अपने बैंक से किए गए समझौते की शर्तों के तहत डेबिट की तारीख़ से 8 हफ़्तों के भीतर बैंक से रिफ़ंड मांगा जा सकता है। ये अभी किए जा रहे ${ IDEAL_WERO_BRAND_NAME } पेमेंट पर लागू नहीं होता।"
+      ],
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
         "पुष्टि करके, ${ BRAND_NAME } और Stripe, हमारे भुगतान सेवा प्रदाता, को आपकी सदस्यता के लिए भविष्य के पेमेंट SEPA Direct Debit के ज़रिए इस बैंक खाते से लेने की और आपके बैंक को वो पेमेंट काटने की अनुमति दी जाती है। आपका पहला पेमेंट अभी ${ IDEAL_WERO_BRAND_NAME } के ज़रिए होगा। आपका प्लान ऑटो-रीन्यू होता रहेगा, जब तक आप रद्द न करें; हर कलेक्शन से पहले हम आपको सूचित करेंगे। डायरेक्ट डेबिट कलेक्शन के लिए, अपने बैंक से किए गए समझौते की शर्तों के तहत डेबिट की तारीख़ से 8 हफ़्तों के भीतर बैंक से रिफ़ंड मांगा जा सकता है। ये अभी किए जा रहे ${ IDEAL_WERO_BRAND_NAME } पेमेंट पर लागू नहीं होता।"
       ]
     },

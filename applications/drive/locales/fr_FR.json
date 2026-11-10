@@ -546,7 +546,7 @@
         "Accéder à mes fichiers"
       ],
       "Go to parent": [
-        "Revenir au dossier principal"
+        "Revenir au dossier parent"
       ],
       "Go to settings": [
         "Accéder aux paramètres"
@@ -6722,7 +6722,7 @@
         "Recherche activée"
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
-        "La recherche est activée. Vous pouvez maintenant fermer cette boîte de dialogue et rechercher des fichiers et des dossiers."
+        "La recherche est activée. Vous pouvez fermer cette boîte de dialogue et rechercher des fichiers et des dossiers."
       ],
       "Select a destination folder": [
         "Sélectionner un dossier de destination"
@@ -7569,7 +7569,7 @@
         "${ albums } albums"
       ],
       "${ files } file": [
-        "${ files } fichier",
+        "${ files } fichier",
         "${ files } fichiers"
       ],
       "${ folders } folder": [
@@ -7665,8 +7665,8 @@
         "Nous n'avons pas pu sauvegarder plusieurs photos dans votre Drive"
       ],
       "We were not able to add this photo to your album": [
-        "Cette photo n'a pas pu être ajoutée à votre album.",
-        "Ces photos n'ont pas pu être ajoutées à votre album."
+        "Nous n'avons pas été en mesure d'ajouter cette photo à votre album.",
+        "Nous n'avons pas été en mesure d'ajouter des photos à votre album."
       ],
       "Trust the \"${ activeSignerText }\" key to verify new messages from this contact.": [
         "Faire confiance à la clé « ${ activeSignerText } » pour vérifier les nouveaux messages provenant de ce contact."
@@ -8028,6 +8028,9 @@
       ],
       "You have an open invoice ${ payInvoiceLink }": [
         "Vous avez une facture ouverte ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Vous avez une facture à régler au ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -8147,7 +8150,7 @@
         "${ nbYear } ans"
       ],
       "(Expired)": [
-        "(expiré)"
+        "(Expiré)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible, nous vous invitons à vérifier plus tard)"
@@ -8394,7 +8397,7 @@
         "Chiffrer les messages"
       ],
       "Enter device name": [
-        "Saisir le nom de l'appareil"
+        "Entrer le nom de l'appareil"
       ],
       "Expired": [
         "Expiré"
@@ -8637,7 +8640,7 @@
         "Définir un mot de passe pour limiter l'accès par lien"
       ],
       "Set recovery method": [
-        "Définissez une méthode de récupération"
+        "Définir une méthode de récupération"
       ],
       "Share a file, folder, or album": [
         "Partagez un fichier, un dossier ou un album"
@@ -10622,8 +10625,8 @@
         "${ count } éléments n'ont pas pu être déchiffrés."
       ],
       "${ errors.length } item failed to be copied": [
-        "${ errors.length } l'élément n'a pas pu être copié",
-        "${ errors.length } les éléments n'ont pas pu être copiés"
+        "${ errors.length } élément n'a pas pu être copié.",
+        "${ errors.length } éléments n'ont pas pu être copiés."
       ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } élément n'a pas pu être mis à la corbeille",
@@ -11137,7 +11140,7 @@
         "Installer et continuer"
       ],
       "Install later": [
-        "Installez-la plus tard"
+        "Installer plus tard"
       ],
       "Invite members": [
         "Invitez des membres"
@@ -11241,7 +11244,7 @@
         "L'invitation a été reçue."
       ],
       "Invite team members": [
-        "Invitez les membres de l'équipe"
+        "Inviter des membres de l'équipe"
       ],
       "Keep the momentum going by uploading more files using the storage included with your plan.": [
         "Poursuivez sur votre lancée en important plus de fichiers grâce à l'espace de stockage inclus dans votre abonnement."
@@ -11976,7 +11979,7 @@
         "Saisissez un nouveau nom de dossier."
       ],
       "Enter device name": [
-        "Saisissez le nom de l'appareil."
+        "Saisissez le nom de l'appareil"
       ],
       "Enter your email address": [
         "Saisissez votre adresse e-mail."
@@ -13460,7 +13463,7 @@
         "Partagé par ${ sharedBy }"
       ],
       "Your favorited photos will appear here": [
-        "Vos photos favorites apparaîtront ici."
+        "Les photos que vous ajoutez à vos favoris s'afficheront ici."
       ],
       "Your Live Photos will appear here": [
         "Vos photos en direct apparaîtront ici."
@@ -14502,7 +14505,7 @@
         "Résultats de la recherche"
       ],
       "Searching…": [
-        "Recherche…"
+        "Recherche en cours…"
       ],
       "Security center": [
         "Centre de sécurité"
