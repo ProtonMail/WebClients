@@ -148,6 +148,36 @@ describe('Tooltip', () => {
         expect(ref.current).toBe(screen.getByTestId('icon'));
     });
 
+    it('should keep the open delay after a tooltip unmounts while its open delay is pending', async () => {
+        const Tooltips = ({ showFirst }: { showFirst: boolean }) => (
+            <>
+                {showFirst && (
+                    <Tooltip title={<span data-testid="tooltip-1">World</span>}>
+                        <span data-testid="span-1">Hello</span>
+                    </Tooltip>
+                )}
+                <Tooltip title={<span data-testid="tooltip-2">Bar</span>}>
+                    <span data-testid="span-2">Foo</span>
+                </Tooltip>
+            </>
+        );
+        const { rerender } = render(<Tooltips showFirst />);
+
+        await timerUserEvent.hover(screen.getByTestId('span-1'));
+        rerender(<Tooltips showFirst={false} />);
+        act(() => {
+            jest.advanceTimersByTime(1000);
+        });
+
+        await timerUserEvent.hover(screen.getByTestId('span-2'));
+        expect(screen.queryByTestId('tooltip-2')).toBeNull();
+
+        act(() => {
+            jest.advanceTimersByTime(1000);
+        });
+        expect(screen.getByTestId('tooltip-2')).toHaveTextContent('Bar');
+    });
+
     describe('focusVisibleOnly', () => {
         beforeEach(() => {
             render(

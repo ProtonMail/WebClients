@@ -8,6 +8,7 @@ const OPEN_DELAY_TIMEOUT = 1000;
 const CLOSE_DELAY_TIMEOUT = 250;
 
 let visibleTimeout = 0;
+let visibleTimeoutOwner = 0;
 let globalId = 0;
 
 enum State {
@@ -89,6 +90,10 @@ export const useTooltipHandlers = ({
             window.clearTimeout(closeTimeoutRef.current);
             window.clearTimeout(longTapTimeoutRef.current);
             window.clearTimeout(ignoreNonTouchEventsTimeoutRef.current);
+            // A pending open would otherwise add this tooltip to the map after unmount, and it would never leave
+            if (visibleTimeoutOwner === id) {
+                window.clearTimeout(visibleTimeout);
+            }
             tooltips.get(id)?.close.current();
             tooltips.delete(id);
         };
@@ -201,6 +206,7 @@ export const useTooltipHandlers = ({
         if (tooltips.size || !openDelay || isOpen) {
             open();
         } else {
+            visibleTimeoutOwner = id;
             visibleTimeout = window.setTimeout(() => {
                 open(false);
             }, openDelay);
