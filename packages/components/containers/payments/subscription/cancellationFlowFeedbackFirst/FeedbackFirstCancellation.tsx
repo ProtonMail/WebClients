@@ -24,6 +24,8 @@ import { TemporaryNeedContent } from './content/TemporaryNeedContent';
 import { useCancellationOffer } from './hooks/useCancellationOffer';
 import { useFeedbackFirstTelemetry } from './hooks/useFeedbackFirstTelemetry';
 
+import './FeedbackFirstCancellation.scss';
+
 enum CANCELLATION_STEPS {
     FEEDBACK = 0,
     MISSING_FEATURE = 1,
@@ -118,7 +120,7 @@ export const FeedbackFirstCancellation = ({ subscription, onCancelled, ...modalP
     };
 
     return (
-        <ModalTwo className="h-full" size="xlarge" {...modalProps}>
+        <ModalTwo className="feedback-first-cancellation-modal" size="xlarge" {...modalProps}>
             {step === CANCELLATION_STEPS.FEEDBACK && (
                 <FeedbackDowngradeContent user={user} subscription={subscription} onResolve={handleFeedbackResolve} />
             )}
