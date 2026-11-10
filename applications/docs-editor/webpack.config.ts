@@ -49,12 +49,6 @@ const result = (opts: WebpackEnvArguments): Configuration => {
     }
   }
 
-  config.watchOptions = {
-    ...config.watchOptions,
-    // Rows n Columns packages are vendored as built files, so their dist directories must remain watchable.
-    ignored:
-      /^(?!.*\/vendor\/rowsncolumns\/).*\/dist(?:\/|$)|\/node_modules(?:\/|$)|\/locales(?:\/|$)|\.(?:gif|jpeg|jpg|ico|png|svg)$/,
-  }
   config.plugins?.push(
     new DefinePlugin({
       'process.env.DOCS_SHEETS_KEY': JSON.stringify(isStandaloneEditor ? undefined : process.env.DOCS_SHEETS_KEY),

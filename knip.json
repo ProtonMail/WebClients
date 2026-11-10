@@ -611,15 +611,6 @@
             "entry": ["src/**/run.ts", "src/**/*.test.ts"],
             "project": ["src/**/*.ts"]
         },
-        "vendor/*/*": {
-            "entry": [],
-            "project": [],
-            "ignore": ["**"]
-        },
-        "vendor/rowsncolumns/common-types": {
-            "entry": [],
-            "project": []
-        },
         "packages/charts": {
             "ignoreDependencies": ["@proton/styles"]
         }
