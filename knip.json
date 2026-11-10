@@ -35,10 +35,7 @@
                 "@prettier/plugin-xml",
                 "stylelint-config-standard-scss",
                 "stylelint-use-logical-spec",
-                "@typescript/native",
                 "oxfmt",
-                "oxlint",
-                "oxlint-tsgolint",
                 "^@proton/(account|activation|calendar|components|docs-core|nav|payments|payments-hooks|payments-ui|redux-shared-store|shared|types)$|^@types/global-types-monorepo$"
             ]
         },
@@ -75,8 +72,7 @@
         },
         "applications/docs": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}", "src/app/routes/**/*.{ts,tsx}"],
-            "project": ["src/**/*.{ts,tsx,scss,sass,css}"],
-            "ignoreDependencies": ["@proton/raw-images"]
+            "project": ["src/**/*.{ts,tsx,scss,sass,css}"]
         },
         "applications/docs-editor": {
             "entry": [
@@ -86,41 +82,15 @@
                 "webpack.config.{js,ts}"
             ],
             "project": ["src/**/*.{ts,tsx,scss,sass,css}"],
-            "ignoreDependencies": [
-                "@babel/preset-typescript",
-                "babel-plugin-transform-require-context",
-                "@proton/metrics"
-            ]
+            "ignoreDependencies": ["@babel/preset-typescript", "babel-plugin-transform-require-context"]
         },
         "applications/drive": {
             "entry": ["src/app/index.{ts,tsx}", "src/app/urls.tsx", "webpack.config.{js,ts}"],
             "project": ["src/**/*.{ts,tsx}"]
         },
         "applications/inbox-desktop": {
-            "entry": [
-                "src/index.ts",
-                "src/preload.ts",
-                "src/renderer.ts",
-                "src/ipc/main.ts",
-                "forge.config.ts",
-                "webpack.main.config.ts",
-                "webpack.renderer.config.ts",
-                "webpack.rules.ts"
-            ],
-            "project": ["src/**/*.{ts,tsx}"],
-            "ignoreDependencies": [
-                "@electron-forge/maker-deb",
-                "@electron-forge/maker-dmg",
-                "@electron-forge/maker-rpm",
-                "@electron-forge/maker-squirrel",
-                "@electron-forge/maker-zip",
-                "@electron-forge/publisher-github",
-                "@vercel/webpack-asset-relocator-loader",
-                "css-loader",
-                "node-loader",
-                "style-loader",
-                "ts-loader"
-            ]
+            "entry": ["src/ipc/main.ts", "webpack.main.config.ts", "webpack.renderer.config.ts", "webpack.rules.ts"],
+            "project": ["src/**/*.{ts,tsx}"]
         },
         "applications/lumo": {
             "entry": [
@@ -129,8 +99,7 @@
                 "src/app/workers/search/searchWorker.ts",
                 "webpack.config.{js,ts}"
             ],
-            "project": ["src/**/*.{ts,tsx,scss,sass}"],
-            "ignoreDependencies": ["@proton/pass"]
+            "project": ["src/**/*.{ts,tsx,scss,sass}"]
         },
         "applications/mail": {
             "entry": ["src/app/index.{ts,tsx}", "src/app/eo.tsx", "webpack.config.{js,ts}"],
@@ -141,33 +110,9 @@
             "project": ["src/**/*.{ts,tsx}"]
         },
         "applications/meet-desktop": {
-            "entry": [
-                "src/index.ts",
-                "src/preload.ts",
-                "src/renderer.ts",
-                "src/screenPicker/picker.ts",
-                "src/screenPicker/preload.ts",
-                "src/ipc/main.ts",
-                "forge.config.ts",
-                "webpack.main.config.ts",
-                "webpack.renderer.config.ts",
-                "webpack.rules.ts"
-            ],
+            "entry": ["src/ipc/main.ts", "webpack.main.config.ts", "webpack.renderer.config.ts", "webpack.rules.ts"],
             "project": ["src/**/*.{ts,tsx}"],
-            "ignoreDependencies": [
-                "@electron-forge/maker-deb",
-                "@electron-forge/maker-dmg",
-                "@electron-forge/maker-rpm",
-                "@electron-forge/maker-squirrel",
-                "@electron-forge/maker-zip",
-                "@electron-forge/publisher-github",
-                "@vercel/webpack-asset-relocator-loader",
-                "css-loader",
-                "node-loader",
-                "style-loader",
-                "ts-loader",
-                "ts-node"
-            ]
+            "ignoreDependencies": ["ts-node"]
         },
         "applications/pass": {
             "entry": ["src/app/index.{ts,tsx}", "webpack.config.{js,ts}"],
@@ -176,11 +121,7 @@
         },
         "applications/pass-desktop": {
             "entry": [
-                "src/main.ts",
-                "src/preload.ts",
-                "src/app/renderer.tsx",
                 "electron-builder.config.js",
-                "forge.config.ts",
                 "webpack.main.config.ts",
                 "webpack.renderer.config.ts",
                 "webpack.options.ts",
@@ -189,13 +130,7 @@
             ],
             "project": ["src/**/*.{ts,tsx}"],
             "ignore": ["src/uninstallers/macos/daemon/launcher.ts"],
-            "ignoreDependencies": [
-                "@vercel/webpack-asset-relocator-loader",
-                "electron-builder",
-                "node-loader",
-                "ts-loader",
-                "ts-node"
-            ]
+            "ignoreDependencies": ["electron-builder", "ts-node"]
         },
         "applications/pass-extension": {
             "entry": [
@@ -321,7 +256,7 @@
         "packages/docs-core": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"],
-            "ignoreDependencies": ["@babel/plugin-transform-class-properties", "@proton/raw-images"]
+            "ignoreDependencies": ["@babel/plugin-transform-class-properties"]
         },
         "packages/docs-proto": {
             "entry": ["lib/index.ts"],
@@ -332,11 +267,7 @@
             "project": ["**/*.{ts,tsx}"]
         },
         "packages/drive": {
-            "entry": [
-                "modules/sandbox/createSandboxedLibrary.ts",
-                "modules/sandbox/sandboxed/index.ts",
-                "modules/sandbox/webpack/SandboxedLibrariesPlugin.ts"
-            ],
+            "entry": ["modules/sandbox/createSandboxedLibrary.ts", "modules/sandbox/sandboxed/index.ts"],
             "project": ["**/*.{ts,tsx}"]
         },
         "packages/drive-store": {
@@ -409,8 +340,7 @@
         },
         "packages/mail-renderer": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignoreDependencies": ["@proton/styles"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/meet": {
             "entry": [],
@@ -458,19 +388,16 @@
         },
         "packages/payments": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignoreDependencies": ["@proton/metrics"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/payments-hooks": {
             "entry": [],
-            "project": ["**/*.{ts,tsx}"],
-            "ignoreDependencies": ["@proton/metrics"]
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/payments-ui": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"],
-            "ignore": ["./examples/utils.ts"],
-            "ignoreDependencies": ["@proton/features", "@proton/metrics"]
+            "ignore": ["./examples/utils.ts"]
         },
         "packages/polyfill": {
             "entry": [],
