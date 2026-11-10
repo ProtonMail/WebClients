@@ -108,6 +108,9 @@
       "Add participant": [
         "Ajouter des participants"
       ],
+      "Add payment method": [
+        "Ajouter un moyen de paiement"
+      ],
       "Add phone number": [
         "Ajouter un numéro de téléphone"
       ],
@@ -201,6 +204,9 @@
       ],
       "Cancel subscription": [
         "Annuler l'abonnement"
+      ],
+      "Cancel trial": [
+        "Annuler la version d'essai"
       ],
       "Cancel trial and pay": [
         "Annuler l'essai et payer"
@@ -473,6 +479,9 @@
       ],
       "Display navigation bar": [
         "Afficher la barre de navigation"
+      ],
+      "Dock to side panel": [
+        "Épingler au panneau latéral"
       ],
       "Don't show this offer again": [
         "Ne plus afficher cette offre"
@@ -784,8 +793,8 @@
         "Insérer"
       ],
       "Insert ${ totalChecked } contact": [
-        "Veuillez insérer ${ totalChecked } contact",
-        "Veuillez insérer ${ totalChecked } contacts"
+        "Insérer ${ totalChecked } contact",
+        "Insérer ${ totalChecked } contacts"
       ],
       "Insert contact": [
         "Insérer un contact"
@@ -978,6 +987,9 @@
       ],
       "Move ${ LUMO_SHORT_APP_NAME } to the left": [
         "Déplacer ${ LUMO_SHORT_APP_NAME } sur la gauche"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the right": [
+        "Déplacer ${ LUMO_SHORT_APP_NAME } sur la droite"
       ],
       "Move all to archive": [
         "Tout déplacer vers les archives"
@@ -1568,7 +1580,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -4260,8 +4273,8 @@
         "Déplacez les e-mails dans la bonne catégorie afin d’améliorer leur classement."
       ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
-        "Les nouveaux messages de ${ senderEmailAddress } et ${ otherSendersCount } autre ne seront pas envoyés et seront définitivement supprimés.",
-        "Les nouveaux messages de ${ senderEmailAddress } et ${ otherSendersCount } autres ne seront pas envoyés et seront définitivement supprimés."
+        "Les nouveaux messages de ${ senderEmailAddress } et ${ otherSendersCount } autre ne seront pas délivrés et seront définitivement supprimés.",
+        "Les nouveaux messages de ${ senderEmailAddress } et ${ otherSendersCount } autres ne seront pas délivrés et seront définitivement supprimés."
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Les nouveaux messages de ${ senderEmailAddress } ne seront pas envoyés et seront définitivement supprimés."
@@ -5442,7 +5455,7 @@
     },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
-        "${ maxAttendees } participant est autorisé par invitation.",
+        "Un maximum de ${ maxAttendees } participant est autorisé par invitation.",
         "Un maximum de ${ maxAttendees } participants est autorisé par invitation."
       ]
     },
@@ -6220,6 +6233,9 @@
       ]
     },
     "Header": {
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Avant ${ MAIL_APP_NAME }, quel email utilisiez-vous le plus ?"
+      ],
       "Contacts": [
         "Contacts"
       ],
@@ -6261,6 +6277,9 @@
       ],
       "Username": [
         "Nom d'utilisateur"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Quelle est la raison principale pour avoir rejoint ${ MAIL_APP_NAME } ?"
       ]
     },
     "Hint": {
@@ -6693,12 +6712,15 @@
         "${ count } messages · ${ names }"
       ],
       "${ count } email → ${ dest }": [
-        "${ count } email → ${ dest }",
-        "${ count } emails → ${ dest }"
+        "${ count } message → ${ dest }",
+        "${ count } messages → ${ dest }"
       ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } sur ${ totalProgress }",
         "${ currentProgress } sur ${ totalProgress }"
+      ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } sur ${ steps }"
       ],
       "${ dateString } at ${ formattedTime }": [
         "${ dateString } à ${ formattedTime }"
@@ -6965,6 +6987,9 @@
       "1 vault per user": [
         "1 coffre-fort par utilisateur"
       ],
+      "A new or separate address": [
+        "Une nouvelle adresse ou adresse séparée"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un numéro de téléphone ne peut être utilisé que pour vérifier un seul compte ${ BRAND_NAME }."
       ],
@@ -6976,6 +7001,9 @@
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Une connexion sécurisée est essentielle en télétravail. Un VPN protège les données de l'entreprise des cybermenaces et préserve la confidentialité de votre travail."
+      ],
+      "A specific feature (tell us)": [
+        "Une fonctionnalité spécifique (dites-nous)"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utilisateur est un compte associé à un seul nom d'utilisateur, une seule boite aux lettres et une seule personne."
@@ -7247,6 +7275,15 @@
       "Change a display setting": [
         "Change un paramètre d'affichage"
       ],
+      "Change display setting": [
+        "Changer les paramètres d'affichage"
+      ],
+      "Change your list density": [
+        "Changez la densité de votre liste"
+      ],
+      "Change your mailbox layout": [
+        "Changez la disposition de votre boîte mail"
+      ],
       "Change your theme": [
         "Changer votre thème"
       ],
@@ -7258,6 +7295,12 @@
       ],
       "Choose a plan that works best for you.": [
         "Choisissez l'abonnement qui vous convient le mieux."
+      ],
+      "Choose all that apply.": [
+        "Choisissez tout ce qui s'applique."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "En choisir un(e). Cela nous aide à améliorer ${ MAIL_APP_NAME }"
       ],
       "Choose your service to connect with": [
         "Choisissez votre service pour vous connecter"
@@ -7441,6 +7484,9 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Voulez-vous signer à nouveau les coordonnées du contact ?"
+      ],
+      "Document lookup failed": [
+        "Échec de la recherche documentaire"
       ],
       "Don't forget to share the password with the recipient": [
         "N'oubliez pas de communiquer le mot de passe au destinataire."
@@ -7757,6 +7803,12 @@
       "How hide-my-email aliases works": [
         "Fonctionnement des alias « hide-my-email »"
       ],
+      "I didn't have one": [
+        "Je n'en avais pas"
+      ],
+      "I use other Proton products": [
+        "J'utilise d'autres produits Proton"
+      ],
       "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
         "Je vais passer en revue les messages de la semaine dernière et identifier ceux qui nécessitent vraiment une réponse, pour que vous puissiez les traiter d'un coup."
       ],
@@ -7891,6 +7943,9 @@
       "Key fingerprint": [
         "Empreinte de la clé"
       ],
+      "Label ${ emails }": [
+        "Labelliser ${ emails }"
+      ],
       "Label all imported messages as": [
         "Labelliser tous les messages importés comme"
       ],
@@ -7936,6 +7991,9 @@
       "Loading...": [
         "Chargement en cours"
       ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Recherche du document ${ lookup.result.docId }"
+      ],
       "Low Priority": [
         "Priorité basse"
       ],
@@ -7965,6 +8023,12 @@
       ],
       "Mark as unread": [
         "Marquer comme non lu"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Marquer le contenu de ${ place } comme lu"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Marquer le contenu de ${ place } comme non lu"
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -8089,6 +8153,9 @@
       "No email address": [
         "Aucune adresse e-mail"
       ],
+      "No email open": [
+        "Aucun email ouvert"
+      ],
       "No emails selected": [
         "Aucun e-mail sélectionné"
       ],
@@ -8152,6 +8219,9 @@
       "Not found in the foundation-search index.": [
         "Introuvable dans l'index de recherche fondation."
       ],
+      "Not supported by this browser": [
+        "Non supporté par ce navigateur"
+      ],
       "Nothing changes in your other ${ BRAND_NAME } account.": [
         "Rien ne change dans votre autre compte ${ BRAND_NAME }."
       ],
@@ -8169,6 +8239,9 @@
       ],
       "On public WiFi networks": [
         "Sur les réseaux wifi publics"
+      ],
+      "One last step": [
+        "Une dernière étape"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Une ou plusieurs de vos clés de confiance ont été marquées comme « compromises » par leur propriétaire. Nous vous recommandons de ne plus faire confiance à ces clés."
@@ -8196,6 +8269,9 @@
       ],
       "Organization size": [
         "Taille de l’organisation"
+      ],
+      "Other (tell us)": [
+        "Autre (dites-nous)"
       ],
       "Other accounts": [
         "Autres comptes"
@@ -8348,6 +8424,9 @@
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
         "Protégez votre adresse e-mail des fuites vers les listes de diffusion ou les spammeurs avec ${ hideMyEmailAliasesLink }."
       ],
+      "Protection from hackers and leaks": [
+        "Protection contre hackers et fuite de données"
+      ],
       "Public sharing of documents is not yet supported.": [
         "Le partage public de documents n'est pas encore pris en charge."
       ],
@@ -8362,8 +8441,8 @@
         "Lire vos ${ count } e-mails"
       ],
       "Read ${ count } email on screen": [
-        "Lire ${ count } e-mail sur l'écran",
-        "Lire ${ count } e-mails sur l'écran"
+        "Lire ${ count } message sur l'écran",
+        "Lire ${ count } messages sur l'écran"
       ],
       "Read ${ count } message in this thread": [
         "Lire votre ${ count } message dans ce fil de discussion",
@@ -8429,6 +8508,9 @@
       ],
       "Remove signature": [
         "Retirer la signature"
+      ],
+      "Remove the star from ${ emails }": [
+        "Retirer les étoiles de ${ emails }"
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Supprime toutes les données associées à cette application (y compris les messages téléchargés…)"
@@ -8647,6 +8729,9 @@
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Des sites internet et services de streaming bloquent certains contenus par région. Un VPN vous permet de contourner ces restrictions et d'accéder librement à internet."
       ],
+      "Someone recommended it": [
+        "Quelqu'un l'a recommandé"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Désolé, ce message n'existe pas ou a déjà expiré."
       ],
@@ -8658,6 +8743,9 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Commencez à la partager avec vos contacts et utilisez-la pour les services en ligne."
+      ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Commencer à utiliser ${ MAIL_APP_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Utilisez une version courte et percutante de votre adresse e-mail."
@@ -8702,6 +8790,9 @@
       "Surveillance": [
         "Surveillance"
       ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "Les réponses aux enquêtes ne sont pas chiffrées de bout en bout, veuillez ne pas partager d'informations sensibles."
+      ],
       "Symbols (#$&)": [
         "Symboles (#$&)"
       ],
@@ -8710,6 +8801,9 @@
       ],
       "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
         "Dites-moi quand vous serez absent et qu'aimeriez vous dire, et vous verrez l'ensemble avant validation."
+      ],
+      "Tell us more (optional)": [
+        "Dites-nous en plus (facultatif)"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporairement indisponible à cause d'une forte demande. Veuillez réessayer ultérieurement."
@@ -8984,6 +9078,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Pour utiliser la vérification d’adresse, vous devez approuver une ou plusieurs clés publiques disponibles, y compris celle que vous voulez utiliser pour l’envoi. Cela empêche la falsification des clés de chiffrement."
       ],
+      "Today": [
+        "Aujourd’hui"
+      ],
       "Tomorrow, ${ formattedTime }": [
         "Demain, ${ formattedTime }"
       ],
@@ -9052,6 +9149,9 @@
       ],
       "Update filter": [
         "Mettre à jour le filtre"
+      ],
+      "Update the filter ${ filter }": [
+        "Mettre à jour le filtre ${ filter }"
       ],
       "Update this filter": [
         "Mettre à jour ce filtre"
@@ -9242,8 +9342,17 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Lorsque vous voyagez ou que vous utilisez un réseau WiFi public, connectez-vous à ${ VPN_APP_NAME } pour empêcher quiconque de suivre vos activités en ligne ou de voler vos données. C'est gratuit."
       ],
+      "Which feature? (optional)": [
+        "Quelle fonctionnalité ? (facultatif)"
+      ],
+      "Which provider?": [
+        "Quel fournisseur ?"
+      ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "Avec les nouvelles catégories de messages, seuls les messages importants arrivent dans votre boite de réception principale. Tout le reste est organisé en catégories."
+      ],
+      "Work or business": [
+        "Travail ou affaires"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voulez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
@@ -9335,8 +9444,8 @@
         "Vous avez ${ totalLabel } dans votre boîte de réception."
       ],
       "You have **${ count } conversation** in your ${ categoryLabel } category": [
-        "Vous avez **${ count } conversation** dans la catégorie ${ categoryLabel }",
-        "Vous avez **${ count } conversations** dans la catégorie ${ categoryLabel }"
+        "Vous avez **${ count } conversation** dans votre catégorie ${ categoryLabel }",
+        "Vous avez **${ count } conversations** dans votre catégorie ${ categoryLabel }"
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Vous avez **${ count } conversation** stockée dans ce dossier.",
@@ -9367,6 +9476,9 @@
       "You have an open invoice ${ payInvoiceLink }": [
         "Vous avez une facture ouverte ${ payInvoiceLink }"
       ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Vous avez une facture à régler au ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You have no conversations in this category": [
         "Vous n'avez aucune conversation dans cette catégorie"
       ],
@@ -9386,12 +9498,12 @@
         "Vous serez peut-être redirigé vers le site internet de votre banque."
       ],
       "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
-        "Vous avez sélectionné **${ checked } conversation** de la catégorie ${ categoryLabel }",
-        "Vous avez sélectionné **${ checked } conversations** de la catégorie ${ categoryLabel }"
+        "Vous avez sélectionné **${ checked } conversation** dans votre catégorie ${ categoryLabel }",
+        "Vous avez sélectionné **${ checked } conversations** dans votre catégorie ${ categoryLabel }"
       ],
       "You selected **${ checked } message** in your ${ categoryLabel } category": [
-        "Vous avez sélectionné **${ checked } message** de la catégorie ${ categoryLabel }",
-        "Vous avez sélectionné **${ checked } messages** de la catégorie ${ categoryLabel }"
+        "Vous avez sélectionné **${ checked } message** dans votre catégorie ${ categoryLabel }",
+        "Vous avez sélectionné **${ checked } messages** dans votre catégorie ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Vous avez sélectionné **${ count } conversation** de ce dossier.",
@@ -10288,6 +10400,9 @@
       "Expires": [
         "Expire le"
       ],
+      "Export size": [
+        "Taille d'export"
+      ],
       "Extended address": [
         "Complément d’adresse"
       ],
@@ -10449,6 +10564,9 @@
       ],
       "Location": [
         "Lieu"
+      ],
+      "Log performance": [
+        "Journaliser les performances"
       ],
       "Long tasks (≥ 50 ms)": [
         "Tâches longues (≥ 50 ms)"
@@ -10650,6 +10768,9 @@
       ],
       "Read / export": [
         "Lire / exporter"
+      ],
+      "Realistic session": [
+        "Session réelle"
       ],
       "Recipient": [
         "Destinataire"
@@ -11177,6 +11298,9 @@
       ],
       "Pay invoice": [
         "Payer la facture"
+      ],
+      "Pay it": [
+        "Payer avec"
       ],
       "Privacy policy": [
         "Politique de confidentialité"
@@ -12972,8 +13096,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Résiliez à tout moment avant l'échéance.** Vous pourrez utiliser ${ planTitle } jusqu'à la fin de la période d'essai, gratuitement."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Si vous continuez après votre période d'essai, ** vous pouvez annuler dans les 30 jours et recevoir un remboursement au prorata."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Vous avez changé d'avis après la période d'essai ?** Résiliez votre abonnement dans les 30 jours suivant votre premier paiement et nous vous rembourserons la période non utilisée."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Une fois que votre abonnement complet débuté... ** Vous pouvez toujours annuler dans les 30 jours et recevoir un remboursement au prorata."
@@ -13377,6 +13501,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Un moyen de paiement est requis pour que l'abonnement soit activé après la fin de la version d'essai."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Le changement de plan est incompatible pour les raisons suivantes :"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Veuillez clôturer les comptes de portefeuille supplémentaires avant de changer d'abonnement."
       ],
@@ -13385,6 +13512,9 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Veuillez réactiver votre abonnement avant de réduire le nombre d'extensions."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Le nombre de places Proton Meet doit correspondre au nombre de membres."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Le tarif du renouvellement est susceptible de changer en accord avec ${ termsAndConditionsLink }."
@@ -13463,6 +13593,9 @@
       ],
       "This plan doesn’t support the members on your account.": [
         "Cet abonnement ne prend pas en charge les membres sur votre compte."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "La souscription ne peut aboutir pour le moment. Merci de réessayer ultérieurement."
       ],
       "Timeout exceeded": [
         "Le délai est dépassé."
@@ -14323,8 +14456,8 @@
         "Envoyé via ${ MAIL_APP_NAME } avec un chiffrement zéro accès"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "Envoyé par ${ MAIL_APP_NAME } chiffrement sans accès vers le destinataire vérifié",
-        "Envoyé par ${ MAIL_APP_NAME } chiffrement sans accès vers les destinataires vérifiés"
+        "Envoyé par ${ MAIL_APP_NAME } avec un chiffrement zéro accès à un destinataire vérifié",
+        "Envoyé par ${ MAIL_APP_NAME } avec un chiffrement zéro accès à des destinataires vérifiés"
       ],
       "Sent by you with end-to-end encryption": [
         "Envoyé par vous avec un chiffrement de bout en bout"

@@ -108,6 +108,9 @@
       "Add participant": [
         "Προσθήκη συμμετέχοντα"
       ],
+      "Add payment method": [
+        "Προσθέστε μέθοδο πληρωμής"
+      ],
       "Add phone number": [
         "Προσθήκη αριθμού τηλεφώνου"
       ],
@@ -201,6 +204,9 @@
       ],
       "Cancel subscription": [
         "Ακύρωση συνδρομής"
+      ],
+      "Cancel trial": [
+        "Ακύρωση δοκιμής"
       ],
       "Cancel trial and pay": [
         "Ακύρωση δοκιμής και πληρωμή"
@@ -1577,7 +1583,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -6243,6 +6250,9 @@
       ]
     },
     "Header": {
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Πριν από το ${ MAIL_APP_NAME }, ποια εφαρμογή ηλεκτρονικού ταχυδρομείου χρησιμοποιούσατε περισσότερο;"
+      ],
       "Contacts": [
         "Επαφές"
       ],
@@ -6284,6 +6294,9 @@
       ],
       "Username": [
         "Όνομα Χρήστη"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Ποιος είναι ο κύριος λόγος για τον οποίο εγγραφήκατε στο ${ MAIL_APP_NAME };"
       ]
     },
     "Hint": {
@@ -6723,6 +6736,9 @@
         "${ currentProgress } από ${ totalProgress }",
         "${ currentProgress } από ${ totalProgress }"
       ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } από ${ steps }"
+      ],
       "${ dateString } at ${ formattedTime }": [
         "${ dateString } για ${ formattedTime }"
       ],
@@ -6991,6 +7007,9 @@
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "Εγγύηση επιστροφής χρημάτων 30 ημερών: ακυρώστε εντός 30 ημερών από την αγορά σας και επικοινωνήστε με το ${ customerSupportLink } για να λάβετε επιστροφή χρημάτων."
       ],
+      "A new or separate address": [
+        "Μια νέα ή ξεχωριστή διεύθυνση"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ένας αριθμός τηλεφώνου μπορεί να χρησιμοποιηθεί μόνο για την επαλήθευση ενός λογαριασμού ${ BRAND_NAME }"
       ],
@@ -7002,6 +7021,9 @@
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Μια ασφαλής σύνδεση είναι απαραίτητη όταν εργάζεστε εξ αποστάσεως. Ένα VPN προστατεύει εταιρικά δεδομένα από απειλές στον κυβερνοχώρο και διατηρεί την εργασία σας ιδιωτική."
+      ],
+      "A specific feature (tell us)": [
+        "Ένα συγκεκριμένο χαρακτηριστικό (πείτε μας)"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Χρήστης νοείται ένας λογαριασμός συσχετισμένος με μοναδικό όνομα χρήστη, θυρίδα και πρόσωπο"
@@ -7104,6 +7126,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ maxContact }",
         "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ maxContact }"
+      ],
+      "Almost done": [
+        "Σχεδόν τελειώσαμε"
       ],
       "American Express SafeKey logo": [
         "λογότυπο American Express SafeKey"
@@ -7219,6 +7244,9 @@
       "Awaiting transaction": [
         "Εν αναμονή συναλλαγής"
       ],
+      "Back": [
+        "Πίσω"
+      ],
       "Background color": [
         "Χρώμα φόντου"
       ],
@@ -7293,6 +7321,12 @@
       ],
       "Choose a plan that works best for you.": [
         "Επιλέξτε το πλάνο που σας ταιριάζει καλύτερα."
+      ],
+      "Choose all that apply.": [
+        "Επιλέξτε όλα όσα ισχύουν."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Επιλέξτε ένα. Μας βοηθά να βελτιώσουμε το ${ MAIL_APP_NAME }."
       ],
       "Choose your service to connect with": [
         "Επιλέξτε την υπηρεσία σας για να συνδεθείτε"
@@ -7460,6 +7494,9 @@
       ],
       "Discover ProtectBuy logo": [
         "λογότυπο Discover ProtectBuy"
+      ],
+      "Dismiss": [
+        "Παράβλεψη"
       ],
       "Do you remember your password?": [
         "Θυμάστε τον κωδικό πρόσβασής σας;"
@@ -7795,6 +7832,12 @@
       "How hide-my-email aliases works": [
         "Πώς λειτουργούν τα hide-my-email ψευδώνυμα"
       ],
+      "I didn't have one": [
+        "Δεν είχα ένα"
+      ],
+      "I use other Proton products": [
+        "Χρησιμοποιώ άλλα προϊόντα της Proton"
+      ],
       "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
         "Θα ελέγξω την αλληλογραφία της περασμένης εβδομάδας και θα ξεχωρίσω ό,τι όντως απαιτεί απάντηση, ώστε να μπορέσετε να το διεκπεραιώσετε με τη μία."
       ],
@@ -8112,11 +8155,17 @@
       "newsletter": [
         "ενημερωτικό δελτίο"
       ],
+      "Next": [
+        "Επόμενο"
+      ],
       "Next time you sign in to your other account": [
         "Την επόμενη φορά που θα συνδεθείτε στον άλλο λογαριασμό σας"
       ],
       "No action selected": [
         "Δεν έχει επιλεγεί καμία ενέργεια"
+      ],
+      "No ads": [
+        "Χωρίς διαφημίσεις"
       ],
       "No booking pages yet": [
         "Δεν υπάρχουν ακόμα σελίδες κρατήσεων"
@@ -8226,6 +8275,9 @@
       "On public WiFi networks": [
         "Σε δημόσια δίκτυα WiFi"
       ],
+      "One last step": [
+        "Ένα τελευταίο βήμα"
+      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ένα η περισσότερα από τα αξιόπιστα κλειδιά σας έχουν επισημανθεί ως \"παραβιασμένα\" από τον κάτοχό τους. Σας συνιστούμε να τα επισημάνετε ως \"μη αξιόπιστα\"."
       ],
@@ -8255,6 +8307,9 @@
       ],
       "Organization size": [
         "Μέγεθος οργανισμού"
+      ],
+      "Other (tell us)": [
+        "Άλλο (πείτε μας)"
       ],
       "Other accounts": [
         "Άλλοι λογαριασμοί"
@@ -8406,6 +8461,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
         "Προστατέψτε τη διεύθυνσή σας από το να διαρρεύσει σε λίστες αλληλογραφίας ή ενοχλητικούς αποστολείς, με ${ hideMyEmailAliasesLink }."
+      ],
+      "Protection from hackers and leaks": [
+        "Προστασία από χάκερ και διαρροές"
       ],
       "Public sharing of documents is not yet supported.": [
         "Η δημόσια κοινή χρήση εγγράφων δεν υποστηρίζεται ακόμη."
@@ -8712,6 +8770,9 @@
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Ορισμένοι ιστότοποι και υπηρεσίες ροής αποκλείουν περιεχόμενο ανά περιοχή. Ένα VPN σάς επιτρέπει να παρακάμψετε αυτούς τους περιορισμούς και να έχετε ελεύθερη πρόσβαση στο διαδίκτυο."
       ],
+      "Someone recommended it": [
+        "Κάποιος το πρότεινε"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Λυπούμαστε, αυτό το μήνυμα δεν υπάρχει ή έχει ήδη λήξει."
       ],
@@ -8727,11 +8788,17 @@
       "Start sharing it with contacts and use it for online services.": [
         "Ξεκινήστε να το μοιράζεστε με επαφές και χρησιμοποιήστε το για ηλεκτρονικές υπηρεσίες."
       ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Ξεκινήστε να χρησιμοποιείτε το ${ MAIL_APP_NAME }"
+      ],
       "Start using the shorter, catchier version of your email address.": [
         "Ξεκινήστε να χρησιμοποιείτε τη συντομότερη, πιο πιασάρικη έκδοση της διεύθυνσης ηλεκτρονικού ταχυδρομείου σας."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Μείνετε συνδεδεμένοι χωρίς κόπο ενεργοποιώντας τις ακόλουθες ρυθμίσεις VPN:"
+      ],
+      "Stop companies reading my emails": [
+        "Σταματήστε τις εταιρείες από το να διαβάζουν τα μηνύματα ηλεκτρονικού ταχυδρομείου μου"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Ο περιηγητής σας δεν υποστηρίζει δυνατότητες αποθήκευσης. Χρειαζόμαστε αυτήν την υποστήριξη για να ενεργοποιήσουμε την αναζήτηση εντός του περιεχομένου μηνυμάτων."
@@ -8770,6 +8837,9 @@
       "Surveillance": [
         "Παρακολούθηση"
       ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "Οι απαντήσεις στην έρευνα δεν είναι κρυπτογραφημένες διατερματικά, παρακαλούμε μην κοινοποιείτε ευαίσθητες πληροφορίες."
+      ],
       "Symbols (#$&)": [
         "Σύμβολα (#$&)"
       ],
@@ -8778,6 +8848,9 @@
       ],
       "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
         "Πείτε μου πότε θα λείπετε και τι θα θέλατε να λέει, και θα δείτε το αποτέλεσμα πριν αποθηκευτεί."
+      ],
+      "Tell us more (optional)": [
+        "Πείτε μας περισσότερα (προαιρετικά)"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Προσωρινά μη διαθέσιμο λόγω υψηλής ζήτησης. Παρακαλούμε δοκιμάστε ξανά αργότερα."
@@ -9325,8 +9398,17 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Όταν ταξιδεύετε ή χρησιμοποιείτε δημόσιο WiFi, συνδεθείτε στο ${ VPN_APP_NAME } για να αποτρέψετε οποιονδήποτε από το να παρακολουθεί τη δραστηριότητά σας στο διαδίκτυο ή να κλέβει τα δεδομένα σας. Είναι δωρεάν."
       ],
+      "Which feature? (optional)": [
+        "Ποια λειτουργία; (προαιρετικό)"
+      ],
+      "Which provider?": [
+        "Ποιος πάροχος;"
+      ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "Με τις νέες κατηγορίες ηλεκτρονικών μηνυμάτων, μόνο τα σημαντικά μηνύματα καταλήγουν στον κύριο φάκελο εισερχομένων σας. Όλα τα άλλα οργανώνονται σε κατηγορίες."
+      ],
+      "Work or business": [
+        "Εργασία ή επιχείρηση"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
@@ -13094,8 +13176,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή πριν από τότε.** Θα μπορείτε να χρησιμοποιείτε το ${ planTitle } δωρεάν μέχρι τη λήξη της δοκιμαστικής περιόδου."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Αν συνεχίσετε μετά τη δοκιμαστική περίοδο,** μπορείτε να ακυρώσετε εντός 30 ημερών και να λάβετε επιστροφή χρημάτων κατ' αναλογία."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Αλλάξατε γνώμη μετά τη δοκιμαστική περίοδο;** Ακυρώστε εντός 30 ημερών από την πρώτη σας πληρωμή και θα σας επιστρέψουμε το αντίτιμο για το διάστημα που δε χρησιμοποιήσατε."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Μόλις ξεκινήσει η πλήρης συνδρομή σας...** Μπορείτε ακόμα να την ακυρώσετε εντός 30 ημερών και να λάβετε επιστροφή χρημάτων κατ' αναλογία."

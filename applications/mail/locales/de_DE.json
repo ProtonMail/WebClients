@@ -108,6 +108,9 @@
       "Add participant": [
         "Teilnehmer hinzufügen"
       ],
+      "Add payment method": [
+        "Zahlungsmethode hinzufügen"
+      ],
       "Add phone number": [
         "Telefonnummer hinzufügen"
       ],
@@ -201,6 +204,9 @@
       ],
       "Cancel subscription": [
         "Abonnement kündigen"
+      ],
+      "Cancel trial": [
+        "Testphase beenden"
       ],
       "Cancel trial and pay": [
         "Testversion beenden und bezahlen"
@@ -1577,7 +1583,8 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen"
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -6243,6 +6250,9 @@
       ]
     },
     "Header": {
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Welche E-Mail-Adresse haben Sie vor ${ MAIL_APP_NAME } am häufigsten genutzt?"
+      ],
       "Contacts": [
         "Kontakte"
       ],
@@ -6284,6 +6294,9 @@
       ],
       "Username": [
         "Benutzername"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Was war der Hauptgrund dafür, dass du dich bei ${ MAIL_APP_NAME } angemeldet hast?"
       ]
     },
     "Hint": {
@@ -6723,6 +6736,9 @@
         "${ currentProgress } von ${ totalProgress }",
         "${ currentProgress } von ${ totalProgress }"
       ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } von ${ steps }"
+      ],
       "${ dateString } at ${ formattedTime }": [
         "${ dateString } um ${ formattedTime }"
       ],
@@ -6991,6 +7007,9 @@
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30-Tage-Geld-zurück-Garantie: Kündige innerhalb von 30 Tagen nach dem Kauf und wende dich an unseren ${ customerSupportLink }, um eine Rückerstattung zu erhalten."
       ],
+      "A new or separate address": [
+        "Eine neue oder zusätzliche Adresse"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Eine Telefonnummer kann nur zum Verifizieren eines ${ BRAND_NAME }-Kontos verwendet werden."
       ],
@@ -7002,6 +7021,9 @@
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Eine sichere Verbindung ist unerlässlich, wenn du auswärts arbeitest. Ein VPN schützt Unternehmensdaten vor Cyber-Bedrohungen und hält deine Arbeit privat."
+      ],
+      "A specific feature (tell us)": [
+        "Eine bestimmte Funktion (bitte angeben)"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Ein Benutzer ist ein Konto, das mit einem einzigen Benutzernamen, einem Postfach und einer Person verbunden ist."
@@ -7104,6 +7126,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Alle deine Kontakte werden importiert, bis zu einer Obergrenze von ${ maxContact }.",
         "Alle deine Kontakte werden importiert, bis zu einer Obergrenze von ${ maxContact }."
+      ],
+      "Almost done": [
+        "Fast abgeschlossen"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey Logo"
@@ -7219,6 +7244,9 @@
       "Awaiting transaction": [
         "Warte auf Transaktion"
       ],
+      "Back": [
+        "Zurück"
+      ],
       "Background color": [
         "Hintergrundfarbe"
       ],
@@ -7293,6 +7321,12 @@
       ],
       "Choose a plan that works best for you.": [
         "Wähle ein Abonnement, das am besten für dich funktioniert."
+      ],
+      "Choose all that apply.": [
+        "Wähle alle zutreffende."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Wähle eine Option. Das hilft dabei, ${ MAIL_APP_NAME } weiter zu verbessern."
       ],
       "Choose your service to connect with": [
         "Deinen Dienst zum Verbinden auswählen"
@@ -7460,6 +7494,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy Logo"
+      ],
+      "Dismiss": [
+        "Verwerfen"
       ],
       "Do you remember your password?": [
         "Erinnerst du dich an dein Passwort?"
@@ -7795,6 +7832,12 @@
       "How hide-my-email aliases works": [
         "Wie Hide-my-email-Aliasse funktionieren"
       ],
+      "I didn't have one": [
+        "Ich hatte keins"
+      ],
+      "I use other Proton products": [
+        "Ich nutze andere Proton-Produkte"
+      ],
       "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
         "Ich werde die E-Mails der letzten Woche durchsehen und herausfiltern, was tatsächlich eine Antwort erfordert, damit du das alles auf einmal erledigen kannst."
       ],
@@ -7952,6 +7995,9 @@
       ],
       "Learn what to do ${ dataLeakedLink }": [
         "Erfahre, was zu tun ist ${ dataLeakedLink }"
+      ],
+      "Leave Big Tech": [
+        "Verlasse „Big Tech“-Unternehmen"
       ],
       "Left to Right": [
         "Von links nach rechts"
@@ -8112,11 +8158,17 @@
       "newsletter": [
         "Newsletter"
       ],
+      "Next": [
+        "Weiter"
+      ],
       "Next time you sign in to your other account": [
         "Wenn du dich das nächste Mal bei deinem anderen Konto anmeldest"
       ],
       "No action selected": [
         "Keine Aktion ausgewählt"
+      ],
+      "No ads": [
+        "Keine Werbung"
       ],
       "No booking pages yet": [
         "Bisher noch keine Buchungsseiten"
@@ -8226,6 +8278,9 @@
       "On public WiFi networks": [
         "In öffentlichen WLAN-Netzwerken"
       ],
+      "One last step": [
+        "Ein letzter Schritt"
+      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Einer oder mehrere deiner vertrauenswürdigen Schlüssel wurden durch dessen Besitzer als „kompromittiert“ gemeldet. Wir empfehlen dir, die betroffenen Schlüssel als „nicht vertrauenswürdig“ zu markieren."
       ],
@@ -8255,6 +8310,9 @@
       ],
       "Organization size": [
         "Organisationsgröße"
+      ],
+      "Other (tell us)": [
+        "Sonstiges (bitte angeben)"
       ],
       "Other accounts": [
         "Andere Konten"
@@ -8406,6 +8464,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
         "Schütze deine E-Mails mit ${ hideMyEmailAliasesLink } davor, an Mailinglisten oder Spammer weitergegeben zu werden."
+      ],
+      "Protection from hackers and leaks": [
+        "Schutz vor Hackern und Datenschutzverletzungen"
       ],
       "Public sharing of documents is not yet supported.": [
         "Die öffentliche Freigabe von Dokumenten wird noch nicht unterstützt."
@@ -8712,6 +8773,9 @@
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Einige Websites und Streaming-Dienste blockieren Inhalte je nach Region. Mit einem VPN kannst du diese Beschränkungen umgehen und frei auf das Internet zugreifen."
       ],
+      "Someone recommended it": [
+        "Wurde mir von empfohlen"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Entschuldigung, diese Nachricht existiert nicht oder ist bereits abgelaufen."
       ],
@@ -8727,11 +8791,17 @@
       "Start sharing it with contacts and use it for online services.": [
         "Gib es an deine Kontakte weiter und nutze es für Online-Dienste."
       ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Beginne, ${ MAIL_APP_NAME } zu nutzen"
+      ],
       "Start using the shorter, catchier version of your email address.": [
         "Verwende die kürzere, eingängigere Version deiner E-Mail-Adresse."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Bleibe mühelos verbunden, indem du die folgenden VPN-Einstellungen aktivierst:"
+      ],
+      "Stop companies reading my emails": [
+        "Verhindern, dass Unternehmen meine E-Mails lesen"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Speichermöglichkeiten werden von deinem Browser nicht unterstützt. Wir brauchen diese Unterstützung um die Suche nach Nachrichteninhalten zu aktivieren."
@@ -8770,6 +8840,9 @@
       "Surveillance": [
         "Überwachung"
       ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "Antworten auf Umfrage sind nicht durchgehend verschlüsselt. Bitte gib keine vertraulichen Informationen weiter."
+      ],
       "Symbols (#$&)": [
         "Symbole (#$&)"
       ],
@@ -8778,6 +8851,9 @@
       ],
       "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
         "Sag mir, wann du weg bist und was dort stehen soll, und du siehst das Ganze, bevor es gespeichert wird."
+      ],
+      "Tell us more (optional)": [
+        "Erzähle uns mehr (optional)"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Vorübergehend wegen hoher Nachfrage nicht verfügbar. Bitte versuche es später nochmals."
@@ -9325,8 +9401,17 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Wenn du auf Reisen bist oder ein öffentliches WLAN nutzt, verbinde dich mit ${ VPN_APP_NAME }, um zu verhindern, dass jemand deine Online-Aktivitäten verfolgt oder deine Daten stiehlt. Es ist kostenlos."
       ],
+      "Which feature? (optional)": [
+        "Welche Funktion? (optional)"
+      ],
+      "Which provider?": [
+        "Welcher Anbieter?"
+      ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "Mit neuen E-Mail-Kategorien landen nur wichtige Nachrichten in deinem Haupt-Posteingang. Alles andere wird in Kategorien organisiert."
+      ],
+      "Work or business": [
+        "Arbeit oder Geschäft"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchtest du einen neuen Verifizierungscode anfordern oder eine alternative Verifizierungsmethode verwenden?"
@@ -13094,8 +13179,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Jederzeit vorher kündigen.** Du kannst ${ planTitle } bis zum Ende der Testversion kostenlos nutzen."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Wenn du nach Ablauf der Testversion fortfährst,** kannst du innerhalb von 30 Tagen kündigen und erhältst eine anteilige Rückerstattung."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Hast du nach der Testphase deine Meinung geändert?** Kündige innerhalb von 30 Tagen nach deiner ersten Zahlung, und wir erstatten dir die nicht genutzte Zeit."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Sobald dein volles Abonnement beginnt,** kannst du immer noch innerhalb von 30 Tagen kündigen und eine anteilige Rückerstattung erhalten."
@@ -14946,7 +15031,7 @@
         "Senden planen"
       ],
       "This is now your default address. Open the dropdown to send from a different address. ": [
-        "Das ist jetzt deine Standard-E-Mail-Adresse. Öffne das Dropdown-Menü, um von einer anderen Adresse zu versenden."
+        "Das ist jetzt deine Standard-E-Mail-Adresse. Öffne das Dropdown-Menü, um von einer anderen Adresse zu versenden. "
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
         "Aktiviere ${ DARK_WEB_MONITORING_NAME }, um benachrichtigt zu werden, wenn deine Daten von einem Service eines Drittanbieters entwendet wurden."

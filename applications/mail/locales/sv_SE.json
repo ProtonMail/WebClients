@@ -108,6 +108,9 @@
       "Add participant": [
         "Lägg till deltagare"
       ],
+      "Add payment method": [
+        "Lägg till betalningsmetod"
+      ],
       "Add phone number": [
         "Lägg till telefonnummer"
       ],
@@ -970,6 +973,9 @@
       "Move": [
         "Flytta"
       ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the left": [
+        "Flytta ${ LUMO_SHORT_APP_NAME } till vänster"
+      ],
       "Move all to archive": [
         "Flytta alla till arkiv"
       ],
@@ -1562,7 +1568,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -6664,6 +6671,9 @@
         "${ currentProgress } av ${ totalProgress }",
         "${ currentProgress } av ${ totalProgress }"
       ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } av ${ steps }"
+      ],
       "${ dateString } at ${ formattedTime }": [
         "${ dateString } kl. ${ formattedTime }"
       ],
@@ -6923,6 +6933,9 @@
       "1 vault per user": [
         "1 valv per användare"
       ],
+      "A new or separate address": [
+        "En ny eller separat adress"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ett telefonnummer kan endast användas för att verifiera ett ${ BRAND_NAME }-konto"
       ],
@@ -6931,6 +6944,9 @@
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "En säker anslutning är avgörande när du arbetar på distans. Ett VPN skyddar företagsdata från cyberhot och håller ditt arbete privat."
+      ],
+      "A specific feature (tell us)": [
+        "En specifik funktion (berätta)"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "En användare är ett konto som är associerat till ett enda användarnamn, brevlåda och person"
@@ -7030,6 +7046,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Alla dina kontakter kommer att importeras, upp till en gräns på ${ maxContact }",
         "Alla dina kontakter kommer att importeras, upp till en gräns på ${ maxContact }"
+      ],
+      "Almost done": [
+        "Nästan klar"
       ],
       "American Express SafeKey logo": [
         "Logga för American Express SafeKey"
@@ -7141,6 +7160,9 @@
       ],
       "Awaiting transaction": [
         "Väntar på transaktion"
+      ],
+      "Back": [
+        "Tillbaka"
       ],
       "Background color": [
         "Bakgrundsfärg"
@@ -7371,6 +7393,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logga för Discover ProtectBuy"
+      ],
+      "Dismiss": [
+        "Avfärda"
       ],
       "Do you remember your password?": [
         "Kommer du ihåg ditt lösenord?"
@@ -7676,6 +7701,9 @@
       "How hide-my-email aliases works": [
         "Hur hide-my-email-alias fungerar"
       ],
+      "I use other Proton products": [
+        "Jag använder andra Proton-produkter"
+      ],
       "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
         "Jag tittar på vad du får mest av och de mappar och filter du redan har, och kommer därefter med förslag på vad som kan förbättras och vad som saknas. Ingenting flyttas utan din tillåtelse."
       ],
@@ -7828,6 +7856,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Lär dig vad du ska göra ${ dataLeakedLink }"
       ],
+      "Leave Big Tech": [
+        "Lämna Big Tech"
+      ],
       "Left to Right": [
         "Vänster till höger"
       ],
@@ -7975,11 +8006,17 @@
       "newsletter": [
         "nyhetsbrev"
       ],
+      "Next": [
+        "Nästa"
+      ],
       "Next time you sign in to your other account": [
         "Nästa gång du loggar in på ditt andra konto"
       ],
       "No action selected": [
         "Ingen åtgärd vald"
+      ],
+      "No ads": [
+        "Ingen reklam"
       ],
       "No change will be made to the selected emails": [
         "Inga ändringar kommer att göras för de valda e-postmeddelandena"
@@ -8077,6 +8114,9 @@
       "On public WiFi networks": [
         "På offentliga WiFi-nätverk"
       ],
+      "One last step": [
+        "Ett sista steg"
+      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flera av dina betrodda nycklar markerades som \"läckta\" av dess ägare. Vi rekommenderar att du återkallar \"lita\" på dessa nycklar."
       ],
@@ -8106,6 +8146,9 @@
       ],
       "Organization size": [
         "Organisationens storlek"
+      ],
+      "Other (tell us)": [
+        "Annat (berätta)"
       ],
       "Other accounts": [
         "Andra konton"
@@ -8257,6 +8300,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
         "Skydda din e-post från att läcka ut till e-postlistor eller skräppostare med ${ hideMyEmailAliasesLink }."
+      ],
+      "Protection from hackers and leaks": [
+        "Skydd från hackare och läckor"
       ],
       "Public sharing of documents is not yet supported.": [
         "Offentlig delning av dokument stöds ännu inte."
@@ -8530,17 +8576,26 @@
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Vissa webbplatser och streamingtjänster blockerar innehåll efter region. Med ett VPN kan du kringgå dessa begränsningar och få fri tillgång till internet."
       ],
+      "Someone recommended it": [
+        "Någon rekommenderar det"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Detta meddelande finns inte eller har redan löpt ut."
       ],
       "Source document in encrypted search index": [
         "Källdokument i krypterat sökindex"
       ],
+      "Star ${ emails }": [
+        "Stjärnmärk ${ emails }"
+      ],
       "Star emails": [
         "Stjärnmärk e-post"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Börja dela den med kontakter och använd den för onlinetjänster."
+      ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Börja använda ${ MAIL_APP_NAME }"
       ],
       "Start using the shorter, catchier version of your email address.": [
         "Börja använda den kortare, klatschigare versionen av din e-postadress."
@@ -8590,6 +8645,9 @@
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synkronisera och hantera filer med ${ DRIVE_APP_NAME }-appen. Skapa och dela dokument i ${ DOCS_APP_NAME } och lagra dem säkert. Allt på ${ ios }, ${ android } och ${ desktop }."
+      ],
+      "Tell us more (optional)": [
+        "Berätta mer (valfritt)"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Tillfälligt otillgänglig på grund av hög efterfrågan. Försök igen senare."
@@ -9115,6 +9173,12 @@
       ],
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "När du reser eller använder offentligt WiFi, anslut till ${ VPN_APP_NAME } för att förhindra att någon spårar din aktivitet online eller stjäl din data. Det är gratis."
+      ],
+      "Which feature? (optional)": [
+        "Vilken funktion? (valfritt)"
+      ],
+      "Which provider?": [
+        "Vilken leverantör?"
       ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "Med nya e-postkategorier hamnar endast viktiga meddelanden i din primära inkorg. Allt annat organiseras i kategorier."

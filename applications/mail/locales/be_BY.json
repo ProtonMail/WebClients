@@ -108,6 +108,9 @@
       "Add participant": [
         "Дадаць удзельніка"
       ],
+      "Add payment method": [
+        "Дадаць спосаб аплаты"
+      ],
       "Add phone number": [
         "Дадаць нумар тэлефона"
       ],
@@ -203,6 +206,9 @@
       ],
       "Cancel subscription": [
         "Скасаваць падпіску"
+      ],
+      "Cancel trial": [
+        "Скасаваць пробны перыяд"
       ],
       "Cancel trial and pay": [
         "Скасаваць пробны перыяд і купіць падпіску"
@@ -1585,7 +1591,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -1958,6 +1967,9 @@
       ],
       "Managed Service Provider": [
         "Пастаўшчык кіраваных паслуг"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Арганізацыі з дадатковым кампанентам «Пастаўшчык кіраваных паслуг» могуць стварыць і кіраваць дапаможнымі арганізацыямі."
       ],
       "Servers": [
         "Серверы"
@@ -2453,6 +2465,11 @@
       ],
       "Take a tour": [
         "Пачаць знаёмства"
+      ]
+    },
+    "BYOE": {
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Вашы самыя апошнія лісты будуць імпартаваны першымі. Ужо імпартаваныя лісты паўторна капіявацца не будуць."
       ]
     },
     "Calendar attachment tooltip": {
@@ -4305,11 +4322,17 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае некаторыя групы. Паглядзіце, як неабходна імпартаваць такія групы."
       ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Дазвольце людзям браніраваць час з вамі непасрэдна з вашых лістоў, без лішняй перапіскі."
+      ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Дазваляе імгненна дадаваць спасылкі на сустрэчы ў вашыя запрашэнні на падзеі."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Аб'яднанне кантактаў... Гэта можа заняць некалькі хвілін. Калі працэс будзе завершаны, вы зможаце закрыць гэта акно."
+      ],
+      "Move emails to the right category to improve categorization.": [
+        "Перамяшчайце лісты ў правільную катэгорыю, каб палепшыць катэгарызацыю."
       ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
         "Новыя лісты ад ${ senderEmailAddress } і яшчэ ад ${ otherSendersCount } адпраўніка не будуць дастаўляцца, а замест гэтага будуць незваротна выдалены.",
@@ -5502,6 +5525,9 @@
       "You must set a name": [
         "Вы павінны задаць назву"
       ],
+      "You reached the maximum number of connected addresses": [
+        "Вы дасягнулі абмежавання па колькасці падключаных адрасоў"
+      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Вы дасягнулі максімальнай колькасці сімвалаў. Скараціце сваё паведамленне."
       ],
@@ -6337,6 +6363,9 @@
       ]
     },
     "Header": {
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Да ${ MAIL_APP_NAME }, якім сэрвісам электроннай пошты вы пераважна карысталіся?"
+      ],
       "Contacts": [
         "Кантакты"
       ],
@@ -6378,6 +6407,9 @@
       ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Якая асноўная прычына таго, што вы далучыліся да ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -6859,6 +6891,9 @@
         "${ currentProgress } з ${ totalProgress }",
         "${ currentProgress } з ${ totalProgress }"
       ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } з ${ steps }"
+      ],
       "${ dateString } at ${ formattedTime }": [
         "${ dateString } у ${ formattedTime }"
       ],
@@ -7162,6 +7197,9 @@
       "(No Recipient)": [
         "(без атрымальніка)"
       ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "Адрас электроннай пошты **${ emailAddress }** таксама выкарыстоўваецца для ўваходу ў асобны ўліковы запіс ${ BRAND_NAME } па-за межамі ${ MAIL_APP_NAME }."
+      ],
       "**${ total }** result found in ${ labelName }": [
         "**${ total }** вынік знойдзены ў ${ labelName }",
         "**${ total }** вынікі знойдзены ў ${ labelName }",
@@ -7189,14 +7227,23 @@
       "1 vault per user": [
         "1 сховішча на карыстальніка"
       ],
+      "A new or separate address": [
+        "Новы асобны адрас"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Нумар тэлефона можа быць выкарыстаны для спраўджання аднаго ўліковага запісу ${ BRAND_NAME }"
+      ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "Кароткі агляд таго, што я магу зрабіць у вашай паштовай скрыні (ад пошуку старых лістоў і напісання адказаў), а таксама таго, што я не магу рабіць."
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "Запыт на скасаванне падпіскі ад гэтага спіса рассылкі будзе адпраўлены адпраўніку рассылкі і апрацаваны аўтаматычна."
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Бяспечнае падключэнне неабходна пры аддаленай працы. VPN абараняе даныя кампаніі ад кіберпагроз і захоўвае прыватнасць вашай працы."
+      ],
+      "A specific feature (tell us)": [
+        "Пэўная функцыя (падзяліцеся з намі)"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Карыстальнік - гэта ўліковы запіс, які звязаны з асобным імем карыстальніка, паштовай скрыняй і асобай"
@@ -7255,6 +7302,9 @@
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "Рэкламадаўцы адсочваюць, якія вэб-старонкі вы наведваеце для паказу мэтавай рэкламы. ${ VPN_APP_NAME } блакіруе праграмы адсочвання і рэкламу, робіць ваша падключэнне хутчэйшым і паляпшае працу ў інтэрнэце."
       ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Ваш Mac можа папрасіць увесці пароль пасля абнаўлення. Увядзіце свой бягучы пароль для яго разблакіроўкі, а потым націсніце «Заўсёды дазваляць» (гэта дазволіць заставацца ў сістэме). ${ learnMore }"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Асістэнт ШІ дапаможа вам хутка і без намаганняў ствараць лепшыя лісты."
       ],
@@ -7302,6 +7352,9 @@
         "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }",
         "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }",
         "Усе вашы кантакты будуць імпартаваны, але не больш за ${ maxContact }"
+      ],
+      "Almost done": [
+        "Амаль гатова"
       ],
       "American Express SafeKey logo": [
         "Лагатып American Express SafeKey"
@@ -7423,6 +7476,9 @@
       "Awaiting transaction": [
         "Чаканне трансакцыі"
       ],
+      "Back": [
+        "Назад"
+      ],
       "Background color": [
         "Колер фону"
       ],
@@ -7497,6 +7553,12 @@
       ],
       "Choose a plan that works best for you.": [
         "Выберыце тарыфны план, які найлепш вам пасуе."
+      ],
+      "Choose all that apply.": [
+        "Выбраць усё, што прымяніма."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Выберыце адзін з варыянтаў. Гэта дапаможа нам удасканаліць ${ MAIL_APP_NAME }."
       ],
       "Choose your service to connect with": [
         "Выберыце сэрвіс для падключэння"
@@ -7657,6 +7719,9 @@
       "Did you know? We've reserved a shorter email address just for you. It's your username followed by “@${ PM_DOMAIN }”.": [
         "Ці ведаеце вы, што мы зарэзервавалі кароткі адрас электроннай пошты адмыслова для вас. Гэта ваша імя карыстальніка перад @${ PM_DOMAIN }”?"
       ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Ваша падпіска будзе аўтаматычна падаўжацца па стандартнай гадавой стаўцы пасля заканчэння перыяду аплаты."
+      ],
       "Discover new features unlocked and start using them right away!": [
         "Пазнаёмцеся з новымі функцыямі і пачніце выкарыстоўваць іх неадкладна!"
       ],
@@ -7665,6 +7730,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
+      ],
+      "Dismiss": [
+        "Адхіліць"
       ],
       "Do you remember your password?": [
         "Вы памятаеце свой пароль?"
@@ -7996,8 +8064,14 @@
       "Here's what happens when you continue:": [
         "Вось што адбудзецца, калі вы працягнеце:"
       ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Паслухай, Lumo! Паглядзі, што часцей за ўсё прыходзіць у маю паштовую скрыню, якія папкі і фільтры ў мяне ўжо ёсць, а потым парай спосаб падтрымання парадку: што змяніць або дадаць у тых рэчах, якія ў мяне ўжо ёсць. Спачатку давай абмяркуем план без ніякіх дзеянняў. Не варта нічога перамяшчаць пакуль я не дам згоду на гэта."
+      ],
       "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
         "Паслухай, Lumo! Я пакідаю офіс і хачу наладзіць адказ «Няма на месцы». Спытай мяне пра даты і што там павінна быць напісана, а потым пакажы мне само паведамленне перад яго ўключэннем."
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Вітаю, Lumo! Знайдзі мае лісты за апошнія 7 дзён і скажы, якія сапраўды патрабуюць адказу. Напішы, што ў кожным з іх запытана, і не пішы тое, што можна праігнараваць."
       ],
       "Hide original message": [
         "Схаваць арыгінальнае паведамленне"
@@ -8007,6 +8081,15 @@
       ],
       "How hide-my-email aliases works": [
         "Як працуюць псеўданімы Hide-my-email"
+      ],
+      "I didn't have one": [
+        "Няма нічога з гэтага"
+      ],
+      "I use other Proton products": [
+        "Я выкарыстоўваю іншыя прадукты Proton"
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Я прагледжу пошту мінулага тыдня і выберу толькі тыя лісты, на якія сапраўды варта адказаць. Такім чынам вы зможаце разабрацца з імі адразу."
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Я адпраўляю гэта паведамленне карыстальніку па-за сэрвісам ${ MAIL_APP_NAME }."
@@ -8164,6 +8247,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Даведайцеся, што рабіць ${ dataLeakedLink }"
       ],
+      "Leave Big Tech": [
+        "Развітайцеся з буйнымі тэхналагічнымі кампаніямі"
+      ],
       "Left to Right": [
         "Злева направа"
       ],
@@ -8320,11 +8406,17 @@
       "newsletter": [
         "рассылка"
       ],
+      "Next": [
+        "Далей"
+      ],
       "Next time you sign in to your other account": [
         "Наступны раз уваход будзе выкананы ў ваш іншы ўліковы запіс"
       ],
       "No action selected": [
         "Дзеянне не выбрана"
+      ],
+      "No ads": [
+        "Без рэкламы"
       ],
       "No booking pages yet": [
         "Старонкі браніравання пакуль адсутнічаюць"
@@ -8413,6 +8505,9 @@
       "Not supported by this browser": [
         "Не падтрымліваецца гэтым браўзерам"
       ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "У вашым іншым уліковым запісе ${ BRAND_NAME } нічога не зменіцца."
+      ],
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
       ],
@@ -8427,6 +8522,9 @@
       ],
       "On public WiFi networks": [
         "У грамадскіх сетках Wi-Fi"
+      ],
+      "One last step": [
+        "Яшчэ адзін крок"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як \"скампраметаваныя\". Рэкамендуецца не давяраць гэтым ключам."
@@ -8457,6 +8555,9 @@
       ],
       "Organization size": [
         "Памер арганізацыі"
+      ],
+      "Other (tell us)": [
+        "Іншае (падзяліцеся з намі)"
       ],
       "Other accounts": [
         "Іншыя ўліковыя запісы"
@@ -8554,6 +8655,9 @@
       "Please try again using a different payment method, or contact your bank.": [
         "Паўтарыце спробу, скарыстайцеся іншым спосабам аплаты або звярніцеся ў службу падтрымкі кліентаў вашага банка."
       ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Абнавіце ${ MAIL_APP_NAME }, каб мець магчыма далей карыстацца праграмай. ${ downloadUpdate }"
+      ],
       "Please use another browser or download the file.": [
         "Скарыстайцеся іншым браўзерам або спампуйце файл."
       ],
@@ -8607,6 +8711,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
         "Абараняйце сваю электронную пошту ад уцечкі ў спіс рассылкі або спамераў з дапамогай ${ hideMyEmailAliasesLink }."
+      ],
+      "Protection from hackers and leaks": [
+        "Абарона ад хакераў і ўцечак"
       ],
       "Public sharing of documents is not yet supported.": [
         "Публічнае абагульванне дакументаў пакуль не падтрымліваецца."
@@ -8929,8 +9036,14 @@
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Некаторыя вэб-сайты і сэрвісы з трансляцыямі блакіруюць змесціва па рэгіёнах. VPN дазваляе абысці гэтыя абмежаванні і атрымаць свабодны доступ у інтэрнэт."
       ],
+      "Someone recommended it": [
+        "Нехта рэкамендаваў гэта"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Прабачце, але гэтага паведамлення не існуе або яно ўжо пратэрмінавана."
+      ],
+      "Source document in encrypted search index": [
+        "Зыходны дакумент у зашыфраваным індэксе пошуку"
       ],
       "Star ${ emails }": [
         "Пазначыць ${ emails }"
@@ -8941,11 +9054,17 @@
       "Start sharing it with contacts and use it for online services.": [
         "Пачніце абагульваць яго са сваімі кантактамі і выкарыстоўваць для сэрвісаў у інтэрнэце."
       ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Пачаць выкарыстоўваць ${ MAIL_APP_NAME }"
+      ],
       "Start using the shorter, catchier version of your email address.": [
         "Выбірайце кароткі і запамінальны адрас электроннай пошты."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Уключыце наступныя налады VPN, каб заставацца падключанымі без асаблівых намаганняў:"
+      ],
+      "Stop companies reading my emails": [
+        "Забараніць кампаніям чытаць мае лісты"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Магчымасці сховішча не падтрымліваюцца ў гэтым браўзеры. Гэта падтрымка неабходна, каб уключыць пошук па змесціве."
@@ -8986,11 +9105,17 @@
       "Surveillance": [
         "Назіранне"
       ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "Адказы апытання не шыфруюцца скразным метадам. Не абагульвайце ў іх любую канфідэнцыяльную інфармацыю."
+      ],
       "Symbols (#$&)": [
         "Сімвалы (#$&)"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Сінхранізуйце і кіруйце файламі з дапамогай праграмы ${ DRIVE_APP_NAME }. Стварайце і абагульвайце дакументы ў ${ DOCS_APP_NAME }, а потым бяспечна захоўвайце іх. Праграмы даступны для ${ ios }, ${ android } і ${ desktop }."
+      ],
+      "Tell us more (optional)": [
+        "Падзяліцеся дадатковай інфармацыяй (неабавязкова)"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Часова недаступна з прычыны высокага попыту. Паўтарыце спробу пазней."
@@ -9544,8 +9669,17 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Падключайцеся да ${ VPN_APP_NAME }, каб прадухіліць адсочванне вашай актыўнасці ў інтэрнэце або крадзеж вашых даных падчас падарожжаў або выкарыстання публічных сетак Wi-Fi. Гэта абсалютна бясплатна."
       ],
+      "Which feature? (optional)": [
+        "Якую функцыю? (неабавязкова)"
+      ],
+      "Which provider?": [
+        "Які пастаўшчык?"
+      ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "З новымі катэгорыямі электроннай пошты толькі важныя паведамленні трапляюць у асноўную паштовую скрыню. Усё астатняе размяркоўваецца па катэгорыях."
+      ],
+      "Work or business": [
+        "Праца або бізнес"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ці хочаце вы атрымаць новы код спраўджання або скарыстацца альтэрнатыўным спосабам праверкі?"
@@ -9840,6 +9974,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Яе падаўжэнне адбудзецца: ${ nextBillingDate }."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Ваш Gmail падключаны да гэтага адраса ${ MAIL_APP_NAME }"
       ],
       "Your hardware doesn't support running the writing assistant locally. Try running it on servers.": [
         "Ваша абсталяванне не падтрымлівае памочніка ў напісанні. Паспрабуйце запусціць яго на серверы."
@@ -13444,8 +13581,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Скасаваць падпіску можна ў любы час да гэтай даты.** Вы зможаце карыстацца тарыфным планам ${ planTitle } бясплатна да канца пробнага перыяду."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Калі вы працягніце пасля пробнага перыяду,** вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Змянілі сваё меркаванне пасля пробнага перыяду?** Вы можаце скасаваць падпіску на працягу 30 дзён з моманту першага плацяжу, і вам будуць вернуты грошы за нявыкарыстаны час."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Пасля таго, як пачнецца ваша поўная падпіска...** Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
@@ -13773,6 +13910,12 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (з улікам падатку)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } не можа быць аб'яднаны з ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } даступна толькі на тарыфных планах, якія арыентаваны на бізнес."
+      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "Падатак у памеры ${ rate }%: ${ taxAmountElement }"
       ],
@@ -13842,11 +13985,20 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Спосаб аплаты патрабуецца для актывацыі падпіскі пасля завяршэння пробнага перыяду."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Змена тарыфнага плана несумяшчальная па наступнай прычыне:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Закрыйце ўліковыя запісы дадатковых кашалькоў перад змяненнем вашага тарыфнага плана."
       ],
+      "Please close extra wallets before changing your plan.": [
+        "Закрыйце дадатковыя кашалькі перад змяненнем свайго тарыфнага плана."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Ліцэнзіі Proton Meet павінны адпавядаць колькасці ўдзельнікаў."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Кошт падаўжэння можа быць зменены ў адпаведнасці з ${ termsAndConditionsLink }."
@@ -13871,6 +14023,9 @@
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць адрасоў для вашага ўліковага запісу."
       ],
       "The selected plan doesn’t offer enough domains for your account.": [
         "Выбраны тарыфны план не прапануе дастатковую колькасць даменаў для вашага ўліковага запісу."
@@ -13920,11 +14075,23 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Гэта дзеянне пашырае існуючую падпіску. З вас будзе спагнана плата толькі за новыя дадаткі і час, якія засталіся ў бягучым перыядзе аплаты. Дата падаўжэння вашай падпіскі не будзе зменена."
       ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Гэты вылучаны сервер прызначаны шлюзу і не можа быць зменены."
+      ],
       "This offer is not available with your current plan.": [
         "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Гэты спосаб аплаты стане новым прадвызначаным спосабам для ўсіх будучых падаўжэнняў."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Гэты тарыфны план не падтрымлівае кіруемыя функцыі ў вашым уліковым запісе."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Гэты тарыфны план не падтрымлівае ўдзельнікаў у вашым уліковым запісе."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Гэта падпіска не можа быць завершана цяпер. Паўтарыце спробу зноў."
       ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
@@ -13955,6 +14122,9 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас ужо ёсць падпіска на гэты тарыфны план. Вы можаце змяніць сваю падпіску на ${ subscriptionPlatform }."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "У вас ужо ёсць ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
       "You already own a Born Private account.": [
         "Вы ўжо валодаеце ўліковым запісам Born Private."
