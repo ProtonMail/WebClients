@@ -269,6 +269,17 @@ describe('useLiveEditing', () => {
     expect(editorInvoker.changeLockedState).toHaveBeenLastCalledWith(false)
   })
 
+  test('an admin keeps editing at the participant limit', () => {
+    const fake = createFakeSession({ status: { name: 'connected' } })
+    const editorInvoker = createEditorInvoker()
+    const { rerender } = renderLiveEditing({ session: fake.session, editorInvoker, role: 'Admin' })
+
+    rerender({ editorInvoker, participantLimitReached: true })
+
+    expect(editorInvoker.changeLockedState).toHaveBeenCalledTimes(1)
+    expect(editorInvoker.changeLockedState).toHaveBeenLastCalledWith(false)
+  })
+
   test('with several causes at once, the editor stays locked until the last one clears', () => {
     const fake = createFakeSession({ status: { name: 'connected' } })
     const editorInvoker = createEditorInvoker()

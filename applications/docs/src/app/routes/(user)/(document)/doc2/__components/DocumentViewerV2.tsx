@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react'
 
 import { useConfig } from '@proton/app-context/useConfig'
 import { EditorSystemMode } from '@proton/docs-shared/EditorSystemMode'
@@ -12,6 +12,7 @@ import { useApplication } from '~/utils/application-context'
 import { useDebugMode } from '~/utils/debug-mode-context'
 
 import { ClientEditorBridge } from '../__utils/ClientEditorBridge'
+import { isParticipantLimitReached } from '../__utils/activeUsers'
 import type { EditorInvoker } from '../__utils/EditorInvoker'
 import { createClientHandler } from '../__utils/createClientHandler'
 import { handleFileMenuAction, openHelp } from '../__utils/handleFileMenuAction'
@@ -79,7 +80,19 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
     [logger, toggleDebugMode],
   )
 
-  const snapshot = useLiveEditing({ session, editorInvoker, role, roleReads, onEditorError: failEditor })
+  // Read here too, since useLiveEditing takes the participant limit and only then returns the snapshot
+  const participants = useSyncExternalStore(
+    session?.subscribe ?? subscribeToNothing,
+    () => session?.getSnapshot().participants,
+  )
+  const snapshot = useLiveEditing({
+    session,
+    editorInvoker,
+    role,
+    roleReads,
+    participantLimitReached: isParticipantLimitReached(participants ?? []),
+    onEditorError: failEditor,
+  })
   usePauseWhileAway(session)
   const waitingForActivity = useRetryOnActivity(session)
   useStopFollowUps(session, showModal)
@@ -215,6 +228,7 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
     <DocumentHeaderV2
       node={node}
       role={role}
+      participants={participants ?? []}
       editorInvoker={editorInvoker}
       wordCount={wordCount}
       onFileMenuAction={onFileMenuAction}
@@ -242,3 +256,5 @@ export function DocumentViewerV2({ nodeMeta, onRetry }: DocumentViewerV2Props) {
     </DocumentShell>
   )
 }
+
+const subscribeToNothing = () => () => {}

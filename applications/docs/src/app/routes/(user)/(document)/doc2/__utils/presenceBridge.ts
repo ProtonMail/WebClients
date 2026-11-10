@@ -12,7 +12,7 @@ export type PeerClocks = ReadonlyMap<number, { clock: number; state: string | nu
  * position, and throws on undefined ones, so a state without both, such as the `{}` every y-protocols awareness holds
  * until Lexical sets its own, must never reach an editor.
  */
-function isUserState(state: JsonValue): boolean {
+export function isUserState(state: JsonValue): boolean {
   return typeof state === 'object' && state !== null && 'anchorPos' in state && 'focusPos' in state
 }
 
