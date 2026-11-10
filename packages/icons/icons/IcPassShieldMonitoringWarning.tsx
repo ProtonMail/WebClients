@@ -1,11 +1,11 @@
 /*
  * This file is auto-generated. Do not modify it manually!
  */
-import React from 'react';
+import { type SVGProps, forwardRef } from 'react';
 
 import type { IconSize } from '../types';
 
-interface IconProps extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
+interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'ref'> {
     /** If specified, renders an sr-only element for screenreaders */
     alt?: string;
     /** If specified, renders an inline title element */
@@ -17,7 +17,7 @@ interface IconProps extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
     size?: IconSize;
 }
 
-export const IcPassShieldMonitoringWarning = React.forwardRef<SVGSVGElement, IconProps>(
+export const IcPassShieldMonitoringWarning = forwardRef<SVGSVGElement, IconProps>(
     function IcPassShieldMonitoringWarning(
         { alt, title, size = 4, className = '', viewBox = '0 0 16 16', ...rest },
         ref

@@ -1,8 +1,8 @@
-import React from 'react';
+import { type SVGProps, forwardRef } from 'react';
 
 import type { IconSize } from '../types';
 
-interface IconProps extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
+interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'ref'> {
     /** If specified, renders an sr-only element for screenreaders */
     alt?: string;
     /** If specified, renders an inline title element */
@@ -15,7 +15,7 @@ interface IconProps extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
 }
 
 {{! forwardRef so ref-based anchors such as Tooltip work on React 18; React 19 still supports it. }}
-export const {{iconName}} = React.forwardRef<SVGSVGElement, IconProps>(function {{iconName}}(
+export const {{iconName}} = forwardRef<SVGSVGElement, IconProps>(function {{iconName}}(
     { alt, title, size = 4, className = '', viewBox = '0 0 16 16', ...rest },
     ref
 ) {
