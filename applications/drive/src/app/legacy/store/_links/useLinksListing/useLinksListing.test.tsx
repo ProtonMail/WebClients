@@ -32,20 +32,6 @@ jest.mock('../../_api/useDebouncedRequest', () => {
     return useDebouncedRequest;
 });
 
-jest.mock('../../_events/useDriveEventManager', () => {
-    const useDriveEventManager = () => {
-        return {
-            eventHandlers: {
-                register: () => 'id',
-                unregister: () => false,
-            },
-        };
-    };
-    return {
-        useDriveEventManager,
-    };
-});
-
 jest.mock('../../_crypto/useDriveCrypto', () => {
     const useDriveCrypto = () => {
         return {};

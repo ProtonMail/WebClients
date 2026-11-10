@@ -15,7 +15,6 @@ import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase'
 import chunk from '@proton/utils/chunk';
 
 import useDebouncedRequest from '../_api/useDebouncedRequest';
-import { useDriveEventManager } from '../_events';
 import useLink from '../_links/useLink';
 import useLinksState from '../_links/useLinksState';
 import useShare from './useShare';
@@ -29,7 +28,6 @@ export default function useShareActions() {
     const { getLink, getLinkPassphraseAndSessionKey, getLinkPrivateKey } = useLink();
     const { removeLinkForMigration } = useLinksState();
     const { getShareCreatorKeys, getShare, getShareSessionKey } = useShare();
-    const events = useDriveEventManager();
     const createShare = async (abortSignal: AbortSignal, shareId: string, volumeId: string, linkId: string) => {
         const [{ address, privateKey: addressPrivateKey }, { passphraseSessionKey }, link, linkPrivateKey] =
             await Promise.all([
@@ -128,8 +126,6 @@ export default function useShareActions() {
             )
         );
 
-        await events.pollEvents.volumes(volumeId);
-
         return {
             shareId: Share.ID,
             addressId: address.ID,
@@ -142,7 +138,6 @@ export default function useShareActions() {
         { force, silence }: { force?: boolean; silence?: boolean } = { force: false }
     ): Promise<void> => {
         await preventLeave(debouncedRequest(queryDeleteShare(shareId, { Force: force ? 1 : 0, silence })));
-        await events.pollEvents.driveEvents();
     };
 
     // Migrate old user shares encrypted with AddressPrivateKey with new one encrypted with LinkPrivateKey (NodeKey)
@@ -213,6 +208,7 @@ export default function useShareActions() {
                 }
                 return resolve(null);
             }),
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         [debouncedRequest, getLinkPrivateKey, getShare, getShareSessionKey]
     );
 

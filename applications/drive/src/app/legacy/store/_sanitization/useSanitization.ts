@@ -6,13 +6,10 @@ import {
 import { generateNodeHashKey } from '@proton/shared/lib/keys/driveKeys';
 
 import { useDebouncedRequest } from '../_api';
-import { useDriveEventManager } from '../_events';
 import { useLink } from '../_links';
 
 export const useSanitization = () => {
     const debouncedRequest = useDebouncedRequest();
-
-    const driveEventManager = useDriveEventManager();
 
     const { getLinkPrivateKey } = useLink();
 
@@ -55,9 +52,6 @@ export const useSanitization = () => {
         await debouncedRequest<{
             Code: number;
         }>(querySendNodesWithNewNodeHashKeys({ NodesWithMissingNodeHashKey: nodesWithNewNodeHashKey }), abortSignal);
-
-        const volumeIds = nodesWithMissingNodeHashKey.map((node) => node.VolumeID);
-        await driveEventManager.pollEvents.volumes(volumeIds);
     };
 
     return { restoreHashKey };

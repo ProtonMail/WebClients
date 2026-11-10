@@ -34,10 +34,9 @@ import GiftFloatingButton from '../legacy/components/onboarding/GiftFloatingButt
 import { ActiveShareProvider } from '../legacy/hooks/drive/useActiveShare';
 import { useReactRouterNavigationLog } from '../legacy/hooks/util/useReactRouterNavigationLog';
 import { useRedirectToPublicPage } from '../legacy/hooks/util/useRedirectToPublicPage';
-import { DriveProvider, useActivePing, useDriveEventManager } from '../legacy/store';
+import { DriveProvider, useActivePing } from '../legacy/store';
 import { useSanitization } from '../legacy/store/_sanitization/useSanitization';
 import { useDriveSharingFlags, useShareActions } from '../legacy/store/_shares';
-import { useShareBackgroundActions } from '../legacy/store/_views/useShareBackgroundActions';
 import { useVolumesState } from '../legacy/store/_volumes';
 import { useRunningFreeUploadTimer } from '../modules/freeUpload';
 import { useSearchModule } from '../modules/search';
@@ -83,9 +82,7 @@ function InitContainer() {
     const [defaultShareRoot, setDefaultShareRoot] =
         useState<typeof DEFAULT_VOLUME_INITIAL_STATE>(DEFAULT_VOLUME_INITIAL_STATE);
     const searchEnabled = isSearchFeatureEnabled();
-    const driveEventManager = useDriveEventManager();
     const { isDirectSharingDisabled } = useDriveSharingFlags();
-    const { convertExternalInvitationsFromEvents } = useShareBackgroundActions();
     // TODO: Remove this and migrate to SDK
     const { addBookmarkFromPrivateApp } = useBookmarksActions();
     const { redirectionReason, redirectToPublicPage, cleanupUrl } = useRedirectToPublicPage();
@@ -174,15 +171,7 @@ function InitContainer() {
         return () => {
             abortController.abort();
         };
-    }, []);
-
-    useEffect(() => {
-        const callbackId = driveEventManager.eventHandlers.register((_volumeId, events, processedEventCounter) =>
-            convertExternalInvitationsFromEvents(events, processedEventCounter)
-        );
-        return () => {
-            driveEventManager.eventHandlers.unregister(callbackId);
-        };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const freeUploadOverModal = useRunningFreeUploadTimer(defaultShareRoot.createTime);

@@ -16,19 +16,6 @@ jest.mock('@proton/components/hooks/usePreventLeave', () => {
     return usePreventLeave;
 });
 
-jest.mock('../_events/useDriveEventManager', () => {
-    const useDriveEventManager = () => {
-        return {
-            pollEvents: {
-                volumes: () => Promise.resolve(),
-            },
-        };
-    };
-    return {
-        useDriveEventManager,
-    };
-});
-
 jest.mock('./useLinksState', () => {
     const useLinksState = () => {
         return {

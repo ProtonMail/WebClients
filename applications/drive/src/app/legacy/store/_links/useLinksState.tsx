@@ -1,11 +1,8 @@
-import { createContext, useCallback, useContext, useEffect, useState } from 'react';
+import { createContext, useCallback, useContext, useState } from 'react';
 
-import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { DriveEvent, DriveEvents } from '../_events';
-import { useDriveEventManager } from '../_events';
 import type { DecryptedLink, EncryptedLink, LinkShareUrl, SignatureIssues } from './interface';
 import { isDecryptedLinkSame, isEncryptedLinkSame } from './link';
 
@@ -45,18 +42,7 @@ export function isLinkDecrypted(link: Link | undefined): link is Required<Link> 
  * useLinksStateProvider provides a storage to cache links.
  */
 export function useLinksStateProvider() {
-    const eventsManager = useDriveEventManager();
-
     const [state, setState] = useState<LinksState>({});
-
-    useEffect(() => {
-        const callbackId = eventsManager.eventHandlers.register((_volumeId, events, processedEventCounter) =>
-            setState((state) => updateByEvents(state, events, processedEventCounter))
-        );
-        return () => {
-            eventsManager.eventHandlers.unregister(callbackId);
-        };
-    }, []);
 
     const setLinks = useCallback((shareId: string, links: Link[]) => {
         setState((state) => addOrUpdate(state, shareId, links));
@@ -208,71 +194,6 @@ export function useLinksStateProvider() {
         /** Should never be used outside of `drive-store`. */
         removeLinkForDriveCompat,
     };
-}
-
-export function updateByEvents(
-    state: LinksState,
-    { events, eventId }: DriveEvents,
-    processedEventcounter: (eventId: string, event: DriveEvent) => void
-): LinksState {
-    // Create a new state object to avoid mutations
-    let newState = { ...state };
-
-    // Sort events to ensure consistent ordering
-    // Process DELETE events last to avoid race conditions
-    const sortedEvents = [...events].sort((a, b) => {
-        if (a.eventType === EVENT_TYPES.DELETE) {
-            return 1;
-        }
-        if (b.eventType === EVENT_TYPES.DELETE) {
-            return -1;
-        }
-        return 0;
-    });
-
-    sortedEvents.forEach((event) => {
-        if (event.eventType === EVENT_TYPES.DELETE) {
-            // Delete event does not contain context share ID because
-            // the link is already deleted and backend might not know
-            // it anymore. There might be two links in mulitple shares
-            // with the same link IDs, but it is very rare, and it can
-            // happen in user cache only with direct sharing. Because
-            // the risk is almost zero, it is simply deleting all the
-            // links with the given ID. In future when we have full sync
-            // we will have storage mapped with volumes instead removing
-            // the problem altogether.
-            newState = Object.keys(newState).reduce((acc, shareId) => {
-                return deleteLinks(acc, shareId, [event.encryptedLink.linkId], () => {
-                    processedEventcounter(eventId, event);
-                });
-            }, newState);
-            return;
-        }
-
-        // If link is moved from one share to the another one, we need
-        // to delete it from the original one too. It is not very efficient
-        // as it will delete the decrypted content. But this is rare and
-        // it will be solved in the future with volume-centric approach
-        // as described above.
-        if (
-            event.originShareId &&
-            event.encryptedLink.rootShareId !== event.originShareId &&
-            newState[event.originShareId]
-        ) {
-            newState = deleteLinks(newState, event.originShareId, [event.encryptedLink.linkId], () => {
-                processedEventcounter(eventId, event);
-            });
-        }
-
-        if (!newState[event.encryptedLink.rootShareId]) {
-            return state;
-        }
-        newState = addOrUpdate(newState, event.encryptedLink.rootShareId, [{ encrypted: event.encryptedLink }], () => {
-            processedEventcounter(eventId, event);
-        });
-    });
-
-    return newState;
 }
 
 export function deleteLinks(state: LinksState, shareId: string, linkIds: string[], onDelete?: () => void): LinksState {

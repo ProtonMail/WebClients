@@ -1,7 +1,5 @@
 export { DriveProvider } from './DriveProvider';
 
-export { useDriveEventManager } from './_events';
-export * from './_invitations/interface';
 export * from './_links/interface';
 export { usePhotosRecovery } from './_photos';
 export { AlbumTag } from './_photos/interface';
