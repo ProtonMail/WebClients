@@ -60,6 +60,8 @@ let lastUsedMethod: ViewPaymentMethod;
 
 let allMethods: ViewPaymentMethod[];
 
+const viewMethods = (methods: Pick<ViewPaymentMethod, 'icon' | 'text' | 'value'>[]) => methods as ViewPaymentMethod[];
+
 const WrappedPaymentsNoApi = applyHOCs(
     withApi(),
     withConfig(),
@@ -115,7 +117,7 @@ beforeEach(() => {
     ];
 
     options = {
-        usedMethods: [
+        usedMethods: viewMethods([
             {
                 icon: IcBrandVisa,
                 text: 'Visa ending in 4242',
@@ -138,8 +140,8 @@ beforeEach(() => {
                 // disabled: false,
                 // custom: true,
             },
-        ] as ViewPaymentMethod[],
-        methods: [
+        ]),
+        methods: viewMethods([
             {
                 icon: IcCreditCard,
                 value: 'card',
@@ -150,7 +152,7 @@ beforeEach(() => {
                 text: 'Cash',
                 value: 'cash',
             },
-        ] as ViewPaymentMethod[],
+        ]),
     };
 
     lastUsedMethod = options.usedMethods[options.usedMethods.length - 1];

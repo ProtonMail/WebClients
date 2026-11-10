@@ -222,9 +222,7 @@ export const MeetingRow = ({
                                     tooltipClassName="meet-tooltip bg-strong color-norm"
                                     tooltipStyle={{ '--meet-tooltip-bg': 'var(--background-strong)' }}
                                 >
-                                    <div>
-                                        <IcArrowsRotate className="color-hint" size={4} />
-                                    </div>
+                                    <IcArrowsRotate className="color-hint" size={4} />
                                 </Tooltip>
                             )}
                         </div>

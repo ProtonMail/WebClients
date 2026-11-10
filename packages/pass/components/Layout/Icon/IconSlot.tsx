@@ -1,4 +1,4 @@
-import type { FC, ReactElement } from 'react';
+import { type FC, type ReactElement, isValidElement } from 'react';
 
 import type { IconComponent, IconComponentProps } from '@proton/icons/component';
 
@@ -6,7 +6,9 @@ import type { Maybe } from '../../../types/utils';
 
 export type IconSlotValue = IconComponent | ReactElement;
 
-export const isIconComponent = (icon: Maybe<IconSlotValue>): icon is IconComponent => typeof icon === 'function';
+// Not `typeof icon === 'function'`: generated Ic* icons are forwardRef objects.
+export const isIconComponent = (icon: Maybe<IconSlotValue>): icon is IconComponent =>
+    icon != null && !isValidElement(icon);
 
 type Props = IconComponentProps & { icon: Maybe<IconSlotValue> };
 

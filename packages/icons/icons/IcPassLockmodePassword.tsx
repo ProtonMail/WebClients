@@ -5,7 +5,7 @@ import React from 'react';
 
 import type { IconSize } from '../types';
 
-interface IconProps extends React.SVGProps<SVGSVGElement> {
+interface IconProps extends Omit<React.SVGProps<SVGSVGElement>, 'ref'> {
     /** If specified, renders an sr-only element for screenreaders */
     alt?: string;
     /** If specified, renders an inline title element */
@@ -17,17 +17,14 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
     size?: IconSize;
 }
 
-export const IcPassLockmodePassword = ({
-    alt,
-    title,
-    size = 4,
-    className = '',
-    viewBox = '0 0 16 16',
-    ...rest
-}: IconProps) => {
+export const IcPassLockmodePassword = React.forwardRef<SVGSVGElement, IconProps>(function IcPassLockmodePassword(
+    { alt, title, size = 4, className = '', viewBox = '0 0 16 16', ...rest },
+    ref
+) {
     return (
         <>
             <svg
+                ref={ref}
                 viewBox={viewBox}
                 className={`icon-size-${size} ${className}`}
                 role="img"
@@ -43,4 +40,4 @@ export const IcPassLockmodePassword = ({
             {alt ? <span className="sr-only">{alt}</span> : null}
         </>
     );
-};
+});

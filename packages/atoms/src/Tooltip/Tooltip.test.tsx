@@ -1,6 +1,10 @@
+import { createRef } from 'react';
+
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import type { UserEvent } from '@testing-library/user-event';
 import userEvent from '@testing-library/user-event';
+
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 
 import { Tooltip } from './Tooltip';
 
@@ -132,6 +136,16 @@ describe('Tooltip', () => {
         expect(screen.queryByTestId('tooltip-1')).toBeNull();
         fireEvent.animationEnd(screen.getByTestId('tooltip-2'), { animationName: 'anime-tooltip-out-last' });
         expect(screen.queryByTestId('tooltip-2')).toBeNull();
+    });
+
+    it('should anchor on a generated icon child', () => {
+        const ref = createRef<HTMLElement>();
+        render(
+            <Tooltip ref={ref} title="World">
+                <IcInfoCircle data-testid="icon" />
+            </Tooltip>
+        );
+        expect(ref.current).toBe(screen.getByTestId('icon'));
     });
 
     describe('focusVisibleOnly', () => {

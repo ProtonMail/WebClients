@@ -59,9 +59,7 @@ const ServerDown = () => (
 export const P2PIcon = () => (
     <span className="mx-2 cursor-default">
         <Tooltip title={c('Info').t`P2P`} openDelay={250}>
-            <div>
-                <IcArrowRightArrowLeft size={4.5} className="rounded bg-strong p-1" />
-            </div>
+            <IcArrowRightArrowLeft size={4.5} className="rounded bg-strong p-1" />
         </Tooltip>
     </span>
 );
@@ -69,9 +67,7 @@ export const P2PIcon = () => (
 export const TorIcon = () => (
     <span className="mx-2 cursor-default">
         <Tooltip title={c('Info').t`Tor`} openDelay={250}>
-            <div>
-                <IcBrandTor size={4.5} className="rounded bg-strong p-1" />
-            </div>
+            <IcBrandTor size={4.5} className="rounded bg-strong p-1" />
         </Tooltip>
     </span>
 );
@@ -90,9 +86,7 @@ export const SmartRoutingIcon = ({ countries }: { countries: (string | undefined
     return (
         <span className="mx-2 cursor-default">
             <Tooltip title={title} openDelay={0}>
-                <div>
-                    <IcGlobe size={4.5} className="rounded bg-strong p-1" />
-                </div>
+                <IcGlobe size={4.5} className="rounded bg-strong p-1" />
             </Tooltip>
         </span>
     );

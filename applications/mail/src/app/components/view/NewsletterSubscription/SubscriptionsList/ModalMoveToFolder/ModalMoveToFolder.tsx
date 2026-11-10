@@ -14,6 +14,7 @@ import { InputField as InputFieldTwo } from '@proton/components/components/v2/fi
 import FolderIcon from '@proton/components/containers/labels/FolderIcon';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
+import type { IconComponent } from '@proton/icons/component';
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcFire } from '@proton/icons/icons/IcFire';
@@ -49,6 +50,20 @@ const BoldFolderName = ({ name }: { name: string }) => {
     return <strong>{name}</strong>;
 };
 
+const toSystemFolderItem = (ID: string, Name: string, icon: IconComponent): FolderItem => ({
+    ID,
+    Name,
+    icon,
+    Color: '',
+    Path: '',
+    Expanded: 0,
+    Type: LABEL_TYPE.SYSTEM_FOLDER,
+    Order: 0,
+    Notify: 0,
+    LastUnseenMessageEventID: null,
+    level: 0,
+});
+
 export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...props }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
@@ -77,27 +92,11 @@ export const ModalMoveToFolder = ({ subscription, handleUpsellModalDisplay, ...p
 
     const treeView = list
         .concat([
-            {
-                ID: MAILBOX_LABEL_IDS.INBOX,
-                Name: c('Mailbox').t`Inbox`,
-                icon: IcInbox,
-            },
-            {
-                ID: MAILBOX_LABEL_IDS.ARCHIVE,
-                Name: c('Mailbox').t`Archive`,
-                icon: IcArchiveBox,
-            },
-            {
-                ID: MAILBOX_LABEL_IDS.SPAM,
-                Name: c('Mailbox').t`Spam`,
-                icon: IcFire,
-            },
-            {
-                ID: MAILBOX_LABEL_IDS.TRASH,
-                Name: c('Mailbox').t`Trash`,
-                icon: IcTrash,
-            },
-        ] as FolderItem[])
+            toSystemFolderItem(MAILBOX_LABEL_IDS.INBOX, c('Mailbox').t`Inbox`, IcInbox),
+            toSystemFolderItem(MAILBOX_LABEL_IDS.ARCHIVE, c('Mailbox').t`Archive`, IcArchiveBox),
+            toSystemFolderItem(MAILBOX_LABEL_IDS.SPAM, c('Mailbox').t`Spam`, IcFire),
+            toSystemFolderItem(MAILBOX_LABEL_IDS.TRASH, c('Mailbox').t`Trash`, IcTrash),
+        ])
         .filter((folder) => {
             if (!words) {
                 return true;

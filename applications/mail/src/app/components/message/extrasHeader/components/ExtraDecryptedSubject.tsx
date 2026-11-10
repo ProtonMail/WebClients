@@ -38,9 +38,7 @@ const ExtraDecryptedSubject = ({ message }: Props) => {
             variant="norm-outline"
             icon={
                 <Tooltip title={c('Info').t`Subject is end-to-end encrypted`}>
-                    <span>
-                        <IcLock alt={c('Info').t`Subject is end-to-end encrypted`} />
-                    </span>
+                    <IcLock alt={c('Info').t`Subject is end-to-end encrypted`} />
                 </Tooltip>
             }
         >

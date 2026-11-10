@@ -67,9 +67,7 @@ const RewardCell = ({ referral, hasReachedRewardLimit, hasCompletedReferral }: P
             {reward}
             {tooltip && (
                 <Tooltip title={tooltip}>
-                    <span>
-                        <IcInfoCircle className="ml-2 color-primary" size={4} />
-                    </span>
+                    <IcInfoCircle className="ml-2 color-primary" size={4} />
                 </Tooltip>
             )}
         </div>
