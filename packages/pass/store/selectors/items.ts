@@ -108,7 +108,7 @@ export const selectItemWithOptimistic = <T extends ItemType = ItemType>(shareId:
 
 export const selectItemsByShareId = (shareId?: string) =>
     createSelector(selectItems, (items): ItemRevision[] =>
-        flattenItemsByShareId(shareId && items[shareId] ? { [shareId]: items[shareId] } : items).filter(isActive)
+        flattenItemsByShareId(shareId ? { [shareId]: items[shareId] ?? {} } : items).filter(isActive)
     );
 
 export const selectItemsInFolder = (shareId: string, folderId: MaybeNull<string>) =>

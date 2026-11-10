@@ -28,42 +28,49 @@ export const ConfirmVaultMove: FC<Props> = ({ targetShareId, targetFolderId, sha
     const sameVault = targetShareId === shareId;
 
     return (
-        <WithVault shareId={targetShareId} onFallback={onCancel}>
-            {({ content: { name: vaultName } }) => {
-                const target = targetFolder ? `${vaultName} > ${targetFolder.name}` : vaultName;
+        <WithVault shareId={shareId} onFallback={onCancel}>
+            {() => (
+                <WithVault shareId={targetShareId} onFallback={onCancel}>
+                    {({ content: { name: vaultName } }) => {
+                        const target = targetFolder ? `${vaultName} > ${targetFolder.name}` : vaultName;
 
-                return (
-                    <ConfirmationPrompt
-                        onCancel={onCancel}
-                        onConfirm={onConfirm}
-                        title={c('Title').t`Move all items to "${target}"?`}
-                        message={
-                            <div className="flex flex-column gap-y-2">
-                                {!sameVault && (
-                                    <span>
-                                        {c('Info')
-                                            .t`When moving items between vaults we will preserve up to the last 50 modifications performed to each item.`}
-                                    </span>
-                                )}
-
-                                {!sameVault && hasLinks && (
-                                    <span>{c('Info').t`Moving items to another vault will erase their secure links.`}</span>
-                                )}
-
-                                {folders.length > 0 && (
-                                    <span>
-                                        {c('Info').ngettext(
-                                            msgid`Only ${count} item will be moved. Items in folders will not be moved.`,
-                                            `Only ${count} items will be moved. Items in folders will not be moved.`,
-                                            count
+                        return (
+                            <ConfirmationPrompt
+                                onCancel={onCancel}
+                                onConfirm={onConfirm}
+                                title={c('Title').t`Move all items to "${target}"?`}
+                                message={
+                                    <div className="flex flex-column gap-y-2">
+                                        {!sameVault && (
+                                            <span>
+                                                {c('Info')
+                                                    .t`When moving items between vaults we will preserve up to the last 50 modifications performed to each item.`}
+                                            </span>
                                         )}
-                                    </span>
-                                )}
-                            </div>
-                        }
-                    />
-                );
-            }}
+
+                                        {!sameVault && hasLinks && (
+                                            <span>
+                                                {c('Info')
+                                                    .t`Moving items to another vault will erase their secure links.`}
+                                            </span>
+                                        )}
+
+                                        {folders.length > 0 && (
+                                            <span>
+                                                {c('Info').ngettext(
+                                                    msgid`Only ${count} item will be moved. Items in folders will not be moved.`,
+                                                    `Only ${count} items will be moved. Items in folders will not be moved.`,
+                                                    count
+                                                )}
+                                            </span>
+                                        )}
+                                    </div>
+                                }
+                            />
+                        );
+                    }}
+                </WithVault>
+            )}
         </WithVault>
     );
 };
