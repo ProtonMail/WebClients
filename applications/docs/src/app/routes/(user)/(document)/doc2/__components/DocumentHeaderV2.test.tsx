@@ -1,5 +1,6 @@
 import { act, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import type { ReactNode } from 'react'
 
 import { ConfigContext } from '@proton/app-context/configContext'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config'
@@ -24,6 +25,12 @@ describe('DocumentHeaderV2', () => {
     expect(screen.getByTestId('docs-home-link')).toHaveAttribute('href', 'http://docs.localhost')
     expect(screen.getByText('Title menu')).toBeInTheDocument()
     expect(screen.getByText('User menu')).toBeInTheDocument()
+  })
+
+  test('shows the status next to the title menu, before the view-only pill', () => {
+    renderHeader('Viewer', <output>Saving…</output>)
+
+    expect(screen.getByTestId('status-container')).toHaveTextContent(/^Saving…View only$/)
   })
 
   test('a Viewer sees the view-only pill and no comments button', () => {
@@ -51,7 +58,7 @@ describe('DocumentHeaderV2', () => {
   )
 })
 
-function renderHeader(role: DocumentRole) {
+function renderHeader(role: DocumentRole, status?: ReactNode) {
   render(
     <ConfigContext.Provider value={{ APP_VERSION: '1.2.3', APP_NAME: 'proton-docs' } as ProtonConfig}>
       <DocumentHeaderV2
@@ -60,6 +67,7 @@ function renderHeader(role: DocumentRole) {
         editorInvoker={undefined}
         wordCount={{ isShown: false, setIsShown: jest.fn() }}
         onFileMenuAction={jest.fn()}
+        status={status}
       />
     </ConfigContext.Provider>,
   )

@@ -1,7 +1,7 @@
 import { act, renderHook, waitFor } from '@testing-library/react'
 import type { ReactNode } from 'react'
 
-import type { Refusal, Session } from '@proton-docs/realtime-sdk'
+import type { Refusal, Session, SessionSnapshot, SessionStatus } from '@proton-docs/realtime-sdk'
 
 import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/application-context'
 
@@ -28,20 +28,24 @@ function createEditorInvoker() {
   }
 }
 
+type EditorInvokerMock = ReturnType<typeof createEditorInvoker>
+type LiveEditingProps = { editorInvoker?: EditorInvokerMock; participantLimitReached?: boolean }
+
 function renderLiveEditing({
   session,
   editorInvoker,
   role = 'Editor',
 }: {
   session: Session
-  editorInvoker?: ReturnType<typeof createEditorInvoker>
+  editorInvoker?: EditorInvokerMock
   role?: DocumentRole
 }) {
   const onEditorError = jest.fn()
-  const hook = renderHook(({ editorInvoker }) => useLiveEditing({ session, editorInvoker, role, onEditorError }), {
-    wrapper,
-    initialProps: { editorInvoker },
-  })
+  const hook = renderHook(
+    ({ editorInvoker, participantLimitReached }: LiveEditingProps) =>
+      useLiveEditing({ session, editorInvoker, role, participantLimitReached, onEditorError }),
+    { wrapper, initialProps: { editorInvoker } as LiveEditingProps },
+  )
   return { ...hook, onEditorError }
 }
 
@@ -206,15 +210,69 @@ describe('useLiveEditing', () => {
     expect(editorInvoker.changeLockedState).toHaveBeenLastCalledWith(true)
   })
 
-  test('locks the editor while the session is paused, and unlocks it once resumed', () => {
+  // Editing while offline (ADR-0012): the SDK's outbox carries what is typed until the session connects again
+  test.each<SessionStatus>([
+    { name: 'paused' },
+    { name: 'reconnecting', condition: 'transient', nextAttemptAt: 0, budgetExpiresAt: 0 },
+    { name: 'connecting' },
+    { name: 'closed' },
+  ])('keeps the editor editable while the session is %j with work waiting', (status) => {
     const fake = createFakeSession({ status: { name: 'connected' } })
     const editorInvoker = createEditorInvoker()
     renderLiveEditing({ session: fake.session, editorInvoker })
 
-    act(() => fake.setSnapshot({ status: { name: 'paused' } }))
+    act(() => fake.setSnapshot({ status, delivery: 'pending' }))
+    act(() => fake.setSnapshot({ delivery: 'degraded' }))
+
+    expect(editorInvoker.changeLockedState).toHaveBeenCalledTimes(1)
+    expect(editorInvoker.changeLockedState).toHaveBeenLastCalledWith(false)
+  })
+
+  test.each<[string, Partial<SessionSnapshot>]>([
+    ['a stopped session', { status: { name: 'stopped', condition: 'transient', retryable: true } }],
+    ['a failed delivery', { delivery: 'failed' }],
+    ['a size-locked session', { editing: { allowed: false, reason: 'sizeLocked' } }],
+    ['an incomplete base state', { editing: { allowed: false, reason: 'incompleteBaseState' } }],
+  ])('%s alone locks the editor, and the lock lifts once it clears', (_, cause) => {
+    const fake = createFakeSession({ status: { name: 'connected' } })
+    const editorInvoker = createEditorInvoker()
+    renderLiveEditing({ session: fake.session, editorInvoker })
+
+    act(() => fake.setSnapshot(cause))
     expect(editorInvoker.changeLockedState).toHaveBeenLastCalledWith(true)
 
-    act(() => fake.setSnapshot({ status: { name: 'connecting' } }))
+    act(() => fake.setSnapshot({ status: { name: 'connected' }, delivery: 'synced', editing: { allowed: true } }))
+    expect(editorInvoker.changeLockedState).toHaveBeenLastCalledWith(false)
+  })
+
+  test('the participant limit locks the editor, and the lock lifts once it clears', () => {
+    const fake = createFakeSession({ status: { name: 'connected' } })
+    const editorInvoker = createEditorInvoker()
+    const { rerender } = renderLiveEditing({ session: fake.session, editorInvoker })
+
+    rerender({ editorInvoker, participantLimitReached: true })
+    expect(editorInvoker.changeLockedState).toHaveBeenLastCalledWith(true)
+
+    rerender({ editorInvoker, participantLimitReached: false })
+    expect(editorInvoker.changeLockedState).toHaveBeenLastCalledWith(false)
+  })
+
+  test('with several causes at once, the editor stays locked until the last one clears', () => {
+    const fake = createFakeSession({ status: { name: 'connected' } })
+    const editorInvoker = createEditorInvoker()
+    const { rerender } = renderLiveEditing({ session: fake.session, editorInvoker })
+
+    act(() =>
+      fake.setSnapshot({
+        status: { name: 'stopped', condition: 'transient', retryable: true },
+        editing: { allowed: false, reason: 'stopped' },
+      }),
+    )
+    rerender({ editorInvoker, participantLimitReached: true })
+    act(() => fake.setSnapshot({ status: { name: 'connected' }, editing: { allowed: true } }))
+    expect(editorInvoker.changeLockedState).toHaveBeenLastCalledWith(true)
+
+    rerender({ editorInvoker, participantLimitReached: false })
     expect(editorInvoker.changeLockedState).toHaveBeenLastCalledWith(false)
   })
 

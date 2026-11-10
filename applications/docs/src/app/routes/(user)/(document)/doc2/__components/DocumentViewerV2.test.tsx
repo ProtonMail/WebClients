@@ -49,11 +49,18 @@ jest.mock('./DocumentHeaderV2', () => ({
     node,
     role,
     editorInvoker,
+    status,
   }: {
     node: { uid: string }
     role: string
     editorInvoker?: object
-  }) => <div>{`Header for ${node.uid} as ${role}, ${editorInvoker ? 'with' : 'without'} the editor`}</div>,
+    status?: ReactNode
+  }) => (
+    <div>
+      {`Header for ${node.uid} as ${role}, ${editorInvoker ? 'with' : 'without'} the editor`}
+      {status}
+    </div>
+  ),
 }))
 
 jest.mock('./OpenActionError', () => ({
@@ -192,7 +199,7 @@ describe('DocumentViewerV2', () => {
 
   test.each<[SessionStatus, string]>([
     [{ name: 'reconnecting', condition: 'transient', nextAttemptAt: 0, budgetExpiresAt: 0 }, 'Reconnecting…'],
-    [{ name: 'stopped', condition: 'transient', retryable: true }, 'The connection to the server was lost.'],
+    [{ name: 'stopped', condition: 'transient', retryable: true }, 'Read-onlyThe connection to the server was lost.'],
   ])('keeps loading while %j before catching up, and shows "%s"', async (status, text) => {
     const fake = createSession()
     renderViewer(fake)
@@ -203,6 +210,29 @@ describe('DocumentViewerV2', () => {
 
     expect(screen.getByTestId('session-status')).toHaveTextContent(text)
     expect(mockEditorCalls).not.toContain('initializeEditor')
+  })
+
+  test('shows the status pills in the header, and asks before leaving until every edit is delivered', async () => {
+    const fake = createSession()
+    const { unmount } = renderViewer(fake)
+    await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
+    const leave = () => {
+      const event = new Event('beforeunload', { cancelable: true })
+      window.dispatchEvent(event)
+      return event.defaultPrevented
+    }
+
+    act(() => fake.setSnapshot({ status: { name: 'connected' }, caughtUp: true, delivery: 'pending' }))
+    expect(screen.getByTestId('shell-header')).toContainElement(screen.getByTestId('session-status'))
+    expect(screen.getByTestId('session-status')).toHaveAttribute('data-delivery', 'pending')
+    expect(leave()).toBe(true)
+
+    act(() => fake.setSnapshot({ delivery: 'synced' }))
+    expect(leave()).toBe(false)
+
+    act(() => fake.setSnapshot({ delivery: 'pending' }))
+    unmount()
+    expect(leave()).toBe(false)
   })
 
   test('a stopped session before catching up can be retried, and the editor shows once it catches up', async () => {
