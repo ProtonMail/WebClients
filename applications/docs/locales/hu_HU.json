@@ -792,6 +792,9 @@
       "Verify account": [
         "Fiók ellenőrzése"
       ],
+      "Verify now": [
+        "Ellenőrizze most"
+      ],
       "View": [
         "Megtekintés"
       ],
@@ -929,6 +932,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "A próbaidőszak ekkor ér véget: ${ formattedDate1 }, ezután havi előfizetésre alakul át, ami automatikusan megújul ${ renewCycle } havonta. Akkor nem kerül díj felszámításra, ha lemondja ${ formattedDate2 } előtt."
+      ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "A próbaidőszak ekkor ér véget: ${ formattedDate1 }, ezután automatikusan megújuló havi előfizetésre alakul át. Akkor nem kerül díj felszámításra, ha lemondja ${ formattedDate2 } előtt."
       ],
@@ -2833,6 +2839,9 @@
       "No contacts found to import": [
         "Nincs importálandó névjegy"
       ],
+      "No drive found to import": [
+        "Nem található meghajtó az importáláshoz"
+      ],
       "No emails found to import - the account does not have an inbox": [
         "Nincs importálandó e-mail - a fiókban nincsenek beérkezett levelek"
       ],
@@ -3004,6 +3013,9 @@
       ],
       "Unexpected error, we can't import the contacts": [
         "Váratlan hiba történt, a névjegyek importálása nem sikerült"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Váratlan hiba, nem tudjuk importálni a fájlokat"
       ],
       "Unknown error": [
         "Ismeretlen hiba"
@@ -3381,6 +3393,9 @@
     "fido2: Info": {
       "Security key": [
         "Hitelesítési kulcs"
+      ],
+      "Still waiting?": [
+        "Még mindíg várakozik?"
       ]
     },
     "fido2: Label": {
@@ -3926,6 +3941,9 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Vészkapcsoló**: Megállítja az adatszivárgást azáltal, hogy blokkolja az internetet, ha a VPN kapcsolat váratlanul megszakad."
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**${ refereeRewardAmount }-t kapnak** kreditként, ha előfizetnek."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Egy telefonszám csak egy ${ BRAND_NAME } fiók ellenőrzéséhez használható"
@@ -4958,6 +4976,9 @@
       "Don't show this again": [
         "Ne jelenjen meg többet"
       ],
+      "Drive": [
+        "Drive"
+      ],
       "Editor": [
         "Szerkesztő"
       ],
@@ -5720,6 +5741,9 @@
       "Data breach monitoring": [
         "Adatvédelmi incidensek figyelése"
       ],
+      "Data retention policies": [
+        "Adatmegőrzési házirendek"
+      ],
       "Desktop app": [
         "Asztali alkalmazás"
       ],
@@ -5958,6 +5982,9 @@
       "Vault sharing with up to ${ n } person": [
         "Tároló megosztás ${ n } személlyel",
         "Tároló megosztás akár ${ n } személlyel"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN, hirdetésblokkolóval és rosszindulatú programok elleni védelemmel"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Átvizsgáljuk a sötét webet, hogy ellenőrizzük, kiszivárogtak-e a ${ BRAND_NAME } címei vagy e-mail álnevei, és azonnal értesítjük, ha bármit találunk."
@@ -6315,6 +6342,11 @@
         "${ n } saját e-mail domain név használata"
       ]
     },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Most már használhatja az új ${ CALENDAR_APP_NAME }-t. ${ link }"
+      ]
+    },
     "Notification": {
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" véglegesen törölve a lomtárból"
@@ -6583,6 +6615,9 @@
       " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
         "látogassa meg: ${ helpCenterLink } vagy ${ contactSupportLink }."
       ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Adjon meg egy fizetési módot**, hogy a próbaidőszak után is használhassa az összes funkciót."
+      ],
       "Cancel anytime before ${ cancelDate }.": [
         "Bármikor lemondhatja ${ cancelDate } előtt."
       ],
@@ -6603,6 +6638,9 @@
       ],
       "Once your full subscription starts...": [
         "Miután elindul a teljes előfizetése..."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "30 napon belül lemondhatja, és időarányos visszatérítést kap."
       ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "30 napon belül még mindig lemondhatja a szerződést, és időarányos visszatérítést kaphat."
@@ -6739,6 +6777,9 @@
     "Payments": {
       "Amount due after trial on ${ formattedDate }": [
         "Fizetendő összeg a próbaidőszak után ekkor: ${ formattedDate }"
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Csak egy ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } vásárolható."
       ],
       "Proton Meet seats must match the number of members.": [
         "A Proton Meet licencek száma meg kell egyezzen a tagok számával."
@@ -6932,7 +6973,7 @@
         "Fax"
       ],
       "Home": [
-        "Otthoni"
+        "Kezdőlap"
       ],
       "Main": [
         "Elsődleges"
@@ -7860,6 +7901,9 @@
         "${ emailsCount } e-mail cím",
         "${ emailsCount } e-mail cím"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } író segéd"
+      ],
       "Account recovery": [
         "Fiók helyreállítás"
       ],
@@ -8503,6 +8547,11 @@
       ],
       "The user must have an address to request data access": [
         "A felhasználónak rendelkeznie kell egy címmel az adathozzáférés igényléséhez."
+      ]
+    },
+    "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Adminisztrátor szerepkörök használatához váltson egy erre alkalmas csomagra."
       ]
     },
     "Validation": {

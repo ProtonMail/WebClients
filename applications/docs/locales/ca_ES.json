@@ -81,6 +81,9 @@
       "Add note": [
         "Afegeix una nota"
       ],
+      "Add payment method": [
+        "Afegir un mètode de pagament"
+      ],
       "Add people or groups to share": [
         "Afegeix persones o grups per compartir"
       ],
@@ -117,6 +120,9 @@
       ],
       "Cancel subscription": [
         "Cancel·la la subscripció"
+      ],
+      "Cancel trial": [
+        "Cancel·lar la prova"
       ],
       "Change my access": [
         "Canvia el meu accés"
@@ -177,6 +183,9 @@
       ],
       "Collapse list of pending invitations": [
         "Plega la llista d'invitacions pendents"
+      ],
+      "Comments": [
+        "Comentaris"
       ],
       "Compose": [
         "Redactar"
@@ -403,7 +412,7 @@
         "Torna enrere"
       ],
       "Go to ${ DOCS_SHORT_APP_NAME } home": [
-        "Aneu a l'inici de ${ DOCS_SHORT_APP_NAME }"
+        "Vés a l'inici de ${ DOCS_SHORT_APP_NAME }"
       ],
       "Go to ${ planOrAppName }": [
         "Aneu a ${ planOrAppName }"
@@ -1128,7 +1137,7 @@
     },
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
-        "Garantia de devolució de 30 dies: cancel·leu-ho en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per obtenir un reemborsament."
+        "Garantia de devolució de 30 dies: cancel·leu en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per a obtenir un reemborsament."
       ]
     },
     "BF2024: Deal details": {
@@ -2893,7 +2902,7 @@
         "Ja existeix un grup amb aquest nom"
       ],
       "A message is required when reporting copyright infringement or stolen data": [
-        "Cal un missatge quan s'informa d'una infracció de drets d'autor o de dades robades"
+        "El missatge és requerit quan s'informa d'una infracció de drets d'autor o de dades robades"
       ],
       "Address could not be added.": [
         "No s'ha pogut afegir l'adreça."
@@ -2932,7 +2941,7 @@
         "Com que aquest document es trobava en una carpeta compartida, només el propietari de la carpeta el pot restaurar"
       ],
       "Bookmark password is not available": [
-        "La contrasenya del marcador de pàgina no està disponible"
+        "La contrasenya de l'adreça d'interès no està disponible"
       ],
       "Calendar limit reached": [
         "Límit de calendari assolit"
@@ -2950,7 +2959,7 @@
         "No s'ha pogut trobar la destinació"
       ],
       "Cannot move item without a valid name, please rename the item first": [
-        "No es pot moure l'element sense un nom vàlid, canvieu-ne el nom primer"
+        "No es pot moure l'element sense un nom vàlid. Canvieu-ne el nom primer"
       ],
       "Cannot share root folder": [
         "No es pot compartir la carpeta arrel"
@@ -3051,10 +3060,10 @@
         "No s\"ha pogut crear el node de compartició públic"
       ],
       "Failed to decrypt bookmark key: ${ message }": [
-        "No s'ha pogut desxifrar la clau del marcador de pàgina: ${ message }"
+        "No s'ha pogut desxifrar la clau de l'adreça d'interès: ${ message }"
       ],
       "Failed to decrypt bookmark name: ${ message }": [
-        "No s'ha pogut desxifrar el nom del marcador de pàgina: ${ message }"
+        "No s'ha pogut desxifrar el nom de l'adreça d'interès: ${ message }"
       ],
       "Failed to decrypt bookmark password: ${ message }": [
         "No s'ha pogut desxifrar la contrasenya de l'adreça d'interès: ${ message }"
@@ -3193,10 +3202,10 @@
         "Signatura no trobada"
       ],
       "Missing signature for ${ signatureType }": [
-        "Falta la signatura per ${ signatureType }"
+        "Falta la signatura per a ${ signatureType }"
       ],
       "Move operation aborted": [
-        "S'ha cancel·lat l'operació de moviment"
+        "S'ha avortat l'operació de desplaçament"
       ],
       "Moving item to a non-folder is not allowed": [
         "No es permet moure un element a un element que no sigui una carpeta"
@@ -3247,7 +3256,7 @@
         "S'ha cancel·lat l'operació"
       ],
       "Operation failed, try again later": [
-        "Ha fallat l'operació, torneu-ho a provar més tard"
+        "Ha fallat l'operació. Torneu-ho a provar més tard"
       ],
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
@@ -3336,10 +3345,10 @@
         "Ha fallat la verificació de la signatura: ${ errorMessage }"
       ],
       "Signature verification for ${ signatureType } failed": [
-        "Ha fallat la verificació de la signatura per ${ signatureType }"
+        "No s'ha pogut verificar la signatura per a ${ signatureType }"
       ],
       "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
-        "La verificació de la signatura per ${ signatureType } ha fallat: ${ errorMessage }"
+        "No s'ha pogut verificar la signatura per a ${ signatureType }: ${ errorMessage }"
       ],
       "Some contacts could not be deleted": [
         "Alguns contactes no poden ser esborrats"
@@ -3359,6 +3368,9 @@
       "Some items could not be loaded": [
         "No s'han pogut carregar alguns elements"
       ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "No s'ha pogut llegir part del document i, per tant, no es poden desar els canvis."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Alguns dels vostres noms de carpeta no estan disponibles. Personalitzeu la importació per tal d'editar-ne els noms."
       ],
@@ -3373,6 +3385,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Els noms d'algunes de les etiquetes superen el límit de caràcters màxim de ${ MAIL_APP_NAME }. Modifiqueu la importació per tal d'editar-ne els noms."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "No s'han pogut desar alguns dels canvis recents i, per tant, s'ha desactivat l'edició. Copieu qualsevol feina que necessiteu i torneu a carregar la pàgina."
       ],
       "Some trashed documents could not be loaded": [
         "No s'han pogut carregar alguns documents de la paperera"
@@ -3431,6 +3446,9 @@
       "There was an error when exporting the contacts vCards": [
         "Hi ha hagut un error exportant les vcards dels contactes"
       ],
+      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
+        "Aquest document ha arribat a la seva mida màxima, de manera que no s'ha desat el darrer canvi i s'ha desactivat l'edició."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Aquest camp excedeix el màxim de ${ maximumLength } caràcters."
       ],
@@ -3444,10 +3462,10 @@
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
       ],
       "This file has missing crypto material": [
-        "Aquest fitxer no té el material criptogràfic necessari"
+        "Falta material criptogràfic en aquest fitxer"
       ],
       "This file has no version available to download": [
-        "Aquest fitxer no té cap versió disponible per descarregar"
+        "Aquest fitxer no té cap versió disponible per a descarregar"
       ],
       "This file version could not be uploaded": [
         "No s'ha pogut carregar aquesta versió del fitxer"
@@ -3470,11 +3488,14 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Aquest missatge pot contenir adreces URL que no es puguin obrir amb el navegador actual."
       ],
+      "This version could not be loaded. Close the history and try again.": [
+        "Aquesta versió no s'ha pogut carregar. Tanqueu l'historial i torneu-ho a provar."
+      ],
       "Too many server errors, please try again later": [
-        "Hi ha massa errors del servidor, torneu-ho a provar més tard"
+        "S'han produït massa errors del servidor. Torneu-ho a provar més tard"
       ],
       "Too many server requests, please try again later": [
-        "Hi ha massa sol·licituds al servidor, torneu-ho a provar més tard"
+        "Hi ha hagut massa sol·licituds al servidor. Torneu-ho a provar més tard"
       ],
       "Try using only letters, numerals, and _.-": [
         "Intenteu utilitzar només lletres, numerals i _.-"
@@ -3513,7 +3534,7 @@
         "Les claus de verificació no estan disponibles"
       ],
       "Verification keys for ${ signatureType } are not available": [
-        "Les claus de verificació per ${ signatureType } no estan disponibles"
+        "Les claus de verificació per a ${ signatureType } no estan disponibles"
       ],
       "We are having trouble saving recent edits. Please refresh the page.": [
         "Estem tenint problemes per a desar les edicions recents. Actualitzeu la pàgina."
@@ -3569,6 +3590,9 @@
       ],
       "Your import will not be processed.": [
         "La vostra importació no es processarà."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "El darrer canvi és massa gran per a desar-lo i, per tant, s'ha deshabilitat l'edició. Copieu qualsevol feina que necessiteu i recarregueu la pàgina."
       ],
       "⚠️ Undecryptable device": [
         "⚠️ No es pot desxifrar el dispositiu"
@@ -4459,8 +4483,8 @@
         "${ selectedFoldersCountLocalized } etiquetes seleccionades"
       ],
       "${ selection.selectedIds.length } selected": [
-        "${ selection.selectedIds.length } de seleccionat",
-        "${ selection.selectedIds.length } de seleccionats"
+        "Se n'ha seleccionat ${ selection.selectedIds.length }",
+        "Se n'han seleccionat ${ selection.selectedIds.length }"
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
         "Us queda ${ timeRemaining } de la vostra prova. ${ addPaymentMethodLink } per no perdre'n l'accés. ${ learnMoreLink }"
@@ -4611,8 +4635,17 @@
       "Close this screen to exit.": [
         "Tanqueu la finestra per sortir."
       ],
+      "Comments are not available yet": [
+        "Els comentaris encara no estan disponibles"
+      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Connecteu-vos a ${ VPN_APP_NAME } per navegar en privat."
+      ],
+      "Connected": [
+        "S'ha connectat"
+      ],
+      "Connecting…": [
+        "S'està connectant…"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "S'ha assignat el contacte al grup ${ contactGroupName }."
@@ -4685,6 +4718,9 @@
       "Decrypting your document": [
         "S'està desxifrant el document"
       ],
+      "Disconnected": [
+        "S'ha desconnectat"
+      ],
       "Display word count": [
         "Mostra el nombre de paraules"
       ],
@@ -4723,6 +4759,9 @@
       ],
       "Edit email address": [
         "Edita l'adreça de correu"
+      ],
+      "Editing is temporarily unavailable.": [
+        "L'edició no està disponible temporalment."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'allotjament de correu electrònic només està disponible per als dominis que ja teniu. El registre de domini no està disponible actualment a través de ${ BRAND_NAME }. Podeu allotjar correu electrònic per a dominis registrats a qualsevol registrador de dominis."
@@ -5011,8 +5050,14 @@
       "Not a valid URL": [
         "No és un URL vàlid."
       ],
+      "Not available yet": [
+        "Encara no està disponible"
+      ],
       "Not connected": [
         "Sense connexió"
+      ],
+      "Not connected. Editing resumes once you are back.": [
+        "No hi ha connexió. L'edició es reprendrà un cop torneu a estar en línia."
       ],
       "Numbers": [
         "Números"
@@ -5125,6 +5170,9 @@
       ],
       "Recents": [
         "Recents"
+      ],
+      "Reconnecting…": [
+        "S'està tornant a connectar…"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La informació de recuperació es mantindrà en aquest dispositiu llevat que escolliu eliminar-la."
@@ -5241,6 +5289,12 @@
       "The Beginning": [
         "Inici"
       ],
+      "The connection to the server was lost.": [
+        "S'ha perdut la connexió amb el servidor."
+      ],
+      "The document could not be brought up to date.": [
+        "No s'ha pogut actualitzar el document."
+      ],
       "The document could not be created.": [
         "No s'ha pogut crear el document."
       ],
@@ -5255,6 +5309,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietari d'aquesta adreça ha desactivat el xifratge d'extrem a extrem. Per a poder enviar-hi correus electrònics xifrats, el propietari ha de tornar a activar el xifratge d’extrem a extrem."
+      ],
+      "The server is busy.": [
+        "El servidor està ocupat."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "Sembla que l'URL que heu introduït s'ha copiat incorrectament d'Slack. Quan copieu enllaços llargs d'Slack, feu clic amb el botó dret a l'enllaç i trieu \"Copia l'enllaç\", en lloc de copiar directament el text truncat de l'URL."
@@ -5290,7 +5347,7 @@
         "Aquest és un nom o un sobrenom per a la vostra organització que els usuaris veuran. Podeu canviar-lo en qualsevol moment."
       ],
       "This link is not supported on this page.": [
-        "Aquest enllaç no és compatible en aquesta pàgina."
+        "Aquest enllaç no és compatible amb aquesta pàgina."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Aquest enllaç porta a un lloc web que us podria estar intentant robar la informació, com ara contrasenyes i detalls de targetes de crèdit."
@@ -5306,6 +5363,9 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Els llocs web i els ISP (proveïdors de serveis d'internet) poden utilitzar aquest codi únic per a enllaçar la ubicació i l'historial de navegació al dispositiu."
+      ],
+      "This version of the app is no longer supported. Reload the page to update it.": [
+        "Aquesta versió de l'aplicació ja no és compatible. Torneu a carregar la pàgina per a actualitzar-la."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Això tancarà la sessió de tots els comptes als quals teniu sessió iniciada actualment"
@@ -5484,6 +5544,9 @@
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "És possible que no tingueu els permisos necessaris per a veure'l amb el compte seleccionat. Proveu amb un altre compte o contacteu amb el propietari per a demanar-hi accés."
       ],
+      "You were disconnected after a period of inactivity.": [
+        "Se us ha desconnectat després d'un període d'inactivitat."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Perdreu l'accés a les característiques de ${ planTitle } en aquesta data."
       ],
@@ -5524,6 +5587,9 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "La subscripció ${ plan } se substituirà per ${ PASS_SHORT_APP_NAME } Lifetime. El saldo restant s'afegirà al vostre compte. L'oferta de ${ PASS_SHORT_APP_NAME } no té cost de renovació; és un pagament únic per a accedir a ${ PASS_SHORT_APP_NAME } de per vida."
       ],
+      "Your access to this document has changed. Reload the page to continue.": [
+        "L'accés a aquest document ha canviat. Torneu a carregar la pàgina per a continuar."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
       ],
@@ -5532,6 +5598,9 @@
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "S'estan sincronitzant els canvis al Drive. No tanqueu la pàgina web."
+      ],
+      "Your changes could not be encrypted. Reload the page to continue.": [
+        "No s'han pogut xifrar els canvis. Torneu a carregar la pàgina per a continuar."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Els canvis no s'han pogut sincronitzar. Drive intentarà desar els canvis automàticament. No tanqueu la pàgina web."
@@ -5593,6 +5662,9 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada mes."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "La sessió ha expirat. Torneu a carregar la pàgina per a continuar."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "La subscripció es renovarà automàticament el ${ renewalTime }."
@@ -6003,7 +6075,7 @@
         "Selecciona ${ document.name }"
       ],
       "Select all": [
-        "Seleccionar-ho tot"
+        "Selecciona-ho tot"
       ],
       "Selected": [
         "Seleccionat"
@@ -7469,7 +7541,7 @@
         "No s'ha pogut restaurar el document"
       ],
       "Failed to save for later": [
-        "Ha fallat indicar desar-ho més endavant."
+        "No s'ha pogut desar per a més endavant"
       ],
       "Failed to submit report": [
         "No s'ha pogut enviar l'informe"
@@ -7694,8 +7766,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Cancel·leu-ho en qualsevol moment. ** Podreu utilitzar ${ planTitle } fins que acabi el període de prova, de franc."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Si continueu després del període de prova,** podreu cancel·lar-ho en un termini de 30 dies i rebre un reemborsament prorratejat."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Heu canviat d'opinió després de la prova? ** Cancel·leu-la abans de 30 dies des del primer pagament i us reemborsarem el temps no utilitzat."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Un cop comenci la vostra subscripció completa...** Encara podreu cancel·lar-la en un termini de 30 dies i rebre un reemborsament prorratejat."
@@ -7882,7 +7954,7 @@
         "Es requereix una organització per a aquest pla."
       ],
       "Born Private accounts can’t be purchased with an active subscription.": [
-        "Els comptes de Born Private no es poden adquirir amb una subscripció activa."
+        "Els comptes de Born Private no es poden comprar amb una subscripció activa."
       ],
       "Buying credits requires a separate purchase.": [
         "L'adquisició de crèdits requereix una compra independent."
@@ -8159,7 +8231,7 @@
         "clau de contingut"
       ],
       "hash key": [
-        "clau d'empremta electrònica"
+        "empremta electrònica"
       ],
       "key": [
         "clau"
@@ -9977,7 +10049,7 @@
     },
     "user_modal": {
       "This user gets administrator rights the next time they sign in.": [
-        "Aquest usuari obtindrà drets d'administrador la pròxima vegada que iniciïn sessió."
+        "Aquest usuari obtindrà drets d'administrador la pròxima vegada que iniciï la sessió."
       ],
       "Upgrade to a supported plan to use admin roles.": [
         "Milloreu a un pla compatible per utilitzar rols d'administrador/a."
@@ -10120,6 +10192,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirà tantes dades com sigui possible, començant pels missatges més recents."
       ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "Un canvi fet per un altre editor no s'ha pogut llegir i falta en aquesta pàgina."
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Estàs segur de que vols eliminar ${ count } contacte definitivament?",
         "Estàs segur de que vols eliminar ${ count } contactes definitivament?"
@@ -10147,6 +10222,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Alguns dels contactes que s'han de combinar tenen errors. Reviseu-los individualment"
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "No s'ha pogut llegir part del document i, per tant, s'ha desactivat l'edició."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Les dades de contacte estan corrompudes i no es poden mostrar."

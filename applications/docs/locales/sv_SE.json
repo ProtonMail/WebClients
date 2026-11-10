@@ -81,6 +81,9 @@
       "Add note": [
         "Lägg till anteckning"
       ],
+      "Add payment method": [
+        "Lägg till betalningsmetod"
+      ],
       "Add people or groups to share": [
         "Lägg till personer eller grupper till dela"
       ],
@@ -177,6 +180,9 @@
       ],
       "Collapse list of pending invitations": [
         "Minimera listan med väntande inbjudningar"
+      ],
+      "Comments": [
+        "Kommentarer"
       ],
       "Compose": [
         "Skriv"
@@ -3417,6 +3423,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Detta meddelande kan innehålla några URL-länkar som inte kan öppnas korrekt av din nuvarande webbläsare."
       ],
+      "This version could not be loaded. Close the history and try again.": [
+        "Den här versionen kunde inte laddas. Vänligen stäng historiken och försök igen."
+      ],
       "Too many server errors, please try again later": [
         "För många serverfel, försök igen senare"
       ],
@@ -4548,8 +4557,17 @@
       "Close this screen to exit.": [
         "Stäng denna skärm för att avsluta."
       ],
+      "Comments are not available yet": [
+        "Kommentarer är inte tillgängliga än"
+      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Anslut till ${ VPN_APP_NAME } för att surfa privat"
+      ],
+      "Connected": [
+        "Ansluten"
+      ],
+      "Connecting…": [
+        "Ansluter …"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilldelad till grupp ${ contactGroupName }"
@@ -4622,6 +4640,9 @@
       "Decrypting your document": [
         "Dekrypterar ditt dokument"
       ],
+      "Disconnected": [
+        "Frånkopplad"
+      ],
       "Display word count": [
         "Visa antalet ord"
       ],
@@ -4660,6 +4681,9 @@
       ],
       "Edit email address": [
         "Redigera e-postadress"
+      ],
+      "Editing is temporarily unavailable.": [
+        "Redigering är tillfälligt otillgänglig."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-postlagring är endast tillgängligt för domäner som du redan äger. Domänregistrering är för närvarande inte tillgänglig via ${ BRAND_NAME }. Du kan lagra e-post för domäner som är registrerade hos vilken domänregistrator som helst."
@@ -4945,6 +4969,9 @@
       "Not a valid URL": [
         "Ogiltig URL"
       ],
+      "Not available yet": [
+        "Inte tillgängliga än"
+      ],
       "Not connected": [
         "Inte ansluten"
       ],
@@ -5059,6 +5086,9 @@
       ],
       "Recents": [
         "Senaste"
+      ],
+      "Reconnecting…": [
+        "Återansluter …"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Återställningsinformation kommer finnas kvar på denna enhet om du inte väljer att ta bort den."

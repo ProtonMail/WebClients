@@ -81,6 +81,9 @@
       "Add note": [
         "Ajouter une note"
       ],
+      "Add payment method": [
+        "Ajouter un moyen de paiement"
+      ],
       "Add people or groups to share": [
         "Ajouter des personnes ou des groupes pour partager"
       ],
@@ -114,6 +117,9 @@
       ],
       "Cancel subscription": [
         "Annuler l'abonnement"
+      ],
+      "Cancel trial": [
+        "Annuler la version d'essai"
       ],
       "Change my access": [
         "Modifier mon accès"
@@ -174,6 +180,9 @@
       ],
       "Collapse list of pending invitations": [
         "Réduire la liste des invitations en attente"
+      ],
+      "Comments": [
+        "Commentaires"
       ],
       "Compose": [
         "Rédiger"
@@ -3291,6 +3300,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Certains de vos noms de labels dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
       ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "Certaines de vos modifications récentes n'ont pas pu être enregistrées, l'édition est donc désactivée. Copiez le contenu souhaité, puis actualisez."
+      ],
       "Some trashed documents could not be loaded": [
         "Certains documents mis à la corbeille n'ont pas pu être chargés."
       ],
@@ -3387,6 +3399,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Ce message contient peut-être des liens URL qui pourraient ne pas s'ouvrir correctement avec votre navigateur."
       ],
+      "This version could not be loaded. Close the history and try again.": [
+        "Cette version n'a pas pu être chargée. Fermez l'historique et réessayez."
+      ],
       "Too many server requests, please try again later": [
         "Le nombre de requêtes serveur est trop important. Veuillez réessayer plus tard."
       ],
@@ -3474,6 +3489,9 @@
       ],
       "Your import will not be processed.": [
         "Votre importation ne sera pas traitée."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "Votre dernière modification est trop volumineuse pour être enregistrée, la fonction d'édition est donc désactivée. Copiez le contenu souhaité, puis actualisez."
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Appareil indéchiffrable"
@@ -4510,8 +4528,17 @@
       "Close this screen to exit.": [
         "Fermez cet écran pour quitter."
       ],
+      "Comments are not available yet": [
+        "Les commentaires ne sont pas encore disponibles."
+      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Connectez-vous à ${ VPN_APP_NAME } pour surfer en privé."
+      ],
+      "Connected": [
+        "Connecté"
+      ],
+      "Connecting…": [
+        "Connexion en cours…"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Le contact a été ajouté au groupe ${ contactGroupName }."
@@ -4578,6 +4605,9 @@
       "Decrypting your document": [
         "Déchiffrement de votre document en cours"
       ],
+      "Disconnected": [
+        "Déconnecté"
+      ],
       "Display word count": [
         "Afficher le nombre de mots"
       ],
@@ -4616,6 +4646,9 @@
       ],
       "Edit email address": [
         "Modifier l'adresse e-mail"
+      ],
+      "Editing is temporarily unavailable.": [
+        "La fonction d'édition est temporairement indisponible."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hébergement de messagerie n'est disponible que pour les noms de domaines que vous possédez déjà. L'enregistrement de nom de domaine par l'intermédiaire de ${ BRAND_NAME } n'est pas disponible pour le moment. Vous pouvez héberger des messageries pour des noms de domaines enregistrés sur n'importe quel registraire de domaine."
@@ -4883,6 +4916,9 @@
       "Not a valid URL": [
         "L'URL n'est pas valide."
       ],
+      "Not available yet": [
+        "Pas encore disponible"
+      ],
       "Not connected": [
         "Non connecté"
       ],
@@ -4997,6 +5033,9 @@
       ],
       "Recents": [
         "Récents"
+      ],
+      "Reconnecting…": [
+        "Reconnexion en cours…"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
@@ -5127,6 +5166,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Le propriétaire de cette adresse a désactivé le chiffrement de bout en bout. Il doit réactiver le chiffrement de bout en bout pour pouvoir envoyer des messages chiffrés à cette adresse."
+      ],
+      "The server is busy.": [
+        "Le serveur est occupé."
       ],
       "There are no documents in the trash.": [
         "Il n'y a aucun document dans la corbeille."
@@ -5344,6 +5386,9 @@
       "You have an open invoice ${ payInvoiceLink }": [
         "Vous avez une facture ouverte ${ payInvoiceLink }"
       ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Vous avez une facture à régler au ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Il se peut que vous n'ayez pas les autorisations nécessaires pour le consulter avec le compte que vous avez sélectionné. Essayez un autre compte ou contactez le propriétaire pour y accéder."
       ],
@@ -5453,6 +5498,9 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement chaque mois."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "Votre session a expiré. Actualisez la page pour continuer."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Votre abonnement sera automatiquement renouvelé le ${ renewalTime }."
@@ -6058,6 +6106,9 @@
       ],
       "Pay invoice": [
         "Payer la facture"
+      ],
+      "Pay it": [
+        "Payer avec"
       ],
       "Reactivate now": [
         "Réactiver maintenant"
@@ -7523,8 +7574,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Résiliez à tout moment avant l'échéance.** Vous pourrez utiliser ${ planTitle } jusqu'à la fin de la période d'essai, gratuitement."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Si vous continuez après votre période d'essai, ** vous pouvez annuler dans les 30 jours et recevoir un remboursement au prorata."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Vous avez changé d'avis après la période d'essai ?** Résiliez votre abonnement dans les 30 jours suivant votre premier paiement et nous vous rembourserons la période non utilisée."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Une fois que votre abonnement complet débuté... ** Vous pouvez toujours annuler dans les 30 jours et recevoir un remboursement au prorata."
@@ -7727,6 +7778,9 @@
       ],
       "Please close extra wallets before changing your plan.": [
         "Veuillez clôturer les portefeuilles supplémentaires avant de changer votre abonnement."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Le nombre de places Proton Meet doit correspondre au nombre de membres."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Le tarif du renouvellement est susceptible de changer en accord avec ${ termsAndConditionsLink }."
@@ -9933,6 +9987,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transférera autant de données que possible, en commençant par vos messages les plus récents."
+      ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "Une modification apportée par un autre contributeur n'a pas pu être lue et n'apparaît pas sur cette page."
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Voulez-vous vraiment supprimer définitivement ${ count } contact ?",

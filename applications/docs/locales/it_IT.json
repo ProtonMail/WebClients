@@ -81,6 +81,9 @@
       "Add note": [
         "Aggiungi nota"
       ],
+      "Add payment method": [
+        "Aggiungi metodo di pagamento"
+      ],
       "Add people or groups to share": [
         "Aggiungi persone o gruppi con cui condividere"
       ],
@@ -92,6 +95,9 @@
       ],
       "Apply": [
         "Applica"
+      ],
+      "Ask me next time": [
+        "Chiedimelo la prossima volta"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "È consentito al massimo ${ maxContacts } contatto per ogni gruppo di contatti",
@@ -114,6 +120,9 @@
       ],
       "Cancel subscription": [
         "Annulla abbonamento"
+      ],
+      "Cancel trial": [
+        "Annulla la prova"
       ],
       "Change my access": [
         "Modifica il mio accesso"
@@ -174,6 +183,9 @@
       ],
       "Collapse list of pending invitations": [
         "Comprimi l'elenco degli inviti in attesa"
+      ],
+      "Comments": [
+        "Commenti"
       ],
       "Compose": [
         "Componi"
@@ -399,6 +411,9 @@
       "Go back": [
         "Torna indietro"
       ],
+      "Go to ${ DOCS_SHORT_APP_NAME } home": [
+        "Vai alla pagina iniziale di ${ DOCS_SHORT_APP_NAME }"
+      ],
       "Go to ${ planOrAppName }": [
         "Vai a ${ planOrAppName }"
       ],
@@ -585,6 +600,9 @@
       "Preview contact": [
         "Anteprima contatto"
       ],
+      "Preview logs": [
+        "Mostra anteprima log."
+      ],
       "Previous month": [
         "Mese precedente"
       ],
@@ -683,6 +701,9 @@
       ],
       "Save changes": [
         "Salva le modifiche"
+      ],
+      "Save preferences": [
+        "Salva preferenze"
       ],
       "Search": [
         "Cerca"
@@ -1079,6 +1100,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_LUMO_SEATS } licenze ${ LUMO_SHORT_APP_NAME } durante il periodo di prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Durante il periodo di prova puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze per l'assistente alla scrittura ${ LUMO_SHORT_APP_NAME }."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze Scribe durante il periodo di prova."
@@ -2922,6 +2946,9 @@
       "Cannot verify the author of this file": [
         "Impossibile verificare l'autore di questo file"
       ],
+      "Cannot verify who uploaded this file": [
+        "Impossibile verificare chi ha caricato questo file."
+      ],
       "Contact could not be saved": [
         "Impossibile salvare il contatto"
       ],
@@ -3032,6 +3059,9 @@
       "Failed to update public share node": [
         "Impossibile aggiornare il nodo di condivisione pubblico"
       ],
+      "File download failed due to empty response": [
+        "Download del file non riuscito a causa di una risposta vuota."
+      ],
       "File has no revision": [
         "Il file non ha revisioni"
       ],
@@ -3135,6 +3165,9 @@
       "Operation aborted": [
         "Operazione interrotta"
       ],
+      "Operation failed, try again later": [
+        "Operazione non riuscita. Riprova più tardi."
+      ],
       "Organization key is not decrypted": [
         "La chiave dell'organizzazione non è decriptata"
       ],
@@ -3152,6 +3185,12 @@
       ],
       "Passwords do not match": [
         "Le password non corrispondono"
+      ],
+      "Photo is already in the target album": [
+        "La foto è già presente nell'album di destinazione."
+      ],
+      "Photo not found": [
+        "Foto non trovata"
       ],
       "Please enter a valid postal code": [
         "Si prega di inserire un codice postale valido"
@@ -3215,6 +3254,9 @@
       "Some groups could not be deleted": [
         "Impossibile eliminare alcuni gruppi"
       ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "Una parte del documento non è stata letta, pertanto non è possibile salvare le modifiche apportate."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Alcuni nomi delle tue cartelle non sono disponibili. Personalizza l'importazione per modificare questi nomi."
       ],
@@ -3229,6 +3271,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alcuni nomi delle etichette superano il limite massimo di caratteri di ${ MAIL_APP_NAME }. Personalizza l'importazione per modificare questi nomi."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "Non è stato possibile salvare alcune delle modifiche apportate di recente, pertanto la funzione di modifica è disabilitata. Copia il lavoro che ti serve, quindi ricarica la pagina."
       ],
       "Some trashed documents could not be loaded": [
         "Impossibile caricare alcuni documenti nel cestino"
@@ -3287,6 +3332,9 @@
       "There was an error when exporting the contacts vCards": [
         "Si è verificato un errore nell'esportazione delle vCard dei contatti"
       ],
+      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
+        "Questo documento ha raggiunto la dimensione massima consentita, pertanto l'ultima modifica non è stata salvata e la modifica è disabilitata."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
       ],
@@ -3299,8 +3347,14 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Questo campo richiede un minimo di ${ minimumLength } caratteri."
       ],
+      "This file has missing crypto material": [
+        "Questo file ha materiale crittografico mancante."
+      ],
       "This file has no version available to download": [
         "Non è disponibile alcuna versione di questo file da scaricare"
+      ],
+      "This file version could not be uploaded": [
+        "Questa versione del file non può essere caricata."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Questo nome della cartella non è disponibile. Scegli un nome diverso."
@@ -3316,6 +3370,12 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Questo messaggio potrebbe contenere alcuni link URL che non possono essere aperti correttamente dal browser attuale."
+      ],
+      "This version could not be loaded. Close the history and try again.": [
+        "Impossibile caricare questa versione. Chiudi la cronologia e riprova."
+      ],
+      "Too many server requests, please try again later": [
+        "Troppe richieste. Riprova più tardi"
       ],
       "Try using only letters, numerals, and _.-": [
         "Prova ad usare solo lettere, numeri e _.-"
@@ -3374,6 +3434,12 @@
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase di recupero errata. Riprova o usa un altro metodo di recupero."
       ],
+      "You can create public links for your own files only": [
+        "Puoi creare link pubblici solo per i tuoi file."
+      ],
+      "You can update a public link for your own files only": [
+        "Puoi aggiornare un link pubblico solo per i tuoi file."
+      ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Non puoi inviare un'email a più di ${ maxContacts } destinatario",
         "Non puoi inviare un'email a più di ${ maxContacts } destinatari"
@@ -3395,6 +3461,9 @@
       ],
       "Your import will not be processed.": [
         "La tua importazione non verrà elaborata."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "L'ultima modifica apportata è troppo grande per essere salvata, quindi la modifica è disabilitata. Copia il lavoro che ti serve, quindi ricarica la pagina."
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Dispositivo indecifrabile"
@@ -4244,6 +4313,9 @@
         "${ groupCounts } gruppo trovato",
         "${ groupCounts } gruppi trovati"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4280,6 +4352,10 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etichetta selezionata",
         "${ selectedFoldersCountLocalized } etichette selezionate"
+      ],
+      "${ selection.selectedIds.length } selected": [
+        "${ selection.selectedIds.length } selezionato",
+        "${ selection.selectedIds.length } selezionati"
       ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
         "Rimangono ${ timeRemaining } del periodo di prova. Clicca su ${ addPaymentMethodLink } per evitare di perdere l'accesso. ${ learnMoreLink }"
@@ -4382,6 +4458,9 @@
       "Attention required": [
         "Attenzione"
       ],
+      "Author is not provided on public link": [
+        "L’autore non è indicato nel link pubblico."
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
       ],
@@ -4427,8 +4506,17 @@
       "Close this screen to exit.": [
         "Chiudi questa schermata per uscire."
       ],
+      "Comments are not available yet": [
+        "I commenti non sono ancora disponibili"
+      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Connettiti a ${ VPN_APP_NAME } per navigare in privato"
+      ],
+      "Connected": [
+        "Connesso"
+      ],
+      "Connecting…": [
+        "Connessione…"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Il contatto è assegnato al gruppo ${ contactGroupName }."
@@ -4438,6 +4526,9 @@
       ],
       "Continue": [
         "Continua"
+      ],
+      "Converting document...": [
+        "Conversione del documento..."
       ],
       "Copied to clipboard": [
         "Copiato negli appunti"
@@ -4483,6 +4574,9 @@
       "Create your first folder and start moving your files.": [
         "Crea la tua prima cartella e inizia a spostare i file."
       ],
+      "Creating new document...": [
+        "Creazione di un nuovo documento..."
+      ],
       "Current plan": [
         "Piano attuale"
       ],
@@ -4494,6 +4588,9 @@
       ],
       "Decrypting your document": [
         "Decrittografia del tuo documento in corso"
+      ],
+      "Disconnected": [
+        "Disconnesso"
       ],
       "Display word count": [
         "Visualizza il conteggio delle parole"
@@ -4534,6 +4631,9 @@
       "Edit email address": [
         "Modifica l'indirizzo email"
       ],
+      "Editing is temporarily unavailable.": [
+        "La funzione di modifica è temporaneamente non disponibile."
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hosting di posta elettronica è disponibile solo per i domini che già possiedi. La registrazione del dominio non è attualmente disponibile tramite ${ BRAND_NAME }. Puoi ospitare email per domini registrati su qualsiasi registrar di domini."
       ],
@@ -4573,6 +4673,12 @@
       "Enter your own password (as trusted contact).": [
         "Inserisci la tua password (come contatto attendibile)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Errore durante la conversione del documento: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Errore durante caricamento del documento: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Errore nella sincronizzazione"
       ],
@@ -4608,6 +4714,12 @@
       ],
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
         "Ottieni un'email professionale @your-company.com, 1 TB di archiviazione sicura per utente, videochiamate più lunghe e molto altro con ${ BRAND_NAME } Workspace."
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Ricevi aggiornamenti via email per commenti e suggerimenti aggiunti ai tuoi documenti."
+      ],
+      "Get Notified About Comments": [
+        "Ricevi notifiche sui commenti"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "I governi e gli ISP possono monitorare la tua attività online. Nascondendo il tuo vero IP e crittografando la tua attività, la tua navigazione diventa privata."
@@ -4745,11 +4857,17 @@
       "Loading...": [
         "Caricamento in corso..."
       ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "I log ci aiutano a capire cosa è successo prima che si verificasse il problema. Includono le azioni eseguite nell'app e i messaggi di errore, ma non il contenuto dei messaggi."
+      ],
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Sembra che tu sia offline. Il documento non può essere modificato mentre sei offline. Controlla la connettività del tuo dispositivo."
       ],
       "Low Priority": [
         "Priorità bassa"
+      ],
+      "Making a copy...": [
+        "Creazione di una copia..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Massimo ${ MAX_SHARED_URL_PASSWORD_LENGTH } carattere",
@@ -4779,6 +4897,9 @@
       "No contacts added yet": [
         "Non sono ancora stati aggiunti contatti"
       ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "Nessun documento fornito nell'URL. Torna a ${ DRIVE_APP_NAME } e selezionane uno."
+      ],
       "No email address": [
         "Nessun indirizzo email"
       ],
@@ -4800,8 +4921,14 @@
       "Not a valid URL": [
         "URL non valido"
       ],
+      "Not available yet": [
+        "Non ancora disponibile"
+      ],
       "Not connected": [
         "Non connesso"
+      ],
+      "Not connected. Editing resumes once you are back.": [
+        "Non connesso. La modifica riprenderà non appena ti sarai ricollegato."
       ],
       "Numbers": [
         "Numeri"
@@ -4915,6 +5042,9 @@
       "Recents": [
         "Recenti"
       ],
+      "Reconnecting…": [
+        "Riconessione in corso..."
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Le informazioni di recupero rimarranno su questo dispositivo a meno che tu non decida di eliminarle."
       ],
@@ -4984,6 +5114,9 @@
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Alcuni governi bloccano o limitano l'accesso a determinati siti web. Una VPN aiuta a bypassare la censura mantenendo private la tua attività e la tua identità."
       ],
+      "Some of the document's content could not be read.": [
+        "Non è stato possibile leggere parte del contenuto del documento."
+      ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Alcuni siti web e servizi di streaming bloccano i contenuti in base alla regione. Una VPN ti consente di aggirare queste restrizioni e accedere a Internet liberamente."
       ],
@@ -5027,11 +5160,32 @@
       "The Beginning": [
         "L'inizio"
       ],
+      "The connection to the server was lost.": [
+        "La connessione al server è stata interrotta."
+      ],
+      "The document could not be brought up to date.": [
+        "Non è stato possibile aggiornare il documento."
+      ],
+      "The document could not be created.": [
+        "Non è stato possibile creare il documento."
+      ],
+      "The document could not be loaded.": [
+        "Impossibile caricare il documento."
+      ],
+      "The editor could not be loaded.": [
+        "Impossibile caricare l'editor."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Le informazioni sono state rese pubbliche da un servizio di terze parti. Quelle relative al tuo account ${ BRAND_NAME } rimangono sicure e crittografate. ${ learnMoreLink }"
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Il proprietario di questo indirizzo ha disabilitato la crittografia end-to-end. Per poter inviare email crittografate a questo indirizzo, il proprietario deve abilitare nuovamente la crittografia end-to-end."
+      ],
+      "The server is busy.": [
+        "Il server è occupato."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "L'URL inserito non sembra essere stato copiato correttamente. Quando copi link lunghi da Slack, usa tasto destro e \"Copia link\" invece di copiarlo direttamente."
       ],
       "There are no documents in the trash.": [
         "Non ci sono documenti nel cestino."
@@ -5063,6 +5217,9 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Questo è un nome o un nickname per la tua organizzazione che sarà visualizzato dai tuoi utenti. Puoi modificarlo in qualsiasi momento."
       ],
+      "This link is not supported on this page.": [
+        "Questo link non è supportato in questa pagina."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Questo link conduce a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
       ],
@@ -5078,11 +5235,17 @@
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Questo codice univoco può essere utilizzato dai siti Web e dagli ISP (fornitori di servizi Internet) per collegare la tua posizione e la cronologia di navigazione al tuo dispositivo"
       ],
+      "This version of the app is no longer supported. Reload the page to update it.": [
+        "Questa versione dell'app non è più supportata. Aggiorna la pagina per ottenere la versione più recente."
+      ],
       "This will sign you out of all accounts currently logged in.": [
         "Verrai disconnesso da tutti gli account attualmente connessi."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "Per aiutarci a risolvere il problema, le informazioni di debug verranno caricate sul tuo Drive e condivise in modo sicuro con il team di assistenza di ${ BRAND_NAME }. Potrebbero includere il contenuto dei file. Puoi interrompere la condivisione in qualsiasi momento e i dati condivisi verranno eliminati al termine della revisione."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Per aiutarti a ricordare la tua password, ti chiederemo di inserirla periodicamente. Con il tempo te lo chiederemo sempre meno."
@@ -5252,6 +5415,9 @@
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Potresti non avere le autorizzazioni necessarie per visualizzarlo con l'account selezionato. Prova un account diverso o contatta il proprietario per l'accesso."
       ],
+      "You were disconnected after a period of inactivity.": [
+        "La connessione è stata interrotta a seguito di un periodo di inattività."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Perderai l'accesso alle funzionalità del piano ${ planTitle } a partire da questa data."
       ],
@@ -5292,6 +5458,9 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Il tuo abbonamento a ${ plan } verrà sostituito con ${ PASS_SHORT_APP_NAME } a vita. Il saldo rimanente del tuo abbonamento verrà aggiunto al tuo account. L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
       ],
+      "Your access to this document has changed. Reload the page to continue.": [
+        "Le modalità di accesso a questo documento sono cambiate. Aggiorna la pagina per continuare."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
       ],
@@ -5300,6 +5469,9 @@
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Sincronizzazione delle modifiche con Drive. Non chiudere la pagina web."
+      ],
+      "Your changes could not be encrypted. Reload the page to continue.": [
+        "Non è stato possibile crittografare le modifiche apportate. Aggiorna la pagina per continuare."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Le modifiche non sono state sincronizzate. Drive tenterà automaticamente di salvare le modifiche. Non chiudere la pagina web."
@@ -5361,6 +5533,9 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni mese."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "La tua sessione è scaduta. Aggiorna la pagina per continuare."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Il tuo abbonamento si rinnoverà automaticamente il ${ renewalTime }."
@@ -5599,6 +5774,9 @@
       "Emails (last month)": [
         "Email (ultimo mese)"
       ],
+      "Enable email notifications": [
+        "Attiva notifiche email"
+      ],
       "Encrypt emails": [
         "Email crittografate"
       ],
@@ -5643,6 +5821,12 @@
       ],
       "Include application logs in bug report": [
         "Includi i log dell'applicazione nella segnalazione di bug"
+      ],
+      "Include debug information": [
+        "Includi le informazioni di debug"
+      ],
+      "Include document name in notification": [
+        "Includi il nome del documento nella notifica"
       ],
       "Include message and file name in invite email": [
         "Includi il messaggio e il nome del file nell'email di invito"
@@ -5757,6 +5941,12 @@
       ],
       "Reveal password": [
         "Mostra la password"
+      ],
+      "Select ${ document.name }": [
+        "Seleziona ${ document.name }"
+      ],
+      "Select all": [
+        "Seleziona tutto"
       ],
       "Selected": [
         "Selezionato"
@@ -6074,6 +6264,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente alla scrittura ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add-on with free trial": [
         "Componente aggiuntivo con prova gratuita"
       ]
@@ -6245,6 +6438,12 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME } con accesso esteso"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
         "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } con accesso limitato"
@@ -7112,6 +7311,10 @@
       "\"Document deleted permanently": [
         "\"Documento eliminato definitivamente"
       ],
+      "${ count } item could not be moved to trash": [
+        "Impossibile spostare ${ count } elemento nel cestino.",
+        "Impossibile spostare ${ count } elementi nel cestino."
+      ],
       "${ count } item failed to be decrypted": [
         "Decrittografia di ${ count } elemento non riuscita",
         "Decrittografia di ${ count } elementi non riuscita"
@@ -7211,6 +7414,9 @@
       "Failed to save for later": [
         "Impossibile salvare per dopo"
       ],
+      "Failed to submit report": [
+        "Invio della segnalazione non riuscito."
+      ],
       "Failed to trash document": [
         "Impossibile spostare il documento nel cestino"
       ],
@@ -7237,6 +7443,9 @@
       ],
       "Recent documents updated": [
         "Documenti recenti aggiornati"
+      ],
+      "Report submitted successfully": [
+        "Segnalazione inviata correttamente."
       ],
       "Root folder failed to be loaded": [
         "Caricamento della cartella principale non riuscito"
@@ -7428,8 +7637,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Puoi disdire in qualsiasi momento prima di allora.** Potrai utilizzare ${ planTitle } gratuitamente fino al termine del periodo di prova."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Se decidi di continuare dopo il periodo di prova,** puoi annullare l'abbonamento entro 30 giorni e ottenere un rimborso proporzionale."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Hai cambiato idea dopo il periodo di prova? **Annulla entro 30 giorni dal primo pagamento e ti rimborseremo il periodo non utilizzato."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Una volta che l'abbonamento completo avrà inizio...** Potrai comunque disdirlo entro 30 giorni e ottenere un rimborso proporzionale."
@@ -7891,6 +8100,9 @@
       ],
       "key": [
         "chiave"
+      ],
+      "name": [
+        "nome"
       ]
     },
     "Property type": {
@@ -8318,6 +8530,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Creazione di un nuovo foglio di calcolo"
+      ],
       "Detect automatically": [
         "Rileva automaticamente"
       ],
@@ -9357,6 +9572,9 @@
       "Report a problem": [
         "Segnala un problema"
       ],
+      "Report issue": [
+        "Segnala un problema"
+      ],
       "Request new code": [
         "Richiedi nuovo codice"
       ],
@@ -9836,6 +10054,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } trasferirà il maggior numero di dati possibile, a partire dai messaggi più recenti."
       ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "Una modifica apportata da un altro editore non è stata letta e risulta mancante in questa pagina."
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Sei sicuro di voler eliminare definitivamente ${ count } contatto?",
         "Sei sicuro di voler eliminare definitivamente ${ count } contatti?"
@@ -9863,6 +10084,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Alcuni dei contatti da unire presentano errori. Controllali singolarmente"
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "Una parte del documento non è stata letta, pertanto la modifica è disabilitata."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "I dati del contatto sono danneggiati e non possono essere visualizzati."

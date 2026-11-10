@@ -118,6 +118,9 @@
       "Cancel subscription": [
         "Cancelar assinatura"
       ],
+      "Cancel trial": [
+        "Cancelar avaliação"
+      ],
       "Change my access": [
         "Alterar meu acesso"
       ],
@@ -178,6 +181,9 @@
       "Collapse list of pending invitations": [
         "Recolher a lista de convites pendentes"
       ],
+      "Comments": [
+        "Comentários"
+      ],
       "Compose": [
         "Escrever"
       ],
@@ -191,7 +197,7 @@
         "Conectar aplicativos e dispositivos"
       ],
       "Connect to video conferencing": [
-        "Conectar-se à videoconferência.\n"
+        "Conectar-se à videoconferência"
       ],
       "Contact group": [
         "Grupo de contatos"
@@ -3462,6 +3468,9 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Essa mensagem pode conter alguns links de URL que podem não serem abertos corretamente pelo seu navegador."
       ],
+      "This version could not be loaded. Close the history and try again.": [
+        "Esta versão não pôde ser carregada. Feche o histórico e tente novamente."
+      ],
       "Too many server errors, please try again later": [
         "Muitos erros ao servidor, tente novamente mais tarde"
       ],
@@ -4603,8 +4612,17 @@
       "Close this screen to exit.": [
         "Feche esta tela para sair."
       ],
+      "Comments are not available yet": [
+        "Comentários ainda não estão disponíveis"
+      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Conecte-se ao ${ VPN_APP_NAME } para navegar de forma privada."
+      ],
+      "Connected": [
+        "Conectado"
+      ],
+      "Connecting…": [
+        "Conectando…"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Contato associado ao grupo ${ contactGroupName }"
@@ -4677,6 +4695,9 @@
       "Decrypting your document": [
         "Descriptografando seu documento"
       ],
+      "Disconnected": [
+        "Desconectado"
+      ],
       "Display word count": [
         "Exibir contagem de palavras"
       ],
@@ -4715,6 +4736,9 @@
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
+      ],
+      "Editing is temporarily unavailable.": [
+        "A edição está temporariamente indisponível."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "A hospedagem de e-mail está disponível apenas para domínios que você já possui. O registro de domínio não está disponível no momento através da ${ BRAND_NAME }. Você pode hospedar e-mail para domínios registrados em qualquer registrador de domínio."
@@ -5003,6 +5027,9 @@
       "Not a valid URL": [
         "Não é uma URL válida"
       ],
+      "Not available yet": [
+        "Ainda não disponível"
+      ],
       "Not connected": [
         "Não conectado"
       ],
@@ -5117,6 +5144,9 @@
       ],
       "Recents": [
         "Recentes"
+      ],
+      "Reconnecting…": [
+        "Reconectando…"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "As informações de recuperação permanecerão neste dispositivo, a menos que você opte por excluí-las."
@@ -5244,6 +5274,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "O proprietário deste endereço desativou a criptografia de ponta a ponta. Para poder enviar e-mails criptografados para este endereço, o proprietário deve reativar a criptografia de ponta a ponta."
+      ],
+      "The server is busy.": [
+        "O servidor está ocupado."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "O URL que você inseriu parece ter sido copiado incorretamente do Slack. Ao copiar links longos do Slack, clique com o botão direito no link e selecione \"Copiar link\" em vez de copiar o texto do URL truncado diretamente."
@@ -7657,9 +7690,6 @@
       ],
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Cancele a qualquer momento antes disso. ** Você poderá usar ${ planTitle } até que a avaliação termine, gratuitamente."
-      ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Se você continuar após o seu teste, ** você pode cancelar dentro de 30 dias e obter um reembolso pro-rata."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Uma vez que sua assinatura completa começa... ** Você ainda pode cancelar dentro de 30 dias e obter um reembolso proporcional."

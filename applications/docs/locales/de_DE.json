@@ -81,6 +81,9 @@
       "Add note": [
         "Notiz hinzufügen"
       ],
+      "Add payment method": [
+        "Zahlungsmethode hinzufügen"
+      ],
       "Add people or groups to share": [
         "Personen oder Gruppen zum Teilen hinzufügen"
       ],
@@ -117,6 +120,9 @@
       ],
       "Cancel subscription": [
         "Abonnement kündigen"
+      ],
+      "Cancel trial": [
+        "Testphase beenden"
       ],
       "Change my access": [
         "Meinen Zugriff ändern"
@@ -177,6 +183,9 @@
       ],
       "Collapse list of pending invitations": [
         "Liste der ausstehenden Einladungen ausblenden"
+      ],
+      "Comments": [
+        "Kommentare"
       ],
       "Compose": [
         "Verfassen"
@@ -3356,6 +3365,9 @@
       "Some items could not be loaded": [
         "Einige Einträge konnten nicht geladen werden"
       ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "Ein Teil des Dokuments konnte nicht gelesen werden, daher können deine Änderungen nicht gespeichert werden."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Einige deiner Ordnernamen sind nicht verfügbar. Bitte passe den Import an, um diese Namen zu bearbeiten."
       ],
@@ -3370,6 +3382,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Einige deiner Kategorienamen überschreiten die maximale Zeichenanzahl von ${ MAIL_APP_NAME }. Bitte passe den Import an, um diese Namen zu bearbeiten."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "Einige deiner zuletzt vorgenommenen Änderungen konnten nicht gespeichert werden, daher ist das Bearbeiten deaktiviert. Kopiere alle erforderlichen Inhalte und lade die Seite anschließend neu."
       ],
       "Some trashed documents could not be loaded": [
         "Einige gelöschte Dokumente konnten nicht geladen werden"
@@ -3428,6 +3443,9 @@
       "There was an error when exporting the contacts vCards": [
         "Es gab einen Fehler beim Exportieren der vCards der Kontakte"
       ],
+      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
+        "Dieses Dokument hat seine maximale Größe erreicht, daher wurde Ihre letzte Änderung nicht gespeichert und das Bearbeiten ist deaktiviert."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
       ],
@@ -3466,6 +3484,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Diese Nachricht enthält möglicherweise Internetadressen, die von deinem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."
+      ],
+      "This version could not be loaded. Close the history and try again.": [
+        "Diese Version konnte nicht geladen werden. Schließe den Verlauf und versuche es erneut."
       ],
       "Too many server errors, please try again later": [
         "Zu viele Server-Fehler, bitte versuche es später erneut"
@@ -3566,6 +3587,9 @@
       ],
       "Your import will not be processed.": [
         "Dein Import wird nicht verarbeitet."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "Deine letzte Änderung ist zu umfangreich, um gespeichert werden zu können. Daher ist das Bearbeiten deaktiviert. Kopiere alle erforderlichen Änderungen und lade die Seite anschließend neu."
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Nicht entschlüsselbares Gerät"
@@ -4608,8 +4632,17 @@
       "Close this screen to exit.": [
         "Schließe zum Beenden das Fenster."
       ],
+      "Comments are not available yet": [
+        "Kommentare sind noch nicht verfügbar"
+      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Verbinde dich mit ${ VPN_APP_NAME } um privat zu surfen"
+      ],
+      "Connected": [
+        "Verbunden"
+      ],
+      "Connecting…": [
+        "Verbindung wird hergestellt…"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt der Gruppe ${ contactGroupName } zugewiesen."
@@ -4682,6 +4715,9 @@
       "Decrypting your document": [
         "Dein Dokument wird entschlüsselt"
       ],
+      "Disconnected": [
+        "Verbindung getrennt"
+      ],
       "Display word count": [
         "Zeige Anzahl Wörter"
       ],
@@ -4720,6 +4756,9 @@
       ],
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
+      ],
+      "Editing is temporarily unavailable.": [
+        "Bearbeiten ist vorübergehend nicht möglich."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-Mail-Hosting ist nur für Domains verfügbar, die du bereits besitzt. Die Registrierung von Domains ist derzeit nicht über ${ BRAND_NAME } möglich. Du kannst E-Mails für Domains hosten, die bei einem beliebigen Domain-Registrar registriert sind."
@@ -5008,8 +5047,14 @@
       "Not a valid URL": [
         "Ungültige URL"
       ],
+      "Not available yet": [
+        "Noch nicht verfügbar"
+      ],
       "Not connected": [
         "Nicht verbunden"
+      ],
+      "Not connected. Editing resumes once you are back.": [
+        "Keine Verbindung. Das Bearbeiten wird fortgesetzt, sobald du wieder mit dem Internet verbunden bist."
       ],
       "Numbers": [
         "Zahlen"
@@ -5122,6 +5167,9 @@
       ],
       "Recents": [
         "Letzte"
+      ],
+      "Reconnecting…": [
+        "Verbindung wird wiederhergestellt …"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Die Wiederherstellungsinformationen verbleiben auf diesem Gerät, sofern du sie nicht löschst."
@@ -5238,6 +5286,12 @@
       "The Beginning": [
         "Der Anfang"
       ],
+      "The connection to the server was lost.": [
+        "Die Verbindung zum Server ist abgebrochen."
+      ],
+      "The document could not be brought up to date.": [
+        "Das Dokument konnte nicht aktualisiert werden."
+      ],
       "The document could not be created.": [
         "Das Dokument konnte nicht erstellt werden."
       ],
@@ -5252,6 +5306,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Der Inhaber dieser E-Mail-Adresse hat die Ende-zu-Ende-Verschlüsselung deaktiviert. Um verschlüsselte E-Mails an diese Adresse senden zu können, muss der Besitzer die Ende-zu-Ende-Verschlüsselung wieder aktivieren."
+      ],
+      "The server is busy.": [
+        "Der Server ist ausgelastet."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "Die von dir eingegebene URL scheint fehlerhaft von Slack kopiert worden zu sein. Wenn du lange Links von Slack kopierst, klicke mit der rechten Maustaste auf den Link und wähle dann \"Link kopieren\" anstatt den abgeschnittenen URL-Text direkt zu kopieren."
@@ -5303,6 +5360,9 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Dieser eindeutige Code kann von Webseiten und ISPs (Internetdiensteanbietern) verwendet werden, um deinen Standort und deinen Browserverlauf mit deinem Gerät zu verknüpfen."
+      ],
+      "This version of the app is no longer supported. Reload the page to update it.": [
+        "Diese Version der App wird nicht mehr unterstützt. Lade die Seite neu, um sie zu aktualisieren."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Dadurch wirst du auf allen derzeit angemeldeten Geräten abgemeldet."
@@ -5481,6 +5541,9 @@
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Möglicherweise verfügst du nicht über die erforderlichen Berechtigungen, um es mit deinem ausgewählten Konto anzuzeigen. Versuche es mit einem anderen Konto oder kontaktiere den Besitzer, um Zugang zu erhalten."
       ],
+      "You were disconnected after a period of inactivity.": [
+        "Nach einer gewissen Zeit der Inaktivität wurde deine Verbindung getrennt."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "An diesem Datum verlierst du den Zugang zu ${ planTitle }-Funktionen."
       ],
@@ -5521,6 +5584,9 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Dein ${ plan }-Abonnement wird durch ${ PASS_SHORT_APP_NAME } Lifetime ersetzt. Der verbleibende Restbetrag deines Abonnements wird deinem Konto gutgeschrieben. Der ${ PASS_SHORT_APP_NAME } Lifetime Deal hat keine Verlängerungskosten, es handelt sich um eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }."
       ],
+      "Your access to this document has changed. Reload the page to continue.": [
+        "Dein Zugriff auf dieses Dokument hat sich geändert. Bitte laden Sie die Seite neu, um fortzufahren."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
       ],
@@ -5529,6 +5595,9 @@
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Deine Änderungen werden mit Drive synchronisiert. Bitte schließe die Webseite nicht."
+      ],
+      "Your changes could not be encrypted. Reload the page to continue.": [
+        "Deine Änderungen konnten nicht verschlüsselt werden. Lade die Seite neu, um fortzufahren."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Deine Änderungen konnten nicht synchronisiert werden. Drive wird automatisch versuchen, die Änderungen zu speichern. Bitte schließe die Webseite nicht."
@@ -5590,6 +5659,9 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird jeden Monat automatisch erneuert."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "Deine Sitzung wurde beendet. Lade die Seite neu, um fortzufahren."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Dein Abonnement wird am ${ renewalTime } automatisch verlängert."
@@ -7691,8 +7763,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Jederzeit vorher kündigen.** Du kannst ${ planTitle } bis zum Ende der Testversion kostenlos nutzen."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Wenn du nach Ablauf der Testversion fortfährst,** kannst du innerhalb von 30 Tagen kündigen und erhältst eine anteilige Rückerstattung."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Hast du nach der Testphase deine Meinung geändert?** Kündige innerhalb von 30 Tagen nach deiner ersten Zahlung, und wir erstatten dir die nicht genutzte Zeit."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Sobald dein volles Abonnement beginnt,** kannst du immer noch innerhalb von 30 Tagen kündigen und eine anteilige Rückerstattung erhalten."
@@ -10117,6 +10189,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } wird so viele Daten wie möglich übertragen, beginnend mit deinen aktuellsten Nachrichten."
       ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "Eine Änderung eines anderen Bearbeiters konnte nicht eingelesen werden und fehlt daher auf dieser Seite."
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Möchtest du wirklich ${ count } Kontakt dauerhaft löschen?",
         "Möchtest du wirklich ${ count } Kontakte dauerhaft löschen?"
@@ -10144,6 +10219,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Einige der zusammenzuführenden Kontakte enthalten Fehler. Bitte überprüfe diese einzeln."
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "Ein Teil des Dokuments konnte nicht gelesen werden, daher wurde das Bearbeiten deaktiviert."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Die Kontaktdaten sind beschädigt und können nicht angezeigt werden."

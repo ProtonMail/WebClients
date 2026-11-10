@@ -81,6 +81,9 @@
       "Add note": [
         "Προσθήκη σημείωσης"
       ],
+      "Add payment method": [
+        "Προσθέστε μέθοδο πληρωμής"
+      ],
       "Add people or groups to share": [
         "Προσθήκη ατόμων ή ομάδων για κοινή χρήση"
       ],
@@ -117,6 +120,9 @@
       ],
       "Cancel subscription": [
         "Ακύρωση συνδρομής"
+      ],
+      "Cancel trial": [
+        "Ακύρωση δοκιμής"
       ],
       "Change my access": [
         "Αλλαγή της πρόσβασής μου"
@@ -177,6 +183,9 @@
       ],
       "Collapse list of pending invitations": [
         "Σύμπτυξη λίστας εκκρεμών προσκλήσεων"
+      ],
+      "Comments": [
+        "Σχόλια"
       ],
       "Compose": [
         "Σύνταξη"
@@ -3356,6 +3365,9 @@
       "Some items could not be loaded": [
         "Δεν ήταν δυνατή η φόρτωση ορισμένων στοιχείων"
       ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "Δεν ήταν δυνατή η ανάγνωση μέρους του εγγράφου, επομένως οι αλλαγές σας δεν μπορούν να αποθηκευτούν."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Ορισμένα από τα ονόματα φακέλων σας δεν είναι διαθέσιμα. Προσαρμόστε την εισαγωγή για να επεξεργαστείτε αυτά τα ονόματα."
       ],
@@ -3370,6 +3382,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Κάποια από τα ονόματα ετικετών σας υπερβαίνουν το μέγιστο όριο χαρακτήρων του ${ MAIL_APP_NAME }. Παρακαλούμε προσαρμόστε την εισαγωγή για να διορθώσετε αυτά τα ονόματα."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "Ορισμένες από τις πρόσφατες αλλαγές σας δεν ήταν δυνατό να αποθηκευτούν, επομένως η επεξεργασία είναι απενεργοποιημένη. Αντιγράψτε όποιο περιεχόμενο χρειάζεστε και, στη συνέχεια, επαναφορτώστε τη σελίδα."
       ],
       "Some trashed documents could not be loaded": [
         "Δεν ήταν δυνατή η φόρτωση ορισμένων εγγράφων στον κάδο απορριμμάτων"
@@ -3428,6 +3443,9 @@
       "There was an error when exporting the contacts vCards": [
         "Παρουσιάστηκε σφάλμα κατά την εξαγωγή επαφών σε vCards"
       ],
+      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
+        "Αυτό το έγγραφο έχει φτάσει στο μέγιστο μέγεθός του, επομένως η τελευταία σας αλλαγή δεν αποθηκεύτηκε και η επεξεργασία είναι απενεργοποιημένη."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Αυτό το πεδίο υπερβαίνει το μέγιστο των χαρακτήρων ${ maximumLength }."
       ],
@@ -3466,6 +3484,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Αυτό το μήνυμα μπορεί να περιέχει κάποιους συνδέσμους URL που δεν μπορούν να ανοίξουν σωστά από το τρέχον πρόγραμμα περιήγησης."
+      ],
+      "This version could not be loaded. Close the history and try again.": [
+        "Δεν ήταν δυνατή η φόρτωση αυτής της έκδοσης. Κλείστε το ιστορικό και δοκιμάστε ξανά."
       ],
       "Too many server errors, please try again later": [
         "Πάρα πολλά σφάλματα διακομιστή, παρακαλούμε δοκιμάστε ξανά αργότερα."
@@ -3566,6 +3587,9 @@
       ],
       "Your import will not be processed.": [
         "Η εισαγωγή σας δεν θα υποβληθεί σε επεξεργασία."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "Η τελευταία σας αλλαγή είναι πολύ μεγάλη για να αποθηκευτεί, επομένως η επεξεργασία έχει απενεργοποιηθεί. Αντιγράψτε όποιο περιεχόμενο χρειάζεστε και, στη συνέχεια, επαναφορτώστε τη σελίδα."
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Μη αποκρυπτογραφήσιμη συσκευή"
@@ -4608,8 +4632,17 @@
       "Close this screen to exit.": [
         "Κλείστε αυτήν την οθόνη για έξοδο."
       ],
+      "Comments are not available yet": [
+        "Τα σχόλια δεν είναι ακόμα διαθέσιμα"
+      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Συνδεθείτε στο ${ VPN_APP_NAME } για ιδιωτική περιήγηση"
+      ],
+      "Connected": [
+        "Συνδεδεμένο"
+      ],
+      "Connecting…": [
+        "Γίνεται σύνδεση"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Η επαφή προστέθηκε στην ομάδα ${ contactGroupName }"
@@ -4682,6 +4715,9 @@
       "Decrypting your document": [
         "Γίνεται αποκρυπτογράφηση του εγγράφου σας"
       ],
+      "Disconnected": [
+        "Αποσυνδεδεμένο"
+      ],
       "Display word count": [
         "Εμφάνιση καταμέτρησης λέξεων"
       ],
@@ -4720,6 +4756,9 @@
       ],
       "Edit email address": [
         "Επεξεργασία ηλεκτρονικής διεύθυνσης"
+      ],
+      "Editing is temporarily unavailable.": [
+        "Η επεξεργασία δεν είναι διαθέσιμη προσωρινά."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Η φιλοξενία email είναι διαθέσιμη μόνο για τους υπάρχοντες τομείς που κατέχετε. Η εγγραφή τομέων δεν είναι προσωρινά διαθέσιμη μέσω ${ BRAND_NAME }. Μπορείτε να φιλοξενήσετε email για τομείς εγγεγραμμένους σε οιουδήποτε ληξίαρχο τομέων."
@@ -5008,8 +5047,14 @@
       "Not a valid URL": [
         "Μη έγκυρο URL"
       ],
+      "Not available yet": [
+        "Μη διαθέσιμο ακόμα"
+      ],
       "Not connected": [
         "Μη συνδεδεμένο"
+      ],
+      "Not connected. Editing resumes once you are back.": [
+        "Δεν υπάρχει σύνδεση. Η επεξεργασία θα συνεχιστεί μόλις επανέλθει η σύνδεση."
       ],
       "Numbers": [
         "Αριθμοί"
@@ -5123,6 +5168,9 @@
       "Recents": [
         "Πρόσφατα"
       ],
+      "Reconnecting…": [
+        "Επανασύνδεση…"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Οι πληροφορίες ανάκτησης θα παραμείνουν σε αυτήν τη συσκευή έως ότου επιλέξετε να τις διαγράψετε."
       ],
@@ -5192,6 +5240,9 @@
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Ορισμένες κυβερνήσεις αποκλείουν ή περιορίζουν την πρόσβαση σε ορισμένους ιστότοπους. Ένα VPN βοηθά στην παράκαμψη της λογοκρισίας, διατηρώντας παράλληλα τη δραστηριότητα και την ταυτότητά σας ιδιωτικές."
       ],
+      "Some of the document's content could not be read.": [
+        "Δεν ήταν δυνατή η ανάγνωση μέρους του περιεχομένου του εγγράφου."
+      ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Ορισμένοι ιστότοποι και υπηρεσίες ροής αποκλείουν περιεχόμενο ανά περιοχή. Ένα VPN σάς επιτρέπει να παρακάμψετε αυτούς τους περιορισμούς και να έχετε ελεύθερη πρόσβαση στο διαδίκτυο."
       ],
@@ -5235,11 +5286,29 @@
       "The Beginning": [
         "Η Αρχή"
       ],
+      "The connection to the server was lost.": [
+        "Η σύνδεση με τον διακομιστή χάθηκε."
+      ],
+      "The document could not be brought up to date.": [
+        "Το έγγραφο δεν κατέστη δυνατό να ενημερωθεί."
+      ],
+      "The document could not be created.": [
+        "Απέτυχε η δημιουργία του εγγράφου."
+      ],
+      "The document could not be loaded.": [
+        "Απέτυχε η φόρτωση του εγγράφου."
+      ],
+      "The editor could not be loaded.": [
+        "Δεν ήταν δυνατή η φόρτωση του προγράμματος επεξεργασίας."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Οι εκτεθειμένες πληροφορίες διέρρευσαν από μια υπηρεσία τρίτου μέρους. Οι πληροφορίες του λογαριασμού σας ${ BRAND_NAME } παραμένουν ασφαλείς και κρυπτογραφημένες. ${ learnMoreLink }"
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ο κάτοχος αυτής της διεύθυνσης έχει απενεργοποιήσει την διατερματική κρυπτογράφηση. Για να είναι δυνατή η αποστολή κρυπτογραφημένων μηνυμάτων ηλεκτρονικού ταχυδρομείου σε αυτήν τη διεύθυνση, ο κάτοχος πρέπει να ενεργοποιήσει ξανά την διατερματική κρυπτογράφηση."
+      ],
+      "The server is busy.": [
+        "Ο διακομιστής είναι απασχολημένος."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "Η διεύθυνση URL που εισαγάγατε φαίνεται να έχει αντιγραφεί εσφαλμένα από το Slack. Κατά την αντιγραφή μεγάλων συνδέσμων από το Slack, κάντε δεξί κλικ στον σύνδεσμο και, στη συνέχεια, επιλέξτε \"Αντιγραφή συνδέσμου\" αντί να αντιγράψετε απευθείας το περικομμένο κείμενο του URL."
@@ -5291,6 +5360,9 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Αυτός ο μοναδικός κωδικός μπορεί να χρησιμοποιηθεί από ιστότοπους και ISP (internet service providers) για τη σύνδεση της τοποθεσίας και του ιστορικού περιήγησής σας με τη συσκευή σας."
+      ],
+      "This version of the app is no longer supported. Reload the page to update it.": [
+        "Αυτή η έκδοση της εφαρμογής δεν υποστηρίζεται πλέον. Επαναφορτώστε τη σελίδα για να την ενημερώσετε."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Αυτό θα σας αποσυνδέσει από όλους τους λογαριασμούς που είναι συνδεδεμένοι αυτήν τη στιγμή."
@@ -5469,6 +5541,9 @@
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Ενδέχεται να μην έχετε τα απαραίτητα δικαιώματα για να το προβάλετε με τον επιλεγμένο λογαριασμό σας. Δοκιμάστε έναν άλλο λογαριασμό ή επικοινωνήστε με τον κάτοχο για πρόσβαση."
       ],
+      "You were disconnected after a period of inactivity.": [
+        "Αποσυνδεθήκατε μετά από μια περίοδο αδράνειας."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Θα χάσετε την πρόσβαση στις δυνατότητες του ${ planTitle } αυτήν την ημέρα."
       ],
@@ -5509,6 +5584,9 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Η συνδρομή σας ${ plan } θα αντικατασταθεί με ${ PASS_SHORT_APP_NAME } διάρκειας ζωής. Το υπόλοιπο της συνδρομής σας θα προστεθεί στον λογαριασμό σας. Η προσφορά ${ PASS_SHORT_APP_NAME } διάρκειας ζωής δεν έχει τιμή ανανέωσης, είναι μια εφάπαξ πληρωμή για πρόσβαση εφ' όρου ζωής στο ${ PASS_SHORT_APP_NAME }."
       ],
+      "Your access to this document has changed. Reload the page to continue.": [
+        "Η πρόσβασή σας σε αυτό το έγγραφο έχει αλλάξει. Ανανεώστε τη σελίδα για να συνεχίσετε."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
       ],
@@ -5517,6 +5595,9 @@
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Οι αλλαγές σας συγχρονίζονται με το Drive. Παρακαλούμε μην κλείσετε την ιστοσελίδα."
+      ],
+      "Your changes could not be encrypted. Reload the page to continue.": [
+        "Δεν ήταν δυνατή η κρυπτογράφηση των αλλαγών σας. Επαναφορτώστε τη σελίδα για να συνεχίσετε."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Οι αλλαγές σας απέτυχαν να συγχρονιστούν. Το Drive θα προσπαθήσει αυτόματα να αποθηκεύσει τις αλλαγές. Παρακαλούμε μην κλείσετε την ιστοσελίδα."
@@ -5578,6 +5659,9 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε μήνα."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "Η συνεδρία σας έχει λήξει. Επαναφορτώστε τη σελίδα για να συνεχίσετε."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Η συνδρομή σας θα ανανεωθεί αυτόματα στις ${ renewalTime }."
@@ -7679,8 +7763,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή πριν από τότε.** Θα μπορείτε να χρησιμοποιείτε το ${ planTitle } δωρεάν μέχρι τη λήξη της δοκιμαστικής περιόδου."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Αν συνεχίσετε μετά τη δοκιμαστική περίοδο,** μπορείτε να ακυρώσετε εντός 30 ημερών και να λάβετε επιστροφή χρημάτων κατ' αναλογία."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Αλλάξατε γνώμη μετά τη δοκιμαστική περίοδο;** Ακυρώστε εντός 30 ημερών από την πρώτη σας πληρωμή και θα σας επιστρέψουμε το αντίτιμο για το διάστημα που δε χρησιμοποιήσατε."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Μόλις ξεκινήσει η πλήρης συνδρομή σας...** Μπορείτε ακόμα να την ακυρώσετε εντός 30 ημερών και να λάβετε επιστροφή χρημάτων κατ' αναλογία."
@@ -10105,6 +10189,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Η ${ BRAND_NAME } θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
       ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "Μια αλλαγή από άλλον συντάκτη δεν κατέστη δυνατό να αναγνωστεί και λείπει από αυτή τη σελίδα."
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τις ${ count } επαφές;"
@@ -10132,6 +10219,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Ορισμένες από τις επαφές που θα συγχωνευθούν, εμφανίζουν σφάλματα. Ελέγξτε τα ξεχωριστά"
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "Δεν ήταν δυνατή η ανάγνωση μέρους του εγγράφου, επομένως η επεξεργασία είναι απενεργοποιημένη."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Τα δεδομένα της επαφής είναι αλλοιωμένα και δεν μπορούν να προβληθούν."

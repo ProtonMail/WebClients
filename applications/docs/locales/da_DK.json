@@ -81,6 +81,9 @@
       "Add note": [
         "Tilføj note"
       ],
+      "Add payment method": [
+        "Tilføj betalingsmetode"
+      ],
       "Add people or groups to share": [
         "Tilføj personer eller grupper til deling"
       ],
@@ -117,6 +120,9 @@
       ],
       "Cancel subscription": [
         "Opsig abonnement"
+      ],
+      "Cancel trial": [
+        "Annuller prøveperiode"
       ],
       "Change my access": [
         "Ændr min adgang"
@@ -177,6 +183,9 @@
       ],
       "Collapse list of pending invitations": [
         "Klap liste over afventende invitationer sammen"
+      ],
+      "Comments": [
+        "Kommentarer"
       ],
       "Compose": [
         "Skriv"
@@ -3359,6 +3368,9 @@
       "Some items could not be loaded": [
         "Nogle elementer kunne ikke indlæses"
       ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "Noget af dokumentet kunne ikke læses, så dine ændringer kan ikke ændres."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine mappenavne er ikke tilgængelige. Tilpas importen for at redigere disse navne."
       ],
@@ -3373,6 +3385,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne overskrider ${ MAIL_APP_NAME }'s maksimale tegngrænse. Tilpas venligst importen for at ændre disse navne."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "Nogle af dine seneste ændringer kunne ikke gemmes, så redigering er deaktiveret. Kopiér alt arbejde, som du skal bruge, og genindlæs siden."
       ],
       "Some trashed documents could not be loaded": [
         "Nogle elementer i papirkurven kunne ikke indlæses"
@@ -3431,6 +3446,9 @@
       "There was an error when exporting the contacts vCards": [
         "Der opstod en fejl under eksport af kontakternes vCards"
       ],
+      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
+        "Dette dokument har nået dets maksimale størrelse, så dine seneste ændringer blev ikke gemt, og redigering er deaktiveret."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
       ],
@@ -3469,6 +3487,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
+      ],
+      "This version could not be loaded. Close the history and try again.": [
+        "Denne version kunne ikke indlæses. Luk historikken, og prøv igen."
       ],
       "Too many server errors, please try again later": [
         "For mange serverfejl, prøv igen senere"
@@ -3569,6 +3590,9 @@
       ],
       "Your import will not be processed.": [
         "Din import vil ikke blive behandlet."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "Din sidste ændring er for stor til at gemme, så redigering er deaktiveret. Kopiér alt arbejde, som du skal bruge, og genindlæs siden."
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Enhed, der ikke kan dekrypteres"
@@ -4611,8 +4635,17 @@
       "Close this screen to exit.": [
         "Luk denne skærm for at afslutte."
       ],
+      "Comments are not available yet": [
+        "Kommentarer er endnu ikke tilgængelige"
+      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Forbind til ${ VPN_APP_NAME } for at browse privat"
+      ],
+      "Connected": [
+        "Forbundet"
+      ],
+      "Connecting…": [
+        "Forbinder…"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilføjet til gruppen ${ contactGroupName }"
@@ -4685,6 +4718,9 @@
       "Decrypting your document": [
         "Dekrypterer dit dokument"
       ],
+      "Disconnected": [
+        "Frakoblet"
+      ],
       "Display word count": [
         "Vis antal ord"
       ],
@@ -4723,6 +4759,9 @@
       ],
       "Edit email address": [
         "Rediger e-mailadresse"
+      ],
+      "Editing is temporarily unavailable.": [
+        "Redigering er midlertidigt utilgængeligt."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailhosting er kun tilgængelig for domæner, du allerede ejer. Domæneregistrering er ikke tilgængelig i øjeblikket via ${ BRAND_NAME }. Du kan hoste e-mail for domæner, der er registreret hos en hvilken som helst domæneregistrator."
@@ -5011,8 +5050,14 @@
       "Not a valid URL": [
         "Ugyldig URL"
       ],
+      "Not available yet": [
+        "Ikke tilgængeligt endnu"
+      ],
       "Not connected": [
         "Ikke forbundet"
+      ],
+      "Not connected. Editing resumes once you are back.": [
+        "Du er ikke forbundet. Redigering aktiveres igen så snart du er tilbage."
       ],
       "Numbers": [
         "Tal"
@@ -5125,6 +5170,9 @@
       ],
       "Recents": [
         "Seneste"
+      ],
+      "Reconnecting…": [
+        "Genopretter forbindelsen…"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gendannelsesoplysninger vil forblive på denne enhed, medmindre du vælger at slette dem."
@@ -5241,6 +5289,12 @@
       "The Beginning": [
         "Begyndelsen"
       ],
+      "The connection to the server was lost.": [
+        "Forbindelsen til serveren blev afbrudt."
+      ],
+      "The document could not be brought up to date.": [
+        "Dokumentet kunne ikke opdateres."
+      ],
       "The document could not be created.": [
         "Dokumentet kunne ikke oprettes."
       ],
@@ -5255,6 +5309,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ejeren af denne adresse har deaktiveret end-to-end-kryptering. For at kunne sende krypterede e-mails til denne adresse, skal ejeren genaktivere end-to-end-kryptering."
+      ],
+      "The server is busy.": [
+        "Serveren er optaget."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "Den URL, du indtastede, ser ud til at være blevet kopieret forkert fra Slack. Når du kopierer lange links fra Slack, højreklik på linket, vælg så \"Kopiér link\" i stedet for at kopiere den afkortede URL-tekst direkte."
@@ -5306,6 +5363,9 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Denne unikke kode kan bruges af websteder og ISPs (internetudbydere) til at forbinde din placering og browserhistorik til din enhed."
+      ],
+      "This version of the app is no longer supported. Reload the page to update it.": [
+        "Denne version af appen understøttes ikke længere. Gendindlæs siden for at opdatere den."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Dette vil logge dig ud af alle kontoer, der i øjeblikket er logget ind."
@@ -5484,6 +5544,9 @@
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Du har muligvis ikke de nødvendige tilladelser til at se det med din valgte konto. Prøv en anden konto, eller kontakt ejeren for at få adgang."
       ],
+      "You were disconnected after a period of inactivity.": [
+        "Din forbindelse blev afbrudt på grund af inaktivitet."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Du vil miste adgang til ${ planTitle }-funktioner på denne dato."
       ],
@@ -5524,6 +5587,9 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Dit ${ plan }-abonnement vil blive erstattet af ${ PASS_SHORT_APP_NAME } Lifetime. Den resterende del af dit abonnement vil blive tilføjet til din konto. ${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }."
       ],
+      "Your access to this document has changed. Reload the page to continue.": [
+        "Din adgang til dette dokument er blev ændret. Genindlæs siden for at fortsætte."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
       ],
@@ -5532,6 +5598,9 @@
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Dine ændringer bliver synkroniseret til Drive. Du må ikke lukke webstedet."
+      ],
+      "Your changes could not be encrypted. Reload the page to continue.": [
+        "Dine ændringer kunne ikke krypteres. Genindlæs siden for at forsætte."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Dine ændringer kunne ikke synkroniseres. Drive vil forsøge at gemme ændringerne automatisk. Luk ikke websiden."
@@ -5593,6 +5662,9 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver måned."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "Din session er udløbet. Genindlæs siden for at fortsætte."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Dit abonnement vil automatisk blive fornyet den ${ renewalTime }."
@@ -7694,8 +7766,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Annuller når som helst før da**. Du vil kunne bruge ${ planTitle } indtil prøveperioden slutter, uden beregning."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Hvis du forsætter efter din prøveperiode,** så kan du stadig annullere inden for 30 dage og få en forholdsmæssig refusion."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Har du ændret mening efter prøveperioden?** Annuller indenfor 30 dage fra din første betaling for at få den resterende tid refunderet."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Så snart dit abonnement starter...** kan du stadig annullere indenfor 30 dage og få en forholdsmæssig refusion."
@@ -10120,6 +10192,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mange data som muligt, startende med dine seneste beskeder."
       ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "En ændring fra en anden redaktør kunne ikke læses, og mangler fra denne side."
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Er du sikker på, at du vil slette ${ count } kontakt permanent?",
         "Er du sikker på, at du vil slette ${ count } kontakter permanent?"
@@ -10147,6 +10222,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Nogle af de kontakter, som skal flettes, udviser fejl. Gennemgå dem individuelt"
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "Noget af dokumentet kunne ikke læses, så redigering er deaktiveret."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kontaktdata er beskadiget og kan ikke vises."

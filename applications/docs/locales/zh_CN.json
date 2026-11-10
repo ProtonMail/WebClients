@@ -4539,6 +4539,12 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "连接到 ${ VPN_APP_NAME } 实现隐私浏览"
       ],
+      "Connected": [
+        "已关联"
+      ],
+      "Connecting…": [
+        "正在连接…"
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "联系人已加入 ${ contactGroupName } 群组"
       ],
@@ -4607,6 +4613,9 @@
       ],
       "Decrypting your document": [
         "正在解密您的文档"
+      ],
+      "Disconnected": [
+        "取消关联"
       ],
       "Display word count": [
         "显示字数"
@@ -7514,9 +7523,6 @@
       ],
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**在此之前可随时取消。** 在试用期结束前，您可以免费使用 ${ planTitle }。"
-      ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**如果您在试用期结束后继续使用，** 可以在 30 天内取消，并获得按比例退款。"
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**您的完整订阅开始后…** 您仍可在 30 天内取消，并获得按比例退款。"

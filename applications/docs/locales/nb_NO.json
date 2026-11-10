@@ -81,6 +81,9 @@
       "Add note": [
         "Legg til notat"
       ],
+      "Add payment method": [
+        "Legg til betalingsmåte"
+      ],
       "Add people or groups to share": [
         "Legg til personer eller grupper til delt ressurs"
       ],
@@ -117,6 +120,9 @@
       ],
       "Cancel subscription": [
         "Avbryt abonnement"
+      ],
+      "Cancel trial": [
+        "Avbryt prøveperioden"
       ],
       "Change my access": [
         "Endre tilgangen min"
@@ -1242,6 +1248,11 @@
       ],
       "Protection for two in a single plan": [
         "Beskyttelse for to i ett abonnement"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName }-skrivebordsapplikasjon"
       ]
     },
     "Bug category": {
@@ -4442,6 +4453,10 @@
         "${ selectedFoldersCountLocalized } etikett valgt",
         "${ selectedFoldersCountLocalized } etiketter valgt"
       ],
+      "${ selection.selectedIds.length } selected": [
+        "${ selection.selectedIds.length } valgt",
+        "${ selection.selectedIds.length } valgt"
+      ],
       "${ timeRemaining } left in your trial. ${ addPaymentMethodLink } to avoid losing access. ${ learnMoreLink }": [
         "${ timeRemaining } igjen av prøveperioden. ${ addPaymentMethodLink } for å unngå å miste tilgang. ${ learnMoreLink }"
       ],
@@ -4591,8 +4606,17 @@
       "Close this screen to exit.": [
         "Lukk dette skjermbildet for å avslutte."
       ],
+      "Comments are not available yet": [
+        "Kommentarer er ikke tilgjengelige ennå"
+      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Koble til ${ VPN_APP_NAME } for å surfe privat"
+      ],
+      "Connected": [
+        "Tilkoblet"
+      ],
+      "Connecting…": [
+        "Kobler til..."
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilordnet gruppe ${ contactGroupName }"
@@ -4664,6 +4688,9 @@
       ],
       "Decrypting your document": [
         "Dekrypterer dokumentet ditt"
+      ],
+      "Disconnected": [
+        "Frakoblet"
       ],
       "Display word count": [
         "Vis antall ord"
@@ -5106,6 +5133,9 @@
       "Recents": [
         "Nylige"
       ],
+      "Reconnecting…": [
+        "Kobler til på nytt…"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gjennopprettelsesopplysninger vil forbli på denne enheten, med mindre du velger å slette dem."
       ],
@@ -5218,11 +5248,17 @@
       "The Beginning": [
         "Begynnelsen"
       ],
+      "The document could not be created.": [
+        "Dokumentet kunne ikke opprettes."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Den eksponerte informasjonen ble lekket fra en tredjepartstjeneste. ${ BRAND_NAME }-kontoinformasjonen din forblir sikker og kryptert. ${ learnMoreLink }."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Eieren av denne adressen har deaktivert ende-til-ende-kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
+      ],
+      "The server is busy.": [
+        "Serveren er opptatt"
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "Nettadressen du skrev inn, ser ut til å være kopiert feil fra Slack. Når du kopierer lange koblinger fra Slack, høyreklikker du på koblingen og velger \"Kopier kobling\" i stedet for å kopiere den avkortede URL-teksten direkte."
@@ -7312,6 +7348,10 @@
       "\"Document deleted permanently": [
         "\"Dokument slettet permanent\""
       ],
+      "${ count } item could not be moved to trash": [
+        "${ count } element kunne ikke flyttes til papirkurven",
+        "${ count } elementer kunne ikke flyttes til papirkurven"
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } element ble ikke dekryptert",
         "${ count } elementer ble ikke dekryptert"
@@ -7625,8 +7665,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Avbryt når som helst før da.** Du kan bruke ${ planTitle } helt til prøveperioden avsluttes, gratis."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Hvis du fortsetter etter prøveperioden,** kan du si opp innen 30 dager og få en forholdsmessig refusjon."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Ombestemt deg etter prøveperioden?** Si opp innen 30 dager etter første betaling, og vi refunderer den ubrukte tiden."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Når det fulle abonnementet ditt starter ...** Du kan fortsatt si opp innen 30 dager og få en forholdsmessig refusjon."
@@ -7836,6 +7876,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, avbryt når som helst."
       ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Scribe-seter kan ikke overstige antallet medlemmer."
+      ],
       "terms and conditions": [
         "vilkår og betingelser"
       ],
@@ -7892,6 +7935,9 @@
       ],
       "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
         "Prøveplaner støtter ikke ${ LUMO_SHORT_APP_NAME }-seter."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Prøveplaner støtter ikke egendefinerte domener."
       ],
       "Trial plans don’t support dedicated IPs.": [
         "Prøveplaner støtter ikke dedikerte IP-er."

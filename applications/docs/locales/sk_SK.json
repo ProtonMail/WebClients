@@ -81,6 +81,9 @@
       "Add note": [
         "Pridať poznámku"
       ],
+      "Add payment method": [
+        "Pridať spôsob platby"
+      ],
       "Add people or groups to share": [
         "Pre zdieľanie pridajte ľudí alebo skupiny"
       ],
@@ -119,6 +122,9 @@
       ],
       "Cancel subscription": [
         "Zrušiť predplatné"
+      ],
+      "Cancel trial": [
+        "Zrušiť skúšobné obdobie"
       ],
       "Change my access": [
         "Zmeniť môj prístup"
@@ -179,6 +185,9 @@
       ],
       "Collapse list of pending invitations": [
         "Zbaliť zoznam čakajúcich pozvánok"
+      ],
+      "Comments": [
+        "Komentáre"
       ],
       "Compose": [
         "Napísať správu"
@@ -407,6 +416,9 @@
       ],
       "Go back": [
         "Späť"
+      ],
+      "Go to ${ DOCS_SHORT_APP_NAME } home": [
+        "Prejsť na hlavnú stránku ${ DOCS_SHORT_APP_NAME }"
       ],
       "Go to ${ planOrAppName }": [
         "Prejsť do ${ planOrAppName }"
@@ -3409,6 +3421,9 @@
       "Some items could not be loaded": [
         "Niektoré položky sa nepodarilo načítať"
       ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "Časť dokumentu sa nepodarilo prečítať, preto nie je možné uložiť vaše zmeny."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Niektoré z názvov vašich priečinkov nie sú k dispozícii. Prispôsobte import a upravte tieto názvy, prosím."
       ],
@@ -3423,6 +3438,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Niektoré z vašich názvov štítkov prekračujú maximálny limit znakov pre ${ MAIL_APP_NAME }. Prispôsobte import na úpravu týchto názvov."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "Niektoré z vašich posledných zmien sa nepodarilo uložiť, preto je úprava deaktivovaná. Skopírujte si všetko, čo potrebujete, a potom stránku znovu načítajte."
       ],
       "Some trashed documents could not be loaded": [
         "Niektoré odstránené dokumenty sa nepodarilo načítať"
@@ -3481,6 +3499,9 @@
       "There was an error when exporting the contacts vCards": [
         "Pri exporte kontaktov do vCard došlo k chybe"
       ],
+      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
+        "Tento dokument dosiahol maximálnu veľkosť, preto sa vaša posledná zmena neuložila a úpravy sú deaktivované."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Toto pole presahuje maximálny počet znakov ${ maximumLength }."
       ],
@@ -3519,6 +3540,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Táto správa môže obsahovať URL odkazy, ktoré nemôžu by správne otvorené vaším aktuálnym prehliadačom."
+      ],
+      "This version could not be loaded. Close the history and try again.": [
+        "Túto verziu sa nepodarilo načítať. Zatvorte históriu a skúste to znova."
       ],
       "Too many server errors, please try again later": [
         "Vyskytlo sa príliš veľa chýb servera, skúste to neskôr, prosím"
@@ -3621,6 +3645,9 @@
       ],
       "Your import will not be processed.": [
         "Váš import nebude spracovaný."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "Vaša posledná zmena je príliš rozsiahla na to, aby sa dala uložiť, preto je úprava deaktivovaná. Skopírujte si všetko, čo potrebujete, a potom stránku znovu načítajte."
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Nerozšifrovateľné zariadenie"
@@ -4737,8 +4764,17 @@
       "Close this screen to exit.": [
         "Pre ukončenie zatvorte túto obrazovku."
       ],
+      "Comments are not available yet": [
+        "Komentáre zatiaľ nie sú k dispozícii"
+      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Pripojte sa k ${ VPN_APP_NAME } a surfujte v súkromí"
+      ],
+      "Connected": [
+        "Pripojené"
+      ],
+      "Connecting…": [
+        "Pripájanie…"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt priradený k skupine ${ contactGroupName }"
@@ -4815,6 +4851,9 @@
       "Decrypting your document": [
         "Dešifrujeme váš dokument"
       ],
+      "Disconnected": [
+        "Odpojené"
+      ],
       "Display word count": [
         "Zobraziť počet slov"
       ],
@@ -4853,6 +4892,9 @@
       ],
       "Edit email address": [
         "Upraviť emailovú adresu"
+      ],
+      "Editing is temporarily unavailable.": [
+        "Upravovanie je dočasne nedostupné."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Emailový hosting je dostupný len pre domény, ktoré už vlastníte. Registrácia domény nie je momentálne dostupná prostredníctvom ${ BRAND_NAME }. Môžete hostiť email pre domény registrované u ktoréhokoľvek registrátora domén."
@@ -5145,8 +5187,14 @@
       "Not a valid URL": [
         "Neplatný odkaz"
       ],
+      "Not available yet": [
+        "Zatiaľ nie je k dispozícii"
+      ],
       "Not connected": [
         "Nepripojené"
+      ],
+      "Not connected. Editing resumes once you are back.": [
+        "Bez pripojenia. Úprava bude pokračovať, keď sa opäť pripojíte."
       ],
       "Numbers": [
         "Čísla"
@@ -5262,6 +5310,9 @@
       "Recents": [
         "Nedávne"
       ],
+      "Reconnecting…": [
+        "Obnovuje sa spojenie…"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informácie o obnovení zostanú v tomto zariadení, pokiaľ nezvolíte ich odstránenie."
       ],
@@ -5331,6 +5382,9 @@
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Niektoré vlády blokujú alebo obmedzujú prístup na určité webové stránky. VPN pomáha obísť cenzúru a zároveň zachováva súkromie vašich aktivít a identity."
       ],
+      "Some of the document's content could not be read.": [
+        "Časť obsahu dokumentu sa nepodarilo prečítať."
+      ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Niektoré webové lokality a stravovacie služby blokujú obsah podľa regiónov. VPN vám umožní tieto obmedzenia obísť a získať voľný prístup na internet."
       ],
@@ -5376,11 +5430,29 @@
       "The Beginning": [
         "Začiatok"
       ],
+      "The connection to the server was lost.": [
+        "Pripojenie k serveru bolo prerušené."
+      ],
+      "The document could not be brought up to date.": [
+        "Dokument sa nepodarilo aktualizovať."
+      ],
+      "The document could not be created.": [
+        "Dokument sa nepodarilo vytvoriť."
+      ],
+      "The document could not be loaded.": [
+        "Dokument sa nepodarilo načítať."
+      ],
+      "The editor could not be loaded.": [
+        "Editor sa nepodarilo načítať."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Informácie, ktoré boli zverejnené, unikli zo služby tretej strany. Vaše informácie o účte ${ BRAND_NAME } zostávajú zabezpečené a zašifrované. ${ learnMoreLink }"
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Vlastník tejto adresy vypol end-to-end šifrovanie. Ak chcete na túto adresu odosielať šifrované emaily, vlastník musí opäť povoliť end-to-end šifrovanie."
+      ],
+      "The server is busy.": [
+        "Server je vyťažený."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "Vami zadaná URL adresa bola zrejme nesprávne skopírovaná zo služby Slack. Pri kopírovaní dlhých odkazov zo služby Slack kliknite pravým tlačidlom myši na odkaz a vyberte možnosť „Kopírovať odkaz“, namiesto priameho kopírovania skráteného textu URL adresy."
@@ -5415,6 +5487,9 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Toto je názov alebo prezývka vašej organizácie, ktorú uvidia vaši používatelia. Môžete ho kedykoľvek zmeniť."
       ],
+      "This link is not supported on this page.": [
+        "Tento odkaz nie je na tejto stránke podporovaný."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tento odkaz vedie na webovú stránku, ktorá sa môže pokúsiť ukradnúť vaše informácie, ako sú heslá a údaje z platobnej karty."
       ],
@@ -5429,6 +5504,9 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Tento jedinečný kód môžu webové stránky a poskytovatelia internetových služieb (ISP) použiť na prepojenie vašej polohy a histórie prehliadania s vaším zariadením"
+      ],
+      "This version of the app is no longer supported. Reload the page to update it.": [
+        "Táto verzia aplikácie už nie je podporovaná. Na aktualizáciu stránky ju znovu načítajte."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Týmto sa odhlásite zo všetkých aktuálne prihlásených účtov."
@@ -5607,6 +5685,9 @@
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Je možné, že nemáte potrebné oprávnenia na zobrazenie s vybraným účtom. Skúste použiť iný účet alebo sa obráťte na vlastníka, aby vám poskytol prístup."
       ],
+      "You were disconnected after a period of inactivity.": [
+        "Po určitej dobe nečinnosti došlo k prerušeniu spojenia."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "V tento deň stratíte prístup k funkciám ${ planTitle }."
       ],
@@ -5649,6 +5730,9 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Vaše ${ plan } predplatné bude nahradené predplatným ${ PASS_SHORT_APP_NAME } Lifetime. Zostávajúci zostatok vášho predplatného bude pripísaný na váš účet. Dohoda o ${ PASS_SHORT_APP_NAME } doživotnom predplatnom nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }."
       ],
+      "Your access to this document has changed. Reload the page to continue.": [
+        "Váš prístup k tomuto dokumentu sa zmenil. Na pokračovanie obnovte stránku."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má aspoň jednu faktúru po splatnosti. Váš prístup bude čoskoro obmedzený. ${ payInvoiceLink }"
       ],
@@ -5657,6 +5741,9 @@
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Vaše zmeny sa synchronizujú s lokalitou Drive. Nezatvárajte webovú stránku."
+      ],
+      "Your changes could not be encrypted. Reload the page to continue.": [
+        "Vaše zmeny sa nepodarilo zašifrovať. Na pokračovanie obnovte stránku."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Vaše zmeny sa nepodarilo synchronizovať. Drive sa automaticky pokúsi zmeny uložiť. Nezatvárajte webovú stránku, prosím."
@@ -5720,6 +5807,9 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Vaše naplánované predplatné sa začína ${ renewalTime } a bude automaticky obnovené každý mesiac."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "Vaša relácia vypršala. Obnovte stránku pre pokračovanie."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Vaše predplatné sa automaticky obnoví dňa ${ renewalTime }."
@@ -7929,8 +8019,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Zrušiť môžete kedykoľvek pred týmto termínom.** ${ planTitle } budete môcť bezplatne využívať až do konca skúšobného obdobia."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Ak budete pokračovať aj po skončení skúšobnej doby,** môžete službu zrušiť do 30 dní a získať pomernú refundáciu."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Zmenili ste názor po skončení skúšobnej doby?** Ak zrušíte predplatné do 30 dní od prvej platby, vrátime vám peniaze za nevyčerpanú dobu."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Po začatí platnosti predplatného...** môžete do 30 dní predplatné zrušiť a získať pomernú refundáciu."
@@ -10481,6 +10571,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Tento import môže prekročiť kapacitu úložiska, ktorá je momentálne k dispozícii vo vašom ${ BRAND_NAME } účte. Zvážte prosím prispôsobenie importu."
       ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "Zmena vykonaná v inom editore sa nepodarilo načítať a na tejto stránke chýba."
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Naozaj chcete natrvalo vymazať ${ count } kontakt?",
         "Naozaj chcete natrvalo vymazať ${ count } kontakty?",
@@ -10510,6 +10603,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Niektoré kontakty vykazujú chybu pri spojení. Prosím, skontrolujte ich individuálne"
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "Časť dokumentu nebolo možné prečítať, preto je úprava zakázaná."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kontaktné údaje sú poškodené a nie je možné ich zobraziť."

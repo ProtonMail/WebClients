@@ -81,6 +81,9 @@
       "Add note": [
         "Adăugare notă"
       ],
+      "Add payment method": [
+        "Adăugare metodă de plată"
+      ],
       "Add people or groups to share": [
         "Adăugare persoane sau grupuri pentru partajare"
       ],
@@ -118,6 +121,9 @@
       ],
       "Cancel subscription": [
         "Anulare abonament"
+      ],
+      "Cancel trial": [
+        "Anulare perioadă de probare"
       ],
       "Change my access": [
         "Modifică-mi accesul"
@@ -178,6 +184,9 @@
       ],
       "Collapse list of pending invitations": [
         "Restrânge listă invitații în așteptare"
+      ],
+      "Comments": [
+        "Comentarii"
       ],
       "Compose": [
         "Compunere"
@@ -3384,6 +3393,9 @@
       "Some items could not be loaded": [
         "Unele articole nu au putut fi încărcate."
       ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "O parte a documentului nu a putut fi citită, așa că modificările efectuate nu pot fi salvate."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Unele nume de foldere nu sunt disponibile. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
@@ -3398,6 +3410,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Unele nume de etichete depășesc limita maximă admisă de caractere din ${ MAIL_APP_NAME }. Modificați opțiunile de importare pentru a edita aceste nume."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "Unele dintre modificările efectuate recent nu au putut fi salvate, așa că editarea este dezactivată. Copiați tot ce aveți nevoie, apoi reîncarcați pagina."
       ],
       "Some trashed documents could not be loaded": [
         "Nu s-au putut încărca unele documente din gunoi."
@@ -3456,6 +3471,9 @@
       "There was an error when exporting the contacts vCards": [
         "A apărut o eroare la exportarea cărților de vizită a contactelor („vCards”)."
       ],
+      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
+        "Acest document a atins dimensiunea maximă, astfel că ultima modificare nu a fost salvată, iar editarea este dezactivată."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Acest câmp depășește maximul de ${ maximumLength } de caractere."
       ],
@@ -3494,6 +3512,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Acest mesaj poate conține unele legături web care nu pot fi deschise corect de către navigatorul actual."
+      ],
+      "This version could not be loaded. Close the history and try again.": [
+        "Această versiune nu a putut fi încărcată. Închideți istoricul și reîncercați."
       ],
       "Too many server errors, please try again later": [
         "Prea multe erori de server. Reîncercați mai târziu."
@@ -3595,6 +3616,9 @@
       ],
       "Your import will not be processed.": [
         "Importarea nu va fi procesată."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "Ultima modificare este prea mare pentru a fi salvată, așa că editarea este dezactivată. Copiați tot ce aveți nevoie, apoi reîncarcați pagina."
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Dispozitiv nedecriptabil"
@@ -4674,8 +4698,17 @@
       "Close this screen to exit.": [
         "Închideți această fereastră pentru a ieși."
       ],
+      "Comments are not available yet": [
+        "Comentariile încă nu sunt disponibile."
+      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Conectați-vă la ${ VPN_APP_NAME } pentru a naviga privat"
+      ],
+      "Connected": [
+        "Conectat"
+      ],
+      "Connecting…": [
+        "Se conectează…"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Contactul a fost adăugat la grupul ${ contactGroupName }."
@@ -4750,6 +4783,9 @@
       "Decrypting your document": [
         "Se decriptează documentul"
       ],
+      "Disconnected": [
+        "Deconectat"
+      ],
       "Display word count": [
         "Afișare număr cuvinte"
       ],
@@ -4788,6 +4824,9 @@
       ],
       "Edit email address": [
         "Editare adresă de e-mail"
+      ],
+      "Editing is temporarily unavailable.": [
+        "Editarea nu este disponibilă momentan."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Găzduirea pentru e-mail este disponibilă numai pentru domeniile pe care le dețineți deja. Înregistrarea domeniului nu este disponibilă în prezent prin ${ BRAND_NAME }. Puteți găzdui e-mail pentru domenii înregistrate cu orice înregistrator de domenii."
@@ -5078,8 +5117,14 @@
       "Not a valid URL": [
         "URL nevalid"
       ],
+      "Not available yet": [
+        "Indisponibil momentan"
+      ],
       "Not connected": [
         "Neconectat"
+      ],
+      "Not connected. Editing resumes once you are back.": [
+        "Nu există conexiune. Editarea se va relua imediat după reconectare."
       ],
       "Numbers": [
         "Cifre"
@@ -5193,6 +5238,9 @@
       ],
       "Recents": [
         "Recente"
+      ],
+      "Reconnecting…": [
+        "Se reconectează…"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informațiile de recuperare vor rămâne pe acest dispozitiv până când le selectați să fie șterse."
@@ -5310,6 +5358,12 @@
       "The Beginning": [
         "Începutul"
       ],
+      "The connection to the server was lost.": [
+        "Conexiunea cu serverul a fost pierdută."
+      ],
+      "The document could not be brought up to date.": [
+        "Documentul nu a putut fi adus la zi."
+      ],
       "The document could not be created.": [
         "Documentul nu a putut fi creat."
       ],
@@ -5324,6 +5378,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Proprietarul acestei adrese a dezactivat criptarea bilaterală. Pentru a putea trimite mesaje criptate la această adresă, proprietarul trebuie să reactiveze criptarea bilaterală."
+      ],
+      "The server is busy.": [
+        "Serverul este ocupat."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "Adresa URL introdusă pare să fi fost copiată incorect din Slack. Când copiați legături web lungi din Slack, faceți clic dreapta pe legătura web, apoi alegeți „Copiere legătură” în loc să copiați direct textul trunchiat al adresei URL."
@@ -5375,6 +5432,9 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Acest cod unic poate fi folosit de către site-uri web și ISP (furnizorii de servicii de internet) pentru a vă corela locul și istoricul de navigare cu dispozitivul utilizat."
+      ],
+      "This version of the app is no longer supported. Reload the page to update it.": [
+        "Această versiune a aplicației nu mai este susținută. Reîncărcați pagina pentru a o actualiza."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Aceasta vă va deconectat din toate conturile conectate acum."
@@ -5553,6 +5613,9 @@
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "S-ar putea să nu aveți permisiunile necesare pentru a-l vizualiza cu contul selectat. Încercați un alt cont sau contactați proprietarul pentru a-l accesa."
       ],
+      "You were disconnected after a period of inactivity.": [
+        "Conexiunea a fost deconectată după o perioadă de inactivitate."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Veți pierde accesul la funcțiile planului ${ planTitle } la această dată."
       ],
@@ -5594,6 +5657,9 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Abonamentul ${ plan } va fi înlocuit cu ${ PASS_SHORT_APP_NAME } pe viață. Soldul rămas din abonament va fi restituit în cont. Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
       ],
+      "Your access to this document has changed. Reload the page to continue.": [
+        "Accesul la acest document s-a modificat. Reîncărcați pagina pentru a continua."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
       ],
@@ -5602,6 +5668,9 @@
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Modificările vă sunt sincronizate cu Drive. Nu închideți pagina web."
+      ],
+      "Your changes could not be encrypted. Reload the page to continue.": [
+        "Modificările nu au putut fi criptate. Reîncărcați pagina pentru a continua."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Modificările nu s-au sincronizat. Drive va încerca automat să salveze modificările. Nu închideți pagina web."
@@ -5664,6 +5733,9 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Planul planificat începe ${ renewalTime } și se va reînnoi automat lunar."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "Sesiunea a expirat. Reîncărcați pagina pentru a continua."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Abonamentu se va reînnoi automat la ${ renewalTime }."
@@ -7819,8 +7891,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Puteți anula oricând înainte de acel moment.** Veți putea utiliza ${ planTitle } gratuit până la expirarea perioadei de probare."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Dacă alegeți să continuați după perioada de probare,** puteți anula în termen de 30 de zile și puteți primi o rambursare proporțională."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**V-ați răzgândit după perioada de probare?** Anulați în termen de 30 de zile de la prima plată, iar noi vă vom rambursa contravaloarea perioadei neutilizate."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**După ce începe abonamentul complet,** încă puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
@@ -10308,6 +10380,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
       ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "O modificare efectuată de un alt editor nu a putut fi citită și lipsește de pe această pagină."
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?",
         "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?",
@@ -10336,6 +10411,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Unele contacte ce trebuie îmbinate prezintă erori. Reexaminați-le individual."
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "O parte a documentului nu a putut fi citită, astfel încât editarea este dezactivată."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Datele de contact sunt corupte și nu pot fi afișate."
