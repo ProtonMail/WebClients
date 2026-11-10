@@ -9,6 +9,7 @@ import clsx from '@proton/utils/clsx';
 import { useLockSetup } from '../../hooks/auth/useLockSetup';
 import { LockMode } from '../../lib/auth/lock/types';
 import { useOnline } from '../Core/ConnectivityProvider';
+import { usePassCore } from '../Core/PassCoreProvider';
 import { LockTTLField } from '../Lock/LockTTLField';
 import { usePasswordTypeSwitch } from '../Lock/PasswordUnlockProvider';
 
@@ -16,6 +17,7 @@ type Props = { noTTL?: boolean };
 
 export const LockSetup: FC<Props> = ({ noTTL = false }) => {
     const online = useOnline();
+    const { biometricsKeyAppBound } = usePassCore();
     const { setLockMode, setLockTTL, lock, biometrics, extensionBiometrics, password } = useLockSetup();
     const passwordTypeSwitch = usePasswordTypeSwitch();
 
@@ -42,6 +44,17 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
 
         return c('Info').t`This option is currently not available on your browser.`;
     })();
+
+    /** No key is stored at rest when not app-bound: an offline start falls back to the password */
+    const biometricsOfflineHint =
+        biometrics.enabled && !biometricsKeyAppBound
+            ? passwordTypeSwitch({
+                  sso: c('Info').t`Starting ${PASS_APP_NAME} offline will require your backup password.`,
+                  extra: c('Info').t`Starting ${PASS_APP_NAME} offline will require your extra password.`,
+                  twoPwd: c('Info').t`Starting ${PASS_APP_NAME} offline will require your second password.`,
+                  default: c('Info').t`Starting ${PASS_APP_NAME} offline will require your ${BRAND_NAME} password.`,
+              })
+            : null;
 
     return (
         <>
@@ -109,6 +122,11 @@ export const LockSetup: FC<Props> = ({ noTTL = false }) => {
                                           <span className="block">
                                               {c('Label').t`Biometrics`}
                                               <span className="block color-weak text-sm">{biometricsHint}</span>
+                                              {biometricsOfflineHint && (
+                                                  <span className="block color-weak text-sm">
+                                                      {biometricsOfflineHint}
+                                                  </span>
+                                              )}
                                           </span>
                                       </span>
                                   ),

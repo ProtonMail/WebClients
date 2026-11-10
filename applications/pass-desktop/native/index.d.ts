@@ -14,7 +14,11 @@ export interface SshKeyData {
 
 export declare namespace biometric {
     export function canCheckPresence(): Promise<boolean>;
-    export function checkPresence(handle: Buffer, reason: string): Promise<void>;
+    /**
+     * Resolves `true` when verified and `false` when the user cancelled the prompt.
+     * Rejects with the platform message for any other failure.
+     */
+    export function checkPresence(handle: Buffer, reason: string): Promise<boolean>;
     export function deleteSecret(key: string): Promise<void>;
     export function getSecret(key: string): Promise<Uint8Array>;
     export function setSecret(key: string, secret: Uint8Array): Promise<void>;

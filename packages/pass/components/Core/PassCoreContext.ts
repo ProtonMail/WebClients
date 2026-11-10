@@ -87,10 +87,26 @@ export type PassCoreContextValue = {
     writeToClipboard: (text: string, clipboardTTL: Maybe<number>, promptForPermissions?: boolean) => Promise<boolean>;
     /** Checks whether biometrics functionalities can be used */
     supportsBiometrics?: () => Promise<boolean>;
-    /** Gets the unlock key via biometrics */
+    /** Whether the biometric unlock key is bound to this application by the
+     * platform — a gesture-coupled store read (WebAuthn PRF, app-signed keychain)
+     * as opposed to a shared per-user store any same-user process can read.
+     * When `false`, no key material may be persisted at rest for the biometric
+     * lock: the envelope is dropped and the biometric lock is a UI lock only. */
+    biometricsKeyAppBound?: boolean;
+    /** Shows the OS biometric prompt, resolves once the user is verified. Distinct from
+     * `supportsBiometrics`, a non-prompting capability probe. Unlocks the biometric UI
+     * lock where no key is app-bound (`biometricsKeyAppBound: false`): not a
+     * cryptographic factor. Rejects with `UnlockDeclinedError` when the user dismisses
+     * the prompt, with any other `Error` when the prompt fails. */
+    promptBiometricsCheck?: () => Promise<void>;
+    /** Gets the unlock key via biometrics. Resolves `null` when no key is stored.
+     * Rejects with `UnlockDeclinedError` when the user dismisses the prompt, with
+     * any other `Error` when the read fails. */
     getBiometricsKey?: (authStore: AuthStore) => Promise<MaybeNull<string>>;
     /** Generates the unlock key for biometrics */
     generateBiometricsKey?: () => Promise<CryptoKey>;
+    /** Removes the biometric key held by the OS store, if any */
+    removeBiometricsKey?: (authStore: AuthStore) => Promise<void>;
     /** Checks if this is the first time Pass is being launched */
     isFirstLaunch?: () => boolean;
     /** Only relevant for extension */

@@ -23,6 +23,7 @@ import { authStore } from '@proton/pass/lib/auth/store';
 import type { ConnectivityService } from '@proton/pass/lib/network/connectivity.service';
 import type { MaybeNull } from '@proton/pass/types/utils';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
+import { SilentError } from '@proton/pass/utils/errors/errors';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { logger } from '@proton/pass/utils/logger';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
@@ -184,7 +185,7 @@ export const AuthServiceProvider: FC<PropsWithChildren<{ connectivity: Connectiv
         try {
             await authService.unlock({ ...dto, offline: false });
         } catch (err) {
-            throw new Error(getErrorMessage(err));
+            throw err instanceof SilentError ? err : new Error(getErrorMessage(err));
         }
     }, []);
 

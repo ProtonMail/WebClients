@@ -1,6 +1,7 @@
 import { Router } from 'react-router-dom';
 
 import { createHashHistory } from 'history';
+import { c } from 'ttag';
 
 import { Portal } from '@proton/atoms/Portal/Portal';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
@@ -54,6 +55,7 @@ import { sshAgent } from 'proton-pass-web/lib/ssh-agent';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { getTheme } from 'proton-pass-web/lib/theme';
 
+import { toUnlockError } from '../lib/biometrics/unlock-error';
 import { clipboard } from '../lib/clipboard';
 import { PASS_CONFIG, SENTRY_CONFIG } from '../lib/env';
 import { useDesktopContextMenu } from '../lib/hooks/useDesktopContextMenu';
@@ -96,14 +98,28 @@ const getPassCoreProps = (): PassCoreProviderProps => ({
 
     generateOTP: (payload) => (payload.type === 'uri' ? generateTOTPCode(core, payload.totpUri) : null),
 
-    supportsBiometrics: async () => {
-        if (BUILD_TARGET === 'linux') return false;
-        return window.ctxBridge?.canCheckPresence() ?? false;
+    supportsBiometrics: async () => window.ctxBridge?.canCheckPresence() ?? false,
+
+    /** Declared by the bridge, which resolves it from the running OS. An absent
+     * bridge resolves to `false`, the model that persists nothing. */
+    biometricsKeyAppBound: window.ctxBridge?.biometricsKeyAppBound ?? false,
+
+    /** Prompts Hello / Touch ID. Used by the biometric UI lock where no key is app-bound.
+     * Resolves once verified, rejects with `UnlockDeclinedError` when the user dismisses
+     * the prompt and with the platform message on any other failure. */
+    promptBiometricsCheck: async () => {
+        const ctxBridge = window.ctxBridge;
+        if (!(await ctxBridge?.canCheckPresence())) {
+            throw new Error(c('Error').t`Biometric authentication is not available`);
+        }
+
+        await ctxBridge!.checkPresence().catch(toUnlockError);
     },
 
     getBiometricsKey: async (store: AuthStore) => {
         const { storageKey, version } = inferBiometricsStorageKey(store);
-        return (await window.ctxBridge?.getSecret(storageKey, version)) ?? null;
+        const secret = await window.ctxBridge?.getSecret(storageKey, version).catch(toUnlockError);
+        return secret ?? null;
     },
 
     generateBiometricsKey: async () => {
@@ -111,6 +127,11 @@ const getPassCoreProps = (): PassCoreProviderProps => ({
         const biometricsStorageKey = getBiometricsStorageKey(authStore.getLocalID()!);
         await window.ctxBridge!.setSecret(biometricsStorageKey, keyBytes);
         return importSymmetricKey(keyBytes);
+    },
+
+    /** Removal never prompts — only reads are gesture-coupled. */
+    removeBiometricsKey: async (store: AuthStore) => {
+        await window.ctxBridge?.deleteSecret(inferBiometricsStorageKey(store).storageKey);
     },
 
     getDomainImage: async (domain, signal) => {

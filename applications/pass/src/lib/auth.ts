@@ -29,6 +29,7 @@ import { api } from '@proton/pass/lib/api/api';
 import { getIsSessionInvalid } from '@proton/pass/lib/api/utils';
 import { extractOfflineComponents, getForkSecretKey, getStateKey } from '@proton/pass/lib/auth/fork';
 import { biometricsLockAdapterFactory, generateBiometricsKey } from '@proton/pass/lib/auth/lock/biometrics/adapter';
+import { deleteBiometricsKeyIfNotAppBound } from '@proton/pass/lib/auth/lock/biometrics/cleanup';
 import { passwordLockAdapterFactory } from '@proton/pass/lib/auth/lock/password/adapter';
 import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
 import { AppStatusFromLockMode, LockMode } from '@proton/pass/lib/auth/lock/types';
@@ -154,9 +155,11 @@ export const createAuthService = ({
             /** Clear auth store if active localID was garbage collected */
             if (activeLocalID !== undefined && garbagedLocalIDs?.includes(activeLocalID)) authStore.clear();
 
-            /** Force lock unless: matching localID + valid session + online.
-             * Allows bypassing locks on page refresh when localID is preserved */
-            const validActiveSession = authStore.validSession(authStore.getSession());
+            /** Force lock unless: matching localID + valid unlocked session + online.
+             * Allows bypassing locks on page refresh when localID is preserved.
+             * The lock state is read from `getLocked`, not inferred from the
+             * session validity (a missing `offlineKD`) */
+            const validActiveSession = authStore.validSession(authStore.getSession()) && !authStore.getLocked();
             options.forceLock = options.forceLock ?? !(validLocalID && validActiveSession && connectivity.online);
 
             const localID = pathLocalID ?? authStore.getLocalID() ?? getDefaultLocalID(sessions);
@@ -210,7 +213,8 @@ export const createAuthService = ({
                 authStore.setOfflineKD(undefined);
 
                 const offline = !connectivity.online;
-                const initialLockedStatus = getInitialLockedAppStatus(authStore, { offline });
+                const keyAppBound = Boolean(core.biometricsKeyAppBound);
+                const initialLockedStatus = getInitialLockedAppStatus(authStore, { offline, keyAppBound });
 
                 if (initialLockedStatus) {
                     authStore.setPassword(undefined);
@@ -257,6 +261,10 @@ export const createAuthService = ({
             /** Updates session timestamp to track last login, ensuring
              * this session loads first when opening new tabs */
             await auth.syncPersistedSession(localID, { lastUsedAt: getEpoch() });
+
+            /** A resumed session proves the user can get back in online: safe to
+             * delete legacy biometric key material at rest (not app-bound). */
+            await deleteBiometricsKeyIfNotAppBound(auth, core);
 
             if (app.getState().booted) app.setStatus(AppStatus.READY);
             else {
@@ -412,7 +420,11 @@ export const createAuthService = ({
                                 case ReauthAction.BIOMETRICS_SETUP: {
                                     const { pin, ttl } = await decryptReauthLock(fork.reauth.data, authStore);
                                     if (pin) await auth.deleteLock({ mode: LockMode.SESSION, pin });
-                                    const encryptedOfflineKD = await generateBiometricsKey(core, offlineKD);
+                                    /** Mirrors the biometrics lock adapter: the envelope is only
+                                     * generated where the OS store is bound to the app. */
+                                    const encryptedOfflineKD = core.biometricsKeyAppBound
+                                        ? await generateBiometricsKey(core, offlineKD)
+                                        : undefined;
                                     authStore.setEncryptedOfflineKD(encryptedOfflineKD);
                                     authStore.setLockMode(LockMode.BIOMETRICS);
                                     authStore.setLockTTL(ttl);
@@ -536,8 +548,18 @@ export const createAuthService = ({
                     break;
                 case LockMode.PASSWORD:
                 case LockMode.BIOMETRICS:
-                    if (offline) boot({ offline: true });
-                    else await auth.resumeSession(localID, { retryable: false, unlocked: true });
+                    /** A password unlock proves the user knows it, notably on an offline
+                     * boot where no session resume can: safe to delete legacy biometric
+                     * key material at rest (not app-bound). */
+                    if (mode === LockMode.PASSWORD) await deleteBiometricsKeyIfNotAppBound(auth, core);
+
+                    if (offline) {
+                        /** A biometric UI lock unlock yields no `offlineKD` after a cold
+                         * boot, so there is nothing to decrypt the cache with: ask for the
+                         * password rather than failing the offline boot. */
+                        if (!authStore.hasOfflinePassword()) app.setStatus(AppStatus.PASSWORD_LOCKED);
+                        else boot({ offline: true });
+                    } else await auth.resumeSession(localID, { retryable: false, unlocked: true });
                     break;
             }
         },
@@ -601,7 +623,10 @@ export const createAuthService = ({
                 /** `offline: !sessionInvalid` is intentional: surface the offline lock screen
                  * even when `connectivity.online` is still true (handles flapping mid-resume,
                  * and rate-limited outages which never flip connectivity). */
-                const lockedStatus = getInitialLockedAppStatus(authStore, { offline: !sessionInvalid });
+                const lockedStatus = getInitialLockedAppStatus(authStore, {
+                    offline: !sessionInvalid,
+                    keyAppBound: Boolean(core.biometricsKeyAppBound),
+                });
                 app.setStatus(lockedStatus ?? AppStatus.ERROR);
                 app.setBooted(false);
             }

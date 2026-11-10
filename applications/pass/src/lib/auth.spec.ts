@@ -78,7 +78,8 @@ const app = {
 
 const history = { replace: jest.fn(), location: { pathname: '/', search: '', state: null, hash: '' } } as any;
 const sw = { on: jest.fn(), off: jest.fn() } as any;
-const core = { settings, i18n: { setLocale: jest.fn() } } as any;
+/** Mirrors the web app config: WebAuthn PRF keys are app-bound. */
+const core = { settings, i18n: { setLocale: jest.fn() }, biometricsKeyAppBound: true } as any;
 const authSwitch = { sync: jest.fn() } as any;
 
 /** Connectivity */
@@ -202,6 +203,24 @@ describe('AuthService', () => {
             expect(result).toBe(true);
             expect(resumeSession).toHaveBeenCalled();
             expect(options.forceLock).toBe(false);
+        });
+
+        test('should `forceLock` a valid in-memory session that is locked', async () => {
+            /** A reload while locked: the in-memory session can stay valid under a lock
+             * that keeps the `offlineKD` (biometric UI lock, key not app-bound) */
+            validSession.mockImplementation(() => true);
+            authStore.setLocalID(42);
+            authStore.setLocked(true);
+            history.location.pathname = '/u/42';
+
+            hasSession.mockImplementation(() => true);
+            resumeSession.mockImplementation(async () => false);
+
+            const options: AuthOptions = {};
+            await authService.init(options);
+
+            expect(options.forceLock).toBe(true);
+            expect(resumeSession).toHaveBeenCalledWith(42, expect.objectContaining({ forceLock: true }));
         });
 
         test('should set `forceLock` to true if local ID conflict', async () => {
@@ -329,6 +348,70 @@ describe('AuthService', () => {
             await authService.config.onLoginComplete?.('user-id', MOCK_PERSISTED_SESSION.LocalID);
             expect(app.setStatus).toHaveBeenCalledWith(AppStatus.AUTHORIZED);
             expect(appStore.dispatch).toHaveBeenCalledWith(bootIntent({ offline: false, reauth: undefined }));
+        });
+    });
+
+    describe('Legacy biometric key deletion (key not app-bound)', () => {
+        const localID = MOCK_PERSISTED_SESSION.LocalID;
+
+        beforeEach(() => {
+            core.biometricsKeyAppBound = false;
+            core.removeBiometricsKey = jest.fn().mockResolvedValue(undefined);
+            jest.spyOn(authService, 'syncPersistedSession').mockResolvedValue(undefined);
+
+            authStore.setUID('uid');
+            authStore.setUserID('user-id');
+            authStore.setLocalID(localID);
+            authStore.setOfflineConfig({ salt: '', params: ARGON2_PARAMS.RECOMMENDED });
+            authStore.setOfflineVerifier('offline-verifier');
+            authStore.setEncryptedOfflineKD('encrypted-offline-kd');
+            authStore.setLockMode(LockMode.BIOMETRICS);
+        });
+
+        afterEach(() => {
+            core.biometricsKeyAppBound = true;
+            delete core.removeBiometricsKey;
+        });
+
+        test('offline boot keeps the key until the user proves they can get back in', async () => {
+            settings.resolve.mockResolvedValueOnce({ offlineEnabled: true });
+            validSession.mockImplementationOnce(() => true);
+            history.location.pathname = `/u/${localID}`;
+            connectivity.online = false;
+
+            await authService.init({});
+
+            expect(app.setStatus).toHaveBeenCalledWith(AppStatus.PASSWORD_LOCKED);
+            expect(authStore.getEncryptedOfflineKD()).toBe('encrypted-offline-kd');
+            expect(core.removeBiometricsKey).not.toHaveBeenCalled();
+        });
+
+        test('a resumed session deletes the key', async () => {
+            setAppState({ status: AppStatus.AUTHORIZING, booted: false });
+            await authService.config.onLoginComplete?.('user-id', localID);
+
+            expect(authStore.getEncryptedOfflineKD()).toBeUndefined();
+            expect(core.removeBiometricsKey).toHaveBeenCalledWith(authStore);
+            expect(authService.syncPersistedSession).toHaveBeenCalledWith(localID, {
+                encryptedOfflineKD: undefined,
+                unlockRetryCount: 0,
+            });
+        });
+
+        test('an offline password unlock deletes the key', async () => {
+            setAppState({ status: AppStatus.PASSWORD_LOCKED, booted: false });
+            await authService.config.onUnlocked?.(LockMode.PASSWORD, undefined, localID, true);
+
+            expect(authStore.getEncryptedOfflineKD()).toBeUndefined();
+            expect(core.removeBiometricsKey).toHaveBeenCalledWith(authStore);
+        });
+
+        test('a biometric UI lock unlock keeps the key', async () => {
+            setAppState({ status: AppStatus.BIOMETRICS_LOCKED, booted: false });
+            await authService.config.onUnlocked?.(LockMode.BIOMETRICS, undefined, localID, true);
+
+            expect(authStore.getEncryptedOfflineKD()).toBe('encrypted-offline-kd');
+            expect(core.removeBiometricsKey).not.toHaveBeenCalled();
         });
     });
 

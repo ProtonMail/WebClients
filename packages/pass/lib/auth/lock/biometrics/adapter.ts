@@ -5,7 +5,9 @@ import noop from '@proton/utils/noop';
 
 import type { PassCoreContextValue } from '../../../../components/Core/PassCoreProvider';
 import { PassEncryptionTag } from '../../../../types/crypto/pass-types';
-import { SilentError } from '../../../../utils/errors/errors';
+import type { Maybe } from '../../../../types/utils';
+import { SilentError, UnlockDeclinedError, UnlockFailedError } from '../../../../utils/errors/errors';
+import { getErrorMessage } from '../../../../utils/errors/get-error-message';
 import { logger } from '../../../../utils/logger';
 import { deobfuscate } from '../../../../utils/obfuscate/xor';
 import { getEpoch } from '../../../../utils/time/epoch';
@@ -14,16 +16,30 @@ import { decryptData, encryptData, importSymmetricKey } from '../../../crypto/ut
 import { PassCryptoError } from '../../../crypto/utils/errors';
 import { loadCoreCryptoWorker } from '../../../crypto/utils/worker';
 import type { AuthService } from '../../service';
+import type { AuthStore } from '../../store';
 import { getInvalidPasswordString } from '../../utils';
 import type { LockAdapterBiometrics } from '../types';
 import { LockMode } from '../types';
 import { fromBiometricsEncryptedOfflineKD, intoBiometricsEncryptedOfflineKD } from './utils';
 
+/** Safeguard: where the platform binds no key (`biometricsKeyAppBound: false`),
+ * no biometric key material may be persisted. Callers skip the envelope already. */
 export const generateBiometricsKey = async (core: PassCoreContextValue, offlineKD: string): Promise<string> => {
+    if (!core.biometricsKeyAppBound) throw new Error('Biometrics key is not app-bound');
+
     const key = await core.generateBiometricsKey!();
     const rawOfflineKD = binaryStringToUint8Array(offlineKD);
     const rawEncryptedOfflineKD = await encryptData(key, rawOfflineKD, PassEncryptionTag.BiometricOfflineKD);
     return intoBiometricsEncryptedOfflineKD(uint8ArrayToBinaryString(rawEncryptedOfflineKD));
+};
+
+/** Resolves the key passed to the biometric unlock. Where the platform binds no
+ * key there is nothing to fetch: the gesture is enforced inside the adapter's
+ * unlock, and fetching here would prompt a second time. Resolves an empty key
+ * in that case, rejects when the platform store read fails. */
+export const getBiometricsUnlockKey = async (core: PassCoreContextValue, authStore: AuthStore): Promise<string> => {
+    if (!core.biometricsKeyAppBound) return '';
+    return (await core.getBiometricsKey?.(authStore)) ?? '';
 };
 
 /** Password locking involves the offline configuration. As such,
@@ -32,6 +48,7 @@ export const generateBiometricsKey = async (core: PassCoreContextValue, offlineK
  * SRP flow. Booting offline should rely on this lock adapter */
 export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreContextValue): LockAdapterBiometrics => {
     const { authStore, api } = auth.config;
+    let lockedOfflineKD: Maybe<string>;
 
     /** Persist the `unlockRetryCount` without re-encrypting
      * the authentication session blob */
@@ -75,7 +92,16 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
             const offlineKD = authStore.getOfflineKD();
             if (!offlineKD) throw new Error('Missing offline KD');
 
-            const encryptedOfflineKD = await generateBiometricsKey(core, offlineKD);
+            /** App-bound platforms wrap the `offlineKD` under a biometric key the OS only
+             * releases after a gesture. Where the OS store cannot be bound to the app
+             * (Windows), no key material is persisted at all: the biometric lock is a
+             * UI lock unlocked by the gesture, not a cryptographic factor.
+             * A missing envelope does NOT disable offline mode — the password-derived
+             * offline components above are kept, so an offline boot unlocks with the
+             * user password through the standard password-unlock verification. */
+            const encryptedOfflineKD = core.biometricsKeyAppBound
+                ? await generateBiometricsKey(core, offlineKD)
+                : undefined;
 
             await onBeforeCreate?.();
 
@@ -100,6 +126,7 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
             authStore.setLocked(false);
             authStore.setUnlockRetryCount(0);
             authStore.setEncryptedOfflineKD(undefined);
+            lockedOfflineKD = undefined;
 
             await auth.persistSession().catch(noop);
 
@@ -109,9 +136,17 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
         /** Password locking should reset the in-memory `OfflineKD`.
          * Remove the session lock token as well preeventively in case
          * a user ends up in a situation with both a password and an
-         * API lock - this should not happen */
+         * API lock - this should not happen.
+         *
+         * App-unbound model: the gesture-only unlock has nothing to re-derive the
+         * `offlineKD` from, and the cache writer drops the `encryptedCacheKey` without
+         * it, which would break the next offline cold boot. It is held in this closure
+         * while locked and restored on the gesture, so the store never holds an
+         * `offlineKD` for a locked session. Lost on reload, where the resume rebuilds
+         * it from the persisted session. */
         lock: async () => {
             logger.info(`[BiometricLock] locking session`);
+            if (!core.biometricsKeyAppBound) lockedOfflineKD = authStore.getOfflineKD() ?? lockedOfflineKD;
             authStore.setOfflineKD(undefined);
             authStore.setLockToken(undefined);
             authStore.setLocked(true);
@@ -126,6 +161,38 @@ export const biometricsLockAdapterFactory = (auth: AuthService, core: PassCoreCo
          * Load the crypto workers early in case password unlocking
          * happens before we boot the application state (hydrate.saga) */
         unlock: async (biometricsSecret: string) => {
+            /** App-unbound model (nothing persisted at rest): a UI lock with nothing to
+             * decrypt, so the gesture is checked here, inside the unlock, not by the
+             * calling UI. Not a cryptographic factor (see `biometricsKeyAppBound`): any
+             * same-user process can drive the OS prompt, what it cannot obtain is a
+             * key, because none is stored. A denied gesture throws without burning
+             * an `unlockRetryCount`: retries guard against brute-forcing a secret,
+             * and there is no secret here.
+             *
+             * Keyed on the platform capability, not on envelope presence: where the
+             * platform does bind the key, a missing envelope is a broken lock and must
+             * take the path below, which recovers through the password lock.
+             *
+             * With no secret to decrypt, nothing else ties this unlock to the stored
+             * lock mode: without the guard, one gesture would clear a password lock. */
+            if (!core.biometricsKeyAppBound) {
+                if (authStore.getLockMode() !== LockMode.BIOMETRICS) throw new SilentError();
+
+                await api.reset();
+                if (!core.promptBiometricsCheck) throw new SilentError();
+
+                await core.promptBiometricsCheck().catch((err: unknown) => {
+                    if (err instanceof UnlockDeclinedError) throw err;
+                    throw new UnlockFailedError(getErrorMessage(err));
+                });
+
+                if (lockedOfflineKD) authStore.setOfflineKD(lockedOfflineKD);
+                lockedOfflineKD = undefined;
+                authStore.setLocked(false);
+                await auth.syncLock({ unlockRetryCount: 0, lockLastExtendTime: getEpoch() });
+                return undefined;
+            }
+
             const retryCount = authStore.getUnlockRetryCount() + 1;
 
             /** API may have been flagged as sessionLocked before

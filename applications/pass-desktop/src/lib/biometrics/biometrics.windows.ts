@@ -4,13 +4,14 @@ import { uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 
 import { biometric as winBiometrics } from 'proton-pass-desktop-native';
 
+import { assertPresenceVerified } from './errors';
 import type { BiometricsFactory, BiometricsPlatformHandler } from './types';
 
 const factory: BiometricsFactory = (getWindow) => {
     const checkPresence = async (reason = 'Proton Pass wants to unlock') => {
         const handle = getWindow()?.getNativeWindowHandle();
         if (!handle) throw new Error('Failed to acquire window handle');
-        await winBiometrics.checkPresence(handle, reason);
+        assertPresenceVerified(await winBiometrics.checkPresence(handle, reason));
     };
 
     const biometrics: BiometricsPlatformHandler = {
