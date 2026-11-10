@@ -464,6 +464,9 @@
       "Add notification": [
         "Дадаць апавяшчэнне"
       ],
+      "Add payment method": [
+        "Дадаць спосаб аплаты"
+      ],
       "Add PayPal": [
         "Дадаць PayPal"
       ],
@@ -554,6 +557,9 @@
       "Cancel": [
         "Скасаваць"
       ],
+      "Cancel ${ planTitle }": [
+        "Скасваць ${ planTitle }"
+      ],
       "Cancel import": [
         "Скасаваць імпартаванне"
       ],
@@ -562,6 +568,9 @@
       ],
       "Cancel subscription": [
         "Скасаваць падпіску"
+      ],
+      "Cancel trial": [
+        "Скасаваць пробны перыяд"
       ],
       "Cancel trial and pay": [
         "Скасаваць пробны перыяд і купіць падпіску"
@@ -770,6 +779,9 @@
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Стварыць спасылку для абагульвання з любым карыстальнікам па-за межамі ${ BRAND_NAME }"
       ],
+      "Create account": [
+        "Стварыць уліковы запіс"
+      ],
       "Create calendar": [
         "Стварыць каляндар"
       ],
@@ -946,6 +958,9 @@
       ],
       "Don't show again": [
         "Больш не паказваць"
+      ],
+      "Don't show this offer again": [
+        "Больш не паказваць гэту прапанову"
       ],
       "Donate": [
         "Ахвяраваць"
@@ -1264,6 +1279,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Перайсці ў ${ planOrAppName }"
+      ],
+      "Go to folder": [
+        "Перайсці ў папку"
       ],
       "Go to label": [
         "Перайсці ў меткі"
@@ -1763,6 +1781,9 @@
       "Restore": [
         "Аднавіць"
       ],
+      "Restrict sign-in": [
+        "Абмежаваць доступ"
+      ],
       "Resume": [
         "Узнавіць"
       ],
@@ -2035,6 +2056,9 @@
       ],
       "Spam": [
         "Спам"
+      ],
+      "Special Offer": [
+        "Спецыяльная прапанова"
       ],
       "Start free trial": [
         "Пачаць бясплатны пробны перыяд"
@@ -2349,6 +2373,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "Скасаваць падпіску"
+      ],
       "Reactivate": [
         "Актываваць паўторна"
       ],
@@ -2470,6 +2497,9 @@
       ],
       "Managed Service Provider": [
         "Пастаўшчык кіраваных паслуг"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Арганізацыі з дадатковым кампанентам «Пастаўшчык кіраваных паслуг» могуць стварыць і кіраваць дапаможнымі арганізацыямі."
       ],
       "Servers": [
         "Серверы"
@@ -2601,6 +2631,12 @@
       ],
       "3 new admin roles": [
         "3 новыя ролі адміністратара"
+      ],
+      "Assign specific admin roles. Give each admin only the access they need to limit the impact of compromised accounts and accidental errors.": [
+        "Прызначыць пэўныя ролі для адміністратара. Дайце кожнаму адміністратару толькі неабходныя правы доступу, каб абмежаваць уплыў скампраметаваных уліковых запісаў і выпадковых памылак."
+      ],
+      "Choose from three new admin roles. Each admin receives only the access they need.": [
+        "Выберыце адну з трох новых роляў адміністратара. Кожны адміністратар атрымлівае толькі той доступ, які яму патрэбны."
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Канфіграцыя палітык бяспекі, захоўванне даных, інфраструктура VPN і кіраванне журналамі аўдыта."
@@ -3073,6 +3109,18 @@
     "Billing cycle": {
       "Free renewal": [
         "Бясплатнае падаўжэнне"
+      ],
+      "Free renewal, for ${ nextCycle } month, on ${ when }": [
+        "Бясплатнае падаўжэнне за перыяд часу ${ nextCycle } месяц, ${ when }",
+        "Бясплатнае падаўжэнне за перыяд часу ${ nextCycle } месяцы, ${ when }",
+        "Бясплатнае падаўжэнне за перыяд часу ${ nextCycle } месяцаў, ${ when }",
+        "Бясплатнае падаўжэнне за перыяд часу ${ nextCycle } месяцаў, ${ when }"
+      ],
+      "Renews automatically at ${ introPrice }, for ${ nextCycle } month, on ${ when }": [
+        "Аўтаматычнае падаўжэнне па кошце ${ introPrice } за перыяд часу ${ nextCycle } месяц, ${ when }",
+        "Аўтаматычнае падаўжэнне па кошце ${ introPrice } за перыяд часу ${ nextCycle } месяцы, ${ when }",
+        "Аўтаматычнае падаўжэнне па кошце ${ introPrice } за перыяд часу ${ nextCycle } месяцаў, ${ when }",
+        "Аўтаматычнае падаўжэнне па кошце ${ introPrice } за перыяд часу ${ nextCycle } месяцаў, ${ when }"
       ],
       "Renews automatically at ${ price }, for ${ cycle } month": [
         "Аўтаматычнае падаўжэнне па кошце ${ price } за перыяд часу ${ cycle } месяц",
@@ -3553,6 +3601,11 @@
         "Пачаць знаёмства"
       ]
     },
+    "BYOE": {
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Вашы самыя апошнія лісты будуць імпартаваны першымі. Ужо імпартаваныя лісты паўторна капіявацца не будуць."
+      ]
+    },
     "Calendar access select label": {
       "Add people or groups": [
         "Дадаць карыстальнікаў або групы"
@@ -3870,6 +3923,9 @@
       "Sign in with your organization?": [
         "Увайсці з дапамогай вашай арганізацыі?"
       ],
+      "The address ${ boldClaimedEmail } has been claimed by another organization and can no longer be used for this account. Your data is safe and remains private.": [
+        "Адрас электроннай пошты ${ boldClaimedEmail } заяўлены іншай арганізацыі і больш не можа выкарыстоўвацца для гэтага ўліковага запісу. Ваша інфармацыя знаходзіцца ў бяспецы і застаецца прыватнай."
+      ],
       "Verify it's you": [
         "Спраўдзіце, што гэта вы"
       ],
@@ -3887,6 +3943,9 @@
       ],
       "Your administrator can give you a new address.": [
         "Ваш адміністратар можа даць вам новы адрас."
+      ],
+      "Your data was migrated to the address below and remains private.": [
+        "Вашы даныя былі перанесены на адрас, які ўказаны ніжэй, і яны застаюцца прыватнымі."
       ],
       "Your new address": [
         "Ваш новы адрас"
@@ -4232,9 +4291,6 @@
       "Confirm cancellation": [
         "Пацвердзіць скасаванне"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Вы не зможаце рабіць наступныя рэчы, калі перавысіце абмежаванні бясплатнага тарыфнага плана:"
-      ],
       "Keep current plan": [
         "Пакінуць бягучы тарыфны план"
       ],
@@ -4249,9 +4305,6 @@
       ],
       "Upload any new files": [
         "Запампоўваць любыя новыя файлы"
-      ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Ваш уліковы запіс будзе пераведзены на тарыфны план Free пасля завяршэння падпіскі ${ endDate }. Некаторыя функцыі могуць быць часова недаступнымі, калі вы перавысіце абмежаванні тарыфнага плана Free."
       ]
     },
     "Confirm modal title": {
@@ -5651,11 +5704,17 @@
       "To stay signed in everywhere, upgrade your plan instead.": [
         "Палепшыце свой тарыфны план, каб заставацца ў сістэме паўсюль."
       ],
+      "Too many devices are connected to your account. To use ${ BRAND_NAME } on a new device or browser, end all existing sessions. You'll be signed out on every device.": [
+        "Занадта шмат прылад падключаны да вашага ўліковага запісу. Завяршыце ўсе існуючыя сеансы, каб выкарыстоўваць ${ BRAND_NAME } на новай прыладзе або браўзеры."
+      ],
       "Track the status and activity of your referrals": [
         "Сачэнне за статусам і актыўнасцю вашых рэферальных спасылак"
       ],
       "Unlock 15 GB of storage for just ${ config.offerPrice }.": [
         "Разблакіруйце 15 ГБ сховішча ўсяго за ${ config.offerPrice }"
+      ],
+      "Upgrade anytime to stay signed in on multiple devices.": [
+        "Палепшыце ў любы час, каб заставацца ў сістэме на некалькіх прыладах."
       ],
       "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
         "Палепшыце тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } уліковых запісаў"
@@ -5734,6 +5793,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "У вашага бясплатнага ўліковага запісу ${ MAIL_APP_NAME } абмежаваная ёмістасць сховішча і таму, удалося імпартаваць толькі самыя апошнія вашы лісты з Gmail."
+      ],
+      "Your other sessions have been ended. You can now sign in on this device.": [
+        "Вашы іншыя сеансы завершаны. Цяпер вы можаце ўвайсці на гэтай прыладзе."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Ваш тарыфны план падтрымлівае ${ MAX_SYNC_FREE_USER } адрас Gmail.",
@@ -7106,6 +7168,12 @@
       "They may ask to access your account in case of an emergency.": [
         "Яны могуць папрасіць доступ да вашага ўліковага запісу ў выпадку экстраннай сітуацыі."
       ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "Яны атрымаюць доступ аўтаматычна праз **${ days } дзень**, **${ formattedAccessibleAt }**. Вы можаце адхіліць іх запыт або даць ім доступ неадкладна ў любы час.",
+        "Яны атрымаюць доступ аўтаматычна праз **${ days } дні**, **${ formattedAccessibleAt }**. Вы можаце адхіліць іх запыт або даць ім доступ неадкладна ў любы час.",
+        "Яны атрымаюць доступ аўтаматычна праз **${ days } дзён**, **${ formattedAccessibleAt }**. Вы можаце адхіліць іх запыт або даць ім доступ неадкладна ў любы час.",
+        "Яны атрымаюць доступ аўтаматычна праз **${ days } дзён**, **${ formattedAccessibleAt }**. Вы можаце адхіліць іх запыт або даць ім доступ неадкладна ў любы час."
+      ],
       "This will take effect immediately.": [
         "Гэта дзеянне ўступіць у сілу неадкладна."
       ],
@@ -7389,6 +7457,9 @@
       "Couldn't load transactions. Please try again later.": [
         "Немагчыма загрузіць трансакцыі. Паўтарыце спробу пазней."
       ],
+      "Couldn't load your account": [
+        "Немагчыма загрузіць ваш уліковы запіс"
+      ],
       "Couldn't load your connections": [
         "Немагчыма загрузіць вашы падключэнні"
       ],
@@ -7602,9 +7673,6 @@
       "Invalid invitation link": [
         "Памылковая спасылка запрашэння"
       ],
-      "Invalid joining link. Please contact your administrator.": [
-        "Памылковая спасылка на далучэнне. Звяжыцеся са сваім адміністратарам."
-      ],
       "Invalid name": [
         "Памылковая назва"
       ],
@@ -7724,6 +7792,9 @@
       ],
       "No valid address found": [
         "Не знойдзена сапраўдных адрасоў"
+      ],
+      "No verified domain found in your ${ providerName } account. Verify your domain with ${ providerName }, then try again.": [
+        "Не знойдзена спраўджаных даменаў у вашым уліковым запісе ${ providerName }. Спраўдзіце свой дамен з дапамогай ${ providerName }, а потым паўтарыце спробу."
       ],
       "Not a ${ BRAND_NAME } account": [
         "Не з'яўляецца ўліковым запісам ${ BRAND_NAME }"
@@ -8055,6 +8126,9 @@
       "The session has expired. Please sign in again.": [
         "Час сеанса пратэрмінаваны. Увайдзіце яшчэ раз."
       ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "Немагчыма падлічыць выніковую суму. Змяніце колькасць і паўтарыце спробу."
+      ],
       "The uploaded file does not match the original. Please try again.": [
         "Запампаваны файл не адпавядае арыгіналу. Паўтарыце спробу."
       ],
@@ -8234,6 +8308,9 @@
       ],
       "You need to have an active custom domain address in order to generate an SMTP submission token.": [
         "Вам неабходна мець актыўны карыстальніцкі адрас дамена, каб згенерыраваць адпраўку токена SMTP."
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Вы дасягнулі абмежавання па колькасці падключаных адрасоў"
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Вы дасягнулі максімальнай колькасці сімвалаў. Скараціце сваё паведамленне."
@@ -8647,9 +8724,6 @@
       "${ BRAND_NAME } groups": [
         "Групы ${ BRAND_NAME }"
       ],
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Толькі адзін бясплатны пробны перыяд на карыстальніка. Пасля гэтага перыяду будзе ўжыта стандартная плата."
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Уліковыя запісы з карыстальніцкімі даменамі нельга далучыць да сямейнага тарыфнага плана."
       ],
@@ -8719,9 +8793,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Рахунак за падпіску будзе выстаўляцца галоўнаму адміністратару гэта тарыфнага плана."
       ],
-      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
-        "Для спрашчэння пераходу мы даём вам магчымасць на працягу 30 дзён карыстацца пробнай версіяй ${ BRAND_NAME } Unlimited* абсалютна бясплатна."
-      ],
       "View the invitation": [
         "Паглядзець запрашэнне",
         "Паглядзець запрашэнні",
@@ -8787,14 +8858,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Толькі адзін бясплатны пробны перыяд на карыстальніка. Пасля гэтага перыяду будзе ўжыта стандартная плата."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Карыстальнік будзе пераведзены на тарыфны план ${ BRAND_NAME } Free пасля таго, як ён выйдзе з вашага тарыфнага плана."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Пасля адмовы ад вашага бягучага тарыфнага плана наступныя карыстальнікі будуць пераведзены на тарыфны план ${ BRAND_NAME } Unlimited з бясплатным пробным перыядам на працягу 30 дзён."
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Прызначце сховішча для ўліковага запісу адміністратара. Пазней вы можаце размеркаваць сховішча для дадатковых карыстальнікаў."
@@ -9612,6 +9677,9 @@
       "Best deal": [
         "Лепшая прапанова"
       ],
+      "Billing details": [
+        "Падрабязнасці аплаты"
+      ],
       "Checkout": [
         "Аплата"
       ],
@@ -10308,6 +10376,9 @@
       "${ BRAND_NAME } never shares your information with third parties. Data comes from ${ BRAND_NAME }'s own analyses and Constella Intelligence.": [
         "${ BRAND_NAME } ніколі не абагульвае вашы звесткі са староннімі асобамі. Даныя атрымліваюцца на падставе ўласнага аналізу ${ BRAND_NAME } і Constella Intelligence."
       ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } выкарыстоўвае гэты доступ толькі для імпарту. Google ніколі не зможа атрымаць доступ да вашага ўліковага запісу ${ BRAND_NAME }."
+      ],
       "${ BRAND_NAME } Pass Professional": [
         "${ BRAND_NAME } Pass Professional"
       ],
@@ -10352,6 +10423,9 @@
       ],
       "${ emailAddress } is invalid": [
         "Памылковы адрас ${ emailAddress }"
+      ],
+      "${ emailAddress } is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "Адрас электроннай пошты ${ emailAddress } выкарыстоўваецца для ўваходу ў іншы ўліковы запіс ${ BRAND_NAME }. У цяперашні час вядзецца праца над тым, каб падключэнне адбывалася ў бясшковым рэжыме, але цяпер вам спатрэбіцца выканаць некалькі крокаў."
       ],
       "${ emails.length } member added to the group": [
         "${ emails.length } удзельнік дадзены ў групу",
@@ -10536,6 +10610,9 @@
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "${ quarantine }: просіць платформы атрымальніка пазначаць неаўтарызаваныя электронныя лісты як спам або пераводзіць іх у каранцін."
       ],
+      "${ reason.email } is used to sign in to another ${ BRAND_NAME } account. You'll pick a new username for that account next time you sign in. Nothing else changes.": [
+        "${ reason.email } выкарыстоўваецца для ўваходу ў іншы ўліковы запіс ${ BRAND_NAME }. Пры наступным уваходзе вам будзе прапанавана выбраць новае імя карыстальніка для гэтага ўліковага запісу. Акрамя імі карыстальніка больш нічога не зменіцца."
+      ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: просіць платформы атрымальніка адхіляць неаўтарызаваныя лісты."
       ],
@@ -10655,6 +10732,9 @@
       ],
       "**${ appName }** is not supported.": [
         "**${ appName }** не падтрымліваецца."
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "Адрас электроннай пошты **${ emailAddress }** таксама выкарыстоўваецца для ўваходу ў асобны ўліковы запіс ${ BRAND_NAME } па-за межамі ${ MAIL_APP_NAME }."
       ],
       "**Enable automatic backups** for peace of mind": [
         "**Уключыць аўтаматычнае рэзерваванне** для душэўнага спакою"
@@ -10799,6 +10879,9 @@
       ],
       "Add your organization email domain to ${ BRAND_NAME }.": [
         "Дадайце дамен электроннай пошты арганізацыі ў ${ BRAND_NAME }."
+      ],
+      "Added to ${ BRAND_NAME }": [
+        "Дададзена ў ${ BRAND_NAME }"
       ],
       "Adding ${ total } gateway server": [
         "Дадаванне ${ total } сервера шлюза",
@@ -11256,6 +11339,9 @@
       "Connected": [
         "Падключана"
       ],
+      "Connecting to Google Drive and preparing your import.": [
+        "Падлучэнне да Google Drive і падрыхтоўка вашага імпарту."
+      ],
       "Connection data will be available in around 1 hour.": [
         "Даныя аб падключэнні будуць даступны прыблізна праз 1 гадзіну."
       ],
@@ -11468,6 +11554,9 @@
       ],
       "Discount": [
         "Скідка"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Ваша падпіска будзе аўтаматычна падаўжацца па стандартнай гадавой стаўцы пасля заканчэння перыяду аплаты."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Пазнаёмцеся з новымі функцыямі і пачніце выкарыстоўваць іх неадкладна!"
@@ -12489,6 +12578,9 @@
       "Not detected correctly? Choose your provider from the list.": [
         "Сістэма не змагла вызначыць аўтаматычна? Выберыце пастаўшчыка са спіса ўручную."
       ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "У вашым іншым уліковым запісе ${ BRAND_NAME } нічога не зменіцца."
+      ],
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
       ],
@@ -12921,6 +13013,9 @@
       "Select a group to view its members and settings.": [
         "Выберыце групу, каб паглядзець яе ўдзельнікаў і налады."
       ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Выберыце толькі тое, што хочаце перанесці. Гэта будзе прыменена да ўсіх карыстальнікаў арганізацыі."
+      ],
       "Select one or multiple user affiliations": [
         "Выберыце адну або некалькі прыналежнасцей карыстальніка"
       ],
@@ -13311,6 +13406,9 @@
       "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
         "Гэты адрас Gmail зарэгістраваны з іншым уліковым запісам ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ШІ ${ LUMO_SHORT_APP_NAME } і іншыя сэрвісы). Наша каманда працуе над тым, каб гэта падключэнне было бясшвовым. У цяперашні час вам неабходна выканаць некалькі крокаў."
       ],
+      "This Gmail is already connected to your ${ BRAND_NAME } account. There's nothing else you need to do.": [
+        "Гэты Gmail ужо падключаны да вашага ўліковага запісу ${ BRAND_NAME }. Ніякія дадатковыя дзеянні не патрабуюцца."
+      ],
       "This invitation link has expired. Please contact your administrator to request access.": [
         "Запрашальная спасылка пратэрмінавана. Звяжыцеся са сваім адміністратарам, каб запытаць доступ."
       ],
@@ -13385,6 +13483,9 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Гэта дазволіць вам аплачваць падпіску ${ BRAND_NAME } праз PayPal. Мы перанакіруем вас на сайт PayPal, які адкрыецца ў новай укладцы браўзера. Калі вы выкарыстоўваеце пашырэнні блакіроўкі ўсплывальных вокнаў, адключыце іх, каб працягнуць."
+      ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Гэта функцыя дазволіць вам хутка бяспечна атрымаць доступ да свайго ўліковага запісу ${ BRAND_NAME }, каб вы маглі змяніць свой пароль."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Гэта дзеянне незваротна выдаліць даныя і ўсе адрасы электроннай пошты, якія звязаны з гэтымі карыстальнікамі."
@@ -13488,6 +13589,12 @@
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Каб быць у курсе апошніх распрацовак прадуктаў ${ BRAND_NAME }, вы можаце падпісацца на нашу рассылку, а таксама час ад часу ${ blogLink }."
       ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Дадайце і праверце дамен электроннай пошты ў ${ domainNamesLink } для пераносу гэтага карыстальніка"
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Аднавіць карыстальніка ў вашай ${ provider.adminConsoleName } для яго пераносу."
+      ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "Унясіце мінімальнае ахвяраванне ў памеры ${ minimumDonation }, каб прадухіліць злоўжыванне або махлярства. Гэта таксама падтрымлівае працу ${ protonFoundationLink }, які абараняе лічбавую прыватнасць ва ўсім свеце, і дапамагае абараніць наступнае пакаленне."
       ],
@@ -13508,6 +13615,9 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Вам неабходны адрас ${ MAIL_APP_NAME }, каб выкарыстоўваць ${ toAppName }."
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address. An administrator of your organization can create one for you.": [
+        "Вам спатрэбіцца адрас ${ MAIL_APP_NAME }, каб выкарыстоўваць ${ toAppName }. Адміністратар вашай арганізацыі можа стварыць яго для вас."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Для правільнай працы, кожны фільтр павінен змяшчаць прынамсі назву і сапраўдны сцэнарый Sieve. Вы можаце ${ link }."
@@ -13752,6 +13862,12 @@
       "We couldn't complete the transaction. Please try again.": [
         "Немагчыма завяршыць трансакцыю. Паўтарыце спробу."
       ],
+      "We couldn't connect your Gmail right now. Please try again in a few minutes.": [
+        "У цяперашні час ваш Gmail не можа быць падключаны. Паспрабуйце паўтарыць спробу праз некалькі хвілін."
+      ],
+      "We couldn't connect your Gmail. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "Не ўдалося падключыцца да Gmail. Паўтарыце спробу і пазначце ўсе птушкі ва ўсіх палях, калі Google запытае доступ. ${ BRAND_NAME } выкарыстоўвае гэты доступ толькі для падключэння да вашага Gmail."
+      ],
       "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
         "Немагчыма адправіць рахункі на ваш адрас электроннай пошты. Аўтаматычнае выстаўленне рахункаў будзе прыпынена да таго моманту, пакуль вы не абновіце адрас."
       ],
@@ -13866,8 +13982,11 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Калі апавяшчэнні ўключаны, то будуць адпраўляцца абвесткі на ваш адрас аднаўлення, калі ў вашай паштовай скрыні ${ MAIL_APP_NAME } з'яўляюцца новыя паведамленні."
       ],
-      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Толькі асноўны адрас электроннай пошты ${ primaryEmailElement } і ваша імя карыстальніка ${ usernameElement } можна будзе выкарыстоўваць для ўваходу, калі ўваход забаронены. Вашы іншыя адрасы нельга будзе звязаць з вашым уліковым запісам, нават калі нехта будзе ведаць пра іх."
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Толькі ваш адрас электроннай пошты **${ primaryEmail }** можна будзе выкарыстоўваць для ўваходу, калі ўваход забаронены. Вашы іншыя адрасы нельга будзе звязаць з вашым уліковым запісам, нават калі нехта будзе ведаць пра іх."
+      ],
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Толькі ваша імя карыстальніка **${ username }** можна будзе выкарыстоўваць для ўваходу, калі ўваход забаронены. Вашы іншыя адрасы нельга будзе звязаць з вашым уліковым запісам, нават калі нехта будзе ведаць пра іх."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ваша падпіска не будзе падоўжана пасля скасавання, але вы ўсё яшчэ зможаце атрымліваць асалоду ад пераваг тарыфнага плана пакуль не завершыцца перыяд падпіскі. Пасля гэтага, ваша падпіска будзе паніжана да тарыфнага плана ${ BRAND_NAME } Free"
@@ -14130,6 +14249,9 @@
       "You have no transactions.": [
         "У вас няма трансакцый."
       ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "У вас некалькі падпісак. Выберыце тую, якую хочаце скасаваць: на вашы іншыя падпіскі гэта дзеянне ніяк не паўплывае. Скасаваная падпіска не будзе падоўжана, а яе перавагі застануцца дзейнічаць да канца перыяду падпіскі."
+      ],
       "You have unpublished changes": [
         "У вас ёсць неапублікаваныя змены"
       ],
@@ -14271,6 +14393,9 @@
       "Your address was connected": [
         "Ваш адрас быў падключаны"
       ],
+      "Your address was connected. We're importing your emails.": [
+        "Ваш адрас быў падключаны. Адбываецца імпартаванне вашых лістоў."
+      ],
       "Your Always-on VPN device profile is ready to deploy.": [
         "Ваш профіль прылады пастаяннай VPN гатовы для разгортвання."
       ],
@@ -14295,6 +14420,12 @@
       "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
         "Ваш файл уключае пароль для кожнага карыстальніка, таму гэтыя ўліковы запісы будуць створаны з паролем замест запрашальнай спасылкі."
       ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Вашы файлы зашыфраваны і бяспечна захоўваюцца ў ${ DRIVE_APP_NAME }."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Вашы файлы былі паспяхова імпартаваны і зашыфраваны з Google Drive у ${ DRIVE_APP_NAME }."
+      ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
       ],
@@ -14306,6 +14437,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Яе падаўжэнне адбудзецца: ${ nextBillingDate }."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Ваш Gmail падключаны да гэтага адраса ${ MAIL_APP_NAME }"
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "З намі ваша інфармацыя ў бяспецы. Мы будзем звязвацца з вамі, толькі па меры неабходнасці, каб забяспечыць нашымі сэрвісамі."
@@ -15099,6 +15233,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Бяспечна атрымлівайце доступ да ${ PASS_APP_NAME } з тэрмінала. Ідэальна пасуе для напісання сцэнарыяў, аўтаматызацыі і працоўных працэсаў распрацоўкі."
       ],
+      "Account credit": [
+        "Крэдыты ўліковага запісу"
+      ],
       "Account holder": [
         "Трымальнік уліковага запісу"
       ],
@@ -15332,6 +15469,9 @@
       ],
       "Billed monthly.": [
         "Аплачваецца штомесяц."
+      ],
+      "Billing contact": [
+        "Кантакт для аплаты"
       ],
       "Billing cycle": [
         "Перыяд аплаты"
@@ -15569,6 +15709,9 @@
       ],
       "Deals, offers, and marketing emails": [
         "Акцыі, прапановы і маркетынгавыя лісты"
+      ],
+      "Dedicated VPN servers": [
+        "Вылучаныя серверы VPN"
       ],
       "Default email address": [
         "Прадвызначаны адрас электроннай пошты"
@@ -16365,11 +16508,11 @@
       "Restrict sign-in to email address": [
         "Абмежаваць уваход з адрасам электроннай пошты"
       ],
-      "Restrict sign-in to primary email address": [
-        "Абмежаваць уваход з асноўным адрасам электроннай пошты"
-      ],
       "Restrict sign-in to username": [
         "Абмежаваць уваход імем карыстальніка"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Абмежаваць уваход імем карыстальніка і адпаведнымі адрасамі ${ BRAND_NAME }"
       ],
       "Reveal password": [
         "Паказаць пароль"
@@ -17215,6 +17358,9 @@
       ],
       "Terms": [
         "Умовы"
+      ],
+      "terms and conditions": [
+        "умовамі выкарыстання"
       ],
       "terms of our referral program": [
         "ўмовамі нашай рэферальнай праграмы"
@@ -19757,8 +19903,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Скасаваць падпіску можна ў любы час да гэтай даты.** Вы зможаце карыстацца тарыфным планам ${ planTitle } бясплатна да канца пробнага перыяду."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Калі вы працягніце пасля пробнага перыяду,** вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Змянілі сваё меркаванне пасля пробнага перыяду?** Вы можаце скасаваць падпіску на працягу 30 дзён з моманту першага плацяжу, і вам будуць вернуты грошы за нявыкарыстаны час."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Пасля таго, як пачнецца ваша поўная падпіска...** Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
@@ -20880,6 +21026,9 @@
         "${ days } дні",
         "${ days } дзён",
         "${ days } дзён"
+      ],
+      "Due on receipt": [
+        "Дзейнічае пры дастаўцы"
       ]
     },
     "Payment.Sepa.Action": {
@@ -20893,6 +21042,12 @@
     "Payments": {
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (з улікам падатку)"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } не можа быць аб'яднаны з ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } даступна толькі на тарыфных планах, якія арыентаваны на бізнес."
       ],
       "${ planTitle } + ${ LUMO_SHORT_APP_NAME }": [
         "${ planTitle } + ${ LUMO_SHORT_APP_NAME }"
@@ -20966,20 +21121,32 @@
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "Толькі адзін ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } можа быць куплены."
       ],
+      "Paid from your account credit.": [
+        "Аплачана з крэдытаў вашага ўліковага запісу."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Заплаціць з дапамогай ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Спосаб аплаты патрабуецца для актывацыі падпіскі пасля завяршэння пробнага перыяду."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Змена тарыфнага плана несумяшчальная па наступнай прычыне:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Закрыйце ўліковыя запісы дадатковых кашалькоў перад змяненнем вашага тарыфнага плана."
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Закрыйце дадатковыя кашалькі перад змяненнем свайго тарыфнага плана."
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
       ],
       "Processing payment": [
         "Апрацоўка плацяжу"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Ліцэнзіі Proton Meet павінны адпавядаць колькасці ўдзельнікаў."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Кошт падаўжэння можа быць зменены ў адпаведнасці з ${ termsAndConditionsLink }."
@@ -21007,6 +21174,9 @@
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць адрасоў для вашага ўліковага запісу."
       ],
       "The selected plan doesn’t offer enough domains for your account.": [
         "Выбраны тарыфны план не прапануе дастатковую колькасць даменаў для вашага ўліковага запісу."
@@ -21059,11 +21229,23 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Гэта дзеянне пашырае існуючую падпіску. З вас будзе спагнана плата толькі за новыя дадаткі і час, якія засталіся ў бягучым перыядзе аплаты. Дата падаўжэння вашай падпіскі не будзе зменена."
       ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Гэты вылучаны сервер прызначаны шлюзу і не можа быць зменены."
+      ],
       "This offer is not available with your current plan.": [
         "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Гэты спосаб аплаты стане новым прадвызначаным спосабам для ўсіх будучых падаўжэнняў."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Гэты тарыфны план не падтрымлівае кіруемыя функцыі ў вашым уліковым запісе."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Гэты тарыфны план не падтрымлівае ўдзельнікаў у вашым уліковым запісе."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Гэта падпіска не можа быць завершана цяпер. Паўтарыце спробу зноў."
       ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
@@ -21094,6 +21276,9 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас ужо ёсць падпіска на гэты тарыфны план. Вы можаце змяніць сваю падпіску на ${ subscriptionPlatform }."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "У вас ужо ёсць ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
       "You already own a Born Private account.": [
         "Вы ўжо валодаеце ўліковым запісам Born Private."
@@ -21164,11 +21349,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Звярніцеся ў падтрымку кліентаў, каб пацвердзіць змену ўласнасці."
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Ніколі"
       ]
     },
     "Payments.ModificationWarning": {
@@ -22709,6 +22889,18 @@
       ]
     },
     "scim": {
+      "${ cleanUpCount } clean up action required.": [
+        "Патрабуецца ${ cleanUpCount } дзеянне пры ачыстцы.",
+        "Патрабуецца ${ cleanUpCount } дзеянні пры ачыстцы.",
+        "Патрабуецца ${ cleanUpCount } дзеянняў пры ачыстцы.",
+        "Патрабуецца ${ cleanUpCount } дзеянняў пры ачыстцы."
+      ],
+      "${ cleanUpCount } user's permissions have changed.": [
+        "${ cleanUpCount } дазвол карыстальніка змяніўся.",
+        "${ cleanUpCount } дазволы карыстальніка змяніліся.",
+        "${ cleanUpCount } дазволаў карыстальніка змяніліся.",
+        "${ cleanUpCount } дазволаў карыстальніка змяніліся."
+      ],
       "${ memberCount } new member": [
         "${ memberCount } новы ўдзельнік",
         "${ memberCount } новыя ўдзельнікі",
@@ -22771,6 +22963,9 @@
       ],
       "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
         "Неабходна канчатковае ўхваленне, каб даць доступ паміж усімі сэрвісамі ${ BRAND_NAME }."
+      ],
+      "Final approval needed to remove organization key access.": [
+        "Для выдалення доступу да ключа арганізацыі патрабуецца канчатковае ўхваленне."
       ],
       "From your identity provider": [
         "Ад вашага пастаўшчыка пасведчанняў"
@@ -24525,6 +24720,9 @@
       "You'll be redirected to your third-party SSO provider.": [
         "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO."
       ],
+      "Your old password will become your **backup password**. You will be able to use it to authorize single sign-on (SSO) on new devices in the future.": [
+        "Ваш стары пароль стане вашым **рэзервовым паролем**. Вы зможаце выкарыстоўваць яго для аўтарызацыі адзінага ўваходу (SSO) на новых прыладах у будучыні."
+      ],
       "Your SSO configuration will be deleted.": [
         "Ваша канфігурацыя SSO будзе выдалена."
       ]
@@ -24842,12 +25040,6 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "Ужыта скідка ў памеры ${ discountItem.discountPercent }%"
-      ],
-      "${ discountItem.discountPercent }% off": [
-        "${ discountItem.discountPercent }% скідкай"
-      ],
       "${ trialCycleText } free": [
         "${ trialCycleText } бясплатна"
       ],
@@ -25419,6 +25611,11 @@
       ],
       "Upcoming": [
         "Надыходзячыя"
+      ]
+    },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
       ]
     },
     "Subtitle": {
@@ -27675,6 +27872,9 @@
       "Restore administrator privileges": [
         "Аднавіць правы адміністратара"
       ],
+      "Restrict sign-in?": [
+        "Абмежаваць доступ?"
+      ],
       "Reused passwords": [
         "Паўторна выкарыстаныя паролі"
       ],
@@ -27993,6 +28193,9 @@
       "This Gmail is already connected": [
         "Гэты ўліковы запіс Gmail ужо падключаны"
       ],
+      "This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Гэты Gmail звязаны з іншым уліковым запісам ${ BRAND_NAME }"
+      ],
       "Time zone": [
         "Часавы пояс"
       ],
@@ -28172,9 +28375,6 @@
       ],
       "What are you migrating?": [
         "Што вы плануеце перанесці?"
-      ],
-      "What changes if you switch to the Free plan": [
-        "Што зменіцца пры пераходзе на тарыфны план Free"
       ],
       "What is an alias?": [
         "Што такое псеўданім?"
@@ -28372,20 +28572,17 @@
       "Billing": [
         "Аплата"
       ],
-      "End date": [
-        "Дата завяршэння"
-      ],
       "Plan": [
         "Тарыфны план"
       ],
       "Price": [
         "Цана"
       ],
-      "Start date": [
-        "Дата пачатку"
-      ],
       "Status": [
         "Статус"
+      ],
+      "Subscription term": [
+        "Тэрмін дзеяння падпіскі"
       ]
     },
     "Title; create calendar modal": {
@@ -28733,11 +28930,17 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ],
+      "Assigned by a group. Remove the user from the group to change this role": [
+        "Прызначана групай. Выдаліце ​​карыстальніка з групы, каб змяніць гэту ролю"
+      ],
       "Disables end-to-end email encryption for this group": [
         "Адключае скразное шыфраванне лістоў для гэтай групы"
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Знешні адрас - адключае скразное шыфраванне электроннай пошты для гэтай групы і зашыфраваныя рэсурсы не будуць абагулены з гэтым карыстальнікам."
+      ],
+      "External address — No end-to-end encryption or resource sharing, and roles and permissions can't be assigned.": [
+        "Знешні адрас: без скразнога шыфравання або абагульвання рэсурсаў, а таксама нельга прызначаць ролі і дазволы."
       ],
       "Group membership paused": [
         "Праналежнасць да групы прыпынена"
@@ -29084,7 +29287,7 @@
     },
     "Upsell": {
       "${ BRAND_NAME } for Business": [
-        "Рассылка ${ BRAND_NAME } for Business"
+        "${ BRAND_NAME } for Business"
       ],
       "**Save up to ${ priceString }** with a longer subscription. Same premium features, lower price.": [
         "**Зэканомце да ${ priceString }** з працяглай падпіскай. Тыя ж самыя прэміяльныя функцыі за меншую плату."

@@ -505,6 +505,9 @@
       "Move to Trash": [
         "Siirrä roskakoriin"
       ],
+      "Multiple select": [
+        "Valitse useita"
+      ],
       "New token": [
         "Uusi tunniste"
       ],
@@ -2163,7 +2166,8 @@
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirtäminen toiseen holviin pyyhkii sen suojatut linkit."
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -3488,11 +3492,17 @@
       "LinkedIn account": [
         "LinkedIn-tili"
       ],
+      "Linux": [
+        "Linux"
+      ],
       "Login": [
         "Kirjautumistieto"
       ],
       "Logins": [
         "Kirjautumistiedot"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "Mailboxes": [
         "Postilaatikot"

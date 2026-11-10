@@ -464,6 +464,9 @@
       "Add notification": [
         "Adăugare notificare"
       ],
+      "Add payment method": [
+        "Adăugare metodă de plată"
+      ],
       "Add PayPal": [
         "Adăugare PayPal"
       ],
@@ -554,6 +557,12 @@
       "Cancel": [
         "Anulare"
       ],
+      "Cancel ${ planTitle }": [
+        "Anulare ${ planTitle }"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "Anulare ${ planTitle } de probare"
+      ],
       "Cancel import": [
         "Anulare importare"
       ],
@@ -562,6 +571,9 @@
       ],
       "Cancel subscription": [
         "Anulare abonament"
+      ],
+      "Cancel trial": [
+        "Anulare perioadă de probare"
       ],
       "Cancel trial and pay": [
         "Anulare perioadă de evaluare și plătire"
@@ -770,6 +782,9 @@
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Creați o legătură web pentru a partaja cu oricine în afara ${ BRAND_NAME }"
       ],
+      "Create account": [
+        "Creare cont"
+      ],
       "Create calendar": [
         "Creare calendar"
       ],
@@ -946,6 +961,9 @@
       ],
       "Don't show again": [
         "Nu mai arăta"
+      ],
+      "Don't show this offer again": [
+        "Nu mai afișa această ofertă"
       ],
       "Donate": [
         "Donație"
@@ -1264,6 +1282,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Accesare ${ planOrAppName }"
+      ],
+      "Go to folder": [
+        "Accesare folder"
       ],
       "Go to label": [
         "Accesare etichetă"
@@ -1763,6 +1784,9 @@
       "Restore": [
         "Restaurare"
       ],
+      "Restrict sign-in": [
+        "Restricționare autentificare"
+      ],
       "Resume": [
         "Reluare"
       ],
@@ -1991,6 +2015,9 @@
       "Sign in to ${ PASS_APP_NAME }": [
         "Conectare în ${ PASS_APP_NAME }"
       ],
+      "Sign in to a different account": [
+        "Conecta la alt cont"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Conectare cu ${ BRAND_NAME }"
       ],
@@ -2035,6 +2062,9 @@
       ],
       "Spam": [
         "Nedorite"
+      ],
+      "Special Offer": [
+        "Ofertă specială"
       ],
       "Start free trial": [
         "Începeți evaluarea gratuită"
@@ -2349,6 +2379,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "Anulare abonament"
+      ],
       "Reactivate": [
         "Reactivare"
       ],
@@ -2580,6 +2613,9 @@
       ],
       "Permission revoked": [
         "Permisiune revocată"
+      ],
+      "Sign-in": [
+        "Conectare"
       ]
     },
     "Admin": {
@@ -2835,6 +2871,9 @@
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Dacă anulați, perioada de evaluare gratuită nu va fi convertită într-un abonament cu plată, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de evaluare. După aceea, planul va fi retrogradat la ${ BRAND_NAME } Free."
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "Când anulați, perioada de probare gratuită nu va fi transformată într-un abonament cu plată."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de evaluare."
@@ -4272,8 +4311,8 @@
       "Confirm cancellation": [
         "Confirmare anulare"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Dacă depășiți limitele planului gratuit, nu veți mai putea să:"
+      "If you exceed your plan limits, you won't be able to:": [
+        "Dacă depășiți limitele planului, nu veți mai putea să:"
       ],
       "Keep current plan": [
         "Păstrez planul curent"
@@ -4290,8 +4329,11 @@
       "Upload any new files": [
         "Încărcare fișiere noi"
       ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Când abonamentul expiră la ${ endDate }, contul va trece la planul gratuit. Dacă utilizarea depășește limitele planului gratuit, este posibil ca unele funcții să nu fie disponibile temporar."
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Când abonamentul ${ planDisplayName } se încheie la data de ${ endDate }, veți pierde accesul la funcțiile acestuia. Dacă, ulterior, utilizarea vă depășește limitele planului, este posibil ca unele funcții să devină temporar indisponibile."
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Când abonamentul vi se încheie la data de ${ endDate }, veți pierde accesul la funcțiile acestuia. Dacă, ulterior, utilizarea vă depășește limitele planului, este posibil ca unele funcții să devină temporar indisponibile."
       ]
     },
     "Confirm modal title": {
@@ -7660,9 +7702,6 @@
       "Invalid invitation link": [
         "Legătura de invitație nu este validă."
       ],
-      "Invalid joining link. Please contact your administrator.": [
-        "Legătură web de participare nevalidă. Contactați administratorul."
-      ],
       "Invalid name": [
         "Nume nevalid"
       ],
@@ -8079,6 +8118,9 @@
       "The amount due has changed. Please try again.": [
         "Suma datorată s-a schimbat. Mai încercați."
       ],
+      "The device you scanned the QR code with didn't send your sign-in details. Update the app on that device and try again.": [
+        "Dispozitivul cu care ați scanat codul QR nu a transmis datele de autentificare. Actualizați aplicația pe acel dispozitiv și reîncercați."
+      ],
       "The email addresses do not match": [
         "Adresele de e-mail nu se potrivesc."
       ],
@@ -8120,6 +8162,9 @@
       ],
       "The session has expired. Please sign in again.": [
         "Sesiunea a expirat. Reconectați-vă."
+      ],
+      "The session has expired. Please try again.": [
+        "Sesiunea a expirat. Reîncercați."
       ],
       "The total could not be calculated. Change the amount to try again.": [
         "Totalul nu a putut fi calculat. Modificați suma pentru a reîncerca."
@@ -8720,9 +8765,6 @@
       "${ BRAND_NAME } groups": [
         "Grupuri ${ BRAND_NAME }"
       ],
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "* Doar o singură perioadă de evaluare per utilizator. După aceea se aplică prețul standard."
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Conturile cu domenii personale nu se pot alătura unui plan de familie."
       ],
@@ -8790,9 +8832,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Abonamentul va fi facturat administratorului principal al acestui plan."
       ],
-      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
-        "Pentru a vă ușura tranziția, vă oferim o perioadă de evaluare de 30 de zile pentru ${ BRAND_NAME } Unlimited.*"
-      ],
       "View the invitation": [
         "Afișare invitație",
         "Afișare invitații",
@@ -8855,14 +8894,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "* Doar o singură perioadă de evaluare per utilizator. După aceea se aplică prețul standard."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "După părăsirea planului, acest utilizator va fi mutat la un plan ${ BRAND_NAME } Free."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "După ce vă va părăsi planul actual, acest utilizator va fi mutat la planul ${ BRAND_NAME } Unlimited cu o perioadă de evaluare de 30 de zile.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Alocați spațiu de stocare contului de administrator. Puteți distribui spațiul pentru utilizatorii suplimentari mai târziu."
@@ -11229,6 +11262,21 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Partajând toate detaliile evenimentului din acest calendar, sunteți de acord să permiteți accesul ${ BRAND_NAME } la aceste informații criptate din calendar."
       ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "Activând această opțiune, vă veți putea autentifica doar cu **${ primaryEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "Activând această opțiune, vă veți putea autentifica doar folosind numele de utilizator inițial **${ username }** — fie ca atare, fie sub forma **${ firstEmail }**, **@${ secondDomain }** sau **@${ thirdDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "Prin activarea acestei opțiuni, vă veți putea autentifica doar folosind numele de utilizator inițial **${ username }** – fie ca atare, fie sub forma **${ firstEmail }** sau **@${ secondDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "Prin activarea acestei opțiuni, vă veți putea autentifica doar folosind numele de utilizator inițial **${ username }** — fie ca atare, fie sub forma **${ firstEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "Activând această opțiune, vă veți putea autentifica doar folosind numele de utilizator **${ username }**."
+      ],
       "Can you access your active session?": [
         "Vă puteți accesa sesiunea activă?"
       ],
@@ -11541,6 +11589,9 @@
       ],
       "Discount": [
         "Reducere"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Reducerile se bazează pe prețurile lunare standard. Abonamentul se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Descoperiți funcțiile noi deblocate și începeți să le folosiți chiar acum!"
@@ -12072,11 +12123,17 @@
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Dacă e dezactivată, membrii organizației vor putea partaja seifuri și articole doar în cadrul organizației."
       ],
+      "If disabled, organization members won't be able to add 2FA codes to their items, and existing ones won't be generated or autofilled. Nothing is deleted.": [
+        "Dacă este dezactivată, membrii organizației nu vor putea adăuga coduri de A2F la articolele lor, iar cele existente nu vor mai fi generate și nici completate automat. Nu se șterge nimic."
+      ],
       "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
         "Dacă este dezactivată, membrii organizației nu vor putea crea aliasuri noi. Aliasurile existente vor rămâne active."
       ],
       "If disabled, organization members won't be able to create secure links. Previously active secure links remain valid until their expiration.": [
         "Dacă este dezactivată, membrii organizației nu vor putea crea legături web securizate. Cele active anterior rămân valabile până la expirarea lor."
+      ],
+      "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
+        "Dacă este dezactivată, membrii organizației nu vor putea salva chei de acces în ${ PASS_APP_NAME } și nici nu se vor putea autentifica folosindu-le. Nu se șterge nimic."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Dacă e activată, membrii organizației vor putea partaja și articole individuale alături de seifuri."
@@ -12246,6 +12303,9 @@
       ],
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Cod nevalid. ${ RequestNewCodeLink } și reîncercați."
+      ],
+      "Invalid joining link": [
+        "Legătură web de participare nevalidă."
       ],
       "Invitation link expired": [
         "Legătura web a invitației a expirat."
@@ -13457,6 +13517,9 @@
       "This is the password you used before the password reset.": [
         "Aceasta este parola pe care ați utilizat-o înainte de resetarea parolei."
       ],
+      "This joining link isn't valid. Please contact your administrator for a new one.": [
+        "Această legătură web de participare nu este valabilă. Contactați administratorul pentru a primi una nouă."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Această legătură web duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
       ],
@@ -14054,17 +14117,26 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Când sunt activate notificările, veți primi o alertă la adresa de e-mail de recuperare dacă aveți mesaje noi în contul ${ MAIL_APP_NAME }."
       ],
-      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Atunci când autentificarea este restricționată, doar ${ primaryEmailElement } și numele de utilizator ${ usernameElement } pot fi utilizate pentru a vă autentifica. Celelalte adrese nu le mai puteți asocia cu contul personal, chiar dacă cineva le cunoaște."
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Atunci când autentificarea este restricționată, doar adresa de e-mail **${ primaryEmail }** poate fi utilizată pentru a vă autentifica. Celelalte adrese deținute nu vă pot fi asociate contului, chiar dacă cineva le cunoaște."
       ],
-      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Când autentificarea este restricționată, doar numele de utilizator ${ primaryEmailElement } poate fi utilizat pentru a vă autentifica. Celelalte adrese nu vă pot fi asociate cu contul, chiar dacă cineva le cunoaște."
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Atunci când autentificarea este restricționată, doar numele de utilizator **${ username }** poate fi utilizat pentru a vă autentifica. Celelalte adrese deținute nu mai pot fi asociate cu contul, chiar dacă cineva le cunoaște."
       ],
-      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Când autentificarea este restricționată, doar numele de utilizator ${ usernameElement } poate fi utilizat pentru a vă autentifica. Celelalte adrese nu vă pot fi asociate cu contul, chiar dacă cineva le cunoaște."
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Atunci când autentificarea este restricționată, vă puteți autentifica doar folosind numele de utilizator inițial **${ username }** – fie ca atare, fie sub forma **${ firstEmail }**, **@${ secondDomain }** sau **@${ thirdDomain }**. Celelalte adrese de e-mail deținute nu vor funcționa pentru autentificare."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Atunci când autentificarea este restricționată, vă poți autentifica doar folosind numele de utilizator inițial **${ username }** – fie ca atare, fie sub forma **${ firstEmail }** sau **@${ secondDomain }**. Celelalte adrese de e-mail deținute nu vor funcționa pentru autentificare."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Atunci când autentificarea este restricționată, vă puteți autentifica doar folosind numele de utilizator inițial **${ username }** – fie ca atare, fie sub forma **${ firstEmail }**. Celelalte adrese de e-mail deținute nu vor funcționa pentru autentificare."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Dacă anulați, abonamentul nu va fi reînnoit, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de abonament. După aceea, contul va fi trecut la planul ${ BRAND_NAME } Free."
+      ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "Dacă anulați, abonamentul nu va începe după perioada de probare."
       ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Dacă anulați, abonamentul nu va fi începe, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de evaluare. După aceea, contul va fi trecut la planul ${ BRAND_NAME } Free."
@@ -14257,6 +14329,9 @@
         "Nu puteți trimite mai mult de ${ emailSendLimitNumber } invitații în următoarele 24 de ore.",
         "Nu puteți trimite mai mult de ${ emailSendLimitNumber } de invitații în următoarele 24 de ore."
       ],
+      "You cancel it in the store.": [
+        "Puteți anula în magazin."
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Nu puteți recomanda utilizatori ai ${ MAIL_APP_NAME }."
       ],
@@ -14317,6 +14392,9 @@
       ],
       "You have no transactions.": [
         "Nu aveți tranzacții."
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "Aveți mai multe abonamente. Alegeți-l pe cel pe care doriți să-l anulați; celelalte abonamente nu vor fi afectate. Un abonament anulat nu va fi reînnoit și veți beneficia de avantajele sale până la sfârșitul perioadei de abonare."
       ],
       "You have unpublished changes": [
         "Aveți modificări nemodificate"
@@ -14457,6 +14535,9 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Contul este configurat în prezent pentru a aplica schema de taxare inversă. Aceasta nu este acceptată pentru planul selectat. Pentru a continua, fie eliminați numărul de TVA din adresa de facturare, fie selectați un alt plan."
       ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "Contul v-a fost creat, dar nu s-a putut finaliza configurarea planului."
+      ],
       "Your account was successfully updated with this promotion": [
         "Contul a fost modificat cu planul din această promoție."
       ],
@@ -14499,6 +14580,9 @@
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
       ],
+      "Your free plan includes one connected account. Upgrade to connect more.": [
+        "Planul gratuit deținut include un cont conectat. Treceți la un plan superior pentru a conecta mai multe."
+      ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
         "Perioada de probare gratuită s-a încheiat. Abonați-vă acum pentru a asigura accesul neîntrerupt al echipei proprii și securitatea conturilor."
       ],
@@ -14537,6 +14621,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Mesajele organizației sunt protejate bilateral folosind cheia organizației. Această amprentă poate fi folosită pentru a verifica dacă toți administratorii din cont au aceeași cheie."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Celelalte adrese de e-mail pe care le dețineți nu vor funcționa pentru autentificare până când nu dezactivați acest lucru."
       ],
       "Your payment details are encrypted and secure": [
         "Datele de plată sunt criptate și securizate"
@@ -15411,6 +15498,12 @@
       ],
       "Allow sharing outside the organization": [
         "Permitere partajare în afara organizației"
+      ],
+      "Allow storing 2FA codes": [
+        "Permitere stocare coduri A2F"
+      ],
+      "Allow storing passkeys": [
+        "Permitere stocare chei de securitate"
       ],
       "Allow users to set a backup password": [
         "Permitere ca utilizatorii să-și seteze o parolă de rezervă"
@@ -16581,11 +16674,11 @@
       "Restrict sign-in to email address": [
         "Restricționare autentificarea la o adresă de e-mail"
       ],
-      "Restrict sign-in to primary email address": [
-        "Restricționare autentificare la adresa de e-mail principală"
-      ],
       "Restrict sign-in to username": [
         "Restricționare autentificare la numele de utilizator"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Restricționează autentificarea la numele de utilizator și la adresele ${ BRAND_NAME } corespondente"
       ],
       "Reveal password": [
         "Afișare parolă"
@@ -17429,6 +17522,9 @@
       ],
       "Terms": [
         "Termeni"
+      ],
+      "terms and conditions": [
+        "termenii și condițiile"
       ],
       "terms of our referral program": [
         "condițiile programului nostru de recomandare"
@@ -19920,8 +20016,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Puteți anula oricând înainte de acel moment.** Veți putea utiliza ${ planTitle } gratuit până la expirarea perioadei de probare."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Dacă alegeți să continuați după perioada de probare,** puteți anula în termen de 30 de zile și puteți primi o rambursare proporțională."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**V-ați răzgândit după perioada de probare?** Anulați în termen de 30 de zile de la prima plată, iar noi vă vom rambursa contravaloarea perioadei neutilizate."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**După ce începe abonamentul complet,** încă puteți anula în termen de 30 de zile și puteți obține o rambursare proporțională."
@@ -21386,11 +21482,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Contactați asistența pentru clienți pentru a confirma schimbarea proprietarului"
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Niciodată"
       ]
     },
     "Payments.ModificationWarning": {
@@ -25033,11 +25124,11 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "Reducere de ${ discountItem.discountPercent }% aplicată"
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "Reducere de ${ planDiscountItem.discountPercent } % aplicată"
       ],
-      "${ discountItem.discountPercent }% off": [
-        "Reducere ${ discountItem.discountPercent }%"
+      "${ planDiscountItem.discountPercent }% off": [
+        "Reducere ${ planDiscountItem.discountPercent } %"
       ],
       "${ trialCycleText } free": [
         "${ trialCycleText } gratuit"
@@ -25587,6 +25678,14 @@
       ],
       "Upcoming": [
         "Viitoare"
+      ]
+    },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "De la ${ startTime }"
       ]
     },
     "Subtitle": {
@@ -27831,6 +27930,9 @@
       "Restore administrator privileges": [
         "Restaurare privilegii administrator"
       ],
+      "Restrict sign-in?": [
+        "Restricționați autentificarea?"
+      ],
       "Reused passwords": [
         "Parole refolosite"
       ],
@@ -28334,8 +28436,8 @@
       "What are you migrating?": [
         "Ce migrați?"
       ],
-      "What changes if you switch to the Free plan": [
-        "Ce se modifică dacă vă comutați la planul gratuit"
+      "What changes if you cancel ${ planDisplayName }": [
+        "Ce se întâmplă dacă anulați ${ planDisplayName }"
       ],
       "What is an alias?": [
         "Ce este un alias?"
@@ -28533,20 +28635,20 @@
       "Billing": [
         "Facturare"
       ],
-      "End date": [
-        "Data sfârșit"
-      ],
       "Plan": [
         "Plan"
       ],
       "Price": [
         "Preț"
       ],
-      "Start date": [
-        "Dată începere"
+      "Renewal": [
+        "Reinnoire"
       ],
       "Status": [
         "Stare"
+      ],
+      "Subscription term": [
+        "Durată abonament"
       ]
     },
     "Title; create calendar modal": {

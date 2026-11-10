@@ -108,6 +108,9 @@
       "Add participant": [
         "Agregar participante"
       ],
+      "Add payment method": [
+        "Añadir método de pago"
+      ],
       "Add phone number": [
         "Agregar número telefónico"
       ],
@@ -201,6 +204,9 @@
       ],
       "Cancel subscription": [
         "Cancelar suscripción"
+      ],
+      "Cancel trial": [
+        "Cancelar prueba"
       ],
       "Cancel trial and pay": [
         "Cancelar prueba y pagar"
@@ -1577,7 +1583,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -6243,6 +6250,9 @@
       ]
     },
     "Header": {
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Antes de ${ MAIL_APP_NAME }, ¿cuál correo electrónico usaba más?"
+      ],
       "Contacts": [
         "Contactos"
       ],
@@ -6284,6 +6294,9 @@
       ],
       "Username": [
         "Nombre de usuario"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "¿Cuál es la razón principal por la que se unió a ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -6723,6 +6736,9 @@
         "${ currentProgress } de ${ totalProgress }",
         "${ currentProgress } de ${ totalProgress }"
       ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } de ${ steps }"
+      ],
       "${ dateString } at ${ formattedTime }": [
         "${ dateString } a las ${ formattedTime }"
       ],
@@ -6991,6 +7007,9 @@
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "Garantía de reembolso de 30 días: cancela durante los 30 días posteriores a tu compra y comunícate con nuestro ${ customerSupportLink } para obtener un reembolso."
       ],
+      "A new or separate address": [
+        "Una dirección nueva o separada"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Un número telefónico solo puede usarse para verificar una cuenta de ${ BRAND_NAME }"
       ],
@@ -7002,6 +7021,9 @@
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Una conexión segura es esencial al trabajar remotamente. Una VPN protege los datos de la compañía de amenazas cibernéticas y mantiene su trabajo privado."
+      ],
+      "A specific feature (tell us)": [
+        "Una función específica (cuéntenos)"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuario es una cuenta asociada con un único nombre de usuario, buzón y persona"
@@ -7104,6 +7126,9 @@
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "Se importarán todos sus contactos, hasta un máximo de ${ maxContact }",
         "Se importarán todos sus contactos, hasta un máximo de ${ maxContact }"
+      ],
+      "Almost done": [
+        "Casi terminado"
       ],
       "American Express SafeKey logo": [
         "Logo de American Express SafeKey"
@@ -7219,6 +7244,9 @@
       "Awaiting transaction": [
         "Esperando la transacción"
       ],
+      "Back": [
+        "Regresar"
+      ],
       "Background color": [
         "Color de fondo"
       ],
@@ -7293,6 +7321,12 @@
       ],
       "Choose a plan that works best for you.": [
         "Elija un plan que funcione mejor para usted."
+      ],
+      "Choose all that apply.": [
+        "Elija todas las que apliquen."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Elija una. Nos ayuda a mejorar ${ MAIL_APP_NAME }."
       ],
       "Choose your service to connect with": [
         "Elija su servicio para conectar"
@@ -7460,6 +7494,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
+      ],
+      "Dismiss": [
+        "Descartar"
       ],
       "Do you remember your password?": [
         "¿Recuerda su contraseña?"
@@ -7795,6 +7832,12 @@
       "How hide-my-email aliases works": [
         "Funcionamiento de los alias de Hide-my-email"
       ],
+      "I didn't have one": [
+        "No tenía una"
+      ],
+      "I use other Proton products": [
+        "Uso los otros productos de Proton"
+      ],
       "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
         "Revisaré el correo de la semana pasada y sacaré lo que realmente necesita respuesta, para que pueda gestionarlo de una sola vez."
       ],
@@ -7952,6 +7995,9 @@
       ],
       "Learn what to do ${ dataLeakedLink }": [
         "Aprenda qué hacer ${ dataLeakedLink }"
+      ],
+      "Leave Big Tech": [
+        "Abandone las grandes empresas tecnológicas"
       ],
       "Left to Right": [
         "Izquierda a derecha"
@@ -8112,11 +8158,17 @@
       "newsletter": [
         "boletín"
       ],
+      "Next": [
+        "Siguiente"
+      ],
       "Next time you sign in to your other account": [
         "La próxima vez que inicie sesión en su otra cuenta"
       ],
       "No action selected": [
         "Ninguna acción seleccionada"
+      ],
+      "No ads": [
+        "Sin anuncios"
       ],
       "No booking pages yet": [
         "Aún no hay páginas de reservas"
@@ -8226,6 +8278,9 @@
       "On public WiFi networks": [
         "En redes Wi-Fi públicas"
       ],
+      "One last step": [
+        "Un último paso"
+      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de las claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Le recomendamos que \"desconfíe\" de estas claves."
       ],
@@ -8255,6 +8310,9 @@
       ],
       "Organization size": [
         "Tamaño de la organización"
+      ],
+      "Other (tell us)": [
+        "Otro (cuéntenos)"
       ],
       "Other accounts": [
         "Otras cuentas"
@@ -8406,6 +8464,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
         "Proteja el correo de ser filtrado en listas de correo o spammers con ${ hideMyEmailAliasesLink }."
+      ],
+      "Protection from hackers and leaks": [
+        "Protección contra hackers y filtraciones"
       ],
       "Public sharing of documents is not yet supported.": [
         "El intercambio público de documentos aún no está admitido."
@@ -8712,6 +8773,9 @@
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Algunos sitios web y servicios de streaming bloquean los contenidos por región. Una VPN te permite evitar estas restricciones y acceder a internet."
       ],
+      "Someone recommended it": [
+        "Alguien lo recomendó"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Lo sentimos, este mensaje no existe o ya expiró."
       ],
@@ -8727,11 +8791,17 @@
       "Start sharing it with contacts and use it for online services.": [
         "Comience a compartirla con sus contactos y úsela para servicios en línea."
       ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Comenzar a usar ${ MAIL_APP_NAME }"
+      ],
       "Start using the shorter, catchier version of your email address.": [
         "Use la versión más corta y atractiva de su dirección de correo."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Manténgase en línea sin ningún esfuerzo al activar los siguientes ajustes VPN:"
+      ],
+      "Stop companies reading my emails": [
+        "Impide que las empresas lean mis correos"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "No se puede acceder a las capacidades de almacenamiento de este navegador. Las necesitamos para activar la búsqueda de contenido en los mensajes."
@@ -8770,6 +8840,9 @@
       "Surveillance": [
         "Vigilancia"
       ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "Las respuestas de encuestas no están cifradas de extremo a extremo, no comparta ninguna información confidencial."
+      ],
       "Symbols (#$&)": [
         "Símbolos (#$&)"
       ],
@@ -8778,6 +8851,9 @@
       ],
       "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
         "Dígam cuándo está fuera y qué le gustaría que dijera y verá todo antes de que se guarde."
+      ],
+      "Tell us more (optional)": [
+        "Cuéntenos más (opcional)"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporalmente no disponible por alta demanda. Intente más tarde."
@@ -9325,8 +9401,17 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Cuando viaje o use Wi-Fi público, conéctese a ${ VPN_APP_NAME } para que nadie rastree su actividad en línea o robe sus datos. Es gratuita."
       ],
+      "Which feature? (optional)": [
+        "¿Cuál función? (opcional)"
+      ],
+      "Which provider?": [
+        "¿Cuál proveedor?"
+      ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "Con las nuevas categorías de correo electrónico, solo los mensajes importantes llegan a su bandeja de entrada principal. Todo lo demás se organiza en categorías."
+      ],
+      "Work or business": [
+        "Trabajo o negocio"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Quiere recibir un código de verificación nuevo o usar un método de verificación alternativo?"
@@ -13094,8 +13179,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Cancele en cualquier momento antes de esa fecha.** Podrá usar ${ planTitle } hasta que la prueba finalice, libre de cargos."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Si continúa después de la prueba**, podrá cancelar dentro de 30 días y obtener un reembolso proporcional."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**¿Cambió de parecer después de la prueba?** Cancele dentro de 30 días de su primer pago y le reembolsaremos el tiempo no usado."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Una vez que su suscripción completa inicie**, aún podrá cancelar dentro de 30 días y obtener un reembolso ponderado."

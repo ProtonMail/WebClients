@@ -101,6 +101,9 @@
       "Add notification": [
         "Ajouter une notification"
       ],
+      "Add payment method": [
+        "Ajouter un moyen de paiement"
+      ],
       "Add phone number": [
         "Ajouter un numéro de téléphone"
       ],
@@ -137,6 +140,9 @@
       ],
       "Cancel subscription": [
         "Annuler l'abonnement"
+      ],
+      "Cancel trial": [
+        "Annuler la version d'essai"
       ],
       "Cancel trial and pay": [
         "Annuler l'essai et payer"
@@ -6401,6 +6407,9 @@
       "You have an open invoice ${ payInvoiceLink }": [
         "Vous avez une facture ouverte ${ payInvoiceLink }"
       ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Vous avez une facture à régler au ${ dueDate } ${ payInvoiceLink }"
+      ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Vous avez réactivé vos clés et les événements liés aux calendriers suivants peuvent maintenant être déchiffrés."
       ],
@@ -7471,6 +7480,9 @@
       ],
       "Pay invoice": [
         "Payer la facture"
+      ],
+      "Pay it": [
+        "Payer avec"
       ],
       "Reactivate now": [
         "Réactiver maintenant"
@@ -9172,8 +9184,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Résiliez à tout moment avant l'échéance.** Vous pourrez utiliser ${ planTitle } jusqu'à la fin de la période d'essai, gratuitement."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Si vous continuez après votre période d'essai, ** vous pouvez annuler dans les 30 jours et recevoir un remboursement au prorata."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Vous avez changé d'avis après la période d'essai ?** Résiliez votre abonnement dans les 30 jours suivant votre premier paiement et nous vous rembourserons la période non utilisée."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Une fois que votre abonnement complet débuté... ** Vous pouvez toujours annuler dans les 30 jours et recevoir un remboursement au prorata."
@@ -9511,6 +9523,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Un moyen de paiement est requis pour que l'abonnement soit activé après la fin de la version d'essai."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Le changement de plan est incompatible pour les raisons suivantes :"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Veuillez clôturer les comptes de portefeuille supplémentaires avant de changer d'abonnement."
       ],
@@ -9519,6 +9534,9 @@
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Veuillez réactiver votre abonnement avant de réduire le nombre d'extensions."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Le nombre de places Proton Meet doit correspondre au nombre de membres."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Le tarif du renouvellement est susceptible de changer en accord avec ${ termsAndConditionsLink }."
@@ -9597,6 +9615,9 @@
       ],
       "This plan doesn’t support the members on your account.": [
         "Cet abonnement ne prend pas en charge les membres sur votre compte."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "La souscription ne peut aboutir pour le moment. Merci de réessayer ultérieurement."
       ],
       "Timeout exceeded": [
         "Le délai est dépassé."

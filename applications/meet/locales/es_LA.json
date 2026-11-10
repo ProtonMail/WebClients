@@ -2314,6 +2314,9 @@
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "Se detuvo la grabación porque no se pudo guardar. La mantuvimos hasta este punto."
       ],
+      "Recording stopped because of an error.": [
+        "La grabación se detuvo debido a un error."
+      ],
       "Renaming root item is not allowed": [
         "No está permitido renombrar el elemento raíz"
       ],
@@ -2829,6 +2832,9 @@
       "Camera effects": [
         "Efectos de cámara"
       ],
+      "Camera is starting": [
+        "La cámara está iniciando"
+      ],
       "Camera permission denied": [
         "Permiso de cámara denegado"
       ],
@@ -2903,6 +2909,12 @@
       ],
       "Delete room": [
         "Eliminar sala"
+      ],
+      "Do you want people to hear you in the meeting?": [
+        "¿Desea que la gente le escuche en la reunión?"
+      ],
+      "Do you want people to see you in the meeting?": [
+        "¿Desea que la gente le vea en la reunión?"
       ],
       "Download current logs": [
         "Descargar registros actuales"
@@ -3078,6 +3090,9 @@
       "Loop an uploaded video or your live camera through background blur.": [
         "Reproduzca en bucle un video cargado o su cámara en directo a través de un fondo difuminado."
       ],
+      "Lost connection to the meeting server. Reconnecting…": [
+        "Se perdió la conexión al servidor de la reunión. Reconectando…"
+      ],
       "Lower participant's hand": [
         "Bajar la mano del participante"
       ],
@@ -3087,8 +3102,14 @@
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
         "Reuniones sin restricciones. Actualice a un plan superior para quitar el límite de 1 hora y reunir hasta a 100 participantes."
       ],
+      "Meeting almost full": [
+        "Reunión casi llena"
+      ],
       "Meeting ended": [
         "Reunión finalizada"
+      ],
+      "Meeting full": [
+        "Reunión llena"
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Reunión llena (${ maxParticipants } participantes)"
@@ -3137,6 +3158,9 @@
       ],
       "Microphone effects": [
         "Efectos de micrófono"
+      ],
+      "Microphone is starting": [
+        "El micrófono se está iniciando"
       ],
       "Microphone permission denied": [
         "Permiso de micrófono denegado"
@@ -3290,6 +3314,9 @@
       ],
       "Reconnecting to meeting...": [
         "Reconectando la reunión..."
+      ],
+      "Reconnecting…": [
+        "Reconectando…"
       ],
       "Record your meetings": [
         "Grabe sus reuniones"
@@ -3612,11 +3639,17 @@
       "Your browser or device isn’t supported": [
         "Su navegador o dispositivo no está soportado"
       ],
+      "Your camera is still starting": [
+        "Su cámara todavía se está iniciando"
+      ],
       "Your email will only be used for this one-time verification.": [
         "El correo electrónico sólo se usará para esta verificación única."
       ],
       "Your meeting is ready": [
         "Su reunión ya está lista"
+      ],
+      "Your microphone is still starting": [
+        "Su micrófono todavía se está iniciando"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El número de teléfono sólo se usará para esta verificación única."
@@ -3857,6 +3890,9 @@
       ],
       "Raw": [
         "En bruto"
+      ],
+      "Reactions": [
+        "Reacciones"
       ],
       "Remember my name on this device": [
         "Recordar mi nombre en este dispositivo"

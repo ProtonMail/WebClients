@@ -2314,6 +2314,9 @@
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "Η ηχογράφηση σταμάτησε επειδή δεν ήταν δυνατή η αποθήκευσή της. Τη διατηρήσαμε μέχρι αυτό το σημείο."
       ],
+      "Recording stopped because of an error.": [
+        "Η εγγραφή σταμάτησε λόγω σφάλματος."
+      ],
       "Renaming root item is not allowed": [
         "Δεν επιτρέπεται η μετονομασία ριζικού στοιχείου"
       ],
@@ -2829,6 +2832,9 @@
       "Camera effects": [
         "Εφέ κάμερας"
       ],
+      "Camera is starting": [
+        "Η κάμερα ξεκινά"
+      ],
       "Camera permission denied": [
         "Η άδεια χρήσης κάμερας απορρίφθηκε"
       ],
@@ -2903,6 +2909,12 @@
       ],
       "Delete room": [
         "Διαγραφή αίθουσας"
+      ],
+      "Do you want people to hear you in the meeting?": [
+        "Θέλεις να σε ακούνε οι άλλοι στη σύσκεψη;"
+      ],
+      "Do you want people to see you in the meeting?": [
+        "Θέλεις να σε βλέπουν οι άλλοι στη σύσκεψη;"
       ],
       "Download current logs": [
         "Λήψη τρεχόντων αρχείων καταγραφής"
@@ -3078,6 +3090,9 @@
       "Loop an uploaded video or your live camera through background blur.": [
         "Επαναλάβετε ένα μεταφορτωμένο βίντεο ή την ζωντανή κάμερά σας μέσω θολώματος φόντου."
       ],
+      "Lost connection to the meeting server. Reconnecting…": [
+        "Χάθηκε η σύνδεση με τον διακομιστή της σύσκεψης. Επανασύνδεση…"
+      ],
       "Lower participant's hand": [
         "Κατέβασε το χέρι του συμμετέχοντα"
       ],
@@ -3087,8 +3102,14 @@
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
         "Συναντηθείτε χωρίς περιορισμούς. Αναβαθμίστε για να καταργήσετε το όριο της 1 ώρας και να φιλοξενήσετε έως και 100 συμμετέχοντες."
       ],
+      "Meeting almost full": [
+        "Η σύσκεψη είναι σχεδόν πλήρης"
+      ],
       "Meeting ended": [
         "Η σύσκεψη έληξε"
+      ],
+      "Meeting full": [
+        "Η σύσκεψη είναι πλήρης"
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Η σύσκεψη είναι πλήρης (${ maxParticipants } συμμετέχοντες)"
@@ -3137,6 +3158,9 @@
       ],
       "Microphone effects": [
         "Εφέ μικροφώνου"
+      ],
+      "Microphone is starting": [
+        "Το μικρόφωνο ξεκινά"
       ],
       "Microphone permission denied": [
         "Η άδεια μικροφώνου απορρίφθηκε"
@@ -3290,6 +3314,9 @@
       ],
       "Reconnecting to meeting...": [
         "Επανασύνδεση με τη συνάντηση..."
+      ],
+      "Reconnecting…": [
+        "Επανασύνδεση…"
       ],
       "Record your meetings": [
         "Καταγράψτε τις συναντήσεις σας"
@@ -3612,11 +3639,17 @@
       "Your browser or device isn’t supported": [
         "Το πρόγραμμα περιήγησης ή η συσκευή σας δεν υποστηρίζεται"
       ],
+      "Your camera is still starting": [
+        "Η κάμερά σας εξακολουθεί να εκκινεί"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
       "Your meeting is ready": [
         "Η σύσκεψή σας είναι έτοιμη"
+      ],
+      "Your microphone is still starting": [
+        "Το μικρόφωνό σας εξακολουθεί να εκκινεί"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
@@ -3858,6 +3891,9 @@
       "Raw": [
         "Ακατέργαστη"
       ],
+      "Reactions": [
+        "Αντιδράσεις"
+      ],
       "Remember my name on this device": [
         "Θυμήσου το όνομά μου σε αυτή τη συσκευή"
       ],
@@ -3973,6 +4009,9 @@
       "Cheers": [
         "Ευχαριστώ"
       ],
+      "Chef's kiss": [
+        "Τέλειο!"
+      ],
       "Coffee": [
         "Καφές"
       ],
@@ -3994,6 +4033,9 @@
       "Love": [
         "Αγάπη"
       ],
+      "Mild panic": [
+        "Ήπιος πανικός"
+      ],
       "Mind blown": [
         "Εξωπραγματικό"
       ],
@@ -4002,6 +4044,9 @@
       ],
       "Party": [
         "Πάρτι"
+      ],
+      "Perk": [
+        "Παροχή"
       ],
       "Popcorn": [
         "Ποπ Κορν"

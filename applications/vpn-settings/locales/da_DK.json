@@ -337,6 +337,9 @@
       "Add external address": [
         "Tilføj ekstern adresse"
       ],
+      "Add payment method": [
+        "Tilføj betalingsmetode"
+      ],
       "Add PayPal": [
         "Tilføj PayPal"
       ],
@@ -394,11 +397,20 @@
       "Cancel": [
         "Annullér"
       ],
+      "Cancel ${ planTitle }": [
+        "Annuller ${ planTitle }"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "Opsig prøveperioden for ${ planTitle }"
+      ],
       "Cancel request": [
         "Annullér anmodning"
       ],
       "Cancel subscription": [
         "Opsig abonnement"
+      ],
+      "Cancel trial": [
+        "Annuller prøveperiode"
       ],
       "Cancel trial and pay": [
         "Annullér prøveversion og betal"
@@ -1189,6 +1201,9 @@
       "Restore": [
         "Gendan"
       ],
+      "Restrict sign-in": [
+        "Begræns login"
+      ],
       "Resume membership": [
         "Genoptag medlemskab"
       ],
@@ -1644,6 +1659,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "Opsig abonnement"
+      ],
       "Reactivate": [
         "Genaktiver"
       ],
@@ -1854,6 +1872,9 @@
       ],
       "Permission revoked": [
         "Tilladelse tilbagekaldt"
+      ],
+      "Sign-in": [
+        "Log ind"
       ]
     },
     "Admin": {
@@ -2002,6 +2023,9 @@
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Afmelder du, vil din gratis prøveperiode ikke blive konverteret til et betalt abonnement, men du kan stadig nyde dine abonnementetsfordele indtil udgangen af prøveperioden. Herefter vil du blive nedgraderet til ${ BRAND_NAME } gratis abonnement."
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "Når du opsiger, omdannes din gratis prøveperiode ikke til et betalt abonnement."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan have op til ${ TRIAL_MAX_DEDICATED_IPS } dedikeret server i prøveperioden."
@@ -2787,8 +2811,8 @@
       "Confirm cancellation": [
         "Bekræft opsigelse"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Hvis du overskrider grænserne for det gratis abonnement, kan du ikke:"
+      "If you exceed your plan limits, you won't be able to:": [
+        "Hvis du overskrider grænserne for dit abonnement, vil du ikke kunne:"
       ],
       "Keep current plan": [
         "Behold nuværende abonnement"
@@ -2805,8 +2829,11 @@
       "Upload any new files": [
         "Uploade nogen nye filer"
       ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Når dit abonnement udløber den ${ endDate } vil din konto skifte over til det gratis abonnement. Hvis dit forbrug overstiger grænserne på det gratis abonnement vil nogle funktioner muligvis være midlertidigt utilgængelige."
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Når dit abonnement på ${ planDisplayName } udløber den ${ endDate }, mister du funktionerne. Hvis dit forbrug derefter overstiger grænserne for dit abonnement, kan nogle funktioner være midlertidigt utilgængelige."
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Når dit abonnement udløber den ${ endDate }, mister du funktionerne. Hvis dit forbrug derefter overstiger grænserne for dit abonnement, kan nogle funktioner være midlertidigt utilgængelige."
       ]
     },
     "Confirm modal title": {
@@ -5485,6 +5512,9 @@
       "The policy name must be between 3 and 40 characters.": [
         "Politiknavnet skal være mellem 3 og 40 tegn lang."
       ],
+      "The session has expired. Please try again.": [
+        "Sessionen er udløbet. Prøv igen."
+      ],
       "The total could not be calculated. Change the amount to try again.": [
         "Det samlede beløb kunne ikke beregnes. Ændr antallet og prøv igen."
       ],
@@ -5997,14 +6027,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Kun én gratis prøveperiode pr. bruger. Standardpriser gælder derefter."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Når denne bruger forlader dit abonnement, flyttes vedkommende til en ${ BRAND_NAME } Free plan."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Efter at have forladt dit abonnement, vil denne bruger blive flyttet til et ${ BRAND_NAME } Unlimited-abonnement med en 30-dages gratis prøveperiode.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Tildel lagerplads til administratorkontoen. Du kan fordele lagerplads til yderligere brugere senere."
@@ -7634,6 +7658,21 @@
       ],
       "By leaving now, changes may not be saved": [
         "Afbryder du nu, gemmes ændringerne måske ikke"
+      ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "Ved at slå dette til, vil du kun kunne logge ind med **${ primaryEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "Ved at slå dette til vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller med **${ firstEmail }**, **@${ secondDomain }** eller **@${ thirdDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "Ved at slå dette til vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller med **${ firstEmail }** eller **@${ secondDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "Ved at slå dette til vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller med **${ firstEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "Ved at slå dette til, vil du kun kunne logge ind med dit brugernavn **${ username }**."
       ],
       "Can you access your active session?": [
         "Kan du tilgå din aktive session?"
@@ -9603,11 +9642,26 @@
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Ved aktivering af SAML for ${ appName } i din identitetsudbyder, kan du blive bedt om at bruge callback-URL'en (ACS) og udsteder-ID'et. Kopier og indsæt blot nedenstående data i din identitetsudbyders felter."
       ],
-      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Kun din e-mail ${ primaryEmailElement } kan bruges til logge ind når login er begrænset. Dine andre adresser kan ikke spores tilbage til din konto, selv hvis nogen kender dem."
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Kun din e-mail **${ primaryEmail }** kan bruges til logge ind når login er begrænset. Dine andre adresser kan ikke spores tilbage til din konto, selv hvis nogen kender dem."
+      ],
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Kun dit brugernavn **${ username }** kan bruges til at logge ind, når login er begrænset. Dine andre adresser kan ikke knyttes tilbage til din konto, selv om nogen kender dem."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Når login er begrænset, vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller som **${ firstEmail }**, **@${ secondDomain }** eller **@${ thirdDomain }**. Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Når login er begrænset, vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller som **${ firstEmail }** eller **@${ secondDomain }**. Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når login er begrænset, vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller som **${ firstEmail }** Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ved opsigelsen bliver dit abonnement ikke fornyet, men du kan stadig nyde godt af abonnementets fordele indtil udløb af abonnementsperioden. Herefter nedgraderes du til ${ BRAND_NAME } Free-abonnement."
+      ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "Når du annullerer, vil dit abonnement ikke begynde efter prøveperioden."
       ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Siger du op vil dit abonnement ikke starte, men du kan stadig nyde godt af abonnementets fordele indtil udgangen af prøveperioden. Herefter vil du blive nedgraderet til ${ BRAND_NAME } Free plan."
@@ -9748,6 +9802,9 @@
         "Du kan ikke sende mere end ${ emailSendLimitNumber } e-mailinvitation de næste 24 timer",
         "Du kan ikke sende mere end ${ emailSendLimitNumber } e-mailinvitationer de næste 24 timer"
       ],
+      "You cancel it in the store.": [
+        "Du opsiger det i butikken."
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Du kan ikke henvise ${ MAIL_APP_NAME }-brugere"
       ],
@@ -9791,6 +9848,9 @@
       ],
       "You have no transactions.": [
         "Du har ingen transaktioner"
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "Du har flere abonnementer. Vælg det, du vil opsige: Dine øvrige abonnementer påvirkes ikke. Et opsagt abonnement fornyes ikke, og du beholder fordelene, indtil abonnementsperioden udløber."
       ],
       "You have unpublished changes": [
         "De har ikke-udgivne ændringer"
@@ -9940,6 +10000,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Din organisations e-mails er beskyttet med end-to-end-kryptering ved brug af organisationsnøglen. Dette fingeraftryk kan bruges til at kontrollere, at alle administratorer på din konto har den samme nøgle."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Din andre e-mailadresser vil ikke længere kunne bruges til at logge ind medmindre du slår dette fra."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Dine betalinger er beskyttet af TLS-kryptering og schweizisk lovgivning om beskyttelse af privatlivets fred."
@@ -10959,11 +11022,11 @@
       "Restrict sign-in to email address": [
         "Begræns login til e-mailadresse"
       ],
-      "Restrict sign-in to primary email address": [
-        "Begræns log-ind til primær e-mailadresse"
-      ],
       "Restrict sign-in to username": [
         "Begræns log-ind til brugernavn"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Begræns login til brugernavn og tilsvarende ${ BRAND_NAME }-adresser"
       ],
       "Reveal password": [
         "Vis adgangskode"
@@ -13411,8 +13474,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Annuller når som helst før da**. Du vil kunne bruge ${ planTitle } indtil prøveperioden slutter, uden beregning."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Hvis du forsætter efter din prøveperiode,** så kan du stadig annullere inden for 30 dage og få en forholdsmæssig refusion."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Har du ændret mening efter prøveperioden?** Annuller indenfor 30 dage fra din første betaling for at få den resterende tid refunderet."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Så snart dit abonnement starter...** kan du stadig annullere indenfor 30 dage og få en forholdsmæssig refusion."
@@ -14308,11 +14371,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Kontakt kundesupport for at bekræfte ejerskifte"
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Aldrig"
       ]
     },
     "Payments.ModificationWarning": {
@@ -17397,6 +17455,14 @@
         "Kommende"
       ]
     },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "Fra ${ startTime }"
+      ]
+    },
     "Subtitle": {
       "${ DRIVE_PLUS_NAME } offers 1 TB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ DRIVE_PLUS_NAME } tilbyder 1 TB lagerplads til dine filer og fotos. Du er også berettiget til årlige lagerbonusser."
@@ -18885,6 +18951,9 @@
       "Restore administrator privileges": [
         "Gendan administratorprivilegier"
       ],
+      "Restrict sign-in?": [
+        "Begræns login?"
+      ],
       "Reverse charge not supported": [
         "Fakturering med omvendt betaling understøttes ikke"
       ],
@@ -19219,8 +19288,8 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Velkommen til ${ BRAND_NAME } for Business"
       ],
-      "What changes if you switch to the Free plan": [
-        "Hvad der ændrer sig hvis du skifter til det gratis abonnement"
+      "What changes if you cancel ${ planDisplayName }": [
+        "Hvad ændrer sig, hvis du opsiger ${ planDisplayName }"
       ],
       "What is an alias?": [
         "Hvad er et alias?"
@@ -19348,20 +19417,20 @@
       "Billing": [
         "Fakturering"
       ],
-      "End date": [
-        "Slutdato"
-      ],
       "Plan": [
         "Abonnement"
       ],
       "Price": [
         "Pris"
       ],
-      "Start date": [
-        "Startdato"
+      "Renewal": [
+        "Fornyelse"
       ],
       "Status": [
         "Status"
+      ],
+      "Subscription term": [
+        "Abonnementsperiode"
       ]
     },
     "Today icon tooltip in mini calendar": {

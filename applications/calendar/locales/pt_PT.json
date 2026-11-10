@@ -56,6 +56,9 @@
       "Add a date": [
         "Adicionar uma data"
       ],
+      "Add a payment method": [
+        "Adicionar um método de pagamento"
+      ],
       "Add account": [
         "Adicionar uma conta"
       ],
@@ -91,6 +94,9 @@
       ],
       "Add notification": [
         "Adicionar notificação"
+      ],
+      "Add payment method": [
+        "Adicionar método de pagamento"
       ],
       "Add phone number": [
         "Adicionar número de telefone"
@@ -457,6 +463,9 @@
       ],
       "Go to the next available appointment": [
         "Ir para o próximo compromisso disponível"
+      ],
+      "Google Drive": [
+        "Google Drive"
       ],
       "Got it": [
         "Entendido"
@@ -868,6 +877,9 @@
       ],
       "Skip verification": [
         "Saltar verificação"
+      ],
+      "Special Offer": [
+        "Oferta Especial"
       ],
       "Start import": [
         "Iniciar a importação"
@@ -4016,7 +4028,7 @@
         "O número de IVA deve começar por ${ prefixes }"
       ],
       "We couldn’t send a verification code using this method.": [
-        "Não conseguimos enviar um código de verificação através deste método."
+        "Nós não conseguimos enviar um código de verificação utilizando este método."
       ],
       "Wrong billing address": [
         "Endereço de faturação incorreto"
@@ -5091,6 +5103,12 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Obtém ${ referrerRewardAmount }** em créditos por cada amigo que suscreva."
       ],
+      "1 device per user": [
+        "1 dispositivo por utilizador"
+      ],
+      "1 vault per user": [
+        "1 cofre por utilizador"
+      ],
       "A cancellation email will be sent to removed participants.": [
         "Será enviada uma mensagem de cancelamento aos participantes removidos."
       ],
@@ -5198,6 +5216,9 @@
       ],
       "Are you sure you want to discard your import?": [
         "Tem a certeza de que deseja descartar a importação?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Solicite ao Administrador para atualizar o plano ou remova a página de marcações na barra lateral do ${ CALENDAR_APP_NAME }."
       ],
       "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
         "Peça ao seu administrador para atualizar o plano ou remova uma página da barra lateral de Páginas de agendamento."
@@ -5382,6 +5403,9 @@
       "Display events for calendar ${ Name }": [
         "Exibir eventos para o calendário ${ Name }"
       ],
+      "Do you remember your password?": [
+        "Lembra-se da sua palavra-passe?"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Não está a ver nada? Lembre-se de desativar os bloqueadores de pop-ups."
       ],
@@ -5480,7 +5504,7 @@
         "Falha ao atualizar o agendamento da reunião"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Apenas ficheiros (sem fotos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) - até 100 GB no total, 100.000 ficheiros e 50 GB por ficheiro"
+        "Apenas ficheiros (sem fotos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) até 100 GB no total, 100.000 ficheiros e 50 GB por ficheiro"
       ],
       "for ${ price }": [
         "por ${ price }"
@@ -6055,6 +6079,9 @@
       ],
       "To add a new booking page, ask your admin to upgrade your plan.": [
         "Para adicionar uma nova página de agendamento, peça ao seu administrador para atualizar o seu plano."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Para adicionar uma nova página de marcações, remova a existente na barra lateral ${ CALENDAR_APP_NAME }."
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
         "Para adicionar uma nova página de agendamento, remova uma existente da barra lateral de Páginas de agendamento."
@@ -6651,6 +6678,9 @@
       ],
       "Account holder": [
         "Titular da conta"
+      ],
+      "Account holder name": [
+        "Nome do titular da conta"
       ],
       "Add ${ MEET_APP_NAME } conferencing": [
         "Adicionar videoconferência ${ MEET_APP_NAME }"
@@ -7423,7 +7453,7 @@
         "atualize para obter mais armazenamento"
       ],
       "Upgrade to restore full access": [
-        "Melhore o eu plano para restaurar o acesso completo."
+        "Atualize para restaurar o acesso completo"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "O seu ${ driveStorage } está cheio. Para enviar ou sincronizar ficheiros, liberte espaço ou ${ cta }."
@@ -8964,6 +8994,9 @@
       "Plus": [
         "Plus"
       ],
+      "Short @pm.me address": [
+        "Endereço curto @pm.me"
+      ],
       "Storage": [
         "Armazenamento"
       ],
@@ -9264,6 +9297,9 @@
       "Billing Country": [
         "País de faturação"
       ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Ao mudar, concorda com os nossos ${ termsLink }."
+      ],
       "Card number": [
         "Número do cartão"
       ],
@@ -9302,6 +9338,9 @@
       ],
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis noutras moedas."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Pagar com ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pagamento necessário para que a subscrição seja ativada após o término do período de avaliação."

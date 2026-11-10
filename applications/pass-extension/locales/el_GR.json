@@ -2236,6 +2236,9 @@
       "Didn't receive the code?": [
         "Δε λάβατε τον κωδικό;"
       ],
+      "Disabled by your organization": [
+        "Απενεργοποιήθηκε από τον οργανισμό σας"
+      ],
       "Disabling auto-lock": [
         "Απενεργοποίηση αυτόματου κλειδώματος"
       ],
@@ -2562,7 +2565,8 @@
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του."
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -3357,6 +3361,12 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Οι πληροφορίες σας βρέθηκαν στις ${ displayedDate }"
+      ],
+      "Your organization does not allow using 2FA codes stored in ${ PASS_APP_NAME }": [
+        "Ο οργανισμός σας δεν επιτρέπει τη χρήση κωδικών 2FA που είναι αποθηκευμένοι στο ${ PASS_APP_NAME }"
+      ],
+      "Your organization does not allow using passkeys stored in ${ PASS_APP_NAME }": [
+        "Ο οργανισμός σας δεν επιτρέπει τη χρήση κλειδιών πρόσβασης που είναι αποθηκευμένα στο ${ PASS_APP_NAME }"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ο οργανισμός σας απαιτεί να εξασφαλίσετε την πρόσβασή σας στο ${ PASS_APP_NAME }"

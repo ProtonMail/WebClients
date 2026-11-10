@@ -51,6 +51,9 @@
       "Add": [
         "Adicionar"
       ],
+      "Add a payment method": [
+        "Adicionar um método de pagamento"
+      ],
       "Add account": [
         "Adicionar uma conta"
       ],
@@ -77,6 +80,9 @@
       ],
       "Add note": [
         "Adicionar uma nota"
+      ],
+      "Add payment method": [
+        "Adicionar método de pagamento"
       ],
       "Add people or groups to share": [
         "Adicione pessoas ou grupos para partilhar"
@@ -171,6 +177,9 @@
       ],
       "Collapse list of pending invitations": [
         "Recolher a lista de convites pendentes"
+      ],
+      "Comments": [
+        "Comentários"
       ],
       "Compose": [
         "Compor"
@@ -398,6 +407,9 @@
       ],
       "Go to label": [
         "Ir para a etiqueta"
+      ],
+      "Google Drive": [
+        "Google Drive"
       ],
       "Got it": [
         "Entendido"
@@ -3307,7 +3319,7 @@
         "Não conseguimos importar este ficheiro para a ${ SHEETS_APP_NAME }. Pode tentar copiar e colar o conteúdo numa nova ${ SHEETS_APP_NAME }."
       ],
       "We couldn’t send a verification code using this method.": [
-        "Não conseguimos enviar um código de verificação através deste método."
+        "Nós não conseguimos enviar um código de verificação utilizando este método."
       ],
       "Wrong billing address": [
         "Endereço de faturação incorreto"
@@ -4353,6 +4365,9 @@
       "Close this screen to exit.": [
         "Feche este ecrã para sair."
       ],
+      "Comments are not available yet": [
+        "Os comentários ainda não estão disponíveis"
+      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Conecte-se ao ${ VPN_APP_NAME } para navegar em privado."
       ],
@@ -4423,6 +4438,9 @@
       ],
       "Display word count": [
         "Mostrar a contagem de palavras"
+      ],
+      "Do you remember your password?": [
+        "Lembra-se da sua palavra-passe?"
       ],
       "Document is in trash": [
         "O documento está no lixo."
@@ -4515,7 +4533,7 @@
         "O ficheiro \"${ name }\" foi eliminado durante a transferência."
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Apenas ficheiros (sem fotos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) - até 100 GB no total, 100.000 ficheiros e 50 GB por ficheiro"
+        "Apenas ficheiros (sem fotos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) até 100 GB no total, 100.000 ficheiros e 50 GB por ficheiro"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "A pasta \"${ link.name }\" foi eliminada durante a transferência."
@@ -4716,6 +4734,9 @@
       ],
       "Not a valid URL": [
         "Não é um URL válido"
+      ],
+      "Not available yet": [
+        "Ainda não disponível"
       ],
       "Not connected": [
         "Não ligado"
@@ -5901,7 +5922,7 @@
         "atualize para obter mais armazenamento"
       ],
       "Upgrade to restore full access": [
-        "Melhore o eu plano para restaurar o acesso completo."
+        "Atualize para restaurar o acesso completo"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "O seu ${ driveStorage } está cheio. Para enviar ou sincronizar ficheiros, liberte espaço ou ${ cta }."
@@ -7240,6 +7261,9 @@
       "Plus": [
         "Plus"
       ],
+      "Short @pm.me address": [
+        "Endereço curto @pm.me"
+      ],
       "Storage": [
         "Armazenamento"
       ],
@@ -7413,6 +7437,9 @@
       ],
       "Amount due after trial on ${ formattedDate }": [
         "Valor a pagar após a avaliação em ${ formattedDate }"
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Ao mudar, concorda com os nossos ${ termsLink }."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "O preço da renovação está sujeito a alterações de acordo com ${ termsAndConditionsLink }."

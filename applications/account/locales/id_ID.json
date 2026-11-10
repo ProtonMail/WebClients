@@ -3623,9 +3623,6 @@
       "Confirm cancellation": [
         "Konfirmasi pembatalan"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Jika melampaui batas paket gratis, Anda tidak akan bisa:"
-      ],
       "Keep current plan": [
         "Tetap gunakan paket saat ini"
       ],
@@ -3640,9 +3637,6 @@
       ],
       "Upload any new files": [
         "Unggah setiap file baru"
-      ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Ketika langganan berakhir pada ${ endDate }, akun Anda akan dialihkan ke Free plan. Jika penggunaan melampaui batas Free plan, beberapa fitur mungkin tidak tersedia untuk sementara waktu."
       ]
     },
     "Confirm modal title": {
@@ -6752,9 +6746,6 @@
       "Invalid invitation link": [
         "Tautan undangan tidak valid"
       ],
-      "Invalid joining link. Please contact your administrator.": [
-        "Tautan bergabung tidak valid. Silakan hubungi administrator."
-      ],
       "Invalid name": [
         "Nama tidak valid"
       ],
@@ -7608,9 +7599,6 @@
       "${ BRAND_NAME } groups": [
         "Grup ${ BRAND_NAME }"
       ],
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Terbatas hanya pada satu uji coba gratis per pengguna. Harga normal berlaku setelahnya."
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Akun dengan domain khusus tidak dapat bergabung ke paket keluarga."
       ],
@@ -7674,9 +7662,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Langganan ini akan ditagihkan kepada admin utama paket ini."
       ],
-      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
-        "Untuk memudahkan proses transisi ini, kami memberikan Anda uji coba ${ BRAND_NAME } Unlimited gratis selama 30 hari*."
-      ],
       "View the invitation": [
         "Lihat undangan"
       ],
@@ -7730,14 +7715,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Terbatas hanya pada satu uji coba gratis per pengguna. Harga normal berlaku setelahnya."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Setelah keluar dari paket Anda, pengguna ini akan dipindahkan ke paket ${ BRAND_NAME } Free."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Setelah meninggalkan paket Anda, pengguna ini akan dipindahkan ke paket ${ BRAND_NAME } Unlimited dengan masa uji coba gratis 30 hari.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Tetapkan penyimpanan ke akun administrator. Penyimpanan untuk pengguna tambahan dapat dibagikan nanti."
@@ -15206,6 +15185,9 @@
       "Terms": [
         "Ketentuan"
       ],
+      "terms and conditions": [
+        "syarat dan ketentuan"
+      ],
       "terms of our referral program": [
         "ketentuan program rujukan kami"
       ],
@@ -18702,11 +18684,6 @@
         "Hubungi Layanan Dukungan untuk mengonfirmasi perubahan kepemilikan"
       ]
     },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Tidak pernah"
-      ]
-    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Apakah Anda yakin ingin melanjutkan?"
@@ -22047,12 +22024,6 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "Diskon ${ discountItem.discountPercent }% diterapkan"
-      ],
-      "${ discountItem.discountPercent }% off": [
-        "Diskon ${ discountItem.discountPercent }%"
-      ],
       "${ trialCycleText } free": [
         "Gratis ${ trialCycleText }"
       ],
@@ -24970,9 +24941,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Selamat datang di ${ BRAND_NAME } for Business"
       ],
-      "What changes if you switch to the Free plan": [
-        "Apa saja yang berubah jika beralih ke Free plan"
-      ],
       "What is an alias?": [
         "Apa itu alias?"
       ],
@@ -25148,14 +25116,8 @@
       "Billing": [
         "Pembayaran"
       ],
-      "End date": [
-        "Tanggal berakhir"
-      ],
       "Plan": [
         "Paket"
-      ],
-      "Start date": [
-        "Tanggal mulai"
       ],
       "Status": [
         "Status"

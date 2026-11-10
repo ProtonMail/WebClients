@@ -81,6 +81,9 @@
       "Add note": [
         "Not ekle"
       ],
+      "Add payment method": [
+        "Ödeme yöntemi ekle"
+      ],
       "Add people or groups to share": [
         "Paylaşılacak kişi veya grupları ekleyin"
       ],
@@ -117,6 +120,9 @@
       ],
       "Cancel subscription": [
         "Aboneliği iptal et"
+      ],
+      "Cancel trial": [
+        "Denemeyi iptal et"
       ],
       "Change my access": [
         "Erişimimi değiştir"
@@ -177,6 +183,9 @@
       ],
       "Collapse list of pending invitations": [
         "Bekleyen davetler listesini daralt"
+      ],
+      "Comments": [
+        "Yorumlar"
       ],
       "Compose": [
         "Oluştur"
@@ -3356,6 +3365,9 @@
       "Some items could not be loaded": [
         "Bazı ögeler yüklenemedi"
       ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "Belgenin bir bölümü okunamadığından değişiklikleriniz kaydedilemiyor."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Bazı klasör adlarınız kullanılamıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
       ],
@@ -3370,6 +3382,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sayısı sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "Son değişikliklerinizin bir kısmı kaydedilemedi. Bu yüzden düzenleme kapatıldı. Gerek duyduğunuz içeriği kopyalayın, ardından sayfayı yeniden yükleyin."
       ],
       "Some trashed documents could not be loaded": [
         "Çöpe atılmış bazı belgeler yüklenemedi"
@@ -3428,6 +3443,9 @@
       "There was an error when exporting the contacts vCards": [
         "Kişilerin vCard dosyaları dışa aktarılırken bir sorun çıktı"
       ],
+      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
+        "Bu belge olabilecek en büyük boyuta ulaştı. Bu yüzden son değişikliğiniz kaydedilmedi ve düzenleme kapatıldı."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
       ],
@@ -3466,6 +3484,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Bu iletide, geçerli tarayıcınızda açılamayacak bazı bağlantı adresleri bulunuyor olabilir."
+      ],
+      "This version could not be loaded. Close the history and try again.": [
+        "Bu sürüm yüklenirken sorun çıktı. Geçmişi kapatıp yeniden deneyin."
       ],
       "Too many server errors, please try again later": [
         "Çok fazla sayıda sunucu sorunu çıktı. Lütfen bir süre sonra yeniden deneyin"
@@ -3566,6 +3587,9 @@
       ],
       "Your import will not be processed.": [
         "İçe aktarma işleminiz yapılmayacak."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "Son değişikliğiniz kaydedilemeyecek kadar büyük. Bu yüzden düzenleme kapatıldı. Gerek duyduğunuz içeriği kopyalayın, ardından sayfayı yeniden yükleyin."
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Şifresi çözülemeyen aygıt"
@@ -4608,8 +4632,17 @@
       "Close this screen to exit.": [
         "Çıkmak için bu ekranı kapatın."
       ],
+      "Comments are not available yet": [
+        "Yorumlar henüz kullanılamıyor"
+      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Gizliliğinizi koruyarak gezinmek için ${ VPN_APP_NAME } bağlantısı kurun"
+      ],
+      "Connected": [
+        "Bağlı"
+      ],
+      "Connecting…": [
+        "Bağlantı kuruluyor…"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kişi ${ contactGroupName } grubuna eklendi"
@@ -4682,6 +4715,9 @@
       "Decrypting your document": [
         "Belgenizin şifresi çözülüyor"
       ],
+      "Disconnected": [
+        "Bağlı değil"
+      ],
       "Display word count": [
         "Sözcük sayısı görüntülensin"
       ],
@@ -4720,6 +4756,9 @@
       ],
       "Edit email address": [
         "E-posta adresini düzenle"
+      ],
+      "Editing is temporarily unavailable.": [
+        "Düzenleme geçici olarak kullanılamıyor."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
@@ -5008,8 +5047,14 @@
       "Not a valid URL": [
         "Adres geçersiz"
       ],
+      "Not available yet": [
+        "Henüz kullanılamıyor"
+      ],
       "Not connected": [
         "Bağlı değil"
+      ],
+      "Not connected. Editing resumes once you are back.": [
+        "Bağlantı yok. Geri döndüğünüzde düzenleme sürdürülecek."
       ],
       "Numbers": [
         "Rakamlar"
@@ -5122,6 +5167,9 @@
       ],
       "Recents": [
         "Son kullanılanlar"
+      ],
+      "Reconnecting…": [
+        "Yeniden bağlantı kuruluyor…"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
@@ -5238,6 +5286,12 @@
       "The Beginning": [
         "Başlangıç"
       ],
+      "The connection to the server was lost.": [
+        "Sunucu bağlantısı kesildi."
+      ],
+      "The document could not be brought up to date.": [
+        "Belgenin güncel durumu getirilemedi."
+      ],
       "The document could not be created.": [
         "Belge oluşturulamadı."
       ],
@@ -5252,6 +5306,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Bu adresin sahibi uçtan uca şifrelemeyi kapatmış. Bu adrese şifrelenmiş e-postalar gönderebilmek için adres sahibi uçtan uca şifrelemeyi yeniden açmalıdır."
+      ],
+      "The server is busy.": [
+        "Sunucu meşgul."
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "Yazdığınız adres Slack üzerinden yanlış kopyalanmış gibi görünüyor. Slack üzerinden uzun bağlantıları kopyalarken, bağlantıya sağ tıklayın, ardından budanmış adres metnini doğrudan kopyalamak yerine \"Bağlantıyı kopyala\" seçeneğini kullanın."
@@ -5303,6 +5360,9 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Bu benzersiz kod, siteler ve internet hizmeti sağlayıcıları tarafından konumunuzu ve tarama geçmişinizi aygıtınızla ilişkilendirmek için kullanılabilir."
+      ],
+      "This version of the app is no longer supported. Reload the page to update it.": [
+        "Uygulamanın bu sürümü artık desteklenmiyor. Güncellemek için sayfayı yeniden yükleyin."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
@@ -5481,6 +5541,9 @@
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Seçtiğiniz hesap ile görüntüleme izinleriniz olmayabilir. Farklı bir hesap deneyin veya erişim izni vermesi için sahibiyle görüşün."
       ],
+      "You were disconnected after a period of inactivity.": [
+        "Bağlantınız bir süre işlem yapılmadığı için kesildi."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Bu tarihte ${ planTitle } özelliklerine erişiminizi kaybedeceksiniz."
       ],
@@ -5521,6 +5584,9 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ plan } aboneliğiniz ${ PASS_SHORT_APP_NAME } Lifetime aboneliğiyle değiştirilecek. Aboneliğinizin kalan tutarı hesabınıza eklenecek. ${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme fiyatı yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik ödeme yapılır."
       ],
+      "Your access to this document has changed. Reload the page to continue.": [
+        "Bu belgeye erişme izniniz değiştirildi. İlerlemek için sayfayı yeniden yükleyin."
+      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
       ],
@@ -5529,6 +5595,9 @@
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Değişiklikleriniz Drive ile eşitleniyor. Lütfen sayfayı kapatmayın."
+      ],
+      "Your changes could not be encrypted. Reload the page to continue.": [
+        "Değişiklikleriniz şifrelenemedi. İlerlemek için sayfayı yeniden yükleyin."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Değişiklikleriniz eşitlenemedi. Drive değişikliklerinizi otomatik olarak kaydetmeyi deneyecek. Lütfen bu sayfayı kapatmayın."
@@ -5590,6 +5659,9 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ay otomatik olarak yenilenecek."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "Oturumunuzun süresi doldu. İlerlemek için sayfayı yeniden yükleyin."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Aboneliğiniz ${ renewalTime } tarihinde otomatik olarak yenilenecek."
@@ -7691,8 +7763,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Ondan önce istediğiniz zaman iptal edebilirsiniz.** Deneme süresi sona erene kadar ${ planTitle } tarifesini ücretsiz olarak kullanabileceksiniz."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Deneme süreniz bittikten sonra kullanmayı sürdürürseniz** 30 gün içinde iptal edebilir ve ödediğiniz kalan gün sayısına göre geri ödeme alabilirsiniz."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Denedikten sonra fikrinizi değiştirdiniz mi? ** İlk ödemenizden sonraki 30 gün içinde iptal edebilirsiniz. Kullanılmayan süreyi geri öderiz."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Tam aboneliğiniz başladığında...** 30 gün içinde aboneliğinizi iptal edebilir ve kalan gün sayısına göre geri ödeme alabilirsiniz."
@@ -10117,6 +10189,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }, en son iletilerinizden başlayarak olabildiğince fazla veri aktaracak."
       ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "Başka bir düzenleyiciden gelen bir değişiklik okunamadı ve bu sayfada eksik."
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?",
         "${ count } kişiyi kalıcı olarak silmek istediğinize emin misiniz?"
@@ -10144,6 +10219,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Birleştirilecek kişilerden bazılarında sorunlar var. Lütfen bunları tek tek inceleyin"
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "Belgenin bir bölümü okunamadığından düzenleme kapatıldı."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kişi verileri bozulmuş olduğundan görüntülenemiyor."

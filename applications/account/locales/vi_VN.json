@@ -63,6 +63,9 @@
       "${ BRAND_NAME } shop": [
         "Shop ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Về ${ name }"
+      ],
       "Accept": [
         "Chấp nhận"
       ],
@@ -101,6 +104,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Thêm địa chỉ ${ BRAND_NAME }"
+      ],
+      "Add ${ name }": [
+        "Thêm ${ name }"
       ],
       "Add account": [
         "Thêm tài khoản"
@@ -2397,6 +2403,11 @@
         "Rất tiếc, ưu đãi này không áp dụng cho gói hiện tại. Nhưng có thể được giảm ${ discountPercentage } cho ${ plan.Title } khi đăng ký liên tục ${ cycle } tháng."
       ]
     },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Đảm bảo hoàn tiền trong 30 ngày: hủy trong vòng 30 ngày kể từ ngày mua và liên hệ với ${ customerSupportLink } của chúng tôi để được hoàn lại tiền."
+      ]
+    },
     "bf2023: Title": {
       "Offer unavailable": [
         "Ưu đãi không khả dụng"
@@ -3577,9 +3588,6 @@
       "Confirm cancellation": [
         "Xác nhận hủy"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Nếu vượt quá giới hạn của Free plan, sẽ không thể:"
-      ],
       "Keep current plan": [
         "Giữ gói hiện tại"
       ],
@@ -3594,9 +3602,6 @@
       ],
       "Upload any new files": [
         "Tải lên bất kỳ tệp mới nào"
-      ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Khi đăng ký kết thúc vào ${ endDate }, tài khoản sẽ chuyển sang Free plan. Nếu mức sử dụng vượt quá giới hạn của Free plan, một số tính năng có thể tạm thời không khả dụng."
       ]
     },
     "Confirm modal title": {
@@ -6706,9 +6711,6 @@
       "Invalid invitation link": [
         "Liên kết mời không hợp lệ"
       ],
-      "Invalid joining link. Please contact your administrator.": [
-        "Liên kết tham gia không hợp lệ. Vui lòng liên hệ với quản trị viên."
-      ],
       "Invalid name": [
         "Tên không hợp lệ"
       ],
@@ -7562,9 +7564,6 @@
       "${ BRAND_NAME } groups": [
         "Nhóm ${ BRAND_NAME }"
       ],
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Chỉ một lần dùng thử miễn phí cho mỗi người dùng. Sau đó sẽ áp dụng giá như bình thường."
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Tài khoản có miền tùy chỉnh không thể tham gia gói family."
       ],
@@ -7628,9 +7627,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Đăng ký sẽ được tính phí cho quản trị viên chính của gói này."
       ],
-      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
-        "Để quá trình chuyển đổi dễ dàng hơn, chúng tôi tặng bạn 30 ngày dùng thử miễn phí ${ BRAND_NAME } Unlimited*."
-      ],
       "View the invitation": [
         "Xem lời mời"
       ],
@@ -7684,14 +7680,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Chỉ một lần dùng thử miễn phí cho mỗi người dùng. Sau đó sẽ áp dụng giá như bình thường."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Sau khi rời khỏi gói, người dùng này sẽ được chuyển sang gói ${ BRAND_NAME } miễn phí."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Sau khi rời khỏi gói, người dùng này sẽ được chuyển sang gói ${ BRAND_NAME } không giới hạn với 30 ngày dùng thử miễn phí.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Cấp dung lượng lưu trữ cho tài khoản quản trị viên. Có thể phân bổ dung lượng lưu trữ cho những người dùng khác sau."
@@ -9316,6 +9306,9 @@
       "30-day money-back guarantee": [
         "Cam kết hoàn tiền trong 30 ngày"
       ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Đảm bảo hoàn tiền trong 30 ngày: hủy trong vòng 30 ngày kể từ ngày mua và liên hệ với ${ customerSupportLink } của chúng tôi để được hoàn lại tiền."
+      ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Một ${ protonSubdomain } được lưu trữ bởi ${ BRAND_NAME }, cho phép thiết lập nhanh một miền phụ. ${ learnMoreLink }"
       ],
@@ -10411,11 +10404,17 @@
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Nếu vô hiệu hóa, thành viên tổ chức chỉ có thể chia sẻ kho hoặc mục trong nội bộ tổ chức."
       ],
+      "If disabled, organization members won't be able to add 2FA codes to their items, and existing ones won't be generated or autofilled. Nothing is deleted.": [
+        "Nếu bị tắt, các thành viên của tổ chức sẽ không thể thêm mã 2FA và các mã hiện có sẽ không được tạo hoặc tự động điền. Sẽ không xóa gì."
+      ],
       "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
         "Nếu vô hiệu hóa, thành viên tổ chức sẽ không thể tạo biệt danh mới. Các biệt danh hiện có vẫn sẽ hoạt động."
       ],
       "If disabled, organization members won't be able to create secure links. Previously active secure links remain valid until their expiration.": [
         "Nếu vô hiệu hóa, các thành viên trong tổ chức sẽ không thể tạo liên kết bảo mật. Các liên kết bảo mật đã hoạt động trước đó vẫn có giá trị cho đến khi hết hạn."
+      ],
+      "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
+        "Nếu bị tắt, các thành viên của tổ chức sẽ không thể lưu passkey trong ${ PASS_APP_NAME } hoặc đăng nhập bằng passkey đó. Sẽ không xóa gì."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Nếu kích hoạt, các thành viên tổ chức sẽ có thể chia sẻ các mục riêng lẻ ngoài các kho."
@@ -11820,6 +11819,9 @@
       ],
       "Unfortunately there is no recovery method available for this account.": [
         "Rất tiếc, không có phương thức khôi phục nào cho tài khoản này."
+      ],
+      "UnionPay logo": [
+        "Logo UnionPay"
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "ID duy nhất được tạo bởi nhà cung cấp danh tính, thường ở dạng URL có chứa tên nhà cung cấp danh tính bên trong (ví dụ: https://idp.example.com/XXXXX)."
@@ -13267,6 +13269,12 @@
       ],
       "Allow sharing outside the organization": [
         "Cho phép chia sẻ ra ngoài tổ chức"
+      ],
+      "Allow storing 2FA codes": [
+        "Cho phép lưu trữ mã 2FA"
+      ],
+      "Allow storing passkeys": [
+        "Cho phép lưu trữ passkey"
       ],
       "Allowed Domain": [
         "Miền được phép"
@@ -14980,6 +14988,9 @@
       "Create an alias": [
         "Tạo biệt danh"
       ],
+      "Customer Support": [
+        "Hỗ trợ khách hàng"
+      ],
       "data recovery option": [
         "tùy chọn khôi phục dữ liệu"
       ],
@@ -15135,6 +15146,9 @@
       ],
       "Terms": [
         "Điều kiện"
+      ],
+      "terms and conditions": [
+        "các điều khoản và điều kiện"
       ],
       "terms of our referral program": [
         "điều khoản chương trình giới thiệu của chúng tôi"
@@ -18434,6 +18448,9 @@
       "Billing Country": [
         "Quốc gia thanh toán"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Không thể mua tài khoản Born Private khi đang đăng ký gói khác."
+      ],
       "Card number": [
         "Số thẻ"
       ],
@@ -18506,6 +18523,9 @@
       "terms and conditions": [
         "các điều khoản và điều kiện"
       ],
+      "The Born Private initiative requires a donation.": [
+        "Yêu cầu quyên góp để sử dụng ​​Born Private."
+      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Mức giảm giá có hiệu lực cho ${ renewalsWithCoupon } lần gia hạn."
       ],
@@ -18557,6 +18577,9 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Bạn đã có đăng ký cho gói này. Có thể thay đổi đăng ký trên ${ subscriptionPlatform }."
       ],
+      "You already own a Born Private account.": [
+        "Bạn đã có tài khoản Born Private rồi."
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Sẽ bị tính phí ${ amountToCharge } từ phương thức thanh toán đã chọn."
       ],
@@ -18565,6 +18588,9 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Sẽ sớm được chuyển hướng để xác thực thanh toán."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Tài khoản của bạn đã quá cũ để sử dụng ​​Born Private."
       ],
       "Your payment is still being processed": [
         "Thanh toán vẫn đang được xử lý"
@@ -18612,11 +18638,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Liên hệ với Hỗ trợ khách hàng để xác nhận thay đổi quyền sở hữu"
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Không bao giờ"
       ]
     },
     "Payments.ModificationWarning": {
@@ -21925,12 +21946,6 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "Đã áp dụng giảm giá ${ discountItem.discountPercent }%"
-      ],
-      "${ discountItem.discountPercent }% off": [
-        "Giảm ${ discountItem.discountPercent }%"
-      ],
       "${ trialCycleText } free": [
         "Miễn phí ${ trialCycleText }"
       ],
@@ -24839,9 +24854,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Chào mừng đến với ${ BRAND_NAME } dành cho Doanh nghiệ"
       ],
-      "What changes if you switch to the Free plan": [
-        "Những thay đổi nếu chuyển sang Free plan"
-      ],
       "What is an alias?": [
         "Biệt danh là gì?"
       ],
@@ -25011,9 +25023,6 @@
       ]
     },
     "Title subscription": {
-      "End date": [
-        "Ngày kết thúc"
-      ],
       "Plan": [
         "Gói"
       ],
@@ -25803,6 +25812,9 @@
       ],
       "Send invite link via email instead": [
         "Gửi liên kết lời mời qua email thay thế"
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Người dùng này có quyền quản trị viên vào lần đăng nhập tiếp theo"
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Thao tác này sẽ tạo một địa chỉ ${ MAIL_APP_NAME } mới."

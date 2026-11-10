@@ -54,6 +54,9 @@
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Adicionar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
+      "Add a payment method": [
+        "Adicionar um método de pagamento"
+      ],
       "Add account": [
         "Adicionar uma conta"
       ],
@@ -87,6 +90,9 @@
       "Add group": [
         "Adicionar grupo"
       ],
+      "Add more details": [
+        "Adicionar mais detalhes"
+      ],
       "Add new group": [
         "Adicionar um grupo"
       ],
@@ -95,6 +101,9 @@
       ],
       "Add participant": [
         "Adicionar participante"
+      ],
+      "Add payment method": [
+        "Adicionar método de pagamento"
       ],
       "Add phone number": [
         "Adicionar número de telefone"
@@ -359,7 +368,7 @@
         "Criar uma pasta"
       ],
       "Create a new label": [
-        "Criar uma etiqueta"
+        "Criar uma nova etiqueta"
       ],
       "Create alias": [
         "Criar um alias"
@@ -374,13 +383,13 @@
         "Criar uma pasta ${ boldFolderName }"
       ],
       "Create label": [
-        "Crie uma etiqueta"
+        "Criar etiqueta"
       ],
       "Create new contact": [
         "Criar um contacto"
       ],
       "Create new message": [
-        "Criar uma mensagem"
+        "Criar nova mensagem"
       ],
       "Create new password": [
         "Criar uma palavra-passe"
@@ -440,6 +449,9 @@
       ],
       "Deselect all messages": [
         "Desmarcar todas as mensagens"
+      ],
+      "Detach": [
+        "Desanexar"
       ],
       "Details": [
         "Detalhes"
@@ -669,6 +681,9 @@
       "Google": [
         "Google"
       ],
+      "Google Drive": [
+        "Google Drive"
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -801,6 +816,9 @@
       ],
       "Later this week": [
         "Mais tarde nesta semana"
+      ],
+      "Learn how this works": [
+        "Saiba como isto funciona"
       ],
       "Learn more": [
         "Saber mais"
@@ -946,6 +964,9 @@
       "Move": [
         "Mover"
       ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the left": [
+        "Mover ${ LUMO_SHORT_APP_NAME } para a esquerda"
+      ],
       "Move all to archive": [
         "Mover tudo para o arquivo"
       ],
@@ -997,6 +1018,9 @@
       "Never show": [
         "Nunca mostrar"
       ],
+      "New chat": [
+        "Nova conversação"
+      ],
       "New message": [
         "Nova mensagem"
       ],
@@ -1041,6 +1065,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir definições do ${ CALENDAR_APP_NAME }"
+      ],
+      "Open debug menu": [
+        "Abrir menu de depuração"
       ],
       "Open navigation": [
         "Abrir navegação"
@@ -1429,6 +1456,9 @@
       "Snooze": [
         "Adiar"
       ],
+      "Special Offer": [
+        "Oferta Especial"
+      ],
       "Star": [
         "Marcar com estrela"
       ],
@@ -1520,6 +1550,7 @@
         "Confiar"
       ],
       "Trust key": [
+        "Confiar na chave",
         "Confiar na chave"
       ],
       "Trust public key": [
@@ -1719,6 +1750,11 @@
     "action": {
       "Search messages": [
         "Pesquisar mensagens"
+      ]
+    },
+    "Action: rename label": {
+      "Rename ${ label } to…": [
+        "Renomear ${ label } para…"
       ]
     },
     "Action: Sheets": {
@@ -2413,7 +2449,7 @@
         "${ participantName } tinha aceitado o seu convite e proposto um novo horário para este evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } tinha declinado um convite e proposto um novo horário para uma ocorrência deste evento. A resposta e a proposta estão desactualizadas."
+        "${ participantName } recusou um convite e propôs um novo horário para uma ocorrência deste evento. A resposta e a proposta estão desatualizadas."
       ],
       "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } tinha declinado um convite e proposto um novo horário para este evento. A resposta e a proposta estão desactualizadas."
@@ -2452,7 +2488,7 @@
         "${ participantName } tinha proposto um novo horário para uma ocorrência deste evento. Esta proposta está desactualizada."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
-        "${ participantName } tinha proposto um novo horário para uma ocorrência deste evento. Esta proposta está desactualizada. O evento já não existe no seu calendário."
+        "${ participantName } tinha proposto um novo horário para uma ocorrência deste evento. Esta proposta está desatualizada. O evento já não existe no seu calendário."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } tinha proposto um novo horário para uma ocorrência deste evento. Esta proposta está desactualizada. Não tem calendários."
@@ -4157,6 +4193,9 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Os novos e-mails de ${ senderEmailAddress } não serão entregues e serão permanentemente eliminados."
       ],
+      "No ads. No trackers": [
+        "Sem anúncios. Sem rastreadores"
+      ],
       "No folders": [
         "Nenhuma pasta"
       ],
@@ -4560,7 +4599,7 @@
     },
     "Email reminder decryption error": {
       "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
-        "Os detalhes do evento são encriptados. Conecte-se novamente para restaurar o calendário e desencriptar os seus dados. ${ learnMoreLink }"
+        "Os detalhes do evento são encriptados. Autentique-se novamente para restaurar o «Calendário» e desencriptar os seus dados. ${ learnMoreLink }"
       ],
       "Event details cannot be decrypted. ${ whyNotLink }": [
         "Os detalhes do evento não podem ser desencriptados. ${ whyNotLink }"
@@ -4772,7 +4811,7 @@
         "Introduza 6 algarismos"
       ],
       "Enter a password": [
-        "Introduza uma palavra-passe"
+        "Inserir uma palavra-passe"
       ],
       "Enter your username without the domain (@example.com)": [
         "Introduza o seu nome de utilizador sem o domínio (@example.com)"
@@ -5252,7 +5291,7 @@
         "O número de IVA deve começar por ${ prefixes }"
       ],
       "We couldn’t send a verification code using this method.": [
-        "Não conseguimos enviar um código de verificação através deste método."
+        "Nós não conseguimos enviar um código de verificação utilizando este método."
       ],
       "Wrong billing address": [
         "Endereço de faturação incorreto"
@@ -6491,7 +6530,7 @@
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
       "${ boldBulkDelete }, archive, or move old emails to a folder.": [
-        "${ boldBulkDelete }, arquive ou mova os e-mails antigos para uma pasta."
+        "${ boldBulkDelete }, arquive ou mova as mensagens antigas para uma pasta."
       ],
       "${ boldQuicklySpot } which subscriptions are no longer relevant.": [
         "${ boldQuicklySpot } quais as subscrições que já não são relevantes."
@@ -6555,6 +6594,9 @@
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } de ${ totalProgress }",
         "${ currentProgress } de ${ totalProgress }"
+      ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } de ${ steps }"
       ],
       "${ elementsCount } conversation will be labelled as:": [
         "${ elementsCount } conversa será etiquetada como:",
@@ -6633,7 +6675,7 @@
         "O ${ MAIL_APP_NAME } organiza agora automaticamente os seus e-mails em categorias como Principal, Social, Promoções e outras, ajudando-o a encontrar e a gerir mensagens mais facilmente."
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
-        "O ${ MEET_APP_NAME } é uma solução de videoconferência encriptada de ponto a ponto. Adicione-o ao seu plano para realizar reuniões seguras."
+        "O ${ MEET_APP_NAME } é uma solução de videoconferência encriptada de ponto a ponto. Adicione-a ao seu plano para realizar reuniões seguras."
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licenças"
@@ -6791,6 +6833,12 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Obtém ${ referrerRewardAmount }** em créditos por cada amigo que suscreva."
       ],
+      "1 device per user": [
+        "1 dispositivo por utilizador"
+      ],
+      "1 vault per user": [
+        "1 cofre por utilizador"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Um número de telemóvel pode ser utilizado para verificar apenas uma conta ${ BRAND_NAME }"
       ],
@@ -6832,6 +6880,12 @@
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Adicionar ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Add a contact": [
+        "Adicionar um contacto"
+      ],
+      "Add contact": [
+        "Adicionar contacto"
       ],
       "Add image URL": [
         "Adicionar URL da imagem"
@@ -6890,6 +6944,9 @@
         "Todos os seus contactos serão importados, até ao limite de ${ maxContact }",
         "Todos os seus contactos serão importados, até ao limite de ${ maxContact }"
       ],
+      "Almost done": [
+        "Quase concluído"
+      ],
       "American Express SafeKey logo": [
         "Logotipo do American Express SafeKey"
       ],
@@ -6913,6 +6970,9 @@
       ],
       "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Quaisquer subpastas também serão eliminadas. No entanto, os e-mails armazenados na pasta ${ nameDeleted } não serão eliminados e poderão ser encontrados na pasta Todo o correio."
+      ],
+      "Apply labels": [
+        "Aplicar etiquetas"
       ],
       "Apply to future messages": [
         "Aplicar às mensagens futuras"
@@ -6970,6 +7030,9 @@
       ],
       "Are you sure you want to permanently delete this message?": [
         "Tem a certeza de que pretende eliminar permanentemente esta mensagem?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Solicite ao Administrador para atualizar o plano ou remova a página de marcações na barra lateral do ${ CALENDAR_APP_NAME }."
       ],
       "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
         "Peça ao seu administrador para atualizar o plano ou remova uma página da barra lateral de Páginas de agendamento."
@@ -7046,6 +7109,9 @@
       "Center": [
         "Centrar"
       ],
+      "Change your theme": [
+        "Alterar o seu tema"
+      ],
       "Checking contact ${ progress } of ${ max }...": [
         "A verificar contacto ${ progress } de ${ max }..."
       ],
@@ -7116,8 +7182,17 @@
         "Criar ${ calendarsToBeCreatedCount } calendário",
         "Criar ${ calendarsToBeCreatedCount } calendários"
       ],
+      "Create a filter": [
+        "Criar um filtro"
+      ],
+      "Create a folder": [
+        "Criar uma pasta"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "Crie uma pasta como “${ suggestedFolderName }” para guardar todos os seus recibos online num único local."
+      ],
+      "Create a label": [
+        "Criar uma etiqueta"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Escolha uma etiqueta para as mensagens importadas, um intervalo de tempo para a importação e as pastas que deseja importar."
@@ -7131,6 +7206,9 @@
       "Create a secure cloud for ${ memberCount } member": [
         "Criar uma nuvem segura para ${ memberCount } membro",
         "Criar uma nuvem segura para ${ memberCount } membros"
+      ],
+      "Create folder": [
+        "Criar pasta"
       ],
       "Create in": [
         "Criar em"
@@ -7197,6 +7275,12 @@
       ],
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
+      ],
+      "Dismiss": [
+        "Rejeitar"
+      ],
+      "Do you remember your password?": [
+        "Lembra-se da sua palavra-passe?"
       ],
       "Do you want to download this attachment anyway?": [
         "Deseja transferir este anexo mesmo assim?",
@@ -7270,6 +7354,12 @@
       ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Gira e cancela facilmente a subscrição de boletins e listas de correio."
+      ],
+      "Edit ${ contact }": [
+        "Editar ${ contact }"
+      ],
+      "Edit contact": [
+        "Editar contacto"
       ],
       "Edit email address": [
         "Editar o endereço de e-mail"
@@ -7363,6 +7453,9 @@
       "Everything in ${ planOrAppName }, plus:": [
         "Tudo o que está incluído no ${ planOrAppName }, mais:"
       ],
+      "Expand logs": [
+        "Expandir registos"
+      ],
       "Expand selection": [
         "Expandir a seleção"
       ],
@@ -7391,10 +7484,10 @@
         "ficheiros anexados"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Apenas ficheiros (sem fotos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) - até 100 GB no total, 100.000 ficheiros e 50 GB por ficheiro"
+        "Apenas ficheiros (sem fotos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) até 100 GB no total, 100.000 ficheiros e 50 GB por ficheiro"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Os filtros funcionam em todos os e-mails, incluindo recebidos e enviados. Cada filtro deve conter pelo menos um nome, uma condição e uma acção."
+        "Os filtros funcionam em todas as mensagens, incluindo as recebidas e as enviadas. Cada filtro deve conter pelo menos um nome, uma condição e uma ação."
       ],
       "Folder": [
         "Pasta"
@@ -7459,6 +7552,9 @@
       "here": [
         "aqui"
       ],
+      "Here is my availability:": [
+        "Aqui está a minha disponibilidade:"
+      ],
       "Hide original message": [
         "Ocultar mensagem original"
       ],
@@ -7467,6 +7563,12 @@
       ],
       "How hide-my-email aliases works": [
         "Funcionamento dos aliases do Hide-my-email"
+      ],
+      "I didn't have one": [
+        "Eu não tinha uma"
+      ],
+      "I use other Proton products": [
+        "Eu utilizo outros produtos Proton"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Estou a enviar esta mensagem para um utilizador que não é ${ MAIL_APP_NAME }."
@@ -7647,8 +7749,17 @@
       "Manage your labels": [
         "Gerir as suas etiquetas"
       ],
+      "Mark ${ emails } as unread": [
+        "Marcar ${ emails } como não lidas"
+      ],
       "Mark all as read": [
         "Marcar tudo como lido"
+      ],
+      "Mark as read": [
+        "Marcar como lida"
+      ],
+      "Mark as unread": [
+        "Marcar como não lido"
       ],
       "Mastercard SecureCode logo": [
         "Logotipo do MasterCard SecureCode"
@@ -7719,8 +7830,14 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "A maioria das redes WiFi públicas são seguras, mas algumas não têm segurança, expondo-o a ciberameaças. Uma VPN encripta o seu tráfego, mantendo-o protegido."
       ],
+      "Move ${ emails } to ${ destination }": [
+        "Mover ${ emails } para ${ destination }"
+      ],
       "Move emails": [
         "Mover e-mails"
+      ],
+      "Move here": [
+        "Mover para aqui"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie a sua nova pasta e selecione a pasta principal onde deseja colocá-la. Se não selecionar uma pasta principal, esta nova pasta será criada como uma pasta de nível superior."
@@ -7731,14 +7848,23 @@
       "newsletter": [
         "boletim"
       ],
+      "Next": [
+        "Seguinte"
+      ],
       "No action selected": [
         "Nenhuma ação selecionada"
       ],
+      "No ads": [
+        "Sem anúncios"
+      ],
       "No change will be made to the selected emails": [
-        "Nenhuma alteração será feita nos e-mails selecionados"
+        "Não será efetuada nenhuma alteração nas mensagens selecionadas"
       ],
       "No contacts added yet": [
         "Ainda não adicionou contactos"
+      ],
+      "No contacts found": [
+        "Não foram encontrados contactos"
       ],
       "No email address": [
         "Sem endereço de e-mail"
@@ -7814,6 +7940,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Abra o guia para ações recomendadas e ligações úteis."
+      ],
+      "Opened a problem report": [
+        "Criou um relatório do problema"
       ],
       "Optional": [
         "Opcional"
@@ -7985,6 +8114,9 @@
         "Ler ${ count } e-mail no ecrã",
         "Ler ${ count } e-mails no ecrã"
       ],
+      "Read your signature": [
+        "Leia a sua assinatura"
+      ],
       "Recipient: ": [
         "Destinatário: "
       ],
@@ -8006,8 +8138,20 @@
       "Remember to update this in your password manager or wherever you keep your account and login information.": [
         "Não se esqueça de atualizar esta informação no seu gestor de palavras-passe ou onde quer que guarde a sua conta e informações de início de sessão."
       ],
+      "Remove signature": [
+        "Remover assinatura"
+      ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Remove todos os dados associados a esta aplicação (incluindo mensagens descarregadas, ...)"
+      ],
+      "Rename folder": [
+        "Renomear pasta"
+      ],
+      "Rename this label": [
+        "Renomear esta etiqueta"
+      ],
+      "reply": [
+        "responder"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Reportar uma mensagem como tentativa de phishing, enviará a mensagem para nós, para que possamos analisá-la e melhorar os nossos filtros. Isto significa que poderemos ver o conteúdo da mensagem na íntegra."
@@ -8056,6 +8200,12 @@
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "A pesquisa está a demorar muito? ${ dropdownButton } ou ${ toggleOffButton } desta sessão de pesquisa."
+      ],
+      "Searched for “${ keyword }”": [
+        "Procurou por “${ keyword }”"
+      ],
+      "Searched the web": [
+        "Procurado na Web"
       ],
       "Secure your files with encrypted cloud storage for free, today.": [
         "Proteja já os seus ficheiros de forma gratuita através do armazenamento em nuvem encriptado."
@@ -8111,6 +8261,9 @@
       ],
       "Set ${ MAIL_APP_NAME } as your default email application. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Defina o ${ MAIL_APP_NAME } como a sua aplicação de e-mail predefinida. O ${ MAIL_APP_NAME } será aberto automaticamente quando clicar numa ligação de e-mail."
+      ],
+      "Set signature": [
+        "Definir assinatura"
       ],
       "Set up your organization": [
         "Defina a sua organização"
@@ -8437,6 +8590,9 @@
       "To add a new booking page, ask your admin to upgrade your plan.": [
         "Para adicionar uma nova página de agendamento, peça ao seu administrador para atualizar o seu plano."
       ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Para adicionar uma nova página de marcações, remova a existente na barra lateral ${ CALENDAR_APP_NAME }."
+      ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
         "Para adicionar uma nova página de agendamento, remova uma existente da barra lateral de Páginas de agendamento."
       ],
@@ -8475,6 +8631,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Para utilizar a verificação de endereço, tem de confiar numa ou mais chaves públicas disponíveis, incluindo a que pretende utilizar para envio. Isto impede que as chaves de encriptação sejam falsificadas."
+      ],
+      "Today": [
+        "Hoje"
       ],
       "Tomorrow, ${ formattedTime }": [
         "Amanhã, às ${ formattedTime }"
@@ -8530,6 +8689,12 @@
       "Unsupported file": [
         "Ficheiro não suportado"
       ],
+      "Update the filter ${ filter }": [
+        "Atutalize o filtro ${ filter }"
+      ],
+      "Update this filter": [
+        "Atualizar este filtro"
+      ],
       "Updating message content search...": [
         "A actualizar pesquisa do conteúdo da mensagem..."
       ],
@@ -8570,7 +8735,7 @@
         "Melhore para poder enviar e-mails para grupos de contactos facilmente."
       ],
       "Upgrade to support a privacy-first internet.": [
-        "Melhore para apoiar uma Internet que coloca a privacidade em primeiro lugar."
+        "Atualize para suportar uma Internet que prioritiza a privacidade."
       ],
       "Upgrade to support our mission of privacy for all.": [
         "Atualize para apoiar a nossa missão de disponibilizar privacidade para todos."
@@ -8707,8 +8872,17 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Quando estiver a viajar ou a utilizar uma rede Wi-Fi pública, ligue-se a ${ VPN_APP_NAME } para impedir que alguém siga a sua atividade online ou roube os seus dados. É grátis."
       ],
+      "Which feature? (optional)": [
+        "Que funcionalidade? (opcional)"
+      ],
+      "Which provider?": [
+        "Que provedor?"
+      ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "Com as novas categorias de e-mail, apenas as mensagens importantes chegam à sua caixa de entrada principal. Tudo o resto..."
+      ],
+      "Work or business": [
+        "Trabalho ou negócios"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Deseja receber um novo código de verificação ou utilizar um método de verificação alternativo?"
@@ -9357,6 +9531,9 @@
       "Account holder": [
         "Titular da conta"
       ],
+      "Account holder name": [
+        "Nome do titular da conta"
+      ],
       "Actions": [
         "Ações"
       ],
@@ -9441,6 +9618,9 @@
       "Automated confirmations and alerts": [
         "Confirmações e alertas automáticos"
       ],
+      "Away message": [
+        "Mensagem de ausente"
+      ],
       "BCC": [
         "BCC"
       ],
@@ -9452,6 +9632,9 @@
       ],
       "Blind Carbon Copy": [
         "Cópia Oculta de Carbono (BCC)"
+      ],
+      "Booking page": [
+        "Página de marcação"
       ],
       "Bookings, billings, and orders": [
         "Reservas, faturação e encomendas"
@@ -9495,6 +9678,9 @@
       "CC": [
         "CC"
       ],
+      "Cc": [
+        "Cc"
+      ],
       "Choose what to do instead": [
         "Escolha o que fazer em vez disso"
       ],
@@ -9512,6 +9698,12 @@
       ],
       "Colors": [
         "Cores"
+      ],
+      "Column": [
+        "Coluna"
+      ],
+      "Comfortable": [
+        "Confortável"
       ],
       "Command line interface (CLI)": [
         "Interface de linha de comandos (CLI)"
@@ -9591,6 +9783,9 @@
       "Display name": [
         "Nome a mostrar"
       ],
+      "Document ID": [
+        "Id. do Documento"
+      ],
       "Don't ask again": [
         "Não perguntar novamente"
       ],
@@ -9657,8 +9852,14 @@
       "Enable filter": [
         "Ativar o filtro"
       ],
+      "Encrypt": [
+        "Encriptar"
+      ],
       "Encrypt emails": [
         "Encriptar os e-mails"
+      ],
+      "Entries": [
+        "Entradas"
       ],
       "Exact host matching": [
         "Correspondência exata de anfitrião"
@@ -9680,6 +9881,9 @@
       ],
       "Filter": [
         "Filtro"
+      ],
+      "Filter name": [
+        "Nome do filtro"
       ],
       "Filter Name": [
         "Nome do filtro"
@@ -9704,6 +9908,9 @@
       ],
       "From": [
         "De"
+      ],
+      "From date": [
+        "Da data"
       ],
       "From:": [
         "De:"
@@ -9792,6 +9999,9 @@
       "Label messages as": [
         "Etiquetar mensagens como"
       ],
+      "Label name": [
+        "Nome da etiqueta"
+      ],
       "Last 12 months only": [
         "Últimos 12 meses"
       ],
@@ -9879,6 +10089,9 @@
       "Never fill on this exact URL": [
         "Nunca preencher neste URL exato"
       ],
+      "New name": [
+        "Novo nome"
+      ],
       "New password": [
         "Nova palavra-passe"
       ],
@@ -9893,6 +10106,12 @@
       ],
       "No label found": [
         "Nenhuma etiqueta encontrada"
+      ],
+      "No unread conversations": [
+        "Nenhuma conversação por ler"
+      ],
+      "No unread messages": [
+        "Nenhuma mensagem por ler"
       ],
       "Non-promotional content and news": [
         "Conteúdo não promocional e notícias"
@@ -9998,6 +10217,12 @@
       ],
       "Read": [
         "Lido"
+      ],
+      "Read / export": [
+        "Ler / exportar"
+      ],
+      "Realistic session": [
+        "Sessão realista"
       ],
       "Recipient": [
         "Destinatário"
@@ -10131,6 +10356,9 @@
       "Time": [
         "Hora"
       ],
+      "To": [
+        "Para"
+      ],
       "To:": [
         "Para:"
       ],
@@ -10179,6 +10407,9 @@
       "v1": [
         "v1"
       ],
+      "v2": [
+        "v2"
+      ],
       "Verification code": [
         "Código de verificação"
       ],
@@ -10211,6 +10442,9 @@
       ],
       "Without attachment": [
         "Sem anexo"
+      ],
+      "Write": [
+        "Gravar"
       ],
       "Writing assistant": [
         "Assistente de escrita"
@@ -10632,7 +10866,7 @@
         "atualize para obter mais armazenamento"
       ],
       "Upgrade to restore full access": [
-        "Melhore o eu plano para restaurar o acesso completo."
+        "Atualize para restaurar o acesso completo"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "O seu ${ driveStorage } está cheio. Para enviar ou sincronizar ficheiros, liberte espaço ou ${ cta }."
@@ -12062,6 +12296,9 @@
       "Plus": [
         "Plus"
       ],
+      "Short @pm.me address": [
+        "Endereço curto @pm.me"
+      ],
       "Storage": [
         "Armazenamento"
       ],
@@ -12163,7 +12400,7 @@
         "Desfrute de uma experiência de e-mail mais rápida e focada com a aplicação para desktop."
       ],
       "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
-        "Para aceder aos seus e-mails a qualquer momento e aproveitar uma experiência móvel otimizada, descarregue a nossa aplicação na ${ mobileAppAppStoreLink } ou ${ mobileAppGooglePlayLink }."
+        "Para aceder às suas mensagens e experiência móvel otimizada em qualquer momento, transfira a nossa aplicação em ${ mobileAppAppStoreLink } ou ${ mobileAppGooglePlayLink }."
       ],
       "Get notified if your password is compromised.": [
         "Seja notificado se a sua palavra-passe estiver comprometida."
@@ -12405,6 +12642,9 @@
       "Permanent": [
         "Permanente"
       ],
+      "Remind me later": [
+        "Lembrar-me mais tarde"
+      ],
       "Repeat daily": [
         "Repetir diariamente"
       ],
@@ -12413,6 +12653,9 @@
       ],
       "Repeat weekly": [
         "Repetir semanalmente"
+      ],
+      "Yes, don't show again": [
+        "Sim, não voltar a mostrar"
       ]
     },
     "Option group": {
@@ -12563,6 +12806,9 @@
       "Billing Country": [
         "País de faturação"
       ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Ao mudar, concorda com os nossos ${ termsLink }."
+      ],
       "Card number": [
         "Número do cartão"
       ],
@@ -12601,6 +12847,9 @@
       ],
       "More plans are available in other currencies": [
         "Mais planos estão disponíveis noutras moedas."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Pagar com ${ IDEAL_WERO_BRAND_NAME }"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Método de pagamento necessário para que a subscrição seja ativada após o término do período de avaliação."
@@ -12844,6 +13093,9 @@
       ],
       "Anytown": [
         "Porto Verde"
+      ],
+      "Ask anything…": [
+        "Pergunte qualquer coisa..."
       ],
       "Company name": [
         "Nome da empresa"
@@ -15010,13 +15262,13 @@
         "Criar um alias"
       ],
       "Create label “${ suggestedLabelName }“": [
-        "Criar uma etiqueta «${ suggestedLabelName }»"
+        "Criar etiqueta \"${ suggestedLabelName }\""
       ],
       "Create new email address": [
         "Criar um endereço de e-mail"
       ],
       "Create “${ suggestedFolderName }“ folder": [
-        "Criar uma pasta «${ suggestedFolderName }»"
+        "Criar pasta \"${ suggestedFolderName }\""
       ],
       "Download ${ VPN_APP_NAME }": [
         "Transferir ${ VPN_APP_NAME }"
@@ -15525,6 +15777,9 @@
       "Invalid verification code": [
         "O código de verificação não é válido."
       ],
+      "Keep this banner hidden?": [
+        "Manter esta faixa ocultada?"
+      ],
       "Label as": [
         "Etiquetar como"
       ],
@@ -15913,6 +16168,9 @@
       "Settings": [
         "Definições"
       ],
+      "Share your availability": [
+        "Partilhe a sua disponibilidade"
+      ],
       "Share your calendar with your team": [
         "Partilhe o seu calendário com a sua equipa"
       ],
@@ -15971,7 +16229,7 @@
         "Para pré-visualizar esta folha de cálculo, transfira-a."
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
-        "Para fazer uma pré-visualização desta folha de cálculo, abra-a em ${ SHEETS_APP_NAME } ou faça a sua transferência."
+        "Para pré-visualizar esta folha de cálculo, abra-a em ${ SHEETS_APP_NAME } ou transfira-a."
       ],
       "Trash all messages?": [
         "Mover todas as mensagens para o lixo?"

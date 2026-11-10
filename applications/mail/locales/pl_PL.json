@@ -1519,7 +1519,10 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufaj kluczowi"
+        "Zaufany klucz",
+        "Zaufane klucze",
+        "Zaufanych kluczy",
+        "Zaufane klucze"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -4397,6 +4400,14 @@
         "Wykryliśmy następujące pola w pliku CSV. Zaznacz te, które chcesz zaimportować."
       ]
     },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } nowa wiadomość",
+        "${ messageCount } nowe wiadomości",
+        "${ messageCount } nowych wiadomości",
+        "Nowe wiadomości (${ messageCount })"
+      ]
+    },
     "Desktop notification title": {
       "New email received": [
         "Otrzymano nową wiadomość"
@@ -6677,6 +6688,12 @@
         "${ contactsLength } kontaktów",
         "${ contactsLength } kontaktów"
       ],
+      "${ count } email → ${ dest }": [
+        "${ count } e-mail → ${ dest }",
+        "${ count } e-maile → ${ dest }",
+        "${ count } e-maili → ${ dest }",
+        "${ count } e-maile → ${ dest }"
+      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } z ${ totalProgress }",
         "${ currentProgress } z ${ totalProgress }",
@@ -6760,6 +6777,12 @@
         "${ groupCounts } znalezione grupy",
         "${ groupCounts } znalezionych grup",
         "${ groupCounts } znalezionych grup"
+      ],
+      "${ issues.length } issue during import:": [
+        "W trakcie procesu importowania wystąpił ${ issues.length } błąd.",
+        "W trakcie procesu importowania wystąpiły ${ issues.length } błędy.",
+        "W trakcie procesu importowania wystąpiło ${ issues.length } błędów.",
+        "W trakcie procesu importowania wystąpił/y ${ issues.length } błąd/błędy."
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } zawiera asystenta pisania ${ BRAND_NAME } Scribe"
@@ -7174,6 +7197,9 @@
       ],
       "Are you sure you want to permanently delete this message?": [
         "Czy na pewno chcesz trwale usunąć tę wiadomość?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Poproś administratora o ulepszenia planu lub usuniecie strony z sekcji rezerwacji na pasku bocznym w aplikacji ${ CALENDAR_APP_NAME }."
       ],
       "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
         "Poproś swojego administratora o ulepszenie planu lub usuń stronę z panelu bocznego stron rezerwacji."
@@ -7639,6 +7665,12 @@
       ],
       "Forgot password?": [
         "Nie pamiętasz hasła?"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Znaleziono obecny zaszyfrowany indeks wyszukiwania z ${ oldIndexSize } wiadomością.",
+        "Znaleziono obecny zaszyfrowany indeks wyszukiwania z ${ oldIndexSize } wiadomościami.",
+        "Znaleziono obecny zaszyfrowany indeks wyszukiwania z ${ oldIndexSize } wiadomościami.",
+        "Znaleziono obecny zaszyfrowany indeks wyszukiwania z ${ oldIndexSize } wiadomościami."
       ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "Za darmo do wypróbowania przez ${ ASSISTANT_TRIAL_TIME_DAYS } dzień",
@@ -8201,6 +8233,12 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Skontaktuj się z nami, aby uzyskać pomoc ${ BRAND_NAME }."
       ],
+      "Read ${ count } email on screen": [
+        "Odczytaj ${ count } e-mail na ekranie",
+        "Odczytaj ${ count } e-maile na ekranie",
+        "Odczytaj ${ count } e-maili na ekranie",
+        "Odczytaj e-maile (${ count }) na ekranie"
+      ],
       "Recipient: ": [
         "Odbiorca: "
       ],
@@ -8662,6 +8700,9 @@
       ],
       "To add a new booking page, ask your admin to upgrade your plan.": [
         "Aby dodać nową stronę rezerwacji, poproś administratora o ulepszenie planu."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Aby dodać nową stronę rezerwacji, najpierw w aplikacji ${ CALENDAR_APP_NAME } usuń istniejącą w sekcji rezerwacji na pasku bocznym."
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
         "Aby dodać nową stronę rezerwacji, usuń istniejącą z panelu bocznego stron rezerwacji."

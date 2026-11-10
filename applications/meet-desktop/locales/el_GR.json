@@ -243,6 +243,9 @@
       ]
     },
     "Update prompt": {
+      "${ MEET_APP_NAME } update": [
+        "Ενημέρωση ${ MEET_APP_NAME }"
+      ],
       "A new version of ${ MEET_APP_NAME } has been downloaded. Restart the application to apply the updates.": [
         "Μια νέα έκδοση του ${ MEET_APP_NAME } έχει ληφθεί. Επανεκκινήστε την εφαρμογή για να εφαρμοστούν οι ενημερώσεις."
       ],

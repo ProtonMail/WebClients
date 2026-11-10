@@ -548,6 +548,12 @@
       "Cancel": [
         "Cancelar"
       ],
+      "Cancel ${ planTitle }": [
+        "Cancelar de ${ planTitle }"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "Cancelar avaliação de ${ planTitle }"
+      ],
       "Cancel import": [
         "Cancelar importação"
       ],
@@ -556,6 +562,9 @@
       ],
       "Cancel subscription": [
         "Cancelar assinatura"
+      ],
+      "Cancel trial": [
+        "Cancelar avaliação"
       ],
       "Cancel trial and pay": [
         "Cancelar avaliação e pagar"
@@ -672,7 +681,7 @@
         "Conectar endereço do Gmail"
       ],
       "Connect to video conferencing": [
-        "Conectar-se à videoconferência.\n"
+        "Conectar-se à videoconferência"
       ],
       "Connect your email": [
         "Conecte seu e-mail"
@@ -763,6 +772,9 @@
       ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Crie um link para compartilhar com qualquer pessoa de fora ${ BRAND_NAME }"
+      ],
+      "Create account": [
+        "Criar conta"
       ],
       "Create calendar": [
         "Criar calendário"
@@ -940,6 +952,9 @@
       ],
       "Don't show again": [
         "Não mostrar novamente"
+      ],
+      "Don't show this offer again": [
+        "Não mostrar mais esta oferta"
       ],
       "Donate": [
         "Doar"
@@ -1258,6 +1273,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Acesse o ${ planOrAppName }"
+      ],
+      "Go to folder": [
+        "Ir para pasta"
       ],
       "Go to label": [
         "Ir para marcador"
@@ -2030,6 +2048,9 @@
       "Spam": [
         "Spam"
       ],
+      "Special Offer": [
+        "Oferta especial"
+      ],
       "Start free trial": [
         "Iniciar a avaliação gratuita"
       ],
@@ -2343,6 +2364,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "Cancelar assinatura"
+      ],
       "Reactivate": [
         "Reativar"
       ],
@@ -2563,6 +2587,9 @@
       ],
       "Permission revoked": [
         "Permissão revogada"
+      ],
+      "Sign-in": [
+        "Iniciar sessão"
       ]
     },
     "Admin": {
@@ -2811,6 +2838,9 @@
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ao cancelar, sua avaliação gratuita não será convertida em uma assinatura paga, mas você ainda pode aproveitar os benefícios do plano até o final do período de avaliação. Depois disso, você fará o downgrade para o plano ${ BRAND_NAME } Free."
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "Quando você cancelar, sua avaliação gratuita não será convertida em uma assinatura paga."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Você pode ter até ${ TRIAL_MAX_DEDICATED_IPS } servidor dedicado durante o período de avaliação."
@@ -4188,8 +4218,8 @@
       "Confirm cancellation": [
         "Confirmar cancelamento"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Se você exceder os limites do plano gratuito, não será possível:"
+      "If you exceed your plan limits, you won't be able to:": [
+        "Se você exceder os limites do seu plano, não será possível:"
       ],
       "Keep current plan": [
         "Manter plano atual"
@@ -4206,8 +4236,11 @@
       "Upload any new files": [
         "Enviar novos arquivos"
       ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Quando sua assinatura terminar em ${ endDate }, sua conta mudará para o Free plan. Se o seu uso exceder os limites do Free plan, alguns recursos podem ficar temporariamente indisponíveis."
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Quando a assinatura do ${ planDisplayName } encerrar em ${ endDate }, você perderá suas funcionalidades. Se, após o encerramento, seu uso exceder os limites do plano, alguns recursos poderão ficar temporariamente indisponíveis."
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Quando sua assinatura se encerrar em ${ endDate }, você perderá suas funcionalidades. Se, após o encerramento, seu uso exceder os limites do plano, alguns recursos poderão ficar temporariamente indisponíveis."
       ]
     },
     "Confirm modal title": {
@@ -7503,9 +7536,6 @@
       "Invalid invitation link": [
         "O link de convite não é válido."
       ],
-      "Invalid joining link. Please contact your administrator.": [
-        "Link de convite inválido. Entre em contato com seu administrador."
-      ],
       "Invalid name": [
         "O nome não é válido."
       ],
@@ -7906,6 +7936,9 @@
       "The amount due has changed. Please try again.": [
         "O valor devido foi alterado. Tente novamente."
       ],
+      "The device you scanned the QR code with didn't send your sign-in details. Update the app on that device and try again.": [
+        "O dispositivo do QR code escaneado não enviou os detalhes de entrada. Atualize o aplicativo nesse dispositivo e tente novamente."
+      ],
       "The email addresses do not match": [
         "Os endereços de e-mail não correspondem."
       ],
@@ -7947,6 +7980,9 @@
       ],
       "The session has expired. Please sign in again.": [
         "Sua sessão expirou. Inicie a sessão novamente."
+      ],
+      "The session has expired. Please try again.": [
+        "A sessão expirou. Por favor, tente novamente."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "O arquivo enviado não corresponde ao original. Por favor, tente novamente."
@@ -8533,9 +8569,6 @@
       "${ BRAND_NAME } groups": [
         "grupos da ${ BRAND_NAME }"
       ],
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Apenas uma avaliação gratuita por usuário. Depois disso, aplica-se o preço normal."
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Contas com domínios personalizados não podem participar de um plano de família."
       ],
@@ -8601,9 +8634,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "A assinatura será cobrada do administrador principal desse plano."
       ],
-      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
-        "Para facilitar a transição, oferecemos a você uma avaliação gratuita de 30 dias do ${ BRAND_NAME } Ilimitado*."
-      ],
       "View the invitation": [
         "Visualizar o convite",
         "Visualizar os convites"
@@ -8663,14 +8693,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Apenas uma avaliação gratuita por usuário. Depois disso, aplica-se o preço normal."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Após sair do plano dele, esse usuário será transferido para um plano gratuito ${ BRAND_NAME }."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Após sair do seu plano, este usuário será movido para o plano ${ BRAND_NAME } Unlimited com 30 dias de avaliação gratuita."
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Atribua armazenamento à conta do administrador. Você pode distribuir armazenamento para usuários adicionais mais tarde."
@@ -11229,6 +11253,9 @@
       "Discount": [
         "Desconto"
       ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Os descontos são baseados no preço mensal padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
+      ],
       "Discover new features unlocked and start using them right away!": [
         "Descubra novos recursos desbloqueados e comece a usá-los agora mesmo!"
       ],
@@ -11903,6 +11930,9 @@
       ],
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Código invalido. ${ RequestNewCodeLink } e tente novamente."
+      ],
+      "Invalid joining link": [
+        "Link da reunião inválido"
       ],
       "Invitation link expired": [
         "Link de convite expirado"
@@ -13050,6 +13080,9 @@
       "This is the password you used before the password reset.": [
         "Esta é a senha que você usava antes da redefinição de senha."
       ],
+      "This joining link isn't valid. Please contact your administrator for a new one.": [
+        "Este link de entrada não é válido. Por favor, solicite o administrador um novo link."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Esse link leva a um site que pode estar tentando roubar suas informações, como senhas e detalhes de cartão de crédito."
       ],
@@ -13584,6 +13617,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ao cancelar, sua assinatura não será renovada, mas você ainda pode aproveitar os benefícios do plano até o final do período da sua assinatura. Depois disso, você fará o downgrade para o plano ${ BRAND_NAME } Free."
       ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "Quando você cancelar, sua assinatura não iniciará após o período de avaliação."
+      ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ao cancelar, sua assinatura não começará, mas você ainda pode aproveitar os benefícios do plano até o final do período de avaliação. Depois disso, você fará o downgrade para o plano ${ BRAND_NAME } Free."
       ],
@@ -13762,6 +13798,9 @@
         "Você não pode enviar mais de ${ emailSendLimitNumber } convite por e-mail nas próximas 24 horas",
         "Você não pode enviar mais de ${ emailSendLimitNumber } convites por e-mail nas próximas 24 horas"
       ],
+      "You cancel it in the store.": [
+        "Cancele isso na loja."
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Você não pode indicar usuários do ${ MAIL_APP_NAME }."
       ],
@@ -13820,6 +13859,9 @@
       ],
       "You have no transactions.": [
         "Você não tem transações."
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "Você tem múltiplas assinaturas. Escolha a que deve ser cancelada. As demais assinaturas não serão afetadas. Uma assinatura canelada não será renovada, mas seus benefícios serão mantidos até o fim do período de vigência."
       ],
       "You have unpublished changes": [
         "Você tem alterações não publicadas"
@@ -13954,6 +13996,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Sua conta está configurada atualmente para aplicar o regime de reverse charge. Isso não é suportado para o plano selecionado. Para prosseguir, remova o número de IVA do endereço de faturamento ou selecione um plano diferente."
+      ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "Sua conta foi criada, mas não foi possível concluir a configuração do seu plano."
       ],
       "Your account was successfully updated with this promotion": [
         "Sua conta foi atualizada com essa promoção."
@@ -16052,9 +16097,6 @@
       "Reserved email address": [
         "Endereço de e-mail reservado"
       ],
-      "Restrict sign-in to primary email address": [
-        "Restringir início de sessão para o endereço de e-mail principal"
-      ],
       "Reveal password": [
         "Mostrar senha"
       ],
@@ -16889,6 +16931,9 @@
       ],
       "Terms": [
         "Termos"
+      ],
+      "terms and conditions": [
+        "termos e condições"
       ],
       "terms of our referral program": [
         "termos do nosso programa de indicação"
@@ -19323,9 +19368,6 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Cancele a qualquer momento antes disso. ** Você poderá usar ${ planTitle } até que a avaliação termine, gratuitamente."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Se você continuar após o seu teste, ** você pode cancelar dentro de 30 dias e obter um reembolso pro-rata."
-      ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Uma vez que sua assinatura completa começa... ** Você ainda pode cancelar dentro de 30 dias e obter um reembolso proporcional."
       ],
@@ -20704,11 +20746,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Entre em contato com o suporte ao cliente para confirmar a mudança de titularidade"
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Nunca"
       ]
     },
     "Payments.ModificationWarning": {
@@ -24218,11 +24255,11 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "Desconto de ${ discountItem.discountPercent }% aplicado"
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "Desconto de ${ planDiscountItem.discountPercent }% aplicado"
       ],
-      "${ discountItem.discountPercent }% off": [
-        "${ discountItem.discountPercent }% de desconto"
+      "${ planDiscountItem.discountPercent }% off": [
+        "${ planDiscountItem.discountPercent }% de desconto"
       ],
       "${ trialCycleText } free": [
         "${ trialCycleText } grátis"
@@ -24749,6 +24786,14 @@
       ],
       "Upcoming": [
         "Em breve"
+      ]
+    },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "Da ${ startTime }"
       ]
     },
     "Subtitle": {
@@ -27438,8 +27483,8 @@
       "What are you migrating?": [
         "O que você está migrando?"
       ],
-      "What changes if you switch to the Free plan": [
-        "O que muda se você mudar para o plano Free"
+      "What changes if you cancel ${ planDisplayName }": [
+        "O que muda se você cancelar ${ planDisplayName }"
       ],
       "What is an alias?": [
         "O que é um alias?"
@@ -27640,20 +27685,20 @@
       "Billing": [
         "Faturação"
       ],
-      "End date": [
-        "Data de término"
-      ],
       "Plan": [
         "Plano"
       ],
       "Price": [
         "Preço"
       ],
-      "Start date": [
-        "Data de início"
+      "Renewal": [
+        "Renovação"
       ],
       "Status": [
         "Status"
+      ],
+      "Subscription term": [
+        "Termo de assinatura"
       ]
     },
     "Title; create calendar modal": {

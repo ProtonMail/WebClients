@@ -3329,6 +3329,9 @@
       "Your import will not be processed.": [
         "Váš import nebude zpracován."
       ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "Vaše poslední změna je příliš rozsáhlá na to, aby se dala uložit, proto je úprava deaktivována. Zkopírujte si vše, co potřebujete, a poté stránku znovu načtěte."
+      ],
       "⚠️ Undecryptable device": [
         "⚠️ Nerozšifrovatelné zařízení"
       ],
@@ -4267,6 +4270,12 @@
         "vybráno ${ selectedFoldersCountLocalized } štítků",
         "vybráno ${ selectedFoldersCountLocalized } štítků"
       ],
+      "${ selection.selectedIds.length } selected": [
+        "${ selection.selectedIds.length } vybrán",
+        "${ selection.selectedIds.length } vybrány",
+        "${ selection.selectedIds.length } vybráno",
+        "${ selection.selectedIds.length } vybráno"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt úspěšně aktualizován.",
         "${ updated } kontakty úspěšně aktualizovány.",
@@ -4525,6 +4534,9 @@
       "Edit email address": [
         "Upravit e-mailovou adresu"
       ],
+      "Editing is temporarily unavailable.": [
+        "Upravování je dočasně nedostupné."
+      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailový hosting je k dispozici pouze pro domény, které již vlastníte. Registrace domén není v současné době prostřednictvím služby ${ BRAND_NAME } k dispozici. E-mail můžete hostovat pro domény registrované u jakéhokoli registrátora domén."
       ],
@@ -4599,6 +4611,9 @@
       ],
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
         "Získejte profesionální e-mail s adresou @vasespolecnost.com, 1 TB zabezpečeného úložiště na jednoho uživatele, delší videohovory a další výhody se službou ${ BRAND_NAME } Workspace."
+      ],
+      "Get Notified About Comments": [
+        "Dostávat upozornění na komentáře"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlády a poskytovatelé internetových služeb mohou sledovat vaši online aktivitu. Skrytím vaší skutečné IP adresy a šifrováním vaší aktivity se vaše prohlížení stane soukromým."
@@ -4737,6 +4752,9 @@
       ],
       "Low Priority": [
         "Nízká priorita"
+      ],
+      "Making a copy...": [
+        "Vytváření kopie..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Max. ${ MAX_SHARED_URL_PASSWORD_LENGTH } písmeno",
@@ -4906,6 +4924,9 @@
       "Recents": [
         "Nedávné"
       ],
+      "Reconnecting…": [
+        "Opětovné připojování…"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informace o obnovení zůstanou v tomto zařízení, pokud nezvolíte jejich odstranění."
       ],
@@ -5020,11 +5041,17 @@
       "The Beginning": [
         "Začátek"
       ],
+      "The document could not be created.": [
+        "Vytvoření dokumentu selhalo."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Odhalené informace unikly ze služby třetí strany. Informace vašeho účtu ${ BRAND_NAME } zůstaly v bezpečí a šifrované. ${ learnMoreLink }"
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Vlastník této adresy deaktivoval koncové šifrování. Aby bylo možné na tuto adresu odesílat šifrované e-maily, musí vlastník znovu povolit koncové šifrování."
+      ],
+      "The server is busy.": [
+        "Server je zaneprázdněn."
       ],
       "There are no documents in the trash.": [
         "V koši nejsou žádné dokumenty."
@@ -5056,6 +5083,9 @@
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Jedná se o název nebo přezdívku vaší organizace, kterou uživatelé uvidí. Můžete je kdykoli změnit."
       ],
+      "This link is not supported on this page.": [
+        "Tento odkaz není na této stránce podporován."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tento odkaz vede na webovou stránku, která se může pokoušet ukrást vaše údaje, například hesla a údaje o platební kartě."
       ],
@@ -5076,6 +5106,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "Abychom mohli tento problém vyřešit, budou informace potřebné pro odstranění chyb nahrány na váš Drive a bezpečně sdíleny s týmem podpory ${ BRAND_NAME }. Mohou zahrnovat obsah souborů. Sdílení můžete kdykoli zrušit a sdílená data budou po dokončení kontroly smazána."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Abychom vám pomohli zapamatovat si vaše heslo, budeme vás žádat o jeho pravidelné zadávání. Časem budeme tyto žádosti omezovat."
@@ -5346,6 +5379,9 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Váš naplánovaný tarif začíná ${ renewalTime } a bude každý měsíc automaticky obnoven."
+      ],
+      "Your session has expired. Reload the page to continue.": [
+        "Vaše relace vypršela. Prosím, přihlaste se znovu pro pokračování."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Vaše předplatné se automaticky obnoví ${ renewalTime }."
@@ -7127,6 +7163,12 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" úspěšně přejmenován"
       ],
+      "${ count } item could not be moved to trash": [
+        "${ count } položku se nepodařilo přesunout do koše",
+        "${ count } položky se nepodařilo přesunout do koše",
+        "${ count } položek se nepodařilo přesunout do koše",
+        "${ count } položek se nepodařilo přesunout do koše"
+      ],
       "${ count } item failed to be decrypted": [
         "${ count } položku se nepodařilo dešifrovat",
         "${ count } položky se nepodařilo dešifrovat",
@@ -7211,8 +7253,14 @@
       "Failed to accept share invitation": [
         "Přijetí pozvánky ke sdílení selhalo"
       ],
+      "Failed to apply file. Check the file and try again.": [
+        "Nepodařilo se použít soubor. Zkontrolujte soubor a zkuste to znovu."
+      ],
       "Failed to load invitation details": [
         "Nepodařilo se načíst detaily pozvánky"
+      ],
+      "Failed to load saved items": [
+        "Načtení uložených položek selhalo"
       ],
       "Failed to load sharing details": [
         "Nepodařilo se načíst detaily sdílení"
@@ -7222,6 +7270,9 @@
       ],
       "Failed to rename document": [
         "Přejmenování dokumentu selhalo"
+      ],
+      "Failed to submit report": [
+        "Odeslání nahlášení selhalo"
       ],
       "Invitation's email was sent again": [
         "E-mail s pozvánkou byl znovu odeslán"
@@ -9343,6 +9394,9 @@
         "Odebrat váš přístup?"
       ],
       "Report a problem": [
+        "Nahlásit problém"
+      ],
+      "Report issue": [
         "Nahlásit problém"
       ],
       "Request new code": [

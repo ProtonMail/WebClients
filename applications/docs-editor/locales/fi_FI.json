@@ -288,6 +288,11 @@
         "Lue tai tulosta lopullinen dokumentti"
       ]
     },
+    "Emoji category": {
+      "Flags": [
+        "Liput"
+      ]
+    },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
         "Dokumentin lataamisessa tapahtui virhe. Editori on lukittu dokumentin korruptoitumisen estämiseksi. Yritä ladata sivu uudelleen. Jos virhe jatkuu, avaa versiohistoria valikkovaihtoehdoista ja yritä palauttaa dokumentti aikaisempaan versioon."
@@ -486,6 +491,9 @@
       "Duplicate table row": [
         "Monista taulukon rivi"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Format": [
         "Muoto"
       ],
@@ -533,6 +541,9 @@
       ],
       "Replace link": [
         "Korvaa linkki"
+      ],
+      "Table": [
+        "Taulukko"
       ],
       "Text and highlight color": [
         "Tekstin ja korostuksen väri"
@@ -686,6 +697,35 @@
       ],
       "Note": [
         "Yhdistä solut"
+      ]
+    },
+    "sheets_2025:Spreadsheet cellFormatOptions": {
+      "Left": [
+        "Vasen"
+      ],
+      "Number": [
+        "Numero"
+      ],
+      "Right": [
+        "Oikea"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartAggregates": {
+      "Sum": [
+        "Summa"
+      ]
+    },
+    "sheets_2025:Spreadsheet chartTypes": {
+      "Column": [
+        "Sarake"
+      ]
+    },
+    "sheets_2025:Spreadsheet conditions": {
+      "August": [
+        "Elokuu"
+      ],
+      "Today": [
+        "Tänään"
       ]
     },
     "sheets_2025:Spreadsheet context menu": {
@@ -1032,6 +1072,11 @@
       ],
       "Year": [
         "Vuosi"
+      ]
+    },
+    "sheets_2025:Spreadsheet customCurrencyFormatDialog": {
+      "Format": [
+        "Muoto"
       ]
     },
     "sheets_2025:Spreadsheet delete sheet dialog": {
@@ -1668,6 +1713,19 @@
         "Järjestä Ö → A"
       ]
     },
+    "sheets_2025:Spreadsheet formulaBar": {
+      "Edit": [
+        "Muokkaa"
+      ],
+      "Remove": [
+        "Poista"
+      ]
+    },
+    "sheets_2025:Spreadsheet gridFooter": {
+      "Add": [
+        "Lisää"
+      ]
+    },
     "sheets_2025:Spreadsheet insert link dialog": {
       "Apply": [
         "Käytä"
@@ -2142,6 +2200,11 @@
       ],
       "Table title": [
         "Taulukon otsikko"
+      ]
+    },
+    "sheets_2025:Spreadsheet viewMenu": {
+      "2 rows": [
+        "2 riviä"
       ]
     },
     "Title": {

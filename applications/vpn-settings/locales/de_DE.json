@@ -337,6 +337,9 @@
       "Add external address": [
         "Externe Adresse hinzufügen"
       ],
+      "Add payment method": [
+        "Zahlungsmethode hinzufügen"
+      ],
       "Add PayPal": [
         "Paypal hinzufügen"
       ],
@@ -394,11 +397,20 @@
       "Cancel": [
         "Abbrechen"
       ],
+      "Cancel ${ planTitle }": [
+        "${ planTitle } kündigen"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "${ planTitle }-Testversion kündigen"
+      ],
       "Cancel request": [
         "Anfrage abbrechen"
       ],
       "Cancel subscription": [
         "Abonnement kündigen"
+      ],
+      "Cancel trial": [
+        "Testphase beenden"
       ],
       "Cancel trial and pay": [
         "Testversion beenden und bezahlen"
@@ -1189,6 +1201,9 @@
       "Restore": [
         "Wiederherstellen"
       ],
+      "Restrict sign-in": [
+        "Anmeldung einschränken"
+      ],
       "Resume membership": [
         "Mitgliedschaft fortsetzen"
       ],
@@ -1644,6 +1659,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "Abonnement kündigen"
+      ],
       "Reactivate": [
         "Reaktivieren"
       ],
@@ -1854,6 +1872,9 @@
       ],
       "Permission revoked": [
         "Berechtigung widerrufen"
+      ],
+      "Sign-in": [
+        "Anmelden"
       ]
     },
     "Admin": {
@@ -2002,6 +2023,9 @@
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wenn du kündigst, wird deine kostenlose Testversion nicht in ein kostenpflichtiges Abonnement umgewandelt, aber du kannst die Vorteile des Abonnements noch bis zum Ende des Testzeitraums nutzen. Danach wirst du auf das ${ BRAND_NAME } Free-Abonnement zurückgestuft."
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "Wenn du kündigst, wird dein Probeabonnement nicht in ein kostenpflichtiges Abonnement umgewandelt."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_DEDICATED_IPS } dedizierte Server haben."
@@ -2787,8 +2811,8 @@
       "Confirm cancellation": [
         "Kündigung bestätigen"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Wenn du die Limiten der kostenlosen Abonnements überschreitest, ist Folgendes nicht mehr möglich:"
+      "If you exceed your plan limits, you won't be able to:": [
+        "Wenn du die Speichergrenzen deines Abonnements überschreitest, ist Folgendes nicht mehr möglich:"
       ],
       "Keep current plan": [
         "Aktuelles Abonnement beibehalten"
@@ -2805,8 +2829,11 @@
       "Upload any new files": [
         "Neue Dateien hochladen"
       ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Wenn dein Abonnement am ${ endDate } ausläuft, wird dein Konto auf das kostenlose Abonnement umgestellt. Sollte deine Nutzung die Grenzen des kostenlosen Abonnements überschreiten, sind einige Funktionen möglicherweise vorübergehend nicht verfügbar."
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Wenn dein ${ planDisplayName }-Abonnement am ${ endDate } ausläuft, stehen dir die entsprechenden Funktionen nicht mehr zur Verfügung. Sollte deine Nutzung danach die Limits deines Tarifs überschreiten, sind einige Funktionen möglicherweise vorübergehend nicht verfügbar."
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Wenn dein Abonnement am ${ endDate } endet, wirst du seine Vorteile verlieren. Wenn dein Verbrauch dann deine Speichergrenze überschreitet, werden einige Funktionen vorübergehend nicht verfügbar sein."
       ]
     },
     "Confirm modal title": {
@@ -3902,7 +3929,7 @@
         "Verbinde dein CRM, deine Website, Drucker und mehr."
       ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
-        "Erstelle ein Zoom-Meeting und füge deine Veranstaltung mit einem Klick Details zur Teilnahme hinzu."
+        "Erstelle ein Zoom-Meeting und füge deiner Veranstaltung mit einem Klick Details zur Teilnahme hinzu."
       ],
       "Create groups you can email with a single address.": [
         "Erstelle Gruppen, an die du E-Mails mit einer einzigen Adresse senden kannst."
@@ -5485,6 +5512,9 @@
       "The policy name must be between 3 and 40 characters.": [
         "Der Name der Richtlinie muss zwischen 3 und 40 Zeichen lang sein."
       ],
+      "The session has expired. Please try again.": [
+        "Die Sitzung ist abgelaufen. Bitte versuche es erneut."
+      ],
       "The total could not be calculated. Change the amount to try again.": [
         "Der Gesamtbetrag konnte nicht berechnet werden. Ändere den Betrag und versuche es erneut."
       ],
@@ -5997,14 +6027,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Nur eine kostenlose Testphase pro Benutzer. Danach gelten die regulären Preise."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Nach dem Verlassen deines Abonnements wird diesem Benutzer ein ${ BRAND_NAME } Free-Abonnement zugewiesen."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Nach dem Verlassen deines Abonnements wird diesem Benutzer ein ${ BRAND_NAME } Unlimited-Abonnement mit 30-tägiger Testphase zugewiesen.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Dem Administratorkonto Speicher zuweisen. Du kannst den Speicher für zusätzliche Benutzer später verteilen."
@@ -7631,6 +7655,21 @@
       ],
       "By leaving now, changes may not be saved": [
         "Beim Verlassen werden Änderungen möglicherweise nicht gespeichert"
+      ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit **${ primaryEmail }** anmelden."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem ursprünglichen Benutzernamen **${ username }** anmelden – entweder allein oder in der Form **${ firstEmail }**, **@${ secondDomain }** oder **@${ thirdDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem ursprünglichen Benutzernamen **${ username }** anmelden – entweder allein oder in Kombination mit **${ firstEmail }** oder **@${ secondDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem ursprünglichen Benutzernamen **${ username }** anmelden, entweder allein oder in Kombination mit **${ firstEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem Benutzernamen **${ username }** anmelden."
       ],
       "Can you access your active session?": [
         "Kannst du auf deine aktive Sitzung zugreifen?"
@@ -9600,17 +9639,26 @@
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Beim Aktivieren von SAML für ${ appName } in deinem Identitätsanbieter wirst du vielleicht aufgefordert, die Callback (ACS) URL und die Aussteller-ID zu nutzen. Kopiere einfach die Daten unten in die Felder deines Identitätsanbieters."
       ],
-      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Wenn die Anmeldung eingeschränkt ist, können nur ${ primaryEmailElement } und dein Benutzername ${ usernameElement } zur Anmeldung verwendet werden. Deine anderen E-Mail-Adressen können nicht mit deinem Konto verknüpft werden, selbst wenn jemand sie kennt."
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Wenn die Anmeldung eingeschränkt ist, kann nur deine E-Mail-Adresse **${ primaryEmail }** zur Anmeldung verwendet werden. Deine sonstigen Adressen können nicht mit deinem Konto verknüpft werden, selbst wenn sie jemandem bekannt sind."
       ],
-      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Wenn die Anmeldung eingeschränkt ist, kann nur deine E-Mail-Adresse ${ primaryEmailElement } zur Anmeldung verwendet werden. Deine weiteren E-Mail-Adressen können nicht mit deinem Konto verknüpft werden, selbst wenn jemand sie kennen sollte."
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Wenn die Anmeldung eingeschränkt ist, kann nur dein Benutzername **${ username }** zur Anmeldung verwendet werden. Deine sonstigen Adressen können nicht mit deinem Konto verknüpft werden, selbst wenn sie jemand kennt."
       ],
-      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Wenn die Anmeldung eingeschränkt ist, kann nur dein Benutzername ${ usernameElement } zur Anmeldung verwendet werden. Deine anderen E-Mail-Adressen können nicht mit deinem Konto in Verbindung gebracht werden, selbst wenn jemand sie kennt."
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem ursprünglichen Benutzernamen **${ username }** anmelden – entweder allein oder in der Form **${ firstEmail }**, **@${ secondDomain }** oder **@${ thirdDomain }**. Deine anderen E-Mail-Adressen können nicht zur Anmeldung verwendet werden."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem ursprünglichen Benutzernamen **${ username }** anmelden – entweder allein oder in Kombination mit **${ firstEmail }** oder **@${ secondDomain }**. Deine sonstigen E-Mail-Adressen können nicht zur Anmeldung genutzt werden."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem ursprünglichen Benutzernamen **${ username }** anmelden, entweder allein oder in Kombination mit **${ firstEmail }**. Deine sonstigen E-Mail-Adressen können nicht zur Anmeldung verwendet werden."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wenn du kündigst, wird dein Abonnement nicht verlängert, aber du kannst die Vorteile des Abonnements noch bis zum Ende des Abonnementzeitraums nutzen. Danach wirst du auf das ${ BRAND_NAME } Free-Abonnement zurückgestuft."
+      ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "Wenn du kündigst, wird dein Abonnement nach Ablauf der Probezeit nicht fortgesetzt."
       ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wenn du kündigst, wird dein Abonnement nicht verlängert, aber du kannst die Vorteile des Abonnements noch bis zum Ende der Testphase nutzen. Danach wirst du auf den ${ BRAND_NAME } Free-Abonnement zurückgestuft."
@@ -9751,6 +9799,9 @@
         "Du kannst in den nächsten 24 Stunden nicht mehr als ${ emailSendLimitNumber } E-Mail-Einladung versenden",
         "Du kannst in den nächsten 24 Stunden nicht mehr als ${ emailSendLimitNumber } E-Mail-Einladungen versenden"
       ],
+      "You cancel it in the store.": [
+        "Du kannst es im Store kündigen."
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Du kannst keine ${ MAIL_APP_NAME }-Benutzer empfehlen."
       ],
@@ -9794,6 +9845,9 @@
       ],
       "You have no transactions.": [
         "Du hast keine Transaktionen."
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "Du hast mehrere Abonnements. Wähle das aus, das du kündigen möchtest; deine anderen Abonnements sind davon nicht betroffen. Ein gekündigtes Abonnement wird nicht verlängert, und du behältst deine Vorteile bis zum Ende des Abrechnungszeitraums."
       ],
       "You have unpublished changes": [
         "Du hast unveröffentlichte Änderungen"
@@ -9943,6 +9997,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Die E-Mails deiner Organisation werden durch eine Ende-zu-Ende-Verschlüsselung mit dem Organisationsschlüssel geschützt. Dieser Fingerabdruck kann verwendet werden, um sicherzustellen, dass alle Administratoren in deinem Konto einen identischen Schlüssel verwenden."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Deine anderen E-Mail-Adressen können erst dann zur Anmeldung verwendet werden, wenn diese Funktion deaktiviert ist."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Deine Zahlungsdaten sind durch TLS-Verschlüsselung und Schweizer Datenschutzgesetze geschützt."
@@ -10962,11 +11019,11 @@
       "Restrict sign-in to email address": [
         "Anmeldung auf E-Mail-Adresse beschränken"
       ],
-      "Restrict sign-in to primary email address": [
-        "Anmeldung auf die Haupt-E-Mail-Adresse beschränken"
-      ],
       "Restrict sign-in to username": [
         "Anmeldung auf Benutzernamen beschränken"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Das Anmelden auf Benutzernamen und übereinstimmende ${ BRAND_NAME }-Adressen beschränken"
       ],
       "Reveal password": [
         "Passwort anzeigen"
@@ -13414,8 +13471,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Jederzeit vorher kündigen.** Du kannst ${ planTitle } bis zum Ende der Testversion kostenlos nutzen."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Wenn du nach Ablauf der Testversion fortfährst,** kannst du innerhalb von 30 Tagen kündigen und erhältst eine anteilige Rückerstattung."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Hast du nach der Testphase deine Meinung geändert?** Kündige innerhalb von 30 Tagen nach deiner ersten Zahlung, und wir erstatten dir die nicht genutzte Zeit."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Sobald dein volles Abonnement beginnt,** kannst du immer noch innerhalb von 30 Tagen kündigen und eine anteilige Rückerstattung erhalten."
@@ -14311,11 +14368,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Wende dich an den Kundensupport, um den Eigentümerwechsel zu bestätigen."
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Niemals"
       ]
     },
     "Payments.ModificationWarning": {
@@ -17400,6 +17452,14 @@
         "Demnächst"
       ]
     },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "Ab ${ startTime }"
+      ]
+    },
     "Subtitle": {
       "${ DRIVE_PLUS_NAME } offers 1 TB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ DRIVE_PLUS_NAME } bietet 1 TB Speicherplatz für deine Dateien und Fotos. Außerdem hast du Anspruch auf jährliche Speicherplatzboni."
@@ -18888,6 +18948,9 @@
       "Restore administrator privileges": [
         "Administrationsprivilegien wiederherstellen"
       ],
+      "Restrict sign-in?": [
+        "Anmeldung einschränken?"
+      ],
       "Reverse charge not supported": [
         "Rückerstattungen der Umsatzsteuer nicht unterstützt"
       ],
@@ -19222,8 +19285,8 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Willkommen bei ${ BRAND_NAME } for Business"
       ],
-      "What changes if you switch to the Free plan": [
-        "Was sich ändert, wenn du zum kostenlosen Abonnement wechselst"
+      "What changes if you cancel ${ planDisplayName }": [
+        "Dies ändert sich, wenn du ${ planDisplayName } kündigst"
       ],
       "What is an alias?": [
         "Was ist ein Alias?"
@@ -19351,20 +19414,20 @@
       "Billing": [
         "Abrechnung"
       ],
-      "End date": [
-        "Enddatum"
-      ],
       "Plan": [
         "Abonnement"
       ],
       "Price": [
         "Preis"
       ],
-      "Start date": [
-        "Startdatum"
+      "Renewal": [
+        "Verlängerung"
       ],
       "Status": [
         "Status"
+      ],
+      "Subscription term": [
+        "Mindestvertragslaufzeit"
       ]
     },
     "Today icon tooltip in mini calendar": {

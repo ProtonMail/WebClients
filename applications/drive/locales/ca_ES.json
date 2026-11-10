@@ -37,7 +37,7 @@
         "Botiga de ${ BRAND_NAME }"
       ],
       "About ${ name }": [
-        "Pel que fa a ${ name }"
+        "Quant a ${ name }"
       ],
       "Accept": [
         "Accepta"
@@ -52,7 +52,7 @@
         "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ name }": [
-        "Afegir ${ name }"
+        "Afegeix ${ name }"
       ],
       "Add ${ photoCount } photo to a new album": [
         "Afegeix ${ photoCount } foto a un àlbum nou",
@@ -90,6 +90,9 @@
       ],
       "Add note": [
         "Afegeix una nota"
+      ],
+      "Add payment method": [
+        "Afegir un mètode de pagament"
       ],
       "Add people or groups to share": [
         "Afegeix persones o grups per compartir"
@@ -161,6 +164,9 @@
       ],
       "Cancel transfers": [
         "Cancel·la les transferències"
+      ],
+      "Cancel trial": [
+        "Cancel·lar la prova"
       ],
       "Cancel trial and pay": [
         "Cancel·la la prova i paga"
@@ -529,6 +535,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Aneu a ${ planOrAppName }"
+      ],
+      "Go to folder": [
+        "Ves a la carpeta"
       ],
       "Go to label": [
         "Ves a l'etiqueta"
@@ -1503,7 +1512,7 @@
     },
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
-        "Garantia de devolució de 30 dies: cancel·leu-ho en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per obtenir un reemborsament."
+        "Garantia de devolució de 30 dies: cancel·leu en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per a obtenir un reemborsament."
       ]
     },
     "BF2024: Deal details": {
@@ -3392,7 +3401,7 @@
         "Ja existeix un grup amb aquest nom"
       ],
       "A message is required when reporting copyright infringement or stolen data": [
-        "Cal un missatge quan s'informa d'una infracció de drets d'autor o de dades robades"
+        "El missatge és requerit quan s'informa d'una infracció de drets d'autor o de dades robades"
       ],
       "Address could not be added.": [
         "No s'ha pogut afegir l'adreça."
@@ -3419,7 +3428,7 @@
         "Error d'autenticació."
       ],
       "Bookmark password is not available": [
-        "La contrasenya del marcador de pàgina no està disponible"
+        "La contrasenya de l'adreça d'interès no està disponible"
       ],
       "Calendar limit reached": [
         "Límit de calendari assolit"
@@ -3443,7 +3452,7 @@
         "No s'ha pogut trobar la destinació"
       ],
       "Cannot move item without a valid name, please rename the item first": [
-        "No es pot moure l'element sense un nom vàlid, canvieu-ne el nom primer"
+        "No es pot moure l'element sense un nom vàlid. Canvieu-ne el nom primer"
       ],
       "Cannot share root folder": [
         "No es pot compartir la carpeta arrel"
@@ -3583,10 +3592,10 @@
         "No s\"ha pogut crear el node de compartició públic"
       ],
       "Failed to decrypt bookmark key: ${ message }": [
-        "No s'ha pogut desxifrar la clau del marcador de pàgina: ${ message }"
+        "No s'ha pogut desxifrar la clau de l'adreça d'interès: ${ message }"
       ],
       "Failed to decrypt bookmark name: ${ message }": [
-        "No s'ha pogut desxifrar el nom del marcador de pàgina: ${ message }"
+        "No s'ha pogut desxifrar el nom de l'adreça d'interès: ${ message }"
       ],
       "Failed to decrypt bookmark password: ${ message }": [
         "No s'ha pogut desxifrar la contrasenya de l'adreça d'interès: ${ message }"
@@ -3740,10 +3749,10 @@
         "Signatura no trobada"
       ],
       "Missing signature for ${ signatureType }": [
-        "Falta la signatura per ${ signatureType }"
+        "Falta la signatura per a ${ signatureType }"
       ],
       "Move operation aborted": [
-        "S'ha cancel·lat l'operació de moviment"
+        "S'ha avortat l'operació de desplaçament"
       ],
       "Moving item to a non-folder is not allowed": [
         "No es permet moure un element a un element que no sigui una carpeta"
@@ -3800,7 +3809,7 @@
         "S'ha cancel·lat l'operació"
       ],
       "Operation failed, try again later": [
-        "Ha fallat l'operació, torneu-ho a provar més tard"
+        "Ha fallat l'operació. Torneu-ho a provar més tard"
       ],
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
@@ -3922,10 +3931,10 @@
         "Ha fallat la verificació de la signatura: ${ errorMessage }"
       ],
       "Signature verification for ${ signatureType } failed": [
-        "Ha fallat la verificació de la signatura per ${ signatureType }"
+        "No s'ha pogut verificar la signatura per a ${ signatureType }"
       ],
       "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
-        "La verificació de la signatura per ${ signatureType } ha fallat: ${ errorMessage }"
+        "No s'ha pogut verificar la signatura per a ${ signatureType }: ${ errorMessage }"
       ],
       "Some contacts could not be deleted": [
         "Alguns contactes no poden ser esborrats"
@@ -4045,10 +4054,10 @@
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
       ],
       "This file has missing crypto material": [
-        "Aquest fitxer no té el material criptogràfic necessari"
+        "Falta material criptogràfic en aquest fitxer"
       ],
       "This file has no version available to download": [
-        "Aquest fitxer no té cap versió disponible per descarregar"
+        "Aquest fitxer no té cap versió disponible per a descarregar"
       ],
       "This file version could not be uploaded": [
         "No s'ha pogut carregar aquesta versió del fitxer"
@@ -4072,10 +4081,10 @@
         "Aquest missatge pot contenir adreces URL que no es puguin obrir amb el navegador actual."
       ],
       "Too many server errors, please try again later": [
-        "Hi ha massa errors del servidor, torneu-ho a provar més tard"
+        "S'han produït massa errors del servidor. Torneu-ho a provar més tard"
       ],
       "Too many server requests, please try again later": [
-        "Hi ha massa sol·licituds al servidor, torneu-ho a provar més tard"
+        "Hi ha hagut massa sol·licituds al servidor. Torneu-ho a provar més tard"
       ],
       "Try using only letters, numerals, and _.-": [
         "Intenteu utilitzar només lletres, numerals i _.-"
@@ -4123,7 +4132,7 @@
         "Les claus de verificació no estan disponibles"
       ],
       "Verification keys for ${ signatureType } are not available": [
-        "Les claus de verificació per ${ signatureType } no estan disponibles"
+        "Les claus de verificació per a ${ signatureType } no estan disponibles"
       ],
       "We cannot retrieve this item": [
         "No s'ha pogut recuperar aquest element"
@@ -5283,7 +5292,7 @@
         "1 caixa forta per usuari"
       ],
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
-        "Garantia de devolució de 30 dies: cancel·leu-ho en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per obtenir un reemborsament."
+        "Garantia de devolució de 30 dies: cancel·leu-ho en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per a obtenir un reemborsament."
       ],
       "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
         "Hi ha disponible una versió nova de ${ DRIVE_APP_NAME }. Torneu-la a carregar per a continuar utilitzant la cerca."
@@ -10087,8 +10096,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Cancel·leu-ho en qualsevol moment. ** Podreu utilitzar ${ planTitle } fins que acabi el període de prova, de franc."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Si continueu després del període de prova,** podreu cancel·lar-ho en un termini de 30 dies i rebre un reemborsament prorratejat."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Heu canviat d'opinió després de la prova? ** Cancel·leu-la abans de 30 dies des del primer pagament i us reemborsarem el temps no utilitzat."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Un cop comenci la vostra subscripció completa...** Encara podreu cancel·lar-la en un termini de 30 dies i rebre un reemborsament prorratejat."
@@ -10326,7 +10335,7 @@
         "País de facturació"
       ],
       "Born Private accounts can’t be purchased with an active subscription.": [
-        "Els comptes de Born Private no es poden adquirir amb una subscripció activa."
+        "Els comptes de Born Private no es poden comprar amb una subscripció activa."
       ],
       "Buying credits requires a separate purchase.": [
         "L'adquisició de crèdits requereix una compra independent."
@@ -10903,7 +10912,7 @@
         "clau de contingut"
       ],
       "hash key": [
-        "clau d'empremta electrònica"
+        "empremta electrònica"
       ],
       "key": [
         "clau"
@@ -13547,7 +13556,7 @@
     },
     "user_modal": {
       "This user gets administrator rights the next time they sign in.": [
-        "Aquest usuari obtindrà drets d'administrador la pròxima vegada que iniciïn sessió."
+        "Aquest usuari obtindrà drets d'administrador la pròxima vegada que iniciï la sessió."
       ],
       "Upgrade to a supported plan to use admin roles.": [
         "Milloreu a un pla compatible per utilitzar rols d'administrador/a."

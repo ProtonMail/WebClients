@@ -81,6 +81,9 @@
       "Add note": [
         "Дадаць нататку"
       ],
+      "Add payment method": [
+        "Дадаць спосаб аплаты"
+      ],
       "Add people or groups to share": [
         "Дадаць карыстальнікаў або групы для абагульвання"
       ],
@@ -119,6 +122,9 @@
       ],
       "Cancel subscription": [
         "Скасаваць падпіску"
+      ],
+      "Cancel trial": [
+        "Скасаваць пробны перыяд"
       ],
       "Change my access": [
         "Змяніць мой доступ"
@@ -1047,6 +1053,9 @@
       ],
       "Managed Service Provider": [
         "Пастаўшчык кіраваных паслуг"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Арганізацыі з дадатковым кампанентам «Пастаўшчык кіраваных паслуг» могуць стварыць і кіраваць дапаможнымі арганізацыямі."
       ],
       "Servers": [
         "Серверы"
@@ -3608,6 +3617,9 @@
       "You must set a name": [
         "Вы павінны задаць назву"
       ],
+      "You reached the maximum number of connected addresses": [
+        "Вы дасягнулі абмежавання па колькасці падключаных адрасоў"
+      ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
       ],
@@ -4723,6 +4735,12 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Падключыцеся да ${ VPN_APP_NAME } для прыватнага прагляду"
       ],
+      "Connected": [
+        "Падключана"
+      ],
+      "Connecting…": [
+        "Падключэнне…"
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Кантакт прызначаны групе ${ contactGroupName }"
       ],
@@ -4797,6 +4815,9 @@
       ],
       "Decrypting your document": [
         "Расшыфроўка ваша дакумента"
+      ],
+      "Disconnected": [
+        "Адключана"
       ],
       "Display word count": [
         "Паказваць колькасць слоў"
@@ -5236,6 +5257,9 @@
       "Recents": [
         "Нядаўнія"
       ],
+      "Reconnecting…": [
+        "Перападключэнне…"
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інфармацыя аб аднаўленні застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
       ],
@@ -5350,6 +5374,9 @@
       "The Beginning": [
         "Пачатак"
       ],
+      "The connection to the server was lost.": [
+        "Падключэнне да сервера страчана."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
       ],
@@ -5388,6 +5415,9 @@
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Гэта імя або псеўданім для вашай арганізацыі, якое будзе бачнае вашым карыстальнікам. Яго можна змяніць у любы час."
+      ],
+      "This link is not supported on this page.": [
+        "Гэта памылка не падтрымліваецца на гэта старонцы."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Гэта спасылка вядзе на вэб-сайт, на якім могуць паспрабаваць скрасці вашы даныя: паролі або інфармацыю аб крэдытных картках."
@@ -7891,8 +7921,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Скасаваць падпіску можна ў любы час да гэтай даты.** Вы зможаце карыстацца тарыфным планам ${ planTitle } бясплатна да канца пробнага перыяду."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Калі вы працягніце пасля пробнага перыяду,** вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Змянілі сваё меркаванне пасля пробнага перыяду?** Вы можаце скасаваць падпіску на працягу 30 дзён з моманту першага плацяжу, і вам будуць вернуты грошы за нявыкарыстаны час."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Пасля таго, як пачнецца ваша поўная падпіска...** Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
@@ -8068,6 +8098,12 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (з улікам падатку)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } не можа быць аб'яднаны з ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } даступна толькі на тарыфных планах, якія арыентаваны на бізнес."
+      ],
       "Amount due after trial on ${ formattedDate }": [
         "Сума да аплаты пасля пробнага перыяду на ${ formattedDate }"
       ],
@@ -8086,6 +8122,12 @@
       "Please close extra wallet accounts before changing your plan.": [
         "Закрыйце ўліковыя запісы дадатковых кашалькоў перад змяненнем вашага тарыфнага плана."
       ],
+      "Please close extra wallets before changing your plan.": [
+        "Закрыйце дадатковыя кашалькі перад змяненнем свайго тарыфнага плана."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Ліцэнзіі Proton Meet павінны адпавядаць колькасці ўдзельнікаў."
+      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Кошт падаўжэння можа быць зменены ў адпаведнасці з ${ termsAndConditionsLink }."
       ],
@@ -8103,6 +8145,9 @@
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць адрасоў для вашага ўліковага запісу."
       ],
       "The selected plan doesn’t offer enough domains for your account.": [
         "Выбраны тарыфны план не прапануе дастатковую колькасць даменаў для вашага ўліковага запісу."
@@ -8149,6 +8194,15 @@
         "Пасля гэтага адбудзецца аўтаматычнае падаўжэнне за ${ renewPriceStr } за ${ renewalLength } месяцаў. Скасаваць можна ў любы час.",
         "Затым ён будзе аўтаматычна падоўжаны за ${ renewPriceStr } на ${ renewalLength } месяцаў. Вы можаце скасаваць у любы час."
       ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Гэты вылучаны сервер прызначаны шлюзу і не можа быць зменены."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Гэты тарыфны план не падтрымлівае кіруемыя функцыі ў вашым уліковым запісе."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Гэты тарыфны план не падтрымлівае ўдзельнікаў у вашым уліковым запісе."
+      ],
       "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
         "Тарыфныя планы з пробным перыядам не падтрымліваюць ліцэнзіі ${ LUMO_SHORT_APP_NAME }."
       ],
@@ -8163,6 +8217,9 @@
       ],
       "Trial plans don’t support this many members.": [
         "Тарыфныя планы з пробным перыядам не падтрымліваюць вялікую колькасць удзельнікаў."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "У вас ужо ёсць ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
       "You already own a Born Private account.": [
         "Вы ўжо валодаеце ўліковым запісам Born Private."

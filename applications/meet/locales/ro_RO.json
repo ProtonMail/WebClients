@@ -2320,6 +2320,9 @@
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "Înregistrarea s-a oprit deoarece nu a putut fi salvată. S-a păstrat până în acest punct."
       ],
+      "Recording stopped because of an error.": [
+        "Înregistrarea s-a oprit din cauza unei erori."
+      ],
       "Renaming root item is not allowed": [
         "Redenumirea articolului rădăcină nu este permisă."
       ],
@@ -2846,6 +2849,9 @@
       "Camera effects": [
         "Efecte de cameră"
       ],
+      "Camera is starting": [
+        "Camera pornește"
+      ],
       "Camera permission denied": [
         "Accesul la cameră a fost respins"
       ],
@@ -3101,6 +3107,9 @@
       "Loop an uploaded video or your live camera through background blur.": [
         "Redați în buclă un videoclip încărcat sau camera live prin estomparea fundalului."
       ],
+      "Lost connection to the meeting server. Reconnecting…": [
+        "S-a pierdut conexiunea la serverul de conferințe. Se reconectează…"
+      ],
       "Lower participant's hand": [
         "Coborâți mâna participantului"
       ],
@@ -3110,8 +3119,14 @@
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
         "Întâlniți-vă fără restricții. Treceți la un plan superior a elimina limita de o oră și găzduiți până la 100 de participanți."
       ],
+      "Meeting almost full": [
+        "Conferință aproape plină"
+      ],
       "Meeting ended": [
         "Conferința s-a încheiat"
+      ],
+      "Meeting full": [
+        "Conferință plină"
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Conferință plină (Participanți: ${ maxParticipants })"
@@ -3160,6 +3175,9 @@
       ],
       "Microphone effects": [
         "Efecte microfon"
+      ],
+      "Microphone is starting": [
+        "Microfonul pornește"
       ],
       "Microphone permission denied": [
         "Accesul la microfon a fost respins"
@@ -3313,6 +3331,9 @@
       ],
       "Reconnecting to meeting...": [
         "Se reconectează la conferință..."
+      ],
+      "Reconnecting…": [
+        "Se reconectează…"
       ],
       "Record your meetings": [
         "Înregistrați-vă conferințele"
@@ -3635,11 +3656,17 @@
       "Your browser or device isn’t supported": [
         "Navigatorul web sau dispozitivul nu este suportat."
       ],
+      "Your camera is still starting": [
+        "Camera încă pornește"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
       ],
       "Your meeting is ready": [
         "Conferința este pregătită"
+      ],
+      "Your microphone is still starting": [
+        "Microfonul încă pornește"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
@@ -3881,6 +3908,9 @@
       ],
       "Raw": [
         "Brut"
+      ],
+      "Reactions": [
+        "Reacții"
       ],
       "Remember my name on this device": [
         "Reține-mi numele pe acest dispozitiv"

@@ -237,6 +237,12 @@
       "Cancel": [
         "Annuleren"
       ],
+      "Cancel ${ planTitle }": [
+        "Annuleer ${ planTitle }"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "Annuleer proefversie ${ planTitle }"
+      ],
       "Cancel import": [
         "Import annuleren"
       ],
@@ -614,6 +620,9 @@
       ],
       "Don't show again": [
         "Niet meer weergeven"
+      ],
+      "Don't show this offer again": [
+        "Toon deze aanbieding niet opnieuw"
       ],
       "Donate": [
         "Doneren"
@@ -1930,6 +1939,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "Annuleer abonnement"
+      ],
       "Reactivate": [
         "Opnieuw activeren"
       ]
@@ -2141,6 +2153,9 @@
       ],
       "Permission revoked": [
         "Toestemming onderbroken"
+      ],
+      "Sign-in": [
+        "Aanmelden"
       ]
     },
     "Admin": {
@@ -2375,6 +2390,9 @@
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wanneer u opzegt, wordt uw gratis proefabonnement niet omgezet in een betaald abonnement, maar kunt u nog steeds van de voordelen van het abonnement genieten tot het einde van de proefperiode. Daarna wordt u gedowngraded naar het ${ BRAND_NAME } gratis abonnement."
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "Wanneer u opzegt, wordt uw gratis proefperiode niet omgezet in een betaald abonnement."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
@@ -3699,8 +3717,8 @@
       "Confirm cancellation": [
         "Bevestig annulering"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Als u de limieten van het gratis abonnement overschrijdt, kunt u het volgende niet meer doen:"
+      "If you exceed your plan limits, you won't be able to:": [
+        "Als u de limieten van uw abonnement overschrijdt, kunt u het volgende niet doen:"
       ],
       "Keep current plan": [
         "Huidig plan behouden"
@@ -3717,8 +3735,11 @@
       "Upload any new files": [
         "Nieuwe bestanden toevoegen"
       ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Wanneer uw abonnement op ${ endDate } afloopt, wordt uw account overgezet naar het gratis abonnement. Als uw gebruik de limieten van het gratis abonnement overschrijdt, zijn sommige functies mogelijk tijdelijk niet beschikbaar."
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Wanneer uw ${ planDisplayName }-abonnement eindigt op ${ endDate }, verliest u de functies ervan. Als uw gebruik vervolgens uw abonnementslimieten overschrijdt, zijn sommige functies mogelijk tijdelijk niet beschikbaar."
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Wanneer uw abonnement eindigt op ${ endDate }, verliest u de functies ervan. Als uw gebruik vervolgens uw abonnementslimieten overschrijdt, zijn sommige functies mogelijk tijdelijk niet beschikbaar."
       ]
     },
     "Confirm modal title": {
@@ -6986,9 +7007,6 @@
       "Invalid invitation link": [
         "Ongeldige uitnodigingskoppeling"
       ],
-      "Invalid joining link. Please contact your administrator.": [
-        "Ongeldige deelnamelink. Neem contact op met uw beheerder."
-      ],
       "Invalid name": [
         "Ongeldige naam"
       ],
@@ -7363,6 +7381,9 @@
       "The amount due has changed. Please try again.": [
         "Het verschuldigde bedrag is gewijzigd. Probeer het opnieuw."
       ],
+      "The device you scanned the QR code with didn't send your sign-in details. Update the app on that device and try again.": [
+        "Het apparaat waarmee u de QR-code heeft gescand, heeft uw inloggegevens niet verzonden. Update de app op dat apparaat en probeer het opnieuw."
+      ],
       "The email addresses do not match": [
         "De e-mailadressen komen niet overeen"
       ],
@@ -7404,6 +7425,9 @@
       ],
       "The session has expired. Please sign in again.": [
         "De sessie is verlopen. Log opnieuw in."
+      ],
+      "The session has expired. Please try again.": [
+        "De sessie is verlopen. Probeer het nog eens."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Het geüploade bestand komt niet overeen met het origineel. Probeer het opnieuw."
@@ -7990,9 +8014,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME }-groepen"
       ],
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Slechts één gratis proefperiode per gebruiker. Regelmatige prijsstelling is van toepassing daarna."
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Accounts met een eigen domein kunnen zich niet aansluiten bij een Family-abonnement."
       ],
@@ -8058,9 +8079,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Het abonnement zal worden gefactureerd aan de primaire beheerder van dit abonnement."
       ],
-      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
-        "Om de overstap makkelijker te maken, geven we u 30 dagen toegang tot ${ BRAND_NAME } Unlimited*."
-      ],
       "View the invitation": [
         "Bekijk de uitnodiging",
         "Bekijk de uitnodigingen"
@@ -8120,14 +8138,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Slechts één gratis proefperiode per gebruiker. Regelmatige prijsstelling is van toepassing daarna."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Na het verlaten van uw abonnement zal deze gebruiker worden verplaatst naar een ${ BRAND_NAME } Free abonnement."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Na het verlaten van uw abonnement zal deze gebruiker worden verplaatst naar een ${ BRAND_NAME } Onbeperkt abonnement met een gratis proefperiode van 30 dagen.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Wijs opslag toe aan het beheerdersaccount. U kunt de opslag voor extra gebruikers later verdelen."
@@ -10540,6 +10552,9 @@
       "Discount": [
         "Korting"
       ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
+      ],
       "Discover new features unlocked and start using them right away!": [
         "Ontdek nieuwe functies ontgrendeld en begin direct met het gebruik ervan!"
       ],
@@ -12819,6 +12834,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wanneer u opzegt, dan zal uw abonnement niet worden verlengd, maar u kunt nog steeds van de voordelen van uw abonnement genieten tot het einde van de abonnementsperiode. Daarna wordt u gedowngraded naar het ${ BRAND_NAME } Free abonnement."
       ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "Wanneer u opzegt, gaat uw abonnement niet in na de proefperiode."
+      ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wanneer u annuleert, zal uw abonnement niet starten, maar u kunt nog steeds genieten van de voordelen van uw abonnement tot het einde van de proefperiode. Daarna wordt u gedowngraded naar het ${ BRAND_NAME } Free abonnement."
       ],
@@ -12997,6 +13015,9 @@
         "U kan niet meer dan ${ emailSendLimitNumber } e-mailuitnodiging verzenden voor de komende 24 uur",
         "U kan niet meer dan ${ emailSendLimitNumber } e-mailuitnodigingen verzenden voor de komende 24 uur"
       ],
+      "You cancel it in the store.": [
+        "U annuleert het in de winkel."
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "U kan geen ${ MAIL_APP_NAME }-gebruikers doorverwijzen"
       ],
@@ -13049,6 +13070,9 @@
       ],
       "You have no transactions.": [
         "U heeft geen transacties."
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "U hebt meerdere abonnementen. Kies het abonnement dat u wilt opzeggen: uw andere abonnementen worden niet beïnvloed. Een opgezegd abonnement wordt niet verlengd en u behoudt de voordelen ervan tot het einde van de abonnementsperiode."
       ],
       "You have unpublished changes": [
         "U heeft wijzigingen die niet gepubliceerd werden"
@@ -13168,6 +13192,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Uw account is momenteel geconfigureerd om het omgekeerde btw-tarief toe te passen. Dit wordt niet ondersteund voor het geselecteerde abonnement. Om door te gaan, verwijdt u het btw-nummer van het factuuradres of selecteert u een ander abonnement."
+      ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "Uw account is aangemaakt, maar we kunnen het instellen van uw plan niet voltooien."
       ],
       "Your account was successfully updated with this promotion": [
         "Uw account werd succesvol bijgewerkt met deze promotie."
@@ -15972,6 +15999,9 @@
       ],
       "Terms": [
         "Voorwaarden"
+      ],
+      "terms and conditions": [
+        "algemene voorwaarden"
       ],
       "terms of our referral program": [
         "voorwaarden van ons verwijzingsprogramma"
@@ -19568,11 +19598,6 @@
         "Neem contact op met klantenondersteuning om de eigendomswijziging te bevestigen."
       ]
     },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Nooit"
-      ]
-    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Weet u zeker dat u verder wilt gaan?"
@@ -23017,12 +23042,6 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "${ discountItem.discountPercent }% korting toegepast"
-      ],
-      "${ discountItem.discountPercent }% off": [
-        "${ discountItem.discountPercent }% korting"
-      ],
       "${ trialCycleText } free": [
         "${ trialCycleText } gratis"
       ],
@@ -23545,6 +23564,14 @@
       ],
       "Free Trial": [
         "Gratis proefversie"
+      ]
+    },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "Vanaf ${ startTime }"
       ]
     },
     "Subtitle": {
@@ -26053,8 +26080,8 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Welkom bij ${ BRAND_NAME } voor Business"
       ],
-      "What changes if you switch to the Free plan": [
-        "Wat verandert er als u overstapt naar het gratis abonnement"
+      "What changes if you cancel ${ planDisplayName }": [
+        "Wat verandert er als u ${ planDisplayName } annuleert"
       ],
       "What is an alias?": [
         "Wat is een alias?"
@@ -26231,14 +26258,17 @@
       ]
     },
     "Title subscription": {
-      "End date": [
-        "Einddatum"
-      ],
       "Plan": [
         "Abonnement"
       ],
+      "Renewal": [
+        "Hernieuwing"
+      ],
       "Status": [
         "Status"
+      ],
+      "Subscription term": [
+        "Abonnementstermijn"
       ]
     },
     "Title; create calendar modal": {

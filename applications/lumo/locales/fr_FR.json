@@ -1004,6 +1004,9 @@
       "Already in KB": [
         "Déjà dans la base de connaissances"
       ],
+      "Apply changes": [
+        "Appliquer les modifications"
+      ],
       "Back": [
         "Retour"
       ],
@@ -1409,9 +1412,6 @@
     "collider_2025: Description": {
       "${ LUMO_SHORT_APP_NAME } references your saved memories to tailor responses — communication style, expertise, recurring tools, and long-running projects.": [
         "${ LUMO_SHORT_APP_NAME } se base sur vos souvenirs enregistrés pour personnaliser ses réponses : style de communication, expertise, outils fréquemment utilisés et projets à long terme."
-      ],
-      "${ LUMO_SHORT_APP_NAME } will review chat-based memories, remove duplicates, and merge related entries into clearer ones. Memories you wrote yourself are left unchanged.": [
-        "${ LUMO_SHORT_APP_NAME } examinera les mémoires issues de conversations, retirera les doublons et fusionnera les entrées correspondantes en versions plus claires. Les mémoires que vous avez saisis vous-même ne seront pas modifiés."
       ],
       "Add connectors, manage credentials, and set tool approval policies.": [
         "Ajoutez des connecteurs, gérez les identifiants et définissez des politiques d'autorisation pour les outils."
@@ -2363,6 +2363,9 @@
       ]
     },
     "collider_2025: Label": {
+      "Added": [
+        "Ajouté"
+      ],
       "AI model": [
         "modèle IA"
       ],
@@ -2429,6 +2432,9 @@
       "Merge": [
         "Fusionner"
       ],
+      "Merged": [
+        "Fusionné"
+      ],
       "Method": [
         "Méthode"
       ],
@@ -2437,6 +2443,9 @@
       ],
       "Model and response mode": [
         "Modèle et mode de réponse"
+      ],
+      "New": [
+        "Nouveau"
       ],
       "Not factually correct": [
         "Les faits ne sont pas corrects."
@@ -2458,6 +2467,9 @@
       ],
       "Python": [
         "Python"
+      ],
+      "Removed": [
+        "Retiré"
       ],
       "required": [
         "obligatoire"
@@ -3291,6 +3303,9 @@
       "Add row below": [
         "Ajouter une ligne en dessous"
       ],
+      "Allow for this task": [
+        "Autoriser pour cette tâche"
+      ],
       "Analyze another export": [
         "Analyser une autre exportation"
       ],
@@ -3492,6 +3507,9 @@
       "Keep editing": [
         "Continuer les modifications"
       ],
+      "Learn more": [
+        "En savoir plus"
+      ],
       "Light": [
         "Clair"
       ],
@@ -3500,6 +3518,9 @@
       ],
       "Make a copy": [
         "Faire une copie"
+      ],
+      "Manage": [
+        "Gérer"
       ],
       "Manage chats": [
         "Gérer les discussions"
@@ -3533,6 +3554,9 @@
       ],
       "Next question": [
         "Prochaine question"
+      ],
+      "Not now": [
+        "Pas maintenant"
       ],
       "Numbered list": [
         "Liste numérotée"
@@ -3644,6 +3668,9 @@
       ],
       "Send": [
         "Envoyer"
+      ],
+      "Set up ${ label }": [
+        "Configurer ${ label }"
       ],
       "Set up manually": [
         "Configurer manuellement"
@@ -3906,6 +3933,9 @@
       "Could not enable desktop notifications. Please try again.": [
         "Impossible d'activer les notifications de bureau. Veuillez réessayer."
       ],
+      "Could not open connector settings. Please try again.": [
+        "Impossible d'ouvrir les paramètres du connecteur. Veuillez réessayer."
+      ],
       "Could not open notification settings. Please open System Settings manually.": [
         "Impossible d'ouvrir les paramètres de notification. Veuillez ouvrir manuellement les paramètres système."
       ],
@@ -4110,8 +4140,17 @@
       "Choose a format to export \"${ conversation.title }\":": [
         "Sélectionner un format pour exporter « ${ conversation.title } » :"
       ],
+      "Choose the connectors this task can use. Uncheck a connector to remove it from the schedule. You can change this anytime in the task's settings.": [
+        "Sélectionnez les connecteurs pouvant être utilisés pour cette tâche. Décochez un connecteur pour le retirer de la planification. Vous pouvez modifier ce paramètre à tout moment dans les paramètres de la tâche."
+      ],
       "Code": [
         "Code"
+      ],
+      "Connect and enable the selected connectors before allowing access, or uncheck them.": [
+        "Connecter et activer les connecteurs sélectionnés avant d'autoriser l'accès, ou décochez-les."
+      ],
+      "Connect and enable the selected connectors before scheduling this task.": [
+        "Connecter et activer les connecteurs sélectionnés avant de planifier cette tâche."
       ],
       "Conversation encrypted": [
         "Conversation chiffrée"
@@ -4567,6 +4606,9 @@
       "Image preview": [
         "Prévisualisation de l'image"
       ],
+      "Include ${ tool.name } in this task": [
+        "Inclure ${ tool.name } dans cette tâche"
+      ],
       "Include full conversation": [
         "Inclure la conversation complète"
       ],
@@ -4642,6 +4684,12 @@
       "ODT Document": [
         "Document ODT"
       ],
+      "Permission": [
+        "Autorisation"
+      ],
+      "Permissions": [
+        "Autorisations"
+      ],
       "PHP File": [
         "Fichier PHP"
       ],
@@ -4671,6 +4719,12 @@
       ],
       "R File": [
         "Fichier R"
+      ],
+      "Read and write": [
+        "Lecture et écriture"
+      ],
+      "Read only": [
+        "Lecture seule"
       ],
       "RTF Document": [
         "Document RTF"
@@ -5353,6 +5407,9 @@
     "collider_2025:Title": {
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "${ LUMO_SHORT_APP_NAME } ne peut pas démarrer"
+      ],
+      "${ LUMO_SHORT_APP_NAME } needs these tools to run \"${ taskName }\"": [
+        "${ LUMO_SHORT_APP_NAME } a besoin de ces outils pour exécuter « ${ taskName } »"
       ],
       "An AI assistant should empower you, not exploit you for your data.": [
         "Un assistant IA devrait vous donner les moyens d'agir, et non vous exploiter pour vos données."
@@ -9685,6 +9742,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Un moyen de paiement est requis pour que l'abonnement soit activé après la fin de la version d'essai."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Le changement de plan est incompatible pour les raisons suivantes :"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Veuillez clôturer les comptes de portefeuille supplémentaires avant de changer d'abonnement."
       ],
@@ -9696,6 +9756,9 @@
       ],
       "Processing payment": [
         "Traitement du paiement"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Le nombre de places Proton Meet doit correspondre au nombre de membres."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Le tarif du renouvellement est susceptible de changer en accord avec ${ termsAndConditionsLink }."
@@ -9774,6 +9837,9 @@
       ],
       "This plan doesn’t support the members on your account.": [
         "Cet abonnement ne prend pas en charge les membres sur votre compte."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "La souscription ne peut aboutir pour le moment. Merci de réessayer ultérieurement."
       ],
       "Timeout exceeded": [
         "Le délai est dépassé."

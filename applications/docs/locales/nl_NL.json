@@ -5045,6 +5045,9 @@
       "Recents": [
         "Recente"
       ],
+      "Reconnecting…": [
+        "Bezig met verbinden..."
+      ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
       ],
@@ -5157,11 +5160,17 @@
       "The Beginning": [
         "Het begin"
       ],
+      "The connection to the server was lost.": [
+        "De verbinding met de server is verbroken."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "De gelekte informatie werd gelekt door een dienst van een derde partij. Uw ${ BRAND_NAME } accountinformatie blijft veilig en versleuteld. ${ learnMoreLink }"
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "De eigenaar van dit adres heeft end-to-end versleuteling uitgeschakeld. Om versleutelde berichten naar dit adres te sturen moet de eigenaar end-to-end versleuteling weer inschakelen."
+      ],
+      "The server is busy.": [
+        "De server is bezig..."
       ],
       "There are no documents in the trash.": [
         "Er zijn geen documenten in de prullenbak."
@@ -5421,6 +5430,9 @@
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Uw wijzigingen worden gesynchroniseerd met Drive. Sluit de webpagina niet."
+      ],
+      "Your changes could not be encrypted. Reload the page to continue.": [
+        "De wijzigingen konden niet versleuteld worden. Herlaad de pagina om verder te gaan."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Uw wijzigingen konden niet worden gesynchroniseerd. Drive zal automatisch proberen de wijzigingen op te slaan. Sluit de webpagina niet."

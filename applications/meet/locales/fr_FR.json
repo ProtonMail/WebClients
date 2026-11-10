@@ -2111,6 +2111,9 @@
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "L'enregistrement s'est arrêté car il ne pouvait pas être enregistré. Nous l'avons conservé jusqu'à ce point."
       ],
+      "Recording stopped because of an error.": [
+        "L'enregistrement s'est interrompu en raison d'une erreur."
+      ],
       "Request aborted": [
         "Requête interrompue"
       ],
@@ -2805,6 +2808,9 @@
       "Loop an uploaded video or your live camera through background blur.": [
         "Affichez en boucle une vidéo téléchargée ou le flux de votre caméra en direct avec un flou d'arrière-plan."
       ],
+      "Lost connection to the meeting server. Reconnecting…": [
+        "La connexion au serveur de réunion a été interrompue. Reconnexion en cours…"
+      ],
       "Lower participant's hand": [
         "Baisser la main du participant"
       ],
@@ -2814,8 +2820,14 @@
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
         "Réunissez-vous sans restrictions. Passez à la version supérieure pour supprimer la limite d'une heure et accueillir jusqu'à 100 participants."
       ],
+      "Meeting almost full": [
+        "La réunion est presque complète"
+      ],
       "Meeting ended": [
         "La réunion est terminée."
+      ],
+      "Meeting full": [
+        "La réunion est complète"
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Réunion pleine (${ maxParticipants } participants)"
@@ -3005,6 +3017,9 @@
       ],
       "Reconnecting to meeting...": [
         "Reconnexion à la réunion en cours..."
+      ],
+      "Reconnecting…": [
+        "Reconnexion en cours…"
       ],
       "Record your meetings": [
         "Enregistrez vos réunions"
@@ -3524,6 +3539,9 @@
       ],
       "Raw": [
         "Brut"
+      ],
+      "Reactions": [
+        "Réactions"
       ],
       "Remember my name on this device": [
         "Se souvenir de mon nom sur cet appareil"

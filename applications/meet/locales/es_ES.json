@@ -8,11 +8,20 @@
       "(opens in new tab)": [
         "(se abre en una pestaña nueva)"
       ],
+      "Camera off": [
+        "Cámara apagada"
+      ],
       "camera off": [
         "cámara apagada"
       ],
+      "Camera on": [
+        "Cámara encendida"
+      ],
       "camera on": [
         "cámara encendida"
+      ],
+      "host": [
+        "anfitrión"
       ],
       "Meeting controls": [
         "Controles de la reunión"
@@ -20,8 +29,17 @@
       "microphone muted": [
         "micrófono silenciado"
       ],
+      "Microphone muted": [
+        "Micrófono silenciado"
+      ],
+      "Microphone on": [
+        "Micrófono encendido"
+      ],
       "microphone on": [
         "micrófono encendido"
+      ],
+      "speaking": [
+        "hablando"
       ]
     },
     "Accessibility announcement": {
@@ -341,6 +359,9 @@
       ],
       "Download": [
         "Descargar"
+      ],
+      "Download app": [
+        "Descargar aplicación"
       ],
       "Download local participant report": [
         "Descargar informe de participantes"
@@ -2293,6 +2314,9 @@
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "La grabación se ha detenido porque no se ha podido guardar. Hemos conservado lo grabado hasta este momento."
       ],
+      "Recording stopped because of an error.": [
+        "La grabación se ha detenido debido a un error."
+      ],
       "Renaming root item is not allowed": [
         "No se permite cambiar el nombre del elemento raíz"
       ],
@@ -2808,6 +2832,9 @@
       "Camera effects": [
         "Efectos de cámara"
       ],
+      "Camera is starting": [
+        "La cámara se está iniciando"
+      ],
       "Camera permission denied": [
         "Sin acceso a la cámara"
       ],
@@ -2882,6 +2909,12 @@
       ],
       "Delete room": [
         "Eliminar sala"
+      ],
+      "Do you want people to hear you in the meeting?": [
+        "¿Quieres que la gente te escuche en la reunión?"
+      ],
+      "Do you want people to see you in the meeting?": [
+        "¿Quieres que la gente te vea en la reunión?"
       ],
       "Download current logs": [
         "Descargar los registros actuales"
@@ -2963,6 +2996,9 @@
       ],
       "Get a secure meeting link then add it to your calendar": [
         "Obtén un enlace de reunión seguro y añádelo a tu calendario"
+      ],
+      "Get the best experience with the ${ protonMeet } desktop app": [
+        "Disfruta de la mejor experiencia con la aplicación de escritorio de ${ protonMeet }"
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Ve a about:config, busca media.peerconnection.enabled y establécelo en true."
@@ -3054,6 +3090,9 @@
       "Loop an uploaded video or your live camera through background blur.": [
         "Reproduce en bucle un vídeo subido o tu cámara en directo con desenfoque de fondo."
       ],
+      "Lost connection to the meeting server. Reconnecting…": [
+        "Se ha perdido la conexión con el servidor de la reunión. Reconectando…"
+      ],
       "Lower participant's hand": [
         "Bajar la mano del participante"
       ],
@@ -3063,8 +3102,14 @@
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
         "Reuniones sin restricciones. Pásate a un plan superior para eliminar el límite de 1 hora y reunir hasta a 100 participantes."
       ],
+      "Meeting almost full": [
+        "La reunión está casi llena"
+      ],
       "Meeting ended": [
         "Reunión finalizada"
+      ],
+      "Meeting full": [
+        "La reunión está llena"
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Reunión completa (${ maxParticipants } participantes)"
@@ -3113,6 +3158,9 @@
       ],
       "Microphone effects": [
         "Efectos de micrófono"
+      ],
+      "Microphone is starting": [
+        "El micrófono se está iniciando"
       ],
       "Microphone permission denied": [
         "Permiso de micrófono denegado"
@@ -3266,6 +3314,9 @@
       ],
       "Reconnecting to meeting...": [
         "Reconectando a la reunión..."
+      ],
+      "Reconnecting…": [
+        "Reconectando..."
       ],
       "Record your meetings": [
         "Grabar tus reuniones"
@@ -3588,11 +3639,17 @@
       "Your browser or device isn’t supported": [
         "Tu navegador o dispositivo no es compatible"
       ],
+      "Your camera is still starting": [
+        "Tu cámara aún se está iniciando"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico se utilizará solo para esta verificación única."
       ],
       "Your meeting is ready": [
         "Tu reunión está lista"
+      ],
+      "Your microphone is still starting": [
+        "Tu micrófono aún se está iniciando"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Tu número de teléfono se utilizará solo para esta verificación única."
@@ -3833,6 +3890,9 @@
       ],
       "Raw": [
         "En bruto"
+      ],
+      "Reactions": [
+        "/fe-meet/source-file-full.xliff\nfadfb55329a8caca6c17f904c499d8777cdcc987\ncontexto: Label\nSOCIEDAD:\n- msa\nArchivos:\n- proton-meet/src/app/components/EmojiReactionButton/EmojiReactionButton.tsx:36\nArchivo: webapp.xliff"
       ],
       "Remember my name on this device": [
         "Recordar mi nombre en este dispositivo"

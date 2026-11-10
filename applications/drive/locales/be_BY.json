@@ -93,6 +93,9 @@
       "Add note": [
         "Дадаць нататку"
       ],
+      "Add payment method": [
+        "Дадаць спосаб аплаты"
+      ],
       "Add people or groups to share": [
         "Дадаць карыстальнікаў або групы для абагульвання"
       ],
@@ -167,6 +170,9 @@
       ],
       "Cancel transfers": [
         "Скасаваць перадачы"
+      ],
+      "Cancel trial": [
+        "Скасаваць пробны перыяд"
       ],
       "Cancel trial and pay": [
         "Скасаваць пробны перыяд і купіць падпіску"
@@ -539,6 +545,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Перайсці ў ${ planOrAppName }"
+      ],
+      "Go to folder": [
+        "Перайсці ў папку"
       ],
       "Go to label": [
         "Перайсці ў меткі"
@@ -1419,6 +1428,9 @@
       ],
       "Managed Service Provider": [
         "Пастаўшчык кіраваных паслуг"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Арганізацыі з дадатковым кампанентам «Пастаўшчык кіраваных паслуг» могуць стварыць і кіраваць дапаможнымі арганізацыямі."
       ],
       "Servers": [
         "Серверы"
@@ -4258,6 +4270,9 @@
       "You must set a name": [
         "Вы павінны задаць назву"
       ],
+      "You reached the maximum number of connected addresses": [
+        "Вы дасягнулі абмежавання па колькасці падключаных адрасоў"
+      ],
       "Your import will not be processed.": [
         "Ваша імпартаванне не будзе апрацавана."
       ],
@@ -5164,6 +5179,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "${ BRAND_NAME } выкарыстоўвае гэты доступ толькі для імпарту. Google ніколі не зможа атрымаць доступ да вашага ўліковага запісу ${ BRAND_NAME }."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe памочнік у напісанні"
       ],
@@ -5262,6 +5280,9 @@
       ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "Пазначана ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
+        "${ invitation.addedByEmail.error.claimedAuthor } (неправераны адпраўнік)"
       ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } чакае запрашэння",
@@ -5644,6 +5665,9 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Падключыцеся да ${ VPN_APP_NAME } для прыватнага прагляду"
       ],
+      "Connecting to Google Drive and preparing your import.": [
+        "Падлучэнне да Google Drive і падрыхтоўка вашага імпарту."
+      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Кантакт прызначаны групе ${ contactGroupName }"
       ],
@@ -5976,6 +6000,9 @@
       ],
       "Import your files and folders": [
         "Імпарт вашых файлаў і папак"
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Імпартуйце свае файлы і папкі з Google Drive, каб забяспечыць прыватнасць для іх у ${ DRIVE_APP_NAME }."
       ],
       "Important note": [
         "Важная заўвага"
@@ -6637,6 +6664,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Некаторыя з вашых файлаў больш недаступны. Аднавіце доступ да сваіх файлаў. ${ StartRecoveryButton }"
       ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "Некаторыя больш старэйшыя файлы не былі праіндэксаваны, бо ваш Drive занадта вялікі для поўнай індэксацыі."
+      ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "Некаторыя фатаграфіі ў гэтым альбоме не захаваны ў вашай шкале часу. Выдаленне гэтага альбома прывядзе да незваротнага выдалення фатаграфій, якія знаходзяцца ў ім."
       ],
@@ -7240,8 +7270,14 @@
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Вашы файлы будуць паўторна індэксаваныя. Вы можаце працягваць пошук, але вынікі могуць быць няпоўнымі, пакуль пошук не завершыцца. Сістэма паведаміць вам, калі працэс будзе завершаны."
       ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Вашы файлы зашыфраваны і бяспечна захоўваюцца ў ${ DRIVE_APP_NAME }."
+      ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Вашы файлы больш недаступны з прычыны скідання пароля. Для аднаўлення доступу, паўторна запампуйце стары ключ шыфравання. ${ KeyReactivationButton }"
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Вашы файлы былі паспяхова імпартаваны і зашыфраваны з Google Drive у ${ DRIVE_APP_NAME }."
       ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
@@ -7254,6 +7290,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Яе падаўжэнне адбудзецца: ${ nextBillingDate }."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "Ваш імпарт заблакіраваны. Абнавіце тарыфны план, каб перанесці астатнія файлы."
       ],
       "Your information was found on ${ displayedDate }": [
         "Вашы звесткі былі знойдзены ${ displayedDate }"
@@ -10349,8 +10388,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Скасаваць падпіску можна ў любы час да гэтай даты.** Вы зможаце карыстацца тарыфным планам ${ planTitle } бясплатна да канца пробнага перыяду."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Калі вы працягніце пасля пробнага перыяду,** вы зможаце скасаваць падпіску на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Змянілі сваё меркаванне пасля пробнага перыяду?** Вы можаце скасаваць падпіску на працягу 30 дзён з моманту першага плацяжу, і вам будуць вернуты грошы за нявыкарыстаны час."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Пасля таго, як пачнецца ваша поўная падпіска...** Вы ўсё яшчэ можаце скасаваць яе на працягу 30 дзён і атрымаць прапарцыянальнае вяртанне грошай."
@@ -10568,6 +10607,12 @@
       "${ formattedPrice } (excl. tax)": [
         "${ formattedPrice } (з улікам падатку)"
       ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } не можа быць аб'яднаны з ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } даступна толькі на тарыфных планах, якія арыентаваны на бізнес."
+      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "Падатак у памеры ${ rate }%: ${ taxAmountElement }"
       ],
@@ -10637,11 +10682,20 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Спосаб аплаты патрабуецца для актывацыі падпіскі пасля завяршэння пробнага перыяду."
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Змена тарыфнага плана несумяшчальная па наступнай прычыне:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "Закрыйце ўліковыя запісы дадатковых кашалькоў перад змяненнем вашага тарыфнага плана."
       ],
+      "Please close extra wallets before changing your plan.": [
+        "Закрыйце дадатковыя кашалькі перад змяненнем свайго тарыфнага плана."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Ліцэнзіі Proton Meet павінны адпавядаць колькасці ўдзельнікаў."
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Кошт падаўжэння можа быць зменены ў адпаведнасці з ${ termsAndConditionsLink }."
@@ -10666,6 +10720,9 @@
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць адрасоў для вашага ўліковага запісу."
       ],
       "The selected plan doesn’t offer enough domains for your account.": [
         "Выбраны тарыфны план не прапануе дастатковую колькасць даменаў для вашага ўліковага запісу."
@@ -10715,11 +10772,23 @@
       "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
         "Гэта дзеянне пашырае існуючую падпіску. З вас будзе спагнана плата толькі за новыя дадаткі і час, якія засталіся ў бягучым перыядзе аплаты. Дата падаўжэння вашай падпіскі не будзе зменена."
       ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Гэты вылучаны сервер прызначаны шлюзу і не можа быць зменены."
+      ],
       "This offer is not available with your current plan.": [
         "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Гэты спосаб аплаты стане новым прадвызначаным спосабам для ўсіх будучых падаўжэнняў."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Гэты тарыфны план не падтрымлівае кіруемыя функцыі ў вашым уліковым запісе."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Гэты тарыфны план не падтрымлівае ўдзельнікаў у вашым уліковым запісе."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Гэта падпіска не можа быць завершана цяпер. Паўтарыце спробу зноў."
       ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
@@ -10750,6 +10819,9 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас ужо ёсць падпіска на гэты тарыфны план. Вы можаце змяніць сваю падпіску на ${ subscriptionPlatform }."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "У вас ужо ёсць ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
       "You already own a Born Private account.": [
         "Вы ўжо валодаеце ўліковым запісам Born Private."
@@ -12722,6 +12794,9 @@
       ],
       "Black Friday": [
         "Чорная Пятніца"
+      ],
+      "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
+        "Перанясіце свае файлы з Google Drive у ${ DRIVE_APP_NAME }"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Скасаваць падпіску ${ MAIL_SHORT_APP_NAME }"

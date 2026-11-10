@@ -516,6 +516,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "A próbaidőszak ekkor ér véget: ${ formattedDate1 }, ezután havi előfizetésre alakul át, ami automatikusan megújul ${ renewCycle } havonta. Akkor nem kerül díj felszámításra, ha lemondja ${ formattedDate2 } előtt."
+      ],
       "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
         "A próbaidőszak ekkor ér véget: ${ formattedDate1 }, ezután automatikusan megújuló havi előfizetésre alakul át. Akkor nem kerül díj felszámításra, ha lemondja ${ formattedDate2 } előtt."
       ],
@@ -1018,6 +1021,9 @@
       "${ users } user": [
         "${ users } felhasználó",
         "${ users } felhasználó"
+      ],
+      "Amount due now": [
+        "Az esedékes összeg"
       ],
       "Subtotal for ${ cycle } month": [
         "Összesen, ${ cycle } hónapra",
@@ -2401,6 +2407,9 @@
     "fido2: Info": {
       "Security key": [
         "Hitelesítési kulcs"
+      ],
+      "Still waiting?": [
+        "Még mindíg várakozik?"
       ]
     },
     "fido2: Label": {
@@ -2545,6 +2554,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe írási segéd"
       ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenc"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "A ${ PASS_SHORT_APP_NAME } élethosszig tartó szerződésnek nincs megújítási ára, ez egy egyszeri fizetés a ${ PASS_SHORT_APP_NAME } élethosszig tartó hozzáférésért."
       ],
@@ -2575,6 +2587,9 @@
       ],
       "Account successfully updated": [
         "A fiók sikeresen frissítve"
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hozzáadása"
       ],
       "Address copied to clipboard": [
         "Cím a vágólapra másolva"
@@ -3563,6 +3578,9 @@
       "Data breach monitoring": [
         "Adatvédelmi incidensek figyelése"
       ],
+      "Data retention policies": [
+        "Adatmegőrzési házirendek"
+      ],
       "Desktop app": [
         "Asztali alkalmazás"
       ],
@@ -3780,6 +3798,9 @@
       "Vault sharing with up to ${ n } person": [
         "Tároló megosztás ${ n } személlyel",
         "Tároló megosztás akár ${ n } személlyel"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN, hirdetésblokkolóval és rosszindulatú programok elleni védelemmel"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Átvizsgáljuk a sötét webet, hogy ellenőrizzük, kiszivárogtak-e a ${ BRAND_NAME } címei vagy e-mail álnevei, és azonnal értesítjük, ha bármit találunk."
@@ -4150,6 +4171,9 @@
       "Once your full subscription starts...": [
         "Miután elindul a teljes előfizetése..."
       ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "30 napon belül lemondhatja, és időarányos visszatérítést kap."
+      ],
       "You can still cancel within 30 days and get a pro-rata refund.": [
         "30 napon belül még mindig lemondhatja a szerződést, és időarányos visszatérítést kaphat."
       ],
@@ -4280,6 +4304,12 @@
       ],
       "More plans are available in other currencies": [
         "További csomagok érhetők el más pénznemekben"
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Csak egy ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } vásárolható."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Fizetés ${ IDEAL_WERO_BRAND_NAME }val"
       ],
       "Payment method required for the subscription to be activated after the trial ends.": [
         "Fizetési mód szükséges az előfizetés aktiválásához a próbaverzió lejárta után."
@@ -5003,6 +5033,9 @@
       "${ feature } is now active": [
         "A(z) ${ feature } mostantól aktív"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } író segéd"
+      ],
       "Account restricted": [
         "Fiók korlátozva"
       ],
@@ -5279,6 +5312,11 @@
       ],
       "The user must have an address to request data access": [
         "A felhasználónak rendelkeznie kell egy címmel az adathozzáférés igényléséhez."
+      ]
+    },
+    "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Adminisztrátor szerepkörök használatához váltson egy erre alkalmas csomagra."
       ]
     },
     "Validation": {

@@ -2017,6 +2017,9 @@
       "Didn't receive the code?": [
         "Modtog du ikke koden?"
       ],
+      "Disabled by your organization": [
+        "Deaktiveret af din organisation"
+      ],
       "Disabling auto-lock": [
         "Deaktiverer autolås"
       ],
@@ -3105,6 +3108,12 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Dine oplysninger blev fundet ${ displayedDate }"
+      ],
+      "Your organization does not allow using 2FA codes stored in ${ PASS_APP_NAME }": [
+        "Din organisation tillader ikke brugen af 2FA-koder opbevaret i ${ PASS_APP_NAME }"
+      ],
+      "Your organization does not allow using passkeys stored in ${ PASS_APP_NAME }": [
+        "Din organisation tillader ikke brugen af adgangsnøgler opbevaret i ${ PASS_APP_NAME }"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kræver, at du sikrer din adgang til ${ PASS_APP_NAME }"

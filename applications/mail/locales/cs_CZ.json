@@ -1519,7 +1519,10 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči"
+        "Důvěřovat klíči",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům",
+        "Důvěřovat klíčům"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -4402,6 +4405,14 @@
         "Ve vámi nahraném souboru CSV jsme zjistili následující pole. Zaškrtněte ta, která chcete importovat."
       ]
     },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } nová zpráva",
+        "${ messageCount } nové zprávy",
+        "${ messageCount } nových zpráv",
+        "${ messageCount } nových zpráv"
+      ]
+    },
     "Desktop notification title": {
       "New email received": [
         "Nový e-mail byl přijat"
@@ -6682,6 +6693,12 @@
         "${ contactsLength } kontaktů",
         "${ contactsLength } kontaktů"
       ],
+      "${ count } email → ${ dest }": [
+        "${ count } email → ${ dest }",
+        "${ count } emaily → ${ dest }",
+        "${ count } emailů → ${ dest }",
+        "${ count } emailů → ${ dest }"
+      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } z ${ totalProgress }",
         "${ currentProgress } ze ${ totalProgress }",
@@ -6765,6 +6782,12 @@
         "${ groupCounts } skupiny nalezeny",
         "${ groupCounts } skupin nalezeno",
         "${ groupCounts } skupin nalezeno"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } problém při importu:",
+        "${ issues.length } problémy při importu:",
+        "${ issues.length } problémů při importu:",
+        "${ issues.length } problémů při importu:"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta psaní Scribe"
@@ -7648,6 +7671,12 @@
       "Forgot password?": [
         "Zapomněli jste heslo?"
       ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Byl nalezen aktuální šifrovaný vyhledávací index s ${ oldIndexSize } zprávou.",
+        "Byl nalezen aktuální šifrovaný vyhledávací index s ${ oldIndexSize } zprávama.",
+        "Byl nalezen aktuální šifrovaný vyhledávací index s ${ oldIndexSize } zprávama.",
+        "Byl nalezen aktuální šifrovaný vyhledávací index s ${ oldIndexSize } zprávama."
+      ],
       "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
         "${ ASSISTANT_TRIAL_TIME_DAYS } den na vyzkoušení zdarma",
         "${ ASSISTANT_TRIAL_TIME_DAYS } dny na vyzkoušení zdarma",
@@ -8208,6 +8237,36 @@
       ],
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Obraťte se na nás pro pomoc s čímkoli od ${ BRAND_NAME }"
+      ],
+      "Read ${ count } email": [
+        "Přečíst ${ count } email",
+        "Přečíst ${ count } emaily ",
+        "Přečíst ${ count } emailů",
+        "Přečíst ${ count } emailů"
+      ],
+      "Read ${ count } email on screen": [
+        "Přečíst ${ count } email na obrazovce",
+        "Přečíst ${ count } emaily na obrazovce",
+        "Přečíst ${ count } emailů na obrazovce",
+        "Přečíst ${ count } na obrazovce"
+      ],
+      "Read your ${ count } filter": [
+        "Přečtěte ${ count } svůj filtr",
+        "Přečtěte ${ count } své filtry",
+        "Přečtěte ${ count } svých filtrů",
+        "Přečtěte ${ count } svých filtrů"
+      ],
+      "Read your ${ count } folder": [
+        "Přečtěte ${ count } svou složku",
+        "Přečtěte ${ count } své složky",
+        "Přečtěte ${ count } svých složek",
+        "Přečtěte ${ count } svých složek"
+      ],
+      "Read your ${ count } label": [
+        "Přečtěte ${ count } svůj štítek",
+        "Přečtěte ${ count } své štítky",
+        "Přečtěte ${ count } svých štítků",
+        "Přečtěte ${ count } svých štítků"
       ],
       "Recipient: ": [
         "Příjemce: "

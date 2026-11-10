@@ -1273,6 +1273,9 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Не ўдалося перамясціць усе элементы з \"${ payload.content.name }\""
       ],
+      "Failed to move folder": [
+        "Не ўдалося перамясціць папку"
+      ],
       "Failed to move items": [
         "Не ўдалося перамясціць элементы"
       ],
@@ -2452,6 +2455,15 @@
         "Толькі ${ count } элементы будуць перамешчаны. Элементы ў папках перамешчаны не будуць.",
         "Толькі ${ count } элементаў будуць перамешчаны. Элементы ў папках перамешчаны не будуць.",
         "Толькі ${ count } элементаў будуць перамешчаны. Элементы ў папках перамешчаны не будуць."
+      ],
+      "Only aliases are shown": [
+        "Паказаны толькі псеўданімы"
+      ],
+      "Only identities are shown": [
+        "Паказаны толькі ідэнтычнасці"
+      ],
+      "Only logins are shown": [
+        "Паказаны толькі запісы ўваходу"
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Паказаны толькі токены, якія пратэрмінаваны за апошнія 30 дзён. Больш старыя токены аўтаматычна выдалены."
@@ -5358,6 +5370,9 @@
       ],
       "Modified": [
         "Зменена"
+      ],
+      "Move \"${ folderName }\" to": [
+        "Перамяшчэнне \"${ folderName }\" у"
       ],
       "Move ${ count } item to ${ target }": [
         "Перамясціць ${ count } элемент у ${ target }",

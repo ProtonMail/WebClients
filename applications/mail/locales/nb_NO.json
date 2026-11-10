@@ -102,6 +102,9 @@
       "Add participant": [
         "Legg til deltaker"
       ],
+      "Add payment method": [
+        "Legg til betalingsmåte"
+      ],
       "Add phone number": [
         "Legg til telefonnummer"
       ],
@@ -195,6 +198,9 @@
       ],
       "Cancel subscription": [
         "Avbryt abonnement"
+      ],
+      "Cancel trial": [
+        "Avbryt prøveperioden"
       ],
       "Cancel trial and pay": [
         "Avbryt prøveperioden og betal"
@@ -1571,7 +1577,8 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarer nøkkel"
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -2280,6 +2287,11 @@
       ],
       "Yearly": [
         "Årlig"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName }-skrivebordsapplikasjon"
       ]
     },
     "Bug category": {
@@ -6239,6 +6251,9 @@
       "Drawer": [
         "Sidepanel"
       ],
+      "Good to know before you connect": [
+        "Greit å vite før du kobler til"
+      ],
       "Hardware not compatible": [
         "Maskinvare ikke kompatibel"
       ],
@@ -6268,6 +6283,9 @@
       ],
       "Username": [
         "Brukernavn"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Hva er hovedgrunnen til at du ble med i ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -6707,6 +6725,9 @@
         "${ currentProgress } ut av ${ totalProgress }",
         "${ currentProgress } ut av ${ totalProgress }"
       ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } av ${ steps }"
+      ],
       "${ dateString } at ${ formattedTime }": [
         "${ dateString } kl. ${ formattedTime }"
       ],
@@ -6972,6 +6993,9 @@
       "1 vault per user": [
         "1 hvelv per bruker"
       ],
+      "A new or separate address": [
+        "En ny eller egen adresse"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan bare brukes til å bekrefte en ${ BRAND_NAME }-konto"
       ],
@@ -6983,6 +7007,9 @@
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "En sikker tilkobling er avgjørende når du jobber eksternt. Et VPN beskytter bedriftsdata mot cybertrusler og holder arbeidet ditt privat."
+      ],
+      "A specific feature (tell us)": [
+        "En bestemt funksjon (gi oss tips)"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruker er en konto assosiert med et enkelt brukernavn, postboks og person"
@@ -7086,6 +7113,9 @@
         "Alle kontaktene dine blir importert, opptil en grense på ${ maxContact }.",
         "Alle kontaktene dine blir importert, opptil en grense på ${ maxContact }."
       ],
+      "Almost done": [
+        "Nesten ferdig"
+      ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
       ],
@@ -7169,6 +7199,9 @@
       ],
       "Are you sure you want to permanently delete this message?": [
         "Er du sikker på at du vil slette denne meldingen permanent?"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Be administratoren din om å oppgradere planen eller fjerne en side fra sidefeltet for bestillingssider i ${ CALENDAR_APP_NAME }."
       ],
       "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
         "Be administratoren din om å oppgradere planen eller fjerne en side fra sidefeltet for bestillingssider."
@@ -7274,6 +7307,12 @@
       ],
       "Choose a plan that works best for you.": [
         "Velg en plan som fungerer best for deg."
+      ],
+      "Choose all that apply.": [
+        "Velg alt som passer."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Velg en. Det hjelper oss å forbedre ${ MAIL_APP_NAME }."
       ],
       "Choose your service to connect with": [
         "Velg tjenesten du vil koble til"
@@ -7779,6 +7818,9 @@
       "How hide-my-email aliases works": [
         "Hvordan hide-my-email-aliaser fungerer"
       ],
+      "I didn't have one": [
+        "Jeg hadde ikke en"
+      ],
       "I use other Proton products": [
         "Jeg bruker andre Proton-produkter"
       ],
@@ -7939,6 +7981,9 @@
       ],
       "Learn what to do ${ dataLeakedLink }": [
         "Finn ut hva du kan gjøre ${ dataLeakedLink }"
+      ],
+      "Leave Big Tech": [
+        "Forlate Big Tech"
       ],
       "Left to Right": [
         "Venstre til Høyre"
@@ -8218,6 +8263,9 @@
       ],
       "On public WiFi networks": [
         "På offentlige Wi-Fi-nettverk"
+      ],
+      "One last step": [
+        "Ett siste trinn"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere av de betrodde nøklene dine ble merket \"kompromittert\" av eieren. Vi anbefaler at du \"ikke stoler på\" disse nøklene."
@@ -8711,6 +8759,9 @@
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Noen nettsteder og strømmetjenester blokkerer innhold etter region. Et VPN lar deg omgå disse begrensningene og gir fri tilgang til internett."
       ],
+      "Someone recommended it": [
+        "Ble anbefalt av noen"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Beklager, denne meldingen finnes ikke eller har løpt ut."
       ],
@@ -8726,11 +8777,17 @@
       "Start sharing it with contacts and use it for online services.": [
         "Begynn å dele det med kontakter og bruk det til nettjenester."
       ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Begynn å bruke ${ MAIL_APP_NAME }"
+      ],
       "Start using the shorter, catchier version of your email address.": [
         "Bruk en kortere og mer fengende versjon av e-postadressen din."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Hold deg tilkoblet uten problemer ved å aktivere følgende VPN-innstillinger:"
+      ],
+      "Stop companies reading my emails": [
+        "Hindre at selskaper leser e-posten min"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Lagringsfunksjoner støttes ikke i denne nettleseren, vi trenger denne støtten for å aktivere søk etter meldingsinnhold."
@@ -8769,11 +8826,20 @@
       "Surveillance": [
         "Overvåking"
       ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "Svar på undersøkelser er ikke ende-til-ende-krypterte, ikke del noen sensitiv informasjon."
+      ],
       "Symbols (#$&)": [
         "Symboler (#$&)"
       ],
       "Sync and manage files with the ${ DRIVE_APP_NAME } app. Create and share documents in ${ DOCS_APP_NAME }, and securely store them. All on ${ ios }, ${ android } and ${ desktop }.": [
         "Synkroniser og administrer filer med ${ DRIVE_APP_NAME }-appen. Opprett og del dokumenter i ${ DOCS_APP_NAME } og oppbevar dem sikkert. Alt på ${ ios }, ${ android } og ${ desktop }."
+      ],
+      "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
+        "Fortell meg når du er borte og hva du vil at den skal si, så får du se hele greia før den lagres."
+      ],
+      "Tell us more (optional)": [
+        "Fortell oss mer (valgfritt)"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Midlertidig utilgjengelig på grunn av høy etterspørsel. Prøv igjen senere."
@@ -9011,6 +9077,9 @@
       ],
       "To add a new booking page, ask your admin to upgrade your plan.": [
         "For å legge til en ny bestillingsside, be administratoren om å oppgradere planen din."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "For å legge til en ny bestillingsside, fjern en besillingsside fra sidemenyen i ${ CALENDAR_APP_NAME }."
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
         "For å legge til en ny bestillingsside, fjern en eksisterende fra sidefeltet for bestillingssider."
@@ -9315,8 +9384,17 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Når du er på reise eller bruker offentlig Wi-Fi, kan du koble til ${ VPN_APP_NAME } for å forhindre at noen sporer nettaktiviteten eller stjeler dataene dine. Det er gratis."
       ],
+      "Which feature? (optional)": [
+        "Hvilken funksjon? (valgfritt)"
+      ],
+      "Which provider?": [
+        "Hvilken tilbyder?"
+      ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "Med nye e-postkategorier havner bare viktige meldinger i den primær innboksen. Alt annet organiseres i kategorier."
+      ],
+      "Work or business": [
+        "Jobb eller bedrift"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ønsker du å motta en ny verifiseringskode eller å bruke en alternativ verifiseringsmetode?"
@@ -13081,8 +13159,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Avbryt når som helst før da.** Du kan bruke ${ planTitle } helt til prøveperioden avsluttes, gratis."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Hvis du fortsetter etter prøveperioden,** kan du si opp innen 30 dager og få en forholdsmessig refusjon."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Ombestemt deg etter prøveperioden?** Si opp innen 30 dager etter første betaling, og vi refunderer den ubrukte tiden."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Når det fulle abonnementet ditt starter ...** Du kan fortsatt si opp innen 30 dager og få en forholdsmessig refusjon."
@@ -13504,6 +13582,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, avbryt når som helst."
       ],
+      "Scribe seats can’t exceed the number of members.": [
+        "Scribe-seter kan ikke overstige antallet medlemmer."
+      ],
       "Tax ${ rate }%": [
         "MVA ${ rate }%"
       ],
@@ -13581,6 +13662,9 @@
       ],
       "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
         "Prøveplaner støtter ikke ${ LUMO_SHORT_APP_NAME }-seter."
+      ],
+      "Trial plans don’t support custom domains.": [
+        "Prøveplaner støtter ikke egendefinerte domener."
       ],
       "Trial plans don’t support dedicated IPs.": [
         "Prøveplaner støtter ikke dedikerte IP-er."

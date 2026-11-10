@@ -40,7 +40,7 @@
         "De la A a la Z"
       ],
       "About ${ name }": [
-        "Pel que fa a ${ name }"
+        "Quant a ${ name }"
       ],
       "Activate": [
         "Activa"
@@ -58,7 +58,7 @@
         "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ name }": [
-        "Afegir ${ name }"
+        "Afegeix ${ name }"
       ],
       "Add a payment method": [
         "Afegiu un mètode de pagament"
@@ -107,6 +107,9 @@
       ],
       "Add participant": [
         "Afegeix un participant"
+      ],
+      "Add payment method": [
+        "Afegir un mètode de pagament"
       ],
       "Add phone number": [
         "Afegeix número de telèfon"
@@ -201,6 +204,9 @@
       ],
       "Cancel subscription": [
         "Cancel·la la subscripció"
+      ],
+      "Cancel trial": [
+        "Cancel·lar la prova"
       ],
       "Cancel trial and pay": [
         "Cancel·la la prova i paga"
@@ -1577,7 +1583,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Confia en aquesta clau",
+        "Confia en aquestes claus"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -2129,7 +2136,7 @@
     },
     "bf2023: Offers": {
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
-        "Garantia de devolució de 30 dies: cancel·leu-ho en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per obtenir un reemborsament."
+        "Garantia de devolució de 30 dies: cancel·leu en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per a obtenir un reemborsament."
       ]
     },
     "BF2024: Deal details": {
@@ -6289,7 +6296,7 @@
         "Nom d'usuari"
       ],
       "What's the main reason you joined ${ MAIL_APP_NAME }?": [
-        "Quina és la raó principal per la qual us heu unit a ${ MAIL_APP_NAME }?"
+        "Quina ha estat la raó principal d'unir-vos a ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -6998,7 +7005,7 @@
         "1 caixa forta per usuari"
       ],
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
-        "Garantia de devolució de 30 dies: cancel·leu-ho en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per obtenir un reemborsament."
+        "Garantia de devolució de 30 dies: cancel·leu-ho en un termini de 30 dies a partir de la data de compra i poseu-vos en contacte amb ${ customerSupportLink } per a obtenir un reemborsament."
       ],
       "A new or separate address": [
         "Una adreça nova o diferent"
@@ -7016,7 +7023,7 @@
         "Una connexió segura és essencial quan es treballa a distància. Una VPN protegeix les dades de l'empresa de les amenaces cibernètiques i manté la feina privada."
       ],
       "A specific feature (tell us)": [
-        "Un altra característica (indiqueu-nos-ho)"
+        "Una altra característica (indiqueu-nos-ho)"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuari és un compte associat amb un sol nom d'usuari, una bústia de correu i una persona"
@@ -7238,7 +7245,7 @@
         "S'està esperant la transacció"
       ],
       "Back": [
-        "Torna"
+        "Tornar"
       ],
       "Background color": [
         "Color de fons"
@@ -7489,7 +7496,7 @@
         "Logo de Discover ProtectBuy"
       ],
       "Dismiss": [
-        "Descarta"
+        "Descartar-ho"
       ],
       "Do you remember your password?": [
         "Recordeu la vostra contrasenya?"
@@ -7990,7 +7997,7 @@
         "Més informació sobre què fer ${ dataLeakedLink }"
       ],
       "Leave Big Tech": [
-        "Deixeu les grans empreses tecnològiques"
+        "Abandoneu les grans empreses tecnològiques"
       ],
       "Left to Right": [
         "D'esquerra a dreta"
@@ -8794,7 +8801,7 @@
         "Mantingueu-vos connectat fàcilment activant la configuració següent de la VPN:"
       ],
       "Stop companies reading my emails": [
-        "Atureu que les empreses llegeixin els meus correus electrònics"
+        "No permeteu que les empreses llegeixin els meus correus electrònics"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Les capacitats d'emmagatzematge no són compatibles amb aquest navegador. Necessitem aquest suport per activar la cerca de contingut dels missatges."
@@ -8833,6 +8840,9 @@
       "Surveillance": [
         "Vigilància"
       ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "Les respostes de l'enquesta no estan xifrades de principi a fi, no compartiu cap informació sensible."
+      ],
       "Symbols (#$&)": [
         "Símbols (#$&)"
       ],
@@ -8843,7 +8853,7 @@
         "Digueu-me quan sereu fora i què voleu que hi digui, i ho veureu tot abans que es desi."
       ],
       "Tell us more (optional)": [
-        "Explica'ns més (opcional)"
+        "Expliqueu-nos-en més (opcional)"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporalment no disponible a causa de l'alta demanda. Torneu-ho a provar més tard."
@@ -13169,8 +13179,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Cancel·leu-ho en qualsevol moment. ** Podreu utilitzar ${ planTitle } fins que acabi el període de prova, de franc."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Si continueu després del període de prova,** podreu cancel·lar-ho en un termini de 30 dies i rebre un reemborsament prorratejat."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Heu canviat d'opinió després de la prova? ** Cancel·leu-la abans de 30 dies des del primer pagament i us reemborsarem el temps no utilitzat."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Un cop comenci la vostra subscripció completa...** Encara podreu cancel·lar-la en un termini de 30 dies i rebre un reemborsament prorratejat."
@@ -13518,7 +13528,7 @@
         "País de facturació"
       ],
       "Born Private accounts can’t be purchased with an active subscription.": [
-        "Els comptes de Born Private no es poden adquirir amb una subscripció activa."
+        "Els comptes de Born Private no es poden comprar amb una subscripció activa."
       ],
       "Buying credits requires a separate purchase.": [
         "L'adquisició de crèdits requereix una compra independent."
@@ -17428,7 +17438,7 @@
     },
     "user_modal": {
       "This user gets administrator rights the next time they sign in.": [
-        "Aquest usuari obtindrà drets d'administrador la pròxima vegada que iniciïn sessió."
+        "Aquest usuari obtindrà drets d'administrador la pròxima vegada que iniciï la sessió."
       ],
       "Upgrade to a supported plan to use admin roles.": [
         "Milloreu a un pla compatible per utilitzar rols d'administrador/a."

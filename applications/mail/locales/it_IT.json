@@ -108,6 +108,9 @@
       "Add participant": [
         "Aggiungi partecipante"
       ],
+      "Add payment method": [
+        "Aggiungi metodo di pagamento"
+      ],
       "Add phone number": [
         "Aggiungi numero di telefono"
       ],
@@ -201,6 +204,9 @@
       ],
       "Cancel subscription": [
         "Annulla abbonamento"
+      ],
+      "Cancel trial": [
+        "Annulla la prova"
       ],
       "Cancel trial and pay": [
         "Annulla la prova e paga"
@@ -859,6 +865,9 @@
       "Loading${ ellipsis }": [
         "Caricamento${ ellipsis }"
       ],
+      "Lookup document": [
+        "Cerca documento"
+      ],
       "Make ${ MAIL_APP_NAME } your default email application": [
         "Imposta ${ MAIL_APP_NAME } come la tua applicazione email predefinita"
       ],
@@ -975,6 +984,12 @@
       ],
       "Move": [
         "Sposta"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the left": [
+        "Sposta ${ LUMO_SHORT_APP_NAME } a sinistra"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the right": [
+        "Sposta ${ LUMO_SHORT_APP_NAME } a destra"
       ],
       "Move all to archive": [
         "Sposta tutto nell'archivio"
@@ -1110,6 +1125,9 @@
       ],
       "Preview contact": [
         "Anteprima contatto"
+      ],
+      "Preview logs": [
+        "Mostra anteprima log."
       ],
       "Previous": [
         "Precedente"
@@ -1565,7 +1583,8 @@
         "Considera attendibile"
       ],
       "Trust key": [
-        "Affida chiave"
+        "chiave attendibile",
+        "chiavi attendibili"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -2080,6 +2099,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_LUMO_SEATS } licenze ${ LUMO_SHORT_APP_NAME } durante il periodo di prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } ${ LUMO_SHORT_APP_NAME } writing assistant seats during the trial period.": [
+        "Durante il periodo di prova puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze per l'assistente alla scrittura ${ LUMO_SHORT_APP_NAME }."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze Scribe durante il periodo di prova."
@@ -5238,6 +5260,9 @@
       "Something went wrong while fetching available domains": [
         "Si è verificato un errore durante il recupero dei domini disponibili"
       ],
+      "Something went wrong, close the modal and try again.": [
+        "Si è verificato un problema. Chiudi questa finestra e riprova."
+      ],
       "Something went wrong. Please try again.": [
         "Qualcosa è andato storto. Riprova."
       ],
@@ -6225,6 +6250,9 @@
       ]
     },
     "Header": {
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Prima di ${ MAIL_APP_NAME }, quale servizio di posta elettronica utilizzavi maggiormente?"
+      ],
       "Contacts": [
         "Contatti"
       ],
@@ -6266,6 +6294,9 @@
       ],
       "Username": [
         "Utente"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Qual è il motivo principale per cui ti sei iscritto a ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -6705,6 +6736,9 @@
         "${ currentProgress } su ${ totalProgress }",
         "${ currentProgress } su ${ totalProgress }"
       ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } di ${ steps }"
+      ],
       "${ dateString } at ${ formattedTime }": [
         "${ dateString } alle ${ formattedTime }"
       ],
@@ -6781,6 +6815,9 @@
       "${ LUMO_SHORT_APP_NAME } panel": [
         "Pannello di ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } può proteggere anche la tua azienda."
       ],
@@ -6856,6 +6893,9 @@
       "${ receivedMessagesCount } email last month": [
         "${ receivedMessagesCount } email il mese scorso",
         "${ receivedMessagesCount } email il mese scorso"
+      ],
+      "${ remainingMinutes } minutes remaining…": [
+        "${ remainingMinutes } minuti rimanenti…"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } di ${ providerCalendars.length } calendario",
@@ -6967,6 +7007,9 @@
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "Garanzia di rimborso entro 30 giorni: annulla l'ordine entro 30 giorni dall'acquisto e contatta il nostro servizio clienti ${ customerSupportLink } per ottenere un rimborso."
       ],
+      "A new or separate address": [
+        "Un indirizzo nuovo o diverso"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Ogni numero di telefono può essere utilizzato per verificare un unico account ${ BRAND_NAME }"
       ],
@@ -6978,6 +7021,9 @@
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Una connessione sicura è essenziale quando si lavora da remoto. Una VPN protegge i dati aziendali dalle minacce informatiche e mantiene il tuo lavoro privato."
+      ],
+      "A specific feature (tell us)": [
+        "Una caratteristica specifica (raccontacela)"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utente è un account associato a un unico nome utente, una sola casella di posta e una sola persona"
@@ -7081,6 +7127,9 @@
         "Tutti i tuoi contatti verranno importati, fino a un limite di ${ maxContact }",
         "Tutti i tuoi contatti verranno importati, fino a un limite di ${ maxContact }"
       ],
+      "Almost done": [
+        "Quasi finito…"
+      ],
       "American Express SafeKey logo": [
         "Logo American Express SafeKey"
       ],
@@ -7165,6 +7214,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Sei sicuro di voler eliminare definitivamente questo messaggio?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Chiedi all'amministratore di aggiornare il piano oppure elimina una pagina dalla sezione Pagine di prenotazione in ${ CALENDAR_APP_NAME }."
+      ],
       "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
         "Chiedi al tuo amministratore di effettuare l’upgrade al piano o di rimuovere una pagina dalla barra laterale delle pagine di prenotazione."
       ],
@@ -7191,6 +7243,9 @@
       ],
       "Awaiting transaction": [
         "In attesa della transazione"
+      ],
+      "Back": [
+        "Indietro"
       ],
       "Background color": [
         "Colore di sfondo"
@@ -7266,6 +7321,12 @@
       ],
       "Choose a plan that works best for you.": [
         "Scegli un piano che funziona meglio per te."
+      ],
+      "Choose all that apply.": [
+        "Scegli tutte le opzioni che si applicano."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Scegline uno. Ci aiuta a migliorare ${ MAIL_APP_NAME }."
       ],
       "Choose your service to connect with": [
         "Scegli il tuo servizio con cui connettere"
@@ -7433,6 +7494,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
+      ],
+      "Dismiss": [
+        "Ignora"
       ],
       "Do you remember your password?": [
         "Ti ricordi la tua password?"
@@ -7768,11 +7832,17 @@
       "How hide-my-email aliases works": [
         "Come funzionano gli alias Hide-my-email"
       ],
+      "I didn't have one": [
+        "Non ne avevo uno"
+      ],
+      "I use other Proton products": [
+        "Utilizzo altri prodotti Proton"
+      ],
       "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
         "Darò un'occhiata alla posta della settimana scorsa e selezionerò ciò a cui è davvero necessario rispondere, così potrai occupartene tutto in una volta sola."
       ],
       "I'll look at what you get most of and the folders and filters you already have, then suggest what to improve and what's missing. Nothing moves until you say so.": [
-        "Darò un'occhiata a ciò che ricevi più spesso e alle cartelle e ai filtri che hai già, poi ti suggerirò cosa migliorare e cosa manca. Non cambierò nulla finché non me lo dirai tu."
+        "Darò un'occhiata a ciò che ricevi più spesso, alle cartelle e ai filtri che hai già, poi ti suggerirò cosa migliorare e cosa manca. Non cambierò nulla finché non me lo dirai tu."
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Sto inviando questo messaggio ad un utente non-${ MAIL_APP_NAME }."
@@ -7819,6 +7889,9 @@
       ],
       "Import in progress": [
         "Importazione in corso"
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Importazione in corso. Puoi chiudere questa finestra e tornare più tardi, ma non chiudere la scheda del browser."
       ],
       "Import mailbox": [
         "Importa casella di posta"
@@ -7923,6 +7996,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Scopri cosa fare ${ dataLeakedLink }"
       ],
+      "Leave Big Tech": [
+        "Lascia le grandi aziende tecnologiche"
+      ],
       "Left to Right": [
         "Da sinistra a destra"
       ],
@@ -7949,6 +8025,9 @@
       ],
       "Loading...": [
         "Caricamento in corso..."
+      ],
+      "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
+        "I log ci aiutano a capire cosa è successo prima che si verificasse il problema. Includono le azioni eseguite nell'app e i messaggi di errore, ma non il contenuto dei messaggi."
       ],
       "Lookup of document ${ lookup.result.docId }": [
         "Ricerca del documento ${ lookup.result.docId }"
@@ -8079,11 +8158,17 @@
       "newsletter": [
         "newsletter"
       ],
+      "Next": [
+        "Successivo"
+      ],
       "Next time you sign in to your other account": [
         "La prossima volta che accedi al tuo altro account"
       ],
       "No action selected": [
         "Nessuna azione selezionata"
+      ],
+      "No ads": [
+        "Nessuna pubblicità"
       ],
       "No booking pages yet": [
         "Non ci sono ancora pagine di prenotazione"
@@ -8193,6 +8278,9 @@
       "On public WiFi networks": [
         "Sulle reti Wi-Fi pubbliche"
       ],
+      "One last step": [
+        "Un ultimo passo"
+      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o più chiavi attendibili sono state contrassegnate come \"compromesse\" dal loro proprietario. Ti consigliamo di \"non considerare attendibili\" queste chiavi."
       ],
@@ -8222,6 +8310,9 @@
       ],
       "Organization size": [
         "Dimensione dell'organizzazione"
+      ],
+      "Other (tell us)": [
+        "Altro (indicaci)"
       ],
       "Other accounts": [
         "Altri account"
@@ -8373,6 +8464,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
         "Proteggi la tua email dalle mailing list e dagli spammer con ${ hideMyEmailAliasesLink }."
+      ],
+      "Protection from hackers and leaks": [
+        "Protezione da hacker e fughe di informazioni"
       ],
       "Public sharing of documents is not yet supported.": [
         "La condivisione pubblica dei documenti non è ancora supportata."
@@ -8667,6 +8761,9 @@
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Alcuni siti web e servizi di streaming bloccano i contenuti in base alla regione. Una VPN ti consente di aggirare queste restrizioni e accedere a Internet liberamente."
       ],
+      "Someone recommended it": [
+        "Me l'ha consigliato qualcuno"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Siamo spiacenti, questo messaggio non esiste o è già scaduto."
       ],
@@ -8679,11 +8776,17 @@
       "Start sharing it with contacts and use it for online services.": [
         "Inizia a condividerlo con i contatti e utilizzalo per i servizi online."
       ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Inizia a utilizzare ${ MAIL_APP_NAME }"
+      ],
       "Start using the shorter, catchier version of your email address.": [
         "Inizia a usare la versione più breve del tuo indirizzo email."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Rimani connesso senza sforzo abilitando le seguenti impostazioni VPN:"
+      ],
+      "Stop companies reading my emails": [
+        "Stop companies reading my emails"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Le funzionalità di archiviazione non sono supportate in questo browser, abbiamo bisogno di questo supporto per abilitare la ricerca del contenuto dei messaggi."
@@ -8722,6 +8825,9 @@
       "Surveillance": [
         "Sorveglianza"
       ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "Le risposte al sondaggio non sono crittografate end-to-end. Ti invitiamo a non condividere dati sensibili."
+      ],
       "Symbols (#$&)": [
         "Simboli (#$&)"
       ],
@@ -8730,6 +8836,9 @@
       ],
       "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
         "Dimmi quando sarai assente e cosa vorresti che dicesse, e potrai vedere il risultato completo prima che venga salvato."
+      ],
+      "Tell us more (optional)": [
+        "Raccontaci di più (facoltativo)"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "Temporaneamente non disponibile a causa dell'elevato traffico. Riprova più tardi."
@@ -8843,6 +8952,9 @@
       ],
       "This file is too large to preview": [
         "Questo file è troppo grande per l'anteprima"
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Questo indirizzo Gmail è registrato con un altro account ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI e altri). Stiamo lavorando per rendere questo collegamento immediato ma, per il momento, dovrai completare alcuni passaggi."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Questo invito è salvato in un calendario disabilitato."
@@ -8964,6 +9076,9 @@
       ],
       "To add a new booking page, ask your admin to upgrade your plan.": [
         "Per aggiungere una nuova pagina di prenotazione, chiedi al tuo amministratore di effettuare l\"upgrade del tuo piano."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Per aggiungere una pagina di prenotazione, eliminane una dalla sezione Pagine di prenotazione in ${ CALENDAR_APP_NAME }."
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
         "Per aggiungere una nuova pagina di prenotazione, rimuovi una esistente dalla barra laterale delle pagine di prenotazione."
@@ -9268,8 +9383,17 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Quando viaggi o usi un WiFi pubblico, connettiti a ${ VPN_APP_NAME } per evitare che qualcuno tracci la tua attività online o rubi i tuoi dati. È gratis."
       ],
+      "Which feature? (optional)": [
+        "Quale funzione? (facoltativo)"
+      ],
+      "Which provider?": [
+        "Quale operatore?"
+      ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "Con le nuove categorie email, solo i messaggi importanti arrivano nella tua posta in arrivo principale. Tutto il resto è organizzato in categorie."
+      ],
+      "Work or business": [
+        "Lavoro o affari"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
@@ -9333,6 +9457,9 @@
       ],
       "You can either update your search query or clear it": [
         "Puoi aggiornare la query di ricerca o cancellarla"
+      ],
+      "You can import it as a new foundation-search index for development purposes.": [
+        "È possibile importarlo come nuovo indice \"foundation-search\" per attività di sviluppo."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendario. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento a ${ MAIL_SHORT_APP_NAME }.",
@@ -10051,7 +10178,7 @@
         "Conferme e avvisi automatici"
       ],
       "Away message": [
-        "Tono messaggio"
+        "Risposta automatica"
       ],
       "BCC": [
         "CCN"
@@ -10169,6 +10296,9 @@
       ],
       "Contacts": [
         "Contatti"
+      ],
+      "Content search version to use": [
+        "Versione da usare per la ricerca di contenuti"
       ],
       "Context page": [
         "Pagina contesto"
@@ -10746,6 +10876,9 @@
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "Condividi le tue disponibilità con le pagine di prenotazione in ${ CALENDAR_APP_NAME }, e organizza riunioni sicure con ${ MEET_APP_NAME }."
       ],
+      "Sieve script": [
+        "Script Sieve"
+      ],
       "Sign emails": [
         "Firma email"
       ],
@@ -10892,6 +11025,9 @@
       ],
       "Username": [
         "Nome utente"
+      ],
+      "v1": [
+        "v1"
       ],
       "v2": [
         "v2"
@@ -11415,6 +11551,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente alla scrittura ${ BRAND_NAME } Scribe"
       ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
       "Add ${ BRAND_NAME } Scribe writing assistant": [
         "Aggiungi l'assistente alla scrittura ${ BRAND_NAME } Scribe"
       ],
@@ -11790,6 +11929,12 @@
       ],
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } e ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant with expanded access": [
+        "Assistente alla scrittura ${ LUMO_SHORT_APP_NAME } con accesso esteso"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant with limited access": [
         "Assistente di scrittura ${ LUMO_SHORT_APP_NAME } con accesso limitato"
@@ -13016,8 +13161,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Puoi disdire in qualsiasi momento prima di allora.** Potrai utilizzare ${ planTitle } gratuitamente fino al termine del periodo di prova."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Se decidi di continuare dopo il periodo di prova,** puoi annullare l'abbonamento entro 30 giorni e ottenere un rimborso proporzionale."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Hai cambiato idea dopo il periodo di prova? **Annulla entro 30 giorni dal primo pagamento e ti rimborseremo il periodo non utilizzato."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Una volta che l'abbonamento completo avrà inizio...** Potrai comunque disdirlo entro 30 giorni e ottenere un rimborso proporzionale."
@@ -16357,6 +16502,9 @@
       ],
       "Filter name cannot contain only spaces": [
         "Il nome del filtro non può contenere solo spazi"
+      ],
+      "Filter on": [
+        "Filtra"
       ],
       "Filter on...": [
         "Filtra per..."

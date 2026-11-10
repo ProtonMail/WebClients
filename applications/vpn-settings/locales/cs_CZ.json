@@ -2366,9 +2366,6 @@
       "Confirm cancellation": [
         "Potvrdit zrušení"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Pokud překročíte limity bezplatného tarifu, nebudete moci:"
-      ],
       "Keep current plan": [
         "Zachovat aktuální tarif"
       ],
@@ -2383,9 +2380,6 @@
       ],
       "Upload any new files": [
         "Nahrajte jakékoliv nové soubory"
-      ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Jakmile vaše předplatné skončí ${ endDate }, váš účet přejde na bezplatný tarif. Pokud vaše využití překročí limity bezplatného tarifu, některé funkce mohou být dočasně nedostupné."
       ]
     },
     "Confirm modal title": {
@@ -5555,14 +5549,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Na jednoho uživatele je k dispozici pouze jedna bezplatná zkušební verze. Poté platí běžné ceny."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Po opuštění vašeho tarifu bude tento uživatel převeden na tarif ${ BRAND_NAME } Free."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Po opuštění vašeho tarifu bude tento uživatel přesunut na ${ BRAND_NAME }. Neomezený tarif s 30denní bezplatnou zkušební dobou.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Přiřaďte úložný prostor k účtu správce. Úložný prostor pro další uživatele můžete přidělit později."
@@ -9470,7 +9458,7 @@
         "Vlastník skupiny"
       ],
       "Invited": [
-        "Pozván"
+        "Pozván(a)"
       ],
       "Paused": [
         "Pozastaveno"
@@ -11109,7 +11097,7 @@
         "Editor dokumentů a tabulek"
       ],
       "Email writing assistant": [
-        "Asistent pro psaní e-mailů"
+        "Asistent psaní e-mailů"
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Sdílení obrazovky s koncovým šifrováním a dočasný chat během hovoru"
@@ -13425,11 +13413,6 @@
         "Obraťte se na zákaznickou podporu, abyste potvrdili změnu vlastnictví"
       ]
     },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Nikdy"
-      ]
-    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Určitě chcete pokračovat?"
@@ -14547,7 +14530,7 @@
         "Abychom vám pomohli zapamatovat si vaše heslo, budeme vás pravidelně žádat o jeho zadání."
       ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
-        "Chcete-li se ujistit, že je e-mailová adresa vaše, zadejte ověřovací kód zaslaný na adresu ${ boldEmail }."
+        "Pro ověření, že jde o vaší e-mailovou adresu, prosím zadejte ověřovací kód zaslaný na adresu ${ boldEmail }."
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "Chcete-li se ujistit, že je telefonní číslo vaše, zadejte ověřovací kód zaslaný na číslo ${ boldPhoneNumber }."
@@ -14742,7 +14725,7 @@
         "Od vašeho poskytovatele identity"
       ],
       "New": [
-        "Nové"
+        "Nový"
       ],
       "Once approved, they can access all ${ BRAND_NAME } services and share securely.": [
         "Po schválení budou mít přístup ke všem službám ${ BRAND_NAME } a budou moci bezpečně sdílet data."
@@ -18291,9 +18274,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Vítejte v ${ BRAND_NAME } for Business"
       ],
-      "What changes if you switch to the Free plan": [
-        "Co se změní, pokud přejdete na tarif Free"
-      ],
       "What is an alias?": [
         "Co je alias?"
       ],
@@ -18408,9 +18388,6 @@
       ]
     },
     "Title subscription": {
-      "End date": [
-        "Datum ukončení"
-      ],
       "Plan": [
         "Tarif"
       ],

@@ -2017,6 +2017,9 @@
       "Didn't receive the code?": [
         "¿No recibió el código?"
       ],
+      "Disabled by your organization": [
+        "Desactivado por su organización"
+      ],
       "Disabling auto-lock": [
         "Desactivando el bloqueo automático"
       ],
@@ -3105,6 +3108,12 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Los datos fueron encontrados en ${ displayedDate }"
+      ],
+      "Your organization does not allow using 2FA codes stored in ${ PASS_APP_NAME }": [
+        "Su organización no permite usar códigos de 2FA guardados en ${ PASS_APP_NAME }."
+      ],
+      "Your organization does not allow using passkeys stored in ${ PASS_APP_NAME }": [
+        "Su organización no permite usar claves de acceso guardadas en ${ PASS_APP_NAME }."
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Su organización requiere que asegure su acceso a ${ PASS_APP_NAME }"

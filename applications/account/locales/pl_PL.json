@@ -3637,9 +3637,6 @@
       "Confirm cancellation": [
         "Potwierdź anulowanie"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Jeśli przekroczysz limity darmowego planu, nie będziesz mieć możliwości:"
-      ],
       "Keep current plan": [
         "Zachowaj obecny plan"
       ],
@@ -3654,9 +3651,6 @@
       ],
       "Upload any new files": [
         "Prześlij wszelkie nowe pliki"
-      ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Kiedy Twoja subskrypcja dobiegnie końca ${ endDate }, Twoje konto zostanie przełączone na darmowy plan. Jeśli Twoje zużycie przekroczy limity darmowego planu, niektóre funkcje mogą być tymczasowo niedostępne."
       ]
     },
     "Confirm modal title": {
@@ -6826,9 +6820,6 @@
       "Invalid invitation link": [
         "Link zaproszenia jest nieprawidłowy"
       ],
-      "Invalid joining link. Please contact your administrator.": [
-        "Nieprawidłowy link dołączania. Skontaktuj się ze swoim administratorem."
-      ],
       "Invalid name": [
         "Nazwa jest nieprawidłowa"
       ],
@@ -7700,9 +7691,6 @@
       "${ BRAND_NAME } groups": [
         "Grupy ${ BRAND_NAME }"
       ],
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "* Tylko jedna darmowa wersja próbna na użytkownika. Później obowiązuje normalna cena."
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Konta z niestandardową domenę nie mogą dołączać do planu rodzinnego."
       ],
@@ -7772,9 +7760,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Subskrypcja zostanie naliczona głównemu administratorowi planu."
       ],
-      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
-        "Aby ułatwić przejście, oferujemy 30-dniową darmową wersję próbną planu ${ BRAND_NAME } Unlimited*."
-      ],
       "View the invitation": [
         "Wyświetl zaproszenie",
         "Wyświetl zaproszenia",
@@ -7837,14 +7822,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "* Tylko jedna darmowa wersja próbna na użytkownika. Później obowiązuje normalna cena."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Po opuszczeniu planu użytkownik zostanie przeniesiony do planu ${ BRAND_NAME } Free."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Po opuszczeniu planu użytkownik zostanie przeniesiony do 30-dniowej darmowej wersji próbnej planu ${ BRAND_NAME } Unlimited.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Przypisz przestrzeń dyskową do konta administratora. Przestrzeń dyskową dla dodatkowych użytkowników możesz rozdysponować później."
@@ -10906,6 +10885,9 @@
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Nieprawidłowy kod. ${ RequestNewCodeLink } i spróbuj ponownie."
       ],
+      "Invalid joining link": [
+        "Nieprawidłowy link dołączenia"
+      ],
       "Invitation link expired": [
         "Zaproszenie wygasło"
       ],
@@ -11982,6 +11964,9 @@
       ],
       "This is the password you used before the password reset.": [
         "To jest hasło używane przed zrestartowaniem hasła."
+      ],
+      "This joining link isn't valid. Please contact your administrator for a new one.": [
+        "Ten link dołączenia nie jest prawidłowy. Skontaktuj się z administratorem, aby uzyskać nowy."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Link prowadzi do strony internetowej, która może próbować wykraść informacje, takie jak hasła i dane karty płatniczej."
@@ -15573,6 +15558,9 @@
       ],
       "Terms": [
         "Regulamin"
+      ],
+      "terms and conditions": [
+        "regulamin"
       ],
       "terms of our referral program": [
         "warunki naszego programu poleceń"
@@ -19238,11 +19226,6 @@
         "Skontaktuj się ze wsparciem klienta, aby potwierdzić zmianę właściciela"
       ]
     },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Nigdy"
-      ]
-    },
     "Payments.ModificationWarning": {
       "Are you sure you want to proceed?": [
         "Czy na pewno chcesz kontynuować?"
@@ -22723,12 +22706,6 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "Zastosowano zniżkę ${ discountItem.discountPercent }%"
-      ],
-      "${ discountItem.discountPercent }% off": [
-        "taniej o ${ discountItem.discountPercent }%"
-      ],
       "${ trialCycleText } free": [
         "${ trialCycleText } za darmo"
       ],
@@ -25757,9 +25734,6 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Witaj w planie ${ BRAND_NAME } for Business"
       ],
-      "What changes if you switch to the Free plan": [
-        "Co się zmieni, jeśli przełączysz się na darmowy plan"
-      ],
       "What is an alias?": [
         "Co to jest alias?"
       ],
@@ -25929,9 +25903,6 @@
       ]
     },
     "Title subscription": {
-      "End date": [
-        "Data zakończenia"
-      ],
       "Plan": [
         "Plan"
       ],

@@ -464,6 +464,9 @@
       "Add notification": [
         "Pridať notifikáciu"
       ],
+      "Add payment method": [
+        "Pridať spôsob platby"
+      ],
       "Add PayPal": [
         "Pridať PayPal"
       ],
@@ -554,6 +557,12 @@
       "Cancel": [
         "Zrušiť"
       ],
+      "Cancel ${ planTitle }": [
+        "Zrušiť ${ planTitle }"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "Zrušiť skúšobné obdobie ${ planTitle }"
+      ],
       "Cancel import": [
         "Zrušiť import"
       ],
@@ -562,6 +571,9 @@
       ],
       "Cancel subscription": [
         "Zrušiť predplatné"
+      ],
+      "Cancel trial": [
+        "Zrušiť skúšobné obdobie"
       ],
       "Cancel trial and pay": [
         "Zrušiť skúšobné obdobie a zaplatiť"
@@ -770,6 +782,9 @@
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
         "Vytvorte odkaz na zdieľanie s kýmkoľvek mimo ${ BRAND_NAME }"
       ],
+      "Create account": [
+        "Vytvoriť účet"
+      ],
       "Create calendar": [
         "Vytvoriť kalendár"
       ],
@@ -946,6 +961,9 @@
       ],
       "Don't show again": [
         "Viac nezobrazovať"
+      ],
+      "Don't show this offer again": [
+        "Túto ponuku už nezobrazovať"
       ],
       "Donate": [
         "Darovať"
@@ -1264,6 +1282,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "Prejsť do ${ planOrAppName }"
+      ],
+      "Go to folder": [
+        "Prejsť do priečinka"
       ],
       "Go to label": [
         "Prejsť na štítok"
@@ -1763,6 +1784,9 @@
       "Restore": [
         "Obnoviť"
       ],
+      "Restrict sign-in": [
+        "Obmedziť prihlásenie"
+      ],
       "Resume": [
         "Pokračovať"
       ],
@@ -1991,6 +2015,9 @@
       "Sign in to ${ PASS_APP_NAME }": [
         "Prihlásenie do ${ PASS_APP_NAME }"
       ],
+      "Sign in to a different account": [
+        "Prihlásiť sa do iného konta"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Prihlásiť sa pomocou ${ BRAND_NAME }"
       ],
@@ -2035,6 +2062,9 @@
       ],
       "Spam": [
         "Spam"
+      ],
+      "Special Offer": [
+        "Špeciálna ponuka"
       ],
       "Start free trial": [
         "Začať bezplatnú skúšobnú verziu"
@@ -2349,6 +2379,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "Zrušiť predplatné"
+      ],
       "Reactivate": [
         "Znovu aktivovať"
       ],
@@ -2591,6 +2624,9 @@
       ],
       "Permission revoked": [
         "Povolenie zrušené"
+      ],
+      "Sign-in": [
+        "Prihlásiť sa"
       ]
     },
     "Admin": {
@@ -2847,6 +2883,9 @@
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Po zrušení sa vaša bezplatná skúšobná verzia neprevedie na platené predplatné, ale výhody plánu môžete využívať až do konca skúšobného obdobia. Po uplynutí tejto lehoty dôjde k zníženiu na ${ BRAND_NAME } Free plán."
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "Ak zrušíte predplatné, vaša bezplatná skúšobná verzia sa nepremení na platené predplatné."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Môžete mať až ${ TRIAL_MAX_DEDICATED_IPS } vyhradených serverov počas skúšobného obdobia."
@@ -4299,8 +4338,8 @@
       "Confirm cancellation": [
         "Potvrďte zrušenie"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Ak prekročíte limity bezplatného plánu nebudete môcť:"
+      "If you exceed your plan limits, you won't be able to:": [
+        "Ak prekročíte limity vášho plánu nebudete môcť:"
       ],
       "Keep current plan": [
         "Ponechať aktuálny plán"
@@ -4317,8 +4356,11 @@
       "Upload any new files": [
         "Nahrávať nové súbory"
       ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "Keď vaše predplatné dňa ${ endDate } vyprší a váš účet prejde na plán Free. Ak vaša spotreba prekročí limity plánu Free, niektoré funkcie môžu byť dočasne nedostupné."
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Keď vám predplatné ${ planDisplayName } dňa ${ endDate } skončí, stratíte prístup k jeho funkciám. Ak potom vaše využitie prekročí limity vášho balíka, niektoré funkcie môžu byť dočasne nedostupné."
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Keď vaše predplatné dňa ${ endDate } skončí, stratíte prístup k jeho funkciám. Ak potom vaše využitie prekročí limity vášho balíka, niektoré funkcie môžu byť dočasne nedostupné."
       ]
     },
     "Confirm modal title": {
@@ -7708,9 +7750,6 @@
       "Invalid invitation link": [
         "Neplatný odkaz pozvánky"
       ],
-      "Invalid joining link. Please contact your administrator.": [
-        "Neplatný odkaz na pripojenie. Obráťte sa na správcu, prosím."
-      ],
       "Invalid name": [
         "Neplatné meno"
       ],
@@ -8134,6 +8173,9 @@
       "The amount due has changed. Please try again.": [
         "Čiastka na zaplatenie sa zmenila. Skúste to znova, prosím."
       ],
+      "The device you scanned the QR code with didn't send your sign-in details. Update the app on that device and try again.": [
+        "Zariadenie, ktorým ste naskenovali QR kód, neodoslalo vaše prihlasovacie údaje. Aktualizujte aplikáciu na tomto zariadení a skúste to znova."
+      ],
       "The email addresses do not match": [
         "Emailové adresy sa nezhodujú"
       ],
@@ -8175,6 +8217,9 @@
       ],
       "The session has expired. Please sign in again.": [
         "Platnosť relácie vypršala. Prihláste sa znovu, prosím."
+      ],
+      "The session has expired. Please try again.": [
+        "Platnosť relácie vypršala. Skúste to znova."
       ],
       "The total could not be calculated. Change the amount to try again.": [
         "Celková suma sa nedala vypočítať. Zmeňte sumu a skúste to znova."
@@ -8777,9 +8822,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } skupiny"
       ],
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Na jedného používateľa sa vzťahuje len jedna bezplatná skúšobná verzia. Potom platí bežný cenník."
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "Účty s vlastnými doménami sa nemôžu pripojiť k rodinnému plánu."
       ],
@@ -8849,9 +8891,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "Predplatné sa bude účtovať hlavnému správcovi tohto plánu."
       ],
-      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
-        "Aby sme vám uľahčili prechod, poskytujeme vám 30-dňovú bezplatnú skúšobnú verziu produktu ${ BRAND_NAME } Unlimited*."
-      ],
       "View the invitation": [
         "Zobraziť pozvánku",
         "Zobraziť pozvánky",
@@ -8917,14 +8956,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*Na jedného používateľa sa vzťahuje len jedna bezplatná skúšobná verzia. Potom platí bežný cenník."
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "Po opustení vášho plánu bude tento používateľ presunutý do ${ BRAND_NAME } Free."
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "Po opustení vášho plánu bude tento používateľ presunutý na plán ${ BRAND_NAME } Unlimited s 30-dňovou bezplatnou skúšobnou verziou.*"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "Priradťte úložisko k účtu správcu. Neskôr môžete distribuovať úložisko pre ďalších používateľov."
@@ -9748,6 +9781,9 @@
       "Best deal": [
         "Najlepšia ponuka"
       ],
+      "Billing details": [
+        "Fakturačné údaje"
+      ],
       "Checkout": [
         "Pokladňa"
       ],
@@ -9801,6 +9837,9 @@
       ],
       "Permissions": [
         "Oprávnenia"
+      ],
+      "Plan details": [
+        "Podrobnosti plánu"
       ],
       "Protection": [
         "Ochrana"
@@ -11344,6 +11383,21 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Zdieľaním úplných údajov o udalosti tohto kalendára súhlasíte s udelením prístupu ${ BRAND_NAME } k zašifrovaným informáciám tohto kalendára."
       ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou **${ primaryEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pod svojím pôvodným používateľským menom **${ username }** – buď samostatne, alebo v tvare **${ firstEmail }**, **@${ secondDomain }** alebo **@${ thirdDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pod svojím pôvodným používateľským menom **${ username }** – buď samostatne, alebo v kombinácii s **${ firstEmail }** alebo **@${ secondDomain }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pod svojím pôvodným používateľským menom **${ username }** – buď samostatne, alebo v tvare **${ firstEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou vášho používateľského mena **${ username }**."
+      ],
       "Can you access your active session?": [
         "Môžete pristupovať k svojej aktívnej relácii?"
       ],
@@ -11661,6 +11715,9 @@
       ],
       "Discount": [
         "Zľava"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zľavy sa vzťahujú na štandardné mesačné ceny. Vaše predplatné sa po skončení fakturačného cyklu obnoví za štandardnú ročnú sadzbu."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Objavte nové odomknuté funkcie a začnite ich hneď používať!"
@@ -12193,11 +12250,17 @@
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Ak je táto možnosť vypnutá, členovia organizácie budú môcť zdieľať trezory alebo položky len v rámci organizácie."
       ],
+      "If disabled, organization members won't be able to add 2FA codes to their items, and existing ones won't be generated or autofilled. Nothing is deleted.": [
+        "Ak bude táto funkcia deaktivovaná, členovia organizácie nebudú môcť pridávať 2FA kódy k svojim položkám a existujúce kódy sa nebudú generovať ani automaticky vypĺňať. Nič sa nevymaže."
+      ],
       "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
         "Ak je táto funkcia vypnutá, členovia organizácie nebudú môcť vytvárať nové aliasy. Existujúce aliasy zostanú aktívne."
       ],
       "If disabled, organization members won't be able to create secure links. Previously active secure links remain valid until their expiration.": [
         "Ak je táto funkcia vypnutá, členovia organizácie nebudú môcť vytvárať bezpečné odkazy. Predchádzajúce platné bezpečné odkazy zostanú platné až do svojho vypršania."
+      ],
+      "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
+        "Ak bude táto funkcia vypnutá, členovia organizácie nebudú môcť ukladať prístupové kľúče v ${ PASS_APP_NAME } ani sa pomocou nich prihlasovať. Žiadne údaje sa nevymažú."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Ak je táto možnosť povolená, členovia organizácie budú môcť okrem trezorov zdieľať aj jednotlivé položky."
@@ -12369,6 +12432,9 @@
       ],
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Neplatný kód. ${ RequestNewCodeLink } a skúste to znova."
+      ],
+      "Invalid joining link": [
+        "Neplatný odkaz na pripojenie"
       ],
       "Invitation link expired": [
         "Pozývací odkaz vypršal"
@@ -13273,6 +13339,9 @@
       "Signed up": [
         "Prihlásený"
       ],
+      "Signup link no longer valid": [
+        "Odkaz na registráciu už nie je platný"
+      ],
       "Smart Routed through a different country.": [
         "Inteligentné smerovanie cez inú krajinu."
       ],
@@ -13594,6 +13663,9 @@
       "This is the password you used before the password reset.": [
         "Toto je heslo, ktoré ste už použili pred obnovou hesla."
       ],
+      "This joining link isn't valid. Please contact your administrator for a new one.": [
+        "Tento odkaz na pripojenie je neplatný. Požiadajte správcu o nový odkaz."
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tento odkaz vedie na webovú stránku, ktorá sa môže pokúsiť ukradnúť vaše informácie, ako sú heslá a údaje z platobnej karty."
       ],
@@ -13608,6 +13680,9 @@
       ],
       "This service is not available to users signing in with single sign-on.": [
         "Táto služba nie je k dispozícii pre používateľov, ktorí sa prihlasujú pomocou jednotného prihlásenia."
+      ],
+      "This signup link has expired, been revoked or already been used. Please contact your ${ BRAND_NAME } representative for a new one.": [
+        "Platnosť tohto registračného odkazu vypršala, bol zrušený alebo už bol použitý. Ak potrebujete nový odkaz, obráťte sa na zástupcu ${ BRAND_NAME }."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Tento token nebude po zatvorení tohto okna dostupný a nemali by ste ho s nikým zdieľať."
@@ -14188,17 +14263,26 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Keď sú povolené notifikácie, pošleme vám upozornenie na vašu e-mailovú adresu na obnovenie, ak máte v konte ${ MAIL_APP_NAME } nové správy."
       ],
-      "When sign-in is restricted, only ${ primaryEmailElement } and your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Ak je prihlásenie obmedzené, na prihlásenie je možné použiť iba ${ primaryEmailElement } a vaše používateľské meno ${ usernameElement }. Vaše ostatné emailové adresy nie je možné prepojiť s vaším účtom, ani keby ich niekto poznal."
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Ak je prihlásenie obmedzené, na prihlásenie je možné použiť iba váš email **${ primaryEmail }**. Vaše ostatné adresy nie je možné prepojiť s vaším účtom, ani keby ich niekto poznal."
       ],
-      "When sign-in is restricted, only your email ${ primaryEmailElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Ak je prihlásenie obmedzené, na prihlásenie je možné použiť iba váš email ${ primaryEmailElement }. Vaše ostatné adresy nie je možné prepojiť s vaším účtom, ani keby ich niekto poznal."
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Ak je prihlásenie obmedzené, na prihlásenie je možné použiť iba vaše používateľské meno **${ username }**. Vaše ostatné adresy nie je možné prepojiť s vaším účtom, ani keby ich niekto poznal."
       ],
-      "When sign-in is restricted, only your username ${ usernameElement } can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
-        "Ak je prihlásenie obmedzené, na prihlásenie je možné použiť iba vaše používateľské meno ${ usernameElement }. Vaše ostatné emailové adresy nie je možné prepojiť s vaším účtom, ani keby ich niekto poznal."
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho pôvodného používateľského mena **${ username }**, a to buď samostatne, alebo v tvare **${ firstEmail }**, **@${ secondDomain }** alebo **@${ thirdDomain }**. Ostatné emailové adresy nebudú na prihlásenie fungovať."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho pôvodného používateľského mena **${ username }** – buď samostatne, alebo v kombinácii s **${ firstEmail }** alebo **@${ secondDomain }**. Vaše ostatné emailové adresy nebudú na prihlásenie fungovať."
+      ],
+      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho pôvodného používateľského mena **${ username }** – buď samostatne, alebo v kombinácii s **${ firstEmail }**. Vaše ostatné emailové adresy nebudú na prihlásenie fungovať."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Po zrušení sa vaše predplatné neobnoví, ale výhody plánu môžete využívať až do konca predplatného obdobia. Po uplynutí tejto lehoty dôjde k zníženiu na ${ BRAND_NAME } bezplatný plán."
+      ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "Ak predplatné zrušíte, po uplynutí skúšobného obdobia sa už nezačne."
       ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Po zrušení sa vaše predplatné nezačne, ale výhody plánu môžete využívať až do konca skúšobného obdobia. Potom dôjde k zníženiu na ${ BRAND_NAME } bezplatný plán."
@@ -14398,6 +14482,9 @@
         "Počas nasledujúcich 24 hodín nemôžete odoslať viac ako ${ emailSendLimitNumber } emailových pozvánok",
         "Počas nasledujúcich 24 hodín nemôžete odoslať viac ako ${ emailSendLimitNumber } emailových pozvánok"
       ],
+      "You cancel it in the store.": [
+        "Zrušíte ho v obchode."
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Nemôžete odporúčať používateľom ${ MAIL_APP_NAME }"
       ],
@@ -14460,6 +14547,9 @@
       ],
       "You have no transactions.": [
         "Nemáte žiadne transakcie."
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "Máte niekoľko predplatných. Vyberte si to, ktoré chcete zrušiť: ostatné predplatné to neovplyvní. Zrušené predplatné sa nebude obnovovať a jeho výhody budete môcť využívať až do konca predplatného obdobia."
       ],
       "You have unpublished changes": [
         "Máte nezverejnené zmeny"
@@ -14602,6 +14692,9 @@
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "Váš účet je momentálne nastavený tak, aby sa uplatňoval režim prenesenia daňovej povinnosti. Tento režim nie je podporovaný pre vybraný plán. Ak chcete pokračovať, odstráňte DIČ z fakturačnej adresy alebo vyberte iný plán."
       ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "Váš účet bol vytvorený, ale nepodarilo sa nám dokončiť nastavenie vášho balíka."
+      ],
       "Your account was successfully updated with this promotion": [
         "Váš účet bol úspešne aktualizovaný touto akciovou ponukou"
       ],
@@ -14644,6 +14737,9 @@
       "Your files will be encrypted and then saved": [
         "Vaše súbory budú zašifrované a potom uložené"
       ],
+      "Your free plan includes one connected account. Upgrade to connect more.": [
+        "Váš bezplatný plán zahŕňa jeden prepojený účet. Zvýšte úroveň predplatného, ak chcete prepojiť viac účtov."
+      ],
       "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
         "Vaša bezplatná skúšobná verzia vypršala. Predplaťte si službu hneď teraz, aby mal váš tím nepretržitý prístup a aby boli účty v bezpečí."
       ],
@@ -14682,6 +14778,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Emaily vašej organizácie sú chránené end-to-end šifrovaním pomocou kľúča organizácie. Tento odtlačok možno použiť na overenie, či všetci správcovia vo vašom účte majú rovnaký kľúč."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Vaše ostatné emailové adresy nebudú fungovať na prihlásenie, kým túto funkciu nevypnete."
       ],
       "Your payment details are encrypted and secure": [
         "Vaše platobné údaje sú šifrované a zabezpečené."
@@ -15454,6 +15553,9 @@
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "Bezpečný prístup k ${ PASS_APP_NAME } z terminálu, ideálny pre skriptovanie, automatizáciu a vývojárske pracovné postupy."
       ],
+      "Account credit": [
+        "Kredit na konte"
+      ],
       "Account holder": [
         "Vlastník účtu"
       ],
@@ -15561,6 +15663,12 @@
       ],
       "Allow sharing outside the organization": [
         "Umožniť zdieľanie mimo organizácie"
+      ],
+      "Allow storing 2FA codes": [
+        "Povoliť ukladanie 2FA kódov"
+      ],
+      "Allow storing passkeys": [
+        "Povoliť ukladanie prístupových kľúčov"
       ],
       "Allow users to set a backup password": [
         "Umožniť používateľom nastaviť záložné heslo"
@@ -15687,6 +15795,9 @@
       ],
       "Billed monthly.": [
         "Účtované mesačne."
+      ],
+      "Billing contact": [
+        "Fakturačný kontakt"
       ],
       "Billing cycle": [
         "Fakturačné obdobie"
@@ -15910,6 +16021,9 @@
         "Vlastné emailové domény",
         "Vlastné emailové domény"
       ],
+      "Custom email domains": [
+        "Vlastné emailové domény"
+      ],
       "Daily email notifications": [
         "Denné emailové notifikácie"
       ],
@@ -15924,6 +16038,9 @@
       ],
       "Deals, offers, and marketing emails": [
         "Ponuky, akcie a marketingové emaily"
+      ],
+      "Dedicated VPN servers": [
+        "Dedikované VPN servery"
       ],
       "Default email address": [
         "Predvolená emailová adresa"
@@ -16267,6 +16384,9 @@
       "Invite via email": [
         "Pozvať emailom"
       ],
+      "Invoice email": [
+        "Fakturačný email"
+      ],
       "Issuer ID": [
         "ID vydávateľa"
       ],
@@ -16549,6 +16669,9 @@
       "Organization password": [
         "Heslo organizácie"
       ],
+      "Organization size": [
+        "Veľkosť organizácie"
+      ],
       "Other": [
         "Iné"
       ],
@@ -16581,6 +16704,9 @@
       ],
       "Payment method": [
         "Spôsob platby"
+      ],
+      "Payment terms": [
+        "Platobné podmienky"
       ],
       "Peak allocated licenses": [
         "Maximálny počet pridelených licencií"
@@ -16714,11 +16840,11 @@
       "Restrict sign-in to email address": [
         "Obmedziť prihlásenie na emailovú adresu"
       ],
-      "Restrict sign-in to primary email address": [
-        "Obmedziť prihlásenie na primárnu emailovú adresu"
-      ],
       "Restrict sign-in to username": [
         "Obmedziť prihlásenie na používateľské meno"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Obmedziť prihlásenie na používateľské meno a adresy zodpovedajúce ${ BRAND_NAME }"
       ],
       "Reveal password": [
         "Odkryť heslo"
@@ -16921,6 +17047,9 @@
       "System information": [
         "Systémové informácie"
       ],
+      "Taxable": [
+        "Zdaniteľné"
+      ],
       "The best of ${ BRAND_NAME } with one subscription": [
         "To najlepšie od ${ BRAND_NAME } s jedným predplatným"
       ],
@@ -17049,6 +17178,9 @@
       ],
       "Value": [
         "Hodnota"
+      ],
+      "VAT number": [
+        "DIČ/IČ DPH"
       ],
       "Vault": [
         "Trezor"
@@ -17558,6 +17690,9 @@
       ],
       "Terms": [
         "Podmienky"
+      ],
+      "terms and conditions": [
+        "zmluvnými podmienkami používania"
       ],
       "terms of our referral program": [
         "podmienkami nášho odporúčacieho programu"
@@ -20100,8 +20235,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Zrušiť môžete kedykoľvek pred týmto termínom.** ${ planTitle } budete môcť bezplatne využívať až do konca skúšobného obdobia."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Ak budete pokračovať aj po skončení skúšobnej doby,** môžete službu zrušiť do 30 dní a získať pomernú refundáciu."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Zmenili ste názor po skončení skúšobnej doby?** Ak zrušíte predplatné do 30 dní od prvej platby, vrátime vám peniaze za nevyčerpanú dobu."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Po začatí platnosti predplatného...** môžete do 30 dní predplatné zrušiť a získať pomernú refundáciu."
@@ -21211,6 +21346,14 @@
         "Na vykonanie tejto operácie potrebujete prístup ku kľúču organizácie."
       ]
     },
+    "Payment method": {
+      "Bank transfer": [
+        "Bankový prevod"
+      ],
+      "Credit card": [
+        "Platobná karta"
+      ]
+    },
     "Payment Method": {
       "Bank Account": [
         "Bankový účet"
@@ -21231,6 +21374,17 @@
       ],
       "New credit/debit card": [
         "Nová platobná karta"
+      ]
+    },
+    "Payment terms": {
+      "${ days } day": [
+        "${ days } deň",
+        "${ days } dni",
+        "${ days } dní",
+        "${ days } dní"
+      ],
+      "Due on receipt": [
+        "Platné po doručení"
       ]
     },
     "Payment.Sepa.Action": {
@@ -21565,11 +21719,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "Obráťte sa na zákaznícku podporu pre potvrdenie zmeny vlastníctva."
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "Nikdy"
       ]
     },
     "Payments.ModificationWarning": {
@@ -25273,11 +25422,11 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "Zľava ${ discountItem.discountPercent }% bola uplatnená"
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "Zľava ${ planDiscountItem.discountPercent }% bola uplatnená"
       ],
-      "${ discountItem.discountPercent }% off": [
-        "${ discountItem.discountPercent }% zľava"
+      "${ planDiscountItem.discountPercent }% off": [
+        "${ planDiscountItem.discountPercent }% zľava"
       ],
       "${ trialCycleText } free": [
         "${ trialCycleText } zdarma"
@@ -25850,6 +25999,14 @@
       ],
       "Upcoming": [
         "Nadchádzajúce"
+      ]
+    },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "Od ${ startTime }"
       ]
     },
     "Subtitle": {
@@ -27941,6 +28098,9 @@
       "Pay invoice": [
         "Zaplatiť faktúru"
       ],
+      "Payment": [
+        "Platba"
+      ],
       "Payment failed": [
         "Platba zlyhala"
       ],
@@ -28108,6 +28268,9 @@
       ],
       "Restore administrator privileges": [
         "Obnoviť oprávnenia správcu"
+      ],
+      "Restrict sign-in?": [
+        "Obmedziť prihlásenie?"
       ],
       "Reused passwords": [
         "Opakovane použité heslá"
@@ -28397,6 +28560,9 @@
       "Switch to two-password mode": [
         "Prepnúť do režimu s dvomi heslami"
       ],
+      "Tax": [
+        "Daň"
+      ],
       "Text": [
         "Text"
       ],
@@ -28610,8 +28776,8 @@
       "What are you migrating?": [
         "Čo presúvate?"
       ],
-      "What changes if you switch to the Free plan": [
-        "Čo sa zmení, keď prejdete na plán Free"
+      "What changes if you cancel ${ planDisplayName }": [
+        "Čo sa zmení, ak zrušíte ${ planDisplayName }"
       ],
       "What is an alias?": [
         "Čo je alias?"
@@ -28678,6 +28844,9 @@
       ],
       "Your exposed information": [
         "Vaše odhalené informácie"
+      ],
+      "Your groups": [
+        "Vaše skupiny"
       ],
       "Your import is finished!": [
         "Váš import bol dokončený!"
@@ -28806,20 +28975,20 @@
       "Billing": [
         "Fakturácia"
       ],
-      "End date": [
-        "Dátum ukončenia"
-      ],
       "Plan": [
         "Plán"
       ],
       "Price": [
         "Cena"
       ],
-      "Start date": [
-        "Dátum začiatku"
+      "Renewal": [
+        "Obnova"
       ],
       "Status": [
         "Stav"
+      ],
+      "Subscription term": [
+        "Doba trvania predplatného"
       ]
     },
     "Title; create calendar modal": {

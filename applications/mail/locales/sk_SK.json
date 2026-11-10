@@ -108,6 +108,9 @@
       "Add participant": [
         "Pridať účastníka"
       ],
+      "Add payment method": [
+        "Pridať spôsob platby"
+      ],
       "Add phone number": [
         "Pridať telefónne číslo"
       ],
@@ -203,6 +206,9 @@
       ],
       "Cancel subscription": [
         "Zrušiť predplatné"
+      ],
+      "Cancel trial": [
+        "Zrušiť skúšobné obdobie"
       ],
       "Cancel trial and pay": [
         "Zrušiť skúšobné obdobie a zaplatiť"
@@ -1585,7 +1591,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -6359,6 +6368,9 @@
       ]
     },
     "Header": {
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Ktorý email ste používali najčastejšie predtým, než ste začali používať ${ MAIL_APP_NAME }?"
+      ],
       "Contacts": [
         "Kontakty"
       ],
@@ -6400,6 +6412,9 @@
       ],
       "Username": [
         "Používateľské meno"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Aký je hlavný dôvod, prečo ste sa prihlásili do ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -6881,6 +6896,9 @@
         "${ currentProgress } z ${ totalProgress }",
         "${ currentProgress } z ${ totalProgress }"
       ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } z ${ steps }"
+      ],
       "${ dateString } at ${ formattedTime }": [
         "${ dateString } o ${ formattedTime }"
       ],
@@ -7223,6 +7241,9 @@
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30-dňová záruka vrátenia peňazí: ak chcete zrušiť objednávku do 30 dní od nákupu, kontaktujte našu zákaznícku podporu ${ customerSupportLink } a požiadajte o vrátenie peňazí."
       ],
+      "A new or separate address": [
+        "Nová alebo samostatná adresa"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Telefónne číslo možno použiť iba na overenie jedného účtu ${ BRAND_NAME }"
       ],
@@ -7234,6 +7255,9 @@
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "Bezpečné pripojenie je pri práci na diaľku nevyhnutné. VPN chráni firemné údaje pred kybernetickými hrozbami a udržiava vašu prácu v súkromí."
+      ],
+      "A specific feature (tell us)": [
+        "Konkrétna funkcia (napíšte nám o nej)"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Používateľ je účet spojený s jedným používateľským menom, poštovou schránkou a osobou"
@@ -7342,6 +7366,9 @@
         "Všetky vaše kontakty budú importované až do limitu ${ maxContact }",
         "Všetky vaše kontakty budú importované až do limitu ${ maxContact }",
         "Všetky vaše kontakty budú importované až do limitu ${ maxContact }"
+      ],
+      "Almost done": [
+        "Takmer hotovo"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
@@ -7463,6 +7490,9 @@
       "Awaiting transaction": [
         "Čakanie na transakciu"
       ],
+      "Back": [
+        "Späť"
+      ],
       "Background color": [
         "Farba pozadia"
       ],
@@ -7537,6 +7567,12 @@
       ],
       "Choose a plan that works best for you.": [
         "Vyberte si plán, ktorý vám najviac vyhovuje."
+      ],
+      "Choose all that apply.": [
+        "Vyberte všetky, ktoré sa hodia."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Vyberte si jednu možnosť. Pomôžete nám tak vylepšiť ${ MAIL_APP_NAME }."
       ],
       "Choose your service to connect with": [
         "Vyberte si službu na pripojenie"
@@ -7708,6 +7744,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
+      ],
+      "Dismiss": [
+        "Zavrieť"
       ],
       "Do you remember your password?": [
         "Pamätáte si svoje heslo?"
@@ -8063,6 +8102,12 @@
       "How hide-my-email aliases works": [
         "Ako fungujú aliasy Hide-my-email"
       ],
+      "I didn't have one": [
+        "Nemám žiadny"
+      ],
+      "I use other Proton products": [
+        "Používam aj iné produkty Proton"
+      ],
       "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
         "Prejdem emaily z minulého týždňa a vyberiem z nich tie, na ktoré je skutočne potrebné odpovedať, aby ste to mohli vybaviť naraz."
       ],
@@ -8225,6 +8270,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Zistite, čo robiť ${ dataLeakedLink }"
       ],
+      "Leave Big Tech": [
+        "Opustite veľké technologické firmy"
+      ],
       "Left to Right": [
         "Zľava doprava"
       ],
@@ -8384,11 +8432,17 @@
       "newsletter": [
         "newsletter"
       ],
+      "Next": [
+        "Ďalej"
+      ],
       "Next time you sign in to your other account": [
         "Keď sa nabudúce prihlásite do vášho druhého účtu"
       ],
       "No action selected": [
         "Nie je vybratá žiadna akcia"
+      ],
+      "No ads": [
+        "Bez reklám"
       ],
       "No booking pages yet": [
         "Zatiaľ nie sú k dispozícii žiadne rezervačné stránky"
@@ -8498,6 +8552,9 @@
       "On public WiFi networks": [
         "Vo verejných WiFi sieťach"
       ],
+      "One last step": [
+        "Jeden posledný krok"
+      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden alebo viac dôveryhodných kľúčov bol vlastníkom označený ako \"kompromitovaný\". Odporúčame, aby ste u takýchto kľúčov vybrali voľbu \"Nedôverovať\"."
       ],
@@ -8527,6 +8584,9 @@
       ],
       "Organization size": [
         "Veľkosť organizácie"
+      ],
+      "Other (tell us)": [
+        "Iné (uveďte)"
       ],
       "Other accounts": [
         "Ďalšie účty"
@@ -8680,6 +8740,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
         "Chráňte svoj email pred únikom do emailových zoznamov alebo spammerov pomocou ${ hideMyEmailAliasesLink }."
+      ],
+      "Protection from hackers and leaks": [
+        "Ochrana pred hackermi a únikmi informácií"
       ],
       "Public sharing of documents is not yet supported.": [
         "Verejné zdieľanie dokumentov zatiaľ nie je podporované."
@@ -9002,6 +9065,9 @@
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Niektoré webové lokality a stravovacie služby blokujú obsah podľa regiónov. VPN vám umožní tieto obmedzenia obísť a získať voľný prístup na internet."
       ],
+      "Someone recommended it": [
+        "Niekto mi to odporučil"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Je nám ľúto, táto správa neexistuje, alebo jej už vypršala platnosť."
       ],
@@ -9017,11 +9083,17 @@
       "Start sharing it with contacts and use it for online services.": [
         "Začnite ju zdieľať s kontaktmi a používajte ju na online služby."
       ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Začať používať ${ MAIL_APP_NAME }"
+      ],
       "Start using the shorter, catchier version of your email address.": [
         "Začnite používať kratšiu verziu vašej emailovej adresy."
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Zostaňte ľahko pripojení povolením nasledujúcich nastavení VPN:"
+      ],
+      "Stop companies reading my emails": [
+        "Zabrániť firmám v čítaní mojich emailov"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "Možnosti úložiska nie sú v tomto prehliadači podporované, potrebujeme túto podporu, aby sme mohli prehľadávať obsah správ."
@@ -9062,6 +9134,9 @@
       "Surveillance": [
         "Monitorovanie"
       ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "Odpovede v prieskume nie sú end-to-end šifrované, preto neuvádzajte žiadne citlivé informácie, prosím."
+      ],
       "Symbols (#$&)": [
         "Znaky (#$&)"
       ],
@@ -9070,6 +9145,9 @@
       ],
       "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
         "Povedzte mi, kedy budede preč a čo by ste tam chceli napísať. Výsledok uvidíte ešte pred jeho uložením."
+      ],
+      "Tell us more (optional)": [
+        "Povedzte nám viac (voliteľné)"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "V súčasnosti nie je k dispozícii kvôli veľkému záujmu. Skúste to neskôr, prosím."
@@ -9623,8 +9701,17 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Keď cestujete alebo používate verejné Wi-Fi, pripojte sa k ${ VPN_APP_NAME }, aby ste zabránili sledovaniu vašej online aktivity alebo krádeži vašich údajov. Je to zadarmo."
       ],
+      "Which feature? (optional)": [
+        "Ktorá funkcia? (voliteľné)"
+      ],
+      "Which provider?": [
+        "Ktorý poskytovateľ?"
+      ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "Vďaka novým kategóriám emailov sa do vašej hlavnej doručenej pošty dostanú len dôležité správy. Všetko ostatné je usporiadané do kategórií."
+      ],
+      "Work or business": [
+        "Práca alebo podnikanie"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získať nový overovací kód alebo použiť alternatívnu metódu overovania?"
@@ -13538,8 +13625,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Zrušiť môžete kedykoľvek pred týmto termínom.** ${ planTitle } budete môcť bezplatne využívať až do konca skúšobného obdobia."
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Ak budete pokračovať aj po skončení skúšobnej doby,** môžete službu zrušiť do 30 dní a získať pomernú refundáciu."
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Zmenili ste názor po skončení skúšobnej doby?** Ak zrušíte predplatné do 30 dní od prvej platby, vrátime vám peniaze za nevyčerpanú dobu."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Po začatí platnosti predplatného...** môžete do 30 dní predplatné zrušiť a získať pomernú refundáciu."
@@ -17073,6 +17160,9 @@
       ],
       "Filter name cannot contain only spaces": [
         "Názov filtra nesmie obsahovať iba medzery"
+      ],
+      "Filter on": [
+        "Filter zap."
       ],
       "Filter on...": [
         "Filtrovať..."

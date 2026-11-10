@@ -202,6 +202,9 @@
       "Cancel subscription": [
         "Cancelar assinatura"
       ],
+      "Cancel trial": [
+        "Cancelar avaliação"
+      ],
       "Cancel trial and pay": [
         "Cancelar avaliação e pagar"
       ],
@@ -302,7 +305,7 @@
         "Conectar aplicativos e dispositivos"
       ],
       "Connect to video conferencing": [
-        "Conectar-se à videoconferência.\n"
+        "Conectar-se à videoconferência"
       ],
       "Connect your email": [
         "Conecte seu e-mail"
@@ -1577,7 +1580,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -4265,6 +4269,9 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Mesclando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
       ],
+      "Move emails to the right category to improve categorization.": [
+        "Mova os e-mails para a categoria correta para melhorar a classificação."
+      ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
         "Novos e-mails de ${ senderEmailAddress } e ${ otherSendersCount } outro, não serão entregues e serão excluídos permanentemente.",
         "Novos e-mails de ${ senderEmailAddress } e outros ${ otherSendersCount } não serão entregues e serão excluídos permanentemente."
@@ -6232,6 +6239,9 @@
       ]
     },
     "Header": {
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Antes do ${ MAIL_APP_NAME }, qual e-mail você mais usava?"
+      ],
       "Contacts": [
         "Contatos"
       ],
@@ -7790,6 +7800,12 @@
       "How hide-my-email aliases works": [
         "Como funcionam os aliases do hide-my-email"
       ],
+      "I didn't have one": [
+        "Eu não tinha nenhum"
+      ],
+      "I use other Proton products": [
+        "Eu uso outros produtos da Proton"
+      ],
       "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
         "Vou passar pelo correio da semana passada e retirar o que realmente precisa de uma resposta, para que você possa lidar com isso de uma só vez."
       ],
@@ -8116,6 +8132,9 @@
       "No action selected": [
         "Nenhuma ação selecionada"
       ],
+      "No ads": [
+        "Sem anúncios"
+      ],
       "No booking pages yet": [
         "Nenhuma página de agendamentos ainda"
       ],
@@ -8404,6 +8423,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
         "Proteja seu e-mail de vazamento para listas de e-mail ou spammers com ${ hideMyEmailAliasesLink }."
+      ],
+      "Protection from hackers and leaks": [
+        "Proteção contra hackers e vazamentos"
       ],
       "Public sharing of documents is not yet supported.": [
         "O compartilhamento público de documentos ainda não é suportado."
@@ -9320,8 +9342,14 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "Quando estiver viajando ou usando uma rede Wi-Fi pública, conecte-se a ${ VPN_APP_NAME } para evitar que alguém rastreie sua atividade on-line ou roube seus dados. É grátis."
       ],
+      "Which provider?": [
+        "Qual provedor?"
+      ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "Com as novas categorias de e-mail, apenas mensagens importantes chegam à sua caixa de entrada principal. Todo o resto é organizado em categorias."
+      ],
+      "Work or business": [
+        "Trabalho ou negócios"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Você gostaria de receber um novo código de verificação ou usar um método de verificação diferente?"
@@ -13079,9 +13107,6 @@
       ],
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Cancele a qualquer momento antes disso. ** Você poderá usar ${ planTitle } até que a avaliação termine, gratuitamente."
-      ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**Se você continuar após o seu teste, ** você pode cancelar dentro de 30 dias e obter um reembolso pro-rata."
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Uma vez que sua assinatura completa começa... ** Você ainda pode cancelar dentro de 30 dias e obter um reembolso proporcional."

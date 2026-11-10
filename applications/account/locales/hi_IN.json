@@ -458,6 +458,9 @@
       "Add notification": [
         "नोटिफिकेशन जोड़ें"
       ],
+      "Add payment method": [
+        "भुगतान विधि जोड़ें"
+      ],
       "Add PayPal": [
         "PayPal जोड़ें"
       ],
@@ -553,6 +556,9 @@
       ],
       "Cancel subscription": [
         "सदस्यता रद्द करें"
+      ],
+      "Cancel trial": [
+        "ट्रायल रद्द करें"
       ],
       "Cancel trial and pay": [
         "ट्रायल रद्द करें और भुगतान करें"
@@ -661,6 +667,9 @@
       ],
       "Connect apps and devices": [
         "ऐप्स और डिवाइस कनेक्ट करें"
+      ],
+      "Connect Gmail": [
+        "Gmail कनेक्ट करें"
       ],
       "Connect Gmail address": [
         "Gmail पता कनेक्ट करें"
@@ -928,6 +937,9 @@
       ],
       "Don't show again": [
         "फिर से न दिखाएं"
+      ],
+      "Don't show this offer again": [
+        "ये ऑफर दोबारा न दिखाएं"
       ],
       "Donate": [
         "डोनेट करें"
@@ -1243,6 +1255,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "${ planOrAppName } पे जाएं"
+      ],
+      "Go to folder": [
+        "फ़ोल्डर पर जाएँ"
       ],
       "Go to label": [
         "लेबल पे जाएं"
@@ -1996,6 +2011,9 @@
       ],
       "Spam": [
         "स्पैम"
+      ],
+      "Special Offer": [
+        "विशेष ऑफ़र"
       ],
       "Start free trial": [
         "मुफ्त ट्रायल शुरू करें"
@@ -3808,6 +3826,11 @@
         "${ cycle } महीनों के लिए कुल"
       ]
     },
+    "claimed address": {
+      "Verify it's you": [
+        "पुष्टि करें कि यह आप ही हैं"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "समेटें"
@@ -4145,9 +4168,6 @@
       "Confirm cancellation": [
         "रद्द करने की पुष्टि करें"
       ],
-      "If you exceed free plan limits, you won't be able to:": [
-        "Free plan की सीमाएं पार करने पर, ये काम नहीं किए जा सकेंगे:"
-      ],
       "Keep current plan": [
         "चालू प्लान रखें"
       ],
@@ -4162,9 +4182,6 @@
       ],
       "Upload any new files": [
         "कोई भी नई फाइल अपलोड करें"
-      ],
-      "When your subscription ends on ${ endDate }, your account will switch to the Free plan. If your usage exceeds Free plan limits, some features may be temporarily unavailable.": [
-        "जब आपकी सदस्यता ${ endDate } को समाप्त हो जाएगी, तो आपका खाता Free plan पर स्विच हो जाएगा। यदि आपका उपयोग Free plan की सीमाओं से अधिक हो जाता है, तो कुछ खासियतें अस्थायी रूप से अनुपलब्ध हो सकती हैं।"
       ]
     },
     "Confirm modal title": {
@@ -6164,7 +6181,7 @@
         "QR कोड से साइन-इन करें"
       ],
       "To access the code of the device you want to sign in to, tap the **Sign in with QR code** button in the help menu of the sign-in screen, and then tap **Enter key manually**. ": [
-        "जिस डिवाइस पर साइन-इन करना है उसका कोड एक्सेस करने के लिए, साइन-इन स्क्रीन के हेल्प मेनू में **QR कोड से साइन-इन करें** बटन पर टैप करें और फिर **मैन्युअल रूप से कुंजी दर्ज करें** पर टैप करें।"
+        "जिस डिवाइस/उपकरण पर साइन-इन करना है उसका कोड एक्सेस करने के लिए, साइन-इन स्क्रीन के हेल्प मेनू में **QR कोड से साइन-इन करें** बटन पर टैप करें और फिर **मैन्युअल रूप से कुंजी दर्ज करें** पर टैप करें| "
       ],
       "Try generating a new QR code.": [
         "नया QR कोड जनरेट करने का प्रयास करें।"
@@ -6432,7 +6449,7 @@
     },
     "email_forwarding_2023: Header": {
       "Actions": [
-        "एक्शन"
+        "कार्यवाही"
       ],
       "Forward from": [
         "यहाँ से फॉरवर्ड करें"
@@ -6981,6 +6998,10 @@
       "They may ask to access your account in case of an emergency.": [
         "वे आपातकालीन स्थिति में आपके खाते को एक्सेस करने के लिए कह सकते हैं।"
       ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "उन्हें **${ days } दिन** में, **${ formattedAccessibleAt }** को अपने आप एक्सेस मिल जाएगा। आप कभी भी उनका अनुरोध अस्वीकार कर सकते हैं या उन्हें तुरंत एक्सेस दे सकते हैं।",
+        "उन्हें **${ days } दिनों** में, **${ formattedAccessibleAt }** को अपने आप एक्सेस मिल जाएगा। आप कभी भी उनका अनुरोध अस्वीकार कर सकते हैं या उन्हें तुरंत एक्सेस दे सकते हैं।"
+      ],
       "This will take effect immediately.": [
         "यह तुरंत प्रभावी होगा।"
       ],
@@ -7461,9 +7482,6 @@
       "Invalid invitation link": [
         "अमान्य निमंत्रण लिंक"
       ],
-      "Invalid joining link. Please contact your administrator.": [
-        "अमान्य शामिल होने का लिंक। कृपया अपने व्यवस्थापक से संपर्क करें।"
-      ],
       "Invalid name": [
         "अमान्य नाम"
       ],
@@ -7515,6 +7533,9 @@
       ],
       "Missing organization private key": [
         "संगठन की प्राइवेट चाबी मौजूद नहीं"
+      ],
+      "Missing organization public key": [
+        "संगठन की सार्वजनिक कुंजी नहीं मिली"
       ],
       "Missing signature": [
         "लापता हस्ताक्षर"
@@ -7900,6 +7921,9 @@
       "The session has expired. Please sign in again.": [
         "सत्र समाप्त हो गया है। कृपया फिर से साइन इन करें।"
       ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "कुल राशि की गणना नहीं हो सकी। पुनः प्रयास करने के लिए राशि बदलें।"
+      ],
       "The uploaded file does not match the original. Please try again.": [
         "अपलोड की गई फाइल मूल फाइल से मेल नहीं खाती। कृपया दोबारा कोशिश करें।"
       ],
@@ -8076,6 +8100,9 @@
       ],
       "You need to have an active custom domain address in order to generate an SMTP submission token.": [
         "SMTP सबमिशन टोकन उत्पन्न करने के लिए आपके पास एक सक्रिय कस्टम डोमेन पता होना चाहिए।"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "आप कनेक्ट किए गए पतों की अधिकतम संख्या तक पहुँच गए हैं"
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "आप अधिकतम वर्ण सीमा तक पहुँच चुके हैं। कृपया अपना संदेश छोटा करें।"
@@ -8481,9 +8508,6 @@
       "${ BRAND_NAME } groups": [
         "${ BRAND_NAME } ग्रुप"
       ],
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*प्रति यूज़र केवल एक मुफ्त ट्रायल है। इसके बाद सामान्य मूल्य लागू होंगे।"
-      ],
       "Accounts with custom domains cannot join a family plan.": [
         "कस्टम डोमेन वाले खाते Family plan में शामिल नहीं हो सकते।"
       ],
@@ -8549,9 +8573,6 @@
       "The subscription will be billed to the primary admin of this plan.": [
         "सदस्यता का बिल इस प्लान के मुख्य एडमिन को भेजा जाएगा।"
       ],
-      "To ease the transition, we’re giving you a 30-day free trial of ${ BRAND_NAME } Unlimited*.": [
-        "परिवर्तन को आसान बनाने के लिए, हम आपको ${ BRAND_NAME } Unlimited का 30-दिन का मुफ्त ट्रायल दे रहे हैं।"
-      ],
       "You are invited to join ${ invite.OrganizationName }": [
         "आपको ${ invite.OrganizationName } में शामिल होने का न्योता दिया गया है"
       ],
@@ -8607,14 +8628,8 @@
       ]
     },
     "familyOffer_2023:Info": {
-      "*Only one free trial per user. Regular pricing applies thereafter.": [
-        "*प्रति यूज़र केवल एक मुफ्त ट्रायल है। इसके बाद सामान्य मूल्य लागू होंगे।"
-      ],
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Free plan.": [
         "आपका प्लान छोड़ने के बाद, इस यूज़र को ${ BRAND_NAME } Free प्लान में स्थानांतरित कर दिया जाएगा।"
-      ],
-      "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
-        "आपका प्लान छोड़ने के बाद, इस यूज़र को ${ BRAND_NAME } Unlimited प्लान में स्थानांतरित कर दिया जाएगा जिसमें 30 दिनों का मुफ्त ट्रायल* शामिल है।"
       ],
       "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
         "व्यवस्थापक खाते को स्टोरेज सौंपें। अतिरिक्त यूज़र्स के लिए स्टोरेज बाद में वितरित किया जा सकता है।"
@@ -11158,8 +11173,14 @@
       "Disabling the data backup on this device will prevent you from automatically unlocking your encrypted data after a password reset.": [
         "इस डिवाइस पर डेटा बैकअप को अक्षम करने से पासवर्ड रीसेट के बाद आपका एन्क्रिप्ट किया हुआ डेटा अपने-आप अनलॉक नहीं हो पाएगा।"
       ],
+      "Disconnected": [
+        "डिस्कनेक्ट हो गया"
+      ],
       "Discount": [
         "छूट"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "छूट मानक मासिक प्राइसिंग पर आधारित हैं। बिल साइकिल खत्म होने पर आपकी सदस्यता मानक वार्षिक दर पर रिन्यू हो जाएगी।"
       ],
       "Discover new features unlocked and start using them right away!": [
         "अनलॉक की गई नई सुविधाओं के बारे में जानें और तुरंत उनका उपयोग शुरू करें!"
@@ -11844,6 +11865,9 @@
       ],
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "अमान्य कोड। ${ RequestNewCodeLink } और फिर से प्रयास करें।"
+      ],
+      "Invalid joining link": [
+        "अमान्य जॉइनिंग लिंक"
       ],
       "Invitation link expired": [
         "निमंत्रण लिंक एक्सपायर हुआ"
@@ -13015,6 +13039,9 @@
       "This is the password you used before the password reset.": [
         "यह वह पासवर्ड है जिसका उपयोग आपने पासवर्ड रीसेट करने से पहले किया था।"
       ],
+      "This joining link isn't valid. Please contact your administrator for a new one.": [
+        "जॉइनिंग लिंक मान्य नहीं हैै। कृपया नया लिंक के लिए अपने एडमिनिस्ट्रेटर से संपर्क करें।"
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "यह लिंक एक ऐसी वेबसाइट की ओर ले जाता है जो पासवर्ड और क्रेडिट कार्ड विवरण जैसी आपकी जानकारी चुराने का प्रयास कर सकती है।"
       ],
@@ -13999,6 +14026,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "आपकी फाइलें एन्क्रिप्ट की जाएंगी और फिर सहेजी जाएंगी"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "आपका निःशुल्क ट्रायल समाप्त हो गया है। अपनी टीम की एक्सेस बिना रुकावट जारी रखने और खातों को सुरक्षित रखने के लिए अभी सब्सक्राइब करें।"
       ],
       "Your free trial includes 1 dedicated server.": [
         "आपके मुफ्त ट्रायल में 1 समर्पित सर्वर शामिल है।"
@@ -15907,6 +15937,9 @@
       "Payment method": [
         "भुगतान तरीका"
       ],
+      "Payment terms": [
+        "भुगतान शर्तें"
+      ],
       "Peak allocated licenses": [
         "पीक आवंटित लाइसेंस"
       ],
@@ -16035,6 +16068,9 @@
       ],
       "Reserved email address": [
         "रिज़र्व किया गया ईमेल पता"
+      ],
+      "Restrict sign-in to email address": [
+        "ईमेल पते तक साइन-इन सीमित करें"
       ],
       "Reveal password": [
         "पासवर्ड प्रकट करें"
@@ -16858,6 +16894,9 @@
       ],
       "Terms": [
         "शर्तें"
+      ],
+      "terms and conditions": [
+        "नियम और शर्तें"
       ],
       "terms of our referral program": [
         "हमारे रेफ़रल कार्यक्रम की शर्तें"
@@ -19283,8 +19322,8 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**तब तक कभी भी रद्द करें।** ट्रायल खत्म होने तक ${ planTitle } का इस्तेमाल मुफ्त में किया जा सकेगा।"
       ],
-      "**If you continue after your trial,** you can cancel within 30 days and get a pro-rata refund.": [
-        "**अगर ट्रायल के बाद जारी रखें,** तो 30 दिनों के भीतर रद्द करके आनुपातिक रिफंड पाया जा सकता है।"
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**ट्रायल के बाद मन बदल गया?** अपने पहले भुगतान के 30 दिनों के भीतर रद्द करें और हम बिना इस्तेमाल किए गए समय का रिफंड कर देंगे।"
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**आपकी पूरी सदस्यता शुरू होने के बाद...** 30 दिनों के भीतर रद्द करने पर आनुपातिक रिफ़ंड मिल सकता है।"
@@ -20390,6 +20429,12 @@
         "नया क्रेडिट/डेबिट कार्ड"
       ]
     },
+    "Payment terms": {
+      "${ days } day": [
+        "${ days } दिन",
+        "${ days } दिन"
+      ]
+    },
     "Payment.Sepa.Action": {
       "Use company name": [
         "कंपनी का नाम इस्तेमाल करें"
@@ -20486,6 +20531,9 @@
       "Payment method required for the subscription to be activated after the trial ends.": [
         "ट्रायल समाप्त होने के बाद सदस्यता को सक्रिय करने के लिए भुगतान तरीका आवश्यक है।"
       ],
+      "Plan switch is incompatible for the following reasons:": [
+        "निम्नलिखित कारणों से प्लान बदलना संभव नहीं है:"
+      ],
       "Please close extra wallet accounts before changing your plan.": [
         "प्लान बदलने से पहले कृपया अतिरिक्त वॉलेट खाते बंद करें।"
       ],
@@ -20497,6 +20545,9 @@
       ],
       "Processing payment": [
         "भुगतान की प्रक्रिया जारी है"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet की सीटें सदस्यों की संख्या के बराबर होनी चाहिए।"
       ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "नवीनीकरण मूल्य ${ termsAndConditionsLink } के अनुसार परिवर्तन के अधीन है।"
@@ -20564,8 +20615,14 @@
       "This payment method will become your new default for all future renewals.": [
         "यह भुगतान तरीका भविष्य के सभी नवीनीकरणों के लिए आपका नया डिफॉल्ट बन जाएगा।"
       ],
+      "This plan doesn’t support the managed features on your account.": [
+        "यह प्लान आपके खाते पर प्रबंधित सुविधाओं का समर्थन नहीं करता है।"
+      ],
       "This plan doesn’t support the members on your account.": [
         "यह प्लान आपके खाते के मेंबर्स का सपोर्ट नहीं करता।"
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "यह सदस्यता अभी पूरी नहीं हो सकती। कृपया पुनः प्रयास करें।"
       ],
       "Timeout exceeded": [
         "समय सीमा समाप्त हो गई।"
@@ -20647,6 +20704,11 @@
         "कुछ गलत हो गया। Google Pay सत्यापन असफल रहा।"
       ]
     },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "पुष्टि करके, ${ BRAND_NAME } और Stripe, हमारे भुगतान सेवा प्रदाता, को आपकी सदस्यता के लिए भविष्य के पेमेंट SEPA Direct Debit के ज़रिए इस बैंक खाते से लेने की और आपके बैंक को वो पेमेंट काटने की अनुमति दी जाती है। आपका पहला पेमेंट अभी ${ IDEAL_WERO_BRAND_NAME } के ज़रिए होगा। आपका प्लान ऑटो-रीन्यू होता रहेगा, जब तक आप रद्द न करें; हर कलेक्शन से पहले हम आपको सूचित करेंगे। डायरेक्ट डेबिट कलेक्शन के लिए, अपने बैंक से किए गए समझौते की शर्तों के तहत डेबिट की तारीख़ से 8 हफ़्तों के भीतर बैंक से रिफ़ंड मांगा जा सकता है। ये अभी किए जा रहे ${ IDEAL_WERO_BRAND_NAME } पेमेंट पर लागू नहीं होता।"
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "आपके पिछले प्लान की सदस्यता के अप्रयुक्त हिस्से के लिए क्रेडिट"
@@ -20666,11 +20728,6 @@
       ],
       "Reach out to Customer Support to confirm ownership change": [
         "स्वामित्व परिवर्तन की पुष्टि करने के लिए ग्राहक सहायता से संपर्क करें"
-      ]
-    },
-    "Payments.Lifetime Subscription.Renewal time": {
-      "Never": [
-        "कभी नहीं"
       ]
     },
     "Payments.ModificationWarning": {
@@ -22187,9 +22244,21 @@
       ]
     },
     "scim": {
+      "${ cleanUpCount } clean up action required.": [
+        "${ cleanUpCount } क्लीन-अप कार्रवाई आवश्यक है।",
+        "${ cleanUpCount } क्लीन-अप कार्रवाइयाँ आवश्यक हैं।"
+      ],
+      "${ cleanUpCount } user's permissions have changed.": [
+        "${ cleanUpCount } क्लीन-अप कार्रवाई आवश्यक है।",
+        "${ cleanUpCount } क्लीन-अप कार्रवाइयाँ आवश्यक हैं।"
+      ],
       "${ memberCount } new member": [
         "${ memberCount } नया सदस्य",
         "${ memberCount } नए सदस्य"
+      ],
+      "${ numberOfCleanUps } clean up action required": [
+        "${ numberOfCleanUps } क्लीन-अप कार्रवाई आवश्यक है",
+        "${ numberOfCleanUps } क्लीन-अप कार्रवाइयाँ आवश्यक हैं"
       ],
       "${ numberOfPendingGroups } group synced": [
         "${ numberOfPendingGroups } ग्रुप सिंक किया गया",
@@ -23992,6 +24061,9 @@
       "Outdated": [
         "पुराना हो चुका"
       ],
+      "remove organization key": [
+        "संगठन कुंजी हटाएँ"
+      ],
       "Saved": [
         "सेव किया गया"
       ],
@@ -24196,12 +24268,6 @@
       ]
     },
     "Subscription": {
-      "${ discountItem.discountPercent }% discount applied": [
-        "${ discountItem.discountPercent }% छूट लागू की गई"
-      ],
-      "${ discountItem.discountPercent }% off": [
-        "${ discountItem.discountPercent }% की छूट"
-      ],
       "${ trialCycleText } free": [
         "${ trialCycleText } मुफ़्त"
       ],
@@ -27114,6 +27180,9 @@
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "${ passPlusPlanName } के साथ अपने सभी डिवाइस पर अपनी सुरक्षा मजबूत करें। ${ upgradeButton }"
       ],
+      "Subscribe to ${ planTitle }": [
+        "${ planTitle } की सदस्यता लें"
+      ],
       "Subscription": [
         "सदस्यता"
       ],
@@ -27352,9 +27421,6 @@
       "What are you migrating?": [
         "क्या माइग्रेट किया जा रहा है?"
       ],
-      "What changes if you switch to the Free plan": [
-        "Free plan पर स्विच करने से क्या बदलाव आते हैं"
-      ],
       "What is an alias?": [
         "छद्म क्या है?"
       ],
@@ -27542,17 +27608,11 @@
       "Billing": [
         "बिलिंग"
       ],
-      "End date": [
-        "समाप्त होने की तारीख"
-      ],
       "Plan": [
         "प्लान"
       ],
       "Price": [
         "कीमत"
-      ],
-      "Start date": [
-        "आरंभ करने की तिथि"
       ],
       "Status": [
         "स्थिति"

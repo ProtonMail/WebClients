@@ -101,6 +101,17 @@
         "Servizi"
       ]
     },
+    "Clear application data prompt": {
+      "Cancel": [
+        "Annulla"
+      ],
+      "Clear application data": [
+        "Cancella i dati dell'applicazione"
+      ],
+      "This removes all data associated with this app. The app will close and you will need to sign in again to use the app.": [
+        "Questa operazione rimuove tutti i dati associati all'app. L'app verrà chiusa e dovrai accedere di nuovo per utilizzarla."
+      ]
+    },
     "Download warning": {
       "A recording is still being saved": [
         "Un salvataggio della registrazione è ancora in corso"
@@ -156,6 +167,67 @@
         "Finestra"
       ]
     },
+    "Screen share permission": {
+      "Allow screen recording": [
+        "Consenti la registrazione dello schermo"
+      ],
+      "Cancel": [
+        "Annulla"
+      ],
+      "Open System Settings": [
+        "Apri Impostazioni di Sistema"
+      ],
+      "To share your screen, allow Proton Meet in System Settings > Privacy & Security > Screen & System Audio Recording.": [
+        "Per condividere lo schermo, autorizza Proton Meet in Impostazioni di Sistema > Privacy e sicurezza > Registrazione schermo e audio di sistema."
+      ]
+    },
+    "Screen share picker": {
+      "Built-in": [
+        "Integrato"
+      ],
+      "Cancel": [
+        "Annulla"
+      ],
+      "Close": [
+        "Chiudi"
+      ],
+      "Display ${ screenNumber }": [
+        "Visualizza ${ screenNumber }"
+      ],
+      "Entire screen": [
+        "Schermo intero"
+      ],
+      "External": [
+        "Esterno"
+      ],
+      "Hide advanced options": [
+        "Nascondi opzioni avanzate"
+      ],
+      "Just one app": [
+        "Una sola app"
+      ],
+      "No windows available to share": [
+        "Non ci sono finestre disponibili da condividere"
+      ],
+      "Share": [
+        "Condividi"
+      ],
+      "Share system audio": [
+        "Condividi l'audio di sistema"
+      ],
+      "Share your screen": [
+        "Condividi il tuo schermo"
+      ],
+      "Show advanced options": [
+        "Mostra opzioni avanzate"
+      ],
+      "Viewers only see this app, even if you switch windows.": [
+        "I partecipanti potranno vedere solo quest'applicazione, anche se cambi finestra."
+      ],
+      "Viewers see your entire screen, including apps and notifications.": [
+        "I partecipanti potranno vedere il tuo schermo, incluse app e notifiche."
+      ]
+    },
     "Unload warning": {
       "Changes you made may not be saved.": [
         "Le modifiche effettuate potrebbero non essere salvate."
@@ -168,6 +240,20 @@
       ],
       "Stay": [
         "Rimani"
+      ]
+    },
+    "Update prompt": {
+      "${ MEET_APP_NAME } update": [
+        "Aggiorna ${ MEET_APP_NAME }"
+      ],
+      "A new version of ${ MEET_APP_NAME } has been downloaded. Restart the application to apply the updates.": [
+        "È stata scaricata una nuova versione di ${ MEET_APP_NAME }. Riavvia l'applicazione per installare gli aggiornamenti."
+      ],
+      "Later": [
+        "Più tardi"
+      ],
+      "Restart": [
+        "Riavvia"
       ]
     }
   }

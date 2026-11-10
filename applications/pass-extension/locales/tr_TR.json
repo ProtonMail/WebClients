@@ -1488,7 +1488,7 @@
         "Adres listede var"
       ],
       "There was an error while removing the secure link. Please try again in a few minutes.": [
-        "Güvenli bağlantı kaldırılırken bir hata oluştu. Lütfen birkaç dakika içinde tekrar deneyin."
+        "Güvenli bağlantı kaldırılırken bir hata oluştu. Lütfen birkaç dakika içinde yeniden deneyin."
       ],
       "This domain is already managed by your organization": [
         "Bu etki alanı zaten kuruluşunuz tarafından yönetiliyor"
@@ -2236,6 +2236,9 @@
       "Didn't receive the code?": [
         "Kodu almadınız mı?"
       ],
+      "Disabled by your organization": [
+        "Kuruluşunuz tarafından kullanımdan kaldırılmış"
+      ],
       "Disabling auto-lock": [
         "Otomatik kilitleme kapatılıyor"
       ],
@@ -2562,7 +2565,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -3357,6 +3361,12 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "Bilgileriniz ${ displayedDate } tarihinde bulundu"
+      ],
+      "Your organization does not allow using 2FA codes stored in ${ PASS_APP_NAME }": [
+        "Kuruluşunuz ${ PASS_APP_NAME } içinde kayıtlı iki adımlı doğrulama kodlarının kullanılmasına izin vermiyor"
+      ],
+      "Your organization does not allow using passkeys stored in ${ PASS_APP_NAME }": [
+        "Kuruluşunuz ${ PASS_APP_NAME } içinde kaydedilmiş erişim anahtarlarının kullanılmasına izin vermiyor"
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"

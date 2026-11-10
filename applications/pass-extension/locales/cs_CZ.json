@@ -496,6 +496,9 @@
       "Move all items": [
         "Přesunout všechny položky"
       ],
+      "Move folder": [
+        "Přesunout složku"
+      ],
       "Move to": [
         "Přesunout do"
       ],
@@ -893,6 +896,9 @@
       ],
       "Change your passwords": [
         "Změňte svá hesla"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Kontrola ${ compromised.progress.completed } z ${ compromised.progress.total }"
       ],
       "Create unique passwords": [
         "Vytvářejte jedinečná hesla"
@@ -1643,6 +1649,20 @@
         "Použijte klávesy nahoru a dolů pro procházení návrhů po zadání. Stiskněte tlačítko Enter pro potvrzení vaší volby, nebo tlačítko Esc pro zavření návrhů."
       ]
     },
+    "Import Tutorial": {
+      "Export": [
+        "Export"
+      ],
+      "Export Data": [
+        "Exportovat data"
+      ],
+      "More actions": [
+        "Další akce"
+      ],
+      "Settings": [
+        "Nastavení"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Položka \"${ payload.itemName }\" byla odmítnuta"
@@ -2356,7 +2376,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2675,6 +2698,9 @@
       ],
       "Save passkey": [
         "Uložit přístupový klíč"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Naskenujte a stáhněte si ${ PASS_APP_NAME } pro iOS a Android"
       ],
       "Secure links": [
         "Bezpečné odkazy"
