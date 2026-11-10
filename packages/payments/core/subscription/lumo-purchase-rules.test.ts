@@ -12,6 +12,8 @@ import {
     canRunAlongside,
     canSelectB2CLumoPlan,
     isForbiddenForStoreLumoSubscriber,
+    isLumoAddonExcluded,
+    isSingleUserB2CPlan,
     shouldReplaceB2CLumoPlanWithAddon,
 } from './lumo-purchase-rules';
 import { createMultiSubscriptionContext } from './multi-subscription-context';
@@ -72,6 +74,32 @@ describe('createMultiSubscriptionContext', () => {
         });
 
         expect(context.lumoMultiSubscriptions).toBe(false);
+    });
+});
+
+describe('isSingleUserB2CPlan', () => {
+    it.each([PLANS.MAIL, PLANS.BUNDLE, PLANS.VPN2024, PLANS.PASS, PLANS.DRIVE_1TB, PLANS.LUMO])(
+        'returns true for %s',
+        (planName) => {
+            expect(isSingleUserB2CPlan(multiSubscriptionTestCatalog, { [planName]: 1 })).toBe(true);
+        }
+    );
+
+    it.each([PLANS.DUO, PLANS.FAMILY, PLANS.VISIONARY, PLANS.PASS_FAMILY, PLANS.MAIL_PRO, PLANS.LUMO_BUSINESS])(
+        'returns false for %s',
+        (planName) => {
+            expect(isSingleUserB2CPlan(multiSubscriptionTestCatalog, { [planName]: 1 })).toBe(false);
+        }
+    );
+
+    it('ignores the addons of the selection', () => {
+        expect(isSingleUserB2CPlan(multiSubscriptionTestCatalog, { [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 })).toBe(
+            true
+        );
+    });
+
+    it('returns false without the catalog', () => {
+        expect(isSingleUserB2CPlan(undefined, { [PLANS.MAIL]: 1 })).toBe(false);
     });
 });
 
@@ -201,5 +229,28 @@ describe('isForbiddenForStoreLumoSubscriber', () => {
         expect(isForbiddenForStoreLumoSubscriber(buildMultiSubscriptionContext([webLumoPlus]), PLANS.FAMILY)).toBe(
             false
         );
+    });
+});
+
+describe('isLumoAddonExcluded', () => {
+    it.each([PLANS.MAIL, PLANS.BUNDLE, PLANS.VPN2024])('excludes the Lumo addon from %s', (planName) => {
+        expect(isLumoAddonExcluded(buildMultiSubscriptionContext([]), { [planName]: 1 }, {})).toBe(true);
+    });
+
+    it.each([PLANS.DUO, PLANS.FAMILY, PLANS.MAIL_PRO])('keeps the Lumo addon on %s', (planName) => {
+        expect(isLumoAddonExcluded(buildMultiSubscriptionContext([]), { [planName]: 1 }, {})).toBe(false);
+    });
+
+    it('keeps the Lumo addon on the plan a holder already has it on', () => {
+        const currentPlanIDs = { [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 };
+
+        expect(isLumoAddonExcluded(buildMultiSubscriptionContext([]), { [PLANS.MAIL]: 1 }, currentPlanIDs)).toBe(false);
+        expect(isLumoAddonExcluded(buildMultiSubscriptionContext([]), { [PLANS.BUNDLE]: 1 }, currentPlanIDs)).toBe(
+            true
+        );
+    });
+
+    it('keeps the Lumo addon everywhere with the flag off', () => {
+        expect(isLumoAddonExcluded(buildMultiSubscriptionContext([], false), { [PLANS.MAIL]: 1 }, {})).toBe(false);
     });
 });

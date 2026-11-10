@@ -8,6 +8,7 @@ import type { AddonConfig } from '../interfaces';
 import {
     notExternallyManagedLumo,
     notInMailOrCalendarContext,
+    notSoldOnSingleUserB2CPlan,
     passesCouponGate,
     planSupportsAddon,
 } from '../visibility';
@@ -36,11 +37,13 @@ export const LUMO_ADDON_CONFIG: AddonConfig = {
     includedByPlanOverride: { [PLANS.LUMO]: 1, [PLANS.LUMO_BUSINESS]: 1 },
     visibility: {
         couponHideFlag: 'hideLumoAddonBanner',
+        featureFlag: 'LumoMultiSubscriptions',
         rules: [
             planSupportsAddon(ADDON_PREFIXES.LUMO),
             notExternallyManagedLumo,
             passesCouponGate(ADDON_PREFIXES.LUMO),
             notInMailOrCalendarContext(ADDON_PREFIXES.LUMO),
+            notSoldOnSingleUserB2CPlan,
         ],
     },
     transferStrategy: 'lumo',

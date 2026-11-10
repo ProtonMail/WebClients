@@ -12,6 +12,7 @@ import {
 import type { AddonFlags } from '@proton/payments/core/addon/interfaces';
 import { type ADDON_NAMES, ADDON_PREFIXES, FREE_SUBSCRIPTION } from '@proton/payments/core/constants';
 import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
+import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
 import type { Cycle, PlanIDs } from '@proton/payments/core/interface';
 import { getAddonType } from '@proton/payments/core/plan/addons';
 import { getAddonMultiplier } from '@proton/payments/core/plan/feature-limits';
@@ -314,6 +315,7 @@ export function computeAddonCustomizerItems({
     couponConfig,
     isSignup,
     app,
+    entitlementCatalog,
 }: {
     normalizedSelectedPlan: SelectedPlan;
     plansMap: PlansMap;
@@ -328,6 +330,7 @@ export function computeAddonCustomizerItems({
     couponConfig?: CouponConfigMetadata;
     isSignup: boolean;
     app?: ProductParam;
+    entitlementCatalog?: EntitlementCatalog;
 }): AddonCustomizerItem[] {
     const visibilityContext = {
         subscription: latestSubscription ?? FREE_SUBSCRIPTION,
@@ -335,6 +338,7 @@ export function computeAddonCustomizerItems({
         planIDs: normalizedSelectedPlan.planIDs,
         isSignup,
         app,
+        entitlementCatalog,
     };
 
     const resolvedAddonFlags: AddonFlags = { ...addonFlags };

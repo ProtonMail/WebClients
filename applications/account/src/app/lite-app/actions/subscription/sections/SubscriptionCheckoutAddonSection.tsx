@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { ProtonPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/ProtonPlanCustomizer';
 import { getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/helpers';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
@@ -11,6 +12,7 @@ const SubscriptionCheckoutAddonSection = () => {
         usePayments();
     const { cycle, planIDs, currency } = checkoutUi;
     const scribeEnabled = useAssistantFeatureEnabled();
+    const [entitlementCatalog] = useEntitlementCatalog();
 
     if (subscription && getHasPlanCustomizer(planIDs)) {
         const latestSubscription = subscription.UpcomingSubscription ?? subscription;
@@ -30,6 +32,7 @@ const SubscriptionCheckoutAddonSection = () => {
                     [ADDON_PREFIXES.SCRIBE]: scribeEnabled.paymentsEnabled,
                 }}
                 couponConfig={couponConfig}
+                entitlementCatalog={entitlementCatalog}
                 telemetryContext={telemetryContext}
                 header={header}
             />

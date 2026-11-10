@@ -396,6 +396,7 @@ const SubscriptionContainerInner = ({
                 newPlan,
                 organization,
                 plans,
+                multiSubscriptionContext,
             });
         }
 
@@ -409,7 +410,7 @@ const SubscriptionContainerInner = ({
                 subscription,
             }) ?? planIDs
         );
-    }, [subscription, organization, plans, maybePlanIDs]);
+    }, [subscription, organization, plans, maybePlanIDs, multiSubscriptionContext]);
 
     const [model, setModel] = useState<Model>(() => {
         const step = getInitialCheckoutStep(planIDs, maybeStep);
@@ -1276,6 +1277,7 @@ const SubscriptionContainerInner = ({
                                                         : {}),
                                                 }}
                                                 couponConfig={couponConfig}
+                                                entitlementCatalog={entitlementCatalog}
                                                 loading={blockAccountSizeSelector}
                                                 currency={model.currency}
                                                 cycle={model.cycle}
@@ -1440,6 +1442,7 @@ const SubscriptionContainerInner = ({
                                 newPlan: PLANS.BUNDLE,
                                 organization,
                                 plans,
+                                multiSubscriptionContext,
                             }),
                             step: SUBSCRIPTION_STEPS.CHECKOUT,
                         }).catch(noop);
