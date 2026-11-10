@@ -1,4 +1,4 @@
-import { renderHook, waitFor } from '@testing-library/react';
+import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { FeatureCode } from '@proton/features/interface';
@@ -7,6 +7,7 @@ import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getTestPlans } from '@proton/payments/testing/data-plans';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
+import { UNPAID_STATE } from '@proton/shared/lib/interfaces/User';
 import { buildUser } from '@proton/shared/testing/buildUser';
 import { addApiMock, apiMock, clearApiMocks } from '@proton/test-api/api';
 
@@ -19,10 +20,10 @@ const getCheckCalls = () => apiMock.mock.calls.map(([config]) => config).filter(
 
 const getMailSubscription = (cycle: CYCLE) => buildSubscription({ planName: PLANS.MAIL, cycle, currency: 'EUR' });
 
-const getWrapper = (cycle: CYCLE) =>
+const getWrapper = (cycle: CYCLE, delinquent = UNPAID_STATE.NOT_UNPAID) =>
     getStoreWrapper({
         preloadedState: {
-            user: getModelState(buildUser({ Currency: 'EUR' })),
+            user: getModelState(buildUser({ Currency: 'EUR', Delinquent: delinquent, isDelinquent: !!delinquent })),
             plans: getModelState({ plans: getTestPlans('EUR'), freePlan: FREE_PLAN }),
             subscription: getSubscriptionState(getMailSubscription(cycle)),
         },
@@ -108,4 +109,30 @@ describe('useCancellationOffer', () => {
         );
         expect(result.current.planName).toBe(PLANS.BUNDLE);
     });
+
+    it.each([UNPAID_STATE.AVAILABLE, UNPAID_STATE.OVERDUE])(
+        'does not offer the discount when the user has an unpaid invoice (delinquent state %s)',
+        async (delinquent) => {
+            addApiMock(checkUrl, () => ({
+                Amount: 100,
+                AmountDue: 50,
+                CouponDiscount: -50,
+                Coupon: { Code: COUPON_CODES.RENEWANDSAVE12M26, Description: '' },
+                Cycle: CYCLE.YEARLY,
+                Currency: 'EUR',
+            }));
+
+            const { result } = renderHook(() => useCancellationOffer(getMailSubscription(CYCLE.YEARLY)), {
+                wrapper: getWrapper(CYCLE.YEARLY, delinquent),
+            });
+
+            await waitFor(() =>
+                expect(apiMock.mock.calls.some(([config]) => config.url === 'core/v4/features')).toBe(true)
+            );
+            await act(async () => {});
+
+            expect(getCheckCalls()).toHaveLength(0);
+            expect(result.current.offerIsAvailable).toBe(false);
+        }
+    );
 });

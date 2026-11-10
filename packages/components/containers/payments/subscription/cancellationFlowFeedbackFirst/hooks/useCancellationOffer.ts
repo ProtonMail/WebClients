@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { usePlans } from '@proton/account/plans/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import useLoading from '@proton/hooks/useLoading';
@@ -31,6 +32,7 @@ export interface OfferCheckResult {
 export const useCancellationOffer = (subscription: Subscription): OfferCheckResult => {
     const multiSubscriptionContext = useMultiSubscriptionContext();
     const [plans] = usePlans();
+    const [user] = useUser();
     const { paymentsApi } = usePaymentsApiWithCheckFallback();
     const [isLoading, withIsLoading] = useLoading(true);
     const [offerIsAvailable, setOfferIsAvailable] = useState(false);
@@ -45,9 +47,11 @@ export const useCancellationOffer = (subscription: Subscription): OfferCheckResu
     const currency = subscription.Currency;
     const coupon = isYearly ? COUPON_CODES.RENEWANDSAVE12M26 : COUPON_CODES.RENEWANDSAVE1M26;
     const isSupported = !!planName && SUPPORTED_PLANS.has(planName);
+    // Buying the discount does not pay an open invoice, so the payment is only held and later released
+    const isDelinquent = !!user?.isDelinquent;
 
     useEffect(() => {
-        if (!isSupported || !planName || !plansData || !feature?.Value || loading) {
+        if (!isSupported || !planName || !plansData || !feature?.Value || loading || isDelinquent) {
             return;
         }
 
@@ -98,10 +102,10 @@ export const useCancellationOffer = (subscription: Subscription): OfferCheckResu
         };
 
         void withIsLoading(fetchOffer);
-    }, [planName, cycle, currency, plansData, loading]);
+    }, [planName, cycle, currency, plansData, loading, isDelinquent]);
 
     return {
-        offerIsAvailable,
+        offerIsAvailable: offerIsAvailable && !isDelinquent,
         isLoading,
         checkout,
         yearlyRenewalPrice,
