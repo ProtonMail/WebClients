@@ -40,6 +40,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { normalizeProduct } from '@proton/shared/lib/apps/product';
 import { getIsPassApp } from '@proton/shared/lib/authentication/apps';
+import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import type { ActiveSession, GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { appendReturnUrlParams } from '@proton/shared/lib/authentication/returnUrl';
@@ -102,6 +103,7 @@ import {
     getAccessiblePlans,
     getFreeSubscriptionData,
     getOptimisticPlanCardSubscriptionData,
+    getOtherUserSessions,
     getRelativeUpsellPrice,
     getSessionDataFromSignup,
     getSubscriptionDataCycleMapping,
@@ -1059,6 +1061,18 @@ const SingleSignupContainerV2 = ({
                     }
                 );
             }
+        } catch (e) {
+            if (e instanceof InvalidPersistentSessionError) {
+                // The session is gone from storage, refresh the list so it can't be picked again
+                void onGetActiveSessions?.()
+                    .then(({ sessions }) => {
+                        if (!getOtherUserSessions(sessions, model.session?.resumedSessionResult.User.ID).length) {
+                            setSwitchModal(false);
+                        }
+                    })
+                    .catch(noop);
+            }
+            throw e;
         } finally {
             accountRef.current.signingIn = false;
         }

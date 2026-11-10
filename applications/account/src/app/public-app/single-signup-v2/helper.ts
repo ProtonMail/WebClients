@@ -49,7 +49,7 @@ import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { isFreeSubscription, isValidPlanName } from '@proton/payments/core/type-guards';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { partnerWhitelist } from '@proton/shared/lib/api/partner';
-import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import type { ActiveSession, ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
@@ -932,6 +932,9 @@ const getPlanCardSubscriptionDataMapping = ({
         return acc;
     }, {});
 };
+
+export const getOtherUserSessions = (sessions: ActiveSession[], userID: string | undefined) =>
+    sessions.filter(({ remote }) => remote.UserID !== userID);
 
 export const getOptimisticPlanCardSubscriptionData = ({
     planIDs,
