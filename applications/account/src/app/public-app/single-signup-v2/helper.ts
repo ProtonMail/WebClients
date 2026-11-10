@@ -560,6 +560,7 @@ export const getUpdatedPlanIDs = ({
             newPlan: PLANS.BUNDLE,
             organization,
             plans,
+            multiSubscriptionContext,
         });
         return { upsell, planIDs };
     }
@@ -805,6 +806,7 @@ export const getUserInfo = async ({
                 },
                 organization,
                 plans,
+                multiSubscriptionContext,
             }),
         };
     }

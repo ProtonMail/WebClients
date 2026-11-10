@@ -553,6 +553,7 @@ const Step1 = ({
                 newPlan: planName,
                 organization: model.session.organization,
                 plans: model.plans,
+                multiSubscriptionContext: model.session.multiSubscriptionContext,
             });
 
             checkOptions.planIDs = switchedPlanIds;

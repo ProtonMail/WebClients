@@ -498,6 +498,7 @@ const PlanSelection = (props: Props) => {
         onChangeSelectedProductPlans,
         filter,
         coupon,
+        multiSubscriptionContext,
         showShortPlan,
     } = props;
 
@@ -743,6 +744,7 @@ const PlanSelection = (props: Props) => {
                             newPlan: planName,
                             organization,
                             plans,
+                            multiSubscriptionContext,
                         }),
                         cycle,
                         plan.Currency

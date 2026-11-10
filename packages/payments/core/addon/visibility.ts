@@ -9,6 +9,7 @@ import { ADDON_PREFIXES, PLANS } from '../constants';
 import { hasAddonFromPlanIDs } from '../plan/addons';
 import { hasNoExternallyManagedLumoSubscription } from '../subscription/helpers/external-management';
 import { getPlanIDs } from '../subscription/helpers/plan-ids';
+import { isLumoAddonExcluded } from '../subscription/lumo-purchase-rules';
 import type { AddonVisibilityRule } from './interfaces';
 
 /** The selected plan sells this addon at all. */
@@ -38,6 +39,18 @@ export const notInMailOrCalendarContext =
 /** Lumo-only: not an externally-managed subscription. */
 export const notExternallyManagedLumo: AddonVisibilityRule = ({ subscription }) =>
     hasNoExternallyManagedLumoSubscription(subscription);
+
+export const notSoldOnSingleUserB2CPlan: AddonVisibilityRule = ({
+    planIDs,
+    subscription,
+    featureFlagEnabled,
+    entitlementCatalog,
+}) =>
+    !isLumoAddonExcluded(
+        { lumoMultiSubscriptions: featureFlagEnabled, entitlementCatalog },
+        planIDs,
+        getPlanIDs(subscription)
+    );
 
 /** Domain on VPN Business: hidden during signup; otherwise shown only behind the flag or when the
  *  current subscription already has a domain addon (grandfathering). Other plans always show it. */

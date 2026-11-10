@@ -1,6 +1,7 @@
 import { APPS } from '@proton/shared/lib/constants';
 import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
+import { multiSubscriptionTestCatalog } from '../../testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '../../testing/buildSubscription';
 import { ADDON_NAMES, ADDON_PREFIXES, FREE_SUBSCRIPTION, PLANS } from '../constants';
 import type { AddonCustomizerContext } from './interfaces';
@@ -8,6 +9,7 @@ import {
     domainVpnBusinessGate,
     notExternallyManagedLumo,
     notInMailOrCalendarContext,
+    notSoldOnSingleUserB2CPlan,
     passesCouponGate,
     planSupportsAddon,
 } from './visibility';
@@ -155,5 +157,56 @@ describe('domainVpnBusinessGate', () => {
         expect(domainVpnBusinessGate(ctx({ planIDs: { [PLANS.VPN_BUSINESS]: 1 }, featureFlagEnabled: false }))).toBe(
             false
         );
+    });
+});
+
+describe('notSoldOnSingleUserB2CPlan', () => {
+    const flagOn = { featureFlagEnabled: true, entitlementCatalog: multiSubscriptionTestCatalog };
+    const mailPlusWithLumoAddon = buildSubscription({ [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 });
+
+    it.each([PLANS.MAIL, PLANS.BUNDLE, PLANS.VPN2024])('hides the Lumo addon on %s with the flag on', (planName) => {
+        expect(notSoldOnSingleUserB2CPlan(ctx({ ...flagOn, planIDs: { [planName]: 1 } }))).toBe(false);
+    });
+
+    it.each([PLANS.DUO, PLANS.FAMILY, PLANS.VISIONARY, PLANS.MAIL_PRO])(
+        'shows the Lumo addon on %s with the flag on',
+        (planName) => {
+            expect(notSoldOnSingleUserB2CPlan(ctx({ ...flagOn, planIDs: { [planName]: 1 } }))).toBe(true);
+        }
+    );
+
+    it('shows the Lumo addon to a holder on their current plan, also after they set it to 0', () => {
+        const subscription = mailPlusWithLumoAddon;
+
+        expect(
+            notSoldOnSingleUserB2CPlan(
+                ctx({ ...flagOn, subscription, planIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 } })
+            )
+        ).toBe(true);
+        expect(notSoldOnSingleUserB2CPlan(ctx({ ...flagOn, subscription, planIDs: { [PLANS.MAIL]: 1 } }))).toBe(true);
+    });
+
+    it('hides the Lumo addon from a holder who picks another single-user plan', () => {
+        expect(
+            notSoldOnSingleUserB2CPlan(
+                ctx({ ...flagOn, subscription: mailPlusWithLumoAddon, planIDs: { [PLANS.BUNDLE]: 1 } })
+            )
+        ).toBe(false);
+    });
+
+    it('shows the Lumo addon to a holder who picks Duo', () => {
+        expect(
+            notSoldOnSingleUserB2CPlan(
+                ctx({ ...flagOn, subscription: mailPlusWithLumoAddon, planIDs: { [PLANS.DUO]: 1 } })
+            )
+        ).toBe(true);
+    });
+
+    it('shows the Lumo addon on Mail Plus with the flag off', () => {
+        expect(
+            notSoldOnSingleUserB2CPlan(
+                ctx({ entitlementCatalog: multiSubscriptionTestCatalog, planIDs: { [PLANS.MAIL]: 1 } })
+            )
+        ).toBe(true);
     });
 });

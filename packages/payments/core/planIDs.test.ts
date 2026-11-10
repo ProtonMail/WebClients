@@ -3,6 +3,10 @@ import { getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
+import {
+    buildMultiSubscriptionContext,
+    buildMultiSubscriptionContextFromSubscription,
+} from '../testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '../testing/buildSubscription';
 import { PLANS_MAP, getLongTestPlans } from '../testing/data-plans';
 import { ADDON_NAMES, ADDON_PREFIXES, PLANS } from './constants';
@@ -120,6 +124,7 @@ describe('switchPlan', () => {
         const newPlan = PLANS.VISIONARY;
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -135,6 +140,7 @@ describe('switchPlan', () => {
         const newPlan = PLANS.BUNDLE_PRO_2024;
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -151,6 +157,7 @@ describe('switchPlan', () => {
         const newPlan = PLANS.BUNDLE_PRO_2024;
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -168,6 +175,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -185,6 +193,7 @@ describe('switchPlan', () => {
         const newPlan = PLANS.BUNDLE_PRO_2024;
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -202,6 +211,7 @@ describe('switchPlan', () => {
         const newPlan = PLANS.VPN_BUSINESS;
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -218,6 +228,7 @@ describe('switchPlan', () => {
         const newPlan = PLANS.MAIL;
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -234,6 +245,7 @@ describe('switchPlan', () => {
         const newPlan = PLANS.BUNDLE_PRO;
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -254,6 +266,7 @@ describe('switchPlan', () => {
         const TIB = 1024 ** 4;
         const transferToBundlePro = (organization: Organization) =>
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs: { [PLANS.MAIL_PRO]: 1 },
                 newPlan: PLANS.BUNDLE_PRO,
                 plans: getLongTestPlans(),
@@ -316,6 +329,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -343,6 +357,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -368,6 +383,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -392,6 +408,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -400,6 +417,71 @@ describe('switchPlan', () => {
         ).toEqual({
             [PLANS.DUO]: 1,
             [ADDON_NAMES.LUMO_DUO]: 2,
+        });
+    });
+
+    describe('with the Lumo purchase rules', () => {
+        const organization = { UsedLumo: 1, MaxLumo: 1, UsedAI: 0 } as Organization;
+
+        const switchFromLumoPlus = (newPlan: PLANS, lumoMultiSubscriptions: boolean) => {
+            return switchPlan({
+                currentPlanIDs: { [PLANS.LUMO]: 1 },
+                newPlan,
+                plans: getLongTestPlans(),
+                organization,
+                multiSubscriptionContext: buildMultiSubscriptionContext([], lumoMultiSubscriptions),
+            });
+        };
+
+        it('gives a Lumo Plus subscriber picking Mail Plus no Lumo addon only with the flag on', () => {
+            expect(switchFromLumoPlus(PLANS.MAIL, false)).toEqual({ [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 });
+            expect(switchFromLumoPlus(PLANS.MAIL, true)).toEqual({ [PLANS.MAIL]: 1 });
+        });
+
+        it('keeps transferring the Lumo addon to a multi-user plan with the flag on', () => {
+            expect(switchFromLumoPlus(PLANS.DUO, true)).toEqual({ [PLANS.DUO]: 1, [ADDON_NAMES.LUMO_DUO]: 1 });
+        });
+
+        it('drops the Lumo addon when a holder picks another single-user plan, only with the flag on', () => {
+            const switchHolderToUnlimited = (lumoMultiSubscriptions: boolean) => {
+                return switchPlan({
+                    currentPlanIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 },
+                    newPlan: PLANS.BUNDLE,
+                    plans: getLongTestPlans(),
+                    organization,
+                    multiSubscriptionContext: buildMultiSubscriptionContext([], lumoMultiSubscriptions),
+                });
+            };
+
+            expect(switchHolderToUnlimited(false)).toEqual({ [PLANS.BUNDLE]: 1, [ADDON_NAMES.LUMO_BUNDLE]: 1 });
+            expect(switchHolderToUnlimited(true)).toEqual({ [PLANS.BUNDLE]: 1 });
+        });
+
+        it('keeps the Lumo addon when a holder picks Family, as with the flag off', () => {
+            const switchHolderToFamily = (lumoMultiSubscriptions: boolean) => {
+                return switchPlan({
+                    currentPlanIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 },
+                    newPlan: PLANS.FAMILY,
+                    plans: getLongTestPlans(),
+                    organization,
+                    multiSubscriptionContext: buildMultiSubscriptionContext([], lumoMultiSubscriptions),
+                });
+            };
+
+            expect(switchHolderToFamily(true)).toEqual(switchHolderToFamily(false));
+            expect(switchHolderToFamily(true)).toEqual({ [PLANS.FAMILY]: 1, [ADDON_NAMES.LUMO_FAMILY]: 1 });
+        });
+
+        it('keeps the Lumo addon a Mail Plus subscriber already holds with the flag on', () => {
+            expect(
+                switchPlan({
+                    currentPlanIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 },
+                    newPlan: PLANS.MAIL,
+                    plans: getLongTestPlans(),
+                    organization,
+                    multiSubscriptionContext: buildMultiSubscriptionContext([]),
+                })
+            ).toEqual({ [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 });
         });
     });
 
@@ -413,6 +495,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -430,6 +513,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 subscription,
                 newPlan: PLANS.MAIL,
                 plans: getLongTestPlans(),
@@ -453,6 +537,7 @@ describe('switchPlan', () => {
         const newPlan = PLANS.BUNDLE_PRO_2024;
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -469,6 +554,7 @@ describe('switchPlan', () => {
         });
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -486,6 +572,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -502,6 +589,7 @@ describe('switchPlan', () => {
         });
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -519,6 +607,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -535,6 +624,7 @@ describe('switchPlan', () => {
         });
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -552,6 +642,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -568,6 +659,7 @@ describe('switchPlan', () => {
         });
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -585,6 +677,7 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -601,6 +694,7 @@ describe('switchPlan', () => {
         });
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -619,6 +713,7 @@ describe('switchPlan', () => {
         // exclude all addons
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -638,6 +733,7 @@ describe('switchPlan', () => {
         // exclude all addons
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -651,6 +747,7 @@ describe('switchPlan', () => {
         // exclude all addons
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs: currentPlanIDs,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -671,6 +768,7 @@ describe('switchPlan', () => {
     it('should not transfer scribe addon when lumo is already transferred', () => {
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 subscription: buildSubscription({
                     [PLANS.LUMO_BUSINESS]: 1,
                     [ADDON_NAMES.MEMBER_LUMO_BUSINESS]: 1,
@@ -700,6 +798,7 @@ describe('switchPlan', () => {
     it('should transfer from Scribe to Lumo addons', () => {
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 subscription: buildSubscription({
                     [PLANS.MAIL_BUSINESS]: 1,
                     [ADDON_NAMES.MEMBER_MAIL_BUSINESS]: 1,
@@ -721,6 +820,9 @@ describe('switchPlan', () => {
     it('should transfer the new addons', () => {
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(
+                    buildSubscription(PLANS.FAMILY)
+                ),
                 subscription: buildSubscription(PLANS.FAMILY),
                 newPlanIDs: {
                     [PLANS.BUNDLE_PRO_2024]: 1,
@@ -741,6 +843,9 @@ describe('switchPlan', () => {
 
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(
+                    buildSubscription(PLANS.FAMILY)
+                ),
                 subscription: buildSubscription(PLANS.FAMILY),
                 newPlanIDs: {
                     [PLANS.BUNDLE_PRO_2024]: 1,
@@ -893,6 +998,7 @@ describe('planIDsPositiveDifference', () => {
         const newPlan = PLANS.VPN_PASS_BUNDLE_BUSINESS;
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 subscription,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -916,6 +1022,7 @@ describe('planIDsPositiveDifference', () => {
         const newPlan = PLANS.BUNDLE_PRO_2024;
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 subscription,
                 newPlan,
                 plans: getLongTestPlans(),
@@ -952,6 +1059,7 @@ describe('member addon transfer — space granted by other addons', () => {
 
         expect(
             switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
                 currentPlanIDs: {
                     [PLANS.PASS_BUSINESS]: 1,
                     [ADDON_NAMES.MEMBER_PASS_BUSINESS]: 20,
@@ -975,16 +1083,28 @@ describe('member addon transfer — space granted by other addons', () => {
         } as Organization;
         const currentPlanIDs = { [PLANS.PASS_BUSINESS]: 1, [ADDON_NAMES.MSP_PASS_BUSINESS]: 1 };
 
-        expect(switchPlan({ currentPlanIDs, newPlan: PLANS.PASS_BUSINESS, plans: plansWithMsp, organization })).toEqual(
-            {
-                [PLANS.PASS_BUSINESS]: 1,
-                [ADDON_NAMES.MSP_PASS_BUSINESS]: 1,
-            }
-        );
+        expect(
+            switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
+                currentPlanIDs,
+                newPlan: PLANS.PASS_BUSINESS,
+                plans: plansWithMsp,
+                organization,
+            })
+        ).toEqual({
+            [PLANS.PASS_BUSINESS]: 1,
+            [ADDON_NAMES.MSP_PASS_BUSINESS]: 1,
+        });
 
         // bundlepro2024 has 1 TB in the plan and 1 TB per member addon: ceil((5000 GB - 1024 GB) / 1024 GB) = 4
         expect(
-            switchPlan({ currentPlanIDs, newPlan: PLANS.BUNDLE_PRO_2024, plans: plansWithMsp, organization })
+            switchPlan({
+                multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(undefined),
+                currentPlanIDs,
+                newPlan: PLANS.BUNDLE_PRO_2024,
+                plans: plansWithMsp,
+                organization,
+            })
         ).toEqual({
             [PLANS.BUNDLE_PRO_2024]: 1,
             [ADDON_NAMES.MEMBER_BUNDLE_PRO_2024]: 4,

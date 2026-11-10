@@ -14,6 +14,8 @@ import { getSubscriptionsArray, isManagedExternally } from './subscription/helpe
 import { getPlanIDs } from './subscription/helpers/plan-ids';
 import { hasLumo } from './subscription/helpers/plan-matching';
 import type { Subscription } from './subscription/interface';
+import { isLumoAddonExcluded } from './subscription/lumo-purchase-rules';
+import type { MultiSubscriptionContext } from './subscription/multi-subscription-context';
 import { SelectedPlan } from './subscription/selected-plan';
 import { isFreeSubscription, isValidPlanName } from './type-guards';
 
@@ -123,6 +125,7 @@ type SwitchPlanOptions = EitherOr<
              * If you want to transfer all addons, you can pass an empty set/array or ignore this parameter.
              */
             dontTransferAddons?: Set<ADDON_PREFIXES> | ADDON_PREFIXES[] | ADDON_PREFIXES | boolean;
+            multiSubscriptionContext: MultiSubscriptionContext;
         },
         'currentPlanIDs' | 'subscription'
     >,
@@ -380,6 +383,7 @@ export const switchPlan = (options: SwitchPlanOptions): PlanIDs => {
         organization,
         plans,
         dontTransferAddons: dontTransferAddonsParam = new Set(),
+        multiSubscriptionContext,
     } = options;
 
     const currentPlanIDs = currentPlanIDsParam ?? getPlanIDs(subscription);
@@ -408,6 +412,10 @@ export const switchPlan = (options: SwitchPlanOptions): PlanIDs => {
         if (hasExternallyManagedLumo) {
             dontTransferAddons.add(ADDON_PREFIXES.LUMO);
         }
+    }
+
+    if (isLumoAddonExcluded(multiSubscriptionContext, newPlanIDs, currentPlanIDs)) {
+        dontTransferAddons.add(ADDON_PREFIXES.LUMO);
     }
 
     const supportedAddons = getSupportedAddons(newPlanIDs);

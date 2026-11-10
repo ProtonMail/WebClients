@@ -77,6 +77,15 @@ export const canModifySubscriptions = ({
     return otherSubscriptions.length === 0 && isB2CLumoSubscription({ entitlementCatalog }, onlySubscription);
 };
 
+export const isSingleUserB2CPlan = (entitlementCatalog: EntitlementCatalog | undefined, planIDs: PlanIDs): boolean => {
+    const planName = getPlanNameFromIDs(planIDs);
+    if (!entitlementCatalog || !planName) {
+        return false;
+    }
+
+    return !isMultiUserOrB2BSelection(entitlementCatalog, { [planName]: 1 });
+};
+
 /**
  * Temporary: this becomes irrelevant once `GET payments/v6/plans` ships, because its response carries `Eligible` per
  * plan and per price.
@@ -145,4 +154,26 @@ export const isForbiddenForStoreLumoSubscriber = (
     }
 
     return isMultiUserOrB2BSelection(context.entitlementCatalog, selectedPlanIDs);
+};
+
+const holdsLumoAddonOnSamePlan = (currentPlanIDs: PlanIDs, planIDs: PlanIDs): boolean => {
+    return (
+        hasAddonFromPlanIDs(ADDON_PREFIXES.LUMO, currentPlanIDs) &&
+        getPlanNameFromIDs(currentPlanIDs) === getPlanNameFromIDs(planIDs)
+    );
+};
+
+export const isLumoAddonExcluded = (
+    {
+        lumoMultiSubscriptions,
+        entitlementCatalog,
+    }: Pick<MultiSubscriptionContext, 'lumoMultiSubscriptions' | 'entitlementCatalog'>,
+    planIDs: PlanIDs,
+    currentPlanIDs: PlanIDs
+): boolean => {
+    return (
+        lumoMultiSubscriptions &&
+        isSingleUserB2CPlan(entitlementCatalog, planIDs) &&
+        !holdsLumoAddonOnSamePlan(currentPlanIDs, planIDs)
+    );
 };

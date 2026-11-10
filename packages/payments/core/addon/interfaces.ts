@@ -2,13 +2,14 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 
 import type { ADDON_NAMES, ADDON_PREFIXES, PLANS } from '../constants';
+import type { EntitlementCatalog } from '../entitlements/interface';
 import type { FeatureLimitKey, FreeSubscription, PlanIDs } from '../interface';
 import type { Subscription } from '../subscription/interface';
 
 /** Coupon flags that can hide an addon customizer. Defined in core; CouponConfig references it. */
 export type CouponHideFlag = 'hideLumoAddonBanner' | 'hideMeetAddonBanner';
 
-export type AddonVisibilityFlag = Extract<FeatureFlag, 'DomainVpnBiz2023'>;
+export type AddonVisibilityFlag = Extract<FeatureFlag, 'DomainVpnBiz2023' | 'LumoMultiSubscriptions'>;
 
 export interface AddonCustomizerContext {
     subscription: Subscription | FreeSubscription;
@@ -21,6 +22,7 @@ export interface AddonCustomizerContext {
     isSignup: boolean;
     /** App the checkout was opened from (some addons hide in Mail/Calendar contexts). */
     app?: ProductParam;
+    entitlementCatalog?: EntitlementCatalog;
 }
 
 /** One condition in an addon's visibility checklist. The customizer shows only when all pass. */
