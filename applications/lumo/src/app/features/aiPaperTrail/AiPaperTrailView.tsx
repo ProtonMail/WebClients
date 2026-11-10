@@ -186,7 +186,7 @@ export const AiPaperTrailView = () => {
     } else {
         content = (
             <div className="ai-paper-trail__inner flex flex-column items-center gap-4 text-center">
-                <LumoIcon name="CircleAlert" size={32} className="color-danger" />
+                <LumoIcon name="CircleExclamationPoint" size={32} className="color-danger" />
                 <h2 className="ai-paper-trail__title m-0">
                     {c('collider_2025:Title').t`We couldn't read your paper trail`}
                 </h2>

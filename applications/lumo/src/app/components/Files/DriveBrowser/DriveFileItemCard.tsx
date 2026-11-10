@@ -183,7 +183,7 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
             <div className={`flex flex-row items-center gap-2 shrink-0 ${file.type === NodeType.Folder ? 'mr-1' : ''}`}>
                 {isProcessing && <LumoIcon name="RefreshCw" className="color-primary animate-spin" size={16} />}
 
-                {hasError && <LumoIcon name="TriangleAlert" className="color-danger" size={16} />}
+                {hasError && <LumoIcon name="TriangleExclamationPoint" className="color-danger" size={16} />}
 
                 {actions.map((action, index) => {
                     const isDisabled = action.disabled || action.loading;

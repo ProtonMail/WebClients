@@ -55,7 +55,7 @@ export const DeckChecks = ({ findings, gaps, slideNumberFor }: Props) => {
         <div className="flex flex-column gap-2 text-sm">
             {unsourcedCount > 0 && (
                 <div className="flex flex-row flex-nowrap gap-2 p-3 rounded border border-weak bg-weak">
-                    <LumoIcon name="TriangleAlert" size={16} className="shrink-0 mt-0.5 color-warning" />
+                    <LumoIcon name="TriangleExclamationPoint" size={16} className="shrink-0 mt-0.5 color-warning" />
                     <details className="min-w-0">
                         <summary className="cursor-pointer">
                             {c('collider_2025: Info').ngettext(

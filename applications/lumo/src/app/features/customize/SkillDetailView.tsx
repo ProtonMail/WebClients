@@ -197,7 +197,7 @@ export const SkillDetailView = () => {
             <div className="flex flex-column flex-nowrap gap-6 min-w-0">
                 {sharedHandles.length > 0 && (
                     <p className="m-0 text-sm color-warning flex flex-nowrap items-start gap-2">
-                        <LumoIcon aria-hidden name="TriangleAlert" size={16} className="shrink-0 mt-0.5" />
+                        <LumoIcon aria-hidden name="TriangleExclamationPoint" size={16} className="shrink-0 mt-0.5" />
                         <span>
                             {c('collider_2025:Info')
                                 .t`Another skill is also invoked with ${sharedHandleList}, so only one of them can be used. Rename one of them.`}

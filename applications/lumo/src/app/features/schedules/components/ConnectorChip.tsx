@@ -37,7 +37,7 @@ export const ConnectorIcon = ({
             aria-hidden
             className={className}
             color="var(--signal-warning-major-2)"
-            name="CircleAlert"
+            name="CircleExclamationPoint"
             size={size}
             strokeWidth={2.5}
         />

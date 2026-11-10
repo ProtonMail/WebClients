@@ -44,7 +44,7 @@ export const TokenRevealModal = ({ token, onClose }: { token: string; onClose: (
 
                 <div className="api-keys-token-reveal-body">
                     <div className="api-keys-token-warning flex items-center gap-2 rounded-lg mb-4">
-                        <LumoIcon name="CircleAlert" size={16} className="shrink-0" />
+                        <LumoIcon name="CircleExclamationPoint" size={16} className="shrink-0" />
                         {c('collider_2025: Warning').t`This is the only time you'll see this key. Copy it now.`}
                     </div>
 

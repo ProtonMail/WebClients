@@ -904,7 +904,7 @@ const ToolCallStep = ({
                                     </span>
                                 )}
                                 {hasError ? (
-                                    <LumoIcon name="CircleAlert" width={12} height={12} className="color-danger" />
+                                    <LumoIcon name="CircleExclamationPoint" width={12} height={12} className="color-danger" />
                                 ) : (
                                     <LumoIcon
                                         name="Check"
@@ -965,7 +965,7 @@ const ToolCallStep = ({
                             <div className="flex items-center gap-2 shrink-0">
                                 {hasError && (
                                     <span className="flex items-center gap-1 text-sm color-danger">
-                                        <LumoIcon name="CircleAlert" width={12} height={12} />
+                                        <LumoIcon name="CircleExclamationPoint" width={12} height={12} />
                                         {
                                             // translator: Failure status for an assistant action.
 
@@ -1057,7 +1057,7 @@ const ToolCallStep = ({
                                                 className="pb-2 border-bottom border-weak last:border-0 last:pb-0 flex items-start gap-2"
                                             >
                                                 <LumoIcon
-                                                    name="CircleAlert"
+                                                    name="CircleExclamationPoint"
                                                     width={12}
                                                     height={12}
                                                     className="color-danger shrink-0 mt-0.5"

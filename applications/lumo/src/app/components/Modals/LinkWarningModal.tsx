@@ -158,21 +158,21 @@ const LinkWarningModal = ({ url, onClose, ...modalProps }: Props) => {
                                 </span>
                             </div>
                             <div className="flex flex-row flex-nowrap gap-2">
-                                <LumoIcon name="TriangleAlert" className={'color-warning'} />
+                                <LumoIcon name="TriangleExclamationPoint" className={'color-warning'} />
                                 <span>
                                     <span className="text-bold">{c('collider_2025: Info').t`Domain name`}</span> -{' '}
                                     {c('collider_2025: Info').t`Check this is the site you expect to visit`}
                                 </span>
                             </div>
                             <div className="flex flex-row flex-nowrap gap-2">
-                                <LumoIcon name="TriangleAlert" className={'color-warning'} />
+                                <LumoIcon name="TriangleExclamationPoint" className={'color-warning'} />
                                 <span>
                                     {/* eslint-disable-next-line proton/restricted-syntax */}
                                     {c('collider_2025: Info').t`Watch for misspellings (e.g., proton.me vs pr0t0n.me)`}
                                 </span>
                             </div>
                             <div className="flex flex-row flex-nowrap gap-2">
-                                <LumoIcon name="TriangleAlert" className={'color-warning'} />
+                                <LumoIcon name="TriangleExclamationPoint" className={'color-warning'} />
                                 <span>
                                     {c('collider_2025: Info')
                                         .t`Be cautious of unfamiliar domains or excessive subdomains`}

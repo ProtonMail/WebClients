@@ -29,7 +29,7 @@ export const ProjectDriveIndexLimitNotice = ({ folderId }: ProjectDriveIndexLimi
         <Banner
             className="mb-2"
             variant="warning-outline"
-            icon={<LumoIcon name="TriangleAlert" size={16} />}
+            icon={<LumoIcon name="TriangleExclamationPoint" size={16} />}
         >
             {
                 // translator: ${searchableFiles} is the number of files Lumo indexed, ${totalFiles} the number of supported files in the linked Drive folder (always more than ${searchableFiles}).
