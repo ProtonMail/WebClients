@@ -7953,7 +7953,7 @@
         "L'importo dovuto è cambiato. Per favore riprova."
       ],
       "The device you scanned the QR code with didn't send your sign-in details. Update the app on that device and try again.": [
-        "Il dispositivo con cui hai scandito il codice QR non ha inviato i dettagli d'accesso. Aggiorna l'applicazione su quel dispositivo e riprova."
+        "Il dispositivo con cui hai inquadrato il codice QR non ha inviato i dati di accesso. Aggiorna l'applicazione e riprova."
       ],
       "The email addresses do not match": [
         "Gli indirizzi email non corrispondono."
@@ -8191,6 +8191,39 @@
       ],
       "Zero keys reactivated": [
         "Chiavi zero riattivate"
+      ],
+      "Cannot share root folder": [
+        "Impossibile condividere cartella principale"
+      ],
+      "Copy operation aborted": [
+        "Copia interrotta"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Creare file al di fuori delle cartelle non è consentito"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Impossibile decifrare chiave preferita: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Impossibile decifrare nome elemento: ${ message }"
+      ],
+      "Invitation not found": [
+        "Invito non trovato"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Impossibile spostare l'elemento: la destinazione non è una cartella."
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Verifica della firma per ${ signatureType } fallita"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Verifica della firma per  ${ signatureType } non riuscita: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "L'upload di alcuni file è fallito. Prova di nuovo."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "L'upload di alcune parti del file non è stato completato. Riprova."
       ]
     },
     "error": {
@@ -21625,6 +21658,12 @@
       ],
       "name": [
         "nome"
+      ],
+      "hash key": [
+        "chiave hash"
+      ],
+      "membership": [
+        "abbonamento"
       ]
     },
     "Property type": {
