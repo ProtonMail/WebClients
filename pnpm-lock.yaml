@@ -4061,11 +4061,11 @@ importers:
         specifier: workspace:^
         version: link:../../packages/utils
       '@protontech/autofill':
-        specifier: 0.0.38040317
-        version: 0.0.38040317
+        specifier: 0.0.42001045
+        version: 0.0.42001045
       '@protontech/fathom':
-        specifier: 0.0.38040317
-        version: 0.0.38040317
+        specifier: 0.0.42001045
+        version: 0.0.42001045
       '@redux-devtools/remote':
         specifier: ^0.9.5
         version: 0.9.5(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)(redux@5.0.1)
@@ -8732,8 +8732,8 @@ importers:
         specifier: workspace:^
         version: link:../utils
       '@protontech/autofill':
-        specifier: 0.0.38040317
-        version: 0.0.38040317
+        specifier: 0.0.42001045
+        version: 0.0.42001045
       '@protontech/crypto':
         specifier: 'catalog:'
         version: 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
@@ -16327,8 +16327,8 @@ packages:
   '@protontech/authenticator-rust-core@0.28.8':
     resolution: {integrity: sha512-1pjTHiWq+ok5BOJdnckBC9kEyvIb7H5t7/XoqYVov0RhX1+b0PPatiMlXem3pZDLE3n8TKRP567vGnnKHStAjw==}
 
-  '@protontech/autofill@0.0.38040317':
-    resolution: {integrity: sha512-h1gJ2weekyRpiGAFXqu1AT67+4/TmDUK5asjhI9/3BabRmOPIr6SN+YX+I47R9GXt/Uzk6mPneuyUvjowzA4IA==}
+  '@protontech/autofill@0.0.42001045':
+    resolution: {integrity: sha512-hFmtmiCdcwecwQcLzDgcCSny+lXVz8qiHFm6vmbd0BpbvGrNmDcQmGllbkwm0DeyCjU3L5FoNc74spHRpKIvXg==}
 
   '@protontech/bip39@1.1.0':
     resolution: {integrity: sha512-hm2m+L2AESN+/F0erIBqt3/qce8eHE0VbLj4uUjKx8PUFqZ1lB6boHwd5ZK4g+3EKq1lr/n596YTJXX6f6ITEg==}
@@ -16341,8 +16341,8 @@ packages:
     peerDependencies:
       '@protontech/crypto': ^2.0.0
 
-  '@protontech/fathom@0.0.38040317':
-    resolution: {integrity: sha512-DgdNQB5xA7wjoMeax3h1YDUE7QVb+rr83hqJ+BqqJ7PsUfX0YGza2K6Grjf+EY8c14FBj84tYGJXIB2XLXb5mg==}
+  '@protontech/fathom@0.0.42001045':
+    resolution: {integrity: sha512-2Ple0Bh3f9Uqw8g/BWMnHxZCKoxelrkKrazlOZ+XDM3J6YjdVaWuhm9D1cXvfW7kdajGdmvDFBFl3WMaV9f09Q==}
 
   '@protontech/interval-tree@1.0.0':
     resolution: {integrity: sha512-XwC15KtHFwExKYfCn4d0i2sjV4XTSMlsmSAPZluczR9GHzwi7oCMBHOzhHg3EbhCYjqLJBAxGHFsepfKyfP9ng==}
@@ -16356,8 +16356,8 @@ packages:
     resolution: {integrity: sha512-GboE1mfTF4TIyJ+qAP/MbiLWpf/UmEbLYON4PopTJH4G0Vkn7Wl86gRhDg5ZxXEJAgN2sTSvUnSeLbsStOa/sA==}
     engines: {node: '>=0.10.32'}
 
-  '@protontech/ml-inference@0.0.38040317':
-    resolution: {integrity: sha512-Ub/3eetqSgClyOTxCUrnEm7nEkxk7uaXfVvWxFbLOuIgKqHezb4dmZGgGZNYRKV9/0af985n6VyDBH66nctQMw==}
+  '@protontech/ml-inference@0.0.42001045':
+    resolution: {integrity: sha512-le/Ra1dM4BIMS4YSHH5vfrcCRLiWhX7qfBokZHxYmrKm8zK3AYYXSlOgqVGsAJqbCNs2O/S9r/oyyHmtIlcQag==}
 
   '@protontech/mutex-browser@1.0.5':
     resolution: {integrity: sha512-xtyH1+Y/1gNcwNmZRrEHDvKR3/iDnsVHmN8ir3SnlkZYo0vgvL2cl0huOD/cr/lryYERKwx9far7nXKbgYdW5Q==}
@@ -34410,10 +34410,10 @@ snapshots:
 
   '@protontech/authenticator-rust-core@0.28.8': {}
 
-  '@protontech/autofill@0.0.38040317':
+  '@protontech/autofill@0.0.42001045':
     dependencies:
-      '@protontech/fathom': 0.0.38040317
-      '@protontech/ml-inference': 0.0.38040317
+      '@protontech/fathom': 0.0.42001045
+      '@protontech/ml-inference': 0.0.42001045
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -34445,9 +34445,9 @@ snapshots:
     transitivePeerDependencies:
       - babel-plugin-macros
 
-  '@protontech/fathom@0.0.38040317':
+  '@protontech/fathom@0.0.42001045':
     dependencies:
-      '@protontech/ml-inference': 0.0.38040317
+      '@protontech/ml-inference': 0.0.42001045
       jsdom: 11.12.0
     transitivePeerDependencies:
       - bufferutil
@@ -34469,7 +34469,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@protontech/ml-inference@0.0.38040317': {}
+  '@protontech/ml-inference@0.0.42001045': {}
 
   '@protontech/mutex-browser@1.0.5': {}
 

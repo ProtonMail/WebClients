@@ -50,7 +50,7 @@ const RECORDED_LOGIN_PAGES: LoginPage[] = [
 const DETECTION_TIMEOUT = { timeout: 5_000 };
 
 /** Pages a model misses, failing on purpose until the model catches up */
-const KNOWN_MODEL_GAPS: Partial<Record<RecordedPage, TestModel[]>> = { netflix: ['challenger', 'control'] };
+const KNOWN_MODEL_GAPS: Partial<Record<RecordedPage, TestModel[]>> = {};
 
 export const defineRecordedPageJourneys = ({ model, startWorker }: ModelWorker) => {
     const isKnownGap = ({ page }: LoginPage) => KNOWN_MODEL_GAPS[page]?.includes(model) ?? false;
