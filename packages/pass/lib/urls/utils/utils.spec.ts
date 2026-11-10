@@ -16,6 +16,8 @@ describe('URL utils', () => {
         test('returns true for valid TOTP URIs', () => {
             expect(isTotpUri('otpauth://totp/Example:alice@google.com')).toBe(true);
             expect(isTotpUri('otpauth://hotp/Example:alice@google.com')).toBe(true);
+            expect(isTotpUri('OTPAUTH://TOTP/Example:alice@google.com')).toBe(true);
+            expect(isTotpUri('OTPauth://totp/Example:alice@google.com')).toBe(true);
         });
 
         test('returns false for invalid TOTP URIs', () => {

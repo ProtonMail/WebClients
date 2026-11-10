@@ -7,6 +7,7 @@ import type { OtpCode } from '../../types/worker/otp';
 import { merge } from '../../utils/object/merge';
 import { isEmptyString } from '../../utils/string/is-empty-string';
 import { getEpoch } from '../../utils/time/epoch';
+import type { PassCoreProxy } from '../core/core.types';
 import { isTotpUri } from '../urls/utils/utils';
 import { PatchedSecret } from './patch';
 
@@ -70,7 +71,8 @@ const parseOTPFromSecret = (rawSecret: string, { issuer, label }: OTPOptions): T
 export const parseOTPValue = (uriOrSecret?: string, options: OTPOptions = {}): string => {
     try {
         if (!uriOrSecret || isEmptyString(uriOrSecret)) throw new Error('Invalid parameter');
-        const totp = (isTotpUri(uriOrSecret) ? parseOTPFromURI : parseOTPFromSecret)(uriOrSecret, options);
+        const value = uriOrSecret.trim();
+        const totp = (isTotpUri(value) ? parseOTPFromURI : parseOTPFromSecret)(value, options);
         return totp.toString();
     } catch {
         return '';
@@ -97,16 +99,14 @@ export const getOTPSecret = (totpUri: string): string => {
 export const getSecretOrUri = (totpUri: string): string =>
     hasDefaultOTPOptions(totpUri) ? getOTPSecret(totpUri) : totpUri;
 
-export const generateTOTPCode = (totpUri?: string): MaybeNull<OtpCode> => {
+export const generateTOTPCode = async (core: PassCoreProxy, totpUri?: string): Promise<MaybeNull<OtpCode>> => {
     try {
         if (!totpUri) return null;
-        const otp = (isTotpUri(totpUri) ? parseOTPFromURI : parseOTPFromSecret)(totpUri, {});
+        const { token, timestamp, totp } = await core.generate_totp(totpUri, BigInt(getEpoch()));
+        const period = totp.period ?? OTP_DEFAULTS.period;
+        const expiry = timestamp + period - (timestamp % period);
 
-        const token = otp.generate();
-        const timestamp = getEpoch();
-        const expiry = timestamp + otp.period - (timestamp % otp.period);
-
-        return { token, period: otp.period, expiry };
+        return { token, period, expiry };
     } catch {
         return null;
     }

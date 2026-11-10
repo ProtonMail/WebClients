@@ -1,3 +1,4 @@
+import { createPassCoreProxy } from '@proton/pass/lib/core/core.proxy';
 import { selectOrgTOTPDisabled } from '@proton/pass/store/selectors/organization';
 
 import { WorkerMessageType } from '../../../types/messages';
@@ -6,6 +7,7 @@ import { WorkerContext } from '../context/inject';
 import { createOTPService } from './otp';
 
 jest.mock('../channel');
+jest.mock('@proton/pass/lib/core/core.proxy');
 jest.mock('@proton/pass/store/selectors/organization', () => ({
     ...jest.requireActual('@proton/pass/store/selectors/organization'),
     selectOrgTOTPDisabled: jest.fn(),
@@ -24,7 +26,9 @@ describe('OTP service - `OTP_CODE_GENERATE`', () => {
         );
 
     beforeEach(() => {
-        WorkerContext.set({ service: { store: { getState: jest.fn(() => ({})) } } } as any);
+        WorkerContext.set({
+            service: { core: createPassCoreProxy({} as any), store: { getState: jest.fn(() => ({})) } },
+        } as any);
         createOTPService();
     });
 

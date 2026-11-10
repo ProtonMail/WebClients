@@ -1,5 +1,8 @@
-import { getOTPSecret, getSecretOrUri, hasDefaultOTPOptions, parseOTPValue } from './otp';
+import { createPassCoreProxy } from '../core/core.proxy';
+import { generateTOTPCode, getOTPSecret, getSecretOrUri, hasDefaultOTPOptions, parseOTPValue } from './otp';
 import { B32_ALPHABET } from './patch';
+
+jest.mock('../core/core.proxy');
 
 const toOtpUri = (secret: string) =>
     `otpauth://totp/Proton%20Pass?secret=${secret.split(' ').join('')}&algorithm=SHA1&digits=6&period=30`;
@@ -117,6 +120,13 @@ describe('otp parser', () => {
     test('should handle URL-encoded spaces in base32 secrets', () => {
         expect(parseOTPValue('NMC2%20NUFE%20YUEB%20IT4U')).toEqual(toOtpUri('NMC2 NUFE YUEB IT4U'));
     });
+
+    test('should parse URIs with an uppercase scheme or surrounding whitespace', () => {
+        const expected =
+            'otpauth://totp/Issuer:me?issuer=Issuer&secret=JBSWY3DPEHPK3PXP&algorithm=SHA1&digits=6&period=30';
+        expect(parseOTPValue('OTPAUTH://TOTP/Issuer:me?secret=JBSWY3DPEHPK3PXP&issuer=Issuer')).toEqual(expected);
+        expect(parseOTPValue(' otpauth://totp/Issuer:me?secret=JBSWY3DPEHPK3PXP&issuer=Issuer\n')).toEqual(expected);
+    });
 });
 
 describe('getOPTSecret', () => {
@@ -178,5 +188,59 @@ describe('getSecretOrUri', () => {
             'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&algorithm=SHA1&digits=9&period=30',
             'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&algorithm=SHA1&digits=6&period=45',
         ].forEach((totpUri) => expect(getSecretOrUri(totpUri)).toEqual(totpUri));
+    });
+});
+
+describe('generateTOTPCode', () => {
+    const core = createPassCoreProxy({} as any);
+    const secret = 'JBSWY3DPEHPK3PXP';
+
+    beforeAll(() => {
+        jest.useFakeTimers();
+        jest.setSystemTime(1_760_000_000_000);
+    });
+
+    afterAll(() => jest.useRealTimers());
+
+    test('should generate a code from a TOTP URI', async () => {
+        const totpUri = `otpauth://totp/Issuer:me@example.com?secret=${secret}&issuer=Issuer`;
+        expect(await generateTOTPCode(core, totpUri)).toEqual({ token: '885822', period: 30, expiry: 1_760_000_010 });
+    });
+
+    test('should apply custom algorithm, digits and period', async () => {
+        expect(await generateTOTPCode(core, `otpauth://totp/x?secret=${secret}&algorithm=SHA256`)).toEqual({
+            token: '483721',
+            period: 30,
+            expiry: 1_760_000_010,
+        });
+        expect(await generateTOTPCode(core, `otpauth://totp/x?secret=${secret}&digits=8`)).toEqual({
+            token: '75885822',
+            period: 30,
+            expiry: 1_760_000_010,
+        });
+        expect(await generateTOTPCode(core, `otpauth://totp/x?secret=${secret}&period=60`)).toEqual({
+            token: '766605',
+            period: 60,
+            expiry: 1_760_000_040,
+        });
+    });
+
+    test('should generate a code from a bare secret', async () => {
+        const expected = { token: '885822', period: 30, expiry: 1_760_000_010 };
+        expect(await generateTOTPCode(core, secret)).toEqual(expected);
+        expect(await generateTOTPCode(core, 'jbsw y3dp ehpk 3pxp')).toEqual(expected);
+    });
+
+    test('should accept a case-insensitive or whitespace-prefixed scheme', async () => {
+        const expected = { token: '885822', period: 30, expiry: 1_760_000_010 };
+        expect(await generateTOTPCode(core, `OTPAUTH://TOTP/x?secret=${secret}`)).toEqual(expected);
+        expect(await generateTOTPCode(core, ` otpauth://totp/x?secret=${secret}`)).toEqual(expected);
+    });
+
+    test('should return null on empty or invalid values', async () => {
+        expect(await generateTOTPCode(core)).toBeNull();
+        expect(await generateTOTPCode(core, '')).toBeNull();
+        expect(await generateTOTPCode(core, `otpauth://totp/x?secret=${secret}&period=0`)).toBeNull();
+        expect(await generateTOTPCode(core, `otpauth://hotp/x?secret=${secret}&counter=0`)).toBeNull();
     });
 });

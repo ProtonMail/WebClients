@@ -94,7 +94,7 @@ const getPassCoreProps = (): PassCoreProviderProps => ({
     spotlight,
     theme: createPassThemeManager({ getTheme }),
 
-    generateOTP: (payload) => (payload.type === 'uri' ? generateTOTPCode(payload.totpUri) : null),
+    generateOTP: (payload) => (payload.type === 'uri' ? generateTOTPCode(core, payload.totpUri) : null),
 
     supportsBiometrics: async () => {
         if (BUILD_TARGET === 'linux') return false;
