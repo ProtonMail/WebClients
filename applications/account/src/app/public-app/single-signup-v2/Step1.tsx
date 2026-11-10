@@ -565,6 +565,7 @@ const Step1 = ({
                 currentPlan,
                 options: { cycle: options.cycle, planIDs: checkOptions.planIDs },
                 plansMap: model.plansMap,
+                multiSubscriptionContext: model.session.multiSubscriptionContext,
             });
             if (result?.upsell) {
                 checkOptions.planIDs = result.planIDs;

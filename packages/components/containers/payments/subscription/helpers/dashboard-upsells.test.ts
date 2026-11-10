@@ -1,10 +1,13 @@
 import { IcUsers } from '@proton/icons/icons/IcUsers';
-import { CYCLE, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
+import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
-import { buildMultiSubscriptionContextFromSubscription } from '@proton/payments/testing/buildMultiSubscriptionContext';
+import {
+    buildMultiSubscriptionContext,
+    buildMultiSubscriptionContextFromSubscription,
+} from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getTestPlans } from '@proton/payments/testing/data-plans';
 import { APPS } from '@proton/shared/lib/constants';
@@ -585,6 +588,50 @@ describe('resolveUpsellsToDisplay', () => {
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
             });
+        });
+    });
+
+    describe('Lumo app upsells with the Lumo purchase rules', () => {
+        const getUpsellPlans = (subscription: Subscription, lumoMultiSubscriptions: boolean) => {
+            return resolveUpsellsToDisplay({
+                ...base,
+                app: APPS.PROTONLUMO,
+                isFree: false,
+                subscription,
+                multiSubscriptionContext: buildMultiSubscriptionContext([subscription], lumoMultiSubscriptions),
+            }).map((upsell) => upsell.planKey);
+        };
+
+        it('offers Lumo Plus to a Mail Plus subscriber only with the flag on', () => {
+            const subscription = buildSubscription(PLANS.MAIL);
+
+            expect(getUpsellPlans(subscription, false)).toEqual([PLANS.BUNDLE, PLANS.FAMILY]);
+            expect(getUpsellPlans(subscription, true)).toEqual([PLANS.LUMO]);
+        });
+
+        it('keeps the usual upsells for a Unlimited subscriber who already has Lumo Plus', () => {
+            const unlimited = buildSubscription(PLANS.BUNDLE);
+            const lumoPlus = buildSubscription(PLANS.LUMO);
+
+            const upsells = resolveUpsellsToDisplay({
+                ...base,
+                app: APPS.PROTONLUMO,
+                isFree: false,
+                subscription: unlimited,
+                multiSubscriptionContext: buildMultiSubscriptionContext([unlimited, lumoPlus]),
+            }).map((upsell) => upsell.planKey);
+
+            expect(upsells).toEqual([PLANS.FAMILY]);
+        });
+
+        it('offers no Lumo plan to a Mail Plus subscriber who has the Lumo addon, with the flag on', () => {
+            const subscription = buildSubscription({ [PLANS.MAIL]: 1, [ADDON_NAMES.LUMO_MAIL]: 1 });
+
+            expect(getUpsellPlans(subscription, true)).toEqual([PLANS.BUNDLE, PLANS.FAMILY]);
+        });
+
+        it('offers no Lumo plan to a Family subscriber with the flag on', () => {
+            expect(getUpsellPlans(buildSubscription(PLANS.FAMILY), true)).toEqual([]);
         });
     });
 });

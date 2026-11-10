@@ -40,6 +40,7 @@ import {
     notHigherThanAvailableOnBackend,
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { canSelectB2CLumoPlan } from '@proton/payments/core/subscription/lumo-purchase-rules';
 import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { isFreeSubscription as getIsFreeSubscription, isFreeSubscription } from '@proton/payments/core/type-guards';
@@ -210,6 +211,17 @@ export type AccessiblePlansHookProps = {
     | 'multiSubscriptionContext'
 >;
 
+function getCanChangeToLumoPlus(
+    subscription: Subscription | FreeSubscription | undefined,
+    multiSubscriptionContext: MultiSubscriptionContext
+): boolean {
+    if (multiSubscriptionContext.lumoMultiSubscriptions) {
+        return canSelectB2CLumoPlan(multiSubscriptionContext);
+    }
+
+    return !hasLumoAddon(subscription) && !hasVisionary(subscription);
+}
+
 export function useAccessiblePlans({
     selectedProductPlans,
     subscription,
@@ -278,7 +290,7 @@ export function useAccessiblePlans({
             enabledProductB2CPlans[0] ??
             plansMap[PLANS.MAIL];
 
-        const canChangeToLumoPlus = !hasLumoAddon(subscription) && !hasVisionary(subscription);
+        const canChangeToLumoPlus = getCanChangeToLumoPlus(subscription, multiSubscriptionContext);
         const showPlusPlan = plusPlan?.Name !== PLANS.LUMO || canChangeToLumoPlus;
 
         IndividualPlans = filterPlans([

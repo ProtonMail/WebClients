@@ -7,6 +7,7 @@ import { getAllowedCycles } from '@proton/components/containers/payments/subscri
 import type { Currency, Cycle, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import { getIsPlanTransitionForbidden } from '@proton/payments/core/subscription/forbidden-plan-transition';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import type { Plan, PlansMap } from '@proton/shared/lib/payments/plan/interface';
 import noop from '@proton/utils/noop';
 
@@ -17,6 +18,7 @@ interface Props {
     planIDs: PlanIDs;
     currency: Currency;
     onPlusUpgrade: () => void;
+    multiSubscriptionContext: MultiSubscriptionContext;
 }
 
 const useSubscriptionPlanTransitionModals = ({
@@ -26,6 +28,7 @@ const useSubscriptionPlanTransitionModals = ({
     currency,
     cycle,
     onPlusUpgrade,
+    multiSubscriptionContext,
 }: Props) => {
     const [updatedPlanIds, setUpdatedPlanIds] = useState<PlanIDs>();
     const [updatedCycle, setUpdatedCycle] = useState<Cycle>();
@@ -43,6 +46,7 @@ const useSubscriptionPlanTransitionModals = ({
             subscription,
             plansMap,
             planIDs,
+            multiSubscriptionContext,
         });
 
         hideVisionaryDowngradeWarning();

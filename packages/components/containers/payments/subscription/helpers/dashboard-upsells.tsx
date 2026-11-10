@@ -40,6 +40,11 @@ import {
     isTrial,
 } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap } from '@proton/payments/core/subscription/interface';
+import {
+    canSelectB2CLumoPlan,
+    hasB2CLumoSubscription,
+    isB2CLumoPlan,
+} from '@proton/payments/core/subscription/lumo-purchase-rules';
 import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlanToCheck } from '@proton/payments/core/subscription/plan-to-check';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
@@ -787,6 +792,26 @@ type ResolveUpsellsToDisplayProps = {
     multiSubscriptionContext: MultiSubscriptionContext;
 };
 
+const isUpsellAllowedByLumoRules = (upsell: Upsell, multiSubscriptionContext: MultiSubscriptionContext): boolean => {
+    if (
+        !multiSubscriptionContext.lumoMultiSubscriptions ||
+        !isUpsellWithPlan(upsell) ||
+        !isB2CLumoPlan(multiSubscriptionContext, upsell.plan)
+    ) {
+        return true;
+    }
+
+    return canSelectB2CLumoPlan(multiSubscriptionContext);
+};
+
+const canUpsellB2CLumoToSubscriber = (app: APP_NAMES, multiSubscriptionContext: MultiSubscriptionContext): boolean => {
+    return (
+        app === APPS.PROTONLUMO &&
+        canSelectB2CLumoPlan(multiSubscriptionContext) &&
+        !hasB2CLumoSubscription(multiSubscriptionContext)
+    );
+};
+
 export const resolveUpsellsToDisplay = ({
     app,
     subscription,
@@ -856,6 +881,7 @@ export const resolveUpsellsToDisplay = ({
             case Boolean(hasVPNFree):
                 return [getVPNUpsell(upsellsPayload)];
             case Boolean(hasLumoFree):
+            case canUpsellB2CLumoToSubscriber(app, multiSubscriptionContext):
                 return [getLumoUpsell({ ...upsellsPayload, isRecommended: true })];
             case Boolean(hasMeetFree):
                 return [
@@ -956,7 +982,8 @@ export const resolveUpsellsToDisplay = ({
             (upsell) =>
                 // isUpsellWithPlan is here type-safety
                 !isUpsellWithPlan(upsell) || !isForbiddenModification(multiSubscriptionContext, upsell.plan)
-        );
+        )
+        .filter((upsell) => isUpsellAllowedByLumoRules(upsell, multiSubscriptionContext));
 
     return upsells;
 };

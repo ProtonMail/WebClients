@@ -12,18 +12,38 @@ import { isManagedExternally } from './helpers/external-management';
 import { getPlanIDs } from './helpers/plan-ids';
 import { hasVisionary } from './helpers/plan-matching';
 import type { Subscription } from './interface';
+import { shouldReplaceB2CLumoPlanWithAddon } from './lumo-purchase-rules';
+import type { MultiSubscriptionContext } from './multi-subscription-context';
+import { getPurchaseOutcome } from './purchase-outcome';
 import { SelectedPlan } from './selected-plan';
+
+const isLumoPlanReplacedByAddon = (
+    newPlanName: PLANS | ADDON_NAMES | undefined,
+    multiSubscriptionContext: MultiSubscriptionContext
+): boolean => {
+    if (!multiSubscriptionContext.lumoMultiSubscriptions) {
+        return newPlanName === PLANS.LUMO;
+    }
+
+    return shouldReplaceB2CLumoPlanWithAddon(multiSubscriptionContext, newPlanName);
+};
 
 export function isForbiddenLumoPlus({
     subscription,
     newPlanName,
     plansMap,
+    multiSubscriptionContext,
 }: {
     subscription: Subscription | FreeSubscription | null | undefined;
     newPlanName: PLANS | ADDON_NAMES | undefined;
     plansMap: PlansMap;
+    multiSubscriptionContext: MultiSubscriptionContext;
 }) {
-    if (!subscription || isFreeSubscription(subscription) || newPlanName !== PLANS.LUMO) {
+    if (
+        !subscription ||
+        isFreeSubscription(subscription) ||
+        !isLumoPlanReplacedByAddon(newPlanName, multiSubscriptionContext)
+    ) {
         return false;
     }
     const currentPlanIDs = getPlanIDs(subscription);
@@ -148,25 +168,38 @@ function isForbiddenMeetPlus({
     return false;
 }
 
+const getReplacedSubscriptions = (multiSubscriptionContext: MultiSubscriptionContext, newPlanIDs: PlanIDs) => {
+    const outcome = getPurchaseOutcome(multiSubscriptionContext, newPlanIDs);
+    return outcome.type === 'replaces' ? [outcome.subscription] : [];
+};
+
 function isForbiddenPlusToPlus({
     subscription,
     newPlanIDs,
+    multiSubscriptionContext,
 }: {
     subscription: Subscription | FreeSubscription | null | undefined;
     newPlanIDs: PlanIDs;
+    multiSubscriptionContext: MultiSubscriptionContext;
 }): boolean {
     if (!subscription) {
         return false;
     }
-    const subscribedPlan = getPlan(subscription?.UpcomingSubscription ?? subscription);
-    const subscribedPlans = [subscribedPlan].filter(isTruthy).filter(
-        /**
+    const newPlanName = getPlanNameFromIDs(newPlanIDs);
+    const comparedSubscriptions = multiSubscriptionContext.lumoMultiSubscriptions
+        ? getReplacedSubscriptions(multiSubscriptionContext, newPlanIDs)
+        : [subscription];
+    const subscribedPlans = comparedSubscriptions
+        .map((comparedSubscription) => getPlan(comparedSubscription))
+        .filter(isTruthy)
+        .filter(
+            /**
          Ignore pass lifetime, they should always be allowed to change to another plus plan
          **/ (plan) => plan.Name !== PLANS.PASS_LIFETIME
-    );
+        );
     const isSubscribedToAPlusPlan = subscribedPlans.some((subscribedPlan) => getHasPlusPlan(subscribedPlan.Name));
-    const newPlanName = getPlanNameFromIDs(newPlanIDs);
     const isNotSamePlanName = !subscribedPlans.some((subscribedPlan) => subscribedPlan.Name === newPlanName);
+
     const allowPlusToPlusTransitions = [
         {
             // Going from any plan
@@ -250,15 +283,17 @@ export function getIsPlanTransitionForbidden({
     subscription,
     plansMap,
     planIDs,
+    multiSubscriptionContext,
 }: {
     subscription: Subscription | FreeSubscription | null | undefined;
     planIDs: PlanIDs;
     plansMap: PlansMap;
+    multiSubscriptionContext: MultiSubscriptionContext;
 }) {
     const newPlan = getPlanFromPlanIDs(plansMap, planIDs);
     const newPlanName = newPlan?.Name;
 
-    const lumoForbidden = isForbiddenLumoPlus({ plansMap, subscription, newPlanName });
+    const lumoForbidden = isForbiddenLumoPlus({ plansMap, subscription, newPlanName, multiSubscriptionContext });
     if (lumoForbidden) {
         return { type: 'lumo-plus', newPlanIDs: lumoForbidden.planIDs, newPlanName: lumoForbidden.planName } as const;
     }
@@ -268,7 +303,7 @@ export function getIsPlanTransitionForbidden({
         return { type: 'meet-plus', newPlanIDs: meetForbidden.planIDs, newPlanName: meetForbidden.planName } as const;
     }
 
-    if (isForbiddenPlusToPlus({ subscription, newPlanIDs: planIDs })) {
+    if (isForbiddenPlusToPlus({ subscription, newPlanIDs: planIDs, multiSubscriptionContext })) {
         return { type: 'plus-to-plus', newPlanName } as const;
     }
 
