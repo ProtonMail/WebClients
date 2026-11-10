@@ -20,6 +20,7 @@ export const FontSizeSettingRow = () => {
             subtext={c('collider_2025: Description').t`Adjust the size of text across the app`}
             button={
                 <SelectTwo
+                    aria-label={c('Label').t`Font size`}
                     id="lumo-font-size-select"
                     className="min-w-custom shrink-0"
                     style={{ '--min-w-custom': '11rem' }}

@@ -8,6 +8,10 @@ const includesString = (str1: string, str2: string | undefined) =>
 const arrayIncludesString = (arrayToSearch: string[], keyword: string | undefined) =>
     arrayToSearch.some((str) => includesString(str, keyword));
 
+/** Text of the selected options, used by SelectButton to name or describe the button */
+export const getSelectedValueLabel = <V>(selectedOptions: { props: OptionProps<V> }[]) =>
+    selectedOptions.map((option) => option.props.title).join(', ') || undefined;
+
 export const defaultFilterFunction = <V>(option: OptionProps<V>, keyword: string | undefined) =>
     (option.title && includesString(option.title, keyword)) ||
     (option.searchStrings && arrayIncludesString(option.searchStrings, keyword));

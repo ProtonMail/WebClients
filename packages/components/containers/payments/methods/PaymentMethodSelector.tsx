@@ -153,6 +153,7 @@ const PaymentMethodSelector = ({
 
     return (
         <SelectTwo
+            aria-label={c('Label').t`Payment method`}
             id="select-method"
             value={method}
             disabled={disabled}

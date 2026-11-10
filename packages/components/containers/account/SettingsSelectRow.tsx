@@ -8,6 +8,9 @@ import type { SelectTwoProps } from '../../components/selectTwo/SelectTwo';
 
 const SettingsSelectRowContext = createContext<{ id: string }>({ id: '' });
 
+/** Id of the row's label, which names the select through `aria-labelledby` */
+export const getSettingsSelectRowLabelId = (id: string) => `label-${id}`;
+
 const SettingsSelectRowLabel = ({
     children,
     className,
@@ -15,7 +18,12 @@ const SettingsSelectRowLabel = ({
 }: { children: ReactNode } & React.LabelHTMLAttributes<HTMLLabelElement>) => {
     const { id } = useContext(SettingsSelectRowContext);
     return (
-        <label htmlFor={id} className={clsx('flex items-center gap-2 text-semibold', className)} {...rest}>
+        <label
+            htmlFor={id}
+            id={getSettingsSelectRowLabelId(id)}
+            className={clsx('flex items-center gap-2 text-semibold', className)}
+            {...rest}
+        >
             {children}
         </label>
     );
@@ -27,7 +35,7 @@ const SettingsSelectRowDescription = ({ children }: { children: ReactNode }) => 
 
 const SettingsSelectRowSelect = <V,>(props: Omit<SelectTwoProps<V>, 'id'>) => {
     const { id } = useContext(SettingsSelectRowContext);
-    return <SelectTwo id={id} {...props} />;
+    return <SelectTwo id={id} aria-labelledby={getSettingsSelectRowLabelId(id)} {...props} />;
 };
 
 interface SettingsSelectRowProps {

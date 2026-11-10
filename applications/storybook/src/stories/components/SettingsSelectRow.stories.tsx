@@ -27,7 +27,7 @@ const meta: Meta<typeof SettingsSelectRow> = {
         docs: {
             description: {
                 component:
-                    'A settings row pairing a label (and optional description) with a select. The `id` is shared through context so `SettingsSelectRow.Label` labels `SettingsSelectRow.Select`. The select column is capped at 15rem from `md` up and goes full width on mobile. Place the row inside a `SettingsIconRow` for the leading icon column and stack rows in a `DashboardCard` / `DashboardCardContent` separated by `DashboardCardDivider`.',
+                    'A settings row pairing a label (and optional description) with a select. The `id` is shared through context so `SettingsSelectRow.Label` labels `SettingsSelectRow.Select`: screen readers announce the label as the name of the select and the selected value as its description, so do not add `aria-label` or point `aria-describedby` at the label. The select column is capped at 15rem from `md` up and goes full width on mobile. Place the row inside a `SettingsIconRow` for the leading icon column and stack rows in a `DashboardCard` / `DashboardCardContent` separated by `DashboardCardDivider`.',
             },
         },
     },
@@ -47,17 +47,9 @@ export const Default: Story = {
                 <SettingsIconRow icon={IcLanguage}>
                     <SettingsSelectRow
                         id="languageSelect"
-                        label={
-                            <SettingsSelectRow.Label id="label-languageSelect">
-                                Default language
-                            </SettingsSelectRow.Label>
-                        }
+                        label={<SettingsSelectRow.Label>Default language</SettingsSelectRow.Label>}
                         select={
-                            <SettingsSelectRow.Select
-                                value={language}
-                                onValue={setLanguage}
-                                aria-describedby="label-languageSelect"
-                            >
+                            <SettingsSelectRow.Select value={language} onValue={setLanguage}>
                                 <Option title="English" value="en" />
                                 <Option title="Deutsch" value="de" />
                                 <Option title="Français" value="fr" />

@@ -1,11 +1,9 @@
 import type { MutableRefObject } from 'react';
-import { useState } from 'react';
 
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
-import generateUID from '@proton/utils/generateUID';
 
 import useGetSenderOptions from '../../../hooks/composer/useGetSenderOptions';
 import { selectComposer } from '../../../store/composers/composerSelectors';
@@ -24,8 +22,6 @@ const SelectSender = ({ composerID, message, disabled, addressesBlurRef }: Props
     const dispatch = useComposerDispatch();
     const composer = useComposerSelector((state) => selectComposer(state, composerID));
 
-    const [uid] = useState(generateUID('select-sender'));
-
     const addressesOptions = useGetSenderOptions(message);
 
     const handleFromChange = (event: SelectChangeEvent<string>) => {
@@ -37,7 +33,6 @@ const SelectSender = ({ composerID, message, disabled, addressesBlurRef }: Props
         <SelectTwo
             disabled={disabled}
             className="composer-light-field composer-meta-select-sender expand-click-area"
-            id={`sender-${uid}`}
             value={composer?.senderEmailAddress}
             onChange={handleFromChange}
             onFocus={addressesBlurRef.current}

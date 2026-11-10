@@ -142,6 +142,7 @@ const ActivationForm = ({ prefilledParams, onLogin }: ActivationFormProps) => {
         </span>
     ) : (
         <SelectTwo
+            aria-label={c('Label').t`Domain`}
             id="select-domain"
             originalPlacement="bottom-end"
             unstyled

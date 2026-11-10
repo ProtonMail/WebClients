@@ -70,7 +70,7 @@ const CalendarExportSection = ({ personalCalendars, fallbackCalendar }: Props) =
                             options={calendarOptions}
                             onChange={handleSelectCalendar}
                             freeze={false}
-                            aria-describedby={`label-calendar-${selectedCalendar.ID}`}
+                            aria-labelledby={`label-calendar-${selectedCalendar.ID}`}
                         />
                     </span>
                 )}

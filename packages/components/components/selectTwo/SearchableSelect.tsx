@@ -15,7 +15,7 @@ import Option from '../option/Option';
 import SelectButton from './SelectButton';
 import { SelectDisplayValue } from './SelectDisplayValue';
 import SelectOptions from './SelectOptions';
-import { defaultFilterFunction } from './helpers';
+import { defaultFilterFunction, getSelectedValueLabel } from './helpers';
 import type { SelectProps } from './select';
 import useSelect, { SelectProvider } from './useSelect';
 
@@ -144,7 +144,7 @@ const SearchableSelect = <V extends any>({
     };
 
     const selectedChildren = (selectedIndexes ?? []).map((i) => optionChildren[i]);
-    const ariaLabel = selectedChildren?.map((child) => child.props.title).join(', ');
+    const valueLabel = getSelectedValueLabel(selectedChildren);
 
     const filteredOptions = useMemo(() => {
         if (!searchValue) {
@@ -168,7 +168,7 @@ const SearchableSelect = <V extends any>({
             <SelectButton
                 isOpen={isOpen}
                 onClick={handleAnchorClick}
-                aria-label={ariaLabel}
+                valueLabel={valueLabel}
                 ref={anchorRef}
                 caretIcon={caretIcon}
                 caretClassName={caretClassName}

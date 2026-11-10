@@ -38,7 +38,6 @@ const SelectGroupAction = ({ action, index, canMerge, onChange }: SelectGroupAct
 
     return (
         <SelectTwo
-            id="contact-group-action-select"
             value={action}
             onChange={({ value }) => onChange(value as IMPORT_GROUPS_ACTION, index)}
             title={c('Title').t`Select action to take on contact group`}
@@ -110,7 +109,6 @@ const SelectGroup = ({
     if (action === IMPORT_GROUPS_ACTION.MERGE) {
         return (
             <SelectTwo
-                id="contact-group-select"
                 value={targetGroup}
                 onChange={({ value }) => onChangeTargetGroup(value, index)}
                 title={c('Title').t`Select contact group`}

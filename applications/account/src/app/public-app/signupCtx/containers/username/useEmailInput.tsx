@@ -215,6 +215,7 @@ const useEmailInput = ({
                                     return (
                                         <>
                                             <SelectTwo
+                                                aria-label={c('Label').t`Domain`}
                                                 id="select-domain"
                                                 originalPlacement="bottom-end"
                                                 anchorRef={anchorRef}

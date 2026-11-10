@@ -73,11 +73,7 @@ const LanguageSection = ({ locales = {} }: Props) => {
         <SettingsIconRow icon={IcLanguage}>
             <SettingsSelectRow
                 id="languageSelect"
-                label={
-                    <SettingsSelectRow.Label id="label-languageSelect">
-                        {c('Label').t`Default language`}
-                    </SettingsSelectRow.Label>
-                }
+                label={<SettingsSelectRow.Label>{c('Label').t`Default language`}</SettingsSelectRow.Label>}
                 select={
                     <SettingsSelectRow.Select
                         value={displayedValue}
@@ -85,7 +81,6 @@ const LanguageSection = ({ locales = {} }: Props) => {
                             // handleChange reports its own errors
                             void handleChange(value);
                         }}
-                        aria-describedby="label-languageSelect"
                     >
                         {Object.entries(LOCALES).map(([key, value]) => (
                             <Option key={key} title={value} value={key} />

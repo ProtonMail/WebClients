@@ -46,17 +46,12 @@ const TimeSection = () => {
         <SettingsIconRow icon={IcClock}>
             <SettingsSelectRow
                 id="time-format-select"
-                label={
-                    <SettingsSelectRow.Label id="label-time-format">
-                        {c('Label').t`Time format`}
-                    </SettingsSelectRow.Label>
-                }
+                label={<SettingsSelectRow.Label>{c('Label').t`Time format`}</SettingsSelectRow.Label>}
                 select={
                     <SettingsSelectRow.Select
                         value={userSettings.TimeFormat}
                         loading={loading}
                         onChange={({ value }) => withLoading(handleTimeFormat(value))}
-                        aria-describedby="label-time-format"
                     >
                         {[
                             {

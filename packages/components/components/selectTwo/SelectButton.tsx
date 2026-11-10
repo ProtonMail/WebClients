@@ -2,7 +2,9 @@ import type { ComponentPropsWithRef, KeyboardEvent, ReactElement, ReactNode } fr
 import { forwardRef } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import useInstance from '@proton/hooks/useInstance';
 import clsx from '@proton/utils/clsx';
+import generateUID from '@proton/utils/generateUID';
 
 import DropdownCaret from '../dropdown/DropdownCaret';
 import type { NodeOrBoolean } from '../v2/field/InputField';
@@ -18,6 +20,12 @@ interface SelectButtonProps extends Omit<ComponentPropsWithRef<'button'>, 'value
     caretClassName?: string;
     fullWidth?: boolean;
     prefixIcon?: ReactNode;
+    /**
+     * Text of the selected value. It names the button unless `aria-label` or `aria-labelledby` is passed, in which case
+     * the value describes it instead. Label a select with one of those (or `InputFieldTwo` / `SettingsSelectRow`,
+     * which pass `aria-labelledby`), not only with `<label htmlFor>`, which the value would override.
+     */
+    valueLabel?: string;
 }
 
 const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
@@ -35,10 +43,19 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
             caretClassName,
             fullWidth = true,
             prefixIcon,
+            valueLabel,
+            'aria-label': ariaLabel,
+            'aria-labelledby': ariaLabelledBy,
+            'aria-describedby': ariaDescribedBy,
             ...rest
         },
         ref
     ) => {
+        const valueId = useInstance(() => generateUID('select-value'));
+        const isNamedByValue = !ariaLabel && !ariaLabelledBy;
+        const describedBy =
+            [isNamedByValue ? undefined : valueId, ariaDescribedBy].filter(Boolean).join(' ') || undefined;
+
         const handleAnchorKeydown = (e: KeyboardEvent<HTMLButtonElement>) => {
             switch (e.key) {
                 case ' ': {
@@ -58,10 +75,11 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
                 onKeyDown={handleAnchorKeydown}
                 aria-expanded={isOpen}
                 aria-busy={loading}
-                aria-live="assertive"
-                aria-atomic="true"
                 // eslint-disable-next-line jsx-a11y/role-supports-aria-props -- the error state is exposed on the button
                 aria-invalid={Boolean(error)}
+                aria-label={isNamedByValue ? valueLabel || undefined : ariaLabel}
+                aria-labelledby={ariaLabelledBy}
+                aria-describedby={describedBy}
                 className={clsx([
                     !unstyled && 'select field',
                     unstyled && 'select-unstyled',
@@ -73,7 +91,9 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
                 {...rest}
             >
                 {prefixIcon && <span className="inline-flex">{prefixIcon}</span>}
-                <span className="flex-1 text-ellipsis text-left">{children}</span>
+                <span id={valueId} className="flex-1 text-ellipsis text-left">
+                    {children}
+                </span>
 
                 {
                     // eslint-disable-next-line no-nested-ternary
