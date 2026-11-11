@@ -10,15 +10,14 @@ import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/h
 import Toggle from '@proton/components/components/toggle/Toggle';
 import InviteLocaleSelector from '@proton/components/containers/calendar/settings/InviteLocaleSelector';
 import PrimaryTimezoneSelector from '@proton/components/containers/calendar/settings/PrimaryTimezoneSelector';
-import SecondaryTimezoneSelector from '@proton/components/containers/calendar/settings/SecondaryTimezoneSelector';
-import ShowSecondaryTimezoneToggle from '@proton/components/containers/calendar/settings/ShowSecondaryTimezoneToggle';
-import ViewPreferenceSelector from '@proton/components/containers/calendar/settings/ViewPreferenceSelector';
 import WeekStartSelector from '@proton/components/containers/calendar/settings/WeekStartSelector';
 import {
     getIsAutoAddMeetLinkEnabled,
     getToggledAutoAddMeetLink,
 } from '@proton/components/containers/calendar/settings/autoAddMeetLink';
 import { useIsMeetVideoConferenceEnabled } from '@proton/components/containers/calendar/settings/useIsMeetVideoConferenceEnabled';
+import LanguageSelector from '@proton/components/containers/general/LanguageSelector';
+import TimeFormatSelector from '@proton/components/containers/general/TimeFormatSelector';
 import useLoading from '@proton/hooks/useLoading';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
@@ -26,11 +25,9 @@ import { locales } from '@proton/shared/lib/i18n/locales';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 import { useAccountDispatch } from '../../../private-app/store/hooks';
-import MobileSection from '../../components/MobileSection';
-import MobileSectionLabel from '../../components/MobileSectionLabel';
-import MobileSectionRow from '../../components/MobileSectionRow';
-
-import '../MobileSettings.scss';
+import LiteSettingsPage from '../../components/settings/LiteSettingsPage';
+import LiteSettingsRow from '../../components/settings/LiteSettingsRow';
+import LiteSettingsSection from '../../components/settings/LiteSettingsSection';
 
 interface Props {
     layout: (children: ReactNode, props?: any) => ReactNode;
@@ -42,14 +39,13 @@ const CalendarSettings = ({ layout, loader }: Props) => {
     const dispatch = useAccountDispatch();
     const { createNotification } = useNotifications();
 
-    // Read by WeekStartSelector, and not preloaded by the lite app
+    // Read by WeekStartSelector, LanguageSelector and TimeFormatSelector, and not preloaded by the lite app
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [calendarUserSettings, loadingCalendarUserSettings] = useCalendarUserSettings();
 
     const isMeetVideoConferenceEnabled = useIsMeetVideoConferenceEnabled();
 
     const [loadingAutoDetect, withLoadingAutoDetect] = useLoading();
-    const [loadingView, withLoadingView] = useLoading();
     const [loadingWeekNumbers, withLoadingWeekNumbers] = useLoading();
     const [loadingInviteLocale, withLoadingInviteLocale] = useLoading();
     const [loadingAutoImportInvite, withLoadingAutoImportInvite] = useLoading();
@@ -67,25 +63,19 @@ const CalendarSettings = ({ layout, loader }: Props) => {
         createNotification({ text: c('Success').t`Preference saved` });
     };
 
-    const {
-        AutoDetectPrimaryTimezone,
-        ViewPreference,
-        DisplayWeekNumber,
-        InviteLocale,
-        AutoImportInvite,
-        AutoAddConferenceLink,
-    } = calendarUserSettings;
+    const { AutoDetectPrimaryTimezone, DisplayWeekNumber, InviteLocale, AutoImportInvite, AutoAddConferenceLink } =
+        calendarUserSettings;
     const displayedLocale = InviteLocale === null ? null : getClosestLocaleCode(InviteLocale, locales);
 
     return layout(
-        <div className="mobile-settings">
-            <MobileSection title={c('Title').t`Time zone`}>
-                <MobileSectionRow>
-                    <MobileSectionLabel
-                        htmlFor="autodetect-primary-timezone"
-                        description={c('Info')
-                            .t`If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).`}
-                    >{c('Label').t`Auto-detect primary time zone`}</MobileSectionLabel>
+        <LiteSettingsPage>
+            <LiteSettingsSection title={c('Title').t`Time zone`}>
+                <LiteSettingsRow
+                    htmlFor="autodetect-primary-timezone"
+                    label={c('Label').t`Auto-detect primary time zone`}
+                    description={c('Info')
+                        .t`If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).`}
+                >
                     <Toggle
                         id="autodetect-primary-timezone"
                         loading={loadingAutoDetect}
@@ -94,56 +84,22 @@ const CalendarSettings = ({ layout, loader }: Props) => {
                             withLoadingAutoDetect(handleChange({ AutoDetectPrimaryTimezone: +target.checked }))
                         }
                     />
-                </MobileSectionRow>
-                <MobileSectionRow stackContent>
-                    <MobileSectionLabel htmlFor="primary-timezone">{c('Primary timezone')
-                        .t`Primary time zone`}</MobileSectionLabel>
+                </LiteSettingsRow>
+                <LiteSettingsRow htmlFor="primary-timezone" label={c('Primary timezone').t`Primary time zone`}>
                     <PrimaryTimezoneSelector
                         id="primary-timezone"
-                        className="mt-2"
                         calendarUserSettings={calendarUserSettings}
+                        unstyledSelect
+                        aria-labelledby="primary-timezone-label"
                     />
-                </MobileSectionRow>
-                <MobileSectionRow>
-                    <MobileSectionLabel htmlFor="show-secondary-timezone">{c('Label')
-                        .t`Show secondary time zone`}</MobileSectionLabel>
-                    <ShowSecondaryTimezoneToggle calendarUserSettings={calendarUserSettings} />
-                </MobileSectionRow>
-                <MobileSectionRow stackContent>
-                    <MobileSectionLabel htmlFor="secondary-timezone">{c('Primary timezone')
-                        .t`Secondary time zone`}</MobileSectionLabel>
-                    <SecondaryTimezoneSelector
-                        id="secondary-timezone"
-                        className="mt-2"
-                        calendarUserSettings={calendarUserSettings}
-                    />
-                </MobileSectionRow>
-            </MobileSection>
+                </LiteSettingsRow>
+            </LiteSettingsSection>
 
-            <MobileSection title={c('Title').t`Layout`}>
-                <MobileSectionRow>
-                    <MobileSectionLabel
-                        htmlFor="view-select"
-                        description={c('Info').t`Week and month views only apply to desktop.`}
-                    >{c('Label').t`Default view`}</MobileSectionLabel>
-                    <div>
-                        <ViewPreferenceSelector
-                            id="view-select"
-                            view={ViewPreference}
-                            loading={loadingView}
-                            onChange={(ViewPreference) => withLoadingView(handleChange({ ViewPreference }))}
-                        />
-                    </div>
-                </MobileSectionRow>
-                <MobileSectionRow>
-                    <MobileSectionLabel htmlFor="week-start-select">{c('Label').t`Week start`}</MobileSectionLabel>
-                    <div>
-                        <WeekStartSelector />
-                    </div>
-                </MobileSectionRow>
-                <MobileSectionRow>
-                    <MobileSectionLabel htmlFor="week-numbers-display">{c('Label')
-                        .t`Show week numbers`}</MobileSectionLabel>
+            <LiteSettingsSection title={c('Title').t`Layout`}>
+                <LiteSettingsRow htmlFor="week-start-select" label={c('Label').t`Week start`}>
+                    <WeekStartSelector unstyledSelect aria-labelledby="week-start-select-label" />
+                </LiteSettingsRow>
+                <LiteSettingsRow htmlFor="week-numbers-display" label={c('Label').t`Show week numbers`}>
                     <Toggle
                         id="week-numbers-display"
                         loading={loadingWeekNumbers}
@@ -152,36 +108,52 @@ const CalendarSettings = ({ layout, loader }: Props) => {
                             withLoadingWeekNumbers(handleChange({ DisplayWeekNumber: +target.checked }))
                         }
                     />
-                </MobileSectionRow>
-            </MobileSection>
+                </LiteSettingsRow>
+            </LiteSettingsSection>
 
-            <MobileSection title={c('Title').t`Invitations`}>
-                <MobileSectionRow>
-                    <MobileSectionLabel
-                        htmlFor="invite-locale"
-                        description={c('Info').t`Event invitations and responses will be sent in this language.`}
-                    >
-                        {
-                            // translator: the full sentence will be "Send invites in [LANGUAGE]", where [LANGUAGE] is a dropdown with language options. E.g. "Send invites in [ENGLISH]"
-                            c('Label').t`Send in`
-                        }
-                    </MobileSectionLabel>
-                    <div>
-                        <InviteLocaleSelector
-                            id="invite-locale"
-                            locale={displayedLocale}
-                            locales={locales}
-                            loading={loadingInviteLocale}
-                            onChange={(InviteLocale) => withLoadingInviteLocale(handleChange({ InviteLocale }))}
-                        />
-                    </div>
-                </MobileSectionRow>
-                <MobileSectionRow>
-                    <MobileSectionLabel
-                        htmlFor="auto-import-invitations"
-                        description={c('Info')
-                            .t`You still need to reply to invitations for the host to see your response.`}
-                    >{c('Auto import invitations setting').jt`Add to calendar and mark as pending`}</MobileSectionLabel>
+            <LiteSettingsSection title={c('Title').t`Language and time`}>
+                <LiteSettingsRow htmlFor="language-select" label={c('Label').t`Default language`}>
+                    <LanguageSelector
+                        id="language-select"
+                        locales={locales}
+                        unstyledSelect
+                        aria-labelledby="language-select-label"
+                    />
+                </LiteSettingsRow>
+                <LiteSettingsRow htmlFor="time-format-select" label={c('Label').t`Time format`}>
+                    <TimeFormatSelector
+                        id="time-format-select"
+                        unstyledSelect
+                        aria-labelledby="time-format-select-label"
+                    />
+                </LiteSettingsRow>
+            </LiteSettingsSection>
+
+            <LiteSettingsSection title={c('Title').t`Invitations`}>
+                <LiteSettingsRow
+                    htmlFor="invite-locale"
+                    label={
+                        // translator: the full sentence will be "Send invites in [LANGUAGE]", where [LANGUAGE] is a dropdown with language options. E.g. "Send invites in [ENGLISH]"
+                        c('Label').t`Send in`
+                    }
+                    description={c('Info').t`Event invitations and responses will be sent in this language.`}
+                >
+                    <InviteLocaleSelector
+                        id="invite-locale"
+                        className=""
+                        locale={displayedLocale}
+                        locales={locales}
+                        loading={loadingInviteLocale}
+                        unstyledSelect
+                        aria-labelledby="invite-locale-label"
+                        onChange={(InviteLocale) => withLoadingInviteLocale(handleChange({ InviteLocale }))}
+                    />
+                </LiteSettingsRow>
+                <LiteSettingsRow
+                    htmlFor="auto-import-invitations"
+                    label={c('Auto import invitations setting').jt`Add to calendar and mark as pending`}
+                    description={c('Info').t`You still need to reply for the organizer to see your response.`}
+                >
                     <Toggle
                         id="auto-import-invitations"
                         loading={loadingAutoImportInvite}
@@ -190,14 +162,13 @@ const CalendarSettings = ({ layout, loader }: Props) => {
                             withLoadingAutoImportInvite(handleChange({ AutoImportInvite: +target.checked }))
                         }
                     />
-                </MobileSectionRow>
+                </LiteSettingsRow>
                 {isMeetVideoConferenceEnabled && (
-                    <MobileSectionRow>
-                        <MobileSectionLabel
-                            htmlFor="auto-add-meet-link"
-                            description={c('Info')
-                                .t`Automatically add Meet links to your calendar invitations when there is at least one invitee.`}
-                        >{c('Label').t`Auto-add Meet links`}</MobileSectionLabel>
+                    <LiteSettingsRow
+                        htmlFor="auto-add-meet-link"
+                        label={c('Label').t`Auto-add Meet links`}
+                        description={c('Info').t`Adds a Meet link to events with at least one participant.`}
+                    >
                         <Toggle
                             id="auto-add-meet-link"
                             loading={loadingAutoAddMeetLink}
@@ -210,10 +181,10 @@ const CalendarSettings = ({ layout, loader }: Props) => {
                                 )
                             }
                         />
-                    </MobileSectionRow>
+                    </LiteSettingsRow>
                 )}
-            </MobileSection>
-        </div>,
+            </LiteSettingsSection>
+        </LiteSettingsPage>,
         { className: 'overflow-auto' }
     );
 };

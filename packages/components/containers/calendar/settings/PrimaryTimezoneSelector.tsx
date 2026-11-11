@@ -21,6 +21,7 @@ interface Props {
     tooltip?: boolean;
     ['data-testid']?: string;
     ariaDescribedBy?: string;
+    'aria-labelledby'?: string;
 }
 const PrimaryTimezoneSelector = ({
     id,
@@ -32,6 +33,7 @@ const PrimaryTimezoneSelector = ({
     tooltip,
     'data-testid': dataTestId,
     ariaDescribedBy,
+    'aria-labelledby': ariaLabelledBy,
 }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
@@ -58,6 +60,7 @@ const PrimaryTimezoneSelector = ({
             selectMaxHeight={selectMaxHeight}
             tooltip={tooltip}
             aria-describedby={ariaDescribedBy}
+            aria-labelledby={ariaLabelledBy}
         />
     );
 };
