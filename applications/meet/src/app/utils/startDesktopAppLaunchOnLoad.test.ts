@@ -206,6 +206,17 @@ describe('startDesktopAppLaunchOnLoad', () => {
         expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
     });
 
+    it('opens the app with the full link when the meeting info arrives after loading ended', () => {
+        const page = loadPage({ isMeetingInfoLoaded: false });
+
+        page.showLoadedMeeting();
+        expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
+
+        page.receiveMeetingInfo();
+        expect(tryOpenInDesktopApp).toHaveBeenCalledTimes(1);
+        expect(tryOpenInDesktopApp).toHaveBeenCalledWith(FULL_MEETING_LINK);
+    });
+
     it.each([
         { browser: 'Safari', isSafari: true, isFirefox: false },
         { browser: 'Firefox', isSafari: false, isFirefox: true },
