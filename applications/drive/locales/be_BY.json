@@ -8335,6 +8335,18 @@
       ],
       "Your import is blocked. Upgrade now to bring the rest of your files over.": [
         "Ваш імпарт заблакіраваны. Абнавіце тарыфны план, каб перанесці астатнія файлы."
+      ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Вы можаце ўзнавіць імпарт у ${ easySwitchSettingsLink }, калі ўжо абнавілі тарыфны план. Вы таксама можаце скасаваць яго."
+      ],
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Пасля гэтага ўвайдзіце ў свой уліковы запіс Google і дазвольце ${ BRAND_NAME } доступ да Google Drive. Вашы файлы і папкі будуць імпартаваны ў ${ DRIVE_APP_NAME }."
+      ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "Ваш Drive занадта вялікі для поўнай індэксацыі ў гэтым браўзеры, таму ў пошуку будуць прагледжаны самыя апошнія файлы. Больш старыя файлы могуць не адлюстроўвацца ў выніках."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Ваш Google Drive можа быць пусты або змяшчаць толькі файлы, якія не падтрымліваюцца."
       ]
     },
     "info": {
@@ -13928,6 +13940,9 @@
       ],
       "Your videos will appear here": [
         "Вашы відэа з'явяцца тут"
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Імпартуйце свае файлы і папкі з Google Drive, каб забяспечыць прыватнасць для іх у ${ DRIVE_APP_NAME }."
       ]
     },
     "Success": {
