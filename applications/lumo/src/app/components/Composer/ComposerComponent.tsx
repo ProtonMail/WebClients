@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { shallowEqual } from 'react-redux';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
@@ -136,7 +137,7 @@ const ComposerComponentInner = ({
     driveContext,
 }: ComposerComponentInnerProps) => {
     const { registerFileDropHandler } = useDragArea();
-    const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
+    const provisionalAttachments = useLumoSelector(selectProvisionalAttachments, shallowEqual);
     const { isWebSearchButtonToggled } = useWebSearch();
     const hasAttachments = provisionalAttachments.length > 0;
     const composerContainerRef = useRef<HTMLElement | null>(null);
@@ -229,7 +230,7 @@ const ComposerComponentInner = ({
     // registers a hook that updates the native composer state
     useNativeComposerFileApi(
         composerMode,
-        hasAttachments,
+        provisionalAttachments,
         messageChain && messageChain.length !== 0,
         handleFilesFromNative,
         handleBrowseDrive,

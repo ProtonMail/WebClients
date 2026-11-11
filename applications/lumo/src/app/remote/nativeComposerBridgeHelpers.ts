@@ -52,28 +52,11 @@ export const setNativeLumoState = (state: LumoMode): void => {
     (window as any).nativeComposerApiInstance.setLumoState(state);
 };
 
-export const addNativeComposerFiles = (files: LumoFile[]): void => {
+export const setNativeComposerFiles = (files: LumoFile[]): void => {
     if (!isNativeComposerBridgeAvailable()) {
-        console.warn('Native Composer Bridge not available');
         return;
     }
-    (window as any).nativeComposerApiInstance.addFiles(files);
-};
-
-export const removeNativeComposerFile = (id: string): void => {
-    if (!isNativeComposerBridgeAvailable()) {
-        console.warn('Native Composer Bridge not available');
-        return;
-    }
-    (window as any).nativeComposerApiInstance.removeFile(id);
-};
-
-export const clearNativeComposerFiles = (): void => {
-    if (!isNativeComposerBridgeAvailable()) {
-        console.warn('Native Composer Bridge not available');
-        return;
-    }
-    (window as any).nativeComposerApiInstance.clearFiles();
+    (window as any).nativeComposerApiInstance.setFiles(files);
 };
 
 export const setNativeWebSearch = (enabled: boolean): void => {
