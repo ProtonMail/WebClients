@@ -8509,6 +8509,12 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Δεν ήταν δυνατή η φόρτωση αυτής της σελίδας. Ανανεώστε τη σελίδα ή ελέγξτε τη σύνδεσή σας στο διαδίκτυο."
+      ],
+      "Check your internet connection and try again.": [
+        "Ελέγξτε τη σύνδεσή σας στο διαδίκτυο και προσπαθήστε ξανά."
+      ],
+      "We couldn't load your invitation": [
+        "Δεν ήταν δυνατή η φόρτωση της πρόσκλησής σας"
       ]
     },
     "Error message, Disable account": {
@@ -14550,6 +14556,33 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη σας, **${ username }**, ή με το **${ firstEmail }** ή το **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη σας, **${ username }**, ή με τα **${ firstEmail }**, **${ secondEmail }** ή **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη σας, **${ username }**, ή με το **${ firstEmail }**."
+      ],
+      "Invalid invitation link": [
+        "Μη έγκυρος σύνδεσμος πρόσκλησης"
+      ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "Δεν ήταν δυνατή η επαλήθευση αυτής της πρόσκλησης. Παρακαλούμε ζητήστε από τον διαχειριστή σας, ${ admin }, να σας αφαιρέσει από τον οργανισμό και να σας ξανά προσθέσει."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Δεν ήταν δυνατή η επαλήθευση της ταυτότητας του οργανισμού σας. Παρακαλούμε ζητήστε από τον διαχειριστή σας, ${ admin }, να ελέγξει την ταυτότητα του οργανισμού στις ρυθμίσεις οργανισμών. Έπειτα ανοίξτε ξανά αυτόν τον σύνδεσμο."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Όταν η είσοδος είναι περιορισμένη, μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη σας, **${ username }**, ή με τη διεύθυνση **${ firstEmail }** ή **${ secondEmail }**. Οι υπόλοιπες διευθύνσεις email σας δε θα λειτουργούν για τη σύνδεση."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Όταν η είσοδος είναι περιορισμένη, μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη σας, **${ username }**, ή με τις διευθύνσεις **${ firstEmail }**, **${ secondEmail }** ή **${ thirdEmail }**. Οι υπόλοιπες διευθύνσεις ηλεκτρονικού ταχυδρομείου σας δε θα λειτουργούν για τη σύνδεση."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Όταν η είσοδος είναι περιορισμένη, μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη σας, **${ username }**, ή με τη διεύθυνση **${ firstEmail }**. Οι άλλες διευθύνσεις ηλεκτρονικού ταχυδρομείου σας δε θα λειτουργούν για τη σύνδεση."
       ]
     },
     "info": {
@@ -17041,6 +17074,9 @@
       ],
       "Valid ${ group.name } record found": [
         "Βρέθηκε έγκυρη εγγραφή ${ group.name }"
+      ],
+      "Leave field blank": [
+        "Αφήστε το πεδίο κενό"
       ]
     },
     "Label for new member": {

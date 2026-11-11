@@ -2320,6 +2320,42 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Add payment method": [
+        "添加付款方式"
+      ],
+      "Cancel ${ planTitle }": [
+        "取消 ${ planTitle }"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "取消 ${ planTitle } 试用"
+      ],
+      "Cancel trial": [
+        "取消试用"
+      ],
+      "Create account": [
+        "创建账户"
+      ],
+      "Dropbox": [
+        "Dropbox"
+      ],
+      "Go to folder": [
+        "前往文件夹"
+      ],
+      "Migrate": [
+        "迁移"
+      ],
+      "OneDrive": [
+        "OneDrive"
+      ],
+      "Restrict sign-in": [
+        "限制登录"
+      ],
+      "Sign in to a different account": [
+        "登录其他账户"
+      ],
+      "Upgrade to connect": [
+        "升级以关联"
       ]
     },
     "action": {
@@ -2348,6 +2384,9 @@
       ],
       "View breakdown": [
         "查看明细"
+      ],
+      "Cancel subscription": [
+        "取消订阅"
       ]
     },
     "Action: Sheets": {
@@ -2552,6 +2591,9 @@
       ],
       "Permission revoked": [
         "权限已撤销"
+      ],
+      "Sign-in": [
+        "登录"
       ]
     },
     "Admin": {
@@ -2829,6 +2871,9 @@
       ],
       "Your trial ends on ${ trialEndDate }. Add a payment method whenever you’re ready to keep using all ${ planTitle } features. You’ll only be charged once it’s added.": [
         "您的试用将于 ${ trialEndDate } 结束。准备好继续使用所有 ${ planTitle } 功能时，请添加支付方式。添加后才会扣费。"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "取消后，您的免费试用不会转为付费订阅。"
       ]
     },
     "b2b_trials_Action": {
@@ -4226,6 +4271,15 @@
       ],
       "Upload any new files": [
         "上传任意文件"
+      ],
+      "If you exceed your plan limits, you won't be able to:": [
+        "如果您超出套餐限额，将无法："
+      ],
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "您的 ${ planDisplayName } 订阅将于 ${ endDate } 结束，届时您将失去其功能。如果届时您的用量超出套餐限额，部分功能可能会暂时不可用。"
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "您的订阅将于 ${ endDate } 结束，届时您将失去其功能。如果届时您的用量超出套餐限额，部分功能可能会暂时不可用。"
       ]
     },
     "Confirm modal title": {
@@ -5702,6 +5756,9 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "您的套餐总共支持 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址"
+      ],
+      "Bring over your files and folders from another provider.": [
+        "从其他服务商迁移您的文件和文件夹。"
       ]
     },
     "description": {
@@ -7157,6 +7214,12 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "您的恢复联系人应是您认识并能轻松联系到的人！"
+      ],
+      "They will receive access automatically **today**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "他们将在**今天**、于 **${ formattedAccessibleAt }** 自动获得访问权限。您可以随时拒绝其请求或立即授予访问权限。"
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "他们将在 **${ days } 天后**、于 **${ formattedAccessibleAt }** 自动获得访问权限。您可以随时拒绝其请求或立即授予访问权限。"
       ]
     },
     "Empty group name": {
@@ -8163,6 +8226,42 @@
       ],
       "Zero keys reactivated": [
         "未重新激活任何密钥"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "该地址已被您组织外的用户使用，请联系客服以解决此问题。"
+      ],
+      "Couldn't load your account": [
+        "无法加载您的账户"
+      ],
+      "Failed to get the organization domains": [
+        "获取组织域名失败"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "未找到成员地址，请联系客服解决此问题。"
+      ],
+      "Missing organization private key": [
+        "缺少组织私钥"
+      ],
+      "Missing organization public key": [
+        "缺少组织公钥"
+      ],
+      "No verified domain found in your ${ providerName } account. Verify your domain with ${ providerName }, then try again.": [
+        "在您的 ${ providerName } 账户中未找到已验证的域名。请先在 ${ providerName } 中验证您的域名，然后重试。"
+      ],
+      "Organization does not have enough seats available": [
+        "组织可用席位不足"
+      ],
+      "Organization does not have enough storage available": [
+        "组织可用存储空间不足"
+      ],
+      "The device you scanned the QR code with didn't send your sign-in details. Update the app on that device and try again.": [
+        "您扫描二维码的设备未发送登录信息，请更新该设备上的应用后重试。"
+      ],
+      "The session has expired. Please try again.": [
+        "会话已过期，请重试。"
+      ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "无法计算总额，请更改金额后重试。"
       ]
     },
     "error": {
@@ -8354,6 +8453,12 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "页面加载失败，请刷新或检查网络连接。"
+      ],
+      "Check your internet connection and try again.": [
+        "请检查您的网络连接后重试。"
+      ],
+      "We couldn't load your invitation": [
+        "无法加载您的邀请"
       ]
     },
     "Error message, Disable account": {
@@ -9532,6 +9637,12 @@
       ],
       "Username": [
         "用户名"
+      ],
+      "Billing details": [
+        "账单明细"
+      ],
+      "Plan details": [
+        "套餐详情"
       ]
     },
     "Header for addresses table": {
@@ -10028,6 +10139,12 @@
       ],
       "Skipped ${ count } event due to incompatibilities": [
         "因不兼容已跳过 ${ count } 个事件"
+      ],
+      "Has errors": [
+        "出错啦"
+      ],
+      "Pending": [
+        "待处理"
       ]
     },
     "Import type": {
@@ -14122,6 +14239,156 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "**${ applicationName }** requested to sign in from:": [
+        "**${ applicationName }** 请求从以下位置登录："
+      ],
+      "**${ applicationName }** requested to sign in.": [
+        "**${ applicationName }** 请求登录。"
+      ],
+      "Added to ${ BRAND_NAME }": [
+        "已添加到 ${ BRAND_NAME }"
+      ],
+      "Allow your organization to use the ${ LUMO_APP_NAME } API": [
+        "允许您的组织使用 ${ LUMO_APP_NAME } API"
+      ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "开启此功能后，您将只能使用 **${ primaryEmail }** 登录。"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "开启此功能后，您将只能使用用户名 **${ username }** 登录。"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "开启此功能后，您只能使用用户名 **${ username }**，或使用 **${ firstEmail }** 或 **${ secondEmail }** 登录。"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "开启此功能后，您只能使用用户名 **${ username }**，或使用 **${ firstEmail }**、**${ secondEmail }** 或 **${ thirdEmail }** 登录。"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "开启此功能后，您只能使用用户名 **${ username }**，或使用 **${ firstEmail }** 登录。"
+      ],
+      "Cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "在购买后 30 天内取消，并联系我们的 ${ customerSupportLink } 以获取退款。"
+      ],
+      "Find out what can be migrated.": [
+        "了解可以迁移哪些内容"
+      ],
+      "If disabled, organization members won't be able to add 2FA codes to their items, and existing ones won't be generated or autofilled. Nothing is deleted.": [
+        "如果禁用，组织成员将无法向其条目中添加 2FA 代码，现有的代码也不会生成或自动填充。这不会删除任何内容。"
+      ],
+      "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
+        "如果禁用，组织成员将无法在 ${ PASS_APP_NAME } 中保存通行密钥或使用其登录。这不会删除任何内容。"
+      ],
+      "If you didn't just try to sign in to **${ applicationName }** on a device you own, click **Cancel**.": [
+        "如果您刚刚并未在您拥有的设备上尝试登录 **${ applicationName }**，请点击**取消**。"
+      ],
+      "Invalid invitation link": [
+        "无效的邀请链接"
+      ],
+      "Invalid joining link": [
+        "无效的加入链接"
+      ],
+      "IP address: ${ IP }": [
+        "IP 地址：${ IP }"
+      ],
+      "More cards": [
+        "更多银行卡"
+      ],
+      "No users to display": [
+        "没有可显示的用户"
+      ],
+      "Not added to ${ BRAND_NAME }": [
+        "未添加到 ${ BRAND_NAME }"
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "请准确选择您要迁移的内容，该设置将应用于所有组织用户。"
+      ],
+      "SEPA Bank transfer": [
+        "SEPA 银行转账"
+      ],
+      "Signup link no longer valid": [
+        "注册链接已失效"
+      ],
+      "This joining link isn't valid. Please contact your administrator for a new one.": [
+        "此加入链接无效，请联系管理员获取新的链接。"
+      ],
+      "This signup link has expired, been revoked or already been used. Please contact your ${ BRAND_NAME } representative for a new one.": [
+        "此注册链接已过期、被撤销或已被使用。请联系您的 ${ BRAND_NAME } 代表获取新的链接。"
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "无法迁移此用户，因为其邮箱地址在 ${ BRAND_NAME } 上不可用。"
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "由于平台不兼容，无法迁移此用户。"
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "要迁移此用户，请在 ${ domainNamesLink } 中添加并验证邮箱域名"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "要迁移此用户，请在您的 ${ provider.adminConsoleName } 中启用其账户。"
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "要迁移此用户，请在 ${ usersAddressesLink } 下启用其账户。"
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "要迁移此用户，请在 ${ usersAddressesLink } 下启用其地址。"
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "要迁移此用户，需要其接受加入 ${ BRAND_NAME } 的邀请。"
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "要迁移此用户，请在您的 ${ provider.adminConsoleName } 中取消其归档。"
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "要迁移此用户，请在您的 ${ provider.adminConsoleName } 中解除其暂停状态。"
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address. An administrator of your organization can create one for you.": [
+        "要使用 ${ toAppName }，您需要一个 ${ MAIL_APP_NAME } 地址。您组织的管理员可以为您创建一个。"
+      ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "我们无法验证此邀请。请联系您的管理员 ${ admin }，让其将您从组织中移除后重新添加。"
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "我们无法验证您组织的身份。请联系您的管理员 ${ admin }，在组织设置中检查组织身份，然后重新打开此链接。"
+      ],
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "限制登录后，只能使用您的邮箱 **${ primaryEmail }** 登录。即使他人知道您的其他地址，这些地址也无法关联回您的账户。"
+      ],
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "限制登录后，只能使用您的用户名 **${ username }** 登录。即使他人知道您的其他地址，这些地址也无法关联回您的账户。"
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "限制登录后，您只能使用用户名 **${ username }**，或使用 **${ firstEmail }** 或 **${ secondEmail }** 登录。您的其他邮箱地址将无法用于登录。"
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "限制登录后，您只能使用用户名 **${ username }**，或使用 **${ firstEmail }**、**${ secondEmail }** 或 **${ thirdEmail }** 登录。您的其他邮箱地址将无法用于登录。"
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "限制登录后，您只能使用用户名 **${ username }** 或 **${ firstEmail }** 登录。您的其他邮箱地址将无法用于登录。"
+      ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "取消后，试用期结束时您的订阅将不会开始。"
+      ],
+      "You": [
+        "您"
+      ],
+      "You cancel it in the store.": [
+        "您在商店中取消。"
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "您有多个订阅。请选择要取消的订阅：其他订阅不受影响。已取消的订阅不会续订，您仍可享有其权益直至订阅期结束。"
+      ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "您的账户已创建，但我们未能完成套餐设置。"
+      ],
+      "Your address was connected. We're importing your emails.": [
+        "您的地址已关联，我们正在导入您的邮件。"
+      ],
+      "Your free plan includes one connected account. Upgrade to connect more.": [
+        "您的免费套餐包含一个已关联账户，升级后可关联更多账户。"
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "在关闭此功能之前，您的其他邮箱地址将无法用于登录。"
       ]
     },
     "info": {
@@ -16486,6 +16753,48 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Account credit": [
+        "账户余额"
+      ],
+      "Allow storing 2FA codes": [
+        "允许存储 2FA 代码"
+      ],
+      "Allow storing passkeys": [
+        "允许存储通行密钥"
+      ],
+      "Billing contact": [
+        "账单联系人"
+      ],
+      "Custom email domains": [
+        "自定义邮箱域名"
+      ],
+      "Dedicated VPN servers": [
+        "专用 VPN 服务器"
+      ],
+      "Invoice email": [
+        "发票邮箱"
+      ],
+      "Organization size": [
+        "组织规模"
+      ],
+      "Payment terms": [
+        "付款条款"
+      ],
+      "Restrict sign-in to email address": [
+        "限制只能使用邮箱地址登录"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "限制只能使用用户名和匹配的 ${ BRAND_NAME } 地址登录"
+      ],
+      "Taxable": [
+        "应税"
+      ],
+      "Total": [
+        "总计"
+      ],
+      "VAT number": [
+        "增值税号"
       ]
     },
     "label": {
@@ -16561,6 +16870,9 @@
       ],
       "Valid ${ group.name } record found": [
         "找到有效的 ${ group.name } 记录"
+      ],
+      "Leave field blank": [
+        "将字段留空"
       ]
     },
     "Label for new member": {
@@ -16920,6 +17232,9 @@
       ],
       "What’s this?": [
         "这是什么？"
+      ],
+      "Want to import email, calendar and contacts?": [
+        "想要导入邮件、日历和联系人吗？"
       ]
     },
     "Link (Scribe)": {
@@ -19320,6 +19635,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "您的完整 ${ planTitle } 订阅将于 ${ boldEndDate } 开始。"
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**试用后改变主意了？** 在首次付款后 30 天内取消，我们将退还未使用时间的费用。"
       ]
     },
     "Option": {
@@ -20624,6 +20942,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "您当前的订阅已享有折扣优惠，转用新的促销意味着现有折扣将不再适用。"
+      ],
+      "Paid from your account credit.": [
+        "已使用账户余额支付。"
       ]
     },
     "Payments.Error": {
@@ -22265,6 +22586,24 @@
       ],
       "You can now sync groups alongside users. Changes push **automatically** when you update your groups on your identity provider.": [
         "您现在可以同时同步群组和用户。当您在身份提供商中更新群组时，更改将**自动**推送。"
+      ],
+      "${ cleanUpCount } clean up action required.": [
+        "需要 ${ cleanUpCount } 项清理操作。"
+      ],
+      "${ cleanUpCount } user's permissions have changed.": [
+        "${ cleanUpCount } 位用户的权限已变更。"
+      ],
+      "${ numberOfCleanUps } clean up action required": [
+        "需要 ${ numberOfCleanUps } 项清理操作"
+      ],
+      "Approve permission changes for your organization": [
+        "批准您组织的权限变更"
+      ],
+      "Final approval needed to remove organization key access.": [
+        "移除组织密钥访问权限需要最终批准。"
+      ],
+      "Final approval needed to revoke their organization keys.": [
+        "撤销其组织密钥需要最终批准。"
       ]
     },
     "scim: Action": {
@@ -23985,6 +24324,15 @@
       ],
       "Waiting for MX...": [
         "正在等待 MX 记录..."
+      ],
+      "failed": [
+        "失败"
+      ],
+      "key removal scheduled": [
+        "已安排移除密钥"
+      ],
+      "remove organization key": [
+        "移除组织密钥"
       ]
     },
     "Step": {
@@ -24197,6 +24545,12 @@
       ],
       "Total due today": [
         "今日应付总额"
+      ],
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "已应用 ${ planDiscountItem.discountPercent }% 折扣"
+      ],
+      "${ planDiscountItem.discountPercent }% off": [
+        "立减 ${ planDiscountItem.discountPercent }%"
       ]
     },
     "Subscription attribute": {
@@ -25142,6 +25496,18 @@
       ],
       "Status": [
         "状态"
+      ],
+      "Activated": [
+        "已激活"
+      ],
+      "Estimated size": [
+        "预计大小"
+      ],
+      "Migration status": [
+        "迁移状态"
+      ],
+      "User": [
+        "用户"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -27444,6 +27810,39 @@
       ],
       "Your subscriptions": [
         "您的账户等级"
+      ],
+      "${ LUMO_APP_NAME } API": [
+        "${ LUMO_APP_NAME } API"
+      ],
+      "Configure migration": [
+        "配置迁移"
+      ],
+      "Confirm sign in": [
+        "确认登录"
+      ],
+      "Payment": [
+        "付款"
+      ],
+      "Restrict sign-in?": [
+        "限制登录？"
+      ],
+      "Select users to migrate": [
+        "请选择要迁移的用户"
+      ],
+      "Tax": [
+        "税费"
+      ],
+      "What are you migrating?": [
+        "您需要迁移什么？"
+      ],
+      "What changes if you cancel ${ planDisplayName }": [
+        "取消 ${ planDisplayName } 后会有哪些变化"
+      ],
+      "You need a ${ BRAND_NAME } address": [
+        "您需要一个 ${ BRAND_NAME } 地址"
+      ],
+      "Your groups": [
+        "您的群组"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27550,6 +27949,12 @@
       ],
       "Status": [
         "状态"
+      ],
+      "Renewal": [
+        "续订"
+      ],
+      "Subscription term": [
+        "订阅期限"
       ]
     },
     "Title; create calendar modal": {
@@ -27891,6 +28296,15 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "您的第三方账户可能已超过 24 小时内的带宽上限，${ BRAND_NAME } 将尽快继续导入过程。"
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "从 ${ providerName } 到 ${ BRAND_NAME } 的数据迁移状态"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "已访问其 ${ BRAND_NAME } 账户的用户"
+      ],
+      "Your ${ DRIVE_APP_NAME } storage is almost full": [
+        "您的 ${ DRIVE_APP_NAME } 存储空间即将用满"
       ]
     },
     "tooltip": {
@@ -29058,6 +29472,53 @@
       ],
       "Yearly, ${ untilString }": [
         "每一年，${ untilString }"
+      ]
+    },
+    "Filter": {
+      "Activated": [
+        "已激活"
+      ],
+      "All": [
+        "全部"
+      ],
+      "Errors": [
+        "错误"
+      ],
+      "In progress": [
+        "正在处理"
+      ],
+      "Migrated": [
+        "已迁移"
+      ],
+      "Not activated": [
+        "未激活"
+      ],
+      "Pending": [
+        "待处理"
+      ]
+    },
+    "Payment method": {
+      "Bank transfer": [
+        "银行转账"
+      ],
+      "Credit card": [
+        "信用卡"
+      ]
+    },
+    "Payment terms": {
+      "${ days } day": [
+        "${ days } 天"
+      ],
+      "Due on receipt": [
+        "收到即付"
+      ]
+    },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "从 ${ startTime } 起"
       ]
     }
   }

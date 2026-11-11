@@ -5339,6 +5339,12 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nem sikerült az oldal betöltése. Frissítse az oldalt vagy ellenőrizze az internetkapcsolatát."
+      ],
+      "Check your internet connection and try again.": [
+        "Ellenőrizze az internetkapcsolatát, és próbálja újra."
+      ],
+      "We couldn't load your invitation": [
+        "Nem tudtok betölteni a meghívót"
       ]
     },
     "Error message, Disable account": {
@@ -9245,6 +9251,15 @@
       ],
       "Zoom meeting": [
         "Zoom találkozót"
+      ],
+      "Invalid invitation link": [
+        "Érvénytelen meghívó link"
+      ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "Nem tudtuk igazolni ezt a meghívót. Kérjük forduljon ${ admin } adminisztrátorhoz, a szervezetből való eltávolításhoz, majd újbóli hozzáadáshoz."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Nem tudtuk igazolni az Ön szervezetének azonosságát. Kérjük, vegye fel a kapcsolatot ${ admin } adminisztrátorral a szervezet azonosságának ellenőrzéséhez a szervezeti beállításokban. Azt követően nyissa meg ezt a linket"
       ]
     },
     "info": {

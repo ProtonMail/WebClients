@@ -8509,6 +8509,12 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Diese Seite konnte nicht geladen werden. Bitte aktualisiere die Seite oder überprüfe deine Internetverbindung."
+      ],
+      "Check your internet connection and try again.": [
+        "Überprüfe deine Internetverbindung und versuche es erneut."
+      ],
+      "We couldn't load your invitation": [
+        "Deine Einladung konnte nicht geladen werden"
       ]
     },
     "Error message, Disable account": {
@@ -14550,6 +14556,33 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }** beziehungsweise **${ secondEmail }** anmelden."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }**, **${ secondEmail }** beziehungsweise **${ thirdEmail }** anmelden."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }** anmelden."
+      ],
+      "Invalid invitation link": [
+        "Ungültiger Einladungslink"
+      ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "Diese Einladung konnte nicht überprüft werden. Bitte deinen Administrator (${ admin }) darum, dich aus der Organisation zu entfernen und dich erneut hinzuzufügen."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Die Identität deiner Organisation konnte nicht verifiziert werden. Bitte deinen Administrator ${ admin }, die Identität der Organisation in den Organisationseinstellungen zu überprüfen. Öffne diesen Link danach erneut."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }** beziehungsweise mit **${ secondEmail }** anmelden. Deine anderen E-Mail-Adressen werden für die Anmeldung nicht funktionieren."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }**, **${ secondEmail }** beziehungsweise mit **${ thirdEmail }** anmelden. Deine anderen E-Mail-Adressen werden für die Anmeldung nicht funktionieren."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }** anmelden. Deine anderen E-Mail-Adressen werden für die Anmeldung nicht funktionieren."
       ]
     },
     "info": {
@@ -17041,6 +17074,9 @@
       ],
       "Valid ${ group.name } record found": [
         "Gültiger ${ group.name }-Eintrag gefunden"
+      ],
+      "Leave field blank": [
+        "Feld leer lassen"
       ]
     },
     "Label for new member": {

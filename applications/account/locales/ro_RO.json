@@ -8565,6 +8565,12 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Această pagină nu s-a putut încărca. Reîmprospătați-o sau verificați conexiunea la internet."
+      ],
+      "Check your internet connection and try again.": [
+        "Verificați conexiunea și reîncercați."
+      ],
+      "We couldn't load your invitation": [
+        "Invitația nu s-a putut încărca."
       ]
     },
     "Error message, Disable account": {
@@ -14698,6 +14704,33 @@
       ],
       "Zoom meeting": [
         "o conferință pe Zoom"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Prin activarea acestei opțiuni, vă veți putea autentifica doar folosind numele de utilizator, **${ username }**, sau **${ firstEmail }** ori **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Prin activarea acestei opțiuni, vă veți putea autentifica doar folosind numele de utilizator **${ username }** sau cu **${ firstEmail }**, **${ secondEmail }** ori **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Activând această opțiune, vă veți putea autentifica doar folosind numele de utilizator, **${ username }** sau **${ firstEmail }**."
+      ],
+      "Invalid invitation link": [
+        "Legătura web de invitație nu este validă."
+      ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "Această invitație nu s-a putut verifica. Solicitați-i administratorului, ${ admin }, să vă elimine din organizație și să vă readauge."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Nu s-a putut verifica identitatea organizației. Solicitați administratorului, ${ admin }, să verifice identitatea organizației în setările acesteia. Apoi, accesați din nou această legătură web."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Atunci când autentificarea este restricționată, vă puteți autentifica doar folosind numele de utilizator **${ username }** sau **${ firstEmail }** ori **${ secondEmail }**. Celelalte adrese de e-mail nu vor funcționa pentru autentificare."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Atunci când autentificarea este restricționată, vă puteți autentifica doar folosind numele de utilizator **${ username }** sau **${ firstEmail }**, **${ secondEmail }** ori **${ thirdEmail }**. Celelalte adrese de e-mail nu vor funcționa pentru autentificare."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Atunci când autentificarea este restricționată, vă puteți autentifica doar folosind numele de utilizator **${ username }** sau cu **${ firstEmail }**. Celelalte adrese de e-mail nu vor funcționa pentru autentificare."
       ]
     },
     "info": {
@@ -17199,6 +17232,9 @@
       ],
       "Valid ${ group.name } record found": [
         "S-a găsit o înregistrare ${ group.name } validă"
+      ],
+      "Leave field blank": [
+        "Lăsați câmpul gol"
       ]
     },
     "Label for new member": {

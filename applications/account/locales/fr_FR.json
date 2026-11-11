@@ -189,6 +189,9 @@
       ],
       "VPN session details": [
         "Informations de la session VPN"
+      ],
+      "Import history": [
+        "Importer l'historique"
       ]
     },
     "Accounts": {
@@ -2910,6 +2913,10 @@
       "Then ${ price }, for ${ cycle } month": [
         "Puis ${ price } pour ${ cycle } mois",
         "Puis ${ price } pour ${ cycle } mois"
+      ],
+      "Switches to ${ nextCycle } month on ${ when } (${ paidPrice } already paid)": [
+        "Bascule à ${ nextCycle } mois sur ${ when } (${ paidPrice } déjà réglés)",
+        "Bascule à ${ nextCycle } mois sur ${ when } (${ paidPrice } déjà réglés)"
       ]
     },
     "Billing cycle option": {
@@ -5530,6 +5537,15 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresse Gmail",
         "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresses Gmail"
+      ],
+      "The link to sign out on all your devices has expired. Try signing in again to receive a new one.": [
+        "Le lien pour se déconnecter de tous vos appareils a expiré. Réessayez de vous connecter afin d'en recevoir un nouveau."
+      ],
+      "Too many devices are connected to your account. To use ${ BRAND_NAME } on a new device or browser, end all existing sessions. You'll be signed out on every device.": [
+        "Un nombre trop important d'appareils sont connectés à votre compte. Afin d'utiliser ${ BRAND_NAME } sur de nouveaux appareils ou de nouveaux navigateurs, fermez toutes les sessions existantes. Vous serez déconnecté de tous les appareils."
+      ],
+      "Your other sessions have been ended. You can now sign in on this device.": [
+        "Vos autres sessions ouvertes ont été closes. Vous pouvez maintenant vous connecter sur cet appareil."
       ]
     },
     "description": {
@@ -7398,7 +7414,7 @@
         "Aucun contact n'a été trouvé pour l'importation."
       ],
       "No drive found to import": [
-        "Aucun disque à importer détecté"
+        "Aucun disque à importer n'a été détecté."
       ],
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
@@ -7817,7 +7833,7 @@
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
       ],
       "Unexpected error, we can't import the files": [
-        "Une erreur inattendue est survenue, les fichiers n'ont pas pu être importés"
+        "Une erreur inattendue est survenue, les fichiers ne peuvent être importés"
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -7920,6 +7936,15 @@
       ],
       "Zero keys reactivated": [
         "Aucune clé n'est réactivée."
+      ],
+      "Missing organization private key": [
+        "La clé privée de l'organisation est absente."
+      ],
+      "Missing organization public key": [
+        "La clé publique de l'organisation est absente."
+      ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "La somme totale n'a pas pu être calculée. Changez le montant pour essayer de nouveau."
       ]
     },
     "error": {
@@ -8112,6 +8137,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nous n'avons pas pu charger cette page. Actualisez la page ou vérifiez votre connexion internet."
+      ],
+      "We couldn't load your invitation": [
+        "Nous n'avons pas pu charger votre invitation."
       ]
     },
     "Error message, Disable account": {
@@ -9034,6 +9062,9 @@
       ],
       "User - ${ userPrice }": [
         "Utilisateur - ${ userPrice }"
+      ],
+      "Unlock Single-Sign-on (SSO), admin policies, monitoring, enforced two-factor authentication and more.": [
+        "Déverrouillez la connexion unique (SSO), les politiques d'administration, la surveillance, la connexion renforcée par authentification à deux facteurs et plus encore."
       ]
     },
     "Get help": {
@@ -9777,6 +9808,18 @@
       ],
       "Queued": [
         "En file d'attente"
+      ],
+      "Skipped ${ count } contact due to incompatibilities": [
+        "${ count } contact a été ignoré du fait d'incompatibilités.",
+        "${ count } contacts ont été ignorés du fait d'incompatibilités."
+      ],
+      "Skipped ${ count } email due to incompatibilities": [
+        "${ count } email a été ignoré du fait d'incompatibilités.",
+        "${ count } emails ont été ignorés du fait d'incompatibilités."
+      ],
+      "Skipped ${ count } event due to incompatibilities": [
+        "${ count } évènement a été ignoré du fait d'incompatibilités de planning.",
+        "${ count } évènements ont été ignorés du fait d'incompatibilités."
       ]
     },
     "Import type": {
@@ -13877,6 +13920,54 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "${ emailAddress } is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "L'adresse ${ emailAddress } est utilisée pour se connecter à un autre compte ${ BRAND_NAME }. Nous sommes en train de simplifier la connexion, mais vous devez tout d'abord suivre quelques étapes."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "En activant cette fonctionnalité, vous pourrez uniquement vous connecter grâce à votre nom d'utilisateur, **${ username }**, ou avec l'une des adresses email suivantes : **${ firstEmail }** ou **${ secondEmail }**."
+      ],
+      "Enable groups to streamline access control": [
+        "Activez les groupes pour optimiser les contrôles d'accès."
+      ],
+      "Invalid invitation link": [
+        "Le lien d'invitation n'est pas valide."
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Sélectionnez exactement ce que vous souhaitez migrer. Ceci s'appliquera à tous les utilisateurs de votre organisation."
+      ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Ceci vous permettra d'accéder rapidement et en toute sécurité à votre compte ${ BRAND_NAME } afin de changer votre mot de passe."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Afin de migrer cet utilisateur, ajoutez et vérifiez le domaine de messagerie rattaché à ${ domainNamesLink }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Pour migrer cet utilisateur, réactivez ses droits dans votre ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Pour migrer cet utilisateur, réactivez ses droits dans votre ${ provider.adminConsoleName }."
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address. An administrator of your organization can create one for you.": [
+        "Afin d'utiliser ${ toAppName }, vous aurez besoin d'une adresse ${ MAIL_APP_NAME }. Un administrateur de votre organisation peut en créer une pour vous."
+      ],
+      "We couldn't connect your Gmail right now. Please try again in a few minutes.": [
+        "Nous ne parvenons pas à connecter votre Gmail actuellement. Merci d'essayer de nouveau d'ici quelques minutes."
+      ],
+      "We couldn't connect your Gmail. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "Nous ne sommes pas parvenus à connecter votre Gmail. Essayez de nouveau et sélectionnez toutes les options lorsque Google demande les accès. ${ BRAND_NAME } utilise uniquement ces accès pour connecter votre Gmail."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Nous ne sommes pas parvenus à vérifier l'identité de votre organisation. Veuillez demander à votre administrateur, ${ admin }, de vérifier l'identité de l'organisation dans les paramètres de l'organisation. Puis, ouvrez à nouveau ce lien."
+      ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "Lorsque cette fonctionnalité est activée, les membres ne peuvent pas renoncer à l'enregistrement par mot de passe dans leurs propres paramètres."
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "Vous détenez plusieurs abonnements. Sélectionnez celui qui doit être annulé : vos autres abonnements ne seront pas affectés. Un abonnement annulé ne sera pas renouvelé et vous préserverez ses fonctionnalités jusqu'au terme de votre période de souscription."
+      ],
+      "Your address was connected. We're importing your emails.": [
+        "Votre adresse email a été connectée avec succès. Nous importons vos emails."
       ]
     },
     "info": {
@@ -16260,6 +16351,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Start with your most recent": [
+        "Commencez par votre plus récent"
       ]
     },
     "label": {
@@ -17203,6 +17297,9 @@
       ],
       "Yesterday, ${ time }": [
         "Hier, ${ time }"
+      ],
+      "Setup your own private gateways to monitor VPN connection activity within your organization.": [
+        "Configurez vos propres passerelles privées pour surveiller l'activité de connexion au VPN au sein de votre organisation."
       ]
     },
     "Message": {
@@ -19514,6 +19611,18 @@
       "User (${ n })": [
         "Utilisateur (${ n })",
         "Utilisateurs (${ n })"
+      ],
+      "Get in touch with your other administrators, to see if they can help. They will be able to restore your privileges after using a data recovery method.": [
+        "Prenez contact avec vos administrateurs afin de savoir s'ils peuvent vous aider. Ils pourront restaurer vos accès après avoir utilisé une méthode de récupération des données."
+      ],
+      "Resetting the organization key generates a new encryption key to keep your organization's data secure. **No data will be lost or destroyed in this process, but the users groups will be deleted.**": [
+        "Réinitialiser la clé de l'organisation génère une nouvelle clé de chiffrement afin que les données de votre organisation demeurent en sécurité. **Aucune donnée ne sera perdue ou détruite pendant ce processus, mais les groupes d'utilisateurs seront supprimés.**"
+      ],
+      "This process is automated:": [
+        "Ce processus est automatisé :"
+      ],
+      "You can reset your organization key to restore your administrator privileges. Then, you'll be able to create non-private users and access their accounts.": [
+        "Vous pouvez réinitialiser la clef de votre organisation afin de restaurer vos droits administrateur. Par la suite, vous pourrez créer des utilisateurs publics et accéder à leurs comptes."
       ]
     },
     "Organization logo upload": {
@@ -22049,6 +22158,15 @@
       ],
       "You can now sync groups alongside users. Changes push **automatically** when you update your groups on your identity provider.": [
         "Vous pouvez désormais synchroniser les groupes en même temps que les utilisateurs. Les modifications sont répercutées **automatiquement** lorsque vous mettez à jour vos groupes sur votre fournisseur d'identité."
+      ],
+      "**You'll be able to review** group changes before they take effect to confirm they're intentional": [
+        "**Vous aurez la possibilité d'examiner** les modifications apportées aux groupes avant qu'elles ne prennent effet, et ce afin de confirmer qu'elles sont bien intentionnelles."
+      ],
+      "This approval prompt will **appear every time you update** groups through your identity provider": [
+        "Cette demande d'autorisation **apparaîtra chaque fois que vous mettrez à jour** les groupes par le biais de votre fournisseur d'identité."
+      ],
+      "What to expect now that group sync is enabled": [
+        "A quoi s'attendre maintenant que la synchronisation de groupe est activée ?"
       ]
     },
     "scim: Action": {
@@ -22107,6 +22225,15 @@
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Pour réactiver la synchronisation avec votre fournisseur d'identité, vous devez finaliser à nouveau l'intégration SCIM."
+      ],
+      "**Users:** All SCIM users provided automatically by your identity provider will be converted to SSO users and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "**Utilisateurs** : Tous les utilisateurs SCIM automatiquement fournis par votre fournisseur d'identité seront convertis en utilisateurs SSO et vous pourrez directement les gérer dans les paramètres de ${ BRAND_NAME }."
+      ],
+      "Re-enabling syncing will duplicate existing groups. They can't be merged back into SCIM.": [
+        "Permettre à nouveau la synchronisation des données dupliquera les groupes existants. Ils ne pourront plus être fusionnés dans le SCIM."
+      ],
+      "This will delete your SCIM base URL and token.": [
+        "Ceci supprimera votre URL de base SCIM et le jeton d'accès."
       ]
     },
     "scim: Label": {
@@ -25158,7 +25285,7 @@
         "API ${ LUMO_APP_NAME }"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
+        "Assistant d'aide à la rédaction ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Export Tool de ${ MAIL_APP_NAME }"
@@ -27226,6 +27353,12 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "Add ${ PASS_APP_NAME } to your browser": [
+        "Ajoutez ${ PASS_APP_NAME } à votre navigateur internet."
+      ],
+      "Connect your ${ ACCOUNT_APP_NAME }": [
+        "Connectez votre ${ ACCOUNT_APP_NAME }."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27720,6 +27853,9 @@
       ],
       "Waiting for user to accept the invitation": [
         "En attente de l’acceptation de l’invitation par l’utilisateur"
+      ],
+      "External address — No end-to-end encryption or resource sharing, and roles and permissions can't be assigned.": [
+        "Adresse externe - Pas de chiffrement de bout-en-bout ou de partage de ressources, pas de possibilité d'attribution des rôles et permissions."
       ]
     },
     "Tooltip automatically attach public key": {
@@ -28859,6 +28995,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Chaque année, ${ untilString }"
+      ]
+    },
+    "Filter": {
+      "Pending": [
+        "En attente"
       ]
     }
   }

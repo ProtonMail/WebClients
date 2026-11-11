@@ -8495,6 +8495,12 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunne ikke laste denne siden. Oppdater siden eller undersøk internettforbindelsen din."
+      ],
+      "Check your internet connection and try again.": [
+        "Kontroller internettilkoblingen og prøv igjen."
+      ],
+      "We couldn't load your invitation": [
+        "Vi kunne ikke laste invitasjonen din"
       ]
     },
     "Error message, Disable account": {
@@ -14524,6 +14530,33 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Ved å aktivere denne funksjonen vil du kun kunne logge inn med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }** eller **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Ved å aktivere denne funksjonen vil du kun kunne logge inn med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Ved å aktivere denne funksjonen vil du kun kunne logge inn med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }**."
+      ],
+      "Invalid invitation link": [
+        "Ugyldig invitasjonskobling"
+      ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "Vi kunne ikke bekrefte denne invitasjonen. Be administratoren din, ${ admin }, om å fjerne deg fra organisasjonen og legge deg til igjen."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Vi kunne ikke bekrefte identiteten til organisasjonen din. Be administratoren din, ${ admin }, om å kontrollere organisasjonsidentiteten i organisasjonsinnstillingene. Åpne deretter denne koblingen på nytt."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når pålogging er begrenset, kan du bare logge på med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }** eller **${ secondEmail }**. Dine andre e-postadresser fungerer ikke ved pålogging."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når pålogging er begrenset, kan du bare logge på med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**. Dine andre e-postadresser fungerer ikke ved pålogging."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når pålogging er begrenset, kan du bare logge på med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }**. Dine andre e-postadresser kan ikke brukes til å logge på."
       ]
     },
     "info": {

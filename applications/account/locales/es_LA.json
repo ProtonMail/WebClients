@@ -2602,6 +2602,9 @@
       ],
       "Permission revoked": [
         "Permiso revocado"
+      ],
+      "Sign-in": [
+        "Inicio de sesión"
       ]
     },
     "Admin": {
@@ -4282,7 +4285,7 @@
         "Confirmar la cancelación"
       ],
       "If you exceed your plan limits, you won't be able to:": [
-        "Si excedes los límites de tu plan, no podrás:"
+        "Si excede los límites del plan, no podrá:"
       ],
       "Keep current plan": [
         "Mantener el plan actual"
@@ -4298,6 +4301,12 @@
       ],
       "Upload any new files": [
         "Cargar cualquier archivo nuevo"
+      ],
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Cuando finalice su suscripción de ${ planDisplayName } el ${ endDate }, perderá todas las funciones. Si su uso excede los límites de su plan, algunas funciones podrían no estar disponibles temporalmente."
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Cuando finalice su suscripción el ${ endDate }, perderá todas las funciones. Si su uso excede los límites de su plan, algunas funciones podrían no estar disponibles temporalmente."
       ]
     },
     "Confirm modal title": {
@@ -8097,7 +8106,7 @@
         "La sesión ha expirado. Inicie sesión de nuevo."
       ],
       "The session has expired. Please try again.": [
-        "La sesión ha expirado. Por favor, intente nuevamente."
+        "La sesión ha expirado. Intente de nuevo."
       ],
       "The total could not be calculated. Change the amount to try again.": [
         "No se pudo calcular el total. Cambie la cantidad e intente de nuevo."
@@ -8305,6 +8314,9 @@
       ],
       "Zero keys reactivated": [
         "Ninguna clave reactivada"
+      ],
+      "The device you scanned the QR code with didn't send your sign-in details. Update the app on that device and try again.": [
+        "El dispositivo con el que escaneó el código QR no envió sus datos de inicio de sesión. Actualice la aplicación en ese dispositivo e intente de nuevo."
       ]
     },
     "error": {
@@ -8497,6 +8509,12 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No pudimos cargar esta página. Actualice la página o revise la conexión a internet."
+      ],
+      "Check your internet connection and try again.": [
+        "Compruebe su conexión a internet e intente de nuevo."
+      ],
+      "We couldn't load your invitation": [
+        "No pudimos cargar su invitación"
       ]
     },
     "Error message, Disable account": {
@@ -13373,7 +13391,7 @@
         "Esta es la contraseña que usó anterior al restablecimiento de contraseña."
       ],
       "This joining link isn't valid. Please contact your administrator for a new one.": [
-        "Este enlace de reunión es inválido. Por favor, contacte a su administrador para obtener uno nuevo."
+        "Este enlace de reunión es inválido. Contacte con el administrador para obtener uno nuevo."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar informaciiones, como contraseñas y datos de tarjetas de crédito."
@@ -13991,7 +14009,7 @@
         "Cuando cancela, la suscripción no se renovará pero podrá seguir disfrutando los beneficios del plan hasta terminar el periodo de suscripción. Luego cambiará al plan ${ BRAND_NAME } Free."
       ],
       "When you cancel, your subscription won't start after the trial period.": [
-        "Al cancelar, su suscripción no empezará al término el período de prueba."
+        "Al cancelar, su suscripción no empezará al terminar el periodo de prueba."
       ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Cuando cancele, su suscripción no se iniciará, pero podrá seguir disfrutando de los beneficios del plan hasta el final del período de prueba. Después de eso, pasará al plan ${ BRAND_NAME } Free."
@@ -14240,7 +14258,7 @@
         "No tiene transacciones."
       ],
       "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
-        "Tienes múltiples suscripciones. Selecciona la que desees cancelar (tus otras suscripciones no se verán afectadas). Una suscripción cancelada no se renovará, y mantendrás sus beneficios hasta el final del período de suscripción."
+        "Tiene múltiples suscripciones. Seleccione la que desea cancelar (sus otras suscripciones no se verán afectadas). Una suscripción cancelada no se renovará y mantendrá sus beneficios hasta el final del periodo de suscripción."
       ],
       "You have unpublished changes": [
         "Tiene cambios sin publicar"
@@ -14380,7 +14398,7 @@
         "Su cuenta está actualmente configurada para aplicar el esquema de cargo inverso. Esto no es compatible con el plan seleccionado. Para continuar, elimine el número de IVA de la dirección de facturación o seleccione un plan diferente."
       ],
       "Your account was created, but we couldn't finish setting up your plan.": [
-        "Su cuenta fué creada, pero no pudimos terminar de configurar su plan."
+        "Su cuenta fue creada, pero no pudimos terminar de configurar su plan."
       ],
       "Your account was successfully updated with this promotion": [
         "Se ha actualizado la cuenta con esta promoción"
@@ -14541,6 +14559,33 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Al activar esto, solo podrá iniciar sesión con su nombre de usuario **${ username }**, **${ firstEmail }** o **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Al activar esto, solo podrá iniciar sesión con su nombre de usuario **${ username }**, **${ firstEmail }**, **${ secondEmail }** o **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Al activar esto, solo podrá iniciar sesión con su nombre de usuario **${ username }** o **${ firstEmail }**."
+      ],
+      "Invalid invitation link": [
+        "Enlace de invitación inválido"
+      ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "No pudimos verificar esta invitación. Pida a su administrador, ${ admin }, para eliminarle de la organización y añadirle de nuevo."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "No pudimos verificar la identidad de la organización. Pida a su administrador, ${ admin }, para poder verificar la identidad de la organización en los ajustes de la organización. Luego abra este enlace de nuevo."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Cuando el inicio de sesión está restringido, solo puede iniciar sesión con su nombre de usuario **${ username }**, **${ firstEmail }**, o **${ secondEmail }**. Sus otras direcciones no funcionarán para iniciar sesión."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Cuando el inicio de sesión está restringido, solo puede iniciar sesión con su nombre de usuario **${ username }**, **${ firstEmail }**, **${ secondEmail }** o **${ thirdEmail }**. Sus otras direcciones no funcionarán para iniciar sesión."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Cuando el inicio de sesión está restringido, solo puede iniciar sesión con su nombre de usuario **${ username }** o **${ firstEmail }**. Sus otras direcciones no funcionarán para iniciar sesión."
       ]
     },
     "info": {
@@ -17032,6 +17077,9 @@
       ],
       "Valid ${ group.name } record found": [
         "Se encontró un registro válido de ${ group.name }"
+      ],
+      "Leave field blank": [
+        "Deje el campo en blanco"
       ]
     },
     "Label for new member": {
@@ -28098,7 +28146,7 @@
         "¿Qué está migrando?"
       ],
       "What changes if you cancel ${ planDisplayName }": [
-        "¿Qué cambia si cancelas ${ planDisplayName }?"
+        "¿Qué cambia si cancela ${ planDisplayName }?"
       ],
       "What is an alias?": [
         "¿Qué es un alias?"

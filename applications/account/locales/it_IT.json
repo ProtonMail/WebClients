@@ -7953,7 +7953,7 @@
         "L'importo dovuto è cambiato. Per favore riprova."
       ],
       "The device you scanned the QR code with didn't send your sign-in details. Update the app on that device and try again.": [
-        "Il dispositivo con cui hai scandito il codice QR non ha inviato i dettagli d'accesso. Aggiorna l'applicazione su quel dispositivo e riprova."
+        "Il dispositivo con cui hai inquadrato il codice QR non ha inviato i dati di accesso. Aggiorna l'applicazione e riprova."
       ],
       "The email addresses do not match": [
         "Gli indirizzi email non corrispondono."
@@ -8191,6 +8191,63 @@
       ],
       "Zero keys reactivated": [
         "Chiavi zero riattivate"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Impossibile aggiungere una foto all'album senza un nome valido"
+      ],
+      "Cannot share root folder": [
+        "Impossibile condividere cartella principale"
+      ],
+      "Copy operation aborted": [
+        "Copia interrotta"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Creare file al di fuori delle cartelle non è consentito"
+      ],
+      "Device not found": [
+        "Dispositivo non trovato"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Impossibile decifrare chiave preferita: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Impossibile decifrare nome elemento: ${ message }"
+      ],
+      "Invitation not found": [
+        "Invito non trovato"
+      ],
+      "Item not found": [
+        "Elemento non trovato"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Impossibile spostare l'elemento: la destinazione non è una cartella."
+      ],
+      "Moving root item is not allowed": [
+        "Non è consentito spostare un elemento principale"
+      ],
+      "Name must not be empty": [
+        "Il campo \"nome\" non può essere vuoto"
+      ],
+      "Renaming root item is not allowed": [
+        "Non è consentito rinominare un elemento chiave"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Verifica della firma per ${ signatureType } fallita"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Verifica della firma per  ${ signatureType } non riuscita: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "L'upload di alcuni file è fallito. Prova di nuovo."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "L'upload di alcune parti del file non è stato completato. Riprova."
+      ],
+      "This item has no image preview": [
+        "Questo elemento non ha un'immagine di anteprima"
+      ],
+      "You do not have access to this shared item": [
+        "Accesso non consentito a questo elemento condiviso"
       ]
     },
     "error": {
@@ -8383,6 +8440,12 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Non è stato possibile caricare questa pagina. Aggiornar questa pagina o controlla la connessione internet."
+      ],
+      "Check your internet connection and try again.": [
+        "Controlla la tua connessione e riprova."
+      ],
+      "We couldn't load your invitation": [
+        "Non è stato possibile caricare l'invito"
       ]
     },
     "Error message, Disable account": {
@@ -14424,6 +14487,15 @@
       ],
       "Zoom meeting": [
         "Meeting Zoom"
+      ],
+      "Invalid invitation link": [
+        "Link di invito non valido"
+      ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "Non è stato possibile verificare questo invito. Chiedi al tuo amministratore, ${ admin }, di rimuoverti dall'organizzazione e aggiungerti di nuovo."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Non è possibile verificare l'identità della tua organizzazione. Chiedi al tuo amministratore, ${ admin }, di controllare l'identità dell'organizzazione nelle relative impostazioni, quindi apri nuovamente questo link"
       ]
     },
     "info": {
@@ -16915,6 +16987,9 @@
       ],
       "Valid ${ group.name } record found": [
         "Record ${ group.name } valido trovato"
+      ],
+      "Leave field blank": [
+        "Lascia il campo vuoto"
       ]
     },
     "Label for new member": {
@@ -21625,6 +21700,12 @@
       ],
       "name": [
         "nome"
+      ],
+      "hash key": [
+        "chiave hash"
+      ],
+      "membership": [
+        "abbonamento"
       ]
     },
     "Property type": {

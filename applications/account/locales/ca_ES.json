@@ -2136,7 +2136,7 @@
         "Test de la configuració SAML"
       ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
-        "Tocar per alternar ${ LUMO_SHORT_APP_NAME }"
+        "Commuta ${ LUMO_SHORT_APP_NAME }"
       ],
       "Top up": [
         "Recarrega"
@@ -4030,7 +4030,7 @@
         "De codi obert"
       ],
       "Private video calls for the conversations that matter.": [
-        "Videotrucades privades per les converses importants."
+        "Videotrucades privades per a les converses importants."
       ]
     },
     "collider_2025: Navigation": {
@@ -7395,7 +7395,7 @@
         "Signatura del contacte no verificada"
       ],
       "Contact your administrator to start a migration.": [
-        "Contacteu amb el vostre administrador per iniciar una migració."
+        "Contacteu amb el vostre administrador per a iniciar una migració."
       ],
       "Copy operation aborted": [
         "S'ha cancel·lat l'operació de còpia"
@@ -8321,7 +8321,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Inicieu la sessió amb una adreça de Gmail que ja us reenviarà a ${ MAIL_APP_NAME }"
+        "Inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicieu la sessió amb la mateixa adreça de Gmail amb la que us vau connectar originalment"
@@ -8509,6 +8509,12 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la connexió a Internet."
+      ],
+      "Check your internet connection and try again.": [
+        "Comproveu la vostra connexió a internet i torneu-ho a provar."
+      ],
+      "We couldn't load your invitation": [
+        "No hem pogut carregar la vostra invitació"
       ]
     },
     "Error message, Disable account": {
@@ -10629,7 +10635,7 @@
         "**${ appName }** no és compatible."
       ],
       "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
-        "**${ emailAddress }** també s'utilitza per iniciar sessió en un compte de ${ BRAND_NAME } separat, fora de ${ MAIL_APP_NAME }."
+        "**${ emailAddress }** també s'utilitza per a iniciar la sessió en un compte de ${ BRAND_NAME } separat, fora de ${ MAIL_APP_NAME }."
       ],
       "**Enable automatic backups** for peace of mind": [
         "**Habiliteu còpies de seguretat automàtiques** per la vostra tranquil·litat"
@@ -14340,7 +14346,7 @@
         "Llavors se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "You'll use it to sign in from then on. That's the only change.": [
-        "A partir d'ara l'utilitzareu per iniciar sessió. Aquest és l'únic canvi."
+        "A partir d'ara l'utilitzareu per a iniciar la sessió. Aquest és l'únic canvi."
       ],
       "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
         "Esteu a punt d'iniciar la sessió al vostre compte de ${ BRAND_NAME } a aquesta adreça:"
@@ -14550,6 +14556,33 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "En activar aquesta opció, només podreu iniciar sessió amb el vostre nom d'usuari, **${ username }**, o amb **${ firstEmail }** o **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "En activar aquesta opció, només podreu iniciar sessió amb el vostre nom d'usuari, **${ username }**, o amb **${ firstEmail }** o **${ secondEmail }** o **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "En activar aquesta opció, només podreu iniciar sessió amb el vostre nom d'usuari, **${ username }**, o amb **${ firstEmail }**."
+      ],
+      "Invalid invitation link": [
+        "L'enllaç d'invitació no és vàlid"
+      ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "No s'ha pogut verificar aquesta invitació. Demaneu a l'administrador (${ admin }) que us esborri de l'organització i us hi torni a afegir."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "No s'ha pogut verificar la identitat de la vostra organització. Demaneu a l'administrador (${ admin }) que la comprovi a les preferències corresponents i, a continuació, torneu a obrir aquest enllaç."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Quan l'inici de sessió està restringit, només la podeu iniciar amb el nom d'usuari, **${ username }**, o amb **${ firstEmail }** o **${ secondEmail }**. Les vostres altres adreces de correu electrònic no funcionaran per iniciar sessió."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Quan l'inici de sessió està restringit, només la podeu iniciar amb el vostre nom d'usuari, **${ username }**, o amb **${ firstEmail }**, **${ secondEmail }** o **${ thirdEmail }**. Les vostres altres adreces de correu electrònic no funcionaran per iniciar sessió."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Quan l'inici de sessió està restringit, només la podeu iniciar amb el vostre nom d'usuari, **${ username }**, o amb **${ firstEmail }**. Les vostres altres adreces de correu electrònic no funcionaran per iniciar sessió."
       ]
     },
     "info": {
@@ -14959,7 +14992,7 @@
         "Període següent"
       ],
       "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
-        "Obre ${ LUMO_SHORT_APP_NAME } / focus d'entrada"
+        "Obre ${ LUMO_SHORT_APP_NAME } / enfoca el camp d'entrada"
       ],
       "Open command panel": [
         "Obre el panell d'ordres"
@@ -17041,6 +17074,9 @@
       ],
       "Valid ${ group.name } record found": [
         "S'ha trobat un registre vàlid de ${ group.name }"
+      ],
+      "Leave field blank": [
+        "Deixeu el camp en blanc"
       ]
     },
     "Label for new member": {
@@ -19802,7 +19838,7 @@
         " visiteu el nostre ${ helpCenterLink } o ${ contactSupportLink }."
       ],
       "**Add a payment method** to keep using all of the features after your trial ends.": [
-        "**Afegiu un mètode de pagament** per continuar utilitzant totes les funcions quan acabi el període de prova."
+        "**Afegiu un mètode de pagament** per a continuar utilitzant totes les funcions quan acabi el període de prova."
       ],
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Cancel·leu-ho en qualsevol moment. ** Podreu utilitzar ${ planTitle } fins que acabi el període de prova, de franc."
@@ -19814,7 +19850,7 @@
         "**Un cop comenci la vostra subscripció completa...** Encara podreu cancel·lar-la en un termini de 30 dies i rebre un reemborsament prorratejat."
       ],
       "Add a payment method": [
-        "Afegir un mètode de pagament"
+        "Afegiu un mètode de pagament"
       ],
       "Cancel anytime before ${ cancelDate }.": [
         "Cancel·leu en qualsevol moment abans del ${ cancelDate }."
@@ -21265,7 +21301,7 @@
         "Si decidiu modificar el vostre pla ${ planTitle }, potser perdreu l'accés a algunes característiques."
       ],
       "Keep ${ planTitle }": [
-        "Seguiu amb ${ planTitle }"
+        "Segueix amb ${ planTitle }"
       ],
       "Yes, I'm sure": [
         "Sí, n'estic segur"

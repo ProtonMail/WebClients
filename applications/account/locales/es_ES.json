@@ -8509,6 +8509,12 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hemos podido cargar esta página. Vuelve a cargar la página o verifica tu conexión a internet."
+      ],
+      "Check your internet connection and try again.": [
+        "Compruebe su conexión a internet e inténtelo de nuevo."
+      ],
+      "We couldn't load your invitation": [
+        "No hemos podido cargar tu invitación"
       ]
     },
     "Error message, Disable account": {
@@ -14553,6 +14559,33 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Al activar esta opción, solo podrás iniciar sesión con tu nombre de usuario nombre de usuario, **${ username }**, o con **${ firstEmail } **o **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Al activar esta opción, solo podrás iniciar sesión con tu nombre de usuario, **${ username }**, o con **${ firstEmail } **o **${ secondEmail }** o **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Al activar esta opción, solo podrás iniciar sesión con tu nombre de usuario, **${ username }**, o con **${ firstEmail }**."
+      ],
+      "Invalid invitation link": [
+        "Enlace de invitación no válido"
+      ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "No hemos podido verificar esta invitación. Por favor, pregunte a su administrador, ${ admin }, para retirarle de la organización y añadirle nuevamente."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "No hemos podido verificar la identidad de la organización. Por favor, pregunte a su administrador, ${ admin }, para poder verificar la identidad de la organización en los ajustes de la organización. Después, abra este enlace nuevamente."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Cuando el inicio de sesión está restringido, solo puedes iniciar sesión con tu nombre de usuario **${ username }**, o con **${ firstEmail }** o **${ secondEmail }**. Tus otras direcciones de correo no funcionarán para iniciar sesión."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Cuando el inicio de sesión está restringido, solo puedes iniciar sesión con tu nombre de usuario **${ username }**, o con **${ firstEmail }** o **${ secondEmail }** o **${ thirdEmail }**. Tus otras direcciones de correo no funcionarán para iniciar sesión."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Cuando el inicio de sesión está restringido, solo puedes iniciar sesión con tu nombre de usuario, **${ username }**, o con **${ firstEmail }**. Tus otras direcciones de correo no funcionarán para iniciar sesión."
       ]
     },
     "info": {
@@ -17044,6 +17077,9 @@
       ],
       "Valid ${ group.name } record found": [
         "Se ha encontrado un registro de ${ group.name } válido"
+      ],
+      "Leave field blank": [
+        "Dejar el campo en blanco"
       ]
     },
     "Label for new member": {

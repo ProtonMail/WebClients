@@ -2601,7 +2601,7 @@
         "Tilladelse tilbagekaldt"
       ],
       "Sign-in": [
-        "Log ind"
+        "Login"
       ]
     },
     "Admin": {
@@ -8296,6 +8296,9 @@
       ],
       "Zero keys reactivated": [
         "Nul nøgler genaktiveret"
+      ],
+      "The device you scanned the QR code with didn't send your sign-in details. Update the app on that device and try again.": [
+        "Enheden, du scannede QR-koden med, sendte ikke dine login-oplysninger. Opdater appen på den enhed og prøv igen."
       ]
     },
     "error": {
@@ -8488,6 +8491,12 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunne ikke indlæse denne side. Opdater siden eller tjek din internetforbindelse."
+      ],
+      "Check your internet connection and try again.": [
+        "Kontrollér din internetforbindelse og prøv igen."
+      ],
+      "We couldn't load your invitation": [
+        "Vi kunne ikke indlæse din invitation"
       ]
     },
     "Error message, Disable account": {
@@ -14174,7 +14183,7 @@
         "Du har ingen transaktioner"
       ],
       "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
-        "Du har flere abonnementer. Vælg det, du vil opsige: Dine øvrige abonnementer påvirkes ikke. Et opsagt abonnement fornyes ikke, og du beholder fordelene, indtil abonnementsperioden udløber."
+        "Du har flere abonnementer. Vælg det du vil opsige: Dine øvrige abonnementer påvirkes ikke. Et opsagt abonnement fornyes ikke, og du beholder fordelene indtil abonnementsperioden udløber."
       ],
       "You have unpublished changes": [
         "De har ikke-udgivne ændringer"
@@ -14475,6 +14484,33 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Ved at slå dette til vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller med **${ firstEmail }** eller **@${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Ved at slå dette til vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller med **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Ved at slå dette til vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller med **${ firstEmail }**."
+      ],
+      "Invalid invitation link": [
+        "Ugyldigt invitationslink"
+      ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "Vi kunne ikke bekræfte denne invitation. Bed din administrator, ${ admin }, om at fjerne dig fra organisationen og tilføje dig igen."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Vi kunne ikke bekræfte din organisations identitet. Bed din administrator, ${ admin }, om at kontrollere organisationsidentiteten i organisationsindstillinger. Åbn derefter linket igen."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når login er begrænset, vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller som **${ firstEmail }** eller **@${ secondEmail }**. Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når login er begrænset, vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller som **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**. Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når login er begrænset, vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller som **${ firstEmail }** Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
       ]
     },
     "info": {
@@ -16966,6 +17002,9 @@
       ],
       "Valid ${ group.name } record found": [
         "Gyldigt ${ group.name }-record fundet"
+      ],
+      "Leave field blank": [
+        "Lad feltet være tomt"
       ]
     },
     "Label for new member": {
@@ -28014,7 +28053,7 @@
         "Velkommen til ${ BRAND_NAME } for Business"
       ],
       "What changes if you cancel ${ planDisplayName }": [
-        "Hvad ændrer sig, hvis du opsiger ${ planDisplayName }"
+        "Dette ændrer sig, hvis du opsiger ${ planDisplayName }"
       ],
       "What is an alias?": [
         "Hvad er et alias?"

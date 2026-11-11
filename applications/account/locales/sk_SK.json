@@ -8621,6 +8621,12 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Túto stránku sa nepodarilo načítať. Obnovte stránku, prosím, alebo skontrolujte svoje internetové pripojenie."
+      ],
+      "Check your internet connection and try again.": [
+        "Skontrolujte pripojenie na internet a skúste to znova."
+      ],
+      "We couldn't load your invitation": [
+        "Nepodarilo sa nám načítať vašu pozvánku"
       ]
     },
     "Error message, Disable account": {
@@ -14856,6 +14862,33 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }** alebo **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }**, **${ secondEmail }** alebo **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }**."
+      ],
+      "Invalid invitation link": [
+        "Neplatný pozývací odkaz"
+      ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "Túto pozvánku sa nám nepodarilo overiť. Poproste svojho správcu, ${ admin }, aby vás odstránil z organizácie a opäť vás pridal."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Nepodarilo sa nám overiť identitu vašej organizácie. Poproste svojho správcu, ${ admin }, aby skontroloval identitu organizácie v nastaveniach organizácie. Potom tento odkaz otvorte znova."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }** či **${ secondEmail }**. Ostatné emailové adresy nebudú na prihlásenie fungovať."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }**, **${ secondEmail }** alebo **${ thirdEmail }**. Ostatné emailové adresy nebudú pri prihlásení fungovať."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }**. Ostatné emailové adresy nebudú na prihlásenie fungovať."
       ]
     },
     "info": {
@@ -17367,6 +17400,9 @@
       ],
       "Valid ${ group.name } record found": [
         "Bol nájdený platný záznam ${ group.name }"
+      ],
+      "Leave field blank": [
+        "Nechajte pole prázdne"
       ]
     },
     "Label for new member": {

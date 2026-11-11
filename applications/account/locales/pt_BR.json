@@ -7226,7 +7226,7 @@
         "Valor abaixo do mínimo (${ minimumAmount })."
       ],
       "An unknown error ocurred. Please refresh the page and try again": [
-        "Ocorreu um erro desconhecido. Por favor, atualize a página e tente novamente"
+        "Ocorreu um erro desconhecido. Atualize a página e tente novamente"
       ],
       "Authentication canceled.": [
         "Autenticação cancelada."
@@ -7238,7 +7238,7 @@
         "A mensagem de resposta automática excede o comprimento permitido. Encurte-a para caber no limite."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Respostas automáticas é um recurso pago. Atualize para uma conta paga para usar este recurso."
+        "Respostas automáticas é um recurso pago. Faça upgrade para uma conta paga para usar este recurso."
       ],
       "Bookmark password is not available": [
         "A senha do marcador não está disponível"
@@ -7982,7 +7982,7 @@
         "Sua sessão expirou. Inicie a sessão novamente."
       ],
       "The session has expired. Please try again.": [
-        "A sessão expirou. Por favor, tente novamente."
+        "A sessão expirou. Tente novamente."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "O arquivo enviado não corresponde ao original. Por favor, tente novamente."
@@ -8174,7 +8174,7 @@
         "Sua importação não será processada."
       ],
       "Your password couldn't be reset. Please try again.": [
-        "Sua senha não pôde ser redefinida. Por favor, tente de novo."
+        "Sua senha não pôde ser redefinida. Tente de novo."
       ],
       "Zero keys reactivated": [
         "Zero chaves reativadas"
@@ -8370,6 +8370,12 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Não foi possível carregar esta página. Atualize a página ou verifique sua conexão com a Internet."
+      ],
+      "Check your internet connection and try again.": [
+        "Verifique sua conexão com a Internet e tente novamente."
+      ],
+      "We couldn't load your invitation": [
+        "Não foi possível carregar o seu convite"
       ]
     },
     "Error message, Disable account": {
@@ -12814,7 +12820,7 @@
         "Alguns servidores podem não aparecer na lista acima. Pesquise pelo nome do servidor (por exemplo, AT#62) para encontrá-los."
       ],
       "Something went wrong. Please try again or contact customer support.": [
-        "Ocorreu um erro. Tente novamente ou contate o suporte ao cliente."
+        "Algo correu mal. Tente novamente ou contacte o apoio ao cliente."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Especifique o domínio com permissão para autenticação SAML SSO."
@@ -13081,7 +13087,7 @@
         "Esta é a senha que você usava antes da redefinição de senha."
       ],
       "This joining link isn't valid. Please contact your administrator for a new one.": [
-        "Este link de entrada não é válido. Por favor, solicite o administrador um novo link."
+        "Este link de entrada não é válido. Solicite o administrador um novo link."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Esse link leva a um site que pode estar tentando roubar suas informações, como senhas e detalhes de cartão de crédito."
@@ -14138,6 +14144,12 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Veloz e poderoso. E-mail e calendário, direto no seu computador."
+      ],
+      "Invalid invitation link": [
+        "Link de convite inválido"
       ]
     },
     "info": {
@@ -16608,6 +16620,9 @@
       ],
       "Valid ${ group.name } record found": [
         "Encontrado um registro válido de ${ group.name }"
+      ],
+      "Leave field blank": [
+        "Deixar o campo em branco"
       ]
     },
     "Label for new member": {

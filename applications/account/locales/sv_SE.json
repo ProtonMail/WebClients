@@ -7856,7 +7856,7 @@
         "Sessionen har löpt ut. Logga in igen."
       ],
       "The session has expired. Please try again.": [
-        "Sessionen har löpt ut. Vänligen försök igen."
+        "Sessionen har löpt ut. Försök igen."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Den uppladdade filen matchar inte originalet. Försök igen."
@@ -8241,6 +8241,12 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunde inte ladda denna sida. Uppdatera sidan eller kontrollera din internetanslutning."
+      ],
+      "Check your internet connection and try again.": [
+        "Kontrollera din internetanslutning och försök igen."
+      ],
+      "We couldn't load your invitation": [
+        "Vi kunde inte ladda din inbjudan"
       ]
     },
     "Error message, Disable account": {
@@ -13885,6 +13891,15 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "Invalid invitation link": [
+        "Ogiltig inbjudningslänk"
+      ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "Vi kunde inte verifiera den här inbjudan. Vänligen be din administratör,  ${ admin }, att ta bort dig från organisationen och lägga till dig igen."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Vi kunde inte verifiera din organisations identitet. Vänligen be din administratör,  ${ admin }, att kontrollera organisationsidentiteten i organisationsinställningarna. Öppna sedan den här länken igen."
       ]
     },
     "info": {
@@ -16323,6 +16338,9 @@
       ],
       "Valid ${ group.name } record found": [
         "Giltig ${ group.name }-post hittades"
+      ],
+      "Leave field blank": [
+        "Lämna fält tomt"
       ]
     },
     "Label for new member": {
@@ -24411,7 +24429,7 @@
         "${ startTime } – ${ endTime }"
       ],
       "From ${ startTime }": [
-        "Från  ${ startTime }"
+        "Från ${ startTime }"
       ]
     },
     "Subtitle": {

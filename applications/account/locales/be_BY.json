@@ -558,7 +558,7 @@
         "Скасаваць"
       ],
       "Cancel ${ planTitle }": [
-        "Скасваць ${ planTitle }"
+        "Скасаваць ${ planTitle }"
       ],
       "Cancel import": [
         "Скасаваць імпартаванне"
@@ -2350,6 +2350,9 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "Скасаваць пробны перыяд ${ planTitle }"
       ]
     },
     "action": {
@@ -2618,6 +2621,9 @@
       ],
       "Permission revoked": [
         "Дазвол адкліканы"
+      ],
+      "Sign-in": [
+        "Уваход"
       ]
     },
     "Admin": {
@@ -2661,6 +2667,9 @@
       ],
       "User admin:": [
         "Адміністратар карыстальніка:"
+      ],
+      "Assign admin roles to groups. Manage access for many users at once and update it automatically when people join or leave.": [
+        "Прызначайце ролі адміністратара групам. Кіруйце доступам для некалькіх карыстальнікаў адначасова і абнаўляйце іх аўтаматычна, калі людзі далучаюцца або выходзяць з групы."
       ]
     },
     "Alert": {
@@ -2967,6 +2976,9 @@
       ],
       "Premium versions of all ${ BRAND_NAME } services": [
         "Прэміяльныя функцыі ўсіх сэрвісаў ${ BRAND_NAME }"
+      ],
+      "The ${ planName } plan is back for a limited time only": [
+        "Тарыфны план ${ planName } вярнуўся на абмежаваны час."
       ]
     },
     "bf2023: info": {
@@ -5808,6 +5820,9 @@
         "Ваш тарыфны план агулам падтрымлівае ${ MAX_SYNC_PAID_USER } адрасы Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail"
+      ],
+      "The link to sign out on all your devices has expired. Try signing in again to receive a new one.": [
+        "Спасылка для выхаду на ўсіх вашых прыладах пратэрмінаваная. Паспрабуйце ўвайсці зноў, каб атрымаць новую."
       ]
     },
     "description": {
@@ -8523,6 +8538,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Немагчыма загрузіць старонку. Абнавіце старонку або праверце злучэнне з інтэрнэтам."
+      ],
+      "We couldn't load your invitation": [
+        "Не ўдалося загрузіць ваша запрашэнне"
       ]
     },
     "Error message, Disable account": {
@@ -14536,6 +14554,27 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "Allow your organization to use the ${ LUMO_APP_NAME } API": [
+        "Дазволіць выкарыстоўваць API для ${ LUMO_APP_NAME } у вашай арганізацыі"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Вы зможаце ўвайсці ў сістэму толькі з дапамогай свайго імя карыстальніка **${ username }**, адраса электроннай пошты **${ firstEmail }** або **${ secondEmail }**, калі ўключыце гэту функцыю."
+      ],
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Пасля гэтага ўвайдзіце ў свой уліковы запіс Google і дазвольце ${ BRAND_NAME } доступ да Google Drive. Вашы файлы і папкі будуць імпартаваны ў ${ DRIVE_APP_NAME }."
+      ],
+      "This address now signs in through your organization's identity provider.": [
+        "Цяпер уваход у гэты адрас выконваецца праз пастаўшчыка пасведчанняў вашай арганізацыі."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Распакуйце карыстальніка ў сваёй ${ provider.adminConsoleName } для яго пераносу."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Не ўдалося праверыць ідэнтычнасць вашай арганізацыі. Папрасіце свайго адміністратара, ${ admin }, праверыць ідэнтычнасць арганізацыі ў яе наладах. Потым адкрыйце гэта спасылку зноў."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Ваш Google Drive можа быць пусты або змяшчаць толькі файлы, якія не падтрымліваюцца."
       ]
     },
     "info": {
@@ -25672,6 +25711,9 @@
       ],
       "View VPN session details for your organization.": [
         "Паглядзець падрабязнасці сеанса VPN для вашай арганізацыі."
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Імпартуйце свае файлы і папкі з Google Drive, каб забяспечыць прыватнасць для іх у ${ DRIVE_APP_NAME }."
       ]
     },
     "Success": {
@@ -28583,6 +28625,9 @@
       ],
       "Subscription term": [
         "Тэрмін дзеяння падпіскі"
+      ],
+      "Renewal": [
+        "Падаўжэнне"
       ]
     },
     "Title; create calendar modal": {
@@ -28921,6 +28966,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Відавочна, што ваш уліковы запіс дасягнуў абмежавання паласы прапускання, якая разлічана на суткі. ${ BRAND_NAME } паспрабуе ўзнавіць імпартаванне, як толькі гэта будзе магчыма."
+      ],
+      "Install the migration app in your ${ providerName } account to start a migration": [
+        "Усталюйце праграму пераносу ў сваім уліковымі запісе ${ providerName }, каб пачаць перанос файлаў"
       ]
     },
     "tooltip": {
