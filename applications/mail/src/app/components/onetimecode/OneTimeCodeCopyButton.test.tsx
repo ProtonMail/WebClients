@@ -68,16 +68,26 @@ describe('OneTimeCodeCopyButton', () => {
         expect(textToClipboard).toHaveBeenCalledWith(CODE);
     });
 
-    it('fires onCopy once, one second after the click', () => {
+    it('fires onCopy once, on the click', () => {
         const onCopy = jest.fn();
         renderButton(onCopy);
 
         clickButton();
+        expect(onCopy).toHaveBeenCalledTimes(1);
+
+        advance(1000);
+        expect(onCopy).toHaveBeenCalledTimes(1);
+    });
+
+    it('returns to the copy icon one second after the click', () => {
+        renderButton(jest.fn());
+
+        clickButton();
         advance(999);
-        expect(onCopy).not.toHaveBeenCalled();
+        expect(screen.getByTestId('otp-copy-button:copied-icon')).toBeInTheDocument();
 
         advance(1);
-        expect(onCopy).toHaveBeenCalledTimes(1);
+        expect(screen.getByTestId('otp-copy-button:copy-icon')).toBeInTheDocument();
     });
 
     it('ignores a second click while in the copied state', () => {
@@ -101,16 +111,5 @@ describe('OneTimeCodeCopyButton', () => {
         clickButton();
 
         expect(onClick).toHaveBeenCalledTimes(2);
-    });
-
-    it('never fires onCopy when unmounted before the delay ends', () => {
-        const onCopy = jest.fn();
-        const { unmount } = renderButton(onCopy);
-
-        clickButton();
-        unmount();
-        advance(1000);
-
-        expect(onCopy).not.toHaveBeenCalled();
     });
 });

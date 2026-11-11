@@ -14,15 +14,16 @@ import clsx from '@proton/utils/clsx';
 
 import './OneTimeCodeCopyButton.scss';
 
-// Long enough for the copied state to register before onCopy (e.g. a move to Trash) usually removes the button.
-const COPIED_STATE_DURATION_MS = 1000;
+// How long the copied state shows. A consumer whose onCopy removes the button (e.g. a move to Trash) waits this
+// long first, so the copied state can register.
+export const COPIED_STATE_DURATION_MS = 1000;
 
 interface Props {
     code: string;
     /** Displayed in place of {@link code}, e.g. with search highlighting; {@link code} is still what gets copied. */
     codeContent?: ReactNode;
     onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
-    /** Fired {@link COPIED_STATE_DURATION_MS} after the code has been copied, unless the button unmounts first. */
+    /** Fired on the click that copies the code; ignored clicks made while already in the copied state do not fire it. */
     onCopy?: () => void;
     /**
      * Whether copying will also move the email to Trash (delete-after-copy pref).
@@ -57,15 +58,15 @@ const OneTimeCodeCopyButton = ({
     className,
 }: Props) => {
     const [isCopied, setIsCopied] = useState(false);
-    const onCopyTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+    const copiedTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const { createNotification } = useNotifications();
 
     // Copying often unmounts this component (the email moves to Trash), so clear
-    // the pending onCopy timer to avoid firing it after unmount.
+    // the pending copied-state reset to avoid firing it after unmount.
     useEffect(
         () => () => {
-            if (onCopyTimerRef.current) {
-                clearTimeout(onCopyTimerRef.current);
+            if (copiedTimerRef.current) {
+                clearTimeout(copiedTimerRef.current);
             }
         },
         []
@@ -81,8 +82,8 @@ const OneTimeCodeCopyButton = ({
         textToClipboard(code);
         createNotification({ text: copiedLabel });
         setIsCopied(true);
-        onCopyTimerRef.current = setTimeout(() => {
-            onCopy?.();
+        onCopy?.();
+        copiedTimerRef.current = setTimeout(() => {
             setIsCopied(false);
         }, COPIED_STATE_DURATION_MS);
     };

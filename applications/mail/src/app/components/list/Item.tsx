@@ -16,8 +16,6 @@ import {
     getSender,
     isThirdPartyRegistration,
 } from '@proton/shared/lib/mail/messages';
-import { MailFeatureFlag } from '@proton/unleash/Flags';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -31,6 +29,7 @@ import { useMailSelector } from '../../store/hooks';
 import { selectSnoozeDropdownState, selectSnoozeElement } from '../../store/snooze/snoozeSliceSelectors';
 import { useCategoriesOnboarding } from '../categoryView/categoriesOnboarding/CategoriesOnboardingContext';
 import { HIGHLIGHTED_ITEM_INDEX } from '../categoryView/categoriesOnboarding/onboardingInterface';
+import { useOneTimeCodeDetection } from '../onetimecode/useOneTimeCodeDetection';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
 import ItemSenders from './ItemSenders';
@@ -98,7 +97,7 @@ const Item = ({
 
     const snoozeDropdownState = useMailSelector(selectSnoozeDropdownState);
     const snoozedElement = useMailSelector(selectSnoozeElement);
-    const isOneTimePasscodeEnabled = useFlag(MailFeatureFlag.OneTimePasscode);
+    const isOneTimePasscodeEnabled = useOneTimeCodeDetection();
     const { reportResultOpened } = useEncryptedSearchContext();
 
     const elementRef = useRef<HTMLDivElement>(null);

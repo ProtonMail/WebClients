@@ -66,6 +66,7 @@ import { CategoriesQuickSettings } from '../categoryView/CategoriesQuickSettings
 import { MailDebugButton } from '../debug/MailDebugButton';
 import ClearBrowserDataModal from '../header/ClearBrowserDataModal';
 import MailDefaultHandlerModal from '../header/MailDefaultHandlerModal';
+import OneTimeCodeQuickSettings from '../onetimecode/OneTimeCodeQuickSettings';
 import LumoInMailToggle from './LumoInMailToggle';
 
 interface QuickSettingsSelectOption {
@@ -374,6 +375,8 @@ const MailQuickSettings = () => {
                     }
                 />
             </DrawerAppSection>
+
+            <OneTimeCodeQuickSettings />
 
             {isLumoInMailFlagOn && (
                 <DrawerAppSection>

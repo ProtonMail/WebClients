@@ -39,7 +39,6 @@ import {
     isInternal,
     isScheduled,
 } from '@proton/shared/lib/mail/messages';
-import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
@@ -50,6 +49,7 @@ import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
 import ItemStar from '../../list/ItemStar';
 import ItemSpyTrackerIcon from '../../list/spy-tracker/ItemSpyTrackerIcon';
+import { useOneTimeCodeDetection } from '../../onetimecode/useOneTimeCodeDetection';
 import MailRecipients from '../recipients/MailRecipients';
 import RecipientItem from '../recipients/RecipientItem';
 import RecipientType from '../recipients/RecipientType';
@@ -105,7 +105,7 @@ const HeaderExpanded = ({
     const [addresses = []] = useAddresses();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
     const dataRetentionPolicyEnabled = useFlag('DataRetentionPolicy');
-    const isOneTimePasscodeEnabled = useFlag(MailFeatureFlag.OneTimePasscode);
+    const isOneTimePasscodeEnabled = useOneTimeCodeDetection();
 
     const isSendingMessage = message.draftFlags?.sending;
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data?.AttachmentInfo);
