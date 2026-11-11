@@ -26,8 +26,9 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
 import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
-import { canOpenInDesktopApp, clearDesktopAppPreference } from '../../utils/desktopAppDetector';
+import { clearDesktopAppPreference } from '../../utils/desktopAppDetector';
 import { OpenInDesktopApp } from '../OpenInDesktopApp/OpenInDesktopApp';
+import { useDesktopAppOption } from '../OpenInDesktopApp/useDesktopAppOption';
 import { useDesktopAppPreferenceStorageKey } from '../OpenInDesktopApp/useDesktopAppPreferenceStorageKey';
 import { PreJoinDetailsHeader } from './PreJoinDetailsHeader';
 import { WaitingRoomAdmission } from './WaitingRoomAdmission/WaitingRoomAdmission';
@@ -65,6 +66,7 @@ export const PreJoinDetails = ({
     const showWaitingRoomAdmission = useMeetSelector(selectIsWaitingRoomAdmissionActive);
     const waitingRoomEnabled = useMeetSelector(selectWaitingRoomSetting);
     const desktopAppPreferenceStorageKey = useDesktopAppPreferenceStorageKey();
+    const desktopAppOption = useDesktopAppOption();
 
     const [keepDisplayNameOnDevice, setKeepDisplayNameOnDevice] = useState(keepDisplayName);
 
@@ -79,13 +81,13 @@ export const PreJoinDetails = ({
         if (instantMeeting) {
             return c('Action').t`Start meeting`;
         }
-        if (isElectronApp) {
+        if (isElectronApp || desktopAppOption === 'openOnLoad') {
             return c('Action').t`Join meeting`;
         }
         return isHost ? c('Action').t`Start meeting in browser` : c('Action').t`Join in browser`;
     };
 
-    const showOpenInDesktopApp = !instantMeeting && canOpenInDesktopApp();
+    const showOpenInDesktopApp = !instantMeeting && desktopAppOption === 'appButton';
 
     const handleJoinMeeting = () => {
         if (showOpenInDesktopApp) {

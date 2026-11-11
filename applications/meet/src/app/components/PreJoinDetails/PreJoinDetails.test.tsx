@@ -26,6 +26,9 @@ const mocks = vi.hoisted(() => ({
     isElectronApp: false,
     isDesktop: vi.fn(),
     isIpad: vi.fn(),
+    isSafari: vi.fn(),
+    isFirefox: vi.fn(),
+    isOpenLinksInDesktopAppEnabled: true,
     isHost: false,
     waitingRoomEnabled: false,
     isGuest: false,
@@ -42,6 +45,8 @@ vi.mock('@proton/shared/lib/helpers/browser', async (importOriginal) => ({
     ...(await importOriginal<object>()),
     isDesktop: mocks.isDesktop,
     isIpad: mocks.isIpad,
+    isSafari: mocks.isSafari,
+    isFirefox: mocks.isFirefox,
 }));
 
 vi.mock('@proton/meet/store/hooks', () => ({
@@ -71,7 +76,7 @@ vi.mock('@proton/meet/telemetry/meetTelemetry', async (importOriginal) => ({
 }));
 
 vi.mock('@proton/unleash/useFlag', () => ({
-    useFlag: () => true,
+    useFlag: () => mocks.isOpenLinksInDesktopAppEnabled,
 }));
 
 vi.mock('@proton/app-context/useNotifications', () => ({
@@ -109,17 +114,35 @@ const renderPreJoinDetails = ({ instantMeeting = false, onJoinMeeting = vi.fn(),
         />
     );
 
-describe('PreJoinDetails', () => {
+beforeEach(() => {
+    vi.clearAllMocks();
+    localStorage.clear();
+    mocks.isElectronApp = false;
+    mocks.isDesktop.mockReturnValue(true);
+    mocks.isIpad.mockReturnValue(false);
+    mocks.isSafari.mockReturnValue(false);
+    mocks.isFirefox.mockReturnValue(false);
+    mocks.isOpenLinksInDesktopAppEnabled = true;
+    mocks.isHost = false;
+    mocks.waitingRoomEnabled = false;
+    mocks.isGuest = false;
+    mocks.userId = 'user-1';
+});
+
+describe.each([
+    { page: 'Safari', isSafari: true, isFirefox: false, isOpenLinksInDesktopAppEnabled: true },
+    { page: 'Firefox', isSafari: false, isFirefox: true, isOpenLinksInDesktopAppEnabled: true },
+    {
+        page: 'other browsers with the flag off',
+        isSafari: false,
+        isFirefox: false,
+        isOpenLinksInDesktopAppEnabled: false,
+    },
+])('PreJoinDetails on $page', ({ isSafari, isFirefox, isOpenLinksInDesktopAppEnabled }) => {
     beforeEach(() => {
-        vi.clearAllMocks();
-        localStorage.clear();
-        mocks.isElectronApp = false;
-        mocks.isDesktop.mockReturnValue(true);
-        mocks.isIpad.mockReturnValue(false);
-        mocks.isHost = false;
-        mocks.waitingRoomEnabled = false;
-        mocks.isGuest = false;
-        mocks.userId = 'user-1';
+        mocks.isSafari.mockReturnValue(isSafari);
+        mocks.isFirefox.mockReturnValue(isFirefox);
+        mocks.isOpenLinksInDesktopAppEnabled = isOpenLinksInDesktopAppEnabled;
     });
 
     describe('primary action label', () => {
@@ -223,7 +246,7 @@ describe('PreJoinDetails', () => {
             expect(screen.getByRole('button', { name: 'Join in browser' })).toBeEnabled();
         });
 
-        it('opens the app on load when the choice was remembered', () => {
+        it.runIf(isOpenLinksInDesktopAppEnabled)('opens the app on load when the choice was remembered', () => {
             saveDesktopAppPreference(USER_STORAGE_KEY);
             renderPreJoinDetails();
 
@@ -372,5 +395,58 @@ describe('PreJoinDetails', () => {
 
             expect(onJoinMeeting).not.toHaveBeenCalled();
         });
+    });
+});
+
+describe('PreJoinDetails on other desktop browsers with the flag on', () => {
+    it.each([
+        { role: 'participant', isHost: false },
+        { role: 'host', isHost: true },
+    ])('offers the $role one "Join meeting" button and no desktop app button', ({ isHost }) => {
+        mocks.isHost = isHost;
+        renderPreJoinDetails();
+
+        expect(screen.getAllByRole('button', { name: 'Join meeting' })).toHaveLength(1);
+        expect(screen.queryByRole('button', { name: OPEN_IN_DESKTOP_APP })).not.toBeInTheDocument();
+        expect(screen.queryByText("App didn't open?")).not.toBeInTheDocument();
+    });
+
+    it('does not open the app itself, even when the choice was remembered', () => {
+        saveDesktopAppPreference(USER_STORAGE_KEY);
+        renderPreJoinDetails();
+
+        expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
+        expect(screen.queryByText("App didn't open?")).not.toBeInTheDocument();
+    });
+
+    it('joins in the browser and keeps the remembered choice', () => {
+        saveDesktopAppPreference(USER_STORAGE_KEY);
+        const onJoinMeeting = vi.fn();
+        renderPreJoinDetails({ onJoinMeeting });
+
+        fireEvent.click(screen.getByRole('button', { name: 'Join meeting' }));
+
+        expect(onJoinMeeting).toHaveBeenCalledWith('Alice', false);
+        expect(getDesktopAppPreference(USER_STORAGE_KEY)).toBe(true);
+    });
+
+    it('keeps "Start meeting" and no desktop app button for an instant meeting', () => {
+        renderPreJoinDetails({ instantMeeting: true });
+
+        expect(screen.getByRole('button', { name: 'Start meeting' })).toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: OPEN_IN_DESKTOP_APP })).not.toBeInTheDocument();
+    });
+
+    it.each([
+        { device: 'mobile', isDesktop: false, isIpad: false, isSafari: false },
+        { device: 'iPad', isDesktop: true, isIpad: true, isSafari: true },
+    ])('keeps "Join in browser" and no desktop app button on $device', ({ isDesktop, isIpad, isSafari }) => {
+        mocks.isDesktop.mockReturnValue(isDesktop);
+        mocks.isIpad.mockReturnValue(isIpad);
+        mocks.isSafari.mockReturnValue(isSafari);
+        renderPreJoinDetails();
+
+        expect(screen.getByRole('button', { name: 'Join in browser' })).toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: OPEN_IN_DESKTOP_APP })).not.toBeInTheDocument();
     });
 });

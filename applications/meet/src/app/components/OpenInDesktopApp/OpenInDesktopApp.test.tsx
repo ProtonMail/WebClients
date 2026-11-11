@@ -33,7 +33,8 @@ vi.mock('@proton/unleash/useFlag', () => ({
     useFlag: vi.fn(),
 }));
 
-vi.mock('../../utils/desktopAppDetector', () => ({
+vi.mock('../../utils/desktopAppDetector', async (importOriginal) => ({
+    ...(await importOriginal<object>()),
     getDesktopAppPreference: vi.fn(),
     saveDesktopAppPreference: vi.fn(),
     tryOpenInDesktopApp: vi.fn(),
