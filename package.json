@@ -44,7 +44,7 @@
         "@types/node": "catalog:",
         "@typescript/native": "catalog:",
         "husky": "^9.1.7",
-        "knip": "^6.44.1",
+        "knip": "^6.44.2",
         "lint-staged": "^17.6.0",
         "nyc": "^17.1.0",
         "oxfmt": "catalog:",
@@ -56,10 +56,10 @@
         "stylelint": "catalog:",
         "turbo": "2.11.10"
     },
-    "packageManager": "pnpm@12.16.1",
+    "packageManager": "pnpm@12.18.0",
     "engines": {
         "node": "^24.22.1",
-        "pnpm": "^12.16.1"
+        "pnpm": "^12.18.0"
     },
     "publishConfig": {
         "registry": "https://nexus.protontech.ch/repository/web-npm/"
