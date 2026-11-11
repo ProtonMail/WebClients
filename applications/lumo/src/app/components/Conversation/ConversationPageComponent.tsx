@@ -6,7 +6,7 @@ import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
 import { LUMO_FULL_APP_TITLE } from '../../constants';
 import { useSafeUser } from '../../contexts/SafeUserContext';
 import type { RouteParams } from '../../entrypoint/auth/RouterContainer';
-import { useQueryParam, useSkillParam } from '../../hooks';
+import { useDesktopQuickAsk, useQueryParam, useSkillParam } from '../../hooks';
 import { useLumoActions } from '../../hooks/useLumoActions';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
@@ -65,7 +65,10 @@ const ConversationPageComponentInner = () => {
     messageAttachmentIdsRef.current = messageAttachmentIds;
     const prevConversationIdRef = useRef<ConversationId | undefined>();
     // ?q= auto-send is guest-only; signed-in users ignore it (param is still stripped from the URL).
-    const initialQuery = useQueryParam('q', true, 'both', isGuest);
+    const urlQuery = useQueryParam('q', true, 'both', isGuest);
+    // The desktop quick-ask shortcut hands its question over through the shell, never through `q`.
+    const quickAskQuery = useDesktopQuickAsk();
+    const initialQuery = urlQuery ?? quickAskQuery;
     const prefillQuery = useQueryParam('prefill');
 
     // Activate an agent from a `?skill=<agentId>` link.
