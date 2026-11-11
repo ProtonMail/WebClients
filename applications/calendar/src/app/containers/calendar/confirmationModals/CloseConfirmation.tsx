@@ -18,7 +18,7 @@ const CloseConfirmationModal = ({ onClose, onSubmit, isOpen }: CloseConfirmation
             open={isOpen}
             buttons={[
                 <Button color="norm" type="submit" onClick={onSubmit}>{c('Action').t`Discard`}</Button>,
-                <Button type="reset" autoFocus onClick={onClose}>{c('Action').t`Cancel`}</Button>,
+                <Button type="reset" onClick={onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
         >
             {c('Info').t`You will lose all unsaved changes.`}

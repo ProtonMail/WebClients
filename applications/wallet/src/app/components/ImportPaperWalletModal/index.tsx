@@ -1,3 +1,4 @@
+import type { KeyboardEvent } from 'react';
 import { useState } from 'react';
 
 import type { QRCode as QRCodeType } from 'jsqr';
@@ -212,6 +213,11 @@ export const ImportPaperWalletModal = ({ account, onClose, onCloseDrawer, ...mod
         }
     };
 
+    const canContinue = !loadingCreatePsbt && privateKey !== '' && !error;
+    const handleContinue = () => {
+        void withLoadingCreatePsbt(onScanPaperWallet());
+    };
+
     return (
         <>
             <Prompt
@@ -221,10 +227,8 @@ export const ImportPaperWalletModal = ({ account, onClose, onCloseDrawer, ...mod
                         size="large"
                         shape="solid"
                         color="norm"
-                        disabled={loadingCreatePsbt || privateKey === '' || !!error}
-                        onClick={() => {
-                            void withLoadingCreatePsbt(onScanPaperWallet());
-                        }}
+                        disabled={!canContinue}
+                        onClick={handleContinue}
                     >
                         {c('Sweep paper wallet').t`Continue`}
                     </Button>,
@@ -272,6 +276,11 @@ export const ImportPaperWalletModal = ({ account, onClose, onCloseDrawer, ...mod
                         autoFocus
                         value={privateKey}
                         onValue={handlePrivateKey}
+                        onKeyDown={(event: KeyboardEvent<HTMLInputElement>) => {
+                            if (event.key === 'Enter' && canContinue) {
+                                handleContinue();
+                            }
+                        }}
                         disabled={loadingCreatePsbt}
                         error={error}
                         suffix={

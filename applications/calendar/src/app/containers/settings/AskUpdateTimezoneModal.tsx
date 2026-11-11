@@ -86,7 +86,6 @@ const AskUpdateTimezoneModal = ({ localTzid, onClose, isOpen }: Props) => {
             actions={
                 <Checkbox
                     id="autodetect-primary-timezone"
-                    autoFocus
                     checked={!autoDetectPrimaryTimezone}
                     disabled={updating}
                     onChange={() => setAutoDetectPrimaryTimezone(!autoDetectPrimaryTimezone)}
