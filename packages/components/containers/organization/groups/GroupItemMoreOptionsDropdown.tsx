@@ -1,6 +1,7 @@
+import type { MouseEvent } from 'react';
+
 import { c } from 'ttag';
 
-import { getIsScimGroup } from '@proton/account/groups/groupFlags';
 import { Button } from '@proton/atoms/Button/Button';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
@@ -13,6 +14,7 @@ import DropdownMenuButton from '../../../components/dropdown/DropdownMenuButton'
 import { useModalStateObject } from '../../../components/modalTwo/useModalState';
 import DeleteGroupPrompt from './DeleteGroupPrompt';
 import { useGroupsManagement } from './context/GroupsManagementContext';
+import { getGroupActionAvailability } from './helpers';
 import { GROUPS_RESTRICTION_REASON } from './types';
 
 interface Props {
@@ -22,14 +24,20 @@ interface Props {
 }
 
 const GroupItemMoreOptionsDropdown = ({ group, showMailFeatures, handleDeleteGroup }: Props) => {
-    const { restrictedBy, selectedGroup } = useGroupsManagement();
-    const isScimGroup = getIsScimGroup(group);
+    const { restrictedBy, selectedGroup, actions, addUsersToGroupModal } = useGroupsManagement();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const deleteGroupPrompt = useModalStateObject();
+    const { canAddUsers, canEdit, canDelete } = getGroupActionAvailability(group, restrictedBy);
 
-    const isResumingRoleAssignment =
-        restrictedBy.reason === GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT && restrictedBy.groupId === group.ID;
-    const isDeleteGroupDisabled = isResumingRoleAssignment || isScimGroup;
+    // The dropdown is portalled but React still bubbles the click to the row, whose onViewGroup would undo onEditGroup
+    const handleMenuItemClick = (action: () => void) => {
+        return (event: MouseEvent<HTMLButtonElement>) => {
+            event.stopPropagation();
+            close();
+            action();
+        };
+    };
+
     return (
         <>
             {deleteGroupPrompt.render && (
@@ -66,12 +74,29 @@ const GroupItemMoreOptionsDropdown = ({ group, showMailFeatures, handleDeleteGro
 
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-start">
                 <DropdownMenu>
+                    {canAddUsers && (
+                        <DropdownMenuButton
+                            className="text-left"
+                            onClick={handleMenuItemClick(() => {
+                                actions.onViewGroup(group);
+                                addUsersToGroupModal.openModal(true);
+                            })}
+                        >
+                            {c('Action').t`Add user`}
+                        </DropdownMenuButton>
+                    )}
+                    {canEdit && (
+                        <DropdownMenuButton
+                            className="text-left"
+                            onClick={handleMenuItemClick(() => actions.onEditGroup(group))}
+                        >
+                            {c('Action').t`Edit group`}
+                        </DropdownMenuButton>
+                    )}
                     <DropdownMenuButton
-                        disabled={isDeleteGroupDisabled}
+                        disabled={!canDelete}
                         className="text-left color-danger"
-                        onClick={() => {
-                            deleteGroupPrompt.openModal(true);
-                        }}
+                        onClick={handleMenuItemClick(() => deleteGroupPrompt.openModal(true))}
                     >
                         {c('Action').t`Delete group`}
                     </DropdownMenuButton>

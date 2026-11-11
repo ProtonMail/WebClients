@@ -5,6 +5,8 @@ import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
 import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
 import type { RoleAssignment } from '@proton/shared/lib/interfaces/OrganizationRole';
 
+import type { ModalStateReturnObj } from '../../../components/modalTwo/useModalState';
+
 export const PANEL_HEADER_HEIGHT = '5rem';
 
 export enum GROUPS_STATE {
@@ -68,6 +70,7 @@ export interface GroupsManagementReturn {
     addressToMemberMap: { [key: string]: EnhancedMember | undefined };
     addressEmailToMemberMap: { [key: string]: EnhancedMember | undefined };
     groupRolesMap: { [groupID: string]: RoleAssignment[] | undefined };
+    addUsersToGroupModal: ModalStateReturnObj;
     getSerializedGroup: () =>
         { type: GROUPS_STATE.NEW | GROUPS_STATE.EDIT; payload: SerializedGroupFormData } | undefined;
     actions: {
