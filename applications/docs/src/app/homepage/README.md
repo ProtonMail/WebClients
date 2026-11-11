@@ -4,6 +4,8 @@ The purpose of this module is to provide a dependency-free implementation of Doc
 
 The module never imports `@proton/docs-shared` or `@proton/docs-core`, in types, tests and mocks too.
 
+It never imports `@proton/utils` or `@proton/hooks` either: it keeps its own copies, such as `utils/clsx.ts` and `utils/useToggle.ts`.
+
 Files inside this path import each other with relative paths, never through the `~/homepage` alias.
 
 Drive SDK: the `ProtonDriveClient` instance (from `getDrive`) is injected by the host. Everything else (functions, enums, error classes, types) is imported from `@protontech/drive-sdk`, never from `@proton/drive`.

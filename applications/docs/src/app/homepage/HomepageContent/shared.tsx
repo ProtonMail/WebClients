@@ -1,5 +1,5 @@
-import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import clsx from '@proton/utils/clsx'
+import type { ProtonDocumentType } from '../utils/mimetype'
+import { clsx } from '../utils/clsx'
 import type { IconComponent } from '@proton/icons/component'
 import type { MimeIconComponent } from '@proton/file-icons/component'
 import { MimeProtonDoc } from '@proton/file-icons/icons/MimeProtonDoc'

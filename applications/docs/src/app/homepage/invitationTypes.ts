@@ -1,16 +1,18 @@
-import type { SHARE_MEMBER_STATE } from '@proton/shared/lib/drive/constants'
-import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions'
-import type { LinkType } from '@proton/shared/lib/interfaces/drive/link'
+// The values of SHARE_MEMBER_STATE (packages/shared/lib/drive/constants.ts) and LinkType
+// (packages/shared/lib/interfaces/drive/link.ts). A local enum would not accept the host's enum values.
+type ShareMemberState = 1 | 2 | 3
+type LinkType = 1 | 2 | 3
 
 interface ShareInvitation {
   invitationId: string
   inviterEmail: string
   inviteeEmail: string
-  permissions: SHARE_MEMBER_PERMISSIONS
+  // SHARE_MEMBER_PERMISSIONS has computed members, so its values only fit number
+  permissions: number
   keyPacket: string
   keyPacketSignature: string
   createTime: number
-  state: SHARE_MEMBER_STATE
+  state: ShareMemberState
 }
 
 interface ShareInvitationShare {

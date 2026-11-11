@@ -1,5 +1,5 @@
 import * as Ariakit from '@ariakit/react'
-import clsx from '@proton/utils/clsx'
+import { clsx } from '../utils/clsx'
 import { type ReactNode, forwardRef } from 'react'
 
 export interface MenuProps extends Ariakit.MenuProps {

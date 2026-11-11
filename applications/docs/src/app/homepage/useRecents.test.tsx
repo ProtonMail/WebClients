@@ -8,10 +8,12 @@ import {
   NodeType,
 } from '@protontech/drive-sdk'
 import { act, cleanup, renderHook } from '@testing-library/react'
-import { ApiError } from '@proton/shared/lib/fetch/ApiError'
 import type { EventSubscriber } from './homepageViewUtils'
 import { useRecents } from './useRecents'
 import { useRecentsStore } from './useRecentsStore'
+
+// Stands in for ApiError from packages/shared/lib/fetch/ApiError.ts
+class ApiError extends Error {}
 
 const mockTraceError = jest.fn()
 jest.mock('@proton/shared/lib/helpers/sentry', () => ({
@@ -153,7 +155,7 @@ describe('useRecents', () => {
     // must reach traceError as another error to be reported, as it did when DocsApi wrapped it in an ApiResult.
     test('reports a failed recents request to Sentry as an error Sentry does not drop', async () => {
       const { result, api } = renderRecents({ documents: [], nodes: createNodes([]) })
-      api.mockRejectedValue(new ApiError('Internal error', 500, 'StatusCodeError'))
+      api.mockRejectedValue(new ApiError('Internal error'))
       mockTraceError.mockClear()
 
       await act(() => result.current.fetchRecentDocuments(new AbortController().signal))

@@ -3,15 +3,13 @@ import { useHistory } from 'react-router'
 import { useLocation } from 'react-router-dom-v5-compat'
 
 import type { RecentDocumentsItem } from './recentDocumentsItem'
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
-import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import type { Address } from '@proton/shared/lib/interfaces/Address'
+import type { ProtonDocumentType } from './utils/mimetype'
 
 import type { DriveEvent, ProtonDriveClient } from '@protontech/drive-sdk'
 
 import type { DocInvitesHook, ItemsSection, ItemsSectionId, RecentsSort } from './homepageViewContext'
-import { isMyDocument } from './is-my-document'
-import { getOwnerName } from './get-owner-name'
+import { isMyDocument, type UserAddress } from './is-my-document'
+import { getOwnerName, type OwnerContact } from './get-owner-name'
 import type { Api } from './docsApi/api'
 import type { Logger } from './utils/logger'
 import type { CreateNotification } from './utils/notifications'
@@ -210,8 +208,8 @@ export function splitIntoSectionsByName(
 
 export function splitIntoSectionsByOwner(
   items: RecentDocumentsItem[],
-  addresses: Address[] | undefined,
-  contactEmails: ContactEmail[] | undefined,
+  addresses: UserAddress[] | undefined,
+  contactEmails: OwnerContact[] | undefined,
 ): ItemsSection[] {
   return [
     {

@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/prefer-tag-over-role */
-import clsx from '@proton/utils/clsx'
+import { clsx } from '../utils/clsx'
 import type { ComponentPropsWithoutRef, ReactNode } from 'react'
 
 const POSITIONAL_CELL_CLASSES = [

@@ -20,7 +20,7 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint'
 import useAppTitle from '@proton/components/hooks/useAppTitle'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import UserDropdown from '@proton/components/containers/heading/UserDropdown'
-import useToggle from '@proton/hooks/useToggle'
+import { useToggle } from './utils/useToggle'
 import { useMemo, useState, type ReactNode } from 'react'
 
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight'
@@ -29,7 +29,7 @@ import { IcHouse } from '@proton/icons/icons/IcHouse'
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier'
 import { IcPlus } from '@proton/icons/icons/IcPlus'
 import { IcTrash } from '@proton/icons/icons/IcTrash'
-import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
+import { APPS, DRIVE_APP_NAME } from './utils/apps'
 
 import { c } from 'ttag'
 import { Button } from '@proton/atoms/Button/Button'
@@ -43,12 +43,11 @@ import { useHistory, useRouteMatch } from 'react-router'
 import { HOMEPAGE_RECENTS_PATH } from './homepage-paths'
 import { useEvent } from './utils/useEvent'
 import { useIsSheetsEnabled } from '~/utils/flags'
-import clsx from '@proton/utils/clsx'
-import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag'
+import { clsx } from './utils/clsx'
 import * as Ariakit from '@ariakit/react'
 import { COLOR_BY_TYPE } from './HomepageContent/shared'
 import { NewDocumentMenu } from './HomepageContent/NewDocumentMenu'
-import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
+import type { ProtonDocumentType } from './utils/mimetype'
 import { TelemetryEvent } from './utils/telemetry'
 
 const USER_DROPDOWN_OVERRIDES =
@@ -462,4 +461,9 @@ function titleByViewState(state: HomepageViewState): string {
     case 'unknown':
       return ''
   }
+}
+
+// Copy of packages/shared/lib/i18n/ttag.ts: the same msgid, parameter name included, keeps its translations
+function goToPlanOrAppNameText(planOrAppName: string) {
+  return c('Action').t`Go to ${planOrAppName}`
 }
