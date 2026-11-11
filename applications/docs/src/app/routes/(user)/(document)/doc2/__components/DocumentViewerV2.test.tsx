@@ -705,14 +705,13 @@ describe('DocumentViewerV2', () => {
     ).toBeInTheDocument()
   })
 
-  test("a session stopped for expired credentials checks the app session through the app's API client, then retries", async () => {
-    mockApi.mockResolvedValue({ User: {} })
+  test('a session stopped for expired credentials is retried, with no app session check', async () => {
     const fake = createSession()
     await renderShown(fake)
 
     await act(async () => fake.setSnapshot({ status: { name: 'stopped', condition: 'authExpired', retryable: false } }))
 
-    expect(mockApi).toHaveBeenCalledWith(expect.objectContaining({ url: 'core/v4/users' }))
+    expect(mockApi).not.toHaveBeenCalled()
     expect(fake.mocks.retry).toHaveBeenCalledTimes(1)
   })
 
