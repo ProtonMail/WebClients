@@ -3,21 +3,20 @@ import { c } from 'ttag';
 import { NewChatButton } from '../../components/Buttons/NewChatButton';
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 
-import './AllChatsHeaderActions.scss';
-
+/** Icon button for the All chats top bar on small screens. */
 export const AllChatsHeaderNewChatButton = () => {
     return (
         <NewChatButton
             buttonProps={{
-                shape: 'solid',
+                icon: true,
+                shape: 'ghost',
                 size: 'medium',
-                color: 'norm',
-                className:
-                    'all-chats-header-action-button all-chats-header-new-chat shrink-0 flex flex-row flex-nowrap items-center gap-1',
+                className: 'shrink-0',
+                title: c('collider_2025:Action').t`New chat`,
             }}
         >
-            <LumoIcon name="Plus" size={14} aria-label={c('collider_2025: Link').t`New chat`} />
-            <span className="all-chats-header-new-chat-text">{c('collider_2025:Button').t`New chat`}</span>
+            <LumoIcon name="SquarePen" size={20} />
+            <span className="sr-only">{c('collider_2025:Action').t`New chat`}</span>
         </NewChatButton>
     );
 };

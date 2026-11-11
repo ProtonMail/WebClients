@@ -12,6 +12,8 @@ import { ChatHistoryLoadingSkeleton } from '../../../components/ChatHistoryLoadi
 import FavoritesUpsellPrompt from '../../../components/Guest/FavoritesUpsellPrompt';
 import ConfirmDeleteModal from '../../../components/Modals/ConfirmDeleteModal';
 import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
+import { useLumoFlags } from '../../../hooks/useLumoFlags';
+import { useMoveConversationsToProject } from '../../../hooks/useMoveConversationsToProject';
 import { useSearchService } from '../../../hooks/useSearchService';
 import { useConversation } from '../../../providers/ConversationProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
@@ -19,16 +21,15 @@ import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectConversations } from '../../../redux/selectors';
 import { pushConversationRequest, toggleConversationStarred } from '../../../redux/slices/core/conversations';
 import { selectSpaceMap } from '../../../redux/slices/core/spaces';
-import type { ChatHistoryDateField } from '../../../redux/slices/lumoUserSettings';
 import type { Conversation, ConversationId } from '../../../types';
 import { sendConversationDeleteEvent } from '../../../util/telemetry';
 import { deleteConversationsWithSemantics } from '../deleteConversationsWithSemantics';
-import type { AllChatsFilterValue } from '../filterAllChatsConversations';
-import { AllChatsMobileBulkActions } from '../mobile/AllChatsMobileBulkActions';
+import type { AllChatsFilterValue, AllChatsSortValue } from '../filterAllChatsConversations';
 import type { AllChatsRowData } from '../selectAllChatsRowData';
 import { selectAllChatsRowDataMap } from '../selectAllChatsRowData';
+import { AllChatsBulkActionButtons } from './AllChatsBulkActionButtons';
 import { AllChatsHeader } from './AllChatsHeader';
-import { CONVERSATION_ROW_HEIGHT, ConversationRow } from './ConversationRow';
+import { CONVERSATION_ROW_HEIGHT, CONVERSATION_ROW_HEIGHT_COMPACT, ConversationRow } from './ConversationRow';
 
 import './ConversationListPanel.scss';
 
@@ -54,6 +55,10 @@ const filterValidSelections = (
 interface ConversationListPanelProps {
     title: string;
     titleAs?: 'h1' | 'h2';
+    /** False when the page shows the title elsewhere, like the layout header on small screens. */
+    showTitle?: boolean;
+    /** Search field shown beside the title (below it on small screens). */
+    searchSlot?: React.ReactNode;
     /** Conversations to display, already filtered and sorted. */
     conversations: Conversation[];
     /** Conversations that may stay selected; defaults to `conversations`. Lets a search narrow the list without dropping the selection. */
@@ -61,13 +66,11 @@ interface ConversationListPanelProps {
     filter: AllChatsFilterValue;
     onFilterChange: (value: AllChatsFilterValue) => void;
     excludedFilters?: AllChatsFilterValue[];
-    sortField: ChatHistoryDateField;
-    onSortFieldChange: (value: ChatHistoryDateField) => void;
+    sort: AllChatsSortValue;
+    onSortChange: (value: AllChatsSortValue) => void;
     isSelectionMode: boolean;
     onSelectionModeChange: (enabled: boolean) => void;
     isMobileLayout: boolean;
-    /** When false, the filter/sort menu and "Manage chats" are hidden on mobile because the page header provides them. */
-    showHeaderControlsOnMobile?: boolean;
     isLoading: boolean;
     emptyState: React.ReactNode;
     showProjectLink?: boolean;
@@ -79,17 +82,18 @@ interface ConversationListPanelProps {
 export const ConversationListPanel = ({
     title,
     titleAs,
+    showTitle = true,
+    searchSlot,
     conversations,
     selectableConversationIds,
     filter,
     onFilterChange,
     excludedFilters,
-    sortField,
-    onSortFieldChange,
+    sort,
+    onSortChange,
     isSelectionMode,
     onSelectionModeChange,
     isMobileLayout,
-    showHeaderControlsOnMobile = true,
     isLoading,
     emptyState,
     showProjectLink = true,
@@ -103,6 +107,8 @@ export const ConversationListPanel = ({
     const rowDataMap = useLumoSelector(selectAllChatsRowDataMap, shallowEqual);
     const { conversationId } = useConversation();
     const isGuest = useIsGuest();
+    const { moveToProject: isMoveToProjectEnabled } = useLumoFlags();
+    const { moveToProject } = useMoveConversationsToProject();
     const favoritesUpsellModal = useModalStateObject();
     const confirmDeleteModal = useModalStateObject();
     const { removeIndexedFoldersBySpace } = useDriveFolderIndexing();
@@ -186,6 +192,30 @@ export const ConversationListPanel = ({
         }
     }, [conversationsMap, dispatch, favoritesUpsellModal, isGuest, selectedIds]);
 
+    // Same rule as the ⋯ menu: lists that hide Move for project chats (All chats) skip them here too.
+    const movableIds = useMemo(() => {
+        return Array.from(selectedIds).filter((id) => {
+            const conversation = conversationsMap[id];
+            if (!conversation || conversation.ghost || conversation.scheduleRun) {
+                return false;
+            }
+            return allowMovingProjectChats || !rowDataMap[id]?.isProject;
+        });
+    }, [allowMovingProjectChats, conversationsMap, rowDataMap, selectedIds]);
+
+    const handleBulkMove = useCallback(
+        (spaceId: string, projectName: string) => {
+            const ids = movableIds.filter((id) => {
+                return conversationsMap[id]?.spaceId !== spaceId;
+            });
+            // The moves run in the background with their own messages, so the list goes back to browsing.
+            onSelectionModeChange(false);
+            void moveToProject(ids, spaceId, projectName);
+        },
+        [conversationsMap, moveToProject, movableIds, onSelectionModeChange]
+    );
+    const showBulkMove = isMoveToProjectEnabled && !isGuest;
+
     const requestBulkDelete = useCallback(() => {
         if (selectedIds.size === 0) {
             return;
@@ -248,50 +278,60 @@ export const ConversationListPanel = ({
 
     const parentRef = useRef<HTMLDivElement>(null);
 
+    const rowHeight = isMobileLayout ? CONVERSATION_ROW_HEIGHT_COMPACT : CONVERSATION_ROW_HEIGHT;
+
     const virtualizer = useVirtualizer({
         count: conversations.length,
         getScrollElement: () => parentRef.current,
-        estimateSize: () => CONVERSATION_ROW_HEIGHT,
+        estimateSize: () => rowHeight,
         overscan: 8,
     });
 
+    // Rows change height when the layout crosses the small-screen breakpoint.
+    useEffect(() => {
+        virtualizer.measure();
+    }, [rowHeight, virtualizer]);
+
     const virtualItems = virtualizer.getVirtualItems();
     const isEmpty = !isLoading && conversations.length === 0;
-    const showHeaderControls = !isSelectionMode && (!isMobileLayout || showHeaderControlsOnMobile);
 
     return (
         <div className={clsx('conversation-list-panel flex flex-column flex-1 min-h-0', className)}>
             <AllChatsHeader
                 title={title}
                 titleAs={titleAs}
+                showTitle={showTitle}
                 conversationCount={conversations.length}
-                allSelected={allSelected}
-                someSelected={someSelected}
-                showSelectAll={!isLoading && conversations.length > 0 && isSelectionMode}
-                onToggleSelectAll={toggleSelectAll}
+                searchSlot={searchSlot}
                 isMobileLayout={isMobileLayout}
-                isSelectionMode={isSelectionMode}
-                selectedCount={selectedCount}
-                showFilterSort={showHeaderControls}
-                sortField={sortField}
-                onSortFieldChange={onSortFieldChange}
                 filter={filter}
                 onFilterChange={onFilterChange}
                 excludedFilters={excludedFilters}
+                sort={sort}
+                onSortChange={onSortChange}
+                showSelectButton={!isLoading && !isEmpty}
+                onToggleSelectionMode={toggleSelectionMode}
+                isSelectionMode={isSelectionMode}
+                selectedCount={selectedCount}
+                allSelected={allSelected}
+                someSelected={someSelected}
+                showSelectAll={!isLoading && conversations.length > 0}
+                onToggleSelectAll={toggleSelectAll}
                 onBulkDelete={requestBulkDelete}
+                onBulkMove={handleBulkMove}
+                showBulkMove={showBulkMove}
+                canBulkMove={movableIds.length > 0}
                 onBulkFavorite={handleBulkFavorite}
                 onCancelSelection={handleCancelSelection}
-                showManageButton={showHeaderControls && !isLoading && !isEmpty}
-                onToggleSelectionMode={toggleSelectionMode}
             />
 
             <div className="all-chats-panel flex flex-column flex-1 min-h-0 overflow-hidden">
+                {/* Leaves room for the bottom bar in Select mode on small screens. */}
                 <div
                     ref={parentRef}
                     className={clsx(
-                        'flex-1 overflow-auto min-h-0 pb-2',
-                        isMobileLayout && isSelectionMode && 'all-chats-list-with-mobile-bulk-actions',
-                        isSelectionMode && 'all-chats-is-selection-mode'
+                        'flex-1 overflow-auto min-h-0',
+                        isMobileLayout && isSelectionMode ? 'pb-20' : 'pb-2'
                     )}
                 >
                     {isLoading ? (
@@ -322,9 +362,10 @@ export const ConversationListPanel = ({
                                             isBulkSelected={selectedIds.has(conversation.id)}
                                             isSelectionMode={isSelectionMode}
                                             onToggleBulkSelect={toggleSelectConversation}
-                                            sortField={sortField}
                                             showProjectLink={showProjectLink}
                                             allowMovingProjectChats={allowMovingProjectChats}
+                                            isCompact={isMobileLayout}
+                                            isLast={virtualItem.index === conversations.length - 1}
                                         />
                                     </div>
                                 );
@@ -333,6 +374,20 @@ export const ConversationListPanel = ({
                     )}
                 </div>
             </div>
+
+            {isMobileLayout && isSelectionMode ? (
+                <div className="all-chats-bulk-bar fixed bottom-0 left-0 right-0 z-50 flex flex-nowrap gap-2 px-4 pt-2 bg-norm">
+                    <AllChatsBulkActionButtons
+                        variant="bar"
+                        disabled={selectedCount === 0}
+                        showMove={showBulkMove}
+                        canMove={movableIds.length > 0}
+                        onFavorite={handleBulkFavorite}
+                        onMove={handleBulkMove}
+                        onDelete={requestBulkDelete}
+                    />
+                </div>
+            ) : null}
 
             {favoritesUpsellModal.render && <FavoritesUpsellPrompt {...favoritesUpsellModal.modalProps} />}
 
@@ -344,10 +399,6 @@ export const ConversationListPanel = ({
                     loading={isDeleting}
                 />
             )}
-
-            {isMobileLayout && isSelectionMode ? (
-                <AllChatsMobileBulkActions onCancelSelection={handleCancelSelection} />
-            ) : null}
         </div>
     );
 };

@@ -3,43 +3,62 @@ import { memo, useState } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button/Button';
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Input } from '@proton/atoms/Input/Input';
 import Checkbox from '@proton/components/components/input/Checkbox';
-import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 
-import FavoritesUpsellPrompt from '../../../components/Guest/FavoritesUpsellPrompt';
 import { LumoLink } from '../../../components/Links/LumoLink';
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
-import { ConversationExportModal } from '../../../components/Modals/ConversationExportModal/ConversationExportModal';
 import { ProjectIcon } from '../../../components/ProjectIcon/ProjectIcon';
-import { MoveToProjectModal } from '../../projects/modals/MoveToProjectModal';
 import { useConversationRename } from '../../../hooks/useConversationRename';
-import { useLumoFlags } from '../../../hooks/useLumoFlags';
-import { useConversationStar } from '../../../hooks/useConversationStar';
-import { useIsGuest } from '../../../providers/IsGuestProvider';
-import { ConversationDeleteFlow } from '../../../layouts/sidepanel/ConversationDeleteFlow';
 import { ConversationExpirationIndicator } from '../../../layouts/sidepanel/ConversationExpirationIndicator';
 import { ConversationSidebarActions } from '../../../layouts/sidepanel/ConversationSidebarActions';
-import type { ChatHistoryDateField } from '../../../redux/slices/lumoUserSettings';
 import type { Conversation, ConversationId } from '../../../types';
 import { formatChatRelativeDate } from '../formatChatRelativeDate';
 import type { AllChatsRowData } from '../selectAllChatsRowData';
 
-export const CONVERSATION_ROW_HEIGHT = 68;
+/** One line on wide screens (Web/Chat list row), two on small ones (Web/Chat list row · Compact). */
+export const CONVERSATION_ROW_HEIGHT = 44;
+export const CONVERSATION_ROW_HEIGHT_COMPACT = 64;
 
-interface ConversationRowProps {
+interface Props {
     conversation: Conversation;
     rowData: AllChatsRowData;
     isActive: boolean;
     isBulkSelected: boolean;
     isSelectionMode: boolean;
     onToggleBulkSelect: (conversationId: ConversationId) => void;
-    sortField: ChatHistoryDateField;
     showProjectLink: boolean;
     allowMovingProjectChats: boolean;
+    isCompact: boolean;
+    /** The last row has no divider. */
+    isLast: boolean;
 }
+
+interface ProjectTagProps {
+    spaceId: string;
+    projectName?: string;
+    projectIcon?: string;
+}
+
+const ProjectTag = ({ spaceId, projectName, projectIcon }: ProjectTagProps) => {
+    const label = projectName?.trim() || c('collider_2025:Label').t`Untitled project`;
+
+    return (
+        <LumoLink
+            to={`/projects/${spaceId}`}
+            className="all-chats-row-tag all-chats-row-interactive inline-flex flex-nowrap items-center gap-1 px-2 rounded-full bg-norm text-sm font-medium min-w-0"
+            aria-label={c('collider_2025:Action').t`Go to project ${label}`}
+            title={label}
+            onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
+                event.stopPropagation();
+            }}
+        >
+            {/* LumoLink sets an inline `color: inherit`, so the colour goes on the contents. */}
+            <ProjectIcon iconId={projectIcon} size={12} className="shrink-0 color-weak" />
+            <span className="text-ellipsis color-weak">{label}</span>
+        </LumoLink>
+    );
+};
 
 export const ConversationRow = memo(
     ({
@@ -49,15 +68,14 @@ export const ConversationRow = memo(
         isBulkSelected,
         isSelectionMode,
         onToggleBulkSelect,
-        sortField,
         showProjectLink,
         allowMovingProjectChats,
-    }: ConversationRowProps) => {
-        const [deleteRequested, setDeleteRequested] = useState(false);
-        const conversationExportModal = useModalStateObject();
-        const moveToProjectModal = useModalStateObject();
-        const isGuest = useIsGuest();
-        const { moveToProject } = useLumoFlags();
+        isCompact,
+        isLast,
+    }: Props) => {
+        // Keeps the row lifted while its menu, or a modal opened from it, is open.
+        const [isMenuOpen, setIsMenuOpen] = useState(false);
+        const [isOverlayActive, setIsOverlayActive] = useState(false);
         const {
             isRenaming,
             draftTitle,
@@ -68,56 +86,30 @@ export const ConversationRow = memo(
             handleRenameKeyDown,
         } = useConversationRename(conversation);
 
-        const { handleStarToggle, showFavoritesUpsellModal, favoritesUpsellModalProps, isStarred } =
-            useConversationStar({
-                conversation,
-                location: 'sidebar',
-            });
-
         const label = conversation.title.trim() || c('collider_2025:Button').t`Untitled chat`;
-        const timestamp = formatChatRelativeDate(conversation[sortField]);
+        const timestamp = formatChatRelativeDate(conversation.updatedAt);
         const { isProject, projectIcon, projectName } = rowData;
-        const canMoveToProject = moveToProject && !isGuest && (allowMovingProjectChats || !isProject) && !conversation.ghost && !conversation.scheduleRun;
-        const projectLabel = projectName?.trim() || c('collider_2025:Label').t`Untitled project`;
-
-        const renderProjectLink = (placementClassName: string) => {
-            if (!isProject || !showProjectLink) {
-                return null;
-            }
-
-            return (
-                <ButtonLike
-                    as={LumoLink}
-                    to={`/projects/${conversation.spaceId}`}
-                    shape="ghost"
-                    color="weak"
-                    size="small"
-                    className={clsx('all-chats-row-project-link all-chats-row-interactive min-w-0', placementClassName)}
-                    aria-label={c('collider_2025:Action').t`Go to project`}
-                    title={projectLabel}
-                    onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
-                        event.stopPropagation();
-                    }}
-                >
-                    <ProjectIcon iconId={projectIcon} size={12} className="shrink-0" />
-                    <span className="all-chats-row-project-link-name">{projectLabel}</span>
-                </ButtonLike>
-            );
-        };
+        const projectTag =
+            isProject && showProjectLink ? (
+                <ProjectTag spaceId={conversation.spaceId} projectName={projectName} projectIcon={projectIcon} />
+            ) : null;
+        const showMenu = !isSelectionMode && !isRenaming;
 
         return (
             <div
                 className={clsx(
-                    'all-chats-row group relative flex items-center gap-3 px-3 min-w-0 overflow-hidden',
-                    (deleteRequested || conversationExportModal.render || moveToProjectModal.render) && 'all-chats-row-actions-pinned',
-                    isBulkSelected && 'all-chats-row-bulk-selected'
+                    'all-chats-row group relative flex flex-nowrap items-center gap-2 px-3 rounded-lg min-w-0',
+                    isCompact && 'all-chats-row--compact pr-1',
+                    (isMenuOpen || isOverlayActive) && 'is-lifted',
+                    isLast && 'is-last',
+                    isBulkSelected && 'is-selected'
                 )}
-                style={{ height: `${CONVERSATION_ROW_HEIGHT}px` }}
+                style={{ height: `${isCompact ? CONVERSATION_ROW_HEIGHT_COMPACT : CONVERSATION_ROW_HEIGHT}px` }}
             >
                 {!isRenaming && isSelectionMode ? (
                     <button
                         type="button"
-                        className="all-chats-row-link absolute inset-0 button button-ghost-weak"
+                        className="all-chats-row-link absolute inset-0 rounded-lg"
                         aria-label={c('collider_2025:Action').t`Toggle selection`}
                         onClick={() => {
                             onToggleBulkSelect(conversation.id);
@@ -127,8 +119,9 @@ export const ConversationRow = memo(
                 {!isRenaming && !isSelectionMode ? (
                     <LumoLink
                         to={`/c/${conversation.id}`}
-                        className="all-chats-row-link absolute inset-0 button button-ghost-weak"
+                        className="all-chats-row-link absolute inset-0 rounded-lg"
                         aria-current={isActive ? 'page' : undefined}
+                        aria-label={label}
                     />
                 ) : null}
 
@@ -141,16 +134,16 @@ export const ConversationRow = memo(
                         onClick={(event) => {
                             event.stopPropagation();
                         }}
-                        className="all-chats-row-select all-chats-row-interactive relative z-1 shrink-0"
+                        className="all-chats-row-interactive shrink-0"
                         aria-label={c('collider_2025:Action').t`Select conversation`}
                     />
                 ) : null}
 
-                <div className="all-chats-row-body relative z-1 flex-1 min-w-0 pointer-events-none">
+                <div className="relative z-1 flex flex-column flex-1 gap-0.5 min-w-0 pointer-events-none">
                     {isRenaming ? (
                         <Input
                             ref={renameInputRef}
-                            className="all-chats-row-rename-input all-chats-row-interactive"
+                            className="all-chats-row-interactive"
                             value={draftTitle}
                             onValue={setDraftTitle}
                             onKeyDown={handleRenameKeyDown}
@@ -158,149 +151,63 @@ export const ConversationRow = memo(
                             aria-label={c('collider_2025:Action').t`Rename chat`}
                         />
                     ) : (
-                        <div className="all-chats-row-title flex items-center gap-3 min-w-0">
-                            <div className="all-chats-row-title-content min-w-0">
-                                <div className="all-chats-row-title-main flex flex-nowrap items-center gap-2 min-w-0">
-                                    <span className="all-chats-row-title-text text-ellipsis overflow-hidden whitespace-nowrap min-w-0">
-                                        {label}
-                                    </span>
-                                    {renderProjectLink('all-chats-row-project-link-desktop')}
-                                    <ConversationExpirationIndicator
-                                        conversation={conversation}
-                                        className="all-chats-row-interactive shrink-0"
+                        <div className="flex flex-nowrap items-center gap-2 min-w-0">
+                            <span className="text-ellipsis color-norm" data-testid="all-chats-row-title">
+                                {label}
+                            </span>
+                            {conversation.starred ? (
+                                // Shows the chat is a favorite; favoriting is in the ⋯ menu.
+                                <span className="shrink-0 flex color-weak" data-testid="all-chats-row-favorite">
+                                    <LumoIcon
+                                        name="Star"
+                                        size={14}
+                                        fill="currentColor"
+                                        strokeWidth={1.4}
+                                        aria-hidden="true"
                                     />
-                                    <Button
-                                        icon
-                                        shape="ghost"
-                                        size="small"
-                                        className={clsx(
-                                            'all-chats-row-star all-chats-row-interactive shrink-0',
-                                            isStarred && 'is-favorited'
-                                        )}
-                                        aria-label={
-                                            isStarred
-                                                ? c('collider_2025:Action').t`Remove from favorites`
-                                                : c('collider_2025:Action').t`Add to favorites`
-                                        }
-                                        aria-pressed={!!isStarred}
-                                        onClick={(event) => {
-                                            event.preventDefault();
-                                            event.stopPropagation();
-                                            handleStarToggle();
-                                        }}
-                                    >
-                                        <LumoIcon
-                                            name="Star"
-                                            size={16}
-                                            fill={isStarred ? 'currentColor' : 'none'}
-                                            strokeWidth={isStarred ? 1.3 : 2}
-                                        />
-                                    </Button>
-                                </div>
-                                <div className="all-chats-row-date-mobile">
-                                    <span className="all-chats-row-date-mobile-time shrink-0">{timestamp}</span>
-                                    {renderProjectLink('all-chats-row-project-link-mobile')}
-                                </div>
-                            </div>
+                                    <span className="sr-only">{c('collider_2025:Label').t`Favorite`}</span>
+                                </span>
+                            ) : null}
+                            <ConversationExpirationIndicator
+                                conversation={conversation}
+                                className="all-chats-row-interactive shrink-0"
+                            />
                         </div>
                     )}
+                    {isCompact && !isRenaming ? (
+                        <div className="flex flex-nowrap items-center gap-2 min-w-0 text-sm color-weak">
+                            <span className="shrink-0">{timestamp}</span>
+                            {projectTag}
+                        </div>
+                    ) : null}
                 </div>
 
-                {!isRenaming && !isSelectionMode ? (
-                    <div className="all-chats-row-meta relative z-2 shrink-0 flex items-center justify-end self-stretch">
-                        <span className="all-chats-row-date">{timestamp}</span>
-                        <div className="all-chats-row-actions">
-                            <div className="all-chats-row-actions-desktop shrink-0">
-                                <Button
-                                    icon
-                                    shape="ghost"
-                                    size="small"
-                                    className="shrink-0"
-                                    aria-label={c('collider_2025:Action').t`Rename chat`}
-                                    onClick={(event) => {
-                                        event.preventDefault();
-                                        event.stopPropagation();
-                                        startRenaming();
-                                    }}
-                                >
-                                    <LumoIcon name="Pencil" size={15} />
-                                </Button>
-                                <Button
-                                    icon
-                                    shape="ghost"
-                                    size="small"
-                                    className="shrink-0"
-                                    aria-label={c('collider_2025:Action').t`Export chat`}
-                                    onClick={(event) => {
-                                        event.preventDefault();
-                                        event.stopPropagation();
-                                        conversationExportModal.openModal(true);
-                                    }}
-                                >
-                                    <LumoIcon name="SquareArrowRightExit" size={15} />
-                                </Button>
-                                {canMoveToProject ? (
-                                    <Button
-                                        icon
-                                        shape="ghost"
-                                        size="small"
-                                        className="shrink-0"
-                                        aria-label={c('collider_2025:Action').t`Move to project`}
-                                        onClick={(event) => {
-                                            event.preventDefault();
-                                            event.stopPropagation();
-                                            moveToProjectModal.openModal(true);
-                                        }}
-                                    >
-                                        <LumoIcon name="FolderInput" size={15} />
-                                    </Button>
-                                ) : null}
-                                <Button
-                                    icon
-                                    className="shrink-0"
-                                    shape="ghost"
-                                    size="small"
-                                    aria-label={c('collider_2025:Action').t`Delete chat`}
-                                    onClick={(event) => {
-                                        event.preventDefault();
-                                        event.stopPropagation();
-                                        setDeleteRequested(true);
-                                    }}
-                                >
-                                    <LumoIcon name="Trash" size={15} />
-                                </Button>
-                            </div>
-                            <div className="all-chats-row-actions-mobile shrink-0">
-                                <ConversationSidebarActions
-                                    conversation={conversation}
-                                    onRename={startRenaming}
-                                    includeStarOption={false}
-                                    includeMoveToProject={allowMovingProjectChats || !isProject}
-                                />
-                            </div>
-                        </div>
+                {!isCompact && !isRenaming ? (
+                    <div className="relative z-1 shrink-0 flex flex-nowrap items-center gap-2 min-w-0 pointer-events-none">
+                        {projectTag}
+                        {/* Hidden, not removed, on hover so the ⋯ that takes its place doesn't move anything. */}
+                        <span className="all-chats-row-time text-sm color-weak whitespace-nowrap">{timestamp}</span>
                     </div>
                 ) : null}
 
-                {deleteRequested ? (
-                    <ConversationDeleteFlow
-                        conversation={conversation}
-                        navigateAfterDelete={false}
-                        onClose={() => {
-                            setDeleteRequested(false);
-                        }}
-                    />
+                {showMenu ? (
+                    <div
+                        className={clsx(
+                            'all-chats-row-menu all-chats-row-interactive z-2 shrink-0 flex',
+                            !isCompact && 'absolute top-0 bottom-0 right-0 items-center pr-2'
+                        )}
+                    >
+                        <ConversationSidebarActions
+                            conversation={conversation}
+                            onRename={startRenaming}
+                            includeMoveToProject={allowMovingProjectChats || !isProject}
+                            navigateAfterDelete={false}
+                            onOpenChange={setIsMenuOpen}
+                            onOverlayActiveChange={setIsOverlayActive}
+                            visibleOnHover
+                        />
+                    </div>
                 ) : null}
-
-                {conversationExportModal.render ? (
-                    <ConversationExportModal {...conversationExportModal.modalProps} conversation={conversation} />
-                ) : null}
-
-                {moveToProjectModal.render ? (
-                    <MoveToProjectModal {...moveToProjectModal.modalProps} conversation={conversation} />
-                ) : null}
-
-                {showFavoritesUpsellModal ? <FavoritesUpsellPrompt {...favoritesUpsellModalProps} /> : null}
             </div>
         );
     }

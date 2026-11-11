@@ -48,7 +48,7 @@ const filterConversations = (
         filter: 'all',
         searchQuery: '',
         rowDataMap: {},
-        sortField: 'updatedAt',
+        sort: 'newest',
         hasLumoPlus: true,
         getState: () => emptyState,
         ...overrides,
@@ -134,7 +134,7 @@ describe('filterAllChatsConversations', () => {
         expect(result.map((conversation) => conversation.id)).toEqual(['via-preview']);
     });
 
-    it('sorts by updatedAt descending by default', () => {
+    it('sorts newest updated first by default', () => {
         const conversations = [
             createTestConversation(0, 'older', { updatedAt: '2026-07-10T10:00:00.000Z' }),
             createTestConversation(0, 'newer', { updatedAt: '2026-07-13T10:00:00.000Z' }),
@@ -145,21 +145,52 @@ describe('filterAllChatsConversations', () => {
         expect(result.map((conversation) => conversation.id)).toEqual(['newer', 'older']);
     });
 
-    it('sorts by createdAt when that sort field is selected', () => {
+    it('sorts oldest updated first, ignoring the created date', () => {
         const conversations = [
-            createTestConversation(0, 'old-update', {
+            createTestConversation(0, 'new-update', {
                 createdAt: '2026-07-01T10:00:00.000Z',
                 updatedAt: '2026-07-13T10:00:00.000Z',
             }),
-            createTestConversation(0, 'new-create', {
+            createTestConversation(0, 'old-update', {
                 createdAt: '2026-07-12T10:00:00.000Z',
                 updatedAt: '2026-07-02T10:00:00.000Z',
             }),
         ];
 
-        const result = filterConversations(conversations, { sortField: 'createdAt' });
+        const result = filterConversations(conversations, { sort: 'oldest' });
 
-        expect(result.map((conversation) => conversation.id)).toEqual(['new-create', 'old-update']);
+        expect(result.map((conversation) => conversation.id)).toEqual(['old-update', 'new-update']);
+    });
+
+    it('sorts by name case-insensitively and with numbers in order, untitled chats last', () => {
+        const conversations = [
+            createTestConversation(0, 'untitled', { title: '  ' }),
+            createTestConversation(0, 'zebra', { title: 'zebra facts' }),
+            createTestConversation(0, 'item-10', { title: 'Item 10' }),
+            createTestConversation(0, 'apple', { title: 'Apple pie' }),
+            createTestConversation(0, 'item-2', { title: 'item 2' }),
+        ];
+
+        const result = filterConversations(conversations, { sort: 'name' });
+
+        expect(result.map((conversation) => conversation.id)).toEqual([
+            'apple',
+            'item-2',
+            'item-10',
+            'zebra',
+            'untitled',
+        ]);
+    });
+
+    it('breaks name ties by newest updated first', () => {
+        const conversations = [
+            createTestConversation(0, 'older', { title: 'Notes', updatedAt: '2026-07-10T10:00:00.000Z' }),
+            createTestConversation(0, 'newer', { title: 'notes', updatedAt: '2026-07-13T10:00:00.000Z' }),
+        ];
+
+        const result = filterConversations(conversations, { sort: 'name' });
+
+        expect(result.map((conversation) => conversation.id)).toEqual(['newer', 'older']);
     });
 
     describe('retention policy', () => {
