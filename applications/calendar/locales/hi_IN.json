@@ -1039,6 +1039,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "आपका डेस्कटॉप ऐप मुफ्त ट्रायल ${ formattedEndDate } को समाप्त होता है ${ upgradeButton }"
+      ],
+      "Add payment method": [
+        "भुगतान विधि जोड़ें"
+      ],
+      "Cancel trial": [
+        "ट्रायल रद्द करें"
       ]
     },
     "action": {
@@ -4096,6 +4102,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "आपका Zoom कनेक्शन समाप्त हो गया है। जारी रखने के लिए कृपया पुनः कनेक्ट करें।"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "आप कनेक्ट किए गए पतों की अधिकतम संख्या तक पहुँच गए हैं"
       ]
     },
     "error": {
@@ -6528,6 +6537,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "आप बुकिंग स्लॉट की सीमा तक पहुँच चुके हैं (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "आपका निःशुल्क ट्रायल समाप्त हो गया है। अपनी टीम की एक्सेस बिना रुकावट जारी रखने और खातों को सुरक्षित रखने के लिए अभी सब्सक्राइब करें।"
       ]
     },
     "info": {
@@ -9185,6 +9197,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "आपकी पूर्ण ${ planTitle } सदस्यता ${ boldEndDate } को शुरू होगी।"
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**ट्रायल के बाद मन बदल गया?** अपने पहले भुगतान के 30 दिनों के भीतर रद्द करें और हम बिना इस्तेमाल किए गए समय का रिफंड कर देंगे।"
       ]
     },
     "Option": {
@@ -9605,6 +9620,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "आपकी सदस्यता पर वर्तमान में एक मौजूदा छूट है। इस नए प्रमोशन पर जाने का मतलब है कि मौजूदा छूट अब लागू नहीं की जाएगी।"
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "निम्नलिखित कारणों से प्लान बदलना संभव नहीं है:"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet की सीटें सदस्यों की संख्या के बराबर होनी चाहिए।"
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "यह प्लान आपके खाते पर प्रबंधित सुविधाओं का समर्थन नहीं करता है।"
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "यह सदस्यता अभी पूरी नहीं हो सकती। कृपया पुनः प्रयास करें।"
       ]
     },
     "Payments.Error": {
@@ -12268,6 +12295,9 @@
       ],
       "Your shorter address is now ready": [
         "आपका छोटा पता अब तैयार है"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "${ planTitle } की सदस्यता लें"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

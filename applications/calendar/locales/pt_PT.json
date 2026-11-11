@@ -1025,6 +1025,24 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "A sua avaliação gratuita da aplicação para desktop termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "About ${ name }": [
+        "Sobre o ${ name }"
+      ],
+      "Add ${ name }": [
+        "Adicionar ${ name }"
+      ],
+      "Add a payment method": [
+        "Adicionar um método de pagamento"
+      ],
+      "Add payment method": [
+        "Adicionar método de pagamento"
+      ],
+      "Google Drive": [
+        "Google Drive"
+      ],
+      "Special Offer": [
+        "Oferta Especial"
       ]
     },
     "action": {
@@ -3998,7 +4016,7 @@
         "Erro inesperado, não podemos importar os contactos"
       ],
       "Unexpected error, we can't import the files": [
-        "Erro inesperado, não conseguimos importar os ficheiros"
+        "Erro inesperado, nós não podemos importar os ficheiros"
       ],
       "Unknown error": [
         "Erro desconhecido"
@@ -4019,7 +4037,7 @@
         "O número de IVA deve começar por ${ prefixes }"
       ],
       "We couldn’t send a verification code using this method.": [
-        "Não conseguimos enviar um código de verificação através deste método."
+        "Nós não conseguimos enviar um código de verificação utilizando este método."
       ],
       "Wrong billing address": [
         "Endereço de faturação incorreto"
@@ -5483,7 +5501,7 @@
         "Falha ao atualizar o agendamento da reunião"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Apenas ficheiros (sem fotos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) - até 100 GB no total, 100.000 ficheiros e 50 GB por ficheiro"
+        "Apenas ficheiros (sem fotografias, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) até 100 GB no total, 100.000 ficheiros e 50 GB por ficheiro"
       ],
       "for ${ price }": [
         "por ${ price }"
@@ -6449,6 +6467,27 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Atingiu o limite de vagas de agendamento (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "1 device per user": [
+        "1 dispositivo por utilizador"
+      ],
+      "1 vault per user": [
+        "1 cofre por utilizador"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantia de reembolso em 30 dias: cancele até 30 dias depois da compra e contacte o nosso ${ customerSupportLink } para solicitar um reembolso."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Solicite ao administrador para atualizar o plano ou remova a página da barra lateral das páginas de Marcação do ${ CALENDAR_APP_NAME }."
+      ],
+      "Do you remember your password?": [
+        "Lembra-se da sua palavra-passe?"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Para adicionar uma nova página de marcações, remova uma existente na barra lateral das páginas de Marca;ao no ${ CALENDAR_APP_NAME }."
+      ],
+      "UnionPay logo": [
+        "Logótipo de UnionPay"
       ]
     },
     "info": {
@@ -6624,7 +6663,7 @@
     },
     "Keyboard shortcut section name": {
       "Basic actions": [
-        "Acções básicas"
+        "Ações básicas"
       ],
       "Desktop app navigation": [
         "Navegação na aplicação para computador"
@@ -7074,7 +7113,7 @@
         "Fuso horário secundário"
       ],
       "Securely share parts of your schedule through a booking page you can send to anyone.": [
-        "Partilhe de forma segura partes da sua agenda através de uma página de reserva que pode enviar a qualquer pessoa."
+        "Partilhe de forma segura partes da sua agenda através de uma página de marcação que pode enviar para qualquer pessoa."
       ],
       "Show others when I'm busy": [
         "Mostrar aos outros quando estou ocupado"
@@ -7195,6 +7234,9 @@
       ],
       "Zoom meeting": [
         "Reunião Zoom"
+      ],
+      "Account holder name": [
+        "Nome do titular da conta"
       ]
     },
     "label": {
@@ -7374,6 +7416,9 @@
       ],
       "What’s this?": [
         "O que é isto?"
+      ],
+      "Customer Support": [
+        "Apoio ao Cliente"
       ]
     },
     "Link label (optional)": {
@@ -7426,7 +7471,7 @@
         "atualize para obter mais armazenamento"
       ],
       "Upgrade to restore full access": [
-        "Melhore o eu plano para restaurar o acesso completo."
+        "Atualize para restaurar o acesso completo"
       ],
       "Your ${ driveStorage } is full. To upload or sync files, free up space or ${ cta }.": [
         "O seu ${ driveStorage } está cheio. Para enviar ou sincronizar ficheiros, liberte espaço ou ${ cta }."
@@ -8981,6 +9026,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Aliases ilimitados para proteger a sua identidade"
+      ],
+      "Short @pm.me address": [
+        "Endereço curto @pm.me"
       ]
     },
     "Onboarding": {
@@ -9401,6 +9449,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "A sua subscrição beneficia atualmente de um desconto. Ao aderir a esta nova promoção, o desconto atual deixará de ser aplicado."
+      ],
+      "By switching, you agree to our ${ termsLink }.": [
+        "Ao mudar, concorda com os nossos ${ termsLink }."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Pagar com ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "You already own a Born Private account.": [
+        "Já possui uma conta Born Private."
       ]
     },
     "Payments.Error": {
