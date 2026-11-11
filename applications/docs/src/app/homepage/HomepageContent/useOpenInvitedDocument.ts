@@ -1,15 +1,14 @@
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import type { ExtendedInvitationDetails } from '../invitationTypes'
-import { isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype'
+import { isProtonDocsSpreadsheet } from '../utils/mimetype'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
-import { APPS } from '@proton/shared/lib/constants'
-import { getNewWindow } from '@proton/shared/lib/helpers/window'
+import { APPS } from '../utils/apps'
 
 export function useOpenInvitedDocument() {
   const { getLocalID } = useAuthentication()
 
   return function openInvitedDocument(invitation: ExtendedInvitationDetails) {
-    const window = getNewWindow().handle
+    const window = openBlankTab()
     const type = isProtonDocsSpreadsheet(invitation.link.mimeType) ? 'sheet' : 'doc'
     const volumeId = invitation.share.volumeId
     const linkId = invitation.link.linkId
@@ -22,4 +21,14 @@ export function useOpenInvitedDocument() {
 
     window.location.assign(url)
   }
+}
+
+// Copy of getNewWindow from packages/shared/lib/helpers/window.ts, called without a URL
+function openBlankTab(): Window {
+  const newTab = window.open('', '_blank')
+  if (!newTab) {
+    console.warn('Failed to open new window, using current tab')
+    return window
+  }
+  return newTab
 }

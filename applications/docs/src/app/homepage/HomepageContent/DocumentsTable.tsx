@@ -26,12 +26,11 @@ import { IcUserFilled } from '@proton/icons/icons/IcUserFilled'
 import { IcUsers } from '@proton/icons/icons/IcUsers'
 import { useContactEmails } from '@proton/account/contactEmails/hooks'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
-import { APPS } from '@proton/shared/lib/constants'
-import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
+import { APPS } from '../utils/apps'
+import type { ProtonDocumentType } from '../utils/mimetype'
 import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
-import { getInitials } from '@proton/shared/lib/helpers/string'
-import type { Address } from '@proton/shared/lib/interfaces/Address'
-import clsx from '@proton/utils/clsx'
+import { getInitials } from './getInitials'
+import { clsx } from '../utils/clsx'
 import type { ComponentPropsWithoutRef, KeyboardEvent, MouseEvent, ReactNode } from 'react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { c, msgid } from 'ttag'
@@ -40,7 +39,7 @@ import { useEvent } from '../utils/useEvent'
 import { useDocumentActions } from '../documentActionsContext'
 import type { RecentsSort } from '../homepageViewContext'
 import { useHomepageView, type ItemsSection, type ItemsSectionId } from '../homepageViewContext'
-import { isMyDocument } from '../is-my-document'
+import { isMyDocument, type UserAddress } from '../is-my-document'
 import { useRowSelection, type RowSelection } from './useRowSelection'
 import { DocContextMenu, canTrash } from './DocContextMenu/DocContextMenu'
 import { useContextMenu } from './DocContextMenu/context'
@@ -460,7 +459,7 @@ function getDateHeaderLabel(variant: TableVariant): string {
 type BodyProps = {
   items: RecentDocumentsItem[]
   variant: TableVariant
-  addresses: Address[] | undefined
+  addresses: UserAddress[] | undefined
   selection?: RowSelection
   selectableIdsSet: Set<string>
   isTrashing: boolean
@@ -498,7 +497,7 @@ const RAISED = 'relative z-[1]'
 type RowProps = {
   document: RecentDocumentsItem
   variant: TableVariant
-  addresses: Address[] | undefined
+  addresses: UserAddress[] | undefined
   selection?: RowSelection
   isSelectable?: boolean
   isTrashing?: boolean
@@ -861,7 +860,7 @@ function selectOnClick(selection: RowSelection, id: string, { shiftKey, ctrlKey,
   }
 }
 
-function useNameAndAvatar(document: RecentDocumentsItem, addresses: Address[] | undefined) {
+function useNameAndAvatar(document: RecentDocumentsItem, addresses: UserAddress[] | undefined) {
   const [contactEmails] = useContactEmails()
 
   const isMine = isMyDocument(document, addresses)

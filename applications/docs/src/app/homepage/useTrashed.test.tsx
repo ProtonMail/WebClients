@@ -1,5 +1,5 @@
 import { type DriveEvent, DriveEventType, type NodeEntity, type ProtonDriveClient } from '@protontech/drive-sdk'
-import { PROTON_DOCS_DOCUMENT_MIMETYPE, PROTON_DOCS_SPREADSHEET_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
+import { PROTON_DOCS_DOCUMENT_MIMETYPE, PROTON_DOCS_SPREADSHEET_MIMETYPE } from './utils/mimetype'
 import { act, renderHook } from '@testing-library/react'
 import { useTrashed } from './useTrashed'
 

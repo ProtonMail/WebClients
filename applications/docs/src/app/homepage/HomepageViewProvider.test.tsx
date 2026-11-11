@@ -1,6 +1,6 @@
 import { ServerTime } from './utils/serverTime'
 import { buildRecentsState, buildSearchState, buildTrashState } from './HomepageViewProvider'
-import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
+import type { ProtonDocumentType } from './utils/mimetype'
 import { RecentDocumentsItem, type RecentDocumentsItemValue } from './recentDocumentsItem'
 import type { RecentDocumentsItemLocation } from './recentDocumentsItem'
 

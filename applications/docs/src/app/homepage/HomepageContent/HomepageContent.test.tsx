@@ -11,7 +11,7 @@ import type { DocInvitesHook, HomepageViewState } from '../homepageViewContext'
 import { HomepageViewContext } from '../homepageViewContext'
 import type { MemberRole } from '@protontech/drive-sdk'
 import type { ExtendedInvitationDetails } from '../invitationTypes'
-import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
+import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '../utils/mimetype'
 import { TelemetryEvent } from '../utils/telemetry'
 
 jest.mock('@proton/shared/lib/i18n', () => ({ dateLocale: { code: 'us' } }))

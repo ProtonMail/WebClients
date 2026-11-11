@@ -1,4 +1,4 @@
-import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
+import type { ProtonDocumentType } from './utils/mimetype'
 import type { MemberRole } from '@protontech/drive-sdk'
 
 import type { ServerTime } from './utils/serverTime'

@@ -2,7 +2,7 @@ import { createContext, useContext } from 'react'
 
 import type { RecentDocumentsItem } from './recentDocumentsItem'
 import type { ExtendedInvitationDetails } from './invitationTypes'
-import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
+import type { ProtonDocumentType } from './utils/mimetype'
 
 import type { Logger } from './utils/logger'
 import type { CreateNotification } from './utils/notifications'

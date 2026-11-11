@@ -163,7 +163,7 @@ It is advised not to modify monorepo-wide shared packages e.g. `packages/compone
 
 ### Styling
 
-- Combine classes with `clsx` from `@proton/utils/clsx`.
+- Combine classes with `clsx` from `@proton/utils/clsx`, except in `src/app/homepage/`, which uses its own `utils/clsx.ts` (see its `README.md`).
 
 ## Editor (`applications/docs-editor`)
 

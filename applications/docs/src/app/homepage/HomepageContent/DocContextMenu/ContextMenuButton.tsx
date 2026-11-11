@@ -1,7 +1,7 @@
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
 import type { ComponentPropsWithoutRef, PropsWithChildren, ReactElement } from 'react'
 
-import clsx from '@proton/utils/clsx'
+import { clsx } from '../../utils/clsx'
 
 export interface ContextMenuButtonProps extends ComponentPropsWithoutRef<'button'> {
   name: string

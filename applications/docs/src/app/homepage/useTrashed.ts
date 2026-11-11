@@ -1,6 +1,6 @@
 import type { RecentDocumentsItemValue } from './recentDocumentsItem'
 import { type DriveEvent, type NodeEntity, type ProtonDriveClient, generateNodeUid } from '@protontech/drive-sdk'
-import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
+import { mimeTypeToProtonDocumentType } from './utils/mimetype'
 import { useCallback, useState } from 'react'
 import { c } from 'ttag'
 import { nodeToTrashedDocumentItem } from './createDocumentItems'

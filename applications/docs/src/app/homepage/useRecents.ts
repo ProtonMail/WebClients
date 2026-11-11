@@ -1,4 +1,4 @@
-import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
+import { mimeTypeToProtonDocumentType } from './utils/mimetype'
 import {
   type DriveEvent,
   type NodeEntity,

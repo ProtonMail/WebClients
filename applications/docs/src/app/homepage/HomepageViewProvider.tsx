@@ -6,10 +6,10 @@ import { RecentDocumentsItem } from './recentDocumentsItem'
 import type { RecentDocumentsItemValue } from './recentDocumentsItem'
 import type { NodeEntity } from '@protontech/drive-sdk'
 import { useContactEmails } from '@proton/account/contactEmails/hooks'
-import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
+import type { ProtonDocumentType } from './utils/mimetype'
+import type { OwnerContact } from './get-owner-name'
 import { useAddresses } from '@proton/account/addresses/hooks'
-import type { Address } from '@proton/shared/lib/interfaces/Address'
+import type { UserAddress } from './is-my-document'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
 
 import {
@@ -200,8 +200,8 @@ export function buildRecentsState(
   recentDocumentsInitialized: boolean,
   isRecentsUpdating: boolean,
   recentsSort: RecentsSort,
-  contactEmails: ContactEmail[] | undefined,
-  addresses: Address[] | undefined,
+  contactEmails: OwnerContact[] | undefined,
+  addresses: UserAddress[] | undefined,
   type: ProtonDocumentType | undefined,
 ): HomepageViewState {
   if (isRecentsUpdating) {
