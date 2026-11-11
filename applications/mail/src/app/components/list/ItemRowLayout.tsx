@@ -26,6 +26,7 @@ import ItemHoverButtons from './ItemHoverButtons';
 import ItemLabels from './ItemLabels';
 import ItemLocation from './ItemLocation';
 import ItemOneTimeCode from './ItemOneTimeCode';
+import type { ListOneTimeCode } from './ItemOneTimeCode';
 import ItemStar from './ItemStar';
 import ItemUnread from './ItemUnread';
 import ItemExpiration from './item-expiration/ItemExpiration';
@@ -42,7 +43,7 @@ interface Props {
     unread: boolean;
     onBack?: () => void;
     attachmentsMetadata?: AttachmentsMetadata[];
-    oneTimeCode?: string | null;
+    oneTimeCode?: ListOneTimeCode | null;
     showHoverButtons: boolean;
 }
 
@@ -78,9 +79,10 @@ const ItemRowLayout = ({
         [Subject, highlightData, highlightMetadata, unread]
     );
 
+    const code = oneTimeCode?.code;
     const oneTimeCodeContent = useMemo(
-        () => (highlightData && oneTimeCode ? highlightMetadata(oneTimeCode, unread, false).resultJSX : oneTimeCode),
-        [oneTimeCode, highlightData, highlightMetadata, unread]
+        () => (highlightData && code ? highlightMetadata(code, unread, false).resultJSX : code),
+        [code, highlightData, highlightMetadata, unread]
     );
 
     const { resultJSX, numOccurrences } = useMemo(
@@ -134,11 +136,12 @@ const ItemRowLayout = ({
                 >
                     <div className="flex flex-column inline-block">
                         <div className="flex flex-nowrap items-center max-w-full min-w-0">
-                            {oneTimeCode && (
+                            {oneTimeCode && code && (
                                 <ItemOneTimeCode
-                                    code={oneTimeCode}
+                                    code={code}
                                     codeContent={oneTimeCodeContent}
                                     element={element}
+                                    gateSource={oneTimeCode.gateSource}
                                     className="shrink-0 mr-2"
                                 />
                             )}

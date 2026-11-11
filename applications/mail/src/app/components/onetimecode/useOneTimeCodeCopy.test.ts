@@ -1,12 +1,15 @@
 import { act, renderHook } from '@testing-library/react';
 
 import { useUser } from '@proton/account/user/hooks';
+import { OtpGateSource } from '@proton/mail-message/helpers/message/otp/shouldRunOtpExtraction';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';
+import { mockTracker } from '@proton/telemetry-tracker/testing';
 
 import { APPLY_LOCATION_TYPES } from '../../hooks/actions/applyLocation/interface';
 import { useApplyLocation } from '../../hooks/actions/applyLocation/useApplyLocation';
 import type { Element } from '../../models/element';
+import { OneTimeCodeLocation } from './oneTimeCodeEvents';
 import { useOneTimeCodeCopy } from './useOneTimeCodeCopy';
 import { useOneTimeCodeSettings } from './useOneTimeCodeSettings';
 
@@ -16,6 +19,23 @@ jest.mock('@proton/account/user/hooks', () => {
 jest.mock('../../hooks/actions/applyLocation/useApplyLocation', () => {
     return { useApplyLocation: jest.fn() };
 });
+
+let tracked: ReturnType<typeof mockTracker>;
+
+const sentCopyReports = () => {
+    return tracked.reports.map(({ measurementGroup, event, dimensions, delay }) => {
+        return { measurementGroup, event, dimensions, delay };
+    });
+};
+
+const copyReport = (location: string, gateSource: string, isMovedToTrash: string) => {
+    return {
+        measurementGroup: 'mail.web.one_time_code',
+        event: 'code_copied',
+        dimensions: { location, gateSource, isMovedToTrash },
+        delay: false,
+    };
+};
 
 const user = buildUser();
 const moveToTrashKey = `one-time-code-move-to-trash-${user.ID}`;
@@ -39,6 +59,7 @@ describe('useOneTimeCodeCopy', () => {
         jest.useFakeTimers();
         localStorage.clear();
         jest.clearAllMocks();
+        tracked = mockTracker();
         jest.mocked(useUser).mockReturnValue([user, false]);
         jest.mocked(useApplyLocation).mockReturnValue({
             applyLocation,
@@ -48,14 +69,16 @@ describe('useOneTimeCodeCopy', () => {
 
     afterEach(() => {
         jest.useRealTimers();
+        tracked.restore();
     });
 
-    it('moves the email to Trash one second later when the preference is on', () => {
+    it('reports the copy at once and moves the email to Trash one second later when the preference is on', () => {
         const { movesToTrash, onCopy } = renderCopy().result.current;
 
-        onCopy(elements);
+        onCopy(elements, OneTimeCodeLocation.LIST, OtpGateSource.SUBJECT);
 
         expect(movesToTrash).toBe(true);
+        expect(sentCopyReports()).toEqual([copyReport('list', 'subject', 'true')]);
         advance(999);
         expect(applyLocation).not.toHaveBeenCalled();
 
@@ -65,15 +88,16 @@ describe('useOneTimeCodeCopy', () => {
         ]);
     });
 
-    it('leaves the email in place when the preference is off', () => {
+    it('reports the copy and leaves the email in place when the preference is off', () => {
         localStorage.setItem(moveToTrashKey, 'false');
         const { movesToTrash, onCopy } = renderCopy().result.current;
 
-        onCopy(elements);
+        onCopy(elements, OneTimeCodeLocation.MESSAGE, OtpGateSource.THIRD_PARTY_REGISTRATION);
         advance(1000);
 
         expect(movesToTrash).toBe(false);
         expect(applyLocation).not.toHaveBeenCalled();
+        expect(sentCopyReports()).toEqual([copyReport('message', 'third_party_registration', 'false')]);
     });
 
     it('completes the move it was clicked with after the pill unmounts and the preference flips', () => {
@@ -82,7 +106,7 @@ describe('useOneTimeCodeCopy', () => {
             return useOneTimeCodeSettings();
         });
 
-        result.current.onCopy(elements);
+        result.current.onCopy(elements, OneTimeCodeLocation.MESSAGE, OtpGateSource.BOTH);
         unmount();
         act(() => {
             settings.current.setDetectionEnabled(false);
@@ -92,6 +116,7 @@ describe('useOneTimeCodeCopy', () => {
         });
         advance(1000);
 
+        expect(sentCopyReports()).toEqual([copyReport('message', 'both', 'true')]);
         expect(applyLocation).toHaveBeenCalledTimes(1);
     });
 });

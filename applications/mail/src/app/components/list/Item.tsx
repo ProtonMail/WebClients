@@ -3,7 +3,7 @@ import { memo, useMemo, useRef, useState } from 'react';
 
 import ItemCheckbox from '@proton/components/containers/items/ItemCheckbox';
 import OneTimeCodeDetector from '@proton/mail-message/helpers/message/otp/OneTimeCodeDetector';
-import { shouldRunOtpExtraction } from '@proton/mail-message/helpers/message/otp/shouldRunOtpExtraction';
+import { getOtpGate } from '@proton/mail-message/helpers/message/otp/shouldRunOtpExtraction';
 import { useRecipientLabel } from '@proton/mail-message/hooks/contact/useRecipientLabel';
 import { isCustomLabel } from '@proton/mail/helpers/location';
 import { DAY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -29,7 +29,9 @@ import { useMailSelector } from '../../store/hooks';
 import { selectSnoozeDropdownState, selectSnoozeElement } from '../../store/snooze/snoozeSliceSelectors';
 import { useCategoriesOnboarding } from '../categoryView/categoriesOnboarding/CategoriesOnboardingContext';
 import { HIGHLIGHTED_ITEM_INDEX } from '../categoryView/categoriesOnboarding/onboardingInterface';
+import { OneTimeCodeLocation } from '../onetimecode/oneTimeCodeEvents';
 import { useOneTimeCodeDetection } from '../onetimecode/useOneTimeCodeDetection';
+import { useReportOneTimeCodeOutcome } from '../onetimecode/useReportOneTimeCodeOutcome';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
 import ItemSenders from './ItemSenders';
@@ -147,22 +149,31 @@ const Item = ({
         // works for conversations too — their time is a per-label context time,
         // not `element.Time`, which can be unset on freshly-arrived elements.
         const time = getDate(element, labelID).getTime();
-
-        if (
-            !shouldRunOtpExtraction({
-                subject,
-                sender: senderAddress,
-                timestampMs: time,
-                isThirdPartyRegistration: isElementConversation(element)
-                    ? !!element.IsThirdPartyRegistration
-                    : isThirdPartyRegistration(element),
-            })
-        ) {
+        const thirdPartyRegistration = isElementConversation(element)
+            ? !!element.IsThirdPartyRegistration
+            : isThirdPartyRegistration(element);
+        const gateSource = getOtpGate(
+            { subject, sender: senderAddress, isThirdPartyRegistration: thirdPartyRegistration },
+            time
+        );
+        if (!gateSource) {
             return null;
         }
 
-        return OneTimeCodeDetector.extractFromTitle({ subject, timestamp: Math.floor(time / 1000) }).code;
+        const { code, source } = OneTimeCodeDetector.extractFromTitle({ subject, timestamp: Math.floor(time / 1000) });
+        return { code, codeSource: source, gateSource };
     }, [element, labelID, isOneTimePasscodeEnabled, senderAddress]);
+
+    useReportOneTimeCodeOutcome(
+        oneTimeCode
+            ? {
+                  location: OneTimeCodeLocation.LIST,
+                  emailID: element.ID,
+                  gateSource: oneTimeCode.gateSource,
+                  codeSource: oneTimeCode.codeSource,
+              }
+            : null
+    );
 
     const handleClick = (event: MouseEvent<HTMLDivElement>) => {
         const target = event.target as HTMLElement;

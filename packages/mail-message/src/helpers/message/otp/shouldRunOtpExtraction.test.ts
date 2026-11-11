@@ -1,4 +1,11 @@
-import { OTP_MAX_AGE_MS, isRecentEmail, shouldRunOtpExtraction } from './shouldRunOtpExtraction';
+import {
+    OTP_MAX_AGE_MS,
+    OtpGateSource,
+    getOtpGate,
+    getOtpGateSource,
+    isRecentEmail,
+    shouldRunOtpExtraction,
+} from './shouldRunOtpExtraction';
 
 const NOW = 1_700_000_000_000;
 
@@ -73,5 +80,50 @@ describe('shouldRunOtpExtraction', () => {
                 NOW
             )
         ).toBe(false);
+    });
+});
+
+describe('getOtpGateSource', () => {
+    it('is subject for an OTP subject without the flag', () => {
+        expect(getOtpGateSource({ subject: 'Your code is 531631', isThirdPartyRegistration: false })).toBe(
+            OtpGateSource.SUBJECT
+        );
+    });
+
+    it('is third_party_registration for a flagged email whose subject is not an OTP subject', () => {
+        expect(getOtpGateSource({ subject: 'Lunch tomorrow?', isThirdPartyRegistration: true })).toBe(
+            OtpGateSource.THIRD_PARTY_REGISTRATION
+        );
+    });
+
+    it('is both for a flagged email with an OTP subject', () => {
+        expect(getOtpGateSource({ subject: 'Your code is 531631', isThirdPartyRegistration: true })).toBe(
+            OtpGateSource.BOTH
+        );
+    });
+
+    it('is null when neither the subject nor the flag passes', () => {
+        expect(getOtpGateSource({ subject: 'Lunch tomorrow?', isThirdPartyRegistration: false })).toBeNull();
+    });
+
+    it('uses the sender for brand-in-sender recall', () => {
+        expect(getOtpGateSource({ subject: 'Your Spotify code', sender: 'no-reply@spotify.com' })).toBe(
+            OtpGateSource.SUBJECT
+        );
+        expect(getOtpGateSource({ subject: 'Your Spotify code', sender: 'security@acme.com' })).toBeNull();
+    });
+});
+
+describe('getOtpGate', () => {
+    const recent = NOW - 60_000;
+    const stale = NOW - (OTP_MAX_AGE_MS + 60_000);
+    const flaggedOtpEmail = { subject: 'Your code is 531631', isThirdPartyRegistration: true };
+
+    it('returns the gate source for a recent email that passes the gate', () => {
+        expect(getOtpGate(flaggedOtpEmail, recent, NOW)).toBe(OtpGateSource.BOTH);
+    });
+
+    it('is null for a stale email, even one passing both halves', () => {
+        expect(getOtpGate(flaggedOtpEmail, stale, NOW)).toBeNull();
     });
 });
