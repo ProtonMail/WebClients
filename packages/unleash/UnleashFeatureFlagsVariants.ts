@@ -40,7 +40,10 @@ export type B2BAlwaysOnWindowsReleaseVariant = 'version';
 export type MeetScreenShareAudioSupportedElectronVersionVariant = 'version';
 export type PingOMaticEventLoopIntervalVariant = 'Config';
 export type EnableVpn2024AddonsExperimentVariant =
-    'lumo-addon-only' | 'meet-addon-only' | 'pass-addon-only' | 'no-addon';
+    | 'lumo-addon-only'
+    | 'meet-addon-only'
+    | 'pass-addon-only'
+    | 'no-addon';
 export type CheckoutCondensedAddonsVariant = 'control' | 'condensed';
 export type InboxBringYourOwnEmailImportPeriodExperimentVariant = 'Control' | 'Treatment';
 

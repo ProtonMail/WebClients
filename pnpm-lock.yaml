@@ -455,12 +455,6 @@ catalogs:
     postcss:
       specifier: ^8.5.32
       version: 8.5.32
-    prettier:
-      specifier: ^3.9.10
-      version: 3.9.10
-    prettier-plugin-tailwindcss:
-      specifier: ^0.8.1
-      version: 0.8.1
     react:
       specifier: ^18.3.1
       version: 18.3.1
@@ -667,9 +661,6 @@ importers:
 
   .:
     dependencies:
-      '@proton/prettier-config-proton':
-        specifier: workspace:^
-        version: link:packages/prettier-config
       '@proton/stylelint-config-proton':
         specifier: workspace:^
         version: link:packages/stylelint-config-proton
@@ -686,9 +677,6 @@ importers:
         specifier: ^6.0.3
         version: 6.0.3
     devDependencies:
-      '@prettier/plugin-xml':
-        specifier: ^3.4.2
-        version: 3.4.2(prettier@3.9.10)
       '@proton/account':
         specifier: workspace:^
         version: link:packages/account
@@ -707,6 +695,9 @@ importers:
       '@proton/nav':
         specifier: workspace:^
         version: link:packages/nav
+      '@proton/oxfmt-config':
+        specifier: workspace:^
+        version: link:packages/oxfmt-config
       '@proton/payments':
         specifier: workspace:^
         version: link:packages/payments
@@ -725,9 +716,6 @@ importers:
       '@proton/types':
         specifier: workspace:^
         version: link:packages/types
-      '@trivago/prettier-plugin-sort-imports':
-        specifier: ^6.0.2
-        version: 6.0.2(@vue/compiler-sfc@3.5.42)(prettier@3.9.10)(supports-color@11.0.0)(svelte@5.56.4(@typescript-eslint/types@8.71.2))
       '@types/global-types-monorepo':
         specifier: workspace:^
         version: link:packages/global-types
@@ -758,12 +746,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
-      prettier-plugin-tailwindcss:
-        specifier: 'catalog:'
-        version: 0.8.1(@trivago/prettier-plugin-sort-imports@6.0.2(@vue/compiler-sfc@3.5.42)(prettier@3.9.10)(supports-color@11.0.0)(svelte@5.56.4(@typescript-eslint/types@8.71.2)))(prettier@3.9.10)
       sort-package-json:
         specifier: ^4.1.0
         version: 4.1.0
@@ -1002,9 +984,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -1195,9 +1174,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -1563,9 +1539,6 @@ importers:
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../../packages/jest-swc-preset
-      '@proton/oxfmt-config':
-        specifier: workspace:^
-        version: link:../../packages/oxfmt-config
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../../packages/oxlint-config
@@ -1738,9 +1711,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -1886,9 +1856,6 @@ importers:
       '@babel/plugin-transform-private-methods':
         specifier: ^7.29.7
         version: 7.29.7(@babel/core@7.29.7(supports-color@11.0.0))(supports-color@11.0.0)
-      '@prettier/plugin-xml':
-        specifier: ^3.4.2
-        version: 3.4.2(prettier@3.9.10)
       '@proton/i18n':
         specifier: workspace:^
         version: link:../../packages/i18n
@@ -1967,12 +1934,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
-      prettier-plugin-tailwindcss:
-        specifier: 'catalog:'
-        version: 0.8.1(@trivago/prettier-plugin-sort-imports@6.0.2(@vue/compiler-sfc@3.5.42)(prettier@3.9.10)(supports-color@11.0.0)(svelte@5.56.4(@typescript-eslint/types@8.71.2)))(prettier@3.9.10)
       sass:
         specifier: 'catalog:'
         version: 1.97.1
@@ -2181,12 +2142,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
-      prettier-plugin-tailwindcss:
-        specifier: 'catalog:'
-        version: 0.8.1(@trivago/prettier-plugin-sort-imports@6.0.2(@vue/compiler-sfc@3.5.42)(prettier@3.9.10)(supports-color@11.0.0)(svelte@5.56.4(@typescript-eslint/types@8.71.2)))(prettier@3.9.10)
       sass:
         specifier: 'catalog:'
         version: 1.97.1
@@ -2461,9 +2416,6 @@ importers:
       path-browserify:
         specifier: ^1.0.1
         version: 1.0.1
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -2609,9 +2561,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 3.9.10
-        version: 3.9.10
       style-loader:
         specifier: ^4.0.0
         version: 4.0.0(webpack@5.112.2)
@@ -3205,9 +3154,6 @@ importers:
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../../packages/jest-swc-preset
-      '@proton/oxfmt-config':
-        specifier: workspace:^
-        version: link:../../packages/oxfmt-config
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../../packages/oxlint-config
@@ -3286,9 +3232,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -3542,9 +3485,6 @@ importers:
       path-browserify:
         specifier: ^1.0.1
         version: 1.0.1
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -3678,9 +3618,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 3.9.10
-        version: 3.9.10
       style-loader:
         specifier: ^4.0.0
         version: 4.0.0(webpack@5.112.2)
@@ -3835,9 +3772,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -3953,9 +3887,6 @@ importers:
       '@proton/pack':
         specifier: workspace:^
         version: link:../../packages/pack
-      '@proton/prettier-config-proton':
-        specifier: workspace:^
-        version: link:../../packages/prettier-config
       '@proton/types':
         specifier: workspace:^
         version: link:../../packages/types
@@ -4022,9 +3953,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       ts-loader:
         specifier: 'catalog:'
         version: 9.6.2(@typescript/typescript6@6.0.2)(loader-utils@2.0.4)(webpack@5.112.2)
@@ -4206,9 +4134,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       react:
         specifier: 'catalog:'
         version: 18.3.1
@@ -4319,9 +4244,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -4373,9 +4295,6 @@ importers:
       '@types/react-router-dom':
         specifier: 'catalog:'
         version: 5.3.3
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       react:
         specifier: 'catalog:'
         version: 18.3.1
@@ -4403,13 +4322,13 @@ importers:
         version: link:../../packages/oxlint-config
       '@storybook/addon-docs':
         specifier: ^10.6.6
-        version: 10.6.6(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(storybook@10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1))
+        version: 10.6.6(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(storybook@10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))
       '@storybook/addon-links':
         specifier: ^10.6.6
-        version: 10.6.6(@types/react@18.3.31)(react@18.3.1)(storybook@10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1))
+        version: 10.6.6(@types/react@18.3.31)(react@18.3.1)(storybook@10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))
       '@storybook/react-webpack5':
         specifier: ^10.6.6
-        version: 10.6.6(@swc/core@1.16.22(@swc/helpers@0.5.17))(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(@typescript/typescript6@6.0.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sharp@0.35.5(@types/node@24.19.2))(storybook@10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.3.1)
+        version: 10.6.6(@swc/core@1.16.22(@swc/helpers@0.5.17))(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(@typescript/typescript6@6.0.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sharp@0.35.5(@types/node@24.19.2))(storybook@10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.3.1)
       '@types/node':
         specifier: 'catalog:'
         version: 24.19.2
@@ -4442,7 +4361,7 @@ importers:
         version: 6.1.4
       storybook:
         specifier: ^10.6.6
-        version: 10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1)
+        version: 10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1)
       terser-webpack-plugin:
         specifier: ^5.6.1
         version: 5.6.1(@swc/core@1.16.22(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(webpack@5.112.2)
@@ -4715,9 +4634,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -4896,9 +4812,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -5246,9 +5159,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       react-router:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -5423,6 +5333,9 @@ importers:
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../jest-swc-preset
+      '@proton/oxfmt-config':
+        specifier: workspace:^
+        version: link:../oxfmt-config
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
@@ -5483,9 +5396,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       ts-node:
         specifier: 'catalog:'
         version: 10.9.2(@swc/core@1.16.22(@swc/helpers@0.5.17))(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
@@ -5547,9 +5457,6 @@ importers:
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../jest-swc-preset
-      '@proton/oxfmt-config':
-        specifier: workspace:^
-        version: link:../oxfmt-config
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
@@ -5938,6 +5845,9 @@ importers:
 
   packages/colors:
     dependencies:
+      '@proton/oxfmt-config':
+        specifier: workspace:^
+        version: link:../oxfmt-config
       '@proton/utils':
         specifier: workspace:^
         version: link:../utils
@@ -5947,9 +5857,6 @@ importers:
       css-tree:
         specifier: ^2.3.1
         version: 2.3.1
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       tinycolor2:
         specifier: 'catalog:'
         version: 1.6.0
@@ -6303,9 +6210,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       react-redux:
         specifier: 'catalog:'
         version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
@@ -6985,9 +6889,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -7159,6 +7060,9 @@ importers:
         specifier: 'catalog:'
         version: 18.3.1
     devDependencies:
+      '@proton/oxfmt-config':
+        specifier: workspace:^
+        version: link:../oxfmt-config
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
@@ -7186,9 +7090,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       tsx:
         specifier: 'catalog:'
         version: 4.23.15
@@ -7295,21 +7196,18 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
 
   packages/icons:
     dependencies:
+      '@proton/oxfmt-config':
+        specifier: workspace:^
+        version: link:../oxfmt-config
       jsdom:
         specifier: ^29.1.1
         version: 29.1.1(@noble/hashes@2.4.0)
       mustache:
         specifier: ^4.2.0
         version: 4.2.0
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       react:
         specifier: 'catalog:'
         version: 18.3.1
@@ -7750,9 +7648,6 @@ importers:
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../jest-swc-preset
-      '@proton/oxfmt-config':
-        specifier: workspace:^
-        version: link:../oxfmt-config
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
@@ -7798,9 +7693,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
@@ -8279,9 +8171,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -8291,12 +8180,12 @@ importers:
 
   packages/metrics:
     dependencies:
+      '@proton/oxfmt-config':
+        specifier: workspace:^
+        version: link:../oxfmt-config
       '@proton/shared':
         specifier: workspace:^
         version: link:../shared
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -8493,9 +8382,6 @@ importers:
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
-      '@proton/prettier-config-proton':
-        specifier: workspace:^
-        version: link:../prettier-config
       '@types/node':
         specifier: 'catalog:'
         version: 24.19.2
@@ -8693,9 +8579,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -8841,15 +8724,15 @@ importers:
       '@proton/jest-swc-preset':
         specifier: workspace:^
         version: link:../jest-swc-preset
+      '@proton/oxfmt-config':
+        specifier: workspace:^
+        version: link:../oxfmt-config
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
       '@proton/pack':
         specifier: workspace:^
         version: link:../pack
-      '@proton/prettier-config-proton':
-        specifier: workspace:^
-        version: link:../prettier-config
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
@@ -8928,9 +8811,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       tsx:
         specifier: 'catalog:'
         version: 4.23.15
@@ -9337,21 +9217,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-
-  packages/prettier-config:
-    devDependencies:
-      '@proton/oxlint-config':
-        specifier: workspace:^
-        version: link:../oxlint-config
-      oxlint:
-        specifier: 'catalog:'
-        version: 1.92.0(oxlint-tsgolint@7.0.2006)
-      oxlint-tsgolint:
-        specifier: 'catalog:'
-        version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
 
   packages/raw-images:
     devDependencies:
@@ -9872,9 +9737,6 @@ importers:
       playwright:
         specifier: ^1.64.1
         version: 1.64.1
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -9924,9 +9786,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -10111,9 +9970,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -10531,9 +10387,6 @@ importers:
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../packages/oxlint-config
-      '@proton/prettier-config-proton':
-        specifier: workspace:^
-        version: link:../packages/prettier-config
       '@proton/types':
         specifier: workspace:^
         version: link:../packages/types
@@ -10573,9 +10426,6 @@ importers:
       playwright:
         specifier: ^1.64.1
         version: 1.64.1
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       tsx:
         specifier: 'catalog:'
         version: 4.23.15
@@ -10679,9 +10529,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       sass:
         specifier: 'catalog:'
         version: 1.97.1
@@ -10755,9 +10602,6 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
       sass:
         specifier: 'catalog:'
         version: 1.97.1
@@ -11155,9 +10999,9 @@ importers:
 
   utilities/playwright-mocks:
     dependencies:
-      '@proton/prettier-config-proton':
+      '@proton/oxfmt-config':
         specifier: workspace:^
-        version: link:../../packages/prettier-config
+        version: link:../../packages/oxfmt-config
       '@protontech/crypto':
         specifier: 'catalog:'
         version: 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
@@ -11167,9 +11011,6 @@ importers:
       jsondiffpatch:
         specifier: ^0.7.7
         version: 0.7.7
-      prettier:
-        specifier: 'catalog:'
-        version: 3.9.10
     devDependencies:
       '@playwright/test':
         specifier: ^1.64.1
@@ -16298,11 +16139,6 @@ packages:
   '@preact/signals-core@1.13.0':
     resolution: {integrity: sha512-slT6XeTCAbdql61GVLlGU4x7XHI7kCZV5Um5uhE4zLX4ApgiiXc0UYFvVOKq06xcovzp7p+61l68oPi563ARKg==}
 
-  '@prettier/plugin-xml@3.4.2':
-    resolution: {integrity: sha512-/UyNlHfkuLXG6Ed85KB0WBF283xn2yavR+UtRibBRUcvEJId2DSLdGXwJ/cDa1X++SWDPzq3+GSFniHjkNy7yg==}
-    peerDependencies:
-      prettier: ^3.0.0
-
   '@prometheus-io/client@0.16.1':
     resolution: {integrity: sha512-XkFPsGFGoSs/UMg/vh0QLDpanl/tsrOV5PLHdpGe8Ho+ir/Llhytr15j6y8ZwLrpIGzK9gTVVpIalA6C4UjUZw==}
     engines: {node: ^22 || ^24 || >=26}
@@ -17695,25 +17531,6 @@ packages:
     peerDependencies:
       '@playwright/test': '>=1.52.0'
 
-  '@trivago/prettier-plugin-sort-imports@6.0.2':
-    resolution: {integrity: sha512-3DgfkukFyC/sE/VuYjaUUWoFfuVjPK55vOFDsxD56XXynFMCZDYFogH2l/hDfOsQAm1myoU/1xByJ3tWqtulXA==}
-    engines: {node: '>= 20'}
-    peerDependencies:
-      '@vue/compiler-sfc': 3.x
-      prettier: 2.x - 3.x
-      prettier-plugin-ember-template-tag: '>= 2.0.0'
-      prettier-plugin-svelte: 3.x
-      svelte: 4.x || 5.x
-    peerDependenciesMeta:
-      '@vue/compiler-sfc':
-        optional: true
-      prettier-plugin-ember-template-tag:
-        optional: true
-      prettier-plugin-svelte:
-        optional: true
-      svelte:
-        optional: true
-
   '@ts-morph/common@0.27.0':
     resolution: {integrity: sha512-Wf29UqxWDpc+i61k3oIOzcUfQt79PIT9y/MWfAGlrkjg6lBC1hwDECLXPVJAhWjiGbfBCxZd65F/LIZF3+jeJQ==}
 
@@ -18803,9 +18620,6 @@ packages:
   '@workadventure/noise-suppression@0.2.0':
     resolution: {integrity: sha512-lNHmmOiMnWaLWK6hKBsYi/dC/L7lFspYMitWAhk2SXS7QFgHtizeT+4hTDvFDd3MHW+cvSb+Y4nhtQs7xQ5hrw==}
 
-  '@xml-tools/parser@1.0.11':
-    resolution: {integrity: sha512-aKqQ077XnR+oQtHJlrAflaZaL7qZsulWc/i/ZEooar5JiWj1eLt0+Wg28cpa+XLney107wXqneC+oG1IZvxkTA==}
-
   '@xmldom/xmldom@0.9.12':
     resolution: {integrity: sha512-5AXjrcMClTryPe9LgZrygpB1lj7s0S9E0+W+AHaVKAVyHanafK86iPSvG5xHVSp/jC+VH1UXu0TAEmY279xH7A==}
     engines: {node: '>=14.6'}
@@ -19806,9 +19620,6 @@ packages:
   check-error@2.1.1:
     resolution: {integrity: sha512-OAlb+T7V4Op9OwdkjmguYRqncdlx5JiofwOAUkmTF+jNdHwzTaTs4sRAGpzLF3oOz5xAyDGrPgeIDFQmDOTiJw==}
     engines: {node: '>= 16'}
-
-  chevrotain@7.1.1:
-    resolution: {integrity: sha512-wy3mC1x4ye+O+QkEinVJkPf5u2vsrDIYW9G7ZuwFl6v/Yu0LwUuT2POsb+NUWApebyxfkQq6+yDfRExbnI5rcw==}
 
   chokidar@3.6.0:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
@@ -23078,9 +22889,6 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  javascript-natural-sort@0.7.1:
-    resolution: {integrity: sha512-nO6jcEfZWQXDhOiBtG2KvKyEptz7RVbpGP4vTD2hLBdmNQSsCiicO2Ioinv6UI4y9ukqnBpy+XZ9H6uLNgJTlw==}
-
   jest-changed-files@30.5.1:
     resolution: {integrity: sha512-0+bvMM/ENhDI29Z8q1r4HxiDIi4G5tnBmSw4esfPQoj9q8Nik7KIyuxHkTVnnniJQf05SxpGaKDQ+4h28ynGPg==}
     engines: {node: ^18.14.0 || ^20.0.0 || ^22.0.0 || >=24.0.0}
@@ -25050,9 +24858,6 @@ packages:
     resolution: {integrity: sha512-RmVuCHWsfu0QPNW+mraxh/xjQVw/lhUCUru8Zni3Ctq3AoMhpDTq0OVdKS6iesd6Kqb7viCV3isAL43dciOSog==}
     engines: {node: '>=14'}
 
-  parse-imports-exports@0.2.4:
-    resolution: {integrity: sha512-4s6vd6dx1AotCx/RCI2m7t7GCh5bDRUtGNvRfHSP2wbBQdMi67pPe7mtzmgwcaQ8VKK/6IB7Glfyu3qdZJPybQ==}
-
   parse-imports@2.2.1:
     resolution: {integrity: sha512-OL/zLggRp8mFhKL0rNORUTR4yBYujK/uU+xZL+/0Rgm2QE4nLO9v8PzEweSJEbMGKmDRjJE4R3IMJlL2di4JeQ==}
     engines: {node: '>= 18'}
@@ -25072,9 +24877,6 @@ packages:
   parse-ms@4.0.0:
     resolution: {integrity: sha512-TXfryirbmq34y8QBwgqCVLi+8oA3oWx2eAnSn62ITyEhEYaWRlVZ2DvMM9eZbMs/RfxPu/PK/aBLyGj4IrqMHw==}
     engines: {node: '>=18'}
-
-  parse-statements@1.0.11:
-    resolution: {integrity: sha512-HlsyYdMBnbPQ9Jr/VgJ1YF4scnldvJpJxCVx6KgqPL4dxppsWrJHCIIxQXMJrqGnsRkNPATbeMJ8Yxu7JMsYcA==}
 
   parse5@4.0.0:
     resolution: {integrity: sha512-VrZ7eOd3T1Fk4XWNXMgiGBK/z0MG48BWG2uQNU4I72fkQuKUTZpl+u9k+CxEG0twMVzSmXEEz12z5Fnw1jIQFA==}
@@ -25504,69 +25306,9 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  prettier-plugin-tailwindcss@0.8.1:
-    resolution: {integrity: sha512-iaFMYqDsE4ffdDkn5qup0j5f2aCEBFZrdrZnvu9QKTlWx/iGPeQ4HHu7b7fCPMxeo9nwQBiOAh2nSypdFYWJkw==}
-    engines: {node: '>=20.19'}
-    peerDependencies:
-      '@ianvs/prettier-plugin-sort-imports': '*'
-      '@prettier/plugin-hermes': '*'
-      '@prettier/plugin-oxc': '*'
-      '@prettier/plugin-pug': '*'
-      '@shopify/prettier-plugin-liquid': '*'
-      '@trivago/prettier-plugin-sort-imports': '*'
-      '@zackad/prettier-plugin-twig': '*'
-      prettier: ^3.0
-      prettier-plugin-astro: '*'
-      prettier-plugin-css-order: '*'
-      prettier-plugin-jsdoc: '*'
-      prettier-plugin-marko: '*'
-      prettier-plugin-multiline-arrays: '*'
-      prettier-plugin-organize-attributes: '*'
-      prettier-plugin-organize-imports: '*'
-      prettier-plugin-sort-imports: '*'
-      prettier-plugin-svelte: '*'
-    peerDependenciesMeta:
-      '@ianvs/prettier-plugin-sort-imports':
-        optional: true
-      '@prettier/plugin-hermes':
-        optional: true
-      '@prettier/plugin-oxc':
-        optional: true
-      '@prettier/plugin-pug':
-        optional: true
-      '@shopify/prettier-plugin-liquid':
-        optional: true
-      '@trivago/prettier-plugin-sort-imports':
-        optional: true
-      '@zackad/prettier-plugin-twig':
-        optional: true
-      prettier-plugin-astro:
-        optional: true
-      prettier-plugin-css-order:
-        optional: true
-      prettier-plugin-jsdoc:
-        optional: true
-      prettier-plugin-marko:
-        optional: true
-      prettier-plugin-multiline-arrays:
-        optional: true
-      prettier-plugin-organize-attributes:
-        optional: true
-      prettier-plugin-organize-imports:
-        optional: true
-      prettier-plugin-sort-imports:
-        optional: true
-      prettier-plugin-svelte:
-        optional: true
-
   prettier@2.8.8:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
-    hasBin: true
-
-  prettier@3.9.10:
-    resolution: {integrity: sha512-skGHTH1Yb9QvaTC4hWnRTzEYtCpApF0UMBPz+t/0ZPzP8ihefo/btKd+QA7pUE0fEwA1SbS/NmhyEcstdXOIdA==}
-    engines: {node: '>=14'}
     hasBin: true
 
   pretty-error@4.0.0:
@@ -26179,9 +25921,6 @@ packages:
 
   regex@6.1.0:
     resolution: {integrity: sha512-6VwtthbV4o/7+OaAF9I5L5V3llLEsoPyq9P1JVXkedTP33c7MfCG0/5NOPcSJn0TzXcG9YUrR0gQSWioew3LDg==}
-
-  regexp-to-ast@0.5.0:
-    resolution: {integrity: sha512-tlbJqcMHnPKI9zSrystikWKwHkBqu2a/Sgw01h3zFjvYrMxEDYHzzoMZnUrbIfpTFEsoRnnviOXNCzFiSc54Qw==}
 
   regexpu-core@6.4.0:
     resolution: {integrity: sha512-0ghuzq67LI9bLXpOX/ISfve/Mq33a4aFRzoQYhnnok1JOFpmE/A2TBGkNVenOGEeSBCjIiWcc6MVOG5HEQv0sA==}
@@ -34335,11 +34074,6 @@ snapshots:
 
   '@preact/signals-core@1.13.0': {}
 
-  '@prettier/plugin-xml@3.4.2(prettier@3.9.10)':
-    dependencies:
-      '@xml-tools/parser': 1.0.11
-      prettier: 3.9.10
-
   '@prometheus-io/client@0.16.1':
     dependencies:
       '@opentelemetry/api': 1.9.1
@@ -35319,14 +35053,14 @@ snapshots:
     dependencies:
       uuid: 9.0.1
 
-  '@storybook/addon-docs@10.6.6(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(storybook@10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1))':
+  '@storybook/addon-docs@10.6.6(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(storybook@10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))':
     dependencies:
       '@mdx-js/react': 3.1.0(@types/react@18.3.31)(react@18.3.1)
       '@storybook/icons': 2.1.0(react@18.3.1)
-      '@storybook/react-dom-shim': 10.6.6(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1))
+      '@storybook/react-dom-shim': 10.6.6(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      storybook: 10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1)
+      storybook: 10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1)
       ts-dedent: 2.2.0
       unplugin: 2.3.11
     optionalDependencies:
@@ -35334,17 +35068,17 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react-dom'
 
-  '@storybook/addon-links@10.6.6(@types/react@18.3.31)(react@18.3.1)(storybook@10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1))':
+  '@storybook/addon-links@10.6.6(@types/react@18.3.31)(react@18.3.1)(storybook@10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))':
     dependencies:
       '@storybook/global': 5.0.0
-      storybook: 10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1)
+      storybook: 10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1)
     optionalDependencies:
       '@types/react': 18.3.31
       react: 18.3.1
 
-  '@storybook/builder-webpack5@10.6.6(@swc/core@1.16.22(@swc/helpers@0.5.17))(@typescript/typescript6@6.0.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(sharp@0.35.5(@types/node@24.19.2))(storybook@10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1))(svgo@4.1.0)(webpack-cli@7.3.1)':
+  '@storybook/builder-webpack5@10.6.6(@swc/core@1.16.22(@swc/helpers@0.5.17))(@typescript/typescript6@6.0.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(sharp@0.35.5(@types/node@24.19.2))(storybook@10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))(svgo@4.1.0)(webpack-cli@7.3.1)':
     dependencies:
-      '@storybook/core-webpack': 10.6.6(storybook@10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1))
+      '@storybook/core-webpack': 10.6.6(storybook@10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))
       case-sensitive-paths-webpack-plugin: 2.4.0
       cjs-module-lexer: 1.4.3
       css-loader: 7.1.5(webpack@5.112.2)
@@ -35353,7 +35087,7 @@ snapshots:
       html-webpack-plugin: 5.6.8(webpack@5.112.2)
       magic-string: 1.4.5
       semver: 7.8.6
-      storybook: 10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1)
+      storybook: 10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1)
       style-loader: 4.0.0(webpack@5.112.2)
       terser-webpack-plugin: 5.6.1(@swc/core@1.16.22(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(webpack@5.112.2)
       ts-dedent: 2.2.0
@@ -35385,9 +35119,9 @@ snapshots:
       - utf-8-validate
       - webpack-cli
 
-  '@storybook/core-webpack@10.6.6(storybook@10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1))':
+  '@storybook/core-webpack@10.6.6(storybook@10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))':
     dependencies:
-      storybook: 10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1)
+      storybook: 10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1)
       ts-dedent: 2.2.0
 
   '@storybook/global@5.0.0': {}
@@ -35396,9 +35130,9 @@ snapshots:
     dependencies:
       react: 18.3.1
 
-  '@storybook/preset-react-webpack@10.6.6(@swc/core@1.16.22(@swc/helpers@0.5.17))(@typescript/typescript6@6.0.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sharp@0.35.5(@types/node@24.19.2))(storybook@10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.3.1)':
+  '@storybook/preset-react-webpack@10.6.6(@swc/core@1.16.22(@swc/helpers@0.5.17))(@typescript/typescript6@6.0.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sharp@0.35.5(@types/node@24.19.2))(storybook@10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.3.1)':
     dependencies:
-      '@storybook/core-webpack': 10.6.6(storybook@10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1))
+      '@storybook/core-webpack': 10.6.6(storybook@10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))
       '@storybook/react-docgen-typescript-plugin': 1.0.6--canary.9.0c3f3b7.0(@typescript/typescript6@6.0.2)(supports-color@11.0.0)(webpack@5.112.2)
       '@types/semver': 7.8.0
       magic-string: 1.4.5
@@ -35407,7 +35141,7 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       resolve: 1.22.12
       semver: 7.8.6
-      storybook: 10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1)
+      storybook: 10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1)
       tsconfig-paths: 4.2.0
       webpack: 5.112.2(@swc/core@1.16.22(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(sharp@0.35.5(@types/node@24.19.2))(svgo@4.1.0)(webpack-cli@7.3.1)
     optionalDependencies:
@@ -35446,23 +35180,23 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@storybook/react-dom-shim@10.6.6(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1))':
+  '@storybook/react-dom-shim@10.6.6(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))':
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      storybook: 10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1)
+      storybook: 10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1)
     optionalDependencies:
       '@types/react': 18.3.31
       '@types/react-dom': 18.3.7(@types/react@18.3.31)
 
-  '@storybook/react-webpack5@10.6.6(@swc/core@1.16.22(@swc/helpers@0.5.17))(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(@typescript/typescript6@6.0.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sharp@0.35.5(@types/node@24.19.2))(storybook@10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.3.1)':
+  '@storybook/react-webpack5@10.6.6(@swc/core@1.16.22(@swc/helpers@0.5.17))(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(@typescript/typescript6@6.0.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sharp@0.35.5(@types/node@24.19.2))(storybook@10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.3.1)':
     dependencies:
-      '@storybook/builder-webpack5': 10.6.6(@swc/core@1.16.22(@swc/helpers@0.5.17))(@typescript/typescript6@6.0.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(sharp@0.35.5(@types/node@24.19.2))(storybook@10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1))(svgo@4.1.0)(webpack-cli@7.3.1)
-      '@storybook/preset-react-webpack': 10.6.6(@swc/core@1.16.22(@swc/helpers@0.5.17))(@typescript/typescript6@6.0.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sharp@0.35.5(@types/node@24.19.2))(storybook@10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.3.1)
-      '@storybook/react': 10.6.6(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(@typescript/typescript6@6.0.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1))(supports-color@11.0.0)
+      '@storybook/builder-webpack5': 10.6.6(@swc/core@1.16.22(@swc/helpers@0.5.17))(@typescript/typescript6@6.0.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(sharp@0.35.5(@types/node@24.19.2))(storybook@10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))(svgo@4.1.0)(webpack-cli@7.3.1)
+      '@storybook/preset-react-webpack': 10.6.6(@swc/core@1.16.22(@swc/helpers@0.5.17))(@typescript/typescript6@6.0.2)(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sharp@0.35.5(@types/node@24.19.2))(storybook@10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))(supports-color@11.0.0)(svgo@4.1.0)(webpack-cli@7.3.1)
+      '@storybook/react': 10.6.6(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(@typescript/typescript6@6.0.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))(supports-color@11.0.0)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      storybook: 10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1)
+      storybook: 10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1)
     optionalDependencies:
       typescript: '@typescript/typescript6@6.0.2'
     transitivePeerDependencies:
@@ -35490,15 +35224,15 @@ snapshots:
       - utf-8-validate
       - webpack-cli
 
-  '@storybook/react@10.6.6(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(@typescript/typescript6@6.0.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1))(supports-color@11.0.0)':
+  '@storybook/react@10.6.6(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(@typescript/typescript6@6.0.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))(supports-color@11.0.0)':
     dependencies:
       '@storybook/global': 5.0.0
-      '@storybook/react-dom-shim': 10.6.6(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1))
+      '@storybook/react-dom-shim': 10.6.6(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1))
       react: 18.3.1
       react-docgen: 8.0.2(supports-color@11.0.0)
       react-docgen-typescript: 2.4.0(@typescript/typescript6@6.0.2)
       react-dom: 18.3.1(react@18.3.1)
-      storybook: 10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1)
+      storybook: 10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1)
     optionalDependencies:
       '@types/react': 18.3.31
       '@types/react-dom': 18.3.7(@types/react@18.3.31)
@@ -35947,23 +35681,6 @@ snapshots:
       js-yaml: 5.5.0
       nodemailer: 10.4.0
       vcf: 2.1.2
-
-  '@trivago/prettier-plugin-sort-imports@6.0.2(@vue/compiler-sfc@3.5.42)(prettier@3.9.10)(supports-color@11.0.0)(svelte@5.56.4(@typescript-eslint/types@8.71.2))':
-    dependencies:
-      '@babel/generator': 7.29.7
-      '@babel/parser': 7.29.8
-      '@babel/traverse': 7.29.7(supports-color@11.0.0)
-      '@babel/types': 7.29.8
-      javascript-natural-sort: 0.7.1
-      lodash-es: 4.18.1
-      minimatch: 9.0.9
-      parse-imports-exports: 0.2.4
-      prettier: 3.9.10
-    optionalDependencies:
-      '@vue/compiler-sfc': 3.5.42
-      svelte: 5.56.4(@typescript-eslint/types@8.71.2)
-    transitivePeerDependencies:
-      - supports-color
 
   '@ts-morph/common@0.27.0':
     dependencies:
@@ -37172,10 +36889,6 @@ snapshots:
     dependencies:
       '@ricky0123/vad-web': 0.0.30
       fft.js: 4.0.4
-
-  '@xml-tools/parser@1.0.11':
-    dependencies:
-      chevrotain: 7.1.1
 
   '@xmldom/xmldom@0.9.12': {}
 
@@ -38451,10 +38164,6 @@ snapshots:
       '@kurkle/color': 0.3.2
 
   check-error@2.1.1: {}
-
-  chevrotain@7.1.1:
-    dependencies:
-      regexp-to-ast: 0.5.0
 
   chokidar@3.6.0:
     dependencies:
@@ -42190,8 +41899,6 @@ snapshots:
       filelist: 1.0.4
       minimatch: 3.1.5
 
-  javascript-natural-sort@0.7.1: {}
-
   jest-changed-files@30.5.1:
     dependencies:
       execa: 5.1.1
@@ -45042,10 +44749,6 @@ snapshots:
 
   parse-gitignore@2.0.0: {}
 
-  parse-imports-exports@0.2.4:
-    dependencies:
-      parse-statements: 1.0.11
-
   parse-imports@2.2.1:
     dependencies:
       es-module-lexer: 1.7.0
@@ -45069,8 +44772,6 @@ snapshots:
       type-fest: 4.41.0
 
   parse-ms@4.0.0: {}
-
-  parse-statements@1.0.11: {}
 
   parse5@4.0.0: {}
 
@@ -45458,15 +45159,7 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-tailwindcss@0.8.1(@trivago/prettier-plugin-sort-imports@6.0.2(@vue/compiler-sfc@3.5.42)(prettier@3.9.10)(supports-color@11.0.0)(svelte@5.56.4(@typescript-eslint/types@8.71.2)))(prettier@3.9.10):
-    dependencies:
-      prettier: 3.9.10
-    optionalDependencies:
-      '@trivago/prettier-plugin-sort-imports': 6.0.2(@vue/compiler-sfc@3.5.42)(prettier@3.9.10)(supports-color@11.0.0)(svelte@5.56.4(@typescript-eslint/types@8.71.2))
-
   prettier@2.8.8: {}
-
-  prettier@3.9.10: {}
 
   pretty-error@4.0.0:
     dependencies:
@@ -46231,8 +45924,6 @@ snapshots:
   regex@6.1.0:
     dependencies:
       regex-utilities: 2.3.0
-
-  regexp-to-ast@0.5.0: {}
 
   regexpu-core@6.4.0:
     dependencies:
@@ -47229,7 +46920,7 @@ snapshots:
 
   stealthy-require@1.1.1: {}
 
-  storybook@10.6.6(@types/react@18.3.31)(prettier@3.9.10)(react@18.3.1):
+  storybook@10.6.6(@types/react@18.3.31)(prettier@2.8.8)(react@18.3.1):
     dependencies:
       '@storybook/global': 5.0.0
       '@storybook/icons': 2.1.0(react@18.3.1)
@@ -47250,7 +46941,7 @@ snapshots:
       ws: 8.22.1
     optionalDependencies:
       '@types/react': 18.3.31
-      prettier: 3.9.10
+      prettier: 2.8.8
     transitivePeerDependencies:
       - bufferutil
       - react

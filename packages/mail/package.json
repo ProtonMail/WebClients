@@ -65,7 +65,7 @@
     "scripts": {
         "check:types": "tsc --checkers 1",
         "lint": "oxlint --quiet",
-        "pretty:fix": "oxfmt --write \"**/*.{ts,tsx,js}\" && prettier --write \"**/*.{scss,css,json,md}\"",
+        "pretty:fix": "oxfmt --write \"**/*.{ts,tsx,js,scss,css,json,md}\"",
         "test": "jest --logHeapUsage --forceExit",
         "test:ci": "jest --runInBand --ci --forceExit --logHeapUsage",
         "test:coverage": "jest --collectCoverage",
@@ -97,7 +97,6 @@
     },
     "devDependencies": {
         "@proton/jest-swc-preset": "workspace:^",
-        "@proton/oxfmt-config": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
         "@testing-library/jest-dom": "catalog:",
         "@testing-library/react-hooks": "catalog:",
@@ -113,7 +112,6 @@
         "oxfmt": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "prettier": "catalog:",
         "react-dom": "catalog:",
         "typescript": "catalog:"
     }

@@ -43,6 +43,7 @@
         "react": "catalog:"
     },
     "devDependencies": {
+        "@proton/oxfmt-config": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
         "@types/mustache": "^4.2.6",
         "@types/node": "catalog:",
@@ -52,7 +53,6 @@
         "mustache": "^4.2.0",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "prettier": "catalog:",
         "tsx": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"

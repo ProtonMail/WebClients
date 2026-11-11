@@ -13,7 +13,7 @@
     "scripts": {
         "check:types": "tsc --checkers 1",
         "lint": "oxlint --quiet",
-        "pretty": "prettier --write $(find src fixtures -type f -name '*.ts')",
+        "pretty": "oxfmt --write \"src/**/*.ts\" \"fixtures/**/*.ts\"",
         "test": "jest",
         "test:ci": "pnpm run test",
         "test:watch": "jest --watch --coverage=false --watchAll"
@@ -34,7 +34,6 @@
         "jest": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "prettier": "catalog:",
         "typescript": "catalog:"
     }
 }

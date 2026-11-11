@@ -123,9 +123,9 @@ export type ExpireConversationsRequest = {
 export const expireConversationsRequest = createAction<ExpireConversationsRequest>(
     'lumo/conversation/expireConversationsRequest'
 );
-export const locallyDeleteConversationFromLocalRequest = createAction<ConversationId>('lumo/conversation/locallyDeleteFromLocalRequest'); // prettier-ignore
-export const locallyDeleteConversationFromRemoteRequest = createAction('lumo/conversation/locallyDeleteFromRemoteRequest', prepareAutoBatched<ConversationId>()); // prettier-ignore
-export const locallyRefreshConversationFromRemoteRequest = createAction('lumo/conversation/refreshFromRemoteRequest', prepareAutoBatched<RemoteConversation>()); // prettier-ignore
+export const locallyDeleteConversationFromLocalRequest = createAction<ConversationId>('lumo/conversation/locallyDeleteFromLocalRequest'); // oxfmt-ignore
+export const locallyDeleteConversationFromRemoteRequest = createAction('lumo/conversation/locallyDeleteFromRemoteRequest', prepareAutoBatched<ConversationId>()); // oxfmt-ignore
+export const locallyRefreshConversationFromRemoteRequest = createAction('lumo/conversation/refreshFromRemoteRequest', prepareAutoBatched<RemoteConversation>()); // oxfmt-ignore
 export const pullConversationRequest = createAction<PullConversationRequest>('lumo/conversation/pullRequest');
 export const pullConversationSuccess = createAction<GetConversationRemote>('lumo/conversation/pullSuccess');
 export const pullConversationFailure = createAction<ConversationId>('lumo/conversation/pullFailure');

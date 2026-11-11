@@ -66,7 +66,7 @@ type ResourceName =
     | 'skills'
     | 'skill-files';
 
-// prettier-ignore
+// oxfmt-ignore
 type PostableResource =
     | NewMessageToApi
     | NewConversationToApi
@@ -76,10 +76,9 @@ type PostableResource =
     | UserSettingsToApi
     | NewSkillToApi
     | SkillToApi
-    | NewSkillFileToApi
-    ;
+    | NewSkillFileToApi;
 
-// prettier-ignore
+// oxfmt-ignore
 type PuttableResource =
     | ConversationToApi
     | SpaceToApi

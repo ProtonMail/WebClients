@@ -127,10 +127,15 @@ describe('isInitializationFailureReportable', () => {
     });
 
     it('should skip a 401 from the API because the session is gone', () => {
-        const unauthorized = createApiError('StatusCodeError', new Response(null, { status: 401 }), {}, {
-            Code: 401,
-            Error: 'Invalid access token',
-        });
+        const unauthorized = createApiError(
+            'StatusCodeError',
+            new Response(null, { status: 401 }),
+            {},
+            {
+                Code: 401,
+                Error: 'Invalid access token',
+            }
+        );
 
         expect(isInitializationFailureReportable(unauthorized)).toBe(false);
     });
@@ -140,10 +145,15 @@ describe('isInitializationFailureReportable', () => {
     });
 
     it('should report another 4xx from the API with a message', () => {
-        const unprocessable = createApiError('StatusCodeError', new Response(null, { status: 422 }), {}, {
-            Code: 422,
-            Error: 'Invalid input',
-        });
+        const unprocessable = createApiError(
+            'StatusCodeError',
+            new Response(null, { status: 422 }),
+            {},
+            {
+                Code: 422,
+                Error: 'Invalid input',
+            }
+        );
 
         expect(isInitializationFailureReportable(unprocessable)).toBe(true);
     });

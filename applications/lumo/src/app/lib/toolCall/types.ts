@@ -56,7 +56,7 @@ export type WebSearchToolCallData = { name: 'web_search'; arguments: WebSearchAr
 export type WebExtractToolCallData = { name: 'web_extract'; arguments: WebSearchArguments };
 
 export function isWebSearchToolCallData(data: unknown): data is WebSearchToolCallData {
-    // prettier-ignore
+    // oxfmt-ignore
     return (
         typeof data === 'object' &&
         data !== null &&
@@ -66,7 +66,7 @@ export function isWebSearchToolCallData(data: unknown): data is WebSearchToolCal
 }
 
 export function isWebExtractToolCallData(data: unknown): data is WebExtractToolCallData {
-    // prettier-ignore
+    // oxfmt-ignore
     return (
         typeof data === 'object' &&
         data !== null &&
@@ -81,7 +81,7 @@ type WebSearchArguments = {
 };
 
 function isWebSearchArguments(args: unknown): args is WebSearchArguments {
-    // prettier-ignore
+    // oxfmt-ignore
     return (
         typeof args === 'object' &&
         args !== null &&
@@ -92,7 +92,7 @@ function isWebSearchArguments(args: unknown): args is WebSearchArguments {
 type DescribeImageToolCallData = { name: 'describe_image'; arguments: DescribeImageArguments };
 
 function isDescribeImageToolCallData(data: unknown): data is DescribeImageToolCallData {
-    // prettier-ignore
+    // oxfmt-ignore
     return (
         typeof data === 'object' &&
         data !== null &&
@@ -107,7 +107,7 @@ type DescribeImageArguments = {
 };
 
 function isDescribeImageArguments(args: unknown): args is DescribeImageArguments {
-    // prettier-ignore
+    // oxfmt-ignore
     return (
         typeof args === 'object' &&
         args !== null &&
@@ -119,7 +119,7 @@ function isDescribeImageArguments(args: unknown): args is DescribeImageArguments
 type GenerateImageToolCallData = { name: 'generate_image'; arguments: GenerateImageArguments };
 
 function isGenerateImageToolCallData(data: unknown): data is GenerateImageToolCallData {
-    // prettier-ignore
+    // oxfmt-ignore
     return (
         typeof data === 'object' &&
         data !== null &&
@@ -136,7 +136,7 @@ type GenerateImageArguments = {
 };
 
 function isGenerateImageArguments(args: unknown): args is GenerateImageArguments {
-    // prettier-ignore
+    // oxfmt-ignore
     return (
         typeof args === 'object' &&
         args !== null &&
@@ -150,7 +150,7 @@ function isGenerateImageArguments(args: unknown): args is GenerateImageArguments
 type EditImageToolCallData = { name: 'edit_image'; arguments: EditImageArguments };
 
 function isEditImageToolCallData(data: unknown): data is EditImageToolCallData {
-    // prettier-ignore
+    // oxfmt-ignore
     return (
         typeof data === 'object' &&
         data !== null &&
@@ -167,7 +167,7 @@ type EditImageArguments = {
 };
 
 function isEditImageArguments(args: unknown): args is EditImageArguments {
-    // prettier-ignore
+    // oxfmt-ignore
     return (
         typeof args === 'object' &&
         args !== null &&
@@ -181,7 +181,7 @@ function isEditImageArguments(args: unknown): args is EditImageArguments {
 type ProtonInfoToolCallData = { name: 'proton_info' };
 
 function isProtonInfoToolCallData(data: unknown): data is ProtonInfoToolCallData {
-    // prettier-ignore
+    // oxfmt-ignore
     return (
         typeof data === 'object' &&
         data !== null &&
@@ -192,7 +192,7 @@ function isProtonInfoToolCallData(data: unknown): data is ProtonInfoToolCallData
 type WeatherToolCallData = { name: 'weather'; arguments: WeatherArguments };
 
 function isWeatherToolCallData(data: unknown): data is WeatherToolCallData {
-    // prettier-ignore
+    // oxfmt-ignore
     return (
         typeof data === 'object' &&
         data !== null &&
@@ -208,7 +208,7 @@ type WeatherArguments = {
 };
 
 function isWeatherArguments(args: unknown): args is WeatherArguments {
-    // prettier-ignore
+    // oxfmt-ignore
     return (
         typeof args === 'object' &&
         args !== null &&
@@ -242,7 +242,7 @@ function isWeatherLocation(location: unknown): location is WeatherLocation {
 export type StockToolCallData = { name: 'stock'; arguments: StockArguments };
 
 export function isStockToolCallData(data: unknown): data is StockToolCallData {
-    // prettier-ignore
+    // oxfmt-ignore
     return (
         typeof data === 'object' &&
         data !== null &&
@@ -257,7 +257,7 @@ type StockArguments = {
 };
 
 function isStockArguments(args: unknown): args is StockArguments {
-    // prettier-ignore
+    // oxfmt-ignore
     return (
         typeof args === 'object' &&
         args !== null &&
@@ -269,7 +269,7 @@ function isStockArguments(args: unknown): args is StockArguments {
 export type CryptocurrencyToolCallData = { name: 'cryptocurrency'; arguments: CryptocurrencyArguments };
 
 export function isCryptocurrencyToolCallData(data: unknown): data is CryptocurrencyToolCallData {
-    // prettier-ignore
+    // oxfmt-ignore
     return (
         typeof data === 'object' &&
         data !== null &&
@@ -284,7 +284,7 @@ type CryptocurrencyArguments = {
 };
 
 function isCryptocurrencyArguments(args: unknown): args is CryptocurrencyArguments {
-    // prettier-ignore
+    // oxfmt-ignore
     return (
         typeof args === 'object' &&
         args !== null &&
@@ -330,7 +330,7 @@ export type WebSourceToolResultData = {
 };
 
 export function isWebSourceToolResultData(data: unknown): data is WebSourceToolResultData {
-    // prettier-ignore
+    // oxfmt-ignore
     return (
         typeof data === 'object' &&
         data !== null &&

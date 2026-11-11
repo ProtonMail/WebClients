@@ -10,7 +10,7 @@
     },
     "scripts": {
         "lint": "oxlint --quiet",
-        "pretty": "prettier --write  $(find lib/ index.js -type f -name '*.js')",
+        "pretty": "oxfmt --write \"lib/**/*.js\" index.js",
         "test": "./test/test-linter.sh* && ./test/test-validator.sh",
         "test:ci": "pnpm run test"
     },
@@ -23,7 +23,6 @@
     "devDependencies": {
         "@proton/oxlint-config": "workspace:^",
         "oxlint": "catalog:",
-        "oxlint-tsgolint": "catalog:",
-        "prettier": "catalog:"
+        "oxlint-tsgolint": "catalog:"
     }
 }

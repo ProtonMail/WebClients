@@ -73,7 +73,7 @@
     "scripts": {
         "check:types": "tsc --checkers 1",
         "lint": "oxlint --quiet",
-        "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "pretty": "oxfmt --write \"src/app/**/*.{js,ts,tsx}\"",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone",
         "test": "TZ=UTC vitest",
         "test:ci": "TZ=UTC vitest run",
@@ -119,7 +119,6 @@
         "happy-dom": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "prettier": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
     }

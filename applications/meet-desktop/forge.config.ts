@@ -37,8 +37,8 @@ const config: ForgeConfig = {
         appBundleId: pkg.config.appBundleId,
         osxSign: process.env.APPLE_TEAM_ID
             ? {
-                identity: `Developer ID Application: Proton AG (${process.env.APPLE_TEAM_ID!})`,
-            }
+                  identity: `Developer ID Application: Proton AG (${process.env.APPLE_TEAM_ID!})`,
+              }
             : undefined,
         osxNotarize: {
             appleId: process.env.APPLE_ID!,
@@ -178,6 +178,7 @@ const config: ForgeConfig = {
                     overlay: {
                         runtimeErrors: (error) => {
                             if (error?.message === "ResizeObserver loop completed with undelivered notifications.") {
+                                // eslint-disable-next-line no-console
                                 console.error(error);
                                 return false;
                             }

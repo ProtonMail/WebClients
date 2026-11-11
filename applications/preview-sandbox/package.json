@@ -7,7 +7,7 @@
         "build": "cross-env NODE_ENV=production ./bin/build.mjs",
         "check:types": "tsc --checkers 1",
         "lint": "oxlint --quiet",
-        "pretty": "prettier --write  $(find src -type f -name '*.ts')",
+        "pretty": "oxfmt --write \"src/**/*.ts\"",
         "test": "echo No tests yet",
         "test:ci": "echo No tests yet"
     },
@@ -26,7 +26,6 @@
         "esbuild": "^0.28.2",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "prettier": "catalog:",
         "typescript": "catalog:"
     }
 }

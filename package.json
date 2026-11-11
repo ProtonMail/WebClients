@@ -18,7 +18,6 @@
         "version": "pnpm --filter @proton/version run version"
     },
     "dependencies": {
-        "@proton/prettier-config-proton": "workspace:^",
         "@proton/stylelint-config-proton": "workspace:^",
         "is-ci": "^4.1.0",
         "stylelint-config-standard-scss": "^10.0.0",
@@ -26,20 +25,19 @@
         "typescript": "^6.0.3"
     },
     "devDependencies": {
-        "@prettier/plugin-xml": "^3.4.2",
         "@proton/account": "workspace:^",
         "@proton/activation": "workspace:^",
         "@proton/calendar": "workspace:^",
         "@proton/components": "workspace:^",
         "@proton/docs-core": "workspace:^",
         "@proton/nav": "workspace:^",
+        "@proton/oxfmt-config": "workspace:^",
         "@proton/payments": "workspace:^",
         "@proton/payments-hooks": "workspace:^",
         "@proton/payments-ui": "workspace:^",
         "@proton/redux-shared-store": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/types": "workspace:^",
-        "@trivago/prettier-plugin-sort-imports": "^6.0.2",
         "@types/global-types-monorepo": "workspace:^",
         "@types/node": "catalog:",
         "@typescript/native": "catalog:",
@@ -50,8 +48,6 @@
         "oxfmt": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "prettier": "catalog:",
-        "prettier-plugin-tailwindcss": "catalog:",
         "sort-package-json": "^4.1.0",
         "stylelint": "catalog:",
         "turbo": "2.11.10"

@@ -16,7 +16,6 @@
     "scripts": {
         "check:types": "tsc --checkers 1",
         "lint": "oxlint --quiet",
-        "prettier": "prettier",
         "test": "jest",
         "test:ci": "jest --runInBand --ci --logHeapUsage",
         "test:watch": "jest --watch"
@@ -74,7 +73,6 @@
         "jest-junit": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "prettier": "catalog:",
         "typescript": "catalog:"
     },
     "peerDependencies": {

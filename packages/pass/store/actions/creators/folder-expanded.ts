@@ -1,7 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 
 import { pipe } from '../../../utils/fp/pipe';
-
 import { withThrottledCache } from '../enhancers/cache';
 import { withSynchronousAction } from '../enhancers/client';
 

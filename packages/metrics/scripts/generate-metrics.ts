@@ -1,9 +1,10 @@
 /* eslint-disable no-console */
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import * as prettier from 'prettier';
 import readline from 'readline';
 import ts from 'typescript';
+
+import { formatSource } from '@proton/oxfmt-config/formatSource';
 
 type MetricType = 'Counter' | 'Histogram';
 
@@ -181,8 +182,7 @@ import Histogram from './lib/Histogram';
 
 ` + code;
 
-    const options = await prettier.resolveConfig(path.join('..', '..', 'prettier.config.mjs'));
-    return prettier.format(code, { ...options, parser: 'typescript' });
+    return formatSource('metrics.ts', code);
 }
 
 const rl = readline.createInterface({

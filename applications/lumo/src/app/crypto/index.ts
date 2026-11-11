@@ -106,7 +106,7 @@ export async function decryptUint8Array(
         return await decryptData(encryptKey, encryptedBytes, adBytes);
     } catch (error) {
         if (error instanceof DOMException && error.name === 'OperationError' && ad !== undefined) {
-            // prettier-ignore
+            // oxfmt-ignore
             console.error(
                 'Error during decryption. A possible cause is an incorrect AD. ' +
                 'This payload was attempted to be decrypted with the following AD, make sure it matches the AD used during encryption.\n' +

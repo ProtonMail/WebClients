@@ -32,7 +32,7 @@ execSync(`npm run build:host`, { stdio: 'inherit', env });
 
 // napi-rs regenerates index.d.ts with its own formatting, so reformat it to match the
 // committed style right away — otherwise every build shows a diff even with no real change.
-execSync('npx prettier --write index.d.ts', { stdio: 'inherit' });
+execSync('npx oxfmt --write index.d.ts', { stdio: 'inherit' });
 
 if (process.platform === 'darwin') {
     // Code sign mode binaries for macos
