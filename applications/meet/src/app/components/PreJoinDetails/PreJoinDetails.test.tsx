@@ -16,6 +16,7 @@ import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagement
 import { selectWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import { selectIsGuest, selectUserId } from '@proton/meet/store/slices/userSlice';
 import { selectIsWaitingRoomAdmissionActive } from '@proton/meet/store/slices/waitingRoomSlice';
+import type { FeatureFlag } from '@proton/unleash/Flags';
 
 import { getDesktopAppPreference, saveDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
 import { PreJoinDetails } from './PreJoinDetails';
@@ -28,7 +29,7 @@ const mocks = vi.hoisted(() => ({
     isIpad: vi.fn(),
     isSafari: vi.fn(),
     isFirefox: vi.fn(),
-    isOpenLinksInDesktopAppEnabled: true,
+    flags: {} as Partial<Record<FeatureFlag, boolean>>,
     isHost: false,
     waitingRoomEnabled: false,
     isGuest: false,
@@ -76,7 +77,7 @@ vi.mock('@proton/meet/telemetry/meetTelemetry', async (importOriginal) => ({
 }));
 
 vi.mock('@proton/unleash/useFlag', () => ({
-    useFlag: () => mocks.isOpenLinksInDesktopAppEnabled,
+    useFlag: (flag: FeatureFlag) => mocks.flags[flag] ?? false,
 }));
 
 vi.mock('@proton/app-context/useNotifications', () => ({
@@ -122,7 +123,7 @@ beforeEach(() => {
     mocks.isIpad.mockReturnValue(false);
     mocks.isSafari.mockReturnValue(false);
     mocks.isFirefox.mockReturnValue(false);
-    mocks.isOpenLinksInDesktopAppEnabled = true;
+    mocks.flags = { MeetOpenDesktopAppOnLoad: false, MeetOpenLinksInDesktopApp: true };
     mocks.isHost = false;
     mocks.waitingRoomEnabled = false;
     mocks.isGuest = false;
@@ -130,19 +131,29 @@ beforeEach(() => {
 });
 
 describe.each([
-    { page: 'Safari', isSafari: true, isFirefox: false, isOpenLinksInDesktopAppEnabled: true },
-    { page: 'Firefox', isSafari: false, isFirefox: true, isOpenLinksInDesktopAppEnabled: true },
     {
-        page: 'other browsers with the flag off',
+        page: 'Safari with MeetOpenDesktopAppOnLoad on',
+        isSafari: true,
+        isFirefox: false,
+        isOpenDesktopAppOnLoadEnabled: true,
+    },
+    {
+        page: 'Firefox with MeetOpenDesktopAppOnLoad on',
+        isSafari: false,
+        isFirefox: true,
+        isOpenDesktopAppOnLoadEnabled: true,
+    },
+    {
+        page: 'other browsers with MeetOpenDesktopAppOnLoad off',
         isSafari: false,
         isFirefox: false,
-        isOpenLinksInDesktopAppEnabled: false,
+        isOpenDesktopAppOnLoadEnabled: false,
     },
-])('PreJoinDetails on $page', ({ isSafari, isFirefox, isOpenLinksInDesktopAppEnabled }) => {
+])('PreJoinDetails on $page', ({ isSafari, isFirefox, isOpenDesktopAppOnLoadEnabled }) => {
     beforeEach(() => {
         mocks.isSafari.mockReturnValue(isSafari);
         mocks.isFirefox.mockReturnValue(isFirefox);
-        mocks.isOpenLinksInDesktopAppEnabled = isOpenLinksInDesktopAppEnabled;
+        mocks.flags.MeetOpenDesktopAppOnLoad = isOpenDesktopAppOnLoadEnabled;
     });
 
     describe('primary action label', () => {
@@ -246,7 +257,7 @@ describe.each([
             expect(screen.getByRole('button', { name: 'Join in browser' })).toBeEnabled();
         });
 
-        it.runIf(isOpenLinksInDesktopAppEnabled)('opens the app on load when the choice was remembered', () => {
+        it('opens the app on load when the choice was remembered', () => {
             saveDesktopAppPreference(USER_STORAGE_KEY);
             renderPreJoinDetails();
 
@@ -398,7 +409,11 @@ describe.each([
     });
 });
 
-describe('PreJoinDetails on other desktop browsers with the flag on', () => {
+describe('PreJoinDetails on other desktop browsers with MeetOpenDesktopAppOnLoad on', () => {
+    beforeEach(() => {
+        mocks.flags.MeetOpenDesktopAppOnLoad = true;
+    });
+
     it.each([
         { role: 'participant', isHost: false },
         { role: 'host', isHost: true },
@@ -409,6 +424,14 @@ describe('PreJoinDetails on other desktop browsers with the flag on', () => {
         expect(screen.getAllByRole('button', { name: 'Join meeting' })).toHaveLength(1);
         expect(screen.queryByRole('button', { name: OPEN_IN_DESKTOP_APP })).not.toBeInTheDocument();
         expect(screen.queryByText("App didn't open?")).not.toBeInTheDocument();
+    });
+
+    it('offers one "Join meeting" button and no desktop app button with MeetOpenLinksInDesktopApp off', () => {
+        mocks.flags.MeetOpenLinksInDesktopApp = false;
+        renderPreJoinDetails();
+
+        expect(screen.getAllByRole('button', { name: 'Join meeting' })).toHaveLength(1);
+        expect(screen.queryByRole('button', { name: OPEN_IN_DESKTOP_APP })).not.toBeInTheDocument();
     });
 
     it('does not open the app itself, even when the choice was remembered', () => {

@@ -13,7 +13,7 @@ import { selectMeetingInfoModel } from '@proton/meet/store/slices/meetingInfoMod
 import type { MeetDispatch, MeetExtraThunkArguments, MeetState } from '@proton/meet/store/store';
 
 import { getUrlMeetingLinkName, getUrlMeetingPassword } from '../hooks/srp/getUrlMeetingParams';
-import { OPEN_LINKS_IN_DESKTOP_APP_FLAG, getDesktopAppOption, tryOpenInDesktopApp } from './desktopAppDetector';
+import { OPEN_DESKTOP_APP_ON_LOAD_FLAG, getDesktopAppOption, tryOpenInDesktopApp } from './desktopAppDetector';
 
 const addMeetListener = addListener.withTypes<MeetState, MeetDispatch, MeetExtraThunkArguments>();
 
@@ -56,10 +56,10 @@ export const startDesktopAppLaunchOnLoad = ({ dispatch }: { dispatch: Dispatch }
                     return;
                 }
 
-                const isOpenLinksInDesktopAppEnabled =
-                    listenerApi.extra.unleashClient.isEnabled(OPEN_LINKS_IN_DESKTOP_APP_FLAG);
+                const isOpenDesktopAppOnLoadEnabled =
+                    listenerApi.extra.unleashClient.isEnabled(OPEN_DESKTOP_APP_ON_LOAD_FLAG);
 
-                if (getDesktopAppOption(isOpenLinksInDesktopAppEnabled) === 'openOnLoad') {
+                if (getDesktopAppOption(isOpenDesktopAppOnLoadEnabled) === 'openOnLoad') {
                     tryOpenInDesktopApp(selectMeetingLink(listenerApi.getState()));
                 }
             },

@@ -10,6 +10,7 @@ import type { MeetingInfoModel } from '@proton/meet/store/slices/meetingInfoMode
 import { meetingInfoModelReducer, resetMeetingInfoModel } from '@proton/meet/store/slices/meetingInfoModel';
 import type { MeetExtraThunkArguments } from '@proton/meet/store/store';
 import { CustomPasswordState } from '@proton/shared/lib/interfaces/Meet';
+import type { FeatureFlag } from '@proton/unleash/Flags';
 
 import { tryOpenInDesktopApp } from './desktopAppDetector';
 import { startDesktopAppLaunchOnLoad } from './startDesktopAppLaunchOnLoad';
@@ -63,15 +64,15 @@ const loadedMeetingInfo: MeetingInfoModel = {
 
 const loadPage = ({
     path = MEETING_PATH,
-    isOpenLinksInDesktopAppEnabled = true,
+    flags = { MeetOpenDesktopAppOnLoad: true },
     isMeetingInfoLoaded = true,
-}: { path?: string; isOpenLinksInDesktopAppEnabled?: boolean; isMeetingInfoLoaded?: boolean } = {}) => {
+}: { path?: string; flags?: Partial<Record<FeatureFlag, boolean>>; isMeetingInfoLoaded?: boolean } = {}) => {
     window.history.replaceState(null, '', path);
 
     const listenerMiddleware = createListenerMiddleware({
         extra: {
             unleashClient: {
-                isEnabled: (flag: string) => flag === 'MeetOpenLinksInDesktopApp' && isOpenLinksInDesktopAppEnabled,
+                isEnabled: (flag: FeatureFlag) => flags[flag] ?? false,
             },
         } as unknown as MeetExtraThunkArguments,
     });
@@ -230,8 +231,8 @@ describe('startDesktopAppLaunchOnLoad', () => {
         expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
     });
 
-    it('does not open the app when the flag is off', () => {
-        const page = loadPage({ isOpenLinksInDesktopAppEnabled: false });
+    it('does not open the app when MeetOpenDesktopAppOnLoad is off, even with MeetOpenLinksInDesktopApp on', () => {
+        const page = loadPage({ flags: { MeetOpenLinksInDesktopApp: true } });
 
         page.showLoadedMeeting();
 

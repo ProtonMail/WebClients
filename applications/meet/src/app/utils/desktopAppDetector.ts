@@ -1,17 +1,17 @@
 import { isDesktop, isFirefox, isIpad, isSafari } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
-export const OPEN_LINKS_IN_DESKTOP_APP_FLAG = 'MeetOpenLinksInDesktopApp';
+export const OPEN_DESKTOP_APP_ON_LOAD_FLAG = 'MeetOpenDesktopAppOnLoad';
 
 type DesktopAppOption = 'unavailable' | 'appButton' | 'openOnLoad';
 
 export const canOpenInDesktopApp = (): boolean => !isElectronApp && isDesktop() && !isIpad();
 
-export const getDesktopAppOption = (isOpenLinksInDesktopAppEnabled: boolean): DesktopAppOption => {
+export const getDesktopAppOption = (isOpenDesktopAppOnLoadEnabled: boolean): DesktopAppOption => {
     if (!canOpenInDesktopApp()) {
         return 'unavailable';
     }
-    if (isOpenLinksInDesktopAppEnabled && !isSafari() && !isFirefox()) {
+    if (isOpenDesktopAppOnLoadEnabled && !isSafari() && !isFirefox()) {
         return 'openOnLoad';
     }
     return 'appButton';
