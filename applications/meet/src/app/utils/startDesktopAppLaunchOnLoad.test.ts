@@ -7,7 +7,7 @@ import {
     setCurrentMeeting,
 } from '@proton/meet/store/slices/currentMeeting';
 import type { MeetingInfoModel } from '@proton/meet/store/slices/meetingInfoModel';
-import { meetingInfoModelReducer } from '@proton/meet/store/slices/meetingInfoModel';
+import { meetingInfoModelReducer, resetMeetingInfoModel } from '@proton/meet/store/slices/meetingInfoModel';
 import type { MeetExtraThunkArguments } from '@proton/meet/store/store';
 import { CustomPasswordState } from '@proton/shared/lib/interfaces/Meet';
 
@@ -109,6 +109,11 @@ const loadPage = ({
             showMeetingLink();
             finishLoading();
         },
+        leaveJoinPage: () => {
+            store.dispatch(resetCurrentMeeting());
+            store.dispatch(resetMeetingInfoModel());
+        },
+        receiveMeetingInfo: () => store.dispatch({ type: 'meetingInfoModel/fulfilled', payload: loadedMeetingInfo }),
     };
 };
 
@@ -186,6 +191,17 @@ describe('startDesktopAppLaunchOnLoad', () => {
         const page = loadPage({ isMeetingInfoLoaded: false });
 
         page.showLoadedMeeting();
+
+        expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
+    });
+
+    it('does not open the app for the same meeting opened again after leaving a page whose meeting info did not load', () => {
+        const page = loadPage({ isMeetingInfoLoaded: false });
+
+        page.showLoadedMeeting();
+        page.leaveJoinPage();
+        page.showLoadedMeeting();
+        page.receiveMeetingInfo();
 
         expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
     });

@@ -3,6 +3,7 @@ import { addListener } from '@reduxjs/toolkit';
 
 import { setJoiningInProgress } from '@proton/meet/store/slices/connectionSlice';
 import {
+    resetCurrentMeeting,
     selectIsMeetingLoading,
     selectMeetingLink,
     selectMeetingLinkName,
@@ -27,7 +28,8 @@ const getMeetingFromLoadedUrl = () => {
     }
 };
 
-const isJoinInBrowser = (action: UnknownAction) => setJoiningInProgress.match(action) && action.payload;
+const endsPageLoadPrejoin = (action: UnknownAction) =>
+    (setJoiningInProgress.match(action) && action.payload) || resetCurrentMeeting.match(action);
 
 export const startDesktopAppLaunchOnLoad = ({ dispatch }: { dispatch: Dispatch }) => {
     const loadedMeeting = getMeetingFromLoadedUrl();
@@ -46,11 +48,11 @@ export const startDesktopAppLaunchOnLoad = ({ dispatch }: { dispatch: Dispatch }
 
     dispatch(
         addMeetListener({
-            predicate: (action, state) => isJoinInBrowser(action) || isLoadedMeetingReady(state),
+            predicate: (action, state) => endsPageLoadPrejoin(action) || isLoadedMeetingReady(state),
             effect: (action, listenerApi) => {
                 listenerApi.unsubscribe();
 
-                if (isJoinInBrowser(action)) {
+                if (endsPageLoadPrejoin(action)) {
                     return;
                 }
 
