@@ -10,6 +10,7 @@ import AppsDropdown, { UnAuthenticatedAppsDropdown } from '@proton/components/co
 import { openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
 import UserDropdown from '@proton/components/containers/heading/UserDropdown';
 import { IcQuestionCircle } from '@proton/icons/icons/IcQuestionCircle';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
@@ -26,6 +27,7 @@ import { CloseButton } from '../../atoms/CloseButton/CloseButton';
 import { useHelpAndFeedback } from '../../hooks/useHelpAndFeedback';
 import { MeetSignIn } from '../SignIn/SignIn';
 import { SettingsDropdown } from './SettingsDropdown';
+import { useIsTextTruncated } from './useIsTextTruncated';
 
 import './PageHeader.scss';
 
@@ -39,6 +41,8 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
     const history = useHistory();
     const isGuest = useMeetSelector(selectIsGuest);
     const helpAndFeedback = useHelpAndFeedback();
+    const signInLabel = c('Action').t`Sign in`;
+    const { ref: signInLabelRef, isTruncated: isSignInTruncated } = useIsTextTruncated<HTMLSpanElement>();
 
     const handleSignUpClick = () => {
         const returnUrl = getAppHref(SSO_PATHS.MEET_SIGNUP, APPS.PROTONACCOUNT);
@@ -74,17 +78,11 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
         ? '/dashboard'
         : `${location.pathname}${location.hash}`;
 
+    const showAppsDropdown = showAppSwitcher && !isInstantJoin;
+
     const buttons = (
         <div className="flex flex-nowrap gap-2 items-center w-custom" style={{ '--w-custom': 'fit-content' }}>
-            {showAppSwitcher && !isInstantJoin && (
-                <>
-                    {isGuest ? (
-                        <UnAuthenticatedAppsDropdown app={APPS.PROTONMEET} />
-                    ) : (
-                        <AppsDropdown app={APPS.PROTONMEET} />
-                    )}
-                </>
-            )}
+            {isGuest ? <UnAuthenticatedAppsDropdown app={APPS.PROTONMEET} /> : <AppsDropdown app={APPS.PROTONMEET} />}
         </div>
     );
 
@@ -98,11 +96,11 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
                 {c('Action').t`Skip to main content`}
             </a>
             <header
-                className="meet-page-header w-full py-4 flex items-center justify-space-between shrink-0 h-custom"
+                className="meet-page-header w-full py-4 flex flex-nowrap items-center justify-space-between shrink-0 h-custom"
                 style={{ '--h-custom': '5.625rem' }}
             >
                 <nav
-                    className={clsx('flex items-center', showAppSwitcher ? 'gap-4' : 'gap-2')}
+                    className={clsx('flex items-center shrink-0', showAppSwitcher ? 'gap-4' : 'gap-2')}
                     aria-label={c('Aria').t`Primary navigation`}
                 >
                     <button
@@ -120,28 +118,37 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
                         <MeetLogo variant="glyph-only" className="logo cursor-pointer" />
                     </button>
 
-                    <div className="hidden md:inline-block w-fit-content">{buttons}</div>
+                    {showAppsDropdown && <div className="hidden md:inline-block w-fit-content">{buttons}</div>}
                 </nav>
 
                 {!isInstantJoin && (
                     <div className="flex flex-nowrap gap-2 items-center">
-                        <div className="md:hidden w-custom" style={{ '--w-custom': 'fit-content' }}>
-                            {buttons}
-                        </div>
+                        {showAppsDropdown && (
+                            <div className="md:hidden w-custom shrink-0" style={{ '--w-custom': 'fit-content' }}>
+                                {buttons}
+                            </div>
+                        )}
                         <div>
-                            <div className="flex items-center sign-in-header-button-container">
+                            <div className="flex flex-nowrap items-center sign-in-header-button-container">
                                 {isGuest ? (
                                     <>
-                                        <MeetSignIn
-                                            className="sign-in-header-button rounded-full py-2"
-                                            onClick={() =>
-                                                sendMeetDashboardEvent(TelemetryMeetDashboardEvents.sign_in_clicked, {
-                                                    source: isJoinPage ? 'prejoin' : 'guest_dashboard',
-                                                })
-                                            }
-                                        >
-                                            {c('Action').t`Sign in`}
-                                        </MeetSignIn>
+                                        <Tooltip title={signInLabel} isOpen={isSignInTruncated ? undefined : false}>
+                                            <MeetSignIn
+                                                className="sign-in-header-button rounded-full py-2"
+                                                onClick={() =>
+                                                    sendMeetDashboardEvent(
+                                                        TelemetryMeetDashboardEvents.sign_in_clicked,
+                                                        {
+                                                            source: isJoinPage ? 'prejoin' : 'guest_dashboard',
+                                                        }
+                                                    )
+                                                }
+                                            >
+                                                <span ref={signInLabelRef} className="block text-ellipsis">
+                                                    {signInLabel}
+                                                </span>
+                                            </MeetSignIn>
+                                        </Tooltip>
                                         <Button
                                             className="create-account-header-button rounded-full py-2"
                                             onClick={handleSignUpClick}
@@ -150,10 +157,20 @@ export const PageHeader = ({ showAppSwitcher = true, isInstantJoin = false }: Pa
                                         >
                                             {c('Action').t`Create an account`}
                                         </Button>
+                                        <Tooltip title={c('Action').t`Create an account`}>
+                                            <Button
+                                                shape="ghost"
+                                                className="create-account-header-icon-button settings-button settings-button-icon p-0 flex items-center justify-center shrink-0"
+                                                aria-label={c('Action').t`Create an account`}
+                                                onClick={handleSignUpClick}
+                                            >
+                                                <IcUserPlus size={5} color="var(--icon-color)" />
+                                            </Button>
+                                        </Tooltip>
                                         <Tooltip title={c('Action').t`Help and feedback`}>
                                             <Button
                                                 shape="ghost"
-                                                className="settings-button settings-button-icon p-0 flex items-center justify-center"
+                                                className="settings-button settings-button-icon p-0 flex items-center justify-center shrink-0"
                                                 aria-label={c('Action').t`Help and feedback`}
                                                 onClick={helpAndFeedback.openHelpAndFeedback}
                                             >

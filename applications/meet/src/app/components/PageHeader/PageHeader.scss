@@ -183,6 +183,18 @@ im.$media-expressions: $media-expressions;
 		background-color: transparent;
 		color: var(--interaction-norm-major-1);
 	}
+
+	@include im.media('<=xsmall') {
+		display: none !important;
+	}
+}
+
+.create-account-header-icon-button {
+	display: none !important;
+
+	@include im.media('<=xsmall') {
+		display: flex !important;
+	}
 }
 
 .sign-in-header-button-container {
@@ -219,5 +231,9 @@ im.$media-expressions: $media-expressions;
 	&:focus {
 		background-color: transparent;
 		color: var(--text-norm);
+	}
+
+	@include im.media('<=xsmall') {
+		--padding-inline: 0.5em;
 	}
 }
