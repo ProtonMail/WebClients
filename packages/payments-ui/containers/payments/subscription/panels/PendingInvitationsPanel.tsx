@@ -1,0 +1,77 @@
+import { useEffect, useState } from 'react';
+
+import { c, msgid } from 'ttag';
+
+import { useGetUserInvitations } from '@proton/account/userInvitations/hooks';
+import { Button } from '@proton/atoms/Button/Button';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import PendingInvitationModal from '@proton/components/containers/payments/subscription/PendingInvitationModal';
+import useUid from '@proton/components/hooks/useUid';
+import { CacheType } from '@proton/redux-utilities/interface';
+import type { PendingInvitation } from '@proton/shared/lib/interfaces/PendingInvitation';
+import noop from '@proton/utils/noop';
+
+interface Props {
+    invites: PendingInvitation[];
+}
+
+const PendingInvitationPanel = ({ invites }: Props) => {
+    const [selectedInvitation, setSelectedInvitation] = useState<PendingInvitation>();
+    const [invitationModal, setInvitationModal, renderInvitationModal] = useModalState();
+    const uid = useUid('pending-invitation-dashboard');
+    const getUserInvitations = useGetUserInvitations();
+
+    useEffect(() => {
+        // Force refresh the invitations when user navigates back to the dashboard
+        getUserInvitations({ cache: CacheType.None }).catch(noop);
+    }, []);
+
+    const handleInvitationClick = (invitation: PendingInvitation) => {
+        setSelectedInvitation(invitation);
+        setInvitationModal(true);
+    };
+
+    if (invites.length === 0) {
+        return null;
+    }
+
+    return (
+        <>
+            <div className="border rounded px-6 py-5" data-testid="pending-invitations-panel">
+                <div className="flex">
+                    <h3 className="text-lg mb-6">
+                        <strong>
+                            {c('familyOffer_2023:Family plan').ngettext(
+                                msgid`Pending invitation`,
+                                `Pending invitations`,
+                                invites.length
+                            )}
+                        </strong>
+                    </h3>
+                    {invites && (
+                        <section className="w-full border-top border-weak">
+                            {invites.map((invitation) => (
+                                <div key={invitation.ID} className="border-bottom border-weak py-2">
+                                    <div>{c('familyOffer_2023:Family plan')
+                                        .t`Invitation from ${invitation.OrganizationName}`}</div>
+                                    <Button
+                                        className="p-0"
+                                        shape="underline"
+                                        color="norm"
+                                        onClick={() => handleInvitationClick(invitation)}
+                                    >{c('familyOffer_2023:Action').t`View invitation`}</Button>
+                                </div>
+                            ))}
+                        </section>
+                    )}
+                </div>
+            </div>
+
+            {selectedInvitation && renderInvitationModal && (
+                <PendingInvitationModal invite={selectedInvitation} {...invitationModal} key={uid} />
+            )}
+        </>
+    );
+};
+
+export default PendingInvitationPanel;

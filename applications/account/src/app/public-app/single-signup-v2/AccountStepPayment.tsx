@@ -5,13 +5,13 @@ import { c } from 'ttag';
 
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import { changeDefaultPaymentMethodBeforePayment } from '@proton/components/containers/payments/DefaultPaymentMethodMessage';
-import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { ProtonPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/ProtonPlanCustomizer';
 import { getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/helpers';
 import type { WithLoading } from '@proton/hooks/useLoading';
 import { BilledUserInlineMessage } from '@proton/payments-hooks/client-extensions/billed-user/BilledUserInlineMessage';
 import { GuardBanner } from '@proton/payments-hooks/ui/components/GuardBanner';
 import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
+import PaymentWrapper from '@proton/payments-ui/containers/payments/PaymentWrapper';
 import { useBillingAddress } from '@proton/payments-ui/ui/billing-address/hooks/useBillingAddress';
 import { PayButton } from '@proton/payments-ui/ui/components/PayButton';
 import { getHeadlessCheckout } from '@proton/payments-ui/ui/headless-checkout/get-headless-checkout';

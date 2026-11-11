@@ -1,0 +1,327 @@
+import { fireEvent, screen, waitFor, within } from '@testing-library/react';
+
+import { useAddresses } from '@proton/account/addresses/hooks';
+import { useAllEntitlements } from '@proton/account/entitlements/hooks';
+import { useOrganization } from '@proton/account/organization/hooks';
+import { useUser } from '@proton/account/user/hooks';
+import { useGetUserInvitations, useUserInvitations } from '@proton/account/userInvitations/hooks';
+import { useCache } from '@proton/app-context/useCache';
+import { useConfig } from '@proton/app-context/useConfig';
+import { useCalendars } from '@proton/calendar/calendars/hooks';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { buildPreloadedState } from '@proton/components/testing/buildPreloadedState';
+import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
+import {
+    addresses,
+    calendars,
+    organization,
+    pendingInvite,
+    subscriptionBundle,
+    user,
+} from '@proton/components/testing/subscriptionData';
+import useFeature from '@proton/features/useFeature';
+import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
+import { EntitlementType } from '@proton/payments/core/entitlements/interface';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
+import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import { mockUseFlag } from '@proton/unleash/testing/mockUseFlag';
+
+import YourPlanSection from './YourPlanSection';
+
+jest.mock('@proton/app-context/useConfig');
+const mockUseConfig = useConfig as jest.MockedFunction<any>;
+mockUseConfig.mockReturnValue({ APP_NAME: APPS.PROTONMAIL });
+
+jest.mock('@proton/account/user/hooks');
+const mockUseUser = useUser as jest.MockedFunction<any>;
+
+jest.mock('@proton/account/addresses/hooks');
+const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
+mockUseAddresses.mockReturnValue([addresses, false]);
+
+jest.mock('@proton/calendar/calendars/hooks');
+const mockUseCalendars = useCalendars as jest.MockedFunction<any>;
+mockUseCalendars.mockReturnValue([calendars, false]);
+
+jest.mock('@proton/account/organization/hooks');
+const mockUseOrganization = useOrganization as jest.MockedFunction<any>;
+mockUseOrganization.mockReturnValue([[], false]);
+
+jest.mock('@proton/account/userInvitations/hooks');
+const mockUsePendingUserInvitations = useUserInvitations as jest.MockedFunction<any>;
+mockUsePendingUserInvitations.mockReturnValue([[], false]);
+const mockUseGetPendingUserInvitations = useGetUserInvitations as jest.MockedFunction<any>;
+mockUseGetPendingUserInvitations.mockReturnValue(async () => []);
+
+jest.mock('@proton/components/hooks/useLoad');
+
+const mockOpenSubscriptionModal = jest.fn();
+jest.mock('@proton/components/containers/payments/subscription/subscriptionModalContext', () => ({
+    __esModule: true,
+    useSubscriptionModal: () => [mockOpenSubscriptionModal],
+    useSubscriptionModalRaw: () => mockOpenSubscriptionModal,
+}));
+
+jest.mock('@proton/features/useFeature');
+const mockUseFeature = useFeature as jest.MockedFunction<any>;
+mockUseFeature.mockReturnValue({ feature: { Value: true } });
+
+jest.mock('@proton/app-context/useCache');
+const mockUseCache = useCache as jest.MockedFunction<any>;
+mockUseCache.mockReturnValue({ get: jest.fn(), delete: jest.fn() });
+
+jest.mock('@proton/account/entitlements/hooks', () => ({
+    useAllEntitlements: jest.fn(),
+}));
+const mockUseAllEntitlements = useAllEntitlements as jest.MockedFunction<any>;
+mockUseAllEntitlements.mockReturnValue([undefined, false]);
+
+jest.mock('@proton/components/hooks/useActiveBreakpoint');
+const mockUseActiveBreakpoint = useActiveBreakpoint as jest.MockedFunction<any>;
+mockUseActiveBreakpoint.mockReturnValue({ viewportWidth: { '<=small': false } });
+
+// Mock duo flag to true
+mockUseFlag().mockImplementation(() => {
+    return true;
+});
+
+describe('YourPlanSection', () => {
+    beforeEach(() => {
+        jest.clearAllMocks();
+
+        mockUseUser.mockReturnValue([user, false]);
+        mockUsePendingUserInvitations.mockReturnValue([[], false]);
+        mockUseOrganization.mockReturnValue([{}, false]);
+        mockUseAllEntitlements.mockReturnValue([undefined, false]);
+    });
+
+    afterEach(() => {
+        mockUseUser.mockRestore();
+        mockUsePendingUserInvitations.mockRestore();
+        mockUseOrganization.mockRestore();
+        mockUseAllEntitlements.mockRestore();
+    });
+
+    describe('when user has no pending invite', () => {
+        it('should only render subscription panel and upsell panels', async () => {
+            const { getByTestId } = renderWithProviders(<YourPlanSection app={APPS.PROTONMAIL} />, {
+                preloadedState: buildPreloadedState({
+                    subscription: subscriptionBundle,
+                }),
+            });
+
+            let dashboardPanelsContainer: HTMLElement;
+            await waitFor(() => {
+                dashboardPanelsContainer = getByTestId('dashboard-panels-container');
+            });
+
+            expect(dashboardPanelsContainer!.childNodes).toHaveLength(3);
+            const [subscriptionPanel, , familyUpsell] = dashboardPanelsContainer!.childNodes;
+
+            // Subscription Panel
+            expect(subscriptionPanel).toBeTruthy();
+            within(subscriptionPanel as HTMLElement).getByText('Proton Unlimited');
+            within(subscriptionPanel as HTMLElement).getByText('Edit billing cycle');
+            within(subscriptionPanel as HTMLElement).getByText('Explore other Proton plans');
+
+            // Upsell Panel
+            expect(familyUpsell).toBeTruthy();
+            within(familyUpsell as HTMLElement).getByText('Proton Family');
+            const upsellButton = within(familyUpsell as HTMLElement).getByTestId('upsell-cta');
+            fireEvent.click(upsellButton);
+
+            await waitFor(() => expect(mockOpenSubscriptionModal).toHaveBeenCalledTimes(1));
+            expect(mockOpenSubscriptionModal).toHaveBeenCalledWith({
+                cycle: CYCLE.YEARLY,
+                plan: PLANS.FAMILY,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                disablePlanSelection: true,
+                telemetryFlow: 'mail-dashboard-variant-B',
+            });
+        });
+    });
+
+    describe('when user has pending invites', () => {
+        it('should render subscription panel and pending invites, without upsells', async () => {
+            mockUsePendingUserInvitations.mockReturnValue([[pendingInvite], false]);
+
+            renderWithProviders(<YourPlanSection app={APPS.PROTONMAIL} />, {
+                preloadedState: buildPreloadedState({
+                    subscription: subscriptionBundle,
+                }),
+            });
+
+            let dashboardPanelsContainer: HTMLElement;
+            await waitFor(() => {
+                dashboardPanelsContainer = screen.getByTestId('dashboard-panels-container');
+            });
+
+            await waitFor(() => {
+                expect(dashboardPanelsContainer!.childNodes).toHaveLength(4);
+            });
+            const [subscriptionPanel] = dashboardPanelsContainer!.childNodes;
+            const invitePanel = screen.getByTestId('pending-invitations-panel');
+
+            // Subscription Panel
+            expect(subscriptionPanel).toBeTruthy();
+            within(subscriptionPanel as HTMLElement).getByText('Proton Unlimited');
+            within(subscriptionPanel as HTMLElement).getByText('Edit billing cycle');
+            within(subscriptionPanel as HTMLElement).getByText('Explore other Proton plans');
+
+            // Invite Panel
+            expect(invitePanel).toBeTruthy();
+            within(invitePanel as HTMLElement).getByText('Pending invitation');
+            within(invitePanel as HTMLElement).getByText('Invitation from Test Org');
+            within(invitePanel as HTMLElement).getByText('View invitation');
+        });
+    });
+
+    describe('[duo]', () => {
+        it('should render subscription and upsells, including sentinel and excluding users', async () => {
+            mockUseUser.mockReturnValue([{ ...user, isFree: true }]);
+            mockUseOrganization.mockReturnValue([{}]);
+
+            const { getByTestId } = renderWithProviders(<YourPlanSection app={APPS.PROTONMAIL} />, {
+                preloadedState: buildPreloadedState(),
+            });
+
+            let dashboardPanelsContainer: HTMLElement;
+            await waitFor(() => {
+                dashboardPanelsContainer = getByTestId('dashboard-panels-container');
+            });
+
+            expect(dashboardPanelsContainer!.childNodes).toHaveLength(3);
+            const [subscriptionPanel, mailPlusUpsell, unlimitedUpsell] = dashboardPanelsContainer!.childNodes;
+
+            // Subscription Panel
+            expect(subscriptionPanel).toBeTruthy();
+            within(subscriptionPanel as HTMLElement).getByText('Free');
+
+            // Upsell Panel
+            expect(mailPlusUpsell).toBeTruthy();
+            expect(within(mailPlusUpsell as HTMLElement).getByText('Mail Plus')).toBeInTheDocument();
+            expect(unlimitedUpsell).toBeTruthy();
+            expect(within(unlimitedUpsell as HTMLElement).getByText('Proton Unlimited')).toBeInTheDocument();
+
+            // Sentinel should be there
+            expect(
+                within(subscriptionPanel as HTMLElement).queryByText('Proton Sentinel program')
+            ).not.toBeInTheDocument();
+            expect(
+                within(mailPlusUpsell as HTMLElement).queryByText('Proton Sentinel program')
+            ).not.toBeInTheDocument();
+            expect(within(unlimitedUpsell as HTMLElement).getByText('Proton Sentinel program')).toBeInTheDocument();
+
+            // Users should be there
+            expect(within(subscriptionPanel as HTMLElement).queryByText(/user/)).not.toBeInTheDocument();
+            expect(within(mailPlusUpsell as HTMLElement).queryByText(/user/)).not.toBeInTheDocument();
+            expect(within(unlimitedUpsell as HTMLElement).queryByText(/user/)).not.toBeInTheDocument();
+        });
+
+        it('should render subscription and upsells, including sentinel and users', async () => {
+            mockUseOrganization.mockReturnValue([{ PlanName: PLANS.DUO }]);
+            mockUseAllEntitlements.mockReturnValue([
+                {
+                    OrganizationEntitlements: [
+                        { Name: EntitlementName.Sentinel, Quantity: 1, Type: EntitlementType.Switch },
+                    ],
+                    UserEntitlements: [],
+                    MemberEntitlements: [],
+                },
+                false,
+            ]);
+
+            const { getByTestId } = renderWithProviders(<YourPlanSection app={APPS.PROTONMAIL} />, {
+                preloadedState: buildPreloadedState({
+                    subscription: subscriptionBundle,
+                }),
+            });
+
+            let dashboardPanelsContainer: HTMLElement;
+            await waitFor(() => {
+                dashboardPanelsContainer = getByTestId('dashboard-panels-container');
+            });
+
+            expect(dashboardPanelsContainer!.childNodes).toHaveLength(3);
+            const [subscriptionPanel, duoUpsell, familyUpsell] = dashboardPanelsContainer!.childNodes;
+
+            // Subscription Panel
+            expect(subscriptionPanel).toBeTruthy();
+            within(subscriptionPanel as HTMLElement).getByText('Proton Unlimited');
+
+            // Upsell Panel
+            expect(duoUpsell).toBeTruthy();
+            expect(within(duoUpsell as HTMLElement).getByText('Proton Duo')).toBeInTheDocument();
+            expect(familyUpsell).toBeTruthy();
+            expect(within(familyUpsell as HTMLElement).getByText('Proton Family')).toBeInTheDocument();
+
+            // Sentinel should be there
+            expect(within(subscriptionPanel as HTMLElement).getByText('Proton Sentinel program')).toBeInTheDocument();
+            expect(within(duoUpsell as HTMLElement).getByText('Proton Sentinel program')).toBeInTheDocument();
+            expect(within(familyUpsell as HTMLElement).getByText('Proton Sentinel program')).toBeInTheDocument();
+
+            // Users should be there
+            expect(within(subscriptionPanel as HTMLElement).getByText('1 user')).toBeInTheDocument();
+            expect(within(duoUpsell as HTMLElement).getByText('Up to 2 users')).toBeInTheDocument();
+            expect(within(familyUpsell as HTMLElement).getByText('Up to 6 users')).toBeInTheDocument();
+        });
+    });
+
+    describe('[business] when there is more than one user in organization', () => {
+        it.skip('should render subscription, usage and upsells', async () => {
+            mockUseOrganization.mockReturnValue([organization]);
+
+            const { getByTestId } = renderWithProviders(<YourPlanSection app={APPS.PROTONMAIL} />, {
+                preloadedState: buildPreloadedState(),
+            });
+
+            let dashboardPanelsContainer: HTMLElement;
+            await waitFor(() => {
+                dashboardPanelsContainer = getByTestId('dashboard-panels-container');
+            });
+
+            expect(dashboardPanelsContainer!.childNodes).toHaveLength(3);
+            const [subscriptionPanel, usagePanel, upsellPanel] = dashboardPanelsContainer!.childNodes;
+
+            // Subscription Panel
+            expect(subscriptionPanel).toBeTruthy();
+            within(subscriptionPanel as HTMLElement).getByText('Proton Pro');
+
+            // Upsell Panel
+            expect(upsellPanel).toBeTruthy();
+            within(upsellPanel as HTMLElement).getByText('Workspace Standard');
+
+            // Usage Panel
+            expect(usagePanel).toBeTruthy();
+            within(usagePanel as HTMLElement).getByText("Your account's usage");
+        });
+
+        it('should render subscription, upsells but not usage when organisation is locked', async () => {
+            mockUseOrganization.mockReturnValue([{ ...organization, State: ORGANIZATION_STATE.DELINQUENT }]);
+
+            const { getByTestId } = renderWithProviders(<YourPlanSection app={APPS.PROTONMAIL} />, {
+                preloadedState: buildPreloadedState({
+                    subscription: buildSubscription(PLANS.MAIL_PRO),
+                }),
+            });
+
+            let dashboardPanelsContainer: HTMLElement;
+            await waitFor(() => {
+                dashboardPanelsContainer = getByTestId('dashboard-panels-container');
+            });
+
+            expect(dashboardPanelsContainer!.childNodes).toHaveLength(2);
+            const [subscriptionPanel, upsellPanel] = dashboardPanelsContainer!.childNodes;
+
+            // Subscription Panel
+            expect(subscriptionPanel).toBeTruthy();
+            within(subscriptionPanel as HTMLElement).getByText('Mail Essentials');
+
+            // Upsell Panel
+            expect(upsellPanel).toBeTruthy();
+            within(upsellPanel as HTMLElement).getByText('Workspace Standard');
+        });
+    });
+});

@@ -12,7 +12,6 @@ import GlobalLoader from '@proton/components/components/globalLoader/GlobalLoade
 import GlobalLoaderProvider from '@proton/components/components/globalLoader/GlobalLoaderProvider';
 import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import ModalsChildren from '@proton/components/containers/modals/Children';
-import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import useDrawerWidth from '@proton/components/hooks/drawer/useDrawerWidth';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import useEventManager from '@proton/components/hooks/useEventManager';
@@ -24,6 +23,7 @@ import { recentlyAccessed } from '@proton/drive/modules/recentlyAccessed';
 import { useInitEncryptedThumbnailCache } from '@proton/drive/modules/thumbnails';
 import { getDrive, getDriveForPhotos, splitNodeUid, useDrive } from '@proton/drive/sdk';
 import useLoading from '@proton/hooks/useLoading';
+import SubscriptionModalProvider from '@proton/payments-ui/containers/payments/subscription/SubscriptionModalProvider';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 

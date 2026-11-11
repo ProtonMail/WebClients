@@ -11,7 +11,6 @@ import ApiModalsHVUpsell from '@proton/components/containers/api/ApiModalsHVUpse
 import { useEventNotifier } from '@proton/components/containers/eventNotifier/useEventNotifier';
 import KeyTransparencyManager from '@proton/components/containers/keyTransparency/KeyTransparencyManager';
 import ModalsChildren from '@proton/components/containers/modals/Children';
-import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { DrawerThemeInjector } from '@proton/components/containers/themes/ThemeInjector';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import useApiStatus from '@proton/components/hooks/useApiStatus';
@@ -22,6 +21,7 @@ import { usePreventWasmLoading } from '@proton/components/hooks/usePreventWasmLo
 import AssistantProvider from '@proton/llm/lib/providers/AssistantProvider';
 import ComposerContainer from '@proton/mail-composer/containers/ComposerContainer';
 import { MailContentRefProvider } from '@proton/mail-composer/hooks/useClickMailContent';
+import SubscriptionModalProvider from '@proton/payments-ui/containers/payments/subscription/SubscriptionModalProvider';
 import { EventNotifierLoopType } from '@proton/shared/lib/eventNotifier/interface';
 
 import { ROUTE_MAIN } from './constants';

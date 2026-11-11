@@ -1,0 +1,94 @@
+import { c } from 'ttag';
+
+import { useNotifications } from '@proton/app-context/useNotifications';
+import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
+import { useRedirectToAccountApp } from '@proton/components/containers/desktop/useRedirectToAccountApp';
+import useModals from '@proton/components/hooks/useModals';
+import useLoading from '@proton/hooks/useLoading';
+import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
+import { InvoiceState } from '@proton/payments/core/constants';
+import { isRegularInvoice } from '@proton/payments/core/helpers';
+import type { Invoice } from '@proton/payments/core/interface';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import isTruthy from '@proton/utils/isTruthy';
+
+import PayInvoiceModal from './PayInvoiceModal';
+
+interface Props {
+    invoice: Invoice;
+    fetchInvoices: () => void;
+    onPreview?: (invoice: Invoice) => void;
+    onDownload: (invoice: Invoice) => void;
+    onEdit: (invoice: Invoice) => Promise<void>;
+    app: APP_NAMES;
+}
+
+const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload, onEdit, app }: Props) => {
+    const { createModal } = useModals();
+    const { createNotification } = useNotifications();
+    const { paymentsApi } = usePaymentsApi();
+    const [downloadLoading, withDownloadLoading] = useLoading();
+    const [viewLoading, withViewLoading] = useLoading();
+    const redirectToAccountApp = useRedirectToAccountApp();
+
+    const list = [
+        [InvoiceState.Unpaid, InvoiceState.Posted].includes(invoice.State) && {
+            text: c('Action').t`Pay`,
+            'data-testid': 'payInvoice',
+            key: 'payInvoice',
+            async onClick() {
+                if (redirectToAccountApp()) {
+                    return;
+                }
+
+                const status = await paymentsApi.paymentStatus();
+                const canPay = status.VendorStates.Card || status.VendorStates.Paypal;
+
+                if (!canPay) {
+                    createNotification({
+                        type: 'error',
+                        text: c('Error').t`Payments are currently not available, please try again later`,
+                    });
+                    return;
+                }
+
+                createModal(<PayInvoiceModal app={app} invoice={invoice} fetchInvoices={fetchInvoices} />);
+            },
+        },
+        {
+            text: c('Action').t`View`,
+            'data-testid': 'viewInvoice',
+            key: 'viewInvoice',
+            onClick: async () => {
+                const handler = async () => {
+                    onPreview?.(invoice);
+                };
+                await withViewLoading(handler());
+            },
+            loading: viewLoading,
+        },
+        {
+            text: c('Action').t`Download`,
+            'data-testid': 'downloadInvoice',
+            key: 'downloadInvoice',
+            onClick: async () => {
+                const handler = async () => {
+                    onDownload(invoice);
+                };
+                await withDownloadLoading(handler());
+            },
+            loading: downloadLoading,
+        },
+        !!invoice.IsExternal &&
+            isRegularInvoice(invoice) && {
+                text: c('Action').t`Edit invoice details`,
+                'data-testid': 'editBillingAddress',
+                key: 'editInvoiceDetails',
+                onClick: () => onEdit(invoice),
+            },
+    ].filter(isTruthy);
+
+    return <DropdownActions loading={Boolean(downloadLoading || viewLoading)} list={list} size="small" />;
+};
+
+export default InvoiceActions;

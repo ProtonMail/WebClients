@@ -2,8 +2,6 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { IDEAL_WERO_BRAND_NAME } from '@proton/chargebee/lib/constants';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import PaymentMethodSelector from '@proton/components/containers/payments/methods/PaymentMethodSelector';
 import { mockEventManager } from '@proton/components/testing/event-manager';
 import { applyHOCs } from '@proton/components/testing/hocs/helpers';
 import { withApi } from '@proton/components/testing/hocs/with-api';
@@ -22,13 +20,15 @@ import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { addApiMock } from '@proton/test-api/api';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import PaymentMethodSelector from '../../containers/payments/methods/PaymentMethodSelector';
 import { CreditsModal } from './CreditsModal';
 
 jest.mock('@proton/atoms/Portal/Portal');
 
 const mockPaymentMethodSelectorRenders = { count: 0 };
-jest.mock('@proton/components/containers/payments/methods/PaymentMethodSelector', () => {
-    const actual = jest.requireActual('@proton/components/containers/payments/methods/PaymentMethodSelector');
+jest.mock('../../containers/payments/methods/PaymentMethodSelector', () => {
+    const actual = jest.requireActual('../../containers/payments/methods/PaymentMethodSelector');
 
     return {
         __esModule: true,

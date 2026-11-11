@@ -3,7 +3,6 @@ import type { ReactNode } from 'react';
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SubscriptionModalContext } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import { mockOrganizationApi } from '@proton/components/hooks/helpers/tests/useOrganization';
 import { mockStatusApi } from '@proton/components/hooks/helpers/tests/usePaymentStatus';
@@ -40,6 +39,7 @@ import { getAddonNameByPlan } from '@proton/shared/lib/payments/plan/helpers';
 import { addApiMock, apiMock } from '@proton/test-api/api';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 
+import SubscriptionModalProvider from '../../containers/payments/subscription/SubscriptionModalProvider';
 import { PaymentsContextProvider } from '../context/PaymentContext';
 import { AutomaticSubscriptionModal, getParameters } from './AutomaticSubscriptionModal';
 import { getEligibility } from './eligibility';

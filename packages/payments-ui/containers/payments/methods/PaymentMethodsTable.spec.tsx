@@ -1,0 +1,311 @@
+import { render, screen } from '@testing-library/react';
+
+import TableBody from '@proton/components/components/table/TableBody';
+import TableRow from '@proton/components/components/table/TableRow';
+import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import type {
+    PayPalDetails,
+    PaymentMethodSepa,
+    SavedCardDetails,
+    SavedPaymentMethod,
+} from '@proton/payments/core/interface';
+import { APPS } from '@proton/shared/lib/constants';
+
+import { formattedSavedSepaDetails } from '../../../payment-methods/sepa/sepa';
+import PaymentMethodsTable from './PaymentMethodsTable';
+
+jest.mock('@proton/components/components/table/TableRow', () => jest.fn());
+jest.mock('@proton/components/components/table/TableBody', () => jest.fn());
+jest.mock('./PaymentMethodActions', () => jest.fn().mockReturnValue(null));
+
+describe('PaymentMethodsTable', () => {
+    it('should render message that user has no payment methods', () => {
+        const { container } = render(<PaymentMethodsTable methods={[]} app={APPS.PROTONMAIL} />);
+
+        expect(container).toHaveTextContent('You have no saved payment methods.');
+    });
+
+    it('should render Card method', () => {
+        const Details: SavedCardDetails = {
+            Name: 'John Smith',
+            ExpMonth: '01',
+            ExpYear: '2034',
+            ZIP: '12345',
+            Country: 'US',
+            Last4: '1234',
+            Brand: 'Visa',
+        };
+
+        const cardPaymentMethod: SavedPaymentMethod = {
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+            Details,
+            Order: 1,
+            ID: 'id123',
+            Autopay: Autopay.ENABLE,
+        };
+
+        const TableBodyMock: jest.Mock = TableBody as any;
+        TableBodyMock.mockReset();
+        TableBodyMock.mockImplementation(({ children }) => children);
+
+        const TableRowMock: jest.Mock = TableRow as any;
+        TableRowMock.mockReset();
+        TableRowMock.mockImplementation(({ cells }) => (
+            <>
+                <span>Table Row</span>
+                <div>{cells}</div>
+            </>
+        ));
+
+        const { container } = render(<PaymentMethodsTable methods={[cardPaymentMethod]} app={APPS.PROTONMAIL} />);
+
+        expect(container).toHaveTextContent(Details.Brand);
+        expect(container).toHaveTextContent(Details.Last4);
+    });
+
+    it('should render Paypal method', () => {
+        const Details: PayPalDetails & { Payer: string } = {
+            BillingAgreementID: 'agreement-id-123',
+            PayerID: 'payer-id-123',
+            Payer: 'John Smith',
+        };
+
+        const paypalMethod: SavedPaymentMethod = {
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
+            Details,
+            Order: 1,
+            ID: 'id123',
+        };
+
+        const TableBodyMock: jest.Mock = TableBody as any;
+        TableBodyMock.mockReset();
+        TableBodyMock.mockImplementation(({ children }) => children);
+
+        const TableRowMock: jest.Mock = TableRow as any;
+        TableRowMock.mockReset();
+        TableRowMock.mockImplementation(({ cells }) => (
+            <>
+                <span>Table Row</span>
+                <div>{cells}</div>
+            </>
+        ));
+
+        const { container } = render(<PaymentMethodsTable methods={[paypalMethod]} app={APPS.PROTONMAIL} />);
+
+        expect(container).toHaveTextContent('PayPal');
+        expect(container).toHaveTextContent('John Smith');
+    });
+
+    it('should render SEPA method', () => {
+        const sepaDetails = {
+            AccountName: 'John Doe',
+            Country: 'DE',
+            Last4: '1234',
+        };
+
+        const sepaMethod: PaymentMethodSepa = {
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+            Details: sepaDetails,
+            Order: 1,
+            ID: 'id-sepa',
+            Autopay: Autopay.ENABLE,
+        };
+
+        render(<PaymentMethodsTable methods={[sepaMethod]} app={APPS.PROTONMAIL} />);
+
+        expect(screen.getByTestId('sepa-payment-method')).toHaveTextContent('Bank Account');
+
+        const sepaDetailsElement = screen.getByTestId('sepa-details');
+        expect(sepaDetailsElement).toHaveTextContent(/IBAN DE .* 1234/);
+        expect(sepaDetailsElement.textContent).toMatch(formattedSavedSepaDetails(sepaMethod.Details));
+    });
+
+    it('should display multiple payment methods', () => {
+        const Details1: SavedCardDetails = {
+            Name: 'John Smith',
+            ExpMonth: '01',
+            ExpYear: '2034',
+            ZIP: '12345',
+            Country: 'US',
+            Last4: '1234',
+            Brand: 'Visa',
+        };
+
+        const cardPaymentMethod1: SavedPaymentMethod = {
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+            Details: Details1,
+            Order: 1,
+            ID: 'id-visa',
+            Autopay: Autopay.ENABLE,
+        };
+
+        const Details2: SavedCardDetails = {
+            Name: 'John Smith',
+            ExpMonth: '01',
+            ExpYear: '2038',
+            ZIP: '12345',
+            Country: 'US',
+            Last4: '4444',
+            Brand: 'Mastercard',
+        };
+
+        const cardPaymentMethod2: SavedPaymentMethod = {
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+            Details: Details2,
+            Order: 2,
+            ID: 'id-mastercard',
+            Autopay: Autopay.ENABLE,
+        };
+
+        const paypalMethod: SavedPaymentMethod = {
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
+            Details: {
+                BillingAgreementID: 'agreement-id-123',
+                PayerID: 'payer-id-123',
+                Payer: 'John Smith PayPal',
+            } as any,
+            Order: 0,
+            ID: 'id-paypal',
+        };
+
+        const TableBodyMock: jest.Mock = TableBody as any;
+        TableBodyMock.mockReset();
+        TableBodyMock.mockImplementation(({ children }) => children);
+
+        const TableRowMock: jest.Mock = TableRow as any;
+        TableRowMock.mockReset();
+        TableRowMock.mockImplementation(({ cells }) => (
+            <>
+                <span>Table Row</span>
+                <div>{cells}</div>
+            </>
+        ));
+
+        const { container } = render(
+            <PaymentMethodsTable
+                methods={[cardPaymentMethod1, cardPaymentMethod2, paypalMethod]}
+                app={APPS.PROTONMAIL}
+            />
+        );
+
+        expect(container).toHaveTextContent('John Smith PayPal');
+        expect(container).toHaveTextContent('Visa');
+        expect(container).toHaveTextContent('Mastercard');
+
+        expect(TableBodyMock.mock.calls[0][0].children.map((it: any) => it.key)).toEqual([
+            'id-visa',
+            'id-mastercard',
+            'id-paypal',
+        ]);
+    });
+
+    it('should display multiple payment methods including SEPA', () => {
+        const Details1: SavedCardDetails = {
+            Name: 'John Smith',
+            ExpMonth: '01',
+            ExpYear: '2034',
+            ZIP: '12345',
+            Country: 'US',
+            Last4: '1234',
+            Brand: 'Visa',
+        };
+
+        const cardPaymentMethod1: SavedPaymentMethod = {
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+            Details: Details1,
+            Order: 1,
+            ID: 'id-visa',
+            Autopay: Autopay.ENABLE,
+        };
+
+        const Details2: SavedCardDetails = {
+            Name: 'John Smith',
+            ExpMonth: '01',
+            ExpYear: '2038',
+            ZIP: '12345',
+            Country: 'US',
+            Last4: '4444',
+            Brand: 'Mastercard',
+        };
+
+        const cardPaymentMethod2: SavedPaymentMethod = {
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+            Details: Details2,
+            Order: 2,
+            ID: 'id-mastercard',
+            Autopay: Autopay.ENABLE,
+        };
+
+        const paypalMethod: SavedPaymentMethod = {
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
+            Details: {
+                BillingAgreementID: 'agreement-id-123',
+                PayerID: 'payer-id-123',
+                Payer: 'John Smith PayPal',
+            } as any,
+            Order: 0,
+            ID: 'id-paypal',
+        };
+
+        const sepaMethod: PaymentMethodSepa = {
+            Type: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
+            Details: {
+                AccountName: 'John Doe',
+                Country: 'DE',
+                Last4: '5678',
+            },
+            Order: 3,
+            ID: 'id-sepa',
+            Autopay: Autopay.ENABLE,
+        };
+
+        const TableBodyMock: jest.Mock = TableBody as any;
+        TableBodyMock.mockReset();
+        TableBodyMock.mockImplementation(({ children }) => children);
+
+        const TableRowMock: jest.Mock = TableRow as any;
+        TableRowMock.mockReset();
+        TableRowMock.mockImplementation(({ cells }) => (
+            <>
+                <span>Table Row</span>
+                <div>{cells}</div>
+            </>
+        ));
+
+        render(
+            <PaymentMethodsTable
+                methods={[cardPaymentMethod1, cardPaymentMethod2, paypalMethod, sepaMethod]}
+                app={APPS.PROTONMAIL}
+            />
+        );
+
+        expect(screen.getByText('John Smith PayPal')).toBeInTheDocument();
+        // check that there are two elements card-details: one visa and one mastercard
+        const cardDetails = screen.getAllByTestId('card-details');
+        expect(cardDetails).toHaveLength(2);
+        expect(cardDetails[0]).toHaveTextContent('Visa');
+        expect(cardDetails[1]).toHaveTextContent('Mastercard');
+        expect(screen.getByTestId('sepa-payment-method')).toHaveTextContent('Bank Account');
+        const sepaDetailsElement = screen.getByTestId('sepa-details');
+        expect(sepaDetailsElement).toHaveTextContent(/IBAN DE .* 5678/);
+        expect(sepaDetailsElement.textContent).toMatch(formattedSavedSepaDetails(sepaMethod.Details));
+    });
+
+    it('should render an empty cell for a Type that is not a saved method type', () => {
+        const unexpectedTypeMethod = {
+            Type: PAYMENT_METHOD_TYPES.TOKEN,
+            Details: {},
+            Order: 1,
+            ID: 'id-token',
+        } as unknown as SavedPaymentMethod;
+
+        const TableBodyMock: jest.Mock = TableBody as any;
+        TableBodyMock.mockImplementation(({ children }) => children);
+        const TableRowMock: jest.Mock = TableRow as any;
+        TableRowMock.mockImplementation(({ cells }) => <div data-testid="row">{cells}</div>);
+
+        render(<PaymentMethodsTable methods={[unexpectedTypeMethod]} app={APPS.PROTONMAIL} />);
+
+        expect(screen.getByTestId('row')).toBeInTheDocument();
+    });
+});

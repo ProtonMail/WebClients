@@ -2,7 +2,7 @@ import { PLANS } from '@proton/payments/core/constants';
 import { getPlan } from '@proton/payments/core/subscription/helpers';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { subscriptionBundlePro } from '../__mocks__/data';
+import { subscriptionBundlePro } from '../../../../testing/subscriptionData';
 import { getReminderPageConfig } from './reminderPageConfig';
 
 jest.mock('@proton/payments/core/subscription/helpers', () => ({

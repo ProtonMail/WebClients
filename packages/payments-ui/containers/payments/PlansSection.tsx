@@ -1,0 +1,252 @@
+import { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
+import { c } from 'ttag';
+
+import { useOrganization } from '@proton/account/organization/hooks';
+import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
+import { usePlans } from '@proton/account/plans/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
+import { useUser } from '@proton/account/user/hooks';
+import { useApi } from '@proton/app-context/useApi';
+import { useConfig } from '@proton/app-context/useConfig';
+import { Button } from '@proton/atoms/Button/Button';
+import Loader from '@proton/components/components/loader/Loader';
+import { openLinkInBrowser, upgradeButtonClick } from '@proton/components/containers/desktop/openExternalLink';
+import { useHasInboxDesktopInAppPayments } from '@proton/components/containers/desktop/useHasInboxDesktopInAppPayments';
+import PlanSelection from '@proton/components/containers/payments/subscription/PlanSelection';
+import { UpsellModalTelemetryProvider } from '@proton/components/containers/payments/subscription/UpsellModalTelemetryProvider';
+import { getDefaultSelectedProductPlans } from '@proton/components/containers/payments/subscription/helpers/payment';
+import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
+import useLoad from '@proton/components/hooks/useLoad';
+import useLoading from '@proton/hooks/useLoading';
+import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
+import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
+import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
+import { DEFAULT_CYCLE, FREE_SUBSCRIPTION } from '@proton/payments/core/constants';
+import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
+import { hasPlanIDs } from '@proton/payments/core/planIDs';
+import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
+import { getPlanIDs, getValidAudience, getValidCycle } from '@proton/payments/core/subscription/helpers';
+import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
+import { isValidPlanName } from '@proton/payments/core/type-guards';
+import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { Audience } from '@proton/shared/lib/interfaces/Subscription';
+import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
+
+import { PaymentsContextProvider } from '../../ui/context/PaymentContext';
+import { usePlansSectionTelemetry } from './plansSectionTelemetry';
+
+const getSearchParams = (search: string) => {
+    const params = new URLSearchParams(search);
+    const maybeCycle = Number(params.get('cycle'));
+    const cycle = getValidCycle(maybeCycle);
+    const maybeAudience = params.get('audience');
+    const audience = getValidAudience(maybeAudience);
+    const trial = params.get('trial') === 'true';
+
+    return {
+        audience,
+        plan: params.get('plan') || undefined,
+        cycle,
+        trial,
+    };
+};
+
+type Props = {
+    app: APP_NAMES;
+};
+
+const PlansSectionInner = ({ app }: Props) => {
+    const [loading, withLoading] = useLoading();
+    const [user] = useUser();
+    const { APP_NAME } = useConfig();
+    const [subscription = FREE_SUBSCRIPTION, loadingSubscription] = useSubscription();
+    const multiSubscriptionContext = useMultiSubscriptionContext();
+    const [organization, loadingOrganization] = useOrganization();
+    const [plansResult, loadingPlans] = usePlans();
+    const [paymentStatus, statusLoading] = usePaymentStatus();
+    const plans = plansResult?.plans || [];
+    const freePlan = plansResult?.freePlan || FREE_PLAN;
+    const api = useApi();
+    const { paymentsApi } = usePaymentsApi(api);
+    const location = useLocation();
+    const [preferredCurrency, loadingCurrency] = useAutomaticCurrency();
+    const currentPlanIDs = getPlanIDs(subscription);
+    const searchParams = getSearchParams(location.search);
+    const [audience, setAudience] = useState(searchParams.audience || Audience.B2C);
+
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
+    const { sendPageLoad, sendCtaClick, sendSubscriptionSuccess } = usePlansSectionTelemetry({ app });
+    const isLoading =
+        loadingPlans ||
+        loadingSubscription ||
+        loadingOrganization ||
+        statusLoading ||
+        !paymentStatus ||
+        loadingCurrency;
+    const [selectedCurrency, setCurrency] = useState<Currency>();
+    const currency = selectedCurrency || preferredCurrency;
+    const plansMap = getPlansMap(plans, currency);
+
+    const [selectedProductPlans, setSelectedProductPlans] = useState(() => {
+        return getDefaultSelectedProductPlans({
+            appName: app,
+            plan: searchParams.plan,
+        });
+    });
+
+    const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
+
+    const [cycle, setCycle] = useState(searchParams.cycle ?? DEFAULT_CYCLE);
+
+    useLoad();
+
+    const hasTrackedPageLoad = useRef(false);
+
+    useEffect(() => {
+        if (isLoading || hasTrackedPageLoad.current) {
+            return;
+        }
+        hasTrackedPageLoad.current = true;
+        sendPageLoad();
+
+        checkoutTelemetry.reportInitialization({
+            context: 'settings-upgrade',
+            userCurrency: user?.Currency,
+            subscription,
+            build: APP_NAME,
+            product: app,
+            selectedCoupon: subscription.CouponCode,
+            selectedCurrency: subscription.Currency || preferredCurrency,
+            selectedCycle: subscription.Cycle || DEFAULT_CYCLE,
+            selectedPlanIDs: currentPlanIDs,
+            selectedStep: null,
+            isTrial: searchParams.trial,
+            initialBillingAddress: paymentStatus,
+        });
+    }, [isLoading]);
+
+    const handleModal = async (newPlanIDs: PlanIDs, newCycle: Cycle) => {
+        if (!hasPlanIDs(newPlanIDs)) {
+            throw new Error('Downgrade not supported');
+        }
+
+        const plan = getPlanFromPlanIDs(plansMap, newPlanIDs);
+        const planName = plan?.Name;
+
+        sendCtaClick({ cta: 'select_plan', plan: planName });
+
+        void openSubscriptionModal({
+            defaultSelectedProductPlans: selectedProductPlans,
+            planIDs: newPlanIDs,
+            step: SUBSCRIPTION_STEPS.CHECKOUT,
+            cycle: newCycle,
+            currency: plan?.Currency,
+            defaultAudience: Object.keys(newPlanIDs).some((planID) => getIsB2BAudienceFromPlan(planID as any))
+                ? Audience.B2B
+                : Audience.B2C,
+            onSubscribed: () => sendSubscriptionSuccess({ origin: 'select_plan', plan: planName }),
+        });
+    };
+
+    // Clicking the "Select Plan" button opens the browser on Electron or the modal on the web
+    const handlePlanChange = (newPlanIDs: PlanIDs, newCycle: Cycle) => {
+        const newPlanName = Object.keys(newPlanIDs)[0];
+        const isNewPlanCorrect = isValidPlanName(newPlanName);
+        if (isElectronApp && !hasInboxDesktopInAppPayments && newPlanName && isNewPlanCorrect) {
+            upgradeButtonClick(newCycle, newPlanName);
+            return;
+        }
+
+        void withLoading(handleModal(newPlanIDs, newCycle));
+    };
+
+    useEffect(() => {
+        if (isLoading) {
+            return;
+        }
+        const cycle = subscription.Cycle || DEFAULT_CYCLE;
+        setCycle(cycle);
+        setSelectedProductPlans(
+            getDefaultSelectedProductPlans({
+                appName: app,
+                plan: searchParams.plan,
+            })
+        );
+    }, [isLoading, subscription, app]);
+
+    if (isLoading) {
+        return <Loader />;
+    }
+
+    return (
+        <>
+            <PlanSelection
+                app={app}
+                mode="settings"
+                audience={audience}
+                onChangeAudience={setAudience}
+                loading={loading}
+                freePlan={freePlan}
+                plans={plans}
+                currency={currency}
+                paymentStatus={paymentStatus}
+                cycle={cycle}
+                onChangeCycle={setCycle}
+                planIDs={currentPlanIDs}
+                hasPlanSelectionComparison={false}
+                subscription={subscription}
+                onChangePlanIDs={handlePlanChange}
+                onChangeCurrency={setCurrency}
+                selectedProductPlans={selectedProductPlans}
+                onChangeSelectedProductPlans={setSelectedProductPlans}
+                organization={organization}
+                paymentsApi={paymentsApi}
+                multiSubscriptionContext={multiSubscriptionContext}
+            />
+            {app !== APPS.PROTONWALLET && (
+                <Button
+                    color="norm"
+                    shape="ghost"
+                    className="flex mx-auto items-center mb-4"
+                    loading={loadingSubscriptionModal}
+                    onClick={() => {
+                        if (isElectronApp && !hasInboxDesktopInAppPayments) {
+                            openLinkInBrowser(getAppHref(`mail/upgrade`, APPS.PROTONACCOUNT));
+                            return;
+                        }
+                        sendCtaClick({ cta: 'view_plans_details' });
+                        void openSubscriptionModal({
+                            step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+                            defaultAudience: audience,
+                            defaultSelectedProductPlans: selectedProductPlans,
+                            onSubscribed: () => sendSubscriptionSuccess({ origin: 'view_plans_details' }),
+                        });
+                    }}
+                >
+                    {c('Action').t`View plans details`}
+                    <IcArrowRight className="ml-2 rtl:mirror" />
+                </Button>
+            )}
+        </>
+    );
+};
+
+const PlansSection = (props: Props) => {
+    return (
+        <PaymentsContextProvider>
+            <UpsellModalTelemetryProvider context="settings-upgrade">
+                <PlansSectionInner {...props} />
+            </UpsellModalTelemetryProvider>
+        </PaymentsContextProvider>
+    );
+};
+
+export default PlansSection;

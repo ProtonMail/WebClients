@@ -22,7 +22,7 @@ jest.mock('@proton/payments-ui/ui/components/RenewalNotice', () => ({
     getCheckoutRenewNoticeTextFromCheckResult: () => 'renew notice',
 }));
 jest.mock('@proton/payments-hooks/ui/context/paymentsContext', () => ({ usePayments: jest.fn() }));
-jest.mock('@proton/components/containers/payments/subscription/confirm-button/SubscriptionConfirmButton', () => ({
+jest.mock('@proton/payments-ui/containers/payments/subscription/confirm-button/SubscriptionConfirmButton', () => ({
     SubscriptionConfirmButton: ({ disabled }: { disabled: boolean }) => (
         <button type="submit" data-testid="confirm" disabled={disabled}>
             Confirm

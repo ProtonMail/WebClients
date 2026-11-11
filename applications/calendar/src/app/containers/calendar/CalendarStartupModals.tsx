@@ -6,7 +6,7 @@ import {
 } from '@proton/components/components/startupModals/startupModalHooks';
 import type { StartupModal } from '@proton/components/components/startupModals/types';
 import { NPSApplication } from '@proton/components/containers/netPromoterScore/interface';
-import { useTrialEndedModal } from '@proton/components/containers/subscription/useTrialEndedModal';
+import { useTrialEndedModal } from '@proton/payments-ui/containers/subscription/useTrialEndedModal';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 
 const useStartupModals: () => StartupModal[] = () => {

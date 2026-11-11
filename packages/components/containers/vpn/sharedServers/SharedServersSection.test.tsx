@@ -8,8 +8,8 @@ import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 
+import { organization } from '../../../testing/subscriptionData';
 import { renderWithProviders } from '../../contacts/tests/render';
-import { organization } from '../../payments/subscription/__mocks__/data';
 import SharedServersSection from './SharedServersSection';
 import { SharedServersBuilder } from './SharedServersSection.test.builder';
 import { useSharedServers as useSharedServersHook } from './useSharedServers';

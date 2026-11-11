@@ -5,7 +5,7 @@ import { SafetyReviewRoute } from '@proton/account/safetyReview/components/Safet
 import { AccountSpotlightsProvider } from '@proton/components/containers/account/spotlights/AccountSpotlightsProvider';
 import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
 import KeyTransparencyManager from '@proton/components/containers/keyTransparency/KeyTransparencyManager';
-import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import SubscriptionModalProvider from '@proton/payments-ui/containers/payments/subscription/SubscriptionModalProvider';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { APPS } from '@proton/shared/lib/constants';
 

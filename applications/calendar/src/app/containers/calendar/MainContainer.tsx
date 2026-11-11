@@ -7,7 +7,6 @@ import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { selectCalendarsBootstrap } from '@proton/calendar/calendarBootstrap';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import KeyTransparencyManager from '@proton/components/containers/keyTransparency/KeyTransparencyManager';
-import SubscriptionModalProvider from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import useDrawerParent from '@proton/components/hooks/drawer/useDrawerParent';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useInboxDesktopEventLoopRefresh } from '@proton/components/hooks/useInboxDesktopEventLoopRefresh';
@@ -15,6 +14,7 @@ import { usePreventWasmLoading } from '@proton/components/hooks/usePreventWasmLo
 import { FeatureCode } from '@proton/features/interface';
 import useFeatures from '@proton/features/useFeatures';
 import useInstance from '@proton/hooks/useInstance';
+import SubscriptionModalProvider from '@proton/payments-ui/containers/payments/subscription/SubscriptionModalProvider';
 import { getVisualCalendars, groupCalendarsByTaxonomy, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
