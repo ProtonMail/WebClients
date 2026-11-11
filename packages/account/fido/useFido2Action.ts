@@ -11,16 +11,22 @@ const SENTRY_MESSAGE: Record<Fido2ActionContext, string> = {
     registration: 'Security key registration',
 };
 
-const reportFido2Error = (error: unknown, context: Fido2ActionContext, durationMs: number) => {
+const reportFido2Error = (
+    error: unknown,
+    context: Fido2ActionContext,
+    durationMs: number,
+    hasFocusAtStart: boolean
+) => {
     const name = error instanceof Error ? error.name : 'unknown';
     // Browsers merge cancels, timeouts and missing keys into NotAllowedError, timing separates refused requests
-    const timing = durationMs < 2000 ? 'instant' : 'user';
+    const timing = durationMs < 1000 ? 'instant' : 'user';
     const extension = error instanceof Error && /-extension:\/\/|webkit-masked-url:\/\//.test(error.stack || '');
     captureMessage(SENTRY_MESSAGE[context], {
         level: 'error',
-        fingerprint: [SENTRY_MESSAGE[context], name, timing],
+        // Password manager extensions throw plain errors too, keep them apart from ours
+        fingerprint: [SENTRY_MESSAGE[context], extension ? 'extension' : name, timing],
         tags: { fido2Error: name, fido2Timing: timing, fido2Extension: extension },
-        extra: { error, durationMs, hasFocus: document.hasFocus(), visibility: document.visibilityState },
+        extra: { error, durationMs, hasFocusAtStart, visibility: document.visibilityState },
     });
     // Purposefully logging the error for somewhat easier debugging
     // eslint-disable-next-line no-console
@@ -52,6 +58,8 @@ export const useFido2Action = () => {
             abortControllerRef.current = abortController;
             const isCurrent = () => abortControllerRef.current === abortController;
             const start = Date.now();
+            // The browser's security key prompt takes focus, so read it before the prompt opens
+            const hasFocusAtStart = document.hasFocus();
 
             try {
                 setFidoError(false);
@@ -60,7 +68,7 @@ export const useFido2Action = () => {
             } catch (error) {
                 if (isCurrent()) {
                     setFidoError(true);
-                    reportFido2Error(error, context, Date.now() - start);
+                    reportFido2Error(error, context, Date.now() - start, hasFocusAtStart);
                 }
                 throw error;
             } finally {
