@@ -31,7 +31,7 @@ export type SessionStatusProps = {
  * connection, whether it can be edited, and how far its edits are delivered. The element carries the snapshot's
  * `data-status` and `data-delivery` as they are, for verification. A stopped session shows /doc's Offline pill, as /doc
  * does whatever closed its connection, with the condition as its disconnection code, and a retry when the SDK calls the
- * stop retryable; what /doc does past that for some conditions, such as an alert or the app's sign-in, happens in
+ * stop retryable; what doc2 does past that for some conditions, such as an alert or a retry, happens in
  * `useStopFollowUps`.
  */
 export function SessionStatus({ snapshot, onRetry }: SessionStatusProps) {

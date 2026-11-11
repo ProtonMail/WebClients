@@ -6,9 +6,6 @@ import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/appl
 import { createFakeSession } from './createFakeSession'
 import { useStopFollowUps } from './useStopFollowUps'
 
-const mockApi = jest.fn()
-jest.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }))
-
 const logger = { info: jest.fn(), warn: jest.fn(), error: jest.fn() }
 const application = { logger } as unknown as ApplicationProviderProps['application']
 const wrapper = ({ children }: { children: ReactNode }) => (
@@ -41,101 +38,66 @@ describe('useStopFollowUps', () => {
       title: 'Something went wrong',
       translatedMessage: 'We are having trouble saving recent edits. Please refresh the page.',
     })
-    expect(mockApi).not.toHaveBeenCalled()
   })
 
-  test("expired credentials go through the app's API client, then the session is retried", async () => {
-    mockApi.mockResolvedValue({ User: {} })
+  test('expired credentials retry the session', async () => {
     const { fake, showAlert } = renderFollowUps()
 
     await act(async () => fake.setSnapshot({ status: authExpired }))
 
-    expect(mockApi).toHaveBeenCalledTimes(1)
-    expect(mockApi).toHaveBeenCalledWith(expect.objectContaining({ url: 'core/v4/users' }))
     expect(fake.mocks.retry).toHaveBeenCalledTimes(1)
     expect(showAlert).not.toHaveBeenCalled()
   })
 
-  test.each([
-    ['a 401 the app could not refresh', Object.assign(new Error('Unauthorized'), { status: 401 })],
-    ['an inactive app session', Object.assign(new Error('Inactive session'), { name: 'InactiveSession' })],
-  ])("expired credentials met with %s leave the session stopped, to the app's sign-in", async (_, error) => {
-    mockApi.mockRejectedValue(error)
-    const { fake } = renderFollowUps()
-
-    await act(async () => fake.setSnapshot({ status: authExpired }))
-
-    expect(fake.mocks.retry).not.toHaveBeenCalled()
-    expect(logger.warn).toHaveBeenCalledWith(expect.any(String), expect.any(Error))
-  })
-
-  test.each([
-    ['a network failure', Object.assign(new Error('Offline'), { name: 'OfflineError' })],
-    ['a server error', Object.assign(new Error('Server error'), { status: 500 })],
-  ])('expired credentials whose app session check fails with %s still retry the session', async (_, error) => {
-    mockApi.mockRejectedValue(error)
-    const { fake } = renderFollowUps()
-
-    await act(async () => fake.setSnapshot({ status: authExpired }))
-
-    expect(fake.mocks.retry).toHaveBeenCalledTimes(1)
-  })
-
-  test('a failed check followed by expired credentials again is left stopped: one check per session', async () => {
-    mockApi.mockRejectedValue(Object.assign(new Error('Server error'), { status: 500 }))
+  test('expired credentials again after that retry are left stopped: one retry per session', async () => {
     const { fake } = renderFollowUps()
     await act(async () => fake.setSnapshot({ status: authExpired }))
 
     await act(async () => fake.setSnapshot({ status: { ...authExpired } }))
 
-    expect(mockApi).toHaveBeenCalledTimes(1)
     expect(fake.mocks.retry).toHaveBeenCalledTimes(1)
   })
 
-  test('expired credentials again after that retry are left stopped: one refresh per session', async () => {
-    mockApi.mockResolvedValue({ User: {} })
+  test('a session that left the stop before the retry is not retried', async () => {
     const { fake } = renderFollowUps()
-    await act(async () => fake.setSnapshot({ status: authExpired }))
 
-    await act(async () => fake.setSnapshot({ status: { ...authExpired } }))
-
-    expect(mockApi).toHaveBeenCalledTimes(1)
-    expect(fake.mocks.retry).toHaveBeenCalledTimes(1)
-  })
-
-  test('a session that left the stop while the app session was checked is not retried', async () => {
-    let resolveApi: (value: unknown) => void = () => {}
-    mockApi.mockReturnValue(new Promise((resolve) => (resolveApi = resolve)))
-    const { fake } = renderFollowUps()
-    act(() => fake.setSnapshot({ status: authExpired }))
-    act(() => fake.setSnapshot({ status: { name: 'connecting' } }))
-
-    await act(async () => resolveApi({ User: {} }))
+    act(() => {
+      fake.setSnapshot({ status: authExpired })
+      fake.setSnapshot({ status: { name: 'connecting' } })
+    })
+    await act(async () => {})
 
     expect(fake.mocks.retry).not.toHaveBeenCalled()
   })
 
   test('nothing is retried after unmount', async () => {
-    let resolveApi: (value: unknown) => void = () => {}
-    mockApi.mockReturnValue(new Promise((resolve) => (resolveApi = resolve)))
     const { fake, unmount } = renderFollowUps()
-    act(() => fake.setSnapshot({ status: authExpired }))
 
+    act(() => fake.setSnapshot({ status: authExpired }))
     unmount()
-    await act(async () => resolveApi({ User: {} }))
+    await act(async () => {})
 
     expect(fake.mocks.retry).not.toHaveBeenCalled()
   })
 
+  test('a retry the session refuses is logged', async () => {
+    const { fake } = renderFollowUps()
+    fake.mocks.retry.mockRejectedValue(new Error('Refused'))
+
+    await act(async () => fake.setSnapshot({ status: authExpired }))
+
+    expect(logger.warn).toHaveBeenCalledWith('Failed to retry the document session', expect.any(Error))
+  })
+
   test.each(['transient', 'idleEvicted', 'permissionsChanged', 'clientRejected'] as const)(
     'a stop for %s does nothing past the Offline pill',
-    (condition) => {
+    async (condition) => {
       const { fake, showAlert } = renderFollowUps()
 
-      act(() => fake.setSnapshot({ status: { name: 'stopped', condition, retryable: false } }))
+      await act(async () => fake.setSnapshot({ status: { name: 'stopped', condition, retryable: false } }))
 
       expect(showAlert).not.toHaveBeenCalled()
-      expect(mockApi).not.toHaveBeenCalled()
+      expect(fake.mocks.retry).not.toHaveBeenCalled()
     },
   )
 })
