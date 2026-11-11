@@ -15,7 +15,7 @@ import SentinelBanner from './SentinelBanner/SentinelBanner';
 interface Props {
     variant?: SettingsLayoutVariant;
 }
-export const OverviewSectionV2 = ({ variant = SettingsLayoutVariant.Card }: Props) => {
+export const OverviewSection = ({ variant = SettingsLayoutVariant.Card }: Props) => {
     const keyReactivationRequests = useInactiveKeys();
 
     const [reactivateKeyProps, setReactivateKeyModalOpen, renderReactivateKeys] = useModalState();

@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { format, isThisYear } from 'date-fns';
 import { c } from 'ttag';
 
@@ -5,6 +7,8 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
 const getLastChangedText = (formattedDate: string) => c('Status').t`Last changed ${formattedDate}`;
+// Same string as above, with the date in its own element so visual tests can mask it
+const getLastChangedContent = (formattedDate: ReactNode) => c('Status').jt`Last changed ${formattedDate}`;
 
 /**
  * date-fns has no localised date format without a year, so the day and month are ordered
@@ -42,7 +46,11 @@ export const LastChanged = ({ date, className, 'data-testid': dataTestId }: Prop
             data-testid={dataTestId}
             title={getLastChangedText(formattedDateTime)}
         >
-            {getLastChangedText(formattedDate)}
+            {getLastChangedContent(
+                <span key="date" data-testid="last-changed:date">
+                    {formattedDate}
+                </span>
+            )}
         </span>
     );
 };
