@@ -332,7 +332,11 @@ type ReasoningChunk = {
 // *** Context compaction ***
 
 export type CompactionStrategyName =
-    'clear_tool_results' | 'drop_tool_pairs' | 'strip_context' | 'drop_old_rounds' | 'llm_summary';
+    | 'clear_tool_results'
+    | 'drop_tool_pairs'
+    | 'strip_context'
+    | 'drop_old_rounds'
+    | 'llm_summary';
 
 export type CompactionStats = {
     tokensBefore: number; // Estimated tokens of the summarized region before compaction
@@ -671,7 +675,7 @@ function isContentBlock(value: any): value is ContentBlock {
 }
 
 export function isMessagePriv(value: any): value is MessagePriv {
-    // prettier-ignore
+    // oxfmt-ignore
     return (
         typeof value === 'object' &&
         value !== null &&
@@ -1081,10 +1085,7 @@ export type PdfPageImage = {
 
 function isPdfPageImage(value: any): value is PdfPageImage {
     return (
-        typeof value === 'object' &&
-        value !== null &&
-        Number.isInteger(value.page) &&
-        value.data instanceof Uint8Array
+        typeof value === 'object' && value !== null && Number.isInteger(value.page) && value.data instanceof Uint8Array
     );
 }
 
@@ -1106,7 +1107,7 @@ export type SerializedAttachment = AttachmentPub & Partial<Encrypted> & LocalFla
 export type SerializedAttachmentMap = Record<AttachmentId, SerializedAttachment>;
 
 function isAttachmentPub(value: any): value is AttachmentPub {
-    // prettier-ignore
+    // oxfmt-ignore
     return (
         typeof value === 'object' &&
         value !== null &&
@@ -1127,7 +1128,7 @@ function isAttachmentPub(value: any): value is AttachmentPub {
 }
 
 export function isAttachmentPriv(value: any): value is AttachmentPriv {
-    // prettier-ignore
+    // oxfmt-ignore
     return (
         typeof value === 'object' &&
         value !== null &&
@@ -1146,7 +1147,9 @@ export function isAttachmentPriv(value: any): value is AttachmentPriv {
 }
 
 function isAttachmentInMemory(value: any): value is AttachmentInMemory {
-    return value.pageImages === undefined || (Array.isArray(value.pageImages) && value.pageImages.every(isPdfPageImage));
+    return (
+        value.pageImages === undefined || (Array.isArray(value.pageImages) && value.pageImages.every(isPdfPageImage))
+    );
 }
 
 export function isAttachment(value: any): value is Attachment {

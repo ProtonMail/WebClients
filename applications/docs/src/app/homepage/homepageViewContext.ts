@@ -10,7 +10,13 @@ import type { ReportTelemetry } from './utils/telemetry'
 
 export type RecentsSort = 'viewed' | 'name' | 'owner' | 'location'
 export type ItemsSectionId =
-  'search-results' | 'name' | 'today' | 'yesterday' | 'previous7Days' | 'previous30Days' | 'earlier'
+  | 'search-results'
+  | 'name'
+  | 'today'
+  | 'yesterday'
+  | 'previous7Days'
+  | 'previous30Days'
+  | 'earlier'
 export type ItemsSection = { id: ItemsSectionId; items: RecentDocumentsItem[] }
 
 export type HomepageViewState =

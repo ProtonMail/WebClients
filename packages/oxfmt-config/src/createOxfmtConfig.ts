@@ -1,10 +1,13 @@
 import { type OxfmtConfig, defineConfig } from 'oxfmt';
 
+/** SCSS keeps its own indentation */
+export const scssOptions: OxfmtConfig = { tabWidth: 2, useTabs: true };
+
 /**
- * Same options as `@proton/prettier-config-proton`, which formats everything oxfmt has not taken over yet.
- * Keep the two in sync: createOxfmtConfig.test.ts fails when they drift.
+ * Shared oxfmt options of the monorepo. A workspace can extend them: `overrides` replaces top level options and
+ * its `overrides` entries are appended to the shared ones, so they win.
  */
-export const createOxfmtConfig = (overrides: OxfmtConfig = {}) =>
+export const createOxfmtConfig = ({ overrides = [], ...options }: OxfmtConfig = {}) =>
     defineConfig({
         printWidth: 120,
         arrowParens: 'always',
@@ -12,6 +15,8 @@ export const createOxfmtConfig = (overrides: OxfmtConfig = {}) =>
         trailingComma: 'es5',
         tabWidth: 4,
         proseWrap: 'never',
+        // package.json files are sorted by sort-package-json, which lint-staged runs
+        sortPackageJson: false,
         sortImports: {
             newlinesBetween: true,
             customGroups: [
@@ -46,5 +51,6 @@ export const createOxfmtConfig = (overrides: OxfmtConfig = {}) =>
             ],
             ignoreCase: false,
         },
-        ...overrides,
+        ...options,
+        overrides: [{ files: ['**/*.scss'], options: scssOptions }, ...overrides],
     });

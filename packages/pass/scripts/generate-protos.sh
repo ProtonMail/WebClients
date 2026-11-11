@@ -55,10 +55,10 @@ function process_file() {
         os_sed '4a\
         import { '"${ENUM_NAMES}"' } from '"'./${STATIC_FILE_NAME%.ts}';"'' "${GENERATED_FILE_PATH}"
 
-        npx prettier --write "${GENERATED_FILE_PATH}" "${STATIC_FILE_PATH}"
+        npx oxfmt --write "${GENERATED_FILE_PATH}" "${STATIC_FILE_PATH}"
     else
         # If no enums exist, just format the generated file
-        npx prettier --write "${GENERATED_FILE_PATH}"
+        npx oxfmt --write "${GENERATED_FILE_PATH}"
     fi
 }
 

@@ -31,8 +31,8 @@
         "update-metrics": "rimraf json-schema-registry types && git clone $SCHEMA_REPOSITORY && pnpm run generate-schema-types && pnpm run generate-metrics"
     },
     "dependencies": {
+        "@proton/oxfmt-config": "workspace:^",
         "@proton/shared": "workspace:^",
-        "prettier": "catalog:",
         "typescript": "catalog:",
         "web-vitals": "^4.2.4"
     },

@@ -11,7 +11,7 @@
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context:web": "proton-i18n validate",
         "lint": "oxlint --quiet",
-        "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "pretty": "oxfmt --write \"src/app/**/*.{js,ts,tsx}\"",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --no-error-logs --prependAsyncCss",
         "test": "jest --silent",
         "test:ci": "jest --runInBand --ci --silent --logHeapUsage",

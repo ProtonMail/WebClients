@@ -17,7 +17,7 @@ import type {
 // Type alias for backwards compatibility (assets are now attachments)
 type AssetId = AttachmentId;
 
-// prettier-ignore
+// oxfmt-ignore
 export type MessageFromApi = {
     ID?: unknown;              // Expecting type MessageId
     ConversationID?: unknown;  // Expecting type ConversationId
@@ -29,7 +29,7 @@ export type MessageFromApi = {
     MessageTag?: unknown;      // Expecting type MessageTag
 };
 
-// prettier-ignore
+// oxfmt-ignore
 export type SpaceFromApi = {
     SpaceType?: unknown;     // Expecting SpaceTypeInt; absent on legacy records
     ID?: any;                // Expecting type SpaceId
@@ -43,7 +43,7 @@ export type SpaceFromApi = {
     Assets?: any;            // Expecting type AssetFromApi[] | null
 };
 
-// prettier-ignore
+// oxfmt-ignore
 export type ConversationFromApi = {
     ID?: unknown;               // Expecting type ConversationId
     SpaceID?: unknown;          // Expecting type SpaceId
@@ -56,7 +56,7 @@ export type ConversationFromApi = {
     ConversationTag?: unknown;  // Expecting type ConversationTag
 };
 
-// prettier-ignore
+// oxfmt-ignore
 export type AssetFromApi = {
     ID?: unknown;              // Expecting type MessageId
     SpaceID?: unknown;         // Expecting type ConversationId
@@ -66,7 +66,7 @@ export type AssetFromApi = {
     Encrypted?: unknown;       // Expecting Base64-encoded data | undefined | null
 };
 
-// prettier-ignore
+// oxfmt-ignore
 export type MasterKeyFromApi = {
     ID?: unknown;            // Expecting type string
     IsLatest?: unknown,      // Expecting boolean

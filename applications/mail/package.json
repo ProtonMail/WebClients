@@ -14,7 +14,7 @@
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context:web": "proton-i18n validate",
         "lint": "oxlint --quiet",
-        "pretty:fix": "oxfmt --write \"src/app/**/*.{ts,tsx,js}\" && prettier --write \"src/app/**/*.{scss,css,json,md}\"",
+        "pretty:fix": "oxfmt --write \"src/app/**/*.{ts,tsx,js,scss,css,json,md}\"",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone",
         "test": "jest --logHeapUsage --forceExit",
         "test:ci": "jest --ci --forceExit --logHeapUsage",
@@ -91,7 +91,6 @@
         "@proton/i18n": "workspace:^",
         "@proton/jest-env": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
-        "@proton/oxfmt-config": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
         "@proton/test-api": "workspace:^",
         "@proton/types": "workspace:^",
@@ -118,7 +117,6 @@
         "oxfmt": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "prettier": "catalog:",
         "typescript": "catalog:",
         "webpack": "catalog:"
     }

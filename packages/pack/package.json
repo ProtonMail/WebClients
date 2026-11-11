@@ -9,7 +9,7 @@
     "scripts": {
         "check:types": "tsc --checkers 1",
         "lint": "oxlint --quiet",
-        "pretty": "prettier --write  cli bin"
+        "pretty": "oxfmt --write cli bin"
     },
     "dependencies": {
         "@babel/core": "^7.29.7",
@@ -62,7 +62,6 @@
         "@typescript/native": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "prettier": "catalog:",
         "typescript": "catalog:"
     },
     "peerDependencies": {

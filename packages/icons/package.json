@@ -513,9 +513,9 @@
         "prepack": "pnpm run build"
     },
     "dependencies": {
+        "@proton/oxfmt-config": "workspace:^",
         "jsdom": "^29.1.1",
         "mustache": "^4.2.0",
-        "prettier": "catalog:",
         "react": "catalog:"
     },
     "devDependencies": {

@@ -869,7 +869,7 @@ export class DbApi {
                         // console.warn(`Remote ID mapping already exists and is the same for ${type} ${localId}`);
                         return resolve();
                     } else {
-                        // prettier-ignore
+                        // oxfmt-ignore
                         return reject(
                             `Duplicate ID detected: ` +
                             `${type} localId ${localId} already points ` +
@@ -886,7 +886,7 @@ export class DbApi {
                         // console.warn(`Local ID mapping already exists and is the same for ${type} ${remoteId}`);
                         return resolve();
                     } else {
-                        // prettier-ignore
+                        // oxfmt-ignore
                         return reject(
                             `Duplicate ID detected: ` +
                             `${type} remoteId ${remoteId} already points ` +

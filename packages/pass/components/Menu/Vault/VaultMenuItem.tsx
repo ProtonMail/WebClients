@@ -17,8 +17,8 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { UpsellRef } from '../../../constants';
-import { useFolderExpanded } from '../../../hooks/useFolderExpanded';
 import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
+import { useFolderExpanded } from '../../../hooks/useFolderExpanded';
 import { useItemDrop } from '../../../hooks/useItemDrag';
 import { useMemoSelector } from '../../../hooks/useMemoSelector';
 import { isMemberLimitReached } from '../../../lib/access/access.predicates';

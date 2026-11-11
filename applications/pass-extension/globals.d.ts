@@ -18,8 +18,8 @@ declare global {
     var cloneInto: Maybe<CloneInto>;
     var exportFunction: Maybe<ExportFunction>;
 
-    declare const HTTP_DEBUGGER_PORT: number;
-    declare const HTTP_DEBUGGER: boolean;
+    const HTTP_DEBUGGER_PORT: number;
+    const HTTP_DEBUGGER: boolean;
 
     /** WebAuthN overrides: although the "name" properties are non-nullable
      * some websites (eg: paypal.com) may produce null values */

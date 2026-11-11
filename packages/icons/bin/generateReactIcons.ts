@@ -3,7 +3,8 @@ import mustache from 'mustache';
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import * as prettier from 'prettier';
+
+import { formatSource } from '@proton/oxfmt-config/formatSource';
 
 import { ICON_PX_SIZES } from '../constants';
 
@@ -84,13 +85,8 @@ async function run() {
     await rm(iconsDir, { recursive: true, force: true });
     await mkdir(iconsDir);
 
-    const prettierOptions = (await prettier.resolveConfig(path.join(dirname, '../../../prettier.config.mjs'))) || {};
-
     const writeFilesPromises = icons.map(async (icon) => {
-        await writeFile(
-            `${iconsDir}/${icon.name}.tsx`,
-            await prettier.format(icon.content, { ...prettierOptions, parser: 'typescript' })
-        );
+        await writeFile(`${iconsDir}/${icon.name}.tsx`, await formatSource(`${icon.name}.tsx`, icon.content));
     });
 
     const generateTypes = async () => {
@@ -101,10 +97,7 @@ async function run() {
             `export type IconName = ${iconNodes.map((node) => `'${node.id.replace('ic-', '')}'`).join('|')}`,
         ].join('\n');
 
-        await writeFile(
-            path.join(dirname, '../types.ts'),
-            await prettier.format(content, { ...prettierOptions, parser: 'typescript' })
-        );
+        await writeFile(path.join(dirname, '../types.ts'), await formatSource('types.ts', content));
     };
 
     writeFilesPromises.push(generateTypes());

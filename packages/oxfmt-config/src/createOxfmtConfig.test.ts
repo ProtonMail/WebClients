@@ -1,24 +1,7 @@
-import prettierConfig from '@proton/prettier-config-proton';
-
 import { createOxfmtConfig } from './createOxfmtConfig.ts';
 
 describe('createOxfmtConfig', () => {
-    it('uses the same formatting options as prettier', () => {
-        const config = createOxfmtConfig();
-
-        for (const key of [
-            'printWidth',
-            'arrowParens',
-            'singleQuote',
-            'trailingComma',
-            'tabWidth',
-            'proseWrap',
-        ] as const) {
-            expect(config[key], key).toBe(prettierConfig[key]);
-        }
-    });
-
-    it('keeps the import groups in the order of the prettier importOrder', () => {
+    it('keeps the import groups in the expected order', () => {
         const { sortImports } = createOxfmtConfig();
         const groups = (typeof sortImports === 'object' ? (sortImports.groups ?? []) : []).flat();
         const position = (name: string) => groups.indexOf(name as never);
@@ -31,5 +14,13 @@ describe('createOxfmtConfig', () => {
 
     it('lets a workspace override options', () => {
         expect(createOxfmtConfig({ printWidth: 100 }).printWidth).toBe(100);
+    });
+
+    it('keeps the shared overrides when a workspace adds its own', () => {
+        const files = ['**/*.ts'];
+        const { overrides } = createOxfmtConfig({ overrides: [{ files, options: { semi: false } }] });
+
+        expect(overrides?.at(0)?.files).toEqual(['**/*.scss']);
+        expect(overrides?.at(-1)?.files).toEqual(files);
     });
 });

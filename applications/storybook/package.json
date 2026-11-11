@@ -14,7 +14,7 @@
         "dev": "storybook dev -p 6006",
         "docs": "pnpm run dev --docs",
         "lint": "oxlint --quiet",
-        "pretty": "prettier --write $(find . -path ./node_modules -prune -o -path ./src -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "pretty": "oxfmt --write \"**/*.{js,ts,tsx}\"",
         "test:visual": "pnpm run build:wait && playwright test --config=playwright.config.ts",
         "test:visual:clean": "rimraf ./tests/stories-visual.test.ts-snapshots",
         "test:visual:update": "pnpm run test:visual:clean && pnpm run test:visual -u"
@@ -35,7 +35,6 @@
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
         "@types/react-router-dom": "catalog:",
-        "prettier": "catalog:",
         "react": "catalog:",
         "react-dom": "catalog:",
         "react-router-dom": "catalog:",

@@ -24,7 +24,7 @@
     "scripts": {
         "check:types": "tsc --checkers 1",
         "lint": "oxlint --quiet",
-        "pretty": "prettier --write $(find . -path ./node_modules -prune -o -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "pretty": "oxfmt --write \"**/*.{js,ts,tsx}\"",
         "test": "jest",
         "test:ci": "jest --runInBand --ci --logHeapUsage",
         "test:watch": "jest --watch"
@@ -49,7 +49,6 @@
         "jest-environment-jsdom": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "prettier": "catalog:",
         "typescript": "catalog:"
     }
 }

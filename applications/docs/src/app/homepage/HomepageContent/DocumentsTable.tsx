@@ -54,7 +54,13 @@ import { TelemetryEvent } from '../utils/telemetry'
 // -----
 
 export type TableVariant =
-  'recents-name' | 'recents-viewed' | 'recents-modified' | 'recents-owner' | 'recents-location' | 'trash' | 'search'
+  | 'recents-name'
+  | 'recents-viewed'
+  | 'recents-modified'
+  | 'recents-owner'
+  | 'recents-location'
+  | 'trash'
+  | 'search'
 export type DocumentsTableProps = { itemsSections: ItemsSection[]; variant: TableVariant }
 
 export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) {

@@ -14,7 +14,7 @@ export type LinkedAttachment = Attachment & {
     messageIndex: number;
 };
 
-// prettier-ignore
+// oxfmt-ignore
 function isLinkedAttachment(value: any): value is LinkedAttachment {
     return (
         isAttachment(value) &&
@@ -183,9 +183,7 @@ export const useFilteredFiles = (
     const isFileFromSummarizedMessage = (file: LinkedAttachment) => summarizedMessageIds.has(file.messageId);
 
     const autoRetrievedDocumentKeys = useMemo(() => {
-        return new Set(
-            allFiles.filter((file) => file.autoRetrieved).map((file) => getAttachmentDocumentKey(file))
-        );
+        return new Set(allFiles.filter((file) => file.autoRetrieved).map((file) => getAttachmentDocumentKey(file)));
     }, [allFiles]);
 
     const isDuplicateOfAutoRetrieved = (file: LinkedAttachment) =>

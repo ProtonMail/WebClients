@@ -3,7 +3,8 @@ import mustache from 'mustache';
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import * as prettier from 'prettier';
+
+import { formatSource } from '@proton/oxfmt-config/formatSource';
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -127,14 +128,9 @@ async function run() {
     await rm(iconsDir, { recursive: true, force: true });
     await mkdir(iconsDir);
 
-    const prettierOptions = (await prettier.resolveConfig(path.join(dirname, '../../../prettier.config.mjs'))) || {};
-
     await Promise.all([
         ...icons.map(async (icon) =>
-            writeFile(
-                `${iconsDir}/${icon.name}.tsx`,
-                await prettier.format(icon.content, { ...prettierOptions, parser: 'typescript' })
-            )
+            writeFile(`${iconsDir}/${icon.name}.tsx`, await formatSource(`${icon.name}.tsx`, icon.content))
         ),
         writeIconExports(icons.map((icon) => icon.name)),
     ]);

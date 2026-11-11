@@ -69,7 +69,7 @@
         "check:types": "tsc --checkers 1",
         "i18n:validate": "proton-i18n validate lint-functions",
         "lint": "oxlint --quiet",
-        "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "pretty": "oxfmt --write \"src/app/**/*.{js,ts,tsx}\"",
         "test": "jest",
         "test:ci": "jest --runInBand --logHeapUsage",
         "test:dev": "jest --watch --coverage=false --watchAll"
@@ -131,7 +131,6 @@
         "msw": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "prettier": "catalog:",
         "react-router": "catalog:",
         "react-router-dom": "catalog:",
         "typescript": "catalog:"

@@ -10,7 +10,8 @@ import { allGlobs } from '@proton/oxlint-config/globs';
  * (e.g. `applications/pass-desktop/src/lib/**`). Duplicate each package-local
  * glob so `proton/no-extraneous-dependencies` still allows electron there.
  */
-const withLintStagedPaths = (patterns: string[]) => patterns.flatMap((pattern) => [pattern, `**/pass-desktop/${pattern}`]);
+const withLintStagedPaths = (patterns: string[]) =>
+    patterns.flatMap((pattern) => [pattern, `**/pass-desktop/${pattern}`]);
 
 /** Main-process sources import electron (devDependency required by Electron Forge). Renderer `src/app/**` is excluded. */
 const passDesktopMainProcessDevDependencies = withLintStagedPaths([
@@ -36,7 +37,6 @@ const passDesktopDevDependencies = [
         'webpack.options.ts',
         'webpack.rules.ts',
         'electron-builder.config.js',
-        'prettier.config.mjs',
     ]),
 ];
 

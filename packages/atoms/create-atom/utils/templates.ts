@@ -1,8 +1,8 @@
 import fs from 'fs/promises';
 import mustache from 'mustache';
 
+import formatTemplate from './formatTemplate';
 import { logItemCompletion } from './log';
-import prettify from './prettify';
 import { toKebabCase } from './string';
 
 const getTemplateFile = (templateName: string) =>
@@ -16,15 +16,15 @@ export const getWriteTemplate = (atomDir: string) => async (fileName: string, te
 
 export const getAtomTemplate = async (atomName: string, rootHtmlTag: string) => {
     const template = await getTemplateFile(`Atom.tsx.mustache`);
-    return prettify(mustache.render(template, { atomName, rootHtmlTag }));
+    return formatTemplate(mustache.render(template, { atomName, rootHtmlTag }));
 };
 
 export const getTestTemplate = async (atomName: string) => {
     const template = await getTemplateFile(`Atom.test.tsx.mustache`);
-    return prettify(mustache.render(template, { atomName }));
+    return formatTemplate(mustache.render(template, { atomName }));
 };
 
 export const getStylesTemplate = async (atomName: string) => {
     const template = await getTemplateFile(`Atom.scss.mustache`);
-    return prettify(mustache.render(template, { kebabCaseName: toKebabCase(atomName) }), 'scss');
+    return formatTemplate(mustache.render(template, { kebabCaseName: toKebabCase(atomName) }), 'file.scss');
 };

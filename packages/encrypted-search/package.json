@@ -34,7 +34,7 @@
         "check:types": "tsc --checkers 1",
         "i18n:validate": "proton-i18n validate lint-functions",
         "lint": "oxlint --quiet",
-        "pretty": "prettier --write $(find lib test -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "pretty": "oxfmt --write \"lib/**/*.{js,ts,tsx}\" \"test/**/*.{js,ts,tsx}\"",
         "test": "jest",
         "test:ci": "pnpm run test --ci --forceExit --runInBand --logHeapUsage",
         "test:watch": "jest --watch"

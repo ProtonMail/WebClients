@@ -1,7 +1,8 @@
 #!/usr/bin/env tsx
-/* eslint-disable proton/no-extraneous-dependencies -- dev-only OpenAPI type generator CLI */
 import type { OpenAPIV3_1 } from 'openapi-types';
-import prettier from 'prettier';
+
+/* eslint-disable proton/no-extraneous-dependencies -- dev-only OpenAPI type generator CLI */
+import { formatSource } from '@proton/oxfmt-config/formatSource';
 
 import { generateTypes } from './generator/any';
 import { generatePaths } from './generator/paths';
@@ -36,13 +37,7 @@ void (async () => {
     const paths = generatePaths(doc);
     const raw = [types, ...paths].join('');
 
-    const output = await prettier.format(raw, {
-        parser: 'typescript',
-        printWidth: 120,
-        semi: true,
-        bracketSpacing: true,
-        experimentalTernaries: true,
-    });
+    const output = await formatSource('openapi.ts', raw);
 
     await new Promise<void>((resolve, reject) => {
         process.stdout.write(output, (err) => {

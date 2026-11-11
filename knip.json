@@ -32,7 +32,6 @@
             "project": [],
             "ignoreDependencies": [
                 "turbo",
-                "@prettier/plugin-xml",
                 "stylelint-config-standard-scss",
                 "stylelint-use-logical-spec",
                 "oxfmt",
@@ -377,11 +376,7 @@
             "ignoreDependencies": ["@proton/collect-metrics"]
         },
         "packages/pass": {
-            "entry": [
-                "lib/globals/webextension-polyfill.stub.ts",
-                "store/prettier.config.mjs",
-                "types/prettier.config.mjs"
-            ],
+            "entry": ["lib/globals/webextension-polyfill.stub.ts"],
             "project": ["**/*.{js,mjs,ts,tsx}"],
             "ignore": ["types/protobuf/*-v1.ts", "lib/extension/rules/v*/types.ts"],
             "ignoreDependencies": ["@protobuf-ts/plugin", "core-js", "json-schema-to-typescript", "tsx"]
@@ -404,10 +399,6 @@
             "project": ["**/*.{js,ts,tsx}"]
         },
         "packages/oxfmt-config": {
-            "entry": [],
-            "project": ["**/*.{ts,tsx}"]
-        },
-        "packages/prettier-config": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
         },

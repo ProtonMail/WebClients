@@ -130,7 +130,6 @@ import {
 } from './conversations';
 import { guestMigrationSaga } from './guestMigration';
 import { considerSavingIdMapToIdb } from './idmap';
-import { moveConversationToSpace } from './moveConversation';
 import {
     loadMessageLimitReached,
     persistAllMessageLimitsCleared,
@@ -149,6 +148,7 @@ import {
     refreshMessageFromRemote,
     retryPushMessage,
 } from './messages';
+import { moveConversationToSpace } from './moveConversation';
 import {
     cleanupProjectSearchIndexOnSpaceUpdate,
     deserializeSpaceSaga,
@@ -236,7 +236,7 @@ function* loadReduxFromIdb(): SagaIterator {
 
     const getAllIdbData = () => {
         const stores = [SPACE_STORE, CONVERSATION_STORE, MESSAGE_STORE, ATTACHMENT_STORE, ASSET_STORE, REMOTE_ID_STORE];
-        // prettier-ignore
+        // oxfmt-ignore
         return dbApi.newTransaction(stores, 'readonly')
             .then(tx => ({tx}))
             .then(({tx, ...rest}) => dbApi.getAllIdMaps(tx).then((idMapEntries) => ({tx, ...rest, idMapEntries})))
@@ -248,7 +248,7 @@ function* loadReduxFromIdb(): SagaIterator {
             .then(({tx, ...rest}) => dbApi.getAllMessages(tx).then((messages) => ({tx, ...rest, messages})))
             .then(({tx, ...rest}) => dbApi.getAllAttachments(tx).then((attachments) => ({tx, ...rest, attachments})))
             .then(({tx, ...rest}) => dbApi.getAllAssets(tx).then((assets) => ({tx, ...rest, assets})))
-            .then(({tx, ...rest}) => rest)
+            .then(({tx, ...rest}) => rest);
     };
 
     const allIdbData = yield call(getAllIdbData);
@@ -484,7 +484,7 @@ export function* rootSaga(opts?: { crashIfErrors: boolean }) {
     // Needs only `dbApi`, not the master key, so the composer is locked as early as possible.
     yield spawn(loadMessageLimitReached);
 
-    // prettier-ignore
+    // oxfmt-ignore
     // @formatter:off
     const watchers = ([
         function*() { yield takeEvery(addIdMapEntry, considerSavingIdMapToIdb) },

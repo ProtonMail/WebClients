@@ -62,7 +62,7 @@
         "create-atom": "ts-node -P create-atom/tsconfig.create-atom.json create-atom/index",
         "i18n:validate": "proton-i18n validate lint-functions",
         "lint": "oxlint --quiet",
-        "pretty": "prettier --write $(find . -path ./node_modules -prune -o -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "pretty": "oxfmt --write \"**/*.{js,ts,tsx}\"",
         "test": "jest",
         "test:ci": "jest --runInBand --ci --logHeapUsage",
         "test:watch": "jest --watch"
@@ -85,6 +85,7 @@
     "devDependencies": {
         "@proton/jest-env": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
+        "@proton/oxfmt-config": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
         "@proton/styles": "workspace:^",
         "@testing-library/dom": "catalog:",
@@ -105,7 +106,6 @@
         "mustache": "^4.2.0",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "prettier": "catalog:",
         "ts-node": "catalog:",
         "typescript": "catalog:"
     }

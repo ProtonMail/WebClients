@@ -667,10 +667,10 @@
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
-        "generate-date-fns-locales-map": "node lib/i18n/generateDateFnsLocaleMap.ts lib/i18n/dateFnsLocaleMap.ts && prettier --write lib/i18n/dateFnsLocaleMap.ts",
+        "generate-date-fns-locales-map": "node lib/i18n/generateDateFnsLocaleMap.ts lib/i18n/dateFnsLocaleMap.ts && oxfmt --write lib/i18n/dateFnsLocaleMap.ts",
         "i18n:validate": "proton-i18n validate lint-functions lib",
         "lint": "oxlint --quiet",
-        "pretty": "prettier --write $(find lib -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "pretty": "oxfmt --write \"lib/**/*.{js,ts,tsx}\"",
         "test": "TZ=UTC vitest run",
         "test:ci": "pnpm run test --run --silent=passed-only",
         "test:watch": "pnpm run test --watch"
@@ -735,7 +735,6 @@
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "playwright": "^1.64.1",
-        "prettier": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
     },

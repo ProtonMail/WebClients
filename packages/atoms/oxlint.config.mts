@@ -15,7 +15,7 @@ export default createOxlintConfig({
     },
     overrides: [
         {
-            // create-atom is a dev-only CLI, so its tools (commander, prettier, mustache) are dev dependencies.
+            // create-atom is a dev-only CLI, so its tools (commander, mustache) are dev dependencies.
             files: ['create-atom/**'],
             rules: {
                 'proton/no-extraneous-dependencies': createExtraneousDependenciesRule({
