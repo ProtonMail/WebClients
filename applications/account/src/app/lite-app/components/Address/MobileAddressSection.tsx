@@ -1,35 +1,22 @@
 import { useLocation } from 'react-router-dom';
 
-import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
-import { orderAddresses } from '@proton/account/addresses/actions';
-import { useAddresses } from '@proton/account/addresses/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import { getStatus } from '@proton/components/containers/addresses/helper';
-import useLoading from '@proton/hooks/useLoading';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
-import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresses';
 import { isMailVersionOlderThan } from '@proton/shared/lib/mobile/isMailVersionOlderThan';
 import clsx from '@proton/utils/clsx';
-import move from '@proton/utils/move';
 
 import EditProfileModal from '../EditProfileModal';
 import MobileSectionAction from '../MobileSectionAction';
 import MobileSectionLabel from '../MobileSectionLabel';
 import MobileSectionRow from '../MobileSectionRow';
+import { useDefaultAddress } from './useDefaultAddress';
 
 const MobileAddressSection = () => {
-    const dispatch = useDispatch();
-    const [addresses = []] = useAddresses();
-
-    const [savingDefaultAddress, withLoading] = useLoading(false);
-
-    const list = sortAddresses(addresses);
-    const [firstAddress] = list;
+    const { defaultAddress: firstAddress, options, saving, setDefaultAddress } = useDefaultAddress();
 
     // We want to show the edit signature field on older apps
     // - iOS older than 7.0.5
@@ -46,44 +33,19 @@ const MobileAddressSection = () => {
         setProfileModal(true);
     };
 
-    const filteredAddresses = list?.filter((address) => !getIsNonDefault(address)) || [];
-
-    const handleSetDefaultAddress = async (addressID: string) => {
-        const oldIndex = list.findIndex((address) => address.ID === addressID);
-        if (oldIndex === -1) {
-            return;
-        }
-
-        const newIndex = 0;
-
-        const newList = move(list, oldIndex, newIndex);
-        const { isExternal, isDisabled } = getStatus(newList[0], 0);
-
-        if (isDeepEqual(list, newList)) {
-            return;
-        }
-
-        // Do not set disabled or external addresses as default
-        if (newIndex === 0 && (isDisabled || isExternal)) {
-            return;
-        }
-
-        await dispatch(orderAddresses({ member: undefined, addresses: newList }));
-    };
-
     return (
         <>
             <MobileSectionRow stackContent>
                 <MobileSectionLabel htmlFor="addressSelector">{c('Label').t`Default email address`}</MobileSectionLabel>
                 <SelectTwo<Address>
                     id="addressSelector"
-                    onValue={(address) => withLoading(handleSetDefaultAddress(address.ID))}
+                    onValue={(address) => setDefaultAddress(address.ID)}
                     value={firstAddress}
-                    loading={savingDefaultAddress}
-                    disabled={savingDefaultAddress}
+                    loading={saving}
+                    disabled={saving}
                     className="mt-2"
                 >
-                    {filteredAddresses.map((address) => (
+                    {options.map((address) => (
                         <Option key={address.ID} value={address} title={address.Email} />
                     ))}
                 </SelectTwo>
