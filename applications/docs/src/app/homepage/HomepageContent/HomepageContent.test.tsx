@@ -10,7 +10,7 @@ import userEvent from '@testing-library/user-event'
 import type { DocInvitesHook, HomepageViewState } from '../homepageViewContext'
 import { HomepageViewContext } from '../homepageViewContext'
 import type { MemberRole } from '@protontech/drive-sdk'
-import type { ExtendedInvitationDetails } from '@proton/docs-shared/InvitationTypes'
+import type { ExtendedInvitationDetails } from '../invitationTypes'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
 import { TelemetryEvent } from '../utils/telemetry'
 
@@ -27,11 +27,6 @@ jest.mock('@proton/account/addresses/hooks', () => ({
 jest.mock('@proton/components/hooks/useAuthentication', () => ({
   __esModule: true,
   default: () => ({ getLocalID: () => 0 }),
-}))
-
-jest.mock('@proton/app-context/useNotifications', () => ({
-  __esModule: true,
-  useNotifications: () => ({ createNotification: jest.fn() }),
 }))
 
 let mockBulkEnabled = false
@@ -888,6 +883,7 @@ describe('HomepageContent', () => {
           useDocInvites: useMockDocInvites,
           reportTelemetry: mockReportTelemetry,
           logger: mockLogger,
+          createNotification: jest.fn(),
         }}
       >
         {children}

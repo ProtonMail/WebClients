@@ -10,6 +10,7 @@ import { useSharingModal } from '@proton/drive/public/sharingModal'
 import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { useApi } from '@proton/app-context/useApi'
 import { useConfig } from '@proton/app-context/useConfig'
+import { useNotifications } from '@proton/app-context/useNotifications'
 import type { Application } from '@proton/docs-core/Application/Application'
 import type { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { Suspense, lazy, useCallback } from 'react'
@@ -83,6 +84,7 @@ type AppRoutesProps = { driveCompat: DriveCompat; application: Application }
 function AppRoutes({ driveCompat, application }: AppRoutesProps) {
   const api = useApi()
   const { APP_VERSION, CLIENT_TYPE } = useConfig()
+  const { createNotification } = useNotifications()
   const reportDescriptionContext = getDocsReportContextLines({ appVersion: APP_VERSION, clientType: CLIENT_TYPE })
   const reportHomepageTelemetry = useCallback(
     (event: string) => application.metrics.reportHomepageTelemetry(event as TelemetryDocsHomepageEvents),
@@ -113,10 +115,12 @@ function AppRoutes({ driveCompat, application }: AppRoutesProps) {
         api={api}
         logger={application.logger}
         reportTelemetry={reportHomepageTelemetry}
+        createNotification={createNotification}
         useSharingModal={useSharingModal}
         useMoveItemsModal={useMoveItemsModal}
         reportDescriptionContext={reportDescriptionContext}
         quickSettings={<DocsQuickSettings />}
+        appVersion={APP_VERSION}
       />
     </Suspense>
   )

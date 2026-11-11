@@ -1,4 +1,3 @@
-import { useNotifications } from '@proton/app-context/useNotifications'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import {
   type DriveEvent,
@@ -22,6 +21,7 @@ import { traceRecentsError } from './traceRecentsError'
 import type { EventSubscriber, SDKEventListener } from './homepageViewUtils'
 import type { Api } from './docsApi/api'
 import type { Logger } from './utils/logger'
+import type { CreateNotification } from './utils/notifications'
 import { getRecentDocuments, type GetRecentsResponse, type RecentDocumentAPIItem } from './docsApi/getRecentDocuments'
 
 type UseRecentsProps = {
@@ -29,11 +29,10 @@ type UseRecentsProps = {
   eventSubscriber: EventSubscriber
   api: Api
   logger: Logger
+  createNotification: CreateNotification
 }
 
-export function useRecents({ drive, eventSubscriber, api, logger }: UseRecentsProps) {
-  const { createNotification } = useNotifications()
-
+export function useRecents({ drive, eventSubscriber, api, logger, createNotification }: UseRecentsProps) {
   const recentDocuments = useRecentsStore((state) => state.recentDocuments)
   const recentDocumentsInitialized = useRecentsStore((state) => state.recentDocumentsInitialized)
 

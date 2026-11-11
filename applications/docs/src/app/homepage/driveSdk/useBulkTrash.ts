@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useNotifications } from '@proton/app-context/useNotifications'
 import type { RecentDocumentsItem } from '../recentDocumentsItem'
 import { generateNodeUid, type ProtonDriveClient } from '@protontech/drive-sdk'
 import { trashManyAndNotify } from './trashRestoreNotify'
@@ -10,8 +9,7 @@ import { TelemetryEvent } from '../utils/telemetry'
 type BulkTrashDependencies = { drive: ProtonDriveClient }
 
 export function useBulkTrash({ drive }: BulkTrashDependencies) {
-  const { createNotification } = useNotifications()
-  const { updateRecentDocuments, reportTelemetry } = useHomepageView()
+  const { updateRecentDocuments, reportTelemetry, createNotification } = useHomepageView()
   const [isTrashing, setIsTrashing] = useState(false)
 
   const trash = useEvent(async (documents: RecentDocumentsItem[]): Promise<RecentDocumentsItem[]> => {

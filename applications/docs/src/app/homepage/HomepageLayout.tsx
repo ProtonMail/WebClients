@@ -5,7 +5,6 @@ import { getAppVersion } from '@proton/components/helpers/appVersion'
 import { IcBrandProtonDocs } from '@proton/icons/icons/IcBrandProtonDocs'
 import { IcBrandProtonSheets } from '@proton/icons/icons/IcBrandProtonSheets'
 import Logo from '@proton/components/components/logo/Logo'
-import { NOTIFICATION_DEFAULT_EXPIRATION_TIME } from '@proton/app-context/notifications/constants'
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer'
 import PrivateHeader from '@proton/components/containers/heading/PrivateHeader'
 import { OfferRenewNoticeProvider } from '@proton/payments-ui/ui/components/OfferRenewNoticeProvider'
@@ -20,8 +19,6 @@ import TopBanners from '@proton/components/containers/topBanners/TopBanners'
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint'
 import useAppTitle from '@proton/components/hooks/useAppTitle'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
-import { useConfig } from '@proton/app-context/useConfig'
-import { useNotifications } from '@proton/app-context/useNotifications'
 import UserDropdown from '@proton/components/containers/heading/UserDropdown'
 import useToggle from '@proton/hooks/useToggle'
 import { useMemo, useState, type ReactNode } from 'react'
@@ -64,9 +61,11 @@ export type HomepageLayoutProps = {
   children: ReactNode
   reportDescriptionContext: string[]
   quickSettings: ReactNode
+  /** The host's `APP_VERSION`. */
+  appVersion: string
 }
 
-export function HomepageLayout({ children, reportDescriptionContext, quickSettings }: HomepageLayoutProps) {
+export function HomepageLayout({ children, reportDescriptionContext, quickSettings, appVersion }: HomepageLayoutProps) {
   const { state: expanded, toggle: toggleExpanded, set: setExpanded } = useToggle()
   usePageTitle()
   return (
@@ -80,7 +79,9 @@ export function HomepageLayout({ children, reportDescriptionContext, quickSettin
           reportDescriptionContext={reportDescriptionContext}
         />
       }
-      sidebar={<Sidebar expanded={expanded} onToggle={toggleExpanded} setExpanded={setExpanded} />}
+      sidebar={
+        <Sidebar expanded={expanded} onToggle={toggleExpanded} setExpanded={setExpanded} appVersion={appVersion} />
+      }
       drawerApp={<DrawerApp customAppSettings={quickSettings} />}
     >
       <PrivateMainArea className="!border-t-0 small:ps-1 [&>div]:[block-size:100%]" hasToolbar>
@@ -260,16 +261,19 @@ function MobileSearch({ value, onChange, type, className }: SearchProps) {
 // sidebar
 // -------
 
-type SidebarProps = { expanded: boolean; onToggle: () => void; setExpanded: (value: boolean) => void }
+type SidebarProps = {
+  expanded: boolean
+  onToggle: () => void
+  setExpanded: (value: boolean) => void
+  appVersion: string
+}
 
-function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
+function Sidebar({ expanded, onToggle, setExpanded, appVersion: hostAppVersion }: SidebarProps) {
   const { getLocalID } = useAuthentication()
   const isRecents = useRouteMatch(HOMEPAGE_RECENTS_PATH)
   const history = useHistory()
-  const { updateRecentDocuments, isRecentsUpdating, type, reportTelemetry } = useHomepageView()
-  const { createNotification } = useNotifications()
-  const { APP_VERSION } = useConfig()
-  const appVersion = getAppVersion(APP_VERSION)
+  const { updateRecentDocuments, isRecentsUpdating, type, reportTelemetry, createNotification } = useHomepageView()
+  const appVersion = getAppVersion(hostAppVersion)
   const isSheetsEnabled = useIsSheetsEnabled()
 
   const newDocumentButton = (
@@ -319,7 +323,6 @@ function Sidebar({ expanded, onToggle, setExpanded }: SidebarProps) {
                 await updateRecentDocuments()
                 createNotification({
                   text: c('Notification').t`Recent documents updated`,
-                  expiration: NOTIFICATION_DEFAULT_EXPIRATION_TIME,
                 })
                 setExpanded(false)
               }}

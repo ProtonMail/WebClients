@@ -20,10 +20,12 @@ export default function HomepagePage({
   api,
   logger,
   reportTelemetry,
+  createNotification,
   useSharingModal,
   useMoveItemsModal,
   reportDescriptionContext,
   quickSettings,
+  appVersion,
 }: HomepagePageProps) {
   return (
     <HomepageViewProvider
@@ -34,9 +36,14 @@ export default function HomepagePage({
       api={api}
       logger={logger}
       reportTelemetry={reportTelemetry}
+      createNotification={createNotification}
     >
       <DocumentActionsProvider drive={drive} useSharingModal={useSharingModal} useMoveItemsModal={useMoveItemsModal}>
-        <HomepageLayout reportDescriptionContext={reportDescriptionContext} quickSettings={quickSettings}>
+        <HomepageLayout
+          reportDescriptionContext={reportDescriptionContext}
+          quickSettings={quickSettings}
+          appVersion={appVersion}
+        >
           <HomepageContent />
         </HomepageLayout>
       </DocumentActionsProvider>

@@ -12,10 +12,6 @@ import { TelemetryEvent } from '../utils/telemetry'
 jest.mock('./trashRestoreNotify', () => ({ trashManyAndNotify: jest.fn() }))
 
 const mockCreateNotification = jest.fn()
-jest.mock('@proton/app-context/useNotifications', () => ({
-  __esModule: true,
-  useNotifications: () => ({ createNotification: mockCreateNotification }),
-}))
 
 const mockUpdateRecentDocuments = jest.fn()
 
@@ -49,6 +45,7 @@ function Wrapper({ children }: { children: ReactNode }) {
         {
           updateRecentDocuments: mockUpdateRecentDocuments,
           reportTelemetry: mockReportTelemetry,
+          createNotification: mockCreateNotification,
         } as unknown as HomepageViewValue
       }
     >
