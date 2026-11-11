@@ -238,6 +238,12 @@
       ],
       "Undo": [
         "Angre"
+      ],
+      "Header column": [
+        "Overskriftskolonne"
+      ],
+      "Header row": [
+        "Overskriftsrad"
       ]
     },
     "color": {
@@ -303,6 +309,15 @@
       ],
       "Symbols": [
         "Symboler"
+      ],
+      "Flags": [
+        "Flagg"
+      ],
+      "Smileys and people": [
+        "Smilefjes og personer"
+      ],
+      "Travel and places": [
+        "Reiser og steder"
       ]
     },
     "Error": {
@@ -338,6 +353,12 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Kan ikke konvertere Word-dokument. Er det passordbeskyttet? I så fall må du fjerne passordet og prøve igjen."
+      ],
+      "Could not load emoji. Close the picker and try again.": [
+        "Kunne ikke laste inn emoji. Lukk velgeren og prøv igjen."
+      ],
+      "Failed to import document due to unsupported file format.": [
+        "Kunne ikke importere dokumentet på grunn av filformat som ikke støttes."
       ]
     },
     "Error message": {
@@ -458,6 +479,12 @@
       ],
       "You cannot undo this action.": [
         "Du kan ikke angre denne handlingen."
+      ],
+      "Loading emoji…": [
+        "Laster emoji…"
+      ],
+      "Loading spreadsheet content...": [
+        "Laster inn innholdet i regnearket..."
       ]
     },
     "Label": {
@@ -571,6 +598,24 @@
       ],
       "with \"${ replaceWith }\"": [
         "med \"${ replaceWith }\""
+      ],
+      "Comments": [
+        "Kommentarer"
+      ],
+      "Emoji suggestions": [
+        "Emoji-forslag"
+      ],
+      "Resize outline": [
+        "Endre størrelse på disposisjonen"
+      ],
+      "Search emoji": [
+        "Søk etter emojier"
+      ],
+      "Search results": [
+        "Søketreff"
+      ],
+      "Table": [
+        "Tabell"
       ]
     },
     "Placeholder": {
@@ -752,11 +797,71 @@
       ],
       "Time": [
         "Tid"
+      ],
+      "Accounting": [
+        "Bokføring"
+      ],
+      "Bottom": [
+        "Bunn"
+      ],
+      "Clip": [
+        "Klipp"
+      ],
+      "Currency formats are used for general monetary values.": [
+        "Valutaformater brukes til generelle pengeverdier."
+      ],
+      "Custom": [
+        "Tilpasset"
+      ],
+      "Date formats display date and time serial numbers as date values.": [
+        "Datoformater viser serienumre for dato og klokkeslett som datoverdier."
+      ],
+      "Fraction": [
+        "Brøk"
+      ],
+      "General format cells have no specific number format.": [
+        "Generelle formatceller har ikke noe spesifikt tallformat."
+      ],
+      "Number": [
+        "Nummer"
+      ],
+      "Number is used for general display of numbers.": [
+        "Tall brukes for generell visning av tall."
+      ],
+      "Percentage": [
+        "Prosentdel"
+      ],
+      "Scientific": [
+        "Akademisk"
+      ],
+      "Time formats display date and time serial numbers as date values.": [
+        "Tidsformater viser serienumre for dato og klokkeslett som datoverdier."
+      ],
+      "Top": [
+        "Topp"
+      ],
+      "Wrap": [
+        "Bryt tekst"
       ]
     },
     "sheets_2025:Spreadsheet chartAggregates": {
       "Sum": [
         "Sum"
+      ],
+      "Average": [
+        "Gjennomsnitt"
+      ],
+      "Count": [
+        "Antall"
+      ],
+      "Max": [
+        "Maks"
+      ],
+      "Median": [
+        "Median"
+      ],
+      "Min": [
+        "Min"
       ]
     },
     "sheets_2025:Spreadsheet chartEditorDialog": {
@@ -767,6 +872,39 @@
     "sheets_2025:Spreadsheet chartTypes": {
       "Line": [
         "Linje"
+      ],
+      "2D Pie": [
+        "2D Pai"
+      ],
+      "Clustered Column": [
+        "Gruppert stolpe"
+      ],
+      "Column": [
+        "Kolonne"
+      ],
+      "Doughnut": [
+        "Smultring"
+      ],
+      "Hierarchy": [
+        "Hierarki"
+      ],
+      "Pie": [
+        "Pai"
+      ],
+      "Smooth line": [
+        "Glatt linje"
+      ],
+      "Stacked column": [
+        "Stablet kolonne"
+      ],
+      "Stacked line": [
+        "Stablet linje"
+      ],
+      "Sunburst": [
+        "Solstråle"
+      ],
+      "Treemap": [
+        "Trekart"
       ]
     },
     "sheets_2025:Spreadsheet conditions": {
@@ -865,6 +1003,138 @@
       ],
       "Yesterday": [
         "I går"
+      ],
+      "April": [
+        "April"
+      ],
+      "Below average": [
+        "Under gjennomsnittet"
+      ],
+      "Bottom N items": [
+        "Nederste N elementer"
+      ],
+      "Bottom N percent": [
+        "Nederste N prosent"
+      ],
+      "Checkbox": [
+        "Avkryssingsboks"
+      ],
+      "Custom formula": [
+        "Tilpasset formel"
+      ],
+      "Date is after": [
+        "Dato er etter"
+      ],
+      "Date is before": [
+        "Dato er før"
+      ],
+      "Date is equal to": [
+        "Dato er lik"
+      ],
+      "Date is not equal to": [
+        "Dato er ikke lik"
+      ],
+      "Date is on or after": [
+        "Dato er på eller etter"
+      ],
+      "Date is on or before": [
+        "Dato er på eller før"
+      ],
+      "Date is valid": [
+        "Dato er gyldig"
+      ],
+      "Dropdown": [
+        "Rullegardinmeny"
+      ],
+      "Dropdown (from a range)": [
+        "Rullegardinmeny (fra et område)"
+      ],
+      "Equal to": [
+        "Er lik"
+      ],
+      "Errors": [
+        "Feil"
+      ],
+      "February": [
+        "Februar"
+      ],
+      "Greater than": [
+        "Større enn"
+      ],
+      "Greater than or equal to": [
+        "Større enn eller lik"
+      ],
+      "Greater than or equal to previous": [
+        "Større enn eller lik forrige"
+      ],
+      "Greater than previous": [
+        "Større enn forrige"
+      ],
+      "Is empty": [
+        "Er tom"
+      ],
+      "Is not empty": [
+        "Er ikke tom"
+      ],
+      "January": [
+        "Januar"
+      ],
+      "Last quarter": [
+        "Siste kvartal"
+      ],
+      "Less than or equal to": [
+        "Mindre enn eller lik"
+      ],
+      "Less than or equal to previous": [
+        "Mindre enn eller lik forrige"
+      ],
+      "Less than previous": [
+        "Mindre enn forrige"
+      ],
+      "No errors": [
+        "Ingen feil"
+      ],
+      "Not equal to": [
+        "Ikke lik"
+      ],
+      "Quarter 1": [
+        "Kvartal 1"
+      ],
+      "Quarter 2": [
+        "Kvartal 2"
+      ],
+      "Quarter 3": [
+        "Kvartal 3"
+      ],
+      "Quarter 4": [
+        "Kvartal 4"
+      ],
+      "Text does not contain": [
+        "Tekst inneholder ikke"
+      ],
+      "Text ends with": [
+        "Tekst slutter med"
+      ],
+      "Text is email": [
+        "Tekst er e-post"
+      ],
+      "Text is exactly": [
+        "Tekst er akkurat"
+      ],
+      "Text is not equal": [
+        "Tekst er ikke lik"
+      ],
+      "This quarter": [
+        "Dette kvartalet"
+      ],
+      "Tomorrow": [
+        "I morgen"
+      ],
+      "Top N items": [
+        "Topp N elementer"
+      ],
+      "Top N percent": [
+        "Topp N prosent"
       ]
     },
     "sheets_2025:Spreadsheet context menu": {
@@ -1041,6 +1311,9 @@
       ],
       "Values only": [
         "Kun verdier"
+      ],
+      "(Blanks)": [
+        "(Blank)"
       ]
     },
     "sheets_2025:Spreadsheet context menu (columns/rows)": {
@@ -1216,6 +1489,9 @@
     "sheets_2025:Spreadsheet customCurrencyFormatDialog": {
       "Symbol": [
         "Symbol"
+      ],
+      "Format": [
+        "Format"
       ]
     },
     "sheets_2025:Spreadsheet delete sheet dialog": {
@@ -1688,6 +1964,9 @@
       ],
       "Go to previous": [
         "Gå til forrige"
+      ],
+      "${ current } of ${ total }": [
+        "${ current } av ${ total }"
       ]
     },
     "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
@@ -1815,6 +2094,27 @@
       ],
       "Zoom": [
         "Zoom"
+      ],
+      "Apply border": [
+        "Legg til kantlinje"
+      ],
+      "Apply fill color": [
+        "Bruk fyllfarge"
+      ],
+      "Apply text color": [
+        "Bruk tekstfarge"
+      ],
+      "Border": [
+        "Kantlinje"
+      ],
+      "Choose border": [
+        "Velg kantlinje"
+      ],
+      "Choose fill color": [
+        "Velg fyllfarge"
+      ],
+      "Choose text color": [
+        "Velg tekstfarge"
       ]
     },
     "sheets_2025:Spreadsheet filter menu": {
@@ -1869,11 +2169,20 @@
     "sheets_2025:Spreadsheet formulaBar": {
       "View": [
         "Vis"
+      ],
+      "Edit": [
+        "Rediger"
+      ],
+      "Remove": [
+        "Fjern"
       ]
     },
     "sheets_2025:Spreadsheet gridFooter": {
       "Add": [
         "Legg til"
+      ],
+      "more rows at the bottom": [
+        "flere rader nederst"
       ]
     },
     "sheets_2025:Spreadsheet insert link dialog": {
@@ -1913,6 +2222,21 @@
       ],
       "OK": [
         "OK"
+      ],
+      "Default ${ size }": [
+        "Standard ${ size }"
+      ],
+      "Resize column ${ title }": [
+        "Endre størrelse på kolonne ${ title }"
+      ],
+      "Resize row ${ title }": [
+        "Endre størrelse på rad ${ title }"
+      ],
+      "Specify column width (px)": [
+        "Angi kolonnebredde (px)"
+      ],
+      "Specify row height (px)": [
+        "Angi radhøyde (px)"
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
@@ -2096,6 +2420,18 @@
       ],
       "Vertical axis title": [
         "Tittel på vertikal akse"
+      ],
+      "Series ${ seriesNumber }": [
+        "Serie ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Aggregate": [
+        "Aggreger serie ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Name": [
+        "Navn på serie ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Range": [
+        "Område for serie ${ seriesNumber }"
       ]
     },
     "sheets_2025:Spreadsheet sidebar conditional format dialog": {
@@ -2372,6 +2708,36 @@
       ],
       "Pasting remote images is not supported. Download the image and use \"Insert image\" instead.": [
         "Det støttes ikke å lime inn eksterne bilder. Last ned bildet og bruk \"Sett inn bilde\" i stedet."
+      ]
+    },
+    "sheets_2025:Spreadsheet editingDisabledButton": {
+      "Edit": [
+        "Rediger"
+      ]
+    },
+    "sheets_2025:Spreadsheet formatMenu": {
+      "Coming soon...": [
+        "Kommer snart..."
+      ]
+    },
+    "sheets_2025:Spreadsheet viewMenu": {
+      "1 column": [
+        "1 kolonne"
+      ],
+      "1 row": [
+        "1 rad"
+      ],
+      "2 columns": [
+        "2 kolonner"
+      ],
+      "2 rows": [
+        "2 rader"
+      ],
+      "No columns": [
+        "Ingen kolonner"
+      ],
+      "No rows": [
+        "Ingen rader"
       ]
     }
   }
