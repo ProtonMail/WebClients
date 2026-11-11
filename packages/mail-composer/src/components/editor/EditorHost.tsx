@@ -1,6 +1,6 @@
+import type { ReactNode } from 'react';
 import { createContext, useContext } from 'react';
 
-import { useGetMailSettings, useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { CacheType } from '@proton/redux-utilities/interface';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 
@@ -13,6 +13,16 @@ export interface EditorHost {
     useGetMailSettings: () => (options?: { cache?: CacheType }) => Promise<MailSettings>;
 }
 
-const EditorHostContext = createContext<EditorHost>({ useMailSettings, useGetMailSettings });
+const EditorHostContext = createContext<EditorHost | undefined>(undefined);
 
-export const useEditorHost = () => useContext(EditorHostContext);
+export const EditorHostProvider = ({ host, children }: { host: EditorHost; children: ReactNode }) => (
+    <EditorHostContext.Provider value={host}>{children}</EditorHostContext.Provider>
+);
+
+export const useEditorHost = () => {
+    const host = useContext(EditorHostContext);
+    if (!host) {
+        throw new Error('useEditorHost must be used inside an EditorHostProvider');
+    }
+    return host;
+};

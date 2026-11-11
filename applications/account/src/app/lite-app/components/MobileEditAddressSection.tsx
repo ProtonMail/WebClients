@@ -4,12 +4,12 @@ import { c } from 'ttag';
 
 import { updateAddressThunk } from '@proton/account/addresses/updateAddress';
 import { Button } from '@proton/atoms/Button/Button';
-import SimpleEditor from '@proton/components/components/editor/SimpleEditor';
 import Form from '@proton/components/components/form/Form';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import type { SimpleEditorActions } from '@proton/components/containers/editor/SimpleEditorContext';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import type { WithLoading } from '@proton/hooks/useLoading';
+import SimpleEditor from '@proton/mail-composer/components/editor/SimpleEditor';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { formatSignature } from '@proton/shared/lib/mail/signature';

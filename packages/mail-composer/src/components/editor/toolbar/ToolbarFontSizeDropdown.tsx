@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Badge } from '@proton/components/components/badge/Badge';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuContainer from '@proton/components/components/dropdown/DropdownMenuContainer';
 import { FONT_SIZES } from '@proton/shared/lib/mail/fontFace';
 import clsx from '@proton/utils/clsx';
 
-import { Badge } from '../../badge/Badge';
-import DropdownMenu from '../../dropdown/DropdownMenu';
-import DropdownMenuContainer from '../../dropdown/DropdownMenuContainer';
 import ToolbarDropdown from './ToolbarDropdown';
 
 interface Props {

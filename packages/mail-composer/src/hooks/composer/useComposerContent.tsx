@@ -7,7 +7,6 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
-import type { EditorMetadata } from '@proton/components/components/editor/interface';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { useHandler } from '@proton/hooks/useHandler';
 import { getHasAssistantStatus } from '@proton/llm/lib/helpers';
@@ -40,6 +39,7 @@ import noop from '@proton/utils/noop';
 
 import type { MessageChange } from '../../components/composer/Composer';
 import type { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
+import type { EditorMetadata } from '../../components/editor/interface';
 import type { ComposerReturnType } from '../../helpers/composer/contentFromComposerMessage';
 import {
     getAddressPlainTextSignature,

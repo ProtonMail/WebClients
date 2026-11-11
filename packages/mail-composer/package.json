@@ -20,6 +20,12 @@
         "./components/composer/modals/ComposerInsertImageModal": "./src/components/composer/modals/ComposerInsertImageModal.tsx",
         "./components/composer/modals/helper": "./src/components/composer/modals/helper.ts",
         "./components/composer/tests/Composer.test.data": "./src/components/composer/tests/Composer.test.data.ts",
+        "./components/editor/constants": "./src/components/editor/constants.ts",
+        "./components/editor/Editor": "./src/components/editor/Editor.tsx",
+        "./components/editor/EditorHost": "./src/components/editor/EditorHost.tsx",
+        "./components/editor/interface": "./src/components/editor/interface.ts",
+        "./components/editor/rooster/helpers/getRoosterEditorActions": "./src/components/editor/rooster/helpers/getRoosterEditorActions.ts",
+        "./components/editor/SimpleEditor": "./src/components/editor/SimpleEditor.tsx",
         "./components/eo/EOComposer": "./src/components/eo/EOComposer.tsx",
         "./components/message/extrasFooter/attachment/AttachmentsButton": "./src/components/message/extrasFooter/attachment/AttachmentsButton.tsx",
         "./components/message/modals/ContactResignModal": "./src/components/message/modals/ContactResignModal.tsx",
@@ -57,6 +63,7 @@
         "test:watch": "jest --watch --coverage=false"
     },
     "dependencies": {
+        "@emoji-mart/data": "^1.0.3",
         "@proton/account": "workspace:^",
         "@proton/activation": "workspace:^",
         "@proton/app-context": "workspace:^",
@@ -83,10 +90,14 @@
         "@protontech/logger": "catalog:",
         "@reduxjs/toolkit": "catalog:",
         "date-fns": "^2.30.0",
+        "emoji-mart": "^5.1.0",
         "lodash": "catalog:",
         "react": "catalog:",
         "react-dom": "catalog:",
+        "roosterjs": "8.47.0",
+        "roosterjs-editor-dom": "^8.62.0",
         "roosterjs-editor-types": "^8.62.0",
+        "tinycolor2": "catalog:",
         "ttag": "catalog:"
     },
     "devDependencies": {
@@ -103,6 +114,7 @@
         "@types/node": "catalog:",
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
+        "@types/tinycolor2": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
         "jest": "catalog:",

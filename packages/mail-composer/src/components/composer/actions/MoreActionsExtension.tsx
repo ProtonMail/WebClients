@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import type { EditorMetadata } from '@proton/components/components/editor/interface';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
@@ -18,6 +17,7 @@ import clsx from '@proton/utils/clsx';
 
 import { getSwitchToHTMLChange } from '../../../helpers/composer/mimeTypeSwitch';
 import { useComposerMessageHost } from '../../../host/composerMessageHost';
+import type { EditorMetadata } from '../../editor/interface';
 import type { MessageChange, MessageChangeFlag } from '../Composer';
 import type { ExternalEditorActions } from '../editor/EditorWrapper';
 

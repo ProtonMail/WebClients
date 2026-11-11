@@ -44,6 +44,7 @@ const getRoosterEditorActions = (
                 iframeRef.current?.focus();
                 editorInstance.focus();
             } catch (e) {
+                // eslint-disable-next-line no-console
                 console.error(e);
             }
         },

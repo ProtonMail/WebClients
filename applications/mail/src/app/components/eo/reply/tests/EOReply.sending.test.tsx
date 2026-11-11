@@ -1,7 +1,7 @@
 import { CryptoProxy } from '@protontech/crypto';
 import { fireEvent, waitFor } from '@testing-library/react';
 
-import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
+import { ROOSTER_EDITOR_ID } from '@proton/mail-composer/components/editor/constants';
 
 import { addApiMock } from '../../../../helpers/tests/api';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/tests/crypto';

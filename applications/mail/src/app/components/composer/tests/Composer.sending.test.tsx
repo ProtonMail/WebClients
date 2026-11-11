@@ -2,7 +2,7 @@ import { fireEvent, getByTestId } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
+import { ROOSTER_EDITOR_ID } from '@proton/mail-composer/components/editor/constants';
 import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
 import { addAttachment } from '@proton/mail-message/store/attachments/attachmentsActions';
 import type { DecryptedAttachment } from '@proton/mail-message/store/attachments/attachmentsTypes';

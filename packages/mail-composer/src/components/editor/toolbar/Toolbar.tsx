@@ -4,6 +4,9 @@ import { Suspense, lazy } from 'react';
 import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
+import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
+import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcEraser } from '@proton/icons/icons/IcEraser';
 import { IcFileImage } from '@proton/icons/icons/IcFileImage';
 import { IcLink } from '@proton/icons/icons/IcLink';
@@ -20,9 +23,6 @@ import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { DEFAULT_FONT_FACE_ID, DEFAULT_FONT_SIZE } from '@proton/shared/lib/mail/fontFace';
 import clsx from '@proton/utils/clsx';
 
-import ErrorBoundary from '../../../containers/app/ErrorBoundary';
-import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
-import { ButtonGroup } from '../../button/ButtonGroup';
 import type { ToolbarConfig } from '../helpers/getToolbarConfig';
 import type { EditorMetadata } from '../interface';
 import ToolbarAlignmentDropdown from './ToolbarAlignmentDropdown';

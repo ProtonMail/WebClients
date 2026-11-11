@@ -3,7 +3,6 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import type { PublicKeyReference } from '@protontech/crypto';
 
-import type { EditorMetadata } from '@proton/components/components/editor/interface';
 import { useHandler } from '@proton/hooks/useHandler';
 import { MESSAGE_ACTIONS } from '@proton/mail-message/constants';
 import { getContent, setContent } from '@proton/mail-message/helpers/message/messageContent';
@@ -21,6 +20,7 @@ import type { MessageChange } from '../composer/Composer';
 import ComposerContent from '../composer/ComposerContent';
 import type { ExternalEditorActions } from '../composer/editor/EditorWrapper';
 import ComposerInsertImageModal from '../composer/modals/ComposerInsertImageModal';
+import type { EditorMetadata } from '../editor/interface';
 
 import './EOComposer.scss';
 
