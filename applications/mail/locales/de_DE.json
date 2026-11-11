@@ -5459,6 +5459,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Deine Suche ergab zu viele Treffer. Schränke deine Suche ein und versuche es erneut."
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Eine leere Nachricht kann nicht gesendet werden. Die Nachricht wurde nicht gesendet."
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Die eingebetteten Bilder konnten nicht entfernt werden. Die Nachricht wurde nicht in den Klartext gewechselt."
       ]
     },
     "error": {
@@ -9759,6 +9765,13 @@
       ],
       "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
         "Antworten auf Umfrage sind nicht durchgehend verschlüsselt. Bitte gib keine vertraulichen Informationen weiter."
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } Mitglied)",
+        "${ contactGroupName } (${ numberOfContacts } Mitglieder)"
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Wir haben E-Mails in Verteilerlisten gefunden, die du nicht liest. Du kannst dich in einem Klick von diesen abmelden."
       ]
     },
     "info": {
@@ -11125,6 +11138,12 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Font family": [
+        "Schriftart"
+      ],
+      "Font size": [
+        "Schriftgröße"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17257,6 +17276,9 @@
       ],
       "Filter on": [
         "Filtern nach"
+      ],
+      "Start with a cleaner Inbox": [
+        "Starte mit einem sauberen Posteingang"
       ]
     },
     "Title header for keys table": {

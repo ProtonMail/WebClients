@@ -1580,7 +1580,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza"
+        "Confiar en clave"
       ],
       "Trust public key": [
         "Confiar en la clave pública"
@@ -1783,6 +1783,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Add payment method": [
+        "Añadir método de pago"
+      ],
+      "Cancel trial": [
+        "Cancelar periodo de prueba"
       ]
     },
     "action": {
@@ -5453,6 +5459,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Tu búsqueda ha coincidido con muchos resultados. Limita tu búsqueda e inténtalo de nuevo."
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "No se puede enviar un mensaje vacío. Mensaje no enviado."
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Imágenes incrustadas no pudieron ser eliminadas. El mensaje no se cambió a texto plano."
       ]
     },
     "error": {
@@ -6290,6 +6302,12 @@
       ],
       "Username": [
         "Nombre de usuario"
+      ],
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Antes de ${ MAIL_APP_NAME }, ¿qué correo electrónico utilizabas más?"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "¿Cuál es la razón principal por la que te has unido a ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -9681,6 +9699,79 @@
       ],
       "No ads": [
         "Sin publicidad"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } miembro)",
+        "${ contactGroupName } (${ numberOfContacts } miembros)"
+      ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } de ${ steps }"
+      ],
+      "A new or separate address": [
+        "Una dirección nueva o diferente"
+      ],
+      "A specific feature (tell us)": [
+        "Una característica concreta (cuéntanosla)"
+      ],
+      "Almost done": [
+        "Casi hemos terminado"
+      ],
+      "Back": [
+        "Volver"
+      ],
+      "Choose all that apply.": [
+        "Selecciona todas las opciones que correspondan."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Elige una opción. Nos ayuda a mejorar ${ MAIL_APP_NAME }."
+      ],
+      "I didn't have one": [
+        "No tenía ninguno"
+      ],
+      "I use other Proton products": [
+        "Utilizo otros productos de Proton"
+      ],
+      "Leave Big Tech": [
+        "Abandona las grandes empresas tecnológicas"
+      ],
+      "Next": [
+        "Siguiente"
+      ],
+      "One last step": [
+        "Un último paso"
+      ],
+      "Other (tell us)": [
+        "Otro (indícanoslo)"
+      ],
+      "Protection from hackers and leaks": [
+        "Protección contra los piratas informáticos y las filtraciones"
+      ],
+      "Someone recommended it": [
+        "Alguien me lo recomendó"
+      ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Empieza a utilizar ${ MAIL_APP_NAME }"
+      ],
+      "Stop companies reading my emails": [
+        "Que las empresas dejen de leer mis correos electrónicos"
+      ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "Las respuestas a la encuesta no están cifradas de extremo a extremo. Por favor, no facilites ninguna información confidencial."
+      ],
+      "Tell us more (optional)": [
+        "Cuéntanos más (opcional)"
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Hemos encontrado algunas listas de correo que no lees. Puedes darte de baja de ellas con un solo clic."
+      ],
+      "Which feature? (optional)": [
+        "¿Qué característica? (opcional)"
+      ],
+      "Which provider?": [
+        "¿Qué proveedor?"
+      ],
+      "Work or business": [
+        "Trabajo o negocios"
       ]
     },
     "info": {
@@ -11047,6 +11138,16 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Font family": [
+        "Familia de fuente"
+      ],
+      "Font size": [
+        "Tamaño de fuente"
+      ],
+      "Select all ${ count } unused sender": [
+        "Seleccionar ${ count } remitente sin usar",
+        "Seleccionar los ${ count } remitentes sin usar"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13164,6 +13265,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Tu suscripción completa a ${ planTitle } comienza el ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**¿Has cambiado de opinión tras el periodo de prueba?** Cancela la suscripción en un plazo de 30 días desde tu primer pago y te reembolsaremos el tiempo no utilizado."
       ]
     },
     "Option": {
@@ -17176,6 +17280,9 @@
       ],
       "Filter on": [
         "Habilitar filtro"
+      ],
+      "Start with a cleaner Inbox": [
+        "Empieza con una bandeja de entrada más limpia"
       ]
     },
     "Title header for keys table": {

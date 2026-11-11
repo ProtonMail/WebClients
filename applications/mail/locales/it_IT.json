@@ -5459,6 +5459,9 @@
       ],
       "Something went wrong, close the modal and try again.": [
         "Si è verificato un problema. Chiudi questa finestra e riprova."
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Non è possibile inviare un messaggio vuoto."
       ]
     },
     "error": {
@@ -9741,6 +9744,19 @@
       ],
       "You can import it as a new foundation-search index for development purposes.": [
         "È possibile importarlo come nuovo indice \"foundation-search\" per attività di sviluppo."
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts }/ membro)",
+        "${ contactGroupName } (${ numberOfContacts }/ membri)"
+      ],
+      "Star emails": [
+        "Email preferite"
+      ],
+      "Unstar emails": [
+        "Rimuovi email dai preferiti"
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Abbiamo rilevato alcune mailing list che non leggi. Puoi annullare l'iscrizione con un solo clic."
       ]
     },
     "info": {
@@ -11107,6 +11123,16 @@
       ],
       "v1": [
         "v1"
+      ],
+      "Font family": [
+        "Tipo di carattere"
+      ],
+      "Font size": [
+        "Dimensione del carattere"
+      ],
+      "Select all ${ count } unused sender": [
+        "Seleziona l'unico mittente ${ count } inutilizzato",
+        "Seleziona tutti i ${ count } mittenti inutilizzati"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17239,6 +17265,9 @@
       ],
       "Filter on": [
         "Filtra"
+      ],
+      "Start with a cleaner Inbox": [
+        "Inizia con una casella di posta più ordinata"
       ]
     },
     "Title header for keys table": {

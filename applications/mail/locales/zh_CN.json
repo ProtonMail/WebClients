@@ -1778,6 +1778,12 @@
       ],
       "Trust key": [
         "信任密钥"
+      ],
+      "Add payment method": [
+        "添加付款方式"
+      ],
+      "Cancel trial": [
+        "取消试用"
       ]
     },
     "action": {
@@ -4425,6 +4431,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "让他人直接从您的邮件中预约与您通话的时间，无需来回沟通。"
       ]
     },
     "description": {
@@ -5403,6 +5412,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "搜索结果过多，请缩小搜索范围后再试。"
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "无法发送空邮件，邮件未发送。"
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "无法移除嵌入的图片，邮件未切换为纯文本。"
       ]
     },
     "error": {
@@ -6229,6 +6244,12 @@
       ],
       "Username": [
         "用户名"
+      ],
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "在使用 ${ MAIL_APP_NAME } 之前，您最常使用哪个邮箱？"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "您加入 ${ MAIL_APP_NAME } 的主要原因是什么？"
       ]
     },
     "Hint": {
@@ -9496,6 +9517,90 @@
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
         "若要添加新的预订页面，请在 ${ CALENDAR_APP_NAME } 的“预订页面”侧边栏中移除现有的页面。"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } 名成员)"
+      ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } / ${ steps }"
+      ],
+      "A new or separate address": [
+        "新的或独立的地址"
+      ],
+      "A specific feature (tell us)": [
+        "某个特定功能（请告诉我们）"
+      ],
+      "Almost done": [
+        "即将完成"
+      ],
+      "Back": [
+        "返回"
+      ],
+      "Choose all that apply.": [
+        "请选择所有适用项。"
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "请选择一个，这有助于我们改进 ${ MAIL_APP_NAME }。"
+      ],
+      "Dismiss": [
+        "关闭"
+      ],
+      "Here is my availability:": [
+        "这是我的可预约时间："
+      ],
+      "I didn't have one": [
+        "我之前没有"
+      ],
+      "I use other Proton products": [
+        "我使用其他 Proton 产品"
+      ],
+      "Leave Big Tech": [
+        "告别科技巨头"
+      ],
+      "Next": [
+        "下一步"
+      ],
+      "No ads": [
+        "无广告"
+      ],
+      "No booking pages yet": [
+        "暂无预约页面"
+      ],
+      "One last step": [
+        "最后一步"
+      ],
+      "Other (tell us)": [
+        "其他（请告诉我们）"
+      ],
+      "Protection from hackers and leaks": [
+        "防范黑客与泄露"
+      ],
+      "Someone recommended it": [
+        "有人推荐"
+      ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "开始使用 ${ MAIL_APP_NAME }"
+      ],
+      "Stop companies reading my emails": [
+        "阻止企业读取我的邮件"
+      ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "调查问卷的回答不采用端到端加密，请勿分享任何敏感信息。"
+      ],
+      "Tell us more (optional)": [
+        "告诉我们更多（可选）"
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "我们发现了一些您未阅读的邮件列表，您可以一键退订。"
+      ],
+      "Which feature? (optional)": [
+        "哪个功能？（可选）"
+      ],
+      "Which provider?": [
+        "哪个服务提供商？"
+      ],
+      "Work or business": [
+        "工作或商务"
       ]
     },
     "info": {
@@ -10848,6 +10953,21 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "在您的邮件中添加预约页面，让他人挑选合适的时间。"
+      ],
+      "Booking page": [
+        "预约页面"
+      ],
+      "Font family": [
+        "字体"
+      ],
+      "Font size": [
+        "字号"
+      ],
+      "Select all ${ count } unused sender": [
+        "全选 ${ count } 位未使用的发件人"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12922,6 +13042,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "您的完整 ${ planTitle } 订阅将于 ${ boldEndDate } 开始。"
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**试用后改变主意了？** 在首次付款后 30 天内取消，我们将退还未使用时间的费用。"
       ]
     },
     "Option": {
@@ -16824,6 +16947,18 @@
       ],
       "Your shorter address is now ready": [
         "您的较短地址现已准备就绪"
+      ],
+      "Filter on": [
+        "筛选依据"
+      ],
+      "Insert a booking page": [
+        "插入预约页面"
+      ],
+      "Share your availability": [
+        "分享您的可预约时间"
+      ],
+      "Start with a cleaner Inbox": [
+        "从更清爽的收件箱开始"
       ]
     },
     "Title header for keys table": {

@@ -5459,6 +5459,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "La búsqueda coincidió con muchos resultados. Limite la búsqueda e inténtelo de nuevo."
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "No se puede enviar un mensaje vacío. Mensaje no enviado."
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "No se pudieron eliminar las imágenes incrustadas. El mensaje no se cambió a texto plano."
       ]
     },
     "error": {
@@ -9759,6 +9765,10 @@
       ],
       "Work or business": [
         "Trabajo o negocio"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } miembro)",
+        "${ contactGroupName } (${ numberOfContacts } miembros)"
       ]
     },
     "info": {
@@ -11125,6 +11135,12 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Font family": [
+        "Familia de fuente"
+      ],
+      "Font size": [
+        "Tamaño de fuente"
       ]
     },
     "Label (begin date/advanced search)": {

@@ -5379,6 +5379,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Wyszukiwanie pasuje do zbyt wielu wyników. Sprecyzuj wyszukiwanie i spróbuj ponownie."
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Nie można wysłać pustej wiadomości. Wiadomość nie została wysłana."
       ]
     },
     "error": {
@@ -9325,6 +9328,21 @@
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
         "Aby dodać nową stronę rezerwacji, najpierw w aplikacji ${ CALENDAR_APP_NAME } usuń istniejącą w sekcji rezerwacji na pasku bocznym."
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } członek)",
+        "${ contactGroupName } (${ numberOfContacts } członków)",
+        "${ contactGroupName } (${ numberOfContacts } członków)",
+        "${ contactGroupName } (Członkowie: ${ numberOfContacts })"
+      ],
+      "Read your ${ count } filter": [
+        "Sprawdź swój ${ count } filtr",
+        "Sprawdź swoje ${ count } filtry",
+        "Sprawdź swoich ${ count } filtrów",
+        "Sprawdź swoich ${ count } filtrów"
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Znaleziono listy mailingowe, których nie czytasz. Możesz anulować ich subskrypcje jednym kliknięciem."
       ]
     },
     "info": {
@@ -10034,7 +10052,7 @@
         "Przejdź do Newsletterów"
       ],
       "Go to Primary": [
-        "Przejdź do głównej"
+        "Przejdź do Głównej"
       ],
       "Go to Promotions": [
         "Przejdź do Promocji"
@@ -10043,10 +10061,10 @@
         "Przejdź do Społeczności"
       ],
       "Go to Transactions": [
-        "Przejdź do transakcji"
+        "Przejdź do Transakcji"
       ],
       "Go to Updates": [
-        "Przejdź do sekcji zaktualizuj"
+        "Przejdź do Aktualizacji"
       ],
       "Has attachments": [
         "Zawiera załącznik"
@@ -10373,7 +10391,7 @@
         "Pomiń opinię"
       ],
       "Social": [
-        "Media społecznościowe"
+        "Społeczności"
       ],
       "Social - Social media updates, activity, and messages": [
         "Społeczności – powiadomienia z mediów społecznościowych, aktywności i wiadomości"
@@ -10551,6 +10569,15 @@
       ],
       "ZIP code": [
         "Kod pocztowy"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Promocje, oferty i wiadomości marketingowe"
+      ],
+      "Font family": [
+        "Czcionka"
+      ],
+      "Font size": [
+        "Rozmiar czcionki"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16714,6 +16741,9 @@
       ],
       "Your shorter address is now ready": [
         "Krótszy adres jest już gotowy"
+      ],
+      "Start with a cleaner Inbox": [
+        "Zacznij z lepiej uporządkowaną skrzynką odbiorczą."
       ]
     },
     "Title header for keys table": {

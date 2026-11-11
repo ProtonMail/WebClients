@@ -5506,6 +5506,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Vă rugăm să limitați căutarea și să reîncercați."
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Nu se poate trimite un mesaj gol. Mesajul nu este trimis."
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Imaginile încorporate nu au putut fi eliminate. Mesajul nu a fost convertit în text simplu."
       ]
     },
     "error": {
@@ -9929,6 +9935,14 @@
       ],
       "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
         "Răspunsurile la sondaj nu sunt criptate bilateral, nu partajați informații confidențiale."
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } membru)",
+        "${ contactGroupName } (${ numberOfContacts } membri)",
+        "${ contactGroupName } (${ numberOfContacts } de membri)"
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "S-au găsit câteva liste de corespondență pe care nu le citiți. Vă puteți dezabona de la ele cu un singur clic."
       ]
     },
     "info": {
@@ -11303,6 +11317,17 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Font family": [
+        "Familie font"
+      ],
+      "Font size": [
+        "Mărime font"
+      ],
+      "Select all ${ count } unused sender": [
+        "Selectare toți expeditorii neutilizați: ${ count }",
+        "Selectare toți expeditorii neutilizați: ${ count }",
+        "Selectare toți expeditorii neutilizați: ${ count }"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17579,6 +17604,9 @@
       ],
       "Filter on": [
         "Filtru activat"
+      ],
+      "Start with a cleaner Inbox": [
+        "Începeți cu un cont mai curat"
       ]
     },
     "Title header for keys table": {

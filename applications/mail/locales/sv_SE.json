@@ -5403,6 +5403,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din sökning matchade för många resultat. Begränsa din sökning och försök igen."
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Kan inte skicka ett tomt meddelande. Meddelande är inte skickat."
       ]
     },
     "error": {
@@ -9508,6 +9511,13 @@
       ],
       "Tell us more (optional)": [
         "Berätta mer (valfritt)"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } medlem)",
+        "${ contactGroupName } (${ numberOfContacts } medlemmar)"
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Vi hittade några E-postlistor som du inte läser. Du kan avbryta prenumerationen från dem med ett klick."
       ]
     },
     "info": {
@@ -10838,6 +10848,16 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Font family": [
+        "Typsnittsfamilj"
+      ],
+      "Font size": [
+        "Textstorlek"
+      ],
+      "Select all ${ count } unused sender": [
+        "Välj alla  ${ count }  oanvänd avsändare",
+        "Välj alla ${ count } oanvända avsändare"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16846,6 +16866,9 @@
       ],
       "Filter on": [
         "Filter på"
+      ],
+      "Start with a cleaner Inbox": [
+        "Börja med en renare inkorg"
       ]
     },
     "Title header for keys table": {

@@ -5438,6 +5438,12 @@
       ],
       "You reached the maximum number of connected addresses": [
         "Du har nådd det maksimale antallet tilkoblede adresser"
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Kan ikke sende en tom melding. Meldingen ble ikke sendt."
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Innebygde bilder kunne ikke fjernes. Meldingen ble ikke konvertert til ren tekst."
       ]
     },
     "error": {
@@ -9731,7 +9737,14 @@
         "Svar på undersøkelser er ikke ende-til-ende-krypterte, ikke del noen sensitiv informasjon."
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
-        "For å legge til en ny bestillingsside, fjern en eksisterende fra sidefeltet for bestillingssider i ${ CALENDAR_APP_NAME }."
+        "For å legge til en ny bestillingsside, fjern en besillingsside fra sidemenyen i ${ CALENDAR_APP_NAME }."
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } medlem)",
+        "${ contactGroupName } (${ numberOfContacts } medlemmer)"
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Vi fant noen e-postlister du ikke leser. Du kan melde deg av dem med ett klikk."
       ]
     },
     "info": {
@@ -11098,6 +11111,16 @@
       ],
       "Cc": [
         "Kopi"
+      ],
+      "Font family": [
+        "Skriftfamilie"
+      ],
+      "Font size": [
+        "Skriftstørrelse"
+      ],
+      "Select all ${ count } unused sender": [
+        "Velg ${ count } ubrukt avsender",
+        "Velg alle ${ count } ubrukte avsendere"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17207,6 +17230,9 @@
       ],
       "Subscribe to ${ planTitle }": [
         "Abonner på ${ planTitle }"
+      ],
+      "Start with a cleaner Inbox": [
+        "Start med en mer ryddig innboks"
       ]
     },
     "Title header for keys table": {
@@ -17887,6 +17913,11 @@
     "BYOE": {
       "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
         "Dine nyeste e-poster blir importert først. E-poster du allerede har importert vil ikke bli kopiert igjen."
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName }-skrivebordsapplikasjon"
       ]
     }
   }

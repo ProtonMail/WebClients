@@ -1979,6 +1979,9 @@
       ],
       "Writing assistant seats": [
         "Ліцэнзій памочніка ў напісанні"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Арганізацыі з дадатковым кампанентам «Пастаўшчык кіраваных паслуг» могуць стварыць і кіраваць дапаможнымі арганізацыямі."
       ]
     },
     "Alert": {
@@ -4520,6 +4523,9 @@
       ],
       "Move emails to the right category to improve categorization.": [
         "Перамяшчайце лісты ў правільную катэгорыю, каб палепшыць катэгарызацыю."
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Дазвольце людзям браніраваць час з вамі непасрэдна з вашых лістоў, без лішняй перапіскі."
       ]
     },
     "description": {
@@ -5537,6 +5543,9 @@
       ],
       "You reached the maximum number of connected addresses": [
         "Вы дасягнулі абмежавання па колькасці падключаных адрасоў"
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Немагчыма адправіць пустое паведамленне. Паведамленне не адпраўлена."
       ]
     },
     "error": {
@@ -10047,6 +10056,12 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "Ваш Gmail падключаны да гэтага адраса ${ MAIL_APP_NAME }"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } удзельнік)",
+        "${ contactGroupName } (${ numberOfContacts } удзельнікі)",
+        "${ contactGroupName } (${ numberOfContacts } удзельнікаў)",
+        "${ contactGroupName } (${ numberOfContacts } удзельнікаў)"
       ]
     },
     "info": {
@@ -11426,6 +11441,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } assistant": [
         "Памочнік ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Font family": [
+        "Сямейства шрыфтоў"
+      ],
+      "Font size": [
+        "Памер шрыфту"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14144,6 +14165,12 @@
       ],
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "У вас ужо ёсць ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Ініцыятыва Born Private патрабуе ахвяравання."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Гэты тарыфны план не падтрымлівае ўдзельнікаў у вашым уліковым запісе."
       ]
     },
     "Payments.Error": {
@@ -17829,6 +17856,9 @@
       ],
       "Filter on": [
         "Фільтраваць па"
+      ],
+      "Start with a cleaner Inbox": [
+        "Пачніце з больш чыстай паштовай скрыні"
       ]
     },
     "Title header for keys table": {

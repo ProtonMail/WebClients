@@ -5459,6 +5459,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din søgning gav for mange resultater. Begræns din søgning, og forsøg igen."
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Der kan ikke sendes en tom besked. Beskeden er ikke sendt."
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Indlejrede billeder kunne ikke fjernes. Beskeden blev ikke skiftet til almindelig tekst."
       ]
     },
     "error": {
@@ -9759,6 +9765,10 @@
       ],
       "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
         "Besvarelser i spørgeskemaet er ikke end-to-end-krypteret, så del venligst ikke følsomme oplysninger."
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } medlem)",
+        "${ contactGroupName } (${ numberOfContacts } medlemmer)"
       ]
     },
     "info": {
@@ -11125,6 +11135,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Font family": [
+        "Skrifttypefamilie"
+      ],
+      "Font size": [
+        "Skriftstørrelse"
       ]
     },
     "Label (begin date/advanced search)": {

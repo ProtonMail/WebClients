@@ -5459,6 +5459,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Δεν είναι δυνατή η αποστολή κενού μηνύματος. Το μήνυμα δε στάλθηκε."
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Δεν ήταν δυνατή η αφαίρεση των ενσωματωμένων εικόνων. Το μήνυμα δεν μετατράπηκε σε απλό κείμενο."
       ]
     },
     "error": {
@@ -9756,6 +9762,13 @@
       ],
       "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
         "Οι απαντήσεις στην έρευνα δεν είναι κρυπτογραφημένες διατερματικά, παρακαλούμε μην κοινοποιείτε ευαίσθητες πληροφορίες."
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } μέλος)",
+        "${ contactGroupName } (${ numberOfContacts } μέλη)"
+      ],
+      "Leave Big Tech": [
+        "Έξοδος από την Big Tech"
       ]
     },
     "info": {
@@ -11122,6 +11135,12 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Font family": [
+        "Οικογένεια γραμματοσειρών"
+      ],
+      "Font size": [
+        "Μέγεθος γραμματοσειράς"
       ]
     },
     "Label (begin date/advanced search)": {

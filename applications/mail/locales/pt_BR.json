@@ -5448,6 +5448,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa correspondeu a muitos resultados. Limite sua busca e tente novamente."
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Não é possível enviar uma mensagem vazia. Mensagem não enviada."
       ]
     },
     "error": {
@@ -9694,6 +9697,13 @@
       ],
       "Work or business": [
         "Trabalho ou negócios"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } membros)",
+        "${ contactGroupName } (${ numberOfContacts } membros)"
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Nós achamos algumas listas de e-mails que você não lê. Você pode cancelar todas essas assinaturas com um clique."
       ]
     },
     "info": {
@@ -11054,6 +11064,16 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Font family": [
+        "Família de fontes"
+      ],
+      "Font size": [
+        "Tamanho da fonte"
+      ],
+      "Select all ${ count } unused sender": [
+        "Selecione ${ count } remetente não utilizado",
+        "Selecione todos os ${ count } remetentes não utilizados"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17171,6 +17191,9 @@
       ],
       "Filter on": [
         "Filtrar em"
+      ],
+      "Start with a cleaner Inbox": [
+        "Inicie com uma Caixa de Entrada limpa"
       ]
     },
     "Title header for keys table": {

@@ -787,8 +787,8 @@
         "Insérer"
       ],
       "Insert ${ totalChecked } contact": [
-        "Veuillez insérer ${ totalChecked } contact",
-        "Veuillez insérer ${ totalChecked } contacts"
+        "Insérer ${ totalChecked } contact",
+        "Insérer ${ totalChecked } contacts"
       ],
       "Insert contact": [
         "Insérer un contact"
@@ -4278,8 +4278,8 @@
         "Déplacez les e-mails dans la bonne catégorie afin d’améliorer leur classement."
       ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
-        "Les nouveaux messages de ${ senderEmailAddress } et ${ otherSendersCount } autre ne seront pas envoyés et seront définitivement supprimés.",
-        "Les nouveaux messages de ${ senderEmailAddress } et ${ otherSendersCount } autres ne seront pas envoyés et seront définitivement supprimés."
+        "Les nouveaux messages de ${ senderEmailAddress } et ${ otherSendersCount } autre ne seront pas délivrés et seront définitivement supprimés.",
+        "Les nouveaux messages de ${ senderEmailAddress } et ${ otherSendersCount } autres ne seront pas délivrés et seront définitivement supprimés."
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Les nouveaux messages de ${ senderEmailAddress } ne seront pas envoyés et seront définitivement supprimés."
@@ -5059,7 +5059,7 @@
         "Aucun contact n'a été trouvé pour l'importation."
       ],
       "No drive found to import": [
-        "Aucun disque à importer détecté"
+        "Aucun disque à importer n'a été détecté."
       ],
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
@@ -5376,7 +5376,7 @@
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
       ],
       "Unexpected error, we can't import the files": [
-        "Une erreur inattendue est survenue, les fichiers n'ont pas pu être importés"
+        "Une erreur inattendue est survenue, les fichiers ne peuvent être importés"
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -5448,6 +5448,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Impossible d'envoyer un message vide. Le message n'a pas été envoyé."
       ]
     },
     "error": {
@@ -5460,7 +5463,7 @@
     },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
-        "${ maxAttendees } participant est autorisé par invitation.",
+        "Un maximum de ${ maxAttendees } participant est autorisé par invitation.",
         "Un maximum de ${ maxAttendees } participants est autorisé par invitation."
       ]
     },
@@ -6717,8 +6720,8 @@
         "${ count } messages · ${ names }"
       ],
       "${ count } email → ${ dest }": [
-        "${ count } email → ${ dest }",
-        "${ count } emails → ${ dest }"
+        "${ count } message → ${ dest }",
+        "${ count } messages → ${ dest }"
       ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } sur ${ totalProgress }",
@@ -8373,8 +8376,8 @@
         "Lire vos ${ count } e-mails"
       ],
       "Read ${ count } email on screen": [
-        "Lire ${ count } e-mail sur l'écran",
-        "Lire ${ count } e-mails sur l'écran"
+        "Lire ${ count } message sur l'écran",
+        "Lire ${ count } messages sur l'écran"
       ],
       "Read ${ count } message in this thread": [
         "Lire votre ${ count } message dans ce fil de discussion",
@@ -9346,8 +9349,8 @@
         "Vous avez ${ totalLabel } dans votre boîte de réception."
       ],
       "You have **${ count } conversation** in your ${ categoryLabel } category": [
-        "Vous avez **${ count } conversation** dans la catégorie ${ categoryLabel }",
-        "Vous avez **${ count } conversations** dans la catégorie ${ categoryLabel }"
+        "Vous avez **${ count } conversation** dans votre catégorie ${ categoryLabel }",
+        "Vous avez **${ count } conversations** dans votre catégorie ${ categoryLabel }"
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Vous avez **${ count } conversation** stockée dans ce dossier.",
@@ -9397,12 +9400,12 @@
         "Vous serez peut-être redirigé vers le site internet de votre banque."
       ],
       "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
-        "Vous avez sélectionné **${ checked } conversation** de la catégorie ${ categoryLabel }",
-        "Vous avez sélectionné **${ checked } conversations** de la catégorie ${ categoryLabel }"
+        "Vous avez sélectionné **${ checked } conversation** dans votre catégorie ${ categoryLabel }",
+        "Vous avez sélectionné **${ checked } conversations** dans votre catégorie ${ categoryLabel }"
       ],
       "You selected **${ checked } message** in your ${ categoryLabel } category": [
-        "Vous avez sélectionné **${ checked } message** de la catégorie ${ categoryLabel }",
-        "Vous avez sélectionné **${ checked } messages** de la catégorie ${ categoryLabel }"
+        "Vous avez sélectionné **${ checked } message** dans votre catégorie ${ categoryLabel }",
+        "Vous avez sélectionné **${ checked } messages** dans votre catégorie ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Vous avez sélectionné **${ count } conversation** de ce dossier.",
@@ -9694,6 +9697,16 @@
       ],
       "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
         "Vous avez une facture à régler au ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } membre)",
+        "${ contactGroupName } (${ numberOfContacts } membres)"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Demandez à votre admin de changer d'abonnement ou retirez une page de réservation dans le panneau latéral de ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Pour ajouter une nouvelle page de réservation, retirez-en une du panneau latéral de ${ CALENDAR_APP_NAME }."
       ]
     },
     "info": {
@@ -11045,6 +11058,12 @@
       ],
       "Realistic session": [
         "Session réelle"
+      ],
+      "Font family": [
+        "Famille de police"
+      ],
+      "Font size": [
+        "Taille de police"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14478,8 +14497,8 @@
         "Envoyé via ${ MAIL_APP_NAME } avec un chiffrement zéro accès"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "Envoyé par ${ MAIL_APP_NAME } chiffrement sans accès vers le destinataire vérifié",
-        "Envoyé par ${ MAIL_APP_NAME } chiffrement sans accès vers les destinataires vérifiés"
+        "Envoyé par ${ MAIL_APP_NAME } avec un chiffrement zéro accès à un destinataire vérifié",
+        "Envoyé par ${ MAIL_APP_NAME } avec un chiffrement zéro accès à des destinataires vérifiés"
       ],
       "Sent by you with end-to-end encryption": [
         "Envoyé par vous avec un chiffrement de bout en bout"
@@ -16081,7 +16100,7 @@
         "La fonction ${ feature } est maintenant active."
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
+        "Assistant d'aide à la rédaction ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ numMessages } message": [
         "${ numMessages } message",

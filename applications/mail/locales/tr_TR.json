@@ -5459,6 +5459,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Boş bir ileti gönderemezsiniz. İleti gönderilmedi."
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Gömülü görseller kaldırılamadı. İleti düz yazıya dönüştürülemedi."
       ]
     },
     "error": {
@@ -9759,6 +9765,13 @@
       ],
       "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
         "Anket yanıtları uçtan uca şifrelenmez. Herhangi bir önemli bilgiyi paylaşmayın."
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } üye)",
+        "${ contactGroupName } (${ numberOfContacts } üye)"
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Bazı listelerinden gelen e-postaları okumadığınızı farkettik. Tek tıkla aboneliğinizi iptal edebilirsiniz."
       ]
     },
     "info": {
@@ -11125,6 +11138,16 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Font family": [
+        "Yazı tipi ailesi"
+      ],
+      "Font size": [
+        "Yazı boyutu"
+      ],
+      "Select all ${ count } unused sender": [
+        "Kullanılmamış ${ count } göndericinin tümünü seç",
+        "Kullanılmamış ${ count } göndericinin tümünü seç"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17257,6 +17280,9 @@
       ],
       "Filter on": [
         "Şuna göre süz"
+      ],
+      "Start with a cleaner Inbox": [
+        "Daha temiz bir Gelen kutusu kullanmaya başlayın"
       ]
     },
     "Title header for keys table": {
