@@ -1,0 +1,206 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/easing' as *;
+
+// Lite settings pages opened in the NGC mobile web views, styled from the "Calendar Next Gen Web" Figma
+// (🚧 Settings › general-settings). Figma has no dark mode yet: dark values reuse the ET overrides of MobileSettings.scss.
+// The root class is doubled to win over the design-system form styles.
+.lite-settings.lite-settings {
+	--lite-settings-background: #f6f7fe;
+	--lite-settings-panel: white;
+	--lite-settings-glyph: #151515;
+	--lite-settings-glyph-mid: #707070;
+	--lite-settings-glyph-low: #959595;
+	--lite-settings-border: #f1f3fd;
+	--lite-settings-pressed: rgb(0 0 0 / 0.04);
+	--lite-settings-switch-off: #c5c6f8;
+	--lite-settings-switch-on: #6441e6;
+	--lite-settings-switch-thumb: white;
+
+	.lite-layout--et-dark & {
+		--lite-settings-background: rgb(30 30 43);
+		--lite-settings-panel: rgb(43 43 56);
+		--lite-settings-glyph: rgb(164 164 171);
+		--lite-settings-glyph-mid: rgb(117 117 125);
+		--lite-settings-glyph-low: rgb(117 117 125);
+		--lite-settings-border: rgb(30 30 43);
+		--lite-settings-pressed: rgb(80 80 91);
+		--lite-settings-switch-off: rgb(80 80 91);
+		--lite-settings-switch-on: rgb(146 146 249);
+		--lite-settings-switch-thumb: rgb(43 43 56);
+	}
+
+	display: flex;
+	flex-direction: column;
+	gap: rem(20);
+	padding-block: rem(4) rem(40);
+	padding-inline: rem(16);
+	min-block-size: 100vh; // Fallback
+	// On iOS Safari 100vh includes the browser toolbar, which pushes the bottom of the page out of view
+	min-block-size: 100dvh;
+	background-color: var(--lite-settings-background);
+	color: var(--lite-settings-glyph);
+
+	.lite-settings-section {
+		display: flex;
+		flex-direction: column;
+		gap: rem(4);
+	}
+
+	.lite-settings-section-title {
+		margin: 0;
+		padding-block: rem(8);
+		padding-inline: rem(16);
+		font-size: rem(14);
+		line-height: rem(20);
+		font-weight: var(--font-weight-semibold);
+		color: var(--lite-settings-glyph-mid);
+	}
+
+	.lite-settings-panel {
+		overflow: hidden;
+		border-radius: rem(24);
+		background-color: var(--lite-settings-panel);
+	}
+
+	.lite-settings-row {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: rem(16);
+		min-block-size: rem(56);
+		padding-block: rem(12);
+		padding-inline: rem(16);
+		font-size: rem(16);
+		line-height: rem(24);
+
+		// Hairline between the rows of one panel, inset 16 on both sides like the Figma panels
+		& + .lite-settings-row::before {
+			content: '';
+			position: absolute;
+			inset-block-start: 0;
+			inset-inline: rem(16);
+			border-block-start: 1px solid var(--lite-settings-border);
+		}
+
+		&--button {
+			inline-size: 100%;
+			text-align: start;
+			color: inherit;
+			background: none;
+
+			&:active {
+				background-color: var(--lite-settings-pressed);
+			}
+
+			// The panel clips overflow for its rounded corners, which would hide an outer focus outline
+			&:focus-visible {
+				outline-offset: rem(-2);
+			}
+		}
+	}
+
+	// Keeps 40% of the row, so a long value ("Default language (English)") truncates instead of squeezing the label
+	.lite-settings-row-text {
+		display: flex;
+		flex: 1 1 0;
+		flex-direction: column;
+		gap: rem(2);
+		min-inline-size: 40%;
+	}
+
+	.lite-settings-row-description {
+		font-size: rem(14);
+		line-height: rem(20);
+		color: var(--lite-settings-glyph-mid);
+	}
+
+	.lite-settings-row-value {
+		min-inline-size: 0;
+		overflow: hidden;
+		color: var(--lite-settings-glyph-mid);
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	.lite-settings-row-chevron {
+		color: var(--lite-settings-glyph-low);
+	}
+
+	.lite-settings-row-control {
+		display: flex;
+		justify-content: flex-end;
+		min-inline-size: 0;
+	}
+
+	// Select row: value + chevron-down, opening the design-system dropdown
+	.select-unstyled {
+		max-inline-size: 100%;
+		gap: rem(4);
+		color: var(--lite-settings-glyph-mid);
+		font-size: rem(16);
+		line-height: rem(24);
+		text-align: end;
+	}
+
+	// Switch row: the Figma switch is 32×20 with a 16px thumb
+	$switch-width: rem(32);
+	$switch-height: rem(20);
+	$thumb-size: rem(16);
+	$thumb-offset: rem(2);
+
+	.toggle-label {
+		max-block-size: $switch-height;
+	}
+
+	.toggle-container {
+		inline-size: $switch-width;
+		min-block-size: $switch-height;
+		max-block-size: $switch-height;
+		border-radius: $switch-height;
+
+		// The design-system toggle paints the thumb with these on hover and loading; keep it the thumb colour
+		--field-hover: var(--lite-settings-switch-thumb);
+		--interaction-norm-hover: var(--lite-settings-switch-thumb);
+
+		background-color: var(--lite-settings-switch-off);
+		transition: background-color 0.25s easing(ease-out-cubic);
+
+		&::before {
+			inset-block: $thumb-offset;
+			inset-inline-start: $thumb-offset;
+			inline-size: $thumb-size;
+			block-size: $thumb-size;
+			background-color: var(--lite-settings-switch-thumb);
+		}
+
+		// The design-system focus ring is drawn by ::after at its own 40px width
+		&::after {
+			inline-size: 100%;
+			border: 0;
+		}
+
+		&-img {
+			display: none;
+		}
+
+		> .toggle-container-text {
+			inline-size: $switch-height;
+
+			> .toggle-container-loader {
+				color: var(--lite-settings-switch-on);
+			}
+		}
+
+		&--checked {
+			background-color: var(--lite-settings-switch-on);
+
+			&::before {
+				transform: translateX(#{$switch-width - $thumb-size - 2 * $thumb-offset});
+			}
+
+			[dir='rtl'] &::before {
+				transform: translateX(-#{$switch-width - $thumb-size - 2 * $thumb-offset});
+			}
+		}
+	}
+}

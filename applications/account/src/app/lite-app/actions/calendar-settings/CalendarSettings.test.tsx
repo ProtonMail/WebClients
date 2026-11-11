@@ -30,19 +30,15 @@ jest.mock('@proton/components/containers/calendar/settings/PrimaryTimezoneSelect
     __esModule: true,
     default: ({ id }: { id: string }) => <div id={id} />,
 }));
-jest.mock('@proton/components/containers/calendar/settings/SecondaryTimezoneSelector', () => ({
-    __esModule: true,
-    default: ({ id }: { id: string }) => <div id={id} />,
-}));
-jest.mock('@proton/components/containers/calendar/settings/ShowSecondaryTimezoneToggle', () => ({
-    __esModule: true,
-    default: () => <div id="show-secondary-timezone" />,
-}));
 jest.mock('@proton/components/containers/calendar/settings/WeekStartSelector', () => ({
     __esModule: true,
     default: () => <div id="week-start-select" />,
 }));
-jest.mock('@proton/components/containers/calendar/settings/ViewPreferenceSelector', () => ({
+jest.mock('@proton/components/containers/general/LanguageSelector', () => ({
+    __esModule: true,
+    default: ({ id }: { id: string }) => <div id={id} />,
+}));
+jest.mock('@proton/components/containers/general/TimeFormatSelector', () => ({
     __esModule: true,
     default: ({ id }: { id: string }) => <div id={id} />,
 }));
@@ -88,23 +84,44 @@ describe('CalendarSettings', () => {
     it('renders every general setting', () => {
         const { container } = renderCalendarSettings();
 
-        ['Time zone', 'Layout', 'Invitations'].forEach((title) => {
+        ['Time zone', 'Layout', 'Language and time', 'Invitations'].forEach((title) => {
             expect(screen.getByRole('heading', { name: title })).toBeInTheDocument();
         });
         [
             'autodetect-primary-timezone',
             'primary-timezone',
-            'show-secondary-timezone',
-            'secondary-timezone',
-            'view-select',
             'week-start-select',
             'week-numbers-display',
+            'language-select',
+            'time-format-select',
             'invite-locale',
             'auto-import-invitations',
             'auto-add-meet-link',
         ].forEach((id) => {
             expect(container.querySelector(`#${id}`)).toBeInTheDocument();
         });
+    });
+
+    it('removes the default view and secondary time zone settings', () => {
+        const { container } = renderCalendarSettings();
+
+        ['view-select', 'show-secondary-timezone', 'secondary-timezone'].forEach((id) => {
+            expect(container.querySelector(`#${id}`)).not.toBeInTheDocument();
+        });
+    });
+
+    it('has no date format setting', () => {
+        const { container } = renderCalendarSettings();
+
+        expect(container.querySelector('#date-format-select')).not.toBeInTheDocument();
+        expect(screen.queryByText('Date format')).not.toBeInTheDocument();
+    });
+
+    it('shows the new invitation descriptions', () => {
+        renderCalendarSettings();
+
+        expect(screen.getByText('You still need to reply for the organizer to see your response.')).toBeInTheDocument();
+        expect(screen.getByText('Adds a Meet link to events with at least one participant.')).toBeInTheDocument();
     });
 
     it('saves week numbers and updates the store', async () => {

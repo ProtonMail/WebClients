@@ -17,6 +17,8 @@ interface Props {
     locale: Nullable<string>;
     locales: TtagLocaleMap;
     onChange: (locale: Nullable<string>) => void;
+    unstyledSelect?: boolean;
+    'aria-labelledby'?: string;
 }
 
 const InviteLocaleSelector = ({
@@ -26,6 +28,7 @@ const InviteLocaleSelector = ({
     locale,
     locales,
     onChange,
+    unstyledSelect,
     ...rest
 }: Props) => {
     const { LOCALES = {} } = useConfig();
@@ -54,6 +57,7 @@ const InviteLocaleSelector = ({
             title={c('Action').t`Select language for invitation emails`}
             value={locale}
             onChange={({ value }) => handleChange(value)}
+            unstyled={unstyledSelect}
             {...rest}
         >
             {options.map(({ text, value }) => (
