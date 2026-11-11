@@ -1,5 +1,6 @@
 import { startAccountSessionsListener } from '@proton/account/accountSessions/listener';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
+import { ktSelfAuditListener } from '@proton/account/kt/selfAuditListener';
 import { startPersistListener } from '@proton/account/persist/listener';
 import { startCalendarEventListener } from '@proton/calendar/calendars/listener';
 import { startHolidaysDirectoryListener } from '@proton/calendar/holidaysDirectory/listener';
@@ -14,6 +15,7 @@ import type { AppStartListening } from './store';
 export interface StartListeningFeatures {
     accountPersist?: boolean;
     accountSessions?: boolean;
+    ktSelfAudit?: boolean;
 }
 
 export const start = ({
@@ -33,6 +35,9 @@ export const start = ({
     }
     if (features?.accountSessions) {
         startAccountSessionsListener(startListening);
+    }
+    if (features?.ktSelfAudit) {
+        ktSelfAuditListener(startListening);
     }
     startOffersDeliveryListener(startListening, { appReady: bootstrapEvent });
 };

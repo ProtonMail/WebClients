@@ -4,6 +4,7 @@ import { authenticationListener } from '@proton/account/authenticationService/au
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { groupOwnerInvitesListener } from '@proton/account/groupOwnerInvites/groupOwnerInvitesListener';
 import { groupKeysListener } from '@proton/account/groups/groupKeysListener';
+import { ktSelfAuditListener } from '@proton/account/kt/selfAuditListener';
 import { membersListener } from '@proton/account/members/membersListener';
 import { unprivatizeMembersListener } from '@proton/account/members/unprivatizeMembersListener';
 import { convertAddressesListener } from '@proton/account/organizationKey/convertAddressesListener';
@@ -54,6 +55,7 @@ export const start = ({
         groupKeysListener(startListening);
         safetyReviewTelemetryListener(startListening);
         startOffersDeliveryListener(startListening, { appReady: bootstrapEvent });
+        ktSelfAuditListener(startListening);
     }
 
     if (mode === 'lite') {

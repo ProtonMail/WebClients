@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import { logger } from '@protontech/logger';
 import { c } from 'ttag';
 
+import { useKTActivation } from '@proton/account/kt/hooks';
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
@@ -28,7 +29,6 @@ import { useElectronDefaultApp } from '@proton/components/containers/desktop/def
 import ShortcutsToggle from '@proton/components/containers/general/ShortcutsToggle';
 import ToggleAssistant from '@proton/components/containers/general/ToggleAssistant/ToggleAssistant';
 import ToggleAssistantEnvironment from '@proton/components/containers/general/ToggleAssistant/ToggleAssistantEnvironment';
-import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
 import MailShortcutsModal from '@proton/components/containers/mail/MailShortcutsModal';
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useKeyTransparencyNotification from '@proton/components/hooks/useKeyTransparencyNotification';
@@ -93,7 +93,7 @@ const MailQuickSettings = () => {
     const assistantFeatureEnabled = useAssistantFeatureEnabled();
 
     const keyTransparencyNotification = useKeyTransparencyNotification();
-    const { ktActivation } = useKeyTransparencyContext();
+    const ktActivation = useKTActivation();
     const showKT = ktActivation === KeyTransparencyActivation.SHOW_UI;
 
     const [loadingViewLayout, withLoadingViewLayout] = useLoading();

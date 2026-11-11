@@ -1,6 +1,7 @@
 import { formatDistanceToNow } from 'date-fns';
 import { c } from 'ttag';
 
+import { useKTSelfAuditResult } from '@proton/account/kt/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
@@ -13,13 +14,13 @@ import {
     type LocalStorageAuditResult,
     type SelfAuditResult,
 } from '@proton/key-transparency/interfaces';
+import { getIsHiddenAddressAuditWarning } from '@proton/key-transparency/shared/selfAuditStatus';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { useKeyTransparencyContext } from '../../containers/keyTransparency/useKeyTransparencyContext';
 import AppLink from '../link/AppLink';
 import type { ModalProps } from '../modalTwo/Modal';
 import ModalTwo from '../modalTwo/Modal';
@@ -127,15 +128,9 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
     };
 
     const getAddressAuditWarnings = () => {
-        const warningAddressAudits = selfAuditResult.addressAuditResults
-            .filter(({ status }) => status === AddressAuditStatus.Warning)
-            .filter(
-                ({ warningDetails }) =>
-                    !(
-                        warningDetails?.reason === AddressAuditWarningReason.UnverifiableHistory &&
-                        !warningDetails.addressWasDisabled
-                    )
-            );
+        const warningAddressAudits = selfAuditResult.addressAuditResults.filter(
+            (result) => result.status === AddressAuditStatus.Warning && !getIsHiddenAddressAuditWarning(result)
+        );
         return warningAddressAudits.map(({ email, warningDetails }) => {
             return (
                 <div>
@@ -201,13 +196,7 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
 
     const getAuditSuccess = () => {
         const successEmails = selfAuditResult.addressAuditResults
-            .filter(
-                ({ status, warningDetails }) =>
-                    status === AddressAuditStatus.Success ||
-                    (status === AddressAuditStatus.Warning &&
-                        warningDetails?.reason === AddressAuditWarningReason.UnverifiableHistory &&
-                        !warningDetails.addressWasDisabled)
-            )
+            .filter((result) => result.status === AddressAuditStatus.Success || getIsHiddenAddressAuditWarning(result))
             .map(({ email }) => email);
         if (!successEmails.length) {
             return <></>;
@@ -252,9 +241,7 @@ const NoResultFallback = () => {
 };
 
 const KeyTransparencyDetailsModal = (props: ModalProps) => {
-    const {
-        ktState: { selfAuditResult },
-    } = useKeyTransparencyContext();
+    const selfAuditResult = useKTSelfAuditResult();
 
     const { onClose } = props;
 

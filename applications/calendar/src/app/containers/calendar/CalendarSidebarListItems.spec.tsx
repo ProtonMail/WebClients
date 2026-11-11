@@ -13,6 +13,7 @@ import {
     getCalendarIsNotSyncedInfo,
 } from '@proton/shared/lib/calendar/subscribe/helpers';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 import type { VisualCalendar } from '@proton/shared/lib/interfaces/calendar/Calendar';
 
 import type { CalendarSidebarListItemsProps } from './CalendarSidebarListItems';
@@ -90,6 +91,11 @@ jest.mock('@proton/calendar/calendarBootstrap/keys', () => ({
 jest.mock('@proton/account/addressKeys/hooks', () => ({
     __esModule: true,
     useGetAddressKeys: jest.fn(),
+}));
+
+jest.mock('@proton/account/kt/hooks', () => ({
+    __esModule: true,
+    useKTActivation: jest.fn(() => KeyTransparencyActivation.DISABLED),
 }));
 
 jest.mock('@proton/account/addresses/hooks', () => ({

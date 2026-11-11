@@ -4,7 +4,6 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { SafetyReviewRoute } from '@proton/account/safetyReview/components/SafetyReviewRoute';
 import { AccountSpotlightsProvider } from '@proton/components/containers/account/spotlights/AccountSpotlightsProvider';
 import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
-import KeyTransparencyManager from '@proton/components/containers/keyTransparency/KeyTransparencyManager';
 import SubscriptionModalProvider from '@proton/payments-ui/containers/payments/subscription/SubscriptionModalProvider';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { APPS } from '@proton/shared/lib/constants';
@@ -20,29 +19,27 @@ const SetupMainContainer: FunctionComponent = () => {
     return (
         <StandardPrivateApp>
             <AccountSpotlightsProvider>
-                <KeyTransparencyManager>
-                    <Switch>
-                        <Route path={routes.setup}>
-                            <SetupAddressContainer />
-                        </Route>
-                        <Route path={routes.securityCheckup}>
-                            <SubscriptionModalProvider app={APPS.PROTONACCOUNT}>
-                                <PaymentsContextProvider>
-                                    <SafetyReviewRoute loader={<AccountLoaderPage />} />
-                                </PaymentsContextProvider>
-                            </SubscriptionModalProvider>
-                        </Route>
-                        <Route path={routes.legacySecurityCheckup}>
-                            <Redirect to={`${routes.securityCheckup}${location.search}`} />
-                        </Route>
-                        <Route path={routes.porkbunClaim}>
-                            <PartnerClaimContainer />
-                        </Route>
-                        <Route path="*">
-                            <MainContainer />
-                        </Route>
-                    </Switch>
-                </KeyTransparencyManager>
+                <Switch>
+                    <Route path={routes.setup}>
+                        <SetupAddressContainer />
+                    </Route>
+                    <Route path={routes.securityCheckup}>
+                        <SubscriptionModalProvider app={APPS.PROTONACCOUNT}>
+                            <PaymentsContextProvider>
+                                <SafetyReviewRoute loader={<AccountLoaderPage />} />
+                            </PaymentsContextProvider>
+                        </SubscriptionModalProvider>
+                    </Route>
+                    <Route path={routes.legacySecurityCheckup}>
+                        <Redirect to={`${routes.securityCheckup}${location.search}`} />
+                    </Route>
+                    <Route path={routes.porkbunClaim}>
+                        <PartnerClaimContainer />
+                    </Route>
+                    <Route path="*">
+                        <MainContainer />
+                    </Route>
+                </Switch>
             </AccountSpotlightsProvider>
         </StandardPrivateApp>
     );

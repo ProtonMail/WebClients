@@ -5,6 +5,7 @@ import type { PublicKeyReference } from '@protontech/crypto';
 import { c, msgid } from 'ttag';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
+import { useKTActivation } from '@proton/account/kt/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
@@ -49,7 +50,6 @@ import AddressesAutocompleteTwo from '../../../components/v2/addressesAutocomple
 import { InputField } from '../../../components/v2/field/InputField';
 import useGetEncryptionPreferences from '../../../hooks/useGetEncryptionPreferences';
 import { useContactEmailsCache } from '../../contacts/ContactEmailsProvider';
-import { useKeyTransparencyContext } from '../../keyTransparency/useKeyTransparencyContext';
 
 enum VALIDATION_ERROR_TYPES {
     INVALID_EMAIL = 0,
@@ -277,7 +277,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const getAddressKeys = useGetAddressKeys();
     const getDecryptedPassphraseAndCalendarKeys = useGetDecryptedPassphraseAndCalendarKeys();
-    const { ktActivation } = useKeyTransparencyContext();
+    const ktActivation = useKTActivation();
     const addressesAutocompleteRef = useRef<HTMLInputElement>(null);
 
     const [permissions, setPermissions] = useState<number>(MEMBER_PERMISSIONS.FULL_VIEW);
