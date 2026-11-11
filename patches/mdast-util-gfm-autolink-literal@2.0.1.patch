@@ -1,0 +1,63 @@
+diff --git a/lib/index.js b/lib/index.js
+index c5ca771c24dd914e342f791716a822431ee32b3a..53b96b04006db76c6d7fdf9050c599dda056c7aa 100644
+--- a/lib/index.js
++++ b/lib/index.js
+@@ -132,12 +132,57 @@ function transformGfmAutolinkLiterals(tree) {
+     tree,
+     [
+       [/(https?:\/\/|www(?=\.))([-.\w]+)([^ \t\r\n]*)/gi, findUrl],
+-      [/(?<=^|\s|\p{P}|\p{S})([-.\w+]+)@([-\w]+(?:\.[-\w]+)+)/gu, findEmail]
++      [emailAutolinkExpression(), findEmail]
+     ],
+     {ignore: ['link', 'linkReference']}
+   )
+ }
+ 
++/**
++ * Match the same boundaries as the upstream lookbehind on Safari before 16.4.
++ * Keep the boundary outside the returned match so replacements and retries retain
++ * their original offsets, including when a rejected email follows an astral symbol.
++ *
++ * @returns {RegExp}
++ */
++function emailAutolinkExpression() {
++  const expression = /[\s\p{P}\p{S}]([-.\w+]+)@([-\w]+(?:\.[-\w]+)+)/gu
++  const atStart = /^([-.\w+]+)@([-\w]+(?:\.[-\w]+)+)/u
++
++  expression.exec = function (value) {
++    const start = this.lastIndex
++    if (start === 0) {
++      const match = atStart.exec(value)
++      if (match) {
++        this.lastIndex = match[0].length
++        return match
++      }
++    }
++
++    // Include the preceding code point without making it part of the email.
++    if (start > 0) {
++      const low = value.charCodeAt(start - 1)
++      const high = value.charCodeAt(start - 2)
++      this.lastIndex =
++        start -
++        (low >= 0xdc00 && low <= 0xdfff && high >= 0xd800 && high <= 0xdbff
++          ? 2
++          : 1)
++    }
++
++    const match = RegExp.prototype.exec.call(this, value)
++    if (match) {
++      const prefixLength =
++        match[0].length - match[1].length - match[2].length - 1
++      match[0] = match[0].slice(prefixLength)
++      match.index += prefixLength
++    }
++    return match
++  }
++
++  return expression
++}
++
+ /**
+  * @type {ReplaceFunction}
+  * @param {string} _

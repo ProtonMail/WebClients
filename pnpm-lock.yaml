@@ -660,6 +660,7 @@ patchedDependencies:
   '@mlc-ai/web-llm@0.2.32': f2db861fd9b2307065c0dd450cb8471d7a1aff76a29cd7e383fb2555e831b1eb
   '@pdf-lib/standard-fonts@1.0.0': d6f2355d44f27790cc3b1497d17218c245fcceb9d07c5c7f48b7419c6d4b41f6
   jsdom@26.1.0: b6bb330aaf25c5d1db898a7a4c4f4cd69c592c8948531251029665e5672ed392
+  mdast-util-gfm-autolink-literal@2.0.1: 0ef34f0227e6b109bae17f973b8ac48f689d36efc267ebe77775474d6862a314
   rfc2047@2.0.1: ebba2756caede0901db62e58251e1e0b72540dae6f8a6e2c60ccac1ebdf5fdd9
 
 importers:
@@ -43500,7 +43501,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  mdast-util-gfm-autolink-literal@2.0.1:
+  mdast-util-gfm-autolink-literal@2.0.1(patch_hash=0ef34f0227e6b109bae17f973b8ac48f689d36efc267ebe77775474d6862a314):
     dependencies:
       '@types/mdast': 4.0.4
       ccount: 2.0.1
@@ -43548,7 +43549,7 @@ snapshots:
   mdast-util-gfm@3.1.0(supports-color@11.0.0):
     dependencies:
       mdast-util-from-markdown: 2.0.2(supports-color@11.0.0)
-      mdast-util-gfm-autolink-literal: 2.0.1
+      mdast-util-gfm-autolink-literal: 2.0.1(patch_hash=0ef34f0227e6b109bae17f973b8ac48f689d36efc267ebe77775474d6862a314)
       mdast-util-gfm-footnote: 2.1.0(supports-color@11.0.0)
       mdast-util-gfm-strikethrough: 2.0.0(supports-color@11.0.0)
       mdast-util-gfm-table: 2.0.0(supports-color@11.0.0)

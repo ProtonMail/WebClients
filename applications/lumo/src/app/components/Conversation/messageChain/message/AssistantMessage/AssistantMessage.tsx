@@ -3,7 +3,7 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
-import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
 import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -24,6 +24,7 @@ import { useIsGuest } from '../../../../../providers/IsGuestProvider';
 import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import type { ContentBlock, Message, MessageUsage, RetryStrategy, SiblingInfo } from '../../../../../types';
 import { Role } from '../../../../../types-api';
+import { isEmailLink } from '../../../../../util/emailLinks';
 import { sendMessageCopyEvent } from '../../../../../util/telemetry';
 import { isTrustedProtonLink, openTrustedLink } from '../../../../../util/trustedLinks';
 import LumoButton from '../../../../Buttons/LumoButton';
@@ -31,6 +32,7 @@ import { ReferenceFilesButton } from '../../../../Files';
 import LumoAvatar from '../../../../LumoAvatar/LumoAvatar/LumoAvatar';
 import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
 import AssistantFeedbackModal from '../../../../Modals/AssistantFeedbackModal';
+import EmailWarningModal from '../../../../Modals/EmailWarningModal';
 import LinkWarningModal from '../../../../Modals/LinkWarningModal';
 import SiblingSelector from '../../../../SiblingSelector';
 import { ArtifactChip } from '../../../artifact/ArtifactChip';
@@ -278,8 +280,10 @@ const AssistantMessage = ({
     const isFinishedGenerating = message?.status !== undefined;
     const generationFailed = message.status === 'failed';
     const doNotShowEmptyMessage = isGenerating;
-    const linkWarningModal = useModalStateObject();
-    const [currentLink, setCurrentLink] = useState<string>('');
+    const [{ data: linkWarningUrl, ...linkWarningModalProps }, openLinkWarningModal, renderLinkWarningModal] =
+        useModalStateWithData<string>();
+    const [{ data: emailWarningUrl, ...emailWarningModalProps }, openEmailWarningModal, renderEmailWarningModal] =
+        useModalStateWithData<string>();
     const markdownContainerRef = useRef<HTMLDivElement>(null);
     const retryButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -386,10 +390,13 @@ const AssistantMessage = ({
                 return;
             }
 
-            setCurrentLink(href);
-            linkWarningModal.openModal(true);
+            if (isEmailLink(href)) {
+                openEmailWarningModal(href);
+            } else {
+                openLinkWarningModal(href);
+            }
         },
-        [linkWarningModal.openModal]
+        [openLinkWarningModal, openEmailWarningModal]
     );
 
     const onToggleMessageSource = useCallback(() => {
@@ -510,12 +517,11 @@ const AssistantMessage = ({
                 <p>{message.toolResult}</p> */}
             </div>
 
-            {linkWarningModal.render && (
-                <LinkWarningModal
-                    {...linkWarningModal.modalProps}
-                    url={currentLink}
-                    onClose={linkWarningModal.modalProps.onClose}
-                />
+            {renderEmailWarningModal && emailWarningUrl !== undefined && (
+                <EmailWarningModal {...emailWarningModalProps} url={emailWarningUrl} />
+            )}
+            {renderLinkWarningModal && linkWarningUrl !== undefined && (
+                <LinkWarningModal {...linkWarningModalProps} url={linkWarningUrl} />
             )}
         </>
     );
