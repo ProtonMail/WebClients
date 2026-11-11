@@ -4,6 +4,7 @@ import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import { CommentEmailSection } from '@proton/components/containers/docs/settings/CommentEmailSection';
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
+import { SettingsCardMaxWidth, SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 
 import type { getDocsAppRoutes } from './routes';
 
@@ -23,7 +24,11 @@ const DocsSettingsRouter = ({
     return (
         <Switch>
             <Route path={getSectionPath(path, comments)}>
-                <PrivateMainSettingsArea config={comments}>
+                <PrivateMainSettingsArea
+                    config={comments}
+                    variant={SettingsLayoutVariant.Card}
+                    maxWidth={SettingsCardMaxWidth.Narrow}
+                >
                     <CommentEmailSection />
                 </PrivateMainSettingsArea>
             </Route>
