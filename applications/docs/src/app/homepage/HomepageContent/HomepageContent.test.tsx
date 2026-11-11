@@ -1,11 +1,11 @@
 import '@testing-library/jest-dom'
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import { HomepageContent } from './HomepageContent'
-import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
+import { RecentDocumentsItem } from '../recentDocumentsItem'
 import { DocumentActionsContext } from '../documentActionsContext'
-import { ServerTime } from '@proton/docs-shared/ServerTime'
+import { ServerTime } from '../utils/serverTime'
 import { type ReactNode, useEffect, useState } from 'react'
-import type { RecentDocumentsItemLocation, RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
+import type { RecentDocumentsItemLocation, RecentDocumentsItemValue } from '../recentDocumentsItem'
 import userEvent from '@testing-library/user-event'
 import type { DocInvitesHook, HomepageViewState } from '../homepageViewContext'
 import { HomepageViewContext } from '../homepageViewContext'
@@ -64,7 +64,7 @@ const useMockDocInvites: DocInvitesHook = () => ({
 })
 
 const mockOpenInvitedDocument = jest.fn()
-jest.mock('@proton/docs-core/Util/useOpenInvitedDocument', () => ({
+jest.mock('./useOpenInvitedDocument', () => ({
   useOpenInvitedDocument: () => mockOpenInvitedDocument,
 }))
 

@@ -1,7 +1,7 @@
-import { nodeMetaUniqueId } from '@proton/docs-shared/NodeMetaHelpers'
-import type { ServerTime } from '@proton/docs-shared/ServerTime'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import type { MemberRole } from '@proton/drive/sdk'
+import type { MemberRole } from '@protontech/drive-sdk'
+
+import type { ServerTime } from './utils/serverTime'
 
 export type RecentDocumentsItemLocation =
   { type: 'root' } | { type: 'path'; path: string[] } | { type: 'shared-with-me' }
@@ -39,7 +39,7 @@ export class RecentDocumentsItem implements RecentDocumentsItemValue {
   }
 
   uniqueId(): string {
-    return nodeMetaUniqueId({ linkId: this.linkId, volumeId: this.volumeId })
+    return `${this.volumeId}-${this.linkId}`
   }
 
   get type() {

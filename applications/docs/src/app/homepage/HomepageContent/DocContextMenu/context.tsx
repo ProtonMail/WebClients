@@ -1,4 +1,4 @@
-import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
+import type { RecentDocumentsItem } from '../../recentDocumentsItem'
 import type { ReactNode } from 'react'
 import { createContext, useCallback, useContext, useRef, useState } from 'react'
 

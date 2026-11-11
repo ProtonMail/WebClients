@@ -1,8 +1,8 @@
-import { ServerTime } from '@proton/docs-shared/ServerTime'
+import { ServerTime } from './utils/serverTime'
 import { buildRecentsState, buildSearchState, buildTrashState } from './HomepageViewProvider'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import { RecentDocumentsItem, type RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
-import type { RecentDocumentsItemLocation } from '@proton/docs-core/Services/recent-documents'
+import { RecentDocumentsItem, type RecentDocumentsItemValue } from './recentDocumentsItem'
+import type { RecentDocumentsItemLocation } from './recentDocumentsItem'
 
 describe('buildTrashState', () => {
   test('no trashed documents means empty state', () => {

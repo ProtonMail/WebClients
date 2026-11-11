@@ -33,7 +33,6 @@
     "./RenameController/RenameController": "./lib/RenameController/RenameController.ts",
     "./Services/CacheService": "./lib/Services/CacheService.ts",
     "./Services/Orchestrator/EditorOrchestratorInterface": "./lib/Services/Orchestrator/EditorOrchestratorInterface.ts",
-    "./Services/recent-documents": "./lib/Services/recent-documents.ts",
     "./SizeTracker/SizeTracker": "./lib/SizeTracker/SizeTracker.ts",
     "./State/DocumentState": "./lib/State/DocumentState.ts",
     "./State/UserState": "./lib/State/UserState.ts",
@@ -42,7 +41,6 @@
     "./Types/SquashVerificationObjection": "./lib/Types/SquashVerificationObjection.ts",
     "./UseCase/ExportAndDownload": "./lib/UseCase/ExportAndDownload.ts",
     "./Util/isDriveCompatSDKEnabled": "./lib/Util/isDriveCompatSDKEnabled.ts",
-    "./Util/useOpenInvitedDocument": "./lib/Util/useOpenInvitedDocument.ts",
     "./utils/hash": "./lib/utils/hash.ts",
     "./VersionHistory/DateFormatter": "./lib/VersionHistory/DateFormatter.ts",
     "./VersionHistory/NativeVersionHistory": "./lib/VersionHistory/NativeVersionHistory.ts"

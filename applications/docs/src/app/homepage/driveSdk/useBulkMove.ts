@@ -1,4 +1,4 @@
-import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
+import type { RecentDocumentsItem } from '../recentDocumentsItem'
 import type { ReactNode } from 'react'
 import { generateNodeUid } from '@protontech/drive-sdk'
 import { useEvent } from '../utils/useEvent'

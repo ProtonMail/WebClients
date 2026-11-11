@@ -1,6 +1,6 @@
 import type { NotificationsManager } from '@proton/app-context/notifications/manager'
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext'
-import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
+import type { RecentDocumentsItemValue } from './recentDocumentsItem'
 import {
   type DriveEvent,
   DriveEventType,

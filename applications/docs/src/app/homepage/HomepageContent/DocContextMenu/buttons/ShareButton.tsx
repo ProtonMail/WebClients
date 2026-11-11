@@ -2,7 +2,7 @@ import { IcUserPlus } from '@proton/icons/icons/IcUserPlus'
 
 import { ContextMenuButton } from '../ContextMenuButton'
 import { useDocumentActions } from '../../../documentActionsContext'
-import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
+import type { RecentDocumentsItem } from '../../../recentDocumentsItem'
 import { c } from 'ttag'
 
 export type ShareButtonProps = {

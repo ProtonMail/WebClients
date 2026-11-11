@@ -1,4 +1,4 @@
-export { HomepageLayout } from './HomepageLayout'
+export { HomepageLayout, type HomepageLayoutProps } from './HomepageLayout'
 export { HomepageContent } from './HomepageContent/HomepageContent'
 export { HomepageViewProvider } from './HomepageViewProvider'
 export type { HomepageViewProviderProps } from './homepageViewUtils'

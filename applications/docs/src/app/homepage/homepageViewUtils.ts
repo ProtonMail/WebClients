@@ -2,7 +2,7 @@ import { useCallback, useEffect, type ReactNode } from 'react'
 import { useHistory } from 'react-router'
 import { useLocation } from 'react-router-dom-v5-compat'
 
-import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
+import type { RecentDocumentsItem } from './recentDocumentsItem'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { Address } from '@proton/shared/lib/interfaces/Address'

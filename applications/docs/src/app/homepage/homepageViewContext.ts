@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react'
 
-import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
+import type { RecentDocumentsItem } from './recentDocumentsItem'
 import type { ExtendedInvitationDetails } from '@proton/docs-shared/InvitationTypes'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 
