@@ -36,7 +36,6 @@ export const Default: Story = {
                 label="Title"
                 inputClassName="rounded-none"
                 placeholder="e.g., Amazon, eBay, Etsy"
-                autoFocus
                 unstyled
             />
         </InputFieldStacked>
@@ -51,7 +50,6 @@ export const Bigger: Story = {
                 label="Title"
                 inputClassName="text-bold rounded-none"
                 placeholder="e.g., Amazon, eBay, Etsy"
-                autoFocus
                 unstyled
             />
         </InputFieldStacked>
