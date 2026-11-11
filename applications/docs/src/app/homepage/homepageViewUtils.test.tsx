@@ -1,5 +1,5 @@
-import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
-import { ServerTime } from '@proton/docs-shared/ServerTime'
+import { RecentDocumentsItem } from './recentDocumentsItem'
+import { ServerTime } from './utils/serverTime'
 import type { ItemsSectionId } from './homepageViewContext'
 import { filterDocuments, splitIntoSectionsByTime } from './homepageViewUtils'
 

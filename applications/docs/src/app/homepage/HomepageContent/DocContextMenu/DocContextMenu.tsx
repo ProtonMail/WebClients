@@ -5,7 +5,7 @@ import type { ReactNode } from 'react'
 import { useEffect } from 'react'
 
 import { OpenButton } from './buttons/OpenButton'
-import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
+import type { RecentDocumentsItem } from '../../recentDocumentsItem'
 import type { ContextMenuProps } from '@proton/components/components/contextMenu/ContextMenu'
 import { OpenFolderButton } from './buttons/OpenFolderButton'
 import { ShareButton } from './buttons/ShareButton'

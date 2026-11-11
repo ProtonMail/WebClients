@@ -1,7 +1,7 @@
 import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
 import { useNotifications } from '@proton/app-context/useNotifications'
-import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
+import type { RecentDocumentsItem } from './recentDocumentsItem'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import { type ReactNode, useCallback, useMemo, useState } from 'react'

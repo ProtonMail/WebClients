@@ -1,5 +1,5 @@
 import { useNotifications } from '@proton/app-context/useNotifications'
-import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
+import type { RecentDocumentsItemValue } from './recentDocumentsItem'
 import { type DriveEvent, type NodeEntity, type ProtonDriveClient, generateNodeUid } from '@protontech/drive-sdk'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import { useCallback, useState } from 'react'

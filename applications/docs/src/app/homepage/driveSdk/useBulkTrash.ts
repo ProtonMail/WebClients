@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNotifications } from '@proton/app-context/useNotifications'
-import type { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
+import type { RecentDocumentsItem } from '../recentDocumentsItem'
 import { generateNodeUid, type ProtonDriveClient } from '@protontech/drive-sdk'
 import { trashManyAndNotify } from './trashRestoreNotify'
 import { useEvent } from '../utils/useEvent'

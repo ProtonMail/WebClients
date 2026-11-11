@@ -1,8 +1,8 @@
-import { ServerTime } from '@proton/docs-shared/ServerTime'
+import { ServerTime } from './utils/serverTime'
 import type { MemberRole, NodeEntity } from '@protontech/drive-sdk'
 import { getAuthorName } from './driveSdk/getAuthorName'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
-import type { RecentDocumentsItemValue } from '@proton/docs-core/Services/recent-documents'
+import type { RecentDocumentsItemValue } from './recentDocumentsItem'
 import { getNodeNameOrFallback } from './driveSdk/getNodeName'
 
 /**

@@ -9,6 +9,7 @@ import { getDrive } from '@proton/drive/sdk'
 import { useSharingModal } from '@proton/drive/public/sharingModal'
 import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { useApi } from '@proton/app-context/useApi'
+import { useConfig } from '@proton/app-context/useConfig'
 import type { Application } from '@proton/docs-core/Application/Application'
 import type { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { Suspense, lazy, useCallback } from 'react'
@@ -29,6 +30,8 @@ import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
 import { useDocInvites as useDocInvitesSDK } from '~/drive-sdk/useDocInvites'
 import OpenTracer from '@proton/docs-shared/Tracer/Module'
 import { HOMEPAGE_PATHS, HOMEPAGE_RECENTS_PATH } from '../__utils/homepage-paths'
+import { getDocsReportContextLines } from '~/utils/report-context'
+import { DocsQuickSettings } from '~/components/DocsQuickSettings'
 
 // container
 // ---------
@@ -79,6 +82,8 @@ type AppRoutesProps = { driveCompat: DriveCompat; application: Application }
 
 function AppRoutes({ driveCompat, application }: AppRoutesProps) {
   const api = useApi()
+  const { APP_VERSION, CLIENT_TYPE } = useConfig()
+  const reportDescriptionContext = getDocsReportContextLines({ appVersion: APP_VERSION, clientType: CLIENT_TYPE })
   const reportHomepageTelemetry = useCallback(
     (event: string) => application.metrics.reportHomepageTelemetry(event as TelemetryDocsHomepageEvents),
     [application],
@@ -110,6 +115,8 @@ function AppRoutes({ driveCompat, application }: AppRoutesProps) {
         reportTelemetry={reportHomepageTelemetry}
         useSharingModal={useSharingModal}
         useMoveItemsModal={useMoveItemsModal}
+        reportDescriptionContext={reportDescriptionContext}
+        quickSettings={<DocsQuickSettings />}
       />
     </Suspense>
   )

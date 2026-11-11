@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
-import { RecentDocumentsItem } from '@proton/docs-core/Services/recent-documents'
-import { ServerTime } from '@proton/docs-shared/ServerTime'
+import { RecentDocumentsItem } from '../../../recentDocumentsItem'
+import { ServerTime } from '../../../utils/serverTime'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import type { ReactNode } from 'react'

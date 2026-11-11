@@ -34,8 +34,6 @@ import { IcPlus } from '@proton/icons/icons/IcPlus'
 import { IcTrash } from '@proton/icons/icons/IcTrash'
 import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 
-import { DocsQuickSettings } from '~/components/DocsQuickSettings'
-import type { DocumentAction } from '@proton/docs-shared/DocumentAction'
 import { c } from 'ttag'
 import { Button } from '@proton/atoms/Button/Button'
 import { Input } from '@proton/atoms/Input/Input'
@@ -45,7 +43,6 @@ import './HomepageLayout.css'
 import type { HomepageViewState } from './homepageViewContext'
 import { useHomepageView } from './homepageViewContext'
 import { useHistory, useRouteMatch } from 'react-router'
-import { getDocsReportContextLines } from '~/utils/report-context'
 import { HOMEPAGE_RECENTS_PATH } from './homepage-paths'
 import { useEvent } from './utils/useEvent'
 import { useIsSheetsEnabled } from '~/utils/flags'
@@ -65,19 +62,26 @@ const USER_DROPDOWN_OVERRIDES =
 
 export type HomepageLayoutProps = {
   children: ReactNode
-  action?: DocumentAction['mode']
+  reportDescriptionContext: string[]
+  quickSettings: ReactNode
 }
 
-export function HomepageLayout({ children }: HomepageLayoutProps) {
+export function HomepageLayout({ children, reportDescriptionContext, quickSettings }: HomepageLayoutProps) {
   const { state: expanded, toggle: toggleExpanded, set: setExpanded } = useToggle()
   usePageTitle()
   return (
     <PrivateAppContainer
       containerRef={(el) => el?.classList.add('is-homepage')}
       top={<TopBanners app={APPS.PROTONDOCS} />}
-      header={<Header toggleHeaderExpanded={toggleExpanded} isHeaderExpanded={expanded} />}
+      header={
+        <Header
+          toggleHeaderExpanded={toggleExpanded}
+          isHeaderExpanded={expanded}
+          reportDescriptionContext={reportDescriptionContext}
+        />
+      }
       sidebar={<Sidebar expanded={expanded} onToggle={toggleExpanded} setExpanded={setExpanded} />}
-      drawerApp={<DrawerApp customAppSettings={<DocsQuickSettings />} />}
+      drawerApp={<DrawerApp customAppSettings={quickSettings} />}
     >
       <PrivateMainArea className="!border-t-0 small:ps-1 [&>div]:[block-size:100%]" hasToolbar>
         {children}
@@ -92,11 +96,11 @@ export function HomepageLayout({ children }: HomepageLayoutProps) {
 type HeaderProps = {
   isHeaderExpanded: boolean
   toggleHeaderExpanded: () => void
+  reportDescriptionContext: string[]
 }
 
-function Header({ isHeaderExpanded, toggleHeaderExpanded }: HeaderProps) {
+function Header({ isHeaderExpanded, toggleHeaderExpanded, reportDescriptionContext }: HeaderProps) {
   const { viewportWidth } = useActiveBreakpoint()
-  const { APP_VERSION, CLIENT_TYPE } = useConfig()
   const { state, type, setSearch } = useHomepageView()
   const searchValue = state.view === 'search' || state.view === 'search-empty' ? state.query : undefined
 
@@ -106,15 +110,7 @@ function Header({ isHeaderExpanded, toggleHeaderExpanded }: HeaderProps) {
         <PrivateHeader
           className={clsx('flex items-center small:!px-0', USER_DROPDOWN_OVERRIDES)}
           app={APPS.PROTONDRIVE}
-          userDropdown={
-            <UserDropdown
-              app={APPS.PROTONDOCS}
-              reportDescriptionContext={getDocsReportContextLines({
-                appVersion: APP_VERSION,
-                clientType: CLIENT_TYPE,
-              })}
-            />
-          }
+          userDropdown={<UserDropdown app={APPS.PROTONDOCS} reportDescriptionContext={reportDescriptionContext} />}
           title={c('Title').t`Docs`}
           expanded={isHeaderExpanded}
           onToggleExpand={toggleHeaderExpanded}
