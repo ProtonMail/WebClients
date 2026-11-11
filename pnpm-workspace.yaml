@@ -54,7 +54,7 @@ catalog:
     '@lexical/utils': 0.31.2
     '@lexical/yjs': 0.31.2
     # Must stay on the same version as oxlint.
-    '@oxlint/plugins': 1.90.0
+    '@oxlint/plugins': 1.92.0
     '@pmmmwh/react-refresh-webpack-plugin': ^0.6.3
     '@protontech/crypto': ^2.2.0
     # Shared so that every workspace importing the Drive SDK resolves the same version.
@@ -84,8 +84,8 @@ catalog:
     '@types/webpack-env': ^1.18.8
     '@typescript/native': npm:typescript@^7.0.2
     '@vercel/webpack-asset-relocator-loader': 1.7.3
-    '@vitest/coverage-v8': ^5.0.5
-    '@vitest/ui': ^5.0.5
+    '@vitest/coverage-v8': ^5.1.0
+    '@vitest/ui': ^5.1.0
     babel-jest: ^30.4.1
     browserslist: ^4.29.5
     clsx: ^2.1.1
@@ -113,9 +113,9 @@ catalog:
     lodash: ^4.18.1
     mini-css-extract-plugin: ^2.10.2
     msw: 2.12.14
-    oxfmt: 0.75.0
-    oxlint: 1.90.0
-    oxlint-tsgolint: 7.0.2005
+    oxfmt: 0.77.0
+    oxlint: 1.92.0
+    oxlint-tsgolint: 7.0.2006
     postcss: ^8.5.32
     prettier: ^3.9.10
     prettier-plugin-tailwindcss: ^0.8.1
@@ -138,8 +138,8 @@ catalog:
     # A few workspaces (including the root) still declare the real `typescript` package directly.
     typescript: npm:@typescript/typescript6@^6.0.2
     uuid: ^14.0.3
-    vite: ^8.3.5
-    vitest: ^5.0.5
+    vite: ^8.3.6
+    vitest: ^5.1.0
     webpack: ^5.112.2
     webpack-dev-server: ^6.1.0
     y-protocols: ^1.0.6
@@ -229,7 +229,7 @@ overrides:
     'ajv@8.17.1': '8.20.0'
     # get-uri@6 still requires ^5. 6.0.0 only disables separate PASV transfer hosts by default,
     # which get-uri never uses.
-    basic-ftp: '6.2.5'
+    basic-ftp: '6.2.6'
     'brace-expansion@1.1.12': '1.1.21'
     'brace-expansion@2.0.2': '2.1.7'
     'brace-expansion@5.0.9': '5.0.12'
@@ -251,11 +251,11 @@ overrides:
     'form-data@~2.3.2': '2.5.6'
     'http-proxy-middleware@2.0.7': '2.0.11'
     'image-size@^0.7.4': 'npm:image-size-next@1.2.2'
-    'image-size@^1.2.1': '2.0.4'
+    'image-size@^1.2.1': '2.1.0'
     immer: '11.2.9'
     'immutable@^4.3.7': '4.3.9'
     'immutable@^5.0.2': '5.1.9'
-    'ip-address@^9.0.5': '10.7.5'
+    'ip-address@^9.0.5': '10.7.6'
     'js-yaml@4.1.0': '4.3.2'
     'js-yaml@4.3.1': '4.3.2'
     'js-yaml@^3.13.1': '3.15.2'
@@ -280,12 +280,12 @@ overrides:
     'macos-alias>nan': '2.30.0'
     'nanoid@^5.0.4': '5.1.16'
     'nanoid@^5.1.2': '5.1.16'
-    'node-forge@^1': '1.4.2'
-    'node-forge@^1.3.1': '1.4.2'
+    'node-forge@^1': '1.4.3'
+    'node-forge@^1.3.1': '1.4.3'
     node-gyp: '^11.5.0'
     # @tpe/quark-client pins 9.0.5 and only imports nodemailer/lib/mail-composer, which 10.x still
     # exports. 10.0.0 only raised the minimum Node.js version to 20.
-    'nodemailer@9.0.5': '10.3.1'
+    'nodemailer@9.0.5': '10.4.0'
     'path-to-regexp@0.1.12': '0.1.13'
     'path-to-regexp@~0.1.12': '0.1.13'
     'picomatch@^2.0.4': '2.3.2'
@@ -324,7 +324,7 @@ overrides:
     'toml@^3.0.0': '4.3.0'
     'toml@4.3.0': '5.0.1'
     'undici@6.21.1': '6.29.1'
-    'undici@^8.0.0': '8.12.3'
+    'undici@^8.0.0': '8.12.4'
     'webpack-dev-middleware@^6.1.2': '8.6.0'
     'webpack-dev-middleware@^8.0.3': '8.6.0'
     'webpack-dev-server@^4.0.0': '5.2.7'
