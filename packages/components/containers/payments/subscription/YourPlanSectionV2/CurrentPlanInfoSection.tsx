@@ -77,10 +77,12 @@ const AddonSection = ({
     subscription,
     user,
     maxMembers,
+    withPassLifetimeAddon,
 }: {
     user: UserModel;
     subscription: Subscription | FreeSubscription;
     maxMembers: number;
+    withPassLifetimeAddon: boolean;
 }) => {
     const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
     const addons = isPaidSubscription(subscription) ? getAddons(subscription) : [];
@@ -88,7 +90,7 @@ const AddonSection = ({
     const addonTitles = addons.map((addon) =>
         getAddonDashboardTitle(addon.Name as ADDON_NAMES, addon.Quantity, maxMembers, scribeToLumo)
     );
-    const passLifeTimeAddon = getPassLifetimeAddonDashboardTitle(user);
+    const passLifeTimeAddon = withPassLifetimeAddon ? getPassLifetimeAddonDashboardTitle(user) : '';
     const mergedAddonTitles = [...addonTitles, passLifeTimeAddon].filter(isTruthy).join(', ');
 
     if (mergedAddonTitles.length > 0 && !hasFree(subscription)) {
@@ -122,11 +124,13 @@ const PlanNameSection = ({
     user,
     subscription,
     maxMembers,
+    withPassLifetimeAddon = true,
 }: {
     app: APP_NAMES;
     user: UserModel;
     subscription: Subscription | FreeSubscription;
     maxMembers: number;
+    withPassLifetimeAddon?: boolean;
 }) => {
     const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription);
 
@@ -149,7 +153,14 @@ const PlanNameSection = ({
         <PlanIconName
             logo={<PlanIcon app={app} user={user} subscription={subscription} />}
             topLine={topLine}
-            bottomLine={<AddonSection user={user} subscription={subscription} maxMembers={maxMembers} />}
+            bottomLine={
+                <AddonSection
+                    user={user}
+                    subscription={subscription}
+                    maxMembers={maxMembers}
+                    withPassLifetimeAddon={withPassLifetimeAddon}
+                />
+            }
         />
     );
 };
@@ -299,7 +310,12 @@ export const CurrentPlanInfoSection = ({
             <PlanNameSection app={app} user={user} subscription={subscription} maxMembers={MaxMembers} />
             <div className="flex flex-column md:flex-row gap-4 lg:gap-8 xl:gap-12 xl:ml-auto">
                 <UsersSection MaxMembers={MaxMembers} userText={userText} />
-                <StorageSection app={app} organization={organization} subscription={subscription} user={user} />
+                <StorageSection
+                    app={app}
+                    organization={organization}
+                    subscriptions={isPaidSubscription(subscription) ? [subscription] : []}
+                    user={user}
+                />
                 <BillingDateSection subscription={subscription} />
                 <ServersSection app={app} organization={organization} />
                 <FreeVPNFeatures app={app} isFreeUser={isFree} />
@@ -307,6 +323,64 @@ export const CurrentPlanInfoSection = ({
                 <FreeMeetFeatures app={app} isFreeUser={isFree} />
             </div>
             {cta && <div className="flex items-center w-full xl:w-auto">{cta}</div>}
+        </div>
+    );
+};
+
+interface EverySubscriptionInfoSectionProps {
+    app: APP_NAMES;
+    user: UserModel;
+    subscriptions: Subscription[];
+    organization: Organization | undefined;
+    addresses: Address[] | undefined;
+    editBillingCycle?: boolean;
+}
+
+export const EverySubscriptionInfoSection = ({
+    app,
+    user,
+    subscriptions,
+    organization,
+    addresses,
+    editBillingCycle = false,
+}: EverySubscriptionInfoSectionProps) => {
+    const { MaxMembers = 1 } = organization || {};
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
+    const { userText } = getSubscriptionPanelText(user, organization, addresses, scribeToLumo);
+    const showManageSubscriptionLink = user.canPay && !user.isMember && !editBillingCycle;
+
+    return (
+        <div className="flex flex-column gap-4 lg:gap-8" data-testid="current-plan">
+            {subscriptions.map((subscription, index) => (
+                <div
+                    key={subscription.ID}
+                    className="flex flex-column gap-4 lg:gap-8 xl:gap-12 md:justify-space-between md:flex-wrap md:flex-row"
+                    data-testid="current-plan-subscription"
+                >
+                    <PlanNameSection
+                        app={app}
+                        user={user}
+                        subscription={subscription}
+                        maxMembers={MaxMembers}
+                        withPassLifetimeAddon={index === 0}
+                    />
+                    <BillingDateSection subscription={subscription} />
+                </div>
+            ))}
+            <div className="flex flex-column gap-4 lg:gap-8 xl:gap-12 md:justify-space-between md:flex-wrap md:flex-row">
+                <div className="flex flex-column md:flex-row gap-4 lg:gap-8 xl:gap-12">
+                    <UsersSection MaxMembers={MaxMembers} userText={userText} />
+                    <StorageSection app={app} organization={organization} subscriptions={subscriptions} user={user} />
+                    <ServersSection app={app} organization={organization} />
+                </div>
+                {showManageSubscriptionLink && (
+                    <div className="flex items-center w-full xl:w-auto">
+                        <ButtonLike as={SettingsLink} shape="outline" path="/subscription">
+                            {c('Action').t`Manage subscriptions`}
+                        </ButtonLike>
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

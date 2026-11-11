@@ -6,14 +6,7 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Donut } from '@proton/atoms/Donut/Donut';
 import type { ThemeColor } from '@proton/colors/types';
-import type { FreeSubscription } from '@proton/payments/core/interface';
-import {
-    hasAllProductsB2CPlan,
-    hasDrive,
-    hasDrive1TB,
-    hasFree,
-    hasMail,
-} from '@proton/payments/core/subscription/helpers';
+import { hasAllProductsB2CPlan, hasDrive, hasDrive1TB, hasMail } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import {
     APPS,
@@ -189,15 +182,15 @@ interface DashboardStorageSection {
     tooltip: ReactNode;
     usedSpace: number;
     graphColor: ThemeColor;
-    shouldRender: (app: APP_NAMES, subscription: Subscription | FreeSubscription) => boolean;
+    shouldRender: (app: APP_NAMES) => boolean;
 }
 
 function getDashboardStorageSections(
     organization: Organization | undefined,
     user: UserModel,
-    subscription: Subscription | FreeSubscription
+    subscriptions: Subscription[]
 ): DashboardStorageSection[] {
-    const isFree = hasFree(subscription);
+    const isFree = subscriptions.length === 0;
     let userSpace = getSpace(user);
     // For paid users in an organization, use organization space instead of user space.
     if (!isFree && organization) {
@@ -246,11 +239,14 @@ function getDashboardStorageSections(
                 text,
                 label: getStorageUsed(),
                 graphColor: SpaceStateThemeColorMap[spaceDetails.pooled.type],
-                shouldRender: (app, subscription) =>
-                    hasMail(subscription) ||
-                    hasDrive(subscription) ||
-                    hasDrive1TB(subscription) ||
-                    hasAllProductsB2CPlan(subscription),
+                shouldRender: () =>
+                    subscriptions.some(
+                        (subscription) =>
+                            hasMail(subscription) ||
+                            hasDrive(subscription) ||
+                            hasDrive1TB(subscription) ||
+                            hasAllProductsB2CPlan(subscription)
+                    ),
             },
         ];
     }
@@ -292,17 +288,17 @@ const FeatureElement = ({
 export const StorageSection = ({
     app,
     user,
-    subscription,
+    subscriptions,
     organization,
 }: {
     app: APP_NAMES;
     user: UserModel;
-    subscription: Subscription | FreeSubscription;
+    subscriptions: Subscription[];
     organization: Organization | undefined;
 }) => {
-    const storageElements = getDashboardStorageSections(organization, user, subscription);
+    const storageElements = getDashboardStorageSections(organization, user, subscriptions);
     const visibleElements = storageElements.filter(
-        ({ usedSpace, shouldRender }) => shouldRender(app, subscription) || usedSpace > 80
+        ({ usedSpace, shouldRender }) => shouldRender(app) || usedSpace > 80
     );
 
     if (visibleElements.length === 0) {
