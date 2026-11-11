@@ -8,6 +8,7 @@ export { useLazyAttachment } from './useLazyAttachment';
 export { usePersonalization } from './usePersonalization';
 
 // URL parameter hooks
+export { useDesktopQuickAsk } from './useDesktopQuickAsk';
 export { useQueryParam } from './useQueryParam';
 export { useSkillParam } from './useSkillParam';
 export { useThemeParam } from './useThemeParam';
