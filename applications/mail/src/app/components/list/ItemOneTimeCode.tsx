@@ -16,8 +16,8 @@ interface Props {
 
 /**
  * Message-list wrapper around the shared one-time-code copy button. Stops click
- * propagation so copying the code does not open the email, and moves the email
- * to Trash once the code has been copied (recoverable via the automatic Undo).
+ * propagation so copying the code does not open the email, and hands the copy
+ * to `useOneTimeCodeCopy`, which may move the email to Trash.
  */
 const ItemOneTimeCode = ({ code, codeContent, element, compact, className }: Props) => {
     const { movesToTrash, onCopy } = useOneTimeCodeCopy();
