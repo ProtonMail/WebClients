@@ -1,6 +1,7 @@
 import { startAccountSecurityListener } from '@proton/account/accountSecurity/accountSecurityListener';
 import { startAccountSessionsListener } from '@proton/account/accountSessions/listener';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
+import { ktSelfAuditListener } from '@proton/account/kt/selfAuditListener';
 import { startPersistListener } from '@proton/account/persist/listener';
 import { startListeningToPlanNameChange } from '@proton/account/subscription/startListeningToPlanNameChange';
 import { startCalendarEventListener } from '@proton/calendar/calendars/listener';
@@ -30,4 +31,5 @@ export const start = ({ startListening }: { startListening: AppStartListening })
     startCategoriesUnseenListener(startListening);
     startSearchChangeListener(startListening);
     startOffersDeliveryListener(startListening, { appReady: bootstrapEvent });
+    ktSelfAuditListener(startListening);
 };

@@ -1,7 +1,7 @@
 import type { FocusEvent, FocusEventHandler, Ref, RefObject } from 'react';
 import { forwardRef, memo, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 
-import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
+import { useKTActivation } from '@proton/account/kt/hooks';
 import { useOnCompose } from '@proton/mail-composer/containers/ComposeProvider';
 import { ComposeTypes } from '@proton/mail-composer/hooks/composer/useCompose';
 import type { MessageViewIcons } from '@proton/mail-message/helpers/message/icon';
@@ -103,7 +103,7 @@ const MessageView = (
 
     const { stopECRTMetric } = useMailECRTMetric();
 
-    const { ktActivation } = useKeyTransparencyContext();
+    const ktActivation = useKTActivation();
 
     const { message, messageLoaded, bodyLoaded } = useMessage(inputMessage.ID, conversationID);
     const load = useLoadMessage(inputMessage);

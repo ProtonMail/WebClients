@@ -141,6 +141,7 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
             features: {
                 accountPersist: isPersistEnabled,
                 accountSessions: isAccountSessionsEnabled,
+                ktSelfAudit: true,
             },
         });
         const dispatch = store.dispatch;

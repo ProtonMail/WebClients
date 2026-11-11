@@ -118,10 +118,6 @@ export interface SelfAuditState {
     }[];
 }
 
-export interface KeyTransparencyState {
-    selfAuditResult?: SelfAuditResult;
-}
-
 export type GetLatestEpoch = ({ api, forceRefresh }: { api: Api; forceRefresh?: boolean }) => Promise<Epoch>;
 
 export type UploadMissingSKL = (data: {

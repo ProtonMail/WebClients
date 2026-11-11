@@ -4,5 +4,13 @@ export const ignoredActions: string[] = [
     'organizationKey/fetch/fulfilled',
     'events/synchronizeEvents',
     'events/updateInvite',
+    // Failed address audits hold the `KeyTransparencyError` that failed them
+    'kt/selfAuditResult',
 ];
-export const ignoredPaths: (string | RegExp)[] = [/userKeys/, /addressKeys/, /organizationKey/, /events/];
+export const ignoredPaths: (string | RegExp)[] = [
+    /userKeys/,
+    /addressKeys/,
+    /organizationKey/,
+    /events/,
+    'kt.selfAuditResult',
+];

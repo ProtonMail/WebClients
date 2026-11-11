@@ -1,8 +1,6 @@
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import type { KTLocalStorageAPI } from '@proton/shared/lib/interfaces/KeyTransparency';
 
-import type { KeyTransparencyState } from '../interfaces';
-
 /**
  * Return the default set of functions to use local storage,
  * i.e. those of the currently running subdomain
@@ -14,8 +12,4 @@ export const getDefaultKTLS = (): KTLocalStorageAPI => {
         removeItem: async (key: string) => removeItem(key),
         getBlobs: async () => Object.keys(window.localStorage),
     };
-};
-
-export const defaultKeyTransparencyState: KeyTransparencyState = {
-    selfAuditResult: undefined,
 };

@@ -9,7 +9,6 @@ import EasySwitchStoreProvider from '@proton/activation/src/logic/StoreProvider'
 import { useConfig } from '@proton/app-context/useConfig';
 import ApiModalsHVUpsell from '@proton/components/containers/api/ApiModalsHVUpsell';
 import { useEventNotifier } from '@proton/components/containers/eventNotifier/useEventNotifier';
-import KeyTransparencyManager from '@proton/components/containers/keyTransparency/KeyTransparencyManager';
 import ModalsChildren from '@proton/components/containers/modals/Children';
 import { DrawerThemeInjector } from '@proton/components/containers/themes/ThemeInjector';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
@@ -82,40 +81,38 @@ const MainContainer: FunctionComponent = () => {
 
     return (
         <GlobalModalProvider>
-            <KeyTransparencyManager>
-                <AssistantProvider>
-                    <QuickSettingsRemindersProvider>
-                        <DrawerThemeInjector />
-                        <ChecklistsProvider>
-                            <EncryptedSearchProvider>
-                                <MailContentRefProvider mailContentRef={mailContentRef}>
-                                    <SubscriptionModalProvider app={APP_NAME}>
-                                        <EasySwitchStoreProvider>
-                                            <EasySwitchStoreInitializer>
-                                                <MailComposerHost>
-                                                    <ComposerContainer>
-                                                        <CheckAllRefProvider>
-                                                            <ModalsChildren />
-                                                            <ApiModalsHVUpsell api={extraThunkArguments.api} />
+            <AssistantProvider>
+                <QuickSettingsRemindersProvider>
+                    <DrawerThemeInjector />
+                    <ChecklistsProvider>
+                        <EncryptedSearchProvider>
+                            <MailContentRefProvider mailContentRef={mailContentRef}>
+                                <SubscriptionModalProvider app={APP_NAME}>
+                                    <EasySwitchStoreProvider>
+                                        <EasySwitchStoreInitializer>
+                                            <MailComposerHost>
+                                                <ComposerContainer>
+                                                    <CheckAllRefProvider>
+                                                        <ModalsChildren />
+                                                        <ApiModalsHVUpsell api={extraThunkArguments.api} />
 
-                                                            <Switch>
-                                                                <Route
-                                                                    path={ROUTE_MAIN}
-                                                                    render={() => <MailAppShell ref={mailContentRef} />}
-                                                                />
-                                                            </Switch>
-                                                        </CheckAllRefProvider>
-                                                    </ComposerContainer>
-                                                </MailComposerHost>
-                                            </EasySwitchStoreInitializer>
-                                        </EasySwitchStoreProvider>
-                                    </SubscriptionModalProvider>
-                                </MailContentRefProvider>
-                            </EncryptedSearchProvider>
-                        </ChecklistsProvider>
-                    </QuickSettingsRemindersProvider>
-                </AssistantProvider>
-            </KeyTransparencyManager>
+                                                        <Switch>
+                                                            <Route
+                                                                path={ROUTE_MAIN}
+                                                                render={() => <MailAppShell ref={mailContentRef} />}
+                                                            />
+                                                        </Switch>
+                                                    </CheckAllRefProvider>
+                                                </ComposerContainer>
+                                            </MailComposerHost>
+                                        </EasySwitchStoreInitializer>
+                                    </EasySwitchStoreProvider>
+                                </SubscriptionModalProvider>
+                            </MailContentRefProvider>
+                        </EncryptedSearchProvider>
+                    </ChecklistsProvider>
+                </QuickSettingsRemindersProvider>
+            </AssistantProvider>
         </GlobalModalProvider>
     );
 };

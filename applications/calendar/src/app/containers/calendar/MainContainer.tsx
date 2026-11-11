@@ -6,7 +6,6 @@ import { useUser } from '@proton/account/user/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { selectCalendarsBootstrap } from '@proton/calendar/calendarBootstrap';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
-import KeyTransparencyManager from '@proton/components/containers/keyTransparency/KeyTransparencyManager';
 import useDrawerParent from '@proton/components/hooks/drawer/useDrawerParent';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 import { useInboxDesktopEventLoopRefresh } from '@proton/components/hooks/useInboxDesktopEventLoopRefresh';
@@ -150,11 +149,9 @@ const WrappedMainContainer = () => {
             <NotificationManagerInjector />
             <SubscriptionModalProvider app={APPS.PROTONCALENDAR}>
                 <BookingsProvider>
-                    <KeyTransparencyManager>
-                        <QuickSettingsRemindersProvider>
-                            <MainContainer />
-                        </QuickSettingsRemindersProvider>
-                    </KeyTransparencyManager>
+                    <QuickSettingsRemindersProvider>
+                        <MainContainer />
+                    </QuickSettingsRemindersProvider>
                 </BookingsProvider>
             </SubscriptionModalProvider>
         </GlobalModalProvider>

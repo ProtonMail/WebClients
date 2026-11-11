@@ -5,8 +5,8 @@ import type { PublicKeyReference } from '@protontech/crypto';
 import { c, msgid } from 'ttag';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useKTActivation } from '@proton/account/kt/hooks';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
 import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { getAddressFromEmail } from '@proton/mail-message/helpers/addresses';
@@ -115,7 +115,7 @@ export const useUpdateRecipientSendInfo = (
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const contactsMap = useContactsMap();
     const emailAddress = recipient.Address;
-    const { ktActivation } = useKeyTransparencyContext();
+    const ktActivation = useKTActivation();
     const getAddresses = useGetAddresses();
 
     const [askForKeyPinningModal, handleShowAskForKeyPinningModal] = useModalTwo(AskForKeyPinningModal);
@@ -281,7 +281,7 @@ export const useUpdateGroupSendInfo = (
         onRemove();
     };
 
-    const { ktActivation } = useKeyTransparencyContext();
+    const ktActivation = useKTActivation();
 
     useEffect(() => {
         const abortController = new AbortController();
