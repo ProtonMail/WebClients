@@ -148,6 +148,7 @@ function headerElement(role: DocumentRole, status?: ReactNode) {
         wordCount={{ isShown: false, setIsShown: jest.fn() }}
         trashState="not_trashed"
         isCreatingSpreadsheet={false}
+        isMakingACopy={false}
         onFileMenuAction={jest.fn()}
         status={status}
       />
@@ -183,6 +184,7 @@ function headerWithParticipants(
         wordCount={{ isShown: false, setIsShown: jest.fn() }}
         trashState="not_trashed"
         isCreatingSpreadsheet={false}
+        isMakingACopy={false}
         onFileMenuAction={jest.fn()}
       />
     </ConfigContext.Provider>

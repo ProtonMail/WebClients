@@ -7,7 +7,7 @@ import type { DocumentFileActions } from './useDocumentFileActions'
 
 export type FileMenuHandlers = Pick<
   DocumentFileActions,
-  'newDocument' | 'newSpreadsheet' | 'moveToFolder' | 'moveToTrash' | 'openProtonDrive'
+  'newDocument' | 'newSpreadsheet' | 'makeACopy' | 'moveToFolder' | 'moveToTrash' | 'openProtonDrive'
 > & {
   openHelp: () => void
   toggleDebugMode: () => void
@@ -21,8 +21,8 @@ export function openHelp() {
 
 /**
  * Runs a docs file menu action, from the title menu or from the editor, as /doc's `DocumentTitleDropdown.tsx` does.
- * The actions still waiting for their doc2 ticket do nothing, like their disabled menu items, and the sheets-only ones
- * never come from a text document. The handlers check the role and flags themselves.
+ * Version history, a stub, does nothing, like its disabled menu item, and the sheets-only actions never come from a text
+ * document. The handlers check the role and flags themselves.
  */
 export function handleFileMenuAction(action: FileMenuAction, handlers: FileMenuHandlers, logger: LoggerInterface) {
   switch (action.type) {
@@ -34,6 +34,8 @@ export function handleFileMenuAction(action: FileMenuAction, handlers: FileMenuH
       return handlers.newDocument()
     case 'new-spreadsheet':
       return handlers.newSpreadsheet()
+    case 'make-a-copy':
+      return handlers.makeACopy()
     case 'move-to-folder':
       return handlers.moveToFolder()
     case 'move-to-trash':
@@ -44,8 +46,7 @@ export function handleFileMenuAction(action: FileMenuAction, handlers: FileMenuH
       return handlers.print()
     case 'download':
       return handlers.download(action.format)
-    // Stubs until their doc2 tickets: T13 make a copy. Version history has no ticket: it is kept for later.
-    case 'make-a-copy':
+    // A stub with no ticket: version history is kept for later
     case 'see-version-history':
       logger.debug('File menu action not available in doc2 yet', { type: action.type })
       return
