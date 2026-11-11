@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import { getIsSystemGroup } from '@proton/account/groups/groupFlags';
 import type { SectionConfig, SidebarConfig } from '@proton/components/containers/layout/interface';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
 import { getAccessControlPageAvailability } from '@proton/console/organization/getAccessControlPageAvailability';
 import { getOrganizationKeysPageAvailability } from '@proton/console/organization/getOrganizationKeysPageAvailability';
+import { getGroupsPageAvailability } from '@proton/console/organization/getGroupsPageAvailability';
 import { getSecurityPageAvailability } from '@proton/console/organization/getSecurityPageAvailability';
 import { getSingleSignOnPageAvailability } from '@proton/console/organization/getSingleSignOnPageAvailability';
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
@@ -98,13 +98,13 @@ export const getOrganizationAppRoutes = ({
     const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';
     const isPassFamilyPlan = isOrganizationPassFamily(organization);
 
-    const alreadyHasGroups = !!groups?.some((group) => !getIsSystemGroup(group));
-    const canUseGroups = hasActiveOrganizationKey && entitlements.hasGroups;
-    const canUpgradeToGroups = entitlements.isPassB2BWithoutGroups;
-    const canShowGroupsSection =
-        (permissions['account.group.read'] || !!isGroupOwner) &&
-        !!organization &&
-        (alreadyHasGroups || canUpgradeToGroups || canUseGroups);
+    const groupsPageAvailability = getGroupsPageAvailability({
+        organization,
+        entitlements,
+        permissions,
+        groups,
+        isGroupOwner: !!isGroupOwner,
+    });
 
     const hasUsedMembers = (organization?.UsedMembers ?? 0) > 1;
     const canShowUsersAndAddressesSection =
@@ -223,8 +223,8 @@ export const getOrganizationAppRoutes = ({
             to: '/user-groups',
             icon: IcPassGroup,
             noTitle: true,
-            available: canShowGroupsSection,
-            upgradeRequired: !entitlements.hasGroups && !alreadyHasGroups,
+            available: groupsPageAvailability.groups,
+            upgradeRequired: groupsPageAvailability.upgradeRequired,
             subsections: [
                 {
                     id: 'groups-management',
