@@ -1,15 +1,17 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
+import { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
 
 import { getMessageBlocks } from '../../../../../messageHelpers';
 import type { Message } from '../../../../../types';
+import { isEmailLink } from '../../../../../util/emailLinks';
 import { isTrustedProtonLink, openTrustedLink } from '../../../../../util/trustedLinks';
 import { useNativeComposerVisibilityApi } from '../../../../Composer/hooks/useNativeComposerVisibilityApi';
 import { LumoIcon } from '../../../../LumoIcon/LumoIcon';
+import EmailWarningModal from '../../../../Modals/EmailWarningModal';
 import LinkWarningModal from '../../../../Modals/LinkWarningModal';
 import { ToolCallInfo } from './ToolCallInfo';
 import { extractSearchResults } from './toolCallUtils';
@@ -22,8 +24,10 @@ interface WebSearchSourcesViewProps {
 
 export const WebSearchSourcesView = ({ message, sourcesContainerRef, onClose }: WebSearchSourcesViewProps) => {
     useNativeComposerVisibilityApi({ hideComposer: true });
-    const [currentLink, setCurrentLink] = useState<string>('');
-    const linkWarningModal = useModalStateObject();
+    const [{ data: linkWarningUrl, ...linkWarningModalProps }, openLinkWarningModal, renderLinkWarningModal] =
+        useModalStateWithData<string>();
+    const [{ data: emailWarningUrl, ...emailWarningModalProps }, openEmailWarningModal, renderEmailWarningModal] =
+        useModalStateWithData<string>();
     const searchResults = useMemo(
         () => extractSearchResults(getMessageBlocks(message)),
         [message.blocks, message.toolCall, message.toolResult]
@@ -37,8 +41,11 @@ export const WebSearchSourcesView = ({ message, sourcesContainerRef, onClose }: 
             return;
         }
 
-        setCurrentLink(href);
-        linkWarningModal.openModal(true);
+        if (isEmailLink(href)) {
+            openEmailWarningModal(href);
+        } else {
+            openLinkWarningModal(href);
+        }
     };
 
     return (
@@ -62,12 +69,11 @@ export const WebSearchSourcesView = ({ message, sourcesContainerRef, onClose }: 
                     {searchResults && <ToolCallInfo results={searchResults} handleLinkClick={handleLinkClick} />}
                 </div>
             </div>
-            {linkWarningModal.render && (
-                <LinkWarningModal
-                    {...linkWarningModal.modalProps}
-                    url={currentLink}
-                    onClose={linkWarningModal.modalProps.onClose}
-                />
+            {renderEmailWarningModal && emailWarningUrl !== undefined && (
+                <EmailWarningModal {...emailWarningModalProps} url={emailWarningUrl} />
+            )}
+            {renderLinkWarningModal && linkWarningUrl !== undefined && (
+                <LinkWarningModal {...linkWarningModalProps} url={linkWarningUrl} />
             )}
         </>
     );

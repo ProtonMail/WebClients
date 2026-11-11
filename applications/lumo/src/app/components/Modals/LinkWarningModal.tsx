@@ -1,11 +1,17 @@
-import { useState } from 'react';
-
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Collapsible } from '@proton/atoms/Collapsible/Collapsible';
+import { CollapsibleContent } from '@proton/atoms/Collapsible/CollapsibleContent';
+import { CollapsibleHeader } from '@proton/atoms/Collapsible/CollapsibleHeader';
+import { CollapsibleHeaderIconButton } from '@proton/atoms/Collapsible/CollapsibleHeaderIconButton';
 import { Href } from '@proton/atoms/Href/Href';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Prompt from '@proton/components/components/prompt/Prompt';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
+import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
+import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { IcExclamationFilled } from '@proton/icons/icons/IcExclamationFilled';
 import { IcShield } from '@proton/icons/icons/IcShield';
 
@@ -17,8 +23,6 @@ interface Props extends ModalProps {
 }
 
 const LinkWarningModal = ({ url, onClose, ...modalProps }: Props) => {
-    const [showSafetyInfo, setShowSafetyInfo] = useState(false);
-
     const parseUrl = (url: string) => {
         try {
             const urlObj = new URL(url);
@@ -42,159 +46,144 @@ const LinkWarningModal = ({ url, onClose, ...modalProps }: Props) => {
         }
     };
 
+    // eslint-disable-next-line proton/restricted-syntax
+    const misspellingWarning = c('collider_2025: Info').t`Watch for misspellings (e.g., proton.me vs pr0t0n.me)`;
     const urlParts = parseUrl(url);
 
     if (!urlParts) {
         return (
-            <Prompt
-                {...modalProps}
-                title={c('collider_2025: Title').t`Invalid Link`}
-                buttons={[
-                    <Button key="close" onClick={onClose} className={'w-full'}>
-                        {c('collider_2025: Button').t`Close`}
-                    </Button>,
-                ]}
-            >
-                <p className="m-0">{c('collider_2025: Error').t`The provided URL is invalid.`}</p>
-            </Prompt>
+            <ModalTwo {...modalProps} onClose={onClose} size="medium">
+                <ModalTwoHeader title={c('collider_2025: Title').t`Invalid Link`} />
+                <ModalTwoContent>
+                    <p className="m-0">{c('collider_2025: Error').t`The provided URL is invalid.`}</p>
+                </ModalTwoContent>
+                <ModalTwoFooter>
+                    <Button onClick={onClose} fullWidth>{c('collider_2025: Button').t`Close`}</Button>
+                </ModalTwoFooter>
+            </ModalTwo>
         );
     }
 
     return (
-        <Prompt
-            {...modalProps}
-            title={c('collider_2025: Title').t`Opening External Link`}
-            buttons={[
-                <Button key="close" onClick={onClose} className={'w-full'}>
-                    {c('collider_2025: Button').t`Close`}
-                </Button>,
-            ]}
-        >
-            <div className="flex flex-column flex-nowrap gap-4">
-                <p className="m-0">{c('collider_2025: Info').t`You are about to visit an external website:`}</p>
+        <ModalTwo {...modalProps} onClose={onClose} size="small">
+            <ModalTwoHeader title={c('collider_2025: Title').t`Opening External Link`} />
+            <ModalTwoContent>
+                <div className="flex flex-column flex-nowrap gap-4">
+                    <p className="m-0">{c('collider_2025: Info').t`You are about to visit an external website:`}</p>
 
-                {/* URL Display with Security Emphasis */}
-                <div className="border rounded p-3 bg-weak">
-                    {/* Protocol Display */}
-                    <div className="flex flex-row items-center gap-1 mb-1">
-                        {urlParts.isSecure ? (
-                            <>
-                                <IcShield className="color-success" size={4} />
-                                <span className="text-sm color-success text-bold">https://</span>
-                            </>
-                        ) : (
-                            <>
-                                <IcShield className="warning" size={4} />
-                                <span className="text-sm color-danger text-bold">http://</span>
-                            </>
-                        )}
-                    </div>
-
-                    {/* Domain - Emphasized */}
-                    <div className="mb-1">
-                        <div
-                            className={`text-lg text-bold text-break ${urlParts.hasExcessiveSubdomains ? 'color-warning' : ''}`}
-                        >
-                            {urlParts.hasExcessiveSubdomains ? (
+                    {/* URL Display with Security Emphasis */}
+                    <div className="border rounded p-3 bg-weak">
+                        {/* Protocol Display */}
+                        <div className="flex flex-row items-center gap-1 mb-1">
+                            {urlParts.isSecure ? (
                                 <>
-                                    <span className="color-warning">{urlParts.subdomains.join('.')}</span>
-                                    <span className="color-weak">.</span>
-                                    <span>{urlParts.rootDomain}</span>
+                                    <IcShield className="color-success" size={4} />
+                                    <span className="text-sm color-success text-bold">https://</span>
                                 </>
                             ) : (
-                                urlParts.domain
+                                <>
+                                    <IcShield className="warning" size={4} />
+                                    <span className="text-sm color-danger text-bold">http://</span>
+                                </>
                             )}
                         </div>
-                        {urlParts.hasExcessiveSubdomains && (
-                            <div className="flex flex-row items-center gap-1 color-warning text-sm mt-1">
-                                <IcExclamationFilled size={3} />
-                                <span>
-                                    {c('collider_2025: Warning').ngettext(
-                                        msgid`Suspicious: ${urlParts.subdomainCount} subdomain`,
-                                        `Suspicious: ${urlParts.subdomainCount} subdomains`,
-                                        urlParts.subdomainCount
-                                    )}
-                                </span>
+
+                        {/* Domain - Emphasized */}
+                        <div>
+                            <div
+                                className={`text-lg text-bold text-break ${urlParts.hasExcessiveSubdomains ? 'color-warning' : ''}`}
+                            >
+                                {urlParts.hasExcessiveSubdomains ? (
+                                    <>
+                                        <span className="color-warning">{urlParts.subdomains.join('.')}</span>
+                                        <span className="color-weak">.</span>
+                                        <span>{urlParts.rootDomain}</span>
+                                    </>
+                                ) : (
+                                    urlParts.domain
+                                )}
                             </div>
+                            {urlParts.hasExcessiveSubdomains && (
+                                <div className="flex flex-row items-center gap-1 color-warning text-sm mt-1">
+                                    <IcExclamationFilled size={3} />
+                                    <span>
+                                        {c('collider_2025: Warning').ngettext(
+                                            msgid`Suspicious: ${urlParts.subdomainCount} subdomain`,
+                                            `Suspicious: ${urlParts.subdomainCount} subdomains`,
+                                            urlParts.subdomainCount
+                                        )}
+                                    </span>
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Path - De-emphasized */}
+                        {urlParts.path !== '/' && (
+                            <div className="mt-1 text-sm text-break color-weak">{urlParts.path}</div>
                         )}
                     </div>
 
-                    {/* Path - De-emphasized */}
-                    <div className="text-sm color-weak text-break">{urlParts.path}</div>
+                    {/* Safety information */}
+                    <Collapsible>
+                        <CollapsibleHeader
+                            className="color-primary"
+                            suffix={
+                                <CollapsibleHeaderIconButton className="p-1" size="small">
+                                    <LumoIcon name="ChevronDown" className="color-primary" size={14} />
+                                </CollapsibleHeaderIconButton>
+                            }
+                        >
+                            {c('collider_2025: Info').t`Safety information`}
+                        </CollapsibleHeader>
+                        <CollapsibleContent className="mt-2">
+                            <div className="border rounded p-3">
+                                <h4 className="text-lg text-bold mb-2">{c('collider_2025: Info')
+                                    .t`How to identify safe links:`}</h4>
+                                <div className="flex flex-column gap-2 text-sm">
+                                    <div className="flex flex-row flex-nowrap gap-2">
+                                        <IcShield className="color-success mt-0.5 shrink-0" size={4} />
+                                        <span>
+                                            <span className="text-bold">https://</span> -{' '}
+                                            {c('collider_2025: Info').t`Secure connection (encrypted)`}
+                                        </span>
+                                    </div>
+                                    <div className="flex flex-row flex-nowrap gap-2">
+                                        <LumoIcon name="TriangleExclamationPoint" className={'color-warning'} />
+                                        <span>
+                                            <span className="text-bold">{c('collider_2025: Info').t`Domain name`}</span>{' '}
+                                            - {c('collider_2025: Info').t`Check this is the site you expect to visit`}
+                                        </span>
+                                    </div>
+                                    <div className="flex flex-row flex-nowrap gap-2">
+                                        <LumoIcon name="TriangleExclamationPoint" className={'color-warning'} />
+                                        <span>{misspellingWarning}</span>
+                                    </div>
+                                    <div className="flex flex-row flex-nowrap gap-2">
+                                        <LumoIcon name="TriangleExclamationPoint" className={'color-warning'} />
+                                        <span>
+                                            {c('collider_2025: Info')
+                                                .t`Be cautious of unfamiliar domains or excessive subdomains`}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </CollapsibleContent>
+                    </Collapsible>
+
+                    {/* Disclaimer */}
+                    <p className="text-sm color-weak m-0">
+                        {c('collider_2025: Disclaimer')
+                            .t`External links may pose security risks. We are not responsible for the content of external sites. Please proceed at your own risk.`}
+                    </p>
                 </div>
-
-                {/* Safety Information Toggle */}
-                <Button
-                    shape="ghost"
-                    size="small"
-                    className="text-left"
-                    onClick={() => setShowSafetyInfo(!showSafetyInfo)}
-                >
-                    <div className="flex flex-row items-center gap-1">
-                        <span className="color-primary">
-                            {showSafetyInfo
-                                ? c('collider_2025: Action').t`Hide safety information`
-                                : c('collider_2025: Action').t`Show safety information`}
-                        </span>
-                        <LumoIcon
-                            name="ChevronDown"
-                            width={12}
-                            height={12}
-                            className={`color-primary ${showSafetyInfo ? 'rotate-180' : ''}`}
-                        />
-                    </div>
-                </Button>
-
-                {/* Safety Information */}
-                {showSafetyInfo && (
-                    <div className="border rounded p-3">
-                        <h4 className="text-bold mb-2">{c('collider_2025: Info').t`How to identify safe links:`}</h4>
-                        <div className="flex flex-column gap-2 text-sm">
-                            <div className="flex flex-row flex-nowrap gap-2">
-                                <IcShield className="color-success mt-0.5 shrink-0" size={4} />
-                                <span>
-                                    <span className="text-bold">https://</span> -{' '}
-                                    {c('collider_2025: Info').t`Secure connection (encrypted)`}
-                                </span>
-                            </div>
-                            <div className="flex flex-row flex-nowrap gap-2">
-                                <LumoIcon name="TriangleExclamationPoint" className={'color-warning'} />
-                                <span>
-                                    <span className="text-bold">{c('collider_2025: Info').t`Domain name`}</span> -{' '}
-                                    {c('collider_2025: Info').t`Check this is the site you expect to visit`}
-                                </span>
-                            </div>
-                            <div className="flex flex-row flex-nowrap gap-2">
-                                <LumoIcon name="TriangleExclamationPoint" className={'color-warning'} />
-                                <span>
-                                    {/* eslint-disable-next-line proton/restricted-syntax */}
-                                    {c('collider_2025: Info').t`Watch for misspellings (e.g., proton.me vs pr0t0n.me)`}
-                                </span>
-                            </div>
-                            <div className="flex flex-row flex-nowrap gap-2">
-                                <LumoIcon name="TriangleExclamationPoint" className={'color-warning'} />
-                                <span>
-                                    {c('collider_2025: Info')
-                                        .t`Be cautious of unfamiliar domains or excessive subdomains`}
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                )}
-
-                {/* Disclaimer */}
-                <p className="text-sm color-weak m-0">
-                    {c('collider_2025: Disclaimer')
-                        .t`External links may pose security risks. We are not responsible for the content of external sites. Please proceed at your own risk.`}
-                </p>
-
-                <Href href={url}>
-                    <Button color="norm" className={'w-full'} onClick={onClose}>
-                        {c('collider_2025: Button').t`Open Link`}
-                    </Button>
-                </Href>
-            </div>
-        </Prompt>
+            </ModalTwoContent>
+            <ModalTwoFooter className="flex flex-column gap-2">
+                <ButtonLike as={Href} href={url} color="norm" onClick={onClose} fullWidth>
+                    {c('collider_2025: Button').t`Open Link`}
+                </ButtonLike>
+                <Button onClick={onClose} fullWidth>{c('collider_2025: Button').t`Close`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 
