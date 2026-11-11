@@ -86,7 +86,7 @@
         "Adicionar número de telefone"
       ],
       "Add photos": [
-        "Adicionar fotos"
+        "Adicionar fotografias"
       ],
       "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
         "Adicionar a «${ album.name }» ( ${ album.photoCount } foto)",
@@ -265,7 +265,7 @@
         "Criar um grupo de contactos"
       ],
       "Create album": [
-        "Criar um álbum"
+        "Criar álbum"
       ],
       "Create and copy alias": [
         "Criar e colar alias"
@@ -330,7 +330,7 @@
         "Eliminar esta versão"
       ],
       "Delete version": [
-        "Eliminar a versão"
+        "Eliminar versão"
       ],
       "Delete without saving": [
         "Eliminar sem guardar"
@@ -426,7 +426,7 @@
         "Exportar a seleção como *.vcf"
       ],
       "Export system log": [
-        "Exportar o registo do sistema"
+        "Exportar registo do sistema"
       ],
       "Fit to window": [
         "Ajustar na janela"
@@ -867,7 +867,7 @@
         "Pesquisar países"
       ],
       "Search drive": [
-        "Pesquisar na unidade"
+        "Procurar unidade"
       ],
       "See how": [
         "Ver como"
@@ -969,7 +969,7 @@
         "Saltar verificação"
       ],
       "Start": [
-        "Começar"
+        "Iniciar"
       ],
       "Start import": [
         "Iniciar a importação"
@@ -1071,10 +1071,10 @@
         "Enviar a pasta"
       ],
       "Upload from computer": [
-        "Carregar a partir do computador"
+        "Enviar a partir do computador"
       ],
       "Upload photos": [
-        "Enviar fotos"
+        "Enviar fotografias"
       ],
       "Upload picture": [
         "Enviar imagem"
@@ -1244,10 +1244,10 @@
         "Sem dados confidenciais"
       ],
       "Re-index": [
-        "Indexar novamente"
+        "Reindexar"
       ],
       "Re-indexing in progress": [
-        "Reindexação em curso"
+        "Reindexação em progresso"
       ],
       "Rebuild index": [
         "Reconstruir índice"
@@ -1292,7 +1292,7 @@
         "Subscrever agora"
       ],
       "Try ${ BRAND_NAME } Workspace": [
-        "Experimente o ${ BRAND_NAME } Workspace"
+        "Teste o Espaço de Trabalho ${ BRAND_NAME }"
       ],
       "Upgrade for 200GB": [
         "Upgrade para 200GB"
@@ -1344,6 +1344,18 @@
       ],
       "New chat": [
         "Nova conversação"
+      ],
+      "About ${ name }": [
+        "Sobre o ${ name }"
+      ],
+      "Add ${ name }": [
+        "Adicionar ${ name }"
+      ],
+      "Go to folder": [
+        "Ir para pasta"
+      ],
+      "Sign in with Google": [
+        "Iniciar sessão com Google"
       ]
     },
     "Actions": {
@@ -3631,7 +3643,7 @@
         "O pedido expirou"
       ],
       "Search failed": [
-        "Erro de pesquisa"
+        "Procura falhou"
       ],
       "Signature not verified": [
         "Assinatura não verificada"
@@ -3942,7 +3954,7 @@
         "Ocorreu um erro com a pesquisa: Espaço de armazenamento insuficiente."
       ],
       "Unexpected error, we can't import the files": [
-        "Erro inesperado, não conseguimos importar os ficheiros"
+        "Erro inesperado, nós não podemos importar os ficheiros"
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "Estratégia de conflito desconhecida: ${ strategy }"
@@ -4076,6 +4088,21 @@
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperação incorreta. Tente novamente ou utilize outro método de recuperação."
+      ],
+      "Cannot share root folder": [
+        "Não é possível partilhar a pasta raiz"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Não é possível verificar quem enviou este ficheiro"
+      ],
+      "Device not found": [
+        "Dispositivo não encontrado"
+      ],
+      "Invitation not found": [
+        "Convite não foi encontrado."
+      ],
+      "Photo not found": [
+        "Fotografia não encontrada"
       ]
     },
     "Error importing calendar": {
@@ -4245,7 +4272,7 @@
         "Quando a palavra-passe extra está ativada, a gestão de alias só pode ser feita no ${ PASS_APP_NAME }."
       ],
       "You may also refresh the page or try again later.": [
-        "Também pode atualizar a página ou tentar novamente mais tarde."
+        "Também pode atualizar a página ou tentar mais tarde."
       ]
     },
     "Error notification": {
@@ -4589,7 +4616,7 @@
         "Contactos"
       ],
       "Create new album": [
-        "Criar um álbum"
+        "Criar novo álbum"
       ],
       "Create new shared album": [
         "Criar um álbum partilhado"
@@ -5250,7 +5277,7 @@
         "Anónimo"
       ],
       "Apr": [
-        "Abr."
+        "Abr"
       ],
       "Are you sure you want to discard your changes?": [
         "Tem a certeza de que deseja descartar as alterações?"
@@ -5262,7 +5289,7 @@
         "Tem a certeza de que deseja esvaziar o lixo e eliminar permanentemente todos os itens?"
       ],
       "Are you sure you want to permanently delete": [
-        "Tem a certeza de que deseja eliminar permanentemente"
+        "Tem a certeza que deseja eliminar para sempre"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "Tem a certeza de que deseja eliminar permanentemente \"${ itemName }\" do lixo?"
@@ -5283,7 +5310,7 @@
         "Atenção Requerida"
       ],
       "Aug": [
-        "Ago."
+        "Ago"
       ],
       "Available": [
         "Disponível"
@@ -5319,7 +5346,7 @@
         "Não é possível carregar a ligação."
       ],
       "Cannot load links": [
-        "Não é possível carregar as ligações."
+        "Não é possível carregar as hiperligações."
       ],
       "Cannot load shared link": [
         "Não é possível carregar a ligação partilhada."
@@ -5623,7 +5650,7 @@
         "Obtenha a aplicação para fazer cópia de segurança de fotos do seu telefone ou enviá-las aqui."
       ],
       "Get the desktop app to sync files from your computer.": [
-        "Obtenha a aplicação de ‘desktop’ para sincronizar ficheiros a partir do seu computador."
+        "Obtenha a aplicação de PC para sincronizar os ficheiros a partir do seu computador."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
         "Conheça o ${ DRIVE_APP_NAME } e beneficie de um bónus de armazenamento de 3 GB!"
@@ -5768,7 +5795,7 @@
         "As importações grandes podem demorar vários dias."
       ],
       "Last week": [
-        "A semana passada"
+        "Semana passada"
       ],
       "Learn more": [
         "Saiba mais"
@@ -5880,7 +5907,7 @@
         "Nenhum resultado"
       ],
       "No synced folders": [
-        "Nenhuma pasta sincronizada"
+        "Sem pastas sincronizadas"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
         "Nenhuma das chaves enviadas é válida para a encriptação. Para poder enviar mensagens para este endereço, carregue uma chave válida ou desative \"Encriptar os e-mails\"."
@@ -5982,7 +6009,7 @@
         "Fotografias"
       ],
       "Photos have been successfully recovered.": [
-        "As fotos foram recuperadas."
+        "As fotografias foram recuperadas com sucesso."
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Peça ao proprietário para convidá-lo diretamente para o documento."
@@ -6145,7 +6172,7 @@
         "Selecione um ficheiro ou pasta enviados e crie uma ligação para o mesmo."
       ],
       "Select item": [
-        "Selecione o item"
+        "Selecionar item"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecione o formato de e-mail padrão a utilizar para este endereço de e-mail."
@@ -6226,7 +6253,7 @@
         "Alguns governos bloqueiam ou restringem o acesso a determinados sítios web. Uma VPN ajuda a contornar a censura, mantendo a sua atividade e identidade privadas."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        "Alguns dos seus ficheiros já não estão acessíveis. Restaure o acesso aos ficheiros. ${ StartRecoveryButton }"
+        "Alguns dos seus ficheiros já não estão acessíveis. Restaure o acesso aos seus ficheiros. ${ StartRecoveryButton }"
       ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "Algumas fotos deste álbum não estão guardadas na sua cronologia. Eliminar este álbum eliminará essas fotos permanentemente."
@@ -6305,7 +6332,7 @@
         "Há ficheiros que ainda têm de ser transferidos. Ao fechar o gestor de transferências, todas as operações serão terminadas."
       ],
       "There is nothing to see here": [
-        "Não há nada para ver aqui."
+        "Não há nada para ver aqui"
       ],
       "This action will delete the link and revoke access for all users.": [
         "Esta ação eliminará a ligação e revogará o acesso de todos os utilizadores."
@@ -6519,7 +6546,7 @@
         "A verificação abrirá um novo separador, pelo que deve desativar os bloqueadores de pop-ups. Não lhe será cobrado nada. Qualquer montante utilizado para verificar o cartão será reembolsado imediatamente."
       ],
       "Version is deleted": [
-        "A versão é eliminada."
+        "A versão foi eliminada"
       ],
       "Version is restored": [
         "A versão foi restaurada"
@@ -7028,7 +7055,7 @@
         "Não é possível escrever na pasta"
       ],
       "Clear all search data": [
-        "Limpar todos os dados de pesquisa"
+        "Limpar todos os dados da procura"
       ],
       "Clears browser data related to the search.": [
         "Limpa os dados do navegador relacionados com a pesquisa."
@@ -7053,7 +7080,7 @@
         "Ficheiro sinalizado como potencialmente malicioso"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Apenas ficheiros (sem fotos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) até 100 GB no total, 100.000 ficheiros e 50 GB por ficheiro"
+        "Apenas ficheiros (sem fotografias, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) até 100 GB no total, 100.000 ficheiros e 50 GB por ficheiro"
       ],
       "Get logs and other information for technical support and troubleshooting": [
         "Obtenha registos e outras informações para apoio ao cliente técnico e resolução de problemas"
@@ -7095,7 +7122,7 @@
         "Convite confirmado"
       ],
       "iOS and Android Apps": [
-        "Aplicações para iOS e Android"
+        "Aplicações de Android e iOS"
       ],
       "Issues found": [
         "Problemas encontrados"
@@ -7125,7 +7152,7 @@
         "Não foram encontrados estados populadores."
       ],
       "Not enough storage space": [
-        "Espaço de armazenamento insuficiente"
+        "Sem espaço de armazenamento suficiente"
       ],
       "One encrypted suite. Full business protection.": [
         "Uma suite encriptada. Proteção total do negócio."
@@ -7153,7 +7180,7 @@
         "O item solicitado já não existe"
       ],
       "Running diagnostics...": [
-        "A executar diagnósticos..."
+        "A executar o diagnóstico..."
       ],
       "Scan to download": [
         "Digitalizar para transferir"
@@ -7301,6 +7328,21 @@
       ],
       "Do you remember your password?": [
         "Lembra-se da sua palavra-passe?"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantia de reembolso em 30 dias: cancele até 30 dias depois da compra e contacte o nosso ${ customerSupportLink } para solicitar um reembolso."
+      ],
+      "Author is not provided on public link": [
+        "O autor não é fornecido na hiperligação pública"
+      ],
+      "Not in My files": [
+        "Não nos Meus Ficheiros"
+      ],
+      "Private and encrypted": [
+        "Privado e encriptado"
+      ],
+      "UnionPay logo": [
+        "Logótipo de UnionPay"
       ]
     },
     "info": {
@@ -7399,7 +7441,7 @@
     },
     "Label": {
       "# of downloads": [
-        "Número de transferências"
+        "# de transferências"
       ],
       "${ albumProgress.added } of ${ albumProgress.total }": [
         "${ albumProgress.added } de ${ albumProgress.total }"
@@ -7552,7 +7594,7 @@
         "País"
       ],
       "Create ${ BRAND_NAME } account": [
-        "Criar uma conta do ${ BRAND_NAME }"
+        "Criar conta ${ BRAND_NAME }"
       ],
       "Created": [
         "Criada"
@@ -7928,7 +7970,7 @@
         "Tipo"
       ],
       "Unlock drive": [
-        "Desbloquear a unidade"
+        "Desbloquear unidade"
       ],
       "Unlock drive (recommended)": [
         "Desbloquear a unidade (recomendado)"
@@ -8090,7 +8132,7 @@
         "Eliminar ligação e remover o acesso para todos"
       ],
       "Deleted ${ deleted }": [
-        "Eliminado a ${ deleted }"
+        "Eliminado ${ deleted }"
       ],
       "Device #${ position }": [
         "Dispositivo #${ position }"
@@ -8135,7 +8177,7 @@
         "Localização: ${ item.location }"
       ],
       "Modified ${ modified }": [
-        "Modificado a ${ modified }"
+        "Modificado ${ modified }"
       ],
       "Never expires": [
         "Nunca expira"
@@ -8177,7 +8219,7 @@
         "Partilhado por ${ sharedBy }"
       ],
       "Shared by Public link": [
-        "Partilhado através de ligação pública"
+        "Partilhado pela hiperligação Pública"
       ],
       "Shared on ${ sharedOn }": [
         "Partilhado a ${ sharedOn }"
@@ -8376,6 +8418,9 @@
       ],
       "Terms and conditions": [
         "Termos e condições"
+      ],
+      "Customer Support": [
+        "Apoio ao Cliente"
       ]
     },
     "List title": {
@@ -10245,7 +10290,7 @@
         "Convidar membros"
       ],
       "Maybe Later": [
-        "Talvez mais tarde"
+        "Talvez Mais Tarde"
       ],
       "Maybe later": [
         "Talvez mais tarde"
@@ -10257,7 +10302,7 @@
         "Ignorar"
       ],
       "Skip for now": [
-        "Saltar por enquanto"
+        "Ignorar por agora"
       ],
       "Try the app": [
         "Experimentar a aplicação"
@@ -10334,7 +10379,7 @@
         "O convite foi recebido."
       ],
       "Invite team members": [
-        "Convidar os membros da equipa"
+        "Convidar membros da equipa"
       ],
       "Manage access": [
         "Gerir acesso"
@@ -10358,7 +10403,7 @@
         "Partilhar pastas e ficheiros"
       ],
       "Sync and access your files from anywhere": [
-        "Sincronize e aceda aos seus ficheiros de qualquer lugar"
+        "Sincronize e aceda aos seus ficheiros em qualquer lugar"
       ],
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "O proprietário precisa confirmar o acesso à partilha. Receberá um e-mail quando estiver pronto."
@@ -10744,6 +10789,9 @@
       ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Pagar com ${ IDEAL_WERO_BRAND_NAME }"
+      ],
+      "You already own a Born Private account.": [
+        "Já possui uma conta Born Private."
       ]
     },
     "Payments.Error": {
@@ -10878,7 +10926,7 @@
         "E-mail"
       ],
       "Enter a new file name": [
-        "Introduza um novo nome de ficheiro"
+        "Inserir um novo nome de ficheiro"
       ],
       "Enter a new folder name": [
         "Introduza um nome para a pasta"
@@ -12443,7 +12491,7 @@
         "Problema comunicado"
       ],
       "Recovery has started": [
-        "A recuperação foi iniciada."
+        "A recuperação foi iniciada"
       ],
       "Secure link copied": [
         "Ligação segura copiada"
@@ -12891,7 +12939,7 @@
         "Transferir uma pasta não verificada?"
       ],
       "Drive": [
-        "Drive"
+        "Unidade"
       ],
       "Drop to upload": [
         "Solte para enviar"
@@ -12936,7 +12984,7 @@
         "Ativar a proteção avançada da conta"
       ],
       "Enable drive search": [
-        "Ativar a pesquisa na unidade"
+        "Ativar procura de unidade"
       ],
       "Enhance security with 2FA": [
         "Aumente a segurança com a A2F"
@@ -13247,7 +13295,7 @@
         "Guarde-o para mais tarde no ${ DRIVE_APP_NAME }"
       ],
       "Search results": [
-        "Resultados da pesquisa"
+        "Resultados da procura"
       ],
       "Searching…": [
         "A procurar…"
@@ -13644,7 +13692,7 @@
         "Definições da ligação pública"
       ],
       "Ready, set, upload.": [
-        "Preparar, apontar, carregar."
+        "Pronto, configurado, enviar."
       ],
       "Remove your access?": [
         "Remover o seu acesso?"
@@ -13738,6 +13786,21 @@
       ],
       "Welcome to ${ DRIVE_APP_NAME }": [
         "Bem-vindo(a) ao ${ DRIVE_APP_NAME }"
+      ],
+      "Easy switch": [
+        "Mudança fácil"
+      ],
+      "Easy Switch from Google Drive": [
+        "Mudança Fácil de Google Drive"
+      ],
+      "Import started": [
+        "Importação iniciada"
+      ],
+      "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
+        "Importado por ${ PRODUCT_NAMES.EASY_SWITCH }"
+      ],
+      "Your import is finished!": [
+        "A sua importação está concluída!"
       ]
     },
     "Today icon tooltip in mini calendar": {

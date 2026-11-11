@@ -4433,6 +4433,66 @@
       ],
       "You can update a public link for your own files only": [
         "Puoi aggiornare un link pubblico solo per i tuoi file."
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Impossibile aggiungere una foto all'album senza un nome valido"
+      ],
+      "Cannot share root folder": [
+        "Impossibile condividere cartella principale"
+      ],
+      "Copy operation aborted": [
+        "Copia interrotta"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Creare file al di fuori delle cartelle non è consentito"
+      ],
+      "Device not found": [
+        "Dispositivo non trovato"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Impossibile decifrare chiave preferita: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Impossibile decifrare nome elemento: ${ message }"
+      ],
+      "Invitation not found": [
+        "Invito non trovato"
+      ],
+      "Item not found": [
+        "Elemento non trovato"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Impossibile spostare l'elemento: la destinazione non è una cartella."
+      ],
+      "Moving root item is not allowed": [
+        "Non è consentito spostare un elemento principale"
+      ],
+      "Name must not be empty": [
+        "Il campo \"nome\" non può essere vuoto"
+      ],
+      "Not enough browser storage": [
+        "Memoria browser insufficiente"
+      ],
+      "Renaming root item is not allowed": [
+        "Non è consentito rinominare un elemento chiave"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Verifica della firma per ${ signatureType } fallita"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Verifica della firma per  ${ signatureType } non riuscita: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "L'upload di alcuni file è fallito. Prova di nuovo."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "L'upload di alcune parti del file non è stato completato. Riprova."
+      ],
+      "This item has no image preview": [
+        "Questo elemento non ha un'immagine di anteprima"
+      ],
+      "You do not have access to this shared item": [
+        "Accesso non consentito a questo elemento condiviso"
       ]
     },
     "error": {
@@ -14830,6 +14890,9 @@
       ],
       "Welcome to ${ DRIVE_APP_NAME }": [
         "Benvenuto su ${ DRIVE_APP_NAME }"
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ node.activeRevision.contentAuthor.error.error }": [
+        "Non siamo riusciti a confermare che il file è stato caricato da ${ claimedContentAuthor }. Il motivo è: ${ node.activeRevision.contentAuthor.error.error }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15624,6 +15687,12 @@
       ],
       "name": [
         "nome"
+      ],
+      "hash key": [
+        "chiave hash"
+      ],
+      "membership": [
+        "abbonamento"
       ]
     },
     "tryduo2026: Info": {

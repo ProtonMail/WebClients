@@ -4298,13 +4298,13 @@
         "Tous les utilisateurs de votre abonnement sont utilisés. Nous vous invitons à mettre à jour votre abonnement pour ajouter un nouvel utilisateur."
       ],
       "No drive found to import": [
-        "Aucun disque à importer détecté"
+        "Aucun disque à importer n'a été détecté."
       ],
       "Not enough storage space in your ${ DRIVE_APP_NAME }": [
         "Espace insuffisant dans votre ${ DRIVE_APP_NAME }"
       ],
       "Unexpected error, we can't import the files": [
-        "Une erreur inattendue est survenue, les fichiers n'ont pas pu être importés"
+        "Une erreur inattendue est survenue, les fichiers ne peuvent être importés"
       ],
       "We couldn’t send a verification code using this method.": [
         "Nous n'avons pas pu envoyer le code de vérification en utilisant cette méthode."
@@ -14856,7 +14856,7 @@
         "Assistant d'écriture ${ BRAND_NAME } Scribe"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
+        "Assistant d'aide à la rédaction ${ LUMO_SHORT_APP_NAME }"
       ],
       "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
         "Nous n'avons pas pu confirmer que le nom a été créé ou modifié par ${ claimedNameAuthor }. La raison est la suivante : ${ node.nameAuthor.error.error }"

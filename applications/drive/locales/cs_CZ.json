@@ -1355,6 +1355,9 @@
       ],
       "Subscribe": [
         "Předplatit"
+      ],
+      "Stop": [
+        "Zastavit"
       ]
     },
     "Action: Docs": {
@@ -1989,6 +1992,12 @@
         "Celkem za ${ n } měsíce",
         "Celkem za ${ n } měsíců",
         "Celkem za ${ n } měsíců"
+      ],
+      "Total for ${ cycle } month": [
+        "Celkem za ${ cycle } měsíc",
+        "Celkem za ${ cycle } měsíce",
+        "Celkem za ${ cycle } měsíců",
+        "Celkem za ${ cycle } měsíců"
       ]
     },
     "Collapsible tooltip": {
@@ -11462,6 +11471,9 @@
       ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - karta končící čísly ${ paymentMethod.Details.Last4 }"
+      ],
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - karta končící čísly ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -15461,6 +15473,11 @@
     "collider_2025: Error": {
       "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
         "Tato konverzace je příliš dlouhá na to, aby mohla pokračovat. Spusťte nový chat, aby byl zajištěn hladký chod a rychlá odezva aplikace ${ LUMO_SHORT_APP_NAME }."
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Potvrzením tímto opravňujete společnost ${ BRAND_NAME } a Stripe, našeho poskytovatele platebních služeb, k inkasování budoucích plateb za vaše předplatné z tohoto bankovního účtu prostřednictvím přímého inkasa SEPA, a svou banku k odepsání těchto plateb. Vaše první platba je provedena nyní společností ${ IDEAL_WERO_BRAND_NAME }. Váš tarif se automaticky obnovuje, dokud jej nezrušíte; před každým inkasem vás budeme informovat. V případě inkasa prostřednictvím SEPA Direct Debit můžete požádat svou banku o vrácení platby do 8 týdnů od data inkasa, a to v souladu s podmínkami vaší smlouvy s bankou. To se nevztahuje na platbu společnosti ${ IDEAL_WERO_BRAND_NAME }, kterou právě provádíte."
       ]
     }
   }
