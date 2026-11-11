@@ -21,17 +21,15 @@ const fail = async (error: unknown, afterMs: number) => {
 };
 
 describe('useFido2Action', () => {
-    let consoleError: jest.SpyInstance;
-
     beforeEach(() => {
         jest.useFakeTimers();
         jest.mocked(captureMessage).mockClear();
-        consoleError = jest.spyOn(console, 'error').mockImplementation(noop);
+        jest.spyOn(console, 'error').mockImplementation(noop);
     });
 
     afterEach(() => {
         jest.useRealTimers();
-        consoleError.mockRestore();
+        jest.restoreAllMocks();
     });
 
     it('groups an instant rejection apart from a user cancel', async () => {
@@ -44,20 +42,28 @@ describe('useFido2Action', () => {
 
         jest.mocked(captureMessage).mockClear();
 
-        expect(await fail(error, 5000)).toMatchObject({
+        expect(await fail(error, 1500)).toMatchObject({
             fingerprint: ['Security key auth', 'NotAllowedError', 'user'],
             tags: { fido2Timing: 'user' },
-            extra: { durationMs: 5000 },
+            extra: { durationMs: 1500 },
         });
     });
 
-    it('flags errors thrown by a browser extension', async () => {
+    it('groups errors thrown by a browser extension apart from ours', async () => {
         const error = new Error('Something went wrong.');
         error.stack = 'Error\n    at Messenger.<anonymous> (chrome-extension://abc/content/fido2-page-script.js:1:1)';
 
         expect(await fail(error, 100)).toMatchObject({
-            fingerprint: ['Security key auth', 'Error', 'instant'],
-            tags: { fido2Extension: true },
+            fingerprint: ['Security key auth', 'extension', 'instant'],
+            tags: { fido2Error: 'Error', fido2Extension: true },
+        });
+    });
+
+    it('reads the focus before the security key prompt opens', async () => {
+        jest.spyOn(document, 'hasFocus').mockReturnValueOnce(false).mockReturnValue(true);
+
+        expect(await fail(new DOMException('Not allowed', 'NotAllowedError'), 100)).toMatchObject({
+            extra: { hasFocusAtStart: false },
         });
     });
 });
