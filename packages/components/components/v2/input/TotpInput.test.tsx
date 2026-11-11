@@ -13,6 +13,22 @@ const expectValues = (value: string, inputNodes: NodeListOf<HTMLInputElement>) =
 };
 
 describe('TotpInput component', () => {
+    it('should keep per-digit names and put aria-labelledby on the group', () => {
+        const { container, getByRole, getByLabelText } = render(
+            <>
+                <span id="totp-label">Enter code</span>
+                <TotpInput value="" onValue={() => {}} length={6} aria-labelledby="totp-label" />
+            </>
+        );
+        const inputNodes = container.querySelectorAll('input');
+
+        inputNodes.forEach((input) => {
+            expect(input).not.toHaveAttribute('aria-labelledby');
+        });
+        expect(getByLabelText('Enter verification code. Digit 1.')).toBe(inputNodes[0]);
+        expect(getByRole('group', { name: 'Enter code' })).toBeInTheDocument();
+    });
+
     it('should display 6 inputs with a totp code', () => {
         const { container } = render(<TotpInput value="123456" onValue={() => {}} length={6} />);
         const inputNodes = container.querySelectorAll('input');

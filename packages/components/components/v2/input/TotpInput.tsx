@@ -37,6 +37,11 @@ type TotpInputProps = {
     autoFocus?: boolean;
     autoComplete?: 'one-time-code';
     centerDivider?: boolean;
+    /**
+     * Names the group of digit inputs, e.g. the label id that InputField passes down.
+     * Kept off the individual inputs so each one keeps its own "Digit N" name.
+     */
+    'aria-labelledby'?: string;
 };
 
 const size = {
@@ -71,6 +76,7 @@ const TotpInput: ForwardRefRenderFunction<HTMLInputElement, TotpInputProps> = (
         autoComplete,
         error,
         centerDivider = true,
+        'aria-labelledby': ariaLabelledBy,
         ...rest
     }: TotpInputProps,
     focusRef
@@ -142,7 +148,13 @@ const TotpInput: ForwardRefRenderFunction<HTMLInputElement, TotpInputProps> = (
 
     // Force LTR because it's recommended to enter digits in this order
     return (
-        <div className="flex flex-nowrap" dir="ltr" ref={divRef}>
+        <div
+            className="flex flex-nowrap"
+            dir="ltr"
+            ref={divRef}
+            role={ariaLabelledBy ? 'group' : undefined}
+            aria-labelledby={ariaLabelledBy}
+        >
             {list.map((_, i) => {
                 const value = values[i].trim();
                 const isValidValue = getIsValidValue(value, type);
