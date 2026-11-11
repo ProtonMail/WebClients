@@ -1,4 +1,4 @@
-import type { FormEvent } from 'react';
+import type { ChangeEvent, FormEvent } from 'react';
 import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
@@ -20,7 +20,6 @@ import physicalKeyRegistered from '@proton/styles/assets/img/illustrations/physi
 
 import Form from '../../../components/form/Form';
 import Checkbox from '../../../components/input/Checkbox';
-import Info from '../../../components/link/Info';
 import type { ModalProps } from '../../../components/modalTwo/Modal';
 import Modal from '../../../components/modalTwo/Modal';
 import ModalContent from '../../../components/modalTwo/ModalContent';
@@ -168,20 +167,16 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
                         awaitingTouch={awaitingTouch}
                         error={fidoError}
                         checkbox={
-                            <>
-                                <Checkbox
-                                    id="allow-platform-keys"
-                                    checked={allowPlatformKeys}
-                                    onChange={(e) => setAllowPlatformKeys(e.target.checked)}
-                                >
-                                    {c('fido2: Info').t`Allow platform keys`}
-                                </Checkbox>
-                                <Info
-                                    className="ml-1"
-                                    title={c('fido2: Info')
-                                        .t`Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)`}
-                                />
-                            </>
+                            <InputFieldTwo
+                                as={Checkbox}
+                                id="allow-platform-keys"
+                                checked={allowPlatformKeys}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => setAllowPlatformKeys(e.target.checked)}
+                                assistiveText={c('fido2: Info')
+                                    .t`Use this device's fingerprint, face, PIN or screen lock`}
+                            >
+                                {c('fido2: Info').t`Allow platform keys`}
+                            </InputFieldTwo>
                         }
                     />
                 )}
