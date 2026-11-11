@@ -1,5 +1,5 @@
 import { MemberRole, NonProtonInvitationState } from '@protontech/drive-sdk';
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import type { DirectMember } from '../interfaces';
@@ -68,7 +68,7 @@ describe('DirectSharingListing', () => {
 
         const ownerSection = screen.getByTestId('share-owner');
         expect(ownerSection).toBeInTheDocument();
-        expect(screen.getByText('Owner Name (you)')).toBeInTheDocument();
+        expect(within(ownerSection).getByText('Owner Name').parentElement).toHaveTextContent('Owner Name (you)');
         expect(screen.getByText('owner@example.com')).toBeInTheDocument();
         expect(screen.getByText('owner')).toBeInTheDocument();
     });
@@ -78,7 +78,9 @@ describe('DirectSharingListing', () => {
 
         const ownerSection = screen.getByTestId('share-owner');
         expect(ownerSection).toBeInTheDocument();
-        expect(screen.getByText('owner@example.com (you)')).toBeInTheDocument();
+        expect(within(ownerSection).getByText('owner@example.com').parentElement).toHaveTextContent(
+            'owner@example.com (you)'
+        );
         expect(screen.getByText('owner')).toBeInTheDocument();
     });
 
@@ -245,5 +247,65 @@ describe('DirectSharingListing', () => {
         expect(screen.getByText('Resend invite')).toBeInTheDocument();
         expect(screen.getByText('Copy invite link')).toBeInTheDocument();
         expect(screen.getByText('Remove access')).toBeInTheDocument();
+    });
+
+    describe('bidi isolation', () => {
+        // The first <bdi> in the owner row holds the owner name, the second one the email
+        const getOwnerNameBdi = () => screen.getByTestId('share-owner').querySelector('bdi') as HTMLElement;
+
+        it.each([
+            ['leading right-to-left mark', '\u200Falice'],
+            ['right-to-left override', '\u202Ealice'],
+            ['Arabic', 'محمد'],
+            ['Hebrew', 'דוד'],
+            ['mixed scripts', 'Alice محمد'],
+            ['left-to-right only', 'alice'],
+        ])('isolates the owner name (%s) and keeps "(you)" after it', (_, ownerDisplayName) => {
+            render(<DirectSharingListing {...defaultProps} ownerDisplayName={ownerDisplayName} />);
+
+            const nameBdi = getOwnerNameBdi();
+            expect(nameBdi.textContent).toBe(ownerDisplayName);
+            expect(getComputedStyle(nameBdi).unicodeBidi).toMatch(/isolate$/);
+
+            // "(you)" stays plain text outside of the isolated name, after it in document order
+            expect(nameBdi.parentElement?.firstChild).toBe(nameBdi);
+            expect(nameBdi.parentElement?.textContent).toBe(`${ownerDisplayName} (you)`);
+        });
+
+        it('isolates the email used as owner name when the display name is empty', () => {
+            render(<DirectSharingListing {...defaultProps} ownerDisplayName="" />);
+
+            const nameBdi = getOwnerNameBdi();
+            expect(nameBdi.textContent).toBe('owner@example.com');
+            expect(nameBdi.parentElement?.textContent).toBe('owner@example.com (you)');
+        });
+
+        it('isolates the owner email shown under the display name', () => {
+            render(<DirectSharingListing {...defaultProps} ownerDisplayName={'\u200Falice'} />);
+
+            const bdis = screen.getByTestId('share-owner').querySelectorAll('bdi');
+            expect(bdis).toHaveLength(2);
+            expect(bdis[1].textContent).toBe('owner@example.com');
+        });
+
+        it('isolates member names and emails', () => {
+            render(
+                <DirectSharingListing
+                    {...defaultProps}
+                    members={[
+                        { ...MEMBERS[0], inviteeEmail: 'john@example.com' },
+                        { ...MEMBERS[0], inviteeEmail: '\u202Eunknown@example.com', uid: 'invitation-2' },
+                    ]}
+                />
+            );
+
+            const bdiTextsPerMember = screen
+                .getAllByTestId('share-members')
+                .map((row) => Array.from(row.querySelectorAll('bdi')).map((bdi) => bdi.textContent));
+            expect(bdiTextsPerMember).toHaveLength(2);
+            expect(bdiTextsPerMember).toEqual(
+                expect.arrayContaining([['John Doe', 'john@example.com'], ['\u202Eunknown@example.com']])
+            );
+        });
     });
 });

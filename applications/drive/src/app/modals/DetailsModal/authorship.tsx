@@ -8,7 +8,7 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 export function getAuthorshipStatus(node: NodeEntity): {
     ok: boolean;
     message: ReactNode;
-    details: string[];
+    details: ReactNode[];
 } {
     const isFile = node.type === NodeType.File;
 
@@ -72,7 +72,7 @@ function getAuthorshipMessage({
     emailAddress?: string | null;
 }): ReactNode {
     const isAnonymous = emailAddress === null;
-    const author = <strong key="author">{emailAddress || c('Title').t`an anonymous user`}</strong>;
+    const author = <strong key="author">{getIsolatedAuthor(emailAddress)}</strong>;
 
     if (isOk) {
         if (isAnonymous) {
@@ -120,29 +120,33 @@ function getAuthorshipMessage({
         : c('Title').jt`We couldn’t verify that ${author} uploaded this folder.`;
 }
 
-function getAuthorshipDetails(node: NodeEntity): string[] {
-    const details = [];
+// Isolated with <bdi> so a right-to-left author can't reorder the surrounding sentence
+function getIsolatedAuthor(emailAddress?: string | null): ReactNode {
+    return <bdi key="author">{emailAddress || c('Title').t`an anonymous user`}</bdi>;
+}
+
+function getAuthorshipDetails(node: NodeEntity): ReactNode[] {
+    const details: ReactNode[] = [];
 
     if (!node.keyAuthor.ok) {
-        const claimedKeyAuthor = node.keyAuthor.error.claimedAuthor || c('Title').t`an anonymous user`;
+        const claimedKeyAuthor = getIsolatedAuthor(node.keyAuthor.error.claimedAuthor);
         details.push(
             c('Title')
-                .t`We weren’t able to confirm that the node was created by ${claimedKeyAuthor}. The reason is: ${node.keyAuthor.error.error}`
+                .jt`We weren’t able to confirm that the node was created by ${claimedKeyAuthor}. The reason is: ${node.keyAuthor.error.error}`
         );
     }
     if (!node.nameAuthor.ok) {
-        const claimedNameAuthor = node.nameAuthor.error.claimedAuthor || c('Title').t`an anonymous user`;
+        const claimedNameAuthor = getIsolatedAuthor(node.nameAuthor.error.claimedAuthor);
         details.push(
             c('Title')
-                .t`We weren’t able to confirm that the name was created or modified by ${claimedNameAuthor}. The reason is: ${node.nameAuthor.error.error}`
+                .jt`We weren’t able to confirm that the name was created or modified by ${claimedNameAuthor}. The reason is: ${node.nameAuthor.error.error}`
         );
     }
     if (node.activeRevision?.contentAuthor.ok === false) {
-        const claimedContentAuthor =
-            node.activeRevision.contentAuthor.error.claimedAuthor || c('Title').t`an anonymous user`;
+        const claimedContentAuthor = getIsolatedAuthor(node.activeRevision.contentAuthor.error.claimedAuthor);
         details.push(
             c('Title')
-                .t`We weren’t able to confirm that the file content was uploaded by ${claimedContentAuthor}. The reason is: ${node.activeRevision.contentAuthor.error.error}`
+                .jt`We weren’t able to confirm that the file content was uploaded by ${claimedContentAuthor}. The reason is: ${node.activeRevision.contentAuthor.error.error}`
         );
     }
 

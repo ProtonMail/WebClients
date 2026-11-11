@@ -44,7 +44,7 @@ export interface PublicHeaderProps {
 
 export const PublicHeader = ({
     breadcrumbOrName,
-    sharedBy,
+    sharedBy: sharedByEmail,
     onDownload,
     onScanAndDownload,
     onDetails,
@@ -66,6 +66,8 @@ export const PublicHeader = ({
     const { viewportWidth } = useActiveBreakpoint();
     const isMobile = viewportWidth['<=small'];
     const isDesktop = viewportWidth['>=xlarge'];
+    // Named `sharedBy` so the msgid of the "Shared by" translations below stays the same
+    const sharedBy = sharedByEmail ? <bdi key="shared-by">{sharedByEmail}</bdi> : undefined;
 
     return (
         <>
@@ -80,7 +82,7 @@ export const PublicHeader = ({
 
                         {sharedBy ? (
                             <span className="flex gap-1 ml-11 pl-0.5 color-weak">
-                                {c('Subtitle').t`Shared by ${sharedBy}`}
+                                {c('Subtitle').jt`Shared by ${sharedBy}`}
                                 <span className="text-norm mx-1">&#x2022;</span>
                                 {c('Info').t`End-to-end encrypted`}
                             </span>
@@ -105,7 +107,7 @@ export const PublicHeader = ({
                             {breadcrumbOrName}
                             {sharedBy && (
                                 <span className="text-sm pl-1 color-weak text-ellipsis max-w-full">{c('Subtitle')
-                                    .t`Shared by ${sharedBy}`}</span>
+                                    .jt`Shared by ${sharedBy}`}</span>
                             )}
                         </div>
                     </div>

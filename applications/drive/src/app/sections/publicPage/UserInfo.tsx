@@ -35,8 +35,12 @@ export const UserInfo = ({ userAddress }: Props) => {
         <Tooltip
             title={
                 <div className="flex flex-column">
-                    <span>{userAddress.displayName}</span>
-                    <span>{userAddress.email}</span>
+                    <span>
+                        <bdi>{userAddress.displayName}</bdi>
+                    </span>
+                    <span>
+                        <bdi>{userAddress.email}</bdi>
+                    </span>
                 </div>
             }
         >

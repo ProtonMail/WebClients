@@ -29,7 +29,7 @@ export type FileDetails = {
     authorshipStatus: {
         ok: boolean;
         message: ReactNode;
-        details: string[];
+        details: ReactNode[];
     } | null;
     name: string;
     location: string;

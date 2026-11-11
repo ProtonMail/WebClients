@@ -37,7 +37,7 @@ export const AlbumMembers = ({ onShare }: AlbumMembersProps) => {
     return (
         <>
             {membersHeader.map((member, i) => (
-                <Tooltip title={member.contactName || member.contactEmail || member.email} key={i}>
+                <Tooltip title={<bdi>{member.contactName || member.contactEmail || member.email}</bdi>} key={i}>
                     <UserAvatar name={member.contactName || member.contactEmail || member.email} />
                 </Tooltip>
             ))}

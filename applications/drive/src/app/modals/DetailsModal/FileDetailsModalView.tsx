@@ -63,8 +63,8 @@ function FileDetailsComponent({ details }: { details: FileDetails }) {
                                 </CollapsibleHeader>
                                 <CollapsibleContent>
                                     <ul>
-                                        {details.authorshipStatus.details.map((detail) => (
-                                            <li key={detail}>{detail}</li>
+                                        {details.authorshipStatus.details.map((detail, index) => (
+                                            <li key={index}>{detail}</li>
                                         ))}
                                     </ul>
                                     <a href={getKnowledgeBaseUrl('/drive-signature-management')} target="_blank">
@@ -78,11 +78,11 @@ function FileDetailsComponent({ details }: { details: FileDetails }) {
             )}
             <FileNameRow label={c('Title').t`Name`} name={details.name} />
             <FileNameRow label={c('Title').t`Location`} name={details.location} />
-            <TextRow label={c('Title').t`Created by`} text={details.createdBy} />
+            <TextRow label={c('Title').t`Created by`} text={<bdi>{details.createdBy}</bdi>} />
             {details.lastUploadedBy && details.lastUploadedBy !== details.createdBy && (
                 <TextRow
                     label={c('Title').t`Last uploaded by`}
-                    text={details.lastUploadedBy}
+                    text={<bdi>{details.lastUploadedBy}</bdi>}
                     dataTestId="drive:last-edited-by"
                 />
             )}
