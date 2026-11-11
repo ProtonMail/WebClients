@@ -3,7 +3,7 @@ import type { SyncedEditorEvent } from '@proton/docs-shared/State/SyncedEditorSt
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings'
 
 import { ClientEditorBridge } from './ClientEditorBridge'
-import { EDITOR_CALL_TIMEOUT_MS } from './EditorInvoker'
+import { EDITOR_CALL_TIMEOUT_MS, EDITOR_EXPORT_TIMEOUT_MS } from './EditorInvoker'
 import { createClientHandler } from './createClientHandler'
 
 const USER_SETTINGS = { Locale: 'fr_FR' } as UserSettings
@@ -30,9 +30,12 @@ const logger = { debug: jest.fn(), warn: jest.fn(), error: jest.fn() } as unknow
 
 const sendUpdate = jest.fn()
 const onWordCount = jest.fn()
+const onEditorRendered = jest.fn()
 const showModal = jest.fn()
 const onFileMenuAction = jest.fn()
 const onPresenceUpdate = jest.fn()
+const fetchExternalImageAsBase64 = jest.fn()
+const EXPORTED_DOCX = new Uint8Array([80, 75, 3, 4])
 
 describe('ClientEditorBridge', () => {
   let frame: HTMLIFrameElement
@@ -52,9 +55,11 @@ describe('ClientEditorBridge', () => {
         isFlagEnabled,
         onEditorError: jest.fn(),
         onWordCount,
+        onEditorRendered,
         showModal,
         onFileMenuAction,
         onPresenceUpdate,
+        fetchExternalImageAsBase64,
         logger,
       }),
       logger,
@@ -105,7 +110,7 @@ describe('ClientEditorBridge', () => {
     )
   })
 
-  test('sizes the frame for printing to the height the editor reports', async () => {
+  test('sizes the frame for printing to the height the editor reports, which says its editor is rendered', async () => {
     receiveFromEditor({
       type: EditorBridgeMessageType.EditorToClientInvokation,
       functionName: 'updateFrameSize',
@@ -116,6 +121,7 @@ describe('ClientEditorBridge', () => {
     await waitForReply()
 
     expect(frame.style.getPropertyValue('--print-min-height')).toBe('480px')
+    expect(onEditorRendered).toHaveBeenCalled()
   })
 
   test('passes the word count the editor reports on', async () => {
@@ -172,6 +178,28 @@ describe('ClientEditorBridge', () => {
     expect(onFileMenuAction).toHaveBeenCalledWith({ type: 'help' })
     expect(postToEditor).toHaveBeenCalledWith(
       { type: EditorBridgeMessageType.ClientToEditorReply, messageId: 'message-1', returnValue: undefined },
+      expect.any(String),
+    )
+  })
+
+  test("answers the editor's request for an external image with it through the image proxy", async () => {
+    fetchExternalImageAsBase64.mockResolvedValue('data:image/png;base64,iVBORw0K')
+    receiveFromEditor({
+      type: EditorBridgeMessageType.EditorToClientInvokation,
+      functionName: 'fetchExternalImageAsBase64',
+      args: ['https://example.com/cat.png'],
+      messageId: 'message-1',
+    })
+
+    await waitForReply()
+
+    expect(fetchExternalImageAsBase64).toHaveBeenCalledWith('https://example.com/cat.png')
+    expect(postToEditor).toHaveBeenCalledWith(
+      {
+        type: EditorBridgeMessageType.ClientToEditorReply,
+        messageId: 'message-1',
+        returnValue: 'data:image/png;base64,iVBORw0K',
+      },
       expect.any(String),
     )
   })
@@ -300,6 +328,19 @@ describe('ClientEditorBridge', () => {
       args: [SCROLL_TO_USER_CURSOR],
     },
     {
+      functionName: 'exportData',
+      call: (invoker) => invoker.exportData('docx'),
+      args: ['docx'],
+      returnValue: EXPORTED_DOCX,
+    },
+    { functionName: 'printAsPDF', call: (invoker) => invoker.printAsPDF(), args: [] },
+    {
+      functionName: 'getCurrentSelection',
+      call: (invoker) => invoker.getCurrentSelection('md'),
+      args: ['md'],
+      returnValue: '# Title',
+    },
+    {
       functionName: 'getCurrentEditorState',
       call: (invoker) => invoker.getCurrentEditorState(),
       args: [],
@@ -330,6 +371,36 @@ describe('ClientEditorBridge', () => {
     jest.advanceTimersByTime(EDITOR_CALL_TIMEOUT_MS)
 
     await expect(shown).rejects.toThrow('Editor did not answer showEditor')
+  })
+
+  test.each([
+    { functionName: 'exportData', call: () => bridge.editorInvoker.exportData('docx') },
+    { functionName: 'getCurrentSelection', call: () => bridge.editorInvoker.getCurrentSelection('md') },
+  ])('gives the editor longer to answer $functionName, which can fetch images', async ({ functionName, call }) => {
+    jest.useFakeTimers()
+    const exported = call()
+    const settled = jest.fn()
+    exported.then(settled, settled)
+
+    await jest.advanceTimersByTimeAsync(EDITOR_CALL_TIMEOUT_MS)
+    expect(settled).not.toHaveBeenCalled()
+
+    await jest.advanceTimersByTimeAsync(EDITOR_EXPORT_TIMEOUT_MS - EDITOR_CALL_TIMEOUT_MS)
+    await expect(exported).rejects.toThrow(`Editor did not answer ${functionName}`)
+  })
+
+  test('never times out printAsPDF, which Firefox and Safari answer only once the print dialog closes', async () => {
+    jest.useFakeTimers()
+    const printed = bridge.editorInvoker.printAsPDF()
+    const settled = jest.fn()
+    printed.then(settled, settled)
+
+    await jest.advanceTimersByTimeAsync(EDITOR_EXPORT_TIMEOUT_MS * 2)
+    expect(settled).not.toHaveBeenCalled()
+
+    const [{ messageId }] = postToEditor.mock.lastCall
+    receiveFromEditor({ type: EditorBridgeMessageType.EditorToClientReply, messageId, returnValue: undefined })
+    await expect(printed).resolves.toBeUndefined()
   })
 
   function receiveFromEditor(data: object, source: Window | null = frame.contentWindow) {

@@ -18,9 +18,9 @@ const isShown = () => {
 const close = () => userEvent.click(screen.getByRole('button', { name: 'Okay', hidden: true }))
 
 describe('DocumentSizeLimitModal', () => {
-  test('opens on a size-limit refusal, explains it without removing older revisions, and closes', async () => {
+  test('opens on a size-limit refusal, explains it without removing older revisions or a download before the editor shows, and closes', async () => {
     const fake = createFakeSession()
-    render(<DocumentSizeLimitModal session={fake.session} />)
+    render(<DocumentSizeLimitModal session={fake.session} onDownloadCopy={undefined} />)
     expect(isShown()).toBe(false)
 
     act(() => fake.emit('refusal', sizeLimitReached))
@@ -40,9 +40,25 @@ describe('DocumentSizeLimitModal', () => {
     expect(isShown()).toBe(false)
   })
 
+  test('offers to download a copy as docx once the editor shows the document', async () => {
+    const fake = createFakeSession()
+    const onDownloadCopy = jest.fn()
+    render(<DocumentSizeLimitModal session={fake.session} onDownloadCopy={onDownloadCopy} />)
+
+    act(() => fake.emit('refusal', sizeLimitReached))
+
+    expect(
+      await screen.findByText(
+        'This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.',
+      ),
+    ).toBeInTheDocument()
+    await userEvent.click(screen.getByRole('button', { name: 'Download a copy (as docx)', hidden: true }))
+    expect(onDownloadCopy).toHaveBeenCalledTimes(1)
+  })
+
   test('opens once per session: a later size-limit refusal does not reopen it', async () => {
     const fake = createFakeSession()
-    render(<DocumentSizeLimitModal session={fake.session} />)
+    render(<DocumentSizeLimitModal session={fake.session} onDownloadCopy={undefined} />)
     act(() => fake.emit('refusal', sizeLimitReached))
     await screen.findByText(title)
     await close()
@@ -57,7 +73,7 @@ describe('DocumentSizeLimitModal', () => {
     { reason: 'incompleteBaseState' },
   ])('stays closed on a $reason refusal', (refusal) => {
     const fake = createFakeSession()
-    render(<DocumentSizeLimitModal session={fake.session} />)
+    render(<DocumentSizeLimitModal session={fake.session} onDownloadCopy={undefined} />)
 
     act(() => fake.emit('refusal', refusal))
 
@@ -66,11 +82,11 @@ describe('DocumentSizeLimitModal', () => {
 
   test('leaves no listener once unmounted, and listens to nothing without a session', () => {
     const fake = createFakeSession()
-    const { unmount } = render(<DocumentSizeLimitModal session={fake.session} />)
+    const { unmount } = render(<DocumentSizeLimitModal session={fake.session} onDownloadCopy={undefined} />)
     expect(fake.listenerCount()).toBe(1)
 
     unmount()
-    render(<DocumentSizeLimitModal session={undefined} />)
+    render(<DocumentSizeLimitModal session={undefined} onDownloadCopy={undefined} />)
 
     expect(fake.listenerCount()).toBe(0)
   })

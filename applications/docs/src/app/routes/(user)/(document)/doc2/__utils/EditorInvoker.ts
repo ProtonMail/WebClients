@@ -4,6 +4,7 @@ import type { ClientToEditorInvokationMessage } from '@proton/docs-shared/Bridge
 import { EditorBridgeMessageType } from '@proton/docs-shared/Bridge/EditorBridgeMessageType'
 import type { EditorToClientReplyMessage } from '@proton/docs-shared/Bridge/EditorToClientMessage'
 import type { ParamsExcludingFunctions } from '@proton/docs-shared/Bridge/Utils'
+import type { DataTypesThatDocumentCanBeExportedAs } from '@proton/docs-shared/ExportableDataType'
 import type { DocumentRoleType } from '@proton/docs-shared/Doc/DocumentRole'
 import type { RtsMessagePayload } from '@proton/docs-shared/Doc/RtsMessagePayload'
 import type { EditorInitializationConfig } from '@proton/docs-shared/EditorInitializationConfig'
@@ -13,6 +14,8 @@ import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings'
 import type { SerializedEditorState } from 'lexical'
 
 export const EDITOR_CALL_TIMEOUT_MS = 10_000
+/** An export, of the document or the selection, fetches its external images through the image proxy: far longer. */
+export const EDITOR_EXPORT_TIMEOUT_MS = 120_000
 
 type EditorMethodsCalledByDoc2 = Pick<
   ClientRequiresEditorMethods,
@@ -27,6 +30,9 @@ type EditorMethodsCalledByDoc2 = Pick<
   | 'getClientId'
   | 'broadcastPresenceState'
   | 'syncEvent'
+  | 'exportData'
+  | 'printAsPDF'
+  | 'getCurrentSelection'
   | 'getCurrentEditorState'
   | 'getYDocAsJSON'
   | 'toggleDebugTreeView'
@@ -82,6 +88,19 @@ export class EditorInvoker implements EditorMethodsCalledByDoc2 {
     return this.invokeEditorMethod('syncEvent', [event])
   }
 
+  async exportData(format: DataTypesThatDocumentCanBeExportedAs): Promise<Uint8Array<ArrayBuffer>> {
+    return this.invokeEditorMethod('exportData', [format], EDITOR_EXPORT_TIMEOUT_MS)
+  }
+
+  // Firefox and Safari answer only once the user closes the print dialog, so this waits for no answer
+  async printAsPDF(): Promise<void> {
+    return this.invokeEditorMethod('printAsPDF', [], null)
+  }
+
+  async getCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<string | null> {
+    return this.invokeEditorMethod('getCurrentSelection', [format], EDITOR_EXPORT_TIMEOUT_MS)
+  }
+
   async getCurrentEditorState(): Promise<SerializedEditorState | undefined> {
     return this.invokeEditorMethod('getCurrentEditorState', [])
   }
@@ -123,6 +142,7 @@ export class EditorInvoker implements EditorMethodsCalledByDoc2 {
   private async invokeEditorMethod<K extends keyof EditorMethodsCalledByDoc2>(
     functionName: K,
     args: ParamsExcludingFunctions<Parameters<ClientRequiresEditorMethods[K]>>,
+    timeoutMs: number | null = EDITOR_CALL_TIMEOUT_MS,
   ): Promise<ReturnType<ClientRequiresEditorMethods[K]>> {
     const contentWindow = this.editorFrame.contentWindow
     if (!contentWindow) {
@@ -139,10 +159,13 @@ export class EditorInvoker implements EditorMethodsCalledByDoc2 {
     }
 
     return new Promise<ReturnType<ClientRequiresEditorMethods[K]>>((resolve, reject) => {
-      const timeout = setTimeout(() => {
-        this.pendingMessages.delete(messageId)
-        reject(new Error(`Editor did not answer ${functionName} within ${EDITOR_CALL_TIMEOUT_MS} ms`))
-      }, EDITOR_CALL_TIMEOUT_MS)
+      const timeout =
+        timeoutMs === null
+          ? undefined
+          : setTimeout(() => {
+              this.pendingMessages.delete(messageId)
+              reject(new Error(`Editor did not answer ${functionName} within ${timeoutMs} ms`))
+            }, timeoutMs)
 
       this.pendingMessages.set(messageId, (returnValue) => {
         clearTimeout(timeout)

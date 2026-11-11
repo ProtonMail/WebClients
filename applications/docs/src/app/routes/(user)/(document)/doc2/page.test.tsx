@@ -207,6 +207,21 @@ describe('DocumentPageV2', () => {
   })
 
   describe('opening a document', () => {
+    test("mode download, Drive's Download, opens the document, and the address bar opens it from then on", async () => {
+      const replaceState = jest.spyOn(window.history, 'replaceState').mockImplementation(() => {})
+      renderAt('/doc2?mode=download&volumeId=VOLUME&linkId=LINK')
+
+      await waitFor(() =>
+        expect(mockCreateSession).toHaveBeenCalledWith(
+          expect.objectContaining({ nodeMeta: { volumeId: 'VOLUME', linkId: 'LINK' } }),
+        ),
+      )
+      expect(screen.queryByTestId('invalid-openaction-error')).not.toBeInTheDocument()
+      const addressBar = new URL(replaceState.mock.lastCall![2] as string)
+      expect(addressBar.pathname + addressBar.search).toBe('/doc2?mode=open&volumeId=VOLUME&linkId=LINK')
+      replaceState.mockRestore()
+    })
+
     test('a bootstrap failure shows the error page, and retry bootstraps again', async () => {
       mockCreateSession.mockReturnValueOnce(pendingSession(() => Promise.reject(new Error('Bootstrap failed'))))
       renderAt('/doc2?mode=open&volumeId=VOLUME&linkId=LINK')

@@ -8,14 +8,18 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader'
 import type { Session } from '@proton-docs/realtime-sdk'
 import { c } from 'ttag'
 
-export type DocumentSizeLimitModalProps = { session: Session | undefined }
+export type DocumentSizeLimitModalProps = {
+  session: Session | undefined
+  /** Saves the document as docx, once the editor shows it */
+  onDownloadCopy: (() => void) | undefined
+}
 
 /**
  * Adapted from /doc's `~/components/document/DocumentSizeLimitModal.tsx`, which imports docs-core: explains the
  * document size limit the first time the SDK refuses an edit for it, in place of a toast. It offers no "remove older revisions", since the SDK
- * has no `squashEverything` until Phase 3 (ADR-0011), and no download until doc2 has one.
+ * has no `squashEverything` until Phase 3 (ADR-0011).
  */
-export function DocumentSizeLimitModal({ session }: DocumentSizeLimitModalProps) {
+export function DocumentSizeLimitModal({ session, onDownloadCopy }: DocumentSizeLimitModalProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
@@ -37,10 +41,18 @@ export function DocumentSizeLimitModal({ session }: DocumentSizeLimitModalProps)
     <ModalTwo className="!rounded-t-xl" open={isOpen} onClose={() => setIsOpen(false)}>
       <ModalTwoHeader title={c('Title').t`Document Size Limit Exceeded`} hasClose={false} />
       <ModalTwoContent>
-        {c('Info')
-          .t`This document has grown too large, and your latest changes couldn’t be saved. Copy any work you need to keep it.`}
+        {onDownloadCopy
+          ? c('Info')
+              .t`This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.`
+          : c('Info')
+              .t`This document has grown too large, and your latest changes couldn’t be saved. Copy any work you need to keep it.`}
       </ModalTwoContent>
       <ModalTwoFooter>
+        {onDownloadCopy && (
+          <Button color="norm" onClick={onDownloadCopy}>
+            {c('Action').t`Download a copy (as docx)`}
+          </Button>
+        )}
         <Button onClick={() => setIsOpen(false)}>{c('Action').t`Okay`}</Button>
       </ModalTwoFooter>
     </ModalTwo>

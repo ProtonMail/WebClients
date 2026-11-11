@@ -16,6 +16,7 @@ import { getAppVersion } from '@proton/components/helpers/appVersion'
 import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
 import useAppTitle from '@proton/components/hooks/useAppTitle'
 import type { FileMenuAction } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
+import type { DataTypesThatDocumentCanBeExportedAs } from '@proton/docs-shared/ExportableDataType'
 import { isWordCountSupported } from '@proton/docs-shared/WordCount/isWordCountSupported'
 import { VersionNumber } from '@proton/docs-shared/components/ui/VersionNumber'
 import type { NodeEntity } from '@proton/drive/sdk'
@@ -35,18 +36,20 @@ import { IcPrinter } from '@proton/icons/icons/IcPrinter'
 import { IcSquares } from '@proton/icons/icons/IcSquares'
 import { IcTrash } from '@proton/icons/icons/IcTrash'
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
+import { textToClipboard } from '@proton/shared/lib/helpers/browser'
 import { c } from 'ttag'
 
 import { AutoGrowingInput } from '~/components/document/DocumentLayout/DocumentHeader/DocumentTitleDropdown/AutoGrowingInput'
 import { WordCountIcon } from '~/components/document/DocumentLayout/DocumentHeader/icons'
 import { useApplication } from '~/utils/application-context'
-import { useIsDownloadLogsAllowed, useIsSheetsEnabled } from '~/utils/flags'
+import { useIsDownloadLogsAllowed, useIsODTEnabled, useIsSheetsEnabled } from '~/utils/flags'
 import type { EditorInvoker } from '../__utils/EditorInvoker'
 import { downloadLogs } from '../__utils/debugDownloads'
 import type { DocumentRole } from '../__utils/getDocumentRole'
 import { getNodeName } from '../__utils/getNodeName'
 import { renameDocument } from '../__utils/renameDocument'
 import type { TrashState } from '../__utils/useDocumentFileActions'
+import { useExportToPDFModal } from './ExportToPDFModal'
 import type { WordCount } from './WordCount'
 
 export type DocumentTitleMenuProps = {
@@ -54,6 +57,8 @@ export type DocumentTitleMenuProps = {
   role: DocumentRole
   editorInvoker:
     Pick<EditorInvoker, 'setTableOfContentsVisible' | 'getYDocAsJSON' | 'getCurrentEditorState'> | undefined
+  /** The editor once it shows the document; until then Print, Download and Copy as markdown are disabled */
+  exportInvoker: Pick<EditorInvoker, 'getCurrentSelection'> | undefined
   wordCount: WordCount
   trashState: TrashState
   isCreatingSpreadsheet: boolean
@@ -68,6 +73,7 @@ export function DocumentTitleMenu({
   node,
   role,
   editorInvoker,
+  exportInvoker,
   wordCount,
   trashState,
   isCreatingSpreadsheet,
@@ -78,6 +84,8 @@ export function DocumentTitleMenu({
   const { createNotification } = useNotifications()
   const isSheetsEnabled = useIsSheetsEnabled()
   const isDownloadLogsAllowed = useIsDownloadLogsAllowed()
+  const isODTEnabled = useIsODTEnabled()
+  const [pdfModal, openPdfModal] = useExportToPDFModal()
   const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>()
 
   const [title, setTitle] = useState(() => getNodeName(node))
@@ -145,6 +153,18 @@ export function DocumentTitleMenu({
   }, [])
 
   const cancelRename = () => setRenameEdit(undefined)
+
+  const copyAsMarkdown = () => {
+    exportInvoker?.getCurrentSelection('md').then(
+      (markdown) => {
+        if (markdown) {
+          textToClipboard(markdown)
+          createNotification({ type: 'success', text: c('Info').t`Copied to clipboard` })
+        }
+      },
+      (error) => logger.error('Failed to copy the document as Markdown', error),
+    )
+  }
 
   const confirmRename = () => {
     const typedName = renameEdit?.value?.trim()
@@ -305,17 +325,66 @@ export function DocumentTitleMenu({
 
           <hr className="my-1 min-h-px" />
 
-          <StubMenuItem waitsFor="T7" icon={<IcPrinter />} data-testid="dropdown-print">
+          <DropdownMenuButton
+            className="flex items-center text-left"
+            disabled={!exportInvoker}
+            onClick={() => onFileMenuAction({ type: 'print' })}
+            data-testid="dropdown-print"
+          >
+            <IcPrinter className="color-weak mr-2" />
             {c('Action').t`Print`}
-          </StubMenuItem>
+          </DropdownMenuButton>
 
-          <StubMenuItem waitsFor="T7" icon={<IcArrowDownToSquare />} data-testid="dropdown-download">
-            {c('Action').t`Download`}
-          </StubMenuItem>
+          <SimpleDropdown
+            as={DropdownMenuButton}
+            className="flex items-center text-left"
+            disabled={!exportInvoker}
+            data-testid="dropdown-download"
+            content={
+              <>
+                <IcArrowDownToSquare className="color-weak mr-2" />
+                {c('Action').t`Download`}
+                <IcChevronRightFilled className="ml-auto" />
+              </>
+            }
+            hasCaret={false}
+            onClick={(event: MouseEvent) => {
+              event.preventDefault()
+              event.stopPropagation()
+            }}
+            originalPlacement="right-start"
+            contentProps={{ offset: 0 }}
+          >
+            <DropdownMenu>
+              {downloadFormats(isODTEnabled).map(({ format, label }) => (
+                <DropdownMenuButton
+                  key={format}
+                  className="flex items-center text-left"
+                  onClick={() => onFileMenuAction({ type: 'download', format })}
+                  data-testid={`download-${format}`}
+                >
+                  {label}
+                </DropdownMenuButton>
+              ))}
+              <DropdownMenuButton
+                className="flex items-center text-left"
+                onClick={() => openPdfModal({ onClose: () => onFileMenuAction({ type: 'print' }) })}
+                data-testid="download-pdf"
+              >
+                {c('Action').t`PDF (.pdf)`}
+              </DropdownMenuButton>
+            </DropdownMenu>
+          </SimpleDropdown>
 
-          <StubMenuItem waitsFor="T7" icon={<IcSquares />} data-testid="dropdown-copy-as-md">
+          <DropdownMenuButton
+            className="flex items-center text-left"
+            disabled={!exportInvoker}
+            onClick={copyAsMarkdown}
+            data-testid="dropdown-copy-as-md"
+          >
+            <IcSquares className="color-weak mr-2" />
             {c('Action').t`Copy as markdown`}
-          </StubMenuItem>
+          </DropdownMenuButton>
 
           <hr className="my-1 min-h-px" />
 
@@ -390,15 +459,26 @@ export function DocumentTitleMenu({
           </div>
         </DropdownMenu>
       </Dropdown>
+      {pdfModal}
     </>
   )
 }
 
+/** /doc's docs download formats, but PDF, which the editor doesn't export: it prints */
+function downloadFormats(isODTEnabled: boolean): { format: DataTypesThatDocumentCanBeExportedAs; label: string }[] {
+  return [
+    { format: 'docx', label: c('Action').t`Microsoft Word (.docx)` },
+    ...(isODTEnabled ? [{ format: 'odt' as const, label: c('Action').t`OpenDocument Text (.odt) (Beta)` }] : []),
+    { format: 'html', label: c('Action').t`Web page (.html)` },
+    { format: 'txt', label: c('Action').t`Plain Text (.txt)` },
+    { format: 'md', label: c('Action').t`Markdown (.md)` },
+  ]
+}
+
 /**
- * The doc2 plan ticket a stub waits for: T7 download, print and export, T13 make a copy. Version history has no ticket:
- * it is kept for later.
+ * The doc2 plan ticket a stub waits for: T13 make a copy. Version history has no ticket: it is kept for later.
  */
-type StubTicket = 'T7' | 'T13' | 'version history'
+type StubTicket = 'T13' | 'version history'
 
 type StubMenuItemProps = { waitsFor: StubTicket; icon: ReactNode; children: ReactNode; 'data-testid': string }
 

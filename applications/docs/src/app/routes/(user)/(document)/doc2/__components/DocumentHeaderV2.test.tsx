@@ -144,6 +144,7 @@ function headerElement(role: DocumentRole, status?: ReactNode) {
         role={role}
         participants={[]}
         editorInvoker={undefined}
+        exportInvoker={undefined}
         wordCount={{ isShown: false, setIsShown: jest.fn() }}
         trashState="not_trashed"
         isCreatingSpreadsheet={false}
@@ -178,6 +179,7 @@ function headerWithParticipants(
         role={role}
         participants={activeParticipants}
         editorInvoker={editorInvoker}
+        exportInvoker={undefined}
         wordCount={{ isShown: false, setIsShown: jest.fn() }}
         trashState="not_trashed"
         isCreatingSpreadsheet={false}

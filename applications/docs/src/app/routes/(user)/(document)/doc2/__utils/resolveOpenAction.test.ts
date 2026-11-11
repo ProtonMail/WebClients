@@ -14,6 +14,18 @@ describe('resolveOpenAction', () => {
     })
   })
 
+  test("mode download, Drive's Download, resolves to the node to open and download", () => {
+    expect(resolveUrl('/doc2?mode=download&volumeId=VOLUME&linkId=LINK')).toEqual({
+      kind: 'open',
+      nodeMeta: { volumeId: 'VOLUME', linkId: 'LINK' },
+      downloadOnOpen: true,
+    })
+  })
+
+  test('mode open does not download', () => {
+    expect(resolveUrl('/doc2?mode=open&volumeId=VOLUME&linkId=LINK')).not.toHaveProperty('downloadOnOpen')
+  })
+
   test('mode create resolves to creating in the parent folder', () => {
     expect(resolveUrl('/doc2?mode=create&volumeId=VOLUME&parentLinkId=PARENT')).toEqual({
       kind: 'create',
@@ -39,7 +51,6 @@ describe('resolveOpenAction', () => {
   test.each([
     '/doc2?mode=convert&volumeId=VOLUME&linkId=LINK',
     '/doc2?mode=history&volumeId=VOLUME&linkId=LINK',
-    '/doc2?mode=download&volumeId=VOLUME&linkId=LINK',
     '/doc2?mode=copy-public',
     '/doc2?mode=open-url&token=TOKEN&linkId=LINK',
     '/doc2?mode=open-url-download&token=TOKEN&linkId=LINK',
