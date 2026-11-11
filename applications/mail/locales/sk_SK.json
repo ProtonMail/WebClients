@@ -1585,10 +1585,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -5550,6 +5547,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhľadávanie našlo príliš veľa výsledkov. Upresnite hľadanie a skúste to prosím znova."
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Vložené obrázky sa nepodarilo odstrániť. Správa nebola prevedená na čistý text."
       ]
     },
     "error": {
@@ -8169,10 +8169,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -10093,6 +10090,9 @@
       ],
       "Work or business": [
         "Práca alebo podnikanie"
+      ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "Odpovede v prieskume nie sú end-to-end šifrované, preto neuvádzajte žiadne citlivé informácie, prosím."
       ]
     },
     "info": {
@@ -11475,6 +11475,12 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Font family": [
+        "Typ písma"
+      ],
+      "Font size": [
+        "Veľkosť písma"
       ]
     },
     "Label (begin date/advanced search)": {

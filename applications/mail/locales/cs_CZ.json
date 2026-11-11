@@ -1519,10 +1519,7 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -1718,6 +1715,9 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Stop": [
+        "Zastavit"
       ]
     },
     "action": {
@@ -2711,6 +2711,12 @@
       ],
       "Total": [
         "Celkem"
+      ],
+      "Total for ${ cycle } month": [
+        "Celkem za ${ cycle } měsíc",
+        "Celkem za ${ cycle } měsíce",
+        "Celkem za ${ cycle } měsíců",
+        "Celkem za ${ cycle } měsíců"
       ]
     },
     "Collapsible tooltip": {
@@ -7778,10 +7784,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -9306,6 +9309,99 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
+      ],
+      "${ count } email": [
+        "${ count } email",
+        "${ count } emaily",
+        "${ count } emailů",
+        "${ count } emailů"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } email → ${ names }",
+        "${ count } emaily → ${ names }",
+        "${ count } emailů → ${ names }",
+        "${ count } emailů → ${ names }"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } email → ${ dest }",
+        "${ count } emaily → ${ dest }",
+        "${ count } emailů → ${ dest }",
+        "${ count } emailů → ${ dest }"
+      ],
+      "${ issues.length } issue during import:": [
+        "${ issues.length } problém při importu:",
+        "${ issues.length } problémy při importu:",
+        "${ issues.length } problémů při importu:",
+        "${ issues.length } problémů při importu:"
+      ],
+      "Found ${ count } contact": [
+        "Nalezen ${ count } kontakt",
+        "Nalezeny ${ count } kontakty",
+        "Nalezeno ${ count } kontaktů",
+        "Nalezeno ${ count } kontaktů"
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Byl nalezen aktuální šifrovaný vyhledávací index s ${ oldIndexSize } zprávou.",
+        "Byl nalezen aktuální šifrovaný vyhledávací index s ${ oldIndexSize } zprávama.",
+        "Byl nalezen aktuální šifrovaný vyhledávací index s ${ oldIndexSize } zprávama.",
+        "Byl nalezen aktuální šifrovaný vyhledávací index s ${ oldIndexSize } zprávama."
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Ahoj Lumo, odjíždím a potřebuji nastavit automatickou odpověď „mimo kancelář“. Zeptej se mě na termíny a na to, co by v ní mělo být, a pak mi tu zprávu ukaž, než ji zapneš."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Ahoj Lumo, vysvětli mi, jak mi můžeš pomoct s mou poštovní schránkou. S čím vším tě můžu požádat o pomoc a s čím mi pomoci nemůžeš?"
+      ],
+      "Other (tell us)": [
+        "Jiné (uveďte)"
+      ],
+      "Read ${ count } email": [
+        "Přečíst ${ count } email",
+        "Přečíst ${ count } emaily ",
+        "Přečíst ${ count } emailů",
+        "Přečíst ${ count } emailů"
+      ],
+      "Read ${ count } email on screen": [
+        "Přečíst ${ count } email na obrazovce",
+        "Přečíst ${ count } emaily na obrazovce",
+        "Přečíst ${ count } emailů na obrazovce",
+        "Přečíst ${ count } na obrazovce"
+      ],
+      "Read ${ count } message in this thread": [
+        "Přečíst ${ count } zprávu v tomto vlákně",
+        "Přečíst ${ count } zprávy v tomto vlákně",
+        "Přečíst ${ count } zpráv v tomto vlákně",
+        "Přečíst ${ count } zpráv v tomto vlákně"
+      ],
+      "Read ${ count } open draft": [
+        "Přečíst ${ count } otevřený koncept",
+        "Přečíst ${ count } otevřené koncepty",
+        "Přečíst ${ count } otevřených konceptů",
+        "Přečíst ${ count } otevřených komceptů"
+      ],
+      "Read your ${ count } filter": [
+        "Přečtěte ${ count } svůj filtr",
+        "Přečtěte ${ count } své filtry",
+        "Přečtěte ${ count } svých filtrů",
+        "Přečtěte ${ count } svých filtrů"
+      ],
+      "Read your ${ count } folder": [
+        "Přečtěte ${ count } svou složku",
+        "Přečtěte ${ count } své složky",
+        "Přečtěte ${ count } svých složek",
+        "Přečtěte ${ count } svých složek"
+      ],
+      "Read your ${ count } label": [
+        "Přečtěte ${ count } svůj štítek",
+        "Přečtěte ${ count } své štítky",
+        "Přečtěte ${ count } svých štítků",
+        "Přečtěte ${ count } svých štítků"
+      ],
+      "Rename this folder": [
+        "Přejmenovat tuto šložku"
+      ],
+      "Star emails": [
+        "Označit emaily hvězdičkou"
       ]
     },
     "info": {
@@ -10532,6 +10628,12 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Font family": [
+        "Rodina písma"
+      ],
+      "Font size": [
+        "Velikost písma"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17440,6 +17542,32 @@
       ],
       "Passcode:": [
         "Přístupový kód:"
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } nová zpráva",
+        "${ messageCount } nové zprávy",
+        "${ messageCount } nových zpráv",
+        "${ messageCount } nových zpráv"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Potvrzením tímto opravňujete společnost ${ BRAND_NAME } a Stripe, našeho poskytovatele platebních služeb, k inkasování budoucích plateb za vaše předplatné z tohoto bankovního účtu prostřednictvím přímého inkasa SEPA, a svou banku k odepsání těchto plateb. Vaše první platba je provedena nyní společností ${ IDEAL_WERO_BRAND_NAME }. Váš tarif se automaticky obnovuje, dokud jej nezrušíte; před každým inkasem vás budeme informovat. V případě inkasa prostřednictvím SEPA Direct Debit můžete požádat svou banku o vrácení platby do 8 týdnů od data inkasa, a to v souladu s podmínkami vaší smlouvy s bankou. To se nevztahuje na platbu společnosti ${ IDEAL_WERO_BRAND_NAME }, kterou právě provádíte."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - karta končící čísly ${ Last4 }"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } email → ${ wakeTime }",
+        "${ count } emaily → ${ wakeTime }",
+        "${ count } emailů → ${ wakeTime }",
+        "${ count } emailů → ${ wakeTime }"
       ]
     }
   }

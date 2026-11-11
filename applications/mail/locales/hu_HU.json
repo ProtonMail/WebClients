@@ -1484,8 +1484,7 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Kulcs megjelölése megbízhatóként",
-        "Kulcsok megjelölése megbízhatóként"
+        "Megbízható kulcs"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -1676,6 +1675,12 @@
       ],
       "Verify now": [
         "Ellenőrizze most"
+      ],
+      "Copy '${ code }' to clipboard": [
+        "'${ code }' másolása a vágólapra"
+      ],
+      "Special Offer": [
+        "Akciós ajánlat"
       ]
     },
     "action": {
@@ -2561,6 +2566,9 @@
       "Total for ${ cycle } month": [
         "Összesen, ${ cycle } hónapra",
         "Összesen, ${ cycle } hónapra"
+      ],
+      "Amount due now": [
+        "Az esedékes összeg"
       ]
     },
     "Collapsible tooltip": {
@@ -5071,6 +5079,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A keresés túl sok találatot eredményezett. Korlátozza a keresést majd próbálja meg újra."
+      ],
+      "No drive found to import": [
+        "Nem található meghajtó az importáláshoz"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Váratlan hiba, nem tudjuk importálni a fájlokat"
       ]
     },
     "error": {
@@ -5459,6 +5473,9 @@
     "fido2: Info": {
       "Security key": [
         "Hitelesítési kulcs"
+      ],
+      "Still waiting?": [
+        "Még mindíg várakozik?"
       ]
     },
     "fido2: Label": {
@@ -7237,7 +7254,6 @@
         "Inicializálás…"
       ],
       "Insert image": [
-        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -8684,6 +8700,51 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Már csak néhány kattintás választja el a rendetlenség-mentes postaládától"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenc"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**${ refereeRewardAmount }-t kapnak** kreditként, ha előfizetnek."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hozzáadása"
+      ],
+      "Add contact": [
+        "Névjegy hozzáadása"
+      ],
+      "Apply labels": [
+        "Címkék alkalmazása"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Kérje meg a rendszergazdát a csomag frissítésére vagy az oldal eltávolítását a Foglalási oldalak oldalsávon a ${ CALENDAR_APP_NAME }."
+      ],
+      "Create filter": [
+        "Szűrő létrehozása"
+      ],
+      "Edit ${ contact }": [
+        "${ contact } szerkesztése"
+      ],
+      "Import in progress, you can close this dialog while it's running and come back to it later. Don't close the tab though.": [
+        "Az importálás folyamatban. Ezt a dialógusablakot bezárhatja, amíg a folyamat tart, de ne zárja be a böngészőlapot."
+      ],
+      "Keep your login and credit card details safe but always on hand by adding them to ${ PASS_APP_NAME }. It's free, and included with your ${ BRAND_NAME } Account.": [
+        "Tartsa biztonságban, de mindig kéznél a bejelentkezési és hitelkártyaadatait, ha hozzáadja azokat a ${ PASS_APP_NAME } alkalmazáshoz. Ez ingyenes, és a ${ BRAND_NAME } fiókjához tartozik."
+      ],
+      "Mark ${ emails } as unread": [
+        "${ emails } e-mail megjelölése olvasottként"
+      ],
+      "Move ${ emails } to ${ destination }": [
+        "${ emails } e-mail áthelyezése ide: ${ destination }"
+      ],
+      "Move emails": [
+        "E-mailek áthelyezése"
+      ],
+      "Rename folder": [
+        "Mappa átnevezése"
+      ],
+      "reply": [
+        "válasz"
       ]
     },
     "info": {
@@ -8929,6 +8990,9 @@
       ],
       "Star": [
         "Csillagozás"
+      ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "${ LUMO_SHORT_APP_NAME } megnyitása / beviteli mezőre ugrás"
       ]
     },
     "Keyboard shortcut section name": {
@@ -9767,6 +9831,27 @@
       ],
       "ZIP code": [
         "Irányítószám"
+      ],
+      "Content search version to use": [
+        "A használni kívánt tartalomkereső-verzió"
+      ],
+      "Drive": [
+        "Drive"
+      ],
+      "Filters": [
+        "Szűrők"
+      ],
+      "Font family": [
+        "Betűkészlet család"
+      ],
+      "Font size": [
+        "Betűméret"
+      ],
+      "Image": [
+        "Kép"
+      ],
+      "Write": [
+        "Írás"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10111,6 +10196,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "A frissített meghívó megtekintéséhez előbb újra kell aktiválnia a kulcsait"
+      ],
+      "Learn more.": [
+        "További információk."
       ]
     },
     "Link to calendar event": {
@@ -10928,6 +11016,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Átvizsgáljuk a sötét webet, hogy ellenőrizzük, kiszivárogtak-e a ${ BRAND_NAME } címei vagy e-mail álnevei, és azonnal értesítjük, ha bármit találunk."
+      ],
+      "Data retention policies": [
+        "Adatmegőrzési házirendek"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN, hirdetésblokkolóval és rosszindulatú programok elleni védelemmel"
       ]
     },
     "new_plans: feature highlight": {
@@ -11663,6 +11757,12 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Az Ön teljes ${ planTitle } előfizetése ekkor kezdődik: ${ boldEndDate }."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Adjon meg egy fizetési módot**, hogy a próbaidőszak után is használhassa az összes funkciót."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "30 napon belül lemondhatja, és időarányos visszatérítést kap."
       ]
     },
     "Option": {
@@ -11937,6 +12037,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Az Ön előfizetése jelenleg kedvezménnyel rendelkezik. Az új promócióra való áttérés esetén, a meglévő kedvezmény a továbbiakban nem kerül alkalmazásra."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Csak egy ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } vásárolható."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Fizetés ${ IDEAL_WERO_BRAND_NAME }val"
       ]
     },
     "Payments.Error": {
@@ -12834,6 +12940,9 @@
       "${ count } email → ${ wakeTime }": [
         "${ count } e-mail → ${ wakeTime }",
         "${ count } e-mail → ${ wakeTime }"
+      ],
+      "Snooze ${ emails } until ${ wakeTime }": [
+        "${ emails } e-mail némítása, eddig: ${ wakeTime }"
       ]
     },
     "Snooze message": {
@@ -15156,6 +15265,15 @@
       ],
       "Your shorter address is now ready": [
         "A rövidebb címe elkészült"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } író segéd"
+      ],
+      "Heads up: This Gmail is linked to another ${ BRAND_NAME } account": [
+        "Figyelem: Ez a Gmail fiók egy másik ${ BRAND_NAME } fiókhoz van kapcsolva"
+      ],
+      "You're in control": [
+        "Az irányítás az Ön kezében van"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15781,6 +15899,26 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "Action: rename folder": {
+      "Rename ${ folder } to…": [
+        "A(z) ${ folder } mappa átnevezése…"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } megnyitása"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Most már használhatja az új ${ CALENDAR_APP_NAME }-t. ${ link }"
+      ]
+    },
+    "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Adminisztrátor szerepkörök használatához váltson egy erre alkalmas csomagra."
       ]
     }
   }

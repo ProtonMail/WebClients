@@ -1571,8 +1571,7 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
+        "Klarer nøkkel"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -5438,6 +5437,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Kan ikke sende en tom melding. Meldingen ble ikke sendt."
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Innebygde bilder kunne ikke fjernes. Meldingen ble ikke konvertert til ren tekst."
       ]
     },
     "error": {
@@ -7884,8 +7889,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -9721,6 +9725,22 @@
       ],
       "Work or business": [
         "Jobb eller bedrift"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } medlem)",
+        "${ contactGroupName } (${ numberOfContacts } medlemmer)"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Be administratoren din om å oppgradere planen eller fjerne en side fra sidefeltet for bestillingssider i ${ CALENDAR_APP_NAME }."
+      ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "Svar på undersøkelser er ikke ende-til-ende-krypterte, ikke del noen sensitiv informasjon."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "For å legge til en ny bestillingsside, fjern en besillingsside fra sidemenyen i ${ CALENDAR_APP_NAME }."
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Vi fant noen e-postlister du ikke leser. Du kan melde deg av dem med ett klikk."
       ]
     },
     "info": {
@@ -11087,6 +11107,16 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Font family": [
+        "Skriftfamilie"
+      ],
+      "Font size": [
+        "Skriftstørrelse"
+      ],
+      "Select all ${ count } unused sender": [
+        "Velg ${ count } ubrukt avsender",
+        "Velg alle ${ count } ubrukte avsendere"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17192,6 +17222,9 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "Start with a cleaner Inbox": [
+        "Start med en mer ryddig innboks"
       ]
     },
     "Title header for keys table": {
@@ -17862,6 +17895,11 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName }-skrivebordsapplikasjon"
       ]
     }
   }

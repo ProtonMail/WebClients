@@ -1519,10 +1519,7 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufany klucz",
-        "Zaufane klucze",
-        "Zaufanych kluczy",
-        "Zaufane klucze"
+        "Zaufaj kluczowi"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -5376,6 +5373,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Wyszukiwanie pasuje do zbyt wielu wyników. Sprecyzuj wyszukiwanie i spróbuj ponownie."
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Nie można wysłać pustej wiadomości. Wiadomość nie została wysłana."
       ]
     },
     "error": {
@@ -7770,10 +7770,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -9295,6 +9292,51 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od uporządkowanej skrzynki odbiorczej dzieli Cię kilka kliknięć"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } członek)",
+        "${ contactGroupName } (${ numberOfContacts } członków)",
+        "${ contactGroupName } (${ numberOfContacts } członków)",
+        "${ contactGroupName } (Członkowie: ${ numberOfContacts })"
+      ],
+      "${ count } email → ${ dest }": [
+        "${ count } e-mail → ${ dest }",
+        "${ count } e-maile → ${ dest }",
+        "${ count } e-maili → ${ dest }",
+        "${ count } e-maile → ${ dest }"
+      ],
+      "${ issues.length } issue during import:": [
+        "W trakcie procesu importowania wystąpił ${ issues.length } błąd.",
+        "W trakcie procesu importowania wystąpiły ${ issues.length } błędy.",
+        "W trakcie procesu importowania wystąpiło ${ issues.length } błędów.",
+        "W trakcie procesu importowania wystąpił/y ${ issues.length } błąd/błędy."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Poproś administratora o ulepszenia planu lub usuniecie strony z sekcji rezerwacji na pasku bocznym w aplikacji ${ CALENDAR_APP_NAME }."
+      ],
+      "Found a current encrypted search index with ${ oldIndexSize } message.": [
+        "Znaleziono obecny zaszyfrowany indeks wyszukiwania z ${ oldIndexSize } wiadomością.",
+        "Znaleziono obecny zaszyfrowany indeks wyszukiwania z ${ oldIndexSize } wiadomościami.",
+        "Znaleziono obecny zaszyfrowany indeks wyszukiwania z ${ oldIndexSize } wiadomościami.",
+        "Znaleziono obecny zaszyfrowany indeks wyszukiwania z ${ oldIndexSize } wiadomościami."
+      ],
+      "Read ${ count } email on screen": [
+        "Odczytaj ${ count } e-mail na ekranie",
+        "Odczytaj ${ count } e-maile na ekranie",
+        "Odczytaj ${ count } e-maili na ekranie",
+        "Odczytaj e-maile (${ count }) na ekranie"
+      ],
+      "Read your ${ count } filter": [
+        "Sprawdź swój ${ count } filtr",
+        "Sprawdź swoje ${ count } filtry",
+        "Sprawdź swoich ${ count } filtrów",
+        "Sprawdź swoich ${ count } filtrów"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Aby dodać nową stronę rezerwacji, najpierw w aplikacji ${ CALENDAR_APP_NAME } usuń istniejącą w sekcji rezerwacji na pasku bocznym."
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Znaleziono listy mailingowe, których nie czytasz. Możesz anulować ich subskrypcje jednym kliknięciem."
       ]
     },
     "info": {
@@ -10004,7 +10046,7 @@
         "Przejdź do Newsletterów"
       ],
       "Go to Primary": [
-        "Przejdź do głównej"
+        "Przejdź do Głównej"
       ],
       "Go to Promotions": [
         "Przejdź do Promocji"
@@ -10013,10 +10055,10 @@
         "Przejdź do Społeczności"
       ],
       "Go to Transactions": [
-        "Przejdź do transakcji"
+        "Przejdź do Transakcji"
       ],
       "Go to Updates": [
-        "Przejdź do sekcji zaktualizuj"
+        "Przejdź do Aktualizacji"
       ],
       "Has attachments": [
         "Zawiera załącznik"
@@ -10343,7 +10385,7 @@
         "Pomiń opinię"
       ],
       "Social": [
-        "Media społecznościowe"
+        "Społeczności"
       ],
       "Social - Social media updates, activity, and messages": [
         "Społeczności – powiadomienia z mediów społecznościowych, aktywności i wiadomości"
@@ -10521,6 +10563,15 @@
       ],
       "ZIP code": [
         "Kod pocztowy"
+      ],
+      "Deals, offers, and marketing emails": [
+        "Promocje, oferty i wiadomości marketingowe"
+      ],
+      "Font family": [
+        "Czcionka"
+      ],
+      "Font size": [
+        "Rozmiar czcionki"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16675,6 +16726,9 @@
       ],
       "Your shorter address is now ready": [
         "Krótszy adres jest już gotowy"
+      ],
+      "Start with a cleaner Inbox": [
+        "Zacznij z lepiej uporządkowaną skrzynką odbiorczą."
       ]
     },
     "Title header for keys table": {
@@ -17429,6 +17483,14 @@
       ],
       "Passcode:": [
         "Kod dostępu:"
+      ]
+    },
+    "Desktop notification body": {
+      "${ messageCount } new message": [
+        "${ messageCount } nowa wiadomość",
+        "${ messageCount } nowe wiadomości",
+        "${ messageCount } nowych wiadomości",
+        "Nowe wiadomości (${ messageCount })"
       ]
     }
   }

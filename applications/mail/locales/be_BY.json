@@ -1585,10 +1585,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -1796,6 +1793,9 @@
       ],
       "Cancel trial": [
         "Скасаваць пробны перыяд"
+      ],
+      "Add payment method": [
+        "Дадаць спосаб аплаты"
       ]
     },
     "action": {
@@ -1976,6 +1976,9 @@
       ],
       "Writing assistant seats": [
         "Ліцэнзій памочніка ў напісанні"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Арганізацыі з дадатковым кампанентам «Пастаўшчык кіраваных паслуг» могуць стварыць і кіраваць дапаможнымі арганізацыямі."
       ]
     },
     "Alert": {
@@ -4511,6 +4514,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Дазвольце людзям браніраваць час з вамі непасрэдна з вашых лістоў, без лішняй перапіскі."
+      ],
+      "Move emails to the right category to improve categorization.": [
+        "Перамяшчайце лісты ў правільную катэгорыю, каб палепшыць катэгарызацыю."
       ]
     },
     "description": {
@@ -5525,6 +5534,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш пошук вярнуў занадта шмат вынікаў. Абмяжуйце вобласць пошуку і паўтарыце спробу."
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Немагчыма адправіць пустое паведамленне. Паведамленне не адпраўлена."
+      ],
+      "You reached the maximum number of connected addresses": [
+        "Вы дасягнулі абмежавання па колькасці падключаных адрасоў"
       ]
     },
     "error": {
@@ -6384,6 +6399,12 @@
       ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Да ${ MAIL_APP_NAME }, якім сэрвісам электроннай пошты вы пераважна карысталіся?"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Якая асноўная прычына таго, што вы далучыліся да ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -8099,10 +8120,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -9969,6 +9987,72 @@
       ],
       "Work or business": [
         "Праца або бізнес"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } удзельнік)",
+        "${ contactGroupName } (${ numberOfContacts } удзельнікі)",
+        "${ contactGroupName } (${ numberOfContacts } удзельнікаў)",
+        "${ contactGroupName } (${ numberOfContacts } удзельнікаў)"
+      ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } з ${ steps }"
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "Адрас электроннай пошты **${ emailAddress }** таксама выкарыстоўваецца для ўваходу ў асобны ўліковы запіс ${ BRAND_NAME } па-за межамі ${ MAIL_APP_NAME }."
+      ],
+      "A quick walk through what I can help with in your mailbox, from finding old mail to drafting replies, and what I can't do.": [
+        "Кароткі агляд таго, што я магу зрабіць у вашай паштовай скрыні (ад пошуку старых лістоў і напісання адказаў), а таксама таго, што я не магу рабіць."
+      ],
+      "A specific feature (tell us)": [
+        "Пэўная функцыя (падзяліцеся з намі)"
+      ],
+      "After updating, your Mac may ask for a password. Type the password you use to unlock your Mac, then click Always Allow to stay signed in. ${ learnMore }": [
+        "Ваш Mac можа папрасіць увесці пароль пасля абнаўлення. Увядзіце свой бягучы пароль для яго разблакіроўкі, а потым націсніце «Заўсёды дазваляць» (гэта дазволіць заставацца ў сістэме). ${ learnMore }"
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Выберыце адзін з варыянтаў. Гэта дапаможа нам удасканаліць ${ MAIL_APP_NAME }."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Ваша падпіска будзе аўтаматычна падаўжацца па стандартнай гадавой стаўцы пасля заканчэння перыяду аплаты."
+      ],
+      "Hey Lumo, have a look at what I get most of in my inbox, and at the folders and filters I already have, then suggest how to keep it organised: what to change about the ones I've got, and anything new worth adding. Talk me through the plan first, and don't move anything until I say yes.": [
+        "Паслухай, Lumo! Паглядзі, што часцей за ўсё прыходзіць у маю паштовую скрыню, якія папкі і фільтры ў мяне ўжо ёсць, а потым парай спосаб падтрымання парадку: што змяніць або дадаць у тых рэчах, якія ў мяне ўжо ёсць. Спачатку давай абмяркуем план без ніякіх дзеянняў. Не варта нічога перамяшчаць пакуль я не дам згоду на гэта."
+      ],
+      "Hey Lumo, search for my emails from the last 7 days and tell me which ones actually need a reply from me. Give me a line on what each one is asking for, and leave out anything I can ignore.": [
+        "Вітаю, Lumo! Знайдзі мае лісты за апошнія 7 дзён і скажы, якія сапраўды патрабуюць адказу. Напішы, што ў кожным з іх запытана, і не пішы тое, што можна праігнараваць."
+      ],
+      "I didn't have one": [
+        "Няма нічога з гэтага"
+      ],
+      "I use other Proton products": [
+        "Я выкарыстоўваю іншыя прадукты Proton"
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Я прагледжу пошту мінулага тыдня і выберу толькі тыя лісты, на якія сапраўды варта адказаць. Такім чынам вы зможаце разабрацца з імі адразу."
+      ],
+      "Nothing changes in your other ${ BRAND_NAME } account.": [
+        "У вашым іншым уліковым запісе ${ BRAND_NAME } нічога не зменіцца."
+      ],
+      "Please update ${ MAIL_APP_NAME } to keep using the app. ${ downloadUpdate }": [
+        "Абнавіце ${ MAIL_APP_NAME }, каб мець магчыма далей карыстацца праграмай. ${ downloadUpdate }"
+      ],
+      "Protection from hackers and leaks": [
+        "Абарона ад хакераў і ўцечак"
+      ],
+      "Source document in encrypted search index": [
+        "Зыходны дакумент у зашыфраваным індэксе пошуку"
+      ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Пачаць выкарыстоўваць ${ MAIL_APP_NAME }"
+      ],
+      "Stop companies reading my emails": [
+        "Забараніць кампаніям чытаць мае лісты"
+      ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "Адказы апытання не шыфруюцца скразным метадам. Не абагульвайце ў іх любую канфідэнцыяльную інфармацыю."
+      ],
+      "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
+        "Ваш Gmail падключаны да гэтага адраса ${ MAIL_APP_NAME }"
       ]
     },
     "info": {
@@ -11348,6 +11432,12 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Font family": [
+        "Сямейства шрыфтоў"
+      ],
+      "Font size": [
+        "Памер шрыфту"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13545,6 +13635,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Ваша поўная падпіска на тарыфны план ${ planTitle } пачнецца ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Змянілі сваё меркаванне пасля пробнага перыяду?** Вы можаце скасаваць падпіску на працягу 30 дзён з моманту першага плацяжу, і вам будуць вернуты грошы за нявыкарыстаны час."
       ]
     },
     "Option": {
@@ -14021,6 +14114,42 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can’t be combined with ${ PLAN_NAMES[PLANS.PASS] }.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } не можа быць аб'яднаны з ${ PLAN_NAMES[PLANS.PASS] }."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } даступна толькі на тарыфных планах, якія арыентаваны на бізнес."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Змена тарыфнага плана несумяшчальная па наступнай прычыне:"
+      ],
+      "Please close extra wallets before changing your plan.": [
+        "Закрыйце дадатковыя кашалькі перад змяненнем свайго тарыфнага плана."
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Ліцэнзіі Proton Meet павінны адпавядаць колькасці ўдзельнікаў."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Ініцыятыва Born Private патрабуе ахвяравання."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Выбраны тарыфны план не прапануе дастатковую колькасць адрасоў для вашага ўліковага запісу."
+      ],
+      "This dedicated server is assigned to a gateway and can’t be changed.": [
+        "Гэты вылучаны сервер прызначаны шлюзу і не можа быць зменены."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Гэты тарыфны план не падтрымлівае кіруемыя функцыі ў вашым уліковым запісе."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Гэты тарыфны план не падтрымлівае ўдзельнікаў у вашым уліковым запісе."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Гэта падпіска не можа быць завершана цяпер. Паўтарыце спробу зноў."
+      ],
+      "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
+        "У вас ужо ёсць ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ]
     },
     "Payments.Error": {
@@ -17706,6 +17835,9 @@
       ],
       "Your shorter address is now ready": [
         "Ваш больш кароткі адрас гатовы да выкарыстання"
+      ],
+      "Start with a cleaner Inbox": [
+        "Пачніце з больш чыстай паштовай скрыні"
       ]
     },
     "Title header for keys table": {
@@ -18466,6 +18598,11 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "BYOE": {
+      "Your newest emails will be imported first. Emails you've already imported won't be copied again.": [
+        "Вашы самыя апошнія лісты будуць імпартаваны першымі. Ужо імпартаваныя лісты паўторна капіявацца не будуць."
       ]
     }
   }

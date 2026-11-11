@@ -1577,8 +1577,7 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -5454,6 +5453,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Deine Suche ergab zu viele Treffer. Schränke deine Suche ein und versuche es erneut."
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Eine leere Nachricht kann nicht gesendet werden. Die Nachricht wurde nicht gesendet."
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Die eingebetteten Bilder konnten nicht entfernt werden. Die Nachricht wurde nicht in den Klartext gewechselt."
       ]
     },
     "error": {
@@ -7897,8 +7902,7 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -9749,6 +9753,16 @@
       ],
       "Work or business": [
         "Arbeit oder Geschäft"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } Mitglied)",
+        "${ contactGroupName } (${ numberOfContacts } Mitglieder)"
+      ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "Antworten auf Umfrage sind nicht durchgehend verschlüsselt. Bitte gib keine vertraulichen Informationen weiter."
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Wir haben E-Mails in Verteilerlisten gefunden, die du nicht liest. Du kannst dich in einem Klick von diesen abmelden."
       ]
     },
     "info": {
@@ -11115,6 +11129,12 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Font family": [
+        "Schriftart"
+      ],
+      "Font size": [
+        "Schriftgröße"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15031,7 +15051,7 @@
         "Senden planen"
       ],
       "This is now your default address. Open the dropdown to send from a different address. ": [
-        "Das ist jetzt deine Standard-E-Mail-Adresse. Öffne das Dropdown-Menü, um von einer anderen Adresse zu versenden."
+        "Das ist jetzt deine Standard-E-Mail-Adresse. Öffne das Dropdown-Menü, um von einer anderen Adresse zu versenden. "
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME } to get notified if your data was leaked from a third-party service.": [
         "Aktiviere ${ DARK_WEB_MONITORING_NAME }, um benachrichtigt zu werden, wenn deine Daten von einem Service eines Drittanbieters entwendet wurden."
@@ -17235,6 +17255,9 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Start with a cleaner Inbox": [
+        "Starte mit einem sauberen Posteingang"
       ]
     },
     "Title header for keys table": {

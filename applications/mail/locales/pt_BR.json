@@ -302,7 +302,7 @@
         "Conectar aplicativos e dispositivos"
       ],
       "Connect to video conferencing": [
-        "Conectar-se à videoconferência.\n"
+        "Conectar-se à videoconferência"
       ],
       "Connect your email": [
         "Conecte seu e-mail"
@@ -1577,8 +1577,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -4449,6 +4448,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
+      ],
+      "Move emails to the right category to improve categorization.": [
+        "Mova os e-mails para a categoria correta para melhorar a classificação."
       ]
     },
     "description": {
@@ -5440,6 +5442,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa correspondeu a muitos resultados. Limite sua busca e tente novamente."
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Não é possível enviar uma mensagem vazia. Mensagem não enviada."
       ]
     },
     "error": {
@@ -6277,6 +6282,9 @@
       ],
       "Username": [
         "Nome de usuário"
+      ],
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Antes do ${ MAIL_APP_NAME }, qual e-mail você mais usava?"
       ]
     },
     "Hint": {
@@ -7883,8 +7891,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir imagem"
       ],
       "Insert link": [
         "Inserir link"
@@ -9663,6 +9670,31 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Você está a alguns cliques de distância de ter uma caixa de entrada organizada"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } membros)",
+        "${ contactGroupName } (${ numberOfContacts } membros)"
+      ],
+      "I didn't have one": [
+        "Eu não tinha nenhum"
+      ],
+      "I use other Proton products": [
+        "Eu uso outros produtos da Proton"
+      ],
+      "No ads": [
+        "Sem anúncios"
+      ],
+      "Protection from hackers and leaks": [
+        "Proteção contra hackers e vazamentos"
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Nós achamos algumas listas de e-mails que você não lê. Você pode cancelar todas essas assinaturas com um clique."
+      ],
+      "Which provider?": [
+        "Qual provedor?"
+      ],
+      "Work or business": [
+        "Trabalho ou negócios"
       ]
     },
     "info": {
@@ -11023,6 +11055,16 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Font family": [
+        "Família de fontes"
+      ],
+      "Font size": [
+        "Tamanho da fonte"
+      ],
+      "Select all ${ count } unused sender": [
+        "Selecione ${ count } remetente não utilizado",
+        "Selecione todos os ${ count } remetentes não utilizados"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17128,6 +17170,9 @@
       ],
       "Your shorter address is now ready": [
         "Seu endereço mais curto já está pronto"
+      ],
+      "Start with a cleaner Inbox": [
+        "Inicie com uma Caixa de Entrada limpa"
       ]
     },
     "Title header for keys table": {

@@ -784,8 +784,8 @@
         "Insérer"
       ],
       "Insert ${ totalChecked } contact": [
-        "Veuillez insérer ${ totalChecked } contact",
-        "Veuillez insérer ${ totalChecked } contacts"
+        "Insérer ${ totalChecked } contact",
+        "Insérer ${ totalChecked } contacts"
       ],
       "Insert contact": [
         "Insérer un contact"
@@ -1568,8 +1568,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Faire confiance à cette clé",
-        "Faire confiance à ces clés"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1775,6 +1774,12 @@
       ],
       "Cancel trial": [
         "Annuler la version d'essai"
+      ],
+      "Dock to side panel": [
+        "Épingler au panneau latéral"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the right": [
+        "Déplacer ${ LUMO_SHORT_APP_NAME } sur la droite"
       ]
     },
     "action": {
@@ -4267,8 +4272,8 @@
         "Déplacez les e-mails dans la bonne catégorie afin d’améliorer leur classement."
       ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
-        "Les nouveaux messages de ${ senderEmailAddress } et ${ otherSendersCount } autre ne seront pas envoyés et seront définitivement supprimés.",
-        "Les nouveaux messages de ${ senderEmailAddress } et ${ otherSendersCount } autres ne seront pas envoyés et seront définitivement supprimés."
+        "Les nouveaux messages de ${ senderEmailAddress } et ${ otherSendersCount } autre ne seront pas délivrés et seront définitivement supprimés.",
+        "Les nouveaux messages de ${ senderEmailAddress } et ${ otherSendersCount } autres ne seront pas délivrés et seront définitivement supprimés."
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Les nouveaux messages de ${ senderEmailAddress } ne seront pas envoyés et seront définitivement supprimés."
@@ -5048,7 +5053,7 @@
         "Aucun contact n'a été trouvé pour l'importation."
       ],
       "No drive found to import": [
-        "Aucun disque à importer détecté"
+        "Aucun disque à importer n'a été détecté."
       ],
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
@@ -5365,7 +5370,7 @@
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
       ],
       "Unexpected error, we can't import the files": [
-        "Une erreur inattendue est survenue, les fichiers n'ont pas pu être importés"
+        "Une erreur inattendue est survenue, les fichiers ne peuvent être importés"
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -5437,6 +5442,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Impossible d'envoyer un message vide. Le message n'a pas été envoyé."
       ]
     },
     "error": {
@@ -5449,7 +5457,7 @@
     },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
-        "${ maxAttendees } participant est autorisé par invitation.",
+        "Un maximum de ${ maxAttendees } participant est autorisé par invitation.",
         "Un maximum de ${ maxAttendees } participants est autorisé par invitation."
       ]
     },
@@ -6268,6 +6276,12 @@
       ],
       "Username": [
         "Nom d'utilisateur"
+      ],
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "Avant ${ MAIL_APP_NAME }, quel email utilisiez-vous le plus ?"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Quelle est la raison principale pour avoir rejoint ${ MAIL_APP_NAME } ?"
       ]
     },
     "Hint": {
@@ -6700,8 +6714,8 @@
         "${ count } messages · ${ names }"
       ],
       "${ count } email → ${ dest }": [
-        "${ count } email → ${ dest }",
-        "${ count } emails → ${ dest }"
+        "${ count } message → ${ dest }",
+        "${ count } messages → ${ dest }"
       ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } sur ${ totalProgress }",
@@ -7853,8 +7867,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8369,8 +8382,8 @@
         "Lire vos ${ count } e-mails"
       ],
       "Read ${ count } email on screen": [
-        "Lire ${ count } e-mail sur l'écran",
-        "Lire ${ count } e-mails sur l'écran"
+        "Lire ${ count } message sur l'écran",
+        "Lire ${ count } messages sur l'écran"
       ],
       "Read ${ count } message in this thread": [
         "Lire votre ${ count } message dans ce fil de discussion",
@@ -9342,8 +9355,8 @@
         "Vous avez ${ totalLabel } dans votre boîte de réception."
       ],
       "You have **${ count } conversation** in your ${ categoryLabel } category": [
-        "Vous avez **${ count } conversation** dans la catégorie ${ categoryLabel }",
-        "Vous avez **${ count } conversations** dans la catégorie ${ categoryLabel }"
+        "Vous avez **${ count } conversation** dans votre catégorie ${ categoryLabel }",
+        "Vous avez **${ count } conversations** dans votre catégorie ${ categoryLabel }"
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Vous avez **${ count } conversation** stockée dans ce dossier.",
@@ -9393,12 +9406,12 @@
         "Vous serez peut-être redirigé vers le site internet de votre banque."
       ],
       "You selected **${ checked } conversation** in your ${ categoryLabel } category": [
-        "Vous avez sélectionné **${ checked } conversation** de la catégorie ${ categoryLabel }",
-        "Vous avez sélectionné **${ checked } conversations** de la catégorie ${ categoryLabel }"
+        "Vous avez sélectionné **${ checked } conversation** dans votre catégorie ${ categoryLabel }",
+        "Vous avez sélectionné **${ checked } conversations** dans votre catégorie ${ categoryLabel }"
       ],
       "You selected **${ checked } message** in your ${ categoryLabel } category": [
-        "Vous avez sélectionné **${ checked } message** de la catégorie ${ categoryLabel }",
-        "Vous avez sélectionné **${ checked } messages** de la catégorie ${ categoryLabel }"
+        "Vous avez sélectionné **${ checked } message** dans votre catégorie ${ categoryLabel }",
+        "Vous avez sélectionné **${ checked } messages** dans votre catégorie ${ categoryLabel }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Vous avez sélectionné **${ count } conversation** de ce dossier.",
@@ -9582,6 +9595,109 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } membre)",
+        "${ contactGroupName } (${ numberOfContacts } membres)"
+      ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } sur ${ steps }"
+      ],
+      "A new or separate address": [
+        "Une nouvelle adresse ou adresse séparée"
+      ],
+      "A specific feature (tell us)": [
+        "Une fonctionnalité spécifique (dites-nous)"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Demandez à votre admin de changer d'abonnement ou retirez une page de réservation dans le panneau latéral de ${ CALENDAR_APP_NAME }."
+      ],
+      "Change display setting": [
+        "Changer les paramètres d'affichage"
+      ],
+      "Change your list density": [
+        "Changez la densité de votre liste"
+      ],
+      "Change your mailbox layout": [
+        "Changez la disposition de votre boîte mail"
+      ],
+      "Choose all that apply.": [
+        "Choisissez tout ce qui s'applique."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "En choisir un(e). Cela nous aide à améliorer ${ MAIL_APP_NAME }"
+      ],
+      "Document lookup failed": [
+        "Échec de la recherche documentaire"
+      ],
+      "I didn't have one": [
+        "Je n'en avais pas"
+      ],
+      "I use other Proton products": [
+        "J'utilise d'autres produits Proton"
+      ],
+      "Label ${ emails }": [
+        "Labelliser ${ emails }"
+      ],
+      "Lookup of document ${ lookup.result.docId }": [
+        "Recherche du document ${ lookup.result.docId }"
+      ],
+      "Mark the whole of ${ place } as read": [
+        "Marquer le contenu de ${ place } comme lu"
+      ],
+      "Mark the whole of ${ place } as unread": [
+        "Marquer le contenu de ${ place } comme non lu"
+      ],
+      "No email open": [
+        "Aucun email ouvert"
+      ],
+      "Not supported by this browser": [
+        "Non supporté par ce navigateur"
+      ],
+      "One last step": [
+        "Une dernière étape"
+      ],
+      "Other (tell us)": [
+        "Autre (dites-nous)"
+      ],
+      "Protection from hackers and leaks": [
+        "Protection contre hackers et fuite de données"
+      ],
+      "Remove the star from ${ emails }": [
+        "Retirer les étoiles de ${ emails }"
+      ],
+      "Someone recommended it": [
+        "Quelqu'un l'a recommandé"
+      ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Commencer à utiliser ${ MAIL_APP_NAME }"
+      ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "Les réponses aux enquêtes ne sont pas chiffrées de bout en bout, veuillez ne pas partager d'informations sensibles."
+      ],
+      "Tell us more (optional)": [
+        "Dites-nous en plus (facultatif)"
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Pour ajouter une nouvelle page de réservation, retirez-en une du panneau latéral de ${ CALENDAR_APP_NAME }."
+      ],
+      "Today": [
+        "Aujourd’hui"
+      ],
+      "Update the filter ${ filter }": [
+        "Mettre à jour le filtre ${ filter }"
+      ],
+      "Which feature? (optional)": [
+        "Quelle fonctionnalité ? (facultatif)"
+      ],
+      "Which provider?": [
+        "Quel fournisseur ?"
+      ],
+      "Work or business": [
+        "Travail ou affaires"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Vous avez une facture à régler au ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -10924,6 +11040,21 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Export size": [
+        "Taille d'export"
+      ],
+      "Font family": [
+        "Famille de police"
+      ],
+      "Font size": [
+        "Taille de police"
+      ],
+      "Log performance": [
+        "Journaliser les performances"
+      ],
+      "Realistic session": [
+        "Session réelle"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11277,6 +11408,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Vous devez réactiver vos clés pour voir l'invitation mise à jour."
+      ],
+      "Pay it": [
+        "Payer avec"
       ]
     },
     "Link to calendar event": {
@@ -13524,6 +13658,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Le changement de plan est incompatible pour les raisons suivantes :"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Le nombre de places Proton Meet doit correspondre au nombre de membres."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "La souscription ne peut aboutir pour le moment. Merci de réessayer ultérieurement."
       ]
     },
     "Payments.Error": {
@@ -14333,8 +14476,8 @@
         "Envoyé via ${ MAIL_APP_NAME } avec un chiffrement zéro accès"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "Envoyé par ${ MAIL_APP_NAME } chiffrement sans accès vers le destinataire vérifié",
-        "Envoyé par ${ MAIL_APP_NAME } chiffrement sans accès vers les destinataires vérifiés"
+        "Envoyé par ${ MAIL_APP_NAME } avec un chiffrement zéro accès à un destinataire vérifié",
+        "Envoyé par ${ MAIL_APP_NAME } avec un chiffrement zéro accès à des destinataires vérifiés"
       ],
       "Sent by you with end-to-end encryption": [
         "Envoyé par vous avec un chiffrement de bout en bout"
@@ -15936,7 +16079,7 @@
         "La fonction ${ feature } est maintenant active."
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
+        "Assistant d'aide à la rédaction ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ numMessages } message": [
         "${ numMessages } message",
