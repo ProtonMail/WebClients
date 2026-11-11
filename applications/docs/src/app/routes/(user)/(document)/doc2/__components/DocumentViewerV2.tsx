@@ -72,7 +72,8 @@ export function DocumentViewerV2({
   const { APP_VERSION, API_URL } = useConfig()
   const { UID } = useAuthentication()
   const isFlagEnabled = useGetFlag()
-  const sessionState = useDocumentSession(useRealtimeClient(), nodeMeta)
+  const client = useRealtimeClient()
+  const sessionState = useDocumentSession(client, nodeMeta)
   const [editorFrame, setEditorFrame] = useState<HTMLIFrameElement | null>(null)
   const [editorStatus, setEditorStatus] = useState<'loading' | 'shown' | 'failed'>('loading')
   const [editorInvoker, setEditorInvoker] = useState<EditorInvoker>()
@@ -109,7 +110,10 @@ export function DocumentViewerV2({
     },
     [logger],
   )
-  const fileActions = useDocumentFileActions({ node, role, driveCompat })
+  // Only once the editor shows the document does it hold the edits RTS replayed, and it can export only once its Lexical
+  // editor exists, which can come after it shows
+  const exportInvoker = editorStatus === 'shown' && isEditorRendered ? editorInvoker : undefined
+  const fileActions = useDocumentFileActions({ node, role, driveCompat, client, exportInvoker })
   // Out of the trash, restored here or elsewhere: a document opened trashed opens now, and a session that stopped
   // while RTS refused the trashed document reconnects (one still trying reconnects by itself)
   const leaveTrash = useEvent(() => (openedTrashed ? onRetry() : retryConnection()))
@@ -123,9 +127,6 @@ export function DocumentViewerV2({
       leaveTrash()
     }
   }, [fileActions.trashState, inTrash, leaveTrash])
-  // Only once the editor shows the document does it hold the edits RTS replayed, and it can export only once its Lexical
-  // editor exists, which can come after it shows
-  const exportInvoker = editorStatus === 'shown' && isEditorRendered ? editorInvoker : undefined
   const print = () => {
     exportInvoker?.printAsPDF().catch((error) => logger.warn('Failed to print the document', error))
   }
@@ -309,6 +310,7 @@ export function DocumentViewerV2({
       wordCount={wordCount}
       trashState={fileActions.trashState}
       isCreatingSpreadsheet={fileActions.isCreatingSpreadsheet}
+      isMakingACopy={fileActions.isMakingACopy}
       onFileMenuAction={onFileMenuAction}
       status={editorInvoker && snapshot && <SessionStatus snapshot={snapshot} onRetry={retryConnection} />}
     />

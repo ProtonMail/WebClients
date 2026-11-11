@@ -57,17 +57,18 @@ export type DocumentTitleMenuProps = {
   role: DocumentRole
   editorInvoker:
     Pick<EditorInvoker, 'setTableOfContentsVisible' | 'getYDocAsJSON' | 'getCurrentEditorState'> | undefined
-  /** The editor once it shows the document; until then Print, Download and Copy as markdown are disabled */
+  /** The editor once it shows the document; until then Make a copy, Print, Download and Copy as markdown are disabled */
   exportInvoker: Pick<EditorInvoker, 'getCurrentSelection'> | undefined
   wordCount: WordCount
   trashState: TrashState
   isCreatingSpreadsheet: boolean
+  isMakingACopy: boolean
   onFileMenuAction: (action: FileMenuAction) => void
 }
 
 /**
  * The document name, which opens /doc's title menu (`DocumentTitleDropdown.tsx`) with every docs item in its order.
- * Items whose doc2 ticket hasn't landed are stubs; the sheets-only ones are left out.
+ * See version history is a stub; the sheets-only items are left out.
  */
 export function DocumentTitleMenu({
   node,
@@ -77,6 +78,7 @@ export function DocumentTitleMenu({
   wordCount,
   trashState,
   isCreatingSpreadsheet,
+  isMakingACopy,
   onFileMenuAction,
 }: DocumentTitleMenuProps) {
   const { logger } = useApplication()
@@ -282,9 +284,16 @@ export function DocumentTitleMenu({
             </DropdownMenuButton>
           )}
 
-          <StubMenuItem waitsFor="T13" icon={<IcSquares />} data-testid="dropdown-duplicate">
+          <DropdownMenuButton
+            className="flex items-center text-left"
+            disabled={!exportInvoker || isMakingACopy}
+            onClick={() => onFileMenuAction({ type: 'make-a-copy' })}
+            data-testid="dropdown-duplicate"
+          >
+            <IcSquares className="color-weak mr-2" />
             {c('Action').t`Make a copy`}
-          </StubMenuItem>
+            {isMakingACopy && <CircleLoader size="small" className="ml-auto" />}
+          </DropdownMenuButton>
 
           <DropdownMenuButton
             className="flex items-center text-left"
@@ -475,10 +484,8 @@ function downloadFormats(isODTEnabled: boolean): { format: DataTypesThatDocument
   ]
 }
 
-/**
- * The doc2 plan ticket a stub waits for: T13 make a copy. Version history has no ticket: it is kept for later.
- */
-type StubTicket = 'T13' | 'version history'
+/** What a stub waits for. Version history has no ticket: it is kept for later. */
+type StubTicket = 'version history'
 
 type StubMenuItemProps = { waitsFor: StubTicket; icon: ReactNode; children: ReactNode; 'data-testid': string }
 

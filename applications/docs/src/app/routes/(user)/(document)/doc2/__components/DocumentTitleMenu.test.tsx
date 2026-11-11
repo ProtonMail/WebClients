@@ -48,10 +48,7 @@ const NODE = { uid: 'VOLUME~LINK', parentUid: 'VOLUME~PARENT', name: { ok: true,
 // The atoms Tooltip's default open delay
 const TOOLTIP_OPEN_DELAY_MS = 1000
 
-const STUB_ITEMS: [string, string][] = [
-  ['Make a copy', 'T13'],
-  ['See version history', 'version history'],
-]
+const STUB_ITEMS: [string, string][] = [['See version history', 'version history']]
 
 const FILE_ACTION_ITEMS: [string, FileMenuAction][] = [
   ['New document', { type: 'new-document' }],
@@ -241,6 +238,35 @@ describe('DocumentTitleMenu', () => {
     await userEvent.click(menuItem('Toggle debug mode'))
 
     expect(onFileMenuAction).toHaveBeenCalledWith({ type: 'toggle-debug-mode' })
+  })
+
+  describe('Make a copy', () => {
+    const exportInvoker = { getCurrentSelection: jest.fn() }
+
+    test('is disabled until the editor shows the document', async () => {
+      const { onFileMenuAction } = await openMenu('Admin', { exportInvoker: undefined })
+
+      expect(screen.getByTestId('dropdown-duplicate')).toBeDisabled()
+      await userEvent.click(screen.getByTestId('dropdown-duplicate'))
+      expect(onFileMenuAction).not.toHaveBeenCalled()
+    })
+
+    test('runs the make a copy action, for a Viewer too', async () => {
+      const { onFileMenuAction } = await openMenu('Viewer', { exportInvoker })
+
+      await userEvent.click(menuItem('Make a copy'))
+
+      expect(onFileMenuAction).toHaveBeenCalledWith({ type: 'make-a-copy' })
+      expect(onFileMenuAction).toHaveBeenCalledTimes(1)
+    })
+
+    test('is disabled while a copy is being made', async () => {
+      const { onFileMenuAction } = await openMenu('Admin', { exportInvoker, isMakingACopy: true })
+
+      expect(screen.getByTestId('dropdown-duplicate')).toBeDisabled()
+      await userEvent.click(screen.getByTestId('dropdown-duplicate'))
+      expect(onFileMenuAction).not.toHaveBeenCalled()
+    })
   })
 
   describe('print, download and copy as markdown', () => {
@@ -602,6 +628,7 @@ function menuElement(role: DocumentRole, overrides: MenuOverrides = {}) {
           wordCount={{ isShown: false, setIsShown: jest.fn() }}
           trashState="not_trashed"
           isCreatingSpreadsheet={false}
+          isMakingACopy={false}
           onFileMenuAction={jest.fn()}
           {...overrides}
         />

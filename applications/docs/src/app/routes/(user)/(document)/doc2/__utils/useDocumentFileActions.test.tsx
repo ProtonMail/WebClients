@@ -5,6 +5,7 @@ import type { ReactNode } from 'react'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import { type NodeEntity, getDrive } from '@proton/drive/sdk'
 import { getNewWindow } from '@proton/shared/lib/helpers/window'
+import { DocsApiError, SeedError } from '@proton-docs/realtime-sdk'
 
 import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/application-context'
 import type { DocumentRole } from './getDocumentRole'
@@ -41,6 +42,9 @@ const drive = {
   getAvailableName: jest.fn(),
 }
 const driveCompat = { getMyFilesNodeMeta: jest.fn(), createDocumentNode: jest.fn() }
+const STATE = new Uint8Array([1, 2, 3])
+const client = { seedInitialCommit: jest.fn() }
+const exportInvoker = { exportData: jest.fn() }
 const newWindow = { handle: { location: { assign: jest.fn() } }, close: jest.fn() }
 
 /** A promise to settle from the test, for an action in flight */
@@ -75,6 +79,8 @@ describe('useDocumentFileActions', () => {
     drive.getAvailableName.mockImplementation(async (_parentUid: string, name: string) => name)
     driveCompat.getMyFilesNodeMeta.mockResolvedValue({ volumeId: 'MYVOLUME', linkId: 'MYFILES' })
     driveCompat.createDocumentNode.mockResolvedValue({ volumeId: 'VOLUME', linkId: 'SHEET', keys: {} })
+    client.seedInitialCommit.mockResolvedValue({ commitId: 'COMMIT' })
+    exportInvoker.exportData.mockResolvedValue(STATE)
   })
 
   afterEach(() => jest.clearAllMocks())
@@ -186,6 +192,103 @@ describe('useDocumentFileActions', () => {
 
       expect(getNewWindow).not.toHaveBeenCalled()
       expect(driveCompat.createDocumentNode).not.toHaveBeenCalled()
+    })
+  })
+
+  describe('Make a copy', () => {
+    beforeEach(() => driveCompat.createDocumentNode.mockResolvedValue({ volumeId: 'VOLUME', linkId: 'COPY', keys: {} }))
+
+    test('opens a window on the click, seeds a copy of what the editor holds next to the document, then opens it in doc2', async () => {
+      const { result } = renderActions()
+
+      act(() => result.current.makeACopy())
+
+      expect(getNewWindow).toHaveBeenCalledWith()
+      expect(result.current.isMakingACopy).toBe(true)
+      await waitFor(() => expect(result.current.isMakingACopy).toBe(false))
+      expect(exportInvoker.exportData).toHaveBeenCalledWith('yjs')
+      expect(drive.getAvailableName).toHaveBeenCalledWith('VOLUME~PARENT', 'Plans (copy 2026-11-10 09.00.00)', 'file')
+      expect(driveCompat.createDocumentNode).toHaveBeenCalledWith(
+        { volumeId: 'VOLUME', linkId: 'PARENT' },
+        'Plans (copy 2026-11-10 09.00.00)',
+        'doc',
+      )
+      expect(client.seedInitialCommit).toHaveBeenCalledWith({
+        nodeMeta: { volumeId: 'VOLUME', linkId: 'COPY' },
+        state: STATE,
+      })
+      expect(newWindow.handle.location.assign).toHaveBeenCalledWith(
+        'http://docs.localhost/u/3/doc2?mode=open&volumeId=VOLUME&linkId=COPY',
+      )
+      expect(newWindow.close).not.toHaveBeenCalled()
+    })
+
+    test.each([
+      [
+        'a state over the size limit',
+        new SeedError('stateTooLarge', { attemptedBytes: 26_000_000, limitBytes: 25_000_000 }),
+        'Document Size Limit Exceeded',
+        'This document is too large to copy. Download it to keep a copy of your work.',
+      ],
+      [
+        'a seed the Docs API refuses',
+        new DocsApiError('seedInitialCommit', 422, 250003),
+        'Something went wrong',
+        'An error occurred while attempting to duplicate the document. Please try again.',
+      ],
+    ])('%s shows an error modal, and nothing opens', async (_case, error, title, message) => {
+      client.seedInitialCommit.mockRejectedValue(error)
+      const { result } = renderActions()
+
+      act(() => result.current.makeACopy())
+
+      await waitFor(() => expect(result.current.isMakingACopy).toBe(false))
+      expect(newWindow.close).toHaveBeenCalled()
+      expect(newWindow.handle.location.assign).not.toHaveBeenCalled()
+      renderModals(result.current)
+      const modal = screen.getByRole('dialog', { hidden: true })
+      expect(modal).toHaveTextContent(title)
+      expect(modal).toHaveTextContent(message)
+    })
+
+    test('a failed export creates nothing and shows the error modal', async () => {
+      exportInvoker.exportData.mockRejectedValue(new Error('Editor timed out'))
+      const { result } = renderActions()
+
+      act(() => result.current.makeACopy())
+
+      await waitFor(() => expect(result.current.isMakingACopy).toBe(false))
+      expect(driveCompat.createDocumentNode).not.toHaveBeenCalled()
+      expect(newWindow.close).toHaveBeenCalled()
+      renderModals(result.current)
+      expect(screen.getByRole('dialog', { hidden: true })).toHaveTextContent('Something went wrong')
+    })
+
+    test('a second click while copying copies nothing more', async () => {
+      const seed = deferred<{ commitId: string }>()
+      client.seedInitialCommit.mockReturnValue(seed.promise)
+      const { result } = renderActions()
+
+      act(() => {
+        result.current.makeACopy()
+        result.current.makeACopy()
+      })
+      act(() => result.current.makeACopy())
+      await waitFor(() => expect(client.seedInitialCommit).toHaveBeenCalled())
+      await act(async () => seed.resolve({ commitId: 'COMMIT' }))
+
+      expect(getNewWindow).toHaveBeenCalledTimes(1)
+      expect(driveCompat.createDocumentNode).toHaveBeenCalledTimes(1)
+      await waitFor(() => expect(newWindow.handle.location.assign).toHaveBeenCalledTimes(1))
+    })
+
+    test('does nothing until the editor shows the document', () => {
+      const { result } = renderActions({ exportInvoker: undefined })
+
+      act(() => result.current.makeACopy())
+
+      expect(getNewWindow).not.toHaveBeenCalled()
+      expect(exportInvoker.exportData).not.toHaveBeenCalled()
     })
   })
 
@@ -523,11 +626,20 @@ const application = {
   logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn() },
 } as unknown as ApplicationProviderProps['application']
 
-function renderActions(options: { node?: NodeEntity; role?: DocumentRole } = {}) {
+function renderActions(
+  options: { node?: NodeEntity; role?: DocumentRole; exportInvoker?: typeof exportInvoker | undefined } = {},
+) {
   const initialProps = { node: 'node' in options ? options.node : NODE, role: options.role ?? 'Admin' }
+  const editor = 'exportInvoker' in options ? options.exportInvoker : exportInvoker
   return renderHook(
     ({ node, role }: { node: NodeEntity | undefined; role: DocumentRole }) =>
-      useDocumentFileActions({ node, role, driveCompat: driveCompat as unknown as DriveCompat }),
+      useDocumentFileActions({
+        node,
+        role,
+        driveCompat: driveCompat as unknown as DriveCompat,
+        client,
+        exportInvoker: editor,
+      }),
     {
       initialProps,
       wrapper: ({ children }: { children: ReactNode }) => (

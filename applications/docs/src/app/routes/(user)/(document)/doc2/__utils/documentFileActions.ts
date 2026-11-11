@@ -1,4 +1,4 @@
-import type { NodeMeta } from '@proton/docs-shared/BasicTypes'
+import type { DocumentType, NodeMeta } from '@proton/docs-shared/BasicTypes'
 import { getDocumentActionUrl } from '@proton/docs-shared/URL/getDocumentActionUrl'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import {
@@ -17,8 +17,11 @@ import { getDefaultDocumentName } from '@proton/shared/lib/docs/utils/isDefaultD
 import { getIsSharedWithMe } from '~/drive-sdk/getIsSharedWithMe'
 import { DOCUMENT_V2_PATH } from '~/utils/docs-url-bar'
 import { constructDriveFolderUrl } from '~/utils/open-drive-folder'
+import type { useRealtimeClient } from './useRealtimeClient'
 
 type DocumentNode = Pick<NodeEntity, 'uid' | 'parentUid'>
+
+export type SeedingClient = Pick<ReturnType<typeof useRealtimeClient>, 'seedInitialCommit'>
 
 /**
  * The folder a new document goes in: the document's own folder, as docs-core `UseCase/CreateNewDocument.ts` picks it.
@@ -48,18 +51,55 @@ export function getNewDocumentHref(node: DocumentNode, localID: number | undefin
 }
 
 /**
- * Creates a spreadsheet next to `node`, or in My files without a parent folder, under the default name or the one Drive
- * offers when that is taken, as docs-core `UseCase/CreateNewDocument.ts` does.
+ * Creates a document of `documentType` next to `node`, or in My files without a parent folder, under `name` or the one
+ * Drive offers when that is taken, as docs-core `UseCase/CreateNewDocument.ts` and `UseCase/DuplicateDocument.ts` do.
  */
-export async function createSpreadsheet(node: DocumentNode, driveCompat: DriveCompat): Promise<NodeMeta> {
+async function createDocumentNextTo(
+  node: DocumentNode,
+  driveCompat: DriveCompat,
+  name: string,
+  documentType: DocumentType,
+): Promise<NodeMeta> {
   const folder = getSiblingFolder(node) ?? (await driveCompat.getMyFilesNodeMeta())
-  const name = await getDrive().getAvailableName(
+  const availableName = await getDrive().getAvailableName(
     generateNodeUid(folder.volumeId, folder.linkId),
-    getDefaultDocumentName('sheet', getPlatformFriendlyDateForFileName()),
+    name,
     NodeType.File,
   )
-  const { volumeId, linkId } = await driveCompat.createDocumentNode(folder, name, 'sheet')
+  const { volumeId, linkId } = await driveCompat.createDocumentNode(folder, availableName, documentType)
   return { volumeId, linkId }
+}
+
+export async function createSpreadsheet(node: DocumentNode, driveCompat: DriveCompat): Promise<NodeMeta> {
+  return createDocumentNextTo(
+    node,
+    driveCompat,
+    getDefaultDocumentName('sheet', getPlatformFriendlyDateForFileName()),
+    'sheet',
+  )
+}
+
+/**
+ * Creates a text document named `name` next to `node` and has the SDK seed it with `state`, a whole yjs document, as
+ * its first commit (ADR-0013): the copy Make a copy makes, and later version history's restore as copy. Rejects with
+ * the SDK's `SeedError` or `DocsApiError` when the seed fails, which leaves the new document empty, as /doc's does.
+ */
+export async function duplicateWithState(
+  state: Uint8Array<ArrayBuffer>,
+  name: string,
+  { node, driveCompat, client }: { node: DocumentNode; driveCompat: DriveCompat; client: SeedingClient },
+): Promise<NodeMeta> {
+  const copy = await createDocumentNextTo(node, driveCompat, name, 'doc')
+  await client.seedInitialCommit({ nodeMeta: copy, state })
+  return copy
+}
+
+export function getDocumentHref(nodeMeta: NodeMeta, localID: number | undefined): string {
+  const url = new URL(getAppHref(DOCUMENT_V2_PATH, APPS.PROTONDOCS, localID))
+  url.searchParams.set('mode', 'open')
+  url.searchParams.set('volumeId', nodeMeta.volumeId)
+  url.searchParams.set('linkId', nodeMeta.linkId)
+  return url.toString()
 }
 
 /** The legacy sheets URL that opens the spreadsheet `nodeMeta`: sheets don't open in doc2. */

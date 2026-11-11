@@ -8,6 +8,7 @@ describe('handleFileMenuAction', () => {
     toggleDebugMode: jest.fn(),
     newDocument: jest.fn(),
     newSpreadsheet: jest.fn(),
+    makeACopy: jest.fn(),
     moveToFolder: jest.fn(),
     moveToTrash: jest.fn(),
     openProtonDrive: jest.fn(),
@@ -23,6 +24,7 @@ describe('handleFileMenuAction', () => {
     [{ type: 'toggle-debug-mode' }, 'toggleDebugMode'],
     [{ type: 'new-document' }, 'newDocument'],
     [{ type: 'new-spreadsheet' }, 'newSpreadsheet'],
+    [{ type: 'make-a-copy' }, 'makeACopy'],
     [{ type: 'move-to-folder' }, 'moveToFolder'],
     [{ type: 'move-to-trash' }, 'moveToTrash'],
     [{ type: 'open-proton-drive' }, 'openProtonDrive'],
@@ -50,7 +52,6 @@ describe('handleFileMenuAction', () => {
   })
 
   test.each<FileMenuAction>([
-    { type: 'make-a-copy' },
     { type: 'see-version-history' },
     { type: 'import' },
     { type: 'view-recent-spreadsheets' },

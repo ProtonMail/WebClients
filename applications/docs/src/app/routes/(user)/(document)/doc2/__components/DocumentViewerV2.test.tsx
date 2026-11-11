@@ -26,7 +26,8 @@ import { DocumentViewerV2 } from './DocumentViewerV2'
 
 let mockSessionState: DocumentSessionState = { status: 'loading' }
 jest.mock('../__utils/useDocumentSession', () => ({ useDocumentSession: () => mockSessionState }))
-jest.mock('../__utils/useRealtimeClient', () => ({ useRealtimeClient: () => ({}) }))
+const mockRealtimeClient = { seedInitialCommit: jest.fn() }
+jest.mock('../__utils/useRealtimeClient', () => ({ useRealtimeClient: () => mockRealtimeClient }))
 jest.mock('@proton/components/hooks/useAuthentication', () => () => ({ UID: 'session-uid' }))
 const mockIsFlagEnabled = () => false
 jest.mock('@proton/unleash/useGetFlag', () => ({ useGetFlag: () => mockIsFlagEnabled }))
@@ -56,8 +57,10 @@ jest.mock('./ErrorHeader', () => ({ ErrorHeader: () => null }))
 const mockFileActions = {
   trashState: 'not_trashed',
   isCreatingSpreadsheet: false,
+  isMakingACopy: false,
   newDocument: jest.fn(),
   newSpreadsheet: jest.fn(),
+  makeACopy: jest.fn(),
   moveToFolder: jest.fn(),
   moveToTrash: jest.fn(),
   openProtonDrive: jest.fn(),
@@ -539,6 +542,7 @@ describe('DocumentViewerV2', () => {
   test.each([
     ['new-document', 'newDocument'],
     ['new-spreadsheet', 'newSpreadsheet'],
+    ['make-a-copy', 'makeACopy'],
     ['move-to-folder', 'moveToFolder'],
     ['move-to-trash', 'moveToTrash'],
     ['open-proton-drive', 'openProtonDrive'],
@@ -551,7 +555,7 @@ describe('DocumentViewerV2', () => {
     expect(mockFileActions[handler]).toHaveBeenCalledTimes(1)
   })
 
-  test('feeds the file actions the node, role and Drive compat, and shows their modals', async () => {
+  test('feeds the file actions the node, role, Drive compat and SDK client, and shows their modals', async () => {
     renderViewer(createSession(), { role: 'Admin' })
 
     expect(await screen.findByText('File action modals')).toBeInTheDocument()
@@ -559,6 +563,8 @@ describe('DocumentViewerV2', () => {
       node: { uid: 'VOLUME~LINK', name: 'Plans' },
       role: 'Admin',
       driveCompat: DRIVE_COMPAT,
+      client: mockRealtimeClient,
+      exportInvoker: undefined,
     })
   })
 
@@ -810,9 +816,14 @@ describe('DocumentViewerV2', () => {
       // Shown, but the editor would answer an export with "Could not export data" until its Lexical editor exists
       expect(screen.getByTestId('header-exports')).toHaveTextContent('exports disabled')
 
+      expect(mockUseDocumentFileActions).toHaveBeenLastCalledWith(expect.objectContaining({ exportInvoker: undefined }))
+
       act(() => mockClientHandler.updateFrameSize(480))
 
       expect(screen.getByTestId('header-exports')).toHaveTextContent('exports enabled')
+      expect(mockUseDocumentFileActions).toHaveBeenLastCalledWith(
+        expect.objectContaining({ exportInvoker: expect.objectContaining({ printAsPDF: mockPrintAsPDF }) }),
+      )
     })
 
     test('print and download do nothing before the editor shows the document, which may miss edits then', async () => {
