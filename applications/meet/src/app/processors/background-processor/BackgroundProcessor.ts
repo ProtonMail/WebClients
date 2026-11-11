@@ -5,7 +5,7 @@ import {
     type VideoTransformerInitOptions,
 } from '@livekit/track-processors';
 import { logger } from '@protontech/logger';
-import type { ProcessorOptions, Track, TrackProcessor } from 'livekit-client';
+import { type ProcessorOptions, type Track, TrackEvent, type TrackProcessor } from 'livekit-client';
 
 import { withTimeout } from '@proton/meet/utils/withTimeout';
 import { isFirefox, isIos } from '@proton/shared/lib/helpers/browser';
@@ -30,6 +30,7 @@ import {
     SEGMENTATION_FRAME_INTERVAL,
 } from './constants';
 import { createProcessorWrapper } from './createProcessorWrapper';
+import { createLoadingTrack } from './loadingTrack';
 import { SegmentationClient } from './segmentationClient';
 import { type SegmenterHandle, startSegmenter } from './segmenterHost';
 import {
@@ -50,6 +51,12 @@ const MAX_CACHED_BACKGROUND_BITMAPS = 4;
 const INITIAL_MASK_TIMEOUT_MS = 20000;
 
 const FIRST_FRAME_CALLBACK_TIMEOUT_MS = 5000;
+
+// Same fallback as the worker session when the camera reports no size.
+const DEFAULT_TRACK_SIZE = 300;
+
+// Meet's theme defines it on :root.
+const getLoadingColor = () => getComputedStyle(document.documentElement).getPropertyValue('--primary').trim();
 
 type AppliedWaiter = { resolve: () => void; reject: (error: Error) => void };
 
@@ -378,6 +385,10 @@ class BackgroundEffectProcessor implements TrackProcessor<Track.Kind.Video> {
 
     private unregisterDebug: (() => void) | null = null;
 
+    private releaseSenderLoadingTrack: (() => void) | null = null;
+
+    private warmupListeners = new Set<(mode: BackgroundMode) => void>();
+
     constructor(options: BackgroundProcessorOptions) {
         this.options = options;
         this.mode = options.mode ?? { type: 'blur' };
@@ -439,6 +450,19 @@ class BackgroundEffectProcessor implements TrackProcessor<Track.Kind.Video> {
         const generation = this.lifecycleGeneration;
         const isSuperseded = () => generation !== this.lifecycleGeneration;
 
+        const mode = this.mode;
+        this.warmupListeners.forEach((listener) => listener(mode));
+
+        const releaseLoading = this.showLoadingOnSender(options);
+        try {
+            await this.initSession(options, isSuperseded);
+        } catch (error) {
+            releaseLoading?.();
+            throw error;
+        }
+    }
+
+    private async initSession(options: ProcessorOptions<Track.Kind.Video>, isSuperseded: () => boolean) {
         const mode = this.mode;
         const background = await this.resolveBackground(mode);
 
@@ -515,6 +539,7 @@ class BackgroundEffectProcessor implements TrackProcessor<Track.Kind.Video> {
     async destroy() {
         this.lifecycleGeneration += 1;
         this.modeGeneration += 1;
+        this.releaseSenderLoadingTrack?.();
         this.unregisterDebug?.();
         this.unregisterDebug = null;
         const session = this.session;
@@ -552,6 +577,13 @@ class BackgroundEffectProcessor implements TrackProcessor<Track.Kind.Video> {
 
     hasAppliedMask() {
         return this.hasInitialMask;
+    }
+
+    onWarmup(listener: (mode: BackgroundMode) => void) {
+        this.warmupListeners.add(listener);
+        return () => {
+            this.warmupListeners.delete(listener);
+        };
     }
 
     setDebugView(view: BackgroundDebugView) {
@@ -599,6 +631,47 @@ class BackgroundEffectProcessor implements TrackProcessor<Track.Kind.Video> {
             this.appliedWaiters = this.appliedWaiters.filter((entry) => entry !== waiter);
             throw error;
         });
+    }
+
+    // Until LiveKit swaps in the processed track after init(), the sender would publish the raw
+    // track, which the caller blanks: remotes see the spinner instead of black.
+    private showLoadingOnSender({ track, localTrack }: ProcessorOptions<Track.Kind.Video>): (() => void) | null {
+        const sender = localTrack?.sender;
+        if (!localTrack || !sender || sender.track !== track || localTrack.isMuted) {
+            return null;
+        }
+        const settings = track.getSettings();
+        const loading = createLoadingTrack(
+            settings.width || DEFAULT_TRACK_SIZE,
+            settings.height || DEFAULT_TRACK_SIZE,
+            getLoadingColor()
+        );
+        if (!loading) {
+            return null;
+        }
+
+        const swapped = sender.replaceTrack(loading.track).catch(() => {
+            // The sender keeps the raw track
+        });
+        const release = () => {
+            if (this.releaseSenderLoadingTrack !== release) {
+                return;
+            }
+            this.releaseSenderLoadingTrack = null;
+            localTrack.off(TrackEvent.TrackProcessorUpdate, release);
+            localTrack.off(TrackEvent.Muted, release);
+            void swapped
+                .then(() => (sender.track === loading.track ? sender.replaceTrack(track) : undefined))
+                .catch(() => {
+                    // The sender is closed
+                })
+                .finally(loading.stop);
+        };
+        this.releaseSenderLoadingTrack?.();
+        this.releaseSenderLoadingTrack = release;
+        localTrack.on(TrackEvent.TrackProcessorUpdate, release);
+        localTrack.on(TrackEvent.Muted, release);
+        return release;
     }
 
     private setEnabled(enabled: boolean) {
@@ -698,6 +771,8 @@ class BackgroundEffectProcessor implements TrackProcessor<Track.Kind.Video> {
             // publish the unprocessed background to everyone still watching.
             pauseSegmentationWhenHidden: isMobile,
             notifyAppliedBeforeEnqueue: isMainThread && isFirefox(),
+            loadingColor: getLoadingColor(),
+            loadingTimeoutMs: INITIAL_MASK_TIMEOUT_MS,
         };
     }
 

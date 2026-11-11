@@ -2,7 +2,7 @@ import { withTimeout } from '@proton/meet/utils/withTimeout';
 
 export type SegmentationResult = { mask: Uint8Array<ArrayBuffer>; width: number; height: number };
 
-const SEGMENTATION_TIMEOUT_MS = 2000;
+export const SEGMENTATION_TIMEOUT_MS = 2000;
 
 // Replies to this id are ignored.
 const WARMUP_REQUEST_ID = 0;

@@ -4,6 +4,7 @@ import type { Room } from 'livekit-client';
 import { useCameraPreview } from './useCameraPreview';
 
 const livekitClient = vi.hoisted(() => ({
+    Track: { Kind: { Video: 'video' }, Source: { Camera: 'camera' } },
     createLocalVideoTrack: vi.fn(),
 }));
 vi.mock('livekit-client', () => livekitClient);
@@ -12,10 +13,11 @@ vi.mock('@proton/shared/lib/helpers/browser', () => ({ isChrome: () => false, is
 
 vi.mock('@proton/shared/lib/helpers/promise', () => ({ wait: () => Promise.resolve() }));
 
-vi.mock('../../processors/background-processor/createBackgroundProcessor', () => ({
+const processorMocks = vi.hoisted(() => ({
     createBackgroundProcessor: vi.fn(),
     ensureBackgroundProcessor: vi.fn(),
 }));
+vi.mock('../../processors/background-processor/createBackgroundProcessor', () => processorMocks);
 
 vi.mock('@proton/meet/utils/virtualBackgrounds', () => ({ getVirtualBackgroundSource: vi.fn() }));
 
@@ -27,22 +29,74 @@ const createTrack = () => ({
     getProcessor: vi.fn(() => undefined),
 });
 
-const setup = () =>
-    renderHook(() =>
+// The camera the meeting publishes, live or not.
+const publishedCamera = (live: boolean) =>
+    new Map([
+        [
+            'cam',
+            {
+                kind: 'video',
+                source: 'camera',
+                track: { isMuted: !live, mediaStreamTrack: { readyState: live ? 'live' : 'ended' } },
+            },
+        ],
+    ]);
+
+const setup = ({ withBlur = false, trackPublications = new Map() } = {}) => {
+    const trackBackgroundEffectInitialization = vi.fn(() => 1);
+    const hook = renderHook(() =>
         useCameraPreview({
             selectedCameraId: 'camera-1',
             facingMode: 'user',
-            isBackgroundBlurSupported: false,
-            backgroundEffect: 'none',
-            room: { localParticipant: { activeDeviceMap: new Map() } } as unknown as Room,
-            trackBackgroundEffectInitialization: vi.fn(),
+            isBackgroundBlurSupported: withBlur,
+            backgroundEffect: withBlur ? 'blur' : 'none',
+            room: { localParticipant: { activeDeviceMap: new Map(), trackPublications } } as unknown as Room,
+            trackBackgroundEffectInitialization,
             cancelBackgroundEffectInitialization: vi.fn(),
         })
     );
+    return { ...hook, trackBackgroundEffectInitialization };
+};
+
+const startBlurredPreview = async (trackPublications = new Map()) => {
+    const processor = {
+        enable: vi.fn(),
+        hasAppliedMask: vi.fn(() => false),
+        waitUntilApplied: vi.fn(() => new Promise(() => {})),
+    };
+    livekitClient.createLocalVideoTrack.mockResolvedValue(createTrack());
+    processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+    processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+
+    const { result, trackBackgroundEffectInitialization } = setup({ withBlur: true, trackPublications });
+    await result.current.handlePreviewCameraToggle(document.createElement('video'));
+
+    return trackBackgroundEffectInitialization;
+};
 
 describe('useCameraPreview', () => {
     afterEach(() => {
         vi.clearAllMocks();
+    });
+
+    it('should report the preview warmup before joining', async () => {
+        const trackBackgroundEffectInitialization = await startBlurredPreview();
+
+        expect(trackBackgroundEffectInitialization).toHaveBeenCalledWith('blur', expect.any(Function));
+    });
+
+    it('should leave the initializing state to the published camera while it is live', async () => {
+        // The preview teardown on join would otherwise clear the state of the published warmup.
+        const trackBackgroundEffectInitialization = await startBlurredPreview(publishedCamera(true));
+
+        expect(trackBackgroundEffectInitialization).not.toHaveBeenCalled();
+    });
+
+    it('should report the preview warmup in a meeting while the camera is off', async () => {
+        // The Backgrounds panel previews its own camera then, and nothing else warms up.
+        const trackBackgroundEffectInitialization = await startBlurredPreview(publishedCamera(false));
+
+        expect(trackBackgroundEffectInitialization).toHaveBeenCalledWith('blur', expect.any(Function));
     });
 
     it('should stop a camera track that is still being created when the preview is torn down', async () => {
