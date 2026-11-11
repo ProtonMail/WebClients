@@ -11,8 +11,10 @@ import {
 import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import scribeIllustration from '@proton/styles/assets/img/illustrations/upsell-composer-assistant.svg';
 import lumoIllustration from '@proton/styles/assets/img/lumo/lumo-upsell-modal-header.svg';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import useAssistantSubscriptionStatus from '../../../hooks/assistant/useAssistantSubscriptionStatus';
 import type { ModalStateProps } from '../../modalTwo/useModalState';
 import UpsellFeatureList from '../UpsellFeatureList';
 import UpsellModal from '../UpsellModal/UpsellModal';
@@ -23,7 +25,8 @@ interface Props {
 
 const ComposerAssistantB2CUpsellModal = ({ modalProps }: Props) => {
     const [user] = useUser();
-    const scribeToLumo = useFlag('ScribeToLumo');
+    const { trialStatus } = useAssistantSubscriptionStatus();
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
         component: UPSELL_COMPONENT.MODAL,
@@ -31,13 +34,17 @@ const ComposerAssistantB2CUpsellModal = ({ modalProps }: Props) => {
     });
 
     const title = (() => {
-        if (!user.isFree) {
-            return c('Title').t`Your free trial has ended`;
+        if (!scribeToLumo) {
+            return user.isFree ? c('Title').t`Craft better emails` : c('Title').t`Your free trial has ended`;
         }
-        return scribeToLumo
-            ? c('Title').t`Craft better emails with ${LUMO_SHORT_APP_NAME}`
-            : c('Title').t`Craft better emails`;
+        return trialStatus === 'trial-ended'
+            ? c('Title').t`Your free trial has ended`
+            : c('Title').t`Craft better emails with ${LUMO_SHORT_APP_NAME}`;
     })();
+
+    const description = scribeToLumo
+        ? c('Description').t`For unlimited access to the writing assistant and more, upgrade to ${LUMO_SHORT_APP_NAME}.`
+        : c('Description').t`For unlimited access to the writing assistant and more, upgrade to ${BRAND_NAME} Duo.`;
 
     return (
         <UpsellModal
@@ -45,11 +52,7 @@ const ComposerAssistantB2CUpsellModal = ({ modalProps }: Props) => {
             title={title}
             description={
                 <>
-                    {scribeToLumo
-                        ? c('Description')
-                              .t`For unlimited access to the writing assistant and more, upgrade to ${LUMO_SHORT_APP_NAME}.`
-                        : c('Description')
-                              .t`For unlimited access to the writing assistant and more, upgrade to ${BRAND_NAME} Duo.`}
+                    {description}
                     <div className="mt-6 text-left">
                         <UpsellFeatureList
                             hideInfo

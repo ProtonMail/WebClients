@@ -5,6 +5,8 @@ import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { MailFeatureFlag } from '@proton/unleash/Flags';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import useAssistantTelemetry from './useAssistantTelemetry';
 
@@ -26,6 +28,7 @@ const useAssistantSubscriptionStatus = (): AssistantSubscriptionStatus => {
     const [user] = useUser();
     const { createNotification } = useNotifications();
     const { sendFreeTrialStart } = useAssistantTelemetry();
+    const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
     const nowDate = new Date();
 
     const hasAiAssistantAddon = !!user.NumAI || !!user.NumLumo;
@@ -55,10 +58,14 @@ const useAssistantSubscriptionStatus = (): AssistantSubscriptionStatus => {
             return 'trial-ended';
         }
 
-        return 'trial-not-started';
+        return scribeToLumo ? 'no-trial' : 'trial-not-started';
     })();
 
     const start = async () => {
+        if (scribeToLumo) {
+            return;
+        }
+
         if (!started && !trialStartDate && !hasAiAssistantAddon) {
             started = true;
             await trialStartDateFeat.update(getUnixTime(new Date()));
