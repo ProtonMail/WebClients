@@ -21,7 +21,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import darkIllustration from './assets/recovery-email-dark.svg';
 import illustration from './assets/recovery-email.svg';
-import SentinelWarning from './shared/SentinelBadge';
+import SentinelBadge from './shared/SentinelBadge';
 
 const RecoveryEmailSubpage = () => {
     const theme = useTheme();
@@ -135,7 +135,7 @@ const RecoveryEmailSubpage = () => {
                             </div>
                         )}
                         {isSentinelUser && !emailRecovery.value && (
-                            <SentinelWarning
+                            <SentinelBadge
                                 className="mt-6"
                                 status={StatusBadgeStatus.Warning}
                                 text={c('Info').t`Add an email address in case we need to contact you`}
@@ -143,7 +143,7 @@ const RecoveryEmailSubpage = () => {
                         )}
 
                         {isSentinelUser && emailRecovery.value && emailRecovery.hasReset && (
-                            <SentinelWarning
+                            <SentinelBadge
                                 className="mt-6"
                                 status={StatusBadgeStatus.Danger}
                                 text={c('Info')
@@ -151,7 +151,7 @@ const RecoveryEmailSubpage = () => {
                             />
                         )}
                         {isSentinelUser && emailRecovery.value && !emailRecovery.hasReset && (
-                            <SentinelWarning
+                            <SentinelBadge
                                 className="mt-6"
                                 status={StatusBadgeStatus.Success}
                                 text={c('Info')
