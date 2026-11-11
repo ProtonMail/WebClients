@@ -5,10 +5,16 @@ import QuickSettingsSectionRow from '@proton/components/components/drawer/views/
 import DrawerAppSection from '@proton/components/components/drawer/views/shared/DrawerAppSection';
 import Info from '@proton/components/components/link/Info';
 import Toggle from '@proton/components/components/toggle/Toggle';
+import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { OneTimeCodeSetting, settingToggledEvent } from './oneTimeCodeEvents';
 import { useOneTimeCodeSettings } from './useOneTimeCodeSettings';
+
+const reportSettingToggled = (setting: OneTimeCodeSetting, isEnabled: boolean) => {
+    tracker.emit(settingToggledEvent, { dimensions: { setting, isEnabled } });
+};
 
 const OneTimeCodeQuickSettings = () => {
     const isOneTimePasscodeEnabled = useFlag(MailFeatureFlag.OneTimePasscode);
@@ -33,6 +39,7 @@ const OneTimeCodeQuickSettings = () => {
                         onChange={({ target }) => {
                             const next = target.checked;
                             setDetectionEnabled(next);
+                            reportSettingToggled(OneTimeCodeSetting.DETECTION, next);
                             createNotification({
                                 text: next
                                     ? c('Success').t`One-time codes enabled`
@@ -54,6 +61,7 @@ const OneTimeCodeQuickSettings = () => {
                             checked={moveToTrashEnabled}
                             onChange={({ target }) => {
                                 setMoveToTrashEnabled(target.checked);
+                                reportSettingToggled(OneTimeCodeSetting.MOVE_TO_TRASH, target.checked);
                                 createNotification({ text: c('Success').t`Preference saved` });
                             }}
                             data-testid="mail-quick-settings:one-time-code-move-to-trash-toggle"

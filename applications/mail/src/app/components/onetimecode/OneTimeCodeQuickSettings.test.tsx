@@ -3,6 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { useUser } from '@proton/account/user/hooks';
 import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
 import { buildUser } from '@proton/shared/testing/buildUser';
+import { mockTracker } from '@proton/telemetry-tracker/testing';
 import { MailFeatureFlag } from '@proton/unleash/Flags';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -14,6 +15,23 @@ jest.mock('@proton/account/user/hooks', () => {
 jest.mock('@proton/unleash/useFlag', () => {
     return { useFlag: jest.fn() };
 });
+
+let tracked: ReturnType<typeof mockTracker>;
+
+const expectSettingToggled = (setting: string, isEnabled: string) => {
+    expect(
+        tracked.reports.map(({ measurementGroup, event, dimensions, delay }) => {
+            return { measurementGroup, event, dimensions, delay };
+        })
+    ).toEqual([
+        {
+            measurementGroup: 'mail.web.one_time_code',
+            event: 'setting_toggled',
+            dimensions: { setting, isEnabled },
+            delay: false,
+        },
+    ]);
+};
 
 const user = buildUser();
 const detectionKey = `one-time-code-detection-enabled-${user.ID}`;
@@ -43,6 +61,11 @@ describe('OneTimeCodeQuickSettings', () => {
         jest.mocked(useUser).mockReturnValue([user, false]);
         mockUseNotifications({ createNotification });
         mockFlag(true);
+        tracked = mockTracker();
+    });
+
+    afterEach(() => {
+        tracked.restore();
     });
 
     it('renders nothing when the flag is off', () => {
@@ -71,6 +94,7 @@ describe('OneTimeCodeQuickSettings', () => {
         expect(getDetectionToggle()).not.toBeChecked();
         expect(screen.queryByTestId(moveToTrashTestID)).not.toBeInTheDocument();
         expect(createNotification).toHaveBeenCalledWith({ text: 'One-time codes disabled' });
+        expectSettingToggled('detection', 'false');
     });
 
     it('turns detection back on, shows the Trash row and confirms it', () => {
@@ -84,6 +108,7 @@ describe('OneTimeCodeQuickSettings', () => {
         expect(localStorage.getItem(detectionKey)).toBe('true');
         expect(getMoveToTrashToggle()).toBeInTheDocument();
         expect(createNotification).toHaveBeenCalledWith({ text: 'One-time codes enabled' });
+        expectSettingToggled('detection', 'true');
     });
 
     it('turns Move to Trash off and confirms the preference was saved', () => {
@@ -94,5 +119,6 @@ describe('OneTimeCodeQuickSettings', () => {
         expect(localStorage.getItem(moveToTrashKey)).toBe('false');
         expect(getMoveToTrashToggle()).not.toBeChecked();
         expect(createNotification).toHaveBeenCalledWith({ text: 'Preference saved' });
+        expectSettingToggled('move_to_trash', 'false');
     });
 });

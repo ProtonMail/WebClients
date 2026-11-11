@@ -1,18 +1,49 @@
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 
 import type { OneTimeCodeInput } from './OneTimeCodeDetector';
-import OneTimeCodeDetector from './OneTimeCodeDetector';
+import OneTimeCodeDetector, { OneTimeCodeSource } from './OneTimeCodeDetector';
 
-const extract = (input: Partial<OneTimeCodeInput>): string | null =>
+const extractResult = (input: Partial<OneTimeCodeInput>) =>
     OneTimeCodeDetector.extract({
         subject: '',
         body: '',
         mimeType: MIME_TYPES.DEFAULT,
         timestamp: 0,
         ...input,
-    }).code;
+    });
+
+const extract = (input: Partial<OneTimeCodeInput>): string | null => extractResult(input).code;
 
 describe('OneTimeCodeDetector', () => {
+    describe('source', () => {
+        it('is title for a code found only in the subject', () => {
+            expect(extractResult({ subject: 'Your code is 123456' })).toEqual({
+                code: '123456',
+                source: OneTimeCodeSource.TITLE,
+            });
+        });
+
+        it('is body for a code found only in the body', () => {
+            const body = '<html><body><p>Your verification code is 845213</p></body></html>';
+            expect(extractResult({ subject: 'Sign in', body })).toEqual({
+                code: '845213',
+                source: OneTimeCodeSource.BODY,
+            });
+        });
+
+        it('is both for a code found in the subject and the body', () => {
+            const body = '<html><body><p>937326 is your verification code</p></body></html>';
+            expect(extractResult({ subject: '937326 is your verification code', body })).toEqual({
+                code: '937326',
+                source: OneTimeCodeSource.BOTH,
+            });
+        });
+
+        it('is null when no code wins', () => {
+            expect(extractResult({ subject: '123456 654321' })).toEqual({ code: null, source: null });
+        });
+    });
+
     it('detects a code at the end of the subject', () => {
         expect(extract({ subject: 'Your code is 123456' })).toBe('123456');
     });
@@ -89,6 +120,13 @@ describe('OneTimeCodeDetector', () => {
 
         it('detects a code from the subject alone', () => {
             expect(extractFromTitle('Your code is 123456')).toBe('123456');
+        });
+
+        it('reports the subject as the source of a find', () => {
+            expect(OneTimeCodeDetector.extractFromTitle({ subject: 'Your code is 123456', timestamp: 0 })).toEqual({
+                code: '123456',
+                source: OneTimeCodeSource.TITLE,
+            });
         });
 
         it('ignores the body entirely (only the subject is read)', () => {

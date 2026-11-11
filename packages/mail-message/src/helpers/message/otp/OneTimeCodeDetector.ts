@@ -11,13 +11,33 @@ import { predictStrict, scoreCodes } from './scoring';
 
 export type { OneTimeCodeInput } from './normalize';
 
+/** Where the winning code was found: by the subject (`isTitle`) extractors, the body ones, or both. */
+export enum OneTimeCodeSource {
+    TITLE = 'title',
+    BODY = 'body',
+    BOTH = 'both',
+}
+
 interface OneTimeCodeResult {
     code: string | null;
+    /** Null exactly when {@link code} is. */
+    source: OneTimeCodeSource | null;
 }
 
 // Only extractors carrying a positive weight in the active config are run; a
 // weight of 0 (or a missing entry) means the extractor is ignored entirely.
 const ACTIVE_EXTRACTORS: Extractor[] = EXTRACTORS.filter((extractor) => WEIGHTS[extractor.name] > 0);
+
+function getSource(extractors: Extractor[], perExtractor: Record<string, string[]>, code: string): OneTimeCodeSource {
+    const emitters = extractors.filter((extractor) => perExtractor[extractor.name].includes(code));
+    const isInTitle = emitters.some((extractor) => extractor.isTitle);
+    const isInBody = emitters.some((extractor) => !extractor.isTitle);
+
+    if (isInTitle && isInBody) {
+        return OneTimeCodeSource.BOTH;
+    }
+    return isInTitle ? OneTimeCodeSource.TITLE : OneTimeCodeSource.BODY;
+}
 
 /**
  * Detects one-time codes (OTPs) inside an email's subject and body.
@@ -57,7 +77,11 @@ function run(extractors: Extractor[], { subject, body, kind, timestamp }: Normal
     }
 
     const scores = scoreCodes(perExtractor, WEIGHTS);
-    return { code: predictStrict(scores) };
+    const code = predictStrict(scores);
+    if (!code) {
+        return { code: null, source: null };
+    }
+    return { code, source: getSource(extractors, perExtractor, code) };
 }
 
 function extract(input: OneTimeCodeInput): OneTimeCodeResult {
