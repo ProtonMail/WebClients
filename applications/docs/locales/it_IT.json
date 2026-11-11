@@ -3470,6 +3470,63 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrabile"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Impossibile aggiungere una foto all'album senza un nome valido"
+      ],
+      "Cannot share root folder": [
+        "Impossibile condividere cartella principale"
+      ],
+      "Copy operation aborted": [
+        "Copia interrotta"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Creare file al di fuori delle cartelle non è consentito"
+      ],
+      "Device not found": [
+        "Dispositivo non trovato"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Impossibile decifrare chiave preferita: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Impossibile decifrare nome elemento: ${ message }"
+      ],
+      "Invitation not found": [
+        "Invito non trovato"
+      ],
+      "Item not found": [
+        "Elemento non trovato"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Impossibile spostare l'elemento: la destinazione non è una cartella."
+      ],
+      "Moving root item is not allowed": [
+        "Non è consentito spostare un elemento principale"
+      ],
+      "Name must not be empty": [
+        "Il campo \"nome\" non può essere vuoto"
+      ],
+      "Renaming root item is not allowed": [
+        "Non è consentito rinominare un elemento chiave"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Verifica della firma per ${ signatureType } fallita"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Verifica della firma per  ${ signatureType } non riuscita: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "L'upload di alcuni file è fallito. Prova di nuovo."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "L'upload di alcune parti del file non è stato completato. Riprova."
+      ],
+      "This item has no image preview": [
+        "Questo elemento non ha un'immagine di anteprima"
+      ],
+      "You do not have access to this shared item": [
+        "Accesso non consentito a questo elemento condiviso"
       ]
     },
     "error": {
@@ -5551,6 +5608,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Potrai ancora visualizzare i dati del tuo account, ma tutti gli account utente verranno rimossi dalla tua organizzazione."
+      ],
+      "Error syncing": [
+        "Errore durante la sincronizzazione"
+      ],
+      "Looks like you're offline. You can keep editing: your changes are saved once you are back online.": [
+        "Sembra che tu sia offline. Puoi continuare a modificare: le tue modifiche verranno salvate non appena tornerai online."
+      ],
+      "Opening…": [
+        "Apertura in corso…"
+      ],
+      "Saving…": [
+        "Salvataggio in corso…"
+      ],
+      "Some of the document could not be read, so it can't be edited.": [
+        "Una parte del documento non è stata letta, quindi non è possibile modificarlo."
+      ],
+      "This document can't be edited right now.": [
+        "Al momento non è possibile modificare questo documento."
+      ],
+      "This document does not exist, or it was deleted.": [
+        "Il documento richiesto non esiste o è stato rimosso."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Copy any work you need to keep it.": [
+        "Il documento ha superato le dimensioni massime e non è possibile salvare le ultime modifiche. Scaricane una copia per conservarla."
+      ],
+      "This document has reached its maximum size, so it can't be edited.": [
+        "Questo documento ha raggiunto la dimensione massima consentita, pertanto non è possibile modificarlo."
       ]
     },
     "info": {
@@ -8103,6 +8187,12 @@
       ],
       "name": [
         "nome"
+      ],
+      "hash key": [
+        "chiave hash"
+      ],
+      "membership": [
+        "abbonamento"
       ]
     },
     "Property type": {
@@ -9733,6 +9823,9 @@
       ],
       "Your exposed information": [
         "Le tue informazioni rese pubbliche"
+      ],
+      "Error syncing": [
+        "Errore durante la sincronizzazione"
       ]
     },
     "Title header for keys table": {

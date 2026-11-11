@@ -1489,7 +1489,7 @@
         "Xats d'alta velocitat i característiques d'IA avançades."
       ],
       "Private video calls for the conversations that matter.": [
-        "Videotrucades privades per les converses importants."
+        "Videotrucades privades per a les converses importants."
       ]
     },
     "color": {
@@ -3603,7 +3603,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Inicieu la sessió amb una adreça de Gmail que ja us reenviarà a ${ MAIL_APP_NAME }"
+        "Inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicieu la sessió amb la mateixa adreça de Gmail amb la que us vau connectar originalment"
@@ -5680,6 +5680,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
+      ],
+      "Error syncing": [
+        "S'ha produït un error de sincronització"
+      ],
+      "Looks like you're offline. You can keep editing: your changes are saved once you are back online.": [
+        "Sembla que esteu fora de línia. Podeu continuar editant: els vostres canvis es desaran un cop torneu a estar en línia."
+      ],
+      "Opening…": [
+        "S'està obrint…"
+      ],
+      "Saving…": [
+        "S'està desant…"
+      ],
+      "Some of the document could not be read, so it can't be edited.": [
+        "No s'ha pogut llegir una part del document, per tant no es pot editar."
+      ],
+      "This document can't be edited right now.": [
+        "Aquest document no es pot editar en aquest moment."
+      ],
+      "This document does not exist, or it was deleted.": [
+        "Aquest document no existeix o s'ha eliminat."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Copy any work you need to keep it.": [
+        "Aquest document s'ha fet massa gran i no s'han pogut desar els darrers canvis. Copieu tot allò que necessiteu conservar."
+      ],
+      "This document has reached its maximum size, so it can't be edited.": [
+        "Aquest document ha arribat a la seva mida màxima, de manera que no es pot editar"
       ]
     },
     "info": {
@@ -7761,7 +7788,7 @@
         " visiteu el nostre ${ helpCenterLink } o ${ contactSupportLink }."
       ],
       "**Add a payment method** to keep using all of the features after your trial ends.": [
-        "**Afegiu un mètode de pagament** per continuar utilitzant totes les funcions quan acabi el període de prova."
+        "**Afegiu un mètode de pagament** per a continuar utilitzant totes les funcions quan acabi el període de prova."
       ],
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Cancel·leu-ho en qualsevol moment. ** Podreu utilitzar ${ planTitle } fins que acabi el període de prova, de franc."
@@ -7773,7 +7800,7 @@
         "**Un cop comenci la vostra subscripció completa...** Encara podreu cancel·lar-la en un termini de 30 dies i rebre un reemborsament prorratejat."
       ],
       "Add a payment method": [
-        "Afegir un mètode de pagament"
+        "Afegiu un mètode de pagament"
       ],
       "Cancel anytime before ${ cancelDate }.": [
         "Cancel·leu en qualsevol moment abans del ${ cancelDate }."
@@ -9871,6 +9898,9 @@
       ],
       "Your exposed information": [
         "La vostra informació exposada"
+      ],
+      "Error syncing": [
+        "S'ha produït un error de sincronització"
       ]
     },
     "Title header for keys table": {

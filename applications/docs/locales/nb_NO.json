@@ -925,6 +925,12 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakt.",
         "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakter."
+      ],
+      "Comments": [
+        "Kommentarer"
+      ],
+      "Go to ${ DOCS_SHORT_APP_NAME } home": [
+        "Gå til ${ DOCS_SHORT_APP_NAME } startside"
       ]
     },
     "Actions message": {
@@ -3570,6 +3576,18 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn som ikke kan dekrypteres"
+      ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "Noe av dokumentet kunne ikke leses, så endringene dine kan ikke lagres."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "Noen av de siste endringene dine kunne ikke lagres, så redigering er deaktivert. Kopier alt du trenger, og last deretter inn på nytt."
+      ],
+      "This version could not be loaded. Close the history and try again.": [
+        "Denne versjonen kunne ikke lastes inn. Lukk historikken og prøv igjen."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "Den siste endringen din er for stor til å lagres, så redigering er slått av. Kopier det du trenger, og last deretter inn på nytt."
       ]
     },
     "error": {
@@ -5609,6 +5627,48 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du vil fortsatt kunne se dine egne kontodata, men alle brukerkontoer vil bli fjernet fra organisasjonen din."
+      ],
+      "Error syncing": [
+        "Feil ved synkronisering"
+      ],
+      "Looks like you're offline. You can keep editing: your changes are saved once you are back online.": [
+        "Det ser ut til at du er frakoblet. Du kan fortsette å redigere: endringene dine lagres når du er tilbake på nett."
+      ],
+      "Not available yet": [
+        "Ikke tilgjengelig ennå"
+      ],
+      "Opening…": [
+        "Åpner…"
+      ],
+      "Saving…": [
+        "Lagrer…"
+      ],
+      "Some of the document could not be read, so it can't be edited.": [
+        "Noe av dokumentet kunne ikke leses, så det kan ikke redigeres."
+      ],
+      "Some of the document's content could not be read.": [
+        "Noe av dokumentets innhold kunne ikke leses."
+      ],
+      "The document could not be loaded.": [
+        "Dokumentet kunne ikke lastes inn."
+      ],
+      "The editor could not be loaded.": [
+        "Editoren kunne ikke lastes inn."
+      ],
+      "This document can't be edited right now.": [
+        "Dette dokumentet kan ikke redigeres akkurat nå."
+      ],
+      "This document does not exist, or it was deleted.": [
+        "Dette dokumentet eksisterer ikke, eller det ble slettet."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Copy any work you need to keep it.": [
+        "Dette dokumentet har blitt for stort, og de siste endringene dine kunne ikke lagres. Kopier alt du trenger for å beholde det."
+      ],
+      "This document has reached its maximum size, so it can't be edited.": [
+        "Dette dokumentet har nådd sin maksimale størrelse, så det kan ikke redigeres."
+      ],
+      "This link is not supported on this page.": [
+        "Denne lenken støttes ikke på denne siden."
       ]
     },
     "info": {
@@ -6083,6 +6143,24 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn som ikke kan dekrypteres"
+      ],
+      "Created by ${ displayName }": [
+        "Opprettet av ${ displayName }"
+      ],
+      "Document": [
+        "Dokument"
+      ],
+      "Location ${ locationLabel }": [
+        "Plassering: ${ locationLabel }"
+      ],
+      "Select ${ document.name }": [
+        "Velg ${ document.name }"
+      ],
+      "Select all": [
+        "Velg alle"
+      ],
+      "Spreadsheet": [
+        "Regneark"
       ]
     },
     "Label for contact group color": {
@@ -7504,6 +7582,15 @@
       ],
       "Your settings have been changed successfully": [
         "Innstillingene dine ble endret"
+      ],
+      "Failed to apply file. Check the file and try again.": [
+        "Kunne ikke bruke filen. Sjekk filen og prøv igjen."
+      ],
+      "Failed to load saved items": [
+        "Kunne ikke laste lagrede elementer"
+      ],
+      "Failed to save for later": [
+        "Kunne ikke lagre til senere"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9758,6 +9845,9 @@
       ],
       "Your exposed information": [
         "Din eksponerte informasjon"
+      ],
+      "Error syncing": [
+        "Feil ved synkronisering"
       ]
     },
     "Title header for keys table": {
@@ -10142,6 +10232,12 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Prøveperioden avsluttes ${ textDate }. Du blir ikke belastet hvis du avbryter før ${ textDate }. ${ action }"
+      ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "En endring fra en annen som redigerer, kunne ikke leses og mangler på denne siden."
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "Noe av dokumentet kunne ikke leses, så redigering er deaktivert."
       ]
     }
   }

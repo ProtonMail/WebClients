@@ -3489,7 +3489,7 @@
         "Este mensaje podría contener enlaces que no pueden abrirse correctamente en el navegador actual."
       ],
       "This version could not be loaded. Close the history and try again.": [
-        "No se ha podido cargar esta versión. Cierra el historial e inténtalo de nuevo."
+        "No se pudo cargar esta versión. Cierre el historial e intente de nuevo."
       ],
       "Too many server errors, please try again later": [
         "Demasiados errores del servidor, intente de nuevo más tarde"
@@ -5680,6 +5680,33 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Podrá seguir viendo los datos de su propia cuenta, pero todas las cuentas de usuario serán eliminadas de su organización."
+      ],
+      "Error syncing": [
+        "Error al sincronizar"
+      ],
+      "Looks like you're offline. You can keep editing: your changes are saved once you are back online.": [
+        "Parece ser que no tiene conexión. Puede seguir editando: sus cambios se guardarán una vez regrese la conexión."
+      ],
+      "Opening…": [
+        "Abriendo…"
+      ],
+      "Saving…": [
+        "Guardando…"
+      ],
+      "Some of the document could not be read, so it can't be edited.": [
+        "No se pudo leer parte del documento así que no puede ser editado."
+      ],
+      "This document can't be edited right now.": [
+        "Este documento no se puede editar ahora mismo."
+      ],
+      "This document does not exist, or it was deleted.": [
+        "Este documento no existe o fue eliminado."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Copy any work you need to keep it.": [
+        "Este documento se ha vuelto demasiado grande y sus últimos cambios no pudieron ser guardados. Copie el trabajo que necesite conservar."
+      ],
+      "This document has reached its maximum size, so it can't be edited.": [
+        "Este documento alcanzó su tamaño máximo así que no puede ser editado."
       ]
     },
     "info": {
@@ -9871,6 +9898,9 @@
       ],
       "Your exposed information": [
         "Sus datos expuestos"
+      ],
+      "Error syncing": [
+        "Error al sincronizar"
       ]
     },
     "Title header for keys table": {

@@ -3153,7 +3153,7 @@
         "Aucun contact n'a été trouvé pour l'importation."
       ],
       "No drive found to import": [
-        "Aucun disque à importer détecté"
+        "Aucun disque à importer n'a été détecté."
       ],
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
@@ -3418,7 +3418,7 @@
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
       ],
       "Unexpected error, we can't import the files": [
-        "Une erreur inattendue est survenue, les fichiers n'ont pas pu être importés"
+        "Une erreur inattendue est survenue, les fichiers ne peuvent être importés"
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -5516,6 +5516,27 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Vous pourrez toujours consulter les données de votre propre compte, mais tous les comptes utilisateur seront retirés de votre organisation."
+      ],
+      "Error syncing": [
+        "Erreur de synchronisation"
+      ],
+      "Looks like you're offline. You can keep editing: your changes are saved once you are back online.": [
+        "On dirait que vous n'êtes pas connecté. Vous pouvez continuer à modifier le texte : vos modifications seront enregistrées dès que vous serez de nouveau connecté."
+      ],
+      "Opening…": [
+        "Ouverture en cours…"
+      ],
+      "Saving…": [
+        "Enregistrement en cours…"
+      ],
+      "Some of the document could not be read, so it can't be edited.": [
+        "Une partie du document n'a pas pu être lue, il n'est donc pas possible de le modifier."
+      ],
+      "This document can't be edited right now.": [
+        "Ce document ne peut pas être modifié pour le moment."
+      ],
+      "This document has reached its maximum size, so it can't be edited.": [
+        "Ce document a atteint sa taille maximale, il n'est donc plus possible de le modifier."
       ]
     },
     "info": {
@@ -9119,7 +9140,7 @@
         "${ emailsCount } adresses e-mail"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
+        "Assistant d'aide à la rédaction ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account recovery": [
         "Récupération du compte"
@@ -9670,6 +9691,9 @@
       ],
       "Your exposed information": [
         "Vos informations exposées"
+      ],
+      "Error syncing": [
+        "Erreur de synchronisation"
       ]
     },
     "Title header for keys table": {
