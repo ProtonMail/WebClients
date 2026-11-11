@@ -42,6 +42,10 @@ function canShowBannerForSubscription(subscription: Subscription): boolean {
     return !shouldHideBannerForDistantExpiration(subscription.Plans, expirationDate);
 }
 
+export function getSubscriptionWithEndsBanner(subscriptions: Subscription[]): Subscription | undefined {
+    return getSoonestEndingSubscription(subscriptions, canShowBannerForSubscription);
+}
+
 export function useSubscriptionWithEndsBanner(app: APP_NAMES, subscriptions: Subscription[]): Subscription | undefined {
     const { APP_NAME } = useConfig();
     const { showVPNDashboard } = useShowVPNDashboard(app);
@@ -56,5 +60,5 @@ export function useSubscriptionWithEndsBanner(app: APP_NAMES, subscriptions: Sub
         return undefined;
     }
 
-    return getSoonestEndingSubscription(subscriptions, canShowBannerForSubscription);
+    return getSubscriptionWithEndsBanner(subscriptions);
 }

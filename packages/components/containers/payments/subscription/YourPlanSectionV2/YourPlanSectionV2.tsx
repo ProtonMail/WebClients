@@ -3,19 +3,21 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
+import { FREE_SUBSCRIPTION } from '@proton/payments/core/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import Loader from '../../../../components/loader/Loader';
 import useLoad from '../../../../hooks/useLoad';
 import ReferralTrialInfoDashboardV2 from '../../../referral/components/ReferralTrialInfo/ReferralTrialInfoDashboardV2';
 import SubscriptionEndsBannerV2 from '../../../topBanners/SubscriptionEndsBannerV2';
-import { CurrentPlanInfoSection } from './CurrentPlanInfoSection';
+import { getSubscriptionWithEndsBanner } from '../../../topBanners/useSubscriptionWithEndsBanner';
+import { CurrentPlanInfoSection, EverySubscriptionInfoSection } from './CurrentPlanInfoSection';
 
 interface YourPlanSectionV2Props {
     app: APP_NAMES;
@@ -27,33 +29,46 @@ const YourPlanSectionV2 = ({ app, editBillingCycle = false, cta }: YourPlanSecti
     const [user] = useUser();
     const [plansResult, loadingPlans] = usePlans();
     const plans = plansResult?.plans;
-    const [subscription, loadingSubscription] = useSubscription();
+    const [subscriptions, loadingSubscriptions] = useAllSubscriptions();
     const [organization, loadingOrganization] = useOrganization();
     const [addresses] = useAddresses();
 
     useLoad();
 
-    const loading = loadingSubscription || loadingOrganization || loadingPlans;
+    const loading = loadingSubscriptions || loadingOrganization || loadingPlans;
 
-    if (!subscription || !plans || loading) {
+    if (!subscriptions || !plans || loading) {
         return <Loader />;
     }
+
+    const soonestEndingSubscription = getSubscriptionWithEndsBanner(subscriptions);
 
     return (
         <>
             <DashboardGrid>
                 <DashboardGridSectionHeader title={c('Headline').t`Your plan`} cta={cta} />
-                <SubscriptionEndsBannerV2 app={app} subscription={subscription} />
+                <SubscriptionEndsBannerV2 app={app} subscription={soonestEndingSubscription ?? FREE_SUBSCRIPTION} />
                 <DashboardCard>
                     <DashboardCardContent>
-                        <CurrentPlanInfoSection
-                            app={app}
-                            user={user}
-                            subscription={subscription}
-                            organization={organization}
-                            addresses={addresses}
-                            editBillingCycle={editBillingCycle}
-                        />
+                        {subscriptions.length > 1 ? (
+                            <EverySubscriptionInfoSection
+                                app={app}
+                                user={user}
+                                subscriptions={subscriptions}
+                                organization={organization}
+                                addresses={addresses}
+                                editBillingCycle={editBillingCycle}
+                            />
+                        ) : (
+                            <CurrentPlanInfoSection
+                                app={app}
+                                user={user}
+                                subscription={subscriptions[0] ?? FREE_SUBSCRIPTION}
+                                organization={organization}
+                                addresses={addresses}
+                                editBillingCycle={editBillingCycle}
+                            />
+                        )}
                     </DashboardCardContent>
                 </DashboardCard>
                 <ReferralTrialInfoDashboardV2 />
