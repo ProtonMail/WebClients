@@ -1,12 +1,9 @@
 import NotificationButton from '@proton/components/containers/notifications/NotificationButton'
-import type { NotificationType } from '@proton/app-context/notifications/interfaces'
 import { c, msgid } from 'ttag'
-import type { ReactNode } from 'react'
 import type { ProtonDriveClient } from '@protontech/drive-sdk'
 import { trashDocument, restoreDocument, reportTrashError } from './trash'
 import { trashDocuments, restoreDocuments, type BatchResult } from './trashMany'
-
-type CreateNotification = ({ type, text }: { type: NotificationType; text: ReactNode }) => void
+import type { CreateNotification } from '../utils/notifications'
 
 export function handleRestoreError(createNotification: CreateNotification, error: any) {
   if (isRestorePermissionError(error)) {

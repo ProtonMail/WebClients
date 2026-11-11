@@ -1,9 +1,6 @@
-import type { NotificationsManager } from '@proton/app-context/notifications/manager'
-import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext'
 import { type DriveEvent, DriveEventType, type NodeEntity, type ProtonDriveClient } from '@protontech/drive-sdk'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE, PROTON_DOCS_SPREADSHEET_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
 import { act, renderHook } from '@testing-library/react'
-import type { ReactNode } from 'react'
 import { useTrashed } from './useTrashed'
 
 const doc = createNode('volume1~doc', 'Doc', PROTON_DOCS_DOCUMENT_MIMETYPE)
@@ -115,13 +112,7 @@ function renderTrashed() {
   const drive = { iterateTrashedNodes: jest.fn(), getNode: jest.fn() }
   const createNotification = jest.fn()
 
-  const { result } = renderHook(() => useTrashed(drive as unknown as ProtonDriveClient), {
-    wrapper: ({ children }: { children: ReactNode }) => (
-      <NotificationsContext.Provider value={{ createNotification } as unknown as NotificationsManager}>
-        {children}
-      </NotificationsContext.Provider>
-    ),
-  })
+  const { result } = renderHook(() => useTrashed(drive as unknown as ProtonDriveClient, createNotification))
 
   return { result, drive, createNotification }
 }

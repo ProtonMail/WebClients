@@ -1,5 +1,3 @@
-import type { NotificationsManager } from '@proton/app-context/notifications/manager'
-import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext'
 import type { RecentDocumentsItemValue } from './recentDocumentsItem'
 import {
   type DriveEvent,
@@ -10,7 +8,6 @@ import {
   NodeType,
 } from '@protontech/drive-sdk'
 import { act, cleanup, renderHook } from '@testing-library/react'
-import type { ReactNode } from 'react'
 import { ApiError } from '@proton/shared/lib/fetch/ApiError'
 import type { EventSubscriber } from './homepageViewUtils'
 import { useRecents } from './useRecents'
@@ -427,15 +424,8 @@ function renderRecents({ documents, nodes }: { documents: ApiDocument[]; nodes: 
     subscribeToSharedDocument: jest.fn(),
   }
 
-  const { result } = renderHook(
-    () => useRecents({ drive: drive as unknown as ProtonDriveClient, eventSubscriber, api, logger }),
-    {
-      wrapper: ({ children }: { children: ReactNode }) => (
-        <NotificationsContext.Provider value={{ createNotification } as unknown as NotificationsManager}>
-          {children}
-        </NotificationsContext.Provider>
-      ),
-    },
+  const { result } = renderHook(() =>
+    useRecents({ drive: drive as unknown as ProtonDriveClient, eventSubscriber, api, logger, createNotification }),
   )
 
   return { result, drive, api, createNotification, eventSubscriber }

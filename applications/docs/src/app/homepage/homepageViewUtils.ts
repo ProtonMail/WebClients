@@ -14,6 +14,7 @@ import { isMyDocument } from './is-my-document'
 import { getOwnerName } from './get-owner-name'
 import type { Api } from './docsApi/api'
 import type { Logger } from './utils/logger'
+import type { CreateNotification } from './utils/notifications'
 import type { ReportTelemetry } from './utils/telemetry'
 
 const ALLOWED_SORT_VALUES = [
@@ -59,6 +60,7 @@ export type HomepageViewProviderProps = {
   api: Api
   logger: Logger
   reportTelemetry: ReportTelemetry
+  createNotification: CreateNotification
 }
 
 function useQueryState<T extends string | undefined>(name: string, defaultValue: T, allowedValues?: readonly T[]) {

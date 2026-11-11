@@ -1,10 +1,11 @@
 import { createContext, useContext } from 'react'
 
 import type { RecentDocumentsItem } from './recentDocumentsItem'
-import type { ExtendedInvitationDetails } from '@proton/docs-shared/InvitationTypes'
+import type { ExtendedInvitationDetails } from './invitationTypes'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 
 import type { Logger } from './utils/logger'
+import type { CreateNotification } from './utils/notifications'
 import type { ReportTelemetry } from './utils/telemetry'
 
 export type RecentsSort = 'viewed' | 'name' | 'owner' | 'location'
@@ -55,6 +56,7 @@ export type HomepageViewValue = {
   useDocInvites: DocInvitesHook
   reportTelemetry: ReportTelemetry
   logger: Logger
+  createNotification: CreateNotification
 }
 
 export const HomepageViewContext = createContext<HomepageViewValue | undefined>(undefined)

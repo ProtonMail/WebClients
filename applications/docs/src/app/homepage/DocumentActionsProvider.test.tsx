@@ -1,5 +1,3 @@
-import type { NotificationsManager } from '@proton/app-context/notifications/manager'
-import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext'
 import AuthenticationContext from '@proton/components/containers/authentication/authenticationContext'
 import { deleteDocument, reportTrashError, restoreDocument, trashDocument } from './driveSdk/trash'
 import { RecentDocumentsItem } from './recentDocumentsItem'
@@ -56,19 +54,17 @@ function renderDocumentActions(moveItemsModalHook = useMockMoveItemsModal) {
   const { result } = renderHook(() => useContext(DocumentActionsContext)!, {
     wrapper: ({ children }: { children: ReactNode }) => (
       <AuthenticationContext.Provider value={{ getLocalID: () => undefined } as any}>
-        <NotificationsContext.Provider value={{ createNotification } as unknown as NotificationsManager}>
-          <HomepageViewContext.Provider
-            value={{ updateMovedDocuments, reportTelemetry } as unknown as HomepageViewValue}
+        <HomepageViewContext.Provider
+          value={{ updateMovedDocuments, reportTelemetry, createNotification } as unknown as HomepageViewValue}
+        >
+          <DocumentActionsProvider
+            drive={drive}
+            useSharingModal={useMockSharingModal}
+            useMoveItemsModal={moveItemsModalHook}
           >
-            <DocumentActionsProvider
-              drive={drive}
-              useSharingModal={useMockSharingModal}
-              useMoveItemsModal={moveItemsModalHook}
-            >
-              {children}
-            </DocumentActionsProvider>
-          </HomepageViewContext.Provider>
-        </NotificationsContext.Provider>
+            {children}
+          </DocumentActionsProvider>
+        </HomepageViewContext.Provider>
       </AuthenticationContext.Provider>
     ),
   })

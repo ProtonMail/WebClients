@@ -1,4 +1,3 @@
-import { useNotifications } from '@proton/app-context/useNotifications'
 import type { RecentDocumentsItemValue } from './recentDocumentsItem'
 import { type DriveEvent, type NodeEntity, type ProtonDriveClient, generateNodeUid } from '@protontech/drive-sdk'
 import { mimeTypeToProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
@@ -7,10 +6,9 @@ import { c } from 'ttag'
 import { nodeToTrashedDocumentItem } from './createDocumentItems'
 import { traceErrorSDK } from './driveSdk/traceErrorSDK'
 import type { SDKEventListener } from './homepageViewUtils'
+import type { CreateNotification } from './utils/notifications'
 
-export function useTrashed(drive: ProtonDriveClient) {
-  const { createNotification } = useNotifications()
-
+export function useTrashed(drive: ProtonDriveClient, createNotification: CreateNotification) {
   const [trashedDocumentItems, setTrashedDocumentItems] = useState<RecentDocumentsItemValue[]>([])
   const [isTrashLoading, setIsTrashLoading] = useState(false)
 

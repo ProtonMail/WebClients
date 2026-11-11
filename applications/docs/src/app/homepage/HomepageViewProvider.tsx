@@ -8,7 +8,6 @@ import type { NodeEntity } from '@protontech/drive-sdk'
 import { useContactEmails } from '@proton/account/contactEmails/hooks'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact'
-import { useNotifications } from '@proton/app-context/useNotifications'
 import { useAddresses } from '@proton/account/addresses/hooks'
 import type { Address } from '@proton/shared/lib/interfaces/Address'
 import { traceError } from '@proton/shared/lib/helpers/sentry'
@@ -47,9 +46,8 @@ export function HomepageViewProvider({
   api,
   logger,
   reportTelemetry,
+  createNotification,
 }: HomepageViewProviderProps) {
-  const { createNotification } = useNotifications()
-
   const [search, setSearch] = useSearch()
   const [recentsSort, setRecentsSort] = useRecentsSort()
   const [contactEmails] = useContactEmails()
@@ -66,8 +64,8 @@ export function HomepageViewProvider({
     removeDocument,
     recentsListener,
     updateMovedDocuments,
-  } = useRecents({ drive, eventSubscriber, api: guardedApi, logger })
-  const { fetchTrashed, trashedDocumentItems, isTrashLoading, trashedListener } = useTrashed(drive)
+  } = useRecents({ drive, eventSubscriber, api: guardedApi, logger, createNotification })
+  const { fetchTrashed, trashedDocumentItems, isTrashLoading, trashedListener } = useTrashed(drive, createNotification)
 
   const isTrashRoute = Boolean(useRouteMatch(HOMEPAGE_TRASH_PATH))
 
@@ -175,6 +173,7 @@ export function HomepageViewProvider({
       useDocInvites,
       reportTelemetry,
       logger,
+      createNotification,
     }),
     [
       state,
@@ -189,6 +188,7 @@ export function HomepageViewProvider({
       useDocInvites,
       reportTelemetry,
       logger,
+      createNotification,
     ],
   )
 

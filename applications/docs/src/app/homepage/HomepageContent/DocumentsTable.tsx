@@ -1,5 +1,4 @@
 import { useAddresses } from '@proton/account/addresses/hooks'
-import { useNotifications } from '@proton/app-context/useNotifications'
 import { Avatar } from '@proton/atoms/Avatar/Avatar'
 import { Button } from '@proton/atoms/Button/Button'
 import { Input } from '@proton/atoms/Input/Input'
@@ -511,8 +510,7 @@ function Row({ document, variant, addresses, selection, isSelectable, isTrashing
   const documentActions = useDocumentActions()
   const { location } = document
   const { displayName, avatarContent } = useNameAndAvatar(document, addresses)
-  const { updateRenamedDocumentInCache } = useHomepageView()
-  const { createNotification } = useNotifications()
+  const { updateRenamedDocumentInCache, createNotification } = useHomepageView()
 
   // Force re-render every REFRESH_DATE_INTERVAL milliseconds
   const [, setState] = useState(false)
