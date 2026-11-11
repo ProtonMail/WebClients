@@ -6568,6 +6568,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du har nådd grensen for antall bestillingsplasser (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Be administratoren din om å oppgradere planen eller fjerne en side fra sidefeltet for bestillingssider i ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "For å legge til en ny bestillingsside, fjern en besillingsside fra sidemenyen i ${ CALENDAR_APP_NAME }."
       ]
     },
     "info": {
@@ -13010,6 +13016,11 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Browser": {
+      "${ appName } Desktop application": [
+        "${ appName }-skrivebordsapplikasjon"
       ]
     }
   }

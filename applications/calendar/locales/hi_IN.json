@@ -1036,6 +1036,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "आपका डेस्कटॉप ऐप मुफ्त ट्रायल ${ formattedEndDate } को समाप्त होता है ${ upgradeButton }"
+      ],
+      "Add payment method": [
+        "भुगतान विधि जोड़ें"
+      ],
+      "Cancel trial": [
+        "ट्रायल रद्द करें"
       ]
     },
     "action": {
@@ -4093,6 +4099,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "आपका Zoom कनेक्शन समाप्त हो गया है। जारी रखने के लिए कृपया पुनः कनेक्ट करें।"
+      ],
+      "You reached the maximum number of connected addresses": [
+        "आप कनेक्ट किए गए पतों की अधिकतम संख्या तक पहुँच गए हैं"
       ]
     },
     "error": {
@@ -6525,6 +6534,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "आप बुकिंग स्लॉट की सीमा तक पहुँच चुके हैं (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "आपका निःशुल्क ट्रायल समाप्त हो गया है। अपनी टीम की एक्सेस बिना रुकावट जारी रखने और खातों को सुरक्षित रखने के लिए अभी सब्सक्राइब करें।"
       ]
     },
     "info": {
@@ -9176,6 +9188,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "आपकी पूर्ण ${ planTitle } सदस्यता ${ boldEndDate } को शुरू होगी।"
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**ट्रायल के बाद मन बदल गया?** अपने पहले भुगतान के 30 दिनों के भीतर रद्द करें और हम बिना इस्तेमाल किए गए समय का रिफंड कर देंगे।"
       ]
     },
     "Option": {
@@ -9590,6 +9605,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "आपकी सदस्यता पर वर्तमान में एक मौजूदा छूट है। इस नए प्रमोशन पर जाने का मतलब है कि मौजूदा छूट अब लागू नहीं की जाएगी।"
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "निम्नलिखित कारणों से प्लान बदलना संभव नहीं है:"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Proton Meet की सीटें सदस्यों की संख्या के बराबर होनी चाहिए।"
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "यह प्लान आपके खाते पर प्रबंधित सुविधाओं का समर्थन नहीं करता है।"
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "यह सदस्यता अभी पूरी नहीं हो सकती। कृपया पुनः प्रयास करें।"
       ]
     },
     "Payments.Error": {
@@ -12253,6 +12280,9 @@
       ],
       "Your shorter address is now ready": [
         "आपका छोटा पता अब तैयार है"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "${ planTitle } की सदस्यता लें"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12912,6 +12942,11 @@
       ],
       "Passcode:": [
         "पासकोड:"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "पुष्टि करके, ${ BRAND_NAME } और Stripe, हमारे भुगतान सेवा प्रदाता, को आपकी सदस्यता के लिए भविष्य के पेमेंट SEPA Direct Debit के ज़रिए इस बैंक खाते से लेने की और आपके बैंक को वो पेमेंट काटने की अनुमति दी जाती है। आपका पहला पेमेंट अभी ${ IDEAL_WERO_BRAND_NAME } के ज़रिए होगा। आपका प्लान ऑटो-रीन्यू होता रहेगा, जब तक आप रद्द न करें; हर कलेक्शन से पहले हम आपको सूचित करेंगे। डायरेक्ट डेबिट कलेक्शन के लिए, अपने बैंक से किए गए समझौते की शर्तों के तहत डेबिट की तारीख़ से 8 हफ़्तों के भीतर बैंक से रिफ़ंड मांगा जा सकता है। ये अभी किए जा रहे ${ IDEAL_WERO_BRAND_NAME } पेमेंट पर लागू नहीं होता।"
       ]
     }
   }

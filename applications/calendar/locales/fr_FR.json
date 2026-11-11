@@ -3818,7 +3818,7 @@
         "Aucun contact n'a été trouvé pour l'importation."
       ],
       "No drive found to import": [
-        "Aucun disque à importer détecté"
+        "Aucun disque à importer n'a été détecté."
       ],
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
@@ -4062,7 +4062,7 @@
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
       ],
       "Unexpected error, we can't import the files": [
-        "Une erreur inattendue est survenue, les fichiers n'ont pas pu être importés"
+        "Une erreur inattendue est survenue, les fichiers ne peuvent être importés"
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -6564,6 +6564,15 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Vous avez atteint la limite de créneaux de réservation (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Demandez à votre admin de changer d'abonnement ou retirez une page de réservation dans le panneau latéral de ${ CALENDAR_APP_NAME }."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Pour ajouter une nouvelle page de réservation, retirez-en une du panneau latéral de ${ CALENDAR_APP_NAME }."
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Vous avez une facture à régler au ${ dueDate } ${ payInvoiceLink }"
       ]
     },
     "info": {
@@ -7501,6 +7510,9 @@
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
+      ],
+      "Pay it": [
+        "Payer avec"
       ]
     },
     "Link label (optional)": {
@@ -9657,6 +9669,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
+      ],
+      "Plan switch is incompatible for the following reasons:": [
+        "Le changement de plan est incompatible pour les raisons suivantes :"
+      ],
+      "Proton Meet seats must match the number of members.": [
+        "Le nombre de places Proton Meet doit correspondre au nombre de membres."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "La souscription ne peut aboutir pour le moment. Merci de réessayer ultérieurement."
       ]
     },
     "Payments.Error": {
@@ -11588,7 +11609,7 @@
         "La fonction ${ feature } est maintenant active."
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
+        "Assistant d'aide à la rédaction ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account recovery": [
         "Récupération du compte"

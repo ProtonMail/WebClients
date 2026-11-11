@@ -941,6 +941,9 @@
       ],
       "Verify now": [
         "Ellenőrizze most"
+      ],
+      "Special Offer": [
+        "Akciós ajánlat"
       ]
     },
     "action": {
@@ -1680,6 +1683,9 @@
       "Total for ${ cycle } month": [
         "Összesen, ${ cycle } hónapra",
         "Összesen, ${ cycle } hónapra"
+      ],
+      "Amount due now": [
+        "Az esedékes összeg"
       ]
     },
     "Collapsible tooltip": {
@@ -3170,6 +3176,9 @@
     "Duration": {
       "60 minutes": [
         "60 perc"
+      ],
+      "15 minutes": [
+        "15 perc"
       ]
     },
     "Edit billing address form note": {
@@ -3779,6 +3788,18 @@
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
+      ],
+      "Failed to update settings": [
+        "Nem sikerült frissíteni a beállításokat"
+      ],
+      "No drive found to import": [
+        "Nem található meghajtó az importáláshoz"
+      ],
+      "Unexpected error, we can't import the files": [
+        "Váratlan hiba, nem tudjuk importálni a fájlokat"
+      ],
+      "You cannot enter the organizer's email": [
+        "Nem tudja megadni a szervező e-mail címét"
       ]
     },
     "error": {
@@ -4186,6 +4207,9 @@
     "fido2: Info": {
       "Security key": [
         "Hitelesítési kulcs"
+      ],
+      "Still waiting?": [
+        "Még mindíg várakozik?"
       ]
     },
     "fido2: Label": {
@@ -5914,6 +5938,30 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Továbbra is megtekintheti saját fiókadatait, de az összes felhasználói fiók eltávolításra kerül a szervezetéből."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenc"
+      ],
+      "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
+        "**${ refereeRewardAmount }-t kapnak** kreditként, ha előfizetnek."
+      ],
+      "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } hozzáadása"
+      ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Kérje meg a rendszergazdát a csomag frissítésére vagy az oldal eltávolítását a Foglalási oldalak oldalsávon a ${ CALENDAR_APP_NAME }."
+      ],
+      "How far in advance can someone book?": [
+        "Mennyivel korábban tud valaki időpontot foglalni?"
+      ],
+      "Min. 2 hours before": [
+        "Min. 2 órával előtte"
+      ],
+      "Not on the same day": [
+        "Nem ugyanazon a napon"
+      ],
+      "Other location": [
+        "Másik helyszín"
       ]
     },
     "info": {
@@ -6581,6 +6629,9 @@
       ],
       "Zoom meeting": [
         "Zoom találkozó"
+      ],
+      "Drive": [
+        "Drive"
       ]
     },
     "Label for contact group color": {
@@ -7565,6 +7616,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Átvizsgáljuk a sötét webet, hogy ellenőrizzük, kiszivárogtak-e a ${ BRAND_NAME } címei vagy e-mail álnevei, és azonnal értesítjük, ha bármit találunk."
+      ],
+      "Data retention policies": [
+        "Adatmegőrzési házirendek"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN, hirdetésblokkolóval és rosszindulatú programok elleni védelemmel"
       ]
     },
     "new_plans: feature highlight": {
@@ -8297,6 +8354,12 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Az Ön teljes ${ planTitle } előfizetése ekkor kezdődik: ${ boldEndDate }."
+      ],
+      "**Add a payment method** to keep using all of the features after your trial ends.": [
+        "**Adjon meg egy fizetési módot**, hogy a próbaidőszak után is használhassa az összes funkciót."
+      ],
+      "you can cancel within 30 days and get a pro-rata refund.": [
+        "30 napon belül lemondhatja, és időarányos visszatérítést kap."
       ]
     },
     "Option": {
@@ -8619,6 +8682,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Az Ön előfizetése jelenleg kedvezménnyel rendelkezik. Az új promócióra való áttérés esetén, a meglévő kedvezmény a továbbiakban nem kerül alkalmazásra."
+      ],
+      "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
+        "Csak egy ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } vásárolható."
+      ],
+      "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
+        "Fizetés ${ IDEAL_WERO_BRAND_NAME }val"
       ]
     },
     "Payments.Error": {
@@ -11041,6 +11110,9 @@
       ],
       "Your shorter address is now ready": [
         "A rövidebb címe elkészült"
+      ],
+      "${ LUMO_SHORT_APP_NAME } writing assistant": [
+        "${ LUMO_SHORT_APP_NAME } író segéd"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11662,6 +11734,21 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "Keyboard shortcut name, switch to Calendar": {
+      "Switch to ${ CALENDAR_APP_NAME }": [
+        "${ CALENDAR_APP_NAME } megnyitása"
+      ]
+    },
+    "ngc_access_banner: info": {
+      "You now have access to the new ${ CALENDAR_APP_NAME }. ${ link }": [
+        "Most már használhatja az új ${ CALENDAR_APP_NAME }-t. ${ link }"
+      ]
+    },
+    "user_modal": {
+      "Upgrade to a supported plan to use admin roles.": [
+        "Adminisztrátor szerepkörök használatához váltson egy erre alkalmas csomagra."
       ]
     }
   }
