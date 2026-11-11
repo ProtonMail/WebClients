@@ -11,6 +11,8 @@ describe('handleFileMenuAction', () => {
     moveToFolder: jest.fn(),
     moveToTrash: jest.fn(),
     openProtonDrive: jest.fn(),
+    print: jest.fn(),
+    download: jest.fn(),
   } satisfies FileMenuHandlers
   const logger = { debug: jest.fn() } as unknown as Parameters<typeof handleFileMenuAction>[2]
 
@@ -24,6 +26,7 @@ describe('handleFileMenuAction', () => {
     [{ type: 'move-to-folder' }, 'moveToFolder'],
     [{ type: 'move-to-trash' }, 'moveToTrash'],
     [{ type: 'open-proton-drive' }, 'openProtonDrive'],
+    [{ type: 'print' }, 'print'],
   ])('$type runs %s alone', (action, handler) => {
     handleFileMenuAction(action, handlers, logger)
 
@@ -35,11 +38,20 @@ describe('handleFileMenuAction', () => {
     }
   })
 
+  test.each(['docx', 'md'] as const)('download in %s downloads that format alone', (format) => {
+    handleFileMenuAction({ type: 'download', format }, handlers, logger)
+
+    expect(handlers.download).toHaveBeenCalledWith(format)
+    for (const [name, other] of Object.entries(handlers)) {
+      if (name !== 'download') {
+        expect(other).not.toHaveBeenCalled()
+      }
+    }
+  })
+
   test.each<FileMenuAction>([
     { type: 'make-a-copy' },
     { type: 'see-version-history' },
-    { type: 'print' },
-    { type: 'download', format: 'docx' },
     { type: 'import' },
     { type: 'view-recent-spreadsheets' },
   ])('$type, a stub or sheets only, does nothing', (action) => {

@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react'
 
 import { useConfig } from '@proton/app-context/useConfig'
+import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { EditorSystemMode } from '@proton/docs-shared/EditorSystemMode'
 import { useGenericAlertModal } from '@proton/docs-shared/components/GenericAlert'
 import type { FileMenuAction } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
+import type { DataTypesThatDocumentCanBeExportedAs } from '@proton/docs-shared/ExportableDataType'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import { useGetFlag } from '@proton/unleash/useGetFlag'
 import type { PrivateNodeMeta } from '@proton-docs/realtime-sdk'
@@ -17,6 +19,9 @@ import { ClientEditorBridge } from '../__utils/ClientEditorBridge'
 import { isParticipantLimitReached } from '../__utils/activeUsers'
 import type { EditorInvoker } from '../__utils/EditorInvoker'
 import { createClientHandler } from '../__utils/createClientHandler'
+import { exportAndDownload } from '../__utils/downloadExport'
+import { fetchExternalImageAsBase64 } from '../__utils/fetchExternalImageAsBase64'
+import { getNodeName } from '../__utils/getNodeName'
 import { handleFileMenuAction, openHelp } from '../__utils/handleFileMenuAction'
 import { sendBaseState, showDocument } from '../__utils/showDocument'
 import { useDocumentFileActions } from '../__utils/useDocumentFileActions'
@@ -50,17 +55,29 @@ export type DocumentViewerV2Props = {
   driveCompat: DriveCompat
   /** Opens the document again from the start */
   onRetry: () => void
+  /** Drive's Download: saves the document as docx once the editor shows it, then calls `onDownloadedOnOpen` */
+  downloadOnOpen?: boolean
+  onDownloadedOnOpen?: () => void
 }
 
 /** Opens the text document `nodeMeta` for live editing, as far as the user's role allows. */
-export function DocumentViewerV2({ nodeMeta, driveCompat, onRetry }: DocumentViewerV2Props) {
+export function DocumentViewerV2({
+  nodeMeta,
+  driveCompat,
+  onRetry,
+  downloadOnOpen,
+  onDownloadedOnOpen,
+}: DocumentViewerV2Props) {
   const { logger } = useApplication()
-  const { APP_VERSION } = useConfig()
+  const { APP_VERSION, API_URL } = useConfig()
+  const { UID } = useAuthentication()
   const isFlagEnabled = useGetFlag()
   const sessionState = useDocumentSession(useRealtimeClient(), nodeMeta)
   const [editorFrame, setEditorFrame] = useState<HTMLIFrameElement | null>(null)
   const [editorStatus, setEditorStatus] = useState<'loading' | 'shown' | 'failed'>('loading')
   const [editorInvoker, setEditorInvoker] = useState<EditorInvoker>()
+  // Kept across bridges: the editor in the frame stays rendered
+  const [isEditorRendered, setIsEditorRendered] = useState(false)
 
   const [wordCount, setWordCountInfo] = useWordCountState()
   const [modal, showModal] = useGenericAlertModal()
@@ -106,9 +123,24 @@ export function DocumentViewerV2({ nodeMeta, driveCompat, onRetry }: DocumentVie
       leaveTrash()
     }
   }, [fileActions.trashState, inTrash, leaveTrash])
+  // Only once the editor shows the document does it hold the edits RTS replayed, and it can export only once its Lexical
+  // editor exists, which can come after it shows
+  const exportInvoker = editorStatus === 'shown' && isEditorRendered ? editorInvoker : undefined
+  const print = () => {
+    exportInvoker?.printAsPDF().catch((error) => logger.warn('Failed to print the document', error))
+  }
+  const download = (format: DataTypesThatDocumentCanBeExportedAs) => {
+    const name = node && getNodeName(node)
+    if (!exportInvoker || !name) {
+      return
+    }
+    exportAndDownload(exportInvoker, name, format).catch((error) =>
+      logger.error('Failed to download the document', error),
+    )
+  }
   // Stable, since the editor bridge is built with it: it runs the latest actions, for the latest node and role
   const onFileMenuAction = useEvent((action: FileMenuAction) =>
-    handleFileMenuAction(action, { ...fileActions, openHelp, toggleDebugMode }, logger),
+    handleFileMenuAction(action, { ...fileActions, openHelp, toggleDebugMode, print, download }, logger),
   )
 
   // Read here too, since useLiveEditing takes the participant limit and only then returns the snapshot
@@ -176,9 +208,11 @@ export function DocumentViewerV2({ nodeMeta, driveCompat, onRetry }: DocumentVie
         isFlagEnabled,
         onEditorError,
         onWordCount: setWordCountInfo,
+        onEditorRendered: () => setIsEditorRendered(true),
         showModal,
         onFileMenuAction,
         onPresenceUpdate: receivePresenceFromEditor,
+        fetchExternalImageAsBase64: (url) => fetchExternalImageAsBase64(url, { apiUrl: API_URL, uid: UID }),
         logger,
       }),
       logger,
@@ -196,6 +230,8 @@ export function DocumentViewerV2({ nodeMeta, driveCompat, onRetry }: DocumentVie
       setEditorInvoker(undefined)
     }
   }, [
+    API_URL,
+    UID,
     editorFrame,
     failEditor,
     isFlagEnabled,
@@ -236,6 +272,13 @@ export function DocumentViewerV2({ nodeMeta, driveCompat, onRetry }: DocumentVie
     }
   }, [APP_VERSION, caughtUp, editorInvoker, failEditor, logger, session])
 
+  useEffect(() => {
+    if (downloadOnOpen && exportInvoker && node) {
+      onDownloadedOnOpen?.()
+      onFileMenuAction({ type: 'download', format: 'docx' })
+    }
+  }, [downloadOnOpen, exportInvoker, node, onDownloadedOnOpen, onFileMenuAction])
+
   // A failed editor is gone, so peers must stop seeing its last cursor, which the session would keep broadcasting
   const editorFailed = editorStatus === 'failed'
   useEffect(() => {
@@ -262,6 +305,7 @@ export function DocumentViewerV2({ nodeMeta, driveCompat, onRetry }: DocumentVie
       role={role}
       participants={participants ?? []}
       editorInvoker={editorInvoker}
+      exportInvoker={exportInvoker}
       wordCount={wordCount}
       trashState={fileActions.trashState}
       isCreatingSpreadsheet={fileActions.isCreatingSpreadsheet}
@@ -295,7 +339,10 @@ export function DocumentViewerV2({ nodeMeta, driveCompat, onRetry }: DocumentVie
         )}
         {modal}
         {fileActions.modals}
-        <DocumentSizeLimitModal session={session} />
+        <DocumentSizeLimitModal
+          session={session}
+          onDownloadCopy={exportInvoker && (() => onFileMenuAction({ type: 'download', format: 'docx' }))}
+        />
       </div>
     </DocumentShell>
   )

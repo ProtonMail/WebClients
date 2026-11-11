@@ -20,7 +20,7 @@ export type DocumentPageV2Props = { driveCompat: DriveCompat }
 
 export default function DocumentPageV2({ driveCompat }: DocumentPageV2Props) {
   const application = useApplication()
-  const { navigateToAction } = useDocsUrlBar()
+  const { navigateToAction, updateParameters } = useDocsUrlBar()
   // A retry remounts the creator or viewer, which restarts everything it runs
   const [attempt, setAttempt] = useState(0)
   const retry = () => setAttempt((attempt) => attempt + 1)
@@ -44,6 +44,16 @@ export default function DocumentPageV2({ driveCompat }: DocumentPageV2Props) {
     }
   }, [navigateToAction, openAction, resolution.kind])
 
+  // Here, not in the viewer, which a retry remounts: once downloaded, a retry doesn't download it again
+  const [downloadedOnOpen, setDownloadedOnOpen] = useState<string>()
+  // As /doc does: the address bar opens the document from now on, so a reload doesn't download it again
+  const downloadOnOpen = resolution.kind === 'open' && resolution.downloadOnOpen === true
+  useEffect(() => {
+    if (downloadOnOpen && openAction?.mode === 'download') {
+      updateParameters({ newVolumeId: openAction.volumeId, newLinkId: openAction.linkId })
+    }
+  }, [downloadOnOpen, openAction, updateParameters])
+
   return <DebugModeProvider>{renderResolution()}</DebugModeProvider>
 
   function renderResolution() {
@@ -54,12 +64,15 @@ export default function DocumentPageV2({ driveCompat }: DocumentPageV2Props) {
         return <DocumentCreator key={attempt} parent={resolution.parent} driveCompat={driveCompat} onRetry={retry} />
       case 'open': {
         const { volumeId, linkId } = resolution.nodeMeta
+        const documentKey = `${volumeId}/${linkId}`
         return (
           <DocumentViewerV2
-            key={`${volumeId}/${linkId}/${attempt}`}
+            key={`${documentKey}/${attempt}`}
             nodeMeta={resolution.nodeMeta}
             driveCompat={driveCompat}
             onRetry={retry}
+            downloadOnOpen={resolution.downloadOnOpen && downloadedOnOpen !== documentKey}
+            onDownloadedOnOpen={() => setDownloadedOnOpen(documentKey)}
           />
         )
       }

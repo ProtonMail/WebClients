@@ -19,10 +19,13 @@ export type ClientHandlerDependencies = {
   isFlagEnabled: (flag: FeatureFlag) => boolean
   onEditorError: (error: Error) => void
   onWordCount: (wordCount: WordCountInfoCollection) => void
+  /** The editor reported its height, which it does only once its Lexical editor exists */
+  onEditorRendered: () => void
   showModal: (props: { title: string; translatedMessage: string }) => void
   onFileMenuAction: (action: FileMenuAction) => void
   /** Where the editor's awareness broadcasts go */
   onPresenceUpdate: (update: Uint8Array<ArrayBuffer>) => void
+  fetchExternalImageAsBase64: (url: string) => Promise<string | undefined>
   logger: LoggerInterface
 }
 
@@ -37,9 +40,11 @@ export function createClientHandler({
   isFlagEnabled,
   onEditorError,
   onWordCount,
+  onEditorRendered,
   showModal,
   onFileMenuAction,
   onPresenceUpdate,
+  fetchExternalImageAsBase64,
   logger,
 }: ClientHandlerDependencies): ClientHandler {
   return {
@@ -68,6 +73,7 @@ export function createClientHandler({
     reportWordCount: async (wordCount) => onWordCount(wordCount),
     updateFrameSize: (size) => {
       editorFrame.style.setProperty('--print-min-height', `${size}px`)
+      onEditorRendered()
     },
     showGenericAlertModal: (message) =>
       showModal({ title: c('Title').t`Something went wrong`, translatedMessage: message }),
@@ -102,7 +108,7 @@ export function createClientHandler({
     replaceDocumentUrl: async (url) => window.history.replaceState(null, '', url),
     reloadClient: async () => window.location.reload(),
     getAppPlatform: async () => (isRunningInNativeMobileWeb() ? 'nativeMobileWeb' : 'web'),
-    fetchExternalImageAsBase64: async () => undefined,
+    fetchExternalImageAsBase64,
     handleFileMenuAction: async (action) => onFileMenuAction(action),
 
     // Sheets only, and doc2 opens text documents only

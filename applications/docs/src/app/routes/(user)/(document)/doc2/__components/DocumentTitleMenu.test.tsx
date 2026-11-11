@@ -1,4 +1,4 @@
-import { act, fireEvent, render, renderHook, screen, waitFor, within } from '@testing-library/react'
+import { act, createEvent, fireEvent, render, renderHook, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
 import { ConfigContext } from '@proton/app-context/configContext'
@@ -13,9 +13,16 @@ import { useWordCountState } from './WordCount'
 
 let mockIsSheetsEnabled = true
 let mockIsDownloadLogsAllowed = true
+let mockIsODTEnabled = true
 jest.mock('~/utils/flags', () => ({
   useIsSheetsEnabled: () => mockIsSheetsEnabled,
   useIsDownloadLogsAllowed: () => mockIsDownloadLogsAllowed,
+  useIsODTEnabled: () => mockIsODTEnabled,
+}))
+const mockTextToClipboard = jest.fn()
+jest.mock('@proton/shared/lib/helpers/browser', () => ({
+  ...jest.requireActual('@proton/shared/lib/helpers/browser'),
+  textToClipboard: (text: string) => mockTextToClipboard(text),
 }))
 let mockIsWordCountSupported = true
 jest.mock('@proton/docs-shared/WordCount/isWordCountSupported', () => ({
@@ -44,9 +51,6 @@ const TOOLTIP_OPEN_DELAY_MS = 1000
 const STUB_ITEMS: [string, string][] = [
   ['Make a copy', 'T13'],
   ['See version history', 'version history'],
-  ['Print', 'T7'],
-  ['Download', 'T7'],
-  ['Copy as markdown', 'T7'],
 ]
 
 const FILE_ACTION_ITEMS: [string, FileMenuAction][] = [
@@ -61,6 +65,7 @@ describe('DocumentTitleMenu', () => {
   beforeEach(() => {
     mockIsSheetsEnabled = true
     mockIsDownloadLogsAllowed = true
+    mockIsODTEnabled = true
     mockIsWordCountSupported = true
     jest.mocked(getDrive).mockReturnValue({ getAvailableName, renameNode } as unknown as ReturnType<typeof getDrive>)
     getAvailableName.mockImplementation(async (_parentUid: string, name: string) => name)
@@ -236,6 +241,118 @@ describe('DocumentTitleMenu', () => {
     await userEvent.click(menuItem('Toggle debug mode'))
 
     expect(onFileMenuAction).toHaveBeenCalledWith({ type: 'toggle-debug-mode' })
+  })
+
+  describe('print, download and copy as markdown', () => {
+    const exportInvoker = { getCurrentSelection: jest.fn(async (): Promise<string | null> => '# Plans') }
+
+    test('are disabled until the editor shows the document', async () => {
+      const { onFileMenuAction } = await openMenu('Viewer', { exportInvoker: undefined })
+
+      for (const testId of ['dropdown-print', 'dropdown-download', 'dropdown-copy-as-md']) {
+        expect(screen.getByTestId(testId)).toBeDisabled()
+        await userEvent.click(screen.getByTestId(testId))
+      }
+      expect(onFileMenuAction).not.toHaveBeenCalled()
+      expect(exportInvoker.getCurrentSelection).not.toHaveBeenCalled()
+    })
+
+    test('Print runs the print action, for a Viewer too', async () => {
+      const { onFileMenuAction } = await openMenu('Viewer', { exportInvoker })
+
+      await userEvent.click(menuItem('Print'))
+
+      expect(onFileMenuAction).toHaveBeenCalledWith({ type: 'print' })
+    })
+
+    test("Download offers /doc's docs formats, each running the download action", async () => {
+      const { onFileMenuAction } = await openMenu('Viewer', { exportInvoker })
+
+      await userEvent.click(menuItem('Download'))
+
+      expect(downloadFormats()).toEqual([
+        'Microsoft Word (.docx)',
+        'OpenDocument Text (.odt) (Beta)',
+        'Web page (.html)',
+        'Plain Text (.txt)',
+        'Markdown (.md)',
+        'PDF (.pdf)',
+      ])
+      for (const format of ['docx', 'odt', 'html', 'txt', 'md'] as const) {
+        await userEvent.click(screen.getByTestId(`download-${format}`))
+        expect(onFileMenuAction).toHaveBeenLastCalledWith({ type: 'download', format })
+        await userEvent.click(screen.getByTestId('document-name-dropdown'))
+        await userEvent.click(menuItem('Download'))
+      }
+      expect(onFileMenuAction).toHaveBeenCalledTimes(5)
+    })
+
+    test('Download as odt needs the DocsODTEnabled flag', async () => {
+      mockIsODTEnabled = false
+      await openMenu('Viewer', { exportInvoker })
+
+      await userEvent.click(menuItem('Download'))
+
+      expect(downloadFormats()).not.toContain('OpenDocument Text (.odt) (Beta)')
+    })
+
+    test('Download as PDF explains the print dialog, and prints once that is closed', async () => {
+      const { onFileMenuAction } = await openMenu('Viewer', { exportInvoker })
+      await userEvent.click(menuItem('Download'))
+
+      await userEvent.click(screen.getByTestId('download-pdf'))
+      const modal = await screen.findByTestId('print-pdf-modal')
+      expect(modal).toHaveTextContent('Save Document as PDF')
+      expect(onFileMenuAction).not.toHaveBeenCalled()
+
+      await userEvent.click(within(modal).getByRole('button', { name: 'Got it', hidden: true }))
+      // jsdom plays no animation and its events carry no animationName: end the modal's exit by hand
+      const modalRoot = document.querySelector('.modal-two--out')!
+      const exitAnimationEnd = createEvent.animationEnd(modalRoot)
+      Object.defineProperty(exitAnimationEnd, 'animationName', { value: 'anime-modal-two-out' })
+      fireEvent(modalRoot, exitAnimationEnd)
+
+      await waitFor(() => expect(onFileMenuAction).toHaveBeenCalledWith({ type: 'print' }))
+      expect(onFileMenuAction).toHaveBeenCalledTimes(1)
+    })
+
+    test('Copy as markdown copies what the editor gives for the selection, or the document, and says so', async () => {
+      await openMenu('Viewer', { exportInvoker })
+
+      await userEvent.click(menuItem('Copy as markdown'))
+
+      expect(exportInvoker.getCurrentSelection).toHaveBeenCalledWith('md')
+      await waitFor(() => expect(mockTextToClipboard).toHaveBeenCalledWith('# Plans'))
+      expect(mockCreateNotification).toHaveBeenCalledWith({ type: 'success', text: 'Copied to clipboard' })
+    })
+
+    test('Copy as markdown copies nothing when the editor gives nothing', async () => {
+      exportInvoker.getCurrentSelection.mockResolvedValueOnce(null)
+      await openMenu('Viewer', { exportInvoker })
+
+      await userEvent.click(menuItem('Copy as markdown'))
+
+      await waitFor(() => expect(exportInvoker.getCurrentSelection).toHaveBeenCalled())
+      expect(mockTextToClipboard).not.toHaveBeenCalled()
+      expect(mockCreateNotification).not.toHaveBeenCalled()
+    })
+
+    test('Copy as markdown that fails copies nothing, and logs why', async () => {
+      const error = new Error('Editor did not answer getCurrentSelection')
+      exportInvoker.getCurrentSelection.mockRejectedValueOnce(error)
+      await openMenu('Viewer', { exportInvoker })
+
+      await userEvent.click(menuItem('Copy as markdown'))
+
+      await waitFor(() =>
+        expect(application.logger.error).toHaveBeenCalledWith('Failed to copy the document as Markdown', error),
+      )
+      expect(mockTextToClipboard).not.toHaveBeenCalled()
+    })
+
+    function downloadFormats() {
+      return screen.getAllByTestId(/^download-/).map((item) => item.textContent?.trim())
+    }
   })
 
   test('shows the table of contents once the editor is there, and the menu hides and shows it', async () => {
@@ -481,6 +598,7 @@ function menuElement(role: DocumentRole, overrides: MenuOverrides = {}) {
           node={NODE}
           role={role}
           editorInvoker={undefined}
+          exportInvoker={undefined}
           wordCount={{ isShown: false, setIsShown: jest.fn() }}
           trashState="not_trashed"
           isCreatingSpreadsheet={false}

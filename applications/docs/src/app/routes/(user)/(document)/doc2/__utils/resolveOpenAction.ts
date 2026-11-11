@@ -1,7 +1,8 @@
 import type { DocumentAction } from '@proton/docs-shared/DocumentAction'
 
 export type OpenResolution =
-  | { kind: 'open'; nodeMeta: { volumeId: string; linkId: string } }
+  /** `downloadOnOpen`: Drive's Download, which saves the document as docx once it is open */
+  | { kind: 'open'; nodeMeta: { volumeId: string; linkId: string }; downloadOnOpen?: true }
   | { kind: 'create'; parent?: { volumeId: string; linkId: string } }
   | { kind: 'redirect'; to: 'public' }
   | { kind: 'error'; reason: 'invalidUrl' | 'slackTruncated' | 'unsupported' }
@@ -19,15 +20,22 @@ export function resolveOpenAction(openAction: DocumentAction | null, search: str
   switch (openAction.mode) {
     case 'open':
       return { kind: 'open', nodeMeta: { volumeId: openAction.volumeId, linkId: openAction.linkId } }
+    case 'download':
+      return {
+        kind: 'open',
+        nodeMeta: { volumeId: openAction.volumeId, linkId: openAction.linkId },
+        downloadOnOpen: true,
+      }
     case 'create':
       return { kind: 'create', parent: { volumeId: openAction.volumeId, linkId: openAction.parentLinkId } }
     case 'new':
       return { kind: 'create' }
     case 'open-url-reauth':
       return { kind: 'redirect', to: 'public' }
+    // Not in doc2 yet: conversion, version history, and the public links, the download one too, which need a public
+    // session
     case 'convert':
     case 'history':
-    case 'download':
     case 'copy-public':
     case 'open-url':
     case 'open-url-download':

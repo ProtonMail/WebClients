@@ -27,6 +27,7 @@ import { DocumentViewerV2 } from './DocumentViewerV2'
 let mockSessionState: DocumentSessionState = { status: 'loading' }
 jest.mock('../__utils/useDocumentSession', () => ({ useDocumentSession: () => mockSessionState }))
 jest.mock('../__utils/useRealtimeClient', () => ({ useRealtimeClient: () => ({}) }))
+jest.mock('@proton/components/hooks/useAuthentication', () => () => ({ UID: 'session-uid' }))
 const mockIsFlagEnabled = () => false
 jest.mock('@proton/unleash/useGetFlag', () => ({ useGetFlag: () => mockIsFlagEnabled }))
 jest.mock('@proton/app-context/useNotifications', () => ({
@@ -76,18 +77,30 @@ jest.mock('./DocumentHeaderV2', () => ({
     node,
     role,
     editorInvoker,
+    exportInvoker,
     status,
   }: {
     node: { uid: string }
     role: string
     editorInvoker?: object
+    exportInvoker?: object
     status?: ReactNode
   }) => (
     <div>
       {`Header for ${node.uid} as ${role}, ${editorInvoker ? 'with' : 'without'} the editor`}
+      <span data-testid="header-exports">{exportInvoker ? 'exports enabled' : 'exports disabled'}</span>
       {status}
     </div>
   ),
+}))
+// Each has its own tests; here, what the viewer asks of them
+const mockExportAndDownload = jest.fn(async (..._args: unknown[]) => {})
+jest.mock('../__utils/downloadExport', () => ({
+  exportAndDownload: (...args: unknown[]) => mockExportAndDownload(...args),
+}))
+const mockFetchExternalImageAsBase64 = jest.fn(async (..._args: unknown[]) => 'data:image/png;base64,iVBORw0K')
+jest.mock('../__utils/fetchExternalImageAsBase64', () => ({
+  fetchExternalImageAsBase64: (...args: unknown[]) => mockFetchExternalImageAsBase64(...args),
 }))
 
 // It has its own tests; here, that debug mode gates it and what the viewer gives it
@@ -121,6 +134,7 @@ const mockEditorCalls: string[] = []
 const mockChangeLockedState = jest.fn(async (_locked: boolean) => {})
 const mockDestroyBridge = jest.fn()
 const mockLoadUserSettings = jest.fn(async () => {})
+const mockPrintAsPDF = jest.fn(async () => {})
 const EDITOR_CLIENT_ID = 7
 const mockReceiveMessage = jest.fn(async ({ content }: RtsMessagePayload) => {
   mockEditorCalls.push(`receiveMessage:${content[0]}`)
@@ -149,6 +163,7 @@ jest.mock('../__utils/ClientEditorBridge', () => ({
         broadcastPresenceState: jest.fn(async () => {
           mockEditorCalls.push('broadcastPresenceState')
         }),
+        printAsPDF: mockPrintAsPDF,
       },
       destroy: mockDestroyBridge,
     }
@@ -199,13 +214,21 @@ function renderViewer(
     role = 'Viewer',
     onRetry = jest.fn(),
     state,
-  }: { role?: DocumentRole; onRetry?: () => void; state?: DocumentSessionState } = {},
+    downloadOnOpen,
+    onDownloadedOnOpen,
+  }: {
+    role?: DocumentRole
+    onRetry?: () => void
+    state?: DocumentSessionState
+    downloadOnOpen?: boolean
+    onDownloadedOnOpen?: () => void
+  } = {},
 ) {
   mockSessionState = state ?? {
     status: 'ready',
     session: fake.session,
     role,
-    node: { uid: 'VOLUME~LINK' } as NodeEntity,
+    node: { uid: 'VOLUME~LINK', name: 'Plans' } as unknown as NodeEntity,
     roleReads: 1,
   }
   const application = {
@@ -214,13 +237,17 @@ function renderViewer(
   const viewer = () => (
     <MemoryRouter>
       <CompatRouter>
-        <ConfigContext.Provider value={{ APP_VERSION: '0.0.0' } as ProtonConfig}>
+        <ConfigContext.Provider
+          value={{ APP_VERSION: '0.0.0', API_URL: 'https://docs.proton.dev/api' } as ProtonConfig}
+        >
           <ApplicationProvider application={application}>
             <DebugModeProvider>
               <DocumentViewerV2
                 nodeMeta={{ volumeId: 'VOLUME', linkId: 'LINK' }}
                 driveCompat={DRIVE_COMPAT}
                 onRetry={onRetry}
+                downloadOnOpen={downloadOnOpen}
+                onDownloadedOnOpen={onDownloadedOnOpen}
               />
             </DebugModeProvider>
           </ApplicationProvider>
@@ -230,15 +257,16 @@ function renderViewer(
   )
 
   const rendered = render(viewer())
-  return { ...rendered, rerender: () => rendered.rerender(viewer()) }
+  return { ...rendered, rerender: () => rendered.rerender(viewer()), logger: application.logger }
 }
 
-/** Renders a viewer whose editor shows the document */
+/** Renders a viewer whose editor shows the document, its Lexical editor rendered */
 async function renderShown(fake: ReturnType<typeof createFakeSession>, options?: Parameters<typeof renderViewer>[1]) {
   const rendered = renderViewer(fake, options)
   await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
   act(() => fake.setSnapshot({ status: { name: 'connected' }, caughtUp: true }))
   await waitFor(() => expect(mockEditorCalls).toContain('showEditor'))
+  act(() => mockClientHandler.updateFrameSize(480))
   return rendered
 }
 
@@ -528,7 +556,7 @@ describe('DocumentViewerV2', () => {
 
     expect(await screen.findByText('File action modals')).toBeInTheDocument()
     expect(mockUseDocumentFileActions).toHaveBeenLastCalledWith({
-      node: { uid: 'VOLUME~LINK' },
+      node: { uid: 'VOLUME~LINK', name: 'Plans' },
       role: 'Admin',
       driveCompat: DRIVE_COMPAT,
     })
@@ -767,6 +795,124 @@ describe('DocumentViewerV2', () => {
     await waitFor(() => expect(mockChangeLockedState).toHaveBeenLastCalledWith(false))
 
     expect(mockEditorCalls.filter((call) => call === 'initializeEditor')).toHaveLength(1)
+  })
+
+  describe('print, download and export', () => {
+    test("enables the title menu's exports only once the editor shows the document and its editor is rendered", async () => {
+      const fake = createSession()
+      renderViewer(fake)
+      await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
+      expect(screen.getByTestId('header-exports')).toHaveTextContent('exports disabled')
+
+      act(() => fake.setSnapshot({ status: { name: 'connected' }, caughtUp: true }))
+      await waitFor(() => expect(mockEditorCalls).toContain('showEditor'))
+      await act(async () => {})
+      // Shown, but the editor would answer an export with "Could not export data" until its Lexical editor exists
+      expect(screen.getByTestId('header-exports')).toHaveTextContent('exports disabled')
+
+      act(() => mockClientHandler.updateFrameSize(480))
+
+      expect(screen.getByTestId('header-exports')).toHaveTextContent('exports enabled')
+    })
+
+    test('print and download do nothing before the editor shows the document, which may miss edits then', async () => {
+      const fake = createSession()
+      renderViewer(fake)
+      await waitFor(() => expect(mockClientHandler).toBeDefined())
+
+      await act(() => mockClientHandler.handleFileMenuAction({ type: 'print' }))
+      await act(() => mockClientHandler.handleFileMenuAction({ type: 'download', format: 'docx' }))
+
+      expect(mockPrintAsPDF).not.toHaveBeenCalled()
+      expect(mockExportAndDownload).not.toHaveBeenCalled()
+    })
+
+    test('the print action has the editor print', async () => {
+      await renderShown(createSession())
+
+      await act(() => mockClientHandler.handleFileMenuAction({ type: 'print' }))
+
+      expect(mockPrintAsPDF).toHaveBeenCalledTimes(1)
+    })
+
+    test('the download action saves the export as the document name, in its format', async () => {
+      await renderShown(createSession())
+
+      await act(() => mockClientHandler.handleFileMenuAction({ type: 'download', format: 'md' }))
+
+      expect(mockExportAndDownload).toHaveBeenCalledWith(
+        expect.objectContaining({ printAsPDF: mockPrintAsPDF }),
+        'Plans',
+        'md',
+      )
+    })
+
+    test('a failed download is logged, not thrown', async () => {
+      const error = new Error('Editor did not answer exportData')
+      mockExportAndDownload.mockRejectedValueOnce(error)
+      const { logger } = await renderShown(createSession())
+
+      await act(() => mockClientHandler.handleFileMenuAction({ type: 'download', format: 'docx' }))
+
+      await waitFor(() => expect(logger.error).toHaveBeenCalledWith('Failed to download the document', error))
+    })
+
+    test("answers the editor's external images through the image proxy, for this session", async () => {
+      renderViewer(createSession())
+      await waitFor(() => expect(mockClientHandler).toBeDefined())
+
+      const image = await mockClientHandler.fetchExternalImageAsBase64('https://example.com/cat.png')
+
+      expect(image).toBe('data:image/png;base64,iVBORw0K')
+      expect(mockFetchExternalImageAsBase64).toHaveBeenCalledWith('https://example.com/cat.png', {
+        apiUrl: 'https://docs.proton.dev/api',
+        uid: 'session-uid',
+      })
+    })
+
+    test("Drive's Download saves the document as docx once the editor shows it, says so, and only once", async () => {
+      const fake = createSession()
+      const onDownloadedOnOpen = jest.fn()
+      renderViewer(fake, { downloadOnOpen: true, onDownloadedOnOpen })
+      await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
+      expect(mockExportAndDownload).not.toHaveBeenCalled()
+
+      act(() => fake.setSnapshot({ status: { name: 'connected' }, caughtUp: true }))
+      await waitFor(() => expect(mockEditorCalls).toContain('showEditor'))
+      await act(async () => {})
+      expect(mockExportAndDownload).not.toHaveBeenCalled()
+
+      act(() => mockClientHandler.updateFrameSize(480))
+      await waitFor(() => expect(mockExportAndDownload).toHaveBeenCalledWith(expect.anything(), 'Plans', 'docx'))
+      expect(onDownloadedOnOpen).toHaveBeenCalledTimes(1)
+
+      // A reconnect catches up again, and the editor shows the document again
+      act(() =>
+        fake.setSnapshot({
+          status: { name: 'reconnecting', condition: 'transient', nextAttemptAt: 0, budgetExpiresAt: 0 },
+          caughtUp: false,
+        }),
+      )
+      act(() => fake.setSnapshot({ status: { name: 'connected' }, caughtUp: true }))
+      await act(async () => {})
+      expect(mockExportAndDownload).toHaveBeenCalledTimes(1)
+    })
+
+    test("opening a document without Drive's Download saves nothing", async () => {
+      await renderShown(createSession())
+
+      expect(mockExportAndDownload).not.toHaveBeenCalled()
+    })
+
+    test('the size-limit modal downloads a copy as docx', async () => {
+      const fake = createSession()
+      await renderShown(fake, { role: 'Editor' })
+      act(() => fake.emit('refusal', { reason: 'documentSizeLimitReached', attemptedBytes: 2, limitBytes: 1 }))
+
+      await userEvent.click(await screen.findByRole('button', { name: 'Download a copy (as docx)', hidden: true }))
+
+      expect(mockExportAndDownload).toHaveBeenCalledWith(expect.anything(), 'Plans', 'docx')
+    })
   })
 
   test('opens the size-limit modal when the SDK refuses an edit for the document size', async () => {

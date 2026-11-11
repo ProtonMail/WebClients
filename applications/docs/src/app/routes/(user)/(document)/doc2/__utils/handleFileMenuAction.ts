@@ -1,4 +1,5 @@
 import type { FileMenuAction } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
+import type { DataTypesThatDocumentCanBeExportedAs } from '@proton/docs-shared/ExportableDataType'
 import { getStaticURL } from '@proton/shared/lib/helpers/url'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 
@@ -7,7 +8,12 @@ import type { DocumentFileActions } from './useDocumentFileActions'
 export type FileMenuHandlers = Pick<
   DocumentFileActions,
   'newDocument' | 'newSpreadsheet' | 'moveToFolder' | 'moveToTrash' | 'openProtonDrive'
-> & { openHelp: () => void; toggleDebugMode: () => void }
+> & {
+  openHelp: () => void
+  toggleDebugMode: () => void
+  print: () => void
+  download: (format: DataTypesThatDocumentCanBeExportedAs) => void
+}
 
 export function openHelp() {
   window.open(getStaticURL('/support/drive'), '_blank')
@@ -34,10 +40,11 @@ export function handleFileMenuAction(action: FileMenuAction, handlers: FileMenuH
       return handlers.moveToTrash()
     case 'open-proton-drive':
       return handlers.openProtonDrive()
-    // Stubs until their doc2 tickets: T7 download, print and export, T13 make a copy.
-    // Version history has no ticket: it is kept for later.
     case 'print':
+      return handlers.print()
     case 'download':
+      return handlers.download(action.format)
+    // Stubs until their doc2 tickets: T13 make a copy. Version history has no ticket: it is kept for later.
     case 'make-a-copy':
     case 'see-version-history':
       logger.debug('File menu action not available in doc2 yet', { type: action.type })
