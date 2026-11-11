@@ -181,38 +181,34 @@ const TwoFactorSection = () => {
                                     }
                                 />
                             </SettingsIconRow>
-                            {registeredKeys.length > 0 && (
-                                <>
-                                    <DashboardCardDivider />
-                                    <SettingsIconRow icon={IcPinCode}>
-                                        <SettingsToggleRow
-                                            id="requireSecurityKey"
-                                            label={
-                                                <>
-                                                    <SettingsToggleRow.Label>{c('fido2: Info')
-                                                        .t`Require PIN for security key`}</SettingsToggleRow.Label>
-                                                    <SettingsToggleRow.Description>
-                                                        {c('fido2: Info')
-                                                            .t`Enter your PIN each time you use your security key with ${BRAND_NAME}, when the key supports it. This only applies to keys that have a PIN set up.`}
-                                                    </SettingsToggleRow.Description>
-                                                </>
+                            <DashboardCardDivider />
+                            <SettingsIconRow icon={IcPinCode}>
+                                <SettingsToggleRow
+                                    id="requireSecurityKey"
+                                    label={
+                                        <>
+                                            <SettingsToggleRow.Label>{c('fido2: Info')
+                                                .t`Require PIN for security key`}</SettingsToggleRow.Label>
+                                            <SettingsToggleRow.Description>
+                                                {c('fido2: Info')
+                                                    .t`Enter your PIN each time you use your security key with ${BRAND_NAME}, when the key supports it. This only applies to keys that have a PIN set up.`}
+                                            </SettingsToggleRow.Description>
+                                        </>
+                                    }
+                                    toggle={
+                                        <SettingsToggleRow.Toggle
+                                            loading={loading}
+                                            checked={
+                                                userSettings.Flags.Fido2CredentialsPinOptIn ===
+                                                FIDO2_CREDENTIALS_PIN_VALUE.ENABLED
                                             }
-                                            toggle={
-                                                <SettingsToggleRow.Toggle
-                                                    loading={loading}
-                                                    checked={
-                                                        userSettings.Flags.Fido2CredentialsPinOptIn ===
-                                                        FIDO2_CREDENTIALS_PIN_VALUE.ENABLED
-                                                    }
-                                                    onChange={({ target: { checked } }) =>
-                                                        withLoading(handleSecurityKeyRequirePinToggle(checked))
-                                                    }
-                                                />
+                                            onChange={({ target: { checked } }) =>
+                                                withLoading(handleSecurityKeyRequirePinToggle(checked))
                                             }
                                         />
-                                    </SettingsIconRow>
-                                </>
-                            )}
+                                    }
+                                />
+                            </SettingsIconRow>
                         </>
                     )}
                 </DashboardCardContent>
