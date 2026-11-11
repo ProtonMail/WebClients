@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import Toggle from '../../../components/toggle/Toggle';
+import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
+
 import { useDocsNotificationsSettings } from '../../../hooks/docs/useDocsNotificationsSettings';
-import SettingsLayout from '../../account/SettingsLayout';
-import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../../account/SettingsLayoutRight';
+import { SettingsToggleRow } from '../../account/SettingsToggleRow';
 
 export const CommentEmailSection = () => {
     const {
@@ -17,44 +17,48 @@ export const CommentEmailSection = () => {
     } = useDocsNotificationsSettings();
 
     return (
-        <>
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label className="text-semibold" htmlFor="emails-enabled-toggle">
-                        <span className="mr-2">{c('Setting').t`Get updates about comments via email`}</span>
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight isToggleContainer>
-                    <Toggle
+        <DashboardGrid>
+            <DashboardCard>
+                <DashboardCardContent>
+                    <SettingsToggleRow
                         id="emails-enabled-toggle"
-                        disabled={isLoading}
-                        checked={emailNotificationsEnabled ?? false}
-                        loading={isSubmitting}
-                        onChange={({ target }) => {
-                            void changeEmailNotificationsEnabledValue(target.checked);
-                        }}
+                        label={
+                            <SettingsToggleRow.Label>{c('Setting')
+                                .t`Get updates about comments via email`}</SettingsToggleRow.Label>
+                        }
+                        toggle={
+                            <SettingsToggleRow.Toggle
+                                disabled={isLoading}
+                                checked={emailNotificationsEnabled ?? false}
+                                loading={isSubmitting}
+                                onChange={({ target }) => {
+                                    void changeEmailNotificationsEnabledValue(target.checked);
+                                }}
+                            />
+                        }
                     />
-                </SettingsLayoutRight>
-            </SettingsLayout>
 
-            <SettingsLayout>
-                <SettingsLayoutLeft>
-                    <label className="text-semibold" htmlFor="document-name-toggle">
-                        <span className="mr-2">{c('Setting').t`Include document name in email notifications`}</span>
-                    </label>
-                </SettingsLayoutLeft>
-                <SettingsLayoutRight isToggleContainer>
-                    <Toggle
+                    <DashboardCardDivider />
+
+                    <SettingsToggleRow
                         id="document-name-toggle"
-                        disabled={isLoading}
-                        checked={emailTitleEnabled ?? false}
-                        loading={isSubmitting}
-                        onChange={({ target }) => {
-                            void changeDocumentTitleEnabledValue(target.checked);
-                        }}
+                        label={
+                            <SettingsToggleRow.Label>{c('Setting')
+                                .t`Include document name in email notifications`}</SettingsToggleRow.Label>
+                        }
+                        toggle={
+                            <SettingsToggleRow.Toggle
+                                disabled={isLoading}
+                                checked={emailTitleEnabled ?? false}
+                                loading={isSubmitting}
+                                onChange={({ target }) => {
+                                    void changeDocumentTitleEnabledValue(target.checked);
+                                }}
+                            />
+                        }
                     />
-                </SettingsLayoutRight>
-            </SettingsLayout>
-        </>
+                </DashboardCardContent>
+            </DashboardCard>
+        </DashboardGrid>
     );
 };
