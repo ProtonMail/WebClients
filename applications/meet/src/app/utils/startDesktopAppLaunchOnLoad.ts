@@ -48,7 +48,6 @@ export const startDesktopAppLaunchOnLoad = ({ dispatch }: { dispatch: Dispatch }
         addMeetListener({
             predicate: (action, state) => isJoinInBrowser(action) || isLoadedMeetingReady(state),
             effect: (action, listenerApi) => {
-                // Spent on the first match, even when nothing opens, so no later prejoin in this page load prompts.
                 listenerApi.unsubscribe();
 
                 if (isJoinInBrowser(action)) {
