@@ -42,6 +42,7 @@ import { WordCountIcon } from '~/components/document/DocumentLayout/DocumentHead
 import { useApplication } from '~/utils/application-context'
 import { useIsDownloadLogsAllowed, useIsSheetsEnabled } from '~/utils/flags'
 import type { EditorInvoker } from '../__utils/EditorInvoker'
+import { downloadLogs } from '../__utils/debugDownloads'
 import type { DocumentRole } from '../__utils/getDocumentRole'
 import { getNodeName } from '../__utils/getNodeName'
 import { renameDocument } from '../__utils/renameDocument'
@@ -51,7 +52,8 @@ import type { WordCount } from './WordCount'
 export type DocumentTitleMenuProps = {
   node: Pick<NodeEntity, 'uid' | 'parentUid' | 'name'>
   role: DocumentRole
-  editorInvoker: Pick<EditorInvoker, 'setTableOfContentsVisible'> | undefined
+  editorInvoker:
+    Pick<EditorInvoker, 'setTableOfContentsVisible' | 'getYDocAsJSON' | 'getCurrentEditorState'> | undefined
   wordCount: WordCount
   trashState: TrashState
   isCreatingSpreadsheet: boolean
@@ -343,9 +345,18 @@ export function DocumentTitleMenu({
           </DropdownMenuButton>
 
           {isDownloadLogsAllowed && (
-            <StubMenuItem waitsFor="T10" icon={<IcArrowDownToSquare />} data-testid="dropdown-download-logs">
+            <DropdownMenuButton
+              className="flex items-center text-left"
+              disabled={!editorInvoker}
+              onClick={() =>
+                editorInvoker &&
+                downloadLogs(editorInvoker).catch((error) => logger.error('Failed to download the logs', error))
+              }
+              data-testid="dropdown-download-logs"
+            >
+              <IcArrowDownToSquare className="color-weak mr-2" />
               {c('Action').t`Download logs`}
-            </StubMenuItem>
+            </DropdownMenuButton>
           )}
 
           {showDebugToggle && (
@@ -384,10 +395,10 @@ export function DocumentTitleMenu({
 }
 
 /**
- * The doc2 plan ticket a stub waits for: T7 download, print and export, T10 the debug menu, T13 make a copy. Version
- * history has no ticket: it is kept for later.
+ * The doc2 plan ticket a stub waits for: T7 download, print and export, T13 make a copy. Version history has no ticket:
+ * it is kept for later.
  */
-type StubTicket = 'T7' | 'T10' | 'T13' | 'version history'
+type StubTicket = 'T7' | 'T13' | 'version history'
 
 type StubMenuItemProps = { waitsFor: StubTicket; icon: ReactNode; children: ReactNode; 'data-testid': string }
 

@@ -84,7 +84,12 @@ describe('DocumentHeaderV2', () => {
   )
 
   test("shows the users' avatars, and clicking one has the editor scroll to that user's cursor", async () => {
-    const editorInvoker = { setTableOfContentsVisible: jest.fn(), syncEvent: jest.fn(async () => {}) }
+    const editorInvoker = {
+      setTableOfContentsVisible: jest.fn(),
+      getYDocAsJSON: jest.fn(),
+      getCurrentEditorState: jest.fn(),
+      syncEvent: jest.fn(async () => {}),
+    }
     const users = participants(2)
     render(headerWithParticipants('Editor', users, editorInvoker))
 
@@ -161,7 +166,10 @@ const participants = (count: number) =>
 function headerWithParticipants(
   role: DocumentRole,
   activeParticipants: ReturnType<typeof participants>,
-  editorInvoker?: Pick<EditorInvoker, 'setTableOfContentsVisible' | 'syncEvent'>,
+  editorInvoker?: Pick<
+    EditorInvoker,
+    'setTableOfContentsVisible' | 'getYDocAsJSON' | 'getCurrentEditorState' | 'syncEvent'
+  >,
 ) {
   return (
     <ConfigContext.Provider value={{ APP_VERSION: '1.2.3', APP_NAME: 'proton-docs' } as ProtonConfig}>
