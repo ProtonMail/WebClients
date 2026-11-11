@@ -1,18 +1,47 @@
-import { set } from 'date-fns';
-import { zonedTimeToUtc } from 'date-fns-tz';
-
 import { MINUTE } from '@proton/shared/lib/constants';
-import { getTimeZoneOptions } from '@proton/shared/lib/date/timezone';
-import { WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
+import {
+    convertUTCDateTimeToZone,
+    convertZonedDateTimeToUTC,
+    fromUTCDate,
+    getSupportedTimezone,
+    getTimeZoneOptions,
+    toUTCDate,
+} from '@proton/shared/lib/date/timezone';
+import { type Meeting, WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
 
+import { getNextOccurrence } from '../../../../utils/getNextOccurrence';
+import { isTimeZoneKnown } from '../../../../utils/zonedTime';
 import type { FormValues } from './types';
 
 const timeZoneOptions = getTimeZoneOptions();
 
-export const combineDateAndTime = (date: Date, time: string, timezone: string) => {
+export const combineDateAndTime = (date: Date | undefined, time: string, timeZone: string) => {
+    if (!(date instanceof Date)) {
+        return new Date(NaN);
+    }
     const [hours, minutes] = time.split(':').map(Number);
-    const localDate = set(date, { hours, minutes, seconds: 0, milliseconds: 0 });
-    return zonedTimeToUtc(localDate, timezone);
+    const wallClock = {
+        year: date.getFullYear(),
+        month: date.getMonth() + 1,
+        day: date.getDate(),
+        hours,
+        minutes,
+        seconds: 0,
+    };
+    return toUTCDate(convertZonedDateTimeToUTC(wallClock, timeZone));
+};
+
+const padToTwoDigits = (value: number) => String(value).padStart(2, '0');
+
+export const splitDateAndTime = (instant: Date, timeZone: string) => {
+    const { year, month, day, hours, minutes } = convertUTCDateTimeToZone(fromUTCDate(instant), timeZone);
+    return {
+        date: new Date(year, month - 1, day),
+        // Build canonical HH:MM directly — Intl.DateTimeFormat with the system locale
+        // produces locale-specific separators (e.g. "14.30" in fi-FI) that break the
+        // downstream `time.split(':')` assumption and lead to Invalid Date.
+        time: `${padToTwoDigits(hours)}:${padToTwoDigits(minutes)}`,
+    };
 };
 
 const validateTimeZone = (timeZone: string | undefined | null) => {
@@ -98,25 +127,68 @@ export const validate = (values: FormValues) => {
     return errors;
 };
 
-export const getInitialValues = (isWaitingRoomCreationEnabled: boolean): FormValues => {
+export const getInitialValues = (isWaitingRoomCreationEnabled: boolean, timeZone: string): FormValues => {
     const now = new Date();
-    const end = new Date(now.getTime() + 30 * MINUTE);
-    const pad = (n: number) => String(n).padStart(2, '0');
-
-    // Build canonical HH:MM directly — Intl.DateTimeFormat with the system locale
-    // produces locale-specific separators (e.g. "14.30" in fi-FI) that break the
-    // downstream `time.split(':')` assumption and lead to Invalid Date.
-    const startTime = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
-    const endTime = `${pad(end.getHours())}:${pad(end.getMinutes())}`;
+    const start = splitDateAndTime(now, timeZone);
+    const end = splitDateAndTime(new Date(now.getTime() + 30 * MINUTE), timeZone);
 
     return {
         meetingName: '',
-        startDate: new Date(),
-        startTime,
-        endDate: new Date(),
-        endTime,
-        timeZone: '',
+        startDate: start.date,
+        startTime: start.time,
+        endDate: end.date,
+        endTime: end.time,
+        timeZone,
         recurrence: 'NO_REPEAT',
         waitingRoom: isWaitingRoomCreationEnabled ? WaitingRoomState.DISABLED : undefined,
     };
+};
+
+const getEditTimeZone = (storedTimeZone: string | null, userTimeZone: string) => {
+    if (!storedTimeZone || !isTimeZoneKnown(storedTimeZone)) {
+        return userTimeZone;
+    }
+    if (validateTimeZone(storedTimeZone)) {
+        return storedTimeZone;
+    }
+    return getSupportedTimezone(storedTimeZone) ?? userTimeZone;
+};
+
+export const getEditValues = (
+    meeting: Meeting,
+    isWaitingRoomCreationEnabled: boolean,
+    userTimeZone: string
+): Partial<FormValues> => {
+    const editValues: Partial<FormValues> = {
+        meetingName: meeting.MeetingName,
+        ...(isWaitingRoomCreationEnabled ? { waitingRoom: meeting.WaitingRoom ?? WaitingRoomState.DISABLED } : {}),
+    };
+
+    const formTimeZone = getEditTimeZone(meeting.Timezone, userTimeZone);
+
+    if (meeting.Timezone) {
+        editValues.timeZone = formTimeZone;
+    }
+
+    if (meeting.RRule) {
+        editValues.recurrence = meeting.RRule;
+    } else {
+        editValues.recurrence = 'NO_REPEAT';
+    }
+
+    if (meeting.StartTime && meeting.Timezone) {
+        const { startTime } = getNextOccurrence(meeting);
+        const start = splitDateAndTime(new Date(Number(startTime) * 1000), formTimeZone);
+        editValues.startDate = start.date;
+        editValues.startTime = start.time;
+    }
+
+    if (meeting.EndTime && meeting.Timezone) {
+        const { endTime } = getNextOccurrence(meeting);
+        const end = splitDateAndTime(new Date(Number(endTime) * 1000), formTimeZone);
+        editValues.endDate = end.date;
+        editValues.endTime = end.time;
+    }
+
+    return editValues;
 };

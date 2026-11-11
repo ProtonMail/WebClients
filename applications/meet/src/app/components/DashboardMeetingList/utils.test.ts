@@ -178,6 +178,10 @@ describe('formatMeetingDate', () => {
             return fn;
         };
 
+        afterEach(() => {
+            vi.unstubAllEnvs();
+        });
+
         it('should determine "today" based on the user timezone', async () => {
             // March 17, 2026 23:30 UTC → in Europe/Helsinki (UTC+2) it's already March 18
             vi.setSystemTime(new Date('2026-03-17T23:30:00Z'));
@@ -220,6 +224,27 @@ describe('formatMeetingDate', () => {
             // In Helsinki, current year is 2026, so 2025 dates get a year suffix
             const result = formatWithHelsinki('2025-12-31', SETTINGS_DATE_FORMAT.MMDDYYYY, true);
             expect(result).toBe('Yesterday — December 31, 2025');
+        });
+
+        it('should show "Tomorrow" when the same time tomorrow falls in a daylight saving gap', async () => {
+            vi.stubEnv('TZ', 'America/Nuuk');
+            vi.setSystemTime(new Date('2027-03-27T01:30:00Z'));
+            vi.resetModules();
+            const { formatMeetingDate: formatWithNuuk } = await import('./utils');
+
+            expect(formatWithNuuk('2027-03-27', SETTINGS_DATE_FORMAT.MMDDYYYY, true)).toBe('Tomorrow — March 27');
+        });
+
+        describe('browser with outdated time zone rules', () => {
+            it('should show "Tomorrow" for the next Vancouver day on a night the outdated rules move the clock', async () => {
+                vi.stubEnv('TZ', 'America/Los_Angeles');
+                vi.setSystemTime(new Date('2027-03-14T07:30:00Z'));
+                const formatWithVancouver = await importWithTimezone('America/Vancouver');
+
+                expect(formatWithVancouver('2027-03-15', SETTINGS_DATE_FORMAT.MMDDYYYY, true)).toBe(
+                    'Tomorrow — March 15'
+                );
+            });
         });
     });
 });

@@ -27,14 +27,15 @@ const meetingLinkName = '1234567890';
 const meetingPassword = 'password1234';
 const mockLink = `${window.location.origin}${getMeetingLink(meetingLinkName, meetingPassword)}`;
 
+const defaultMeetingSchedule = { StartTime: '1756492800', EndTime: '1756496400', Timezone: 'CET' };
+let meetingSchedule = defaultMeetingSchedule;
+
 vi.mock('@proton/meet/store/hooks/useMeetings', () => ({
     useMeetings: () => [
         [
             {
                 MeetingLinkName: meetingLinkName,
-                StartTime: '1756492800',
-                EndTime: '1756496400',
-                Timezone: 'CET',
+                ...meetingSchedule,
             },
         ],
     ],
@@ -97,6 +98,11 @@ const createMockStore = ({ sideBarOpen = false }) => {
 };
 
 describe('MeetingDetails', () => {
+    afterEach(() => {
+        meetingSchedule = defaultMeetingSchedule;
+        vi.unstubAllEnvs();
+    });
+
     it('should return null if not open', () => {
         const store = createMockStore({ sideBarOpen: false });
 
@@ -164,5 +170,50 @@ describe('MeetingDetails', () => {
         expect(screen.getByText('Friday, August 29, 2025')).toBeInTheDocument();
         expect(screen.getByText(mockLink)).toBeInTheDocument();
         expect(screen.getByText('20:40 - 21:40 (CET)')).toBeInTheDocument();
+    });
+
+    it('should display a Vancouver meeting after the move to permanent time at UTC-7', () => {
+        meetingSchedule = { StartTime: '1794502800', EndTime: '1794506400', Timezone: 'America/Vancouver' };
+        const store = createMockStore({ sideBarOpen: true });
+
+        render(<WrappedMeetingDetails />, {
+            wrapper: ({ children }) => (
+                <Provider context={ProtonStoreContext} store={store}>
+                    <NotificationsProvider>
+                        <MeetContext.Provider
+                            // @ts-expect-error - mock data
+                            value={{}}
+                        >
+                            {children}
+                        </MeetContext.Provider>
+                    </NotificationsProvider>
+                </Provider>
+            ),
+        });
+
+        expect(screen.getByText('10:00 - 11:00 (America/Vancouver)')).toBeInTheDocument();
+    });
+
+    it('should display a meeting in the device time zone when the bundled data does not know its time zone', () => {
+        vi.stubEnv('TZ', 'Asia/Tokyo');
+        meetingSchedule = { ...defaultMeetingSchedule, Timezone: 'Not/AZone' };
+        const store = createMockStore({ sideBarOpen: true });
+
+        render(<WrappedMeetingDetails />, {
+            wrapper: ({ children }) => (
+                <Provider context={ProtonStoreContext} store={store}>
+                    <NotificationsProvider>
+                        <MeetContext.Provider
+                            // @ts-expect-error - mock data
+                            value={{}}
+                        >
+                            {children}
+                        </MeetContext.Provider>
+                    </NotificationsProvider>
+                </Provider>
+            ),
+        });
+
+        expect(screen.getByText('03:40 - 04:40 (Asia/Tokyo)')).toBeInTheDocument();
     });
 });

@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import { isValid } from 'date-fns';
-import { utcToZonedTime } from 'date-fns-tz';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -40,14 +39,13 @@ import clsx from '@proton/utils/clsx';
 import { ExpandOptionsButton } from '../../../../atoms/ExpandOptionsButton/ExpandOptionsButton';
 import { useNotifyError } from '../../../../hooks/useNotifyError';
 import type { MeetingVariant } from '../../../../types';
-import { getNextOccurrence } from '../../../../utils/getNextOccurrence';
 import { formatTimeHHMM } from '../../../../utils/timeFormat';
 import { TimeInputBlock } from '../../../TimeInputBlock';
 import { MeetingOptions } from '../../shared/MeetingOptions';
 import { ScheduleMeetingRecapModal } from './ScheduleMeetingRecapModal/ScheduleMeetingRecapModal';
 import { ScheduleMeetingSvgIcon } from './ScheduleMeetingSvgIcon';
 import type { OnDateTimeChange } from './types';
-import { combineDateAndTime, getInitialValues, validate } from './utils';
+import { combineDateAndTime, getEditValues, getInitialValues, splitDateAndTime, validate } from './utils';
 
 import './ScheduleMeetingForm.scss';
 
@@ -129,8 +127,7 @@ export const ScheduleMeetingForm = ({
     } | null>(null);
 
     const [values, setValues] = useState({
-        ...getInitialValues(isWaitingRoomCreationEnabled),
-        timeZone: userTimeZone,
+        ...getInitialValues(isWaitingRoomCreationEnabled, userTimeZone),
         meetingName: '',
     });
 
@@ -142,44 +139,9 @@ export const ScheduleMeetingForm = ({
 
     useEffect(() => {
         if (meeting) {
-            const updates: Partial<typeof values> = {
-                meetingName: meeting.MeetingName,
-                ...(isWaitingRoomCreationEnabled
-                    ? { waitingRoom: meeting.WaitingRoom ?? WaitingRoomState.DISABLED }
-                    : {}),
-            };
-
-            if (meeting.Timezone) {
-                updates.timeZone = meeting.Timezone;
-            }
-
-            if (meeting.RRule) {
-                updates.recurrence = meeting.RRule;
-            } else {
-                updates.recurrence = 'NO_REPEAT';
-            }
-
-            if (meeting.StartTime && meeting.Timezone) {
-                const { startTime } = getNextOccurrence(meeting);
-                const startDateTime = utcToZonedTime(new Date(Number(startTime) * 1000), meeting.Timezone);
-                updates.startDate = startDateTime;
-                const startHours = String(startDateTime.getHours()).padStart(2, '0');
-                const startMinutes = String(startDateTime.getMinutes()).padStart(2, '0');
-                updates.startTime = `${startHours}:${startMinutes}`;
-            }
-
-            if (meeting.EndTime && meeting.Timezone) {
-                const { endTime } = getNextOccurrence(meeting);
-                const endDateTime = utcToZonedTime(new Date(Number(endTime) * 1000), meeting.Timezone);
-                updates.endDate = endDateTime;
-                const endHours = String(endDateTime.getHours()).padStart(2, '0');
-                const endMinutes = String(endDateTime.getMinutes()).padStart(2, '0');
-                updates.endTime = `${endHours}:${endMinutes}`;
-            }
-
-            setValues((prev) => ({
-                ...prev,
-                ...updates,
+            setValues((previous) => ({
+                ...previous,
+                ...getEditValues(meeting, isWaitingRoomCreationEnabled, getTimezone()),
             }));
         }
     }, [isWaitingRoomCreationEnabled, meeting]);
@@ -373,9 +335,9 @@ export const ScheduleMeetingForm = ({
         };
 
         const setEndFromStart = (vals: typeof newValues, startDateTime: Date, duration: number) => {
-            const newEnd = utcToZonedTime(new Date(startDateTime.getTime() + duration), vals.timeZone);
-            vals.endDate = new Date(newEnd.getFullYear(), newEnd.getMonth(), newEnd.getDate());
-            vals.endTime = `${String(newEnd.getHours()).padStart(2, '0')}:${String(newEnd.getMinutes()).padStart(2, '0')}`;
+            const newEnd = splitDateAndTime(new Date(startDateTime.getTime() + duration), vals.timeZone);
+            vals.endDate = newEnd.date;
+            vals.endTime = newEnd.time;
         };
 
         const startDateTime = combineDateAndTime(newValues.startDate, newValues.startTime, newValues.timeZone);

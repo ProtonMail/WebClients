@@ -1,17 +1,18 @@
-import { addDays } from 'date-fns';
-import { formatInTimeZone, utcToZonedTime } from 'date-fns-tz';
 import { c } from 'ttag';
 
+import differenceInCalendarDays from '@proton/shared/lib/date-fns-utc/differenceInCalendarDays';
+import { fromUTCDateToTimezone } from '@proton/shared/lib/date/timezone';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import type { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
 import { formatDateForSetting } from '../../utils/dateFormat';
+import { formatInTimeZone, getDeviceTimeZone } from '../../utils/zonedTime';
 
 export interface MeetingsByDay {
     [date: string]: Meeting[];
 }
 
-const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+const timezone = getDeviceTimeZone();
 
 export const groupMeetingsByDay = (
     meetings: (Meeting & { adjustedStartTime: number; adjustedEndTime: number })[],
@@ -48,21 +49,19 @@ export const groupMeetingsByDay = (
     };
 };
 
-const getRelativeDate = (dateString: string, absoluteDate: string): string | null => {
-    const now = utcToZonedTime(new Date(), timezone);
-    const todayStr = formatInTimeZone(new Date(), timezone, 'yyyy-MM-dd');
-    const tomorrowStr = formatInTimeZone(addDays(now, 1), timezone, 'yyyy-MM-dd');
-    const yesterdayStr = formatInTimeZone(addDays(now, -1), timezone, 'yyyy-MM-dd');
+const getRelativeDate = (dayAsUTC: Date, absoluteDate: string): string | null => {
+    const nowWallClockAsUTC = fromUTCDateToTimezone(new Date(), timezone);
+    const daysFromToday = differenceInCalendarDays(dayAsUTC, nowWallClockAsUTC);
 
-    if (dateString === todayStr) {
+    if (daysFromToday === 0) {
         return c('Info').t`Today — ${absoluteDate}`;
     }
 
-    if (dateString === tomorrowStr) {
+    if (daysFromToday === 1) {
         return c('Info').t`Tomorrow — ${absoluteDate}`;
     }
 
-    if (dateString === yesterdayStr) {
+    if (daysFromToday === -1) {
         return c('Info').t`Yesterday — ${absoluteDate}`;
     }
 
@@ -81,8 +80,7 @@ export const formatMeetingDate = (
     const [year, month, day] = dateString.split('-').map(Number);
     const date = new Date(year, month - 1, day);
 
-    const zonedNow = utcToZonedTime(new Date(), timezone);
-    const currentYear = zonedNow.getFullYear();
+    const currentYear = fromUTCDateToTimezone(new Date(), timezone).getUTCFullYear();
     const isCurrentYear = year === currentYear;
 
     const absoluteDate = formatAbsoluteDate(date, isCurrentYear, dateFormat);
@@ -91,5 +89,5 @@ export const formatMeetingDate = (
         return absoluteDate;
     }
 
-    return getRelativeDate(dateString, absoluteDate) ?? absoluteDate;
+    return getRelativeDate(new Date(Date.UTC(year, month - 1, day)), absoluteDate) ?? absoluteDate;
 };

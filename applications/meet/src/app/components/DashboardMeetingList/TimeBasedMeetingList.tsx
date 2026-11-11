@@ -1,10 +1,10 @@
-import { formatInTimeZone } from 'date-fns-tz';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import clsx from '@proton/utils/clsx';
 
+import { formatInTimeZone, getDeviceTimeZone } from '../../utils/zonedTime';
 import { MeetingRow } from './MeetingRow/MeetingRow';
 import { SortOption } from './types';
 import { formatMeetingDate } from './utils';
@@ -25,7 +25,7 @@ export const TimeBasedMeetingList = ({
     const [userSettings] = useUserSettings();
     const dateFormat = userSettings.DateFormat;
 
-    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const timezone = getDeviceTimeZone();
     const today = formatInTimeZone(new Date(), timezone, 'yyyy-MM-dd');
 
     const getGroupWithPrefix = (date: string) => {
@@ -58,9 +58,7 @@ export const TimeBasedMeetingList = ({
                             </h2>
                             <div className="meeting-list-day-header-line flex-1" aria-hidden="true" />
                         </div>
-                        <ul
-                            className="unstyled m-0 p-0 flex flex-column gap-0 flex-nowrap"
-                        >
+                        <ul className="unstyled m-0 p-0 flex flex-column gap-0 flex-nowrap">
                             {meetings.map((meeting, index) => (
                                 <li key={meeting.ID}>
                                     <MeetingRow

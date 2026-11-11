@@ -1,8 +1,10 @@
 import { format } from 'date-fns';
-import { formatInTimeZone } from 'date-fns-tz';
 
+import { fromUTCDateToTimezone } from '@proton/shared/lib/date/timezone';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
+
+import { formatInTimeZone } from './zonedTime';
 
 interface DateFormatOptions {
     month: 'short' | 'long';
@@ -35,12 +37,12 @@ export const formatDateForSetting = (date: Date, dateFormat: SETTINGS_DATE_FORMA
 
     if (dateFormat === SETTINGS_DATE_FORMAT.LOCALE_DEFAULT) {
         return new Intl.DateTimeFormat(dateLocale.code, {
-            timeZone,
+            timeZone: timeZone ? 'UTC' : undefined,
             month,
             day: 'numeric',
             ...(withWeekday ? { weekday: 'short' } : {}),
             ...(withYear ? { year: 'numeric' } : {}),
-        }).format(date);
+        }).format(timeZone ? fromUTCDateToTimezone(date, timeZone) : date);
     }
 
     const pattern = `${withWeekday ? 'EEE, ' : ''}${getExplicitPattern(dateFormat, options)}`;

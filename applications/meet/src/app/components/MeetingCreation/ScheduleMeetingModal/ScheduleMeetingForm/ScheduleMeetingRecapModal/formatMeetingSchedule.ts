@@ -2,6 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { fromRruleString } from '@proton/shared/lib/calendar/vcal';
 import { getShortenDayFormat } from '@proton/shared/lib/date/date';
+import { convertUTCDateTimeToZone, fromUTCDate, fromUTCDateToTimezone } from '@proton/shared/lib/date/timezone';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { SETTINGS_DATE_FORMAT, SETTINGS_TIME_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
@@ -44,14 +45,8 @@ const MILLISECONDS_PER_DAY = 24 * 60 * 60 * 1000;
 const getLocale = () => dateLocale.code || 'en-US';
 
 const getCalendarDate = (date: Date, timeZone: string): CalendarDate => {
-    const parts = new Intl.DateTimeFormat('en-US', {
-        timeZone,
-        year: 'numeric',
-        month: 'numeric',
-        day: 'numeric',
-    }).formatToParts(date);
-    const read = (type: string) => Number(parts.find((part) => part.type === type)?.value);
-    return { year: read('year'), month: read('month'), day: read('day') };
+    const { year, month, day } = convertUTCDateTimeToZone(fromUTCDate(date), timeZone);
+    return { year, month, day };
 };
 
 const getDayNumber = ({ year, month, day }: CalendarDate) => Date.UTC(year, month - 1, day) / MILLISECONDS_PER_DAY;
@@ -90,18 +85,19 @@ const formatDateLabel = (date: Date, now: Date, timeZone: string, dateFormat: SE
 const formatTime = (date: Date, timeZone: string, timeFormat: SETTINGS_TIME_FORMAT) => {
     const use12Hour = shouldUse12HourClock(timeFormat);
     const locale = getLocale();
+    const wallClockAsUTC = fromUTCDateToTimezone(date, timeZone);
     const formatter = new Intl.DateTimeFormat(locale, {
-        timeZone,
+        timeZone: 'UTC',
         hour: use12Hour ? 'numeric' : '2-digit',
         minute: '2-digit',
         hourCycle: use12Hour ? 'h12' : 'h23',
     });
 
     if (!use12Hour || !locale.startsWith('en')) {
-        return formatter.format(date);
+        return formatter.format(wallClockAsUTC);
     }
 
-    const parts = formatter.formatToParts(date);
+    const parts = formatter.formatToParts(wallClockAsUTC);
     const read = (type: string) => parts.find((part) => part.type === type)?.value ?? '';
     const minutes = read('minute') === '00' ? '' : `:${read('minute')}`;
     return `${read('hour')}${minutes}${read('dayPeriod').toLowerCase()}`;
