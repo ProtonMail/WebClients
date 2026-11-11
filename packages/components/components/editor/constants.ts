@@ -31,18 +31,6 @@ export const IFRAME_EVENTS_LIST: Event['type'][] = [
     'input',
 ];
 
-export enum FONT_SIZES {
-    '10px' = '7.5pt',
-    '12px' = '9pt',
-    '14px' = '10.5pt',
-    '16px' = '12pt',
-    '18px' = '13.5pt',
-    '20px' = '15pt',
-    '22px' = '16.5pt',
-    '24px' = '18pt',
-    '26px' = '19.5pt',
-}
-
 export const DEFAULT_FONT_COLOR = '#000000';
 export const DEFAULT_BACKGROUND = '#FFFFFF';
 

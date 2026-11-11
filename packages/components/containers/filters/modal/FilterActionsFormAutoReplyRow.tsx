@@ -9,10 +9,9 @@ import { AUTO_REPLY_CHARACTER_COUNT_LIMIT } from '@proton/shared/lib/mail/consta
 import noop from '@proton/utils/noop';
 
 import Alert from '../../../components/alert/Alert';
-import Editor from '../../../components/editor/Editor';
-import { useToolbar } from '../../../components/editor/hooks/useToolbar';
-import type { EditorActions } from '../../../components/editor/interface';
 import Toggle from '../../../components/toggle/Toggle';
+import type { SimpleEditorActions } from '../../editor/SimpleEditorContext';
+import { useSimpleEditor } from '../../editor/SimpleEditorContext';
 import type { Actions } from '../interfaces';
 
 interface Props {
@@ -27,8 +26,9 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, actions, handleUpdateActions }:
     const { autoReply } = actions;
     const [editorVisible, setEditorVisible] = useState(!!autoReply);
     const [editorValue, setEditorValue] = useState(autoReply || '');
+    const SimpleEditor = useSimpleEditor();
 
-    const handleReady = (editorActions: EditorActions) => {
+    const handleReady = (editorActions: SimpleEditorActions) => {
         editorActions.setContent(editorValue);
 
         if (!isEdit) {
@@ -39,10 +39,6 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, actions, handleUpdateActions }:
     useEffect(() => {
         handleUpdateActions({ autoReply: editorVisible ? editorValue : '' });
     }, [editorVisible]);
-
-    const { openEmojiPickerRef, toolbarConfig, setToolbarConfig, modalLink, modalImage, modalDefaultFont } = useToolbar(
-        {}
-    );
 
     return (
         <>
@@ -86,20 +82,13 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, actions, handleUpdateActions }:
                         </Alert>
                     )}
                     <div className="w-full mt-4">
-                        <Editor
+                        <SimpleEditor
                             onReady={handleReady}
-                            metadata={{ supportFiles: false }}
+                            supportFiles={false}
                             onChange={(value: string) => {
                                 setEditorValue(value);
                                 handleUpdateActions({ autoReply: value });
                             }}
-                            simple
-                            openEmojiPickerRef={openEmojiPickerRef}
-                            toolbarConfig={toolbarConfig}
-                            setToolbarConfig={setToolbarConfig}
-                            modalLink={modalLink}
-                            modalImage={modalImage}
-                            modalDefaultFont={modalDefaultFont}
                             mailSettings={mailSettings}
                         />
                     </div>

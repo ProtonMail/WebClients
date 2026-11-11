@@ -4,11 +4,10 @@ import { c } from 'ttag';
 
 import { updateAddressThunk } from '@proton/account/addresses/updateAddress';
 import { Button } from '@proton/atoms/Button/Button';
-import Editor from '@proton/components/components/editor/Editor';
-import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
-import type { EditorActions } from '@proton/components/components/editor/interface';
+import SimpleEditor from '@proton/components/components/editor/SimpleEditor';
 import Form from '@proton/components/components/form/Form';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
+import type { SimpleEditorActions } from '@proton/components/containers/editor/SimpleEditorContext';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import type { WithLoading } from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -30,9 +29,9 @@ const MobileEditAddressSection = ({ address, onAddressUpdate, isSavingAddressUpd
     const [displayName, setDisplayName] = useState(address.DisplayName);
     const [signatureUpdated, setSignatureUpdated] = useState(false);
 
-    const editorRef = useRef<EditorActions>();
+    const editorRef = useRef<SimpleEditorActions>();
 
-    const handleReady = (actions: EditorActions) => {
+    const handleReady = (actions: SimpleEditorActions) => {
         actions.setContent(address.Signature);
         editorRef.current = actions;
         setEditorReady(true);
@@ -40,7 +39,7 @@ const MobileEditAddressSection = ({ address, onAddressUpdate, isSavingAddressUpd
 
     const handleSubmit = async () => {
         try {
-            const signature = signatureUpdated ? (editorRef.current?.getContent() as string) : address.Signature;
+            const signature = signatureUpdated ? editorRef.current?.getContent() || '' : address.Signature;
             await dispatch(updateAddressThunk({ address, displayName, signature: formatSignature(signature) }));
         } catch (e) {
             handleError(e);
@@ -59,10 +58,6 @@ const MobileEditAddressSection = ({ address, onAddressUpdate, isSavingAddressUpd
         return () => clearTimeout(timeoutId);
     }, [address]);
 
-    const { openEmojiPickerRef, toolbarConfig, setToolbarConfig, modalLink, modalImage, modalDefaultFont } = useToolbar(
-        {}
-    );
-
     return (
         <Form
             onSubmit={async (e) => {
@@ -80,18 +75,11 @@ const MobileEditAddressSection = ({ address, onAddressUpdate, isSavingAddressUpd
             />
 
             <MobileSectionLabel htmlFor="editor">{c('Label').t`Signature`}</MobileSectionLabel>
-            <Editor
+            <SimpleEditor
                 onReady={handleReady}
                 onChange={() => {
                     setSignatureUpdated(true);
                 }}
-                simple
-                openEmojiPickerRef={openEmojiPickerRef}
-                toolbarConfig={toolbarConfig}
-                setToolbarConfig={setToolbarConfig}
-                modalLink={modalLink}
-                modalImage={modalImage}
-                modalDefaultFont={modalDefaultFont}
             />
 
             <Button

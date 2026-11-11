@@ -15,15 +15,14 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { formatSignature } from '@proton/shared/lib/mail/signature';
 
-import Editor from '../../components/editor/Editor';
-import { useToolbar } from '../../components/editor/hooks/useToolbar';
-import type { EditorActions } from '../../components/editor/interface';
 import Info from '../../components/link/Info';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import useErrorHandler from '../../hooks/useErrorHandler';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import type { SimpleEditorActions } from '../editor/SimpleEditorContext';
+import { useSimpleEditor } from '../editor/SimpleEditorContext';
 
 interface Props {
     address: Address;
@@ -41,9 +40,10 @@ const EditAddressesSection = ({ address }: Props) => {
     const { viewportWidth } = useActiveBreakpoint();
 
     const editorWrapperRef = useRef<HTMLDivElement>(null);
-    const editorRef = useRef<EditorActions>();
+    const editorRef = useRef<SimpleEditorActions>();
+    const SimpleEditor = useSimpleEditor();
 
-    const handleReady = (actions: EditorActions) => {
+    const handleReady = (actions: SimpleEditorActions) => {
         actions.setContent(address.Signature);
         editorRef.current = actions;
         setEditorReady(true);
@@ -55,7 +55,7 @@ const EditAddressesSection = ({ address }: Props) => {
 
     const handleSubmit = async () => {
         try {
-            const signature = signatureUpdated ? (editorRef.current?.getContent() as string) : address.Signature;
+            const signature = signatureUpdated ? editorRef.current?.getContent() || '' : address.Signature;
             await dispatch(updateAddressThunk({ address, displayName, signature: formatSignature(signature) }));
             createNotification({ text: c('Success').t`Address updated` });
         } catch (e) {
@@ -84,10 +84,6 @@ const EditAddressesSection = ({ address }: Props) => {
             }
         }, 100);
     }, [address]);
-
-    const { openEmojiPickerRef, toolbarConfig, setToolbarConfig, modalLink, modalImage, modalDefaultFont } = useToolbar(
-        {}
-    );
 
     return (
         <form
@@ -130,18 +126,11 @@ const EditAddressesSection = ({ address }: Props) => {
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight>
                     <div ref={editorWrapperRef} tabIndex={-1}>
-                        <Editor
+                        <SimpleEditor
                             onReady={handleReady}
                             onChange={() => {
                                 setSignatureUpdated(true);
                             }}
-                            simple
-                            openEmojiPickerRef={openEmojiPickerRef}
-                            toolbarConfig={toolbarConfig}
-                            setToolbarConfig={setToolbarConfig}
-                            modalLink={modalLink}
-                            modalImage={modalImage}
-                            modalDefaultFont={modalDefaultFont}
                             isSmallViewportForToolbar={viewportWidth['<=medium']}
                             mailSettings={mailSettings}
                             title={c('Label').t`Signature`}

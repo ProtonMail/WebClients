@@ -71,6 +71,18 @@ export const DEFAULT_FONT_FACE_ID = FONT_FACES.ARIAL.id;
 
 export const DEFAULT_FONT_SIZE = 14;
 
+export enum FONT_SIZES {
+    '10px' = '7.5pt',
+    '12px' = '9pt',
+    '14px' = '10.5pt',
+    '16px' = '12pt',
+    '18px' = '13.5pt',
+    '20px' = '15pt',
+    '22px' = '16.5pt',
+    '24px' = '18pt',
+    '26px' = '19.5pt',
+}
+
 /**
  * getFontFaceValueFromId
  * @param fontFaceId font face id saved in user settings

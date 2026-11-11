@@ -24,9 +24,6 @@ import {
 import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 
-import Editor from '../../components/editor/Editor';
-import { useToolbar } from '../../components/editor/hooks/useToolbar';
-import type { EditorActions } from '../../components/editor/interface';
 import Toggle from '../../components/toggle/Toggle';
 import useErrorHandler from '../../hooks/useErrorHandler';
 import SettingsLayout from '../account/SettingsLayout';
@@ -35,6 +32,8 @@ import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import SettingsParagraph from '../account/SettingsParagraph';
 import SettingsSectionWide from '../account/SettingsSectionWide';
 import UpgradeBanner from '../account/UpgradeBanner';
+import type { SimpleEditorActions } from '../editor/SimpleEditorContext';
+import { useSimpleEditor } from '../editor/SimpleEditorContext';
 import AutoReplyFormDaily from './AutoReplyForm/AutoReplyFormDaily';
 import AutoReplyFormFixed from './AutoReplyForm/AutoReplyFormFixed';
 import AutoReplyFormMonthly from './AutoReplyForm/AutoReplyFormMonthly';
@@ -58,7 +57,8 @@ export const AutoReplySection = () => {
     const { createNotification } = useNotifications();
     const { model, updateModel, toAutoResponder } = useAutoReplyForm(AutoResponder);
 
-    const editorActionsRef = useRef<EditorActions>();
+    const SimpleEditor = useSimpleEditor();
+    const editorActionsRef = useRef<SimpleEditorActions>();
     const composerRef = useRef<HTMLDivElement>(null);
 
     const messageLimitReached = model.message.length > AUTO_REPLY_MAX_LENGTH;
@@ -114,7 +114,7 @@ export const AutoReplySection = () => {
         createNotification({ text: c('Success').t`Auto-reply updated` });
     };
 
-    const handleEditorReady = (actions: EditorActions) => {
+    const handleEditorReady = (actions: SimpleEditorActions) => {
         editorActionsRef.current = actions;
         actions.setContent(model.message);
     };
@@ -146,10 +146,6 @@ export const AutoReplySection = () => {
             },
         ],
     ]);
-
-    const { openEmojiPickerRef, toolbarConfig, setToolbarConfig, modalLink, modalImage, modalDefaultFont } = useToolbar(
-        {}
-    );
 
     const plus = PLAN_NAMES[PLANS.MAIL];
     const bundle = PLAN_NAMES[PLANS.BUNDLE];
@@ -210,17 +206,10 @@ export const AutoReplySection = () => {
                             </SettingsLayoutLeft>
                             <SettingsLayoutRight>
                                 <div ref={composerRef} tabIndex={-1} className="w-full">
-                                    <Editor
-                                        metadata={{ supportFiles: false }}
+                                    <SimpleEditor
+                                        supportFiles={false}
                                         onReady={handleEditorReady}
                                         onChange={updateModel('message')}
-                                        simple
-                                        openEmojiPickerRef={openEmojiPickerRef}
-                                        toolbarConfig={toolbarConfig}
-                                        setToolbarConfig={setToolbarConfig}
-                                        modalLink={modalLink}
-                                        modalImage={modalImage}
-                                        modalDefaultFont={modalDefaultFont}
                                         mailSettings={mailSettings}
                                         title={c('Label').t`Message (auto-reply)`}
                                     />

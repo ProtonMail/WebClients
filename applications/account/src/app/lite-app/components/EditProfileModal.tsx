@@ -5,9 +5,7 @@ import { c } from 'ttag';
 
 import { updateAddressThunk } from '@proton/account/addresses/updateAddress';
 import { Button } from '@proton/atoms/Button/Button';
-import Editor from '@proton/components/components/editor/Editor';
-import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
-import type { EditorActions } from '@proton/components/components/editor/interface';
+import SimpleEditor from '@proton/components/components/editor/SimpleEditor';
 import Form from '@proton/components/components/form/Form';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -16,6 +14,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { InputField as InputFieldTwo } from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
+import type { SimpleEditorActions } from '@proton/components/containers/editor/SimpleEditorContext';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -31,9 +30,6 @@ const EditProfileModal = ({ address, ...rest }: Props) => {
     const [signature, setSignature] = useState(address.Signature);
     const [submitting, withLoading] = useLoading();
     const { onFormSubmit } = useFormErrors();
-    const { openEmojiPickerRef, toolbarConfig, setToolbarConfig, modalLink, modalImage, modalDefaultFont } = useToolbar(
-        {}
-    );
     const handleError = useErrorHandler();
 
     const handleSubmit = async () => {
@@ -45,7 +41,7 @@ const EditProfileModal = ({ address, ...rest }: Props) => {
         }
     };
     const handleClose = submitting ? undefined : rest.onClose;
-    const handleReady = (actions: EditorActions) => {
+    const handleReady = (actions: SimpleEditorActions) => {
         actions.setContent(signature);
     };
 
@@ -77,17 +73,7 @@ const EditProfileModal = ({ address, ...rest }: Props) => {
                 <label className="field-two-label-container flex justify-space-between flex-nowrap items-end gap-2">{c(
                     'Label'
                 ).t`Signature`}</label>
-                <Editor
-                    onReady={handleReady}
-                    onChange={setSignature}
-                    simple
-                    openEmojiPickerRef={openEmojiPickerRef}
-                    toolbarConfig={toolbarConfig}
-                    setToolbarConfig={setToolbarConfig}
-                    modalLink={modalLink}
-                    modalImage={modalImage}
-                    modalDefaultFont={modalDefaultFont}
-                />
+                <SimpleEditor onReady={handleReady} onChange={setSignature} />
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={handleClose} disabled={submitting}>
