@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useRef, useState } from 'react';
+import { memo, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 import type { GetContentMode, InsertOption } from 'roosterjs-editor-types';
 import { ContentPosition } from 'roosterjs-editor-types';
@@ -107,6 +107,19 @@ const EditorWrapper = ({
     const [documentReady, setDocumentReady] = useState(false);
     const [blockquoteSaved, setBlockquoteSaved] = useState<string>();
 
+    /** Mirrors of `blockquoteSaved` and `editorMetadata.blockquoteExpanded` for the handlers.
+     *  `useHandler` only picks up a new closure in a passive effect, so right after the initial
+     *  `handleSetContent` there is a window where `getContent` still sees no saved blockquote
+     *  and an expanded one, and returns the editor content without the blockquote. EOComposer
+     *  can export the reply in that window and drop the quoted original. Refs are updated
+     *  synchronously, so every handler version reads the current values.
+     */
+    const blockquoteSavedRef = useRef<string>();
+    const blockquoteExpandedRef = useRef(editorMetadata.blockquoteExpanded);
+    useLayoutEffect(() => {
+        blockquoteExpandedRef.current = editorMetadata.blockquoteExpanded;
+    }, [editorMetadata.blockquoteExpanded]);
+
     // Keep track of the containing CIDs to detect deletion
     const [cids, setCIDs] = useState<string[]>([]);
     const reuploadingCIDsRef = useRef<Set<string>>(new Set());
@@ -144,9 +157,10 @@ const EditorWrapper = ({
             return '';
         }
         const editorContent = editorActionsRef.current?.getContent(format) || '';
+        const savedBlockquote = blockquoteSavedRef.current;
 
-        if (!editorMetadata.blockquoteExpanded && blockquoteSaved !== '') {
-            return editorContent + blockquoteSaved;
+        if (!blockquoteExpandedRef.current && savedBlockquote) {
+            return editorContent + savedBlockquote;
         }
 
         return editorContent;
@@ -256,10 +270,14 @@ const EditorWrapper = ({
             if (blockquoteSaved === undefined) {
                 // Means it's the first content initialization
                 content = contentBeforeBlockquote;
+                blockquoteSavedRef.current = sanitizedBlockquote;
                 setBlockquoteSaved(sanitizedBlockquote);
-                editorMetadata.setBlockquoteExpanded?.(sanitizedBlockquote === '');
+                if (editorMetadata.setBlockquoteExpanded) {
+                    blockquoteExpandedRef.current = sanitizedBlockquote === '';
+                    editorMetadata.setBlockquoteExpanded(sanitizedBlockquote === '');
+                }
             } else {
-                content = editorMetadata.blockquoteExpanded
+                content = blockquoteExpandedRef.current
                     ? contentBeforeBlockquote + sanitizedBlockquote
                     : contentBeforeBlockquote;
             }
@@ -363,7 +381,9 @@ const EditorWrapper = ({
             checkImageDeletion();
         }
 
-        const nextContent = editorMetadata.blockquoteExpanded ? content : `${content}${blockquoteSaved}`;
+        const savedBlockquote = blockquoteSavedRef.current;
+        const nextContent =
+            blockquoteExpandedRef.current || !savedBlockquote ? content : `${content}${savedBlockquote}`;
 
         onChangeContent(nextContent);
     });
@@ -379,7 +399,10 @@ const EditorWrapper = ({
     );
 
     const handleBlockquoteToggleClick = useCallback(() => {
-        editorMetadata.setBlockquoteExpanded?.(true);
+        if (editorMetadata.setBlockquoteExpanded) {
+            blockquoteExpandedRef.current = true;
+            editorMetadata.setBlockquoteExpanded(true);
+        }
 
         skipNextInputRef.current = true;
         if (editorActionsRef.current && blockquoteSaved) {
