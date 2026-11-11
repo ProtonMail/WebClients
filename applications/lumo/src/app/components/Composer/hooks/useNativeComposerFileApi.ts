@@ -1,29 +1,53 @@
 import { useEffect, useRef } from 'react';
 
+import { getLumoFileType } from '../../../remote/nativeComposerBridge';
 import {
-    clearNativeComposerFiles,
+    isNativeComposerBridgeAvailable,
     onNativeHandleFileUploadRequest,
     onNativeOpenDriveRequest,
     onNativeOpenSketch,
     onNativeRemoveFile,
+    setNativeComposerFiles,
     setNativeTsAndCsVisibility,
 } from '../../../remote/nativeComposerBridgeHelpers';
-import { ComposerMode } from '../../../types';
+import { attachmentDataCache } from '../../../services/attachmentDataCache';
+import { type Attachment, ComposerMode } from '../../../types';
 
 export const useNativeComposerFileApi = (
     composerMode: ComposerMode,
-    hasAttachments: boolean,
+    provisionalAttachments: Attachment[],
     hasMessages: boolean,
     handleFilesFromNative: (files: { base64: string; name: string }[]) => void,
     handleBrowseDrive: () => void,
     handleDrawSketch: () => void,
     handleDeleteAttachment: (attachmentId: string) => void
 ): void => {
+    const hasAttachments = provisionalAttachments.length > 0;
+
+    // The web draft is authoritative. Project retrieval and message updates also write to the
+    // attachment store, but must never populate the native composer's next-message attachments.
     useEffect(() => {
-        if (!hasAttachments) {
-            clearNativeComposerFiles();
-            console.log(`removed all files`);
-        }
+        if (!isNativeComposerBridgeAvailable()) return;
+        setNativeComposerFiles(
+            provisionalAttachments
+                .filter((attachment) => !attachment.processing)
+                .map((attachment) => {
+                    const imageBytes = attachmentDataCache.getImagePreview(attachment.id);
+                    return {
+                        id: attachment.id,
+                        name: attachment.filename,
+                        type: getLumoFileType(attachment.mimeType ?? ''),
+                        preview: imageBytes
+                            ? btoa(imageBytes.reduce((data, byte) => data + String.fromCharCode(byte), ''))
+                            : null,
+                    };
+                })
+        );
+    }, [provisionalAttachments]);
+
+    useEffect(() => () => setNativeComposerFiles([]), []);
+
+    useEffect(() => {
         setNativeTsAndCsVisibility(composerMode !== ComposerMode.GALLERY && !hasMessages && !hasAttachments);
     }, [composerMode, hasMessages, hasAttachments]);
 
