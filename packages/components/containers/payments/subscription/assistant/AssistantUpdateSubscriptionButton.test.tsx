@@ -16,6 +16,11 @@ jest.mock('@proton/account/user/hooks', () => ({
     useUser: jest.fn(),
 }));
 
+jest.mock('@proton/account/userPermissions/hooks', () => ({
+    ...jest.requireActual('@proton/account/userPermissions/hooks'),
+    useCanUpdateBilling: () => [true, false],
+}));
+
 jest.mock('../../../../components/link/SettingsLink', () => ({
     __esModule: true,
     default: ({ path, children }: { path: string; children: string }) => <a href={path}>{children}</a>,

@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { groupOwnerInvitesThunk } from '@proton/account/groupOwnerInvites';
-import { AdminRolesUIState, useAdminRolesUI } from '@proton/account/userPermissions/hooks';
+import { AdminRolesUIState, useAdminRolesUI, useCanUpdateBilling } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { Href } from '@proton/atoms/Href/Href';
@@ -41,6 +41,7 @@ const OrganizationGroupsManagementSection = ({ app, upgradeRequired }: Props) =>
     const [entitlements] = useEntitlementChecksForOrgAndUser();
     const { groups, actions, restrictedBy } = useGroupsManagement();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
+    const [canUpdateBilling] = useCanUpdateBilling();
     const dispatch = useDispatch();
     const [adminRolesUIState] = useAdminRolesUI();
     const {
@@ -83,17 +84,19 @@ const OrganizationGroupsManagementSection = ({ app, upgradeRequired }: Props) =>
                         </div>
                     }
                     cta={
-                        <Button
-                            color="norm"
-                            loading={loadingSubscriptionModal}
-                            onClick={() => {
-                                void openSubscriptionModal({
-                                    step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
-                                });
-                            }}
-                        >
-                            {c('Action').t`Upgrade`}
-                        </Button>
+                        canUpdateBilling && (
+                            <Button
+                                color="norm"
+                                loading={loadingSubscriptionModal}
+                                onClick={() => {
+                                    void openSubscriptionModal({
+                                        step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+                                    });
+                                }}
+                            >
+                                {c('Action').t`Upgrade`}
+                            </Button>
+                        )
                     }
                 />
             </SettingsSectionWide>

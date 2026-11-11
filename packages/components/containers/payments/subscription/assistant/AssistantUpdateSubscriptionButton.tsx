@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useCanUpdateBilling } from '@proton/account/userPermissions/hooks';
 import { ADDON_PREFIXES } from '@proton/payments/core/constants';
 import { getSubscriptionSupportingAddon } from '@proton/payments/core/plan/addons';
 import { getPlanName } from '@proton/payments/core/subscription/helpers';
@@ -16,12 +17,17 @@ const AssistantUpdateSubscriptionButton = () => {
     const [allSubscriptions = []] = useAllSubscriptions();
     const subscriptionToExtend =
         getSubscriptionSupportingAddon(allSubscriptions, ADDON_PREFIXES.SCRIBE) ?? allSubscriptions[0];
+    const [canUpdateBilling] = useCanUpdateBilling();
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.ACCOUNT_UPSELL_REF_PATH,
         component: UPSELL_COMPONENT.MODAL,
         feature: MAIL_UPSELL_PATHS.ASSISTANT_TOGGLE,
         isSettings: true,
     });
+
+    if (!canUpdateBilling) {
+        return null;
+    }
 
     return (
         <SettingsLink

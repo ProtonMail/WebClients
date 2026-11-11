@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
+import { useCanUpdateBilling } from '@proton/account/userPermissions/hooks';
 import { Href } from '@proton/atoms/Href/Href';
 import { subscriptionExpires } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -16,8 +17,9 @@ import TopBanner from './TopBanner';
 const SubscriptionEndsBanner = ({ app }: { app: APP_NAMES }) => {
     const [subscriptions = []] = useAllSubscriptions();
     const subscription = useSubscriptionWithEndsBanner(app, subscriptions);
+    const [canUpdateBilling] = useCanUpdateBilling();
 
-    if (!subscription) {
+    if (!canUpdateBilling || !subscription) {
         return null;
     }
 

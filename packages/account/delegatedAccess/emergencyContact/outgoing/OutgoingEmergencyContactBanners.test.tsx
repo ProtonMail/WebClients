@@ -32,6 +32,11 @@ jest.mock('../../../previousSubscription/hooks', () => ({
     usePreviousSubscription: jest.fn(),
 }));
 
+jest.mock('../../../userPermissions/hooks', () => ({
+    ...jest.requireActual('../../../userPermissions/hooks'),
+    useCanUpdateBilling: () => [true, false],
+}));
+
 jest.mock('../../shared/OutgoingDelegatedAccessProvider', () => ({
     useOutgoingController: jest.fn(),
 }));

@@ -35,7 +35,7 @@ const reducer = combineReducers({
     ...membersReducer,
 });
 
-const getUser = (Role: USER_ROLES) => ({ ID: 'user', Role, isSelf: true }) as UserModel;
+const getUser = (Role: USER_ROLES) => ({ ID: 'user', Role, isSelf: true, Subscribed: 1 }) as UserModel;
 
 const sampleMembers = [{ ID: '1' } as EnhancedMember];
 

@@ -72,7 +72,7 @@ describe('userPermissionsThunk with AdminRoleMVP off', () => {
 
     it('synthesises the map from the legacy admin role without calling the API', async () => {
         const { store, api } = setup({
-            user: { isAdmin: true, isSelf: true, Role: USER_ROLES.ADMIN_ROLE } as UserModel,
+            user: { Subscribed: 1, isAdmin: true, isSelf: true, Role: USER_ROLES.ADMIN_ROLE } as UserModel,
         });
 
         const result = await store.dispatch(userPermissionsThunk());
@@ -86,7 +86,7 @@ describe('userPermissionsThunk with AdminRoleMVP off', () => {
     // gates fall back to hasLegacyAdminAccess rather than reading `permissions` alone.
     it('denies the synthesised map to an impersonating admin but flags the legacy model', async () => {
         const { store } = setup({
-            user: { isAdmin: true, isSelf: false, Role: USER_ROLES.ADMIN_ROLE } as UserModel,
+            user: { Subscribed: 1, isAdmin: true, isSelf: false, Role: USER_ROLES.ADMIN_ROLE } as UserModel,
         });
 
         const result = await store.dispatch(userPermissionsThunk());
@@ -126,10 +126,24 @@ describe('userPermissionsThunk', () => {
         });
     };
 
+    it('does not call the API for a user without an organization', async () => {
+        const api = jest.fn(async () => ({ Roles: [], Permissions: ['account.user.read'] }));
+        const { store } = setupWithApi({
+            user: { Subscribed: 0, isAdmin: false, isSelf: true, Role: USER_ROLES.FREE_ROLE } as UserModel,
+            api,
+        });
+
+        const result = await store.dispatch(userPermissionsThunk());
+
+        expect(api).not.toHaveBeenCalled();
+        expect(result.isLegacyPermissionModel).toBe(true);
+        PERMISSIONS.forEach((p) => expect(result.permissions?.[p]).toBe(false));
+    });
+
     it('does not grant all permissions to an impersonating admin (isAdmin && !isSelf)', async () => {
         const { store } = setup({
             // An admin accessing a member account: isAdmin is true but isSelf is false.
-            user: { isAdmin: true, isSelf: false, Role: USER_ROLES.ADMIN_ROLE } as UserModel,
+            user: { Subscribed: 1, isAdmin: true, isSelf: false, Role: USER_ROLES.ADMIN_ROLE } as UserModel,
             permissions: ['account.user.read'],
         });
         const result = await store.dispatch(userPermissionsThunk());
@@ -142,7 +156,7 @@ describe('userPermissionsThunk', () => {
     });
 
     it('invalidates the cached permissions without blanking them when the user role changes', async () => {
-        const user = { isAdmin: false, isSelf: true, Role: USER_ROLES.MEMBER_ROLE } as UserModel;
+        const user = { Subscribed: 1, isAdmin: false, isSelf: true, Role: USER_ROLES.MEMBER_ROLE } as UserModel;
         let granted = ['account.user.read'];
         let permissionsCalls = 0;
         const { store } = setupWithApi({
@@ -193,7 +207,12 @@ describe('userPermissionsThunk', () => {
         const { store } = getTestStore({
             reducer: { ...userReducer, ...userPermissionsReducer },
             preloadedState: {
-                user: getModelState({ isAdmin: true, isSelf: true, Role: USER_ROLES.ADMIN_ROLE } as UserModel),
+                user: getModelState({
+                    Subscribed: 1,
+                    isAdmin: true,
+                    isSelf: true,
+                    Role: USER_ROLES.ADMIN_ROLE,
+                } as UserModel),
             },
             extraThunkArguments,
         });
@@ -207,7 +226,7 @@ describe('userPermissionsThunk', () => {
     });
 
     it('keeps the cached permissions when the user role is unchanged', async () => {
-        const user = { isAdmin: false, isSelf: true, Role: USER_ROLES.MEMBER_ROLE } as UserModel;
+        const user = { Subscribed: 1, isAdmin: false, isSelf: true, Role: USER_ROLES.MEMBER_ROLE } as UserModel;
         const { store } = setup({ user, permissions: ['account.user.read'] });
 
         await store.dispatch(userPermissionsThunk());
@@ -222,7 +241,7 @@ describe('refreshing the user after accepting a group invitation', () => {
     // What acceptGroupInvitation does: the group's role assignment isn't carried in an event loop
     // event, so it refetches the user, and userFulfilled invalidates the permissions from there.
     const run = async ({ newRole }: { newRole: number }) => {
-        const user = { isAdmin: false, isSelf: true, Role: USER_ROLES.MEMBER_ROLE } as UserModel;
+        const user = { Subscribed: 1, isAdmin: false, isSelf: true, Role: USER_ROLES.MEMBER_ROLE } as UserModel;
         const extraThunkArguments = {
             api: async (config: any) => {
                 if (config.url === 'core/v4/users') {
@@ -280,7 +299,7 @@ describe('refreshing the user after accepting a group invitation', () => {
 describe('isOrganizationOwnerThunk', () => {
     const ownerRole = { Name: PREDEFINED_ROLE_NAME.OWNER } as OrganizationRole;
     const userAdminRole = { Name: PREDEFINED_ROLE_NAME.USER_ADMIN } as OrganizationRole;
-    const admin = { isAdmin: true, isSelf: true, Role: USER_ROLES.ADMIN_ROLE } as UserModel;
+    const admin = { Subscribed: 1, isAdmin: true, isSelf: true, Role: USER_ROLES.ADMIN_ROLE } as UserModel;
 
     const setup = ({ isAdminRoleMVPEnabled, roles }: { isAdminRoleMVPEnabled: boolean; roles: OrganizationRole[] }) => {
         const extraThunkArguments = {

@@ -11,6 +11,7 @@ import type { User } from '@proton/shared/lib/interfaces/User';
 import { type OrgPermissions, PERMISSIONS, type UserPermission } from '@proton/shared/lib/interfaces/UserPermission';
 
 import { serverEvent } from '../eventLoop';
+import { canFetchOrganization } from '../organization/helper';
 import { getIsOrganizationOwner, isOwnerRole } from '../organizationRoles/helpers';
 import { type UserState, userFulfilled, userThunk } from '../user';
 
@@ -58,7 +59,6 @@ export const hasLegacyAdminAccess = ({
 const modelThunk = createAsyncModelThunk<Model, UserPermissionsState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument, dispatch }) => {
         const user = await dispatch(userThunk());
-        // A runtime unleash toggle won't reflect until the next refetch, but that's fine in practice.
         const flag = extraArgument.unleashClient?.isEnabled('AdminRoleMVP') ?? false;
         const isLegacyAdmin = user.isAdmin && user.isSelf;
         const permissions = getOrgPermissions([], isLegacyAdmin);
@@ -70,7 +70,7 @@ const modelThunk = createAsyncModelThunk<Model, UserPermissionsState, ProtonThun
             role: user.Role,
             isLegacyPermissionModel: true,
         };
-        if (!flag) {
+        if (!flag || !canFetchOrganization(user)) {
             return defaultValue;
         }
         try {

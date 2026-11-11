@@ -20,6 +20,7 @@ jest.mock('@proton/account/groupOwnerInvites', () => ({
 jest.mock('@proton/account/userPermissions/hooks', () => ({
     AdminRolesUIState: { Enabled: 'enabled', Disabled: 'disabled' },
     useAdminRolesUI: () => ['disabled'],
+    useCanUpdateBilling: () => [true, false],
 }));
 jest.mock('@proton/features/useFeature', () => () => ({ feature: undefined, update: jest.fn(), loading: false }));
 jest.mock('@proton/redux-shared-store/sharedProvider', () => ({ useDispatch: () => mockDispatch }));

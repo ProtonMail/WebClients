@@ -7,8 +7,7 @@ import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSamlSSO } from '@proton/account/samlSSO/hooks';
-import { useUser } from '@proton/account/user/hooks';
-import { useUserPermissions } from '@proton/account/userPermissions/hooks';
+import { useCanUpdateBilling, useUserPermissions } from '@proton/account/userPermissions/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -296,7 +295,7 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
     const [customDomains] = useCustomDomains();
     const [samlSSO] = useSamlSSO();
     const [organization] = useOrganization();
-    const [user] = useUser();
+    const [canUpdateBilling] = useCanUpdateBilling();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const [{ permissions }] = useUserPermissions();
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
@@ -342,7 +341,7 @@ const SsoPage = ({ app }: { app: APP_NAMES }) => {
                         </div>
                     }
                     cta={
-                        user.canPay && ssoAppInfo.upsellPlan ? (
+                        canUpdateBilling && ssoAppInfo.upsellPlan ? (
                             <Button
                                 color="norm"
                                 fullWidth

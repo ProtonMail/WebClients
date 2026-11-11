@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
+import { useCanUpdateBilling } from '@proton/account/userPermissions/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
@@ -23,11 +23,11 @@ interface Props {
 }
 
 const SentinelUpgradeButton = ({ app, variant }: Props) => {
-    const [user] = useUser();
+    const [canUpdateBilling] = useCanUpdateBilling();
     const { APP_NAME } = useConfig();
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
 
-    if (!user.canPay) {
+    if (!canUpdateBilling) {
         return null;
     }
 
@@ -38,7 +38,7 @@ const SentinelUpgradeButton = ({ app, variant }: Props) => {
             component: UPSELL_COMPONENT.BUTTON,
             fromApp: app,
         });
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             mode: 'upsell-modal',
             defaultAudience: variant === 'user' ? Audience.B2C : Audience.B2B,

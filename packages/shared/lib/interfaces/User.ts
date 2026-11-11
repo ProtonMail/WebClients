@@ -161,6 +161,7 @@ export interface UserInfo {
     hasPaidLumo: boolean;
     hasPaidMeet: boolean;
     hasPassLifetime: boolean;
+    /** @deprecated Use `useCanUpdateBilling` in components or `getCanUpdateBilling` elsewhere to check the billing access. */
     canPay: boolean;
     accessTypeMask: SessionAccessTypeMask;
 }

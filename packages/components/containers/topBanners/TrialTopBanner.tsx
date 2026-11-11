@@ -7,6 +7,7 @@ import { c } from 'ttag';
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
+import { useCanUpdateBilling } from '@proton/account/userPermissions/hooks';
 import { useConfig } from '@proton/app-context/useConfig';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import useDateCountdown from '@proton/hooks/useDateCountdown';
@@ -189,8 +190,9 @@ const TrialTopBannerPerSubscription = ({ app, subscription }: { app: APP_NAMES; 
 
 const TrialTopBanner = ({ app }: { app: APP_NAMES }) => {
     const [subscriptions = []] = useAllSubscriptions();
+    const [canUpdateBilling] = useCanUpdateBilling();
 
-    if (subscriptions.length === 0) {
+    if (!canUpdateBilling || subscriptions.length === 0) {
         return null;
     }
 
