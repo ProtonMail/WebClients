@@ -13,7 +13,6 @@ import Price from '@proton/components/components/price/Price';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import CurrencySelector from '@proton/components/containers/payments/CurrencySelector';
-import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { useVpn2024SignupExperiment } from '@proton/components/containers/payments/subscription/helpers/useVpn2024SignupExperiment';
 import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
@@ -28,6 +27,7 @@ import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metric
 import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
+import PaymentWrapper from '@proton/payments-ui/containers/payments/PaymentWrapper';
 import { useBillingAddress } from '@proton/payments-ui/ui/billing-address/hooks/useBillingAddress';
 import { PayButton } from '@proton/payments-ui/ui/components/PayButton';
 import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';

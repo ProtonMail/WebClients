@@ -34,7 +34,7 @@ jest.mock('./CycleSelector', () => ({
     ),
 }));
 
-jest.mock('@proton/components/containers/payments/PaymentWrapper', () => ({
+jest.mock('@proton/payments-ui/containers/payments/PaymentWrapper', () => ({
     __esModule: true,
     default: () => null,
 }));

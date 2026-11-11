@@ -15,8 +15,8 @@ import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 import { apiMock } from '@proton/test-api/api';
 
 import { renderWithProviders } from '../../../../testing/renderWithProviders';
+import { organization } from '../../../../testing/subscriptionData';
 import NotificationsChildren from '../../../notifications/Children';
-import { organization } from '../__mocks__/data';
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
 
 jest.mock('@proton/atoms/Portal/Portal');

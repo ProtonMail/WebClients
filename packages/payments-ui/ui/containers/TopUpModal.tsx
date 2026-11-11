@@ -19,7 +19,6 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Price from '@proton/components/components/price/Price';
 import AmountRow from '@proton/components/containers/payments/AmountRow';
 import PaymentInfo from '@proton/components/containers/payments/PaymentInfo';
-import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import CheckoutRow from '@proton/components/containers/payments/subscription/modal-components/helpers/CheckoutRow';
 import useLoading from '@proton/hooks/useLoading';
 import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
@@ -45,6 +44,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { TaxMode } from '@proton/shared/lib/payments/subscription/constants';
 
 import { usePaymentFacade } from '../../client-extensions/usePaymentFacade';
+import PaymentWrapper from '../../containers/payments/PaymentWrapper';
 import { ChargebeeIdealButton } from '../components/ChargebeeIdealButton';
 import { ChargebeePaypalButton } from '../components/ChargebeePaypalButton';
 import { formatTax } from '../headless-checkout/tax-helpers';

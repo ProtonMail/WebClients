@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { useAppName } from '@proton/account/appName';
 import SubscriptionCheckoutCycleItem from '@proton/components/containers/payments/subscription/cycle-selector/SubscriptionCheckoutCycleItem';
-import SubscriptionCycleSelector from '@proton/components/containers/payments/subscription/cycle-selector/SubscriptionCycleSelector';
 import { getAllowedCycles } from '@proton/components/containers/payments/subscription/helpers/getAllowedCycles';
 import { usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
+import SubscriptionCycleSelector from '@proton/payments-ui/containers/payments/subscription/cycle-selector/SubscriptionCycleSelector';
 import { getIsCustomCycle } from '@proton/payments/core/checkout';
 import { PLANS } from '@proton/payments/core/constants';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';

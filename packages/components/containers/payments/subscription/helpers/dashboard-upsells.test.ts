@@ -24,7 +24,7 @@ import {
     subscriptionMail,
     unlimitedUpsell,
     vpnBusinessUpsell,
-} from '../__mocks__/data';
+} from '../../../../testing/subscriptionData';
 import { resolveUpsellsToDisplay } from './dashboard-upsells';
 
 const vpnPassProUpsell = {

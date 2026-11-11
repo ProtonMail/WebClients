@@ -4,13 +4,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
-import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { ProtonPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/ProtonPlanCustomizer';
 import { getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/helpers';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcShield } from '@proton/icons/icons/IcShield';
 import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
+import PaymentWrapper from '@proton/payments-ui/containers/payments/PaymentWrapper';
 import { useBillingAddress } from '@proton/payments-ui/ui/billing-address/hooks/useBillingAddress';
 import { PayButton } from '@proton/payments-ui/ui/components/PayButton';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';

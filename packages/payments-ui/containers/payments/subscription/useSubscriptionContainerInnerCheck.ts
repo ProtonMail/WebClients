@@ -1,0 +1,424 @@
+import { useRef, useState } from 'react';
+
+import { c } from 'ttag';
+
+import { useNotifications } from '@proton/app-context/useNotifications';
+import { forceAddonsMinMaxConstraints } from '@proton/components/containers/payments/planCustomizer/helpers';
+import { switchCycle } from '@proton/components/containers/payments/subscription/helpers/switchCycle';
+import useLoading from '@proton/hooks/useLoading';
+import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
+import { ProrationMode } from '@proton/payments/core/api/api';
+import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
+import type { FreeSubscription, PaymentsApi, PlainPaymentMethodType } from '@proton/payments/core/interface';
+import { hasPlanIDs } from '@proton/payments/core/planIDs';
+import { getIsPlanTransitionForbidden } from '@proton/payments/core/subscription/forbidden-plan-transition';
+import { getFreeCheckResult } from '@proton/payments/core/subscription/freePlans';
+import {
+    getAutoCoupon,
+    getCodes,
+    getPlanIDs,
+    isModifyingPaidSubscriptionSelection,
+    isSubscriptionCheckForbiddenWithReason,
+    isSubscriptionSelectionEqual,
+} from '@proton/payments/core/subscription/helpers';
+import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
+import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
+import { getApiErrorMessage, getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import type { UserModel } from '@proton/shared/lib/interfaces/User';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+
+import type { PaymentFacade } from '../../../client-extensions/usePaymentFacade';
+import type { Model } from './SubscriptionContainer';
+import { reportPlanIDsIfChangedTelemetry } from './helpers/subscriptionTelemetry';
+
+interface PlanTransitionCallbacks {
+    onPlusToPlusTransition: (unlockPlan: Plan | undefined) => void;
+    onVisionaryDowngradeWarning: () => Promise<void>;
+    onVisionaryDowngradeHide: () => void;
+}
+
+interface NormalizeModelProps {
+    skipPlanTransitionChecks: boolean;
+    multiSubscriptionContext: MultiSubscriptionContext;
+    subscription: Subscription | FreeSubscription;
+    plansMap: FullPlansMap;
+    currentStep: SUBSCRIPTION_STEPS;
+    callbacks: PlanTransitionCallbacks;
+}
+
+export interface UseSubscriptionContainerInnerCheckProps {
+    model: Model;
+    checkResult: SubscriptionEstimation;
+    subscriptionCouponCode: string | undefined;
+    subscription: Subscription | FreeSubscription;
+    paymentsApi: PaymentsApi;
+    paymentFacadeSelectedMethodType: PlainPaymentMethodType | undefined;
+    skipPlanTransitionChecks: boolean;
+    multiSubscriptionContext: MultiSubscriptionContext;
+    refs: {
+        plansMapRef: { current: FullPlansMap };
+        giftCodeRef: { current: { focus: () => void } | null };
+    };
+    setters: {
+        setCheckResult: (result: SubscriptionEstimation) => void;
+        setModel: (model: Model) => void;
+        setVatReverseChargeErrorModal: (open: boolean) => void;
+    };
+    callbacks: {
+        runAdditionalEstimations: (
+            newModel: Model,
+            checkPayload: CheckSubscriptionData,
+            checkResult: SubscriptionEstimation,
+            signal: AbortSignal
+        ) => Promise<void>;
+        shouldPassIsTrial: (newModel: Model, downgradeIsTrial: boolean) => boolean | undefined;
+        onCheck?: (
+            data:
+                | { model: Model; newModel: Model; type: 'error'; error: any }
+                | { model: Model; newModel: Model; type: 'success'; result: SubscriptionEstimation }
+        ) => void;
+    } & PlanTransitionCallbacks;
+    telemetry: {
+        user: UserModel;
+        APP_NAME: APP_NAMES;
+        app: ProductParam;
+        paymentFacade: PaymentFacade;
+        context: PaymentTelemetryContext;
+    };
+}
+
+async function normalizeModel(newModel: Model, props: NormalizeModelProps): Promise<boolean> {
+    if (!props.skipPlanTransitionChecks) {
+        const latestSubscription = props.subscription.UpcomingSubscription ?? props.subscription;
+        const planTransitionForbidden = getIsPlanTransitionForbidden({
+            subscription: props.subscription,
+            plansMap: props.plansMap,
+            planIDs: newModel.planIDs,
+            multiSubscriptionContext: props.multiSubscriptionContext,
+        });
+
+        if (planTransitionForbidden?.type === 'lumo-plus' || planTransitionForbidden?.type === 'meet-plus') {
+            newModel.planIDs = planTransitionForbidden.newPlanIDs;
+            // since we are switching the plan, it's the same as switching the cycle manually, so we need to make sure
+            // that the cycle is allowed
+
+            newModel.cycle = switchCycle({
+                preferredCycle: props.subscription?.Cycle ?? newModel.cycle,
+                selectedPlanIDs: newModel.planIDs,
+                currency: newModel.currency,
+                subscription: props.subscription,
+                plansMap: props.plansMap,
+            });
+        }
+
+        if (planTransitionForbidden?.type === 'plus-to-plus') {
+            props.callbacks.onPlusToPlusTransition(
+                planTransitionForbidden.newPlanName ? props.plansMap[planTransitionForbidden.newPlanName] : undefined
+            );
+            newModel.planIDs = getPlanIDs(latestSubscription);
+            newModel.cycle = switchCycle({
+                preferredCycle: newModel.cycle,
+                selectedPlanIDs: newModel.planIDs,
+                currency: newModel.currency,
+                subscription: props.subscription,
+                plansMap: props.plansMap,
+            });
+            newModel.step = props.currentStep;
+        }
+
+        if (planTransitionForbidden?.type === 'visionary-downgrade') {
+            try {
+                await props.callbacks.onVisionaryDowngradeWarning();
+            } catch {
+                return false;
+            }
+        } else {
+            props.callbacks.onVisionaryDowngradeHide();
+        }
+    }
+
+    newModel.planIDs =
+        forceAddonsMinMaxConstraints({
+            selectedPlanIDs: newModel.planIDs,
+            plansMap: props.plansMap,
+            currency: newModel.currency,
+            subscription: props.subscription,
+        }) ?? newModel.planIDs;
+
+    return true;
+}
+
+export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContainerInnerCheckProps): {
+    check: (
+        newModel?: Model,
+        wantToApplyNewGiftCode?: boolean,
+        selectedMethod?: PlainPaymentMethodType
+    ) => Promise<SubscriptionEstimation | undefined>;
+    loadingCheck: boolean;
+    lastCheckFailed: boolean;
+} {
+    const abortControllerRef = useRef<AbortController | undefined>(undefined);
+    const latestValidCouponCodeRef = useRef('');
+    const [loadingCheck, withLoadingCheck] = useLoading();
+    const [lastCheckFailed, setLastCheckFailed] = useState(false);
+    const { createNotification } = useNotifications();
+
+    const check = async (
+        newModel: Model = props.model,
+        wantToApplyNewGiftCode = false,
+        selectedMethod?: PlainPaymentMethodType
+    ): Promise<SubscriptionEstimation | undefined> => {
+        const {
+            model,
+            checkResult,
+            subscriptionCouponCode,
+            subscription,
+            paymentsApi,
+            paymentFacadeSelectedMethodType,
+            refs: { plansMapRef, giftCodeRef },
+            setters: { setCheckResult, setModel, setVatReverseChargeErrorModal },
+            callbacks: { runAdditionalEstimations, shouldPassIsTrial, onCheck },
+            telemetry,
+        } = props;
+
+        const copyNewModel: Model = {
+            ...newModel,
+            initialCheckComplete: true,
+            paymentForbiddenReason: { forbidden: false },
+        };
+
+        if (!hasPlanIDs(copyNewModel.planIDs)) {
+            setCheckResult(getFreeCheckResult(model.currency, model.cycle));
+            setModel(copyNewModel);
+            setLastCheckFailed(false);
+            return;
+        }
+
+        const shouldContinue = await normalizeModel(copyNewModel, {
+            skipPlanTransitionChecks: props.skipPlanTransitionChecks,
+            multiSubscriptionContext: props.multiSubscriptionContext,
+            subscription: props.subscription,
+            plansMap: props.refs.plansMapRef.current,
+            currentStep: props.model.step,
+            callbacks: props.callbacks,
+        });
+        if (!shouldContinue) {
+            return;
+        }
+
+        reportPlanIDsIfChangedTelemetry(copyNewModel.planIDs, telemetry.paymentFacade, {
+            user: telemetry.user,
+            appName: telemetry.APP_NAME,
+            app: telemetry.app,
+            context: telemetry.context,
+            subscription,
+            model,
+        });
+
+        const dontQueryCheck = copyNewModel.step === SUBSCRIPTION_STEPS.PLAN_SELECTION;
+
+        if (dontQueryCheck) {
+            setCheckResult({
+                ...getOptimisticCheckResult({
+                    plansMap: plansMapRef.current,
+                    cycle: copyNewModel.cycle,
+                    planIDs: copyNewModel.planIDs,
+                    currency: copyNewModel.currency,
+                }),
+                Currency: copyNewModel.currency,
+                PeriodEnd: 0,
+            });
+            setModel(copyNewModel);
+            setLastCheckFailed(false);
+            return;
+        }
+
+        const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(props.multiSubscriptionContext, {
+            editedSubscription: subscription,
+            planIDs: copyNewModel.planIDs,
+            cycle: copyNewModel.cycle,
+            coupon: getCodes(copyNewModel).at(0),
+        });
+        if (paymentForbiddenReason.forbidden) {
+            setCheckResult({
+                ...getOptimisticCheckResult({
+                    plansMap: plansMapRef.current,
+                    cycle: copyNewModel.cycle,
+                    planIDs: copyNewModel.planIDs,
+                    currency: copyNewModel.currency,
+                }),
+                Currency: copyNewModel.currency,
+                PeriodEnd: 0,
+                AmountDue: 0,
+            });
+            setModel({
+                ...copyNewModel,
+                paymentForbiddenReason,
+            });
+            setLastCheckFailed(false);
+            return;
+        }
+
+        // Guards are re-evaluated only on checkout, when modifying a paid subscription, and when
+        // the plan/cycle selection changed (or on the first check). Computed after normalizeModel
+        // so planIDs/cycle reflect what is actually sent to subscriptions/check.
+        const validateGuards =
+            copyNewModel.step === SUBSCRIPTION_STEPS.CHECKOUT &&
+            isModifyingPaidSubscriptionSelection(subscription, copyNewModel.planIDs, copyNewModel.cycle) &&
+            (!model.initialCheckComplete || !isSubscriptionSelectionEqual(model, copyNewModel));
+
+        if (validateGuards && checkResult.GuardResult?.length) {
+            setCheckResult({ ...checkResult, GuardResult: [] });
+        }
+
+        const checkPromise = (async () => {
+            try {
+                abortControllerRef.current?.abort();
+                abortControllerRef.current = new AbortController();
+
+                const coupon = getAutoCoupon({
+                    coupon: copyNewModel.coupon,
+                    planIDs: copyNewModel.planIDs,
+                    cycle: copyNewModel.cycle,
+                    currency: copyNewModel.currency,
+                });
+
+                // PAY-1822. To put it simply, this code removes all the previously applied coupons or gift codes
+                // if user re-enters the same coupon code as in the currently active subscription.
+                // We must do it because of backend limitations. The backend won't recognize the currently active
+                // subscription coupon if there is any other valid coupon in the request payload.
+                const codesArgument =
+                    !!subscriptionCouponCode && copyNewModel.gift === subscriptionCouponCode
+                        ? { coupon: subscriptionCouponCode }
+                        : { gift: copyNewModel.gift, coupon };
+
+                const Codes = getCodes(codesArgument);
+
+                // selectedMethod variable prevails over paymentFacadeSelectedMethodType because it's passed in the
+                // onMethod change handler. So this variable changes before paymentFacadeSelectedMethodType is
+                // updated. We must take into account the case when user unselects SEPA, making selectedMethod not SEPA,
+                // while paymentFacadeSelectedMethodType is still SEPA. In this case we want to call /check without
+                // ProrationMode == Exact.
+                const currentlySelectedMethod = selectedMethod ?? paymentFacadeSelectedMethodType;
+
+                const checkPayload: CheckSubscriptionData = {
+                    Codes,
+                    Plans: copyNewModel.planIDs,
+                    Currency: copyNewModel.currency,
+                    Cycle: copyNewModel.cycle,
+                    BillingAddress: {
+                        CountryCode: copyNewModel.taxBillingAddress.CountryCode,
+                        State: copyNewModel.taxBillingAddress.State,
+                        ZipCode: copyNewModel.taxBillingAddress.ZipCode,
+                    },
+                    ProrationMode:
+                        currentlySelectedMethod === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT ||
+                        currentlySelectedMethod === PAYMENT_METHOD_TYPES.CHARGEBEE_IDEAL
+                            ? ProrationMode.Exact
+                            : undefined,
+                    IsTrial: shouldPassIsTrial(newModel, false),
+                    ValidateBillingAddress: true,
+                    ValidateGuards: validateGuards,
+                };
+
+                const newCheckResult = await paymentsApi.checkSubscription(checkPayload, {
+                    signal: abortControllerRef.current.signal,
+                    silence: true,
+                    previousEstimation: checkResult,
+                });
+
+                try {
+                    await runAdditionalEstimations(
+                        copyNewModel,
+                        checkPayload,
+                        newCheckResult,
+                        abortControllerRef.current.signal
+                    );
+                } catch {}
+
+                const { Gift = 0 } = newCheckResult;
+                const { Code = '' } = newCheckResult.Coupon || {}; // Coupon can equal null
+
+                if (wantToApplyNewGiftCode && copyNewModel.gift?.toLowerCase() !== Code.toLowerCase() && !Gift) {
+                    createNotification({ text: c('Error').t`Invalid code`, type: 'error' });
+                    giftCodeRef.current?.focus();
+
+                    // Don't update state with the errored check result. This is especially important for the "already-subscribed" case
+                    return checkResult;
+                }
+
+                if (Code) {
+                    latestValidCouponCodeRef.current = Code;
+                }
+                copyNewModel.coupon = Code || subscriptionCouponCode || latestValidCouponCodeRef.current;
+
+                if (!Gift) {
+                    delete copyNewModel.gift;
+                }
+
+                // Guards are only re-validated when the selection changes (see validateGuards above).
+                // Passive re-checks (currency, coupon, address) answer with an empty GuardResult, so
+                // carry the previous verdict forward until the next validating check replaces it.
+                const isPassiveRecheck = !validateGuards && isSubscriptionSelectionEqual(model, copyNewModel);
+
+                const checkResultWithGuards = isPassiveRecheck
+                    ? {
+                          ...newCheckResult,
+                          GuardResult: checkResult.GuardResult,
+                      }
+                    : newCheckResult;
+
+                setCheckResult(checkResultWithGuards);
+                setModel(copyNewModel);
+                setLastCheckFailed(false);
+                onCheck?.({ model, newModel: copyNewModel, type: 'success', result: checkResultWithGuards });
+            } catch (error: any) {
+                if (error?.name === 'AbortError') {
+                    return;
+                }
+
+                setLastCheckFailed(true);
+
+                if (error.name === 'OfflineError') {
+                    setModel({ ...model, step: SUBSCRIPTION_STEPS.NETWORK_ERROR });
+                }
+
+                if (error instanceof VatReverseChargeNotSupportedError) {
+                    setVatReverseChargeErrorModal(true);
+                    return;
+                }
+
+                // The check is sent with `silence: true` so that the generic API handler doesn't
+                // toast billing-address errors (800_001/800_002) while the user edits the form -
+                // those have dedicated in-modal UI. Everything else would then fail silently and
+                // leave the modal on the same step, e.g. the 403 a secondary admin gets when
+                // clicking a plan card. Connection issues are excluded: they are covered by the
+                // NETWORK_ERROR step above and by the API status banner.
+                // This lives here rather than in checkSubscription() because the other silenced
+                // callers (multiCheck price grids, promo banner prices) must stay quiet. If a
+                // second caller ever needs the same feedback, move it into checkSubscription()
+                // behind an explicit opt-in option instead of duplicating it.
+                const errorMessage = getApiErrorMessage(error);
+                if (errorMessage && !error?.cancel && !getIsConnectionIssue(error)) {
+                    createNotification({ text: errorMessage, type: 'error' });
+                }
+
+                onCheck?.({ model, newModel: copyNewModel, type: 'error', error });
+            }
+
+            return checkResult;
+        })();
+
+        void withLoadingCheck(checkPromise);
+
+        return checkPromise;
+    };
+
+    return { check, loadingCheck, lastCheckFailed };
+}

@@ -8,8 +8,8 @@ import {
 } from '@proton/components/components/startupModals/startupModalHooks';
 import type { StartupModal } from '@proton/components/components/startupModals/types';
 import { NPSApplication } from '@proton/components/containers/netPromoterScore/interface';
-import { useTrialEndedModal } from '@proton/components/containers/subscription/useTrialEndedModal';
 import useNewFeatureOnboarding from '@proton/components/hooks/useNewFeatureOnboarding';
+import { useTrialEndedModal } from '@proton/payments-ui/containers/subscription/useTrialEndedModal';
 
 import { useDriveDocsFeatureFlag } from '../../../legacy/store/_documents';
 import { DriveOnboardingModal } from '../../../modals/DriveOnboardingModal';

@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 
 import { useAppName } from '@proton/account/appName';
 import CalendarDowngradeModal from '@proton/components/containers/payments/subscription/CalendarDowngradeModal';
-import type { Model } from '@proton/components/containers/payments/subscription/SubscriptionContainer';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import { usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
+import type { Model } from '@proton/payments-ui/containers/payments/subscription/SubscriptionContainer';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { PLANS } from '@proton/payments/core/constants';
 import type { FreeSubscription } from '@proton/payments/core/interface';

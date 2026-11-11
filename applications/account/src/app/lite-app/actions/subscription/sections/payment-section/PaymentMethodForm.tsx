@@ -7,7 +7,6 @@ import { Badge } from '@proton/components/components/badge/Badge';
 import Price from '@proton/components/components/price/Price';
 import Alert3DS from '@proton/components/containers/payments/Alert3ds';
 import DefaultPaymentMethodMessage from '@proton/components/containers/payments/DefaultPaymentMethodMessage';
-import PaymentMethodDetails from '@proton/components/containers/payments/methods/PaymentMethodDetails';
 import { NoPaymentRequiredNote } from '@proton/components/containers/payments/subscription/modal-components/NoPaymentRequiredNote';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useStableLoading from '@proton/hooks/useStableLoading';
@@ -18,6 +17,7 @@ import { BitcoinInfoMessage } from '@proton/payments-hooks/payment-methods/bitco
 import { PayPalInfoMessage } from '@proton/payments-hooks/payment-methods/paypal/PayPalInfoMessage';
 import { usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import type { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
+import PaymentMethodDetails from '@proton/payments-ui/containers/payments/methods/PaymentMethodDetails';
 import { BitcoinView } from '@proton/payments-ui/payment-methods/bitcoin/BitcoinView';
 import { PayPalView } from '@proton/payments-ui/payment-methods/paypal/PayPalView';
 import { TaxFields } from '@proton/payments-ui/ui/billing-address/components/TaxFields';

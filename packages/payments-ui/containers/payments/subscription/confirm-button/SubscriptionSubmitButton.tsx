@@ -1,0 +1,182 @@
+import { c } from 'ttag';
+
+import { BannerVariants } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
+import { getSimplePriceString } from '@proton/components/components/price/helper';
+import { getSubscriptionManagerName } from '@proton/components/containers/payments/subscription/InAppPurchaseModal';
+import { getVisionaryDowngradeWarningTextElement } from '@proton/components/containers/payments/subscription/VisionaryDowngradeWarningModal';
+import { InfoBanner } from '@proton/components/containers/payments/subscription/confirm-button/InfoBanner';
+import type { CouponConfigRendered } from '@proton/payments-hooks/ui/coupon-config/interface';
+import { PAYMENT_METHOD_TYPES, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import type { Currency, FreeSubscription } from '@proton/payments/core/interface';
+import { hasMigrationDiscount, isTrial } from '@proton/payments/core/subscription/helpers';
+import type {
+    Subscription,
+    SubscriptionCheckForbiddenReason,
+    SubscriptionEstimation,
+} from '@proton/payments/core/subscription/interface';
+import { isFreeSubscription } from '@proton/payments/core/type-guards';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import { SubscriptionMode, SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
+
+import type { PaymentFacade } from '../../../../client-extensions/usePaymentFacade';
+import type { TaxCountryHook } from '../../../../ui/billing-address/hooks/useTaxCountry';
+import type { VatNumberHook } from '../../../../ui/billing-address/hooks/useVatNumber';
+import { PayButton } from '../../../../ui/components/PayButton';
+
+export type Props = {
+    className?: string;
+    currency: Currency;
+    onDone?: () => void;
+    checkResult: SubscriptionEstimation;
+    loading?: boolean;
+    disabled?: boolean;
+    paymentForbiddenReason: SubscriptionCheckForbiddenReason;
+    subscription: Subscription | FreeSubscription;
+    taxCountry: TaxCountryHook;
+    vatNumber: VatNumberHook | undefined;
+    paymentFacade: PaymentFacade;
+    couponConfig?: CouponConfigRendered;
+    showVisionaryWarning: boolean;
+    onSubmit: () => void;
+    app: ProductParam;
+    showIdealAuthorizationNote?: boolean;
+};
+
+export const SubscriptionSubmitButton = ({
+    className,
+    currency,
+    loading,
+    checkResult,
+    disabled,
+    onDone,
+    paymentForbiddenReason,
+    subscription,
+    taxCountry,
+    vatNumber,
+    paymentFacade,
+    couponConfig,
+    showVisionaryWarning,
+    app,
+    showIdealAuthorizationNote,
+}: Props) => {
+    if (paymentForbiddenReason.forbidden) {
+        const info = (() => {
+            let text = '';
+
+            if (paymentForbiddenReason.reason === 'already-subscribed') {
+                text = c('Payments').t`You already have a subscription to this plan.`;
+            } else if (paymentForbiddenReason.reason === 'already-subscribed-externally') {
+                if (isFreeSubscription(subscription) || subscription.External === SubscriptionPlatform.Default) {
+                    return null;
+                }
+
+                const subscriptionPlatform = getSubscriptionManagerName(subscription.External);
+                // translator: subscription platform is either "Apple App Store" or "Google Play".
+                text = c('Payments')
+                    .t`You already have a subscription to this plan. You can change your subscription on ${subscriptionPlatform}.`;
+            } else if (paymentForbiddenReason.reason === 'offer-not-available') {
+                text = c('Payments').t`This offer is not available with your current plan.`;
+            }
+
+            if (!text) {
+                return null;
+            }
+
+            return <InfoBanner>{text}</InfoBanner>;
+        })();
+
+        return (
+            <>
+                <Button color="norm" className={className} disabled={disabled} loading={loading} onClick={onDone}>
+                    {c('Action').t`Close`}
+                </Button>
+                {info}
+            </>
+        );
+    }
+
+    const isBitcoin = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
+    const isCash = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CASH;
+
+    const payButtonProps = (() => {
+        if (isBitcoin) {
+            return {
+                disabled: true,
+                children: c('Info').t`Awaiting transaction`,
+            };
+        }
+
+        if (isCash) {
+            return {
+                onClick: onDone,
+                children: c('Action').t`Done`,
+            };
+        }
+
+        const amountDue = checkResult?.AmountDue || 0;
+        if (amountDue > 0) {
+            if (isTrial(subscription) && checkResult?.SubscriptionMode === SubscriptionMode.Regular) {
+                return {
+                    children: c('Action').t`Cancel trial and pay`,
+                };
+            }
+
+            const price = getSimplePriceString(currency, amountDue);
+            return {
+                children: couponConfig?.renderPayCTA?.() ?? c('Action').t`Pay ${price} now`,
+            };
+        }
+
+        if (checkResult?.requestData.Plans[PLANS.PASS_BASIC]) {
+            const planName = PLAN_NAMES[PLANS.PASS_BASIC];
+            return {
+                children: c('Action').t`Switch to ${planName}`,
+            };
+        }
+
+        return {
+            children: c('Action').t`Confirm`,
+        };
+    })();
+
+    const discountLossWarning =
+        hasMigrationDiscount(subscription) && couponConfig?.renderShowMigrationDiscountLossWarning?.() ? (
+            <InfoBanner variant={BannerVariants.WARNING}>{c('Payments')
+                .t`Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.`}</InfoBanner>
+        ) : null;
+
+    const visionaryWarning = showVisionaryWarning ? (
+        <InfoBanner variant={BannerVariants.WARNING}>
+            {getVisionaryDowngradeWarningTextElement(subscription)}
+        </InfoBanner>
+    ) : null;
+
+    const paymentWarnings = (
+        <>
+            {discountLossWarning}
+            {visionaryWarning}
+        </>
+    );
+
+    return (
+        <>
+            <PayButton
+                color="norm"
+                taxCountry={taxCountry}
+                vatNumber={vatNumber}
+                paymentFacade={paymentFacade}
+                className={className}
+                loading={loading}
+                disabled={disabled}
+                type="submit"
+                data-testid="confirm"
+                product={app}
+                telemetryContext="subscription-modification"
+                showIdealAuthorizationNote={showIdealAuthorizationNote}
+                {...payButtonProps}
+            />
+            {paymentWarnings}
+        </>
+    );
+};

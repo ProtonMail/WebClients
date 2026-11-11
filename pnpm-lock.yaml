@@ -1465,6 +1465,9 @@ importers:
       '@proton/payments':
         specifier: workspace:^
         version: link:../../packages/payments
+      '@proton/payments-ui':
+        specifier: workspace:^
+        version: link:../../packages/payments-ui
       '@proton/polyfill':
         specifier: workspace:^
         version: link:../../packages/polyfill
@@ -1658,6 +1661,9 @@ importers:
       '@proton/payments':
         specifier: workspace:^
         version: link:../../packages/payments
+      '@proton/payments-ui':
+        specifier: workspace:^
+        version: link:../../packages/payments-ui
       '@proton/polyfill':
         specifier: workspace:^
         version: link:../../packages/polyfill
@@ -2258,6 +2264,9 @@ importers:
       '@proton/payments-hooks':
         specifier: workspace:^
         version: link:../../packages/payments-hooks
+      '@proton/payments-ui':
+        specifier: workspace:^
+        version: link:../../packages/payments-ui
       '@proton/polyfill':
         specifier: workspace:^
         version: link:../../packages/polyfill
@@ -3068,6 +3077,9 @@ importers:
       '@proton/payments':
         specifier: workspace:^
         version: link:../../packages/payments
+      '@proton/payments-ui':
+        specifier: workspace:^
+        version: link:../../packages/payments-ui
       '@proton/polyfill':
         specifier: workspace:^
         version: link:../../packages/polyfill
@@ -4762,6 +4774,9 @@ importers:
       '@proton/payments':
         specifier: workspace:^
         version: link:../../packages/payments
+      '@proton/payments-ui':
+        specifier: workspace:^
+        version: link:../../packages/payments-ui
       '@proton/polyfill':
         specifier: workspace:^
         version: link:../../packages/polyfill
@@ -6019,9 +6034,6 @@ importers:
       '@proton/challenge':
         specifier: workspace:^
         version: link:../challenge
-      '@proton/chargebee':
-        specifier: workspace:^
-        version: link:../chargebee
       '@proton/colors':
         specifier: workspace:^
         version: link:../colors
@@ -9166,6 +9178,9 @@ importers:
       '@proton/atoms':
         specifier: workspace:^
         version: link:../atoms
+      '@proton/calendar':
+        specifier: workspace:^
+        version: link:../calendar
       '@proton/chargebee':
         specifier: workspace:^
         version: link:../chargebee
@@ -9205,9 +9220,15 @@ importers:
       '@reduxjs/toolkit':
         specifier: 'catalog:'
         version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+      '@unleash/proxy-client-react':
+        specifier: ^5.1.0
+        version: 5.1.0(unleash-proxy-client@3.8.0)
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
+      lodash:
+        specifier: 'catalog:'
+        version: 4.18.1
       react:
         specifier: 'catalog:'
         version: 18.3.1
@@ -9217,6 +9238,9 @@ importers:
       react-redux:
         specifier: 'catalog:'
         version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+      react-router:
+        specifier: 'catalog:'
+        version: 5.3.4(react@18.3.1)
       react-router-dom:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -9257,6 +9281,9 @@ importers:
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
+      '@types/lodash':
+        specifier: 'catalog:'
+        version: 4.17.27
       '@types/node':
         specifier: 'catalog:'
         version: 24.19.2

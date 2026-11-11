@@ -1,7 +1,7 @@
 import { within } from '@testing-library/react';
 
 import { renderWithProviders } from '../../../../testing/renderWithProviders';
-import { familyUpsell, subscriptionMail, unlimitedUpsell } from '../__mocks__/data';
+import { familyUpsell, subscriptionMail, unlimitedUpsell } from '../../../../testing/subscriptionData';
 import type { Upsell } from '../helpers/dashboard-upsells';
 import UpsellPanels from './UpsellPanels';
 
