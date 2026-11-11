@@ -30,7 +30,9 @@ import { usePresenceBridge } from '../__utils/usePresenceBridge'
 import { useRealtimeClient } from '../__utils/useRealtimeClient'
 import { useRetryOnActivity } from '../__utils/useRetryOnActivity'
 import { useStopFollowUps } from '../__utils/useStopFollowUps'
+import { useUpdateRecorder } from '../__utils/useUpdateRecorder'
 import { BootstrapErrorPage } from './BootstrapErrorPage'
+import { DocumentDebugMenu } from './DocumentDebugMenu'
 import { DocumentHeaderV2 } from './DocumentHeaderV2'
 import { DocumentLoader } from './DocumentLoader'
 import { DocumentShell } from './DocumentShell'
@@ -62,7 +64,7 @@ export function DocumentViewerV2({ nodeMeta, driveCompat, onRetry }: DocumentVie
 
   const [wordCount, setWordCountInfo] = useWordCountState()
   const [modal, showModal] = useGenericAlertModal()
-  const { toggleDebugMode } = useDebugMode()
+  const { isDebugMode, toggleDebugMode } = useDebugMode()
   const isDarkMode = useIsEditorDarkMode()
   const session = sessionState.status === 'ready' ? sessionState.session : undefined
   // A document opened in the trash has a role and a node, for the header and the trashed modal, and no session
@@ -129,6 +131,14 @@ export function DocumentViewerV2({ nodeMeta, driveCompat, onRetry }: DocumentVie
   // Before the effect that initializes the editor, so the user name reaches the editor first
   useEditorBasics(editorInvoker, isDarkMode)
   const receivePresenceFromEditor = usePresenceBridge(session, editorStatus === 'failed' ? undefined : editorInvoker)
+  const recorder = useUpdateRecorder(session)
+  const sendAndRecordUpdate = useCallback(
+    (update: Uint8Array<ArrayBuffer>) => {
+      session?.sendUpdate(update)
+      recorder?.recordSent(update)
+    },
+    [recorder, session],
+  )
 
   useEffect(() => {
     if (editorFrame) {
@@ -162,7 +172,7 @@ export function DocumentViewerV2({ nodeMeta, driveCompat, onRetry }: DocumentVie
       editorFrame,
       createClientHandler({
         editorFrame,
-        sendUpdate: (update) => session.sendUpdate(update),
+        sendUpdate: sendAndRecordUpdate,
         isFlagEnabled,
         onEditorError,
         onWordCount: setWordCountInfo,
@@ -192,6 +202,7 @@ export function DocumentViewerV2({ nodeMeta, driveCompat, onRetry }: DocumentVie
     logger,
     onFileMenuAction,
     receivePresenceFromEditor,
+    sendAndRecordUpdate,
     session,
     setWordCountInfo,
     showModal,
@@ -273,6 +284,15 @@ export function DocumentViewerV2({ nodeMeta, driveCompat, onRetry }: DocumentVie
           {waitingForActivity && <IdleActivityCatcher />}
         </div>
         {editorStatus === 'shown' && <WordCountOverlay wordCount={wordCount} />}
+        {isDebugMode && session && snapshot && editorInvoker && recorder && editorStatus === 'shown' && (
+          <DocumentDebugMenu
+            session={session}
+            snapshot={snapshot}
+            editorInvoker={editorInvoker}
+            recorder={recorder}
+            sendUpdate={sendAndRecordUpdate}
+          />
+        )}
         {modal}
         {fileActions.modals}
         <DocumentSizeLimitModal session={session} />

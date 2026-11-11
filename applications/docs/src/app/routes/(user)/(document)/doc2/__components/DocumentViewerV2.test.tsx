@@ -21,6 +21,7 @@ import type { ClientHandler } from '../__utils/createClientHandler'
 import { createFakeSession } from '../__utils/createFakeSession'
 import type { DocumentRole } from '../__utils/getDocumentRole'
 import type { DocumentSessionState } from '../__utils/useDocumentSession'
+import type { DocumentDebugMenuProps } from './DocumentDebugMenu'
 import { DocumentViewerV2 } from './DocumentViewerV2'
 
 let mockSessionState: DocumentSessionState = { status: 'loading' }
@@ -87,6 +88,15 @@ jest.mock('./DocumentHeaderV2', () => ({
       {status}
     </div>
   ),
+}))
+
+// It has its own tests; here, that debug mode gates it and what the viewer gives it
+let mockDebugMenuProps: DocumentDebugMenuProps | undefined
+jest.mock('./DocumentDebugMenu', () => ({
+  DocumentDebugMenu: (props: DocumentDebugMenuProps) => {
+    mockDebugMenuProps = props
+    return <div>Debug menu</div>
+  },
 }))
 
 jest.mock('./OpenActionError', () => ({
@@ -461,6 +471,41 @@ describe('DocumentViewerV2', () => {
     await act(() => mockClientHandler.handleFileMenuAction({ type: 'toggle-debug-mode' }))
 
     expect(localStorage.getItem('proton-docs-debug')).toBe('true')
+  })
+
+  test('shows the debug menu once the editor shows, only while debug mode is on, as the hidden menu item toggles it', async () => {
+    localStorage.removeItem('proton-docs-debug')
+    await renderShown(createSession(), { role: 'Editor' })
+    expect(screen.queryByText('Debug menu')).not.toBeInTheDocument()
+
+    await act(() => mockClientHandler.handleFileMenuAction({ type: 'toggle-debug-mode' }))
+    expect(screen.getByText('Debug menu')).toBeInTheDocument()
+
+    await act(() => mockClientHandler.handleFileMenuAction({ type: 'toggle-debug-mode' }))
+    expect(screen.queryByText('Debug menu')).not.toBeInTheDocument()
+  })
+
+  test("records the base state, received updates and the editor's own, which it sends, for the debug menu", async () => {
+    localStorage.setItem('proton-docs-debug', 'true')
+    const fake = createSession()
+    await renderShown(fake, { role: 'Editor' })
+
+    act(() => fake.emit('update', update(REPLAYED_UPDATE)))
+    await act(() =>
+      mockClientHandler.editorRequestsPropagationOfUpdate(
+        { type: { wrapper: 'du' }, content: new Uint8Array([3]) },
+        BroadcastSource.DocumentBufferFlush,
+      ),
+    )
+
+    expect(fake.mocks.sendUpdate).toHaveBeenCalledWith(new Uint8Array([3]))
+    expect(mockDebugMenuProps?.session).toBe(fake.session)
+    expect(mockDebugMenuProps?.recorder.getUpdates().map(({ origin, content }) => [origin, content[0]])).toEqual([
+      ['baseState', BASE_UPDATE],
+      ['received', REPLAYED_UPDATE],
+      ['sent', 3],
+    ])
+    localStorage.removeItem('proton-docs-debug')
   })
 
   test.each([

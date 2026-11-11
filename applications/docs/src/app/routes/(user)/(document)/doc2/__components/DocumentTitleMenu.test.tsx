@@ -27,6 +27,11 @@ const mockCreateNotification = jest.fn()
 jest.mock('@proton/app-context/useNotifications', () => ({
   useNotifications: () => ({ createNotification: mockCreateNotification }),
 }))
+const mockDownloadFile = jest.fn()
+jest.mock('@proton/shared/lib/helpers/downloadFile', () => ({
+  __esModule: true,
+  default: (blob: Blob, filename: string) => mockDownloadFile(blob, filename),
+}))
 jest.mock('@proton/drive/sdk', () => ({ ...jest.requireActual('@proton/drive/sdk'), getDrive: jest.fn() }))
 
 const getAvailableName = jest.fn()
@@ -42,7 +47,6 @@ const STUB_ITEMS: [string, string][] = [
   ['Print', 'T7'],
   ['Download', 'T7'],
   ['Copy as markdown', 'T7'],
-  ['Download logs', 'T10'],
 ]
 
 const FILE_ACTION_ITEMS: [string, FileMenuAction][] = [
@@ -123,6 +127,25 @@ describe('DocumentTitleMenu', () => {
     await openMenu('Admin')
 
     expect(menuItemNames()).not.toContain('Download logs')
+  })
+
+  test("Download logs downloads the editor's Y.Doc and editor state, once the editor is there", async () => {
+    const editorInvoker = {
+      setTableOfContentsVisible: jest.fn(async () => {}),
+      getYDocAsJSON: jest.fn(async () => ({ root: [] })),
+      getCurrentEditorState: jest.fn(async () => undefined),
+    }
+    const { rerender } = await openMenu('Viewer', { editorInvoker: undefined })
+    expect(menuItem('Download logs')).toBeDisabled()
+
+    rerender(menuElement('Viewer', { editorInvoker }))
+    await userEvent.click(menuItem('Download logs'))
+
+    await waitFor(() =>
+      expect(mockDownloadFile).toHaveBeenCalledWith(expect.any(Blob), expect.stringMatching(/^document-logs-.*\.zip$/)),
+    )
+    expect(editorInvoker.getYDocAsJSON).toHaveBeenCalled()
+    expect(editorInvoker.getCurrentEditorState).toHaveBeenCalled()
   })
 
   test('Word count needs Intl.Segmenter', async () => {
@@ -216,7 +239,11 @@ describe('DocumentTitleMenu', () => {
   })
 
   test('shows the table of contents once the editor is there, and the menu hides and shows it', async () => {
-    const editorInvoker = { setTableOfContentsVisible: jest.fn(async () => {}) }
+    const editorInvoker = {
+      setTableOfContentsVisible: jest.fn(async () => {}),
+      getYDocAsJSON: jest.fn(),
+      getCurrentEditorState: jest.fn(),
+    }
     const { rerender } = renderMenu('Viewer', { editorInvoker: undefined })
     rerender(menuElement('Viewer', { editorInvoker }))
     expect(editorInvoker.setTableOfContentsVisible).toHaveBeenLastCalledWith(true)

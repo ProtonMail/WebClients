@@ -10,6 +10,7 @@ import type { EditorInitializationConfig } from '@proton/docs-shared/EditorIniti
 import { GenerateUUID } from '@proton/docs-shared/GenerateUuid'
 import type { SyncedEditorEvent, SyncedEditorStateValues } from '@proton/docs-shared/State/SyncedEditorState'
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings'
+import type { SerializedEditorState } from 'lexical'
 
 export const EDITOR_CALL_TIMEOUT_MS = 10_000
 
@@ -26,6 +27,9 @@ type EditorMethodsCalledByDoc2 = Pick<
   | 'getClientId'
   | 'broadcastPresenceState'
   | 'syncEvent'
+  | 'getCurrentEditorState'
+  | 'getYDocAsJSON'
+  | 'toggleDebugTreeView'
 >
 
 // Copied from docs-core `Bridge/EditorInvoker.ts`, which doc2 must not import, with only the methods doc2 calls.
@@ -76,6 +80,18 @@ export class EditorInvoker implements EditorMethodsCalledByDoc2 {
 
   async syncEvent(event: SyncedEditorEvent): Promise<void> {
     return this.invokeEditorMethod('syncEvent', [event])
+  }
+
+  async getCurrentEditorState(): Promise<SerializedEditorState | undefined> {
+    return this.invokeEditorMethod('getCurrentEditorState', [])
+  }
+
+  async getYDocAsJSON(): Promise<unknown> {
+    return this.invokeEditorMethod('getYDocAsJSON', [])
+  }
+
+  async toggleDebugTreeView(): Promise<void> {
+    return this.invokeEditorMethod('toggleDebugTreeView', [])
   }
 
   async initializeEditor(
