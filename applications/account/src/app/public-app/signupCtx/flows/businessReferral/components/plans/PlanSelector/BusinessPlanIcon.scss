@@ -1,0 +1,92 @@
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/include-media' as im;
+im.$breakpoints: $breakpoints-product;
+im.$media-expressions: $media-expressions;
+
+.BusinessPlanIcon {
+	--icon-border-color: rgb(109 74 255 / 0.1);
+	--name-color: var(--text-norm);
+	--name-background: transparent;
+	--icon-scale: 1;
+	--icon-image-scale: 1;
+	--icon-opacity: 1;
+
+	&-icon {
+		border: 1px solid var(--icon-border-color);
+		transition: all 0.25s ease;
+		border-radius: 27%;
+		transform: scale(var(--icon-scale));
+		opacity: var(--icon-opacity);
+
+		img {
+			transition: all 0.25s ease;
+			transform: scale(var(--icon-image-scale));
+			transform-origin: center;
+		}
+	}
+
+	&-name {
+		transition: all 0.3s ease;
+		background-color: var(--name-background);
+		transform: scale(1);
+	}
+
+	&:hover,
+	&:focus-visible {
+		&:not(.BusinessPlanIcon--selected) {
+			--icon-scale: 1.05;
+			--icon-image-scale: 1.05;
+			--icon-border-color: rgb(109 74 255 / 0.5);
+			--name-color: var(--primary);
+			--name-background: var(--interaction-norm-minor-2);
+			--icon-opacity: 1;
+		}
+	}
+
+	&--selected {
+		--icon-scale: 1.1;
+		--icon-image-scale: 1.05;
+		--icon-border-color: rgb(109 74 255);
+		--name-color: var(--norm);
+		--name-background: var(--background-norm);
+		--icon-opacity: 1;
+	}
+}
+
+// This flow always renders on the dark Storefront theme (see Layout/layout.scss's
+// `.business-referral-signup` scope), so these overrides only ever need the dark-mode values —
+// unlike the b2c referral flow's own (separate) plan icon, which also supports a light theme.
+.business-referral-signup {
+	// The selected tab's name pill uses bg-norm/color-primary, which outside any dark-card-scoped
+	// element falls back to Storefront's light --background-norm (white) and --primary — should be
+	// the same surface color as BusinessPlanSelector-planCard (see PlanSelector.scss), not white.
+	.BusinessPlanIcon--selected .BusinessPlanIcon-name {
+		background-color: #160f34;
+		color: #7c6df9;
+	}
+
+	// WS Standard/Premium reuse bundle-products.svg, a small glyph-only asset with no fill of its
+	// own (unlike the other tabs' self-contained, full-bleed icon SVGs), so BusinessPlanIcon-icon's
+	// box-shadow bleeds through its transparent interior as an oversized halo instead of sitting
+	// under an opaque tile. Figma fills this icon's own container with this exact color. The
+	// shadow itself is also muted/near-invisible in Figma (rgb(54 38 115) at the same offsets),
+	// not the vivid --primary purple .shadow-color-primary applies elsewhere — that distinction is
+	// only visible on a flat tile like this one, not on the other tabs' busy, self-filled gradient
+	// icons, which is why only this icon needs the override.
+	#plans .BusinessPlanIcon-icon {
+		--shadow-color: 54 38 115;
+
+		background-color: #160f34;
+	}
+
+	// The default hover pill is a light lavender (--interaction-norm-minor-2) meant for a light
+	// surface, which makes the muted tab label unreadable on this dark flow.
+	.BusinessPlanIcon:hover:not(.BusinessPlanIcon--selected),
+	.BusinessPlanIcon:focus-visible:not(.BusinessPlanIcon--selected) {
+		--name-background: rgb(109 74 255 / 0.3);
+
+		.BusinessPlanIcon-name {
+			color: var(--text-norm);
+		}
+	}
+}

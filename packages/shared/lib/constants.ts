@@ -462,6 +462,8 @@ export const SSO_PATHS = {
     INVITE: '/pre-invite',
     REFERRAL_PLAN_SELECTION: '/refer-a-friend',
     REFERRAL_SIGNUP: '/refer-a-friend/signup',
+    BUSINESS_REFERRAL: '/business-referral',
+    BUSINESS_REFERRAL_SIGNUP: '/business-referral/signup',
     JOIN_MAGIC_LINK: '/join',
     PORKBUN_SIGNUP: '/partner/porkbun/signup',
     PORKBUN_SIGN_IN: '/partner/porkbun/login',

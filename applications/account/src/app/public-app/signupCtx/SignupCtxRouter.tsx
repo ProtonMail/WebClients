@@ -6,6 +6,7 @@ import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { cachedPlans } from '../signup/defaultPlans';
 import type { BaseSignupContextProps } from './context/SignupContext';
 import EmailReservationSignup from './flows/bornPrivate/emailReservation/EmailReservationSignup';
+import BusinessReferralSignup from './flows/businessReferral/BusinessReferralSignup';
 import DrivePricing from './flows/drive/DrivePricing';
 import DriveSignup from './flows/drive/DriveSignup';
 import GenericStartSignup from './flows/genericStart/GenericStartSignup';
@@ -55,6 +56,9 @@ const SignupCtxRouter = (props: BaseSignupContextProps) => {
                 </Route>
                 <Route path={SSO_PATHS.REFERRAL_PLAN_SELECTION}>
                     <ReferralSignup {...props} />
+                </Route>
+                <Route path={SSO_PATHS.BUSINESS_REFERRAL}>
+                    <BusinessReferralSignup {...props} />
                 </Route>
                 <Route path={SSO_PATHS.PASS_SIGNUP}>
                     <PassSignup {...props} />

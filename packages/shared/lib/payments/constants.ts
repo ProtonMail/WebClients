@@ -483,6 +483,9 @@ export enum COUPON_CODES {
 
     // Unlimited to Duo discounted offer
     TRYDUO2026 = 'TRYDUO2026',
+
+    /** Default coupon of the business referral signup (B2C2B), when the URL carries no `coupon` */
+    BUSINESS_REFERRAL_2026 = 'BUSINESSREFERRAL2026',
 }
 
 export const VPN_PASS_PROMOTION_COUPONS = [

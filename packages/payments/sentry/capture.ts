@@ -19,6 +19,7 @@ import { getSubscriptionKeys } from './subscriptionKey';
  */
 export type PaymentsComponent =
     | 'account-lite-subscription-checkout-payment-section'
+    | 'business-referral-ctx-payment-step'
     | 'chargebee-iframe'
     | 'create-payment-subscription'
     | 'create-payment-token'

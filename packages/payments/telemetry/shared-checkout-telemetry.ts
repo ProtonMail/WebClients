@@ -54,6 +54,7 @@ function getMapping(suffix: string): Record<PaymentTelemetryContext, string> {
         'ctx-signup-mail': `ctx_signup_mail_${suffix}`,
         'ctx-signup-spaces': `ctx_signup_spaces_${suffix}`,
         'ctx-signup-referral': `ctx_signup_referral_${suffix}`,
+        'ctx-signup-business-referral': `ctx_signup_business_referral_${suffix}`,
         'ctx-email-reservation': `ctx_email_reservation_${suffix}`,
         'settings-upgrade': `settings_upgrade_${suffix}`,
         'account-home': `account_home_${suffix}`,

@@ -258,6 +258,7 @@ export const handleSetupUser = async ({
                     billingAddress: subscriptionData.billingAddress,
                     code: subscriptionData.checkResult.Coupon?.Code,
                     currency: subscriptionData.currency,
+                    planIDs: subscriptionData.planIDs,
                 };
             }
             return undefined;
