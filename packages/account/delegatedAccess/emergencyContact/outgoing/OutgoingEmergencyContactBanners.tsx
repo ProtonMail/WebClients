@@ -21,6 +21,7 @@ import isBetween from '@proton/utils/isBetween';
 import { useAllSubscriptions } from '../../../allSubscriptions/hooks';
 import { useEntitlementCatalog } from '../../../entitlementCatalog/hooks';
 import { usePreviousSubscription } from '../../../previousSubscription/hooks';
+import { useCanUpdateBilling } from '../../../userPermissions/hooks';
 import { useOutgoingController } from '../../shared/OutgoingDelegatedAccessProvider';
 
 const subscriptionDaysLeftBeforeWarning = 7;
@@ -87,8 +88,9 @@ const useSubscriptionEndingEmergencyAccess = (): Subscription | undefined => {
 
 const OutgoingSubscriptionExpiresBanner = () => {
     const subscription = useSubscriptionEndingEmergencyAccess();
+    const [canUpdateBilling] = useCanUpdateBilling();
 
-    if (!subscription) {
+    if (!canUpdateBilling || !subscription) {
         return null;
     }
 

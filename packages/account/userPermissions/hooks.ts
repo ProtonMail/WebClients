@@ -1,4 +1,5 @@
 import { createHooks } from '@proton/redux-utilities/hooks';
+import { getCanUpdateBilling } from '@proton/shared/lib/helpers/orgPermissions';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useEntitlementChecksForOrgAndUser } from '../entitlementCatalog/hooks';
@@ -21,6 +22,12 @@ export const useIsOrganizationOwner = (): [boolean, boolean] => {
         roles: userPermissions.Roles,
     });
     return [isOrganizationOwner, loadingUserPermissions];
+};
+
+export const useCanUpdateBilling = (): [boolean, boolean] => {
+    const [user] = useUser();
+    const [{ permissions }, loadingUserPermissions] = useUserPermissions();
+    return [getCanUpdateBilling(user, permissions), loadingUserPermissions];
 };
 
 export enum AdminRolesUIState {

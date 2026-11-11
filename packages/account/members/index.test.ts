@@ -11,7 +11,7 @@ import { userReducer } from '../user';
 import { userPermissionsReducer } from '../userPermissions';
 import { membersReducer, membersThunk, selectMembers } from './index';
 
-const defaultUser = { Flags: {} } as UserModel;
+const defaultUser = { Flags: {}, Subscribed: 1 } as UserModel;
 
 // Mirrors the private ValueType enum in ./index (dummy = free/unprivileged cache, complete = fetched list).
 const ValueType = { dummy: 0, complete: 1 } as const;

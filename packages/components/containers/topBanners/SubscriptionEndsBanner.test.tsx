@@ -21,6 +21,11 @@ jest.mock('../../hooks/accounts/useShowDashboard', () => ({
     useShowDriveDashboard: () => ({ showDashboard: false }),
 }));
 
+jest.mock('@proton/account/userPermissions/hooks', () => ({
+    ...jest.requireActual('@proton/account/userPermissions/hooks'),
+    useCanUpdateBilling: () => [true, false],
+}));
+
 const JAN_16 = new Date('2026-01-16T12:00:00Z').getTime() / 1000;
 const JAN_21 = new Date('2026-01-21T12:00:00Z').getTime() / 1000;
 

@@ -37,6 +37,11 @@ const mockedSub = useSubscriptionForApp as jest.Mock;
 jest.mock('@proton/app-context/useConfig');
 const mockConfig = useConfig as jest.Mock;
 
+jest.mock('@proton/account/userPermissions/hooks', () => ({
+    ...jest.requireActual('@proton/account/userPermissions/hooks'),
+    useCanUpdateBilling: jest.fn().mockReturnValue([false, false]),
+}));
+
 // LockedStateTopBanner (rendered for lock-state banners) resolves its upgrade path through
 // useUpgradePath, which reads previousSubscription via useGetPreviousSubscription + useStore. This
 // test renders without a Redux Provider, so stub both rather than wire up a store.

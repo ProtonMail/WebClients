@@ -3,13 +3,16 @@ import { addDays, getUnixTime } from 'date-fns';
 
 import { useEntitlementCatalog } from '@proton/account/entitlementCatalog/hooks';
 import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
+import { getModelState } from '@proton/account/testing/getModelState';
+import { getOrgPermissions } from '@proton/account/userPermissions';
 import { FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
 import { EntitlementName } from '@proton/payments/core/entitlements/entitlement-names';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getSubscriptionState } from '@proton/payments/testing/redux-state';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, USER_ROLES } from '@proton/shared/lib/constants';
+import type { Permission } from '@proton/shared/lib/interfaces/UserPermission';
 
 import { renderWithProviders } from '../../testing/renderWithProviders';
 import TrialTopBanner from './TrialTopBanner';
@@ -45,9 +48,22 @@ describe('TrialTopBanner', () => {
         SecondarySubscriptions: secondary,
     });
 
-    const renderBanner = (subscription: Subscription) =>
+    const getUserPermissionsState = (granted: Permission[]) =>
+        getModelState({
+            Roles: [],
+            Permissions: granted,
+            ShowAdminRolesUI: false,
+            permissions: getOrgPermissions(granted, false),
+            role: USER_ROLES.ADMIN_ROLE,
+            isLegacyPermissionModel: false,
+        });
+
+    const renderBanner = (subscription: Subscription, granted: Permission[] = ['payment.billing.update']) =>
         renderWithProviders(<TrialTopBanner app={APPS.PROTONMAIL} />, {
-            preloadedState: { subscription: getSubscriptionState(subscription) },
+            preloadedState: {
+                subscription: getSubscriptionState(subscription),
+                userPermissions: getUserPermissionsState(granted),
+            },
         });
 
     const openTrialCanceledModal = () => {
@@ -76,6 +92,12 @@ describe('TrialTopBanner', () => {
             'href',
             '/dashboard#payment-methods'
         );
+    });
+
+    it('renders no banner for a User Admin, who cannot update the billing', () => {
+        const { container } = renderBanner(buildB2BTrial(PLANS.BUNDLE_PRO_2024, 'b2b-trial'), ['account.user.read']);
+
+        expect(container).toBeEmptyDOMElement();
     });
 
     it('renders no banner while the entitlement catalog is loading', () => {

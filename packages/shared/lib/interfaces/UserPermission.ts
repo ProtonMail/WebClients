@@ -10,6 +10,7 @@ const FE_PERMISSION_ONLY = [
     'account.easy_switch.update',
     'pass.policy.read',
     'pass.report.read',
+    'payment.billing.update',
 ] as const;
 
 // These permissions was added to BE, do not modify this unless you also update it on BE
