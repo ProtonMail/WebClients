@@ -1,21 +1,26 @@
-// Copy of packages/docs-core/lib/VersionHistory/DateFormatter.ts
-
-import { dateLocale } from '@proton/shared/lib/i18n'
+// Copy of packages/docs-core/lib/VersionHistory/DateFormatter.ts, taking the locale it formats for
 
 const MILLISECONDS_IN_DAY = 86400000
 
 export class DateFormatter {
-  private relativeDayFormatter = new Intl.RelativeTimeFormat(dateLocale.code, { numeric: 'auto' })
-  private weekdayFormatter = new Intl.DateTimeFormat(dateLocale.code, { weekday: 'long' })
-  private dateFormatter = new Intl.DateTimeFormat(dateLocale.code, {
-    day: 'numeric',
-    month: 'short',
-  })
-  private timeFormatter = new Intl.DateTimeFormat(dateLocale.code, {
-    hour: 'numeric',
-    minute: 'numeric',
-    hour12: true,
-  })
+  private relativeDayFormatter: Intl.RelativeTimeFormat
+  private weekdayFormatter: Intl.DateTimeFormat
+  private dateFormatter: Intl.DateTimeFormat
+  private timeFormatter: Intl.DateTimeFormat
+
+  constructor(locale: string | undefined) {
+    this.relativeDayFormatter = new Intl.RelativeTimeFormat(locale, { numeric: 'auto' })
+    this.weekdayFormatter = new Intl.DateTimeFormat(locale, { weekday: 'long' })
+    this.dateFormatter = new Intl.DateTimeFormat(locale, {
+      day: 'numeric',
+      month: 'short',
+    })
+    this.timeFormatter = new Intl.DateTimeFormat(locale, {
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true,
+    })
+  }
 
   private getDifferenceInDays(date1: Date | number, date2: Date | number) {
     const date1StartOfDay = new Date(date1).setHours(0, 0, 0, 0)

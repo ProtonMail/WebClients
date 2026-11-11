@@ -1,3 +1,4 @@
+import { OfferRenewNoticeProvider } from '@proton/payments-ui/ui/components/OfferRenewNoticeProvider'
 import {
   DocumentActionsProvider,
   type DocumentActionsProviderProps,
@@ -21,6 +22,9 @@ export default function HomepagePage({
   logger,
   reportTelemetry,
   createNotification,
+  getAppHref,
+  dateLocaleCode,
+  errorTracking,
   useSharingModal,
   useMoveItemsModal,
   reportDescriptionContext,
@@ -37,15 +41,21 @@ export default function HomepagePage({
       logger={logger}
       reportTelemetry={reportTelemetry}
       createNotification={createNotification}
+      getAppHref={getAppHref}
+      dateLocaleCode={dateLocaleCode}
+      errorTracking={errorTracking}
     >
       <DocumentActionsProvider drive={drive} useSharingModal={useSharingModal} useMoveItemsModal={useMoveItemsModal}>
-        <HomepageLayout
-          reportDescriptionContext={reportDescriptionContext}
-          quickSettings={quickSettings}
-          appVersion={appVersion}
-        >
-          <HomepageContent />
-        </HomepageLayout>
+        {/* The header's offers (useFetchOffer in @proton/components) read their renewal notice from it */}
+        <OfferRenewNoticeProvider>
+          <HomepageLayout
+            reportDescriptionContext={reportDescriptionContext}
+            quickSettings={quickSettings}
+            appVersion={appVersion}
+          >
+            <HomepageContent />
+          </HomepageLayout>
+        </OfferRenewNoticeProvider>
       </DocumentActionsProvider>
     </HomepageViewProvider>
   )

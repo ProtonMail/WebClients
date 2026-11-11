@@ -7,7 +7,6 @@ import { IcBrandProtonSheets } from '@proton/icons/icons/IcBrandProtonSheets'
 import Logo from '@proton/components/components/logo/Logo'
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer'
 import PrivateHeader from '@proton/components/containers/heading/PrivateHeader'
-import { OfferRenewNoticeProvider } from '@proton/payments-ui/ui/components/OfferRenewNoticeProvider'
 import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea'
 import ProtonSidebar from '@proton/components/components/sidebar/Sidebar'
 import SidebarList from '@proton/components/components/sidebar/SidebarList'
@@ -18,7 +17,6 @@ import SidebarNav from '@proton/components/components/sidebar/SidebarNav'
 import TopBanners from '@proton/components/containers/topBanners/TopBanners'
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint'
 import useAppTitle from '@proton/components/hooks/useAppTitle'
-import useAuthentication from '@proton/components/hooks/useAuthentication'
 import UserDropdown from '@proton/components/containers/heading/UserDropdown'
 import { useToggle } from './utils/useToggle'
 import { useMemo, useState, type ReactNode } from 'react'
@@ -35,7 +33,6 @@ import { c } from 'ttag'
 import { Button } from '@proton/atoms/Button/Button'
 import { Input } from '@proton/atoms/Input/Input'
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
-import { getAppHref } from '@proton/shared/lib/apps/helper'
 import './HomepageLayout.css'
 import type { HomepageViewState } from './homepageViewContext'
 import { useHomepageView } from './homepageViewContext'
@@ -106,33 +103,31 @@ function Header({ isHeaderExpanded, toggleHeaderExpanded, reportDescriptionConte
 
   return (
     <div className="homepage-header shrink-0 items-center justify-center small:pe-[.625rem]">
-      <OfferRenewNoticeProvider>
-        <PrivateHeader
-          className={clsx('flex items-center small:!px-0', USER_DROPDOWN_OVERRIDES)}
-          app={APPS.PROTONDRIVE}
-          userDropdown={<UserDropdown app={APPS.PROTONDOCS} reportDescriptionContext={reportDescriptionContext} />}
-          title={c('Title').t`Docs`}
-          expanded={isHeaderExpanded}
-          onToggleExpand={toggleHeaderExpanded}
-          isSmallViewport={viewportWidth['<=small']}
-          actionArea={
-            <>
-              <MobileSearch
-                className="mobile-search-hack small:!hidden"
-                value={searchValue}
-                onChange={(value) => setSearch(value, false)}
-                type={type}
-              />
-              <Search
-                className="!hidden ps-1 small:!flex"
-                value={searchValue}
-                onChange={(value) => setSearch(value, false)}
-                type={type}
-              />
-            </>
-          }
-        />
-      </OfferRenewNoticeProvider>
+      <PrivateHeader
+        className={clsx('flex items-center small:!px-0', USER_DROPDOWN_OVERRIDES)}
+        app={APPS.PROTONDRIVE}
+        userDropdown={<UserDropdown app={APPS.PROTONDOCS} reportDescriptionContext={reportDescriptionContext} />}
+        title={c('Title').t`Docs`}
+        expanded={isHeaderExpanded}
+        onToggleExpand={toggleHeaderExpanded}
+        isSmallViewport={viewportWidth['<=small']}
+        actionArea={
+          <>
+            <MobileSearch
+              className="mobile-search-hack small:!hidden"
+              value={searchValue}
+              onChange={(value) => setSearch(value, false)}
+              type={type}
+            />
+            <Search
+              className="!hidden ps-1 small:!flex"
+              value={searchValue}
+              onChange={(value) => setSearch(value, false)}
+              type={type}
+            />
+          </>
+        }
+      />
     </div>
   )
 }
@@ -268,10 +263,10 @@ type SidebarProps = {
 }
 
 function Sidebar({ expanded, onToggle, setExpanded, appVersion: hostAppVersion }: SidebarProps) {
-  const { getLocalID } = useAuthentication()
   const isRecents = useRouteMatch(HOMEPAGE_RECENTS_PATH)
   const history = useHistory()
-  const { updateRecentDocuments, isRecentsUpdating, type, reportTelemetry, createNotification } = useHomepageView()
+  const { updateRecentDocuments, isRecentsUpdating, type, reportTelemetry, createNotification, getAppHref } =
+    useHomepageView()
   const appVersion = getAppVersion(hostAppVersion)
   const isSheetsEnabled = useIsSheetsEnabled()
 
@@ -417,7 +412,7 @@ function Sidebar({ expanded, onToggle, setExpanded, appVersion: hostAppVersion }
           <SidebarListItem onClick={() => setExpanded(false)}>
             <a
               className="!text-[var(--sidebar-text-color,var(--text-norm))] no-underline"
-              href={getAppHref('/', APPS.PROTONDRIVE, getLocalID())}
+              href={getAppHref('/', APPS.PROTONDRIVE)}
               target="_blank"
               onClick={() => {
                 reportTelemetry(TelemetryEvent.drive_opened)

@@ -9,9 +9,9 @@ import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu'
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
 import Checkbox from '@proton/components/components/input/Checkbox'
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint'
-import useAuthentication from '@proton/components/hooks/useAuthentication'
 import type { RecentDocumentsItem } from '../recentDocumentsItem'
-import { DateFormatter } from '../utils/dateFormatter'
+import type { DateFormatter } from '../utils/dateFormatter'
+import { SDK_SWITCH_INITIATIVE } from '../utils/errorTracking'
 import type { IconComponent } from '@proton/icons/component'
 import { IcArrowDown } from '@proton/icons/icons/IcArrowDown'
 import { IcArrowDownArrowUp } from '@proton/icons/icons/IcArrowDownArrowUp'
@@ -25,10 +25,8 @@ import { IcUser } from '@proton/icons/icons/IcUser'
 import { IcUserFilled } from '@proton/icons/icons/IcUserFilled'
 import { IcUsers } from '@proton/icons/icons/IcUsers'
 import { useContactEmails } from '@proton/account/contactEmails/hooks'
-import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '../utils/apps'
 import type { ProtonDocumentType } from '../utils/mimetype'
-import { SentryRealtimeInitiatives, traceError } from '@proton/shared/lib/helpers/sentry'
 import { getInitials } from './getInitials'
 import { clsx } from '../utils/clsx'
 import type { ComponentPropsWithoutRef, KeyboardEvent, MouseEvent, ReactNode } from 'react'
@@ -511,11 +509,11 @@ type RowProps = {
 }
 
 function Row({ document, variant, addresses, selection, isSelectable, isTrashing, openOnDoubleClick }: RowProps) {
-  const { getLocalID } = useAuthentication()
   const documentActions = useDocumentActions()
   const { location } = document
   const { displayName, avatarContent } = useNameAndAvatar(document, addresses)
-  const { updateRenamedDocumentInCache, createNotification } = useHomepageView()
+  const { updateRenamedDocumentInCache, createNotification, getAppHref, dateFormatter, errorTracking } =
+    useHomepageView()
 
   // Force re-render every REFRESH_DATE_INTERVAL milliseconds
   const [, setState] = useState(false)
@@ -550,7 +548,7 @@ function Row({ document, variant, addresses, selection, isSelectable, isTrashing
       onClick={(event) => {
         event.stopPropagation()
         if (variant === 'trash') {
-          window.open(getAppHref('/trash', APPS.PROTONDRIVE, getLocalID()))
+          window.open(getAppHref('/trash', APPS.PROTONDRIVE))
         } else {
           documentActions.openParent(document)
         }
@@ -670,9 +668,9 @@ function Row({ document, variant, addresses, selection, isSelectable, isTrashing
                       type: 'error',
                       text: c('Notification').t`Failed to rename document`,
                     })
-                    traceError(error, {
+                    errorTracking.traceError(error, {
                       tags: {
-                        initiative: SentryRealtimeInitiatives.SDK_SWITCH,
+                        initiative: SDK_SWITCH_INITIATIVE,
                         feature: 'DocsRenameWithDriveSDK',
                       },
                     })
@@ -701,8 +699,8 @@ function Row({ document, variant, addresses, selection, isSelectable, isTrashing
       </Table.DataCell>
 
       <Table.DataCell target="large">
-        <span title={getRelativeDate(document)} className="truncate">
-          {getRelativeDate(document)}
+        <span title={getRelativeDate(dateFormatter, document)} className="truncate">
+          {getRelativeDate(dateFormatter, document)}
         </span>
       </Table.DataCell>
 
@@ -764,7 +762,7 @@ function Row({ document, variant, addresses, selection, isSelectable, isTrashing
             aria-label={getRowAriaLabel({
               document,
               isSelected: isSelectable ? isSelected : undefined,
-              dateLabel: `${getDateHeaderLabel(variant)} ${getRelativeDate(document)}`,
+              dateLabel: `${getDateHeaderLabel(variant)} ${getRelativeDate(dateFormatter, document)}`,
               displayName,
               locationLabel,
             })}
@@ -884,9 +882,7 @@ function useNameAndAvatar(document: RecentDocumentsItem, addresses: UserAddress[
   return { displayName, avatarContent }
 }
 
-const dateFormatter = new DateFormatter()
-
-function getRelativeDate({ lastViewed }: RecentDocumentsItem): string {
+function getRelativeDate(dateFormatter: DateFormatter, { lastViewed }: RecentDocumentsItem): string {
   const text = dateFormatter.formatDateOrTimeIfToday(lastViewed.date, c('Info').t`Just now`)
   return text.charAt(0).toUpperCase() + text.slice(1)
 }

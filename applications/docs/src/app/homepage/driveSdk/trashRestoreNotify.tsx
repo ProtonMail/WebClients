@@ -4,8 +4,9 @@ import type { ProtonDriveClient } from '@protontech/drive-sdk'
 import { trashDocument, restoreDocument, reportTrashError } from './trash'
 import { trashDocuments, restoreDocuments, type BatchResult } from './trashMany'
 import type { CreateNotification } from '../utils/notifications'
+import type { ErrorTracking } from '../utils/errorTracking'
 
-export function handleRestoreError(createNotification: CreateNotification, error: any) {
+export function handleRestoreError(createNotification: CreateNotification, errorTracking: ErrorTracking, error: any) {
   if (isRestorePermissionError(error)) {
     createNotification({
       type: 'error',
@@ -13,13 +14,14 @@ export function handleRestoreError(createNotification: CreateNotification, error
     })
   } else {
     createNotification({ type: 'error', text: c('Notification').t`Failed to restore document` })
-    reportTrashError(error)
+    reportTrashError(errorTracking, error)
   }
 }
 
 export async function trashAndNotify(
   drive: ProtonDriveClient,
   createNotification: CreateNotification,
+  errorTracking: ErrorTracking,
   nodeUid: string,
   emitRestored: () => void,
 ) {
@@ -29,7 +31,7 @@ export async function trashAndNotify(
     try {
       await restoreDocument(drive, nodeUid)
     } catch (error: any) {
-      handleRestoreError(createNotification, error)
+      handleRestoreError(createNotification, errorTracking, error)
       return
     }
     createNotification({ type: 'success', text: c('Notification').t`Document restored from trash` })
@@ -50,6 +52,7 @@ export async function trashAndNotify(
 export async function trashManyAndNotify(
   drive: ProtonDriveClient,
   createNotification: CreateNotification,
+  errorTracking: ErrorTracking,
   nodeUids: string[],
   onRestored: () => void,
 ): Promise<BatchResult> {
@@ -72,8 +75,10 @@ export async function trashManyAndNotify(
     }
     if (restore.failed.length > 0) {
       const [first, ...others] = new Set(restore.failed.map((f) => f.error))
-      handleRestoreError(createNotification, first)
-      others.filter((error) => !isRestorePermissionError(error)).forEach(reportTrashError)
+      handleRestoreError(createNotification, errorTracking, first)
+      others
+        .filter((error) => !isRestorePermissionError(error))
+        .forEach((error) => reportTrashError(errorTracking, error))
     }
   }
 
@@ -106,7 +111,7 @@ export async function trashManyAndNotify(
         count,
       ),
     })
-    new Set(failed.map((f) => f.error)).forEach(reportTrashError)
+    new Set(failed.map((f) => f.error)).forEach((error) => reportTrashError(errorTracking, error))
   }
 
   return result
@@ -115,6 +120,7 @@ export async function trashManyAndNotify(
 export async function restoreAndNotify(
   drive: ProtonDriveClient,
   createNotification: CreateNotification,
+  errorTracking: ErrorTracking,
   nodeUid: string,
   emitTrashed: () => void,
 ) {
@@ -124,7 +130,7 @@ export async function restoreAndNotify(
     try {
       await trashDocument(drive, nodeUid)
     } catch (error) {
-      reportTrashError(error)
+      reportTrashError(errorTracking, error)
       createNotification({ type: 'error', text: c('Notification').t`Failed to trash document` })
       return
     }

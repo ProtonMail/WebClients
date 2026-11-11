@@ -3,8 +3,6 @@ import { ServerTime } from './utils/serverTime'
 import type { ItemsSectionId } from './homepageViewContext'
 import { filterDocuments, splitIntoSectionsByTime } from './homepageViewUtils'
 
-jest.mock('@proton/shared/lib/i18n', () => ({ dateLocale: { code: 'us' } }))
-
 function createMockItems({ firstNameOverride }: { firstNameOverride?: string } = {}) {
   return [
     RecentDocumentsItem.create({

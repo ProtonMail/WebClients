@@ -7,8 +7,13 @@ import { nodeToTrashedDocumentItem } from './createDocumentItems'
 import { traceErrorSDK } from './driveSdk/traceErrorSDK'
 import type { SDKEventListener } from './homepageViewUtils'
 import type { CreateNotification } from './utils/notifications'
+import type { ErrorTracking } from './utils/errorTracking'
 
-export function useTrashed(drive: ProtonDriveClient, createNotification: CreateNotification) {
+export function useTrashed(
+  drive: ProtonDriveClient,
+  createNotification: CreateNotification,
+  errorTracking: ErrorTracking,
+) {
   const [trashedDocumentItems, setTrashedDocumentItems] = useState<RecentDocumentsItemValue[]>([])
   const [isTrashLoading, setIsTrashLoading] = useState(false)
 
@@ -28,7 +33,7 @@ export function useTrashed(drive: ProtonDriveClient, createNotification: CreateN
         if (error?.name === 'AbortError') {
           return
         }
-        traceErrorSDK(error, 'DocsLoadRecentsWithDriveSDK')
+        traceErrorSDK(errorTracking, error, 'DocsLoadRecentsWithDriveSDK')
         createNotification({
           type: 'error',
           text: c('Error').t`Some trashed documents could not be loaded`,
@@ -38,7 +43,7 @@ export function useTrashed(drive: ProtonDriveClient, createNotification: CreateN
       setTrashedDocumentItems(nodes.map(nodeToTrashedDocumentItem))
       setIsTrashLoading(false)
     },
-    [createNotification, drive],
+    [createNotification, drive, errorTracking],
   )
 
   const trashedListener: SDKEventListener = useCallback(

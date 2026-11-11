@@ -12,6 +12,8 @@ import { isMyDocument, type UserAddress } from './is-my-document'
 import { getOwnerName, type OwnerContact } from './get-owner-name'
 import type { Api } from './docsApi/api'
 import type { Logger } from './utils/logger'
+import type { GetAppHref } from './utils/apps'
+import type { ErrorTracking } from './utils/errorTracking'
 import type { CreateNotification } from './utils/notifications'
 import type { ReportTelemetry } from './utils/telemetry'
 
@@ -59,6 +61,11 @@ export type HomepageViewProviderProps = {
   logger: Logger
   reportTelemetry: ReportTelemetry
   createNotification: CreateNotification
+  getAppHref: GetAppHref
+  /** The code of the host's date locale, such as `en-US`; undefined formats dates in the browser's locale. */
+  dateLocaleCode: string | undefined
+  /** Keep it the same object across renders: the event subscription and the recents loading depend on it. */
+  errorTracking: ErrorTracking
 }
 
 function useQueryState<T extends string | undefined>(name: string, defaultValue: T, allowedValues?: readonly T[]) {

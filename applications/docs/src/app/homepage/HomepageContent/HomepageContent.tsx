@@ -1,6 +1,5 @@
 import { IcBrandProtonDocs } from '@proton/icons/icons/IcBrandProtonDocs'
 import { IcBrandProtonSheets } from '@proton/icons/icons/IcBrandProtonSheets'
-import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import type { TableVariant } from './DocumentsTable'
 import { DocumentsTable } from './DocumentsTable'
@@ -14,7 +13,6 @@ import emptyStateRecentsImage from './empty-state-recents.svg'
 import emptyStateImage from './empty-state.svg'
 import { clsx } from '../utils/clsx'
 import * as Ariakit from '@ariakit/react'
-import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '../utils/apps'
 import { useIsSheetsEnabled } from '~/utils/flags'
 import { TelemetryEvent } from '../utils/telemetry'
@@ -135,14 +133,13 @@ const HomepageButton = forwardRef<HTMLButtonElement, Ariakit.ButtonProps>(functi
 })
 
 function RecentsEmptyStateButtons() {
-  const { getLocalID } = useAuthentication()
-  const { updateRecentDocuments, reportTelemetry } = useHomepageView()
+  const { updateRecentDocuments, reportTelemetry, getAppHref } = useHomepageView()
   const isSheetsEnabled = useIsSheetsEnabled()
 
   return (
     <div className="flex items-center justify-center gap-4">
       <HomepageButton
-        render={<Ariakit.Role.a href={getAppHref('/doc', APPS.PROTONDOCS, getLocalID())} target="_blank" />}
+        render={<Ariakit.Role.a href={getAppHref('/doc', APPS.PROTONDOCS)} target="_blank" />}
         onClick={() => {
           reportTelemetry(TelemetryEvent.document_created)
           setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)
@@ -159,7 +156,7 @@ function RecentsEmptyStateButtons() {
       {isSheetsEnabled ? (
         <HomepageButton
           className="relative"
-          render={<Ariakit.Role.a href={getAppHref('/sheet', APPS.PROTONDOCS, getLocalID())} target="_blank" />}
+          render={<Ariakit.Role.a href={getAppHref('/sheet', APPS.PROTONDOCS)} target="_blank" />}
           onClick={() => setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)}
         >
           <IcBrandProtonSheets

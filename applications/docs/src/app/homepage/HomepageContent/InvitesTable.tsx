@@ -5,10 +5,9 @@ import { IcArrowToCenterHorizontal } from '@proton/icons/icons/IcArrowToCenterHo
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark'
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown'
 import { IcCross } from '@proton/icons/icons/IcCross'
-import { DateFormatter } from '../utils/dateFormatter'
+import type { DateFormatter } from '../utils/dateFormatter'
 import { ServerTime } from '../utils/serverTime'
 import { isProtonDocsDocument } from '../utils/mimetype'
-import { traceError } from '@proton/shared/lib/helpers/sentry'
 import { getInitials } from './getInitials'
 import { clsx } from '../utils/clsx'
 import { type ComponentPropsWithoutRef, useState } from 'react'
@@ -24,8 +23,6 @@ import { TelemetryEvent } from '../utils/telemetry'
 const MAX_INVITES_WHEN_COLLAPSED = 3
 const WAIT_AFTER_ACCEPT_INVITE = 5000 // ms
 
-const dateFormatter = new DateFormatter()
-
 export type InvitesTableProps = ComponentPropsWithoutRef<'div'>
 
 export function InvitesTable(props: InvitesTableProps) {
@@ -36,6 +33,7 @@ export function InvitesTable(props: InvitesTableProps) {
 
 function InvitesTableContent(allProps: InvitesTableProps & { useDocInvites: DocInvitesHook }) {
   const { useDocInvites, ...props } = allProps
+  const { dateFormatter } = useHomepageView()
 
   const { confirmModal, invitations, recentlyAcceptedInvites, rejectInvite, acceptInvite } = useDocInvites()
   const openInvitedDocument = useOpenInvitedDocument()
@@ -132,9 +130,9 @@ function InvitesTableContent(allProps: InvitesTableProps & { useDocInvites: DocI
                   <div
                     data-testid="invite-shared-date"
                     className="text-ellipsis"
-                    title={getRelativeDate(new ServerTime(invite.invitation.createTime).date)}
+                    title={getRelativeDate(dateFormatter, new ServerTime(invite.invitation.createTime).date)}
                   >
-                    {getRelativeDate(new ServerTime(invite.invitation.createTime).date)}
+                    {getRelativeDate(dateFormatter, new ServerTime(invite.invitation.createTime).date)}
                   </div>
                 </Table.DataCell>
                 <Table.DataCell target="medium">
@@ -202,7 +200,7 @@ interface InviteActionsProps {
 function InviteActions({ invite, onRejectInvite, acceptInvite, openInvitedDocument }: InviteActionsProps) {
   const [isAcceptingInvite, setIsAcceptingInvite] = useState(false)
 
-  const { updateRecentDocuments, reportTelemetry, logger } = useHomepageView()
+  const { updateRecentDocuments, reportTelemetry, logger, errorTracking } = useHomepageView()
 
   async function handleAcceptInvite(invite: ExtendedInvitationDetails) {
     try {
@@ -213,7 +211,7 @@ function InviteActions({ invite, onRejectInvite, acceptInvite, openInvitedDocume
       reportTelemetry(TelemetryEvent.invite_accepted)
     } catch (error) {
       logger.error('Could not accept invite')
-      traceError(error)
+      errorTracking.traceError(error)
     } finally {
       setIsAcceptingInvite(false)
     }
@@ -225,7 +223,7 @@ function InviteActions({ invite, onRejectInvite, acceptInvite, openInvitedDocume
       reportTelemetry(TelemetryEvent.invite_rejected)
     } catch (error) {
       logger.error('Could not reject invite')
-      traceError(error)
+      errorTracking.traceError(error)
     }
   }
 
@@ -280,7 +278,7 @@ function CollapseButton({ collapse }: CollapseButtonProps) {
   )
 }
 
-function getRelativeDate(date: Date): string {
+function getRelativeDate(dateFormatter: DateFormatter, date: Date): string {
   const text = dateFormatter.formatDateOrTimeIfToday(date, c('Info').t`Just now`)
   return text.charAt(0).toUpperCase() + text.slice(1)
 }

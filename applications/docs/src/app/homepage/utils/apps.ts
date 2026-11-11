@@ -5,3 +5,8 @@ export const APPS = {
 } as const
 
 export const DRIVE_APP_NAME = 'Proton Drive'
+
+type HomepageApp = (typeof APPS)[keyof typeof APPS]
+
+/** The host's `getAppHref` for the signed-in user, its local ID bound, injected. */
+export type GetAppHref = (path: string, app: HomepageApp) => string

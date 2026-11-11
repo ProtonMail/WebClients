@@ -2,6 +2,7 @@ import { type DriveEvent, DriveEventType, type NodeEntity, type ProtonDriveClien
 import { PROTON_DOCS_DOCUMENT_MIMETYPE, PROTON_DOCS_SPREADSHEET_MIMETYPE } from './utils/mimetype'
 import { act, renderHook } from '@testing-library/react'
 import { useTrashed } from './useTrashed'
+import type { ErrorTracking } from './utils/errorTracking'
 
 const doc = createNode('volume1~doc', 'Doc', PROTON_DOCS_DOCUMENT_MIMETYPE)
 const sheet = createNode('volume1~sheet', 'Sheet', PROTON_DOCS_SPREADSHEET_MIMETYPE)
@@ -111,8 +112,11 @@ describe('useTrashed', () => {
 function renderTrashed() {
   const drive = { iterateTrashedNodes: jest.fn(), getNode: jest.fn() }
   const createNotification = jest.fn()
+  const errorTracking: ErrorTracking = { traceError: jest.fn(), addBreadcrumb: jest.fn(), isReportable: () => true }
 
-  const { result } = renderHook(() => useTrashed(drive as unknown as ProtonDriveClient, createNotification))
+  const { result } = renderHook(() =>
+    useTrashed(drive as unknown as ProtonDriveClient, createNotification, errorTracking),
+  )
 
   return { result, drive, createNotification }
 }
