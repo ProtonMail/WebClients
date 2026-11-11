@@ -37,6 +37,9 @@ export const BackgroundEffectInitializingOverlay = ({
     return (
         <div
             className="absolute top-0 left-0 w-full h-full flex flex-column items-center justify-center gap-3 z-up color-norm text-center px-4"
+            // Covers the spinner drawn into the published frames, which the local views also show.
+            // After a failure the raw camera is published again, so the user keeps seeing it.
+            style={failedBackgroundEffect ? undefined : { background: 'var(--backdrop-norm)' }}
             role={failedBackgroundEffect ? 'alert' : 'status'}
             aria-live={failedBackgroundEffect ? 'assertive' : 'polite'}
         >

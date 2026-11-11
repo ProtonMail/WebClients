@@ -48,4 +48,16 @@ describe('BackgroundEffectInitializingOverlay', () => {
 
         expect(screen.getByRole('alert')).toHaveTextContent('Virtual background initialization failed');
     });
+
+    it('should hide the published loading frames behind an opaque backdrop while initializing', () => {
+        renderOverlay({ initializingBackgroundEffect: 'blur', failedBackgroundEffect: null });
+
+        expect(screen.getByRole('status').style.background).toBe('var(--backdrop-norm)');
+    });
+
+    it('should leave the camera visible under the failure message', () => {
+        renderOverlay({ initializingBackgroundEffect: null, failedBackgroundEffect: 'blur' });
+
+        expect(screen.getByRole('alert').style.background).toBe('');
+    });
 });

@@ -49,6 +49,12 @@ const processorMocks = vi.hoisted(() => ({
 }));
 vi.mock('../../processors/background-processor/createBackgroundProcessor', () => processorMocks);
 
+// setProcessor runs the processor init(), which starts its warmup.
+const attachLikeLiveKit = (_track: unknown, instance?: { startWarmup?: () => void } | null) => {
+    instance?.startWarmup?.();
+    return instance;
+};
+
 const imageMode = (id: 'protonDark' | 'office' | 'mountain' | 'library' | 'beach') => ({
     type: 'image',
     ...getVirtualBackgroundSource(id),
@@ -125,16 +131,28 @@ const setup = ({ cameraState = 'live', appliedBackgroundEffect = 'none' }: Setup
 
 describe('useBackgroundEffects', () => {
     // Every effect is a mode of this one processor.
-    const createProcessor = () => ({
-        enable: vi.fn(),
-        disable: vi.fn(),
-        isEnabled: vi.fn(() => true),
-        destroy: vi.fn().mockResolvedValue(undefined),
-        setMode: vi.fn().mockResolvedValue(undefined),
-        // Whether a mask is already on screen.
-        hasAppliedMask: vi.fn(() => false),
-        waitUntilApplied: vi.fn().mockResolvedValue(undefined),
-    });
+    const createProcessor = () => {
+        const warmupListeners = new Set<(mode: unknown) => void>();
+        let mode: unknown = { type: 'blur' };
+        return {
+            enable: vi.fn(),
+            disable: vi.fn(),
+            isEnabled: vi.fn(() => true),
+            destroy: vi.fn().mockResolvedValue(undefined),
+            setMode: vi.fn(async (next: unknown) => {
+                mode = next;
+            }),
+            // Whether a mask is already on screen.
+            hasAppliedMask: vi.fn(() => false),
+            waitUntilApplied: vi.fn().mockResolvedValue(undefined),
+            onWarmup: vi.fn((listener: (mode: unknown) => void) => {
+                warmupListeners.add(listener);
+                return () => warmupListeners.delete(listener);
+            }),
+            // What init() does when LiveKit sets or restarts the processor.
+            startWarmup: () => warmupListeners.forEach((listener) => listener(mode)),
+        };
+    };
 
     beforeEach(() => {
         backgroundSourceMocks.resolveBackgroundSource.mockImplementation(async (effect: BackgroundEffect) =>
@@ -157,7 +175,7 @@ describe('useBackgroundEffects', () => {
                 finishLoading = () => resolve(processor);
             })
         );
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+        processorMocks.ensureBackgroundProcessor.mockImplementation(attachLikeLiveKit);
 
         const { getAppliedBackgroundEffect, result } = setup();
 
@@ -175,7 +193,7 @@ describe('useBackgroundEffects', () => {
     it('applies the full-size image of the picked background to the camera track', async () => {
         const processor = createProcessor();
         processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+        processorMocks.ensureBackgroundProcessor.mockImplementation(attachLikeLiveKit);
 
         const { getAppliedBackgroundEffect, result } = setup();
 
@@ -197,7 +215,7 @@ describe('useBackgroundEffects', () => {
         const processor = createProcessor();
         processor.setMode.mockRejectedValueOnce(new Error('Failed to load background image'));
         processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+        processorMocks.ensureBackgroundProcessor.mockImplementation(attachLikeLiveKit);
         const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {});
 
         const { getAppliedBackgroundEffect, result } = setup();
@@ -216,7 +234,7 @@ describe('useBackgroundEffects', () => {
         // The pipeline is still warming up, so the overlay has to name what it is waiting for.
         processor.waitUntilApplied.mockReturnValue(new Promise(() => {}));
         processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+        processorMocks.ensureBackgroundProcessor.mockImplementation(attachLikeLiveKit);
 
         const { getBackgroundState, result } = setup();
 
@@ -227,10 +245,111 @@ describe('useBackgroundEffects', () => {
         expect(getBackgroundState().initializingBackgroundEffect).toBe('virtualBackground');
     });
 
+    it('reports the effect as initializing while the processor is still attaching', async () => {
+        const processor = createProcessor();
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+        let finishAttach: () => void = () => {};
+        let applyMask: () => void = () => {};
+        processor.waitUntilApplied.mockReturnValue(
+            new Promise<void>((resolve) => {
+                applyMask = resolve;
+            })
+        );
+        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => {
+            instance.startWarmup();
+            return new Promise((resolve) => {
+                finishAttach = () => resolve(instance);
+            });
+        });
+
+        const { getBackgroundState, rawFrameToggles, result } = setup();
+
+        // Let the processor finish loading
+        await act(async () => {});
+
+        let pick: Promise<void> = Promise.resolve();
+        await act(async () => {
+            pick = result.current.selectBackgroundEffect('blur');
+        });
+
+        // The camera is blanked for the whole attach, so the self view must not sit on black frames.
+        expect(rawFrameToggles).toEqual([false]);
+        expect(getBackgroundState().initializingBackgroundEffect).toBe('blur');
+
+        await act(async () => {
+            finishAttach();
+            await pick;
+        });
+
+        expect(getBackgroundState().initializingBackgroundEffect).toBe('blur');
+
+        await act(async () => {
+            applyMask();
+        });
+
+        expect(getBackgroundState().initializingBackgroundEffect).toBeNull();
+    });
+
+    it('ignores a restart of the processor while no effect is picked', async () => {
+        const processor = createProcessor();
+        processor.waitUntilApplied.mockReturnValue(new Promise(() => {}));
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+
+        const { getBackgroundState } = setup();
+
+        // Let the processor finish loading
+        await act(async () => {});
+
+        act(() => {
+            processor.startWarmup();
+        });
+
+        expect(getBackgroundState().initializingBackgroundEffect).toBeNull();
+    });
+
+    it('reports the warmup LiveKit starts when it restarts the processor on a new camera track', async () => {
+        const processor = createProcessor();
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+        processorMocks.ensureBackgroundProcessor.mockImplementation(attachLikeLiveKit);
+
+        const { getBackgroundState, result, track } = setup();
+
+        await act(async () => {
+            await result.current.selectBackgroundEffect('blur');
+        });
+        track.getProcessor.mockReturnValue(processor);
+        expect(getBackgroundState().initializingBackgroundEffect).toBeNull();
+
+        processor.waitUntilApplied.mockReturnValue(new Promise(() => {}));
+        act(() => {
+            processor.startWarmup();
+        });
+
+        expect(getBackgroundState().initializingBackgroundEffect).toBe('blur');
+    });
+
+    it('stops reporting the effect as initializing when the processor cannot be attached', async () => {
+        const processor = createProcessor();
+        processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
+        processorMocks.ensureBackgroundProcessor.mockResolvedValue(null);
+        const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {});
+
+        const { getBackgroundState, result } = setup();
+
+        await act(async () => {
+            await result.current.selectBackgroundEffect('blur');
+        });
+        consoleError.mockRestore();
+
+        expect(processor.waitUntilApplied).not.toHaveBeenCalled();
+        expect(getBackgroundState().initializingBackgroundEffect).toBeNull();
+        expect(getBackgroundState().failedBackgroundEffect).toBe('blur');
+    });
+
     it('clears the initializing state once the pipeline is running', async () => {
         const processor = createProcessor();
         processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+        processorMocks.ensureBackgroundProcessor.mockImplementation(attachLikeLiveKit);
 
         const { getBackgroundState, result } = setup();
 
@@ -244,7 +363,7 @@ describe('useBackgroundEffects', () => {
     it('applies the last pick when backgrounds are clicked in quick succession', async () => {
         const processor = createProcessor();
         processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+        processorMocks.ensureBackgroundProcessor.mockImplementation(attachLikeLiveKit);
 
         const { getBackgroundState, result } = setup();
 
@@ -265,7 +384,7 @@ describe('useBackgroundEffects', () => {
     it('swaps the image on the running processor instead of building a new one', async () => {
         const processor = createProcessor();
         processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+        processorMocks.ensureBackgroundProcessor.mockImplementation(attachLikeLiveKit);
 
         const { result, track, rawFrameToggles } = setup();
 
@@ -295,7 +414,7 @@ describe('useBackgroundEffects', () => {
     it('switches between blur and a virtual background on the running processor', async () => {
         const processor = createProcessor();
         processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+        processorMocks.ensureBackgroundProcessor.mockImplementation(attachLikeLiveKit);
 
         const { getBackgroundState, result, track, rawFrameToggles } = setup();
 
@@ -334,7 +453,7 @@ describe('useBackgroundEffects', () => {
     it('clears the virtual background when picking no effect', async () => {
         const processor = createProcessor();
         processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+        processorMocks.ensureBackgroundProcessor.mockImplementation(attachLikeLiveKit);
 
         const { getAppliedBackgroundEffect, result } = setup();
 
@@ -352,7 +471,7 @@ describe('useBackgroundEffects', () => {
     it('turns blur on without processing anything while the camera is off', async () => {
         const processor = createProcessor();
         processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+        processorMocks.ensureBackgroundProcessor.mockImplementation(attachLikeLiveKit);
 
         const { getAppliedBackgroundEffect, result } = setup({ cameraState: 'off' });
 
@@ -372,7 +491,7 @@ describe('useBackgroundEffects', () => {
     it('replaces the virtual background with blur picked while the camera was off, once it is on', async () => {
         const processor = createProcessor();
         processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+        processorMocks.ensureBackgroundProcessor.mockImplementation(attachLikeLiveKit);
 
         const { getAppliedBackgroundEffect, result, setCameraOff } = setup();
 
@@ -409,7 +528,7 @@ describe('useBackgroundEffects', () => {
     it('does not attach blur to the stopped track left behind when the camera is turned off', async () => {
         const processor = createProcessor();
         processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+        processorMocks.ensureBackgroundProcessor.mockImplementation(attachLikeLiveKit);
 
         const { getBackgroundState, result, setCameraOff } = setup();
 
@@ -448,7 +567,7 @@ describe('useBackgroundEffects', () => {
 
         expect(processor.enable).not.toHaveBeenCalled();
 
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+        processorMocks.ensureBackgroundProcessor.mockImplementation(attachLikeLiveKit);
 
         await act(async () => {
             await result.current.selectBackgroundEffect('protonDark');
@@ -460,7 +579,7 @@ describe('useBackgroundEffects', () => {
     it('stops reporting the previous effect once the next one fails to attach', async () => {
         const processor = createProcessor();
         processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+        processorMocks.ensureBackgroundProcessor.mockImplementation(attachLikeLiveKit);
 
         const { getAppliedBackgroundEffect, getBackgroundState, result } = setup();
 
@@ -490,7 +609,7 @@ describe('useBackgroundEffects', () => {
     it('keeps the pick when an attach is skipped because another one is already running', async () => {
         const processor = createProcessor();
         processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+        processorMocks.ensureBackgroundProcessor.mockImplementation(attachLikeLiveKit);
 
         const { getAppliedBackgroundEffect, getBackgroundState, result } = setup();
 
@@ -534,7 +653,7 @@ describe('useBackgroundEffects', () => {
     it('restores the background picked in a previous session', async () => {
         const processor = createProcessor();
         processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+        processorMocks.ensureBackgroundProcessor.mockImplementation(attachLikeLiveKit);
 
         const { getAppliedBackgroundEffect } = setup({ appliedBackgroundEffect: 'beach' });
 
@@ -549,7 +668,7 @@ describe('useBackgroundEffects', () => {
     it('does not let a slow restored-background warmup overwrite a newer pick', async () => {
         const processor = createProcessor();
         processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+        processorMocks.ensureBackgroundProcessor.mockImplementation(attachLikeLiveKit);
 
         let resolveRestoredSource: (source: ReturnType<typeof getVirtualBackgroundSource>) => void = () => {};
         backgroundSourceMocks.resolveBackgroundSource
@@ -580,7 +699,7 @@ describe('useBackgroundEffects', () => {
     it('leaves the restored background alone as it is picked again', async () => {
         const processor = createProcessor();
         processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+        processorMocks.ensureBackgroundProcessor.mockImplementation(attachLikeLiveKit);
 
         const { result } = setup({ appliedBackgroundEffect: 'beach' });
 
@@ -602,7 +721,7 @@ describe('useBackgroundEffects', () => {
 
         const processor = createProcessor();
         processorMocks.createBackgroundProcessor.mockResolvedValue(processor);
-        processorMocks.ensureBackgroundProcessor.mockImplementation((_track, instance) => instance);
+        processorMocks.ensureBackgroundProcessor.mockImplementation(attachLikeLiveKit);
 
         const { getAppliedBackgroundEffect, result } = setup({ appliedBackgroundEffect: 'protonDark' });
 

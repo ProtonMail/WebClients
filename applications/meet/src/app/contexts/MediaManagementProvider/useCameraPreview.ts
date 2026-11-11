@@ -13,6 +13,7 @@ import {
     ensureBackgroundProcessor,
 } from '../../processors/background-processor/createBackgroundProcessor';
 import type { BackgroundMode, BackgroundProcessor } from '../../processors/background-processor/types';
+import { hasLiveCameraTrack } from '../../utils/cameraTrack';
 import { resolveBackgroundMode } from '../BackgroundEffects/resolveBackgroundMode';
 import type { BackgroundEffectInitializationTracker } from '../BackgroundEffects/useBackgroundEffectInitializationTracker';
 
@@ -137,15 +138,17 @@ export const useCameraPreview = ({
             const processor = await ensureBackgroundProcessor(videoTrack, previewProcessor);
             processor?.enable?.();
 
-            // A mode switch is live on the next frame; only a real warmup is worth naming.
-            if (processor && !processor.hasAppliedMask()) {
+            // A mode switch is live on the next frame; only a real warmup is worth naming. A live published
+            // camera warms up too and owns the shared initializing state, which the preview teardown on join
+            // would otherwise clear.
+            if (processor && !processor.hasAppliedMask() && !hasLiveCameraTrack(room)) {
                 previewEffectInitTokenRef.current = trackBackgroundEffectInitialization(
                     effect === 'blur' ? 'blur' : 'virtualBackground',
                     () => processor.waitUntilApplied()
                 );
             }
         },
-        [cancelPreviewEffectInitialization, ensurePreviewProcessor, trackBackgroundEffectInitialization]
+        [cancelPreviewEffectInitialization, ensurePreviewProcessor, room, trackBackgroundEffectInitialization]
     );
 
     const requestPreviewBackgroundEffect = useCallback(

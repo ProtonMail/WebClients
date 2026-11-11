@@ -40,4 +40,6 @@ export type BackgroundProcessor = TrackProcessor<Track.Kind.Video> & {
     hasAppliedMask: () => boolean;
     // Swap the background without rebuilding the segmentation pipeline.
     setMode: (mode: BackgroundMode) => Promise<void>;
+    // Called each time the processor starts warming up, including when LiveKit restarts it on a new camera track.
+    onWarmup: (listener: (mode: BackgroundMode) => void) => () => void;
 };

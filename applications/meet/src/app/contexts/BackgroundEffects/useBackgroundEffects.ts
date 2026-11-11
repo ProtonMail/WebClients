@@ -12,6 +12,7 @@ import {
     applyBackgroundEffectAndPersist,
     selectAppliedBackgroundEffect,
     selectBackgroundBlur,
+    selectPendingBackgroundEffect,
     setPendingBackgroundEffect,
 } from '@proton/meet/store/slices/backgroundSlice';
 import { selectInitialCameraState } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
@@ -114,7 +115,7 @@ export const useBackgroundEffects = ({ isBackgroundEffectsSupported }: UseBackgr
 
                     // A mode switch is live on the next frame, so reporting it would flash
                     // the initializing overlay. Only a real warmup is worth naming.
-                    if (result && !result.hasAppliedMask()) {
+                    if (!isSwappingProcessor && result && !result.hasAppliedMask()) {
                         trackBackgroundEffectInitialization(initializingEffect, () => result.waitUntilApplied());
                     }
 
@@ -303,6 +304,7 @@ export const useBackgroundEffects = ({ isBackgroundEffectsSupported }: UseBackgr
         }
 
         let cancelled = false;
+        let stopWatchingWarmups: (() => void) | undefined;
 
         const creation = createBackgroundProcessor();
         processorCreationRef.current = creation;
@@ -317,15 +319,28 @@ export const useBackgroundEffects = ({ isBackgroundEffectsSupported }: UseBackgr
             }
 
             processorInstanceRef.current = processor;
+            // LiveKit also restarts the processor when the camera track is replaced, as on join,
+            // so the warmups come from the processor rather than from the attach calls.
+            stopWatchingWarmups = processor?.onWarmup((mode) => {
+                // The processor stays on the track while no effect is picked.
+                const state = store.getState();
+                if ((selectPendingBackgroundEffect(state) ?? selectAppliedBackgroundEffect(state)) === 'none') {
+                    return;
+                }
+                trackBackgroundEffectInitialization(mode.type === 'blur' ? 'blur' : 'virtualBackground', () =>
+                    processor.waitUntilApplied()
+                );
+            });
         })();
 
         return () => {
             cancelled = true;
+            stopWatchingWarmups?.();
             processorCreationRef.current = null;
             processorInstanceRef.current?.disable?.();
             void processorInstanceRef.current?.destroy?.();
         };
-    }, [isBackgroundEffectsSupported]);
+    }, [isBackgroundEffectsSupported, store, trackBackgroundEffectInitialization]);
 
     // Warms the processor for the restored background, so the first camera frame already has it.
     useEffect(() => {
