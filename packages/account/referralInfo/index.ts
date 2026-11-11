@@ -10,9 +10,12 @@ import { getReferralInfo as getReferralInfoApi } from '@proton/shared/lib/api/co
 import { HOUR } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
-interface ReferralInfo {
+type RewardType = 'fixed' | 'percentage';
+
+interface ReferralInfoValues {
     currency: string;
     refereeRewardAmount: number;
+    refereeRewardType: RewardType;
     referrerRewardAmount: number;
     maxRewardAmount: number;
     uiData: {
@@ -22,26 +25,43 @@ interface ReferralInfo {
     };
 }
 
-const constructReferralInfo = (
+interface ReferralInfo extends ReferralInfoValues {
+    /**
+     * Values of the business (B2C2B) referral program. `referrerRewardAmount` is per seat.
+     */
+    b2c2b: ReferralInfoValues;
+}
+
+const constructReferralInfoValues = (
     currency: Currency,
     refereeRewardAmount: number,
+    refereeRewardType: RewardType,
     referrerRewardAmount: number,
     maxRewardAmount: number
-): ReferralInfo => {
+): ReferralInfoValues => {
     return {
         currency,
         refereeRewardAmount,
+        refereeRewardType,
         referrerRewardAmount,
         maxRewardAmount,
         uiData: {
-            refereeRewardAmount: getSimplePriceString(currency, refereeRewardAmount),
+            refereeRewardAmount:
+                refereeRewardType === 'percentage'
+                    ? `${refereeRewardAmount}%`
+                    : getSimplePriceString(currency, refereeRewardAmount),
             referrerRewardAmount: getSimplePriceString(currency, referrerRewardAmount),
             maxRewardAmount: getSimplePriceString(currency, maxRewardAmount),
         },
     };
 };
 
-export const referralInfoDefaultValue = constructReferralInfo('USD', 2_000, 2_000, 100_000);
+const b2c2bDefaultValue = constructReferralInfoValues('USD', 10, 'percentage', 2_000, 100_000);
+
+export const referralInfoDefaultValue: ReferralInfo = {
+    ...constructReferralInfoValues('USD', 2_000, 'fixed', 2_000, 100_000),
+    b2c2b: b2c2bDefaultValue,
+};
 
 const name = 'referralInfo' as const;
 
@@ -53,14 +73,44 @@ type SliceState = ReferralInfoState[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
 export const selectReferralInfo = (state: ReferralInfoState) => state[name];
-const getReferralInfo = async (api: Api) => {
-    try {
-        const { Currency, RefereeRewardAmount, ReferrerRewardAmount, MaxRewardAmount } =
-            await api(getReferralInfoApi());
-        return constructReferralInfo(Currency, RefereeRewardAmount, ReferrerRewardAmount, MaxRewardAmount);
-    } catch {
-        return referralInfoDefaultValue;
+const fetchReferralInfoValues = async (api: Api, b2c2b?: boolean) => {
+    const {
+        Currency,
+        RefereeRewardAmount,
+        RefereeRewardType,
+        RefereeDiscountPercentage,
+        ReferrerRewardAmount,
+        MaxRewardAmount,
+    } = await api(getReferralInfoApi({ b2c2b }));
+    // The business program reports the referee's reward as a percentage in its own field
+    if (b2c2b && typeof RefereeDiscountPercentage === 'number') {
+        return constructReferralInfoValues(
+            Currency,
+            RefereeDiscountPercentage,
+            'percentage',
+            ReferrerRewardAmount,
+            MaxRewardAmount
+        );
     }
+    // A backend that doesn't know about the program yet answers with the consumer values and no type
+    if (b2c2b && !RefereeRewardType) {
+        throw new Error('Business referral info not available');
+    }
+    return constructReferralInfoValues(
+        Currency,
+        RefereeRewardAmount,
+        RefereeRewardType ?? 'fixed',
+        ReferrerRewardAmount,
+        MaxRewardAmount
+    );
+};
+
+const getReferralInfo = async (api: Api): Promise<ReferralInfo> => {
+    const [consumer, b2c2b] = await Promise.all([
+        fetchReferralInfoValues(api).catch(() => undefined),
+        fetchReferralInfoValues(api, true).catch(() => b2c2bDefaultValue),
+    ]);
+    return { ...(consumer ?? referralInfoDefaultValue), b2c2b };
 };
 
 const modelThunk = createAsyncModelThunk<Model, ReferralInfoState, ProtonThunkArguments>(`${name}/fetch`, {

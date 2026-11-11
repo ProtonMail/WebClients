@@ -86,6 +86,10 @@ export const isReferralSignup = (location: Location) => {
     );
 };
 
+export const isBusinessReferralSignup = (location: Location) => {
+    return location.pathname.includes(SSO_PATHS.BUSINESS_REFERRAL);
+};
+
 export const isPorkbunSignup = (location: Location) => {
     return (
         location.pathname.includes(SSO_PATHS.PORKBUN_SIGNUP) || location.pathname.includes(SSO_PATHS.PORKBUN_SIGN_IN)

@@ -34,7 +34,9 @@ export const getThemeFromLocation = (
         pathname === SSO_PATHS.DRIVE_SIGNUP_B2B ||
         pathname === SSO_PATHS.LUMO_SIGNUP_B2B ||
         pathname === SSO_PATHS.BUSINESS_SIGNUP ||
-        pathname === SSO_PATHS.BUSINESS_SIGNUP_GENERIC
+        pathname === SSO_PATHS.BUSINESS_SIGNUP_GENERIC ||
+        pathname === SSO_PATHS.BUSINESS_REFERRAL ||
+        pathname === SSO_PATHS.BUSINESS_REFERRAL_SIGNUP
     ) {
         return {
             DarkTheme: ThemeTypes.Storefront,

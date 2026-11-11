@@ -1,6 +1,7 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from '@reduxjs/toolkit';
 
+import { PLANS } from '@proton/payments/core/constants';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
@@ -29,8 +30,8 @@ export interface EligibleTrials {
  * These serve as optimistic defaults while the API response loads
  */
 export const eligibleTrialsDefaultValue: EligibleTrials = {
-    trialPlans: ['bundle2022', 'mail2022', 'drive2022', 'pass2023', 'vpn2024'],
-    creditCardRequiredPlans: ['bundle2022', 'vpn2024'],
+    trialPlans: [PLANS.BUNDLE, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.VPN2024],
+    creditCardRequiredPlans: [PLANS.BUNDLE, PLANS.VPN2024, PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_BIZ_2025],
 };
 
 const name = 'eligibleTrials' as const;

@@ -104,6 +104,7 @@ const PublicAppMainRoutes = () => {
                                         SSO_PATHS.SIGNUP,
                                         SSO_PATHS.START,
                                         SSO_PATHS.REFERRAL_PLAN_SELECTION,
+                                        SSO_PATHS.BUSINESS_REFERRAL,
                                         SSO_PATHS.BUSINESS_SIGNUP,
                                         SSO_PATHS.BUSINESS_SIGNUP_GENERIC,
                                         SSO_PATHS.CALENDAR_SIGNUP,

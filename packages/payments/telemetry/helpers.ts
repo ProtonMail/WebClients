@@ -266,6 +266,8 @@ export type PaymentTelemetryContext =
     | 'ctx-signup-spaces'
     /** Context-based referral signup */
     | 'ctx-signup-referral'
+    /** Context-based business referral signup */
+    | 'ctx-signup-business-referral'
     /** Context-based email reservation */
     | 'ctx-email-reservation'
     /** Subscription modification modal for existing users */

@@ -18,12 +18,14 @@ interface ReferralApiResult {
  */
 const fetchAllReferralsByOffset = async (
     api: Api,
-    params?: { Offset?: number; Limit?: number }
+    params?: { Offset?: number; Limit?: number; b2c2b?: boolean }
 ): Promise<ReferralApiResult> => {
     const offset = params?.Offset ?? 0;
     const limit = params?.Limit ?? 100;
 
-    const firstResults = await api<ReferralApiResult>(getReferrals({ Offset: offset, Limit: limit }));
+    const firstResults = await api<ReferralApiResult>(
+        getReferrals({ Offset: offset, Limit: limit, b2c2b: params?.b2c2b })
+    );
     const total = firstResults.Total;
 
     if (!total || limit > total) {
@@ -36,7 +38,7 @@ const fetchAllReferralsByOffset = async (
     const promises = range(0, numberOfCalls).map((_, index) => {
         const nextOffset = limit * (index + 1);
 
-        return api<ReferralApiResult>(getReferrals({ Offset: nextOffset, Limit: limit }));
+        return api<ReferralApiResult>(getReferrals({ Offset: nextOffset, Limit: limit, b2c2b: params?.b2c2b }));
     });
 
     const nextResults = await Promise.all(promises);

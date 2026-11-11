@@ -1,0 +1,101 @@
+.business-referral-signup {
+	--business-referral-box-shadow:
+		0 1.66px 5.56px 0 rgb(74 45 197 / 0.043), 0 7.86px 21.72px 0 rgb(74 45 197 / 0.07),
+		0 20.41px 68.19px 0 rgb(74 45 197 / 0.11);
+
+	// Re-pointing these tokens here (rather than hardcoding color on individual elements) lets any
+	// text under this scope resolve the right dark-mode value via `color-norm`/`color-weak`.
+	// The explicit `color: var(--text-norm)` below matters on its own: `color` is an inherited
+	// *computed value*, resolved once where it's declared — body's own `color: var(--text-norm)`
+	// resolved using the light-theme value before this scope existed, so without redeclaring it
+	// here, anything that doesn't set its own color (e.g. a shared component's label, like
+	// InputFieldTwo's `.field-two-label`) still inherits that stale light value.
+	// Matches single-signup-v2's dark text palette (Storefront theme's .ui-prominent values)
+	// exactly, so text looks the same whether or not a given subtree also has .ui-prominent
+	// applied locally (e.g. for field backgrounds — see CheckoutForm.tsx).
+	--text-norm: white;
+	--text-weak: #a8a2c0;
+	--border-weak: #4c2cb3;
+
+	color: var(--text-norm);
+
+	// Figma "Text/weak" purple, used for the raw price and renewal text on the plan cards.
+	.business-referral-price-weak {
+		color: #9a97f7;
+	}
+
+	.business-step-heading-badge {
+		background-color: rgb(109 74 255 / 0.3);
+	}
+
+	.business-step-indicator-badge {
+		&.is-active {
+			border: 1px solid white;
+		}
+
+		&.is-upcoming {
+			border: 1px solid var(--border-weak);
+		}
+
+		// Always a filled white circle regardless of theme, so the number needs to stay dark for
+		// contrast — same "hardcoded because always on a white fill" pattern as e.g.
+		// offers/Offer.scss, not a semantic text token.
+		&.is-done {
+			background-color: white;
+			color: #0b071d;
+		}
+	}
+
+	// The checkout page's own cards (order summary, benefits) sit directly on the page background
+	// with just a border outline — unlike the plan picker's own card (see
+	// PlanSelector/PlanSelector.scss), they don't get a visibly lighter fill. Each needs its own
+	// border color per Figma (not a shared one).
+	.business-card,
+	.business-benefits-card {
+		--background-norm: #1d1738;
+
+		color: var(--text-norm);
+	}
+
+	.business-card {
+		--border-weak: #342d54;
+	}
+
+	.business-benefits-card {
+		--border-weak: #4a426c;
+
+		background-image: linear-gradient(81deg, rgb(109 74 255 / 0.038) 0%, rgb(70 26 255 / 0.01) 100%);
+	}
+
+	header {
+		color: rgb(255 255 255 / 0.8);
+
+		.link {
+			color: rgb(255 255 255 / 0.9);
+		}
+	}
+
+	footer {
+		--link-norm: rgb(255 255 255 / 0.6);
+		--text-weak: rgb(255 255 255 / 0.6);
+		--interaction-norm-major-1: rgb(255 255 255 / 0.6);
+
+		color: rgb(255 255 255 / 0.6);
+	}
+}
+
+// Fixed (not absolute) so it stays anchored to the viewport instead of only covering the scroll
+// container's own box — otherwise it scrolls away with the content once the page is taller than
+// the viewport. Reuses the same top-of-page glow as single-signup-v2's B2B flow
+// (.signup-v2-bg--b2b in single-signup-v2/Layout.scss) instead of a bespoke one.
+.business-referral-signup-bg {
+	position: relative;
+
+	&::before {
+		content: '';
+		position: fixed;
+		inset: 0;
+		background: linear-gradient(180deg, #392982 0%, #1d1738 40%);
+		z-index: 0;
+	}
+}

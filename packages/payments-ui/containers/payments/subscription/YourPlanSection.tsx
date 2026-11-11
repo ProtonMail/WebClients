@@ -100,6 +100,7 @@ const YourPlanSectionInner = ({ app }: Props) => {
     const trialInfo = getTrialInfoForSingleSubscription(entitlementCatalog, subscription);
     const shouldRenderTrialInfo =
         trialInfo.isReferralTrial &&
+        !trialInfo.isB2BTrial &&
         ((!hasTrialPaymentMethods && !isAutoRenewTrial(subscription)) || isAutoRenewTrial(subscription));
     // Upsell panel if the user has a subscription and is not vpn or wallet
     const shouldRenderUpsells =
