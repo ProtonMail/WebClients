@@ -82,6 +82,16 @@
 			border-block-start: 1px solid var(--lite-settings-border);
 		}
 
+		&--stacked {
+			flex-direction: column;
+			align-items: stretch;
+			gap: rem(8);
+
+			.lite-settings-row-control {
+				display: block;
+			}
+		}
+
 		&--button {
 			inline-size: 100%;
 			text-align: start;

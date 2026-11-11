@@ -22,6 +22,17 @@ describe('LiteSettingsRow', () => {
         expect(screen.queryByRole('button')).not.toBeInTheDocument();
     });
 
+    it('puts the control below the label when stacked', () => {
+        const { container } = render(
+            <LiteSettingsRow label="Recovery email address" htmlFor="recovery-email-input" stacked>
+                <input id="recovery-email-input" />
+            </LiteSettingsRow>
+        );
+
+        expect(container.querySelector('.lite-settings-row')).toHaveClass('lite-settings-row--stacked');
+        expect(screen.getByLabelText('Recovery email address')).toHaveAttribute('id', 'recovery-email-input');
+    });
+
     it('is a button when it navigates', () => {
         const onClick = jest.fn();
         render(<LiteSettingsRow label="Calendars" onClick={onClick} />);
