@@ -1,5 +1,14 @@
-import { useFlag } from '@proton/unleash/useFlag';
+import { useContext } from 'react';
 
-import { OPEN_DESKTOP_APP_ON_LOAD_FLAG, getDesktopAppOption } from '../../utils/desktopAppDetector';
+import { DesktopAppOptionContext } from '../../contexts/DesktopAppOptionContext';
+import type { DesktopAppOption } from '../../utils/desktopAppDetector';
 
-export const useDesktopAppOption = () => getDesktopAppOption(useFlag(OPEN_DESKTOP_APP_ON_LOAD_FLAG));
+export const useDesktopAppOption = (): DesktopAppOption => {
+    const desktopAppOption = useContext(DesktopAppOptionContext);
+
+    if (desktopAppOption === undefined) {
+        throw new Error('useDesktopAppOption must be used within a DesktopAppOptionContext provider');
+    }
+
+    return desktopAppOption;
+};

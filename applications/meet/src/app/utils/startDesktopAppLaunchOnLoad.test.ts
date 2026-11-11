@@ -8,7 +8,6 @@ import {
 } from '@proton/meet/store/slices/currentMeeting';
 import type { MeetingInfoModel } from '@proton/meet/store/slices/meetingInfoModel';
 import { meetingInfoModelReducer, resetMeetingInfoModel } from '@proton/meet/store/slices/meetingInfoModel';
-import type { MeetExtraThunkArguments } from '@proton/meet/store/store';
 import { CustomPasswordState } from '@proton/shared/lib/interfaces/Meet';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 
@@ -69,13 +68,10 @@ const loadPage = ({
 }: { path?: string; flags?: Partial<Record<FeatureFlag, boolean>>; isMeetingInfoLoaded?: boolean } = {}) => {
     window.history.replaceState(null, '', path);
 
-    const listenerMiddleware = createListenerMiddleware({
-        extra: {
-            unleashClient: {
-                isEnabled: (flag: FeatureFlag) => flags[flag] ?? false,
-            },
-        } as unknown as MeetExtraThunkArguments,
-    });
+    let servedFlags = flags;
+    const unleashClient = { isEnabled: (flag: FeatureFlag) => servedFlags[flag] ?? false };
+
+    const listenerMiddleware = createListenerMiddleware();
 
     const store = configureStore({
         reducer: { ...currentMeetingReducer, ...meetingInfoModelReducer, ...connectionReducer },
@@ -90,13 +86,17 @@ const loadPage = ({
             getDefaultMiddleware({ serializableCheck: false }).prepend(listenerMiddleware.middleware),
     });
 
-    startDesktopAppLaunchOnLoad({ dispatch: store.dispatch });
+    const desktopAppOption = startDesktopAppLaunchOnLoad({ dispatch: store.dispatch, unleashClient });
 
     const showMeetingLink = () =>
         store.dispatch(setCurrentMeeting({ meetingLinkName: MEETING_ID, meetingPassword: MEETING_PASSWORD }));
     const finishLoading = () => store.dispatch(setCurrentMeeting({ isMeetingLoading: false }));
 
     return {
+        desktopAppOption,
+        receiveNewerFlags: (newerFlags: Partial<Record<FeatureFlag, boolean>>) => {
+            servedFlags = newerFlags;
+        },
         showMeetingLink,
         finishLoading,
         showLoadedMeeting: () => {
@@ -253,5 +253,26 @@ describe('startDesktopAppLaunchOnLoad', () => {
         page.showLoadedMeeting();
 
         expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
+    });
+
+    it('opens the app with the full link and gives the page "openOnLoad" when a cached flag on is refreshed off after the page loaded', () => {
+        const page = loadPage({ flags: { MeetOpenDesktopAppOnLoad: true } });
+
+        page.receiveNewerFlags({ MeetOpenDesktopAppOnLoad: false });
+        page.showLoadedMeeting();
+
+        expect(tryOpenInDesktopApp).toHaveBeenCalledTimes(1);
+        expect(tryOpenInDesktopApp).toHaveBeenCalledWith(FULL_MEETING_LINK);
+        expect(page.desktopAppOption).toBe('openOnLoad');
+    });
+
+    it('never opens the app and gives the page "appButton" when a cached flag off is refreshed on after the page loaded', () => {
+        const page = loadPage({ flags: { MeetOpenDesktopAppOnLoad: false } });
+
+        page.receiveNewerFlags({ MeetOpenDesktopAppOnLoad: true });
+        page.showLoadedMeeting();
+
+        expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
+        expect(page.desktopAppOption).toBe('appButton');
     });
 });

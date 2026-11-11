@@ -13,9 +13,12 @@ import { selectMeetingInfoModel } from '@proton/meet/store/slices/meetingInfoMod
 import type { MeetDispatch, MeetExtraThunkArguments, MeetState } from '@proton/meet/store/store';
 
 import { getUrlMeetingLinkName, getUrlMeetingPassword } from '../hooks/srp/getUrlMeetingParams';
-import { OPEN_DESKTOP_APP_ON_LOAD_FLAG, getDesktopAppOption, tryOpenInDesktopApp } from './desktopAppDetector';
+import type { DesktopAppOption } from './desktopAppDetector';
+import { getDesktopAppOption, tryOpenInDesktopApp } from './desktopAppDetector';
 
-const addMeetListener = addListener.withTypes<MeetState, MeetDispatch, MeetExtraThunkArguments>();
+const OPEN_DESKTOP_APP_ON_LOAD_FLAG = 'MeetOpenDesktopAppOnLoad';
+
+const addMeetListener = addListener.withTypes<MeetState, MeetDispatch>();
 
 const getMeetingFromLoadedUrl = () => {
     try {
@@ -31,11 +34,18 @@ const getMeetingFromLoadedUrl = () => {
 const endsPageLoadPrejoin = (action: UnknownAction) =>
     (setJoiningInProgress.match(action) && action.payload) || resetCurrentMeeting.match(action);
 
-export const startDesktopAppLaunchOnLoad = ({ dispatch }: { dispatch: Dispatch }) => {
+export const startDesktopAppLaunchOnLoad = ({
+    dispatch,
+    unleashClient,
+}: {
+    dispatch: Dispatch;
+    unleashClient: Pick<MeetExtraThunkArguments['unleashClient'], 'isEnabled'>;
+}): DesktopAppOption => {
+    const desktopAppOption = getDesktopAppOption(unleashClient.isEnabled(OPEN_DESKTOP_APP_ON_LOAD_FLAG));
     const loadedMeeting = getMeetingFromLoadedUrl();
 
-    if (!loadedMeeting) {
-        return;
+    if (desktopAppOption !== 'openOnLoad' || !loadedMeeting) {
+        return desktopAppOption;
     }
 
     const { meetingLinkName, meetingPassword } = loadedMeeting;
@@ -56,13 +66,10 @@ export const startDesktopAppLaunchOnLoad = ({ dispatch }: { dispatch: Dispatch }
                     return;
                 }
 
-                const isOpenDesktopAppOnLoadEnabled =
-                    listenerApi.extra.unleashClient.isEnabled(OPEN_DESKTOP_APP_ON_LOAD_FLAG);
-
-                if (getDesktopAppOption(isOpenDesktopAppOnLoadEnabled) === 'openOnLoad') {
-                    tryOpenInDesktopApp(selectMeetingLink(listenerApi.getState()));
-                }
+                tryOpenInDesktopApp(selectMeetingLink(listenerApi.getState()));
             },
         })
     );
+
+    return desktopAppOption;
 };

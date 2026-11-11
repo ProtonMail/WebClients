@@ -329,7 +329,6 @@ const completeAppBootstrap = async ({
     );
 
     startMeetingInfoPreload({ dispatch, cryptoReady: cryptoPromise });
-    startDesktopAppLaunchOnLoad({ dispatch });
 
     const [userData] = await Promise.all([
         measureLoadPhase('sessionMs', loadUserData(dispatch)),
@@ -383,7 +382,9 @@ const completeAppBootstrap = async ({
 
     void pruneOrphanBackgroundCaches();
 
-    return { userData, meetCoreClient };
+    const desktopAppOption = startDesktopAppLaunchOnLoad({ dispatch, unleashClient });
+
+    return { userData, meetCoreClient, desktopAppOption };
 };
 
 interface BootstrapParameters {
@@ -427,7 +428,7 @@ const executeBootstrapSteps = async ({
         isEnabled: () => restServices.unleashClient.isEnabled(MEET_EXTENDED_TELEMETRY_FLAG),
     });
 
-    const { userData, meetCoreClient } = await completeAppBootstrap({
+    const { userData, meetCoreClient, desktopAppOption } = await completeAppBootstrap({
         ...restServices,
         authentication,
         notificationsManager,
@@ -444,6 +445,7 @@ const executeBootstrapSteps = async ({
         store,
         authentication,
         meetCoreClient,
+        desktopAppOption,
     };
 };
 
@@ -582,7 +584,7 @@ export const bootstrapGuestApp = async (
     });
 
     startMeetingInfoPreload({ dispatch: store.dispatch });
-    startDesktopAppLaunchOnLoad({ dispatch: store.dispatch });
+    const desktopAppOption = startDesktopAppLaunchOnLoad({ dispatch: store.dispatch, unleashClient });
 
     markBootstrapEnd();
 
@@ -593,5 +595,6 @@ export const bootstrapGuestApp = async (
         history,
         unleashClient,
         meetCoreClient,
+        desktopAppOption,
     };
 };

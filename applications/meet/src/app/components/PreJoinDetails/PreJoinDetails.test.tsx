@@ -18,7 +18,13 @@ import { selectIsGuest, selectUserId } from '@proton/meet/store/slices/userSlice
 import { selectIsWaitingRoomAdmissionActive } from '@proton/meet/store/slices/waitingRoomSlice';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 
-import { getDesktopAppPreference, saveDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
+import { DesktopAppOptionContext } from '../../contexts/DesktopAppOptionContext';
+import {
+    getDesktopAppOption,
+    getDesktopAppPreference,
+    saveDesktopAppPreference,
+    tryOpenInDesktopApp,
+} from '../../utils/desktopAppDetector';
 import { PreJoinDetails } from './PreJoinDetails';
 
 const MEETING_LINK = 'https://meet.proton.me/join/id-meeting-abc#pwd-password-abc';
@@ -103,16 +109,23 @@ const USER_STORAGE_KEY = 'openInDesktopApp.user.user-1';
 const OTHER_USER_STORAGE_KEY = 'openInDesktopApp.user.user-2';
 const GUEST_STORAGE_KEY = 'openInDesktopApp.guest';
 
-const renderPreJoinDetails = ({ instantMeeting = false, onJoinMeeting = vi.fn(), displayName = 'Alice' } = {}) =>
+const renderPreJoinDetails = ({
+    instantMeeting = false,
+    onJoinMeeting = vi.fn(),
+    displayName = 'Alice',
+    desktopAppOption = getDesktopAppOption(mocks.flags.MeetOpenDesktopAppOnLoad ?? false),
+} = {}) =>
     render(
-        <PreJoinDetails
-            meetingLinkName="meeting-abc"
-            displayName={displayName}
-            keepDisplayName={false}
-            onDisplayNameChange={vi.fn()}
-            onJoinMeeting={onJoinMeeting}
-            instantMeeting={instantMeeting}
-        />
+        <DesktopAppOptionContext.Provider value={desktopAppOption}>
+            <PreJoinDetails
+                meetingLinkName="meeting-abc"
+                displayName={displayName}
+                keepDisplayName={false}
+                onDisplayNameChange={vi.fn()}
+                onJoinMeeting={onJoinMeeting}
+                instantMeeting={instantMeeting}
+            />
+        </DesktopAppOptionContext.Provider>
     );
 
 beforeEach(() => {
@@ -470,6 +483,24 @@ describe('PreJoinDetails on other desktop browsers with MeetOpenDesktopAppOnLoad
         renderPreJoinDetails();
 
         expect(screen.getByRole('button', { name: 'Join in browser' })).toBeInTheDocument();
+        expect(screen.queryByRole('button', { name: OPEN_IN_DESKTOP_APP })).not.toBeInTheDocument();
+    });
+});
+
+describe('PreJoinDetails when the live MeetOpenDesktopAppOnLoad differs from the page load', () => {
+    it('keeps "Join in browser" and the desktop app button from a page load with "appButton" while the live flag is on', () => {
+        mocks.flags.MeetOpenDesktopAppOnLoad = true;
+        renderPreJoinDetails({ desktopAppOption: 'appButton' });
+
+        expect(screen.getByRole('button', { name: 'Join in browser' })).toBeInTheDocument();
+        expect(screen.getByRole('button', { name: OPEN_IN_DESKTOP_APP })).toBeInTheDocument();
+    });
+
+    it('keeps one "Join meeting" button and no desktop app button from a page load with "openOnLoad" while the live flag is off', () => {
+        mocks.flags.MeetOpenDesktopAppOnLoad = false;
+        renderPreJoinDetails({ desktopAppOption: 'openOnLoad' });
+
+        expect(screen.getAllByRole('button', { name: 'Join meeting' })).toHaveLength(1);
         expect(screen.queryByRole('button', { name: OPEN_IN_DESKTOP_APP })).not.toBeInTheDocument();
     });
 });

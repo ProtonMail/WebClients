@@ -1,9 +1,7 @@
 import { isDesktop, isFirefox, isIpad, isSafari } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
-export const OPEN_DESKTOP_APP_ON_LOAD_FLAG = 'MeetOpenDesktopAppOnLoad';
-
-type DesktopAppOption = 'unavailable' | 'appButton' | 'openOnLoad';
+export type DesktopAppOption = 'unavailable' | 'appButton' | 'openOnLoad';
 
 export const canOpenInDesktopApp = (): boolean => !isElectronApp && isDesktop() && !isIpad();
 

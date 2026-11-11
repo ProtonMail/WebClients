@@ -19,9 +19,11 @@ import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenti
 
 import { bootstrapGuestApp } from '../bootstrap';
 import config from '../config';
+import { DesktopAppOptionContext } from '../contexts/DesktopAppOptionContext';
 import { MeetCoreClientContext } from '../contexts/MeetCoreClientContext';
 import { TrackedLoaderPage } from '../telemetry/TrackedLoaderPage';
 import { markBootstrapLoaderUnmount } from '../telemetry/loadPerformance';
+import type { DesktopAppOption } from '../utils/desktopAppDetector';
 import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 
 type ExtraThunkArguments = Omit<ProtonThunkArguments, 'config' | 'api' | 'eventManager'> & {
@@ -42,12 +44,20 @@ export const GuestContainer = ({ children }: GuestContainerProps) => {
 
     const extraThunkArgumentsRef = useRef<ExtraThunkArguments>();
     const meetCoreClientRef = useRef<MeetCoreClient | null>(null);
+    const desktopAppOptionRef = useRef<DesktopAppOption>();
 
     useEffect(() => {
         const initialiseServicesAndStore = async (signal: AbortSignal) => {
             try {
-                const { store, authentication, unleashClient, unauthenticatedApi, history, meetCoreClient } =
-                    await bootstrapGuestApp(config, notificationsManager, signal);
+                const {
+                    store,
+                    authentication,
+                    unleashClient,
+                    unauthenticatedApi,
+                    history,
+                    meetCoreClient,
+                    desktopAppOption,
+                } = await bootstrapGuestApp(config, notificationsManager, signal);
 
                 if (signal.aborted) {
                     return;
@@ -63,6 +73,7 @@ export const GuestContainer = ({ children }: GuestContainerProps) => {
                 };
 
                 meetCoreClientRef.current = meetCoreClient;
+                desktopAppOptionRef.current = desktopAppOption;
 
                 setInitialised(true);
             } catch (error) {
@@ -99,10 +110,12 @@ export const GuestContainer = ({ children }: GuestContainerProps) => {
                     <FlagProvider unleashClient={unleashClient} startClient={false}>
                         <UnauthenticatedApiProvider unauthenticatedApi={unauthenticatedApi}>
                             <MeetCoreClientContext.Provider value={meetCoreClientRef.current}>
-                                <ErrorBoundary big component={<StandardErrorPage big />}>
-                                    <NotificationsChildren />
-                                    {children}
-                                </ErrorBoundary>
+                                <DesktopAppOptionContext.Provider value={desktopAppOptionRef.current}>
+                                    <ErrorBoundary big component={<StandardErrorPage big />}>
+                                        <NotificationsChildren />
+                                        {children}
+                                    </ErrorBoundary>
+                                </DesktopAppOptionContext.Provider>
                             </MeetCoreClientContext.Provider>
                         </UnauthenticatedApiProvider>
                     </FlagProvider>
