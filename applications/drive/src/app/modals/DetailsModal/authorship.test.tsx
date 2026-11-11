@@ -80,7 +80,7 @@ describe('getAuthorshipStatus', () => {
         expect(renderMessage(result.message)).toContain(expectedMessage);
         expect(result.details).toHaveLength(expectedDetails.length + 1); // +1 for the general "this is likely ..."
         for (let i = 0; i < expectedDetails.length; i++) {
-            expect(result.details[i]).toContain(expectedDetails[i]);
+            expect(renderMessage(result.details[i])).toContain(expectedDetails[i]);
         }
     }
 
@@ -91,7 +91,7 @@ describe('getAuthorshipStatus', () => {
                 createSuccessfulAuthor('user@example.com')
             );
 
-            expectVerified(node, 'This file was securely created by <strong>user@example.com</strong>');
+            expectVerified(node, 'This file was securely created by <strong><bdi>user@example.com</bdi></strong>');
         });
 
         it('should return success for file upload when all authors are the same and verified', () => {
@@ -102,7 +102,7 @@ describe('getAuthorshipStatus', () => {
                 NodeType.File
             );
 
-            expectVerified(node, 'This file was securely uploaded by <strong>user@example.com</strong>');
+            expectVerified(node, 'This file was securely uploaded by <strong><bdi>user@example.com</bdi></strong>');
         });
 
         it('should return success for folder creation when keyAuthor and nameAuthor are the same and verified', () => {
@@ -113,7 +113,7 @@ describe('getAuthorshipStatus', () => {
                 NodeType.Folder
             );
 
-            expectVerified(node, 'This folder was securely created by <strong>user@example.com</strong>');
+            expectVerified(node, 'This folder was securely created by <strong><bdi>user@example.com</bdi></strong>');
         });
 
         it('should return success when key and name authors are different but both verified, no activeRevision', () => {
@@ -122,7 +122,7 @@ describe('getAuthorshipStatus', () => {
                 createSuccessfulAuthor('renamer@example.com')
             );
 
-            expectVerified(node, 'This file was securely created by <strong>creator@example.com</strong>');
+            expectVerified(node, 'This file was securely created by <strong><bdi>creator@example.com</bdi></strong>');
         });
 
         it('should return success when key and name authors are different but both verified, with uploader', () => {
@@ -132,7 +132,7 @@ describe('getAuthorshipStatus', () => {
                 createSuccessfulAuthor('uploader@example.com')
             );
 
-            expectVerified(node, 'This file was securely uploaded by <strong>uploader@example.com</strong>');
+            expectVerified(node, 'This file was securely uploaded by <strong><bdi>uploader@example.com</bdi></strong>');
         });
     });
 
@@ -189,7 +189,7 @@ describe('getAuthorshipStatus', () => {
                 NodeType.File
             );
 
-            expectVerified(node, 'This file was securely created by <strong>user@example.com</strong>');
+            expectVerified(node, 'This file was securely created by <strong><bdi>user@example.com</bdi></strong>');
         });
 
         it('should return success when one author is anonymous - content author is anonymous', () => {
@@ -212,7 +212,7 @@ describe('getAuthorshipStatus', () => {
                 createFailedAuthor('Content signature invalid', 'user@example.com')
             );
 
-            expectVeirificationIssues(node, '<strong>user@example.com</strong> uploaded this file', [
+            expectVeirificationIssues(node, '<strong><bdi>user@example.com</bdi></strong> uploaded this file', [
                 'Key signature invalid',
                 'Name signature invalid',
                 'Content signature invalid',
@@ -226,7 +226,7 @@ describe('getAuthorshipStatus', () => {
                 createFailedAuthor('Content signature invalid')
             );
 
-            expectVeirificationIssues(node, '<strong>an anonymous user</strong> created this file', [
+            expectVeirificationIssues(node, '<strong><bdi>an anonymous user</bdi></strong> created this file', [
                 'Key signature invalid',
                 'Name signature invalid',
                 'Content signature invalid',
@@ -240,7 +240,7 @@ describe('getAuthorshipStatus', () => {
                 createSuccessfulAuthor('uploader@example.com')
             );
 
-            expectVeirificationIssues(node, '<strong>uploader@example.com</strong> uploaded this file', [
+            expectVeirificationIssues(node, '<strong><bdi>uploader@example.com</bdi></strong> uploaded this file', [
                 'Key signature invalid',
             ]);
         });
@@ -252,7 +252,7 @@ describe('getAuthorshipStatus', () => {
                 createSuccessfulAuthor('uploader@example.com')
             );
 
-            expectVeirificationIssues(node, '<strong>uploader@example.com</strong> uploaded this file', [
+            expectVeirificationIssues(node, '<strong><bdi>uploader@example.com</bdi></strong> uploaded this file', [
                 'Name signature invalid',
             ]);
         });
@@ -264,7 +264,7 @@ describe('getAuthorshipStatus', () => {
                 createFailedAuthor('Content signature invalid', 'uploader@example.com')
             );
 
-            expectVeirificationIssues(node, '<strong>uploader@example.com</strong> uploaded this file', [
+            expectVeirificationIssues(node, '<strong><bdi>uploader@example.com</bdi></strong> uploaded this file', [
                 'Content signature invalid',
             ]);
         });
@@ -283,6 +283,28 @@ describe('getAuthorshipStatus', () => {
 
             expect(rendered).not.toContain('<img');
             expect(rendered).toContain('&lt;img src=x onerror=alert(1)&gt;');
+        });
+    });
+
+    describe('Bidi isolation of authors', () => {
+        it('should isolate claimed authors with bidi overrides from the surrounding sentence', () => {
+            const claimedAuthor = '\u202Eattacker@example.com';
+            const node = createNode(
+                createFailedAuthor('Key signature invalid', claimedAuthor),
+                createFailedAuthor('Name signature invalid', claimedAuthor),
+                createFailedAuthor('Content signature invalid', claimedAuthor)
+            );
+
+            const status = getAuthorshipStatus(node);
+
+            expect(renderMessage(status.message)).toBe(
+                `We couldn’t verify that <strong><bdi>${claimedAuthor}</bdi></strong> uploaded this file.`
+            );
+            expect(status.details.slice(0, 3).map(renderMessage)).toEqual([
+                `We weren’t able to confirm that the node was created by <bdi>${claimedAuthor}</bdi>. The reason is: Key signature invalid`,
+                `We weren’t able to confirm that the name was created or modified by <bdi>${claimedAuthor}</bdi>. The reason is: Name signature invalid`,
+                `We weren’t able to confirm that the file content was uploaded by <bdi>${claimedAuthor}</bdi>. The reason is: Content signature invalid`,
+            ]);
         });
     });
 });

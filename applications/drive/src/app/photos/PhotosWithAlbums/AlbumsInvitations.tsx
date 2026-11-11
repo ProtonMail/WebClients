@@ -32,11 +32,16 @@ export const AlbumsInvitations = () => {
             {invitations.length !== 0 && (
                 <>
                     {invitations.map((invitation) => {
+                        const claimedAuthor = invitation.addedByEmail.ok ? undefined : (
+                            <bdi key={`bdi-${invitation.uid}`}>{invitation.addedByEmail.error.claimedAuthor}</bdi>
+                        );
                         const email = (
                             <span key={`span-${invitation.uid}`} className="text-break">
-                                {invitation.addedByEmail.ok
-                                    ? invitation.addedByEmail.value
-                                    : c('Info').t`${invitation.addedByEmail.error.claimedAuthor} (unverified sender)`}
+                                {invitation.addedByEmail.ok ? (
+                                    <bdi>{invitation.addedByEmail.value}</bdi>
+                                ) : (
+                                    c('Info').jt`${claimedAuthor} (unverified sender)`
+                                )}
                             </span>
                         );
                         const name = invitation.node.name.ok

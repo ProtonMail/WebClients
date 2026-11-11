@@ -65,9 +65,11 @@ export const RevisionListItem = ({
                     {revision.creationTime}
                 </TimeIntl>
                 <p className="text-ellipsis text-center m-0">
-                    {(revision.contentAuthor.ok
-                        ? revision.contentAuthor.value
-                        : revision.contentAuthor.error.claimedAuthor) || c('Info').t`Anonymous`}
+                    <bdi>
+                        {(revision.contentAuthor.ok
+                            ? revision.contentAuthor.value
+                            : revision.contentAuthor.error.claimedAuthor) || c('Info').t`Anonymous`}
+                    </bdi>
                 </p>
                 <Button
                     className="ml-auto"

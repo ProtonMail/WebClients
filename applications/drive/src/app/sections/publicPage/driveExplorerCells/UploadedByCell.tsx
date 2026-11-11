@@ -39,7 +39,9 @@ export const UploadedByCell = ({ displayName, className }: UploadedByCellProps) 
     return (
         <div className={`flex flex-nowrap items-center gap-2 ${className || ''}`}>
             <UserAvatar name={displayName} size={UserAvatarSizeEnum.Small} />
-            <span className="text-ellipsis">{displayName}</span>
+            <span className="text-ellipsis">
+                <bdi>{displayName}</bdi>
+            </span>
         </div>
     );
 };

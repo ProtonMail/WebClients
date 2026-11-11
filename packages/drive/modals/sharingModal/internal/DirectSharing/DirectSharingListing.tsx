@@ -73,11 +73,11 @@ export const DirectSharingListing = ({
 
                                 <div className="flex flex-column flex-nowrap flex-1">
                                     <div className="text-ellipsis">
-                                        {ownerName} {ownerIsCurrentUser && <>({c('Info').t`you`})</>}
+                                        <bdi>{ownerName}</bdi> {ownerIsCurrentUser && <>({c('Info').t`you`})</>}
                                     </div>
                                     {ownerDisplayName ? (
                                         <div className="text-sm color-weak text-ellipsis" title={ownerEmail}>
-                                            {ownerEmail}
+                                            <bdi>{ownerEmail}</bdi>
                                         </div>
                                     ) : null}
                                 </div>
@@ -99,11 +99,11 @@ export const DirectSharingListing = ({
 
                                         <div className="flex flex-column flex-nowrap flex-1">
                                             <div className="text-ellipsis">
-                                                {displayName ? displayName : displayEmail}
+                                                <bdi>{displayName ? displayName : displayEmail}</bdi>
                                             </div>
                                             {displayName ? (
                                                 <div className="text-sm color-weak text-ellipsis" title={displayEmail}>
-                                                    {displayEmail}
+                                                    <bdi>{displayEmail}</bdi>
                                                 </div>
                                             ) : null}
                                         </div>

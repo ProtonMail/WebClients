@@ -139,7 +139,7 @@ describe('useShareInvitees', () => {
             );
             expect(mockedCreateNotification).toHaveBeenCalledWith({
                 type: 'warning',
-                text: `Removed duplicate invitees: ${inviteeInternal.email}`,
+                text: `Removed duplicate invitees: \u2068${inviteeInternal.email}\u2069`,
             });
         });
 

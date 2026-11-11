@@ -58,7 +58,11 @@ export const useShareInvitees = (existingEmails: string[]) => {
     const canonicalizeCurrentEmails = invitees.map(({ email }) => canonicalizeInternalEmail(email));
     const canonicalizeExistingEmails = existingEmails.map(canonicalizeInternalEmail);
     const showDuplicateNotification = (duplicateInvitees: ShareInvitee[]) => {
-        const joinedInvitee = duplicateInvitees.map((duplicateInvitee) => duplicateInvitee.email).join(', ');
+        // Notification text is a plain string (ngettext has no jt), so each email is wrapped in
+        // FIRST STRONG ISOLATE / POP DIRECTIONAL ISOLATE instead of <bdi>
+        const joinedInvitee = duplicateInvitees
+            .map((duplicateInvitee) => `\u2068${duplicateInvitee.email}\u2069`)
+            .join(', ');
 
         // translator: "joinedInvitee" is the invitee list joined by a comma, e.g. "John, Jane, Joe"
         const text = c('Error').ngettext(

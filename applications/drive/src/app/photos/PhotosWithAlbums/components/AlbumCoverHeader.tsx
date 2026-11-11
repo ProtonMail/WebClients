@@ -161,7 +161,7 @@ export const AlbumCoverHeader = ({ nodeUid, photoCount, onShare, onAddAlbumPhoto
                 </p>
                 <div className="flex flex-wrap flex-row gap-2" data-testid="cover-options">
                     {isAdmin && (
-                        <Tooltip title={displayName}>
+                        <Tooltip title={displayName ? <bdi>{displayName}</bdi> : undefined}>
                             <UserAvatar name={displayName} data-testid="user-avatar" />
                         </Tooltip>
                     )}
@@ -185,7 +185,9 @@ export const AlbumCoverHeader = ({ nodeUid, photoCount, onShare, onAddAlbumPhoto
                     {!isAdmin && (
                         <span className="color-weak mb-2 mt-1">
                             {c('Info').t`Shared by `}
-                            <b>{sharedByNameOrEmail}</b>
+                            <b>
+                                <bdi>{sharedByNameOrEmail}</bdi>
+                            </b>
                         </span>
                     )}
 

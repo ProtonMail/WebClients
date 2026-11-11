@@ -39,7 +39,29 @@ describe('AlbumsInvitations', () => {
 
         render(<AlbumsInvitations />);
 
-        expect(screen.getByText(/attacker@evil\.com \(unverified sender\)/)).toBeInTheDocument();
+        const claimedAuthor = screen.getByText('attacker@evil.com');
+        expect(claimedAuthor.tagName).toBe('BDI');
+        expect(claimedAuthor.parentElement?.textContent).toBe('attacker@evil.com (unverified sender)');
+    });
+
+    it('keeps "(unverified sender)" outside of an isolated claimed author that contains bidi overrides', () => {
+        useAlbumInvitationsStore.getState().setInvitations([
+            {
+                ...baseInvitation,
+                addedByEmail: {
+                    ok: false,
+                    error: { claimedAuthor: '\u202Eattacker@evil.com', error: 'signature error' },
+                },
+            },
+        ]);
+
+        render(<AlbumsInvitations />);
+
+        const claimedAuthor = screen.getByText('\u202Eattacker@evil.com');
+        expect(claimedAuthor.tagName).toBe('BDI');
+        expect(getComputedStyle(claimedAuthor).unicodeBidi).toMatch(/isolate$/);
+        expect(claimedAuthor.textContent).not.toContain('unverified');
+        expect(claimedAuthor.nextSibling?.textContent).toBe(' (unverified sender)');
     });
 
     it('renders the plain email when addedByEmail is verified', () => {
@@ -47,7 +69,7 @@ describe('AlbumsInvitations', () => {
 
         render(<AlbumsInvitations />);
 
-        expect(screen.getByText('inviter@proton.me')).toBeInTheDocument();
+        expect(screen.getByText('inviter@proton.me').tagName).toBe('BDI');
         expect(screen.queryByText(/unverified sender/)).not.toBeInTheDocument();
     });
 });
