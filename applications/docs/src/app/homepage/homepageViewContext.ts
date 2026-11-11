@@ -7,6 +7,9 @@ import type { ProtonDocumentType } from './utils/mimetype'
 import type { Logger } from './utils/logger'
 import type { CreateNotification } from './utils/notifications'
 import type { ReportTelemetry } from './utils/telemetry'
+import type { GetAppHref } from './utils/apps'
+import type { DateFormatter } from './utils/dateFormatter'
+import type { ErrorTracking } from './utils/errorTracking'
 
 export type RecentsSort = 'viewed' | 'name' | 'owner' | 'location'
 export type ItemsSectionId =
@@ -63,6 +66,9 @@ export type HomepageViewValue = {
   reportTelemetry: ReportTelemetry
   logger: Logger
   createNotification: CreateNotification
+  getAppHref: GetAppHref
+  dateFormatter: DateFormatter
+  errorTracking: ErrorTracking
 }
 
 export const HomepageViewContext = createContext<HomepageViewValue | undefined>(undefined)

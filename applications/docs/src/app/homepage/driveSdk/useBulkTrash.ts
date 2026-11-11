@@ -9,7 +9,7 @@ import { TelemetryEvent } from '../utils/telemetry'
 type BulkTrashDependencies = { drive: ProtonDriveClient }
 
 export function useBulkTrash({ drive }: BulkTrashDependencies) {
-  const { updateRecentDocuments, reportTelemetry, createNotification } = useHomepageView()
+  const { updateRecentDocuments, reportTelemetry, createNotification, errorTracking } = useHomepageView()
   const [isTrashing, setIsTrashing] = useState(false)
 
   const trash = useEvent(async (documents: RecentDocumentsItem[]): Promise<RecentDocumentsItem[]> => {
@@ -18,7 +18,7 @@ export function useBulkTrash({ drive }: BulkTrashDependencies) {
     setIsTrashing(true)
     let batch
     try {
-      batch = await trashManyAndNotify(drive, createNotification, [...byUid.keys()], () => {
+      batch = await trashManyAndNotify(drive, createNotification, errorTracking, [...byUid.keys()], () => {
         void updateRecentDocuments()
       })
     } finally {

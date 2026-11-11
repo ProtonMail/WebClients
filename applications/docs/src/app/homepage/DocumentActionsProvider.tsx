@@ -1,7 +1,5 @@
-import useAuthentication from '@proton/components/hooks/useAuthentication'
 import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
 import type { RecentDocumentsItem } from './recentDocumentsItem'
-import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from './utils/apps'
 import { type ReactNode, useCallback, useMemo, useState } from 'react'
 import { constructDriveFolderUrl } from './driveFolderUrl'
@@ -42,11 +40,10 @@ export function DocumentActionsProvider({
   const [isRenameSaving, setRenameSaving] = useState(false)
   const [currentlyTrashingId, setCurrentlyTrashingId] = useState<string | undefined>(undefined)
   const [currentlyRestoringId, setCurrentlyRestoringId] = useState<string | undefined>(undefined)
-  const { getLocalID } = useAuthentication()
 
   const { showSharingModal, sharingModal } = useSharingModal()
   const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal()
-  const { updateMovedDocuments, reportTelemetry, createNotification } = useHomepageView()
+  const { updateMovedDocuments, reportTelemetry, createNotification, getAppHref, errorTracking } = useHomepageView()
   const [confirmDeleteModal, showConfirmDeleteModal] = useConfirmActionModal()
   const { trash: bulkTrash, isTrashing: isBulkTrashing } = useBulkTrash({ drive })
   const { move: bulkMove, moveItemsModal: bulkMoveItemsModal } = useBulkMove({ useMoveItemsModal })
@@ -54,7 +51,7 @@ export function DocumentActionsProvider({
   const open = useEvent(({ type, volumeId, linkId }: RecentDocumentsItem, source = 'normal') => {
     const pathname = type === 'spreadsheet' ? 'sheet' : 'doc'
     const to = `/${pathname}?mode=open&volumeId=${volumeId}&linkId=${linkId}`
-    window.open(getAppHref(to, APPS.PROTONDOCS, getLocalID()))
+    window.open(getAppHref(to, APPS.PROTONDOCS))
     reportTelemetry(source === 'trash' ? TelemetryEvent.document_opened_in_trash : TelemetryEvent.document_opened)
   })
 
@@ -100,7 +97,7 @@ export function DocumentActionsProvider({
           text: <span className="text-pre-wrap">{successNotificationText}</span>,
         })
       } catch (error) {
-        traceErrorSDK(error, 'DocsRenameWithDriveSDK')
+        traceErrorSDK(errorTracking, error, 'DocsRenameWithDriveSDK')
         throw error
       }
     } finally {
@@ -119,7 +116,7 @@ export function DocumentActionsProvider({
 
   const openParent = useEvent(({ parentLinkId, shareId, isSharedWithMe }: RecentDocumentsItem) => {
     const to = constructDriveFolderUrl(parentLinkId, shareId, isSharedWithMe)
-    window.open(getAppHref(to, APPS.PROTONDRIVE, getLocalID()))
+    window.open(getAppHref(to, APPS.PROTONDRIVE))
     reportTelemetry(TelemetryEvent.document_source_opened)
   })
 
@@ -130,9 +127,9 @@ export function DocumentActionsProvider({
 
     try {
       const nodeUid = generateNodeUid(document.volumeId, document.linkId)
-      await trashAndNotify(drive, createNotification, nodeUid, emitRestored)
+      await trashAndNotify(drive, createNotification, errorTracking, nodeUid, emitRestored)
     } catch (error) {
-      reportTrashError(error)
+      reportTrashError(errorTracking, error)
       createNotification({
         type: 'error',
         text: c('Error').t`Failed to trash document`,
@@ -160,9 +157,9 @@ export function DocumentActionsProvider({
 
     try {
       const nodeUid = generateNodeUid(document.volumeId, document.linkId)
-      await restoreAndNotify(drive, createNotification, nodeUid, emitTrashed)
+      await restoreAndNotify(drive, createNotification, errorTracking, nodeUid, emitTrashed)
     } catch (error: any) {
-      handleRestoreError(createNotification, error)
+      handleRestoreError(createNotification, errorTracking, error)
       setCurrentlyRestoringId(undefined)
       return
     }
@@ -190,7 +187,7 @@ export function DocumentActionsProvider({
           const nodeUid = generateNodeUid(document.volumeId, document.linkId)
           await deleteDocument(drive, nodeUid)
         } catch (error) {
-          reportTrashError(error)
+          reportTrashError(errorTracking, error)
           createNotification({
             type: 'error',
             text: c('Notification').t`Failed to delete document`,

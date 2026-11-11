@@ -16,12 +16,12 @@ import { createDocumentItem } from './createDocumentItems'
 import { useRecentsStore } from './useRecentsStore'
 import { getRoleFromHierarchy } from './driveSdk/getRoleFromHierarchy'
 import type { RecentDocumentsItemValue } from './recentDocumentsItem'
-import { addSentryBreadcrumb, traceError } from '@proton/shared/lib/helpers/sentry'
 import { traceRecentsError } from './traceRecentsError'
 import type { EventSubscriber, SDKEventListener } from './homepageViewUtils'
 import type { Api } from './docsApi/api'
 import type { Logger } from './utils/logger'
 import type { CreateNotification } from './utils/notifications'
+import type { ErrorTracking } from './utils/errorTracking'
 import { getRecentDocuments, type GetRecentsResponse, type RecentDocumentAPIItem } from './docsApi/getRecentDocuments'
 
 type UseRecentsProps = {
@@ -30,9 +30,17 @@ type UseRecentsProps = {
   api: Api
   logger: Logger
   createNotification: CreateNotification
+  errorTracking: ErrorTracking
 }
 
-export function useRecents({ drive, eventSubscriber, api, logger, createNotification }: UseRecentsProps) {
+export function useRecents({
+  drive,
+  eventSubscriber,
+  api,
+  logger,
+  createNotification,
+  errorTracking,
+}: UseRecentsProps) {
   const recentDocuments = useRecentsStore((state) => state.recentDocuments)
   const recentDocumentsInitialized = useRecentsStore((state) => state.recentDocumentsInitialized)
 
@@ -61,7 +69,7 @@ export function useRecents({ drive, eventSubscriber, api, logger, createNotifica
       try {
         for await (const node of drive.iterateNodes([...uidsToLoad], abort)) {
           if ('missingUid' in node) {
-            addSentryBreadcrumb({
+            errorTracking.addBreadcrumb({
               category: 'docs',
               level: 'warning',
               message: 'Missing node while iterating',
@@ -85,14 +93,14 @@ export function useRecents({ drive, eventSubscriber, api, logger, createNotifica
         if (error instanceof ProtonDriveError) {
           data.errorCause = error.cause // Explicitly logging it - debugging SDK and Sentry interaction
         }
-        addSentryBreadcrumb({
+        errorTracking.addBreadcrumb({
           category: 'docs',
           level: 'warning',
           message: 'Node iterator error',
           data,
         })
         // Split in two, otherwise it won't fully log
-        addSentryBreadcrumb({
+        errorTracking.addBreadcrumb({
           category: 'docs',
           level: 'info',
           message: 'Node iterator error - debug info 1/2',
@@ -100,7 +108,7 @@ export function useRecents({ drive, eventSubscriber, api, logger, createNotifica
             documents,
           },
         })
-        addSentryBreadcrumb({
+        errorTracking.addBreadcrumb({
           category: 'docs',
           level: 'info',
           message: 'Node iterator error - debug info 2/2',
@@ -112,12 +120,12 @@ export function useRecents({ drive, eventSubscriber, api, logger, createNotifica
         // Creating new error to capture current stack
         const errorWithCurrentStack = new Error('fetchRecents failed at iterateNodes')
         errorWithCurrentStack.cause = error
-        traceRecentsError(traceError, errorWithCurrentStack)
+        traceRecentsError(errorTracking, errorWithCurrentStack)
       }
 
       return { documents, nodesByUid }
     },
-    [api, drive, logger],
+    [api, drive, logger, errorTracking],
   )
 
   const fetchRecentDocuments = useCallback(
@@ -145,7 +153,7 @@ export function useRecents({ drive, eventSubscriber, api, logger, createNotifica
               }
             } catch (error) {
               logger.debug('[LoadRecentsWithDriveSDK] Could not process document', { error, document })
-              traceRecentsError(traceError, error)
+              traceRecentsError(errorTracking, error)
             }
           }
 
@@ -166,14 +174,14 @@ export function useRecents({ drive, eventSubscriber, api, logger, createNotifica
             return
           }
 
-          traceRecentsError(traceError, error)
+          traceRecentsError(errorTracking, error)
           createNotification({
             type: 'error',
             text: c('Error').t`Failed to load recent documents`,
           })
         })
     },
-    [fetchRecents, logger, eventSubscriber, createNotification],
+    [fetchRecents, logger, eventSubscriber, createNotification, errorTracking],
   )
 
   const updateRenamedDocumentInCache = useCallback((uniqueId: string, name: string) => {
@@ -229,7 +237,7 @@ export function useRecents({ drive, eventSubscriber, api, logger, createNotifica
 
             // In case we have children of the updated folder we'll only reload existing nodes
             if (childrenOfUpdatedFolder.length > 0) {
-              await reloadDocuments(drive, childrenOfUpdatedFolder)
+              await reloadDocuments(drive, errorTracking, childrenOfUpdatedFolder)
             } else {
               // This is probably a folder restored from trash - reload everything
               // Currently not supported
@@ -238,7 +246,7 @@ export function useRecents({ drive, eventSubscriber, api, logger, createNotifica
         }
       }
     },
-    [drive],
+    [drive, errorTracking],
   )
 
   const removeDocument = useCallback((nodeUid: string) => {
@@ -252,10 +260,11 @@ export function useRecents({ drive, eventSubscriber, api, logger, createNotifica
       const { recentDocuments } = useRecentsStore.getState()
       await reloadDocuments(
         drive,
+        errorTracking,
         nodeUids.flatMap((nodeUid) => recentDocuments[nodeUid] ?? []),
       )
     },
-    [drive],
+    [drive, errorTracking],
   )
 
   return {
@@ -297,7 +306,11 @@ function getDocumentDetails(document: RecentDocumentAPIItem, node: NodeEntity, n
   }
 }
 
-async function reloadDocuments(drive: ProtonDriveClient, documents: RecentDocumentsItemValue[]) {
+async function reloadDocuments(
+  drive: ProtonDriveClient,
+  errorTracking: ErrorTracking,
+  documents: RecentDocumentsItemValue[],
+) {
   const results = await Promise.allSettled(
     documents.map((document) => loadDocument(drive, generateNodeUid(document.volumeId, document.linkId), document)),
   )
@@ -306,7 +319,7 @@ async function reloadDocuments(drive: ProtonDriveClient, documents: RecentDocume
     if (result.status === 'fulfilled') {
       updateDocument(result.value)
     } else {
-      traceRecentsError(traceError, result.reason)
+      traceRecentsError(errorTracking, result.reason)
     }
   }
 }

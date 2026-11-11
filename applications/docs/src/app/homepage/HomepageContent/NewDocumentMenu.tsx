@@ -1,7 +1,5 @@
 import { IcBrandProtonDocs } from '@proton/icons/icons/IcBrandProtonDocs'
 import { IcBrandProtonSheets } from '@proton/icons/icons/IcBrandProtonSheets'
-import useAuthentication from '@proton/components/hooks/useAuthentication'
-import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '../utils/apps'
 import { Menu, MenuItem } from './menu'
 import { c } from 'ttag'
@@ -15,8 +13,7 @@ import { TelemetryEvent } from '../utils/telemetry'
 interface Props extends Ariakit.MenuProps {}
 
 export function NewDocumentMenu({ className, ...rest }: Props) {
-  const { getLocalID } = useAuthentication()
-  const { updateRecentDocuments, reportTelemetry } = useHomepageView()
+  const { updateRecentDocuments, reportTelemetry, getAppHref } = useHomepageView()
   const isSheetsEnabled = useIsSheetsEnabled()
   return (
     <Menu className={clsx('[&_a]:hover:text-[--text-norm]', className)} {...rest}>
@@ -30,7 +27,7 @@ export function NewDocumentMenu({ className, ...rest }: Props) {
           />
         }
         // eslint-disable-next-line jsx-a11y/control-has-associated-label, jsx-a11y/anchor-has-content
-        render={<a href={getAppHref('/doc', APPS.PROTONDOCS, getLocalID())} target="_blank" />}
+        render={<a href={getAppHref('/doc', APPS.PROTONDOCS)} target="_blank" />}
         onClick={() => {
           reportTelemetry(TelemetryEvent.document_created)
           setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)
@@ -49,7 +46,7 @@ export function NewDocumentMenu({ className, ...rest }: Props) {
             />
           }
           // eslint-disable-next-line jsx-a11y/control-has-associated-label, jsx-a11y/anchor-has-content
-          render={<a href={getAppHref('/sheet', APPS.PROTONDOCS, getLocalID())} target="_blank" />}
+          render={<a href={getAppHref('/sheet', APPS.PROTONDOCS)} target="_blank" />}
           onClick={() => setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)}
         >
           {c('sheets_2025:Action').t`New spreadsheet`}

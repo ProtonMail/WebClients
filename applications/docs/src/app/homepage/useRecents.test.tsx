@@ -11,15 +11,13 @@ import { act, cleanup, renderHook } from '@testing-library/react'
 import type { EventSubscriber } from './homepageViewUtils'
 import { useRecents } from './useRecents'
 import { useRecentsStore } from './useRecentsStore'
+import type { ErrorTracking } from './utils/errorTracking'
 
 // Stands in for ApiError from packages/shared/lib/fetch/ApiError.ts
 class ApiError extends Error {}
 
 const mockTraceError = jest.fn()
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({
-  ...jest.requireActual('@proton/shared/lib/helpers/sentry'),
-  traceError: (...args: unknown[]) => mockTraceError(...args),
-}))
+const errorTracking: ErrorTracking = { traceError: mockTraceError, addBreadcrumb: jest.fn(), isReportable: () => true }
 
 jest.mock('@proton/account/addresses/hooks', () => ({
   useAddresses: () => [undefined, false],
@@ -427,7 +425,14 @@ function renderRecents({ documents, nodes }: { documents: ApiDocument[]; nodes: 
   }
 
   const { result } = renderHook(() =>
-    useRecents({ drive: drive as unknown as ProtonDriveClient, eventSubscriber, api, logger, createNotification }),
+    useRecents({
+      drive: drive as unknown as ProtonDriveClient,
+      eventSubscriber,
+      api,
+      logger,
+      createNotification,
+      errorTracking,
+    }),
   )
 
   return { result, drive, api, createNotification, eventSubscriber }

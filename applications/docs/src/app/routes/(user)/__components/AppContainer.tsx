@@ -11,6 +11,11 @@ import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
 import { useApi } from '@proton/app-context/useApi'
 import { useConfig } from '@proton/app-context/useConfig'
 import { useNotifications } from '@proton/app-context/useNotifications'
+import useAuthentication from '@proton/components/hooks/useAuthentication'
+import { getAppHref } from '@proton/shared/lib/apps/helper'
+import type { APP_NAMES } from '@proton/shared/lib/constants'
+import { dateLocale } from '@proton/shared/lib/i18n'
+import { addSentryBreadcrumb, getSentryError, traceError } from '@proton/shared/lib/helpers/sentry'
 import type { Application } from '@proton/docs-core/Application/Application'
 import type { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
 import { Suspense, lazy, useCallback } from 'react'
@@ -79,12 +84,23 @@ const HomepagePage = lazy(() => import('../(homepage)/recents/page'))
 const DocumentPage = lazy(() => import('../(document)/doc/page'))
 const DocumentPageV2 = lazy(() => import('../(document)/doc2/page'))
 
+const homepageErrorTracking = {
+  traceError,
+  addBreadcrumb: addSentryBreadcrumb,
+  isReportable: (error: unknown) => Boolean(getSentryError(error)),
+}
+
 type AppRoutesProps = { driveCompat: DriveCompat; application: Application }
 
 function AppRoutes({ driveCompat, application }: AppRoutesProps) {
   const api = useApi()
   const { APP_VERSION, CLIENT_TYPE } = useConfig()
   const { createNotification } = useNotifications()
+  const { getLocalID } = useAuthentication()
+  const getAppHrefForUser = useCallback(
+    (path: string, app: APP_NAMES) => getAppHref(path, app, getLocalID()),
+    [getLocalID],
+  )
   const reportDescriptionContext = getDocsReportContextLines({ appVersion: APP_VERSION, clientType: CLIENT_TYPE })
   const reportHomepageTelemetry = useCallback(
     (event: string) => application.metrics.reportHomepageTelemetry(event as TelemetryDocsHomepageEvents),
@@ -116,6 +132,9 @@ function AppRoutes({ driveCompat, application }: AppRoutesProps) {
         logger={application.logger}
         reportTelemetry={reportHomepageTelemetry}
         createNotification={createNotification}
+        getAppHref={getAppHrefForUser}
+        dateLocaleCode={dateLocale.code}
+        errorTracking={homepageErrorTracking}
         useSharingModal={useSharingModal}
         useMoveItemsModal={useMoveItemsModal}
         reportDescriptionContext={reportDescriptionContext}

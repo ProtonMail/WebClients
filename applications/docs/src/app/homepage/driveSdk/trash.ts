@@ -1,5 +1,6 @@
 import type { ProtonDriveClient } from '@protontech/drive-sdk'
 import { traceErrorSDK } from './traceErrorSDK'
+import type { ErrorTracking } from '../utils/errorTracking'
 
 export async function trashDocument(drive: ProtonDriveClient, nodeUid: string) {
   for await (const result of drive.trashNodes([nodeUid])) {
@@ -25,6 +26,6 @@ export async function deleteDocument(drive: ProtonDriveClient, nodeUid: string) 
   }
 }
 
-export function reportTrashError(error: unknown) {
-  traceErrorSDK(error, 'DocsTrashWithDriveSDK')
+export function reportTrashError(errorTracking: ErrorTracking, error: unknown) {
+  traceErrorSDK(errorTracking, error, 'DocsTrashWithDriveSDK')
 }

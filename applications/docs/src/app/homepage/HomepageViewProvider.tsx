@@ -10,7 +10,6 @@ import type { ProtonDocumentType } from './utils/mimetype'
 import type { OwnerContact } from './get-owner-name'
 import { useAddresses } from '@proton/account/addresses/hooks'
 import type { UserAddress } from './is-my-document'
-import { traceError } from '@proton/shared/lib/helpers/sentry'
 
 import {
   filterDocuments,
@@ -35,6 +34,7 @@ import { useUnloadGuardedApi } from './docsApi/useUnloadGuardedApi'
 import { useTrashed } from './useTrashed'
 
 import { traceRecentsError } from './traceRecentsError'
+import { DateFormatter } from './utils/dateFormatter'
 import { HOMEPAGE_TRASH_PATH } from './homepage-paths'
 
 export function HomepageViewProvider({
@@ -47,6 +47,9 @@ export function HomepageViewProvider({
   logger,
   reportTelemetry,
   createNotification,
+  getAppHref,
+  dateLocaleCode,
+  errorTracking,
 }: HomepageViewProviderProps) {
   const [search, setSearch] = useSearch()
   const [recentsSort, setRecentsSort] = useRecentsSort()
@@ -64,8 +67,19 @@ export function HomepageViewProvider({
     removeDocument,
     recentsListener,
     updateMovedDocuments,
-  } = useRecents({ drive, eventSubscriber, api: guardedApi, logger, createNotification })
-  const { fetchTrashed, trashedDocumentItems, isTrashLoading, trashedListener } = useTrashed(drive, createNotification)
+  } = useRecents({
+    drive,
+    eventSubscriber,
+    api: guardedApi,
+    logger,
+    createNotification,
+    errorTracking,
+  })
+  const { fetchTrashed, trashedDocumentItems, isTrashLoading, trashedListener } = useTrashed(
+    drive,
+    createNotification,
+    errorTracking,
+  )
 
   const isTrashRoute = Boolean(useRouteMatch(HOMEPAGE_TRASH_PATH))
 
@@ -107,9 +121,9 @@ export function HomepageViewProvider({
           type: 'error',
           text: c('Error').t`Failed to load 'My files' folder`,
         })
-        traceRecentsError(traceError, error)
+        traceRecentsError(errorTracking, error)
       })
-  }, [createNotification, drive])
+  }, [createNotification, drive, errorTracking])
 
   useEffect(() => {
     // Do not subscribe if we don't have treeEventScopeId yet
@@ -119,9 +133,9 @@ export function HomepageViewProvider({
 
     void eventSubscriber
       .initialize(myFilesNode.treeEventScopeId, [recentsListener, trashedListener], removeDocument)
-      .catch((error) => traceRecentsError(traceError, error))
+      .catch((error) => traceRecentsError(errorTracking, error))
     return () => eventSubscriber.reset()
-  }, [recentsListener, trashedListener, myFilesNode, eventSubscriber, removeDocument])
+  }, [recentsListener, trashedListener, myFilesNode, eventSubscriber, removeDocument, errorTracking])
 
   const state = useMemo((): HomepageViewState => {
     const documents = Object.values(recentDocuments) as RecentDocumentsItemValue[]
@@ -142,7 +156,7 @@ export function HomepageViewProvider({
         )
       }
     } catch (error) {
-      traceRecentsError(traceError, error)
+      traceRecentsError(errorTracking, error)
       return { view: 'unknown' }
     }
   }, [
@@ -157,7 +171,10 @@ export function HomepageViewProvider({
     search,
     trashedDocumentItems,
     type,
+    errorTracking,
   ])
+
+  const dateFormatter = useMemo(() => new DateFormatter(dateLocaleCode), [dateLocaleCode])
 
   const value = useMemo(
     (): HomepageViewValue => ({
@@ -174,6 +191,9 @@ export function HomepageViewProvider({
       reportTelemetry,
       logger,
       createNotification,
+      getAppHref,
+      dateFormatter,
+      errorTracking,
     }),
     [
       state,
@@ -189,6 +209,9 @@ export function HomepageViewProvider({
       reportTelemetry,
       logger,
       createNotification,
+      getAppHref,
+      dateFormatter,
+      errorTracking,
     ],
   )
 

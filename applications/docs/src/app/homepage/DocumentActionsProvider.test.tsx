@@ -1,4 +1,3 @@
-import AuthenticationContext from '@proton/components/containers/authentication/authenticationContext'
 import { deleteDocument, reportTrashError, restoreDocument, trashDocument } from './driveSdk/trash'
 import { RecentDocumentsItem } from './recentDocumentsItem'
 import { ServerTime } from './utils/serverTime'
@@ -8,6 +7,7 @@ import userEvent from '@testing-library/user-event'
 import { type ReactNode, useContext, useState } from 'react'
 import { DocumentActionsProvider, type DocumentActionsProviderProps } from './DocumentActionsProvider'
 import { DocumentActionsContext } from './documentActionsContext'
+import type { ErrorTracking } from './utils/errorTracking'
 import { HomepageViewContext, type HomepageViewValue } from './homepageViewContext'
 import type { UseMoveItemsModal } from './driveSdk/useBulkMove'
 import { TelemetryEvent } from './utils/telemetry'
@@ -45,27 +45,35 @@ const recentDocument = RecentDocumentsItem.create({
 })
 const nodeUid = generateNodeUid(recentDocument.volumeId, recentDocument.linkId)
 const drive = {} as ProtonDriveClient
+const errorTracking = {} as ErrorTracking
 
 function renderDocumentActions(moveItemsModalHook = useMockMoveItemsModal) {
   const createNotification = jest.fn()
   const reportTelemetry = jest.fn()
   const updateMovedDocuments = jest.fn()
+  const getAppHref = (path: string) => path
 
   const { result } = renderHook(() => useContext(DocumentActionsContext)!, {
     wrapper: ({ children }: { children: ReactNode }) => (
-      <AuthenticationContext.Provider value={{ getLocalID: () => undefined } as any}>
-        <HomepageViewContext.Provider
-          value={{ updateMovedDocuments, reportTelemetry, createNotification } as unknown as HomepageViewValue}
+      <HomepageViewContext.Provider
+        value={
+          {
+            updateMovedDocuments,
+            reportTelemetry,
+            createNotification,
+            getAppHref,
+            errorTracking,
+          } as unknown as HomepageViewValue
+        }
+      >
+        <DocumentActionsProvider
+          drive={drive}
+          useSharingModal={useMockSharingModal}
+          useMoveItemsModal={moveItemsModalHook}
         >
-          <DocumentActionsProvider
-            drive={drive}
-            useSharingModal={useMockSharingModal}
-            useMoveItemsModal={moveItemsModalHook}
-          >
-            {children}
-          </DocumentActionsProvider>
-        </HomepageViewContext.Provider>
-      </AuthenticationContext.Provider>
+          {children}
+        </DocumentActionsProvider>
+      </HomepageViewContext.Provider>
     ),
   })
 
@@ -195,7 +203,7 @@ describe('DocumentActionsProvider', () => {
     await act(() => result.current.trash(recentDocument))
 
     expect(createNotification).toHaveBeenCalledWith({ type: 'error', text: 'Failed to trash document' })
-    expect(reportTrashError).toHaveBeenCalledWith(error)
+    expect(reportTrashError).toHaveBeenCalledWith(errorTracking, error)
     expect(result.current.currentlyTrashingId).toBeUndefined()
     expect(reportTelemetry).not.toHaveBeenCalled()
     expect(listener).not.toHaveBeenCalled()
@@ -210,7 +218,7 @@ describe('DocumentActionsProvider', () => {
     await act(() => result.current.restore(recentDocument))
 
     expect(createNotification).toHaveBeenCalledWith({ type: 'error', text: 'Failed to restore document' })
-    expect(reportTrashError).toHaveBeenCalledWith(error)
+    expect(reportTrashError).toHaveBeenCalledWith(errorTracking, error)
     expect(result.current.currentlyRestoringId).toBeUndefined()
     expect(reportTelemetry).not.toHaveBeenCalled()
     expect(listener).not.toHaveBeenCalled()
@@ -248,7 +256,7 @@ describe('DocumentActionsProvider', () => {
     await waitFor(() =>
       expect(createNotification).toHaveBeenCalledWith({ type: 'error', text: 'Failed to delete document' }),
     )
-    expect(reportTrashError).toHaveBeenCalledWith(error)
+    expect(reportTrashError).toHaveBeenCalledWith(errorTracking, error)
     expect(reportTelemetry).not.toHaveBeenCalled()
   })
 })

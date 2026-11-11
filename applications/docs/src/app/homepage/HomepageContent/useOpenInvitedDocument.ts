@@ -1,11 +1,10 @@
-import useAuthentication from '@proton/components/hooks/useAuthentication'
 import type { ExtendedInvitationDetails } from '../invitationTypes'
+import { useHomepageView } from '../homepageViewContext'
 import { isProtonDocsSpreadsheet } from '../utils/mimetype'
-import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '../utils/apps'
 
 export function useOpenInvitedDocument() {
-  const { getLocalID } = useAuthentication()
+  const { getAppHref } = useHomepageView()
 
   return function openInvitedDocument(invitation: ExtendedInvitationDetails) {
     const window = openBlankTab()
@@ -13,7 +12,7 @@ export function useOpenInvitedDocument() {
     const volumeId = invitation.share.volumeId
     const linkId = invitation.link.linkId
 
-    const href = getAppHref(`/${type}`, APPS.PROTONDOCS, getLocalID())
+    const href = getAppHref(`/${type}`, APPS.PROTONDOCS)
     const url = new URL(href)
     url.searchParams.append('mode', 'open')
     url.searchParams.append('volumeId', volumeId)

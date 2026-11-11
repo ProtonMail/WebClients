@@ -6,6 +6,7 @@ import { ServerTime } from '../utils/serverTime'
 import type { RecentDocumentsItemValue } from '../recentDocumentsItem'
 import { trashManyAndNotify } from './trashRestoreNotify'
 import { HomepageViewContext, type HomepageViewValue } from '../homepageViewContext'
+import type { ErrorTracking } from '../utils/errorTracking'
 import { useBulkTrash } from './useBulkTrash'
 import { TelemetryEvent } from '../utils/telemetry'
 
@@ -38,6 +39,7 @@ const d1 = createMockRecentDocument({ name: 'Document1', linkId: 'link1' })
 const d2 = createMockRecentDocument({ name: 'Document2', linkId: 'link2' })
 const uid = (doc: RecentDocumentsItem) => generateNodeUid(doc.volumeId, doc.linkId)
 const drive = {} as ProtonDriveClient
+const errorTracking = {} as ErrorTracking
 function Wrapper({ children }: { children: ReactNode }) {
   return (
     <HomepageViewContext.Provider
@@ -46,6 +48,7 @@ function Wrapper({ children }: { children: ReactNode }) {
           updateRecentDocuments: mockUpdateRecentDocuments,
           reportTelemetry: mockReportTelemetry,
           createNotification: mockCreateNotification,
+          errorTracking,
         } as unknown as HomepageViewValue
       }
     >
@@ -69,10 +72,11 @@ describe('useBulkTrash', () => {
     expect(trashManyAndNotify).toHaveBeenCalledWith(
       drive,
       mockCreateNotification,
+      errorTracking,
       [uid(d1), uid(d2)],
       expect.any(Function),
     )
-    const onRestored = jest.mocked(trashManyAndNotify).mock.calls[0][3]
+    const onRestored = jest.mocked(trashManyAndNotify).mock.calls[0][4]
     onRestored()
     expect(mockUpdateRecentDocuments).toHaveBeenCalled()
   })

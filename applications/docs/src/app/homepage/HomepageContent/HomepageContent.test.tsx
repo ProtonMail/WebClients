@@ -12,9 +12,8 @@ import { HomepageViewContext } from '../homepageViewContext'
 import type { MemberRole } from '@protontech/drive-sdk'
 import type { ExtendedInvitationDetails } from '../invitationTypes'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '../utils/mimetype'
+import { DateFormatter } from '../utils/dateFormatter'
 import { TelemetryEvent } from '../utils/telemetry'
-
-jest.mock('@proton/shared/lib/i18n', () => ({ dateLocale: { code: 'us' } }))
 
 jest.mock('@proton/account/contactEmails/hooks', () => ({
   useContactEmails: () => [[], false],
@@ -22,11 +21,6 @@ jest.mock('@proton/account/contactEmails/hooks', () => ({
 
 jest.mock('@proton/account/addresses/hooks', () => ({
   useAddresses: () => [[], false],
-}))
-
-jest.mock('@proton/components/hooks/useAuthentication', () => ({
-  __esModule: true,
-  default: () => ({ getLocalID: () => 0 }),
 }))
 
 let mockBulkEnabled = false
@@ -884,6 +878,9 @@ describe('HomepageContent', () => {
           reportTelemetry: mockReportTelemetry,
           logger: mockLogger,
           createNotification: jest.fn(),
+          getAppHref: (path) => path,
+          dateFormatter: new DateFormatter('en-US'),
+          errorTracking: { traceError: jest.fn(), addBreadcrumb: jest.fn(), isReportable: () => true },
         }}
       >
         {children}

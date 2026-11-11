@@ -1,9 +1,9 @@
-type TraceError = (error: any, details: Record<string, any>) => void
+import { SDK_SWITCH_INITIATIVE, type ErrorTracking } from './utils/errorTracking'
 
-export function traceRecentsError(traceError: TraceError, error: any) {
-  traceError(error, {
+export function traceRecentsError(errorTracking: ErrorTracking, error: any) {
+  errorTracking.traceError(error, {
     tags: {
-      initiative: 'realtime-sdk-switch',
+      initiative: SDK_SWITCH_INITIATIVE,
       feature: 'DocsLoadRecentsWithDriveSDK',
     },
   })
