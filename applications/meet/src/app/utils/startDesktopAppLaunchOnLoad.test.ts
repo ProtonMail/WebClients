@@ -186,6 +186,7 @@ describe('startDesktopAppLaunchOnLoad', () => {
         page.showLoadedMeeting();
 
         expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
+        expect(page.desktopAppOption).toBe('openOnLoad');
     });
 
     it('does not open the app for a meeting whose info did not load', () => {
@@ -229,6 +230,7 @@ describe('startDesktopAppLaunchOnLoad', () => {
         page.showLoadedMeeting();
 
         expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
+        expect(page.desktopAppOption).toBe('appButton');
     });
 
     it('does not open the app when MeetOpenDesktopAppOnLoad is off, even with MeetOpenLinksInDesktopApp on', () => {
@@ -253,6 +255,7 @@ describe('startDesktopAppLaunchOnLoad', () => {
         page.showLoadedMeeting();
 
         expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
+        expect(page.desktopAppOption).toBe('unavailable');
     });
 
     it('opens the app with the full link and gives the page "openOnLoad" when a cached flag on is refreshed off after the page loaded', () => {
