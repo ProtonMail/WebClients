@@ -2,6 +2,8 @@ import type { ReactNode } from 'react';
 import { useMemo } from 'react';
 import { useHistory } from 'react-router';
 
+import SimpleEditor from '@proton/components/components/editor/SimpleEditor';
+import { SimpleEditorProvider } from '@proton/components/containers/editor/SimpleEditorContext';
 import { useHandler } from '@proton/hooks/useHandler';
 import type { ComposerHost } from '@proton/mail-composer/hooks/composer/useComposerHost';
 import { ComposerHostProvider } from '@proton/mail-composer/hooks/composer/useComposerHost';
@@ -53,8 +55,10 @@ export const MailComposerHost = ({ children }: Props) => {
     );
 
     return (
-        <ComposerMessageHostProvider host={mailComposerMessageHost}>
-            <ComposerHostProvider value={host}>{children}</ComposerHostProvider>
-        </ComposerMessageHostProvider>
+        <SimpleEditorProvider editor={SimpleEditor}>
+            <ComposerMessageHostProvider host={mailComposerMessageHost}>
+                <ComposerHostProvider value={host}>{children}</ComposerHostProvider>
+            </ComposerMessageHostProvider>
+        </SimpleEditorProvider>
     );
 };

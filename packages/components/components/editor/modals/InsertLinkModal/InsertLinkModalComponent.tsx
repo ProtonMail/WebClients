@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { Input } from '@proton/atoms/Input/Input';
-import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { LINK_TYPES } from '@proton/shared/lib/constants';
 import { addLinkPrefix, linkToType } from '@proton/shared/lib/helpers/url';
 
@@ -22,6 +21,7 @@ import ModalTwoHeader from '../../../modalTwo/ModalHeader';
 import type { ModalStateProps } from '../../../modalTwo/useModalState';
 import Option from '../../../option/Option';
 import SelectTwo from '../../../selectTwo/SelectTwo';
+import { useEditorHost } from '../../EditorHost';
 import type { InsertLinkSelectionType } from './InsertLinkModal';
 
 interface InsertLinkModalProps {
@@ -39,6 +39,7 @@ const InsertLinkModalComponent = ({
     title,
     url: initialUrl,
 }: InsertLinkModalProps) => {
+    const { useMailSettings } = useEditorHost();
     const [mailSettings] = useMailSettings();
     const modalContentRef = useRef<HTMLDivElement>(null);
 

@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
-import { useGetMailSettings, useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { CacheType } from '@proton/redux-utilities/interface';
 import { updateFontFace, updateFontSize } from '@proton/shared/lib/api/mailSettings';
 import {
@@ -22,6 +21,7 @@ import ModalTwo from '../../modalTwo/Modal';
 import ModalTwoContent from '../../modalTwo/ModalContent';
 import ModalTwoFooter from '../../modalTwo/ModalFooter';
 import ModalTwoHeader from '../../modalTwo/ModalHeader';
+import { useEditorHost } from '../EditorHost';
 
 interface Props {
     onClose?: () => void;
@@ -30,6 +30,7 @@ interface Props {
 
 const DefaultFontModal = ({ onChange, onClose, ...rest }: Props) => {
     const api = useApi();
+    const { useMailSettings, useGetMailSettings } = useEditorHost();
     const [mailSettings] = useMailSettings();
     const getMailSettings = useGetMailSettings();
 
