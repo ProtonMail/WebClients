@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
 import { useState } from 'react';
 
-import { fireEvent, queryByTestId, render } from '@testing-library/react';
+import { act, fireEvent, queryByTestId, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { ThemeColorUnion } from '@proton/colors/types';
@@ -43,6 +44,8 @@ const getOutModal = (container: Element) => {
     return container.querySelector('.modal-two--out');
 };
 
+const getDialog = () => document.querySelector<HTMLElement>('.modal-two-dialog')!;
+
 describe('Prompt Hotkeys', () => {
     it('should not click the cancel button', () => {
         const spy = jest.fn();
@@ -61,7 +64,7 @@ describe('Prompt Hotkeys', () => {
         const el = queryByTestId(container, 'inner');
         expect(getOutModal(container)).toBeNull();
         expect(el).toHaveTextContent('Hello world!');
-        fireEvent.keyDown(el!, { key: 'Enter' });
+        fireEvent.keyDown(getDialog(), { key: 'Enter' });
         expect(spy).not.toHaveBeenCalled();
     });
 
@@ -84,14 +87,14 @@ describe('Prompt Hotkeys', () => {
             const el = queryByTestId(container, 'inner');
             expect(getOutModal(container)).toBeNull();
             expect(el).toHaveTextContent('Hello world!');
-            fireEvent.keyDown(el!, { key: 'Enter' });
+            fireEvent.keyDown(getDialog(), { key: 'Enter' });
             expect(spy).toHaveBeenCalled();
         }
     );
 
     it("shouldn't click on destructive buttons", () => {
         const spy = jest.fn();
-        const { container } = render(
+        render(
             <Container
                 open={true}
                 buttons={
@@ -103,14 +106,13 @@ describe('Prompt Hotkeys', () => {
                 <div data-testid="inner">Hello world!</div>
             </Container>
         );
-        const el = queryByTestId(container, 'inner');
-        fireEvent.keyDown(el!, { key: 'Enter' });
+        fireEvent.keyDown(getDialog(), { key: 'Enter' });
         expect(spy).not.toHaveBeenCalled();
     });
     it('should click the second button', () => {
         const cancelSpy = jest.fn();
         const submitSpy = jest.fn();
-        const { container } = render(
+        render(
             <Container
                 open={true}
                 buttons={[
@@ -125,9 +127,62 @@ describe('Prompt Hotkeys', () => {
                 <div data-testid="inner">Hello world!</div>
             </Container>
         );
-        const el = queryByTestId(container, 'inner');
-        fireEvent.keyDown(el!, { key: 'Enter' });
+        fireEvent.keyDown(getDialog(), { key: 'Enter' });
         expect(cancelSpy).not.toHaveBeenCalled();
         expect(submitSpy).toHaveBeenCalled();
+    });
+
+    describe('when an element inside the prompt has focus', () => {
+        const renderWithCancelAndConfirm = () => {
+            const cancelSpy = jest.fn();
+            const confirmSpy = jest.fn();
+            render(
+                <Container
+                    open={true}
+                    buttons={[
+                        <Button color="norm" onClick={confirmSpy}>
+                            Confirm
+                        </Button>,
+                        <Button onClick={cancelSpy}>Cancel</Button>,
+                    ]}
+                >
+                    <input aria-label="Name" />
+                </Container>
+            );
+            return { cancelSpy, confirmSpy };
+        };
+
+        const focus = (element: HTMLElement) => act(() => element.focus());
+
+        it.each(['{Enter}', ' '])('runs only the focused Cancel button on %s', async (key) => {
+            const { cancelSpy, confirmSpy } = renderWithCancelAndConfirm();
+            focus(screen.getByRole('button', { name: 'Cancel', hidden: true }));
+
+            await userEvent.keyboard(key);
+
+            expect(confirmSpy).not.toHaveBeenCalled();
+            expect(cancelSpy).toHaveBeenCalledTimes(1);
+        });
+
+        it.each(['{Enter}', ' '])('runs the focused confirm button once on %s', async (key) => {
+            const { cancelSpy, confirmSpy } = renderWithCancelAndConfirm();
+            focus(screen.getByRole('button', { name: 'Confirm', hidden: true }));
+
+            await userEvent.keyboard(key);
+
+            expect(confirmSpy).toHaveBeenCalledTimes(1);
+            expect(cancelSpy).not.toHaveBeenCalled();
+        });
+
+        it('does not confirm while typing in a field', async () => {
+            const { confirmSpy } = renderWithCancelAndConfirm();
+            const input = screen.getByRole('textbox', { name: 'Name', hidden: true });
+            focus(input);
+
+            await userEvent.keyboard('a b{Enter}');
+
+            expect(input).toHaveValue('a b');
+            expect(confirmSpy).not.toHaveBeenCalled();
+        });
     });
 });

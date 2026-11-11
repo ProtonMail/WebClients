@@ -60,6 +60,11 @@ const ConfirmActionModal = ({
 
     const onSubmitHotkeyPress = async (e: any) => {
         e.stopPropagation();
+        // A focused button, link or field inside the modal handles the key itself
+        const isFocusInsideModal = e.target !== e.currentTarget;
+        if (isFocusInsideModal) {
+            return;
+        }
         // Irreversible actions do not benefit from the "confirm on enter"
         // feature to prevent accidental destructive actions
         if (canUndo) {

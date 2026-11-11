@@ -45,25 +45,13 @@ const getDescription = ({ username, primaryEmail, signInDomains }: ReturnType<ty
     return getUsernameAndAddressesDescription(username, signInDomains);
 };
 
-// Prompt fires its Enter/Space hotkey on the first non-danger button regardless of focus,
-// so a focused Cancel would still confirm. A focused button handles its own activation.
-const isPromptHotkeyOnFocusedButton = (event: Pick<Event, 'type' | 'target'>) =>
-    event.type === 'keydown' && event.target instanceof Element && event.target.closest('button') !== null;
-
 const SignInRestrictionConfirmModal = ({ identifiers, onConfirm, ...rest }: Props) => {
-    const handleConfirm = (event: Pick<Event, 'type' | 'target'>) => {
-        if (isPromptHotkeyOnFocusedButton(event)) {
-            return;
-        }
-        onConfirm();
-    };
-
     return (
         <Prompt
             {...rest}
             title={c('Title').t`Restrict sign-in?`}
             buttons={[
-                <Button color="warning" onClick={handleConfirm}>
+                <Button color="warning" onClick={onConfirm}>
                     {c('Action').t`Restrict sign-in`}
                 </Button>,
                 <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>,

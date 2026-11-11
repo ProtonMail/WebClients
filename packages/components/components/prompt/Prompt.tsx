@@ -74,6 +74,11 @@ const Prompt = ({
 
     const onSubmitHotkeyPress = async (e: any) => {
         e.stopPropagation();
+        // A focused button, link or field inside the prompt handles the key itself
+        const isFocusInsidePrompt = e.target !== e.currentTarget;
+        if (isFocusInsidePrompt) {
+            return;
+        }
         // Filtering out the destructive actions to prevent mistakes
         // and removing the weak buttons, as they never are the main action
         const cta = buttonArray.find(
