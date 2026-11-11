@@ -78,7 +78,7 @@ export const useSendEO = ({ message, encryptionKey, outsideKey }: Props) => {
     };
 
     /** `replyContent` is exported by the caller so it can realign the model with the editor
-     *  first. See `ensureMessageContent` in EOComposer.
+     *  first. See `exportReplyContent` in EOComposer.
      */
     const send = async (replyContent: string) => {
         /** A totally empty export means the message document was wiped. It is narrow on
