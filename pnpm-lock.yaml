@@ -291,8 +291,8 @@ catalogs:
       specifier: 2.2.0
       version: 2.2.0
     '@reduxjs/toolkit':
-      specifier: ^2.13.0
-      version: 2.13.0
+      specifier: ^2.14.0
+      version: 2.14.0
     '@sentry/browser':
       specifier: ^7.120.4
       version: 7.120.4
@@ -462,8 +462,8 @@ catalogs:
       specifier: ^18.3.1
       version: 18.3.1
     react-redux:
-      specifier: ^9.3.0
-      version: 9.3.0
+      specifier: ^9.3.1
+      version: 9.3.1
     react-router:
       specifier: ^5.3.4
       version: 5.3.4
@@ -874,7 +874,7 @@ importers:
         version: 1.0.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@types/react':
         specifier: 'catalog:'
         version: 18.3.31
@@ -910,7 +910,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       react-router-dom:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -1239,7 +1239,7 @@ importers:
         version: 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@tanstack/react-virtual':
         specifier: 'catalog:'
         version: 3.14.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1296,7 +1296,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       redux:
         specifier: 'catalog:'
         version: 5.0.1
@@ -1483,7 +1483,7 @@ importers:
         version: 1.0.0
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@types/react':
         specifier: 'catalog:'
         version: 18.3.31
@@ -1513,7 +1513,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       react-router:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -1658,7 +1658,7 @@ importers:
         version: link:../../packages/utils
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@types/react':
         specifier: 'catalog:'
         version: 18.3.31
@@ -1682,7 +1682,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       react-router-dom:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -1815,7 +1815,7 @@ importers:
         version: 0.23.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@unleash/proxy-client-react':
         specifier: ^5.1.0
         version: 5.1.0(unleash-proxy-client@3.8.0)
@@ -2261,7 +2261,7 @@ importers:
         version: 0.23.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@sentry/types':
         specifier: 'catalog:'
         version: 7.120.4
@@ -2680,7 +2680,7 @@ importers:
         version: 2.2.0
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@tanstack/react-virtual':
         specifier: 'catalog:'
         version: 3.14.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2788,7 +2788,7 @@ importers:
         version: 9.1.0(@types/react@18.3.31)(react@18.3.1)(supports-color@11.0.0)
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       react-router-dom:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -3077,7 +3077,7 @@ importers:
         version: 1.0.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@types/react':
         specifier: 'catalog:'
         version: 18.3.31
@@ -3128,7 +3128,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       react-router:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -3351,7 +3351,7 @@ importers:
         version: 1.0.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@types/dom-mediacapture-transform':
         specifier: ^0.1.12
         version: 0.1.12
@@ -3411,7 +3411,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       react-router-dom:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -3665,7 +3665,7 @@ importers:
         version: link:../../packages/utils
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       history:
         specifier: 'catalog:'
         version: 4.10.1
@@ -3683,7 +3683,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       react-router-dom:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -4006,10 +4006,10 @@ importers:
         version: 0.0.42001045
       '@redux-devtools/remote':
         specifier: ^0.9.5
-        version: 0.9.5(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)(redux@5.0.1)
+        version: 0.9.5(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)(redux@5.0.1)
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@sentry/browser':
         specifier: 'catalog:'
         version: 7.120.4
@@ -4030,7 +4030,7 @@ importers:
         version: 6.1.0(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       react-router-dom:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -4394,7 +4394,7 @@ importers:
         version: link:../../packages/styles
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@types/react':
         specifier: 'catalog:'
         version: 18.3.31
@@ -4542,7 +4542,7 @@ importers:
         version: link:../../packages/vpn
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@types/react':
         specifier: 'catalog:'
         version: 18.3.31
@@ -4569,7 +4569,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       react-router:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -4892,7 +4892,7 @@ importers:
         version: 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
@@ -4986,7 +4986,7 @@ importers:
         version: 7.0.2006
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -5055,7 +5055,7 @@ importers:
         version: 0.23.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
@@ -5082,7 +5082,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
@@ -5437,7 +5437,7 @@ importers:
         version: 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
@@ -5501,7 +5501,7 @@ importers:
         version: 7.0.2006
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -6016,7 +6016,7 @@ importers:
         version: 2.3.4
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@types/codemirror':
         specifier: 5.60.18
         version: 5.60.18
@@ -6209,7 +6209,7 @@ importers:
         version: 7.0.2006
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -6991,7 +6991,7 @@ importers:
         version: link:../utils
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       react:
         specifier: 'catalog:'
         version: 18.3.1
@@ -7625,7 +7625,7 @@ importers:
         version: 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@unleash/proxy-client-react':
         specifier: ^5.1.0
         version: 5.1.0(unleash-proxy-client@3.8.0)
@@ -7637,7 +7637,7 @@ importers:
         version: 18.3.1
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
@@ -7773,7 +7773,7 @@ importers:
         version: 1.0.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
@@ -7894,7 +7894,7 @@ importers:
         version: 1.1.4(supports-color@11.0.0)
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
@@ -8100,7 +8100,7 @@ importers:
         version: 1.0.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@sentry/browser':
         specifier: 'catalog:'
         version: 7.120.4
@@ -8121,7 +8121,7 @@ importers:
         version: 18.3.1
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
@@ -8307,10 +8307,10 @@ importers:
         version: link:../utils
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
@@ -8635,7 +8635,7 @@ importers:
         version: 2.3.4
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@zip.js/zip.js':
         specifier: ^2.24.0
         version: 2.24.0
@@ -8677,7 +8677,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       react-router:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -8958,7 +8958,7 @@ importers:
         version: link:../utils
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
@@ -9097,7 +9097,7 @@ importers:
         version: link:../utils
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@unleash/proxy-client-react':
         specifier: ^5.1.0
         version: 5.1.0(unleash-proxy-client@3.8.0)
@@ -9115,7 +9115,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       react-router:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -9261,7 +9261,7 @@ importers:
         version: 18.3.1
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
     devDependencies:
       '@proton/oxlint-config':
         specifier: workspace:^
@@ -9362,7 +9362,7 @@ importers:
         version: link:../utils
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
@@ -9371,7 +9371,7 @@ importers:
         version: 18.3.1
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       redux:
         specifier: 'catalog:'
         version: 5.0.1
@@ -9417,7 +9417,7 @@ importers:
         version: link:../unleash
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       history:
         specifier: 'catalog:'
         version: 4.10.1
@@ -9426,7 +9426,7 @@ importers:
         version: 18.3.1
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
     devDependencies:
       '@proton/oxlint-config':
         specifier: workspace:^
@@ -9454,13 +9454,13 @@ importers:
         version: link:../utils
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       react:
         specifier: 'catalog:'
         version: 18.3.1
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       redux:
         specifier: 'catalog:'
         version: 5.0.1
@@ -10196,7 +10196,7 @@ importers:
         version: 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
@@ -10208,7 +10208,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
-        version: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+        version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
@@ -10482,7 +10482,7 @@ importers:
         version: link:../../packages/utils
       '@reduxjs/toolkit':
         specifier: 'catalog:'
-        version: 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       '@unleash/proxy-client-react':
         specifier: ^5.1.0
         version: 5.1.0(unleash-proxy-client@3.8.0)
@@ -16627,12 +16627,15 @@ packages:
   '@redux-saga/types@1.4.1':
     resolution: {integrity: sha512-GSOGLWvJIjA63ywISJZr4skTjTnyQdu2WZbUeVguYNMyinEa9yTflBlVOFuBZxmyMR1dQodCE3PiKDu0BvyAHg==}
 
-  '@reduxjs/toolkit@2.13.0':
-    resolution: {integrity: sha512-f6jwVRfwW30+tnllz4YcsHHpPYYOE7abcHkyUCovD+P7DyhdAI5prz2Fh/8TLhakjpN+7aIEion1s5L/tvlYlA==}
+  '@reduxjs/toolkit@2.14.0':
+    resolution: {integrity: sha512-m/PxMwRe0xLL6XUsAgy0YjInklHcfi9uMwFhJk+QINqjxqPvyc89T5cMjszA5bDmTE0gwGc7zr9LRO4gL+mhaw==}
     peerDependencies:
+      '@types/react': '*'
       react: ^16.9.0 || ^17.0.0 || ^18 || ^19
       react-redux: ^7.2.1 || ^8.1.3 || ^9.0.0
     peerDependenciesMeta:
+      '@types/react':
+        optional: true
       react:
         optional: true
       react-redux:
@@ -25669,8 +25672,8 @@ packages:
   react-moveable@0.56.0:
     resolution: {integrity: sha512-FmJNmIOsOA36mdxbrc/huiE4wuXSRlmon/o+/OrfNhSiYYYL0AV5oObtPluEhb2Yr/7EfYWBHTxF5aWAvjg1SA==}
 
-  react-redux@9.3.0:
-    resolution: {integrity: sha512-KQopgqFo/p/fgmAs5qz6p5RWaNAzq40WAu7fJIXnQpYxFPbJYtsJPWvGeF2rOBaY/kEuV77AVsX8TsQzKm+A/g==}
+  react-redux@9.3.1:
+    resolution: {integrity: sha512-vxMLT0lalUjbZPkoTepWyKAZbjIIFssNx/CEL9lTfwQBU6XpkGSmCNdcCIrkOBUgB68uftZMnbXVb6DwGnhRKQ==}
     peerDependencies:
       '@types/react': ^18.2.25 || ^19
       react: ^18.0 || ^19
@@ -27136,6 +27139,7 @@ packages:
 
   tldts-core@7.4.20:
     resolution: {integrity: sha512-C630TWXZCZmLq0F2bW4QqwnaaxCQ/svpAqvJwnC4JvgEM5ohhBnGsEzTLSOXcN+xjz+kEaHS5uoWIw2klnqd0A==}
+    deprecated: Partial release, see https://github.com/remusao/tldts/issues/2735. Use >=7.4.22.
 
   tldts@6.1.86:
     resolution: {integrity: sha512-WMi/OQ2axVTf/ykqCQgXiIct+mSQDFdH2fkwhPwgEwvJ1kSzZRiinb0zF2Xb8u4+OqPChmyI6MEu4EezNJz+FQ==}
@@ -34632,12 +34636,12 @@ snapshots:
       react: 19.3.0
       react-dom: 19.3.0(react@19.3.0)
 
-  '@redux-devtools/core@4.1.1(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)(redux@5.0.1)':
+  '@redux-devtools/core@4.1.1(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)(redux@5.0.1)':
     dependencies:
       '@babel/runtime': 7.29.7
       '@redux-devtools/instrument': 2.2.0(redux@5.0.1)
       react: 18.3.1
-      react-redux: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+      react-redux: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       redux: 5.0.1
 
   '@redux-devtools/instrument@2.2.0(redux@5.0.1)':
@@ -34646,11 +34650,11 @@ snapshots:
       lodash: 4.18.1
       redux: 5.0.1
 
-  '@redux-devtools/remote@0.9.5(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)(redux@5.0.1)':
+  '@redux-devtools/remote@0.9.5(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)(redux@5.0.1)':
     dependencies:
       '@babel/runtime': 7.29.7
       '@redux-devtools/instrument': 2.2.0(redux@5.0.1)
-      '@redux-devtools/utils': 3.1.1(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)(redux@5.0.1)
+      '@redux-devtools/utils': 3.1.1(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)(redux@5.0.1)
       jsan: 3.1.14
       redux: 5.0.1
       rn-host-detect: 1.2.0
@@ -34667,10 +34671,10 @@ snapshots:
       immutable: 4.3.9
       jsan: 3.1.14
 
-  '@redux-devtools/utils@3.1.1(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)(redux@5.0.1)':
+  '@redux-devtools/utils@3.1.1(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)(redux@5.0.1)':
     dependencies:
       '@babel/runtime': 7.29.7
-      '@redux-devtools/core': 4.1.1(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)(redux@5.0.1)
+      '@redux-devtools/core': 4.1.1(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)(redux@5.0.1)
       '@redux-devtools/serialize': 0.4.2(immutable@4.3.9)
       '@types/get-params': 0.1.2
       get-params: 0.1.2
@@ -34706,7 +34710,7 @@ snapshots:
 
   '@redux-saga/types@1.4.1': {}
 
-  '@reduxjs/toolkit@2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)':
+  '@reduxjs/toolkit@2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)':
     dependencies:
       '@standard-schema/spec': 1.1.0
       '@standard-schema/utils': 0.3.0
@@ -34715,8 +34719,9 @@ snapshots:
       redux-thunk: 3.1.0(redux@5.0.1)
       reselect: 5.2.0
     optionalDependencies:
+      '@types/react': 18.3.31
       react: 18.3.1
-      react-redux: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+      react-redux: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
 
   '@remix-run/router@1.23.4': {}
 
@@ -45604,7 +45609,7 @@ snapshots:
       react-css-styled: 1.1.9
       react-selecto: 1.26.3
 
-  react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1):
+  react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1):
     dependencies:
       '@types/use-sync-external-store': 0.0.6
       react: 18.3.1
@@ -45838,7 +45843,7 @@ snapshots:
 
   recharts@3.10.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-is@19.2.8)(react@18.3.1)(redux@5.0.1):
     dependencies:
-      '@reduxjs/toolkit': 2.13.0(react-redux@9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+      '@reduxjs/toolkit': 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
       clsx: 2.1.1
       decimal.js-light: 2.5.1
       es-toolkit: 1.46.1
@@ -45847,7 +45852,7 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-is: 19.2.8
-      react-redux: 9.3.0(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+      react-redux: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
       reselect: 5.2.0
       tiny-invariant: 1.3.3
       use-sync-external-store: 1.6.0(react@18.3.1)
