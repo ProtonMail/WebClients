@@ -36,6 +36,7 @@ import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
 import setsContainSameElements from '@proton/utils/setsContainSameElements';
 
 import Loader from '../../../../components/loader/Loader';
+import { useModalStateObject } from '../../../../components/modalTwo/useModalState';
 import useErrorHandler from '../../../../hooks/useErrorHandler';
 import { useResumeRoleAssignment } from '../../../members/rolesAndPermissions/useResumeRoleAssignment';
 import useGroupAvailableAddressDomains from '../hooks/useGroupAvailableAddressDomains';
@@ -71,6 +72,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
     const [selectedGroupId, setSelectedGroupId] = useState<string | undefined>(undefined);
     const selectedGroup = groups?.find((group) => group.ID === selectedGroupId);
     const [uiState, setUiState] = useState<GROUPS_STATE>(GROUPS_STATE.EMPTY);
+    const addUsersToGroupModal = useModalStateObject();
     const { resumingSourceId: resumingGroupId, toggleResumeAll } = useResumeRoleAssignment({
         successText: c('Info').t`Group roles assigned`,
         getErrorText: (failedCount) =>
@@ -470,6 +472,7 @@ const useGroupsManagementLogic = (): GroupsManagementReturn | undefined => {
         addressToMemberMap,
         addressEmailToMemberMap,
         groupRolesMap,
+        addUsersToGroupModal,
         loadingGroupMembers,
         domainData,
         getSerializedGroup,

@@ -37,7 +37,8 @@ import GroupIcon from './GroupIcon';
 import GroupInfoBanner from './GroupInfoBanner';
 import GroupMemberList from './GroupMemberList';
 import { useGroupsManagement } from './context/GroupsManagementContext';
-import { GROUPS_RESTRICTION_REASON, PANEL_HEADER_HEIGHT } from './types';
+import { getGroupActionAvailability } from './helpers';
+import { PANEL_HEADER_HEIGHT } from './types';
 
 const ViewGroup = () => {
     const { createNotification } = useNotifications();
@@ -51,10 +52,10 @@ const ViewGroup = () => {
         members,
         addressEmailToMemberMap,
         groupRolesMap,
+        addUsersToGroupModal,
     } = useGroupsManagement();
     const isKeylessSsoOrganizationPlan = useSelector(selectIsKeylessSsoOrganizationPlan);
     const [entitlements] = useEntitlementChecksForOrgAndUser();
-    const addUsersToGroupModal = useModalStateObject();
     const deleteGroupPrompt = useModalStateObject();
     const [addingMembers, withAddingMembers] = useLoading();
     const [adminRolesUIState] = useAdminRolesUI();
@@ -82,9 +83,7 @@ const ViewGroup = () => {
     const group = selectedGroup!;
     const { Name, Description, Address } = group;
 
-    const isResumingRoleAssignment =
-        restrictedBy.reason === GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT && restrictedBy.groupId === group.ID;
-    const isFrozen = restrictedBy.reason === GROUPS_RESTRICTION_REASON.PLAN_UNSUPPORTED || isResumingRoleAssignment;
+    const { canAddUsers, canEdit, canDelete } = getGroupActionAvailability(group, restrictedBy);
 
     const showMailFeatures = entitlements.hasGroupMail;
     const primaryGroupAddressKey = Address.Keys[0];
@@ -98,9 +97,6 @@ const ViewGroup = () => {
     const isScimGroupPendingKeys = getIsScimGroupPendingKeys(group);
     const pendingKeysMemberCount = groupMembers.filter((m) => m.State === GROUP_MEMBER_STATE.PENDING_KEYS).length;
     const invitedMemberCount = groupMembers.filter((m) => m.State === GROUP_MEMBER_STATE.PENDING).length;
-
-    const isAddGroupMemberDisabled = isScimGroup || isFrozen;
-    const isDeleteGroupDisabled = isScimGroup || isResumingRoleAssignment;
 
     return (
         <>
@@ -134,7 +130,7 @@ const ViewGroup = () => {
                                     <Button
                                         color="norm"
                                         icon={isMobile}
-                                        disabled={isAddGroupMemberDisabled}
+                                        disabled={!canAddUsers}
                                         className="flex items-center"
                                         key="button-add-user"
                                         onClick={() => addUsersToGroupModal.openModal(true)}
@@ -158,7 +154,7 @@ const ViewGroup = () => {
                                 <Button
                                     shape="outline"
                                     icon
-                                    disabled={isFrozen}
+                                    disabled={!canEdit}
                                     onClick={() => {
                                         actions.onEditGroup(group);
                                     }}
@@ -175,7 +171,7 @@ const ViewGroup = () => {
                                     <Button
                                         shape="outline"
                                         icon
-                                        disabled={isDeleteGroupDisabled}
+                                        disabled={!canDelete}
                                         onClick={() => {
                                             deleteGroupPrompt.openModal(true);
                                         }}

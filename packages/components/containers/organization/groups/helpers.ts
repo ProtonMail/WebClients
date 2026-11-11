@@ -1,9 +1,13 @@
+import { getIsScimGroup } from '@proton/account/groups/groupFlags';
 import type { Recipient } from '@proton/shared/lib/interfaces/Address';
+import type { Group } from '@proton/shared/lib/interfaces/Group';
 import type { GroupMember } from '@proton/shared/lib/interfaces/GroupMember';
 import type { EnhancedMember, PartialMemberAddress } from '@proton/shared/lib/interfaces/Member';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import getRandomString, { DEFAULT_LOWERCASE_CHARSET } from '@proton/utils/getRandomString';
 import isTruthy from '@proton/utils/isTruthy';
+
+import { GROUPS_RESTRICTION_REASON, type GroupsRestriction } from './types';
 
 /**
  * Maximum length the API allows for the local part of an email address (the
@@ -66,6 +70,25 @@ export const convertEnhancedMembersToContactEmails = (members?: EnhancedMember[]
         LastUsedTime: 0,
     });
     return members.flatMap((member) => member.Addresses?.map(createContactEmail(member)) || []);
+};
+
+interface GroupActionAvailability {
+    canAddUsers: boolean;
+    canEdit: boolean;
+    canDelete: boolean;
+}
+
+export const getGroupActionAvailability = (group: Group, restrictedBy: GroupsRestriction): GroupActionAvailability => {
+    const isScimGroup = getIsScimGroup(group);
+    const isResumingRoleAssignment =
+        restrictedBy.reason === GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT && restrictedBy.groupId === group.ID;
+    const isFrozen = restrictedBy.reason === GROUPS_RESTRICTION_REASON.PLAN_UNSUPPORTED || isResumingRoleAssignment;
+
+    return {
+        canAddUsers: !isScimGroup && !isFrozen,
+        canEdit: !isFrozen,
+        canDelete: !isScimGroup && !isResumingRoleAssignment,
+    };
 };
 
 export const convertGroupMemberToRecipient = (groupMembers: (GroupMember | ContactEmail)[]): Recipient[] =>

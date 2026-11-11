@@ -1,4 +1,8 @@
-import { ADDRESS_LOCAL_PART_MAX_LENGTH, getAddressSuggestedLocalPart } from './helpers';
+import { GroupFlags } from '@proton/shared/lib/interfaces/Group';
+import type { Group } from '@proton/shared/lib/interfaces/Group';
+
+import { ADDRESS_LOCAL_PART_MAX_LENGTH, getAddressSuggestedLocalPart, getGroupActionAvailability } from './helpers';
+import { GROUPS_RESTRICTION_REASON } from './types';
 
 jest.mock('@proton/utils/getRandomString', () => ({
     __esModule: true,
@@ -73,6 +77,62 @@ describe('getAddressSuggestedLocalPart', () => {
                 const result = getAddressSuggestedLocalPart(groupName, orgName, true);
                 expect(result.length).toBeLessThanOrEqual(ADDRESS_LOCAL_PART_MAX_LENGTH);
             }
+        });
+    });
+});
+
+describe('getGroupActionAvailability', () => {
+    const group = { ID: 'group-1', Flags: GroupFlags.None } as Group;
+    const scimGroup = { ID: 'group-1', Flags: GroupFlags.Scim } as Group;
+    const noRestriction = { reason: GROUPS_RESTRICTION_REASON.NONE } as const;
+
+    it('allows every action on a regular group', () => {
+        expect(getGroupActionAvailability(group, noRestriction)).toEqual({
+            canAddUsers: true,
+            canEdit: true,
+            canDelete: true,
+        });
+    });
+
+    it('only allows editing a SCIM group', () => {
+        expect(getGroupActionAvailability(scimGroup, noRestriction)).toEqual({
+            canAddUsers: false,
+            canEdit: true,
+            canDelete: false,
+        });
+    });
+
+    it('only allows deleting when the plan does not support groups', () => {
+        expect(getGroupActionAvailability(group, { reason: GROUPS_RESTRICTION_REASON.PLAN_UNSUPPORTED })).toEqual({
+            canAddUsers: false,
+            canEdit: false,
+            canDelete: true,
+        });
+    });
+
+    it('blocks every action while this group is resuming role assignment', () => {
+        expect(
+            getGroupActionAvailability(group, {
+                reason: GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT,
+                groupId: group.ID,
+            })
+        ).toEqual({
+            canAddUsers: false,
+            canEdit: false,
+            canDelete: false,
+        });
+    });
+
+    it('allows every action while another group is resuming role assignment', () => {
+        expect(
+            getGroupActionAvailability(group, {
+                reason: GROUPS_RESTRICTION_REASON.RESUMING_ROLE_ASSIGNMENT,
+                groupId: 'group-2',
+            })
+        ).toEqual({
+            canAddUsers: true,
+            canEdit: true,
+            canDelete: true,
         });
     });
 });
