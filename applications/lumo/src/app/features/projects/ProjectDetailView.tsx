@@ -13,7 +13,7 @@ import lumoProjects from '@proton/styles/assets/img/lumo/lumo-projects.svg';
 import { ComposerComponent } from '../../components/Composer/ComposerComponent';
 import { sendMessage } from '../../components/Conversation/helper';
 import { FilesManagementView } from '../../components/Files';
-import { useLumoUserSettings, usePersonalization } from '../../hooks';
+import { usePersonalization } from '../../hooks';
 import { useIsChatHistoryHydrating } from '../../hooks/useIsChatHistoryHydrating';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
@@ -34,9 +34,8 @@ import {
 } from '../../redux/selectors';
 import { clearProvisionalAttachments, upsertAttachment } from '../../redux/slices/core/attachments';
 import { addSpace, pullSpaceRequest, pushSpaceRequest } from '../../redux/slices/core/spaces';
-import type { ChatHistoryDateField } from '../../redux/slices/lumoUserSettings';
 import { ComposerMode, SpaceType, getProjectInfo } from '../../types';
-import type { AllChatsFilterValue } from '../allChats/filterAllChatsConversations';
+import type { AllChatsFilterValue, AllChatsSortValue } from '../allChats/filterAllChatsConversations';
 import { filterAllChatsConversations, getAllChatsEmptyVariant } from '../allChats/filterAllChatsConversations';
 import { AllChatsEmptyState } from '../allChats/shared/AllChatsEmptyState';
 import { ConversationListPanel } from '../allChats/shared/ConversationListPanel';
@@ -92,8 +91,7 @@ const ProjectDetailViewInner = () => {
     const conversations = useLumoSelector(selectConversationsBySpaceId(projectId));
     const allConversations = Object.values(conversations);
     const { hasLumoPlus } = useLumoPlan();
-    const { lumoUserSettings, updateSettings } = useLumoUserSettings();
-    const dateField = lumoUserSettings.chatHistoryDateField ?? 'updatedAt';
+    const [sort, setSort] = useState<AllChatsSortValue>('newest');
     const [filter, setFilter] = useState<AllChatsFilterValue>('all');
     const [isSelectionMode, setIsSelectionMode] = useState(false);
 
@@ -112,11 +110,11 @@ const ProjectDetailViewInner = () => {
             filter,
             searchQuery: '',
             rowDataMap: {},
-            sortField: dateField,
+            sort,
             hasLumoPlus,
             getState: store.getState,
         });
-    }, [conversations, filter, dateField, hasLumoPlus, store]);
+    }, [conversations, filter, sort, hasLumoPlus, store]);
 
     const spaceAttachments = useLumoSelector(selectAttachmentsBySpaceId(projectId));
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
@@ -250,13 +248,6 @@ const ProjectDetailViewInner = () => {
         [space, dispatch, projectId]
     );
 
-    const handleSortFieldChange = useCallback(
-        (nextDateField: ChatHistoryDateField) => {
-            updateSettings({ chatHistoryDateField: nextDateField, _autoSave: true });
-        },
-        [updateSettings]
-    );
-
     if (!space || space.spaceType !== SpaceType.Project) {
         if (isDataHydrating) {
             return (
@@ -355,8 +346,8 @@ const ProjectDetailViewInner = () => {
                                         filter={filter}
                                         onFilterChange={setFilter}
                                         excludedFilters={PROJECT_EXCLUDED_FILTERS}
-                                        sortField={dateField}
-                                        onSortFieldChange={handleSortFieldChange}
+                                        sort={sort}
+                                        onSortChange={setSort}
                                         isSelectionMode={isSelectionMode}
                                         onSelectionModeChange={setIsSelectionMode}
                                         isMobileLayout={isMobileViewport}

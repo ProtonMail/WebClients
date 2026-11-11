@@ -1,29 +1,36 @@
-@use '~@proton/styles/scss/lib/config' as *;
-@use '~@proton/styles/scss/lib/include-media' as im;
-@use '~@proton/styles/scss/lib/rem' as *;
-im.$breakpoints: $breakpoints-product;
-im.$media-expressions: $media-expressions;
-
-.conversation-list-panel {
-	--all-chats-preview-color: var(--text-secondary);
-	--all-chats-favorite-color: #f0a417;
-	--all-chats-icon-background-color: var(--background-upsell-toggle);
-	--all-chats-icon-color: var(--interaction-norm-hover);
-}
-
-.all-chats-selected-count .all-chats-count {
-	color: var(--all-chats-preview-color);
-	font-weight: 500;
-}
-
-.all-chats-list-with-mobile-bulk-actions {
-	padding-block-end: 5rem;
-}
-
+// Web/Chat list row: flat on the page with a divider; on hover (or while its menu is open) it lifts
+// onto a white panel, the divider goes and ⋯ takes the time's place.
 .all-chats-row {
-	block-size: 68px;
-	border-radius: 12px;
-	transition: background-color 0.15s ease;
+	transition:
+		background-color 0.15s ease,
+		box-shadow 0.15s ease;
+
+	// 1px divider inset 12px, as in the design; not on the last row.
+	&::after {
+		content: '';
+		position: absolute;
+		inset-inline: 0.75rem;
+		inset-block-end: 0;
+		block-size: 1px;
+		background-color: var(--border-mid);
+		pointer-events: none;
+	}
+
+	&.is-last::after {
+		display: none;
+	}
+}
+
+.all-chats-row:hover,
+.all-chats-row:focus-within,
+.all-chats-row.is-lifted,
+.all-chats-row--compact:active {
+	background-color: var(--background-norm);
+	box-shadow: 0 1px 4px rgb(0 0 0 / 0.05);
+
+	&::after {
+		opacity: 0;
+	}
 }
 
 .all-chats-row-link {
@@ -36,208 +43,45 @@ im.$media-expressions: $media-expressions;
 	z-index: 2;
 }
 
-.all-chats-row-actions .button {
-	position: relative;
-	z-index: 2;
+.all-chats-row-tag {
+	border: 1px solid var(--border);
+	line-height: 1rem;
+	padding-block: 1px;
 }
 
-@media (hover: hover) and (pointer: fine) {
-	.all-chats-row .all-chats-row-star {
+// Wide rows: ⋯ appears on hover over the time, which keeps its space. Rows in Select mode have no
+// menu, so they keep showing the time.
+.all-chats-row:not(.all-chats-row--compact):has(.all-chats-row-menu) {
+	.all-chats-row-menu {
 		opacity: 0;
-		pointer-events: none;
-		visibility: hidden;
 	}
 
-	.all-chats-row:hover .all-chats-row-star,
-	.all-chats-row:focus-within .all-chats-row-star,
-	.all-chats-row-star.is-favorited {
-		opacity: 1;
-		pointer-events: auto;
-		visibility: visible;
-	}
-}
+	&:hover,
+	&:focus-within,
+	&.is-lifted {
+		.all-chats-row-menu {
+			opacity: 1;
+		}
 
-.all-chats-row-title {
-	font-size: 0.9063rem;
-	font-weight: 500;
-	line-height: 1.3;
-}
-
-.all-chats-row-title-text {
-	flex: 0 1 auto;
-}
-
-.all-chats-row-title-main {
-	flex: 0 1 auto;
-	min-inline-size: 0;
-}
-
-.all-chats-row-title-content {
-	display: contents;
-	min-inline-size: 0;
-}
-
-.all-chats-row-date-mobile {
-	display: none;
-}
-
-@include im.media('>small') {
-	.all-chats-row-meta {
-		flex-shrink: 0;
-		inline-size: rem(72);
-		min-inline-size: rem(72);
-	}
-}
-
-.all-chats-row-meta {
-	flex-shrink: 0;
-	gap: 8px;
-	position: relative;
-	z-index: 2;
-}
-
-.all-chats-row-actions {
-	align-items: center;
-	display: none;
-	flex-shrink: 0;
-	flex-wrap: nowrap;
-	gap: 2px;
-}
-
-.all-chats-row:hover .all-chats-row-actions,
-.all-chats-row:focus-within .all-chats-row-actions,
-.all-chats-row-actions-pinned .all-chats-row-actions,
-.all-chats-row-actions:has([aria-expanded='true']) {
-	display: flex;
-}
-
-.all-chats-row-actions-desktop {
-	align-items: center;
-	display: flex;
-	flex-shrink: 0;
-	flex-wrap: nowrap;
-	gap: 2px;
-}
-
-.all-chats-row-actions-mobile {
-	display: none;
-	flex-shrink: 0;
-}
-
-.all-chats-row-project-link {
-	align-items: center;
-	flex-wrap: nowrap;
-	font-size: 0.8125rem;
-	gap: 4px;
-	min-inline-size: 0;
-}
-
-.all-chats-row-project-link.all-chats-row-project-link-desktop {
-	display: inline-flex;
-}
-
-.all-chats-row-project-link.all-chats-row-project-link-mobile {
-	display: none;
-}
-
-.all-chats-row-project-link-name {
-	min-inline-size: 0;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-
-.all-chats-row-star {
-	color: var(--text-weak);
-
-	&.is-favorited {
-		color: var(--all-chats-favorite-color);
-
-		&:hover,
-		&:focus,
-		&:focus-visible {
-			color: var(--all-chats-favorite-color);
+		.all-chats-row-time {
+			visibility: hidden;
 		}
 	}
 }
 
-.all-chats-row-date {
-	color: var(--all-chats-preview-color);
-	display: block;
-	flex-shrink: 0;
-	font-size: 0.8125rem;
-	text-align: end;
-	white-space: nowrap;
-}
-
-.all-chats-row:hover .all-chats-row-date,
-.all-chats-row:focus-within .all-chats-row-date,
-.all-chats-row-actions-pinned .all-chats-row-date,
-.all-chats-row-meta:has([aria-expanded='true']) .all-chats-row-date {
-	display: none;
-}
-
-@include im.media('<=small') {
-	.all-chats-row-meta .all-chats-row-date {
-		display: none;
-	}
-
-	.all-chats-row-title-content {
-		display: flex;
-		flex: 1 1 auto;
-		flex-direction: column;
-		gap: 2px;
-		min-inline-size: 0;
-	}
-
-	.all-chats-row-date-mobile {
-		align-items: center;
-		color: var(--all-chats-preview-color);
-		display: flex;
-		flex-wrap: nowrap;
-		font-size: 0.8125rem;
-		gap: 6px;
-		line-height: 1.3;
-		min-inline-size: 0;
-	}
-
-	.all-chats-row-project-link.all-chats-row-project-link-desktop {
-		display: none;
-	}
-
-	.all-chats-row-project-link.all-chats-row-project-link-mobile {
-		display: inline-flex;
-	}
-
-	.all-chats-row-actions {
-		display: flex;
-	}
-
-	.all-chats-row-actions .all-chats-row-actions-desktop {
-		display: none;
-	}
-
-	.all-chats-row-actions .all-chats-row-actions-mobile {
-		display: flex;
-	}
-}
-
-.all-chats-row-rename-input {
-	.input-element {
-		font-size: 0.9063rem;
-		font-weight: 500;
-		padding-block: 2px;
-		padding-inline: 8px;
-	}
-}
-
-.all-chats-count {
-	color: var(--all-chats-preview-color);
-	font-size: 0.875rem;
-	font-weight: 500;
-}
-
+// Web/Empty state icon tile; Figma's control-fill-mid is --control-fill-strong in the Lumo theme.
 .all-chats-empty-icon {
-	color: var(--all-chats-icon-color);
-	background-color: var(--all-chats-icon-background-color);
+	background-color: var(--control-fill-strong);
+	color: var(--text-norm);
+}
+
+// Web/All chats/Bulk bar: bottom padding leaves room for the browser toolbar and home indicator.
+.all-chats-bulk-bar {
+	border-block-start: 1px solid var(--border-mid);
+	padding-block-end: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+
+	// Its buttons are 40px; Proton's medium button is 36px and large is taller than the design.
+	.button {
+		min-block-size: 2.5rem;
+	}
 }

@@ -9,6 +9,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 
 import { useLumoDispatch } from '../redux/hooks';
 import {
+    type MoveConversationToSpaceFailure,
     type MoveConversationToSpaceProgress,
     moveConversationToSpaceFailure,
     moveConversationToSpaceProgress,
@@ -40,12 +41,28 @@ const getProgressText = ({ stage, total }: MoveConversationToSpaceProgress, proj
     }
 };
 
+/** What to tell the person when a move fails, by the saga's failure reason. Shared with the bulk move. */
+export const getMoveFailureText = (reason: MoveConversationToSpaceFailure['reason'], projectName: string) => {
+    switch (reason) {
+        case 'busy':
+            return c('collider_2025:Error').t`Wait for the response to finish before moving this chat.`;
+        case 'limit':
+            return c('collider_2025:Error').t`${projectName} has reached its limit of chats or files.`;
+        case 'privacy':
+            return c('collider_2025:Error').t`Chats in a private project can only be moved to another private project.`;
+        case 'unavailable':
+            return c('collider_2025:Error').t`Some of this chat's files aren't available yet. Try again in a moment.`;
+        default:
+            return c('collider_2025:Error').t`Couldn't move the chat. Please try again.`;
+    }
+};
+
 /**
  * Moves a chat into a project. The saga copies the chat (messages and files included) into the project, waits for
  * the copy to sync, then removes the original, so a failed move leaves the original chat untouched.
  */
 // Chats being moved from this tab. The modal unmounts as soon as a project is picked, so this can't live in its state.
-const movingConversations = new Set<ConversationId>();
+export const movingConversations = new Set<ConversationId>();
 
 export const useMoveConversationToProject = (conversationId: ConversationId) => {
     const dispatch = useLumoDispatch();
@@ -144,24 +161,7 @@ export const useMoveConversationToProject = (conversationId: ConversationId) => 
                                 reason: action.payload.reason ?? 'other',
                                 durationMs,
                             });
-                            const text = (() => {
-                                switch (action.payload.reason) {
-                                    case 'busy':
-                                        return c('collider_2025:Error')
-                                            .t`Wait for the response to finish before moving this chat.`;
-                                    case 'limit':
-                                        return c('collider_2025:Error')
-                                            .t`${projectName} has reached its limit of chats or files.`;
-                                    case 'privacy':
-                                        return c('collider_2025:Error')
-                                            .t`Chats in a private project can only be moved to another private project.`;
-                                    case 'unavailable':
-                                        return c('collider_2025:Error')
-                                            .t`Some of this chat's files aren't available yet. Try again in a moment.`;
-                                    default:
-                                        return c('collider_2025:Error').t`Couldn't move the chat. Please try again.`;
-                                }
-                            })();
+                            const text = getMoveFailureText(action.payload.reason, projectName);
                             createNotification({ text, type: 'error' });
                         }
                     },

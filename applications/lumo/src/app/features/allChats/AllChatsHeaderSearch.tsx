@@ -7,12 +7,12 @@ import { Input } from '@proton/atoms/Input/Input';
 
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 
-interface AllChatsHeaderSearchProps {
+interface Props {
     searchQuery: string;
     onSearchQueryChange: (value: string) => void;
 }
 
-export const AllChatsHeaderSearch = ({ searchQuery, onSearchQueryChange }: AllChatsHeaderSearchProps) => {
+export const AllChatsHeaderSearch = ({ searchQuery, onSearchQueryChange }: Props) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
@@ -30,28 +30,31 @@ export const AllChatsHeaderSearch = ({ searchQuery, onSearchQueryChange }: AllCh
     }, [onSearchQueryChange]);
 
     return (
-        <Input
-            ref={inputRef}
-            className="all-chats-header-search-input min-w-0 ml-0 md:ml-2"
-            value={searchQuery}
-            onValue={onSearchQueryChange}
-            placeholder={c('collider_2025:Placeholder').t`Search chats`}
-            aria-label={c('collider_2025:Button').t`Search chats`}
-            prefix={<LumoIcon name="Search" size={16} className="color-weak" />}
-            suffix={
-                searchQuery ? (
-                    <Button
-                        icon
-                        shape="ghost"
-                        size="small"
-                        className="shrink-0"
-                        aria-label={c('collider_2025:Action').t`Clear search`}
-                        onClick={handleClear}
-                    >
-                        <LumoIcon name="X" size={16} />
-                    </Button>
-                ) : null
-            }
-        />
+        // Input grows by default (flex-1), so the wrapper sets its width: the full row on small
+        // screens, 280px beside the title above that.
+        <div className="w-full md:w-custom shrink-0" style={{ '--md-w-custom': '17.5rem' }}>
+            <Input
+                ref={inputRef}
+                value={searchQuery}
+                onValue={onSearchQueryChange}
+                placeholder={c('collider_2025:Placeholder').t`Search chats`}
+                aria-label={c('collider_2025:Button').t`Search chats`}
+                prefix={<LumoIcon name="Search" size={16} className="color-weak" />}
+                suffix={
+                    searchQuery ? (
+                        <Button
+                            icon
+                            shape="ghost"
+                            size="small"
+                            className="shrink-0"
+                            aria-label={c('collider_2025:Action').t`Clear search`}
+                            onClick={handleClear}
+                        >
+                            <LumoIcon name="X" size={16} />
+                        </Button>
+                    ) : null
+                }
+            />
+        </div>
     );
 };

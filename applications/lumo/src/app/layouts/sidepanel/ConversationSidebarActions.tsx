@@ -10,11 +10,13 @@ import FavoritesUpsellPrompt from '../../components/Guest/FavoritesUpsellPrompt'
 import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { ConversationExportModal } from '../../components/Modals/ConversationExportModal/ConversationExportModal';
 import { MoveToProjectModal } from '../../features/projects/modals/MoveToProjectModal';
-import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useConversationStar } from '../../hooks/useConversationStar';
+import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import type { Conversation } from '../../types';
 import { ConversationDeleteFlow } from './ConversationDeleteFlow';
+
+import './ConversationSidebarActions.scss';
 
 interface Props {
     conversation: Conversation;
@@ -24,6 +26,8 @@ interface Props {
     visibleOnHover?: boolean;
     includeStarOption?: boolean;
     includeMoveToProject?: boolean;
+    /** Go home after deleting the open chat; off in lists that stay on screen, like All chats. */
+    navigateAfterDelete?: boolean;
 }
 
 export const ConversationSidebarActions = ({
@@ -34,6 +38,7 @@ export const ConversationSidebarActions = ({
     visibleOnHover,
     includeStarOption = true,
     includeMoveToProject = true,
+    navigateAfterDelete,
 }: Props) => {
     const isGuest = useIsGuest();
     const { moveToProject } = useLumoFlags();
@@ -48,7 +53,8 @@ export const ConversationSidebarActions = ({
     const moveToProjectModalState = useModalStateObject({
         onClose: () => onOverlayActiveChange?.(false),
     });
-    const canMoveToProject = moveToProject && includeMoveToProject && !isGuest && !conversation.ghost && !conversation.scheduleRun;
+    const canMoveToProject =
+        moveToProject && includeMoveToProject && !isGuest && !conversation.ghost && !conversation.scheduleRun;
 
     const options: DropdownOptions[] = useMemo(
         () => [
@@ -56,9 +62,10 @@ export const ConversationSidebarActions = ({
                 ? [
                       {
                           label: !isStarred ? c('Option').t`Add to favorites` : c('Option').t`Remove from favorites`,
+
+                          className: 'chat-menu-item',
                           icon: <LumoIcon name="Star" size={16} />,
-                          onClick: (e?: React.MouseEvent) => {
-                              e?.stopPropagation();
+                          onClick: () => {
                               if (isGuest) {
                                   onOverlayActiveChange?.(true);
                               }
@@ -67,13 +74,28 @@ export const ConversationSidebarActions = ({
                       },
                   ]
                 : []),
+            ...(canMoveToProject
+                ? [
+                      {
+                          label: c('Option').t`Move to project`,
+
+                          className: 'chat-menu-item',
+                          icon: <LumoIcon name="Folder" size={16} />,
+                          onClick: () => {
+                              onOverlayActiveChange?.(true);
+                              moveToProjectModalState.openModal(true);
+                          },
+                      },
+                  ]
+                : []),
             ...(onRename
                 ? [
                       {
                           label: c('Option').t`Rename`,
+
+                          className: 'chat-menu-item',
                           icon: <LumoIcon name="Pencil" size={16} />,
-                          onClick: (e?: React.MouseEvent) => {
-                              e?.stopPropagation();
+                          onClick: () => {
                               onRename();
                           },
                       },
@@ -82,30 +104,19 @@ export const ConversationSidebarActions = ({
             {
                 // translator: Label for a dropdown option that opens a modal to export a conversation.
                 label: c('Option').t`Export`,
+
+                className: 'chat-menu-item',
                 icon: <LumoIcon name="SquareArrowRightExit" size={16} />,
                 onClick: () => {
                     onOverlayActiveChange?.(true);
                     conversationExportModalState.openModal(true);
                 },
             },
-            ...(canMoveToProject
-                ? [
-                      {
-                          label: c('Option').t`Move to project`,
-                          icon: <LumoIcon name="FolderInput" size={16} />,
-                          onClick: (e?: React.MouseEvent) => {
-                              e?.stopPropagation();
-                              onOverlayActiveChange?.(true);
-                              moveToProjectModalState.openModal(true);
-                          },
-                      },
-                  ]
-                : []),
             {
                 label: c('Option').t`Delete`,
                 icon: <LumoIcon name="Trash" size={16} />,
-                onClick: (e) => {
-                    e?.stopPropagation();
+                className: 'chat-menu-item chat-menu-item--danger',
+                onClick: () => {
                     onOverlayActiveChange?.(true);
                     setShowDeleteFlow(true);
                 },
@@ -126,10 +137,21 @@ export const ConversationSidebarActions = ({
 
     return (
         <>
-            <DropdownMenu options={options} onToggle={onOpenChange} visibleOnHover={visibleOnHover} />
+            {/* Menu clicks bubble through the portal to the row behind (which opens the chat), so stop
+                them here. Stopping them in each option instead would also keep the menu from closing. */}
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+            <div
+                className="flex shrink-0"
+                onClick={(event) => {
+                    event.stopPropagation();
+                }}
+            >
+                <DropdownMenu options={options} onToggle={onOpenChange} visibleOnHover={visibleOnHover} />
+            </div>
             {showDeleteFlow && (
                 <ConversationDeleteFlow
                     conversation={conversation}
+                    navigateAfterDelete={navigateAfterDelete}
                     onClose={() => {
                         setShowDeleteFlow(false);
                         onOverlayActiveChange?.(false);

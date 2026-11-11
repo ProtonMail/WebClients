@@ -1,0 +1,13 @@
+// Items in the chat ⋯ menu are 40px tall (Web/Menu item); spacing utilities have no 10px step.
+.chat-menu-item {
+	min-block-size: 2.5rem;
+}
+
+// Destructive item. signal-danger-major-1 is the danger text colour tuned per theme (darker in light,
+// lighter in dark) so it reads at 4.5:1 on menu backgrounds in both; plain signal-danger doesn't.
+// Doubled class to win over the dropdown item's own colour, which loads later.
+.chat-menu-item.chat-menu-item--danger,
+.chat-menu-item.chat-menu-item--danger:hover,
+.chat-menu-item.chat-menu-item--danger:focus-visible {
+	color: var(--signal-danger-major-1);
+}

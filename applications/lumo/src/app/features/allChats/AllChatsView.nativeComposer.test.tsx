@@ -19,10 +19,10 @@ jest.mock('../../remote/nativeComposerBridgeHelpers');
 jest.mock('../../layouts/LumoLayout', () => ({
     LumoLayoutWithDrawer: ({ children }: { children: ReactNode }) => children,
 }));
-jest.mock('./AllChatsHeaderBar', () => ({ AllChatsHeaderBar: () => null }));
+jest.mock('./AllChatsHeaderSearch', () => ({ AllChatsHeaderSearch: () => null }));
 jest.mock('./AllChatsHeaderNewChatButton', () => ({ AllChatsHeaderNewChatButton: () => null }));
-jest.mock('./mobile/AllChatsMobileHeaderBar', () => ({ AllChatsMobileHeaderBar: () => null }));
 jest.mock('./shared/ConversationListPanel', () => ({ ConversationListPanel: () => null }));
+jest.mock('./shared/AllChatsHeader', () => ({ AllChatsTitle: () => null }));
 jest.mock('./shared/AllChatsEmptyState', () => ({ AllChatsEmptyState: () => null }));
 
 describe('All chats native composer visibility', () => {
