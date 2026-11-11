@@ -19,6 +19,7 @@ import { PASSWORD_SEPARATOR } from '@proton/meet/utils/cryptoUtils';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
+import { fromUTCDateToTimezone } from '@proton/shared/lib/date/timezone';
 import { type Meeting, MeetingType, WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
 import type { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -26,6 +27,7 @@ import clsx from '@proton/utils/clsx';
 
 import type { JoinLocationState } from '../../../types';
 import { getNextOccurrence } from '../../../utils/getNextOccurrence';
+import { getDeviceTimeZone } from '../../../utils/zonedTime';
 import { getMeetingVariantFromId } from '../../MeetingCreation/shared/getMeetingVariantFromId';
 import { DeleteMeetingModal } from '../DeleteMeetingModal';
 import { PersonalMeetingRotationButton } from './PersonalMeetingRotationButton';
@@ -75,35 +77,35 @@ export const MeetingRow = ({
             !!meeting.adjustedStartTime && !!meeting.adjustedEndTime
                 ? { startTime: meeting.adjustedStartTime, endTime: meeting.adjustedEndTime }
                 : getNextOccurrence(meeting);
-        const startDate = new Date(1000 * occurrence.startTime);
-        const endDate = new Date(1000 * occurrence.endTime);
+        const userTimeZone = getDeviceTimeZone();
 
-        const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const startWallClockAsUTC = fromUTCDateToTimezone(new Date(1000 * occurrence.startTime), userTimeZone);
+        const endWallClockAsUTC = fromUTCDateToTimezone(new Date(1000 * occurrence.endTime), userTimeZone);
 
-        const startTime = startDate.toLocaleTimeString(undefined, {
+        const startTime = startWallClockAsUTC.toLocaleTimeString(undefined, {
             hour: '2-digit',
             minute: '2-digit',
             hour12: false,
-            timeZone: userTimeZone,
+            timeZone: 'UTC',
         });
 
-        const endTime = endDate
-            ? endDate.toLocaleTimeString(undefined, {
+        const endTime = endWallClockAsUTC
+            ? endWallClockAsUTC.toLocaleTimeString(undefined, {
                   hour: '2-digit',
                   minute: '2-digit',
                   hour12: false,
-                  timeZone: userTimeZone,
+                  timeZone: 'UTC',
               })
             : null;
 
-        const month = startDate.toLocaleDateString(undefined, {
+        const month = startWallClockAsUTC.toLocaleDateString(undefined, {
             month: 'short',
-            timeZone: userTimeZone,
+            timeZone: 'UTC',
         });
 
-        const day = startDate.toLocaleDateString(undefined, {
+        const day = startWallClockAsUTC.toLocaleDateString(undefined, {
             day: 'numeric',
-            timeZone: userTimeZone,
+            timeZone: 'UTC',
         });
 
         return { month, day, startTime, endTime };

@@ -1,4 +1,4 @@
-import { formatInTimeZone } from 'date-fns-tz';
+import { formatInTimeZone } from '../../../../../utils/zonedTime';
 
 export const calendarDateFormats = (date: Date, timezone?: string) => {
     let localCompactWithTimezone: string | undefined = undefined;

@@ -1,4 +1,3 @@
-import { formatInTimeZone } from 'date-fns-tz';
 import { c } from 'ttag';
 
 import { IcArrowDownArrowUp } from '@proton/icons/icons/IcArrowDownArrowUp';
@@ -8,11 +7,12 @@ import { IcClock } from '@proton/icons/icons/IcClock';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import type { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
 
+import { formatInTimeZone, getDeviceTimeZone } from '../../utils/zonedTime';
 import type { SortOptionObject } from './types';
 import { DashboardMeetingListTab, SortOption } from './types';
 import { formatMeetingDate } from './utils';
 
-const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+const userTimezone = getDeviceTimeZone();
 
 const getCreatedOnSubtitle = (meeting: Meeting, dateFormat: SETTINGS_DATE_FORMAT) => {
     const formattedDate = formatMeetingDate(

@@ -25,6 +25,7 @@ import { selectTotalParticipantCount } from '@proton/meet/store/slices/participa
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import type { KeyRotationLog } from '@proton/meet/types/types';
+import { fromUTCDateToTimezone } from '@proton/shared/lib/date/timezone';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 import { parseMeetingLink } from '@proton/shared/lib/meet/parseMeetingLink';
@@ -36,6 +37,7 @@ import { SideBarTitle } from '../../atoms/SideBar/SideBarTitle';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useCopyTextToClipboard } from '../../hooks/useCopyTextToClipboard';
 import { MismatchStage, useMismatchStage } from '../../hooks/useMismatchStage';
+import { getDeviceTimeZone, isTimeZoneKnown } from '../../utils/zonedTime';
 
 import './MeetingDetails.scss';
 
@@ -80,7 +82,10 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
 
     const sideBarState = useMeetSelector(selectSideBarState);
 
-    const timeZone = currentMeeting?.Timezone ?? Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const timeZone =
+        currentMeeting?.Timezone && isTimeZoneKnown(currentMeeting.Timezone)
+            ? currentMeeting.Timezone
+            : getDeviceTimeZone();
 
     const startDate = currentMeeting?.StartTime ? new Date(1000 * Number(currentMeeting.StartTime)) : null;
 
@@ -93,20 +98,25 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
           }).format(startDate)
         : null;
 
-    const startTime = startDate?.toLocaleTimeString(undefined, {
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: false,
-        timeZone: timeZone,
-    });
-
-    const endTime = currentMeeting?.EndTime
-        ? new Date(1000 * Number(currentMeeting.EndTime)).toLocaleTimeString(undefined, {
+    const startTime = startDate
+        ? fromUTCDateToTimezone(startDate, timeZone).toLocaleTimeString(undefined, {
               hour: '2-digit',
               minute: '2-digit',
               hour12: false,
-              timeZone: timeZone,
+              timeZone: 'UTC',
           })
+        : undefined;
+
+    const endTime = currentMeeting?.EndTime
+        ? fromUTCDateToTimezone(new Date(1000 * Number(currentMeeting.EndTime)), timeZone).toLocaleTimeString(
+              undefined,
+              {
+                  hour: '2-digit',
+                  minute: '2-digit',
+                  hour12: false,
+                  timeZone: 'UTC',
+              }
+          )
         : null;
 
     const getEncryptionLogs = () => {

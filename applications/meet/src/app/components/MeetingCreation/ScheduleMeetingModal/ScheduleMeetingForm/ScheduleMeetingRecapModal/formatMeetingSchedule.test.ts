@@ -49,6 +49,18 @@ describe('formatMeetingSchedule dateTime', () => {
         expect(dateTime).toBe('Tomorrow · Feb 25, 12:30am to 1:30am');
     });
 
+    it('reads a Vancouver meeting after the move to permanent time at UTC-7', () => {
+        const { dateTime } = formatMeetingSchedule({
+            ...baseInput,
+            startTime: new Date('2026-11-12T17:00:00Z'),
+            endTime: new Date('2026-11-12T18:00:00Z'),
+            timeZone: 'America/Vancouver',
+            deviceTimeZone: 'America/Vancouver',
+        });
+
+        expect(dateTime).toBe('Thu, Nov 12, 10am to 11am');
+    });
+
     it('omits the year for a later date in the current year', () => {
         expect(formatMeetingSchedule(baseInput).dateTime).toBe('Fri, Feb 27, 11am to 12pm');
     });
