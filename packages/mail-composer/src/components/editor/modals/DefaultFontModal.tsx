@@ -12,8 +12,8 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import FontFaceSelect from '@proton/components/containers/layouts/FontFaceSelect';
 import FontSizeSelect from '@proton/components/containers/layouts/FontSizeSelect';
-import { CacheType } from '@proton/redux-utilities/interface';
 import { updateFontFace, updateFontSize } from '@proton/shared/lib/api/mailSettings';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import {
     DEFAULT_FONT_FACE,
     DEFAULT_FONT_SIZE,
@@ -21,18 +21,16 @@ import {
     getFontFaceValueFromId,
 } from '@proton/shared/lib/mail/fontFace';
 
-import { useEditorHost } from '../EditorHost';
-
 interface Props {
+    mailSettings?: MailSettings;
+    /** Receives the mail settings the API returns after saving the font */
+    onMailSettingsChange?: (mailSettings: MailSettings) => void;
     onClose?: () => void;
     onChange?: (nextFontFace: string, nextFontSize: number) => void;
 }
 
-const DefaultFontModal = ({ onChange, onClose, ...rest }: Props) => {
+const DefaultFontModal = ({ mailSettings, onMailSettingsChange, onChange, onClose, ...rest }: Props) => {
     const api = useApi();
-    const { useMailSettings, useGetMailSettings } = useEditorHost();
-    const [mailSettings] = useMailSettings();
-    const getMailSettings = useGetMailSettings();
 
     const [fontFace, setFontFace] = useState(getFontFaceValueFromId(mailSettings?.FontFace) || DEFAULT_FONT_FACE);
     const [fontSize, setFontSize] = useState(mailSettings?.FontSize || DEFAULT_FONT_SIZE);
@@ -48,19 +46,28 @@ const DefaultFontModal = ({ onChange, onClose, ...rest }: Props) => {
     const onSubmit = async () => {
         setLoading(true);
 
+        let updatedMailSettings: MailSettings | undefined;
+
         if (changedFontFace) {
             const fontFaceId = getFontFaceIdFromValue(fontFace);
             if (fontFaceId) {
-                await api(updateFontFace(fontFaceId));
+                ({ MailSettings: updatedMailSettings } = await api<{ MailSettings: MailSettings }>(
+                    updateFontFace(fontFaceId)
+                ));
             }
         }
 
         if (changedFontSize) {
-            await api(updateFontSize(fontSize));
+            ({ MailSettings: updatedMailSettings } = await api<{ MailSettings: MailSettings }>(
+                updateFontSize(fontSize)
+            ));
+        }
+
+        if (updatedMailSettings) {
+            onMailSettingsChange?.(updatedMailSettings);
         }
 
         if (somethingChanged) {
-            await getMailSettings({ cache: CacheType.None });
             notifyPreferenceSaved();
         }
 

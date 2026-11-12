@@ -45,6 +45,10 @@ export interface EditorProps {
      */
     mailSettings?: MailSettings;
     /**
+     * Receives the mail settings saved from the default font modal
+     */
+    onMailSettingsChange?: (mailSettings: MailSettings) => void;
+    /**
      * Used for locale in the emoji picker
      */
     userSettings?: UserSettings;
@@ -99,6 +103,7 @@ const Editor = ({
     onAddAttachments,
     isPastedImageAllowed,
     mailSettings,
+    onMailSettingsChange,
     userSettings,
     isPlainText,
     openEmojiPickerRef,
@@ -207,11 +212,20 @@ const Editor = ({
                 }}
             >
                 {modalDefaultFont.render && metadata.supportDefaultFontSelector && (
-                    <DefaultFontModal {...modalDefaultFont.props} {...modalDefaultFont.modalsStateProps} />
+                    <DefaultFontModal
+                        {...modalDefaultFont.props}
+                        {...modalDefaultFont.modalsStateProps}
+                        mailSettings={mailSettings}
+                        onMailSettingsChange={onMailSettingsChange}
+                    />
                 )}
                 {modalImage.render && <InsertImageModal {...modalImage.props} {...modalImage.modalsStateProps} />}
                 {modalLink.render && modalLink.props && (
-                    <InsertLinkModal {...modalLink.props} modalStateProps={modalLink.modalsStateProps} />
+                    <InsertLinkModal
+                        {...modalLink.props}
+                        modalStateProps={modalLink.modalsStateProps}
+                        mailSettings={mailSettings}
+                    />
                 )}
             </div>
         </>

@@ -20,8 +20,8 @@ import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { LINK_TYPES } from '@proton/shared/lib/constants';
 import { addLinkPrefix, linkToType } from '@proton/shared/lib/helpers/url';
+import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 
-import { useEditorHost } from '../../EditorHost';
 import type { InsertLinkSelectionType } from './InsertLinkModal';
 
 interface InsertLinkModalProps {
@@ -30,6 +30,7 @@ interface InsertLinkModalProps {
     selectionType: InsertLinkSelectionType;
     title: string;
     url?: string;
+    mailSettings?: MailSettings;
 }
 
 const InsertLinkModalComponent = ({
@@ -38,9 +39,8 @@ const InsertLinkModalComponent = ({
     selectionType,
     title,
     url: initialUrl,
+    mailSettings,
 }: InsertLinkModalProps) => {
-    const { useMailSettings } = useEditorHost();
-    const [mailSettings] = useMailSettings();
     const modalContentRef = useRef<HTMLDivElement>(null);
 
     const [type, setType] = useState(linkToType(initialUrl) || LINK_TYPES.WEB);

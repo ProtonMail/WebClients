@@ -1,5 +1,6 @@
 import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { DEFAULT_MAIL_SETTINGS } from '@proton/shared/lib/mail/mailSettings';
+import noop from '@proton/utils/noop';
 
 import type { ComposerHost } from '../hooks/composer/useComposerHost';
 import type { ComposerMessageHost } from '../host/composerMessageHost';
@@ -31,6 +32,7 @@ export const composerTestMessageHost: ComposerMessageHost = {
         const mailSettings = useTestMailSettings();
         return async () => mailSettings;
     },
+    useUpdateMailSettings: () => noop,
     useContactGroups: () => {
         const groups = useComposerSelector(
             (state) => (state as unknown as ComposerTestState).categories?.value as ContactGroup[] | undefined

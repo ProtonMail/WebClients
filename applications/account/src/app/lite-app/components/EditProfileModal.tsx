@@ -17,6 +17,7 @@ import type { SimpleEditorActions } from '@proton/components/containers/editor/S
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import SimpleEditor from '@proton/mail-composer/components/editor/SimpleEditor';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
@@ -26,6 +27,7 @@ interface Props extends ModalProps {
 
 const EditProfileModal = ({ address, ...rest }: Props) => {
     const dispatch = useDispatch();
+    const [mailSettings] = useMailSettings();
     const [displayName, setDisplayName] = useState(address.DisplayName);
     const [signature, setSignature] = useState(address.Signature);
     const [submitting, withLoading] = useLoading();
@@ -73,7 +75,7 @@ const EditProfileModal = ({ address, ...rest }: Props) => {
                 <label className="field-two-label-container flex justify-space-between flex-nowrap items-end gap-2">{c(
                     'Label'
                 ).t`Signature`}</label>
-                <SimpleEditor onReady={handleReady} onChange={setSignature} />
+                <SimpleEditor onReady={handleReady} onChange={setSignature} mailSettings={mailSettings} />
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={handleClose} disabled={submitting}>
