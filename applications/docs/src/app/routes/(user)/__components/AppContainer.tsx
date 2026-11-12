@@ -4,21 +4,8 @@ import LocationErrorBoundary from '@proton/components/containers/app/LocationErr
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import { DriveStoreProvider } from '@proton/drive-store/lib/DriveStoreProvider'
 import { useDriveCompat } from '@proton/drive-store/lib/useDriveCompat'
-import { useDocInvites as useDocInvitesLegacy } from '@proton/drive-store/lib/_invites/useDocInvites'
-import { getDrive } from '@proton/drive/sdk'
-import { useSharingModal } from '@proton/drive/public/sharingModal'
-import { useMoveItemsModal } from '@proton/drive/public/moveItemsModal'
-import { useApi } from '@proton/app-context/useApi'
-import { useConfig } from '@proton/app-context/useConfig'
-import { useNotifications } from '@proton/app-context/useNotifications'
-import useAuthentication from '@proton/components/hooks/useAuthentication'
-import { getAppHref } from '@proton/shared/lib/apps/helper'
-import type { APP_NAMES } from '@proton/shared/lib/constants'
-import { dateLocale } from '@proton/shared/lib/i18n'
-import { addSentryBreadcrumb, getSentryError, traceError } from '@proton/shared/lib/helpers/sentry'
 import type { Application } from '@proton/docs-core/Application/Application'
-import type { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
-import { Suspense, lazy, useCallback, useMemo } from 'react'
+import { Suspense, lazy } from 'react'
 import { Routes, Route, useSearchParams, Navigate } from 'react-router-dom-v5-compat'
 
 import { ApplicationProvider } from '~/utils/application-context'
@@ -29,15 +16,12 @@ import {
   DOCUMENT_V2_PATHS,
   DocsUrlContextProvider,
 } from '~/utils/docs-url-bar'
-import { useBulkMoveEnabled, useBulkTrashEnabled, useInvitationsSdkEnabled, useRealtimeSdkEnabled } from '~/utils/flags'
+import { useRealtimeSdkEnabled } from '~/utils/flags'
 import { useInitializeApplication } from './useInitializeApplication'
-import { getCoreEventSubscriber, useCoreEventSubscription } from '~/drive-sdk/core-event-subscriber'
-import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
-import { useDocInvites as useDocInvitesSDK } from '~/drive-sdk/useDocInvites'
+import { useCoreEventSubscription } from '~/drive-sdk/core-event-subscriber'
 import OpenTracer from '@proton/docs-shared/Tracer/Module'
 import { HOMEPAGE_PATHS, HOMEPAGE_RECENTS_PATH } from '../__utils/homepage-paths'
-import { getDocsReportContextLines } from '~/utils/report-context'
-import { DocsQuickSettings } from '~/components/DocsQuickSettings'
+import { HomepageHost } from './HomepageHost'
 
 // container
 // ---------
@@ -80,41 +64,13 @@ function Content() {
 // routes
 // ------
 
-const HomepagePage = lazy(() => import('../(homepage)/recents/page'))
 const DocumentPage = lazy(() => import('../(document)/doc/page'))
 const DocumentPageV2 = lazy(() => import('../(document)/doc2/page'))
-
-const homepageErrorTracking = {
-  traceError,
-  addBreadcrumb: addSentryBreadcrumb,
-  isReportable: (error: unknown) => Boolean(getSentryError(error)),
-}
 
 type AppRoutesProps = { driveCompat: DriveCompat; application: Application }
 
 function AppRoutes({ driveCompat, application }: AppRoutesProps) {
-  const api = useApi()
-  const { APP_VERSION, CLIENT_TYPE } = useConfig()
-  const { createNotification } = useNotifications()
-  const { getLocalID } = useAuthentication()
-  const getAppHrefForUser = useCallback(
-    (path: string, app: APP_NAMES) => getAppHref(path, app, getLocalID()),
-    [getLocalID],
-  )
-  const reportDescriptionContext = getDocsReportContextLines({ appVersion: APP_VERSION, clientType: CLIENT_TYPE })
-  const reportHomepageTelemetry = useCallback(
-    (event: string) => application.metrics.reportHomepageTelemetry(event as TelemetryDocsHomepageEvents),
-    [application],
-  )
   const isRealtimeSdkEnabled = useRealtimeSdkEnabled()
-  const isInvitationsSdkEnabled = useInvitationsSdkEnabled()
-  const useDocInvites = isInvitationsSdkEnabled ? useDocInvitesSDK : useDocInvitesLegacy
-  const isBulkTrashEnabled = useBulkTrashEnabled()
-  const isBulkMoveEnabled = useBulkMoveEnabled()
-  const homepageFeatureFlags = useMemo(
-    () => ({ invitationsSdk: isInvitationsSdkEnabled, bulkTrash: isBulkTrashEnabled, bulkMove: isBulkMoveEnabled }),
-    [isInvitationsSdkEnabled, isBulkTrashEnabled, isBulkMoveEnabled],
-  )
 
   const documentPage = (
     <Suspense>
@@ -128,29 +84,7 @@ function AppRoutes({ driveCompat, application }: AppRoutesProps) {
     </Suspense>
   )
 
-  const homepagePage = (
-    <Suspense>
-      <HomepagePage
-        drive={getDrive()}
-        eventSubscriber={getEventSubscriber()}
-        coreEventSubscriber={getCoreEventSubscriber()}
-        useDocInvites={useDocInvites}
-        api={api}
-        logger={application.logger}
-        reportTelemetry={reportHomepageTelemetry}
-        createNotification={createNotification}
-        getAppHref={getAppHrefForUser}
-        dateLocaleCode={dateLocale.code}
-        errorTracking={homepageErrorTracking}
-        featureFlags={homepageFeatureFlags}
-        useSharingModal={useSharingModal}
-        useMoveItemsModal={useMoveItemsModal}
-        reportDescriptionContext={reportDescriptionContext}
-        quickSettings={<DocsQuickSettings />}
-        appVersion={APP_VERSION}
-      />
-    </Suspense>
-  )
+  const homepagePage = <HomepageHost application={application} />
 
   return (
     <Routes>

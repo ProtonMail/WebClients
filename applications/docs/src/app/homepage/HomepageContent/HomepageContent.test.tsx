@@ -7,7 +7,7 @@ import { ServerTime } from '../utils/serverTime'
 import { type ReactNode, useEffect, useState } from 'react'
 import type { RecentDocumentsItemLocation, RecentDocumentsItemValue } from '../recentDocumentsItem'
 import userEvent from '@testing-library/user-event'
-import type { DocInvitesHook, HomepageViewState } from '../homepageViewContext'
+import type { HomepageViewState } from '../homepageViewContext'
 import { HomepageViewContext } from '../homepageViewContext'
 import type { MemberRole } from '@protontech/drive-sdk'
 import type { ExtendedInvitationDetails } from '../invitationTypes'
@@ -37,15 +37,10 @@ let mockIsTrashing = false
 const mockBulkMove = jest.fn()
 
 let mockInvitations: ExtendedInvitationDetails[] = []
-const mockAcceptInvite = jest.fn()
-const mockRejectInvite = jest.fn()
-const useMockDocInvites: DocInvitesHook = () => ({
-  invitations: mockInvitations,
-  recentlyAcceptedInvites: [],
-  acceptInvite: mockAcceptInvite,
-  rejectInvite: mockRejectInvite,
-  confirmModal: null,
-})
+let mockRecentlyAcceptedInvitations: ExtendedInvitationDetails[] = []
+const mockAcceptInvitation = jest.fn()
+const mockDeclineInvitation = jest.fn()
+const mockReloadInvitations = jest.fn()
 
 const mockOpenInvitedDocument = jest.fn()
 jest.mock('./useOpenInvitedDocument', () => ({
@@ -151,19 +146,86 @@ describe('HomepageContent', () => {
   describe('invitations', () => {
     afterEach(() => {
       mockInvitations = []
+      mockRecentlyAcceptedInvitations = []
+      mockReloadInvitations.mockClear()
     })
 
-    test('Show pending invitations from useDocInvites', async () => {
-      mockInvitations = [
-        {
-          invitation: { invitationId: 'invitation1', createTime: Date.now(), inviterEmail: 'inviter@example.com' },
-          link: { mimeType: PROTON_DOCS_DOCUMENT_MIMETYPE },
-          decryptedLinkName: 'Invited document',
-        } as unknown as ExtendedInvitationDetails,
-      ]
+    function createInvitation(invitationId: string, name: string) {
+      return {
+        invitation: { invitationId, createTime: Date.now(), inviterEmail: 'inviter@example.com' },
+        link: { mimeType: PROTON_DOCS_DOCUMENT_MIMETYPE },
+        decryptedLinkName: name,
+      } as unknown as ExtendedInvitationDetails
+    }
+
+    test('Show the pending invitations', async () => {
+      mockInvitations = [createInvitation('invitation1', 'Invited document')]
       renderWithProviders(<HomepageContent />)
 
       expect(await screen.findByTestId('invite-document-name')).toHaveTextContent('Invited document')
+    })
+
+    test('Hide the recently accepted invitations, even while they are still pending', async () => {
+      const accepted = createInvitation('invitation1', 'Accepted document')
+      mockInvitations = [accepted, createInvitation('invitation2', 'Invited document')]
+      mockRecentlyAcceptedInvitations = [accepted]
+      renderWithProviders(<HomepageContent />)
+
+      expect(await screen.findAllByTestId('invite-document-name')).toHaveLength(1)
+      expect(screen.getByTestId('invite-document-name')).toHaveTextContent('Invited document')
+    })
+
+    test('Hide a recently accepted invitation that the pending list holds as a new object', async () => {
+      // The SDK store replaces an invitation it locks for accepting, and every refetch builds new ones.
+      const accepted = createInvitation('invitation1', 'Accepted document')
+      mockInvitations = [{ ...accepted, isLocked: true }, createInvitation('invitation2', 'Invited document')]
+      mockRecentlyAcceptedInvitations = [accepted]
+      renderWithProviders(<HomepageContent />)
+
+      expect(await screen.findAllByTestId('invite-document-name')).toHaveLength(1)
+      expect(screen.getByTestId('invite-document-name')).toHaveTextContent('Invited document')
+    })
+
+    test('Do not reload the invitations when the table shows again', async () => {
+      mockInvitations = [createInvitation('invitation1', 'Invited document')]
+      const { rerenderWithFlow } = renderWithProviders(<HomepageContent />)
+      expect(await screen.findByTestId('invite-document-name')).toHaveTextContent('Invited document')
+
+      // A recents reload: the table unmounts behind the spinner, then shows again
+      rerenderWithFlow('delayed')
+      await screen.findByText(/Loading/)
+      expect(screen.queryByTestId('invite-document-name')).not.toBeInTheDocument()
+      expect(await screen.findByTestId('invite-document-name')).toHaveTextContent('Invited document')
+
+      // Back from the trash
+      rerenderWithFlow('trash')
+      await waitFor(() => expect(screen.queryByTestId('invite-document-name')).not.toBeInTheDocument())
+      rerenderWithFlow('one_document')
+      expect(await screen.findByTestId('invite-document-name')).toHaveTextContent('Invited document')
+
+      expect(mockReloadInvitations).not.toHaveBeenCalled()
+    })
+
+    test('Leave the invitations accepted earlier out of the collapsed rows and the button that expands them', async () => {
+      mockInvitations = [createInvitation('invitation1', 'First'), createInvitation('invitation2', 'Second')]
+      mockRecentlyAcceptedInvitations = [
+        createInvitation('invitation3', 'Accepted before'),
+        createInvitation('invitation4', 'Also accepted before'),
+      ]
+      renderWithProviders(<HomepageContent />)
+
+      expect(await screen.findAllByTestId('invite-row')).toHaveLength(2)
+      expect(screen.queryByText(/View all/)).not.toBeInTheDocument()
+    })
+
+    test('Show no invitations table when every invitation was recently accepted', async () => {
+      const accepted = createInvitation('invitation1', 'Accepted document')
+      mockInvitations = [accepted]
+      mockRecentlyAcceptedInvitations = [accepted]
+      renderWithProviders(<HomepageContent />, 'empty_recents')
+
+      await screen.findByText(/Create end-to-end encrypted documents and spreadsheets./)
+      expect(screen.queryByTestId('invites-table-container')).not.toBeInTheDocument()
     })
 
     describe('telemetry and logging', () => {
@@ -175,27 +237,27 @@ describe('HomepageContent', () => {
 
       beforeEach(() => {
         mockInvitations = [invitation]
-        mockAcceptInvite.mockReset()
-        mockRejectInvite.mockReset()
+        mockAcceptInvitation.mockReset()
+        mockDeclineInvitation.mockReset()
         mockOpenInvitedDocument.mockReset()
         mockReportTelemetry.mockReset()
         mockLogger.error.mockReset()
       })
 
       test('reports invite.accepted and opens the document when an invitation is accepted', async () => {
-        mockAcceptInvite.mockResolvedValue(undefined)
+        mockAcceptInvitation.mockResolvedValue(undefined)
         renderWithProviders(<HomepageContent />)
 
         fireEvent.click(within(await screen.findByTestId('invite-actions-cell')).getByTestId('accept-invite-button'))
 
         await waitFor(() => expect(mockReportTelemetry).toHaveBeenCalledWith(TelemetryEvent.invite_accepted))
-        expect(mockAcceptInvite).toHaveBeenCalledWith(invitation)
+        expect(mockAcceptInvitation).toHaveBeenCalledWith(invitation)
         expect(mockOpenInvitedDocument).toHaveBeenCalledWith(invitation)
         expect(mockLogger.error).not.toHaveBeenCalled()
       })
 
       test('logs an error and reports nothing when accepting an invitation fails', async () => {
-        mockAcceptInvite.mockRejectedValue(new Error('Network error'))
+        mockAcceptInvitation.mockRejectedValue(new Error('Network error'))
         renderWithProviders(<HomepageContent />)
 
         fireEvent.click(within(await screen.findByTestId('invite-actions-cell')).getByTestId('accept-invite-button'))
@@ -206,18 +268,18 @@ describe('HomepageContent', () => {
       })
 
       test('reports invite.rejected when an invitation is declined', async () => {
-        mockRejectInvite.mockResolvedValue(undefined)
+        mockDeclineInvitation.mockResolvedValue(undefined)
         renderWithProviders(<HomepageContent />)
 
         fireEvent.click(within(await screen.findByTestId('invite-actions-cell')).getByTestId('reject-invite-button'))
 
         await waitFor(() => expect(mockReportTelemetry).toHaveBeenCalledWith(TelemetryEvent.invite_rejected))
-        expect(mockRejectInvite).toHaveBeenCalledWith(invitation)
+        expect(mockDeclineInvitation).toHaveBeenCalledWith(invitation)
         expect(mockLogger.error).not.toHaveBeenCalled()
       })
 
       test('logs an error and reports nothing when declining an invitation fails', async () => {
-        mockRejectInvite.mockRejectedValue(new Error('Network error'))
+        mockDeclineInvitation.mockRejectedValue(new Error('Network error'))
         renderWithProviders(<HomepageContent />)
 
         fireEvent.click(within(await screen.findByTestId('invite-actions-cell')).getByTestId('reject-invite-button'))
@@ -869,14 +931,18 @@ describe('HomepageContent', () => {
           state,
           type: undefined,
           myFilesRootUid: mockMyFilesRootUid,
-          useDocInvites: useMockDocInvites,
+          pendingInvitations: mockInvitations,
+          recentlyAcceptedInvitations: mockRecentlyAcceptedInvitations,
+          acceptInvitation: mockAcceptInvitation,
+          declineInvitation: mockDeclineInvitation,
+          reloadInvitations: mockReloadInvitations,
           reportTelemetry: mockReportTelemetry,
           logger: mockLogger,
           createNotification: jest.fn(),
           getAppHref: (path) => path,
           dateFormatter: new DateFormatter('en-US'),
           errorTracking: { traceError: jest.fn(), addBreadcrumb: jest.fn(), isReportable: () => true },
-          featureFlags: { invitationsSdk: false, bulkTrash: bulkTrashEnabled, bulkMove: bulkMoveEnabled },
+          featureFlags: { bulkTrash: bulkTrashEnabled, bulkMove: bulkMoveEnabled },
         }}
       >
         {children}
@@ -892,14 +958,16 @@ describe('HomepageContent', () => {
     const mockOpenParent = jest.fn()
     const mockTrash = jest.fn()
 
-    render(
-      <HomepageViewMockProvider flow={flow}>
+    const withProviders = (withFlow: typeof flow) => (
+      <HomepageViewMockProvider flow={withFlow}>
         <DocumentActionsMockProvider mockOpen={mockOpen} mockOpenParent={mockOpenParent} mockTrash={mockTrash}>
           {node}
         </DocumentActionsMockProvider>
-      </HomepageViewMockProvider>,
+      </HomepageViewMockProvider>
     )
-    return { mockOpen, mockOpenParent, mockTrash }
+    const { rerender } = render(withProviders(flow))
+    const rerenderWithFlow = (newFlow: typeof flow) => rerender(withProviders(newFlow))
+    return { mockOpen, mockOpenParent, mockTrash, rerenderWithFlow }
   }
 
   function checkRowContents(

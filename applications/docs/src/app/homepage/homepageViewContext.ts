@@ -1,7 +1,12 @@
 import { createContext, useContext } from 'react'
 
 import type { RecentDocumentsItem } from './recentDocumentsItem'
-import type { ExtendedInvitationDetails } from './invitationTypes'
+import type {
+  AcceptInvitation,
+  DeclineInvitation,
+  ExtendedInvitationDetails,
+  ReloadInvitations,
+} from './invitationTypes'
 import type { ProtonDocumentType } from './utils/mimetype'
 
 import type { Logger } from './utils/logger'
@@ -40,14 +45,6 @@ export type HomepageViewState =
   | { view: 'trash-loading' }
   | { view: 'trash'; itemSections: ItemsSection[] }
 
-export type DocInvitesHook = () => {
-  invitations: ExtendedInvitationDetails[]
-  recentlyAcceptedInvites: ExtendedInvitationDetails[]
-  acceptInvite: (invitation: ExtendedInvitationDetails) => Promise<unknown>
-  rejectInvite: (invitation: ExtendedInvitationDetails) => Promise<void>
-  confirmModal: JSX.Element | null
-}
-
 export type HomepageViewValue = {
   state: HomepageViewState
   setRecentsSort: (value: RecentsSort) => void
@@ -60,10 +57,11 @@ export type HomepageViewValue = {
   myFilesRootUid?: string
   /** Only with recents loaded through the Drive SDK. */
   updateMovedDocuments?: (nodeUids: string[]) => Promise<void>
-  /**
-   * Hooks can't be swapped in place, `InvitesTable` remounts when the invitations flag changes.
-   */
-  useDocInvites: DocInvitesHook
+  pendingInvitations: ExtendedInvitationDetails[]
+  recentlyAcceptedInvitations: ExtendedInvitationDetails[]
+  acceptInvitation: AcceptInvitation
+  declineInvitation: DeclineInvitation
+  reloadInvitations: ReloadInvitations
   reportTelemetry: ReportTelemetry
   logger: Logger
   createNotification: CreateNotification

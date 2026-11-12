@@ -42,3 +42,12 @@ export interface ExtendedInvitationDetails extends ShareInvitationDetails {
   decryptedLinkName?: string
   isLocked?: boolean
 }
+
+/** Rejects when accepting fails. */
+export type AcceptInvitation = (invitation: ExtendedInvitationDetails) => Promise<unknown>
+
+/** Asks the user to confirm in a modal the host renders, then declines the invitation. */
+export type DeclineInvitation = (invitation: ExtendedInvitationDetails) => Promise<void>
+
+/** The reloaded invitations arrive through the invitation props. */
+export type ReloadInvitations = () => void

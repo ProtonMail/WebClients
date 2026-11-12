@@ -17,7 +17,11 @@ export default function HomepagePage({
   drive,
   eventSubscriber,
   coreEventSubscriber,
-  useDocInvites,
+  pendingInvitations,
+  recentlyAcceptedInvitations,
+  acceptInvitation,
+  declineInvitation,
+  reloadInvitations,
   api,
   logger,
   reportTelemetry,
@@ -26,8 +30,8 @@ export default function HomepagePage({
   dateLocaleCode,
   errorTracking,
   featureFlags,
-  useSharingModal,
-  useMoveItemsModal,
+  openShareModal,
+  openMoveItemsModal,
   reportDescriptionContext,
   quickSettings,
   appVersion,
@@ -37,7 +41,11 @@ export default function HomepagePage({
       drive={drive}
       eventSubscriber={eventSubscriber}
       coreEventSubscriber={coreEventSubscriber}
-      useDocInvites={useDocInvites}
+      pendingInvitations={pendingInvitations}
+      recentlyAcceptedInvitations={recentlyAcceptedInvitations}
+      acceptInvitation={acceptInvitation}
+      declineInvitation={declineInvitation}
+      reloadInvitations={reloadInvitations}
       api={api}
       logger={logger}
       reportTelemetry={reportTelemetry}
@@ -47,7 +55,7 @@ export default function HomepagePage({
       errorTracking={errorTracking}
       featureFlags={featureFlags}
     >
-      <DocumentActionsProvider drive={drive} useSharingModal={useSharingModal} useMoveItemsModal={useMoveItemsModal}>
+      <DocumentActionsProvider drive={drive} openShareModal={openShareModal} openMoveItemsModal={openMoveItemsModal}>
         {/* The header's offers (useFetchOffer in @proton/components) read their renewal notice from it */}
         <OfferRenewNoticeProvider>
           <HomepageLayout
