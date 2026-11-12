@@ -541,7 +541,7 @@
         "Перемістити до смітника"
       ],
       "New": [
-        "Додати"
+        "Створити"
       ],
       "New document": [
         "Новий документ"
@@ -1334,6 +1334,12 @@
       ],
       "Subscribe": [
         "Підписатися"
+      ],
+      "About ${ name }": [
+        "Про ${ name }"
+      ],
+      "Add ${ name }": [
+        "Додати ${ name }"
       ]
     },
     "Actions": {
@@ -1521,6 +1527,9 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Гарантія повернення коштів протягом 30 днів"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Гарантія повернення коштів протягом 30 днів. Ви можете скасувати покупку протягом 30 днів і звернутися до ${ customerSupportLink } для повернення коштів."
       ]
     },
     "bf2023: Tooltip": {
@@ -7697,6 +7706,15 @@
       ],
       "We'll get back to you shortly.": [
         "Ми незабаром з вами зв'яжемося."
+      ],
+      "${ claimedAuthor } (unverified sender)": [
+        "${ claimedAuthor } (неперевірений відправник)"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Гарантія повернення коштів протягом 30 днів. Ви можете скасувати покупку протягом 30 днів і звернутися до ${ customerSupportLink } для повернення коштів."
+      ],
+      "UnionPay logo": [
+        "Логотип UnionPay"
       ]
     },
     "info": {
@@ -8776,6 +8794,9 @@
       ],
       "Terms and conditions": [
         "Умови та положення"
+      ],
+      "Customer Support": [
+        "Клієнтська підтримка"
       ]
     },
     "List title": {
@@ -11234,6 +11255,18 @@
       ],
       "Pay with ${ IDEAL_BRAND_NAME }": [
         "Оплатити за допомогою ${ IDEAL_BRAND_NAME }"
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Власники чинної передплати не мають можливості придбати облікові записи Born Private."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Для участі в програмі Born Private необхідна пожертва."
+      ],
+      "You already own a Born Private account.": [
+        "Ви вже маєте обліковий запис Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Ваш обліковий запис надто давній для участі в програмі Born Private."
       ]
     },
     "Payments.Error": {
@@ -15286,6 +15319,9 @@
       ],
       "Upgrade to a supported plan to use admin roles.": [
         "Перейдіть на тарифний план, що підтримує цю функцію, щоб користуватися ролями адміністратора."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Цей користувач отримає права адміністратора при наступному вході."
       ]
     },
     "Role": {
