@@ -22,8 +22,8 @@ const DOWNLOAD_URL = 'https://proton.me/meet/download';
 export const OpenInDesktopApp = () => {
     const meetingLink = useMeetSelector(selectMeetingLink);
     const desktopAppPreferenceStorageKey = useDesktopAppPreferenceStorageKey();
-    const launchedOnLoad = useLaunchDesktopAppOnLoad();
-    const [isAppDidNotOpenHintVisible, setIsAppDidNotOpenHintVisible] = useState(launchedOnLoad);
+    useLaunchDesktopAppOnLoad();
+    const [isAppDidNotOpenHintVisible, setIsAppDidNotOpenHintVisible] = useState(false);
 
     useSendOnce(() => sendMeetActionsEvent(TelemetryMeetActionsEvents.desktop_app_banner_shown));
 

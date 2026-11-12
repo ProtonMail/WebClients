@@ -291,12 +291,12 @@ describe.each([
             expect(screen.getByRole('button', { name: 'Join in browser' })).toBeEnabled();
         });
 
-        it('opens the app on load when the choice was remembered', () => {
+        it('opens the app on load without the hint and keeps joining in the browser available when the choice was remembered', () => {
             saveDesktopAppPreference(USER_STORAGE_KEY);
             renderPreJoinDetails();
 
             expect(tryOpenInDesktopApp).toHaveBeenCalledWith(MEETING_LINK);
-            expect(screen.getByText("App didn't open?")).toBeInTheDocument();
+            expect(screen.queryByText("App didn't open?")).not.toBeInTheDocument();
             expect(screen.getByRole('button', { name: 'Join in browser' })).toBeEnabled();
         });
 

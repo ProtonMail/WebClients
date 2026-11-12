@@ -21,6 +21,4 @@ export const useLaunchDesktopAppOnLoad = () => {
             tryOpenInDesktopApp(meetingLink);
         }
     }, [launchedOnLoad, meetingLink]);
-
-    return launchedOnLoad;
 };

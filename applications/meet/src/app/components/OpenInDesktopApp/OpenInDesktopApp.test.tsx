@@ -113,7 +113,7 @@ describe('OpenInDesktopApp', () => {
         });
     });
 
-    it('opens the app on load and shows the hint when the choice was remembered', () => {
+    it('opens the app on load without the hint when the choice was remembered', () => {
         getDesktopAppPreferenceMock.mockReturnValue(true);
 
         render(<OpenInDesktopApp />);
@@ -121,7 +121,19 @@ describe('OpenInDesktopApp', () => {
         expect(getDesktopAppPreferenceMock).toHaveBeenCalledWith('openInDesktopApp.user.user-1');
         expect(tryOpenInDesktopApp).toHaveBeenCalledTimes(1);
         expect(tryOpenInDesktopApp).toHaveBeenCalledWith(MEETING_LINK);
+        expect(screen.queryByText(HINT_TITLE)).not.toBeInTheDocument();
+    });
+
+    it('shows the hint and opens the app again on a click after the load opened it', () => {
+        getDesktopAppPreferenceMock.mockReturnValue(true);
+        render(<OpenInDesktopApp />);
+        expect(screen.queryByText(HINT_TITLE)).not.toBeInTheDocument();
+
+        fireEvent.click(screen.getByRole('button', { name: JOIN_FROM_APP }));
+
         expect(screen.getByText(HINT_TITLE)).toBeInTheDocument();
+        expect(tryOpenInDesktopApp).toHaveBeenCalledTimes(2);
+        expect(tryOpenInDesktopApp).toHaveBeenNthCalledWith(2, MEETING_LINK);
     });
 
     it('opens the app on load only once across re-renders', () => {
