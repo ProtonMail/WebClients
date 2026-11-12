@@ -7,7 +7,7 @@ import { useFido2Action } from './useFido2Action';
 
 jest.mock('@proton/shared/lib/helpers/sentry', () => ({ captureMessage: jest.fn() }));
 
-const fail = async (error: unknown, afterMs: number) => {
+const fail = async (error: Error, afterMs: number) => {
     const { result } = renderHook(() => useFido2Action());
     await act(async () => {
         const run = result.current.runFido2Action(
@@ -17,6 +17,7 @@ const fail = async (error: unknown, afterMs: number) => {
         jest.advanceTimersByTime(afterMs);
         await expect(run).rejects.toBe(error);
     });
+    expect(result.current.fidoError).toBe(error.name);
     return jest.mocked(captureMessage).mock.calls[0][1];
 };
 
