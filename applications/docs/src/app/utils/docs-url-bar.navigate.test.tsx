@@ -5,23 +5,19 @@ import { CompatRouter } from 'react-router-dom-v5-compat'
 
 import AuthenticationContext from '@proton/components/containers/authentication/authenticationContext'
 import type { DocumentAction } from '@proton/docs-shared/DocumentAction'
+import { setLocation } from '@proton/jest-env/setLocation'
+import { assignUrl } from '@proton/shared/lib/helpers/location'
 
 import { DocsUrlContextProvider, useDocsUrlBar } from './docs-url-bar'
 
 jest.mock('./flags', () => ({ useIsSheetsEnabled: () => true }))
+jest.mock('@proton/shared/lib/helpers/location')
 
 const ORIGIN = 'https://docs.proton.dev'
 
 describe('navigateToAction', () => {
-  const originalLocation = window.location
-  const assign = jest.fn()
-
   beforeEach(() => {
-    assign.mockClear()
-  })
-
-  afterAll(() => {
-    Object.defineProperty(window, 'location', { value: originalLocation, writable: true })
+    jest.mocked(assignUrl).mockClear()
   })
 
   describe('back to the public context', () => {
@@ -59,9 +55,7 @@ describe('navigateToAction', () => {
   })
 
   function navigate(path: string, action: DocumentAction, context: 'private' | 'public' = 'public') {
-    const href = `${ORIGIN}${path}`
-    const { pathname } = new URL(href)
-    Object.defineProperty(window, 'location', { value: { href, origin: ORIGIN, pathname, assign }, writable: true })
+    setLocation(`${ORIGIN}${path}`)
 
     const wrapper = ({ children }: { children: ReactNode }) => (
       <AuthenticationContext.Provider value={{ getLocalID: () => 1 } as any}>
@@ -76,6 +70,6 @@ describe('navigateToAction', () => {
 
     result.current.navigateToAction(action, context)
 
-    return new URL(assign.mock.lastCall[0])
+    return new URL(jest.mocked(assignUrl).mock.lastCall![0])
   }
 })

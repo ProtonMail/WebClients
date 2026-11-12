@@ -35,6 +35,8 @@ class MyEnvironment extends JSDOMEnvironment {
             },
             context
         );
+        // For ./setLocation.js: tests cannot reach the JSDOM instance otherwise.
+        this.global.jsdom = this.dom;
     }
 
     async setup() {} // eslint-disable-line

@@ -1,3 +1,5 @@
+import { setLocation } from '@proton/jest-env/setLocation';
+
 import { LUMO_ROUTES } from '../entrypoint/lumoRoutes';
 import { setPaperTrailLocalSaveEnabled } from './paperTrailLocalSavePreference';
 import { getPaperTrailReport, savePaperTrailReport } from './paperTrailReportStorage';
@@ -8,10 +10,7 @@ const STORAGE_KEY = 'lumo-ai-paper-trail-test';
 describe('paperTrailStorage', () => {
     beforeEach(() => {
         localStorage.clear();
-        Object.defineProperty(window, 'location', {
-            configurable: true,
-            value: { ...window.location, pathname: LUMO_ROUTES.AI_PAPER_TRAIL },
-        });
+        setLocation(LUMO_ROUTES.AI_PAPER_TRAIL);
     });
 
     it('stores paper trail data as scoped plaintext JSON when local save is enabled', () => {

@@ -8,6 +8,8 @@ import { ConfigContext } from '@proton/app-context/configContext'
 import AuthenticationContext from '@proton/components/containers/authentication/authenticationContext'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import { getDrive } from '@proton/drive/sdk'
+import { setLocation } from '@proton/jest-env/setLocation'
+import { assignUrl } from '@proton/shared/lib/helpers/location'
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype'
 
@@ -24,6 +26,7 @@ jest.mock('~/utils/flags', () => ({
   useDriveCompatSDK: () => mockIsDriveCompatSDK,
   useIsDarkThemeEnabled: () => false,
 }))
+jest.mock('@proton/shared/lib/helpers/location')
 jest.mock('@proton/account/userSettings/hooks', () => ({ useGetUserSettings: () => async () => ({}) }))
 jest.mock('@proton/account/user/hooks', () => ({ useUser: () => [{ DisplayName: '', Name: 'member', Email: '' }] }))
 // The app shell and its headers need the whole app around them
@@ -57,9 +60,6 @@ const getNodeHierarchy = jest.fn(async () => [])
 const getMyFilesRootFolder = jest.fn()
 
 describe('DocumentPageV2', () => {
-  const originalLocation = window.location
-  const assign = jest.fn()
-
   beforeEach(() => {
     mockIsDriveCompatSDK = false
     jest.mocked(getDrive).mockReturnValue({
@@ -76,10 +76,6 @@ describe('DocumentPageV2', () => {
   afterEach(() => {
     jest.clearAllMocks()
     jest.useRealTimers()
-  })
-
-  afterAll(() => {
-    Object.defineProperty(window, 'location', { value: originalLocation, writable: true })
   })
 
   test('a bare /doc2 creates a document', async () => {
@@ -123,7 +119,7 @@ describe('DocumentPageV2', () => {
   test('open-url-reauth goes back to the public document', () => {
     renderAt('/u/1/doc2?mode=open-url-reauth&token=TOKEN&linkId=LINK', '#urlPassword')
 
-    const url = new URL(assign.mock.lastCall[0])
+    const url = new URL(jest.mocked(assignUrl).mock.lastCall![0])
     expect(url.pathname).toBe('/doc')
     expect(url.searchParams.get('mode')).toBe('open-url')
     expect(url.searchParams.get('token')).toBe('TOKEN')
@@ -309,12 +305,7 @@ describe('DocumentPageV2', () => {
   }
 
   function renderAt(path: string, hash = '') {
-    const href = `${ORIGIN}${path}${hash}`
-    const { pathname, host, hostname, protocol, port } = new URL(href)
-    Object.defineProperty(window, 'location', {
-      value: { href, origin: ORIGIN, pathname, hash, host, hostname, protocol, port, assign },
-      writable: true,
-    })
+    setLocation(`${ORIGIN}${path}${hash}`)
     const application = {
       logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn() },
     } as unknown as ApplicationProviderProps['application']

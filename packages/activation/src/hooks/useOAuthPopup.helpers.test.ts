@@ -1,4 +1,4 @@
-import { mockWindowLocation, resetWindowLocation } from '@proton/components/helpers/url.test.helpers';
+import { setLocation } from '@proton/jest-env/setLocation';
 import { GOOGLE_OAUTH_PATH } from '@proton/shared/lib/api/activation';
 
 import { getScopeFromProvider } from '../components/Modals/OAuth/OAuthModal.helpers';
@@ -52,39 +52,21 @@ describe('OAuth url generation', () => {
     });
 
     it('Should return appropriate Google redirect URL', () => {
-        Object.defineProperty(window, 'location', {
-            configurable: true,
-            enumerable: true,
-            value: new URL(window.location.href),
-        });
-        const expectedUrl = 'https://www.protontesting.com/mypath';
-        window.location.href = expectedUrl;
+        setLocation('https://www.protontesting.com/mypath');
 
         const redirectUrl = getOAuthRedirectURL(ImportProvider.GOOGLE);
         expect(redirectUrl).toStrictEqual('https://www.protontesting.com/oauth/callback');
     });
 
     it('Should return appropriate Outlook redirect URL', () => {
-        Object.defineProperty(window, 'location', {
-            configurable: true,
-            enumerable: true,
-            value: new URL(window.location.href),
-        });
-        const expectedUrl = 'https://www.protontesting.com/mypath';
-        window.location.href = expectedUrl;
+        setLocation('https://www.protontesting.com/mypath');
 
         const redirectUrl = getOAuthRedirectURL(ImportProvider.OUTLOOK);
         expect(redirectUrl).toStrictEqual('https://www.protontesting.com/oauth/callback');
     });
 
     it('Should return appropriate Zoom redirect URL', () => {
-        Object.defineProperty(window, 'location', {
-            configurable: true,
-            enumerable: true,
-            value: new URL(window.location.href),
-        });
-        const expectedUrl = 'https://www.protontesting.com/mypath';
-        window.location.href = expectedUrl;
+        setLocation('https://www.protontesting.com/mypath');
 
         const redirectUrl = getOAuthRedirectURL(OAUTH_PROVIDER.ZOOM);
         expect(redirectUrl).toStrictEqual('https://www.protontesting.com/oauth/callback');
@@ -177,11 +159,11 @@ describe('OAuth url generation', () => {
 
     describe('generateGoogleOAuthUrl', () => {
         beforeEach(() => {
-            mockWindowLocation(windowHostname);
+            setLocation(windowHostname);
         });
 
         afterEach(() => {
-            resetWindowLocation();
+            setLocation('http://localhost/');
         });
 
         it('Should return appropriate Google OAuth URL', () => {

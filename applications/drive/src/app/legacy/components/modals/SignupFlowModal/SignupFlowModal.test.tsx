@@ -4,6 +4,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { verifyAllWhenMocksCalled, when } from 'jest-when';
 
 import { useApi } from '@proton/app-context/useApi';
+import { setLocation } from '@proton/jest-env/setLocation';
 import localStorageWithExpiry from '@proton/shared/lib/api/helpers/localStorageWithExpiry';
 import { DRIVE_SIGNIN, DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -17,6 +18,7 @@ jest.mock('@proton/app-context/useApi');
 const mockedUseApi = jest.mocked(useApi);
 
 jest.mock('@proton/shared/lib/helpers/browser');
+jest.mock('@proton/shared/lib/helpers/location');
 const mockedReplaceUrl = jest.mocked(replaceUrl);
 
 jest.mock('../../../../legacy/hooks/drive/usePublicToken');
@@ -35,30 +37,18 @@ const ResizeObserverMock = jest.fn(() => ({
 }));
 
 describe('SignupFlowModal', () => {
-    const assignMock = jest.fn();
-    const originalWindowLocation = window.location;
     const originalResizeObserver = window.ResizeObserver;
-    const locationMock = {
-        pathname: '/urls/mockpath',
-        hash: '#mockhash',
-        search: '',
-        assign: assignMock,
-    };
 
     beforeAll(() => {
         Object.defineProperty(window, 'ResizeObserver', {
             value: ResizeObserverMock,
             writable: true,
         });
-        Object.defineProperty(window, 'location', {
-            value: locationMock,
-            writable: true,
-        });
+        setLocation('/urls/mockpath#mockhash');
     });
 
     afterEach(() => {
         localStorageWithExpiry.deleteData(PUBLIC_SHARE_REDIRECT_PASSWORD_STORAGE_KEY);
-        assignMock.mockClear();
     });
 
     afterAll(() => {
@@ -66,10 +56,6 @@ describe('SignupFlowModal', () => {
         Object.defineProperty(window, 'ResizeObserver', {
             value: originalResizeObserver,
             writable: true,
-        });
-        Object.defineProperty(window, 'location', {
-            writable: true,
-            value: originalWindowLocation,
         });
     });
 

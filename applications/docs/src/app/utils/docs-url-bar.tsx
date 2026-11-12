@@ -7,6 +7,7 @@ import useEffectOnce from '@proton/hooks/useEffectOnce'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper'
 import { APPS } from '@proton/shared/lib/constants'
+import { assignUrl } from '@proton/shared/lib/helpers/location'
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import { useLocation } from 'react-router-dom-v5-compat'
@@ -122,7 +123,7 @@ export function DocsUrlContextProvider({ children }: { children: React.ReactNode
     }
 
     void OpenTracer.trace('boot_docs_url_bar_navigate_to_action', { mode: action.mode, newUrl: newUrl.pathname })
-    window.location.assign(newUrl.toString())
+    assignUrl(newUrl.toString())
   }, [])
 
   const removeActionFromUrl = useCallback(() => {
@@ -148,7 +149,7 @@ export function DocsUrlContextProvider({ children }: { children: React.ReactNode
       (openAction?.mode === 'create' || openAction?.mode === 'new')
     ) {
       void OpenTracer.trace('boot_docs_url_bar_is_sheets_enabled_false')
-      window.location.assign(getAppHref('/', APPS.PROTONDOCS, getLocalID()))
+      assignUrl(getAppHref('/', APPS.PROTONDOCS, getLocalID()))
       return
     }
   })

@@ -1,30 +1,11 @@
+import { setLocation } from '@proton/jest-env/setLocation';
+
 import { replaceLocalURL } from './replaceLocalURL';
 
-const replaceLocation = (href: string) => {
-    window = Object.create(window);
-
-    const url = new URL(href);
-
-    Object.defineProperty(window, 'location', {
-        value: {
-            hostname: url.hostname,
-            host: url.host,
-        },
-        writable: true, // possibility to override
-    });
-};
-
 describe('replaceLocalURL', () => {
-    const realLocation = window.location;
-
-    afterEach(() => {
-        // @ts-ignore
-        window.location = realLocation;
-    });
-
     describe('localhost', () => {
         beforeEach(() => {
-            replaceLocation('https://localhost:8080/u/0');
+            setLocation('https://localhost:8080/u/0');
         });
 
         it('should not replace local URLs', () => {
@@ -36,7 +17,7 @@ describe('replaceLocalURL', () => {
 
     describe('proton.me', () => {
         beforeEach(() => {
-            replaceLocation('https://drive.proton.me/u/0');
+            setLocation('https://drive.proton.me/u/0');
         });
 
         it('should not replace local URLs', () => {
@@ -48,7 +29,7 @@ describe('replaceLocalURL', () => {
 
     describe('proton.dev', () => {
         beforeEach(() => {
-            replaceLocation('https://drive.proton.dev/u/0');
+            setLocation('https://drive.proton.dev/u/0');
         });
 
         [
@@ -68,7 +49,7 @@ describe('replaceLocalURL', () => {
 
     describe('proton.dev:8888', () => {
         beforeEach(() => {
-            replaceLocation('https://drive.proton.dev:8888/u/0');
+            setLocation('https://drive.proton.dev:8888/u/0');
         });
 
         [

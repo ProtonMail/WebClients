@@ -8,6 +8,7 @@ import { getWebSocketServerURL } from './getWebSocketServerURL'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { WebsocketCallbacks } from '@proton/docs-shared/Realtime/WebsocketCallbacks'
 import { ApiResult } from '@proton/docs-shared/ApiResult'
+import { setLocation } from '@proton/jest-env/setLocation'
 import { Result } from '@proton/docs-shared/Result'
 import { MetricService } from '../Services/Metrics/MetricService'
 import type { Api } from '@proton/shared/lib/interfaces/Api'
@@ -17,11 +18,6 @@ import type { FetchRealtimeToken } from '../UseCase/FetchRealtimeToken'
 import { LoadLogger } from '../LoadLogger/LoadLogger'
 import type { DocumentEntitlements } from '../Types/DocumentEntitlements'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
-
-const setWindowLocationHref = (href: string) => {
-  delete (window as any).location
-  ;(window as any).location = new URL(href)
-}
 
 describe('WebsocketConnection', () => {
   let connection: WebsocketConnection
@@ -431,17 +427,17 @@ describe('WebsocketConnection', () => {
 
   describe('getWebSocketServerURL', () => {
     test('should add docs-rts subdomain if there is no subdomain', () => {
-      setWindowLocationHref('https://proton.me')
+      setLocation('https://proton.me')
       expect(getWebSocketServerURL()).toBe('wss://docs-rts.proton.me/websockets')
     })
 
     test('should replace first subdomain with docs-rts', () => {
-      setWindowLocationHref('https://docs-editor.proton.me')
+      setLocation('https://docs-editor.proton.me')
       expect(getWebSocketServerURL()).toBe('wss://docs-rts.proton.me/websockets')
     })
 
     test('should replace first subdomain with docs-rts for multiple subdomains', () => {
-      setWindowLocationHref('https://docs.hutton.proton.black')
+      setLocation('https://docs.hutton.proton.black')
       expect(getWebSocketServerURL()).toBe('wss://docs-rts.hutton.proton.black/websockets')
     })
   })

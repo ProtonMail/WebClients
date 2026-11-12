@@ -1,3 +1,5 @@
+import { setLocation } from '@proton/jest-env/setLocation';
+
 import { getTokenFromSearchParams, tokenIsValid } from './token';
 
 describe('URL Token Functions', () => {
@@ -17,26 +19,10 @@ describe('URL Token Functions', () => {
     });
 
     describe('getTokenFromSearchParams', () => {
-        const originalWindowLocation = window.location;
-
-        beforeEach(() => {
-            Object.defineProperty(window, 'location', {
-                writable: true,
-                value: { ...originalWindowLocation, search: '' },
-            });
-        });
-
-        afterEach(() => {
-            Object.defineProperty(window, 'location', {
-                writable: true,
-                value: originalWindowLocation,
-            });
-        });
-
         it('should return valid token from search params', () => {
             const searchParams = new URLSearchParams();
             searchParams.append('token', 'abcd123456');
-            window.location.search = searchParams.toString();
+            setLocation(`?${searchParams.toString()}`);
 
             expect(getTokenFromSearchParams()).toBe('abcd123456');
         });
@@ -44,7 +30,7 @@ describe('URL Token Functions', () => {
         it('should return undefined for invalid token', () => {
             const searchParams = new URLSearchParams();
             searchParams.append('token', 'https://token');
-            window.location.search = searchParams.toString();
+            setLocation(`?${searchParams.toString()}`);
 
             expect(getTokenFromSearchParams()).toBeUndefined();
         });
@@ -52,7 +38,7 @@ describe('URL Token Functions', () => {
         it('should return undefined when token is missing', () => {
             const searchParams = new URLSearchParams();
             searchParams.append('other', 'param');
-            window.location.search = searchParams.toString();
+            setLocation(`?${searchParams.toString()}`);
 
             expect(getTokenFromSearchParams()).toBeUndefined();
         });

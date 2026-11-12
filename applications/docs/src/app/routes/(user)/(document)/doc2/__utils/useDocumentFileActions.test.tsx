@@ -4,6 +4,7 @@ import type { ReactNode } from 'react'
 
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
 import { type NodeEntity, getDrive } from '@proton/drive/sdk'
+import { assignUrl } from '@proton/shared/lib/helpers/location'
 import { getNewWindow } from '@proton/shared/lib/helpers/window'
 import { DocsApiError, SeedError } from '@proton-docs/realtime-sdk'
 
@@ -23,6 +24,7 @@ jest.mock('@proton/drive/public/moveItemsModal', () => ({
   useMoveItemsModal: () => ({ moveItemsModal: <div>Move modal</div>, showMoveItemsModal: mockShowMoveItemsModal }),
 }))
 jest.mock('@proton/drive/sdk', () => ({ ...jest.requireActual('@proton/drive/sdk'), getDrive: jest.fn() }))
+jest.mock('@proton/shared/lib/helpers/location')
 jest.mock('@proton/shared/lib/helpers/window', () => ({ getNewWindow: jest.fn() }))
 jest.mock('@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName', () => ({
   getPlatformFriendlyDateForFileName: () => '2026-11-10 09.00.00',
@@ -594,19 +596,12 @@ describe('useDocumentFileActions', () => {
     )
 
     test('Go to Drive opens the Drive root in this window', async () => {
-      const assign = jest.fn()
-      const location = window.location
-      Object.defineProperty(window, 'location', { configurable: true, value: { ...location, assign } })
-      try {
-        const { result } = renderActions({ node: TRASHED_NODE })
-        renderModals(result.current)
+      const { result } = renderActions({ node: TRASHED_NODE })
+      renderModals(result.current)
 
-        await userEvent.click(screen.getByRole('button', { name: 'Go to Drive', hidden: true }))
+      await userEvent.click(screen.getByRole('button', { name: 'Go to Drive', hidden: true }))
 
-        expect(assign).toHaveBeenCalledWith('http://drive.localhost/u/3')
-      } finally {
-        Object.defineProperty(window, 'location', { configurable: true, value: location })
-      }
+      expect(assignUrl).toHaveBeenCalledWith('http://drive.localhost/u/3')
     })
 
     test('a role dropping from Admin takes the restore button away', () => {
