@@ -1,13 +1,13 @@
 import type { ReactNode, RefObject } from 'react';
 import { useCallback } from 'react';
 
+import Dropzone from '@proton/components/components/dropzone/Dropzone';
+import type { DropzoneContentProps } from '@proton/components/components/dropzone/DropzoneContent';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import Dropzone from '../dropzone/Dropzone';
-import type { DropzoneContentProps } from '../dropzone/DropzoneContent';
 import { EDITOR_DEFAULT_METADATA } from './constants';
 import type { ToolbarConfig } from './helpers/getToolbarConfig';
 import type { EditorActions, EditorMetadata, SetEditorToolbarConfig } from './interface';

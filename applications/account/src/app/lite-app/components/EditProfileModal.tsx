@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { updateAddressThunk } from '@proton/account/addresses/updateAddress';
 import { Button } from '@proton/atoms/Button/Button';
-import SimpleEditor from '@proton/components/components/editor/SimpleEditor';
 import Form from '@proton/components/components/form/Form';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -17,6 +16,7 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import type { SimpleEditorActions } from '@proton/components/containers/editor/SimpleEditorContext';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
+import SimpleEditor from '@proton/mail-composer/components/editor/SimpleEditor';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 

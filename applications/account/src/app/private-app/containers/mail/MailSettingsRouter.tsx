@@ -3,7 +3,6 @@ import { useRef } from 'react';
 import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import SimpleEditor from '@proton/components/components/editor/SimpleEditor';
 import AddressesSection from '@proton/components/containers/addresses/AddressesSection';
 import AliasPromotionSection from '@proton/components/containers/addresses/AliasPromotionSection';
 import IdentitySection from '@proton/components/containers/addresses/IdentitySection';
@@ -38,9 +37,12 @@ import { ExternalPGPSettingsSection } from '@proton/components/containers/securi
 import SMTPSubmissionSection from '@proton/components/containers/smtp/SMTPSubmissionSection';
 import useIsInboxElectronApp from '@proton/components/hooks/useIsInboxElectronApp';
 import { useLoadAllowedTimeZones } from '@proton/components/hooks/useLoadAllowedTimeZones';
+import { EditorHostProvider } from '@proton/mail-composer/components/editor/EditorHost';
+import SimpleEditor from '@proton/mail-composer/components/editor/SimpleEditor';
 import { useFolders } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
+import { mailEditorHost } from '../../../mailEditorHost';
 import type { getMailAppRoutes } from './routes';
 import { getHasPmMeAddress } from './routes';
 import { CategoriesViewSections } from './sections/CategoriesViewSections';
@@ -66,100 +68,102 @@ const MailSettingsRouter = ({
     } = mailAppRoutes;
 
     return (
-        <SimpleEditorProvider editor={SimpleEditor}>
-            <Switch>
-                <Route path={getSectionPath(path, general)}>
-                    {loadingAddresses && !Array.isArray(addresses) ? (
-                        <PrivateMainAreaLoading />
-                    ) : (
-                        <PrivateMainSettingsArea config={general}>
-                            <MessagesGeneralSection />
-                            <CategoriesViewSections />
-                            <LayoutsSection />
-                            <MessagesSection />
-                            <MessagesOtherSection />
-                            <OtherMailPreferencesSection />
+        <EditorHostProvider host={mailEditorHost}>
+            <SimpleEditorProvider editor={SimpleEditor}>
+                <Switch>
+                    <Route path={getSectionPath(path, general)}>
+                        {loadingAddresses && !Array.isArray(addresses) ? (
+                            <PrivateMainAreaLoading />
+                        ) : (
+                            <PrivateMainSettingsArea config={general}>
+                                <MessagesGeneralSection />
+                                <CategoriesViewSections />
+                                <LayoutsSection />
+                                <MessagesSection />
+                                <MessagesOtherSection />
+                                <OtherMailPreferencesSection />
+                            </PrivateMainSettingsArea>
+                        )}
+                    </Route>
+                    <Route path={getSectionPath(path, desktop)}>
+                        <PrivateMainSettingsArea config={desktop}>
+                            <MobileAppSettingsSection />
+                            {isElectronEnabled && <InboxDesktopSettingsSection />}
                         </PrivateMainSettingsArea>
+                    </Route>
+                    <Route path={getSectionPath(path, identity)}>
+                        <PrivateMainSettingsArea config={identity}>
+                            <PmMeSection isPMAddressActive={getHasPmMeAddress(addresses)} />
+                            <IdentitySection />
+                            <AliasPromotionSection />
+                            <AddressesSection isOnlySelf />
+                        </PrivateMainSettingsArea>
+                    </Route>
+                    <Route path={getSectionPath(path, folder)}>
+                        <PrivateMainSettingsArea config={folder}>
+                            <FoldersSection />
+                            <LabelsSection />
+                        </PrivateMainSettingsArea>
+                    </Route>
+                    <Route path={getSectionPath(path, filter)}>
+                        <PrivateMainSettingsArea config={filter}>
+                            <FiltersSection />
+                            <SpamFiltersSection />
+                        </PrivateMainSettingsArea>
+                    </Route>
+                    <Route path={getSectionPath(path, autoReply)}>
+                        <PrivateMainSettingsArea config={autoReply}>
+                            <ForwardSection />
+                            <AutoReplySection />
+                        </PrivateMainSettingsArea>
+                    </Route>
+                    {getIsSectionAvailable(domainNames) && (
+                        <Route path={getSectionPath(path, domainNames)}>
+                            <PrivateMainSettingsArea config={domainNames}>
+                                <DomainsSection onceRef={onceRef} />
+                                <CatchAllSection />
+                            </PrivateMainSettingsArea>
+                        </Route>
                     )}
-                </Route>
-                <Route path={getSectionPath(path, desktop)}>
-                    <PrivateMainSettingsArea config={desktop}>
-                        <MobileAppSettingsSection />
-                        {isElectronEnabled && <InboxDesktopSettingsSection />}
-                    </PrivateMainSettingsArea>
-                </Route>
-                <Route path={getSectionPath(path, identity)}>
-                    <PrivateMainSettingsArea config={identity}>
-                        <PmMeSection isPMAddressActive={getHasPmMeAddress(addresses)} />
-                        <IdentitySection />
-                        <AliasPromotionSection />
-                        <AddressesSection isOnlySelf />
-                    </PrivateMainSettingsArea>
-                </Route>
-                <Route path={getSectionPath(path, folder)}>
-                    <PrivateMainSettingsArea config={folder}>
-                        <FoldersSection />
-                        <LabelsSection />
-                    </PrivateMainSettingsArea>
-                </Route>
-                <Route path={getSectionPath(path, filter)}>
-                    <PrivateMainSettingsArea config={filter}>
-                        <FiltersSection />
-                        <SpamFiltersSection />
-                    </PrivateMainSettingsArea>
-                </Route>
-                <Route path={getSectionPath(path, autoReply)}>
-                    <PrivateMainSettingsArea config={autoReply}>
-                        <ForwardSection />
-                        <AutoReplySection />
-                    </PrivateMainSettingsArea>
-                </Route>
-                {getIsSectionAvailable(domainNames) && (
-                    <Route path={getSectionPath(path, domainNames)}>
-                        <PrivateMainSettingsArea config={domainNames}>
-                            <DomainsSection onceRef={onceRef} />
-                            <CatchAllSection />
+                    <Route path={getSectionPath(path, keys)}>
+                        <PrivateMainSettingsArea config={keys}>
+                            <AddressVerificationSection />
+                            <ExternalPGPSettingsSection />
+                            <PostQuantumKeysOptInSection />
+                            <AddressKeysSection />
+                            <UserKeysSection />
                         </PrivateMainSettingsArea>
                     </Route>
-                )}
-                <Route path={getSectionPath(path, keys)}>
-                    <PrivateMainSettingsArea config={keys}>
-                        <AddressVerificationSection />
-                        <ExternalPGPSettingsSection />
-                        <PostQuantumKeysOptInSection />
-                        <AddressKeysSection />
-                        <UserKeysSection />
-                    </PrivateMainSettingsArea>
-                </Route>
-                <Route path={getSectionPath(path, imap)}>
-                    <PrivateMainSettingsArea config={imap}>
-                        <ProtonMailBridgeSection />
-                        <SMTPSubmissionSection />
-                    </PrivateMainSettingsArea>
-                </Route>
-                <Route path={`${path}/invitation/view`}>
-                    <Redirect to={`${path}/dashboard#your-plan`} />
-                </Route>
-                <Route path={`${path}/import-export`}>
-                    <Redirect to={`${path}/easy-switch`} />
-                </Route>
-                {getIsSectionAvailable(backup) && (
-                    <Route path={getSectionPath(path, backup)}>
-                        <PrivateMainSettingsArea config={backup}>
-                            <ImportExportAppSection key="import-export-app" />
+                    <Route path={getSectionPath(path, imap)}>
+                        <PrivateMainSettingsArea config={imap}>
+                            <ProtonMailBridgeSection />
+                            <SMTPSubmissionSection />
                         </PrivateMainSettingsArea>
                     </Route>
-                )}
-                {getIsSectionAvailable(privacy) && (
-                    <Route path={getSectionPath(path, privacy)}>
-                        <PrivateMainSettingsArea config={privacy}>
-                            <EmailPrivacySection />
-                        </PrivateMainSettingsArea>
+                    <Route path={`${path}/invitation/view`}>
+                        <Redirect to={`${path}/dashboard#your-plan`} />
                     </Route>
-                )}
-                {redirect}
-            </Switch>
-        </SimpleEditorProvider>
+                    <Route path={`${path}/import-export`}>
+                        <Redirect to={`${path}/easy-switch`} />
+                    </Route>
+                    {getIsSectionAvailable(backup) && (
+                        <Route path={getSectionPath(path, backup)}>
+                            <PrivateMainSettingsArea config={backup}>
+                                <ImportExportAppSection key="import-export-app" />
+                            </PrivateMainSettingsArea>
+                        </Route>
+                    )}
+                    {getIsSectionAvailable(privacy) && (
+                        <Route path={getSectionPath(path, privacy)}>
+                            <PrivateMainSettingsArea config={privacy}>
+                                <EmailPrivacySection />
+                            </PrivateMainSettingsArea>
+                        </Route>
+                    )}
+                    {redirect}
+                </Switch>
+            </SimpleEditorProvider>
+        </EditorHostProvider>
     );
 };
 

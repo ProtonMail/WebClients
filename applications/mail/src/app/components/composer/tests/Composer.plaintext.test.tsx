@@ -41,7 +41,7 @@ jest.mock('../../../hooks/message/useSaveDraft', () => {
 const saveSpy = (useSaveDraft as any).saveSpy as jest.Mock;
 
 const mockSetContent = jest.fn();
-jest.mock('@proton/components/components/editor/rooster/helpers/getRoosterEditorActions', () => {
+jest.mock('@proton/mail-composer/components/editor/rooster/helpers/getRoosterEditorActions', () => {
     let content = '';
     return function () {
         return {

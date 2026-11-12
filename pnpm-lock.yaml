@@ -806,6 +806,9 @@ importers:
       '@proton/mail':
         specifier: workspace:^
         version: link:../../packages/mail
+      '@proton/mail-composer':
+        specifier: workspace:^
+        version: link:../../packages/mail-composer
       '@proton/metrics':
         specifier: workspace:^
         version: link:../../packages/metrics
@@ -5921,9 +5924,6 @@ importers:
       '@dnd-kit/react':
         specifier: 'catalog:'
         version: 0.5.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@emoji-mart/data':
-        specifier: ^1.0.3
-        version: 1.2.1
       '@noble/ed25519':
         specifier: 1.7.5
         version: 1.7.5
@@ -5963,9 +5963,6 @@ importers:
       '@proton/mail':
         specifier: workspace:^
         version: link:../mail
-      '@proton/mail-message':
-        specifier: workspace:^
-        version: link:../mail-message
       '@proton/metrics':
         specifier: workspace:^
         version: link:../metrics
@@ -6053,9 +6050,6 @@ importers:
       dompurify:
         specifier: 'catalog:'
         version: 3.4.17
-      emoji-mart:
-        specifier: ^5.1.0
-        version: 5.6.0
       formik:
         specifier: 'catalog:'
         version: 2.4.9(react@18.3.1)
@@ -6110,15 +6104,6 @@ importers:
       redux-thunk:
         specifier: 'catalog:'
         version: 3.1.0(redux@5.0.1)
-      roosterjs:
-        specifier: 8.47.0
-        version: 8.47.0
-      roosterjs-editor-dom:
-        specifier: ^8.62.0
-        version: 8.62.0
-      roosterjs-editor-types:
-        specifier: ^8.62.0
-        version: 8.62.0
       tabbable:
         specifier: ^6.5.1
         version: 6.5.1
@@ -7702,6 +7687,9 @@ importers:
 
   packages/mail-composer:
     dependencies:
+      '@emoji-mart/data':
+        specifier: ^1.0.3
+        version: 1.2.1
       '@proton/account':
         specifier: workspace:^
         version: link:../account
@@ -7780,6 +7768,9 @@ importers:
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
+      emoji-mart:
+        specifier: ^5.1.0
+        version: 5.6.0
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
@@ -7789,9 +7780,18 @@ importers:
       react-dom:
         specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
+      roosterjs:
+        specifier: 8.47.0
+        version: 8.47.0
+      roosterjs-editor-dom:
+        specifier: ^8.62.0
+        version: 8.62.0
       roosterjs-editor-types:
         specifier: ^8.62.0
         version: 8.62.0
+      tinycolor2:
+        specifier: 'catalog:'
+        version: 1.6.0
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
@@ -7835,6 +7835,9 @@ importers:
       '@types/react-dom':
         specifier: 'catalog:'
         version: 18.3.7(@types/react@18.3.31)
+      '@types/tinycolor2':
+        specifier: 'catalog:'
+        version: 1.4.6
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8

@@ -3,10 +3,6 @@ import { memo, useCallback, useEffect, useLayoutEffect, useRef, useState } from 
 import type { GetContentMode, InsertOption } from 'roosterjs-editor-types';
 import { ContentPosition } from 'roosterjs-editor-types';
 
-import Editor from '@proton/components/components/editor/Editor';
-import type { EditorProps } from '@proton/components/components/editor/Editor';
-import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
-import type { EditorActions, EditorMetadata } from '@proton/components/components/editor/interface';
 import { useHandler } from '@proton/hooks/useHandler';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { locateBlockquote } from '@proton/mail-message/helpers/message/messageBlockquote';
@@ -33,6 +29,10 @@ import diff from '@proton/utils/diff';
 
 import type { AddAttachmentsParams } from '../../../attachments/uploadTypes';
 import type { ComposerStoreState } from '../../../store/hooks';
+import Editor from '../../editor/Editor';
+import type { EditorProps } from '../../editor/Editor';
+import { useToolbar } from '../../editor/hooks/useToolbar';
+import type { EditorActions, EditorMetadata } from '../../editor/interface';
 import type { MessageChange } from '../Composer';
 import {
     getAttachedCIDs,

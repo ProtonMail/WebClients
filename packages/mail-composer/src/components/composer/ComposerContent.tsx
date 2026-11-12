@@ -4,8 +4,6 @@ import { forwardRef } from 'react';
 import { c } from 'ttag';
 
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
-import type { EditorProps } from '@proton/components/components/editor/Editor';
-import type { EditorMetadata } from '@proton/components/components/editor/interface';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import type { MessageState, MessageStateWithData, OutsideKey } from '@proton/mail-message/store/messages/messagesTypes';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
@@ -18,6 +16,8 @@ import { AttachmentAction } from '../../attachments/attachmentListTypes';
 import type { AddAttachmentsParams, PendingUpload } from '../../attachments/uploadTypes';
 import { useComposerMessageHost } from '../../host/composerMessageHost';
 import type { ComposerStoreState } from '../../store/hooks';
+import type { EditorProps } from '../editor/Editor';
+import type { EditorMetadata } from '../editor/interface';
 import type { MessageChange } from './Composer';
 import type { ExternalEditorActions } from './editor/EditorWrapper';
 import EditorWrapper from './editor/EditorWrapper';

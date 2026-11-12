@@ -2,9 +2,9 @@ import type { ReactNode } from 'react';
 import { useMemo } from 'react';
 import { useHistory } from 'react-router';
 
-import SimpleEditor from '@proton/components/components/editor/SimpleEditor';
 import { SimpleEditorProvider } from '@proton/components/containers/editor/SimpleEditorContext';
 import { useHandler } from '@proton/hooks/useHandler';
+import SimpleEditor from '@proton/mail-composer/components/editor/SimpleEditor';
 import type { ComposerHost } from '@proton/mail-composer/hooks/composer/useComposerHost';
 import { ComposerHostProvider } from '@proton/mail-composer/hooks/composer/useComposerHost';
 import { ComposerMessageHostProvider } from '@proton/mail-composer/host/composerMessageHost';

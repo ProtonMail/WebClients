@@ -8,12 +8,13 @@ import type {
     MessageStateWithData,
     OutsideKey,
 } from '@proton/mail-message/store/messages/messagesTypes';
-import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { AttachmentAction } from '../attachments/attachmentListTypes';
 import type { PendingUpload } from '../attachments/uploadTypes';
+import type { EditorHost } from '../components/editor/EditorHost';
+import { EditorHostProvider } from '../components/editor/EditorHost';
 
 export interface EncryptionStatusIconProps extends Partial<StatusIcon> {
     loading?: boolean;
@@ -44,10 +45,10 @@ export interface UseMessageResult {
 }
 
 /**
- * Message, mail settings and contact group hooks tied to the mail app's stores, and the message UI the composer shares with the reader.
+ * Message, mail settings (shared with the editor) and contact group hooks tied to the mail app's stores, and the message UI the composer shares with the reader.
  * The value must be a stable object (a module constant), because its hooks are called on every render.
  */
-export interface ComposerMessageHost {
+export interface ComposerMessageHost extends EditorHost {
     useMessage: (localID: string, conversationID?: string) => UseMessageResult;
     useGetMessageKeys: () => GetMessageKeys;
     useInitializeMessage: () => (localID: string, labelID?: string) => Promise<void>;
@@ -56,8 +57,6 @@ export interface ComposerMessageHost {
     useCreateDraft: () => (message: MessageStateWithData) => Promise<void>;
     useSaveDraft: (params?: { onMessageAlreadySent?: () => void }) => (message: MessageStateWithData) => Promise<void>;
     useDeleteDraft: () => (message: MessageState) => Promise<void>;
-    useMailSettings: () => [MailSettings, boolean];
-    useGetMailSettings: () => () => Promise<MailSettings>;
     useContactGroups: () => [ContactGroup[] | undefined, boolean];
     EncryptionStatusIcon: ComponentType<EncryptionStatusIconProps>;
     AttachmentList: ComponentType<AttachmentListProps>;
@@ -66,7 +65,9 @@ export interface ComposerMessageHost {
 const ComposerMessageHostContext = createContext<ComposerMessageHost | undefined>(undefined);
 
 export const ComposerMessageHostProvider = ({ host, children }: { host: ComposerMessageHost; children: ReactNode }) => (
-    <ComposerMessageHostContext.Provider value={host}>{children}</ComposerMessageHostContext.Provider>
+    <ComposerMessageHostContext.Provider value={host}>
+        <EditorHostProvider host={host}>{children}</EditorHostProvider>
+    </ComposerMessageHostContext.Provider>
 );
 
 export const useComposerMessageHost = () => {

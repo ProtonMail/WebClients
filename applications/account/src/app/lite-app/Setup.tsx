@@ -15,6 +15,7 @@ import ModalsChildren from '@proton/components/containers/modals/Children';
 import NotificationsChildren from '@proton/components/containers/notifications/Children';
 import useThemeQueryParameter from '@proton/components/containers/themes/useThemeQueryParameter';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import { EditorHostProvider } from '@proton/mail-composer/components/editor/EditorHost';
 import { eventLoopTimingTracker } from '@proton/metrics/eventLoopMetrics';
 import metrics from '@proton/metrics/metricsInstance';
 import type { EventLoop } from '@proton/redux-shared-store-types/eventLoop';
@@ -47,6 +48,7 @@ import { createCustomFetch, getUnleashConfig } from '@proton/unleash/UnleashFlag
 import { UnleashFlagProviderWithToolbar } from '@proton/unleash/UnleashFlagProviderWithToolbar';
 import getRandomString from '@proton/utils/getRandomString';
 
+import { mailEditorHost } from '../mailEditorHost';
 import { useAccountDispatch } from '../private-app/store/hooks';
 import { extendStore } from '../private-app/store/store';
 import { extraThunkArguments } from '../private-app/store/thunk';
@@ -314,9 +316,11 @@ const Setup = ({ api, onLogin, UID, children, loader, action }: Props) => {
         <UnleashFlagProviderWithToolbar unleashClient={extraThunkArguments.unleashClient}>
             <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                 <ApiProvider api={extraThunkArguments.api}>
-                    <ModalsChildren />
-                    <NotificationsChildren />
-                    {children}
+                    <EditorHostProvider host={mailEditorHost}>
+                        <ModalsChildren />
+                        <NotificationsChildren />
+                        {children}
+                    </EditorHostProvider>
                 </ApiProvider>
             </EventManagerProvider>
         </UnleashFlagProviderWithToolbar>

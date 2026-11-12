@@ -5,7 +5,6 @@ import throttle from 'lodash/throttle';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import type { EditorMetadata } from '@proton/components/components/editor/interface';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import ComposerAssistantUpsellModal from '@proton/components/components/upsell/modals/ComposerAssistantUpsellModal';
 import useAssistantSubscriptionStatus from '@proton/components/hooks/assistant/useAssistantSubscriptionStatus';
@@ -25,6 +24,7 @@ import useComposerAssistantGenerate from '../../hooks/assistant/useComposerAssis
 import useComposerAssistantScrollButton from '../../hooks/assistant/useComposerAssistantScrollButton';
 import useComposerAssistantSelectedText from '../../hooks/assistant/useComposerAssistantSelectedText';
 import { ComposerInnerModalStates } from '../../hooks/composer/useComposerInnerModals';
+import type { EditorMetadata } from '../editor/interface';
 import ComposerAssistantExpanded from './ComposerAssistantExpanded';
 import ResumeDownloadingModal from './modals/ResumeDownloadingModal';
 import { useComposerAssistantProvider } from './provider/ComposerAssistantProvider';

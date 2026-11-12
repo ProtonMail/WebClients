@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { Badge } from '@proton/components/components/badge/Badge';
+import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuContainer from '@proton/components/components/dropdown/DropdownMenuContainer';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
 import {
     DEFAULT_FONT_FACE,
@@ -12,9 +15,6 @@ import {
 } from '@proton/shared/lib/mail/fontFace';
 import clsx from '@proton/utils/clsx';
 
-import { Badge } from '../../badge/Badge';
-import DropdownMenu from '../../dropdown/DropdownMenu';
-import DropdownMenuContainer from '../../dropdown/DropdownMenuContainer';
 import ToolbarDropdown from './ToolbarDropdown';
 
 interface Props {

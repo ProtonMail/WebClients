@@ -1,4 +1,5 @@
-import type { SimpleEditorProps } from '../../containers/editor/SimpleEditorContext';
+import type { SimpleEditorProps } from '@proton/components/containers/editor/SimpleEditorContext';
+
 import Editor from './Editor';
 import { useToolbar } from './hooks/useToolbar';
 
