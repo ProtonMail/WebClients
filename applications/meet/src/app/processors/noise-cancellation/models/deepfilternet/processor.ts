@@ -135,7 +135,8 @@ export const DeepFilterNetFilter = ({
         },
 
         async restart(opts) {
-            const audioContext = opts.audioContext ?? currentAudioContext;
+            const audioContext =
+                opts.audioContext?.sampleRate === DEEPFILTERNET_SAMPLE_RATE ? opts.audioContext : currentAudioContext;
 
             if (!audioContext) {
                 throw new Error('Cannot restart DeepFilterNet processor without an AudioContext');

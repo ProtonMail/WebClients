@@ -203,8 +203,11 @@ export const DTLNFilter = ({
         },
 
         async restart(opts) {
-            // LiveKit omits audioContext when restarting processors after a live microphone switch.
-            const audioContext = opts.audioContext ?? currentAudioContext;
+            // LiveKit can pass the room's audio context, whose sample rate may not be the model's.
+            const audioContext =
+                opts.audioContext?.sampleRate === DTLN_AUDIO_CONTEXT_SAMPLE_RATE
+                    ? opts.audioContext
+                    : currentAudioContext;
 
             if (!audioContext) {
                 throw new Error('Cannot restart DTLN processor without an AudioContext');
