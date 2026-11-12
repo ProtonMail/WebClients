@@ -1580,7 +1580,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -7908,7 +7909,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
@@ -9769,6 +9771,9 @@
       "${ contactGroupName } (${ numberOfContacts } member)": [
         "${ contactGroupName } (${ numberOfContacts } medlem)",
         "${ contactGroupName } (${ numberOfContacts } medlemmer)"
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Vi har identificeret nogle mailinglister, som du ikke læser. Du kan afmelde dem med ét klik."
       ]
     },
     "info": {
@@ -11141,6 +11146,10 @@
       ],
       "Font size": [
         "Skriftstørrelse"
+      ],
+      "Select all ${ count } unused sender": [
+        "Vælg ${ count } ubrugt afsender",
+        "Vælg alle ${ count } ubrugte afsendere"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17273,6 +17282,9 @@
       ],
       "Filter on": [
         "Filtrer efter"
+      ],
+      "Start with a cleaner Inbox": [
+        "Start med en mere ryddelig indbakke"
       ]
     },
     "Title header for keys table": {

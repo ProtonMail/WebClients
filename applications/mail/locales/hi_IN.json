@@ -1565,7 +1565,8 @@
         "भरोसा करें"
       ],
       "Trust key": [
-        "ट्रस्ट की"
+        "ट्रस्ट की",
+        "ट्रस्ट कीज़"
       ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
@@ -11074,6 +11075,12 @@
       "Select all ${ count } unused sender": [
         "सभी ${ count } अप्रयुक्त प्रेषक चुनें",
         "सभी ${ count } अप्रयुक्त प्रेषक चुनें"
+      ],
+      "Move to Trash": [
+        "ट्रैश में भेजें"
+      ],
+      "One-time codes": [
+        "वन टाइम कोड"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15802,6 +15809,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } assistant enabled": [
         "${ LUMO_SHORT_APP_NAME } असिस्टेंट सक्षम है"
+      ],
+      "One-time codes disabled": [
+        "वन टाइम कोड अक्षम"
+      ],
+      "One-time codes enabled": [
+        "वन टाइम कोड सक्षम"
       ]
     },
     "Success notification": {

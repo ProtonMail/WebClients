@@ -1522,7 +1522,10 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufaj kluczowi"
+        "Zaufany klucz",
+        "Zaufane klucze",
+        "Zaufanych kluczy",
+        "Zaufane klucze"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -7776,7 +7779,10 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz"
+        "Wstaw obraz",
+        "Wstaw obrazy",
+        "Wstaw obrazy",
+        "Wstaw obrazy"
       ],
       "Insert link": [
         "Wstaw link"
@@ -9343,6 +9349,9 @@
       ],
       "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
         "Znaleziono listy mailingowe, których nie czytasz. Możesz anulować ich subskrypcje jednym kliknięciem."
+      ],
+      "Today": [
+        "Dzisiaj"
       ]
     },
     "info": {
@@ -16833,7 +16842,7 @@
         "Podfoldery systemowe będą widoczne jako oddzielne foldery w poczcie ${ MAIL_APP_NAME }"
       ],
       "The image could not be loaded": [
-        "Obraz nie mógł zostać załadowany"
+        "Zdjęcie nie mogło zostać załadowane"
       ],
       "The image could not be loaded using proxy": [
         "Obraz nie mógł zostać załadowany przy użyciu proxy"

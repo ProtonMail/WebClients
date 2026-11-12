@@ -1541,7 +1541,8 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarer nøkkel"
+        "Klarér nøkkel",
+        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -1783,6 +1784,12 @@
       ],
       "Add payment method": [
         "Legg til betalingsmåte"
+      ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
+      "Add ${ name }": [
+        "Legg til ${ name }"
       ]
     },
     "action": {
@@ -4447,6 +4454,12 @@
       ],
       "Move emails to the right category to improve categorization.": [
         "Flytt e-poster til riktig kategori for å forbedre kategoriseringen."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Hvis du vil bruke ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }, må du legge det til i abonnementet."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Hvis du vil bruke ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }, må du be om tilgang fra administratoren din."
       ]
     },
     "description": {
@@ -7821,7 +7834,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -9745,6 +9759,12 @@
       ],
       "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
         "Vi fant noen e-postlister du ikke leser. Du kan melde deg av dem med ett klikk."
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Kopier engangskoder fra nylige e-poster med ett klikk"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Flytt e-poster med engangskoder til papirkurven når koden kopieres"
       ]
     },
     "info": {
@@ -11121,6 +11141,12 @@
       "Select all ${ count } unused sender": [
         "Velg ${ count } ubrukt avsender",
         "Velg alle ${ count } ubrukte avsendere"
+      ],
+      "Move to Trash": [
+        "Flytt til Papirkurv"
+      ],
+      "One-time codes": [
+        "Engangskoder"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15922,6 +15948,12 @@
       ],
       "${ LUMO_SHORT_APP_NAME } assistant enabled": [
         "${ LUMO_SHORT_APP_NAME }-assistent aktivert"
+      ],
+      "One-time codes disabled": [
+        "Engangskoder deaktivert"
+      ],
+      "One-time codes enabled": [
+        "Engangskoder aktivert"
       ]
     },
     "Success notification": {
@@ -17443,6 +17475,9 @@
       ],
       "You can't change your own roles. Ask another admin to change them.": [
         "Du kan ikke endre dine egne roller. Be en annen administrator om å endre dem."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Denne brukeren får administratorrettigheter neste gang brukeren logger på."
       ]
     },
     "Validation": {

@@ -1565,7 +1565,8 @@
         "Considera attendibile"
       ],
       "Trust key": [
-        "Affida chiave"
+        "chiave attendibile",
+        "chiavi attendibili"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -4468,6 +4469,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Per utilizzare ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, aggiungilo alla tua iscrizione."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Per utilizzare ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, richiedi l'accesso al tuo amministratore."
       ]
     },
     "description": {
@@ -5462,6 +5469,9 @@
       ],
       "Cannot send an empty message. Message is not sent.": [
         "Non è possibile inviare un messaggio vuoto."
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Non è stato possibile rimuovere le immagini incorporate. Il messaggio non è stato convertito in testo semplice."
       ]
     },
     "error": {
@@ -7890,7 +7900,8 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
@@ -9756,7 +9767,13 @@
         "Rimuovi email dai preferiti"
       ],
       "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
-        "Abbiamo rilevato alcune mailing list che non leggi. Puoi annullare l'iscrizione con un solo clic."
+        "Abbiamo rilevato alcune liste di diffusione che non leggi. Puoi annullare l'iscrizione con un solo clic."
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Copia i codici monouso dalle e-mail recenti con un solo clic"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Sposta le e-mail con codice monouso nel Cestino al momento della copia"
       ]
     },
     "info": {
@@ -11133,6 +11150,12 @@
       "Select all ${ count } unused sender": [
         "Seleziona l'unico mittente ${ count } inutilizzato",
         "Seleziona tutti i ${ count } mittenti inutilizzati"
+      ],
+      "Move to Trash": [
+        "Sposta nel cestino"
+      ],
+      "One-time codes": [
+        "Codici monouso"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15957,6 +15980,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Hai annullato l'abbonamento con successo."
+      ],
+      "One-time codes disabled": [
+        "Codici monouso disattivati"
+      ],
+      "One-time codes enabled": [
+        "Codici monouso abilitati"
       ]
     },
     "Success notification": {

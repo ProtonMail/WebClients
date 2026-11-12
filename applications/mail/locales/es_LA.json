@@ -1580,7 +1580,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -4468,6 +4469,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Para usar ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, añádalo a su suscripción."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Para usar ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, solicite acceso a su administrador."
       ]
     },
     "description": {
@@ -7908,7 +7915,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9769,6 +9777,15 @@
       "${ contactGroupName } (${ numberOfContacts } member)": [
         "${ contactGroupName } (${ numberOfContacts } miembro)",
         "${ contactGroupName } (${ numberOfContacts } miembros)"
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Copiar los códigos de un solo uso de los correos electrónicos recientes en un solo clic"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Mover los correos electrónicos con códigos de un solo uso a la papelera al copiarlos"
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Encontramos algunas listas de correo que no lee. Puede darse de baja de ellas con un solo clic."
       ]
     },
     "info": {
@@ -11141,6 +11158,16 @@
       ],
       "Font size": [
         "Tamaño de fuente"
+      ],
+      "Move to Trash": [
+        "Mover a la papelera"
+      ],
+      "One-time codes": [
+        "Códigos de un solo uso"
+      ],
+      "Select all ${ count } unused sender": [
+        "Seleccionar ${ count } remitente sin usar",
+        "Seleccionar los ${ count } remitentes sin usar"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15965,6 +15992,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "La suscripción ha sido cancelada."
+      ],
+      "One-time codes disabled": [
+        "Códigos de un solo uso desactivados"
+      ],
+      "One-time codes enabled": [
+        "Códigos de un solo uso activados"
       ]
     },
     "Success notification": {
@@ -17273,6 +17306,9 @@
       ],
       "Filter on": [
         "Filtro en"
+      ],
+      "Start with a cleaner Inbox": [
+        "Comience con una bandeja de entrada más limpia"
       ]
     },
     "Title header for keys table": {

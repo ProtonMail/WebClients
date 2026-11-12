@@ -182,7 +182,7 @@
         "Estä lähettäjät"
       ],
       "Bold": [
-        "Lihavointi"
+        "Lihavoi"
       ],
       "Cancel": [
         "Peruuta"
@@ -779,7 +779,7 @@
         "Kutsu jäseniä"
       ],
       "Italic": [
-        "Kursivointi"
+        "Kursivoi"
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Liity ${ MEET_APP_NAME }llä"
@@ -1466,7 +1466,7 @@
         "Lopeta siirtäminen roskakoriin"
       ],
       "Strikethrough": [
-        "Yliviivaus"
+        "Yliviivaa"
       ],
       "Submit": [
         "Lähetä"
@@ -1526,7 +1526,8 @@
         "Luota"
       ],
       "Trust key": [
-        "Luota avaimeen"
+        "Luota avaimeen",
+        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -1550,7 +1551,7 @@
         "Poista esto"
       ],
       "Underline": [
-        "Alleviivaus"
+        "Alleviivaa"
       ],
       "Undo": [
         "Kumoa"
@@ -6790,7 +6791,7 @@
         "**Automaattinen yhdistäminen**: Avaa ja muodostaa VPN-yhteyden heti, kun käynnistät laitteen."
       ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Kutsu kaverisi** ${ BRAND_NAME }:iin suosittelulinkilläsi."
+        "**Kutsu kaverisi** ${ BRAND_NAME }iin henkilökohtaisella suosittelulinkillä."
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Tappokytkin**: Estää tietovuodot katkaisemalla Internet-yhteytesi, jos VPN-yhteys katkeaa yllättäen."
@@ -7009,7 +7010,7 @@
         "Poista roskakorissa ja roskapostissa yli 30 päivää olleet viestit automaattisesti."
       ],
       "Automatically sort incoming emails into categories": [
-        "Luokittele saapuvat viestin automaattisesti kategorioihin"
+        "Luokittele saapuvat viestit automaattisesti kategorioihin"
       ],
       "Awaiting transaction": [
         "Odotetaan siirtoa"
@@ -7575,7 +7576,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -8339,7 +8341,7 @@
         "Nämä keskustelut säilytetään organisaatiosi tietojen säilytyskäytännön mukaisesti."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
-        "He eivät voi lähettää sinulle roskapostia, jos he eivät tiedä sähköpostiosoitettasi. Suojaa postilaatikkoasi Hide-my-email-aliaksilla."
+        "Et saa roskapostia, jos sen lähettäjät eivät tiedä sähköpostiosoitettasi. Suojaa postilaatikkosi Hide-my-email-aliaksilla."
       ],
       "Thinking about this": [
         "Mietitään tätä"
@@ -15172,7 +15174,7 @@
     },
     "Title": {
       "${ appName } keyboard shortcuts": [
-        "${ appName }-pikanäppäimet"
+        "${ appName } -pikanäppäimet"
       ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe -kirjoitusavustaja"

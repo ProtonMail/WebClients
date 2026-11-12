@@ -1580,7 +1580,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1786,6 +1787,9 @@
       ],
       "Cancel trial": [
         "Cancelar avaliação"
+      ],
+      "Add payment method": [
+        "Adicionar forma de pagamento"
       ]
     },
     "action": {
@@ -4457,6 +4461,15 @@
       ],
       "Move emails to the right category to improve categorization.": [
         "Mova os e-mails para a categoria correta para melhorar a classificação."
+      ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Permita que as pessoas agendem um horário com você diretamente pelos seus e-mails, sem precisar trocar várias mensagens."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Para usar o ${ LUMO_SHORT_APP_NAME } no ${ MAIL_APP_NAME }, adicione-o à sua assinatura."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Para usar o ${ LUMO_SHORT_APP_NAME } no ${ MAIL_APP_NAME }, solicite acesso ao seu administrador."
       ]
     },
     "description": {
@@ -5451,6 +5464,9 @@
       ],
       "Cannot send an empty message. Message is not sent.": [
         "Não é possível enviar uma mensagem vazia. Mensagem não enviada."
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Não foi possível remover as imagens incorporadas. A mensagem não foi convertida em texto simples."
       ]
     },
     "error": {
@@ -6291,6 +6307,9 @@
       ],
       "Before ${ MAIL_APP_NAME }, which email did you use most?": [
         "Antes do ${ MAIL_APP_NAME }, qual e-mail você mais usava?"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "Qual foi o principal motivo para você começar a usar o ${ MAIL_APP_NAME }?"
       ]
     },
     "Hint": {
@@ -7885,7 +7904,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -9704,6 +9724,63 @@
       ],
       "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
         "Nós achamos algumas listas de e-mails que você não lê. Você pode cancelar todas essas assinaturas com um clique."
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantia de reembolso de 30 dias: cancele em até 30 dias após a compra e entre em contato com ${ customerSupportLink } para obter um reembolso."
+      ],
+      "A new or separate address": [
+        "Um endereço novo ou separado"
+      ],
+      "A specific feature (tell us)": [
+        "Um recurso específico (conte para nós)"
+      ],
+      "Almost done": [
+        "Quase pronto"
+      ],
+      "Choose all that apply.": [
+        "Selecione todas as opções que se aplicam."
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "Escolha uma opção. Isso nos ajuda a melhorar o ${ MAIL_APP_NAME }."
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Copie códigos de uso único de e-mails recentes com um clique"
+      ],
+      "Leave Big Tech": [
+        "Deixar de usar os serviços das grandes empresas de tecnologia"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Mover e-mails com códigos de uso único para a lixeira ao copiar o código"
+      ],
+      "One last step": [
+        "Só mais uma etapa"
+      ],
+      "Other (tell us)": [
+        "Outro (conte para nós)"
+      ],
+      "Someone recommended it": [
+        "Alguém me recomendou"
+      ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "Começar a usar o ${ MAIL_APP_NAME }"
+      ],
+      "Stop companies reading my emails": [
+        "Impedir que empresas leiam meus e-mails"
+      ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "As respostas à pesquisa não são criptografadas de ponta a ponta. Não compartilhe informações confidenciais."
+      ],
+      "Tell us more (optional)": [
+        "Conte mais para nós (opcional)"
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Este endereço do Gmail está cadastrado em outra conta ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI e outros). Estamos trabalhando para simplificar essa conexão, mas, por enquanto, você precisará seguir algumas etapas."
+      ],
+      "Which feature? (optional)": [
+        "Qual recurso? (opcional)"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Seu período de teste gratuito terminou. Assine agora para manter o acesso da sua equipe sem interrupções e as contas seguras."
       ]
     },
     "info": {
@@ -11074,6 +11151,18 @@
       "Select all ${ count } unused sender": [
         "Selecione ${ count } remetente não utilizado",
         "Selecione todos os ${ count } remetentes não utilizados"
+      ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "Adicione uma página de agendamento ao seu e-mail e deixe as pessoas escolherem um horário conveniente."
+      ],
+      "Move to Trash": [
+        "Mover para a Lixeira"
+      ],
+      "One-time codes": [
+        "Código de uso único"
+      ],
+      "Sum of write() calls": [
+        "Soma das chamadas a write()"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13191,6 +13280,9 @@
       ],
       "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
         "Sua assinatura completa do ${ planTitle } começa em ${ boldEndDate }."
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Mudou de ideia após o período de teste?** Cancele em até 30 dias após o primeiro pagamento e reembolsaremos o valor referente ao período não utilizado."
       ]
     },
     "Option": {
@@ -13695,6 +13787,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Sua assinatura atualmente tem um desconto existente. Mudar para esta nova promoção significa que o desconto atual não será mais aplicado."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Não é possível comprar contas Born Private com uma assinatura ativa."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "A iniciativa Born Private exige uma doação."
+      ],
+      "You already own a Born Private account.": [
+        "Você já tem uma conta Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Sua conta é antiga demais para participar da iniciativa Born Private."
       ]
     },
     "Payments.Error": {
@@ -15889,6 +15993,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Você cancelou sua assinatura com sucesso."
+      ],
+      "One-time codes disabled": [
+        "Códigos de uso único desativados"
+      ],
+      "One-time codes enabled": [
+        "Códigos de uso único ativados"
       ]
     },
     "Success notification": {
@@ -17194,6 +17304,12 @@
       ],
       "Start with a cleaner Inbox": [
         "Inicie com uma Caixa de Entrada limpa"
+      ],
+      "Make Categories work better for you": [
+        "Personalize as categorias para atender melhor às suas necessidades"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "Assine o ${ planTitle }"
       ]
     },
     "Title header for keys table": {
@@ -17404,6 +17520,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Você poderá atribuir funções assim que o usuário aceitar o convite."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Este usuário receberá direitos de administrador na próxima vez que entrar."
       ]
     },
     "Validation": {
@@ -17864,6 +17983,11 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantia de reembolso de 30 dias: cancele em até 30 dias após a compra e entre em contato com ${ customerSupportLink } para obter um reembolso."
       ]
     }
   }

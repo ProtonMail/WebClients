@@ -1531,7 +1531,10 @@
         "Довіряти"
       ],
       "Trust key": [
-        "Довіряти ключу"
+        "Довіряти ключу",
+        "Довіряти ключам",
+        "Довіряти ключам",
+        "Довіряти ключам"
       ],
       "Trust public key": [
         "Довіряти відкритому ключу"
@@ -1733,6 +1736,12 @@
       ],
       "Zoom out": [
         "Зменшити"
+      ],
+      "About ${ name }": [
+        "Про ${ name }"
+      ],
+      "Add ${ name }": [
+        "Додати ${ name }"
       ]
     },
     "action": {
@@ -4406,6 +4415,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ви вже створили 10 псевдонімів. Отримайте необмежені псевдоніми та 500 ГБ сховища з ${ BRAND_NAME } Unlimited."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Для користування ${ LUMO_SHORT_APP_NAME } в ${ MAIL_APP_NAME } додайте цей застосунок до вашої підписки."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Для користування ${ LUMO_SHORT_APP_NAME } в ${ MAIL_APP_NAME } запитайте доступ у вашого адміністратора."
       ]
     },
     "description": {
@@ -7803,6 +7818,9 @@
         "Ініціалізація…"
       ],
       "Insert image": [
+        "Вставити зображення",
+        "Вставити зображення",
+        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [
@@ -9358,6 +9376,18 @@
       ],
       "Star emails": [
         "Позначені зірочкою листи"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Гарантія повернення коштів протягом 30 днів. Ви можете скасувати покупку протягом 30 днів і звернутися до ${ customerSupportLink } для повернення коштів."
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Скопіюйте одноразові коди з останніх електронних листів одним кліком"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Переміщувати листи з одноразовим кодом у «Кошик» під час копіювання"
+      ],
+      "UnionPay logo": [
+        "Логотип UnionPay"
       ]
     },
     "info": {
@@ -10605,6 +10635,12 @@
       ],
       "Font size": [
         "Розмір шрифту"
+      ],
+      "Move to Trash": [
+        "Перемістити до кошика"
+      ],
+      "One-time codes": [
+        "Одноразові коди"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10952,6 +10988,9 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Щоб переглянути оновлене запрошення, вам необхідно повторно активувати свої ключі"
+      ],
+      "Customer Support": [
+        "Клієнтська підтримка"
       ]
     },
     "Link to calendar event": {
@@ -13158,6 +13197,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша передплата наразі має наявну знижку. Перехід на цю нову акцію означає, що наявну знижку більше не буде застосовано."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Власники чинної передплати не мають можливості придбати облікові записи Born Private."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Для участі в програмі Born Private необхідна пожертва."
+      ],
+      "You already own a Born Private account.": [
+        "Ви вже маєте обліковий запис Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Ваш обліковий запис надто давній для участі в програмі Born Private."
       ]
     },
     "Payments.Error": {
@@ -15444,6 +15495,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Ви успішно скасували передплату."
+      ],
+      "One-time codes disabled": [
+        "Одноразові коди вимкнено"
+      ],
+      "One-time codes enabled": [
+        "Увімкнено одноразові коди"
       ]
     },
     "Success notification": {
@@ -16987,6 +17044,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Ви зможете призначати ролі після того, як користувач прийме запрошення."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Цей користувач отримає права адміністратора при наступному вході."
       ]
     },
     "Validation": {
@@ -17537,6 +17597,11 @@
       ],
       "Passcode:": [
         "Код доступу"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Гарантія повернення коштів протягом 30 днів. Ви можете скасувати покупку протягом 30 днів і звернутися до ${ customerSupportLink } для повернення коштів."
       ]
     }
   }

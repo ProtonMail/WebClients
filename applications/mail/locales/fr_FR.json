@@ -1571,7 +1571,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Faire confiance à cette clé",
+        "Faire confiance à ces clés"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -7864,7 +7865,8 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image"
+        "Insérer une image",
+        "Insérer des images"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -9707,6 +9709,12 @@
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
         "Pour ajouter une nouvelle page de réservation, retirez-en une du panneau latéral de ${ CALENDAR_APP_NAME }."
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Copier les codes à usage unique depuis vos e-mails récents en un clic."
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Déplacer les codes à usage unique reçus par e-mail vers la corbeille après les avoir copiés."
       ]
     },
     "info": {
@@ -11064,6 +11072,16 @@
       ],
       "Font size": [
         "Taille de police"
+      ],
+      "Move to Trash": [
+        "Déplacer vers la corbeille"
+      ],
+      "One-time codes": [
+        "Codes à usage unique"
+      ],
+      "Select all ${ count } unused sender": [
+        "Sélectionnez ${ count } expéditeur inutilisé.",
+        "Sélectionnez ${ count } expéditeurs inutilisés."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12734,7 +12752,7 @@
     },
     "ngc_access_banner: action": {
       "Try it now": [
-        "Essayez-la maintenant"
+        "Essayez-le maintenant"
       ]
     },
     "ngc_access_banner: info": {
@@ -15879,6 +15897,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Vous avez résilié votre abonnement."
+      ],
+      "One-time codes disabled": [
+        "Les codes à usage unique ont été désactivés."
+      ],
+      "One-time codes enabled": [
+        "Les codes à usage unique ont été activés."
       ]
     },
     "Success notification": {
