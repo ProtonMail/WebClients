@@ -637,7 +637,7 @@
         "Назовите свой альбом"
       ],
       "New": [
-        "Добавить"
+        "Создать"
       ],
       "New album": [
         "Новый альбом"
@@ -8551,7 +8551,7 @@
         "В общем доступе"
       ],
       "Shared with me": [
-        "Поделись со мной"
+        "Доступные мне"
       ],
       "Trash": [
         "Корзина"
@@ -11040,6 +11040,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Для вашей подписки в настоящее время действует скидка. Переход на это новое промо-предложение означает, что текущая скидка больше не будет применяться."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "У выбранного тарифного плана недостаточно места для данных вашего аккаунта."
       ]
     },
     "Payments.Error": {
@@ -15088,6 +15091,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Вы сможете назначать должности, как только пользователь примет приглашение."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Нельзя изменить собственную роль. Попросите другого администратора изменить её за вас."
       ]
     },
     "Role": {

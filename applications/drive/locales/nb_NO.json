@@ -1404,6 +1404,12 @@
       ],
       "Search recent items": [
         "Søk etter nylige elementer"
+      ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
+      "Add ${ name }": [
+        "Legg til ${ name }"
       ]
     },
     "Action: Docs": {
@@ -8120,6 +8126,9 @@
       ],
       "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
         "Importer filene og mappene dine fra Google Disk og hold dem private i ${ DRIVE_APP_NAME }."
+      ],
+      "${ claimedAuthor } (unverified sender)": [
+        "${ claimedAuthor } (avsender ikke bekreftet)"
       ]
     },
     "info": {
@@ -15659,6 +15668,9 @@
       ],
       "You can't change your own roles. Ask another admin to change them.": [
         "Du kan ikke endre dine egne roller. Be en annen administrator om å endre dem."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Denne brukeren får administratorrettigheter neste gang brukeren logger på."
       ]
     },
     "Role": {

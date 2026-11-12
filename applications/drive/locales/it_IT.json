@@ -4493,6 +4493,75 @@
       ],
       "You do not have access to this shared item": [
         "Accesso non consentito a questo elemento condiviso"
+      ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "É richiesto inserire un messaggio quando si segnala una violazione del copyright o di dati rubati"
+      ],
+      "Bookmark password is not available": [
+        "La password dell'elemento preferito non è disponibile"
+      ],
+      "Cannot download a folder": [
+        "Non è possibile scaricare una cartella"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Non è possibile spostare un elemento senza un nome valido, rinomina l'elemento prima di continuare"
+      ],
+      "Could not find an available name": [
+        "Impossibile trovare un nome disponibile"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Impossibile caricare l'immagine di anteprima: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Impossibile leggere parte di questo file: ${ message }"
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Non è permesso creare documenti al di fuori delle cartelle"
+      ],
+      "Expiration date cannot be in the past": [
+        "La data di scadenza non può essere nel passato"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Impossibile decriptare il nome dell'elemento preferito: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Impossibile decriptare la chiave del nodo: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Impossibile decriptare i metadati di revisione"
+      ],
+      "Failed to get inviter keys": [
+        "Impossibile ottenere le chiavi dell'invitante"
+      ],
+      "Failed to verify invitation": [
+        "Impossibile verificare l'invito"
+      ],
+      "Missing signature for ${ signatureType }": [
+        "Firma per ${ signatureType } mancante"
+      ],
+      "Move operation aborted": [
+        "Spostamento annullato"
+      ],
+      "Only admins can convert external invitations": [
+        "Solo gli admin possono convertire inviti esterni"
+      ],
+      "Request aborted": [
+        "Richiesta annullata"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Verifica della firma non riuscita: ${ errorMessage }"
+      ],
+      "Some items could not be loaded": [
+        "Alcuni elementi non sono stati caricati"
+      ],
+      "Too many server errors, please try again later": [
+        "Troppi errori del server, riprova più tardi"
+      ],
+      "You can only leave items that are shared with you": [
+        "Puoi lasciare soltanto gli oggetti che sono stati condivisi con te"
+      ],
+      "You can only upload a new version to a file": [
+        "È possibile caricare solo nuove versioni ad un file"
       ]
     },
     "error": {
@@ -7983,6 +8052,9 @@
       ],
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "I log ci aiutano a capire cosa è successo prima che si verificasse il problema. Includono le azioni eseguite nell'app e i messaggi di errore, ma non il contenuto dei messaggi."
+      ],
+      "${ claimedAuthor } (unverified sender)": [
+        "${ claimedAuthor } (mittente non verificato)"
       ]
     },
     "info": {
@@ -15693,6 +15765,9 @@
       ],
       "membership": [
         "abbonamento"
+      ],
+      "content key": [
+        "Chiave del contenuto"
       ]
     },
     "tryduo2026: Info": {

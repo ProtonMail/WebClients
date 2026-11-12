@@ -8031,6 +8031,9 @@
       ],
       "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
         "Vous avez une facture à régler au ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "${ claimedAuthor } (unverified sender)": [
+        "${ claimedAuthor } (expéditeur non vérifié)"
       ]
     },
     "info": {
@@ -15766,7 +15769,7 @@
     },
     "ngc_access_banner: action": {
       "Try it now": [
-        "Essayez-la maintenant"
+        "Essayez-le maintenant"
       ]
     },
     "ngc_access_banner: info": {

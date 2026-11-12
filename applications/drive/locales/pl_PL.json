@@ -1343,6 +1343,9 @@
       ],
       "Subscribe": [
         "Subskrybuj"
+      ],
+      "Import now": [
+        "Importuj teraz"
       ]
     },
     "Actions": {
@@ -4162,6 +4165,18 @@
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Hasło odzyskiwania jest nieprawidłowe. Spróbuj ponownie lub użyj innej metody odzyskiwania."
+      ],
+      "Could not unlock this item": [
+        "Nie można odblokować elementu"
+      ],
+      "Image preview not found": [
+        "Nie znaleziono podglądu zdjęcia"
+      ],
+      "Signature is missing": [
+        "Brak podpisu"
+      ],
+      "Something went wrong, please try again later": [
+        "Coś poszło nie tak. Spróbuj ponownie później"
       ]
     },
     "Error importing calendar": {
@@ -8379,7 +8394,7 @@
         "może przeglądać"
       ],
       "Created ${ created }": [
-        "Utworzono: ${ created }"
+        "Utworzono ${ created }"
       ],
       "Delete link and remove access for everyone": [
         "Usuń link i zablokuj dostęp dla wszystkich"
@@ -8409,7 +8424,7 @@
         "Wygasło: ${ formatted }"
       ],
       "Expires ${ formatted }": [
-        "Wygasa: ${ formatted }"
+        "Wygasa ${ formatted }"
       ],
       "Expiry": [
         "Wygaśnięcie"
@@ -8430,7 +8445,7 @@
         "Lokalizacja: ${ item.location }"
       ],
       "Modified ${ modified }": [
-        "Zmodyfikowano: ${ modified }"
+        "Zmodyfikowano ${ modified }"
       ],
       "Never expires": [
         "Nigdy nie wygasa"
@@ -10893,7 +10908,7 @@
         "Zeskanuj kod QR, aby zainstalować aplikację mobilną"
       ],
       "Secure your files": [
-        "Chroń pliki"
+        "Zabezpiecz pliki"
       ],
       "Securely share files and folders": [
         "Bezpiecznie udostępniaj pliki i foldery"
@@ -14424,6 +14439,9 @@
       ],
       "Black Friday": [
         "Black Friday"
+      ],
+      "Welcome to ${ DRIVE_APP_NAME }": [
+        "Witaj w ${ DRIVE_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14499,7 +14517,7 @@
         "Podfoldery systemowe będą widoczne jako oddzielne foldery w poczcie ${ MAIL_APP_NAME }"
       ],
       "The image could not be loaded": [
-        "Obraz nie mógł zostać załadowany"
+        "Zdjęcie nie mogło zostać załadowane"
       ],
       "The image could not be loaded using proxy": [
         "Obraz nie mógł zostać załadowany przy użyciu proxy"
