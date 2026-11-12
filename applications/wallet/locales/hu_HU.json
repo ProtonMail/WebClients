@@ -103,6 +103,9 @@
       "Copy address": [
         "Cím másolása"
       ],
+      "Copy public key (${ prefix })": [
+        "Publikus kulcs másolása (${ prefix })"
+      ],
       "Copy version number to clipboard": [
         "A verziószám másolása a vágólapra"
       ],
@@ -427,6 +430,10 @@
         "${ domains } további saját domain név",
         "${ domains } további saját domain név"
       ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikált VPN szerver",
+        "${ ips } dedikált VPN szerver"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI licenc"
       ],
@@ -612,6 +619,9 @@
       ],
       "${ WALLET_APP_NAME } has partnered with ${ rampLink }, ${ banxaLink } and ${ moonpayLink }, three registered crypto asset services, to facilitate the purchase of BTC. Please enter your region to see the available providers and payment methods.": [
         "${ WALLET_APP_NAME } együttműködik három regisztrált kriptoeszköz-szolgáltatóval (${ rampLink }, ${ banxaLink } és ${ moonpayLink }) a BTC vásárlásának megkönnyítése érdekében. Kérjük, adja meg régióját, hogy megtekinthesse az elérhető szolgáltatókat és fizetési módokat."
+      ],
+      "2% bank transfer fee": [
+        "2% banki átutalási díj"
       ],
       "4% credit card fee": [
         "4% bankkártya díj"
@@ -2392,6 +2402,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nincs kép kiválasztva"
+      ]
+    },
+    "Extended public key": {
+      "Public key (${ prefix }) copied to clipboard": [
+        "Publikus kulcs (${ prefix }) vágólapra másolva"
       ]
     },
     "Feature": {
@@ -4987,6 +5002,9 @@
       "Cancel": [
         "Mégsem"
       ],
+      "Cannot use QR Code scanner. Please check browser compatibility": [
+        "Nem használható a QR-kód olvasó. Ellenőrizze a böngészője kompatibilitását"
+      ],
       "Confirm and import": [
         "Megerősítés és importálás"
       ],
@@ -5004,6 +5022,9 @@
       ],
       "Paper wallet funds was successfully imported": [
         "A papírtárca pénzeszközeit sikeresen importáltuk"
+      ],
+      "Please grant camera permission to use QR Code scanner": [
+        "Adjon engedélyt a kamera eléréséhez a QR kód olvasó használatához"
       ],
       "You receive": [
         "Ön kap"
