@@ -1,4 +1,4 @@
-import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
+import { isIos, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { PUBLIC_PATH } from '@proton/shared/lib/webpack.constants';
 
@@ -9,6 +9,10 @@ let workerWakeupInterval: ReturnType<typeof setInterval>;
 export const isServiceWorkersSupported = () => {
     return 'serviceWorker' in navigator;
 };
+
+// The size becomes Content-Length but is the encrypted size --> Firefox Android marks the download failed --> only iOS needs it.
+export const getServiceWorkerDownloadMeta = (meta: TransferMeta, isIosDevice: boolean): TransferMeta =>
+    isIosDevice ? meta : { ...meta, size: undefined };
 
 export const isOPFSSupported = async () => {
     // Get the OPFS root directory
@@ -135,7 +139,9 @@ export async function openDownloadStream(
             createDownloadIframe(data.payload);
         }
     };
-    worker.postMessage({ action: 'start_download', payload: meta }, [channel.port2]);
+    worker.postMessage({ action: 'start_download', payload: getServiceWorkerDownloadMeta(meta, isIos()) }, [
+        channel.port2,
+    ]);
 
     return stream;
 }
