@@ -541,6 +541,12 @@
       "Open navigation": [
         "Ouvrir la navigation"
       ],
+      "Open platform selection dropdown": [
+        "Ouvrir le menu déroulant"
+      ],
+      "Open the browser again": [
+        "Ouvrez à nouveau votre navigateur internet."
+      ],
       "Organize vaults": [
         "Organiser les coffres-forts"
       ],
@@ -706,6 +712,9 @@
       "Show more": [
         "Afficher plus"
       ],
+      "Sign in in the app instead": [
+        "Se connecter plutôt via l'application"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Se connecter avec ${ BRAND_NAME }"
       ],
@@ -748,6 +757,9 @@
       ],
       "Trash": [
         "Corbeille"
+      ],
+      "Try again": [
+        "Réessayer"
       ],
       "Try again.": [
         "Nous vous invitons à réessayer."
@@ -1864,8 +1876,14 @@
       "Can view this item.": [
         "Peut afficher cet élément."
       ],
+      "Canceled by user": [
+        "Annulé par l'utilisateur"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Vérification de ${ compromised.progress.completed } mots de passe sur ${ compromised.progress.total }"
+      ],
+      "Choose how you want to sign in": [
+        "Choisissez la manière dont vous souhaitez vous connecter"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirmez votre mot de passe supplémentaire pour le retirer."
@@ -2052,9 +2070,6 @@
       ],
       "Fill in the CSV with your data": [
         "Remplir le fichier CSV avec vos données"
-      ],
-      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
-        "Terminez la connexion dans la fenêtre du navigateur qui vient de s'ouvrir. ${ PASS_APP_NAME } reprendra automatiquement une fois que vous aurez terminé."
       ],
       "Folder \"${ payload.folder.name }\" created": [
         "Le dossier \"${ payload.folder.name }\" a été créé"
@@ -2544,6 +2559,9 @@
       "Restoring trashed items...": [
         "Restauration des éléments mis à la corbeille en cours"
       ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Scannez le QR code pour télécharger ${ PASS_APP_NAME } pour iOS et Android."
+      ],
       "Secure links": [
         "Liens sécurisés"
       ],
@@ -2594,6 +2612,9 @@
       ],
       "Shared item invitation": [
         "Invitation à un élément partagé"
+      ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Connectez-vous et confirmez l'accès dans la fenêtre de votre navigateur qui vient tout juste de s'ouvrir. L'application ${ PASS_APP_NAME } prendra automatiquement en compte cette connexion une fois que vous aurez terminé."
       ],
       "Sign in to your account": [
         "Connectez-vous à votre compte"
@@ -2670,6 +2691,9 @@
       ],
       "The secure link has been removed": [
         "Le lien sécurisé a été supprimé."
+      ],
+      "The sign in was not confirmed in time.": [
+        "La connexion n'a pas été confirmée à temps."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Le texte que vous essayez de coller dépasse le nombre maximum de ${ maxLength } caractères."
@@ -2974,6 +2998,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Votre organisation vous demande de sécuriser votre accès à ${ PASS_APP_NAME }."
+      ],
+      "Your session could not be authorized.": [
+        "Votre session n'a pas pu être autorisée."
       ]
     },
     "Keyboard key": {
@@ -4809,6 +4836,9 @@
       "Activity for \"${ token.Name }\"": [
         "Activité pour « ${ token.Name } »"
       ],
+      "Add an account": [
+        "Ajouter un compte"
+      ],
       "Add custom domain": [
         "Ajouter un domaine personnalisé"
       ],
@@ -5094,8 +5124,8 @@
         "Voulez-vous mettre ${ trashedItemsCount } élément à la corbeille ?",
         "Voulez-vous mettre ${ trashedItemsCount } éléments à la corbeille ?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Déplacer tous les éléments vers « ${ vaultName } » ?"
+      "Move all items to \"${ target }\"?": [
+        "Déplacer tous les éléments vers « ${ target } » ?"
       ],
       "Move all items?": [
         "Déplacer tous les éléments ?"
@@ -5254,6 +5284,15 @@
       ],
       "Shared via": [
         "Partagé via"
+      ],
+      "Sign in timed out": [
+        "La connexion a expiré."
+      ],
+      "Signing you in": [
+        "Identification en cours"
+      ],
+      "Something went wrong": [
+        "Une erreur s'est produite."
       ],
       "SPF (Optional)": [
         "SPF (facultatif)"

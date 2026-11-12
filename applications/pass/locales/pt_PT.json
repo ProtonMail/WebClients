@@ -136,6 +136,9 @@
       "Clear search": [
         "Limpar a pesquisa"
       ],
+      "Clear sort filter": [
+        "Limpar filtro de ordenação"
+      ],
       "Close": [
         "Fechar"
       ],
@@ -233,7 +236,7 @@
         "Criar uma identidade"
       ],
       "Create item": [
-        "Criar um item"
+        "Criar item"
       ],
       "Create login": [
         "Criar um início de sessão"
@@ -388,6 +391,9 @@
       "Hide": [
         "Ocultar"
       ],
+      "Hide passwords": [
+        "Ocultar palavras-passe"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Como exporto os meus dados do ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -517,6 +523,9 @@
       "Open navigation": [
         "Abrir navegação"
       ],
+      "Open the browser again": [
+        "Abrir o navegador de novo"
+      ],
       "Organize vaults": [
         "Organizar cofres"
       ],
@@ -594,6 +603,9 @@
       ],
       "Reset": [
         "Redefinir"
+      ],
+      "Reset filters": [
+        "Redefinir filtros"
       ],
       "Reset history": [
         "Redefinir o histórico"
@@ -679,6 +691,9 @@
       "Show more": [
         "Mostrar mais"
       ],
+      "Sign in in the app instead": [
+        "Em vez disso inicie sessão na aplicação"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Iniciar sessão com o ${ BRAND_NAME }"
       ],
@@ -722,6 +737,9 @@
       "Trash": [
         "Lixo"
       ],
+      "Try again": [
+        "Tentar novamente"
+      ],
       "Try again.": [
         "Tente de novo."
       ],
@@ -763,7 +781,7 @@
         "Verificar"
       ],
       "Via secure link": [
-        "Via uma ligação segura"
+        "Via hiperligação segura"
       ],
       "View agent activity": [
         "Ver atividade do agente"
@@ -775,7 +793,7 @@
         "Mostrar o histórico"
       ],
       "View item history": [
-        "Ver o histórico do item"
+        "Ver histórico do item"
       ],
       "View older history": [
         "Ver o histórico antigo"
@@ -1121,6 +1139,10 @@
       "Failed to delete email address from monitoring": [
         "Erro ao eliminar o endereço de e-mail da monitorização"
       ],
+      "Failed to delete folder": [
+        "Não foi possível eliminar a pasta",
+        "Não foi possível eliminar as pastas"
+      ],
       "Failed to delete selected items": [
         "Erro ao eliminar os itens selecionados"
       ],
@@ -1207,6 +1229,9 @@
       ],
       "Failed to update domain name.": [
         "Erro ao atualizar o nome de domínio."
+      ],
+      "Failed to update folder": [
+        "Não foi possível atualizar a pasta"
       ],
       "Failed to update monitoring settings": [
         "Erro ao atualizar as definições da monitorização"
@@ -1297,6 +1322,9 @@
       ],
       "PIN codes do not match": [
         "Os códigos PIN não correspondem"
+      ],
+      "Regex invalid": [
+        "Regex inválido"
       ],
       "Request timed out": [
         "O pedido expirou"
@@ -1789,6 +1817,9 @@
       "Can view this item.": [
         "Pode ver este item."
       ],
+      "Choose how you want to sign in": [
+        "Selecione como prefere iniciar sessão"
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirme a sua palavra-passe para continuar com a remoção."
       ],
@@ -1845,6 +1876,9 @@
       ],
       "Didn't receive the code?": [
         "Não recebeu o código?"
+      ],
+      "Disabled by your organization": [
+        "Desativado para a sua organização"
       ],
       "Disabling auto-lock": [
         "Desativando o bloqueio automático"
@@ -1966,6 +2000,9 @@
       "Fill in the CSV with your data": [
         "Preencha o ficheiro CSV com os seus dados"
       ],
+      "Folder deleted": [
+        "Pasta eliminada"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Siga estes passos para importar os seus dados com um ficheiro CSV genérico:"
       ],
@@ -2007,6 +2044,9 @@
       "Import the CSV file below.": [
         "Importe o ficheiro CSV abaixo."
       ],
+      "Important:": [
+        "Importante:"
+      ],
       "Imported on ${ date }": [
         "Importado em ${ date }"
       ],
@@ -2039,6 +2079,9 @@
       ],
       "invites you to access items in": [
         "convida-o a aceder a itens em"
+      ],
+      "iOS and Android Apps": [
+        "Aplicações de Android e iOS"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Parece que já iniciou sessão em ${ PASS_APP_NAME }. Se estiver a tentar iniciar sessão com uma conta diferente, termine primeiro a sessão na extensão."
@@ -2186,6 +2229,18 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "O acesso online ao ${ PASS_APP_NAME } exigirá um código PIN. Será desconectado após 3 tentativas falhadas."
+      ],
+      "Only aliases are shown": [
+        "Só são mostrados os pseudónimos"
+      ],
+      "Only cards are shown": [
+        "Só são mostrados os cartões"
+      ],
+      "Only identities are shown": [
+        "Só são mostradas as identidades"
+      ],
+      "Only notes are shown": [
+        "Só são mostradas as notas"
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Apenas os tokens que expiraram nos últimos 30 dias são mostrados. Os tokens mais antigos são eliminados automaticamente."
@@ -2401,6 +2456,9 @@
       "Restoring trashed items...": [
         "A restaurar itens do lixo..."
       ],
+      "Scan to download": [
+        "Digitalize para transferir"
+      ],
       "Secure links": [
         "Ligações seguras"
       ],
@@ -2451,6 +2509,9 @@
       ],
       "Shared item invitation": [
         "Convite a um item partilhado"
+      ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Inicie sessão e confirme na janela do navegador que abriu. ${ PASS_APP_NAME } será selecionada automaticamente quando terminar."
       ],
       "Sign in to your account": [
         "Iniciar sessão na sua conta"
@@ -2521,6 +2582,9 @@
       ],
       "The secure link has been removed": [
         "A ligação segura foi removida."
+      ],
+      "The sign in was not confirmed in time.": [
+        "O início de sessão não pode ser confirmado dentro do tempo."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "O texto que está a tentar colar é maior do que o comprimento máximo permitido de ${ maxLength } caracteres."
@@ -2810,6 +2874,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "A sua organização exige que proteja o seu acesso ao ${ PASS_APP_NAME }."
+      ],
+      "Your session could not be authorized.": [
+        "A sua sessão não pode ser autorizada."
       ]
     },
     "Keyboard key": {
@@ -2994,6 +3061,9 @@
       "All items": [
         "Todos os itens"
       ],
+      "Allow viewers to see passwords": [
+        "Permitir que os visualizadores vejam as palavras-passe"
+      ],
       "Alphabetical": [
         "Em ordem alfabética"
       ],
@@ -3110,6 +3180,9 @@
       ],
       "Create a custom item": [
         "Criar um item personalizado"
+      ],
+      "Create a folder": [
+        "Criar uma pasta"
       ],
       "Create a hide-my-email alias": [
         "Crie um alias Hide-my-email"
@@ -3748,7 +3821,7 @@
         "Código de segurança"
       ],
       "See member and permission overview": [
-        "Ver todos os membros e permissões"
+        "Ver sinopse dos membros e permissões"
       ],
       "Seed Phrase": [
         "Frase de recuperação"
@@ -4336,6 +4409,9 @@
       "Enter username": [
         "Introduza o nome de utilizador"
       ],
+      "Folder name": [
+        "Nome da pasta"
+      ],
       "Full Name": [
         "Nome completo"
       ],
@@ -4362,6 +4438,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Descreva o problema e inclua quaisquer mensagens de erro."
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Volte a digitar \"${ name }\" para confirmar a eliminação"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Pesquisar ${ pluralItemType } em ${ vaultName }"
@@ -4400,6 +4479,9 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Este URL NÃO será bloqueado do preenchimento automático"
+      ],
+      "URL matches the rule": [
+        "O URL corresponde à regra"
       ]
     },
     "Security Center - Info": {
@@ -4427,7 +4509,7 @@
         "Se não fez este pedido, cancele-o agora."
       ],
       "Invalid confirmation code": [
-        "O código de confirmação não é válido."
+        "Código de confirmação inválido"
       ],
       "No, it wasn’t me": [
         "Não, não fui eu."
@@ -4600,6 +4682,9 @@
       "Activity for \"${ token.Name }\"": [
         "Atividade de \"${ token.Name }\""
       ],
+      "Add an account": [
+        "Adicionar uma conta"
+      ],
       "Add custom domain": [
         "Adicionar um domínio personalizado"
       ],
@@ -4712,11 +4797,17 @@
       "Delete domain": [
         "Eliminar o domínio"
       ],
+      "Delete folder \"${ name }\"?": [
+        "Eliminar a pasta \"${ name }\"?"
+      ],
       "Delete mailbox": [
         "Eliminar a caixa de correio"
       ],
       "Delete this item?": [
         "Eliminar este item?"
+      ],
+      "Delete vault \"${ name }\"?": [
+        "Eliminar o cofre \"${ name }\"?"
       ],
       "Did you know?": [
         "Sabia?"
@@ -4765,6 +4856,9 @@
       ],
       "Folder options": [
         "Opções de pasta"
+      ],
+      "Get mobile and desktop apps": [
+        "Obtenha as aplicações para PC e dispositivo móvel"
       ],
       "Get Started": [
         "Começar"
@@ -4848,8 +4942,8 @@
         "Mover ${ trashedItemsCount } item para o lixo?",
         "Mover ${ trashedItemsCount } itens para o lixo?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Mover todos os itens para «${ vaultName }»?"
+      "Move all items to \"${ target }\"?": [
+        "Mover todos os itens para \"${ target }\"?"
       ],
       "MX record": [
         "Registo MX"
@@ -4942,6 +5036,9 @@
       "Remove secure link?": [
         "Remover a ligação segura?"
       ],
+      "Rename folder": [
+        "Renomear pasta"
+      ],
       "Reset history for this item?": [
         "Redefinir o histórico deste item?"
       ],
@@ -4996,6 +5093,15 @@
       ],
       "Shared via": [
         "Partilhado via"
+      ],
+      "Sign in timed out": [
+        "Tempo de sessão expirado"
+      ],
+      "Signing you in": [
+        "Iniciando sessão"
+      ],
+      "Something went wrong": [
+        "Ocorreu um erro"
       ],
       "SPF (Optional)": [
         "SPF (opcional)"

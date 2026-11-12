@@ -544,6 +544,9 @@
       "Open platform selection dropdown": [
         "Platform seçimi listesini aç"
       ],
+      "Open the browser again": [
+        "Tarayıcıyı yeniden açın"
+      ],
       "Organize vaults": [
         "Kasaları düzenle"
       ],
@@ -709,6 +712,9 @@
       "Show more": [
         "Daha fazla görüntüle"
       ],
+      "Sign in in the app instead": [
+        "Bunun yerine uygulamada oturum açın"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME } ile oturum aç"
       ],
@@ -754,6 +760,9 @@
       ],
       "Trash": [
         "Çöpe at"
+      ],
+      "Try again": [
+        "Yeniden dene"
       ],
       "Try again.": [
         "Yeniden deneyin."
@@ -1876,8 +1885,14 @@
       "Can view this item.": [
         "Bu ögeyi görüntüleyebilir."
       ],
+      "Canceled by user": [
+        "Kullanıcı tarafından iptal edildi"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "${ compromised.progress.completed } / ${ compromised.progress.total } parola denetleniyor"
+      ],
+      "Choose how you want to sign in": [
+        "Nasıl oturum açmak istediğinizi seçin"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Kaldırma işlemini tamamlamak için ek parolanızı doğrulayın."
@@ -2064,9 +2079,6 @@
       ],
       "Fill in the CSV with your data": [
         "CSV dosyasına verilerinizi ekleyin"
-      ],
-      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
-        "Az önce açılan tarayıcı penceresinde oturum açmayı tamamlayın. Oturumu açtığınızda ${ PASS_APP_NAME } kaldığı yerden ilerleyecek."
       ],
       "Folder \"${ payload.folder.name }\" created": [
         "\"${ payload.folder.name }\" klasörü oluşturuldu"
@@ -2616,6 +2628,9 @@
       "Shared item invitation": [
         "Öge paylaşma daveti"
       ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Oturum açın ve açılan tarayıcı penceresinde onaylayın. İşlemi tamamladığınızda ${ PASS_APP_NAME } otomatik olarak kaldığı yerden ilerler."
+      ],
       "Sign in to your account": [
         "Hesabınızda oturum açın"
       ],
@@ -2627,6 +2642,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Bir dahaki sefere bir takma ada gerek duyduğunuzda ${ emailBold } adresini kullanın: İlk kez bir e-posta aldığında ${ automaticallyBold } oluşturulur. Daha ayrıntılı bir denetim için, ${ rulesHyperLink } de tanımlayabilirsiniz."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "${ PASS_APP_NAME } uygulamasını çevrim dışı başlatmak için ${ BRAND_NAME } parolanız gerekecek."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "${ PASS_APP_NAME } uygulamasını çevrim dışı başlatmak için yedek parolanız gerekecek."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "${ PASS_APP_NAME } uygulamasını çevrim dışı başlatmak için ek parolanız gerekecek."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "${ PASS_APP_NAME } uygulamasını çevrim dışı başlatmak için ikinci parolanız gerekecek."
       ],
       "Successfully exported all your items": [
         "Tüm ögeleriniz dışa aktarıldı"
@@ -2691,6 +2718,9 @@
       ],
       "The secure link has been removed": [
         "Güvenli bağlantı kaldırıldı"
+      ],
+      "The sign in was not confirmed in time.": [
+        "Oturum açma işlemi zamanında onaylanmadı."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Yapıştırmaya çalıştığınız yazı izin verilen en fazla ${ maxLength } karakterden daha uzun."
@@ -3001,6 +3031,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
+      ],
+      "Your session could not be authorized.": [
+        "Oturumunuza yetki verilemedi."
       ]
     },
     "Keyboard key": {
@@ -4836,6 +4869,9 @@
       "Activity for \"${ token.Name }\"": [
         "\"${ token.Name }\" etkinliği"
       ],
+      "Add an account": [
+        "Bir hesap ekle"
+      ],
       "Add custom domain": [
         "Özel etki alanı ekle"
       ],
@@ -5127,8 +5163,8 @@
         "${ trashedItemsCount } öge çöpe atılsın mı?",
         "${ trashedItemsCount } öge çöpe atılsın mı?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Tüm ögeler \"${ vaultName }\" kasasına taşınsın mı?"
+      "Move all items to \"${ target }\"?": [
+        "Tüm ögeler \"${ target }\" kasasına taşınsın mı?"
       ],
       "Move all items?": [
         "Tüm ögeler taşınsın mı?"
@@ -5287,6 +5323,15 @@
       ],
       "Shared via": [
         "Şununla paylaşıldı"
+      ],
+      "Sign in timed out": [
+        "Oturum açma işlemi zaman aşımına uğradı"
+      ],
+      "Signing you in": [
+        "Oturumunuz açılıyor"
+      ],
+      "Something went wrong": [
+        "Bir sorun çıktı"
       ],
       "SPF (Optional)": [
         "SPF (isteğe bağlı)"

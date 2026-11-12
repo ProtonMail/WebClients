@@ -544,6 +544,9 @@
       "Open platform selection dropdown": [
         "Άνοιγμα αναπτυσσόμενου μενού επιλογής πλατφόρμας"
       ],
+      "Open the browser again": [
+        "Ανοίξτε ξανά το πρόγραμμα περιήγησης"
+      ],
       "Organize vaults": [
         "Οργάνωση κρυπτών"
       ],
@@ -709,6 +712,9 @@
       "Show more": [
         "Εμφάνιση περισσότερων"
       ],
+      "Sign in in the app instead": [
+        "Συνδεθείτε μέσω της εφαρμογής"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Σύνδεση με ${ BRAND_NAME }"
       ],
@@ -754,6 +760,9 @@
       ],
       "Trash": [
         "Διαγραμμένα"
+      ],
+      "Try again": [
+        "Δοκιμάστε ξανά"
       ],
       "Try again.": [
         "Δοκιμάστε ξανά."
@@ -1876,8 +1885,14 @@
       "Can view this item.": [
         "Μπορεί να προβάλλει αυτό το στοιχείο."
       ],
+      "Canceled by user": [
+        "Ακυρώθηκε από τον χρήστη"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Έλεγχος ${ compromised.progress.completed } από ${ compromised.progress.total } κωδικούς πρόσβασης"
+      ],
+      "Choose how you want to sign in": [
+        "Επιλέξτε τρόπο σύνδεσης"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Επιβεβαιώστε τον επιπλέον κωδικό πρόσβασής σας για να προχωρήσετε στην αφαίρεσή του."
@@ -2064,9 +2079,6 @@
       ],
       "Fill in the CSV with your data": [
         "Συμπληρώστε το CSV με τα δεδομένα σας"
-      ],
-      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
-        "Ολοκληρώστε τη σύνδεση στο παράθυρο του προγράμματος περιήγησης που μόλις άνοιξε. Η εφαρμογή ${ PASS_APP_NAME } θα συνεχίσει αυτόματα μόλις ολοκληρώσετε τη διαδικασία."
       ],
       "Folder \"${ payload.folder.name }\" created": [
         "Ο φάκελος \"${ payload.folder.name }\" δημιουργήθηκε"
@@ -2616,6 +2628,9 @@
       "Shared item invitation": [
         "Πρόσκληση για κοινόχρηστο στοιχείο"
       ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Συνδεθείτε και επιβεβαιώστε στο παράθυρο του προγράμματος περιήγησης που μόλις άνοιξε. Το ${ PASS_APP_NAME } θα συνεχίσει αυτόματα μόλις ολοκληρώσετε τη διαδικασία."
+      ],
       "Sign in to your account": [
         "Συνδεθείτε στον λογαριασμό σας"
       ],
@@ -2627,6 +2642,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Απλώς χρησιμοποιήστε το ${ emailBold } την επόμενη φορά που θα χρειαστείτε ένα ψευδώνυμο: αυτό θα δημιουργηθεί ${ automaticallyBold } την πρώτη φορά που θα λάβει κάποιο email. Για πιο λεπτομερή έλεγχο, μπορείτε επιπλέον να ορίσετε ${ rulesHyperLink }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Η έναρξη του ${ PASS_APP_NAME } εκτός διαδικτύου θα απαιτήσει τον κωδικό πρόσβασής σας για το ${ BRAND_NAME }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Η έναρξη του ${ PASS_APP_NAME } εκτός διαδικτύου θα απαιτήσει τον εφεδρικό κωδικό πρόσβασής σας."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Η έναρξη του ${ PASS_APP_NAME } εκτός διαδικτύου θα απαιτήσει τον πρόσθετο κωδικό πρόσβασής σας."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Η έναρξη του ${ PASS_APP_NAME } εκτός διαδικτύου θα απαιτήσει τον δεύτερο κωδικό πρόσβασής σας."
       ],
       "Successfully exported all your items": [
         "Επιτυχής εξαγωγή όλων των στοιχείων σας"
@@ -2691,6 +2718,9 @@
       ],
       "The secure link has been removed": [
         "Ο ασφαλής σύνδεσμος καταργήθηκε"
+      ],
+      "The sign in was not confirmed in time.": [
+        "Η σύνδεση δεν επιβεβαιώθηκε εγκαίρως."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Το κείμενο που προσπαθείτε να επικολλήσετε είναι μεγαλύτερο από το μέγιστο επιτρεπόμενο μήκος των ${ maxLength } χαρακτήρων."
@@ -3001,6 +3031,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ο οργανισμός σας απαιτεί να εξασφαλίσετε την πρόσβασή σας στο ${ PASS_APP_NAME }"
+      ],
+      "Your session could not be authorized.": [
+        "Δεν ήταν δυνατή η εξουσιοδότηση της συνεδρίας."
       ]
     },
     "Keyboard key": {
@@ -4836,6 +4869,9 @@
       "Activity for \"${ token.Name }\"": [
         "Δραστηριότητα για το \"${ token.Name }\""
       ],
+      "Add an account": [
+        "Προσθήκη λογαριασμού"
+      ],
       "Add custom domain": [
         "Προσθήκη προσαρμοσμένου τομέα"
       ],
@@ -5127,8 +5163,8 @@
         "Μετακίνηση στον κάδο απορριμμάτων ${ trashedItemsCount } στοιχείο;",
         "Μετακίνηση στον κάδο απορριμμάτων ${ trashedItemsCount } στοιχεία;"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Μετακίνηση όλων των στοιχείων σε \"${ vaultName }\";"
+      "Move all items to \"${ target }\"?": [
+        "Μετακίνηση όλων των στοιχείων στο \"${ target }\";"
       ],
       "Move all items?": [
         "Μετακίνηση όλων των στοιχείων;"
@@ -5287,6 +5323,15 @@
       ],
       "Shared via": [
         "Κοινή χρήση μέσω"
+      ],
+      "Sign in timed out": [
+        "Η σύνδεση έληξε"
+      ],
+      "Signing you in": [
+        "Γίνεται σύνδεση"
+      ],
+      "Something went wrong": [
+        "Κάτι πήγε στραβά"
       ],
       "SPF (Optional)": [
         "SPF (Προαιρετικό)"
