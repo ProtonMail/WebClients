@@ -5,6 +5,7 @@ import type { SectionConfig, SidebarConfig } from '@proton/components/containers
 import { isScribeSupported } from '@proton/components/helpers/assistant';
 import { getAccessControlPageAvailability } from '@proton/console/organization/getAccessControlPageAvailability';
 import { getSecurityPageAvailability } from '@proton/console/organization/getSecurityPageAvailability';
+import { getSingleSignOnPageAvailability } from '@proton/console/organization/getSingleSignOnPageAvailability';
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
 import { IcBuildings } from '@proton/icons/icons/IcBuildings';
 import { IcCardIdentity } from '@proton/icons/icons/IcCardIdentity';
@@ -20,7 +21,6 @@ import { IcSliders } from '@proton/icons/icons/IcSliders';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { IcVault } from '@proton/icons/icons/IcVault';
 import { PLANS } from '@proton/payments/core/constants';
-import { appSupportsSSO } from '@proton/shared/lib/apps/apps';
 import {
     APPS,
     BRAND_NAME,
@@ -35,7 +35,6 @@ import {
     isOrganizationOneOf,
     isOrganizationPassFamily,
 } from '@proton/shared/lib/organization/helper';
-import { getHasSsoUpsell, getIsSsoAvailable } from '@proton/shared/lib/payments/plan/helpers';
 
 import type { OrganizationRouterParams } from '../../router-params';
 
@@ -170,18 +169,14 @@ export const getOrganizationAppRoutes = ({
 
     const subSectionTitleAppearance = isPartOfFamily ? '' : c('Title').t`Customization`;
 
-    const isSsoAvailable = getIsSsoAvailable({
-        hasSso: entitlements.hasSso,
-        subscriptions: allSubscriptions,
+    const singleSignOnPageAvailability = getSingleSignOnPageAvailability({
+        app,
+        organization,
+        entitlements,
+        permissions,
+        allSubscriptions,
         isSsoForPbsEnabled,
     });
-    const hasSsoUpsell = getHasSsoUpsell(allSubscriptions);
-
-    const canShowSSOSection =
-        permissions['account.sso_config.read'] &&
-        appSupportsSSO(app) &&
-        (isSsoAvailable || hasSsoUpsell) &&
-        isOrgConfigured;
 
     const routes = {
         users: {
@@ -504,8 +499,8 @@ export const getOrganizationAppRoutes = ({
             text: c('Title').t`Single sign-on`,
             to: '/single-sign-on',
             icon: IcKey,
-            available: canShowSSOSection,
-            upgradeRequired: !isSsoAvailable && hasSsoUpsell,
+            available: singleSignOnPageAvailability.singleSignOn,
+            upgradeRequired: singleSignOnPageAvailability.upgradeRequired,
         },
         accessControl: {
             id: 'accessControl',

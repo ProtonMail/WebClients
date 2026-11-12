@@ -6,6 +6,7 @@ describe('appSupportsSSO', () => {
         expect(appSupportsSSO(APPS.PROTONVPN_SETTINGS)).toBe(true);
         expect(appSupportsSSO(APPS.PROTONPASS)).toBe(true);
         expect(appSupportsSSO(APPS.PROTONLUMO)).toBe(true);
+        expect(appSupportsSSO(APPS.PROTONCONSOLE)).toBe(true);
     });
 
     it('returns false for apps without SSO support', () => {

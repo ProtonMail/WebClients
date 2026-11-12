@@ -8,6 +8,7 @@
     "exports": {
         "./organization/getAccessControlPageAvailability": "./src/organization/getAccessControlPageAvailability.ts",
         "./organization/getSecurityPageAvailability": "./src/organization/getSecurityPageAvailability.ts",
+        "./organization/getSingleSignOnPageAvailability": "./src/organization/getSingleSignOnPageAvailability.ts",
         "./pass/getPassOrganizationAccess": "./src/pass/getPassOrganizationAccess.ts"
     },
     "scripts": {

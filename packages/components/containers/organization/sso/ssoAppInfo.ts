@@ -12,6 +12,10 @@ const getSsoKbUrl = (app: APP_NAMES) => {
     if (app === APPS.PROTONLUMO) {
         return getKnowledgeBaseUrl('/lumo-set-up-sso');
     }
+    if (app === APPS.PROTONCONSOLE) {
+        // TODO: Link a Console SSO article once there is one; the Pass article is used until then.
+        return getKnowledgeBaseUrl('/pass-set-up-sso');
+    }
 };
 
 const getSsoUpsellPlan = (app: APP_NAMES) => {
@@ -23,6 +27,10 @@ const getSsoUpsellPlan = (app: APP_NAMES) => {
     }
     if (app === APPS.PROTONLUMO) {
         return PLANS.LUMO_BUSINESS;
+    }
+    if (app === APPS.PROTONCONSOLE) {
+        // TODO: Pick the upsell plan for Console; Pass's is used until then, and only shows the Upgrade button.
+        return PLANS.PASS_BUSINESS;
     }
 };
 
