@@ -3579,9 +3579,6 @@
       "External invitations are temporarily disabled.": [
         "Dış davetler geçici olarak yapılamıyor."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Dış davetler geçici olarak yapılamıyor. Lütfen bir süre sonra yeniden deneyin"
-      ],
       "Failed to change permissions settings": [
         "İzin ayarları değiştirilemedi"
       ],
@@ -4010,12 +4007,6 @@
       ],
       "The folder name is too long. Please choose a different name.": [
         "Klasör adı çok uzun. Lütfen farklı bir ad seçin."
-      ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Davet henüz tamamlanamadı. Lütfen bir süre sonra yeniden deneyin."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Davet artık yok"
       ],
       "The label name is invalid. Please choose a different name.": [
         "Etiket adı geçersiz. Lütfen farklı bir ad seçin."
@@ -5097,6 +5088,9 @@
         "${ calendarsToBeMergedCount } birleştirilmiş takvim",
         "${ calendarsToBeMergedCount } birleştirilmiş takvim"
       ],
+      "${ claimedAuthor } (unverified sender)": [
+        "${ claimedAuthor } (doğrulanmamış gönderici)"
+      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } / ${ items.length } aktarım tamamlandı"
       ],
@@ -5157,9 +5151,6 @@
       ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "${ IDEAL_WERO_BRAND_NAME } markası"
-      ],
-      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
-        "${ invitation.addedByEmail.error.claimedAuthor } (doğrulanmamış gönderici)"
       ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } bekleyen davet var",

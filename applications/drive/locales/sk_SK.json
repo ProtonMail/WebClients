@@ -3633,9 +3633,6 @@
       "External invitations are temporarily disabled.": [
         "Externé pozvánky sú dočasne zablokované."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Externé pozvánky sú dočasne deaktivované. Skúste to znova neskôr, prosím"
-      ],
       "Failed to change permissions settings": [
         "Zmena nastavení oprávnení zlyhala"
       ],
@@ -4076,12 +4073,6 @@
       ],
       "The folder name is too long. Please choose a different name.": [
         "Názov priečinka je príliš dlhý. Zvoľte prosím iný názov."
-      ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Pozvánku ešte nie je možné dokončiť. Skúste to znova neskôr, prosím."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Pozvánka už neexistuje"
       ],
       "The label name is invalid. Please choose a different name.": [
         "Názov štítku je neplatný. Zvoľte prosím iný názov."
@@ -5211,6 +5202,9 @@
         "${ calendarsToBeMergedCount } zlúčených kalendárov",
         "${ calendarsToBeMergedCount } zlúčených kalendárov"
       ],
+      "${ claimedAuthor } (unverified sender)": [
+        "${ claimedAuthor } (neoverený odosielateľ)"
+      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } z ${ items.length } prenosov dokončené"
       ],
@@ -5285,9 +5279,6 @@
       ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "${ IDEAL_WERO_BRAND_NAME } značka"
-      ],
-      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
-        "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)"
       ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } čakajúca pozvánka",

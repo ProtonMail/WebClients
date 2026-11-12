@@ -3628,9 +3628,6 @@
       "External invitations are temporarily disabled.": [
         "Знешнія запрашэнні часова адключаны."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Знешнія запрашэнні часова адключаны. Паўтарыце спробу пазней"
-      ],
       "Failed to change permissions settings": [
         "Не ўдалося змяніць налады дазволаў"
       ],
@@ -4071,12 +4068,6 @@
       ],
       "The folder name is too long. Please choose a different name.": [
         "Назва папкі занадта доўгая. Выберыце іншую назву."
-      ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Запрашэнне пакуль не завершана. Паўтарыце спробу пазней."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Запрашэнне больш не існуе"
       ],
       "The label name is invalid. Please choose a different name.": [
         "Памылковая назва меткі. Выберыце іншую назву."
@@ -5281,9 +5272,6 @@
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "Пазначана ${ IDEAL_WERO_BRAND_NAME }"
       ],
-      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
-        "${ invitation.addedByEmail.error.claimedAuthor } (неправераны адпраўнік)"
-      ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } чакае запрашэння",
         "${ invitationsCount } чакаюць запрашэння",
@@ -5983,6 +5971,9 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Калі вы выдаліце сябе, то вы страціце доступ да \"${ fileName }\" і не зможаце адкрыць яго зноў. Толькі ўладальнік зможа абагуліць яго з вамі зноў."
       ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Вы можаце ўзнавіць імпарт у ${ easySwitchSettingsLink }, калі ўжо абнавілі тарыфны план. Вы таксама можаце скасаваць яго."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Імпартаванне ${ calendarCount } календара з ${ totalCalendarsCount }",
         "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }",
@@ -6234,6 +6225,9 @@
       ],
       "New": [
         "Новая"
+      ],
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Пасля гэтага ўвайдзіце ў свой уліковы запіс Google і дазвольце ${ BRAND_NAME } доступ да Google Drive. Вашы файлы і папкі будуць імпартаваны ў ${ DRIVE_APP_NAME }."
       ],
       "No": [
         "Не"
@@ -7258,6 +7252,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Вашы даныя гатовы да імпартавання з ${ importedEmailAddressStrong } у ваш уліковы запіс ${ BRAND_NAME }."
       ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "Ваш Drive занадта вялікі для поўнай індэксацыі ў гэтым браўзеры, таму ў пошуку будуць прагледжаны самыя апошнія файлы. Больш старыя файлы могуць не адлюстроўвацца ў выніках."
+      ],
       "Your email address and password were leaked:": [
         "Адбылася ўцечка вашага адраса электроннай пошты і пароля:"
       ],
@@ -7290,6 +7287,9 @@
       ],
       "Your free trial was successfully converted to a monthly subscription. Your renewal date is ${ nextBillingDate }.": [
         "Ваш бясплатны пробны перыяд паспяхова пераўтвораны ў штомесячную падпіску. Яе падаўжэнне адбудзецца: ${ nextBillingDate }."
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Ваш Google Drive можа быць пусты або змяшчаць толькі файлы, якія не падтрымліваюцца."
       ],
       "Your import is blocked. Upgrade now to bring the rest of your files over.": [
         "Ваш імпарт заблакіраваны. Абнавіце тарыфны план, каб перанесці астатнія файлы."
@@ -10715,6 +10715,9 @@
       "terms and conditions": [
         "умовамі выкарыстання"
       ],
+      "The Born Private initiative requires a donation.": [
+        "Ініцыятыва Born Private патрабуе ахвяравання."
+      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэння.",
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
@@ -12406,6 +12409,9 @@
       "Albums you've shared will appear here": [
         "Абагуленыя вамі альбомы з'явяцца тут"
       ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Імпартуйце свае файлы і папкі з Google Drive, каб забяспечыць прыватнасць для іх у ${ DRIVE_APP_NAME }."
+      ],
       "Shared by ${ sharedBy }": [
         "Абагулена ${ sharedBy }"
       ],
@@ -13862,6 +13868,9 @@
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новы перыяд аплаты пачнецца ў ${ formattedTime }"
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Гэта спасылка пратэрмінавана. Пашырце тэрмін яе дзеяння"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Зашыфраваныя паролі (нават скампраметаваныя) застануцца ў бяспецы, пакуль не будуць расшыфраваны."

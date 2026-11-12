@@ -3579,9 +3579,6 @@
       "External invitations are temporarily disabled.": [
         "Externe Einladungen sind vorübergehend deaktiviert."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Externe Einladungen sind vorübergehend deaktiviert. Bitte versuche es später erneut."
-      ],
       "Failed to change permissions settings": [
         "Fehler beim Ändern der Berechtigungseinstellungen"
       ],
@@ -4010,12 +4007,6 @@
       ],
       "The folder name is too long. Please choose a different name.": [
         "Der Name des Ordners ist zu lang. Bitte wähle einen kürzeren Namen."
-      ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Die Einladung kann noch nicht abgeschlossen werden. Bitte versuche es später erneut."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Die Einladung existiert nicht mehr."
       ],
       "The label name is invalid. Please choose a different name.": [
         "Der Name der Kategorie ist ungültig. Bitte wähle einen anderen Namen."
@@ -5097,6 +5088,9 @@
         "${ calendarsToBeMergedCount } zusammengeführter Kalender",
         "${ calendarsToBeMergedCount } zusammengeführte Kalender"
       ],
+      "${ claimedAuthor } (unverified sender)": [
+        "${ claimedAuthor } (nicht verifizierter Absender)"
+      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } von ${ items.length } Übertragungen abgeschlossen"
       ],
@@ -5157,9 +5151,6 @@
       ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "${ IDEAL_WERO_BRAND_NAME } markieren"
-      ],
-      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
-        "${ invitation.addedByEmail.error.claimedAuthor } (nicht verifizierter Absender)"
       ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } ausstehende Einladung",

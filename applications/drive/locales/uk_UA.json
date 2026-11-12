@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Про ${ name }"
+      ],
       "Accept": [
         "Схвалити"
       ],
@@ -47,6 +50,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Додати ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Додати ${ name }"
       ],
       "Add account": [
         "Додати обліковий запис"
@@ -1315,6 +1321,11 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium Менеджер паролів"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Гарантія повернення коштів протягом 30 днів. Ви можете скасувати покупку протягом 30 днів і звернутися до ${ customerSupportLink } для повернення коштів."
       ]
     },
     "BF2024: Deal details": {
@@ -3341,9 +3352,6 @@
       "External invitations are temporarily disabled.": [
         "Зовнішні запрошення тимчасово вимкнено."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Зовнішні запрошення тимчасово вимкнені. Спробуйте ще раз пізніше"
-      ],
       "Failed to change permissions settings": [
         "Не вдалося змінити дозволи налаштувань"
       ],
@@ -3745,12 +3753,6 @@
       ],
       "The folder name is too long. Please choose a different name.": [
         "Назва теки надто довга. Будь ласка, скоротіть назву."
-      ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Запрошення ще не може бути завершене. Спробуйте пізніше."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Запрошення більше не існує"
       ],
       "The label name is invalid. Please choose a different name.": [
         "Назва мітки неправильна. Оберіть іншу назву."
@@ -4789,6 +4791,9 @@
         "${ calendarsToBeMergedCount } об'єднаних календарів",
         "${ calendarsToBeMergedCount } об'єднаних календарів"
       ],
+      "${ claimedAuthor } (unverified sender)": [
+        "${ claimedAuthor } (неперевірений відправник)"
+      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "Передавання завершено для ${ completedItems.length } з ${ items.length } елементів"
       ],
@@ -4959,6 +4964,9 @@
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Ви отримуєте ${ referrerRewardAmount }** як кредит за кожного запрошеного друга, який підпишеться."
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Гарантія повернення коштів протягом 30 днів. Ви можете скасувати покупку протягом 30 днів і звернутися до ${ customerSupportLink } для повернення коштів."
       ],
       "A number will be added to the filename": [
         "Число буде додано до назви файлу"
@@ -6063,6 +6071,9 @@
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "На жаль, схоже що неможливо розшифрувати файл або його вміст."
+      ],
+      "UnionPay logo": [
+        "Логотип UnionPay"
       ],
       "Unsaved changes": [
         "Незбережені зміни"
@@ -7193,6 +7204,9 @@
       ],
       "clearing your browser cache": [
         "очищення кешу браузера"
+      ],
+      "Customer Support": [
+        "Клієнтська підтримка"
       ],
       "Enforcing 2FA for organizations": [
         "Обов'язкова 2FA для організацій"
@@ -9201,6 +9215,9 @@
       "Billing Country": [
         "Країна платника"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Власники чинної передплати не мають можливості придбати облікові записи Born Private."
+      ],
       "Card number": [
         "Номер картки"
       ],
@@ -9260,6 +9277,9 @@
       ],
       "terms and conditions": [
         "умови та положення"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Для участі в програмі Born Private необхідна пожертва."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Знижка дійсна для ${ renewalsWithCoupon } поновлення.",
@@ -9327,11 +9347,17 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас уже є передплата на цей тарифний план. Ви можете змінити передплату на ${ subscriptionPlatform }."
       ],
+      "You already own a Born Private account.": [
+        "Ви вже маєте обліковий запис Born Private."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
       ],
       "You will soon be redirected to verify your payment.": [
         "Вас невдовзі буде перенаправлено для підтвердження платежу."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Ваш обліковий запис надто давній для участі в програмі Born Private."
       ],
       "Your payment is still being processed": [
         "Ваш платіж усе ще обробляється"
@@ -12202,6 +12228,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Цей користувач отримає права адміністратора при наступному вході."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Перейдіть на тарифний план, що підтримує цю функцію, щоб користуватися ролями адміністратора."
       ],

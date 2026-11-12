@@ -1002,6 +1002,10 @@
         "${ domains } további saját domain név",
         "${ domains } további saját domain név"
       ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikált VPN szerver",
+        "${ ips } dedikált VPN szerver"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI licenc"
       ],
@@ -3001,9 +3005,6 @@
       "External invitations are temporarily disabled.": [
         "A külső meghívók átmenetileg le vannak tiltva."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "A külső meghívók ideiglenesen le vannak tiltva. Kérjük, próbálja meg később újra"
-      ],
       "Failed to create folder": [
         "Nem sikerült létrehozni a mappát"
       ],
@@ -3264,12 +3265,6 @@
       ],
       "The folder name is too long. Please choose a different name.": [
         "Ez a mappanév túl hosszú. Adjon meg egy másik nevet."
-      ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "A meghívó teljesítése még nem lehetséges. Kérjük, próbálja később újra."
-      ],
-      "The invitation doesn't exist anymore": [
-        "A meghívó már nem létezik"
       ],
       "The label name is invalid. Please choose a different name.": [
         "Ez a címkenév érvénytelen. Adjon meg egy másik nevet."
@@ -4918,6 +4913,9 @@
       ],
       "Scan the QR code with your mobile device": [
         "Olvassa be a QR-kódot a mobilkészülékével"
+      ],
+      "Select a destination folder": [
+        "Válasszon ki egy célmappát"
       ],
       "Select a folder to move to.": [
         "Válasszon ki egy mappát, ahová szeretné áthelyezni."

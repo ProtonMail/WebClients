@@ -91,6 +91,9 @@
       "Add note": [
         "Adicionar nota"
       ],
+      "Add payment method": [
+        "Adicionar forma de pagamento"
+      ],
       "Add people or groups to share": [
         "Adicionar pessoa ou grupo para compartilhar"
       ],
@@ -1505,6 +1508,11 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Gerenciador de senha premium"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantia de reembolso de 30 dias: cancele em até 30 dias após a compra e entre em contato com ${ customerSupportLink } para obter um reembolso."
       ]
     },
     "BF2024: Deal details": {
@@ -3571,9 +3579,6 @@
       "External invitations are temporarily disabled.": [
         "Convites externos estão indisponíveis temporariamente."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Os convites externos estão temporariamente desabilitados. Tente novamente mais tarde."
-      ],
       "Failed to change permissions settings": [
         "Falha ao alterar as configurações de permissões"
       ],
@@ -4002,12 +4007,6 @@
       ],
       "The folder name is too long. Please choose a different name.": [
         "O nome da pasta é muito longo. Escolha um nome diferente."
-      ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "O convite ainda não pode ser concluído. Tente novamente mais tarde."
-      ],
-      "The invitation doesn't exist anymore": [
-        "O convite não existe mais"
       ],
       "The label name is invalid. Please choose a different name.": [
         "O nome do marcador não é válido. Escolha um nome diferente."
@@ -5066,6 +5065,9 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
+      "${ BRAND_NAME } only uses this access for the import. Google never gets access to your ${ BRAND_NAME } account.": [
+        "O ${ BRAND_NAME } usa esse acesso apenas para a importação. O Google nunca tem acesso à sua conta ${ BRAND_NAME }."
+      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente de escrita ${ BRAND_NAME } Scribe"
       ],
@@ -5085,6 +5087,9 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } calendário mesclado",
         "${ calendarsToBeMergedCount } calendários mesclados"
+      ],
+      "${ claimedAuthor } (unverified sender)": [
+        "${ claimedAuthor } (remetente não verificado)"
       ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } de ${ items.length } transferências concluídas"
@@ -5110,6 +5115,9 @@
       ],
       "${ DOCS_APP_NAME } and ${ SHEETS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Os arquivos do ${ DOCS_APP_NAME } e ${ SHEETS_APP_NAME } não podem ser baixados diretamente e não serão incluídos neste download. Você pode baixar os outros arquivos clicando em 'Continuar baixando'."
+      ],
+      "${ DRIVE_APP_NAME } could not decrypt the local search index. Rebuild the index to restore search.": [
+        "O ${ DRIVE_APP_NAME } não conseguiu descriptografar o índice de busca local. Reconstrua o índice para restaurar a busca."
       ],
       "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
         "O ${ DRIVE_APP_NAME } detectou que o índice de pesquisa local está corrompido e não pode mais ser utilizado. Reconstrua o índice para restaurar a funcionalidade de pesquisa."
@@ -5274,6 +5282,9 @@
       "1 vault per user": [
         "1 cofres por usuário"
       ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantia de reembolso de 30 dias: cancele em até 30 dias após a compra e entre em contato com ${ customerSupportLink } para obter um reembolso."
+      ],
       "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
         "Uma nova versão do ${ DRIVE_APP_NAME } está disponível. Recarregue para continuar usando a pesquisa."
       ],
@@ -5366,6 +5377,9 @@
       ],
       "An issue occurred during the restore process.": [
         "Ocorreu um problema durante o processo de restauração."
+      ],
+      "An unexpected error occurred while importing your data. Please try again later.": [
+        "Ocorreu um erro inesperado ao importar seus dados. Tente novamente mais tarde."
       ],
       "and": [
         "e"
@@ -5632,6 +5646,9 @@
       "Downloading": [
         "Baixando"
       ],
+      "Drag your files and folders here or use the \"New\" button to upload": [
+        "Arraste seus arquivos e pastas para cá ou use o botão \"Novo\" para enviá-los"
+      ],
       "Drop file here to upload": [
         "Solte o arquivo aqui para enviar"
       ],
@@ -5806,6 +5823,9 @@
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
         "Se você se remover, perderá o acesso a \"${ fileName }\" e não poderá abri-lo novamente, a menos que o proprietário o compartilhe com você."
       ],
+      "If you've already upgraded, you can resume your import in ${ easySwitchSettingsLink }. You can also cancel it there.": [
+        "Se você já mudou para um plano superior, pode retomar a importação em ${ easySwitchSettingsLink }. Você também pode cancelá-la lá."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendário",
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendários"
@@ -5857,6 +5877,9 @@
       ],
       "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
         "Indexado ${ first }, ${ second }, ${ third } e ${ fourth }"
+      ],
+      "Indexing hit an unexpected state and cannot continue. Rebuild the index to recover.": [
+        "A indexação encontrou uma situação inesperada e não pode continuar. Reconstrua o índice para resolver o problema."
       ],
       "Indexing in progress": [
         "Indexação em progresso"
@@ -5926,6 +5949,9 @@
       ],
       "Key fingerprint": [
         "Chave de impressão digital"
+      ],
+      "Know when it's done": [
+        "Saiba quando a importação terminar"
       ],
       "Label all imported messages as": [
         "Marcar todas as mensagens importadas como"
@@ -6045,6 +6071,9 @@
       "New": [
         "Novo"
       ],
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Em seguida, entre na sua Conta do Google e permita que o ${ BRAND_NAME } acesse o Google Drive. Importaremos seus arquivos e pastas para o ${ DRIVE_APP_NAME }."
+      ],
       "No": [
         "Não"
       ],
@@ -6131,6 +6160,9 @@
       ],
       "or discover other features:": [
         "ou descubra outros recursos:"
+      ],
+      "Or import your files from": [
+        "Ou importe seus arquivos de"
       ],
       "Or use the \"+ New\" button": [
         "Ou use o botão \"+ Novo\""
@@ -6232,6 +6264,9 @@
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Tente novamente com outro método de pagamento ou entre em contato com seu banco."
+      ],
+      "Please upgrade to ensure that the import finishes successfully.": [
+        "Faça upgrade para garantir que a importação seja concluída com sucesso."
       ],
       "Please use another browser or download the file.": [
         "Use outro navegador ou baixe o arquivo."
@@ -6356,6 +6391,9 @@
       "Search covers your recent items": [
         "A pesquisa inclui seus itens recentes"
       ],
+      "Search data can't be read": [
+        "Não foi possível ler os dados de busca"
+      ],
       "Search data is corrupted": [
         "Os dados de pesquisa estão corrompidos"
       ],
@@ -6461,6 +6499,9 @@
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Alguns de seus arquivos não estão mais acessíveis. Restaure o acesso aos seus arquivos. ${ StartRecoveryButton }"
       ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "Alguns arquivos mais antigos não estão indexados porque seu Drive é grande demais para ser indexado por completo."
+      ],
       "Some photos in this album are not saved to your timeline. Deleting this album will permanently delete those photos.": [
         "Algumas fotos neste álbum não estão salvas na sua linha do tempo. Excluir este álbum excluirá permanentemente essas fotos."
       ],
@@ -6524,6 +6565,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "O proprietário deste endereço desativou a criptografia de ponta a ponta. Para poder enviar e-mails criptografados para este endereço, o proprietário deve reativar a criptografia de ponta a ponta."
+      ],
+      "The search engine encountered an internal error. Rebuild the index to recover.": [
+        "O mecanismo de busca encontrou um erro interno. Reconstrua o índice para resolver o problema."
       ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "O processo de verificação abrirá uma nova guia do navegador. Desative todos os bloqueadores de pop-up ativos."
@@ -6820,6 +6864,9 @@
       "We'll email you when your import is complete.": [
         "Enviaremos um e-mail quando sua importação estiver concluída."
       ],
+      "We'll email you when your import is complete. Your files will appear in a folder in ${ DRIVE_APP_NAME }.": [
+        "Enviaremos um e-mail quando a importação for concluída. Seus arquivos aparecerão em uma pasta no ${ DRIVE_APP_NAME }."
+      ],
       "We'll get back to you shortly.": [
         "Nós entraremos em contato com você em breve."
       ],
@@ -6981,6 +7028,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Você não será cobrado se cancelar antes de ${ trialEndsOnFormatted }."
       ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "Você não poderá compartilhar \"${ fileName }\" após alterar seu acesso para visualizador. O proprietário ou um editor com permissão para compartilhar pode restaurar seu acesso de edição. Você não pode desfazer essa alteração por conta própria."
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Você receberá a recompensa em créditos 1 mês após seu amigo(a) assinar um plano anual e 2 meses após ele (ela) assinar um plano mensal."
       ],
@@ -7021,6 +7071,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta da ${ BRAND_NAME }."
       ],
+      "Your Drive is too large to index entirely in this browser, so search looks at your most recent items. Older files may not appear in results.": [
+        "Seu Drive é grande demais para ser indexado por completo neste navegador, por isso a busca considera apenas os itens mais recentes. Arquivos mais antigos podem não aparecer nos resultados."
+      ],
       "Your email address and password were leaked:": [
         "Seu endereço de e-mail e senha estão expostos:"
       ],
@@ -7033,14 +7086,23 @@
       "Your files are being re-indexed. You can keep searching - results may be incomplete until it finishes. We'll let you know when it's done.": [
         "Seus arquivos estão sendo indexados novamente. Você pode continuar pesquisando — os resultados podem estar incompletos até que o processo termine. Avisaremos você quando terminar."
       ],
+      "Your files are encrypted and securely stored in ${ DRIVE_APP_NAME }.": [
+        "Seus arquivos são criptografados e armazenados com segurança no ${ DRIVE_APP_NAME }."
+      ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Seus arquivos não estão mais acessíveis devido a uma redefinição de senha. Envie a chave de criptografia antiga para recuperar o acesso. ${ KeyReactivationButton }"
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Seus arquivos foram importados do Google Drive para o ${ DRIVE_APP_NAME } e criptografados com sucesso."
       ],
       "Your files will be encrypted and then saved": [
         "Seus arquivos serão criptografados e depois salvos"
       ],
       "Your files will be encrypted and then saved.": [
         "Seus arquivos serão criptografados e depois salvos."
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Seu período de teste gratuito terminou. Assine agora para manter o acesso da sua equipe sem interrupções e as contas seguras."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Sua avaliação gratuita foi convertida em uma assinatura de ${ cycle } meses. Sua data de renovação é ${ nextBillingDate }."
@@ -7050,6 +7112,9 @@
       ],
       "Your Google Drive may be empty or contain only files that are not supported.": [
         "Seu Google Drive pode estar vazio ou conter apenas arquivos que não são suportados."
+      ],
+      "Your import is blocked. Upgrade now to bring the rest of your files over.": [
+        "Sua importação está bloqueada. Mude para um plano superior agora para importar o restante dos seus arquivos."
       ],
       "Your information was found on ${ displayedDate }": [
         "Sua informação foi encontrada em ${ displayedDate }"
@@ -10016,6 +10081,9 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Cancele a qualquer momento antes disso. ** Você poderá usar ${ planTitle } até que a avaliação termine, gratuitamente."
       ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Mudou de ideia após o período de teste?** Cancele em até 30 dias após o primeiro pagamento e reembolsaremos o valor referente ao período não utilizado."
+      ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Uma vez que sua assinatura completa começa... ** Você ainda pode cancelar dentro de 30 dias e obter um reembolso proporcional."
       ],
@@ -10257,6 +10325,9 @@
       "Billing Country": [
         "País de Faturamento"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Não é possível comprar contas Born Private com uma assinatura ativa."
+      ],
       "Buying credits requires a separate purchase.": [
         "Comprar créditos requer uma compra separada."
       ],
@@ -10343,6 +10414,9 @@
       ],
       "terms and conditions": [
         "termos e condições"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "A iniciativa Born Private exige uma doação."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "O desconto é válido para ${ renewalsWithCoupon } renovação.",
@@ -10440,11 +10514,17 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Você já possui o ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "You already own a Born Private account.": [
+        "Você já tem uma conta Born Private."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Em breve você será redirecionado para o PayPal para verificar seu pagamento."
       ],
       "You will soon be redirected to verify your payment.": [
         "Em breve você será redirecionado para verificar seu pagamento."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Sua conta é antiga demais para participar da iniciativa Born Private."
       ],
       "Your payment is still being processed": [
         "Seu pagamento ainda está sendo processado"
@@ -12688,6 +12768,9 @@
       "Import started": [
         "Importação iniciada"
       ],
+      "Import started, but your storage won't be enough for this import": [
+        "A importação começou, mas seu espaço de armazenamento não será suficiente para concluí-la"
+      ],
       "Imported by ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importado por ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
@@ -12750,6 +12833,9 @@
       ],
       "Modified": [
         "Modificado"
+      ],
+      "More storage needed to finish your import": [
+        "É preciso mais espaço de armazenamento para concluir a importação"
       ],
       "My files": [
         "Meus arquivos"
@@ -13049,6 +13135,9 @@
       "Stop transfers?": [
         "Parar transferência?"
       ],
+      "Subscribe to ${ planTitle }": [
+        "Assine o ${ planTitle }"
+      ],
       "Subscription canceled": [
         "Assinatura cancelada"
       ],
@@ -13153,6 +13242,9 @@
       ],
       "Warning: suspected fake website": [
         "Aviso: Site suspeito de ser falso"
+      ],
+      "We could not find anything to import": [
+        "Não encontramos nada para importar"
       ],
       "We couldn’t verify that ${ author } created this file.": [
         "Não pudemos verificar que ${ author } criou este arquivo."
@@ -13454,6 +13546,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Este usuário receberá direitos de administrador na próxima vez que entrar."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Faça upgrade para um plano suportado para usar funções de administrador."
       ],
