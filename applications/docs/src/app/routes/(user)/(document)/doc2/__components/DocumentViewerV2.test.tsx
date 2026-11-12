@@ -20,6 +20,8 @@ import { ClientEditorBridge } from '../__utils/ClientEditorBridge'
 import type { ClientHandler } from '../__utils/createClientHandler'
 import { createFakeSession } from '../__utils/createFakeSession'
 import type { DocumentRole } from '../__utils/getDocumentRole'
+import { DocsLoadMark } from '../__utils/loadMarks'
+import { docsLoadMarks, withNodePerformance } from '../__utils/loadMarksTesting'
 import type { DocumentSessionState } from '../__utils/useDocumentSession'
 import type { DocumentDebugMenuProps } from './DocumentDebugMenu'
 import { DocumentViewerV2 } from './DocumentViewerV2'
@@ -303,6 +305,117 @@ describe('DocumentViewerV2', () => {
     await waitFor(() =>
       expect(mockEditorCalls).toEqual([...beforeCatchUp, 'initializeEditor', 'showEditor', 'broadcastPresenceState']),
     )
+  })
+
+  describe('load marks', () => {
+    const performanceSpy = withNodePerformance()
+
+    test('marks the frame ready, the base state sent, then caught up, once each: a rebootstrap that catches up again marks nothing', async () => {
+      const fake = createSession()
+      renderViewer(fake)
+      await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
+
+      expect(docsLoadMarks()).toEqual([DocsLoadMark.FrameReady, DocsLoadMark.BaseStateSent])
+
+      act(() => fake.setSnapshot({ status: { name: 'connected' }, caughtUp: true }))
+      await waitFor(() => expect(mockEditorCalls).toContain('showEditor'))
+      const marks = performance.getEntriesByType('mark')
+
+      expect(docsLoadMarks()).toEqual([
+        DocsLoadMark.FrameReady,
+        DocsLoadMark.BaseStateSent,
+        DocsLoadMark.CaughtUp,
+        DocsLoadMark.EditorShown,
+      ])
+
+      act(() => fake.setSnapshot({ status: { name: 'opening' }, caughtUp: false }))
+      act(() => fake.setSnapshot({ status: { name: 'connected' }, caughtUp: true }))
+      await act(async () => {})
+
+      expect(performance.getEntriesByType('mark')).toEqual(marks)
+    })
+
+    test("places an editor's marks in their order: frame ready, base state sent, caught up, editor shown, then editable", async () => {
+      const fake = createSession()
+      await renderShown(fake, { role: 'Editor' })
+
+      await waitFor(() =>
+        expect(docsLoadMarks()).toEqual([
+          DocsLoadMark.FrameReady,
+          DocsLoadMark.BaseStateSent,
+          DocsLoadMark.CaughtUp,
+          DocsLoadMark.EditorShown,
+          DocsLoadMark.EditorEditable,
+        ]),
+      )
+      expect(mockChangeLockedState).toHaveBeenLastCalledWith(false)
+    })
+
+    test('marks no editable editor for a viewer, whose editor stays locked', async () => {
+      await renderShown(createSession(), { role: 'Viewer' })
+      await act(async () => {})
+
+      expect(mockChangeLockedState).toHaveBeenLastCalledWith(true)
+      expect(docsLoadMarks()).not.toContain(DocsLoadMark.EditorEditable)
+      expect(docsLoadMarks()).toContain(DocsLoadMark.EditorShown)
+    })
+
+    test('marks the editor shown once it answers showEditor, and editable only once its Lexical editor is rendered', async () => {
+      const fake = createSession()
+      let answerShowEditor = () => {}
+      renderViewer(fake, { role: 'Editor' })
+      await waitFor(() => expect(fake.mocks.connect).toHaveBeenCalled())
+      const { editorInvoker } = jest.mocked(ClientEditorBridge).mock.results.at(-1)!.value
+      editorInvoker.showEditor.mockImplementationOnce(
+        () => new Promise<void>((resolve) => (answerShowEditor = resolve)),
+      )
+
+      act(() => fake.setSnapshot({ status: { name: 'connected' }, caughtUp: true }))
+      await waitFor(() => expect(editorInvoker.showEditor).toHaveBeenCalled())
+
+      expect(docsLoadMarks()).not.toContain(DocsLoadMark.EditorShown)
+      expect(docsLoadMarks()).not.toContain(DocsLoadMark.EditorEditable)
+
+      await act(async () => answerShowEditor())
+
+      expect(mockChangeLockedState).toHaveBeenLastCalledWith(false)
+      expect(docsLoadMarks().at(-1)).toEqual(DocsLoadMark.EditorShown)
+
+      act(() => mockClientHandler.updateFrameSize(480))
+
+      expect(docsLoadMarks().slice(-2)).toEqual([DocsLoadMark.EditorShown, DocsLoadMark.EditorEditable])
+    })
+
+    test('marks the base state sent for the live run only, not for one a new session cut short', async () => {
+      const resolvers: (() => void)[] = []
+      // Each run's one base update waits for the test to answer it
+      const pending = () => new Promise<void>((resolve) => resolvers.push(resolve))
+      mockReceiveMessage.mockImplementationOnce(pending).mockImplementationOnce(pending)
+      const first = createSession()
+      const { rerender } = renderViewer(first)
+      await waitFor(() => expect(resolvers).toHaveLength(1))
+
+      const second = createSession()
+      mockSessionState = { ...mockSessionState, session: second.session } as DocumentSessionState
+      rerender()
+      await waitFor(() => expect(resolvers).toHaveLength(2))
+      await act(async () => resolvers[0]())
+
+      expect(docsLoadMarks()).toEqual([DocsLoadMark.FrameReady])
+
+      await act(async () => resolvers[1]())
+
+      expect(docsLoadMarks()).toEqual([DocsLoadMark.FrameReady, DocsLoadMark.BaseStateSent])
+    })
+
+    test('shows the document in a browser that places no marks', async () => {
+      performanceSpy().mockRestore()
+      expect(performance.mark).toBeUndefined()
+
+      await renderShown(createSession())
+
+      expect(mockEditorCalls).toContain('showEditor')
+    })
   })
 
   test('gives the editor the user name before initializing it when the session has already caught up', async () => {

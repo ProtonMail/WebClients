@@ -14,6 +14,7 @@ import { DocumentLoader } from './__components/DocumentLoader'
 import { DocumentShell } from './__components/DocumentShell'
 import { DocumentViewerV2 } from './__components/DocumentViewerV2'
 import { OpenActionError } from './__components/OpenActionError'
+import { DocsLoadMark, markDocsLoad } from './__utils/loadMarks'
 import { resolveOpenAction } from './__utils/resolveOpenAction'
 
 export type DocumentPageV2Props = { driveCompat: DriveCompat }
@@ -32,6 +33,7 @@ export default function DocumentPageV2({ driveCompat }: DocumentPageV2Props) {
 
   useEffectOnce(() => {
     application.logger.info('Document page v2 on realtime SDK', { realtimeSdkVersion })
+    markDocsLoad(DocsLoadMark.RouteMounted)
   })
 
   useEffect(() => {

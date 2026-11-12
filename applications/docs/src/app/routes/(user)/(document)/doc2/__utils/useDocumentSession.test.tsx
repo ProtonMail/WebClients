@@ -8,6 +8,8 @@ import { DocsApiError, DocsApiErrorCode, type SessionStatus } from '@proton-docs
 
 import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/application-context'
 
+import { DocsLoadMark } from './loadMarks'
+import { withNodePerformance } from './loadMarksTesting'
 import { useDocumentSession } from './useDocumentSession'
 import type { useRealtimeClient } from './useRealtimeClient'
 
@@ -117,6 +119,29 @@ describe('useDocumentSession', () => {
       role: 'Editor',
       node: { mediaType: PROTON_DOCS_DOCUMENT_MIMETYPE },
       roleReads: 1,
+    })
+  })
+
+  describe('load marks', () => {
+    withNodePerformance()
+
+    test('marks the document loaded once bootstrapped, and not again when a retry bootstraps it again', async () => {
+      const loadedMarks = () => performance.getEntriesByName(DocsLoadMark.DocumentLoaded, 'mark')
+      const bootstrapOnce = async (marksBefore: PerformanceEntryList) => {
+        const fake = createFakeClient()
+        const { unmount } = renderHook(() => useDocumentSession(fake.client, nodeMeta), { wrapper })
+        await waitFor(() => expect(fake.calls).toContain('bootstrap'))
+        expect(loadedMarks()).toEqual(marksBefore)
+        await act(() => fake.resolveBootstrap())
+        unmount()
+      }
+
+      await bootstrapOnce([])
+      const loaded = loadedMarks()
+      await bootstrapOnce(loaded)
+
+      expect(loaded).toHaveLength(1)
+      expect(loadedMarks()).toEqual(loaded)
     })
   })
 

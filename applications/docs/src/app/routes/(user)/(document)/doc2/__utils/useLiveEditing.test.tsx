@@ -7,6 +7,8 @@ import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/appl
 
 import { createFakeSession } from './createFakeSession'
 import type { DocumentRole } from './getDocumentRole'
+import { DocsLoadMark } from './loadMarks'
+import { withNodePerformance } from './loadMarksTesting'
 import { useLiveEditing } from './useLiveEditing'
 
 const mockCreateNotification = jest.fn()
@@ -29,7 +31,7 @@ function createEditorInvoker() {
 }
 
 type EditorInvokerMock = ReturnType<typeof createEditorInvoker>
-type LiveEditingProps = { editorInvoker?: EditorInvokerMock; participantLimitReached?: boolean }
+type LiveEditingProps = { editorInvoker?: EditorInvokerMock; participantLimitReached?: boolean; editorReady?: boolean }
 
 function renderLiveEditing({
   session,
@@ -42,8 +44,8 @@ function renderLiveEditing({
 }) {
   const onEditorError = jest.fn()
   const hook = renderHook(
-    ({ editorInvoker, participantLimitReached }: LiveEditingProps) =>
-      useLiveEditing({ session, editorInvoker, role, participantLimitReached, onEditorError }),
+    ({ editorInvoker, participantLimitReached, editorReady }: LiveEditingProps) =>
+      useLiveEditing({ session, editorInvoker, role, participantLimitReached, editorReady, onEditorError }),
     { wrapper, initialProps: { editorInvoker } as LiveEditingProps },
   )
   return { ...hook, onEditorError }
@@ -344,6 +346,85 @@ describe('useLiveEditing', () => {
 
     expect(editorInvoker.changeLockedState).toHaveBeenCalledTimes(1)
     expect(editorInvoker.changeLockedState).toHaveBeenCalledWith(true)
+  })
+
+  describe("the load's editable mark", () => {
+    withNodePerformance()
+
+    const editableMarks = () => performance.getEntriesByName(DocsLoadMark.EditorEditable, 'mark')
+
+    test('an editor that answered its unlock before it was ready is marked editable as it gets ready, once', async () => {
+      const fake = createFakeSession({ status: { name: 'connected' } })
+      const editorInvoker = createEditorInvoker()
+      const { rerender } = renderLiveEditing({ session: fake.session, editorInvoker })
+      await act(async () => {})
+
+      expect(editableMarks()).toEqual([])
+
+      rerender({ editorInvoker, editorReady: true })
+
+      expect(editableMarks()).toHaveLength(1)
+
+      act(() => fake.setSnapshot({ status: { name: 'stopped', condition: 'transient', retryable: true } }))
+      act(() => fake.setSnapshot({ status: { name: 'connected' } }))
+      await act(async () => {})
+
+      expect(editableMarks()).toHaveLength(1)
+    })
+
+    test('a ready editor is marked editable when it answers its unlock, not when the unlock is sent', async () => {
+      const fake = createFakeSession({ editing: { allowed: false, reason: 'noBaseState' } })
+      const editorInvoker = createEditorInvoker()
+      let answerUnlock = () => {}
+      const { rerender } = renderLiveEditing({ session: fake.session, editorInvoker })
+      rerender({ editorInvoker, editorReady: true })
+      await act(async () => {})
+      editorInvoker.changeLockedState.mockImplementationOnce(
+        () => new Promise<void>((resolve) => (answerUnlock = resolve)),
+      )
+
+      act(() => fake.setSnapshot({ editing: { allowed: true } }))
+
+      expect(editorInvoker.changeLockedState).toHaveBeenLastCalledWith(false)
+      expect(editableMarks()).toEqual([])
+
+      await act(async () => answerUnlock())
+
+      expect(editableMarks()).toHaveLength(1)
+    })
+
+    test('an unlock the editor answers after a newer lock marks nothing', async () => {
+      const fake = createFakeSession({ status: { name: 'connected' } })
+      const editorInvoker = createEditorInvoker()
+      let answerUnlock = () => {}
+      editorInvoker.changeLockedState.mockImplementationOnce(
+        () => new Promise<void>((resolve) => (answerUnlock = resolve)),
+      )
+      const { rerender } = renderLiveEditing({ session: fake.session, editorInvoker })
+
+      act(() => fake.setSnapshot({ editing: { allowed: false, reason: 'sizeLocked' } }))
+      rerender({ editorInvoker, editorReady: true })
+      await act(async () => answerUnlock())
+
+      expect(editorInvoker.changeLockedState).toHaveBeenLastCalledWith(true)
+      expect(editableMarks()).toEqual([])
+    })
+
+    test("a viewer's shown editor is never marked editable", async () => {
+      const fake = createFakeSession({ status: { name: 'connected' } })
+      const editorInvoker = createEditorInvoker()
+      const onEditorError = jest.fn()
+      const { rerender } = renderHook(
+        ({ editorReady }: { editorReady: boolean }) =>
+          useLiveEditing({ session: fake.session, editorInvoker, role: 'Viewer', editorReady, onEditorError }),
+        { wrapper, initialProps: { editorReady: false } },
+      )
+
+      rerender({ editorReady: true })
+      await act(async () => {})
+
+      expect(editableMarks()).toEqual([])
+    })
   })
 
   test('unmounting removes its listeners', () => {
