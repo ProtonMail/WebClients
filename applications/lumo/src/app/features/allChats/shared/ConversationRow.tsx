@@ -141,15 +141,18 @@ export const ConversationRow = memo(
 
                 <div className="relative z-1 flex flex-column flex-1 gap-0.5 min-w-0 pointer-events-none">
                     {isRenaming ? (
-                        <Input
-                            ref={renameInputRef}
-                            className="all-chats-row-interactive"
-                            value={draftTitle}
-                            onValue={setDraftTitle}
-                            onKeyDown={handleRenameKeyDown}
-                            onBlur={commitRename}
-                            aria-label={c('collider_2025:Action').t`Rename chat`}
-                        />
+                        // The wrapper keeps Input's own flex-1 from collapsing its height in this column.
+                        <div className="all-chats-row-interactive">
+                            <Input
+                                ref={renameInputRef}
+                                inputClassName="text-sm py-0.5 px-2"
+                                value={draftTitle}
+                                onValue={setDraftTitle}
+                                onKeyDown={handleRenameKeyDown}
+                                onBlur={commitRename}
+                                aria-label={c('collider_2025:Action').t`Rename chat`}
+                            />
+                        </div>
                     ) : (
                         <div className="flex flex-nowrap items-center gap-2 min-w-0">
                             <span className="text-ellipsis color-norm" data-testid="all-chats-row-title">
