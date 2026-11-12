@@ -416,6 +416,17 @@ describe('publicAppStateMachine', () => {
             expect(actor.getSnapshot().can({ type: 'login.requested', session })).toBe(true);
         });
 
+        it('takes a login again when a history move cancels the redirect of a finished login', async () => {
+            const login = jest.fn(async () => doneResult);
+            const { actor } = start({ pathname: SSO_PATHS.SWITCH, initialSessionsLength: 0, login });
+            actor.send({ type: 'login.requested', session });
+            await waitFor(actor, (state) => state.matches({ page: { loggingIn: 'leaving' } }));
+
+            window.dispatchEvent(new PopStateEvent('popstate'));
+            expect(actor.getSnapshot().matches({ page: 'ready' })).toBe(true);
+            expect(actor.getSnapshot().can({ type: 'login.requested', session })).toBe(true);
+        });
+
         it('applies the result and hands it to whoever asked', async () => {
             const { actor, followLoginResult } = start({
                 pathname: SSO_PATHS.LOGIN,

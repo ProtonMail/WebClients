@@ -143,7 +143,7 @@ export type PublicAppMachineEvent =
     /** The picked session resumed; listed so the login reads it from the event. */
     | DoneActorEvent<ResumedSessionResult, typeof RESUME_SESSION>
     | { type: 'language.changed'; localePrefix: string }
-    /** The browser showed the page again from its back/forward cache, after it had left for the app. */
+    /** The page is shown again after it left for the app: restored from the back/forward cache, or the leave was cancelled. */
     | { type: 'page.restored' }
     /** A page will submit soon, or is about to: load the crypto worker. */
     | { type: 'crypto.requested' }
@@ -336,8 +336,14 @@ export const publicAppStateMachine = setup({
                     sendBack({ type: 'page.restored' });
                 }
             };
+            // A history move also means the page stayed, e.g. Back while the redirect was still loading cancels it
+            const onPopState = () => sendBack({ type: 'page.restored' });
             window.addEventListener('pageshow', onPageShow);
-            return () => window.removeEventListener('pageshow', onPageShow);
+            window.addEventListener('popstate', onPopState);
+            return () => {
+                window.removeEventListener('pageshow', onPageShow);
+                window.removeEventListener('popstate', onPopState);
+            };
         }),
     },
     actions: {
@@ -659,7 +665,7 @@ export const publicAppStateMachine = setup({
                         },
                         /**
                          * The login finished: the page is leaving for the app, and the screen that asked for it keeps
-                         * loading. Coming back to it from the back/forward cache makes it usable again.
+                         * loading. Coming back to it, from the back/forward cache or a cancelled redirect, makes it usable again.
                          */
                         leaving: { on: { 'page.restored': '#publicApp.page.ready' } },
                     },
