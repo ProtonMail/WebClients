@@ -4,6 +4,7 @@ import { ThemeColor } from '@proton/colors/types';
 
 import type { APP_NAMES } from '../constants';
 import { APPS } from '../constants';
+import { sizeUnits } from '../helpers/size';
 import type { User, UserModel } from '../interfaces/User';
 import { PLANS } from '../payments/constants';
 import { getHasMailB2BPlan } from '../payments/subscription/helpers/plan-b2b';
@@ -80,10 +81,24 @@ const getSpaceDetailsType = (danger: boolean, warning: boolean) => {
     return SpaceState.Good;
 };
 
-const getSpaceDetails = (usedSpace: number, maxSpace: number) => {
+/**
+ * Free space below which we warn the user that their storage is almost full.
+ * We use the smaller of a relative and an absolute threshold so that users on
+ * large plans are not warned while they still have plenty of space left
+ * (e.g. 20% of 2 TB is still 400 GB free).
+ */
+const WARNING_FREE_SPACE_RATIO = 0.2;
+const WARNING_FREE_SPACE_MAX = 20 * sizeUnits.GB;
+
+export const getWarningFreeSpaceThreshold = (maxSpace: number) => {
+    return Math.min(maxSpace * WARNING_FREE_SPACE_RATIO, WARNING_FREE_SPACE_MAX);
+};
+
+export const getSpaceDetails = (usedSpace: number, maxSpace: number) => {
     const data = getData(usedSpace, maxSpace);
     const danger = data.percentage >= 100;
-    const warning = data.percentage >= 80 && data.percentage < 100;
+    const freeSpace = maxSpace - usedSpace;
+    const warning = !danger && maxSpace > 0 && freeSpace <= getWarningFreeSpaceThreshold(maxSpace);
     return {
         type: getSpaceDetailsType(danger, warning),
         ...data,
