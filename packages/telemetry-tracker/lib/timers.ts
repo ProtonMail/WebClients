@@ -9,6 +9,7 @@ export interface TimerHandle<K extends string = string> {
     readonly [timerBrand]: true;
 }
 
+// SAFETY: The brand is type-only; this factory is the sole constructor of timer handles.
 export const defineTimer = <const K extends string>(key: K): TimerHandle<K> => ({ key }) as TimerHandle<K>;
 
 /** Keyed registry of running timers, based on a monotonic clock. */

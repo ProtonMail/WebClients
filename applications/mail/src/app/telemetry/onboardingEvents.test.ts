@@ -1,13 +1,10 @@
 import { renderHook } from '@testing-library/react';
 
-import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { TelemetryMailOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import { ONBOARDING_STEPS, useOnboardingTracking } from './onboardingEvents';
-
-jest.mock('@proton/account/allSubscriptions/hooks');
 
 jest.mock('@proton/account/welcomeFlags');
 
@@ -35,7 +32,6 @@ describe('onboarding flow dismissal', () => {
         jest.clearAllMocks();
         sessionStorage.clear();
         setReplay(false);
-        jest.mocked(useAllSubscriptions).mockReturnValue([[], false]);
     });
 
     it('sends flow_dismissed with the last displayed step', () => {
@@ -99,7 +95,6 @@ describe('signup proof of concept', () => {
         jest.clearAllMocks();
         sessionStorage.clear();
         setReplay(false);
-        jest.mocked(useAllSubscriptions).mockReturnValue([[], false]);
     });
 
     const getPocEvents = () =>
@@ -121,7 +116,6 @@ describe('signup proof of concept', () => {
                 product: 'mail',
                 authState: 'authenticated',
                 step: ONBOARDING_STEPS.welcome,
-                plan: 'free',
             },
         });
     });

@@ -5,7 +5,7 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import type { EmitArgs, EventDefinition } from './defineEvent';
-import type { ValuesSpec } from './dimensions';
+import type { ContextDimensionSpec } from './dimensions';
 import type { TimerHandle } from './timers';
 import { Timers } from './timers';
 
@@ -20,7 +20,7 @@ interface InternalDeps extends TrackerDeps {
     sendAnalytics?: (name: string, data: Record<string, string | number | boolean>) => void;
 }
 
-interface EmitInputShape {
+interface ResolvedInput {
     dimensions?: Record<string, string | boolean | undefined>;
     values?: Record<string, number | undefined>;
 }
@@ -36,20 +36,35 @@ interface ResolvedEvent {
  */
 const resolveEvent = (
     event: EventDefinition,
-    input: EmitInputShape | undefined,
+    input: ResolvedInput | undefined,
     durationMs: number | undefined
 ): ResolvedEvent => {
     const dimensions: Record<string, string | boolean> = {};
-    for (const key of Object.keys(event.dimensions)) {
-        const value = input?.dimensions?.[key];
+    for (const [key, spec] of Object.entries(event.dimensions)) {
+        let value: string | boolean | undefined;
+        if (spec.kind === 'context') {
+            // Filled by the tracker from the context handle, the call site cannot pass it
+            // SAFETY: Context specs are created by the context handle with a source and key.
+            const { source, key: contextKey } = spec as ContextDimensionSpec;
+            value = source.get(contextKey);
+        } else {
+            value = input?.dimensions?.[key];
+        }
         if (value !== undefined) {
             dimensions[key] = value;
         }
     }
 
     const values: Record<string, number> = {};
-    for (const [key, spec] of Object.entries(event.values as ValuesSpec)) {
-        const value = spec.kind === 'duration' ? durationMs : input?.values?.[key];
+    for (const [key, spec] of Object.entries(event.values)) {
+        let value: number | undefined;
+        if (spec.kind === 'duration') {
+            value = durationMs;
+        } else if (spec.kind === 'contextValue') {
+            value = spec.source.get(spec.key);
+        } else {
+            value = input?.values?.[key];
+        }
         if (typeof value === 'number' && Number.isFinite(value)) {
             values[key] = value;
         }
@@ -67,7 +82,8 @@ export class Tracker {
         // Telemetry must never break a user action
         this.catchErrors(() => {
             const durationMs = options?.durationFrom ? this.timers.elapsed(options.durationFrom) : undefined;
-            const resolved = resolveEvent(event, input as EmitInputShape | undefined, durationMs);
+            // SAFETY: EmitArgs derives its input from the event's dimension and value specs.
+            const resolved = resolveEvent(event, input as ResolvedInput | undefined, durationMs);
             const flushImmediately = options?.flushImmediately ?? false;
 
             if (options?.stopTimer && options.durationFrom) {

@@ -16,6 +16,7 @@ import { startIncomingDefaultListener } from './incomingDefaults/incomingDefault
 import { getMailPersistedState } from './persistReducer';
 import { startSearchChangeListener } from './search/searchChangeListener';
 import type { AppStartListening } from './store';
+import { startTrackerContextListener } from './trackerContextListener';
 
 export const start = ({ startListening }: { startListening: AppStartListening }) => {
     startSharedListening(startListening);
@@ -23,6 +24,7 @@ export const start = ({ startListening }: { startListening: AppStartListening })
     startHolidaysDirectoryListener(startListening);
     startAccountSecurityListener(startListening);
     startListeningToPlanNameChange(startListening);
+    startTrackerContextListener(startListening);
     mailSettingsHeartbeatListener(startListening);
     startPersistListener(startListening, getMailPersistedState);
     startAccountSessionsListener(startListening);

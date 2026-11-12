@@ -1,5 +1,4 @@
 import type { TelemetryReport } from '@proton/shared/lib/api/telemetry';
-import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { Tracker, setTrackerInstance } from '../lib/tracker';
 
@@ -19,7 +18,7 @@ export const mockTracker = () => {
     const analyticsEvents: RecordedAnalyticsEvent[] = [];
     setTrackerInstance(
         new Tracker({
-            api: (() => Promise.resolve()) as unknown as Api,
+            api: () => Promise.reject(new Error('mockTracker does not send API requests')),
             send: (r) => reports.push(r),
             sendAnalytics: (name, data) => analyticsEvents.push({ name, data }),
         })

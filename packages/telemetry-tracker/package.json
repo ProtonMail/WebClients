@@ -5,6 +5,7 @@
     "sideEffects": false,
     "type": "module",
     "exports": {
+        "./lib/context": "./lib/context.ts",
         "./lib/defineEvent": "./lib/defineEvent.ts",
         "./lib/dimensions": "./lib/dimensions.ts",
         "./lib/timers": "./lib/timers.ts",
