@@ -180,6 +180,7 @@ const useSetupGmailBYOEAddress = ({
                         Account: token.Account,
                         AutomaticImport: importEmails,
                         QuotaThresholdRatio: BYOE_QUOTA_THRESHOLD_RATIO,
+                        Byoe: true,
                         StartTime: importEmails && importPeriod ? getStartTimeFromTimePeriod(importPeriod) : undefined,
                     }),
                     silence: [BYOE_ADDRESS_ERROR.ADDRESS_ALREADY_EXISTS],
@@ -247,6 +248,7 @@ const useSetupGmailBYOEAddress = ({
                     Account: account,
                     AutomaticImport: importEmails,
                     QuotaThresholdRatio: BYOE_QUOTA_THRESHOLD_RATIO,
+                    Byoe: true,
                     StartTime: importEmails && importPeriod ? getStartTimeFromTimePeriod(importPeriod) : undefined,
                     ClaimAddress: true,
                 })

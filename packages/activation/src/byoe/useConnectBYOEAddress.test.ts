@@ -145,6 +145,7 @@ describe('useConnectBYOEAddress', () => {
                     Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
                     Account: mockToken.Account,
                     AutomaticImport: true,
+                    Byoe: true,
                 })
             );
             expect(outcome).toEqual({ status: 'success', address: createdAddress, importEmails: true });

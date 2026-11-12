@@ -88,6 +88,7 @@ export const useConnectBYOEAddress = ({ source }: { source: EASY_SWITCH_SOURCES 
                     Account: account,
                     AutomaticImport: importEmails,
                     QuotaThresholdRatio: BYOE_QUOTA_THRESHOLD_RATIO,
+                    Byoe: true,
                     StartTime: importEmails && importPeriod ? getStartTimeFromTimePeriod(importPeriod) : undefined,
                     ...(claimAddress ? { ClaimAddress: true } : {}),
                 }),
