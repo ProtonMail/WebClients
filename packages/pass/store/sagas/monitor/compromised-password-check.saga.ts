@@ -12,8 +12,9 @@ import { logger } from '../../../utils/logger';
 import { deobfuscate } from '../../../utils/obfuscate/xor';
 import { importItemsProgress } from '../../actions/creators/import';
 import { itemCreate, itemEdit } from '../../actions/creators/item';
-import { compromisedPasswordUpdate } from '../../actions/creators/monitor';
+import { checkCompromisedPasswordForItem, compromisedPasswordUpdate } from '../../actions/creators/monitor';
 import type { ItemEditIntentAction } from '../../middleware/item-edit.middleware';
+import { selectItem } from '../../selectors/items';
 import { selectCanCheckCompromisedPasswords, selectCompromisedPasswordsCache } from '../../selectors/monitor';
 import { selectFeatureFlag } from '../../selectors/user';
 import type { RootSagaOptions } from '../../types';
@@ -91,8 +92,18 @@ function* onImportProgress({ payload }: ReturnType<typeof importItemsProgress>):
     for (const item of payload.items) yield fork(checkItem, item);
 }
 
+function* onCheckCompromisedForItem({ payload }: ReturnType<typeof checkCompromisedPasswordForItem>): Generator<any, void, any> {
+    if (!(yield call(isEnabled))) return;
+
+    const item: ReturnType<ReturnType<typeof selectItem>> = yield select(selectItem(payload.shareId, payload.itemId));
+    if (!item) return;
+
+    yield call(checkItem, item);
+}
+
 export default function* watcher(_: RootSagaOptions) {
     yield takeEvery(itemCreate.success.match, onItemCreateSuccess);
     yield takeEvery(itemEdit.intent.match, onItemEditIntent);
     yield takeEvery(importItemsProgress.match, onImportProgress);
+    yield takeEvery(checkCompromisedPasswordForItem.match, onCheckCompromisedForItem);
 }

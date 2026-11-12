@@ -12,7 +12,7 @@ import { selectAllVaults } from '../../store/selectors/shares';
 import { selectPassPlan } from '../../store/selectors/user';
 import { PassFeature } from '../../types/api/features';
 import { UserPassPlan } from '../../types/api/plan';
-import type { ItemRevision } from '../../types/data/items';
+import type { ItemRevision, ItemRevisionWithOptimistic } from '../../types/data/items';
 import { ShareRole } from '../../types/data/shares';
 import { useFeatureFlag } from '../useFeatureFlag';
 
@@ -25,6 +25,7 @@ export type ItemState = {
     canManage: boolean;
     canManageAccess: boolean;
     canMonitor: boolean;
+    canUpdateMonitorFlags: boolean;
     canMove: boolean;
     canShare: boolean;
     canTogglePinned: boolean;
@@ -38,7 +39,7 @@ export type ItemState = {
     isMonitored: boolean;
 };
 
-type UseItemState = (item: ItemRevision, share: ShareItem) => ItemState;
+type UseItemState = (item: ItemRevision | ItemRevisionWithOptimistic, share: ShareItem) => ItemState;
 
 export const useItemState: UseItemState = (item, share) => {
     const { shareId, itemId, data } = item;
@@ -76,6 +77,8 @@ export const useItemState: UseItemState = (item, share) => {
         const canManageAccess = shared && !readOnly;
         const canLeave = !isVault && !owner && !groupShare;
         const canMonitor = !trashed && data.type === 'login' && !readOnly;
+        const { optimistic = false, failed = false } = item as ItemRevisionWithOptimistic;
+        const canUpdateMonitorFlags = canMonitor && !optimistic && !failed;
         const canTogglePinned = !(pinInFlight || unpinInFlight);
 
         return {
@@ -87,6 +90,7 @@ export const useItemState: UseItemState = (item, share) => {
             canManage,
             canManageAccess,
             canMonitor,
+            canUpdateMonitorFlags,
             canMove,
             canShare,
             canTogglePinned,

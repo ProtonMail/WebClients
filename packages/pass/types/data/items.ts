@@ -132,6 +132,10 @@ export enum ItemFlag {
     AliasDisabled = 1 << 2,
     HasAttachments = 1 << 3,
     HasHadAttachments = 1 << 4,
+    SkipWeakPasswordCheck = 1 << 5,
+    SkipCompromisedPasswordCheck = 1 << 6,
+    SkipReusedPasswordCheck = 1 << 7,
+    Skip2FACheck = 1 << 8,
 }
 
 export type DeobfuscatedItemRevision<

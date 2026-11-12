@@ -6,7 +6,13 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PROTON_SENTINEL_NAME, type SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 import identity from '@proton/utils/identity';
 
-import { isMonitored } from '../../../lib/items/item.predicates';
+import { isFullyExcluded, isMonitored } from '../../../lib/items/item.predicates';
+import {
+    buildExcludeAllFlags,
+    buildIgnoreCheckFlags,
+    buildIncludeAllFlags,
+    buildRestoreCheckFlags,
+} from '../../../lib/monitor/monitor-flags';
 import { getAddressId } from '../../../lib/monitor/monitor.utils';
 import type {
     AddressBreachDTO,
@@ -14,11 +20,17 @@ import type {
     CompromisedPasswordEntry,
     CustomAddressID,
     MonitorAddress,
+    MonitorCheckType,
     MonitorToggleDTO,
     MonitorVerifyDTO,
     ProtonAddressID,
 } from '../../../lib/monitor/types';
-import type { BreachCustomEmailGetResponse, BreachesGetResponse, UpdateUserMonitorStateRequest } from '../../../types/api/pass';
+import type {
+    BreachCustomEmailGetResponse,
+    BreachesGetResponse,
+    ItemUpdateFlagsRequest,
+    UpdateUserMonitorStateRequest,
+} from '../../../types/api/pass';
 import type { ShareId } from '../../../types/crypto/pass-types';
 import type { ItemRevision, SelectedItem, UniqueItem } from '../../../types/data/items';
 import type { TabId } from '../../../types/worker/runtime';
@@ -202,28 +214,90 @@ export const resolveAddressMonitor = requestActionsFactory<AddressBreachDTO, Add
     },
 });
 
-export const setItemFlags = requestActionsFactory<SelectedItem & { SkipHealthCheck: boolean }, SelectedItem & { item: ItemRevision }>(
-    'monitor::toggle::item'
-)({
+type SetItemFlagsContext = 'global-toggle' | 'ignore-check' | 'restore-check';
+
+export type SetItemFlagsIntent = SelectedItem & {
+    flags: ItemUpdateFlagsRequest;
+    context: SetItemFlagsContext;
+    checkType?: MonitorCheckType;
+};
+
+export type SetItemFlagsSuccess = SelectedItem & {
+    item: ItemRevision;
+    context: SetItemFlagsContext;
+    checkType?: MonitorCheckType;
+};
+
+const getSetItemFlagsSuccessText = ({ context, item }: SetItemFlagsSuccess) => {
+    switch (context) {
+        case 'ignore-check':
+            return c('Info').t`Check ignored`;
+        case 'restore-check':
+            return c('Info').t`Alert restored`;
+        case 'global-toggle':
+            return isMonitored(item)
+                ? c('Info').t`Item successfully included in monitoring`
+                : c('Info').t`Item successfully excluded from monitoring`;
+    }
+};
+
+export const setItemFlags = requestActionsFactory<SetItemFlagsIntent, SetItemFlagsSuccess>('monitor::toggle::item')({
     key: selectedItemKey,
     success: {
-        prepare: ({ shareId, itemId, item }) =>
+        prepare: (payload) =>
             withNotification({
                 type: 'info',
-                text: isMonitored(item)
-                    ? c('Info').t`Item successfully included in monitoring`
-                    : c('Info').t`Item successfully excluded from monitoring`,
-            })({ payload: { shareId, itemId, item } }),
+                text: getSetItemFlagsSuccessText(payload),
+            })({ payload }),
     },
     failure: {
         prepare: (error) =>
             withNotification({
                 type: 'error',
-                text: c('Error').t`Failed updating monitor flag of the item`,
+                text: c('Error').t`Failed updating monitoring status for this item`,
                 error,
             })({ payload: {} }),
     },
 });
+
+export const ignoreMonitorCheck = ({ shareId, itemId, checkType }: SelectedItem & { checkType: MonitorCheckType }) =>
+    setItemFlags.intent({
+        shareId,
+        itemId,
+        flags: buildIgnoreCheckFlags(checkType),
+        context: 'ignore-check',
+        checkType,
+    });
+
+export const restoreMonitorCheck = ({
+    shareId,
+    itemId,
+    checkType,
+    revision,
+}: SelectedItem & { checkType: MonitorCheckType; revision: ItemRevision }) =>
+    setItemFlags.intent({
+        shareId,
+        itemId,
+        flags: buildRestoreCheckFlags(checkType, { fullyExcluded: isFullyExcluded(revision) }),
+        context: 'restore-check',
+        checkType,
+    });
+
+export const excludeFromMonitoring = ({ shareId, itemId }: SelectedItem) =>
+    setItemFlags.intent({
+        shareId,
+        itemId,
+        flags: buildExcludeAllFlags(),
+        context: 'global-toggle',
+    });
+
+export const includeInMonitoring = ({ shareId, itemId }: SelectedItem) =>
+    setItemFlags.intent({
+        shareId,
+        itemId,
+        flags: buildIncludeAllFlags(),
+        context: 'global-toggle',
+    });
 
 export const compromisedPasswordsSync = createAction(
     'monitor::compromised-passwords::sync',
@@ -234,6 +308,10 @@ export const compromisedPasswordUpdate = createAction(
     'monitor::compromised-password::update',
     (payload: { item: UniqueItem; entry: CompromisedPasswordEntry }) => withCache({ payload })
 );
+
+export const checkCompromisedPasswordForItem = createAction('monitor::compromised-password::check::item', (item: UniqueItem) => ({
+    payload: item,
+}));
 
 export const compromisedPasswordsBatchUpdate = createAction(
     'monitor::compromised-passwords::batch-update',

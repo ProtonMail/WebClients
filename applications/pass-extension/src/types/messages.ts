@@ -158,7 +158,9 @@ export enum WorkerMessageType {
     LOG_REQUEST = 'LOG_REQUEST',
     MODEL_ARTIFACT_REQUEST = 'MODEL_ARTIFACT_REQUEST',
     MONITOR_2FAS = 'MONITOR_2FAS',
+    MONITOR_MISSING_2FA_FOR_ITEM = 'MONITOR_MISSING_2FA_FOR_ITEM',
     MONITOR_WEAK_PASSWORDS = 'MONITOR_WEAK_PASSWORDS',
+    MONITOR_WEAK_PASSWORD_FOR_ITEM = 'MONITOR_WEAK_PASSWORD_FOR_ITEM',
     NOTIFICATION = 'NOTIFICATION',
     OTP_CODE_GENERATE = 'OTP_CODE_GENERATE',
     PASS_CORE_RPC = 'PASS_CORE_RPC',
@@ -268,7 +270,9 @@ type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>
 type LogRequestMessage = { type: WorkerMessageType.LOG_REQUEST };
 type ModelArtifactRequestMessage = { type: WorkerMessageType.MODEL_ARTIFACT_REQUEST };
 type Monitor2FAsMessage = { type: WorkerMessageType.MONITOR_2FAS };
+type MonitorMissing2FAForItemMessage = WithPayload<WorkerMessageType.MONITOR_MISSING_2FA_FOR_ITEM, UniqueItem>;
 type MonitorWeakPasswordsMessage = { type: WorkerMessageType.MONITOR_WEAK_PASSWORDS };
+type MonitorWeakPasswordForItemMessage = WithPayload<WorkerMessageType.MONITOR_WEAK_PASSWORD_FOR_ITEM, UniqueItem>;
 type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { notification: Notification }>;
 type OTPCodeGenerateMessage = WithPayload<WorkerMessageType.OTP_CODE_GENERATE, OtpRequest>;
 type PassCoreRPCMessage = WithPayload<WorkerMessageType.PASS_CORE_RPC, PassCoreRPC<PassCoreMethod>>;
@@ -364,7 +368,9 @@ export type WorkerMessage =
     | LogRequestMessage
     | ModelArtifactRequestMessage
     | Monitor2FAsMessage
+    | MonitorMissing2FAForItemMessage
     | MonitorWeakPasswordsMessage
+    | MonitorWeakPasswordForItemMessage
     | NotificationMessage
     | OTPCodeGenerateMessage
     | PassCoreRPCMessage
@@ -438,7 +444,9 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
     [WorkerMessageType.MODEL_ARTIFACT_REQUEST]: { artifact: MaybeNull<ModelArtifact> };
     [WorkerMessageType.MONITOR_2FAS]: { result: UniqueItem[] };
+    [WorkerMessageType.MONITOR_MISSING_2FA_FOR_ITEM]: { result: boolean };
     [WorkerMessageType.MONITOR_WEAK_PASSWORDS]: { result: UniqueItem[] };
+    [WorkerMessageType.MONITOR_WEAK_PASSWORD_FOR_ITEM]: { result: boolean };
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;
     [WorkerMessageType.PASS_CORE_RPC]: { result: PassCoreResult<PassCoreMethod> };
     [WorkerMessageType.PASSKEY_CREATE]: PasskeyCreateResponse;

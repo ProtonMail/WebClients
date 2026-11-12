@@ -1,6 +1,23 @@
 import type { ItemRevision, LoginItem } from '../../types/data/items';
+import { ItemFlag, ItemState } from '../../types/data/items';
 import { AutofillMode } from '../../types/protobuf';
-import { hasDomain, isBreached, isDisabledAlias, isHealthCheckSkipped, isMonitored } from './item.predicates';
+import { MONITOR_CHECK_CONFIG, MonitorCheckType } from '../monitor/types';
+import {
+    hasAnyExclusion,
+    hasAnyPerCheckIgnored,
+    hasDomain,
+    is2FACheckSkipped,
+    isBreached,
+    isCheckIgnored,
+    isCompromisedPasswordCheckSkipped,
+    isDisabledAlias,
+    isEligibleForMonitorCheck,
+    isFullyExcluded,
+    isHealthCheckSkipped,
+    isMonitored,
+    isReusedPasswordCheckSkipped,
+    isWeakPasswordCheckSkipped,
+} from './item.predicates';
 
 describe('item predicates', () => {
     test('`hasDomain`', () => {
@@ -63,5 +80,63 @@ describe('item predicates', () => {
         expect(isDisabledAlias({ flags: parseInt('011', 2) } as ItemRevision)).toBe(false);
         expect(isDisabledAlias({ flags: parseInt('101', 2) } as ItemRevision)).toBe(true);
         expect(isDisabledAlias({ flags: parseInt('111', 2) } as ItemRevision)).toBe(true);
+    });
+
+    test('per-check skip flags', () => {
+        expect(isWeakPasswordCheckSkipped({ flags: ItemFlag.SkipWeakPasswordCheck } as ItemRevision)).toBe(true);
+        expect(
+            isCompromisedPasswordCheckSkipped({ flags: ItemFlag.SkipCompromisedPasswordCheck } as ItemRevision)
+        ).toBe(true);
+        expect(isReusedPasswordCheckSkipped({ flags: ItemFlag.SkipReusedPasswordCheck } as ItemRevision)).toBe(true);
+        expect(is2FACheckSkipped({ flags: ItemFlag.Skip2FACheck } as ItemRevision)).toBe(true);
+        expect(isWeakPasswordCheckSkipped({ flags: 0 } as ItemRevision)).toBe(false);
+
+        const unrelatedFlags = ItemFlag.EmailBreached | ItemFlag.Skip2FACheck;
+        expect(isWeakPasswordCheckSkipped({ flags: unrelatedFlags } as ItemRevision)).toBe(false);
+        expect(is2FACheckSkipped({ flags: unrelatedFlags } as ItemRevision)).toBe(true);
+    });
+
+    test('`isFullyExcluded`', () => {
+        expect(isFullyExcluded({ flags: ItemFlag.SkipHealthCheck } as ItemRevision)).toBe(true);
+        expect(isFullyExcluded({ flags: ItemFlag.SkipWeakPasswordCheck } as ItemRevision)).toBe(false);
+    });
+
+    test('`isCheckIgnored`', () => {
+        const globallyExcluded = { flags: ItemFlag.SkipHealthCheck } as ItemRevision;
+        expect(isCheckIgnored(MonitorCheckType.WEAK)(globallyExcluded)).toBe(true);
+        expect(isCheckIgnored(MonitorCheckType.MISSING_2FA)(globallyExcluded)).toBe(true);
+
+        const weakOnly = { flags: ItemFlag.SkipWeakPasswordCheck } as ItemRevision;
+        expect(isCheckIgnored(MonitorCheckType.WEAK)(weakOnly)).toBe(true);
+        expect(isCheckIgnored(MonitorCheckType.MISSING_2FA)(weakOnly)).toBe(false);
+    });
+
+    test('`isEligibleForMonitorCheck`', () => {
+        const active = { flags: 0, state: ItemState.Active } as ItemRevision;
+        const weakIgnored = { flags: ItemFlag.SkipWeakPasswordCheck, state: ItemState.Active } as ItemRevision;
+
+        expect(isEligibleForMonitorCheck(MonitorCheckType.WEAK)(active)).toBe(true);
+        expect(isEligibleForMonitorCheck(MonitorCheckType.WEAK)(weakIgnored)).toBe(false);
+    });
+
+    test('`hasAnyPerCheckIgnored` and `hasAnyExclusion`', () => {
+        expect(hasAnyPerCheckIgnored({ flags: 0 } as ItemRevision)).toBe(false);
+        expect(hasAnyExclusion({ flags: 0 } as ItemRevision)).toBe(false);
+
+        const weakOnly = { flags: ItemFlag.SkipWeakPasswordCheck } as ItemRevision;
+        expect(hasAnyPerCheckIgnored(weakOnly)).toBe(true);
+        expect(hasAnyExclusion(weakOnly)).toBe(true);
+
+        const globalOnly = { flags: ItemFlag.SkipHealthCheck } as ItemRevision;
+        expect(hasAnyPerCheckIgnored(globalOnly)).toBe(false);
+        expect(hasAnyExclusion(globalOnly)).toBe(true);
+    });
+
+    test('`MONITOR_CHECK_CONFIG` maps every check type to a flag and API key', () => {
+        for (const type of Object.values(MonitorCheckType)) {
+            const { flag, apiKey } = MONITOR_CHECK_CONFIG[type];
+            expect(flag).toBeGreaterThan(0);
+            expect(apiKey).toMatch(/^Skip/);
+        }
     });
 });

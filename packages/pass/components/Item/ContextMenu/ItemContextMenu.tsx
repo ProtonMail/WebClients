@@ -30,6 +30,7 @@ import type { ItemActions } from '../../../hooks/items/useItemActions';
 import { useItemActions } from '../../../hooks/items/useItemActions';
 import type { ItemState } from '../../../hooks/items/useItemState';
 import { useItemState } from '../../../hooks/items/useItemState';
+import { useGlobalMonitorButton } from '../../../hooks/monitor/useGlobalMonitorButton';
 import { otpGenerationErrorNotifcation } from '../../../hooks/useOTPCode';
 import { getItemKey } from '../../../lib/items/item.utils';
 import { selectOrgTOTPDisabled } from '../../../store/selectors/organization';
@@ -47,6 +48,7 @@ import {
     type ContextMenuItem,
 } from '../../ContextMenu/ContextMenuItems';
 import { useContextMenu } from '../../ContextMenu/ContextMenuProvider';
+import { useOnline } from '../../Core/ConnectivityProvider';
 import type { PassCoreContextValue } from '../../Core/PassCoreProvider';
 import { usePassCore } from '../../Core/PassCoreProvider';
 import { expDateMask } from '../../Form/Field/masks/credit-card';
@@ -156,12 +158,18 @@ const getItemCopyButtons = (item: Item, getTotp: GetTotp, canRevealSensitiveCont
 };
 
 /** Returns context menu items about actions on the item */
-const getItemActionButtons = (itemState: ItemState, itemActions: ItemActions): ContextMenuItem[] => {
+const getItemActionButtons = (
+    itemState: ItemState,
+    itemActions: ItemActions,
+    globalMonitorButton: ReturnType<typeof useGlobalMonitorButton>,
+    online: boolean
+): ContextMenuItem[] => {
     const monitorActions = withItemCondition(itemState.canMonitor, {
         type: 'button',
-        icon: itemState.isMonitored ? <IcEyeSlash /> : <IcEye />,
-        name: itemState.isMonitored ? c('Action').t`Exclude from monitoring` : c('Action').t`Include in monitoring`,
-        action: itemActions.onToggleFlags,
+        icon: globalMonitorButton.mode === 'include' ? <IcEye /> : <IcEyeSlash />,
+        name: globalMonitorButton.label,
+        action: globalMonitorButton.onClick,
+        lock: !itemState.canUpdateMonitorFlags || !online || globalMonitorButton.loading,
     });
 
     const leaveActions = withItemCondition(itemState.canLeave, {
@@ -242,6 +250,8 @@ export const ItemContextMenu: FC<Props> = ({ item, share, anchorRef }) => {
     const itemActions = useItemActions(item);
     const canRevealSensitiveContent = useSelector(selectCanRevealSensitiveContent(share.shareId));
     const orgTOTPDisabled = useSelector(selectOrgTOTPDisabled);
+    const globalMonitorButton = useGlobalMonitorButton(item, share);
+    const online = useOnline();
 
     const elements: ContextMenuElement[] = useMemo(() => {
         if (item.failed) return [];
@@ -252,11 +262,11 @@ export const ItemContextMenu: FC<Props> = ({ item, share, anchorRef }) => {
             getOTPCode,
             canRevealSensitiveContent
         ).filter(({ copy }) => !!copy);
-        const actionBtns = getItemActionButtons(itemState, itemActions);
+        const actionBtns = getItemActionButtons(itemState, itemActions, globalMonitorButton, online);
         const separator = copyBtns.length > 0 && actionBtns.length > 0 ? [CONTEXT_MENU_SEPARATOR] : [];
 
         return copyBtns.concat(separator, actionBtns);
-    }, [item, itemState, itemActions, canRevealSensitiveContent, orgTOTPDisabled]);
+    }, [item, itemState, itemActions, canRevealSensitiveContent, globalMonitorButton, orgTOTPDisabled, online]);
 
     const itemOpened = state?.id === getItemKey(item);
     const autoClose = elements.length === 0 && itemOpened;

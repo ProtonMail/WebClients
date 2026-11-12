@@ -32,7 +32,7 @@ jest.mock('../../selectors/user', () => ({
 jest.mock('../../selectors/monitor', () => ({
     ...jest.requireActual('../../selectors/monitor'),
     selectCanCheckCompromisedPasswords: () => canCheck,
-    selectMonitoredLogins: () => () => logins,
+    selectLoginsEligibleForMonitorCheck: () => () => logins,
     selectCompromisedPasswordsCache: () => cache,
     selectLastSyncedChange: () => lastSyncedChange,
 }));

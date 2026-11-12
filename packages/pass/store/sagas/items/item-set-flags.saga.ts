@@ -5,9 +5,9 @@ import { createRequestSaga } from '../../request/sagas';
 
 export default createRequestSaga({
     actions: setItemFlags,
-    call: async ({ shareId, itemId, SkipHealthCheck }) => {
-        const encryptedItem = await updateItemFlags(shareId, itemId, { SkipHealthCheck });
+    call: async ({ shareId, itemId, flags, context, checkType }) => {
+        const encryptedItem = await updateItemFlags(shareId, itemId, flags);
         const item = await parseItemRevision(shareId, encryptedItem);
-        return { shareId, itemId, item: item };
+        return { shareId, itemId, item, context, checkType };
     },
 });
