@@ -308,6 +308,9 @@ catalogs:
     '@testing-library/jest-dom':
       specifier: ^6.9.1
       version: 6.9.1
+    '@testing-library/react':
+      specifier: ^16.3.3
+      version: 16.3.3
     '@testing-library/react-hooks':
       specifier: ^8.0.1
       version: 8.0.1
@@ -935,12 +938,15 @@ importers:
       '@proton/test-api':
         specifier: workspace:^
         version: link:../../packages/test-api
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/user-event':
         specifier: 'catalog:'
         version: 14.6.8(@testing-library/dom@10.4.2)
@@ -1129,8 +1135,8 @@ importers:
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/user-event':
         specifier: 'catalog:'
         version: 14.6.8(@testing-library/dom@10.4.2)
@@ -1541,12 +1547,15 @@ importers:
       '@proton/test-api':
         specifier: workspace:^
         version: link:../../packages/test-api
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/react-hooks':
         specifier: 'catalog:'
         version: 8.0.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-test-renderer@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1880,7 +1889,7 @@ importers:
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^16.3.3
+        specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/user-event':
         specifier: 'catalog:'
@@ -2087,12 +2096,15 @@ importers:
       '@proton/unleash':
         specifier: workspace:^
         version: link:../../packages/unleash
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
@@ -2343,12 +2355,15 @@ importers:
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../../packages/oxlint-config
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/react-hooks':
         specifier: 'catalog:'
         version: 8.0.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-test-renderer@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2882,12 +2897,15 @@ importers:
       '@proton/pass':
         specifier: workspace:^
         version: link:../../packages/pass
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/hast':
         specifier: ^3.0.5
         version: 3.0.5
@@ -3172,8 +3190,8 @@ importers:
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/react-hooks':
         specifier: 'catalog:'
         version: 8.0.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-test-renderer@18.3.1(react@18.3.1))(react@18.3.1)
@@ -3436,12 +3454,15 @@ importers:
       '@proton/vitest-config':
         specifier: workspace:^
         version: link:../../packages/vitest-config
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/user-event':
         specifier: 'catalog:'
         version: 14.6.8(@testing-library/dom@10.4.2)
@@ -3723,12 +3744,15 @@ importers:
       '@protontech/crypto':
         specifier: 'catalog:'
         version: 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/chrome':
         specifier: 'catalog:'
         version: 0.3.7
@@ -4073,12 +4097,15 @@ importers:
       '@protontech/pass-rust-core':
         specifier: 'catalog:'
         version: 2.3.4
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/chrome':
         specifier: 'catalog:'
         version: 0.3.7
@@ -4594,12 +4621,15 @@ importers:
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../../packages/oxlint-config
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/history':
         specifier: 'catalog:'
         version: 4.7.11
@@ -4781,12 +4811,15 @@ importers:
       '@proton/vitest-config':
         specifier: workspace:^
         version: link:../../packages/vitest-config
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/react-hooks':
         specifier: 'catalog:'
         version: 8.0.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-test-renderer@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4938,12 +4971,15 @@ importers:
       '@proton/vitest-config':
         specifier: workspace:^
         version: link:../vitest-config
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/user-event':
         specifier: 'catalog:'
         version: 14.6.8(@testing-library/dom@10.4.2)
@@ -5117,8 +5153,8 @@ importers:
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/react-hooks':
         specifier: 'catalog:'
         version: 8.0.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-test-renderer@18.3.1(react@18.3.1))(react@18.3.1)
@@ -5348,8 +5384,8 @@ importers:
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/user-event':
         specifier: 'catalog:'
         version: 14.6.8(@testing-library/dom@10.4.2)
@@ -5468,12 +5504,15 @@ importers:
       '@proton/unleash':
         specifier: workspace:^
         version: link:../unleash
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
@@ -5507,6 +5546,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       react-redux:
         specifier: 'catalog:'
         version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
@@ -5583,12 +5625,15 @@ importers:
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/react-hooks':
         specifier: 'catalog:'
         version: 8.0.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-test-renderer@18.3.1(react@18.3.1))(react@18.3.1)
@@ -5656,9 +5701,12 @@ importers:
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
@@ -5802,12 +5850,15 @@ importers:
       '@proton/vitest-config':
         specifier: workspace:^
         version: link:../vitest-config
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/react':
         specifier: 'catalog:'
         version: 18.3.31
@@ -6137,12 +6188,15 @@ importers:
       '@proton/test-api':
         specifier: workspace:^
         version: link:../test-api
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/react-hooks':
         specifier: 'catalog:'
         version: 8.0.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-test-renderer@18.3.1(react@18.3.1))(react@18.3.1)
@@ -6369,7 +6423,7 @@ importers:
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^16.3.3
+        specifier: 'catalog:'
         version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/jest':
         specifier: 'catalog:'
@@ -6674,12 +6728,15 @@ importers:
       '@swc/jest':
         specifier: ^0.2.39
         version: 0.2.39(@swc/core@1.16.22(@swc/helpers@0.5.17))
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/react-hooks':
         specifier: 'catalog:'
         version: 8.0.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-test-renderer@18.3.1(react@18.3.1))(react@18.3.1)
@@ -6725,6 +6782,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -6834,12 +6894,15 @@ importers:
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/react-hooks':
         specifier: 'catalog:'
         version: 8.0.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-test-renderer@18.3.1(react@18.3.1))(react@18.3.1)
@@ -7097,9 +7160,12 @@ importers:
       '@proton/utils':
         specifier: workspace:^
         version: link:../utils
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/react-hooks':
         specifier: 'catalog:'
         version: 8.0.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-test-renderer@18.3.1(react@18.3.1))(react@18.3.1)
@@ -7112,6 +7178,9 @@ importers:
       react:
         specifier: 'catalog:'
         version: 18.3.1
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       react-router-dom:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
@@ -7395,12 +7464,15 @@ importers:
       '@proton/unleash':
         specifier: workspace:^
         version: link:../unleash
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/user-event':
         specifier: 'catalog:'
         version: 14.6.8(@testing-library/dom@10.4.2)
@@ -7431,6 +7503,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -7523,12 +7598,15 @@ importers:
       '@proton/types':
         specifier: workspace:^
         version: link:../types
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
@@ -7810,12 +7888,15 @@ importers:
       '@proton/types':
         specifier: workspace:^
         version: link:../types
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/react-hooks':
         specifier: 'catalog:'
         version: 8.0.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-test-renderer@18.3.1(react@18.3.1))(react@18.3.1)
@@ -8146,12 +8227,15 @@ importers:
       '@proton/vitest-config':
         specifier: workspace:^
         version: link:../vitest-config
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/webpack-env':
         specifier: 'catalog:'
         version: 1.18.8
@@ -8176,6 +8260,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -8332,12 +8419,15 @@ importers:
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
@@ -8738,12 +8828,15 @@ importers:
       '@proton/pack':
         specifier: workspace:^
         version: link:../pack
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/react-hooks':
         specifier: 'catalog:'
         version: 8.0.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-test-renderer@18.3.1(react@18.3.1))(react@18.3.1)
@@ -9001,12 +9094,15 @@ importers:
       '@proton/test-api':
         specifier: workspace:^
         version: link:../test-api
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/react-hooks':
         specifier: 'catalog:'
         version: 8.0.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-test-renderer@18.3.1(react@18.3.1))(react@18.3.1)
@@ -9152,12 +9248,15 @@ importers:
       '@proton/test-api':
         specifier: workspace:^
         version: link:../test-api
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/react-hooks':
         specifier: 'catalog:'
         version: 8.0.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-test-renderer@18.3.1(react@18.3.1))(react@18.3.1)
@@ -9485,12 +9584,15 @@ importers:
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
@@ -9682,12 +9784,15 @@ importers:
       '@proton/react-redux-store':
         specifier: workspace:^
         version: link:../react-redux-store
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@types/jest':
         specifier: 'catalog:'
         version: 30.0.0
@@ -9706,6 +9811,9 @@ importers:
       oxlint-tsgolint:
         specifier: 'catalog:'
         version: 7.0.2006
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -10251,12 +10359,15 @@ importers:
       '@proton/vitest-config':
         specifier: workspace:^
         version: link:../vitest-config
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/user-event':
         specifier: 'catalog:'
         version: 14.6.8(@testing-library/dom@10.4.2)
@@ -10375,12 +10486,15 @@ importers:
       '@proton/vitest-config':
         specifier: workspace:^
         version: link:../vitest-config
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
       '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/react-hooks':
         specifier: 'catalog:'
         version: 8.0.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-test-renderer@18.3.1(react@18.3.1))(react@18.3.1)
@@ -17457,17 +17571,6 @@ packages:
       react-dom:
         optional: true
       react-test-renderer:
-        optional: true
-
-  '@testing-library/react@15.0.7':
-    resolution: {integrity: sha512-cg0RvEdD1TIhhkm1IeYMQxrzy0MtUNfa3minv4MjbgcYzJAZ7yD0i0lwoPOTPr+INtiXFezt2o8xMSnyHhEn2Q==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      '@types/react': ^18.0.0
-      react: ^18.0.0
-      react-dom: ^18.0.0
-    peerDependenciesMeta:
-      '@types/react':
         optional: true
 
   '@testing-library/react@16.3.3':
@@ -35473,16 +35576,6 @@ snapshots:
       '@types/react': 18.3.31
       react-dom: 18.3.1(react@18.3.1)
       react-test-renderer: 18.3.1(react@18.3.1)
-
-  '@testing-library/react@15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@babel/runtime': 7.29.7
-      '@testing-library/dom': 10.4.2
-      '@types/react-dom': 18.3.7(@types/react@18.3.31)
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-    optionalDependencies:
-      '@types/react': 18.3.31
 
   '@testing-library/react@16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:

@@ -72,8 +72,9 @@
         "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
         "@proton/unleash": "workspace:^",
+        "@testing-library/dom": "catalog:",
         "@testing-library/jest-dom": "catalog:",
-        "@testing-library/react": "^15.0.7",
+        "@testing-library/react": "catalog:",
         "@types/jest": "catalog:",
         "@types/lodash": "catalog:",
         "@types/node": "catalog:",
@@ -85,6 +86,7 @@
         "oxfmt": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react-dom": "catalog:",
         "react-redux": "catalog:",
         "typescript": "catalog:"
     }
