@@ -1,5 +1,6 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
+import type { LumoApiModelTier } from '@proton/lumo-api-client/core/chat-completions';
 import type {
     ClientToolExecutor,
     GenerationResponseMessage,
@@ -983,9 +984,21 @@ describe('useLumoAgent', () => {
         });
 
         it('tells the transport which model to use when the product names one', async () => {
-            await sendOnce({ ...standalone, modelTier: 'lumo-max' });
+            await sendOnce({ ...standalone, modelTier: () => 'lumo-max' });
 
             expect(sentOptions[0]).toHaveProperty('modelTier', 'lumo-max');
+        });
+
+        it('asks the product for the model on each send, so a switch reaches the next message', async () => {
+            let tier: LumoApiModelTier = 'lumo-lite';
+            const result = await sendOnce({ ...standalone, modelTier: () => tier });
+            tier = 'lumo-max';
+            await act(async () => {
+                await result.current.send('again');
+            });
+
+            expect(sentOptions[0]).toHaveProperty('modelTier', 'lumo-lite');
+            expect(sentOptions[1]).toHaveProperty('modelTier', 'lumo-max');
         });
 
         it('advertises client tools through the executor alone, so the request carries each once', async () => {

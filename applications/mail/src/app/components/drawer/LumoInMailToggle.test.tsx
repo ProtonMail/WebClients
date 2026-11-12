@@ -91,7 +91,7 @@ describe('LumoInMailToggle', () => {
         fireEvent.click(getToggle());
 
         expect(localStorage.getItem(storageKey)).toBe('false');
-        expect(createNotification).toHaveBeenCalledWith({ text: 'Lumo assistant disabled' });
+        expect(createNotification).toHaveBeenCalledWith({ text: 'Lumo AI assistant disabled' });
         expect(sendTelemetryReport).toHaveBeenCalledTimes(1);
         expect(sendTelemetryReport).toHaveBeenCalledWith(
             expect.objectContaining({
@@ -108,7 +108,7 @@ describe('LumoInMailToggle', () => {
         fireEvent.click(getToggle());
 
         expect(localStorage.getItem(storageKey)).toBe('true');
-        expect(createNotification).toHaveBeenCalledWith({ text: 'Lumo assistant enabled' });
+        expect(createNotification).toHaveBeenCalledWith({ text: 'Lumo AI assistant enabled' });
         expect(sendTelemetryReport).not.toHaveBeenCalled();
     });
 

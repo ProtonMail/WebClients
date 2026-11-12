@@ -68,6 +68,7 @@ import ClearBrowserDataModal from '../header/ClearBrowserDataModal';
 import MailDefaultHandlerModal from '../header/MailDefaultHandlerModal';
 import OneTimeCodeQuickSettings from '../onetimecode/OneTimeCodeQuickSettings';
 import LumoInMailToggle from './LumoInMailToggle';
+import LumoModelSetting from './LumoModelSetting';
 
 interface QuickSettingsSelectOption {
     value: any;
@@ -381,10 +382,18 @@ const MailQuickSettings = () => {
             {isLumoInMailFlagOn && (
                 <DrawerAppSection>
                     <QuickSettingsSectionRow
-                        label={c('Label').t`${LUMO_SHORT_APP_NAME} assistant`}
+                        label={c('Label').t`${LUMO_SHORT_APP_NAME} AI assistant`}
+                        labelInfo={
+                            <Info
+                                title={c('Info')
+                                    .t`Chat with ${LUMO_SHORT_APP_NAME} to search, read, organize and draft your emails.`}
+                                data-testid="mail-quick-settings:lumo-info"
+                            />
+                        }
                         labelProps={{ htmlFor: 'toggle-lumo-in-mail' }}
                         action={<LumoInMailToggle id="toggle-lumo-in-mail" />}
                     />
+                    <LumoModelSetting />
                 </DrawerAppSection>
             )}
 

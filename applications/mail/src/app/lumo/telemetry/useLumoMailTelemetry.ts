@@ -8,6 +8,8 @@ import { TelemetryMailLumoEvents, TelemetryMeasurementGroups } from '@proton/sha
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
+import useLumoModelChoice from '../useLumoModelChoice';
+
 /** The `reason` dimension, shared by `chain_end` and `tool_end`; a tool only ever reports the first two. */
 enum EndReason {
     SUCCEEDED = 'succeeded',
@@ -59,6 +61,8 @@ interface LumoMailTelemetry extends LumoMailConfigTelemetry {
 export const useLumoMailTelemetry = (): LumoMailTelemetry => {
     const api = useApi();
     const pickedCardRef = useRef<string | null>(null);
+    // The choice at report time: a switch during a chain labels that one chain with the new model.
+    const [model] = useLumoModelChoice();
 
     const report = (
         event: TelemetryMailLumoEvents,
@@ -76,7 +80,7 @@ export const useLumoMailTelemetry = (): LumoMailTelemetry => {
     };
 
     const reportTool = (toolName: ToolName, toolKind: ToolKind, reason: EndReason) =>
-        report(TelemetryMailLumoEvents.tool_end, { toolName, toolKind, reason });
+        report(TelemetryMailLumoEvents.tool_end, { toolName, toolKind, reason, model });
 
     return {
         assistantOpened: () => report(TelemetryMailLumoEvents.assistant_opened),
@@ -91,6 +95,7 @@ export const useLumoMailTelemetry = (): LumoMailTelemetry => {
             report(TelemetryMailLumoEvents.prompt_sent, {
                 promptSource: cardId ? PromptSource.SUGGESTION_CARD : PromptSource.TYPED,
                 suggestionCard: cardId ?? ABSENT,
+                model,
             });
         },
 
@@ -99,7 +104,7 @@ export const useLumoMailTelemetry = (): LumoMailTelemetry => {
                 TelemetryMailLumoEvents.chain_end,
                 // Chains no longer stop on a tool-round budget, so none is ever resumed. The dimension stays
                 // until the event schema drops it.
-                { isResumed: 'false', reason: CHAIN_END_REASONS[end] },
+                { isResumed: 'false', reason: CHAIN_END_REASONS[end], model },
                 { durationSeconds: durationMs / 1000, toolCalls }
             ),
 

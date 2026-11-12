@@ -25,8 +25,8 @@ const LumoInMailToggle = ({ id }: Props) => {
                 setEnabled(next);
                 createNotification({
                     text: next
-                        ? c('Success').t`${LUMO_SHORT_APP_NAME} assistant enabled`
-                        : c('Success').t`${LUMO_SHORT_APP_NAME} assistant disabled`,
+                        ? c('Success').t`${LUMO_SHORT_APP_NAME} AI assistant enabled`
+                        : c('Success').t`${LUMO_SHORT_APP_NAME} AI assistant disabled`,
                 });
 
                 if (!next) {

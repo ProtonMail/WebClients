@@ -52,6 +52,7 @@ import { openSupportTicketModule } from './skills/support/openSupportTicket';
 import { STANDALONE_DESCRIPTIONS } from './standaloneDescriptions';
 import type { LumoMailConfigTelemetry } from './telemetry/useLumoMailTelemetry';
 import type { MailToolDeps, MailToolModule } from './toolModule';
+import type { LumoModelChoice } from './useLumoModelChoice';
 import { WELCOME_SUGGESTIONS } from './welcomeSuggestions';
 
 /**
@@ -212,12 +213,14 @@ const withCheckTelemetry = (definition: ToolDefinition, telemetry: LumoMailConfi
  * store via `deps`. Called ONCE from the provider (deps read current values through getters/methods, so
  * the built config stays referentially stable across renders — the hook rebuilds its executor only when
  * the config identity changes). `standalonePrompt` drops the composed prompt and calls as the Lumo Mail
- * client, whose standalone system prompt the Lumo backend serves.
+ * client, whose standalone system prompt the Lumo backend serves. `getModelChoice` is read once per send,
+ * so a switch applies from the next message.
  */
 export const buildLumoMailConfig = (
     deps: MailToolDeps,
     telemetry: LumoMailConfigTelemetry,
-    standalonePrompt: boolean
+    standalonePrompt: boolean,
+    getModelChoice: () => LumoModelChoice
 ): LumoAgentConfig => {
     const definitions: ToolDefinition[] = MODULES.map(({ definition: rawDefinition, createGuide }) => {
         const definition = withCheckTelemetry(rawDefinition, telemetry);
@@ -262,8 +265,7 @@ export const buildLumoMailConfig = (
         suggestions: WELCOME_SUGGESTIONS,
         telemetry,
         showContextLimitToast: true,
-        // Staff-only release, so the traffic is small enough for the stronger model
-        modelTier: 'lumo-max',
+        modelTier: getModelChoice,
         // Run backend-side, so unlike MODULES they contribute no handler and no card — opt-in plus wording.
         serverTools: ['web_search', 'proton_info'],
         serverToolMeta: {
