@@ -81,6 +81,7 @@
         "@proton/calendar": "workspace:^",
         "@proton/components": "workspace:^",
         "@proton/drive": "workspace:^",
+        "@proton/features": "workspace:^",
         "@proton/hooks": "workspace:^",
         "@proton/icons": "workspace:^",
         "@proton/key-transparency": "workspace:^",
@@ -108,7 +109,6 @@
         "ttag": "catalog:"
     },
     "devDependencies": {
-        "@proton/features": "workspace:^",
         "@proton/i18n": "workspace:^",
         "@proton/jest-env": "workspace:^",
         "@proton/jest-swc-preset": "workspace:^",
