@@ -22,11 +22,6 @@ const SELECTOR = MESSAGE_IMAGE_ATTRIBUTES_TO_FIND.map((name) => {
         return '[proton-src]:not([proton-src^="cid"]):not([proton-src^="data"])';
     }
 
-    // https://stackoverflow.com/questions/23034283/is-it-possible-to-use-htmls-queryselector-to-select-by-xlink-attribute-in-an
-    if (name === 'xlink:href') {
-        return '[*|href]:not([href])';
-    }
-
     return `[proton-${name}]`;
 }).join(',');
 

@@ -45,12 +45,6 @@ describe('messageRemote', () => {
                               </svg>
                             </div>`;
 
-        const xlinkhrefExpectedContent = `<div>
-                              <svg width="90" height="90">
-                               <image proton-xlink:href='${originalURL}' xlink:href='${imageURL}'/>
-                              </svg>
-                            </div>`;
-
         const srcsetContent = `<div>
                               <picture>
                                 <source media="(min-width:650px)" proton-srcset='${originalURL}' >
@@ -69,7 +63,6 @@ describe('messageRemote', () => {
             content              | expectedContent
             ${backgroundContent} | ${backgroundExpectedContent}
             ${posterContent}     | ${posterExpectedContent}
-            ${xlinkhrefContent}  | ${xlinkhrefExpectedContent}
         `('should load elements other than images', async ({ content, expectedContent }) => {
             const messageDocument = parseDOMStringToBodyElement(content);
 
@@ -152,8 +145,13 @@ describe('messageRemote', () => {
             expect(messageDocument.innerHTML).toEqual(expectedDocument.innerHTML);
         });
 
-        it('should not load srcset attribute', () => {
-            const messageDocument = parseDOMStringToBodyElement(srcsetContent);
+        // SVG is removed by the sanitizer, so `xlink:href` is never loaded either.
+        it.each`
+            name            | content             | expectedContent
+            ${'srcset'}     | ${srcsetContent}    | ${srcsetExpectedContent}
+            ${'xlink:href'} | ${xlinkhrefContent} | ${xlinkhrefContent}
+        `('should not load $name attribute', ({ content, expectedContent }) => {
+            const messageDocument = parseDOMStringToBodyElement(content);
 
             const remoteImages = [
                 {
@@ -168,7 +166,7 @@ describe('messageRemote', () => {
 
             loadImages(remoteImages, messageDocument);
 
-            const expectedDocument = parseDOMStringToBodyElement(srcsetExpectedContent);
+            const expectedDocument = parseDOMStringToBodyElement(expectedContent);
 
             expect(messageDocument.innerHTML).toEqual(expectedDocument.innerHTML);
         });
