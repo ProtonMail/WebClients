@@ -1671,7 +1671,8 @@ const SingleSignupContainerV2 = ({
                                     cache,
                                     api: silentApi,
                                     hvMode:
-                                        // Forcing email address ownership verification for Pass, Drive, and Lumo
+                                        // Forcing email address ownership verification for org provisioning links, Pass, Drive, and Lumo
+                                        model.provisionedDeal ||
                                         product === APPS.PROTONPASS ||
                                         product === APPS.PROTONDRIVE ||
                                         product === APPS.PROTONLUMO
