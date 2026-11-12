@@ -1,5 +1,5 @@
-import { Suspense, lazy, useEffect } from 'react';
-import { Redirect, Route, Switch, matchPath, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Redirect, matchPath, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -13,7 +13,6 @@ import {
 import { OutgoingEmergencyContactTopBanner } from '@proton/account/delegatedAccess/emergencyContact/outgoing/OutgoingEmergencyContactTopBanner';
 import { IncomingRecoveryContactTopBanner } from '@proton/account/delegatedAccess/recoveryContact/incoming/IncomingRecoveryContactTopBanner';
 import { OutgoingRecoveryContactTopBanner } from '@proton/account/delegatedAccess/recoveryContact/outgoing/OutgoingRecoveryContactTopBanner';
-import { getTrustedContactRoute } from '@proton/account/delegatedAccess/routes';
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import { useGroups } from '@proton/account/groups/hooks';
@@ -38,15 +37,10 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import TopNavbarUpsell from '@proton/components/components/topnavbar/TopNavbarUpsell';
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
 import PrivateAppContainer from '@proton/components/containers/app/PrivateAppContainer';
-import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import PrivateHeader from '@proton/components/containers/heading/PrivateHeader';
 import UserDropdown from '@proton/components/containers/heading/UserDropdown';
-import PrivateMainAreaLoading from '@proton/components/containers/layout/PrivateMainAreaLoading';
-import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
 import UnprivatizationRequestTopBanner from '@proton/components/containers/members/Unprivatization/UnprivatizationRequestTopBanner';
 import { useOrganizationTheme } from '@proton/components/containers/organization/logoUpload/useOrganizationTheme';
-import { CancellationReminderSection } from '@proton/components/containers/payments/subscription/cancellationFlow/CancellationReminderSection';
-import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import { useReferralUserEligible } from '@proton/components/containers/referral/hooks/useReferralUserEligible';
 import TopBanners from '@proton/components/containers/topBanners/TopBanners';
 import LiveChatZendesk from '@proton/components/containers/zendesk/LiveChatZendesk';
@@ -70,125 +64,36 @@ import { OfferNavbarButton } from '@proton/offers-delivery/components/OfferNavba
 import { useActiveOffer } from '@proton/offers-delivery/components/useActiveOffer';
 import { CampaignVariant } from '@proton/offers-delivery/interface';
 import SubscriptionModalProvider from '@proton/payments-ui/containers/payments/subscription/SubscriptionModalProvider';
-import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { getToApp } from '@proton/shared/lib/authentication/apps';
-import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, SETUP_ADDRESS_PATH, VPN_TV_PATHS, VPN_TV_PATH_WITH_CODE } from '@proton/shared/lib/constants';
-import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
-import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
-import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
-import { localeCode } from '@proton/shared/lib/i18n';
-import type { UserModel } from '@proton/shared/lib/interfaces/User';
-import { getRequiresAddressSetup } from '@proton/shared/lib/keys/setupAddress';
-import { hasPaidPass } from '@proton/shared/lib/user/helpers';
-import { useFlag } from '@proton/unleash/useFlag';
-import { GetStartedOnboarding } from '@proton/vpn/components/Onboarding';
-import { TVContainer } from '@proton/vpn/components/tv/containers/TVContainer';
-import { TvContainerSignedIn } from '@proton/vpn/components/tv/containers/TvContainerSignedIn';
-import { NavigationProvider, useB2BAdminNavigation } from '@proton/vpn/contexts/navigation';
-
-import Layout from '../public-app/layout/Layout';
-import Main from '../public-app/layout/Main';
-import AccountSidebar from './AccountSidebar';
-import AccountStartupModals from './AccountStartupModals';
-import SettingsSearch, { AutocompleteSettingsSearch } from './SettingsSearch';
-import { getAssistantKillSwitch } from './assistantKillSwitch';
-import AccountSettingsRouter from './containers/account/AccountSettingsRouter';
-import MspSettingsRouter from './containers/msp/MspSettingsRouter';
-import OrganizationSettingsRouter from './containers/organization/OrganizationSettingsRouter';
-import AccountOfferTopBanner from './offers/AccountOfferTopBanner';
-import { useOfferUpgrade } from './offers/useOfferUpgrade';
+import AccountSidebar from '@proton/settings/AccountSidebar';
+import { SettingsRoutes, SettingsSearchArea } from '@proton/settings/SettingsRoutes';
 import type {
     AccountRecoveryRouterFlags,
     AccountSettingsRouterParams,
     Flags,
     OrganizationSettingsRouterParams,
-} from './router-params';
-import { getRoutes } from './routes';
+} from '@proton/settings/router-params';
+import { getRoutes } from '@proton/settings/routes';
+import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { getToApp } from '@proton/shared/lib/authentication/apps';
+import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
+import { APPS, SETUP_ADDRESS_PATH, VPN_TV_PATHS, VPN_TV_PATH_WITH_CODE } from '@proton/shared/lib/constants';
+import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
+import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
+import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
+import { localeCode } from '@proton/shared/lib/i18n';
+import { getRequiresAddressSetup } from '@proton/shared/lib/keys/setupAddress';
+import { useFlag } from '@proton/unleash/useFlag';
+import { GetStartedOnboarding } from '@proton/vpn/components/Onboarding';
+import { TVContainer } from '@proton/vpn/components/tv/containers/TVContainer';
+import { TvContainerSignedIn } from '@proton/vpn/components/tv/containers/TvContainerSignedIn';
+import { NavigationProvider } from '@proton/vpn/contexts/navigation';
 
-const MailSettingsRouter = lazy(
-    () => import(/* webpackChunkName: "routers/MailSettingsRouter" */ './containers/mail/MailSettingsRouter')
-);
-const CalendarSettingsRouter = lazy(
-    () =>
-        import(/* webpackChunkName: "routers/CalendarSettingsRouter" */ './containers/calendar/CalendarSettingsRouter')
-);
-const VpnSettingsRouter = lazy(
-    () => import(/* webpackChunkName: "routers/VpnSettingsRouter" */ './containers/vpn/VpnSettingsRouter')
-);
-const DriveSettingsRouter = lazy(
-    () => import(/* webpackChunkName: "routers/DriveSettingsRouter" */ './containers/drive/DriveSettingsRouter')
-);
-const DocsSettingsRouter = lazy(
-    () => import(/* webpackChunkName: "routers/DocsSettingsRouter" */ './containers/docs/DocsSettingsRouter')
-);
-const PassSettingsRouter = lazy(
-    () => import(/* webpackChunkName: "routers/PassSettingsRouter" */ './containers/pass/PassSettingsRouter')
-);
-
-const WalletSettingsRouter = lazy(
-    () => import(/* webpackChunkName: "routers/WalletSettingsRouter" */ './containers/wallet/WalletSettingsRouter')
-);
-
-const mailSlug = getSlugFromApp(APPS.PROTONMAIL);
-const calendarSlug = getSlugFromApp(APPS.PROTONCALENDAR);
-const vpnSlug = getSlugFromApp(APPS.PROTONVPN_SETTINGS);
-const driveSlug = getSlugFromApp(APPS.PROTONDRIVE);
-const docsSlug = getSlugFromApp(APPS.PROTONDOCS);
-const walletSlug = getSlugFromApp(APPS.PROTONWALLET);
-const passSlug = getSlugFromApp(APPS.PROTONPASS);
-
-const getDefaultPassRedirect = (
-    user: UserModel,
-    accountRoutes: ReturnType<typeof getRoutes>['account'],
-    passRoutes: ReturnType<typeof getRoutes>['pass']
-) => {
-    if (hasPaidPass(user) || !user.canPay || !getIsSectionAvailable(accountRoutes.routes.dashboard)) {
-        return passRoutes.routes.downloads.to;
-    }
-    return accountRoutes.routes.dashboard.to;
-};
-
-const getDefaultMspRedirect = (organizationRoutes: ReturnType<typeof getRoutes>['organization']) => {
-    return organizationRoutes.routes.users.to;
-};
-
-const getDefaultRedirect = (accountRoutes: ReturnType<typeof getRoutes>['account']) => {
-    if (getIsSectionAvailable(accountRoutes.routes.vpnDashboardV2)) {
-        return `${accountRoutes.routes.vpnDashboardV2.to}${location.search}${location.hash}`;
-    }
-    if (getIsSectionAvailable(accountRoutes.routes.dashboard)) {
-        return `${accountRoutes.routes.dashboard.to}${location.search}${location.hash}`;
-    }
-    if (getIsSectionAvailable(accountRoutes.routes.recovery)) {
-        return accountRoutes.routes.recovery.to;
-    }
-    if (getIsSectionAvailable(accountRoutes.routes.password)) {
-        return accountRoutes.routes.password.to;
-    }
-    const config = Object.values(accountRoutes.routes).find((config) => {
-        if (getIsSectionAvailable(config)) {
-            return config;
-        }
-    });
-    return config?.to || '';
-};
-
-const SettingsSearchArea = ({ app, routes }: { app: APP_NAMES; routes: ReturnType<typeof getRoutes> }) => {
-    const { viewportWidth } = useActiveBreakpoint();
-    const adminSidebar = useB2BAdminNavigation();
-
-    if (!viewportWidth['>=large']) {
-        return null;
-    }
-
-    if (app === APPS.PROTONVPN_SETTINGS && adminSidebar.enabled) {
-        return <AutocompleteSettingsSearch options={adminSidebar.settings} />;
-    }
-
-    return <SettingsSearch routes={routes} app={app} />;
-};
+import Layout from '../public-app/layout/Layout';
+import Main from '../public-app/layout/Main';
+import AccountStartupModals from './AccountStartupModals';
+import { getAssistantKillSwitch } from './assistantKillSwitch';
+import AccountOfferTopBanner from './offers/AccountOfferTopBanner';
+import { useOfferUpgrade } from './offers/useOfferUpgrade';
 
 const MainContainer = () => {
     const [user] = useUser();
@@ -429,54 +334,6 @@ const MainContainer = () => {
         />
     );
 
-    // Switch can't reasonably traverse Router childrens. However we do want to place them in their own components
-    // and still have redirects working. This is a trick to short-circuit matches of these paths to specific routers.
-    // A better idea would be to use a prefix for account and org. /mail/account/dashboard etc.
-    const anyAccountAppRoute = getRoutePaths(pathPrefix, Object.values(routes.account.routes));
-    const anyOrganizationAppRoute = getRoutePaths(
-        pathPrefix,
-        Object.values(routes.organization.routes).filter((section) => {
-            // Filter out the domains section, the route clashes with the _same_ route in the mail router when
-            // it's not available and would take precedence in the routing. (E.g. for free users).
-            return !(section === routes.organization.routes.domains && !getIsSectionAvailable(section));
-        })
-    );
-    const anyMspAppRoute = getRoutePaths(pathPrefix, Object.values(routes.msp.routes));
-
-    const redirect = (() => {
-        if (
-            loadingOrganization ||
-            loadingSubscription ||
-            loadingAllSubscriptions ||
-            loadingEntitlements ||
-            permissions === null ||
-            loadingDataRecovery ||
-            loadingIsSessionRecoveryAvailable ||
-            loadingGroupMembership ||
-            loadingGroups ||
-            loadingIsGroupOwner
-        ) {
-            return <PrivateMainAreaLoading />;
-        }
-
-        if (!isGenericSettings && !appFromPathname) {
-            const pathFromLocation = getPathFromLocation(location);
-            return <Redirect to={`/${appSlug}${pathFromLocation}`} />;
-        }
-
-        const path = (() => {
-            if (!routes.account.available) {
-                return getDefaultMspRedirect(routes.organization);
-            }
-            if (app === APPS.PROTONPASS) {
-                return getDefaultPassRedirect(user, routes.account, routes.pass);
-            }
-            return getDefaultRedirect(routes.account);
-        })();
-
-        return <Redirect to={`${pathPrefix}${path}`} />;
-    })();
-
     if (
         getRequiresAddressSetup(app, user) &&
         location.pathname !== `${pathPrefix}${routes.account.routes.password.to}`
@@ -523,80 +380,28 @@ const MainContainer = () => {
                     <AccountStartupModals />
                     {renderOfferModal && offer && <OfferDealModal offer={offer} {...offerModalProps} />}
                     <FeatureTour />
-                    <Switch>
-                        <Route path={anyAccountAppRoute}>
-                            <AccountSettingsRouter
-                                app={app}
-                                path={pathPrefix}
-                                accountAppRoutes={routes.account}
-                                redirect={redirect}
-                            />
-                        </Route>
-                        <Route path={[getTrustedContactRoute(`/${appSlug}`), getTrustedContactRoute()]}>
-                            <Redirect
-                                to={`${appSlug}${routes.account.routes.recovery.to}${routes.account.routes.recovery.subrouteGroups.advancedRecovery.subroutes.emergencyContacts.to}${location.search}${location.hash}`}
-                            />
-                        </Route>
-                        <Route path={anyOrganizationAppRoute}>
-                            <OrganizationSettingsRouter
-                                app={app}
-                                path={pathPrefix}
-                                organizationAppRoutes={routes.organization}
-                                redirect={redirect}
-                                organization={organization}
-                                onOpenChat={handleOpenZendeskChat}
-                                entitlements={entitlements}
-                            />
-                        </Route>
-                        <Route path={anyMspAppRoute}>
-                            <MspSettingsRouter path={pathPrefix} mspAppRoutes={routes.msp} redirect={redirect} />
-                        </Route>
-                        <Route path={[`/${appSlug}${CANCEL_ROUTE}`, CANCEL_ROUTE]}>
-                            <CancellationReminderSection app={app} />
-                        </Route>
-                        <Route path={`/${mailSlug}`}>
-                            <Suspense fallback={<PrivateMainAreaLoading />}>
-                                <MailSettingsRouter mailAppRoutes={routes.mail} redirect={redirect} />
-                            </Suspense>
-                        </Route>
-                        <Route path={`/${calendarSlug}`}>
-                            <Suspense fallback={<PrivateMainAreaLoading />}>
-                                <ContactEmailsProvider>
-                                    <CalendarSettingsRouter
-                                        user={user}
-                                        calendarAppRoutes={routes.calendar}
-                                        redirect={redirect}
-                                    />
-                                </ContactEmailsProvider>
-                            </Suspense>
-                        </Route>
-                        <Route path={`/${vpnSlug}`}>
-                            <Suspense fallback={<PrivateMainAreaLoading />}>
-                                <VpnSettingsRouter vpnAppRoutes={routes.vpn} redirect={redirect} />
-                            </Suspense>
-                        </Route>
-                        <Route path={`/${driveSlug}`}>
-                            <Suspense fallback={<PrivateMainAreaLoading />}>
-                                <DriveSettingsRouter driveAppRoutes={routes.drive} redirect={redirect} />
-                            </Suspense>
-                        </Route>
-                        <Route path={`/${docsSlug}`}>
-                            <Suspense fallback={<PrivateMainAreaLoading />}>
-                                <DocsSettingsRouter docsAppRoutes={routes.docs} redirect={redirect} />
-                            </Suspense>
-                        </Route>
-                        <Route path={`/${walletSlug}`}>
-                            <Suspense fallback={<PrivateMainAreaLoading />}>
-                                <WalletSettingsRouter walletAppRoutes={routes.wallet} redirect={redirect} />
-                            </Suspense>
-                        </Route>
-                        <Route path={`/${passSlug}`}>
-                            <Suspense fallback={<PrivateMainAreaLoading />}>
-                                <PassSettingsRouter passAppRoutes={routes.pass} redirect={redirect} />
-                            </Suspense>
-                        </Route>
-                        {redirect}
-                    </Switch>
+                    <SettingsRoutes
+                        app={app}
+                        appSlug={appSlug}
+                        pathPrefix={pathPrefix}
+                        user={user}
+                        routes={routes}
+                        loading={
+                            loadingOrganization ||
+                            loadingSubscription ||
+                            loadingAllSubscriptions ||
+                            loadingEntitlements ||
+                            permissions === null ||
+                            loadingDataRecovery ||
+                            loadingIsSessionRecoveryAvailable ||
+                            loadingGroupMembership ||
+                            loadingGroups ||
+                            loadingIsGroupOwner
+                        }
+                        organization={organization}
+                        entitlements={entitlements}
+                        onOpenChat={handleOpenZendeskChat}
+                    />
                     {showZendeskChat.render && (
                         <LiveChatZendesk
                             userEmail={user.Email || userSettings?.Email?.Value}

@@ -7,9 +7,9 @@ import { useCategoriesData } from '@proton/mail/features/categoriesView/useCateg
 import { updateLabel } from '@proton/mail/store/labels/actions';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { PromptDisableCategories } from '@proton/settings/containers/mail/sections/PromptDisableCategories';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { PromptDisableCategories } from '../../../private-app/containers/mail/sections/PromptDisableCategories';
 import MobileSection from '../MobileSection';
 import { CategoryRowItem } from './CategoryRowItem';
 

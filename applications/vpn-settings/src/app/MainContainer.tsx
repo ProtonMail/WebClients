@@ -3,15 +3,6 @@ import { useEffect, useState } from 'react';
 import { Route } from 'react-router';
 import { Redirect, Switch, useLocation } from 'react-router-dom';
 
-import { AutocompleteSettingsSearch } from 'proton-account/src/app/private-app/SettingsSearch';
-import RecoverySettingsRouter from 'proton-account/src/app/private-app/containers/account/recovery/RecoverySettingsRouter';
-import OrganizationSettingsRouter from 'proton-account/src/app/private-app/containers/organization/OrganizationSettingsRouter';
-import { getOrganizationAppRoutes } from 'proton-account/src/app/private-app/containers/organization/routes';
-import type {
-    AccountRecoveryRouterFlags,
-    Flags,
-    OrganizationSettingsRouterParams,
-} from 'proton-account/src/app/private-app/router-params';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
@@ -90,6 +81,15 @@ import UpgradeVpnSection from '@proton/payments-ui/containers/payments/subscript
 import YourPlanSection from '@proton/payments-ui/containers/payments/subscription/YourPlanSection';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { AutomaticSubscriptionModal } from '@proton/payments-ui/ui/subscriptions/AutomaticSubscriptionModal';
+import { AutocompleteSettingsSearch } from '@proton/settings/SettingsSearch';
+import RecoverySettingsRouter from '@proton/settings/containers/account/recovery/RecoverySettingsRouter';
+import OrganizationSettingsRouter from '@proton/settings/containers/organization/OrganizationSettingsRouter';
+import { getOrganizationAppRoutes } from '@proton/settings/containers/organization/routes';
+import type {
+    AccountRecoveryRouterFlags,
+    Flags,
+    OrganizationSettingsRouterParams,
+} from '@proton/settings/router-params';
 import { APPS, SECURITY_CHECKUP_PATHS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import { localeCode } from '@proton/shared/lib/i18n';

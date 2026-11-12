@@ -43,7 +43,7 @@ import type { UserOrganization } from '@proton/shared/lib/interfaces/Organizatio
 import emptyCompaniesImg from '@proton/styles/assets/img/illustrations/empty-companies.svg';
 import clsx from '@proton/utils/clsx';
 
-import { UNAUTHENTICATED_ROUTES } from '../../../../public-app/helper';
+import { UNAUTHENTICATED_ROUTES } from '../../../helpers/unauthenticatedRoutes';
 import type { CompanyFormData, MspCompany } from '../types';
 import { useAdminPublicKeys } from '../useAdminPublicKeys';
 import CompanyModal from './CompanyModal';

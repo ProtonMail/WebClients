@@ -4,13 +4,13 @@ import { Route, Switch } from 'react-router-dom';
 import { c } from 'ttag';
 
 import UnauthenticatedApiProvider from '@proton/components/containers/api/UnauthenticatedApiProvider';
+import { UNAUTHENTICATED_ROUTES } from '@proton/settings/helpers/unauthenticatedRoutes';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 
 import AccountLoaderPage from '../AccountLoaderPage';
 import AuthDesktop from './fork/AuthDesktop';
 import AuthExtension from './fork/AuthExtension';
 import ExternalSSOConsumer from './fork/ExternalSSOConsumer';
-import { UNAUTHENTICATED_ROUTES } from './helper';
 import useLocationWithoutLocale from './hooks/useLocationWithoutLocale';
 import OAuthPartnersContainer from './oauthPartners/OAuthPartnersContainer';
 import { PassAccountOnboarding } from './pass/PassAccountOnboarding';

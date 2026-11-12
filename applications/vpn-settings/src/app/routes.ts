@@ -1,9 +1,3 @@
-import { getRecoverySettings } from 'proton-account/src/app/private-app/containers/account/routes';
-import type {
-    AccountRecoveryRouterFlags,
-    Flags,
-    OrganizationSettingsRouterParams,
-} from 'proton-account/src/app/private-app/router-params';
 import { c } from 'ttag';
 
 import { getCanShowSignInRestriction } from '@proton/account/signInRestriction/helpers';
@@ -26,6 +20,12 @@ import {
     isManagedExternally,
 } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import { getRecoverySettings } from '@proton/settings/containers/account/routes';
+import type {
+    AccountRecoveryRouterFlags,
+    Flags,
+    OrganizationSettingsRouterParams,
+} from '@proton/settings/router-params';
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PROTON_SENTINEL_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';

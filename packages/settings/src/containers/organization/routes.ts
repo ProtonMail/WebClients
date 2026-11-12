@@ -37,7 +37,12 @@ import {
 import { getHasSsoUpsell, getIsSsoAvailable } from '@proton/shared/lib/payments/plan/helpers';
 
 import type { OrganizationRouterParams } from '../../router-params';
-import type { FeatureAccessVisibility } from './components/FeatureAccessSection';
+
+export interface FeatureAccessVisibility {
+    canShowScribe: boolean;
+    canShowVideoConference: boolean;
+    canShowLumoApi: boolean;
+}
 
 const videoConferenceValidApplications = new Set<string>([APPS.PROTONMAIL, APPS.PROTONCALENDAR]);
 const scribeValidApplications = new Set<string>([APPS.PROTONMAIL]);

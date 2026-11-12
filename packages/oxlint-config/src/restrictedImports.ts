@@ -131,6 +131,7 @@ const BASE_RESTRICTIONS: BaseRestriction[] = [
             '@proton/redux-shared-store-types',
             '@proton/redux-utilities',
             '@proton/sanitize',
+            '@proton/settings',
             '@proton/shared',
             '@proton/sieve',
             '@proton/styles',
