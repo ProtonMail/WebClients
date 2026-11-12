@@ -111,6 +111,10 @@ describe('publicAppStateMachine', () => {
         expect(selectBlocking(actor.getSnapshot())).toBe(true);
         expect(actor.getSnapshot().context.locationState).toBeNull();
         expect(followLoginResult).toHaveBeenCalledWith(loginResult);
+
+        window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: true }));
+        expect(actor.getSnapshot().matches({ page: 'ready' })).toBe(true);
+        expect(selectBlocking(actor.getSnapshot())).toBe(false);
     });
 
     it('goes to the login page on an invalid fork', async () => {
@@ -395,6 +399,21 @@ describe('publicAppStateMachine', () => {
             await waitFor(actor, (state) => state.matches({ page: { loggingIn: 'leaving' } }));
             actor.send({ type: 'login.requested', session });
             expect(login).toHaveBeenCalledTimes(1);
+        });
+
+        it('takes a login again once the browser restores the page it left from the back/forward cache', async () => {
+            const login = jest.fn(async () => doneResult);
+            const { actor } = start({ pathname: SSO_PATHS.SWITCH, initialSessionsLength: 0, login });
+            actor.send({ type: 'login.requested', session });
+            await waitFor(actor, (state) => state.matches({ page: { loggingIn: 'leaving' } }));
+
+            window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: false }));
+            expect(actor.getSnapshot().matches({ page: { loggingIn: 'leaving' } })).toBe(true);
+
+            window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: true }));
+            expect(actor.getSnapshot().matches({ page: 'ready' })).toBe(true);
+            expect(selectLoggingIn(actor.getSnapshot())).toBe(false);
+            expect(actor.getSnapshot().can({ type: 'login.requested', session })).toBe(true);
         });
 
         it('applies the result and hands it to whoever asked', async () => {

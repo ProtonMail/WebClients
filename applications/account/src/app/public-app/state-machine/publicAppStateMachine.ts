@@ -5,7 +5,17 @@
  * navigation.
  */
 import type * as H from 'history';
-import { type DoneActorEvent, type SnapshotFrom, and, assertEvent, assign, emit, setup, spawnChild } from 'xstate';
+import {
+    type DoneActorEvent,
+    type SnapshotFrom,
+    and,
+    assertEvent,
+    assign,
+    emit,
+    fromCallback,
+    setup,
+    spawnChild,
+} from 'xstate';
 
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getIsLumoApp, getIsPassApp, getIsVPNApp, getToAppName } from '@proton/shared/lib/authentication/apps';
@@ -133,6 +143,8 @@ export type PublicAppMachineEvent =
     /** The picked session resumed; listed so the login reads it from the event. */
     | DoneActorEvent<ResumedSessionResult, typeof RESUME_SESSION>
     | { type: 'language.changed'; localePrefix: string }
+    /** The browser showed the page again from its back/forward cache, after it had left for the app. */
+    | { type: 'page.restored' }
     /** A page will submit soon, or is about to: load the crypto worker. */
     | { type: 'crypto.requested' }
     /** A page that reads feature flags opened. */
@@ -307,16 +319,27 @@ export const publicAppStateMachine = setup({
         emitted: {} as PublicAppMachineEmitted,
         tags: {} as `${PublicAppStateMachineTags}`,
     },
-    actors: unprovidedActors<PublicAppActors>({
-        resolve: true,
-        login: true,
-        fetchSessions: true,
-        resumeSession: true,
-        signOut: true,
-        watchLanguage: true,
-        loadCrypto: true,
-        startFlags: true,
-    }),
+    actors: {
+        ...unprovidedActors<PublicAppActors>({
+            resolve: true,
+            login: true,
+            fetchSessions: true,
+            resumeSession: true,
+            signOut: true,
+            watchLanguage: true,
+            loadCrypto: true,
+            startFlags: true,
+        }),
+        watchPageRestore: fromCallback(({ sendBack }) => {
+            const onPageShow = (event: PageTransitionEvent) => {
+                if (event.persisted) {
+                    sendBack({ type: 'page.restored' });
+                }
+            };
+            window.addEventListener('pageshow', onPageShow);
+            return () => window.removeEventListener('pageshow', onPageShow);
+        }),
+    },
     actions: {
         assignResolved: assign(({ context }, { resolved }: { resolved: ResolvedSession }) => ({
             forkState: resolved.forkState,
@@ -416,7 +439,7 @@ export const publicAppStateMachine = setup({
             cryptoError: undefined,
         };
     },
-    invoke: { src: 'watchLanguage', input: ({ context }) => context.localePrefix },
+    invoke: [{ src: 'watchLanguage', input: ({ context }) => context.localePrefix }, { src: 'watchPageRestore' }],
     on: {
         'login.resulted': {
             actions: [
@@ -507,7 +530,7 @@ export const publicAppStateMachine = setup({
                     },
                 },
                 /** A login finished: the page is leaving for the app. */
-                redirecting: { tags: [PublicAppStateMachineTags.blocking] },
+                redirecting: { tags: [PublicAppStateMachineTags.blocking], on: { 'page.restored': 'ready' } },
                 failed: { tags: [PublicAppStateMachineTags.blocking] },
                 ready: {
                     on: {
@@ -636,9 +659,9 @@ export const publicAppStateMachine = setup({
                         },
                         /**
                          * The login finished: the page is leaving for the app, and the screen that asked for it keeps
-                         * loading.
+                         * loading. Coming back to it from the back/forward cache makes it usable again.
                          */
-                        leaving: {},
+                        leaving: { on: { 'page.restored': '#publicApp.page.ready' } },
                     },
                 },
             },
