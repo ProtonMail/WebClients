@@ -70,4 +70,46 @@ describe('forwardLiveKitLogsToLogger', () => {
 
         expect(mocks.logger.info).toHaveBeenCalledWith('[livekit] setting remote description', { sdpType: 'offer' });
     });
+
+    it('drops session descriptions nested in the context of a failed negotiation', () => {
+        const logExtension = installLiveKitLogExtension();
+
+        logExtension(LogLevel.error, 'unable to set offer', {
+            fields: {
+                error: 'Failed to set local offer sdp',
+                sdp: 'a=candidate:1 1 udp 2122260223 192.0.2.1 54321 typ host',
+                mungedSdp: 'a=candidate:1 1 udp 2122260223 192.0.2.1 54321 typ host',
+                remoteSdp: { type: 'answer', sdp: 'a=candidate:1 1 udp 2122260223 198.51.100.1 3478 typ host' },
+            },
+        });
+
+        expect(mocks.logger.error).toHaveBeenCalledWith('[livekit] unable to set offer', {
+            fields: { error: 'Failed to set local offer sdp' },
+        });
+    });
+
+    it('keeps the error of a failed munged description', () => {
+        const logExtension = installLiveKitLogExtension();
+        const error = new DOMException('Failed to set local offer sdp', 'OperationError');
+
+        logExtension(LogLevel.warn, 'not able to set offer, falling back to unmodified sdp', {
+            error,
+            mungedSdp: 'c=IN IP4 192.0.2.1',
+            originalSdp: 'c=IN IP4 192.0.2.1',
+        });
+
+        expect(mocks.logger.warn).toHaveBeenCalledWith(
+            '[livekit] not able to set offer, falling back to unmodified sdp',
+            error
+        );
+    });
+
+    it('keeps the candidate pair changes of the webrtc stats', () => {
+        const logExtension = installLiveKitLogExtension();
+        const stats = { publisher: { route: 'host/udp -> host', candidatePairChanges: 1 } };
+
+        logExtension(LogLevel.info, 'webrtc stats', stats);
+
+        expect(mocks.logger.info).toHaveBeenCalledWith('[livekit] webrtc stats', stats);
+    });
 });
