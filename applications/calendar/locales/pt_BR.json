@@ -101,6 +101,9 @@
       "Add notification": [
         "Adicionar notificação"
       ],
+      "Add payment method": [
+        "Adicionar forma de pagamento"
+      ],
       "Add phone number": [
         "Adicionar número de telefone"
       ],
@@ -1326,6 +1329,11 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Gerenciador de senha premium"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantia de reembolso de 30 dias: cancele em até 30 dias após a compra e entre em contato com ${ customerSupportLink } para obter um reembolso."
       ]
     },
     "BF2024: Deal details": {
@@ -5188,6 +5196,9 @@
       "1 vault per user": [
         "1 cofres por usuário"
       ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantia de reembolso de 30 dias: cancele em até 30 dias após a compra e entre em contato com ${ customerSupportLink } para obter um reembolso."
+      ],
       "A cancellation email will be sent to removed participants.": [
         "Um e-mail de cancelamento será enviado aos participantes removidos."
       ],
@@ -6515,6 +6526,9 @@
       ],
       "Your files will be encrypted and then saved": [
         "Seus arquivos serão criptografados e depois salvos"
+      ],
+      "Your free trial has ended. Subscribe now to keep your team's access uninterrupted and accounts secure.": [
+        "Seu período de teste gratuito terminou. Assine agora para manter o acesso da sua equipe sem interrupções e as contas seguras."
       ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Sua avaliação gratuita foi convertida em uma assinatura de ${ cycle } meses. Sua data de renovação é ${ nextBillingDate }."
@@ -9202,6 +9216,9 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Cancele a qualquer momento antes disso. ** Você poderá usar ${ planTitle } até que a avaliação termine, gratuitamente."
       ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Mudou de ideia após o período de teste?** Cancele em até 30 dias após o primeiro pagamento e reembolsaremos o valor referente ao período não utilizado."
+      ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Uma vez que sua assinatura completa começa... ** Você ainda pode cancelar dentro de 30 dias e obter um reembolso proporcional."
       ],
@@ -9487,6 +9504,9 @@
       "Billing Country": [
         "País de Faturamento"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Não é possível comprar contas Born Private com uma assinatura ativa."
+      ],
       "Buying credits requires a separate purchase.": [
         "Comprar créditos requer uma compra separada."
       ],
@@ -9573,6 +9593,9 @@
       ],
       "terms and conditions": [
         "termos e condições"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "A iniciativa Born Private exige uma doação."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "O desconto é válido para ${ renewalsWithCoupon } renovação.",
@@ -9670,11 +9693,17 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Você já possui o ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "You already own a Born Private account.": [
+        "Você já tem uma conta Born Private."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Em breve você será redirecionado para o PayPal para verificar seu pagamento."
       ],
       "You will soon be redirected to verify your payment.": [
         "Em breve você será redirecionado para verificar seu pagamento."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Sua conta é antiga demais para participar da iniciativa Born Private."
       ],
       "Your payment is still being processed": [
         "Seu pagamento ainda está sendo processado"
@@ -12224,6 +12253,9 @@
       "Start import process": [
         "Iniciar processo de importação"
       ],
+      "Subscribe to ${ planTitle }": [
+        "Assine o ${ planTitle }"
+      ],
       "Subscription canceled": [
         "Assinatura cancelada"
       ],
@@ -12558,6 +12590,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Este usuário receberá direitos de administrador na próxima vez que entrar."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Faça upgrade para um plano suportado para usar funções de administrador."
       ],
