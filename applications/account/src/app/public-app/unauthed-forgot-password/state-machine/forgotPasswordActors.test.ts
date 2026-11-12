@@ -1,4 +1,12 @@
-import { type AnyActorLogic, type InputFrom, type OutputFrom, createActor, toPromise } from 'xstate';
+import {
+    type AnyActorLogic,
+    type EventObject,
+    type InputFrom,
+    type OutputFrom,
+    createActor,
+    setup,
+    toPromise,
+} from 'xstate';
 
 import type { ValidateResetTokenResponse } from '@proton/shared/lib/api/reset';
 import { requestLoginResetToken, validateResetToken } from '@proton/shared/lib/api/reset';
@@ -102,6 +110,31 @@ beforeEach(() => {
 });
 
 describe('createForgotPasswordActors', () => {
+    it('tells the machine when the unauthenticated session expires, until it stops', () => {
+        const unsubscribe = jest.fn();
+        let expire = () => {};
+        const services = {
+            ...makeServices().services,
+            onSessionExpired: (listener: () => void) => {
+                expire = listener;
+                return unsubscribe;
+            },
+        };
+        const received: EventObject[] = [];
+        const parent = setup({
+            actors: { watchSession: createForgotPasswordActors(services).watchSession },
+        }).createMachine({
+            invoke: { src: 'watchSession' },
+            on: { 'session.expired': { actions: ({ event }) => received.push(event) } },
+        });
+        const actor = createActor(parent).start();
+
+        expire();
+        expect(received).toEqual([{ type: 'session.expired' }]);
+        actor.stop();
+        expect(unsubscribe).toHaveBeenCalled();
+    });
+
     describe('requestRecoveryMethods', () => {
         const methods = {
             username: 'user@example.com',
