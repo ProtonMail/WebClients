@@ -96,6 +96,7 @@ export type CheckSubscriptionData = {
     ValidateBillingAddress?: boolean;
     VatId?: string;
     ValidateGuards?: boolean;
+    ProvisioningToken?: string;
 };
 
 export const checkSubscriptionQuery = (data: CheckSubscriptionData) => {

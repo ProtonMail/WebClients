@@ -315,6 +315,7 @@ const Step1 = ({
             VatId: values.vatNumber,
             previousEstimation: model.subscriptionData.checkResult,
             subscription: model.session?.subscription,
+            provisioningToken: model.provisionedDeal?.token,
         });
     };
 

@@ -145,6 +145,7 @@ export interface Options {
     trial?: boolean;
     ValidateBillingAddress?: boolean;
     VatId: string | undefined;
+    provisioningToken?: string;
 }
 
 export interface Upsell {

@@ -74,3 +74,29 @@ describe('getSubscriptionPrices ValidateGuards', () => {
         expect(payload).not.toHaveProperty('ValidateGuards');
     });
 });
+
+describe('getSubscriptionPrices ProvisioningToken', () => {
+    const baseParams = {
+        currency: 'USD',
+        VatId: undefined,
+        planIDs: { [PLANS.BUNDLE_PRO_2024]: 5 },
+        cycle: CYCLE.YEARLY,
+        coupon: 'SALESDEAL',
+    } as const;
+
+    it('sends the provisioning token so the deal coupon is priced', async () => {
+        const { paymentsApi, checkSubscription } = getPaymentsApiMock();
+
+        await getSubscriptionPrices({ ...baseParams, paymentsApi, provisioningToken: 'token' });
+
+        expect(checkSubscription.mock.calls[0][0].ProvisioningToken).toBe('token');
+    });
+
+    it('does not send a provisioning token outside a provisioned link', async () => {
+        const { paymentsApi, checkSubscription } = getPaymentsApiMock();
+
+        await getSubscriptionPrices({ ...baseParams, paymentsApi });
+
+        expect(checkSubscription.mock.calls[0][0]).not.toHaveProperty('ProvisioningToken');
+    });
+});
