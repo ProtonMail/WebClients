@@ -23,12 +23,17 @@ import { selectWaitingRoomSetting } from '@proton/meet/store/slices/settings';
 import { selectIsWaitingRoomAdmissionActive } from '@proton/meet/store/slices/waitingRoomSlice';
 import { TelemetryMeetDashboardEvents, sendMeetDashboardEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { SettingToggle } from '../../atoms/SettingToggle/SettingToggle';
-import { clearDesktopAppPreference } from '../../utils/desktopAppDetector';
+import {
+    clearDesktopAppPreference,
+    getBrowserPreference,
+    getDesktopAppOption,
+    saveBrowserPreference,
+} from '../../utils/desktopAppDetector';
 import { OpenInDesktopApp } from '../OpenInDesktopApp/OpenInDesktopApp';
-import { useDesktopAppOption } from '../OpenInDesktopApp/useDesktopAppOption';
 import { useDesktopAppPreferenceStorageKey } from '../OpenInDesktopApp/useDesktopAppPreferenceStorageKey';
 import { PreJoinDetailsHeader } from './PreJoinDetailsHeader';
 import { WaitingRoomAdmission } from './WaitingRoomAdmission/WaitingRoomAdmission';
@@ -66,7 +71,9 @@ export const PreJoinDetails = ({
     const showWaitingRoomAdmission = useMeetSelector(selectIsWaitingRoomAdmissionActive);
     const waitingRoomEnabled = useMeetSelector(selectWaitingRoomSetting);
     const desktopAppPreferenceStorageKey = useDesktopAppPreferenceStorageKey();
-    const desktopAppOption = useDesktopAppOption();
+    const desktopAppOption = getDesktopAppOption(useFlag('MeetOpenDesktopAppOnLoad'));
+    const [prefersBrowser] = useState(() => getBrowserPreference(desktopAppPreferenceStorageKey));
+    const opensDesktopAppOnLoad = desktopAppOption === 'openOnLoad' && !prefersBrowser;
 
     const [keepDisplayNameOnDevice, setKeepDisplayNameOnDevice] = useState(keepDisplayName);
 
@@ -81,16 +88,18 @@ export const PreJoinDetails = ({
         if (instantMeeting) {
             return c('Action').t`Start meeting`;
         }
-        if (isElectronApp || desktopAppOption === 'openOnLoad') {
+        if (isElectronApp || opensDesktopAppOnLoad) {
             return c('Action').t`Join meeting`;
         }
         return isHost ? c('Action').t`Start meeting in browser` : c('Action').t`Join in browser`;
     };
 
-    const showOpenInDesktopApp = !instantMeeting && desktopAppOption === 'appButton';
+    const showOpenInDesktopApp = !instantMeeting && desktopAppOption !== 'unavailable' && !opensDesktopAppOnLoad;
 
     const handleJoinMeeting = () => {
-        if (showOpenInDesktopApp) {
+        if (!instantMeeting && desktopAppOption === 'openOnLoad') {
+            saveBrowserPreference(desktopAppPreferenceStorageKey);
+        } else if (showOpenInDesktopApp) {
             clearDesktopAppPreference(desktopAppPreferenceStorageKey);
         }
         onJoinMeeting(displayName, keepDisplayNameOnDevice);

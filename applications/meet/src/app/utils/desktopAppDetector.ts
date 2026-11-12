@@ -29,8 +29,20 @@ export const saveDesktopAppPreference = (storageKey: string): void => {
 
 export const getDesktopAppPreference = (storageKey: string): boolean => {
     try {
-        const preference = localStorage.getItem(storageKey);
-        return preference ? Boolean(preference) : false;
+        return localStorage.getItem(storageKey) === 'true';
+    } catch {}
+    return false;
+};
+
+export const saveBrowserPreference = (storageKey: string): void => {
+    try {
+        localStorage.setItem(storageKey, 'false');
+    } catch {}
+};
+
+export const getBrowserPreference = (storageKey: string): boolean => {
+    try {
+        return localStorage.getItem(storageKey) === 'false';
     } catch {}
     return false;
 };

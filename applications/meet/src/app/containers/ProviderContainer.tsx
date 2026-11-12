@@ -20,11 +20,9 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
 import { bootstrapApp } from '../bootstrap';
 import config from '../config';
-import { DesktopAppOptionContext } from '../contexts/DesktopAppOptionContext';
 import { MeetCoreClientContext } from '../contexts/MeetCoreClientContext';
 import { TrackedLoaderPage } from '../telemetry/TrackedLoaderPage';
 import { markBootstrapLoaderUnmount } from '../telemetry/loadPerformance';
-import type { DesktopAppOption } from '../utils/desktopAppDetector';
 import type { MeetCoreClient } from '../wasm/MeetCoreClient';
 
 type ExtraThunkArguments = Omit<MeetExtraThunkArguments, 'config' | 'notificationsManager'>;
@@ -40,7 +38,6 @@ export const ProviderContainer = ({ children }: { children: ReactNode }) => {
 
     const extraThunkArgumentsRef = useRef<ExtraThunkArguments>();
     const meetCoreClientRef = useRef<MeetCoreClient | null>(null);
-    const desktopAppOptionRef = useRef<DesktopAppOption>();
 
     useEffect(() => {
         const initialiseServicesAndStore = async (signal: AbortSignal) => {
@@ -54,7 +51,6 @@ export const ProviderContainer = ({ children }: { children: ReactNode }) => {
                     history,
                     meetCoreClient,
                     meetEventManager,
-                    desktopAppOption,
                 } = await bootstrapApp({
                     notificationsManager,
                     config,
@@ -77,7 +73,6 @@ export const ProviderContainer = ({ children }: { children: ReactNode }) => {
                 };
 
                 meetCoreClientRef.current = meetCoreClient;
-                desktopAppOptionRef.current = desktopAppOption;
 
                 setInitialised(true);
             } catch (error) {
@@ -117,11 +112,9 @@ export const ProviderContainer = ({ children }: { children: ReactNode }) => {
                         <Router history={history}>
                             <ApiProvider api={api}>
                                 <MeetCoreClientContext.Provider value={meetCoreClientRef.current}>
-                                    <DesktopAppOptionContext.Provider value={desktopAppOptionRef.current}>
-                                        <ErrorBoundary big component={<StandardErrorPage big />}>
-                                            <StandardPrivateApp>{children}</StandardPrivateApp>
-                                        </ErrorBoundary>
-                                    </DesktopAppOptionContext.Provider>
+                                    <ErrorBoundary big component={<StandardErrorPage big />}>
+                                        <StandardPrivateApp>{children}</StandardPrivateApp>
+                                    </ErrorBoundary>
                                 </MeetCoreClientContext.Provider>
                             </ApiProvider>
                         </Router>

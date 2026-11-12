@@ -18,10 +18,10 @@ import { selectIsGuest, selectUserId } from '@proton/meet/store/slices/userSlice
 import { selectIsWaitingRoomAdmissionActive } from '@proton/meet/store/slices/waitingRoomSlice';
 import type { FeatureFlag } from '@proton/unleash/Flags';
 
-import { DesktopAppOptionContext } from '../../contexts/DesktopAppOptionContext';
 import {
-    getDesktopAppOption,
+    getBrowserPreference,
     getDesktopAppPreference,
+    saveBrowserPreference,
     saveDesktopAppPreference,
     tryOpenInDesktopApp,
 } from '../../utils/desktopAppDetector';
@@ -109,24 +109,21 @@ const USER_STORAGE_KEY = 'openInDesktopApp.user.user-1';
 const OTHER_USER_STORAGE_KEY = 'openInDesktopApp.user.user-2';
 const GUEST_STORAGE_KEY = 'openInDesktopApp.guest';
 
-const renderPreJoinDetails = ({
-    instantMeeting = false,
-    onJoinMeeting = vi.fn(),
-    displayName = 'Alice',
-    desktopAppOption = getDesktopAppOption(mocks.flags.MeetOpenDesktopAppOnLoad ?? false),
-} = {}) =>
-    render(
-        <DesktopAppOptionContext.Provider value={desktopAppOption}>
-            <PreJoinDetails
-                meetingLinkName="meeting-abc"
-                displayName={displayName}
-                keepDisplayName={false}
-                onDisplayNameChange={vi.fn()}
-                onJoinMeeting={onJoinMeeting}
-                instantMeeting={instantMeeting}
-            />
-        </DesktopAppOptionContext.Provider>
+const renderPreJoinDetails = ({ instantMeeting = false, onJoinMeeting = vi.fn(), displayName = 'Alice' } = {}) => {
+    const getPreJoinDetails = () => (
+        <PreJoinDetails
+            meetingLinkName="meeting-abc"
+            displayName={displayName}
+            keepDisplayName={false}
+            onDisplayNameChange={vi.fn()}
+            onJoinMeeting={onJoinMeeting}
+            instantMeeting={instantMeeting}
+        />
     );
+    const { rerender } = render(getPreJoinDetails());
+
+    return { rerenderPage: () => rerender(getPreJoinDetails()) };
+};
 
 beforeEach(() => {
     vi.clearAllMocks();
@@ -427,16 +424,39 @@ describe('PreJoinDetails on other desktop browsers with MeetOpenDesktopAppOnLoad
         mocks.flags.MeetOpenDesktopAppOnLoad = true;
     });
 
-    it.each([
-        { role: 'participant', isHost: false },
-        { role: 'host', isHost: true },
-    ])('offers the $role one "Join meeting" button and no desktop app button', ({ isHost }) => {
-        mocks.isHost = isHost;
-        renderPreJoinDetails();
+    describe.each([
+        { choice: 'no choice yet', storeChoice: () => {} },
+        { choice: 'the app preferred', storeChoice: () => saveDesktopAppPreference(USER_STORAGE_KEY) },
+    ])('with $choice', ({ storeChoice }) => {
+        beforeEach(() => {
+            storeChoice();
+        });
 
-        expect(screen.getAllByRole('button', { name: 'Join meeting' })).toHaveLength(1);
-        expect(screen.queryByRole('button', { name: OPEN_IN_DESKTOP_APP })).not.toBeInTheDocument();
-        expect(screen.queryByText("App didn't open?")).not.toBeInTheDocument();
+        it.each([
+            { role: 'participant', isHost: false },
+            { role: 'host', isHost: true },
+        ])(
+            'offers the $role one "Join meeting" button, no desktop app button or hint, and does not open the app itself',
+            ({ isHost }) => {
+                mocks.isHost = isHost;
+                renderPreJoinDetails();
+
+                expect(screen.getAllByRole('button', { name: 'Join meeting' })).toHaveLength(1);
+                expect(screen.queryByRole('button', { name: OPEN_IN_DESKTOP_APP })).not.toBeInTheDocument();
+                expect(screen.queryByText("App didn't open?")).not.toBeInTheDocument();
+                expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
+            }
+        );
+
+        it('remembers that the browser is preferred and joins when "Join meeting" is used', () => {
+            const onJoinMeeting = vi.fn();
+            renderPreJoinDetails({ onJoinMeeting });
+
+            fireEvent.click(screen.getByRole('button', { name: 'Join meeting' }));
+
+            expect(onJoinMeeting).toHaveBeenCalledWith('Alice', false);
+            expect(getBrowserPreference(USER_STORAGE_KEY)).toBe(true);
+        });
     });
 
     it('offers one "Join meeting" button and no desktop app button with MeetOpenLinksInDesktopApp off', () => {
@@ -447,30 +467,74 @@ describe('PreJoinDetails on other desktop browsers with MeetOpenDesktopAppOnLoad
         expect(screen.queryByRole('button', { name: OPEN_IN_DESKTOP_APP })).not.toBeInTheDocument();
     });
 
-    it('does not open the app itself, even when the choice was remembered', () => {
-        saveDesktopAppPreference(USER_STORAGE_KEY);
+    describe('with the browser preferred', () => {
+        beforeEach(() => {
+            saveBrowserPreference(USER_STORAGE_KEY);
+        });
+
+        it.each([
+            { role: 'participant', isHost: false, action: 'Join in browser' },
+            { role: 'host', isHost: true, action: 'Start meeting in browser' },
+        ])(
+            'offers the $role "$action" and the desktop app button, without opening the app or its hint even with MeetOpenLinksInDesktopApp on',
+            ({ isHost, action }) => {
+                mocks.isHost = isHost;
+                renderPreJoinDetails();
+
+                expect(screen.getByRole('button', { name: action })).toBeInTheDocument();
+                expect(screen.getByRole('button', { name: OPEN_IN_DESKTOP_APP })).toBeInTheDocument();
+                expect(screen.queryByText("App didn't open?")).not.toBeInTheDocument();
+                expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
+            }
+        );
+
+        it('opens the app from the desktop app button, remembers it and keeps both buttons and the hint as the page updates', () => {
+            const { rerenderPage } = renderPreJoinDetails();
+
+            fireEvent.click(screen.getByRole('button', { name: OPEN_IN_DESKTOP_APP }));
+            rerenderPage();
+
+            expect(tryOpenInDesktopApp).toHaveBeenCalledTimes(1);
+            expect(tryOpenInDesktopApp).toHaveBeenCalledWith(MEETING_LINK);
+            expect(getDesktopAppPreference(USER_STORAGE_KEY)).toBe(true);
+            expect(screen.getByText("App didn't open?")).toBeInTheDocument();
+            expect(screen.getByRole('button', { name: OPEN_IN_DESKTOP_APP })).toBeInTheDocument();
+            expect(screen.getByRole('button', { name: 'Join in browser' })).toBeEnabled();
+        });
+
+        it('keeps the browser preferred when joining in the browser after trying the app', () => {
+            const onJoinMeeting = vi.fn();
+            renderPreJoinDetails({ onJoinMeeting });
+
+            fireEvent.click(screen.getByRole('button', { name: OPEN_IN_DESKTOP_APP }));
+            fireEvent.click(screen.getByRole('button', { name: 'Join in browser' }));
+
+            expect(onJoinMeeting).toHaveBeenCalledWith('Alice', false);
+            expect(getBrowserPreference(USER_STORAGE_KEY)).toBe(true);
+        });
+    });
+
+    it.each([
+        { owner: 'another account', storageKey: OTHER_USER_STORAGE_KEY },
+        { owner: 'the guest', storageKey: GUEST_STORAGE_KEY },
+    ])('offers one "Join meeting" button when $owner preferred the browser', ({ storageKey }) => {
+        saveBrowserPreference(storageKey);
         renderPreJoinDetails();
 
-        expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
-        expect(screen.queryByText("App didn't open?")).not.toBeInTheDocument();
+        expect(screen.getAllByRole('button', { name: 'Join meeting' })).toHaveLength(1);
+        expect(screen.queryByRole('button', { name: OPEN_IN_DESKTOP_APP })).not.toBeInTheDocument();
     });
 
-    it('joins in the browser and keeps the remembered choice', () => {
-        saveDesktopAppPreference(USER_STORAGE_KEY);
+    it('keeps "Start meeting", no desktop app button, and stores no choice for an instant meeting', () => {
         const onJoinMeeting = vi.fn();
-        renderPreJoinDetails({ onJoinMeeting });
+        renderPreJoinDetails({ instantMeeting: true, onJoinMeeting });
 
-        fireEvent.click(screen.getByRole('button', { name: 'Join meeting' }));
+        expect(screen.queryByRole('button', { name: OPEN_IN_DESKTOP_APP })).not.toBeInTheDocument();
+
+        fireEvent.click(screen.getByRole('button', { name: 'Start meeting' }));
 
         expect(onJoinMeeting).toHaveBeenCalledWith('Alice', false);
-        expect(getDesktopAppPreference(USER_STORAGE_KEY)).toBe(true);
-    });
-
-    it('keeps "Start meeting" and no desktop app button for an instant meeting', () => {
-        renderPreJoinDetails({ instantMeeting: true });
-
-        expect(screen.getByRole('button', { name: 'Start meeting' })).toBeInTheDocument();
-        expect(screen.queryByRole('button', { name: OPEN_IN_DESKTOP_APP })).not.toBeInTheDocument();
+        expect(localStorage.getItem(USER_STORAGE_KEY)).toBeNull();
     });
 
     it.each([
@@ -483,24 +547,6 @@ describe('PreJoinDetails on other desktop browsers with MeetOpenDesktopAppOnLoad
         renderPreJoinDetails();
 
         expect(screen.getByRole('button', { name: 'Join in browser' })).toBeInTheDocument();
-        expect(screen.queryByRole('button', { name: OPEN_IN_DESKTOP_APP })).not.toBeInTheDocument();
-    });
-});
-
-describe('PreJoinDetails when the live MeetOpenDesktopAppOnLoad differs from the page load', () => {
-    it('keeps "Join in browser" and the desktop app button from a page load with "appButton" while the live flag is on', () => {
-        mocks.flags.MeetOpenDesktopAppOnLoad = true;
-        renderPreJoinDetails({ desktopAppOption: 'appButton' });
-
-        expect(screen.getByRole('button', { name: 'Join in browser' })).toBeInTheDocument();
-        expect(screen.getByRole('button', { name: OPEN_IN_DESKTOP_APP })).toBeInTheDocument();
-    });
-
-    it('keeps one "Join meeting" button and no desktop app button from a page load with "openOnLoad" while the live flag is off', () => {
-        mocks.flags.MeetOpenDesktopAppOnLoad = false;
-        renderPreJoinDetails({ desktopAppOption: 'openOnLoad' });
-
-        expect(screen.getAllByRole('button', { name: 'Join meeting' })).toHaveLength(1);
         expect(screen.queryByRole('button', { name: OPEN_IN_DESKTOP_APP })).not.toBeInTheDocument();
     });
 });

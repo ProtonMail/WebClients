@@ -60,7 +60,7 @@ import {
     getGuestLoggerKey,
     holdGuestLoggerLock,
 } from './utils/meetLogger';
-import { startDesktopAppLaunchOnLoad } from './utils/startDesktopAppLaunchOnLoad';
+import { openDesktopAppOnLoad } from './utils/openDesktopAppOnLoad';
 import { startMeetingInfoPreload } from './utils/startMeetingInfoPreload';
 import { installWaitingRoomCallbackNamespaces } from './utils/wasmUtils';
 import { DirectMeetCoreClient } from './wasm/DirectMeetCoreClient';
@@ -335,6 +335,7 @@ const completeAppBootstrap = async ({
         cryptoPromise,
         measureLoadPhase('unleashMs', bootstrap.unleashReady({ unleashClient })).catch(noop),
     ]);
+    openDesktopAppOnLoad({ unleashClient, userId: userData.user.ID });
     initializeLogger({
         api,
         unleashClient,
@@ -382,9 +383,7 @@ const completeAppBootstrap = async ({
 
     void pruneOrphanBackgroundCaches();
 
-    const desktopAppOption = startDesktopAppLaunchOnLoad({ dispatch, unleashClient });
-
-    return { userData, meetCoreClient, desktopAppOption };
+    return { userData, meetCoreClient };
 };
 
 interface BootstrapParameters {
@@ -428,7 +427,7 @@ const executeBootstrapSteps = async ({
         isEnabled: () => restServices.unleashClient.isEnabled(MEET_EXTENDED_TELEMETRY_FLAG),
     });
 
-    const { userData, meetCoreClient, desktopAppOption } = await completeAppBootstrap({
+    const { userData, meetCoreClient } = await completeAppBootstrap({
         ...restServices,
         authentication,
         notificationsManager,
@@ -445,7 +444,6 @@ const executeBootstrapSteps = async ({
         store,
         authentication,
         meetCoreClient,
-        desktopAppOption,
     };
 };
 
@@ -525,6 +523,7 @@ export const bootstrapGuestApp = async (
     });
 
     await measureLoadPhase('unleashMs', unleashClient.start());
+    openDesktopAppOnLoad({ unleashClient });
 
     initializeLogger({
         api,
@@ -584,7 +583,6 @@ export const bootstrapGuestApp = async (
     });
 
     startMeetingInfoPreload({ dispatch: store.dispatch });
-    const desktopAppOption = startDesktopAppLaunchOnLoad({ dispatch: store.dispatch, unleashClient });
 
     markBootstrapEnd();
 
@@ -595,6 +593,5 @@ export const bootstrapGuestApp = async (
         history,
         unleashClient,
         meetCoreClient,
-        desktopAppOption,
     };
 };
