@@ -10,21 +10,38 @@ import { itemCreate, itemEdit } from '@proton/pass/store/actions/creators/item';
 import { selectAutosaveCandidate } from '@proton/pass/store/selectors/autosave';
 import { selectNonOptimisticItem } from '@proton/pass/store/selectors/items';
 import { selectVisibleWritableShares } from '@proton/pass/store/selectors/shares';
+import { selectAllAddresses, selectUser } from '@proton/pass/store/selectors/user';
+import type { State } from '@proton/pass/store/types';
 import { AutofillMode } from '@proton/pass/types/protobuf';
 import type { AutosavePrompt } from '@proton/pass/types/worker/autosave';
 import { AutosaveMode } from '@proton/pass/types/worker/autosave';
 import type { FormEntry } from '@proton/pass/types/worker/form';
 import { prop } from '@proton/pass/utils/fp/lens';
-import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
 import { validateFormCredentials } from '../../../lib/utils/form-entry';
 import { WorkerMessageType } from '../../../types/messages';
+import config from '../../config';
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context/inject';
 
+const isCurrentProtonAccountLogin = (state: State, domain: string, userIdentifier: string): boolean => {
+    if (domain !== parseUrl(config.SSO_URL).domain) return false;
+
+    const user = selectUser(state);
+    const emails = selectAllAddresses(state).map(prop('Email'));
+    const accountIdentifiers = [user?.Name, user?.Email, ...emails];
+
+    return accountIdentifiers.some(
+        (accountIdentifier) =>
+            accountIdentifier &&
+            canonicalizeInternalEmail(accountIdentifier) === canonicalizeInternalEmail(userIdentifier)
+    );
+};
+
 export const createAutoSaveService = () => {
     const resolve = withContext<(entry: FormEntry) => AutosavePrompt>((ctx, options) => {
-        const { type, data, url } = options;
+        const { type, data, url, domain } = options;
 
         /* Validate form data completeness before processing */
         if (!validateFormCredentials(data, { type, partial: false })) return { shouldPrompt: false };
@@ -32,6 +49,7 @@ export const createAutoSaveService = () => {
         const { userIdentifier, password } = data;
         const state = ctx.service.store.getState();
         const writableShareIds = selectVisibleWritableShares(state).map(prop('shareId'));
+        const isCurrentProtonAccount = isCurrentProtonAccountLogin(state, domain, userIdentifier);
 
         /** Candidate selection runs the canonical matching engine on the full URL
          * of the page the form was filled on, so it accepts exactly what autofill
@@ -63,12 +81,13 @@ export const createAutoSaveService = () => {
                     data: {
                         type: AutosaveMode.UPDATE,
                         candidates: pwMatches.map(intoLoginItemPreview),
+                        isCurrentProtonAccount,
                     },
                 };
             }
 
             /** No candidates found - prompt to save as new credentials  */
-            return { shouldPrompt: true, data: { type: AutosaveMode.NEW } };
+            return { shouldPrompt: true, data: { type: AutosaveMode.NEW, isCurrentProtonAccount } };
         }
 
         /** First check for existing login items across all shares(including
@@ -77,7 +96,9 @@ export const createAutoSaveService = () => {
         const candidates = selectAutosaveCandidate({ url, userIdentifier })(state);
 
         /** No candidates found - prompt to save as new credentials */
-        if (candidates.length === 0) return { shouldPrompt: true, data: { type: AutosaveMode.NEW } };
+        if (candidates.length === 0) {
+            return { shouldPrompt: true, data: { type: AutosaveMode.NEW, isCurrentProtonAccount } };
+        }
 
         /** If any share (writable or read-only) contains an exact credential
          * match, skip the autosave prompt to prevent duplicates. */
@@ -94,12 +115,12 @@ export const createAutoSaveService = () => {
         if (writableCandidates.length > 0) {
             return {
                 shouldPrompt: true,
-                data: { type: AutosaveMode.UPDATE, candidates: writableCandidates },
+                data: { type: AutosaveMode.UPDATE, candidates: writableCandidates, isCurrentProtonAccount },
             };
         }
 
         /** No candidates found - prompt to save as new credentials */
-        return { shouldPrompt: true, data: { type: AutosaveMode.NEW } };
+        return { shouldPrompt: true, data: { type: AutosaveMode.NEW, isCurrentProtonAccount } };
     });
 
     WorkerMessageBroker.registerMessage(

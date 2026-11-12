@@ -108,6 +108,7 @@ describe('FormTrackerService [worker]', () => {
             data: {
                 type: AutosaveMode.UPDATE,
                 candidates: [expect.objectContaining({ name: 'Domain.com', url: 'https://domain.com/form' })],
+                isCurrentProtonAccount: false,
             },
         });
     });

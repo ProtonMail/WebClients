@@ -32,6 +32,7 @@ export const NotificationDebug: FC = () => {
                         initial={{
                             action: NotificationAction.AUTOSAVE,
                             data: {
+                                isCurrentProtonAccount: true,
                                 submittedAt: -1,
                                 type: AutosaveMode.NEW,
                                 userIdentifier: 'nobody@proton.me',
@@ -47,6 +48,7 @@ export const NotificationDebug: FC = () => {
                         initial={{
                             action: NotificationAction.AUTOSAVE,
                             data: {
+                                isCurrentProtonAccount: false,
                                 submittedAt: -1,
                                 type: AutosaveMode.UPDATE,
                                 userIdentifier: 'nobody@proton.me',
@@ -70,6 +72,7 @@ export const NotificationDebug: FC = () => {
                         initial={{
                             action: NotificationAction.AUTOSAVE,
                             data: {
+                                isCurrentProtonAccount: false,
                                 submittedAt: -1,
                                 type: AutosaveMode.UPDATE,
                                 candidates: [

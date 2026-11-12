@@ -10,11 +10,13 @@ import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
+import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { ItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import type { AutosaveFormValues, AutosavePayload } from '@proton/pass/types/worker/autosave';
 import { AutosaveMode } from '@proton/pass/types/worker/autosave';
+import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useIFrameAppController, useIFrameAppState } from '../../../../../../../lib/components/Inline/IFrameApp';
 
@@ -72,6 +74,12 @@ export const AutosaveForm: FC<Props> = ({ data, busy, form }) => {
                     label={c('Label').t`Password`}
                 />
             </FieldsetCluster>
+            {data.isCurrentProtonAccount && (
+                <Card type="danger" className="text-sm">
+                    {c('Warning')
+                        .t`${BRAND_NAME} does not recommend saving your ${BRAND_NAME} password only in ${PASS_APP_NAME}. If you forget it, you won't be able to sign in to ${PASS_APP_NAME}.`}
+                </Card>
+            )}
             <div className="flex justify-space-between gap-3 mt-1">
                 <Button
                     pill
