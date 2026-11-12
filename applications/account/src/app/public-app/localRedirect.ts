@@ -1,5 +1,7 @@
 import type * as H from 'history';
 
+import { UNAUTHENTICATED_ROUTES } from '@proton/settings/helpers/unauthenticatedRoutes';
+import { getRoutesWithoutSlug } from '@proton/settings/routesWithoutSlug';
 import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { ForkSearchParameters } from '@proton/shared/lib/authentication/fork/constants';
 import { getParsedPathWithoutLocalIDBasename } from '@proton/shared/lib/authentication/pathnameHelper';
@@ -7,8 +9,6 @@ import { getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
 import { APPS, type APP_NAMES, SSO_PATHS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { getPathFromLocation, joinPaths } from '@proton/shared/lib/helpers/url';
 
-import { getRoutesWithoutSlug } from '../private-app/routesWithoutSlug';
-import { UNAUTHENTICATED_ROUTES } from './helper';
 import type { ProductParams } from './signup/searchParams';
 
 const getContinueToUrl = (searchParams: URLSearchParams) => {

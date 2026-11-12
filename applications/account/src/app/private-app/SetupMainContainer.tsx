@@ -6,12 +6,12 @@ import { AccountSpotlightsProvider } from '@proton/components/containers/account
 import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
 import SubscriptionModalProvider from '@proton/payments-ui/containers/payments/subscription/SubscriptionModalProvider';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
+import { getRoutesWithoutSlug } from '@proton/settings/routesWithoutSlug';
 import { APPS } from '@proton/shared/lib/constants';
 
 import AccountLoaderPage from '../AccountLoaderPage';
 import MainContainer from './MainContainer';
 import PartnerClaimContainer from './containers/PartnerClaimContainer';
-import { getRoutesWithoutSlug } from './routesWithoutSlug';
 import SetupAddressContainer from './setup-address/SetupAddressContainer';
 
 const SetupMainContainer: FunctionComponent = () => {

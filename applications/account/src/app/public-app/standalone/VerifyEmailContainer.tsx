@@ -10,6 +10,7 @@ import GenericError from '@proton/components/containers/error/GenericError';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
+import { UNAUTHENTICATED_ROUTES } from '@proton/settings/helpers/unauthenticatedRoutes';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { postVerifyValidate } from '@proton/shared/lib/api/verify';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
@@ -18,7 +19,6 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import accountIllustration from '../assets/account-illustration.svg';
 import PublicFooter from '../components/PublicFooter';
 import PublicLayout from '../components/PublicLayout';
-import { UNAUTHENTICATED_ROUTES } from '../helper';
 import ExpiredError from './ExpiredError';
 import { stripQueryParams } from './jwt';
 

@@ -8,19 +8,18 @@ import SettingsLayoutRight from '@proton/components/containers/account/SettingsL
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { getEnableString } from '@proton/components/containers/credentialLeak/helpers';
 import useLoading from '@proton/hooks/useLoading';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { setProductDisabled } from '@proton/shared/lib/api/settings';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, PRODUCT } from '@proton/shared/lib/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
-
-import { useAccountDispatch } from '../../store/hooks';
 
 export const WalletAuthorizationPage = () => {
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const [userSettings] = useUserSettings();
     const hasWalletEnabled = userSettings?.ProductDisabled?.Wallet !== 1;
-    const dispatch = useAccountDispatch();
+    const dispatch = useDispatch();
 
     const handleWalletToggle = async (value: boolean) => {
         const { UserSettings } = await api<{ UserSettings: UserSettings }>(

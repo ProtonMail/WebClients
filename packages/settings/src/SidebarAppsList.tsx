@@ -7,7 +7,7 @@ import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { getSettingsHref } from '../public-app/helper';
+import { getSettingsHref } from './helpers/getSettingsHref';
 
 const SidebarAppsList = () => {
     const availableApps = useAvailableApps();

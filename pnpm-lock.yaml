@@ -785,9 +785,6 @@ importers:
       '@proton/components':
         specifier: workspace:^
         version: link:../../packages/components
-      '@proton/console':
-        specifier: workspace:^
-        version: link:../../packages/console
       '@proton/cross-storage':
         specifier: workspace:^
         version: link:../../packages/cross-storage
@@ -848,6 +845,9 @@ importers:
       '@proton/redux-utilities':
         specifier: workspace:^
         version: link:../../packages/redux-utilities
+      '@proton/settings':
+        specifier: workspace:^
+        version: link:../../packages/settings
       '@proton/shared':
         specifier: workspace:^
         version: link:../../packages/shared
@@ -866,9 +866,6 @@ importers:
       '@proton/vpn':
         specifier: workspace:^
         version: link:../../packages/vpn
-      '@proton/wallet':
-        specifier: workspace:^
-        version: link:../../packages/wallet
       '@protontech/crypto':
         specifier: 'catalog:'
         version: 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
@@ -917,9 +914,6 @@ importers:
       react-router-dom:
         specifier: 'catalog:'
         version: 5.3.4(react@18.3.1)
-      recharts:
-        specifier: ^3.10.1
-        version: 3.10.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-is@19.2.8)(react@18.3.1)(redux@5.0.1)
       ttag:
         specifier: 'catalog:'
         version: 1.8.12
@@ -4528,6 +4522,9 @@ importers:
       '@proton/redux-shared-store-types':
         specifier: workspace:^
         version: link:../../packages/redux-shared-store-types
+      '@proton/settings':
+        specifier: workspace:^
+        version: link:../../packages/settings
       '@proton/shared':
         specifier: workspace:^
         version: link:../../packages/shared
@@ -9556,6 +9553,148 @@ importers:
       jest-environment-jsdom:
         specifier: 'catalog:'
         version: 30.5.2(supports-color@11.0.0)
+      oxlint:
+        specifier: 'catalog:'
+        version: 1.92.0(oxlint-tsgolint@7.0.2006)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2006
+      typescript:
+        specifier: 'catalog:'
+        version: '@typescript/typescript6@6.0.2'
+
+  packages/settings:
+    dependencies:
+      '@proton/account':
+        specifier: workspace:^
+        version: link:../account
+      '@proton/activation':
+        specifier: workspace:^
+        version: link:../activation
+      '@proton/app-context':
+        specifier: workspace:^
+        version: link:../app-context
+      '@proton/atoms':
+        specifier: workspace:^
+        version: link:../atoms
+      '@proton/calendar':
+        specifier: workspace:^
+        version: link:../calendar
+      '@proton/calendar-video-conferencing':
+        specifier: workspace:^
+        version: link:../calendar-video-conferencing
+      '@proton/colors':
+        specifier: workspace:^
+        version: link:../colors
+      '@proton/components':
+        specifier: workspace:^
+        version: link:../components
+      '@proton/console':
+        specifier: workspace:^
+        version: link:../console
+      '@proton/hooks':
+        specifier: workspace:^
+        version: link:../hooks
+      '@proton/icons':
+        specifier: workspace:^
+        version: link:../icons
+      '@proton/mail':
+        specifier: workspace:^
+        version: link:../mail
+      '@proton/mail-composer':
+        specifier: workspace:^
+        version: link:../mail-composer
+      '@proton/metrics':
+        specifier: workspace:^
+        version: link:../metrics
+      '@proton/pass':
+        specifier: workspace:^
+        version: link:../pass
+      '@proton/payments':
+        specifier: workspace:^
+        version: link:../payments
+      '@proton/payments-ui':
+        specifier: workspace:^
+        version: link:../payments-ui
+      '@proton/redux-shared-store':
+        specifier: workspace:^
+        version: link:../redux-shared-store
+      '@proton/shared':
+        specifier: workspace:^
+        version: link:../shared
+      '@proton/styles':
+        specifier: workspace:^
+        version: link:../styles
+      '@proton/unleash':
+        specifier: workspace:^
+        version: link:../unleash
+      '@proton/utils':
+        specifier: workspace:^
+        version: link:../utils
+      '@proton/vpn':
+        specifier: workspace:^
+        version: link:../vpn
+      '@proton/wallet':
+        specifier: workspace:^
+        version: link:../wallet
+      '@types/history':
+        specifier: 'catalog:'
+        version: 4.7.11
+      '@types/react':
+        specifier: 'catalog:'
+        version: 18.3.31
+      '@types/react-router-dom':
+        specifier: 'catalog:'
+        version: 5.3.3
+      history:
+        specifier: 'catalog:'
+        version: 4.10.1
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
+      react-router-dom:
+        specifier: 'catalog:'
+        version: 5.3.4(react@18.3.1)
+      recharts:
+        specifier: ^3.10.1
+        version: 3.10.1(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react-is@19.2.8)(react@18.3.1)(redux@5.0.1)
+      ttag:
+        specifier: 'catalog:'
+        version: 1.8.12
+    devDependencies:
+      '@proton/i18n':
+        specifier: workspace:^
+        version: link:../i18n
+      '@proton/jest-env':
+        specifier: workspace:^
+        version: link:../jest-env
+      '@proton/jest-swc-preset':
+        specifier: workspace:^
+        version: link:../jest-swc-preset
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../oxlint-config
+      '@proton/react-redux-store':
+        specifier: workspace:^
+        version: link:../react-redux-store
+      '@testing-library/jest-dom':
+        specifier: 'catalog:'
+        version: 6.9.1
+      '@testing-library/react':
+        specifier: ^15.0.7
+        version: 15.0.7(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@types/jest':
+        specifier: 'catalog:'
+        version: 30.0.0
+      '@types/webpack-env':
+        specifier: 'catalog:'
+        version: 1.18.8
+      '@typescript/native':
+        specifier: 'catalog:'
+        version: typescript@7.0.2
+      jest:
+        specifier: 'catalog:'
+        version: 30.5.2(@types/node@24.19.2)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.22(@swc/helpers@0.5.17))(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
       oxlint:
         specifier: 'catalog:'
         version: 1.92.0(oxlint-tsgolint@7.0.2006)

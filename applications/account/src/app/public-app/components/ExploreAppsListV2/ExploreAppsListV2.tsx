@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Logo from '@proton/components/components/logo/Logo';
+import { getSettingsHref } from '@proton/settings/helpers/getSettingsHref';
 import { getAppHref, getAppName, getAppShortName } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -14,7 +15,6 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { goToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 import clsx from '@proton/utils/clsx';
 
-import { getSettingsHref } from '../../helper';
 import LumoLogoAnimated from './LumoLogoAnimated';
 import type { App } from './exploreApps';
 import { useExploreAppsListTelemetry } from './exploreAppsListTelemetry';

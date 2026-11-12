@@ -434,6 +434,10 @@
             "entry": [],
             "project": ["**/*.{ts,tsx}"]
         },
+        "packages/settings": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"]
+        },
         "packages/shared": {
             "entry": [],
             "project": ["**/*.{ts,tsx}"]

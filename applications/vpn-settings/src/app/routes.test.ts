@@ -1,9 +1,8 @@
-import { buildOrganizationRouterParams } from 'proton-account/src/app/private-app/testing/buildOrganizationRouterParams';
-
 import type { SubSectionConfig } from '@proton/components/containers/layout/interface';
 import { PLANS } from '@proton/payments/core/constants';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
+import { buildOrganizationRouterParams } from '@proton/settings/testing/buildOrganizationRouterParams';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 import { buildUser } from '@proton/shared/testing/buildUser';

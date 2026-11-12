@@ -20,18 +20,17 @@ import RecoveryPhrase from '@proton/components/containers/recovery/navItems/Reco
 import RecoveryQrCode from '@proton/components/containers/recovery/navItems/RecoveryQrCode';
 import SignedInReset from '@proton/components/containers/recovery/navItems/SignedInReset';
 import { RecoverySettingsTelemetryVariantProvider } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
+import DeviceBasedRecoverySubpage from '@proton/settings/containers/account/recovery/recoverySubpages/DeviceBasedRecoverySubpage';
+import { EmergencyContactSubpage } from '@proton/settings/containers/account/recovery/recoverySubpages/EmergencyContactSubpage';
+import { RecoveryContactSubpage } from '@proton/settings/containers/account/recovery/recoverySubpages/RecoveryContactSubpage';
+import RecoveryEmailSubpage from '@proton/settings/containers/account/recovery/recoverySubpages/RecoveryEmailSubpage';
+import RecoveryFileSubpage from '@proton/settings/containers/account/recovery/recoverySubpages/RecoveryFileSubpage';
+import RecoveryPhoneSubpage from '@proton/settings/containers/account/recovery/recoverySubpages/RecoveryPhoneSubpage';
+import RecoveryPhraseSubpage from '@proton/settings/containers/account/recovery/recoverySubpages/RecoveryPhraseSubpage';
+import { SessionRecoverySubpage } from '@proton/settings/containers/account/recovery/recoverySubpages/SessionRecoverySubpage';
+import SignInWithAnotherDeviceSubpage from '@proton/settings/containers/account/recovery/recoverySubpages/SignInWithAnotherDeviceSubpage';
+import { PasswordResetOptionRequiredWarningInGroup } from '@proton/settings/containers/account/recovery/recoverySubpages/shared/PasswordResetOptionRequiredWarning';
 import { APPS } from '@proton/shared/lib/constants';
-
-import DeviceBasedRecoverySubpage from '../../../../private-app/containers/account/recovery/recoverySubpages/DeviceBasedRecoverySubpage';
-import { EmergencyContactSubpage } from '../../../../private-app/containers/account/recovery/recoverySubpages/EmergencyContactSubpage';
-import { RecoveryContactSubpage } from '../../../../private-app/containers/account/recovery/recoverySubpages/RecoveryContactSubpage';
-import RecoveryEmailSubpage from '../../../../private-app/containers/account/recovery/recoverySubpages/RecoveryEmailSubpage';
-import RecoveryFileSubpage from '../../../../private-app/containers/account/recovery/recoverySubpages/RecoveryFileSubpage';
-import RecoveryPhoneSubpage from '../../../../private-app/containers/account/recovery/recoverySubpages/RecoveryPhoneSubpage';
-import RecoveryPhraseSubpage from '../../../../private-app/containers/account/recovery/recoverySubpages/RecoveryPhraseSubpage';
-import { SessionRecoverySubpage } from '../../../../private-app/containers/account/recovery/recoverySubpages/SessionRecoverySubpage';
-import SignInWithAnotherDeviceSubpage from '../../../../private-app/containers/account/recovery/recoverySubpages/SignInWithAnotherDeviceSubpage';
-import { PasswordResetOptionRequiredWarningInGroup } from '../../../../private-app/containers/account/recovery/recoverySubpages/shared/PasswordResetOptionRequiredWarning';
 
 import '../AccountSettings.scss';
 
