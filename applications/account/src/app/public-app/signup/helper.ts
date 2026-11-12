@@ -27,6 +27,7 @@ export async function getSubscriptionPrices({
     VatId,
     previousEstimation,
     subscription,
+    provisioningToken,
 }: {
     paymentsApi: PaymentsApi;
     planIDs: PlanIDs;
@@ -39,6 +40,8 @@ export async function getSubscriptionPrices({
     VatId: string | undefined;
     previousEstimation?: SubscriptionEstimation;
     subscription?: Subscription | FreeSubscription;
+    /** Prices the coupon of a sales-provisioned deal, which is otherwise refused by the coupon whitelist. */
+    provisioningToken?: string;
 }): Promise<SubscriptionEstimation> {
     if (!hasPlanIDs(planIDs) || planIDs[PLANS.FREE]) {
         return getFreeCheckResult(currency, cycle);
@@ -74,6 +77,10 @@ export async function getSubscriptionPrices({
 
     if (subscription && isModifyingPaidSubscriptionSelection(subscription, planIDs, cycle)) {
         data.ValidateGuards = true;
+    }
+
+    if (provisioningToken) {
+        data.ProvisioningToken = provisioningToken;
     }
 
     return paymentsApi.checkSubscription(data, { previousEstimation });

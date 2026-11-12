@@ -16,6 +16,8 @@ import type { SignupParameters2 } from '../single-signup-v2/interface';
  *    payment terms.
  * 4. There is no redeem endpoint: the token goes as `ProvisioningToken` on the regular
  *    `payments/v5/subscription` call, and the backend redeems it in that request.
+ * 5. The token also goes on `payments/v5/subscription/check`, so the deal's coupon, a whitelist coupon the
+ *    prospect isn't on yet, is priced on the estimate.
  */
 
 // TYPES
@@ -132,7 +134,7 @@ const getProvisionedBillingDetails = ({ BillingAddress }: SignupProvisioning) =>
  * read-only: the prospect only sets a password, plus card details when paying by card.
  */
 export interface ProvisionedDeal {
-    /** Sent as `ProvisioningToken` on the subscription call to redeem the link. */
+    /** Sent as `ProvisioningToken` on the check, to price the deal's coupon, and on the subscription call to redeem the link. */
     token: string;
     /** The lookup, with the link params merged in. */
     details: SignupProvisioning;

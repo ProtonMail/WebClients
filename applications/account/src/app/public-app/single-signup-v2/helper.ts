@@ -144,6 +144,7 @@ export const getSubscriptionData = async (
             ValidateBillingAddress: options.ValidateBillingAddress,
             VatId: options.VatId,
             subscription: options.subscription,
+            provisioningToken: options.provisioningToken,
         });
     })();
 
