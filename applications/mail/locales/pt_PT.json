@@ -39,6 +39,9 @@
       "A to Z": [
         "A a Z"
       ],
+      "About ${ name }": [
+        "Sobre o ${ name }"
+      ],
       "Activate": [
         "Ativar"
       ],
@@ -53,6 +56,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Adicionar ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Adicionar ${ name }"
       ],
       "Add a payment method": [
         "Adicionar um método de pagamento"
@@ -5270,7 +5276,7 @@
         "Erro inesperado, não podemos importar os contactos"
       ],
       "Unexpected error, we can't import the files": [
-        "Erro inesperado, não conseguimos importar os ficheiros"
+        "Erro inesperado, nós não podemos importar os ficheiros"
       ],
       "Unknown error": [
         "Erro desconhecido"
@@ -6839,6 +6845,9 @@
       "1 vault per user": [
         "1 cofre por utilizador"
       ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantia de reembolso em 30 dias: cancele até 30 dias depois da compra e contacte o nosso ${ customerSupportLink } para solicitar um reembolso."
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Um número de telemóvel pode ser utilizado para verificar apenas uma conta ${ BRAND_NAME }"
       ],
@@ -7032,7 +7041,7 @@
         "Tem a certeza de que pretende eliminar permanentemente esta mensagem?"
       ],
       "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
-        "Solicite ao Administrador para atualizar o plano ou remova a página de marcações na barra lateral do ${ CALENDAR_APP_NAME }."
+        "Solicite ao administrador para atualizar o plano ou remova a página da barra lateral das páginas de Marcação do ${ CALENDAR_APP_NAME }."
       ],
       "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
         "Peça ao seu administrador para atualizar o plano ou remova uma página da barra lateral de Páginas de agendamento."
@@ -7214,7 +7223,7 @@
         "Criar em"
       ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
-        "A criação de múltiplas contas gratuitas não é permitida pelos nossos ${ termsLink }."
+        "A criação de várias contas gratuitas não é permitida pelos nossos ${ termsLink }."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não utilizada no plano anterior da sua subscrição"
@@ -7484,7 +7493,7 @@
         "ficheiros anexados"
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Apenas ficheiros (sem fotos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) até 100 GB no total, 100.000 ficheiros e 50 GB por ficheiro"
+        "Apenas ficheiros (sem fotografias, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) até 100 GB no total, 100.000 ficheiros e 50 GB por ficheiro"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Os filtros funcionam em todas as mensagens, incluindo as recebidas e as enviadas. Cada filtro deve conter pelo menos um nome, uma condição e uma ação."
@@ -7496,7 +7505,7 @@
         "por ${ price }"
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
-        "Para informações adicionais e para remover restrições, inicie sessão no ${ mailLink }."
+        "Para informação adicional e para remover as restrições, por favor, Inicie a sessão no ${ mailLink }."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Para aceder aos seus e-mails a qualquer momento e aproveitar uma experiência móvel otimizada, descarregue a nossa aplicação na ${ androidAppLink } ou ${ iosAppLink }."
@@ -7577,7 +7586,7 @@
         "Se tiver problemas ao criar a conta, solicite um convite e responderemos dentro de um dia útil."
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
-        "Se acredita que cometemos um erro, ${ contactLink }."
+        "Se acredita que nós cometemos um erro, por favor, ${ contactLink }."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Se cancelar, a sua subscrição ${ planTitle } não será renovada quando expirar em ${ expiryDate }."
@@ -7754,6 +7763,9 @@
       ],
       "Mark all as read": [
         "Marcar tudo como lido"
+      ],
+      "Mark all as unread": [
+        "Marcar tudo como não lido"
       ],
       "Mark as read": [
         "Marcar como lida"
@@ -7953,6 +7965,9 @@
       "Organization size": [
         "Tamanho da organização"
       ],
+      "Other (tell us)": [
+        "Outro (diga-nos)"
+      ],
       "Other accounts": [
         "Outras contas"
       ],
@@ -8146,6 +8161,9 @@
       ],
       "Rename folder": [
         "Renomear pasta"
+      ],
+      "Rename this folder": [
+        "Renomear esta pasta"
       ],
       "Rename this label": [
         "Renomear esta etiqueta"
@@ -8567,7 +8585,7 @@
         "Isto só precisa de ser feito uma vez."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
-        "Esta chave pública será utilizada automaticamente para encriptar e-mails enviados para este endereço."
+        "Esta chave pública será utilizada automaticamente para encriptar as mensagens enviadas para este endereço."
       ],
       "This sender's public key has not been trusted yet.": [
         "A chave pública deste remetente ainda não foi confiada."
@@ -8591,7 +8609,7 @@
         "Para adicionar uma nova página de agendamento, peça ao seu administrador para atualizar o seu plano."
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
-        "Para adicionar uma nova página de marcações, remova a existente na barra lateral ${ CALENDAR_APP_NAME }."
+        "Para adicionar uma nova página de marcações, remova uma existente na barra lateral das páginas de Marca;ao no ${ CALENDAR_APP_NAME }."
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
         "Para adicionar uma nova página de agendamento, remova uma existente da barra lateral de Páginas de agendamento."
@@ -8621,7 +8639,7 @@
         "Para recuperar os seus dados, é necessário reativar a chave de conta utilizada no momento em que os dados foram criados. Isto exigirá que se lembre da senha utilizada aquando da geração da chave."
       ],
       "To remove restrictions, you can upgrade to a paid plan.": [
-        "Para remover restrições, pode optar por um plano pago."
+        "Para remover as restrições, pode atualizar para um plano pago."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Para cancelar a subscrição desta lista de e-mails, será enviada um e-mail de ${ boldFrom } com os seguintes detalhes, conforme definido pelo remetente da newsletter:"
@@ -8670,6 +8688,9 @@
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "Não é possível aceder às capacidades de armazenamento neste navegador. Precisamos desse acesso para ativar a pesquisa de conteúdo das mensagens."
+      ],
+      "UnionPay logo": [
+        "Logótipo de UnionPay"
       ],
       "Unlock message": [
         "Desbloquear mensagem"
@@ -8810,7 +8831,7 @@
         "Não é possível realizar o pagamento."
       ],
       "We have plans designed specifically for users like you who need more than one email address.": [
-        "Temos planos concebidos especificamente para utilizadores como você, que necessitam de mais do que um endereço de e-mail."
+        "Nós temos planos concebidos especificamente para utilizadores como você, que precisam de mais do que um endereço de correio eletrónico."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Precisamos autenticar o seu método de pagamento com o seu banco."
@@ -9272,7 +9293,7 @@
     },
     "Key pinning": {
       "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
-        "Ao clicar em \"Chave confiável\", esta chave pública será associada a este remetente e os e-mails deste endereço serão automaticamente verificados de forma encriptada."
+        "Ao clicar em \"Chave Confiável\", irá associar esta chave pública a este remetente e as mensagens deste endereço serão automaticamente verificados de forma encriptada."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "Clicar em \"Confiar na Chave\" criará um novo contacto e associará esta chave pública a este remetente. Os e-mails deste endereço serão automaticamente verificados com encriptação."
@@ -9314,7 +9335,7 @@
         "Eliminar permanentemente"
       ],
       "Discard draft": [
-        "Descartar rascunho"
+        "Eliminar rascunho"
       ],
       "Expand / contract composer": [
         "Expandir/Contrair compositor"
@@ -9323,10 +9344,10 @@
         "Filtro"
       ],
       "Forward": [
-        "Reencaminhar"
+        "Encaminhar"
       ],
       "Go to All Mail": [
-        "Ir para Todo o correio"
+        "Ir para Todo o Correio"
       ],
       "Go to Archive": [
         "Ir para Arquivo"
@@ -9335,7 +9356,7 @@
         "Ir para Rascunhos"
       ],
       "Go to Inbox": [
-        "Ir para Caixa de entrada"
+        "Ir para Caixa de Entrada"
       ],
       "Go to Sent": [
         "Ir para Enviado"
@@ -9356,7 +9377,7 @@
         "Ir para o primeiro"
       ],
       "Jump to last": [
-        "Ir para o último"
+        "Ir para último"
       ],
       "Label as...": [
         "Etiquetar como..."
@@ -9386,10 +9407,10 @@
         "Mover à direita/Expandir"
       ],
       "Move to Archive": [
-        "Mover para o arquivo"
+        "Mover para Arquivo"
       ],
       "Move to Inbox": [
-        "Mover para Caixa de entrada"
+        "Mover para Caixa de Entrada"
       ],
       "Move to Spam": [
         "Mover para spam"
@@ -9446,7 +9467,7 @@
         "Mostrar mensagem original"
       ],
       "Show unread emails": [
-        "Mostrar correio não lido"
+        "Mostrar mensagens não lidas"
       ],
       "Star": [
         "Marcar com estrela"
@@ -9467,7 +9488,7 @@
         "Atalhos de acção"
       ],
       "Basic actions": [
-        "Acções básicas"
+        "Ações básicas"
       ],
       "Basic navigation": [
         "Navegação básica"
@@ -9899,6 +9920,12 @@
       ],
       "Folder name": [
         "Nome da pasta"
+      ],
+      "Font family": [
+        "Família de letras"
+      ],
+      "Font size": [
+        "Tamanho das letras"
       ],
       "Forwards to": [
         "Encaminha para"
@@ -10613,6 +10640,9 @@
       "Create a new calendar to manage your invitations": [
         "Crie um calendário para gerir os seus convites."
       ],
+      "Customer Support": [
+        "Apoio ao Cliente"
+      ],
       "Deleted": [
         "Eliminado"
       ],
@@ -10779,7 +10809,7 @@
         "Termos e condições"
       ],
       "terms of service": [
-        "termos de serviço"
+        "termos do serviço"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ CALENDAR_APP_NAME }": [
         "Este ficheiro ICS contém mais do que um evento. Transfira-o e importe os eventos em ${ CALENDAR_APP_NAME }"
@@ -11269,7 +11299,7 @@
     },
     "new_plans: Action": {
       "Get ${ planTitle }": [
-        "Obtenha o ${ planTitle }"
+        "Obter ${ planTitle }"
       ]
     },
     "new_plans: action": {
@@ -12925,6 +12955,9 @@
       ],
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "Já possui uma subscrição deste plano. Pode alterar a sua subscrição em ${ subscriptionPlatform }."
+      ],
+      "You already own a Born Private account.": [
+        "Já possui uma conta Born Private."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Será brevemente redirecionado para o PayPal para verificar o pagamento."

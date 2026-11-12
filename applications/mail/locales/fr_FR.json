@@ -4818,6 +4818,9 @@
       "Cannot export this contact": [
         "Impossible d'exporter ce contact"
       ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Impossible d'envoyer un message vide. Le message n'a pas été envoyé."
+      ],
       "Cannot set expiration longer than retention policy allows.": [
         "Il est impossible de définir une expiration plus longue que celle autorisée par la politique de conservation."
       ],
@@ -5054,7 +5057,7 @@
         "Aucun contact n'a été trouvé pour l'importation."
       ],
       "No drive found to import": [
-        "Aucun disque à importer détecté"
+        "Aucun disque à importer n'a été détecté."
       ],
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
@@ -5371,7 +5374,7 @@
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
       ],
       "Unexpected error, we can't import the files": [
-        "Une erreur inattendue est survenue, les fichiers n'ont pas pu être importés"
+        "Une erreur inattendue est survenue, les fichiers ne peuvent être importés"
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -6688,6 +6691,10 @@
         "${ contactEmailsLength } membre",
         "${ contactEmailsLength } membres"
       ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } membre)",
+        "${ contactGroupName } (${ numberOfContacts } membres)"
+      ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } membre)",
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } membres)"
@@ -7194,6 +7201,9 @@
       "Are you sure you want to permanently delete this message?": [
         "Voulez-vous vraiment supprimer définitivement ce message ?"
       ],
+      "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Demandez à votre admin de changer d'abonnement ou retirez une page de réservation dans le panneau latéral de ${ CALENDAR_APP_NAME }."
+      ],
       "Ask your admin to upgrade the plan or remove a page from the Booking pages sidebar.": [
         "Demandez à votre administrateur de changer d'abonnement ou de retirer une page de la barre latérale des pages de réservation."
       ],
@@ -7352,6 +7362,9 @@
       ],
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Copier les codes à usage unique depuis vos e-mails récents en un clic."
       ],
       "Copy the link to clipboard": [
         "Copier le lien dans le presse-papiers"
@@ -8110,6 +8123,9 @@
       ],
       "Move here": [
         "Déplacer ici"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Déplacer les codes à usage unique reçus par e-mail vers la corbeille après les avoir copiés."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nommez votre nouveau dossier et sélectionnez éventuellement un dossier dans lequel vous voulez en faire un sous-dossier. Si vous ne sélectionnez aucun dossier, votre nouveau dossier sera créé comme un dossier de premier niveau."
@@ -9038,6 +9054,9 @@
       ],
       "To add a new booking page, ask your admin to upgrade your plan.": [
         "Pour ajouter une nouvelle page de réservation, demandez à votre administrateur de changer votre abonnement."
+      ],
+      "To add a new booking page, remove an existing one from the Booking pages sidebar in ${ CALENDAR_APP_NAME }.": [
+        "Pour ajouter une nouvelle page de réservation, retirez-en une du panneau latéral de ${ CALENDAR_APP_NAME }."
       ],
       "To add a new booking page, remove an existing one from the Booking pages sidebar.": [
         "Pour ajouter une nouvelle page de réservation, retirez-en une existante de la barre latérale des pages de réservation."
@@ -10433,6 +10452,12 @@
       "Folder name": [
         "Nom du dossier"
       ],
+      "Font family": [
+        "Famille de police"
+      ],
+      "Font size": [
+        "Taille de police"
+      ],
       "Forwards to": [
         "Transfert vers"
       ],
@@ -10616,6 +10641,9 @@
       "Move to Inbox": [
         "Déplacer vers la boite de réception"
       ],
+      "Move to Trash": [
+        "Déplacer vers la corbeille"
+      ],
       "Moved to ${ labelName }": [
         "Déplacé vers ${ labelName }"
       ],
@@ -10675,6 +10703,9 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Les notifications sont désactivées. Pour les activer, modifiez les paramètres du navigateur."
+      ],
+      "One-time codes": [
+        "Codes à usage unique"
       ],
       "Operating system": [
         "Système d'exploitation"
@@ -15782,6 +15813,12 @@
       "Moved to ${ label }. Similar messages will be categorized there in the future.": [
         "Déplacé vers ${ label }. Les messages similaires y seront triés à l’avenir."
       ],
+      "One-time codes disabled": [
+        "Les codes à usage unique ont été désactivés."
+      ],
+      "One-time codes enabled": [
+        "Les codes à usage unique ont été activés."
+      ],
       "Password copied to clipboard": [
         "Le mot de passe a été copié dans le presse-papiers."
       ],
@@ -16059,7 +16096,7 @@
         "La fonction ${ feature } est maintenant active."
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
+        "Assistant d'aide à la rédaction ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ numMessages } message": [
         "${ numMessages } message",

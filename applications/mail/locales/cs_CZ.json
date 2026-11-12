@@ -1446,6 +1446,9 @@
       "Stay": [
         "Zůstat"
       ],
+      "Stop": [
+        "Zastavit"
+      ],
       "Stop downloading assistant": [
         "Zastavit stahování asistenta"
       ],
@@ -2711,6 +2714,12 @@
       ],
       "Total": [
         "Celkem"
+      ],
+      "Total for ${ cycle } month": [
+        "Celkem za ${ cycle } měsíc",
+        "Celkem za ${ cycle } měsíce",
+        "Celkem za ${ cycle } měsíců",
+        "Celkem za ${ cycle } měsíců"
       ]
     },
     "Collapsible tooltip": {
@@ -6693,6 +6702,18 @@
         "${ contactsLength } kontaktů",
         "${ contactsLength } kontaktů"
       ],
+      "${ count } email": [
+        "${ count } email",
+        "${ count } emaily",
+        "${ count } emailů",
+        "${ count } emailů"
+      ],
+      "${ count } email · ${ names }": [
+        "${ count } email → ${ names }",
+        "${ count } emaily → ${ names }",
+        "${ count } emailů → ${ names }",
+        "${ count } emailů → ${ names }"
+      ],
       "${ count } email → ${ dest }": [
         "${ count } email → ${ dest }",
         "${ count } emaily → ${ dest }",
@@ -7671,6 +7692,12 @@
       "Forgot password?": [
         "Zapomněli jste heslo?"
       ],
+      "Found ${ count } contact": [
+        "Nalezen ${ count } kontakt",
+        "Nalezeny ${ count } kontakty",
+        "Nalezeno ${ count } kontaktů",
+        "Nalezeno ${ count } kontaktů"
+      ],
       "Found a current encrypted search index with ${ oldIndexSize } message.": [
         "Byl nalezen aktuální šifrovaný vyhledávací index s ${ oldIndexSize } zprávou.",
         "Byl nalezen aktuální šifrovaný vyhledávací index s ${ oldIndexSize } zprávama.",
@@ -7715,6 +7742,12 @@
       ],
       "here": [
         "zde"
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Ahoj Lumo, odjíždím a potřebuji nastavit automatickou odpověď „mimo kancelář“. Zeptej se mě na termíny a na to, co by v ní mělo být, a pak mi tu zprávu ukaž, než ji zapneš."
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Ahoj Lumo, vysvětli mi, jak mi můžeš pomoct s mou poštovní schránkou. S čím vším tě můžu požádat o pomoc a s čím mi pomoci nemůžeš?"
       ],
       "Hide original message": [
         "Skrýt původní zprávu"
@@ -8079,6 +8112,9 @@
       "Organization size": [
         "Velikost organizace"
       ],
+      "Other (tell us)": [
+        "Jiné (uveďte)"
+      ],
       "Other accounts": [
         "Další účty"
       ],
@@ -8250,6 +8286,18 @@
         "Přečíst ${ count } emailů na obrazovce",
         "Přečíst ${ count } na obrazovce"
       ],
+      "Read ${ count } message in this thread": [
+        "Přečíst ${ count } zprávu v tomto vlákně",
+        "Přečíst ${ count } zprávy v tomto vlákně",
+        "Přečíst ${ count } zpráv v tomto vlákně",
+        "Přečíst ${ count } zpráv v tomto vlákně"
+      ],
+      "Read ${ count } open draft": [
+        "Přečíst ${ count } otevřený koncept",
+        "Přečíst ${ count } otevřené koncepty",
+        "Přečíst ${ count } otevřených konceptů",
+        "Přečíst ${ count } otevřených komceptů"
+      ],
       "Read your ${ count } filter": [
         "Přečtěte ${ count } svůj filtr",
         "Přečtěte ${ count } své filtry",
@@ -8291,6 +8339,9 @@
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
         "Odebere všechna data související s touto aplikací (včetně stažených zpráv, …)"
+      ],
+      "Rename this folder": [
+        "Přejmenovat tuto šložku"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "Nahlášení této zprávy jako pokusu o phishing odešle tuto zprávu nám, abychom ji mohli analyzovat a zlepšit tím naše filtry. To znamená, že uvidíme kompletně celý obsah této zprávy."
@@ -8441,6 +8492,9 @@
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Je nám líto, tato zpráva neexistuje, nebo jí již vypršela platnost."
+      ],
+      "Star emails": [
+        "Označit emaily hvězdičkou"
       ],
       "Start sharing it with contacts and use it for online services.": [
         "Začněte ji sdílet s kontakty a používejte ji pro online služby."
@@ -10048,6 +10102,12 @@
       ],
       "Folder name": [
         "Název složky"
+      ],
+      "Font family": [
+        "Rodina písma"
+      ],
+      "Font size": [
+        "Velikost písma"
       ],
       "Forwards to": [
         "Přeposílá na"
@@ -13156,6 +13216,11 @@
         "Něco se pokazilo. Ověření Google Pay selhalo."
       ]
     },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Potvrzením tímto opravňujete společnost ${ BRAND_NAME } a Stripe, našeho poskytovatele platebních služeb, k inkasování budoucích plateb za vaše předplatné z tohoto bankovního účtu prostřednictvím přímého inkasa SEPA, a svou banku k odepsání těchto plateb. Vaše první platba je provedena nyní společností ${ IDEAL_WERO_BRAND_NAME }. Váš tarif se automaticky obnovuje, dokud jej nezrušíte; před každým inkasem vás budeme informovat. V případě inkasa prostřednictvím SEPA Direct Debit můžete požádat svou banku o vrácení platby do 8 týdnů od data inkasa, a to v souladu s podmínkami vaší smlouvy s bankou. To se nevztahuje na platbu společnosti ${ IDEAL_WERO_BRAND_NAME }, kterou právě provádíte."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitou část vašeho předchozího předplatného"
@@ -13198,6 +13263,11 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Cena obnovení závisí na fakturační oblasti a DIČ."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - karta končící čísly ${ Last4 }"
       ]
     },
     "Payments.Sepa": {
@@ -14207,6 +14277,14 @@
       ],
       "Private, fast, and organized": [
         "Soukromý, rychlý a organizovaný"
+      ]
+    },
+    "Snooze info": {
+      "${ count } email → ${ wakeTime }": [
+        "${ count } email → ${ wakeTime }",
+        "${ count } emaily → ${ wakeTime }",
+        "${ count } emailů → ${ wakeTime }",
+        "${ count } emailů → ${ wakeTime }"
       ]
     },
     "Snooze message": {

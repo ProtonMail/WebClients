@@ -108,6 +108,9 @@
       "Add participant": [
         "添加参与者"
       ],
+      "Add payment method": [
+        "添加付款方式"
+      ],
       "Add phone number": [
         "添加电话号码"
       ],
@@ -200,6 +203,9 @@
       ],
       "Cancel subscription": [
         "取消订阅"
+      ],
+      "Cancel trial": [
+        "取消试用"
       ],
       "Cancel trial and pay": [
         "取消试用并支付"
@@ -4237,6 +4243,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在导入的联系人列表似乎包含一些群组，请查看并选择应如何导入这些群组。"
       ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "让他人直接从您的邮件中预约与您通话的时间，无需来回沟通。"
+      ],
       "Let's you instantly add meeting links to your event invitations.": [
         "让您即时在活动邀请中添加会议链接。"
       ],
@@ -4783,6 +4792,9 @@
       "Cannot export this contact": [
         "无法导出此联系人"
       ],
+      "Cannot send an empty message. Message is not sent.": [
+        "无法发送空邮件，邮件未发送。"
+      ],
       "Cannot set expiration longer than retention policy allows.": [
         "无法设置比保留策略允许更长的过期时间"
       ],
@@ -4863,6 +4875,9 @@
       ],
       "Email is not valid": [
         "无效邮箱"
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "无法移除嵌入的图片，邮件未切换为纯文本。"
       ],
       "Empty condition": [
         "条件为空"
@@ -6182,6 +6197,9 @@
       ]
     },
     "Header": {
+      "Before ${ MAIL_APP_NAME }, which email did you use most?": [
+        "在使用 ${ MAIL_APP_NAME } 之前，您最常使用哪个邮箱？"
+      ],
       "Contacts": [
         "通讯录"
       ],
@@ -6223,6 +6241,9 @@
       ],
       "Username": [
         "用户名"
+      ],
+      "What's the main reason you joined ${ MAIL_APP_NAME }?": [
+        "您加入 ${ MAIL_APP_NAME } 的主要原因是什么？"
       ]
     },
     "Hint": {
@@ -6617,6 +6638,9 @@
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 位成员"
       ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } 名成员)"
+      ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } 名成员)"
       ],
@@ -6640,6 +6664,9 @@
       ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } / ${ totalProgress }"
+      ],
+      "${ currentStep } of ${ steps }": [
+        "${ currentStep } / ${ steps }"
       ],
       "${ dateString } at ${ formattedTime }": [
         "${ dateString } ${ formattedTime }"
@@ -6872,6 +6899,9 @@
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
         "30 天退款保证：在购买后 30 天内取消，并联系我们的 ${ customerSupportLink } 以获得退款。"
       ],
+      "A new or separate address": [
+        "新的或独立的地址"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "每个手机号只能用于验证一个 ${ BRAND_NAME } 账户"
       ],
@@ -6883,6 +6913,9 @@
       ],
       "A secure connection is essential when working remotely. A VPN protects company data from cyber threats and keeps your work private.": [
         "远程办公时，安全连接是必不可少的第一道防线。VPN 不仅能帮助企业数据抵御网络威胁，更能为您的日常工作构筑隐私屏障，让敏感信息始终处于加密保护之中。"
+      ],
+      "A specific feature (tell us)": [
+        "某个特定功能（请告诉我们）"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "一个用户即一个关联了单一用户名、邮箱和自然人的账户"
@@ -6982,6 +7015,9 @@
       ],
       "All your contacts will be imported, up to a limit of ${ maxContact }": [
         "将导入您所有的联系人，上限为 ${ maxContact } 人"
+      ],
+      "Almost done": [
+        "即将完成"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey 图标"
@@ -7094,6 +7130,9 @@
       "Awaiting transaction": [
         "等待交易"
       ],
+      "Back": [
+        "返回"
+      ],
       "Background color": [
         "背景颜色"
       ],
@@ -7168,6 +7207,12 @@
       ],
       "Choose a plan that works best for you.": [
         "选择最适合您的套餐！"
+      ],
+      "Choose all that apply.": [
+        "请选择所有适用项。"
+      ],
+      "Choose one. It helps us improve ${ MAIL_APP_NAME }.": [
+        "请选择一个，这有助于我们改进 ${ MAIL_APP_NAME }。"
       ],
       "Choose your service to connect with": [
         "请选择要连接的服务"
@@ -7333,6 +7378,9 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 图标"
+      ],
+      "Dismiss": [
+        "关闭"
       ],
       "Do you remember your password?": [
         "您还记得密码吗？"
@@ -7631,6 +7679,9 @@
       "here": [
         "此处"
       ],
+      "Here is my availability:": [
+        "这是我的可预约时间："
+      ],
       "Here's what happens when you continue:": [
         "继续操作后将发生以下情况："
       ],
@@ -7654,6 +7705,12 @@
       ],
       "How hide-my-email aliases works": [
         "Hide-my-email 别名如何运作"
+      ],
+      "I didn't have one": [
+        "我之前没有"
+      ],
+      "I use other Proton products": [
+        "我使用其他 Proton 产品"
       ],
       "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
         "我会翻一遍上周的邮件，挑出确实需要回复的，让你一次性处理完。"
@@ -7810,6 +7867,9 @@
       ],
       "Learn what to do ${ dataLeakedLink }": [
         "请通过 ${ dataLeakedLink } 了解应对措施"
+      ],
+      "Leave Big Tech": [
+        "告别科技巨头"
       ],
       "Left to Right": [
         "从左到右"
@@ -7970,11 +8030,20 @@
       "newsletter": [
         "新闻通讯"
       ],
+      "Next": [
+        "下一步"
+      ],
       "Next time you sign in to your other account": [
         "下次您登录其他账户时"
       ],
       "No action selected": [
         "未选择操作"
+      ],
+      "No ads": [
+        "无广告"
+      ],
+      "No booking pages yet": [
+        "暂无预约页面"
       ],
       "No change will be made to the selected emails": [
         "所选邮件将不会发生任何更改"
@@ -8081,6 +8150,9 @@
       "On public WiFi networks": [
         "在公共 WiFi 网络环境下"
       ],
+      "One last step": [
+        "最后一步"
+      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您信任的某些密钥已被其所有者标为「已泄露」，建议您不再信任这些密钥。"
       ],
@@ -8110,6 +8182,9 @@
       ],
       "Organization size": [
         "组织的规模"
+      ],
+      "Other (tell us)": [
+        "其他（请告诉我们）"
       ],
       "Other accounts": [
         "其他账户"
@@ -8260,6 +8335,9 @@
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ hideMyEmailAliasesLink }.": [
         "使用 ${ hideMyEmailAliasesLink } 功能即可防止您的邮箱地址泄露，免受垃圾邮件干扰。"
+      ],
+      "Protection from hackers and leaks": [
+        "防范黑客与泄露"
       ],
       "Public sharing of documents is not yet supported.": [
         "暂不支持公开分享。"
@@ -8558,6 +8636,9 @@
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "某些网站和流媒体服务会根据您所在的地区屏蔽内容。Proton VPN 可帮助您绕过这些地域限制，让您随时随地自由访问互联网。"
       ],
+      "Someone recommended it": [
+        "有人推荐"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "对不起，邮件不存在或已过期。"
       ],
@@ -8573,11 +8654,17 @@
       "Start sharing it with contacts and use it for online services.": [
         "开始与联系人分享，并将其用于在线服务。"
       ],
+      "Start using ${ MAIL_APP_NAME }": [
+        "开始使用 ${ MAIL_APP_NAME }"
+      ],
       "Start using the shorter, catchier version of your email address.": [
         "开始使用更简短、更易记的邮箱地址"
       ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "请启用以下 VPN 设置，即可轻松保持网络连接："
+      ],
+      "Stop companies reading my emails": [
+        "阻止企业读取我的邮件"
       ],
       "Storage capabilities are not supported in this browser, we need this support to enable message content search.": [
         "此浏览器不支持存储功能，我们需要此支持来启用邮件内容搜索。"
@@ -8615,6 +8702,9 @@
       "Surveillance": [
         "监控"
       ],
+      "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
+        "调查问卷的回答不采用端到端加密，请勿分享任何敏感信息。"
+      ],
       "Symbols (#$&)": [
         "符号 (#$&)"
       ],
@@ -8623,6 +8713,9 @@
       ],
       "Tell me when you're away and what you'd like it to say, and you'll see the whole thing before it saves.": [
         "告诉我你何时外出以及想让它说什么，保存前你会看到完整内容。"
+      ],
+      "Tell us more (optional)": [
+        "告诉我们更多（可选）"
       ],
       "Temporarily unavailable due to high demand. Please try again later.": [
         "由于需求过高暂时不可用，请稍后重试。"
@@ -9095,6 +9188,9 @@
       "We couldn’t process your payment.": [
         "我们未能处理您的支付。"
       ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "我们发现了一些您未阅读的邮件列表，您可以一键退订。"
+      ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "我们的套餐专为您这样需要多个邮箱地址的用户所设计。"
       ],
@@ -9167,8 +9263,17 @@
       "When you're traveling or using public WiFi, connect to ${ VPN_APP_NAME } to prevent anyone from tracking your online activity or stealing your data. It's free.": [
         "当您旅行或使用公共 WiFi 时，请连接 ${ VPN_APP_NAME } 以防止任何人跟踪您的在线活动或窃取您的数据。该服务免费。"
       ],
+      "Which feature? (optional)": [
+        "哪个功能？（可选）"
+      ],
+      "Which provider?": [
+        "哪个服务提供商？"
+      ],
       "With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.": [
         "借助全新的邮件分类功能，仅有重要邮件会进入主收件箱，其余邮件将自动归入相应分类。"
+      ],
+      "Work or business": [
+        "工作或商务"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想重新获取验证码还是更换验证方式？"
@@ -9838,6 +9943,9 @@
       "Active filter:": [
         "有效筛选："
       ],
+      "Add a booking page to your email and let people pick a time that works.": [
+        "在您的邮件中添加预约页面，让他人挑选合适的时间。"
+      ],
       "Add email address": [
         "添加邮箱地址"
       ],
@@ -9933,6 +10041,9 @@
       ],
       "Blind Carbon Copy": [
         "密送"
+      ],
+      "Booking page": [
+        "预约页面"
       ],
       "Bookings, billings, and orders": [
         "预订、账单和订单"
@@ -10221,6 +10332,12 @@
       ],
       "Folder name": [
         "文件夹名称"
+      ],
+      "Font family": [
+        "字体"
+      ],
+      "Font size": [
+        "字号"
       ],
       "Forwards to": [
         "转发至"
@@ -10602,6 +10719,9 @@
       ],
       "Search in": [
         "搜索范围"
+      ],
+      "Select all ${ count } unused sender": [
+        "全选 ${ count } 位未使用的发件人"
       ],
       "Select which Gmail address to connect": [
         "请选择要关联的 Gmail 地址"
@@ -12856,6 +12976,9 @@
       ],
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**在此之前可随时取消。** 在试用期结束前，您可以免费使用 ${ planTitle }。"
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**试用后改变主意了？** 在首次付款后 30 天内取消，我们将退还未使用时间的费用。"
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**您的完整订阅开始后…** 您仍可在 30 天内取消，并获得按比例退款。"
@@ -16099,6 +16222,9 @@
       "Filter name cannot contain only spaces": [
         "筛选规则的名称不能只有空格"
       ],
+      "Filter on": [
+        "筛选依据"
+      ],
       "Filter on...": [
         "筛选..."
       ],
@@ -16194,6 +16320,9 @@
       ],
       "Information exposed in breach": [
         "数据外泄事件中泄露的信息"
+      ],
+      "Insert a booking page": [
+        "插入预约页面"
       ],
       "Insert contacts": [
         "添加联系人"
@@ -16597,6 +16726,9 @@
       "Settings": [
         "设置"
       ],
+      "Share your availability": [
+        "分享您的可预约时间"
+      ],
       "Share your calendar with your team": [
         "与团队共享日历"
       ],
@@ -16629,6 +16761,9 @@
       ],
       "Start import process": [
         "开始导入过程"
+      ],
+      "Start with a cleaner Inbox": [
+        "从更清爽的收件箱开始"
       ],
       "Storage capacity warning": [
         "存储容量警告"

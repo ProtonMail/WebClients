@@ -4363,6 +4363,12 @@
       "To start, give your organization a name.": [
         "Başlamak için, kuruluşunuzun adını yazın."
       ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "${ MAIL_APP_NAME } içinde ${ LUMO_SHORT_APP_NAME } kullanmak için aboneliğinize ekleyin."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "${ MAIL_APP_NAME } içinde ${ LUMO_SHORT_APP_NAME } kullanmak için yöneticinizden erişme izni vermesini isteyin."
+      ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Reklam verenlerin ve diğer kişilerin konumunuzu ve çevrim içi etkinliğinizi izlemesini önlemek için e-posta izleyici korumasını açın."
       ],
@@ -4829,6 +4835,9 @@
       "Cannot export this contact": [
         "Bu kişi dışa aktarılamadı"
       ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Boş bir ileti gönderemezsiniz. İleti gönderilmedi."
+      ],
       "Cannot set expiration longer than retention policy allows.": [
         "Geçerlilik sonu tarihi, verileri tutma ilkesinin izin verdiğinden daha uzun bir süre için ayarlanamaz."
       ],
@@ -4912,6 +4921,9 @@
       ],
       "Email is not valid": [
         "E-posta geçersiz"
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Gömülü görseller kaldırılamadı. İleti düz yazıya dönüştürülemedi."
       ],
       "Empty condition": [
         "Boş koşul"
@@ -6705,6 +6717,10 @@
         "${ contactEmailsLength } üye",
         "${ contactEmailsLength } üye"
       ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } üye)",
+        "${ contactGroupName } (${ numberOfContacts } üye)"
+      ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } üye)",
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } üye)"
@@ -7378,6 +7394,9 @@
       ],
       "Copied to clipboard": [
         "Panoya kopyalandı"
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Son e-postalardaki tek kullanımlık kodlar tek tıkla kopyalansın"
       ],
       "Copy the link to clipboard": [
         "Bağlantıyı panoya kopyala"
@@ -8148,6 +8167,9 @@
       ],
       "Move here": [
         "Buraya taşı"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Kopyalama sırasında tek kullanımlık kod bulunan e-postalar çöpe atılsın"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
@@ -9329,6 +9351,9 @@
       "We couldn’t process your payment.": [
         "Ödemenizi işleyemedik."
       ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Bazı listelerinden gelen e-postaları okumadığınızı farkettik. Tek tıkla aboneliğinizi iptal edebilirsiniz."
+      ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "Sizin gibi birden fazla e-posta adresine gerek duyan kullanıcılar için özel olarak tasarlanmış tarifelerimiz var."
       ],
@@ -10501,6 +10526,12 @@
       "Folder name": [
         "Klasör adı"
       ],
+      "Font family": [
+        "Yazı tipi ailesi"
+      ],
+      "Font size": [
+        "Yazı boyutu"
+      ],
       "Forwards to": [
         "Şuraya iletiyor"
       ],
@@ -10687,6 +10718,9 @@
       "Move to Inbox": [
         "Gelen kutusuna taşı"
       ],
+      "Move to Trash": [
+        "Çöpe at"
+      ],
       "Moved to ${ labelName }": [
         "${ labelName } içine taşındı"
       ],
@@ -10746,6 +10780,9 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Bildirimler kapatılmış. Bunları açmak için tarayıcı ayarlarını değiştirin."
+      ],
+      "One-time codes": [
+        "Tek kullanımlık kodlar"
       ],
       "Operating system": [
         "İşletim sistemi"
@@ -10881,6 +10918,10 @@
       ],
       "Search in": [
         "Şurada ara"
+      ],
+      "Select all ${ count } unused sender": [
+        "Kullanılmamış ${ count } göndericinin tümünü seç",
+        "Kullanılmamış ${ count } göndericinin tümünü seç"
       ],
       "Select which Gmail address to connect": [
         "Hangi Gmail adresine bağlanılacağını seçin"
@@ -15871,6 +15912,12 @@
       "Moved to ${ label }. Similar messages will be categorized there in the future.": [
         "${ label } içine taşındı. Benzer iletiler bundan sonra bu kategoriye taşınacak."
       ],
+      "One-time codes disabled": [
+        "Tek kullanımlık kodlar kullanımdan kaldırıldı"
+      ],
+      "One-time codes enabled": [
+        "Tek kullanımlık kodlar kullanıma alındı"
+      ],
       "Password copied to clipboard": [
         "Parola panoya kopyalandı"
       ],
@@ -17062,6 +17109,9 @@
       ],
       "Start import process": [
         "İçe aktarma işlemini başlatın"
+      ],
+      "Start with a cleaner Inbox": [
+        "Daha temiz bir Gelen kutusu kullanmaya başlayın"
       ],
       "Storage capacity warning": [
         "Depolama alanı uyarısı"

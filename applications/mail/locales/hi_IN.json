@@ -4806,6 +4806,9 @@
       "Cannot export this contact": [
         "यह संपर्क निर्यात नहीं किया जा सकता"
       ],
+      "Cannot send an empty message. Message is not sent.": [
+        "खाली संदेश नहीं भेजा जा सकता। संदेश नहीं भेजा गया है।"
+      ],
       "Cannot set expiration longer than retention policy allows.": [
         "रिटेंशन नीति द्वारा अनुमत अवधि से अधिक लंबी समाप्ति अवधि निर्धारित नहीं की जा सकती।"
       ],
@@ -6657,6 +6660,10 @@
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } सदस्य",
         "${ contactEmailsLength } सदस्य"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName }, ${ numberOfContacts } सदस्य",
+        "${ contactGroupName }, ${ numberOfContacts } सदस्य"
       ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
         "${ contactGroupName }${ numberOfSelectedContacts }${ numberOfContactsInGroup }सदस्य",
@@ -9266,6 +9273,9 @@
       "We couldn’t process your payment.": [
         "आपका भुगतान प्रॉसेस नहीं कर सके।"
       ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "हमें कुछ ऐसी मेल सूची मिली जिन्हें आप नहीं पढ़ते हैं। आप एक क्लिक में उनसे सदस्यता रद्द कर सकते हैं।"
+      ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "हमारे पास ऐसे यूज़र्स के लिए विशेष रूप से डिज़ाइन किए गए प्लान हैं जिन्हें एक से अधिक ईमेल पते की आवश्यकता होती है।"
       ],
@@ -10426,6 +10436,12 @@
       "Folder name": [
         "फोल्डर नाम"
       ],
+      "Font family": [
+        "फॉन्ट परिवार"
+      ],
+      "Font size": [
+        "फॉन्ट साइज़"
+      ],
       "Forwards to": [
         "इधर फॉरवर्ड होगा"
       ],
@@ -10612,6 +10628,9 @@
       "Move to Inbox": [
         "इन्बॉक्स में ले जाएँ"
       ],
+      "Move to Trash": [
+        "ट्रैश में भेजें"
+      ],
       "Moved to ${ labelName }": [
         "${ labelName } में स्थानांतरित किया गया"
       ],
@@ -10671,6 +10690,9 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "नोटिफिकेशन अक्षम हैं, उन्हें सक्षम करने के लिए ब्राउज़र सेटिंग बदलें।"
+      ],
+      "One-time codes": [
+        "वन टाइम कोड"
       ],
       "Operating system": [
         "ऑपरेटिंग सिस्टम"
@@ -10806,6 +10828,10 @@
       ],
       "Search in": [
         "की खोज में"
+      ],
+      "Select all ${ count } unused sender": [
+        "सभी ${ count } अप्रयुक्त प्रेषक चुनें",
+        "सभी ${ count } अप्रयुक्त प्रेषक चुनें"
       ],
       "Select which Gmail address to connect": [
         "कनेक्ट करने के लिए Gmail पता चुनें"
@@ -15705,6 +15731,12 @@
       "Moved to ${ label }. Similar messages will be categorized there in the future.": [
         "${ label } में ले जाया गया। भविष्य में इसी तरह के संदेश वहीं वर्गीकृत किए जाएंगे।"
       ],
+      "One-time codes disabled": [
+        "वन टाइम कोड अक्षम"
+      ],
+      "One-time codes enabled": [
+        "वन टाइम कोड सक्षम"
+      ],
       "Password copied to clipboard": [
         "पासवर्ड क्लिपबोर्ड पर कॉपी किया गया"
       ],
@@ -16892,6 +16924,9 @@
       ],
       "Start import process": [
         "आयात प्रक्रिया शुरू करें"
+      ],
+      "Start with a cleaner Inbox": [
+        "साफ-सुथरे इनबॉक्स के साथ शुरुआत करें"
       ],
       "Storage capacity warning": [
         "भंडारण क्षमता चेतावनी"

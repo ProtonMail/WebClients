@@ -1743,6 +1743,10 @@
         "${ domains } további saját domain név",
         "${ domains } további saját domain név"
       ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikált VPN szerver",
+        "${ ips } dedikált VPN szerver"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI licenc"
       ],
@@ -9379,6 +9383,12 @@
       "Folder name": [
         "Mappa neve"
       ],
+      "Font family": [
+        "Betűkészlet család"
+      ],
+      "Font size": [
+        "Betűméret"
+      ],
       "Forwards to": [
         "Továbbít:"
       ],
@@ -11777,6 +11787,9 @@
       ]
     },
     "Option": {
+      "15th of the month": [
+        "a hónap 15-ik napja"
+      ],
       "Add to existing group": [
         "Hozzáadás meglévő csoporthoz"
       ],
@@ -11794,6 +11807,9 @@
       ],
       "No parent folder": [
         "Nincs szülő-mappa"
+      ],
+      "Permanent": [
+        "Állandó"
       ]
     },
     "Option group": {

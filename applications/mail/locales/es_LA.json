@@ -4363,6 +4363,12 @@
       "To start, give your organization a name.": [
         "Para comenzar, asigne un nombre a su organización."
       ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Para usar ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, añádalo a su suscripción."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Para usar ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, solicite acceso a su administrador."
+      ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Active la protección de rastreo de correo para evitar que los anunciantes y otros rastreen su ubicación y actividad en línea."
       ],
@@ -4829,6 +4835,9 @@
       "Cannot export this contact": [
         "No se puede exportar este contacto"
       ],
+      "Cannot send an empty message. Message is not sent.": [
+        "No se puede enviar un mensaje vacío. Mensaje no enviado."
+      ],
       "Cannot set expiration longer than retention policy allows.": [
         "No se puede establecer una caducidad superior a la permitida por la política de retención."
       ],
@@ -4912,6 +4921,9 @@
       ],
       "Email is not valid": [
         "Correo no válido"
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "No se pudieron eliminar las imágenes incrustadas. El mensaje no se cambió a texto plano."
       ],
       "Empty condition": [
         "Condición vacía"
@@ -6705,6 +6717,10 @@
         "${ contactEmailsLength } miembro",
         "${ contactEmailsLength } miembros"
       ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } miembro)",
+        "${ contactGroupName } (${ numberOfContacts } miembros)"
+      ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } miembro)",
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } miembros)"
@@ -7378,6 +7394,9 @@
       ],
       "Copied to clipboard": [
         "Copiado al portapapeles"
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Copiar los códigos de un solo uso de los correos electrónicos recientes en un solo clic"
       ],
       "Copy the link to clipboard": [
         "Copiar el enlace al portapapeles"
@@ -8148,6 +8167,9 @@
       ],
       "Move here": [
         "Mover aquí"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Mover los correos electrónicos con códigos de un solo uso a la papelera al copiarlos"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nombre la carpeta nueva y seleccione la carpeta padre en la que quiere colocarla. Si no selecciona una carpeta padre, esta carpeta nueva se creará como una carpeta de nivel superior."
@@ -9329,6 +9351,9 @@
       "We couldn’t process your payment.": [
         "No pudimos procesar el pago."
       ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Encontramos algunas listas de correo que no lee. Puede darse de baja de ellas con un solo clic."
+      ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "Tenemos planes diseñados específicamente para usuarios como usted que necesitan varias direcciones de correo electrónico."
       ],
@@ -10501,6 +10526,12 @@
       "Folder name": [
         "Nombre de la carpeta"
       ],
+      "Font family": [
+        "Familia de fuente"
+      ],
+      "Font size": [
+        "Tamaño de fuente"
+      ],
       "Forwards to": [
         "Reenvía a"
       ],
@@ -10687,6 +10718,9 @@
       "Move to Inbox": [
         "Mover al buzón"
       ],
+      "Move to Trash": [
+        "Mover a la papelera"
+      ],
       "Moved to ${ labelName }": [
         "Movido a ${ labelName }"
       ],
@@ -10746,6 +10780,9 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Las notificaciones están desactivadas. Para activarlas cambie los ajustes del navegador."
+      ],
+      "One-time codes": [
+        "Códigos de un solo uso"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -10881,6 +10918,10 @@
       ],
       "Search in": [
         "Buscar en"
+      ],
+      "Select all ${ count } unused sender": [
+        "Seleccionar ${ count } remitente sin usar",
+        "Seleccionar los ${ count } remitentes sin usar"
       ],
       "Select which Gmail address to connect": [
         "Seleccione qué dirección de Gmail desea conectar"
@@ -15871,6 +15912,12 @@
       "Moved to ${ label }. Similar messages will be categorized there in the future.": [
         "Movido a ${ label }. Los mensajes similares se categorizarán ahí en el futuro."
       ],
+      "One-time codes disabled": [
+        "Códigos de un solo uso desactivados"
+      ],
+      "One-time codes enabled": [
+        "Códigos de un solo uso activados"
+      ],
       "Password copied to clipboard": [
         "Contraseña copiada al portapapeles."
       ],
@@ -17062,6 +17109,9 @@
       ],
       "Start import process": [
         "Iniciar proceso de importación"
+      ],
+      "Start with a cleaner Inbox": [
+        "Comience con una bandeja de entrada más limpia"
       ],
       "Storage capacity warning": [
         "Advertencia de capacidad de almacenamiento"

@@ -4185,6 +4185,9 @@
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Похоже, что список контактов, который вы импортируете, содержит группы. Пожалуйста, уточните, как их нужно импортировать."
       ],
+      "Let people book time with you directly from your emails, without the back and forth.": [
+        "Позвольте людям бронировать время непосредственно через электронную почту, без лишней переписки."
+      ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Позволяет мгновенно добавлять ссылки на встречи к вашим приглашениям на события."
       ],
@@ -7003,6 +7006,9 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Вы получаете ${ referrerRewardAmount }** в виде остатка на счете за каждого друга, который решит подписаться."
       ],
+      "1 vault per user": [
+        "1 хранилище на пользователя"
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Номер телефона может быть использован для подтверждения только одного аккаунта ${ BRAND_NAME }"
       ],
@@ -7897,6 +7903,9 @@
       "Mark all as read": [
         "Отметить все как прочитанные"
       ],
+      "Mark all as unread": [
+        "Отметить все как непрочитанные"
+      ],
       "Mastercard SecureCode logo": [
         "Логотип Mastercard SecureCode"
       ],
@@ -8259,6 +8268,9 @@
       ],
       "Restore": [
         "Восстановить"
+      ],
+      "Results came from the local search.": [
+        "Результаты были получены из локального поиска"
       ],
       "Right to Left": [
         "Справа налево"
@@ -9190,6 +9202,9 @@
         "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }. Вы можете отменить подписку в любое время.",
         "Затем каждые ${ renewCycle } месяца вам будет выставляться счет на ${ renewAmountStr }. Вы можете отменить подписку в любое время."
       ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "С этого момента для входа вы будете использовать его. Это единственное изменение."
+      ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адрес Gmail. Чтобы добавить еще один, сначала отключите один из них.",
         "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адреса Gmail. Чтобы добавить еще один, сначала отключите один из них.",
@@ -10004,6 +10019,12 @@
       ],
       "Folder name": [
         "Имя папки"
+      ],
+      "Font family": [
+        "Семейство шрифта"
+      ],
+      "Font size": [
+        "Размер шрифта"
       ],
       "Forwards to": [
         "Переслать"
@@ -13010,6 +13031,9 @@
         "Скидка действительна для ${ renewalsWithCoupon } продлений.",
         "Скидка действительна для ${ renewalsWithCoupon } продлений.",
         "Скидка действительна для ${ renewalsWithCoupon } продлений."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "У выбранного тарифного плана недостаточно места для данных вашего аккаунта."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Специально сниженная цена действует в течение ${ couponRedemptions } месяца. Затем она будет автоматически продлеваться за ${ renewPriceStr } в течение 1 месяца. Вы можете отменить подписку в любое время.",
@@ -16897,6 +16921,9 @@
       ]
     },
     "user_modal": {
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Нельзя изменить собственную роль. Попросите другого администратора изменить её за вас."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Вы сможете назначать должности, как только пользователь примет приглашение."
       ]

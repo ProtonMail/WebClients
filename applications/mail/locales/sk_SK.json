@@ -4903,6 +4903,9 @@
       "Cannot export this contact": [
         "Nie je možné exportovať tento kontakt"
       ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Prázdnu správu nie je možné odoslať. Správa nebola odoslaná."
+      ],
       "Cannot set expiration longer than retention policy allows.": [
         "Nemožno nastaviť expiráciu dlhšiu, než povoľujú zásady uchovávania."
       ],
@@ -4992,6 +4995,9 @@
       ],
       "Email is not valid": [
         "Emailová adresa nie je platná"
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Vložené obrázky sa nepodarilo odstrániť. Správa nebola prevedená na čistý text."
       ],
       "Empty condition": [
         "Prázdna podmienka"
@@ -6850,6 +6856,12 @@
         "${ contactEmailsLength } členovia",
         "${ contactEmailsLength } členov",
         "${ contactEmailsLength } členov"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } člen)",
+        "${ contactGroupName } (${ numberOfContacts } členovia)",
+        "${ contactGroupName } (${ numberOfContacts } členov)",
+        "${ contactGroupName } (${ numberOfContacts } členov)"
       ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } člen)",
@@ -9629,6 +9641,9 @@
       "We couldn’t process your payment.": [
         "Vašu platbu sa nám nepodarilo spracovať."
       ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Našli sme niekoľko diskusných skupín, ktoré nečítate. Odhlásiť sa z nich môžete jedným kliknutím."
+      ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "Máme plány navrhnuté špeciálne pre používateľov, ako ste vy, ktorí potrebujú viac ako jednu emailovú adresu."
       ],
@@ -10861,6 +10876,12 @@
       "Folder name": [
         "Názov priečinku"
       ],
+      "Font family": [
+        "Typ písma"
+      ],
+      "Font size": [
+        "Veľkosť písma"
+      ],
       "Forwards to": [
         "Preposielať na"
       ],
@@ -11241,6 +11262,12 @@
       ],
       "Search in": [
         "Hľadať v"
+      ],
+      "Select all ${ count } unused sender": [
+        "Vybrať ${ count } nepoužitého odosielateľa",
+        "Vybrať ${ count } nepoužitých odosielateľov",
+        "Vybrať všetkých ${ count } nepoužitých odosielateľov",
+        "Vybrať všetkých ${ count } nepoužitých odosielateľov"
       ],
       "Select which Gmail address to connect": [
         "Vyberte, ktorú Gmailovú adresu chcete pripojiť"
@@ -17706,6 +17733,9 @@
       ],
       "Start import process": [
         "Zahájiť proces importu"
+      ],
+      "Start with a cleaner Inbox": [
+        "Začnite s prehľadnejšou doručenou poštou"
       ],
       "Storage capacity warning": [
         "Upozornenie na kapacitu úložiska"

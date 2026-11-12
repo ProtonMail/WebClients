@@ -4829,6 +4829,9 @@
       "Cannot export this contact": [
         "No se puede exportar este contacto"
       ],
+      "Cannot send an empty message. Message is not sent.": [
+        "No se puede enviar un mensaje vacío. El mensaje no ha sido enviado."
+      ],
       "Cannot set expiration longer than retention policy allows.": [
         "No se puede establecer una caducidad superior a la permitida por la política de retención."
       ],
@@ -4912,6 +4915,9 @@
       ],
       "Email is not valid": [
         "El correo no es válido."
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Las imágenes incrustadas no pudieron ser eliminadas. El mensaje no se cambió a texto plano."
       ],
       "Empty condition": [
         "Condición vacía"
@@ -6705,6 +6711,10 @@
         "${ contactEmailsLength } miembro",
         "${ contactEmailsLength } miembros"
       ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } miembro)",
+        "${ contactGroupName } (${ numberOfContacts } miembros)"
+      ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } miembro)",
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } miembros)"
@@ -7378,6 +7388,9 @@
       ],
       "Copied to clipboard": [
         "Copiada al portapapeles"
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Copia los códigos de uso único de los correos recientes en un solo clic"
       ],
       "Copy the link to clipboard": [
         "Copiar el enlace al portapapeles"
@@ -8148,6 +8161,9 @@
       ],
       "Move here": [
         "Mover aquí"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Mueve los códigos de uso único a la papelera al copiarlos"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ponle un nombre a tu nueva carpeta y selecciona la carpeta en la que quieres colocarla. Si no seleccionas una carpeta, esta nueva carpeta se creará como una carpeta de nivel superior."
@@ -9329,6 +9345,9 @@
       "We couldn’t process your payment.": [
         "No hemos podido procesar tu pago."
       ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Hemos encontrado algunas listas de correo que no lees. Puedes darte de baja de ellas con un solo clic."
+      ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "Tenemos planes diseñados específicamente para usuarios como tú que necesitan varias direcciones de correo electrónico."
       ],
@@ -10501,6 +10520,12 @@
       "Folder name": [
         "Nombre de la carpeta"
       ],
+      "Font family": [
+        "Familia de fuente"
+      ],
+      "Font size": [
+        "Tamaño de fuente"
+      ],
       "Forwards to": [
         "Reenvía a"
       ],
@@ -10687,6 +10712,9 @@
       "Move to Inbox": [
         "Mover a la bandeja de entrada"
       ],
+      "Move to Trash": [
+        "Mover a la papelera"
+      ],
       "Moved to ${ labelName }": [
         "Movido a ${ labelName }"
       ],
@@ -10746,6 +10774,9 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Las notificaciones están desactivadas. Para activarlas cambia los ajustes del navegador."
+      ],
+      "One-time codes": [
+        "Códigos de uso único"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -10881,6 +10912,10 @@
       ],
       "Search in": [
         "Buscar en"
+      ],
+      "Select all ${ count } unused sender": [
+        "Seleccionar ${ count } remitente(s) sin usar",
+        "Seleccionar los ${ count } remitentes sin usar"
       ],
       "Select which Gmail address to connect": [
         "Selecciona qué dirección de Gmail conectar"
@@ -15871,6 +15906,12 @@
       "Moved to ${ label }. Similar messages will be categorized there in the future.": [
         "Movido a ${ label }. Los mensajes similares se clasificarán allí en el futuro."
       ],
+      "One-time codes disabled": [
+        "Códigos de uso único desactivados"
+      ],
+      "One-time codes enabled": [
+        "Códigos de uso único activados"
+      ],
       "Password copied to clipboard": [
         "Se ha copiado la contraseña al portapapeles."
       ],
@@ -17062,6 +17103,9 @@
       ],
       "Start import process": [
         "Iniciar el proceso de importación"
+      ],
+      "Start with a cleaner Inbox": [
+        "Empieza con una bandeja de entrada más limpia"
       ],
       "Storage capacity warning": [
         "Advertencia de capacidad de almacenamiento"

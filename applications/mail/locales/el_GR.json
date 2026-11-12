@@ -4363,6 +4363,12 @@
       "To start, give your organization a name.": [
         "Για να ξεκινήσετε, δώστε ένα όνομα στον οργανισμό σας."
       ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Για να χρησιμοποιήσετε το ${ LUMO_SHORT_APP_NAME } στο ${ MAIL_APP_NAME }, προσθέστε το στη συνδρομή σας."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Για να χρησιμοποιήσετε το ${ LUMO_SHORT_APP_NAME } στο ${ MAIL_APP_NAME }, ζητήστε πρόσβαση από τον διαχειριστή σας."
+      ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Ενεργοποιήστε την προστασία παρακολούθησης ηλεκτρονικού ταχυδρομείου για να αποτρέψετε διαφημιστές και άλλους χρήστες από την παρακολούθηση της τοποθεσίας και της δραστηριότητάς σας στο διαδίκτυο."
       ],
@@ -4829,6 +4835,9 @@
       "Cannot export this contact": [
         "Δεν είναι δυνατή η εξαγωγή αυτής της επαφής"
       ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Δεν είναι δυνατή η αποστολή κενού μηνύματος. Το μήνυμα δε στάλθηκε."
+      ],
       "Cannot set expiration longer than retention policy allows.": [
         "Δεν είναι δυνατή η ρύθμιση λήξης που υπερβαίνει το χρονικό διάστημα που επιτρέπει η πολιτική διατήρησης."
       ],
@@ -4912,6 +4921,9 @@
       ],
       "Email is not valid": [
         "Η διεύθυνση email δεν είναι έγκυρη"
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Δεν ήταν δυνατή η αφαίρεση των ενσωματωμένων εικόνων. Το μήνυμα δεν μετατράπηκε σε απλό κείμενο."
       ],
       "Empty condition": [
         "Κενή συνθήκη"
@@ -6705,6 +6717,10 @@
         "${ contactEmailsLength } Μέλος",
         "${ contactEmailsLength } Μέλη"
       ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } μέλος)",
+        "${ contactGroupName } (${ numberOfContacts } μέλη)"
+      ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } μέλη)",
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } μέλη)"
@@ -7379,6 +7395,9 @@
       "Copied to clipboard": [
         "Αντιγράφηκε στο πρόχειρο"
       ],
+      "Copy one-time codes from recent emails in one click": [
+        "Αντιγράψτε κωδικούς μίας χρήσης από πρόσφατα email με ένα κλικ"
+      ],
       "Copy the link to clipboard": [
         "Αντιγραφή του συνδέσμου στο πρόχειρο"
       ],
@@ -7996,6 +8015,9 @@
       "Learn what to do ${ dataLeakedLink }": [
         "Μάθετε τι να κάνετε ${ dataLeakedLink }"
       ],
+      "Leave Big Tech": [
+        "Έξοδος από την Big Tech"
+      ],
       "Left to Right": [
         "Αριστερά προς Δεξιά"
       ],
@@ -8145,6 +8167,9 @@
       ],
       "Move here": [
         "Μετακίνηση εδώ"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Μετακίνηση των μηνυμάτων ηλεκτρονικού ταχυδρομείου με κωδικούς μίας χρήσης στα Απορρίμματα κατά την αντιγραφή"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ονομάστε το νέο σας φάκελο και επιλέξτε τον γονικό φάκελο στον οποίο θέλετε να τον τοποθετήσετε. Εάν δεν επιλέξετε γονικό φάκελο, αυτός ο νέος φάκελος θα δημιουργηθεί ως φάκελος ανώτατου επιπέδου."
@@ -9326,6 +9351,9 @@
       "We couldn’t process your payment.": [
         "Δεν ήταν δυνατή η επεξεργασία της πληρωμής σας."
       ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Βρήκαμε μερικές λίστες αλληλογραφίας τις οποίες δε διαβάζετε. Μπορείτε να διαγραφείτε από αυτές με ένα κλικ."
+      ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "Έχουμε πλάνα σχεδιασμένα ειδικά για χρήστες όπως εσείς που χρειάζονται περισσότερες από μία διευθύνσεις ηλεκτρονικού ταχυδρομείου."
       ],
@@ -10498,6 +10526,12 @@
       "Folder name": [
         "Όνομα φακέλου"
       ],
+      "Font family": [
+        "Οικογένεια γραμματοσειρών"
+      ],
+      "Font size": [
+        "Μέγεθος γραμματοσειράς"
+      ],
       "Forwards to": [
         "Προώθηση σε"
       ],
@@ -10684,6 +10718,9 @@
       "Move to Inbox": [
         "Μετακίνηση στα Εισερχόμενα"
       ],
+      "Move to Trash": [
+        "Μετακίνηση στον κάδο"
+      ],
       "Moved to ${ labelName }": [
         "Μετακινήθηκε στο ${ labelName }"
       ],
@@ -10743,6 +10780,9 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Οι ειδοποιήσεις είναι απενεργοποιημένες, για να τις ενεργοποιήσετε αλλάξτε τις ρυθμίσεις του προγράμματος περιήγησης."
+      ],
+      "One-time codes": [
+        "Κωδικοί μίας χρήσης"
       ],
       "Operating system": [
         "Λειτουργικό σύστημα (OS)"
@@ -10878,6 +10918,10 @@
       ],
       "Search in": [
         "Αναζήτηση σε"
+      ],
+      "Select all ${ count } unused sender": [
+        "Επιλογή όλων ${ count } αχρησιμοποίητος αποστολέας",
+        "Επιλογή όλων ${ count } αχρησιμοποίητοι αποστολείς"
       ],
       "Select which Gmail address to connect": [
         "Επιλέξτε ποια διεύθυνση Gmail να συνδεθεί"
@@ -15868,6 +15912,12 @@
       "Moved to ${ label }. Similar messages will be categorized there in the future.": [
         "Μετακινήθηκε στο ${ label }. Παρόμοια μηνύματα θα κατηγοριοποιηθούν εκεί στο μέλλον."
       ],
+      "One-time codes disabled": [
+        "Απενεργοποίηση κωδικών μίας χρήσης"
+      ],
+      "One-time codes enabled": [
+        "Ενεργοποίηση κωδικών μίας χρήσης"
+      ],
       "Password copied to clipboard": [
         "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
       ],
@@ -17059,6 +17109,9 @@
       ],
       "Start import process": [
         "Έναρξη διαδικασίας εισαγωγής"
+      ],
+      "Start with a cleaner Inbox": [
+        "Ξεκινήστε με πιο καθαρά Εισερχόμενα"
       ],
       "Storage capacity warning": [
         "Προειδοποίηση χωρητικότητας αποθήκευσης"

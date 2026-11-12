@@ -4829,6 +4829,9 @@
       "Cannot export this contact": [
         "Kan ikke eksportere denne kontakt"
       ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Der kan ikke sendes en tom besked. Beskeden er ikke sendt."
+      ],
       "Cannot set expiration longer than retention policy allows.": [
         "Udløb kan ikke indstilles til et tidspunkt senere end hvad opbevaringspolitikken tillader."
       ],
@@ -4912,6 +4915,9 @@
       ],
       "Email is not valid": [
         "E-mail er ikke gyldig"
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Indlejrede billeder kunne ikke fjernes. Beskeden blev ikke skiftet til almindelig tekst."
       ],
       "Empty condition": [
         "Betingelse er tom"
@@ -6704,6 +6710,10 @@
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Medlem",
         "${ contactEmailsLength } Medlemmer"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } medlem)",
+        "${ contactGroupName } (${ numberOfContacts } medlemmer)"
       ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } medlem)",
@@ -9329,6 +9339,9 @@
       "We couldn’t process your payment.": [
         "Vi kunne ikke gennemføre din betaling."
       ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Vi har identificeret nogle mailinglister, som du ikke læser. Du kan afmelde dem med ét klik."
+      ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "Vi har abonnementer, der er designet specifikt til brugere som dig, der har brug for mere end én e-mailadresse."
       ],
@@ -10501,6 +10514,12 @@
       "Folder name": [
         "Mappenavn"
       ],
+      "Font family": [
+        "Skrifttypefamilie"
+      ],
+      "Font size": [
+        "Skriftstørrelse"
+      ],
       "Forwards to": [
         "Videresender til"
       ],
@@ -10881,6 +10900,10 @@
       ],
       "Search in": [
         "Søg i"
+      ],
+      "Select all ${ count } unused sender": [
+        "Vælg ${ count } ubrugt afsender",
+        "Vælg alle ${ count } ubrugte afsendere"
       ],
       "Select which Gmail address to connect": [
         "Vælg hvilken Gmail-adresse der skal forbindes"
@@ -17062,6 +17085,9 @@
       ],
       "Start import process": [
         "Start importeringsprocessen"
+      ],
+      "Start with a cleaner Inbox": [
+        "Start med en mere ryddelig indbakke"
       ],
       "Storage capacity warning": [
         "Advarsel om lagerkapacitet"

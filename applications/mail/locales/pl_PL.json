@@ -4749,6 +4749,9 @@
       "Cannot export this contact": [
         "Nie można wyeksportować tego kontaktu"
       ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Nie można wysłać pustej wiadomości. Wiadomość nie została wysłana."
+      ],
       "Cannot set expiration longer than retention policy allows.": [
         "Nie można ustawić wygaśnięcia dłuższego, niż pozwala na to zasada dotycząca Przechowywania."
       ],
@@ -6667,6 +6670,12 @@
         "${ contactEmailsLength } członków",
         "${ contactEmailsLength } członków"
       ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } członek)",
+        "${ contactGroupName } (${ numberOfContacts } członków)",
+        "${ contactGroupName } (${ numberOfContacts } członków)",
+        "${ contactGroupName } (Członkowie: ${ numberOfContacts })"
+      ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } członek)",
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } członków)",
@@ -8239,6 +8248,12 @@
         "Odczytaj ${ count } e-maili na ekranie",
         "Odczytaj e-maile (${ count }) na ekranie"
       ],
+      "Read your ${ count } filter": [
+        "Sprawdź swój ${ count } filtr",
+        "Sprawdź swoje ${ count } filtry",
+        "Sprawdź swoich ${ count } filtrów",
+        "Sprawdź swoich ${ count } filtrów"
+      ],
       "Recipient: ": [
         "Odbiorca: "
       ],
@@ -8910,6 +8925,9 @@
       ],
       "We couldn’t process your payment.": [
         "Nie mogliśmy przetworzyć płatności."
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Znaleziono listy mailingowe, których nie czytasz. Możesz anulować ich subskrypcje jednym kliknięciem."
       ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "Mamy plany zaprojektowane specjalnie dla użytkowników takich jak Ty, którzy potrzebują więcej niż jednego adresu e-mail."
@@ -9900,6 +9918,9 @@
       "Date:": [
         "Data:"
       ],
+      "Deals, offers, and marketing emails": [
+        "Promocje, oferty i wiadomości marketingowe"
+      ],
       "Delete": [
         "Usuń"
       ],
@@ -10020,6 +10041,12 @@
       "Folder name": [
         "Nazwa folderu"
       ],
+      "Font family": [
+        "Czcionka"
+      ],
+      "Font size": [
+        "Rozmiar czcionki"
+      ],
       "Forwards to": [
         "Przekaż do"
       ],
@@ -10042,7 +10069,7 @@
         "Przejdź do Newsletterów"
       ],
       "Go to Primary": [
-        "Przejdź do głównej"
+        "Przejdź do Głównej"
       ],
       "Go to Promotions": [
         "Przejdź do Promocji"
@@ -10051,10 +10078,10 @@
         "Przejdź do Społeczności"
       ],
       "Go to Transactions": [
-        "Przejdź do transakcji"
+        "Przejdź do Transakcji"
       ],
       "Go to Updates": [
-        "Przejdź do sekcji zaktualizuj"
+        "Przejdź do Aktualizacji"
       ],
       "Has attachments": [
         "Zawiera załącznik"
@@ -10381,7 +10408,7 @@
         "Pomiń opinię"
       ],
       "Social": [
-        "Media społecznościowe"
+        "Społeczności"
       ],
       "Social - Social media updates, activity, and messages": [
         "Społeczności – powiadomienia z mediów społecznościowych, aktywności i wiadomości"
@@ -16539,6 +16566,9 @@
       ],
       "Start import process": [
         "Rozpocznij proces importowania"
+      ],
+      "Start with a cleaner Inbox": [
+        "Zacznij z lepiej uporządkowaną skrzynką odbiorczą."
       ],
       "Storage capacity warning": [
         "Ostrzeżenie o przestrzeni dyskowej"
