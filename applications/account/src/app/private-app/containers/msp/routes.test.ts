@@ -24,13 +24,13 @@ const buildParams = (overrides: Partial<OrganizationRouterParams>): Organization
 });
 
 describe('getMspAppRoutes', () => {
-    it('shows Monthly Costs to the organization owner', () => {
+    it('shows Monthly cost to the organization owner', () => {
         const { routes } = getMspAppRoutes(buildParams({ isOrganizationOwner: true }));
 
         expect(routes.monthlyCosts.available).toBe(true);
     });
 
-    it('hides Monthly Costs from an admin who is not the organization owner', () => {
+    it('hides Monthly cost from an admin who is not the organization owner', () => {
         const { routes } = getMspAppRoutes(
             buildParams({ user: buildUser({ isAdmin: true }), isOrganizationOwner: false })
         );

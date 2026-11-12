@@ -39,7 +39,7 @@ export const getMspAppRoutes = ({
             },
             monthlyCosts: {
                 id: 'monthlyCosts',
-                text: c('Title').t`Monthly Costs`,
+                text: c('Title').t`Monthly cost`,
                 to: '/monthly-costs',
                 icon: IcMoneyBills,
                 noTitle: true,
