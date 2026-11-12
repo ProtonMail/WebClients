@@ -5,7 +5,6 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import type { PlanCardFeatureIcon } from '@proton/components/containers/payments/features/interface';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import useLoading from '@proton/hooks/useLoading';
@@ -14,6 +13,7 @@ import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments-ui/ui/components/RenewalNotice';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Currency, Cycle, PaymentsApi, PlanIDs } from '@proton/payments/core/interface';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 

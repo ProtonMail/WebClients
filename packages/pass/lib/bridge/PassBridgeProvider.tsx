@@ -1,7 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 import { createContext, useContext } from 'react';
 
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import useInstance from '@proton/hooks/useInstance';
 
 import type { MaybeNull } from '../../types/utils';

@@ -3,12 +3,12 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

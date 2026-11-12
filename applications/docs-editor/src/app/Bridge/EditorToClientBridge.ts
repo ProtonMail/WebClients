@@ -17,7 +17,7 @@ import {
 import { DOCS_EDITOR_DEBUG_KEY } from '@proton/docs-shared/constants'
 
 import { ClientInvoker } from './ClientInvoker'
-import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
+import { updateVersionCookie, versionCookieAtLoad } from '@proton/account/earlyAccess/versionCookie'
 import { getCookie } from '@proton/shared/lib/helpers/cookies'
 
 export class EditorToClientBridge {

@@ -4,12 +4,12 @@ import { addDays, addMonths, getUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import Time, { getReadableTime } from '@proton/components/components/time/Time';
 import { type PaymentsCheckoutUI, getCheckoutUi } from '@proton/payments/core/checkout';
 import { type CheckoutModifiers, getCheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
 import { CYCLE, PLANS, PLAN_NAMES, TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
 import type { Currency, Cycle, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { getPlanName, getPlanTitle, isTaxExclusive } from '@proton/payments/core/subscription/helpers';
 import type { Coupon, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';

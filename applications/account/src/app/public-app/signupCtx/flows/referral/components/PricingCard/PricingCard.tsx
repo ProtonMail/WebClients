@@ -7,7 +7,6 @@ import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { VerticalStep } from '@proton/atoms/VerticalSteps/VerticalStep';
 import { VerticalSteps } from '@proton/atoms/VerticalSteps/VerticalSteps';
 import AppsLogos from '@proton/components/components/appsLogos/AppsLogos';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import CycleSelector from '@proton/components/containers/payments/CycleSelector';
 import { getNormalizedPlanTitleToPlus } from '@proton/components/containers/payments/subscription/plusToPlusHelper';
@@ -19,6 +18,7 @@ import {
 } from '@proton/payments-ui/ui/components/RenewalNotice';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { CYCLE, PLANS, PLAN_NAMES, TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';

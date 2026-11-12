@@ -4,13 +4,13 @@ import { addDays, getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import Time from '@proton/components/components/time/Time';
 import { getTotalBillingText } from '@proton/components/containers/payments/subscription/helpers/getTotalBillingText';
 import { useCouponConfig } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import { TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';

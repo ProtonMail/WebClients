@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import type { IconComponent } from '@proton/icons/component';
@@ -12,6 +11,7 @@ import { IcUser } from '@proton/icons/icons/IcUser';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

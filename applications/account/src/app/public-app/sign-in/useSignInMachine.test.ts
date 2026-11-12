@@ -9,7 +9,7 @@ jest.mock('@proton/app-context/useConfig', () => ({
     __esModule: true,
     useConfig: () => ({ APP_NAME: 'proton-account' }),
 }));
-jest.mock('@proton/components/hooks/useSilentApi', () => ({
+jest.mock('@proton/app-context/useSilentApi', () => ({
     __esModule: true,
     useSilentApi: () => () => new Promise(() => {}),
 }));

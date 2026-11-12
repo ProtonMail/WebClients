@@ -2,10 +2,10 @@ import merge from 'lodash/merge';
 import { c } from 'ttag';
 
 import Price from '@proton/components/components/price/Price';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { PLANS } from '@proton/payments/core/constants';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 
 import { getDriveMaxSpaceMap } from '../../helpers/getMaxSpaceMap';
 import { SaveBadge } from '../SaveBadge/SaveBadge';

@@ -2,7 +2,7 @@ import {
   updateVersionCookie,
   deleteVersionCookies,
   versionCookieAtLoad,
-} from '@proton/components/helpers/versionCookie'
+} from '@proton/account/earlyAccess/versionCookie'
 
 const ENABLED = true // feature killswitch
 const TAG_SYNC_RELOAD_ATTEMPTS = 3

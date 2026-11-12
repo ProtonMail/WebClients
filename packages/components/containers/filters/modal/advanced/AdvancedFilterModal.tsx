@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Href } from '@proton/atoms/Href/Href';
+import useDebounceInput from '@proton/hooks/useDebounceInput';
 import useLoading from '@proton/hooks/useLoading';
 import { addFilter, updateFilter } from '@proton/mail/store/filters/actions';
 import { useFilters } from '@proton/mail/store/filters/hooks';
@@ -14,7 +15,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { CreateFilter, Filter } from '@proton/sieve/filterModel';
 
 import Form from '../../../../components/form/Form';
-import useDebounceInput from '../../../../components/input/useDebounceInput';
 import type { ModalProps } from '../../../../components/modalTwo/Modal';
 import ModalTwo from '../../../../components/modalTwo/Modal';
 import ModalTwoContent from '../../../../components/modalTwo/ModalContent';

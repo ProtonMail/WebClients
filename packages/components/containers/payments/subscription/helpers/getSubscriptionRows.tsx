@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 import type { CYCLE } from '@proton/payments/core/constants';
 import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
 import type { Currency } from '@proton/payments/core/interface';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import {
     getEffectiveUpcomingSubscription,
     getSubscriptionPlanTitle,
@@ -24,7 +25,6 @@ import { hasLifetimeCoupon } from '@proton/shared/lib/payments/coupons';
 
 import type { BadgeType } from '../../../../components/badge/Badge';
 import Info from '../../../../components/link/Info';
-import { getSimplePriceString } from '../../../../components/price/helper';
 import { getSubscriptionManagerName } from '../InAppPurchaseModal';
 
 // A renewal notice rendered as up to two lines: the next charge (primary) and the eventual recurring price (secondary).

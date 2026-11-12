@@ -5,7 +5,13 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms/Href/Href';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
-import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces/HumanVerification';
+import type {
+    CaptchaTheme,
+    HumanVerificationMethodType,
+    OwnershipCache,
+    VerificationModel,
+} from '@proton/shared/lib/interfaces/HumanVerification';
+import { HumanVerificationSteps } from '@proton/shared/lib/interfaces/HumanVerification';
 
 import Alert from '../../../components/alert/Alert';
 import { Tabs } from '../../../components/tabs/Tabs';
@@ -14,8 +20,6 @@ import CodeMethod from './CodeMethod';
 import OwnershipMethod from './OwnershipMethod';
 import Text from './Text';
 import { getAvailableMethods } from './helper';
-import type { CaptchaTheme, OwnershipCache, VerificationModel } from './interface';
-import { HumanVerificationSteps } from './interface';
 
 import './HumanVerificationModal.scss';
 
@@ -60,7 +64,8 @@ const HumanVerificationForm = ({
     const availableMethods = getAvailableMethods(methods);
     const [selectedMethod, setSelectedMethod] = useState<SupportedHumanVerificationMethodType>(() => {
         const firstAvailableMethod = Object.entries(availableMethods).find(([, available]) => available)?.[0] as
-            SupportedHumanVerificationMethodType | undefined;
+            | SupportedHumanVerificationMethodType
+            | undefined;
         return firstAvailableMethod || 'captcha';
     });
 

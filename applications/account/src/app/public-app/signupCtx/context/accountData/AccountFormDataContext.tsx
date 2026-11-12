@@ -4,9 +4,9 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState } f
 import isDeepEqual from 'lodash/isEqual';
 import merge from 'lodash/merge';
 
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import type { ChallengeResult } from '@proton/challenge/interface';
 import type { ChallengeRef as ChallengeV4Ref } from '@proton/challenge/v4/interface';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { runAfterScroll } from '@proton/shared/lib/dom/runAfterScroll';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';

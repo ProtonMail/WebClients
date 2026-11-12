@@ -1,6 +1,8 @@
 import type { ComponentType } from 'react';
 
-import type { FeatureTourStepId, FeatureTourStepProps, ShouldDisplayTourStep } from './interface';
+import type { FeatureTourStepId } from '@proton/account/featuresTour/interface';
+
+import type { FeatureTourStepProps, ShouldDisplayTourStep } from './interface';
 import AutoDeleteTourStep, { shouldDisplayAutoDeleteTourStep } from './steps/AutoDeleteTourStep';
 import DarkWebMonitoringTourStep, { shouldDisplayDarkWebMonitoringTourStep } from './steps/DarkWebMonitoringTourStep';
 import DesktopAppTourStep, { shouldDisplayDesktopAppTourStep } from './steps/DesktopAppTourStep';

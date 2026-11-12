@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 
 import { completedFeatureTourAction } from '@proton/account/featuresTour/actions';
+import type { FeatureTourStepId } from '@proton/account/featuresTour/interface';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
 import FeatureTourLoader from './FeatureTourLoader';
 import { FEATURE_TOUR_STEPS_MAP } from './constants';
-import type { FeatureTourStep, FeatureTourStepId } from './interface';
+import type { FeatureTourStep } from './interface';
 import FeatureTourStepBullets from './steps/components/FeatureTourStepBullets';
 
 const FeatureTourSteps = ({

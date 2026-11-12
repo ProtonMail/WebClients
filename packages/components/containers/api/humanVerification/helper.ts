@@ -1,7 +1,5 @@
 import { queryVerificationCode } from '@proton/shared/lib/api/user';
-import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces/HumanVerification';
-
-import type { VerificationModel } from './interface';
+import type { HumanVerificationMethodType, VerificationModel } from '@proton/shared/lib/interfaces/HumanVerification';
 
 export const getFormattedCode = (verificationModel: VerificationModel, code: string) => {
     if (verificationModel.method === 'ownership-email' || verificationModel.method === 'ownership-sms') {

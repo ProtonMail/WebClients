@@ -1,11 +1,10 @@
 import { useEffect } from 'react';
 
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { TelemetryMeasurementGroups, TelemetryPreventWasmLoading } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { useFlag } from '@proton/unleash/useFlag';
-
-import { useSilentApi } from './useSilentApi';
 
 const STORAGE_KEY = 'wasm-telemetry-reported';
 

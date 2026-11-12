@@ -6,6 +6,7 @@ import { reauthMnemonicThunk } from '@proton/account/recovery/mnemonicActions';
 import { useIsSessionRecoveryInitiationAvailable } from '@proton/account/recovery/sessionRecoveryHooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import useLoading from '@proton/hooks/useLoading';
@@ -24,7 +25,6 @@ import ModalHeader from '../../components/modalTwo/ModalHeader';
 import { Tabs } from '../../components/tabs/Tabs';
 import useFormErrors from '../../components/v2/useFormErrors';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import { useSilentApi } from '../../hooks/useSilentApi';
 import MnemonicInputField, { useMnemonicInputValidation } from '../mnemonic/MnemonicInputField';
 
 interface Props extends ModalProps {

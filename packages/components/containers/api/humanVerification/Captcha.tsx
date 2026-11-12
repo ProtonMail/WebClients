@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
+import type { CaptchaTheme } from '@proton/shared/lib/interfaces/HumanVerification';
 
 import Loader from '../../../components/loader/Loader';
-import type { CaptchaTheme } from './interface';
 
 const getIframeUrl = (token: string, theme?: CaptchaTheme) => {
     const url = getApiSubdomainUrl('/core/v4/captcha', window.location.origin);

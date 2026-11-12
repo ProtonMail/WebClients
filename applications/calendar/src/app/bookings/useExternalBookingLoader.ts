@@ -6,11 +6,11 @@ import { c } from 'ttag';
 
 import { shouldCheckSignatureVerificationStatus } from '@proton/account/publicKeys/verificationPreferences';
 import { useGetUser } from '@proton/account/user/hooks';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { decryptBookingContent } from '@proton/calendar/bookings/crypto/bookingDecryption';
 import { deriveBookingUid } from '@proton/calendar/bookings/crypto/bookingEncryption';
 import { bookingCalendarKeySignatureContextValue } from '@proton/calendar/bookings/crypto/cryptoHelpers';
 import useGetVerificationPreferences from '@proton/components/hooks/useGetVerificationPreferences';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { getNextAvailableSlot, queryPublicBookingPage } from '@proton/shared/lib/api/calendarBookings';
 import { getWeekStartsOn } from '@proton/shared/lib/date/date';
 import { SentryCalendarInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';

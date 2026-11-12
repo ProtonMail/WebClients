@@ -91,7 +91,7 @@ const mockCreateNotification = jest.fn();
 jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
-jest.mock('../../hooks/useSilentApi', () => ({
+jest.mock('@proton/app-context/useSilentApi', () => ({
     useSilentApi: () => jest.fn(),
 }));
 jest.mock('../../hooks/useSpotlightOnFeature', () => ({

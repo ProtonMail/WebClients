@@ -3,7 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';

@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 
 import { InvalidReferrerError, useReferralData } from '../../../context/accountData/useReferralData';

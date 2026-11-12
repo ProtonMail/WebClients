@@ -9,7 +9,7 @@ import {
     useState,
 } from 'react';
 
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 
 import { getOrganizationUsers } from '../api/api';
 import type {

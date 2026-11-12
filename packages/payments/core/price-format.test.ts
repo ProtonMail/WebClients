@@ -1,4 +1,4 @@
-import { formatPriceWithoutCurrency, getSimplePriceString } from './helper';
+import { formatPriceWithoutCurrency, getSimplePriceString } from './price-format';
 
 describe('getSimplePriceString', () => {
     const NBSP = '\u00A0';

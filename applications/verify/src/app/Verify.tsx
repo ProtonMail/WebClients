@@ -8,7 +8,6 @@ import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import AccountLockedUpsellForm from '@proton/components/components/upsell/modals/AccountLockedUpsellForm';
 import HumanVerificationForm from '@proton/components/containers/api/humanVerification/HumanVerificationForm';
-import { HumanVerificationSteps } from '@proton/components/containers/api/humanVerification/interface';
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
 import useThemeQueryParameter from '@proton/components/containers/themes/useThemeQueryParameter';
 import useInstance from '@proton/hooks/useInstance';
@@ -20,6 +19,7 @@ import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadLocales } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
+import { HumanVerificationSteps } from '@proton/shared/lib/interfaces/HumanVerification';
 import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces/HumanVerification';
 import { getDarkThemes } from '@proton/shared/lib/themes/themes';
 

@@ -14,6 +14,7 @@ import {
 } from '@proton/account/organizationKey/actions';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
 import { getHasExternalMemberCapableB2BPlan, hasPassFamily } from '@proton/payments/core/subscription/helpers';
@@ -33,7 +34,6 @@ import ModalHeader from '../../components/modalTwo/ModalHeader';
 import { InputField as InputFieldTwo } from '../../components/v2/field/InputField';
 import useFormErrors from '../../components/v2/useFormErrors';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import { useSilentApi } from '../../hooks/useSilentApi';
 import MemberStorageSelector from '../members/MemberStorageSelector';
 import { disableStorageSelection } from '../members/helper';
 import AdministratorList from './AdministratorList';

@@ -13,7 +13,7 @@ import {
 
 import { c } from 'ttag';
 
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 

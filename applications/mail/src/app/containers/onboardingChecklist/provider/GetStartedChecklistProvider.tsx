@@ -5,8 +5,8 @@ import { fromUnixTime } from 'date-fns';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
 import { seenCompletedChecklist, updateChecklistDisplay, updateChecklistItem } from '@proton/shared/lib/api/checklist';
 import {

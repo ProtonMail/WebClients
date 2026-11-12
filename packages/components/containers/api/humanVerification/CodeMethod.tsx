@@ -14,7 +14,8 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
-import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces/HumanVerification';
+import type { HumanVerificationMethodType, VerificationModel } from '@proton/shared/lib/interfaces/HumanVerification';
+import { HumanVerificationSteps } from '@proton/shared/lib/interfaces/HumanVerification';
 
 import EmailMethodForm from './EmailMethodForm';
 import PhoneMethodForm from './PhoneMethodForm';
@@ -22,8 +23,6 @@ import RequestNewCodeModal from './RequestNewCodeModal';
 import Text from './Text';
 import VerifyCodeForm from './VerifyCodeForm';
 import { getRoute } from './helper';
-import type { VerificationModel } from './interface';
-import { HumanVerificationSteps } from './interface';
 
 interface Props {
     api: Api;

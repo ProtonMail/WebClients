@@ -1,6 +1,6 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import type { FeatureTourStepId } from '@proton/components/components/featureTour/interface';
+import type { FeatureTourStepId } from './interface';
 
 const name = 'featureTour' as const;
 

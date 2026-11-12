@@ -6,6 +6,7 @@ import { IcServers } from '@proton/icons/icons/IcServers';
 import { IcUser } from '@proton/icons/icons/IcUser';
 import { usePreferredPlansMap } from '@proton/payments-hooks/ui/hooks/usePreferredPlansMap';
 import { ADDON_NAMES, CYCLE } from '@proton/payments/core/constants';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { getPricePerCycle } from '@proton/payments/core/price-helpers';
 import gatewayMonitorUpsellHero from '@proton/styles/assets/img/vpn/users/users-upsell-hero.jpg';
 
@@ -13,7 +14,6 @@ import ModalTwo from '../../../components/modalTwo/Modal';
 import ModalTwoContent from '../../../components/modalTwo/ModalContent';
 import { ModalHeaderCloseButton } from '../../../components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '../../../components/modalTwo/useModalState';
-import { getSimplePriceString } from '../../../components/price/helper';
 
 interface Props {
     modalProps: ModalStateProps;

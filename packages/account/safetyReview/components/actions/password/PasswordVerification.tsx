@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useConfig } from '@proton/app-context/useConfig';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Form from '@proton/components/components/form/Form';
@@ -17,7 +18,6 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { TwoFactorAuth } from '@proton/components/containers/password/TwoFactorAuth';
 import { getReAuthTwoFactorTypes } from '@proton/components/containers/password/getReAuthTwoFactorTypes';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
 import { PASSWORD_WRONG_ERROR, type TwoFactorCredentials, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';

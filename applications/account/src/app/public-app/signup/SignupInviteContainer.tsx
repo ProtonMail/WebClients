@@ -5,9 +5,9 @@ import { useParams } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { checkInvitation } from '@proton/shared/lib/api/invites';
 import type { CLIENT_TYPES } from '@proton/shared/lib/constants';

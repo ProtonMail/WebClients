@@ -18,6 +18,7 @@ import {
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { useSubscriptionForApp } from '@proton/payments-hooks/ui/hooks/useSubscriptionForApp';
 import { CYCLE, FREE_SUBSCRIPTION, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { getPricePerCycle } from '@proton/payments/core/price-helpers';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import {
@@ -50,7 +51,6 @@ import Loader from '../../../components/loader/Loader';
 import DriveLogo from '../../../components/logo/DriveLogo';
 import MailLogo from '../../../components/logo/MailLogo';
 import PassLogo from '../../../components/logo/PassLogo';
-import { getSimplePriceString } from '../../../components/price/helper';
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
 import { getTelemetryUserTier } from '../../../helpers/getTelemetryUserTier';
 import useDashboardPaymentFlow from '../../../hooks/useDashboardPaymentFlow';

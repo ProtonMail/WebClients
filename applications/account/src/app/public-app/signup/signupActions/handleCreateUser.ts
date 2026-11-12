@@ -1,10 +1,10 @@
-import type { HumanVerificationResult } from '@proton/components/containers/api/humanVerification/interface';
 import { isTokenPayment } from '@proton/payments/core/type-guards';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryCreateUser, queryCreateUserExternal } from '@proton/shared/lib/api/user';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { mergeHeaders, withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { HumanVerificationResult } from '@proton/shared/lib/interfaces/HumanVerification';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { srpVerify } from '@proton/shared/lib/srp';
 

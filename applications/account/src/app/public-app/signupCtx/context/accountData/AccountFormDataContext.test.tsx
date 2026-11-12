@@ -1,13 +1,13 @@
 import { act, fireEvent, render, renderHook, screen } from '@testing-library/react';
 
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 
 import { SignupType } from '../../../signup/interfaces';
 import { AccountFormDataContextProvider, useAccountFormDataContext } from './AccountFormDataContext';
 import { defaultAsyncValidationState } from './asyncValidator/createAsyncValidator';
 import { validateEmailAvailability, validateUsernameAvailability } from './asyncValidator/validateEmail';
 
-jest.mock('@proton/components/hooks/useSilentApi');
+jest.mock('@proton/app-context/useSilentApi');
 jest.mock('./asyncValidator/validateEmail');
 jest.mock('../../../signup/PasswordStrengthIndicatorSpotlight', () => ({
     usePasswordStrengthIndicatorSpotlight: () => ({ supported: false, spotlight: false }),

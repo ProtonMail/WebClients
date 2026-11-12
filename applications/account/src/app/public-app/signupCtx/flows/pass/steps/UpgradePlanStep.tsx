@@ -4,13 +4,13 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getPassCliText } from '@proton/components/containers/payments/features/pass';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { PlanIDs } from '@proton/payments/core/interface';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { continueToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 

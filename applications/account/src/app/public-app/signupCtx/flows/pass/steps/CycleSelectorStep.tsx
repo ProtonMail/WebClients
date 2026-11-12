@@ -3,11 +3,11 @@ import type { FC, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import type { MaybeNull } from '@proton/pass/types/utils';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 

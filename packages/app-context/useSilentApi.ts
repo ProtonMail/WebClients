@@ -1,8 +1,9 @@
 import { useMemo } from 'react';
 
-import { useApi } from '@proton/app-context/useApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
+
+import { useApi } from './useApi';
 
 export const useSilentApi = (): Api => {
     const api = useApi();

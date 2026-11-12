@@ -9,6 +9,7 @@ import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/Dashboa
 import { usePopper } from '@proton/atoms/Popper/usePopper';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { getPricePerCycle } from '@proton/payments/core/price-helpers';
 import { getNormalCycleFromCustomCycle } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
@@ -35,7 +36,6 @@ import MailLogo from '../../../../../components/logo/MailLogo';
 import PassLogo from '../../../../../components/logo/PassLogo';
 import VpnLogo from '../../../../../components/logo/VpnLogo';
 import Price from '../../../../../components/price/Price';
-import { getSimplePriceString } from '../../../../../components/price/helper';
 import getBoldFormattedText from '../../../../../helpers/getBoldFormattedText';
 import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import { getStorageFeature, getSyncAndBackupFeature, getVersionHistory } from '../../../features/drive';

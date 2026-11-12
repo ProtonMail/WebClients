@@ -1,9 +1,6 @@
-import { CurrencySymbols } from '@proton/payments/core/constants';
-import {
-    getCurrencyFormattingConfig,
-    getCurrencyFormattingConfigWithoutFallback,
-} from '@proton/payments/core/currencies';
-import type { Currency } from '@proton/payments/core/interface';
+import { CurrencySymbols } from './constants';
+import { getCurrencyFormattingConfig, getCurrencyFormattingConfigWithoutFallback } from './currencies';
+import type { Currency } from './interface';
 
 /**
  * Make amount readable

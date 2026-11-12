@@ -6,11 +6,11 @@ import { useConfig } from '@proton/app-context/useConfig';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { CYCLE } from '@proton/payments/core/constants';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { formatIntlPercent } from '@proton/shared/lib/i18n/formatIntlPercent';
 
 import ProtonLogo from '../../../../components/logo/ProtonLogo';
-import { getSimplePriceString } from '../../../../components/price/helper';
 import { getOfferProduct } from '../../helpers/getOfferProduct';
 import type { OfferLayoutProps } from '../../interface';
 import OfferDisableButton from '../shared/OfferDisableButton';

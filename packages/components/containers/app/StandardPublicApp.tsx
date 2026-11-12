@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import * as bootstrap from '@proton/account/bootstrap';
+import { wrapUnloadError } from '@proton/account/bootstrap/errorRefresh';
 import { useConfig } from '@proton/app-context/useConfig';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
@@ -11,7 +12,6 @@ import ModalsChildren from '../modals/Children';
 import NotificationsChildren from '../notifications/Children';
 import ForceReload from './ForceReload';
 import StandardLoadErrorPage from './StandardLoadErrorPage';
-import { wrapUnloadError } from './errorRefresh';
 
 interface Props {
     locales?: TtagLocaleMap;

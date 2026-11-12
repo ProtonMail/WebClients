@@ -8,7 +8,6 @@ import DropdownActions from '@proton/components/components/dropdown/DropdownActi
 import Info from '@proton/components/components/link/Info';
 import Pagination from '@proton/components/components/pagination/Pagination';
 import usePaginationAsync from '@proton/components/components/pagination/usePaginationAsync';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
@@ -23,6 +22,7 @@ import IllustrationPlaceholder from '@proton/components/containers/illustration/
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { IcFileLines } from '@proton/icons/icons/IcFileLines';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import {
     type MspCsvReportType,
     getMspBillingPeriods,

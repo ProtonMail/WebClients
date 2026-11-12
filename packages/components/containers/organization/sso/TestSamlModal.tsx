@@ -3,6 +3,7 @@ import { type ReactNode, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useConfig } from '@proton/app-context/useConfig';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { auth, createSession, getInfo, revoke } from '@proton/shared/lib/api/auth';
@@ -31,7 +32,6 @@ import { InputField as InputFieldTwo } from '../../../components/v2/field/InputF
 import useFormErrors from '../../../components/v2/useFormErrors';
 import getBoldFormattedText from '../../../helpers/getBoldFormattedText';
 import useErrorHandler from '../../../hooks/useErrorHandler';
-import { useSilentApi } from '../../../hooks/useSilentApi';
 import successSvg from './cloud-lock-check.svg';
 import errorSvg from './cloud-lock-cross.svg';
 

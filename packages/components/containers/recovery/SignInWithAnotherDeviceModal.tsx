@@ -6,6 +6,7 @@ import { deserializeQrCodePayload } from '@proton/account/signInWithAnotherDevic
 import { signInWithAnotherDevicePush } from '@proton/account/signInWithAnotherDevice/signInWithAnotherDevicePush';
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
 import { IcLightbulb } from '@proton/icons/icons/IcLightbulb';
@@ -24,7 +25,6 @@ import useFormErrors from '../../components/v2/useFormErrors';
 import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 import useAuthentication from '../../hooks/useAuthentication';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import { useSilentApi } from '../../hooks/useSilentApi';
 
 interface Props extends ModalProps<'form'> {}
 

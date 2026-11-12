@@ -1,7 +1,3 @@
-import type {
-    VerificationDataResult,
-    VerificationTokenResult,
-} from '@proton/components/containers/api/humanVerification/interface';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getHumanVerificationData } from '@proton/shared/lib/api/helpers/humanVerification';
 import {
@@ -13,6 +9,7 @@ import { postVerifyEmail, postVerifyPhone } from '@proton/shared/lib/api/verify'
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
+import type { VerificationDataResult, VerificationTokenResult } from '@proton/shared/lib/interfaces/HumanVerification';
 
 export type VerificationMethod = 'email' | 'phone';
 

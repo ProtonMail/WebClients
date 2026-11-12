@@ -11,6 +11,7 @@ import {
 } from '@proton/account/organizationKey/actions';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
@@ -28,7 +29,6 @@ import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
 import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import { useSilentApi } from '../../hooks/useSilentApi';
 
 interface Props extends Omit<ModalProps, 'buttons' | 'title' | 'children'> {
     onResetKeys?: () => void;

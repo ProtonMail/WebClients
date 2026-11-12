@@ -11,7 +11,6 @@ import { usePrefetchGenerateRecoveryKit } from '@proton/account/recovery/recover
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -26,6 +25,7 @@ import { DEFAULT_CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/cor
 import type { Currency, PaymentMethodFlow } from '@proton/payments/core/interface';
 import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { getHas2025OfferCoupon, getPlanIDs } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap } from '@proton/payments/core/subscription/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';

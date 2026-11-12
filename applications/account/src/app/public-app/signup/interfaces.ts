@@ -1,6 +1,5 @@
 import type { DeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
 import type { ChallengeResult } from '@proton/challenge/interface';
-import type { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type {
@@ -19,7 +18,7 @@ import type { ResumedSessionResult } from '@proton/shared/lib/authentication/per
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
-import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces/HumanVerification';
+import type { HumanVerificationMethodType, VerificationModel } from '@proton/shared/lib/interfaces/HumanVerification';
 import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import type { User } from '@proton/shared/lib/interfaces/User';
