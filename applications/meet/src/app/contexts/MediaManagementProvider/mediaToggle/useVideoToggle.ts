@@ -16,7 +16,7 @@ import {
     selectUserCameraIntent,
 } from '@proton/meet/store/slices/deviceManagementSlice/selectors';
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { isAndroid, isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { useStableCallback } from '../../../hooks/useStableCallback';
 import type { SwitchActiveDevice, ToggleVideoType } from '../../../types';
@@ -24,6 +24,10 @@ import { getCurrentCameraTrack } from '../../../utils/cameraTrack';
 import { isDummyVideoTrack, markVideoTrackDeviceBacked } from '../../../utils/dummyVideoTrack';
 import { enableDeviceTrack } from '../../../utils/enableDeviceTrack';
 import { ERRORS_SIGNALING_POTENTIAL_STALE_DEVICE_STATE } from './constants';
+
+// Firefox crop-and-scales the camera to the requested size by default
+const getNativeCameraSizeOptions = (): { resizeMode?: 'none' } =>
+    isFirefox() && isAndroid() ? { resizeMode: 'none' } : {};
 
 interface UseVideoToggleParams {
     switchActiveDevice: SwitchActiveDevice;
@@ -76,9 +80,11 @@ export const useVideoToggle = ({ switchActiveDevice, reapplyBackgroundEffect }: 
                 customFacingMode || isMobile()
                     ? {
                           facingMode: customFacingMode ?? facingMode,
+                          ...getNativeCameraSizeOptions(),
                       }
                     : {
                           deviceId: { exact: deviceId },
+                          ...getNativeCameraSizeOptions(),
                       };
 
             const currentVideoTrack = getCurrentCameraTrack(room);
@@ -129,7 +135,10 @@ export const useVideoToggle = ({ switchActiveDevice, reapplyBackgroundEffect }: 
 
                 // We need to restart the video track on mobile to make sure the facing mode is applied
                 if (customFacingMode) {
-                    await getCurrentCameraTrack(room)?.restartTrack({ facingMode: customFacingMode });
+                    await getCurrentCameraTrack(room)?.restartTrack({
+                        facingMode: customFacingMode,
+                        ...getNativeCameraSizeOptions(),
+                    });
                 }
 
                 toggleResult = true;
