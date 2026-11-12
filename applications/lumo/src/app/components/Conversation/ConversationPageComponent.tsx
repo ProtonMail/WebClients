@@ -279,10 +279,11 @@ const ConversationPageComponentInner = () => {
 };
 
 export const ConversationPageComponent = () => {
+    const { conversationId } = useParams<RouteParams>();
     return (
         <WebSearchProvider>
             <ArtifactCreationProvider>
-                <ModelTierProvider>
+                <ModelTierProvider conversationId={conversationId}>
                     <ConversationPageComponentInner />
                 </ModelTierProvider>
             </ArtifactCreationProvider>

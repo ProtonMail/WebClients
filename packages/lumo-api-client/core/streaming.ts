@@ -1,4 +1,4 @@
-import { CONTEXT_LENGTH_EXCEEDED_CODE } from '../types-api';
+import { CONTEXT_LENGTH_EXCEEDED_CODE, isAnswerNowPrompt } from '../types-api';
 import type { LumoStreamUsage } from '../types-api';
 import { mapStreamErrorCode } from './generation-terminal';
 import type {
@@ -185,13 +185,24 @@ export class StreamProcessor {
 
         try {
             const item = JSON.parse(payload) as
-                OpenAiChunk | GenerationResponseMessage | LumoImageDataChunk | ChatToolCallChunk | ChatToolResultChunk;
+                | OpenAiChunk
+                | GenerationResponseMessage
+                | LumoImageDataChunk
+                | ChatToolCallChunk
+                | ChatToolResultChunk;
 
             if (isGenerationResponseMessage(item)) {
                 return [this.applyDefaultTarget(item)];
             }
 
+            if (isAnswerNowPrompt(item)) {
+                return [{ type: 'answer_now_prompt', prompt: item }];
+            }
+
             if ('object' in item) {
+                if (['lumo.answer_now', 'lumo.max_wait'].includes(String(item.object))) {
+                    return [];
+                }
                 if (item.object === 'lumo.image_data') {
                     return [this.processLumoImageDataChunk(item)];
                 }

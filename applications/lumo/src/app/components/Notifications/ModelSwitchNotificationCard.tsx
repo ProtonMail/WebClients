@@ -7,6 +7,7 @@ import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useMaxModelAvailability } from '../../hooks/useMaxModelAvailability';
 import { useTierErrors } from '../../hooks/useTierErrors';
 import { getSelectedModelTier, useModelTier } from '../../providers/ModelTierProvider';
+import { useLumoSelector } from '../../redux/hooks';
 import {
     isModelSwitchSuggestionEligible,
     shouldShowLimitUpsell,
@@ -15,12 +16,12 @@ import {
     useRemainingLimits,
 } from '../../services/usageLimitsStore';
 import type { Message } from '../../types';
-import { getModelDisplayName } from '../../util/modelTierDisplay';
 import {
     type SuggestedModel,
     hasDismissedModelSwitchNotification,
     markModelSwitchNotificationDismissed,
 } from '../../util/modelSwitchNotificationStorage';
+import { getModelDisplayName } from '../../util/modelTierDisplay';
 import { LumoIcon } from '../LumoIcon/LumoIcon';
 import { ComposerNotificationCard } from './ComposerNotificationCard';
 
@@ -37,21 +38,21 @@ export const ModelSwitchNotificationCard = ({
 }: ModelSwitchNotificationCardProps) => {
     const { isSmallScreen } = useIsLumoSmallScreen();
     const { modelTier, setModelTier } = useModelTier();
+    const conversationId = messageChain[0]?.conversationId;
+    const answerNowUsed = useLumoSelector((state) => {
+        return conversationId !== undefined && state.conversations[conversationId]?.answerNowUsed === true;
+    });
     const { hasLumoPlus } = useLumoPlan();
     const { isMaxAvailableByFlag } = useMaxModelAvailability();
     const { hasTierErrors } = useTierErrors();
     const remainingLimits = useRemainingLimits();
     const exhaustedLimitNotice = useExhaustedLimitNotice();
     const [dismissedModels, setDismissedModels] = useState<Set<SuggestedModel>>(
-        () =>
-            new Set(
-                (['lumo-lite', 'apertus-15'] as SuggestedModel[]).filter(hasDismissedModelSwitchNotification)
-            )
+        () => new Set((['lumo-lite', 'apertus-15'] as SuggestedModel[]).filter(hasDismissedModelSwitchNotification))
     );
 
     const selectedModelTier = getSelectedModelTier(modelTier);
-    const suggestedModel: SuggestedModel =
-        selectedModelTier === 'apertus-15' ? 'apertus-15' : 'lumo-lite';
+    const suggestedModel: SuggestedModel = selectedModelTier === 'apertus-15' ? 'apertus-15' : 'lumo-lite';
     const limitUpsellVisible =
         exhaustedLimitNotice !== null &&
         shouldShowLimitUpsell(remainingLimits, hasTierErrors, hasLumoPlus, exhaustedLimitNotice.modelTier);
@@ -81,7 +82,7 @@ export const ModelSwitchNotificationCard = ({
     }, [persistDismissal, setModelTier]);
 
     // Stay mounted while eligible so dismiss state survives isGenerating toggles.
-    if (isSmallScreen || !isEligible) {
+    if (isSmallScreen || !isEligible || answerNowUsed) {
         return null;
     }
 

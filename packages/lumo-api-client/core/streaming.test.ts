@@ -368,3 +368,24 @@ describe('StreamProcessor', () => {
         ]);
     });
 });
+
+describe('Answer Now prompt', () => {
+    const status = {
+        object: 'lumo.answer_now',
+        job_id: 'job-1',
+        wait: 4000,
+    };
+    it('forwards queue state without producing tokens or completing the stream', () => {
+        const processor = new StreamProcessor();
+        expect(processor.processChunk(`data: ${JSON.stringify(status)}\n\n`)).toEqual([
+            { type: 'answer_now_prompt', prompt: status },
+        ]);
+        expect(processor.processChunk('data: {"choices":[{"index":0,"delta":{"content":"Hello"}}]}\n\n')).toEqual([
+            { type: 'token_data', target: 'message', count: 0, content: 'Hello' },
+        ]);
+    });
+    it('rejects malformed queue status', () => {
+        const processor = new StreamProcessor();
+        expect(processor.processChunk(`data: ${JSON.stringify({ ...status, wait: -1 })}\n\n`)).toEqual([]);
+    });
+});

@@ -5,6 +5,7 @@ import type { SiblingInfo } from '../../../hooks/usePreferredSiblings';
 import type { Attachment, ConversationId, Message } from '../../../types';
 import { ScrollToBottomButton } from './ScrollToBottomButton/ScrollToBottomButton';
 import { prepareSelectedContentForCopy } from './clipboard';
+import { AnswerNowButtonContainerContext } from './message/AssistantMessage/AnswerNowNotice';
 import { MessageComponent } from './message/MessageComponent';
 
 export type MessageChainComponentProps = {
@@ -370,6 +371,7 @@ export const MessageChainComponent = ({
     afterMessages,
 }: MessageChainComponentProps) => {
     const newMessageRef = useRef<HTMLDivElement | null>(null);
+    const [answerNowButtonContainer, setAnswerNowButtonContainer] = useState<HTMLDivElement | null>(null);
 
     useEffect(() => {
         const container = messageChainRef.current;
@@ -444,9 +446,10 @@ export const MessageChainComponent = ({
     }, [isGenerating, messageChainRef]);
 
     const showScrollIndicator = userHasScrolledUp || hasNewContentBelow;
+    const showAnswerNow = Boolean(isGenerating && messageChain[messageChain.length - 1]?.answerNowPrompt);
 
     return (
-        <>
+        <AnswerNowButtonContainerContext.Provider value={answerNowButtonContainer}>
             <div
                 ref={messageChainRef}
                 className={`lumo-message-chain h-full overflow-y-auto px-6 md:px-0 flex-1 reset4print${className ? ` ${className}` : ''}`}
@@ -479,11 +482,12 @@ export const MessageChainComponent = ({
 
             <ScrollToBottomButton
                 onClick={resumeAutoScroll}
-                show={showScrollIndicator}
+                show={showScrollIndicator && !showAnswerNow}
                 composerContainerRef={composerContainerRef}
+                floatingContent={<div ref={setAnswerNowButtonContainer} />}
             />
 
             {afterMessages}
-        </>
+        </AnswerNowButtonContainerContext.Provider>
     );
 };

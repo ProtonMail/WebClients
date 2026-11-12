@@ -50,6 +50,7 @@ import { AskUserQuestionsToolMessage } from '../askUserQuestions/AskUserQuestion
 import { CreateScheduleToolMessage } from '../createSchedule/CreateScheduleToolMessage';
 import { SourcesButton } from '../toolCall/SourcesBlock';
 import { extractSearchResults, parseToolCallBlock } from '../toolCall/toolCallUtils';
+import { AnswerNowNotice } from './AnswerNowNotice';
 import { SuggestedQuestions } from './SuggestedQuestions';
 import { RenderBlocks } from './toolCallTimeline/RenderBlocks';
 
@@ -73,6 +74,7 @@ interface AssistantActionToolbarProps {
     isLastMessage: boolean;
     isGenerating: boolean;
     toolCallName?: ToolCallName | 'create_artifact';
+    isWaitingForMax: boolean;
 }
 
 const AssistantActionToolbar = ({
@@ -90,6 +92,7 @@ const AssistantActionToolbar = ({
     isLastMessage,
     isGenerating,
     toolCallName,
+    isWaitingForMax,
 }: AssistantActionToolbarProps) => {
     const { isBlocked: isChatLimitBlocked } = useChatLimitGate();
     const isGuest = useIsGuest();
@@ -105,7 +108,12 @@ const AssistantActionToolbar = ({
 
     return (
         <div className="flex flex-row flex-nowrap">
-            {isLastMessage && <LumoAvatar isGenerating={isGenerating} toolCallName={toolCallName} />}
+            {isLastMessage && (
+                <LumoAvatar
+                    isGenerating={isGenerating && !isWaitingForMax}
+                    toolCallName={isWaitingForMax ? undefined : toolCallName}
+                />
+            )}
             <div
                 className={clsx([
                     'action-toolbar no-print text-sm w-full',
@@ -114,7 +122,7 @@ const AssistantActionToolbar = ({
                 ])}
             >
                 <>
-                    {!isGuest && (
+                    {!isGuest && !isWaitingForMax && (
                         <div className="flex flex-row flex-nowrap gap-3">
                             <AssistantFeedbackModal
                                 disabled={!isFinishedGenerating}
@@ -126,13 +134,17 @@ const AssistantActionToolbar = ({
                     )}
                     {/* <div className="flex-1"></div> */}
                     <div className="flex flex-row flex-nowrap gap-3">
-                        <SiblingSelector siblingInfo={siblingInfo} />
-                        {results && <SourcesButton results={results} onClick={onToggleMessageSource} />}
-                        <ReferenceFilesButton
-                            messageChain={messageChain}
-                            message={message}
-                            onClick={onToggleFilesManagement}
-                        />
+                        {!isWaitingForMax && (
+                            <>
+                                <SiblingSelector siblingInfo={siblingInfo} />
+                                {results && <SourcesButton results={results} onClick={onToggleMessageSource} />}
+                                <ReferenceFilesButton
+                                    messageChain={messageChain}
+                                    message={message}
+                                    onClick={onToggleFilesManagement}
+                                />
+                            </>
+                        )}
                         <LumoCopyButton
                             textToCopy={getMessageContent(message)}
                             containerRef={markdownContainerRef}
@@ -418,6 +430,28 @@ const AssistantMessage = ({
     const shouldShowNextPromptSuggestions =
         showNextPromptSuggestionEnabled && isLastMessage && isFinishedGenerating && !generationFailed;
 
+    const isWaitingForMax = isGenerating && message.answerNowPrompt !== undefined;
+    const actionToolbar = (
+        <AssistantActionToolbar
+            message={message}
+            isFinishedGenerating={isFinishedGenerating}
+            handleRegenerate={handleRegenerate}
+            siblingInfo={siblingInfo}
+            generationFailed={generationFailed}
+            results={searchResults}
+            onToggleMessageSource={onToggleMessageSource}
+            messageChain={messageChain}
+            onToggleFilesManagement={(filterMessage) => handleOpenFiles(filterMessage)}
+            markdownContainerRef={markdownContainerRef}
+            onRetryPanelToggle={onRetryPanelToggle}
+            retryButtonRef={retryButtonRef}
+            isLastMessage={isLastMessage}
+            isGenerating={isGenerating}
+            toolCallName={lastToolCallName}
+            isWaitingForMax={isWaitingForMax}
+        />
+    );
+
     return (
         <>
             <div className="gap-2 relative w-full">
@@ -429,6 +463,12 @@ const AssistantMessage = ({
                         }}
                     >
                         <div className="w-full flex *:min-size-auto flex-nowrap items-start flex-column gap-2">
+                            {isLastMessage && (
+                                <AnswerNowNotice
+                                    prompt={isWaitingForMax ? message.answerNowPrompt : undefined}
+                                    conversationId={message.conversationId}
+                                />
+                            )}
                             <DebugInfo
                                 isLoading={isLoading || false}
                                 hasToolCall={hasToolCall}
@@ -440,6 +480,8 @@ const AssistantMessage = ({
                                 <div className="w-full pt-1" style={{ minHeight: '2em' }}>
                                     <div className="rectangle-skeleton keep-motion"></div>
                                 </div>
+                            ) : isWaitingForMax && !(hasContent || message.reasoning || hasToolCall) ? (
+                                <div className="w-full">{actionToolbar}</div>
                             ) : (
                                 <div className="w-full" style={{ minHeight: '2em' }}>
                                     {/* Always show RenderBlocks if there's reasoning, content, or tool calls */}
@@ -481,23 +523,7 @@ const AssistantMessage = ({
                                         <EmptyMessage />
                                     )}
 
-                                    <AssistantActionToolbar
-                                        message={message}
-                                        isFinishedGenerating={isFinishedGenerating}
-                                        handleRegenerate={handleRegenerate}
-                                        siblingInfo={siblingInfo}
-                                        generationFailed={generationFailed}
-                                        results={searchResults}
-                                        onToggleMessageSource={onToggleMessageSource}
-                                        messageChain={messageChain}
-                                        onToggleFilesManagement={(filterMessage) => handleOpenFiles(filterMessage)}
-                                        markdownContainerRef={markdownContainerRef}
-                                        onRetryPanelToggle={onRetryPanelToggle}
-                                        retryButtonRef={retryButtonRef}
-                                        isLastMessage={isLastMessage}
-                                        isGenerating={isGenerating}
-                                        toolCallName={lastToolCallName}
-                                    />
+                                    {actionToolbar}
 
                                     {shouldShowNextPromptSuggestions && message.suggestedQuestions && (
                                         <SuggestedQuestions questions={message.suggestedQuestions} />

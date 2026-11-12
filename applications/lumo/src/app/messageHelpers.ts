@@ -447,5 +447,11 @@ function messageAttachmentsEqual(a: Message, b: Message): boolean {
  * Use this for component memoization.
  */
 export function messagesEqualForRendering(a: Message, b: Message): boolean {
-    return a.id === b.id && messageContentEqual(a, b) && messageStateEqual(a, b) && messageAttachmentsEqual(a, b);
+    return (
+        a.answerNowPrompt === b.answerNowPrompt &&
+        a.id === b.id &&
+        messageContentEqual(a, b) &&
+        messageStateEqual(a, b) &&
+        messageAttachmentsEqual(a, b)
+    );
 }

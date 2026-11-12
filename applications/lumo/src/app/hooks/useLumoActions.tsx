@@ -139,6 +139,7 @@ export const useLumoActions = ({
     const { isBlocked: isChatLimitBlocked, ensureTierError } = useChatLimitGate();
     const { isAtLimit: isMessageLimitReached } = useMessagesLimitStatus(conversationId);
     const {
+        answerNow: ffAnswerNow,
         smoothRendering: ffSmoothRendering,
         externalTools: ffExternalTools,
         imageTools: ffImageTools,
@@ -338,6 +339,7 @@ export const useLumoActions = ({
                     enableExternalTools,
                     enableImageTools,
                     enableReasoning: isThinkingEnabled,
+                    enableAnswerNow: ffAnswerNow,
                     modelTier,
                     navigateCallback,
                     enableSmoothing,
@@ -441,6 +443,7 @@ export const useLumoActions = ({
                     updateSibling: preferSibling,
                     enableExternalTools: isWebSearchButtonToggled && ffExternalTools,
                     enableReasoning: isThinkingEnabled,
+                    enableAnswerNow: ffAnswerNow,
                     modelTier,
                     navigateCallback,
                     isGhostMode,
@@ -517,6 +520,7 @@ export const useLumoActions = ({
                     enableExternalTools: isWebSearchButtonToggled && ffExternalTools,
                     enableImageTools: ffImageTools,
                     enableReasoning: isThinkingEnabled,
+                    enableAnswerNow: ffAnswerNow,
                     modelTier,
                     navigateCallback,
                     enableSmoothing: ffSmoothRendering,
@@ -623,6 +627,7 @@ export const useLumoActions = ({
                     enableExternalTools,
                     enableImageTools,
                     enableReasoning: isThinkingEnabled,
+                    enableAnswerNow: ffAnswerNow,
                     modelTier,
                     navigateCallback,
                     isGhostMode,

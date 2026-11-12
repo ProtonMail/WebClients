@@ -35,6 +35,8 @@ export async function callChatEndpoint(
         signal,
         output: 'stream',
         silence: true,
+        // Answer Now commits headers immediately; this timer ends at headers and
+        // does not limit the lifetime of its queued stream.
         // The scheduler withholds response headers until the LLM accepts the job (or it fails
         // pre-stream). While the job waits for capacity, no bytes are sent, so the default 30s
         // time-to-headers timeout races the scheduler's own 30s queue-wait expiry. Since the

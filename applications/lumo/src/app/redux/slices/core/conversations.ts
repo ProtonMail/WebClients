@@ -2,6 +2,7 @@ import { createAction, createReducer, prepareAutoBatched } from '@reduxjs/toolki
 import isEqual from 'lodash/isEqual';
 import { v4 as uuidv4 } from 'uuid';
 
+import type { ModelTier } from '../../../providers/modelTierConstants';
 import type { Priority } from '../../../remote/scheduler';
 import type { GetConversationRemote, IdMapEntry, RemoteConversation } from '../../../remote/types';
 import type {
@@ -13,6 +14,15 @@ import type {
     SpaceId,
     UpdateConversationStatusAction,
 } from '../../../types';
+import type { LumoDispatch, LumoState } from '../../store';
+
+interface SetConversationModelTierAction {
+    id: ConversationId;
+    modelTier: ModelTier;
+    answerNowUsed?: true;
+}
+
+const setConversationModelTier = createAction<SetConversationModelTierAction>('lumo/conversation/setModelTier');
 
 export type PushConversationRequest = {
     id: ConversationId;
@@ -172,6 +182,15 @@ const conversationsReducer = createReducer<ConversationMap>(EMPTY_CONVERSATION_M
                 conversation.agentId = agentId;
             }
         })
+        .addCase(setConversationModelTier, (state, { payload }) => {
+            const conversation = state[payload.id];
+            if (conversation) {
+                conversation.modelTier = payload.modelTier;
+                if (payload.answerNowUsed) {
+                    conversation.answerNowUsed = true;
+                }
+            }
+        })
         .addCase(setConversationArtifactCreation, (state, action) => {
             console.log('Action triggered: setConversationArtifactCreation', action.payload);
             const { id, artifactCreation } = action.payload;
@@ -258,6 +277,19 @@ const conversationsReducer = createReducer<ConversationMap>(EMPTY_CONVERSATION_M
 
 export function newConversationId(): ConversationId {
     return uuidv4();
+}
+
+export function saveConversationModelTier(payload: SetConversationModelTierAction) {
+    return (dispatch: LumoDispatch, getState: () => LumoState): void => {
+        const conversation = getState().conversations[payload.id];
+        if (!conversation) {
+            return;
+        }
+        dispatch(setConversationModelTier(payload));
+        if (!conversation.ghost) {
+            dispatch(pushConversationRequest({ id: payload.id }));
+        }
+    };
 }
 
 export default conversationsReducer;
