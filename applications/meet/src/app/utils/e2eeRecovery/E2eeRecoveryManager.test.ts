@@ -8,7 +8,7 @@ vi.mock('@proton/shared/lib/helpers/dom', () => ({
     isDocumentVisible: () => true,
 }));
 vi.mock('@proton/shared/lib/helpers/browser', () => ({
-    isSafari: () => false,
+    isWebKit: () => false,
 }));
 
 type EventCallback = (...args: unknown[]) => void;
