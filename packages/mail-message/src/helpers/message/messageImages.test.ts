@@ -19,10 +19,6 @@ describe('removeProxyURLAttributes', () => {
                        <video proton-poster='${originalImageURL}-3' poster='${imageURL}-3'>
                             <source src="" type="video/mp4">
                        </video>
-
-                       <svg width="90" height="90">
-                           <image proton-xlink:href='${originalImageURL}-4' xlink:href='${imageURL}-4'/>
-                       </svg>
                   </div>`;
 
     it('should remove all proton urls from the content', () => {
@@ -39,10 +35,6 @@ describe('removeProxyURLAttributes', () => {
                        <video poster="${originalImageURL}-3">
                             <source src="" type="video/mp4">
                        </video>
-
-                       <svg width="90" height="90">
-                           <image xlink:href="${originalImageURL}-4"></image>
-                       </svg>
                   </div>`;
 
         const result = removeProxyURLAttributes(content);
@@ -103,10 +95,6 @@ describe('replaceProxyWithOriginalURLAttributes', () => {
                        <video proton-poster='${originalImageURL}-6' poster='${imageURL}-6'>
                             <source src="" type="video/mp4">
                        </video>
-
-                       <svg width="90" height="90">
-                           <image proton-xlink:href='${originalImageURL}-7' xlink:href='${imageURL}-7'/>
-                       </svg>
                   </div>`;
 
     it('should remove proton attributes and use the original URL', () => {
@@ -143,14 +131,18 @@ describe('replaceProxyWithOriginalURLAttributes', () => {
                        <video poster="${originalImageURL}-6">
                             <source src="" type="video/mp4">
                        </video>
-
-                       <svg width="90" height="90">
-                           <image xlink:href="${originalImageURL}-7"></image>
-                       </svg>
                   </div>`;
 
         const result = replaceProxyWithOriginalURLAttributes(message, parseDOMStringToBodyElement(content));
 
         expect(result).toEqual(expected);
+    });
+
+    it('should restore xlink:href, which the sanitizer prefixes but nothing loads', () => {
+        const content = `<img proton-xlink:href="${originalImageURL}">`;
+
+        const result = replaceProxyWithOriginalURLAttributes({} as MessageState, parseDOMStringToBodyElement(content));
+
+        expect(result).toEqual(`<img xlink:href="${originalImageURL}">`);
     });
 });

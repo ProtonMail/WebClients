@@ -133,8 +133,10 @@ describe('Message images', () => {
         const updatedElementSrcset = await findByTestId(iframeRerendered, 'image-srcset');
         expect(updatedElementSrcset.getAttribute('proton-srcset')).toEqual(imageURL);
 
+        // xlink:href is not loaded either: SVG is removed by the sanitizer
         const updatedElementXlinkhref = await findByTestId(iframeRerendered, 'image-xlinkhref');
-        expect(updatedElementXlinkhref.getAttribute('xlink:href')).toEqual(imageURL);
+        expect(updatedElementXlinkhref.getAttribute('proton-xlink:href')).toEqual(imageURL);
+        expect(updatedElementXlinkhref.hasAttribute('xlink:href')).toBe(false);
     });
 
     it('should load correctly all elements other than images with proxy', async () => {
@@ -209,8 +211,10 @@ describe('Message images', () => {
         const updatedElementSrcset = await findByTestId(iframeRerendered, 'image-srcset');
         expect(updatedElementSrcset.getAttribute('proton-srcset')).toEqual(imageURL);
 
+        // xlink:href is not loaded either: SVG is removed by the sanitizer
         const updatedElementXlinkhref = await findByTestId(iframeRerendered, 'image-xlinkhref');
-        expect(updatedElementXlinkhref.getAttribute('xlink:href')).toEqual(forgedURL);
+        expect(updatedElementXlinkhref.getAttribute('proton-xlink:href')).toEqual(imageURL);
+        expect(updatedElementXlinkhref.hasAttribute('xlink:href')).toBe(false);
     });
 
     it('should be able to load direct when proxy failed at loading', async () => {

@@ -9,19 +9,13 @@ import { getAnchor } from './messageImages/getAnchor';
 export { getEmbeddedImages, getRemoteImages, updateImages } from './messageImagesUtils';
 
 const REGEXP_FIXER = (() => {
-    const str = MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD.map((key) => `proton-${key}`).join('|');
+    // `xlink:href` is never loaded, but the sanitizer still prefixes it, so it is restored for sending.
+    const str = [...MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD, 'xlink:href'].map((key) => `proton-${key}`).join('|');
     return `(${str})`;
 })();
 
 export const getRemoteSelector = (hasProtonAttribute = false) => {
-    return MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD.map((name) => {
-        // https://stackoverflow.com/questions/23034283/is-it-possible-to-use-htmls-queryselector-to-select-by-xlink-attribute-in-an
-        if (name === 'xlink:href') {
-            return '[*|href]:not([href])';
-        }
-
-        return `[${hasProtonAttribute ? 'proton-' : ''}${name}]`;
-    }).join(',');
+    return MESSAGE_IMAGE_ATTRIBUTES_TO_LOAD.map((name) => `[${hasProtonAttribute ? 'proton-' : ''}${name}]`).join(',');
 };
 
 export const insertImageAnchor = (id: string, type: 'remote' | 'embedded', match: HTMLElement): string => {
