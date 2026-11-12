@@ -38,8 +38,16 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
     const { handleSubmit } = useProductSelectionSubmit();
     const goToSettings = useSettingsLink();
     const navigate = useNavigate();
-    const { isLoaded, isImporting, isPaused, hasCompletedImport, outcome, importFolderUid, clearOutcome } =
-        useDriveImportStatus();
+    const {
+        isLoaded,
+        isImporting,
+        isPaused,
+        pausedImport,
+        hasCompletedImport,
+        outcome,
+        importFolderUid,
+        clearOutcome,
+    } = useDriveImportStatus();
     const [showPausedModal, setShowPausedModal] = useState(false);
     const hasOngoingImport = isImporting || isPaused;
 
@@ -209,8 +217,10 @@ export const EasySwitchSidebarSection = ({ collapsed }: EasySwitchSidebarSection
                     }
                 />
             )}
-            {isPaused && (outcome === 'paused' || (showPausedModal && !outcome)) && (
+            {pausedImport && (outcome === 'paused' || (showPausedModal && !outcome)) && (
                 <DriveImportPausedStep
+                    importer={pausedImport.importer}
+                    errorCode={pausedImport.activeImporter.errorCode}
                     onClose={() => {
                         setShowPausedModal(false);
                         clearOutcome();
