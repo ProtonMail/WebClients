@@ -3,6 +3,7 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import { handleSdkError } from '@proton/drive/legacy/errorHandling';
 import { getDrive } from '@proton/drive/sdk';
 import useLoading from '@proton/hooks/useLoading';
+import { setLocation } from '@proton/jest-env/setLocation';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
@@ -85,13 +86,7 @@ describe('usePublicBookmark', () => {
 
         jest.mocked(getAppHref).mockReturnValue('/shared-with-me');
 
-        Object.defineProperty(window, 'location', {
-            value: {
-                pathname: `/urls/${mockToken}`,
-                href: mockBookmarkUrl,
-            },
-            writable: true,
-        });
+        setLocation(mockBookmarkUrl);
     });
 
     describe('when user is not logged in', () => {

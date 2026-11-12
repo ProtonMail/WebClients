@@ -11,12 +11,6 @@ const desktopHelpersMock = desktopHelpers as jest.MockedObject<typeof desktopHel
 jest.mock('./mailboxCounter/useMailboxCounter');
 const mockUseMailboxCounter = useMailboxCounter as jest.Mock;
 
-declare const global: {
-    ipcInboxMessageBroker?: any;
-};
-
-const originalWindow = { ...window };
-
 const mockInboxUnread = (unread: number | undefined) => {
     mockUseMailboxCounter.mockReturnValue({
         loading: false,
@@ -32,9 +26,7 @@ describe('useInboxBadgeCount', () => {
     };
 
     beforeEach(() => {
-        // @ts-ignore
-        const windowSpy = jest.spyOn(global, 'window', 'get');
-        windowSpy.mockReturnValue({ ...originalWindow, ipcInboxMessageBroker: ipcInboxMessageBrokerMock });
+        window.ipcInboxMessageBroker = ipcInboxMessageBrokerMock;
     });
 
     afterEach(() => {

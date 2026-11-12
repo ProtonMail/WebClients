@@ -4,6 +4,8 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import { sendErrorReport } from '@proton/drive/legacy/errorHandling';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDriver';
 import { getDrive, useDrive } from '@proton/drive/sdk';
+import { setLocation } from '@proton/jest-env/setLocation';
+import { assignUrl } from '@proton/shared/lib/helpers/location';
 
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { useBookmarksActions } from './useBookmarksActions';
@@ -36,6 +38,8 @@ jest.mock('../../../utils/telemetry', () => ({
     countActionWithTelemetry: jest.fn(),
 }));
 
+jest.mock('@proton/shared/lib/helpers/location');
+
 jest.mock('../../../utils/replaceLocalURL', () => ({
     replaceLocalURL: jest.fn((url) => url),
 }));
@@ -62,14 +66,7 @@ describe('useBookmarksActions', () => {
         jest.mocked(getDrive).mockReturnValue(mockDriveClient);
         jest.mocked(getBusDriver).mockReturnValue(mockEventManager as any);
 
-        Object.defineProperty(window, 'location', {
-            value: {
-                assign: jest.fn(),
-                hostname: 'proton.dev',
-                host: 'proton.dev',
-            },
-            writable: true,
-        });
+        setLocation('https://proton.dev');
     });
 
     afterEach(() => {
@@ -84,7 +81,7 @@ describe('useBookmarksActions', () => {
             await result.current.openBookmark(testUrl);
 
             expect(countActionWithTelemetry).toHaveBeenCalledWith(Actions.OpenPublicLinkFromSharedWithMe);
-            expect(window.location.assign).toHaveBeenCalledWith('https://proton.dev/bookmark?partialPublicView=true');
+            expect(assignUrl).toHaveBeenCalledWith('https://proton.dev/bookmark?partialPublicView=true');
         });
     });
 

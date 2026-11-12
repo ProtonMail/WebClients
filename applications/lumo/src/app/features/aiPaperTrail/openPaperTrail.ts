@@ -1,3 +1,5 @@
+import { assignUrl } from '@proton/shared/lib/helpers/location';
+
 import { LUMO_ROUTES } from '../../entrypoint/lumoRoutes';
 import { setNativeComposerVisibility } from '../../remote/nativeComposerBridgeHelpers';
 
@@ -12,5 +14,5 @@ import { setNativeComposerVisibility } from '../../remote/nativeComposerBridgeHe
  */
 export const openPaperTrail = (): void => {
     setNativeComposerVisibility(false);
-    window.location.assign(LUMO_ROUTES.AI_PAPER_TRAIL);
+    assignUrl(LUMO_ROUTES.AI_PAPER_TRAIL);
 };

@@ -4,6 +4,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { verifyAllWhenMocksCalled, when } from 'jest-when'
 
 import { useApi } from '@proton/app-context/useApi'
+import { setLocation } from '@proton/jest-env/setLocation'
 import { DRIVE_SIGNIN, DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls'
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors'
 import { replaceUrl } from '@proton/shared/lib/helpers/browser'
@@ -34,15 +35,8 @@ const ResizeObserverMock = jest.fn(() => ({
   unobserve: jest.fn(),
 }))
 
-const locationMock = {
-  pathname: '/urls/mockpath',
-  hash: '#mockhash',
-  search: '',
-}
-
 describe('SignupFlowModal', () => {
   const assignMock = jest.fn()
-  const originalWindowLocation = window.location
   const originalResizeObserver = window.ResizeObserver
 
   beforeAll(() => {
@@ -57,10 +51,7 @@ describe('SignupFlowModal', () => {
       value: ResizeObserverMock,
       writable: true,
     })
-    Object.defineProperty(window, 'location', {
-      value: locationMock,
-      writable: true,
-    })
+    setLocation('/urls/mockpath#mockhash')
   })
 
   afterEach(() => {
@@ -73,10 +64,6 @@ describe('SignupFlowModal', () => {
     Object.defineProperty(window, 'ResizeObserver', {
       value: originalResizeObserver,
       writable: true,
-    })
-    Object.defineProperty(window, 'location', {
-      writable: true,
-      value: originalWindowLocation,
     })
   })
 

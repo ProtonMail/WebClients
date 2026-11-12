@@ -22,6 +22,7 @@ import { APPS, DRIVE_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { DRIVE_SIGNIN } from '@proton/shared/lib/drive/urls';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
+import { assignUrl } from '@proton/shared/lib/helpers/location';
 import { getUrlWithReturnUrl } from '@proton/shared/lib/helpers/url';
 
 import usePublicToken from '../../../../legacy/hooks/drive/usePublicToken';
@@ -80,7 +81,7 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
                 url.searchParams.append('email', email);
                 url.searchParams.append('plan', PLANS.FREE);
                 url.searchParams.append('product', 'drive');
-                window.location.assign(
+                assignUrl(
                     getUrlWithReturnUrl(url.toString(), {
                         returnUrl,
                         context: 'private',
@@ -102,7 +103,7 @@ export const SignupFlowModal = ({ customPassword, onClose, ...modalProps }: Prop
                 // This autofill the sign-in email input
                 url.searchParams.append('username', email);
                 url.searchParams.append('product', 'drive');
-                window.location.assign(
+                assignUrl(
                     getUrlWithReturnUrl(url.toString(), {
                         returnUrl,
                         context: 'private',

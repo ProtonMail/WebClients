@@ -1,7 +1,10 @@
+import { reloadWindow } from '@proton/shared/lib/helpers/location';
 import noop from '@proton/utils/noop';
 
 import browser, { clearBrowserMocks } from '../../__mocks__/webextension-polyfill';
 import * as privacy from './privacy';
+
+jest.mock('@proton/shared/lib/helpers/location');
 
 const setBuildTarget = (value: string) => ((global as any).BUILD_TARGET = value);
 
@@ -106,11 +109,6 @@ describe('Privacy', () => {
         /** Keep a reference for tests mocking `undefined`
          * browser.privacy API after granting permission */
         const privacyAPI = browser.privacy;
-        const reload = jest.fn();
-
-        beforeEach(() => {
-            jest.spyOn(window, 'location', 'get').mockImplementation(() => ({ reload }) as unknown as Location);
-        });
 
         afterEach(() => {
             jest.clearAllMocks();
@@ -155,7 +153,7 @@ describe('Privacy', () => {
             const result = await privacy.setBrowserAutofillCapabilities(true, setPending);
 
             expect(result).toBe(false);
-            expect(reload).toHaveBeenCalled();
+            expect(reloadWindow).toHaveBeenCalled();
             expect(setPending).toHaveBeenCalledWith(true);
 
             browser.privacy = privacyAPI;

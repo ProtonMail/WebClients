@@ -1,3 +1,5 @@
+import { setLocation } from '@proton/jest-env/setLocation';
+
 import { LUMO_ROUTES } from '../entrypoint/lumoRoutes';
 import { getLumoScopedStorageKey } from './lumoScopedLocalStorage';
 import {
@@ -13,10 +15,7 @@ const REPORTS_KEY = 'lumo-ai-paper-trail-reports';
 describe('paperTrailLocalSavePreference', () => {
     beforeEach(() => {
         localStorage.clear();
-        Object.defineProperty(window, 'location', {
-            configurable: true,
-            value: { ...window.location, pathname: LUMO_ROUTES.AI_PAPER_TRAIL },
-        });
+        setLocation(LUMO_ROUTES.AI_PAPER_TRAIL);
     });
 
     it('requires opt-in before persisting locally', () => {

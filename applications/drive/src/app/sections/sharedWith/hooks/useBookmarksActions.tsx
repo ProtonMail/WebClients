@@ -7,6 +7,7 @@ import { BusDriverEventName, getBusDriver } from '@proton/drive/modules/busDrive
 import { getDrive, useDrive } from '@proton/drive/sdk';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
+import { assignUrl } from '@proton/shared/lib/helpers/location';
 import { PROTON_LOCAL_DOMAIN } from '@proton/shared/lib/localDev';
 
 import { partialPublicViewKey } from '../../../legacy/hooks/util/usePartialPublicView';
@@ -32,7 +33,7 @@ export const useBookmarksActions = () => {
             urlToOpen.host = window.location.host;
         }
         urlToOpen.searchParams.append(partialPublicViewKey, 'true');
-        window.location.assign(urlToOpen.toString());
+        assignUrl(urlToOpen.toString());
     };
 
     const deleteBookmarksInternal = async (uids: string[]) => {

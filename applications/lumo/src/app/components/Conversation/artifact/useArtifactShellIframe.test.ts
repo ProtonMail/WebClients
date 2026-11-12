@@ -1,17 +1,11 @@
 import { act, renderHook } from '@testing-library/react';
 
+import { setLocation } from '@proton/jest-env/setLocation';
+
 import { getArtifactShellUrl } from './artifactShell';
 import { useArtifactShellIframe } from './useArtifactShellIframe';
 
 const CROSS_ORIGIN_APP = 'https://lumo.proton.dev:4443';
-
-function mockAppOrigin(origin: string): void {
-    Object.defineProperty(window, 'location', {
-        value: new URL(origin),
-        writable: true,
-        configurable: true,
-    });
-}
 
 function createAttachedIframe(): HTMLIFrameElement {
     const iframe = document.createElement('iframe');
@@ -21,11 +15,11 @@ function createAttachedIframe(): HTMLIFrameElement {
 
 describe('useArtifactShellIframe', () => {
     beforeEach(() => {
-        mockAppOrigin(CROSS_ORIGIN_APP);
+        setLocation(CROSS_ORIGIN_APP);
     });
 
     it('reports isCrossOrigin false on same-origin localhost shells', () => {
-        mockAppOrigin('https://localhost:3000');
+        setLocation('https://localhost:3000');
 
         const { result } = renderHook(() => useArtifactShellIframe('<p>hi</p>'));
 
@@ -100,7 +94,7 @@ describe('useArtifactShellIframe', () => {
     });
 
     it('does not postMessage on localhost where the shell is same-origin', () => {
-        mockAppOrigin('https://localhost:3000');
+        setLocation('https://localhost:3000');
 
         const { result } = renderHook(() => useArtifactShellIframe('<p>hi</p>'));
 

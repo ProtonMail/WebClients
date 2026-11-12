@@ -9,6 +9,7 @@ import type { NodeEntity } from '@proton/drive/sdk'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import { APPS } from '@proton/shared/lib/constants'
 import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName'
+import { assignUrl } from '@proton/shared/lib/helpers/location'
 import { getNewWindow } from '@proton/shared/lib/helpers/window'
 import { SeedError } from '@proton-docs/realtime-sdk'
 import { c } from 'ttag'
@@ -254,7 +255,7 @@ export function useDocumentFileActions({
       .then((path) => newWindow.handle.location.assign(getAppHref(path, APPS.PROTONDRIVE, getLocalID())))
   }
 
-  const goToDrive = () => window.location.assign(getAppHref('/', APPS.PROTONDRIVE, getLocalID()))
+  const goToDrive = () => assignUrl(getAppHref('/', APPS.PROTONDRIVE, getLocalID()))
 
   return {
     trashState: trash.state,

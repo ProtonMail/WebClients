@@ -1,5 +1,7 @@
 import { fireEvent } from '@testing-library/dom';
 
+import { setLocation } from '@proton/jest-env/setLocation';
+
 import type { AuthorizedPaymentIntent, BinData, DirectDebitCustomer, PaymentIntent } from '../lib/types';
 import { resetChargebee } from './chargebee';
 import { FALLBACK_EMAIL, formatCustomer, initialize, toReportableError } from './chargebee-entry';
@@ -9,11 +11,7 @@ import { getMessageBus } from './message-bus';
 
 jest.mock('./ui-utils');
 
-Object.defineProperty(window, 'location', {
-    value: new URL('https://account-api.proton.me'),
-    writable: true,
-    configurable: true,
-});
+setLocation('https://account-api.proton.me');
 
 // jsdom does not dispatch `message` events for `window.parent.postMessage`, so route
 // the parent-targeted messages back to the iframe window to observe responses. The

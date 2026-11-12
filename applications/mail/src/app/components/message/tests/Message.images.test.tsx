@@ -1,8 +1,8 @@
 import { findByTestId, fireEvent, screen } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import { mockWindowLocation, resetWindowLocation } from '@proton/components/helpers/url.test.helpers';
 import { IcFileSlash } from '@proton/icons/icons/IcFileSlash';
+import { setLocation } from '@proton/jest-env/setLocation';
 import { parseDOMStringToBodyElement } from '@proton/mail-message/helpers/parseDOMStringToBodyElement';
 import type { MessageState } from '@proton/mail-message/store/messages/messagesTypes';
 import { PROXY_IMG_URL } from '@proton/shared/lib/api/images';
@@ -59,11 +59,11 @@ const windowHostname = 'https://mail.proton.pink';
 
 describe('Message images', () => {
     beforeEach(() => {
-        mockWindowLocation(windowHostname);
+        setLocation(windowHostname);
     });
 
     afterEach(() => {
-        resetWindowLocation();
+        setLocation('http://localhost/');
     });
 
     afterEach(clearAll);

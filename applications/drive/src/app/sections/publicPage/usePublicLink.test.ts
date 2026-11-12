@@ -4,6 +4,7 @@ import { useNotifications } from '@proton/app-context/useNotifications';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import { getNodeEntity } from '@proton/drive/legacy/sdkUtils/getNodeEntity';
 import { NodeType, getDrive } from '@proton/drive/sdk';
+import { setLocation } from '@proton/jest-env/setLocation';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 
 import { setPublicLinkClient } from './publicLinkClient';
@@ -93,20 +94,6 @@ jest.mock('./utils/shouldRedirectToPrivateApp', () => ({
     shouldRedirectToPrivateApp: jest.fn(() => false),
 }));
 
-const setLocation = (href: string, hash = '') => {
-    const url = new URL(href);
-    Object.defineProperty(window, 'location', {
-        value: {
-            href,
-            origin: url.origin,
-            pathname: url.pathname,
-            search: url.search,
-            hash,
-        },
-        writable: true,
-    });
-};
-
 describe('usePublicLink', () => {
     const mockGetURLAccessInfo = jest.fn();
     const mockAuthURLAccess = jest.fn();
@@ -152,8 +139,8 @@ describe('usePublicLink', () => {
     });
 
     it('with hash: loads the root node using the real URL', async () => {
-        const href = 'https://drive.proton.dev/urls/Z4G9B587S0';
-        setLocation(href, '#M4oaMipDImzI');
+        const href = 'https://drive.proton.dev/urls/Z4G9B587S0#M4oaMipDImzI';
+        setLocation(href);
 
         const { result } = renderHook(() => usePublicLink());
 
@@ -173,7 +160,7 @@ describe('usePublicLink', () => {
     });
 
     it('without hash: prompts for the URL password without calling the SDK', async () => {
-        setLocation('https://drive.proton.dev/urls/Z4G9B587S0', '');
+        setLocation('https://drive.proton.dev/urls/Z4G9B587S0');
 
         const { result } = renderHook(() => usePublicLink());
 
@@ -193,7 +180,7 @@ describe('usePublicLink', () => {
 
     it('without hash + submitted password: builds a synthetic URL with the password and loads the node', async () => {
         const href = 'https://drive.proton.dev/urls/Z4G9B587S0';
-        setLocation(href, '');
+        setLocation(href);
 
         const { result } = renderHook(() => usePublicLink());
 

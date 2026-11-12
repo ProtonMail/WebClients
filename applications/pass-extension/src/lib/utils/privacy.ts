@@ -3,6 +3,7 @@ import type { PrivacyServices } from 'webextension-polyfill/namespaces/privacy_s
 
 import browser, { type chromeAPI } from '@proton/pass/lib/globals/browser';
 import { truthy } from '@proton/pass/utils/fp/predicates';
+import { reloadWindow } from '@proton/shared/lib/helpers/location';
 import noop from '@proton/utils/noop';
 
 export type PrivacyService = keyof (PrivacyServices.Static & typeof chromeAPI.privacy.services);
@@ -72,7 +73,7 @@ export const setBrowserAutofillCapabilities = async (
          * the permission - as such reload the current page */
         if (typeof browser.privacy === 'undefined') {
             if (enabled) storePending(enabled);
-            window.location.reload();
+            reloadWindow();
             throw new Error('Permission needs reload');
         }
 

@@ -2,6 +2,7 @@ import { act, renderHook } from '@testing-library/react';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import type { PaymentIntent } from '@proton/chargebee/lib/types';
+import { setLocation } from '@proton/jest-env/setLocation';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { createApiError } from '@proton/shared/lib/fetch/ApiError';
 
@@ -29,15 +30,7 @@ jest.mock('@proton/components/containers/themes/ThemeProvider', () => ({
 
 describe('getIframeUrl', () => {
     beforeAll(() => {
-        // Mock the getter for window.location.origin
-        jest.spyOn(window, 'location', 'get').mockReturnValue({
-            ...window.location,
-            origin: 'https://account.proton.me',
-        } as Location);
-    });
-
-    afterAll(() => {
-        jest.restoreAllMocks();
+        setLocation('https://account.proton.me');
     });
 
     it('should return the correct URL', () => {

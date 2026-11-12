@@ -1,67 +1,38 @@
 import { renderHook } from '@testing-library/react-hooks';
 
+import { setLocation } from '@proton/jest-env/setLocation';
+
 import { partialPublicViewKey, usePartialPublicView } from './usePartialPublicView';
 
 describe('usePartialPublicView', () => {
-    let originalWindowLocation: Location;
-    let originalWindowHistory: History;
-
     beforeEach(() => {
-        originalWindowLocation = window.location;
-        originalWindowHistory = window.history;
-
-        Object.defineProperty(window, 'location', {
-            writable: true,
-            value: {
-                ...originalWindowLocation,
-                search: '',
-                pathname: '/test',
-                hash: '',
-                origin: 'https://test.com',
-            },
-        });
-
-        Object.defineProperty(window, 'history', {
-            writable: true,
-            value: {
-                ...originalWindowHistory,
-                replaceState: jest.fn(),
-            },
-        });
+        jest.spyOn(window.history, 'replaceState').mockImplementation(() => {});
     });
 
     afterEach(() => {
-        Object.defineProperty(window, 'location', {
-            writable: true,
-            value: originalWindowLocation,
-        });
-
-        Object.defineProperty(window, 'history', {
-            writable: true,
-            value: originalWindowHistory,
-        });
+        jest.restoreAllMocks();
     });
 
     it('should return true when partialPublicView=true is in the URL', () => {
-        window.location.search = `?other=param&${partialPublicViewKey}=true`;
+        setLocation(`https://test.com/test?other=param&${partialPublicViewKey}=true`);
         const { result } = renderHook(() => usePartialPublicView());
         expect(result.current).toBe(true);
     });
 
     it('should return false when partialPublicView=true is not in the URL', () => {
-        window.location.search = '';
+        setLocation('https://test.com/test');
         const { result } = renderHook(() => usePartialPublicView());
         expect(result.current).toBe(false);
     });
 
     it('should return false when partialPublicView has a different value', () => {
-        window.location.search = `?${partialPublicViewKey}=false`;
+        setLocation(`https://test.com/test?${partialPublicViewKey}=false`);
         const { result } = renderHook(() => usePartialPublicView());
         expect(result.current).toBe(false);
     });
 
     it('should clean up the URL after checking', () => {
-        window.location.search = `?other=param&${partialPublicViewKey}=true`;
+        setLocation(`https://test.com/test?other=param&${partialPublicViewKey}=true`);
         renderHook(() => usePartialPublicView());
         expect(window.history.replaceState).toHaveBeenCalledWith({}, '', 'https://test.com/test?other=param');
     });

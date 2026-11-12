@@ -32,9 +32,7 @@ describe('parseOpenAction', () => {
         action: 'edit',
       })
 
-      Object.defineProperty(window, 'location', {
-        value: { hash: '#password123' },
-      })
+      window.location.hash = '#password123'
 
       expect(parseOpenAction(params, docPathname)).toEqual({
         type: 'doc',
@@ -54,9 +52,7 @@ describe('parseOpenAction', () => {
         action: 'edit',
       })
 
-      Object.defineProperty(window, 'location', {
-        value: { hash: '#password123' },
-      })
+      window.location.hash = '#password123'
 
       expect(parseOpenAction(params, docPathname)).toEqual({
         type: 'doc',

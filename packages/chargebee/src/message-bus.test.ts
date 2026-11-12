@@ -1,5 +1,7 @@
 import { fireEvent } from '@testing-library/dom';
 
+import { setLocation } from '@proton/jest-env/setLocation';
+
 import type {
     BinData,
     ChargebeeSubmitEventResponse,
@@ -27,11 +29,7 @@ import { MessageBus, createMessageBus, getMessageBus, verifySavedCardMessageType
 
 window.parent.postMessage = jest.fn();
 
-Object.defineProperty(window, 'location', {
-    value: new URL('https://account-api.proton.me'),
-    writable: true,
-    configurable: true,
-});
+setLocation('https://account-api.proton.me');
 
 const expectedParentOrigin = 'https://account.proton.me';
 
