@@ -1484,7 +1484,8 @@
         "Megbízható"
       ],
       "Trust key": [
-        "Megbízható kulcs"
+        "Kulcs megjelölése megbízhatóként",
+        "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
         "Nyilvános kulcs megjelölése megbízhatóként"
@@ -1775,6 +1776,10 @@
       ],
       "Writing assistant seats": [
         "Írási segéd licencek"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikált VPN szerver",
+        "${ ips } dedikált VPN szerver"
       ]
     },
     "Alert": {
@@ -7254,6 +7259,7 @@
         "Inicializálás…"
       ],
       "Insert image": [
+        "Kép beillesztése",
         "Kép beillesztése"
       ],
       "Insert link": [
@@ -8745,6 +8751,19 @@
       ],
       "reply": [
         "válasz"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts }/ tag)",
+        "${ contactGroupName } (${ numberOfContacts }/ tag)"
+      ],
+      "Hey Lumo, I'm going away and want an out-of-office reply set up. Ask me for the dates and what it should say, then show me the message before you turn it on.": [
+        "Szia Lumo! Elutazom, és szeretnék beállítani egy automata válaszemailt a távollétemről. Kérdezz rá a távol töltött napok dátumára, illetve az üzenet tartalmára, aztán mutasd a tervezetet, mielőtt bekapcsolnád!"
+      ],
+      "Hey Lumo, walk me through how you can help me with my mailbox. What kinds of things can I ask you to do, and what can't you help with?": [
+        "Szia Lumo! Ismertesd, hogyan tudnál a segítségemre lenni az emailjeimmel. Milyen dolgokra tudlak megkérni, és miben nem tudsz segíteni?"
+      ],
+      "Other (tell us)": [
+        "Más (ossza meg velünk)"
       ]
     },
     "info": {
@@ -9852,6 +9871,9 @@
       ],
       "Write": [
         "Írás"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Ossza meg elérhetőségét időfoglaló táblákkal a ${ CALENDAR_APP_NAME } -ban, és indítson biztonságos megbeszéléseket a ${ MEET_APP_NAME }-ben!"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11783,6 +11805,12 @@
       ],
       "No parent folder": [
         "Nincs szülő-mappa"
+      ],
+      "15th of the month": [
+        "a hónap 15-ik napja"
+      ],
+      "Permanent": [
+        "Állandó"
       ]
     },
     "Option group": {

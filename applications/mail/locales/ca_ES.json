@@ -1577,7 +1577,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Confia en aquesta clau",
+        "Confia en aquestes claus"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -4462,6 +4463,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ja heu creat 10 àlies. Obteniu àlies il·limitats i 500 GB d'emmagatzematge amb ${ BRAND_NAME } Unlimited."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Per utilitzar ${ LUMO_SHORT_APP_NAME } a ${ MAIL_APP_NAME }, afegiu-ho a la vostra subscripció."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Per utilitzar ${ LUMO_SHORT_APP_NAME } a ${ MAIL_APP_NAME }, sol·liciteu accés al vostre administrador."
       ]
     },
     "description": {
@@ -7932,7 +7939,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -9763,6 +9771,12 @@
       ],
       "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
         "Hem trobat algunes llistes de correu que no llegiu. Us en podeu donar de baixa amb un sol clic."
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Copieu els codis d'un sol ús dels correus recents amb un sol clic"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Mou els correus electrònics de codis d'un sol ús a la paperera en copiar-los"
       ]
     },
     "info": {
@@ -11139,6 +11153,12 @@
       "Select all ${ count } unused sender": [
         "Seleccioneu l'${ count } remitent no utilitzat",
         "Seleccioneu tots els ${ count } remitents no utilitzats"
+      ],
+      "Move to Trash": [
+        "Mou a la paperera"
+      ],
+      "One-time codes": [
+        "Codis d'un sol ús"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15951,6 +15971,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Heu cancel·lat la subscripció."
+      ],
+      "One-time codes disabled": [
+        "S'han desactivat els codis d'un sol ús"
+      ],
+      "One-time codes enabled": [
+        "S'han habilitat els codis d'un sol ús"
       ]
     },
     "Success notification": {

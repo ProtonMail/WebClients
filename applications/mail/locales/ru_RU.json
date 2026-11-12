@@ -1519,7 +1519,10 @@
         "Доверять"
       ],
       "Trust key": [
-        "Доверять ключу"
+        "Доверенный ключ",
+        "Доверенных ключа",
+        "Доверенных ключей",
+        "Доверенных ключей"
       ],
       "Trust public key": [
         "Доверять открытым ключам"
@@ -7793,7 +7796,10 @@
         "Инициализация…"
       ],
       "Insert image": [
-        "Вставить изображение"
+        "Вставить изображение",
+        "Вставить изображения",
+        "Вставить изображения",
+        "Вставить изображения"
       ],
       "Insert link": [
         "Вставить ссылку"
@@ -9324,6 +9330,9 @@
       ],
       "You'll use it to sign in from then on. That's the only change.": [
         "С этого момента для входа вы будете использовать его. Это единственное изменение."
+      ],
+      "Results came from the local search.": [
+        "Результаты были получены из локального поиска"
       ]
     },
     "info": {
@@ -13094,6 +13103,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Для вашей подписки в настоящее время действует скидка. Переход на это новое промо-предложение означает, что текущая скидка больше не будет применяться."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "У выбранного тарифного плана недостаточно места для данных вашего аккаунта."
       ]
     },
     "Payments.Error": {
@@ -16911,6 +16923,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Вы сможете назначать должности, как только пользователь примет приглашение."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Нельзя изменить собственную роль. Попросите другого администратора изменить её за вас."
       ]
     },
     "Validation": {

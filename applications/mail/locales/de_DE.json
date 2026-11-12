@@ -1577,7 +1577,8 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen"
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -4462,6 +4463,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Um ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME } verwenden zu können, füge es zu deinem Abonnement hinzu."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Um ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME } verwenden zu können, bitte deinen Administrator um Zugriffsrechte."
       ]
     },
     "description": {
@@ -7902,7 +7909,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -9762,7 +9770,13 @@
         "Antworten auf Umfrage sind nicht durchgehend verschlüsselt. Bitte gib keine vertraulichen Informationen weiter."
       ],
       "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
-        "Wir haben E-Mails in Verteilerlisten gefunden, die du nicht liest. Du kannst dich in einem Klick von diesen abmelden."
+        "Es wurden einige Mailinglisten gefunden, die du nicht gelesen hast. Du kannst dich mit nur einem Klick davon abmelden."
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Einmalcodes aus den zuletzt erhaltenen E-Mails mit einem Klick kopieren"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "E-Mails mit Einmalcodes nach dem Kopieren in den Papierkorb verschieben"
       ]
     },
     "info": {
@@ -11135,6 +11149,16 @@
       ],
       "Font size": [
         "Schriftgröße"
+      ],
+      "Move to Trash": [
+        "In Papierkorb verschieben"
+      ],
+      "One-time codes": [
+        "Einmalcodes"
+      ],
+      "Select all ${ count } unused sender": [
+        "Alle ${ count } ungenutzten Absender auswählen",
+        "Alle ${ count } ungenutzten Absender auswählen"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15947,6 +15971,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Du hast dein Abonnement erfolgreich gekündigt."
+      ],
+      "One-time codes disabled": [
+        "Einmalcodes deaktiviert"
+      ],
+      "One-time codes enabled": [
+        "Einmalcodes aktiviert"
       ]
     },
     "Success notification": {
@@ -17257,7 +17287,7 @@
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
       ],
       "Start with a cleaner Inbox": [
-        "Starte mit einem sauberen Posteingang"
+        "Beginne mit einem aufgeräumten Posteingang"
       ]
     },
     "Title header for keys table": {

@@ -1585,7 +1585,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -5550,6 +5553,9 @@
       ],
       "Embedded images could not be removed. The message was not switched to plain text.": [
         "Vložené obrázky sa nepodarilo odstrániť. Správa nebola prevedená na čistý text."
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Prázdnu správu nie je možné odoslať. Správa nebola odoslaná."
       ]
     },
     "error": {
@@ -8169,7 +8175,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -10093,6 +10102,15 @@
       ],
       "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
         "Odpovede v prieskume nie sú end-to-end šifrované, preto neuvádzajte žiadne citlivé informácie, prosím."
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } člen)",
+        "${ contactGroupName } (${ numberOfContacts } členovia)",
+        "${ contactGroupName } (${ numberOfContacts } členov)",
+        "${ contactGroupName } (${ numberOfContacts } členov)"
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Našli sme niekoľko diskusných skupín, ktoré nečítate. Odhlásiť sa z nich môžete jedným kliknutím."
       ]
     },
     "info": {
@@ -11481,6 +11499,12 @@
       ],
       "Font size": [
         "Veľkosť písma"
+      ],
+      "Select all ${ count } unused sender": [
+        "Vybrať ${ count } nepoužitého odosielateľa",
+        "Vybrať ${ count } nepoužitých odosielateľov",
+        "Vybrať všetkých ${ count } nepoužitých odosielateľov",
+        "Vybrať všetkých ${ count } nepoužitých odosielateľov"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -17889,6 +17913,9 @@
       ],
       "Filter on": [
         "Filter zap."
+      ],
+      "Start with a cleaner Inbox": [
+        "Začnite s prehľadnejšou doručenou poštou"
       ]
     },
     "Title header for keys table": {

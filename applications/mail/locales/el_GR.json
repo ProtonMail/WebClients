@@ -1577,7 +1577,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -4462,6 +4463,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Για να χρησιμοποιήσετε το ${ LUMO_SHORT_APP_NAME } στο ${ MAIL_APP_NAME }, προσθέστε το στη συνδρομή σας."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Για να χρησιμοποιήσετε το ${ LUMO_SHORT_APP_NAME } στο ${ MAIL_APP_NAME }, ζητήστε πρόσβαση από τον διαχειριστή σας."
       ]
     },
     "description": {
@@ -7902,7 +7909,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -9760,6 +9768,15 @@
       ],
       "Survey answers are not end-to-end encrypted, please do not share any sensitive information.": [
         "Οι απαντήσεις στην έρευνα δεν είναι κρυπτογραφημένες διατερματικά, παρακαλούμε μην κοινοποιείτε ευαίσθητες πληροφορίες."
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Αντιγράψτε κωδικούς μίας χρήσης από πρόσφατα email με ένα κλικ"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Μετακίνηση των μηνυμάτων ηλεκτρονικού ταχυδρομείου με κωδικούς μίας χρήσης στα Απορρίμματα κατά την αντιγραφή"
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Βρήκαμε μερικές λίστες αλληλογραφίας τις οποίες δε διαβάζετε. Μπορείτε να διαγραφείτε από αυτές με ένα κλικ."
       ]
     },
     "info": {
@@ -11132,6 +11149,16 @@
       ],
       "Font size": [
         "Μέγεθος γραμματοσειράς"
+      ],
+      "Move to Trash": [
+        "Μετακίνηση στον κάδο"
+      ],
+      "One-time codes": [
+        "Κωδικοί μίας χρήσης"
+      ],
+      "Select all ${ count } unused sender": [
+        "Επιλογή όλων ${ count } αχρησιμοποίητος αποστολέας",
+        "Επιλογή όλων ${ count } αχρησιμοποίητοι αποστολείς"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15944,6 +15971,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Ακυρώσατε επιτυχώς τη συνδρομή σας."
+      ],
+      "One-time codes disabled": [
+        "Απενεργοποίηση κωδικών μίας χρήσης"
+      ],
+      "One-time codes enabled": [
+        "Ενεργοποίηση κωδικών μίας χρήσης"
       ]
     },
     "Success notification": {
@@ -17252,6 +17285,9 @@
       ],
       "Your shorter address is now ready": [
         "Η συντομότερη διεύθυνσή σας είναι τώρα έτοιμη"
+      ],
+      "Start with a cleaner Inbox": [
+        "Ξεκινήστε με πιο καθαρά Εισερχόμενα"
       ]
     },
     "Title header for keys table": {

@@ -1577,7 +1577,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Anahtara güven",
+        "Anahtarlara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -4462,6 +4463,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Unlimited tarifesine geçin."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "${ MAIL_APP_NAME } içinde ${ LUMO_SHORT_APP_NAME } kullanmak için aboneliğinize ekleyin."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "${ MAIL_APP_NAME } içinde ${ LUMO_SHORT_APP_NAME } kullanmak için yöneticinizden erişme izni vermesini isteyin."
       ]
     },
     "description": {
@@ -7932,7 +7939,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -9763,6 +9771,12 @@
       ],
       "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
         "Bazı listelerinden gelen e-postaları okumadığınızı farkettik. Tek tıkla aboneliğinizi iptal edebilirsiniz."
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Son e-postalardaki tek kullanımlık kodlar tek tıkla kopyalansın"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Kopyalama sırasında tek kullanımlık kod bulunan e-postalar çöpe atılsın"
       ]
     },
     "info": {
@@ -11139,6 +11153,12 @@
       "Select all ${ count } unused sender": [
         "Kullanılmamış ${ count } göndericinin tümünü seç",
         "Kullanılmamış ${ count } göndericinin tümünü seç"
+      ],
+      "Move to Trash": [
+        "Çöpe at"
+      ],
+      "One-time codes": [
+        "Tek kullanımlık kodlar"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15951,6 +15971,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Aboneliğinizi iptal ettiniz."
+      ],
+      "One-time codes disabled": [
+        "Tek kullanımlık kodlar kullanımdan kaldırıldı"
+      ],
+      "One-time codes enabled": [
+        "Tek kullanımlık kodlar kullanıma alındı"
       ]
     },
     "Success notification": {

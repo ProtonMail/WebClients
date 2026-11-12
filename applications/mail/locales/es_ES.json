@@ -1577,7 +1577,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar en clave"
+        "Clave de confianza",
+        "Claves de confianza"
       ],
       "Trust public key": [
         "Confiar en la clave pública"
@@ -4462,6 +4463,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Para usar ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, añádelo a tu suscripción."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Para usar ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, solicita acceso a tu administrador."
       ]
     },
     "description": {
@@ -5455,10 +5462,10 @@
         "Tu búsqueda ha coincidido con muchos resultados. Limita tu búsqueda e inténtalo de nuevo."
       ],
       "Cannot send an empty message. Message is not sent.": [
-        "No se puede enviar un mensaje vacío. Mensaje no enviado."
+        "No se puede enviar un mensaje vacío. El mensaje no ha sido enviado."
       ],
       "Embedded images could not be removed. The message was not switched to plain text.": [
-        "Imágenes incrustadas no pudieron ser eliminadas. El mensaje no se cambió a texto plano."
+        "Las imágenes incrustadas no pudieron ser eliminadas. El mensaje no se cambió a texto plano."
       ]
     },
     "error": {
@@ -7902,7 +7909,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar una imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9763,6 +9771,12 @@
       ],
       "Work or business": [
         "Trabajo o negocios"
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Copia los códigos de uso único de los correos recientes en un solo clic"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Mueve los códigos de uso único a la papelera al copiarlos"
       ]
     },
     "info": {
@@ -11137,8 +11151,14 @@
         "Tamaño de fuente"
       ],
       "Select all ${ count } unused sender": [
-        "Seleccionar ${ count } remitente sin usar",
+        "Seleccionar ${ count } remitente(s) sin usar",
         "Seleccionar los ${ count } remitentes sin usar"
+      ],
+      "Move to Trash": [
+        "Mover a la papelera"
+      ],
+      "One-time codes": [
+        "Códigos de uso único"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15951,6 +15971,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "La suscripción ha sido cancelada."
+      ],
+      "One-time codes disabled": [
+        "Códigos de uso único desactivados"
+      ],
+      "One-time codes enabled": [
+        "Códigos de uso único activados"
       ]
     },
     "Success notification": {

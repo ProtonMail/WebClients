@@ -1562,7 +1562,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -4409,6 +4410,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "För att använda  ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }, lägg till den i din prenumeration."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "För att använda ${ LUMO_SHORT_APP_NAME } i  ${ MAIL_APP_NAME },  begär tillgång från din administratör."
       ]
     },
     "description": {
@@ -7768,7 +7775,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9509,6 +9517,12 @@
       ],
       "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
         "Vi hittade några E-postlistor som du inte läser. Du kan avbryta prenumerationen från dem med ett klick."
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Kopiera engångs-kodeks från senaste e-postmeddelanden i ett klick"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Flytta engångs-kodeks e-post till Papperskorg när de kopieras"
       ]
     },
     "info": {
@@ -10849,6 +10863,12 @@
       "Select all ${ count } unused sender": [
         "Välj alla  ${ count }  oanvänd avsändare",
         "Välj alla ${ count } oanvända avsändare"
+      ],
+      "Move to Trash": [
+        "Flytta till Papperskorg"
+      ],
+      "One-time codes": [
+        "Engångs-kodeks"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15540,6 +15560,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Du har avbrutit din prenumeration."
+      ],
+      "One-time codes disabled": [
+        "Engångs-kodeks inaktiverade"
+      ],
+      "One-time codes enabled": [
+        "Engångs-kodeks inaktiverade"
       ]
     },
     "Success notification": {
