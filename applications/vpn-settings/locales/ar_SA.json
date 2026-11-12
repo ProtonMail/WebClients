@@ -5949,9 +5949,6 @@
       "Allow platform keys": [
         "السماح بمفاتيح المنصة"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "يسمح بتسجيل مفاتيح الأمان المدمجة (مثل Windows Hello أو Face ID أو Touch ID أو وحدات TPM الداخلية)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "هل أنت متأكد من أنك تريد حذف مفتاح الأمان ${ name }؟"
       ],
@@ -8525,12 +8522,6 @@
       "RECOMMENDED": [
         "موصى به"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "الاسترداد عن طريق البريد الإلكتروني غير متاح أثناء تفعيل ${ PROTON_SENTINEL_NAME }."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "الاسترداد عن طريق الهاتف غير متاح أثناء تفعيل ${ PROTON_SENTINEL_NAME }."
-      ],
       "Recovery file downloaded": [
         "تم تنزيل ملف الاسترداد"
       ],
@@ -8997,11 +8988,17 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "لفك تشفير بياناتك المقفلة وعرضها بعد إعادة تعيين كلمة المرور، حدد طريقة استرداد."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "لضمان أعلى مستوى ممكن من الأمان للحساب، يُرجى تعطيل **الاسترداد عن طريق بريد الاسترداد الإلكتروني**."
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "لضمان أعلى مستوى ممكن من الأمان لحسابك، قم بتعطيل خيار **الاسترداد عبر البريد الإلكتروني**."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "لضمان أعلى مستوى ممكن من الأمان للحساب، يُرجى تعطيل **الاسترداد عن طريق هاتف الاسترداد**."
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "لضمان أعلى مستوى ممكن من الأمان لحسابك، قم بتعطيل خيار **الاسترداد عبر الهاتف**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "لضمان أعلى مستوى ممكن من الأمان لحسابك، أبقِ خيار **الاسترداد عبر البريد الإلكتروني** معطلاً."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "لضمان أعلى مستوى ممكن من الأمان لحسابك، أبقِ خيار **الاسترداد عبر الهاتف** معطلاً."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "لمكافحة البريد المزعج وإساءة المعاملة، يرجى التحقق من أنك بشري."

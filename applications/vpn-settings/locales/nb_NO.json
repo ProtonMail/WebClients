@@ -280,6 +280,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butikk"
       ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
       "activate": [
         "aktiver"
       ],
@@ -300,6 +303,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Legg til ${ BRAND_NAME }-adresse"
+      ],
+      "Add ${ name }": [
+        "Legg til ${ name }"
       ],
       "Add a payment method": [
         "Legg til betalingsmåte"
@@ -987,6 +993,9 @@
       ],
       "Manage subscription": [
         "Behandle abonnement"
+      ],
+      "Manage subscriptions": [
+        "Administrer abonnementer"
       ],
       "Manage users/addresses": [
         "Administrer brukere/adresser"
@@ -6284,9 +6293,6 @@
       "Allow platform keys": [
         "Tillat plattformnøkler"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Tillater deg å registrere innebygde sikkerhetsnøkler (som Windows Hello, Face ID, Touch ID eller interne TPMer)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Er du sikker du ønsker å slette sikkerhetsnøkkel ${ name }?"
       ],
@@ -7642,17 +7648,17 @@
       "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
         "Ved å slå dette på, vil du kun kunne logge på med **${ primaryEmail }**."
       ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
-        "Ved å slå på dette, vil du bare kunne logge inn med ditt opprinnelige brukernavn **${ username }**, enten alene eller som **${ firstEmail }**, **@${ secondDomain }**, eller **@${ thirdDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
-        "Ved å slå på dette, vil du bare kunne logge inn med ditt opprinnelige brukernavn **${ username }**, enten alene eller som **${ firstEmail }** eller **@${ secondDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
-        "Hvis du slår på dette, kan du bare logge inn med det opprinnelige brukernavnet ditt **${ username }**, enten alene eller som **${ firstEmail }**."
-      ],
       "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
         "Ved å slå dette på, vil du kun kunne logge på med brukernavnet **${ username }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Ved å aktivere denne funksjonen vil du kun kunne logge inn med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }** eller **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Ved å aktivere denne funksjonen vil du kun kunne logge inn med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Ved å aktivere denne funksjonen vil du kun kunne logge inn med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }**."
       ],
       "Can you access your active session?": [
         "Har du tilgang til den aktive økten din?"
@@ -8830,12 +8836,6 @@
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Anbefalt på klarerte enheter. ${ learnMoreLink }"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Gjenoppretting via e-post er ikke tilgjengelig mens ${ PROTON_SENTINEL_NAME } er aktivert."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Gjenoppretting via telefon er ikke tilgjengelig mens ${ PROTON_SENTINEL_NAME } er aktivert."
-      ],
       "Recovery file downloaded": [
         "Gjenopprettingsfil nedlastet"
       ],
@@ -9313,11 +9313,17 @@
       "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
         "For å aktivere Alltid-på-VPN må enhetsprofilen nå ${ policiesPath } på alle enheter – ${ VPN_APP_NAME }-klienten oppdager den der og håndhever profilen automatisk. ${ learnMore }."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "For å sikre best mulig sikkerhet for kontoen din, deaktiver **Gjenoppretting via gjenopprettings-e-postadresse**."
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "For å sikre best mulig sikkerhet for kontoen din, bør du deaktivere **Gjenoppretting via e-post**."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "For å sikre best mulig sikkerhet for kontoen din, deaktiver **Gjenoppretting via gjenopprettingstelefon**."
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "For å sikre best mulig sikkerhet for kontoen din, bør du deaktivere **Gjenoppretting via telefon**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "For å sikre best mulig sikkerhet for kontoen din, bør du la **Gjenoppretting via e-post** være deaktivert."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "For å sikre best mulig sikkerhet for kontoen din, bør du la funksjonen **Gjenoppretting via telefon** være deaktivert."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For å bekjempe søppelpost og misbruk må du bekrefte at du er et menneske."
@@ -9625,14 +9631,14 @@
       "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Når pålogging er begrenset, kan bare brukernavnet **${ username }** brukes til å logge inn. De andre adressene dine kan ikke spores tilbake til kontoen din, selv om noen kjenner til dem."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Når påloggingen er begrenset, kan du bare logge på med det opprinnelige brukernavnet ditt **${ username }**, enten alene eller som **${ firstEmail }**, **@${ secondDomain }** eller **@${ thirdDomain }**. De andre e-postadressene dine kan ikke brukes til pålogging."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når pålogging er begrenset, kan du bare logge på med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }** eller **${ secondEmail }**. Dine andre e-postadresser fungerer ikke ved pålogging."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Når pålogging er begrenset, kan du bare logge inn med det opprinnelige brukernavnet ditt, **${ username }**, enten alene eller som **${ firstEmail }** eller **@${ secondDomain }**. De andre e-postadressene dine fungerer ikke for pålogging."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når pålogging er begrenset, kan du bare logge på med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**. Dine andre e-postadresser fungerer ikke ved pålogging."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Når pålogging er begrenset, kan du bare logge inn med det opprinnelige brukernavnet ditt, **${ username }**, enten alene eller som **${ firstEmail }** . De andre e-postadressene dine fungerer ikke for pålogging."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når pålogging er begrenset, kan du bare logge på med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }**. Dine andre e-postadresser kan ikke brukes til å logge på."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Når du avbryter, blir ikke abonnementet fornyet, men du kan fortsatt dra nytte av planfordeler til slutten av abonnementsperioden. Etter det blir du nedgradert til ${ BRAND_NAME } Free-plan."
@@ -20004,6 +20010,9 @@
       ],
       "Send invite link via email instead": [
         "Send invitasjonskobling via e-post i stedet"
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Denne brukeren får administratorrettigheter neste gang brukeren logger på."
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Dette oppretter en ny ${ MAIL_APP_NAME }-adresse."

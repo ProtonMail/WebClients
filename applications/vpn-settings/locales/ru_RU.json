@@ -5818,9 +5818,6 @@
       "Allow platform keys": [
         "Разрешить платформенные ключи"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Позволяет регистрировать встроенные ключи безопасности (например, Windows Hello, Face ID, Touch ID или внутренние TPM)."
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Вы уверены, что хотите удалить ключ безопасности ${ name }?"
       ],
@@ -6887,6 +6884,9 @@
         "+ Ещё ${ invisibleCount }",
         "+ Ещё ${ invisibleCount }",
         "+ Ещё ${ invisibleCount }"
+      ],
+      "1 vault per user": [
+        "1 хранилище на пользователя"
       ],
       "2FA disabled": [
         "Двухфакторная аутентификация отключена"
@@ -8244,12 +8244,6 @@
       "RECOMMENDED": [
         "РЕКОМЕНДУЕМЫЙ"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Восстановление по электронной почте недоступно, пока включена служба ${ PROTON_SENTINEL_NAME }."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Восстановление по номеру телефона недоступно, пока включена служба ${ PROTON_SENTINEL_NAME }."
-      ],
       "Recovery file downloaded": [
         "Файл восстановления скачан"
       ],
@@ -8702,12 +8696,6 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Чтобы расшифровать и просмотреть заблокированные данные после сброса пароля, выберите метод восстановления."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Чтобы обеспечить максимально возможную безопасность вашего аккаунта, отключите функцию **Восстановление с помощью резервной почты**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Чтобы обеспечить максимально возможную безопасность вашего аккаунта, отключите функцию **Восстановление с помощью резервного телефона**."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
@@ -9224,6 +9212,9 @@
         "Затем каждые ${ renewCycle } месяца вам будет выставляться счет на ${ renewAmountStr }. Вы можете отменить подписку в любое время.",
         "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }. Вы можете отменить подписку в любое время.",
         "Затем каждые ${ renewCycle } месяца вам будет выставляться счет на ${ renewAmountStr }. Вы можете отменить подписку в любое время."
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "С этого момента для входа вы будете использовать его. Это единственное изменение."
       ],
       "You're now signed in on your TV.": [
         "Теперь вы вошли в систему на своем ТВ."
@@ -13281,6 +13272,9 @@
         "Скидка действительна для ${ renewalsWithCoupon } продлений.",
         "Скидка действительна для ${ renewalsWithCoupon } продлений.",
         "Скидка действительна для ${ renewalsWithCoupon } продлений."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "У выбранного тарифного плана недостаточно места для данных вашего аккаунта."
       ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Специально сниженная цена действует в течение ${ couponRedemptions } месяца. Затем она будет автоматически продлеваться за ${ renewPriceStr } в течение 1 месяца. Вы можете отменить подписку в любое время.",
@@ -18976,6 +18970,9 @@
       ],
       "Writing assistant": [
         "Помощник по написанию"
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Нельзя изменить собственную роль. Попросите другого администратора изменить её за вас."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Вы сможете назначать должности, как только пользователь примет приглашение."

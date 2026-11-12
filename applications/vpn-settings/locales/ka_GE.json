@@ -5734,9 +5734,6 @@
       "Allow platform keys": [
         "პლატფორმის გასაღებების დაშვება"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "საშუალებას გაძლევთ, დაარეგისტრიროთ ჩაშენებული უსაფრთხოებს გასაღებები (მაგ: Windows Hello, Face ID, Touch ID ან შიდა TPM)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, წაშალოთ უსაფრთხოების გასაღები ${ name }?"
       ],
@@ -8037,12 +8034,6 @@
       "RECOMMENDED": [
         "რეკომენდებულია"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "ელფოსტით აღდგენა მიუწვდომელია, როდესაც ${ PROTON_SENTINEL_NAME } ჩართულია."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "ტელეფონით აღდგენა მიუწვდომელია, როდესაც ${ PROTON_SENTINEL_NAME } ჩართულია."
-      ],
       "Recovery file downloaded": [
         "აღდგენის ფაილი გადმოწერილია"
       ],
@@ -8485,12 +8476,6 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "პაროლის გადაყენების შემდეგ თქვენი დაბლოკილი მონაცემების გასაშიფრად და სანახავად აირჩიეთ აღდგენის მეთოდი."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "თქვენი ანგარიშის მაქსიმალური უსაფრთხოების უზრუნველსაყოფად, გამორთეთ **აღდგენა აღდგენის ელფოსტის საშუალებით**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "თქვენი ანგარიშის მაქსიმალური უსაფრთხოების უზრუნველსაყოფად, გამორთეთ **აღდგენა ტელეფონის საშუალებით**."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "სპამისაგან თავდასაცავად გთხოვთ, დაამტკიცოთ, რომ ადამიანი ხართ."

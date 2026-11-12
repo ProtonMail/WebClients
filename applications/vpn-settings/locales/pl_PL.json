@@ -5821,9 +5821,6 @@
       "Allow platform keys": [
         "Zezwalaj na klucze platformy"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Zezwala na rejestrację wbudowanych kluczy bezpieczeństwa (takich jak Windows Hello, Touch ID, Face ID lub wewnętrzne moduły TPM)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Czy na pewno chcesz usunąć klucz bezpieczeństwa ${ name }?"
       ],
@@ -8247,12 +8244,6 @@
       "RECOMMENDED": [
         "ZALECANY"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Odzyskiwanie za pomocą poczty e-mail nie jest dostępne, gdy usługa ${ PROTON_SENTINEL_NAME } jest włączona."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Odzyskiwanie za pomocą telefonu nie jest dostępne, gdy usługa ${ PROTON_SENTINEL_NAME } jest włączona."
-      ],
       "Recovery file downloaded": [
         "Plik odzyskiwania został pobrany"
       ],
@@ -8705,12 +8696,6 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Wybierz metodę odzyskiwania, aby odszyfrować dane zablokowane przed zresetowaniem hasła."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Aby zapewnić najwyższe możliwe bezpieczeństwo swojego konta, wyłącz opcję **Odzyskiwanie za pomocą adresu pomocniczego**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Aby zapewnić najwyższe możliwe bezpieczeństwo swojego konta, wyłącz opcję **Odzyskiwanie za pomocą numeru pomocniczego**."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Weryfikacja antyspamowa i nadużyć. Udowodnij, że jesteś człowiekiem."

@@ -120,6 +120,9 @@
       "Encryption backup file": [
         "Arquivo de backup criptografado"
       ],
+      "Encryption backup in this browser": [
+        "Backup de criptografia neste navegador"
+      ],
       "External mailbox": [
         "Caixa de correio externa"
       ],
@@ -185,6 +188,9 @@
       ],
       "Protection from cyber attacks": [
         "Proteção contra ataques cibernéticos"
+      ],
+      "Receive misaddressed emails": [
+        "Receber e-mails enviados para endereços incorretos"
       ],
       "Recovery email address": [
         "Endereço de e-mail de recuperação"
@@ -330,6 +336,9 @@
       ],
       "Add external address": [
         "Adicionar endereço externo"
+      ],
+      "Add payment method": [
+        "Adicionar forma de pagamento"
       ],
       "Add PayPal": [
         "Adicionar PayPal"
@@ -985,6 +994,9 @@
       "Manage subscription": [
         "Gerenciar assinatura"
       ],
+      "Manage subscriptions": [
+        "Gerenciar assinaturas"
+      ],
       "Manage users/addresses": [
         "Gerenciar usuários/endereços"
       ],
@@ -1191,6 +1203,9 @@
       ],
       "Restore": [
         "Restaurar"
+      ],
+      "Restrict sign-in": [
+        "Restringir o login"
       ],
       "Resume membership": [
         "Continuar a adesão"
@@ -1877,11 +1892,17 @@
       "3 new admin roles": [
         "3 novas funções administrativas"
       ],
+      "Assign admin roles to groups. Manage access for many users at once and update it automatically when people join or leave.": [
+        "Atribua funções de administrador a grupos. Gerencie o acesso de vários usuários de uma vez e atualize-o automaticamente quando pessoas entrarem ou saírem."
+      ],
       "Assign specific admin roles. Give each admin only the access they need to limit the impact of compromised accounts and accidental errors.": [
         "Atribuir funções de administrador específicas. Dê a cada administrador apenas o acesso necessário para limitar o impacto de contas comprometidas e erros acidentais."
       ],
       "Choose from three new admin roles. Each admin receives only the access they need.": [
         "Escolha entre três novas funções de administrador. Cada administrador recebe apenas o acesso de que precisa."
+      ],
+      "Choose from two new admin roles. Each admin receives only the access they need.": [
+        "Escolha entre duas novas funções de administrador. Cada administrador recebe apenas o acesso de que precisa."
       ],
       "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
         "Configure políticas de segurança, retenção de dados e infraestrutura de VPN, além de gerenciar registros de auditoria."
@@ -2098,6 +2119,11 @@
         "Desculpe, esta oferta não está disponível no seu plano atual. Mas você pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao assinar por ${ cycle } meses."
       ]
     },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantia de reembolso de 30 dias: cancele em até 30 dias após a compra e entre em contato com ${ customerSupportLink } para obter um reembolso."
+      ]
+    },
     "bf2023: Title": {
       "Offer unavailable": [
         "Oferta indisponível"
@@ -2231,12 +2257,31 @@
       "Free renewal": [
         "Renovação gratuita"
       ],
+      "Free renewal, for ${ nextCycle } month, on ${ when }": [
+        "Renovação gratuita por ${ nextCycle } mês em ${ when }",
+        "Renovação gratuita por ${ nextCycle } meses em ${ when }"
+      ],
+      "Renews automatically at ${ introPrice }, for ${ nextCycle } month, on ${ when }": [
+        "Renovação automática por ${ introPrice } para ${ nextCycle } mês em ${ when }",
+        "Renovação automática por ${ introPrice } para ${ nextCycle } meses em ${ when }"
+      ],
       "Renews automatically at ${ price }, for ${ cycle } month": [
         "Renovação automática por ${ price }, durante ${ cycle } mês",
         "Renovação automática por ${ price }, durante ${ cycle } meses"
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Renova automaticamente em ${ subscriptionManagerName }"
+      ],
+      "Switches to ${ nextCycle } month on ${ when } (${ paidPrice } already paid)": [
+        "Muda para ${ nextCycle } mês em ${ when } (${ paidPrice } já pagos)",
+        "Muda para ${ nextCycle } meses em ${ when } (${ paidPrice } já pagos)"
+      ],
+      "Then ${ price }, for ${ cycle } month": [
+        "Depois, ${ price } por ${ cycle } mês",
+        "Depois, ${ price } por ${ cycle } meses"
+      ],
+      "Will be replaced by your upcoming subscription on ${ replacementDate }": [
+        "Será substituída pela sua próxima assinatura em ${ replacementDate }"
       ]
     },
     "Billing cycle option": {
@@ -2582,6 +2627,15 @@
       "Sign in with your organization?": [
         "Iniciar sessão com sua organização?"
       ],
+      "The address ${ boldClaimedEmail } has been claimed and can no longer be used for this account. Your data is safe and hasn't been shared with anyone. To migrate it to a new account, create a new ${ BRAND_NAME } email address.": [
+        "O endereço ${ boldClaimedEmail } foi reivindicado e não pode mais ser usado nesta conta. Seus dados estão seguros e não foram compartilhados com ninguém. Para migrá-los para uma nova conta, crie um novo endereço de e-mail ${ BRAND_NAME }."
+      ],
+      "The address ${ boldClaimedEmail } has been claimed and can no longer be used for this account. Your data was migrated to the address below and remains private.": [
+        "O endereço ${ boldClaimedEmail } foi reivindicado e não pode mais ser usado nesta conta. Seus dados foram migrados para o endereço abaixo e continuam privados."
+      ],
+      "The address ${ boldClaimedEmail } has been claimed by another organization and can no longer be used for this account. Your data is safe and remains private.": [
+        "O endereço ${ boldClaimedEmail } foi reivindicado por outra organização e não pode mais ser usado nesta conta. Seus dados estão seguros e continuam privados."
+      ],
       "Verify it's you": [
         "Confirme sua identidade"
       ],
@@ -2597,11 +2651,20 @@
       "Your address has changed": [
         "Seu endereço foi alterado"
       ],
+      "Your administrator can give you a new address.": [
+        "Seu administrador pode fornecer um novo endereço."
+      ],
+      "Your data was migrated to the address below and remains private.": [
+        "Seus dados foram migrados para o endereço abaixo e continuam privados."
+      ],
       "Your new address": [
         "Seu novo endereço"
       ],
       "Your password remains the same.": [
         "Sua senha continua a mesma"
+      ],
+      "Your previous username, ${ boldClaimedEmail }, can no longer be used to sign in to this account.": [
+        "Seu nome de usuário anterior, ${ boldClaimedEmail }, não pode mais ser usado para entrar nesta conta."
       ]
     },
     "Collapsible tooltip": {
@@ -3856,6 +3919,9 @@
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Traga seus e-mails, eventos do calendário e contatos de outro provedor."
       ],
+      "Bring over your files and folders from another provider.": [
+        "Transfira seus arquivos e pastas de outro provedor."
+      ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "Crie confiança e reconhecimento de marca com endereços de e-mail profissionais em seu próprio domínio."
       ],
@@ -4100,6 +4166,9 @@
     "Disable address prompt": {
       "Are you sure you want to disable this address?": [
         "Você tem certeza de que deseja desativar este endereço?"
+      ],
+      "By disabling this address ${ address }, the member will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
+        "Ao desativar o endereço ${ address }, o membro não poderá mais enviar ou receber e-mails por ele, e todos os produtos ${ BRAND_NAME } vinculados serão desativados."
       ],
       "By disabling this address ${ address }, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will be disabled.": [
         "Ao desativar esse endereço ${ address }, você não poderá enviar ou receber e-mails usando esse endereço e todos os produtos vinculados da ${ BRAND_NAME } serão desativados."
@@ -4865,6 +4934,13 @@
       "They may ask to access your account in case of an emergency.": [
         "Eles podem pedir para acessar sua conta em caso de emergência."
       ],
+      "They will receive access automatically **today**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "O acesso será concedido automaticamente **hoje**, às **${ formattedAccessibleAt }**. Você pode recusar a solicitação ou conceder acesso imediato a qualquer momento."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "O acesso será concedido automaticamente em **${ days } dia**, em **${ formattedAccessibleAt }**. Você pode recusar a solicitação ou conceder acesso imediato a qualquer momento.",
+        "O acesso será concedido automaticamente em **${ days } dias**, em **${ formattedAccessibleAt }**. Você pode recusar a solicitação ou conceder acesso imediato a qualquer momento."
+      ],
       "This will take effect immediately.": [
         "Isso entrará em vigor imediatamente."
       ],
@@ -4950,6 +5026,9 @@
       "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
         "Você receberá acesso à conta deles em **${ days } dia**, ou quando eles aprovarem sua solicitação.",
         "Você receberá acesso à conta deles em **${ days } dias**, ou quando eles aprovarem sua solicitação."
+      ],
+      "Your data is still locked from a password reset. A contact added now won't be able to restore it.": [
+        "Seus dados continuam bloqueados após uma redefinição de senha. Um contato adicionado agora não poderá recuperá-los."
       ],
       "Your recovery contact has helped you recover data.": [
         "Seu contato de recuperação ajudou você a recuperar dados."
@@ -5352,6 +5431,9 @@
         "A atribuição de função não pôde ser concluída para ${ failedCount } usuário",
         "A atribuição de função não pôde ser concluída para ${ failedCount } usuários"
       ],
+      "Role changes were not saved because the user's roles could not be loaded.": [
+        "As alterações nas funções não foram salvas porque não foi possível carregar as funções do usuário."
+      ],
       "Server not found": [
         "Servidor não encontrado"
       ],
@@ -5434,13 +5516,19 @@
         "O nome da política deve ter entre 3 e 40 caracteres."
       ],
       "The session has expired. Please try again.": [
-        "A sessão expirou. Por favor, tente novamente."
+        "A sessão expirou. Tente novamente."
+      ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "Não foi possível calcular o total. Altere o valor e tente novamente."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Existem muitas pastas em sua conta externa. Personalize a importação para excluir algumas pastas."
       ],
       "There was an error, please try again.": [
         "Ocorreu um erro. Tente novamente."
+      ],
+      "This code or link is no longer valid. Please try again.": [
+        "Este código ou link não é mais válido. Tente novamente."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede o máximo de ${ maximumLength } caracteres."
@@ -5554,7 +5642,7 @@
         "Sua importação não será processada."
       ],
       "Your password couldn't be reset. Please try again.": [
-        "Sua senha não pôde ser redefinida. Por favor, tente de novo."
+        "Sua senha não pôde ser redefinida. Tente de novo."
       ],
       "Zero keys reactivated": [
         "Zero chaves reativadas"
@@ -6216,17 +6304,23 @@
       "Allow platform keys": [
         "Permitir chaves de plataformas"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Permite registrar chaves de segurança integradas (como Windows Hello, Face ID, Touch ID, ou TPMs internos)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Você tem certeza que deseja excluir a chave de segurança ${ name }?"
+      ],
+      "Enter your PIN each time you use your security key with ${ BRAND_NAME }, when the key supports it. This only applies to keys that have a PIN set up.": [
+        "Digite seu PIN sempre que usar sua chave de segurança com o ${ BRAND_NAME }, se a chave oferecer suporte. Isso só se aplica a chaves com um PIN configurado."
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Insira uma chave de segurança vinculada à sua conta ${ BRAND_NAME }."
       ],
       "Insert your security key into your device.": [
         "Insira sua chave de segurança no seu dispositivo."
+      ],
+      "PIN requirement for security keys disabled": [
+        "Exigência de PIN para chaves de segurança desativada"
+      ],
+      "PIN requirement for security keys enabled": [
+        "Exigência de PIN para chaves de segurança ativada"
       ],
       "Require PIN for security key": [
         "Requer PIN para chave de segurança"
@@ -6248,6 +6342,9 @@
       ],
       "Touch your security key to continue.": [
         "Toque na sua chave de segurança para continuar"
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Use a impressão digital, o reconhecimento facial, o PIN ou o bloqueio de tela deste dispositivo"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifique a sua identidade com chave de segurança física U2F ou FIDO2"
@@ -6402,11 +6499,20 @@
       "Enforce identity-based access controls": [
         "Forçar controles de acesso baseados em identidade"
       ],
+      "Get real-time connection insights, monitor suspicious activity and export data to SIEM tools for your private gateways": [
+        "Veja dados de conexão em tempo real, monitore atividades suspeitas e exporte dados dos seus gateways privados para ferramentas SIEM"
+      ],
+      "In addition to connection monitoring, private gateways let you grant access by user or group - all running on dedicated servers with static IPs.": [
+        "Além de monitorar conexões, os gateways privados permitem conceder acesso por usuário ou grupo, com tudo funcionando em servidores dedicados com IPs estáticos."
+      ],
       "Monitor gateway connections with VPN Professional": [
         "Monitore as conexões do gateway com o VPN Professional"
       ],
       "Real-time connection insights": [
         "Informações sobre conexões em tempo real"
+      ],
+      "Unlock Single-Sign-on (SSO), admin policies, monitoring, enforced two-factor authentication and more.": [
+        "Tenha acesso a login único (SSO), políticas de administração, monitoramento, autenticação de dois fatores obrigatória e muito mais."
       ],
       "User - ${ userPrice }": [
         "Usuário - ${ userPrice }"
@@ -7270,6 +7376,9 @@
       "30-day money-back guarantee": [
         "Garantia de devolução do seu dinheiro por até 30 dias"
       ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantia de reembolso de 30 dias: cancele em até 30 dias após a compra e entre em contato com ${ customerSupportLink } para obter um reembolso."
+      ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Um ${ protonSubdomain } é hospedado pela ${ BRAND_NAME }, que permite que você configure rapidamente um subdomínio. ${ learnMoreLink }"
       ],
@@ -7415,6 +7524,9 @@
       "Allowing the password reset from the settings lets you to change your password if you’ve lost it, but are still signed in to ${ BRAND_NAME }.": [
         "Permitir a redefinição de senha nas configurações permite que você altere sua senha caso a tenha perdido, mas ainda esteja conectado à conta ${ BRAND_NAME }."
       ],
+      "Allows IPv6 traffic to pass through the VPN tunnel. This improves compatibility with IPv6 websites and services.": [
+        "Permite que o tráfego IPv6 passe pelo túnel VPN. Isso melhora a compatibilidade com sites e serviços IPv6."
+      ],
       "Already allocated": [
         "Já alocado"
       ],
@@ -7550,6 +7662,21 @@
       "By leaving now, changes may not be saved": [
         "Ao sair agora, as alterações não podem ser salvas"
       ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "Ao ativar esta opção, você só poderá entrar com **${ primaryEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "Ao ativar esta opção, você só poderá entrar com seu nome de usuário **${ username }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Ao ativar esta opção, você só poderá entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }** ou **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Ao ativar esta opção, você só poderá entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**, **${ secondEmail }** ou **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Ao ativar esta opção, você só poderá entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**."
+      ],
       "Can you access your active session?": [
         "Você pode acessar sua sessão ativa?"
       ],
@@ -7621,6 +7748,9 @@
       ],
       "Connects you to your destination country through servers physically located elsewhere.": [
         "Conecta você ao seu país de destino por meio de servidores fisicamente localizados em outros lugares."
+      ],
+      "Connects you to your destination country through servers physically located elsewhere: ${ joinedSmartRoutingCountries }.": [
+        "Conecta você ao país de destino por servidores fisicamente localizados em outros países: ${ joinedSmartRoutingCountries }."
       ],
       "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
         "Entre em contato com nossa equipe de suporte ao cliente para desativar a autenticação de dois fatores da sua conta ou recupere sua conta de outra forma."
@@ -7985,6 +8115,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Entre seu e-mail ou nome de usuário da conta da ${ BRAND_NAME }."
       ],
+      "Enter your old password for ${ boldEmail }.": [
+        "Digite sua senha antiga de ${ boldEmail }."
+      ],
       "Enter your own password (as organization admin).": [
         "Digite sua própria senha (como administrador da organização)."
       ],
@@ -8011,6 +8144,9 @@
       ],
       "Example: ${ spfExample }": [
         "Exemplo: ${ spfExample }"
+      ],
+      "Exclude them when you deploy the device profile. Support coming soon.": [
+        "Não os inclua ao implantar o perfil do dispositivo. O suporte estará disponível em breve."
       ],
       "Expired": [
         "Expirado"
@@ -8173,6 +8309,9 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
         "If Se você perdeu o acesso ao seu aplicativo de autenticação, pode usar um dos 16 códigos de recuperação de backup fornecidos quando configurou a autenticação de dois fatores. ${ learnMoreLink }"
+      ],
+      "If you previously had a personal ${ BRAND_NAME } account with this address, you can recover your data separately.": [
+        "Se você tinha uma conta pessoal ${ BRAND_NAME } com este endereço, pode recuperar seus dados separadamente."
       ],
       "If you recently reset your password, you can ${ recoveryMethodLink } to unlock your data. If this is due to an old password reset, you can stop the message from showing again.": [
         "Se você redefiniu sua senha recentemente, você pode ${ recoveryMethodLink } para desbloquear seus dados. Se isso se dever a uma redefinição de senha antiga, você pode impedir que a mensagem apareça novamente."
@@ -8368,6 +8507,9 @@
       "Manage groups in your identity provider": [
         "Gerencie grupos em seu provedor de identidade"
       ],
+      "Manage how users can access your ${ BRAND_NAME } organization with single sign-on.": [
+        "Gerencie como os usuários acessam sua organização ${ BRAND_NAME } com login único."
+      ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gerencie quais aplicativos da ${ BRAND_NAME } os membros da sua organização podem acessar. Se desativado, apenas os administradores terão acesso."
       ],
@@ -8494,6 +8636,9 @@
       "On": [
         "Ativado"
       ],
+      "On ${ formattedPeriodEndDate }, your free trial ends and your paid plan starts.": [
+        "Em ${ formattedPeriodEndDate }, seu período de teste gratuito termina e seu plano pago começa."
+      ],
       "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
         "Assim que o acesso à sua conta for concedido, eles poderão acessar suas configurações de **Recuperação** e **alterar sua senha do ${ ACCOUNT_APP_NAME }** para você."
       ],
@@ -8612,6 +8757,9 @@
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Verifique seu arquivo, ou tente usar nossa ${ csvTemplateButton }."
       ],
+      "Please ensure you're running ${ VPN_APP_NAME } desktop version ${ version } or later. ${ downloadLatest }": [
+        "Verifique se você está usando a versão ${ version } ou posterior do ${ VPN_APP_NAME } para computador. ${ downloadLatest }"
+      ],
       "Please fill in all required fields.": [
         "Preencha todos os campos obrigatórios."
       ],
@@ -8704,12 +8852,6 @@
       ],
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Recomendado em dispositivos confiáveis. ${ learnMoreLink }"
-      ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "A recuperação por e-mail não está disponível enquanto o ${ PROTON_SENTINEL_NAME } estiver ativado."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "A recuperação por telefone não está disponível enquanto a ${ PROTON_SENTINEL_NAME } está ativada."
       ],
       "Recovery file downloaded": [
         "Arquivo de recuperação baixado"
@@ -8892,6 +9034,9 @@
       "SPF clarifies who is allowed to send email for your domain. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).": [
         "SPF esclarece quem tem permissão para enviar e-mails para o seu domínio. Certifique-se de adicionar o seguinte registro TXT em seu console DNS (localizado na plataforma onde você adquiriu o domínio personalizado)."
       ],
+      "SSO users can't sign in on devices with always-on enforced.": [
+        "Usuários de SSO não podem entrar em dispositivos nos quais a VPN sempre ativa é obrigatória."
+      ],
       "Start sharing it with contacts and use it for online services.": [
         "Comece a compartilhá-lo com contatos e a usá-lo em serviços online."
       ],
@@ -9038,6 +9183,9 @@
       "This account has been suspended due to a potential policy violation.": [
         "Essa conta foi suspensa devido a uma potencial violação da política."
       ],
+      "This address now signs in through your organization's identity provider.": [
+        "Agora, o login com este endereço é feito pelo provedor de identidade da sua organização."
+      ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador não suporta pré-visualização de documentos PDF. Baixe o arquivo."
       ],
@@ -9055,6 +9203,9 @@
       ],
       "This file is too large to preview": [
         "Este arquivo é muito grande para visualizar"
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Este endereço do Gmail está cadastrado em outra conta ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI e outros). Estamos trabalhando para simplificar essa conexão, mas, por enquanto, você precisará seguir algumas etapas."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Esta é uma frase de 12 palavras que lhe foi solicitado definir."
@@ -9100,6 +9251,9 @@
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Isso permitirá que o PayPal seja usado para pagar sua assinatura da ${ BRAND_NAME }. Iremos redirecioná-lo para o PayPal em uma nova guia do navegador. Se você usar bloqueadores de pop-up, desative-os para continuar."
+      ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Isso permitirá que você acesse sua conta ${ BRAND_NAME } com rapidez e segurança para alterar sua senha."
       ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Isto irá excluir permanentemente os dados e todos os endereços de e-mail associados a estes usuários."
@@ -9170,14 +9324,23 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Para descriptografar e ver seus dados bloqueados depois de uma redefinição de senha, selecione um método de recuperação."
       ],
+      "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
+        "Para ativar a VPN sempre ativa, instale o perfil de configuração em cada Mac. O cliente ${ VPN_APP_NAME } aplica o perfil do dispositivo automaticamente após a instalação."
+      ],
       "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
         "Para habilitar a VPN Sempre Ativa (Always-on VPN), o perfil do dispositivo precisa chegar a ${ policiesPath } em cada dispositivo — o cliente ${ VPN_APP_NAME } o detecta nesse local e aplica o perfil automaticamente. ${ learnMore }."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Para garantir a maior segurança possível de sua conta, desative a opção **Recuperação por e-mail de recuperação**."
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Para garantir a máxima segurança da sua conta, desative a **Recuperação por e-mail**."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Para garantir a maior segurança possível de sua conta, desative a opção **Recuperação por telefone de recuperação**."
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Para garantir a maior segurança possível de sua conta, desative a opção **Recuperação por telefone**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Para garantir a máxima segurança da sua conta, mantenha a **Recuperação por e-mail** desativada."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Para garantir a máxima segurança da sua conta, mantenha a **Recuperação por telefone** desativada."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
@@ -9317,6 +9480,9 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Use um método de recuperação para desativar seu método de autenticação de dois fatores."
       ],
+      "Use an existing email or create a free ${ protonDomain } address.": [
+        "Use um e-mail existente ou crie um endereço ${ protonDomain } gratuito."
+      ],
       "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
         "Use múltiplos endereços de e-mail com o ${ MAIL_APP_NAME }. Adicione um novo endereço da ${ BRAND_NAME } ou conecte outra conta de e-mail para gerenciar tudo de uma só caixa de entrada."
       ],
@@ -9340,6 +9506,12 @@
       ],
       "Users": [
         "Usuários"
+      ],
+      "Users create a backup password the first time they sign in with single sign-on. When they later sign in on a new device, they can enter this password to complete the sign-in themselves, without needing an already signed-in device or an administrator to assist.": [
+        "Os usuários criam uma senha de backup no primeiro acesso com login único. Ao entrar em um novo dispositivo, podem usar essa senha para concluir o login por conta própria, sem precisar de um dispositivo já conectado nem da ajuda de um administrador."
+      ],
+      "Using a different MDM? Any MDM that supports deploying a configuration profile will work. Refer to your MDM's documentation on how to upload and assign it to your device fleet.": [
+        "Usa outro MDM? Qualquer MDM que permita implantar um perfil de configuração funcionará. Consulte a documentação do seu MDM para saber como enviar o perfil e atribuí-lo aos dispositivos da sua organização."
       ],
       "Verification code sent.": [
         "Código de verificação enviado."
@@ -9391,6 +9563,9 @@
       ],
       "We can use your recovery phone to send you a verification code to reset your password, and to contact you if we notice suspicious activity.": [
         "Podemos usar seu telefone de recuperação para enviar um código de verificação para redefinir sua senha e para entrar em contato com você caso detectemos atividades suspeitas."
+      ],
+      "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
+        "Não foi possível enviar as faturas para seu e-mail. O envio automático de faturas ficará pausado até você atualizar o endereço."
       ],
       "We couldn’t process your payment.": [
         "Não foi possível realizar o pagamento."
@@ -9449,6 +9624,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
       ],
+      "We're building a new way for you to manage your organization, and we're looking for specific users to join a video call and try an early version. Curious if you'd be a good match? Answer a few quick questions to see if you can participate.": [
+        "Estamos criando uma nova forma de gerenciar sua organização e buscamos usuários com perfis específicos para testar uma versão inicial em uma videochamada. Quer saber se você se encaixa? Responda a algumas perguntas rápidas para conferir se pode participar."
+      ],
       "Web sessions detected:": [
         "Sessões web detectadas:"
       ],
@@ -9466,6 +9644,21 @@
       ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Ao ativar o SAML para ${ appName } em seu provedor de identidade, você poderá ser solicitado a usar o URL de retorno de chamada (ACS) e o ID do emissor. Basta copiar e colar os dados abaixo nos campos do seu provedor de identidade."
+      ],
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Com o login restrito, você só pode entrar com o e-mail **${ primaryEmail }**. Seus outros endereços não podem ser associados à sua conta, mesmo que alguém os conheça."
+      ],
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "Com o login restrito, você só pode entrar com o nome de usuário **${ username }**. Seus outros endereços não podem ser associados à sua conta, mesmo que alguém os conheça."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Com o login restrito, você só pode entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }** ou **${ secondEmail }**. Seus outros endereços de e-mail não funcionarão para entrar."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Quando o acesso estiver restrito, você só poderá entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**, **${ secondEmail }** ou **${ thirdEmail }**. Seus outros endereços de e-mail não poderão ser usados para entrar."
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Com o login restrito, você só pode entrar com seu nome de usuário, **${ username }**, ou com **${ firstEmail }**. Seus outros endereços de e-mail não funcionarão para entrar."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ao cancelar, sua assinatura não será renovada, mas você ainda pode aproveitar os benefícios do plano até o final do período da sua assinatura. Depois disso, você fará o downgrade para o plano ${ BRAND_NAME } Free."
@@ -9505,6 +9698,9 @@
       ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Com grupos, você pode rapidamente e facilmente enviar e-mails para todas as pessoas em um grupo específico."
+      ],
+      "With VPN Professional, admins can enforce always-on VPN for all organization members, alongside private gateways, access policies, and monitoring.": [
+        "Com o VPN Professional, administradores podem exigir que a VPN fique sempre ativa para todos os membros da organização, além de contar com gateways privados, políticas de acesso e monitoramento."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sem a ativação, você não poderá criar novos usuários, adicionar endereços a usuários existentes ou acessar as contas de usuário que não são privadas."
@@ -9775,6 +9971,9 @@
       "your encrypted data will be locked": [
         "seus dados criptografados ficarão bloqueados"
       ],
+      "Your file includes a password for each user, so these accounts will be created with a password instead of an invite link.": [
+        "Seu arquivo inclui uma senha para cada usuário. Por isso, essas contas serão criadas com senha, em vez de um link de convite."
+      ],
       "Your files will be encrypted and then saved": [
         "Seus arquivos serão criptografados e depois salvos"
       ],
@@ -9804,6 +10003,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Os e-mails da sua organização estão protegidos com a criptografia de ponto a ponta usando a chave da organização. Esta impressão digital pode ser usada para verificar se todos os administradores da sua conta têm a mesma chave."
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "Seus outros endereços de e-mail não poderão ser usados para entrar até que você desative esta opção."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Suas informações de pagamento estão protegidas com a criptografia TLS e leis de privacidade suíças."
@@ -10820,6 +11022,15 @@
       "Require password check-ins": [
         "Exigir a verificação da senha"
       ],
+      "Restrict sign-in to email address": [
+        "Restringir o login ao endereço de e-mail"
+      ],
+      "Restrict sign-in to username": [
+        "Restringir o login ao nome de usuário"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "Restringir o login ao nome de usuário e aos endereços ${ BRAND_NAME } correspondentes"
+      ],
       "Reveal password": [
         "Mostrar senha"
       ],
@@ -10934,6 +11145,9 @@
       ],
       "To: ${ toEmail }": [
         "Para: ${ toEmail }"
+      ],
+      "Total": [
+        "Total"
       ],
       "Two-password mode": [
         "Modo de duas senhas"
@@ -11088,6 +11302,11 @@
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Adicione o seguinte registro TXT. Observação: os registros DNS podem levar várias horas para serem atualizados."
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Deixar o campo em branco"
       ]
     },
     "Label for new member": {
@@ -11741,11 +11960,17 @@
       "Monitor gateways connections": [
         "Monitorar conexões de gateways"
       ],
+      "Setup your own private gateways to monitor VPN connection activity within your organization.": [
+        "Configure seus próprios gateways privados para monitorar a atividade das conexões VPN na sua organização."
+      ],
       "Today": [
         "Hoje"
       ],
       "Today, ${ time }": [
         "Hoje, ${ time }"
+      ],
+      "Turn it on to track when and where users connect.": [
+        "Ative para acompanhar quando e de onde os usuários se conectam."
       ],
       "Yesterday": [
         "Ontem"
@@ -13257,6 +13482,9 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Cancele a qualquer momento antes disso. ** Você poderá usar ${ planTitle } até que a avaliação termine, gratuitamente."
       ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Mudou de ideia após o período de teste?** Cancele em até 30 dias após o primeiro pagamento e reembolsaremos o valor referente ao período não utilizado."
+      ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Uma vez que sua assinatura completa começa... ** Você ainda pode cancelar dentro de 30 dias e obter um reembolso proporcional."
       ],
@@ -13461,8 +13689,20 @@
       ]
     },
     "organization key reset": {
+      "Afterward, every converted user must accept the request to become non-private again, from their account settings.": [
+        "Depois, cada usuário convertido deverá aceitar a solicitação para voltar a ser não privado nas configurações da própria conta."
+      ],
+      "An unprivatization request is sent by email to the converted users": [
+        "Uma solicitação para tornar as contas não privadas é enviada por e-mail aos usuários convertidos"
+      ],
       "Because your organization key has changed, you lost some of your admin rights: You can no longer create non-private users and access their accounts.": [
         "Como a chave da sua organização mudou, você perdeu alguns de seus direitos de administrador: você não pode mais criar usuários não privados e acessar suas contas."
+      ],
+      "Before continuing, **let your users know they'll receive an admin access request by email**, so they're not caught off guard.": [
+        "Antes de continuar, **avise seus usuários que receberão uma solicitação de acesso de administrador por e-mail**, para que não sejam pegos de surpresa."
+      ],
+      "Can you reach out to other administrators?": [
+        "Você pode entrar em contato com outros administradores?"
       ],
       "Converting users to private": [
         "Convertendo usuários para privados"
@@ -13470,8 +13710,21 @@
       "Copy email list": [
         "Copiar lista de e-mails"
       ],
+      "Could not send the unprivatization request to ${ n } user. It will be retried automatically.": [
+        "Não foi possível enviar a solicitação para desativar o modo privado a ${ n } usuário. O envio será repetido automaticamente.",
+        "Não foi possível enviar as solicitações para desativar o modo privado a ${ n } usuários. Os envios serão repetidos automaticamente."
+      ],
+      "Get in touch with your other administrators, to see if they can help. They will be able to restore your privileges after using a data recovery method.": [
+        "Entre em contato com os outros administradores para saber se podem ajudar. Eles poderão restaurar seus privilégios após usar um método de recuperação de dados."
+      ],
+      "I've notified my users that they'll receive an unprivatization request.": [
+        "Avisei meus usuários que receberão uma solicitação para desativar o modo privado."
+      ],
       "Non-private users": [
         "Usuários não privados"
+      ],
+      "Once your privileges have been restored, you'll be able to create non-private users and access their accounts.": [
+        "Após a restauração dos seus privilégios, você poderá criar usuários não privados e acessar as contas deles."
       ],
       "Organization key reset": [
         "Redefinição da chave de organização"
@@ -13488,6 +13741,9 @@
       "Resetting organization key": [
         "Redefinindo a chave da organização"
       ],
+      "Resetting the organization key generates a new encryption key to keep your organization's data secure. **No data will be lost or destroyed in this process, but the users groups will be deleted.**": [
+        "Redefinir a chave da organização gera uma nova chave de criptografia para manter os dados da organização seguros. **Nenhum dado será perdido ou destruído nesse processo, mas os grupos de usuários serão excluídos.**"
+      ],
       "See ${ n } user": [
         "Ver ${ n } usuário",
         "Ver ${ n } usuários"
@@ -13498,11 +13754,29 @@
       "Send unprivatization requests": [
         "Enviar solicitação de desprivatização"
       ],
+      "The non-private users are converted to private": [
+        "Os usuários não privados são convertidos em privados"
+      ],
       "The organization key is reset": [
         "A chave de organização está redefinida"
       ],
       "This process is automated:": [
         "O processo é automatizado:"
+      ],
+      "This should take less than ${ minutes } minute. **Don't close this tab or let your device go to sleep** until it's finished.": [
+        "Isso deve levar menos de ${ minutes } minuto. **Mantenha esta aba aberta e o dispositivo ativo** até terminar.",
+        "Isso deve levar menos de ${ minutes } minutos. **Mantenha esta aba aberta e o dispositivo ativo** até terminar."
+      ],
+      "This should take less than ${ minutes } minute. **Keep this browser tab open and your device active** until it completes.": [
+        "Isso deve levar menos de ${ minutes } minuto. **Mantenha esta aba aberta e o dispositivo ativo** até terminar.",
+        "Isso deve levar menos de ${ minutes } minutos. **Mantenha esta aba aberta e o dispositivo ativo** até terminar."
+      ],
+      "To become non-private again, they must accept the request to enable admin access, from their account settings. You don't need to wait for this step.": [
+        "Para voltar a ter contas não privadas, eles devem aceitar a solicitação de acesso do administrador nas configurações da conta. Você não precisa esperar por esta etapa."
+      ],
+      "To reset the organization key and restore your administrator privileges, **${ n } non-private user must be temporarily converted to private.**": [
+        "Para redefinir a chave da organização e restaurar seus privilégios de administrador, **${ n } usuário não privado deve ser temporariamente convertido em privado.**",
+        "Para redefinir a chave da organização e restaurar seus privilégios de administrador, **${ n } usuários não privados devem ser temporariamente convertidos em privados.**"
       ],
       "To reset the organization key, the users will be converted to private, and will receive an email invitation to become non-private again.": [
         "Para redefinir a chave da organização, os usuários serão convertidos em privado e receberão um convite por e-mail para se tornarem não privados novamente."
@@ -13516,6 +13790,15 @@
       "User (${ n })": [
         "Usuário (${ n })",
         "Usuários (${ n })"
+      ],
+      "You can reset your organization key to restore your administrator privileges. Then, you'll be able to create non-private users and access their accounts.": [
+        "Você pode redefinir a chave da organização para restaurar seus privilégios de administrador. Depois, poderá criar usuários não privados e acessar as contas deles."
+      ],
+      "Your administrator privileges have been restored. You can now manage non-private users.": [
+        "Seus privilégios de administrador foram restaurados. Agora você pode gerenciar usuários não privados."
+      ],
+      "Your users will receive an email to accept the unprivatization request.": [
+        "Seus usuários receberão um e-mail para aceitar a solicitação de desativação do modo privado."
       ]
     },
     "Organization logo upload": {
@@ -13824,6 +14107,9 @@
       "Billing Country": [
         "País de Faturamento"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Não é possível comprar contas Born Private com uma assinatura ativa."
+      ],
       "Buying credits requires a separate purchase.": [
         "Comprar créditos requer uma compra separada."
       ],
@@ -13872,6 +14158,9 @@
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "Apenas um ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } pode ser comprado."
       ],
+      "Paid from your account credit.": [
+        "Pago com o crédito da sua conta."
+      ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "Pagar com ${ IDEAL_WERO_BRAND_NAME }"
       ],
@@ -13916,6 +14205,9 @@
       ],
       "terms and conditions": [
         "termos e condições"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "A iniciativa Born Private exige uma doação."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "O desconto é válido para ${ renewalsWithCoupon } renovação.",
@@ -14016,6 +14308,9 @@
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Você já possui o ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
       ],
+      "You already own a Born Private account.": [
+        "Você já tem uma conta Born Private."
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Você será cobrado em ${ amountToCharge } no método de pagamento selecionado."
       ],
@@ -14024,6 +14319,9 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Em breve você será redirecionado para verificar seu pagamento."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Sua conta é antiga demais para participar da iniciativa Born Private."
       ],
       "Your payment is still being processed": [
         "Seu pagamento ainda está sendo processado"
@@ -15347,9 +15645,21 @@
       ]
     },
     "scim": {
+      "${ cleanUpCount } clean up action required.": [
+        "${ cleanUpCount } ação de limpeza necessária.",
+        "${ cleanUpCount } ações de limpeza necessárias."
+      ],
+      "${ cleanUpCount } user's permissions have changed.": [
+        "As permissões de ${ cleanUpCount } usuário foram alteradas.",
+        "As permissões de ${ cleanUpCount } usuários foram alteradas."
+      ],
       "${ memberCount } new member": [
         "${ memberCount } novo membro",
         "${ memberCount } novos membros"
+      ],
+      "${ numberOfCleanUps } clean up action required": [
+        "${ numberOfCleanUps } ação de limpeza necessária",
+        "${ numberOfCleanUps } ações de limpeza necessárias"
       ],
       "${ numberOfPendingGroups } group synced": [
         "${ numberOfPendingGroups } grupo sincronizado",
@@ -15386,6 +15696,12 @@
       ],
       "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
         "Aprovação final necessária para conceder acesso em todos os serviços do ${ BRAND_NAME }."
+      ],
+      "Final approval needed to remove organization key access.": [
+        "É necessária uma aprovação final para remover o acesso à chave da organização."
+      ],
+      "Final approval needed to revoke their organization keys.": [
+        "É necessária uma aprovação final para revogar as chaves da organização desses usuários."
       ],
       "From your identity provider": [
         "Do seu provedor de identidade"
@@ -15427,6 +15743,9 @@
       ]
     },
     "scim: Info": {
+      "**Groups:** All groups convert to local ${ BRAND_NAME } groups. Syncing with your identity provider stops, and you'll manage membership in ${ BRAND_NAME } settings instead.": [
+        "**Grupos:** Todos os grupos se tornam grupos locais do ${ BRAND_NAME }. A sincronização com seu provedor de identidade é interrompida, e você passa a gerenciar os membros nas configurações do ${ BRAND_NAME }."
+      ],
       "**Prerequisite:** SAML authentication must be configured to enable SCIM provisioning.": [
         "**Pré-requisito:** autenticação SAML deve ser configurada para ativar o provisionamento SCIM"
       ],
@@ -15459,6 +15778,9 @@
       ],
       "Make sure you copy the above SCIM token now.": [
         "Certifique-se de copiar o token SCIM acima agora."
+      ],
+      "Re-enabling syncing will duplicate existing groups. They can't be merged back into SCIM.": [
+        "Reativar a sincronização duplicará os grupos existentes. Eles não poderão ser mesclados novamente no SCIM."
       ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Simplifica o gerenciamento de usuário entre diferentes serviços. Adicione, edite e remova usuários do seu provedor de identidade, e essas mudanças serão automaticamente aplicadas à sua organização ${ appName }."
@@ -15898,6 +16220,11 @@
         "Solicitar redefinição de senha"
       ]
     },
+    "Set invoice email form note": {
+      "Turn on automatic invoicing to receive bills via email. Enter the email address where you want to receive invoices.": [
+        "Ative o envio automático de faturas para recebê-las por e-mail. Informe o endereço de e-mail em que deseja receber as faturas."
+      ]
+    },
     "Settings section title": {
       "Account": [
         "Conta"
@@ -16237,6 +16564,9 @@
       "Contact your administrator if the problem persists.": [
         "Entre em contato com o administrador se o problema persistir."
       ],
+      "Continue to join as **${ username }**": [
+        "Continue para participar como **${ username }**"
+      ],
       "Current device": [
         "Dispositivo atual"
       ],
@@ -16389,11 +16719,17 @@
       "This will sign you out of your other devices and you will have to create a new backup password.": [
         "Isso vai te desconectar dos outros dispositivos e você terá que criar uma nova senha de backup."
       ],
+      "This will sign you out of your other devices.": [
+        "Isso encerrará suas sessões nos outros dispositivos."
+      ],
       "To make sure it's really you trying to sign in to **${ email }**, review the confirmation code and approve the request from another device.": [
         "Para ter certeza de que é realmente você que está tentando iniciar sessão em **${ email }**, revise o código de confirmação e aprove a solicitação do outro dispositivo."
       ],
       "To make sure it's really you trying to sign-in, please enter your backup password.": [
         "Para ter certeza que é realmente você tentando se conectar, insira a sua senha de backup."
+      ],
+      "To make sure it's really you trying to sign-in, please enter your password.": [
+        "Para confirmar que é você quem está tentando entrar, digite sua senha."
       ],
       "To make sure it's really you trying to sign-in, share the confirmation code with your administrator **${ adminEmail }** so that they can approve the request for **${ email }**.": [
         "Para ter certeza de que é realmente você que está tentando se conectar, compartilhe o código de confirmação com seu administrador **${ adminEmail }** para ele poder aprovar a solicitação de **${ email }**."
@@ -16418,6 +16754,9 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Você será redirecionado para o seu provedor de SSO de terceiros."
+      ],
+      "Your old password will become your **backup password**. You will be able to use it to authorize single sign-on (SSO) on new devices in the future.": [
+        "Sua senha antiga se tornará sua **senha de backup**. Você poderá usá-la para autorizar o login único (SSO) em novos dispositivos no futuro."
       ],
       "Your SSO configuration will be deleted.": [
         "Sua configuração de SSO será excluída."
@@ -16486,11 +16825,17 @@
       "Disable recovery by phone": [
         "Desativar recuperação por telefone"
       ],
+      "failed": [
+        "falhou"
+      ],
       "finalizing": [
         "finalizando"
       ],
       "Generate a recovery phrase": [
         "Gerar uma frase de recuperação"
+      ],
+      "key removal scheduled": [
+        "remoção da chave agendada"
       ],
       "Last changed ${ formattedDate }": [
         "Última alteração há ${ formattedDate } atrás"
@@ -18307,6 +18652,9 @@
       "Help center": [
         "Central de ajuda"
       ],
+      "Help shape ${ BRAND_NAME }'s admin experience": [
+        "Ajude a melhorar a experiência de administração do ${ BRAND_NAME }"
+      ],
       "Helping activists in Hong Kong": [
         "Ajudando ativistas em Hong Kong"
       ],
@@ -18617,6 +18965,9 @@
       "Restore administrator privileges": [
         "Restaurar os privilégios de administrador"
       ],
+      "Restrict sign-in?": [
+        "Restringir o login?"
+      ],
       "Reverse charge not supported": [
         "Carregamento reverso não suportado"
       ],
@@ -18712,6 +19063,9 @@
       ],
       "Sign out": [
         "Encerrar sessão"
+      ],
+      "Sign-in protection": [
+        "Proteção de acesso"
       ],
       "Signed in to another account": [
         "Sessão iniciada em outra conta"
@@ -19108,6 +19462,9 @@
       "Added to your plan: ${ mergedAddonTitles }": [
         "Adicionado ao seu plano: ${ mergedAddonTitles }"
       ],
+      "Admins can manage user accounts and give admin privileges to other users.": [
+        "Administradores podem gerenciar contas de usuários e conceder privilégios de administrador a outros usuários."
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Os administradores podem gerenciar contas de usuários e conceder privilégios de administrador a outros usuários. Somente o administrador principal pode editar o plano da organização."
       ],
@@ -19299,8 +19656,14 @@
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
       ],
+      "Assigned by a group. Remove the user from the group to change this role": [
+        "Função atribuída por um grupo. Remova o usuário do grupo para alterá-la"
+      ],
       "Disables end-to-end email encryption for this group": [
         "Desativa a criptografia de e-mail de ponta a ponta para este grupo"
+      ],
+      "External address - cannot be granted the roles and permissions assigned to this group.": [
+        "Endereço externo: não pode receber as funções e permissões atribuídas a este grupo."
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Endereço externo - desativa e-mail criptografado de ponta a ponta para esse grupo, e nenhum recurso criptografado será compartilhado com esse usuário."
@@ -19342,6 +19705,9 @@
     "Tooltip for members table": {
       "Last time this user connected to one of your organization's Gateways.": [
         "Última vez que este usuário conectou a um gateways da sua organização."
+      ],
+      "Last time this user signed in or used the ${ VPN_APP_NAME } app on their device.": [
+        "Última vez que este usuário entrou na conta ou usou o aplicativo ${ VPN_APP_NAME } no dispositivo dele."
       ]
     },
     "Tor out of date": {
@@ -19693,6 +20059,9 @@
       ],
       "Send invite link via email instead": [
         "Envie o link de convite por e-mail em vez disso"
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Este usuário receberá direitos de administrador na próxima vez que entrar."
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Isso criará um endereço do ${ MAIL_APP_NAME }."

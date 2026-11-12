@@ -5811,9 +5811,6 @@
       "Allow platform keys": [
         "Salli alustojen avaimet"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Mahdollistaa sisäänrakennettujen suojausavainten käyttämisen (esim. Windows Hello, Face ID, Touch ID tai sisäiset TPM-piirit)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Haluatko varmasti poistaa suojausavaimen ${ name }?"
       ],
@@ -8159,12 +8156,6 @@
       "RECOMMENDED": [
         "SUOSITELTU"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Palautus sähköpostitse ei ole käytettävissä, kun ${ PROTON_SENTINEL_NAME } on käytössä."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Puhelinpalautus ei ole käytettävissä, kun ${ PROTON_SENTINEL_NAME } on käytössä."
-      ],
       "Recovery file downloaded": [
         "Palautustiedosto ladattiin"
       ],
@@ -8613,12 +8604,6 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Purkaaksesi lukittujen tietojesi salauksen ja avataksesi ne salasanan uudelleenasetuksen jälkeen, valitse palautustapa."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Varmistaaksenne tilinne parhaan mahdollisen turvallisuuden, poistakaa käytöstä **Palautus palautussähköpostilla**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Varmistaaksenne tilinne parhaan mahdollisen turvallisuuden, poistakaa käytöstä **Palautus palautuspuhelimella**."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Vahvista olevasi ihminen roskapostin ja väärinkäytösten torjumiseksi."

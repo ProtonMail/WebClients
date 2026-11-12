@@ -5697,9 +5697,6 @@
       "Allow platform keys": [
         "Cho phép khóa nền tảng"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Cho phép bạn đăng ký các khóa bảo mật tích hợp (như Windows Hello, Face ID, Touch ID hoặc TPM nội bộ)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Chắc chắn muốn xóa khóa bảo mật ${ name } không?"
       ],
@@ -7937,12 +7934,6 @@
       "RECOMMENDED": [
         "KHUYẾN NGHỊ"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Khôi phục bằng email không khả dụng khi ${ PROTON_SENTINEL_NAME } được kích hoạt."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Khôi phục bằng điện thoại không khả dụng khi đang bật ${ PROTON_SENTINEL_NAME }."
-      ],
       "Recovery file downloaded": [
         "Đã tải xuống tệp tin khôi phục"
       ],
@@ -8380,12 +8371,6 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Hãy chọn một phương pháp khôi phục để giải mã và xem dữ liệu đã bị khóa sau khi đặt lại mật khẩu."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Để đảm bảo bảo mật tài khoản cao nhất có thể, hãy vô hiệu hóa **Khôi phục bằng email khôi phục**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Để đảm bảo bảo mật tài khoản cao nhất có thể, hãy vô hiệu hóa **Khôi phục bằng điện thoại khôi phục**."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Để chống lại thư rác và lạm dụng, vui lòng xác thực rằng bạn là con người."

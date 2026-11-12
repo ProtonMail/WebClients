@@ -6353,9 +6353,6 @@
       "Allow platform keys": [
         "Permitere chei platformă"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Permite înregistrarea cheilor integrate (cum ar fi Windows Hello, Face ID, Touch ID sau TPM intern)."
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Ștergeți cheia de securitate ${ name }?"
       ],
@@ -7766,17 +7763,17 @@
       "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
         "Activând această opțiune, vă veți putea autentifica doar cu **${ primaryEmail }**."
       ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
-        "Activând această opțiune, vă veți putea autentifica doar folosind numele de utilizator inițial **${ username }** — fie ca atare, fie sub forma **${ firstEmail }**, **@${ secondDomain }** sau **@${ thirdDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
-        "Prin activarea acestei opțiuni, vă veți putea autentifica doar folosind numele de utilizator inițial **${ username }** – fie ca atare, fie sub forma **${ firstEmail }** sau **@${ secondDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
-        "Prin activarea acestei opțiuni, vă veți putea autentifica doar folosind numele de utilizator inițial **${ username }** — fie ca atare, fie sub forma **${ firstEmail }**."
-      ],
       "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
         "Activând această opțiune, vă veți putea autentifica doar folosind numele de utilizator **${ username }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Prin activarea acestei opțiuni, vă veți putea autentifica doar folosind numele de utilizator, **${ username }**, sau **${ firstEmail }** ori **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Prin activarea acestei opțiuni, vă veți putea autentifica doar folosind numele de utilizator **${ username }** sau cu **${ firstEmail }**, **${ secondEmail }** ori **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Activând această opțiune, vă veți putea autentifica doar folosind numele de utilizator, **${ username }** sau **${ firstEmail }**."
       ],
       "Can you access your active session?": [
         "Vă puteți accesa sesiunea activă?"
@@ -8966,12 +8963,6 @@
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Recomandat pe dispozitivele de încredere. ${ learnMoreLink }"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Recuperarea prin e-mail nu este disponibilă dacă ${ PROTON_SENTINEL_NAME } este activat."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Recuperarea prin telefon nu este disponibilă dacă ${ PROTON_SENTINEL_NAME } este activat."
-      ],
       "Recovery file downloaded": [
         "Fișier de recuperare descărcat"
       ],
@@ -9450,12 +9441,6 @@
       "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
         "Pentru a activa VPN activat permanent, profilul dispozitivului trebuie să se afle în ${ policiesPath } pe fiecare dispozitiv — clientul ${ VPN_APP_NAME } îl detectează acolo și impune profilul automat. ${ learnMore }."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Pentru a asigura cea mai înaltă securitate posibilă a contului, dezactivați **Recuperarea prin adresa de e-mail de recuperare**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Pentru a asigura cea mai înaltă securitate posibilă a contului, dezactivați **Recuperarea prin număr de telefon de recuperare**."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
       ],
@@ -9765,14 +9750,14 @@
       "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Atunci când autentificarea este restricționată, doar numele de utilizator **${ username }** poate fi utilizat pentru a vă autentifica. Celelalte adrese deținute nu mai pot fi asociate cu contul, chiar dacă cineva le cunoaște."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Atunci când autentificarea este restricționată, vă puteți autentifica doar folosind numele de utilizator inițial **${ username }** – fie ca atare, fie sub forma **${ firstEmail }**, **@${ secondDomain }** sau **@${ thirdDomain }**. Celelalte adrese de e-mail deținute nu vor funcționa pentru autentificare."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Atunci când autentificarea este restricționată, vă puteți autentifica doar folosind numele de utilizator **${ username }** sau **${ firstEmail }** ori **${ secondEmail }**. Celelalte adrese de e-mail nu vor funcționa pentru autentificare."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Atunci când autentificarea este restricționată, vă poți autentifica doar folosind numele de utilizator inițial **${ username }** – fie ca atare, fie sub forma **${ firstEmail }** sau **@${ secondDomain }**. Celelalte adrese de e-mail deținute nu vor funcționa pentru autentificare."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Atunci când autentificarea este restricționată, vă puteți autentifica doar folosind numele de utilizator **${ username }** sau **${ firstEmail }**, **${ secondEmail }** ori **${ thirdEmail }**. Celelalte adrese de e-mail nu vor funcționa pentru autentificare."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Atunci când autentificarea este restricționată, vă puteți autentifica doar folosind numele de utilizator inițial **${ username }** – fie ca atare, fie sub forma **${ firstEmail }**. Celelalte adrese de e-mail deținute nu vor funcționa pentru autentificare."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Atunci când autentificarea este restricționată, vă puteți autentifica doar folosind numele de utilizator **${ username }** sau cu **${ firstEmail }**. Celelalte adrese de e-mail nu vor funcționa pentru autentificare."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Dacă anulați, abonamentul nu va fi reînnoit, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de abonament. După aceea, contul va fi trecut la planul ${ BRAND_NAME } Free."
@@ -11437,6 +11422,11 @@
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Adăugați următoarea înregistrare TXT. Notă: înregistrările DNS au nevoie de câteva ore pentru a se actualiza."
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Lăsați câmpul gol"
       ]
     },
     "Label for new member": {

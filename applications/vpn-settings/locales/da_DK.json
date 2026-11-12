@@ -1874,7 +1874,7 @@
         "Tilladelse tilbagekaldt"
       ],
       "Sign-in": [
-        "Log ind"
+        "Login"
       ]
     },
     "Admin": {
@@ -6301,9 +6301,6 @@
       "Allow platform keys": [
         "Tillad platformsnøgler"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Giver dig mulighed for at registrere indbyggede sikkerhedsnøgler (som Windows Hello, Face ID, Touch ID eller interne TPM'er)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Er du sikker på du vil slette sikkerhedsnøgle ${ name }?"
       ],
@@ -7662,17 +7659,17 @@
       "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
         "Ved at slå dette til, vil du kun kunne logge ind med **${ primaryEmail }**."
       ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
-        "Ved at slå dette til vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller med **${ firstEmail }**, **@${ secondDomain }** eller **@${ thirdDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
-        "Ved at slå dette til vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller med **${ firstEmail }** eller **@${ secondDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
-        "Ved at slå dette til vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller med **${ firstEmail }**."
-      ],
       "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
         "Ved at slå dette til, vil du kun kunne logge ind med dit brugernavn **${ username }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Ved at slå dette til vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller med **${ firstEmail }** eller **@${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Ved at slå dette til vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller med **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Ved at slå dette til vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller med **${ firstEmail }**."
       ],
       "Can you access your active session?": [
         "Kan du tilgå din aktive session?"
@@ -8850,12 +8847,6 @@
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Anbefales på betroede enheder. ${ learnMoreLink }"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Gendannelse via e-mail er ikke tilgængeligt mens ${ PROTON_SENTINEL_NAME } er aktiveret."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Gendannelse via telefon er ikke tilgængeligt mens ${ PROTON_SENTINEL_NAME } er aktiveret."
-      ],
       "Recovery file downloaded": [
         "Gendannelsesfil downloadet"
       ],
@@ -9333,11 +9324,17 @@
       "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
         "For at aktivere Always-on VPN skal enhedsprofilen nå ${ policiesPath } på hver enhed – ${ VPN_APP_NAME }-klienten registrerer den der og aktiverer profilen automatisk. ${ learnMore }"
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
         "Opnå størst mulig sikkerhed på din konto ved at slå **Gendannelse via e-mail** fra."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
         "Opnå størst mulig sikkerhed på din konto ved at slå **Gendannelse via telefon** fra."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Opnå størst mulig sikkerhed på din konto ved at forsætte med at have slået **Gendannelse via e-mail** fra."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Opnå størst mulig sikkerhed på din konto ved at forsætte med at have slået **Gendannelse via telefon** fra."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
@@ -9648,14 +9645,14 @@
       "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Kun dit brugernavn **${ username }** kan bruges til at logge ind, når login er begrænset. Dine andre adresser kan ikke knyttes tilbage til din konto, selv om nogen kender dem."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Når login er begrænset, vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller som **${ firstEmail }**, **@${ secondDomain }** eller **@${ thirdDomain }**. Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når login er begrænset, vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller som **${ firstEmail }** eller **@${ secondEmail }**. Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Når login er begrænset, vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller som **${ firstEmail }** eller **@${ secondDomain }**. Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når login er begrænset, vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller som **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**. Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Når login er begrænset, vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller som **${ firstEmail }** Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når login er begrænset, vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller som **${ firstEmail }** Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ved opsigelsen bliver dit abonnement ikke fornyet, men du kan stadig nyde godt af abonnementets fordele indtil udløb af abonnementsperioden. Herefter nedgraderes du til ${ BRAND_NAME } Free-abonnement."
@@ -9850,7 +9847,7 @@
         "Du har ingen transaktioner"
       ],
       "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
-        "Du har flere abonnementer. Vælg det, du vil opsige: Dine øvrige abonnementer påvirkes ikke. Et opsagt abonnement fornyes ikke, og du beholder fordelene, indtil abonnementsperioden udløber."
+        "Du har flere abonnementer. Vælg det du vil opsige: Dine øvrige abonnementer påvirkes ikke. Et opsagt abonnement fornyes ikke, og du beholder fordelene indtil abonnementsperioden udløber."
       ],
       "You have unpublished changes": [
         "De har ikke-udgivne ændringer"
@@ -11299,6 +11296,11 @@
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Tilføj følgende TXT-post. Bemærk: Det kan tage flere timer at opdatere DNS-poster."
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Lad feltet være tomt"
       ]
     },
     "Label for new member": {
@@ -19289,7 +19291,7 @@
         "Velkommen til ${ BRAND_NAME } for Business"
       ],
       "What changes if you cancel ${ planDisplayName }": [
-        "Hvad ændrer sig, hvis du opsiger ${ planDisplayName }"
+        "Dette ændrer sig, hvis du opsiger ${ planDisplayName }"
       ],
       "What is an alias?": [
         "Hvad er et alias?"

@@ -5776,9 +5776,6 @@
       "Allow platform keys": [
         "Dopusti ključeve platforme"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Omogućuje vam registraciju ugrađenih sigurnosnih ključeva (poput Windows Hello, Face ID, Touch ID ili internih TPM-ova)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Jesi li siguran da želiš izbrisati sigurnosni ključ ${ name }?"
       ],
@@ -8139,12 +8136,6 @@
       "RECOMMENDED": [
         "PREPORUČENO"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Oporavak putem e-pošte nije dostupan dok je omogućen ${ PROTON_SENTINEL_NAME }."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Oporavak putem telefona nije dostupan dok je omogućen ${ PROTON_SENTINEL_NAME }."
-      ],
       "Recovery file downloaded": [
         "Preuzeta datoteka za oporavak"
       ],
@@ -8592,12 +8583,6 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Kako bi dešifrirao i pregledao svoje zaključane podatke nakon ponovnog postavljanja lozinke, odaberi metodu oporavka."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Kako biste osigurali najvišu moguću sigurnost svog korisničkog računa, onemogućite **Oporavak putem adrese e-pošte za oporavak**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Kako biste osigurali najvišu moguću sigurnost svog korisničkog računa, onemogućite **Oporavak putem telefona za oporavak**."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."

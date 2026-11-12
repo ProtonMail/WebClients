@@ -398,7 +398,10 @@
         "Скасаваць"
       ],
       "Cancel ${ planTitle }": [
-        "Скасваць ${ planTitle }"
+        "Скасаваць ${ planTitle }"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "Скасаваць пробны перыяд ${ planTitle }"
       ],
       "Cancel request": [
         "Скасаваць запыт"
@@ -989,6 +992,9 @@
         "Кіраванне меткамі"
       ],
       "Manage subscription": [
+        "Кіраваць падпіскай"
+      ],
+      "Manage subscriptions": [
         "Кіраваць падпіскай"
       ],
       "Manage users/addresses": [
@@ -1891,6 +1897,9 @@
       ],
       "Permission revoked": [
         "Дазвол адкліканы"
+      ],
+      "Sign-in": [
+        "Уваход"
       ]
     },
     "Admin": {
@@ -1904,6 +1913,9 @@
       ],
       "3 new admin roles": [
         "3 новыя ролі адміністратара"
+      ],
+      "Assign admin roles to groups. Manage access for many users at once and update it automatically when people join or leave.": [
+        "Прызначайце ролі адміністратара групам. Кіруйце доступам для некалькіх карыстальнікаў адначасова і абнаўляйце іх аўтаматычна, калі людзі далучаюцца або выходзяць з групы."
       ],
       "Assign specific admin roles. Give each admin only the access they need to limit the impact of compromised accounts and accidental errors.": [
         "Прызначыць пэўныя ролі для адміністратара. Дайце кожнаму адміністратару толькі неабходныя правы доступу, каб абмежаваць уплыў скампраметаваных уліковых запісаў і выпадковых памылак."
@@ -6346,9 +6358,6 @@
       "Allow platform keys": [
         "Дазволіць ключы платформы"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Дазваляе рэгістраваць убудаваныя ключы бяспекі (такія, як Windows Hello, Touch ID, Face ID або ўбудаваны TPM)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Вы сапраўды хочаце выдаліць ключ бяспекі ${ name }?"
       ],
@@ -7646,6 +7655,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Дазволіць карыстальнікам падключацца да бяспечна абагуленых сервераў з раздзела **Краіны** праграмы ${ VPN_APP_NAME }."
       ],
+      "Allow your organization to use the ${ LUMO_APP_NAME } API": [
+        "Дазволіць выкарыстоўваць API для ${ LUMO_APP_NAME } у вашай арганізацыі"
+      ],
       "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
         "Дазвол уваходу па QR-кодзе забяспечыць вам магчымасць увайсці ў сістэму адсканіраваўшы QR-код, калі вы забудзеце свой пароль. Проста ўвайдзіце ў ${ BRAND_NAME } на іншай прыладзе."
       ],
@@ -7786,6 +7798,9 @@
       ],
       "By leaving now, changes may not be saved": [
         "Калі выйсці цяпер, змяненні могуць не захавацца"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Вы зможаце ўвайсці ў сістэму толькі з дапамогай свайго імя карыстальніка **${ username }**, адраса электроннай пошты **${ firstEmail }** або **${ secondEmail }**, калі ўключыце гэту функцыю."
       ],
       "Can you access your active session?": [
         "Ці ёсць у вас доступ да актыўнага сеанса?"
@@ -8966,12 +8981,6 @@
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Рэкамендавана на давераных прыладах. ${ learnMoreLink }"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Аднаўленне па адрасе электроннай пошты недаступна, калі ${ PROTON_SENTINEL_NAME } уключаны."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Аднаўленне па нумары тэлефона недаступна, калі ${ PROTON_SENTINEL_NAME } уключаны."
-      ],
       "Recovery file downloaded": [
         "Файлы аднаўлення спампаваны"
       ],
@@ -9311,6 +9320,9 @@
       "This account has been suspended due to a potential policy violation.": [
         "Дзеянне гэтага ўліковага запісу было прыпынена з прычыны патэнцыйнага парушэння ўмоў выкарыстання."
       ],
+      "This address now signs in through your organization's identity provider.": [
+        "Цяпер уваход у гэты адрас выконваецца праз пастаўшчыка пасведчанняў вашай арганізацыі."
+      ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Дадзены браўзер не падтрымлівае папярэдні прагляд дакументаў PDF. Спампуйце файл."
       ],
@@ -9451,12 +9463,6 @@
       ],
       "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
         "Профіль канфігурацыі павінен быць усталяваны на кожным Mac, каб уключыць пастаянную VPN. Кліент ${ VPN_APP_NAME } аўтаматычна прымяняе профіль прылады пасля яго налады."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Адключыце **Аднаўленне па электроннай пошце** для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Адключыце **Аднаўленне па нумары тэлефона** для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
@@ -9913,6 +9919,9 @@
         "Вы не можаце адправіць больш чым ${ emailSendLimitNumber } запрашальныя лісты на працягу наступных 24 гадзін",
         "Вы не можаце адправіць больш чым ${ emailSendLimitNumber } запрашальных лістоў на працягу наступных 24 гадзін",
         "Вы не можаце адправіць больш чым ${ emailSendLimitNumber } запрашальныя лісты на працягу наступных 24 гадзін"
+      ],
+      "You cancel it in the store.": [
+        "Вы скасавалі яго ў краме."
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Вы не можаце запрасіць карыстальніка ${ MAIL_APP_NAME }"
@@ -11433,6 +11442,11 @@
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Дадайце наступны запіс TXT. Заўвага: абнаўленне запісаў DNS можа заняць некалькі гадзін."
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Пакінуць поле пустым"
       ]
     },
     "Label for new member": {
@@ -14400,6 +14414,9 @@
       ],
       "terms and conditions": [
         "умовамі выкарыстання"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Ініцыятыва Born Private патрабуе ахвяравання."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэння.",
@@ -17800,6 +17817,9 @@
     "Subscription term": {
       "${ startTime } – ${ endTime }": [
         "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "Ад ${ startTime }"
       ]
     },
     "Subtitle": {
@@ -18997,6 +19017,9 @@
       "Help center": [
         "Даведачны цэнтр"
       ],
+      "Help shape ${ BRAND_NAME }'s admin experience": [
+        "Дапамажыце нам палепшыць досвед адміністратара для ${ BRAND_NAME }"
+      ],
       "Helping activists in Hong Kong": [
         "Дапамога актывістам у Ганконгу"
       ],
@@ -19648,6 +19671,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "Вітаем у ${ BRAND_NAME } for Business"
       ],
+      "What changes if you cancel ${ planDisplayName }": [
+        "Што здарыцца, калі вы скасуеце тарыфны план ${ planDisplayName }"
+      ],
       "What is an alias?": [
         "Што такое псеўданім?"
       ],
@@ -19779,6 +19805,9 @@
       ],
       "Price": [
         "Цана"
+      ],
+      "Renewal": [
+        "Падаўжэнне"
       ],
       "Status": [
         "Статус"

@@ -5731,9 +5731,6 @@
       "Allow platform keys": [
         "Payagan ang mga platform key"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Pinapayagan kang magrehistro ng mga built-in na security key (tulad ng Windows Hello, Face ID, Touch ID o mga internal na TPM)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Sigurado ka bang gusto mong i-delete ang security key na ${ name }?"
       ],
@@ -8031,12 +8028,6 @@
       "RECOMMENDED": [
         "INIREREKOMENDA"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Hindi available ang recovery gamit ang email habang pinagana ang ${ PROTON_SENTINEL_NAME }."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Hindi magagamit ang recovery sa pamamagitan ng telepono habang pinapagana ang ${ PROTON_SENTINEL_NAME }."
-      ],
       "Recovery file downloaded": [
         "Na-download na ang recovery file"
       ],
@@ -8479,12 +8470,6 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Upang i-decrypt at tingnan ang naka-lock na data pagkatapos ng pag-reset ng password, piliin ang paraan ng pag-recover."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Upang matiyak ang pinakamataas na posibleng seguridad ng iyong account, i-disable ang **Recovery sa pamamagitan ng recovery email**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Upang matiyak ang pinakamataas na posibleng seguridad ng iyong account, i-disable ang **Recovery sa pamamagitan ng recovery phone**."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Upang labanan ang spam at pang-aabuso, mangyaring i-verify na ikaw ay tao."
