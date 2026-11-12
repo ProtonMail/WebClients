@@ -7,6 +7,7 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ConditionalTooltip } from '../../../atoms/ConditionalTooltip/ConditionalTooltip';
+import { useRestoreFocusAfterLoading } from '../../../hooks/useRestoreFocusAfterLoading';
 
 type MoreMenuIcon = (props: Pick<IconComponentProps, 'size' | 'className'>) => ReactNode;
 
@@ -36,6 +37,7 @@ export interface MoreMenuAction {
 
 const MoreMenuToggleItem = ({ id, Icon, label, checked, onChange, disabled, loading, tooltip }: MoreMenuToggle) => {
     const inputId = `more-menu-${id}`;
+    const { inputRef, trackFocus } = useRestoreFocusAfterLoading(!!loading);
 
     return (
         <div className={itemClassName} style={itemStyle}>
@@ -45,14 +47,24 @@ const MoreMenuToggleItem = ({ id, Icon, label, checked, onChange, disabled, load
             </label>
             <ConditionalTooltip title={tooltip}>
                 <Toggle
+                    ref={inputRef}
                     id={inputId}
                     checked={checked}
-                    onChange={onChange}
+                    onChange={() => {
+                        trackFocus();
+                        onChange();
+                    }}
                     disabled={disabled}
                     loading={loading}
+                    aria-describedby={tooltip ? `${inputId}-reason` : undefined}
                     className={clsx('setting-toggle shrink-0', !checked && 'setting-toggle-inactive')}
                 />
             </ConditionalTooltip>
+            {tooltip && (
+                <span id={`${inputId}-reason`} className="sr-only">
+                    {tooltip}
+                </span>
+            )}
         </div>
     );
 };

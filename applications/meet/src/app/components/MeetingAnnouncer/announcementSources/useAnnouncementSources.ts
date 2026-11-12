@@ -1,5 +1,6 @@
 import type { ConnectionAnnouncementState } from '../types';
 import { useBackgroundEffectAnnouncements } from './useBackgroundEffectAnnouncements';
+import { useCaptionsAvailabilityAnnouncements } from './useCaptionsAvailabilityAnnouncements';
 import { useChatAnnouncements } from './useChatAnnouncements';
 import { useConnectionAnnouncements } from './useConnectionAnnouncements';
 import { useHandRaiseAnnouncements } from './useHandRaiseAnnouncements';
@@ -26,4 +27,5 @@ export const useAnnouncementSources = ({ connectionState }: AnnouncementSourcesO
     useScreenShareAnnouncements();
     useMeetingTimeoutAnnouncements();
     useBackgroundEffectAnnouncements();
+    useCaptionsAvailabilityAnnouncements();
 };

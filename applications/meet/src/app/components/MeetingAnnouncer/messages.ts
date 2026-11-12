@@ -118,4 +118,12 @@ export const announcementMessages = {
     customBackgroundRemoved: () => c('Accessibility announcement').t`Background removed`,
 
     backgroundEffectCleared: () => c('Accessibility announcement').t`Background effect turned off`,
+
+    liveCaptionsTurnedOn: () => c('Accessibility announcement').t`Live captions turned on`,
+
+    liveCaptionsTurnedOff: () => c('Accessibility announcement').t`Live captions turned off`,
+
+    liveCaptionsDisabledByHost: () => c('Accessibility announcement').t`Live captions turned off for this meeting`,
+
+    liveCaptionsAllowedByHost: () => c('Accessibility announcement').t`Live captions allowed for this meeting`,
 };
