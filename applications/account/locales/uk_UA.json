@@ -19865,6 +19865,27 @@
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Ідеальний тарифний план для досвідчених користувачів, які дбають про приватність."
+      ],
+      "Confidential video conferencing for your business.": [
+        "Конфіденційні відеоконференції для вашого бізнесу."
+      ],
+      "Essential privacy and security suite for your business.": [
+        "Основний пакет із приватності й безпеки для вашого бізнесу."
+      ],
+      "Next-level password management for your business.": [
+        "Керування паролями нового рівня для вашого бізнесу."
+      ],
+      "Premium privacy and security suite for your business.": [
+        "Преміумпакет із приватності й безпеки для вашого бізнесу."
+      ],
+      "Privacy-first AI writing assistant for your business.": [
+        "Зосереджений на приватності помічник із написання на основі ШІ для вашого бізнесу."
+      ],
+      "Secure cloud storage and file sharing for your business.": [
+        "Захищене хмарне сховище та спільний доступ до файлів для вашого бізнесу."
+      ],
+      "Secure, high-speed VPN access for your business.": [
+        "Захищений і високошвидкісний доступ VPN для вашого бізнесу."
       ]
     },
     "Plans": {
@@ -22105,6 +22126,87 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Вас запрошено приєднатися до понад 100 млн людей, які вирішили контролювати свої дані за допомогою зашифрованої екосистеми ${ BRAND_NAME }."
+      ],
+      "${ renewalPriceElement } after the first 12 months": [
+        "${ renewalPriceElement } після перших 12 місяців."
+      ],
+      "Billed yearly": [
+        "Сплачується щорічно"
+      ],
+      "Billed yearly, renews on ${ renewalTime }": [
+        "Сплачується щороку, поновлюється ${ renewalTime }"
+      ],
+      "Business information": [
+        "Інформація про бізнес"
+      ],
+      "Checkout": [
+        "Оплатити"
+      ],
+      "Claim your additional ${ referralDiscountPercent }% discount": [
+        "Отримайте додаткову знижку ${ referralDiscountPercent } %."
+      ],
+      "Confirmation": [
+        "Підтвердити"
+      ],
+      "Coupon": [
+        "Купон"
+      ],
+      "Create account": [
+        "Створити обліковий запис"
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Створіть ваш обліковий запис ${ BRAND_NAME }"
+      ],
+      "Creating your account": [
+        "Створення облікового запису"
+      ],
+      "Discount": [
+        "Знижка"
+      ],
+      "Encrypted solutions to protect": [
+        "Рішення з шифруванням для захисту"
+      ],
+      "For ${ countryElement }": [
+        "Для ${ countryElement }"
+      ],
+      "Get an additional ${ referralDiscountPercent }% off your first year of ${ BRAND_NAME } for Business": [
+        "Отримайте додаткову знижку ${ referralDiscountPercent } % на передплату за перший рік ${ BRAND_NAME } для Business"
+      ],
+      "Pick a plan to get started.": [
+        "Для початку виберіть тарифний план."
+      ],
+      "Something went wrong": [
+        "Сталася помилка"
+      ],
+      "Summary": [
+        "Підсумок"
+      ],
+      "Taxes may apply.": [
+        "Можливе нарахування податків."
+      ],
+      "Unlimited vaults for your passwords": [
+        "Необмежена кількість сховищ для ваших паролів."
+      ],
+      "Users": [
+        "Користувачі"
+      ],
+      "We couldn't finish setting up your account. Please contact support.": [
+        "Не вдалося завершити налаштування вашого облікового запису. Зверніться до служби підтримки."
+      ],
+      "WS Premium": [
+        "WS Premium"
+      ],
+      "WS Standard": [
+        "WS Standard"
+      ],
+      "You're invited to join 100,000+ organizations that protect their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "Запрошуємо вас приєднатися до понад 100 000 організацій, які використовують зашифровану екосистему ${ BRAND_NAME } для захисту своїх даних."
+      ],
+      "Your account has been created, but we couldn't sign you in.": [
+        "Ваш обліковий запис створено, але не вдалося виконати вхід."
+      ],
+      "your entire business": [
+        "Увесь ваш бізнес"
       ]
     },
     "Signup label": {
@@ -23958,6 +24060,9 @@
       ],
       "/year": [
         "/рік"
+      ],
+      "/user/month": [
+        "/user/month"
       ]
     },
     "Suffix for price": {
@@ -27769,6 +27874,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Щороку, ${ untilString }"
+      ]
+    },
+    "Business signup action": {
+      "Start using ${ planTitle } now": [
+        "Почніть використовувати ${ planTitle }"
       ]
     }
   }
