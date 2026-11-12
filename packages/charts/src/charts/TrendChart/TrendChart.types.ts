@@ -42,6 +42,18 @@ interface TrendChartBaseProps {
      */
     showTooltipLabel?: boolean;
     /**
+     * The two ends are handed to chart.js as they are given. `max` must be above `min`: chart.js
+     * maps a reading by dividing by the span between them, so ends that meet paint nothing and
+     * ends the wrong way round draw the axis upside down, neither with a word of complaint.
+     * @example valueRange={{ min: 0, max: 100 }}
+     */
+    valueRange?: {
+        /** The reading the floor of the plot stands for. */
+        min: number;
+        /** The reading the ceiling of the plot stands for. */
+        max: number;
+    };
+    /**
      * How thick the line is drawn, in pixels. Defaults to 1.
      */
     borderWidth?: number;
@@ -61,12 +73,23 @@ interface TrendChartThresholdProps {
     threshold: number;
     fill?: { above?: FillColor; below?: FillColor };
     thresholdColor?: FillColor;
+    /**
+     * Whether the threshold's own reading is written on the value axis, in the rule's colour.
+     * Defaults to true.
+     *
+     * Turn it off where the rule speaks for itself and the number beside it is noise — a grid of
+     * small cards all ruled at the same limit, say, where reading it once above the grid says
+     * more than reading it on every card. The rule, the colour the line changes at it and the
+     * tooltip are all unaffected; only the axis goes quiet.
+     */
+    showThresholdLabel?: boolean;
 }
 
 interface TrendChartNoThresholdProps {
     threshold?: never;
     fill?: FillColor;
     thresholdColor?: never;
+    showThresholdLabel?: never;
 }
 
 export type TrendChartProps = (TrendChartThresholdProps | TrendChartNoThresholdProps) & TrendChartBaseProps;
