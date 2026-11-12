@@ -1,6 +1,6 @@
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 
-import { formatInTimeZone, getDeviceTimeZone, isTimeZoneKnown } from './zonedTime';
+import { formatInTimeZone, formatIntlInTimeZone, getDeviceTimeZone, isTimeZoneKnown } from './zonedTime';
 
 const vancouverTimes = [
     {
@@ -32,6 +32,25 @@ describe('formatInTimeZone', () => {
 
     it('formats a timestamp in milliseconds', () => {
         expect(formatInTimeZone(Date.parse('2026-11-12T17:00:00Z'), 'America/Vancouver', 'HH:mm')).toBe('10:00');
+    });
+});
+
+describe('formatIntlInTimeZone', () => {
+    afterEach(() => {
+        vi.unstubAllEnvs();
+    });
+
+    it('formats the Vancouver wall clock after the move to permanent time when the browser has the old rules', () => {
+        vi.stubEnv('TZ', 'America/Los_Angeles');
+
+        expect(
+            formatIntlInTimeZone(
+                Date.parse('2026-11-12T17:00:00Z'),
+                'America/Vancouver',
+                { hour: 'numeric', minute: '2-digit', hour12: true },
+                'en-US'
+            )
+        ).toBe('10:00 AM');
     });
 });
 

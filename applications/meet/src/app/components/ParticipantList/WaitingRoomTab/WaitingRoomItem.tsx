@@ -10,6 +10,7 @@ import { type WaitingRoomJoinRequest, selectIsMeetingFull } from '@proton/meet/s
 
 import { ConditionalTooltip } from '../../../atoms/ConditionalTooltip/ConditionalTooltip';
 import { useWaitingRoomContext } from '../../../contexts/WaitingRoomContext';
+import { formatIntlInTimeZone, getDeviceTimeZone } from '../../../utils/zonedTime';
 import { ParticipantNameWithInitials } from '../shared/ParticipantNameWithInitials';
 
 import './WaitingRoomItem.scss';
@@ -19,7 +20,7 @@ type Props = {
 };
 
 const formatReceivedTime = (receivedAt: number) => {
-    return new Date(receivedAt).toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
+    return formatIntlInTimeZone(receivedAt, getDeviceTimeZone(), { hour: '2-digit', minute: '2-digit' });
 };
 
 export const WaitingRoomItem = ({ request }: Props) => {

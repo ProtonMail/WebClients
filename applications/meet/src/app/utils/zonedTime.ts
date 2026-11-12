@@ -10,6 +10,16 @@ export const formatInTimeZone = (
     options?: { locale?: Locale }
 ): string => formatUTC(fromUTCDateToTimezone(new Date(date), timeZone), pattern, options);
 
+export const formatIntlInTimeZone = (
+    date: Date | number,
+    timeZone: string,
+    options: Intl.DateTimeFormatOptions,
+    locales?: string | string[]
+): string =>
+    new Intl.DateTimeFormat(locales, { ...options, timeZone: 'UTC' }).format(
+        fromUTCDateToTimezone(new Date(date), timeZone)
+    );
+
 export const isTimeZoneKnown = (timeZone: string): boolean => {
     try {
         getTimezoneOffset(new Date(), timeZone);

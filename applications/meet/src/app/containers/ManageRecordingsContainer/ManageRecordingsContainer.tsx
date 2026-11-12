@@ -33,9 +33,10 @@ import {
     listOpfsRecordings,
 } from '../../hooks/useMeetingRecorder/recordingStorage/recordingFiles';
 import { useSendOnce } from '../../telemetry/useSendOnce';
+import { formatIntlInTimeZone, getDeviceTimeZone } from '../../utils/zonedTime';
 
 const formatDate = (timestamp: number) =>
-    new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(timestamp));
+    formatIntlInTimeZone(timestamp, getDeviceTimeZone(), { dateStyle: 'medium', timeStyle: 'short' });
 
 export const ManageRecordingsContainer = () => {
     const dispatch = useMeetDispatch();

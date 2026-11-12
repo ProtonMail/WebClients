@@ -26,6 +26,7 @@ import { useChatMessage } from '../../hooks/bridges/useChatMessage';
 import { useChatMessageReaction } from '../../hooks/bridges/useChatMessageReaction';
 import { useMessagePlainText } from '../../hooks/useMessagePlainText';
 import { getAgentDisplayInfo } from '../../utils/getAgentDisplayInfo';
+import { formatIntlInTimeZone, getDeviceTimeZone } from '../../utils/zonedTime';
 import { ChatMessageContent } from '../ChatMessageContent';
 import { announcementMessages } from '../MeetingAnnouncer/messages';
 import { ChatMessageFailedActions } from './ChatMessageFailedActions';
@@ -179,11 +180,12 @@ export const ChatItem = ({ meetingName, item, displayDate = true, variant = 'def
                             dateTime={new Date(timestamp).toISOString()}
                             className="ml-2 color-disabled text-nowrap shrink-0"
                         >
-                            {new Date(timestamp).toLocaleTimeString([], {
-                                hour: 'numeric',
-                                minute: '2-digit',
-                                hour12: true,
-                            })}
+                            {formatIntlInTimeZone(
+                                timestamp,
+                                getDeviceTimeZone(),
+                                { hour: 'numeric', minute: '2-digit', hour12: true },
+                                []
+                            )}
                         </time>
                     )}
                 </div>
