@@ -827,6 +827,12 @@
       ],
       "Try again": [
         "Riprova"
+      ],
+      "Open the browser again": [
+        "Riapri il browser"
+      ],
+      "Sign in in the app instead": [
+        "Usa l'applicazione per accedere"
       ]
     },
     "Activity": {
@@ -3004,6 +3010,33 @@
       ],
       "None of your saved passwords have appeared in a known data breach.": [
         "Nessuna delle tue password salvata è stata coinvolta in una violazione dei dati nota."
+      ],
+      "Canceled by user": [
+        "Annullato dall'utente"
+      ],
+      "Choose how you want to sign in": [
+        "Seleziona la modalità di accesso"
+      ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Completa l'accesso nella nuova finestra del browser. ${ PASS_APP_NAME } si aggiornerà automaticamente una volta completata l'operazione."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Per avviare ${ PASS_APP_NAME } offline, sarà necessaria la tua password di ${ BRAND_NAME }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Per avviare ${ PASS_APP_NAME } offline, sarà necessaria la tua password di backup."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Per avviare ${ PASS_APP_NAME } offline, sarà necessaria la tua password aggiuntiva."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Per avviare ${ PASS_APP_NAME } offline, sarà necessaria la tua seconda password."
+      ],
+      "The sign in was not confirmed in time.": [
+        "L'accesso non è stato confermato nei tempi previsti."
+      ],
+      "Your session could not be authorized.": [
+        "Non è possibile autorizzare la tua sessione."
       ]
     },
     "Keyboard key": {
@@ -5402,6 +5435,18 @@
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
+      ],
+      "Add an account": [
+        "Aggiungi un account"
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Spostare tutti gli elementi in \"${ target }\"?"
+      ],
+      "Sign in timed out": [
+        "Sessione scaduta"
+      ],
+      "Signing you in": [
+        "Accesso in corso"
       ]
     },
     "Title_cloned_item": {

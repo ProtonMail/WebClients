@@ -827,6 +827,12 @@
       ],
       "Try again": [
         "Prøv igjen"
+      ],
+      "Open the browser again": [
+        "Åpne nettleseren på nytt"
+      ],
+      "Sign in in the app instead": [
+        "Logg inn i appen i stedet"
       ]
     },
     "Activity": {
@@ -3004,6 +3010,33 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisasjonen krever at du sikrer tilgangen til ${ PASS_APP_NAME }"
+      ],
+      "Canceled by user": [
+        "Avbrutt av bruker"
+      ],
+      "Choose how you want to sign in": [
+        "Velg hvordan du vil logge på"
+      ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Logg inn og bekreft i nettleservinduet som nettopp ble åpnet. ${ PASS_APP_NAME } vil fylles ut automatisk når du er ferdig."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "For å starte ${ PASS_APP_NAME } i frakoblet modus må du oppgi ${ BRAND_NAME }-passordet ditt."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Hvis du starter ${ PASS_APP_NAME } i frakoblet modus, må du oppgi backup-passordet ditt."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "For å starte ${ PASS_APP_NAME } i frakoblet modus må du oppgi det ekstra passordet ditt."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "For å starte ${ PASS_APP_NAME } i frakoblet modus må du oppgi det andre passordet ditt."
+      ],
+      "The sign in was not confirmed in time.": [
+        "Påloggingen ble ikke bekreftet i tide."
+      ],
+      "Your session could not be authorized.": [
+        "Økten din kunne ikke autoriseres."
       ]
     },
     "Keyboard key": {
@@ -5402,6 +5435,18 @@
       ],
       "Something went wrong": [
         "Noe gikk galt"
+      ],
+      "Add an account": [
+        "Legg til en konto"
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Flytt alle elementer til \"${ target }\"?"
+      ],
+      "Sign in timed out": [
+        "Pålogging utløpt"
+      ],
+      "Signing you in": [
+        "Logger deg på"
       ]
     },
     "Title_cloned_item": {

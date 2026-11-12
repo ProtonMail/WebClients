@@ -831,6 +831,12 @@
       ],
       "Try again": [
         "Паўтарыце спробу"
+      ],
+      "Open the browser again": [
+        "Адкрыць браўзер зноў"
+      ],
+      "Sign in in the app instead": [
+        "Замест гэтага ўвайдзіце ў праграму"
       ]
     },
     "Activity": {
@@ -1029,10 +1035,10 @@
         "Збой аўтэнтыфікацыі. Пацвердзіце ваш другі пароль, каб працягнуць экспартаванне"
       ],
       "Biometric authentication cancelled.": [
-        "Біяметрычная аўтэнтыфікацыя скасавана."
+        "Біяметрычнай аўтэнтыфікацыі скасавана."
       ],
       "Biometric authentication failed.": [
-        "Збой аўтэнтыфікацыі біяметрыі."
+        "Збой біяметрычнай аўтэнтыфікацыі."
       ],
       "Biometric lock credentials do not match.": [
         "Уліковыя даныя біяметрычнай блакіроўкі не супадаюць."
@@ -3031,6 +3037,27 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
+      ],
+      "Canceled by user": [
+        "Скасавана карыстальнікам"
+      ],
+      "Choose how you want to sign in": [
+        "Выберыце спосаб уваходу"
+      ],
+      "Disabled by your organization": [
+        "Адключана вашай арганізацыяй"
+      ],
+      "Only cards are shown": [
+        "Паказаны толькі карткі"
+      ],
+      "Only custom items are shown": [
+        "Паказаны толькі карыстальніцкія элементы"
+      ],
+      "Only notes are shown": [
+        "Паказаны толькі нататкі"
+      ],
+      "The folder is already here": [
+        "Папка ўжо тут"
       ]
     },
     "Keyboard key": {
@@ -5479,6 +5506,18 @@
       ],
       "Something went wrong": [
         "Нешта пайшло не так"
+      ],
+      "Add an account": [
+        "Дадаць уліковы запіс"
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Перамясціць усе элементы ў «${ target }»?"
+      ],
+      "Sign in timed out": [
+        "Перавышаны час чакання ўваходу"
+      ],
+      "Signing you in": [
+        "Адбываецца ўваход"
       ]
     },
     "Title_cloned_item": {

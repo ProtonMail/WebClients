@@ -827,6 +827,12 @@
       ],
       "Try again": [
         "Δοκιμάστε ξανά"
+      ],
+      "Open the browser again": [
+        "Ανοίξτε ξανά το πρόγραμμα περιήγησης"
+      ],
+      "Sign in in the app instead": [
+        "Συνδεθείτε μέσω της εφαρμογής"
       ]
     },
     "Activity": {
@@ -3004,6 +3010,33 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ο οργανισμός σας απαιτεί να εξασφαλίσετε την πρόσβασή σας στο ${ PASS_APP_NAME }"
+      ],
+      "Canceled by user": [
+        "Ακυρώθηκε από τον χρήστη"
+      ],
+      "Choose how you want to sign in": [
+        "Επιλέξτε τρόπο σύνδεσης"
+      ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Συνδεθείτε και επιβεβαιώστε στο παράθυρο του προγράμματος περιήγησης που μόλις άνοιξε. Το ${ PASS_APP_NAME } θα συνεχίσει αυτόματα μόλις ολοκληρώσετε τη διαδικασία."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Η έναρξη του ${ PASS_APP_NAME } εκτός διαδικτύου θα απαιτήσει τον κωδικό πρόσβασής σας για το ${ BRAND_NAME }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Η έναρξη του ${ PASS_APP_NAME } εκτός διαδικτύου θα απαιτήσει τον εφεδρικό κωδικό πρόσβασής σας."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Η έναρξη του ${ PASS_APP_NAME } εκτός διαδικτύου θα απαιτήσει τον πρόσθετο κωδικό πρόσβασής σας."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Η έναρξη του ${ PASS_APP_NAME } εκτός διαδικτύου θα απαιτήσει τον δεύτερο κωδικό πρόσβασής σας."
+      ],
+      "The sign in was not confirmed in time.": [
+        "Η σύνδεση δεν επιβεβαιώθηκε εγκαίρως."
+      ],
+      "Your session could not be authorized.": [
+        "Δεν ήταν δυνατή η εξουσιοδότηση της συνεδρίας."
       ]
     },
     "Keyboard key": {
@@ -5402,6 +5435,18 @@
       ],
       "Something went wrong": [
         "Κάτι πήγε στραβά"
+      ],
+      "Add an account": [
+        "Προσθήκη λογαριασμού"
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Μετακίνηση όλων των στοιχείων στο \"${ target }\";"
+      ],
+      "Sign in timed out": [
+        "Η σύνδεση έληξε"
+      ],
+      "Signing you in": [
+        "Γίνεται σύνδεση"
       ]
     },
     "Title_cloned_item": {

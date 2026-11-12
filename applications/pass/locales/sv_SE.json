@@ -818,6 +818,12 @@
       ],
       "Try again": [
         "Försök igen"
+      ],
+      "Open the browser again": [
+        "Öppna webbläsaren igen"
+      ],
+      "Sign in in the app instead": [
+        "Logga in i appen istället"
       ]
     },
     "Activity": {
@@ -2924,6 +2930,33 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
+      ],
+      "Canceled by user": [
+        "Avbruten av användare"
+      ],
+      "Choose how you want to sign in": [
+        "Välj hur du vill logga in"
+      ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Logga in och bekräfta i webbläsarfönstret som nyss öppnades. ${ PASS_APP_NAME } kommer att återupptas automatiskt när du är färdig."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Att starta ${ PASS_APP_NAME } offline kommer att kräva ditt ${ BRAND_NAME } lösenord."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Att starta ${ PASS_APP_NAME } offline kommer att kräva ditt backup-lösenord."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Att starta ${ PASS_APP_NAME } offline kommer att kräva ditt extra lösenord."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Att starta ${ PASS_APP_NAME } offline kommer att kräva ditt andra lösenord."
+      ],
+      "The sign in was not confirmed in time.": [
+        "Inloggningen bekräftades inte i tid"
+      ],
+      "Your session could not be authorized.": [
+        "Din session kunde inte auktoriseras."
       ]
     },
     "Keyboard key": {
@@ -5310,6 +5343,18 @@
       ],
       "Something went wrong": [
         "Något gick fel"
+      ],
+      "Add an account": [
+        "Lägg till ett konto"
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Flytta alla objekt till “${ target }“?"
+      ],
+      "Sign in timed out": [
+        "Inloggningen överskreds"
+      ],
+      "Signing you in": [
+        "Loggar in dig"
       ]
     },
     "Title_cloned_item": {

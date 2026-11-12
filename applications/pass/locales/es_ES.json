@@ -827,6 +827,12 @@
       ],
       "Try again": [
         "Inténtalo de nuevo"
+      ],
+      "Open the browser again": [
+        "Abre el navegador de nuevo"
+      ],
+      "Sign in in the app instead": [
+        "Use la aplicación para iniciar sesión"
       ]
     },
     "Activity": {
@@ -3004,6 +3010,33 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Tu organización requiere que asegures tu acceso a ${ PASS_APP_NAME }"
+      ],
+      "Canceled by user": [
+        "Cancelado por el usuario"
+      ],
+      "Choose how you want to sign in": [
+        "Elige cómo quieres iniciar sesión"
+      ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Inicia sesión en la ventana del navegador que se ha abierto. ${ PASS_APP_NAME } continuará una vez hayas terminado."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Comenar ${ PASS_APP_NAME } offline requerirá tu ${ BRAND_NAME } contraseña.\n/fe-pass/source-file-full.xliff\nbd85466333415fc4f216b8a44acb15aa47b5d529\ncontexto: Info\nSOCIEDAD:\n- Contraseña\nArchivos:\n- packages/pass/components/Settings/LockSetup.tsx:55\n\n* No se guarda ninguna clave en el disco si no está ligada a la app: al iniciar sin conexión te pide la contraseña\nFile: Browser extension"
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Iniciar ${ PASS_APP_NAME } sin conexión requerirá tu contraseña de respaldo."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Comenzar ${ PASS_APP_NAME } offline requerirá contraseña adicional.\n\n/fe-pass/source-file-full.xliff\n4bed79e2fcda19f186f694ea7d9be747f359a5d5\ncontexto: Info\nSOCIEDAD:\n- Contraseña\nArchivos:\n- packages/pass/components/Settings/LockSetup.tsx:53\n\n* No se guarda ninguna clave en el disco si no está ligada a la app: en caso de inicio sin conexión, se recurre a la contraseña.\nArchivo: Browser extension"
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Iniciar ${ PASS_APP_NAME } sin conexión requerirá tu segunda contraseña."
+      ],
+      "The sign in was not confirmed in time.": [
+        "El inicio de sesión no fue confirmado a tiempo."
+      ],
+      "Your session could not be authorized.": [
+        "Tu sesión no ha podido ser autorizada."
       ]
     },
     "Keyboard key": {
@@ -5402,6 +5435,18 @@
       ],
       "Something went wrong": [
         "Se ha producido un error."
+      ],
+      "Add an account": [
+        "Añadir una cuenta"
+      ],
+      "Move all items to \"${ target }\"?": [
+        "¿Mover todos los elementos a «${ target }»?"
+      ],
+      "Sign in timed out": [
+        "El inicio de sesión expiró"
+      ],
+      "Signing you in": [
+        "Iniciando sesión"
       ]
     },
     "Title_cloned_item": {

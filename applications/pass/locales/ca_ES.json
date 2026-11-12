@@ -830,6 +830,9 @@
       ],
       "Try again": [
         "Proveu de nou"
+      ],
+      "Sign in in the app instead": [
+        "Inicieu sessió a l'aplicació en lloc d'això"
       ]
     },
     "Activity": {
@@ -3013,6 +3016,27 @@
       ],
       "Your session could not be authorized.": [
         "No s'ha pogut autoritzar la sessió."
+      ],
+      "Canceled by user": [
+        "S'ha cancel·lat per l'usuari"
+      ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Inicieu sessió i confirmeu-ho a la finestra del navegador que s'obrirà. ${ PASS_APP_NAME } s'activarà automàticament un cop hàgiu acabat."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya de ${ BRAND_NAME }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya de còpia de seguretat."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya addicional."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la segona contrasenya."
+      ],
+      "The sign in was not confirmed in time.": [
+        "L'inici de sessió no s'ha confirmat a temps."
       ]
     },
     "Keyboard key": {
@@ -5414,6 +5438,15 @@
       ],
       "Something went wrong": [
         "S'ha produït un error."
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Voleu moure tots els elements a \"${ target }\"?"
+      ],
+      "Sign in timed out": [
+        "La sessió ha expirat"
+      ],
+      "Signing you in": [
+        "S'està iniciant la sessió."
       ]
     },
     "Title_cloned_item": {

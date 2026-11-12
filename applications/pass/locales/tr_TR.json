@@ -827,6 +827,12 @@
       ],
       "Try again": [
         "Yeniden dene"
+      ],
+      "Open the browser again": [
+        "Tarayıcıyı yeniden açın"
+      ],
+      "Sign in in the app instead": [
+        "Bunun yerine uygulamada oturum açın"
       ]
     },
     "Activity": {
@@ -3004,6 +3010,33 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
+      ],
+      "Canceled by user": [
+        "Kullanıcı tarafından iptal edildi"
+      ],
+      "Choose how you want to sign in": [
+        "Nasıl oturum açmak istediğinizi seçin"
+      ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Oturum açın ve açılan tarayıcı penceresinde onaylayın. İşlemi tamamladığınızda ${ PASS_APP_NAME } otomatik olarak kaldığı yerden ilerler."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "${ PASS_APP_NAME } uygulamasını çevrim dışı başlatmak için ${ BRAND_NAME } parolanız gerekecek."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "${ PASS_APP_NAME } uygulamasını çevrim dışı başlatmak için yedek parolanız gerekecek."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "${ PASS_APP_NAME } uygulamasını çevrim dışı başlatmak için ek parolanız gerekecek."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "${ PASS_APP_NAME } uygulamasını çevrim dışı başlatmak için ikinci parolanız gerekecek."
+      ],
+      "The sign in was not confirmed in time.": [
+        "Oturum açma işlemi zamanında onaylanmadı."
+      ],
+      "Your session could not be authorized.": [
+        "Oturumunuza yetki verilemedi."
       ]
     },
     "Keyboard key": {
@@ -5402,6 +5435,18 @@
       ],
       "Something went wrong": [
         "Bir sorun çıktı"
+      ],
+      "Add an account": [
+        "Bir hesap ekle"
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Tüm ögeler \"${ target }\" kasasına taşınsın mı?"
+      ],
+      "Sign in timed out": [
+        "Oturum açma işlemi zaman aşımına uğradı"
+      ],
+      "Signing you in": [
+        "Oturumunuz açılıyor"
       ]
     },
     "Title_cloned_item": {

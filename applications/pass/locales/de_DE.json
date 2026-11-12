@@ -3019,6 +3019,24 @@
       ],
       "Your session could not be authorized.": [
         "Deine Sitzung konnte nicht autorisiert werden."
+      ],
+      "Canceled by user": [
+        "Vom Benutzer abgebrochen"
+      ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Melde dich im gerade geöffneten Browserfenster an und bestätige die Anmeldung. ${ PASS_APP_NAME } wird automatisch übernommen, sobald der Vorgang abgeschlossen ist."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Um ${ PASS_APP_NAME } ohne Internetverbindung starten zu können, wird dein ${ BRAND_NAME }-Passwort benötigt."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Um ${ PASS_APP_NAME } ohne Internetverbindung starten zu können, wird dein Backup-Passwort benötigt."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Um ${ PASS_APP_NAME } ohne Internetverbindung starten zu können, benötigst du dein zusätzliches Passwort."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Um ${ PASS_APP_NAME } ohne Internetverbindung starten zu können, wird dein zweites Passwort benötigt."
       ]
     },
     "Keyboard key": {
@@ -5422,10 +5440,13 @@
         "Zeitüberschreitung bei der Anmeldung"
       ],
       "Signing you in": [
-        "Anmeldung läuft"
+        "Anmeldung wird ausgeführt"
       ],
       "Something went wrong": [
         "Etwas ist schiefgelaufen"
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Alle Einträge nach „${ target }“ verschieben?"
       ]
     },
     "Title_cloned_item": {
