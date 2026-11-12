@@ -22,6 +22,7 @@
         "./containers/account/routes": "./src/containers/account/routes.ts",
         "./containers/mail/sections/PromptDisableCategories": "./src/containers/mail/sections/PromptDisableCategories.tsx",
         "./containers/organization/OrganizationSettingsRouter": "./src/containers/organization/OrganizationSettingsRouter.tsx",
+        "./containers/organization/components/FeatureAccessSection": "./src/containers/organization/components/FeatureAccessSection.tsx",
         "./containers/organization/routes": "./src/containers/organization/routes.ts",
         "./helpers/getSettingsHref": "./src/helpers/getSettingsHref.ts",
         "./helpers/unauthenticatedRoutes": "./src/helpers/unauthenticatedRoutes.ts",
