@@ -9,6 +9,7 @@ import { useApplication } from '~/utils/application-context'
 
 import { type BootstrapFailure, classifyBootstrapError } from './classifyBootstrapError'
 import { type DocumentRole, getDocumentRole } from './getDocumentRole'
+import { DocsLoadMark, markDocsLoad } from './loadMarks'
 import type { useRealtimeClient } from './useRealtimeClient'
 
 export type DocumentSessionState =
@@ -100,6 +101,7 @@ export function useDocumentSession(
         return
       }
       session = bootstrapped
+      markDocsLoad(DocsLoadMark.DocumentLoaded)
       setState({ status: 'ready', session, role: getDocumentRole(hierarchy), node, roleReads: 1 })
       removeListeners.push(rereadRoleAfterRebootstraps(bootstrapped, nodeUid))
     }

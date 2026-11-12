@@ -14,6 +14,8 @@ import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimety
 import { ApplicationProvider, type ApplicationProviderProps } from '~/utils/application-context'
 import { DocsUrlContextProvider } from '~/utils/docs-url-bar'
 import { EDITOR_FRAME_READY_TIMEOUT_MS } from './__components/DocumentViewerV2'
+import { DocsLoadMark } from './__utils/loadMarks'
+import { docsLoadMarks, withNodePerformance } from './__utils/loadMarksTesting'
 import DocumentPageV2 from './page'
 
 let mockIsDriveCompatSDK = false
@@ -272,6 +274,18 @@ describe('DocumentPageV2', () => {
 
       expect(screen.queryByTestId('invalid-openaction-error')).not.toBeInTheDocument()
       await waitFor(() => expect(mockCreateSession).toHaveBeenCalledTimes(2))
+    })
+
+    describe('load marks', () => {
+      withNodePerformance()
+
+      test('marks the route mounted as the page mounts, before the document loads', async () => {
+        renderAt('/doc2?mode=open&volumeId=VOLUME&linkId=LINK')
+
+        await waitFor(() => expect(mockCreateSession).toHaveBeenCalled())
+
+        expect(docsLoadMarks()).toEqual([DocsLoadMark.RouteMounted])
+      })
     })
 
     test('a node that is not a text document shows the unsupported error, with no retry', async () => {

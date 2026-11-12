@@ -1,4 +1,4 @@
-import { useEffect, useState, useSyncExternalStore } from 'react'
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 
 import { useNotifications } from '@proton/app-context/useNotifications'
 import { DocUpdateOrigin } from '@proton/docs-shared/Doc/DocState'
@@ -9,6 +9,7 @@ import { useApplication } from '~/utils/application-context'
 
 import type { EditorInvoker } from './EditorInvoker'
 import type { DocumentRole } from './getDocumentRole'
+import { DocsLoadMark, markDocsLoad } from './loadMarks'
 
 /** No toast for `documentSizeLimitReached`: the size-limit modal says it */
 const refusalMessages: Record<Exclude<Refusal['reason'], 'documentSizeLimitReached'>, () => string> = {
@@ -26,6 +27,8 @@ export type LiveEditingOptions = {
   participantLimitReached?: boolean
   /** Each new value applies the lock again, as after the role is read again */
   roleReads?: number
+  /** Whether the editor shows the document and has rendered its Lexical editor, for the load's editable mark */
+  editorReady?: boolean
   onEditorError: (error: Error) => void
 }
 
@@ -34,7 +37,8 @@ export type LiveEditingOptions = {
  * clients and replaced base states go to the editor, which is locked while any of `getLockCauses` holds, and stays
  * editable while paused or reconnecting, since the SDK's outbox carries the edits (ADR-0012). Tells the user about the
  * edits the SDK refuses, discards or can't read, and locks the editor for good after one is refused or discarded,
- * since later edits would build on content the server lacks. Returns the session's snapshot.
+ * since later edits would build on content the server lacks. Marks the load editable once the editor is ready and
+ * has answered an unlock. Returns the session's snapshot.
  */
 export function useLiveEditing({
   session,
@@ -42,6 +46,7 @@ export function useLiveEditing({
   role,
   participantLimitReached = false,
   roleReads,
+  editorReady = false,
   onEditorError,
 }: LiveEditingOptions): SessionSnapshot | undefined {
   const { logger } = useApplication()
@@ -72,9 +77,35 @@ export function useLiveEditing({
 
   const locked = Object.values(getLockCauses({ snapshot, role, editRefused, participantLimitReached })).some(Boolean)
 
+  // Whether the editor answered the latest lock call, an unlock. Refs, so the mark costs no render
+  const unlockAnswered = useRef(false)
+  const ready = useRef(editorReady)
+  ready.current = editorReady
+
   useEffect(() => {
-    editorInvoker?.changeLockedState(locked).catch(onEditorError)
+    unlockAnswered.current = false
+    if (!editorInvoker) {
+      return
+    }
+    let isLatestCall = true
+    editorInvoker.changeLockedState(locked).then(() => {
+      if (isLatestCall && !locked) {
+        unlockAnswered.current = true
+        if (ready.current) {
+          markDocsLoad(DocsLoadMark.EditorEditable)
+        }
+      }
+    }, onEditorError)
+    return () => {
+      isLatestCall = false
+    }
   }, [editorInvoker, locked, onEditorError, roleReads])
+
+  useEffect(() => {
+    if (editorReady && unlockAnswered.current) {
+      markDocsLoad(DocsLoadMark.EditorEditable)
+    }
+  }, [editorReady])
 
   return snapshot
 }

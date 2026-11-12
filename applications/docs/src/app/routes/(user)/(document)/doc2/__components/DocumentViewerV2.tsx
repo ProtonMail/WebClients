@@ -23,6 +23,7 @@ import { exportAndDownload } from '../__utils/downloadExport'
 import { fetchExternalImageAsBase64 } from '../__utils/fetchExternalImageAsBase64'
 import { getNodeName } from '../__utils/getNodeName'
 import { handleFileMenuAction, openHelp } from '../__utils/handleFileMenuAction'
+import { DocsLoadMark, markDocsLoad } from '../__utils/loadMarks'
 import { sendBaseState, showDocument } from '../__utils/showDocument'
 import { useDocumentFileActions } from '../__utils/useDocumentFileActions'
 import { useDocumentSession } from '../__utils/useDocumentSession'
@@ -75,6 +76,10 @@ export function DocumentViewerV2({
   const client = useRealtimeClient()
   const sessionState = useDocumentSession(client, nodeMeta)
   const [editorFrame, setEditorFrame] = useState<HTMLIFrameElement | null>(null)
+  const onFrameReady = useCallback((frame: HTMLIFrameElement) => {
+    markDocsLoad(DocsLoadMark.FrameReady)
+    setEditorFrame(frame)
+  }, [])
   const [editorStatus, setEditorStatus] = useState<'loading' | 'shown' | 'failed'>('loading')
   const [editorInvoker, setEditorInvoker] = useState<EditorInvoker>()
   // Kept across bridges: the editor in the frame stays rendered
@@ -155,6 +160,7 @@ export function DocumentViewerV2({
     role,
     roleReads,
     participantLimitReached: isParticipantLimitReached(participants ?? []),
+    editorReady: editorStatus === 'shown' && isEditorRendered,
     onEditorError: failEditor,
   })
   usePauseWhileAway(session)
@@ -221,6 +227,7 @@ export function DocumentViewerV2({
     // useLiveEditing connects once the editor holds the base state, so RTS's replay reaches the editor after it
     sendBaseState(bridge.editorInvoker, session).then(() => {
       if (!controller.signal.aborted) {
+        markDocsLoad(DocsLoadMark.BaseStateSent)
         setEditorInvoker(bridge.editorInvoker)
       }
     }, onEditorError)
@@ -249,6 +256,11 @@ export function DocumentViewerV2({
   // editor may hold nothing. While reconnecting or stopped before then, the loader stays, with SessionStatus in the header.
   const caughtUp = snapshot?.caughtUp === true
   useEffect(() => {
+    if (caughtUp) {
+      markDocsLoad(DocsLoadMark.CaughtUp)
+    }
+  }, [caughtUp])
+  useEffect(() => {
     if (!session || !editorInvoker || !caughtUp) {
       return
     }
@@ -259,6 +271,7 @@ export function DocumentViewerV2({
         if (cancelled) {
           return
         }
+        markDocsLoad(DocsLoadMark.EditorShown)
         setEditorStatus('shown')
         // So peers see the user at once rather than at the editor's next change; not worth failing the editor for
         editorInvoker
@@ -321,7 +334,7 @@ export function DocumentViewerV2({
       <div className="flex-column flex h-full w-full flex-nowrap">
         <div className="relative w-full flex-1">
           <EditorFrame
-            onFrameReady={setEditorFrame}
+            onFrameReady={onFrameReady}
             systemMode={EditorSystemMode.Edit}
             logger={logger}
             isDarkMode={isDarkMode}
