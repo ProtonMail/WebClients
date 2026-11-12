@@ -9,6 +9,7 @@ import { useSkillsSync } from '../features/skills/useSkillsSync';
 import { useLumoFlags } from '../hooks/useLumoFlags';
 import { MainLayout } from '../layouts/MainLayout';
 import { GhostChatProvider } from '../providers/GhostChatProvider';
+import { useIsGuest } from '../providers/IsGuestProvider';
 import { PandocProvider } from '../providers/PandocProvider';
 import { LUMO_ROUTES } from './lumoRoutes';
 
@@ -50,6 +51,7 @@ export function InnerApp() {
         schedules,
         skills: showCustomize,
     } = useLumoFlags();
+    const isGuest = useIsGuest();
     useSkillsSync();
 
     return (
@@ -95,10 +97,11 @@ export function InnerApp() {
                                         <Route exact path="/schedules/:scheduleId" component={ScheduleHomeView} />
                                     )}
                                     {showCustomize && <Route exact path="/customize" component={CustomizeView} />}
-                                    {showCustomize && (
+                                    {showCustomize && isGuest && <Redirect from="/customize" to="/customize" />}
+                                    {showCustomize && !isGuest && (
                                         <Route exact path="/customize/upload" component={UploadSkillView} />
                                     )}
-                                    {showCustomize && (
+                                    {showCustomize && !isGuest && (
                                         <Route exact path="/customize/skills/:skillId" component={SkillDetailView} />
                                     )}
 

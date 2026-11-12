@@ -7,21 +7,19 @@ import { c, msgid } from 'ttag';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
-import { Collapsible } from '@proton/atoms/Collapsible/Collapsible';
-import { CollapsibleContent } from '@proton/atoms/Collapsible/CollapsibleContent';
-import { CollapsibleHeader } from '@proton/atoms/Collapsible/CollapsibleHeader';
-import { CollapsibleHeaderIconButton } from '@proton/atoms/Collapsible/CollapsibleHeaderIconButton';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { type IconName, LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useLumoDispatch } from '../../redux/hooks';
-import { findSubSkills } from '../skills/skillBundle';
+import { SkillLimitModal } from '../skills/components/SkillLimitModal';
+import { deriveBundleInfo, findSubSkills, isSkillPlugin, resolvePluginInfo } from '../skills/skillBundle';
 import { type SkillCheckReport, checkSkill, getSkillCheckFindingText } from '../skills/skillCheck';
 import { type DroppedSkillItem, groupPickedFolderFiles, readDroppedItems } from '../skills/skillFolderInput';
 import { type SkillImportResult, importSkillFiles, importSkillFolder } from '../skills/skillImport';
 import { saveSkill } from '../skills/skillsThunks';
+import { useSkillLimit } from '../skills/useSkillLimit';
 import { useSkills } from '../skills/useSkills';
 import { CustomizePage } from './components/CustomizePage';
 import { getSkillPath } from './skillRoutes';
@@ -41,8 +39,8 @@ const getResultSummary = ({ fileName, subSkillCount }: CheckedResult) => {
         return fileName;
     }
     const kind = c('collider_2025:Info').ngettext(
-        msgid`Plugin with ${subSkillCount} skill`,
-        `Plugin with ${subSkillCount} skills`,
+        msgid`Skill set with ${subSkillCount} skill`,
+        `Skill set with ${subSkillCount} skills`,
         subSkillCount
     );
     return `${kind} · ${fileName}`;
@@ -60,18 +58,18 @@ const getReadyHint = (valid: CheckedResult[]) => {
     }
     if (valid.length === 1) {
         return c('collider_2025:Info').ngettext(
-            msgid`1 plugin with ${skillCount} skill ready to add.`,
-            `1 plugin with ${skillCount} skills ready to add.`,
+            msgid`1 skill set with ${skillCount} skill ready to add.`,
+            `1 skill set with ${skillCount} skills ready to add.`,
             skillCount
         );
     }
     const pluginCount = plugins.length;
     const pluginLabel = c('collider_2025:Info').ngettext(
-        msgid`${pluginCount} plugin`,
-        `${pluginCount} plugins`,
+        msgid`${pluginCount} skill set`,
+        `${pluginCount} skill sets`,
         pluginCount
     );
-    // translator: ${pluginLabel} is "1 plugin" or "2 plugins"; the count is the number of skills they hold in total.
+    // translator: ${pluginLabel} is "1 skill set" or "2 skill sets"; the count is the number of skills they hold in total.
     return c('collider_2025:Info').ngettext(
         msgid`${skillCount} skill ready to add, including ${pluginLabel}.`,
         `${skillCount} skills ready to add, including ${pluginLabel}.`,
@@ -83,8 +81,31 @@ const getAddLabel = (valid: CheckedResult[]) => {
     if (valid.length > 1) {
         return c('collider_2025:Action').t`Add all`;
     }
-    return valid[0]?.subSkillCount ? c('collider_2025:Action').t`Add plugin` : c('collider_2025:Action').t`Add skill`;
+    return valid[0]?.subSkillCount
+        ? c('collider_2025:Action').t`Add skill set`
+        : c('collider_2025:Action').t`Add skill`;
 };
+
+const getUploadKinds = (): { icon: IconName; title: string; detail: string }[] => [
+    {
+        icon: 'FileText',
+        title: c('collider_2025:Title').t`A single skill`,
+        detail: c('collider_2025:Info')
+            .t`A .md file with a name and description in its frontmatter, or a .zip or .skill file with a SKILL.md.`,
+    },
+    {
+        icon: 'FolderTree',
+        title: c('collider_2025:Title').t`A skill set`,
+        detail: c('collider_2025:Info')
+            .t`A folder or .zip with several skills, each in its own folder with a SKILL.md. They're added together.`,
+    },
+    {
+        icon: 'Puzzle',
+        title: c('collider_2025:Title').t`A Claude plugin`,
+        detail: c('collider_2025:Info')
+            .t`A .plugin file or plugin folder made for Claude. Its skills come across as a skill set, along with the connectors it asks for.`,
+    },
+];
 
 const ResultNote = ({ icon, children }: { icon: IconName; children: ReactNode }) => (
     <div className="flex flex-nowrap items-start gap-2 text-sm color-weak">
@@ -166,6 +187,7 @@ export const UploadSkillView = () => {
 
     const history = useHistory();
     const dispatch = useLumoDispatch();
+    const { checkCanAddSkills, skillLimitModal, skillLimitModalState } = useSkillLimit();
     const { createNotification } = useNotifications();
     const inputRef = useRef<HTMLInputElement>(null);
     const folderInputRef = useRef<HTMLInputElement>(null);
@@ -173,6 +195,7 @@ export const UploadSkillView = () => {
     const [isDragging, setIsDragging] = useState(false);
     const [parsing, setParsing] = useState(false);
     const [uploading, setUploading] = useState(false);
+    const [isUploadingPlugin, setIsUploadingPlugin] = useState(false);
 
     const results = useMemo(
         (): CheckedResult[] =>
@@ -194,6 +217,18 @@ export const UploadSkillView = () => {
         folderInputRef.current?.setAttribute('webkitdirectory', '');
     }, []);
 
+    const checkCanUpload = (results: SkillImportResult[]) => {
+        const drafts = results.flatMap(({ draft }) => (draft ? [draft] : []));
+        if (!drafts.length) return true;
+        const hasPlugin = drafts.some((draft) => {
+            const bundle = deriveBundleInfo(draft.files);
+            return isSkillPlugin({ ...bundle, plugin: resolvePluginInfo(draft.source, bundle.plugin, draft.plugin) });
+        });
+        setIsUploadingPlugin(hasPlugin);
+        const added = drafts.reduce((total, draft) => total + (findSubSkills(draft.files).length || 1), 0);
+        return checkCanAddSkills(added, hasPlugin);
+    };
+
     const addItems = async (items: DroppedSkillItem[]) => {
         if (!items.length) return;
         setParsing(true);
@@ -205,6 +240,8 @@ export const UploadSkillView = () => {
                 ...(await Promise.all(folders.map(({ name, files }) => importSkillFolder(name, files)))),
             ];
             const names = new Set(parsed.map((result) => result.fileName));
+            const nextImports = [...imports.filter((result) => !names.has(result.fileName)), ...parsed];
+            if (!checkCanUpload(nextImports)) return;
             setImports((prev) => [...prev.filter((result) => !names.has(result.fileName)), ...parsed]);
         } finally {
             setParsing(false);
@@ -218,6 +255,7 @@ export const UploadSkillView = () => {
     };
 
     const handleUpload = async () => {
+        if (!checkCanUpload(imports)) return;
         setUploading(true);
         try {
             const saved = [];
@@ -241,23 +279,6 @@ export const UploadSkillView = () => {
         }
     };
 
-    const checkStatus = (() => {
-        if (parsing) {
-            return c('collider_2025:Info').t`Checking…`;
-        }
-        if (!valid.length) {
-            return c('collider_2025:Info').t`Runs when you add files`;
-        }
-        if (findingCount) {
-            return c('collider_2025:Info').ngettext(
-                msgid`${findingCount} thing to review`,
-                `${findingCount} things to review`,
-                findingCount
-            );
-        }
-        return c('collider_2025:Info').t`Nothing unusual found`;
-    })();
-
     const footerHint = (() => {
         if (!valid.length) {
             return c('collider_2025:Info').t`Add a file to continue.`;
@@ -279,7 +300,7 @@ export const UploadSkillView = () => {
                     <h1 className="text-2xl text-semibold m-0">{c('collider_2025:Title').t`Upload a skill`}</h1>
                     <p className="m-0 color-weak">
                         {c('collider_2025:Info')
-                            .t`Add skills you've written or downloaded. ${LUMO_SHORT_APP_NAME} checks each one before you add it.`}
+                            .t`Bring skills you've written or downloaded, including Claude skills and plugins. ${LUMO_SHORT_APP_NAME} checks each one before you add it.`}
                     </p>
                 </div>
 
@@ -297,23 +318,33 @@ export const UploadSkillView = () => {
                         onDragLeave={() => setIsDragging(false)}
                         onDrop={handleDrop}
                     >
-                        <span className="upload-skill-dropzone-icon flex items-center justify-center rounded-full">
-                            <LumoIcon aria-hidden name="FileUp" size={22} />
+                        <span className="upload-skill-dropzone-icon flex items-center justify-center">
+                            <LumoIcon aria-hidden name="FileUp" size={24} />
                         </span>
                         <div className="flex flex-column items-center gap-1">
-                            <span className="text-semibold color-norm">
-                                {c('collider_2025:Info').t`Drop skill files or folders here`}
+                            <span className="text-lg text-semibold color-norm">
+                                {c('collider_2025:Info').t`Drop skills, skill sets or Claude plugins here`}
                             </span>
                             <span className="text-sm color-weak">
-                                {c('collider_2025:Info')
-                                    .t`.md, .zip, .skill or .plugin files, or folders. You can add several at once.`}
+                                {c('collider_2025:Info').t`You can add several at once.`}
                             </span>
                         </div>
+                        <ul
+                            className="unstyled m-0 flex flex-wrap justify-center gap-1"
+                            aria-label={c('collider_2025:Label').t`Supported formats`}
+                        >
+                            {['.md', '.zip', '.skill', '.plugin'].map((extension) => (
+                                <li key={extension} className="upload-skill-format text-xs text-monospace">
+                                    {extension}
+                                </li>
+                            ))}
+                            <li className="upload-skill-format text-xs">{c('collider_2025:Info').t`folders`}</li>
+                        </ul>
                         <div className="flex flex-wrap justify-center gap-2">
-                            <Button size="small" shape="outline" onClick={() => inputRef.current?.click()}>
+                            <Button color="norm" onClick={() => inputRef.current?.click()}>
                                 {c('collider_2025:Action').t`Choose files`}
                             </Button>
-                            <Button size="small" shape="outline" onClick={() => folderInputRef.current?.click()}>
+                            <Button shape="outline" onClick={() => folderInputRef.current?.click()}>
                                 {c('collider_2025:Action').t`Choose a folder`}
                             </Button>
                         </div>
@@ -338,40 +369,35 @@ export const UploadSkillView = () => {
                             event.target.value = '';
                         }}
                     />
+                </div>
 
-                    <Collapsible>
-                        <CollapsibleHeader
-                            className="text-sm color-weak"
-                            disableFullWidth
-                            suffix={
-                                <CollapsibleHeaderIconButton
-                                    size="small"
-                                    aria-label={c('collider_2025:Action').t`Show file requirements`}
-                                >
-                                    <LumoIcon name="ChevronDown" size={14} />
-                                </CollapsibleHeaderIconButton>
-                            }
-                        >
-                            {c('collider_2025:Label').t`What can I upload?`}
-                        </CollapsibleHeader>
-                        <CollapsibleContent>
-                            <ul className="m-0 mt-1 pl-5 text-sm color-weak">
-                                <li>
-                                    {c('collider_2025:Info')
-                                        .t`A .md file needs a name and description in its YAML frontmatter.`}
-                                </li>
-                                <li>{c('collider_2025:Info').t`A .zip or .skill file needs a SKILL.md file.`}</li>
-                                <li>
-                                    {c('collider_2025:Info')
-                                        .t`Folders and plugins can hold several skills, each in its own folder with a SKILL.md.`}
-                                </li>
-                                <li>
-                                    {c('collider_2025:Info')
-                                        .t`${LUMO_SHORT_APP_NAME} can read the scripts in a skill but won't run them.`}
-                                </li>
-                            </ul>
-                        </CollapsibleContent>
-                    </Collapsible>
+                {results.length === 0 && (
+                    <section className="flex flex-column gap-3">
+                        <h2 className="m-0 text-rg text-semibold">{c('collider_2025:Title').t`What you can upload`}</h2>
+                        <ul className="upload-skill-kinds unstyled m-0">
+                            {getUploadKinds().map((kind) => (
+                                <Card as="li" key={kind.title} rounded background={false} className="bg-norm">
+                                    <div className="flex flex-column gap-2">
+                                        <div className="flex flex-nowrap items-center gap-2">
+                                            <span className="upload-skill-kind-icon flex items-center justify-center shrink-0">
+                                                <LumoIcon aria-hidden name={kind.icon} size={16} />
+                                            </span>
+                                            <span className="flex-1 text-semibold">{kind.title}</span>
+                                        </div>
+                                        <p className="m-0 text-sm color-weak">{kind.detail}</p>
+                                    </div>
+                                </Card>
+                            ))}
+                        </ul>
+                    </section>
+                )}
+
+                <div className="flex flex-nowrap items-start gap-2 text-sm color-weak">
+                    <LumoIcon aria-hidden name="ShieldCheck" size={16} className="shrink-0 color-success" />
+                    <span>
+                        {c('collider_2025:Info')
+                            .t`Every file is checked for hidden text, attempts to override instructions, keys and risky commands. ${LUMO_SHORT_APP_NAME} can read the scripts in a skill but never runs them.`}
+                    </span>
                 </div>
 
                 {results.length > 0 && (
@@ -414,27 +440,6 @@ export const UploadSkillView = () => {
                     </ul>
                 )}
 
-                <Card rounded className="flex flex-nowrap items-start gap-3">
-                    <LumoIcon
-                        aria-hidden
-                        name={findingCount ? 'ShieldExclamationPoint' : 'ShieldCheck'}
-                        size={18}
-                        className={clsx('shrink-0 mt-0.5', findingCount ? 'color-warning' : 'color-weak')}
-                    />
-                    <div className="flex flex-column gap-1 flex-1 min-w-0">
-                        <div className="flex flex-nowrap items-center justify-space-between gap-4">
-                            <span className="text-semibold">{c('collider_2025:Label').t`Basic content check`}</span>
-                            <span className="text-sm color-weak" aria-live="polite">
-                                {checkStatus}
-                            </span>
-                        </div>
-                        <p className="m-0 text-sm color-weak">
-                            {c('collider_2025:Info')
-                                .t`Looks for common problems such as hidden text, instructions that try to override ${LUMO_SHORT_APP_NAME}, keys left in files and risky commands. It's an automatic, basic check and can't catch everything, so only add skills from sources you trust.`}
-                        </p>
-                    </div>
-                </Card>
-
                 <div className="flex flex-wrap items-center justify-space-between gap-3">
                     <span className="text-sm color-weak">{footerHint}</span>
                     <div className="flex flex-nowrap gap-2 ml-auto">
@@ -452,6 +457,13 @@ export const UploadSkillView = () => {
                     </div>
                 </div>
             </CustomizePage>
+            {skillLimitModal.render && (
+                <SkillLimitModal
+                    {...skillLimitModal.modalProps}
+                    {...skillLimitModalState}
+                    isUploadingPlugin={isUploadingPlugin}
+                />
+            )}
         </LumoLayoutWithDrawer>
     );
 };

@@ -1,0 +1,51 @@
+@use '~@proton/styles/scss/lib/rem' as *;
+
+.skill-lumo-prompt {
+	border: 1px solid var(--border-norm);
+	border-radius: rem(12);
+	background-color: var(--background-norm);
+
+	&--refine {
+		border-color: rgb(var(--primary-rgb) / 0.25);
+		background-color: rgb(var(--primary-rgb) / 0.06);
+
+		&.is-generating {
+			border-color: rgb(var(--primary-rgb) / 0.6);
+		}
+	}
+
+	&:focus-within {
+		border-color: rgb(var(--primary-rgb) / 0.6);
+		box-shadow: 0 0 0 rem(3) rgb(var(--primary-rgb) / 0.15);
+	}
+
+	&__input {
+		background-color: transparent;
+		resize: none;
+		padding: 0;
+		line-height: 1.5;
+	}
+
+	&__icon--busy {
+		animation: skill-lumo-prompt-pulse 1.2s ease-in-out infinite;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		&__icon--busy {
+			animation: none;
+		}
+	}
+}
+
+.skill-lumo-brief__badge {
+	inline-size: rem(40);
+	block-size: rem(40);
+	border-radius: rem(12);
+	background-color: rgb(var(--primary-rgb) / 0.1);
+}
+
+@keyframes skill-lumo-prompt-pulse {
+	50% {
+		opacity: 0.35;
+	}
+}

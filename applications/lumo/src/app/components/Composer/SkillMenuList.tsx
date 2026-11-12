@@ -15,10 +15,11 @@ import { LumoIcon } from '../LumoIcon/LumoIcon';
 interface SkillMenuListProps {
     onBack: () => void;
     onClose: () => void;
+    onCreateSkill: () => void;
 }
 
 /** Tools menu sub-view: picks a skill to invoke, like typing `/handle` in the composer. */
-export const SkillMenuList = ({ onBack, onClose }: SkillMenuListProps) => {
+export const SkillMenuList = ({ onBack, onClose, onCreateSkill }: SkillMenuListProps) => {
     const history = useHistory();
     const dispatch = useLumoDispatch();
     const { customize } = useLumoFlags();
@@ -41,7 +42,8 @@ export const SkillMenuList = ({ onBack, onClose }: SkillMenuListProps) => {
 
             <div className="overflow-auto max-h-custom" style={{ '--max-h-custom': '16rem' }}>
                 {status === 'ready' && commands.length === 0 && (
-                    <div className="px-4 py-2 text-xs color-hint">{c('collider_2025: Info').t`No skills turned on`}</div>
+                    <div className="px-4 py-2 text-xs color-hint">{c('collider_2025: Info')
+                        .t`No skills turned on`}</div>
                 )}
                 {commands.map((command, index) => {
                     const startsGroup = command.group && command.group !== commands[index - 1]?.group;
@@ -68,16 +70,28 @@ export const SkillMenuList = ({ onBack, onClose }: SkillMenuListProps) => {
             {customize && (
                 <>
                     <hr className="my-1 w-custom mx-auto" style={{ '--w-custom': '90%' }} />
-                    <DropdownMenuButton className="justify-start" onClick={() => goTo('/customize')}>
+                    <DropdownMenuButton
+                        className="justify-start"
+                        onClick={() => {
+                            onClose();
+                            onCreateSkill();
+                        }}
+                    >
                         <div className="flex items-center gap-3 w-full">
-                            <LumoIcon name="Settings" size={16} />
-                            <span className="text-sm">{c('collider_2025: Action').t`Manage skills`}</span>
+                            <LumoIcon name="Plus" size={16} />
+                            <span className="text-sm">{c('collider_2025: Action').t`Create a skill`}</span>
                         </div>
                     </DropdownMenuButton>
                     <DropdownMenuButton className="justify-start" onClick={() => goTo('/customize/upload')}>
                         <div className="flex items-center gap-3 w-full">
                             <LumoIcon name="Upload" size={16} />
                             <span className="text-sm">{c('collider_2025: Action').t`Upload a skill`}</span>
+                        </div>
+                    </DropdownMenuButton>
+                    <DropdownMenuButton className="justify-start" onClick={() => goTo('/customize')}>
+                        <div className="flex items-center gap-3 w-full">
+                            <LumoIcon name="Settings" size={16} />
+                            <span className="text-sm">{c('collider_2025: Action').t`Manage skills`}</span>
                         </div>
                     </DropdownMenuButton>
                 </>

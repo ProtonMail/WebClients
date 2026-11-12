@@ -14,7 +14,7 @@ export function useScheduleLimit() {
     const scheduleLimitModal = useModalStateObject();
 
     const scheduleCount = Object.keys(schedules).length;
-    const scheduleLimit = hasLumoPlus ? 3 : 1;
+    const scheduleLimit = hasLumoPlus ? 10 : 1;
     const canCreateSchedule = !isLumoPlanLoading && scheduleCount < scheduleLimit;
 
     const checkCanCreateSchedule = () => {

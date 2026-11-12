@@ -17,6 +17,8 @@ type SkillsState = {
     /** Every Custom Lumo id that already has a skill, deleted ones included. */
     migratedAgentIds: string[];
     migrating: boolean;
+    /** Whether a sync with the server has completed, so skills made on other devices are known. */
+    synced: boolean;
 };
 
 const initialState: SkillsState = {
@@ -24,12 +26,17 @@ const initialState: SkillsState = {
     skills: {},
     migratedAgentIds: [],
     migrating: false,
+    synced: false,
 };
 
 const skillsSlice = createSlice({
     name: 'skills',
     initialState,
-    reducers: {},
+    reducers: {
+        skillsSynced: (state) => {
+            state.synced = true;
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(loadSkills.pending, (state) => {
@@ -69,5 +76,7 @@ const skillsSlice = createSlice({
             });
     },
 });
+
+export const { skillsSynced } = skillsSlice.actions;
 
 export default skillsSlice.reducer;

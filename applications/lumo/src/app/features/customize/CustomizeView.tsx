@@ -5,8 +5,12 @@ import { useModalStateObject } from '@proton/components/components/modalTwo/useM
 
 import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
+import { useIsGuest } from '../../providers/IsGuestProvider';
 import { SkillEditorModal } from '../skills/components/SkillEditorModal';
+import { SkillLimitModal } from '../skills/components/SkillLimitModal';
+import { useSkillLimit } from '../skills/useSkillLimit';
 import { CustomizeConnectorsTab } from './components/CustomizeConnectorsTab';
+import { CustomizeGuestView } from './components/CustomizeGuestView';
 import { CustomizePage } from './components/CustomizePage';
 import { CustomizePageHeader } from './components/CustomizePageHeader';
 import { CustomizeSkillsTab } from './components/CustomizeSkillsTab';
@@ -26,8 +30,10 @@ export const CustomizeView = () => {
 
     const history = useHistory();
     const location = useLocation();
+    const isGuest = useIsGuest();
     const [searchQuery, setSearchQuery] = useState('');
     const createModal = useModalStateObject();
+    const { checkCanAddSkills, skillLimitModal, skillLimitModalState } = useSkillLimit();
 
     const params = new URLSearchParams(location.search);
     const activeTab = parseCustomizeTab(params.get('tab'));
@@ -41,6 +47,16 @@ export const CustomizeView = () => {
         history.replace({ pathname: '/customize', search: getCustomizeSearch(tab, view) });
     };
 
+    if (isGuest) {
+        return (
+            <LumoLayoutWithDrawer drawer={{ disabled: true }}>
+                <CustomizePage>
+                    <CustomizeGuestView />
+                </CustomizePage>
+            </LumoLayoutWithDrawer>
+        );
+    }
+
     return (
         <LumoLayoutWithDrawer drawer={{ disabled: true }}>
             <CustomizePage>
@@ -51,7 +67,9 @@ export const CustomizeView = () => {
                     onSkillsViewChange={(view) => navigate('skills', view)}
                     searchQuery={searchQuery}
                     onSearchQueryChange={setSearchQuery}
-                    onCreateSkill={() => createModal.openModal(true)}
+                    onCreateSkill={() => {
+                        if (checkCanAddSkills()) createModal.openModal(true);
+                    }}
                     onUploadSkill={() => history.push('/customize/upload')}
                 />
                 {activeTab === 'skills' ? (
@@ -64,6 +82,7 @@ export const CustomizeView = () => {
                     <CustomizeConnectorsTab searchQuery={searchQuery} />
                 )}
             </CustomizePage>
+            {skillLimitModal.render && <SkillLimitModal {...skillLimitModal.modalProps} {...skillLimitModalState} />}
             {createModal.render && (
                 <SkillEditorModal
                     {...createModal.modalProps}

@@ -11,9 +11,11 @@ import {
     customAgentEditsToSkillDraft,
     customAgentToSkillDraft,
     getAgentsToMigrate,
+    getDuplicateMigratedSkills,
     getSkillsToResync,
 } from './customAgentMigration';
 import { BUNDLE_INDEX_VERSION, deriveBundleInfo, resolvePluginInfo } from './skillBundle';
+import { countActiveSkills } from './skillEntitlements';
 import { decodeText, encodeText, isSkillScriptFile, isTextSkillFile } from './skillFiles';
 import type { SkillCommand } from './skillInvocation';
 import {
@@ -424,16 +426,28 @@ export const readSkillFile = createAsyncThunk<
 
 /**
  * Turns each Custom Lumo without a skill into one, and carries over Custom Lumo edits made after
- * their skill was saved. Safe to call repeatedly.
+ * their skill was saved. Waits for a first sync so skills migrated on other devices are known, and
+ * removes copies left by devices that migrated before syncing. Safe to call repeatedly.
+ * New skills beyond `maxActiveSkills` active skills are imported turned off.
  */
-export const migrateCustomAgentsToSkills = createAsyncThunk<number, void, ThunkConfig>(
+export const migrateCustomAgentsToSkills = createAsyncThunk<number, { maxActiveSkills: number }, ThunkConfig>(
     'skills/migrateCustomAgents',
-    async (_, { dispatch, extra, getState }) => {
+    async ({ maxActiveSkills }, { dispatch, extra, getState }) => {
+        // The sync may have pulled skills after they were loaded, so read them again.
+        await dispatch(refreshSkills());
+        const duplicates = getDuplicateMigratedSkills(Object.values(getState().skills.skills));
+        for (const { id } of duplicates) {
+            await dispatch(deleteSkill(id)).unwrap();
+        }
         const state = getState();
         const customAgents = state.lumoUserSettings.customAgents ?? [];
         const agents = getAgentsToMigrate(customAgents, new Set(state.skills.migratedAgentIds));
+        let activeCount = countActiveSkills(Object.values(state.skills.skills));
         for (const agent of agents) {
-            await dispatch(saveSkill({ draft: customAgentToSkillDraft(agent) })).unwrap();
+            const draft = customAgentToSkillDraft(agent);
+            const enabled = draft.enabled !== false && activeCount < maxActiveSkills;
+            if (enabled) activeCount += 1;
+            await dispatch(saveSkill({ draft: { ...draft, enabled } })).unwrap();
         }
         const resyncs = getSkillsToResync(customAgents, Object.values(state.skills.skills));
         for (const { skill, agent } of resyncs) {
@@ -442,12 +456,12 @@ export const migrateCustomAgentsToSkills = createAsyncThunk<number, void, ThunkC
                 saveSkill({ id: skill.id, draft: customAgentEditsToSkillDraft(skill, agent, files) })
             ).unwrap();
         }
-        return agents.length + resyncs.length;
+        return duplicates.length + agents.length + resyncs.length;
     },
     {
         condition: (_, { getState }) => {
-            const { status, migrating } = getState().skills;
-            return status === 'ready' && !migrating;
+            const { status, migrating, synced } = getState().skills;
+            return status === 'ready' && synced && !migrating;
         },
     }
 );

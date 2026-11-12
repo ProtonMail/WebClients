@@ -22,6 +22,28 @@ export const getAgentsToMigrate = (agents: CustomAgent[], migratedAgentIds: Set<
     agents.filter((agent) => agent.source === 'personal' && !migratedAgentIds.has(agent.id));
 
 /**
+ * Extra skills migrated from the same Custom Lumo, made when several devices migrated before syncing.
+ * The most recently edited copy is kept, then the oldest, so every device picks the same one.
+ */
+export const getDuplicateMigratedSkills = (skills: Skill[]): Skill[] => {
+    const byAgent = new Map<string, Skill[]>();
+    for (const skill of skills) {
+        if (skill.source === 'custom-lumo' && skill.legacyAgentId) {
+            byAgent.set(skill.legacyAgentId, [...(byAgent.get(skill.legacyAgentId) ?? []), skill]);
+        }
+    }
+    return [...byAgent.values()].flatMap((copies) => {
+        const [, ...duplicates] = [...copies].sort(
+            (a, b) =>
+                b.updatedAt.localeCompare(a.updatedAt) ||
+                a.createdAt.localeCompare(b.createdAt) ||
+                a.id.localeCompare(b.id)
+        );
+        return duplicates;
+    });
+};
+
+/**
  * Migrated skills whose Custom Lumo was edited after the skill, which happens when skills are turned
  * off and the Custom Lumos picker is back. The newer edit wins.
  */

@@ -13,7 +13,9 @@ interface ProtonPluginCardProps {
     plugin: ProtonPlugin;
     added: boolean;
     adding: boolean;
-    onAdd: () => void;
+    onAdd?: () => void;
+    /** Shown instead of Add when the user's plan doesn't include skill sets. */
+    onUpgrade?: () => void;
     onOpen: () => void;
     onPreview: () => void;
 }
@@ -51,7 +53,15 @@ export const PluginExample = ({ plugin }: { plugin: ProtonPlugin }) => {
     );
 };
 
-export const ProtonPluginCard = ({ plugin, added, adding, onAdd, onOpen, onPreview }: ProtonPluginCardProps) => {
+export const ProtonPluginCard = ({
+    plugin,
+    added,
+    adding,
+    onAdd,
+    onUpgrade,
+    onOpen,
+    onPreview,
+}: ProtonPluginCardProps) => {
     const title = plugin.getTitle();
 
     return (
@@ -79,26 +89,50 @@ export const ProtonPluginCard = ({ plugin, added, adding, onAdd, onOpen, onPrevi
                         )}
                     </span>
                 </div>
-                <div className="relative z-1 shrink-0">
-                    {added ? (
-                        <Button shape="ghost" color="weak" size="small" pill onClick={onOpen}>
-                            {c('collider_2025:Action').t`Open`}
-                        </Button>
-                    ) : (
-                        <Button
-                            shape="outline"
-                            color="weak"
-                            size="small"
-                            pill
-                            loading={adding}
-                            onClick={onAdd}
-                            aria-label={c('collider_2025:Action').t`Add ${title}`}
-                        >
-                            <span className="flex flex-nowrap items-center gap-1">
-                                <LumoIcon name="Plus" size={14} />
-                                {c('collider_2025:Action').t`Add`}
-                            </span>
-                        </Button>
+                <div className="flex flex-column flex-nowrap items-end gap-2 shrink-0">
+                    <span className="inline-flex flex-nowrap items-center gap-1 rounded-full bg-weak px-2 py-1 text-xs color-weak">
+                        <LumoIcon name="Eye" size={14} aria-hidden />
+                        {c('collider_2025:Info').t`Preview`}
+                    </span>
+                    {(added || onAdd || onUpgrade) && (
+                        <div className="relative z-1 shrink-0">
+                            {added && (
+                                <Button shape="ghost" color="weak" size="small" pill onClick={onOpen}>
+                                    {c('collider_2025:Action').t`Open`}
+                                </Button>
+                            )}
+                            {!added && !onAdd && onUpgrade && (
+                                <Button
+                                    shape="outline"
+                                    color="norm"
+                                    size="small"
+                                    pill
+                                    onClick={onUpgrade}
+                                    aria-label={c('collider_2025:Action').t`Upgrade to add ${title}`}
+                                >
+                                    <span className="flex flex-nowrap items-center gap-1">
+                                        <LumoIcon name="Lock" size={14} />
+                                        {c('collider_2025:Action').t`Upgrade`}
+                                    </span>
+                                </Button>
+                            )}
+                            {!added && onAdd && (
+                                <Button
+                                    shape="outline"
+                                    color="weak"
+                                    size="small"
+                                    pill
+                                    loading={adding}
+                                    onClick={onAdd}
+                                    aria-label={c('collider_2025:Action').t`Add ${title}`}
+                                >
+                                    <span className="flex flex-nowrap items-center gap-1">
+                                        <LumoIcon name="Plus" size={14} />
+                                        {c('collider_2025:Action').t`Add`}
+                                    </span>
+                                </Button>
+                            )}
+                        </div>
                     )}
                 </div>
             </div>

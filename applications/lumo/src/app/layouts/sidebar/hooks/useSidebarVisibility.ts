@@ -35,6 +35,7 @@ export const useSidebarVisibility = (): SidebarVisibility => {
         // Collapse toggle is desktop-only regardless of auth state
         showCollapseToggle: !isSmallScreen,
         showSchedules: schedules && isDesktopEnvironment() && !isGuest,
-        showCustomize: skills && !isGuest,
+        // Guests see a sign-up page explaining skills and connectors
+        showCustomize: skills,
     };
 };

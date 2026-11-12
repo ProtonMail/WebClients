@@ -8,9 +8,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { useLumoPlan } from '../../../hooks/useLumoPlan';
 import { useLumoDispatch } from '../../../redux/hooks';
 import { DeleteSkillPrompt } from '../../skills/components/DeleteSkillPrompt';
 import { SkillEditorModal } from '../../skills/components/SkillEditorModal';
+import { SkillLimitModal } from '../../skills/components/SkillLimitModal';
+import { SkillLimitWarning } from '../../skills/components/SkillLimitWarning';
 import {
     type ProtonPlugin,
     getProtonPlugins,
@@ -19,6 +22,7 @@ import {
 } from '../../skills/protonCatalog';
 import { deleteSkill, saveSkill, setSkillEnabled, setSubSkillEnabled } from '../../skills/skillsThunks';
 import type { Skill } from '../../skills/types';
+import { useSkillLimit } from '../../skills/useSkillLimit';
 import { useSkills } from '../../skills/useSkills';
 import type { SkillsView } from '../customizeTabs';
 import { groupSkills } from '../skillGroups';
@@ -36,7 +40,10 @@ interface CustomizeSkillsTabProps {
 export const CustomizeSkillsTab = ({ view, searchQuery, onBrowse }: CustomizeSkillsTabProps) => {
     const history = useHistory();
     const dispatch = useLumoDispatch();
+    const skillLimit = useSkillLimit();
+    const { checkCanAddSkills, checkCanEnableSkill, checkCanEnableSubSkill, skillLimitModal } = skillLimit;
     const { createNotification } = useNotifications();
+    const { isLumoPlanLoading } = useLumoPlan();
     const { status, skills } = useSkills();
     const editorModal = useModalStateObject();
     const deletePrompt = useModalStateObject();
@@ -63,6 +70,7 @@ export const CustomizeSkillsTab = ({ view, searchQuery, onBrowse }: CustomizeSki
     const migratedCount = skills.filter((skill) => skill.source === 'custom-lumo').length;
 
     const handleAdd = async (plugin: ProtonPlugin) => {
+        if (!checkCanAddSkills(plugin.skills.length, true)) return;
         setAddingId(plugin.id);
         try {
             await dispatch(saveSkill({ draft: protonPluginToDraft(plugin) })).unwrap();
@@ -117,10 +125,14 @@ export const CustomizeSkillsTab = ({ view, searchQuery, onBrowse }: CustomizeSki
                         group={group}
                         onOpen={(skill) => history.push(getSkillPath(skill.id))}
                         onOpenSubSkill={(skill, subSkill) => history.push(getSubSkillPath(skill.id, subSkill))}
-                        onEnabledChange={(skill, enabled) => dispatch(setSkillEnabled({ id: skill.id, enabled }))}
-                        onSubSkillEnabledChange={(skill, path, enabled) =>
-                            dispatch(setSubSkillEnabled({ id: skill.id, path, enabled }))
-                        }
+                        onEnabledChange={(skill, enabled) => {
+                            if (enabled && !checkCanEnableSkill(skill)) return;
+                            void dispatch(setSkillEnabled({ id: skill.id, enabled }));
+                        }}
+                        onSubSkillEnabledChange={(skill, path, enabled) => {
+                            if (enabled && !checkCanEnableSubSkill(skill)) return;
+                            void dispatch(setSubSkillEnabled({ id: skill.id, path, enabled }));
+                        }}
                         onEdit={(skill) => {
                             setSelectedSkill(skill);
                             editorModal.openModal(true);
@@ -146,7 +158,12 @@ export const CustomizeSkillsTab = ({ view, searchQuery, onBrowse }: CustomizeSki
                     addedSkillIds={addedSkillIds}
                     addingId={addingId}
                     onAdd={handleAdd}
+                    onUpgrade={() => skillLimit.openUpgradeModal('skill-sets')}
                     onOpen={(skillId) => history.push(getSkillPath(skillId))}
+                    canAddSkillSets={skillLimit.canAddSkillSets}
+                    isPlanLoading={isLumoPlanLoading}
+                    maxActiveSkills={skillLimit.maxActiveSkills}
+                    upgradePath={skillLimit.upgradePath}
                 />
             );
         }
@@ -155,10 +172,23 @@ export const CustomizeSkillsTab = ({ view, searchQuery, onBrowse }: CustomizeSki
 
     return (
         <div className="customize-skills-tab flex flex-column flex-nowrap gap-8 flex-1">
+            {view === 'yours' && (
+                <SkillLimitWarning
+                    isOverLimit={skillLimit.isOverLimit}
+                    hasUnavailableSkillSets={skillLimit.hasUnavailableSkillSets}
+                    activeSkillCount={skillLimit.activeSkillCount}
+                    maxActiveSkills={skillLimit.maxActiveSkills}
+                    upgradePath={skillLimit.upgradePath}
+                    onUpgrade={() => skillLimit.openUpgradeModal('limit')}
+                />
+            )}
             {view === 'yours' && migratedCount > 0 && <SkillsMigrationNotice customLumoCount={migratedCount} />}
 
             {renderContent()}
 
+            {skillLimitModal.render && (
+                <SkillLimitModal {...skillLimitModal.modalProps} {...skillLimit.skillLimitModalState} />
+            )}
             {editorModal.render && selectedSkill && (
                 <SkillEditorModal {...editorModal.modalProps} skillId={selectedSkill.id} />
             )}

@@ -93,14 +93,14 @@ export const CustomizePageHeader = ({
             return c('collider_2025:Placeholder').t`Search connectors`;
         }
         return skillsView === 'discover'
-            ? c('collider_2025:Placeholder').t`Search plugins`
+            ? c('collider_2025:Placeholder').t`Search skill sets`
             : c('collider_2025:Placeholder').t`Search your skills`;
     })();
 
     return (
         <header className="flex flex-column flex-nowrap gap-5 mb-6">
             <h1 className="text-3xl text-bold m-0">{c('collider_2025:Title').t`Customize`}</h1>
-            <div className="flex flex-nowrap items-center gap-3 w-full">
+            <div className="flex flex-wrap items-center gap-3 w-full">
                 <Segmented
                     value={activeTab}
                     onChange={onTabChange}
@@ -117,13 +117,13 @@ export const CustomizePageHeader = ({
                             onChange={onSkillsViewChange}
                             options={[
                                 { value: 'yours', label: c('collider_2025:Tab').t`Yours` },
-                                { value: 'discover', label: c('collider_2025:Tab').t`Discover plugins` },
+                                { value: 'discover', label: c('collider_2025:Tab').t`Discover skill sets` },
                             ]}
                         />
                     </>
                 )}
                 <div className="flex-1 min-w-4" />
-                <div className="w-custom shrink-0" style={{ '--w-custom': '16.25rem' }}>
+                <div className="w-custom max-w-full shrink-0" style={{ '--w-custom': '16.25rem' }}>
                     <Input
                         value={searchQuery}
                         onValue={onSearchQueryChange}
