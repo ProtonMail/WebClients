@@ -1096,9 +1096,6 @@
       "Generate workflow": [
         "Genera workflow"
       ],
-      "Hide safety information": [
-        "Nascondi informazioni di sicurezza"
-      ],
       "Hide usage details for ${ member.name }": [
         "Nascondi i dettagli sull'utilizzo relativi a ${ member.name }"
       ],
@@ -1170,9 +1167,6 @@
       ],
       "Share your thoughts": [
         "Condividi la tua opinione"
-      ],
-      "Show safety information": [
-        "Mostra informazioni di sicurezza"
       ],
       "Show usage details for ${ member.name }": [
         "Mostra i dettagli sull'utilizzo per ${ member.name }"
@@ -2255,6 +2249,9 @@
       "Files automatically retrieved based on your questions.": [
         "File recuperati automaticamente in base alle tue domande."
       ],
+      "For now, the threshold is fixed at ${ formattedThreshold }.": [
+        "Per ora, la soglia è fissata a ${ formattedThreshold }."
+      ],
       "For this chat": [
         "Per questa chat"
       ],
@@ -2507,6 +2504,9 @@
       "Review token usage and balance deductions over time.": [
         "Esamina l'utilizzo dei token e gli addebiti sul saldo nel corso del tempo."
       ],
+      "Safety information": [
+        "Informazioni sulla sicurezza"
+      ],
       "Save all your conversations in a chat history only you can see. Sign in or create an account.": [
         "Salva tutte le tue conversazioni in una cronologia chat che solo tu puoi vedere. Accedi o crea un account."
       ],
@@ -2597,6 +2597,9 @@
       "This conversation contains many images. ${ LUMO_SHORT_APP_NAME } will only see the most recent ${ MAX_IMAGES_PER_REQUEST } images.": [
         "Questa conversazione contiene molte immagini. ${ LUMO_SHORT_APP_NAME } mostrerà solo le ${ MAX_IMAGES_PER_REQUEST } immagini più recenti."
       ],
+      "This conversation contains many PDF pages with images. ${ LUMO_SHORT_APP_NAME } will only see the most recent ${ MAX_PDF_PAGE_IMAGES_PER_REQUEST } of them, but still reads the full text of every PDF.": [
+        "Questa conversazione contiene molte pagine PDF con immagini. ${ LUMO_SHORT_APP_NAME } vedrà solo le ${ MAX_PDF_PAGE_IMAGES_PER_REQUEST } più recenti, ma leggerà comunque il testo completo di ogni pagina."
+      ],
       "This conversation's full history is also shared by default to help us improve even further. You can opt out on the next dialog.": [
         "Per aiutarci a migliorare ancora di più, la cronologia completa di questa conversazione viene condivisa per impostazione predefinita. Puoi disattivare questa opzione nella finestra di dialogo successiva."
       ],
@@ -2617,6 +2620,9 @@
       ],
       "tokens / 30d": [
         "token / 30 g"
+      ],
+      "Tool calls": [
+        "Chiamate dello strumento"
       ],
       "Top up from your default payment method when your balance runs low.": [
         "Ricarica utilizzando il tuo metodo di pagamento predefinito quando il saldo sta per esaurirsi."
@@ -3482,6 +3488,9 @@
       "Opening External Link": [
         "Apertura collegamento esterno in corso"
       ],
+      "Optimize memories?": [
+        "Ottimizza i ricordi?"
+      ],
       "Parameters": [
         "Parametri"
       ],
@@ -3888,11 +3897,20 @@
       "All": [
         "Tutto"
       ],
+      "Allow for this task": [
+        "Prevedere il tempo necessario per questa attività"
+      ],
+      "Analyze another export": [
+        "Analizza un'altra esportazione"
+      ],
       "Apply": [
         "Applica"
       ],
       "Ask the model to be more careful and thorough": [
         "Richiedi al modello maggiore precisione e attenzione"
+      ],
+      "Back": [
+        "Indietro"
       ],
       "Back to all files": [
         "Torna a tutti i file"
@@ -3957,6 +3975,9 @@
       "Connector settings": [
         "Impostazioni del connettore"
       ],
+      "Continue": [
+        "Continua"
+      ],
       "Continue to next question": [
         "Passa alla domanda successiva"
       ],
@@ -3989,9 +4010,6 @@
       ],
       "Delete": [
         "Elimina"
-      ],
-      "Delete chat": [
-        "Elimina la chat"
       ],
       "Delete column": [
         "Elimina colonna"
@@ -4031,6 +4049,9 @@
       ],
       "Documents": [
         "Documenti"
+      ],
+      "Done": [
+        "Fatto"
       ],
       "Download": [
         "Scarica"
@@ -4086,9 +4107,6 @@
       "Export": [
         "Esporta"
       ],
-      "Export chat": [
-        "Esporta conversazione"
-      ],
       "Favorite": [
         "Preferiti"
       ],
@@ -4100,6 +4118,9 @@
       ],
       "Go to project": [
         "Vai al progetto"
+      ],
+      "Go to project ${ label }": [
+        "Vai al progetto ${ label }"
       ],
       "Heading 1": [
         "Titolo 1"
@@ -4143,9 +4164,6 @@
       "Manage": [
         "Gestisci"
       ],
-      "Manage chats": [
-        "Gestisci chat"
-      ],
       "Manage Drive folder link": [
         "Gestisci il link alla cartella di Drive"
       ],
@@ -4173,11 +4191,26 @@
       "More options": [
         "Altre opzioni"
       ],
+      "Move": [
+        "Sposta"
+      ],
+      "Move to project": [
+        "Sposta nel progetto"
+      ],
+      "New chat": [
+        "Nuova chat"
+      ],
+      "New project": [
+        "Nuovo progetto"
+      ],
       "Next message": [
         "Prossimo messaggio"
       ],
       "Next question": [
         "Domanda successiva"
+      ],
+      "Not now": [
+        "Non adesso"
       ],
       "Numbered list": [
         "Elenco numerato"
@@ -4190,6 +4223,9 @@
       ],
       "Open chat": [
         "Apri chat"
+      ],
+      "Open email app": [
+        "Apri l'app di posta elettronica"
       ],
       "Open scheduled task: ${ name }": [
         "Apri attività pianificata: ${ name }"
@@ -4242,6 +4278,9 @@
       "Remove": [
         "Rimuovi"
       ],
+      "Remove ${ label }": [
+        "Rimuovi ${ label }"
+      ],
       "Remove agent": [
         "Rimuovi agente"
       ],
@@ -4253,9 +4292,6 @@
       ],
       "Remove file": [
         "Rimuovi file"
-      ],
-      "Remove from favorites": [
-        "Rimuovi dai preferiti"
       ],
       "Remove from this task": [
         "Rimuovi da questa attività"
@@ -4278,6 +4314,9 @@
       "Reveal my profile": [
         "Rivela il mio profilo"
       ],
+      "Review prefilled message": [
+        "Rivedi il messaggio precompilato"
+      ],
       "Run history": [
         "Esegui la cronologia"
       ],
@@ -4293,11 +4332,11 @@
       "Schedule task: ${ taskName }": [
         "Pianifica attività: ${ taskName }"
       ],
+      "Select": [
+        "Seleziona"
+      ],
       "Select all": [
         "Seleziona tutto"
-      ],
-      "Select chats": [
-        "Seleziona chat"
       ],
       "Select conversation": [
         "Seleziona conversazione"
@@ -4344,11 +4383,17 @@
       "Slides": [
         "Diapositive"
       ],
+      "Sort chats: ${ currentLabel }": [
+        "Ordina le chat: ${ currentLabel }"
+      ],
       "Source (Markdown)": [
         "Fonte (Markdown)"
       ],
       "Source file": [
         "File di origine"
+      ],
+      "Start a chat": [
+        "Avvia una chat"
       ],
       "Strikethrough": [
         "Barrato"
@@ -4400,6 +4445,9 @@
       ],
       "Versions and actions": [
         "Versioni e azioni"
+      ],
+      "View": [
+        "Visualizza"
       ],
       "View latest": [
         "Vedi ultima"
@@ -4521,9 +4569,6 @@
       "Expand": [
         "Espandi"
       ],
-      "Filter & Sort": [
-        "Filtra e ordina"
-      ],
       "Hide templates": [
         "Nascondi i modelli"
       ],
@@ -4541,9 +4586,6 @@
       ],
       "Load more": [
         "Carica altri"
-      ],
-      "More options": [
-        "Altre opzioni"
       ],
       "New chat": [
         "Nuova chat"
@@ -4626,9 +4668,36 @@
         "Riassumi ciò che hai realizzato, ciò che è ancora in sospeso e quali saranno i prossimi passi."
       ]
     },
+    "collider_2025:Disclaimer": {
+      "Continuing shares these details with your email app, which may save or sync the draft before you send it. ${ LUMO_SHORT_APP_NAME } does not send the email. Only continue if you trust the recipients and are comfortable sharing this information.": [
+        "La funzione “Continua” condivide questi dettagli con la tua app di posta elettronica, che potrebbe salvare o sincronizzare la bozza prima dell'invio. ${ LUMO_SHORT_APP_NAME } non invia l'e-mail. Procedi solo se ti fidi dei destinatari e sei sicuro di voler condividere queste informazioni."
+      ],
+      "Email links can contain unexpected recipients or sensitive information. Check all recipients, including CC and BCC, and any prefilled message.": [
+        "I link presenti nelle e-mail possono contenere destinatari inattesi o informazioni sensibili. Controlla tutti i destinatari, compresi quelli in CC e CCN, nonché eventuali messaggi precompilati."
+      ]
+    },
+    "collider_2025:Email field label": {
+      "Subject": [
+        "Soggeto"
+      ]
+    },
+    "collider_2025:Email recipient label": {
+      "BCC (hidden recipients)": [
+        "BCC (destinatari nascosti)"
+      ],
+      "CC": [
+        "CC"
+      ],
+      "To": [
+        "A"
+      ]
+    },
     "collider_2025:Error": {
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to run, but it isn't available in this browser. This can happen when cookies or website data are blocked, in private browsing, or with Lockdown Mode enabled. Please allow website data for this site and reload.": [
         "${ LUMO_SHORT_APP_NAME } richiede l'archiviazione locale del database (IndexedDB) per funzionare, ma non è disponibile in questo browser. Questo può accadere quando i cookie o i dati del sito web sono bloccati, nella navigazione privata o con la modalità di isolamento attivata. Consenti i dati del sito web per questo sito e ricarica."
+      ],
+      "${ projectName } has reached its limit of chats or files.": [
+        "${ projectName } ha raggiunto il limite di chat o file."
       ],
       "A file with this path already exists": [
         "Esiste già un file con questo percorso"
@@ -4653,6 +4722,9 @@
       ],
       "Chart unavailable": [
         "Grafico non disponibile"
+      ],
+      "Chats in a private project can only be moved to another private project.": [
+        "Le chat presenti in un progetto privato possono essere spostate solo in un altro progetto privato."
       ],
       "Choose a date and time in the future": [
         "Scegli una data e un'ora future"
@@ -4680,6 +4752,9 @@
       ],
       "Could not load all creations.": [
         "Impossibile caricare tutte le creazioni."
+      ],
+      "Could not load connectors": [
+        "Impossibile caricare i connettori"
       ],
       "Could not load creations.": [
         "Impossibile caricare le creazioni."
@@ -4719,6 +4794,9 @@
       ],
       "Could not upload the skill": [
         "Impossibile caricare la competenza"
+      ],
+      "Couldn't move the chat. Please try again.": [
+        "Impossibile spostare la chat. Riprova."
       ],
       "Database connection lost. Please refresh the page to continue.": [
         "Connessione al database persa. Aggiorna la pagina per continuare."
@@ -4819,6 +4897,9 @@
       "Select at least one day of the week": [
         "Seleziona almeno un giorno della settimana"
       ],
+      "Some of this chat's files aren't available yet. Try again in a moment.": [
+        "Alcuni file di questa chat non sono ancora disponibili. Riprovare tra un momento."
+      ],
       "Something went wrong starting the analysis.": [
         "Si è verificato un errore durante l'avvio dell'analisi."
       ],
@@ -4840,6 +4921,9 @@
       "This does not look like a ChatGPT or Claude export.": [
         "Questo non sembra un file esportato da ChatGPT o Claude."
       ],
+      "This email link contains invalid or unsupported details and cannot be opened safely.": [
+        "Questo link contenuto nell'e-mail contiene informazioni non valide o non supportate e non può essere aperto in modo sicuro."
+      ],
       "This file could not be read.": [
         "Non è stato possibile leggere questo file."
       ],
@@ -4857,6 +4941,12 @@
       ],
       "Use a relative path, like references/guide.md": [
         "Utilizza un percorso relativo, ad esempio references/guide.md"
+      ],
+      "Wait for the response to finish before moving this chat.": [
+        "Attendi che la risposta venga completata prima di spostare questa chat."
+      ],
+      "We could not read this Excel workbook. It may be encrypted, corrupted, or not a valid .xlsx file. Please save it as .xlsx or CSV and try again.": [
+        "Impossibile leggere la cartella di lavoro di Excel. Potrebbe essere criptata, corrotta o un file XLSX non valido. Salvarla come XLSX o CSV e riprovare."
       ],
       "We could not read this file. Select it again, or move it out of cloud storage before uploading.": [
         "Non siamo riusciti a leggere questo file. Selezionalo di nuovo oppure spostalo fuori dall'archivio cloud prima di caricarlo."
@@ -4948,6 +5038,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } can read the scripts in a skill but won't run them.": [
         "${ LUMO_SHORT_APP_NAME } è in grado di leggere gli script presenti in una skill, ma non li esegue."
+      ],
+      "${ LUMO_SHORT_APP_NAME } is end-to-end encrypted and never used for training, profiling, or advertising.": [
+        "${ LUMO_SHORT_APP_NAME } è criptato end-to-end e non sarà mai usato per scopi di formazione, profilazione o pubblicitari."
       ],
       "${ LUMO_SHORT_APP_NAME } looks through this project's files. It can also look through the files of your other projects that are searchable.": [
         "${ LUMO_SHORT_APP_NAME } effettua una ricerca tra i file di questo progetto. Può anche effettuare una ricerca tra i file degli altri tuoi progetti che sono ricercabili."
@@ -5135,6 +5228,12 @@
       "Choose a format to export \"${ conversation.title }\":": [
         "Scegli un formato per esportare “${ conversation.title }”:"
       ],
+      "Choose the connectors this task can use. Uncheck a connector to remove it from the schedule. You can change this anytime in the task's settings.": [
+        "Scegli i connettori che questa attività può utilizzare. Deseleziona un connettore per rimuoverlo dalla pianificazione. Puoi modificare questa impostazione in qualsiasi momento nelle impostazioni dell'attività."
+      ],
+      "Click your profile icon in the bottom-left corner of the page": [
+        "Premi sull'icona del tuo profilo in basso a sinistra della pagina"
+      ],
       "Code": [
         "Codice"
       ],
@@ -5195,6 +5294,9 @@
       "Custom ${ LUMO_SHORT_APP_NAME }s are now Skills": [
         "Le ${ LUMO_SHORT_APP_NAME } personalizzate sono ora delle Skills"
       ],
+      "Data collected today can be breached, subpoenaed, or repurposed years from now. Once it’s out, it’s out.": [
+        "I dati raccolti adesso possono essere violati, portati in tribunale o riutilizzati per altri scopi anche tra anni. Una volta diffusi, non si torna indietro."
+      ],
       "data points": [
         "punti dati"
       ],
@@ -5227,6 +5329,12 @@
       ],
       "Encoded content": [
         "Contenuto codificato"
+      ],
+      "Every conversation leaves behind small clues. On their own, they don't say much. Together, they can reveal a surprisingly detailed picture of your life. This report shows what other AI providers can infer from your chats. But unlike them, ${ LUMO_SHORT_APP_NAME } doesn't see your data.": [
+        "Ogni conversazione lascia dietro dei piccoli indizi. Da soli non dicono molto; tuttavia, se messi insieme, possono descrivere la tua vita privata molto dettagliatamente. Questo report mostra ció che gli altri provider di IA possono dedurre dalle tue chat. Tuttavia ${ LUMO_SHORT_APP_NAME }, a differenza di quelli, non vede i tuoi dati."
+      ],
+      "Every conversation with the big AI providers leaves a digital paper trail. Your job. Your health. Your relationships. Even where you live.": [
+        "Ogni conversazione con le IA dei più grandi provider lasciano una scia d'informazioni digitali. Informazioni come Il tuo lavoro, la tua salute, i tuoi rapporti con altre persone, persino dove vivi."
       ],
       "Example prompts shown when a conversation begins.": [
         "Suggerimenti di esempio mostrati all'inizio di una conversazione."
@@ -5267,6 +5375,9 @@
       "Full history of this conversation, including images and attachments, will be sent to ${ BRAND_NAME } for analysis and improvement.": [
         "La cronologia completa di questa conversazione, comprese le immagini e gli allegati, verrà inviata a ${ BRAND_NAME } per essere analizzata e migliorare il servizio."
       ],
+      "Generating a reply": [
+        "Generazione di una risposta"
+      ],
       "Get faster, more accurate answers from the web, with citations so you can check the source.": [
         "Ottieni risposte più rapide e precise dal web, con citazioni per poter verificare la fonte."
       ],
@@ -5292,6 +5403,13 @@
       "Invisible characters can hide instructions that you can't see but the model can read.": [
         "I caratteri invisibili possono nascondere istruzioni che tu non riesci a vedere, ma che il modello è in grado di leggere."
       ],
+      "Large content (${ charCountLabel } characters) converted to attachment": [
+        "Il contenuto di grandi dimensioni (di ${ charCountLabel } linee) è convertito in un allegato"
+      ],
+      "Large content (${ lineCount } line) converted to attachment": [
+        "Contenuto di grandi dimensioni (${ lineCount } linea) convertito in allegato",
+        "Contenuto di grandi dimensioni (${ lineCount } linee) convertito in allegato"
+      ],
       "Learn more about how project knowledge works": [
         "Scopri di più su come funziona la conoscenza del progetto"
       ],
@@ -5303,6 +5421,9 @@
       ],
       "Links to ${ domains }": [
         "Link a ${ domains }"
+      ],
+      "Loading connectors": [
+        "Caricamento dei connettori"
       ],
       "Loading skills": [
         "Caricamento delle competenze"
@@ -5318,6 +5439,35 @@
       ],
       "Looks like a password or key": [
         "Sembra una password o una chiave"
+      ],
+      "Moving ${ current } of ${ total } chat to ${ projectName }…": [
+        "Spartizione di ${ current } su ${ total } chat in ${ projectName }…",
+        "Spartizione di ${ current } su ${ total } chat in ${ projectName }…"
+      ],
+      "Moving chat to ${ projectName }: downloading its messages and files. This can take a while on a slow connection.": [
+        "Spostamento della chat su ${ projectName }: scaricamento dei messaggi e dei file. L'operazione potrebbe richiedere un po' di tempo se la connessione è lenta."
+      ],
+      "Moving chat to ${ projectName }: finishing up…": [
+        "Spostamento conversazione in ${ projectName }: quasi terminato..."
+      ],
+      "Moving chat to ${ projectName }: saving ${ total } item…": [
+        "Spostamento conversazione in ${ projectName }: salvataggio di ${ total } elemento...",
+        "Spostamento conversazione in ${ projectName }: salvataggio di ${ total } elementi..."
+      ],
+      "Moving chat to ${ projectName }: saving the copy…": [
+        "Spostamento della chat su ${ projectName }: salvataggio della copia in corso…"
+      ],
+      "Next run in ${ count } day": [
+        "Prossima esecuzione tra ${ count } giorno",
+        "Prossima esecuzione tra ${ count } giorni"
+      ],
+      "Next run in ${ count } hour": [
+        "Prossima esecuzione tra ${ count } ora",
+        "Prossima sessione tra ${ count } ore"
+      ],
+      "Next run in ${ count } minute": [
+        "Prossima esecuzione tra ${ count } minuto",
+        "Prossima esecuzione tra ${ count } minuti"
       ],
       "No connected connectors": [
         "Nessun connettore collegato"
@@ -5352,6 +5502,9 @@
       ],
       "No projects yet": [
         "Non ci sono ancora progetti"
+      ],
+      "No recipient specified": [
+        "Non è stato specificato alcun destinatario"
       ],
       "No runs yet. Results from each run will open here.": [
         "Non ci sono ancora prove. I risultati di ogni prova verranno pubblicati qui."
@@ -5524,6 +5677,9 @@
       "Started just now": [
         "Ho appena iniziato"
       ],
+      "Status: ${ statusAccessibleLabel }": [
+        "Stato: ${ statusAccessibleLabel }"
+      ],
       "Structured data, aiming for compatibility with the ChatGPT export format": [
         "Dati strutturati, pensati per garantire la compatibilità con il formato di esportazione di ChatGPT"
       ],
@@ -5536,6 +5692,9 @@
       "Text that tells the model to ignore its rules or keep things from you.": [
         "Testo che indica al modello di ignorare le proprie regole o di non rivelarti determinate informazioni."
       ],
+      "The more an attacker knows about you, the more believable the phishing message. Personalized scams are far harder to spot.": [
+        "Più un utente malintenzionato sa su di te, più il messaggio di phishing è credibile. Le truffe personalizzate sono molto più difficili da individuare."
+      ],
       "The plugin sets up a connector that doesn't use HTTPS.": [
         "Il plugin configura un connettore che non utilizza HTTPS."
       ],
@@ -5547,6 +5706,9 @@
       ],
       "This conversation is nearly full. ${ LUMO_SHORT_APP_NAME } may summarize earlier messages to keep replying — nothing is removed from your chat history.": [
         "Questa conversazione è quasi piena. ${ LUMO_SHORT_APP_NAME } potrebbe riassumere i messaggi precedenti per continuare a rispondere: nulla verrà rimosso dalla cronologia delle chat."
+      ],
+      "This is why it matters: once inferred, these details can power targeting, profiling, and decisions about you — often without transparency or consent.": [
+        "Ecco perché è importante: una volta dedotti, questi dettagli possono alimentare la profilazione, la creazione di profili e le decisioni che ti riguardano, spesso senza trasparenza né consenso."
       ],
       "This message is empty. Sorry about that.": [
         "Questo messaggio è vuoto. Spiacenti."
@@ -5602,6 +5764,9 @@
       "Upgrade to ${ PLAN_NAMES[PLANS.LUMO] } to create unlimited custom ${ LUMO_SHORT_APP_NAME }s, unlock advanced AI models, and more.": [
         "Passa al piano ${ PLAN_NAMES[PLANS.LUMO] } per creare un numero illimitato di ${ LUMO_SHORT_APP_NAME } personalizzate, sbloccare modelli di IA avanzati e molto altro ancora."
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.LUMO] } to create unlimited projects, unlock advanced AI models, and more.": [
+        "Effettua l'upgrade a ${ PLAN_NAMES[PLANS.LUMO] } per creare progetti illimitati, sbloccare modelli avanzati di IA e molto altro."
+      ],
       "Upgrade to ${ PLAN_NAMES[PLANS.LUMO] } to create up to 3 scheduled tasks, unlock advanced AI models, and more.": [
         "Passa al piano ${ PLAN_NAMES[PLANS.LUMO] } per creare fino a 3 attività pianificate, sbloccare modelli di IA avanzati e molto altro ancora."
       ],
@@ -5650,6 +5815,9 @@
       "You choose exactly what each connector can access": [
         "Sei tu a decidere esattamente a cosa può accedere ciascun connettore"
       ],
+      "You don't have any other projects yet.": [
+        "Non hai ancora altri progetti."
+      ],
       "You edited ${ meta.artifactTitle }": [
         "Hai modificato ${ meta.artifactTitle }"
       ],
@@ -5662,6 +5830,9 @@
       "You're viewing version ${ versionNumber } of ${ versionCount }, from ${ time }.": [
         "Stai visualizzando la versione ${ versionNumber } di ${ versionCount }, datata ${ time }."
       ],
+      "Your default email app will open a draft with these details. Review them before continuing.": [
+        "L'app di posta elettronica predefinita aprirà una bozza contenente questi dettagli. Controllali prima di continuare."
+      ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may summarize earlier messages to make room — your chat history will stay in this conversation.": [
         "I tuoi file sono di grandi dimensioni. ${ LUMO_SHORT_APP_NAME } potrebbe raggruppare i messaggi precedenti per liberare spazio: la cronologia della chat rimarrà comunque in questa conversazione."
       ],
@@ -5670,6 +5841,9 @@
       ],
       "Your prompt and this response will be sent to ${ BRAND_NAME } for analysis and improvement. Images and other attachments are not included.": [
         "La tua richiesta e questa risposta saranno inviate a ${ BRAND_NAME } per essere analizzate e migliorate. Le immagini e gli altri allegati non sono inclusi."
+      ],
+      "Your report is being generated privately.": [
+        "Il tuo report viene generato privatamente"
       ]
     },
     "collider_2025:Inspiration suggestion prompt": {
@@ -5799,6 +5973,9 @@
       "Basic content check": [
         "Verifica dei contenuti di base"
       ],
+      "C/C++ File": [
+        "File C/C++"
+      ],
       "Canvas": [
         "Canvas"
       ],
@@ -5841,8 +6018,17 @@
       "Crunching the cat-able numbers…": [
         "Analizziamo i dati relativi ai gatti…"
       ],
+      "CSS File": [
+        "File CSS"
+      ],
       "Daily": [
         "Giornaliero"
+      ],
+      "Daily at ${ timeLabel }": [
+        "Quotidianamente in ${ timeLabel }"
+      ],
+      "Dart File": [
+        "File Dart"
       ],
       "Data brokers": [
         "Data broker"
@@ -5898,14 +6084,23 @@
       "ESE": [
         "ESE"
       ],
+      "Excel Document": [
+        "Documento Excel"
+      ],
       "Failed": [
         "Non riuscito"
       ],
       "Failed to load conversations": [
         "Impossibile caricare le conversazioni"
       ],
+      "Favorite": [
+        "Preferiti"
+      ],
       "Feels Like": [
         "Temperatua Percipita"
+      ],
+      "File": [
+        "File"
       ],
       "File path": [
         "Percorso file"
@@ -5918,6 +6113,9 @@
       ],
       "Filter by type": [
         "Filtra per tipologia"
+      ],
+      "Filter chats": [
+        "Filtrare le chat"
       ],
       "Fine": [
         "Sottile"
@@ -5940,11 +6138,17 @@
       "Generated image from ${ formattedDate }": [
         "Immagine generata a partire dal ${ formattedDate }"
       ],
+      "Generating": [
+        "Generazione in corso"
+      ],
       "Generating chart…": [
         "Generazione del grafico…"
       ],
       "Go to ${ LUMO_SHORT_APP_NAME } homepage": [
         "Vai alla pagina iniziale di ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Groovy File": [
+        "File Groovy"
       ],
       "Hard to read": [
         "Difficile da leggere"
@@ -5960,6 +6164,9 @@
       ],
       "Image preview": [
         "Anteprima dell'immagine"
+      ],
+      "Include ${ tool.name } in this task": [
+        "Includi ${ tool.name } in questa attività"
       ],
       "Include full conversation": [
         "Includi la conversazione completa"
@@ -5978,6 +6185,9 @@
       ],
       "It doesn't expire": [
         "Non scade"
+      ],
+      "JPEG Image": [
+        "Immagine JPEG"
       ],
       "JSON": [
         "JSON"
@@ -6012,8 +6222,14 @@
       "Low": [
         "Basso"
       ],
+      "Lua File": [
+        "File Lua"
+      ],
       "Markdown": [
         "Riduzione di prezzo"
+      ],
+      "MATLAB/Mathematica File": [
+        "File MATLAB/Mathematica"
       ],
       "Medium": [
         "Medio"
@@ -6029,6 +6245,9 @@
       ],
       "My Data Value": [
         "Il valore dei miei dati"
+      ],
+      "My privacy type": [
+        "Il mio tipo di privacy"
       ],
       "My Privacy Type": [
         "Il mio tipo di privacy"
@@ -6060,6 +6279,12 @@
       "NW": [
         "NW"
       ],
+      "OCaml File": [
+        "File OCaml"
+      ],
+      "ODT Document": [
+        "Documento ODT"
+      ],
       "Older": [
         "Più vecchio"
       ],
@@ -6068,6 +6293,21 @@
       ],
       "Past chats": [
         "Chat precedenti"
+      ],
+      "Pencil sketch": [
+        "Schizzo a matita"
+      ],
+      "Permission": [
+        "Autorizzazione"
+      ],
+      "Permissions": [
+        "Autorizzazioni"
+      ],
+      "PHP File": [
+        "File PHP"
+      ],
+      "Platform": [
+        "Piattaforma"
       ],
       "Plotting purr-fect data…": [
         "Elaborazione di dati “fusa-tti”…"
@@ -6096,8 +6336,23 @@
       "Projects": [
         "Progetti"
       ],
+      "Read and write": [
+        "Leggi e scrivi"
+      ],
+      "Read only": [
+        "Sola lettura"
+      ],
+      "RTF Document": [
+        "Documento RTF"
+      ],
       "S": [
         "S"
+      ],
+      "Save report on this device to view it later": [
+        "Salva il rapporto su questo dispositivo per leggerlo dopo"
+      ],
+      "SBT File": [
+        "File SBT"
       ],
       "Scams": [
         "Truffe"
@@ -6153,6 +6408,9 @@
       "Skill name": [
         "Nome competenza"
       ],
+      "SQL File": [
+        "File SQL"
+      ],
       "SSE": [
         "SSE"
       ],
@@ -6171,6 +6429,9 @@
       "Time": [
         "Ora"
       ],
+      "Tips": [
+        "Suggerimenti"
+      ],
       "Today": [
         "Oggi"
       ],
@@ -6183,11 +6444,17 @@
       "Unavailable skill": [
         "Abilità non disponibile"
       ],
+      "Unknown file": [
+        "File sconosciuto"
+      ],
       "Untitled project": [
         "Progetto senza titolo"
       ],
       "Untitled task": [
         "Attività senza nome"
+      ],
+      "Upload": [
+        "Carica"
       ],
       "Uploaded": [
         "Caricato"
@@ -6198,6 +6465,9 @@
       "Value": [
         "Valore"
       ],
+      "Vim Script": [
+        "Script di Vim"
+      ],
       "Vol: ": [
         "Vol: "
       ],
@@ -6206,6 +6476,9 @@
       ],
       "Weekdays": [
         "Giorni della settimana"
+      ],
+      "Weekdays at ${ timeLabel }": [
+        "Giorni della settimana in ${ timeLabel }"
       ],
       "Weekly": [
         "Settimanale"
@@ -6273,7 +6546,7 @@
       "Day ${ day }": [
         "Giorno ${ day }"
       ],
-      "Favorited": [
+      "Favorites": [
         "Preferiti"
       ],
       "From projects": [
@@ -6284,6 +6557,15 @@
       ],
       "Monthly": [
         "Mensilmente"
+      ],
+      "Name (A–Z)": [
+        "Nome (da A a Z)"
+      ],
+      "Newest first": [
+        "Più recenti in alto"
+      ],
+      "Oldest first": [
+        "Prima i più vecchi"
       ],
       "Once": [
         "Una volta"
@@ -6328,6 +6610,9 @@
       ],
       "Fluffy McFluff Face": [
         "Fluffy McFluff Face"
+      ],
+      "Generate weekly status reports from recent work. Use when asked for updates or progress summaries.": [
+        "Genera rapporti di stato settimanali utilizzando il lavoro recente. Utilizzali quando si chiedono degli aggiornamenti o dei riassunti sulla progressione"
       ],
       "Help with login, password and recovery issues.": [
         "Aiuto per problemi di login, password e recupero."
@@ -6611,6 +6896,12 @@
       "Keep me up to date on [topic or subject]. Find the latest news and developments from the last 24 hours, summarize the meaningful updates, and explain why they matter. Include links to sources and highlight anything I may want to follow up on.": [
         "Tienimi aggiornato su [argomento o tema]. Trova le ultime notizie e gli sviluppi delle ultime 24 ore, riassumi gli aggiornamenti più rilevanti e spiega perché sono importanti. Includi i link alle fonti ed evidenzia tutto ciò che potrei voler approfondire."
       ],
+      "Reimagine this image as a detailed pencil sketch with fine line work and shading": [
+        "Modifica questa immagine come se fosse un disegno dettagliato a matita con linee e ombreggiature molto accurati"
+      ],
+      "Reimagine this image as a vintage photograph with faded colors and film grain": [
+        "Modifica questa immagine come se fosse una foto vintage con i colori sbiaditi e l'effetto di grana di pellicola"
+      ],
       "Review my ${ MAIL_APP_NAME } inbox and identify emails that need a reply. Prioritize the messages that need my attention today and draft concise responses in my voice, using the conversation for context. Show the drafts for my review without sending anything.": [
         "Controlla la mia casella di posta in arrivo di ${ MAIL_APP_NAME } e individua le e-mail che richiedono una risposta. Assegna la priorità ai messaggi che richiedono la mia attenzione oggi e redigi risposte concise nel mio stile, utilizzando la conversazione come contesto. Mostrami le bozze affinché io possa esaminarle senza inviare nulla."
       ],
@@ -6676,9 +6967,21 @@
         "${ urlCount } URL",
         "${ urlCount } URL"
       ],
+      "Analysed a file": [
+        "Analisi completata"
+      ],
+      "Analysing a file": [
+        "Analisi del file"
+      ],
+      "Analysing a file...": [
+        "Analisi del file..."
+      ],
       "and ${ more } more": [
         "e ${ more } ancora",
         "e ${ more } ancora"
+      ],
+      "Chasing down every last detail": [
+        "Ricerca dei dettagli in corso..."
       ],
       "Checked ${ BRAND_NAME } knowledge": [
         "Consultata la conoscenza di ${ BRAND_NAME }"
@@ -6800,6 +7103,9 @@
       "Finished your creation": [
         "Hai completato la tua creazione"
       ],
+      "Gathering everything into one cosy pile": [
+        "Consolidamento delle informazioni"
+      ],
       "Generated image": [
         "Immagine generata"
       ],
@@ -6815,11 +7121,17 @@
       "Hide tool result": [
         "Nascondi il risultato dello strumento"
       ],
+      "Knocking a few loose facts off the table": [
+        "Rimozione dei dati non pertinenti"
+      ],
       "Last updated: ": [
         "Ultimo aggiornamento: "
       ],
       "Last updated: ${ updatedTime }": [
         "Ultimo aggiornamento: ${ updatedTime }"
+      ],
+      "Licking the notes into shape": [
+        "Riorganizza gli appunti"
       ],
       "Looked at your image": [
         "Ha guardato la tua immagine"
@@ -6869,6 +7181,9 @@
       "No matches": [
         "Nessun risultato"
       ],
+      "Not a single page escapes the whiskers": [
+        "Neanche una pagina sfugge ai baffi"
+      ],
       "One moment": [
         "Un momento"
       ],
@@ -6880,6 +7195,12 @@
       ],
       "page ${ page } of ${ pages }": [
         "pagina ${ page } di ${ pages }"
+      ],
+      "Part ${ shown } of ${ total }": [
+        "Parte ${ shown } di ${ total }"
+      ],
+      "Pawing through the pages": [
+        "Frugando tra le pagine con le zampette"
       ],
       "Performance comparison": [
         "Confronto delle prestazioni"
@@ -6895,6 +7216,9 @@
       ],
       "Profit Margin": [
         "Margine di profitto"
+      ],
+      "Purr-using the fine print": [
+        "Un'occhiata felina alle clausole in piccolo"
       ],
       "Ran ${ shortName }": [
         "Ha eseguito ${ shortName }"
@@ -6947,6 +7271,9 @@
       "Reading file...": [
         "Leggendo i file..."
       ],
+      "Reading this with feline focus": [
+        "Analizza con precisione felina"
+      ],
       "Reasoning": [
         "Ragionamento"
       ],
@@ -6998,6 +7325,12 @@
       "Searching your files and chats...": [
         "Ricerca in corso tra i tuoi file e le tue chat..."
       ],
+      "Sharpening claws on the footnotes": [
+        "Affilando gli artigli sulle note a piè di pagina"
+      ],
+      "Sniffing out the important bits": [
+        "Fiutando le informazioni più importanti"
+      ],
       "Thinking": [
         "Pensando"
       ],
@@ -7006,6 +7339,9 @@
       ],
       "This chat": [
         "Questa chat"
+      ],
+      "This is a big one, so it can take a minute or two. Good thing cats are patient.": [
+        "L'analisi richiede un paio di minuti per via delle dimensioni. Per fortuna i gatti sono pazienti."
       ],
       "Thought this through": [
         "Ragionamento completato"
@@ -7124,8 +7460,15 @@
       ]
     },
     "collider_2025:Success": {
+      "${ moved } chat moved to ${ projectName }": [
+        "La chat ${ moved } è stata spostata in ${ projectName }",
+        "Le chat ${ moved } sono state spostate in ${ projectName }"
+      ],
       "All files removed from project": [
         "Tutti i file rimossi dal progetto"
+      ],
+      "Chat moved to ${ projectName }": [
+        "La chat è stata spostata su ${ projectName }"
       ],
       "Conversation exported": [
         "Conversazione esportata"
@@ -7214,8 +7557,14 @@
       "${ LUMO_SHORT_APP_NAME } can't start": [
         "Impossibile avviare ${ LUMO_SHORT_APP_NAME }"
       ],
+      "${ LUMO_SHORT_APP_NAME } needs these tools to run \"${ taskName }\"": [
+        "${ LUMO_SHORT_APP_NAME } ha bisogno di questi strumenti per eseguire \"${ taskName }\""
+      ],
       "About search": [
         "Informazioni sulla ricerca"
+      ],
+      "All chats": [
+        "Tutte le chat"
       ],
       "An AI assistant should empower you, not exploit you for your data.": [
         "Un assistente IA dovrebbe darti più controllo, non sfruttarti per i tuoi dati."
@@ -7238,6 +7587,9 @@
       "Chats": [
         "Chat"
       ],
+      "Claude import": [
+        "Importa in Claude"
+      ],
       "Connectors & tools": [
         "Connettori e utensili"
       ],
@@ -7246,6 +7598,9 @@
       ],
       "Create a custom ${ LUMO_SHORT_APP_NAME }": [
         "Crea un ${ LUMO_SHORT_APP_NAME } personalizzato"
+      ],
+      "Create a skill": [
+        "Crea una skill"
       ],
       "Create folder": [
         "Crea una cartella"
@@ -7267,6 +7622,9 @@
       ],
       "Delete skill?": [
         "Eliminare la competenza?"
+      ],
+      "Delete your data regularly": [
+        "Cancella i tuoi dati periodicamente"
       ],
       "Description": [
         "Descrizione"
@@ -7313,9 +7671,6 @@
       "File preview": [
         "Anteprima del file"
       ],
-      "Filters": [
-        "Filtri"
-      ],
       "Focus your inbox": [
         "Metti in evidenza la tua casella di posta"
       ],
@@ -7349,6 +7704,9 @@
       "Introducing ${ LUMO_SHORT_APP_NAME } 2.0": [
         "Ti presentiamo ${ LUMO_SHORT_APP_NAME } 2.0"
       ],
+      "Invalid email link": [
+        "Link e-mail non valido"
+      ],
       "Library": [
         "Libreria"
       ],
@@ -7357,6 +7715,9 @@
       ],
       "Linked Drive Folder": [
         "Collega cartella Drive"
+      ],
+      "Looks like you've kept a low profile": [
+        "Sembra che tu abbia tenuto un basso profilo"
       ],
       "Memory": [
         "Memoria"
@@ -7372,6 +7733,9 @@
       ],
       "Most revealing": [
         "Più rivelatori"
+      ],
+      "Move to project": [
+        "Sposta a progetto"
       ],
       "My AI paper trail": [
         "La mia traccia digitale IA"
@@ -7406,6 +7770,9 @@
       "Older": [
         "Meno recente"
       ],
+      "Open email app?": [
+        "Aprire l'app di posta elettronica?"
+      ],
       "Oversharing blind spots": [
         "Punti ciechi della condivisione eccessiva"
       ],
@@ -7429,6 +7796,9 @@
       ],
       "Remove all files?": [
         "Rimuovi tutti i file?"
+      ],
+      "Review privacy settings": [
+        "Rivedi le impostazioni sulla privacy."
       ],
       "Review your week": [
         "Rifletti sulla tua settimana"
@@ -7459,6 +7829,9 @@
       ],
       "Scheduled · ${ name }": [
         "In programma · ${ name }"
+      ],
+      "See what Big Tech AI already knows about you": [
+        "Scopri cosa le AI delle Big Tech sanno già di te"
       ],
       "See your AI paper trail": [
         "Vedi la tua traccia dell'IA"
@@ -7535,11 +7908,17 @@
       "Work": [
         "Lavoro"
       ],
+      "You can’t un-share it": [
+        "Non puoi annullare la condivisione"
+      ],
       "You might be shown a higher price": [
         "Potrebbe esserti mostrato un prezzo più alto"
       ],
       "Your image gallery is empty": [
         "La tua galleria immagini è vuota"
+      ],
+      "Your recent reports": [
+        "I tuoi rapporti recenti"
       ],
       "Your shareable card": [
         "La tua scheda condivisibile"
@@ -7568,8 +7947,19 @@
       ]
     },
     "collider_2025:Warning": {
+      "${ failed } couldn't be moved: ${ reasonText }": [
+        "${ failed } non è stato possibile spostarlo: ${ reasonText }",
+        "${ failed } non è stato possibile spostarlo: ${ reasonText }"
+      ],
+      "${ moved } of ${ total } chat moved to ${ projectName }.": [
+        "${ moved } su ${ total } chat è stato spostato in ${ projectName }.",
+        "${ moved } su ${ total } chat sono state spostate in ${ projectName }"
+      ],
       "Cannot Link Drive Folder": [
         "Impossibile collegare la cartella Drive"
+      ],
+      "Chat moved to ${ projectName }, but the original couldn't be fully removed. You can delete it manually.": [
+        "La chat è stata spostata su ${ projectName }, ma non è stato possibile rimuovere completamente quella originale. Puoi eliminarla manualmente."
       ],
       "Preview unavailable": [
         "Anteprima non disponibile"
@@ -8665,6 +9055,9 @@
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } è il tuo nome utente. Per creare ${ emailAddress }, vai su Impostazioni > Identità e indirizzi > Dominio breve (pm.me)"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "É richiesto inserire un messaggio quando si segnala una violazione del copyright o di dati rubati"
+      ],
       "Amount above the maximum.": [
         "Importo al di sopra del massimo."
       ],
@@ -8673,6 +9066,21 @@
       ],
       "An error occurred": [
         "Si è verificato un errore"
+      ],
+      "Bookmark password is not available": [
+        "La password dell'elemento preferito non è disponibile"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Impossibile aggiungere una foto all'album senza un nome valido"
+      ],
+      "Cannot download a folder": [
+        "Non è possibile scaricare una cartella"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Non è possibile spostare un elemento senza un nome valido, rinomina l'elemento prima di continuare"
+      ],
+      "Cannot share root folder": [
+        "Impossibile condividere cartella principale"
       ],
       "Cannot verify the author of this file": [
         "Impossibile verificare l'autore di questo file"
@@ -8686,8 +9094,14 @@
       "Company name or personal name is required": [
         "Il nome dell'azienda o il nome personale è obbligatorio"
       ],
+      "Copy operation aborted": [
+        "Copia interrotta"
+      ],
       "Copying item to a non-folder is not allowed": [
         "Non è possibile copiare l'elemento in un elemento che non è una cartella"
+      ],
+      "Could not find an available name": [
+        "Impossibile trovare un nome disponibile"
       ],
       "Could not grant access to the organization key": [
         "Impossibile concedere l'accesso alla chiave dell'organizzazione"
@@ -8695,14 +9109,29 @@
       "Could not load sharing details": [
         "Impossibile caricare i dettagli della condivisione"
       ],
+      "Could not load the image preview: ${ message }": [
+        "Impossibile caricare l'immagine di anteprima: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Impossibile leggere parte di questo file: ${ message }"
+      ],
       "Could not unlock the parent folder": [
         "Impossibile sbloccare la cartella principale."
       ],
       "Could not unlock this item": [
         "Impossibile sbloccare questo elemento."
       ],
+      "Creating documents in non-folders is not allowed": [
+        "Non è permesso creare documenti al di fuori delle cartelle"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Creare file al di fuori delle cartelle non è consentito"
+      ],
       "Creating folders in non-folders is not allowed": [
         "Non è possibile creare cartelle all'interno di elementi che non sono cartelle"
+      ],
+      "Device not found": [
+        "Dispositivo non trovato"
       ],
       "Domain not available, try again later": [
         "Dominio non disponibile, riprovare più tardi"
@@ -8722,14 +9151,44 @@
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
       ],
+      "Expiration date cannot be in the past": [
+        "La data di scadenza non può essere nel passato"
+      ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Impossibile decifrare chiave preferita: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Impossibile decriptare il nome dell'elemento preferito: ${ message }"
+      ],
       "Failed to decrypt bookmark password: ${ message }": [
         "Impossibile decrittografare la password del segnalibro: ${ message }"
       ],
       "Failed to decrypt content key: ${ message }": [
         "Impossibile decrittografare la chiave del contenuto: ${ message }"
       ],
+      "Failed to decrypt item name: ${ message }": [
+        "Impossibile decifrare nome elemento: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Impossibile decriptare la chiave del nodo: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Impossibile decriptare i metadati di revisione"
+      ],
+      "Failed to download chart. Please try again.": [
+        "Scaricamento della tabella non riuscito. Riprovare."
+      ],
+      "Failed to download image. Please try again.": [
+        "Impossibile scaricare l'immagine. Riprova."
+      ],
+      "Failed to get inviter keys": [
+        "Impossibile ottenere le chiavi dell'invitante"
+      ],
       "Failed to load subscription data. Please try again later.": [
         "Impossibile caricare i dati dell'abbonamento. Riprova più tardi."
+      ],
+      "Failed to verify invitation": [
+        "Impossibile verificare l'invito"
       ],
       "File download failed due to empty response": [
         "Download del file non riuscito a causa di una risposta vuota."
@@ -8770,6 +9229,12 @@
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
+      "Invitation not found": [
+        "Invito non trovato"
+      ],
+      "Item not found": [
+        "Elemento non trovato"
+      ],
       "Legacy public link cannot be updated. Please re-create a new public link.": [
         "Il vecchio link pubblico non può essere aggiornato. Crea un nuovo link pubblico."
       ],
@@ -8779,15 +9244,33 @@
       "Missing signature": [
         "Firma mancante"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Firma per ${ signatureType } mancante"
+      ],
+      "Move operation aborted": [
+        "Spostamento annullato"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Impossibile spostare l'elemento: la destinazione non è una cartella."
+      ],
+      "Moving root item is not allowed": [
+        "Non è consentito spostare un elemento principale"
+      ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri.",
         "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri."
+      ],
+      "Name must not be empty": [
+        "Il campo \"nome\" non può essere vuoto"
       ],
       "No file data was received. Please try again.": [
         "Non sono stati ricevuti dati del file. Riprova."
       ],
       "Not a valid number": [
         "Numero non valido"
+      ],
+      "Only admins can convert external invitations": [
+        "Solo gli admin possono convertire inviti esterni"
       ],
       "Operation aborted": [
         "Operazione interrotta"
@@ -8861,6 +9344,12 @@
       "Process aborted": [
         "Processo interrotto"
       ],
+      "Renaming root item is not allowed": [
+        "Non è consentito rinominare un elemento chiave"
+      ],
+      "Request aborted": [
+        "Richiesta annullata"
+      ],
       "Request timed out": [
         "Timeout della richiesta"
       ],
@@ -8872,6 +9361,24 @@
       ],
       "Signature verification failed": [
         "Verifica della firma non riuscita"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Verifica della firma non riuscita: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Verifica della firma per ${ signatureType } fallita"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Verifica della firma per  ${ signatureType } non riuscita: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "L'upload di alcuni file è fallito. Prova di nuovo."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "L'upload di alcune parti del file non è stato completato. Riprova."
+      ],
+      "Some items could not be loaded": [
+        "Alcuni elementi non sono stati caricati"
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
@@ -8921,11 +9428,17 @@
       "This file version could not be uploaded": [
         "Questa versione del file non può essere caricata."
       ],
+      "This item has no image preview": [
+        "Questo elemento non ha un'immagine di anteprima"
+      ],
       "This item is no longer shared": [
         "Questo elemento non è più condiviso"
       ],
       "This item is not shared": [
         "Questo elemento non è condiviso"
+      ],
+      "Too many server errors, please try again later": [
+        "Troppi errori del server, riprova più tardi"
       ],
       "Too many server requests, please try again later": [
         "Troppe richieste. Riprova più tardi"
@@ -8966,11 +9479,20 @@
       "You can create public links for your own files only": [
         "Puoi creare link pubblici solo per i tuoi file."
       ],
+      "You can only leave items that are shared with you": [
+        "Puoi lasciare soltanto gli oggetti che sono stati condivisi con te"
+      ],
+      "You can only upload a new version to a file": [
+        "È possibile caricare solo nuove versioni ad un file"
+      ],
       "You can update a public link for your own files only": [
         "Puoi aggiornare un link pubblico solo per i tuoi file."
       ],
       "You do not have access to this item": [
         "Non hai accesso a questo elemento"
+      ],
+      "You do not have access to this shared item": [
+        "Accesso non consentito a questo elemento condiviso"
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nome indecifrabile"
@@ -11514,6 +12036,9 @@
       "Go to project": [
         "Vai al progetto"
       ],
+      "Move to project": [
+        "Sposta nel progetto"
+      ],
       "No parent folder": [
         "Nessuna cartella principale"
       ],
@@ -12133,8 +12658,17 @@
       "attributes": [
         "Attributi"
       ],
+      "content key": [
+        "Chiave del contenuto"
+      ],
+      "hash key": [
+        "chiave hash"
+      ],
       "key": [
         "chiave"
+      ],
+      "membership": [
+        "abbonamento"
       ],
       "name": [
         "nome"

@@ -1073,9 +1073,6 @@
       "Generate workflow": [
         "Générer le workflow"
       ],
-      "Hide safety information": [
-        "Masquer les informations de sécurité"
-      ],
       "I like this response": [
         "Cette réponse me convient."
       ],
@@ -1138,9 +1135,6 @@
       ],
       "Share your thoughts": [
         "Partagez votre avis"
-      ],
-      "Show safety information": [
-        "Afficher les informations de sécurité"
       ],
       "Start generating": [
         "Commencer la génération"
@@ -2171,6 +2165,9 @@
       ],
       "Reserved to keep chatting": [
         "Réservé pour continuer à discuter"
+      ],
+      "Safety information": [
+        "Informations de sécurité"
       ],
       "Save all your conversations in a chat history only you can see. Sign in or create an account.": [
         "Enregistrez toutes vos conversations dans un historique de chat que vous seul pouvez voir. Connectez-vous ou créez un compte."
@@ -3429,6 +3426,9 @@
       "Documents": [
         "Documents"
       ],
+      "Done": [
+        "Terminé"
+      ],
       "Download": [
         "Télécharger"
       ],
@@ -3474,9 +3474,6 @@
       "Export": [
         "Exporter"
       ],
-      "Export chat": [
-        "Exporter la discussion"
-      ],
       "Full screen": [
         "Plein écran"
       ],
@@ -3488,6 +3485,9 @@
       ],
       "Go to project": [
         "Aller au projet"
+      ],
+      "Go to project ${ label }": [
+        "Se rendre sur le projet ${ label }."
       ],
       "Hide knowledge panel": [
         "Masquer le panneau de connaissances"
@@ -3522,9 +3522,6 @@
       "Manage": [
         "Gérer"
       ],
-      "Manage chats": [
-        "Gérer les discussions"
-      ],
       "Manage Drive folder link": [
         "Gérer l'association du dossier Drive"
       ],
@@ -3549,6 +3546,15 @@
       "More options": [
         "Plus d'options"
       ],
+      "Move": [
+        "Déplacer"
+      ],
+      "New chat": [
+        "Débuter une nouvelle conversation"
+      ],
+      "New project": [
+        "Nouveau projet"
+      ],
       "Next message": [
         "Message suivant"
       ],
@@ -3563,6 +3569,9 @@
       ],
       "Open": [
         "Ouvrir"
+      ],
+      "Open email app": [
+        "Ouvrir l'application de messagerie"
       ],
       "Open Settings": [
         "Ouvrir les paramètres"
@@ -3627,9 +3636,6 @@
       "Remove file": [
         "Supprimer le fichier"
       ],
-      "Remove from favorites": [
-        "Retirer des favoris"
-      ],
       "Remove from this task": [
         "Retirer de cette tâche"
       ],
@@ -3651,11 +3657,17 @@
       "Reveal my profile": [
         "Révéler mon profil"
       ],
+      "Review prefilled message": [
+        "Relisez les messages préremplis automatiquement."
+      ],
       "Run now": [
         "Exécuter maintenant"
       ],
       "Save": [
         "Enregistrer"
+      ],
+      "Select": [
+        "Sélectionner"
       ],
       "Select all": [
         "Tout sélectionner"
@@ -3692,6 +3704,9 @@
       ],
       "Slides": [
         "Diapositives"
+      ],
+      "Sort chats: ${ currentLabel }": [
+        "Classer les conversations par : ${ currentLabel }"
       ],
       "Source (Markdown)": [
         "Source (Markdown)"
@@ -3746,6 +3761,9 @@
       ],
       "Use general setting": [
         "Utiliser les paramétrages généraux"
+      ],
+      "View": [
+        "Afficher"
       ],
       "View all": [
         "Tout afficher"
@@ -3917,6 +3935,30 @@
         "Importer depuis l'ordinateur"
       ]
     },
+    "collider_2025:Disclaimer": {
+      "Continuing shares these details with your email app, which may save or sync the draft before you send it. ${ LUMO_SHORT_APP_NAME } does not send the email. Only continue if you trust the recipients and are comfortable sharing this information.": [
+        "Si vous continuez, ces informations seront partagées avec votre application de messagerie, qui pourrait enregistrer ou synchroniser le brouillon avant que vous ne l'ayez envoyé. ${ LUMO_SHORT_APP_NAME } n'enverra pas votre e-mail. Continuez uniquement si les destinataires sont dignes de confiance et en accord avec le partage de ces informations."
+      ],
+      "Email links can contain unexpected recipients or sensitive information. Check all recipients, including CC and BCC, and any prefilled message.": [
+        "Les liens figurant dans cet e-mail peuvent contenir des destinataires inattendus ou des informations sensibles. Vérifiez tous les destinataires, incluant ceux inscrits en Cc et en Cci, ainsi que tout message automatiquement prérempli."
+      ]
+    },
+    "collider_2025:Email field label": {
+      "Subject": [
+        "Objet"
+      ]
+    },
+    "collider_2025:Email recipient label": {
+      "BCC (hidden recipients)": [
+        "Cci (destinataire masqué)"
+      ],
+      "CC": [
+        "Cc"
+      ],
+      "To": [
+        "Pour"
+      ]
+    },
     "collider_2025:Error": {
       "${ LUMO_SHORT_APP_NAME } needs local database storage (IndexedDB) to run, but it isn't available in this browser. This can happen when cookies or website data are blocked, in private browsing, or with Lockdown Mode enabled. Please allow website data for this site and reload.": [
         "${ LUMO_SHORT_APP_NAME } a besoin d'une base de données locale (indexedDB) pour fonctionner, mais celle-ci n'est pas disponible sur ce navigateur. Cela peut se produire lorsque les cookies ou les données du site sont bloqués, en navigation privée, ou lorsque que le mode verrouillage est activé. Veuillez autoriser les données du site web pour ce site et recharger."
@@ -3998,6 +4040,9 @@
       ],
       "Project not found": [
         "Projet non trouvé"
+      ],
+      "This email link contains invalid or unsupported details and cannot be opened safely.": [
+        "Le lien figurant dans cet e-mail contient des informations non valides ou non supportées et ne peut être ouvert en toute sécurité."
       ],
       "This scheduled task no longer exists. Reload the page and try again.": [
         "Cette tâche planifiée n'existe plus. Actualisez la page et réessayez."
@@ -4212,6 +4257,9 @@
       "Full history of this conversation, including images and attachments, will be sent to ${ BRAND_NAME } for analysis and improvement.": [
         "L'historique complet de cette conversation, incluant les images et les pièces jointes, sera envoyé à ${ BRAND_NAME } pour analyse et amélioration."
       ],
+      "Generating a reply": [
+        "Génération d'une réponse en cours"
+      ],
       "Get faster, more accurate answers from the web, with citations so you can check the source.": [
         "Obtenez des réponses plus rapides et plus précises sur le web, avec des citations vous permettant de vérifier la source."
       ],
@@ -4233,6 +4281,10 @@
       "Lockdown Mode is enabled on your device": [
         "Le mode verrouillage est activé sur votre appareil."
       ],
+      "Moving ${ current } of ${ total } chat to ${ projectName }…": [
+        "Déplacement en cours de ${ current } conversation sur ${ total } vers ${ projectName }…",
+        "Déplacement en cours de ${ current } conversations sur ${ total } vers ${ projectName }…"
+      ],
       "No content generated": [
         "Aucun contenu généré"
       ],
@@ -4241,6 +4293,9 @@
       ],
       "No projects yet": [
         "Aucun projet pour le moment"
+      ],
+      "No recipient specified": [
+        "Aucun destinataire n'est renseigné."
       ],
       "Notifications are off for ${ LUMO_SHORT_APP_NAME }. ": [
         "Les notifications sont désactivées pour ${ LUMO_SHORT_APP_NAME }. "
@@ -4358,6 +4413,9 @@
       ],
       "You're using private browsing": [
         "Vous êtes en navigation privée."
+      ],
+      "Your default email app will open a draft with these details. Review them before continuing.": [
+        "Votre application de messagerie par défaut ouvrira un brouillon comprenant ces informations. Relisez-les avant de continuer."
       ],
       "Your information is zero-access encrypted": [
         "Vos informations sont chiffrées par un chiffrement zéro accès."
@@ -4564,11 +4622,17 @@
       "Excel Document": [
         "Document Excel"
       ],
+      "Favorite": [
+        "Favoris"
+      ],
       "File": [
         "Fichier"
       ],
       "Files": [
         "Fichiers"
+      ],
+      "Filter chats": [
+        "Filtrer les conversations"
       ],
       "Fine": [
         "Bien"
@@ -4853,11 +4917,23 @@
       "Day ${ day }": [
         "Jour ${ day }"
       ],
+      "Favorites": [
+        "Favoris"
+      ],
       "Last updated": [
         "Dernière mise à jour"
       ],
       "Monthly": [
         "Chaque mois"
+      ],
+      "Name (A–Z)": [
+        "Nom (A–Z)"
+      ],
+      "Newest first": [
+        "Le plus récent en premier"
+      ],
+      "Oldest first": [
+        "Le plus ancien en premier"
       ],
       "Once": [
         "Une fois"
@@ -5092,6 +5168,15 @@
       "${ urlCount } URL": [
         "${ urlCount } URL",
         "${ urlCount } URL"
+      ],
+      "Analysed a file": [
+        "Analyse d'un fichier"
+      ],
+      "Analysing a file": [
+        "Analyse d'un fichier en cours"
+      ],
+      "Analysing a file...": [
+        "Analyse d'un fichier en cours..."
       ],
       "Checked ${ BRAND_NAME } knowledge": [
         "Les connaissances de ${ BRAND_NAME } ont été lues."
@@ -5351,6 +5436,10 @@
       ]
     },
     "collider_2025:Success": {
+      "${ moved } chat moved to ${ projectName }": [
+        "${ moved } conversation a été déplacée vers ${ projectName }.",
+        "${ moved } conversations ont été déplacées vers ${ projectName }."
+      ],
       "All files removed from project": [
         "Tous les fichiers ont été retirés du projet."
       ],
@@ -5410,6 +5499,9 @@
       ],
       "${ LUMO_SHORT_APP_NAME } needs these tools to run \"${ taskName }\"": [
         "${ LUMO_SHORT_APP_NAME } a besoin de ces outils pour exécuter « ${ taskName } »"
+      ],
+      "All chats": [
+        "Toutes les conversations"
       ],
       "An AI assistant should empower you, not exploit you for your data.": [
         "Un assistant IA devrait vous donner les moyens d'agir, et non vous exploiter pour vos données."
@@ -5516,6 +5608,9 @@
       "Introducing ${ LUMO_SHORT_APP_NAME } 2.0": [
         "Présentation de ${ LUMO_SHORT_APP_NAME } 2.0"
       ],
+      "Invalid email link": [
+        "Le lien figurant dans cet e-mail n'est pas valide."
+      ],
       "Link Drive Folder": [
         "Associer le dossier Drive"
       ],
@@ -5548,6 +5643,9 @@
       ],
       "Older": [
         "Plus ancien"
+      ],
+      "Open email app?": [
+        "Ouvrir l'application de messagerie ?"
       ],
       "Oversharing blind spots": [
         "Points aveugles liés au partage excessif"
@@ -5651,6 +5749,14 @@
       ]
     },
     "collider_2025:Warning": {
+      "${ failed } couldn't be moved: ${ reasonText }": [
+        "${ failed } n'a pas pu être déplacé : ${ reasonText }",
+        "${ failed } n'ont pas pu être déplacés : ${ reasonText }"
+      ],
+      "${ moved } of ${ total } chat moved to ${ projectName }.": [
+        "${ moved } conversation sur ${ total } a été déplacée vers ${ projectName }.",
+        "${ moved } conversations sur ${ total } ont été déplacées vers ${ projectName }."
+      ],
       "Cannot Link Drive Folder": [
         "Le dossier Drive n'a pas pu être associé."
       ],
@@ -7015,6 +7121,9 @@
       ],
       "The minimum donation amount is ${ price }": [
         "Le montant minimum du don est de ${ price }."
+      ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "La somme totale n'a pas pu être calculée. Changez le montant pour essayer de nouveau."
       ],
       "The uploaded file does not match the original. Please try again.": [
         "Le fichier importé ne correspond pas à l'original. Veuillez réessayer."
@@ -10732,7 +10841,7 @@
         "La fonction ${ feature } est maintenant active."
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
+        "Assistant d'aide à la rédaction ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account restricted": [
         "Compte restreint"
