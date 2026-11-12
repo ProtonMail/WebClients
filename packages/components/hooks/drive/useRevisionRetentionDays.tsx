@@ -13,12 +13,12 @@ import type {
     UserSettingsResponse,
 } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import type { useConfirmActionModal } from '../../components/confirmActionModal/ConfirmActionModal';
+import type { useDeleteVersionHistoryPrompt } from '../../containers/drive/settings/DeleteVersionHistoryPrompt';
 import { getRetentionLabel } from '../../containers/drive/settings/retentionLabels';
 
 export const useRevisionRetentionDays = (
     hasPaidDrive: boolean,
-    showConfirmActionModal: ReturnType<typeof useConfirmActionModal>['1']
+    showDeleteVersionHistoryPrompt: ReturnType<typeof useDeleteVersionHistoryPrompt>['1']
 ) => {
     const api = useApi();
     const [isLoading, withLoading] = useLoading(hasPaidDrive);
@@ -91,13 +91,10 @@ export const useRevisionRetentionDays = (
                           c('Info').jt`${DRIVE_APP_NAME} will no longer keep previous versions of your files.`,
                       ]
                     : c('Info').t`This will delete all previous versions of your files older than ${rententionLabel}.`;
-            showConfirmActionModal({
-                title: c('Title').t`Delete version history?`,
+            showDeleteVersionHistoryPrompt({
                 onSubmit: updateRevisionRetentionDay,
                 onCancel: () => setRevisionRetentionDay(originalRevisionRetentionDays),
-                size: 'medium',
                 message,
-                submitText: c('Action').t`Delete and confirm`,
             });
         } else {
             void updateRevisionRetentionDay();

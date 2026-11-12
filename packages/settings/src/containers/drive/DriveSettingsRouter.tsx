@@ -4,6 +4,7 @@ import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import { RetentionDaysSection } from '@proton/components/containers/drive/settings/RetentionDaysSection';
 import PrivateMainSettingsArea from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
+import { SettingsCardMaxWidth, SettingsLayoutVariant } from '@proton/components/containers/layout/interface';
 
 import type { getDriveAppRoutes } from './routes';
 
@@ -23,7 +24,11 @@ const DriveSettingsRouter = ({
     return (
         <Switch>
             <Route path={getSectionPath(path, revisions)}>
-                <PrivateMainSettingsArea config={revisions}>
+                <PrivateMainSettingsArea
+                    config={revisions}
+                    variant={SettingsLayoutVariant.Card}
+                    maxWidth={SettingsCardMaxWidth.Narrow}
+                >
                     <RetentionDaysSection />
                 </PrivateMainSettingsArea>
             </Route>

@@ -26,6 +26,23 @@
 		}
 	}
 
+	// solid buttons rendered as links keep their button colors
+	a[class*='button-solid'] {
+		&,
+		&:focus {
+			color: var(--button-default-text-color, inherit);
+			font-weight: inherit;
+		}
+
+		&:hover {
+			color: var(--button-hover-text-color, inherit);
+		}
+
+		&:active {
+			color: var(--button-active-text-color, inherit);
+		}
+	}
+
 	.button-underline-norm {
 		&,
 		&:hover,
