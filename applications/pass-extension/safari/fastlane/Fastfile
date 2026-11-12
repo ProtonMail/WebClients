@@ -85,8 +85,8 @@ lane :build_and_upload do
   )
 
   import_certificate(
-    certificate_path: "securefiles/Installer_cert.p12",
-    certificate_password: ENV["INSTALLER_CERT_PASSWORD"],
+    certificate_path: "securefiles/Mac_installer_distribution.p12",
+    certificate_password: ENV["MAC_INSTALLER_CERT_PASSWORD"],
     keychain_path: KEYCHAIN_PATH,
     keychain_password: keychain_password
   )
