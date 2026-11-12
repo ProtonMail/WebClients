@@ -12,19 +12,17 @@ import { trashAndNotify, restoreAndNotify, handleRestoreError } from './driveSdk
 import { traceErrorSDK } from './driveSdk/traceErrorSDK'
 import { useHomepageView } from './homepageViewContext'
 import { useBulkTrash } from './driveSdk/useBulkTrash'
-import { useBulkMove, type UseMoveItemsModal } from './driveSdk/useBulkMove'
+import { useBulkMove, type OpenMoveItemsModal } from './driveSdk/useBulkMove'
 import { TelemetryEvent } from './utils/telemetry'
 
-type UseSharingModal = () => {
-  sharingModal: ReactNode
-  showSharingModal: (props: { drive: ProtonDriveClient; nodeUid: string }) => void
-}
+/** Opens the share modal the host renders. */
+type OpenShareModal = (props: { drive: ProtonDriveClient; nodeUid: string }) => void
 
 export type DocumentActionsProviderProps = {
   children: ReactNode
   drive: ProtonDriveClient
-  useSharingModal: UseSharingModal
-  useMoveItemsModal: UseMoveItemsModal
+  openShareModal: OpenShareModal
+  openMoveItemsModal: OpenMoveItemsModal
 }
 
 const TRASHED_LISTENERS = new Set<(id: string) => void>()
@@ -33,20 +31,18 @@ const RESTORED_LISTENERS = new Set<(id: string) => void>()
 export function DocumentActionsProvider({
   children,
   drive,
-  useSharingModal,
-  useMoveItemsModal,
+  openShareModal,
+  openMoveItemsModal,
 }: DocumentActionsProviderProps) {
   const [renamingDocument, setRenamingDocument] = useState<RecentDocumentsItem>()
   const [isRenameSaving, setRenameSaving] = useState(false)
   const [currentlyTrashingId, setCurrentlyTrashingId] = useState<string | undefined>(undefined)
   const [currentlyRestoringId, setCurrentlyRestoringId] = useState<string | undefined>(undefined)
 
-  const { showSharingModal, sharingModal } = useSharingModal()
-  const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal()
   const { updateMovedDocuments, reportTelemetry, createNotification, getAppHref, errorTracking } = useHomepageView()
   const [confirmDeleteModal, showConfirmDeleteModal] = useConfirmActionModal()
   const { trash: bulkTrash, isTrashing: isBulkTrashing } = useBulkTrash({ drive })
-  const { move: bulkMove, moveItemsModal: bulkMoveItemsModal } = useBulkMove({ useMoveItemsModal })
+  const { move: bulkMove } = useBulkMove({ openMoveItemsModal })
 
   const open = useEvent(({ type, volumeId, linkId }: RecentDocumentsItem, source = 'normal') => {
     const pathname = type === 'spreadsheet' ? 'sheet' : 'doc'
@@ -56,7 +52,7 @@ export function DocumentActionsProvider({
   })
 
   const share = useEvent(({ volumeId, linkId }: RecentDocumentsItem) => {
-    showSharingModal({
+    openShareModal({
       drive,
       nodeUid: generateNodeUid(volumeId, linkId),
     })
@@ -64,7 +60,7 @@ export function DocumentActionsProvider({
   })
 
   const move = useEvent(({ volumeId, linkId }: RecentDocumentsItem) => {
-    showMoveItemsModal({
+    openMoveItemsModal({
       nodeUids: [generateNodeUid(volumeId, linkId)],
       onMoved: ({ movedUids }) => {
         void updateMovedDocuments?.(movedUids)
@@ -250,9 +246,6 @@ export function DocumentActionsProvider({
   return (
     <DocumentActionsContext.Provider value={value}>
       {children}
-      {sharingModal}
-      {moveItemsModal}
-      {bulkMoveItemsModal}
       {confirmDeleteModal}
     </DocumentActionsContext.Provider>
   )

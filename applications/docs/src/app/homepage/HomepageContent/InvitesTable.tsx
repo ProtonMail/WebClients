@@ -12,10 +12,10 @@ import { getInitials } from './getInitials'
 import { clsx } from '../utils/clsx'
 import { type ComponentPropsWithoutRef, useState } from 'react'
 import { c, msgid } from 'ttag'
-import { useHomepageView, type DocInvitesHook } from '../homepageViewContext'
+import { useHomepageView } from '../homepageViewContext'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import * as Table from './table'
-import type { ExtendedInvitationDetails } from '../invitationTypes'
+import type { AcceptInvitation, ExtendedInvitationDetails } from '../invitationTypes'
 import { useOpenInvitedDocument } from './useOpenInvitedDocument'
 import { TelemetryEvent } from '../utils/telemetry'
 
@@ -25,26 +25,17 @@ const WAIT_AFTER_ACCEPT_INVITE = 5000 // ms
 export type InvitesTableProps = ComponentPropsWithoutRef<'div'>
 
 export function InvitesTable(props: InvitesTableProps) {
-  const { useDocInvites, featureFlags } = useHomepageView()
-  return (
-    <InvitesTableContent
-      key={featureFlags.invitationsSdk ? 'SDK' : 'legacy'}
-      useDocInvites={useDocInvites}
-      {...props}
-    />
-  )
-}
+  const { dateFormatter, pendingInvitations, recentlyAcceptedInvitations, acceptInvitation, declineInvitation } =
+    useHomepageView()
 
-function InvitesTableContent(allProps: InvitesTableProps & { useDocInvites: DocInvitesHook }) {
-  const { useDocInvites, ...props } = allProps
-  const { dateFormatter } = useHomepageView()
-
-  const { confirmModal, invitations, recentlyAcceptedInvites, rejectInvite, acceptInvite } = useDocInvites()
   const openInvitedDocument = useOpenInvitedDocument()
   const [collapsed, setCollapsed] = useState(true)
 
-  const allInvites = [...invitations, ...recentlyAcceptedInvites]
-  const pendingCount = allInvites.filter((invite) => !recentlyAcceptedInvites.includes(invite)).length
+  // The host keeps the accepted invitations until the reload button, so leave them out of the rows and of the collapse.
+  // By ID: the pending list holds new objects for them once the store locks or refetches them.
+  const acceptedIds = new Set(recentlyAcceptedInvitations.map(({ invitation }) => invitation.invitationId))
+  const allInvites = pendingInvitations.filter(({ invitation }) => !acceptedIds.has(invitation.invitationId))
+  const pendingCount = allInvites.length
   if (pendingCount === 0) {
     return null
   }
@@ -95,10 +86,6 @@ function InvitesTableContent(allProps: InvitesTableProps & { useDocInvites: DocI
         </Table.Head>
         <Table.Body className="divide-weak divide-y">
           {visibleInvites.map((invite) => {
-            if (recentlyAcceptedInvites.includes(invite)) {
-              return null
-            }
-
             const type = isProtonDocsDocument(invite.link.mimeType) ? 'document' : 'spreadsheet'
             const DocumentTypeIcon = ICON_BY_TYPE[type]
 
@@ -123,8 +110,8 @@ function InvitesTableContent(allProps: InvitesTableProps & { useDocInvites: DocI
                     <span className="-me-3 shrink-0 medium:hidden">
                       <InviteActions
                         invite={invite}
-                        onRejectInvite={rejectInvite}
-                        acceptInvite={acceptInvite}
+                        onRejectInvite={declineInvitation}
+                        acceptInvite={acceptInvitation}
                         openInvitedDocument={openInvitedDocument}
                       />
                     </span>
@@ -164,8 +151,8 @@ function InvitesTableContent(allProps: InvitesTableProps & { useDocInvites: DocI
                 <Table.DataCell target="medium" data-testid="invite-actions-cell">
                   <InviteActions
                     invite={invite}
-                    onRejectInvite={rejectInvite}
-                    acceptInvite={acceptInvite}
+                    onRejectInvite={declineInvitation}
+                    acceptInvite={acceptInvitation}
                     openInvitedDocument={openInvitedDocument}
                   />
                 </Table.DataCell>
@@ -189,7 +176,6 @@ function InvitesTableContent(allProps: InvitesTableProps & { useDocInvites: DocI
           </span>
         </button>
       )}
-      {confirmModal}
     </ContentSheet>
   )
 }
@@ -197,7 +183,7 @@ function InvitesTableContent(allProps: InvitesTableProps & { useDocInvites: DocI
 interface InviteActionsProps {
   invite: ExtendedInvitationDetails
   onRejectInvite: (invite: ExtendedInvitationDetails) => void
-  acceptInvite: ReturnType<DocInvitesHook>['acceptInvite']
+  acceptInvite: AcceptInvitation
   openInvitedDocument: ReturnType<typeof useOpenInvitedDocument>
 }
 

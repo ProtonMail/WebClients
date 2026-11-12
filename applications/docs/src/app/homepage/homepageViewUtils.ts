@@ -7,7 +7,13 @@ import type { ProtonDocumentType } from './utils/mimetype'
 
 import type { DriveEvent, ProtonDriveClient } from '@protontech/drive-sdk'
 
-import type { DocInvitesHook, ItemsSection, ItemsSectionId, RecentsSort } from './homepageViewContext'
+import type { ItemsSection, ItemsSectionId, RecentsSort } from './homepageViewContext'
+import type {
+  AcceptInvitation,
+  DeclineInvitation,
+  ExtendedInvitationDetails,
+  ReloadInvitations,
+} from './invitationTypes'
 import { isMyDocument, type UserAddress } from './is-my-document'
 import { getOwnerName, type OwnerContact } from './get-owner-name'
 import type { Api } from './docsApi/api'
@@ -57,7 +63,17 @@ export type HomepageViewProviderProps = {
   drive: ProtonDriveClient
   eventSubscriber: EventSubscriber
   coreEventSubscriber: CoreEventSubscriber
-  useDocInvites: DocInvitesHook
+  /** The invitations to documents and sheets the user hasn't answered yet. It can still list the ones just accepted. */
+  pendingInvitations: ExtendedInvitationDetails[]
+  /** The invitations accepted from the homepage. They're hidden even while `pendingInvitations` still lists them. */
+  recentlyAcceptedInvitations: ExtendedInvitationDetails[]
+  acceptInvitation: AcceptInvitation
+  declineInvitation: DeclineInvitation
+  /**
+   * Only the sidebar's reload button calls it. The host loads the invitations when the homepage opens and keeps them
+   * current itself, so the homepage doesn't reload them when it shows the invitations table again.
+   */
+  reloadInvitations: ReloadInvitations
   api: Api
   logger: Logger
   reportTelemetry: ReportTelemetry

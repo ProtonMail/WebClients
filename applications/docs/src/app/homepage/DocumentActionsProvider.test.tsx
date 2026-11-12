@@ -4,12 +4,11 @@ import { ServerTime } from './utils/serverTime'
 import { generateNodeUid, type ProtonDriveClient } from '@protontech/drive-sdk'
 import { act, renderHook, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { type ReactNode, useContext, useState } from 'react'
-import { DocumentActionsProvider, type DocumentActionsProviderProps } from './DocumentActionsProvider'
+import { type ReactNode, useContext } from 'react'
+import { DocumentActionsProvider } from './DocumentActionsProvider'
 import { DocumentActionsContext } from './documentActionsContext'
 import type { ErrorTracking } from './utils/errorTracking'
 import { HomepageViewContext, type HomepageViewValue } from './homepageViewContext'
-import type { UseMoveItemsModal } from './driveSdk/useBulkMove'
 import { TelemetryEvent } from './utils/telemetry'
 
 jest.mock('./driveSdk/trash', () => ({
@@ -19,16 +18,8 @@ jest.mock('./driveSdk/trash', () => ({
   reportTrashError: jest.fn(),
 }))
 
-const mockShowMoveItemsModal = jest.fn()
-const useMockSharingModal: DocumentActionsProviderProps['useSharingModal'] = () => ({
-  sharingModal: null,
-  showSharingModal: jest.fn(),
-})
-
-const useMockMoveItemsModal: UseMoveItemsModal = () => ({
-  moveItemsModal: null,
-  showMoveItemsModal: mockShowMoveItemsModal,
-})
+const openShareModal = jest.fn()
+const openMoveItemsModal = jest.fn()
 
 const recentDocument = RecentDocumentsItem.create({
   type: 'document',
@@ -47,7 +38,7 @@ const nodeUid = generateNodeUid(recentDocument.volumeId, recentDocument.linkId)
 const drive = {} as ProtonDriveClient
 const errorTracking = {} as ErrorTracking
 
-function renderDocumentActions(moveItemsModalHook = useMockMoveItemsModal) {
+function renderDocumentActions() {
   const createNotification = jest.fn()
   const reportTelemetry = jest.fn()
   const updateMovedDocuments = jest.fn()
@@ -66,11 +57,7 @@ function renderDocumentActions(moveItemsModalHook = useMockMoveItemsModal) {
           } as unknown as HomepageViewValue
         }
       >
-        <DocumentActionsProvider
-          drive={drive}
-          useSharingModal={useMockSharingModal}
-          useMoveItemsModal={moveItemsModalHook}
-        >
+        <DocumentActionsProvider drive={drive} openShareModal={openShareModal} openMoveItemsModal={openMoveItemsModal}>
           {children}
         </DocumentActionsProvider>
       </HomepageViewContext.Provider>
@@ -94,26 +81,27 @@ function subscribe(subscribeTo: (listener: (id: string) => void) => () => void) 
   return listener
 }
 
-function useFakeMoveItemsModal(): ReturnType<UseMoveItemsModal> {
-  const [nodeUids, setNodeUids] = useState<string[]>()
-  return {
-    moveItemsModal: <>{nodeUids && <dialog open>{nodeUids.join(',')}</dialog>}</>,
-    showMoveItemsModal: ({ nodeUids }: { nodeUids: string[] }) => setNodeUids(nodeUids),
-  }
-}
-
 afterEach(() => {
   unsubscribers.splice(0).forEach((unsubscribe) => unsubscribe())
   jest.clearAllMocks()
 })
 
 describe('DocumentActionsProvider', () => {
+  test('share opens the share modal for the document and sends telemetry', () => {
+    const { result, reportTelemetry } = renderDocumentActions()
+
+    act(() => result.current.share(recentDocument))
+
+    expect(openShareModal).toHaveBeenCalledWith({ drive, nodeUid })
+    expect(reportTelemetry).toHaveBeenCalledWith(TelemetryEvent.document_shared)
+  })
+
   test('move opens the move modal for the document and sends telemetry', () => {
     const { result, reportTelemetry } = renderDocumentActions()
 
     act(() => result.current.move(recentDocument))
 
-    expect(mockShowMoveItemsModal).toHaveBeenCalledWith({ nodeUids: [nodeUid], onMoved: expect.any(Function) })
+    expect(openMoveItemsModal).toHaveBeenCalledWith({ nodeUids: [nodeUid], onMoved: expect.any(Function) })
     expect(reportTelemetry).toHaveBeenCalledWith(TelemetryEvent.document_moved)
   })
 
@@ -179,19 +167,19 @@ describe('DocumentActionsProvider', () => {
     const { result, updateMovedDocuments } = renderDocumentActions()
 
     act(() => result.current.move(recentDocument))
-    const [{ nodeUids, onMoved }] = mockShowMoveItemsModal.mock.calls[0]
+    const [{ nodeUids, onMoved }] = openMoveItemsModal.mock.calls[0]
     onMoved({ movedUids: [nodeUid], failedItems: [], targetFolderUid: generateNodeUid('volume1', 'folder') })
 
     expect(nodeUids).toEqual([nodeUid])
     expect(updateMovedDocuments).toHaveBeenCalledWith([nodeUid])
   })
 
-  test('bulkMove shows the move modal for the documents', () => {
-    const { result } = renderDocumentActions(useFakeMoveItemsModal)
+  test('bulkMove opens the same move modal for the documents', () => {
+    const { result } = renderDocumentActions()
 
     act(() => result.current.bulkMove([recentDocument]))
 
-    expect(screen.getByRole('dialog')).toHaveTextContent(nodeUid)
+    expect(openMoveItemsModal).toHaveBeenCalledWith({ nodeUids: [nodeUid], onMoved: expect.any(Function) })
   })
 
   test('trash failure shows an error toast, sends no telemetry and notifies no listeners', async () => {

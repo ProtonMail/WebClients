@@ -1,28 +1,27 @@
 import type { RecentDocumentsItem } from '../recentDocumentsItem'
-import type { ReactNode } from 'react'
 import { generateNodeUid } from '@protontech/drive-sdk'
 import { useEvent } from '../utils/useEvent'
 import { useHomepageView } from '../homepageViewContext'
 import { TelemetryEvent } from '../utils/telemetry'
 
-export type UseMoveItemsModal = () => {
-  moveItemsModal: ReactNode
-  showMoveItemsModal: (props: { nodeUids: string[]; onMoved?: (result: { movedUids: string[] }) => void }) => void
-}
+/** Opens the move modal the host renders. `onMoved` gets the nodes it moved, once the move finishes. */
+export type OpenMoveItemsModal = (props: {
+  nodeUids: string[]
+  onMoved?: (result: { movedUids: string[] }) => void
+}) => void
 
-type BulkMoveDependencies = { useMoveItemsModal: UseMoveItemsModal }
+type BulkMoveDependencies = { openMoveItemsModal: OpenMoveItemsModal }
 
 /**
  * The move modal needs every node under one root, so pass only documents in My files.
  * It notifies successes and failures itself. The documents it moved show in their new folder right away, rather than on their events.
  * `onMoved` gets the documents that moved, as soon as the move finishes.
  */
-export function useBulkMove({ useMoveItemsModal }: BulkMoveDependencies) {
+export function useBulkMove({ openMoveItemsModal }: BulkMoveDependencies) {
   const { updateMovedDocuments, reportTelemetry } = useHomepageView()
-  const { moveItemsModal, showMoveItemsModal } = useMoveItemsModal()
 
   const move = useEvent((documents: RecentDocumentsItem[], onMoved?: (moved: RecentDocumentsItem[]) => void) => {
-    showMoveItemsModal({
+    openMoveItemsModal({
       nodeUids: documents.map(({ volumeId, linkId }) => generateNodeUid(volumeId, linkId)),
       onMoved: ({ movedUids }) => {
         void updateMovedDocuments?.(movedUids)
@@ -32,5 +31,5 @@ export function useBulkMove({ useMoveItemsModal }: BulkMoveDependencies) {
     documents.forEach(() => reportTelemetry(TelemetryEvent.document_moved))
   })
 
-  return { move, moveItemsModal }
+  return { move }
 }

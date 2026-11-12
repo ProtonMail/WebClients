@@ -6,6 +6,10 @@ The module never imports `@proton/docs-shared` or `@proton/docs-core`, in types,
 
 It never imports `@proton/shared`, `@proton/utils`, `@proton/hooks` or `@proton/payments-ui` either. It keeps its own copies of their helpers, such as `utils/clsx.ts` and `utils/mimetype.ts`. What needs host state is injected through `HomepageViewProvider`'s props, such as the API, logger, telemetry, notifications, `getAppHref` with the user's local ID, the date locale, error tracking (Sentry) and feature flags.
 
+The host injects values and functions, never hooks. It runs its own hooks and passes what they return: the pending invitations and the functions that accept, decline and reload them through `HomepageViewProvider`, and the functions that open the share and move modals through `DocumentActionsProvider`. The host renders those modals itself.
+
+The host loads the invitations when the homepage opens and keeps them current. The module reloads them only from the sidebar's reload button, not when it shows the invitations table again.
+
 It reads no feature flags itself (no `~/utils/flags` or `@proton/unleash`): the host resolves the ones it needs into `featureFlags`. Sheets is always enabled; the module ignores the `DocsSheetsDisabled` kill switch.
 
 Files inside this path import each other with relative paths, never through the `~/homepage` alias.

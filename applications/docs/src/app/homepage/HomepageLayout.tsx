@@ -36,6 +36,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import './HomepageLayout.css'
 import type { HomepageViewState } from './homepageViewContext'
 import { useHomepageView } from './homepageViewContext'
+import { useReloadRecents } from './useReloadRecents'
 import { useHistory, useRouteMatch } from 'react-router'
 import { HOMEPAGE_RECENTS_PATH } from './homepage-paths'
 import { useEvent } from './utils/useEvent'
@@ -264,8 +265,8 @@ type SidebarProps = {
 function Sidebar({ expanded, onToggle, setExpanded, appVersion: hostAppVersion }: SidebarProps) {
   const isRecents = useRouteMatch(HOMEPAGE_RECENTS_PATH)
   const history = useHistory()
-  const { updateRecentDocuments, isRecentsUpdating, type, reportTelemetry, createNotification, getAppHref } =
-    useHomepageView()
+  const { isRecentsUpdating, type, reportTelemetry, getAppHref } = useHomepageView()
+  const reloadRecents = useReloadRecents()
   const appVersion = getAppVersion(hostAppVersion)
 
   const newDocumentButton = (
@@ -312,10 +313,7 @@ function Sidebar({ expanded, onToggle, setExpanded, appVersion: hostAppVersion }
                 if (!isRecents) {
                   history.push('/recents')
                 }
-                await updateRecentDocuments()
-                createNotification({
-                  text: c('Notification').t`Recent documents updated`,
-                })
+                await reloadRecents()
                 setExpanded(false)
               }}
             >
