@@ -18,7 +18,7 @@ import { dateLocale } from '@proton/shared/lib/i18n'
 import { addSentryBreadcrumb, getSentryError, traceError } from '@proton/shared/lib/helpers/sentry'
 import type { Application } from '@proton/docs-core/Application/Application'
 import type { TelemetryDocsHomepageEvents } from '@proton/shared/lib/api/telemetry'
-import { Suspense, lazy, useCallback } from 'react'
+import { Suspense, lazy, useCallback, useMemo } from 'react'
 import { Routes, Route, useSearchParams, Navigate } from 'react-router-dom-v5-compat'
 
 import { ApplicationProvider } from '~/utils/application-context'
@@ -29,7 +29,7 @@ import {
   DOCUMENT_V2_PATHS,
   DocsUrlContextProvider,
 } from '~/utils/docs-url-bar'
-import { useInvitationsSdkEnabled, useRealtimeSdkEnabled } from '~/utils/flags'
+import { useBulkMoveEnabled, useBulkTrashEnabled, useInvitationsSdkEnabled, useRealtimeSdkEnabled } from '~/utils/flags'
 import { useInitializeApplication } from './useInitializeApplication'
 import { getCoreEventSubscriber, useCoreEventSubscription } from '~/drive-sdk/core-event-subscriber'
 import { getEventSubscriber } from '~/drive-sdk/event-subscriber'
@@ -107,7 +107,14 @@ function AppRoutes({ driveCompat, application }: AppRoutesProps) {
     [application],
   )
   const isRealtimeSdkEnabled = useRealtimeSdkEnabled()
-  const useDocInvites = useInvitationsSdkEnabled() ? useDocInvitesSDK : useDocInvitesLegacy
+  const isInvitationsSdkEnabled = useInvitationsSdkEnabled()
+  const useDocInvites = isInvitationsSdkEnabled ? useDocInvitesSDK : useDocInvitesLegacy
+  const isBulkTrashEnabled = useBulkTrashEnabled()
+  const isBulkMoveEnabled = useBulkMoveEnabled()
+  const homepageFeatureFlags = useMemo(
+    () => ({ invitationsSdk: isInvitationsSdkEnabled, bulkTrash: isBulkTrashEnabled, bulkMove: isBulkMoveEnabled }),
+    [isInvitationsSdkEnabled, isBulkTrashEnabled, isBulkMoveEnabled],
+  )
 
   const documentPage = (
     <Suspense>
@@ -135,6 +142,7 @@ function AppRoutes({ driveCompat, application }: AppRoutesProps) {
         getAppHref={getAppHrefForUser}
         dateLocaleCode={dateLocale.code}
         errorTracking={homepageErrorTracking}
+        featureFlags={homepageFeatureFlags}
         useSharingModal={useSharingModal}
         useMoveItemsModal={useMoveItemsModal}
         reportDescriptionContext={reportDescriptionContext}

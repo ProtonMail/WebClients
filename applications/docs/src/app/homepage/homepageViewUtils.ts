@@ -14,6 +14,7 @@ import type { Api } from './docsApi/api'
 import type { Logger } from './utils/logger'
 import type { GetAppHref } from './utils/apps'
 import type { ErrorTracking } from './utils/errorTracking'
+import type { FeatureFlags } from './utils/featureFlags'
 import type { CreateNotification } from './utils/notifications'
 import type { ReportTelemetry } from './utils/telemetry'
 
@@ -66,6 +67,8 @@ export type HomepageViewProviderProps = {
   dateLocaleCode: string | undefined
   /** Keep it the same object across renders: the event subscription and the recents loading depend on it. */
   errorTracking: ErrorTracking
+  /** Keep it the same object while the flags don't change: the context value depends on it. */
+  featureFlags: FeatureFlags
 }
 
 function useQueryState<T extends string | undefined>(name: string, defaultValue: T, allowedValues?: readonly T[]) {

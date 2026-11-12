@@ -63,6 +63,7 @@ export function useIsDownloadLogsAllowed() {
   return useFlag('DownloadLogs')
 }
 
+// The homepage module (app/homepage) ignores this kill switch and always shows Sheets.
 export function useIsSheetsEnabled() {
   const killswitch = useFlag('DocsSheetsDisabled')
   return !killswitch

@@ -10,6 +10,7 @@ import type { ReportTelemetry } from './utils/telemetry'
 import type { GetAppHref } from './utils/apps'
 import type { DateFormatter } from './utils/dateFormatter'
 import type { ErrorTracking } from './utils/errorTracking'
+import type { FeatureFlags } from './utils/featureFlags'
 
 export type RecentsSort = 'viewed' | 'name' | 'owner' | 'location'
 export type ItemsSectionId =
@@ -69,6 +70,7 @@ export type HomepageViewValue = {
   getAppHref: GetAppHref
   dateFormatter: DateFormatter
   errorTracking: ErrorTracking
+  featureFlags: FeatureFlags
 }
 
 export const HomepageViewContext = createContext<HomepageViewValue | undefined>(undefined)
