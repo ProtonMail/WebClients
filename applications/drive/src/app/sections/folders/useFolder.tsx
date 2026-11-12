@@ -59,6 +59,8 @@ export function useFolder() {
             const { getByRootFolderUid } = useDevicesStore.getState();
             reset();
             setIsLoading(true);
+            const { loadGeneration } = useFolderStore.getState();
+            const isStale = () => ac.signal.aborted || useFolderStore.getState().loadGeneration !== loadGeneration;
 
             try {
                 const hierarchy = await drive.getNodeHierarchy(folderNodeUid);
@@ -72,6 +74,10 @@ export function useFolder() {
                 const isRoot = !node.parentUid;
                 const isAdmin = role === MemberRole.Admin;
                 const canReportAbuse = Boolean(node.membership) || Boolean(hierarchy[0].membership);
+
+                if (isStale()) {
+                    return;
+                }
 
                 setFolder(
                     {
@@ -112,7 +118,7 @@ export function useFolder() {
                 const itemsBatch: FolderViewItem[] = [];
 
                 const flushBatch = () => {
-                    if (itemsBatch.length > 0) {
+                    if (itemsBatch.length > 0 && !isStale()) {
                         setItems([...itemsBatch]);
                         onItemsLoadedToState(itemsBatch.length);
                         itemsBatch.length = 0;
@@ -127,7 +133,7 @@ export function useFolder() {
                         signal: ac.signal,
                     })) {
                         try {
-                            if (ac.signal.aborted) {
+                            if (isStale()) {
                                 clearInterval(intervalId);
                                 return;
                             }
@@ -145,6 +151,9 @@ export function useFolder() {
                     clearInterval(intervalId);
                     flushBatch();
                 }
+                if (isStale()) {
+                    return;
+                }
                 if (showErrorNotification) {
                     createNotification({
                         type: 'error',
@@ -153,11 +162,16 @@ export function useFolder() {
                 }
                 onFinished();
             } catch (e) {
+                if (isStale()) {
+                    return;
+                }
                 const error =
                     e instanceof Error ? e : new Error(c('Error').t`Something went wrong during folder listing`);
                 handleFolderError(error);
             } finally {
-                setIsLoading(false);
+                if (!isStale()) {
+                    setIsLoading(false);
+                }
             }
         },
         [createNotification, drive, handleFolderError, isDriveDocsDisabled, isSheetsEnabled]

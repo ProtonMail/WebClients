@@ -60,6 +60,7 @@ export type FolderPermissions = {
 type FolderState = {
     isLoading: boolean;
     hasEverLoaded: boolean;
+    loadGeneration: number;
     items: Map<string, FolderViewItem>;
     sortedItemUids: string[];
     sortField: SortField;
@@ -92,6 +93,7 @@ export type FolderStore = FolderState & FolderActions;
 const initialState: FolderState = {
     isLoading: false,
     hasEverLoaded: false,
+    loadGeneration: 0,
     items: new Map(),
     sortedItemUids: [],
     sortField: SortField.modificationTime,
@@ -186,6 +188,7 @@ export const useFolderStore = create<FolderStore>()((set, get) => ({
     reset: () =>
         set((state) => ({
             ...initialState,
+            loadGeneration: state.loadGeneration + 1,
             sortField: state.sortField,
             sortDirection: state.sortDirection,
         })),
