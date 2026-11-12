@@ -155,7 +155,7 @@ const MspMonthlyCostsSection = () => {
     return (
         <SettingsSectionExtraWide className="flex flex-column gap-11">
             <div>
-                <SettingsPageTitle className="mt-14">{c('Title').t`Monthly Costs`}</SettingsPageTitle>
+                <SettingsPageTitle className="mt-14">{c('Title').t`Monthly cost`}</SettingsPageTitle>
                 <SettingsParagraph>{c('Info').t`Your total monthly cost for all managed companies.`}</SettingsParagraph>
             </div>
             {/* ── Current cost card ── */}
@@ -191,12 +191,12 @@ const MspMonthlyCostsSection = () => {
             {/* ── Licenses usage chart ── */}
             <LicensesUsageChart data={seatsHistory} />
 
-            {/* ── Previous billing periods ── */}
+            {/* ── Billing periods ── */}
             <div className="flex flex-column gap-6">
                 <div className="flex flex-column gap-2">
-                    <h2 className="m-0 text-bold text-5xl">{c('Title').t`Previous billing periods`}</h2>
+                    <h2 className="m-0 text-bold text-5xl">{c('Title').t`Billing periods`}</h2>
                     <p className="m-0 color-weak">
-                        {c('Info').t`Review past periods and export the data for reporting or client invoicing.`}
+                        {c('Info').t`Review and export the data for reporting or client invoicing.`}
                     </p>
                 </div>
 

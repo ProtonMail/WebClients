@@ -35,12 +35,12 @@ const TooltipContent = ({ active, payload, label }: TooltipContentProps) => {
         <div className="msp-chart-tooltip-inner flex flex-column gap-1">
             <p className="m-0 text-semibold text-sm">{label}</p>
             <div className="flex justify-space-between gap-4">
-                <span className="text-sm color-weak">{c('Label').t`Peak allocated licenses`}</span>
+                <span className="text-sm color-weak">{c('Label').t`Allocated licenses`}</span>
                 <span className="text-sm text-semibold">{seats}</span>
             </div>
             {avg != null && (
                 <div className="flex justify-space-between gap-4">
-                    <span className="text-sm color-weak">{c('Label').t`Monthly average`}</span>
+                    <span className="text-sm color-weak">{c('Label').t`Billed average`}</span>
                     <span className="text-sm text-semibold">{avg.toPrecision(2)}</span>
                 </div>
             )}
@@ -60,11 +60,11 @@ const LicensesUsageChart = ({ data }: { data: SeatDay[] }) => {
                 <div className="flex gap-4 items-center">
                     <div className="flex gap-2 items-center">
                         <div className="msp-chart-legend-bar" />
-                        <span className="text-sm">{c('Label').t`Peak allocated licenses`}</span>
+                        <span className="text-sm">{c('Label').t`Allocated licenses`}</span>
                     </div>
                     <div className="flex gap-2 items-center">
                         <div className="msp-chart-legend-line" />
-                        <span className="text-sm">{c('Label').t`Monthly average`}</span>
+                        <span className="text-sm">{c('Label').t`Billed average`}</span>
                     </div>
                 </div>
             </div>
