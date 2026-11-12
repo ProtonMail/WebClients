@@ -1,8 +1,9 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
 
+import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
@@ -17,14 +18,19 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
-import { README_PATH, hasRootSkillMarkdown, isSkillPlugin } from '../skillBundle';
+import { README_PATH, deriveBundleInfo, hasRootSkillMarkdown, isSkillPlugin, resolvePluginInfo } from '../skillBundle';
+import { getSkillWeight } from '../skillEntitlements';
 import { getSkillFileMimeType, isBlockedSkillFile, normalizeSkillFilePath } from '../skillFiles';
+import { type GeneratedSkill, generateSkill } from '../skillGeneration';
 import { isSkillHandleTaken } from '../skillInvocation';
 import { SKILL_DESCRIPTION_MAX_LENGTH, SKILL_NAME_MAX_LENGTH, getSkillHandle } from '../skillMarkdown';
 import { loadSkillFiles, saveSkill } from '../skillsThunks';
 import { SKILL_MARKDOWN_PATH, type Skill } from '../types';
+import { useSkillLimit } from '../useSkillLimit';
 import { SkillCodeView, type SkillCodeViewMode } from './SkillCodeView';
 import { SkillFileTree } from './SkillFileTree';
+import { SkillLimitModal } from './SkillLimitModal';
+import { SkillLumoBrief, SkillLumoPrompt } from './SkillLumoPrompt';
 import {
     type WorkspaceFile,
     isSkillMarkdown,
@@ -48,7 +54,9 @@ const newSkillMarkdown = (): WorkspaceFile => ({ path: SKILL_MARKDOWN_PATH, mime
 const isInFolder = (folder: string, path: string) => path.startsWith(`${folder}/`);
 
 export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEditorModalProps) => {
+    const api = useApi();
     const dispatch = useLumoDispatch();
+    const { checkCanAddSkills, skillLimitModal, skillLimitModalState } = useSkillLimit();
     const { createNotification } = useNotifications();
     const existing = useLumoSelector((state) => (skillId ? state.skills.skills[skillId] : undefined));
     const allSkills = useLumoSelector((state) => state.skills.skills);
@@ -69,6 +77,14 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
     const [newPathError, setNewPathError] = useState<string>();
     const [showErrors, setShowErrors] = useState(false);
     const [saving, setSaving] = useState(false);
+    const [step, setStep] = useState<'describe' | 'edit'>(existing ? 'edit' : 'describe');
+    const [brief, setBrief] = useState('');
+    const [lumoRequest, setLumoRequest] = useState('');
+    const [generating, setGenerating] = useState(false);
+    const [undoDraft, setUndoDraft] = useState<GeneratedSkill>();
+    const generationRef = useRef<AbortController>();
+
+    useEffect(() => () => generationRef.current?.abort(), []);
 
     useEffect(() => {
         if (!skillId) {
@@ -139,6 +155,71 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
 
     const updateActiveText = (text: string) => {
         setFiles((prev) => prev.map((file) => (file.path === activeFile?.path ? { ...file, text } : file)));
+        setUndoDraft(undefined);
+    };
+
+    const instructions = files.find(isSkillMarkdown)?.text ?? '';
+    const hasDraft = !!(name.trim() || description.trim() || instructions.trim());
+
+    const applyDraft = (draft: GeneratedSkill) => {
+        setName(draft.name);
+        setDescription(draft.description);
+        setFiles((prev) => prev.map((file) => (isSkillMarkdown(file) ? { ...file, text: draft.instructions } : file)));
+    };
+
+    /** From the first step, Lumo writes a new skill; from the editor, it revises the current one. */
+    const handleGenerate = async (fromBrief: boolean) => {
+        const request = (fromBrief ? brief : lumoRequest).trim();
+        if (!request || generating) {
+            return;
+        }
+        const previous: GeneratedSkill = { name, description, instructions };
+        const revising = !fromBrief && hasDraft;
+        const base: GeneratedSkill = revising ? previous : { name: '', description: '', instructions: '' };
+        // Fields Lumo has not reached yet keep their previous value instead of blinking empty.
+        const withBase = (draft: GeneratedSkill): GeneratedSkill => ({
+            name: draft.name || base.name,
+            description: draft.description || base.description,
+            instructions: draft.instructions || base.instructions,
+        });
+        const controller = new AbortController();
+        generationRef.current = controller;
+        setGenerating(true);
+        setShowErrors(false);
+        setActivePath(SKILL_MARKDOWN_PATH);
+        setMode('code');
+        setStep('edit');
+        applyDraft(base);
+        try {
+            const draft = await generateSkill(api, request, {
+                current: revising ? previous : undefined,
+                signal: controller.signal,
+                onUpdate: (partial) => applyDraft(withBase(partial)),
+            });
+            applyDraft(withBase(draft));
+            setUndoDraft(hasDraft ? previous : undefined);
+            if (!fromBrief) setLumoRequest('');
+        } catch {
+            if (controller.signal.aborted) {
+                setUndoDraft(hasDraft ? previous : undefined);
+                return;
+            }
+            applyDraft(previous);
+            if (fromBrief) setStep('describe');
+            createNotification({
+                type: 'error',
+                text: c('collider_2025:Error').t`${LUMO_SHORT_APP_NAME} could not write the skill. Try again.`,
+            });
+        } finally {
+            setGenerating(false);
+        }
+    };
+
+    const handleUndo = () => {
+        if (undoDraft) {
+            applyDraft(undoDraft);
+            setUndoDraft(undefined);
+        }
     };
 
     const startNewFile = () => {
@@ -208,6 +289,21 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
         }
         const markdown = files.find(isSkillMarkdown);
         const rest = files.filter((file) => !isSkillMarkdown(file));
+        const draftFiles = rest.map(toSkillFileDraft);
+        const bundle = deriveBundleInfo(draftFiles, existing?.subSkills);
+        const draftSkill = {
+            ...bundle,
+            plugin: resolvePluginInfo(existing?.source ?? 'created', bundle.plugin, existing?.plugin),
+            instructions: markdown?.text ?? '',
+        };
+        const becomesPlugin = isSkillPlugin(draftSkill);
+        const enabled = existing?.enabled ?? true;
+        const currentWeight = existing && enabled ? getSkillWeight(existing) : 0;
+        const draftWeight = enabled ? getSkillWeight(draftSkill) : 0;
+        const added = draftWeight - currentWeight;
+        if ((!existing || (!isPlugin && becomesPlugin) || added > 0) && !checkCanAddSkills(added, becomesPlugin)) {
+            return;
+        }
         setSaving(true);
         try {
             const skill = await dispatch(
@@ -221,7 +317,7 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
                         source: existing?.source ?? 'created',
                         metadata: existing?.metadata,
                         conversationStarters: existing?.conversationStarters,
-                        files: rest.map(toSkillFileDraft),
+                        files: draftFiles,
                     },
                 })
             ).unwrap();
@@ -237,6 +333,7 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
     const fileActions = activeFile && (
         <div className="flex flex-nowrap items-center gap-1 shrink-0">
             {/\.(md|markdown)$/i.test(activeFile.path) && (
+                // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                 <div className="skill-editor__mode-toggle flex flex-nowrap" role="group">
                     <Button
                         icon
@@ -291,7 +388,7 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
         <SkillCodeView
             file={activeFile}
             mode={mode}
-            onChange={updateActiveText}
+            onChange={generating ? undefined : updateActiveText}
             placeholder={
                 isSkillMarkdown(activeFile)
                     ? c('collider_2025:Placeholder')
@@ -305,20 +402,55 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
 
     let modalTitle = c('collider_2025:Title').t`Create a skill`;
     if (isPlugin) {
-        modalTitle = c('collider_2025:Title').t`Edit plugin`;
+        modalTitle = c('collider_2025:Title').t`Edit skill set`;
     } else if (existing) {
         modalTitle = c('collider_2025:Title').t`Edit skill`;
     }
 
-    return (
-        <ModalTwo {...modalProps} size="xlarge">
-            <ModalTwoHeader title={modalTitle} />
+    const describeStep = (
+        <>
+            <ModalTwoContent>
+                <SkillLumoBrief value={brief} onValue={setBrief} onSubmit={() => handleGenerate(true)} />
+            </ModalTwoContent>
+            <ModalTwoFooter className="items-center">
+                <Button shape="ghost" onClick={() => setStep('edit')}>
+                    {c('collider_2025:Action').t`Skip and write it myself`}
+                </Button>
+                <Button color="norm" onClick={() => handleGenerate(true)} disabled={!brief.trim()}>
+                    <span className="flex flex-nowrap items-center gap-2">
+                        <LumoIcon name="Sparkles" size={16} />
+                        {c('collider_2025:Action').t`Draft with ${LUMO_SHORT_APP_NAME}`}
+                    </span>
+                </Button>
+            </ModalTwoFooter>
+        </>
+    );
+
+    const editStep = (
+        <>
             <ModalTwoContent className="flex flex-column flex-nowrap gap-3">
+                {withRootMarkdown && !isPlugin && (
+                    <SkillLumoPrompt
+                        value={lumoRequest}
+                        onValue={setLumoRequest}
+                        onSubmit={() => handleGenerate(false)}
+                        onStop={() => generationRef.current?.abort()}
+                        generating={generating}
+                        hasDraft={hasDraft}
+                        onUndo={undoDraft ? handleUndo : undefined}
+                    />
+                )}
                 <InputFieldTwo
-                    label={isPlugin ? c('collider_2025:Label').t`Plugin name` : c('collider_2025:Label').t`Skill name`}
+                    label={
+                        isPlugin ? c('collider_2025:Label').t`Skill set name` : c('collider_2025:Label').t`Skill name`
+                    }
                     placeholder={c('collider_2025:Placeholder').t`Weekly status report`}
                     value={name}
-                    onValue={setName}
+                    onValue={(value: string) => {
+                        setName(value);
+                        setUndoDraft(undefined);
+                    }}
+                    readOnly={generating}
                     error={showErrors ? nameError : undefined}
                     warning={handleWarning}
                     maxLength={SKILL_NAME_MAX_LENGTH}
@@ -331,7 +463,11 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
                     placeholder={c('collider_2025:Placeholder')
                         .t`Generate weekly status reports from recent work. Use when asked for updates or progress summaries.`}
                     value={description}
-                    onValue={setDescription}
+                    onValue={(value: string) => {
+                        setDescription(value);
+                        setUndoDraft(undefined);
+                    }}
+                    readOnly={generating}
                     error={showErrors ? descriptionError : undefined}
                     maxLength={SKILL_DESCRIPTION_MAX_LENGTH}
                     dense
@@ -414,14 +550,38 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
                     )}
                 </div>
             </ModalTwoContent>
-            <ModalTwoFooter className="justify-end">
+            <ModalTwoFooter className={existing ? 'justify-end' : 'items-center'}>
+                {!existing && (
+                    <Button shape="ghost" onClick={() => setStep('describe')} disabled={generating}>
+                        <span className="flex flex-nowrap items-center gap-1">
+                            <LumoIcon name="ArrowLeft" size={16} />
+                            {c('collider_2025:Action').t`Back`}
+                        </span>
+                    </Button>
+                )}
                 <div className="flex flex-nowrap gap-2">
                     <Button onClick={modalProps.onClose}>{c('collider_2025:Action').t`Cancel`}</Button>
-                    <Button color="norm" onClick={handleSave} loading={saving} disabled={loadingFiles}>
+                    <Button color="norm" onClick={handleSave} loading={saving} disabled={loadingFiles || generating}>
                         {existing ? c('collider_2025:Action').t`Save` : c('collider_2025:Action').t`Create`}
                     </Button>
                 </div>
             </ModalTwoFooter>
-        </ModalTwo>
+        </>
+    );
+
+    return (
+        <>
+            <ModalTwo {...modalProps} size="xlarge">
+                <ModalTwoHeader title={modalTitle} />
+                {step === 'describe' ? describeStep : editStep}
+            </ModalTwo>
+            {skillLimitModal.render && (
+                <SkillLimitModal
+                    {...skillLimitModal.modalProps}
+                    {...skillLimitModalState}
+                    isConvertingToPlugin={!!existing && !isPlugin}
+                />
+            )}
+        </>
     );
 };

@@ -3,6 +3,7 @@ import {
     customAgentEditsToSkillDraft,
     customAgentToSkillDraft,
     getAgentsToMigrate,
+    getDuplicateMigratedSkills,
     getSkillsToResync,
 } from './customAgentMigration';
 import type { Skill, SkillFileDraft } from './types';
@@ -71,6 +72,33 @@ describe('getSkillsToResync', () => {
     it('ignores skills without a Custom Lumo, and Custom Lumos that are not personal', () => {
         const agents = [agent({ id: 'agent-1', source: 'shared', updatedAt: skillSavedAt + 1 })];
         expect(getSkillsToResync(agents, [skill({}), skill({ id: 'skill-2', legacyAgentId: undefined })])).toEqual([]);
+    });
+});
+
+describe('getDuplicateMigratedSkills', () => {
+    it('keeps the most recently edited copy of each Custom Lumo, then the oldest', () => {
+        const skills = [
+            skill({ id: 'a', createdAt: '2026-11-01T10:00:00.000Z' }),
+            skill({ id: 'b', updatedAt: '2026-11-03T10:00:00.000Z' }),
+            skill({ id: 'c', createdAt: '2026-11-02T10:00:00.000Z' }),
+            skill({ id: 'd', legacyAgentId: 'agent-2', createdAt: '2026-11-02T10:00:00.000Z' }),
+            skill({ id: 'e', legacyAgentId: 'agent-2', createdAt: '2026-11-01T10:00:00.000Z' }),
+        ];
+        expect(
+            getDuplicateMigratedSkills(skills)
+                .map(({ id }) => id)
+                .sort()
+        ).toEqual(['a', 'c', 'd']);
+    });
+
+    it('ignores skills that are not from a Custom Lumo', () => {
+        const skills = [
+            skill({ id: 'a', source: 'proton' }),
+            skill({ id: 'b', source: 'proton' }),
+            skill({ id: 'c', legacyAgentId: undefined }),
+            skill({ id: 'd', legacyAgentId: undefined }),
+        ];
+        expect(getDuplicateMigratedSkills(skills)).toEqual([]);
     });
 });
 

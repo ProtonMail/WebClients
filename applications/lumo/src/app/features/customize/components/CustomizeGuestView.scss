@@ -1,0 +1,96 @@
+@use '~@proton/styles/scss/lib' as *;
+
+.customize-guest {
+	&__hero,
+	&__cta {
+		border-color: color-mix(in srgb, var(--primary) 20%, var(--border-weak));
+		background:
+			radial-gradient(100% 180% at 100% 100%, color-mix(in srgb, var(--primary) 12%, transparent), transparent 65%),
+			linear-gradient(115deg, color-mix(in srgb, var(--primary) 10%, transparent), transparent 70%),
+			var(--background-norm);
+	}
+
+	&__eyebrow {
+		color: var(--primary);
+	}
+
+	&__features {
+		display: grid;
+		gap: rem(16);
+		grid-template-columns: repeat(auto-fill, minmax(rem(240), 1fr));
+	}
+
+	&__sets {
+		display: grid;
+		gap: rem(16);
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+
+		@media (width <= 960px) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		@media (width <= 600px) {
+			grid-template-columns: minmax(0, 1fr);
+		}
+	}
+
+	&__feature-icon {
+		inline-size: rem(40);
+		block-size: rem(40);
+		color: var(--primary);
+		background-color: color-mix(in srgb, var(--primary) 14%, transparent);
+	}
+
+	&__how {
+		background-color: var(--background-weak);
+
+		@media (width <= 768px) {
+			flex-direction: column;
+			gap: rem(20);
+		}
+	}
+
+	&__step-index {
+		inline-size: rem(28);
+		block-size: rem(28);
+		border-radius: 50%;
+		color: var(--primary);
+		background-color: color-mix(in srgb, var(--primary) 14%, transparent);
+	}
+
+	&__desktop {
+		@media (width <= 480px) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+
+	&__app-icon {
+		border-radius: rem(16);
+	}
+
+	&__chip {
+		border: 1px solid var(--border-weak);
+		background-color: var(--background-weak);
+	}
+
+	&__cta-icon {
+		inline-size: rem(56);
+		block-size: rem(56);
+		border-radius: rem(16);
+		color: var(--primary);
+		background: linear-gradient(
+			145deg,
+			var(--background-norm),
+			color-mix(in srgb, var(--primary) 16%, var(--background-norm))
+		);
+		box-shadow: 0 rem(8) rem(20) color-mix(in srgb, var(--primary) 12%, transparent);
+	}
+
+	&__cta {
+		@media (width <= 768px) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+}

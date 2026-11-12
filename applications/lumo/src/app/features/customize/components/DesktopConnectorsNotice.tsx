@@ -9,8 +9,8 @@ import lumoAppIcon from './lumo-app-icon.png';
 
 import './DesktopConnectorsNotice.scss';
 
-const DESKTOP_DOWNLOAD_URL = 'https://proton.me/lumo/download';
-const CONNECTORS_LEARN_MORE_URL = getKnowledgeBaseUrl('/lumo-desktop-connectors');
+export const DESKTOP_DOWNLOAD_URL = 'https://proton.me/lumo/download';
+export const CONNECTORS_LEARN_MORE_URL = getKnowledgeBaseUrl('/lumo-desktop-connectors');
 
 /** Shown on the web, where connectors can't run: they need the desktop app's access to this computer. */
 export const DesktopConnectorsNotice = () => {
@@ -25,19 +25,13 @@ export const DesktopConnectorsNotice = () => {
             className="desktop-connectors-notice flex flex-column flex-nowrap items-center gap-4 text-center"
             role="note"
         >
-            <img
-                className="desktop-connectors-notice__app-icon"
-                src={lumoAppIcon}
-                alt=""
-                width={88}
-                height={88}
-            />
+            <img className="desktop-connectors-notice__app-icon" src={lumoAppIcon} alt="" width={88} height={88} />
             <h2 className="mt-4 text-semibold desktop-connectors-notice__title">
                 {c('collider_2025:Title').t`Connectors run in the ${LUMO_SHORT_APP_NAME} desktop app`}
             </h2>
             <p className="m-0 color-weak desktop-connectors-notice__description">
                 {c('collider_2025:Info')
-                    .t`Connectors let ${LUMO_SHORT_APP_NAME} answer using your files, ${MAIL_APP_NAME}, Slack and more.`}
+                    .t`Connectors let ${LUMO_SHORT_APP_NAME} answer using your files, ${MAIL_APP_NAME}, the web and more.`}
             </p>
             <ul className="desktop-connectors-notice__points m-0 py-2 px-0 list-none flex flex-column flex-nowrap gap-2 text-left">
                 {points.map((point) => (
@@ -54,13 +48,7 @@ export const DesktopConnectorsNotice = () => {
                 ))}
             </ul>
             <div className="flex flex-wrap justify-center gap-2 pt-2">
-                <ButtonLike
-                    as="a"
-                    color="norm"
-                    href={DESKTOP_DOWNLOAD_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+                <ButtonLike as="a" color="norm" href={DESKTOP_DOWNLOAD_URL} target="_blank" rel="noopener noreferrer">
                     <LumoIcon aria-hidden name="Download" size={16} strokeWidth={1.4} className="mr-2" />
                     {c('collider_2025:Action').t`Download the desktop app`}
                 </ButtonLike>

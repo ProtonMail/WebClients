@@ -1,5 +1,6 @@
 import { ConflictClientError } from '../../redux/sagas/sagaErrors';
 import { selectMasterKeysBundle } from '../../redux/selectors';
+import { skillsSynced } from '../../redux/slices/skills';
 import type { LumoDispatch, LumoState } from '../../redux/store';
 import type { LumoThunkArguments } from '../../redux/thunk';
 import type { RemoteSkillFile } from '../../remote/skills';
@@ -154,16 +155,21 @@ export const syncSkills =
 
         running = (async () => {
             let changed = false;
+            let succeeded = false;
             do {
                 rerunRequested = false;
                 try {
                     changed = (await runSync(extra)) || changed;
+                    succeeded = true;
                 } catch (error) {
                     safeLogger.warn('Skill sync failed', error);
                 }
             } while (rerunRequested);
             if (changed) {
                 await dispatch(refreshSkills());
+            }
+            if (succeeded && !getState().skills.synced) {
+                dispatch(skillsSynced());
             }
         })().finally(() => {
             running = undefined;

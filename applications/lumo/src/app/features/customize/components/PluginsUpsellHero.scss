@@ -1,0 +1,31 @@
+@use '~@proton/styles/scss/lib' as *;
+
+.customize-discover-upsell {
+	border-color: color-mix(in srgb, var(--primary) 20%, var(--border-weak));
+	background:
+		radial-gradient(100% 180% at 100% 100%, color-mix(in srgb, var(--primary) 12%, transparent), transparent 65%),
+		linear-gradient(115deg, color-mix(in srgb, var(--primary) 10%, transparent), transparent 70%),
+		var(--background-norm);
+
+	&__tile {
+		--tile-color: var(--primary);
+
+		border-color: color-mix(in srgb, var(--background-norm) 70%, transparent);
+		border-radius: rem(28);
+		color: var(--tile-color);
+		background: linear-gradient(
+			145deg,
+			var(--background-norm),
+			color-mix(in srgb, var(--tile-color) 16%, var(--background-norm))
+		);
+		box-shadow: 0 rem(12) rem(28) color-mix(in srgb, var(--primary) 10%, transparent);
+
+		&--calendar {
+			--tile-color: var(--signal-info);
+		}
+
+		&--learning {
+			--tile-color: var(--signal-warning);
+		}
+	}
+}

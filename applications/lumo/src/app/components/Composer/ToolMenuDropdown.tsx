@@ -4,17 +4,22 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
 import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
+import { SkillEditorModal } from '../../features/skills/components/SkillEditorModal';
+import { SkillLimitModal } from '../../features/skills/components/SkillLimitModal';
+import { getSkillHandle } from '../../features/skills/skillMarkdown';
+import { useSkillLimit } from '../../features/skills/useSkillLimit';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useArtifactCreation } from '../../providers/ArtifactCreationProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoDispatch } from '../../redux/hooks';
-import { openAgentPicker } from '../../redux/slices/composerActions';
+import { insertSkillCommand, openAgentPicker } from '../../redux/slices/composerActions';
 import { isLimitExhausted, useRemainingLimits } from '../../services/usageLimitsStore';
 import BasicUpgradeButton from '../../upsells/primitives/BasicUpgradeButton';
 import useLumoPlusUpsellButtonConfig from '../../upsells/useLumoPlusUpsellButtonConfig';
@@ -59,6 +64,8 @@ export const ToolMenuDropdown = ({
     const imageLimitExhausted = isLimitExhausted(remainingLimits?.images);
     const imageUpsellConfig = useLumoPlusUpsellButtonConfig(LUMO_UPSELL_PATHS.COMPOSER_IMAGE_SELECTOR);
     const [view, setView] = useState<'main' | 'connectors' | 'skills'>('main');
+    const createSkillModal = useModalStateObject();
+    const { checkCanAddSkills, skillLimitModal, skillLimitModalState } = useSkillLimit();
     const showConnectors = isToolsFlagEnabled && isDesktopEnvironment();
 
     useEffect(() => {
@@ -143,142 +150,162 @@ export const ToolMenuDropdown = ({
     const showToolToggles = isToolsFlagEnabled || isArtifactsViewFlagEnabled;
 
     return (
-        <MenuDropdown
-            isOpen={isOpen}
-            anchorRef={anchorRef}
-            onClose={onClose}
-            className="tool-menu-dropdown"
-            width="200px"
-            autoClose={false}
-        >
-            {view === 'connectors' && <ConnectorList onBack={() => setView('main')} />}
-            {view === 'skills' && <SkillMenuList onBack={() => setView('main')} onClose={onClose} />}
-            {view === 'main' && (
-                <>
-                    {visibleToolMenuItems.map((item, index) => (
-                        <div
-                            key={index}
-                            className={clsx(
-                                item.isSignInRequired && 'tool-menu-item--sign-in-required',
-                                item.isDisabled &&
-                                    !item.isSignInRequired &&
-                                    'tool-menu-item--disabled pointer-events-none opacity-55'
-                            )}
-                        >
-                            <MenuItem {...item} />
-                        </div>
-                    ))}
-
-                    {showSkills && (
-                        <div className={clsx(isGuest && 'tool-menu-item--sign-in-required')}>
-                            <DropdownMenuButton
-                                className="justify-start"
-                                disabled={isGuest}
-                                onClick={() => setView('skills')}
+        <>
+            <MenuDropdown
+                isOpen={isOpen}
+                anchorRef={anchorRef}
+                onClose={onClose}
+                className="tool-menu-dropdown"
+                width="200px"
+                autoClose={false}
+            >
+                {view === 'connectors' && <ConnectorList onBack={() => setView('main')} />}
+                {view === 'skills' && (
+                    <SkillMenuList
+                        onBack={() => setView('main')}
+                        onClose={onClose}
+                        onCreateSkill={() => {
+                            if (checkCanAddSkills()) createSkillModal.openModal(true);
+                        }}
+                    />
+                )}
+                {view === 'main' && (
+                    <>
+                        {visibleToolMenuItems.map((item, index) => (
+                            <div
+                                key={index}
+                                className={clsx(
+                                    item.isSignInRequired && 'tool-menu-item--sign-in-required',
+                                    item.isDisabled &&
+                                        !item.isSignInRequired &&
+                                        'tool-menu-item--disabled pointer-events-none opacity-55'
+                                )}
                             >
+                                <MenuItem {...item} />
+                            </div>
+                        ))}
+
+                        {showSkills && (
+                            <div className={clsx(isGuest && 'tool-menu-item--sign-in-required')}>
+                                <DropdownMenuButton
+                                    className="justify-start"
+                                    disabled={isGuest}
+                                    onClick={() => setView('skills')}
+                                >
+                                    <div className="flex items-center gap-3 w-full">
+                                        <span className="shrink-0 flex">
+                                            <LumoIcon name="Sparkles" size={16} />
+                                        </span>
+                                        <div className="flex flex-column flex-1 min-w-0 text-left">
+                                            <span className="text-sm font-medium">{c('collider_2025: Action')
+                                                .t`Skills`}</span>
+                                            {isGuest && (
+                                                <span className="text-xs color-hint">{c('collider_2025:Placeholder')
+                                                    .t`Sign in required`}</span>
+                                            )}
+                                        </div>
+                                        {!isGuest && <LumoIcon name="ChevronRight" size={16} />}
+                                    </div>
+                                </DropdownMenuButton>
+                            </div>
+                        )}
+
+                        {(visibleToolMenuItems.length > 0 || showSkills) && showToolToggles && (
+                            <hr className="my-1 w-custom mx-auto" style={{ '--w-custom': '90%' }} />
+                        )}
+
+                        {showImageUpsellFooter && (
+                            <div className="tool-menu-upsell flex flex-column gap-3 p-3 border-top border-weak">
+                                <p className="m-0 text-sm color-norm">
+                                    {c('collider_2025: Info')
+                                        .t`Upgrade for more image generations and access to advanced models.`}
+                                </p>
+                                <BasicUpgradeButton
+                                    className="shrink-0"
+                                    path={imageUpsellConfig?.path}
+                                    onClick={imageUpsellOnClick}
+                                />
+                            </div>
+                        )}
+
+                        {isArtifactsViewFlagEnabled && (
+                            /* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
+                            <div
+                                className={clsx(
+                                    'flex flex-row flex-nowrap items-center justify-space-between px-4 py-2 w-full gap-4',
+                                    isGuest && 'tool-menu-item--sign-in-required'
+                                )}
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                <div className="flex items-center gap-3">
+                                    <LumoIcon name="FileText" size={16} />
+                                    <div className="flex flex-column">
+                                        <span className="text-sm font-medium flex items-center gap-2">
+                                            {c('collider_2025: Action').t`Creations`}
+                                            {showArtifactNewLabel ? <NewLabel /> : null}
+                                        </span>
+                                        <span className="text-xs color-weak">
+                                            {isGuest
+                                                ? c('collider_2025:Placeholder').t`Sign in required`
+                                                : c('collider_2025: Info').t`For this chat`}
+                                        </span>
+                                    </div>
+                                </div>
+                                <Toggle
+                                    id="artifact-creation-toggle"
+                                    checked={isGuest ? false : isArtifactCreationEnabled}
+                                    disabled={isGuest}
+                                    onChange={handleArtifactCreationToggleChange}
+                                />
+                            </div>
+                        )}
+
+                        {isToolsFlagEnabled && (
+                            /* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
+                            <div
+                                className="flex flex-row flex-nowrap items-center justify-space-between px-4 py-2 w-full gap-4"
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                <div className="flex items-center gap-3">
+                                    <LumoIcon name="Globe" size={16} />
+                                    <div className="flex flex-column">
+                                        <span className="text-sm font-medium">{c('collider_2025: Action')
+                                            .t`Web search`}</span>
+                                    </div>
+                                </div>
+                                <Toggle
+                                    id="web-search-toggle"
+                                    checked={isWebSearchButtonToggled}
+                                    onChange={handleWebSearchToggleChange}
+                                />
+                            </div>
+                        )}
+
+                        {showConnectors && (
+                            <DropdownMenuButton className="justify-start" onClick={() => setView('connectors')}>
                                 <div className="flex items-center gap-3 w-full">
                                     <span className="shrink-0 flex">
-                                        <LumoIcon name="Sparkles" size={16} />
+                                        <LumoIcon name="Blocks" size={16} />
                                     </span>
-                                    <div className="flex flex-column flex-1 min-w-0 text-left">
-                                        <span className="text-sm font-medium">{c('collider_2025: Action')
-                                            .t`Skills`}</span>
-                                        {isGuest && (
-                                            <span className="text-xs color-hint">{c('collider_2025:Placeholder')
-                                                .t`Sign in required`}</span>
-                                        )}
-                                    </div>
-                                    {!isGuest && <LumoIcon name="ChevronRight" size={16} />}
+                                    <span className="text-sm font-medium flex-1 text-left">{c('collider_2025: Action')
+                                        .t`Connectors`}</span>
+                                    <LumoIcon name="ChevronRight" size={16} />
                                 </div>
                             </DropdownMenuButton>
-                        </div>
-                    )}
-
-                    {(visibleToolMenuItems.length > 0 || showSkills) && showToolToggles && (
-                        <hr className="my-1 w-custom mx-auto" style={{ '--w-custom': '90%' }} />
-                    )}
-
-                    {showImageUpsellFooter && (
-                        <div className="tool-menu-upsell flex flex-column gap-3 p-3 border-top border-weak">
-                            <p className="m-0 text-sm color-norm">
-                                {c('collider_2025: Info')
-                                    .t`Upgrade for more image generations and access to advanced models.`}
-                            </p>
-                            <BasicUpgradeButton
-                                className="shrink-0"
-                                path={imageUpsellConfig?.path}
-                                onClick={imageUpsellOnClick}
-                            />
-                        </div>
-                    )}
-
-                    {isArtifactsViewFlagEnabled && (
-                        /* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
-                        <div
-                            className={clsx(
-                                'flex flex-row flex-nowrap items-center justify-space-between px-4 py-2 w-full gap-4',
-                                isGuest && 'tool-menu-item--sign-in-required'
-                            )}
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            <div className="flex items-center gap-3">
-                                <LumoIcon name="FileText" size={16} />
-                                <div className="flex flex-column">
-                                    <span className="text-sm font-medium flex items-center gap-2">
-                                        {c('collider_2025: Action').t`Creations`}
-                                        {showArtifactNewLabel ? <NewLabel /> : null}
-                                    </span>
-                                    <span className="text-xs color-weak">
-                                        {isGuest
-                                            ? c('collider_2025:Placeholder').t`Sign in required`
-                                            : c('collider_2025: Info').t`For this chat`}
-                                    </span>
-                                </div>
-                            </div>
-                            <Toggle
-                                id="artifact-creation-toggle"
-                                checked={isGuest ? false : isArtifactCreationEnabled}
-                                disabled={isGuest}
-                                onChange={handleArtifactCreationToggleChange}
-                            />
-                        </div>
-                    )}
-
-                    {isToolsFlagEnabled && (
-                        /* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
-                        <div
-                            className="flex flex-row flex-nowrap items-center justify-space-between px-4 py-2 w-full gap-4"
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            <div className="flex items-center gap-3">
-                                <LumoIcon name="Globe" size={16} />
-                                <div className="flex flex-column">
-                                    <span className="text-sm font-medium">{c('collider_2025: Action')
-                                        .t`Web search`}</span>
-                                </div>
-                            </div>
-                            <Toggle
-                                id="web-search-toggle"
-                                checked={isWebSearchButtonToggled}
-                                onChange={handleWebSearchToggleChange}
-                            />
-                        </div>
-                    )}
-
-                    {showConnectors && (
-                        <DropdownMenuButton className="justify-start" onClick={() => setView('connectors')}>
-                            <div className="flex items-center gap-3 w-full">
-                                <span className="shrink-0 flex">
-                                    <LumoIcon name="Blocks" size={16} />
-                                </span>
-                                <span className="text-sm font-medium flex-1 text-left">{c('collider_2025: Action')
-                                    .t`Connectors`}</span>
-                                <LumoIcon name="ChevronRight" size={16} />
-                            </div>
-                        </DropdownMenuButton>
-                    )}
-                </>
+                        )}
+                    </>
+                )}
+            </MenuDropdown>
+            {createSkillModal.render && (
+                <SkillEditorModal
+                    {...createSkillModal.modalProps}
+                    onSaved={(skill) => {
+                        const handle = getSkillHandle(skill.name);
+                        if (handle && skill.enabled) dispatch(insertSkillCommand(handle));
+                    }}
+                />
             )}
-        </MenuDropdown>
+            {skillLimitModal.render && <SkillLimitModal {...skillLimitModal.modalProps} {...skillLimitModalState} />}
+        </>
     );
 };

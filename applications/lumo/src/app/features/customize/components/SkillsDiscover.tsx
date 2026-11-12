@@ -1,4 +1,4 @@
-import { useId, useState } from 'react';
+import { useId, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -6,7 +6,11 @@ import { Button } from '@proton/atoms/Button/Button';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
+import { useElementSizeMatch } from '../../../hooks/useElementSizeMatch';
+import { shouldShowColumnLayout } from '../../schedules/components/utils/layout';
 import type { ProtonPlugin, ProtonPluginGroup } from '../../skills/protonCatalog';
+import type { SkillUpgradePath } from '../../skills/useSkillLimit';
+import { PluginsUpsellHero } from './PluginsUpsellHero';
 import { ProtonPluginCard } from './ProtonPluginCard';
 import { ProtonPluginPreviewModal } from './ProtonPluginPreviewModal';
 
@@ -17,6 +21,13 @@ interface SkillsDiscoverProps {
     addingId: string | undefined;
     onAdd: (plugin: ProtonPlugin) => void;
     onOpen: (skillId: string) => void;
+    onUpgrade: () => void;
+    /** When false, skill sets are shown with an upgrade action instead of Add. */
+    canAddSkillSets: boolean;
+    /** Hides the upgrade hero while the plan is loading. */
+    isPlanLoading: boolean;
+    maxActiveSkills: number;
+    upgradePath: SkillUpgradePath;
 }
 
 const getGroups = (): { id: ProtonPluginGroup; title: string; description: string }[] => [
@@ -41,16 +52,31 @@ const getCatalogueSummary = (plugins: ProtonPlugin[]) => {
     const pluginCount = plugins.length;
     const skillCount = plugins.reduce((total, plugin) => total + plugin.skills.length, 0);
     const pluginText = c('collider_2025:Info').ngettext(
-        msgid`${pluginCount} plugin`,
-        `${pluginCount} plugins`,
+        msgid`${pluginCount} skill set`,
+        `${pluginCount} skill sets`,
         pluginCount
     );
     const skillText = c('collider_2025:Info').ngettext(msgid`${skillCount} skill`, `${skillCount} skills`, skillCount);
     return `${pluginText} · ${skillText}`;
 };
 
-export const SkillsDiscover = ({ plugins, addedSkillIds, addingId, onAdd, onOpen }: SkillsDiscoverProps) => {
+export const SkillsDiscover = ({
+    plugins,
+    addedSkillIds,
+    addingId,
+    onAdd,
+    onOpen,
+    onUpgrade,
+    canAddSkillSets,
+    isPlanLoading,
+    maxActiveSkills,
+    upgradePath,
+}: SkillsDiscoverProps) => {
     const headingId = useId();
+    const containerRef = useRef<HTMLElement>(null);
+    const enableColumnLayout = useElementSizeMatch(containerRef, shouldShowColumnLayout);
+    const columnCount = enableColumnLayout ? 1 : 2;
+    const showUpsell = !isPlanLoading && !canAddSkillSets;
     const previewModal = useModalStateObject();
     const [previewed, setPreviewed] = useState<ProtonPlugin>();
     const [filter, setFilter] = useState<ProtonPluginGroup | 'all'>('all');
@@ -60,7 +86,8 @@ export const SkillsDiscover = ({ plugins, addedSkillIds, addingId, onAdd, onOpen
         return {
             added: skillId !== undefined,
             adding: addingId === plugin.id,
-            onAdd: () => onAdd(plugin),
+            onAdd: canAddSkillSets ? () => onAdd(plugin) : undefined,
+            onUpgrade: showUpsell ? onUpgrade : undefined,
             onOpen: () => skillId && onOpen(skillId),
         };
     };
@@ -74,39 +101,43 @@ export const SkillsDiscover = ({ plugins, addedSkillIds, addingId, onAdd, onOpen
     const filters = [{ id: 'all' as const, title: c('collider_2025:Action').t`All` }, ...groups];
 
     return (
-        <section className="flex flex-column flex-nowrap gap-8" aria-labelledby={headingId}>
-            <header className="customize-discover-hero flex flex-column flex-nowrap gap-4 rounded-xl p-6">
-                <div className="flex flex-column flex-nowrap gap-2">
-                    <span className="text-xs text-semibold text-uppercase color-weak">
-                        {getCatalogueSummary(plugins)}
-                    </span>
-                    <h2 className="m-0 text-3xl text-bold" id={headingId}>
-                        {c('collider_2025:Title').t`Plugins from ${BRAND_NAME}`}
-                    </h2>
-                    <p className="m-0 color-weak max-w-custom" style={{ '--max-w-custom': '36rem' }}>
-                        {c('collider_2025:Info')
-                            .t`Each plugin adds a set of skills. Use them with / in any chat, or let ${LUMO_SHORT_APP_NAME} pick the right one for you.`}
-                    </p>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                    {filters.map((option) => {
-                        const active = filter === option.id;
-                        return (
-                            <Button
-                                key={option.id}
-                                size="small"
-                                pill
-                                shape={active ? 'solid' : 'outline'}
-                                color={active ? 'norm' : 'weak'}
-                                aria-pressed={active}
-                                onClick={() => setFilter(option.id)}
-                            >
-                                {option.title}
-                            </Button>
-                        );
-                    })}
-                </div>
-            </header>
+        <section ref={containerRef} className="flex flex-column flex-nowrap gap-8" aria-labelledby={headingId}>
+            {showUpsell ? (
+                <PluginsUpsellHero headingId={headingId} maxActiveSkills={maxActiveSkills} upgradePath={upgradePath} />
+            ) : (
+                <header className="customize-discover-hero flex flex-column flex-nowrap gap-4 rounded-xl p-6">
+                    <div className="flex flex-column flex-nowrap gap-2">
+                        <span className="text-xs text-semibold text-uppercase color-weak">
+                            {getCatalogueSummary(plugins)}
+                        </span>
+                        <h2 className="m-0 text-3xl text-bold" id={headingId}>
+                            {c('collider_2025:Title').t`Skill sets from ${BRAND_NAME}`}
+                        </h2>
+                        <p className="m-0 color-weak max-w-custom" style={{ '--max-w-custom': '36rem' }}>
+                            {c('collider_2025:Info')
+                                .t`Each skill set brings together related skills. Use them with / in any chat, or let ${LUMO_SHORT_APP_NAME} pick the right one for you.`}
+                        </p>
+                    </div>
+                </header>
+            )}
+            <div className="flex flex-wrap gap-2">
+                {filters.map((option) => {
+                    const active = filter === option.id;
+                    return (
+                        <Button
+                            key={option.id}
+                            size="small"
+                            pill
+                            shape={active ? 'solid' : 'outline'}
+                            color={active ? 'norm' : 'weak'}
+                            aria-pressed={active}
+                            onClick={() => setFilter(option.id)}
+                        >
+                            {option.title}
+                        </Button>
+                    );
+                })}
+            </div>
 
             {sections.length === 0 ? (
                 <p className="m-0 text-sm color-weak">{c('collider_2025:Info').t`No skills match your search.`}</p>
@@ -123,7 +154,10 @@ export const SkillsDiscover = ({ plugins, addedSkillIds, addingId, onAdd, onOpen
                             </h3>
                             <span className="text-sm color-weak">{section.description}</span>
                         </div>
-                        <div className="customize-discover-grid">
+                        <div
+                            className="customize-discover-grid"
+                            style={{ gridTemplateColumns: `repeat(${columnCount}, minmax(0, 1fr))` }}
+                        >
                             {section.plugins.map((plugin) => (
                                 <ProtonPluginCard
                                     key={plugin.id}

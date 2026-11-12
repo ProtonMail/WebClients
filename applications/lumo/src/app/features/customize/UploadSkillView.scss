@@ -1,8 +1,8 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
 .upload-skill-dropzone {
-	min-block-size: rem(180);
-	padding-block: rem(32);
+	min-block-size: rem(240);
+	padding-block: rem(40);
 	padding-inline: rem(24);
 	border: 1px dashed var(--border-norm);
 	border-radius: rem(12);
@@ -19,14 +19,47 @@
 		background-color: var(--interaction-default-hover);
 	}
 
+	&.is-dragging {
+		border-style: solid;
+		background-color: rgb(var(--primary-rgb) / 0.06);
+	}
+
 	&.is-dragging .upload-skill-dropzone-icon {
-		color: var(--interaction-norm);
+		transform: translateY(#{rem(-4)});
 	}
 }
 
 .upload-skill-dropzone-icon {
-	inline-size: rem(48);
-	block-size: rem(48);
+	inline-size: rem(56);
+	block-size: rem(56);
+	border-radius: rem(16);
+	background-color: rgb(var(--primary-rgb) / 0.1);
+	color: var(--primary);
+	transition: transform 0.15s ease;
+}
+
+.upload-skill-format {
+	padding-block: rem(2);
+	padding-inline: rem(8);
+	border-radius: rem(6);
+	background-color: var(--background-weak);
+	color: var(--text-weak);
+}
+
+.upload-skill-kinds {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: rem(12);
+
+	@media (max-width: 52em) {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+.upload-skill-kind-icon {
+	inline-size: rem(32);
+	block-size: rem(32);
+	border-radius: rem(8);
 	background-color: var(--background-weak);
 	color: var(--text-norm);
 }
@@ -37,7 +70,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.upload-skill-dropzone {
+	.upload-skill-dropzone,
+	.upload-skill-dropzone-icon {
 		transition: none;
+	}
+
+	.upload-skill-dropzone.is-dragging .upload-skill-dropzone-icon {
+		transform: none;
 	}
 }

@@ -199,12 +199,13 @@ export const getSkillCheckFindingText = (kind: SkillCheckFindingKind): { title: 
         case 'local-mcp-server':
             return {
                 title: c('collider_2025:Info').t`Asks to run a local program`,
-                detail: c('collider_2025:Info').t`The plugin sets up a connector that runs a program on your computer.`,
+                detail: c('collider_2025:Info')
+                    .t`The skill set sets up a connector that runs a program on your computer.`,
             };
         case 'insecure-mcp-server':
             return {
                 title: c('collider_2025:Info').t`Unencrypted connector`,
-                detail: c('collider_2025:Info').t`The plugin sets up a connector that doesn't use HTTPS.`,
+                detail: c('collider_2025:Info').t`The skill set sets up a connector that doesn't use HTTPS.`,
             };
     }
 };

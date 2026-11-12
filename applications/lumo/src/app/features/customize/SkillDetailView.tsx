@@ -7,6 +7,7 @@ import { c, msgid } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import {
@@ -22,12 +23,15 @@ import { LumoIcon } from '../../components/LumoIcon/LumoIcon';
 import { ProjectIcon } from '../../components/ProjectIcon/ProjectIcon';
 import { LumoLayoutWithDrawer } from '../../layouts/LumoLayout';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
+import { insertSkillCommand } from '../../redux/slices/composerActions';
 import { triggerFileDownload } from '../../util/triggerFileDownload';
 import { DEFAULT_AGENT_ICON } from '../agents/constants';
 import { DeleteSkillPrompt } from '../skills/components/DeleteSkillPrompt';
 import { SkillCodeView, type SkillCodeViewMode } from '../skills/components/SkillCodeView';
 import { SkillEditorModal } from '../skills/components/SkillEditorModal';
 import { SkillFileTree } from '../skills/components/SkillFileTree';
+import { SkillLimitModal } from '../skills/components/SkillLimitModal';
+import { SkillLimitWarning } from '../skills/components/SkillLimitWarning';
 import {
     type WorkspaceFile,
     buildSkillArchive,
@@ -40,6 +44,7 @@ import { findSharedHandles } from '../skills/skillInvocation';
 import { getSkillHandle } from '../skills/skillMarkdown';
 import { deleteSkill, loadSkillFiles, setSkillEnabled, setSubSkillEnabled } from '../skills/skillsThunks';
 import { SKILL_MARKDOWN_PATH, type Skill, type SkillFileDraft } from '../skills/types';
+import { useSkillLimit } from '../skills/useSkillLimit';
 import { selectSkillById, useSkills } from '../skills/useSkills';
 import { CustomizePage } from './components/CustomizePage';
 import { SkillConnectorsAside, SkillConnectorsTab } from './components/SkillConnectors';
@@ -78,6 +83,7 @@ export const SkillDetailView = () => {
     const { createNotification } = useNotifications();
     const editorModal = useModalStateObject();
     const deletePrompt = useModalStateObject();
+    const skillLimit = useSkillLimit();
 
     const [tab, setTab] = useState<DetailTab>('overview');
     const [files, setFiles] = useState<SkillFileDraft[] | undefined>();
@@ -187,6 +193,13 @@ export const SkillDetailView = () => {
         }
     };
 
+    const handle = getSkillHandle(skill.name);
+
+    const handleStartChat = () => {
+        dispatch(insertSkillCommand(handle));
+        history.push('/');
+    };
+
     const handleDelete = async () => {
         await dispatch(deleteSkill(skill.id));
         history.push('/customize');
@@ -243,13 +256,16 @@ export const SkillDetailView = () => {
                     <Toggle
                         id="skill-detail-enabled"
                         checked={skill.enabled}
-                        onChange={() => dispatch(setSkillEnabled({ id: skill.id, enabled: !skill.enabled }))}
+                        onChange={() => {
+                            if (!skill.enabled && !skillLimit.checkCanEnableSkill(skill)) return;
+                            void dispatch(setSkillEnabled({ id: skill.id, enabled: !skill.enabled }));
+                        }}
                     />
                 </label>
                 <p className="m-0 text-sm color-weak">
                     {isPlugin
                         ? c('collider_2025:Info')
-                              .t`Turning off the plugin turns off all of its skills. ${LUMO_SHORT_APP_NAME} won't use them, but they stay saved.`
+                              .t`Turning off the skill set turns off all of its skills. ${LUMO_SHORT_APP_NAME} won't use them, but they stay saved.`
                         : c('collider_2025:Info')
                               .t`Turned-off skills stay saved but ${LUMO_SHORT_APP_NAME} won't use them.`}
                 </p>
@@ -295,7 +311,7 @@ export const SkillDetailView = () => {
                             ))}
                         </nav>
                         {/\.(md|markdown)$/i.test(activeFile.path) && (
-                            <div className="skill-detail__mode-toggle flex flex-nowrap shrink-0" role="group">
+                            <fieldset className="skill-detail__mode-toggle flex flex-nowrap shrink-0 m-0 border-none min-w-0">
                                 {(
                                     [
                                         ['preview', 'Eye', c('collider_2025:Action').t`Preview`],
@@ -316,7 +332,7 @@ export const SkillDetailView = () => {
                                         {label}
                                     </button>
                                 ))}
-                            </div>
+                            </fieldset>
                         )}
                     </div>
                     <div className="flex-1 min-h-0">
@@ -345,9 +361,10 @@ export const SkillDetailView = () => {
                     enabled={subSkill.enabled}
                     locked={!skill.enabled}
                     onOpen={() => openFile(getSubSkillMarkdownPath(subSkill))}
-                    onEnabledChange={(enabled) =>
-                        dispatch(setSubSkillEnabled({ id: skill.id, path: subSkill.path, enabled }))
-                    }
+                    onEnabledChange={(enabled) => {
+                        if (enabled && !skillLimit.checkCanEnableSubSkill(skill)) return;
+                        void dispatch(setSubSkillEnabled({ id: skill.id, path: subSkill.path, enabled }));
+                    }}
                 />
             ))}
         </ul>
@@ -399,7 +416,34 @@ export const SkillDetailView = () => {
                     <Button className="shrink-0" onClick={() => editorModal.openModal(true)}>
                         {c('collider_2025:Action').t`Edit`}
                     </Button>
+                    {!isPlugin && handle && (
+                        <Tooltip
+                            title={
+                                skill.enabled
+                                    ? c('collider_2025:Info').t`Opens a new chat with /${handle} ready to go`
+                                    : c('collider_2025:Info').t`Turn on this skill to use it in a chat`
+                            }
+                        >
+                            <span className="shrink-0">
+                                <Button color="norm" disabled={!skill.enabled} onClick={handleStartChat}>
+                                    <span className="flex flex-nowrap items-center gap-2">
+                                        <LumoIcon name="MessageSquarePlus" size={16} />
+                                        {c('collider_2025:Action').t`Start a chat`}
+                                    </span>
+                                </Button>
+                            </span>
+                        </Tooltip>
+                    )}
                 </header>
+
+                <SkillLimitWarning
+                    isOverLimit={skillLimit.isOverLimit}
+                    hasUnavailableSkillSets={skillLimit.hasUnavailableSkillSets}
+                    activeSkillCount={skillLimit.activeSkillCount}
+                    maxActiveSkills={skillLimit.maxActiveSkills}
+                    upgradePath={skillLimit.upgradePath}
+                    onUpgrade={() => skillLimit.openUpgradeModal('limit')}
+                />
 
                 <div className="skill-detail__tabs flex flex-nowrap gap-6" role="tablist">
                     {tabs.map(([id, label]) => (
@@ -422,6 +466,9 @@ export const SkillDetailView = () => {
                 {tab === 'connectors' && <SkillConnectorsTab matches={connectorMatches} isDesktop={isDesktop} />}
             </CustomizePage>
             {editorModal.render && <SkillEditorModal {...editorModal.modalProps} skillId={skill.id} />}
+            {skillLimit.skillLimitModal.render && (
+                <SkillLimitModal {...skillLimit.skillLimitModal.modalProps} {...skillLimit.skillLimitModalState} />
+            )}
             {deletePrompt.render && (
                 <DeleteSkillPrompt {...deletePrompt.modalProps} skillName={skill.name} onConfirm={handleDelete} />
             )}

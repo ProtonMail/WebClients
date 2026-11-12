@@ -177,7 +177,7 @@ export const SkillConnectorsTab = ({ matches, isDesktop }: { matches: SkillConne
             {!isDesktop && <DesktopConnectorsNotice />}
             <p className="m-0 text-sm color-weak">
                 {c('collider_2025:Info')
-                    .t`This plugin works best with these kinds of tools. ${LUMO_SHORT_APP_NAME} only uses the connectors you add yourself.`}
+                    .t`This skill set works best with these kinds of tools. ${LUMO_SHORT_APP_NAME} only uses the connectors you add yourself.`}
                 {isDesktop && (
                     <>
                         {' '}
@@ -254,9 +254,9 @@ export const SkillConnectorsAside = ({
             <h2 className="text-sm color-weak text-normal m-0 flex flex-nowrap items-center gap-1">
                 {c('collider_2025:Title').t`Connectors & tools`}
                 <Tooltip title={dataNote}>
-                    <span className="flex" tabIndex={0} aria-label={dataNote}>
+                    <button type="button" className="flex p-0" aria-label={dataNote}>
                         <LumoIcon aria-hidden name="Info" size={14} />
-                    </span>
+                    </button>
                 </Tooltip>
             </h2>
             {isDesktop && (

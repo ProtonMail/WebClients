@@ -1,7 +1,4 @@
 @use '~@proton/styles/scss/lib' as *;
-@use '~@proton/styles/scss/lib/include-media' as im;
-im.$breakpoints: $breakpoints-product;
-im.$media-expressions: $media-expressions;
 
 .customize-discover-hero {
 	border: 1px solid var(--border-weak);
@@ -14,15 +11,6 @@ im.$media-expressions: $media-expressions;
 .customize-discover-grid {
 	display: grid;
 	gap: rem(16);
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-
-	> :last-child:nth-child(odd) {
-		grid-column: 1 / -1;
-	}
-
-	@include im.media('<=small') {
-		grid-template-columns: minmax(0, 1fr);
-	}
 }
 
 .customize-plugin-icon {

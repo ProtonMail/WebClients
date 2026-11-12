@@ -7,6 +7,7 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 
+import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
 import type { ProtonPlugin } from '../../skills/protonCatalog';
 import { PluginExample, PluginIcon, getPluginMeta } from './ProtonPluginCard';
 
@@ -14,7 +15,8 @@ interface ProtonPluginPreviewModalProps extends ModalStateProps {
     plugin: ProtonPlugin;
     added: boolean;
     adding: boolean;
-    onAdd: () => void;
+    onAdd?: () => void;
+    onUpgrade?: () => void;
     onOpen: () => void;
 }
 
@@ -23,6 +25,7 @@ export const ProtonPluginPreviewModal = ({
     added,
     adding,
     onAdd,
+    onUpgrade,
     onOpen,
     ...modalProps
 }: ProtonPluginPreviewModalProps) => (
@@ -52,11 +55,24 @@ export const ProtonPluginPreviewModal = ({
                 <Button color="norm" onClick={onOpen}>
                     {c('collider_2025:Action').t`Open`}
                 </Button>
-            ) : (
+            ) : onAdd ? (
                 <Button color="norm" loading={adding} onClick={onAdd}>
                     {c('collider_2025:Action').t`Add`}
                 </Button>
-            )}
+            ) : onUpgrade ? (
+                <Button
+                    color="norm"
+                    onClick={() => {
+                        modalProps.onClose?.();
+                        onUpgrade();
+                    }}
+                >
+                    <span className="flex flex-nowrap items-center gap-2">
+                        <LumoIcon name="Lock" size={16} />
+                        {c('collider_2025:Action').t`Upgrade to add`}
+                    </span>
+                </Button>
+            ) : null}
         </ModalTwoFooter>
     </ModalTwo>
 );
