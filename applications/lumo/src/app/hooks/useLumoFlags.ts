@@ -74,6 +74,7 @@ export const useLumoFlags = () => {
     const maxAvailableFree = useFlag('LumoMaxAvailableFree');
     const maxAvailableGuest = useFlag('LumoMaxAvailableGuest');
     const apertusModelAvailable = useFlag('LumoApertusModel');
+    const answerNow = useFlag('LumoAnswerNow');
     const previewModelAvailable = useFlag('LumoPreviewModel');
     const dictationV2 = useFlag('LumoDictationV2');
     const schedules = useFlag('LumoSchedules');
@@ -116,6 +117,7 @@ export const useLumoFlags = () => {
         apertusModelAvailable,
         previewModelAvailable,
         dictationV2,
+        answerNow,
         schedules,
         createScheduleTool,
         moveToProject,

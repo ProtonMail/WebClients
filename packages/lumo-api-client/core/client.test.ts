@@ -665,3 +665,48 @@ describe('callAssistant abort', () => {
         expect(await tokensAfterAbortOnFirst()).toEqual([]);
     });
 });
+
+describe('auxiliary generation isolation', () => {
+    it.each(['title', 'suggested_questions'] as const)(
+        'does not forward %s completion as main completion',
+        async (target) => {
+            let finishMain!: () => void;
+            const auxiliaryContent = new Promise<void>((resolve) => {
+                finishMain = resolve;
+            });
+            mockedCallChatEndpoint.mockImplementation(async (_api, payload) => {
+                if ((payload as ChatCompletionsRequest).lumo?.target === 'message') {
+                    await auxiliaryContent;
+                    return proseResponse('Main response');
+                }
+                return proseResponse('Auxiliary response');
+            });
+            const chunkCallback = jest.fn((message) => {
+                if (message.type === 'token_data' && message.target === target) {
+                    finishMain();
+                }
+            });
+            await newClient().callAssistant(api, userTurns, {
+                generateTitle: target === 'title',
+                enableSuggestedQuestions: target === 'suggested_questions',
+                chunkCallback,
+            });
+            const events = chunkCallback.mock.calls.map(([message]) => message);
+            expect(events.filter((message) => message.type === 'done')).toEqual([{ type: 'done' }]);
+            expect(events).toContainEqual(
+                expect.objectContaining({
+                    type: 'token_data',
+                    target,
+                    content: 'Auxiliary response',
+                })
+            );
+            expect(events).toContainEqual(
+                expect.objectContaining({
+                    type: 'token_data',
+                    target: 'message',
+                    content: 'Main response',
+                })
+            );
+        }
+    );
+});

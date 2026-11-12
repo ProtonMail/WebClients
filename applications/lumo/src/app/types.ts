@@ -1,11 +1,13 @@
 import type { ToolImage } from '@proton/lumo-api-client/core/client-tools';
 import type { ScheduleDefinition, ScheduleRun } from '@proton/lumo-api-client/core/desktop-schedules';
+import type { AnswerNowPrompt } from '@proton/lumo-api-client/types-api';
 
 import { type ArtifactType, isArtifactType } from './components/Conversation/artifact/parseArtifacts';
 import { deriveDataEncryptionKey } from './crypto';
 import type { Base64, EncryptedData } from './crypto/encryptedData';
 import type { AesGcmCryptoKey } from './crypto/types';
 import type { ScheduleDetails } from './features/schedules/types';
+import type { ModelTier } from './providers/modelTierConstants';
 import type { ScheduleOutcome } from './services/schedules/types';
 import {
     type GenerationResponseMessage,
@@ -650,7 +652,9 @@ export type MessageUsage = {
     tokenEstimateVersion?: number;
 };
 
-export type Message = MessagePub & MessagePriv;
+type MessageExtra = { answerNowPrompt?: AnswerNowPrompt };
+
+export type Message = MessagePub & MessagePriv & MessageExtra;
 export type SerializedMessage = MessagePub & Partial<Encrypted> & LocalFlags;
 export type SerializedMessageMap = Record<MessageId, SerializedMessage>;
 
@@ -808,6 +812,7 @@ export function cleanMessage(message: Message): Message {
         artifactCreateModeActive,
         artifactRevisionTargetId,
         artifactManualEdit,
+        answerNowPrompt,
         usage,
     } = message;
     return {
@@ -838,6 +843,7 @@ export function cleanMessage(message: Message): Message {
         ...(artifactCreateModeActive !== undefined && { artifactCreateModeActive }),
         ...(artifactRevisionTargetId !== undefined && { artifactRevisionTargetId }),
         ...(artifactManualEdit !== undefined && { artifactManualEdit }),
+        ...(answerNowPrompt !== undefined && { answerNowPrompt }),
         ...(usage !== undefined && { usage }),
     };
 }
@@ -926,6 +932,8 @@ type ScheduleRunMetadata = {
 export type ConversationPriv = {
     title: string;
     scheduleRun?: ScheduleRunMetadata;
+    modelTier?: ModelTier;
+    answerNowUsed?: boolean;
     agentId?: string; // id of an active custom agent (see LumoUserSettings.customAgents)
     // Per-conversation override of LumoUserSettings.automaticArtifactCreation, set from the composer
     // tool menu. Undefined means the conversation follows the global default.
@@ -959,10 +967,12 @@ export function getConversationPub(c: ConversationPub): ConversationPub {
 }
 
 export function getConversationPriv(c: ConversationPriv): ConversationPriv {
-    const { title, agentId, artifactCreation, artifactAssets, scheduleRun } = c;
+    const { title, modelTier, answerNowUsed, agentId, artifactCreation, artifactAssets, scheduleRun } = c;
     return {
         title,
         ...(scheduleRun !== undefined && { scheduleRun }),
+        ...(modelTier !== undefined && { modelTier }),
+        ...(answerNowUsed !== undefined && { answerNowUsed }),
         ...(agentId && { agentId }),
         // Explicit `false` is meaningful (the user turned creation off for this chat), so don't drop it.
         ...(artifactCreation !== undefined && { artifactCreation }),
@@ -987,6 +997,8 @@ export function cleanConversation(conversation: Conversation): Conversation {
         createdAt,
         updatedAt,
         title,
+        modelTier,
+        answerNowUsed,
         agentId,
         artifactCreation,
         artifactAssets,
@@ -1002,6 +1014,8 @@ export function cleanConversation(conversation: Conversation): Conversation {
         updatedAt,
         title,
         ...(scheduleRun !== undefined && { scheduleRun }),
+        ...(modelTier !== undefined && { modelTier }),
+        ...(answerNowUsed !== undefined && { answerNowUsed }),
         ...(agentId && { agentId }),
         ...(artifactCreation !== undefined && { artifactCreation }),
         ...(artifactAssets !== undefined && { artifactAssets }),

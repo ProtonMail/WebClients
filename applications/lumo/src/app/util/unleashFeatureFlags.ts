@@ -2,6 +2,7 @@ import type { ChatCompletionsFeatureFlags } from '@proton/lumo-api-client/types-
 import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 
 const LUMO_FLAG_PREFIX = 'Lumo';
+const ANSWER_NOW_THRESHOLD_FLAGS = new Set(['LumoAnswerNowQuietThreshold', 'LumoAnswerNowFallback']);
 
 /** Unleash uses these variant names when there is no A/B arm or the toggle is off. */
 const NEUTRAL_VARIANT_NAMES = new Set(['default', 'disabled']);
@@ -18,14 +19,14 @@ type UnleashToggleSnapshot = {
 };
 
 /**
- * Maps one Unleash toggle to a single string for observability.
+ * Serializes one Unleash toggle for chat completion configuration and metrics.
  *
  * - Off → `"false"`.
  * - On with no experiment arm or payload → `"true"` (typical Lumo boolean flag).
  * - On with a named variant (A/B) → the variant name (e.g. `"A"`).
  * - On with a payload → payload string, or `"<variant>|<payload>"` when both matter.
  */
-export const serializeUnleashToggleForObservability = (toggle: UnleashToggleSnapshot): string => {
+export const serializeUnleashToggle = (toggle: UnleashToggleSnapshot): string => {
     if (!toggle.enabled) {
         return 'false';
     }
@@ -34,6 +35,9 @@ export const serializeUnleashToggleForObservability = (toggle: UnleashToggleSnap
     const payloadValue = toggle.variant?.payload?.value?.trim();
 
     if (payloadValue) {
+        if (ANSWER_NOW_THRESHOLD_FLAGS.has(toggle.name)) {
+            return payloadValue;
+        }
         if (variantName && !NEUTRAL_VARIANT_NAMES.has(variantName)) {
             return `${variantName}|${payloadValue}`;
         }
@@ -62,7 +66,7 @@ export const getLumoFeatureFlagsForChatCompletions = (): ChatCompletionsFeatureF
         if (!toggle.name.startsWith(LUMO_FLAG_PREFIX)) {
             continue;
         }
-        flags[toggle.name] = serializeUnleashToggleForObservability(toggle);
+        flags[toggle.name] = serializeUnleashToggle(toggle);
     }
 
     return flags;

@@ -40,6 +40,7 @@ import {
     finishMessage,
     pushMessageRequest,
     recordMessageUsage,
+    setAnswerNowPrompt,
     setSuggestedQuestions,
     setToolCall,
     setToolResult,
@@ -52,7 +53,7 @@ import { syncArtifactAssets } from '../services/generation/syncArtifactAssets';
 import { applyUsageFromStreamMessage } from '../services/usageLimitsStore';
 import { ConversationStatus, Role } from '../types';
 import { CONTEXT_LENGTH_EXCEEDED_CODE } from '../types-api';
-import { getLumoFeatureFlagsForChatCompletions } from '../util/unleashFeatureFlagsForObservability';
+import { getLumoFeatureFlagsForChatCompletions } from '../util/unleashFeatureFlags';
 import { createImageAttachment, generateImageMarkdown } from './imageAttachment';
 
 /**
@@ -158,7 +159,32 @@ export function sendMessageWithRedux(
                     if (message.type !== 'token_data' || message.target !== 'message') {
                         flushContent();
                     }
+                    if (
+                        messageId &&
+                        getState().messages[messageId]?.answerNowPrompt &&
+                        ((['ingesting', 'model', 'token_data'].includes(message.type) &&
+                            'target' in message &&
+                            (message.target === 'message' || message.target === 'reasoning')) ||
+                            [
+                                'server_tool_call',
+                                'server_tool_result',
+                                'image_data',
+                                'done',
+                                'error',
+                                'timeout',
+                                'rejected',
+                                'harmful',
+                                'tool-error',
+                            ].includes(message.type))
+                    ) {
+                        dispatch(setAnswerNowPrompt({ messageId, prompt: undefined }));
+                    }
                     switch (message.type) {
+                        case 'answer_now_prompt':
+                            if (messageId) {
+                                dispatch(setAnswerNowPrompt({ messageId, prompt: message.prompt }));
+                            }
+                            break;
                         case 'tool-error':
                             // The model reported a context-window overflow mid-stream. Surface a
                             // dedicated, recoverable error so the orchestration layer can compact
@@ -555,6 +581,9 @@ export function sendMessageWithRedux(
             throw error;
         } finally {
             flushContent();
+            if (messageId && getState().messages[messageId]?.answerNowPrompt) {
+                dispatch(setAnswerNowPrompt({ messageId, prompt: undefined }));
+            }
         }
     };
 }

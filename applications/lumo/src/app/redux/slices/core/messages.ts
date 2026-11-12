@@ -65,6 +65,9 @@ export const appendReasoning = createAction('lumo/message/appendReasoning', prep
 export const setToolCall = createAction('lumo/message/setToolCall', prepareAutoBatched<ChunkAction>());
 export const setToolResult = createAction<SetToolResultAction>('lumo/message/setToolResult');
 export const setSuggestedQuestions = createAction<SetSuggestedQuestionsAction>('lumo/message/setSuggestedQuestions');
+export const setAnswerNowPrompt = createAction<{ messageId: MessageId; prompt: Message['answerNowPrompt'] }>(
+    'lumo/message/setAnswerNowPrompt'
+);
 export const setMessageUsage = createAction<SetMessageUsageAction>('lumo/message/setUsage');
 export const addImageAttachment = createAction<AddImageAttachmentAction>('lumo/message/addImageAttachment');
 export const finishMessage = createAction<FinishMessageAction>('lumo/message/finish');
@@ -196,6 +199,12 @@ const messagesReducer = createReducer<MessageMap>(EMPTY_MESSAGE_MAP, (builder) =
                 return;
             }
             message.suggestedQuestions = questions;
+        })
+        .addCase(setAnswerNowPrompt, (state, action) => {
+            const message = state[action.payload.messageId];
+            if (message) {
+                message.answerNowPrompt = action.payload.prompt;
+            }
         })
         .addCase(setMessageUsage, (state, action) => {
             const { messageId, usage } = action.payload;

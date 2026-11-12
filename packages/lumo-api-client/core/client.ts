@@ -116,6 +116,7 @@ export class LumoApiClient {
             enableExternalTools = false,
             enableImageTools = false,
             enableReasoning = false,
+            enableAnswerNow = false,
             modelTier = 'auto',
             enableSuggestedQuestions = false,
             enableDesktopTools = this.config.enableDesktopTools,
@@ -238,6 +239,7 @@ export class LumoApiClient {
                         enableReasoning,
                         modelTier,
                         target: 'message',
+                        enableAnswerNow,
                         responseFormat,
                         clientTools,
                         serverTools,
@@ -260,7 +262,16 @@ export class LumoApiClient {
                     responseContext,
                     roundChunkCallback,
                     undefined,
-                    { target: 'message', modelTier, responseFormat, clientTools, serverTools, featureFlags, clientType }
+                    {
+                        target: 'message',
+                        modelTier,
+                        enableAnswerNow,
+                        responseFormat,
+                        clientTools,
+                        serverTools,
+                        featureFlags,
+                        clientType,
+                    }
                 );
                 finalStatus = status;
 
@@ -320,6 +331,7 @@ export class LumoApiClient {
             enableSmoothing?: boolean;
             target?: LumoCompletionTarget;
             modelTier?: LumoApiModelTier;
+            enableAnswerNow?: boolean;
             responseFormat?: ResponseFormat;
             clientTools?: ChatCompletionsFunctionTool[];
             serverTools?: ToolName[];
@@ -338,6 +350,7 @@ export class LumoApiClient {
         const postData = this.prepareChatEndpointPostData(request, {
             enableReasoning: Boolean(request.options?.reasoning),
             modelTier: options.modelTier,
+            enableAnswerNow: options.enableAnswerNow,
             target: options.target,
             responseFormat: options.responseFormat,
             clientTools: options.clientTools,
@@ -405,6 +418,7 @@ export class LumoApiClient {
         options: {
             enableReasoning: boolean;
             modelTier?: LumoApiModelTier;
+            enableAnswerNow?: boolean;
             target?: LumoCompletionTarget;
             responseFormat?: ResponseFormat;
             clientTools?: ChatCompletionsFunctionTool[];
@@ -416,6 +430,7 @@ export class LumoApiClient {
         return toChatCompletionsBody(request, {
             enableReasoning: options.enableReasoning,
             modelTier: options.modelTier,
+            enableAnswerNow: options.enableAnswerNow,
             target: options.target,
             responseFormat: options.responseFormat,
             clientTools: options.clientTools,
@@ -598,13 +613,28 @@ export class LumoApiClient {
             totalContentLength: 0,
         };
 
-        await this.runSseReceiveLoop(api, request, endpoint, signal, encryption, context, chunkCallback, undefined, {
-            enableSmoothing: false,
-            target,
-            modelTier,
-            featureFlags,
-            clientType,
-        });
+        const auxiliaryContentCallback: ChunkCallback = async (message) => {
+            if ('target' in message && message.target === target) {
+                await chunkCallback?.(message);
+            }
+        };
+        await this.runSseReceiveLoop(
+            api,
+            request,
+            endpoint,
+            signal,
+            encryption,
+            context,
+            auxiliaryContentCallback,
+            undefined,
+            {
+                enableSmoothing: false,
+                target,
+                modelTier,
+                featureFlags,
+                clientType,
+            }
+        );
     }
 
     private async getTools(

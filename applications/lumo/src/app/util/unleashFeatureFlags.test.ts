@@ -1,7 +1,4 @@
-import {
-    getLumoFeatureFlagsForChatCompletions,
-    serializeUnleashToggleForObservability,
-} from './unleashFeatureFlagsForObservability';
+import { getLumoFeatureFlagsForChatCompletions, serializeUnleashToggle } from './unleashFeatureFlags';
 
 jest.mock('@proton/unleash/standaloneClient', () => ({
     getStandaloneUnleashClient: jest.fn(),
@@ -9,10 +6,10 @@ jest.mock('@proton/unleash/standaloneClient', () => ({
 
 const { getStandaloneUnleashClient } = jest.requireMock('@proton/unleash/standaloneClient');
 
-describe('serializeUnleashToggleForObservability', () => {
+describe('serializeUnleashToggle', () => {
     it('serialises a disabled toggle as false', () => {
         expect(
-            serializeUnleashToggleForObservability({
+            serializeUnleashToggle({
                 name: 'LumoTooling',
                 enabled: false,
                 variant: { name: 'disabled' },
@@ -22,7 +19,7 @@ describe('serializeUnleashToggleForObservability', () => {
 
     it('serialises a typical enabled boolean flag as true', () => {
         expect(
-            serializeUnleashToggleForObservability({
+            serializeUnleashToggle({
                 name: 'LumoTooling',
                 enabled: true,
                 variant: { name: 'default' },
@@ -30,9 +27,29 @@ describe('serializeUnleashToggleForObservability', () => {
         ).toBe('true');
     });
 
+    it.each(['LumoAnswerNowQuietThreshold', 'LumoAnswerNowFallback'])(
+        'sends the numeric payload of %s without its variant name',
+        (name) => {
+            expect(
+                serializeUnleashToggle({
+                    name,
+                    enabled: true,
+                    variant: { name: 'Config', payload: { value: ' 12 ' } },
+                })
+            ).toBe('12');
+            expect(
+                serializeUnleashToggle({
+                    name,
+                    enabled: false,
+                    variant: { name: 'Config', payload: { value: '12' } },
+                })
+            ).toBe('false');
+        }
+    );
+
     it('serialises an A/B variant name when the toggle is on', () => {
         expect(
-            serializeUnleashToggleForObservability({
+            serializeUnleashToggle({
                 name: 'LumoExperiment',
                 enabled: true,
                 variant: { name: 'B' },
@@ -42,7 +59,7 @@ describe('serializeUnleashToggleForObservability', () => {
 
     it('serialises payload-only config', () => {
         expect(
-            serializeUnleashToggleForObservability({
+            serializeUnleashToggle({
                 name: 'LumoConfig',
                 enabled: true,
                 variant: { name: 'default', payload: { value: '{"limit":10}' } },
@@ -52,7 +69,7 @@ describe('serializeUnleashToggleForObservability', () => {
 
     it('combines variant name and payload when both are meaningful', () => {
         expect(
-            serializeUnleashToggleForObservability({
+            serializeUnleashToggle({
                 name: 'LumoConfig',
                 enabled: true,
                 variant: { name: 'Config', payload: { value: '{"limit":10}' } },

@@ -1,0 +1,63 @@
+.answer-now-notice .thinking-path-progress-dot {
+	background-color: var(--interaction-norm);
+}
+
+.answer-now-pill.button {
+	--button-default-background-color: var(--background-norm);
+	--button-default-text-color: var(--text-norm);
+	--button-default-border-color: var(--border-weak);
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	padding-block: 6px;
+	padding-inline: 12px 14px;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 20px;
+	white-space: nowrap;
+	box-shadow: 0 2px 4px rgb(0 0 0 / 0.08);
+
+	&:focus-visible {
+		outline: 2px solid var(--focus-outline);
+		outline-offset: 2px;
+	}
+}
+
+.answer-now-pill-container {
+	display: inline-flex;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition:
+		opacity 100ms ease-out,
+		visibility 0s linear 100ms;
+
+	&--visible {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+		animation: answer-now-pill-enter 150ms ease-out;
+		transition-delay: 0s;
+	}
+}
+
+@keyframes answer-now-pill-enter {
+	from {
+		opacity: 0;
+		transform: translateY(4px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.answer-now-pill-container {
+		animation: none;
+		transition: none;
+	}
+}

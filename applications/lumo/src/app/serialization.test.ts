@@ -1,3 +1,5 @@
+import type { AnswerNowPrompt } from '@proton/lumo-api-client/types-api';
+
 import { MAX_SERIALIZED_ASSET_BYTES } from './constants';
 import { base64ToMasterKey, decryptString, encryptString } from './crypto';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from './crypto/testing';
@@ -14,7 +16,7 @@ import {
 } from './serialization';
 import { createTestSchedule } from './tests/fixtures/schedules';
 import type { Conversation, Message, Space } from './types';
-import { Role, SpaceType, getSpaceDek } from './types';
+import { Role, SpaceType, cleanConversation, getSpaceDek } from './types';
 
 const mockSpace: Space = {
     spaceType: SpaceType.Default,
@@ -22,6 +24,12 @@ const mockSpace: Space = {
     createdAt: 'spaceCreationDate',
     updatedAt: 'spaceCreationDate',
     spaceKey: 'ABABABABABABABABABABABABABABABABABABABABABA=',
+};
+
+const answerNowPrompt: AnswerNowPrompt = {
+    object: 'lumo.answer_now',
+    job_id: 'job-1',
+    wait: 4000,
 };
 
 describe('serialization', () => {
@@ -264,6 +272,27 @@ describe('serialization', () => {
         expect(deserialized).toEqual(mockConversation);
     });
 
+    it.each(['lumo-lite', 'lumo-max'] as const)(
+        'preserves the conversation model choice %s through encryption',
+        async (modelTier) => {
+            const conversation: Conversation = {
+                id: 'ConversationId',
+                title: 'Answer Now conversation',
+                spaceId: mockSpace.id,
+                createdAt: '2026-10-21 00:00',
+                updatedAt: '2026-10-21 00:00',
+                modelTier,
+                answerNowUsed: true,
+            };
+            const spaceDek = await getSpaceDek(mockSpace);
+            const serialized = await serializeConversation(cleanConversation(conversation), spaceDek);
+            const deserialized = await deserializeConversation(serialized, spaceDek);
+
+            expect(deserialized).toEqual(conversation);
+            expect(cleanConversation(deserialized!)).toEqual(conversation);
+        }
+    );
+
     it('message', async () => {
         const mockMessage: Message = {
             id: 'MessageId',
@@ -282,6 +311,45 @@ describe('serialization', () => {
         const deserialized = await deserializeMessage(serialized!, spaceDek);
 
         expect(deserialized).toEqual(mockMessage);
+    });
+
+    it('saves message content without the active Answer Now prompt', async () => {
+        const message: Message = {
+            id: 'MessageId',
+            createdAt: 'messageCreationDate',
+            role: Role.Assistant,
+            conversationId: 'ConversationId',
+            content: 'Keep this answer',
+        };
+        const spaceDek = await getSpaceDek(mockSpace);
+        const serialized = await serializeMessage({ ...message, answerNowPrompt }, spaceDek);
+        expect(serialized).not.toBeNull();
+        expect(serialized).not.toHaveProperty('answerNowPrompt');
+        const encryptedContent = JSON.parse(
+            await decryptString(
+                serialized!.encrypted!,
+                spaceDek,
+                '{"app":"lumo","conversationId":"ConversationId","id":"MessageId","role":"assistant","type":"message"}'
+            )
+        );
+        expect(encryptedContent.content).toBe(message.content);
+        expect(encryptedContent).not.toHaveProperty('answerNowPrompt');
+        expect(JSON.stringify(encryptedContent)).not.toContain(answerNowPrompt.job_id);
+        expect(await deserializeMessage(serialized!, spaceDek)).toEqual(message);
+    });
+
+    it('does not persist a placeholder whose only content is an Answer Now prompt', async () => {
+        const message: Message = {
+            id: 'MessageId',
+            createdAt: 'messageCreationDate',
+            role: Role.Assistant,
+            conversationId: 'ConversationId',
+            placeholder: true,
+        };
+        const serialized = await serializeMessage({ ...message, answerNowPrompt }, await getSpaceDek(mockSpace));
+        expect(serialized).toEqual(message);
+        expect(serialized).not.toHaveProperty('answerNowPrompt');
+        expect(serialized?.encrypted).toBeUndefined();
     });
 
     it('message with usage round-trips through encryption and the MessagePriv guard', async () => {

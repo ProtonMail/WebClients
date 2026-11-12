@@ -27,6 +27,7 @@ export type LumoApiModelTier = 'auto' | 'lumo-lite' | 'lumo-max' | 'apertus-15' 
 
 export type ToChatCompletionsOptions = {
     enableReasoning?: boolean;
+    enableAnswerNow?: boolean;
     model?: string;
     modelTier?: LumoApiModelTier;
     target?: LumoCompletionTarget;
@@ -43,7 +44,7 @@ export type ToChatCompletionsOptions = {
      * request. Merged with `request.options.tools`.
      */
     serverTools?: ToolName[];
-    /** Lumo Unleash toggles attached to `lumo.feature_flags` for observability. */
+    /** Lumo Unleash toggles attached to `lumo.feature_flags` for configuration and metrics. */
     featureFlags?: ChatCompletionsFeatureFlags;
     /** Sent as `lumo.client_type`. Defaults to `LumoDesktop` inside the desktop shell, otherwise `Frontend`. */
     clientType?: LumoClientType;
@@ -241,7 +242,12 @@ function buildLumoExtension(
     }
 
     if (options.featureFlags !== undefined) {
-        lumo.feature_flags = options.featureFlags;
+        lumo.feature_flags = { ...options.featureFlags };
+    }
+
+    if (options.enableAnswerNow && (!options.target || options.target === 'message')) {
+        lumo.feature_flags = { ...lumo.feature_flags, LumoAnswerNow: 'true' };
+        lumo.answer_now = true;
     }
 
     return lumo;

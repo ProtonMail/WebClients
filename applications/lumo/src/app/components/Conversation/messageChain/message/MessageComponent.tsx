@@ -54,6 +54,7 @@ const areEqual = (prevProps: MessageComponentProps, nextProps: MessageComponentP
         prevProps.message.content !== nextProps.message.content ||
         prevProps.message.placeholder !== nextProps.message.placeholder ||
         prevProps.message.status !== nextProps.message.status ||
+        prevProps.message.answerNowPrompt !== nextProps.message.answerNowPrompt ||
         prevProps.message.toolCall !== nextProps.message.toolCall ||
         prevProps.message.contextFiles?.length !== nextProps.message.contextFiles?.length ||
         prevProps.message.toolResult !== nextProps.message.toolResult ||

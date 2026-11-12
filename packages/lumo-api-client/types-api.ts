@@ -131,7 +131,9 @@ export type ChatCompletionsFunctionTool = {
 };
 
 export type ChatCompletionsTool =
-    ChatCompletionsBuiltInTool | ChatCompletionsFlatFunctionTool | ChatCompletionsFunctionTool;
+    | ChatCompletionsBuiltInTool
+    | ChatCompletionsFlatFunctionTool
+    | ChatCompletionsFunctionTool;
 
 /**
  * OpenAI content parts. A message's `content` may be a plain string (the common
@@ -193,6 +195,7 @@ export type ChatCompletionsLumoExtension = {
     request_id?: string;
     image_aspect_ratio?: ImageAspectRatio;
     feature_flags?: ChatCompletionsFeatureFlags;
+    answer_now?: boolean;
 };
 
 export type ChatCompletionsStreamOptions = {
@@ -293,6 +296,27 @@ export type Decrypted<T extends { encrypted?: boolean }> = Omit<T, 'encrypted'> 
 
 // *** Generation Response Message Types ***
 
+/** An actionable Answer Now prompt. `wait` is freshly estimated milliseconds, or null when unavailable. */
+export type AnswerNowPrompt = {
+    object: 'lumo.answer_now';
+    job_id: string;
+    wait: number | null;
+};
+
+export function isAnswerNowPrompt(value: unknown): value is AnswerNowPrompt {
+    if (!value || typeof value !== 'object') {
+        return false;
+    }
+    const v = value as Record<string, unknown>;
+    return (
+        v.object === 'lumo.answer_now' &&
+        typeof v.job_id === 'string' &&
+        v.job_id.length > 0 &&
+        (v.wait === null || (typeof v.wait === 'number' && Number.isFinite(v.wait) && v.wait >= 0))
+    );
+}
+export type AnswerNowPromptMessage = { type: 'answer_now_prompt'; prompt: AnswerNowPrompt };
+
 export type QueuedMessage = { type: 'queued'; target?: GenerationTarget };
 export type IngestingMessage = { type: 'ingesting'; target: GenerationTarget };
 /** Exact serving model reported by the SSE stream for a generation target. */
@@ -369,6 +393,7 @@ export type EncryptedServerToolResultMessage = Encrypted<ServerToolResultMessage
 export type DecryptedServerToolResultMessage = Decrypted<ServerToolResultMessage>;
 
 export type GenerationResponseMessage =
+    | AnswerNowPromptMessage
     | QueuedMessage
     | IngestingMessage
     | ModelMessage
@@ -385,6 +410,7 @@ export type GenerationResponseMessage =
     | ToolErrorMessage;
 
 export type GenerationResponseMessageDecrypted =
+    | AnswerNowPromptMessage
     | QueuedMessage
     | IngestingMessage
     | ModelMessage
@@ -580,6 +606,7 @@ export function isDecryptedServerToolResultMessage(obj: any): obj is DecryptedSe
 export function isGenerationResponseMessage(obj: any): obj is GenerationResponseMessage {
     return (
         isQueuedMessage(obj) ||
+        (obj?.type === 'answer_now_prompt' && isAnswerNowPrompt(obj.prompt)) ||
         isIngestingMessage(obj) ||
         isModelMessage(obj) ||
         isTokenDataMessage(obj) ||

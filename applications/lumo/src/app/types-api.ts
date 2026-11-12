@@ -9,6 +9,7 @@
  */
 // Role is single-sourced from the extracted package so the enum has a single
 // nominal identity across the app <-> @proton/lumo-api-client boundary.
+import type { AnswerNowPromptMessage } from '@proton/lumo-api-client/types-api';
 import { Role } from '@proton/lumo-api-client/types-api';
 
 // *** Role ***
@@ -119,6 +120,7 @@ type ServerToolResultMessage = {
 };
 
 export type GenerationResponseMessage =
+    | AnswerNowPromptMessage
     | QueuedMessage
     | IngestingMessage
     | ModelMessage

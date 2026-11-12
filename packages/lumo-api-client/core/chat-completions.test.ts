@@ -340,3 +340,44 @@ describe('client type environment defaults', () => {
         expect(toChatCompletionsBody(baseRequest).lumo?.client_type).toBe(LumoClientType.Frontend);
     });
 });
+
+it('opts in only the main request and leaves titles outside Answer Now', () => {
+    expect(
+        toChatCompletionsBody(baseRequest, { enableAnswerNow: true, target: 'message' }).lumo?.feature_flags
+    ).toEqual({ LumoAnswerNow: 'true' });
+    expect(
+        toChatCompletionsBody(baseRequest, { enableAnswerNow: true, target: 'title' }).lumo?.feature_flags
+    ).toBeUndefined();
+    expect(toChatCompletionsBody(baseRequest).lumo?.feature_flags).toBeUndefined();
+});
+
+it('forwards all Answer Now flags without opting auxiliary requests in', () => {
+    const featureFlags = {
+        LumoTooling: 'true',
+        LumoAnswerNow: 'true',
+        LumoAnswerNowQuietThreshold: '5',
+        LumoAnswerNowFallback: '20',
+    };
+    const originalFeatureFlags = { ...featureFlags };
+    for (const target of ['message', 'title', 'suggested_questions'] as const) {
+        const body = toChatCompletionsBody(baseRequest, { enableAnswerNow: true, target, featureFlags });
+        expect(body.lumo?.feature_flags).toEqual(originalFeatureFlags);
+        expect(body.lumo?.answer_now).toBe(target === 'message' ? true : undefined);
+    }
+    const body = toChatCompletionsBody(baseRequest, { featureFlags });
+    expect(body.lumo?.feature_flags).toEqual(originalFeatureFlags);
+    expect(body.lumo?.answer_now).toBeUndefined();
+    expect(featureFlags).toEqual(originalFeatureFlags);
+});
+
+it('distinguishes an explicit UI capability from an old observational flag snapshot', () => {
+    const featureFlags = { LumoAnswerNow: 'true' };
+    const optedIn = toChatCompletionsBody(baseRequest, { featureFlags, enableAnswerNow: true });
+    expect(optedIn.lumo).toMatchObject({ answer_now: true, feature_flags: featureFlags });
+    expect(toChatCompletionsBody(baseRequest, { featureFlags }).lumo?.answer_now).toBeUndefined();
+    for (const target of ['title', 'suggested_questions'] as const) {
+        expect(
+            toChatCompletionsBody(baseRequest, { featureFlags, enableAnswerNow: true, target }).lumo?.answer_now
+        ).toBeUndefined();
+    }
+});

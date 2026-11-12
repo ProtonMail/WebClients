@@ -399,6 +399,7 @@ export type UiContext = {
     /** Let the model search files and chats with lookup tools instead of retrieving project files before sending. */
     enableRetrievalTools?: boolean;
     enableReasoning?: boolean;
+    enableAnswerNow?: boolean;
     modelTier?: 'auto' | 'lumo-lite' | 'lumo-max' | 'apertus-15' | 'lumo-preview';
     generateTitle?: boolean;
     enableSmoothing?: boolean; // todo remove optional
@@ -1087,6 +1088,7 @@ export function executeConversationTurn({
                         enableExternalTools: ui.enableExternalTools,
                         enableImageTools: ui.enableImageTools,
                         enableReasoning: ui.enableReasoning,
+                        enableAnswerNow: ui.enableAnswerNow,
                         modelTier: ui.modelTier,
                         enableSuggestedQuestions: false,
                         generateTitle,
@@ -1355,6 +1357,7 @@ export function regenerateMessage({
                         enableExternalTools: ui.enableExternalTools,
                         enableImageTools: ui.enableImageTools,
                         enableReasoning: ui.enableReasoning,
+                        enableAnswerNow: ui.enableAnswerNow,
                         modelTier: ui.modelTier,
                         enableSuggestedQuestions: false,
                         artifactToolMode,
@@ -1610,6 +1613,7 @@ export function retrySendMessage({
                         enableExternalTools: ui.enableExternalTools,
                         enableImageTools: ui.enableImageTools,
                         enableReasoning: ui.enableReasoning,
+                        enableAnswerNow: ui.enableAnswerNow,
                         modelTier: ui.modelTier,
                         enableSuggestedQuestions: false,
                         generateTitle: requestTitle,
