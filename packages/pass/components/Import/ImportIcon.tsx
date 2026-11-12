@@ -14,6 +14,7 @@ import kaspersky from '../../assets/import/kaspersky-icon-48.png';
 import keepass from '../../assets/import/keepass-icon-48.png';
 import keeper from '../../assets/import/keeper-icon-48.png';
 import lastpass from '../../assets/import/lastpass-icon-48.png';
+import msecure from '../../assets/import/msecure-icon-48.png';
 import nordpass from '../../assets/import/nordpass-icon-48.png';
 import protonpass from '../../assets/import/protonpass-icon-48.png';
 import roboform from '../../assets/import/roboform-icon-48.png';
@@ -41,6 +42,7 @@ const IMPORT_ICON_MAP: ImportIconMap = {
     [ImportProvider.SAFARI]: safari,
     [ImportProvider.CSV]: csv,
     [ImportProvider.KASPERSKY]: kaspersky,
+    [ImportProvider.MSECURE]: msecure,
 };
 
 type Props = { provider: ImportProvider; className?: string; style?: CSSProperties };

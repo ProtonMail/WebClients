@@ -31,6 +31,8 @@ import lastpass1 from './illustrations/lp1.png';
 import lastpass2 from './illustrations/lp2.png';
 import lastpass3 from './illustrations/lp3.png';
 import lastpass4 from './illustrations/lp4.png';
+import msecure1 from './illustrations/msecure1.png';
+import msecure2 from './illustrations/msecure2.png';
 import nordpass1 from './illustrations/nordpass1.png';
 import nordpass2 from './illustrations/nordpass2.png';
 import proton1 from './illustrations/proton1.png';
@@ -312,6 +314,19 @@ const TUTORIALS: Record<ImportProvider, Tutorial> = {
                 <Step image={edge1}>{c('Import Tutorial').jt`Open ${name} and select ⋯.`}</Step>
                 <Step image={edge2}>{selectInMenu(passwordsAndAutofill, microsoftPasswordManager)}</Step>
                 <Step image={edge3}>{c('Import Tutorial').jt`Select ⋯ → ${exportPasswords}.`}</Step>
+            </>
+        );
+    },
+    [ImportProvider.MSECURE]: (name) => {
+        const { file, exportLabel } = getSharedLabels();
+        const csv = <strong key="csv">{c('Import Tutorial').t`CSV...`}</strong>;
+
+        return (
+            <>
+                <Step image={msecure1}>
+                    {c('Import Tutorial').jt`Open ${name} and select ${file} → ${exportLabel} → ${csv}.`}
+                </Step>
+                <Step image={msecure2}>{c('Import Tutorial').jt`Click ${exportLabel}.`}</Step>
             </>
         );
     },
