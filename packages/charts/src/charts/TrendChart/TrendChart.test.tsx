@@ -84,6 +84,8 @@ const yAxis = () =>
         captured.calls[captured.calls.length - 1].options as {
             scales: {
                 y: {
+                    min?: number;
+                    max?: number;
                     afterBuildTicks?: (axis: FakeAxis) => void;
                     afterFit?: (axis: FakeFit) => void;
                     ticks: FakeTicks;
@@ -93,6 +95,25 @@ const yAxis = () =>
             };
         }
     ).scales.y;
+
+/**
+ * Where the series sits in the plot, as a fraction of its height, 0 along the bottom and 1 along
+ * the top — the reading an eye takes off a chart, rather than the numbers behind it.
+ *
+ * Only a pinned axis can be read this way. chart.js maps a value into a window linearly, which is
+ * what this repeats, but it chooses the window itself when nothing pinned one, rounding it outward
+ * to land on round ticks. Modelling that here would be guessing at the renderer, so an unpinned
+ * chart is refused rather than answered wrongly.
+ */
+const lineHeights = () => {
+    const { min, max } = yAxis();
+
+    if (min === undefined || max === undefined) {
+        throw new Error('lineHeights reads a pinned axis: an unpinned one is fitted by chart.js, not by this helper');
+    }
+
+    return lastDataset().data.map((value) => (value - min) / (max - min));
+};
 
 /** What chart.js hands `afterFit`: the room the axis measured for itself, for the hook to adjust. */
 interface FakeFit {
@@ -507,6 +528,74 @@ describe('TrendChart', () => {
         expect(tickValues([80, 90], { min: 0, max: 60 })).toEqual([80, 90]);
     });
 
+    describe('with the threshold kept off the axis', () => {
+        it('writes no tick for it, so the axis reads only what the scale chose', () => {
+            render(<TrendChart data={data} threshold={85} showThresholdLabel={false} />);
+
+            expect(yAxis().afterBuildTicks).toBeUndefined();
+        });
+
+        it('leaves a tick the scale chose there in the ordinary colour, rather than marking it out', () => {
+            render(<TrendChart data={data} threshold={85} showThresholdLabel={false} />);
+
+            expect(yAxis().ticks.color?.({ tick: { value: 85 } })).toBe('#5c5958');
+        });
+
+        it('still rules the threshold across the plot, the axis being the only thing quietened', () => {
+            render(<TrendChart data={data} threshold={85} fill={{ above: 'warning' }} showThresholdLabel={false} />);
+
+            expect(thresholdOptions()).toEqual({ value: 85, color: '#ff9900' });
+        });
+
+        it('still splits the line at it, since the reading is hidden and not the rule', () => {
+            render(<TrendChart data={data} threshold={80} showThresholdLabel={false} />);
+
+            const { ctx, stops } = gradientSpy();
+
+            lastDataset().borderColor?.(scriptableContext({ ctx }));
+
+            expect(stops).toEqual([
+                [0, '#dc3251'],
+                [0.2, '#dc3251'],
+                [0.2, '#6d4aff'],
+                [1, '#6d4aff'],
+            ]);
+        });
+
+        it('still answers for it in the tooltip', () => {
+            render(
+                <TrendChart
+                    data={data}
+                    threshold={85}
+                    showThresholdLabel={false}
+                    transformTooltipValue={(value) => `${value}%`}
+                />
+            );
+
+            expect(tooltipLabel(85)).toBe('85%');
+        });
+
+        it('reads it again when asked to, which is also what a caller that says nothing gets', () => {
+            render(<TrendChart data={data} threshold={85} showThresholdLabel />);
+
+            expect(tickValues([80, 90])).toEqual([80, 85, 90]);
+
+            render(<TrendChart data={data} threshold={85} />);
+
+            expect(tickValues([80, 90])).toEqual([80, 85, 90]);
+        });
+
+        it('turns the axis back on without remounting, rather than settling it at the first render', () => {
+            const { rerender } = render(<TrendChart data={data} threshold={85} showThresholdLabel={false} />);
+
+            expect(yAxis().afterBuildTicks).toBeUndefined();
+
+            rerender(<TrendChart data={data} threshold={85} />);
+
+            expect(tickValues([80, 90])).toEqual([80, 85, 90]);
+        });
+    });
+
     it('rejects the two shapes of the prop mixed', () => {
         // @ts-expect-error -- `color` is the plain shape's, and this one has a threshold
         expect(() => render(<TrendChart data={data} threshold={80} fill="info" />)).not.toThrow();
@@ -545,6 +634,137 @@ describe('TrendChart', () => {
 
         expect(captured.calls).toHaveLength(1);
         expect(thresholdOptions()).toEqual({ value: 80, color: '#dc3251' });
+    });
+});
+
+describe('TrendChart pinned value axis', () => {
+    /** Two series of the same shape, one quiet and one near saturation. */
+    const quiet = [
+        { label: 'Mon', value: 4 },
+        { label: 'Tue', value: 9 },
+        { label: 'Wed', value: 12 },
+    ];
+    const saturated = [
+        { label: 'Mon', value: 84 },
+        { label: 'Tue', value: 89 },
+        { label: 'Wed', value: 92 },
+    ];
+
+    const PERCENTAGE = { min: 0, max: 100 };
+
+    it('holds the window it was pinned to', () => {
+        render(<TrendChart data={data} valueRange={PERCENTAGE} />);
+
+        expect(yAxis().min).toBe(0);
+        expect(yAxis().max).toBe(100);
+    });
+
+    it('holds a window that is neither a percentage nor anchored at zero, since the prop takes any two numbers', () => {
+        render(<TrendChart data={data} valueRange={{ min: -20, max: 1000 }} />);
+
+        expect(yAxis().min).toBe(-20);
+        expect(yAxis().max).toBe(1000);
+    });
+
+    it('drops a quiet series along the floor of the pinned window and lifts a saturated one to its ceiling, clear of each other', () => {
+        render(<TrendChart data={quiet} valueRange={PERCENTAGE} />);
+
+        const quietHeights = lineHeights();
+
+        render(<TrendChart data={saturated} valueRange={PERCENTAGE} />);
+
+        const saturatedHeights = lineHeights();
+
+        expect(quietHeights).toEqual([0.04, 0.09, 0.12]);
+        expect(saturatedHeights).toEqual([0.84, 0.89, 0.92]);
+        expect(Math.min(...saturatedHeights)).toBeGreaterThan(Math.max(...quietHeights));
+    });
+
+    it('hands two charts pinned to the one window the same axis, which is what lets their shapes be read against each other', () => {
+        render(<TrendChart data={quiet} valueRange={PERCENTAGE} />);
+
+        const quietAxis = { min: yAxis().min, max: yAxis().max };
+
+        render(<TrendChart data={saturated} valueRange={PERCENTAGE} />);
+
+        expect(quietAxis).toEqual(PERCENTAGE);
+        expect({ min: yAxis().min, max: yAxis().max }).toEqual(quietAxis);
+        expect(lastDataset().data).not.toEqual(quiet.map(({ value }) => value));
+    });
+
+    it('leaves nothing on an unpinned axis for chart.js to tell a quiet chart from a saturated one by, which is the reading pinning exists to fix', () => {
+        render(<TrendChart data={quiet} />);
+
+        const quietScale = JSON.stringify(yAxis(), (_key, value) => (typeof value === 'function' ? value.name : value));
+
+        render(<TrendChart data={saturated} />);
+
+        expect(JSON.stringify(yAxis(), (_key, value) => (typeof value === 'function' ? value.name : value))).toBe(
+            quietScale
+        );
+        expect(() => lineHeights()).toThrow('lineHeights reads a pinned axis');
+    });
+
+    it('bounds the axis at neither end when no caller pinned it, leaving chart.js the scale it had before the prop existed', () => {
+        render(<TrendChart data={data} />);
+
+        expect(yAxis()).not.toHaveProperty('min');
+        expect(yAxis()).not.toHaveProperty('max');
+    });
+
+    it('moves the window when the prop changes, rather than capturing it at mount', () => {
+        const { rerender } = render(<TrendChart data={data} valueRange={PERCENTAGE} />);
+
+        rerender(<TrendChart data={data} valueRange={{ min: 0, max: 50 }} />);
+
+        expect(yAxis().max).toBe(50);
+
+        rerender(<TrendChart data={data} />);
+
+        expect(yAxis()).not.toHaveProperty('max');
+    });
+
+    it('reads the window and not the object around it, so a caller writing it inline does not rebuild the scale each render', () => {
+        const optionsOf = () => captured.calls[captured.calls.length - 1].options;
+
+        const { rerender } = render(<TrendChart data={data} valueRange={{ min: 0, max: 100 }} />);
+
+        const first = optionsOf();
+
+        rerender(<TrendChart data={data} valueRange={{ min: 0, max: 100 }} />);
+
+        expect(optionsOf()).toBe(first);
+    });
+
+    it('holds the window while it is still loading, so the plot does not jump when the series arrives', () => {
+        render(<TrendChart mode="load" valueRange={PERCENTAGE} />);
+
+        expect(yAxis().min).toBe(0);
+        expect(yAxis().max).toBe(100);
+    });
+
+    it('reads a threshold the pinned window spans', () => {
+        render(<TrendChart data={quiet} threshold={85} valueRange={PERCENTAGE} />);
+
+        expect(tickValues([80, 90], PERCENTAGE)).toEqual([80, 85, 90]);
+    });
+
+    it('reads a threshold sitting exactly on the ceiling of the window, where the rule is still drawn', () => {
+        render(<TrendChart data={quiet} threshold={100} valueRange={PERCENTAGE} />);
+
+        expect(tickValues([0, 50], PERCENTAGE)).toEqual([0, 50, 100]);
+    });
+
+    it('writes no second tick where chart.js already built one on the floor of the window', () => {
+        render(<TrendChart data={quiet} threshold={0} valueRange={PERCENTAGE} />);
+
+        expect(tickValues([0, 50], PERCENTAGE)).toEqual([0, 50]);
+    });
+
+    it('leaves a threshold outside the pinned window off the axis, as the rule is clipped out of the plot', () => {
+        render(<TrendChart data={quiet} threshold={85} valueRange={{ min: 0, max: 50 }} />);
+
+        expect(tickValues([10, 20], { min: 0, max: 50 })).toEqual([10, 20]);
     });
 });
 

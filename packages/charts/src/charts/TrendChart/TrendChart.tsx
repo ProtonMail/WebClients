@@ -29,6 +29,8 @@ export const TrendChart = ({
     threshold,
     fill,
     thresholdColor,
+    showThresholdLabel = true,
+    valueRange,
     transformYAxisValue,
     transformXAxisValue,
     transformTooltipValue,
@@ -49,6 +51,14 @@ export const TrendChart = ({
             : [fill?.below ?? 'primary', fill?.above ?? 'danger'];
 
     const dashedThresholdColor: FillColor = thresholdColor ?? aboveColor;
+
+    /**
+     * Whether the axis reads the threshold at all. A chart with no rule has nothing to read, and
+     * a caller can quieten the axis without giving up the rule.
+     */
+    const labelsThreshold = threshold !== undefined && showThresholdLabel;
+    const pinnedMin = valueRange?.min;
+    const pinnedMax = valueRange?.max;
 
     const accessibility: Pick<AriaAttributes, 'aria-hidden' | 'aria-label'> & { role?: 'img' } =
         ariaLabel === undefined ? { 'aria-hidden': true } : { role: 'img', 'aria-label': ariaLabel };
@@ -109,6 +119,7 @@ export const TrendChart = ({
                 y: {
                     grid: { display: false },
                     border: { display: false },
+                    ...(pinnedMin === undefined || pinnedMax === undefined ? {} : { min: pinnedMin, max: pinnedMax }),
                     /**
                      * A floor and not a ceiling, as on the label axis: a caller whose `transformYAxisValue`
                      * writes '1.2 TB' or '100 Mbps' gets the width those need, instead of the labels being
@@ -119,26 +130,27 @@ export const TrendChart = ({
                         axis.paddingTop = AXIS.topOverhang;
                         axis.paddingBottom = 0;
                     },
-                    afterBuildTicks:
-                        threshold === undefined
-                            ? undefined
-                            : (axis) => {
-                                  if (threshold < axis.min || threshold > axis.max) {
-                                      return;
-                                  }
+                    afterBuildTicks: labelsThreshold
+                        ? (axis) => {
+                              if (threshold < axis.min || threshold > axis.max) {
+                                  return;
+                              }
 
-                                  if (axis.ticks.some(({ value }) => value === threshold)) {
-                                      return;
-                                  }
-                                  axis.ticks = [...axis.ticks, { value: threshold, major: true }].sort(
-                                      (one, other) => one.value - other.value
-                                  );
-                              },
+                              if (axis.ticks.some(({ value }) => value === threshold)) {
+                                  return;
+                              }
+                              axis.ticks = [...axis.ticks, { value: threshold, major: true }].sort(
+                                  (one, other) => one.value - other.value
+                              );
+                          }
+                        : undefined,
                     ticks: {
                         ...(isLoading ? { maxTicksLimit: 4 } : {}),
                         major: { enabled: true },
                         color: ({ tick }) =>
-                            tick?.value === threshold ? colors[dashedThresholdColor] : colors.textWeak,
+                            labelsThreshold && tick?.value === threshold
+                                ? colors[dashedThresholdColor]
+                                : colors.textWeak,
                         callback(value, index, ticks) {
                             if (isLoading) {
                                 return NO_LABEL;
@@ -155,6 +167,9 @@ export const TrendChart = ({
         [
             colors,
             threshold,
+            labelsThreshold,
+            pinnedMin,
+            pinnedMax,
             aboveColor,
             dashedThresholdColor,
             transformYAxisValue,

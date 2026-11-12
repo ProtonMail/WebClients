@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import type { PropsWithChildren } from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
@@ -31,19 +32,36 @@ const RANGES = { '3 days': 6, Week: series.length };
 type Range = keyof typeof RANGES;
 
 const ChartPair = ({ args, mode }: { args: TrendChartProps; mode?: TrendChartProps['mode'] }) => {
-    const { threshold, fill, thresholdColor, ...shared } = args;
+    /**
+     * Named one by one rather than taken as the rest of `args`: everything to do with the rule
+     * belongs to the right-hand chart alone, and the left-hand one has no threshold, so the props
+     * that only mean something alongside one would not typecheck there.
+     */
+    const shared = {
+        mode,
+        data: args.data,
+        valueRange: args.valueRange,
+        transformYAxisValue: args.transformYAxisValue,
+        transformXAxisValue: args.transformXAxisValue,
+        transformTooltipValue: args.transformTooltipValue,
+        showTooltipLabel: args.showTooltipLabel,
+        borderWidth: args.borderWidth,
+        tension: args.tension,
+        ariaLabel: args.ariaLabel,
+        className: args.className,
+    };
 
     return (
         <div className="flex flex-nowrap gap-4 h-full">
             <div className="flex-1 min-w-0">
-                <TrendChart {...shared} mode={mode} />
+                <TrendChart {...shared} />
             </div>
             <div className="flex-1 min-w-0">
                 <TrendChart
                     {...shared}
-                    threshold={threshold ?? DEFAULT_THRESHOLD}
-                    thresholdColor={thresholdColor}
-                    mode={mode}
+                    threshold={args.threshold ?? DEFAULT_THRESHOLD}
+                    thresholdColor={args.thresholdColor}
+                    showThresholdLabel={args.showThresholdLabel}
                 />
             </div>
         </div>
@@ -103,6 +121,7 @@ const meta: Meta<typeof TrendChart> = {
     },
     argTypes: {
         threshold: { control: { type: 'range', min: 0, max: 100, step: 5 } },
+        valueRange: { control: 'object' },
     },
     component: TrendChart,
     decorators: [
@@ -130,6 +149,21 @@ export const Default: Story = {
         docs: {
             description: {
                 story: 'The chart plain on the left, and on the right the same chart ruling a threshold.',
+            },
+        },
+    },
+    render: (args) => <ChartPair args={args} />,
+};
+
+export const ThresholdWithoutAxisLabel: Story = {
+    args: {
+        threshold: DEFAULT_THRESHOLD,
+        showThresholdLabel: false,
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: '`showThresholdLabel={false}` keeps the threshold off the value axis. The rule still crosses the plot, the line still changes colour at it and the tooltip still reads it; only the axis goes quiet.',
             },
         },
     },
@@ -177,4 +211,49 @@ export const Loading: Story = {
         },
     },
     render: (args) => <LoadingPair {...args} />,
+};
+
+const quietSeries = [
+    { label: 'Wed', value: 4 },
+    { label: 'Thu', value: 11 },
+    { label: 'Fri', value: 7 },
+    { label: 'Sat', value: 14 },
+    { label: 'Sun', value: 9 },
+    { label: 'Mon', value: 12 },
+    { label: 'Tue', value: 6 },
+];
+
+const busySeries = quietSeries.map(({ label, value }) => ({ label, value: value + 83 }));
+
+const PERCENTAGE_RANGE = { min: 0, max: 100 };
+
+const Labelled = ({ title, children }: PropsWithChildren<{ title: string }>) => (
+    <div className="flex flex-column flex-nowrap gap-1 flex-1 min-w-0">
+        <span className="text-sm color-weak shrink-0">{title}</span>
+        <div className="flex-auto min-h-0">{children}</div>
+    </div>
+);
+
+export const FixedAxisRange: Story = {
+    args: {
+        threshold: DEFAULT_THRESHOLD,
+        valueRange: PERCENTAGE_RANGE,
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: '`valueRange={{ min: 0, max: 100 }}` holds both axes at 0–100%, so a quiet server and a busy one are comparable at a glance.\n\nClear `valueRange` in the controls: each axis resizes to its own series and the two draw the same picture, 4% indistinguishable from 87%.',
+            },
+        },
+    },
+    render: (args) => (
+        <div className="flex flex-nowrap gap-4 h-full">
+            <Labelled title="Quiet server">
+                <TrendChart {...args} data={quietSeries} />
+            </Labelled>
+            <Labelled title="Busy server">
+                <TrendChart {...args} data={busySeries} />
+            </Labelled>
+        </div>
+    ),
 };
