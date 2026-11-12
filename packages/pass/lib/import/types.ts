@@ -24,6 +24,7 @@ export enum ImportProvider {
     NORDPASS = 'nordpass',
     ENPASS = 'enpass',
     KASPERSKY = 'kaspersky',
+    MSECURE = 'msecure',
     CSV = 'csv',
 }
 
@@ -131,6 +132,12 @@ export const PROVIDER_INFO_MAP: Record<ImportProvider, ImportProviderInfo> = {
     [ImportProvider.KASPERSKY]: {
         title: 'Kaspersky',
         fileExtension: 'txt',
+        tutorialUrl: '',
+        isBrowser: false,
+    },
+    [ImportProvider.MSECURE]: {
+        title: 'mSecure',
+        fileExtension: 'csv',
         tutorialUrl: '',
         isBrowser: false,
     },

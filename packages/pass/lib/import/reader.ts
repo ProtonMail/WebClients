@@ -17,6 +17,7 @@ import { readKasperskyData } from './providers/kaspersky/kaspersky.reader';
 import { readKeePassData } from './providers/keepass/keepass.reader';
 import { readKeeperData } from './providers/keeper/keeper.reader';
 import { readLastPassData } from './providers/lastpass/lastpass.reader';
+import { readMSecureData } from './providers/msecure/msecure.reader';
 import { readNordPassData } from './providers/nordpass/nordpass.reader';
 import { readProtonPassCSV } from './providers/protonpass/protonpass.csv.reader';
 import { readProtonPassJSON } from './providers/protonpass/protonpass.json.reader';
@@ -134,6 +135,9 @@ export const importReader = async (payload: ImportReaderPayload): Promise<Import
 
         case ImportProvider.KASPERSKY:
             return readKasperskyData(file);
+
+        case ImportProvider.MSECURE:
+            return readMSecureData(file);
 
         default:
             throw new Error(c('Error').t`Invalid password manager`);
