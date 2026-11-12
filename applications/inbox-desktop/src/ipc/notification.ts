@@ -142,6 +142,17 @@ export const resetBadge = () => {
     setBadgeCount(0);
 };
 
+export const buildProtocolToast = (launch: string, title: string, body: string): { toastXml: string } => ({
+    toastXml: `<toast launch="${escapeXML(launch)}" activationType="protocol">
+                <visual>
+                <binding template="ToastText02">
+                <text id="1">${escapeXML(title)}</text>
+                <text id="2">${escapeXML(body)}</text>
+                </binding>
+                </visual>
+                </toast>`,
+});
+
 export const windowsToastNotification = (
     payload: ElectronNotification,
     uuid: string,
@@ -165,18 +176,7 @@ export const windowsToastNotification = (
         params = `?${urlParams.toString()}`;
     }
 
-    const launch = `${DEEPLINK_PROTOCOL}:${action}${params}`;
-
-    return {
-        toastXml: `<toast launch="${escapeXML(launch)}" activationType="protocol">
-                <visual>
-                <binding template="ToastText02">
-                <text id="1">${escapeXML(title)}</text>
-                <text id="2">${escapeXML(body)}</text>
-                </binding>
-                </visual>
-                </toast>`,
-    };
+    return buildProtocolToast(`${DEEPLINK_PROTOCOL}:${action}${params}`, title, body);
 };
 
 const filterSensitive = (payload: ElectronNotification): string =>

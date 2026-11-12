@@ -1,6 +1,7 @@
 import { Notification, Event, app, BrowserWindow } from "electron";
 import { handleIPCCalls } from "./ipc/main";
 import { handleWinNotification } from "./ipc/notification";
+import { handleDownloads } from "./utils/downloads/downloadNotifications";
 import { moveUninstaller } from "./macos/uninstall";
 import { saveAppID } from "./store/idStore";
 import { getSettings, updateSettings } from "./store/settingsStore";
@@ -187,6 +188,7 @@ import { enableNotInAccountMenuItems } from "./utils/menus/menuApplication";
     handleAppReadyMailto();
     handleDeepLink();
     handleWinNotification();
+    handleDownloads();
 
     // After this point the main window and views have been created
     profiler.mark("pre-view-creation");
