@@ -48,6 +48,7 @@
         "./Stepper/Step": "./src/Stepper/Step.tsx",
         "./Stepper/StepIndicator": "./src/Stepper/StepIndicator.tsx",
         "./Stepper/StepListItem": "./src/Stepper/StepListItem.tsx",
+        "./testing/vitest/Portal": "./testing/vitest/Portal.tsx",
         "./Tooltip/Tooltip": "./src/Tooltip/Tooltip.tsx",
         "./TransitionSlot/TransitionSlot": "./src/TransitionSlot/TransitionSlot.tsx",
         "./UserAvatar/UserAvatar": "./src/UserAvatar/UserAvatar.tsx",
@@ -63,9 +64,9 @@
         "i18n:validate": "proton-i18n validate lint-functions",
         "lint": "oxlint --quiet",
         "pretty": "oxfmt --write \"**/*.{js,ts,tsx}\"",
-        "test": "jest",
-        "test:ci": "jest --runInBand --ci --logHeapUsage",
-        "test:watch": "jest --watch"
+        "test": "vitest",
+        "test:ci": "pnpm run test --run",
+        "test:watch": "pnpm run test --watch"
     },
     "dependencies": {
         "@floating-ui/dom": "^1.8.0",
@@ -83,16 +84,14 @@
         "ttag": "catalog:"
     },
     "devDependencies": {
-        "@proton/jest-env": "workspace:^",
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxfmt-config": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
         "@proton/styles": "workspace:^",
+        "@proton/vitest-config": "workspace:^",
         "@testing-library/dom": "catalog:",
         "@testing-library/jest-dom": "catalog:",
         "@testing-library/react": "^15.0.7",
         "@testing-library/user-event": "catalog:",
-        "@types/jest": "catalog:",
         "@types/lodash": "catalog:",
         "@types/mustache": "^4.2.6",
         "@types/node": "catalog:",
@@ -101,12 +100,15 @@
         "@types/tinycolor2": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
+        "@vitejs/plugin-react": "^6.2.1",
+        "@vitest/coverage-v8": "catalog:",
         "commander": "catalog:",
-        "jest": "catalog:",
+        "happy-dom": "catalog:",
         "mustache": "^4.2.0",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "ts-node": "catalog:",
-        "typescript": "catalog:"
+        "typescript": "catalog:",
+        "vitest": "catalog:"
     }
 }

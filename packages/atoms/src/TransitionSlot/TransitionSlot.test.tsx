@@ -34,10 +34,7 @@ describe('<TransitionSlot />', () => {
 
         const root = container.querySelector('.transition-slot');
 
-        expect(root).toHaveStyle({
-            '--transition-slot-duration': '0.4s',
-            '--transition-slot-scale-transition-ratio': '0.8',
-        });
+        expect(root).toHaveStyle('--transition-slot-duration: 0.4s; --transition-slot-scale-transition-ratio: 0.8');
     });
 
     it('passes className', () => {

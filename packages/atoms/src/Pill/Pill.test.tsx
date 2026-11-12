@@ -18,22 +18,22 @@ describe('<Pill />', () => {
     it('should render with default colors when no color is specified', () => {
         const { container } = render(<Pill>Text</Pill>);
 
-        expect(container.firstChild).toHaveStyle('color: rgb(102, 69, 232)');
-        expect(container.firstChild).toHaveStyle('background-color: rgb(231, 224, 255)');
+        expect(container.firstChild).toHaveStyle('color: #6645e8');
+        expect(container.firstChild).toHaveStyle('background-color: #e7e0ff');
     });
 
     it('should render with specified color and generated background color', () => {
         const { container } = render(<Pill color="#aa0867">Text</Pill>);
 
-        expect(container.firstChild).toHaveStyle('color: rgb(170, 8, 103)');
-        expect(container.firstChild).toHaveStyle('background-color: rgb(255, 224, 242)');
+        expect(container.firstChild).toHaveStyle('color: #aa0867');
+        expect(container.firstChild).toHaveStyle('background-color: #ffe0f2');
     });
 
     it('should render with specified background color and generated color', () => {
         const { container } = render(<Pill backgroundColor="#d2ffcc">Text</Pill>);
 
-        expect(container.firstChild).toHaveStyle('color: rgb(12, 102, 0)');
-        expect(container.firstChild).toHaveStyle('background-color: rgb(210, 255, 204)');
+        expect(container.firstChild).toHaveStyle('color: #0c6600');
+        expect(container.firstChild).toHaveStyle('background-color: #d2ffcc');
     });
 
     it('should render with specified background color and specified color', () => {
@@ -43,7 +43,7 @@ describe('<Pill />', () => {
             </Pill>
         );
 
-        expect(container.firstChild).toHaveStyle('color: rgb(170, 8, 103)');
-        expect(container.firstChild).toHaveStyle('background-color: rgb(210, 255, 204)');
+        expect(container.firstChild).toHaveStyle('color: #aa0867');
+        expect(container.firstChild).toHaveStyle('background-color: #d2ffcc');
     });
 });

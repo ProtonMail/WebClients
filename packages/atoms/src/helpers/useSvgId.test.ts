@@ -1,15 +1,17 @@
+import type * as React from 'react';
 import { useId } from 'react';
 
 import { renderHook } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { useSvgId } from './useSvgId';
 
-jest.mock('react', () => ({
-    ...jest.requireActual('react'),
-    useId: jest.fn(),
+vi.mock('react', async () => ({
+    ...(await vi.importActual<typeof React>('react')),
+    useId: vi.fn(),
 }));
 
-const mockedUseId = jest.mocked(useId);
+const mockedUseId = vi.mocked(useId);
 
 describe('useSvgId', () => {
     beforeEach(() => {
@@ -17,7 +19,7 @@ describe('useSvgId', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('strips colons from the React id', () => {

@@ -1,12 +1,13 @@
 import { render, screen } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { UserAvatar, UserAvatarSizeEnum } from './UserAvatar';
 import { AnonymousUserParticles, getRandomParticle } from './getRandomParticle';
 
-jest.mock('./getRandomParticle');
+vi.mock('./getRandomParticle');
 
 const greekLetter = 'μ';
-jest.mocked(getRandomParticle).mockReturnValue({
+vi.mocked(getRandomParticle).mockReturnValue({
     name: greekLetter,
     color: { hsl: AnonymousUserParticles[greekLetter] },
 });
@@ -17,19 +18,19 @@ describe('UserAvatar', () => {
         const avatar = screen.getByTestId('user-avatar');
         expect(avatar).toBeInTheDocument();
         expect(avatar).toHaveTextContent('J');
-        expect(avatar).toHaveStyle({ '--w-custom': '2rem', '--h-custom': '2rem' });
+        expect(avatar).toHaveStyle('--w-custom: 2rem; --h-custom: 2rem');
     });
 
     it('renders with small size', () => {
         render(<UserAvatar name="John Doe" size={UserAvatarSizeEnum.Small} />);
         const avatar = screen.getByTestId('user-avatar');
-        expect(avatar).toHaveStyle({ '--w-custom': '1.75rem', '--h-custom': '1.75rem' });
+        expect(avatar).toHaveStyle('--w-custom: 1.75rem; --h-custom: 1.75rem');
     });
 
     it('renders with medium size', () => {
         render(<UserAvatar name="John Doe" size={UserAvatarSizeEnum.Medium} />);
         const avatar = screen.getByTestId('user-avatar');
-        expect(avatar).toHaveStyle({ '--w-custom': '2rem', '--h-custom': '2rem' });
+        expect(avatar).toHaveStyle('--w-custom: 2rem; --h-custom: 2rem');
     });
 
     it('renders question mark when no name is provided', () => {

@@ -1,5 +1,6 @@
 import type { Matcher, MatcherOptions } from '@testing-library/react';
 import { fireEvent, render } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { Input } from './Input';
 
@@ -22,7 +23,7 @@ describe('<Input />', () => {
 
     describe('onValue', () => {
         it('calls onValue with value when input is fired', () => {
-            const onValue = jest.fn();
+            const onValue = vi.fn();
             const { getByTestId } = render(<Input onValue={onValue} />);
             const input = getByTestId(inputElementTestid);
 
@@ -34,20 +35,20 @@ describe('<Input />', () => {
 
     describe('onChange', () => {
         it('calls onChange when input is fired', () => {
-            const onChange = jest.fn();
+            const onChange = vi.fn();
             const { getByTestId } = render(<Input onChange={onChange} />);
             const input = getByTestId(inputElementTestid);
 
             fireEvent.input(input, { target: { value: 'a' } });
 
-            expect(onChange.mock.lastCall[0].target.value).toEqual('a');
+            expect(onChange.mock.lastCall?.[0].target.value).toEqual('a');
         });
     });
 
     describe('disableChange', () => {
         describe('true', () => {
             it('does not call onValue when input is fired', () => {
-                const onValue = jest.fn();
+                const onValue = vi.fn();
                 const { getByTestId } = render(<Input onValue={onValue} disableChange />);
                 const input = getByTestId(inputElementTestid);
 
@@ -57,7 +58,7 @@ describe('<Input />', () => {
             });
 
             it('does not call onChange when input is fired', () => {
-                const onChange = jest.fn();
+                const onChange = vi.fn();
                 const { getByTestId } = render(<Input onChange={onChange} disableChange />);
                 const input = getByTestId(inputElementTestid);
 
@@ -69,7 +70,7 @@ describe('<Input />', () => {
 
         describe('false', () => {
             it('calls onValue when input is fired', () => {
-                const onValue = jest.fn();
+                const onValue = vi.fn();
                 const { getByTestId } = render(<Input onValue={onValue} />);
                 const input = getByTestId(inputElementTestid);
 
@@ -79,7 +80,7 @@ describe('<Input />', () => {
             });
 
             it('calls onChange when input is fired', () => {
-                const onChange = jest.fn();
+                const onChange = vi.fn();
                 const { getByTestId } = render(<Input onChange={onChange} />);
                 const input = getByTestId(inputElementTestid);
 

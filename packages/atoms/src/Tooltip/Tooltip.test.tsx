@@ -3,6 +3,7 @@ import { createRef } from 'react';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import type { UserEvent } from '@testing-library/user-event';
 import userEvent from '@testing-library/user-event';
+import { vi } from 'vitest';
 
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 
@@ -12,13 +13,16 @@ describe('Tooltip', () => {
     let timerUserEvent: UserEvent;
 
     beforeEach(() => {
-        jest.useFakeTimers();
-        timerUserEvent = userEvent.setup({ advanceTimers: jest.advanceTimersByTime });
+        vi.useFakeTimers();
+        // @testing-library/dom detects fake timers through the `jest` global to flush its async wrapper
+        vi.stubGlobal('jest', { advanceTimersByTime: (ms: number) => vi.advanceTimersByTime(ms) });
+        timerUserEvent = userEvent.setup({ advanceTimers: (ms) => vi.advanceTimersByTime(ms) });
     });
 
     afterEach(() => {
-        jest.runOnlyPendingTimers();
-        jest.useRealTimers();
+        vi.runOnlyPendingTimers();
+        vi.useRealTimers();
+        vi.unstubAllGlobals();
     });
 
     it('should show tooltip immediately when externally opened', () => {
@@ -57,7 +61,7 @@ describe('Tooltip', () => {
         await timerUserEvent.click(screen.getByTestId('outside'));
 
         act(() => {
-            jest.advanceTimersByTime(1000);
+            vi.advanceTimersByTime(1000);
         });
         fireEvent.animationEnd(screen.getByTestId('tooltip'), { animationName: 'anime-tooltip-out-last' });
 
@@ -78,7 +82,7 @@ describe('Tooltip', () => {
 
         expect(screen.queryByTestId('tooltip')).toBeNull();
         act(() => {
-            jest.advanceTimersByTime(1000);
+            vi.advanceTimersByTime(1000);
         });
 
         fireEvent.animationEnd(screen.getByTestId('tooltip'), { animationName: 'anime-tooltip-in-first' });
@@ -87,7 +91,7 @@ describe('Tooltip', () => {
         expect(screen.getByTestId('tooltip')).toHaveTextContent('World');
 
         act(() => {
-            jest.advanceTimersByTime(500);
+            vi.advanceTimersByTime(500);
         });
         fireEvent.animationEnd(screen.getByTestId('tooltip'), { animationName: 'anime-tooltip-out-last' });
         expect(screen.queryByTestId('tooltip')).toBeNull();
@@ -112,7 +116,7 @@ describe('Tooltip', () => {
         expect(screen.queryByTestId('tooltip-1')).toBeNull();
         expect(screen.queryByTestId('tooltip-2')).toBeNull();
         act(() => {
-            jest.advanceTimersByTime(1000);
+            vi.advanceTimersByTime(1000);
         });
 
         fireEvent.animationEnd(screen.getByTestId('tooltip-1'), { animationName: 'anime-tooltip-in-first' });
@@ -131,7 +135,7 @@ describe('Tooltip', () => {
 
         await timerUserEvent.unhover(screen.getByTestId('span-2'));
         act(() => {
-            jest.advanceTimersByTime(500);
+            vi.advanceTimersByTime(500);
         });
         expect(screen.queryByTestId('tooltip-1')).toBeNull();
         fireEvent.animationEnd(screen.getByTestId('tooltip-2'), { animationName: 'anime-tooltip-out-last' });
@@ -166,14 +170,14 @@ describe('Tooltip', () => {
         await timerUserEvent.hover(screen.getByTestId('span-1'));
         rerender(<Tooltips showFirst={false} />);
         act(() => {
-            jest.advanceTimersByTime(1000);
+            vi.advanceTimersByTime(1000);
         });
 
         await timerUserEvent.hover(screen.getByTestId('span-2'));
         expect(screen.queryByTestId('tooltip-2')).toBeNull();
 
         act(() => {
-            jest.advanceTimersByTime(1000);
+            vi.advanceTimersByTime(1000);
         });
         expect(screen.getByTestId('tooltip-2')).toHaveTextContent('Bar');
     });
@@ -189,7 +193,7 @@ describe('Tooltip', () => {
 
         it('should not show tooltip on programmatic focus', () => {
             const button = screen.getByRole('button', { name: 'Hello' });
-            jest.spyOn(button, 'matches').mockImplementation((selector) => selector !== ':focus-visible');
+            vi.spyOn(button, 'matches').mockImplementation((selector) => selector !== ':focus-visible');
 
             act(() => button.focus());
 
@@ -203,7 +207,7 @@ describe('Tooltip', () => {
             // Window blur
             fireEvent.blur(button);
             act(() => {
-                jest.advanceTimersByTime(500);
+                vi.advanceTimersByTime(500);
             });
             fireEvent.animationEnd(screen.getByTestId('tooltip'), { animationName: 'anime-tooltip-out-last' });
             fireEvent.focus(button);

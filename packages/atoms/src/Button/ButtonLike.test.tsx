@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/tabindex-no-positive */
 import { fireEvent, render } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { ButtonLike } from './ButtonLike';
 
@@ -30,7 +31,7 @@ describe('<ButtonLike />', () => {
     });
 
     it('allows clicking of button', () => {
-        const mockOnClick = jest.fn();
+        const mockOnClick = vi.fn();
         const { getByTestId } = render(<ButtonLike onClick={mockOnClick} data-testid={testid} />);
         const rootElement = getByTestId(testid);
 
@@ -91,7 +92,7 @@ describe('<ButtonLike />', () => {
 
     describe('loading', () => {
         it('disables button', () => {
-            const mockOnClick = jest.fn();
+            const mockOnClick = vi.fn();
             const { getByTestId } = render(<ButtonLike loading onClick={mockOnClick} data-testid={testid} />);
             const rootElement = getByTestId(testid);
 
@@ -132,7 +133,7 @@ describe('<ButtonLike />', () => {
         });
 
         it('disables button', () => {
-            const mockOnClick = jest.fn();
+            const mockOnClick = vi.fn();
             const { getByTestId } = render(<ButtonLike disabled onClick={mockOnClick} data-testid={testid} />);
             const rootElement = getByTestId(testid);
 

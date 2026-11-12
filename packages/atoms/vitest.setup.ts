@@ -1,3 +1,5 @@
+import '@testing-library/jest-dom/vitest';
+
 global.AnimationEvent = class AnimationEvent extends Event implements AnimationEvent {
     private _animationName: string;
 
