@@ -127,6 +127,7 @@ interface UserActionToolbarProps {
     isCollapsed: boolean;
     canBeCollapsed: boolean;
     showEdit: boolean;
+    isGenerating: boolean;
 }
 const UserActionToolbar = ({
     onEdit,
@@ -134,12 +135,20 @@ const UserActionToolbar = ({
     isCollapsed,
     canBeCollapsed,
     showEdit,
+    isGenerating,
 }: UserActionToolbarProps) => {
     return (
         <div className="flex flex-row flex-nowrap gap-px p-0.5" style={{ inlineSize: 'max-content' }}>
             {showEdit && (
                 <Tooltip title={c('collider_2025:Button').t`Edit`} originalPlacement="top">
-                    <Button icon shape="ghost" className="shrink-0" onClick={onEdit} size="small">
+                    <Button
+                        icon
+                        shape="ghost"
+                        className="shrink-0"
+                        onClick={onEdit}
+                        size="small"
+                        disabled={isGenerating}
+                    >
                         <LumoIcon name="Pencil" aria-label={c('collider_2025:Button').t`Edit`} />
                     </Button>
                 </Tooltip>
@@ -170,6 +179,7 @@ interface UserMessageProps {
     messageContent: string | undefined;
     siblingInfo: SiblingInfo;
     handleEditMessage: HandleEditMessage;
+    isGenerating: boolean;
     newMessageRef?: React.MutableRefObject<HTMLDivElement | null>;
     onOpenFilePreview: (attachment: Attachment) => void;
 }
@@ -179,6 +189,7 @@ const UserMessage = ({
     messageContent,
     siblingInfo,
     handleEditMessage,
+    isGenerating,
     newMessageRef,
     onOpenFilePreview,
 }: UserMessageProps) => {
@@ -227,6 +238,9 @@ const UserMessage = ({
     const isMobile = getIsMobileDevice() || isNativeMobileApp();
 
     const handleEdit = () => {
+        if (isGenerating) {
+            return;
+        }
         sendMessageEditEvent();
         const shouldShowWebComposer = canShowWebComposer(lumoNativeComposerEnabled);
         const shouldEditViaNativeComposer = !shouldShowWebComposer && canUseNativeEditMode();
@@ -252,6 +266,7 @@ const UserMessage = ({
                     isCollapsed={isCollapsed}
                     canBeCollapsed={canBeCollapsed}
                     showEdit={!isArtifactActionMessage}
+                    isGenerating={isGenerating}
                 />
             </div>
             {hasSiblingInfo && (
@@ -300,6 +315,7 @@ const UserMessage = ({
                     {isEditing ? (
                         <MessageEditor
                             messageContent={messageContent || ''}
+                            isGenerating={isGenerating}
                             handleEditMessage={(newContent) => {
                                 void handleEditMessage(message, newContent, isWebSearchButtonToggled);
                                 setIsEditing(false);

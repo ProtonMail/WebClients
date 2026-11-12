@@ -7,30 +7,40 @@ export type ChunkParserCapture = {
     getPendingClientToolCalls: () => PendingClientToolCall[];
 };
 
+const enqueueMessages = (
+    messages: GenerationResponseMessage[],
+    controller: TransformStreamDefaultController<GenerationResponseMessage>,
+    stopAtDone: boolean
+): void => {
+    for (const message of messages) {
+        controller.enqueue(message);
+        if (stopAtDone && message.type === 'done') {
+            controller.terminate();
+            return;
+        }
+    }
+};
+
 const makeChunkParserTransformerWithCapture = (
-    processor: StreamProcessor
+    processor: StreamProcessor,
+    stopAtDone: boolean
 ): Transformer<string, GenerationResponseMessage> => ({
     transform(s: string, controller: TransformStreamDefaultController<GenerationResponseMessage>) {
-        const parsedData = processor.processChunk(s);
-        for (const chunk of parsedData) {
-            controller.enqueue(chunk);
-        }
+        enqueueMessages(processor.processChunk(s), controller, stopAtDone);
     },
     flush(controller: TransformStreamDefaultController<GenerationResponseMessage>) {
-        const parsedData = processor.finalize();
-        for (const chunk of parsedData) {
-            controller.enqueue(chunk);
-        }
+        enqueueMessages(processor.finalize(), controller, stopAtDone);
     },
 });
 
 export const makeChunkParserTransformStreamWithCapture = (
-    defaultTarget: LumoCompletionTarget = 'message'
+    defaultTarget: LumoCompletionTarget = 'message',
+    stopAtDone = false
 ): ChunkParserCapture => {
     const processor = new StreamProcessor(defaultTarget);
 
     return {
-        stream: new TransformStream(makeChunkParserTransformerWithCapture(processor)),
+        stream: new TransformStream(makeChunkParserTransformerWithCapture(processor, stopAtDone)),
         // Unfiltered: under U2L the arguments are still ciphertext here and would fail the
         // JSON check in getCompleteToolCalls. They are decrypted downstream before execution.
         getPendingClientToolCalls: () => processor.getFinalizedToolCalls(),

@@ -15,11 +15,46 @@ export const OPERATION_IN_PROGRESS_MESSAGE = 'Another operation is already in pr
  * such as logout via `abortAll`). The per-conversation key also allows multiple conversations to
  * generate concurrently.
  */
-class GenerationRegistry {
+export class GenerationRegistry {
     private controllers = new Map<ConversationId, AbortController>();
     private listeners = new Set<() => void>();
+    private ownership = new Map<ConversationId, { controller: AbortController; release: () => void }>();
 
-    /** Calls `listener` whenever a conversation starts or stops generating. Returns the unsubscribe. */
+    canRecover(): boolean {
+        return navigator.locks !== undefined;
+    }
+
+    async startExclusive(conversationId: ConversationId): Promise<AbortController> {
+        const controller = this.start(conversationId);
+        if (navigator.locks === undefined) {
+            return controller;
+        }
+        const acquired = Promise.withResolvers<void>();
+        const released = Promise.withResolvers<void>();
+        try {
+            void navigator.locks
+                .request(`lumo-generation:${conversationId}`, { ifAvailable: true }, async (lock) => {
+                    if (lock === null) {
+                        acquired.reject(new Error(OPERATION_IN_PROGRESS_MESSAGE));
+                        return;
+                    }
+                    if (controller.signal.aborted || this.controllers.get(conversationId) !== controller) {
+                        acquired.reject(new DOMException('Generation stopped', 'AbortError'));
+                        return;
+                    }
+                    this.ownership.set(conversationId, { controller, release: released.resolve });
+                    acquired.resolve();
+                    await released.promise;
+                })
+                .catch(acquired.reject);
+            await acquired.promise;
+            return controller;
+        } catch (error) {
+            this.finish(conversationId, controller);
+            throw error;
+        }
+    }
+
     subscribe = (listener: () => void): (() => void) => {
         this.listeners.add(listener);
         return () => {
@@ -27,7 +62,7 @@ class GenerationRegistry {
         };
     };
 
-    private notify(): void {
+    private notifyListeners(): void {
         this.listeners.forEach((listener) => listener());
     }
 
@@ -36,29 +71,33 @@ class GenerationRegistry {
      * Throws if a generation is already in progress for that conversation.
      */
     start(conversationId: ConversationId): AbortController {
-        if (this.controllers.has(conversationId)) {
+        if (this.controllers.has(conversationId) || this.ownership.has(conversationId)) {
             throw new Error(OPERATION_IN_PROGRESS_MESSAGE);
         }
         const controller = new AbortController();
         this.controllers.set(conversationId, controller);
-        this.notify();
+        this.notifyListeners();
         return controller;
     }
 
     /** Remove the controller for a conversation once its generation settles. */
-    finish(conversationId: ConversationId): void {
-        if (this.controllers.delete(conversationId)) {
-            this.notify();
+    finish(conversationId: ConversationId, controller?: AbortController): void {
+        const ownership = this.ownership.get(conversationId);
+        if (controller === undefined || ownership?.controller === controller) {
+            ownership?.release();
+            this.ownership.delete(conversationId);
         }
+        if (controller === undefined || this.controllers.get(conversationId) === controller) {
+            this.controllers.delete(conversationId);
+        }
+        this.notifyListeners();
     }
 
-    /** Abort the in-flight generation for a conversation (explicit user stop). */
+    /** Keep aborted generations registered until finishing, so recovery cannot restart them. */
     abort(conversationId: ConversationId): void {
         const controller = this.controllers.get(conversationId);
         if (controller) {
             controller.abort();
-            this.controllers.delete(conversationId);
-            this.notify();
         }
     }
 
@@ -68,7 +107,7 @@ class GenerationRegistry {
             controller.abort();
         }
         this.controllers.clear();
-        this.notify();
+        this.notifyListeners();
     }
 
     isInProgress(conversationId: ConversationId): boolean {

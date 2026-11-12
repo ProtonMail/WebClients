@@ -365,7 +365,9 @@ describe('Lumo Persistence Integration Tests', () => {
                     existingDbApi: first.dbApi,
                 });
                 try {
-                    await waitForCondition(async () => !!reopened.store.getState().messages[followUp.id]);
+                    await waitForCondition(async () =>
+                        expectedChain.every((message) => !!reopened.store.getState().messages[message.id])
+                    );
                     const restored = selectMessagesByConversationId(conversationId)(reopened.store.getState());
                     expect(buildLinearChain(restored, null, []).map((message) => message.id)).toEqual(
                         expectedChain.map((message) => message.id)

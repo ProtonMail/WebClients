@@ -5,6 +5,7 @@ import {
     getDesktopConnectors,
     isDesktopEnvironment,
 } from '@proton/lumo-api-client/core/desktop-tools';
+import { GenerationInterruptedError, ToolRetryConfirmationRequiredError } from '@proton/lumo-api-client/core/recovery';
 import type { LumoApiClientConfig } from '@proton/lumo-api-client/core/types';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
@@ -107,6 +108,16 @@ const MAX_RELATED_QUERY_CHARS = 500;
 const RELATED_CHATS_BUDGET_MS = 500;
 /** The small, fast model that takes notes when the main model has a whole file read for it. */
 const FILE_ANALYSIS_MODEL_TIER = 'lumo-lite';
+
+export function createRetrievalAnalysis(api: Api, signal: AbortSignal, enableU2LEncryption = ENABLE_U2L_ENCRYPTION) {
+    return (prompt: string) => {
+        return quickChat(api, prompt, {
+            signal,
+            modelTier: FILE_ANALYSIS_MODEL_TIER,
+            config: { enableU2LEncryption },
+        });
+    };
+}
 
 /** `promise`'s value, or `fallback` if it fails or takes longer than `ms`. */
 function withinBudget<T>(promise: Promise<T>, ms: number, fallback: T): Promise<T> {
@@ -225,12 +236,7 @@ async function resolveRetrieval({
         getState,
         index,
         signal,
-        analyze: (prompt) =>
-            quickChat(api, prompt, {
-                signal,
-                modelTier: FILE_ANALYSIS_MODEL_TIER,
-                config: { enableU2LEncryption: ENABLE_U2L_ENCRYPTION },
-            }),
+        analyze: createRetrievalAnalysis(api, signal),
     };
     const latestUserMessage = chain.findLast((message) => message.role === Role.User);
     if (prefetch && tools.analyze && latestUserMessage) {
@@ -403,6 +409,7 @@ export type UiContext = {
     modelTier?: 'auto' | 'lumo-lite' | 'lumo-max' | 'apertus-15' | 'lumo-preview';
     generateTitle?: boolean;
     enableSmoothing?: boolean; // todo remove optional
+    enableGenerationRecovery?: boolean;
     navigateCallback?: (conversationId: ConversationId) => void; // todo remove optional
     isGhostMode?: boolean; // todo remove optional
     imageAspectRatio?: ImageAspectRatio;
@@ -1084,6 +1091,7 @@ export function executeConversationTurn({
                     retryAfterToolExecution: execution?.background ? false : undefined,
                     sendOptions: {
                         clientToolExecutor: execution?.clientToolExecutor,
+                        enableGenerationRecovery: ui.enableGenerationRecovery,
                         signal: a.signal,
                         enableExternalTools: ui.enableExternalTools,
                         enableImageTools: ui.enableImageTools,
@@ -1109,7 +1117,12 @@ export function executeConversationTurn({
                 })
             );
         } catch (error) {
-            console.warn('error: ', error);
+            if (
+                !(error instanceof GenerationInterruptedError) &&
+                !(error instanceof ToolRetryConfirmationRequiredError)
+            ) {
+                console.warn('error: ', error);
+            }
             throw error;
         }
 
@@ -1353,6 +1366,7 @@ export function regenerateMessage({
                     messageMap: conversationMessageMap,
                     preferSibling: ui.updateSibling,
                     sendOptions: {
+                        enableGenerationRecovery: ui.enableGenerationRecovery,
                         signal: a.signal,
                         enableExternalTools: ui.enableExternalTools,
                         enableImageTools: ui.enableImageTools,
@@ -1375,7 +1389,12 @@ export function regenerateMessage({
                 })
             );
         } catch (error) {
-            console.warn('error: ', error);
+            if (
+                !(error instanceof GenerationInterruptedError) &&
+                !(error instanceof ToolRetryConfirmationRequiredError)
+            ) {
+                console.warn('error: ', error);
+            }
             throw error;
         }
     };
@@ -1609,6 +1628,7 @@ export function retrySendMessage({
                     messageMap: c2.messageMap,
                     preferSibling: ui.updateSibling,
                     sendOptions: {
+                        enableGenerationRecovery: ui.enableGenerationRecovery,
                         signal: a.signal,
                         enableExternalTools: ui.enableExternalTools,
                         enableImageTools: ui.enableImageTools,

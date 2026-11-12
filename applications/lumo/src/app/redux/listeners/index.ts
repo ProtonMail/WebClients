@@ -12,6 +12,7 @@ import type { AppStartListening, LumoListener, LumoState } from '../store';
 import type { LumoThunkArguments } from '../thunk';
 import { startFeatureFlagsListeners } from './featureFlagsListener';
 import { startFileNotesListeners } from './fileNotesListener';
+import { startGenerationRecoveryListener } from './generationRecoveryListener';
 import { startLumoUserSettingsListeners } from './lumoUserSettingsListener';
 import { startPersonalizationListeners } from './personalizationListener';
 import { startSkillsSyncListeners } from './skillsSyncListener';
@@ -30,6 +31,7 @@ const getLumoPersistedState = (state: LumoState) => {
 };
 
 export const start = (startListening: AppStartListening) => {
+    startGenerationRecoveryListener(startListening);
     startSharedListening(startListening);
     startPersistListener(startListening, getLumoPersistedState);
     startAccountSessionsListener(startListening);

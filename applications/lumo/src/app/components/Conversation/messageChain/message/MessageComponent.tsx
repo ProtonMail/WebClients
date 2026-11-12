@@ -168,6 +168,7 @@ const MessageComponentPure = ({
                     messageContent={messageContent}
                     siblingInfo={siblingInfo}
                     handleEditMessage={handleEditMessage}
+                    isGenerating={isGenerating}
                     newMessageRef={newMessageRef}
                     onOpenFilePreview={handleOpenFilePreview}
                 />

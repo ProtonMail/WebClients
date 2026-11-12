@@ -5,11 +5,14 @@ import { call, delay, fork, getContext, put, select } from 'redux-saga/effects';
 import { MAX_MESSAGES_PER_CONVERSATION } from '../../constants/limits';
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import type { DbApi } from '../../indexedDb/db';
+import { isGeneratedImageAttachment } from '../../lib/imageAttachment';
 import type { LumoApi } from '../../remote/api';
 import { convertNewMessageToApi } from '../../remote/conversion';
 import type { Priority } from '../../remote/scheduler';
 import type { IdMapEntry, RemoteId, RemoteMessage, ResourceType } from '../../remote/types';
 import { deserializeMessage, serializeMessage } from '../../serialization';
+import { getGenerationRecovery, removeGenerationRecovery } from '../../services/generation/recovery';
+import type { RecoveryRecord } from '../../services/generation/recovery';
 import {
     type Conversation,
     type Message,
@@ -20,8 +23,9 @@ import {
     cleanSerializedMessage,
     getSpaceDek,
 } from '../../types';
-import { selectConversationById, selectMessageById, selectSpaceById } from '../selectors';
+import { selectConversationById, selectMessageById, selectRemoteIdFromLocal, selectSpaceById } from '../selectors';
 import type { PullAttachmentRequest } from '../slices/core/attachments';
+import { pushAttachmentRequest } from '../slices/core/attachments';
 import { pullConversationRequest } from '../slices/core/conversations';
 import { addIdMapEntry } from '../slices/core/idmap';
 import {
@@ -192,8 +196,31 @@ function* httpPostMessage(serializedMessage: SerializedMessage, priority: Priori
         ? yield call(waitForMapping, 'message', localParentId)
         : undefined;
     const messageToApi = convertNewMessageToApi(serializedMessage, remoteConversationId, remoteParentId);
+    const record: RecoveryRecord | undefined = yield call(getGenerationRecovery, localConversationId);
+    if (record?.message.id === localId && record.checkpoint.phase === 'completed') {
+        // The message POST deletes replay buffers, so its generated images must be stored first.
+        for (const attachment of record.message.attachments ?? []) {
+            if (!isGeneratedImageAttachment(attachment)) {
+                continue;
+            }
+            const remoteAttachmentId: RemoteId | undefined = yield select(
+                selectRemoteIdFromLocal('attachment', attachment.id)
+            );
+            if (!remoteAttachmentId) {
+                yield put(pushAttachmentRequest({ id: attachment.id }));
+                yield call(waitForMapping, 'attachment', attachment.id);
+            }
+        }
+        messageToApi.GenerationJobs = [...(record.checkpoint.previousJobs ?? []), record.checkpoint].map((job) => ({
+            JobID: job.jobId,
+            Token: job.token,
+        }));
+    }
     const lumoApi: LumoApi = yield getContext('lumoApi');
     const remoteId = yield call([lumoApi, lumoApi.postMessage], messageToApi, priority);
+    if (record?.message.id === localId && record.checkpoint.phase === 'completed') {
+        yield call(removeGenerationRecovery, localConversationId, record.checkpoint.jobId);
+    }
     const entry = { type, localId, remoteId };
     yield put(addIdMapEntry({ ...entry, saveToIdb: true }));
     return entry;

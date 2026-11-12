@@ -4,7 +4,7 @@ import { computeSha256AsBase64 } from '../crypto';
 import type { SerializedSkill, SerializedSkillAsset, SkillId } from '../features/skills/types';
 import { handleIndexedDBVersionDowngrade } from '../helpers/indexedDBVersionHandler';
 import type { IdMapEntry, LocalId, RemoteId, ResourceType } from '../remote/types';
-import type { SerializedConversationMap, SerializedMessageMap, SerializedSpaceMap } from '../types';
+import type { MasterKeysBundle, SerializedConversationMap, SerializedMessageMap, SerializedSpaceMap } from '../types';
 import {
     type AttachmentId,
     type ConversationId,
@@ -22,6 +22,7 @@ import {
 } from '../types';
 import { mapify } from '../util/collections';
 import { isNonNullable } from '../util/nullable';
+import { GenerationRecoveryDb } from './generationRecoveryDb';
 import { LocalFlagsDb } from './localFlagsDb';
 import { getIndexedDB, requestToPromise, withCursor } from './util';
 
@@ -462,12 +463,13 @@ export class DbApi {
     private readonly assetStore: StoreOperations<SerializedAsset>;
     private readonly userId: string | undefined;
     public readonly localFlags: LocalFlagsDb;
+    public readonly recovery: GenerationRecoveryDb;
     private isReconnecting = false;
     private reconnectAttempts = 0;
     private readonly maxReconnectAttempts = 5;
     private readonly baseReconnectDelay = 1000; // 1 second
 
-    constructor(userId: string | undefined) {
+    constructor(userId: string | undefined, getMasterKeys?: () => MasterKeysBundle | undefined) {
         // Surface a clear, user-facing error synchronously when IndexedDB is
         // unavailable (e.g. iOS Safari with website data blocked, private
         // browsing, or Lockdown Mode) so it propagates to the caller and the
@@ -478,6 +480,7 @@ export class DbApi {
         this.userId = userId;
         this.db = this.openDb(userId);
         this.localFlags = new LocalFlagsDb(userId);
+        this.recovery = new GenerationRecoveryDb(userId, getMasterKeys);
 
         // Initialize store operations
         this.spaceStore = new StoreOperations(this.db, storeConfigs.space);
@@ -816,6 +819,7 @@ export class DbApi {
     };
 
     public deleteAllData = async (tx?: IDBTransaction) => {
+        const recoveryCleanup = this.recovery.clear();
         tx ??= (await this.db).transaction(
             [SPACE_STORE, CONVERSATION_STORE, MESSAGE_STORE, ATTACHMENT_STORE, REMOTE_ID_STORE],
             'readwrite'
@@ -846,7 +850,8 @@ export class DbApi {
                 requestToPromise(tx.objectStore(REMOTE_ID_STORE).clear()).catch((e) => {
                     console.log(`cannot delete all id maps: ${e}`);
                 })
-            );
+            )
+            .then(() => recoveryCleanup);
     };
 
     public softDeleteAllData = async ({ dirty }: { dirty: boolean }) => {

@@ -84,6 +84,7 @@ import type {
     ToolFileProcessor,
     ToolImage,
 } from './client-tools';
+import type { GenerationRecovery, GenerationRecoveryState } from './recovery';
 
 // Re-export types with aliases
 export {
@@ -189,6 +190,8 @@ export type RecordRequestCallback = (body: ChatCompletionsRequest) => void;
 
 // Options interface -
 export interface AssistantCallOptions {
+    recovery?: GenerationRecovery;
+    resume?: GenerationRecoveryState;
     chunkCallback?: ChunkCallback;
     finishCallback?: FinishCallback;
     signal?: AbortSignal;

@@ -28,6 +28,7 @@ import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoDispatch, useLumoSelector } from '../../redux/hooks';
 import { selectProvisionalAttachments, selectSpaceById } from '../../redux/selectors';
 import { upsertAttachment } from '../../redux/slices/core/attachments';
+import { generationRegistry } from '../../services/generation/generationRegistry';
 import type { Attachment, Message } from '../../types';
 import { ComposerMode, SpaceType } from '../../types';
 import type { DictationLanguage } from '../../util/dictationLanguages';
@@ -271,6 +272,9 @@ const ComposerComponentInner = ({
 
     const sendGenerateMessage = useCallback(
         async (value: string) => {
+            if (isGenerating || (conversationId !== undefined && generationRegistry.isInProgress(conversationId))) {
+                return;
+            }
             if (isProcessingAttachment) {
                 console.log('Submission blocked: files are still being processed');
                 return;
@@ -291,6 +295,8 @@ const ComposerComponentInner = ({
         // composerInput.clear is intentionally omitted from deps — it's stable but the object is created below
         [
             handleSendMessage,
+            isGenerating,
+            conversationId,
             isWebSearchButtonToggled,
             isProcessingAttachment,
             buildImageOptions,

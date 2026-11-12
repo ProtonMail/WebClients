@@ -189,6 +189,8 @@ export enum LumoClientType {
 }
 
 export type ChatCompletionsLumoExtension = {
+    job_id?: string;
+    resumable?: boolean;
     client_type: LumoClientType;
     target?: LumoCompletionTarget;
     request_key?: string;

@@ -7,7 +7,9 @@ import type { ClientToolExecutor, ClientToolResult } from './client-tools';
 import { normalizeDesktopToolResult, prepareDesktopToolFileReads } from './desktop-tools';
 import { encryptTurns } from './encryption';
 import { RequestEncryptionParams } from './encryptionParams';
-import { callChatEndpoint } from './network';
+import { callChatEndpoint, resumeChatEndpoint } from './network';
+import { GenerationInterruptedError, ToolRetryConfirmationRequiredError, newRecoveryState } from './recovery';
+import type { GenerationRecoveryState } from './recovery';
 import { type EncryptedTurn, Role, type Turn } from './types';
 
 jest.mock('uuid', () => ({ v4: () => 'request-id' }));
@@ -21,6 +23,7 @@ jest.mock('./transforms/decrypt', () => ({
 jest.mock('./network', () => ({
     LUMO_CHAT_ENDPOINT: 'ai/v1/chat/completions',
     callChatEndpoint: jest.fn(),
+    resumeChatEndpoint: jest.fn(),
 }));
 
 const mockedCallChatEndpoint = callChatEndpoint as jest.MockedFunction<typeof callChatEndpoint>;
@@ -709,4 +712,456 @@ describe('auxiliary generation isolation', () => {
             );
         }
     );
+});
+
+describe('generation recovery', () => {
+    it('saves the job before posting and preserves an incomplete stream for recovery', async () => {
+        const checkpoints: GenerationRecoveryState[] = [];
+        const finish = jest.fn();
+        mockedCallChatEndpoint.mockImplementation(async (_api, _body, options) => {
+            expect(checkpoints[0].jobId).toBe(options?.recovery?.jobId);
+            expect(checkpoints[0].turns).toEqual(userTurns);
+            return stream(sse({ choices: [{ index: 0, delta: { content: 'Partial answer' } }] }));
+        });
+        await expect(
+            newClient().callAssistant(api, userTurns, {
+                recovery: {
+                    checkpoint: async (state) => {
+                        checkpoints.push(state);
+                    },
+                },
+                finishCallback: finish,
+            })
+        ).rejects.toBeInstanceOf(GenerationInterruptedError);
+        expect(checkpoints).toHaveLength(1);
+        expect(checkpoints[0].phase).toBe('streaming');
+        expect(finish).not.toHaveBeenCalled();
+    });
+
+    it('resumes the stored job without submitting another generation', async () => {
+        const resume = newRecoveryState(userTurns, 'message');
+        const chunks: string[] = [];
+        const checkpoints: GenerationRecoveryState[] = [];
+        jest.mocked(resumeChatEndpoint).mockResolvedValueOnce(proseResponse('Recovered answer'));
+        const result = await newClient().callAssistant(api, userTurns, {
+            resume,
+            recovery: {
+                checkpoint: async (state) => {
+                    checkpoints.push(state);
+                },
+            },
+            chunkCallback: (chunk) => {
+                if (chunk.type === 'token_data') {
+                    chunks.push(chunk.content);
+                }
+            },
+        });
+        expect(mockedCallChatEndpoint).not.toHaveBeenCalled();
+        expect(jest.mocked(resumeChatEndpoint)).toHaveBeenCalledWith(api, resume, undefined);
+        expect(chunks.join('')).toBe('Recovered answer');
+        expect(result.status).toBe('succeeded');
+        expect(checkpoints.at(-1)?.phase).toBe('completed');
+    });
+
+    it('replays image bytes and preserves the original encryption parameters', async () => {
+        enableFakeEncryption();
+        const requestKey = { type: 'AesGcmCryptoKey' as const, encryptKey: {} as CryptoKey };
+        const resume = newRecoveryState(userTurns, 'message');
+        const images: string[] = [];
+        jest.mocked(resumeChatEndpoint).mockResolvedValueOnce(
+            stream(
+                sse({
+                    object: 'lumo.image_data',
+                    image: { id: 'image-1', data: 'aW1hZ2UtYnl0ZXM=', encrypted: false },
+                }) + 'data: [DONE]\n\n'
+            )
+        );
+        await newClient().callAssistant(api, userTurns, {
+            requestId: 'original-crypto-id',
+            requestKey,
+            resume,
+            recovery: { checkpoint: async () => {} },
+            chunkCallback: (chunk) => {
+                if (chunk.type === 'image_data' && chunk.data) {
+                    images.push(chunk.data);
+                }
+            },
+        });
+        expect(mockedCreateEncryption).toHaveBeenCalledWith(requestKey, 'original-crypto-id', expect.anything());
+        expect(images).toEqual(['aW1hZ2UtYnl0ZXM=']);
+        expect(mockedCallChatEndpoint).not.toHaveBeenCalled();
+    });
+
+    it('retains every tool-round job for acknowledgement with the saved message', async () => {
+        callsToolsFor(2);
+        const checkpoints: GenerationRecoveryState[] = [];
+        const result = await newClient().callAssistant(api, userTurns, {
+            recovery: {
+                checkpoint: async (checkpoint) => {
+                    checkpoints.push(checkpoint);
+                },
+            },
+            enableAnswerNow: true,
+            clientToolExecutor: executor,
+            clientTools: [searchTool],
+        });
+        const streaming = checkpoints.filter((checkpoint) => checkpoint.phase === 'streaming');
+        const final = checkpoints.at(-1)!;
+        expect(result.status).toBe('succeeded');
+        expect(sentRequests().map((request) => request.lumo?.answer_now)).toEqual([true, true, true]);
+        expect(final.phase).toBe('completed');
+        expect(final.previousJobs).toEqual(streaming.slice(0, -1).map(({ jobId, token }) => ({ jobId, token })));
+        expect(final.turns.some((turn) => turn.content === 'Here it is.')).toBe(true);
+    });
+
+    it('requires confirmation before repeating an interrupted tool action', async () => {
+        const resume: GenerationRecoveryState = {
+            ...newRecoveryState(userTurns, 'message'),
+            phase: 'tool-running',
+            pendingCalls: [{ id: 'call_search', name: 'search', arguments: '{}' }],
+        };
+        const execute = jest.fn();
+        const confirm = jest.fn(async () => false);
+        await expect(
+            newClient().callAssistant(api, userTurns, {
+                resume,
+                clientToolExecutor: { canExecute: () => true, execute },
+                recovery: { checkpoint: async () => {}, confirmToolRetry: confirm },
+            })
+        ).rejects.toBeInstanceOf(ToolRetryConfirmationRequiredError);
+        expect(confirm).toHaveBeenCalledTimes(1);
+        expect(execute).not.toHaveBeenCalled();
+        expect(mockedCallChatEndpoint).not.toHaveBeenCalled();
+    });
+
+    it('continues an interrupted tool only after approval and saves its result before posting again', async () => {
+        const resume: GenerationRecoveryState = {
+            ...newRecoveryState(userTurns, 'message'),
+            phase: 'tool-running',
+            pendingCalls: [{ id: 'call_search', name: 'search', arguments: '{}' }],
+        };
+        const execute = jest.fn(async () => [{ content: 'Recovered tool result' }]);
+        const checkpoints: GenerationRecoveryState[] = [];
+        mockedCallChatEndpoint.mockImplementation(async () => {
+            expect(
+                checkpoints.some(
+                    (item) =>
+                        item.phase === 'ready' && item.turns.some((turn) => turn.content === 'Recovered tool result')
+                )
+            ).toBe(true);
+            return proseResponse('Answer after approved retry');
+        });
+        const result = await newClient().callAssistant(api, userTurns, {
+            resume,
+            clientToolExecutor: { canExecute: () => true, execute },
+            recovery: {
+                checkpoint: async (state) => {
+                    checkpoints.push(state);
+                },
+                confirmToolRetry: async () => true,
+            },
+        });
+        expect(execute).toHaveBeenCalledTimes(1);
+        expect(execute).toHaveBeenCalledWith(resume.pendingCalls);
+        expect(sentRequests()).toHaveLength(1);
+        expect(result.producedTurns.some((turn) => turn.content === 'Answer after approved retry')).toBe(true);
+    });
+
+    it('restores completed tool results without executing them again', async () => {
+        const completedTurns: Turn[] = [
+            ...userTurns,
+            { role: Role.ToolCall, content: 'search call' },
+            { role: Role.ToolResult, content: 'Saved search result' },
+            { role: Role.Assistant, content: '' },
+        ];
+        const resume = { ...newRecoveryState(completedTurns, 'message'), phase: 'ready' as const };
+        const execute = jest.fn();
+        mockedCallChatEndpoint.mockResolvedValueOnce(proseResponse('Final answer'));
+        const result = await newClient().callAssistant(api, userTurns, {
+            resume,
+            clientToolExecutor: { canExecute: () => true, execute },
+            recovery: { checkpoint: async () => {} },
+        });
+        expect(execute).not.toHaveBeenCalled();
+        expect(sentRequests()[0].messages.some((item) => item.content === 'Saved search result')).toBe(true);
+        expect(result.status).toBe('succeeded');
+    });
+});
+
+describe('recovery stream lifecycle', () => {
+    it('finishes and cancels the HTTP reader on DONE without waiting for EOF', async () => {
+        const cancel = jest.fn();
+        jest.mocked(resumeChatEndpoint).mockResolvedValueOnce(
+            new ReadableStream({
+                start(controller) {
+                    controller.enqueue(
+                        new TextEncoder().encode(
+                            sse({ choices: [{ delta: { content: 'Recovered answer' } }] }) + 'data: [DONE]\n\n'
+                        )
+                    );
+                },
+                cancel,
+            })
+        );
+        const chunks: string[] = [];
+        const checkpoints: GenerationRecoveryState[] = [];
+        const finish = jest.fn();
+        const result = await newClient().callAssistant(api, userTurns, {
+            resume: newRecoveryState(userTurns, 'message'),
+            recovery: {
+                checkpoint: async (state) => {
+                    checkpoints.push(state);
+                },
+            },
+            chunkCallback: (chunk) => {
+                if (chunk.type === 'token_data') chunks.push(chunk.content);
+            },
+            finishCallback: finish,
+        });
+        expect(chunks.join('')).toBe('Recovered answer');
+        expect(result.status).toBe('succeeded');
+        expect(checkpoints.at(-1)?.phase).toBe('completed');
+        expect(finish).toHaveBeenCalledWith('succeeded');
+        expect(cancel).toHaveBeenCalledTimes(1);
+    });
+
+    it('preserves application callback errors instead of silently reconnecting', async () => {
+        mockedCallChatEndpoint.mockResolvedValueOnce(proseResponse('Answer'));
+        const error = new TypeError('Application callback failed');
+        const finish = jest.fn();
+        await expect(
+            newClient().callAssistant(api, userTurns, {
+                recovery: { checkpoint: async () => {} },
+                chunkCallback: () => {
+                    throw error;
+                },
+                finishCallback: finish,
+            })
+        ).rejects.toBe(error);
+        expect(finish).toHaveBeenCalledWith('failed');
+    });
+
+    it('preserves terminal HTTP failures instead of silently reconnecting', async () => {
+        const error = { status: 503, data: { error: { code: 'rejected' } } };
+        mockedCallChatEndpoint.mockRejectedValueOnce(error);
+        const finish = jest.fn();
+        await expect(
+            newClient().callAssistant(api, userTurns, {
+                recovery: { checkpoint: async () => {} },
+                finishCallback: finish,
+            })
+        ).rejects.toBe(error);
+        expect(finish).toHaveBeenCalledWith('failed');
+    });
+
+    it('keeps body-read failures recoverable', async () => {
+        mockedCallChatEndpoint.mockResolvedValueOnce(
+            new ReadableStream({
+                start(controller) {
+                    controller.error(new TypeError('Network connection lost'));
+                },
+            })
+        );
+        const finish = jest.fn();
+        await expect(
+            newClient().callAssistant(api, userTurns, {
+                recovery: { checkpoint: async () => {} },
+                finishCallback: finish,
+            })
+        ).rejects.toBeInstanceOf(GenerationInterruptedError);
+        expect(finish).not.toHaveBeenCalled();
+    });
+});
+
+describe('recovery before response headers', () => {
+    it.each([false, true])('keeps fetch failures recoverable when resuming is %s', async (resuming) => {
+        const error = new TypeError('Failed to fetch');
+        const finish = jest.fn();
+        const endpoint = resuming ? jest.mocked(resumeChatEndpoint) : mockedCallChatEndpoint;
+        endpoint.mockRejectedValueOnce(error);
+        await expect(
+            newClient().callAssistant(api, userTurns, {
+                ...(resuming ? { resume: newRecoveryState(userTurns, 'message') } : {}),
+                recovery: { checkpoint: async () => {} },
+                finishCallback: finish,
+            })
+        ).rejects.toBeInstanceOf(GenerationInterruptedError);
+        expect(finish).not.toHaveBeenCalled();
+    });
+
+    it('preserves fetch failures when recovery is disabled', async () => {
+        const error = new TypeError('Failed to fetch');
+        const finish = jest.fn();
+        mockedCallChatEndpoint.mockRejectedValueOnce(error);
+        await expect(newClient().callAssistant(api, userTurns, { finishCallback: finish })).rejects.toBe(error);
+        expect(finish).toHaveBeenCalledWith('failed');
+    });
+});
+
+describe('recoverable tools that end the turn', () => {
+    it.each([true, false])('does not resume a terminal or stopped tool round (endTurn: %s)', async (endTurn) => {
+        mockedCallChatEndpoint.mockResolvedValueOnce(toolCallResponse('search'));
+        const controller = new AbortController();
+        const execute = jest.fn(async () => {
+            if (!endTurn) {
+                controller.abort();
+            }
+            return [{ content: 'Schedule draft ready', endTurn }];
+        });
+        let checkpoint: GenerationRecoveryState | undefined;
+        const client = newClient();
+        const options = {
+            clientToolExecutor: { canExecute: () => true, execute },
+            recovery: {
+                checkpoint: async (value: GenerationRecoveryState) => {
+                    checkpoint = value;
+                },
+            },
+        };
+        await client.callAssistant(api, userTurns, { ...options, signal: controller.signal });
+        expect(checkpoint?.phase).toBe('completed');
+        expect(checkpoint?.turns).toContainEqual({ role: Role.ToolResult, content: 'Schedule draft ready' });
+        await client.callAssistant(api, userTurns, { ...options, resume: checkpoint });
+        expect(execute).toHaveBeenCalledTimes(1);
+        expect(mockedCallChatEndpoint).toHaveBeenCalledTimes(1);
+    });
+});
+
+describe('stopping recovered client tools', () => {
+    beforeEach(() => jest.mocked(resumeChatEndpoint).mockClear());
+    it.each([
+        ['tool-pending', 'preparation'],
+        ['tool-running', 'confirmation'],
+        ['tool-running', 'declined confirmation'],
+        ['tool-pending', 'checkpoint'],
+        ['tool-running', 'checkpoint'],
+    ] as const)('does not dispatch %s tools after Stop during %s', async (phase, stopDuring) => {
+        const controller = new AbortController();
+        const execute = jest.fn(async () => [{ content: 'should not run' }]);
+        const checkpoints: GenerationRecoveryState[] = [];
+        const finished = jest.fn();
+        const resume: GenerationRecoveryState = {
+            ...newRecoveryState(userTurns, 'message'),
+            phase,
+            pendingCalls: [{ id: 'pending', name: 'search', arguments: '{}' }],
+        };
+        const client = newClient();
+        client.addRequestInterceptor({
+            onRequest: async (request) => {
+                if (stopDuring === 'preparation') {
+                    controller.abort();
+                }
+                return request;
+            },
+        });
+        const result = await client.callAssistant(api, userTurns, {
+            resume,
+            signal: controller.signal,
+            finishCallback: finished,
+            clientToolExecutor: { canExecute: () => true, execute },
+            recovery: {
+                confirmToolRetry: async () => {
+                    if (stopDuring === 'confirmation' || stopDuring === 'declined confirmation') {
+                        controller.abort();
+                    }
+                    return stopDuring !== 'declined confirmation';
+                },
+                checkpoint: async (state) => {
+                    checkpoints.push(state);
+                    if (stopDuring === 'checkpoint') {
+                        controller.abort();
+                    }
+                },
+            },
+        });
+        expect(result.status).toBe('succeeded');
+        expect(finished).toHaveBeenCalledWith('succeeded');
+        expect(checkpoints.at(-1)?.phase).toBe('completed');
+        expect(checkpoints.at(-1)?.pendingCalls).toBeUndefined();
+        expect(execute).not.toHaveBeenCalled();
+        expect(mockedCallChatEndpoint).not.toHaveBeenCalled();
+        expect(resumeChatEndpoint).not.toHaveBeenCalled();
+    });
+});
+
+it('keeps tools recoverable when the connection detaches during checkpoint persistence', async () => {
+    const controller = new AbortController();
+    const execute = jest.fn();
+    const resume: GenerationRecoveryState = {
+        ...newRecoveryState(userTurns, 'message'),
+        phase: 'tool-pending',
+        pendingCalls: [{ id: 'pending', name: 'search', arguments: '{}' }],
+    };
+    const checkpoints: GenerationRecoveryState[] = [];
+    await expect(
+        newClient().callAssistant(api, userTurns, {
+            resume,
+            signal: controller.signal,
+            clientToolExecutor: { canExecute: () => true, execute },
+            recovery: {
+                checkpoint: async (state) => {
+                    checkpoints.push(state);
+                    controller.abort(new GenerationInterruptedError());
+                },
+            },
+        })
+    ).rejects.toBeInstanceOf(GenerationInterruptedError);
+    expect(execute).not.toHaveBeenCalled();
+    expect(checkpoints.at(-1)?.phase).toBe('tool-running');
+    expect(checkpoints.at(-1)?.pendingCalls).toEqual(resume.pendingCalls);
+});
+
+it.each([true, false])(
+    'preserves a busy replay without retrying rejected new generations (resuming: %s)',
+    async (resuming) => {
+        const error = Object.assign(new Error('Too many replay readers'), { status: 429 });
+        const state = newRecoveryState(userTurns, 'message');
+        jest.mocked(resumeChatEndpoint).mockRejectedValueOnce(error);
+        mockedCallChatEndpoint.mockRejectedValueOnce(error);
+        const finish = jest.fn();
+        const result = newClient().callAssistant(api, userTurns, {
+            ...(resuming ? { resume: state } : {}),
+            recovery: { checkpoint: async () => {} },
+            finishCallback: finish,
+        });
+        if (resuming) {
+            await expect(result).rejects.toBeInstanceOf(GenerationInterruptedError);
+            expect(finish).not.toHaveBeenCalled();
+        } else {
+            await expect(result).rejects.toBe(error);
+            expect(finish).toHaveBeenCalledWith('failed');
+        }
+    }
+);
+
+it('disables recovery before posting once when the initial checkpoint is unavailable', async () => {
+    jest.mocked(resumeChatEndpoint).mockClear();
+    const checkpoint = jest.fn(async () => 'disabled' as const);
+    mockedCallChatEndpoint.mockResolvedValue(proseResponse('Ordinary answer'));
+    const result = await newClient().callAssistant(api, userTurns, { recovery: { checkpoint } });
+    expect(result.status).toBe('succeeded');
+    expect(result.producedTurns).toContainEqual({ role: Role.Assistant, content: 'Ordinary answer' });
+    expect(checkpoint).toHaveBeenCalledTimes(1);
+    expect(mockedCallChatEndpoint).toHaveBeenCalledTimes(1);
+    expect(mockedCallChatEndpoint.mock.calls[0][2]?.recovery).toBeUndefined();
+    expect(jest.mocked(resumeChatEndpoint)).not.toHaveBeenCalled();
+});
+
+it('refuses to disable checkpoints after a tool request has been generated', async () => {
+    const checkpoint = jest.fn().mockResolvedValueOnce(undefined).mockResolvedValue('disabled');
+    const execute = jest.fn(async () => [{ content: 'tool result' }]);
+    mockedCallChatEndpoint.mockResolvedValue(toolCallResponse('search'));
+    await expect(
+        newClient().callAssistant(api, userTurns, {
+            recovery: { checkpoint },
+            clientToolExecutor: { canExecute: () => true, execute },
+            clientTools: [searchTool],
+        })
+    ).rejects.toBeInstanceOf(GenerationInterruptedError);
+    expect(execute).not.toHaveBeenCalled();
+    expect(mockedCallChatEndpoint).toHaveBeenCalledTimes(1);
+    expect(checkpoint.mock.calls[1][0]).toMatchObject({
+        phase: 'tool-pending',
+        pendingCalls: [expect.objectContaining({ name: 'search' })],
+    });
 });

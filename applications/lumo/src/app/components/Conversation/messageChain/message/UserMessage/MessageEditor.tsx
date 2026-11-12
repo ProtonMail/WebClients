@@ -11,9 +11,10 @@ interface MessageEditorProps {
     messageContent: string;
     handleEditMessage: (newContent: string) => void;
     handleCancel: () => void;
+    isGenerating: boolean;
 }
 
-const MessageEditor = ({ messageContent, handleEditMessage, handleCancel }: MessageEditorProps) => {
+const MessageEditor = ({ messageContent, handleEditMessage, handleCancel, isGenerating }: MessageEditorProps) => {
     const { isBlocked: isChatLimitBlocked } = useChatLimitGate();
     const [value, setValue] = useState(messageContent);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -37,6 +38,9 @@ const MessageEditor = ({ messageContent, handleEditMessage, handleCancel }: Mess
     }, [handleCancel]);
 
     const handleSubmit = () => {
+        if (isGenerating) {
+            return;
+        }
         const trimmed = value.trim();
         if (trimmed && trimmed !== messageContent) {
             handleEditMessage(trimmed);
@@ -79,7 +83,7 @@ const MessageEditor = ({ messageContent, handleEditMessage, handleCancel }: Mess
                         shape="solid"
                         color="norm"
                         onClick={handleSubmit}
-                        disabled={isUnchanged || isChatLimitBlocked}
+                        disabled={isGenerating || isUnchanged || isChatLimitBlocked}
                     >
                         {c('collider_2025:Button').t`Send`}
                     </Button>

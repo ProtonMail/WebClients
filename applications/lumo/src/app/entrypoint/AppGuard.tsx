@@ -1,11 +1,11 @@
-import { Suspense, lazy, useMemo } from 'react';
+import { Suspense, lazy, useEffect, useMemo } from 'react';
 
 import { c } from 'ttag';
 
 import TextLoader from '@proton/components/components/loader/TextLoader';
 
 import { LUMO_APP_NAME } from '../constants';
-
+import { deleteGuestGenerationRecovery } from '../indexedDb/generationRecoveryDb';
 import { isPublicPathname } from './lumoRoutes';
 
 const determineRouteType = (pathname: string): 'private' | 'public' => {
@@ -29,6 +29,11 @@ const GuestApp = lazy(
 );
 
 const AppGuard = () => {
+    useEffect(() => {
+        void deleteGuestGenerationRecovery().catch(() => {
+            console.warn('[Generation recovery] Guest checkpoint cleanup is blocked or unavailable');
+        });
+    }, []);
     const routeType = useMemo(() => determineRouteType(window.location.pathname), [window.location.pathname]);
 
     const fallback = (

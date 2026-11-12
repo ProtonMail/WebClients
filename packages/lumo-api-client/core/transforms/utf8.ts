@@ -4,9 +4,15 @@ const makeUtf8DecodingTransformer = (): Transformer<Bytes, string> => {
     const decoder = new TextDecoder('utf-8');
     return {
         transform(bytes: Bytes, controller: TransformStreamDefaultController) {
-            const decoded = decoder.decode(bytes);
+            const decoded = decoder.decode(bytes, { stream: true });
             if (decoded === '') return;
             controller.enqueue(decoded);
+        },
+        flush(controller) {
+            const decoded = decoder.decode();
+            if (decoded !== '') {
+                controller.enqueue(decoded);
+            }
         },
     };
 };

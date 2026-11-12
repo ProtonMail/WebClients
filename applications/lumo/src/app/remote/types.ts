@@ -149,6 +149,7 @@ export type MessageToApi = {
     Status: StatusInt | undefined;
     Encrypted?: Base64;
     MessageTag: MessageTag;
+    GenerationJobs?: { JobID: string; Token: string }[];
 };
 
 /** Public space discriminator used by Slim-API. */

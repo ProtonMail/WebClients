@@ -250,6 +250,7 @@ enum LumoFeatureFlag {
     LumoApertusModel = 'LumoApertusModel',
     LumoAPIKeyManagement = 'LumoAPIKeyManagement',
     LumoArtifactSlides = 'LumoArtifactSlides',
+    LumoResumableGeneration = 'LumoResumableGeneration',
     LumoArtifactsView = 'LumoArtifactsView',
     LumoArtifactsViewSpotlight = 'LumoArtifactsViewSpotlight',
     LumoAskUserQuestionsTool = 'LumoAskUserQuestionsTool',

@@ -6,6 +6,7 @@ import type {
     LumoRemainingLimits,
     LumoUsageLimitsResponse,
 } from '../types-api';
+import type { GenerationRecoveryState } from './recovery';
 
 export const LUMO_CHAT_ENDPOINT = 'ai/v1/chat/completions';
 export const LUMO_LIMITS_ENDPOINT = 'ai/v1/limits';
@@ -20,9 +21,10 @@ export async function callChatEndpoint(
     options: {
         endpoint?: string;
         signal?: AbortSignal;
+        recovery?: GenerationRecoveryState;
     } = {}
 ): Promise<ReadableStream> {
-    const { endpoint, signal } = options;
+    const { endpoint, signal, recovery } = options;
 
     const finalEndpoint = endpoint || LUMO_CHAT_ENDPOINT;
 
@@ -31,7 +33,8 @@ export async function callChatEndpoint(
     const response = await api({
         url: finalEndpoint,
         method: 'post',
-        data: payload,
+        data: recovery ? { ...payload, lumo: { ...payload.lumo, job_id: recovery.jobId, resumable: true } } : payload,
+        ...(recovery ? { headers: { 'x-lumo-resume-token': recovery.token } } : {}),
         signal,
         output: 'stream',
         silence: true,
@@ -72,4 +75,29 @@ export async function fetchModels(api: Api): Promise<LumoModelsListResponse['dat
     });
 
     return response.data;
+}
+
+export async function resumeChatEndpoint(
+    api: Api,
+    state: GenerationRecoveryState,
+    signal?: AbortSignal
+): Promise<ReadableStream> {
+    return api({
+        url: `ai/v1/jobs/${encodeURIComponent(state.jobId)}/resume`,
+        method: 'get',
+        headers: { 'x-lumo-resume-token': state.token },
+        output: 'stream',
+        signal,
+        silence: true,
+        timeout: 60_000,
+    });
+}
+
+export async function discardChatJob(api: Api, state: GenerationRecoveryState): Promise<void> {
+    await api({
+        url: `ai/v1/jobs/${encodeURIComponent(state.jobId)}`,
+        method: 'delete',
+        headers: { 'x-lumo-resume-token': state.token },
+        silence: true,
+    });
 }

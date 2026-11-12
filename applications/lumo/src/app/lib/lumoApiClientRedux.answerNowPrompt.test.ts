@@ -43,7 +43,7 @@ it.each([false, true])(
             conversationId: message.conversationId,
             spaceId: 'space-1',
             config: { enableU2LEncryption: false, enableSmoothing },
-        })(dispatch, () => ({ messages }) as LumoState);
+        })(dispatch, () => ({ messages, conversations: {} }) as LumoState);
         await waitFor(() => expect(api).toHaveBeenCalled());
         const request = (api as jest.Mock).mock.calls[0][0];
         expect(request.url).toBe('ai/v1/chat/completions');

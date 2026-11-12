@@ -407,42 +407,52 @@ export const MessageChainComponent = ({
         conversationId
     );
     const [hasNewContentBelow, setHasNewContentBelow] = useState(false);
+    const hasNewContentBelowRef = useRef(false);
 
     useEffect(() => {
-        if (!messageChainRef.current) return;
-
-        const container = messageChainRef.current;
-        let previousScrollHeight = container.scrollHeight;
-
-        const checkForNewContent = () => {
-            if (!container) return;
-
-            const currentScrollHeight = container.scrollHeight;
-            const scrollTop = container.scrollTop;
-            const clientHeight = container.clientHeight;
-            const isAtBottom = currentScrollHeight - scrollTop - clientHeight <= 100;
-
-            if (currentScrollHeight > previousScrollHeight && !isAtBottom && isGenerating) {
-                setHasNewContentBelow(true);
-            } else if (isAtBottom) {
-                setHasNewContentBelow(false);
+        const updateIndicator = (next: boolean) => {
+            if (hasNewContentBelowRef.current === next) {
+                return;
             }
-
+            hasNewContentBelowRef.current = next;
+            setHasNewContentBelow(next);
+        };
+        if (!isGenerating) {
+            updateIndicator(false);
+            return;
+        }
+        const container = messageChainRef.current;
+        if (!container) {
+            return;
+        }
+        let previousScrollHeight = container.scrollHeight;
+        let frame: number | null = null;
+        const checkForNewContent = () => {
+            frame = null;
+            const currentScrollHeight = container.scrollHeight;
+            const isAtBottom = currentScrollHeight - container.scrollTop - container.clientHeight <= 100;
+            if (isAtBottom) {
+                updateIndicator(false);
+            } else if (currentScrollHeight > previousScrollHeight) {
+                updateIndicator(true);
+            }
             previousScrollHeight = currentScrollHeight;
         };
-
-        if (isGenerating) {
-            const observer = new MutationObserver(checkForNewContent);
-            observer.observe(container, {
-                childList: true,
-                subtree: true,
-                characterData: true,
-            });
-
-            return () => observer.disconnect();
-        } else {
-            setHasNewContentBelow(false);
-        }
+        const scheduleCheck = () => {
+            if (frame === null) {
+                frame = requestAnimationFrame(checkForNewContent);
+            }
+        };
+        const observer = new MutationObserver(scheduleCheck);
+        observer.observe(container, { childList: true, subtree: true, characterData: true });
+        container.addEventListener('scroll', scheduleCheck, { passive: true });
+        return () => {
+            observer.disconnect();
+            container.removeEventListener('scroll', scheduleCheck);
+            if (frame !== null) {
+                cancelAnimationFrame(frame);
+            }
+        };
     }, [isGenerating, messageChainRef]);
 
     const showScrollIndicator = userHasScrolledUp || hasNewContentBelow;

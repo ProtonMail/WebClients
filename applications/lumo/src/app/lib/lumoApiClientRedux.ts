@@ -10,19 +10,16 @@ import {
 } from '@proton/lumo-api-client/core/context-length';
 import { getDesktopLumoApiClientConfig } from '@proton/lumo-api-client/core/desktop-tools';
 import { getTerminalTypeFromApiError } from '@proton/lumo-api-client/core/generation-terminal';
-import type {
-    AssistantCallOptions,
-    AssistantCallResult,
-    GenerationResponseMessage,
-    LumoApiClientConfig,
-    Turn,
-} from '@proton/lumo-api-client/core/types';
+import { GenerationInterruptedError, ToolRetryConfirmationRequiredError } from '@proton/lumo-api-client/core/recovery';
+import type { GenerationRecovery } from '@proton/lumo-api-client/core/recovery';
+import type { AssistantCallResult, Turn } from '@proton/lumo-api-client/core/types';
 import { postProcessTitle } from '@proton/lumo-api-client/utils';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { buildArtifactRegistry } from '../components/Conversation/artifact/artifactRegistry';
-import type { ArtifactToolMode } from '../components/Conversation/helper';
+import type { ForwardedSendOptions } from '../components/Conversation/compactionFlow';
+import { cryptoKeyToBase64 } from '../crypto';
 import { estimateTurnsTokens } from '../llm/compaction/tokens';
 import { recordOverflow, recordPromptUsage } from '../llm/requestCalibration';
 import { selectAttachmentsBySpaceId } from '../redux/selectors';
@@ -46,9 +43,21 @@ import {
     setToolResult,
 } from '../redux/slices/core/messages';
 import type { LumoDispatch, LumoState } from '../redux/store';
+import { extraThunkArguments } from '../redux/thunk';
 import { attachmentDataCache } from '../services/attachmentDataCache';
 import { recordLastRequest } from '../services/feedback/lastRequestStore';
 import { createToolFileProcessor } from '../services/files/toolFileProcessing';
+import { generationRegistry } from '../services/generation/generationRegistry';
+import {
+    GenerationCheckpointError,
+    cancelGenerationJobs,
+    discardGenerationRecovery,
+    finalizeGenerationRecovery,
+    persistGenerationCheckpoint,
+    removeGenerationRecovery,
+} from '../services/generation/recovery';
+import type { RecoveryRecord } from '../services/generation/recovery';
+import { RecoveryAttachmentWriter } from '../services/generation/recoveryAttachments';
 import { syncArtifactAssets } from '../services/generation/syncArtifactAssets';
 import { applyUsageFromStreamMessage } from '../services/usageLimitsStore';
 import { ConversationStatus, Role } from '../types';
@@ -80,29 +89,34 @@ export const getTerminalTypeForApiError = (error: unknown) => {
 export function sendMessageWithRedux(
     api: Api,
     turns: Turn[],
-    options: AssistantCallOptions & {
-        config?: Partial<LumoApiClientConfig>;
+    options: ForwardedSendOptions & {
+        recoveryRecord?: RecoveryRecord;
+        confirmToolRetry?: () => Promise<boolean>;
         messageId?: string;
         conversationId?: string;
         spaceId?: string;
         role?: Role;
-        errorHandler?: (message: GenerationResponseMessage, conversationId: string) => any;
-        artifactToolMode?: ArtifactToolMode;
     } = {} as any
 ) {
     return async (dispatch: LumoDispatch, getState: () => LumoState): Promise<AssistantCallResult> => {
         const {
             config,
+            recoveryRecord,
+            enableGenerationRecovery = false,
+            confirmToolRetry,
             messageId,
             conversationId,
             spaceId,
             role = Role.Assistant,
             errorHandler,
             artifactToolMode,
+            retrievalTools,
+            retrievalExecutionState,
+            getRetrievalExecutionState,
             ...assistantOptions
         } = options;
 
-        let accumulatedContent = '';
+        let accumulatedContent = recoveryRecord?.message.content ?? '';
         let accumulatedTitle = '';
         let persistedTitle: string | undefined = undefined;
         let sawToolActivity = false;
@@ -151,9 +165,62 @@ export function sendMessageWithRedux(
             flushTimer ??= setTimeout(flushContent, CHUNK_FLUSH_INTERVAL_MS);
         };
 
+        let recoveryEnabled = Boolean(
+            messageId &&
+            conversationId &&
+            spaceId &&
+            !getState().conversations[conversationId]?.ghost &&
+            (!extraThunkArguments.dbApi || generationRegistry.canRecover()) &&
+            (recoveryRecord || enableGenerationRecovery)
+        );
+        const attachmentWriter = new RecoveryAttachmentWriter(extraThunkArguments.dbApi);
+        let checkpointSaved = Boolean(recoveryRecord);
+        const saveCheckpoint: GenerationRecovery['checkpoint'] = async (checkpoint, encryption) => {
+            if (!messageId || !conversationId || !spaceId) {
+                return;
+            }
+            flushContent();
+            try {
+                await persistGenerationCheckpoint({
+                    checkpoint,
+                    attachmentWriter,
+                    requestId: encryption?.requestId,
+                    requestKey: encryption ? await cryptoKeyToBase64(encryption.requestKey.encryptKey) : undefined,
+                    options: {
+                        ...assistantOptions,
+                        artifactToolMode,
+                        retrievalTools,
+                        retrievalExecutionState,
+                        getRetrievalExecutionState,
+                    },
+                    config,
+                    messageId,
+                    conversationId,
+                    spaceId,
+                    getState,
+                });
+                checkpointSaved = true;
+            } catch (error) {
+                if (error instanceof GenerationCheckpointError && !checkpointSaved) {
+                    recoveryEnabled = false;
+                    await removeGenerationRecovery(conversationId, checkpoint.jobId);
+                    return 'disabled';
+                }
+                throw error;
+            }
+        };
         try {
             const result = await client.callAssistant(api, turns, {
                 ...assistantOptions,
+                ...(recoveryEnabled
+                    ? {
+                          resume: recoveryRecord?.checkpoint,
+                          recovery: {
+                              confirmToolRetry,
+                              checkpoint: saveCheckpoint,
+                          },
+                      }
+                    : {}),
                 featureFlags,
                 chunkCallback: async (message) => {
                     if (message.type !== 'token_data' || message.target !== 'message') {
@@ -493,6 +560,12 @@ export function sendMessageWithRedux(
                         // non-persisted message, the entire child subtree is at risk:
                         // persistence relies on the message tree topology, and a missing
                         // parent means children cannot be persisted either.
+                        if (recoveryEnabled && checkpointSaved) {
+                            const record = await finalizeGenerationRecovery(conversationId, getState(), api);
+                            if (assistantOptions.signal?.aborted && record && extraThunkArguments.dbApi) {
+                                void cancelGenerationJobs(api, record.checkpoint);
+                            }
+                        }
                         // A failure is pushed once its cause is known (below): a context
                         // overflow is left to the compaction flow, which retries into a new
                         // message and persists or discards this attempt itself, since
@@ -551,6 +624,14 @@ export function sendMessageWithRedux(
             pushPendingFailure();
             return result;
         } catch (error) {
+            const interrupted =
+                error instanceof GenerationInterruptedError || error instanceof ToolRetryConfirmationRequiredError;
+            if (interrupted) {
+                throw error;
+            }
+            if (recoveryEnabled && checkpointSaved && conversationId && !assistantOptions.signal?.aborted) {
+                await discardGenerationRecovery(api, conversationId);
+            }
             const overflow = isContextLengthExceededError(error)
                 ? error
                 : isContextLengthExceededApiError(error)

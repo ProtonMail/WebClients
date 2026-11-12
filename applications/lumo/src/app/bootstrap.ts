@@ -33,6 +33,7 @@ import locales from './locales';
 import { lumoEventLoop } from './redux/eventLoop';
 import { createLumoListenerMiddleware } from './redux/listeners';
 import { rootSaga } from './redux/sagas';
+import { selectMasterKeysBundle } from './redux/selectors';
 import { updateFeatureFlags } from './redux/slices/featureFlags';
 import { importGuestDataRequest } from './redux/slices/guestMigration';
 import type { LumoSaga, LumoSagaContext, LumoState } from './redux/store';
@@ -335,7 +336,7 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
             // Needs only a user ID, and the one from the session is the same one `userThunk`
             // returns — so this does not have to wait for `userPromise` either. Run against the
             // locale gate so a cold load pays `max(idb, settings)` rather than the sum.
-            const dbApi = new DbApi(gateUser.ID);
+            const dbApi = new DbApi(gateUser.ID, () => selectMasterKeysBundle(store.getState()));
             await Promise.all([dbApi.initialize(), openLocaleGate()]);
             const lumoApi = new LumoApi(uid);
             extendStore({ dbApi, lumoApi });

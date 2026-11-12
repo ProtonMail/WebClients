@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 
 import type { NativeAccountAction } from '../remote/nativeAuthBridge';
 import { isNativeAuthBridgeAvailable, triggerNativeAccountAction } from '../remote/nativeAuthBridgeHelpers';
+import { clearGenerationRecoveryOnLogout } from '../services/generation/recovery';
 import { canUseNativeAuth, isNativeAuthFlagEnabled, isNativeMobileApp } from '../util/userAgent';
 import { useLumoFlags } from './useLumoFlags';
 
@@ -27,7 +28,13 @@ export const useLumoAuthAction = () => {
     const trigger = useCallback(
         (action: AuthAction) => {
             if (isEnabled) {
-                triggerNativeAccountAction(ACTION_TO_NATIVE[action]);
+                if (action === 'signout') {
+                    void clearGenerationRecoveryOnLogout().finally(() =>
+                        triggerNativeAccountAction(ACTION_TO_NATIVE[action])
+                    );
+                } else {
+                    triggerNativeAccountAction(ACTION_TO_NATIVE[action]);
+                }
             }
         },
         [isMobileApp, flagEnabled, bridgeAvailable, isNativeAuthEnabled]
