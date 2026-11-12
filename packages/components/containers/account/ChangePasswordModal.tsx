@@ -430,6 +430,7 @@ const ChangePasswordModal = ({
                             as={PasswordInputTwo}
                             autoFocus
                             autoComplete="new-password"
+                            data-protonpass-ignore={true}
                             value={inputs.newPassword}
                             onValue={(value: string) => setPartialInput({ newPassword: value })}
                             disabled={loading}
@@ -460,6 +461,7 @@ const ChangePasswordModal = ({
                             ])}
                             as={PasswordInputTwo}
                             autoComplete="new-password"
+                            data-protonpass-ignore={true}
                             value={inputs.confirmPassword}
                             onValue={(value: string) => setPartialInput({ confirmPassword: value })}
                             disabled={loading}
