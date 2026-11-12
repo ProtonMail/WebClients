@@ -12,6 +12,7 @@ import { SignInWizard } from '../../SignInWizard';
 import { AuthType, type AuthTypeData } from '../../auth/interface';
 import { SignInPageLayout } from '../../components/SignInPageLayout';
 import { SignInStateMachine } from '../../state-machine/SignInStateMachine';
+import type { CreatedAuth } from '../../state-machine/signInActors';
 import { SignInContext } from '../../wizard/SignInContext';
 import { SignInProvider } from '../../wizard/SignInProvider';
 import type {
@@ -47,6 +48,8 @@ const renderForm = ({
     testflight,
     authenticateWithPassword = jest.fn((_values: CredentialsFormValues) => new Promise<PrimaryAuthResult>(() => {})),
     authenticateWithSSOToken,
+    ssoAccount = false,
+    holdAfterSignIn = false,
 }: {
     authTypeData?: AuthTypeData;
     compactForm?: boolean;
@@ -55,6 +58,10 @@ const renderForm = ({
     authenticateWithPassword?: jest.Mock;
     /** Also signs in with the identity provider right away, without its window. */
     authenticateWithSSOToken?: jest.Mock;
+    /** The username step finds an SSO account, and the identity provider's window stays open. */
+    ssoAccount?: boolean;
+    /** Once the password is accepted, the sign-in stays on its next step, as when it asks for a second factor. */
+    holdAfterSignIn?: boolean;
 } = {}) => {
     let expireSession = () => {};
     const machine = SignInStateMachine.provide({
@@ -63,12 +70,25 @@ const renderForm = ({
             watchSession: fromCallback(({ sendBack }) => {
                 expireSession = () => sendBack({ type: 'session.expired' });
             }),
+            ...(holdAfterSignIn && {
+                createAuthState: fromPromise<CreatedAuth, PrimaryAuthResult>(() => new Promise(() => {})),
+            }),
             credentialsFlow: credentialsStateMachine.provide({
                 actors: {
                     startAuthSession: fromPromise(() => Promise.resolve()),
                     fetchAccountType: fromPromise(() =>
-                        Promise.resolve<AccountType>({ type: 'srp', info: {} as InfoResponse })
+                        Promise.resolve<AccountType>(
+                            ssoAccount
+                                ? { type: 'sso', ssoInfo: { SSOChallengeToken: 'challenge' } as SSOInfoResponse }
+                                : { type: 'srp', info: {} as InfoResponse }
+                        )
                     ),
+                    ...(ssoAccount && {
+                        authorizeWithSSOProvider: fromPromise<
+                            SSOProviderResult,
+                            { token: string | undefined; persistent: boolean }
+                        >(() => new Promise(() => {})),
+                    }),
                     authenticateWithPassword: fromPromise(({ input }) => authenticateWithPassword(input)),
                     ...(authenticateWithSSOToken && {
                         fetchSSOInfo: fromPromise(() =>
@@ -267,6 +287,43 @@ describe('the credentials screens', () => {
         expect(await screen.findByTestId('login:error-block')).toHaveTextContent(message);
         await user.type(screen.getByLabelText('Email'), 'x');
         await waitFor(() => expect(screen.queryByTestId('login:error-block')).not.toBeInTheDocument());
+    });
+
+    it('says on the password step that the session expired after the password was accepted, without marking it', async () => {
+        const { expireSession } = renderForm({
+            authenticateWithPassword: jest.fn(() => Promise.resolve({} as PrimaryAuthResult)),
+            holdAfterSignIn: true,
+        });
+        const user = userEvent.setup();
+        await user.type(await continueToPassword(user), 'secret');
+        await user.click(screen.getByRole('button', { name: 'Sign in' }));
+        await waitFor(() => expect(screen.getByRole('button', { name: /Signing in/ })).toBeInTheDocument());
+
+        expireSession();
+
+        expect(await screen.findByTestId('login:error-block')).toHaveTextContent(
+            'The session has expired. Please try again.'
+        );
+        expect(screen.getByLabelText('Enter your password').closest('.field-two--invalid')).toBeNull();
+        await user.type(screen.getByLabelText('Enter your password'), 'x');
+        await waitFor(() => expect(screen.queryByTestId('login:error-block')).not.toBeInTheDocument());
+    });
+
+    it("says on the username step that the session expired with the identity provider's window open", async () => {
+        const { expireSession } = renderForm({ ssoAccount: true });
+        const user = userEvent.setup();
+        await user.type(screen.getByLabelText('Email or username'), 'member@company.com');
+        await user.click(screen.getByRole('button', { name: 'Continue' }));
+        // The window's challenge came with the session that now expires
+        await screen.findByRole('button', { name: /Cancel/ });
+
+        expireSession();
+
+        expect(await screen.findByTestId('login:error-block')).toHaveTextContent(
+            'The session has expired. Please try again.'
+        );
+        expect(screen.getByLabelText('Email or username')).toHaveValue('member@company.com');
+        expect(screen.getByLabelText('Email or username').closest('.field-two--invalid')).toBeNull();
     });
 
     it('says inline that the session expired, without marking the email, and clears it when the user edits it', async () => {

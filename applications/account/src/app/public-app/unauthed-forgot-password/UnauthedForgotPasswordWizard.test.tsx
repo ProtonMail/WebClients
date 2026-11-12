@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 
-import { screen, waitFor, within } from '@testing-library/react';
+import { act, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
@@ -48,13 +48,21 @@ jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
 
+/** The page's expiry listener, so a test can expire the unauthenticated session. */
+let expireSession = () => {};
+
 function ForgotPasswordHarness() {
     return (
         <ResetPasswordPage
             onLogin={jest.fn()}
             onPreSubmit={() => Promise.resolve()}
             onStartAuth={() => Promise.resolve()}
-            onSessionExpired={() => () => {}}
+            onSessionExpired={(listener) => {
+                expireSession = listener;
+                return () => {
+                    expireSession = () => {};
+                };
+            }}
             productParam="generic"
             setupVPN={false}
             toApp={undefined}
@@ -109,6 +117,26 @@ describe('UnauthedForgotPasswordWizard', () => {
 
         await waitFor(() => expect(screen.getByRole('heading', { name: 'Recover account' })).toBeInTheDocument());
         expect(screen.getByRole('button', { name: 'Return to sign-in' })).toBeInTheDocument();
+    });
+
+    it('starts over on the first step when the session expires, saying why under the field until the user types', async () => {
+        renderWithProviders(<ForgotPasswordHarness />);
+        await waitFor(() => expect(screen.getByRole('heading', { name: 'Recover account' })).toBeInTheDocument());
+        await startRecovery(['email']);
+        await waitFor(() => expect(screen.getByRole('heading', { name: /Verify it.s you/ })).toBeInTheDocument());
+        await waitForEmailCode();
+
+        act(() => expireSession());
+
+        await waitFor(() => expect(screen.getByRole('heading', { name: 'Recover account' })).toBeInTheDocument());
+        expect(screen.getByRole('textbox')).toHaveValue('user@example.com');
+        expect(screen.getByTestId('login:error-block')).toHaveTextContent('The session has expired. Please try again.');
+        // Nothing the user typed is wrong, and the message isn't also a notification
+        expect(screen.getByRole('textbox').closest('.field-two--invalid')).toBeNull();
+        expect(mockCreateNotification).not.toHaveBeenCalled();
+
+        await user.type(screen.getByRole('textbox'), 'x');
+        await waitFor(() => expect(screen.queryByTestId('login:error-block')).not.toBeInTheDocument());
     });
 
     describe('email recovery', () => {
