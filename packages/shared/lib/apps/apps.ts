@@ -15,5 +15,7 @@ export const appSupportsSSO = (appName?: APP_NAMES): boolean => {
         return false;
     }
 
-    return [APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS, APPS.PROTONLUMO].some((ssoPlanName) => ssoPlanName === appName);
+    return [APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS, APPS.PROTONLUMO, APPS.PROTONCONSOLE].some(
+        (ssoPlanName) => ssoPlanName === appName
+    );
 };
