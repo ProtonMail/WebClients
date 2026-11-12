@@ -1,5 +1,6 @@
 import { asyncGeneratorToArray } from '../../utils/tests/generator';
 import ArchiveGenerator from './ArchiveGenerator';
+import type { ArchiveItem } from './downloadTypes';
 
 type TestLink = {
     isFile: boolean;
@@ -12,10 +13,11 @@ type TestLink = {
 };
 
 async function* generateLinks(links: TestLink[]) {
-    for (const link of links) {
+    for (const [index, link] of links.entries()) {
         if (link.isFile) {
             yield {
                 isFile: link.isFile,
+                uid: `uid-${index}`,
                 name: link.name,
                 parentPath: link.path || [],
                 fileModifyTime: link.fileModifyTime,
@@ -24,6 +26,7 @@ async function* generateLinks(links: TestLink[]) {
         } else {
             yield {
                 isFile: link.isFile,
+                uid: `uid-${index}`,
                 name: link.name,
                 parentPath: link.path || [],
             };
@@ -163,5 +166,123 @@ describe('ArchiveGenerator', () => {
             { isFile: true, name: 'File.Txt', expectedName: 'File (5).Txt' },
             { isFile: true, name: 'FilE.TxT', expectedName: 'FilE (6).TxT' },
         ]);
+    });
+
+    describe('planEntries', () => {
+        const streamOf = (size: number) =>
+            new ReadableStream<Uint8Array<ArrayBuffer>>({
+                start(controller) {
+                    controller.enqueue(new Uint8Array(size));
+                    controller.close();
+                },
+            });
+
+        const countBytes = async (stream: ReadableStream<Uint8Array<ArrayBuffer>>) => {
+            let total = 0;
+            const reader = stream.getReader();
+            for (let chunk = await reader.read(); !chunk.done; chunk = await reader.read()) {
+                total += chunk.value.byteLength;
+            }
+            return total;
+        };
+
+        it('should predict the exact length of the written archive', async () => {
+            const archiver = new ArchiveGenerator();
+            const length = archiver.planEntries([
+                { uid: 'dir', isFile: false, name: 'dir', parentPath: [] },
+                { uid: 'file', isFile: true, name: 'élan 🎉.bin', parentPath: ['dir'], size: 2048 },
+                { uid: 'empty', isFile: true, name: 'empty.txt', parentPath: [], size: 0 },
+            ]);
+
+            async function* links(): AsyncGenerator<ArchiveItem> {
+                yield { isFile: true, uid: 'empty', name: 'empty.txt', parentPath: [], stream: streamOf(0) };
+                yield {
+                    isFile: true,
+                    uid: 'file',
+                    name: 'élan 🎉.bin',
+                    parentPath: ['dir'],
+                    stream: streamOf(2048),
+                    fileModifyTime: 1692780131,
+                };
+                yield { isFile: false, uid: 'dir', name: 'dir', parentPath: [] };
+            }
+            const [writtenBytes] = await Promise.all([countBytes(archiver.stream), archiver.writeLinks(links())]);
+
+            expect(length).toBe(writtenBytes);
+        });
+
+        it('should write the planned names in the planned order whatever order the links arrive in', async () => {
+            const archiver = new ArchiveGenerator();
+            archiver.planEntries([
+                { uid: 'real', isFile: true, name: 'a (1).txt', parentPath: [], size: 1 },
+                { uid: 'first', isFile: true, name: 'a.txt', parentPath: [], size: 1 },
+                { uid: 'second', isFile: true, name: 'a.txt', parentPath: [], size: 1 },
+            ]);
+
+            async function* links(): AsyncGenerator<ArchiveItem> {
+                for (const uid of ['second', 'first', 'real']) {
+                    yield {
+                        isFile: true,
+                        uid,
+                        name: uid === 'real' ? 'a (1).txt' : 'a.txt',
+                        parentPath: [],
+                        stream: streamOf(1),
+                    };
+                }
+            }
+            const items = await asyncGeneratorToArray(archiver.transformLinksToZipItems(links()));
+
+            expect(items.map((item) => item.name)).toEqual(['a (1).txt', 'a.txt', 'a (2).txt']);
+        });
+
+        describe('when the same node is listed twice', () => {
+            const repeatedEntry = { uid: 'file', isFile: true, name: 'a.txt', parentPath: [], size: 3 };
+
+            async function* repeatedLinks(): AsyncGenerator<ArchiveItem> {
+                for (let i = 0; i < 2; i++) {
+                    yield { isFile: true, uid: 'file', name: 'a.txt', parentPath: [], stream: streamOf(3) };
+                }
+            }
+
+            it('should write a distinct name for each occurrence', async () => {
+                const archiver = new ArchiveGenerator();
+                archiver.planEntries([repeatedEntry, repeatedEntry]);
+
+                const items = await asyncGeneratorToArray(archiver.transformLinksToZipItems(repeatedLinks()));
+
+                expect(items.map((item) => item.name)).toEqual(['a.txt', 'a (1).txt']);
+            });
+
+            it('should predict the exact length of the written archive', async () => {
+                const archiver = new ArchiveGenerator();
+                const length = archiver.planEntries([repeatedEntry, repeatedEntry]);
+
+                const [writtenBytes] = await Promise.all([
+                    countBytes(archiver.stream),
+                    archiver.writeLinks(repeatedLinks()),
+                ]);
+
+                expect(length).toBe(writtenBytes);
+            });
+        });
+
+        it('should not predict a length when a file size is unknown', () => {
+            const archiver = new ArchiveGenerator();
+
+            expect(
+                archiver.planEntries([
+                    { uid: 'known', isFile: true, name: 'known.txt', parentPath: [], size: 10 },
+                    { uid: 'unknown', isFile: true, name: 'unknown.txt', parentPath: [] },
+                ])
+            ).toBeUndefined();
+        });
+
+        it('should predict a length when the archive needs Zip64', () => {
+            const archiver = new ArchiveGenerator();
+
+            expect(
+                archiver.planEntries([{ uid: 'big', isFile: true, name: 'big.bin', parentPath: [], size: 0xffffffff }])
+            ).toBeGreaterThan(0xffffffff);
+        });
     });
 });

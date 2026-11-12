@@ -95,6 +95,12 @@ jest.mock('./ArchiveGenerator', () => ({
     default: archiveGeneratorTracker.Mock,
 }));
 
+const isIosMock = jest.fn(() => false);
+jest.mock('@proton/shared/lib/helpers/browser', () => ({
+    ...jest.requireActual('@proton/shared/lib/helpers/browser'),
+    isIos: () => isIosMock(),
+}));
+
 jest.mock('./utils/traverseNodeStructure', () => ({
     traverseNodeStructure: traverseNodeStructureMock,
     traverseAlbum: traverseAlbumMock,
@@ -608,6 +614,86 @@ describe('DownloadManager', () => {
         expect(archiveStreamGeneratorTracker.instances).toHaveLength(2);
 
         archiveGeneratorTracker.restoreFactory();
+    });
+
+    describe('archive save size', () => {
+        const nodes: NodeEntity[] = [
+            createMockNodeEntity({
+                uid: 'folder',
+                name: { ok: true as const, value: 'folder' },
+                type: NodeType.Folder,
+                activeRevision: undefined,
+            }),
+            createMockNodeEntity({ uid: 'file', name: { ok: true as const, value: 'a.txt' } }),
+        ];
+        const planEntriesMock = jest.fn().mockReturnValue(4321);
+
+        const startArchiveDownload = async () => {
+            const manager = DownloadManager.getInstance();
+            storeMockState.addDownloadItem.mockReturnValue('archive-size');
+            storeMockState.getQueueItem.mockReturnValue(undefined);
+            hydrateAndCheckNodesMock.mockResolvedValue({ nodes, containsSheetOrDoc: false });
+            traverseNodeStructureMock.mockReturnValue({
+                nodesQueue: { iterator: jest.fn().mockReturnValue(createEmptyAsyncGenerator<unknown>()) },
+                traversalCompletedPromise: Promise.resolve({
+                    totalEncryptedSize: 5000,
+                    containsUnsupportedFile: false,
+                    nodes,
+                }),
+                parentPathByUid: new Map([
+                    ['folder', []],
+                    ['file', ['folder']],
+                ]),
+            });
+            fileSaverSaveAsFileMock.mockResolvedValue(undefined);
+            archiveGeneratorTracker.setFactory(() => ({
+                stream: createClosedReadableStream(),
+                writeLinks: jest.fn().mockResolvedValue(undefined),
+                cancel: jest.fn(),
+                planEntries: planEntriesMock,
+            }));
+
+            await manager.download(nodes.map((node) => node.uid));
+            await waitForCondition(() => fileSaverSaveAsFileMock.mock.calls.length > 0);
+            archiveGeneratorTracker.restoreFactory();
+        };
+
+        afterEach(() => {
+            isIosMock.mockReturnValue(false);
+        });
+
+        it('should save with the predicted archive length on iOS', async () => {
+            isIosMock.mockReturnValue(true);
+
+            await startArchiveDownload();
+
+            expect(planEntriesMock).toHaveBeenCalledWith([
+                { uid: 'folder', isFile: false, name: 'folder', parentPath: [], size: undefined },
+                {
+                    uid: 'file',
+                    isFile: true,
+                    name: 'a.txt',
+                    parentPath: ['folder'],
+                    size: nodes[1].activeRevision?.claimedSize,
+                },
+            ]);
+            expect(fileSaverSaveAsFileMock).toHaveBeenCalledWith(
+                expect.anything(),
+                expect.objectContaining({ size: 4321 })
+            );
+            expect(getArchiveStreamGeneratorInstance().constructorArgs[0]).toMatchObject({
+                startEntriesInOrder: true,
+            });
+        });
+
+        it('should not predict the archive length outside of iOS', async () => {
+            await startArchiveDownload();
+
+            expect(planEntriesMock).not.toHaveBeenCalled();
+            expect(getArchiveStreamGeneratorInstance().constructorArgs[0]).toMatchObject({
+                startEntriesInOrder: false,
+            });
+        });
     });
 
     it('should start archive downloads for multiple nodes and finalize on completion', async () => {

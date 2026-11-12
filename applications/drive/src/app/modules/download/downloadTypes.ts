@@ -20,11 +20,13 @@ export type ArchiveTracker = {
 export type ArchiveItem =
     | {
           isFile: false;
+          uid: string;
           name: string;
           parentPath: string[];
       }
     | {
           isFile: true;
+          uid: string;
           name: string;
           parentPath: string[];
           stream: ReadableStream<Uint8Array<ArrayBuffer>>;
