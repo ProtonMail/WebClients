@@ -98,7 +98,8 @@ describe('htmlDocumentToPdfBytes', () => {
         const captureTarget = mockHtml2canvas.mock.calls[0]?.[0] as HTMLElement | undefined;
         expect(captureTarget?.hasAttribute('data-pdf-export-iframe')).toBe(true);
         const captureOptions = (mockHtml2canvas.mock.calls[0] as unknown[] | undefined)?.[1] as
-            Record<string, unknown> | undefined;
+            | Record<string, unknown>
+            | undefined;
         expect(captureOptions).toEqual(
             expect.objectContaining({
                 y: 0,
@@ -139,7 +140,8 @@ describe('htmlDocumentToPdfBytes', () => {
                     await options.onclone(document, clone);
                     expect(Number(clone.height)).toBeLessThanOrEqual(pageHeightCss);
                     const transform = clone.contentDocument!.documentElement.style.transform;
-                    return -Number(transform.match(/, ([-\d.]+)px/)![1]);
+                    // jsdom serializes `translate(0px, 0px)` as `translate(0px)`.
+                    return -Number(transform.match(/^translate\(0px(?:, ([-\d.]+)px)?\)$/)![1] ?? 0);
                 } finally {
                     clone.remove();
                 }

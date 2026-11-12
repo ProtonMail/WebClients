@@ -98,6 +98,10 @@ const helper = async (message: MessageStateWithData, preloadedState: Partial<Mai
     return { store, ...rest };
 };
 
+// These tests only check that the upsell modal opens. Its config is never fetched here, and
+// unmounting it mid-fetch throws from an abort listener, which jsdom reports as an uncaught error.
+jest.mock('@proton/components/components/upsell/UpsellModal/hooks/useUpsellModalConfig', () => () => null);
+
 describe('Composer scheduled messages', () => {
     beforeEach(() => {
         clearAll();

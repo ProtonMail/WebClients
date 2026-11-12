@@ -37,6 +37,23 @@ class MyEnvironment extends JSDOMEnvironment {
         );
         // For ./setLocation.js: tests cannot reach the JSDOM instance otherwise.
         this.global.jsdom = this.dom;
+
+        // jsdom hides a <dialog> without `open`, as browsers do, and nothing in it can take focus.
+        // Our modals render one and show it with the `dialog { display: block }` of our CSS reset,
+        // which tests do not load.
+        const style = this.global.document.createElement('style');
+        style.textContent = 'dialog { display: block; }';
+        this.global.document.head.append(style);
+
+        // jsdom has `style.WebkitAnimation` but no AnimationEvent. React then listens for
+        // `webkitAnimationEnd` and misses the `animationend` that tests fire.
+        const { Event } = this.global;
+        this.global.AnimationEvent ??= class AnimationEvent extends Event {
+            constructor(type, { animationName = '', elapsedTime = 0, pseudoElement = '', ...init } = {}) {
+                super(type, init);
+                Object.assign(this, { animationName, elapsedTime, pseudoElement });
+            }
+        };
     }
 
     async setup() {} // eslint-disable-line

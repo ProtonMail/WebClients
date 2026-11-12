@@ -1,7 +1,9 @@
 import { analyzeElementStack, getOverlayZIndex } from './zindex';
 
 describe('z-index utilities', () => {
-    const root = document.createElement('body');
+    // Connected to the document: a detached element has no computed style.
+    const root = document.body;
+    afterEach(() => root.replaceChildren());
 
     describe('stacking context detection', () => {
         test('should return true when reaching root node', () => {
@@ -11,7 +13,7 @@ describe('z-index utilities', () => {
         });
 
         test('should return false if z-index value in non-stacking context', () => {
-            const parent = document.createElement('div');
+            const parent = root.appendChild(document.createElement('div'));
             const child = document.createElement('div');
             parent.appendChild(child);
 
@@ -22,7 +24,7 @@ describe('z-index utilities', () => {
         });
 
         test('should return true if position is not static', () => {
-            const parent = document.createElement('div');
+            const parent = root.appendChild(document.createElement('div'));
             let child = document.createElement('div');
 
             parent.appendChild(child);
@@ -50,7 +52,7 @@ describe('z-index utilities', () => {
         });
 
         test('should return true for container-type stacking contexts', () => {
-            const parent = document.createElement('div');
+            const parent = root.appendChild(document.createElement('div'));
             let child = document.createElement('div');
 
             parent.appendChild(child);
@@ -66,7 +68,7 @@ describe('z-index utilities', () => {
         });
 
         test('should return true is stack created by parent', () => {
-            let parent = document.createElement('div');
+            let parent = root.appendChild(document.createElement('div'));
             let child = document.createElement('div');
 
             parent.appendChild(child);
@@ -74,7 +76,7 @@ describe('z-index utilities', () => {
             child.style.setProperty('z-index', '10');
             expect(analyzeElementStack(child)).toEqual([true, 10]);
 
-            parent = document.createElement('div');
+            parent = root.appendChild(document.createElement('div'));
             child = document.createElement('div');
             parent.appendChild(child);
             parent.style.display = 'grid';

@@ -42,6 +42,7 @@ describe('useNativeRightPanelLayoutApi', () => {
         jest.restoreAllMocks();
         global.ResizeObserver = originalObserver;
         window.innerWidth = originalViewportWidth;
+        document.body.replaceChildren();
     });
 
     it('reserves the measured space to the right of chat when a docked drawer opens', () => {
@@ -181,7 +182,8 @@ describe('useNativeRightPanelLayoutApi', () => {
         expect(disconnect).toHaveBeenCalled();
     });
     it('measures the trailing panel on the left in an RTL layout', () => {
-        const chat = document.createElement('main');
+        // In the document: a detached element has no computed direction.
+        const chat = document.body.appendChild(document.createElement('main'));
         chat.style.direction = 'rtl';
         jest.spyOn(chat, 'getBoundingClientRect').mockReturnValue(new DOMRect(400, 0, 624, 800));
         const chatRef = { current: chat };
