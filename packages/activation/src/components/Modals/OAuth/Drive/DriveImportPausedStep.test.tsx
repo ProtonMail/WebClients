@@ -1,7 +1,11 @@
-import { fireEvent, screen } from '@testing-library/dom';
+import { fireEvent, screen, waitFor } from '@testing-library/dom';
 
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 
+import { ApiImportProvider, ApiImporterError } from '../../../../api/api.interface';
+import { useReconnectOAuthImport } from '../../../../hooks/useReconnectOAuthImport';
+import { ImportType } from '../../../../interface';
+import type { Importer } from '../../../../logic/importers/importers.interface';
 import { easySwitchRender } from '../../../../tests/render';
 import { DriveImportPausedStep } from './DriveImportPausedStep';
 
@@ -11,7 +15,21 @@ jest.mock('@proton/components/components/link/useSettingsLink', () => ({
     default: jest.fn(),
 }));
 
+// The reconnect flow calls the API and opens the Google OAuth popup - stub it.
+jest.mock('../../../../hooks/useReconnectOAuthImport', () => ({
+    useReconnectOAuthImport: jest.fn(),
+}));
+
 const mockUseSettingsLink = useSettingsLink as jest.Mock;
+const reconnectOAuthImport = jest.fn();
+jest.mocked(useReconnectOAuthImport).mockReturnValue({ reconnectOAuthImport, loadingConfig: false });
+
+const importer: Importer = {
+    ID: 'importer-id',
+    account: 'user@gmail.com',
+    products: [ImportType.DRIVE],
+    provider: ApiImportProvider.GOOGLE,
+};
 
 describe('DriveImportPausedStep', () => {
     it('lets the user dismiss the modal without navigating away', () => {
@@ -19,7 +37,7 @@ describe('DriveImportPausedStep', () => {
         const onClose = jest.fn();
         mockUseSettingsLink.mockReturnValue(goToSettings);
 
-        easySwitchRender(<DriveImportPausedStep onClose={onClose} />);
+        easySwitchRender(<DriveImportPausedStep importer={importer} onClose={onClose} />);
         fireEvent.click(screen.getByText('Dismiss'));
 
         expect(onClose).toHaveBeenCalled();
@@ -31,10 +49,28 @@ describe('DriveImportPausedStep', () => {
         const onClose = jest.fn();
         mockUseSettingsLink.mockReturnValue(goToSettings);
 
-        easySwitchRender(<DriveImportPausedStep onClose={onClose} />);
+        easySwitchRender(<DriveImportPausedStep importer={importer} onClose={onClose} />);
         fireEvent.click(screen.getByText('Upgrade'));
 
         expect(onClose).toHaveBeenCalled();
         expect(goToSettings).toHaveBeenCalledWith('/upgrade');
+    });
+
+    it('asks the user to reconnect when the import was paused by a connection error', async () => {
+        const onClose = jest.fn();
+        reconnectOAuthImport.mockResolvedValue(undefined);
+
+        easySwitchRender(
+            <DriveImportPausedStep
+                importer={importer}
+                errorCode={ApiImporterError.ERROR_CODE_IMAP_CONNECTION}
+                onClose={onClose}
+            />
+        );
+        expect(screen.queryByText('Upgrade')).not.toBeInTheDocument();
+        fireEvent.click(screen.getByText('Reconnect'));
+
+        await waitFor(() => expect(onClose).toHaveBeenCalled());
+        expect(reconnectOAuthImport).toHaveBeenCalledWith(importer, ImportType.DRIVE);
     });
 });

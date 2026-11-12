@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 
 import type { ApiEvent } from '@proton/activation/src/api/api.interface';
-import { ApiImporterState } from '@proton/activation/src/api/api.interface';
+import { ApiImporterError, ApiImporterState } from '@proton/activation/src/api/api.interface';
 import { ImportType } from '@proton/activation/src/interface';
 import { resetOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import type { MailImportState } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
@@ -32,11 +32,13 @@ const DRIVE_IMPORTER = { ID: 'importer-id', account: 'user@gmail.com', products:
 const easySwitchState = ({
     importer,
     activeState,
+    errorCode,
     loading = 'success',
     oauthStep,
 }: {
     importer?: boolean;
     activeState?: ApiImporterState;
+    errorCode?: ApiImporterError;
     loading?: 'idle' | 'pending' | 'success' | 'failed';
     oauthStep?: MailImportState['step'];
 }) =>
@@ -52,6 +54,7 @@ const easySwitchState = ({
                               importerID: DRIVE_IMPORTER.ID,
                               product: ImportType.DRIVE,
                               importState: activeState,
+                              errorCode,
                           },
                       },
             loading,
@@ -123,6 +126,21 @@ describe('useDriveImportStatus', () => {
             expect(result.current.isPaused).toBe(true);
             expect(result.current.isImporting).toBe(false);
             expect(result.current.hasCompletedImport).toBe(false);
+        });
+
+        it('gives the pause reason sent by the backend', () => {
+            const { result } = renderWithState(
+                easySwitchState({
+                    importer: true,
+                    activeState: ApiImporterState.PAUSED,
+                    errorCode: ApiImporterError.ERROR_CODE_IMAP_CONNECTION,
+                })
+            );
+
+            expect(result.current.pausedImport?.importer.ID).toBe(DRIVE_IMPORTER.ID);
+            expect(result.current.pausedImport?.activeImporter.errorCode).toBe(
+                ApiImporterError.ERROR_CODE_IMAP_CONNECTION
+            );
         });
 
         it('reports a running import again once a paused import is resumed', () => {

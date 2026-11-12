@@ -30,6 +30,7 @@ const renderWithFinishedImport = (importFolderUid?: string) => {
         isLoaded: true,
         isImporting: false,
         isPaused: false,
+        pausedImport: undefined,
         hasCompletedImport: true,
         outcome: 'success',
         importFolderUid,

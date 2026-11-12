@@ -23,7 +23,8 @@ export type DriveImportOutcome = 'success' | 'failed' | 'paused';
 export const useDriveImportStatus = () => {
     const dispatch = useEasySwitchDispatch();
     const { subscribe } = useEventManager();
-    const { isLoaded, isImporting, isPaused, hasCompletedImport } = useEasySwitchSelector(selectDriveImportStatus);
+    const { isLoaded, isImporting, isPaused, pausedImport, hasCompletedImport } =
+        useEasySwitchSelector(selectDriveImportStatus);
     const oauthStep = useEasySwitchSelector(selectOauthImportStateStep);
     const [outcome, setOutcome] = useState<DriveImportOutcome>();
     const [importFolderUid, setImportFolderUid] = useState<string>();
@@ -124,6 +125,7 @@ export const useDriveImportStatus = () => {
         isLoaded,
         isImporting,
         isPaused,
+        pausedImport,
         hasCompletedImport,
         outcome,
         importFolderUid,

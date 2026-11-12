@@ -32,12 +32,14 @@ export const selectActiveImportersErrors = createSelector(
         const delayedImportAccounts: string[] = [];
         const importErrors = activeImporters.reduce<('storageLimit' | 'authConnection' | 'delayedImport')[]>(
             (acc, activeImporter) => {
-                const { importState, errorCode, importerID } = activeImporter;
+                const { importState, errorCode, importerID, product } = activeImporter;
                 const { account } = importersMap[importerID];
+                // Drive pause reason is already shown on its import row and in the Drive app --> no banner
+                const isPausedWithBanner = importState === ApiImporterState.PAUSED && product !== ImportType.DRIVE;
 
                 if (
                     !acc.includes('storageLimit') &&
-                    importState === ApiImporterState.PAUSED &&
+                    isPausedWithBanner &&
                     errorCode === ApiImporterError.ERROR_CODE_QUOTA_LIMIT
                 ) {
                     acc.push('storageLimit');
@@ -45,7 +47,7 @@ export const selectActiveImportersErrors = createSelector(
 
                 if (
                     !acc.includes('authConnection') &&
-                    importState === ApiImporterState.PAUSED &&
+                    isPausedWithBanner &&
                     errorCode === ApiImporterError.ERROR_CODE_IMAP_CONNECTION
                 ) {
                     acc.push('authConnection');
@@ -80,10 +82,10 @@ const selectIsDriveImportRunning = createSelector(selectActiveImporters, (active
     )
 );
 
-// Drive is only paused by the backend when the user runs out of storage, no ErrorCode is sent.
-const selectIsDriveImportPaused = createSelector(selectActiveImporters, (activeImporters): boolean =>
-    activeImporters.some(
-        ({ product, importState }) => product === ImportType.DRIVE && importState === ApiImporterState.PAUSED
+const selectPausedDriveImport = createSelector(selectActiveImporterEntriesByDate, (entries) =>
+    entries.find(
+        ({ activeImporter }) =>
+            activeImporter.product === ImportType.DRIVE && activeImporter.importState === ApiImporterState.PAUSED
     )
 );
 
@@ -91,17 +93,19 @@ export interface DriveImportStatus {
     /** False until loadImporters resolved once, so callers can tell "not known yet" apart from "nothing imported". */
     isLoaded: boolean;
     isImporting: boolean;
-    /** Stopped by the backend because the user ran out of storage --> resumable from settings. */
+    /** Stopped by the backend, `activeImporter.errorCode` gives the reason (storage limit or connection error). */
+    pausedImport?: { activeImporter: ActiveImporter; importer: Importer };
     isPaused: boolean;
     hasCompletedImport: boolean;
 }
 
 export const selectDriveImportStatus = createSelector(
-    [selectHasDriveImporter, selectIsDriveImportRunning, selectIsDriveImportPaused, selectImportersLoading],
-    (hasDriveImporter, isImporting, isPaused, loading): DriveImportStatus => ({
+    [selectHasDriveImporter, selectIsDriveImportRunning, selectPausedDriveImport, selectImportersLoading],
+    (hasDriveImporter, isImporting, pausedImport, loading): DriveImportStatus => ({
         isLoaded: loading === 'success' || loading === 'failed',
         isImporting,
-        isPaused,
-        hasCompletedImport: hasDriveImporter && !isImporting && !isPaused,
+        pausedImport,
+        isPaused: !!pausedImport,
+        hasCompletedImport: hasDriveImporter && !isImporting && !pausedImport,
     })
 );

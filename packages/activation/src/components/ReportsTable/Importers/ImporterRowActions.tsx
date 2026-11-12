@@ -9,19 +9,16 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
-import { createToken, getTokensByFeature, resumeImport, updateImport } from '../../../api/api';
+import { resumeImport } from '../../../api/api';
 import { ApiImporterError, ApiImporterState } from '../../../api/api.interface';
-import { getImportProviderFromApiProvider } from '../../../helpers/getImportProviderFromApiProvider';
-import useOAuthPopup from '../../../hooks/useOAuthPopup';
-import { getEasySwitchFeaturesFromProducts, getProviderNumber } from '../../../hooks/useOAuthPopup.helpers';
+import { getEasySwitchFeaturesFromProducts } from '../../../hooks/useOAuthPopup.helpers';
+import { useReconnectOAuthImport } from '../../../hooks/useReconnectOAuthImport';
 import { useTrackImportAction } from '../../../hooks/useTrackImportAction';
-import type { ImportToken, OAuthProps } from '../../../interface';
 import { AuthenticationMethod, EASY_SWITCH_SOURCES } from '../../../interface';
 import { reconnectImapImport } from '../../../logic/draft/imapDraft/imapDraft.actions';
 import { cancelImporter } from '../../../logic/importers/importers.actions';
 import type { ActiveImporter, Importer } from '../../../logic/importers/importers.interface';
 import { useEasySwitchDispatch } from '../../../logic/store';
-import { getScopeFromProvider } from '../../Modals/OAuth/OAuthModal.helpers';
 
 interface Props {
     activeImporter: ActiveImporter;
@@ -30,13 +27,12 @@ interface Props {
 
 const ImporterRowActions = ({ activeImporter, importer }: Props) => {
     const dispatch = useEasySwitchDispatch();
-    const { ID, account, sasl, provider, products } = importer;
+    const { ID, account, sasl, provider } = importer;
     const { product, errorCode, importState } = activeImporter;
-    const importProvider = getImportProviderFromApiProvider(provider);
 
-    const { triggerOAuthPopup, loadingConfig } = useOAuthPopup({
-        errorMessage: c('Error').t`Your import will not be processed.`,
-    });
+    const { reconnectOAuthImport, loadingConfig } = useReconnectOAuthImport(
+        EASY_SWITCH_SOURCES.ACCOUNT_WEB_RECONNECT_IMPORT
+    );
 
     const api = useApi();
     const trackEvent = useTrackImportAction({ account, provider, product });
@@ -46,54 +42,6 @@ const ImporterRowActions = ({ activeImporter, importer }: Props) => {
     const [loadingSecondaryAction, withLoadingSecondaryAction] = useLoading();
 
     const [cancelModalProps, showCancelModal, renderCancelModal] = useModalState();
-
-    const handleResumeImport = async (token: ImportToken, importerID: string) => {
-        await api(updateImport(ID, { TokenID: token.ID }));
-        await api(
-            resumeImport({
-                ImporterID: importerID,
-                Features: getEasySwitchFeaturesFromProducts([product]),
-            })
-        );
-        await call();
-        createNotification({ text: c('Success').t`Resuming import` });
-    };
-
-    const handleReconnectOAuth = async (ImporterID: string) => {
-        const scopes = getScopeFromProvider(importProvider, products);
-
-        const features = getEasySwitchFeaturesFromProducts(products);
-
-        const providerNumber = getProviderNumber(importProvider);
-
-        const { Tokens } = await api<{ Tokens: ImportToken[] }>(
-            getTokensByFeature({ Account: account, Features: features, Provider: providerNumber })
-        );
-
-        if (Tokens.length > 0) {
-            await handleResumeImport(Tokens[0], ImporterID);
-        } else {
-            await triggerOAuthPopup({
-                provider: importProvider,
-                loginHint: account,
-                features,
-                scope: scopes.join(' '),
-                callback: async ({ Code, Provider, RedirectUri }: OAuthProps) => {
-                    const { Token }: { Token: ImportToken } = await api(
-                        createToken({
-                            Provider,
-                            Code,
-                            RedirectUri,
-                            Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_RECONNECT_IMPORT,
-                            Features: getEasySwitchFeaturesFromProducts(products || [product]),
-                        })
-                    );
-
-                    await handleResumeImport(Token, ImporterID);
-                },
-            });
-        }
-    };
 
     const handleReconnect = async (importerID: string) => {
         await dispatch(reconnectImapImport(importerID));
@@ -122,7 +70,7 @@ const ImporterRowActions = ({ activeImporter, importer }: Props) => {
     const handleResumeOrReconnect = async () => {
         if (isAuthError) {
             const isOAuth = !sasl || sasl === AuthenticationMethod.OAUTH;
-            void withLoadingSecondaryAction(isOAuth ? handleReconnectOAuth(ID) : handleReconnect(ID));
+            void withLoadingSecondaryAction(isOAuth ? reconnectOAuthImport(importer, product) : handleReconnect(ID));
         } else {
             void withLoadingSecondaryAction(handleResume(ID));
         }
