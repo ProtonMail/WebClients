@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useReducer, useState } from 'react';
 
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import type { MemberUsageColumnDisplay, MembersUsageResponse, UsageByMemberID } from '@proton/shared/lib/api/members';
 import { queryMembersUsage } from '@proton/shared/lib/api/members';
 

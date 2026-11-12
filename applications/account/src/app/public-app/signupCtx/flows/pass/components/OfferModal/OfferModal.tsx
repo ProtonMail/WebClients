@@ -4,11 +4,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import PassLogo from '@proton/components/components/logo/PassLogo';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import type { PaymentsCheckoutUI } from '@proton/payments/core/checkout';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 
 import './OfferModal.scss';
 

@@ -3,12 +3,12 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import GenericError from '@proton/components/containers/error/GenericError';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
 import { UNAUTHENTICATED_ROUTES } from '@proton/settings/helpers/unauthenticatedRoutes';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';

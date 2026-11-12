@@ -5,6 +5,7 @@ import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import { useConfig } from '@proton/app-context/useConfig';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Vr } from '@proton/atoms/Vr/Vr';
@@ -15,7 +16,6 @@ import Toggle from '@proton/components/components/toggle/Toggle';
 import CurrencySelector from '@proton/components/containers/payments/CurrencySelector';
 import { useVpn2024SignupExperiment } from '@proton/components/containers/payments/subscription/helpers/useVpn2024SignupExperiment';
 import type { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useHandler } from '@proton/hooks/useHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCode } from '@proton/icons/icons/IcCode';

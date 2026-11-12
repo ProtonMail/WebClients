@@ -16,7 +16,6 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Price from '@proton/components/components/price/Price';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getInvoicePaymentsVersion } from '@proton/components/containers/invoices/helpers';
 import useApiResult from '@proton/components/hooks/useApiResult';
 import useEventManager from '@proton/components/hooks/useEventManager';
@@ -29,6 +28,7 @@ import { checkInvoice } from '@proton/payments/core/api/api';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { Currency, Invoice } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { CacheType } from '@proton/redux-utilities/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

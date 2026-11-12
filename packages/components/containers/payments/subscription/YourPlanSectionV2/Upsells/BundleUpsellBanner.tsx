@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { DashboardGridSection } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { getPricePerCycle } from '@proton/payments/core/price-helpers';
 import { hasFreeOrPlus, isManagedExternally } from '@proton/payments/core/subscription/helpers';
 import { getPlanByName } from '@proton/payments/core/subscription/plans-map-wrapper';
@@ -14,7 +15,6 @@ import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscript
 import { getExploreText } from '@proton/shared/lib/apps/i18n';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
-import { getSimplePriceString } from '../../../../../components/price/helper';
 import getBoldFormattedText from '../../../../../helpers/getBoldFormattedText';
 import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';
 import useLoad from '../../../../../hooks/useLoad';

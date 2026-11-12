@@ -1,5 +1,10 @@
 import { useEffect } from 'react';
 
+import {
+    getTargetEnvironment,
+    updateVersionCookie,
+    versionCookieAtLoad,
+} from '@proton/account/earlyAccess/versionCookie';
 import { removePersistedStateEvent } from '@proton/account/persist/event';
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
@@ -9,8 +14,6 @@ import useFeature from '@proton/features/useFeature';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateEarlyAccess } from '@proton/shared/lib/api/settings';
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
-
-import { getTargetEnvironment, updateVersionCookie, versionCookieAtLoad } from '../helpers/versionCookie';
 
 const useEarlyAccess = () => {
     const api = useApi();

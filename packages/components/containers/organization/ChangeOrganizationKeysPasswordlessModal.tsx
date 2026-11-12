@@ -8,6 +8,7 @@ import {
     rotatePasswordlessOrganizationKeys,
 } from '@proton/account/organizationKey/actions';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import useLoading from '@proton/hooks/useLoading';
@@ -19,7 +20,6 @@ import ModalTwoContent from '../../components/modalTwo/ModalContent';
 import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import { useSilentApi } from '../../hooks/useSilentApi';
 import AdministratorList from './AdministratorList';
 
 interface ChangeProps extends Omit<ModalProps, 'children' | 'title' | 'buttons'> {

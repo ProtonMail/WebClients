@@ -15,7 +15,15 @@ import {
 } from '@proton/shared/lib/api/verification';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
-import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces/HumanVerification';
+import type {
+    HumanVerificationMethodType,
+    OwnershipCache,
+    OwnershipVerificationModel,
+    VerificationDataResult,
+    VerificationModel,
+    VerificationTokenResult,
+} from '@proton/shared/lib/interfaces/HumanVerification';
+import { HumanVerificationSteps } from '@proton/shared/lib/interfaces/HumanVerification';
 
 import SettingsLink from '../../../components/link/SettingsLink';
 import Loader from '../../../components/loader/Loader';
@@ -24,14 +32,6 @@ import Text from './Text';
 import VerifyCodeForm from './VerifyCodeForm';
 import accountVerified from './account-verified.svg';
 import { isVerifyAddressOwnership } from './helper';
-import type {
-    OwnershipCache,
-    OwnershipVerificationModel,
-    VerificationDataResult,
-    VerificationModel,
-    VerificationTokenResult,
-} from './interface';
-import { HumanVerificationSteps } from './interface';
 
 const formatMessage = (text: string, embolden: string) => {
     if (!embolden) {

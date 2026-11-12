@@ -7,13 +7,13 @@ import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
 import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
+import type { VerificationModel } from '@proton/shared/lib/interfaces/HumanVerification';
 import noop from '@proton/utils/noop';
 
 import { InputField as InputFieldTwo } from '../../../components/v2/field/InputField';
 import useFormErrors from '../../../components/v2/useFormErrors';
 import Text from './Text';
 import { getFormattedCode } from './helper';
-import type { VerificationModel } from './interface';
 
 interface Props {
     onSubmit: (code: string, verificationModel: VerificationModel) => void;

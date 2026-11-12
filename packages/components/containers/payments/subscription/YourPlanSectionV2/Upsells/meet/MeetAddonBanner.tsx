@@ -7,6 +7,7 @@ import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
 import { ADDON_PREFIXES, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { hasAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { getHasMeetIncludedInPlan, getPlanIDs, getPlanName } from '@proton/payments/core/subscription/helpers';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
@@ -14,7 +15,6 @@ import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscript
 import { getAddonNameByPlan } from '@proton/shared/lib/payments/plan/helpers';
 
 import NewBadge from '../../../../../../components/newBadge/NewBadge';
-import { getSimplePriceString } from '../../../../../../components/price/helper';
 import useDashboardPaymentFlow from '../../../../../../hooks/useDashboardPaymentFlow';
 import { useSubscriptionModal } from '../../../subscriptionModalContext';
 import { PlanIcon } from '../../PlanIcon';

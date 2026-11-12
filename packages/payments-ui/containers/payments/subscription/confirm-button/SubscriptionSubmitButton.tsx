@@ -2,13 +2,13 @@ import { c } from 'ttag';
 
 import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { getSubscriptionManagerName } from '@proton/components/containers/payments/subscription/InAppPurchaseModal';
 import { getVisionaryDowngradeWarningTextElement } from '@proton/components/containers/payments/subscription/VisionaryDowngradeWarningModal';
 import { InfoBanner } from '@proton/components/containers/payments/subscription/confirm-button/InfoBanner';
 import type { CouponConfigRendered } from '@proton/payments-hooks/ui/coupon-config/interface';
 import { PAYMENT_METHOD_TYPES, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import type { Currency, FreeSubscription } from '@proton/payments/core/interface';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { hasMigrationDiscount, isTrial } from '@proton/payments/core/subscription/helpers';
 import type {
     Subscription,

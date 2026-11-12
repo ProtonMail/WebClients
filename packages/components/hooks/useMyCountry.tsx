@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { getLocation } from '@proton/shared/lib/api/vpn';
 import { singleCountryTimezoneDatabase } from '@proton/shared/lib/date/singleCountryTimezoneDatabase';
 import { manualFindTimeZone } from '@proton/shared/lib/date/timezoneDatabase';
 import { getNaiveCountryCode } from '@proton/shared/lib/i18n/helper';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { MyLocationResponse } from '@proton/shared/lib/vpn/location';
-
-import { useSilentApi } from './useSilentApi';
 
 const tryTimezone = (tz: string): string | undefined =>
     singleCountryTimezoneDatabase[tz as keyof typeof singleCountryTimezoneDatabase];

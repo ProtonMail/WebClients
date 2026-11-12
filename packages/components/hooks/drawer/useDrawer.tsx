@@ -3,6 +3,7 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState } f
 
 import { serverTime } from '@protontech/crypto';
 
+import { versionCookieAtLoad } from '@proton/account/earlyAccess/versionCookie';
 import { useGetUser } from '@proton/account/user/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { getClientID } from '@proton/shared/lib/apps/helper';
@@ -24,7 +25,6 @@ import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 
-import { versionCookieAtLoad } from '../../helpers/versionCookie';
 import useAuthentication from '../useAuthentication';
 import useDrawerLocalStorage from './useDrawerLocalStorage';
 import useToggleDrawerApp from './useToggleDrawerApp';

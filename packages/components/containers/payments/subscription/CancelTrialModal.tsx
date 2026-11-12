@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useGetPlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { useAutomaticCurrency } from '@proton/payments-hooks/client-extensions/useAutomaticCurrency';
@@ -24,7 +25,6 @@ import type { ModalStateProps } from '../../../components/modalTwo/useModalState
 import StripedItem from '../../../components/stripedList/StripedItem';
 import { StripedList } from '../../../components/stripedList/StripedList';
 import Time from '../../../components/time/Time';
-import { useSilentApi } from '../../../hooks/useSilentApi';
 import { getShortPlan } from '../features/plan';
 
 interface FeatureListProps {

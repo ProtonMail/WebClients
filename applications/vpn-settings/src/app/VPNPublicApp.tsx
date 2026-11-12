@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 import type * as H from 'history';
 
 import { getLocaleCodePublicApp, loadLocalesPublicApp } from '@proton/account/bootstrap';
+import { wrapUnloadError } from '@proton/account/bootstrap/errorRefresh';
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
-import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { willLoadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';

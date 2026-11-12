@@ -7,7 +7,12 @@ import useLoading from '@proton/hooks/useLoading';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
-import type { HumanVerificationMethodType } from '@proton/shared/lib/interfaces/HumanVerification';
+import {
+    type HumanVerificationMethodType,
+    type HumanVerificationResult,
+    HumanVerificationSteps,
+    type VerificationModel,
+} from '@proton/shared/lib/interfaces/HumanVerification';
 import noop from '@proton/utils/noop';
 
 import type { ModalProps } from '../../../components/modalTwo/Modal';
@@ -17,7 +22,6 @@ import ModalHeader from '../../../components/modalTwo/ModalHeader';
 import { useTheme } from '../../themes/ThemeProvider';
 import HumanVerificationForm from './HumanVerificationForm';
 import { isVerifyAddressOwnership } from './helper';
-import { type HumanVerificationResult, HumanVerificationSteps, type VerificationModel } from './interface';
 
 export interface HumanVerificationModalProps<
     T extends { humanVerificationResult?: HumanVerificationResult },

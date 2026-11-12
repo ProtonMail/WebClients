@@ -21,7 +21,7 @@ import useDrawerLocalStorage from './useDrawerLocalStorage';
 import useToggleDrawerApp from './useToggleDrawerApp';
 
 jest.mock('@proton/account/user/hooks');
-jest.mock('../../helpers/versionCookie', () => ({ versionCookieAtLoad: 'test-version' }));
+jest.mock('@proton/account/earlyAccess/versionCookie', () => ({ versionCookieAtLoad: 'test-version' }));
 jest.mock('./useDrawerLocalStorage');
 jest.mock('./useToggleDrawerApp');
 jest.mock('@proton/app-context/useApi');

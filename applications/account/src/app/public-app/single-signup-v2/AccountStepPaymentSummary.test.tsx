@@ -2,10 +2,10 @@ import React from 'react';
 
 import { screen, waitFor } from '@testing-library/react';
 
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import type { Coupon } from '@proton/payments/core/subscription/interface';
 import { createMockModel, mockPlans } from '@proton/payments/testing/signup';
 import { APPS } from '@proton/shared/lib/constants';

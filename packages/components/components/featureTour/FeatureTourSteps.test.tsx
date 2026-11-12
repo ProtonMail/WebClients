@@ -2,11 +2,11 @@ import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import * as featureTourActions from '@proton/account/featuresTour/actions';
+import type { FeatureTourStepId } from '@proton/account/featuresTour/interface';
 
 import { renderWithProviders } from '../../testing/renderWithProviders';
 import FeatureTourSteps from './FeatureTourSteps';
 import { FEATURE_TOUR_STEPS_MAP } from './constants';
-import type { FeatureTourStepId } from './interface';
 
 // Mock the step components
 jest.mock('./constants', () => ({

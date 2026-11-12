@@ -3,6 +3,7 @@ import { useEffect, useLayoutEffect, useMemo } from 'react';
 import debounce from 'lodash/debounce';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { updateTheme } from '@proton/shared/lib/api/settings';
 import {
     canGetInboxDesktopInfo,
@@ -18,7 +19,6 @@ import { electronAppTheme as defaultElectronAppTheme, getDefaultThemeSetting } f
 import noop from '@proton/utils/noop';
 
 import useDrawer from '../../hooks/drawer/useDrawer';
-import { useSilentApi } from '../../hooks/useSilentApi';
 import { useTheme } from './ThemeProvider';
 
 export const DrawerThemeInjector = () => {

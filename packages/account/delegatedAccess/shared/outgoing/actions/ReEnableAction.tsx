@@ -3,8 +3,8 @@ import { useCallback, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import noop from '@proton/utils/noop';
 
 import { useDispatch } from '../../../../store/hooks';

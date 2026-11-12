@@ -2,6 +2,7 @@ import { renderHook } from '@testing-library/react';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { PLANS } from '@proton/payments/core/constants';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import {
@@ -11,10 +12,9 @@ import {
 } from '@proton/shared/lib/api/telemetry';
 import { getBaseTelemetryDimensions } from '@proton/shared/lib/helpers/metrics';
 
-import { useSilentApi } from '../../../../../../hooks/useSilentApi';
 import { useFeedbackFirstTelemetry } from '../useFeedbackFirstTelemetry';
 
-jest.mock('../../../../../../hooks/useSilentApi');
+jest.mock('@proton/app-context/useSilentApi');
 const mockUseSilentApi = useSilentApi as jest.MockedFunction<any>;
 
 jest.mock('@proton/account/user/hooks', () => ({

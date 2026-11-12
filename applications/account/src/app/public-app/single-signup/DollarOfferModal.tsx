@@ -9,7 +9,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import noop from '@proton/utils/noop';
 

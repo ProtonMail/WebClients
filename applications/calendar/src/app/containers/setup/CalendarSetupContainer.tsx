@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { useGetCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hooks';
 import { useGetCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
@@ -9,7 +10,6 @@ import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hook
 import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { CacheType } from '@proton/redux-utilities/interface';
 import setupCalendarHelper from '@proton/shared/lib/calendar/crypto/keys/setupCalendarHelper';
 import { setupCalendarKeys } from '@proton/shared/lib/calendar/crypto/keys/setupCalendarKeys';

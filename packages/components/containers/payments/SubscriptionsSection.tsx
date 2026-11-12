@@ -7,12 +7,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { PLAN_TYPES } from '@proton/payments/core/constants';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 
 import { Badge } from '../../components/badge/Badge';
 import DropdownActions from '../../components/dropdown/DropdownActions';
 import Loader from '../../components/loader/Loader';
 import useModalState from '../../components/modalTwo/useModalState';
-import { getSimplePriceString } from '../../components/price/helper';
 import Table from '../../components/table/Table';
 import TableBody from '../../components/table/TableBody';
 import TableCell from '../../components/table/TableCell';

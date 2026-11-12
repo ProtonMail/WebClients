@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { changeMemberPassword } from '@proton/account/organizationKey/memberPasswordAction';
 import { usePasswordPolicies } from '@proton/account/passwordPolicies/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { revoke } from '@proton/shared/lib/api/auth';
@@ -27,7 +28,6 @@ import { usePasswordPolicyValidation } from '../../components/passwordPolicy/use
 import useFormErrors from '../../components/v2/useFormErrors';
 import useBeforeUnload from '../../hooks/useBeforeUnload';
 import useErrorHandler from '../../hooks/useErrorHandler';
-import { useSilentApi } from '../../hooks/useSilentApi';
 import GenericError from '../error/GenericError';
 import AuthModal from '../password/AuthModal';
 

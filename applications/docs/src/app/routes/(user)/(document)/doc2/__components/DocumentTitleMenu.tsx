@@ -13,7 +13,7 @@ import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdow
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils'
 import Toggle from '@proton/components/components/toggle/Toggle'
 import { getAppVersion } from '@proton/components/helpers/appVersion'
-import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
+import { versionCookieAtLoad } from '@proton/account/earlyAccess/versionCookie'
 import useAppTitle from '@proton/components/hooks/useAppTitle'
 import type { FileMenuAction } from '@proton/docs-shared/Bridge/EditorRequiresClientMethods'
 import type { DataTypesThatDocumentCanBeExportedAs } from '@proton/docs-shared/ExportableDataType'

@@ -3,9 +3,8 @@ import type { ReactNode } from 'react';
 import { CurrencySymbols } from '@proton/payments/core/constants';
 import { getCurrencyFormattingConfigWithoutFallback } from '@proton/payments/core/currencies';
 import type { Currency } from '@proton/payments/core/interface';
+import { defaultSymbolPosition, formatPriceWithoutCurrency } from '@proton/payments/core/price-format';
 import clsx from '@proton/utils/clsx';
-
-import { defaultSymbolPosition, formatPriceWithoutCurrency } from './helper';
 
 import './Price.scss';
 

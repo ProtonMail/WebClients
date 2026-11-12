@@ -1,9 +1,6 @@
 import { type History, createBrowserHistory } from 'history';
 import { EVENTS } from 'unleash-proxy-client';
 
-import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
-import { handleEarlyAccessDesynchronization } from '@proton/components/helpers/earlyAccessDesynchronization';
-import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/helpers/versionCookie';
 import type { Feature } from '@proton/features/interface';
 import { eventLoopTimingTracker } from '@proton/metrics/eventLoopMetrics';
 import metrics from '@proton/metrics/metricsInstance';
@@ -80,7 +77,10 @@ import { createCustomFetch, getUnleashConfig } from '@proton/unleash/UnleashFlag
 import { setStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 import noop from '@proton/utils/noop';
 
+import { handleEarlyAccessDesynchronization } from '../earlyAccess/earlyAccessDesynchronization';
+import { updateVersionCookie, versionCookieAtLoad } from '../earlyAccess/versionCookie';
 import { getCryptoWorkerOptions } from './cryptoWorkerOptions';
+import { wrapUnloadError } from './errorRefresh';
 import { getLastUsedLocalID, setLastUsedLocalID } from './lastUsedLocalID';
 
 export class InvalidSessionError extends Error {

@@ -8,9 +8,9 @@
 import { c } from 'ttag';
 import { type SnapshotFrom, assertEvent, assign, emit, sendParent, setup } from 'xstate';
 
-import type { VerificationDataResult } from '@proton/components/containers/api/humanVerification/interface';
 import { InvalidCodeError, InvalidRecoveryPhraseError, TOTPError } from '@proton/shared/lib/authentication/error';
 import type { TwoFactorAuthTypes } from '@proton/shared/lib/authentication/twoFactor';
+import type { VerificationDataResult } from '@proton/shared/lib/interfaces/HumanVerification';
 
 import { errorOf, isErrorOf, reportActorError, unprovidedActors } from '../../../../../state-machine/machineHelpers';
 import type { VerificationActors } from './verificationActors';

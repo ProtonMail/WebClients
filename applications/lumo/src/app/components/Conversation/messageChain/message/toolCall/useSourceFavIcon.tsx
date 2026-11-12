@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { getLogo } from '@proton/shared/lib/api/images';
 
 function blobToDataURL(blob: Blob): Promise<string | null> {

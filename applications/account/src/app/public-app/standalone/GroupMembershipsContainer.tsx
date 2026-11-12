@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useApi } from '@proton/app-context/useApi';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -11,7 +12,6 @@ import type { ModalStateProps } from '@proton/components/components/modalTwo/use
 import Prompt from '@proton/components/components/prompt/Prompt';
 import GenericError from '@proton/components/containers/error/GenericError';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
 import {
     acceptExternalGroupMembership,

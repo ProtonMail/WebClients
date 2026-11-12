@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
 import useStateRef from '@proton/hooks/useStateRef';
@@ -13,7 +14,6 @@ import {
 import { MINUTE } from '@proton/shared/lib/constants';
 import { VPN_HUB_URL } from '@proton/shared/lib/vpn/constants';
 
-import { useSilentApi } from '../../../../hooks/useSilentApi';
 import Loader from '../../../loader/Loader';
 import DrawerAppScrollContainer from '../shared/DrawerAppScrollContainer';
 import DrawerAppSection from '../shared/DrawerAppSection';

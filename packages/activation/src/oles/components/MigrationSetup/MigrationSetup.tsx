@@ -2,8 +2,8 @@ import React, { type FC, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { Button } from '@proton/atoms/Button/Button';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import { IcChevronUpFilled } from '@proton/icons/icons/IcChevronUpFilled';

@@ -6,7 +6,6 @@ import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import Price from '@proton/components/components/price/Price';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import useLoading from '@proton/hooks/useLoading';
 import type { OnChargeable } from '@proton/payments-hooks/react-extensions/usePaymentFacade';
@@ -22,6 +21,7 @@ import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billin
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import type { Currency } from '@proton/payments/core/interface';
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { normalizePostalCode } from '@proton/payments/postal-codes/format';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';

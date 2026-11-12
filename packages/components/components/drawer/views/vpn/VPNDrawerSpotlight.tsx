@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { FeatureCode } from '@proton/features/interface';
 import { PLANS } from '@proton/payments/core/constants';
@@ -20,7 +21,6 @@ import { isUserAccountOlderThanOrEqualToDays } from '@proton/shared/lib/user/hel
 
 import ErrorBoundary from '../../../../containers/app/ErrorBoundary';
 import useDrawer from '../../../../hooks/drawer/useDrawer';
-import { useSilentApi } from '../../../../hooks/useSilentApi';
 import useSpotlightOnFeature from '../../../../hooks/useSpotlightOnFeature';
 import Logo from '../../../logo/Logo';
 import Spotlight from '../../../spotlight/Spotlight';

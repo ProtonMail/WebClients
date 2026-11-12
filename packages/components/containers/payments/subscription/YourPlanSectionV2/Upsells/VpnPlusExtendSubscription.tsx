@@ -6,6 +6,7 @@ import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/Dashboa
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
 import { getAddonsFromIDs } from '@proton/payments/core/planIDs';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { getPlanIDs } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
@@ -17,7 +18,6 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { getSimplePriceString } from '../../../../../components/price/helper';
 import getBoldFormattedText from '../../../../../helpers/getBoldFormattedText';
 import { getTelemetryUserTier } from '../../../../../helpers/getTelemetryUserTier';
 import useDashboardPaymentFlow from '../../../../../hooks/useDashboardPaymentFlow';

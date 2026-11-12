@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState } from 'react';
 
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import type { OnLoginCallback } from '../authSession';

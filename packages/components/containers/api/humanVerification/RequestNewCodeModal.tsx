@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import useLoading from '@proton/hooks/useLoading';
+import type { VerificationModel } from '@proton/shared/lib/interfaces/HumanVerification';
 import noop from '@proton/utils/noop';
 
 import Prompt from '../../../components/prompt/Prompt';
 import { isVerifyAddressOwnership } from './helper';
-import type { VerificationModel } from './interface';
 
 interface Props {
     verificationModel: VerificationModel;

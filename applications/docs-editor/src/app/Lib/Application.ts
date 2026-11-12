@@ -1,4 +1,4 @@
-import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
+import { versionCookieAtLoad } from '@proton/account/earlyAccess/versionCookie'
 import type { DocumentRoleType } from '@proton/docs-shared/Doc/DocumentRole'
 import { DocumentRole } from '@proton/docs-shared/Doc/DocumentRole'
 import { InternalEventBus } from '@proton/docs-shared/Events/InternalEventBus'

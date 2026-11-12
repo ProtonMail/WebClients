@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { getKTUserContext } from '@proton/account/kt/actions';
 import { type MemberKeyPayload, getMemberKeyPayloads, setAdminRoles } from '@proton/account/organizationKey/actions';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import useLoading from '@proton/hooks/useLoading';
@@ -20,7 +21,6 @@ import ModalTwoFooter from '../../components/modalTwo/ModalFooter';
 import ModalTwoHeader from '../../components/modalTwo/ModalHeader';
 import useErrorHandler from '../../hooks/useErrorHandler';
 import useEventManager from '../../hooks/useEventManager';
-import { useSilentApi } from '../../hooks/useSilentApi';
 import AdministratorList, { AdministratorItem } from './AdministratorList';
 
 interface Props extends Omit<ModalProps, 'children' | 'title' | 'buttons'> {

@@ -3,9 +3,9 @@ import { type ReactNode, createContext, useContext, useEffect, useRef, useState 
 import type { DeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
 import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
 import { shouldTraceError, useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import metrics from '@proton/metrics/metricsInstance';
 import { observeError } from '@proton/metrics/observeApiError';
 import type { OnChargeable } from '@proton/payments-hooks/react-extensions/usePaymentFacade';

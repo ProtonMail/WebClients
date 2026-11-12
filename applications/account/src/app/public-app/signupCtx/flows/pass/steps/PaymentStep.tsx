@@ -3,7 +3,6 @@ import { type FC, type FormEvent, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import { ProtonPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/ProtonPlanCustomizer';
 import { getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer/helpers';
@@ -16,6 +15,7 @@ import { PayButton } from '@proton/payments-ui/ui/components/PayButton';
 import { usePaymentOptimistic } from '@proton/payments-ui/ui/context/PaymentContextOptimistic';
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { ADDON_PREFIXES, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';

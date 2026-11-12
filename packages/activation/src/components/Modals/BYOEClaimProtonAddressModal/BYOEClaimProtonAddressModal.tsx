@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { setupExternalUserForProton } from '@proton/account/addresses/actions';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
@@ -16,7 +17,6 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useEventManager from '@proton/components/hooks/useEventManager';
-import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';

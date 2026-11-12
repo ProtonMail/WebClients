@@ -9,7 +9,7 @@ import {
   EDITOR_CONFIRMS_VERSIONS_MATCH,
 } from '@proton/docs-shared/Bridge/EditorTagInfoEvent'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { versionCookieAtLoad } from '@proton/components/helpers/versionCookie'
+import { versionCookieAtLoad } from '@proton/account/earlyAccess/versionCookie'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import OpenTracer from '@proton/docs-shared/Tracer/Module'
 import { getCookie } from '@proton/shared/lib/helpers/cookies'

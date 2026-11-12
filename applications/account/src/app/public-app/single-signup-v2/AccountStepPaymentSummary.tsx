@@ -5,7 +5,6 @@ import { c, msgid } from 'ttag';
 
 import Info from '@proton/components/components/link/Info';
 import Price from '@proton/components/components/price/Price';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import Time from '@proton/components/components/time/Time';
 import { getDealDurationText } from '@proton/components/containers/offers/helpers/offerCopies';
@@ -15,6 +14,7 @@ import { ADDON_PREFIXES, TRIAL_DURATION_DAYS } from '@proton/payments/core/const
 import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
 import type { PlanIDs } from '@proton/payments/core/interface';
 import { hasAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
+import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { type APP_NAMES, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
