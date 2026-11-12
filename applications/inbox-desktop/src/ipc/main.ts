@@ -300,8 +300,6 @@ export const handleIPCCalls = () => {
                 case "setDefaultMailtoBannerDismissedPermanently":
                     setDefaultMailtoBannerDismissedPermanently();
                     break;
-                case "toggleAppCache": // INDA-782 - remove-me
-                    break;
                 case "setAllowedProtocols":
                     externalProtocolManager.extendAllowedProtocols(payload.source ?? "ipc", payload.protocols);
                     break;

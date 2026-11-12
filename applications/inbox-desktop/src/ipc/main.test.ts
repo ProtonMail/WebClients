@@ -39,7 +39,6 @@ jest.mock("../store/userSettingsStore", () => ({}));
 jest.mock("../utils/protocol/default", () => ({}));
 jest.mock("../utils/metrics", () => ({}));
 jest.mock("../utils/telemetry", () => ({}));
-jest.mock("../utils/electronSession/appCache", () => ({}));
 jest.mock("../utils/logout/logout", () => ({}));
 jest.mock("../utils/oauthSession", () => ({ startOAuthSession: jest.fn(), clearOAuthSession: jest.fn() }));
 jest.mock("../utils/openExternal/openExternal", () => ({}));
