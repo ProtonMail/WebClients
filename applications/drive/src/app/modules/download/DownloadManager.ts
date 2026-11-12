@@ -3,6 +3,7 @@ import { TransferSpeedMetrics } from '@proton/drive/modules/transferPerformance'
 import type { NodeEntity, ProtonDriveClient, ProtonDrivePublicLinkClient } from '@proton/drive/sdk';
 import { AbortError, NodeType, SDKEvent } from '@proton/drive/sdk';
 import metrics from '@proton/metrics/metricsInstance';
+import { isIos } from '@proton/shared/lib/helpers/browser';
 
 import { fileSaver } from '../../modules/fileSaver/fileSaver';
 import { getNodeStorageSize } from '../../utils/sdk/getNodeStorageSize';
@@ -25,6 +26,7 @@ import { MalwareDetection } from './malwareDetection/malwareDetection';
 import { createFileDownloadStream } from './utils/createFileDownloadStream';
 import { downloadLogDebug } from './utils/downloadLogger';
 import { formatDownloadArchiveFilename } from './utils/formatDownloadArchiveFilename';
+import { getArchiveSaveSize } from './utils/getArchiveSaveSize';
 import { validateDownloadSignatures } from './utils/handleDownloadCompletion';
 import { handleDownloadError } from './utils/handleError';
 import { hydrateAndCheckNodes, hydratePhotos } from './utils/hydrateAndCheckNodes';
@@ -466,6 +468,7 @@ export class DownloadManager {
                 this.downloadSpeedMetrics.onFileProgress(downloadId, downloadedBytes, isPaused);
             };
 
+            const isIosDevice = isIos();
             const archiveGenerator = new ArchiveGenerator();
             const archiveStreamGenerator = new ArchiveStreamGenerator({
                 entries: nodesQueue.iterator(),
@@ -476,6 +479,9 @@ export class DownloadManager {
                 downloadId,
                 malwareDetection: this.malwareDetection,
                 skipSignatureCheck: queueItem?.skipSignatureCheck,
+                // The zip writes entries in traversal order for the predicted length --> start them in that order,
+                // or it could wait on an entry the scheduler never starts (slots taken by later, unread entries).
+                startEntriesInOrder: isIosDevice,
             });
             const generator = archiveStreamGenerator.generator;
             const trackerController = archiveStreamGenerator.controller;
@@ -483,6 +489,26 @@ export class DownloadManager {
             abortController.signal.addEventListener('abort', () => archiveGenerator.cancel());
 
             const waitForFirstItemPromise = archiveStreamGenerator.waitForFirstItem();
+
+            // iOS only finishes a service worker download with Content-Length --> traversal done --> predict it.
+            const archiveLengthPromise = isIosDevice
+                ? traversalCompletedPromise
+                      .then(({ nodes: traversedNodes }) =>
+                          archiveGenerator.planEntries(
+                              traversedNodes.map((node) => ({
+                                  uid: node.uid,
+                                  isFile: node.type === NodeType.File || node.type === NodeType.Photo,
+                                  name: getNodeName(node),
+                                  parentPath: parentPathByUid.get(node.uid) ?? [],
+                                  size: node.activeRevision?.claimedSize,
+                              }))
+                          )
+                      )
+                      .catch((error) => {
+                          downloadLogDebug('Archive length planning failed', { downloadId, error });
+                          return undefined;
+                      })
+                : Promise.resolve(undefined);
 
             /**
              * After we have traversed all nodes and we have containsUnsupportedFile
@@ -494,18 +520,20 @@ export class DownloadManager {
              */
             const archivePromise = (async () => {
                 await waitForFirstItemPromise;
+                await archiveLengthPromise;
                 await archiveGenerator.writeLinks(generator);
                 downloadLogDebug('Archive writeLinks done', { downloadId });
             })();
 
             const savingPromise = (async () => {
                 await waitForFirstItemPromise;
+                const archiveLength = await archiveLengthPromise;
                 const savePromise = fileSaver
                     .saveAsFile(archiveGenerator.stream, {
                         downloadId,
                         filename: archiveName,
                         mimeType: 'application/zip',
-                        size: totalEncryptedSize > 0 ? totalEncryptedSize : undefined,
+                        size: getArchiveSaveSize({ archiveLength, totalEncryptedSize, isIos: isIosDevice }),
                     })
                     .catch((error) => abortOnSaveCancel(abortController, error));
 

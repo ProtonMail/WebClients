@@ -309,6 +309,16 @@ describe('traverseNodeStructure', () => {
         expect(result.totalEncryptedSize).toBe(6000);
     });
 
+    it('returns every queued node', async () => {
+        const file1 = makeFile('file1');
+        const file2 = makeFile('file2');
+
+        const { traversalCompletedPromise } = traverseNodeStructure([file1, file2], new AbortController().signal);
+        const result = await traversalCompletedPromise;
+
+        expect(result.nodes).toEqual([file1, file2]);
+    });
+
     it('rejects and errors the queue when collecting a folder fails', async () => {
         const root = makeFolder('root');
 

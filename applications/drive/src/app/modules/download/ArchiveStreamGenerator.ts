@@ -121,6 +121,8 @@ type ArchiveStreamGeneratorParams = {
     downloadId: string;
     malwareDetection: MalwareDetection;
     skipSignatureCheck?: boolean;
+    // Schedule an entry only once the previous one started --> entries start in traversal order.
+    startEntriesInOrder?: boolean;
 };
 
 export class ArchiveStreamGenerator {
@@ -130,6 +132,7 @@ export class ArchiveStreamGenerator {
     private readonly parentPathByUid: Map<string, string[]>;
     private readonly downloadId: string;
     private readonly skipSignatureCheck: boolean;
+    private readonly startEntriesInOrder: boolean;
     // Queue of the items that have started actively downloading
     private readonly archiveItemsQueue = createAsyncQueue<ArchiveItem>();
     private pendingArchiveTasks = 0;
@@ -157,6 +160,7 @@ export class ArchiveStreamGenerator {
         downloadId,
         malwareDetection,
         skipSignatureCheck,
+        startEntriesInOrder,
     }: ArchiveStreamGeneratorParams) {
         this.entries = entries;
         this.scheduler = scheduler;
@@ -165,6 +169,7 @@ export class ArchiveStreamGenerator {
         this.downloadId = downloadId;
         this.malwareDetection = malwareDetection;
         this.skipSignatureCheck = !!skipSignatureCheck;
+        this.startEntriesInOrder = !!startEntriesInOrder;
         this.tracker = createArchiveTracker(onProgress);
         this.generator = this.createGenerator();
         this.controller = {
@@ -202,7 +207,7 @@ export class ArchiveStreamGenerator {
                     }
                 );
             }
-            return { isFile: false, name: getNodeName(node), parentPath };
+            return { isFile: false, uid: node.uid, name: getNodeName(node), parentPath };
         }
         const { getQueueItem } = useDownloadManagerStore.getState();
 
@@ -260,6 +265,7 @@ export class ArchiveStreamGenerator {
 
         return {
             isFile: true,
+            uid: node.uid,
             name: getNodeName(node),
             parentPath,
             stream,
@@ -286,12 +292,17 @@ export class ArchiveStreamGenerator {
         })();
     }
 
-    private insertArchiveEntryInScheduler(taskId: string, node: NodeEntity) {
+    private insertArchiveEntryInScheduler(taskId: string, node: NodeEntity): Promise<void> {
+        let resolveStarted: () => void = () => {};
+        const startedPromise = new Promise<void>((resolve) => {
+            resolveStarted = resolve;
+        });
         const downloadTask: DownloadQueueTask = {
             taskId,
             node,
             downloadId: this.downloadId,
             start: async () => {
+                resolveStarted();
                 this.scheduledTasksAwaitingStart = Math.max(this.scheduledTasksAwaitingStart - 1, 0);
                 this.pendingArchiveTasks += 1;
                 const parentPath = this.parentPathByUid.get(node.uid) ?? [];
@@ -324,6 +335,7 @@ export class ArchiveStreamGenerator {
 
         this.scheduledTasksAwaitingStart += 1;
         this.scheduler.scheduleDownload(downloadTask);
+        return startedPromise;
     }
 
     private maybeCloseQueue() {
@@ -341,7 +353,10 @@ export class ArchiveStreamGenerator {
         try {
             for await (const entry of this.entries) {
                 const taskId = this.scheduler.generateTaskId();
-                this.insertArchiveEntryInScheduler(taskId, entry);
+                const startedPromise = this.insertArchiveEntryInScheduler(taskId, entry);
+                if (this.startEntriesInOrder) {
+                    await startedPromise;
+                }
             }
             this.schedulingCompleted = true;
             this.maybeCloseQueue();

@@ -1,3 +1,4 @@
+import { getContentDisposition } from './contentDisposition';
 import { LRUMap, type VideoStream, getBlockIndices, getChunkFromBlocksData, parseRange } from './streaming';
 
 declare const self: ServiceWorkerGlobalScope;
@@ -399,7 +400,7 @@ class DownloadServiceWorker {
         const headers = new Headers({
             ...(size ? { 'Content-Length': `${size}` } : {}),
             'Content-Type': mimeType,
-            'Content-Disposition': `attachment; filename="${encodeURIComponent(filename)}"`,
+            'Content-Disposition': getContentDisposition(filename),
             ...SECURITY_HEADERS,
         });
 

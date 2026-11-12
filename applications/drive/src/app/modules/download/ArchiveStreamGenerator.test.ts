@@ -7,7 +7,7 @@ import type { ArchiveStreamGenerator as ArchiveStreamGeneratorClass } from './Ar
 import { DownloadStatus, IssueStatus, useDownloadManagerStore } from './downloadManager.store';
 import type { DownloadQueueTask } from './downloadTypes';
 import type { MalwareDetection } from './malwareDetection/malwareDetection';
-import { createDeferred, flushAsync, trackInstances } from './testUtils';
+import { createDeferred, flushAsync, trackInstances, waitForCondition } from './testUtils';
 
 const getDownloadSdkMock = jest.fn();
 const handleDownloadErrorMock = jest.fn();
@@ -276,6 +276,51 @@ describe('ArchiveStreamGenerator', () => {
         const finalIteration = await generatorInstance.generator.next();
         expect(finalIteration.done).toBe(true);
         expect(progressSpy).not.toHaveBeenCalled();
+    });
+
+    describe('scheduling order', () => {
+        const folders = ['folder-1', 'folder-2'].map((uid) =>
+            createMockNodeEntity({ uid, name: { ok: true, value: uid }, type: NodeType.Folder })
+        );
+
+        const createGenerator = (startEntriesInOrder?: boolean) => {
+            const schedulerInstance = schedulerTracker.Mock();
+            async function* entries() {
+                yield* folders;
+            }
+            new ArchiveStreamGenerator({
+                entries: entries(),
+                onProgress: jest.fn(),
+                scheduler: schedulerInstance,
+                abortController: new AbortController(),
+                parentPathByUid: new Map<string, string[]>(),
+                downloadId: 'download-id',
+                malwareDetection: createMalwareDetectionMock(),
+                skipSignatureCheck: true,
+                startEntriesInOrder,
+            });
+            return schedulerInstance;
+        };
+
+        it('should schedule every entry right away by default', async () => {
+            const schedulerInstance = createGenerator();
+
+            await waitForCondition(() => schedulerInstance._tasks.length === 2);
+            expect(schedulerInstance._tasks.map((task) => task.node.uid)).toEqual(['folder-1', 'folder-2']);
+        });
+
+        it('should schedule an entry only once the previous one started when asked', async () => {
+            const schedulerInstance = createGenerator(true);
+            await waitForCondition(() => schedulerInstance._tasks.length > 0);
+            await flushAsync(10);
+
+            expect(schedulerInstance._tasks.map((task) => task.node.uid)).toEqual(['folder-1']);
+
+            void schedulerInstance._tasks[0].start();
+
+            await waitForCondition(() => schedulerInstance._tasks.length === 2);
+            expect(schedulerInstance._tasks.map((task) => task.node.uid)).toEqual(['folder-1', 'folder-2']);
+        });
     });
 
     it('should resolve waitForFirstItem once first item is scheduled', async () => {

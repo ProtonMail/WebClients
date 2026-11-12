@@ -19,7 +19,11 @@ const BATCH_WINDOW_MS = 50;
 
 export type ArchiveTraversalResult = {
     nodesQueue: AsyncQueue<NodeEntity>;
-    traversalCompletedPromise: Promise<{ totalEncryptedSize: number; containsUnsupportedFile: boolean }>;
+    traversalCompletedPromise: Promise<{
+        totalEncryptedSize: number;
+        containsUnsupportedFile: boolean;
+        nodes: NodeEntity[];
+    }>;
     parentPathByUid: Map<string, string[]>;
 };
 
@@ -122,6 +126,7 @@ export function traverseNodeStructure(nodes: NodeEntity[], signal: AbortSignal):
     const driveClient = DownloadDriveClientRegistry.getDriveClient();
     const traversalStart = performance.now();
 
+    const queuedNodes: NodeEntity[] = [];
     let totalEncryptedSize = 0;
     let containsUnsupportedFile = false;
 
@@ -137,6 +142,7 @@ export function traverseNodeStructure(nodes: NodeEntity[], signal: AbortSignal):
         }
 
         nodesQueue.push(node);
+        queuedNodes.push(node);
 
         if (node.type !== NodeType.Folder) {
             totalEncryptedSize += getNodeStorageSize(node);
@@ -183,7 +189,7 @@ export function traverseNodeStructure(nodes: NodeEntity[], signal: AbortSignal):
                 totalMs: Math.round(performance.now() - traversalStart),
                 totalEncryptedSize,
             });
-            return { totalEncryptedSize, containsUnsupportedFile };
+            return { totalEncryptedSize, containsUnsupportedFile, nodes: queuedNodes };
         })
         .catch((error) => {
             nodesQueue.error(error);
@@ -205,6 +211,7 @@ export function traverseAlbum(albumNodeUid: string, signal: AbortSignal): Archiv
     const drivePhotosClient = DownloadDriveClientRegistry.getDrivePhotosClient();
     const traversalStart = performance.now();
 
+    const queuedNodes: NodeEntity[] = [];
     let totalEncryptedSize = 0;
     let containsUnsupportedFile = false;
 
@@ -219,6 +226,7 @@ export function traverseAlbum(albumNodeUid: string, signal: AbortSignal): Archiv
         }
 
         nodesQueue.push(node);
+        queuedNodes.push(node);
         totalEncryptedSize += getNodeStorageSize(node);
 
         // Live photos pair a photo with a related video node that also needs to be archived.
@@ -253,7 +261,7 @@ export function traverseAlbum(albumNodeUid: string, signal: AbortSignal): Archiv
             totalMs: Math.round(performance.now() - traversalStart),
             totalEncryptedSize,
         });
-        return { totalEncryptedSize, containsUnsupportedFile };
+        return { totalEncryptedSize, containsUnsupportedFile, nodes: queuedNodes };
     })().catch((error) => {
         nodesQueue.error(error);
         throw error;
