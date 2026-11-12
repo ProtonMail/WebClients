@@ -1,7 +1,7 @@
 import type { FeatureFlag } from '@proton/unleash/Flags';
 
 import { saveBrowserPreference, saveDesktopAppPreference, tryOpenInDesktopApp } from './desktopAppDetector';
-import { openDesktopAppOnLoad } from './openDesktopAppOnLoad';
+import { openDesktopAppOnLoad, wasDesktopAppTriedOnLoad } from './openDesktopAppOnLoad';
 
 const mocks = vi.hoisted(() => ({
     isElectronApp: false,
@@ -153,5 +153,35 @@ describe('openDesktopAppOnLoad', () => {
         loadPage({ path, userId: USER_ID });
 
         expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
+    });
+
+    describe('wasDesktopAppTriedOnLoad', () => {
+        it('is true for the meeting the page load tried and false for another meeting', () => {
+            loadPage({ userId: USER_ID });
+
+            expect(wasDesktopAppTriedOnLoad(MEETING_ID)).toBe(true);
+            expect(wasDesktopAppTriedOnLoad('othermeeti')).toBe(false);
+        });
+
+        it.each([
+            {
+                load: 'with MeetOpenDesktopAppOnLoad off',
+                loadWithoutTrying: () => loadPage({ flags: { MeetOpenDesktopAppOnLoad: false }, userId: USER_ID }),
+            },
+            {
+                load: 'with the browser preferred',
+                loadWithoutTrying: () => {
+                    saveBrowserPreference(USER_STORAGE_KEY);
+                    loadPage({ userId: USER_ID });
+                },
+            },
+            { load: 'on the dashboard', loadWithoutTrying: () => loadPage({ path: '/dashboard', userId: USER_ID }) },
+        ])('is false after a page load $load, even when an earlier load tried the meeting', ({ loadWithoutTrying }) => {
+            loadPage({ userId: USER_ID });
+
+            loadWithoutTrying();
+
+            expect(wasDesktopAppTriedOnLoad(MEETING_ID)).toBe(false);
+        });
     });
 });

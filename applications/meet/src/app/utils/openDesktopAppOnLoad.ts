@@ -7,18 +7,25 @@ import { getOpenInDesktopAppStorageKey } from './storage';
 
 const OPEN_DESKTOP_APP_ON_LOAD_FLAG = 'MeetOpenDesktopAppOnLoad';
 
-const getMeetingLinkFromLocation = () => {
+let meetingLinkNameTriedOnLoad: string | undefined;
+
+const getMeetingFromLocation = () => {
     try {
         const meetingLinkName = getUrlMeetingLinkName();
         const meetingPassword = getUrlMeetingPassword();
 
         return meetingLinkName && meetingPassword
-            ? `${window.location.origin}${getMeetingLink(meetingLinkName, meetingPassword)}`
+            ? {
+                  meetingLinkName,
+                  meetingLink: `${window.location.origin}${getMeetingLink(meetingLinkName, meetingPassword)}`,
+              }
             : undefined;
     } catch {
         return undefined;
     }
 };
+
+export const wasDesktopAppTriedOnLoad = (meetingLinkName: string) => meetingLinkName === meetingLinkNameTriedOnLoad;
 
 export const openDesktopAppOnLoad = ({
     unleashClient,
@@ -27,6 +34,8 @@ export const openDesktopAppOnLoad = ({
     unleashClient: Pick<MeetExtraThunkArguments['unleashClient'], 'isEnabled'>;
     userId?: string;
 }) => {
+    meetingLinkNameTriedOnLoad = undefined;
+
     if (getDesktopAppOption(unleashClient.isEnabled(OPEN_DESKTOP_APP_ON_LOAD_FLAG)) !== 'openOnLoad') {
         return;
     }
@@ -35,9 +44,10 @@ export const openDesktopAppOnLoad = ({
         return;
     }
 
-    const meetingLink = getMeetingLinkFromLocation();
+    const meeting = getMeetingFromLocation();
 
-    if (meetingLink) {
-        tryOpenInDesktopApp(meetingLink);
+    if (meeting) {
+        tryOpenInDesktopApp(meeting.meetingLink);
+        meetingLinkNameTriedOnLoad = meeting.meetingLinkName;
     }
 };

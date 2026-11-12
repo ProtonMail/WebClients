@@ -33,6 +33,7 @@ import {
     getDesktopAppOption,
     saveBrowserPreference,
 } from '../../utils/desktopAppDetector';
+import { wasDesktopAppTriedOnLoad } from '../../utils/openDesktopAppOnLoad';
 import { OpenInDesktopApp } from '../OpenInDesktopApp/OpenInDesktopApp';
 import { useDesktopAppPreferenceStorageKey } from '../OpenInDesktopApp/useDesktopAppPreferenceStorageKey';
 import { PreJoinDetailsHeader } from './PreJoinDetailsHeader';
@@ -73,7 +74,7 @@ export const PreJoinDetails = ({
     const desktopAppPreferenceStorageKey = useDesktopAppPreferenceStorageKey();
     const desktopAppOption = getDesktopAppOption(useFlag('MeetOpenDesktopAppOnLoad'));
     const [prefersBrowser] = useState(() => getBrowserPreference(desktopAppPreferenceStorageKey));
-    const opensDesktopAppOnLoad = desktopAppOption === 'openOnLoad' && !prefersBrowser;
+    const showJoinMeetingOnly = desktopAppOption === 'openOnLoad' && !prefersBrowser;
 
     const [keepDisplayNameOnDevice, setKeepDisplayNameOnDevice] = useState(keepDisplayName);
 
@@ -88,19 +89,21 @@ export const PreJoinDetails = ({
         if (instantMeeting) {
             return c('Action').t`Start meeting`;
         }
-        if (isElectronApp || opensDesktopAppOnLoad) {
+        if (isElectronApp || showJoinMeetingOnly) {
             return c('Action').t`Join meeting`;
         }
         return isHost ? c('Action').t`Start meeting in browser` : c('Action').t`Join in browser`;
     };
 
-    const showOpenInDesktopApp = !instantMeeting && desktopAppOption !== 'unavailable' && !opensDesktopAppOnLoad;
+    const showOpenInDesktopApp = !instantMeeting && desktopAppOption !== 'unavailable' && !showJoinMeetingOnly;
 
     const handleJoinMeeting = () => {
-        if (!instantMeeting && desktopAppOption === 'openOnLoad') {
-            saveBrowserPreference(desktopAppPreferenceStorageKey);
-        } else if (showOpenInDesktopApp) {
-            clearDesktopAppPreference(desktopAppPreferenceStorageKey);
+        if (showOpenInDesktopApp || wasDesktopAppTriedOnLoad(meetingLinkName)) {
+            if (desktopAppOption === 'openOnLoad') {
+                saveBrowserPreference(desktopAppPreferenceStorageKey);
+            } else {
+                clearDesktopAppPreference(desktopAppPreferenceStorageKey);
+            }
         }
         onJoinMeeting(displayName, keepDisplayNameOnDevice);
     };
