@@ -848,6 +848,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
+      ],
+      "Sign in in the app instead": [
+        "Συνδεθείτε μέσω της εφαρμογής"
       ]
     },
     "Activity": {
@@ -3369,6 +3372,21 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ο οργανισμός σας απαιτεί να εξασφαλίσετε την πρόσβασή σας στο ${ PASS_APP_NAME }"
+      ],
+      "Canceled by user": [
+        "Ακυρώθηκε από τον χρήστη"
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Η έναρξη του ${ PASS_APP_NAME } εκτός διαδικτύου θα απαιτήσει τον κωδικό πρόσβασής σας για το ${ BRAND_NAME }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Η έναρξη του ${ PASS_APP_NAME } εκτός διαδικτύου θα απαιτήσει τον εφεδρικό κωδικό πρόσβασής σας."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Η έναρξη του ${ PASS_APP_NAME } εκτός διαδικτύου θα απαιτήσει τον πρόσθετο κωδικό πρόσβασής σας."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Η έναρξη του ${ PASS_APP_NAME } εκτός διαδικτύου θα απαιτήσει τον δεύτερο κωδικό πρόσβασής σας."
       ]
     },
     "Keyboard key": {
@@ -5840,6 +5858,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμο.",
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμα."
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Μετακίνηση όλων των στοιχείων στο \"${ target }\";"
       ]
     },
     "Title_cloned_item": {

@@ -839,6 +839,12 @@
       ],
       "Your password manager is not here? Request it.": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
+      ],
+      "Open platform selection dropdown": [
+        "Ouvrir le menu déroulant"
+      ],
+      "Sign in in the app instead": [
+        "Se connecter plutôt via l'application"
       ]
     },
     "Activity": {
@@ -3234,6 +3240,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Votre organisation vous demande de sécuriser votre accès à ${ PASS_APP_NAME }."
+      ],
+      "Canceled by user": [
+        "Annulé par l'utilisateur"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Scannez le QR code pour télécharger ${ PASS_APP_NAME } pour iOS et Android."
       ]
     },
     "Keyboard key": {
@@ -5651,6 +5663,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias.",
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias."
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Déplacer tous les éléments vers « ${ target } » ?"
       ]
     },
     "Title_cloned_item": {

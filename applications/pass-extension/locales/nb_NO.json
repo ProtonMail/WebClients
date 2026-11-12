@@ -848,6 +848,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Passordbehandleren din er ikke her? Be om den."
+      ],
+      "Sign in in the app instead": [
+        "Logg inn i appen i stedet"
       ]
     },
     "Activity": {
@@ -3369,6 +3372,21 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisasjonen krever at du sikrer tilgangen til ${ PASS_APP_NAME }"
+      ],
+      "Canceled by user": [
+        "Avbrutt av bruker"
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "For å starte ${ PASS_APP_NAME } i frakoblet modus må du oppgi ${ BRAND_NAME }-passordet ditt."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Hvis du starter ${ PASS_APP_NAME } i frakoblet modus, må du oppgi backup-passordet ditt."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "For å starte ${ PASS_APP_NAME } i frakoblet modus må du oppgi det ekstra passordet ditt."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "For å starte ${ PASS_APP_NAME } i frakoblet modus må du oppgi det andre passordet ditt."
       ]
     },
     "Keyboard key": {
@@ -5840,6 +5858,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du er i ferd med å slette permanent ${ aliasCount } alias.",
         "Du er i ferd med å slette permanent ${ aliasCount } aliaser."
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Flytt alle elementer til \"${ target }\"?"
       ]
     },
     "Title_cloned_item": {

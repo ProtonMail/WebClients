@@ -5415,6 +5415,12 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "您将永久删除 ${ aliasCount } 个别名。"
+      ],
+      "First login created": [
+        "已创建首个登录项"
+      ],
+      "Import completed with warnings": [
+        "导入完成，存在警告"
       ]
     },
     "Title_cloned_item": {
@@ -5799,6 +5805,23 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "您的订阅不允许您创建多个保险库。 所有项目都将导入到您的第一个保险库中。 要导入多个保险库，请升级您的订阅。"
+      ]
+    },
+    "Import Tutorial": {
+      "Export": [
+        "导出"
+      ],
+      "Open ${ name } and go to ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }.": [
+        "打开${ name }并前往 ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }."
+      ],
+      "Open ${ name } and select ${ settings }.": [
+        "打开${ name }并选择${ settings }."
+      ],
+      "Vault": [
+        "保险库"
+      ],
+      "Vault options": [
+        "保险库选项"
       ]
     }
   }

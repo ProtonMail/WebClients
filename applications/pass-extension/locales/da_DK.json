@@ -848,6 +848,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Er din adgangskodeadministrator her ikke? Anmod om den."
+      ],
+      "Sign in in the app instead": [
+        "Log ind i appen i stedet"
       ]
     },
     "Activity": {
@@ -3369,6 +3372,21 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kræver, at du sikrer din adgang til ${ PASS_APP_NAME }"
+      ],
+      "Canceled by user": [
+        "Annulleret af brugeren"
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Det kræver din ${ BRAND_NAME }-adgangskode for at starte ${ PASS_APP_NAME } offline."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Det kræver din backupadgangskode for at starte ${ PASS_APP_NAME } offline."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Det kræver din ekstra adgangskode for at starte ${ PASS_APP_NAME } offline."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Det kræver din anden adgangskode for at starte ${ PASS_APP_NAME } offline."
       ]
     },
     "Keyboard key": {
@@ -5840,6 +5858,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du er ved at slette ${ aliasCount } alias permanent.",
         "Du er ved at slette ${ aliasCount } aliasser permanent."
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Flyt alle elementer til \"${ target }\"?"
       ]
     },
     "Title_cloned_item": {

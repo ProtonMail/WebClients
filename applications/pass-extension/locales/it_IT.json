@@ -848,6 +848,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Il tuo gestore di password non è presente? Richiedilo."
+      ],
+      "Sign in in the app instead": [
+        "Usa l'applicazione per accedere"
       ]
     },
     "Activity": {
@@ -3369,6 +3372,21 @@
       ],
       "None of your saved passwords have appeared in a known data breach.": [
         "Nessuna delle tue password salvata è stata coinvolta in una violazione dei dati nota."
+      ],
+      "Canceled by user": [
+        "Annullato dall'utente"
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Per avviare ${ PASS_APP_NAME } offline, sarà necessaria la tua password di ${ BRAND_NAME }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Per avviare ${ PASS_APP_NAME } offline, sarà necessaria la tua password di backup."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Per avviare ${ PASS_APP_NAME } offline, sarà necessaria la tua password aggiuntiva."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Per avviare ${ PASS_APP_NAME } offline, sarà necessaria la tua seconda password."
       ]
     },
     "Keyboard key": {
@@ -5840,6 +5858,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Stai per eliminare definitivamente ${ aliasCount } alias.",
         "Stai per eliminare definitivamente ${ aliasCount } alias."
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Spostare tutti gli elementi in \"${ target }\"?"
       ]
     },
     "Title_cloned_item": {

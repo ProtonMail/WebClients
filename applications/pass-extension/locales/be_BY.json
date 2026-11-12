@@ -852,6 +852,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Адсутнічае ваш менеджар пароляў? Запытайце яго."
+      ],
+      "Sign in in the app instead": [
+        "Замест гэтага ўвайдзіце ў праграму"
       ]
     },
     "Activity": {
@@ -1064,10 +1067,10 @@
         "Збой аўтэнтыфікацыі: ${ message }"
       ],
       "Biometric authentication cancelled.": [
-        "Біяметрычная аўтэнтыфікацыя скасавана."
+        "Біяметрычнай аўтэнтыфікацыі скасавана."
       ],
       "Biometric authentication failed.": [
-        "Збой аўтэнтыфікацыі біяметрыі."
+        "Збой біяметрычнай аўтэнтыфікацыі."
       ],
       "Biometric lock credentials do not match.": [
         "Уліковыя даныя біяметрычнай блакіроўкі не супадаюць."
@@ -3412,6 +3415,15 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
+      ],
+      "Canceled by user": [
+        "Скасавана карыстальнікам"
+      ],
+      "Disabled by your organization": [
+        "Адключана вашай арганізацыяй"
+      ],
+      "The folder is already here": [
+        "Папка ўжо тут"
       ]
     },
     "Keyboard key": {
@@ -5933,6 +5945,9 @@
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімы.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў."
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Перамясціць усе элементы ў «${ target }»?"
       ]
     },
     "Title_cloned_item": {

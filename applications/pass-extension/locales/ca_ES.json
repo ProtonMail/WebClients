@@ -848,6 +848,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
+      ],
+      "Sign in in the app instead": [
+        "Inicieu sessió a l'aplicació en lloc d'això"
       ]
     },
     "Activity": {
@@ -3369,6 +3372,21 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La vostra organització us demana que assegureu el vostre accés a ${ PASS_APP_NAME }."
+      ],
+      "Canceled by user": [
+        "S'ha cancel·lat per l'usuari"
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya de ${ BRAND_NAME }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya de còpia de seguretat."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya addicional."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la segona contrasenya."
       ]
     },
     "Keyboard key": {
@@ -5840,6 +5858,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies.",
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Voleu moure tots els elements a \"${ target }\"?"
       ]
     },
     "Title_cloned_item": {

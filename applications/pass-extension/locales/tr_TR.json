@@ -848,6 +848,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
+      ],
+      "Sign in in the app instead": [
+        "Bunun yerine uygulamada oturum açın"
       ]
     },
     "Activity": {
@@ -3369,6 +3372,21 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
+      ],
+      "Canceled by user": [
+        "Kullanıcı tarafından iptal edildi"
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "${ PASS_APP_NAME } uygulamasını çevrim dışı başlatmak için ${ BRAND_NAME } parolanız gerekecek."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "${ PASS_APP_NAME } uygulamasını çevrim dışı başlatmak için yedek parolanız gerekecek."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "${ PASS_APP_NAME } uygulamasını çevrim dışı başlatmak için ek parolanız gerekecek."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "${ PASS_APP_NAME } uygulamasını çevrim dışı başlatmak için ikinci parolanız gerekecek."
       ]
     },
     "Keyboard key": {
@@ -5840,6 +5858,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz.",
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz."
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Tüm ögeler \"${ target }\" kasasına taşınsın mı?"
       ]
     },
     "Title_cloned_item": {

@@ -850,6 +850,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ],
+      "Sign in in the app instead": [
+        "Conectare în aplicație"
       ]
     },
     "Activity": {
@@ -3407,6 +3410,21 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizația vă solicită să vă securizați accesul la ${ PASS_APP_NAME }"
+      ],
+      "Canceled by user": [
+        "Anulat de utilizator"
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Pentru pornirea ${ PASS_APP_NAME } în mod local, va fi necesară parola ${ BRAND_NAME }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Pentru pornirea ${ PASS_APP_NAME } în mod local, va fi necesară parola de rezervă."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Pentru pornirea ${ PASS_APP_NAME } în mod local, va fi necesară parola suplimentară."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Pentru pornirea ${ PASS_APP_NAME } în mod local, va fi necesară parola secundară."
       ]
     },
     "Keyboard key": {
@@ -5903,6 +5921,9 @@
         "Urmează să ștergeți definitiv ${ aliasCount } alias.",
         "Urmează să ștergeți definitiv ${ aliasCount } aliasuri.",
         "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Mutați toate articolele în „${ target }”?"
       ]
     },
     "Title_cloned_item": {

@@ -3372,6 +3372,21 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Deine Organisation verlangt, dass du deinen Zugang zu ${ PASS_APP_NAME } absicherst."
+      ],
+      "Canceled by user": [
+        "Vom Benutzer abgebrochen"
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Um ${ PASS_APP_NAME } ohne Internetverbindung starten zu können, wird dein ${ BRAND_NAME }-Passwort benötigt."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Um ${ PASS_APP_NAME } ohne Internetverbindung starten zu können, wird dein Backup-Passwort benötigt."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Um ${ PASS_APP_NAME } ohne Internetverbindung starten zu können, benötigst du dein zusätzliches Passwort."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Um ${ PASS_APP_NAME } ohne Internetverbindung starten zu können, wird dein zweites Passwort benötigt."
       ]
     },
     "Keyboard key": {
@@ -5843,6 +5858,9 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du bist dabei, ${ aliasCount } Alias dauerhaft zu löschen.",
         "Du bist dabei, ${ aliasCount } Aliasse dauerhaft zu löschen."
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Alle Einträge nach „${ target }“ verschieben?"
       ]
     },
     "Title_cloned_item": {
