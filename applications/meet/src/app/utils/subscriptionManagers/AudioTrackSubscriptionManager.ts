@@ -9,7 +9,7 @@ import {
     Track,
 } from 'livekit-client';
 
-import { isSafari } from '@proton/shared/lib/helpers/browser';
+import { isWebKit } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import type { AudioRecoveryAPI } from '../e2eeRecovery/E2eeRecoveryManager';
@@ -305,7 +305,7 @@ export class AudioTrackSubscriptionManager implements AudioRecoveryAPI {
     /**
      * Implementation of {@link AudioRecoveryAPI.recoverTrack}. Executes a
      * disable → unsubscribe → wait → resubscribe → enable cycle on the
-     * publication, with Safari-specific delays. Marks the track as actively
+     * publication, with WebKit-specific delays. Marks the track as actively
      * recovering for the duration of the dance plus a short cooldown so the
      * other event handlers in this class don't race with the new transceiver.
      *
@@ -330,7 +330,7 @@ export class AudioTrackSubscriptionManager implements AudioRecoveryAPI {
         try {
             if (publication.isEnabled) {
                 publication.setEnabled(false);
-                await wait(isSafari() ? 300 : 100);
+                await wait(isWebKit() ? 300 : 100);
             }
             if (!this.activeRecoveries.has(trackKey)) {
                 return;
@@ -338,7 +338,7 @@ export class AudioTrackSubscriptionManager implements AudioRecoveryAPI {
 
             if (publication.isSubscribed) {
                 publication.setSubscribed(false);
-                await wait(isSafari() ? 1500 : 500);
+                await wait(isWebKit() ? 1500 : 500);
             }
             if (!this.activeRecoveries.has(trackKey)) {
                 return;
@@ -356,12 +356,12 @@ export class AudioTrackSubscriptionManager implements AudioRecoveryAPI {
                     trackKey
                 );
                 publication.setSubscribed(false);
-                await wait(isSafari() ? 500 : 200);
+                await wait(isWebKit() ? 500 : 200);
             }
 
             if (!publication.isSubscribed) {
                 publication.setSubscribed(true);
-                await wait(isSafari() ? 500 : 100);
+                await wait(isWebKit() ? 500 : 100);
             }
             if (!publication.isSubscribed) {
                 logger.error('AudioTrackSubscriptionManager: failed to resubscribe', trackKey);
@@ -371,7 +371,7 @@ export class AudioTrackSubscriptionManager implements AudioRecoveryAPI {
 
             if (!publication.isEnabled) {
                 publication.setEnabled(true);
-                await wait(isSafari() ? 200 : 50);
+                await wait(isWebKit() ? 200 : 50);
             }
 
             logger.info('AudioTrackSubscriptionManager: recoverTrack completed', {

@@ -1,7 +1,7 @@
 import type { RemoteParticipant, RemoteTrackPublication, Room } from 'livekit-client';
 import { ConnectionQuality, ConnectionState, RoomEvent, Track } from 'livekit-client';
 
-import { isSafari } from '@proton/shared/lib/helpers/browser';
+import { isWebKit } from '@proton/shared/lib/helpers/browser';
 import { isDocumentVisible } from '@proton/shared/lib/helpers/dom';
 
 import { collectReceiverStats } from './inboundRtpStats';
@@ -273,7 +273,7 @@ export class E2eeRecoveryManager {
             return;
         }
 
-        if (!isDocumentVisible() && isSafari()) {
+        if (!isDocumentVisible() && isWebKit()) {
             return;
         }
 
