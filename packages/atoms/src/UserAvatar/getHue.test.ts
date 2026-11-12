@@ -1,15 +1,19 @@
+import { vi } from 'vitest';
+
+import type * as AccentColor from './getAccentColorForUsername';
 import { getAccentColorForUsername } from './getAccentColorForUsername';
 import { UserAvatarHueCache, getHue } from './getHue';
 
-jest.mock('./getAccentColorForUsername');
+vi.mock('./getAccentColorForUsername');
 
-const mockedGetAccentColorForUsername = jest
+const actual = await vi.importActual<typeof AccentColor>('./getAccentColorForUsername');
+const mockedGetAccentColorForUsername = vi
     .mocked(getAccentColorForUsername)
-    .mockImplementation(jest.requireActual('./getAccentColorForUsername').getAccentColorForUsername);
+    .mockImplementation(actual.getAccentColorForUsername);
 
 describe('getHue', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         // Clear the Hue cache before each test
         UserAvatarHueCache.clear();
     });

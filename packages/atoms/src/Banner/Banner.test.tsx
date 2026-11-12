@@ -1,4 +1,5 @@
 import { fireEvent, render } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { IcEye } from '@proton/icons/icons/IcEye';
 
@@ -87,7 +88,7 @@ describe('<Banner />', () => {
     });
 
     it('should render a dismiss button and call onDismiss when clicked', () => {
-        const onDismissMock = jest.fn();
+        const onDismissMock = vi.fn();
 
         const { getByRole } = render(<Banner onDismiss={onDismissMock}>Test Banner</Banner>);
 

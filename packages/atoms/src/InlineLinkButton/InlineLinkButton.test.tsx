@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { InlineLinkButton } from './InlineLinkButton';
 
@@ -38,7 +39,7 @@ describe('<InlineLinkButton />', () => {
     });
 
     it('passes extra props to the button element', () => {
-        const handleClick = jest.fn();
+        const handleClick = vi.fn();
         const { getByRole } = render(
             <InlineLinkButton onClick={handleClick} aria-label="I am a button">
                 Click Me

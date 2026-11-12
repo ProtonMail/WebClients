@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { UserIdentity } from './UserIdentity';
 
@@ -32,7 +33,7 @@ describe('UserIdentity', () => {
     });
 
     it('renders a button that calls onClick when a handler is passed', () => {
-        const onClick = jest.fn();
+        const onClick = vi.fn();
         render(<UserIdentity name="Alice Anderson" email="alice@proton.me" onClick={onClick} />);
 
         fireEvent.click(screen.getByRole('button'));
