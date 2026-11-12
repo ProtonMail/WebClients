@@ -34,6 +34,7 @@ import {
 import { convertBYOEAddress, createBYOEAddress } from '../thunks/byoeAddresses';
 import { updateBYOEAddressConnection } from '../thunks/updateBYOEAddressConnection';
 import useBYOEFeatureStatus from './useBYOEFeatureStatus';
+import useMarkBYOEInboxCleanupDue from './useMarkBYOEInboxCleanupDue';
 
 interface Props {
     showSuccessModal: (connectedAddress: string, importEmails: boolean) => void;
@@ -55,6 +56,7 @@ const useSetupGmailBYOEAddress = ({
     const [user] = useUser();
     const [hasAccessToBYOE] = useBYOEFeatureStatus();
     const canClaimExternalAddress = useFlag('CanClaimExternalAddress');
+    const markInboxCleanupDue = useMarkBYOEInboxCleanupDue();
 
     const easySwitchDispatch = useEasySwitchDispatch();
     const allSyncs = useEasySwitchSelector(getAllSync);
@@ -131,6 +133,7 @@ const useSetupGmailBYOEAddress = ({
                 isUpsellShown: !hasPaidMail(user) && importEmails,
                 isClaimedAddress,
             });
+            void markInboxCleanupDue({ importEmails });
             onComplete();
             void easySwitchDispatch(loadSyncList());
             void easySwitchDispatch(loadImporters());

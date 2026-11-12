@@ -65,6 +65,12 @@ const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
 jest.mock('./useBYOEFeatureStatus');
 const mockUseBYOEFeatureStatus = useBYOEFeatureStatus as jest.MockedFunction<typeof useBYOEFeatureStatus>;
 
+const mockMarkInboxCleanupDue = jest.fn();
+jest.mock('./useMarkBYOEInboxCleanupDue', () => ({
+    __esModule: true,
+    default: () => mockMarkInboxCleanupDue,
+}));
+
 jest.mock('../thunks/byoeAddresses', () => ({
     createBYOEAddress: jest.fn(),
     convertBYOEAddress: jest.fn(),
@@ -130,6 +136,7 @@ describe('useSetupGmailBYOEAddress', () => {
             expect(mockDispatch).not.toHaveBeenCalled();
             expect(mockApi).not.toHaveBeenCalled();
             expect(mockShowSuccessModal).not.toHaveBeenCalled();
+            expect(mockMarkInboxCleanupDue).not.toHaveBeenCalled();
         });
 
         it('should do nothing when hasAccessToBYOE is false', async () => {
@@ -374,6 +381,7 @@ describe('useSetupGmailBYOEAddress', () => {
             expect(mockErrorHandler).not.toHaveBeenCalled();
             expect(mockShowSuccessModal).not.toHaveBeenCalled();
             expect(mockDispatch).not.toHaveBeenCalled();
+            expect(mockMarkInboxCleanupDue).not.toHaveBeenCalled();
         });
 
         describe('claimable external address check', () => {
@@ -495,6 +503,7 @@ describe('useSetupGmailBYOEAddress', () => {
             expect(mockShowAddressLinkedToAnotherAccountModal).not.toHaveBeenCalled();
             expect(mockShowSuccessModal).not.toHaveBeenCalled();
             expect(mockDispatch).not.toHaveBeenCalled();
+            expect(mockMarkInboxCleanupDue).not.toHaveBeenCalled();
         });
 
         it('should convert address, call import API and show success modal when address exists and is not BYOE', async () => {
@@ -555,6 +564,7 @@ describe('useSetupGmailBYOEAddress', () => {
             expect(mockApi).toHaveBeenCalled();
             expect(mockCreateNotification).toHaveBeenCalledWith(expect.objectContaining({ type: 'error' }));
             expect(mockShowSuccessModal).not.toHaveBeenCalled();
+            expect(mockMarkInboxCleanupDue).not.toHaveBeenCalled();
         });
     });
 
@@ -644,6 +654,7 @@ describe('useSetupGmailBYOEAddress', () => {
             expect(mockOnComplete).toHaveBeenCalled();
             expect(mockDispatch).not.toHaveBeenCalled();
             expect(mockShowSuccessModal).not.toHaveBeenCalled();
+            expect(mockMarkInboxCleanupDue).not.toHaveBeenCalled();
         });
     });
 
@@ -800,6 +811,119 @@ describe('useSetupGmailBYOEAddress', () => {
 
             expect(reports.map((report) => report.event)).toEqual(['step_completed', 'flow_error']);
             expect(reports[1].dimensions).toMatchObject({ errorStep: 'address_creation' });
+        });
+    });
+
+    describe('inbox cleanup', () => {
+        const setup = () => {
+            const mockShowSuccessModal = jest.fn();
+            const mockOnComplete = jest.fn();
+            const { result } = renderHook(() =>
+                useSetupGmailBYOEAddress({
+                    showSuccessModal: mockShowSuccessModal,
+                    source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
+                    onComplete: mockOnComplete,
+                    showAddressLinkedToAnotherAccountModal: jest.fn(),
+                    showClaimableAddressModal: jest.fn(),
+                })
+            );
+            return { result, mockShowSuccessModal, mockOnComplete };
+        };
+
+        const connect = (
+            result: ReturnType<typeof setup>['result'],
+            params: Partial<
+                Parameters<ReturnType<typeof setup>['result']['current']['handleBYOEWithImportCallback']>[0]
+            > = {}
+        ) =>
+            act(async () => {
+                await result.current.handleBYOEWithImportCallback({
+                    hasError: false,
+                    importEmails: true,
+                    importPeriod: TIME_PERIOD.BIG_BANG,
+                    token: mockToken,
+                    ...params,
+                });
+            });
+
+        beforeEach(() => {
+            jest.clearAllMocks();
+            mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
+            mockUseAddresses.mockReturnValue([[], false]);
+            mockFindUserAddress.mockReturnValue(undefined);
+            mockGetIsBYOEAddress.mockReturnValue(false);
+            mockDispatch.mockResolvedValue({ Email: 'test@gmail.com', ID: 'addr-id' });
+            mockApi.mockResolvedValue({});
+            mockUseFlag.mockReturnValue(false);
+            mockMarkInboxCleanupDue.mockResolvedValue(undefined);
+        });
+
+        it('marks the cleanup as due with the import choice after creating the address', async () => {
+            const { result } = setup();
+
+            await connect(result, { importEmails: true });
+            expect(mockMarkInboxCleanupDue).toHaveBeenCalledTimes(1);
+            expect(mockMarkInboxCleanupDue).toHaveBeenCalledWith({ importEmails: true });
+
+            mockMarkInboxCleanupDue.mockClear();
+            await connect(result, { importEmails: false });
+            expect(mockMarkInboxCleanupDue).toHaveBeenCalledTimes(1);
+            expect(mockMarkInboxCleanupDue).toHaveBeenCalledWith({ importEmails: false });
+        });
+
+        it('marks the cleanup as due after converting a forwarding address', async () => {
+            mockFindUserAddress.mockReturnValue({ Email: 'test@gmail.com', ID: 'addr-id' } as any);
+            mockGetIsBYOEAddress.mockReturnValue(false);
+            const { result } = setup();
+
+            await connect(result);
+
+            expect(mockMarkInboxCleanupDue).toHaveBeenCalledWith({ importEmails: true });
+        });
+
+        it('marks the cleanup as due after claiming an address', async () => {
+            mockUseFlag.mockImplementation((flag) => flag === 'CanClaimExternalAddress');
+            const { result } = setup();
+
+            await act(async () => {
+                await result.current.handleClaimAddress({
+                    account: 'test@gmail.com',
+                    importEmails: true,
+                    importPeriod: undefined,
+                });
+            });
+
+            expect(mockMarkInboxCleanupDue).toHaveBeenCalledWith({ importEmails: true });
+        });
+
+        it("doesn't mark the cleanup as due when the address is already connected", async () => {
+            mockFindUserAddress.mockReturnValue({ Email: 'test@gmail.com' } as any);
+            mockGetIsBYOEAddress.mockReturnValue(true);
+            const { result } = setup();
+
+            await connect(result);
+
+            expect(mockMarkInboxCleanupDue).not.toHaveBeenCalled();
+        });
+
+        it("doesn't mark the cleanup as due when creating the address fails", async () => {
+            mockDispatch.mockRejectedValue(new Error('Creation failed'));
+            const { result } = setup();
+
+            await connect(result);
+
+            expect(mockMarkInboxCleanupDue).not.toHaveBeenCalled();
+        });
+
+        it("doesn't wait for the cleanup to be marked before closing and showing the success modal", async () => {
+            mockMarkInboxCleanupDue.mockReturnValue(new Promise(() => {}));
+            const { result, mockShowSuccessModal, mockOnComplete } = setup();
+
+            await connect(result);
+
+            expect(mockMarkInboxCleanupDue).toHaveBeenCalled();
+            expect(mockOnComplete).toHaveBeenCalled();
+            expect(mockShowSuccessModal).toHaveBeenCalledWith('test@gmail.com', true);
         });
     });
 });
