@@ -198,7 +198,6 @@ patchedDependencies:
     '@lexical/table@0.31.2': patches/@lexical__table@0.31.2.patch
     '@mlc-ai/web-llm@0.2.32': patches/@mlc-ai__web-llm@0.2.32.patch
     '@pdf-lib/standard-fonts@1.0.0': patches/@pdf-lib__standard-fonts@1.0.0.patch
-    jsdom@26.1.0: patches/jsdom@26.1.0.patch
     # Preserve email autolinking without unsupported negative lookbehind on Safari <16.4.
     # https://github.com/syntax-tree/mdast-util-gfm-autolink-literal/issues/10
     mdast-util-gfm-autolink-literal@2.0.1: patches/mdast-util-gfm-autolink-literal@2.0.1.patch
