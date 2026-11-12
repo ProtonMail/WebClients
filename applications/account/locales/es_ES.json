@@ -14577,6 +14577,9 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "Review and export the data for reporting or client invoicing.": [
+        "Revise y exporte sus datos para informes o facturas de cliente."
       ]
     },
     "info": {
@@ -16992,6 +16995,9 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Billed average": [
+        "Promedio facturado"
       ]
     },
     "label": {
@@ -21662,6 +21668,27 @@
       ],
       "The ideal plan for privacy-conscious power users.": [
         "El plan ideal para usuarios avanzados conscientes de la privacidad."
+      ],
+      "Confidential video conferencing for your business.": [
+        "Conferencias en vídeo confidenciales para su negocio."
+      ],
+      "Essential privacy and security suite for your business.": [
+        "Privacidad para su negocio."
+      ],
+      "Next-level password management for your business.": [
+        "Gestión de contraseñas de otro nivel para su empresa."
+      ],
+      "Premium privacy and security suite for your business.": [
+        "Paquete prémium de privacidad y seguridad para tu empresa."
+      ],
+      "Privacy-first AI writing assistant for your business.": [
+        "Asistente de escritura, impulsado por IA, orientado a la privacidad para su negocio."
+      ],
+      "Secure cloud storage and file sharing for your business.": [
+        "Almacenamiento e intercambio de archivos seguros en la nube para su empresa."
+      ],
+      "Secure, high-speed VPN access for your business.": [
+        "Acceso seguro VPN de alta velocidad para tu empresa."
       ]
     },
     "Plans": {
@@ -23905,6 +23932,87 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Te invitamos a unirte a más de 100 millones de personas que eligen mantener el control de sus datos con el ecosistema cifrado de ${ BRAND_NAME }."
+      ],
+      "${ renewalPriceElement } after the first 12 months": [
+        "${ renewalPriceElement } después de los primeros 12 meses"
+      ],
+      "Billed yearly": [
+        "Cobro anual"
+      ],
+      "Billed yearly, renews on ${ renewalTime }": [
+        "Cobrado anualmente, se renueva el ${ renewalTime }"
+      ],
+      "Business information": [
+        "Información profesional"
+      ],
+      "Checkout": [
+        "Pago"
+      ],
+      "Claim your additional ${ referralDiscountPercent }% discount": [
+        "Reclama tu descuento de un ${ referralDiscountPercent }% adicional"
+      ],
+      "Confirmation": [
+        "Confirmación"
+      ],
+      "Coupon": [
+        "Cupón"
+      ],
+      "Create account": [
+        "Crear cuenta"
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Crea tu cuenta de ${ BRAND_NAME }"
+      ],
+      "Creating your account": [
+        "Creando su cuenta"
+      ],
+      "Discount": [
+        "Descuento"
+      ],
+      "Encrypted solutions to protect": [
+        "Soluciones cifradas para proteger"
+      ],
+      "For ${ countryElement }": [
+        "Por ${ countryElement }"
+      ],
+      "Get an additional ${ referralDiscountPercent }% off your first year of ${ BRAND_NAME } for Business": [
+        "Consigue un descuento de un ${ referralDiscountPercent }% adicional en tu primer año de ${ BRAND_NAME } para empresas."
+      ],
+      "Pick a plan to get started.": [
+        "Elige un plan para empezar."
+      ],
+      "Something went wrong": [
+        "Algo salió mal"
+      ],
+      "Summary": [
+        "Resumen"
+      ],
+      "Taxes may apply.": [
+        "Pueden aplicarse impuestos."
+      ],
+      "Unlimited vaults for your passwords": [
+        "Cajas fuertes ilimitadas para sus contraseñas"
+      ],
+      "Users": [
+        "Usuarios"
+      ],
+      "We couldn't finish setting up your account. Please contact support.": [
+        "No hemos podido terminar de configurar tu cuenta. Por favor, póngase en contacto con soporte."
+      ],
+      "WS Premium": [
+        "WS prémium"
+      ],
+      "WS Standard": [
+        "WS estándar"
+      ],
+      "You're invited to join 100,000+ organizations that protect their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "Te invitamos a unirte a más de 100 millones de organizaciones que protegen sus datos con el ecosistema cifrado de ${ BRAND_NAME }."
+      ],
+      "Your account has been created, but we couldn't sign you in.": [
+        "Tu cuenta ha sido creada, pero no hemos podido iniciar la sesión."
+      ],
+      "your entire business": [
+        "toda su empresa"
       ]
     },
     "Signup label": {
@@ -25819,6 +25927,9 @@
       ],
       "/year": [
         "/año"
+      ],
+      "/user/month": [
+        "/usuario/mes"
       ]
     },
     "Suffix for price": {
@@ -28243,6 +28354,12 @@
       ],
       "Your subscriptions": [
         "Tus suscripciones"
+      ],
+      "Billing periods": [
+        "Periodos de facturación"
+      ],
+      "Monthly cost": [
+        "Coste mensual"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29923,6 +30040,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Business signup action": {
+      "Start using ${ planTitle } now": [
+        "Comienza a usar ${ planTitle } ahora"
       ]
     }
   }
