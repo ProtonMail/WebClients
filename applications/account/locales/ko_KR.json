@@ -8729,9 +8729,6 @@
       "Allow platform keys": [
         "플랫폼 키 허용"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "(Windows Hello, Face ID, Touch ID 및 통합 TPM과 같은) 내장 보안 키로 로그인할 수 있습니다 "
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "정말 ${ name } 보안 키를 지우시겠어요?"
       ],
@@ -12242,12 +12239,6 @@
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "신뢰하는 기기에서 권장됩니다. ${ learnMoreLink }"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "${ PROTON_SENTINEL_NAME }이 활성화된 경우 이메일으로 복구를 사용할 수 없습니다."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "${ PROTON_SENTINEL_NAME }이 활성화된 경우 휴대폰으로 복구를 사용할 수 없습니다."
-      ],
       "Recovery file downloaded": [
         "복구 파일 다운로드됨."
       ],
@@ -12889,12 +12880,6 @@
       ],
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "양자 내성 보호를 활성화하려면 새로운 양자 내성 암호화 키 생성을 완료해야 합니다."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "최상의 계정 보안 상태를 유지하기 위해, **복구 이메일로 복구**를 비활성화하세요."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "최상의 계정 보안 상태를 유지하기 위해, **복구 전화번호로 복구**를 비활성화하세요."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "중요한 데이터가 손실되지 않도록 하기 위해, ${ DRIVE_APP_NAME }가 사용자와 공동 작업자가 파일을 변경할 때 이전 버전의 파일을 저장합니다. ${ BRAND_NAME }에서 이전 버전을 얼마나 오래 유지할지 선택하세요."

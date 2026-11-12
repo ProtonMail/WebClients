@@ -8827,9 +8827,6 @@
       "Allow platform keys": [
         "Benarkan kunci platform"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Membolehkan anda mendaftar kunci keselamatan terbina dalam (seperti Windows Hello, Face ID, Touch ID atau TPM dalaman)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Adakah anda pasti mahu memadam kunci keselamatan ${ name }?"
       ],
@@ -12364,12 +12361,6 @@
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Disyorkan pada peranti dipercayai. ${ learnMoreLink }"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Pemulihan melalui e-mel tidak tersedia semasa ${ PROTON_SENTINEL_NAME } didayakan."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Pemulihan melalui telefon tidak tersedia semasa ${ PROTON_SENTINEL_NAME } didayakan."
-      ],
       "Recovery file downloaded": [
         "Fail pemulihan telah dimuat turun"
       ],
@@ -13014,12 +13005,6 @@
       ],
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Untuk mendayakan perlindungan pasca-kuantum, anda perlu menyiapkan penjanaan kunci penyulitan pasca-kuantum baharu anda."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Untuk memastikan tahap keselamatan akaun anda yang paling tinggi, lumpuhkan **Pemulihan melalui e-mel pemulihan**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Untuk memastikan keselamatan akaun anda pada tahap tertinggi, lumpuhkan **Pemulihan dengan telefon pemulihan**."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Untuk memastikan anda tidak kehilangan data penting, ${ DRIVE_APP_NAME } menyimpan versi lama fail-fail anda apabila anda dan rakan usaha sama membuat perubahan. Pilih berapa lama ${ BRAND_NAME } perlu menyimpan versi terdahulu."

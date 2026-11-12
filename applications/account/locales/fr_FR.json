@@ -127,6 +127,9 @@
       "Import events": [
         "Importer des événements"
       ],
+      "Import history": [
+        "Importer l'historique"
+      ],
       "iOS and Android apps": [
         "Applications pour iOS et Android"
       ],
@@ -1306,6 +1309,9 @@
       ],
       "Manage subscription": [
         "Gérer mon abonnement"
+      ],
+      "Manage subscriptions": [
+        "Gérer les abonnements"
       ],
       "Manage users/addresses": [
         "Gérer les utilisateurs/adresses"
@@ -2906,6 +2912,10 @@
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Se renouvelle automatiquement le ${ subscriptionManagerName }"
+      ],
+      "Switches to ${ nextCycle } month on ${ when } (${ paidPrice } already paid)": [
+        "Bascule à ${ nextCycle } mois sur ${ when } (${ paidPrice } déjà réglés)",
+        "Bascule à ${ nextCycle } mois sur ${ when } (${ paidPrice } déjà réglés)"
       ],
       "Then ${ price }, for ${ cycle } month": [
         "Puis ${ price } pour ${ cycle } mois",
@@ -5415,6 +5425,9 @@
       "Still need help? Our support team is here for you.": [
         "Encore besoin d'aide ? Notre équipe de support est présente pour vous."
       ],
+      "The link to sign out on all your devices has expired. Try signing in again to receive a new one.": [
+        "Le lien pour se déconnecter de tous vos appareils a expiré. Réessayez de vous connecter afin d'en recevoir un nouveau."
+      ],
       "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
         "Ceci permet de récupérer les accès à votre compte ${ BRAND_NAME } mais ne permet de récupérer vos données chiffrées."
       ],
@@ -5442,6 +5455,9 @@
       ],
       "To start, give your organization a name.": [
         "Pour commencer, donnez un nom à votre organisation."
+      ],
+      "Too many devices are connected to your account. To use ${ BRAND_NAME } on a new device or browser, end all existing sessions. You'll be signed out on every device.": [
+        "Un nombre trop important d'appareils sont connectés à votre compte. Afin d'utiliser ${ BRAND_NAME } sur de nouveaux appareils ou de nouveaux navigateurs, fermez toutes les sessions existantes. Vous serez déconnecté de tous les appareils."
       ],
       "Track the status and activity of your referrals": [
         "Suivez l'état et l'activité de vos parrainages"
@@ -5522,6 +5538,9 @@
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
         "Votre compte gratuit sur ${ MAIL_APP_NAME } dispose d'un espace de stockage limité, nous n'importerons donc que vos e-mails Gmail les plus récents."
+      ],
+      "Your other sessions have been ended. You can now sign in on this device.": [
+        "Vos autres sessions ouvertes ont été closes. Vous pouvez maintenant vous connecter sur cet appareil."
       ],
       "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
         "Votre abonnement prend en charge ${ MAX_SYNC_FREE_USER } adresse Gmail.",
@@ -7363,6 +7382,12 @@
       "Missing key packet": [
         "Le paquet de clés est manquant."
       ],
+      "Missing organization private key": [
+        "La clé privée de l'organisation est absente."
+      ],
+      "Missing organization public key": [
+        "La clé publique de l'organisation est absente."
+      ],
       "Missing signature": [
         "Il manque la signature."
       ],
@@ -7398,7 +7423,7 @@
         "Aucun contact n'a été trouvé pour l'importation."
       ],
       "No drive found to import": [
-        "Aucun disque à importer détecté"
+        "Aucun disque à importer n'a été détecté."
       ],
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
@@ -7735,6 +7760,9 @@
       "The session has expired. Please try again.": [
         "La session a expiré. Veuillez réessayer."
       ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "La somme totale n'a pas pu être calculée. Changez le montant pour essayer de nouveau."
+      ],
       "The uploaded file does not match the original. Please try again.": [
         "Le fichier importé ne correspond pas à l'original. Veuillez réessayer."
       ],
@@ -7817,7 +7845,7 @@
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
       ],
       "Unexpected error, we can't import the files": [
-        "Une erreur inattendue est survenue, les fichiers n'ont pas pu être importés"
+        "Une erreur inattendue est survenue, les fichiers ne peuvent être importés"
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -8112,6 +8140,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nous n'avons pas pu charger cette page. Actualisez la page ou vérifiez votre connexion internet."
+      ],
+      "We couldn't load your invitation": [
+        "Nous n'avons pas pu charger votre invitation."
       ]
     },
     "Error message, Disable account": {
@@ -8712,9 +8743,6 @@
       "Allow platform keys": [
         "Autoriser les clés de plateforme"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Vous permet d'enregistrer des clés de sécurité intégrées (comme Windows Hello, Face ID, Touch ID ou des TPM internes)."
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Voulez-vous vraiment supprimer la clé de sécurité ${ name } ?"
       ],
@@ -8747,6 +8775,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Cela supprimera toutes les clés de sécurité liées à votre compte."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Utiliser l'empreinte digitale, le visage, le code PIN ou l'écran de verrouillage de cet appareil."
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Confirmez votre identité avec une clé de sécurité physique U2F ou FIDO2."
@@ -8825,6 +8856,11 @@
       "Terabyte": [
         "Téraoctet",
         "Téraoctets"
+      ]
+    },
+    "Filter": {
+      "Pending": [
+        "En attente"
       ]
     },
     "Filter Actions": {
@@ -9031,6 +9067,9 @@
     "Gateway monitor upsell": {
       "Advanced security controls": [
         "Contrôles de sécurité avancés"
+      ],
+      "Unlock Single-Sign-on (SSO), admin policies, monitoring, enforced two-factor authentication and more.": [
+        "Déverrouillez la connexion unique (SSO), les politiques d'administration, la surveillance, la connexion renforcée par authentification à deux facteurs et plus encore."
       ],
       "User - ${ userPrice }": [
         "Utilisateur - ${ userPrice }"
@@ -9777,6 +9816,18 @@
       ],
       "Queued": [
         "En file d'attente"
+      ],
+      "Skipped ${ count } contact due to incompatibilities": [
+        "${ count } contact a été ignoré du fait d'incompatibilités.",
+        "${ count } contacts ont été ignorés du fait d'incompatibilités."
+      ],
+      "Skipped ${ count } email due to incompatibilities": [
+        "${ count } email a été ignoré du fait d'incompatibilités.",
+        "${ count } emails ont été ignorés du fait d'incompatibilités."
+      ],
+      "Skipped ${ count } event due to incompatibilities": [
+        "${ count } évènement a été ignoré du fait d'incompatibilités de planning.",
+        "${ count } évènements ont été ignorés du fait d'incompatibilités."
       ]
     },
     "Import type": {
@@ -9889,6 +9940,9 @@
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } n'est pas valide."
+      ],
+      "${ emailAddress } is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
+        "L'adresse ${ emailAddress } est utilisée pour se connecter à un autre compte ${ BRAND_NAME }. Nous sommes en train de simplifier la connexion, mais vous devez tout d'abord suivre quelques étapes."
       ],
       "${ emails.length } member added to the group": [
         "${ emails.length } membre ajouté au groupe",
@@ -10302,6 +10356,9 @@
       "Address copied to clipboard": [
         "L'adresse a été copiée dans le presse-papiers."
       ],
+      "Adds a Meet link to events with at least one participant.": [
+        "Cette option ajoute un lien Meet aux évènements comprenant au moins un participant."
+      ],
       "Admin account allocation": [
         "Attribution de compte administrateur"
       ],
@@ -10639,17 +10696,11 @@
       "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
         "En activant cette option, vous ne pourrez vous connecter qu'avec **${ primaryEmail }**."
       ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
-        "En activant cette option, vous ne pourrez vous connecter qu'avec votre nom d'utilisateur d'origine **${ username }**, soit tel quel, soit sous la forme **${ firstEmail }**, **@${ secondDomain }** ou **@${ thirdDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
-        "En activant cette option, vous ne pourrez vous connecter qu'avec votre nom d'utilisateur d'origine **${ username }**, soit tel quel, soit sous la forme **${ firstEmail }**, ou **@ ${ secondDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
-        "En activant cette option, vous ne pourrez vous connecter qu'avec votre nom d'utilisateur d'origine **${ username }**, soit tel quel, soit sous la forme **${ firstEmail }**."
-      ],
       "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
         "En activant cette option, vous ne pourrez vous connecter qu'avec votre nom d’utilisateur **${ username }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "En activant cette fonctionnalité, vous pourrez uniquement vous connecter grâce à votre nom d'utilisateur, **${ username }**, ou avec l'une des adresses email suivantes : **${ firstEmail }** ou **${ secondEmail }**."
       ],
       "Can you access your active session?": [
         "Pouvez-vous accéder à votre session active ?"
@@ -11103,6 +11154,9 @@
       ],
       "Enable email notifications": [
         "Activer les notifications par e-mail"
+      ],
+      "Enable groups to streamline access control": [
+        "Activez les groupes pour optimiser les contrôles d'accès."
       ],
       "Enable single sign-on to keep your organization safe": [
         "Activez l'authentification unique afin d'assurer la sécurité de votre organisation."
@@ -11627,6 +11681,9 @@
       ],
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Le code n'est pas valide. ${ RequestNewCodeLink } et réessayez."
+      ],
+      "Invalid invitation link": [
+        "Le lien d'invitation n'est pas valide."
       ],
       "Invalid joining link": [
         "Le lien d'invitation n'est pas valide."
@@ -12272,12 +12329,6 @@
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Recommandé sur les appareils de confiance. ${ learnMoreLink }"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "La récupération par e-mail n'est pas disponible tant que ${ PROTON_SENTINEL_NAME } est activé."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "La récupération par téléphone n'est pas disponible tant que ${ PROTON_SENTINEL_NAME } est activé."
-      ],
       "Recovery file downloaded": [
         "Le fichier de récupération a été téléchargé."
       ],
@@ -12385,6 +12436,9 @@
       ],
       "Select a group to view its members and settings.": [
         "Sélectionnez un groupe pour afficher ses membres et ses paramètres."
+      ],
+      "Select exactly what you'd like to migrate. It will apply to all organisation users.": [
+        "Sélectionnez exactement ce que vous souhaitez migrer. Ceci s'appliquera à tous les utilisateurs de votre organisation."
       ],
       "Select one or multiple user affiliations": [
         "Sélectionnez une ou plusieurs affiliations pour l'utilisateur."
@@ -12849,6 +12903,9 @@
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ceci vous permettra d'utiliser PayPal pour payer votre abonnement ${ BRAND_NAME }. Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
       ],
+      "This will let you quickly and safely access your ${ BRAND_NAME } Account so you can change your password.": [
+        "Ceci vous permettra d'accéder rapidement et en toute sécurité à votre compte ${ BRAND_NAME } afin de changer votre mot de passe."
+      ],
       "This will permanently delete the data and all email addresses associated with these users.": [
         "Ceci supprimera définitivement les données et toutes les adresses électroniques associées à ces utilisateurs."
       ],
@@ -12930,11 +12987,17 @@
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Pour activer la protection post-quantique, vous devez terminer la génération de vos nouvelles clés de chiffrement post-quantiques."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Pour garantir la sécurité maximale de votre compte, désactivez la **Récupération par e-mail**."
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Afin d'assurer le niveau de sécurité le plus élevé pour votre compte, désactivez la **Récupération par e-mail**."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Pour garantir la sécurité maximale de votre compte, désactivez la **Récupération par numéro de téléphone**."
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Afin d'assurer le niveau de sécurité le plus élevé pour votre compte, désactivez la **Récupération par numéro de téléphone**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Afin d'assurer le niveau de sécurité le plus élevé pour votre compte, conservez la **Récupération par e-mail** désactivée."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Afin d'assurer le niveau de sécurité le plus élevé pour votre compte, conservez la **Récupération par numéro de téléphone** désactivée."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Pour vous éviter de perdre des données importantes, ${ DRIVE_APP_NAME } enregistre les versions précédentes de vos fichiers au fur et à mesure que vous et vos collaborateurs les modifiez. Sélectionnez la durée pendant laquelle ${ BRAND_NAME } doit conserver les versions précédentes."
@@ -12953,6 +13016,15 @@
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Pour vous tenir au courant des dernières évolutions des produits ${ BRAND_NAME }, vous pouvez vous abonner à nos différentes newsletters et ${ blogLink } de temps en temps."
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "Afin de migrer cet utilisateur, ajoutez et vérifiez le domaine de messagerie rattaché à ${ domainNamesLink }."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Pour migrer cet utilisateur, réactivez ses droits dans votre ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "Pour migrer cet utilisateur, réactivez ses droits dans votre ${ provider.adminConsoleName }."
       ],
       "To prevent abuse or fraud, we ask for a minimum ${ minimumDonation } donation. This supports the ${ protonFoundationLink } work defending digital privacy globally and helps to protect the next generation.": [
         "Pour prévenir les abus ou la fraude, nous demandons un don minimum de ${ minimumDonation }. Ceci soutient le travail de la ${ protonFoundationLink } pour défendre la confidentialité numérique à l'échelle mondiale et aide à protéger les générations futures."
@@ -12974,6 +13046,9 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "Pour utiliser ${ toAppName }, vous avez besoin d'une adresse ${ MAIL_APP_NAME }."
+      ],
+      "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address. An administrator of your organization can create one for you.": [
+        "Afin d'utiliser ${ toAppName }, vous aurez besoin d'une adresse ${ MAIL_APP_NAME }. Un administrateur de votre organisation peut en créer une pour vous."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Pour fonctionner correctement, chaque filtre doit contenir au moins un nom et un script Sieve valide. Vous pouvez ${ link }."
@@ -13218,8 +13293,17 @@
       "We couldn't complete the transaction. Please try again.": [
         "La transaction n'a pas pu être complétée. Veuillez réessayer."
       ],
+      "We couldn't connect your Gmail right now. Please try again in a few minutes.": [
+        "Nous ne parvenons pas à connecter votre Gmail actuellement. Merci d'essayer de nouveau d'ici quelques minutes."
+      ],
+      "We couldn't connect your Gmail. Try again and select all the boxes when Google asks for access. ${ BRAND_NAME } only uses this access to connect your Gmail.": [
+        "Nous ne sommes pas parvenus à connecter votre Gmail. Essayez de nouveau et sélectionnez toutes les options lorsque Google demande les accès. ${ BRAND_NAME } utilise uniquement ces accès pour connecter votre Gmail."
+      ],
       "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
         "Nous n'avons pas pu envoyer de factures à votre adresse e-mail. La facturation automatique a été suspendue jusqu'à ce que vous mettiez à jour cette adresse."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Nous ne sommes pas parvenus à vérifier l'identité de votre organisation. Veuillez demander à votre administrateur, ${ admin }, de vérifier l'identité de l'organisation dans les paramètres de l'organisation. Puis, ouvrez à nouveau ce lien."
       ],
       "We couldn’t process your payment.": [
         "Nous n'avons pas pu traiter votre paiement."
@@ -13329,6 +13413,9 @@
       "When disabled, this prevents remote images from loading without your knowledge.": [
         "Quand elle est désactivée, cette option empêche le chargement d'images distantes à votre insu."
       ],
+      "When enabled, members cannot opt out of password check-ins in their own settings.": [
+        "Lorsque cette fonctionnalité est activée, les membres ne peuvent pas renoncer à l'enregistrement par mot de passe dans leurs propres paramètres."
+      ],
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "Quand vous activez SAML pour ${ appName } dans votre fournisseur d'identité, vous pouvez être invité à utiliser l'URL de rappel (ACS) et l'ID de l'émetteur. Il vous suffit de copier-coller les données ci-dessous dans les champs de votre fournisseur d'identité."
       ],
@@ -13340,15 +13427,6 @@
       ],
       "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Lorsque la connexion est restreinte, seul votre nom d’utilisateur **${ username }** peut être utilisée pour vous connecter. Vos autres adresses ne peuvent pas être associées à votre compte, même si quelqu'un les connaît."
-      ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Lorsque la connexion est limitée, vous ne pouvez vous connecter qu'avec votre nom d'utilisateur d'origine **${ username }**, soit tel quel, soit sous la forme **${ firstEmail }**, **@${ secondDomain }** ou **@${ thirdDomain }**. Vos autres adresses e-mail ne fonctionneront pas pour vous connecter."
-      ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Lorsque la connexion est limitée, vous ne pouvez vous connecter qu'avec votre nom d'utilisateur d'origine **${ username }**, soit tel quel, soit sous la forme **${ firstEmail }**, soit **@${ secondDomain }**. Vos autres adresses e-mail ne fonctionneront pas pour vous connecter."
-      ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Lorsque la connexion est limitée, vous ne pouvez vous connecter qu'avec votre nom d'utilisateur d'origine **${ username }**, soit tel quel, soit sous la forme **${ firstEmail }**. Vos autres adresses e-mail ne fonctionneront pas pour vous connecter."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Lorsque vous annulez votre abonnement, ce dernier ne sera pas renouvelé. Toutefois, vous pourrez toujours profiter des avantages jusqu'à la fin de la période. Après cela, vous passerez à un abonnement ${ BRAND_NAME } Free."
@@ -13593,6 +13671,9 @@
       "You have no transactions.": [
         "Vous n'avez aucune transaction."
       ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "Vous détenez plusieurs abonnements. Sélectionnez celui qui doit être annulé : vos autres abonnements ne seront pas affectés. Un abonnement annulé ne sera pas renouvelé et vous préserverez ses fonctionnalités jusqu'au terme de votre période de souscription."
+      ],
       "You have unpublished changes": [
         "Vous avez des modifications non publiées."
       ],
@@ -13619,6 +13700,9 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Nous vous recommandons d'exporter une sauvegarde de cette clé au cas où vous auriez besoin de restaurer les données qu'elle a chiffrées."
+      ],
+      "You still need to reply for the organizer to see your response.": [
+        "Vous devez encore répondre à l'invitation pour que l'organisateur puisse voir votre réponse."
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Vous devez répondre aux invitations pour que l'hôte voie votre réponse."
@@ -13726,6 +13810,9 @@
       ],
       "Your address was connected": [
         "Votre adresse était connectée"
+      ],
+      "Your address was connected. We're importing your emails.": [
+        "Votre adresse email a été connectée avec succès. Nous importons vos emails."
       ],
       "Your Always-on VPN device profile is ready to deploy.": [
         "Le profil d'appareil de votre VPN permanent est prêt à être déployé."
@@ -15979,6 +16066,9 @@
       "Start weekday": [
         "Premier jour de la semaine"
       ],
+      "Start with your most recent": [
+        "Commencez par votre plus récent"
+      ],
       "Starts with": [
         "Commence par"
       ],
@@ -17192,6 +17282,9 @@
       ]
     },
     "Members table usage": {
+      "Setup your own private gateways to monitor VPN connection activity within your organization.": [
+        "Configurez vos propres passerelles privées pour surveiller l'activité de connexion au VPN au sein de votre organisation."
+      ],
       "Today": [
         "Aujourd'hui"
       ],
@@ -19486,6 +19579,9 @@
       ]
     },
     "organization key reset": {
+      "Get in touch with your other administrators, to see if they can help. They will be able to restore your privileges after using a data recovery method.": [
+        "Prenez contact avec vos administrateurs afin de savoir s'ils peuvent vous aider. Ils pourront restaurer vos accès après avoir utilisé une méthode de récupération des données."
+      ],
       "Organization key reset": [
         "La clé de l'organisation a été réinitialisée"
       ],
@@ -19498,6 +19594,9 @@
       "Resetting organization key": [
         "Réinitialisation de la clé de l'organisation en cours"
       ],
+      "Resetting the organization key generates a new encryption key to keep your organization's data secure. **No data will be lost or destroyed in this process, but the users groups will be deleted.**": [
+        "Réinitialiser la clé de l'organisation génère une nouvelle clé de chiffrement afin que les données de votre organisation demeurent en sécurité. **Aucune donnée ne sera perdue ou détruite pendant ce processus, mais les groupes d'utilisateurs seront supprimés.**"
+      ],
       "See ${ n } user": [
         "Voir ${ n } utilisateur",
         "Voir ${ n } utilisateurs"
@@ -19508,12 +19607,18 @@
       "The organization key is reset": [
         "La clé de l'organisation est réinitialisée"
       ],
+      "This process is automated:": [
+        "Ce processus est automatisé :"
+      ],
       "Try another way": [
         "Essayez une autre façon"
       ],
       "User (${ n })": [
         "Utilisateur (${ n })",
         "Utilisateurs (${ n })"
+      ],
+      "You can reset your organization key to restore your administrator privileges. Then, you'll be able to create non-private users and access their accounts.": [
+        "Vous pouvez réinitialiser la clef de votre organisation afin de restaurer vos droits administrateur. Par la suite, vous pourrez créer des utilisateurs publics et accéder à leurs comptes."
       ]
     },
     "Organization logo upload": {
@@ -22008,6 +22113,9 @@
       "**Groups you already set up** in your identity provider are imported automatically.": [
         "**Les groupes que vous avez déjà créés** dans votre fournisseur d'identité sont importés automatiquement."
       ],
+      "**You'll be able to review** group changes before they take effect to confirm they're intentional": [
+        "**Vous aurez la possibilité d'examiner** les modifications apportées aux groupes avant qu'elles ne prennent effet, et ce afin de confirmer qu'elles sont bien intentionnelles."
+      ],
       "Approve changes from your identity provider": [
         "Approuvez les modifications de votre fournisseur d'identité"
       ],
@@ -22041,11 +22149,17 @@
       "Review users and groups before finishing setup": [
         "Examinez les utilisateurs et les groupes avant de terminer la configuration"
       ],
+      "This approval prompt will **appear every time you update** groups through your identity provider": [
+        "Cette demande d'autorisation **apparaîtra chaque fois que vous mettrez à jour** les groupes par le biais de votre fournisseur d'identité."
+      ],
       "Updated": [
         "Mis à jour"
       ],
       "Users set to private need to accept the invite to finish setup. We'll send them an invite once you approve.": [
         "Les utilisateurs définis comme privés doivent accepter l'invitation pour terminer la configuration. Nous leur enverrons une invitation une fois que vous aurez approuvé."
+      ],
+      "What to expect now that group sync is enabled": [
+        "A quoi s'attendre maintenant que la synchronisation de groupe est activée ?"
       ],
       "You can now sync groups alongside users. Changes push **automatically** when you update your groups on your identity provider.": [
         "Vous pouvez désormais synchroniser les groupes en même temps que les utilisateurs. Les modifications sont répercutées **automatiquement** lorsque vous mettez à jour vos groupes sur votre fournisseur d'identité."
@@ -22075,6 +22189,9 @@
       "**Prerequisite:** To enable SCIM provisioning, you must verify ownership of the domain **${ domainName }**. This verification can take up to one hour.": [
         "**Condition préalable :** pour activer l'allocation SCIM, vous devez vérifier la propriété du domaine **${ domainName }**. Cette vérification peut prendre jusqu'à une heure."
       ],
+      "**Users:** All SCIM users provided automatically by your identity provider will be converted to SSO users and you will be able to manage them directly within the ${ BRAND_NAME } settings.": [
+        "**Utilisateurs** : Tous les utilisateurs SCIM automatiquement fournis par votre fournisseur d'identité seront convertis en utilisateurs SSO et vous pourrez directement les gérer dans les paramètres de ${ BRAND_NAME }."
+      ],
       "Enter the token into your identity provider": [
         "Saisissez le jeton dans votre fournisseur d'identité."
       ],
@@ -22099,11 +22216,17 @@
       "Make sure you copy the above SCIM token now.": [
         "Assurez-vous de copier le jeton SCIM ci-dessus."
       ],
+      "Re-enabling syncing will duplicate existing groups. They can't be merged back into SCIM.": [
+        "Permettre à nouveau la synchronisation des données dupliquera les groupes existants. Ils ne pourront plus être fusionnés dans le SCIM."
+      ],
       "Simplifies user management across different services. Add, edit, and remove users in your identity provider, and those changes will automatically be applied to your ${ appName } organization.": [
         "Ceci simplifie la gestion des utilisateurs entre les différents services. Ajoutez, modifiez et retirez des utilisateurs depuis votre fournisseur d'identité et ces modifications s'appliqueront automatiquement à votre organisation ${ appName }."
       ],
       "The SCIM automatic provisioning will be disabled until you enter the new SCIM token into your identity provider’s settings.": [
         "Le provisionnement automatique SCIM sera désactivé jusqu'à ce que vous entriez le nouveau jeton SCIM dans les paramètres de votre fournisseur d'identité."
+      ],
+      "This will delete your SCIM base URL and token.": [
+        "Ceci supprimera votre URL de base SCIM et le jeton d'accès."
       ],
       "To re-enable syncing with your identity provider, you need to complete the SCIM integration again.": [
         "Pour réactiver la synchronisation avec votre fournisseur d'identité, vous devez finaliser à nouveau l'intégration SCIM."
@@ -22788,6 +22911,9 @@
       "Confirm payment, access your Drive": [
         "Confirmez le paiement et accédez à votre Drive"
       ],
+      "Confirmation": [
+        "Confirmation"
+      ],
       "Connect all your devices": [
         "Connectez tous vos appareils"
       ],
@@ -22797,8 +22923,17 @@
       "Create a ${ BRAND_NAME } Account": [
         "Créer un compte ${ BRAND_NAME }"
       ],
+      "Create account": [
+        "Créer un compte"
+      ],
+      "Creating your account": [
+        "Création de votre compte"
+      ],
       "Custom email domain": [
         "Domaine de messagerie personnalisé"
+      ],
+      "Discount": [
+        "Réduction"
       ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "Une boite mail chiffrée avec un espace de stockage de ${ totalMailStorageSize }"
@@ -23001,6 +23136,9 @@
       ],
       "use your own email.": [
         "utilisez votre propre adresse e-mail."
+      ],
+      "Users": [
+        "Utilisateurs"
       ],
       "VPN with servers in ${ VPN_SERVERS.free.countries } countries": [
         "Un VPN avec des serveurs dans ${ VPN_SERVERS.free.countries } pays"
@@ -25158,7 +25296,7 @@
         "API ${ LUMO_APP_NAME }"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
+        "Assistant d'aide à la rédaction ${ LUMO_SHORT_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Export Tool de ${ MAIL_APP_NAME }"
@@ -25258,6 +25396,9 @@
       ],
       "Activity monitor": [
         "Surveillance des activités"
+      ],
+      "Add ${ PASS_APP_NAME } to your browser": [
+        "Ajoutez ${ PASS_APP_NAME } à votre navigateur internet."
       ],
       "Add ${ totalServerCount } server?": [
         "Ajouter ${ totalServerCount } serveur ?",
@@ -25574,6 +25715,9 @@
       ],
       "Connect to video conferencing": [
         "Se connecter à la vidéoconférence"
+      ],
+      "Connect your ${ ACCOUNT_APP_NAME }": [
+        "Connectez votre ${ ACCOUNT_APP_NAME }."
       ],
       "Connect your custom domain": [
         "Connectez votre domaine personnalisé"
@@ -25956,6 +26100,9 @@
         "Modifier les personnes qui peuvent accéder à la passerelle"
       ],
       "Email": [
+        "Adresse e-mail"
+      ],
+      "Email address": [
         "Adresse e-mail"
       ],
       "Email breaches": [
@@ -27690,6 +27837,9 @@
       ],
       "External address - disables end-to-end email encryption for this group, and no encrypted resources will be shared with this user.": [
         "Adresse externe - désactive le chiffrement de bout en bout des e-mails pour ce groupe et aucune ressource chiffrée ne sera partagée avec cet utilisateur."
+      ],
+      "External address — No end-to-end encryption or resource sharing, and roles and permissions can't be assigned.": [
+        "Adresse externe - Pas de chiffrement de bout-en-bout ou de partage de ressources, pas de possibilité d'attribution des rôles et permissions."
       ],
       "Group membership paused": [
         "L'adhésion au groupe a été suspendue."

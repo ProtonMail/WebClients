@@ -8533,6 +8533,9 @@
       "Ask your administrator to enable Account monitor.": [
         "Rugați administratorul să vă activeze monitorizarea contului."
       ],
+      "Check your internet connection and try again.": [
+        "Verificați conexiunea și reîncercați."
+      ],
       "Enable account monitor to start loading event.": [
         "Activați monitorizarea contului pentru a începe încărcarea evenimentului."
       ],
@@ -8565,6 +8568,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Această pagină nu s-a putut încărca. Reîmprospătați-o sau verificați conexiunea la internet."
+      ],
+      "We couldn't load your invitation": [
+        "Invitația nu s-a putut încărca."
       ]
     },
     "Error message, Disable account": {
@@ -9170,9 +9176,6 @@
       ],
       "Allow platform keys": [
         "Permitere chei platformă"
-      ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Permite înregistrarea cheilor integrate (cum ar fi Windows Hello, Face ID, Touch ID sau TPM intern)."
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Ștergeți cheia de securitate ${ name }?"
@@ -11265,17 +11268,17 @@
       "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
         "Activând această opțiune, vă veți putea autentifica doar cu **${ primaryEmail }**."
       ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
-        "Activând această opțiune, vă veți putea autentifica doar folosind numele de utilizator inițial **${ username }** — fie ca atare, fie sub forma **${ firstEmail }**, **@${ secondDomain }** sau **@${ thirdDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
-        "Prin activarea acestei opțiuni, vă veți putea autentifica doar folosind numele de utilizator inițial **${ username }** – fie ca atare, fie sub forma **${ firstEmail }** sau **@${ secondDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
-        "Prin activarea acestei opțiuni, vă veți putea autentifica doar folosind numele de utilizator inițial **${ username }** — fie ca atare, fie sub forma **${ firstEmail }**."
-      ],
       "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
         "Activând această opțiune, vă veți putea autentifica doar folosind numele de utilizator **${ username }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Prin activarea acestei opțiuni, vă veți putea autentifica doar folosind numele de utilizator, **${ username }**, sau **${ firstEmail }** ori **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Prin activarea acestei opțiuni, vă veți putea autentifica doar folosind numele de utilizator **${ username }** sau cu **${ firstEmail }**, **${ secondEmail }** ori **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Activând această opțiune, vă veți putea autentifica doar folosind numele de utilizator, **${ username }** sau **${ firstEmail }**."
       ],
       "Can you access your active session?": [
         "Vă puteți accesa sesiunea activă?"
@@ -12304,6 +12307,9 @@
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Cod nevalid. ${ RequestNewCodeLink } și reîncercați."
       ],
+      "Invalid invitation link": [
+        "Legătura web de invitație nu este validă."
+      ],
       "Invalid joining link": [
         "Legătură web de participare nevalidă."
       ],
@@ -12976,12 +12982,6 @@
       ],
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Recomandat pe dispozitivele de încredere. ${ learnMoreLink }"
-      ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Recuperarea prin e-mail nu este disponibilă dacă ${ PROTON_SENTINEL_NAME } este activat."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Recuperarea prin telefon nu este disponibilă dacă ${ PROTON_SENTINEL_NAME } este activat."
       ],
       "Recovery file downloaded": [
         "Fișier de recuperare descărcat"
@@ -13667,12 +13667,6 @@
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Pentru a activa protecția post-cuantică, va trebui să finalizați generarea noilor chei de criptare post-cuantice."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Pentru a asigura cea mai înaltă securitate posibilă a contului, dezactivați **Recuperarea prin adresa de e-mail de recuperare**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Pentru a asigura cea mai înaltă securitate posibilă a contului, dezactivați **Recuperarea prin număr de telefon de recuperare**."
-      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Pentru a vă asigura că nu pierdeți date importante, ${ DRIVE_APP_NAME } salvează versiuni mai vechi ale fișierelor pe măsură ce acestea sunt modificate. Selectați cât timp ar trebui ca ${ BRAND_NAME } să păstreze versiunile anterioare."
       ],
@@ -14000,6 +13994,12 @@
       "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
         "Nu s-au putut trimite facturi la adresa de e-mail. Facturarea automată a fost întreruptă până când actualizați adresa."
       ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "Această invitație nu s-a putut verifica. Solicitați-i administratorului, ${ admin }, să vă elimine din organizație și să vă readauge."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Nu s-a putut verifica identitatea organizației. Solicitați administratorului, ${ admin }, să verifice identitatea organizației în setările acesteia. Apoi, accesați din nou această legătură web."
+      ],
       "We couldn’t process your payment.": [
         "Nu vi s-a putut procesa plata."
       ],
@@ -14123,14 +14123,14 @@
       "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Atunci când autentificarea este restricționată, doar numele de utilizator **${ username }** poate fi utilizat pentru a vă autentifica. Celelalte adrese deținute nu mai pot fi asociate cu contul, chiar dacă cineva le cunoaște."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Atunci când autentificarea este restricționată, vă puteți autentifica doar folosind numele de utilizator inițial **${ username }** – fie ca atare, fie sub forma **${ firstEmail }**, **@${ secondDomain }** sau **@${ thirdDomain }**. Celelalte adrese de e-mail deținute nu vor funcționa pentru autentificare."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Atunci când autentificarea este restricționată, vă puteți autentifica doar folosind numele de utilizator **${ username }** sau **${ firstEmail }** ori **${ secondEmail }**. Celelalte adrese de e-mail nu vor funcționa pentru autentificare."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Atunci când autentificarea este restricționată, vă poți autentifica doar folosind numele de utilizator inițial **${ username }** – fie ca atare, fie sub forma **${ firstEmail }** sau **@${ secondDomain }**. Celelalte adrese de e-mail deținute nu vor funcționa pentru autentificare."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Atunci când autentificarea este restricționată, vă puteți autentifica doar folosind numele de utilizator **${ username }** sau **${ firstEmail }**, **${ secondEmail }** ori **${ thirdEmail }**. Celelalte adrese de e-mail nu vor funcționa pentru autentificare."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Atunci când autentificarea este restricționată, vă puteți autentifica doar folosind numele de utilizator inițial **${ username }** – fie ca atare, fie sub forma **${ firstEmail }**. Celelalte adrese de e-mail deținute nu vor funcționa pentru autentificare."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Atunci când autentificarea este restricționată, vă puteți autentifica doar folosind numele de utilizator **${ username }** sau cu **${ firstEmail }**. Celelalte adrese de e-mail nu vor funcționa pentru autentificare."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Dacă anulați, abonamentul nu va fi reînnoit, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de abonament. După aceea, contul va fi trecut la planul ${ BRAND_NAME } Free."
@@ -17184,6 +17184,9 @@
       ],
       "Invalid ${ group.name } record found": [
         "S-a găsit o înregistrare ${ group.name } nevalidă"
+      ],
+      "Leave field blank": [
+        "Lăsați câmpul gol"
       ],
       "Priority": [
         "Prioritate"

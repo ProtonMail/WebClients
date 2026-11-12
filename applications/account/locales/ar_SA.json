@@ -8252,9 +8252,6 @@
       "Allow platform keys": [
         "السماح بمفاتيح المنصة"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "يسمح بتسجيل مفاتيح الأمان المدمجة (مثل Windows Hello أو Face ID أو Touch ID أو وحدات TPM الداخلية)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "هل أنت متأكد من أنك تريد حذف مفتاح الأمان ${ name }؟"
       ],
@@ -11799,12 +11796,6 @@
       "RECOMMENDED": [
         "موصى به"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "الاسترداد عن طريق البريد الإلكتروني غير متاح أثناء تفعيل ${ PROTON_SENTINEL_NAME }."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "الاسترداد عن طريق الهاتف غير متاح أثناء تفعيل ${ PROTON_SENTINEL_NAME }."
-      ],
       "Recovery file downloaded": [
         "تم تنزيل ملف الاسترداد"
       ],
@@ -12444,11 +12435,17 @@
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "لتفعيل الحماية بعد الكمومية، سيلزم إنهاء توليد مفاتيح التشفير بعد الكمومية الجديدة."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "لضمان أعلى مستوى ممكن من الأمان للحساب، يُرجى تعطيل **الاسترداد عن طريق بريد الاسترداد الإلكتروني**."
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "لضمان أعلى مستوى ممكن من الأمان لحسابك، قم بتعطيل خيار **الاسترداد عبر البريد الإلكتروني**."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "لضمان أعلى مستوى ممكن من الأمان للحساب، يُرجى تعطيل **الاسترداد عن طريق هاتف الاسترداد**."
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "لضمان أعلى مستوى ممكن من الأمان لحسابك، قم بتعطيل خيار **الاسترداد عبر الهاتف**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "لضمان أعلى مستوى ممكن من الأمان لحسابك، أبقِ خيار **الاسترداد عبر البريد الإلكتروني** معطلاً."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "لضمان أعلى مستوى ممكن من الأمان لحسابك، أبقِ خيار **الاسترداد عبر الهاتف** معطلاً."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "لضمان عدم فقدان بياناتك المهمة، يحفظ ${ DRIVE_APP_NAME } الإصدارات الأقدم من ملفاتك عند إجراء تغييرات من قبلك أنت والمتعاونين معك. حدد المدة التي يجب أن يحتفظ فيها ${ BRAND_NAME } بالإصدارات السابقة."

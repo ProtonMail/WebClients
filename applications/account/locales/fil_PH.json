@@ -7994,9 +7994,6 @@
       "Allow platform keys": [
         "Payagan ang mga platform key"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Pinapayagan kang magrehistro ng mga built-in na security key (tulad ng Windows Hello, Face ID, Touch ID o mga internal na TPM)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Sigurado ka bang gusto mong i-delete ang security key na ${ name }?"
       ],
@@ -11225,12 +11222,6 @@
       "RECOMMENDED": [
         "INIREREKOMENDA"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Hindi available ang recovery gamit ang email habang pinagana ang ${ PROTON_SENTINEL_NAME }."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Hindi magagamit ang recovery sa pamamagitan ng telepono habang pinapagana ang ${ PROTON_SENTINEL_NAME }."
-      ],
       "Recovery file downloaded": [
         "Na-download na ang recovery file"
       ],
@@ -11833,12 +11824,6 @@
       ],
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Upang paganahin ang post-quantum protection, kakailanganin mong tapusin ang pag-generate ng iyong mga bagong post-quantum encryption key."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Upang matiyak ang pinakamataas na posibleng seguridad ng iyong account, i-disable ang **Recovery sa pamamagitan ng recovery email**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Upang matiyak ang pinakamataas na posibleng seguridad ng iyong account, i-disable ang **Recovery sa pamamagitan ng recovery phone**."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Upang matiyak na hindi mo mawawala ang mahalagang data, nagse-save ang ${ DRIVE_APP_NAME } ng mga lumang bersyon ng mga file habang ikaw at ang iyong mga collaborator ay gumagawa ng mga pagbabago. Piliin kung gaano katagal dapat panatilihin ng ${ BRAND_NAME } ang mga nakaraang bersyon."

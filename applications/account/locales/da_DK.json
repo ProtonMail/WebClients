@@ -2601,7 +2601,7 @@
         "Tilladelse tilbagekaldt"
       ],
       "Sign-in": [
-        "Log ind"
+        "Login"
       ]
     },
     "Admin": {
@@ -8045,6 +8045,9 @@
       "The amount due has changed. Please try again.": [
         "Det skyldige beløb er ændret. Prøv venligst igen."
       ],
+      "The device you scanned the QR code with didn't send your sign-in details. Update the app on that device and try again.": [
+        "Enheden, du scannede QR-koden med, sendte ikke dine login-oplysninger. Opdater appen på den enhed og prøv igen."
+      ],
       "The email addresses do not match": [
         "E-mailadresserne stemmer ikke overens"
       ],
@@ -8456,6 +8459,9 @@
       "Ask your administrator to enable Account monitor.": [
         "Bed din administrator aktivere konto-monitorering."
       ],
+      "Check your internet connection and try again.": [
+        "Kontrollér din internetforbindelse og prøv igen."
+      ],
       "Enable account monitor to start loading event.": [
         "Aktivér kontimonitorering for at indlæse denne event."
       ],
@@ -8488,6 +8494,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunne ikke indlæse denne side. Opdater siden eller tjek din internetforbindelse."
+      ],
+      "We couldn't load your invitation": [
+        "Vi kunne ikke indlæse din invitation"
       ]
     },
     "Error message, Disable account": {
@@ -9087,9 +9096,6 @@
       ],
       "Allow platform keys": [
         "Tillad platformsnøgler"
-      ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Giver dig mulighed for at registrere indbyggede sikkerhedsnøgler (som Windows Hello, Face ID, Touch ID eller interne TPM'er)"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Er du sikker på du vil slette sikkerhedsnøgle ${ name }?"
@@ -10752,6 +10758,9 @@
       "Address copied to clipboard": [
         "Adresse kopieret til udklipsholder"
       ],
+      "Adds a Meet link to events with at least one participant.": [
+        "Tilføj et Meet-link til begivenheder med mindst én deltager."
+      ],
       "Admin account allocation": [
         "Admin-konto tildeling"
       ],
@@ -11102,17 +11111,17 @@
       "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
         "Ved at slå dette til, vil du kun kunne logge ind med **${ primaryEmail }**."
       ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
-        "Ved at slå dette til vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller med **${ firstEmail }**, **@${ secondDomain }** eller **@${ thirdDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
-        "Ved at slå dette til vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller med **${ firstEmail }** eller **@${ secondDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
-        "Ved at slå dette til vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller med **${ firstEmail }**."
-      ],
       "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
         "Ved at slå dette til, vil du kun kunne logge ind med dit brugernavn **${ username }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Ved at slå dette til vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller med **${ firstEmail }** eller **@${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Ved at slå dette til vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller med **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Ved at slå dette til vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller med **${ firstEmail }**."
       ],
       "Can you access your active session?": [
         "Kan du tilgå din aktive session?"
@@ -12130,6 +12139,9 @@
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Ugyldig kode. ${ RequestNewCodeLink } og prøv igen."
       ],
+      "Invalid invitation link": [
+        "Ugyldigt invitationslink"
+      ],
       "Invalid joining link": [
         "Ugyldigt tilslutningslink"
       ],
@@ -12794,12 +12806,6 @@
       ],
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Anbefales på betroede enheder. ${ learnMoreLink }"
-      ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Gendannelse via e-mail er ikke tilgængeligt mens ${ PROTON_SENTINEL_NAME } er aktiveret."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Gendannelse via telefon er ikke tilgængeligt mens ${ PROTON_SENTINEL_NAME } er aktiveret."
       ],
       "Recovery file downloaded": [
         "Gendannelsesfil downloadet"
@@ -13477,11 +13483,17 @@
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "For at aktivere post-kvantebeskyttelse skal du afslutte genereringen af dine nye post-kvante krypteringsnøgler."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
         "Opnå størst mulig sikkerhed på din konto ved at slå **Gendannelse via e-mail** fra."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
         "Opnå størst mulig sikkerhed på din konto ved at slå **Gendannelse via telefon** fra."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Opnå størst mulig sikkerhed på din konto ved at forsætte med at have slået **Gendannelse via e-mail** fra."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Opnå størst mulig sikkerhed på din konto ved at forsætte med at have slået **Gendannelse via telefon** fra."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "For at sikre at du ikke mister vigtig data, gemmer ${ DRIVE_APP_NAME } ældre versioner af dine filer, når du og dine samarbejdspartnere foretager ændringer. Vælg, hvor længe ${ BRAND_NAME } skal gemme tidligere versioner."
@@ -13789,6 +13801,12 @@
       "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
         "Vi kunne ikke sende fakturaer til din e-mailadresse. Automatisk fakturering er sat på pause, indtil du opdaterer adressen."
       ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "Vi kunne ikke bekræfte denne invitation. Bed din administrator, ${ admin }, om at fjerne dig fra organisationen og tilføje dig igen."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Vi kunne ikke bekræfte din organisations identitet. Bed din administrator, ${ admin }, om at kontrollere organisationsidentiteten i organisationsindstillinger. Åbn derefter linket igen."
+      ],
       "We couldn’t process your payment.": [
         "Vi kunne ikke gennemføre din betaling."
       ],
@@ -13912,14 +13930,14 @@
       "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Kun dit brugernavn **${ username }** kan bruges til at logge ind, når login er begrænset. Dine andre adresser kan ikke knyttes tilbage til din konto, selv om nogen kender dem."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Når login er begrænset, vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller som **${ firstEmail }**, **@${ secondDomain }** eller **@${ thirdDomain }**. Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når login er begrænset, vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller som **${ firstEmail }** eller **@${ secondEmail }**. Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Når login er begrænset, vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller som **${ firstEmail }** eller **@${ secondDomain }**. Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når login er begrænset, vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller som **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**. Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Når login er begrænset, vil du kun kunne logge ind med dit originale brugernavn **${ username }**, enten med selve navnet eller som **${ firstEmail }** Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når login er begrænset, vil du kun kunne logge ind med dit brugernavn, **${ username }**, eller som **${ firstEmail }** Dine andre e-mailadresser vil ikke kunne bruges til at logge ind."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Ved opsigelsen bliver dit abonnement ikke fornyet, men du kan stadig nyde godt af abonnementets fordele indtil udløb af abonnementsperioden. Herefter nedgraderes du til ${ BRAND_NAME } Free-abonnement."
@@ -14174,7 +14192,7 @@
         "Du har ingen transaktioner"
       ],
       "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
-        "Du har flere abonnementer. Vælg det, du vil opsige: Dine øvrige abonnementer påvirkes ikke. Et opsagt abonnement fornyes ikke, og du beholder fordelene, indtil abonnementsperioden udløber."
+        "Du har flere abonnementer. Vælg det du vil opsige: Dine øvrige abonnementer påvirkes ikke. Et opsagt abonnement fornyes ikke, og du beholder fordelene indtil abonnementsperioden udløber."
       ],
       "You have unpublished changes": [
         "De har ikke-udgivne ændringer"
@@ -14202,6 +14220,9 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Du bør eksportere en sikkerhedskopi af denne nøgle, hvis du har brug for at genoprette data, som den har krypteret."
+      ],
+      "You still need to reply for the organizer to see your response.": [
+        "Du skal stadig svare for at arrangøren ser det."
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Du skal stadig svare på invitationer, for at værten kan se dit svar."
@@ -16951,6 +16972,9 @@
       ],
       "Invalid ${ group.name } record found": [
         "Ugyldigt ${ group.name }-record fundet"
+      ],
+      "Leave field blank": [
+        "Lad feltet være tomt"
       ],
       "Priority": [
         "Prioritet"
@@ -28014,7 +28038,7 @@
         "Velkommen til ${ BRAND_NAME } for Business"
       ],
       "What changes if you cancel ${ planDisplayName }": [
-        "Hvad ændrer sig, hvis du opsiger ${ planDisplayName }"
+        "Dette ændrer sig, hvis du opsiger ${ planDisplayName }"
       ],
       "What is an alias?": [
         "Hvad er et alias?"

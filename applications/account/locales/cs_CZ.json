@@ -3312,6 +3312,12 @@
       ],
       "Total": [
         "Celkem"
+      ],
+      "Total for ${ cycle } month": [
+        "Celkem za ${ cycle } měsíc",
+        "Celkem za ${ cycle } měsíce",
+        "Celkem za ${ cycle } měsíců",
+        "Celkem za ${ cycle } měsíců"
       ]
     },
     "Collapsible tooltip": {
@@ -8107,9 +8113,6 @@
       "Allow platform keys": [
         "Povolit klíče platformy"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Umožňuje registrovat vestavěné bezpečnostní klíče (například Windows Hello, Face ID, Touch ID nebo interní TPM)."
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Opravdu chcete odstranit bezpečnostní klíč ${ name }?"
       ],
@@ -11466,12 +11469,6 @@
       "RECOMMENDED": [
         "DOPORUČENO"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Obnova pomocí e-mailu není k dispozici, pokud je zapnuta služba ${ PROTON_SENTINEL_NAME }."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Obnova přes telefon není k dispozici, pokud je aktivována služba ${ PROTON_SENTINEL_NAME }."
-      ],
       "Recovery file downloaded": [
         "Soubor pro obnovení byl stažen"
       ],
@@ -12086,12 +12083,6 @@
       ],
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Chcete-li aktivovat postkvantovou ochranu, musíte dokončit generování svých nových postkvantových šifrovacích klíčů."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Chcete-li zajistit co nejvyšší zabezpečení svého účtu, deaktivujte funkci **Obnovení pomocí e-mailu**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Chcete-li zajistit co nejvyšší zabezpečení svého účtu, deaktivujte funkci **Obnovení pomocí telefonu**."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Abyste nepřišli o důležitá data, ${ DRIVE_APP_NAME } ukládá starší verze vašich souborů v době, kdy je vy a vaši spolupracovníci měníte.Vyberte, jak dlouho má ${ BRAND_NAME } uchovávat předchozí verze."
@@ -19209,6 +19200,11 @@
         "Něco se pokazilo. Ověření Google Pay selhalo."
       ]
     },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Potvrzením tímto opravňujete společnost ${ BRAND_NAME } a Stripe, našeho poskytovatele platebních služeb, k inkasování budoucích plateb za vaše předplatné z tohoto bankovního účtu prostřednictvím přímého inkasa SEPA, a svou banku k odepsání těchto plateb. Vaše první platba je provedena nyní společností ${ IDEAL_WERO_BRAND_NAME }. Váš tarif se automaticky obnovuje, dokud jej nezrušíte; před každým inkasem vás budeme informovat. V případě inkasa prostřednictvím SEPA Direct Debit můžete požádat svou banku o vrácení platby do 8 týdnů od data inkasa, a to v souladu s podmínkami vaší smlouvy s bankou. To se nevztahuje na platbu společnosti ${ IDEAL_WERO_BRAND_NAME }, kterou právě provádíte."
+      ]
+    },
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitou část vašeho předchozího předplatného"
@@ -19259,6 +19255,11 @@
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
         "Cena obnovení závisí na fakturační oblasti a DIČ."
+      ]
+    },
+    "Payments.Saved payment method details": {
+      "Google Pay - card ending in ${ Last4 }": [
+        "Google Pay - karta končící čísly ${ Last4 }"
       ]
     },
     "Payments.Sepa": {

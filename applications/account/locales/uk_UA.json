@@ -63,6 +63,9 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Про ${ name }"
+      ],
       "Accept": [
         "Схвалити"
       ],
@@ -101,6 +104,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Додати адресу ${ BRAND_NAME }"
+      ],
+      "Add ${ name }": [
+        "Додати ${ name }"
       ],
       "Add account": [
         "Додати обліковий запис"
@@ -1073,6 +1079,9 @@
       ],
       "Manage subscription": [
         "Керувати передплатою"
+      ],
+      "Manage subscriptions": [
+        "Керування підписками"
       ],
       "Manage users/addresses": [
         "Керуйте користувачами та адресами"
@@ -2109,6 +2118,9 @@
       ],
       "Permission revoked": [
         "Дозвіл відкликано"
+      ],
+      "Sign-in": [
+        "Вхід"
       ]
     },
     "Admin": {
@@ -2437,6 +2449,11 @@
         "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяці.",
         "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяців.",
         "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяців."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Гарантія повернення коштів протягом 30 днів. Ви можете скасувати покупку протягом 30 днів і звернутися до ${ customerSupportLink } для повернення коштів."
       ]
     },
     "bf2023: Title": {
@@ -8318,9 +8335,6 @@
       "Allow platform keys": [
         "Дозволити ключі платформи"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Дає змогу зареєструвати вбудовані ключі безпеки (наприклад, Windows Hello, Face ID, Touch ID або інтегровані TPM)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Ви дійсно хочете видалити ключ безпеки ${ name }?"
       ],
@@ -8341,6 +8355,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Ця дія призведе до видалення всіх ключів безпеки, пов'язаних з вашим обліковим записом."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Використовуйте функцію розпізнавання відбитків пальців, розпізнавання обличчя, PIN-код або блокування екрана цього пристрою"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Виконуйте перевірку з використанням ключа безпеки U2F або FIDO2"
@@ -9808,6 +9825,9 @@
       "30-day money-back guarantee": [
         "Гарантія повернення грошей протягом 30 днів"
       ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Гарантія повернення коштів протягом 30 днів. Ви можете скасувати покупку протягом 30 днів і звернутися до ${ customerSupportLink } для повернення коштів."
+      ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } розміщується на хостингу ${ BRAND_NAME }, що дозволяє швидко налаштувати субдомен. ${ learnMoreLink }"
       ],
@@ -9909,6 +9929,9 @@
       ],
       "Address copied to clipboard": [
         "Адресу скопійовано до буфера обміну"
+      ],
+      "Adds a Meet link to events with at least one participant.": [
+        "Додає посилання «Meet» до подій, у яких є хоча б один учасник."
       ],
       "Admin account allocation": [
         "Розподілення для облікового запису адміністратора"
@@ -10945,11 +10968,17 @@
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Якщо вимкнено, члени організації зможуть ділитися сховищами або елементами лише в межах організації."
       ],
+      "If disabled, organization members won't be able to add 2FA codes to their items, and existing ones won't be generated or autofilled. Nothing is deleted.": [
+        "Якщо вимкнено, члени організації не зможуть додавати коди 2FA до своїх елементів і не відбуватиметься створення чи автозаповнення наявних. Нічого не буде видалено."
+      ],
       "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
         "Якщо цю функцію вимкнено, учасники організації не зможуть створювати нові псевдоніми. Наявні псевдоніми залишаться активними."
       ],
       "If disabled, organization members won't be able to create secure links. Previously active secure links remain valid until their expiration.": [
         "Якщо цю функцію вимкнено, учасники організації не зможуть створювати безпечні посилання. Раніше створені безпечні посилання залишатимуться дійсними до закінчення терміну їх дії."
+      ],
+      "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
+        "Якщо вимкнено, члени організації не зможуть зберігати ключі доступу в ${ PASS_APP_NAME } або використовувати їх для входу. Нічого не буде видалено."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Якщо увімкнено, члени організації зможуть ділитися окремими елементами на додачу до сховищ."
@@ -11683,12 +11712,6 @@
       "RECOMMENDED": [
         "РЕКОМЕНДОВАНО"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Відновлення за допомогою електронної пошти недоступне, поки ввімкнено ${ PROTON_SENTINEL_NAME }."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Відновлення за телефоном недоступне, поки ввімкнено ${ PROTON_SENTINEL_NAME }."
-      ],
       "Recovery file downloaded": [
         "Файл відновлення завантажено"
       ],
@@ -12304,11 +12327,17 @@
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Щоб увімкнути постквантовий захист, вам потрібно завершити генерацію нових постквантових ключів шифрування."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Щоб забезпечити максимально можливу безпеку вашого облікового запису, вимкніть **Відновлення за допомогою резервної адреси електронної пошти**."
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Щоб забезпечити максимально можливий рівень безпеки вашого облікового запису, вимкніть функцію **Відновлення за допомогою електронної пошти**."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Щоб забезпечити максимально можливу безпеку вашого облікового запису, вимкніть **Відновлення за допомогою телефону для відновлення**."
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Щоб забезпечити максимально можливий рівень безпеки вашого облікового запису, вимкніть функцію **Відновлення за допомогою телефону**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Щоб забезпечити максимально можливий рівень безпеки вашого облікового запису, залиште функцію **Відновлення за допомогою електронної пошти** вимкненою."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Щоб забезпечити максимально можливий рівень безпеки вашого облікового запису, залиште функцію **Відновлення за допомогою телефону** вимкненою."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Щоб не втратити важливі дані, ${ DRIVE_APP_NAME } зберігає старіші версії ваших файлів, коли ви та інші учасники вносите зміни. Виберіть, як довго ${ BRAND_NAME } має зберігати попередні версії."
@@ -12396,6 +12425,9 @@
       ],
       "Unfortunately there is no recovery method available for this account.": [
         "На жаль, для цього облікового запису немає доступного способу відновлення."
+      ],
+      "UnionPay logo": [
+        "Логотип UnionPay"
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Унікальний ідентифікатор, згенерований вашим провайдером ідентифікації, зазвичай у вигляді URL-адреси, що містить ім'я провайдера (наприклад, https://idp.example.com/XXXXX)."
@@ -12918,6 +12950,9 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Вам слід експортувати резервну копію цього ключа на випадок, якщо знадобиться відновити дані, зашифровані за його допомогою."
+      ],
+      "You still need to reply for the organizer to see your response.": [
+        "Вам все одно потрібно відповісти, щоб організатор міг побачити вашу відповідь."
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Вам усе одно потрібно відповісти на запрошення, щоб організатор побачив вашу відповідь."
@@ -13900,6 +13935,12 @@
       ],
       "Allow sharing outside the organization": [
         "Дозволити спільний доступ за межами організації"
+      ],
+      "Allow storing 2FA codes": [
+        "Дозволити зберігання кодів 2FA"
+      ],
+      "Allow storing passkeys": [
+        "Дозволити зберігання ключів доступу"
       ],
       "Allowed Domain": [
         "Дозволений домен"
@@ -15452,6 +15493,9 @@
       "Invalid ${ group.name } record found": [
         "Знайдено недійсний запис ${ group.name }"
       ],
+      "Leave field blank": [
+        "Залишити поле порожнім"
+      ],
       "Priority": [
         "Пріоритет"
       ],
@@ -15621,6 +15665,9 @@
       ],
       "Create an alias": [
         "Створити псевдонім"
+      ],
+      "Customer Support": [
+        "Клієнтська підтримка"
       ],
       "data recovery option": [
         "варіант відновлення даних"
@@ -19250,6 +19297,9 @@
       "Billing Country": [
         "Країна платника"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Власники чинної передплати не мають можливості придбати облікові записи Born Private."
+      ],
       "Card number": [
         "Номер картки"
       ],
@@ -19322,6 +19372,9 @@
       "terms and conditions": [
         "умови та положення"
       ],
+      "The Born Private initiative requires a donation.": [
+        "Для участі в програмі Born Private необхідна пожертва."
+      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Знижка дійсна для ${ renewalsWithCoupon } поновлення.",
         "Знижка дійсна для ${ renewalsWithCoupon } поновлень.",
@@ -19391,6 +19444,9 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас уже є передплата на цей тарифний план. Ви можете змінити передплату на ${ subscriptionPlatform }."
       ],
+      "You already own a Born Private account.": [
+        "Ви вже маєте обліковий запис Born Private."
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "З вас буде списано ${ amountToCharge } з обраного вами способу оплати."
       ],
@@ -19399,6 +19455,9 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Вас невдовзі буде перенаправлено для підтвердження платежу."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Ваш обліковий запис надто давній для участі в програмі Born Private."
       ],
       "Your payment is still being processed": [
         "Ваш платіж усе ще обробляється"
@@ -24899,6 +24958,9 @@
       "Email": [
         "Е-пошта"
       ],
+      "Email address": [
+        "Адреса електронної пошти"
+      ],
       "Email breaches": [
         "Витоки електронної пошти"
       ],
@@ -26949,6 +27011,9 @@
       ],
       "Send invite link via email instead": [
         "Замість цього надішліть посилання на запрошення поштою"
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Цей користувач отримає права адміністратора при наступному вході."
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Буде створено нову адресу ${ MAIL_APP_NAME }."

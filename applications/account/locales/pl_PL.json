@@ -8102,9 +8102,6 @@
       "Allow platform keys": [
         "Zezwalaj na klucze platformy"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Zezwala na rejestrację wbudowanych kluczy bezpieczeństwa (takich jak Windows Hello, Touch ID, Face ID lub wewnętrzne moduły TPM)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Czy na pewno chcesz usunąć klucz bezpieczeństwa ${ name }?"
       ],
@@ -9690,6 +9687,9 @@
       ],
       "Address copied to clipboard": [
         "Adres został skopiowany do schowka"
+      ],
+      "Adds a Meet link to events with at least one participant.": [
+        "Dodaj link Meet do wydarzenia z przynajmniej jednym uczestnikiem."
       ],
       "Admin account allocation": [
         "Przestrzeń dyskowa administratora"
@@ -11464,12 +11464,6 @@
       "RECOMMENDED": [
         "ZALECANY"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Odzyskiwanie za pomocą poczty e-mail nie jest dostępne, gdy usługa ${ PROTON_SENTINEL_NAME } jest włączona."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Odzyskiwanie za pomocą telefonu nie jest dostępne, gdy usługa ${ PROTON_SENTINEL_NAME } jest włączona."
-      ],
       "Recovery file downloaded": [
         "Plik odzyskiwania został pobrany"
       ],
@@ -12088,12 +12082,6 @@
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Aby włączyć ochronę postkwantową, musisz dokończyć generowanie nowych postkwantowych kluczy szyfrowania."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Aby zapewnić najwyższe możliwe bezpieczeństwo swojego konta, wyłącz opcję **Odzyskiwanie za pomocą adresu pomocniczego**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Aby zapewnić najwyższe możliwe bezpieczeństwo swojego konta, wyłącz opcję **Odzyskiwanie za pomocą numeru pomocniczego**."
-      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Aby chronić ważne dane, ${ DRIVE_APP_NAME } zapisuje starsze wersje plików. Wybierz, jak długo ${ BRAND_NAME } ma przechowywać poprzednie wersje."
       ],
@@ -12699,6 +12687,9 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Należy wyeksportować kopię zapasową tego klucza na wypadek konieczności przywrócenia zaszyfrowanych nim danych."
+      ],
+      "You still need to reply for the organizer to see your response.": [
+        "Musisz przesłać odpowiedź, by organizator zobaczył Twoją reakcję."
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Nadal musisz odpowiadać na zaproszenia, aby organizator mógł zobaczyć Twoją odpowiedź."
@@ -14015,6 +14006,9 @@
       "Days of the week": [
         "Dni tygodnia"
       ],
+      "Deals, offers, and marketing emails": [
+        "Promocje, oferty i wiadomości marketingowe"
+      ],
       "Default email address": [
         "Domyślny adres e-mail"
       ],
@@ -14262,7 +14256,7 @@
         "Przejdź do Newsletterów"
       ],
       "Go to Primary": [
-        "Przejdź do głównej"
+        "Przejdź do Głównej"
       ],
       "Go to Promotions": [
         "Przejdź do Promocji"
@@ -14271,10 +14265,10 @@
         "Przejdź do Społeczności"
       ],
       "Go to Transactions": [
-        "Przejdź do transakcji"
+        "Przejdź do Transakcji"
       ],
       "Go to Updates": [
-        "Przejdź do sekcji zaktualizuj"
+        "Przejdź do Aktualizacji"
       ],
       "Group address": [
         "Adres grupy"
