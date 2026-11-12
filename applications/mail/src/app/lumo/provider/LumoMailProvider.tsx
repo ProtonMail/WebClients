@@ -68,6 +68,7 @@ import { buildLumoMailConfig } from '../registry';
 import type { LumoMailConfigTelemetry } from '../telemetry/useLumoMailTelemetry';
 import { useLumoMailTelemetry } from '../telemetry/useLumoMailTelemetry';
 import type { MailToolDeps } from '../toolModule';
+import useLumoModelChoice from '../useLumoModelChoice';
 import type { PublisherProps } from './PublishedProvider';
 import { PublishedProvider } from './PublishedProvider';
 import { usePublishToProvider } from './usePublishToProvider';
@@ -121,6 +122,7 @@ const LumoMailBody = memo(function LumoMailBody({ onValue }: PublisherProps<Lumo
     const telemetry = useLumoMailTelemetry();
     const { detach } = useLumoFloatingPanel();
     const standalonePrompt = useFlag(MailFeatureFlag.LumoInMailStandalonePrompt);
+    const [modelChoice] = useLumoModelChoice();
 
     // Latest values, refreshed every render, so the once-built handlers always read the current
     // snapshot (mirrors the POC's ref pattern; keeps the config referentially stable).
@@ -152,6 +154,7 @@ const LumoMailBody = memo(function LumoMailBody({ onValue }: PublisherProps<Lumo
         draftBodyWriters,
         telemetry,
         standalonePrompt,
+        modelChoice,
     };
     const latest = useRef(current);
     latest.current = current;
@@ -284,7 +287,12 @@ const LumoMailBody = memo(function LumoMailBody({ onValue }: PublisherProps<Lumo
         };
 
         // Read once, like the rest of the config: a flag change applies from the next mount.
-        return buildLumoMailConfig(deps, configTelemetry, latest.current.standalonePrompt);
+        return buildLumoMailConfig(
+            deps,
+            configTelemetry,
+            latest.current.standalonePrompt,
+            () => latest.current.modelChoice
+        );
     }, []);
 
     const conversation = useLumoAgent(config);

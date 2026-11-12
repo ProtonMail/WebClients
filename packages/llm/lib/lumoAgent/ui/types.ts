@@ -115,8 +115,8 @@ export interface LumoAgentConfig {
     turnContext?: () => string;
     /** Forwarded to the transport as `clientType`. */
     clientType?: LumoClientType;
-    /** Forwarded to the transport as `modelTier`; the transport's default model when absent. */
-    modelTier?: LumoApiModelTier;
+    /** Read once per send and forwarded to the transport as `modelTier`; the transport's default model when absent. */
+    modelTier?: () => LumoApiModelTier;
     serverTools?: ServerToolName[];
     serverToolMeta?: Partial<Record<ServerToolName, ServerToolMeta>>;
     /** Empty-state cards. Omitted by a product that wants no empty state of its own. */

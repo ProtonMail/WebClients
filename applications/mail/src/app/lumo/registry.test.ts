@@ -5,7 +5,6 @@ import { createReferenceRegistry } from '@proton/llm/lib/lumoAgent/engine/refere
 import { LumoClientType } from '@proton/lumo-api-client/types-api';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 
-import { setupStore } from '../store/store';
 import { buildMailSearchGuide, buildStandaloneMailSearchGuide } from './guides/searchGuide';
 import { PROTON_SIEVE_DIALECT_REFERENCE, STANDALONE_PROTON_SIEVE_DIALECT_REFERENCE } from './guides/sieveGuide';
 import { indexedESStatus } from './helpers/navigation.test.helpers';
@@ -23,16 +22,22 @@ import { CosmeticSetting, changeSettingsModule } from './skills/settings/cosmeti
 import { STANDALONE_DESCRIPTIONS } from './standaloneDescriptions';
 import type { LumoMailConfigTelemetry } from './telemetry/useLumoMailTelemetry';
 import type { MailToolDeps, MailToolModule } from './toolModule';
+import { buildMailToolDeps } from './toolModule.test.helpers';
+import { LumoModelChoice } from './useLumoModelChoice';
+
+const buildTelemetry = (): LumoMailConfigTelemetry => ({
+    promptSent: jest.fn(),
+    chainEnded: jest.fn(),
+    confirmAnswered: jest.fn(),
+    toolSucceeded: jest.fn(),
+    toolFailed: jest.fn(),
+});
+
+const getMaxModel = () => LumoModelChoice.MAX;
 
 const buildConfig = (getFolders: MailToolDeps['getFolders']) => {
-    const telemetry: LumoMailConfigTelemetry = {
-        promptSent: jest.fn(),
-        chainEnded: jest.fn(),
-        confirmAnswered: jest.fn(),
-        toolSucceeded: jest.fn(),
-        toolFailed: jest.fn(),
-    };
-    const { handlers } = buildLumoMailConfig({ getFolders } as MailToolDeps, telemetry, false);
+    const telemetry = buildTelemetry();
+    const { handlers } = buildLumoMailConfig(buildMailToolDeps({ getFolders }), telemetry, false, getMaxModel);
 
     return { telemetry, runListFolders: () => handlers.list_folders!({}, { references: createReferenceRegistry() }) };
 };
@@ -64,14 +69,8 @@ describe('the telemetry wrapper around every Mail tool handler', () => {
 
 describe('the telemetry wrapper around a tool argument check', () => {
     const createDraftCheck = () => {
-        const telemetry: LumoMailConfigTelemetry = {
-            promptSent: jest.fn(),
-            chainEnded: jest.fn(),
-            confirmAnswered: jest.fn(),
-            toolSucceeded: jest.fn(),
-            toolFailed: jest.fn(),
-        };
-        const { definitions } = buildLumoMailConfig({} as MailToolDeps, telemetry, false);
+        const telemetry = buildTelemetry();
+        const { definitions } = buildLumoMailConfig(buildMailToolDeps(), telemetry, false, getMaxModel);
         const checkParams = definitions.find((definition) => definition.name === 'create_draft')!.checkParams!;
 
         return { telemetry, checkParams };
@@ -95,10 +94,21 @@ describe('the telemetry wrapper around a tool argument check', () => {
     });
 });
 
-const promptDeps = { getESStatus: () => indexedESStatus(), store: setupStore() } as unknown as MailToolDeps;
+describe('the model the Mail config names', () => {
+    it("asks for the user's model choice on each read, so a switch applies from the next message", () => {
+        let choice = LumoModelChoice.LITE;
+        const config = buildLumoMailConfig(buildMailToolDeps(), buildTelemetry(), false, () => choice);
+
+        expect(config.modelTier?.()).toBe(LumoModelChoice.LITE);
+        choice = LumoModelChoice.MAX;
+        expect(config.modelTier?.()).toBe(LumoModelChoice.MAX);
+    });
+});
+
+const promptDeps = buildMailToolDeps({ getESStatus: () => indexedESStatus() });
 
 const buildPromptConfig = (standalonePrompt: boolean) => {
-    const config = buildLumoMailConfig(promptDeps, {} as LumoMailConfigTelemetry, standalonePrompt);
+    const config = buildLumoMailConfig(promptDeps, buildTelemetry(), standalonePrompt, getMaxModel);
     const definition = (name: string) => config.definitions.find((candidate) => candidate.name === name)!;
 
     return { config, definition };
