@@ -20,6 +20,7 @@ import { useVariant } from '@proton/unleash/useVariant';
 
 import { screenShareQuality } from '../../qualityConstants';
 import { findScreenShare } from '../../utils/findScreenShare';
+import { isWindows10 } from '../../utils/isWindows10';
 import { supportsRestrictOwnAudio } from '../../utils/supportsRestrictOwnAudio';
 import { useStableCallback } from '../useStableCallback';
 import { useScreenShareRoomEvents } from './useScreenShareRoomEvents';
@@ -97,17 +98,19 @@ export function useCurrentScreenShare({
                 startPiP();
             }
 
+            const shareAudio = shareScreenShareAudio && !(await isWindows10());
+
             await room.localParticipant.setScreenShareEnabled(
                 true,
                 {
                     // restrictOwnAudio keeps the call's own output out of the capture, otherwise everyone
                     // hears themselves back.
-                    audio: shareScreenShareAudio
+                    audio: shareAudio
                         ? {
                               restrictOwnAudio: true,
                           }
                         : false,
-                    systemAudio: shareScreenShareAudio ? 'include' : 'exclude',
+                    systemAudio: shareAudio ? 'include' : 'exclude',
                     selfBrowserSurface: 'exclude',
                     contentHint: 'detail',
                     resolution: {
