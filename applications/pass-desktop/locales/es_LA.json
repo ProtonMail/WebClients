@@ -568,6 +568,9 @@
       "Open platform selection dropdown": [
         "Abrir menú de selección de plataforma"
       ],
+      "Open the browser again": [
+        "Abrir el navegador de nuevo"
+      ],
       "Organize vaults": [
         "Organizar bóvedas"
       ],
@@ -739,6 +742,9 @@
       "Show more": [
         "Mostrar más"
       ],
+      "Sign in in the app instead": [
+        "Iniciar sesión en la aplicación en su lugar"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Iniciar sesión con ${ BRAND_NAME }"
       ],
@@ -784,6 +790,9 @@
       ],
       "Trash": [
         "Enviar a papelera"
+      ],
+      "Try again": [
+        "Volver a intentar"
       ],
       "Try again.": [
         "Intente nuevamente."
@@ -877,6 +886,9 @@
       ]
     },
     "App menu": {
+      "Back": [
+        "Regresar"
+      ],
       "Force Reload": [
         "Forzar recarga"
       ],
@@ -1081,8 +1093,14 @@
       "Biometric authentication cancelled.": [
         "Autenticación biométrica cancelada."
       ],
+      "Biometric authentication failed": [
+        "Error en la autenticación biométrica"
+      ],
       "Biometric authentication failed.": [
         "Error en la autenticación biométrica."
+      ],
+      "Biometric authentication is not available": [
+        "La autenticación biométrica no está disponible"
       ],
       "Biometric lock credentials do not match.": [
         "Las credenciales de bloqueo de biometría no coinciden."
@@ -1954,8 +1972,14 @@
       "Can view this item.": [
         "Puede ver este elemento."
       ],
+      "Canceled by user": [
+        "Cancelado por el usuario"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Comprobando ${ compromised.progress.completed } de ${ compromised.progress.total } contraseñas"
+      ],
+      "Choose how you want to sign in": [
+        "Elija cómo desea iniciar sesión"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirme su contraseña adicional para proceder con la eliminación."
@@ -2142,9 +2166,6 @@
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Encuentre «OpenSSH Authentication Agent», haga clic derecho y luego Propiedades."
-      ],
-      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
-        "Finalice el inicio de sesión en la ventana del navegador que acaba de abrir. ${ PASS_APP_NAME } se cargará automáticamente una vez que lo haga."
       ],
       "Folder \"${ payload.folder.name }\" created": [
         "Carpeta «${ payload.folder.name }» creada"
@@ -2352,7 +2373,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros."
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -2726,6 +2748,9 @@
       "Shared item invitation": [
         "Invitación a un elemento compartido"
       ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Inicie sesión y confirme en la ventana del navegador que acaba de abrir. ${ PASS_APP_NAME } se cargará automáticamente una vez que lo haga."
+      ],
       "Sign in to your account": [
         "Iniciar sesión en su cuenta"
       ],
@@ -2737,6 +2762,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Simplemente use ${ emailBold } la próxima vez que necesite un alias: se creará ${ automaticallyBold } la primera vez que reciba un correo electrónico. Para tener un control más detallado, también puede definir ${ rulesHyperLink }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Iniciar ${ PASS_APP_NAME } sin conexión requerirá su contraseña de ${ BRAND_NAME }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Iniciar ${ PASS_APP_NAME } sin conexión requerirá su contraseña de respaldo."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Iniciar ${ PASS_APP_NAME } sin conexión requerirá su contraseña adicional."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Iniciar ${ PASS_APP_NAME } sin conexión requerirá su segunda contraseña."
       ],
       "Successfully exported all your items": [
         "Se exportaron todos sus elementos."
@@ -2804,6 +2841,9 @@
       ],
       "The secure link has been removed": [
         "El enlace seguro fue eliminado."
+      ],
+      "The sign in was not confirmed in time.": [
+        "El inicio de sesión no fue confirmado a tiempo."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "El texto que intenta pegar es más largo que el máximo permitido de ${ maxLength } caracteres."
@@ -3117,6 +3157,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Su organización requiere que asegure su acceso a ${ PASS_APP_NAME }"
+      ],
+      "Your session could not be authorized.": [
+        "No se pudo autorizar su sesión."
       ]
     },
     "Keyboard key": {
@@ -5026,6 +5069,9 @@
       "Activity for \"${ token.Name }\"": [
         "Actividad para «${ token.Name }»"
       ],
+      "Add an account": [
+        "Añadir una cuenta"
+      ],
       "Add custom domain": [
         "Agregar un dominio personalizado"
       ],
@@ -5317,8 +5363,8 @@
         "¿Mover ${ trashedItemsCount } elemento a la papelera?",
         "¿Mover ${ trashedItemsCount } elementos a la papelera?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "¿Mover todos los elementos a «${ vaultName }»?"
+      "Move all items to \"${ target }\"?": [
+        "¿Mover todos los elementos a «${ target }»?"
       ],
       "Move all items?": [
         "¿Mover todos los elementos?"
@@ -5483,6 +5529,15 @@
       ],
       "Shared via": [
         "Compartido por"
+      ],
+      "Sign in timed out": [
+        "La sesión expiró"
+      ],
+      "Signing you in": [
+        "Iniciando sesión"
+      ],
+      "Something went wrong": [
+        "Algo salió mal"
       ],
       "SPF (Optional)": [
         "SPF (opcional)"

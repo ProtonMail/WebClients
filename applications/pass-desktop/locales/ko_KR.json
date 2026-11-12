@@ -769,6 +769,9 @@
       "Trash": [
         "휴지통"
       ],
+      "Try again": [
+        "다시 시도"
+      ],
       "Try again.": [
         "다시 시도하세요."
       ],
@@ -2082,9 +2085,6 @@
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "\"OpenSSH Authentication Agent\"를 찾은 다음, 마우스 오른쪽 버튼으로 클릭하여 속성으로 이동합니다."
       ],
-      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
-        "방금 전 열린 브라우저 창에서 로그인을 완료하세요. ${ PASS_APP_NAME }가 로그인 완료 후 자동으로 가져갑니다."
-      ],
       "Folder \"${ payload.folder.name }\" created": [
         "폴더 \"${ payload.folder.name }\" 생성됨"
       ],
@@ -2279,9 +2279,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -5147,9 +5144,6 @@
       "Move ${ trashedItemsCount } item to trash?": [
         "${ trashedItemsCount }개의 항목을 휴지통으로 이동시키시겠습니까?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "\"${ vaultName }\"(으)로 모든 항목을 이동할까요?"
-      ],
       "Move all items?": [
         "모든 항목 이동을 이동하시겠습니까?"
       ],
@@ -5311,6 +5305,9 @@
       ],
       "Shared via": [
         "다음으로 공유됨:"
+      ],
+      "Something went wrong": [
+        "문제가 발생했습니다"
       ],
       "SPF (Optional)": [
         "SPF (선택 사항)"

@@ -568,6 +568,9 @@
       "Open platform selection dropdown": [
         "Rozbaľovacie menu na výber otvorenej platformy"
       ],
+      "Open the browser again": [
+        "Otvorte prehliadač znova"
+      ],
       "Organize vaults": [
         "Usporiadať trezory"
       ],
@@ -739,6 +742,9 @@
       "Show more": [
         "Zobraziť viac"
       ],
+      "Sign in in the app instead": [
+        "Radšej sa prihlásiť v aplikácii"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Prihlásiť sa pomocou ${ BRAND_NAME }"
       ],
@@ -786,6 +792,9 @@
       ],
       "Trash": [
         "Kôš"
+      ],
+      "Try again": [
+        "Skús znova"
       ],
       "Try again.": [
         "Skúsiť znova."
@@ -881,6 +890,9 @@
       ]
     },
     "App menu": {
+      "Back": [
+        "Späť"
+      ],
       "Force Reload": [
         "Vynútené obnovenie"
       ],
@@ -1087,8 +1099,14 @@
       "Biometric authentication cancelled.": [
         "Biometrické overenie zrušené."
       ],
+      "Biometric authentication failed": [
+        "Biometrické overenie zlyhalo"
+      ],
       "Biometric authentication failed.": [
         "Biometrické overenie zlyhalo."
+      ],
+      "Biometric authentication is not available": [
+        "Biometrické overenie nie je k dispozícii"
       ],
       "Biometric lock credentials do not match.": [
         "Biometrické údaje pre odomknutie sa nezhodujú."
@@ -2000,8 +2018,14 @@
       "Can view this item.": [
         "Môže zobraziť túto položku."
       ],
+      "Canceled by user": [
+        "Zrušené používateľom"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Kontrola ${ compromised.progress.completed } z ${ compromised.progress.total } hesiel"
+      ],
+      "Choose how you want to sign in": [
+        "Vyberte si spôsob prihlásenia"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Potvrdením dodatočného hesla pokračujte v jeho odstraňovaní."
@@ -2188,9 +2212,6 @@
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Nájdite položku „OpenSSH Authentication Agent“ a kliknite na ňu pravým tlačidlom myši a vyberte možnosť „Vlastnosti“."
-      ],
-      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
-        "Dokončite prihlásenie v okne prehliadača, ktoré sa práve otvorilo. ${ PASS_APP_NAME } sa automaticky vyplní, akonáhle to dokončíte."
       ],
       "Folder \"${ payload.folder.name }\" created": [
         "Priečinok \"${ payload.folder.name }\" bol vytvorený"
@@ -2406,7 +2427,10 @@
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy."
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -2786,6 +2810,9 @@
       "Shared item invitation": [
         "Pozvánka ku zdieľanej položke"
       ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Prihláste sa a potvrďte to v okne prehliadača, ktoré sa práve otvorilo. ${ PASS_APP_NAME } sa automaticky vyplní, akonáhle to dokončíte."
+      ],
       "Sign in to your account": [
         "Prihláste sa do svojho účtu"
       ],
@@ -2797,6 +2824,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Keď budete nabudúce potrebovať alias, jednoducho použite ${ emailBold }: pri prvom prijatí emailu sa vytvorí ${ automaticallyBold }. Ak chcete mať detailnejšiu kontrolu, môžete definovať aj ${ rulesHyperLink }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Na spustenie ${ PASS_APP_NAME } v režime offline budete vaše ${ BRAND_NAME } heslo."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Na spustenie ${ PASS_APP_NAME } v režime offline budete potrebovať vaše záložné heslo."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Na spustenie ${ PASS_APP_NAME } v režime offline budete potrebovať dodatočné heslo."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Na spustenie ${ PASS_APP_NAME } v režime offline budete potrebovať vaše druhé heslo."
       ],
       "Successfully exported all your items": [
         "Všetky položky boli úspešne exportované"
@@ -2866,6 +2905,9 @@
       ],
       "The secure link has been removed": [
         "Bezpečný odkaz bol odstránený"
+      ],
+      "The sign in was not confirmed in time.": [
+        "Prihlásenie nebolo včas potvrdené."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Text, ktorý sa snažíte prilepiť, je dlhší ako maximálna povolená dĺžka ${ maxLength } znakov."
@@ -3187,6 +3229,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Vaša organizácia vyžaduje, aby ste zabezpečili svoj prístup k ${ PASS_APP_NAME }"
+      ],
+      "Your session could not be authorized.": [
+        "Vašu reláciu sa nepodarilo autorizovať."
       ]
     },
     "Keyboard key": {
@@ -5134,6 +5179,9 @@
       "Activity for \"${ token.Name }\"": [
         "Aktivita \"${ token.Name }\""
       ],
+      "Add an account": [
+        "Pridať účet"
+      ],
       "Add custom domain": [
         "Pridať vlastnú doménu"
       ],
@@ -5431,8 +5479,8 @@
         "Presunúť ${ trashedItemsCount } položiek do koša?",
         "Presunúť ${ trashedItemsCount } položiek do koša?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Presunúť všetky položky do trezora \"${ vaultName }\"?"
+      "Move all items to \"${ target }\"?": [
+        "Presunúť všetky položky do \"${ target }\"?"
       ],
       "Move all items?": [
         "Presunúť všetky položky?"
@@ -5601,6 +5649,15 @@
       ],
       "Shared via": [
         "Zdieľané cez"
+      ],
+      "Sign in timed out": [
+        "Čas prihlásenia vypršal"
+      ],
+      "Signing you in": [
+        "Prihlasujeme vás"
+      ],
+      "Something went wrong": [
+        "Niečo sa pokazilo"
       ],
       "SPF (Optional)": [
         "SPF (nepovinné)"

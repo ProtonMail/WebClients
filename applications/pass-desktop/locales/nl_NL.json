@@ -767,6 +767,9 @@
       "Trash": [
         "Prullenbak"
       ],
+      "Try again": [
+        "Opnieuw proberen"
+      ],
       "Try again.": [
         "Probeer opnieuw."
       ],
@@ -1900,6 +1903,9 @@
       "Can view this item.": [
         "Kan dit item bekijken"
       ],
+      "Canceled by user": [
+        "Geannuleerd door gebruiker"
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "Bevestig uw extra wachtwoord om verder te gaan met de verwijdering ervan."
       ],
@@ -2076,9 +2082,6 @@
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Zoek \"OpenSSH Authentication Agent\", klik met de rechtermuisknop op Eigenschappen."
-      ],
-      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
-        "Voltooi het inloggen in het browservenster dat zojuist is geopend. ${ PASS_APP_NAME } wordt automatisch opgehaald zodra u klaar bent."
       ],
       "Follow those steps to import your data with a generic CSV:": [
         "Volg deze stappen om uw gegevens te importeren met een algemeen CSV-bestand:"
@@ -2265,7 +2268,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2612,6 +2616,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Gebruik gewoon ${ emailBold } volgende keer dat u een alias nodig hebt: het wordt ${ automaticallyBold } aangemaakt de eerste keer dat het een e-mail ontvangt. Voor een fijnmazigere controle kunt u ook ${ rulesHyperLink } definiëren."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Als u ${ PASS_APP_NAME } offline wilt starten, is uw ${ BRAND_NAME }-wachtwoord vereist."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Als u ${ PASS_APP_NAME } offline start, is uw back-upwachtwoord vereist."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Om ${ PASS_APP_NAME } offline te gebruiken, is uw extra wachtwoord vereist."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Als u ${ PASS_APP_NAME } offline wilt starten, heeft u uw tweede wachtwoord nodig."
       ],
       "Successfully exported all your items": [
         "Alle items succesvol geëxporteerd"
@@ -5101,9 +5117,6 @@
         "${ trashedItemsCount } item naar prullenbak verplaatsen?",
         "${ trashedItemsCount } items naar prullenbak verplaatsen?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Alle items verplaatsen naar \"${ vaultName }\"?"
-      ],
       "MX record": [
         "MX-record"
       ],
@@ -5258,6 +5271,9 @@
       ],
       "Shared via": [
         "Gedeeld via"
+      ],
+      "Something went wrong": [
+        "Er is iets fout gegaan."
       ],
       "SPF (Optional)": [
         "SPF (optioneel)"

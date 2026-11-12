@@ -568,6 +568,9 @@
       "Open platform selection dropdown": [
         "Deschide meniul derulant pentru selectarea platformei"
       ],
+      "Open the browser again": [
+        "Redeschidere navigator web"
+      ],
       "Organize vaults": [
         "Organizare seifuri"
       ],
@@ -739,6 +742,9 @@
       "Show more": [
         "Afișare mai mult"
       ],
+      "Sign in in the app instead": [
+        "Conectare în aplicație"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Conectare cu ${ BRAND_NAME }"
       ],
@@ -785,6 +791,9 @@
       ],
       "Trash": [
         "Gunoi"
+      ],
+      "Try again": [
+        "Reîncercați"
       ],
       "Try again.": [
         "Reîncercați."
@@ -879,6 +888,9 @@
       ]
     },
     "App menu": {
+      "Back": [
+        "Înapoi"
+      ],
       "Force Reload": [
         "Reîncărcare forțată"
       ],
@@ -1084,8 +1096,14 @@
       "Biometric authentication cancelled.": [
         "Autentificarea biometrică a fost anulată."
       ],
+      "Biometric authentication failed": [
+        "Autentificarea biometrică a eșuat."
+      ],
       "Biometric authentication failed.": [
         "Autentificarea biometrică a eșuat."
+      ],
+      "Biometric authentication is not available": [
+        "Autentificarea biometrică nu este disponibilă."
       ],
       "Biometric lock credentials do not match.": [
         "Datele de blocare biometrice nu se potrivesc."
@@ -1977,8 +1995,14 @@
       "Can view this item.": [
         "Poate vedea acest articol."
       ],
+      "Canceled by user": [
+        "Anulat de utilizator"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Se verifică parolele ${ compromised.progress.completed } din ${ compromised.progress.total }"
+      ],
+      "Choose how you want to sign in": [
+        "Alege cum doriți să vă conectați"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirmați parola suplimentară pentru a continua eliminarea sa."
@@ -2165,9 +2189,6 @@
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Găsiți „Agent de autentificare OpenSSH”, clic-dreapta pe „Proprietăți”."
-      ],
-      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
-        "Finalizați autentificarea în fereastra navigatorului web care tocmai s-a deschis. ${ PASS_APP_NAME } va prelua automat procesul imediat ce ați terminat."
       ],
       "Folder \"${ payload.folder.name }\" created": [
         "S-a creat folderul „${ payload.folder.name }”"
@@ -2379,7 +2400,9 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui element într-un alt seif îi va șterge linkurile securizate."
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -2756,6 +2779,9 @@
       "Shared item invitation": [
         "Invitație articol partajat"
       ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Conectați-vă și confirmați în fereastra navigatorului web care tocmai s-a deschis. ${ PASS_APP_NAME } va prelua automat procesul imediat ce ați terminat."
+      ],
       "Sign in to your account": [
         "Conectare la cont"
       ],
@@ -2767,6 +2793,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Pur și simplu utilizați ${ emailBold } data viitoare când aveți nevoie de un alias: va fi creat ${ automaticallyBold } prima dată când primește un mesaj. Pentru a avea un control mai precis, puteți defini și ${ rulesHyperLink }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Pentru pornirea ${ PASS_APP_NAME } în mod local, va fi necesară parola ${ BRAND_NAME }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Pentru pornirea ${ PASS_APP_NAME } în mod local, va fi necesară parola de rezervă."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Pentru pornirea ${ PASS_APP_NAME } în mod local, va fi necesară parola suplimentară."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Pentru pornirea ${ PASS_APP_NAME } în mod local, va fi necesară parola secundară."
       ],
       "Successfully exported all your items": [
         "Toate articole au fost exportate."
@@ -2835,6 +2873,9 @@
       ],
       "The secure link has been removed": [
         "Legătura web securizată a fost eliminată."
+      ],
+      "The sign in was not confirmed in time.": [
+        "Autentificarea nu a fost confirmată la timp."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Textul pe care încercați să îl lipiți este mai lung decât lungimea maximă permisă de ${ maxLength } de caractere."
@@ -3152,6 +3193,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizația vă solicită să vă securizați accesul la ${ PASS_APP_NAME }"
+      ],
+      "Your session could not be authorized.": [
+        "Sesiunea nu a putut fi autorizată."
       ]
     },
     "Keyboard key": {
@@ -5080,6 +5124,9 @@
       "Activity for \"${ token.Name }\"": [
         "Activitate pentru „${ token.Name }”"
       ],
+      "Add an account": [
+        "Adăugare cont"
+      ],
       "Add custom domain": [
         "Adăugare domeniu personal"
       ],
@@ -5374,8 +5421,8 @@
         "Mutați ${ trashedItemsCount } articole în gunoi?",
         "Mutați ${ trashedItemsCount } de articole în gunoi?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Mutați toate articolele în „${ vaultName }”?"
+      "Move all items to \"${ target }\"?": [
+        "Mutați toate articolele în „${ target }”?"
       ],
       "Move all items?": [
         "Mutați toate articolele?"
@@ -5542,6 +5589,15 @@
       ],
       "Shared via": [
         "Partajat prin"
+      ],
+      "Sign in timed out": [
+        "Sesiunea de autentificare a expirat"
+      ],
+      "Signing you in": [
+        "Vă conectăm în"
+      ],
+      "Something went wrong": [
+        "Ceva nu a mers bine."
       ],
       "SPF (Optional)": [
         "SPF (Opțional)"

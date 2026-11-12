@@ -757,6 +757,9 @@
       "Trash": [
         "Koš"
       ],
+      "Try again": [
+        "Zkuste to znovu"
+      ],
       "Try again.": [
         "Zkusit znovu."
       ],
@@ -2322,7 +2325,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -5233,9 +5239,6 @@
         "Přesunout do koše ${ trashedItemsCount } položek?",
         "Přesunout do koše ${ trashedItemsCount } položek?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Přesunout všechny položky do \"${ vaultName }\"?"
-      ],
       "Move all items?": [
         "Přesunout všechny položky?"
       ],
@@ -5400,6 +5403,9 @@
       ],
       "Shared via": [
         "Sdíleno pomocí"
+      ],
+      "Something went wrong": [
+        "Něco se pokazilo"
       ],
       "SPF (Optional)": [
         "SPF (volitelné)"

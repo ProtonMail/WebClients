@@ -751,6 +751,9 @@
       "Trash": [
         "Sampah"
       ],
+      "Try again": [
+        "Coba lagi"
+      ],
       "Try again.": [
         "Coba lagi."
       ],
@@ -2198,9 +2201,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
       ],
       "Moving items": [
         "Memindahkan item"
@@ -4985,9 +4985,6 @@
       "Move ${ trashedItemsCount } item to trash?": [
         "Pindahkan ${ trashedItemsCount } item ke sampah?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Pindahkan semua item ke \"${ vaultName }\"?"
-      ],
       "MX record": [
         "Rekaman MX"
       ],
@@ -5137,6 +5134,9 @@
       ],
       "Shared via": [
         "Dibagikan via"
+      ],
+      "Something went wrong": [
+        "Terjadi kesalahan"
       ],
       "SPF (Optional)": [
         "SPF (Opsional)"
