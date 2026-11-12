@@ -1,11 +1,13 @@
-import { renderHook } from '@testing-library/react';
+import { renderHook, waitFor } from '@testing-library/react';
 
 import { isNativeAuthBridgeAvailable, triggerNativeAccountAction } from '../remote/nativeAuthBridgeHelpers';
+import { clearGenerationRecoveryOnLogout } from '../services/generation/recovery';
 import { useLumoAuthAction } from './useLumoAuthAction';
 import { useLumoFlags } from './useLumoFlags';
 
 jest.mock('../remote/nativeAuthBridgeHelpers');
 jest.mock('./useLumoFlags');
+jest.mock('../services/generation/recovery');
 
 const mockedUseLumoFlags = useLumoFlags as jest.Mock;
 const mockedIsBridgeAvailable = isNativeAuthBridgeAvailable as jest.Mock;
@@ -106,4 +108,19 @@ describe('useLumoAuthAction', () => {
 
         expect(triggerNativeAccountAction).not.toHaveBeenCalled();
     });
+});
+
+it('clears recovery before handing native logout to the app', async () => {
+    let clear!: () => void;
+    jest.mocked(clearGenerationRecoveryOnLogout).mockReturnValue(
+        new Promise((resolve) => {
+            clear = resolve;
+        })
+    );
+    const { result } = setup({ userAgent: ANDROID_UA, android: true });
+    result.current.trigger('signout');
+    expect(clearGenerationRecoveryOnLogout).toHaveBeenCalledTimes(1);
+    expect(triggerNativeAccountAction).not.toHaveBeenCalled();
+    clear();
+    await waitFor(() => expect(triggerNativeAccountAction).toHaveBeenCalledWith('SignOut'));
 });

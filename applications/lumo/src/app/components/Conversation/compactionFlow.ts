@@ -6,7 +6,11 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { askUserQuestionsToolExecutor } from '../../features/client-tools/askUserQuestionsTool/askUserQuestionsTool';
 import { createScheduleToolExecutor } from '../../features/client-tools/createScheduleTool/createScheduleTool';
-import type { RetrievalContext, RetrievalToolExecutor } from '../../features/client-tools/retrievalTool/retrievalTool';
+import type {
+    RetrievalContext,
+    RetrievalExecutionState,
+    RetrievalToolExecutor,
+} from '../../features/client-tools/retrievalTool/retrievalTool';
 import { createRetrievalToolExecutor } from '../../features/client-tools/retrievalTool/retrievalTool';
 import type { DesktopConnectorState } from '../../features/skills/connectorMatching';
 import { getSkillLookupPool } from '../../features/skills/skillSelection';
@@ -52,7 +56,8 @@ import { createArtifactToolExecutor } from './artifact/createArtifactTool';
 import type { ArtifactToolMode } from './helper';
 
 /** Options forwarded to sendMessageWithRedux, minus the per-attempt identifiers we manage here. */
-type ForwardedSendOptions = AssistantCallOptions & {
+export type ForwardedSendOptions = AssistantCallOptions & {
+    enableGenerationRecovery?: boolean;
     config?: Partial<LumoApiClientConfig>;
     generateTitle?: boolean;
     errorHandler?: (message: GenerationResponseMessage, conversationId: string) => any;
@@ -68,6 +73,8 @@ type ForwardedSendOptions = AssistantCallOptions & {
     skillTools?: SkillToolHandles;
     /** Registers search_knowledge and read_knowledge over this scope. */
     retrievalTools?: RetrievalContext;
+    retrievalExecutionState?: RetrievalExecutionState;
+    getRetrievalExecutionState?: () => RetrievalExecutionState;
 };
 
 export type SkillToolHandles = {
@@ -138,7 +145,7 @@ const compactionsInFlight = new Map<ConversationId, Promise<unknown>>();
  * Client-side tools for a send. Artifact and Lumo Desktop connectors each have their own
  * {@link ClientToolExecutor}; compose them so enabling create_artifact does not replace desktop tools.
  */
-function resolveClientToolExecutor(
+export function resolveClientToolExecutor(
     sendOptions: ForwardedSendOptions,
     dispatch: LumoDispatch,
     getSkillLookupPool: () => string[],
@@ -184,10 +191,13 @@ function resolveClientToolExecutor(
     }
 
     if (sendOptions.retrievalTools) {
-        retrieval = createRetrievalToolExecutor({
-            ...sendOptions.retrievalTools,
-            getVisibleMessageIds: getVisibleMessageIds ?? sendOptions.retrievalTools.getVisibleMessageIds,
-        });
+        retrieval = createRetrievalToolExecutor(
+            {
+                ...sendOptions.retrievalTools,
+                getVisibleMessageIds: getVisibleMessageIds ?? sendOptions.retrievalTools.getVisibleMessageIds,
+            },
+            sendOptions.retrievalExecutionState
+        );
         executors.push(retrieval);
     }
 
@@ -469,6 +479,11 @@ export function runGenerationWithCompaction(params: GenerationWithCompactionPara
                     const result = await dispatch(
                         sendMessageWithRedux(api, turns, {
                             ...sendOptions,
+                            retrievalTools: sendOptions.retrievalTools && {
+                                ...sendOptions.retrievalTools,
+                                getVisibleMessageIds,
+                            },
+                            getRetrievalExecutionState: retrieval?.getRecoveryState,
                             clientToolExecutor,
                             messageId: currentAssistantId,
                             conversationId,

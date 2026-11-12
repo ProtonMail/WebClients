@@ -99,13 +99,13 @@ const useComposerInput = ({
     );
 
     const handleSubmit = useCallback(() => {
-        if (isProcessingAttachment) {
+        if (isGenerating || isProcessingAttachment) {
             return;
         }
         if (value.trim() || canSubmitWithoutText) {
             onSubmitCallback(value);
         }
-    }, [isProcessingAttachment, value, onSubmitCallback, canSubmitWithoutText]);
+    }, [isGenerating, isProcessingAttachment, value, onSubmitCallback, canSubmitWithoutText]);
 
     const clear = useCallback(() => {
         setValue('');

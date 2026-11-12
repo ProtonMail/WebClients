@@ -8,7 +8,6 @@
  * - `data`: Full binary data for attachments (original file or HD image)
  * - `imagePreview`: Thumbnail preview data for image attachments
  */
-
 import type { AttachmentId, PdfPageImage } from '../types';
 
 interface AttachmentDataEntry {
@@ -19,12 +18,35 @@ interface AttachmentDataEntry {
 
 class AttachmentDataCache {
     private cache = new Map<AttachmentId, AttachmentDataEntry>();
+    private retained = new Map<AttachmentId, { entry: AttachmentDataEntry; owners: Set<string> }>();
+
+    private getEntry(attachmentId: AttachmentId): AttachmentDataEntry | undefined {
+        return this.cache.get(attachmentId) ?? this.retained.get(attachmentId)?.entry;
+    }
+
+    retain(attachmentId: AttachmentId, owner: string): void {
+        const entry = this.getEntry(attachmentId);
+        if (entry === undefined) {
+            return;
+        }
+        const retained = this.retained.get(attachmentId) ?? { entry, owners: new Set<string>() };
+        retained.owners.add(owner);
+        this.retained.set(attachmentId, retained);
+    }
+
+    release(attachmentId: AttachmentId, owner: string): void {
+        const retained = this.retained.get(attachmentId);
+        retained?.owners.delete(owner);
+        if (retained?.owners.size === 0) {
+            this.retained.delete(attachmentId);
+        }
+    }
 
     /**
      * Store attachment data (full binary content)
      */
     setData(attachmentId: AttachmentId, data: Uint8Array<ArrayBuffer>): void {
-        const entry = this.cache.get(attachmentId) || {};
+        const entry = this.getEntry(attachmentId) ?? {};
         entry.data = data;
         this.cache.set(attachmentId, entry);
     }
@@ -33,14 +55,14 @@ class AttachmentDataCache {
      * Get attachment data (full binary content)
      */
     getData(attachmentId: AttachmentId): Uint8Array<ArrayBuffer> | undefined {
-        return this.cache.get(attachmentId)?.data;
+        return this.getEntry(attachmentId)?.data;
     }
 
     /**
      * Store attachment image preview (thumbnail)
      */
     setImagePreview(attachmentId: AttachmentId, imagePreview: Uint8Array<ArrayBuffer>): void {
-        const entry = this.cache.get(attachmentId) || {};
+        const entry = this.getEntry(attachmentId) ?? {};
         entry.imagePreview = imagePreview;
         this.cache.set(attachmentId, entry);
     }
@@ -49,14 +71,14 @@ class AttachmentDataCache {
      * Get attachment image preview (thumbnail)
      */
     getImagePreview(attachmentId: AttachmentId): Uint8Array<ArrayBuffer> | undefined {
-        return this.cache.get(attachmentId)?.imagePreview;
+        return this.getEntry(attachmentId)?.imagePreview;
     }
 
     /**
      * Store the rendered pages of a PDF attachment
      */
     setPageImages(attachmentId: AttachmentId, pageImages: PdfPageImage[]): void {
-        const entry = this.cache.get(attachmentId) || {};
+        const entry = this.getEntry(attachmentId) ?? {};
         entry.pageImages = pageImages;
         this.cache.set(attachmentId, entry);
     }
@@ -65,21 +87,21 @@ class AttachmentDataCache {
      * Get the rendered pages of a PDF attachment
      */
     getPageImages(attachmentId: AttachmentId): PdfPageImage[] | undefined {
-        return this.cache.get(attachmentId)?.pageImages;
+        return this.getEntry(attachmentId)?.pageImages;
     }
 
     /**
      * Check if the attachment has data cached
      */
     hasData(attachmentId: AttachmentId): boolean {
-        return !!this.cache.get(attachmentId)?.data;
+        return !!this.getEntry(attachmentId)?.data;
     }
 
     /**
      * Check if the attachment has image preview cached
      */
     hasImagePreview(attachmentId: AttachmentId): boolean {
-        return !!this.cache.get(attachmentId)?.imagePreview;
+        return !!this.getEntry(attachmentId)?.imagePreview;
     }
 
     /**
@@ -94,14 +116,21 @@ class AttachmentDataCache {
      */
     clear(): void {
         this.cache.clear();
+        this.retained.clear();
     }
 
     /**
      * Get cache statistics (for debugging)
      */
     getStats(): { size: number; totalBytes: number } {
+        const entries = new Map(this.cache);
+        for (const [id, retained] of this.retained) {
+            if (!entries.has(id)) {
+                entries.set(id, retained.entry);
+            }
+        }
         let totalBytes = 0;
-        this.cache.forEach((entry) => {
+        entries.forEach((entry) => {
             if (entry.data) {
                 totalBytes += entry.data.byteLength;
             }
@@ -113,7 +142,7 @@ class AttachmentDataCache {
             });
         });
         return {
-            size: this.cache.size,
+            size: entries.size,
             totalBytes,
         };
     }

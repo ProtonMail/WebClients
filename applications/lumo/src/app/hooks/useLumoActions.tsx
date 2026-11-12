@@ -2,6 +2,7 @@ import { useRef } from 'react';
 
 import { useApi } from '@proton/app-context/useApi';
 import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
+import { GenerationInterruptedError, ToolRetryConfirmationRequiredError } from '@proton/lumo-api-client/core/recovery';
 import type { User } from '@proton/shared/lib/interfaces/User';
 
 import { buildArtifactActionLlmPrompt } from '../components/Conversation/artifact/artifactActionPrompts';
@@ -141,6 +142,7 @@ export const useLumoActions = ({
     const {
         answerNow: ffAnswerNow,
         smoothRendering: ffSmoothRendering,
+        resumableGeneration: ffResumableGeneration,
         externalTools: ffExternalTools,
         imageTools: ffImageTools,
         memory: ffMemory,
@@ -336,6 +338,7 @@ export const useLumoActions = ({
                     enableAskUserQuestionsTool: ffAskUserQuestionsTool,
                     enableRetrievalTools: ffRetrievalTools,
                     enableCreateScheduleTool: ffSchedules && ffCreateScheduleTool && isDesktopEnvironment(),
+                    enableGenerationRecovery: ffResumableGeneration,
                     enableExternalTools,
                     enableImageTools,
                     enableReasoning: isThinkingEnabled,
@@ -437,6 +440,7 @@ export const useLumoActions = ({
                     enableAskUserQuestionsTool: ffAskUserQuestionsTool,
                     enableRetrievalTools: ffRetrievalTools,
                     enableCreateScheduleTool: ffSchedules && ffCreateScheduleTool && isDesktopEnvironment(),
+                    enableGenerationRecovery: ffResumableGeneration,
                     // Pin the freshly created assistant message so the regenerated answer is the
                     // one displayed. Without this, the new assistant is added as a hidden sibling
                     // of the failed attempt and the retry does nothing.
@@ -514,6 +518,7 @@ export const useLumoActions = ({
                     enableAskUserQuestionsTool: ffAskUserQuestionsTool,
                     enableRetrievalTools: ffRetrievalTools,
                     enableCreateScheduleTool: ffSchedules && ffCreateScheduleTool && isDesktopEnvironment(),
+                    enableGenerationRecovery: ffResumableGeneration,
                     isEdit: true,
                     editOriginalContent: originalMessage.content,
                     updateSibling: preferSibling,
@@ -624,6 +629,7 @@ export const useLumoActions = ({
                     enableAskUserQuestionsTool: ffAskUserQuestionsTool,
                     enableRetrievalTools: ffRetrievalTools,
                     enableCreateScheduleTool: ffSchedules && ffCreateScheduleTool && isDesktopEnvironment(),
+                    enableGenerationRecovery: ffResumableGeneration,
                     enableExternalTools,
                     enableImageTools,
                     enableReasoning: isThinkingEnabled,
@@ -684,7 +690,7 @@ export const useLumoActions = ({
         // resolve to the right conversation, and so the generation outlives this component.
         let abortController: AbortController;
         try {
-            abortController = generationRegistry.start(finalConversationId);
+            abortController = await generationRegistry.startExclusive(finalConversationId);
         } catch (error: any) {
             if (error?.message === OPERATION_IN_PROGRESS_MESSAGE) {
                 return;
@@ -736,6 +742,9 @@ export const useLumoActions = ({
                 );
             }
         } catch (error: any) {
+            if (error instanceof GenerationInterruptedError || error instanceof ToolRetryConfirmationRequiredError) {
+                return;
+            }
             if (isAbortError(error)) {
                 dispatch((d, getState) =>
                     cancelConversationGeneration(d, getState, finalConversationId, { skipSignalAbort: true })
@@ -744,7 +753,7 @@ export const useLumoActions = ({
                 handleActionError(error, errorContext);
             }
         } finally {
-            generationRegistry.finish(finalConversationId);
+            generationRegistry.finish(finalConversationId, abortController);
         }
     };
 
@@ -931,7 +940,7 @@ export const useLumoActions = ({
                     return;
                 }
 
-                const abortController = generationRegistry.start(finalConversationId);
+                const abortController = await generationRegistry.startExclusive(finalConversationId);
                 const { signal } = abortController;
 
                 try {
@@ -943,9 +952,15 @@ export const useLumoActions = ({
                         error.actionParams.isWebSearchButtonToggled
                     );
                 } finally {
-                    generationRegistry.finish(finalConversationId);
+                    generationRegistry.finish(finalConversationId, abortController);
                 }
             } catch (retryError) {
+                if (
+                    retryError instanceof GenerationInterruptedError ||
+                    retryError instanceof ToolRetryConfirmationRequiredError
+                ) {
+                    return;
+                }
                 const errorContext: ErrorContext = {
                     actionType: 'send',
                     conversationId: error.conversationId,

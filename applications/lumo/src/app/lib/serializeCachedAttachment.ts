@@ -8,8 +8,8 @@ export function serializeCachedAttachment(attachment: Attachment, spaceDek: AesG
     return serializeAttachment(
         {
             ...attachment,
-            data: attachmentDataCache.getData(attachment.id),
-            imagePreview: attachmentDataCache.getImagePreview(attachment.id),
+            data: attachmentDataCache.getData(attachment.id) ?? attachment.data,
+            imagePreview: attachmentDataCache.getImagePreview(attachment.id) ?? attachment.imagePreview,
         },
         spaceDek
     );

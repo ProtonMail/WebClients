@@ -165,7 +165,7 @@ const AssistantActionToolbar = ({
                                     onRetryPanelToggle(message.id, true, retryButtonRef.current);
                                 }
                             }}
-                            disabled={!isFinishedGenerating || isChatLimitBlocked}
+                            disabled={isGenerating || !isFinishedGenerating || isChatLimitBlocked}
                         />
                     </div>
                 </>

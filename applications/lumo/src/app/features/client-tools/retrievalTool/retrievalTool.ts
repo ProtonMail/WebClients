@@ -2,6 +2,7 @@ import type { ClientToolExecutor, ClientToolResult } from '@proton/lumo-api-clie
 import { languageCode } from '@proton/shared/lib/i18n';
 
 import { applyRetentionPolicy } from '../../../layouts/sidepanel/helpers';
+import { countPdfPages } from '../../../lib/attachments/pdfChangeMarkup';
 import { isImageAttachment } from '../../../llm/attachments';
 import type { LumoState } from '../../../redux/store';
 import { clearAnalysisProgress, setAnalysisProgress } from '../../../services/analysisProgressStore';
@@ -20,6 +21,7 @@ import {
     isTextBlock,
 } from '../../../types';
 import type { RetrievalExclusions } from './exclusions';
+import { type AskModel, analyzeFile } from './fileAnalysis';
 import {
     MAX_MENTIONED_FILES,
     type NamedFile,
@@ -27,16 +29,14 @@ import {
     findMentionedFiles,
     normalizeFileName,
 } from './fileNames';
-import { countPdfPages } from '../../../lib/attachments/pdfChangeMarkup';
-import { type AskModel, analyzeFile } from './fileAnalysis';
 import { snippetAround, splitIntoPages } from './pages';
 import {
     ANALYZE_FILE_TOOL_NAME,
     DEFAULT_RESULTS,
-    MAX_GOAL_CHARS,
     MAX_FILE_IDS,
-    MAX_QUERY_CHARS,
+    MAX_GOAL_CHARS,
     MAX_PAGES_PER_READ,
+    MAX_QUERY_CHARS,
     MAX_RESULTS,
     READ_KNOWLEDGE_TOOL_NAME,
     RETRIEVAL_SCOPES,
@@ -299,16 +299,25 @@ export type RetrievalUsage = {
     readLimitHit: boolean;
 };
 
-export type RetrievalToolExecutor = ClientToolExecutor & { getUsage: () => RetrievalUsage };
+export type RetrievalExecutionState = { calls: number; reads: number; analyses?: number; readChars?: number };
 
-export const createRetrievalToolExecutor = (context: RetrievalContext): RetrievalToolExecutor => {
+export type RetrievalToolExecutor = ClientToolExecutor & {
+    getUsage: () => RetrievalUsage;
+    getRecoveryState: () => RetrievalExecutionState;
+};
+
+export const createRetrievalToolExecutor = (
+    context: RetrievalContext,
+    recovery?: RetrievalExecutionState
+): RetrievalToolExecutor => {
     const tools = [searchKnowledgeTool, readKnowledgeTool, ...(context.analyze ? [analyzeFileTool] : [])];
     const toolNames = new Set(tools.map((tool) => tool.function.name));
     const pagesById = new Map<string, string[]>();
-    let calls = 0;
-    let analyses = 0;
-    let reads = 0;
-    let readChars = 0;
+    let calls = recovery?.calls ?? 0;
+    let analyses = recovery?.analyses ?? 0;
+    let reads = recovery?.reads ?? 0;
+    let readChars = recovery?.readChars ?? 0;
+
     const usage: RetrievalUsage = {
         searches: 0,
         emptySearches: 0,
@@ -750,7 +759,9 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): Retrieva
             fileId = resolved.fileId;
         }
         if (!fileId) {
-            return errorResult('arguments: expected one of {"file_id": "<id>"} or {"file_name": "<name>"}, and a "goal"');
+            return errorResult(
+                'arguments: expected one of {"file_id": "<id>"} or {"file_name": "<name>"}, and a "goal"'
+            );
         }
         const file = await lookupFile(fileId);
         if (!file) {
@@ -852,6 +863,9 @@ export const createRetrievalToolExecutor = (context: RetrievalContext): Retrieva
 
     return {
         getUsage: () => ({ ...usage }),
+        getRecoveryState: () => {
+            return { calls, reads, analyses, readChars };
+        },
         getClientTools: async () => tools,
         canExecute: (name) => toolNames.has(name),
         execute: async (toolCalls) => {

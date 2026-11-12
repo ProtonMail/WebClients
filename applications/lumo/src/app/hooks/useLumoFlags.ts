@@ -81,6 +81,7 @@ export const useLumoFlags = () => {
     const createScheduleTool = useFlag('LumoCreateScheduleTool');
     const moveToProject = useFlag('LumoMoveToProject');
     const skills = customAgents && customize;
+    const resumableGeneration = useFlag('LumoResumableGeneration');
 
     return {
         memory,
@@ -121,5 +122,6 @@ export const useLumoFlags = () => {
         schedules,
         createScheduleTool,
         moveToProject,
+        resumableGeneration,
     };
 };

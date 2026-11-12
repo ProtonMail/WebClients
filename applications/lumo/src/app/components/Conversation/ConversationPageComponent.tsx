@@ -7,6 +7,8 @@ import { LUMO_FULL_APP_TITLE } from '../../constants';
 import { useSafeUser } from '../../contexts/SafeUserContext';
 import type { RouteParams } from '../../entrypoint/auth/RouterContainer';
 import { useDesktopQuickAsk, useQueryParam, useSkillParam } from '../../hooks';
+import { useGenerationInProgress } from '../../hooks/useGenerationInProgress';
+import { useGenerationRecovery } from '../../hooks/useGenerationRecovery';
 import { useLumoActions } from '../../hooks/useLumoActions';
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
@@ -89,8 +91,13 @@ const ConversationPageComponentInner = () => {
     // ** Derived values **
     const isProcessingAttachment = provisionalAttachments.some((a) => a.processing);
     const reduxLoadedFromIdb = useLumoSelector((state) => state.initialization.reduxLoadedFromIdb);
+    const { modal: recoveryModal, hydrated: recoveryHydrated } = useGenerationRecovery(
+        curConversationId,
+        isGuest || reduxLoadedFromIdb
+    );
     const remoteWasSynced = conversations !== EMPTY_CONVERSATION_MAP && reduxLoadedFromIdb;
-    const isGenerating = conversation?.status && conversation.status === ConversationStatus.GENERATING;
+    const generationInProgress = useGenerationInProgress(curConversationId);
+    const isGenerating = generationInProgress || conversation?.status === ConversationStatus.GENERATING;
     const pulledConversationIdRef = useRef<ConversationId | undefined>(undefined);
     const pulledAfterGenerationRef = useRef(false);
 
@@ -160,7 +167,7 @@ const ConversationPageComponentInner = () => {
     //     - This sync only happens in auth mode, since guests don't have remote persistence.
     useEffect(
         () => {
-            if (!curConversationId) return;
+            if (!curConversationId || !recoveryHydrated) return;
             if (isGuest) {
                 const conversationExistsLocally = conversation !== undefined;
                 if (!conversationExistsLocally) {
@@ -218,63 +225,66 @@ const ConversationPageComponentInner = () => {
         // (remoteWasSynced will transition from false to true).
         // It is deliberately not re-ran when the conversation object changes (e.g. new title) or
         // when the messageMap changes (e.g. new message posted).
-        [dispatch, curConversationId, remoteWasSynced, conversation, isGenerating, navigate, isGuest]
+        [dispatch, curConversationId, remoteWasSynced, conversation, isGenerating, navigate, isGuest, recoveryHydrated]
     );
 
     // ** Main layout **
     return (
-        <ConversationActionsProvider
-            handleSendMessage={handleSendMessage}
-            handleSendArtifactAction={handleSendArtifactAction}
-            handleSendAskUserQuestionsToolResponse={handleSendAskUserQuestionsToolResponse}
-            handleSendCreateScheduleToolResponse={handleSendCreateScheduleToolResponse}
-            handleSaveManualArtifactEdit={handleSaveManualArtifactEdit}
-            handleAbort={handleAbort}
-            handleEditMessage={handleEditMessage}
-            handleRegenerateMessage={handleRegenerateMessage}
-            getSiblingInfo={getSiblingInfo}
-            handleRetryGeneration={handleRetryGeneration}
-            messageChain={messageChain}
-            messageChainRef={messageChainRef}
-        >
-            <div className="conversation-page-component relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto rounded-xl">
-                {/* <Header conversation={conversation} /> */}
-                {!curConversationId && isLibraryRoute && (
-                    <Suspense fallback={<ConversationSkeleton />}>
-                        <LibraryView
+        <>
+            {recoveryModal}
+            <ConversationActionsProvider
+                handleSendMessage={handleSendMessage}
+                handleSendArtifactAction={handleSendArtifactAction}
+                handleSendAskUserQuestionsToolResponse={handleSendAskUserQuestionsToolResponse}
+                handleSendCreateScheduleToolResponse={handleSendCreateScheduleToolResponse}
+                handleSaveManualArtifactEdit={handleSaveManualArtifactEdit}
+                handleAbort={handleAbort}
+                handleEditMessage={handleEditMessage}
+                handleRegenerateMessage={handleRegenerateMessage}
+                getSiblingInfo={getSiblingInfo}
+                handleRetryGeneration={handleRetryGeneration}
+                messageChain={messageChain}
+                messageChainRef={messageChainRef}
+            >
+                <div className="conversation-page-component relative flex-1 min-h-0 flex flex-column *:min-size-auto flex-nowrap reset4print overflow-auto rounded-xl">
+                    {/* <Header conversation={conversation} /> */}
+                    {!curConversationId && isLibraryRoute && (
+                        <Suspense fallback={<ConversationSkeleton />}>
+                            <LibraryView
+                                isProcessingAttachment={isProcessingAttachment}
+                                prefillQuery={prefillQuery || undefined}
+                            />
+                        </Suspense>
+                    )}
+                    {!curConversationId && isGalleryRoute && (
+                        <Suspense fallback={<ConversationSkeleton />}>
+                            <GalleryView
+                                isProcessingAttachment={isProcessingAttachment}
+                                prefillQuery={prefillQuery || undefined}
+                            />
+                        </Suspense>
+                    )}
+                    {!curConversationId && !isLibraryRoute && !isGalleryRoute && (
+                        <MainContainer
                             isProcessingAttachment={isProcessingAttachment}
+                            initialQuery={initialQuery || undefined}
                             prefillQuery={prefillQuery || undefined}
                         />
-                    </Suspense>
-                )}
-                {!curConversationId && isGalleryRoute && (
-                    <Suspense fallback={<ConversationSkeleton />}>
-                        <GalleryView
+                    )}
+                    {curConversationId && isLoading && <ConversationSkeleton />}
+                    {curConversationId && !isLoading && (
+                        <ConversationComponent
+                            key={curConversationId}
+                            conversation={conversation}
+                            isGenerating={isGenerating}
                             isProcessingAttachment={isProcessingAttachment}
-                            prefillQuery={prefillQuery || undefined}
+                            initialQuery={initialQuery || undefined}
+                            prefillQuery={pendingPrefill || undefined}
                         />
-                    </Suspense>
-                )}
-                {!curConversationId && !isLibraryRoute && !isGalleryRoute && (
-                    <MainContainer
-                        isProcessingAttachment={isProcessingAttachment}
-                        initialQuery={initialQuery || undefined}
-                        prefillQuery={prefillQuery || undefined}
-                    />
-                )}
-                {curConversationId && isLoading && <ConversationSkeleton />}
-                {curConversationId && !isLoading && (
-                    <ConversationComponent
-                        key={curConversationId}
-                        conversation={conversation}
-                        isGenerating={isGenerating}
-                        isProcessingAttachment={isProcessingAttachment}
-                        initialQuery={initialQuery || undefined}
-                        prefillQuery={pendingPrefill || undefined}
-                    />
-                )}
-            </div>
-        </ConversationActionsProvider>
+                    )}
+                </div>
+            </ConversationActionsProvider>
+        </>
     );
 };
 

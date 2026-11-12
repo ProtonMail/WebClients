@@ -3,8 +3,10 @@ import { selectMessagesByConversationId } from '../../redux/selectors';
 import { updateConversationStatus } from '../../redux/slices/core/conversations';
 import { deleteMessage, finishMessage } from '../../redux/slices/core/messages';
 import type { LumoDispatch, LumoState } from '../../redux/store';
+import { extraThunkArguments } from '../../redux/thunk';
 import { type ConversationId, ConversationStatus, Role, isCompactionMessage } from '../../types';
 import { generationRegistry } from './generationRegistry';
+import { discardGenerationRecovery } from './recovery';
 
 export function isAbortError(error: unknown): boolean {
     if (!(error instanceof Error)) {
@@ -37,6 +39,9 @@ export function cancelConversationGeneration(
 ): void {
     if (!options.skipSignalAbort) {
         generationRegistry.abort(conversationId);
+        if (!generationRegistry.isInProgress(conversationId) && extraThunkArguments.api) {
+            void discardGenerationRecovery(extraThunkArguments.api, conversationId).catch(() => undefined);
+        }
     }
 
     const state = getState();

@@ -27,7 +27,7 @@ const createState = (): LumoState =>
         ghostChat: { isGhostChatMode: false },
     }) as LumoState;
 
-const runPushMessage = async (idbMessage: SerializedMessage | undefined) => {
+const runPushMessage = async (idbMessage: SerializedMessage | undefined, state = createState()) => {
     const dispatched: UnknownAction[] = [];
     const dbApi = {
         getMessageById: jest.fn(async () => idbMessage),
@@ -44,7 +44,7 @@ const runPushMessage = async (idbMessage: SerializedMessage | undefined) => {
             dispatch: (action: UnknownAction) => {
                 dispatched.push(action);
             },
-            getState: () => createState(),
+            getState: () => state,
         },
         pushMessage,
         { payload: { id: messageId } }
@@ -70,5 +70,31 @@ describe('pushMessage saga', () => {
 
         expect(dbApi.updateMessage).not.toHaveBeenCalled();
         expect(dispatched).toEqual([pushMessageNoop({ id: messageId })]);
+    });
+});
+
+describe('background message persistence in ghost mode', () => {
+    it('processes a normal conversation while a ghost chat is visible', async () => {
+        const state = {
+            ...createState(),
+            ghostChat: { isGhostChatMode: true },
+            conversations: { [conversationId]: { ghost: false } },
+        } as unknown as LumoState;
+        const tombstone = createDeletedDirtyTombstone();
+        const { dispatched, dbApi } = await runPushMessage(tombstone, state);
+        expect(dbApi.updateMessage).toHaveBeenCalledWith(tombstone, { dirty: false });
+        expect(dispatched).toEqual([deleteMessage(messageId), pushMessageSuccess({ id: messageId })]);
+    });
+
+    it('never persists a ghost conversation while a normal chat is visible', async () => {
+        const state = {
+            ...createState(),
+            messages: { [messageId]: { conversationId } },
+            conversations: { [conversationId]: { ghost: true } },
+        } as unknown as LumoState;
+        const { dispatched, dbApi } = await runPushMessage(undefined, state);
+        expect(dbApi.getMessageById).not.toHaveBeenCalled();
+        expect(dbApi.updateMessage).not.toHaveBeenCalled();
+        expect(dispatched).toEqual([pushMessageSuccess({ id: messageId })]);
     });
 });

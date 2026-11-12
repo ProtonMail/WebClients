@@ -244,7 +244,7 @@ export class LumoApi {
     ): Promise<Response> {
         path = !path ? `/${resourceName}` : path.startsWith('/') ? path : `/${path}`;
         const url = `/api/lumo/v1${path}`;
-        console.log(`lumo api: http post ${url} <-`, resource);
+        console.log(`lumo api: http post ${url}`);
         const response = await fetch(url, {
             method: 'POST',
             headers: {

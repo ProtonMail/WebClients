@@ -23,7 +23,11 @@ import {
 import { createDesktopClientToolExecutor } from './desktop-tools';
 import { DEFAULT_LUMO_PUB_KEY, encryptTurns } from './encryption';
 import { RequestEncryptionParams } from './encryptionParams';
-import { LUMO_CHAT_ENDPOINT, callChatEndpoint } from './network';
+import { getTerminalTypeFromApiError } from './generation-terminal';
+import { LUMO_CHAT_ENDPOINT, callChatEndpoint, resumeChatEndpoint } from './network';
+import { GenerationInterruptedError, ToolRetryConfirmationRequiredError, newRecoveryState } from './recovery';
+import type { GenerationRecoveryState } from './recovery';
+import { makeRecoverableStream } from './recovery-stream';
 import { RequestBuilder } from './request-builder';
 import { extractTitleSourceText } from './title-generation';
 import { processToolFileResult } from './tool-files';
@@ -131,6 +135,8 @@ export class LumoApiClient {
             clientToolExecutor,
             featureFlags,
             clientType,
+            recovery: requestedRecovery,
+            resume,
         } = options;
         const { enableU2LEncryption, endpoint } = this.config;
 
@@ -154,7 +160,7 @@ export class LumoApiClient {
 
         const parallelTasks: Promise<void>[] = [];
 
-        if (titleSourceText !== null) {
+        if (titleSourceText !== null && !resume) {
             const titleTurns: Turn[] = [
                 { role: Role.User, content: titleSourceText },
                 { role: Role.Assistant, content: '' },
@@ -181,7 +187,7 @@ export class LumoApiClient {
             );
         }
 
-        if (enableSuggestedQuestions) {
+        if (enableSuggestedQuestions && !resume) {
             parallelTasks.push(
                 this.runTargetedGeneration(
                     api,
@@ -218,10 +224,57 @@ export class LumoApiClient {
             return chunkCallback?.(message);
         };
 
-        let currentTurns = turns;
+        let recovery = requestedRecovery;
+        let currentTurns = resume?.turns ?? turns;
+        let recoveryState = resume;
+        const saveCheckpoint = async (allowDisable = false): Promise<void> => {
+            if (!recovery || !recoveryState) {
+                return;
+            }
+            const result = await recovery.checkpoint(recoveryState, encryption);
+            if (result === 'disabled') {
+                if (!allowDisable) {
+                    throw new GenerationInterruptedError();
+                }
+                recovery = undefined;
+                recoveryState = undefined;
+            }
+        };
+        let interrupted = false;
         let finalStatus: Status = 'failed';
+        const firstRound = (resume?.round ?? 0) + (resume?.phase === 'ready' ? 1 : 0);
         try {
-            for (let rounds = 0; rounds < MAX_CLIENT_TOOL_ROUNDS; rounds++) {
+            for (let rounds = firstRound; rounds < MAX_CLIENT_TOOL_ROUNDS; rounds++) {
+                if (this.isGenerationStopped(signal)) {
+                    finalStatus = 'succeeded';
+                    break;
+                }
+                const target = resume?.target ?? 'message';
+                if (recovery && (!recoveryState || recoveryState.phase === 'ready')) {
+                    const allowDisable = recoveryState === undefined && resume === undefined;
+                    const previousJobs = recoveryState
+                        ? [
+                              ...(recoveryState.previousJobs ?? []),
+                              { jobId: recoveryState.jobId, token: recoveryState.token },
+                          ]
+                        : [];
+                    recoveryState = { ...newRecoveryState(currentTurns, target), previousJobs, round: rounds };
+                    await saveCheckpoint(allowDisable);
+                }
+                if (recoveryState?.phase === 'tool-running') {
+                    const retryConfirmed = await recovery?.confirmToolRetry?.();
+                    if (this.isGenerationStopped(signal)) {
+                        finalStatus = 'succeeded';
+                        break;
+                    }
+                    if (!retryConfirmed) {
+                        throw new ToolRetryConfirmationRequiredError();
+                    }
+                }
+                if (recoveryState?.phase === 'completed') {
+                    finalStatus = 'succeeded';
+                    break;
+                }
                 const plaintextRequest = await this.preparePlaintextGenerationRequest(
                     currentTurns,
                     {
@@ -253,27 +306,48 @@ export class LumoApiClient {
 
                 const responseContext: ResponseContext = this.initializeResponseContext(requestContext);
 
-                const { pendingClientToolCalls, status } = await this.runSseReceiveLoop(
-                    api,
-                    request,
-                    endpoint,
-                    signal,
-                    encryption,
-                    responseContext,
-                    roundChunkCallback,
-                    undefined,
-                    {
-                        target: 'message',
-                        modelTier,
-                        enableAnswerNow,
-                        responseFormat,
-                        clientTools,
-                        serverTools,
-                        featureFlags,
-                        clientType,
-                    }
-                );
+                const toolCheckpoint = recoveryState && ['tool-pending', 'tool-running'].includes(recoveryState.phase);
+                const { pendingClientToolCalls, status } = toolCheckpoint
+                    ? { pendingClientToolCalls: recoveryState?.pendingCalls ?? [], status: 'succeeded' as Status }
+                    : await this.runSseReceiveLoop(
+                          api,
+                          request,
+                          endpoint,
+                          signal,
+                          encryption,
+                          responseContext,
+                          roundChunkCallback,
+                          undefined,
+                          {
+                              target,
+                              modelTier,
+                              enableAnswerNow,
+                              responseFormat,
+                              clientTools,
+                              serverTools,
+                              featureFlags,
+                              clientType,
+                              recoveryState,
+                              resumeStream: Boolean(resume?.phase === 'streaming' && rounds === (resume.round ?? 0)),
+                          }
+                      );
                 finalStatus = status;
+
+                if (recoveryState && recovery && !toolCheckpoint) {
+                    currentTurns = this.withAssistantReply(currentTurns, roundReply);
+                    roundReply = '';
+                    recoveryState = {
+                        ...recoveryState,
+                        turns: currentTurns,
+                        pendingCalls: pendingClientToolCalls,
+                        phase:
+                            resolvedClientToolExecutor &&
+                            filterClientToolCalls(pendingClientToolCalls, resolvedClientToolExecutor).length > 0
+                                ? 'tool-pending'
+                                : 'completed',
+                    };
+                    await saveCheckpoint();
+                }
 
                 if (!resolvedClientToolExecutor) {
                     break;
@@ -284,6 +358,14 @@ export class LumoApiClient {
                     break;
                 }
 
+                if (recovery && recoveryState) {
+                    recoveryState = { ...recoveryState, phase: 'tool-running' };
+                    await saveCheckpoint();
+                }
+                if (this.isGenerationStopped(signal)) {
+                    finalStatus = 'succeeded';
+                    break;
+                }
                 const toolRound = await this.appendClientToolResults(
                     this.withAssistantReply(currentTurns, roundReply),
                     executableCalls,
@@ -292,11 +374,25 @@ export class LumoApiClient {
                 );
                 currentTurns = toolRound.turns;
                 roundReply = '';
+                if (recovery && recoveryState) {
+                    recoveryState = {
+                        ...recoveryState,
+                        turns: currentTurns,
+                        phase: toolRound.endTurn || this.isGenerationStopped(signal) ? 'completed' : 'ready',
+                        pendingCalls: undefined,
+                    };
+                    await saveCheckpoint();
+                }
 
                 // Stop if a tool ended the turn or the user cancelled generation.
-                if (toolRound.endTurn || signal?.aborted) {
+                if (toolRound.endTurn || this.isGenerationStopped(signal)) {
                     break;
                 }
+            }
+
+            if (this.isGenerationStopped(signal) && recovery && recoveryState) {
+                recoveryState = { ...recoveryState, turns: currentTurns, phase: 'completed', pendingCalls: undefined };
+                await saveCheckpoint();
             }
 
             if (chunkCallback) {
@@ -305,10 +401,12 @@ export class LumoApiClient {
 
             await Promise.all(parallelTasks);
         } catch (error) {
+            interrupted =
+                error instanceof GenerationInterruptedError || error instanceof ToolRetryConfirmationRequiredError;
             finalStatus = 'failed';
             throw error;
         } finally {
-            if (finishCallback) {
+            if (finishCallback && !interrupted) {
                 await finishCallback(finalStatus);
             }
         }
@@ -316,6 +414,13 @@ export class LumoApiClient {
         const sentCount = this.stripTrailingEmptyAssistant(turns).length;
         const producedTurns = this.withAssistantReply(currentTurns, roundReply).slice(sentCount);
         return { status: finalStatus, turns: currentTurns, producedTurns };
+    }
+
+    private isGenerationStopped(signal: AbortSignal | undefined): boolean {
+        if (signal?.reason instanceof GenerationInterruptedError) {
+            throw signal.reason;
+        }
+        return signal?.aborted ?? false;
     }
 
     private async runSseReceiveLoop(
@@ -337,12 +442,14 @@ export class LumoApiClient {
             serverTools?: ToolName[];
             featureFlags?: AssistantCallOptions['featureFlags'];
             clientType?: LumoClientType;
+            recoveryState?: GenerationRecoveryState;
+            resumeStream?: boolean;
         } = {}
     ): Promise<{ pendingClientToolCalls: PendingClientToolCall[]; status: Status }> {
         const enableSmoothing = options.enableSmoothing ?? this.config.enableSmoothing;
         const target = options.target ?? 'message';
         const thisNotifyResponse = this.notifyResponse.bind(this);
-        const chunkCapture = makeChunkParserTransformStreamWithCapture(target);
+        const chunkCapture = makeChunkParserTransformStreamWithCapture(target, Boolean(options.recoveryState));
 
         // Final status will be changed to succeeded on success
         let finalStatus: Status = 'failed';
@@ -359,14 +466,27 @@ export class LumoApiClient {
             clientType: options.clientType,
         });
 
+        let terminalSeen = false;
+        let serverFailure = false;
         try {
-            const responseBody = await callChatEndpoint(api, postData, {
-                endpoint,
-                signal,
-            });
+            let responseBody: ReadableStream;
+            try {
+                responseBody =
+                    options.resumeStream && options.recoveryState
+                        ? await resumeChatEndpoint(api, options.recoveryState, signal)
+                        : await callChatEndpoint(api, postData, { endpoint, signal, recovery: options.recoveryState });
+            } catch (error) {
+                // Fetch rejects with TypeError when the connection drops before response headers.
+                // Limit this conversion to the HTTP call so callback errors still surface normally.
+                if (options.recoveryState && error instanceof TypeError) {
+                    throw new GenerationInterruptedError();
+                }
+                throw error;
+            }
 
             // Run the processing stream: this is the core logic
-            await responseBody
+            const stream = options.recoveryState ? makeRecoverableStream(responseBody) : responseBody;
+            await stream
                 .pipeThrough(makeAbortTransformStream(signal)) // deals with AbortSignal
                 .pipeThrough(makeUtf8DecodingTransformStream()) // bytes -> utf8
                 .pipeThrough(chunkCapture.stream) // utf8 -> chunk objects
@@ -376,7 +496,23 @@ export class LumoApiClient {
                 .pipeThrough(makeSmoothingTransformStream(enableSmoothing, signal))
                 // The signal must reach the sink too: once the body has closed, the smoothing buffer drains with
                 // no further bytes for the abort transform to catch.
-                .pipeTo(makeFinishSink(thisNotifyResponse, chunkCallback, responseContext), { signal }); // calls callbacks with final chunks
+                .pipeTo(
+                    makeFinishSink(
+                        thisNotifyResponse,
+                        async (chunk) => {
+                            terminalSeen ||= chunk.type === 'done';
+                            serverFailure ||= ['error', 'timeout', 'rejected', 'harmful', 'tool-error'].includes(
+                                chunk.type
+                            );
+                            await chunkCallback?.(chunk);
+                        },
+                        responseContext
+                    ),
+                    { signal }
+                );
+            if (options.recoveryState && !terminalSeen) {
+                throw new GenerationInterruptedError();
+            } // calls callbacks with final chunks
 
             // Stream is complete
             finalStatus = 'succeeded';
@@ -395,6 +531,10 @@ export class LumoApiClient {
             // Run response error interceptors
             await this.notifyResponseError(error, responseContext);
 
+            if (signal?.reason instanceof GenerationInterruptedError) {
+                throw signal.reason;
+            }
+
             // If the stop button was pressed, we finish gracefully
             if (error?.name === 'AbortError') {
                 console.warn('Generation aborted');
@@ -402,7 +542,15 @@ export class LumoApiClient {
                 return { pendingClientToolCalls: [], status: finalStatus };
             }
 
-            // Bubble up
+            const transportFailure =
+                error instanceof GenerationInterruptedError ||
+                error?.name === 'OfflineError' ||
+                error?.name === 'TimeoutError' ||
+                (options.resumeStream && error?.status === 429) ||
+                (error?.status >= 500 && getTerminalTypeFromApiError(error) === null);
+            if (options.recoveryState && !serverFailure && transportFailure) {
+                throw new GenerationInterruptedError();
+            }
             throw error;
         } finally {
             if (finishCallback) {

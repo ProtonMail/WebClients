@@ -76,7 +76,7 @@ export function createScheduleConversationRunner({
             guard,
             task.readOnlyConnectorIds
         );
-        const controller = generationRegistry.start(target.conversationId);
+        const controller = await generationRegistry.startExclusive(target.conversationId);
         const stop = () => controller.abort();
         context.signal.addEventListener('abort', stop, { once: true });
         const releaseBusy = busy.register();
@@ -142,7 +142,7 @@ export function createScheduleConversationRunner({
         } finally {
             releaseBusy();
             context.signal.removeEventListener('abort', stop);
-            generationRegistry.finish(target.conversationId);
+            generationRegistry.finish(target.conversationId, controller);
         }
         guard();
         const messageIds = Object.values(storage.store.getState().messages)
