@@ -772,6 +772,9 @@
       "Trash": [
         "回收站"
       ],
+      "Try again": [
+        "重试"
+      ],
       "Try again.": [
         "重试."
       ],
@@ -2090,9 +2093,6 @@
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "找到“OpenSSH 身份验证代理”，右键点击选择“属性”。"
       ],
-      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
-        "请在刚刚打开的浏览器窗口中完成登录。完成后，${ PASS_APP_NAME } 将自动继续。"
-      ],
       "Folder \"${ payload.folder.name }\" created": [
         "文件夹“${ payload.folder.name }”已创建"
       ],
@@ -2287,9 +2287,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "将项目移至其他保险库会清除其安全链接！"
       ],
       "Moving items": [
         "正在移动"
@@ -5155,9 +5152,6 @@
       "Move ${ trashedItemsCount } item to trash?": [
         "将 ${ trashedItemsCount } 项移动到回收站？"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "将所有项目移动到 \"${ vaultName }\"？"
-      ],
       "Move all items?": [
         "移动所有项目？"
       ],
@@ -5319,6 +5313,9 @@
       ],
       "Shared via": [
         "共享方式"
+      ],
+      "Something went wrong": [
+        "出了些问题"
       ],
       "SPF (Optional)": [
         "SPF (可选)"

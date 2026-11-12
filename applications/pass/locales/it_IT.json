@@ -544,6 +544,9 @@
       "Open platform selection dropdown": [
         "Menu a tendina per la selezione della piattaforma aperta"
       ],
+      "Open the browser again": [
+        "Riapri il browser"
+      ],
       "Organize vaults": [
         "Gestisci le casseforti"
       ],
@@ -709,6 +712,9 @@
       "Show more": [
         "Mostra di più"
       ],
+      "Sign in in the app instead": [
+        "Usa l'applicazione per accedere"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Accedi con ${ BRAND_NAME }"
       ],
@@ -754,6 +760,9 @@
       ],
       "Trash": [
         "Sposta nel cestino"
+      ],
+      "Try again": [
+        "Riprova"
       ],
       "Try again.": [
         "Riprova."
@@ -1876,8 +1885,14 @@
       "Can view this item.": [
         "Può visualizzare questo elemento."
       ],
+      "Canceled by user": [
+        "Annullato dall'utente"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Verifica di ${ compromised.progress.completed } password su ${ compromised.progress.total } in corso."
+      ],
+      "Choose how you want to sign in": [
+        "Seleziona la modalità di accesso"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Conferma la password aggiuntiva per procedere con la sua rimozione."
@@ -2064,9 +2079,6 @@
       ],
       "Fill in the CSV with your data": [
         "Compila il file CSV con i tuoi dati"
-      ],
-      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
-        "Completa l'accesso nella finestra del browser che si è appena aperta. ${ PASS_APP_NAME } verrà rilevato automaticamente una volta completata l'operazione."
       ],
       "Folder \"${ payload.folder.name }\" created": [
         "Cartella “${ payload.folder.name }” creata"
@@ -2297,6 +2309,9 @@
       ],
       "None": [
         "Nessuno"
+      ],
+      "None of your saved passwords have appeared in a known data breach.": [
+        "Nessuna delle tue password salvata è stata coinvolta in una violazione dei dati nota."
       ],
       "None selected": [
         "Nessuno selezionato"
@@ -2613,6 +2628,9 @@
       "Shared item invitation": [
         "Invito a un elemento condiviso"
       ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Completa l'accesso nella nuova finestra del browser. ${ PASS_APP_NAME } si aggiornerà automaticamente una volta completata l'operazione."
+      ],
       "Sign in to your account": [
         "Accedi al tuo account"
       ],
@@ -2624,6 +2642,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Utilizza ${ emailBold } la prossima volta che avrai bisogno di un alias: verrà creato ${ automaticallyBold } la prima volta che riceverà un'email. Per avere un controllo più capillare, puoi anche definire ${ rulesHyperLink }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Per avviare ${ PASS_APP_NAME } offline, sarà necessaria la tua password di ${ BRAND_NAME }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Per avviare ${ PASS_APP_NAME } offline, sarà necessaria la tua password di backup."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Per avviare ${ PASS_APP_NAME } offline, sarà necessaria la tua password aggiuntiva."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Per avviare ${ PASS_APP_NAME } offline, sarà necessaria la tua seconda password."
       ],
       "Successfully exported all your items": [
         "Tutti i tuoi elementi sono stati esportati con successo"
@@ -2688,6 +2718,9 @@
       ],
       "The secure link has been removed": [
         "Il link sicuro è stato rimosso"
+      ],
+      "The sign in was not confirmed in time.": [
+        "L'accesso non è stato confermato nei tempi previsti."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Il testo che stai provando a incollare è più lungo della lunghezza massima di ${ maxLength } caratteri."
@@ -2998,6 +3031,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La tua organizzazione richiede che tu protegga l'accesso a ${ PASS_APP_NAME }"
+      ],
+      "Your session could not be authorized.": [
+        "Non è possibile autorizzare la tua sessione."
       ]
     },
     "Keyboard key": {
@@ -4833,6 +4869,9 @@
       "Activity for \"${ token.Name }\"": [
         "Attività per \"${ token.Name }\""
       ],
+      "Add an account": [
+        "Aggiungi un account"
+      ],
       "Add custom domain": [
         "Aggiungi dominio personalizzato"
       ],
@@ -5124,8 +5163,8 @@
         "Spostare ${ trashedItemsCount } elemento nel cestino?",
         "Spostare ${ trashedItemsCount } elementi nel cestino?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Vuoi spostare tutti gli elementi in \"${ vaultName }\"?"
+      "Move all items to \"${ target }\"?": [
+        "Spostare tutti gli elementi in \"${ target }\"?"
       ],
       "Move all items?": [
         "Spostare tutti gli elementi?"
@@ -5284,6 +5323,15 @@
       ],
       "Shared via": [
         "Condiviso tramite"
+      ],
+      "Sign in timed out": [
+        "Sessione scaduta"
+      ],
+      "Signing you in": [
+        "Accesso in corso"
+      ],
+      "Something went wrong": [
+        "Qualcosa è andato storto"
       ],
       "SPF (Optional)": [
         "SPF (Opzionale)"

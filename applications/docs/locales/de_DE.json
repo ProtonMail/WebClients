@@ -3443,8 +3443,8 @@
       "There was an error when exporting the contacts vCards": [
         "Es gab einen Fehler beim Exportieren der vCards der Kontakte"
       ],
-      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
-        "Dieses Dokument hat seine maximale Größe erreicht, daher wurde Ihre letzte Änderung nicht gespeichert und das Bearbeiten ist deaktiviert."
+      "This document is too large to copy. Download it to keep a copy of your work.": [
+        "Dieses Dokument ist zu groß, um es kopieren zu können. Lade es herunter, um eine Kopie deiner Arbeit zu behalten."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
@@ -4638,12 +4638,6 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Verbinde dich mit ${ VPN_APP_NAME } um privat zu surfen"
       ],
-      "Connected": [
-        "Verbunden"
-      ],
-      "Connecting…": [
-        "Verbindung wird hergestellt…"
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt der Gruppe ${ contactGroupName } zugewiesen."
       ],
@@ -4715,9 +4709,6 @@
       "Decrypting your document": [
         "Dein Dokument wird entschlüsselt"
       ],
-      "Disconnected": [
-        "Verbindung getrennt"
-      ],
       "Display word count": [
         "Zeige Anzahl Wörter"
       ],
@@ -4756,9 +4747,6 @@
       ],
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
-      ],
-      "Editing is temporarily unavailable.": [
-        "Bearbeiten ist vorübergehend nicht möglich."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-Mail-Hosting ist nur für Domains verfügbar, die du bereits besitzt. Die Registrierung von Domains ist derzeit nicht über ${ BRAND_NAME } möglich. Du kannst E-Mails für Domains hosten, die bei einem beliebigen Domain-Registrar registriert sind."
@@ -4804,6 +4792,9 @@
       ],
       "Error loading document: ${ errorDetail }": [
         "Fehler beim Laden des Dokuments: ${ errorDetail }"
+      ],
+      "Error syncing": [
+        "Fehler bei der Synchronisierung"
       ],
       "Error Syncing": [
         "Fehler beim Synchronisieren"
@@ -4989,6 +4980,9 @@
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Du bist anscheinend offline. Das Dokument kann nicht bearbeitet werden, während du offline bist. Bitte überprüfe die Konnektivität deines Geräts."
       ],
+      "Looks like you're offline. You can keep editing: your changes are saved once you are back online.": [
+        "Du scheinst nicht mit dem Internet verbunden zu sein. Du kannst weiter bearbeiten: Deine Änderungen werden gespeichert, sobald wieder eine Internetverbindung besteht."
+      ],
       "Low Priority": [
         "Niedrige Priorität"
       ],
@@ -5053,9 +5047,6 @@
       "Not connected": [
         "Nicht verbunden"
       ],
-      "Not connected. Editing resumes once you are back.": [
-        "Keine Verbindung. Das Bearbeiten wird fortgesetzt, sobald du wieder mit dem Internet verbunden bist."
-      ],
       "Numbers": [
         "Zahlen"
       ],
@@ -5076,6 +5067,9 @@
       ],
       "Opening...": [
         "Wird geöffnet..."
+      ],
+      "Opening…": [
+        "Wird geöffnet …"
       ],
       "Organization size": [
         "Organisationsgröße"
@@ -5192,6 +5186,9 @@
       "Saving...": [
         "Wird gespeichert..."
       ],
+      "Saving…": [
+        "Wird gespeichert …"
+      ],
       "Scan the QR code with your mobile device": [
         "Scanne den QR-Code mit deinem Mobilgerät."
       ],
@@ -5240,6 +5237,9 @@
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Einige Regierungen blockieren oder beschränken den Zugang zu bestimmten Websites. Ein VPN hilft, die Zensur zu umgehen und gleichzeitig deine Aktivitäten und deine Identität geheim zu halten."
       ],
+      "Some of the document could not be read, so it can't be edited.": [
+        "Ein Teil des Dokuments konnte nicht gelesen werden, deshalb kann es nicht bearbeitet werden."
+      ],
       "Some of the document's content could not be read.": [
         "Teile des Dokumentinhalts konnten nicht eingelesen werden."
       ],
@@ -5286,12 +5286,6 @@
       "The Beginning": [
         "Der Anfang"
       ],
-      "The connection to the server was lost.": [
-        "Die Verbindung zum Server ist abgebrochen."
-      ],
-      "The document could not be brought up to date.": [
-        "Das Dokument konnte nicht aktualisiert werden."
-      ],
       "The document could not be created.": [
         "Das Dokument konnte nicht erstellt werden."
       ],
@@ -5307,9 +5301,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Der Inhaber dieser E-Mail-Adresse hat die Ende-zu-Ende-Verschlüsselung deaktiviert. Um verschlüsselte E-Mails an diese Adresse senden zu können, muss der Besitzer die Ende-zu-Ende-Verschlüsselung wieder aktivieren."
       ],
-      "The server is busy.": [
-        "Der Server ist ausgelastet."
-      ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "Die von dir eingegebene URL scheint fehlerhaft von Slack kopiert worden zu sein. Wenn du lange Links von Slack kopierst, klicke mit der rechten Maustaste auf den Link und wähle dann \"Link kopieren\" anstatt den abgeschnittenen URL-Text direkt zu kopieren."
       ],
@@ -5322,8 +5313,17 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Diese Adresse ist deaktiviert. Um an diese Adresse senden zu können, muss der Besitzer die Adresse zuerst aktivieren."
       ],
+      "This document can't be edited right now.": [
+        "Dieses Dokument kann derzeit nicht bearbeitet werden."
+      ],
+      "This document does not exist, or it was deleted.": [
+        "Dieses Dokument ist nicht vorhanden oder wurde gelöscht."
+      ],
       "This document has grown too large to edit. You can remove older revisions to continue editing.": [
         "Dieses Dokument ist zum Bearbeiten zu groß geworden. Du kannst ältere Versionen entfernen, um die Bearbeitung fortzusetzen."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Copy any work you need to keep it.": [
+        "Dieses Dokument ist zu umfangreich geworden, sodass deine letzten Änderungen nicht gespeichert werden konnten. Kopiere alle Inhalte, die du behalten möchtest."
       ],
       "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
         "Dieses Dokument ist zu groß geworden, und deine neuesten Änderungen konnten nicht gespeichert werden. Lade eine Kopie herunter, um deine Arbeit zu sichern."
@@ -5333,6 +5333,9 @@
       ],
       "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
         "Dieses Dokument hat viele aktive Mitwirkende. Echtzeitbearbeitung ist vorübergehend nicht verfügbar. Aktualisiere, um die letzten Änderungen anzuzeigen."
+      ],
+      "This document has reached its maximum size, so it can't be edited.": [
+        "Dieses Dokument hat seine maximale Größe erreicht und kann daher nicht mehr bearbeitet werden."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Dieses Dokument existiert möglicherweise nicht, oder es gibt Probleme beim Laden. Bitte lade die Seite neu und versuche es erneut."
@@ -5360,9 +5363,6 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Dieser eindeutige Code kann von Webseiten und ISPs (Internetdiensteanbietern) verwendet werden, um deinen Standort und deinen Browserverlauf mit deinem Gerät zu verknüpfen."
-      ],
-      "This version of the app is no longer supported. Reload the page to update it.": [
-        "Diese Version der App wird nicht mehr unterstützt. Lade die Seite neu, um sie zu aktualisieren."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Dadurch wirst du auf allen derzeit angemeldeten Geräten abgemeldet."
@@ -5541,9 +5541,6 @@
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Möglicherweise verfügst du nicht über die erforderlichen Berechtigungen, um es mit deinem ausgewählten Konto anzuzeigen. Versuche es mit einem anderen Konto oder kontaktiere den Besitzer, um Zugang zu erhalten."
       ],
-      "You were disconnected after a period of inactivity.": [
-        "Nach einer gewissen Zeit der Inaktivität wurde deine Verbindung getrennt."
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "An diesem Datum verlierst du den Zugang zu ${ planTitle }-Funktionen."
       ],
@@ -5584,9 +5581,6 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Dein ${ plan }-Abonnement wird durch ${ PASS_SHORT_APP_NAME } Lifetime ersetzt. Der verbleibende Restbetrag deines Abonnements wird deinem Konto gutgeschrieben. Der ${ PASS_SHORT_APP_NAME } Lifetime Deal hat keine Verlängerungskosten, es handelt sich um eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }."
       ],
-      "Your access to this document has changed. Reload the page to continue.": [
-        "Dein Zugriff auf dieses Dokument hat sich geändert. Bitte laden Sie die Seite neu, um fortzufahren."
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
       ],
@@ -5595,9 +5589,6 @@
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Deine Änderungen werden mit Drive synchronisiert. Bitte schließe die Webseite nicht."
-      ],
-      "Your changes could not be encrypted. Reload the page to continue.": [
-        "Deine Änderungen konnten nicht verschlüsselt werden. Lade die Seite neu, um fortzufahren."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Deine Änderungen konnten nicht synchronisiert werden. Drive wird automatisch versuchen, die Änderungen zu speichern. Bitte schließe die Webseite nicht."
@@ -5659,9 +5650,6 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird jeden Monat automatisch erneuert."
-      ],
-      "Your session has expired. Reload the page to continue.": [
-        "Deine Sitzung wurde beendet. Lade die Seite neu, um fortzufahren."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Dein Abonnement wird am ${ renewalTime } automatisch verlängert."
@@ -9528,6 +9516,9 @@
       ],
       "Enter your password": [
         "Passwort eingeben"
+      ],
+      "Error syncing": [
+        "Fehler bei der Synchronisierung"
       ],
       "Error Syncing": [
         "Fehler beim Synchronisieren"

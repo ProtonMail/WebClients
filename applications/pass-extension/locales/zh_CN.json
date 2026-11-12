@@ -1640,6 +1640,23 @@
         "使用向上和向下键进入并浏览输入后的建议。按 Enter 键确认您的选择，或按 Escape 键关闭建议框。"
       ]
     },
+    "Import Tutorial": {
+      "Export": [
+        "导出"
+      ],
+      "Open ${ name } and go to ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }.": [
+        "打开${ name }并前往 ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }."
+      ],
+      "Open ${ name } and select ${ settings }.": [
+        "打开${ name }并选择${ settings }."
+      ],
+      "Vault": [
+        "保险库"
+      ],
+      "Vault options": [
+        "保险库选项"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "“${ payload.itemName }” 项目被拒绝"
@@ -2317,7 +2334,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -5044,6 +5061,9 @@
       "Fill password": [
         "填写密码"
       ],
+      "First login created": [
+        "已创建首个登录项"
+      ],
       "Folder options": [
         "文件夹选项"
       ],
@@ -5076,6 +5096,9 @@
       ],
       "Import - ${ date }": [
         "导入- ${ date }"
+      ],
+      "Import completed with warnings": [
+        "导入完成，存在警告"
       ],
       "Import failed": [
         "导入失败"
@@ -5148,9 +5171,6 @@
       ],
       "Move ${ trashedItemsCount } item to trash?": [
         "将 ${ trashedItemsCount } 项移动到回收站？"
-      ],
-      "Move all items to \"${ vaultName }\"?": [
-        "将所有项目移动到 \"${ vaultName }\"？"
       ],
       "Move all items?": [
         "移动所有项目？"

@@ -3541,9 +3541,6 @@
       "External invitations are temporarily disabled.": [
         "Externa inbjudningar är tillfälligt inaktiverade."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Externa inbjudningar är tillfälligt inaktiverade. Försök igen senare"
-      ],
       "Failed to change permissions settings": [
         "Misslyckades att ändra behörighetsinställningar"
       ],
@@ -3954,12 +3951,6 @@
       ],
       "The folder name is too long. Please choose a different name.": [
         "Mappnamnet är för långt. Välj ett annat namn."
-      ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Inbjudan kan inte slutföras ännu. Försök igen senare."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Inbjudan finns inte längre"
       ],
       "The label name is invalid. Please choose a different name.": [
         "Etikettnamnet är ogiltigt. Välj ett annat namn."
@@ -5025,6 +5016,9 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } sammanslagen kalender",
         "${ calendarsToBeMergedCount } sammanslagna kalendrar"
+      ],
+      "${ claimedAuthor } (unverified sender)": [
+        "${ claimedAuthor }(obekräftad avsändare)"
       ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } av ${ items.length } överföringar slutförda"

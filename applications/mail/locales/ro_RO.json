@@ -4866,6 +4866,9 @@
       "Cannot export this contact": [
         "Acest contact nu se poate exporta."
       ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Nu se poate trimite un mesaj gol. Mesajul nu este trimis."
+      ],
       "Cannot set expiration longer than retention policy allows.": [
         "Nu se poate seta o expirare mai lungă decât permite politica de păstrare."
       ],
@@ -4952,6 +4955,9 @@
       ],
       "Email is not valid": [
         "E-mailul nu este valid"
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Imaginile încorporate nu au putut fi eliminate. Mesajul nu a fost convertit în text simplu."
       ],
       "Empty condition": [
         "Condiție goală"
@@ -6777,6 +6783,11 @@
         "${ contactEmailsLength } membru",
         "${ contactEmailsLength } membri",
         "${ contactEmailsLength } de membri"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } membru)",
+        "${ contactGroupName } (${ numberOfContacts } membri)",
+        "${ contactGroupName } (${ numberOfContacts } de membri)"
       ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } membru)",
@@ -9479,6 +9490,9 @@
       "We couldn’t process your payment.": [
         "Nu vi s-a putut procesa plata."
       ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "S-au găsit câteva liste de corespondență pe care nu le citiți. Vă puteți dezabona de la ele cu un singur clic."
+      ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "Avem planuri concepute special pentru utilizatorii care au nevoie de mai multe adrese de e-mail."
       ],
@@ -10681,6 +10695,12 @@
       "Folder name": [
         "Nume folder"
       ],
+      "Font family": [
+        "Familie font"
+      ],
+      "Font size": [
+        "Mărime font"
+      ],
       "Forwards to": [
         "Transferare către"
       ],
@@ -11061,6 +11081,11 @@
       ],
       "Search in": [
         "Căutare în"
+      ],
+      "Select all ${ count } unused sender": [
+        "Selectare toți expeditorii neutilizați: ${ count }",
+        "Selectare toți expeditorii neutilizați: ${ count }",
+        "Selectare toți expeditorii neutilizați: ${ count }"
       ],
       "Select which Gmail address to connect": [
         "Selectați ce adresă Gmail doriți să conectați"
@@ -17384,6 +17409,9 @@
       ],
       "Start import process": [
         "Începere proces de importare"
+      ],
+      "Start with a cleaner Inbox": [
+        "Începeți cu un cont mai curat"
       ],
       "Storage capacity warning": [
         "Avertizare spațiu de stocare"

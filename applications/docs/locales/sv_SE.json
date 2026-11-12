@@ -3387,6 +3387,9 @@
       "There was an error when exporting the contacts vCards": [
         "Det uppstod ett fel vid export av vCards-kontakterna"
       ],
+      "This document is too large to copy. Download it to keep a copy of your work.": [
+        "Det här dokumentet är för stort för att koiera. Ladda ned det för att behåla en kopia av ditt arbete."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Detta fält överskrider det maximala antalet ${ maximumLength } tecken."
       ],
@@ -4563,12 +4566,6 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Anslut till ${ VPN_APP_NAME } för att surfa privat"
       ],
-      "Connected": [
-        "Ansluten"
-      ],
-      "Connecting…": [
-        "Ansluter …"
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilldelad till grupp ${ contactGroupName }"
       ],
@@ -4640,9 +4637,6 @@
       "Decrypting your document": [
         "Dekrypterar ditt dokument"
       ],
-      "Disconnected": [
-        "Frånkopplad"
-      ],
       "Display word count": [
         "Visa antalet ord"
       ],
@@ -4681,9 +4675,6 @@
       ],
       "Edit email address": [
         "Redigera e-postadress"
-      ],
-      "Editing is temporarily unavailable.": [
-        "Redigering är tillfälligt otillgänglig."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-postlagring är endast tillgängligt för domäner som du redan äger. Domänregistrering är för närvarande inte tillgänglig via ${ BRAND_NAME }. Du kan lagra e-post för domäner som är registrerade hos vilken domänregistrator som helst."
@@ -4729,6 +4720,9 @@
       ],
       "Error loading document: ${ errorDetail }": [
         "Fel vid laddning av dokument: ${ errorDetail }"
+      ],
+      "Error syncing": [
+        "Fel vid synkronisering"
       ],
       "Error Syncing": [
         "Fel vid synkronisering"
@@ -4911,6 +4905,9 @@
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Det verkar som att du är offline. Dokumentet kan inte redigeras när du är offline. Kontrollera din enhets anslutning."
       ],
+      "Looks like you're offline. You can keep editing: your changes are saved once you are back online.": [
+        "Det verkar som om du är offline. Du kan fortsätta redigera: dina ändringar är sparade när du är tillbaka online."
+      ],
       "Low Priority": [
         "Låg prioritet"
       ],
@@ -4994,6 +4991,9 @@
         "Öppna guiden för rekommenderade åtgärder och användbara länkar."
       ],
       "Opening...": [
+        "Öppnar …"
+      ],
+      "Opening…": [
         "Öppnar …"
       ],
       "Organization size": [
@@ -5111,6 +5111,9 @@
       "Saving...": [
         "Sparar …"
       ],
+      "Saving…": [
+        "Sparar …"
+      ],
       "Scan the QR code with your mobile device": [
         "Skanna QR-koden med din mobila enhet"
       ],
@@ -5158,6 +5161,9 @@
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Vissa regeringar blockerar eller begränsar åtkomsten till vissa webbplatser. Ett VPN hjälper dig att kringgå censur samtidigt som din aktivitet och identitet förblir privat."
+      ],
+      "Some of the document could not be read, so it can't be edited.": [
+        "En del av dokumentet kunde inte läsas så det kan inte redigeras."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Vissa webbplatser och streamingtjänster blockerar innehåll efter region. Med ett VPN kan du kringgå dessa begränsningar och få fri tillgång till internet."
@@ -5220,8 +5226,17 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denna adress är inaktiverad. För att kunna skicka till denna adress måste ägaren först aktivera adressen."
       ],
+      "This document can't be edited right now.": [
+        "Det här dokumentet kan inte redigeras just nu."
+      ],
+      "This document does not exist, or it was deleted.": [
+        "Det här dokumentet existerar inte, eller det tots bort."
+      ],
       "This document has grown too large to edit. You can remove older revisions to continue editing.": [
         "Detta dokument har blivit för stort för att redigera. Du kan ta bort äldre versioner för att fortsätta redigera."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Copy any work you need to keep it.": [
+        "Det här dokumentet har blivit för stort och dina senaste ändringar kund inte sparas. Kopiera det arbete du behöver för att behålla det."
       ],
       "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
         "Detta dokument har blivit för stort och dina senaste ändringar kunde inte sparas. Ladda ner en kopia för att behålla ditt arbete."
@@ -5231,6 +5246,9 @@
       ],
       "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
         "Det här dokumentet har många aktiva medarbetare. Realtidsredigering är tillfälligt otillgänglig. Uppdatera för att visa de senaste uppdateringarna."
+      ],
+      "This document has reached its maximum size, so it can't be edited.": [
+        "Det här dokumentet har nått sin maxstorlek, så det kan inte redigeras."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Detta dokument kanske inte finns eller så har vi problem med att ladda det. Ladda om sidan och försök igen."
@@ -9287,6 +9305,9 @@
       ],
       "Enter your password": [
         "Ange ditt lösenord"
+      ],
+      "Error syncing": [
+        "Fel vid synkronisering"
       ],
       "Error Syncing": [
         "Fel vid synkronisering"

@@ -6122,9 +6122,6 @@
       "Allow platform keys": [
         "Gba àwọn kọ́kọ́rọ́ ojú àtẹ láàyè"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Ó ń jẹ́ kí ẹ lè forúkọ sílẹ̀ àwọn kọ́kọ́rọ́ ààbò tí a fi sínú ẹ̀rọ (bíi Windows Hello, Face ID, Touch ID, tàbí àwọn TPM inú ẹ̀rọ)."
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Ṣé ẹ dájú pé ẹ fẹ́ pa kọ́kọ́rọ́ ààbò ${ name } rẹ́?"
       ],
@@ -8580,12 +8577,6 @@
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "A gbà á níyànjú lórí àwọn irin iṣẹ́ tí a fi ọkàn tán. ${ learnMoreLink }"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "A kò lè lo ìgbàpadà nípa ímeèlì nígbà tí a bá ti fi ààyè gba ${ PROTON_SENTINEL_NAME }."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Ìgbàpadà nípasẹ̀ fọ́n kò ṣeé ṣiṣé nígbà tí a bá ti fi ààyè gba ${ PROTON_SENTINEL_NAME }."
-      ],
       "Recovery file downloaded": [
         "A ti gbà fáìlì ìgbàpadà wọlé."
       ],
@@ -9053,12 +9044,6 @@
       ],
       "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
         "Láti fi ààyè gba Gbogbo ìgbà lórí VPN, ìlànà irin iṣẹ́ náà gbọdọ̀ dé ${ policiesPath } lórí gbogbo irin iṣẹ́; áàpù ${ VPN_APP_NAME } ń rí i níbẹ̀, ó sì ń mú ìlànà náà ṣiṣẹ́ láìfọwọ́yí. ${ learnMore }."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Láti dájú ààbò tó ga jùlọ fún àkántì yín, ẹ paná **Ìgbàpadà nípasẹ̀ ímeèlì ìmúbọ̀sípò**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Láti rí i dájú pé ààbò àkántì yín ga jùlọ, ẹ paná **Ìgbàpadà nípa fọ́nù ìgbàpadà**."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Láti jà spáàmù àti ìlò àbùjá, jọ̀wọ́, ẹ jẹ́rìísí pé ẹniyàn ni ẹ."

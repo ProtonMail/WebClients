@@ -994,6 +994,9 @@
       "Manage subscription": [
         "Abonnement verwalten"
       ],
+      "Manage subscriptions": [
+        "Abonnements verwalten"
+      ],
       "Manage users/addresses": [
         "Benutzer/Adressen verwalten"
       ],
@@ -6298,9 +6301,6 @@
       "Allow platform keys": [
         "Plattform-Schlüssel zulassen"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Ermöglicht die Registrierung integrierter Sicherheitsschlüssel (wie Windows Hello, Face ID, Touch ID oder interne TPM)."
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Bist du dir sicher, dass du den Sicherheitsschlüssel ${ name } löschen möchtest?"
       ],
@@ -6339,6 +6339,9 @@
       ],
       "Touch your security key to continue.": [
         "Berühre deinen Sicherheitsschlüssel, um fortzufahren."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Fingerabdruck-, Gesichts-, PIN- oder Bildschirmsperre dieses Geräts verwenden"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bestätige deine Identität mit einem physischen U2F oder FIDO2 Sicherheitsschlüssel"
@@ -7659,17 +7662,17 @@
       "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
         "Wenn diese Option aktiviert ist, kannst du dich nur noch mit **${ primaryEmail }** anmelden."
       ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
-        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem ursprünglichen Benutzernamen **${ username }** anmelden – entweder allein oder in der Form **${ firstEmail }**, **@${ secondDomain }** oder **@${ thirdDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
-        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem ursprünglichen Benutzernamen **${ username }** anmelden – entweder allein oder in Kombination mit **${ firstEmail }** oder **@${ secondDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
-        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem ursprünglichen Benutzernamen **${ username }** anmelden, entweder allein oder in Kombination mit **${ firstEmail }**."
-      ],
       "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
         "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem Benutzernamen **${ username }** anmelden."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }** beziehungsweise **${ secondEmail }** anmelden."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }**, **${ secondEmail }** beziehungsweise **${ thirdEmail }** anmelden."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }** anmelden."
       ],
       "Can you access your active session?": [
         "Kannst du auf deine aktive Sitzung zugreifen?"
@@ -8847,12 +8850,6 @@
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Empfohlen auf vertrauenswürdigen Geräten. ${ learnMoreLink }"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Die Wiederherstellung per E-Mail ist nicht verfügbar, solange ${ PROTON_SENTINEL_NAME } aktiviert ist."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Die Wiederherstellung per Telefon ist nicht verfügbar, solange ${ PROTON_SENTINEL_NAME } aktiviert ist."
-      ],
       "Recovery file downloaded": [
         "Wiederherstellungsdatei wurde heruntergeladen"
       ],
@@ -9330,11 +9327,17 @@
       "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
         "Um Always-on-VPN zu aktivieren, muss das Geräteprofil auf jedem Gerät unter ${ policiesPath } abgelegt werden – der ${ VPN_APP_NAME }-Client erkennt es dort und wendet das Profil automatisch an. ${ learnMore }."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Um die größtmögliche Sicherheit deines Kontos zu gewährleisten, deaktiviere die **Wiederherstellung per Wiederherstellungs-E-Mail-Adresse**."
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Um die höchstmögliche Sicherheit deines Kontos zu gewährleisten, deaktiviere bitte die Option **Wiederherstellung per E-Mail**."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Um die größtmögliche Sicherheit deines Kontos zu gewährleisten, deaktiviere die **Wiederherstellung per Wiederherstellungs-Telefonnummer**."
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Um die höchstmögliche Sicherheit deines Kontos zu gewährleisten, deaktiviere bitte die Option **Wiederherstellung per Telefon**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Um die höchstmögliche Sicherheit deines Kontos zu gewährleisten, solltest du die Option **Wiederherstellung per E-Mail** deaktiviert lassen."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Um die höchstmögliche Sicherheit deines Kontos zu gewährleisten, solltest du die Option **Wiederherstellung per Telefon** deaktiviert lassen."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
@@ -9645,14 +9648,14 @@
       "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Wenn die Anmeldung eingeschränkt ist, kann nur dein Benutzername **${ username }** zur Anmeldung verwendet werden. Deine sonstigen Adressen können nicht mit deinem Konto verknüpft werden, selbst wenn sie jemand kennt."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem ursprünglichen Benutzernamen **${ username }** anmelden – entweder allein oder in der Form **${ firstEmail }**, **@${ secondDomain }** oder **@${ thirdDomain }**. Deine anderen E-Mail-Adressen können nicht zur Anmeldung verwendet werden."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }** beziehungsweise mit **${ secondEmail }** anmelden. Deine anderen E-Mail-Adressen werden für die Anmeldung nicht funktionieren."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem ursprünglichen Benutzernamen **${ username }** anmelden – entweder allein oder in Kombination mit **${ firstEmail }** oder **@${ secondDomain }**. Deine sonstigen E-Mail-Adressen können nicht zur Anmeldung genutzt werden."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }**, **${ secondEmail }** beziehungsweise mit **${ thirdEmail }** anmelden. Deine anderen E-Mail-Adressen werden für die Anmeldung nicht funktionieren."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem ursprünglichen Benutzernamen **${ username }** anmelden, entweder allein oder in Kombination mit **${ firstEmail }**. Deine sonstigen E-Mail-Adressen können nicht zur Anmeldung verwendet werden."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }** anmelden. Deine anderen E-Mail-Adressen werden für die Anmeldung nicht funktionieren."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wenn du kündigst, wird dein Abonnement nicht verlängert, aber du kannst die Vorteile des Abonnements noch bis zum Ende des Abonnementzeitraums nutzen. Danach wirst du auf das ${ BRAND_NAME } Free-Abonnement zurückgestuft."
@@ -11296,6 +11299,11 @@
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Bitte füge den folgenden TXT-Eintrag hinzu. Beachte: Die Aktualisierung von DNS-Einträgen kann mehrere Stunden dauern."
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Feld leer lassen"
       ]
     },
     "Label for new member": {

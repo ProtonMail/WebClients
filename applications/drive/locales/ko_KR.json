@@ -3512,9 +3512,6 @@
       "External invitations are temporarily disabled.": [
         "외부 초대가 일시적으로 비활성화 되었습니다."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "외부 초대가 일시적으로 비활성화 되었습니다. 나중에 다시 시도하세요."
-      ],
       "Failed to change permissions settings": [
         "권한 설정을 변경할 수 없습니다."
       ],
@@ -3934,12 +3931,6 @@
       ],
       "The folder name is too long. Please choose a different name.": [
         "폴더 이름이 너무 깁니다. 다른 이름을 사용해 주세요."
-      ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "이 초대는 완료되지 않았습니다. 나중에 다시 시도하세요."
-      ],
-      "The invitation doesn't exist anymore": [
-        "이 초대는 더 이상 존재하지 않습니다."
       ],
       "The label name is invalid. Please choose a different name.": [
         "라벨 이름이 유효하지 않습니다. 다른 이름을 사용해 주세요."
@@ -5047,9 +5038,6 @@
       ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "${ IDEAL_WERO_BRAND_NAME } 마크"
-      ],
-      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
-        "${ invitation.addedByEmail.error.claimedAuthor } (인증되지 않은 발신자)"
       ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount }개 대기 중인 초대"

@@ -29,6 +29,9 @@
       "microphone muted": [
         "мікрафон адключаны"
       ],
+      "Microphone muted": [
+        "Мікрафон адключаны"
+      ],
       "Microphone on": [
         "Мікрафон уключаны"
       ],
@@ -2080,6 +2083,9 @@
       "Failed to admit the participant. Please try again.": [
         "Не ўдалося прыняць удзельніка. Паўтарыце спробу."
       ],
+      "Failed to admit the participants. Please try again.": [
+        "Не ўдалося прыняць удзельнікаў. Паўтарыце спробу."
+      ],
       "Failed to assign host": [
         "Не ўдалося прызначыць арганізатара"
       ],
@@ -2425,6 +2431,9 @@
       "Too many server requests, please try again later": [
         "Занадта шмат запытаў на сервер. Паўтарыце спробу пазней"
       ],
+      "Try turning live captions off and on again.": [
+        "Паспрабуйце выключыць і зноў уключыць інтэрактыўныя цітры."
+      ],
       "Try using only letters, numerals, and _.-": [
         "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
       ],
@@ -2722,6 +2731,9 @@
       "${ senderNameNode } mentioned you": [
         "${ senderNameNode } згадаў вас"
       ],
+      "${ spotlightParticipantName } is the active speaker": [
+        "${ spotlightParticipantName } з'яўляецца актыўным прамоўцам."
+      ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
         "${ totalParticipantCount } з ${ maxParticipants } максімальных удзельнікаў"
       ],
@@ -2809,6 +2821,9 @@
       "Camera effects": [
         "Эфекты камеры"
       ],
+      "Camera is starting": [
+        "Запуск камеры"
+      ],
       "Camera permission denied": [
         "Доступ да камеры забаронены"
       ],
@@ -2884,6 +2899,12 @@
       "Delete room": [
         "Выдаліць пакой"
       ],
+      "Do you want people to hear you in the meeting?": [
+        "Вы хочаце, каб людзі чулі вас на сустрэчы?"
+      ],
+      "Do you want people to see you in the meeting?": [
+        "Вы хочаце, каб людзі бачылі вас на сустрэчы?"
+      ],
       "Download current logs": [
         "Спампоўванне бягучых журналаў"
       ],
@@ -2892,6 +2913,9 @@
       ],
       "Edit email address": [
         "Рэдагаваць адрас электроннай пошты"
+      ],
+      "Enable the camera to preview the custom background.": [
+        "Уключыце камеру для папярэдняга прагляду карыстальніцкага фону."
       ],
       "End Meeting for everyone?": [
         "Завяршыць сустрэчу для ўсіх?"
@@ -3052,6 +3076,9 @@
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
         "Праводзьце сустрэчы без абмежаванняў. Палепшыце свой тарыфны план, каб зняць абмежаванне на сустрэчу, якая цяпер складае 1 гадзіну і запрашайце на сустрэчу да 100 удзельнікаў."
       ],
+      "Meeting almost full": [
+        "Сустрэча амаль запоўнена"
+      ],
       "Meeting ended": [
         "Сустрэча завершана"
       ],
@@ -3105,6 +3132,9 @@
       ],
       "Microphone effects": [
         "Эфекты мікрафона"
+      ],
+      "Microphone is starting": [
+        "Запуск мікрафона"
       ],
       "Microphone permission denied": [
         "Доступ да мікрафона забаронены"
@@ -3547,6 +3577,9 @@
       "Your browser or device isn’t supported": [
         "Ваш браўзер або прылада не падтрымліваецца"
       ],
+      "Your camera is still starting": [
+        "Ваша камера ўсё яшчэ запускаецца"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
       ],
@@ -3794,6 +3827,9 @@
       ],
       "Raw": [
         "Raw"
+      ],
+      "Reactions": [
+        "Рэакцыі"
       ],
       "Remember my name on this device": [
         "Запомніць маё імя на гэтай прыладзе"
@@ -4045,6 +4081,12 @@
         "Паўтараецца кожныя ${ interval } дзён",
         "Паўтараецца кожныя ${ interval } дзён"
       ],
+      "Repeats every ${ interval } year on ${ monthDay }": [
+        "Паўтараецца кожны ${ interval } год у ${ monthDay }",
+        "Паўтараецца кожны ${ interval } гады ў ${ monthDay }",
+        "Паўтараецца кожны ${ interval } гадоў у ${ monthDay }",
+        "Паўтараецца кожны ${ interval } гадоў у ${ monthDay }"
+      ],
       "Repeats every ${ weekdayName }": [
         "Паўтараецца кожны ${ weekdayName }"
       ],
@@ -4162,8 +4204,8 @@
       "Enter time": [
         "Увядзіце час"
       ],
-      "Enter your name": [
-        "Увядзіце сваё імя."
+      "Enter your name to join": [
+        "Увядзіце сваю імя, каб далучыцца"
       ],
       "Find...": [
         "Пошук..."

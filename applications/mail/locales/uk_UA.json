@@ -39,6 +39,9 @@
       "A to Z": [
         "Від А до Я"
       ],
+      "About ${ name }": [
+        "Про ${ name }"
+      ],
       "Activate": [
         "Активувати"
       ],
@@ -53,6 +56,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Додати ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Додати ${ name }"
       ],
       "Add account": [
         "Додати обліковий запис"
@@ -2077,6 +2083,11 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium Менеджер паролів"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Гарантія повернення коштів протягом 30 днів. Ви можете скасувати покупку протягом 30 днів і звернутися до ${ customerSupportLink } для повернення коштів."
       ]
     },
     "BF2024: Deal details": {
@@ -7013,6 +7024,9 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Ви отримуєте ${ referrerRewardAmount }** як кредит за кожного запрошеного друга, який підпишеться."
       ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Гарантія повернення коштів протягом 30 днів. Ви можете скасувати покупку протягом 30 днів і звернутися до ${ customerSupportLink } для повернення коштів."
+      ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Один номер телефону можна використати для підтвердження лише одного облікового запису ${ BRAND_NAME }"
       ],
@@ -7336,6 +7350,9 @@
       ],
       "Copied to clipboard": [
         "Скопійовано до буфера обміну"
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Скопіюйте одноразові коди з останніх електронних листів одним кліком"
       ],
       "Copy the link to clipboard": [
         "Копіювати посилання в буфер обміну"
@@ -7979,6 +7996,9 @@
       "Move here": [
         "Перемістити сюди"
       ],
+      "Move one-time code emails to Trash on copy": [
+        "Переміщувати листи з одноразовим кодом у «Кошик» під час копіювання"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Дайте назву своїй новій теці та виберіть теку вищого рівня, в яку ви хочете її вкласти. Якщо ви не виберете теку вищого рівня, цю нову теку буде створено як теку вищого рівня."
       ],
@@ -8426,6 +8446,9 @@
       "Sorry, this message does not exist or has already expired.": [
         "Перепрошуємо, цього повідомлення не існує, або термін його дії завершився."
       ],
+      "Star emails": [
+        "Позначені зірочкою листи"
+      ],
       "Start sharing it with contacts and use it for online services.": [
         "Почніть ділитися ним з контактами та використовуйте його для онлайн-сервісів."
       ],
@@ -8794,6 +8817,9 @@
       ],
       "Unable to access storage capabilities in this browser, we need this access to enable message content search.": [
         "Неможливо отримати доступ до можливостей зберігання в цьому браузері, але нам потрібен цей доступ, щоб увімкнути пошук вмісту повідомлень."
+      ],
+      "UnionPay logo": [
+        "Логотип UnionPay"
       ],
       "Unlock message": [
         "Розблокувати повідомлення"
@@ -10048,6 +10074,12 @@
       "Folder name": [
         "Назва теки"
       ],
+      "Font family": [
+        "Сімейство шрифтів"
+      ],
+      "Font size": [
+        "Розмір шрифту"
+      ],
       "Forwards to": [
         "Пересилається на"
       ],
@@ -10210,6 +10242,9 @@
       "Move to Inbox": [
         "Перемістити до вхідних"
       ],
+      "Move to Trash": [
+        "Перемістити до кошика"
+      ],
       "Moved to ${ labelName }": [
         "Переміщено до ${ labelName }"
       ],
@@ -10266,6 +10301,9 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Сповіщення вимкнено, щоб увімкнути їх, змініть налаштування браузера."
+      ],
+      "One-time codes": [
+        "Одноразові коди"
       ],
       "Operating system": [
         "Операційна система"
@@ -10733,6 +10771,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Створити новий календар для керування запрошеннями"
+      ],
+      "Customer Support": [
+        "Клієнтська підтримка"
       ],
       "Deleted": [
         "Видалено"
@@ -13000,6 +13041,9 @@
       "Billing Country": [
         "Країна платника"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Власники чинної передплати не мають можливості придбати облікові записи Born Private."
+      ],
       "Card number": [
         "Номер картки"
       ],
@@ -13059,6 +13103,9 @@
       ],
       "terms and conditions": [
         "умови та положення"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Для участі в програмі Born Private необхідна пожертва."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Знижка дійсна для ${ renewalsWithCoupon } поновлення.",
@@ -13126,11 +13173,17 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас уже є передплата на цей тарифний план. Ви можете змінити передплату на ${ subscriptionPlatform }."
       ],
+      "You already own a Born Private account.": [
+        "Ви вже маєте обліковий запис Born Private."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
       ],
       "You will soon be redirected to verify your payment.": [
         "Вас невдовзі буде перенаправлено для підтвердження платежу."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Ваш обліковий запис надто давній для участі в програмі Born Private."
       ],
       "Your payment is still being processed": [
         "Ваш платіж усе ще обробляється"
@@ -15367,6 +15420,12 @@
       "Moved to ${ label }. Similar messages will be categorized there in the future.": [
         "Переміщено до ${ label }. Надалі подібні повідомлення потраплятимуть туди ж."
       ],
+      "One-time codes disabled": [
+        "Одноразові коди вимкнено"
+      ],
+      "One-time codes enabled": [
+        "Увімкнено одноразові коди"
+      ],
       "Password copied to clipboard": [
         "Пароль скопійовано до буфера обміну"
       ],
@@ -16961,6 +17020,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Цей користувач отримає права адміністратора при наступному вході."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Перейдіть на тарифний план, що підтримує цю функцію, щоб користуватися ролями адміністратора."
       ],

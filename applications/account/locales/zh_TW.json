@@ -8105,9 +8105,6 @@
       "Allow platform keys": [
         "允許平台金鑰"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "允許您註冊內建安全金鑰(如 Windows Hello、Face ID、Touch ID 或內部 TPM)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "您確定要永久刪除此安全性金鑰 ${ name } 嗎？"
       ],
@@ -11302,12 +11299,6 @@
       "RECOMMENDED": [
         "推薦"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "啟用 ${ PROTON_SENTINEL_NAME } 時，無法使用電子郵件復原。"
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "啟用 ${ PROTON_SENTINEL_NAME } 時，無法使用電話復原。"
-      ],
       "Recovery file downloaded": [
         "已下載帳號救援金鑰"
       ],
@@ -11907,12 +11898,6 @@
       ],
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "若要啟用後量子保護，您需要完成產生新的後量子加密金鑰。"
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "若要確保您的帳號擁有最高安全性，請停用**透過復原用電子郵件復原**。"
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "若要確保您的帳號擁有最高安全性，請停用**透過復原電話復原**。"
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "為確保您不會遺失重要資料，${ DRIVE_APP_NAME } 會在您與協作者作出變更時，為您的檔案儲存較舊的版本。請選擇 ${ BRAND_NAME } 該保留先前的版本多久。"

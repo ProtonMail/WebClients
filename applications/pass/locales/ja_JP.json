@@ -733,6 +733,9 @@
       "Trash": [
         "ごみ箱"
       ],
+      "Try again": [
+        "再試行"
+      ],
       "Try again.": [
         "もう一度やり直してください。"
       ],
@@ -1979,9 +1982,6 @@
       "Fill in the CSV with your data": [
         "CSV にデータを入力します"
       ],
-      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
-        "新しく開いたブラウザウィンドウでサインインを完了してください。完了すると、${ PASS_APP_NAME } が自動的に認識して処理を再開します。"
-      ],
       "Follow those steps to import your data with a generic CSV:": [
         "以下の手順に従って、汎用 CSV を使用してデータをインポートします:"
       ],
@@ -2146,9 +2146,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -4868,9 +4865,6 @@
       "Move ${ trashedItemsCount } item to trash?": [
         "${ trashedItemsCount }個のアイテムをゴミ箱に移動しますか？"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "すべてのアイテムを \"${ vaultName }\" に移動しますか？"
-      ],
       "MX record": [
         "MX レコード"
       ],
@@ -5017,6 +5011,9 @@
       ],
       "Shared via": [
         "共有"
+      ],
+      "Something went wrong": [
+        "何か問題が発生しました"
       ],
       "SPF (Optional)": [
         "SPF (任意)"

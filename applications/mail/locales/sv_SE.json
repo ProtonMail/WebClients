@@ -4310,6 +4310,12 @@
       "To start, give your organization a name.": [
         "Börja med att ge din organisation ett namn."
       ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "För att använda  ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }, lägg till den i din prenumeration."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "För att använda ${ LUMO_SHORT_APP_NAME } i  ${ MAIL_APP_NAME },  begär tillgång från din administratör."
+      ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Slå på skydd för e-postspårning för att förhindra annonsörer och andra från att spåra din plats och onlineaktivitet."
       ],
@@ -4775,6 +4781,9 @@
       ],
       "Cannot export this contact": [
         "Kan inte exportera denna kontakt"
+      ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Kan inte skicka ett tomt meddelande. Meddelande är inte skickat."
       ],
       "Cannot set expiration longer than retention policy allows.": [
         "Kan inte ställa in utgång längre än vad lagringspolicy tillåter."
@@ -6640,6 +6649,10 @@
         "${ contactEmailsLength } medlem",
         "${ contactEmailsLength } medlemmar"
       ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } medlem)",
+        "${ contactGroupName } (${ numberOfContacts } medlemmar)"
+      ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } medlem)",
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } medlemmar)"
@@ -7280,6 +7293,9 @@
       ],
       "Copied to clipboard": [
         "Kopierat till urklipp"
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Kopiera engångs-kodeks från senaste e-postmeddelanden i ett klick"
       ],
       "Copy the link to clipboard": [
         "Kopiera länken till urklipp"
@@ -7996,6 +8012,9 @@
       ],
       "Move here": [
         "Flytta hit"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Flytta engångs-kodeks e-post till Papperskorg när de kopieras"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Namnge din nya mapp och välj den överordnade mapp du vill lägga den i. Om du inte väljer en överordnad mapp kommer denna nya mapp att skapas som en överordnad mapp."
@@ -9107,6 +9126,9 @@
       ],
       "We couldn’t process your payment.": [
         "Vi kunde inte behandla din betalning."
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Vi hittade några E-postlistor som du inte läser. Du kan avbryta prenumerationen från dem med ett klick."
       ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "Vi har paket designade specifikt för användare som dig som behöver mer än en e-postadress."
@@ -10232,6 +10254,12 @@
       "Folder name": [
         "Mappnamn"
       ],
+      "Font family": [
+        "Typsnittsfamilj"
+      ],
+      "Font size": [
+        "Textstorlek"
+      ],
       "Forwards to": [
         "Vidarebefordras till"
       ],
@@ -10412,6 +10440,9 @@
       "Move to Inbox": [
         "Flytta till Inkorg"
       ],
+      "Move to Trash": [
+        "Flytta till Papperskorg"
+      ],
       "Moved to ${ labelName }": [
         "Flyttad till ${ labelName }"
       ],
@@ -10471,6 +10502,9 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Meddelanden är inaktiverade, för att aktivera dem ändrar du webbläsarinställningarna."
+      ],
+      "One-time codes": [
+        "Engångs-kodeks"
       ],
       "Operating system": [
         "Operativsystem"
@@ -10606,6 +10640,10 @@
       ],
       "Search in": [
         "Sök i"
+      ],
+      "Select all ${ count } unused sender": [
+        "Välj alla  ${ count }  oanvänd avsändare",
+        "Välj alla ${ count } oanvända avsändare"
       ],
       "Select which Gmail address to connect": [
         "Välj vilken Gmail-adress att ansluta"
@@ -15466,6 +15504,12 @@
       "Moved to ${ label }. Similar messages will be categorized there in the future.": [
         "Flyttad till ${ label }. Liknande meddelanden kommer att kategoriseras där i framtiden."
       ],
+      "One-time codes disabled": [
+        "Engångs-kodeks inaktiverade"
+      ],
+      "One-time codes enabled": [
+        "Engångs-kodeks inaktiverade"
+      ],
       "Password copied to clipboard": [
         "Lösenord kopierat till urklipp"
       ],
@@ -16654,6 +16698,9 @@
       ],
       "Start import process": [
         "Starta importprocessen"
+      ],
+      "Start with a cleaner Inbox": [
+        "Börja med en renare inkorg"
       ],
       "Storage capacity warning": [
         "Varning för lagringskapacitet"

@@ -994,6 +994,9 @@
       "Manage subscription": [
         "Abonelik yönetimi"
       ],
+      "Manage subscriptions": [
+        "Abonelik yönetimi"
+      ],
       "Manage users/addresses": [
         "Kullanıcıları/adresleri yönetin"
       ],
@@ -1874,7 +1877,7 @@
         "İzin geri alındı"
       ],
       "Sign-in": [
-        "Giriş yap"
+        "Oturum aç"
       ]
     },
     "Admin": {
@@ -5513,7 +5516,7 @@
         "İlke adının uzunluğu 3 ile 40 karakter arasında olmalıdır."
       ],
       "The session has expired. Please try again.": [
-        "Oturum süresi doldu. Lütfen tekrar deneyin."
+        "Oturumun geçerlilik süresi dolmuş. Lütfen yeniden deneyin."
       ],
       "The total could not be calculated. Change the amount to try again.": [
         "Toplam tutar hesaplanamadı. Yeniden denemek için tutarı değiştirin."
@@ -6298,9 +6301,6 @@
       "Allow platform keys": [
         "Platform anahtarları kullanılabilsin"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "İç güvenlik anahtarlarını (Windows Hello, Face ID, Touch ID veya iç TPM gibi) kaydetmenizi sağlar"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "${ name } güvenlik anahtarını silmek istediğinize emin misiniz?"
       ],
@@ -6339,6 +6339,9 @@
       ],
       "Touch your security key to continue.": [
         "İlerlemek için güvenlik anahtarınıza dokunun."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Bu aygıttaki parmak izi, yüz tanıma, PIN veya ekran kilidini kullanın"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Kimliğinizi fiziksel bir U2F ya da FIDO2 güvenlik anahtarıyla doğrulayın"
@@ -7659,17 +7662,17 @@
       "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
         "Bu seçeneği açtığınızda, yalnızca **${ primaryEmail }** adresiyle oturum açabilirsiniz."
       ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
-        "Bu seçeneği açtığınızda, yalnızca özgün kullanıcı adınız olan **${ username }** ile oturum açabilirsiniz. Bu tek başına ya da **${ firstEmail }**, **@${ secondDomain }** veya **@${ thirdDomain }** biçiminde olabilir."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
-        "Bu seçeneği açtığınızda, yalnızca özgün kullanıcı adınız **${ username }** ile oturum açabileceksiniz. Bu tek başına **${ firstEmail }** şeklinde veya **@${ secondDomain }** şeklinde olabilir."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
-        "Bu seçeneği açtığınızda, yalnızca özgün kullanıcı adınız **${ username }** ile tek başına ya da **${ firstEmail }** şeklinde oturum açabileceksiniz."
-      ],
       "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
         "Bu seçeneği açtığınızda, yalnızca **${ username }** kullanıcı adınızla oturum açabileceksiniz."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Bu seçeneği açtığınızda, yalnızca kullanıcı adınız **${ username }** ya da **${ firstEmail }** ya da **${ secondEmail }** ile oturum açabileceksiniz."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Bu seçeneği açtığınızda, yalnızca kullanıcı adınız **${ username }** ya da **${ firstEmail }** ya da **${ secondEmail }** ya da **${ thirdEmail }** ile oturum açabileceksiniz."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Bu seçeneği açtığınızda, yalnızca kullanıcı adınız **${ username }** ya da **${ firstEmail }** ile oturum açabileceksiniz."
       ],
       "Can you access your active session?": [
         "Etkin oturumunuza erişebiliyor musunuz?"
@@ -8847,12 +8850,6 @@
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Güvenilir aygıtlarda önerilir. ${ learnMoreLink }"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "${ PROTON_SENTINEL_NAME } açıkken e-posta adresi ile kurtarma kullanılamaz."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "${ PROTON_SENTINEL_NAME } açıkken telefon numarası ile kurtarma kullanılamaz."
-      ],
       "Recovery file downloaded": [
         "Kurtarma dosyası indirildi"
       ],
@@ -9330,11 +9327,17 @@
       "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
         "Her zaman açık VPN özelliğini açmak için aygıt profilinin her aygıtta ${ policiesPath } konumuna ulaşması gerekir — ${ VPN_APP_NAME } istemcisi bu konumu algılar ve profili otomatik olarak uygular. ${ learnMore }"
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Hesabınızda olabilecek en yüksek güvenliği sağlamak için **E-posta adresi ile kurtarma** seçeneğini kapatın."
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Hesabınızda olabilecek en yüksek güvenlik düzeyini sağlamak için **E-posta ile kurtarma** özelliğini kapatın."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Hesabınızda olabilecek en yüksek güvenliği sağlamak için **Telefon numarası ile kurtarma** seçeneğini kapatın."
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Hesabınızda olabilecek en yüksek güvenlik düzeyini sağlamak için **Telefon ile kurtarma** özelliğini kapatın."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Hesabınızda en yüksek güvenlik düzeyini sağlamak için **E-posta ile kurtarma** özelliğini kapatın."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Hesabınızda olabilecek en yüksek güvenlik düzeyini sağlamak için, **Telefon ile kurtarma** özelliğini kapatın."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
@@ -9645,14 +9648,14 @@
       "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Oturum açma kısıtlandığında, oturum açmak için yalnızca **${ username }** kullanıcı adınız kullanılabilir. Diğer adresleriniz biri bunları biliyor olsa bile hesabınız ile ilişkilendirilemez."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Oturum açma kısıtlandığında, yalnızca özgün kullanıcı adınız olan **${ username }** ile oturum açabilirsiniz. Bunu tek başına ya da **${ firstEmail }**, **@${ secondDomain }** veya **@${ thirdDomain }** biçiminde kullanabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Oturum açma kısıtlandığında yalnızca kullanıcı adınız **${ username }** ya da **${ firstEmail }** ya da **${ secondEmail }** ile oturum açabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Oturum açma kısıtlandığında yalnızca özgün kullanıcı adınız **${ username }** ile oturum açabilirsiniz. Bunu tek başına **${ firstEmail }** şeklinde veya **@${ secondDomain }** şeklinde kullanabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Oturum açma kısıtlandığında yalnızca kullanıcı adınız **${ username }** ya da **${ firstEmail }** ya da **${ secondEmail }** ya da **${ thirdEmail }** ile oturum açabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Oturum açma kısıtlandığında, yalnızca özgün kullanıcı adınız **${ username }** ile tek başına ya da **${ firstEmail }** biçiminde oturum açabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Oturum açma kısıtlandığında yalnızca kullanıcı adınız **${ username }** ya da **${ firstEmail }** ile oturum açabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "İptal ettiğinizde aboneliğiniz yenilenmez ancak abonelik süresinin sonuna kadar tarifenizin özelliklerinden yararlanmayı sürdürürsünüz. Bundan sonra ${ BRAND_NAME } Free tarifesine geçersiniz."
@@ -11296,6 +11299,11 @@
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Lütfen aşağıdaki TXT kaydını ekleyin. Not: DNS kayıtlarının güncellenmesi birkaç saat sürebilir."
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Alanı boş bırakın"
       ]
     },
     "Label for new member": {

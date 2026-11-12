@@ -36,6 +36,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butikk"
       ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
       "Accept": [
         "Aksepter"
       ],
@@ -47,6 +50,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Legg til ${ name }"
       ],
       "Add ${ photoCount } photo to a new album": [
         "Legg til ${ photoCount } bilde i et nytt album",
@@ -3568,9 +3574,6 @@
       "External invitations are temporarily disabled.": [
         "Eksterne invitasjoner er midlertidig deaktivert."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Eksterne invitasjoner er midlertidig deaktivert. Prøv igjen senere."
-      ],
       "Failed to change permissions settings": [
         "Kunne ikke endre tillatelsesinnstillinger"
       ],
@@ -3999,12 +4002,6 @@
       ],
       "The folder name is too long. Please choose a different name.": [
         "Mappenavnet er for langt. Velg et annet navn."
-      ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Invitasjonen kan ikke fullføres enda. Prøv igjen senere."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Invitasjonen eksisterer ikke lenger"
       ],
       "The label name is invalid. Please choose a different name.": [
         "Etikettnavnet er ikke gyldig. Velg et annet navn."
@@ -5146,9 +5143,6 @@
       ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "${ IDEAL_WERO_BRAND_NAME }-logo"
-      ],
-      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
-        "${ invitation.addedByEmail.error.claimedAuthor } (ikke bekreftet avsender)"
       ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } invitasjon venter",
@@ -13520,6 +13514,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Denne brukeren får administratorrettigheter neste gang brukeren logger på."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Oppgrader til en støttet plan for å bruke administratorroller."
       ],

@@ -535,6 +535,9 @@
       "Open navigation": [
         "Öppna navigering"
       ],
+      "Open the browser again": [
+        "Öppna webbläsaren igen"
+      ],
       "Organize vaults": [
         "Organisera valv"
       ],
@@ -700,6 +703,9 @@
       "Show more": [
         "Visa mer"
       ],
+      "Sign in in the app instead": [
+        "Logga in i appen istället"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Logga in med ${ BRAND_NAME }"
       ],
@@ -745,6 +751,9 @@
       ],
       "Trash": [
         "Lägg i papperskorg"
+      ],
+      "Try again": [
+        "Försök igen"
       ],
       "Try again.": [
         "Försök igen."
@@ -1858,8 +1867,14 @@
       "Can view this item.": [
         "Kan visa detta objekt."
       ],
+      "Canceled by user": [
+        "Avbruten av användare"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Kontrollerar ${ compromised.progress.completed } av ${ compromised.progress.total } lösenord"
+      ],
+      "Choose how you want to sign in": [
+        "Välj hur du vill logga in"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Bekräfta ditt extralösenord för att fortsätta med att ta bort det."
@@ -2560,6 +2575,9 @@
       "Shared item invitation": [
         "Inbjudan till delat objekt"
       ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Logga in och bekräfta i webbläsarfönstret som nyss öppnades. ${ PASS_APP_NAME } kommer att återupptas automatiskt när du är färdig."
+      ],
       "Sign in to your account": [
         "Logga in på ditt konto"
       ],
@@ -2571,6 +2589,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Använd bara ${ emailBold } nästa gång du behöver ett alias: det kommer att skapas ${ automaticallyBold } första gången det tar emot ett e-postmeddelande. För att få bättre kontroll så kan du också skapa ${ rulesHyperLink }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Att starta ${ PASS_APP_NAME } offline kommer att kräva ditt ${ BRAND_NAME } lösenord."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Att starta ${ PASS_APP_NAME } offline kommer att kräva ditt backup-lösenord."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Att starta ${ PASS_APP_NAME } offline kommer att kräva ditt extra lösenord."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Att starta ${ PASS_APP_NAME } offline kommer att kräva ditt andra lösenord."
       ],
       "Successfully exported all your items": [
         "Alla dina objekt har exporterats"
@@ -2632,6 +2662,9 @@
       ],
       "The secure link has been removed": [
         "Den säkra länken har tagits bort"
+      ],
+      "The sign in was not confirmed in time.": [
+        "Inloggningen bekräftades inte i tid"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Texten du försöker klistra in är längre än den högsta tillåtna längden på ${ maxLength } tecken."
@@ -2921,6 +2954,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
+      ],
+      "Your session could not be authorized.": [
+        "Din session kunde inte auktoriseras."
       ]
     },
     "Keyboard key": {
@@ -4750,6 +4786,9 @@
       "Activity for \"${ token.Name }\"": [
         "Aktivitet för “${ token.Name }“"
       ],
+      "Add an account": [
+        "Lägg till ett konto"
+      ],
       "Add custom domain": [
         "Lägg till anpassad domän"
       ],
@@ -5038,8 +5077,8 @@
         "Flytta ${ trashedItemsCount } objekt till papperskorg?",
         "Flytta ${ trashedItemsCount } objekt till papperskorg?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Flytta alla objekt till ”${ vaultName }”?"
+      "Move all items to \"${ target }\"?": [
+        "Flytta alla objekt till “${ target }“?"
       ],
       "Move all items?": [
         "Flytta alla objekt?"
@@ -5198,6 +5237,15 @@
       ],
       "Shared via": [
         "Delad via"
+      ],
+      "Sign in timed out": [
+        "Inloggningen överskreds"
+      ],
+      "Signing you in": [
+        "Loggar in dig"
+      ],
+      "Something went wrong": [
+        "Något gick fel"
       ],
       "SPF (Optional)": [
         "SPF (valfritt)"

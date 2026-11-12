@@ -44,6 +44,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butikk"
       ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
       "Activate recovery": [
         "Aktiver gjennoppretting"
       ],
@@ -52,6 +55,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Legg til ${ name }"
       ],
       "Add a date": [
         "Legg til en dato"
@@ -12552,6 +12558,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Denne brukeren får administratorrettigheter neste gang brukeren logger på."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Oppgrader til en støttet plan for å bruke administratorroller."
       ],

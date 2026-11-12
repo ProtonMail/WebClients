@@ -7986,9 +7986,6 @@
       "Allow platform keys": [
         "Izinkan kunci platform"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Memungkinkan Anda untuk mendaftarkan kunci keamanan bawaan sistem (seperti Windows Hello, Face ID, Touch ID, atau TPM internal)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Apakah Anda yakin untuk menghapus kunci keamanan ${ name }?"
       ],
@@ -11159,12 +11156,6 @@
       "RECOMMENDED": [
         "DIREKOMENDASIKAN"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Pemulihan dengan email tidak tersedia saat ${ PROTON_SENTINEL_NAME } diaktifkan."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Pemulihan dengan telepon tidak tersedia saat ${ PROTON_SENTINEL_NAME } diaktifkan."
-      ],
       "Recovery file downloaded": [
         "File pemulihan diunduh"
       ],
@@ -11761,12 +11752,6 @@
       ],
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Untuk mengaktifkan perlindungan pasca-kuantum, penyelesaian pembuatan kunci enkripsi pasca-kuantum baru harus dilakukan."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Untuk memastikan keamanan setinggi mungkin pada akun Anda, nonaktifkan **Pemulihan dengan email pemulihan**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Untuk memastikan keamanan setinggi mungkin pada akun Anda, nonaktifkan **Pemulihan dengan telepon pemulihan**."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Untuk memastikan agar Anda tidak kehilangan berbagai data penting, ${ DRIVE_APP_NAME } menyimpan versi lama file seiring dengan perubahan yang dibuat oleh Anda dan rekan kerja Anda. Tentukan berapa lama ${ BRAND_NAME } akan menyimpan file versi sebelumnya."

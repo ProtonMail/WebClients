@@ -754,6 +754,9 @@
       "Trash": [
         "Przenieś do kosza"
       ],
+      "Try again": [
+        "Spróbuj ponownie"
+      ],
       "Try again.": [
         "Spróbuj ponownie."
       ],
@@ -2278,7 +2281,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -5141,9 +5147,6 @@
         "Przenieść ${ trashedItemsCount } elementów do kosza?",
         "Przenieść ${ trashedItemsCount } elementów do kosza?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Przenieść wszystkie elementy do sejfu \"${ vaultName }\"?"
-      ],
       "MX record": [
         "Rekord MX"
       ],
@@ -5299,6 +5302,9 @@
       ],
       "Shared via": [
         "Udostępniono przez"
+      ],
+      "Something went wrong": [
+        "Coś poszło nie tak"
       ],
       "SPF (Optional)": [
         "SPF (opcjonalnie)"

@@ -751,6 +751,9 @@
       "Trash": [
         "丟到垃圾桶"
       ],
+      "Try again": [
+        "再試一次"
+      ],
       "Try again.": [
         "重試。"
       ],
@@ -2198,9 +2201,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "移動全部於\"${ payload.content.name }\"的項目"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "將項目移至另一個保管庫將會清除其安全連結。"
       ],
       "Moving items": [
         "正在移動檔案"
@@ -4979,9 +4979,6 @@
       "Move ${ trashedItemsCount } item to trash?": [
         "要將 ${ trashedItemsCount } 個項目移至垃圾桶嗎？"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "要將所有項目移至「${ vaultName }」嗎？"
-      ],
       "MX record": [
         "MX 記錄"
       ],
@@ -5131,6 +5128,9 @@
       ],
       "Shared via": [
         "共享來源"
+      ],
+      "Something went wrong": [
+        "發生錯誤"
       ],
       "SPF (Optional)": [
         "SPF (選擇性)"

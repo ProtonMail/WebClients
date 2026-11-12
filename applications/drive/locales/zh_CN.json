@@ -90,6 +90,9 @@
       "Add note": [
         "添加备注"
       ],
+      "Add payment method": [
+        "添加付款方式"
+      ],
       "Add people or groups to share": [
         "添加人员或群组进行共享"
       ],
@@ -158,6 +161,9 @@
       ],
       "Cancel transfers": [
         "取消传输"
+      ],
+      "Cancel trial": [
+        "取消试用"
       ],
       "Cancel trial and pay": [
         "取消试用并支付"
@@ -524,6 +530,9 @@
       ],
       "Go to ${ planOrAppName }": [
         "前往 ${ planOrAppName }"
+      ],
+      "Go to folder": [
+        "前往文件夹"
       ],
       "Go to label": [
         "转至标签"
@@ -3543,9 +3552,6 @@
       "External invitations are temporarily disabled.": [
         "外部邀请暂时被禁用。"
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "外部邀请暂时禁用。请稍后重试"
-      ],
       "Failed to change permissions settings": [
         "更改权限设置失败"
       ],
@@ -3968,12 +3974,6 @@
       ],
       "The folder name is too long. Please choose a different name.": [
         "文件夹名称过长，请重新填写。"
-      ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "邀请尚无法完成。请稍后重试。"
-      ],
-      "The invitation doesn't exist anymore": [
-        "邀请不存在"
       ],
       "The label name is invalid. Please choose a different name.": [
         "标签名称无效，请更改。"
@@ -5084,9 +5084,6 @@
       ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "${ IDEAL_WERO_BRAND_NAME } 标记"
-      ],
-      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
-        "${ invitation.addedByEmail.error.claimedAuthor }（未验证的发送者）"
       ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } 待定邀请"
@@ -9858,6 +9855,9 @@
       ],
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**在此之前可随时取消。** 在试用期结束前，您可以免费使用 ${ planTitle }。"
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**试用后改变主意了？** 在首次付款后 30 天内取消，我们将退还未使用时间的费用。"
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**您的完整订阅开始后…** 您仍可在 30 天内取消，并获得按比例退款。"

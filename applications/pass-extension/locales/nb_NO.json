@@ -727,6 +727,9 @@
       "Sign back in": [
         "Logg på igjen"
       ],
+      "Sign in in the app instead": [
+        "Logg inn i appen i stedet"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Logg på med ${ BRAND_NAME }"
       ],
@@ -2161,6 +2164,9 @@
       "Can view this item.": [
         "Kan lese dette elementet."
       ],
+      "Canceled by user": [
+        "Avbrutt av bruker"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Sjekker ${ compromised.progress.completed } av ${ compromised.progress.total } passord"
       ],
@@ -2565,8 +2571,7 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2975,6 +2980,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Bare bruk ${ emailBold } neste gang du trenger et alias: det blir ${ automaticallyBold } opprettet første gang det mottar en e-post. Hvis du vil ha mer finkornet kontroll, kan du også definere ${ rulesHyperLink }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "For å starte ${ PASS_APP_NAME } i frakoblet modus må du oppgi ${ BRAND_NAME }-passordet ditt."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Hvis du starter ${ PASS_APP_NAME } i frakoblet modus, må du oppgi backup-passordet ditt."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "For å starte ${ PASS_APP_NAME } i frakoblet modus må du oppgi det ekstra passordet ditt."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "For å starte ${ PASS_APP_NAME } i frakoblet modus må du oppgi det andre passordet ditt."
       ],
       "Successfully exported all your items": [
         "Eksporterte alle elementene dine"
@@ -5533,8 +5550,8 @@
         "Flytte ${ trashedItemsCount } element til papirkurven?",
         "Flytte ${ trashedItemsCount } elementer til papirkurven?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Flytte alle elementer til \"${ vaultName }\"?"
+      "Move all items to \"${ target }\"?": [
+        "Flytt alle elementer til \"${ target }\"?"
       ],
       "Move all items?": [
         "Flytt alle elementer?"

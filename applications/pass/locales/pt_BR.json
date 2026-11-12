@@ -505,6 +505,9 @@
       "Move all items": [
         "Mover todos os itens"
       ],
+      "Move folder": [
+        "Mover pasta"
+      ],
       "Move to": [
         "Mover para"
       ],
@@ -537,6 +540,12 @@
       ],
       "Open navigation": [
         "Abrir navegação"
+      ],
+      "Open platform selection dropdown": [
+        "Abrir menu de seleção de plataforma"
+      ],
+      "Open the browser again": [
+        "Abre o navegador de novo"
       ],
       "Organize vaults": [
         "Organizar cofres"
@@ -703,6 +712,9 @@
       "Show more": [
         "Mostrar mais"
       ],
+      "Sign in in the app instead": [
+        "Entrar pelo aplicativo"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Iniciar sessão com ${ BRAND_NAME }"
       ],
@@ -748,6 +760,9 @@
       ],
       "Trash": [
         "Lixeira"
+      ],
+      "Try again": [
+        "Tentar novamente"
       ],
       "Try again.": [
         "Tente novamente."
@@ -892,6 +907,9 @@
       "Change your passwords": [
         "Altere suas senhas"
       ],
+      "Check if you're reusing passwords": [
+        "Confira se você está reutilizando senhas"
+      ],
       "Check if your passwords have been exposed": [
         "Verifique se suas senhas foram expostas"
       ],
@@ -951,6 +969,9 @@
       ],
       "This account is vulnerable, visit the service and change your password.": [
         "Esta conta está vulnerável, visite o serviço e altere sua senha."
+      ],
+      "This login password appears in a data breach. Please visit the service and change the password.": [
+        "A senha deste login foi encontrada em um vazamento de dados. Acesse o serviço e altere a senha."
       ],
       "This service offers 2FA. Enable it for added account security.": [
         "Este serviço oferece autenticação de dois fatores (2FA). Ative-a para maior segurança da sua conta."
@@ -1201,6 +1222,9 @@
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Falha ao mover todos os itens de \"${ payload.content.name }\""
+      ],
+      "Failed to move folder": [
+        "Não foi possível mover a pasta"
       ],
       "Failed to move items": [
         "Falha ao mover os itens"
@@ -1627,6 +1651,9 @@
         "${ forwardedEmailsCount } encaminhado",
         "${ forwardedEmailsCount } encaminhados"
       ],
+      "${ importantBold } This doesn't prevent viewers from retrieving passwords through other means.": [
+        "${ importantBold } Isso não impede que os visualizadores obtenham as senhas por outros meios."
+      ],
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } quer compartilhar um item com um grupo que você administra."
       ],
@@ -1858,6 +1885,15 @@
       "Can view this item.": [
         "Pode vere esse item."
       ],
+      "Canceled by user": [
+        "Cancelado pelo usuário"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Verificando ${ compromised.progress.completed } de ${ compromised.progress.total } senhas"
+      ],
+      "Choose how you want to sign in": [
+        "Escolha como deseja iniciar sessão"
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirme sua senha adicional para prosseguir com a remoção."
       ],
@@ -1893,6 +1929,9 @@
       ],
       "Created item": [
         "Item criado"
+      ],
+      "CSV offers a convenient format to view your data. However due to its simplicity, some data will not be included (custom fields, folder structure etc.). For a complete export, we recommend using a different format.": [
+        "O formato CSV é prático para visualizar seus dados. Porém, por ser simples, não inclui alguns dados, como campos personalizados e a estrutura de pastas. Para uma exportação completa, recomendamos outro formato."
       ],
       "Current version": [
         "Versão atual"
@@ -2035,11 +2074,17 @@
       "Failed updating your vault organization": [
         "Falha ao atualizar o cofre da sua organização"
       ],
+      "Field hidden. You can still autofill it.": [
+        "Campo oculto. Você ainda pode usar o preenchimento automático."
+      ],
       "Fill in the CSV with your data": [
         "Preencha o CSV com seus dados"
       ],
       "Folder \"${ payload.folder.name }\" created": [
         "Pasta \"${ payload.folder.name }\" criada"
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Pasta \"${ payload.folder.name }\" movida"
       ],
       "Folder deleted": [
         "Pasta excluída"
@@ -2062,6 +2107,9 @@
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "O endereço de encaminhamento foi copiado para a área de transferência. Envie um e-mail para esse endereço e ${ Email } o receberá."
+      ],
+      "Full data sync to improve app performance. Thank you for your patience.": [
+        "Sincronização completa dos dados para melhorar o desempenho do aplicativo. Agradecemos sua paciência."
       ],
       "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
         "As senhas geradas serão armazenadas por um período de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } semanas.",
@@ -2229,6 +2277,9 @@
       "Moving items": [
         "Movendo itens"
       ],
+      "Moving items to another vault will erase their secure links.": [
+        "Mover itens para outro cofre apagará seus links seguros."
+      ],
       "Moving items to trash": [
         "Movendo itens para a lixeira"
       ],
@@ -2277,6 +2328,32 @@
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "O acesso on-line ao ${ PASS_APP_NAME } exigirá um código PIN. Você será desconectado após 3 tentativas fracassadas."
       ],
+      "Only ${ count } item in \"${ folderName }\" will be moved. Items in subfolders will not be moved.": [
+        "Somente ${ count } item em \"${ folderName }\" será movido. Os itens nas subpastas não serão movidos.",
+        "Somente ${ count } itens em \"${ folderName }\" serão movidos. Os itens nas subpastas não serão movidos."
+      ],
+      "Only ${ count } item will be moved. Items in folders will not be moved.": [
+        "Somente ${ count } item será movido. Os itens nas pastas não serão movidos.",
+        "Somente ${ count } itens serão movidos. Os itens nas pastas não serão movidos."
+      ],
+      "Only aliases are shown": [
+        "Somente aliases são exibidos"
+      ],
+      "Only cards are shown": [
+        "Somente cartões são exibidos"
+      ],
+      "Only custom items are shown": [
+        "Somente itens personalizados são exibidos"
+      ],
+      "Only identities are shown": [
+        "Somente identidades são exibidas"
+      ],
+      "Only logins are shown": [
+        "Somente logins são exibidos"
+      ],
+      "Only notes are shown": [
+        "Somente notas são exibidas"
+      ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Apenas os tokens que expiraram nos últimos 30 dias são mostrados. Os tokens mais antigos são excluídos automaticamente."
       ],
@@ -2294,6 +2371,9 @@
       ],
       "Pass Plus trial": [
         "Avaliação do Proton Pass Plus"
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Senha oculta. Você ainda pode usar o preenchimento automático."
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Senha de bloqueio registrada. Use-a para desbloquear o ${ PASS_APP_NAME }"
@@ -2494,6 +2574,9 @@
       "Scan to download": [
         "Digitalizar para baixar"
       ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Escaneie para baixar o ${ PASS_APP_NAME } para iOS e Android"
+      ],
       "Secure links": [
         "Links seguros"
       ],
@@ -2545,6 +2628,9 @@
       "Shared item invitation": [
         "Convite de item compartilhado"
       ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Entre e confirme na janela do navegador que acabou de abrir. O ${ PASS_APP_NAME } continuará automaticamente quando você terminar."
+      ],
       "Sign in to your account": [
         "Iniciar sessão em sua conta"
       ],
@@ -2556,6 +2642,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Basta usar ${ emailBold } na próxima vez que precisar de um alias: ele será ${ automaticallyBold } criado na primeira vez que receber um e-mail. Para ter um controle mais refinado, também é possível definir ${ rulesHyperLink }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Para iniciar o ${ PASS_APP_NAME } offline, será preciso informar sua senha do ${ BRAND_NAME }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Para iniciar o ${ PASS_APP_NAME } offline, será preciso informar sua senha de backup."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Para iniciar o ${ PASS_APP_NAME } offline, será preciso informar sua senha extra."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Para iniciar o ${ PASS_APP_NAME } offline, será preciso informar sua segunda senha."
       ],
       "Successfully exported all your items": [
         "Todos os seus itens foram exportados"
@@ -2608,6 +2706,9 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "A senha extra será necessária para utilizar o ${ PASS_APP_NAME }. Serve como uma senha adicional sobre sua senha da ${ BRAND_NAME }."
       ],
+      "The folder is already here": [
+        "A pasta já está aqui"
+      ],
       "The following ${ totalIgnored } item could not be imported:": [
         "O seguinte item ${ totalIgnored } não pôde ser importado:",
         "Os seguintes itens ${ totalIgnored } não puderam ser importados:"
@@ -2617,6 +2718,9 @@
       ],
       "The secure link has been removed": [
         "O link seguro foi removido"
+      ],
+      "The sign in was not confirmed in time.": [
+        "O acesso não foi confirmado a tempo."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "O texto que você está tentando colar é maior que o comprimento máximo permitido de ${ maxLength } caracteres."
@@ -2686,6 +2790,9 @@
       ],
       "To review your imported data, click on the ${ PASS_APP_NAME } icon in your browser toolbar.": [
         "Para revisar seus dados importados, clique no ícone do ${ PASS_APP_NAME } na barra de ferramentas de seu navegador."
+      ],
+      "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission.": [
+        "Para configurar o desbloqueio por biometria, o ${ PASS_APP_NAME } precisa de uma nova permissão do navegador."
       ],
       "To set up biometrics unlock, ${ PASS_APP_NAME } requires a new browser permission. After you accept it, the extension will reload. Please re-open this page afterwards.": [
         "Para configurar o desbloqueio por biometria, o ${ PASS_APP_NAME } precisa de uma nova permissão do navegador. Após você aceitá-la, a extensão será recarregada. Abra novamente esta página depois disso."
@@ -2772,8 +2879,17 @@
       "Verification code sent.": [
         "Código de verificação enviado."
       ],
+      "View your ${ PASS_SHORT_APP_NAME } items offline. Requires your password to enable.": [
+        "Veja seus itens do ${ PASS_SHORT_APP_NAME } offline. É preciso informar sua senha para ativar."
+      ],
       "Viewer": [
         "Visualizador "
+      ],
+      "Viewers can still autofill passwords, but won't see them in ${ PASS_APP_NAME }. This discourages casual viewing and reduces the risk of accidental disclosure.": [
+        "Visualizadores ainda podem preencher senhas automaticamente, mas não as verão no ${ PASS_APP_NAME }. Isso desestimula a visualização casual e reduz o risco de exposição acidental."
+      ],
+      "Viewers can still autofill. Editors and admins always see passwords.": [
+        "Visualizadores ainda podem usar o preenchimento automático. Editores e administradores sempre veem as senhas."
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Estamos tendo problemas em sincronizar seus dados para o seu armazenamento local. Verifique se você tem espaço livre em seu disco para que o ${ PASS_SHORT_APP_NAME } funcione corretamente."
@@ -2793,6 +2909,9 @@
       ],
       "When enabled, you can still access your ${ PASS_SHORT_APP_NAME } data if you lose internet connectivity or if ${ BRAND_NAME } servers are unreachable.": [
         "Quando ativado, você ainda consegue acessar seus dados do ${ PASS_SHORT_APP_NAME } se perder a conectividade com a internet ou se os servidores do ${ BRAND_NAME } estiverem inacessíveis."
+      ],
+      "When moving items between vaults we will preserve up to the last 50 modifications performed to each item.": [
+        "Ao mover itens entre cofres, preservaremos até as últimas 50 alterações feitas em cada item."
       ],
       "When sending an email from this alias, the email will display ${ emailSender } as sender.": [
         "Ao enviar um e-mail a partir desse alias, o e-mail exibirá ${ emailSender } como remetente."
@@ -2904,8 +3023,17 @@
       "Your information was found on ${ displayedDate }": [
         "Sua informação foi encontrada em ${ displayedDate }"
       ],
+      "Your organization does not allow using 2FA codes stored in ${ PASS_APP_NAME }": [
+        "Sua organização não permite usar códigos de autenticação de dois fatores armazenados no ${ PASS_APP_NAME }"
+      ],
+      "Your organization does not allow using passkeys stored in ${ PASS_APP_NAME }": [
+        "Sua organização não permite usar chaves de acesso armazenadas no ${ PASS_APP_NAME }"
+      ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Sua organização exige que você proteja seu acesso ao ${ PASS_APP_NAME }"
+      ],
+      "Your session could not be authorized.": [
+        "Sua sessão não pôde ser autorizada."
       ]
     },
     "Keyboard key": {
@@ -3095,6 +3223,9 @@
       ],
       "All items": [
         "Todos os itens"
+      ],
+      "Allow viewers to see passwords": [
+        "Permitir que visualizadores vejam senhas"
       ],
       "Alphabetical": [
         "Em ordem alfabética"
@@ -4738,6 +4869,9 @@
       "Activity for \"${ token.Name }\"": [
         "Atividade para \"${ token.Name }\""
       ],
+      "Add an account": [
+        "Adicionar uma conta"
+      ],
       "Add custom domain": [
         "Adicionar domínio personalizado"
       ],
@@ -4940,6 +5074,9 @@
       "Hidden vaults": [
         "Cofres ocultos"
       ],
+      "Hide passwords from viewers?": [
+        "Ocultar senhas dos visualizadores?"
+      ],
       "Hide-my-email aliases": [
         "Aliases do hide-my-email"
       ],
@@ -5015,6 +5152,9 @@
       "Modified": [
         "Modificado"
       ],
+      "Move \"${ folderName }\" to": [
+        "Mover \"${ folderName }\" para"
+      ],
       "Move ${ count } item to ${ target }": [
         "Mover ${ count } item para o ${ target }",
         "Mover ${ count } itens para o ${ target }"
@@ -5023,8 +5163,8 @@
         "Mover ${ trashedItemsCount } item para a lixeira?",
         "Mover ${ trashedItemsCount } itens para a lixeira?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Mover todos os itens para \"${ vaultName }\"?"
+      "Move all items to \"${ target }\"?": [
+        "Mover todos os itens para \"${ target }\"?"
       ],
       "Move all items?": [
         "Mover todos os itens?"
@@ -5184,6 +5324,15 @@
       "Shared via": [
         "Compartilhar via"
       ],
+      "Sign in timed out": [
+        "O tempo para entrar expirou"
+      ],
+      "Signing you in": [
+        "Iniciando sessão"
+      ],
+      "Something went wrong": [
+        "Algo deu errado"
+      ],
       "SPF (Optional)": [
         "SPF (Opcional)"
       ],
@@ -5228,6 +5377,9 @@
       ],
       "Upgrade to check for compromised passwords": [
         "Faça upgrade para verificar se há senhas comprometidas"
+      ],
+      "Upgrade to check for reused passwords": [
+        "Faça upgrade para verificar senhas reutilizadas"
       ],
       "URL matching": [
         "Correspondência de URL"
@@ -5358,6 +5510,22 @@
       "${ BRAND_NAME } password is required": [
         "A senha da ${ BRAND_NAME } é obrigatória"
       ],
+      "${ count } folder was merged into its parent folder because the maximum nesting level was reached.": [
+        "${ count } pasta foi mesclada com a pasta principal porque o nível máximo de pastas aninhadas foi atingido.",
+        "${ count } pastas foram mescladas com a pasta principal porque o nível máximo de pastas aninhadas foi atingido."
+      ],
+      "${ count } folder was not imported because its parent folder reached the maximum number of subfolders. Its items were imported to the closest folder available.": [
+        "${ count } pasta não foi importada porque a pasta principal atingiu o número máximo de subpastas. Os itens foram importados para a pasta disponível mais próxima.",
+        "${ count } pastas não foram importadas porque a pasta principal atingiu o número máximo de subpastas. Os itens foram importados para a pasta disponível mais próxima."
+      ],
+      "${ count } folder was not imported because this vault reached its folder limit. Its items were imported to the closest folder available.": [
+        "${ count } pasta não foi importada porque este cofre atingiu o limite de pastas. Os itens foram importados para a pasta disponível mais próxima.",
+        "${ count } pastas não foram importadas porque este cofre atingiu o limite de pastas. Os itens foram importados para a pasta disponível mais próxima."
+      ],
+      "${ failed } folder could not be created. Its items were imported to the closest folder available.": [
+        "Não foi possível criar ${ failed } pasta. Os itens foram importados para a pasta disponível mais próxima.",
+        "Não foi possível criar ${ failed } pastas. Os itens foram importados para a pasta disponível mais próxima."
+      ],
       "${ modeLabelStong } provides powerful control, but a single error can cause autofill to match and fill data on fraudulent or phishing websites.": [
         "O modo ${ modeLabelStong } oferece um controle avançado, mas um único erro pode fazer com que o preenchimento automático corresponda e preencha dados em sites fraudulentos ou de phishing."
       ],
@@ -5375,6 +5543,9 @@
       ],
       "Aliases in trash will continue forwarding emails.": [
         "Os aliases na lixeira continuarão encaminhando e-mails."
+      ],
+      "All items in this folder including its subfolders will be deleted. You cannot undo this action.": [
+        "Todos os itens desta pasta e de suas subpastas serão excluídos. Esta ação não pode ser desfeita."
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Todos os itens na lixeira serão excluídos permanentemente. Não é possível desfazer esta ação."
@@ -5493,6 +5664,9 @@
       "Move to trash": [
         "Mover para a lixeira"
       ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Mover a pasta para cá excederia o nível máximo de pastas aninhadas"
+      ],
       "No items": [
         "Nenhum item"
       ],
@@ -5601,6 +5775,9 @@
       "Verification code is required": [
         "O código de verificação é necessário."
       ],
+      "You can't move a folder into itself or its subfolders": [
+        "Você não pode mover uma pasta para dentro dela mesma ou de suas subpastas"
+      ],
       "You have reached the limit of members who can access this item.": [
         "Você atingiu o limite de membros que podem acessar este item."
       ],
@@ -5627,6 +5804,15 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Você não terá mais acesso a este cofre. Para participar novamente, você precisará de um novo convite."
+      ],
+      "You've reached the maximum folder nesting level": [
+        "Você atingiu o nível máximo de pastas aninhadas"
+      ],
+      "You've reached the maximum number of folders at this level": [
+        "Você atingiu o número máximo de pastas neste nível"
+      ],
+      "You've reached the maximum number of folders for this vault": [
+        "Você atingiu o número máximo de pastas deste cofre"
       ],
       "Your administrator needs to create a vault for you before you can create items": [
         "Seu administrador precisa criar um cofre para você ante de criar itens"

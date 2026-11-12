@@ -8048,9 +8048,6 @@
       "Allow platform keys": [
         "Dopusti ključeve platforme"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Omogućuje vam registraciju ugrađenih sigurnosnih ključeva (poput Windows Hello, Face ID, Touch ID ili internih TPM-ova)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Jesi li siguran da želiš izbrisati sigurnosni ključ ${ name }?"
       ],
@@ -11343,12 +11340,6 @@
       "RECOMMENDED": [
         "PREPORUČENO"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Oporavak putem e-pošte nije dostupan dok je omogućen ${ PROTON_SENTINEL_NAME }."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Oporavak putem telefona nije dostupan dok je omogućen ${ PROTON_SENTINEL_NAME }."
-      ],
       "Recovery file downloaded": [
         "Preuzeta datoteka za oporavak"
       ],
@@ -11957,12 +11948,6 @@
       ],
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Za omogućavanje post-kvantne zaštite morat ćete dovršiti generiranje novih post-kvantnih ključeva šifriranja."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Kako biste osigurali najvišu moguću sigurnost svog korisničkog računa, onemogućite **Oporavak putem adrese e-pošte za oporavak**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Kako biste osigurali najvišu moguću sigurnost svog korisničkog računa, onemogućite **Oporavak putem telefona za oporavak**."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Kako biste bili sigurni da nećete izgubiti važne podatke, ${ DRIVE_APP_NAME } sprema starije verzije vaših datoteka dok vi i vaši suradnici unosite izmjene. Odaberite koliko dugo bi ${ BRAND_NAME } trebao čuvati prethodne verzije."

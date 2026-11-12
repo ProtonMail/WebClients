@@ -727,6 +727,9 @@
       "Sign back in": [
         "Reconectare"
       ],
+      "Sign in in the app instead": [
+        "Conectare în aplicație"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Conectare cu ${ BRAND_NAME }"
       ],
@@ -2187,6 +2190,9 @@
       "Can view this item.": [
         "Poate vedea acest articol."
       ],
+      "Canceled by user": [
+        "Anulat de utilizator"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Se verifică parolele ${ compromised.progress.completed } din ${ compromised.progress.total }"
       ],
@@ -2595,9 +2601,7 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+        "Mutarea unui element într-un alt seif îi va șterge linkurile securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -3009,6 +3013,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Pur și simplu utilizați ${ emailBold } data viitoare când aveți nevoie de un alias: va fi creat ${ automaticallyBold } prima dată când primește un mesaj. Pentru a avea un control mai precis, puteți defini și ${ rulesHyperLink }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Pentru pornirea ${ PASS_APP_NAME } în mod local, va fi necesară parola ${ BRAND_NAME }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Pentru pornirea ${ PASS_APP_NAME } în mod local, va fi necesară parola de rezervă."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Pentru pornirea ${ PASS_APP_NAME } în mod local, va fi necesară parola suplimentară."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Pentru pornirea ${ PASS_APP_NAME } în mod local, va fi necesară parola secundară."
       ],
       "Successfully exported all your items": [
         "Toate articole au fost exportate."
@@ -5594,8 +5610,8 @@
         "Mutați ${ trashedItemsCount } articole în gunoi?",
         "Mutați ${ trashedItemsCount } de articole în gunoi?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Mutați toate articolele în „${ vaultName }”?"
+      "Move all items to \"${ target }\"?": [
+        "Mutați toate articolele în „${ target }”?"
       ],
       "Move all items?": [
         "Mutați toate articolele?"

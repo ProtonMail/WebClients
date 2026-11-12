@@ -1490,6 +1490,9 @@
       "Manage subscription": [
         "Abonelik yönetimi"
       ],
+      "Manage subscriptions": [
+        "Abonelik yönetimi"
+      ],
       "Manage users/addresses": [
         "Kullanıcıları/adresleri yönetin"
       ],
@@ -2604,7 +2607,7 @@
         "İzin geri alındı"
       ],
       "Sign-in": [
-        "Giriş yap"
+        "Oturum aç"
       ]
     },
     "Admin": {
@@ -3547,6 +3550,11 @@
       ],
       "Website access problem": [
         "Site erişim sorunu"
+      ]
+    },
+    "Business signup action": {
+      "Start using ${ planTitle } now": [
+        "${ planTitle } kullanmaya başlayın"
       ]
     },
     "Button": {
@@ -8064,7 +8072,7 @@
         "Ödenecek tutar değişti. Lütfen yeniden deneyin."
       ],
       "The device you scanned the QR code with didn't send your sign-in details. Update the app on that device and try again.": [
-        "Kendisine kare kodu tarattığınız cihaz, oturum açma bilgilerinizi göndermedi. Cihazaki uygulamayı güncelleyin ve tekrar deneyin."
+        "Kare kodu taradığınız aygıt, oturum açma bilgilerinizi göndermedi. O aygıttaki uygulamayı güncelleyip yeniden deneyin."
       ],
       "The email addresses do not match": [
         "E-posta adresleri eşleşmiyor"
@@ -8109,7 +8117,7 @@
         "Oturumun geçerlilik süresi dolmuş. Lütfen yeniden oturum açın."
       ],
       "The session has expired. Please try again.": [
-        "Oturum süresi doldu. Lütfen tekrar deneyin."
+        "Oturumun geçerlilik süresi dolmuş. Lütfen yeniden deneyin."
       ],
       "The total could not be calculated. Change the amount to try again.": [
         "Toplam tutar hesaplanamadı. Yeniden denemek için tutarı değiştirin."
@@ -8477,6 +8485,9 @@
       "Ask your administrator to enable Account monitor.": [
         "Yöneticinizden hesap izleyiciyi açmasını isteyin."
       ],
+      "Check your internet connection and try again.": [
+        "İnternet bağlantınızı denetleyip yeniden deneyin."
+      ],
       "Enable account monitor to start loading event.": [
         "Etkinliği yüklemeyi başlatmak için hesap izleyiciyisini açın."
       ],
@@ -8509,6 +8520,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Bu sayfa yüklenemedi. Lütfen sayfayı yenileyin veya internet bağlantınızı denetleyin."
+      ],
+      "We couldn't load your invitation": [
+        "Davetiniz yüklenemedi"
       ]
     },
     "Error message, Disable account": {
@@ -9106,9 +9120,6 @@
       "Allow platform keys": [
         "Platform anahtarları kullanılabilsin"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "İç güvenlik anahtarlarını (Windows Hello, Face ID, Touch ID veya iç TPM gibi) kaydetmenizi sağlar"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "${ name } güvenlik anahtarını silmek istediğinize emin misiniz?"
       ],
@@ -9147,6 +9158,9 @@
       ],
       "Touch your security key to continue.": [
         "İlerlemek için güvenlik anahtarınıza dokunun."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Bu aygıttaki parmak izi, yüz tanıma, PIN veya ekran kilidini kullanın"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Kimliğinizi fiziksel bir U2F ya da FIDO2 güvenlik anahtarıyla doğrulayın"
@@ -10794,6 +10808,9 @@
       "Address copied to clipboard": [
         "Adres panoya kopyalandı"
       ],
+      "Adds a Meet link to events with at least one participant.": [
+        "En az bir katılımcısı olan etkinliklere Meet bağlantısı ekler."
+      ],
       "Admin account allocation": [
         "Yönetici hesabına ayrılan"
       ],
@@ -11144,17 +11161,17 @@
       "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
         "Bu seçeneği açtığınızda, yalnızca **${ primaryEmail }** adresiyle oturum açabilirsiniz."
       ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
-        "Bu seçeneği açtığınızda, yalnızca özgün kullanıcı adınız olan **${ username }** ile oturum açabilirsiniz. Bu tek başına ya da **${ firstEmail }**, **@${ secondDomain }** veya **@${ thirdDomain }** biçiminde olabilir."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
-        "Bu seçeneği açtığınızda, yalnızca özgün kullanıcı adınız **${ username }** ile oturum açabileceksiniz. Bu tek başına **${ firstEmail }** şeklinde veya **@${ secondDomain }** şeklinde olabilir."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
-        "Bu seçeneği açtığınızda, yalnızca özgün kullanıcı adınız **${ username }** ile tek başına ya da **${ firstEmail }** şeklinde oturum açabileceksiniz."
-      ],
       "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
         "Bu seçeneği açtığınızda, yalnızca **${ username }** kullanıcı adınızla oturum açabileceksiniz."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Bu seçeneği açtığınızda, yalnızca kullanıcı adınız **${ username }** ya da **${ firstEmail }** ya da **${ secondEmail }** ile oturum açabileceksiniz."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Bu seçeneği açtığınızda, yalnızca kullanıcı adınız **${ username }** ya da **${ firstEmail }** ya da **${ secondEmail }** ya da **${ thirdEmail }** ile oturum açabileceksiniz."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Bu seçeneği açtığınızda, yalnızca kullanıcı adınız **${ username }** ya da **${ firstEmail }** ile oturum açabileceksiniz."
       ],
       "Can you access your active session?": [
         "Etkin oturumunuza erişebiliyor musunuz?"
@@ -12175,6 +12192,9 @@
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Kod geçersiz. ${ RequestNewCodeLink } ve yeniden deneyin."
       ],
+      "Invalid invitation link": [
+        "Davet bağlantısı geçersiz"
+      ],
       "Invalid joining link": [
         "Katılma bağlantısı geçersiz"
       ],
@@ -12842,12 +12862,6 @@
       ],
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Güvenilir aygıtlarda önerilir. ${ learnMoreLink }"
-      ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "${ PROTON_SENTINEL_NAME } açıkken e-posta adresi ile kurtarma kullanılamaz."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "${ PROTON_SENTINEL_NAME } açıkken telefon numarası ile kurtarma kullanılamaz."
       ],
       "Recovery file downloaded": [
         "Kurtarma dosyası indirildi"
@@ -13531,11 +13545,17 @@
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Kuantum sonrası korumayı etkinleştirmek için yeni kuantum sonrası şifreleme anahtarlarınızı oluşturmanız gerekecek."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Hesabınızda olabilecek en yüksek güvenliği sağlamak için **E-posta adresi ile kurtarma** seçeneğini kapatın."
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Hesabınızda olabilecek en yüksek güvenlik düzeyini sağlamak için **E-posta ile kurtarma** özelliğini kapatın."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Hesabınızda olabilecek en yüksek güvenliği sağlamak için **Telefon numarası ile kurtarma** seçeneğini kapatın."
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Hesabınızda olabilecek en yüksek güvenlik düzeyini sağlamak için **Telefon ile kurtarma** özelliğini kapatın."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Hesabınızda en yüksek güvenlik düzeyini sağlamak için **E-posta ile kurtarma** özelliğini kapatın."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Hesabınızda olabilecek en yüksek güvenlik düzeyini sağlamak için, **Telefon ile kurtarma** özelliğini kapatın."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "${ DRIVE_APP_NAME }, önemli verilerinizi korumak için, siz ve iş birliği yaptığınız kişiler dosyalarınızı\ndeğiştirdikçe öncekli sürümlerini kaydeder. Önceki sürümlerin ${ BRAND_NAME } tarafından ne kadar süreyle tutulacağını seçin."
@@ -13864,6 +13884,12 @@
       "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
         "Fatura, e-posta adresinize gönderilemedi. Siz adresi güncelleyene kadar otomatik fatura gönderimi duraklatıldı."
       ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "Bu davet doğrulanamadı. Lütfen yöneticiniz olan ${ admin } kişisinden sizi kuruluştan kaldırmasını ve yeniden eklemesini isteyin."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Kuruluşunuzun kimliğini doğrulanamadı. Lütfen yöneticinizden ${ admin } kuruluş ayarlarında yer alan kuruluş kimliği bilgilerini denetlemesini isteyin. Ardından bu bağlantıyı yeniden açın."
+      ],
       "We couldn’t process your payment.": [
         "Ödemenizi işleyemedik."
       ],
@@ -13987,14 +14013,14 @@
       "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Oturum açma kısıtlandığında, oturum açmak için yalnızca **${ username }** kullanıcı adınız kullanılabilir. Diğer adresleriniz biri bunları biliyor olsa bile hesabınız ile ilişkilendirilemez."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Oturum açma kısıtlandığında, yalnızca özgün kullanıcı adınız olan **${ username }** ile oturum açabilirsiniz. Bunu tek başına ya da **${ firstEmail }**, **@${ secondDomain }** veya **@${ thirdDomain }** biçiminde kullanabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Oturum açma kısıtlandığında yalnızca kullanıcı adınız **${ username }** ya da **${ firstEmail }** ya da **${ secondEmail }** ile oturum açabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Oturum açma kısıtlandığında yalnızca özgün kullanıcı adınız **${ username }** ile oturum açabilirsiniz. Bunu tek başına **${ firstEmail }** şeklinde veya **@${ secondDomain }** şeklinde kullanabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Oturum açma kısıtlandığında yalnızca kullanıcı adınız **${ username }** ya da **${ firstEmail }** ya da **${ secondEmail }** ya da **${ thirdEmail }** ile oturum açabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Oturum açma kısıtlandığında, yalnızca özgün kullanıcı adınız **${ username }** ile tek başına ya da **${ firstEmail }** biçiminde oturum açabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Oturum açma kısıtlandığında yalnızca kullanıcı adınız **${ username }** ya da **${ firstEmail }** ile oturum açabilirsiniz. Diğer e-posta adreslerinizle oturum açamazsınız."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "İptal ettiğinizde aboneliğiniz yenilenmez ancak abonelik süresinin sonuna kadar tarifenizin özelliklerinden yararlanmayı sürdürürsünüz. Bundan sonra ${ BRAND_NAME } Free tarifesine geçersiniz."
@@ -14277,6 +14303,9 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Şifrelenmiş verileri geri yüklemeniz gerekirse kullanmak için bu anahtarı indirerek yedeklemelisiniz."
+      ],
+      "You still need to reply for the organizer to see your response.": [
+        "Etkinlik düzenleyicinin yanıtınızı görebilmesi için yine de yanıtlamanız gerekiyor."
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Düzenleyicinin yanıtınızı görebilmesi için yine de davetleri yanıtlamanız gerekir."
@@ -17026,6 +17055,9 @@
       ],
       "Invalid ${ group.name } record found": [
         "Geçersiz ${ group.name } kaydı bulundu"
+      ],
+      "Leave field blank": [
+        "Alanı boş bırakın"
       ],
       "Priority": [
         "Öncelik"
@@ -21612,8 +21644,14 @@
       "Comprehensive privacy and security suite.": [
         "Kapsamlı gizlilik ve güvenlik paketi."
       ],
+      "Confidential video conferencing for your business.": [
+        "Kuruluşunuz için gizli görüntülü görüşme."
+      ],
       "Defeat spam, tracking, and ads with encrypted email and a secure calendar.": [
         "Şifrelenmiş e-posta ve güvenli takvim ile istenmeyen e-posta, izleme ve reklamlardan kurtulun."
+      ],
+      "Essential privacy and security suite for your business.": [
+        "Kuruluşunuz için temel gizlilik ve güvenlik paketi."
       ],
       "For next-level password management and identity protection.": [
         "Üst düzey parola yönetimi ve kimlik koruması için."
@@ -21621,14 +21659,29 @@
       "Great for everyday use and photo backups.": [
         "Günlük kullanım ve fotoğraf yedekleri için harika"
       ],
+      "Next-level password management for your business.": [
+        "Kuruluşunuz için yeni nesil parola yönetimi."
+      ],
       "Perfect for getting started with secure cloud storage.": [
         "Güvenli bulut depolama alanını kullanmaya başlamak için mükemmel."
+      ],
+      "Premium privacy and security suite for your business.": [
+        "Kuruluşunuz için birinci sınıf gizlilik ve güvenlik paketi."
       ],
       "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
         "Ücretli hizmetler ve ${ unlimitedPlanMaxSpace } şifrelenmiş bulut depolama alanı ile gizlilik paketi. Tümü tek bir pakette."
       ],
+      "Privacy-first AI writing assistant for your business.": [
+        "Kuruluşunuz için gizlilik odaklı yapay zeka yazma yardımcısı."
+      ],
       "Secure cloud storage and collaboration for teams.": [
         "Ekipler için güvenli bulut depolama alanı ve iş birliği."
+      ],
+      "Secure cloud storage and file sharing for your business.": [
+        "Kuruluşunuz için güvenli bulut depolama alanı ve dosya paylaşımı."
+      ],
+      "Secure, high-speed VPN access for your business.": [
+        "Kuruluşunuz için güvenli, yüksek hızlı VPN erişimi."
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Gizliliğe önem veren ileri düzey kullanıcılara uygun tarife."
@@ -23546,6 +23599,9 @@
       "${ referrerName } is inviting you to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "${ referrerName } sizi şifrelenmiş ${ BRAND_NAME } ekosistemiyle verilerinin denetimini elinde tutmayı seçen 100 milyondan fazla kişiye katılmaya davet ediyor."
       ],
+      "${ renewalPriceElement } after the first 12 months": [
+        "İlk 12 aydan sonra ${ renewalPriceElement }"
+      ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "Dosyalar ve fotoğraflar için ${ totalDriveStorageSize } bulut depolama alanı"
       ],
@@ -23601,6 +23657,12 @@
       "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
         "Ve abone olursanız, ${ referralInfo.uiData.refereeRewardAmount } kredi kazanırsınız."
       ],
+      "Billed yearly": [
+        "Yılda bir faturalanır"
+      ],
+      "Billed yearly, renews on ${ renewalTime }": [
+        "Yıllık faturalanır, ${ renewalTime } zamanında yenilenir"
+      ],
       "Billing Cycle": [
         "Fatura dönemi"
       ],
@@ -23613,8 +23675,17 @@
       "Bundle": [
         "Paket"
       ],
+      "Business information": [
+        "Kuruluş bilgileri"
+      ],
+      "Checkout": [
+        "Ödeme yapın"
+      ],
       "Choose a secure ${ MAIL_APP_NAME } address to get started": [
         "Başlamak için güvenli bir ${ MAIL_APP_NAME } adresi seçin"
+      ],
+      "Claim your additional ${ referralDiscountPercent }% discount": [
+        "Ek %${ referralDiscountPercent } indiriminizi isteyin"
       ],
       "Collaborative document editing": [
         "İş birliği ile belge düzenleme"
@@ -23631,23 +23702,44 @@
       "Confirm payment, access your Drive": [
         "Ödemeyi onaylayın ve Drive depolama alanınıza erişin"
       ],
+      "Confirmation": [
+        "Onay"
+      ],
       "Connect all your devices": [
         "Tüm aygıtlarınızı bağlayın"
       ],
       "Continue with ${ planName }": [
         "${ planName } ile ilerle"
       ],
+      "Coupon": [
+        "Kupon"
+      ],
       "Create a ${ BRAND_NAME } Account": [
         "Bir ${ BRAND_NAME } hesabı açın"
       ],
+      "Create account": [
+        "Hesap aç"
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } hesabınızı açın"
+      ],
+      "Creating your account": [
+        "Hesabınız oluşturuluyor"
+      ],
       "Custom email domain": [
         "Özel e-posta etki alanı"
+      ],
+      "Discount": [
+        "İndirim"
       ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "${ totalMailStorageSize } depolama alanı ile şifrelenmiş e-posta"
       ],
       "Encrypted password manager": [
         "Şifrelenmiş parola yöneticisi"
+      ],
+      "Encrypted solutions to protect": [
+        "Korunmak için şifrelenmiş çözümler"
       ],
       "End-to-end encryption": [
         "Uçtan uca şifreleme"
@@ -23657,6 +23749,9 @@
       ],
       "Every free account comes with:": [
         "Her ücretsiz hesap ile şunlar sunulur:"
+      ],
+      "For ${ countryElement }": [
+        "${ countryElement } Için"
       ],
       "Free": [
         "Ücretsiz"
@@ -23678,6 +23773,9 @@
       ],
       "get a secure ${ MAIL_APP_NAME } address.": [
         "güvenli bir ${ MAIL_APP_NAME } adresi edinin."
+      ],
+      "Get an additional ${ referralDiscountPercent }% off your first year of ${ BRAND_NAME } for Business": [
+        "Kuruluşlar için ${ BRAND_NAME } ilk yılınızda ek %${ referralDiscountPercent } indirim kazanın"
       ],
       "Gifted by **${ referrerName }**": [
         "Hediye eden: **${ referrerName }**"
@@ -23711,6 +23809,9 @@
       ],
       "Password-protected messages": [
         "İletileri parola ile koruma"
+      ],
+      "Pick a plan to get started.": [
+        "Başlamak için bir tarife seçin."
       ],
       "Pick a service to get started.": [
         "Başlamak için bir hizmet seçin."
@@ -23779,14 +23880,23 @@
       "Sign up, protect your files": [
         "Hesap açın ve dosyalarınızı koruyun"
       ],
+      "Something went wrong": [
+        "Bir sorun çıktı"
+      ],
       "Start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } kullanmaya başlayın"
+      ],
+      "Summary": [
+        "Özet"
       ],
       "Swiss-based": [
         "İsviçre merkezli"
       ],
       "Sync files across devices and users": [
         "Dosyaları aygıtlar ve kullanıcılar arasında eşitleyin"
+      ],
+      "Taxes may apply.": [
+        "Vergiler eklenebilir."
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "Oturum açan kullanıcılarınızın göreceği kuruluş adı."
@@ -23824,6 +23934,9 @@
       "Unlimited hide-my-email aliases": [
         "Sınırsız sayıda hide-my-email takma adı"
       ],
+      "Unlimited vaults for your passwords": [
+        "Parolalarınız için sınırsız sayıda kasa"
+      ],
       "Up to 2 users": [
         "2 kullanıcıya kadar"
       ],
@@ -23845,6 +23958,9 @@
       "use your own email.": [
         "kendi e-posta adresinizi kullanın."
       ],
+      "Users": [
+        "Kullanıcılar"
+      ],
       "VPN with servers in ${ VPN_SERVERS.free.countries } countries": [
         "${ VPN_SERVERS.free.countries } ülkede sunucusu bulunan VPN"
       ],
@@ -23852,8 +23968,17 @@
         "${ VPN_SERVERS.free.countries } ülkede sunucusu bulunan VPN",
         "${ VPN_SERVERS.free.countries } ülkede sunucusu bulunan VPN"
       ],
+      "We couldn't finish setting up your account. Please contact support.": [
+        "Hesabınızı kurmayı tamamlayamadık. Lütfen destek ekibimiz ile görüşün."
+      ],
       "We’ll email you before your trial ends.": [
         "Deneme süreniz bitmeden önce size bir e-posta göndereceğiz."
+      ],
+      "WS Premium": [
+        "WS Premium"
+      ],
+      "WS Standard": [
+        "WS Standard"
       ],
       "Yearly": [
         "Yıllık"
@@ -23861,8 +23986,17 @@
       "You are all set": [
         "Her şey hazır"
       ],
+      "You're invited to join 100,000+ organizations that protect their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "${ BRAND_NAME } şifrelenmiş ekosistemi ile verilerini koruyan 100.000 üzerinde kuruluşa katılmaya davetlisiniz."
+      ],
+      "Your account has been created, but we couldn't sign you in.": [
+        "Hesabınız açıldı, ancak oturumunuzu açamadık."
+      ],
       "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
         "Hesabınız ile ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ LUMO_SHORT_APP_NAME } üzerindeki ücretsiz özelliklere erişebilirsiniz."
+      ],
+      "your entire business": [
+        "tüm kuruluşunuz"
       ],
       "Your plan": [
         "Tarifeniz"
@@ -25784,6 +25918,9 @@
       "/user per month": [
         "/kullanıcı aylık"
       ],
+      "/user/month": [
+        "/kullanıcı/ay"
+      ],
       "/year": [
         "/yıl"
       ]
@@ -26863,6 +27000,9 @@
       ],
       "Email": [
         "E-posta"
+      ],
+      "Email address": [
+        "E-posta adresi"
       ],
       "Email breaches": [
         "E-posta adresinin sızdırılması"

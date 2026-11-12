@@ -81,6 +81,9 @@
       "Add note": [
         "Adicionar nota"
       ],
+      "Add payment method": [
+        "Adicionar forma de pagamento"
+      ],
       "Add people or groups to share": [
         "Adicionar pessoa ou grupo para compartilhar"
       ],
@@ -1130,6 +1133,11 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Gerenciador de senha premium"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantia de reembolso de 30 dias: cancele em até 30 dias após a compra e entre em contato com ${ customerSupportLink } para obter um reembolso."
       ]
     },
     "BF2024: Deal details": {
@@ -2929,6 +2937,9 @@
       "Authentication error.": [
         "Erro de autenticação."
       ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Como este documento estava em uma pasta compartilhada, somente o proprietário da pasta pode restaurá-lo"
+      ],
       "Bookmark password is not available": [
         "A senha do marcador não está disponível"
       ],
@@ -3357,6 +3368,9 @@
       "Some items could not be loaded": [
         "Não foi possível carregar alguns itens"
       ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "Não foi possível ler parte do documento, por isso suas alterações não podem ser salvas."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de pastas estão indisponíveis. Personalize a importação para editar esses nomes."
       ],
@@ -3371,6 +3385,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de marcadores excederam o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "Não foi possível salvar algumas das suas alterações recentes, por isso a edição está desativada. Copie o que precisar e recarregue a página."
       ],
       "Some trashed documents could not be loaded": [
         "Não foi possível carregar alguns documentos excluídos"
@@ -3428,6 +3445,9 @@
       ],
       "There was an error when exporting the contacts vCards": [
         "Houve um erro ao exportar os vCards dos contatos"
+      ],
+      "This document is too large to copy. Download it to keep a copy of your work.": [
+        "Este documento é muito grande para copiar. Baixe uma cópia para manter o trabalho feito."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede o máximo de ${ maximumLength } caracteres."
@@ -3570,6 +3590,9 @@
       ],
       "Your import will not be processed.": [
         "Sua importação não será processada."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "Sua última alteração é grande demais para ser salva, por isso a edição está desativada. Copie o que precisar e recarregue a página."
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Dispositivo indecifrável"
@@ -4618,12 +4641,6 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Conecte-se ao ${ VPN_APP_NAME } para navegar de forma privada."
       ],
-      "Connected": [
-        "Conectado"
-      ],
-      "Connecting…": [
-        "Conectando…"
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Contato associado ao grupo ${ contactGroupName }"
       ],
@@ -4695,9 +4712,6 @@
       "Decrypting your document": [
         "Descriptografando seu documento"
       ],
-      "Disconnected": [
-        "Desconectado"
-      ],
       "Display word count": [
         "Exibir contagem de palavras"
       ],
@@ -4736,9 +4750,6 @@
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
-      ],
-      "Editing is temporarily unavailable.": [
-        "A edição está temporariamente indisponível."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "A hospedagem de e-mail está disponível apenas para domínios que você já possui. O registro de domínio não está disponível no momento através da ${ BRAND_NAME }. Você pode hospedar e-mail para domínios registrados em qualquer registrador de domínio."
@@ -4784,6 +4795,9 @@
       ],
       "Error loading document: ${ errorDetail }": [
         "Erro ao carregar o documento: ${ errorDetail }"
+      ],
+      "Error syncing": [
+        "Erro ao sincronizar"
       ],
       "Error Syncing": [
         "Erro ao sincronizar"
@@ -4969,6 +4983,9 @@
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Parece que você está off-line. O documento não pode ser editado enquanto você estiver off-line. Verifique a conectividade de seu dispositivo."
       ],
+      "Looks like you're offline. You can keep editing: your changes are saved once you are back online.": [
+        "Parece que você está offline. Você pode continuar editando: suas alterações serão salvas quando a conexão voltar."
+      ],
       "Low Priority": [
         "Baixa prioridade"
       ],
@@ -5053,6 +5070,9 @@
       ],
       "Opening...": [
         "Abrindo..."
+      ],
+      "Opening…": [
+        "Abrindo…"
       ],
       "Organization size": [
         "Tamanho da organização"
@@ -5169,6 +5189,9 @@
       "Saving...": [
         "Salvando..."
       ],
+      "Saving…": [
+        "Salvando…"
+      ],
       "Scan the QR code with your mobile device": [
         "Escaneie o código QR com seu dispositivo móvel"
       ],
@@ -5216,6 +5239,12 @@
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Alguns governos bloqueiam ou restringem o acesso a determinados sites. Uma VPN ajuda a evitar a censura enquanto mantém sua atividade e identidade privadas."
+      ],
+      "Some of the document could not be read, so it can't be edited.": [
+        "Não foi possível ler parte do documento, por isso ele não pode ser editado."
+      ],
+      "Some of the document's content could not be read.": [
+        "Não foi possível ler parte do conteúdo do documento."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Alguns sites e serviços de streaming bloqueiam conteúdo por região. Uma VPN permite que você contorne essas restrições e acesse a internet livremente."
@@ -5275,9 +5304,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "O proprietário deste endereço desativou a criptografia de ponta a ponta. Para poder enviar e-mails criptografados para este endereço, o proprietário deve reativar a criptografia de ponta a ponta."
       ],
-      "The server is busy.": [
-        "O servidor está ocupado."
-      ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "O URL que você inseriu parece ter sido copiado incorretamente do Slack. Ao copiar links longos do Slack, clique com o botão direito no link e selecione \"Copiar link\" em vez de copiar o texto do URL truncado diretamente."
       ],
@@ -5290,8 +5316,17 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Este endereço está desativado. Para poder enviar para este endereço, o proprietário deve primeiro ativar o endereço."
       ],
+      "This document can't be edited right now.": [
+        "Este documento não pode ser editado no momento."
+      ],
+      "This document does not exist, or it was deleted.": [
+        "Este documento não existe ou foi excluído."
+      ],
       "This document has grown too large to edit. You can remove older revisions to continue editing.": [
         "Este documento ficou muito grande para editar. Você pode remover revisões mais antigas para continuar editando."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Copy any work you need to keep it.": [
+        "Este documento ficou muito grande e as alterações mais recentes não puderam ser salvas. Copie o conteúdo desejado para manter seu trabalho."
       ],
       "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
         "Este documento ficou muito grande e suas últimas alterações não puderam ser salvas. Baixe uma cópia para manter seu trabalho."
@@ -5302,6 +5337,9 @@
       "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
         "Este documento tem muitos colaboradores ativos. A edição em tempo real está temporariamente indisponível. Atualize para ver as últimas atualizações."
       ],
+      "This document has reached its maximum size, so it can't be edited.": [
+        "Este documento atingiu o tamanho máximo e não pode mais ser editado."
+      ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Este documento pode não existir ou estamos enfrentando problemas para carregá-lo. Recarregue a página e tente novamente."
       ],
@@ -5310,6 +5348,9 @@
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Este é um nome ou apelido para sua organização que seus usuários verão. Você pode alterá-lo a qualquer momento."
+      ],
+      "This link is not supported on this page.": [
+        "Este link não é compatível com esta página."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Esse link leva a um site que pode estar tentando roubar suas informações, como senhas e detalhes de cartão de crédito."
@@ -5331,6 +5372,9 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
+      ],
+      "To help troubleshoot the issue, debug information will be uploaded to your Drive and shared securely with the ${ BRAND_NAME } support team. It may include file contents. You can stop sharing at any time, and the shared data is deleted after the review is complete.": [
+        "Para ajudar a resolver o problema, informações de depuração serão enviadas ao seu Drive e compartilhadas com segurança com a equipe de suporte do ${ BRAND_NAME }. Elas podem incluir o conteúdo de arquivos. Você pode interromper o compartilhamento a qualquer momento. Os dados compartilhados serão excluídos após a análise."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
         "Para ajudar você a lembrar sua senha, pediremos que você a insira periodicamente. Com o passar do tempo, iremos solicitar isso com menos frequência."
@@ -5508,6 +5552,9 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Você não será cobrado se cancelar antes de ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "Você não poderá compartilhar \"${ fileName }\" após alterar seu acesso para visualizador. O proprietário ou um editor com permissão para compartilhar pode restaurar seu acesso de edição. Você não pode desfazer essa alteração por conta própria."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Você receberá a recompensa em créditos 1 mês após seu amigo(a) assinar um plano anual e 2 meses após ele (ela) assinar um plano mensal."
@@ -7381,6 +7428,10 @@
       "\"Document deleted permanently": [
         "\"Documento excluído permanentemente"
       ],
+      "${ count } item could not be moved to trash": [
+        "Não foi possível mover ${ count } item para a lixeira",
+        "Não foi possível mover ${ count } itens para a lixeira"
+      ],
       "${ count } item failed to be decrypted": [
         "Erro ao descriptografar ${ count } item",
         "Erro ao descriptografar ${ count } itens"
@@ -7429,6 +7480,9 @@
       "Access updated": [
         "Acesso atualizado"
       ],
+      "Because this document was in a shared folder, only the folder owner can restore it": [
+        "Como este documento estava em uma pasta compartilhada, somente o proprietário da pasta pode restaurá-lo"
+      ],
       "Cannot load next page": [
         "Não foi possível carregar a próxima página"
       ],
@@ -7447,11 +7501,17 @@
       "Failed to accept share invitation": [
         "Falha ao aceitar convite de compartilhamento"
       ],
+      "Failed to apply file. Check the file and try again.": [
+        "Não foi possível aplicar o arquivo. Verifique o arquivo e tente novamente."
+      ],
       "Failed to delete document": [
         "Falha ao excluir o documento"
       ],
       "Failed to load invitation details": [
         "Erro ao carregar os detalhes do convite"
+      ],
+      "Failed to load saved items": [
+        "Não foi possível carregar os itens salvos"
       ],
       "Failed to load sharing details": [
         "Falha ao carregar os detalhes de compartilhamento"
@@ -7467,6 +7527,9 @@
       ],
       "Failed to restore document": [
         "Falha ao restaurar o documento"
+      ],
+      "Failed to save for later": [
+        "Não foi possível salvar para depois"
       ],
       "Failed to submit report": [
         "Falha ao enviar relatório"
@@ -7691,6 +7754,9 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**Cancele a qualquer momento antes disso. ** Você poderá usar ${ planTitle } até que a avaliação termine, gratuitamente."
       ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**Mudou de ideia após o período de teste?** Cancele em até 30 dias após o primeiro pagamento e reembolsaremos o valor referente ao período não utilizado."
+      ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**Uma vez que sua assinatura completa começa... ** Você ainda pode cancelar dentro de 30 dias e obter um reembolso proporcional."
       ],
@@ -7875,6 +7941,9 @@
       "An organization is required for this plan.": [
         "Uma organização é necessária para este plano."
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Não é possível comprar contas Born Private com uma assinatura ativa."
+      ],
       "Buying credits requires a separate purchase.": [
         "Comprar créditos requer uma compra separada."
       ],
@@ -7904,6 +7973,9 @@
       ],
       "terms and conditions": [
         "termos e condições"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "A iniciativa Born Private exige uma doação."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "O desconto é válido para ${ renewalsWithCoupon } renovação.",
@@ -7973,6 +8045,12 @@
       ],
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Você já possui o ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
+      ],
+      "You already own a Born Private account.": [
+        "Você já tem uma conta Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Sua conta é antiga demais para participar da iniciativa Born Private."
       ]
     },
     "PGP key encryption warning": {
@@ -9442,6 +9520,9 @@
       "Enter your password": [
         "Digite sua senha"
       ],
+      "Error syncing": [
+        "Erro ao sincronizar"
+      ],
       "Error Syncing": [
         "Erro ao sincronizar"
       ],
@@ -9958,6 +10039,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Este usuário receberá direitos de administrador na próxima vez que entrar."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Faça upgrade para um plano suportado para usar funções de administrador."
       ],
@@ -10099,6 +10183,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "A ${ BRAND_NAME } irá transferir o máximo de dados possível, começando com as mensagens mais recentes."
       ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "Não foi possível ler uma alteração feita por outro editor, e ela não aparece nesta página."
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Você tem certeza de que deseja excluir permanentemente ${ count } contato?",
         "Você tem certeza de que deseja excluir permanentemente ${ count } contatos?"
@@ -10126,6 +10213,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Alguns dos contatos a serem mesclados apresentam erro. Verifique-os individualmente"
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "Não foi possível ler parte do documento, por isso a edição está desativada."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Os dados do contato estão corrompidos e não podem ser exibidos."

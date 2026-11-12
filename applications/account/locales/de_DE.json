@@ -1490,6 +1490,9 @@
       "Manage subscription": [
         "Abonnement verwalten"
       ],
+      "Manage subscriptions": [
+        "Abonnements verwalten"
+      ],
       "Manage users/addresses": [
         "Benutzer/Adressen verwalten"
       ],
@@ -3547,6 +3550,11 @@
       ],
       "Website access problem": [
         "Zugriffsproblem auf eine Website"
+      ]
+    },
+    "Business signup action": {
+      "Start using ${ planTitle } now": [
+        "Beginne, ${ planTitle } jetzt zu nutzen"
       ]
     },
     "Button": {
@@ -8477,6 +8485,9 @@
       "Ask your administrator to enable Account monitor.": [
         "Bitte deinen Administrator, die Kontoüberwachung zu aktivieren."
       ],
+      "Check your internet connection and try again.": [
+        "Überprüfe deine Internetverbindung und versuche es erneut."
+      ],
       "Enable account monitor to start loading event.": [
         "Aktiviere die Kontoüberwachung, um das Laden des Aktivitäten zu starten."
       ],
@@ -8509,6 +8520,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Diese Seite konnte nicht geladen werden. Bitte aktualisiere die Seite oder überprüfe deine Internetverbindung."
+      ],
+      "We couldn't load your invitation": [
+        "Deine Einladung konnte nicht geladen werden"
       ]
     },
     "Error message, Disable account": {
@@ -9106,9 +9120,6 @@
       "Allow platform keys": [
         "Plattform-Schlüssel zulassen"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Ermöglicht die Registrierung integrierter Sicherheitsschlüssel (wie Windows Hello, Face ID, Touch ID oder interne TPM)."
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Bist du dir sicher, dass du den Sicherheitsschlüssel ${ name } löschen möchtest?"
       ],
@@ -9147,6 +9158,9 @@
       ],
       "Touch your security key to continue.": [
         "Berühre deinen Sicherheitsschlüssel, um fortzufahren."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Fingerabdruck-, Gesichts-, PIN- oder Bildschirmsperre dieses Geräts verwenden"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bestätige deine Identität mit einem physischen U2F oder FIDO2 Sicherheitsschlüssel"
@@ -10794,6 +10808,9 @@
       "Address copied to clipboard": [
         "Adresse in die Zwischenablage kopiert"
       ],
+      "Adds a Meet link to events with at least one participant.": [
+        "Fügt einen „Meet“-Link zu Veranstaltungen hinzu, an denen mindestens ein Teilnehmer teilnimmt."
+      ],
       "Admin account allocation": [
         "Admin-Konto-Zuweisung"
       ],
@@ -11144,17 +11161,17 @@
       "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
         "Wenn diese Option aktiviert ist, kannst du dich nur noch mit **${ primaryEmail }** anmelden."
       ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
-        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem ursprünglichen Benutzernamen **${ username }** anmelden – entweder allein oder in der Form **${ firstEmail }**, **@${ secondDomain }** oder **@${ thirdDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
-        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem ursprünglichen Benutzernamen **${ username }** anmelden – entweder allein oder in Kombination mit **${ firstEmail }** oder **@${ secondDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
-        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem ursprünglichen Benutzernamen **${ username }** anmelden, entweder allein oder in Kombination mit **${ firstEmail }**."
-      ],
       "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
         "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem Benutzernamen **${ username }** anmelden."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }** beziehungsweise **${ secondEmail }** anmelden."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }**, **${ secondEmail }** beziehungsweise **${ thirdEmail }** anmelden."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Wenn diese Option aktiviert ist, kannst du dich nur noch mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }** anmelden."
       ],
       "Can you access your active session?": [
         "Kannst du auf deine aktive Sitzung zugreifen?"
@@ -12175,6 +12192,9 @@
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Ungültiger Code. ${ RequestNewCodeLink } und versuche es erneut."
       ],
+      "Invalid invitation link": [
+        "Ungültiger Einladungslink"
+      ],
       "Invalid joining link": [
         "Ungültiger Meeting-Link"
       ],
@@ -12842,12 +12862,6 @@
       ],
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Empfohlen auf vertrauenswürdigen Geräten. ${ learnMoreLink }"
-      ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Die Wiederherstellung per E-Mail ist nicht verfügbar, solange ${ PROTON_SENTINEL_NAME } aktiviert ist."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Die Wiederherstellung per Telefon ist nicht verfügbar, solange ${ PROTON_SENTINEL_NAME } aktiviert ist."
       ],
       "Recovery file downloaded": [
         "Wiederherstellungsdatei wurde heruntergeladen"
@@ -13531,11 +13545,17 @@
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Um den Post-Quantum-Schutz zu aktivieren, musst du die Generierung deiner neuen Post-Quantum-Verschlüsselungsschlüssel abschließen."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Um die größtmögliche Sicherheit deines Kontos zu gewährleisten, deaktiviere die **Wiederherstellung per Wiederherstellungs-E-Mail-Adresse**."
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Um die höchstmögliche Sicherheit deines Kontos zu gewährleisten, deaktiviere bitte die Option **Wiederherstellung per E-Mail**."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Um die größtmögliche Sicherheit deines Kontos zu gewährleisten, deaktiviere die **Wiederherstellung per Wiederherstellungs-Telefonnummer**."
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Um die höchstmögliche Sicherheit deines Kontos zu gewährleisten, deaktiviere bitte die Option **Wiederherstellung per Telefon**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Um die höchstmögliche Sicherheit deines Kontos zu gewährleisten, solltest du die Option **Wiederherstellung per E-Mail** deaktiviert lassen."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Um die höchstmögliche Sicherheit deines Kontos zu gewährleisten, solltest du die Option **Wiederherstellung per Telefon** deaktiviert lassen."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Um sicherzustellen, dass du keine wichtigen Daten verlierst, speichert ${ DRIVE_APP_NAME } ältere Versionen deiner Dateien, wenn du \nund deine Mitbearbeiter Änderungen vornehmen. Wähle, wie lange ${ BRAND_NAME } frühere Versionen speichern soll."
@@ -13864,6 +13884,12 @@
       "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
         "Wir konnten keine Rechnungen an deine E-Mail-Adresse senden. Die automatische Rechnungsstellung wurde pausiert, bis du die E-Mail-Adresse aktualisiert hast."
       ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "Diese Einladung konnte nicht überprüft werden. Bitte deinen Administrator (${ admin }) darum, dich aus der Organisation zu entfernen und dich erneut hinzuzufügen."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Die Identität deiner Organisation konnte nicht verifiziert werden. Bitte deinen Administrator ${ admin }, die Identität der Organisation in den Organisationseinstellungen zu überprüfen. Öffne diesen Link danach erneut."
+      ],
       "We couldn’t process your payment.": [
         "Wir konnten deine Zahlung nicht abschließen."
       ],
@@ -13987,14 +14013,14 @@
       "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Wenn die Anmeldung eingeschränkt ist, kann nur dein Benutzername **${ username }** zur Anmeldung verwendet werden. Deine sonstigen Adressen können nicht mit deinem Konto verknüpft werden, selbst wenn sie jemand kennt."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem ursprünglichen Benutzernamen **${ username }** anmelden – entweder allein oder in der Form **${ firstEmail }**, **@${ secondDomain }** oder **@${ thirdDomain }**. Deine anderen E-Mail-Adressen können nicht zur Anmeldung verwendet werden."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }** beziehungsweise mit **${ secondEmail }** anmelden. Deine anderen E-Mail-Adressen werden für die Anmeldung nicht funktionieren."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem ursprünglichen Benutzernamen **${ username }** anmelden – entweder allein oder in Kombination mit **${ firstEmail }** oder **@${ secondDomain }**. Deine sonstigen E-Mail-Adressen können nicht zur Anmeldung genutzt werden."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }**, **${ secondEmail }** beziehungsweise mit **${ thirdEmail }** anmelden. Deine anderen E-Mail-Adressen werden für die Anmeldung nicht funktionieren."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem ursprünglichen Benutzernamen **${ username }** anmelden, entweder allein oder in Kombination mit **${ firstEmail }**. Deine sonstigen E-Mail-Adressen können nicht zur Anmeldung verwendet werden."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Wenn die Anmeldung eingeschränkt ist, kannst du dich nur mit deinem Benutzernamen **${ username }** oder mit **${ firstEmail }** anmelden. Deine anderen E-Mail-Adressen werden für die Anmeldung nicht funktionieren."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wenn du kündigst, wird dein Abonnement nicht verlängert, aber du kannst die Vorteile des Abonnements noch bis zum Ende des Abonnementzeitraums nutzen. Danach wirst du auf das ${ BRAND_NAME } Free-Abonnement zurückgestuft."
@@ -14277,6 +14303,9 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Du solltest eine Sicherungskopie dieses Schlüssels exportieren, falls du die damit verschlüsselten Daten wiederherstellen musst."
+      ],
+      "You still need to reply for the organizer to see your response.": [
+        "Du musst noch antworten, damit der Veranstalter deine Antwort sehen kann."
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Du musst weiterhin auf Einladungen antworten, damit der Gastgeber deine Antwort sehen kann."
@@ -17026,6 +17055,9 @@
       ],
       "Invalid ${ group.name } record found": [
         "Ungültiger ${ group.name }-Eintrag gefunden"
+      ],
+      "Leave field blank": [
+        "Feld leer lassen"
       ],
       "Priority": [
         "Priorität"
@@ -21612,8 +21644,14 @@
       "Comprehensive privacy and security suite.": [
         "Umfassende Datenschutz- und Sicherheitssuite."
       ],
+      "Confidential video conferencing for your business.": [
+        "Vertrauliche Videokonferenzen für dein Unternehmen."
+      ],
       "Defeat spam, tracking, and ads with encrypted email and a secure calendar.": [
         "Besiege Spam, Tracking und Werbung mit verschlüsselter E-Mail und einem sicheren Kalender."
+      ],
+      "Essential privacy and security suite for your business.": [
+        "Unverzichtbare Datenschutz- und Sicherheitssuite für dein Unternehmen."
       ],
       "For next-level password management and identity protection.": [
         "Für die nächste Stufe der Passwortverwaltung und des Identitätsschutzes."
@@ -21621,14 +21659,29 @@
       "Great for everyday use and photo backups.": [
         "Ideal für den täglichen Gebrauch und Fotosicherungen."
       ],
+      "Next-level password management for your business.": [
+        "Passwortverwaltung der nächsten Generation für dein Unternehmen."
+      ],
       "Perfect for getting started with secure cloud storage.": [
         "Perfekt für den Einstieg mit sicherem Cloud-Speicher."
+      ],
+      "Premium privacy and security suite for your business.": [
+        "Eine erstklassige Datenschutz- und Sicherheitssuite für dein Unternehmen."
       ],
       "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
         "Privatsphäre-Suite mit Premium-Diensten und ${ unlimitedPlanMaxSpace } verschlüsseltem Cloud-Speicher, alles in einem Paket."
       ],
+      "Privacy-first AI writing assistant for your business.": [
+        "Ein KI-Schreibassistent für dein Unternehmen, bei dem der Datenschutz an erster Stelle steht."
+      ],
       "Secure cloud storage and collaboration for teams.": [
         "Sicherer Cloud-Speicher und Zusammenarbeit für Teams."
+      ],
+      "Secure cloud storage and file sharing for your business.": [
+        "Sicherer Cloud-Speicher und Dateiaustausch für dein Unternehmen."
+      ],
+      "Secure, high-speed VPN access for your business.": [
+        "Sicherer, schneller VPN-Zugang für dein Unternehmen."
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Das ideale Abonnement für datenschutzbewusste Power-Benutzer."
@@ -23546,6 +23599,9 @@
       "${ referrerName } is inviting you to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "${ referrerName } lädt dich ein, dich 100 Millionen+ Menschen anzuschließen, die sich entschieden haben, die Kontrolle über ihre Daten mit ${ BRAND_NAME }s verschlüsseltem Ökosystem zu behalten."
       ],
+      "${ renewalPriceElement } after the first 12 months": [
+        "${ renewalPriceElement } nach den ersten 12 Monaten"
+      ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "${ totalDriveStorageSize } Cloud-Speicherplatz für Dateien und Fotos"
       ],
@@ -23601,6 +23657,12 @@
       "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
         "Und erhalte ${ referralInfo.uiData.refereeRewardAmount } als Guthaben, wenn du abonnierst."
       ],
+      "Billed yearly": [
+        "Jährliche Abrechnung"
+      ],
+      "Billed yearly, renews on ${ renewalTime }": [
+        "Die Abrechnung erfolgt jährlich, die Verlängerung erfolgt am ${ renewalTime }"
+      ],
       "Billing Cycle": [
         "Abrechnungszeitraum"
       ],
@@ -23613,8 +23675,17 @@
       "Bundle": [
         "Paket"
       ],
+      "Business information": [
+        "Unternehmensinformationen"
+      ],
+      "Checkout": [
+        "Zur Kasse"
+      ],
       "Choose a secure ${ MAIL_APP_NAME } address to get started": [
         "Wähle eine sichere ${ MAIL_APP_NAME }-E-Mail-Adresse, um loszulegen"
+      ],
+      "Claim your additional ${ referralDiscountPercent }% discount": [
+        "Sichere dir deinen zusätzlichen Rabatt in Höhe von ${ referralDiscountPercent } %"
       ],
       "Collaborative document editing": [
         "Gemeinsame Dokumentbearbeitung"
@@ -23631,23 +23702,44 @@
       "Confirm payment, access your Drive": [
         "Zahlung bestätigen, Zugriff auf deinen Drive erhalten"
       ],
+      "Confirmation": [
+        "Bestätigung"
+      ],
       "Connect all your devices": [
         "Alle deine Geräte verbinden"
       ],
       "Continue with ${ planName }": [
         "Mit ${ planName } fortfahren"
       ],
+      "Coupon": [
+        "Gutschein"
+      ],
       "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-Konto erstellen"
       ],
+      "Create account": [
+        "Konto erstellen"
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Erstelle dein ${ BRAND_NAME }-Konto"
+      ],
+      "Creating your account": [
+        "Dein Konto wird erstellt"
+      ],
       "Custom email domain": [
         "Benutzerdefinierte E-Mail-Domain"
+      ],
+      "Discount": [
+        "Rabatt"
       ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "Verschlüsselte E-Mail mit ${ totalMailStorageSize } Speicherplatz"
       ],
       "Encrypted password manager": [
         "Verschlüsselter Passwortmanager"
+      ],
+      "Encrypted solutions to protect": [
+        "Verschlüsselte Lösungen für den Schutz"
       ],
       "End-to-end encryption": [
         "Ende-zu-Ende-Verschlüsselung"
@@ -23657,6 +23749,9 @@
       ],
       "Every free account comes with:": [
         "Jedes kostenlose Konto beinhaltet:"
+      ],
+      "For ${ countryElement }": [
+        "Für ${ countryElement }"
       ],
       "Free": [
         "Free"
@@ -23678,6 +23773,9 @@
       ],
       "get a secure ${ MAIL_APP_NAME } address.": [
         "Eine sichere ${ MAIL_APP_NAME }-Adresse erhalten."
+      ],
+      "Get an additional ${ referralDiscountPercent }% off your first year of ${ BRAND_NAME } for Business": [
+        "Erhalte einen zusätzlichen Rabatt von ${ referralDiscountPercent } % auf dein erstes Jahr bei ${ BRAND_NAME } for Business"
       ],
       "Gifted by **${ referrerName }**": [
         "Geschenkt von **${ referrerName }**"
@@ -23711,6 +23809,9 @@
       ],
       "Password-protected messages": [
         "Passwortgeschützte Nachrichten"
+      ],
+      "Pick a plan to get started.": [
+        "Wählen ein Abonnement, um loszulegen."
       ],
       "Pick a service to get started.": [
         "Wähle einen Dienst, um zu beginnen."
@@ -23779,14 +23880,23 @@
       "Sign up, protect your files": [
         "Registrieren, schütze deine Dateien"
       ],
+      "Something went wrong": [
+        "Ein Fehler ist aufgetreten"
+      ],
       "Start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } nutzen"
+      ],
+      "Summary": [
+        "Zusammenfassung"
       ],
       "Swiss-based": [
         "In der Schweiz ansässig"
       ],
       "Sync files across devices and users": [
         "Synchronisiere Dateien zwischen Geräten und Benutzern"
+      ],
+      "Taxes may apply.": [
+        "Es können Steuern anfallen."
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "Der Name der Organisation wird für deine Benutzer sichtbar sein, während sie angemeldet sind."
@@ -23824,6 +23934,9 @@
       "Unlimited hide-my-email aliases": [
         "Unbegrenzte hide-my-email-Aliasse"
       ],
+      "Unlimited vaults for your passwords": [
+        "Unbegrenzte Anzahl von Tresoren für deine Passwörter"
+      ],
       "Up to 2 users": [
         "Bis zu 2 Benutzer"
       ],
@@ -23845,6 +23958,9 @@
       "use your own email.": [
         "Nutze deine eigene E-Mail-Adresse."
       ],
+      "Users": [
+        "Benutzer"
+      ],
       "VPN with servers in ${ VPN_SERVERS.free.countries } countries": [
         "VPN mit Servern in ${ VPN_SERVERS.free.countries } Ländern"
       ],
@@ -23852,8 +23968,17 @@
         "VPN mit Servern in ${ VPN_SERVERS.free.countries } Land",
         "VPN mit Servern in ${ VPN_SERVERS.free.countries } Ländern"
       ],
+      "We couldn't finish setting up your account. Please contact support.": [
+        "Das Einrichten deines Kontos konnte nicht abgeschlossen werden. Bitte wende dich an den Support."
+      ],
       "We’ll email you before your trial ends.": [
         "Wir senden dir eine E-Mail, bevor deine Testversion endet."
+      ],
+      "WS Premium": [
+        "WS Premium"
+      ],
+      "WS Standard": [
+        "WS Standard"
       ],
       "Yearly": [
         "Jährlich"
@@ -23861,8 +23986,17 @@
       "You are all set": [
         "Du bist startklar"
       ],
+      "You're invited to join 100,000+ organizations that protect their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "Wir laden dich ein, dich den über 100.000 Organisationen anzuschließen, die ihre Daten mit dem verschlüsselten Ökosystem von ${ BRAND_NAME } schützen."
+      ],
+      "Your account has been created, but we couldn't sign you in.": [
+        "Dein Konto wurde erstellt, aber du konntest nicht angemeldet werden."
+      ],
       "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
         "Dein Konto beinhaltet Zugriff auf kostenlose Funktionen in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "your entire business": [
+        "dein gesamtes Unternehmen"
       ],
       "Your plan": [
         "Dein Abonnement"
@@ -25784,6 +25918,9 @@
       "/user per month": [
         "/Benutzer pro Monat"
       ],
+      "/user/month": [
+        "/Benutzer/Monat"
+      ],
       "/year": [
         "/Jahr"
       ]
@@ -26863,6 +27000,9 @@
       ],
       "Email": [
         "E-Mail-Adresse"
+      ],
+      "Email address": [
+        "E‐Mail‐Adresse"
       ],
       "Email breaches": [
         "E-Mail-Datenlecks"

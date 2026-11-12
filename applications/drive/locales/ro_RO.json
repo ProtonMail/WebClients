@@ -3606,9 +3606,6 @@
       "External invitations are temporarily disabled.": [
         "Invitațiile externe sunt dezactivate temporar."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Invitațiile externe sunt dezactivate temporar. Reîncercați mai târziu."
-      ],
       "Failed to change permissions settings": [
         "Nu s-au putut modifica setările de permisiuni."
       ],
@@ -4043,12 +4040,6 @@
       ],
       "The folder name is too long. Please choose a different name.": [
         "Numele folderului este prea lung. Alegeți alt nume."
-      ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Invitația încă nu poate fi finalizată. Reîncercați mai târziu."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Invitația nu mai există."
       ],
       "The label name is invalid. Please choose a different name.": [
         "Numele etichetei nu este valid. Alegeți alt nume."
@@ -5221,9 +5212,6 @@
       ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "Marca ${ IDEAL_WERO_BRAND_NAME }"
-      ],
-      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
-        "${ invitation.addedByEmail.error.claimedAuthor } (expeditor neverificat)"
       ],
       "${ invitationsCount } pending invitation": [
         "Invitații în așteptare: ${ invitationsCount }",

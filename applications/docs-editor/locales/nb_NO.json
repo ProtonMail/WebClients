@@ -122,6 +122,12 @@
       "Fit table to page width": [
         "Tilpass tabell til sidebredde"
       ],
+      "Header column": [
+        "Overskriftskolonne"
+      ],
+      "Header row": [
+        "Overskriftsrad"
+      ],
       "Indent": [
         "Innrykk"
       ],
@@ -295,22 +301,37 @@
       "Animals and nature": [
         "Dyr og natur"
       ],
+      "Flags": [
+        "Flagg"
+      ],
       "Food and drink": [
         "Mat og drikke"
       ],
       "Objects": [
         "Objekter"
       ],
+      "Smileys and people": [
+        "Smilefjes og personer"
+      ],
       "Symbols": [
         "Symboler"
+      ],
+      "Travel and places": [
+        "Reiser og steder"
       ]
     },
     "Error": {
       "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
         "Det oppstod en feil under lasting av dokumentet. For å forhindre dokumentkorrupsjon er redigeringsprogrammet låst. Last inn siden på nytt og prøv igjen. Hvis feilen vedvarer, kan du åpne Versjonshistorikk fra menyalternativene for å prøve å gjenopprette dokumentet til en tidligere versjon."
       ],
+      "Could not load emoji. Close the picker and try again.": [
+        "Kunne ikke laste inn emoji. Lukk velgeren og prøv igjen."
+      ],
       "Failed to export document.": [
         "Kunne ikke eksportere dokumentet."
+      ],
+      "Failed to import document due to unsupported file format.": [
+        "Kunne ikke importere dokumentet på grunn av filformat som ikke støttes."
       ],
       "Failed to import HTML due to unknown error.": [
         "Kunne ikke importere HTML på grunn av ukjent feil."
@@ -414,6 +435,12 @@
       "Loading": [
         "Laster"
       ],
+      "Loading emoji…": [
+        "Laster emoji…"
+      ],
+      "Loading spreadsheet content...": [
+        "Laster inn innholdet i regnearket..."
+      ],
       "NEW": [
         "NY"
       ],
@@ -485,6 +512,9 @@
       "Clear formatting": [
         "Fjern formatering"
       ],
+      "Comments": [
+        "Kommentarer"
+      ],
       "Delete": [
         "Slett"
       ],
@@ -517,6 +547,9 @@
       ],
       "Emoji": [
         "Emoji"
+      ],
+      "Emoji suggestions": [
+        "Emoji-forslag"
       ],
       "Format": [
         "Format"
@@ -565,6 +598,18 @@
       ],
       "Replace link": [
         "Erstatt kobling"
+      ],
+      "Resize outline": [
+        "Endre størrelse på disposisjonen"
+      ],
+      "Search emoji": [
+        "Søk etter emojier"
+      ],
+      "Search results": [
+        "Søketreff"
+      ],
+      "Table": [
+        "Tabell"
       ],
       "Text and highlight color": [
         "Tekst og uthevingsfarge"
@@ -726,35 +771,95 @@
       ]
     },
     "sheets_2025:Spreadsheet cellFormatOptions": {
+      "Accounting": [
+        "Bokføring"
+      ],
+      "Bottom": [
+        "Bunn"
+      ],
       "Center": [
         "Midtstille"
+      ],
+      "Clip": [
+        "Klipp"
       ],
       "Currency": [
         "Valuta"
       ],
+      "Currency formats are used for general monetary values.": [
+        "Valutaformater brukes til generelle pengeverdier."
+      ],
+      "Custom": [
+        "Tilpasset"
+      ],
       "Date": [
         "Dato"
+      ],
+      "Date formats display date and time serial numbers as date values.": [
+        "Datoformater viser serienumre for dato og klokkeslett som datoverdier."
+      ],
+      "Fraction": [
+        "Brøk"
       ],
       "General": [
         "Generelt"
       ],
+      "General format cells have no specific number format.": [
+        "Generelle formatceller har ikke noe spesifikt tallformat."
+      ],
       "Left": [
         "Venstre"
+      ],
+      "Number": [
+        "Nummer"
+      ],
+      "Number is used for general display of numbers.": [
+        "Tall brukes for generell visning av tall."
       ],
       "Overflow": [
         "Overflyt"
       ],
+      "Percentage": [
+        "Prosentdel"
+      ],
       "Right": [
         "Høyre"
+      ],
+      "Scientific": [
+        "Akademisk"
       ],
       "Text": [
         "Tekst"
       ],
       "Time": [
         "Tid"
+      ],
+      "Time formats display date and time serial numbers as date values.": [
+        "Tidsformater viser serienumre for dato og klokkeslett som datoverdier."
+      ],
+      "Top": [
+        "Topp"
+      ],
+      "Wrap": [
+        "Bryt tekst"
       ]
     },
     "sheets_2025:Spreadsheet chartAggregates": {
+      "Average": [
+        "Gjennomsnitt"
+      ],
+      "Count": [
+        "Antall"
+      ],
+      "Max": [
+        "Maks"
+      ],
+      "Median": [
+        "Median"
+      ],
+      "Min": [
+        "Min"
+      ],
       "Sum": [
         "Sum"
       ]
@@ -765,28 +870,136 @@
       ]
     },
     "sheets_2025:Spreadsheet chartTypes": {
+      "2D Pie": [
+        "2D Pai"
+      ],
+      "Clustered Column": [
+        "Gruppert stolpe"
+      ],
+      "Column": [
+        "Kolonne"
+      ],
+      "Doughnut": [
+        "Smultring"
+      ],
+      "Hierarchy": [
+        "Hierarki"
+      ],
       "Line": [
         "Linje"
+      ],
+      "Pie": [
+        "Pai"
+      ],
+      "Smooth line": [
+        "Glatt linje"
+      ],
+      "Stacked column": [
+        "Stablet kolonne"
+      ],
+      "Stacked line": [
+        "Stablet linje"
+      ],
+      "Sunburst": [
+        "Solstråle"
+      ],
+      "Treemap": [
+        "Trekart"
       ]
     },
     "sheets_2025:Spreadsheet conditions": {
       "Above average": [
         "Over gjennomsnitt"
       ],
+      "April": [
+        "April"
+      ],
       "August": [
         "August"
+      ],
+      "Below average": [
+        "Under gjennomsnittet"
       ],
       "Between": [
         "Mellom"
       ],
+      "Bottom N items": [
+        "Nederste N elementer"
+      ],
+      "Bottom N percent": [
+        "Nederste N prosent"
+      ],
+      "Checkbox": [
+        "Avkryssingsboks"
+      ],
+      "Custom formula": [
+        "Tilpasset formel"
+      ],
+      "Date is after": [
+        "Dato er etter"
+      ],
+      "Date is before": [
+        "Dato er før"
+      ],
       "Date is between": [
         "Dato er mellom"
+      ],
+      "Date is equal to": [
+        "Dato er lik"
       ],
       "Date is not between": [
         "Dato er ikke mellom"
       ],
+      "Date is not equal to": [
+        "Dato er ikke lik"
+      ],
+      "Date is on or after": [
+        "Dato er på eller etter"
+      ],
+      "Date is on or before": [
+        "Dato er på eller før"
+      ],
+      "Date is valid": [
+        "Dato er gyldig"
+      ],
       "December": [
         "Desember"
+      ],
+      "Dropdown": [
+        "Rullegardinmeny"
+      ],
+      "Dropdown (from a range)": [
+        "Rullegardinmeny (fra et område)"
+      ],
+      "Equal to": [
+        "Er lik"
+      ],
+      "Errors": [
+        "Feil"
+      ],
+      "February": [
+        "Februar"
+      ],
+      "Greater than": [
+        "Større enn"
+      ],
+      "Greater than or equal to": [
+        "Større enn eller lik"
+      ],
+      "Greater than or equal to previous": [
+        "Større enn eller lik forrige"
+      ],
+      "Greater than previous": [
+        "Større enn forrige"
+      ],
+      "Is empty": [
+        "Er tom"
+      ],
+      "Is not empty": [
+        "Er ikke tom"
+      ],
+      "January": [
+        "Januar"
       ],
       "July": [
         "Juli"
@@ -800,6 +1013,9 @@
       "Last month": [
         "Siste måned"
       ],
+      "Last quarter": [
+        "Siste kvartal"
+      ],
       "Last week": [
         "Forrige uke"
       ],
@@ -808,6 +1024,15 @@
       ],
       "Less than": [
         "Mindre enn"
+      ],
+      "Less than or equal to": [
+        "Mindre enn eller lik"
+      ],
+      "Less than or equal to previous": [
+        "Mindre enn eller lik forrige"
+      ],
+      "Less than previous": [
+        "Mindre enn forrige"
       ],
       "March": [
         "Mars"
@@ -827,8 +1052,14 @@
       "Next year": [
         "Neste år"
       ],
+      "No errors": [
+        "Ingen feil"
+      ],
       "Not between": [
         "Ikke mellom"
+      ],
+      "Not equal to": [
+        "Ikke lik"
       ],
       "November": [
         "November"
@@ -836,11 +1067,38 @@
       "October": [
         "Oktober"
       ],
+      "Quarter 1": [
+        "Kvartal 1"
+      ],
+      "Quarter 2": [
+        "Kvartal 2"
+      ],
+      "Quarter 3": [
+        "Kvartal 3"
+      ],
+      "Quarter 4": [
+        "Kvartal 4"
+      ],
       "September": [
         "September"
       ],
       "Text contains": [
         "Tekst inneholder"
+      ],
+      "Text does not contain": [
+        "Tekst inneholder ikke"
+      ],
+      "Text ends with": [
+        "Tekst slutter med"
+      ],
+      "Text is email": [
+        "Tekst er e-post"
+      ],
+      "Text is exactly": [
+        "Tekst er akkurat"
+      ],
+      "Text is not equal": [
+        "Tekst er ikke lik"
       ],
       "Text is URL": [
         "Tekst er URL"
@@ -851,6 +1109,9 @@
       "This month": [
         "Denne måneden"
       ],
+      "This quarter": [
+        "Dette kvartalet"
+      ],
       "This week": [
         "Denne uken"
       ],
@@ -860,6 +1121,15 @@
       "Today": [
         "I dag"
       ],
+      "Tomorrow": [
+        "I morgen"
+      ],
+      "Top N items": [
+        "Topp N elementer"
+      ],
+      "Top N percent": [
+        "Topp N prosent"
+      ],
       "Year to date": [
         "År til dato"
       ],
@@ -868,6 +1138,9 @@
       ]
     },
     "sheets_2025:Spreadsheet context menu": {
+      "(Blanks)": [
+        "(Blank)"
+      ],
       "AI Quick Edit": [
         "KI-hurtigredigering"
       ],
@@ -1214,6 +1487,9 @@
       ]
     },
     "sheets_2025:Spreadsheet customCurrencyFormatDialog": {
+      "Format": [
+        "Format"
+      ],
       "Symbol": [
         "Symbol"
       ]
@@ -1244,6 +1520,11 @@
       ],
       "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
         "Skjermen din er for liten til å redigere dette regnearket. Du er i skrivebeskyttet modus. For å gjøre endringer, må du åpne dette regnearket på en større skjerm eller utvide nettleservinduet."
+      ]
+    },
+    "sheets_2025:Spreadsheet editingDisabledButton": {
+      "Edit": [
+        "Rediger"
       ]
     },
     "sheets_2025:Spreadsheet editor": {
@@ -1680,6 +1961,9 @@
       ]
     },
     "sheets_2025:Spreadsheet editor search dialog": {
+      "${ current } of ${ total }": [
+        "${ current } av ${ total }"
+      ],
       "Close": [
         "Lukk"
       ],
@@ -1711,8 +1995,29 @@
       ]
     },
     "sheets_2025:Spreadsheet editor toolbar": {
+      "Apply border": [
+        "Legg til kantlinje"
+      ],
+      "Apply fill color": [
+        "Bruk fyllfarge"
+      ],
+      "Apply text color": [
+        "Bruk tekstfarge"
+      ],
       "Bold": [
         "Fet"
+      ],
+      "Border": [
+        "Kantlinje"
+      ],
+      "Choose border": [
+        "Velg kantlinje"
+      ],
+      "Choose fill color": [
+        "Velg fyllfarge"
+      ],
+      "Choose text color": [
+        "Velg tekstfarge"
       ],
       "Clear formatting": [
         "Fjern formatering"
@@ -1866,7 +2171,18 @@
         "Ingen"
       ]
     },
+    "sheets_2025:Spreadsheet formatMenu": {
+      "Coming soon...": [
+        "Kommer snart..."
+      ]
+    },
     "sheets_2025:Spreadsheet formulaBar": {
+      "Edit": [
+        "Rediger"
+      ],
+      "Remove": [
+        "Fjern"
+      ],
       "View": [
         "Vis"
       ]
@@ -1874,6 +2190,9 @@
     "sheets_2025:Spreadsheet gridFooter": {
       "Add": [
         "Legg til"
+      ],
+      "more rows at the bottom": [
+        "flere rader nederst"
       ]
     },
     "sheets_2025:Spreadsheet insert link dialog": {
@@ -1911,8 +2230,23 @@
       "Cancel": [
         "Avbryt"
       ],
+      "Default ${ size }": [
+        "Standard ${ size }"
+      ],
       "OK": [
         "OK"
+      ],
+      "Resize column ${ title }": [
+        "Endre størrelse på kolonne ${ title }"
+      ],
+      "Resize row ${ title }": [
+        "Endre størrelse på rad ${ title }"
+      ],
+      "Specify column width (px)": [
+        "Angi kolonnebredde (px)"
+      ],
+      "Specify row height (px)": [
+        "Angi radhøyde (px)"
       ]
     },
     "sheets_2025:Spreadsheet sheet status bar": {
@@ -2087,6 +2421,18 @@
       ],
       "Series": [
         "Serie"
+      ],
+      "Series ${ seriesNumber }": [
+        "Serie ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Aggregate": [
+        "Aggreger serie ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Name": [
+        "Navn på serie ${ seriesNumber }"
+      ],
+      "Series ${ seriesNumber } Range": [
+        "Område for serie ${ seriesNumber }"
       ],
       "Show data in hidden rows and columns": [
         "Vis data i skjulte rader og kolonner"
@@ -2350,6 +2696,26 @@
       ],
       "Table title": [
         "Tabelltittel"
+      ]
+    },
+    "sheets_2025:Spreadsheet viewMenu": {
+      "1 column": [
+        "1 kolonne"
+      ],
+      "1 row": [
+        "1 rad"
+      ],
+      "2 columns": [
+        "2 kolonner"
+      ],
+      "2 rows": [
+        "2 rader"
+      ],
+      "No columns": [
+        "Ingen kolonner"
+      ],
+      "No rows": [
+        "Ingen rader"
       ]
     },
     "Title": {

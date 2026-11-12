@@ -8412,9 +8412,6 @@
       "Allow platform keys": [
         "Sta platformsleutels toe"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Het toevoegen van beveiligingssleutels wordt toegestaan (bijv. Windows Hello, gezichts- of vingerafdrukherkenning, ingebouwde TPM's)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Weet u zeker dat u de beveiligingssleutel ${ name } wilt verwijderen?"
       ],
@@ -11808,12 +11805,6 @@
       "RECOMMENDED": [
         "AANBEVOLEN"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Herstel via e-mail is niet beschikbaar zolang ${ PROTON_SENTINEL_NAME } is ingeschakeld."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Herstel via de telefoon is niet beschikbaar zolang ${ PROTON_SENTINEL_NAME } is ingeschakeld."
-      ],
       "Recovery file downloaded": [
         "Herstelbestand gedownload"
       ],
@@ -12443,12 +12434,6 @@
       ],
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Om post-kwantumbeveiliging in te schakelen, moet u het genereren van uw nieuwe post-kwantumcoderingssleutels voltooien."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Om de hoogst mogelijke beveiliging van uw account te garanderen, schakelt u **Herstel via herstel-e-mail** uit."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Om de hoogst mogelijke beveiliging van uw account te garanderen, schakelt u **Herstel via hersteltelefoon** uit."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Om te garanderen dat u geen belangrijke gegevens verliest, bewaart ${ DRIVE_APP_NAME } oude versies van uw bestanden als u en de mensen met wie u samenwerkt veranderingen maken. Selecteer hoe lang ${ BRAND_NAME } vorige versies moet bewaren."

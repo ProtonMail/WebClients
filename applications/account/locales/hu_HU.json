@@ -8,6 +8,9 @@
       "Full view (see all event details)": [
         "Teljes megtekintés (az esemény összes adatának megtekintése)"
       ],
+      "Limited view": [
+        "Korlátozott megtekintés"
+      ],
       "Limited view (see only free/busy)": [
         "Korlátozott megtekintés (csak a szabad/elfoglalt állapot)"
       ]
@@ -1474,6 +1477,10 @@
         "${ domains } további saját domain név",
         "${ domains } további saját domain név"
       ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikált VPN szerver",
+        "${ ips } dedikált VPN szerver"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI licenc"
       ],
@@ -1500,6 +1507,9 @@
       "${ users } user": [
         "${ users } felhasználó",
         "${ users } felhasználó"
+      ],
+      "Add-on": [
+        "Bővítmény"
       ],
       "Dedicated VPN servers": [
         "Dedikált VPN szerverek"
@@ -1635,6 +1645,11 @@
       ],
       "New email": [
         "Új e-mail"
+      ]
+    },
+    "app-switcher_2025": {
+      "Encrypted email": [
+        "Titkosított üzenet"
       ]
     },
     "Apps dropdown": {
@@ -2158,6 +2173,11 @@
         "Személyek vagy csoportok hozzáadása"
       ]
     },
+    "Calendar invite status label": {
+      "Invite sent": [
+        "Meghívó elküldve"
+      ]
+    },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
         "Csak ön láthatja a címkét"
@@ -2316,6 +2336,14 @@
       ]
     },
     "Checkout row": {
+      "${ n } day": [
+        "${ n } nap",
+        "${ n } nap"
+      ],
+      "${ n } month": [
+        "${ n } hónap",
+        "${ n } hónap"
+      ],
       "${ users } user": [
         "${ users } felhasználó",
         "${ users } felhasználó"
@@ -4119,6 +4147,9 @@
       "TV": [
         "TV"
       ],
+      "Ubuntu/Debian": [
+        "Ubuntu/Debian"
+      ],
       "Windows": [
         "Windows"
       ],
@@ -4471,6 +4502,11 @@
         "Az ellenőrző e-mailt elküldtük erre a címre: ${ address }"
       ]
     },
+    "email_forwarding_2023: Action": {
+      "Pause": [
+        "Szünet"
+      ]
+    },
     "email_forwarding_2023: Error message, recovery": {
       "Please try opening the link again.": [
         "Próbálja meg ismét megnyitni a hivatkozást."
@@ -4489,6 +4525,11 @@
         "Nem fog automatikusan továbbított leveleket kapni a ${ boldForwarderEmail } címről."
       ]
     },
+    "email_forwarding_2023: Link": {
+      "Learn more": [
+        "További tudnivalók"
+      ]
+    },
     "email_forwarding_2023: Title": {
       "Email forwarding deactivated": [
         "E-mail továbbítás kikapcsolva"
@@ -4498,6 +4539,18 @@
       ]
     },
     "emergency_access": {
+      "${ days } day left": [
+        "${ days } nap van hátra",
+        "${ days } nap van hátra"
+      ],
+      "${ hours } hour left": [
+        "${ hours } óra van hátra",
+        "${ hours } óra van hátra"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes } perc van hátra",
+        "${ minutes } perc van hátra"
+      ],
       "${ n } day": [
         "${ n } nap",
         "${ n } nap"
@@ -4513,6 +4566,9 @@
       ],
       "Emergency access for ${ user } removed": [
         "A(z) ${ user } vészhelyzeti hozzáférése eltávolítva."
+      ],
+      "Enable": [
+        "Engedélyez"
       ],
       "Give immediate access?": [
         "Azonnali hozzáférést biztosít?"
@@ -4729,6 +4785,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Hibás jelszó. Próbálja meg újra."
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "Érvénytelen helyreállító kód. Próbálja meg újra."
       ],
       "Incorrect second password. Please try again.": [
         "Hibás második jelszó. Próbálja meg újra."
@@ -5310,6 +5369,9 @@
       "Ask your administrator to enable Account monitor.": [
         "Kérje meg rendszergazdáját, hogy engedélyezze a fiókfigyelést."
       ],
+      "Check your internet connection and try again.": [
+        "Ellenőrizze az internetkapcsolatát, és próbálja újra."
+      ],
       "Error: ${ errorMessage }": [
         "Hiba: ${ errorMessage }"
       ],
@@ -5339,6 +5401,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nem sikerült az oldal betöltése. Frissítse az oldalt vagy ellenőrizze az internetkapcsolatát."
+      ],
+      "We couldn't load your invitation": [
+        "Nem tudtok betölteni a meghívót"
       ]
     },
     "Error message, Disable account": {
@@ -5675,6 +5740,9 @@
       "10+ premium features": [
         "10+ prémium funkció"
       ],
+      "500 GB storage": [
+        "500 GB tárhely"
+      ],
       "Access to all countries": [
         "Hozzáférés az összes országhoz"
       ],
@@ -5779,9 +5847,6 @@
       ],
       "Allow platform keys": [
         "Platformkulcsok engedélyezése"
-      ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Lehetővé teszi beépített biztonsági kulcsok (például Windows Hello, Face ID, Touch ID vagy belső TPM-ek) regisztrálását"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Biztos, hogy törli a hitelesítési kulcsot: ${ name }?"
@@ -6878,6 +6943,10 @@
       "${ storage } storage": [
         "${ storage } tárhely"
       ],
+      "${ total } user found": [
+        "${ total } talált felhasználó",
+        "${ total } talált felhasználó"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } csomag szükséges az ország-szintű kapcsolódáshoz."
       ],
@@ -7428,6 +7497,9 @@
       "Edit email address": [
         "E-mail cím szerkesztése"
       ],
+      "Edit label": [
+        "Címke szerkesztése"
+      ],
       "Edit link": [
         "Hivatkozás szerkesztése"
       ],
@@ -7472,6 +7544,9 @@
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "A helyreállító jelmondat újra engedélyezése egy új helyreállító jelmondatot fog létrehozni."
+      ],
+      "Encryption setting updated": [
+        "Titkosítási beállítások frissítve"
       ],
       "End date": [
         "Befejező dátum"
@@ -7764,6 +7839,9 @@
       ],
       "Internet connection restored.": [
         "Internet kapcsolat helyreállt."
+      ],
+      "Invalid invitation link": [
+        "Érvénytelen meghívó link"
       ],
       "Invitation link expired": [
         "A meghívó hivatkozás lejárt"
@@ -8670,6 +8748,18 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "A jelszó visszaállítás után zárolt adatainak visszafejtéséhez és megjelenítéséhez, válasszon egy helyreállítási módszert."
       ],
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Fiókjának legmagasabb szintű biztonsága érdekében, kapcsolja ki a **Helyreállítás e-mail címmel** lehetőséget."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Fiókjának legmagasabb szintű biztonsága érdekében, kapcsolja ki a **Helyreállítás telefonszámmal** lehetőséget."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Fiókjának legmagasabb szintű biztonsága érdekében, tartsa kikapcsolva a **Helyreállítás e-mail címmel** lehetőséget."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Fiókjának legmagasabb szintű biztonsága érdekében, tartsa kikapcsolva a **Helyreállítás telefonszámmal** lehetőséget."
+      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "A fontos adatok elvesztésének elkerülése érdekében a ${ DRIVE_APP_NAME } elmenti fájljai régebbi változatait, miközben ön és munkatársai változtatnak rajtuk. Válassza ki, hogy a ${ BRAND_NAME } meddig tartsa meg a korábbi változatokat."
       ],
@@ -8853,6 +8943,12 @@
       "We couldn't complete the transaction. Please try again.": [
         "Nem tudtuk befejezni a tranzakciót. Kérjük, próbálja újra."
       ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "Nem tudtuk igazolni ezt a meghívót. Kérjük forduljon ${ admin } adminisztrátorhoz, a szervezetből való eltávolításhoz, majd újbóli hozzáadáshoz."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Nem tudtuk igazolni az Ön szervezetének azonosságát. Kérjük, vegye fel a kapcsolatot ${ admin } adminisztrátorral a szervezet azonosságának ellenőrzéséhez a szervezeti beállításokban. Azt követően nyissa meg ezt a linket"
+      ],
       "We couldn’t process your payment.": [
         "Nem tudjuk feldolgozni az Ön befizetését."
       ],
@@ -8912,6 +9008,9 @@
       ],
       "We’ll send a reset code to ${ boldValue }.": [
         "Küldünk egy visszaállító kódot erre a címre: ${ boldValue }."
+      ],
+      "What happens:": [
+        "Mi történt:"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Kikapcsolása megakadályozza, hogy az ön értesítése nélkül töltődjenek le képek az eszközére."
@@ -9417,6 +9516,11 @@
         "Előfizetés"
       ]
     },
+    "Key state badge": {
+      "Primary": [
+        "Elsődleges"
+      ]
+    },
     "Keyboard shortcut name": {
       "Add encryption": [
         "Titkosítás megadása"
@@ -9798,6 +9902,9 @@
       ],
       "Assertion Consumer Service URL": [
         "Assertion Consumer Service URL"
+      ],
+      "Attach public key": [
+        "Nyilvános kulcs csatolása"
       ],
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
@@ -10213,6 +10320,9 @@
       "Import to:": [
         "Importálás ide:"
       ],
+      "Inbox": [
+        "Beérkezett üzenetek"
+      ],
       "Include application logs in bug report": [
         "Alkalmazásnaplók mellékelése a hibajelentéshez"
       ],
@@ -10417,6 +10527,9 @@
       "Password strength": [
         "Jelszó erőssége"
       ],
+      "Pay once, access forever.": [
+        "Fizessen egyszer, férjen hozzá örökre."
+      ],
       "Payer": [
         "Teherviselő"
       ],
@@ -10595,6 +10708,9 @@
       "Special characters": [
         "Speciális karakterek"
       ],
+      "Special Offer!": [
+        "Különleges ajánlat!"
+      ],
       "Starred": [
         "Csillagozott"
       ],
@@ -10763,6 +10879,9 @@
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
       ],
+      "Your recovery email": [
+        "Helyreállítási e-mail címe"
+      ],
       "Your voucher for your reserved ${ BRAND_NAME } email address:": [
         "Utalványa a lefoglalt ${ BRAND_NAME } e-mail címéhez:"
       ],
@@ -10831,6 +10950,11 @@
         "Lejárt"
       ]
     },
+    "Label to change view layout": {
+      "Row": [
+        "Sor"
+      ]
+    },
     "Label, credit card": {
       "Postal code": [
         "Irányítószám"
@@ -10889,6 +11013,9 @@
       ],
       "Activity log": [
         "Tevékenységnapló"
+      ],
+      "activity monitor": [
+        "tevékenység figyelő"
       ],
       "Add a gift code": [
         "Ajándék kód hozzáadása"
@@ -11379,6 +11506,9 @@
       ],
       "Edit": [
         "Szerkesztés"
+      ],
+      "Enable user": [
+        "Felhasználó engedélyezése"
       ],
       "Remove": [
         "Eltávolítás"
@@ -13044,6 +13174,9 @@
       ]
     },
     "Option": {
+      "15th of the month": [
+        "a hónap 15-ik napja"
+      ],
       "Add to existing group": [
         "Hozzáadás meglévő csoporthoz"
       ],
@@ -13052,6 +13185,9 @@
       ],
       "Archive": [
         "Archiválás"
+      ],
+      "Ask each time": [
+        "Mindig kérdezzen rá"
       ],
       "Auto": [
         "Automatikus"
@@ -13067,6 +13203,9 @@
       ],
       "Free server configs": [
         "Ingyenes szerver konfigurációk"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
       ],
       "I found another service that I like better": [
         "Találtam egy másik szolgáltatást, ami jobban tetszik"
@@ -13110,11 +13249,17 @@
       "Organization only": [
         "Kizárólag szervezeti"
       ],
+      "Permanent": [
+        "Állandó"
+      ],
       "Receive from all": [
         "Fogadás bárkitől"
       ],
       "Required": [
         "Kötelező"
+      ],
+      "Right to Left": [
+        "Jobbról balra"
       ],
       "Router": [
         "Router"
@@ -13220,6 +13365,12 @@
         "A csomag legfeljebb ${ humanReadableAvailableSpace } további tárhelyet tartalmaz."
       ]
     },
+    "organization key reset": {
+      "User (${ n })": [
+        "Felhasználó (${ n })",
+        "Felhasználó (${ n })"
+      ]
+    },
     "Organization logo upload": {
       "Avoid overly compressed images.": [
         "Kerülje a túlzottan tömörített képeket."
@@ -13294,6 +13445,12 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } használatának megkezdése"
+      ]
+    },
+    "Pass signup: info": {
+      "${ n } month": [
+        "${ n } hónap",
+        "${ n } hónap"
       ]
     },
     "pass_lifetime_signup: Info": {
@@ -13711,6 +13868,12 @@
       ],
       "New credit/debit card": [
         "Új bankkártya"
+      ]
+    },
+    "Payment terms": {
+      "${ days } day": [
+        "${ days } nap",
+        "${ days } nap"
       ]
     },
     "Payment.Sepa.Action": {
@@ -14193,6 +14356,11 @@
         "Frissítés ${ upsellPlanTitle }"
       ]
     },
+    "PQC optin": {
+      "Go to ${ encryptionAndKeysSettingsTitle }": [
+        "Menj ${ encryptionAndKeysSettingsTitle }"
+      ]
+    },
     "Property type": {
       "Address": [
         "Cím"
@@ -14422,6 +14590,12 @@
       ]
     },
     "safety_review": {
+      "Done": [
+        "Kész"
+      ],
+      "Verify your recovery phone": [
+        "Helyreállító telefonszám megerősítése"
+      ],
       "Your recovery checklist": [
         "Az ön helyreállítási ellenőrzőlistája"
       ]
@@ -14476,6 +14650,16 @@
       ],
       "Testing SAML configuration": [
         "SAML-beállítások tesztelése"
+      ]
+    },
+    "scim": {
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } csoport szinkronizálva",
+        "${ numberOfPendingGroups } csoport szinkronizálva"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } csoport szinkronizálva.",
+        "${ pendingGroupsCount } csoport szinkronizálva."
       ]
     },
     "scim: Action": {
@@ -15244,6 +15428,9 @@
       ],
       "Username": [
         "Felhasználónév"
+      ],
+      "Your password": [
+        "Az Ön jelszava"
       ]
     },
     "signup: Action": {
@@ -15791,6 +15978,21 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Az előfizetése megszüntetése folyamatban van, kérjük, várjon"
+      ]
+    },
+    "Status": {
+      "${ count } person": [
+        "${ count } személy",
+        "${ count } személy"
+      ],
+      "... waiting": [
+        "... várakozás"
+      ],
+      "Not activated": [
+        "Nem aktivált"
+      ],
+      "remove organization key": [
+        "szervezeti kulcs eltávolítása"
       ]
     },
     "Step in filter modal": {
@@ -16873,6 +17075,14 @@
       "${ feature } is now active": [
         "A(z) ${ feature } mostantól aktív"
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } Meghívott barát",
+        "${ friendsInvited } Meghívott barát"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } Felíratkozott barát",
+        "${ friendsSubscribed } Felíratkozott barát"
+      ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } író segéd"
       ],
@@ -17469,6 +17679,9 @@
       ],
       "Export": [
         "Exportálás"
+      ],
+      "Export private key": [
+        "Privát kulcs exportálása"
       ],
       "External PGP settings": [
         "Külső PGP beállítások"
@@ -18445,6 +18658,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "A kiválasztott téma akkor lesz aktív, ha a rendszer \"világos üzemmódba\" van állítva."
+      ],
+      "This address has been disabled": [
+        "Cím letiltva"
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Ez lehet jelszó visszaállítás következménye, vagy a felhasználó még sosem lépett be."

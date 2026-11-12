@@ -2269,7 +2269,7 @@
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
+        "アイテムを別の保管庫に移動すると、そのアイテムのセキュアリンクはすべて消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -5043,9 +5043,6 @@
       ],
       "Move ${ trashedItemsCount } item to trash?": [
         "${ trashedItemsCount }個のアイテムをゴミ箱に移動しますか？"
-      ],
-      "Move all items to \"${ vaultName }\"?": [
-        "すべてのアイテムを \"${ vaultName }\" に移動しますか？"
       ],
       "MX record": [
         "MX レコード"

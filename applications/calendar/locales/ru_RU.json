@@ -5235,6 +5235,9 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Вы получаете ${ referrerRewardAmount }** в виде остатка на счете за каждого друга, который решит подписаться."
       ],
+      "1 vault per user": [
+        "1 хранилище на пользователя"
+      ],
       "A cancellation email will be sent to removed participants.": [
         "Сообщение об отмене будет отправлено удаленным участникам."
       ],
@@ -9645,6 +9648,9 @@
         "Скидка действительна для ${ renewalsWithCoupon } продлений.",
         "Скидка действительна для ${ renewalsWithCoupon } продлений."
       ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "У выбранного тарифного плана недостаточно места для данных вашего аккаунта."
+      ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Специальная цена со скидкой действует в течение ${ couponRedemptions } месяца. Затем подписка будет автоматически продлена по цене ${ renewPriceStr } на 1 месяц. Вы можете отменить её в любое время.",
         "Специальная цена со скидкой действует в течение ${ couponRedemptions } месяцев. Затем подписка будет автоматически продлена по цене ${ renewPriceStr } на 1 месяц. Вы можете отменить её в любое время.",
@@ -12673,6 +12679,9 @@
       ]
     },
     "user_modal": {
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Нельзя изменить собственную роль. Попросите другого администратора изменить её за вас."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Вы сможете назначать должности, как только пользователь примет приглашение."
       ]

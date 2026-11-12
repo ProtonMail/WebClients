@@ -568,6 +568,9 @@
       "Open platform selection dropdown": [
         "Åpne nedtrekksmeny for valg av plattform"
       ],
+      "Open the browser again": [
+        "Åpne nettleseren på nytt"
+      ],
       "Organize vaults": [
         "Organiser hvelv"
       ],
@@ -739,6 +742,9 @@
       "Show more": [
         "Vis mer"
       ],
+      "Sign in in the app instead": [
+        "Logg inn i appen i stedet"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Logg på med ${ BRAND_NAME }"
       ],
@@ -784,6 +790,9 @@
       ],
       "Trash": [
         "Legg i papirkurven"
+      ],
+      "Try again": [
+        "Prøv igjen"
       ],
       "Try again.": [
         "Prøv igjen."
@@ -877,6 +886,9 @@
       ]
     },
     "App menu": {
+      "Back": [
+        "Tilbake"
+      ],
       "Force Reload": [
         "Tving omlasting"
       ],
@@ -1081,8 +1093,14 @@
       "Biometric authentication cancelled.": [
         "Biometrisk autentisering avbrutt."
       ],
+      "Biometric authentication failed": [
+        "Biometrisk autentisering mislyktes"
+      ],
       "Biometric authentication failed.": [
         "Biometrisk autentisering mislyktes."
+      ],
+      "Biometric authentication is not available": [
+        "Biometrisk autentisering er ikke tilgjengelig"
       ],
       "Biometric lock credentials do not match.": [
         "De biometriske låselegitimasjonene samsvarer ikke."
@@ -1954,8 +1972,14 @@
       "Can view this item.": [
         "Kan lese dette elementet."
       ],
+      "Canceled by user": [
+        "Avbrutt av bruker"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Sjekker ${ compromised.progress.completed } av ${ compromised.progress.total } passord"
+      ],
+      "Choose how you want to sign in": [
+        "Velg hvordan du vil logge på"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Bekreft det ekstra passordet ditt for å fortsette med fjerningen."
@@ -2142,9 +2166,6 @@
       ],
       "Find \"OpenSSH Authentication Agent\", right-click Properties.": [
         "Finn \"OpenSSH Authentication Agent\", høyreklikk på Egenskaper."
-      ],
-      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
-        "Fullfør påloggingen i nettleservinduet som nettopp ble åpnet. ${ PASS_APP_NAME } vil plukke opp automatisk så snart du er ferdig."
       ],
       "Folder \"${ payload.folder.name }\" created": [
         "Mappen «${ payload.folder.name }» opprettet"
@@ -2352,7 +2373,8 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene."
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2726,6 +2748,9 @@
       "Shared item invitation": [
         "Delt elementinvitasjon"
       ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Logg inn og bekreft i nettleservinduet som nettopp ble åpnet. ${ PASS_APP_NAME } vil fylles ut automatisk når du er ferdig."
+      ],
       "Sign in to your account": [
         "Logg på kontoen din"
       ],
@@ -2737,6 +2762,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Bare bruk ${ emailBold } neste gang du trenger et alias: det blir ${ automaticallyBold } opprettet første gang det mottar en e-post. Hvis du vil ha mer finkornet kontroll, kan du også definere ${ rulesHyperLink }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "For å starte ${ PASS_APP_NAME } i frakoblet modus må du oppgi ${ BRAND_NAME }-passordet ditt."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Hvis du starter ${ PASS_APP_NAME } i frakoblet modus, må du oppgi backup-passordet ditt."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "For å starte ${ PASS_APP_NAME } i frakoblet modus må du oppgi det ekstra passordet ditt."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "For å starte ${ PASS_APP_NAME } i frakoblet modus må du oppgi det andre passordet ditt."
       ],
       "Successfully exported all your items": [
         "Eksporterte alle elementene dine"
@@ -2804,6 +2841,9 @@
       ],
       "The secure link has been removed": [
         "Den sikre koblingen er fjernet"
+      ],
+      "The sign in was not confirmed in time.": [
+        "Påloggingen ble ikke bekreftet i tide."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Teksten du prøver å lime inn, er lengre enn den maksimalt tillatte lengden på ${ maxLength }-tegn."
@@ -3117,6 +3157,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisasjonen krever at du sikrer tilgangen til ${ PASS_APP_NAME }"
+      ],
+      "Your session could not be authorized.": [
+        "Økten din kunne ikke autoriseres."
       ]
     },
     "Keyboard key": {
@@ -5026,6 +5069,9 @@
       "Activity for \"${ token.Name }\"": [
         "Aktivitet for \"${ token.Name }\""
       ],
+      "Add an account": [
+        "Legg til en konto"
+      ],
       "Add custom domain": [
         "Legg til egendefinert domene"
       ],
@@ -5317,8 +5363,8 @@
         "Flytte ${ trashedItemsCount } element til papirkurven?",
         "Flytte ${ trashedItemsCount } elementer til papirkurven?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Flytte alle elementer til \"${ vaultName }\"?"
+      "Move all items to \"${ target }\"?": [
+        "Flytt alle elementer til \"${ target }\"?"
       ],
       "Move all items?": [
         "Flytt alle elementer?"
@@ -5483,6 +5529,15 @@
       ],
       "Shared via": [
         "Delt via"
+      ],
+      "Sign in timed out": [
+        "Pålogging utløpt"
+      ],
+      "Signing you in": [
+        "Logger deg på"
+      ],
+      "Something went wrong": [
+        "Noe gikk galt"
       ],
       "SPF (Optional)": [
         "SPF (valgfritt)"

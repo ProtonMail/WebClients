@@ -3579,9 +3579,6 @@
       "External invitations are temporarily disabled.": [
         "Οι εξωτερικές προσκλήσεις είναι προσωρινά απενεργοποιημένες"
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Οι εξωτερικές προσκλήσεις είναι προσωρινά απενεργοποιημένες. Παρακαλούμε προσπαθήστε ξανά αργότερα"
-      ],
       "Failed to change permissions settings": [
         "Αποτυχία αλλαγής ρυθμίσεων δικαιωμάτων"
       ],
@@ -4010,12 +4007,6 @@
       ],
       "The folder name is too long. Please choose a different name.": [
         "Υπερβολικό μήκος ονόματος φακέλου. Παρακαλούμε δοκιμάστε ένα συντομότερο."
-      ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Η πρόσκληση δεν μπορεί να ολοκληρωθεί ακόμα. Παρακαλούμε προσπαθήστε ξανά αργότερα."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Η πρόσκληση δεν υπάρχει πια"
       ],
       "The label name is invalid. Please choose a different name.": [
         "Μη έγκυρο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
@@ -5097,6 +5088,9 @@
         "${ calendarsToBeMergedCount } συγχωνευμένο ημερολόγιο",
         "${ calendarsToBeMergedCount } συγχωνευμένα ημερολόγια"
       ],
+      "${ claimedAuthor } (unverified sender)": [
+        "${ claimedAuthor } (μη επαληθευμένος αποστολέας)"
+      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } από ${ items.length } μεταφορές ολοκληρώθηκαν"
       ],
@@ -5157,9 +5151,6 @@
       ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "${ IDEAL_WERO_BRAND_NAME } σήμα"
-      ],
-      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
-        "${ invitation.addedByEmail.error.claimedAuthor } (μη επαληθευμένος αποστολέας)"
       ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } πρόσκληση σε εκκρεμότητα",

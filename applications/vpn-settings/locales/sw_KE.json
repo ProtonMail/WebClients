@@ -6176,9 +6176,6 @@
       "Allow platform keys": [
         "Ruhusu funguo za jukwaa"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Inakuruhusu kusajili funguo za usalama zilizojengwa ndani (kama vile Windows Hello, Face ID, Touch ID, au TPM za ndani)."
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Je, una uhakika unataka kufuta ufunguo wa usalama ${ name }?"
       ],
@@ -8690,12 +8687,6 @@
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Inapendekezwa kwenye vifaa vinavyoaminiwa. ${ learnMoreLink }"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Urejeshaji kwa barua pepe haupatikani wakati ${ PROTON_SENTINEL_NAME } imewashwa."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Urejeshaji kwa simu haupatikani wakati ${ PROTON_SENTINEL_NAME } imewashwa."
-      ],
       "Recovery file downloaded": [
         "Faili la urejeshaji limepakuliwa."
       ],
@@ -9169,12 +9160,6 @@
       ],
       "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
         "Ili kuwasha VPN wakati wote, wasifu wa kifaa unahitaji kufikishwa ${ policiesPath } kwenye kila kifaa, ambapo mteja wa ${ VPN_APP_NAME } hugundua faili hilo na kuweka wasifu kiotomatiki. ${ learnMore }."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Ili kuhakikisha usalama wa juu zaidi unaowezekana wa akaunti yako, zima **Urejeshaji kwa barua pepe**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Ili kuhakikisha usalama wa juu zaidi unaowezekana wa akaunti yako, zima **Urejeshaji kwa simu ya urejeshaji**."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Ili kupambana na barua taka na matumizi mabaya, tafadhali thibitisha kuwa wewe ni mwanadamu."

@@ -368,6 +368,9 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butikk"
       ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
       "Accept": [
         "Aksepter"
       ],
@@ -406,6 +409,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Legg til ${ BRAND_NAME }-adresse"
+      ],
+      "Add ${ name }": [
+        "Legg til ${ name }"
       ],
       "Add a payment method": [
         "Legg til betalingsmåte"
@@ -1483,6 +1489,9 @@
       ],
       "Manage subscription": [
         "Behandle abonnement"
+      ],
+      "Manage subscriptions": [
+        "Administrer abonnementer"
       ],
       "Manage users/addresses": [
         "Administrer brukere/adresser"
@@ -8463,6 +8472,9 @@
       "Ask your administrator to enable Account monitor.": [
         "Be administratoren din om å aktivere kontoovervåking."
       ],
+      "Check your internet connection and try again.": [
+        "Kontroller internettilkoblingen og prøv igjen."
+      ],
       "Enable account monitor to start loading event.": [
         "Aktiver kontoovervåking for å starte innlasting av hendelse."
       ],
@@ -8495,6 +8507,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunne ikke laste denne siden. Oppdater siden eller undersøk internettforbindelsen din."
+      ],
+      "We couldn't load your invitation": [
+        "Vi kunne ikke laste invitasjonen din"
       ]
     },
     "Error message, Disable account": {
@@ -9091,9 +9106,6 @@
       ],
       "Allow platform keys": [
         "Tillat plattformnøkler"
-      ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Tillater deg å registrere innebygde sikkerhetsnøkler (som Windows Hello, Face ID, Touch ID eller interne TPMer)"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Er du sikker du ønsker å slette sikkerhetsnøkkel ${ name }?"
@@ -10777,6 +10789,9 @@
       "Address copied to clipboard": [
         "Adresse kopiert til utklippstavlen"
       ],
+      "Adds a Meet link to events with at least one participant.": [
+        "Legger til en «Meet»-lenke til hendelser med minst én deltaker."
+      ],
       "Admin account allocation": [
         "Adminkonto tildeling"
       ],
@@ -11127,17 +11142,17 @@
       "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
         "Ved å slå dette på, vil du kun kunne logge på med **${ primaryEmail }**."
       ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
-        "Ved å slå på dette, vil du bare kunne logge inn med ditt opprinnelige brukernavn **${ username }**, enten alene eller som **${ firstEmail }**, **@${ secondDomain }**, eller **@${ thirdDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
-        "Ved å slå på dette, vil du bare kunne logge inn med ditt opprinnelige brukernavn **${ username }**, enten alene eller som **${ firstEmail }** eller **@${ secondDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
-        "Hvis du slår på dette, kan du bare logge inn med det opprinnelige brukernavnet ditt **${ username }**, enten alene eller som **${ firstEmail }**."
-      ],
       "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
         "Ved å slå dette på, vil du kun kunne logge på med brukernavnet **${ username }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Ved å aktivere denne funksjonen vil du kun kunne logge inn med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }** eller **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Ved å aktivere denne funksjonen vil du kun kunne logge inn med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Ved å aktivere denne funksjonen vil du kun kunne logge inn med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }**."
       ],
       "Can you access your active session?": [
         "Har du tilgang til den aktive økten din?"
@@ -12152,6 +12167,9 @@
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Ugyldig kode. ${ RequestNewCodeLink } og prøv igjen."
       ],
+      "Invalid invitation link": [
+        "Ugyldig invitasjonskobling"
+      ],
       "Invalid joining link": [
         "Ugyldig lenke for innmelding"
       ],
@@ -12819,12 +12837,6 @@
       ],
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Anbefalt på klarerte enheter. ${ learnMoreLink }"
-      ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Gjenoppretting via e-post er ikke tilgjengelig mens ${ PROTON_SENTINEL_NAME } er aktivert."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Gjenoppretting via telefon er ikke tilgjengelig mens ${ PROTON_SENTINEL_NAME } er aktivert."
       ],
       "Recovery file downloaded": [
         "Gjenopprettingsfil nedlastet"
@@ -13508,11 +13520,17 @@
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "For å aktivere post-kvantebeskyttelse må du fullføre genereringen av de nye post-kvantekrypteringsnøklene dine."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "For å sikre best mulig sikkerhet for kontoen din, deaktiver **Gjenoppretting via gjenopprettings-e-postadresse**."
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "For å sikre best mulig sikkerhet for kontoen din, bør du deaktivere **Gjenoppretting via e-post**."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "For å sikre best mulig sikkerhet for kontoen din, deaktiver **Gjenoppretting via gjenopprettingstelefon**."
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "For å sikre best mulig sikkerhet for kontoen din, bør du deaktivere **Gjenoppretting via telefon**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "For å sikre best mulig sikkerhet for kontoen din, bør du la **Gjenoppretting via e-post** være deaktivert."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "For å sikre best mulig sikkerhet for kontoen din, bør du la funksjonen **Gjenoppretting via telefon** være deaktivert."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "For å sikre at du ikke mister viktige data, lagrer ${ DRIVE_APP_NAME } eldre versjoner av dine filer når du og dine samarbeidspartnere gjør endringer. Velg hvor lenge ${ BRAND_NAME } bør beholde tidligere versjoner."
@@ -13838,6 +13856,12 @@
       "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
         "Vi kunne ikke sende fakturaer til e-postadressen din. Automatisk fakturering er satt på pause inntil du oppdaterer adressen."
       ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "Vi kunne ikke bekrefte denne invitasjonen. Be administratoren din, ${ admin }, om å fjerne deg fra organisasjonen og legge deg til igjen."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Vi kunne ikke bekrefte identiteten til organisasjonen din. Be administratoren din, ${ admin }, om å kontrollere organisasjonsidentiteten i organisasjonsinnstillingene. Åpne deretter denne koblingen på nytt."
+      ],
       "We couldn’t process your payment.": [
         "Vi kunne ikke behandle betalingen din."
       ],
@@ -13961,14 +13985,14 @@
       "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Når pålogging er begrenset, kan bare brukernavnet **${ username }** brukes til å logge inn. De andre adressene dine kan ikke spores tilbake til kontoen din, selv om noen kjenner til dem."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Når påloggingen er begrenset, kan du bare logge på med det opprinnelige brukernavnet ditt **${ username }**, enten alene eller som **${ firstEmail }**, **@${ secondDomain }** eller **@${ thirdDomain }**. De andre e-postadressene dine kan ikke brukes til pålogging."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når pålogging er begrenset, kan du bare logge på med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }** eller **${ secondEmail }**. Dine andre e-postadresser fungerer ikke ved pålogging."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Når pålogging er begrenset, kan du bare logge inn med det opprinnelige brukernavnet ditt, **${ username }**, enten alene eller som **${ firstEmail }** eller **@${ secondDomain }**. De andre e-postadressene dine fungerer ikke for pålogging."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når pålogging er begrenset, kan du bare logge på med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }**, **${ secondEmail }** eller **${ thirdEmail }**. Dine andre e-postadresser fungerer ikke ved pålogging."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Når pålogging er begrenset, kan du bare logge inn med det opprinnelige brukernavnet ditt, **${ username }**, enten alene eller som **${ firstEmail }** . De andre e-postadressene dine fungerer ikke for pålogging."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Når pålogging er begrenset, kan du bare logge på med brukernavnet ditt, **${ username }**, eller med **${ firstEmail }**. Dine andre e-postadresser kan ikke brukes til å logge på."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Når du avbryter, blir ikke abonnementet fornyet, men du kan fortsatt dra nytte av planfordeler til slutten av abonnementsperioden. Etter det blir du nedgradert til ${ BRAND_NAME } Free-plan."
@@ -14251,6 +14275,9 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Du bør eksportere en sikkerhetskopi av denne nøkkelen i tilfelle du trenger å gjenopprette data den krypterte."
+      ],
+      "You still need to reply for the organizer to see your response.": [
+        "Du må fortsatt svare for at arrangøren skal kunne se svaret ditt."
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Du trenger fremdeles å svare på invitasjoner for at verten skal se responsen din."
@@ -15317,6 +15344,9 @@
       ],
       "Allow sharing outside the organization": [
         "Tillat deling utenfor organisasjonen"
+      ],
+      "Allow storing 2FA codes": [
+        "Tillat lagring av 2FA-koder"
       ],
       "Allow users to set a backup password": [
         "Tillat brukere å angi et reservepassord"
@@ -23499,6 +23529,9 @@
       "${ referrerName } is inviting you to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "${ referrerName } inviterer deg til å bli med 100 millioner mennesker som valgte å beholde kontrollen over dataene sine med ${ BRAND_NAME }s krypterte økosystem."
       ],
+      "${ renewalPriceElement } after the first 12 months": [
+        "${ renewalPriceElement } etter de 12 første månedene"
+      ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "${ totalDriveStorageSize } skylagring for filer og bilder"
       ],
@@ -23554,6 +23587,12 @@
       "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
         "Og få ${ referralInfo.uiData.refereeRewardAmount } i kreditter, hvis du abonnerer."
       ],
+      "Billed yearly": [
+        "Faktureres årlig"
+      ],
+      "Billed yearly, renews on ${ renewalTime }": [
+        "Faktureres årlig, fornyes ${ renewalTime }"
+      ],
       "Billing Cycle": [
         "Faktureringssyklus"
       ],
@@ -23590,11 +23629,23 @@
       "Continue with ${ planName }": [
         "Fortsett med ${ planName }"
       ],
+      "Coupon": [
+        "Kupong"
+      ],
       "Create a ${ BRAND_NAME } Account": [
         "Opprett en ${ BRAND_NAME }-konto"
       ],
+      "Create account": [
+        "Opprett konto"
+      ],
+      "Creating your account": [
+        "Oppretter kontoen din"
+      ],
       "Custom email domain": [
         "Egendefinert e-postdomene"
+      ],
+      "Discount": [
+        "Rabatt"
       ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "Kryptert e-post med ${ totalMailStorageSize } lagring"
@@ -23665,6 +23716,9 @@
       "Password-protected messages": [
         "Passordbeskyttede meldinger"
       ],
+      "Pick a plan to get started.": [
+        "Velg et abonnement for å komme i gang."
+      ],
       "Pick a service to get started.": [
         "Velg en tjeneste for å komme i gang."
       ],
@@ -23732,8 +23786,14 @@
       "Sign up, protect your files": [
         "Meld deg på, beskytt filene dine"
       ],
+      "Something went wrong": [
+        "Noe gikk galt"
+      ],
       "Start using ${ PASS_APP_NAME }": [
         "Begynn å bruke ${ PASS_APP_NAME }"
+      ],
+      "Summary": [
+        "Sammendrag"
       ],
       "Swiss-based": [
         "Sveitsisk basert"
@@ -23798,6 +23858,9 @@
       "use your own email.": [
         "bruk din egen e-post."
       ],
+      "Users": [
+        "Brukere"
+      ],
       "VPN with servers in ${ VPN_SERVERS.free.countries } countries": [
         "VPN med servere i ${ VPN_SERVERS.free.countries } land"
       ],
@@ -23813,6 +23876,9 @@
       ],
       "You are all set": [
         "Du er klar"
+      ],
+      "Your account has been created, but we couldn't sign you in.": [
+        "Vi har opprettet kontoen din, men vi kunne ikke logge deg på."
       ],
       "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
         "Kontoen din inkluderer tilgang til gratis funksjoner i ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ LUMO_SHORT_APP_NAME }."
@@ -26817,6 +26883,9 @@
       "Email": [
         "E-post"
       ],
+      "Email address": [
+        "E-postadresse"
+      ],
       "Email breaches": [
         "E-postbrudd"
       ],
@@ -29128,6 +29197,9 @@
       ],
       "Send invite link via email instead": [
         "Send invitasjonskobling via e-post i stedet"
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Denne brukeren får administratorrettigheter neste gang brukeren logger på."
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Dette oppretter en ny ${ MAIL_APP_NAME }-adresse."

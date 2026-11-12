@@ -6122,9 +6122,6 @@
       "Allow platform keys": [
         "Benarkan kunci platform"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Membolehkan anda mendaftar kunci keselamatan terbina dalam (seperti Windows Hello, Face ID, Touch ID atau TPM dalaman)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Adakah anda pasti mahu memadam kunci keselamatan ${ name }?"
       ],
@@ -8580,12 +8577,6 @@
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Disyorkan pada peranti dipercayai. ${ learnMoreLink }"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Pemulihan melalui e-mel tidak tersedia semasa ${ PROTON_SENTINEL_NAME } didayakan."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Pemulihan melalui telefon tidak tersedia semasa ${ PROTON_SENTINEL_NAME } didayakan."
-      ],
       "Recovery file downloaded": [
         "Fail pemulihan telah dimuat turun"
       ],
@@ -9053,12 +9044,6 @@
       ],
       "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
         "Untuk mendayakan VPN sentiasa aktif, profil peranti perlu berada di ${ policiesPath } pada setiap peranti. Klien ${ VPN_APP_NAME } mengesannya di sana dan menguatkuasakan profil secara automatik. ${ learnMore }."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Untuk memastikan tahap keselamatan akaun anda yang paling tinggi, lumpuhkan **Pemulihan melalui e-mel pemulihan**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Untuk memastikan keselamatan akaun anda pada tahap tertinggi, lumpuhkan **Pemulihan dengan telefon pemulihan**."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Untuk memerangi spam dan penyalahgunaan, sila sahkan bahawa anda manusia."

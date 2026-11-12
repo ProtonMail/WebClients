@@ -6408,9 +6408,6 @@
       "Allow platform keys": [
         "Povoliť kľúče platformy"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Umožní vám zaregistrovať zabudované bezpečnostné kľúče (napríklad Windows Hello, Face ID, Touch ID alebo interné čipy TPM)."
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Naozaj chcete zrušiť bezpečnostný kľúč ${ name }?"
       ],
@@ -7873,17 +7870,17 @@
       "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
         "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou **${ primaryEmail }**."
       ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
-        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pod svojím pôvodným používateľským menom **${ username }** – buď samostatne, alebo v tvare **${ firstEmail }**, **@${ secondDomain }** alebo **@${ thirdDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
-        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pod svojím pôvodným používateľským menom **${ username }** – buď samostatne, alebo v kombinácii s **${ firstEmail }** alebo **@${ secondDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
-        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pod svojím pôvodným používateľským menom **${ username }** – buď samostatne, alebo v tvare **${ firstEmail }**."
-      ],
       "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
         "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou vášho používateľského mena **${ username }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }** alebo **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }**, **${ secondEmail }** alebo **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }**."
       ],
       "Can you access your active session?": [
         "Môžete pristupovať k svojej aktívnej relácii?"
@@ -9085,12 +9082,6 @@
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Odporúčané na dôveryhodných zariadeniach. ${ learnMoreLink }"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Pri povolenom ${ PROTON_SENTINEL_NAME } nie je obnovenie prostredníctvom emailu k dispozícii."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Pri povolenom ${ PROTON_SENTINEL_NAME } nie je obnovenie prostredníctvom telefónu k dispozícii."
-      ],
       "Recovery file downloaded": [
         "Súbor pre obnovenie bol stiahnutý"
       ],
@@ -9580,11 +9571,17 @@
       "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
         "Na povolenie vždy zapnutej VPN musí byť profil zariadenia umiestnený na každom zariadení v priečinku ${ policiesPath } – klient ${ VPN_APP_NAME } ho tam rozpozná a profil automaticky uplatní. ${ learnMore }"
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Obnovenie prostredníctvom emailu na obnovenie**."
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Obnovenie prostredníctvom emailu**."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Obnovenie prostredníctvom telefónu na obnovenie**."
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Obnovenie prostredníctvom telefónu**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Aby ste zaistili čo najvyššiu možnú bezpečnosť svojho účtu, nechajte funkciu **Obnovenie prostredníctvom emailu** vypnutú."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Aby ste zaistili čo najvyššiu možnú bezpečnosť svojho účtu, nechajte funkciu **Obnovenie prostredníctvom telefónu** vypnutú."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Aby ste zamedzili spamu a obťažovaniu, potvrďte, že ste človek."
@@ -9895,14 +9892,14 @@
       "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Ak je prihlásenie obmedzené, na prihlásenie je možné použiť iba vaše používateľské meno **${ username }**. Vaše ostatné adresy nie je možné prepojiť s vaším účtom, ani keby ich niekto poznal."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho pôvodného používateľského mena **${ username }**, a to buď samostatne, alebo v tvare **${ firstEmail }**, **@${ secondDomain }** alebo **@${ thirdDomain }**. Ostatné emailové adresy nebudú na prihlásenie fungovať."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }** či **${ secondEmail }**. Ostatné emailové adresy nebudú na prihlásenie fungovať."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho pôvodného používateľského mena **${ username }** – buď samostatne, alebo v kombinácii s **${ firstEmail }** alebo **@${ secondDomain }**. Vaše ostatné emailové adresy nebudú na prihlásenie fungovať."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }**, **${ secondEmail }** alebo **${ thirdEmail }**. Ostatné emailové adresy nebudú pri prihlásení fungovať."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho pôvodného používateľského mena **${ username }** – buď samostatne, alebo v kombinácii s **${ firstEmail }**. Vaše ostatné emailové adresy nebudú na prihlásenie fungovať."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }**. Ostatné emailové adresy nebudú na prihlásenie fungovať."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Po zrušení sa vaše predplatné neobnoví, ale výhody plánu môžete využívať až do konca predplatného obdobia. Po uplynutí tejto lehoty dôjde k zníženiu na ${ BRAND_NAME } bezplatný plán."
@@ -11588,6 +11585,11 @@
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Pridajte prosím nasledujúci TXT záznam. Poznámka: Zmena v DNS záznamoch sa môže prejaviť až za niekoľko hodín."
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Nechajte pole prázdne"
       ]
     },
     "Label for new member": {

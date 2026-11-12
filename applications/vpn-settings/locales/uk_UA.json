@@ -41,6 +41,9 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Про ${ name }"
+      ],
       "activate": [
         "активувати"
       ],
@@ -61,6 +64,9 @@
       ],
       "Add ${ BRAND_NAME } address": [
         "Додати адресу ${ BRAND_NAME }"
+      ],
+      "Add ${ name }": [
+        "Додати ${ name }"
       ],
       "Add account": [
         "Додати обліковий запис"
@@ -706,6 +712,9 @@
       ],
       "Manage subscription": [
         "Керувати передплатою"
+      ],
+      "Manage subscriptions": [
+        "Керування підписками"
       ],
       "Manage users/addresses": [
         "Керуйте користувачами та адресами"
@@ -1553,6 +1562,9 @@
       ],
       "Permission revoked": [
         "Дозвіл відкликано"
+      ],
+      "Sign-in": [
+        "Вхід"
       ]
     },
     "Admin": {
@@ -1772,6 +1784,11 @@
         "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяці.",
         "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяців.",
         "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяців."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Гарантія повернення коштів протягом 30 днів. Ви можете скасувати покупку протягом 30 днів і звернутися до ${ customerSupportLink } для повернення коштів."
       ]
     },
     "bf2023: Title": {
@@ -5827,9 +5844,6 @@
       "Allow platform keys": [
         "Дозволити ключі платформи"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Дає змогу зареєструвати вбудовані ключі безпеки (наприклад, Windows Hello, Face ID, Touch ID або інтегровані TPM)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Ви дійсно хочете видалити ключ безпеки ${ name }?"
       ],
@@ -5850,6 +5864,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Ця дія призведе до видалення всіх ключів безпеки, пов'язаних з вашим обліковим записом."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Використовуйте функцію розпізнавання відбитків пальців, розпізнавання обличчя, PIN-код або блокування екрана цього пристрою"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Виконуйте перевірку з використанням ключа безпеки U2F або FIDO2"
@@ -6905,6 +6922,9 @@
       ],
       "30-day money-back guarantee": [
         "Гарантія повернення грошей протягом 30 днів"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Гарантія повернення коштів протягом 30 днів. Ви можете скасувати покупку протягом 30 днів і звернутися до ${ customerSupportLink } для повернення коштів."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "${ protonSubdomain } розміщується на хостингу ${ BRAND_NAME }, що дозволяє швидко налаштувати субдомен. ${ learnMoreLink }"
@@ -8256,12 +8276,6 @@
       "RECOMMENDED": [
         "РЕКОМЕНДОВАНО"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Відновлення за допомогою електронної пошти недоступне, поки ввімкнено ${ PROTON_SENTINEL_NAME }."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Відновлення за телефоном недоступне, поки ввімкнено ${ PROTON_SENTINEL_NAME }."
-      ],
       "Recovery file downloaded": [
         "Файл відновлення завантажено"
       ],
@@ -8715,11 +8729,17 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Щоб розшифрувати й переглянути свої заблоковані дані після скидання пароля, виберіть спосіб відновлення."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Щоб забезпечити максимально можливу безпеку вашого облікового запису, вимкніть **Відновлення за допомогою резервної адреси електронної пошти**."
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Щоб забезпечити максимально можливий рівень безпеки вашого облікового запису, вимкніть функцію **Відновлення за допомогою електронної пошти**."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Щоб забезпечити максимально можливу безпеку вашого облікового запису, вимкніть **Відновлення за допомогою телефону для відновлення**."
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Щоб забезпечити максимально можливий рівень безпеки вашого облікового запису, вимкніть функцію **Відновлення за допомогою телефону**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Щоб забезпечити максимально можливий рівень безпеки вашого облікового запису, залиште функцію **Відновлення за допомогою електронної пошти** вимкненою."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Щоб забезпечити максимально можливий рівень безпеки вашого облікового запису, залиште функцію **Відновлення за допомогою телефону** вимкненою."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
@@ -8789,6 +8809,9 @@
       ],
       "Unfortunately there is no recovery method available for this account.": [
         "На жаль, для цього облікового запису немає доступного способу відновлення."
+      ],
+      "UnionPay logo": [
+        "Логотип UnionPay"
       ],
       "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
         "Унікальний ідентифікатор, згенерований вашим провайдером ідентифікації, зазвичай у вигляді URL-адреси, що містить ім'я провайдера (наприклад, https://idp.example.com/XXXXX)."
@@ -10575,6 +10598,11 @@
         "Будь ласка, додайте зазначений TXT-запис. Примітка: оновлення записів DNS може тривати кілька годин."
       ]
     },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Залишити поле порожнім"
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Адміністратор"
@@ -10678,6 +10706,9 @@
       ],
       "Create an alias": [
         "Створити псевдонім"
+      ],
+      "Customer Support": [
+        "Клієнтська підтримка"
       ],
       "data recovery option": [
         "варіант відновлення даних"
@@ -13231,6 +13262,9 @@
       "Billing Country": [
         "Країна платника"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Власники чинної передплати не мають можливості придбати облікові записи Born Private."
+      ],
       "Card number": [
         "Номер картки"
       ],
@@ -13296,6 +13330,9 @@
       ],
       "terms and conditions": [
         "умови та положення"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Для участі в програмі Born Private необхідна пожертва."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Знижка дійсна для ${ renewalsWithCoupon } поновлення.",
@@ -13366,6 +13403,9 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас уже є передплата на цей тарифний план. Ви можете змінити передплату на ${ subscriptionPlatform }."
       ],
+      "You already own a Born Private account.": [
+        "Ви вже маєте обліковий запис Born Private."
+      ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "З вас буде списано ${ amountToCharge } з обраного вами способу оплати."
       ],
@@ -13374,6 +13414,9 @@
       ],
       "You will soon be redirected to verify your payment.": [
         "Вас невдовзі буде перенаправлено для підтвердження платежу."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Ваш обліковий запис надто давній для участі в програмі Born Private."
       ],
       "Your payment is still being processed": [
         "Ваш платіж усе ще обробляється"
@@ -18988,6 +19031,9 @@
       ],
       "Send invite link via email instead": [
         "Замість цього надішліть посилання на запрошення поштою"
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Цей користувач отримає права адміністратора при наступному вході."
       ],
       "This will create a new ${ MAIL_APP_NAME } address.": [
         "Буде створено нову адресу ${ MAIL_APP_NAME }."

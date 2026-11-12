@@ -994,6 +994,9 @@
       "Manage subscription": [
         "Gestionar la suscripción"
       ],
+      "Manage subscriptions": [
+        "Gestionar suscripciones"
+      ],
       "Manage users/addresses": [
         "Gestionar usuarios/direcciones"
       ],
@@ -1872,6 +1875,9 @@
       ],
       "Permission revoked": [
         "Permiso revocado"
+      ],
+      "Sign-in": [
+        "Inicio de sesión"
       ]
     },
     "Admin": {
@@ -2809,7 +2815,7 @@
         "Confirmar la cancelación"
       ],
       "If you exceed your plan limits, you won't be able to:": [
-        "Si excedes los límites de tu plan, no podrás:"
+        "Si excede los límites del plan, no podrá:"
       ],
       "Keep current plan": [
         "Mantener el plan actual"
@@ -2825,6 +2831,12 @@
       ],
       "Upload any new files": [
         "Cargar cualquier archivo nuevo"
+      ],
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Cuando finalice su suscripción de ${ planDisplayName } el ${ endDate }, perderá todas las funciones. Si su uso excede los límites de su plan, algunas funciones podrían no estar disponibles temporalmente."
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "Cuando finalice su suscripción el ${ endDate }, perderá todas las funciones. Si su uso excede los límites de su plan, algunas funciones podrían no estar disponibles temporalmente."
       ]
     },
     "Confirm modal title": {
@@ -5504,7 +5516,7 @@
         "El nombre de la política debe tener entre 3 y 40 caracteres."
       ],
       "The session has expired. Please try again.": [
-        "La sesión ha expirado. Por favor, intente nuevamente."
+        "La sesión ha expirado. Intente de nuevo."
       ],
       "The total could not be calculated. Change the amount to try again.": [
         "No se pudo calcular el total. Cambie la cantidad e intente de nuevo."
@@ -6292,9 +6304,6 @@
       "Allow platform keys": [
         "Permitir las claves de plataforma"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Le permite registrar claves de seguridad integradas (como Windows Hello, Face ID, Touch ID o TPM internos)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "¿En verdad desea eliminar la clave de seguridad ${ name }?"
       ],
@@ -6333,6 +6342,9 @@
       ],
       "Touch your security key to continue.": [
         "Toque su llave de seguridad para continuar."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Use la huella dactilar, el reconocimiento facial, el PIN o el bloqueo de pantalla de este dispositivo"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifique su identidad con una llave de seguridad U2F o FIDO2"
@@ -7653,17 +7665,17 @@
       "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
         "Al activar esto, solo podrá iniciar sesión con **${ primaryEmail }**."
       ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
-        "Al activar esto, solo podrá iniciar sesión con su nombre de usuario original **${ username }**, por sí mismo o como **${ firstEmail }**, **@${ secondDomain }** o **@${ thirdDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
-        "Al activar esto, solo podrá iniciar sesión con su nombre de usuario original **${ username }**, por sí mismo o como **${ firstEmail }** o **@${ secondDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
-        "Al activar esto, solo podrá iniciar sesión con su nombre de usuario original **${ username }**, por sí mismo o como **${ firstEmail }**."
-      ],
       "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
         "Al activar esto, solo podrá iniciar sesión con su nombre de usuario **${ username }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Al activar esto, solo podrá iniciar sesión con su nombre de usuario **${ username }**, **${ firstEmail }** o **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Al activar esto, solo podrá iniciar sesión con su nombre de usuario **${ username }**, **${ firstEmail }**, **${ secondEmail }** o **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Al activar esto, solo podrá iniciar sesión con su nombre de usuario **${ username }** o **${ firstEmail }**."
       ],
       "Can you access your active session?": [
         "¿Puede acceder a su sesión activa?"
@@ -8841,12 +8853,6 @@
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Recomendado en dispositivos de confianza. ${ learnMoreLink }"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "La recuperación por correo no está disponible mientras ${ PROTON_SENTINEL_NAME } está activado."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "La recuperación por teléfono no está disponible mientras ${ PROTON_SENTINEL_NAME } está activado."
-      ],
       "Recovery file downloaded": [
         "Archivo de recuperación descargado"
       ],
@@ -9324,11 +9330,17 @@
       "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
         "Para activar VPN siempre activa, el perfil del dispositivo necesita llegar a ${ policiesPath } en cada dispositivo, el cliente ${ VPN_APP_NAME } lo detecta automáticamente y fuerza el perfil automáticamente. ${ learnMore }."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Para asegurar la seguridad máxima posible de la cuenta, desactive la **Recuperación por correo**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Para asegurar la seguridad máxima posible de la cuenta, desactive la **Recuperación por teléfono**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
         "Para asegurar la seguridad máxima posible de la cuenta, desactive **Recuperación por correo electrónico**."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Para asegurar la seguridad máxima posible de la cuenta, desactive **Recuperación por teléfono de recuperación**."
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Para asegurar la seguridad máxima posible de la cuenta, desactive la **Recuperación por teléfono**."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
@@ -9639,20 +9651,20 @@
       "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Cuando el inicio de sesión está restringido, solo puede usar su nombre de usuario **${ username }** para iniciar sesión. Sus otras direcciones no se pueden vincular a su cuenta, incluso si alguien las conoce."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Cuando el inicio de sesión está restringido, solo puede iniciar sesión con su nombre de usuario original **${ username }**, ya sea por sí mismo o como **${ firstEmail }**, **@${ secondDomain }** o **@${ thirdDomain }**. Sus otras direcciones no funcionarán para iniciar sesión."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Cuando el inicio de sesión está restringido, solo puede iniciar sesión con su nombre de usuario **${ username }**, **${ firstEmail }**, o **${ secondEmail }**. Sus otras direcciones no funcionarán para iniciar sesión."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Cuando el inicio de sesión está restringido, solo puede iniciar sesión con su nombre de usuario original **${ username }**, ya sea por sí mismo o como **${ firstEmail }**, o **@${ secondDomain }**. Sus otras direcciones no funcionarán para iniciar sesión."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Cuando el inicio de sesión está restringido, solo puede iniciar sesión con su nombre de usuario **${ username }**, **${ firstEmail }**, **${ secondEmail }** o **${ thirdEmail }**. Sus otras direcciones no funcionarán para iniciar sesión."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Cuando el inicio de sesión está restringido, solo puede iniciar sesión con su nombre de usuario original **${ username }**, ya sea por sí mismo o como **${ firstEmail }**. Sus otras direcciones no funcionarán para iniciar sesión."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Cuando el inicio de sesión está restringido, solo puede iniciar sesión con su nombre de usuario **${ username }** o **${ firstEmail }**. Sus otras direcciones no funcionarán para iniciar sesión."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Cuando cancela, la suscripción no se renovará pero podrá seguir disfrutando los beneficios del plan hasta terminar el periodo de suscripción. Luego cambiará al plan ${ BRAND_NAME } Free."
       ],
       "When you cancel, your subscription won't start after the trial period.": [
-        "Al cancelar, su suscripción no empezará al término el período de prueba."
+        "Al cancelar, su suscripción no empezará al terminar el periodo de prueba."
       ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Cuando cancele, su suscripción no se iniciará, pero podrá seguir disfrutando de los beneficios del plan hasta el final del período de prueba. Después de eso, pasará al plan ${ BRAND_NAME } Free."
@@ -9841,7 +9853,7 @@
         "No tiene transacciones."
       ],
       "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
-        "Tienes múltiples suscripciones. Selecciona la que desees cancelar (tus otras suscripciones no se verán afectadas). Una suscripción cancelada no se renovará, y mantendrás sus beneficios hasta el final del período de suscripción."
+        "Tiene múltiples suscripciones. Seleccione la que desea cancelar (sus otras suscripciones no se verán afectadas). Una suscripción cancelada no se renovará y mantendrá sus beneficios hasta el final del periodo de suscripción."
       ],
       "You have unpublished changes": [
         "Tiene cambios sin publicar"
@@ -11290,6 +11302,11 @@
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Agregue el siguiente registro TXT. Tome en cuenta que los registros DNS pueden tomar varias horas para actualizarse."
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Deje el campo en blanco"
       ]
     },
     "Label for new member": {
@@ -19280,7 +19297,7 @@
         "Le damos la bienvenida a ${ BRAND_NAME } for Business"
       ],
       "What changes if you cancel ${ planDisplayName }": [
-        "¿Qué cambia si cancelas ${ planDisplayName }?"
+        "¿Qué cambia si cancela ${ planDisplayName }?"
       ],
       "What is an alias?": [
         "¿Qué es un alias?"

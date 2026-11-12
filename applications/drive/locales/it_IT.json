@@ -3400,6 +3400,9 @@
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "É richiesto inserire un messaggio quando si segnala una violazione del copyright o di dati rubati"
+      ],
       "Address could not be added.": [
         "Impossibile aggiungere l'indirizzo."
       ],
@@ -3424,6 +3427,9 @@
       "Authentication error.": [
         "Errore di autenticazione."
       ],
+      "Bookmark password is not available": [
+        "La password dell'elemento preferito non è disponibile"
+      ],
       "Calendar limit reached": [
         "Limite calendario raggiunto"
       ],
@@ -3433,11 +3439,23 @@
       "Can't retrieve device name": [
         "Impossibile recuperare il nome del dispositivo"
       ],
+      "Cannot add photo to album without a valid name": [
+        "Impossibile aggiungere una foto all'album senza un nome valido"
+      ],
+      "Cannot download a folder": [
+        "Non è possibile scaricare una cartella"
+      ],
       "Cannot export this contact": [
         "Impossibile esportare questo contatto"
       ],
       "Cannot find move target": [
         "Impossibile trovare la destinazione dello spostamento"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Non è possibile spostare un elemento senza un nome valido, rinomina l'elemento prima di continuare"
+      ],
+      "Cannot share root folder": [
+        "Impossibile condividere cartella principale"
       ],
       "Cannot verify the author of this file": [
         "Impossibile verificare l'autore di questo file"
@@ -3460,17 +3478,29 @@
       "Contact signature not verified": [
         "Firma del contatto non verificata"
       ],
+      "Copy operation aborted": [
+        "Copia interrotta"
+      ],
       "Copying item to a non-folder is not allowed": [
         "Non è possibile copiare l'elemento in un elemento che non è una cartella"
       ],
       "Could not add to favorites": [
         "Impossibile aggiungere ai preferiti"
       ],
+      "Could not find an available name": [
+        "Impossibile trovare un nome disponibile"
+      ],
       "Could not grant access to the organization key": [
         "Impossibile concedere l'accesso alla chiave dell'organizzazione"
       ],
       "Could not load sharing details": [
         "Impossibile caricare i dettagli della condivisione"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Impossibile caricare l'immagine di anteprima: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Impossibile leggere parte di questo file: ${ message }"
       ],
       "Could not remove from favorites": [
         "Impossibile rimuovere dai preferiti"
@@ -3480,6 +3510,12 @@
       ],
       "Could not unlock this item": [
         "Impossibile sbloccare questo elemento."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Non è permesso creare documenti al di fuori delle cartelle"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Creare file al di fuori delle cartelle non è consentito"
       ],
       "Creating folders in non-folders is not allowed": [
         "Non è possibile creare cartelle all'interno di elementi che non sono cartelle"
@@ -3497,6 +3533,9 @@
       ],
       "Device name does not match": [
         "Il nome del dispositivo non corrisponde"
+      ],
+      "Device not found": [
+        "Dispositivo non trovato"
       ],
       "Diagnostics failed": [
         "Diagnostica non riuscita"
@@ -3534,11 +3573,11 @@
       "Expected structure attached": [
         "Struttura prevista allegata"
       ],
+      "Expiration date cannot be in the past": [
+        "La data di scadenza non può essere nel passato"
+      ],
       "External invitations are temporarily disabled.": [
         "Gli inviti esterni sono temporaneamente disabilitati."
-      ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Gli inviti esterni sono temporaneamente disabilitati. Riprova più tardi"
       ],
       "Failed to change permissions settings": [
         "Impossibile modificare le impostazioni dei permessi"
@@ -3549,11 +3588,26 @@
       "Failed to create public share node": [
         "Impossibile creare il nodo di condivisione pubblico"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Impossibile decifrare chiave preferita: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Impossibile decriptare il nome dell'elemento preferito: ${ message }"
+      ],
       "Failed to decrypt bookmark password: ${ message }": [
         "Impossibile decrittografare la password del segnalibro: ${ message }"
       ],
       "Failed to decrypt content key: ${ message }": [
         "Impossibile decrittografare la chiave del contenuto: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Impossibile decifrare nome elemento: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Impossibile decriptare la chiave del nodo: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Impossibile decriptare i metadati di revisione"
       ],
       "Failed to expand folder": [
         "Impossibile espandere la cartella"
@@ -3566,6 +3620,9 @@
       ],
       "Failed to get details, please try again later": [
         "Impossibile ottenere i dettagli, per favore riprova più tardi"
+      ],
+      "Failed to get inviter keys": [
+        "Impossibile ottenere le chiavi dell'invitante"
       ],
       "Failed to load signature details, please try again later": [
         "Impossibile caricare i dettagli della firma, riprova più tardi"
@@ -3590,6 +3647,9 @@
       ],
       "Failed to update public share node": [
         "Impossibile aggiornare il nodo di condivisione pubblico"
+      ],
+      "Failed to verify invitation": [
+        "Impossibile verificare l'invito"
       ],
       "File download failed due to empty response": [
         "Download del file non riuscito a causa di una risposta vuota."
@@ -3657,6 +3717,12 @@
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
+      "Invitation not found": [
+        "Invito non trovato"
+      ],
+      "Item not found": [
+        "Elemento non trovato"
+      ],
       "Label name cannot be empty.": [
         "Il nome dell'etichetta non può essere vuoto."
       ],
@@ -3679,9 +3745,24 @@
       "Missing signature": [
         "Firma mancante"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Firma per ${ signatureType } mancante"
+      ],
+      "Move operation aborted": [
+        "Spostamento annullato"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Impossibile spostare l'elemento: la destinazione non è una cartella."
+      ],
+      "Moving root item is not allowed": [
+        "Non è consentito spostare un elemento principale"
+      ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri.",
         "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri."
+      ],
+      "Name must not be empty": [
+        "Il campo \"nome\" non può essere vuoto"
       ],
       "No calendars found to import": [
         "Nessun calendario trovato da importare"
@@ -3707,6 +3788,9 @@
       "Not a valid number": [
         "Numero non valido"
       ],
+      "Not enough browser storage": [
+        "Memoria browser insufficiente"
+      ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Uno dei contatti non ha un indirizzo email: ${ noEmailsContactNamesList }",
         "Alcuni contatti non hanno indirizzo email: ${ noEmailsContactNamesList } "
@@ -3714,6 +3798,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Uno dei gruppi non ha contatti: ${ noContactGroupList }",
         "Alcuni gruppi non hanno contatti: ${ noContactGroupList } "
+      ],
+      "Only admins can convert external invitations": [
+        "Solo gli admin possono convertire inviti esterni"
       ],
       "Operation aborted": [
         "Operazione interrotta"
@@ -3810,8 +3897,14 @@
         "Invitato duplicato rimosso: ${ joinedInvitee }",
         "Invitati duplicati rimossi: ${ joinedInvitee }"
       ],
+      "Renaming root item is not allowed": [
+        "Non è consentito rinominare un elemento chiave"
+      ],
       "Report failed to be sent": [
         "Invio della segnalazione non riuscito"
+      ],
+      "Request aborted": [
+        "Richiesta annullata"
       ],
       "Request timed out": [
         "Timeout della richiesta"
@@ -3831,11 +3924,29 @@
       "Signature verification failed": [
         "Verifica della firma non riuscita"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Verifica della firma non riuscita: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Verifica della firma per ${ signatureType } fallita"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Verifica della firma per  ${ signatureType } non riuscita: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Impossibile eliminare alcuni contatti"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "L'upload di alcuni file è fallito. Prova di nuovo."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "L'upload di alcune parti del file non è stato completato. Riprova."
+      ],
       "Some groups could not be deleted": [
         "Impossibile eliminare alcuni gruppi"
+      ],
+      "Some items could not be loaded": [
+        "Alcuni elementi non sono stati caricati"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Alcuni nomi delle tue cartelle non sono disponibili. Personalizza l'importazione per modificare questi nomi."
@@ -3897,12 +4008,6 @@
       "The folder name is too long. Please choose a different name.": [
         "Il nome della cartella è troppo lungo. Scegli un nome diverso."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "L'invito non può ancora essere completato. Riprova più tardi."
-      ],
-      "The invitation doesn't exist anymore": [
-        "L'invito non esiste più"
-      ],
       "The label name is invalid. Please choose a different name.": [
         "Il nome dell'etichetta non è valido. Scegli un nome differente."
       ],
@@ -3951,6 +4056,9 @@
       "This folder name is not available. Please choose a different name.": [
         "Questo nome della cartella non è disponibile. Scegli un nome diverso."
       ],
+      "This item has no image preview": [
+        "Questo elemento non ha un'immagine di anteprima"
+      ],
       "This item is no longer shared": [
         "Questo elemento non è più condiviso"
       ],
@@ -3962,6 +4070,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Questo messaggio potrebbe contenere alcuni link URL che non possono essere aperti correttamente dal browser attuale."
+      ],
+      "Too many server errors, please try again later": [
+        "Troppi errori del server, riprova più tardi"
       ],
       "Too many server requests, please try again later": [
         "Troppe richieste. Riprova più tardi"
@@ -4059,6 +4170,12 @@
       "You can create public links for your own files only": [
         "Puoi creare link pubblici solo per i tuoi file."
       ],
+      "You can only leave items that are shared with you": [
+        "Puoi lasciare soltanto gli oggetti che sono stati condivisi con te"
+      ],
+      "You can only upload a new version to a file": [
+        "È possibile caricare solo nuove versioni ad un file"
+      ],
       "You can update a public link for your own files only": [
         "Puoi aggiornare un link pubblico solo per i tuoi file."
       ],
@@ -4068,6 +4185,9 @@
       ],
       "You do not have access to this item": [
         "Non hai accesso a questo elemento"
+      ],
+      "You do not have access to this shared item": [
+        "Accesso non consentito a questo elemento condiviso"
       ],
       "You have reached the maximum number of calendars.": [
         "Hai raggiunto il numero massimo di calendari."
@@ -4968,6 +5088,9 @@
         "${ calendarsToBeMergedCount } calendario unito",
         "${ calendarsToBeMergedCount } calendari uniti"
       ],
+      "${ claimedAuthor } (unverified sender)": [
+        "${ claimedAuthor } (mittente non verificato)"
+      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } di ${ items.length } trasferimenti completati"
       ],
@@ -5028,9 +5151,6 @@
       ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "Marchio ${ IDEAL_WERO_BRAND_NAME }"
-      ],
-      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
-        "${ invitation.addedByEmail.error.claimedAuthor } (mittente non verificato)"
       ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } invito in sospeso",
@@ -10767,8 +10887,17 @@
       "attributes": [
         "Attributi"
       ],
+      "content key": [
+        "Chiave del contenuto"
+      ],
+      "hash key": [
+        "chiave hash"
+      ],
       "key": [
         "chiave"
+      ],
+      "membership": [
+        "abbonamento"
       ],
       "name": [
         "nome"
@@ -13128,6 +13257,9 @@
       ],
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Non abbiamo potuto verificare che un utente anonimo abbia creato questa cartella."
+      ],
+      "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ node.activeRevision.contentAuthor.error.error }": [
+        "Non siamo riusciti a confermare che il file è stato caricato da ${ claimedContentAuthor }. Il motivo è: ${ node.activeRevision.contentAuthor.error.error }"
       ],
       "We weren’t able to confirm that the name was created or modified by ${ claimedNameAuthor }. The reason is: ${ node.nameAuthor.error.error }": [
         "Non siamo riusciti a confermare che il nome sia stato creato o modificato da ${ claimedNameAuthor }. Il motivo è: ${ node.nameAuthor.error.error }"

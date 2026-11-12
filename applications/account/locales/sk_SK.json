@@ -8589,6 +8589,9 @@
       "Ask your administrator to enable Account monitor.": [
         "Požiadajte svojho administrátora, aby povolil monitor účtu."
       ],
+      "Check your internet connection and try again.": [
+        "Skontrolujte pripojenie na internet a skúste to znova."
+      ],
       "Enable account monitor to start loading event.": [
         "Aktivujte monitor účtu, aby sa začalo nahrávanie udalosti."
       ],
@@ -8621,6 +8624,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Túto stránku sa nepodarilo načítať. Obnovte stránku, prosím, alebo skontrolujte svoje internetové pripojenie."
+      ],
+      "We couldn't load your invitation": [
+        "Nepodarilo sa nám načítať vašu pozvánku"
       ]
     },
     "Error message, Disable account": {
@@ -9235,9 +9241,6 @@
       ],
       "Allow platform keys": [
         "Povoliť kľúče platformy"
-      ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Umožní vám zaregistrovať zabudované bezpečnostné kľúče (napríklad Windows Hello, Face ID, Touch ID alebo interné čipy TPM)."
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Naozaj chcete zrušiť bezpečnostný kľúč ${ name }?"
@@ -11026,6 +11029,9 @@
       "Address copied to clipboard": [
         "Adresa bola skopírovaná do schránky"
       ],
+      "Adds a Meet link to events with at least one participant.": [
+        "Pridá odkaz „Meet“ k udalostiam, ktoré majú aspoň jedného účastníka."
+      ],
       "Admin account allocation": [
         "Pridelenie účtu správcu"
       ],
@@ -11386,17 +11392,17 @@
       "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
         "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou **${ primaryEmail }**."
       ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
-        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pod svojím pôvodným používateľským menom **${ username }** – buď samostatne, alebo v tvare **${ firstEmail }**, **@${ secondDomain }** alebo **@${ thirdDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
-        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pod svojím pôvodným používateľským menom **${ username }** – buď samostatne, alebo v kombinácii s **${ firstEmail }** alebo **@${ secondDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
-        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pod svojím pôvodným používateľským menom **${ username }** – buď samostatne, alebo v tvare **${ firstEmail }**."
-      ],
       "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
         "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou vášho používateľského mena **${ username }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }** alebo **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }**, **${ secondEmail }** alebo **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Ak túto funkciu zapnete, budete sa môcť prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }**."
       ],
       "Can you access your active session?": [
         "Môžete pristupovať k svojej aktívnej relácii?"
@@ -12433,6 +12439,9 @@
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Neplatný kód. ${ RequestNewCodeLink } a skúste to znova."
       ],
+      "Invalid invitation link": [
+        "Neplatný pozývací odkaz"
+      ],
       "Invalid joining link": [
         "Neplatný odkaz na pripojenie"
       ],
@@ -13110,12 +13119,6 @@
       ],
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Odporúčané na dôveryhodných zariadeniach. ${ learnMoreLink }"
-      ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Pri povolenom ${ PROTON_SENTINEL_NAME } nie je obnovenie prostredníctvom emailu k dispozícii."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Pri povolenom ${ PROTON_SENTINEL_NAME } nie je obnovenie prostredníctvom telefónu k dispozícii."
       ],
       "Recovery file downloaded": [
         "Súbor pre obnovenie bol stiahnutý"
@@ -13813,11 +13816,17 @@
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Ak chcete povoliť postkvantovú ochranu, musíte najskôr dokončiť generovanie nových postkvantových šifrovacích kľúčov."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Obnovenie prostredníctvom emailu na obnovenie**."
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Obnovenie prostredníctvom emailu**."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Obnovenie prostredníctvom telefónu na obnovenie**."
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Aby ste zaistili čo najvyššiu bezpečnosť svojho účtu, deaktivujte funkciu **Obnovenie prostredníctvom telefónu**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Aby ste zaistili čo najvyššiu možnú bezpečnosť svojho účtu, nechajte funkciu **Obnovenie prostredníctvom emailu** vypnutú."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Aby ste zaistili čo najvyššiu možnú bezpečnosť svojho účtu, nechajte funkciu **Obnovenie prostredníctvom telefónu** vypnutú."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Aby ste nestratili dôležité údaje, ${ DRIVE_APP_NAME } ukladá staršie verzie vašich súborov, keď vy a vaši spolupracovníci vykonávate zmeny. Vyberte, ako dlho má ${ BRAND_NAME } uchovávať predchádzajúce verzie."
@@ -14146,6 +14155,12 @@
       "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
         "Na vašu emailovú adresu sme nemohli odoslať faktúry. Automatické vystavovanie faktúr bolo pozastavené, kým adresu neaktualizujete."
       ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "Túto pozvánku sa nám nepodarilo overiť. Poproste svojho správcu, ${ admin }, aby vás odstránil z organizácie a opäť vás pridal."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Nepodarilo sa nám overiť identitu vašej organizácie. Poproste svojho správcu, ${ admin }, aby skontroloval identitu organizácie v nastaveniach organizácie. Potom tento odkaz otvorte znova."
+      ],
       "We couldn’t process your payment.": [
         "Vašu platbu sa nám nepodarilo spracovať."
       ],
@@ -14269,14 +14284,14 @@
       "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Ak je prihlásenie obmedzené, na prihlásenie je možné použiť iba vaše používateľské meno **${ username }**. Vaše ostatné adresy nie je možné prepojiť s vaším účtom, ani keby ich niekto poznal."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho pôvodného používateľského mena **${ username }**, a to buď samostatne, alebo v tvare **${ firstEmail }**, **@${ secondDomain }** alebo **@${ thirdDomain }**. Ostatné emailové adresy nebudú na prihlásenie fungovať."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }** či **${ secondEmail }**. Ostatné emailové adresy nebudú na prihlásenie fungovať."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho pôvodného používateľského mena **${ username }** – buď samostatne, alebo v kombinácii s **${ firstEmail }** alebo **@${ secondDomain }**. Vaše ostatné emailové adresy nebudú na prihlásenie fungovať."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }**, **${ secondEmail }** alebo **${ thirdEmail }**. Ostatné emailové adresy nebudú pri prihlásení fungovať."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho pôvodného používateľského mena **${ username }** – buď samostatne, alebo v kombinácii s **${ firstEmail }**. Vaše ostatné emailové adresy nebudú na prihlásenie fungovať."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Ak je prihlásenie obmedzené, môžete sa prihlásiť iba pomocou svojho používateľského mena, **${ username }**, alebo pomocou **${ firstEmail }**. Ostatné emailové adresy nebudú na prihlásenie fungovať."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Po zrušení sa vaše predplatné neobnoví, ale výhody plánu môžete využívať až do konca predplatného obdobia. Po uplynutí tejto lehoty dôjde k zníženiu na ${ BRAND_NAME } bezplatný plán."
@@ -14577,6 +14592,9 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Mali by ste exportovať zálohu tohto kľúča v prípade, že potrebujete obnoviť údaje, ktoré sú zašifrované."
+      ],
+      "You still need to reply for the organizer to see your response.": [
+        "Stále je potrebné odpovedať, aby organizátor videl vašu odpoveď."
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Aby hostiteľ videl vašu odpoveď, na pozvánky musíte stále odpovedať."
@@ -17352,6 +17370,9 @@
       ],
       "Invalid ${ group.name } record found": [
         "Bol nájdený neplatný záznam ${ group.name }"
+      ],
+      "Leave field blank": [
+        "Nechajte pole prázdne"
       ],
       "Priority": [
         "Priorita"
@@ -27527,6 +27548,9 @@
       ],
       "Email": [
         "Email"
+      ],
+      "Email address": [
+        "Emailová adresa"
       ],
       "Email breaches": [
         "Úniky emailových adries"

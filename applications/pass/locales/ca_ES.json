@@ -544,6 +544,9 @@
       "Open platform selection dropdown": [
         "Obriu el menú desplegable de selecció de plataformes"
       ],
+      "Open the browser again": [
+        "Obriu el navegador de nou"
+      ],
       "Organize vaults": [
         "Organitza les caixes fortes"
       ],
@@ -709,6 +712,9 @@
       "Show more": [
         "Mostrar més"
       ],
+      "Sign in in the app instead": [
+        "Inicieu sessió a l'aplicació en lloc d'això"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Inicia sessió amb ${ BRAND_NAME }"
       ],
@@ -754,6 +760,9 @@
       ],
       "Trash": [
         "Paperera"
+      ],
+      "Try again": [
+        "Proveu de nou"
       ],
       "Try again.": [
         "Torni-ho a intentar."
@@ -1876,8 +1885,14 @@
       "Can view this item.": [
         "Pot veure aquest element."
       ],
+      "Canceled by user": [
+        "S'ha cancel·lat per l'usuari"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "S'estan comprovant ${ compromised.progress.completed } de ${ compromised.progress.total } contrasenyes"
+      ],
+      "Choose how you want to sign in": [
+        "Escolliu com voleu iniciar sessió"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Confirmeu la vostra contrasenya addicional per procedir a la seva eliminació."
@@ -2064,9 +2079,6 @@
       ],
       "Fill in the CSV with your data": [
         "Empleneu el CSV amb les vostres dades"
-      ],
-      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
-        "Finalitzeu iniciant sessió a la finestra del navegador que s'acaba d'obrir. ${ PASS_APP_NAME } es completarà automàticament un cop hàgiu acabat."
       ],
       "Folder \"${ payload.folder.name }\" created": [
         "S'ha creat la carpeta «${ payload.folder.name }»"
@@ -2616,6 +2628,9 @@
       "Shared item invitation": [
         "Invitació a un element compartit"
       ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Inicieu sessió i confirmeu-ho a la finestra del navegador que s'obrirà. ${ PASS_APP_NAME } s'activarà automàticament un cop hàgiu acabat."
+      ],
       "Sign in to your account": [
         "Inicieu sessió al compte"
       ],
@@ -2627,6 +2642,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Només cal que utilitzeu ${ emailBold } la pròxima vegada que necessiteu un àlies: es crearà ${ automaticallyBold } la primera vegada que rebi un correu electrònic. Per tenir un control més detallat, també podeu definir ${ rulesHyperLink }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya de ${ BRAND_NAME }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya de còpia de seguretat."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya addicional."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la segona contrasenya."
       ],
       "Successfully exported all your items": [
         "S'han exportat tots els elements"
@@ -2691,6 +2718,9 @@
       ],
       "The secure link has been removed": [
         "S'ha eliminat l'enllaç segur."
+      ],
+      "The sign in was not confirmed in time.": [
+        "L'inici de sessió no s'ha confirmat a temps."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "El text que esteu intentant enganxar és més llarg que la longitud màxima permesa de ${ maxLength } caràcters."
@@ -3001,6 +3031,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La vostra organització us demana que assegureu el vostre accés a ${ PASS_APP_NAME }."
+      ],
+      "Your session could not be authorized.": [
+        "No s'ha pogut autoritzar la sessió."
       ]
     },
     "Keyboard key": {
@@ -4836,6 +4869,9 @@
       "Activity for \"${ token.Name }\"": [
         "Activitat de \"${ token.Name }\""
       ],
+      "Add an account": [
+        "Afegir un compte"
+      ],
       "Add custom domain": [
         "Afegeix un domini personalitzat"
       ],
@@ -5127,8 +5163,8 @@
         "Voleu moure ${ trashedItemsCount } element a la paperera?",
         "Voleu moure ${ trashedItemsCount } elements a la paperera?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Voleu moure tots els elements a «${ vaultName }»?"
+      "Move all items to \"${ target }\"?": [
+        "Voleu moure tots els elements a \"${ target }\"?"
       ],
       "Move all items?": [
         "Voleu moure tots els elements?"
@@ -5287,6 +5323,15 @@
       ],
       "Shared via": [
         "Compartit mitjançant"
+      ],
+      "Sign in timed out": [
+        "La sessió ha expirat"
+      ],
+      "Signing you in": [
+        "S'està iniciant la sessió."
+      ],
+      "Something went wrong": [
+        "S'ha produït un error."
       ],
       "SPF (Optional)": [
         "SPF (opcional)"

@@ -568,6 +568,9 @@
       "Open platform selection dropdown": [
         "Адкрыць выпадное меню платформы"
       ],
+      "Open the browser again": [
+        "Адкрыць браўзер зноў"
+      ],
       "Organize vaults": [
         "Упарадкаваць сховішчы"
       ],
@@ -739,6 +742,9 @@
       "Show more": [
         "Паказаць больш"
       ],
+      "Sign in in the app instead": [
+        "Замест гэтага ўвайдзіце ў праграму"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Увайсці з ${ BRAND_NAME }"
       ],
@@ -786,6 +792,9 @@
       ],
       "Trash": [
         "Сметніца"
+      ],
+      "Try again": [
+        "Паўтарыце спробу"
       ],
       "Try again.": [
         "Паўтарыце спробу."
@@ -881,6 +890,9 @@
       ]
     },
     "App menu": {
+      "Back": [
+        "Назад"
+      ],
       "Force Reload": [
         "Прымусовая перазагрузка"
       ],
@@ -1079,10 +1091,16 @@
         "Збой аўтэнтыфікацыі. Пацвердзіце ваш другі пароль, каб працягнуць экспартаванне"
       ],
       "Biometric authentication cancelled.": [
-        "Біяметрычная аўтэнтыфікацыя скасавана."
+        "Біяметрычнай аўтэнтыфікацыі скасавана."
+      ],
+      "Biometric authentication failed": [
+        "Збой біяметрычнай аўтэнтыфікацыі"
       ],
       "Biometric authentication failed.": [
-        "Збой аўтэнтыфікацыі біяметрыі."
+        "Збой біяметрычнай аўтэнтыфікацыі."
+      ],
+      "Biometric authentication is not available": [
+        "Біяметрычная аўтэнтыфікацыя недаступна"
       ],
       "Biometric lock credentials do not match.": [
         "Уліковыя даныя біяметрычнай блакіроўкі не супадаюць."
@@ -1991,6 +2009,12 @@
       "Can view this item.": [
         "Можа праглядаць гэты элемент."
       ],
+      "Canceled by user": [
+        "Скасавана карыстальнікам"
+      ],
+      "Choose how you want to sign in": [
+        "Выберыце спосаб уваходу"
+      ],
       "Confirm your extra password to proceed with its removal.": [
         "Пацвердзіце свой дадатковы пароль, каб працягнуць яго выдаленне."
       ],
@@ -2050,6 +2074,9 @@
       ],
       "Didn't receive the code?": [
         "Не атрымалі код?"
+      ],
+      "Disabled by your organization": [
+        "Адключана вашай арганізацыяй"
       ],
       "Disabling auto-lock": [
         "Адключэнне аўтаблакіроўкі"
@@ -2388,7 +2415,10 @@
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да выдалення яго бяспечных спасылак."
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -2459,11 +2489,20 @@
       "Only aliases are shown": [
         "Паказаны толькі псеўданімы"
       ],
+      "Only cards are shown": [
+        "Паказаны толькі карткі"
+      ],
+      "Only custom items are shown": [
+        "Паказаны толькі карыстальніцкія элементы"
+      ],
       "Only identities are shown": [
         "Паказаны толькі ідэнтычнасці"
       ],
       "Only logins are shown": [
         "Паказаны толькі запісы ўваходу"
+      ],
+      "Only notes are shown": [
+        "Паказаны толькі нататкі"
       ],
       "Only tokens that expired in the last 30 days are shown. Older tokens are automatically deleted.": [
         "Паказаны толькі токены, якія пратэрмінаваны за апошнія 30 дзён. Больш старыя токены аўтаматычна выдалены."
@@ -2818,6 +2857,9 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Для выкарыстання ${ PASS_APP_NAME } спатрэбіцца дадатковы пароль. Ён дзейнічае як дадатковы пароль паверх вашага пароля ${ BRAND_NAME }."
+      ],
+      "The folder is already here": [
+        "Папка ўжо тут"
       ],
       "The following ${ totalIgnored } item could not be imported:": [
         "Не ўдалося імпартаваць наступны ${ totalIgnored } элемент:",
@@ -5089,6 +5131,9 @@
       "Activity for \"${ token.Name }\"": [
         "Актыўнасць для \"${ token.Name }\""
       ],
+      "Add an account": [
+        "Дадаць уліковы запіс"
+      ],
       "Add custom domain": [
         "Дадаць карыстальніцкі дамен"
       ],
@@ -5386,8 +5431,8 @@
         "Перамясціць ${ trashedItemsCount } элементаў у сметніцу?",
         "Перамясціць ${ trashedItemsCount } элементаў у сметніцу?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Перамясціць усе элементы ў \"${ vaultName }\"?"
+      "Move all items to \"${ target }\"?": [
+        "Перамясціць усе элементы ў «${ target }»?"
       ],
       "Move all items?": [
         "Перамясціць усе элементы?"
@@ -5556,6 +5601,15 @@
       ],
       "Shared via": [
         "Абагулена праз"
+      ],
+      "Sign in timed out": [
+        "Перавышаны час чакання ўваходу"
+      ],
+      "Signing you in": [
+        "Адбываецца ўваход"
+      ],
+      "Something went wrong": [
+        "Нешта пайшло не так"
       ],
       "SPF (Optional)": [
         "SPF (неабавязкова)"

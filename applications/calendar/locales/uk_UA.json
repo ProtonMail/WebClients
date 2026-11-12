@@ -44,6 +44,9 @@
       "${ BRAND_NAME } shop": [
         "Крамниця ${ BRAND_NAME }"
       ],
+      "About ${ name }": [
+        "Про ${ name }"
+      ],
       "Activate recovery": [
         "Активувати відновлення"
       ],
@@ -52,6 +55,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Додати ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Додати ${ name }"
       ],
       "Add a date": [
         "Додати дату"
@@ -1316,6 +1322,11 @@
     "bf2023: Deal details": {
       "Premium Password Manager": [
         "Premium Менеджер паролів"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Гарантія повернення коштів протягом 30 днів. Ви можете скасувати покупку протягом 30 днів і звернутися до ${ customerSupportLink } для повернення коштів."
       ]
     },
     "BF2024: Deal details": {
@@ -5244,6 +5255,9 @@
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Ви отримуєте ${ referrerRewardAmount }** як кредит за кожного запрошеного друга, який підпишеться."
       ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Гарантія повернення коштів протягом 30 днів. Ви можете скасувати покупку протягом 30 днів і звернутися до ${ customerSupportLink } для повернення коштів."
+      ],
       "A cancellation email will be sent to removed participants.": [
         "Лист про скасування буде надіслано вилученим учасникам."
       ],
@@ -6275,6 +6289,9 @@
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Спробуйте нові функції, оновлення та продукти ${ BRAND_NAME } до того, як вони будуть випущені для широкого загалу. Це призведе до перезапуску програми"
+      ],
+      "UnionPay logo": [
+        "Логотип UnionPay"
       ],
       "Upgrade anytime to bring over the rest": [
         "Покращте тарифний план у будь-який час, щоб перенести решту"
@@ -7479,6 +7496,9 @@
       ],
       "clearing your browser cache": [
         "очищення кешу браузера"
+      ],
+      "Customer Support": [
+        "Клієнтська підтримка"
       ],
       "Enforcing 2FA for organizations": [
         "Обов'язкова 2FA для організацій"
@@ -9591,6 +9611,9 @@
       "Billing Country": [
         "Країна платника"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Власники чинної передплати не мають можливості придбати облікові записи Born Private."
+      ],
       "Card number": [
         "Номер картки"
       ],
@@ -9650,6 +9673,9 @@
       ],
       "terms and conditions": [
         "умови та положення"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Для участі в програмі Born Private необхідна пожертва."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Знижка дійсна для ${ renewalsWithCoupon } поновлення.",
@@ -9717,11 +9743,17 @@
       "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
         "У вас уже є передплата на цей тарифний план. Ви можете змінити передплату на ${ subscriptionPlatform }."
       ],
+      "You already own a Born Private account.": [
+        "Ви вже маєте обліковий запис Born Private."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
       ],
       "You will soon be redirected to verify your payment.": [
         "Вас невдовзі буде перенаправлено для підтвердження платежу."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Ваш обліковий запис надто давній для участі в програмі Born Private."
       ],
       "Your payment is still being processed": [
         "Ваш платіж усе ще обробляється"
@@ -12685,6 +12717,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Цей користувач отримає права адміністратора при наступному вході."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Перейдіть на тарифний план, що підтримує цю функцію, щоб користуватися ролями адміністратора."
       ],

@@ -5704,9 +5704,6 @@
       "Allow platform keys": [
         "允許平台金鑰"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "允許您註冊內建安全金鑰(如 Windows Hello、Face ID、Touch ID 或內部 TPM)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "您確定要永久刪除此安全性金鑰 ${ name } 嗎？"
       ],
@@ -7971,12 +7968,6 @@
       "RECOMMENDED": [
         "推薦"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "啟用 ${ PROTON_SENTINEL_NAME } 時，無法使用電子郵件復原。"
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "啟用 ${ PROTON_SENTINEL_NAME } 時，無法使用電話復原。"
-      ],
       "Recovery file downloaded": [
         "已下載帳號救援金鑰"
       ],
@@ -8417,12 +8408,6 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "為了能在密碼重設後存取加密的資料，選擇帳號復原方法。"
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "若要確保您的帳號擁有最高安全性，請停用**透過復原用電子郵件復原**。"
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "若要確保您的帳號擁有最高安全性，請停用**透過復原電話復原**。"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "為防止垃圾郵件及濫用行為，請驗證您是真人。"

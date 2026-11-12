@@ -1155,6 +1155,10 @@
         "${ domains } további saját domain név",
         "${ domains } további saját domain név"
       ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikált VPN szerver",
+        "${ ips } dedikált VPN szerver"
+      ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI licenc"
       ],
@@ -1181,6 +1185,9 @@
       "${ users } user": [
         "${ users } felhasználó",
         "${ users } felhasználó"
+      ],
+      "Add-on": [
+        "Bővítmény"
       ],
       "Dedicated VPN servers": [
         "Dedikált VPN szerverek"
@@ -3594,6 +3601,18 @@
       ]
     },
     "emergency_access": {
+      "${ days } day left": [
+        "${ days } nap van hátra",
+        "${ days } nap van hátra"
+      ],
+      "${ hours } hour left": [
+        "${ hours } óra van hátra",
+        "${ hours } óra van hátra"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes } perc van hátra",
+        "${ minutes } perc van hátra"
+      ],
       "${ n } day": [
         "${ n } nap",
         "${ n } nap"
@@ -3609,6 +3628,9 @@
       ],
       "Emergency access for ${ user } removed": [
         "A(z) ${ user } vészhelyzeti hozzáférése eltávolítva."
+      ],
+      "Enable": [
+        "Engedélyez"
       ],
       "Give immediate access?": [
         "Azonnali hozzáférést biztosít?"
@@ -3765,6 +3787,9 @@
       ],
       "Incorrect password. Please try again.": [
         "Hibás jelszó. Próbálja meg újra."
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "Érvénytelen helyreállító kód. Próbálja meg újra."
       ],
       "Incorrect second password. Please try again.": [
         "Hibás második jelszó. Próbálja meg újra."
@@ -4565,6 +4590,9 @@
       "10+ premium features": [
         "10+ prémium funkció"
       ],
+      "500 GB storage": [
+        "500 GB tárhely"
+      ],
       "Access to all countries": [
         "Hozzáférés az összes országhoz"
       ],
@@ -4669,9 +4697,6 @@
       ],
       "Allow platform keys": [
         "Platformkulcsok engedélyezése"
-      ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Lehetővé teszi beépített biztonsági kulcsok (például Windows Hello, Face ID, Touch ID vagy belső TPM-ek) regisztrálását"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Biztos, hogy törli a hitelesítési kulcsot: ${ name }?"
@@ -5491,6 +5516,10 @@
       ],
       "${ storage } storage": [
         "${ storage } tárhely"
+      ],
+      "${ total } user found": [
+        "${ total } talált felhasználó",
+        "${ total } talált felhasználó"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } csomag szükséges az ország-szintű kapcsolódáshoz."
@@ -6889,6 +6918,18 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "A jelszó visszaállítás után zárolt adatainak visszafejtéséhez és megjelenítéséhez, válasszon egy helyreállítási módszert."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Fiókjának legmagasabb szintű biztonsága érdekében, kapcsolja ki a **Helyreállítás e-mail címmel** lehetőséget."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Fiókjának legmagasabb szintű biztonsága érdekében, kapcsolja ki a **Helyreállítás telefonszámmal** lehetőséget."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Fiókjának legmagasabb szintű biztonsága érdekében, tartsa kikapcsolva a **Helyreállítás e-mail címmel** lehetőséget."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Fiókjának legmagasabb szintű biztonsága érdekében, tartsa kikapcsolva a **Helyreállítás telefonszámmal** lehetőséget."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
@@ -8293,6 +8334,9 @@
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
       ],
+      "Your recovery email": [
+        "Helyreállítási e-mail címe"
+      ],
       "ZIP code": [
         "Irányítószám"
       ]
@@ -8397,6 +8441,9 @@
       ]
     },
     "Link": {
+      "activity monitor": [
+        "tevékenység figyelő"
+      ],
       "Add a gift code": [
         "Ajándék kód hozzáadása"
       ],
@@ -8796,6 +8843,9 @@
       ],
       "Edit": [
         "Szerkesztés"
+      ],
+      "Enable user": [
+        "Felhasználó engedélyezése"
       ],
       "Remove": [
         "Eltávolítás"
@@ -10174,6 +10224,9 @@
       "Free server configs": [
         "Ingyenes szerver konfigurációk"
       ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "I found another service that I like better": [
         "Találtam egy másik szolgáltatást, ami jobban tetszik"
       ],
@@ -10284,6 +10337,12 @@
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "A csomag legfeljebb ${ humanReadableAvailableSpace } további tárhelyet tartalmaz."
+      ]
+    },
+    "organization key reset": {
+      "User (${ n })": [
+        "Felhasználó (${ n })",
+        "Felhasználó (${ n })"
       ]
     },
     "Organization logo upload": {
@@ -11159,6 +11218,12 @@
       ]
     },
     "safety_review": {
+      "Done": [
+        "Kész"
+      ],
+      "Verify your recovery phone": [
+        "Helyreállító telefonszám megerősítése"
+      ],
       "Your recovery checklist": [
         "Az ön helyreállítási ellenőrzőlistája"
       ]
@@ -11213,6 +11278,16 @@
       ],
       "Testing SAML configuration": [
         "SAML-beállítások tesztelése"
+      ]
+    },
+    "scim": {
+      "${ numberOfPendingGroups } group synced": [
+        "${ numberOfPendingGroups } csoport szinkronizálva",
+        "${ numberOfPendingGroups } csoport szinkronizálva"
+      ],
+      "${ pendingGroupsCount } group synced.": [
+        "${ pendingGroupsCount } csoport szinkronizálva.",
+        "${ pendingGroupsCount } csoport szinkronizálva."
       ]
     },
     "scim: Action": {
@@ -12159,6 +12234,18 @@
     "State": {
       "Canceling your subscription, please wait": [
         "Az előfizetése megszüntetése folyamatban van, kérjük, várjon"
+      ]
+    },
+    "Status": {
+      "${ count } person": [
+        "${ count } személy",
+        "${ count } személy"
+      ],
+      "... waiting": [
+        "... várakozás"
+      ],
+      "remove organization key": [
+        "szervezeti kulcs eltávolítása"
       ]
     },
     "Storage": {
@@ -13108,6 +13195,14 @@
       ],
       "${ feature } is now active": [
         "A(z) ${ feature } mostantól aktív"
+      ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } Meghívott barát",
+        "${ friendsInvited } Meghívott barát"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } Felíratkozott barát",
+        "${ friendsSubscribed } Felíratkozott barát"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } író segéd"

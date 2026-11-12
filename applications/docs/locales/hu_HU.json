@@ -90,6 +90,9 @@
       "Apply": [
         "Alkalmazás"
       ],
+      "Ask me next time": [
+        "Kérdezzen meg legközelebb"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Legfeljebb ${ maxContacts } névjegy lehet egy névjegy csoportban",
         "Legfeljebb ${ maxContacts } névjegy lehet egy névjegy csoportban"
@@ -168,6 +171,9 @@
       ],
       "Collapse list of pending invitations": [
         "A függőben lévő meghívások listájának összecsukása"
+      ],
+      "Comments": [
+        "Hozzászólások"
       ],
       "Compose": [
         "Levélírás"
@@ -293,6 +299,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } alkalmazások letöltése"
+      ],
+      "Download a copy (as xlsx)": [
+        "Másolat letöltése (mint xlsx)"
       ],
       "Download logs": [
         "Naplók letöltése"
@@ -516,6 +525,9 @@
       "OK": [
         "OK"
       ],
+      "Okay": [
+        "Rendben"
+      ],
       "Open": [
         "Megnyitás"
       ],
@@ -586,6 +598,9 @@
         "Nevezze át a dokumentumot"
       ],
       "Report a problem": [
+        "Probléma jelentése"
+      ],
+      "Report issue": [
         "Probléma jelentése"
       ],
       "Request a call": [
@@ -723,6 +738,9 @@
       "Take out of trash": [
         "Lomtárbol kivétel"
       ],
+      "Toggle debug mode": [
+        "Váltás a hibakeresési módra"
+      ],
       "Trashing...": [
         "Kukázás..."
       ],
@@ -808,6 +826,9 @@
       "View invoice": [
         "Számla megtekintése"
       ],
+      "View only": [
+        "Csak megtekintés"
+      ],
       "Web page (.html)": [
         "Web oldal (.html)"
       ],
@@ -846,6 +867,10 @@
       "${ domains } additional custom domain": [
         "${ domains } további saját domain név",
         "${ domains } további saját domain név"
+      ],
+      "${ ips } dedicated VPN server": [
+        "${ ips } dedikált VPN szerver",
+        "${ ips } dedikált VPN szerver"
       ],
       "${ LUMO_APP_NAME } AI license": [
         "${ LUMO_APP_NAME } AI licenc"
@@ -3975,6 +4000,9 @@
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
         "A hirdetők nyomon követik az Ön böngészési tevékenységét, hogy célzott hirdetéseket mutassanak. A ${ VPN_APP_NAME } blokkolja a követőket és a hirdetéseket, ezáltal felgyorsítja a kapcsolatot, és javítja az online élményt."
       ],
+      "All": [
+        "Összes"
+      ],
       "All (${ totalFoldersCount } folder)": [
         "Mind (${ totalFoldersCount } mappa)",
         "Mind (${ totalFoldersCount } mappa)"
@@ -4035,6 +4063,9 @@
       "Close this screen to exit.": [
         "A kilépéshez zárja be ezt a képernyőt."
       ],
+      "Comments are not available yet": [
+        "A hozzászólások nem elérhetőek még"
+      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Kapcsolódjon a ${ VPN_APP_NAME } alkalmazáshoz a privát böngészéshez"
       ],
@@ -4046,6 +4077,9 @@
       ],
       "Continue": [
         "Folytatás"
+      ],
+      "Converting document...": [
+        "Dokumentum konvertálása..."
       ],
       "Copied to clipboard": [
         "Vágólapra másolva"
@@ -4154,6 +4188,9 @@
       "Enter your own password (as organization admin).": [
         "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
       ],
+      "Error syncing": [
+        "Szinkronizálás hiba"
+      ],
       "Error Syncing": [
         "Szinkronizálás hiba"
       ],
@@ -4186,6 +4223,9 @@
       ],
       "here": [
         "ide"
+      ],
+      "Hide table of contents": [
+        "Tartolomjegyzék elrejtése"
       ],
       "High Priority": [
         "Magas prioritású"
@@ -4302,6 +4342,9 @@
       "Low Priority": [
         "Alacsony prioritású"
       ],
+      "Making a copy...": [
+        "Másolat készítése..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Legalább ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
         "Legalább ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter"
@@ -4350,6 +4393,9 @@
       ],
       "Not a valid URL": [
         "Érvénytelen URL-cím"
+      ],
+      "Not available yet": [
+        "Még nem elérhető"
       ],
       "Not connected": [
         "Nincs kapcsolódva"
@@ -4442,8 +4488,17 @@
       "Public documents are not yet enabled for your organization.": [
         "A nyilvános dokumentumok még nincsenek engedélyezve az Ön szervezete számára."
       ],
+      "Read-only": [
+        "Csak olvasható"
+      ],
+      "Recent documents": [
+        "Legutóbbi dokumentumok"
+      ],
       "Recents": [
         "Előzmények"
+      ],
+      "Reconnecting…": [
+        "Újracsatlakozás…"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "A helyreállítási információk megmaradnak ezen az eszközön, kivéve ha törli."
@@ -4466,8 +4521,14 @@
       "Saving...": [
         "Mentés..."
       ],
+      "Saving…": [
+        "Mentés…"
+      ],
       "Scan the QR code with your mobile device": [
         "Olvassa be a QR-kódot a mobilkészülékével"
+      ],
+      "Select a destination folder": [
+        "Válasszon ki egy célmappát"
       ],
       "Select a folder to move to.": [
         "Válasszon ki egy mappát, ahová szeretné áthelyezni."
@@ -4514,6 +4575,9 @@
       "Something went wrong": [
         "Hiba történt"
       ],
+      "Spreadsheets": [
+        "Munkafüzetek"
+      ],
       "Stay connected effortlessly by enabling the following VPN settings:": [
         "Maradjon könnyedén kapcsolatban a következő VPN-beállítások engedélyezésével:"
       ],
@@ -4547,6 +4611,9 @@
       ],
       "The Beginning": [
         "A Kezdet"
+      ],
+      "The editor could not be loaded.": [
+        "A szerkesztő nem tölthető be"
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "A kiszivárgott információ egy harmadik féltől származó szolgáltatás volt. Az ön ${ BRAND_NAME } fiókja biztonságban van. ${ learnMoreLink }"
@@ -5003,6 +5070,9 @@
       "Emails (last month)": [
         "E-mailek (utolsó hónap)"
       ],
+      "Enable email notifications": [
+        "E-mail értesítések engedélyezése"
+      ],
       "Encrypt emails": [
         "Üzenetek titkosítása"
       ],
@@ -5146,6 +5216,12 @@
       ],
       "Reveal password": [
         "Jelszó felfedése"
+      ],
+      "Select ${ document.name }": [
+        "${ document.name } választása"
+      ],
+      "Select all": [
+        "Összes kijelölése"
       ],
       "Selected": [
         "Kiválasztva"
@@ -6428,14 +6504,23 @@
       "Contact group updated": [
         "Névjegy csoport frissítve"
       ],
+      "Document moved to trash": [
+        "Dokumentum a lomtárba helyezve"
+      ],
       "Failed to accept share invitation": [
         "Nem sikerült elfogadni a megosztási meghívást"
+      ],
+      "Failed to delete document": [
+        "Nem sikerült törölni a dokumentumot"
       ],
       "Failed to load invitation details": [
         "Nem sikerült betölteni a meghívás részleteit"
       ],
       "Failed to reject share invitation": [
         "Nem sikerült elutasítani a megosztási meghívót"
+      ],
+      "Failed to restore document": [
+        "Nem sikerült visszaállítani a dokumentumot"
       ],
       "Invitation's email was sent again": [
         "A meghívó e-mailt ismét elküldtük"
@@ -7312,6 +7397,39 @@
     "sheets_2025:Action": {
       "New spreadsheet": [
         "Új táblázat"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Tabulátorral elválasztott értékek (.tsv)"
+      ]
+    },
+    "sheets_2025:Info": {
+      "Detect automatically": [
+        "Automatikus észlelés"
+      ],
+      "Insert as new sheet": [
+        "Beszúrás új lapként"
+      ],
+      "Replace spreadsheet": [
+        "Munkafüzet cseréje"
+      ],
+      "Select a file to import": [
+        "Importálandó fájl kiválasztása"
+      ]
+    },
+    "sheets_2025:Label": {
+      "Destination": [
+        "Célállomás"
+      ],
+      "Format": [
+        "Formátum"
+      ],
+      "Separator type": [
+        "Elválasztó típusa"
+      ]
+    },
+    "sheets_2025:Title": {
+      "Import data": [
+        "Adatok importálása"
       ]
     },
     "Signing preference for emails": {
@@ -8060,6 +8178,9 @@
       "Docs": [
         "Docs"
       ],
+      "Document Size Limit Reached": [
+        "Dokumentum méret limit elérve"
+      ],
       "Document verification failed": [
         "Dokumentum ellenőrzés sikertelen"
       ],
@@ -8080,6 +8201,9 @@
       ],
       "Edit image": [
         "Kép szerkesztése"
+      ],
+      "Editing paused": [
+        "Szerkesztés szünetelve"
       ],
       "Email addresses": [
         "E-mail cím"
@@ -8247,6 +8371,9 @@
       "Re-signing contacts": [
         "Névjegy ismételt aláírása"
       ],
+      "Read-only": [
+        "Csak olvasható"
+      ],
       "Recommended actions": [
         "Javasolt műveletek"
       ],
@@ -8257,6 +8384,9 @@
         "Adatok helyreállítása"
       ],
       "Report a problem": [
+        "Probléma jelentése"
+      ],
+      "Report issue": [
         "Probléma jelentése"
       ],
       "Request new code": [

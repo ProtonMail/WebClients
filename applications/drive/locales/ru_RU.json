@@ -3224,9 +3224,6 @@
       "External invitations are temporarily disabled.": [
         "Внешние приглашения временно отключены."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Внешние приглашения временно отключены. Повторите попытку позже"
-      ],
       "Failed to change permissions settings": [
         "Не удалось изменить настройки разрешений"
       ],
@@ -3526,12 +3523,6 @@
       ],
       "The folder name is too long. Please choose a different name.": [
         "Имя папки слишком длинное. Пожалуйста, выберите другое имя."
-      ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "Приглашение пока не может быть закончено. Повторите попытку позже."
-      ],
-      "The invitation doesn't exist anymore": [
-        "Приглашение больше не существует"
       ],
       "The label name is invalid. Please choose a different name.": [
         "Недопустимое название ярлыка. Пожалуйста, выберите другое название."
@@ -4662,6 +4653,9 @@
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
         "**Вы получаете ${ referrerRewardAmount }** в виде остатка на счете за каждого друга, который решит подписаться."
+      ],
+      "1 vault per user": [
+        "1 хранилище на пользователя"
       ],
       "A number will be added to the filename": [
         "К имени файла будет добавлен номер"
@@ -8759,6 +8753,9 @@
         "Скидка действительна для ${ renewalsWithCoupon } продлений.",
         "Скидка действительна для ${ renewalsWithCoupon } продлений."
       ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "У выбранного тарифного плана недостаточно места для данных вашего аккаунта."
+      ],
       "The specially discounted price is valid for ${ couponRedemptions } month. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
         "Специально сниженная цена действует в течение ${ couponRedemptions } месяца. Затем она будет автоматически продлеваться за ${ renewPriceStr } в течение 1 месяца. Вы можете отменить подписку в любое время.",
         "Специально сниженная цена действует в течение ${ couponRedemptions } месяца. Затем она будет автоматически продлеваться за ${ renewPriceStr } в течение 1 месяца. Вы можете отменить подписку в любое время.",
@@ -11612,6 +11609,9 @@
       ]
     },
     "user_modal": {
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Нельзя изменить собственную роль. Попросите другого администратора изменить её за вас."
+      ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Вы сможете назначать должности, как только пользователь примет приглашение."
       ]

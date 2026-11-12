@@ -558,7 +558,10 @@
         "Скасаваць"
       ],
       "Cancel ${ planTitle }": [
-        "Скасваць ${ planTitle }"
+        "Скасаваць ${ planTitle }"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "Скасаваць пробны перыяд ${ planTitle }"
       ],
       "Cancel import": [
         "Скасаваць імпартаванне"
@@ -1487,6 +1490,9 @@
       "Manage subscription": [
         "Кіраваць падпіскай"
       ],
+      "Manage subscriptions": [
+        "Кіраваць падпіскай"
+      ],
       "Manage users/addresses": [
         "Кіраваць карыстальнікамі/адрасамі"
       ],
@@ -2011,6 +2017,9 @@
       ],
       "Sign in to ${ PASS_APP_NAME }": [
         "Увайсці ў ${ PASS_APP_NAME }"
+      ],
+      "Sign in to a different account": [
+        "Увайсці ў іншым уліковы запіс"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Увайсці з ${ BRAND_NAME }"
@@ -2618,6 +2627,9 @@
       ],
       "Permission revoked": [
         "Дазвол адкліканы"
+      ],
+      "Sign-in": [
+        "Уваход"
       ]
     },
     "Admin": {
@@ -2631,6 +2643,9 @@
       ],
       "3 new admin roles": [
         "3 новыя ролі адміністратара"
+      ],
+      "Assign admin roles to groups. Manage access for many users at once and update it automatically when people join or leave.": [
+        "Прызначайце ролі адміністратара групам. Кіруйце доступам для некалькіх карыстальнікаў адначасова і абнаўляйце іх аўтаматычна, калі людзі далучаюцца або выходзяць з групы."
       ],
       "Assign specific admin roles. Give each admin only the access they need to limit the impact of compromised accounts and accidental errors.": [
         "Прызначыць пэўныя ролі для адміністратара. Дайце кожнаму адміністратару толькі неабходныя правы доступу, каб абмежаваць уплыў скампраметаваных уліковых запісаў і выпадковых памылак."
@@ -2967,6 +2982,9 @@
       ],
       "Premium versions of all ${ BRAND_NAME } services": [
         "Прэміяльныя функцыі ўсіх сэрвісаў ${ BRAND_NAME }"
+      ],
+      "The ${ planName } plan is back for a limited time only": [
+        "Тарыфны план ${ planName } вярнуўся на абмежаваны час."
       ]
     },
     "bf2023: info": {
@@ -5671,6 +5689,9 @@
       "Still need help? Our support team is here for you.": [
         "Усё яшчэ патрэбная дапамога? Наша каманда падтрымкі заўсёды побач."
       ],
+      "The link to sign out on all your devices has expired. Try signing in again to receive a new one.": [
+        "Спасылка для выхаду на ўсіх вашых прыладах пратэрмінаваная. Паспрабуйце ўвайсці зноў, каб атрымаць новую."
+      ],
       "This allows you to regain access to your ${ BRAND_NAME } account but does not recover your encrypted data.": [
         "Гэта дазволіць вам аднавіць доступ да вашага ўліковага запісу ${ BRAND_NAME }, але вашы даныя застануцца зашыфраванымі."
       ],
@@ -7814,6 +7835,12 @@
       "Operation failed, try again later": [
         "Збой выканання аперацыі. Паўтарыце спробу пазней"
       ],
+      "Organization does not have enough seats available": [
+        "У арганізацыі недастаткова даступных ліцэнзій"
+      ],
+      "Organization does not have enough storage available": [
+        "У арганізацыі недастаткова даступнага месца для захоўвання"
+      ],
       "Organization key is not decrypted": [
         "Ключ арганізацыі не расшыфраваны"
       ],
@@ -8491,6 +8518,9 @@
       "Ask your administrator to enable Account monitor.": [
         "Папрасіце свайго адміністратара ўключыць манітор уліковага запісу."
       ],
+      "Check your internet connection and try again.": [
+        "Праверце падключэнне да інтэрнэту і паўтарыце спробу."
+      ],
       "Enable account monitor to start loading event.": [
         "Уключыце маніторынг уліковага запісу для пачатку загрузкі падзеі."
       ],
@@ -8523,6 +8553,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Немагчыма загрузіць старонку. Абнавіце старонку або праверце злучэнне з інтэрнэтам."
+      ],
+      "We couldn't load your invitation": [
+        "Не ўдалося загрузіць ваша запрашэнне"
       ]
     },
     "Error message, Disable account": {
@@ -9137,9 +9170,6 @@
       ],
       "Allow platform keys": [
         "Дазволіць ключы платформы"
-      ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Дазваляе рэгістраваць убудаваныя ключы бяспекі (такія, як Windows Hello, Touch ID, Face ID або ўбудаваны TPM)"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Вы сапраўды хочаце выдаліць ключ бяспекі ${ name }?"
@@ -10721,6 +10751,9 @@
       "(formerly Twitter)": [
         "(раней вядомы як Twitter)"
       ],
+      "**${ applicationName }** requested to sign in from:": [
+        "**${ applicationName }** запытвае ўваход з:"
+      ],
       "**${ applicationName }** requested to sign in.": [
         "**${ applicationName }** запытвае ўваход."
       ],
@@ -10985,6 +11018,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Дазволіць карыстальнікам падключацца да бяспечна абагуленых сервераў з раздзела **Краіны** праграмы ${ VPN_APP_NAME }."
       ],
+      "Allow your organization to use the ${ LUMO_APP_NAME } API": [
+        "Дазволіць выкарыстоўваць API для ${ LUMO_APP_NAME } у вашай арганізацыі"
+      ],
       "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
         "Дазвол уваходу па QR-кодзе забяспечыць вам магчымасць увайсці ў сістэму адсканіраваўшы QR-код, калі вы забудзеце свой пароль. Проста ўвайдзіце ў ${ BRAND_NAME } на іншай прыладзе."
       ],
@@ -11248,6 +11284,9 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Вы згаджаецеся даць доступ ${ BRAND_NAME } да гэтай зашыфраванай інфармацыі, каб падзяліцца ўсімі падрабязнасцямі падзей у гэтым календары."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Вы зможаце ўвайсці ў сістэму толькі з дапамогай свайго імя карыстальніка **${ username }**, адраса электроннай пошты **${ firstEmail }** або **${ secondEmail }**, калі ўключыце гэту функцыю."
       ],
       "Can you access your active session?": [
         "Ці ёсць у вас доступ да актыўнага сеанса?"
@@ -12248,6 +12287,12 @@
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Памылковы код. ${ RequestNewCodeLink } і паўтарыце спробу."
       ],
+      "Invalid invitation link": [
+        "Памылковая спасылка запрашэння"
+      ],
+      "Invalid joining link": [
+        "Памылковая спасылка на далучэнне"
+      ],
       "Invitation link expired": [
         "Запрашальная спасылка пратэрмінавана"
       ],
@@ -12511,6 +12556,9 @@
       ],
       "Next time you sign in to your other account": [
         "Наступны раз уваход будзе выкананы ў ваш іншы ўліковы запіс"
+      ],
+      "Next, sign in to your Google Account and allow ${ BRAND_NAME } to access Google Drive. We'll import your files and folders to ${ DRIVE_APP_NAME }.": [
+        "Пасля гэтага ўвайдзіце ў свой уліковы запіс Google і дазвольце ${ BRAND_NAME } доступ да Google Drive. Вашы файлы і папкі будуць імпартаваны ў ${ DRIVE_APP_NAME }."
       ],
       "No account keys exist": [
         "Адсутнічаюць ключы ўліковага запісу"
@@ -12800,6 +12848,9 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Выберыце тып спасылкі, якую вы хочаце ўставіць, і запоўніце ўсе палі."
       ],
+      "Please sign in with ${ emailAddress } to continue.": [
+        "Увайдзіце з адрасам электроннай пошты ${ emailAddress }, каб працягнуць."
+      ],
       "Please specify...": [
         "Пазначце..."
       ],
@@ -12898,12 +12949,6 @@
       ],
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Рэкамендавана на давераных прыладах. ${ learnMoreLink }"
-      ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Аднаўленне па адрасе электроннай пошты недаступна, калі ${ PROTON_SENTINEL_NAME } уключаны."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Аднаўленне па нумары тэлефона недаступна, калі ${ PROTON_SENTINEL_NAME } уключаны."
       ],
       "Recovery file downloaded": [
         "Файлы аднаўлення спампаваны"
@@ -13123,6 +13168,9 @@
       ],
       "Signed up": [
         "Зарэгістравалася"
+      ],
+      "Signup link no longer valid": [
+        "Спасылка для рэгістрацыі больш не дзейнічае"
       ],
       "Smart Routed through a different country.": [
         "Перанакіравана праз іншую краіну з дапамогай функцыі Smart Routing."
@@ -13382,6 +13430,9 @@
       "This account has been suspended due to a potential policy violation.": [
         "Дзеянне гэтага ўліковага запісу было прыпынена з прычыны патэнцыйнага парушэння ўмоў выкарыстання."
       ],
+      "This address now signs in through your organization's identity provider.": [
+        "Цяпер уваход у гэты адрас выконваецца праз пастаўшчыка пасведчанняў вашай арганізацыі."
+      ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Дадзены браўзер не падтрымлівае папярэдні прагляд дакументаў PDF. Спампуйце файл."
       ],
@@ -13565,12 +13616,6 @@
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Спачатку неабходна завяршыць генерацыю вашых новых постквантавых ключоў шыфравання, а потым уключаць постквантавую абарону."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Адключыце **Аднаўленне па электроннай пошце** для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Адключыце **Аднаўленне па нумары тэлефона** для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў бяспекі."
-      ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "${ DRIVE_APP_NAME } захоўвае старыя версіі вашых файлаў, калі вы і іншыя ўдзельнікі сумеснай працы ўносіце змены. Гэта гарантуе, што вы не страціце важныя даныя. Выберыце, як доўга ${ BRAND_NAME } павінен захоўваць папярэднюю версію."
       ],
@@ -13591,6 +13636,9 @@
       ],
       "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
         "Дадайце і праверце дамен электроннай пошты ў ${ domainNamesLink } для пераносу гэтага карыстальніка"
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "Распакуйце карыстальніка ў сваёй ${ provider.adminConsoleName } для яго пераносу."
       ],
       "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
         "Аднавіць карыстальніка ў вашай ${ provider.adminConsoleName } для яго пераносу."
@@ -13870,6 +13918,9 @@
       ],
       "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
         "Немагчыма адправіць рахункі на ваш адрас электроннай пошты. Аўтаматычнае выстаўленне рахункаў будзе прыпынена да таго моманту, пакуль вы не абновіце адрас."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Не ўдалося праверыць ідэнтычнасць вашай арганізацыі. Папрасіце свайго адміністратара, ${ admin }, праверыць ідэнтычнасць арганізацыі ў яе наладах. Потым адкрыйце гэта спасылку зноў."
       ],
       "We couldn’t process your payment.": [
         "Мы не можам апрацаваць ваш плацеж."
@@ -14186,6 +14237,9 @@
         "Вы не можаце адправіць больш чым ${ emailSendLimitNumber } запрашальных лістоў на працягу наступных 24 гадзін",
         "Вы не можаце адправіць больш чым ${ emailSendLimitNumber } запрашальныя лісты на працягу наступных 24 гадзін"
       ],
+      "You cancel it in the store.": [
+        "Вы скасавалі яго ў краме."
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Вы не можаце запрасіць карыстальніка ${ MAIL_APP_NAME }"
       ],
@@ -14440,6 +14494,9 @@
       ],
       "Your Gmail connects to this ${ MAIL_APP_NAME } address": [
         "Ваш Gmail падключаны да гэтага адраса ${ MAIL_APP_NAME }"
+      ],
+      "Your Google Drive may be empty or contain only files that are not supported.": [
+        "Ваш Google Drive можа быць пусты або змяшчаць толькі файлы, якія не падтрымліваюцца."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "З намі ваша інфармацыя ў бяспецы. Мы будзем звязвацца з вамі, толькі па меры неабходнасці, каб забяспечыць нашымі сэрвісамі."
@@ -15344,6 +15401,12 @@
       "Allow sharing outside the organization": [
         "Дазволіць абагульванне па-за межамі арганізацыі"
       ],
+      "Allow storing 2FA codes": [
+        "Дазволіць захоўваць ключы 2ФА"
+      ],
+      "Allow storing passkeys": [
+        "Дазволіць захоўваць ключы доступу"
+      ],
       "Allow users to set a backup password": [
         "Дазволіць карыстальнікам задаваць рэзервовы пароль"
       ],
@@ -15693,6 +15756,9 @@
         "Карыстальніцкі дамен электроннай пошты",
         "Карыстальніцкія дамены электроннай пошты",
         "Карыстальніцкія дамены электроннай пошты",
+        "Карыстальніцкія дамены электроннай пошты"
+      ],
+      "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
       ],
       "Daily email notifications": [
@@ -16339,6 +16405,9 @@
       ],
       "Organization password": [
         "Пароль арганізацыі"
+      ],
+      "Organization size": [
+        "Памер арганізацыі"
       ],
       "Other": [
         "Іншае"
@@ -17020,6 +17089,9 @@
       ],
       "Invalid ${ group.name } record found": [
         "Знойдзены памылковы запіс ${ group.name }"
+      ],
+      "Leave field blank": [
+        "Пакінуць поле пустым"
       ],
       "Priority": [
         "Прыярытэт"
@@ -21168,6 +21240,9 @@
       ],
       "terms and conditions": [
         "умовамі выкарыстання"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Ініцыятыва Born Private патрабуе ахвяравання."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэння.",
@@ -25616,6 +25691,9 @@
     "Subscription term": {
       "${ startTime } – ${ endTime }": [
         "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "Ад ${ startTime }"
       ]
     },
     "Subtitle": {
@@ -25657,6 +25735,9 @@
       ],
       "Free forever": [
         "Бясплатна назаўсёды"
+      ],
+      "Import your files and folders from Google Drive and keep them private in ${ DRIVE_APP_NAME }.": [
+        "Імпартуйце свае файлы і папкі з Google Drive, каб забяспечыць прыватнасць для іх у ${ DRIVE_APP_NAME }."
       ],
       "per month, billed annually": [
         "у месяц (аплачваецца адзін раз у год)"
@@ -27134,6 +27215,9 @@
       "Email": [
         "Электронная пошта"
       ],
+      "Email address": [
+        "Адрас электроннай пошты"
+      ],
       "Email breaches": [
         "Уцечкі электроннай пошты"
       ],
@@ -27361,6 +27445,9 @@
       ],
       "Help center": [
         "Даведачны цэнтр"
+      ],
+      "Help shape ${ BRAND_NAME }'s admin experience": [
+        "Дапамажыце нам палепшыць досвед адміністратара для ${ BRAND_NAME }"
       ],
       "Helping activists in Hong Kong": [
         "Дапамога актывістам у Ганконгу"
@@ -28376,6 +28463,9 @@
       "What are you migrating?": [
         "Што вы плануеце перанесці?"
       ],
+      "What changes if you cancel ${ planDisplayName }": [
+        "Што здарыцца, калі вы скасуеце тарыфны план ${ planDisplayName }"
+      ],
       "What is an alias?": [
         "Што такое псеўданім?"
       ],
@@ -28578,6 +28668,9 @@
       "Price": [
         "Цана"
       ],
+      "Renewal": [
+        "Падаўжэнне"
+      ],
       "Status": [
         "Статус"
       ],
@@ -28735,6 +28828,9 @@
       ],
       "Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${ VPN_SHORT_APP_NAME }, and more.": [
         "Уключае прафесійную электронную пошту @yourdomain.com, воблачнае сховішча з сумесным рэдагаваннем дакументаў, расклад і відэаканферэнцыі, менеджар пароляў, а таксама бяспечны ${ VPN_SHORT_APP_NAME } і многае іншае."
+      ],
+      "Install the migration app in your ${ providerName } account to start a migration": [
+        "Усталюйце праграму пераносу ў сваім уліковымі запісе ${ providerName }, каб пачаць перанос файлаў"
       ],
       "Instant AI assistance, human expert on hand!": [
         "Імгненная дапамога ШІ, спецыяліст заўсёды на сувязі!"

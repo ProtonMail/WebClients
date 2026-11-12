@@ -727,6 +727,9 @@
       "Sign back in": [
         "Prihláste sa späť"
       ],
+      "Sign in in the app instead": [
+        "Radšej sa prihlásiť v aplikácii"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Prihlásiť sa pomocou ${ BRAND_NAME }"
       ],
@@ -2213,6 +2216,9 @@
       "Can view this item.": [
         "Môže zobraziť túto položku."
       ],
+      "Canceled by user": [
+        "Zrušené používateľom"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Kontrola ${ compromised.progress.completed } z ${ compromised.progress.total } hesiel"
       ],
@@ -2625,10 +2631,7 @@
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -3043,6 +3046,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Keď budete nabudúce potrebovať alias, jednoducho použite ${ emailBold }: pri prvom prijatí emailu sa vytvorí ${ automaticallyBold }. Ak chcete mať detailnejšiu kontrolu, môžete definovať aj ${ rulesHyperLink }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Na spustenie ${ PASS_APP_NAME } v režime offline budete vaše ${ BRAND_NAME } heslo."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Na spustenie ${ PASS_APP_NAME } v režime offline budete potrebovať vaše záložné heslo."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Na spustenie ${ PASS_APP_NAME } v režime offline budete potrebovať dodatočné heslo."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Na spustenie ${ PASS_APP_NAME } v režime offline budete potrebovať vaše druhé heslo."
       ],
       "Successfully exported all your items": [
         "Všetky položky boli úspešne exportované"
@@ -5655,8 +5670,8 @@
         "Presunúť ${ trashedItemsCount } položiek do koša?",
         "Presunúť ${ trashedItemsCount } položiek do koša?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Presunúť všetky položky do trezora \"${ vaultName }\"?"
+      "Move all items to \"${ target }\"?": [
+        "Presunúť všetky položky do \"${ target }\"?"
       ],
       "Move all items?": [
         "Presunúť všetky položky?"

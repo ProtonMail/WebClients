@@ -337,6 +337,9 @@
       "Add external address": [
         "添加外部地址"
       ],
+      "Add payment method": [
+        "添加付款方式"
+      ],
       "Add PayPal": [
         "添加 PayPal"
       ],
@@ -394,11 +397,20 @@
       "Cancel": [
         "取消"
       ],
+      "Cancel ${ planTitle }": [
+        "取消 ${ planTitle }"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "取消 ${ planTitle } 试用"
+      ],
       "Cancel request": [
         "取消请求"
       ],
       "Cancel subscription": [
         "取消订阅"
+      ],
+      "Cancel trial": [
+        "取消试用"
       ],
       "Cancel trial and pay": [
         "取消试用并支付"
@@ -1189,6 +1201,9 @@
       "Restore": [
         "恢复"
       ],
+      "Restrict sign-in": [
+        "限制登录"
+      ],
       "Resume membership": [
         "恢复会员资格"
       ],
@@ -1644,6 +1659,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "取消订阅"
+      ],
       "Reactivate": [
         "重新激活"
       ],
@@ -1843,6 +1861,9 @@
       ],
       "Permission revoked": [
         "权限已撤销"
+      ],
+      "Sign-in": [
+        "登录"
       ]
     },
     "Admin": {
@@ -1990,6 +2011,9 @@
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "取消后，您的免费试用将不会转换为付费订阅，但您在试用期结束前仍可享受套餐权益。之后，您的服务将降级为 ${ BRAND_NAME } 免费套餐。"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "取消后，您的免费试用不会转为付费订阅。"
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "试用期间，最多可拥有 ${ TRIAL_MAX_DEDICATED_IPS } 台专用服务器"
@@ -2763,6 +2787,9 @@
       "Confirm cancellation": [
         "确认取消"
       ],
+      "If you exceed your plan limits, you won't be able to:": [
+        "如果您超出套餐限额，将无法："
+      ],
       "Keep current plan": [
         "保留当前套餐"
       ],
@@ -2777,6 +2804,12 @@
       ],
       "Upload any new files": [
         "上传任意文件"
+      ],
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "您的 ${ planDisplayName } 订阅将于 ${ endDate } 结束，届时您将失去其功能。如果届时您的用量超出套餐限额，部分功能可能会暂时不可用。"
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "您的订阅将于 ${ endDate } 结束，届时您将失去其功能。如果届时您的用量超出套餐限额，部分功能可能会暂时不可用。"
       ]
     },
     "Confirm modal title": {
@@ -3857,6 +3890,9 @@
       "Bring over your email, calendar events, and contacts from another provider.": [
         "从其他服务商迁移您的邮件、日历事件和联系人。"
       ],
+      "Bring over your files and folders from another provider.": [
+        "从其他服务商迁移您的文件和文件夹。"
+      ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
         "使用您自有域名的专业邮箱地址，建立信任和品牌认知度。"
       ],
@@ -4859,6 +4895,12 @@
       "They may ask to access your account in case of an emergency.": [
         "他们可能会在紧急情况下请求访问您的账户。"
       ],
+      "They will receive access automatically **today**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "他们将在**今天**、于 **${ formattedAccessibleAt }** 自动获得访问权限。您可以随时拒绝其请求或立即授予访问权限。"
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**. You can reject their request or give them access immediately at any time.": [
+        "他们将在 **${ days } 天后**、于 **${ formattedAccessibleAt }** 自动获得访问权限。您可以随时拒绝其请求或立即授予访问权限。"
+      ],
       "This will take effect immediately.": [
         "此更改将立即生效"
       ],
@@ -5423,6 +5465,12 @@
       ],
       "The policy name must be between 3 and 40 characters.": [
         "策略名称必须在 3 至 40 个字符之间。"
+      ],
+      "The session has expired. Please try again.": [
+        "会话已过期，请重试。"
+      ],
+      "The total could not be calculated. Change the amount to try again.": [
+        "无法计算总额，请更改金额后重试。"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "待导入账户的文件夹过多，请自定义导入内容并删除部分文件夹。"
@@ -6194,9 +6242,6 @@
       ],
       "Allow platform keys": [
         "允许使用平台按键"
-      ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "允许注册内置安全密钥（如 Windows Hello、Face ID、Touch ID 或内部 TPMs）"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "确定要删除安全密钥 ${ name } 吗？"
@@ -7354,6 +7399,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "允许用户从 ${ VPN_APP_NAME } 应用程序的**国家**部分连接到安全的共享服务器。"
       ],
+      "Allow your organization to use the ${ LUMO_APP_NAME } API": [
+        "允许您的组织使用 ${ LUMO_APP_NAME } API"
+      ],
       "Allowing QR code sign-in will let you sign in by scanning a QR code if you forget your password. All you need is to be signed in to a ${ BRAND_NAME } service on another device.": [
         "允许通过二维码登录后，当您忘记密码时，可以通过扫描二维码登录。您只需在另一台设备上登录 ${ BRAND_NAME } 服务即可。"
       ],
@@ -7497,6 +7545,21 @@
       ],
       "By leaving now, changes may not be saved": [
         "若现在离开，所作更改将不会被保存"
+      ],
+      "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
+        "开启此功能后，您将只能使用 **${ primaryEmail }** 登录。"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
+        "开启此功能后，您将只能使用用户名 **${ username }** 登录。"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "开启此功能后，您只能使用用户名 **${ username }**，或使用 **${ firstEmail }** 或 **${ secondEmail }** 登录。"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "开启此功能后，您只能使用用户名 **${ username }**，或使用 **${ firstEmail }**、**${ secondEmail }** 或 **${ thirdEmail }** 登录。"
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "开启此功能后，您只能使用用户名 **${ username }**，或使用 **${ firstEmail }** 登录。"
       ],
       "Can you access your active session?": [
         "您能否访问当前活跃的会话？"
@@ -8662,12 +8725,6 @@
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "建议在受信任的设备上使用。${ learnMoreLink }"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "启用 ${ PROTON_SENTINEL_NAME } 时，无法使用通过密保邮箱恢复选项。"
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "启用 ${ PROTON_SENTINEL_NAME } 时，无法使用通过密保手机恢复选项。"
-      ],
       "Recovery file downloaded": [
         "恢复文件已下载"
       ],
@@ -9139,12 +9196,6 @@
       "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
         "要启用始终开启 VPN，设备配置文件需要到达每台设备上的 ${ policiesPath } — ${ VPN_APP_NAME } 客户端会在该位置检测到它并自动强制执行该配置文件。${ learnMore }。"
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "为确保您账户的最高安全性，请禁用**通过密保邮箱恢复**！"
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "为确保您账户的最高安全性，请禁用**通过密保手机恢复**！"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
       ],
@@ -9448,8 +9499,26 @@
       "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
         "在身份提供商中为 ${ appName } 启用 SAML 时，系统可能会提示您使用回调 (ACS) URL 和颁发者 ID。只需将以下数据复制粘贴到您的身份提供商字段中即可。"
       ],
+      "When sign-in is restricted, only your email **${ primaryEmail }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "限制登录后，只能使用您的邮箱 **${ primaryEmail }** 登录。即使他人知道您的其他地址，这些地址也无法关联回您的账户。"
+      ],
+      "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
+        "限制登录后，只能使用您的用户名 **${ username }** 登录。即使他人知道您的其他地址，这些地址也无法关联回您的账户。"
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "限制登录后，您只能使用用户名 **${ username }**，或使用 **${ firstEmail }** 或 **${ secondEmail }** 登录。您的其他邮箱地址将无法用于登录。"
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "限制登录后，您只能使用用户名 **${ username }**，或使用 **${ firstEmail }**、**${ secondEmail }** 或 **${ thirdEmail }** 登录。您的其他邮箱地址将无法用于登录。"
+      ],
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "限制登录后，您只能使用用户名 **${ username }** 或 **${ firstEmail }** 登录。您的其他邮箱地址将无法用于登录。"
+      ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "取消后，您的订阅将不会续订，但您仍可享受套餐优惠，直至订阅期结束。之后，您将降级到 ${ BRAND_NAME } 的免费套餐。"
+      ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "取消后，试用期结束时您的订阅将不会开始。"
       ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "取消后，您的订阅将不会开始，但在试用期结束前您仍可享受套餐权益。之后，您将降级至 ${ BRAND_NAME } 免费套餐。"
@@ -9583,6 +9652,9 @@
       "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
         "未来 24 小时内您最多只能发送 ${ emailSendLimitNumber } 封邀请邮件"
       ],
+      "You cancel it in the store.": [
+        "您在商店中取消。"
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "您不能邀请其他 ${ MAIL_APP_NAME } 用户"
       ],
@@ -9624,6 +9696,9 @@
       ],
       "You have no transactions.": [
         "您还没有任何交易记录。"
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "您有多个订阅。请选择要取消的订阅：其他订阅不受影响。已取消的订阅不会续订，您仍可享有其权益直至订阅期结束。"
       ],
       "You have unpublished changes": [
         "您有未发布的更改"
@@ -9771,6 +9846,9 @@
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "您的机构所有邮件都使用机构密钥进行端到端加密，这个指纹可以用于验证所有管理员都拥有相同的密钥。"
+      ],
+      "Your other email addresses won’t work for sign-in until you turn this off.": [
+        "在关闭此功能之前，您的其他邮箱地址将无法用于登录。"
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "您的付款明细已通过 TLS 加密并由瑞士隐私法律保护。"
@@ -10040,6 +10118,9 @@
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
         "通过终端安全访问 ${ PASS_APP_NAME }，是脚本、自动化和开发工作流程的理想选择"
+      ],
+      "Account credit": [
+        "账户余额"
       ],
       "Account holder": [
         "账户持有人"
@@ -10776,8 +10857,14 @@
       "Require password check-ins": [
         "要求密码检查"
       ],
+      "Restrict sign-in to email address": [
+        "限制只能使用邮箱地址登录"
+      ],
       "Restrict sign-in to username": [
         "限制仅使用用户名登录"
+      ],
+      "Restrict sign-in to username and matching ${ BRAND_NAME } addresses": [
+        "限制只能使用用户名和匹配的 ${ BRAND_NAME } 地址登录"
       ],
       "Reveal password": [
         "显示密码"
@@ -10892,6 +10979,9 @@
       ],
       "To: ${ toEmail }": [
         "收件人：${ toEmail }"
+      ],
+      "Total": [
+        "总计"
       ],
       "Two-password mode": [
         "双密码模式"
@@ -11045,6 +11135,11 @@
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "请添加下列 TXT 记录。注意： DNS 记录更新可能需要若干小时。"
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "将字段留空"
       ]
     },
     "Label for new member": {
@@ -13179,6 +13274,9 @@
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**在此之前可随时取消。** 在试用期结束前，您可以免费使用 ${ planTitle }。"
       ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**试用后改变主意了？** 在首次付款后 30 天内取消，我们将退还未使用时间的费用。"
+      ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**您的完整订阅开始后…** 您仍可在 30 天内取消，并获得按比例退款。"
       ],
@@ -13835,6 +13933,9 @@
       ],
       "Only one ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } can be purchased.": [
         "仅可购买一个 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }。"
+      ],
+      "Paid from your account credit.": [
+        "已使用账户余额支付。"
       ],
       "Pay with ${ IDEAL_WERO_BRAND_NAME }": [
         "使用 ${ IDEAL_WERO_BRAND_NAME } 付款"
@@ -15306,8 +15407,17 @@
       ]
     },
     "scim": {
+      "${ cleanUpCount } clean up action required.": [
+        "需要 ${ cleanUpCount } 项清理操作。"
+      ],
+      "${ cleanUpCount } user's permissions have changed.": [
+        "${ cleanUpCount } 位用户的权限已变更。"
+      ],
       "${ memberCount } new member": [
         "${ memberCount } 位新成员"
+      ],
+      "${ numberOfCleanUps } clean up action required": [
+        "需要 ${ numberOfCleanUps } 项清理操作"
       ],
       "${ numberOfPendingGroups } group synced": [
         "已同步 ${ numberOfPendingGroups } 个群组"
@@ -15333,8 +15443,17 @@
       "Approve changes from your identity provider": [
         "批准来自身份提供商的更改"
       ],
+      "Approve permission changes for your organization": [
+        "批准您组织的权限变更"
+      ],
       "Final approval needed to grant access across all ${ BRAND_NAME } services.": [
         "需要最终批准才能授予所有 ${ BRAND_NAME } 服务的访问权限。"
+      ],
+      "Final approval needed to remove organization key access.": [
+        "移除组织密钥访问权限需要最终批准。"
+      ],
+      "Final approval needed to revoke their organization keys.": [
+        "撤销其组织密钥需要最终批准。"
       ],
       "From your identity provider": [
         "来自您的身份提供商"
@@ -16431,11 +16550,17 @@
       "Disable recovery by phone": [
         "禁用通过密保手机恢复"
       ],
+      "failed": [
+        "失败"
+      ],
       "finalizing": [
         "即将完成"
       ],
       "Generate a recovery phrase": [
         "生成恢复短语"
+      ],
+      "key removal scheduled": [
+        "已安排移除密钥"
       ],
       "Last changed ${ formattedDate }": [
         "上次更改于 ${ formattedDate }"
@@ -16451,6 +16576,9 @@
       ],
       "Outdated": [
         "已过期"
+      ],
+      "remove organization key": [
+        "移除组织密钥"
       ],
       "Saved": [
         "已保存"
@@ -17042,6 +17170,14 @@
         "即将开始"
       ]
     },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
+      ],
+      "From ${ startTime }": [
+        "从 ${ startTime } 起"
+      ]
+    },
     "Subtitle": {
       "${ DRIVE_PLUS_NAME } offers 1 TB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ DRIVE_PLUS_NAME } 为您的文件和照片提供 1 TB 存储空间。您还有资格获得年度存储奖励。"
@@ -17510,6 +17646,9 @@
       ],
       "${ friendsSubscribed } Friend subscribed": [
         "已订阅 ${ friendsSubscribed } 位朋友"
+      ],
+      "${ LUMO_APP_NAME } API": [
+        "${ LUMO_APP_NAME } API"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
         "${ LUMO_SHORT_APP_NAME } 写作助手"
@@ -18516,6 +18655,9 @@
       "Restore administrator privileges": [
         "恢复管理员权限"
       ],
+      "Restrict sign-in?": [
+        "限制登录？"
+      ],
       "Reverse charge not supported": [
         "不支持反向收费"
       ],
@@ -18849,6 +18991,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "欢迎使用 ${ BRAND_NAME } 商业版"
       ],
+      "What changes if you cancel ${ planDisplayName }": [
+        "取消 ${ planDisplayName } 后会有哪些变化"
+      ],
       "What is an alias?": [
         "什么是邮箱别名？"
       ],
@@ -18981,8 +19126,14 @@
       "Price": [
         "价格"
       ],
+      "Renewal": [
+        "续订"
+      ],
       "Status": [
         "状态"
+      ],
+      "Subscription term": [
+        "订阅期限"
       ]
     },
     "Today icon tooltip in mini calendar": {

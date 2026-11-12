@@ -3443,8 +3443,8 @@
       "There was an error when exporting the contacts vCards": [
         "Kişilerin vCard dosyaları dışa aktarılırken bir sorun çıktı"
       ],
-      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
-        "Bu belge olabilecek en büyük boyuta ulaştı. Bu yüzden son değişikliğiniz kaydedilmedi ve düzenleme kapatıldı."
+      "This document is too large to copy. Download it to keep a copy of your work.": [
+        "Bu belge kopyalanamayacak kadar büyük. Çalışmanızın bir kopyasını tutmak için indirin."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
@@ -4638,12 +4638,6 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Gizliliğinizi koruyarak gezinmek için ${ VPN_APP_NAME } bağlantısı kurun"
       ],
-      "Connected": [
-        "Bağlı"
-      ],
-      "Connecting…": [
-        "Bağlantı kuruluyor…"
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kişi ${ contactGroupName } grubuna eklendi"
       ],
@@ -4715,9 +4709,6 @@
       "Decrypting your document": [
         "Belgenizin şifresi çözülüyor"
       ],
-      "Disconnected": [
-        "Bağlı değil"
-      ],
       "Display word count": [
         "Sözcük sayısı görüntülensin"
       ],
@@ -4756,9 +4747,6 @@
       ],
       "Edit email address": [
         "E-posta adresini düzenle"
-      ],
-      "Editing is temporarily unavailable.": [
-        "Düzenleme geçici olarak kullanılamıyor."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-posta barındırmasını yalnızca sahibi olduğunuz etki alanları için kullanabilirsiniz. ${ BRAND_NAME } etki alanı kaydı yapmaz. Herhangi bir etki alanı kayıt kuruluşundan satın aldığınız etki alanlarının e-posta adreslerini barındırabilirsiniz."
@@ -4804,6 +4792,9 @@
       ],
       "Error loading document: ${ errorDetail }": [
         "Belge yüklenirken sorun çıktı: ${ errorDetail }"
+      ],
+      "Error syncing": [
+        "Eşitleme sorunu"
       ],
       "Error Syncing": [
         "Eşitleme sorunu"
@@ -4989,6 +4980,9 @@
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Çevrim dışı görünüyorsunuz. Belge çevrim dışı olarak düzenlenemez. Lütfen aygıtınızın bağlantısını denetleyin."
       ],
+      "Looks like you're offline. You can keep editing: your changes are saved once you are back online.": [
+        "Çevrim dışı görünüyorsunuz. Düzenlemeyi sürdürebilirsiniz: Değişiklikleriniz yeniden çevrim içi olduğunuzda kaydedilecek."
+      ],
       "Low Priority": [
         "Düşük Öncelik"
       ],
@@ -5053,9 +5047,6 @@
       "Not connected": [
         "Bağlı değil"
       ],
-      "Not connected. Editing resumes once you are back.": [
-        "Bağlantı yok. Geri döndüğünüzde düzenleme sürdürülecek."
-      ],
       "Numbers": [
         "Rakamlar"
       ],
@@ -5076,6 +5067,9 @@
       ],
       "Opening...": [
         "Açılıyor..."
+      ],
+      "Opening…": [
+        "Açılıyor…"
       ],
       "Organization size": [
         "Kuruluş boyutu"
@@ -5192,6 +5186,9 @@
       "Saving...": [
         "Kaydediliyor..."
       ],
+      "Saving…": [
+        "Kaydediliyor…"
+      ],
       "Scan the QR code with your mobile device": [
         "Mobil aygıtınızla kare kodu tarayın"
       ],
@@ -5240,6 +5237,9 @@
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Bazı devletler belirli sitelere erişimi engeller veya kısıtlar. VPN, etkinliğinizi ve kimliğinizi güvenli tutarken engellemeyi aşmanıza yardımcı olur."
       ],
+      "Some of the document could not be read, so it can't be edited.": [
+        "Belge, bazı bölümleri okunamadığı için düzenlenemiyor."
+      ],
       "Some of the document's content could not be read.": [
         "Belge içeriğinin bir bölümü okunamadı."
       ],
@@ -5286,12 +5286,6 @@
       "The Beginning": [
         "Başlangıç"
       ],
-      "The connection to the server was lost.": [
-        "Sunucu bağlantısı kesildi."
-      ],
-      "The document could not be brought up to date.": [
-        "Belgenin güncel durumu getirilemedi."
-      ],
       "The document could not be created.": [
         "Belge oluşturulamadı."
       ],
@@ -5307,9 +5301,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Bu adresin sahibi uçtan uca şifrelemeyi kapatmış. Bu adrese şifrelenmiş e-postalar gönderebilmek için adres sahibi uçtan uca şifrelemeyi yeniden açmalıdır."
       ],
-      "The server is busy.": [
-        "Sunucu meşgul."
-      ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "Yazdığınız adres Slack üzerinden yanlış kopyalanmış gibi görünüyor. Slack üzerinden uzun bağlantıları kopyalarken, bağlantıya sağ tıklayın, ardından budanmış adres metnini doğrudan kopyalamak yerine \"Bağlantıyı kopyala\" seçeneğini kullanın."
       ],
@@ -5322,8 +5313,17 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Bu adres kullanımdan kaldırılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
       ],
+      "This document can't be edited right now.": [
+        "Bu belge şu anda düzenlenemez."
+      ],
+      "This document does not exist, or it was deleted.": [
+        "Bu belge yok ya da silinmiş."
+      ],
       "This document has grown too large to edit. You can remove older revisions to continue editing.": [
         "Bu belge düzenlenemeyecek kadar büyüdü. Düzenlemeyi sürdürmek için eski sürümleri kaldırabilirsiniz."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Copy any work you need to keep it.": [
+        "Bu belgenin boyutu çok büyüdüğü için son değişiklikleriniz kaydedilemedi. Kaybetmek istemediğiniz içeriği kopyalayın."
       ],
       "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
         "Bu belge çok büyüdü ve son değişiklikleriniz kaydedilemedi. Çalışmanızı korumak için bir kopyasını indirin."
@@ -5333,6 +5333,9 @@
       ],
       "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
         "Bu belge üzerinde çok sayıda kişi çalışıyor. Gerçek zamanlı düzenleyici geçici olarak kullanılamıyor. Güncel durumu görüntülemek için sayfayı yenileyin."
+      ],
+      "This document has reached its maximum size, so it can't be edited.": [
+        "Bu belge olabilecek en büyük boyuta ulaştığı için düzenlenemez."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Bu belge var olmayabilir veya yüklerken sorun çıktı. Lütfen sayfayı yeniden yükleyip yeniden deneyin."
@@ -5360,9 +5363,6 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Bu benzersiz kod, siteler ve internet hizmeti sağlayıcıları tarafından konumunuzu ve tarama geçmişinizi aygıtınızla ilişkilendirmek için kullanılabilir."
-      ],
-      "This version of the app is no longer supported. Reload the page to update it.": [
-        "Uygulamanın bu sürümü artık desteklenmiyor. Güncellemek için sayfayı yeniden yükleyin."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
@@ -5541,9 +5541,6 @@
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Seçtiğiniz hesap ile görüntüleme izinleriniz olmayabilir. Farklı bir hesap deneyin veya erişim izni vermesi için sahibiyle görüşün."
       ],
-      "You were disconnected after a period of inactivity.": [
-        "Bağlantınız bir süre işlem yapılmadığı için kesildi."
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Bu tarihte ${ planTitle } özelliklerine erişiminizi kaybedeceksiniz."
       ],
@@ -5584,9 +5581,6 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ plan } aboneliğiniz ${ PASS_SHORT_APP_NAME } Lifetime aboneliğiyle değiştirilecek. Aboneliğinizin kalan tutarı hesabınıza eklenecek. ${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme fiyatı yoktur, ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik ödeme yapılır."
       ],
-      "Your access to this document has changed. Reload the page to continue.": [
-        "Bu belgeye erişme izniniz değiştirildi. İlerlemek için sayfayı yeniden yükleyin."
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda süresi geçmiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
       ],
@@ -5595,9 +5589,6 @@
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Değişiklikleriniz Drive ile eşitleniyor. Lütfen sayfayı kapatmayın."
-      ],
-      "Your changes could not be encrypted. Reload the page to continue.": [
-        "Değişiklikleriniz şifrelenemedi. İlerlemek için sayfayı yeniden yükleyin."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Değişiklikleriniz eşitlenemedi. Drive değişikliklerinizi otomatik olarak kaydetmeyi deneyecek. Lütfen bu sayfayı kapatmayın."
@@ -5659,9 +5650,6 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ay otomatik olarak yenilenecek."
-      ],
-      "Your session has expired. Reload the page to continue.": [
-        "Oturumunuzun süresi doldu. İlerlemek için sayfayı yeniden yükleyin."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Aboneliğiniz ${ renewalTime } tarihinde otomatik olarak yenilenecek."
@@ -9528,6 +9516,9 @@
       ],
       "Enter your password": [
         "Parolanızı yazın"
+      ],
+      "Error syncing": [
+        "Eşitleme sorunu"
       ],
       "Error Syncing": [
         "Eşitleme sorunu"

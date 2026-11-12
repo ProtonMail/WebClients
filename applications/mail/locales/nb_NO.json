@@ -39,6 +39,9 @@
       "A to Z": [
         "A til Å"
       ],
+      "About ${ name }": [
+        "Om ${ name }"
+      ],
       "Activate": [
         "Aktiver"
       ],
@@ -53,6 +56,9 @@
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Legg til ${ BRAND_NAME }${ PASS_SHORT_APP_NAME }"
+      ],
+      "Add ${ name }": [
+        "Legg til ${ name }"
       ],
       "Add a payment method": [
         "Legg til betalingsmåte"
@@ -4352,6 +4358,12 @@
       "To start, give your organization a name.": [
         "For å starte, gi organisasjonen din et navn."
       ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Hvis du vil bruke ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }, må du legge det til i abonnementet."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Hvis du vil bruke ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }, må du be om tilgang fra administratoren din."
+      ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Slå på beskyttelse mot e-postsporere for å forhindre at annonsører og andre sporer din plassering og pålogget aktivitet."
       ],
@@ -4818,6 +4830,9 @@
       "Cannot export this contact": [
         "Kan ikke eksportere denne kontakten"
       ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Kan ikke sende en tom melding. Meldingen ble ikke sendt."
+      ],
       "Cannot set expiration longer than retention policy allows.": [
         "Kan ikke angi utløpsdato som er lenger enn det retningslinjen for oppbevaring tillater."
       ],
@@ -4901,6 +4916,9 @@
       ],
       "Email is not valid": [
         "E-post er ikke gyldig"
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Innebygde bilder kunne ikke fjernes. Meldingen ble ikke konvertert til ren tekst."
       ],
       "Empty condition": [
         "Tom betingelse"
@@ -6694,6 +6712,10 @@
         "${ contactEmailsLength } medlem",
         "${ contactEmailsLength } medlemmer"
       ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } medlem)",
+        "${ contactGroupName } (${ numberOfContacts } medlemmer)"
+      ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } medlem)",
         "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } medlemmer)"
@@ -7364,6 +7386,9 @@
       ],
       "Copied to clipboard": [
         "Kopiert til utklippstavlen"
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Kopier engangskoder fra nylige e-poster med ett klikk"
       ],
       "Copy the link to clipboard": [
         "Kopier koblingen til utklippstavlen"
@@ -9312,6 +9337,9 @@
       "We couldn’t process your payment.": [
         "Vi kunne ikke behandle betalingen din."
       ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Vi fant noen e-postlister du ikke leser. Du kan melde deg av dem med ett klikk."
+      ],
       "We have plans designed specifically for users like you who need more than one email address.": [
         "Vi har planer designet spesielt for brukere som deg som trenger mer enn én e-postadresse."
       ],
@@ -10484,6 +10512,12 @@
       "Folder name": [
         "Mappenavn"
       ],
+      "Font family": [
+        "Skriftfamilie"
+      ],
+      "Font size": [
+        "Skriftstørrelse"
+      ],
       "Forwards to": [
         "Videresendes til"
       ],
@@ -10670,6 +10704,9 @@
       "Move to Inbox": [
         "Flytt til innboks"
       ],
+      "Move to Trash": [
+        "Flytt til Papirkurv"
+      ],
       "Moved to ${ labelName }": [
         "Flyttet til ${ labelName }"
       ],
@@ -10729,6 +10766,9 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Varsler er deaktivert, for å aktivere dem, endre nettleserinnstillingene."
+      ],
+      "One-time codes": [
+        "Engangskoder"
       ],
       "Operating system": [
         "Operativsystem"
@@ -10864,6 +10904,10 @@
       ],
       "Search in": [
         "Søk i"
+      ],
+      "Select all ${ count } unused sender": [
+        "Velg ${ count } ubrukt avsender",
+        "Velg alle ${ count } ubrukte avsendere"
       ],
       "Select which Gmail address to connect": [
         "Velg hvilken Gmail-adresse du vil koble til"
@@ -15839,6 +15883,12 @@
       "Moved to ${ label }. Similar messages will be categorized there in the future.": [
         "Flyttet til ${ label }. Lignende meldinger vil bli kategorisert der i fremtiden."
       ],
+      "One-time codes disabled": [
+        "Engangskoder deaktivert"
+      ],
+      "One-time codes enabled": [
+        "Engangskoder aktivert"
+      ],
       "Password copied to clipboard": [
         "Passord kopiert til utklippstavlen"
       ],
@@ -17031,6 +17081,9 @@
       "Start import process": [
         "Start importprosessen"
       ],
+      "Start with a cleaner Inbox": [
+        "Start med en mer ryddig innboks"
+      ],
       "Storage capacity warning": [
         "Advarsel om lagringskapasitet"
       ],
@@ -17405,6 +17458,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Denne brukeren får administratorrettigheter neste gang brukeren logger på."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Oppgrader til en støttet plan for å bruke administratorroller."
       ],

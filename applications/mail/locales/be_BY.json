@@ -4898,6 +4898,9 @@
       "Cannot export this contact": [
         "Немагчыма экспартаваць гэты кантакт"
       ],
+      "Cannot send an empty message. Message is not sent.": [
+        "Немагчыма адправіць пустое паведамленне. Паведамленне не адпраўлена."
+      ],
       "Cannot set expiration longer than retention policy allows.": [
         "Немагчыма задаць тэрмін дзеяння, які даўжэйшы за дазволены палітыкай захоўвання."
       ],
@@ -6845,6 +6848,12 @@
         "${ contactEmailsLength } удзельнікі",
         "${ contactEmailsLength } удзельнікаў",
         "${ contactEmailsLength } удзельнікаў"
+      ],
+      "${ contactGroupName } (${ numberOfContacts } member)": [
+        "${ contactGroupName } (${ numberOfContacts } удзельнік)",
+        "${ contactGroupName } (${ numberOfContacts } удзельнікі)",
+        "${ contactGroupName } (${ numberOfContacts } удзельнікаў)",
+        "${ contactGroupName } (${ numberOfContacts } удзельнікаў)"
       ],
       "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
         "${ contactGroupName } (${ numberOfSelectedContacts } удзельнік з ${ numberOfContactsInGroup })",
@@ -10817,6 +10826,12 @@
       "Folder name": [
         "Назва папкі"
       ],
+      "Font family": [
+        "Сямейства шрыфтоў"
+      ],
+      "Font size": [
+        "Памер шрыфту"
+      ],
       "Forwards to": [
         "Перасылаць на"
       ],
@@ -11003,6 +11018,9 @@
       "Move to Inbox": [
         "Перамясціць ва Уваходныя"
       ],
+      "Move to Trash": [
+        "Перамясціць у сметніцу"
+      ],
       "Moved to ${ labelName }": [
         "Перамешчана ў ${ labelName }"
       ],
@@ -11062,6 +11080,9 @@
       ],
       "Notifications are disabled, to enable them change the browser settings.": [
         "Апавяшчэнні адключаны. Змяніце налады браўзера, каб уключыць іх."
+      ],
+      "One-time codes": [
+        "Аднаразовыя коды"
       ],
       "Operating system": [
         "Аперацыйная сістэма"
@@ -14018,6 +14039,9 @@
       "terms and conditions": [
         "умовамі выкарыстання"
       ],
+      "The Born Private initiative requires a donation.": [
+        "Ініцыятыва Born Private патрабуе ахвяравання."
+      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэння.",
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
@@ -16415,6 +16439,12 @@
       "Moved to ${ label }. Similar messages will be categorized there in the future.": [
         "Перамешчана ў ${ label }. Аналагічныя паведамленні будуць тут раздзяляцца па катэгорыях у будучыні."
       ],
+      "One-time codes disabled": [
+        "Аднаразовыя коды адключаны"
+      ],
+      "One-time codes enabled": [
+        "Аднаразовыя коды ўключаны"
+      ],
       "Password copied to clipboard": [
         "Пароль скапіяваны ў буфер абмену"
       ],
@@ -17648,6 +17678,9 @@
       ],
       "Start import process": [
         "Пачаць працэс імпартавання"
+      ],
+      "Start with a cleaner Inbox": [
+        "Пачніце з больш чыстай паштовай скрыні"
       ],
       "Storage capacity warning": [
         "Папярэджанне пра ёмістасць сховішча"

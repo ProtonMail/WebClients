@@ -6255,6 +6255,10 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "${ dayDiff } روز مانده",
+        "${ dayDiff } روز مانده"
+      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } فضای ذخیره‌سازی برای هر کاربر"
       ],

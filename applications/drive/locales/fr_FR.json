@@ -3342,9 +3342,6 @@
       "External invitations are temporarily disabled.": [
         "Les invitations externes ont été temporairement désactivées."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Les invitations externes sont temporairement désactivées. Réessayez plus tard."
-      ],
       "Failed to change permissions settings": [
         "Impossible de modifier les paramètres des autorisations"
       ],
@@ -3504,7 +3501,7 @@
         "Aucun contact n'a été trouvé pour l'importation."
       ],
       "No drive found to import": [
-        "Aucun disque à importer détecté"
+        "Aucun disque à importer n'a été détecté."
       ],
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
@@ -3720,12 +3717,6 @@
       "The folder name is too long. Please choose a different name.": [
         "Le nom du dossier est trop long, veuillez en choisir un autre."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "L'invitation ne peut pas encore être terminée. Réessayez plus tard."
-      ],
-      "The invitation doesn't exist anymore": [
-        "L'invitation n'existe plus."
-      ],
       "The label name is invalid. Please choose a different name.": [
         "Le nom du label n'est pas valide, veuillez en choisir un autre."
       ],
@@ -3802,7 +3793,7 @@
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
       ],
       "Unexpected error, we can't import the files": [
-        "Une erreur inattendue est survenue, les fichiers n'ont pas pu être importés"
+        "Une erreur inattendue est survenue, les fichiers ne peuvent être importés"
       ],
       "Unknown conflict strategy: ${ strategy }": [
         "Conflit de stratégie inconnu : ${ strategy }"
@@ -4731,6 +4722,9 @@
         "${ calendarsToBeMergedCount } calendrier fusionné",
         "${ calendarsToBeMergedCount } calendriers fusionnés"
       ],
+      "${ claimedAuthor } (unverified sender)": [
+        "${ claimedAuthor } (expéditeur non vérifié)"
+      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "${ completedItems.length } sur ${ items.length } transferts terminés"
       ],
@@ -4782,9 +4776,6 @@
       ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "marque ${ IDEAL_WERO_BRAND_NAME }"
-      ],
-      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
-        "${ invitation.addedByEmail.error.claimedAuthor } (expéditeur inconnu)"
       ],
       "${ invitationsCount } pending invitation": [
         "${ invitationsCount } invitation en attente",
@@ -11203,7 +11194,7 @@
         "La fonction ${ feature } est maintenant active."
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
+        "Assistant d'aide à la rédaction ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account recovery": [
         "Récupération du compte"

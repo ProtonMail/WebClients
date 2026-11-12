@@ -5686,9 +5686,6 @@
       "Allow platform keys": [
         "อนุญาตคีย์แพลตฟอร์ม"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "อนุญาตให้คุณลงทะเบียนคีย์ความปลอดภัยในตัว (เช่น Windows Hello, Face ID, Touch ID หรือ TPM ภายใน)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "คุณแน่ใจหรือไม่ว่าต้องการลบคีย์ความปลอดภัย ${ name }?"
       ],
@@ -7923,12 +7920,6 @@
       "RECOMMENDED": [
         "แนะนำ"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "ไม่สามารถกู้คืนทางอีเมลได้ในขณะที่เปิดใช้งาน ${ PROTON_SENTINEL_NAME }"
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "การกู้คืนด้วยโทรศัพท์ไม่สามารถใช้งานได้ในขณะที่เปิดใช้งาน ${ PROTON_SENTINEL_NAME }"
-      ],
       "Recovery file downloaded": [
         "ดาวน์โหลดไฟล์กู้คืนแล้ว"
       ],
@@ -8366,12 +8357,6 @@
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "ในการถอดรหัสและดูข้อมูลที่ล็อคของคุณหลังจากรีเซ็ตรหัสผ่านแล้ว ให้เลือกวิธีการกู้คืน"
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "เพื่อความปลอดภัยสูงสุดของบัญชี ให้ปิดใช้งาน **การกู้คืนด้วยอีเมลการกู้คืน**"
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "เพื่อความปลอดภัยสูงสุดของบัญชี ให้ปิดใช้งาน **การกู้คืนด้วยโทรศัพท์การกู้คืน**"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "เพื่อป้องกันการโจมตีจากสแปมและการละเมิด โปรดยืนยันว่าคุณไม่ใช่หุ่นยนต์"

@@ -544,6 +544,9 @@
       "Open platform selection dropdown": [
         "Åbn platform-vælgeren"
       ],
+      "Open the browser again": [
+        "Åbn browseren igen"
+      ],
       "Organize vaults": [
         "Organisér bokse"
       ],
@@ -709,6 +712,9 @@
       "Show more": [
         "Vis mere"
       ],
+      "Sign in in the app instead": [
+        "Log ind i appen i stedet"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Log ind på ${ BRAND_NAME }"
       ],
@@ -754,6 +760,9 @@
       ],
       "Trash": [
         "Flyt til papirkurv"
+      ],
+      "Try again": [
+        "Prøv igen"
       ],
       "Try again.": [
         "Prøv igen."
@@ -1876,8 +1885,14 @@
       "Can view this item.": [
         "Kan se dette element."
       ],
+      "Canceled by user": [
+        "Annulleret af brugeren"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Tjekker ${ compromised.progress.completed } af ${ compromised.progress.total } adgangskoder"
+      ],
+      "Choose how you want to sign in": [
+        "Vælg hvordan du vil logge ind"
       ],
       "Confirm your extra password to proceed with its removal.": [
         "Bekræft din ekstra adgangskode for at fortsætte med at fjerne den."
@@ -2064,9 +2079,6 @@
       ],
       "Fill in the CSV with your data": [
         "Udfyld CSV-filen med dine data"
-      ],
-      "Finish signing in in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
-        "Log ind i browservinduet, som lige åbnede. ${ PASS_APP_NAME } fortsætter automatisk så snart du er færdig."
       ],
       "Folder \"${ payload.folder.name }\" created": [
         "Mappen \"${ payload.folder.name }\" blev oprettet"
@@ -2616,6 +2628,9 @@
       "Shared item invitation": [
         "Delte element-invitation"
       ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Log ind og bekræft og i browservinduet, som lige åbnede. ${ PASS_APP_NAME } fortsætter automatisk fra hvor du slap når du er færdig."
+      ],
       "Sign in to your account": [
         "Log ind på din konto"
       ],
@@ -2627,6 +2642,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Brug blot ${ emailBold } næste gang, du har brug for et alias: det bliver ${ automaticallyBold } oprettet, første gang det modtager en e-mail. Hvis du vil have mere finmasket kontrol, kan du også definere ${ rulesHyperLink }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Det kræver din ${ BRAND_NAME }-adgangskode for at starte ${ PASS_APP_NAME } offline."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Det kræver din backupadgangskode for at starte ${ PASS_APP_NAME } offline."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Det kræver din ekstra adgangskode for at starte ${ PASS_APP_NAME } offline."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Det kræver din anden adgangskode for at starte ${ PASS_APP_NAME } offline."
       ],
       "Successfully exported all your items": [
         "Eksporterede alle dine elementer"
@@ -2691,6 +2718,9 @@
       ],
       "The secure link has been removed": [
         "Det sikre link er blevet fjernet"
+      ],
+      "The sign in was not confirmed in time.": [
+        "Login-forsøget blev ikke bekræftet i tide."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Teksten, du forsøger at indsætte, er længere end den maksimalt tilladte længde på ${ maxLength } tegn."
@@ -3001,6 +3031,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kræver, at du sikrer din adgang til ${ PASS_APP_NAME }"
+      ],
+      "Your session could not be authorized.": [
+        "Din session kunne ikke godkendes."
       ]
     },
     "Keyboard key": {
@@ -4836,6 +4869,9 @@
       "Activity for \"${ token.Name }\"": [
         "Aktivitet for \"${ token.Name }\""
       ],
+      "Add an account": [
+        "Tilføj en konto"
+      ],
       "Add custom domain": [
         "Tilføj brugerdomæne"
       ],
@@ -5127,8 +5163,8 @@
         "Flyt ${ trashedItemsCount } element til papirkurven?",
         "Flyt ${ trashedItemsCount } elementer til papirkurven?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Flyt alle elementer til \"${ vaultName }\"?"
+      "Move all items to \"${ target }\"?": [
+        "Flyt alle elementer til \"${ target }\"?"
       ],
       "Move all items?": [
         "Flyt alle elementer?"
@@ -5287,6 +5323,15 @@
       ],
       "Shared via": [
         "Delt via"
+      ],
+      "Sign in timed out": [
+        "Login udløb"
+      ],
+      "Signing you in": [
+        "Logger dig ind"
+      ],
+      "Something went wrong": [
+        "Et eller andet gik galt"
       ],
       "SPF (Optional)": [
         "SPF (Valgfri)"

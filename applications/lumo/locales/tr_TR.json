@@ -1096,9 +1096,6 @@
       "Generate workflow": [
         "İş akışı oluştur"
       ],
-      "Hide safety information": [
-        "Güvenlik bilgilerini gizle"
-      ],
       "Hide usage details for ${ member.name }": [
         "${ member.name } için kullanım ayrıntılarını gizle"
       ],
@@ -1176,9 +1173,6 @@
       ],
       "Share your thoughts": [
         "Düşüncelerinizi paylaşın"
-      ],
-      "Show safety information": [
-        "Güvenlik bilgilerini görüntüle"
       ],
       "Show usage details for ${ member.name }": [
         "${ member.name } için kullanım ayrıntılarını görüntüle"
@@ -2525,6 +2519,9 @@
       "Review token usage and balance deductions over time.": [
         "Belirteç kullanımını ve zaman içinde hesapta kalan tutarın azalmasını gözden geçirin."
       ],
+      "Safety information": [
+        "Güvenlik bilgileri"
+      ],
       "Save all your conversations in a chat history only you can see. Sign in or create an account.": [
         "Tüm sohbetlerinizi yalnızca sizin görebileceğiniz bir sohbet geçmişine kaydedin. Oturum veya bir hesap açın."
       ],
@@ -2614,6 +2611,9 @@
       ],
       "This conversation contains many images. ${ LUMO_SHORT_APP_NAME } will only see the most recent ${ MAX_IMAGES_PER_REQUEST } images.": [
         "Bu yazışmada birçok görsel var. ${ LUMO_SHORT_APP_NAME } yalnızca son ${ MAX_IMAGES_PER_REQUEST } görseli görür."
+      ],
+      "This conversation contains many PDF pages with images. ${ LUMO_SHORT_APP_NAME } will only see the most recent ${ MAX_PDF_PAGE_IMAGES_PER_REQUEST } of them, but still reads the full text of every PDF.": [
+        "Bu yazışmada görsel içeren çok sayıda PDF sayfası bulunuyor. ${ LUMO_SHORT_APP_NAME } bu sayfaların yalnızca son ${ MAX_PDF_PAGE_IMAGES_PER_REQUEST } tanesini görebilir. Ancak her PDF belgesindeki tüm yazıları okumayı sürdürür."
       ],
       "This conversation's full history is also shared by default to help us improve even further. You can opt out on the next dialog.": [
         "Bu yazışmanın tam geçmişi de daha fazla gelişmemize yardımcı olmak için varsayılan olarak paylaşılır. Bir sonraki iletişim kutusundan kapatabilirsiniz."
@@ -4044,9 +4044,6 @@
       "Delete analysis": [
         "İncelemeyi sil"
       ],
-      "Delete chat": [
-        "Sohbeti sil"
-      ],
       "Delete column": [
         "Sütunu sil"
       ],
@@ -4085,6 +4082,9 @@
       ],
       "Documents": [
         "Belgeler"
+      ],
+      "Done": [
+        "Tamam"
       ],
       "Download": [
         "İndir"
@@ -4140,9 +4140,6 @@
       "Export": [
         "Dışa aktar"
       ],
-      "Export chat": [
-        "Sohbeti dışa aktar"
-      ],
       "Favorite": [
         "Sık kullanılanlara ekle"
       ],
@@ -4157,6 +4154,9 @@
       ],
       "Go to project": [
         "Projeye git"
+      ],
+      "Go to project ${ label }": [
+        "${ label } projesine git"
       ],
       "Heading 1": [
         "1. başlık"
@@ -4200,9 +4200,6 @@
       "Manage": [
         "Yönet"
       ],
-      "Manage chats": [
-        "Sohbet yönetimi"
-      ],
       "Manage connectors": [
         "Bağlayıcı yönetimi"
       ],
@@ -4233,8 +4230,17 @@
       "More options": [
         "Daha fazla seçenek"
       ],
+      "Move": [
+        "Taşı"
+      ],
       "Move to project": [
         "Projeye taşı"
+      ],
+      "New chat": [
+        "Yeni sohbet"
+      ],
+      "New project": [
+        "Yeni proje"
       ],
       "Next message": [
         "Sonraki ileti"
@@ -4256,6 +4262,9 @@
       ],
       "Open chat": [
         "${ time } zamanındaki ${ versionNumber } / ${ versionCount }. sürümü görüntülüyorsunuz."
+      ],
+      "Open email app": [
+        "E-posta uygulamasını aç"
       ],
       "Open scheduled task: ${ name }": [
         "Zamanlanmış görevi aç: ${ name }"
@@ -4323,9 +4332,6 @@
       "Remove file": [
         "Dosyayı kaldır"
       ],
-      "Remove from favorites": [
-        "Sık kullanılanlardan kaldır"
-      ],
       "Remove from this task": [
         "Bu görevden kaldır"
       ],
@@ -4347,6 +4353,9 @@
       "Reveal my profile": [
         "Profilimi göster"
       ],
+      "Review prefilled message": [
+        "Önceden doldurulmuş iletiyi gözden geçirin"
+      ],
       "Run history": [
         "Yürütme geçmişi"
       ],
@@ -4362,11 +4371,11 @@
       "Schedule task: ${ taskName }": [
         "Görevi zamanla: ${ taskName }"
       ],
+      "Select": [
+        "Seçin"
+      ],
       "Select all": [
         "Tümünü seç"
-      ],
-      "Select chats": [
-        "Sohbetleri seçin"
       ],
       "Select conversation": [
         "Yazışmayı seçin"
@@ -4415,6 +4424,9 @@
       ],
       "Slides": [
         "Slaytlar"
+      ],
+      "Sort chats: ${ currentLabel }": [
+        "Sohbetleri sırala: ${ currentLabel }"
       ],
       "Source (Markdown)": [
         "Kaynak (Markdown)"
@@ -4484,6 +4496,9 @@
       ],
       "Versions and actions": [
         "Sürümler ve işlemler"
+      ],
+      "View": [
+        "Görüntüle"
       ],
       "View all": [
         "Tümünü görüntüle"
@@ -4608,9 +4623,6 @@
       "Expand": [
         "Genişlet"
       ],
-      "Filter & Sort": [
-        "Süz ve sırala"
-      ],
       "Hide templates": [
         "Kalıpları gizle"
       ],
@@ -4628,9 +4640,6 @@
       ],
       "Load more": [
         "Daha fazla yükle"
-      ],
-      "More options": [
-        "Diğer seçenekler"
       ],
       "New chat": [
         "Yeni sohbet"
@@ -4711,6 +4720,30 @@
       ],
       "Summarize what you achieved, what is still open, and what comes next.": [
         "Tamamladıklarınızı, henüz sonuçlanmamış konuları ve bundan sonra neler olacağını özetleyin."
+      ]
+    },
+    "collider_2025:Disclaimer": {
+      "Continuing shares these details with your email app, which may save or sync the draft before you send it. ${ LUMO_SHORT_APP_NAME } does not send the email. Only continue if you trust the recipients and are comfortable sharing this information.": [
+        "İlerlediğinizde bu ayrıntılar e-posta uygulamanızla paylaşılır. E-posta uygulaması taslağı göndermeden önce kaydedebilir veya eşitleyebilir. ${ LUMO_SHORT_APP_NAME } e-postayı göndermez. Yalnızca alıcılara güveniyorsanız ve bu bilgileri paylaşmakta bir sakınca görmüyorsanız ilerleyin."
+      ],
+      "Email links can contain unexpected recipients or sensitive information. Check all recipients, including CC and BCC, and any prefilled message.": [
+        "E-posta bağlantılarında beklenmeyen alıcılar veya önemli bilgiler bulunabilir. Kopya ve Gizli kopya alanları ile tüm alıcıları ve önceden doldurulmuş iletileri gözden geçirin."
+      ]
+    },
+    "collider_2025:Email field label": {
+      "Subject": [
+        "Konu"
+      ]
+    },
+    "collider_2025:Email recipient label": {
+      "BCC (hidden recipients)": [
+        "Gizli kopya (gizli alıcılar)"
+      ],
+      "CC": [
+        "Kopya"
+      ],
+      "To": [
+        "Alıcı"
       ]
     },
     "collider_2025:Error": {
@@ -4965,6 +4998,9 @@
       ],
       "This does not look like a ChatGPT or Claude export.": [
         "Bu bir ChatGPT veya Claude dışa aktarması gibi görünmüyor."
+      ],
+      "This email link contains invalid or unsupported details and cannot be opened safely.": [
+        "Bu e-posta bağlantısında geçersiz ya da desteklenmeyen bilgiler var ve güvenli bir şekilde açılamaz."
       ],
       "This file could not be read.": [
         "Bu dosya okunamadı."
@@ -5483,6 +5519,9 @@
       "Full history of this conversation, including images and attachments, will be sent to ${ BRAND_NAME } for analysis and improvement.": [
         "Görseller ve ek dosyalar ile bu yazışmanın tam geçmişi, inceleme ve iyileştirme için ${ BRAND_NAME } üzerine gönderilecek."
       ],
+      "Generating a reply": [
+        "Yanıt oluşturuluyor"
+      ],
       "Get faster, more accurate answers from the web, with citations so you can check the source.": [
         "İnternet üzerinden alıntılarla daha hızlı, daha doğru yanıt alarak kaynağı kontrol edebilirsiniz."
       ],
@@ -5560,6 +5599,10 @@
       "Looks like a password or key": [
         "Bir parola ya da anahtar gibi görünüyor"
       ],
+      "Moving ${ current } of ${ total } chat to ${ projectName }…": [
+        "${ total } / ${ current } sohbet ${ projectName } projesine taşıyor…",
+        "${ total } / ${ current } sohbet ${ projectName } projesine taşıyor…"
+      ],
       "Moving chat to ${ projectName }: downloading its messages and files. This can take a while on a slow connection.": [
         "Sohbet ${ projectName } üzerine taşınıyor: İletiler ve dosyalar indiriliyor. Bu işlemin tamamlanması, yavaş bir bağlantıda biraz zaman alabilir."
       ],
@@ -5621,6 +5664,9 @@
       ],
       "No projects yet": [
         "Henüz bir proje yok"
+      ],
+      "No recipient specified": [
+        "Bir alıcı belirtilmemiş"
       ],
       "No runs yet. Results from each run will open here.": [
         "Henüz yürütülmemiş. Her yürütülmenin sonuçları burada açılır."
@@ -5982,6 +6028,9 @@
       "You're viewing version ${ versionNumber } of ${ versionCount }, from ${ time }.": [
         "${ time } zamanındaki ${ versionNumber } / ${ versionCount }. sürümü görüntülüyorsunuz."
       ],
+      "Your default email app will open a draft with these details. Review them before continuing.": [
+        "Varsayılan e-posta uygulamanızda bu bilgilerin bulunduğu bir taslak açılacak. İlerlemeden önce bu bilgileri gözden geçirin."
+      ],
       "Your export is encrypted in transit and processed without being stored on ${ LUMO_SHORT_APP_NAME }'s servers.": [
         "Dışa aktarma verileriniz aktarım sırasında şifrelenir ve ${ LUMO_SHORT_APP_NAME } sunucularına kaydedilmeden işlenir."
       ],
@@ -6314,6 +6363,9 @@
       "Failed to load conversations": [
         "Yazışmalar yüklenemedi"
       ],
+      "Favorite": [
+        "Sık kullanılanlara ekle"
+      ],
       "Feels Like": [
         "Hissedilen"
       ],
@@ -6331,6 +6383,9 @@
       ],
       "Filter by type": [
         "Türe göre süz"
+      ],
+      "Filter chats": [
+        "Sohbetleri süz"
       ],
       "Fine": [
         "İnce"
@@ -6917,8 +6972,8 @@
       "Day ${ day }": [
         "${ day }. gün"
       ],
-      "Favorited": [
-        "Sık kullanılanlara eklendi"
+      "Favorites": [
+        "Sık kullanılanlar"
       ],
       "From projects": [
         "Projelerden"
@@ -6928,6 +6983,15 @@
       ],
       "Monthly": [
         "Aylık"
+      ],
+      "Name (A–Z)": [
+        "Ad (A–Z)"
+      ],
+      "Newest first": [
+        "Yeniden eskiye"
+      ],
+      "Oldest first": [
+        "Eskiden yeniye"
       ],
       "Once": [
         "Bir kez"
@@ -7377,9 +7441,21 @@
         "${ urlCount } adres",
         "${ urlCount } adres"
       ],
+      "Analysed a file": [
+        "Bir dosya incelendi"
+      ],
+      "Analysing a file": [
+        "Bir dosya inceleniyor"
+      ],
+      "Analysing a file...": [
+        "Bir dosya inceleniyor..."
+      ],
       "and ${ more } more": [
         "ve ${ more } diğer",
         "ve ${ more } diğer"
+      ],
+      "Chasing down every last detail": [
+        "En ince ayrıntısına kadar izini sürüyor"
       ],
       "Checked ${ BRAND_NAME } knowledge": [
         "${ BRAND_NAME } bilgilerine bakıldı"
@@ -7501,6 +7577,9 @@
       "Finished your creation": [
         "Yapıtınız tamamlandı"
       ],
+      "Gathering everything into one cosy pile": [
+        "Her şey sıcacık bir yığında toplanıyor"
+      ],
       "Generated image": [
         "Oluşturulan görsel"
       ],
@@ -7516,11 +7595,17 @@
       "Hide tool result": [
         "Araç sonucunu gizle"
       ],
+      "Knocking a few loose facts off the table": [
+        "Birkaç belirsiz bilgiyi patisiyle masadan itiyor"
+      ],
       "Last updated: ": [
         "Son güncelleme: "
       ],
       "Last updated: ${ updatedTime }": [
         "Son güncelleme: ${ updatedTime }"
+      ],
+      "Licking the notes into shape": [
+        "Notlar yalanarak şekillendiriliyor"
       ],
       "Looked at your image": [
         "Görselinize bakıldı"
@@ -7570,6 +7655,9 @@
       "No matches": [
         "Herhangi bir eşleşme bulunamadı"
       ],
+      "Not a single page escapes the whiskers": [
+        "Bıyıklarımızın gözünden hiçbir sayfa kaçmaz"
+      ],
       "One moment": [
         "Biraz bekleyin"
       ],
@@ -7581,6 +7669,12 @@
       ],
       "page ${ page } of ${ pages }": [
         "Sayfa ${ pages } / ${ page }"
+      ],
+      "Part ${ shown } of ${ total }": [
+        "${ shown } / ${ total }"
+      ],
+      "Pawing through the pages": [
+        "Sayfaları patileriyle karıştırıyor"
       ],
       "Performance comparison": [
         "Başarım"
@@ -7596,6 +7690,9 @@
       ],
       "Profit Margin": [
         "Kâr marjı"
+      ],
+      "Purr-using the fine print": [
+        "Küçük yazılar mırlanarak inceleniyor"
       ],
       "Ran ${ shortName }": [
         "${ shortName } yürütüldü"
@@ -7648,6 +7745,9 @@
       "Reading file...": [
         "Dosya okunuyor..."
       ],
+      "Reading this with feline focus": [
+        "Kedi gibi odaklanarak okunuyor"
+      ],
       "Reasoning": [
         "Akıl yürütme"
       ],
@@ -7699,6 +7799,12 @@
       "Searching your files and chats...": [
         "Dosyalarınız ve sohbetleriniz aranıyor..."
       ],
+      "Sharpening claws on the footnotes": [
+        "Dipnotlarda pençeler bileniyor"
+      ],
+      "Sniffing out the important bits": [
+        "Önemli şeylerin kokusunu alıyor"
+      ],
       "Thinking": [
         "Düşünüyor"
       ],
@@ -7707,6 +7813,9 @@
       ],
       "This chat": [
         "Bu sohbet"
+      ],
+      "This is a big one, so it can take a minute or two. Good thing cats are patient.": [
+        "Bu oldukça büyük bir dosya bu yüzden bir iki dakika sürebilir. Neyse ki kediler sabırlıdır."
       ],
       "Thought this through": [
         "Üzerinde düşünüldü"
@@ -7825,6 +7934,10 @@
       ]
     },
     "collider_2025:Success": {
+      "${ moved } chat moved to ${ projectName }": [
+        "${ moved } sohbet ${ projectName } projesine taşındı",
+        "${ moved } sohbet ${ projectName } projesine taşındı"
+      ],
       "All files removed from project": [
         "Tüm dosyalar projeden kaldırıldı"
       ],
@@ -7929,6 +8042,9 @@
       ],
       "About search": [
         "Arama hakkında"
+      ],
+      "All chats": [
+        "Tüm sohbetler"
       ],
       "An AI assistant should empower you, not exploit you for your data.": [
         "Yapay zeka yardımcısı verileriniz için sizi sömürmemeli, aksine size güç katmalıdır."
@@ -8050,9 +8166,6 @@
       "File preview": [
         "Dosya ön izlemesi"
       ],
-      "Filters": [
-        "Süzgeçler"
-      ],
       "Focus your inbox": [
         "Gelen kutunuza odaklanın"
       ],
@@ -8091,6 +8204,9 @@
       ],
       "Introducing ${ LUMO_SHORT_APP_NAME } 2.0": [
         "${ LUMO_SHORT_APP_NAME } 2.0 sürümü yayınlandı"
+      ],
+      "Invalid email link": [
+        "E-posta bağlantısı geçersiz"
       ],
       "Invoke with": [
         "Şununla çağır"
@@ -8163,6 +8279,9 @@
       ],
       "Older": [
         "Daha eski"
+      ],
+      "Open email app?": [
+        "E-posta uygulaması açılsın mı?"
       ],
       "Other connectors": [
         "Diğer bağlayıcılar"
@@ -8368,6 +8487,14 @@
       ]
     },
     "collider_2025:Warning": {
+      "${ failed } couldn't be moved: ${ reasonText }": [
+        "${ failed } taşınamadı: ${ reasonText }",
+        "${ failed } taşınamadı: ${ reasonText }"
+      ],
+      "${ moved } of ${ total } chat moved to ${ projectName }.": [
+        "${ total } / ${ moved } sohbet ${ projectName } projesine taşındı.",
+        "${ total } / ${ moved } sohbet ${ projectName } projesine taşındı."
+      ],
       "Cannot Link Drive Folder": [
         "Drive Klasörü bağlanamadı"
       ],

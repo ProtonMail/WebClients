@@ -5869,9 +5869,6 @@
       "Allow platform keys": [
         "Sta platformsleutels toe"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Het toevoegen van beveiligingssleutels wordt toegestaan (bijv. Windows Hello, gezichts- of vingerafdrukherkenning, ingebouwde TPM's)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Weet u zeker dat u de beveiligingssleutel ${ name } wilt verwijderen?"
       ],
@@ -8289,12 +8286,6 @@
       "RECOMMENDED": [
         "AANBEVOLEN"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Herstel via e-mail is niet beschikbaar zolang ${ PROTON_SENTINEL_NAME } is ingeschakeld."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Herstel via de telefoon is niet beschikbaar zolang ${ PROTON_SENTINEL_NAME } is ingeschakeld."
-      ],
       "Recovery file downloaded": [
         "Herstelbestand gedownload"
       ],
@@ -8749,12 +8740,6 @@
       ],
       "To enable Always-on VPN, the configuration profile needs to be installed on every Mac — the ${ VPN_APP_NAME } client enforces the device profile automatically once it is in place.": [
         "Om Always-on VPN in te schakelen, moet het configuratieprofiel op elke Mac worden geïnstalleerd — de ${ VPN_APP_NAME }-client past het apparatenprofiel automatisch toe zodra het is geïnstalleerd."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Om de hoogst mogelijke beveiliging van uw account te garanderen, schakelt u **Herstel via herstel-e-mail** uit."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Om de hoogst mogelijke beveiliging van uw account te garanderen, schakelt u **Herstel via hersteltelefoon** uit."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."

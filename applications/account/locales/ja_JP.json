@@ -246,6 +246,12 @@
       "Cancel": [
         "キャンセル"
       ],
+      "Cancel ${ planTitle }": [
+        "${ planTitle } をキャンセル"
+      ],
+      "Cancel ${ planTitle } trial": [
+        "${ planTitle } の無料トライアルをキャンセル"
+      ],
       "Cancel request": [
         "リクエストをキャンセル"
       ],
@@ -1915,6 +1921,9 @@
       ]
     },
     "Action subscription": {
+      "Cancel subscription": [
+        "サブスクリプションをキャンセル"
+      ],
       "Reactivate": [
         "再アクティブ化"
       ]
@@ -2339,6 +2348,9 @@
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "キャンセルした場合、無料トライアルが有料サブスクリプションに変換されることはありませんが、トライアル期間の終了までは引き続きプランの恩恵を受けることができます。その後、${ BRAND_NAME } Freeプランにダウングレードされます。"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription.": [
+        "キャンセルすると、無料トライアルは有料サブスクリプションに移行されません。"
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "トライアル期間中、最大${ TRIAL_MAX_DEDICATED_IPS }の専用サーバーをご利用いただけます。"
@@ -3657,6 +3669,9 @@
       "Confirm cancellation": [
         "キャンセルを確認"
       ],
+      "If you exceed your plan limits, you won't be able to:": [
+        "プランの上限を超えると、次の操作ができなくなります："
+      ],
       "Keep current plan": [
         "現在のプランを維持"
       ],
@@ -3671,6 +3686,12 @@
       ],
       "Upload any new files": [
         "新しいファイルをアップロードする"
+      ],
+      "When your ${ planDisplayName } subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "${ planDisplayName } のサブスクリプションは${ endDate } に終了し、そのプランの機能を利用できなくなります。その時点で利用量がプランの上限を超えている場合、一部の機能が一時的に利用できなくなることがあります。"
+      ],
+      "When your subscription ends on ${ endDate }, you'll lose its features. If your usage then exceeds your plan limits, some features may be temporarily unavailable.": [
+        "サブスクリプションが  ${ endDate }  に終了し、その機能を利用できなくなります。その後、利用量がプランの上限を超えた場合、一部の機能が一時的に利用できなくなることがあります。"
       ]
     },
     "Confirm modal title": {
@@ -8266,9 +8287,6 @@
       "Allow platform keys": [
         "プラットフォームキーを許可する"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "組み込みセキュリティキー (Windows Hello、Face ID、Touch ID、または内部TPMなど)を登録できます。"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "セキュリティキー ${ name } を削除してよろしいですか？"
       ],
@@ -9750,6 +9768,9 @@
       "Address copied to clipboard": [
         "アドレスをコピーしました"
       ],
+      "Adds a Meet link to events with at least one participant.": [
+        "参加者が1人以上いるイベントにMeetリンクを追加します。"
+      ],
       "Admin account allocation": [
         "管理者アカウント割り当て"
       ],
@@ -10923,6 +10944,9 @@
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "無効なコードです。${ RequestNewCodeLink } して、もう一度お試しください。"
       ],
+      "Invalid joining link": [
+        "無効な参加リンクです"
+      ],
       "Invitation link expired": [
         "招待リンクは有効期限切れ"
       ],
@@ -11496,12 +11520,6 @@
       "RECOMMENDED": [
         "推奨"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "${ PROTON_SENTINEL_NAME }が有効な間は、メールアドレスによる回復は利用できません。"
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "${ PROTON_SENTINEL_NAME }が有効な間は、電話番号による回復は利用できません。"
-      ],
       "Recovery file downloaded": [
         "回復用ファイルをダウンロードしました"
       ],
@@ -11982,6 +12000,9 @@
       "This is the password you used before the password reset.": [
         "これは以前パスワードリセットに使ったパスワードです。"
       ],
+      "This joining link isn't valid. Please contact your administrator for a new one.": [
+        "この参加リンクは無効です。新しいリンクについては、管理者にお問い合わせください。"
+      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "このリンクはパスワードやクレジットカードなどの情報を盗もうとするウェブサイトに誘導している可能性があります。"
       ],
@@ -12102,11 +12123,14 @@
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "ポスト量子保護を有効にするには、新しいポスト量子暗号鍵の生成を完了する必要があります。"
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "アカウントのセキュリティを最大限に高めるには、**回復用メールアドレスによる回復**を無効化してください。"
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "アカウントのセキュリティを最大限に高めるため、**メールによる復旧 **を無効にしてください。"
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "アカウントのセキュリティを最大限に高めるには、**回復用電話番号による回復**を無効化してください。"
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "アカウントのセキュリティを最大限に高めるため、**電話番号による復旧**を無効にしてください。"
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "アカウントのセキュリティを最大限に高めるため、**電話番号による復旧**を無効のままにしてください。"
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "重要なデータを失わないようにするため、${ DRIVE_APP_NAME } は、あなたと共同編集者が変更を加えるときにファイルの古いバージョンを保存します。 ${ BRAND_NAME } が以前のバージョンを保持する期間を選択します。"
@@ -12450,6 +12474,9 @@
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "キャンセルする場合、サブスクリプションは自動更新されませんが、サブスクリプション期間終了まではプランの恩恵を受けることができます。その後、${ BRAND_NAME }の無料プランにダウングレードされます。"
       ],
+      "When you cancel, your subscription won't start after the trial period.": [
+        "キャンセルすると、トライアル期間終了後にサブスクリプションは開始されません。"
+      ],
       "When you cancel, your subscription won't start, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "お客様がキャンセルされた場合、サブスクリプションは開始されませんが、トライアル期間の終了まではプランの特典を引き続きご利用いただけます。その後、お客様は${ BRAND_NAME }の無料プランにダウングレードされます。"
       ],
@@ -12621,6 +12648,9 @@
       "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
         "今後 24 時間は ${ emailSendLimitNumber } 件を超える招待メールを送信できません"
       ],
+      "You cancel it in the store.": [
+        "ストアからキャンセルしてください。"
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "${ MAIL_APP_NAME } のユーザーは招待できません"
       ],
@@ -12674,6 +12704,9 @@
       ],
       "You have no transactions.": [
         "取引がありません。"
+      ],
+      "You have several subscriptions. Choose the one to cancel: your other subscriptions aren't affected. A cancelled subscription won't be renewed, and you keep its benefits until the end of the subscription period.": [
+        "複数のサブスクリプションがあります。キャンセルするものを選択してください。他のサブスクリプションには影響しません。キャンセル後も契約期間の終了まで特典を利用できます。"
       ],
       "You have unpublished changes": [
         "未公開の変更があります"
@@ -12797,6 +12830,9 @@
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
         "現在、お客様のアカウントはリバースチャージ制度を適用するように構成されていますが、これは選択されたプランではサポートされていません。手続きを進めるには、請求先住所からVAT番号を削除するか、別のプランを選択してください。"
+      ],
+      "Your account was created, but we couldn't finish setting up your plan.": [
+        "アカウントは作成されましたが、プランの設定を完了できませんでした。"
       ],
       "Your account was successfully updated with this promotion": [
         "あなたのアカウントはこのプロモーションで正常に更新されました"
@@ -23047,6 +23083,11 @@
         "無料トライアル"
       ]
     },
+    "Subscription term": {
+      "From ${ startTime }": [
+        "${ startTime }から"
+      ]
+    },
     "Subtitle": {
       "${ DRIVE_PLUS_NAME } offers 1 TB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ DRIVE_PLUS_NAME }は、お客様のファイルや写真用に1 TBのストレージを提供します。また、毎年のストレージボーナスの対象にもなります。"
@@ -25463,6 +25504,9 @@
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Businessへようこそ"
       ],
+      "What changes if you cancel ${ planDisplayName }": [
+        "${ planDisplayName } をキャンセルするとどうなりますか？ "
+      ],
       "What is an alias?": [
         "エイリアスとは？"
       ],
@@ -25635,8 +25679,14 @@
       "Plan": [
         "プラン"
       ],
+      "Renewal": [
+        "更新"
+      ],
       "Status": [
         "ステータス"
+      ],
+      "Subscription term": [
+        "サブスクリプション期間"
       ]
     },
     "Title; create calendar modal": {

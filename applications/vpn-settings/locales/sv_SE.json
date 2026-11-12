@@ -958,6 +958,9 @@
       "Manage subscription": [
         "Hantera prenumeration"
       ],
+      "Manage subscriptions": [
+        "Hantera prenumerationer"
+      ],
       "Manage users/addresses": [
         "Hantera användare/adresser"
       ],
@@ -5365,7 +5368,7 @@
         "Policynamnet måste vara mellan 3 och 40 tecken."
       ],
       "The session has expired. Please try again.": [
-        "Sessionen har löpt ut. Vänligen försök igen."
+        "Sessionen har löpt ut. Försök igen."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Det finns för många mappar i ditt externa konto. Anpassa importen för att ta bort vissa mappar."
@@ -6144,9 +6147,6 @@
       "Allow platform keys": [
         "Tillåt plattformsnycklar"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Låter dig registrera inbyggda säkerhetsnycklar (som Windows Hello, Face ID, Touch ID eller interna TPM)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Är du säker på att du vill ta bort säkerhetsnyckel ${ name }?"
       ],
@@ -6179,6 +6179,9 @@
       ],
       "This will delete all security keys linked to your account.": [
         "Detta kommer ta bort alla säkerhetsnycklar länkade till ditt konto."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Använd den här enhetens fingeravtryck, ansikte, PIN-kod eller skärmlås"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bekräfta din identitet med en fysisk U2F eller FIDO2 säkerhetsnyckel"
@@ -8596,12 +8599,6 @@
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Rekommenderas på betrodda enheter. ${ learnMoreLink }"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Återställning med e-post är inte tillgängligt medan ${ PROTON_SENTINEL_NAME } är aktiverat."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Återställning med telefon är inte tillgängligt medan ${ PROTON_SENTINEL_NAME } är aktiverat."
-      ],
       "Recovery file downloaded": [
         "Återställningsfil nerladdad"
       ],
@@ -9054,11 +9051,17 @@
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "För att dekryptera och visa dina låsta data efter en lösenordsåterställning, välj en återställningsmetod."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera **Återställning med e-post för återställning**."
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera **Återställning via e-postl**."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera **Återställning med telefon för återställning**."
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera **Återställning via telefon**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera **Återställning via e-postl**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "För att säkerställa högsta möjliga säkerhet för ditt konto, inaktivera **Återställning via telefon**."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
@@ -10948,6 +10951,11 @@
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Lägg till följande TXT-post. Obs! DNS-poster kan ta flera timmar att uppdatera."
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Lämna fält tomt"
       ]
     },
     "Label for new member": {
@@ -16888,7 +16896,7 @@
         "${ startTime } – ${ endTime }"
       ],
       "From ${ startTime }": [
-        "Från  ${ startTime }"
+        "Från ${ startTime }"
       ]
     },
     "Subtitle": {

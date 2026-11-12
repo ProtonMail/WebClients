@@ -1490,6 +1490,9 @@
       "Manage subscription": [
         "Gestisci abbonamento"
       ],
+      "Manage subscriptions": [
+        "Gestisci gli abbonamenti"
+      ],
       "Manage users/addresses": [
         "Gestisci utenti/indirizzi"
       ],
@@ -3547,6 +3550,11 @@
       ],
       "Website access problem": [
         "Problema di accesso al sito web"
+      ]
+    },
+    "Business signup action": {
+      "Start using ${ planTitle } now": [
+        "Inizia subito a utilizzare ${ planTitle }"
       ]
     },
     "Button": {
@@ -7289,6 +7297,9 @@
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "É richiesto inserire un messaggio quando si segnala una violazione del copyright o di dati rubati"
+      ],
       "Account does not exist": [
         "L'account non esiste"
       ],
@@ -7346,11 +7357,26 @@
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Le risposte automatiche sono una funzione a pagamento. Si prega di passare a un account a pagamento per utilizzare questa funzionalità."
       ],
+      "Bookmark password is not available": [
+        "La password dell'elemento preferito non è disponibile"
+      ],
       "Calendar cannot be found": [
         "Impossibile trovare il calendario"
       ],
       "Calendar limit reached": [
         "Limite calendario raggiunto"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Impossibile aggiungere una foto all'album senza un nome valido"
+      ],
+      "Cannot download a folder": [
+        "Non è possibile scaricare una cartella"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Non è possibile spostare un elemento senza un nome valido, rinomina l'elemento prima di continuare"
+      ],
+      "Cannot share root folder": [
+        "Impossibile condividere cartella principale"
       ],
       "Cannot verify the author of this file": [
         "Impossibile verificare l'autore di questo file"
@@ -7379,8 +7405,14 @@
       "Contact your administrator to start a migration.": [
         "Contatta il tuo amministratore per avviare la migrazione."
       ],
+      "Copy operation aborted": [
+        "Copia interrotta"
+      ],
       "Copying item to a non-folder is not allowed": [
         "Non è possibile copiare l'elemento in un elemento che non è una cartella"
+      ],
+      "Could not find an available name": [
+        "Impossibile trovare un nome disponibile"
       ],
       "Could not generate the device profile. Please try again.": [
         "Non è stato possibile creare il profilo del dispositivo. Riprova."
@@ -7391,11 +7423,17 @@
       "Could not load sharing details": [
         "Impossibile caricare i dettagli della condivisione"
       ],
+      "Could not load the image preview: ${ message }": [
+        "Impossibile caricare l'immagine di anteprima: ${ message }"
+      ],
       "Could not open created vault": [
         "Impossibile aprire la cassaforte creata"
       ],
       "Could not open updated vault": [
         "Impossibile aprire la cassaforte aggiornata"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Impossibile leggere parte di questo file: ${ message }"
       ],
       "Could not save preference": [
         "Impossibile salvare la preferenza"
@@ -7418,6 +7456,12 @@
       "Couldn't load your connections": [
         "Impossibile caricare le tue connessioni"
       ],
+      "Creating documents in non-folders is not allowed": [
+        "Non è permesso creare documenti al di fuori delle cartelle"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Creare file al di fuori delle cartelle non è consentito"
+      ],
       "Creating folders in non-folders is not allowed": [
         "Non è possibile creare cartelle all'interno di elementi che non sono cartelle"
       ],
@@ -7428,6 +7472,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Deseleziona almeno ${ calendarsToFixCount } calendario o",
         "Deseleziona almeno ${ calendarsToFixCount } calendari o"
+      ],
+      "Device not found": [
+        "Dispositivo non trovato"
       ],
       "Domain not available, try again later": [
         "Dominio non disponibile, riprovare più tardi"
@@ -7468,6 +7515,9 @@
       "Error publishing changes": [
         "Errore nella pubblicazione delle modifiche"
       ],
+      "Expiration date cannot be in the past": [
+        "La data di scadenza non può essere nel passato"
+      ],
       "Expired": [
         "Scaduto"
       ],
@@ -7480,14 +7530,32 @@
       "Failed to add group member": [
         "Impossibile aggiungere un membro al gruppo"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Impossibile decifrare chiave preferita: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Impossibile decriptare il nome dell'elemento preferito: ${ message }"
+      ],
       "Failed to decrypt bookmark password: ${ message }": [
         "Impossibile decrittografare la password del segnalibro: ${ message }"
       ],
       "Failed to decrypt content key: ${ message }": [
         "Impossibile decrittografare la chiave del contenuto: ${ message }"
       ],
+      "Failed to decrypt item name: ${ message }": [
+        "Impossibile decifrare nome elemento: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Impossibile decriptare la chiave del nodo: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Impossibile decriptare i metadati di revisione"
+      ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Impossibile ottenere sessioni attive. ${ refresh } o riprova più tardi."
+      ],
+      "Failed to get inviter keys": [
+        "Impossibile ottenere le chiavi dell'invitante"
       ],
       "Failed to get the organization domains": [
         "Impossibile recuperare i domini dell'organizzazione"
@@ -7515,6 +7583,9 @@
       ],
       "Failed to update detailed monitoring.": [
         "Impossibile aggiornare il monitoraggio dettagliato."
+      ],
+      "Failed to verify invitation": [
+        "Impossibile verificare l'invito"
       ],
       "File download failed due to empty response": [
         "Download del file non riuscito a causa di una risposta vuota."
@@ -7612,8 +7683,14 @@
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
+      "Invitation not found": [
+        "Invito non trovato"
+      ],
       "Item content cannot exceed 40KB": [
         "Il contenuto dell'elemento non può superare i 40 Kb"
+      ],
+      "Item not found": [
+        "Elemento non trovato"
       ],
       "Label name cannot be empty.": [
         "Il nome dell'etichetta non può essere vuoto."
@@ -7646,6 +7723,18 @@
       "Missing signature": [
         "Firma mancante"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Firma per ${ signatureType } mancante"
+      ],
+      "Move operation aborted": [
+        "Spostamento annullato"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Impossibile spostare l'elemento: la destinazione non è una cartella."
+      ],
+      "Moving root item is not allowed": [
+        "Non è consentito spostare un elemento principale"
+      ],
       "Name already exists": [
         "Nome già esistente"
       ],
@@ -7655,6 +7744,9 @@
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri.",
         "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri."
+      ],
+      "Name must not be empty": [
+        "Il campo \"nome\" non può essere vuoto"
       ],
       "Name required": [
         "Nome obbligatorio"
@@ -7697,6 +7789,9 @@
       ],
       "Not a valid number": [
         "Numero non valido"
+      ],
+      "Only admins can convert external invitations": [
+        "Solo gli admin possono convertire inviti esterni"
       ],
       "Only capitalization and punctuation (periods, hyphens, and underscores) can be changed for this address": [
         "Per questo indirizzo è possibile modificare solo le maiuscole e la punteggiatura (punti, trattini e trattini bassi)"
@@ -7865,6 +7960,12 @@
         "Destinatario duplicato rimosso: ${ joinedRecipients }",
         "Destinatari duplicati rimossi: ${ joinedRecipients }"
       ],
+      "Renaming root item is not allowed": [
+        "Non è consentito rinominare un elemento chiave"
+      ],
+      "Request aborted": [
+        "Richiesta annullata"
+      ],
       "Request timed out": [
         "Timeout della richiesta"
       ],
@@ -7900,6 +8001,24 @@
       ],
       "Signature verification failed": [
         "Verifica della firma non riuscita"
+      ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Verifica della firma non riuscita: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Verifica della firma per ${ signatureType } fallita"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Verifica della firma per  ${ signatureType } non riuscita: ${ errorMessage }"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "L'upload di alcuni file è fallito. Prova di nuovo."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "L'upload di alcune parti del file non è stato completato. Riprova."
+      ],
+      "Some items could not be loaded": [
+        "Alcuni elementi non sono stati caricati"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Alcuni nomi delle tue cartelle non sono disponibili. Personalizza l'importazione per modificare questi nomi."
@@ -7953,7 +8072,7 @@
         "L'importo dovuto è cambiato. Per favore riprova."
       ],
       "The device you scanned the QR code with didn't send your sign-in details. Update the app on that device and try again.": [
-        "Il dispositivo con cui hai scandito il codice QR non ha inviato i dettagli d'accesso. Aggiorna l'applicazione su quel dispositivo e riprova."
+        "Il dispositivo con cui hai inquadrato il codice QR non ha inviato i dati di accesso. Aggiorna l'applicazione e riprova."
       ],
       "The email addresses do not match": [
         "Gli indirizzi email non corrispondono."
@@ -8039,6 +8158,9 @@
       "This folder name is not available. Please choose a different name.": [
         "Questo nome della cartella non è disponibile. Scegli un nome diverso."
       ],
+      "This item has no image preview": [
+        "Questo elemento non ha un'immagine di anteprima"
+      ],
       "This item is no longer shared": [
         "Questo elemento non è più condiviso"
       ],
@@ -8062,6 +8184,9 @@
       ],
       "Too many requests. Please try again later": [
         "Troppe richieste. Riprova più tardi"
+      ],
+      "Too many server errors, please try again later": [
+        "Troppi errori del server, riprova più tardi"
       ],
       "Too many server requests, please try again later": [
         "Troppe richieste. Riprova più tardi"
@@ -8147,11 +8272,20 @@
       "You can create public links for your own files only": [
         "Puoi creare link pubblici solo per i tuoi file."
       ],
+      "You can only leave items that are shared with you": [
+        "Puoi lasciare soltanto gli oggetti che sono stati condivisi con te"
+      ],
+      "You can only upload a new version to a file": [
+        "È possibile caricare solo nuove versioni ad un file"
+      ],
       "You can update a public link for your own files only": [
         "Puoi aggiornare un link pubblico solo per i tuoi file."
       ],
       "You do not have access to this item": [
         "Non hai accesso a questo elemento"
+      ],
+      "You do not have access to this shared item": [
+        "Accesso non consentito a questo elemento condiviso"
       ],
       "You have reached the maximum number of calendars.": [
         "Hai raggiunto il numero massimo di calendari."
@@ -8351,6 +8485,9 @@
       "Ask your administrator to enable Account monitor.": [
         "Chiedi al tuo amministratore di attivare il monitoraggio dell'Account."
       ],
+      "Check your internet connection and try again.": [
+        "Controlla la tua connessione e riprova."
+      ],
       "Enable account monitor to start loading event.": [
         "Attiva il monitor dell'account per iniziare a caricare l'evento."
       ],
@@ -8383,6 +8520,9 @@
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Non è stato possibile caricare questa pagina. Aggiornar questa pagina o controlla la connessione internet."
+      ],
+      "We couldn't load your invitation": [
+        "Non è stato possibile caricare l'invito"
       ]
     },
     "Error message, Disable account": {
@@ -8980,9 +9120,6 @@
       "Allow platform keys": [
         "Consenti chiavi della piattaforma"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Ti consente di registrare chiavi di sicurezza integrate (come Windows Hello, Face ID, Touch ID o TPM interni)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Sei sicuro di voler eliminare la chiave di sicurezza ${ name }?"
       ],
@@ -9021,6 +9158,9 @@
       ],
       "Touch your security key to continue.": [
         "Tocca la tua chiave di sicurezza per continuare."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Utilizza l'impronta digitale, il riconoscimento facciale, il PIN o il blocco dello schermo di questo dispositivo"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifica la tua identità con una U2F fisica o una chiave di sicurezza FIDO2"
@@ -10668,6 +10808,9 @@
       "Address copied to clipboard": [
         "Indirizzo copiato negli appunti"
       ],
+      "Adds a Meet link to events with at least one participant.": [
+        "Aggiunge un collegamento Meet a eventi con almeno un partecipante."
+      ],
       "Admin account allocation": [
         "Allocazione dell'account amministratore"
       ],
@@ -11018,17 +11161,17 @@
       "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
         "Attivandolo, potrai solo fare l'accesso con **${ primaryEmail }**."
       ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
-        "Attivandolo, potrai fare l'accesso solo con il tuo nome utente originale **${ username }**, o da solo o come **${ firstEmail }**, **@${ secondDomain }** oppure **${ thirdDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
-        "Attivando questa opzione, potrai accedere solo con il tuo nome utente originale **${ username }**, da solo o come **${ firstEmail }**, oppure **@${ secondDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
-        "Attivando questa opzione, potrai accedere solo con il tuo nome utente originale **${ username }**, da solo o come **${ firstEmail }**."
-      ],
       "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
         "Attivandolo, potrai fare l'accesso solo con il tuo nome utente **${ username }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Attivando questa opzione, potrai effettuare l'accesso solo con il tuo nome utente, **${ username }**, oppure con **${ firstEmail }** o **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Attivando questa opzione, potrai effettuare l'accesso solo con il tuo nome utente, **${ username }**, oppure con **${ firstEmail }**, **${ secondEmail }** o **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Attivando questa opzione, potrai accedere solo con il tuo nome utente, **${ username }**, oppure con **${ firstEmail }**."
       ],
       "Can you access your active session?": [
         "Riesci ad accedere alla tua sessione attiva?"
@@ -12049,6 +12192,9 @@
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
         "Codice non valido. ${ RequestNewCodeLink } e riprova."
       ],
+      "Invalid invitation link": [
+        "Collegamento d'invito non valido"
+      ],
       "Invalid joining link": [
         "Collegamento per partecipare non valido"
       ],
@@ -12716,12 +12862,6 @@
       ],
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Consigliato su dispositivi affidabili. ${ learnMoreLink }"
-      ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Il recupero tramite email non è disponibile mentre ${ PROTON_SENTINEL_NAME } è attivo."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Il recupero tramite telefono non è disponibile mentre ${ PROTON_SENTINEL_NAME } è attivo."
       ],
       "Recovery file downloaded": [
         "File di recupero scaricato"
@@ -13405,11 +13545,17 @@
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Per attivare la protezione post-quantistica, dovrai completare la generazione delle tue nuove chiavi crittografiche post-quantistiche."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Per garantire la massima sicurezza possibile del tuo account, disattiva il **recupero tramite email di recupero**."
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Per garantire la massima sicurezza possibile del tuo account, disattiva l'opzione **Recupero tramite e-mail**."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Per garantire la massima sicurezza possibile del tuo account, disattiva il **recupero tramite telefono di recupero**."
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Per garantire la massima sicurezza possibile del tuo account, disattiva la funzione **Recupero tramite telefono**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Per garantire la massima sicurezza possibile del tuo account, mantieni disattivata l'opzione **Recupero tramite e-mail**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Per garantire la massima sicurezza possibile del tuo account, mantieni disattivata l'opzione **Recupero tramite telefono**."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Per essere sicuri che tu non perda dati importanti, ${ DRIVE_APP_NAME } salva le vecchie versioni dei tuoi file mentre tu e i tuoi collaboratori effettuate delle modifiche. Seleziona per quanto tempo ${ BRAND_NAME } deve mantenere le versioni precedenti."
@@ -13738,6 +13884,12 @@
       "We couldn't send invoices to your email address. Automatic invoicing has been paused until you update the address.": [
         "Non è stato possibile inviare le fatture al tuo indirizzo email. La fatturazione automatica è stata sospesa finché non aggiorni l'indirizzo."
       ],
+      "We couldn't verify this invitation. Please ask your administrator, ${ admin }, to remove you from the organization and add you again.": [
+        "Non è stato possibile verificare questo invito. Chiedi al tuo amministratore, ${ admin }, di rimuoverti dall'organizzazione e aggiungerti di nuovo."
+      ],
+      "We couldn't verify your organization's identity. Please ask your administrator, ${ admin }, to check the organization identity in the organization settings. Then open this link again.": [
+        "Non è possibile verificare l'identità della tua organizzazione. Chiedi al tuo amministratore, ${ admin }, di controllare l'identità dell'organizzazione nelle relative impostazioni, quindi apri nuovamente questo collegamento"
+      ],
       "We couldn’t process your payment.": [
         "Il pagamento non può essere completato."
       ],
@@ -13861,14 +14013,14 @@
       "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Quando l'accesso è limitato, puoi utilizzare solo il tuo nome utente **${ username }** per accedere. Gli altri tuoi indirizzi non possono essere associati al tuo account, anche se qualcuno li conosce."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Quando l'accesso è limitato, puoi accedere solo con il tuo nome utente originale **${ username }**, da solo o come **${ firstEmail }**, **@${ secondDomain }**, oppure **@${ thirdDomain }**. Gli altri tuoi indirizzi email non funzionerebbero per l'accesso."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Quando l'accesso è limitato, puoi effettuare l'accesso solo con il tuo nome utente, **${ username }**, oppure con **${ firstEmail }** o **${ secondEmail }**. Gli altri tuoi indirizzi e-mail non funzioneranno per l'accesso."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Quando l'accesso è limitato, puoi accedere solo con il tuo nome utente originale **${ username }**, o da solo o come **${ firstEmail }**, oppure **@${ secondDomain }**. Gli altri tuoi indirizzi email non funzionerebbero per l'accesso."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Quando l'accesso è limitato, puoi effettuare l'accesso solo con il tuo nome utente, **${ username }**, oppure con **${ firstEmail }**, **${ secondEmail }** o **${ thirdEmail }**. Gli altri tuoi indirizzi e-mail non funzioneranno per l'accesso."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Quando l'accesso è limitato, puoi accedere solo con il tuo nome utente originale **${ username }**, o da solo o come **${ firstEmail }**. Gli altri tuoi indirizzi email non funzionerebbero per l'accesso."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Quando l'accesso è limitato, puoi effettuare l'accesso solo con il tuo nome utente, **${ username }**, oppure con **${ firstEmail }**. Gli altri tuoi indirizzi e-mail non funzioneranno per l'accesso."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Quando annulli, il tuo abbonamento non verrà rinnovato, ma potrai comunque usufruire dei benefici del piano fino alla fine del periodo di abbonamento. Successivamente, verrà effettuato il downgrade al piano ${ BRAND_NAME } Free."
@@ -14151,6 +14303,9 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Dovresti esportare un backup di questa chiave nel caso in cui ti serva per ripristinare i dati crittografati con essa."
+      ],
+      "You still need to reply for the organizer to see your response.": [
+        "Devi rispondere per far in modo che l'organizzatore possa leggere la tua risposta."
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Devi ancora rispondere agli inviti per consentire all'organizzatore di vedere la tua risposta."
@@ -16900,6 +17055,9 @@
       ],
       "Invalid ${ group.name } record found": [
         "Trovato record ${ group.name } non valido"
+      ],
+      "Leave field blank": [
+        "Lascia il campo vuoto"
       ],
       "Priority": [
         "Priorità"
@@ -21486,8 +21644,14 @@
       "Comprehensive privacy and security suite.": [
         "Suite completa per la privacy e la sicurezza."
       ],
+      "Confidential video conferencing for your business.": [
+        "Videoconferenze riservate per la tua azienda."
+      ],
       "Defeat spam, tracking, and ads with encrypted email and a secure calendar.": [
         "Sconfiggi spam, tracciamento e annunci con un'email crittografata e un calendario sicuro."
+      ],
+      "Essential privacy and security suite for your business.": [
+        "Una suite indispensabile per la privacy e la sicurezza della tua azienda."
       ],
       "For next-level password management and identity protection.": [
         "Per una gestione delle password e protezione dell'identità di livello superiore."
@@ -21495,14 +21659,29 @@
       "Great for everyday use and photo backups.": [
         "Ottimo per l'uso quotidiano e i backup delle foto."
       ],
+      "Next-level password management for your business.": [
+        "Una gestione delle password di livello superiore per la tua azienda."
+      ],
       "Perfect for getting started with secure cloud storage.": [
         "Perfetto per iniziare con l'archiviazione cloud sicura."
+      ],
+      "Premium privacy and security suite for your business.": [
+        "Suite premium per la privacy e la sicurezza della tua azienda."
       ],
       "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
         "Suite per la privacy con servizi premium e ${ unlimitedPlanMaxSpace } di archiviazione cloud crittografata, tutto in un unico pacchetto."
       ],
+      "Privacy-first AI writing assistant for your business.": [
+        "Un assistente di scrittura basato sull'intelligenza artificiale che mette al primo posto la privacy per la tua azienda."
+      ],
       "Secure cloud storage and collaboration for teams.": [
         "Archiviazione cloud sicura e collaborazione per i team."
+      ],
+      "Secure cloud storage and file sharing for your business.": [
+        "Archiviazione sicura su cloud e condivisione di file per la tua azienda."
+      ],
+      "Secure, high-speed VPN access for your business.": [
+        "Accesso VPN sicuro e ad alta velocità per la tua azienda."
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Il piano ideale per gli utenti avanzati attenti alla privacy."
@@ -21620,8 +21799,17 @@
       "attributes": [
         "Attributi"
       ],
+      "content key": [
+        "Chiave del contenuto"
+      ],
+      "hash key": [
+        "chiave hash"
+      ],
       "key": [
         "chiave"
+      ],
+      "membership": [
+        "abbonamento"
       ],
       "name": [
         "nome"
@@ -23411,6 +23599,9 @@
       "${ referrerName } is inviting you to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "${ referrerName } ti sta invitando a unirti a oltre 100 milioni di persone che hanno scelto di mantenere il controllo dei propri dati con l'ecosistema crittografato di ${ BRAND_NAME }."
       ],
+      "${ renewalPriceElement } after the first 12 months": [
+        "${ renewalPriceElement } dopo i primi 12 mesi"
+      ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "${ totalDriveStorageSize } di archiviazione cloud per i tuoi file e foto"
       ],
@@ -23466,6 +23657,12 @@
       "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
         "E ricevi ${ referralInfo.uiData.refereeRewardAmount } in crediti, se ti iscrivi."
       ],
+      "Billed yearly": [
+        "Fatturato annualmente"
+      ],
+      "Billed yearly, renews on ${ renewalTime }": [
+        "Fatturazione annuale, rinnovo previsto per il ${ renewalTime }"
+      ],
       "Billing Cycle": [
         "Ciclo di fatturazione"
       ],
@@ -23478,8 +23675,17 @@
       "Bundle": [
         "Pacchetto"
       ],
+      "Business information": [
+        "Informazioni commerciali"
+      ],
+      "Checkout": [
+        "Procedi all'acquisto"
+      ],
       "Choose a secure ${ MAIL_APP_NAME } address to get started": [
         "Scegli un indirizzo sicuro ${ MAIL_APP_NAME } per iniziare"
+      ],
+      "Claim your additional ${ referralDiscountPercent }% discount": [
+        "Richiedi il tuo sconto aggiuntivo del ${ referralDiscountPercent }%"
       ],
       "Collaborative document editing": [
         "Modifica collaborativa di documenti"
@@ -23496,23 +23702,44 @@
       "Confirm payment, access your Drive": [
         "Conferma pagamento, accedi al tuo Drive"
       ],
+      "Confirmation": [
+        "Conferma"
+      ],
       "Connect all your devices": [
         "Connetti tutti i tuoi dispositivi"
       ],
       "Continue with ${ planName }": [
         "Continua con ${ planName }"
       ],
+      "Coupon": [
+        "Codice sconto"
+      ],
       "Create a ${ BRAND_NAME } Account": [
         "Crea un account ${ BRAND_NAME }"
       ],
+      "Create account": [
+        "Crea account"
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Crea il tuo account ${ BRAND_NAME }"
+      ],
+      "Creating your account": [
+        "Creazione del tuo account"
+      ],
       "Custom email domain": [
         "Dominio email personalizzato"
+      ],
+      "Discount": [
+        "Sconto"
       ],
       "Encrypted email with ${ totalMailStorageSize } storage": [
         "Email crittografata con ${ totalMailStorageSize } di spazio di archiviazione"
       ],
       "Encrypted password manager": [
         "Gestore di password crittografato"
+      ],
+      "Encrypted solutions to protect": [
+        "Soluzioni crittografate per la protezione"
       ],
       "End-to-end encryption": [
         "Crittografia end-to-end"
@@ -23522,6 +23749,9 @@
       ],
       "Every free account comes with:": [
         "Ogni account gratuito include:"
+      ],
+      "For ${ countryElement }": [
+        "Per ${ countryElement }"
       ],
       "Free": [
         "Free"
@@ -23543,6 +23773,9 @@
       ],
       "get a secure ${ MAIL_APP_NAME } address.": [
         "ottieni un indirizzo ${ MAIL_APP_NAME } sicuro."
+      ],
+      "Get an additional ${ referralDiscountPercent }% off your first year of ${ BRAND_NAME } for Business": [
+        "Ottieni uno sconto aggiuntivo del ${ referralDiscountPercent }% sul tuo primo anno di abbonamento a ${ BRAND_NAME } for Business"
       ],
       "Gifted by **${ referrerName }**": [
         "Offerto da **${ referrerName }**"
@@ -23576,6 +23809,9 @@
       ],
       "Password-protected messages": [
         "Messaggi protetti da password"
+      ],
+      "Pick a plan to get started.": [
+        "Scegli un piano per iniziare."
       ],
       "Pick a service to get started.": [
         "Scegli un servizio per iniziare."
@@ -23644,14 +23880,23 @@
       "Sign up, protect your files": [
         "Registrati, proteggi i tuoi file"
       ],
+      "Something went wrong": [
+        "Si è verificato un errore"
+      ],
       "Start using ${ PASS_APP_NAME }": [
         "Inizia a utilizzare ${ PASS_APP_NAME }"
+      ],
+      "Summary": [
+        "Riepilogo"
       ],
       "Swiss-based": [
         "Con sede in Svizzera"
       ],
       "Sync files across devices and users": [
         "Sincronizza file tra dispositivi e utenti"
+      ],
+      "Taxes may apply.": [
+        "Potrebbero essere applicate delle imposte."
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "Il nome dell'organizzazione sarà visibile ai tuoi utenti mentre saranno connessi al loro account."
@@ -23689,6 +23934,9 @@
       "Unlimited hide-my-email aliases": [
         "Alias hide-my-email illimitati"
       ],
+      "Unlimited vaults for your passwords": [
+        "Spazi di archiviazione illimitati per le tue password"
+      ],
       "Up to 2 users": [
         "Fino a 2 utenti"
       ],
@@ -23710,6 +23958,9 @@
       "use your own email.": [
         "usa la tua email."
       ],
+      "Users": [
+        "Utenti"
+      ],
       "VPN with servers in ${ VPN_SERVERS.free.countries } countries": [
         "VPN con server in ${ VPN_SERVERS.free.countries } paesi"
       ],
@@ -23717,8 +23968,17 @@
         "VPN con server in ${ VPN_SERVERS.free.countries } paese",
         "VPN con server in ${ VPN_SERVERS.free.countries } paesi"
       ],
+      "We couldn't finish setting up your account. Please contact support.": [
+        "Non siamo riusciti a completare la configurazione del tuo account. Ti preghiamo di contattare l'assistenza."
+      ],
       "We’ll email you before your trial ends.": [
         "Ti invieremo un'email prima della fine del periodo di prova."
+      ],
+      "WS Premium": [
+        "WS Premium"
+      ],
+      "WS Standard": [
+        "Standard WS"
       ],
       "Yearly": [
         "Annuale"
@@ -23726,8 +23986,17 @@
       "You are all set": [
         "Tutto pronto"
       ],
+      "You're invited to join 100,000+ organizations that protect their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "Ti invitiamo a unirti alle oltre 100.000 organizzazioni che proteggono i propri dati grazie all'ecosistema crittografato di ${ BRAND_NAME }."
+      ],
+      "Your account has been created, but we couldn't sign you in.": [
+        "Il tuo account è stato creato, ma non siamo riusciti a effettuare l'accesso."
+      ],
       "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
         "Il tuo account include l'accesso a funzionalità gratuite in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "your entire business": [
+        "tutta la vostra attività"
       ],
       "Your plan": [
         "Il tuo piano"
@@ -25649,6 +25918,9 @@
       "/user per month": [
         "/utente al mese"
       ],
+      "/user/month": [
+        "/ utente/mese"
+      ],
       "/year": [
         "/anno"
       ]
@@ -26728,6 +27000,9 @@
       ],
       "Email": [
         "Email"
+      ],
+      "Email address": [
+        "Indirizzo email"
       ],
       "Email breaches": [
         "Violazioni delle email"

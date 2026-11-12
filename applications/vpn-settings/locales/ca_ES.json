@@ -959,7 +959,7 @@
         "Mostra informació sobre les opcions de recuperació"
       ],
       "Learn how this works": [
-        "Apreneu el funcionament d'això"
+        "Vegeu com funciona això"
       ],
       "Learn more": [
         "Més informació"
@@ -992,6 +992,9 @@
         "Gestiona les etiquetes"
       ],
       "Manage subscription": [
+        "Gestiona la subscripció"
+      ],
+      "Manage subscriptions": [
         "Gestiona la subscripció"
       ],
       "Manage users/addresses": [
@@ -1460,7 +1463,7 @@
         "Test de la configuració SAML"
       ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
-        "Tocar per alternar ${ LUMO_SHORT_APP_NAME }"
+        "Commuta ${ LUMO_SHORT_APP_NAME }"
       ],
       "Top up": [
         "Recarrega"
@@ -2680,10 +2683,10 @@
         "Historial de xat bàsic"
       ],
       "Compliance with data protection regulations": [
-        "Compleix amb el reglament de protecció de dades"
+        "Compliment del reglament de protecció de dades"
       ],
       "Data never used for AI training": [
-        "Les dades no s'utilitzaran mai per entrenament de la IA"
+        "Les dades no s'utilitzaran mai per a l'entrenament de la IA"
       ],
       "Full chat history with search": [
         "Historial de xat complet amb cerca"
@@ -2733,7 +2736,7 @@
         "Xats d'alta velocitat i característiques d'IA avançades."
       ],
       "Private video calls for the conversations that matter.": [
-        "Videotrucades privades per les converses importants."
+        "Videotrucades privades per a les converses importants."
       ]
     },
     "color": {
@@ -3911,7 +3914,7 @@
         "Emmagatzematge disponible: ${ storageText }"
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
-        "Bloquegeu la capacitat de Google per crear el vostre perfil. Gmail no podrà veure què feu a ${ MAIL_APP_NAME }"
+        "Bloquegeu la capacitat de Google de crear el vostre perfil. Gmail no podrà veure què feu a ${ MAIL_APP_NAME }"
       ],
       "Bring over your email, calendar events, and contacts from another provider.": [
         "Porteu el vostre correu electrònic, els esdeveniments del calendari i els contactes des d'un altre proveïdor."
@@ -4065,7 +4068,7 @@
         "Per continuar rebent i enviant missatges de Gmail a ${ BRAND_NAME }, torneu a connectar els vostres comptes."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Per importar mitjançant un fitxer CSV i VCF, assegureu-vos que el fitxer no superi ${ MAX_IMPORT_FILE_SIZE_STRING } o els ${ maxContactString } contactes. Si el vostre fitxer és més gran, dividiu-lo en fitxers més petits. ${ learnMoreLink }."
+        "Per a importar mitjançant un fitxer CSV o VCF, assegureu-vos que no superi ${ MAX_IMPORT_FILE_SIZE_STRING } o ${ maxContactString } contactes. Si és més gran, dividiu-lo en fitxers més petits. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Per a importar els vostres contactes de Google o Outlook, ${ easySwitchLink }"
@@ -5647,7 +5650,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Inicieu la sessió amb una adreça de Gmail que ja us reenviarà a ${ MAIL_APP_NAME }"
+        "Inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicieu la sessió amb la mateixa adreça de Gmail amb la que us vau connectar originalment"
@@ -6298,9 +6301,6 @@
       "Allow platform keys": [
         "Permet les claus de plataforma"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Us permet registrar claus de seguretat integrades (com Windows Hello, Face ID, Touch ID o TPM interns)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Segur que voleu eliminar la clau de seguretat ${ name }?"
       ],
@@ -6339,6 +6339,9 @@
       ],
       "Touch your security key to continue.": [
         "Toqueu la clau de seguretat per a continuar."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Utilitzar l'empremta digital, el rostre, el PIN o el bloqueig de pantalla d'aquest dispositiu"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Confirmeu la vostra identitat amb una clau de seguretat física U2F o FIDO2."
@@ -7322,7 +7325,7 @@
         "(abansTwitter)"
       ],
       "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
-        "**${ emailAddress }** també s'utilitza per iniciar sessió en un compte de ${ BRAND_NAME } separat, fora de ${ MAIL_APP_NAME }."
+        "**${ emailAddress }** també s'utilitza per a iniciar la sessió en un compte de ${ BRAND_NAME } separat, fora de ${ MAIL_APP_NAME }."
       ],
       "**Enable automatic backups** for peace of mind": [
         "**Habiliteu còpies de seguretat automàtiques** per la vostra tranquil·litat"
@@ -7346,7 +7349,7 @@
         "**Això desactivarà l'autenticació de doble factor.**"
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
-        "**Rebeu ${ referrerRewardAmount }** en crèdits per cada amistat que se subscrigui."
+        "**Rebreu ${ referrerRewardAmount }** en crèdits per cada amistat que se subscrigui."
       ],
       "**Your recovery email alone doesn't allow you to recover your encrypted data** after you reset your password.": [
         "**El correu electrònic de recuperació per si sol no us permet recuperar les dades xifrades** després de restablir la contrasenya."
@@ -7398,7 +7401,7 @@
         "Monitor d'activitat"
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
-        "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+        "Afegeix ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } for just ${ bundlePlanPriceInline }": [
         "Afegiu-hi ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME } per només ${ bundlePlanPriceInline }"
@@ -7659,17 +7662,17 @@
       "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
         "En activar aquesta opció, només podreu iniciar la sessió amb **${ primaryEmail }**."
       ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
-        "En activar aquesta opció, només podreu iniciar la sessió amb el nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**, **@${ secondDomain }** o **@${ thirdDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
-        "En activar aquesta opció, només podreu iniciar la sessió amb el nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**, o bé **@${ secondDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
-        "En activar aquesta opció, només podreu iniciar la sessió amb el nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**."
-      ],
       "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
         "En activar aquesta opció, només podreu iniciar la sessió amb el nom d'usuari **${ username }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "En activar aquesta opció, només podreu iniciar sessió amb el vostre nom d'usuari, **${ username }**, o amb **${ firstEmail }** o **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "En activar aquesta opció, només podreu iniciar sessió amb el vostre nom d'usuari, **${ username }**, o amb **${ firstEmail }** o **${ secondEmail }** o **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "En activar aquesta opció, només podreu iniciar sessió amb el vostre nom d'usuari, **${ username }**, o amb **${ firstEmail }**."
       ],
       "Can you access your active session?": [
         "Podeu accedir a la vostra sessió activa?"
@@ -8847,12 +8850,6 @@
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Recomanat en dispositius de confiança. ${ learnMoreLink }"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "La recuperació per correu electrònic no està disponible mentre ${ PROTON_SENTINEL_NAME } estigui habilitat."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "La recuperació per telèfon no està disponible mentre ${ PROTON_SENTINEL_NAME } estigui habilitat."
-      ],
       "Recovery file downloaded": [
         "S'ha descarregat el fitxer de recuperació"
       ],
@@ -9330,11 +9327,17 @@
       "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
         "Per a habilitar la VPN sempre activa, el perfil de dispositiu ha d'arribar a ${ policiesPath } en tots els dispositius — el client de ${ VPN_APP_NAME } el detecta i l'aplica automàticament. ${ learnMore }."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Per garantir la màxima seguretat possible del vostre compte, desactiveu **Recuperació mitjançant correu electrònic de recuperació**."
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Per garantir la màxima seguretat possible del vostre compte, desactiveu la **Recuperació per correu electrònic**."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Per garantir la màxima seguretat possible del vostre compte, desactiveu **Recuperació mitjançant telèfon de recuperació**."
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Per garantir la màxima seguretat possible del vostre compte, desactiveu la **Recuperació per telèfon**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Per garantir la màxima seguretat possible del vostre compte, mantingueu la **Recuperació per correu electrònic** desactivada."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Per garantir la màxima seguretat possible del vostre compte, mantingueu la **Recuperació per telèfon** desactivada."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
@@ -9343,7 +9346,7 @@
         "Per a ajudar-vos a mantenir el compte segur, ens volem assegurar que sou realment vós qui intenta iniciar la sessió."
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
-        "Per ajudar-vos a recordar la contrasenya, us demanarem que la introduïu periòdicament. Amb el temps, us la demanarem menys sovint."
+        "Per a ajudar-vos a recordar la contrasenya, us demanarem que la introduïu periòdicament. Us ho demanarem menys sovint amb el pas del temps."
       ],
       "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
         "Per a mantenir-vos al dia amb els darrers desenvolupaments dels productes de ${ BRAND_NAME }, podeu subscriure-us als nostres diversos correus electrònics i ${ blogLink } de tant en tant."
@@ -9645,14 +9648,14 @@
       "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Quan l'inici de sessió estigui restringit, només podreu utilitzar el nom d'usuari **${ username }** per a iniciar la sessió. Les altres adreces no es podran enllaçar amb el vostre compte, ni tan sols si algú les coneix."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Quan l'inici de sessió estigui restringit, només podreu iniciar la sessió amb el nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**, **@${ secondDomain }** o **@${ thirdDomain }**. Les altres adreces de correu electrònic no funcionaran per a iniciar la sessió."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Quan l'inici de sessió està restringit, només la podeu iniciar amb el nom d'usuari, **${ username }**, o amb **${ firstEmail }** o **${ secondEmail }**. Les vostres altres adreces de correu electrònic no funcionaran per iniciar sessió."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Quan l'inici de sessió estigui restringit, només podreu iniciar la sessió amb el nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**, o bé **@${ secondDomain }**. Les altres adreces de correu electrònic no funcionaran per a iniciar la sessió."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Quan l'inici de sessió està restringit, només la podeu iniciar amb el vostre nom d'usuari, **${ username }**, o amb **${ firstEmail }**, **${ secondEmail }** o **${ thirdEmail }**. Les vostres altres adreces de correu electrònic no funcionaran per iniciar sessió."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Quan l'inici de sessió estigui restringit, només podreu iniciar la sessió amb el nom d'usuari original **${ username }**, sol o com a **${ firstEmail }**. Les altres adreces de correu electrònic no funcionaran per a iniciar la sessió."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Quan l'inici de sessió està restringit, només la podeu iniciar amb el vostre nom d'usuari, **${ username }**, o amb **${ firstEmail }**. Les vostres altres adreces de correu electrònic no funcionaran per iniciar sessió."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Quan cancel·leu, la subscripció no es renovarà, però encara podreu gaudir dels avantatges del pla fins al final del període de subscripció. Després d'això, passarà al pla gratuït de ${ BRAND_NAME }."
@@ -9911,7 +9914,7 @@
         "Llavors se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "You'll use it to sign in from then on. That's the only change.": [
-        "A partir d'ara l'utilitzareu per iniciar sessió. Aquest és l'únic canvi."
+        "A partir d'ara l'utilitzareu per a iniciar la sessió. Aquest és l'únic canvi."
       ],
       "You're now signed in on your TV.": [
         "Ja heu iniciat la sessió al televisor."
@@ -11298,6 +11301,11 @@
         "Afegiu el següent registre TXT. Recordeu que els registres DNS poden trigar diverses hores a actualitzar-se."
       ]
     },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Deixeu el camp en blanc"
+      ]
+    },
     "Label for new member": {
       "Admin": [
         "Administrador"
@@ -11789,7 +11797,7 @@
     },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
-        "${ MEET_APP_NAME }: Videoconferències confidencials per les converses importants"
+        "${ MEET_APP_NAME }: Videoconferències confidencials per a les converses importants"
       ],
       "${ n } active meeting at a time": [
         "${ n } reunió activa alhora",
@@ -12411,7 +12419,7 @@
         "Servidors i IP dedicats"
       ],
       "Dedicated servers optimized for speed": [
-        "Servidors dedicats optimitzats per més rapidesa"
+        "Servidors dedicats optimitzats per a la velocitat"
       ],
       "Desktop app": [
         "Aplicació d'escriptori"
@@ -12643,7 +12651,7 @@
         "Sense límit de volum / amplada de banda"
       ],
       "Unlock streaming": [
-        "Desbloquegeu la reproducció en continu"
+        "Desbloquegeu l'estríming"
       ],
       "Up to ${ n } user": [
         "Fins a ${ n } usuari",
@@ -13466,10 +13474,10 @@
         " visiteu el nostre ${ helpCenterLink } o ${ contactSupportLink }."
       ],
       "**Add a payment method** to keep using all of the features after your trial ends.": [
-        "**Afegiu un mètode de pagament** per continuar utilitzant totes les funcions quan acabi el període de prova."
+        "**Afegiu un mètode de pagament** per a continuar utilitzant totes les funcions quan acabi el període de prova."
       ],
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "**Cancel·leu-ho en qualsevol moment. ** Podreu utilitzar ${ planTitle } fins que acabi el període de prova, de franc."
+        "**Cancel·leu-ho en qualsevol moment. ** Podreu utilitzar ${ planTitle } de franc fins que acabi el període de prova."
       ],
       "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
         "**Heu canviat d'opinió després de la prova? ** Cancel·leu-la abans de 30 dies des del primer pagament i us reemborsarem el temps no utilitzat."
@@ -13478,7 +13486,7 @@
         "**Un cop comenci la vostra subscripció completa...** Encara podreu cancel·lar-la en un termini de 30 dies i rebre un reemborsament prorratejat."
       ],
       "Add a payment method": [
-        "Afegir un mètode de pagament"
+        "Afegiu un mètode de pagament"
       ],
       "Cancel anytime before ${ cancelDate }.": [
         "Cancel·leu en qualsevol moment abans del ${ cancelDate }."
@@ -13505,7 +13513,7 @@
         "Un cop iniciada la subscripció completa..."
       ],
       "to keep using all of the features after your trial ends.": [
-        "per continuar utilitzant totes les funcions quan acabi el vostre període de prova."
+        "per a continuar utilitzant totes les funcions quan acabi el període de prova."
       ],
       "you can cancel within 30 days and get a pro-rata refund.": [
         "podreu cancel·lar-ho en un termini de 30 dies i rebre un reemborsament prorratejat"
@@ -13637,7 +13645,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        "Crear un nou calendari"
+        "Crear un calendari"
       ],
       "Merge with calendar": [
         "Combinar amb el calendari"
@@ -14121,7 +14129,7 @@
         "Estic comprant com a empresa"
       ],
       "Including ${ rate }% tax": [
-        "Inclou un impost del ${ rate }%"
+        "S'hi inclou un ${ rate }% d'impostos"
       ],
       "Including ${ rate }% tax: ${ taxAmountElement }": [
         "Inclou un impost del ${ rate }%: ${ taxAmountElement }"
@@ -14378,7 +14386,7 @@
         "Si decidiu modificar el vostre pla ${ planTitle }, potser perdreu l'accés a algunes característiques."
       ],
       "Keep ${ planTitle }": [
-        "Seguiu amb ${ planTitle }"
+        "Segueix amb ${ planTitle }"
       ],
       "Yes, I'm sure": [
         "Sí, n'estic segur"
@@ -15033,7 +15041,7 @@
         "Última oportunitat per explorar les potents característiques que us ofereix el **${ planTitle }**."
       ],
       "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
-        "Un cop comenci la vostra subscripció completa, disposeu d'un termini de 30 dies per cancel·lar-la i obtenir-ne el reembossament prorratejat."
+        "Un cop comenci la vostra subscripció completa, disposeu d'un termini de 30 dies per a cancel·lar-la i obtenir un reembossament prorratejat."
       ],
       "Refer friends": [
         "Recomana amistats"

@@ -8122,9 +8122,6 @@
       "Allow platform keys": [
         "Salli alustojen avaimet"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Mahdollistaa sisäänrakennettujen suojausavainten käyttämisen (esim. Windows Hello, Face ID, Touch ID tai sisäiset TPM-piirit)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Haluatko varmasti poistaa suojausavaimen ${ name }?"
       ],
@@ -11421,12 +11418,6 @@
       "RECOMMENDED": [
         "SUOSITELTU"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Palautus sähköpostitse ei ole käytettävissä, kun ${ PROTON_SENTINEL_NAME } on käytössä."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Puhelinpalautus ei ole käytettävissä, kun ${ PROTON_SENTINEL_NAME } on käytössä."
-      ],
       "Recovery file downloaded": [
         "Palautustiedosto ladattiin"
       ],
@@ -12035,12 +12026,6 @@
       ],
       "To enable post-quantum protection, you’ll need to finish generating your new post-quantum encryption keys.": [
         "Ottaaksenne post-kvanttisuojauksen käyttöön, teidän on viimeisteltävä uusien post-kvanttisalausavaimienne luominen."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Varmistaaksenne tilinne parhaan mahdollisen turvallisuuden, poistakaa käytöstä **Palautus palautussähköpostilla**."
-      ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Varmistaaksenne tilinne parhaan mahdollisen turvallisuuden, poistakaa käytöstä **Palautus palautuspuhelimella**."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Jotta et menetä tärkeitä tietoja, ${ DRIVE_APP_NAME } säilyttää tiedostojesi vanhempia versioita, samalla kun sinä ja työtoverisi teette muutoksia. Valitse, miten kauan ${ BRAND_NAME } säilyttää aiemmat versiot."

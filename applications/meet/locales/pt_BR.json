@@ -405,6 +405,9 @@
       "End meeting for all": [
         "Finalizar reunião para todos"
       ],
+      "Fail audio output pin": [
+        "Falha no pino de saída de áudio"
+      ],
       "Forgot password?": [
         "Esqueceu sua senha?"
       ],
@@ -1998,11 +2001,20 @@
       "Cannot verify who uploaded this file": [
         "Não é possível verificar quem é autor enviou este arquivo"
       ],
+      "Check your audio settings and try again": [
+        "Confira sua configuração de áudio e tente novamente"
+      ],
+      "Connection lost — captions will resume when reconnected": [
+        "Conexão perdida — legendas reiniciarão quando reconectado"
+      ],
       "Copy operation aborted": [
         "Operação de cópia interrompida"
       ],
       "Copying item to a non-folder is not allowed": [
         "Não é permitido copiar o item para um local que não seja uma pasta"
+      ],
+      "Could not add this background. Check your connection and try again.": [
+        "Plano de fundo não adicionado. Confira sua conexão e tente novamente."
       ],
       "Could not add this background. Please try again.": [
         "Não foi possível adicionar este plano de fundo. Tente novamente."
@@ -2018,6 +2030,9 @@
       ],
       "Could not read part of this file: ${ message }": [
         "Não foi possível ler parte deste arquivo: ${ message }"
+      ],
+      "Could not remove this background. Check your connection and try again.": [
+        "Plano de fundo não removido. Confira sua conexão e tente novamente."
       ],
       "Could not remove this background. Please try again.": [
         "Não foi possível remover este plano de fundo. Tente novamente."
@@ -2263,6 +2278,9 @@
       "Not a valid number": [
         "Não é um número válido"
       ],
+      "Not enough storage space to record. Free up space and try again.": [
+        "Espaço de armazenamento insuficiente para gravação. Libere espaço e tente novamente."
+      ],
       "Only admins can convert external invitations": [
         "Somente os administradores podem converter convites externos"
       ],
@@ -2295,6 +2313,9 @@
       ],
       "Recording stopped because it could not be saved. We kept it up to this point.": [
         "A gravação foi interrompida porque não pôde ser salva. Mantivemos o que foi gravado até este ponto."
+      ],
+      "Recording stopped because of an error.": [
+        "Gravação interrompida devido a um erro."
       ],
       "Renaming root item is not allowed": [
         "Não é permitido renomear o item, raiz"
@@ -2350,6 +2371,9 @@
       "The email addresses do not match": [
         "Os endereços de e-mail não correspondem."
       ],
+      "The emoji could not be added because the message is at its character limit": [
+        "Emoji não adicionado. Limite de caracteres da mensagem alcançado"
+      ],
       "The meeting password is incorrect": [
         "A senha da reunião está incorreta"
       ],
@@ -2395,6 +2419,12 @@
       "This image could not be read. Pick another one.": [
         "Esta imagem não pôde ser lida. Escolha outra."
       ],
+      "This image is too big. Pick one up to ${ maxEdge } pixels wide and tall.": [
+        "Esta imagem é muito grande. Escolha uma de até ${ maxEdge } píxeis de largura e altura."
+      ],
+      "This image is too large. Pick one under ${ maxMegabytes } MB.": [
+        "Esta imagem é muito grande. Escolha uma menor que ${ maxMegabytes } MB."
+      ],
       "This item has no image preview": [
         "Este item não tem visualização de imagem"
       ],
@@ -2436,6 +2466,9 @@
       ],
       "Verification keys for ${ signatureType } are not available": [
         "As chaves de verificação para ${ signatureType } não estão disponíveis"
+      ],
+      "Virtual background initialization failed. Please toggle your camera or pick a background again": [
+        "Falha na inicialização do plano de fundo virtual. Por favor, ative/desative a câmera ou escolha um plano de fundo novamente"
       ],
       "We couldn’t send a verification code using this method.": [
         "Não conseguimos enviar um código de verificação usando este método."
@@ -2678,6 +2711,10 @@
         "${ mlsMemberCount } membro",
         "${ mlsMemberCount } membros"
       ],
+      "${ participantCount } participant is connected, while the secure group has ${ mlsMemberCountText }. This may happen temporarily after someone joins or leaves.": [
+        "${ participantCount } participante está conectado, enquanto o grupo seguro tem ${ mlsMemberCountText }. Isso pode acontecer temporariamente depois que alguém entra ou sai.",
+        "${ participantCount } participantes estão conectados, enquanto o grupo seguro tem ${ mlsMemberCountText }. Isso pode acontecer temporariamente quando alguém entra ou sai."
+      ],
       "${ participantName } and ${ otherParticipantsCount } others are recording": [
         "${ participantName } e outras ${ otherParticipantsCount } pessoas estão gravando"
       ],
@@ -2795,6 +2832,9 @@
       "Camera effects": [
         "Efeitos de câmera"
       ],
+      "Camera is starting": [
+        "Iniciando câmera"
+      ],
       "Camera permission denied": [
         "Permissão da câmera negada"
       ],
@@ -2869,6 +2909,12 @@
       ],
       "Delete room": [
         "Excluir sala"
+      ],
+      "Do you want people to hear you in the meeting?": [
+        "Quer que as pessoas te ouçam na reunião?"
+      ],
+      "Do you want people to see you in the meeting?": [
+        "Quer que as pessoas te vejam nesta reunião?"
       ],
       "Download current logs": [
         "Baixar os registros atuais"
@@ -3041,6 +3087,12 @@
       "Logs help us understand what happened before the problem occurred. They include app actions and error messages, but no message content.": [
         "Os registros nos ajudam a entender o que aconteceu antes de o problema ocorrer. Eles incluem ações do aplicativo e mensagens de erro, mas não o conteúdo das mensagens."
       ],
+      "Loop an uploaded video or your live camera through background blur.": [
+        "Reproduza um vídeo enviado em loop ou sua câmera ao vivo com o plano de fundo desfocado."
+      ],
+      "Lost connection to the meeting server. Reconnecting…": [
+        "Conexão perdida com o servidor da reunião. Reconectando…"
+      ],
       "Lower participant's hand": [
         "Baixar a mão do participante"
       ],
@@ -3050,8 +3102,14 @@
       "Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.": [
         "Reúna-se sem restrições. Faça upgrade para remover o limite de 1 hora e hospedar até 100 participantes."
       ],
+      "Meeting almost full": [
+        "Reunião quase cheia"
+      ],
       "Meeting ended": [
         "Reunião encerrada"
+      ],
+      "Meeting full": [
+        "Reunião cheia"
       ],
       "Meeting full (${ maxParticipants } participants)": [
         "Reunião cheia (${ maxParticipants } participantes)"
@@ -3100,6 +3158,9 @@
       ],
       "Microphone effects": [
         "Efeitos de microfone"
+      ],
+      "Microphone is starting": [
+        "Microfone iniciando"
       ],
       "Microphone permission denied": [
         "Permissão de microfone negada"
@@ -3158,6 +3219,9 @@
       "No speaker detected": [
         "Nenhum alto-falante detectado"
       ],
+      "Noise cancellation was turned off because your device is experiencing performance issues. You can turn it back on in audio settings.": [
+        "O cancelamento de ruído foi desligado porque seu dispositivo está apresentando problemas. Você pode reativar em \"Configurações de áudio\"."
+      ],
       "Not sent, check your connection.": [
         "Não enviado, verifique sua conexão."
       ],
@@ -3172,6 +3236,9 @@
       ],
       "Now using ${ first }.": [
         "Agora usando ${ first }."
+      ],
+      "Only a partial meeting recording was available.": [
+        "Apenas uma gravação parcial da reunião estava disponível."
       ],
       "Only meetings you created appear here": [
         "Somente reuniões que você criou aparecem aqui"
@@ -3200,11 +3267,17 @@
       "Participants can’t use live captions": [
         "Os participantes não podem usar legendas ao vivo"
       ],
+      "Participants shows who is currently connected. MLS members shows who is included in the meeting’s security group. These numbers can differ briefly, but this difference has lasted longer than expected.": [
+        "\"Participantes\" mostra quem está conectado. \"Membros MLS\" mostra quem está incluído no grupo de segurança da reunião. Estes números podem divergir momentaneamente, mas esta diferença tem durado mais do que o esperado."
+      ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Cole seu link do ${ MEET_APP_NAME } para entrar em uma reunião segura"
       ],
       "Permissions not given.": [
         "Permissões não concedidas."
+      ],
+      "Please ${ downloadLink } and install the app, then click Join in the ${ MEET_APP_NAME } app again.": [
+        "${ downloadLink } e instale o aplicativo. Depois, clique novamente em Entrar no aplicativo ${ MEET_APP_NAME }."
       ],
       "Please enable access to your ${ microphoneLinkButton }${ andString }${ cameraLinkButton } for the best experience.": [
         "Ative o acesso ao seu ${ microphoneLinkButton }${ andString }${ cameraLinkButton } para ter a melhor experiência."
@@ -3281,6 +3354,9 @@
       "Rejecting": [
         "Rejeitando"
       ],
+      "Run your live camera through the custom background processor. Upload an image to use as the background.": [
+        "Use sua câmera ao vivo com um plano de fundo personalizado. Envie uma imagem e use como plano de fundo."
+      ],
       "Schedule your next meeting. Create an account to schedule meetings with your calendar.": [
         "Agende sua próxima reunião. Crie uma conta para agendar reuniões com seu calendário."
       ],
@@ -3329,6 +3405,9 @@
       "Share screen": [
         "Compartilhar tela"
       ],
+      "Share this link to invite others. You can also find it anytime under Meeting info in the More options menu.": [
+        "Compartilhe este link para convidar. Você pode sempre encontrá-lo nas \"Informação da reunião\" e no menu \"Mais opções\"."
+      ],
       "Show live captions?": [
         "Mostrar legendas ao vivo?"
       ],
@@ -3358,6 +3437,9 @@
       ],
       "Thank you for joining.": [
         "Obrigado por entrar."
+      ],
+      "The captioning service uses meeting audio. Captions are visible only to you and aren’t saved.": [
+        "O serviço de legendas usa o áudio da reunião. Legendas são visíveis apenas para você e não são salvas."
       ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "O anfitrião removeu você desta reunião. Se isso foi um engano, peça ao anfitrião para convidá-lo novamente."
@@ -3400,6 +3482,9 @@
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Isto irá te desconectar de todas as contas atualmente conectadas."
+      ],
+      "Time is up for ${ meetingName }": [
+        "Tempo esgotado para ${ meetingName }"
       ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Para criar uma sala, você precisará de **uma conta da ${ BRAND_NAME } gratuita** para que possamos salvar a sala. Isso leva apenas alguns segundos."
@@ -3536,6 +3621,9 @@
       "Your always available meeting room": [
         "Sua sala de reunião sempre disponível"
       ],
+      "Your backgrounds could not be loaded, so a new one cannot be added right now.": [
+        "Seus planos de fundo não foram carregados, então um novo não pode ser adicionado agora."
+      ],
       "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
         "Seu navegador bloqueou o acesso ao seu microfone. Para ativar, atualize as configurações do navegador e retone na chamada."
       ],
@@ -3551,11 +3639,17 @@
       "Your browser or device isn’t supported": [
         "Seu navegador ou dispositivo não é suportado"
       ],
+      "Your camera is still starting": [
+        "Câmera ainda iniciando"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será usado para essa verificação única."
       ],
       "Your meeting is ready": [
         "Sua reunião está pronta"
+      ],
+      "Your microphone is still starting": [
+        "Microfone ainda iniciando"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Seu número de telefone somente será usado nessa verificação única."
@@ -3966,6 +4060,9 @@
       "Schrödinger in a box": [
         "Schrödinger em uma caixa"
       ],
+      "Schrödinger out of the box": [
+        "Schrödinger fora da caixa"
+      ],
       "Search": [
         "Pesquisar"
       ],
@@ -4078,6 +4175,9 @@
       "Repeats monthly": [
         "Repete mensalmente"
       ],
+      "Repeats on the ${ ordinalDay } of each month": [
+        "Repete dia ${ ordinalDay } de cada mês"
+      ],
       "Repeats weekly": [
         "Repete semanalmente"
       ],
@@ -4184,8 +4284,8 @@
       "Enter time": [
         "Inserir hora"
       ],
-      "Enter your name": [
-        "Digite seu nome"
+      "Enter your name to join": [
+        "Insira seu nome para entrar"
       ],
       "Find...": [
         "Encontrar..."
@@ -4348,6 +4448,11 @@
       ],
       "Yes": [
         "Sim"
+      ]
+    },
+    "Subtitle": {
+      "This system agent creates live captions. It is not a participant and cannot send messages.": [
+        "Este agente do sistema faz captura de telas. Não é um participante e não pode enviar mensagens."
       ]
     },
     "Success": {
@@ -4686,6 +4791,9 @@
       ],
       "People currently connected to the meeting": [
         "Pessoas atualmente conectadas à reunião no momento"
+      ],
+      "People included in meeting's MLS group": [
+        "Pessoas adicionadas ao grupo MLS da reunião"
       ],
       "Recurring meeting": [
         "Reunião recorrente"

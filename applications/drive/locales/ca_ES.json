@@ -738,7 +738,7 @@
         "Crea un àlbum"
       ],
       "New chat": [
-        "Nou xat"
+        "Crea un xat"
       ],
       "New document": [
         "Crea un document"
@@ -1140,7 +1140,7 @@
         "Aquest àlbum és buit"
       ],
       "Toggle ${ LUMO_SHORT_APP_NAME }": [
-        "Tocar per alternar ${ LUMO_SHORT_APP_NAME }"
+        "Commuta ${ LUMO_SHORT_APP_NAME }"
       ],
       "Toggle Calendar app": [
         "Canvia a l'aplicació Calendari"
@@ -1914,10 +1914,10 @@
         "Historial de xat bàsic"
       ],
       "Compliance with data protection regulations": [
-        "Compleix amb el reglament de protecció de dades"
+        "Compliment del reglament de protecció de dades"
       ],
       "Data never used for AI training": [
-        "Les dades no s'utilitzaran mai per entrenament de la IA"
+        "Les dades no s'utilitzaran mai per a l'entrenament de la IA"
       ],
       "Full chat history with search": [
         "Historial de xat complet amb cerca"
@@ -1967,7 +1967,7 @@
         "Xats d'alta velocitat i característiques d'IA avançades."
       ],
       "Private video calls for the conversations that matter.": [
-        "Videotrucades privades per les converses importants."
+        "Videotrucades privades per a les converses importants."
       ]
     },
     "color": {
@@ -3084,7 +3084,7 @@
         "Per a garantir-vos la màxima seguretat possible del compte, configureu una frase de recuperació."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
-        "Per importar mitjançant un fitxer CSV i VCF, assegureu-vos que el fitxer no superi ${ MAX_IMPORT_FILE_SIZE_STRING } o els ${ maxContactString } contactes. Si el vostre fitxer és més gran, dividiu-lo en fitxers més petits. ${ learnMoreLink }."
+        "Per a importar mitjançant un fitxer CSV o VCF, assegureu-vos que no superi ${ MAX_IMPORT_FILE_SIZE_STRING } o ${ maxContactString } contactes. Si és més gran, dividiu-lo en fitxers més petits. ${ learnMoreLink }."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Per a importar els vostres contactes de Google o Outlook, ${ easySwitchLink }"
@@ -3579,9 +3579,6 @@
       "External invitations are temporarily disabled.": [
         "Les invitacions externes estan desactivades temporalment."
       ],
-      "External invitations are temporarily disabled. Please try again later": [
-        "Les invitacions externes estan desactivades temporalment. Torneu a intentar-ho més tard"
-      ],
       "Failed to change permissions settings": [
         "No s'han pogut canviar les preferències de permisos"
       ],
@@ -4011,12 +4008,6 @@
       "The folder name is too long. Please choose a different name.": [
         "El nom de la carpeta és massa llarg. Trieu-ne un de diferent."
       ],
-      "The invitation cannot be completed yet. Please try again later.": [
-        "La invitació encara no es pot completar. Torneu a intentar-ho més tard."
-      ],
-      "The invitation doesn't exist anymore": [
-        "La invitació ja no existeix."
-      ],
       "The label name is invalid. Please choose a different name.": [
         "El nom de l'etiqueta no és vàlid. Escolliu-ne un altre."
       ],
@@ -4222,7 +4213,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Inicieu la sessió amb una adreça de Gmail que ja us reenviarà a ${ MAIL_APP_NAME }"
+        "Inicieu la sessió amb una adreça de Gmail que ja reenvia a ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Inicieu la sessió amb la mateixa adreça de Gmail amb la que us vau connectar originalment"
@@ -5097,6 +5088,9 @@
         "${ calendarsToBeMergedCount } calendari combinat",
         "${ calendarsToBeMergedCount } calendaris combinats"
       ],
+      "${ claimedAuthor } (unverified sender)": [
+        "${ claimedAuthor } (remitent no verificat)"
+      ],
       "${ completedItems.length } of ${ items.length } transfers completed": [
         "S'han completat ${ completedItems.length } de ${ items.length } transferències"
       ],
@@ -5157,9 +5151,6 @@
       ],
       "${ IDEAL_WERO_BRAND_NAME } mark": [
         "Marca de ${ IDEAL_WERO_BRAND_NAME }"
-      ],
-      "${ invitation.addedByEmail.error.claimedAuthor } (unverified sender)": [
-        "${ invitation.addedByEmail.error.claimedAuthor } (remitent no verificat)"
       ],
       "${ invitationsCount } pending invitation": [
         "Teniu ${ invitationsCount } invitació pendent",
@@ -5283,7 +5274,7 @@
         "**Ells reben ${ refereeRewardAmount }** en crèdits si es subscriuen."
       ],
       "**You get ${ referrerRewardAmount }** in credits for every friend that subscribes.": [
-        "**Rebeu ${ referrerRewardAmount }** en crèdits per cada amistat que se subscrigui."
+        "**Rebreu ${ referrerRewardAmount }** en crèdits per cada amistat que se subscrigui."
       ],
       "1 device per user": [
         "1 dispositiu per usuari"
@@ -5328,7 +5319,7 @@
         "Orientació d'anuncis"
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
-        "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+        "Afegeix ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Afig ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -6692,7 +6683,7 @@
         "Per a ajudar a protegir-vos, ${ DRIVE_APP_NAME } pot escanejar els vostres fitxers de manera que en preservi la privacitat i bloquegi fitxers maliciosos. De tota manera, sempre és millor descarregar fitxers només de fonts de confiança. "
       ],
       "To help you remember your password, we'll ask you to enter it periodically. We ask you less over time.": [
-        "Per ajudar-vos a recordar la contrasenya, us demanarem que la introduïu periòdicament. Amb el temps, us la demanarem menys sovint."
+        "Per a ajudar-vos a recordar la contrasenya, us demanarem que la introduïu periòdicament. Us ho demanarem menys sovint amb el pas del temps."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Per tornar a signar els vostres contactes necessitem comprovar cada contacte comparant-lo amb la llista de claus xifrades disponibles al vostre compte. Si no es troben coincidències, el vostre contacte es tornarà a signar amb la clau de xifratge primària."
@@ -7591,7 +7582,7 @@
         "Adreça completa"
       ],
       "Extremely Satisfied": [
-        "Altament satisfet"
+        "Extremadament satisfet"
       ],
       "File": [
         "Fitxer"
@@ -8304,7 +8295,7 @@
     },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
-        "${ MEET_APP_NAME }: Videoconferències confidencials per les converses importants"
+        "${ MEET_APP_NAME }: Videoconferències confidencials per a les converses importants"
       ],
       "${ n } active meeting at a time": [
         "${ n } reunió activa alhora",
@@ -8901,7 +8892,7 @@
         "Polítiques de conservació de dades"
       ],
       "Dedicated servers optimized for speed": [
-        "Servidors dedicats optimitzats per més rapidesa"
+        "Servidors dedicats optimitzats per a la velocitat"
       ],
       "Desktop app": [
         "Aplicació d'escriptori"
@@ -9120,7 +9111,7 @@
         "Sense límit de volum / amplada de banda"
       ],
       "Unlock streaming": [
-        "Desbloquegeu la reproducció en continu"
+        "Desbloquegeu l'estríming"
       ],
       "Up to ${ n } user": [
         "Fins a ${ n } usuari",
@@ -10091,10 +10082,10 @@
         " visiteu el nostre ${ helpCenterLink } o ${ contactSupportLink }."
       ],
       "**Add a payment method** to keep using all of the features after your trial ends.": [
-        "**Afegiu un mètode de pagament** per continuar utilitzant totes les funcions quan acabi el període de prova."
+        "**Afegiu un mètode de pagament** per a continuar utilitzant totes les funcions quan acabi el període de prova."
       ],
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
-        "**Cancel·leu-ho en qualsevol moment. ** Podreu utilitzar ${ planTitle } fins que acabi el període de prova, de franc."
+        "**Cancel·leu-ho en qualsevol moment. ** Podreu utilitzar ${ planTitle } de franc fins que acabi el període de prova."
       ],
       "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
         "**Heu canviat d'opinió després de la prova? ** Cancel·leu-la abans de 30 dies des del primer pagament i us reemborsarem el temps no utilitzat."
@@ -10103,7 +10094,7 @@
         "**Un cop comenci la vostra subscripció completa...** Encara podreu cancel·lar-la en un termini de 30 dies i rebre un reemborsament prorratejat."
       ],
       "Add a payment method": [
-        "Afegir un mètode de pagament"
+        "Afegiu un mètode de pagament"
       ],
       "Cancel anytime before ${ cancelDate }.": [
         "Cancel·leu en qualsevol moment abans del ${ cancelDate }."
@@ -10130,7 +10121,7 @@
         "Un cop iniciada la subscripció completa..."
       ],
       "to keep using all of the features after your trial ends.": [
-        "per continuar utilitzant totes les funcions quan acabi el vostre període de prova."
+        "per a continuar utilitzant totes les funcions quan acabi el període de prova."
       ],
       "you can cancel within 30 days and get a pro-rata refund.": [
         "podreu cancel·lar-ho en un termini de 30 dies i rebre un reemborsament prorratejat"
@@ -10185,7 +10176,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        "Crear un nou calendari"
+        "Crear un calendari"
       ],
       "Merge with calendar": [
         "Combinar amb el calendari"
@@ -10365,7 +10356,7 @@
         "Estic comprant com a empresa"
       ],
       "Including ${ rate }% tax": [
-        "Inclou un impost del ${ rate }%"
+        "S'hi inclou un ${ rate }% d'impostos"
       ],
       "Including ${ rate }% tax: ${ taxAmountElement }": [
         "Inclou un impost del ${ rate }%: ${ taxAmountElement }"
@@ -10599,7 +10590,7 @@
         "Si decidiu modificar el vostre pla ${ planTitle }, potser perdreu l'accés a algunes característiques."
       ],
       "Keep ${ planTitle }": [
-        "Seguiu amb ${ planTitle }"
+        "Segueix amb ${ planTitle }"
       ],
       "Yes, I'm sure": [
         "Sí, n'estic segur"
@@ -11030,7 +11021,7 @@
         "Més opcions de compartició"
       ],
       "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
-        "Un cop comenci la vostra subscripció completa, disposeu d'un termini de 30 dies per cancel·lar-la i obtenir-ne el reembossament prorratejat."
+        "Un cop comenci la vostra subscripció completa, disposeu d'un termini de 30 dies per a cancel·lar-la i obtenir un reembossament prorratejat."
       ],
       "Refer friends": [
         "Recomana amistats"
@@ -13145,7 +13136,7 @@
         "Aturar transferències?"
       ],
       "Subscribe to ${ planTitle }": [
-        "Subscriviu-vos a ${ planTitle }"
+        "Subscripció a ${ planTitle }"
       ],
       "Subscription canceled": [
         "S'ha cancel·lat la subscripció"

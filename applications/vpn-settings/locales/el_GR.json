@@ -994,6 +994,9 @@
       "Manage subscription": [
         "Διαχείριση συνδρομής"
       ],
+      "Manage subscriptions": [
+        "Διαχείριση συνδρομών"
+      ],
       "Manage users/addresses": [
         "Διαχείριση χρηστών/διευθύνσεων"
       ],
@@ -6298,9 +6301,6 @@
       "Allow platform keys": [
         "Να επιτρέπονται τα κλειδιά πλατφόρμας"
       ],
-      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
-        "Σας επιτρέπει να καταχωρείτε ενσωματωμένα κλειδιά ασφαλείας (όπως Windows Hello, Face ID, Touch ID ή εσωτερικές TPM)"
-      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε το κλειδί ασφαλείας ${ name };"
       ],
@@ -6339,6 +6339,9 @@
       ],
       "Touch your security key to continue.": [
         "Πατήστε το κλειδί ασφαλείας σας για να συνεχίσετε."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Χρησιμοποιήστε το δακτυλικό αποτύπωμα, την αναγνώριση προσώπου, το PIN ή το κλείδωμα οθόνης αυτής της συσκευής"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Επαληθεύστε την ταυτότητά σας με ένα φυσικό κλειδί ασφαλείας U2F ή FIDO2"
@@ -7659,17 +7662,17 @@
       "By turning this on, you’ll only be able to sign in with **${ primaryEmail }**.": [
         "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το **${ primaryEmail }**."
       ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**.": [
-        "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το αρχικό σας όνομα χρήστη **${ username }**, είτε αυτόνομα είτε ως **${ firstEmail }**, **@${ secondDomain }** ή **@${ thirdDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**.": [
-        "Ενεργοποιώντας αυτήν την επιλογή, θα μπορείτε να συνδεθείτε μόνο με το αρχικό σας όνομα χρήστη **${ username }**, είτε μόνο του είτε ως **${ firstEmail }** ή **@${ secondDomain }**."
-      ],
-      "By turning this on, you’ll only be able to sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**.": [
-        "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το αρχικό σας όνομα χρήστη **${ username }**, είτε από μόνο του είτε ως **${ firstEmail }**."
-      ],
       "By turning this on, you’ll only be able to sign in with your username **${ username }**.": [
         "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη **${ username }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**.": [
+        "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη σας, **${ username }**, ή με το **${ firstEmail }** ή το **${ secondEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**.": [
+        "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη σας, **${ username }**, ή με τα **${ firstEmail }**, **${ secondEmail }** ή **${ thirdEmail }**."
+      ],
+      "By turning this on, you’ll only be able to sign in with your username, **${ username }**, or with **${ firstEmail }**.": [
+        "Ενεργοποιώντας αυτή τη ρύθμιση, θα μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη σας, **${ username }**, ή με το **${ firstEmail }**."
       ],
       "Can you access your active session?": [
         "Μπορείτε να έχετε πρόσβαση στην ενεργή σας συνεδρία;"
@@ -8847,12 +8850,6 @@
       "Recommended on trusted devices. ${ learnMoreLink }": [
         "Συνιστάται σε αξιόπιστες συσκευές. ${ learnMoreLink }"
       ],
-      "Recovery by email is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Η ανάκτηση μέσω μηνύματος ηλεκτρονικού ταχυδρομείου δεν είναι διαθέσιμη ενώ το ${ PROTON_SENTINEL_NAME } είναι ενεργοποιημένο."
-      ],
-      "Recovery by phone is not available while ${ PROTON_SENTINEL_NAME } is enabled.": [
-        "Η ανάκτηση μέσω τηλεφώνου δεν είναι διαθέσιμη ενώ το ${ PROTON_SENTINEL_NAME } είναι ενεργοποιημένο."
-      ],
       "Recovery file downloaded": [
         "Το αρχείο ανάκτησης κατέβηκε"
       ],
@@ -9330,11 +9327,17 @@
       "To enable Always-on VPN, the device profile needs to reach ${ policiesPath } on every device — the ${ VPN_APP_NAME } client detects it there and enforces the profile automatically. ${ learnMore }.": [
         "Για να ενεργοποιηθεί το Always-on VPN, το προφίλ της συσκευής πρέπει να φτάσει στο ${ policiesPath } σε κάθε συσκευή — ο υπολογιστής-πελάτης ${ VPN_APP_NAME } το εντοπίζει εκεί και επιβάλλει αυτόματα το προφίλ. ${ learnMore }."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery email**.": [
-        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **Ανάκτηση μέσω ηλεκτρονικής διεύθυνσης ανάκτησης**."
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **Ανάκτηση μέσω ηλεκτρονικής διεύθυνσης**."
       ],
-      "To ensure the highest possible security of your account, disable **Recovery by recovery phone**.": [
-        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **Ανάκτηση μέσω τηλεφώνου ανάκτησης**."
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, απενεργοποιήστε την **Ανάκτηση μέσω τηλεφώνου**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Για να διασφαλίσετε την υψηλότερη δυνατή ασφάλεια του λογαριασμού σας, διατηρήστε την **Ανάκτηση μέσω ηλεκτρονικής διεύθυνσης** απενεργοποιημένη."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Για να διασφαλίσετε την υψηλότερη δυνατή ασφάλεια του λογαριασμού σας, διατηρήστε την **Ανάκτηση μέσω τηλεφώνου** απενεργοποιημένη."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
@@ -9645,14 +9648,14 @@
       "When sign-in is restricted, only your username **${ username }** can be used to sign in. Your other addresses can’t be linked back to your account, even if someone knows them.": [
         "Όταν η είσοδος είναι περιορισμένη, μόνο το όνομα χρήστη σας **${ username }** μπορεί να χρησιμοποιηθεί για την είσοδο. Οι άλλες διευθύνσεις σας δεν μπορούν να συνδεθούν με τον λογαριασμό σας, ακόμα κι αν κάποιος τις γνωρίζει."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, **@${ secondDomain }**, or **@${ thirdDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Όταν η είσοδος είναι περιορισμένη, μπορείτε να συνδεθείτε μόνο με το αρχικό όνομα χρήστη σας **${ username }**, είτε από μόνο του είτε ως **${ firstEmail }**, **@${ secondDomain }** ή **@${ thirdDomain }**. Οι άλλες διευθύνσεις ηλεκτρονικού ταχυδρομείου σας δε θα λειτουργούν για τη σύνδεση."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }** or **${ secondEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Όταν η είσοδος είναι περιορισμένη, μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη σας, **${ username }**, ή με τη διεύθυνση **${ firstEmail }** ή **${ secondEmail }**. Οι υπόλοιπες διευθύνσεις email σας δε θα λειτουργούν για τη σύνδεση."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**, or **@${ secondDomain }**. Your other email addresses won’t work for sign-in.": [
-        "Όταν η είσοδος είναι περιορισμένη, μπορείτε να συνδεθείτε μόνο με το αρχικό σας όνομα χρήστη **${ username }** είτε από μόνο του, είτε ως **${ firstEmail }**, είτε ως **@${ secondDomain }**. Οι άλλες διευθύνσεις ηλεκτρονικού ταχυδρομείου σας δε θα λειτουργούν για τη σύνδεση."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**, **${ secondEmail }**, or **${ thirdEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Όταν η είσοδος είναι περιορισμένη, μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη σας, **${ username }**, ή με τις διευθύνσεις **${ firstEmail }**, **${ secondEmail }** ή **${ thirdEmail }**. Οι υπόλοιπες διευθύνσεις ηλεκτρονικού ταχυδρομείου σας δε θα λειτουργούν για τη σύνδεση."
       ],
-      "When sign-in is restricted, you can only sign in with your original username **${ username }**, either on its own or as **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
-        "Όταν η είσοδος είναι περιορισμένη, μπορείτε να συνδεθείτε μόνο με το αρχικό σας όνομα χρήστη **${ username }**, είτε ως έχει είτε ως **${ firstEmail }**. Οι άλλες διευθύνσεις ηλεκτρονικού ταχυδρομείου σας δε θα λειτουργούν για τη σύνδεση."
+      "When sign-in is restricted, you can only sign in with your username, **${ username }**, or with **${ firstEmail }**. Your other email addresses won’t work for sign-in.": [
+        "Όταν η είσοδος είναι περιορισμένη, μπορείτε να συνδεθείτε μόνο με το όνομα χρήστη σας, **${ username }**, ή με τη διεύθυνση **${ firstEmail }**. Οι άλλες διευθύνσεις ηλεκτρονικού ταχυδρομείου σας δε θα λειτουργούν για τη σύνδεση."
       ],
       "When you cancel, your subscription won't be renewed, but you can still enjoy plan benefits until the end of the subscription period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Όταν ακυρώσετε, η συνδρομή σας δε θα ανανεωθεί, αλλά θα εξακολουθείτε να απολαμβάνετε προνόμια προγράμματος μέχρι το τέλος της περιόδου συνδρομής. Μετά από αυτό, θα υποβαθμιστείτε στο ${ BRAND_NAME } Free πλάνο."
@@ -11296,6 +11299,11 @@
     "Label for domain modal": {
       "Please add the following TXT record. Note: DNS records can take several hours to update.": [
         "Παρακαλούμε προσθέστε την ακόλουθη εγγραφή TXT. Σημειώστε: οι εγγραφές DNS ενδέχεται να χρειαστούν αρκετές ώρες για να ενημερωθούν."
+      ]
+    },
+    "Label for domain setup": {
+      "Leave field blank": [
+        "Αφήστε το πεδίο κενό"
       ]
     },
     "Label for new member": {

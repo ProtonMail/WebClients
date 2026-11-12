@@ -81,6 +81,9 @@
       "Add note": [
         "添加备注"
       ],
+      "Add payment method": [
+        "添加付款方式"
+      ],
       "Add people or groups to share": [
         "添加人员或群组进行共享"
       ],
@@ -116,6 +119,9 @@
       ],
       "Cancel subscription": [
         "取消订阅"
+      ],
+      "Cancel trial": [
+        "取消试用"
       ],
       "Change my access": [
         "更改我的访问权限"
@@ -4539,12 +4545,6 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "连接到 ${ VPN_APP_NAME } 实现隐私浏览"
       ],
-      "Connected": [
-        "已关联"
-      ],
-      "Connecting…": [
-        "正在连接…"
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "联系人已加入 ${ contactGroupName } 群组"
       ],
@@ -4613,9 +4613,6 @@
       ],
       "Decrypting your document": [
         "正在解密您的文档"
-      ],
-      "Disconnected": [
-        "取消关联"
       ],
       "Display word count": [
         "显示字数"
@@ -7523,6 +7520,9 @@
       ],
       "**Cancel anytime before then.** You’ll be able to use ${ planTitle } until the trial ends, free of charge.": [
         "**在此之前可随时取消。** 在试用期结束前，您可以免费使用 ${ planTitle }。"
+      ],
+      "**Changed your mind after the trial?** Cancel within 30 days of your first payment and we’ll refund the unused time.": [
+        "**试用后改变主意了？** 在首次付款后 30 天内取消，我们将退还未使用时间的费用。"
       ],
       "**Once your full subscription starts...** You can still cancel within 30 days and get a prorated refund.": [
         "**您的完整订阅开始后…** 您仍可在 30 天内取消，并获得按比例退款。"
