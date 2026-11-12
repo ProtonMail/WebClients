@@ -2,7 +2,6 @@ import type { ReferralData } from '../../interfaces/referral';
 import type { BillingAddress } from '../../payments/billing-address';
 import type { CYCLE, PLANS } from '../../payments/constants';
 import type { Currency, PlanIDs } from '../../payments/interface';
-import { hasPlanIDs } from '../../payments/plan/helpers';
 
 interface GetReferralsProps {
     Offset?: number;
@@ -67,14 +66,13 @@ export interface ReferralRegistrationPlan {
     cycle: CYCLE;
 }
 
-const getPlanData = (plan: ReferralRegistrationPlan | undefined, hasPlanIDs: boolean) => {
+const getPlanData = (plan: ReferralRegistrationPlan | undefined) => {
     if (!plan) {
         return {};
     }
 
     return {
-        // The API rejects `Plan` and `Plans` together; `Plans` supersedes `Plan` when present.
-        ...(hasPlanIDs ? {} : { Plan: plan.name }),
+        Plan: plan.name,
         Cycle: plan.cycle,
     };
 };
@@ -95,22 +93,18 @@ export const postReferralRegistration = ({
     plan: ReferralRegistrationPlan | undefined;
     referralData: ReferralData;
     referralRegistrationSubscription: ReferralRegistrationSubscription | undefined;
-}) => {
-    const planIDs = referralRegistrationSubscription?.planIDs;
-    const sendPlanIDs = !!planIDs && hasPlanIDs(planIDs);
-
-    return {
-        method: 'post',
-        url: `core/v4/referrals/register`,
-        data: {
-            ...getPlanData(plan, sendPlanIDs),
-            ReferralIdentifier: referralData.referralIdentifier,
-            ReferralID: referralData.referralID,
-            PaymentToken: referralRegistrationSubscription?.paymentToken,
-            BillingAddress: referralRegistrationSubscription?.billingAddress,
-            Codes: referralRegistrationSubscription?.code ? [referralRegistrationSubscription.code] : undefined,
-            Currency: referralRegistrationSubscription?.currency,
-            Plans: sendPlanIDs ? planIDs : undefined,
-        },
-    };
-};
+}) => ({
+    method: 'post',
+    url: `core/v4/referrals/register`,
+    data: {
+        // Intentionally only `Plan` + `Cycle`, never `Plans`: the API rejects both together and the
+        // multi-seat (b2c2b) flow that needs `Plans` isn't released yet. Restore `Plans` when b2c2b ships.
+        ...getPlanData(plan),
+        ReferralIdentifier: referralData.referralIdentifier,
+        ReferralID: referralData.referralID,
+        PaymentToken: referralRegistrationSubscription?.paymentToken,
+        BillingAddress: referralRegistrationSubscription?.billingAddress,
+        Codes: referralRegistrationSubscription?.code ? [referralRegistrationSubscription.code] : undefined,
+        Currency: referralRegistrationSubscription?.currency,
+    },
+});
