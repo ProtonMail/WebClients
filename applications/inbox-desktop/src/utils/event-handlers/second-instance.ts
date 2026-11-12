@@ -5,10 +5,16 @@ import { handleMailToUrls } from "../urls/mailtoLinks";
 import { handleOpenCalendar, handleOpenMail } from "../protocol/deep_links";
 import { cleanupDeeplinkNotifications, DeepLinkNotificationSource } from "../../ipc/notification";
 import { getMailtoArg } from "../protocol/mailto";
+import { handleShowDownload } from "../downloads/downloadNotifications";
 
 export function handleSecondInstance() {
     app.on("second-instance", (_ev: Event, argv: string[]) => {
         mainLogger.info("Second instance called", argv);
+
+        if (handleShowDownload(argv)) {
+            return;
+        }
+
         bringWindowToFront(); // Bring window to focus
 
         if (handleMailToUrls(getMailtoArg(argv))) {

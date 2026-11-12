@@ -13,13 +13,14 @@ export const checkDeepLinks = () => {
 export enum DeepLinkActions {
     OpenMail = "open_mail",
     OpenCalendar = "open_calendar",
+    ShowDownload = "show_download",
 }
 
 export const urlHasOpenMailParams = (url: string): boolean => {
     return url.includes("#labelID=") || url.includes("#elementID=");
 };
 
-const findDeepLink = (argv: string[], action: DeepLinkActions): string | undefined => {
+export const findDeepLink = (argv: string[], action: DeepLinkActions): string | undefined => {
     return argv.find(
         (value: string) =>
             value.startsWith(`${DEEPLINK_PROTOCOL}://${action}`) || value.startsWith(`${DEEPLINK_PROTOCOL}:${action}`),
