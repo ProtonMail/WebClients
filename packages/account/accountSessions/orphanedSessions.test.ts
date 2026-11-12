@@ -1,3 +1,6 @@
+// @vitest-environment happy-dom
+import type { Mock } from 'vitest';
+
 import type { DefaultPersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
@@ -141,11 +144,10 @@ describe('cleanupOrphanedDuplicateSessions', () => {
         window.localStorage.clear();
     });
 
-    const run = (api: jest.Mock) =>
-        cleanupOrphanedDuplicateSessions({ api, remoteSessions, persistedSessions, delay: 0 });
+    const run = (api: Mock) => cleanupOrphanedDuplicateSessions({ api, remoteSessions, persistedSessions, delay: 0 });
 
     it('revokes the orphan with its own UID and records it as done', async () => {
-        const api = jest.fn().mockResolvedValue({ Code: 1000 });
+        const api = vi.fn().mockResolvedValue({ Code: 1000 });
 
         await run(api);
 
@@ -157,7 +159,7 @@ describe('cleanupOrphanedDuplicateSessions', () => {
     });
 
     it.each([400, 401, 422])('records the orphan as done on %i', async (status) => {
-        const api = jest.fn().mockRejectedValue({ status });
+        const api = vi.fn().mockRejectedValue({ status });
 
         await run(api);
 
@@ -165,7 +167,7 @@ describe('cleanupOrphanedDuplicateSessions', () => {
     });
 
     it.each([500, undefined])('leaves the orphan to be retried on %s', async (status) => {
-        const api = jest.fn().mockRejectedValue({ status });
+        const api = vi.fn().mockRejectedValue({ status });
 
         await run(api);
 
@@ -173,7 +175,7 @@ describe('cleanupOrphanedDuplicateSessions', () => {
     });
 
     it('does not attempt an orphan that has already been recorded', async () => {
-        const api = jest.fn().mockResolvedValue({ Code: 1000 });
+        const api = vi.fn().mockResolvedValue({ Code: 1000 });
 
         await run(api);
         await run(api);
@@ -182,7 +184,7 @@ describe('cleanupOrphanedDuplicateSessions', () => {
     });
 
     it('does not wait after the last orphan', async () => {
-        const api = jest.fn().mockResolvedValue({ Code: 1000 });
+        const api = vi.fn().mockResolvedValue({ Code: 1000 });
 
         // A trailing wait would leave this pending for the full delay and time the test out
         await expect(
@@ -191,7 +193,7 @@ describe('cleanupOrphanedDuplicateSessions', () => {
     });
 
     it('does nothing when there is nothing to do', async () => {
-        const api = jest.fn();
+        const api = vi.fn();
 
         await expect(
             cleanupOrphanedDuplicateSessions({ api, remoteSessions: [], persistedSessions: [], delay: 0 })

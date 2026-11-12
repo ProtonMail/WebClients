@@ -15,7 +15,7 @@ const freeUser = { Subscribed: 0 } as UserModel;
 describe('entitlements', () => {
     let mockEntitlements: Entitlements;
 
-    const apiMock = jest.fn();
+    const apiMock = vi.fn();
 
     beforeEach(() => {
         mockEntitlements = {

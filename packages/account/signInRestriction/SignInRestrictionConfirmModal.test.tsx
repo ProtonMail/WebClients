@@ -1,18 +1,11 @@
-import { expect } from '@jest/globals';
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import SignInRestrictionConfirmModal from './SignInRestrictionConfirmModal';
 
-window.ResizeObserver = jest.fn().mockImplementation(() => ({
-    observe: jest.fn(),
-    unobserve: jest.fn(),
-    disconnect: jest.fn(),
-}));
-
 const renderModal = () => {
-    const onConfirm = jest.fn();
-    const onClose = jest.fn();
+    const onConfirm = vi.fn();
+    const onClose = vi.fn();
 
     render(
         <SignInRestrictionConfirmModal

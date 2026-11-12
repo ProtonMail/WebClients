@@ -24,7 +24,7 @@ import { userReducer } from '../user';
 import { entitlementChecksForOrgAndUserThunk } from './actions';
 import { entitlementCatalogReducer } from './index';
 
-const api = jest.fn(({ url }: { url: string }) => Promise.reject(new Error(`unexpected url ${url}`)));
+const api = vi.fn(({ url }: { url: string }) => Promise.reject(new Error(`unexpected url ${url}`)));
 
 const setup = ({ role, subscriptionPlans }: { role: USER_ROLES; subscriptionPlans: CataloguedPlan[] }) => {
     const [first, ...others] = subscriptionPlans.map((plan) => buildSubscription(plan));

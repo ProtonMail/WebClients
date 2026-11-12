@@ -1,8 +1,8 @@
-import { expect } from '@jest/globals';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
-import { mockUseApi } from '@proton/app-context/testing/mockUseApi';
-import { mockUseNotifications } from '@proton/app-context/testing/mockUseNotifications';
+import { mockUseApi } from '@proton/app-context/testing/vitest/mockUseApi';
+import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
 import { updateSignInRestriction } from '@proton/shared/lib/api/settings';
@@ -14,19 +14,13 @@ import {
 
 import { TestStoreProvider } from '../testing/TestStoreProvider';
 import { buildAddress } from '../testing/buildAddress';
-import { mockUseAddresses } from '../testing/mockUseAddresses';
-import { mockUseUser } from '../testing/mockUseUser';
+import { mockUseAddresses } from '../testing/vitest/mockUseAddresses';
+import { mockUseUser } from '../testing/vitest/mockUseUser';
 import { useUserSettings } from '../userSettings/hooks';
 import SignInRestrictionSection from './SignInRestrictionSection';
 
-window.ResizeObserver = jest.fn().mockImplementation(() => ({
-    observe: jest.fn(),
-    unobserve: jest.fn(),
-    disconnect: jest.fn(),
-}));
-
-jest.mock('../userSettings/hooks');
-const mockedUseUserSettings = useUserSettings as jest.Mock;
+vi.mock('../userSettings/hooks');
+const mockedUseUserSettings = useUserSettings as Mock;
 
 const renderSection = () => {
     const { store } = getTestStore({
@@ -42,10 +36,10 @@ const renderSection = () => {
 };
 
 describe('SignInRestrictionSection', () => {
-    let mockedApi: jest.Mock;
+    let mockedApi: Mock;
 
     beforeEach(() => {
-        mockedApi = jest.fn();
+        mockedApi = vi.fn();
         mockUseApi(mockedApi);
         mockUseNotifications();
         mockUseUser([{ Name: 'eric.norbert' }]);

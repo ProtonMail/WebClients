@@ -6,7 +6,7 @@ import { PASSWORD_REMINDERS_VALUE, type UserSettings } from '@proton/shared/lib/
 import { getShowPasswordReminders } from './getShowPasswordReminders';
 
 const now = new Date('2005-05-25');
-jest.useFakeTimers().setSystemTime(now);
+vi.useFakeTimers().setSystemTime(now);
 
 const makeUser = (overrides: Partial<UserModel> = {}): UserModel =>
     ({ isPrivate: true, isSelf: true, Flags: { sso: false }, ...overrides }) as UserModel;

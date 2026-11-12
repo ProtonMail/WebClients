@@ -19,7 +19,7 @@ describe('plans', () => {
     let mockDefaultCurrency: Currency = 'USD';
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockPlans = {
             USD: [],
             EUR: [],
@@ -37,7 +37,7 @@ describe('plans', () => {
         mockDefaultCurrency = 'USD';
     });
 
-    const apiMock = jest.fn().mockImplementation(({ url, params }) => {
+    const apiMock = vi.fn().mockImplementation(({ url, params }) => {
         // handling free plan route
         if (url.includes('plans/default')) {
             // we reject this call, because the helper for free plan includes the hardcoded fallback that we will use

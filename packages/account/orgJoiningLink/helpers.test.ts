@@ -1,8 +1,9 @@
+// @vitest-environment happy-dom
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 
 import { getJoiningLinkHref, parseJoiningLinkConfig } from './helpers';
 
-jest.mock('@protontech/crypto', () => ({}));
+vi.mock('@protontech/crypto', () => ({}));
 
 describe('getJoiningLinkHref', () => {
     it('produces valid URL', () => {

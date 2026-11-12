@@ -20,7 +20,7 @@ const getSubscriptionState = (value: Subscription | undefined): SubscriptionStat
 };
 
 describe('allSubscriptions model', () => {
-    const apiMock = jest.fn();
+    const apiMock = vi.fn();
 
     beforeEach(() => {
         apiMock.mockReset();

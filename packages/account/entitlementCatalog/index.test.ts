@@ -34,7 +34,7 @@ describe('entitlementCatalog', () => {
         Addons: [],
     };
 
-    const apiMock = jest.fn();
+    const apiMock = vi.fn();
 
     beforeEach(() => {
         mockCatalog = {
@@ -47,7 +47,7 @@ describe('entitlementCatalog', () => {
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     const setup = (preloadedState: object = {}) => {
@@ -175,12 +175,12 @@ describe('entitlementCatalog', () => {
     });
 
     it('should serve a successful catalog from the cache for the whole day', async () => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
 
         const { store } = setup();
         await store.dispatch(entitlementCatalogThunk());
 
-        jest.advanceTimersByTime(12 * HOUR);
+        vi.advanceTimersByTime(12 * HOUR);
         const catalog = await store.dispatch(entitlementCatalogThunk());
 
         expect(apiMock).toHaveBeenCalledTimes(1);

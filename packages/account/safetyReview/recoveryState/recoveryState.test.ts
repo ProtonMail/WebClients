@@ -10,22 +10,22 @@ import { selectUserSettings } from '../../userSettings';
 import { getActionableActionItem } from '../components/getActionableActionItem';
 import { type RecoveryItemIds, selectRecoveryState } from './recoveryState';
 
-jest.mock('../../delegatedAccess', () => ({ selectIsDelegatedAccessSupported: jest.fn() }));
-jest.mock('../../delegatedAccess/shared/outgoing/selector', () => ({
-    selectEnrichedOutgoingDelegatedAccess: jest.fn(),
+vi.mock('../../delegatedAccess', () => ({ selectIsDelegatedAccessSupported: vi.fn() }));
+vi.mock('../../delegatedAccess/shared/outgoing/selector', () => ({
+    selectEnrichedOutgoingDelegatedAccess: vi.fn(),
 }));
-jest.mock('../../passwordReminder', () => ({ selectPasswordReminder: jest.fn() }));
-jest.mock('../../recovery/accountRecovery', () => ({ selectAccountRecovery: jest.fn() }));
-jest.mock('../../recovery/mnemonic', () => ({ selectMnemonicData: jest.fn() }));
-jest.mock('../../recovery/recoveryFile', () => ({ selectRecoveryFileData: jest.fn() }));
-jest.mock('../../recovery/sessionRecoverySelectors', () => ({ selectSessionRecoveryData: jest.fn() }));
-jest.mock('../../user', () => ({ selectUser: jest.fn() }));
-jest.mock('../../userSettings', () => ({ selectUserSettings: jest.fn() }));
+vi.mock('../../passwordReminder', () => ({ selectPasswordReminder: vi.fn() }));
+vi.mock('../../recovery/accountRecovery', () => ({ selectAccountRecovery: vi.fn() }));
+vi.mock('../../recovery/mnemonic', () => ({ selectMnemonicData: vi.fn() }));
+vi.mock('../../recovery/recoveryFile', () => ({ selectRecoveryFileData: vi.fn() }));
+vi.mock('../../recovery/sessionRecoverySelectors', () => ({ selectSessionRecoveryData: vi.fn() }));
+vi.mock('../../user', () => ({ selectUser: vi.fn() }));
+vi.mock('../../userSettings', () => ({ selectUserSettings: vi.fn() }));
 
 const setup = ({ delegatedAccessLoading = false }: { delegatedAccessLoading?: boolean } = {}) => {
-    jest.mocked(selectUser).mockReturnValue({ value: { isPrivate: true } } as any);
-    jest.mocked(selectUserSettings).mockReturnValue({ value: { Flags: { EdmOptOut: 0 } } } as any);
-    jest.mocked(selectAccountRecovery).mockReturnValue({
+    vi.mocked(selectUser).mockReturnValue({ value: { isPrivate: true } } as any);
+    vi.mocked(selectUserSettings).mockReturnValue({ value: { Flags: { EdmOptOut: 0 } } } as any);
+    vi.mocked(selectAccountRecovery).mockReturnValue({
         loading: false,
         // Password reset is set up, so the items gated behind it count toward the score.
         hasPerfectPasswordResetState: true,
@@ -33,28 +33,28 @@ const setup = ({ delegatedAccessLoading = false }: { delegatedAccessLoading?: bo
         emailRecovery: { perfect: true, isVerified: true, hasReset: true, value: 'a@b.c' },
         phoneRecovery: { perfect: false, isVerified: false, hasReset: false, value: '' },
     } as any);
-    jest.mocked(selectMnemonicData).mockReturnValue({
+    vi.mocked(selectMnemonicData).mockReturnValue({
         loading: false,
         isMnemonicAvailable: true,
         isMnemonicSet: false,
     } as any);
-    jest.mocked(selectRecoveryFileData).mockReturnValue({
+    vi.mocked(selectRecoveryFileData).mockReturnValue({
         loading: false,
         isRecoveryFileAvailable: true,
         hasDeviceRecoveryEnabled: false,
         hasOutdatedRecoveryFile: false,
         recoverySecrets: [],
     } as any);
-    jest.mocked(selectPasswordReminder).mockReturnValue({
+    vi.mocked(selectPasswordReminder).mockReturnValue({
         isAvailable: true,
         isEnabled: true,
         messageCadenceHasExpired: false,
     } as any);
-    jest.mocked(selectSessionRecoveryData).mockReturnValue({
+    vi.mocked(selectSessionRecoveryData).mockReturnValue({
         isSessionRecoveryAvailable: true,
         isSessionRecoveryEnabled: false,
     } as any);
-    jest.mocked(selectEnrichedOutgoingDelegatedAccess).mockReturnValue({
+    vi.mocked(selectEnrichedOutgoingDelegatedAccess).mockReturnValue({
         isAvailable: true,
         loading: delegatedAccessLoading,
         emergencyContacts: { items: [], hasAccess: true, hasUpsell: false },
@@ -63,10 +63,10 @@ const setup = ({ delegatedAccessLoading = false }: { delegatedAccessLoading?: bo
 };
 
 const getRecoveryState = (isDelegatedAccessSupported: boolean) => {
-    jest.mocked(selectIsDelegatedAccessSupported).mockReturnValue(isDelegatedAccessSupported);
+    vi.mocked(selectIsDelegatedAccessSupported).mockReturnValue(isDelegatedAccessSupported);
     // App support is baked into `isAvailable`, see `selectEnrichedOutgoingDelegatedAccess`.
-    const outgoingDelegatedAccess = jest.mocked(selectEnrichedOutgoingDelegatedAccess)({} as any);
-    jest.mocked(selectEnrichedOutgoingDelegatedAccess).mockReturnValue({
+    const outgoingDelegatedAccess = vi.mocked(selectEnrichedOutgoingDelegatedAccess)({} as any);
+    vi.mocked(selectEnrichedOutgoingDelegatedAccess).mockReturnValue({
         ...outgoingDelegatedAccess,
         isAvailable: isDelegatedAccessSupported,
     });
@@ -83,7 +83,7 @@ const getActionableIds = (state: ReturnType<typeof getRecoveryState>) => {
 };
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     setup();
     selectRecoveryState.clearCache();
 });
@@ -149,7 +149,7 @@ describe('selectRecoveryState', () => {
         it('keeps the score baseline at 1 without offering it as a step', () => {
             const available = getRecoveryState(true);
             selectRecoveryState.clearCache();
-            jest.mocked(selectPasswordReminder).mockReturnValue({
+            vi.mocked(selectPasswordReminder).mockReturnValue({
                 isAvailable: false,
                 isEnabled: false,
                 messageCadenceHasExpired: false,

@@ -1,4 +1,3 @@
-import { expect } from '@jest/globals';
 import { render, screen } from '@testing-library/react';
 import { addDays, getUnixTime } from 'date-fns';
 
@@ -20,28 +19,28 @@ import {
 import type { OutgoingItemsResult } from '../../shared/outgoing/useOutgoingItems';
 import OutgoingEmergencyContactBanners from './OutgoingEmergencyContactBanners';
 
-jest.mock('../../../allSubscriptions/hooks', () => ({
-    useAllSubscriptions: jest.fn(),
+vi.mock('../../../allSubscriptions/hooks', () => ({
+    useAllSubscriptions: vi.fn(),
 }));
 
-jest.mock('../../../entitlementCatalog/hooks', () => ({
-    useEntitlementCatalog: jest.fn(),
+vi.mock('../../../entitlementCatalog/hooks', () => ({
+    useEntitlementCatalog: vi.fn(),
 }));
 
-jest.mock('../../../previousSubscription/hooks', () => ({
-    usePreviousSubscription: jest.fn(),
+vi.mock('../../../previousSubscription/hooks', () => ({
+    usePreviousSubscription: vi.fn(),
 }));
 
-jest.mock('../../../userPermissions/hooks', () => ({
-    ...jest.requireActual('../../../userPermissions/hooks'),
+vi.mock('../../../userPermissions/hooks', async () => ({
+    ...(await vi.importActual('../../../userPermissions/hooks')),
     useCanUpdateBilling: () => [true, false],
 }));
 
-jest.mock('../../shared/OutgoingDelegatedAccessProvider', () => ({
-    useOutgoingController: jest.fn(),
+vi.mock('../../shared/OutgoingDelegatedAccessProvider', () => ({
+    useOutgoingController: vi.fn(),
 }));
 
-jest.mock('@proton/components/components/link/SettingsLink', () => ({
+vi.mock('@proton/components/components/link/SettingsLink', () => ({
     __esModule: true,
     default: ({ path, children }: { path: string; children: React.ReactNode }) => <a href={path}>{children}</a>,
 }));
@@ -68,7 +67,7 @@ const renewing = (plan: PLANS, days: number) =>
     buildSubscription(plan, { ID: `${plan}-renewing`, Renew: Renew.Enabled, PeriodEnd: inDays(days) });
 
 const renderBanners = (subscriptions: Subscription[] | undefined) => {
-    jest.mocked(useAllSubscriptions).mockReturnValue([subscriptions, false] as ReturnType<typeof useAllSubscriptions>);
+    vi.mocked(useAllSubscriptions).mockReturnValue([subscriptions, false] as ReturnType<typeof useAllSubscriptions>);
     return render(<OutgoingEmergencyContactBanners />);
 };
 
@@ -76,16 +75,16 @@ const enableAutoRenewText = 'Enable auto-renew';
 
 describe('OutgoingEmergencyContactBanners, subscription expires warning', () => {
     beforeEach(() => {
-        jest.mocked(useEntitlementCatalog).mockReturnValue([entitlementCatalog, false] as ReturnType<
+        vi.mocked(useEntitlementCatalog).mockReturnValue([entitlementCatalog, false] as ReturnType<
             typeof useEntitlementCatalog
         >);
-        jest.mocked(usePreviousSubscription).mockReturnValue([
+        vi.mocked(usePreviousSubscription).mockReturnValue([
             { hasHadSubscription: false, previousSubscription: null },
             false,
         ] as ReturnType<typeof usePreviousSubscription>);
-        jest.mocked(useOutgoingController).mockReturnValue({
-            notify: jest.fn(),
-            subscribe: jest.fn(),
+        vi.mocked(useOutgoingController).mockReturnValue({
+            notify: vi.fn(),
+            subscribe: vi.fn(),
             outgoingDelegatedAccess: {
                 emergencyContacts: { items: [{}], hasUpsell: false },
             } as unknown as OutgoingItemsResult,

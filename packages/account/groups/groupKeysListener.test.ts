@@ -1,7 +1,8 @@
-import { expect } from '@jest/globals';
+// @vitest-environment happy-dom
 import type { Action } from '@reduxjs/toolkit';
 import { combineReducers, createAction } from '@reduxjs/toolkit';
 import { waitFor } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
@@ -23,18 +24,18 @@ const flushAsyncWork = async () => {
     await new Promise((resolve) => setTimeout(resolve, 0));
 };
 
-jest.mock('@proton/shared/lib/keys/groupKeys', () => ({
-    createGroupAddressKey: jest.fn(),
+vi.mock('@proton/shared/lib/keys/groupKeys', () => ({
+    createGroupAddressKey: vi.fn(),
 }));
 
-jest.mock('@proton/key-transparency/helpers/createKTVerifier', () => ({
-    createKTVerifier: jest.fn(() => ({
-        keyTransparencyVerify: jest.fn(),
-        keyTransparencyCommit: jest.fn(),
+vi.mock('@proton/key-transparency/helpers/createKTVerifier', () => ({
+    createKTVerifier: vi.fn(() => ({
+        keyTransparencyVerify: vi.fn(),
+        keyTransparencyCommit: vi.fn(),
     })),
 }));
 
-const mockedCreateGroupAddressKey = createGroupAddressKey as jest.MockedFunction<typeof createGroupAddressKey>;
+const mockedCreateGroupAddressKey = createGroupAddressKey as MockedFunction<typeof createGroupAddressKey>;
 
 type GeneratedKey = Awaited<ReturnType<typeof createGroupAddressKey>>[number];
 
@@ -116,10 +117,10 @@ const setup = ({
     isFlagEnabled?: boolean;
     preloadedState?: Partial<BaseState>;
 } = {}) => {
-    const isEnabled = jest.fn().mockReturnValue(isFlagEnabled);
-    const isReady = jest.fn().mockReturnValue(true);
-    const getError = jest.fn().mockReturnValue(undefined);
-    const api = jest.fn();
+    const isEnabled = vi.fn().mockReturnValue(isFlagEnabled);
+    const isReady = vi.fn().mockReturnValue(true);
+    const getError = vi.fn().mockReturnValue(undefined);
+    const api = vi.fn();
     const extraThunkArguments = {
         unleashClient: { isEnabled, isReady, getError },
         api,

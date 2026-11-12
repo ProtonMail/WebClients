@@ -1,3 +1,4 @@
+// @vitest-environment happy-dom
 import { APPS } from '@proton/shared/lib/constants';
 
 import { getSafetyReviewBackLink } from './getSafetyReviewBackLink';

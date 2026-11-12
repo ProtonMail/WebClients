@@ -1,4 +1,3 @@
-import { expect } from '@jest/globals';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -14,24 +13,24 @@ import {
 import type { OutgoingItemsResult } from '../../shared/outgoing/useOutgoingItems';
 import { OutgoingRecoveryContactSettings } from './OutgoingRecoveryContactSettings';
 
-jest.mock('../../../inactiveKeys/hooks', () => ({
-    useInactiveKeys: jest.fn(),
+vi.mock('../../../inactiveKeys/hooks', () => ({
+    useInactiveKeys: vi.fn(),
 }));
 
-jest.mock('../../../recovery/sentinelHooks', () => ({
-    useIsSentinelUser: jest.fn(),
+vi.mock('../../../recovery/sentinelHooks', () => ({
+    useIsSentinelUser: vi.fn(),
 }));
 
-jest.mock('../../shared/OutgoingDelegatedAccessProvider', () => ({
-    useOutgoingController: jest.fn(),
+vi.mock('../../shared/OutgoingDelegatedAccessProvider', () => ({
+    useOutgoingController: vi.fn(),
 }));
 
-jest.mock('@proton/features/useFeature', () => ({
+vi.mock('@proton/features/useFeature', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-jest.mock('@proton/components/containers/keys/reactivateKeys/ReactivateKeysModal', () => ({
+vi.mock('@proton/components/containers/keys/reactivateKeys/ReactivateKeysModal', () => ({
     __esModule: true,
     default: () => null,
 }));
@@ -39,7 +38,7 @@ jest.mock('@proton/components/containers/keys/reactivateKeys/ReactivateKeysModal
 const lockedDataTitle = 'Recover your data before adding a new contact.';
 
 const mockController = () => {
-    const notify = jest.fn();
+    const notify = vi.fn();
     const outgoingDelegatedAccess = {
         isAvailable: true,
         loading: false,
@@ -52,24 +51,24 @@ const mockController = () => {
             lastModifiedTime: null,
         },
     } as unknown as OutgoingItemsResult;
-    jest.mocked(useOutgoingController).mockReturnValue({
+    vi.mocked(useOutgoingController).mockReturnValue({
         notify,
-        subscribe: jest.fn(),
+        subscribe: vi.fn(),
         outgoingDelegatedAccess,
     } as OutgoingDelegatedAccessProviderValue);
     return { notify };
 };
 
 const mockHasDismissedRecoverDataCard = (value: boolean) => {
-    jest.mocked(useFeature).mockReturnValue({ feature: { Value: value } } as ReturnType<typeof useFeature>);
+    vi.mocked(useFeature).mockReturnValue({ feature: { Value: value } } as ReturnType<typeof useFeature>);
 };
 
 const mockInactiveKeys = (count: number) => {
-    jest.mocked(useInactiveKeys).mockReturnValue(Array.from({ length: count }, () => ({}) as KeyReactivationRequest));
+    vi.mocked(useInactiveKeys).mockReturnValue(Array.from({ length: count }, () => ({}) as KeyReactivationRequest));
 };
 
 const mockIsSentinelUser = (isSentinelUser: boolean) => {
-    jest.mocked(useIsSentinelUser).mockReturnValue([{ isSentinelUser } as any, false]);
+    vi.mocked(useIsSentinelUser).mockReturnValue([{ isSentinelUser } as any, false]);
 };
 
 describe('OutgoingRecoveryContactSettings', () => {

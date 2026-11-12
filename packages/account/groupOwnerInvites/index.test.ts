@@ -35,8 +35,8 @@ const noGroupsEntitlements: Entitlements = {
 const invite = { GroupOwnerInviteID: 'invite-1' } as GroupOwnerInvite;
 
 describe('groupOwnerInvitesThunk', () => {
-    const apiMock = jest.fn();
-    const isEnabled = jest.fn();
+    const apiMock = vi.fn();
+    const isEnabled = vi.fn();
 
     const setup = ({ flag, entitlements }: { flag: boolean; entitlements: Entitlements }) => {
         isEnabled.mockReset().mockImplementation((name: string) => name === 'UserGroupsGroupOwner' && flag);
@@ -59,8 +59,7 @@ describe('groupOwnerInvitesThunk', () => {
         });
     };
 
-    const invitesRequests = () =>
-        apiMock.mock.calls.filter(([config]: [{ url?: string }]) => config?.url === invitesUrl);
+    const invitesRequests = () => apiMock.mock.calls.filter(([config]) => config?.url === invitesUrl);
 
     it('fetches invites when the flag is on and the organization has the groups entitlement', async () => {
         const { store } = setup({ flag: true, entitlements: groupsEntitlements });

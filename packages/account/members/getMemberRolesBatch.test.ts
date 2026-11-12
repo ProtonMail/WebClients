@@ -1,4 +1,5 @@
 import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
+import type { Mock } from 'vitest';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
@@ -43,7 +44,7 @@ const setup = ({
     adminRoleEnabled = true,
 }: {
     members: EnhancedMember[];
-    api: jest.Mock;
+    api: Mock;
     adminRoleEnabled?: boolean;
 }) => {
     const extraThunkArguments = {
@@ -75,7 +76,7 @@ const setup = ({
 const getIDs = (members: EnhancedMember[]) => members.map(({ ID }) => ID);
 
 const resolveRoles = ({ leftOutMemberIDs = [] }: { leftOutMemberIDs?: string[] } = {}) =>
-    jest.fn(({ data }: { data: { MemberIDs: string[] } }) =>
+    vi.fn(({ data }: { data: { MemberIDs: string[] } }) =>
         Promise.resolve({
             Members: data.MemberIDs.filter((MemberID) => !leftOutMemberIDs.includes(MemberID)).map((MemberID) => ({
                 MemberID,
@@ -89,7 +90,7 @@ const resolveRoles = ({ leftOutMemberIDs = [] }: { leftOutMemberIDs?: string[] }
 
 describe('getMemberRolesBatch', () => {
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('requests every member once and commits one chunk at a time', async () => {
@@ -118,7 +119,7 @@ describe('getMemberRolesBatch', () => {
 
     it('stores the org key demotion state', async () => {
         const members = getMembers(3);
-        const api = jest.fn(() =>
+        const api = vi.fn(() =>
             Promise.resolve({
                 Members: [
                     {

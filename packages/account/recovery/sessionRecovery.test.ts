@@ -1,3 +1,4 @@
+// @vitest-environment happy-dom
 import { combineReducers } from '@reduxjs/toolkit';
 import { waitFor } from '@testing-library/react';
 
@@ -20,11 +21,11 @@ const getUser = (recoveryState?: SessionRecoveryState): UserModel =>
     }) as UserModel;
 
 const getMockStorage = (initial: { gracePeriodConfirmed?: boolean; canceledStateDismissed?: boolean } = {}) => ({
-    get: jest.fn().mockReturnValue({
+    get: vi.fn().mockReturnValue({
         gracePeriodConfirmed: initial.gracePeriodConfirmed ?? false,
         canceledStateDismissed: initial.canceledStateDismissed ?? false,
     }),
-    set: jest.fn(),
+    set: vi.fn(),
 });
 
 const setup = (

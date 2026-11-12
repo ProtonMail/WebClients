@@ -1,3 +1,5 @@
+import type { MockedFunction } from 'vitest';
+
 import { fetchPreviousSubscription } from '@proton/payments/core/api/api';
 import { PLANS } from '@proton/payments/core/constants';
 import type { PreviousSubscription } from '@proton/payments/core/interface';
@@ -15,13 +17,11 @@ import {
     selectPreviousSubscription,
 } from './index';
 
-jest.mock('@proton/payments/core/api/api', () => ({
-    fetchPreviousSubscription: jest.fn(),
+vi.mock('@proton/payments/core/api/api', () => ({
+    fetchPreviousSubscription: vi.fn(),
 }));
 
-const fetchPreviousSubscriptionMock = fetchPreviousSubscription as jest.MockedFunction<
-    typeof fetchPreviousSubscription
->;
+const fetchPreviousSubscriptionMock = fetchPreviousSubscription as MockedFunction<typeof fetchPreviousSubscription>;
 
 const freeUser = { isPaid: false, Subscribed: 0 } as UserModel;
 const paidUser = { isPaid: true, Subscribed: 1 } as UserModel;
@@ -41,7 +41,7 @@ const mappedSubscription: PreviousSubscription = {
 
 const setup = (user: UserModel) => {
     const extraThunkArguments = {
-        api: jest.fn(),
+        api: vi.fn(),
     } as unknown as ProtonThunkArguments;
 
     return getTestStore({

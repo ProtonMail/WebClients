@@ -1,3 +1,4 @@
+// @vitest-environment happy-dom
 import { waitFor } from '@testing-library/react';
 
 import { PLANS } from '@proton/payments/core/constants';
@@ -24,12 +25,12 @@ import { serializeOrgTheme, syncToCookie } from './cookie';
 import { organizationThemeListener } from './listener';
 import { type OrganizationTheme, organizationThemeSlice, selectOrganizationTheme } from './slice';
 
-jest.mock('./cookie', () => ({
-    ...jest.requireActual('./cookie'),
-    syncToCookie: jest.fn(),
+vi.mock('./cookie', async () => ({
+    ...(await vi.importActual('./cookie')),
+    syncToCookie: vi.fn(),
 }));
 
-const mockedSyncToCookie = jest.mocked(syncToCookie);
+const mockedSyncToCookie = vi.mocked(syncToCookie);
 
 const API_URL = 'https://mail.proton.me/api';
 const UID = 'session-uid';
@@ -81,7 +82,7 @@ const setup = ({
     organizationTheme?: OrganizationTheme;
 }) => {
     let serverEntitlements = entitlements;
-    const api = jest.fn().mockImplementation(({ url }: { url: string }) => {
+    const api = vi.fn().mockImplementation(({ url }: { url: string }) => {
         if (url === ENTITLEMENTS_URL) {
             return serverEntitlements instanceof Error
                 ? Promise.reject(serverEntitlements)
@@ -121,8 +122,7 @@ const setup = ({
             });
             await settle();
         },
-        entitlementsRequests: () =>
-            api.mock.calls.filter(([request]: [{ url: string }]) => request.url === ENTITLEMENTS_URL).length,
+        entitlementsRequests: () => api.mock.calls.filter(([request]) => request.url === ENTITLEMENTS_URL).length,
         setServerEntitlements: (next: Entitlements) => {
             serverEntitlements = next;
         },

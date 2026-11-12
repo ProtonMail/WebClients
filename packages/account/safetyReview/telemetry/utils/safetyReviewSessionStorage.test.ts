@@ -9,17 +9,17 @@ import {
 } from './safetyReviewSessionStorage';
 
 const now = 1234;
-jest.useFakeTimers().setSystemTime(now);
+vi.useFakeTimers().setSystemTime(now);
 
-jest.mock('@proton/shared/lib/helpers/sessionStorage', () => ({
-    getItem: jest.fn(),
-    removeItem: jest.fn(),
-    setItem: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/sessionStorage', () => ({
+    getItem: vi.fn(),
+    removeItem: vi.fn(),
+    setItem: vi.fn(),
 }));
 
-const mockedRemoveItem = jest.mocked(removeItem);
-const mockedGetItem = jest.mocked(getItem);
-const mockedSetItem = jest.mocked(setItem);
+const mockedRemoveItem = vi.mocked(removeItem);
+const mockedGetItem = vi.mocked(getItem);
+const mockedSetItem = vi.mocked(setItem);
 
 const userId = 'userId';
 

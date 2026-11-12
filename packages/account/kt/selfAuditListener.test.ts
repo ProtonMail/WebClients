@@ -1,3 +1,4 @@
+// @vitest-environment happy-dom
 import { combineReducers, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
 import { ktSentryReportError } from '@proton/key-transparency/helpers/utils';
@@ -14,21 +15,21 @@ import { loadSelfAuditResultThunk, runSelfAuditThunk, storeSelfAuditResultThunk 
 import { ktSelfAuditListener } from './selfAuditListener';
 
 // The audit itself is crypto and network heavy, what's tested here is when the listener runs it.
-jest.mock('./selfAuditActions', () => ({
-    loadSelfAuditResultThunk: jest.fn(),
-    runSelfAuditThunk: jest.fn(),
-    storeSelfAuditResultThunk: jest.fn(),
+vi.mock('./selfAuditActions', () => ({
+    loadSelfAuditResultThunk: vi.fn(),
+    runSelfAuditThunk: vi.fn(),
+    storeSelfAuditResultThunk: vi.fn(),
 }));
 
-jest.mock('@proton/key-transparency/helpers/utils', () => ({
+vi.mock('@proton/key-transparency/helpers/utils', () => ({
     KT_ERROR_TYPE: { SYSTEM: 0, LOCAL: 1 },
-    ktSentryReportError: jest.fn(),
+    ktSentryReportError: vi.fn(),
 }));
 
-const mockedLoadSelfAuditResult = jest.mocked(loadSelfAuditResultThunk);
-const mockedRunSelfAudit = jest.mocked(runSelfAuditThunk);
-const mockedStoreSelfAuditResult = jest.mocked(storeSelfAuditResultThunk);
-const mockedKtSentryReportError = jest.mocked(ktSentryReportError);
+const mockedLoadSelfAuditResult = vi.mocked(loadSelfAuditResultThunk);
+const mockedRunSelfAudit = vi.mocked(runSelfAuditThunk);
+const mockedStoreSelfAuditResult = vi.mocked(storeSelfAuditResultThunk);
+const mockedKtSentryReportError = vi.mocked(ktSentryReportError);
 
 const NOW = 1_700_000_000_000;
 const PENDING_SELF_AUDIT_DELAY = 10 * SECOND;
@@ -82,7 +83,7 @@ const setup = ({
 
     const bootstrap = async () => {
         store.dispatch(bootstrapEvent({ type: 'complete' }));
-        await jest.advanceTimersByTimeAsync(0);
+        await vi.advanceTimersByTimeAsync(0);
     };
 
     return { store, bootstrap };
@@ -90,20 +91,20 @@ const setup = ({
 
 describe('ktSelfAuditListener', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
-        jest.useFakeTimers().setSystemTime(NOW);
+        vi.clearAllMocks();
+        vi.useFakeTimers().setSystemTime(NOW);
     });
 
     afterEach(() => {
         clearListeners?.();
-        jest.useRealTimers();
-        jest.restoreAllMocks();
+        vi.useRealTimers();
+        vi.restoreAllMocks();
     });
 
     it('does nothing until the app has bootstrapped', async () => {
         setup();
 
-        await jest.advanceTimersByTimeAsync(DAY);
+        await vi.advanceTimersByTimeAsync(DAY);
 
         expect(mockedLoadSelfAuditResult).not.toHaveBeenCalled();
         expect(mockedRunSelfAudit).not.toHaveBeenCalled();
@@ -117,10 +118,10 @@ describe('ktSelfAuditListener', () => {
 
         expect(selectKTSelfAuditResult(store.getState())).toEqual(storedSelfAuditResult);
 
-        await jest.advanceTimersByTimeAsync(HOUR - 1);
+        await vi.advanceTimersByTimeAsync(HOUR - 1);
         expect(mockedRunSelfAudit).not.toHaveBeenCalled();
 
-        await jest.advanceTimersByTimeAsync(1);
+        await vi.advanceTimersByTimeAsync(1);
         expect(mockedRunSelfAudit).toHaveBeenCalledTimes(1);
         expect(mockedRunSelfAudit).toHaveBeenCalledWith(storedSelfAuditResult);
 
@@ -134,10 +135,10 @@ describe('ktSelfAuditListener', () => {
 
         await bootstrap();
 
-        await jest.advanceTimersByTimeAsync(PENDING_SELF_AUDIT_DELAY - 1);
+        await vi.advanceTimersByTimeAsync(PENDING_SELF_AUDIT_DELAY - 1);
         expect(mockedRunSelfAudit).not.toHaveBeenCalled();
 
-        await jest.advanceTimersByTimeAsync(1);
+        await vi.advanceTimersByTimeAsync(1);
         expect(mockedRunSelfAudit).toHaveBeenCalledTimes(1);
         expect(mockedRunSelfAudit).toHaveBeenCalledWith(undefined);
     });
@@ -147,7 +148,7 @@ describe('ktSelfAuditListener', () => {
         const { bootstrap } = setup({ storedSelfAuditResult });
 
         await bootstrap();
-        await jest.advanceTimersByTimeAsync(PENDING_SELF_AUDIT_DELAY);
+        await vi.advanceTimersByTimeAsync(PENDING_SELF_AUDIT_DELAY);
 
         expect(mockedRunSelfAudit).toHaveBeenCalledTimes(1);
         expect(mockedRunSelfAudit).toHaveBeenCalledWith(storedSelfAuditResult);
@@ -160,7 +161,7 @@ describe('ktSelfAuditListener', () => {
         });
 
         await bootstrap();
-        await jest.advanceTimersByTimeAsync(PENDING_SELF_AUDIT_DELAY);
+        await vi.advanceTimersByTimeAsync(PENDING_SELF_AUDIT_DELAY);
 
         expect(mockedRunSelfAudit).toHaveBeenCalledTimes(1);
         expect(mockedRunSelfAudit).toHaveBeenCalledWith(undefined);
@@ -170,13 +171,13 @@ describe('ktSelfAuditListener', () => {
         const { bootstrap } = setup();
 
         await bootstrap();
-        await jest.advanceTimersByTimeAsync(PENDING_SELF_AUDIT_DELAY);
+        await vi.advanceTimersByTimeAsync(PENDING_SELF_AUDIT_DELAY);
         expect(mockedRunSelfAudit).toHaveBeenCalledTimes(1);
 
-        await jest.advanceTimersByTimeAsync(SELF_AUDIT_INTERVAL - 1);
+        await vi.advanceTimersByTimeAsync(SELF_AUDIT_INTERVAL - 1);
         expect(mockedRunSelfAudit).toHaveBeenCalledTimes(1);
 
-        await jest.advanceTimersByTimeAsync(1);
+        await vi.advanceTimersByTimeAsync(1);
         expect(mockedRunSelfAudit).toHaveBeenCalledTimes(2);
         expect(mockedRunSelfAudit).toHaveBeenLastCalledWith(
             expect.objectContaining({ nextAuditTime: NOW + PENDING_SELF_AUDIT_DELAY + SELF_AUDIT_INTERVAL })
@@ -187,11 +188,11 @@ describe('ktSelfAuditListener', () => {
         const { store, bootstrap } = setup({ ktActivation: KeyTransparencyActivation.DISABLED });
 
         await bootstrap();
-        await jest.advanceTimersByTimeAsync(DAY);
+        await vi.advanceTimersByTimeAsync(DAY);
         expect(mockedRunSelfAudit).not.toHaveBeenCalled();
 
         store.dispatch(ktSlice.actions.value(KeyTransparencyActivation.LOG_ONLY));
-        await jest.advanceTimersByTimeAsync(0);
+        await vi.advanceTimersByTimeAsync(0);
 
         expect(mockedRunSelfAudit).toHaveBeenCalledTimes(1);
     });
@@ -200,26 +201,26 @@ describe('ktSelfAuditListener', () => {
         const { store, bootstrap } = setup({ apiOffline: true });
 
         await bootstrap();
-        await jest.advanceTimersByTimeAsync(DAY);
+        await vi.advanceTimersByTimeAsync(DAY);
         expect(mockedRunSelfAudit).not.toHaveBeenCalled();
 
         store.dispatch(apiStatusActions.update({ offline: false }));
-        await jest.advanceTimersByTimeAsync(0);
+        await vi.advanceTimersByTimeAsync(0);
 
         expect(mockedRunSelfAudit).toHaveBeenCalledTimes(1);
     });
 
     it('waits for the browser to be online to run a due audit', async () => {
-        const onLine = jest.spyOn(window.navigator, 'onLine', 'get').mockReturnValue(false);
+        const onLine = vi.spyOn(window.navigator, 'onLine', 'get').mockReturnValue(false);
         const { bootstrap } = setup();
 
         await bootstrap();
-        await jest.advanceTimersByTimeAsync(DAY);
+        await vi.advanceTimersByTimeAsync(DAY);
         expect(mockedRunSelfAudit).not.toHaveBeenCalled();
 
         onLine.mockReturnValue(true);
         window.dispatchEvent(new Event('online'));
-        await jest.advanceTimersByTimeAsync(0);
+        await vi.advanceTimersByTimeAsync(0);
 
         expect(mockedRunSelfAudit).toHaveBeenCalledTimes(1);
     });
@@ -232,14 +233,14 @@ describe('ktSelfAuditListener', () => {
         });
 
         await bootstrap();
-        await jest.advanceTimersByTimeAsync(PENDING_SELF_AUDIT_DELAY);
+        await vi.advanceTimersByTimeAsync(PENDING_SELF_AUDIT_DELAY);
 
         expect(mockedRunSelfAudit).toHaveBeenCalledTimes(1);
         expect(mockedKtSentryReportError).toHaveBeenCalledWith(error, expect.anything(), {
             context: 'runSelfAuditPeriodically',
         });
 
-        await jest.advanceTimersByTimeAsync(DAY);
+        await vi.advanceTimersByTimeAsync(DAY);
         expect(mockedRunSelfAudit).toHaveBeenCalledTimes(1);
     });
 
@@ -250,18 +251,18 @@ describe('ktSelfAuditListener', () => {
         });
 
         await bootstrap();
-        await jest.advanceTimersByTimeAsync(PENDING_SELF_AUDIT_DELAY + SELF_AUDIT_INTERVAL);
+        await vi.advanceTimersByTimeAsync(PENDING_SELF_AUDIT_DELAY + SELF_AUDIT_INTERVAL);
 
         expect(mockedRunSelfAudit).toHaveBeenCalledTimes(2);
     });
 
     it('updates the key transparency reminder after a successful audit', async () => {
-        const onReminderUpdate = jest.fn();
+        const onReminderUpdate = vi.fn();
         document.addEventListener(KEY_TRANSPARENCY_REMINDER_UPDATE, onReminderUpdate);
         const { bootstrap } = setup();
 
         await bootstrap();
-        await jest.advanceTimersByTimeAsync(PENDING_SELF_AUDIT_DELAY);
+        await vi.advanceTimersByTimeAsync(PENDING_SELF_AUDIT_DELAY);
 
         document.removeEventListener(KEY_TRANSPARENCY_REMINDER_UPDATE, onReminderUpdate);
         expect(onReminderUpdate).toHaveBeenCalledTimes(1);
@@ -269,7 +270,7 @@ describe('ktSelfAuditListener', () => {
     });
 
     it('does not update the key transparency reminder after a failed audit', async () => {
-        const onReminderUpdate = jest.fn();
+        const onReminderUpdate = vi.fn();
         document.addEventListener(KEY_TRANSPARENCY_REMINDER_UPDATE, onReminderUpdate);
         const { bootstrap } = setup();
         mockedRunSelfAudit.mockReturnValue(async () => ({
@@ -278,7 +279,7 @@ describe('ktSelfAuditListener', () => {
         }));
 
         await bootstrap();
-        await jest.advanceTimersByTimeAsync(PENDING_SELF_AUDIT_DELAY);
+        await vi.advanceTimersByTimeAsync(PENDING_SELF_AUDIT_DELAY);
 
         document.removeEventListener(KEY_TRANSPARENCY_REMINDER_UPDATE, onReminderUpdate);
         expect(mockedRunSelfAudit).toHaveBeenCalledTimes(1);
@@ -290,7 +291,7 @@ describe('ktSelfAuditListener', () => {
 
         await bootstrap();
         clearListeners?.();
-        await jest.advanceTimersByTimeAsync(DAY);
+        await vi.advanceTimersByTimeAsync(DAY);
 
         expect(mockedRunSelfAudit).not.toHaveBeenCalled();
     });
