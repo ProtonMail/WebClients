@@ -41,7 +41,11 @@ vi.mock('@proton/meet/store/hooks/useMeetings', () => ({
     ],
 }));
 
-const createMockStore = ({ sideBarOpen = false }) => {
+vi.mock('@proton/unleash/useFlag', () => ({
+    useFlag: (flag: string) => flag === 'MeetShowMLSLogs',
+}));
+
+const createMockStore = ({ sideBarOpen = false, keyRotationLogs = initialCurrentMeetingState.keyRotationLogs }) => {
     return configureStore({
         // @ts-expect-error - mock data
         reducer: {
@@ -77,6 +81,7 @@ const createMockStore = ({ sideBarOpen = false }) => {
                 ...initialCurrentMeetingState,
                 meetingLinkName,
                 meetingPassword,
+                keyRotationLogs,
             },
             meetingInfoModel: {
                 value: {
@@ -194,6 +199,30 @@ describe('MeetingDetails', () => {
         expect(screen.getByText('10:00 - 11:00 (America/Vancouver)')).toBeInTheDocument();
     });
 
+    it('should display the date in the meeting time zone when the device is in another time zone', () => {
+        vi.stubEnv('TZ', 'Europe/Zurich');
+        meetingSchedule = { StartTime: '1794549600', EndTime: '1794551400', Timezone: 'America/Vancouver' };
+        const store = createMockStore({ sideBarOpen: true });
+
+        render(<WrappedMeetingDetails />, {
+            wrapper: ({ children }) => (
+                <Provider context={ProtonStoreContext} store={store}>
+                    <NotificationsProvider>
+                        <MeetContext.Provider
+                            // @ts-expect-error - mock data
+                            value={{}}
+                        >
+                            {children}
+                        </MeetContext.Provider>
+                    </NotificationsProvider>
+                </Provider>
+            ),
+        });
+
+        expect(screen.getByText('Thursday, November 12, 2026')).toBeInTheDocument();
+        expect(screen.getByText('23:00 - 23:30 (America/Vancouver)')).toBeInTheDocument();
+    });
+
     it('should display a meeting in the device time zone when the bundled data does not know its time zone', () => {
         vi.stubEnv('TZ', 'Asia/Tokyo');
         meetingSchedule = { ...defaultMeetingSchedule, Timezone: 'Not/AZone' };
@@ -215,5 +244,46 @@ describe('MeetingDetails', () => {
         });
 
         expect(screen.getByText('03:40 - 04:40 (Asia/Tokyo)')).toBeInTheDocument();
+    });
+
+    describe('on a Vancouver device whose browser has the rules from before the move to permanent time', () => {
+        beforeEach(() => {
+            vi.stubEnv('TZ', 'America/Los_Angeles');
+            const deviceOptions = Intl.DateTimeFormat().resolvedOptions();
+            vi.spyOn(Intl.DateTimeFormat.prototype, 'resolvedOptions').mockReturnValue({
+                ...deviceOptions,
+                timeZone: 'America/Vancouver',
+            });
+        });
+
+        afterEach(() => {
+            vi.restoreAllMocks();
+        });
+
+        it('should display the activity event time in Vancouver time', () => {
+            const store = createMockStore({
+                sideBarOpen: true,
+                keyRotationLogs: [
+                    { timestamp: Date.parse('2026-11-12T17:00:00Z'), epoch: 1, type: 'log', message: 'Joined' },
+                ],
+            });
+
+            render(<WrappedMeetingDetails />, {
+                wrapper: ({ children }) => (
+                    <Provider context={ProtonStoreContext} store={store}>
+                        <NotificationsProvider>
+                            <MeetContext.Provider
+                                // @ts-expect-error - mock data
+                                value={{}}
+                            >
+                                {children}
+                            </MeetContext.Provider>
+                        </NotificationsProvider>
+                    </Provider>
+                ),
+            });
+
+            expect(screen.getByText('10:00:00')).toBeInTheDocument();
+        });
     });
 });

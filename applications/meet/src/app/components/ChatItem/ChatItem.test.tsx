@@ -176,4 +176,33 @@ describe('ChatItem', () => {
         await user.click(screen.getByRole('button', { name: 'Discard' }));
         expect(mockDiscardMessage).toHaveBeenCalledWith(mockChatMessage.id);
     });
+
+    describe('on a Vancouver device whose browser has the rules from before the move to permanent time', () => {
+        beforeEach(() => {
+            vi.stubEnv('TZ', 'America/Los_Angeles');
+            const deviceOptions = Intl.DateTimeFormat().resolvedOptions();
+            vi.spyOn(Intl.DateTimeFormat.prototype, 'resolvedOptions').mockReturnValue({
+                ...deviceOptions,
+                timeZone: 'America/Vancouver',
+            });
+        });
+
+        afterEach(() => {
+            vi.unstubAllEnvs();
+            vi.restoreAllMocks();
+        });
+
+        it('should render the message time in Vancouver time', () => {
+            render(
+                <Wrapper>
+                    <ChatItem
+                        item={{ ...mockChatMessage, timestamp: Date.parse('2026-11-12T17:00:00Z') }}
+                        displayDate={true}
+                    />
+                </Wrapper>
+            );
+
+            expect(screen.getByText('10:00 AM')).toBeInTheDocument();
+        });
+    });
 });
