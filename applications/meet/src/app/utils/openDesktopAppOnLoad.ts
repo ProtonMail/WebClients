@@ -1,5 +1,6 @@
 import type { MeetExtraThunkArguments } from '@proton/meet/store/store';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
 import { getUrlMeetingLinkName, getUrlMeetingPassword } from '../hooks/srp/getUrlMeetingParams';
 import { getBrowserPreference, getDesktopAppOption, tryOpenInDesktopApp } from './desktopAppDetector';
@@ -35,6 +36,10 @@ export const openDesktopAppOnLoad = ({
     userId?: string;
 }) => {
     meetingLinkNameTriedOnLoad = undefined;
+
+    if (isElectronApp) {
+        return;
+    }
 
     if (getDesktopAppOption(unleashClient.isEnabled(OPEN_DESKTOP_APP_ON_LOAD_FLAG)) !== 'openOnLoad') {
         return;

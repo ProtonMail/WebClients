@@ -129,18 +129,30 @@ describe('openDesktopAppOnLoad', () => {
     });
 
     it.each([
-        { device: 'mobile', isDesktop: false, isIpad: false, isSafari: false, isElectronApp: false },
-        { device: 'iPad', isDesktop: true, isIpad: true, isSafari: true, isElectronApp: false },
-        { device: 'the desktop app', isDesktop: true, isIpad: false, isSafari: false, isElectronApp: true },
-    ])('does not open the app on $device', ({ isDesktop, isIpad, isSafari, isElectronApp }) => {
+        { device: 'mobile', isDesktop: false, isIpad: false, isSafari: false },
+        { device: 'iPad', isDesktop: true, isIpad: true, isSafari: true },
+    ])('does not open the app on $device', ({ isDesktop, isIpad, isSafari }) => {
         mocks.isDesktop.mockReturnValue(isDesktop);
         mocks.isIpad.mockReturnValue(isIpad);
         mocks.isSafari.mockReturnValue(isSafari);
-        mocks.isElectronApp = isElectronApp;
 
         loadPage({ userId: USER_ID });
 
         expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
+    });
+
+    it('stops at once inside the desktop app: no attempt, no flag read, and nothing remembered as tried', () => {
+        loadPage({ userId: USER_ID });
+        expect(wasDesktopAppTriedOnLoad(MEETING_ID)).toBe(true);
+        vi.mocked(tryOpenInDesktopApp).mockClear();
+        mocks.isElectronApp = true;
+        const isEnabled = vi.fn(() => true);
+
+        openDesktopAppOnLoad({ unleashClient: { isEnabled }, userId: USER_ID });
+
+        expect(isEnabled).not.toHaveBeenCalled();
+        expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
+        expect(wasDesktopAppTriedOnLoad(MEETING_ID)).toBe(false);
     });
 
     it.each([
