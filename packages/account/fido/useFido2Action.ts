@@ -11,13 +11,15 @@ const SENTRY_MESSAGE: Record<Fido2ActionContext, string> = {
     registration: 'Security key registration',
 };
 
+const getFido2ErrorName = (error: unknown) => (error instanceof Error ? error.name : 'unknown');
+
 const reportFido2Error = (
     error: unknown,
     context: Fido2ActionContext,
     durationMs: number,
     hasFocusAtStart: boolean
 ) => {
-    const name = error instanceof Error ? error.name : 'unknown';
+    const name = getFido2ErrorName(error);
     // Browsers merge cancels, timeouts and missing keys into NotAllowedError, timing separates refused requests
     const timing = durationMs < 1000 ? 'instant' : 'user';
     const extension = error instanceof Error && /-extension:\/\/|webkit-masked-url:\/\//.test(error.stack || '');
@@ -34,7 +36,8 @@ const reportFido2Error = (
 };
 
 export const useFido2Action = () => {
-    const [fidoError, setFidoError] = useState(false);
+    // Name of the last error, e.g. NotAllowedError
+    const [fidoError, setFidoError] = useState<string | null>(null);
     const { awaitingTouch, startAwaitingTouch, stopAwaitingTouch } = useAwaitingTouch();
     const abortControllerRef = useRef<AbortController | null>(null);
 
@@ -62,12 +65,12 @@ export const useFido2Action = () => {
             const hasFocusAtStart = document.hasFocus();
 
             try {
-                setFidoError(false);
+                setFidoError(null);
                 startAwaitingTouch();
                 return await fn(abortController.signal);
             } catch (error) {
                 if (isCurrent()) {
-                    setFidoError(true);
+                    setFidoError(getFido2ErrorName(error));
                     reportFido2Error(error, context, Date.now() - start, hasFocusAtStart);
                 }
                 throw error;

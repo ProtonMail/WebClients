@@ -9,7 +9,7 @@ import physicalKey from '@proton/styles/assets/img/illustrations/physical-key.sv
 
 import AwaitingTouchBanner from './AwaitingTouchBanner';
 
-const AuthSecurityKeyContent = ({ awaitingTouch, error }: { awaitingTouch: boolean; error?: boolean }) => {
+const AuthSecurityKeyContent = ({ awaitingTouch, error }: { awaitingTouch: boolean; error?: string | null }) => {
     return (
         <>
             <div className="flex justify-center mt-4 mb-6">
@@ -24,8 +24,11 @@ const AuthSecurityKeyContent = ({ awaitingTouch, error }: { awaitingTouch: boole
             {error && (
                 <div className="mt-4">
                     <Banner className="mb-3" variant="norm" icon={<IcExclamationCircle />}>
-                        {c('fido2: Error')
-                            .t`Something went wrong authenticating with your security key. Please try again.`}
+                        {error === 'NotSupportedError'
+                            ? c('fido2: Error')
+                                  .t`This browser doesn't support security keys. Please try a different browser.`
+                            : c('fido2: Error')
+                                  .t`Something went wrong authenticating with your security key. Please try again.`}
                     </Banner>
                 </div>
             )}

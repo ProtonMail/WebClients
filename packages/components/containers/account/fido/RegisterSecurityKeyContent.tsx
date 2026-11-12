@@ -11,7 +11,7 @@ import AwaitingTouchBanner from './AwaitingTouchBanner';
 
 interface Props {
     loading?: boolean;
-    error?: boolean;
+    error?: string | null;
     checkbox: ReactNode;
     awaitingTouch: boolean;
 }
@@ -40,7 +40,17 @@ const RegisterSecurityKeyContent = ({ loading, awaitingTouch, error, checkbox }:
             {error && (
                 <div className="mt-4">
                     <Banner className="mb-3" variant="norm" icon={<IcExclamationCircle />}>
-                        {c('fido2: Error').t`Something went wrong registering your security key. Please try again.`}
+                        {(() => {
+                            if (error === 'InvalidStateError') {
+                                return c('fido2: Error').t`This security key is already registered to your account.`;
+                            }
+                            if (error === 'NotSupportedError') {
+                                return c('fido2: Error')
+                                    .t`This browser doesn't support security keys. Please try a different browser.`;
+                            }
+                            return c('fido2: Error')
+                                .t`Something went wrong registering your security key. Please try again.`;
+                        })()}
                     </Banner>
                 </div>
             )}
