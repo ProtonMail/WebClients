@@ -84,8 +84,9 @@
         "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
         "@swc/jest": "^0.2.39",
+        "@testing-library/dom": "catalog:",
         "@testing-library/jest-dom": "catalog:",
-        "@testing-library/react": "^15.0.7",
+        "@testing-library/react": "catalog:",
         "@testing-library/react-hooks": "catalog:",
         "@testing-library/user-event": "catalog:",
         "@types/jest": "catalog:",
@@ -101,6 +102,7 @@
         "jest-when": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react-dom": "catalog:",
         "typescript": "catalog:",
         "webpack": "catalog:"
     }

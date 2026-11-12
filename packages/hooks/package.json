@@ -39,11 +39,13 @@
     "dependencies": {
         "@proton/shared": "workspace:^",
         "@proton/utils": "workspace:^",
-        "@testing-library/react": "^15.0.7",
+        "@testing-library/dom": "catalog:",
+        "@testing-library/react": "catalog:",
         "@testing-library/react-hooks": "catalog:",
         "date-fns": "^2.30.0",
         "lodash": "catalog:",
         "react": "catalog:",
+        "react-dom": "catalog:",
         "react-router-dom": "catalog:",
         "react-test-renderer": "^18.3.1"
     },

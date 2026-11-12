@@ -109,8 +109,9 @@
         "@proton/pack": "workspace:^",
         "@proton/polyfill": "workspace:^",
         "@proton/vitest-config": "workspace:^",
+        "@testing-library/dom": "catalog:",
         "@testing-library/jest-dom": "catalog:",
-        "@testing-library/react": "^15.0.7",
+        "@testing-library/react": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
         "@vitejs/plugin-react": "^6.2.1",
@@ -119,6 +120,7 @@
         "happy-dom": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
+        "react-dom": "catalog:",
         "typescript": "catalog:",
         "vitest": "catalog:"
     }
