@@ -20,6 +20,7 @@ export const FLAGS_WITH_VARIANT = [
     'CheckoutCondensedAddons',
     'InboxBringYourOwnEmailImportPeriodExperiment',
     'PingOMaticEventLoopInterval',
+    'PostSignupSurveyExperiment',
 ] satisfies FeatureFlag[];
 
 /**
@@ -46,6 +47,7 @@ export type EnableVpn2024AddonsExperimentVariant =
     | 'no-addon';
 export type CheckoutCondensedAddonsVariant = 'control' | 'condensed';
 export type InboxBringYourOwnEmailImportPeriodExperimentVariant = 'Control' | 'Treatment';
+export type PostSignupSurveyExperimentVariant = 'Control' | 'Treatment';
 
 /**
  * @description Union type of the list of feature flags with a variant.
@@ -78,6 +80,7 @@ type FeatureFlagVariantMap = {
     CheckoutCondensedAddons: VariantReturnType<CheckoutCondensedAddonsVariant>;
     InboxBringYourOwnEmailImportPeriodExperiment: VariantReturnType<InboxBringYourOwnEmailImportPeriodExperimentVariant>;
     PingOMaticEventLoopInterval: VariantReturnType<PingOMaticEventLoopIntervalVariant>;
+    PostSignupSurveyExperiment: VariantReturnType<PostSignupSurveyExperimentVariant>;
 };
 
 /**

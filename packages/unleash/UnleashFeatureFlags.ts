@@ -297,6 +297,7 @@ export enum MailFeatureFlag {
     PasswordNudge = 'PasswordNudge',
     PasswordNudgeForPaidUsers = 'PasswordNudgeForPaidUsers',
     PostSignupSurvey = 'PostSignupSurvey',
+    PostSignupSurveyExperiment = 'PostSignupSurveyExperiment',
     RemoveReplyStyles = 'RemoveReplyStyles',
     ReplayOnboardingModal = 'ReplayOnboardingModal',
     // Category view flags, used to control the whole category view

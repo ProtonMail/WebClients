@@ -2,6 +2,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/payments/plan/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
+import { useVariant } from '@proton/unleash/useVariant';
 
 /**
  * Whether the onboarding ends with the post signup survey instead of closing.
@@ -10,7 +11,9 @@ import { useFlag } from '@proton/unleash/useFlag';
 export const usePostSignupSurveyEligibility = () => {
     const { welcomeFlags } = useWelcomeFlags();
     const [organization, loadingOrganization] = useOrganization();
+    // Kill switch of the feature, the experiment variant decides who is in the survey group
     const isEnabled = useFlag('PostSignupSurvey');
+    const variant = useVariant('PostSignupSurveyExperiment');
 
     // Replays of the onboarding never show it, only first-time users do
     if (!isEnabled || welcomeFlags.isReplay) {
@@ -24,5 +27,10 @@ export const usePostSignupSurveyEligibility = () => {
 
     // B2C only: admins and members of a B2B organization never see it
     const isB2B = getIsB2BAudienceFromPlan(organization?.PlanName);
-    return !isB2B;
+    if (isB2B) {
+        return false;
+    }
+
+    // Only the Treatment group sees the survey, Control (and a disabled experiment) finish the onboarding as before
+    return variant.name === 'Treatment';
 };
