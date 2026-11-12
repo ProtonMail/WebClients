@@ -10,6 +10,7 @@ import type { SimpleEditorActions } from '@proton/components/containers/editor/S
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import type { WithLoading } from '@proton/hooks/useLoading';
 import SimpleEditor from '@proton/mail-composer/components/editor/SimpleEditor';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { formatSignature } from '@proton/shared/lib/mail/signature';
@@ -24,6 +25,7 @@ interface Props {
 
 const MobileEditAddressSection = ({ address, onAddressUpdate, isSavingAddressUpdates }: Props) => {
     const dispatch = useDispatch();
+    const [mailSettings] = useMailSettings();
     const handleError = useErrorHandler();
     const [editorReady, setEditorReady] = useState(false);
     const [displayName, setDisplayName] = useState(address.DisplayName);
@@ -80,6 +82,7 @@ const MobileEditAddressSection = ({ address, onAddressUpdate, isSavingAddressUpd
                 onChange={() => {
                     setSignatureUpdated(true);
                 }}
+                mailSettings={mailSettings}
             />
 
             <Button
