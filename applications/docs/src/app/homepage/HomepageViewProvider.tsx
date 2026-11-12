@@ -50,6 +50,7 @@ export function HomepageViewProvider({
   getAppHref,
   dateLocaleCode,
   errorTracking,
+  featureFlags,
 }: HomepageViewProviderProps) {
   const [search, setSearch] = useSearch()
   const [recentsSort, setRecentsSort] = useRecentsSort()
@@ -194,6 +195,7 @@ export function HomepageViewProvider({
       getAppHref,
       dateFormatter,
       errorTracking,
+      featureFlags,
     }),
     [
       state,
@@ -212,6 +214,7 @@ export function HomepageViewProvider({
       getAppHref,
       dateFormatter,
       errorTracking,
+      featureFlags,
     ],
   )
 

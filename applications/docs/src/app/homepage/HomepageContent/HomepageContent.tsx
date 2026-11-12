@@ -14,7 +14,6 @@ import emptyStateImage from './empty-state.svg'
 import { clsx } from '../utils/clsx'
 import * as Ariakit from '@ariakit/react'
 import { APPS } from '../utils/apps'
-import { useIsSheetsEnabled } from '~/utils/flags'
 import { TelemetryEvent } from '../utils/telemetry'
 
 export function HomepageContent() {
@@ -97,18 +96,10 @@ function HomepageView(): JSX.Element | null {
 
 type EmptyStateVariant = 'recents' | 'trash' | 'search'
 
-type GetEmptyStateTextProps = {
-  variant: EmptyStateVariant
-  isSheetsEnabled: boolean
-}
-function getEmptyStateText(props: GetEmptyStateTextProps): string {
-  const { variant, isSheetsEnabled } = props
-
+function getEmptyStateText(variant: EmptyStateVariant): string {
   switch (variant) {
     case 'recents':
-      return isSheetsEnabled
-        ? c('Info').t`Create end-to-end encrypted documents and spreadsheets.`
-        : c('Info').t`Create an end-to-end encrypted document.`
+      return c('Info').t`Create end-to-end encrypted documents and spreadsheets.`
     case 'trash':
       return c('Info').t`There are no documents in the trash.`
     case 'search':
@@ -134,8 +125,6 @@ const HomepageButton = forwardRef<HTMLButtonElement, Ariakit.ButtonProps>(functi
 
 function RecentsEmptyStateButtons() {
   const { updateRecentDocuments, reportTelemetry, getAppHref } = useHomepageView()
-  const isSheetsEnabled = useIsSheetsEnabled()
-
   return (
     <div className="flex items-center justify-center gap-4">
       <HomepageButton
@@ -153,35 +142,31 @@ function RecentsEmptyStateButtons() {
         {c('Action').t`New document`}
       </HomepageButton>
 
-      {isSheetsEnabled ? (
-        <HomepageButton
-          className="relative"
-          render={<Ariakit.Role.a href={getAppHref('/sheet', APPS.PROTONDOCS)} target="_blank" />}
-          onClick={() => setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)}
-        >
-          <IcBrandProtonSheets
-            size={4}
-            className="shrink-0 text-[--icon-color]"
-            style={{ '--icon-color': COLOR_BY_TYPE.spreadsheet }}
-          />
-          {c('sheets_2025:Action').t`New spreadsheet`}
-          <span
-            className={clsx(
-              'flex h-4 items-center justify-center rounded-full bg-[--background-weak] px-1.5',
-              'text-[0.625rem]/[1rem] font-semibold text-[--link-norm]',
-              'pointer-events-none absolute -right-5 -top-2',
-            )}
-          >{c('Info').t`New`}</span>
-        </HomepageButton>
-      ) : null}
+      <HomepageButton
+        className="relative"
+        render={<Ariakit.Role.a href={getAppHref('/sheet', APPS.PROTONDOCS)} target="_blank" />}
+        onClick={() => setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)}
+      >
+        <IcBrandProtonSheets
+          size={4}
+          className="shrink-0 text-[--icon-color]"
+          style={{ '--icon-color': COLOR_BY_TYPE.spreadsheet }}
+        />
+        {c('sheets_2025:Action').t`New spreadsheet`}
+        <span
+          className={clsx(
+            'flex h-4 items-center justify-center rounded-full bg-[--background-weak] px-1.5',
+            'text-[0.625rem]/[1rem] font-semibold text-[--link-norm]',
+            'pointer-events-none absolute -right-5 -top-2',
+          )}
+        >{c('Info').t`New`}</span>
+      </HomepageButton>
     </div>
   )
 }
 
 type EmptyStateProps = { variant: EmptyStateVariant }
 function EmptyState({ variant }: EmptyStateProps) {
-  const isSheetsEnabled = useIsSheetsEnabled()
-
   return (
     <ContentSheet isBottom className="flex shrink-0 grow items-center justify-center">
       <div className="flex flex-col items-center gap-6 p-8">
@@ -191,9 +176,7 @@ function EmptyState({ variant }: EmptyStateProps) {
           src={variant === 'recents' ? emptyStateRecentsImage : emptyStateImage}
           alt="Empty state illustration"
         />
-        <p className="text-bold m-0 mb-1 max-w-[25rem] text-center text-2xl">
-          {getEmptyStateText({ variant, isSheetsEnabled })}
-        </p>
+        <p className="text-bold m-0 mb-1 max-w-[25rem] text-center text-2xl">{getEmptyStateText(variant)}</p>
         {variant === 'recents' ? <RecentsEmptyStateButtons /> : null}
       </div>
     </ContentSheet>

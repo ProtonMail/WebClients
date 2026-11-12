@@ -23,13 +23,8 @@ jest.mock('@proton/account/addresses/hooks', () => ({
   useAddresses: () => [[], false],
 }))
 
-let mockBulkEnabled = false
-let mockBulkMoveEnabled = false
-jest.mock('~/utils/flags', () => ({
-  ...jest.requireActual('~/utils/flags'),
-  useBulkTrashEnabled: () => mockBulkEnabled,
-  useBulkMoveEnabled: () => mockBulkMoveEnabled,
-}))
+let bulkTrashEnabled = false
+let bulkMoveEnabled = false
 
 let mockIsNarrow = false
 jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
@@ -283,13 +278,13 @@ describe('HomepageContent', () => {
 
   describe('bulk selection', () => {
     beforeEach(() => {
-      mockBulkEnabled = true
+      bulkTrashEnabled = true
       mockBulkTrash.mockReset()
     })
 
     afterEach(() => {
-      mockBulkEnabled = false
-      mockBulkMoveEnabled = false
+      bulkTrashEnabled = false
+      bulkMoveEnabled = false
       mockIsNarrow = false
       mockIsTrashing = false
       mockItems = MOCK_DATA
@@ -306,7 +301,7 @@ describe('HomepageContent', () => {
     const findRow = (name: string) => screen.findByRole('button', { name: new RegExp(`(^|, )${name}, `) })
 
     test('does not render selection UI when the flag is off', async () => {
-      mockBulkEnabled = false
+      bulkTrashEnabled = false
       renderWithProviders(<HomepageContent />)
       await screen.findByRole('table')
       expectNoSelectionUI()
@@ -402,7 +397,7 @@ describe('HomepageContent', () => {
     })
 
     test('single click opens the document when the flag is off', async () => {
-      mockBulkEnabled = false
+      bulkTrashEnabled = false
       const { mockOpen } = renderWithProviders(<HomepageContent />)
       await userEvent.click((await screen.findAllByText('Document1'))[0])
       expect(mockOpen).toHaveBeenCalledWith(expect.objectContaining(MOCK_DATA[0]), 'normal')
@@ -527,12 +522,12 @@ describe('HomepageContent', () => {
 
     describe('bulk move', () => {
       beforeEach(() => {
-        mockBulkMoveEnabled = true
+        bulkMoveEnabled = true
         mockBulkMove.mockReset()
       })
 
       test('does not render the move button when bulk move is off', async () => {
-        mockBulkMoveEnabled = false
+        bulkMoveEnabled = false
         renderWithProviders(<HomepageContent />)
         await screen.findByRole('table')
         await selectAll()
@@ -654,7 +649,7 @@ describe('HomepageContent', () => {
         })
 
         test('always shows when bulk move is off', async () => {
-          mockBulkMoveEnabled = false
+          bulkMoveEnabled = false
           renderWithProviders(<HomepageContent />)
 
           ;(await findActionsButtons()).forEach((button) => expect(button).not.toHaveClass(HOVER_ONLY))
@@ -684,7 +679,7 @@ describe('HomepageContent', () => {
         })
 
         test('keeps the selection when bulk move is off', async () => {
-          mockBulkMoveEnabled = false
+          bulkMoveEnabled = false
           renderWithProviders(<HomepageContent />)
           await screen.findByRole('table')
           await selectAll()
@@ -760,7 +755,7 @@ describe('HomepageContent', () => {
         })
 
         test('keeps the document menu when bulk move is off', async () => {
-          mockBulkMoveEnabled = false
+          bulkMoveEnabled = false
           renderWithProviders(<HomepageContent />)
           await screen.findByRole('table')
           await selectAll()
@@ -881,6 +876,7 @@ describe('HomepageContent', () => {
           getAppHref: (path) => path,
           dateFormatter: new DateFormatter('en-US'),
           errorTracking: { traceError: jest.fn(), addBreadcrumb: jest.fn(), isReportable: () => true },
+          featureFlags: { invitationsSdk: false, bulkTrash: bulkTrashEnabled, bulkMove: bulkMoveEnabled },
         }}
       >
         {children}

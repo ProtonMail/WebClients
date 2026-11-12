@@ -32,7 +32,6 @@ import { clsx } from '../utils/clsx'
 import type { ComponentPropsWithoutRef, KeyboardEvent, MouseEvent, ReactNode } from 'react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { c, msgid } from 'ttag'
-import { useBulkMoveEnabled, useBulkTrashEnabled } from '~/utils/flags'
 import { useEvent } from '../utils/useEvent'
 import { useDocumentActions } from '../documentActionsContext'
 import type { RecentsSort } from '../homepageViewContext'
@@ -63,14 +62,14 @@ export type DocumentsTableProps = { itemsSections: ItemsSection[]; variant: Tabl
 
 export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) {
   const [addresses] = useAddresses()
-  const { type, state, myFilesRootUid } = useHomepageView()
+  const { type, state, myFilesRootUid, featureFlags } = useHomepageView()
   const contextMenuAnchorRef = useRef<HTMLDivElement>(null)
   const contextMenu = useContextMenu()
   const isRecents = variant.startsWith('recents')
   const isSearch = variant === 'search'
 
   // Like Drive: single click selects, double click opens.
-  const openOnDoubleClick = useBulkTrashEnabled()
+  const openOnDoubleClick = featureFlags.bulkTrash
   const bulkEnabled = openOnDoubleClick && (isRecents || isSearch)
   const allItems = itemsSections.flatMap(({ items }) => items)
   const selectableIds = bulkEnabled ? allItems.filter(canTrash).map((item) => item.uniqueId()) : []
@@ -80,9 +79,9 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
   const { bulkTrash, isBulkTrashing: isTrashing, bulkMove } = useDocumentActions()
   const hasSelection = selection.selectedIds.length > 0
   const selectedDocuments = allItems.filter((item) => selection.isSelected(item.uniqueId()))
-  const bulkMoveEnabled = useBulkMoveEnabled()
   // The move modal fails on nodes from more than one root, and the user's own documents can also sit on a device.
-  const canBulkMove = bulkMoveEnabled && selectedDocuments.every((document) => isInMyFiles(document, myFilesRootUid))
+  const canBulkMove =
+    featureFlags.bulkMove && selectedDocuments.every((document) => isInMyFiles(document, myFilesRootUid))
   // Like Drive, where moved documents leave the folder.
   const deselect = useEvent((documents: RecentDocumentsItem[]) => {
     const ids = documents.map((document) => document.uniqueId())
@@ -99,7 +98,7 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
   }
   const { currentDocument } = contextMenu
   const isSelectionMenu =
-    bulkMoveEnabled &&
+    featureFlags.bulkMove &&
     selection.selectedIds.length > 1 &&
     currentDocument !== undefined &&
     selection.isSelected(currentDocument.uniqueId())
@@ -512,7 +511,7 @@ function Row({ document, variant, addresses, selection, isSelectable, isTrashing
   const documentActions = useDocumentActions()
   const { location } = document
   const { displayName, avatarContent } = useNameAndAvatar(document, addresses)
-  const { updateRenamedDocumentInCache, createNotification, getAppHref, dateFormatter, errorTracking } =
+  const { updateRenamedDocumentInCache, createNotification, getAppHref, dateFormatter, errorTracking, featureFlags } =
     useHomepageView()
 
   // Force re-render every REFRESH_DATE_INTERVAL milliseconds
@@ -568,8 +567,7 @@ function Row({ document, variant, addresses, selection, isSelectable, isTrashing
 
   const contextMenu = useContextMenu()
   const isMenuOpen = contextMenu.isOpen && contextMenu.currentDocument?.uniqueId() === document.uniqueId()
-  const bulkMoveEnabled = useBulkMoveEnabled()
-  const showActionsOnHover = bulkMoveEnabled && !isMenuOpen
+  const showActionsOnHover = featureFlags.bulkMove && !isMenuOpen
 
   const isRenaming = documentActions.isRenaming(document)
   const DocumentTypeIcon = ICON_BY_TYPE[document.type]
@@ -728,7 +726,7 @@ function Row({ document, variant, addresses, selection, isSelectable, isTrashing
             <Button
               onClick={(event) => {
                 event.stopPropagation()
-                if (bulkMoveEnabled && !isTrashing) {
+                if (featureFlags.bulkMove && !isTrashing) {
                   if (isSelectable) {
                     selection?.select(document.uniqueId())
                   } else {

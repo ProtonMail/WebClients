@@ -16,7 +16,6 @@ import { useHomepageView, type DocInvitesHook } from '../homepageViewContext'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
 import * as Table from './table'
 import type { ExtendedInvitationDetails } from '../invitationTypes'
-import { useInvitationsSdkEnabled } from '~/utils/flags'
 import { useOpenInvitedDocument } from './useOpenInvitedDocument'
 import { TelemetryEvent } from '../utils/telemetry'
 
@@ -26,9 +25,14 @@ const WAIT_AFTER_ACCEPT_INVITE = 5000 // ms
 export type InvitesTableProps = ComponentPropsWithoutRef<'div'>
 
 export function InvitesTable(props: InvitesTableProps) {
-  const invitationsWithSDK = useInvitationsSdkEnabled()
-  const { useDocInvites } = useHomepageView()
-  return <InvitesTableContent key={invitationsWithSDK ? 'SDK' : 'legacy'} useDocInvites={useDocInvites} {...props} />
+  const { useDocInvites, featureFlags } = useHomepageView()
+  return (
+    <InvitesTableContent
+      key={featureFlags.invitationsSdk ? 'SDK' : 'legacy'}
+      useDocInvites={useDocInvites}
+      {...props}
+    />
+  )
 }
 
 function InvitesTableContent(allProps: InvitesTableProps & { useDocInvites: DocInvitesHook }) {

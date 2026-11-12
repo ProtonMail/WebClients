@@ -39,7 +39,6 @@ import { useHomepageView } from './homepageViewContext'
 import { useHistory, useRouteMatch } from 'react-router'
 import { HOMEPAGE_RECENTS_PATH } from './homepage-paths'
 import { useEvent } from './utils/useEvent'
-import { useIsSheetsEnabled } from '~/utils/flags'
 import { clsx } from './utils/clsx'
 import * as Ariakit from '@ariakit/react'
 import { COLOR_BY_TYPE } from './HomepageContent/shared'
@@ -268,7 +267,6 @@ function Sidebar({ expanded, onToggle, setExpanded, appVersion: hostAppVersion }
   const { updateRecentDocuments, isRecentsUpdating, type, reportTelemetry, createNotification, getAppHref } =
     useHomepageView()
   const appVersion = getAppVersion(hostAppVersion)
-  const isSheetsEnabled = useIsSheetsEnabled()
 
   const newDocumentButton = (
     <Ariakit.MenuProvider>
@@ -348,57 +346,53 @@ function Sidebar({ expanded, onToggle, setExpanded, appVersion: hostAppVersion }
               </span>
             </SidebarListItemLink>
           </SidebarListItem>
-          {isSheetsEnabled && (
-            <>
-              <SidebarListItem onClick={() => setExpanded(false)}>
-                <SidebarListItemLink
-                  to={(location) => {
-                    const search = new URLSearchParams(location.search)
-                    search.set('type', 'document')
-                    return { ...location, pathname: '/recents', search: search.toString() }
-                  }}
-                  exact={true}
-                  data-updating={isRecentsUpdating ? '' : undefined}
-                  className="flex items-center justify-between"
-                  activeClassName="!font-semibold"
-                  isActive={(match) => Boolean(match?.isExact && type === 'document')}
-                >
-                  <span className="flex items-center gap-2">
-                    <IcBrandProtonDocs
-                      className="shrink-0 text-[--icon-color]"
-                      style={{ '--icon-color': COLOR_BY_TYPE.document }}
-                    />
-                    <span>{c('Info').t`Documents`}</span>
-                  </span>
-                </SidebarListItemLink>
-              </SidebarListItem>
-              <SidebarListItem onClick={() => setExpanded(false)}>
-                <SidebarListItemLink
-                  to={(location) => {
-                    const search = new URLSearchParams(location.search)
-                    search.set('type', 'spreadsheet')
-                    return { ...location, pathname: '/recents', search: search.toString() }
-                  }}
-                  exact={true}
-                  data-updating={isRecentsUpdating ? '' : undefined}
-                  className="flex items-center justify-between"
-                  activeClassName="!font-semibold"
-                  isActive={(match) => Boolean(match?.isExact && type === 'spreadsheet')}
-                >
-                  <span className="flex items-center gap-2">
-                    <IcBrandProtonSheets
-                      className="shrink-0 text-[--icon-color]"
-                      style={{ '--icon-color': COLOR_BY_TYPE.spreadsheet }}
-                    />
-                    <span>{c('Info').t`Spreadsheets`}</span>
-                  </span>
-                </SidebarListItemLink>
-              </SidebarListItem>
-              <li className="px-6">
-                <hr className="my-3 h-px bg-[#EAE7E4] [[data-theme-mode=dark]_&]:!bg-[--border-norm]" />
-              </li>
-            </>
-          )}
+          <SidebarListItem onClick={() => setExpanded(false)}>
+            <SidebarListItemLink
+              to={(location) => {
+                const search = new URLSearchParams(location.search)
+                search.set('type', 'document')
+                return { ...location, pathname: '/recents', search: search.toString() }
+              }}
+              exact={true}
+              data-updating={isRecentsUpdating ? '' : undefined}
+              className="flex items-center justify-between"
+              activeClassName="!font-semibold"
+              isActive={(match) => Boolean(match?.isExact && type === 'document')}
+            >
+              <span className="flex items-center gap-2">
+                <IcBrandProtonDocs
+                  className="shrink-0 text-[--icon-color]"
+                  style={{ '--icon-color': COLOR_BY_TYPE.document }}
+                />
+                <span>{c('Info').t`Documents`}</span>
+              </span>
+            </SidebarListItemLink>
+          </SidebarListItem>
+          <SidebarListItem onClick={() => setExpanded(false)}>
+            <SidebarListItemLink
+              to={(location) => {
+                const search = new URLSearchParams(location.search)
+                search.set('type', 'spreadsheet')
+                return { ...location, pathname: '/recents', search: search.toString() }
+              }}
+              exact={true}
+              data-updating={isRecentsUpdating ? '' : undefined}
+              className="flex items-center justify-between"
+              activeClassName="!font-semibold"
+              isActive={(match) => Boolean(match?.isExact && type === 'spreadsheet')}
+            >
+              <span className="flex items-center gap-2">
+                <IcBrandProtonSheets
+                  className="shrink-0 text-[--icon-color]"
+                  style={{ '--icon-color': COLOR_BY_TYPE.spreadsheet }}
+                />
+                <span>{c('Info').t`Spreadsheets`}</span>
+              </span>
+            </SidebarListItemLink>
+          </SidebarListItem>
+          <li className="px-6">
+            <hr className="my-3 h-px bg-[#EAE7E4] [[data-theme-mode=dark]_&]:!bg-[--border-norm]" />
+          </li>
 
           <SidebarListItem onClick={() => setExpanded(false)}>
             <SidebarListItemLink to="/trash" exact={true} activeClassName="!font-semibold">

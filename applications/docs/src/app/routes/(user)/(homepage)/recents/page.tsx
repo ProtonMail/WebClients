@@ -25,6 +25,7 @@ export default function HomepagePage({
   getAppHref,
   dateLocaleCode,
   errorTracking,
+  featureFlags,
   useSharingModal,
   useMoveItemsModal,
   reportDescriptionContext,
@@ -44,6 +45,7 @@ export default function HomepagePage({
       getAppHref={getAppHref}
       dateLocaleCode={dateLocaleCode}
       errorTracking={errorTracking}
+      featureFlags={featureFlags}
     >
       <DocumentActionsProvider drive={drive} useSharingModal={useSharingModal} useMoveItemsModal={useMoveItemsModal}>
         {/* The header's offers (useFetchOffer in @proton/components) read their renewal notice from it */}
