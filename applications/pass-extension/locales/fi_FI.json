@@ -824,6 +824,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Eikö salasanahallintaasi ole listattu? Pyydä sitä."
+      ],
+      "Ignore": [
+        "Ohita"
       ]
     },
     "Activity": {
@@ -1627,6 +1630,9 @@
       ],
       "Vault": [
         "Holvi"
+      ],
+      "Export": [
+        "Vie"
       ]
     },
     "Info": {
@@ -3046,6 +3052,15 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisaatiosi vaatii, että suojaat pääsysi ${ PASS_APP_NAME }:iin"
+      ],
+      "iOS and Android Apps": [
+        "iOS- ja Android-sovellukset"
+      ],
+      "Scan to download": [
+        "Lataa lukemalla koodi"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Lataa sovellus ${ PASS_APP_NAME } Androidille ja iOS:lle lukemalla koodi"
       ]
     },
     "Keyboard key": {
@@ -5336,6 +5351,12 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Olet poistamassa ${ aliasCount } aliaksen pysyvästi.",
         "Olet poistamassa ${ aliasCount } aliasta pysyvästi."
+      ],
+      "Get mobile and desktop apps": [
+        "Hanki mobiili- ja työpöytäsovellukset"
+      ],
+      "Get mobile apps": [
+        "Hanki mobiilisovellukset"
       ]
     },
     "Title_cloned_item": {
