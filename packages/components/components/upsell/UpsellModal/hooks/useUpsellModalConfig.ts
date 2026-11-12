@@ -64,15 +64,8 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
                 controller.abort(`Upsell config fetch took more than limit of ${CONFIG_FETCH_TIMEOUT}ms`);
             }, CONFIG_FETCH_TIMEOUT);
 
-            // Listen to "abort" event to throw error properly
-            controller.signal.addEventListener(
-                'abort',
-                () => {
-                    window.clearTimeout(timeoutId);
-                    throw new Error(controller.signal.reason);
-                },
-                { once: true }
-            );
+            // Throwing from this listener would not reject the fetch, only surface as an uncaught error
+            controller.signal.addEventListener('abort', () => window.clearTimeout(timeoutId), { once: true });
 
             //
             // Fetch dependencies
