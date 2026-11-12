@@ -76,13 +76,15 @@ function DownloadAppsModal({ ...modalProps }: ModalStateProps) {
             <ModalTwoContent className="pass-download-apps-modal-content flex my-8">
                 <div className="flex flex-column gap-8 items-center flex-1">
                     <Href href={PASS_APP_QR_URL}>
-                        <img
-                            className="pass-download-apps-qr"
-                            src={passDownloadQr}
-                            alt={c('Info').t`Scan to download ${PASS_APP_NAME} for iOS and Android`}
-                            width={216}
-                            height={216}
-                        />
+                        <span className="pass-download-apps-qr-frame">
+                            <img
+                                className="pass-download-apps-qr"
+                                src={passDownloadQr}
+                                alt={c('Info').t`Scan to download ${PASS_APP_NAME} for iOS and Android`}
+                                width={230}
+                                height={230}
+                            />
+                        </span>
                     </Href>
 
                     <div className="pass-download-apps-mobile-copy flex flex-column items-center text-center">

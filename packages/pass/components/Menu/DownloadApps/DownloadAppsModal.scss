@@ -35,7 +35,26 @@
 	block-size: 7rem;
 }
 
+.pass-download-apps-qr-frame {
+	position: relative;
+	display: block;
+	inline-size: 108px;
+	block-size: 108px;
+	line-height: 0;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		background-color: white;
+		border-radius: 6px;
+	}
+}
+
 .pass-download-apps-qr {
+	position: relative;
+	z-index: 1;
 	display: block;
 	inline-size: 108px;
 	block-size: 108px;
