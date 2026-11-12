@@ -366,7 +366,8 @@ export const migrateUser = async ({
     preAuthKTVerify: PreAuthKTVerify;
     keyMigrationKTVerifier: KeyMigrationKTVerifier;
 }) => {
-    if (user.ToMigrate !== 1 || getHasMigratedAddressKeys(addresses)) {
+    // Users without keys (e.g. VPN accounts without an address) have nothing to migrate
+    if (user.ToMigrate !== 1 || !user.Keys?.length || getHasMigratedAddressKeys(addresses)) {
         return false;
     }
 
