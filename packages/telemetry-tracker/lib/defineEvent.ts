@@ -1,6 +1,14 @@
 import type { TelemetryEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 
-import type { DimensionSpec, DimensionsSpec, DurationSpec, ValueSpec, ValuesSpec } from './dimensions';
+import type {
+    ContextDimensionSpec,
+    ContextValueSpec,
+    DimensionSpec,
+    DimensionsSpec,
+    DurationSpec,
+    ValueSpec,
+    ValuesSpec,
+} from './dimensions';
 import type { TimerHandle } from './timers';
 
 /**
@@ -43,7 +51,10 @@ export const defineEvent = <
 >(
     config: (
         | ({ target: 'telemetry' } & TelemetryFields & { name?: never })
-        | ({ target: 'analytics' } & AnalyticsFields & { group?: never; event?: never })
+        | ({ target: 'analytics' } & AnalyticsFields & {
+                  group?: never;
+                  event?: never;
+              })
         | ({ target: 'both' } & TelemetryFields & AnalyticsFields)
     ) & {
         dimensions?: D;
@@ -55,7 +66,9 @@ export const defineEvent = <
     group: config.group,
     event: config.event,
     name: config.name,
+    // SAFETY: If omitted, the corresponding generic defaults to an empty spec.
     dimensions: (config.dimensions ?? {}) as D,
+    // SAFETY: If omitted, the corresponding generic defaults to an empty spec.
     values: (config.values ?? {}) as V,
     delay: config.delay ?? true,
 });
@@ -70,7 +83,8 @@ export const defineEvent = <
 
 /** Dimension specs -> accepted values: `{ source: 'a' | 'b'; isBYOE: boolean }` */
 type DimensionsInput<D extends DimensionsSpec> = {
-    [K in keyof D]: D[K] extends DimensionSpec<infer T> ? T : never;
+    // Context dimensions (`handle.dimension()`) are filled by the tracker, they are not part of the input
+    [K in keyof D as D[K] extends ContextDimensionSpec ? never : K]: D[K] extends DimensionSpec<infer T> ? T : never;
 };
 
 /** Names of the `duration()` values: `'durationMs'` */
@@ -83,7 +97,9 @@ type DurationKeys<V extends ValuesSpec> = {
  * A value can be `undefined` when it does not apply, it is then not sent.
  * Durations are never passed manually, see `EmitOptions.durationFrom`.
  */
-type ValuesInput<V extends ValuesSpec> = { [K in Exclude<keyof V, DurationKeys<V>>]: number | undefined };
+type ValuesInput<V extends ValuesSpec> = {
+    [K in keyof V as V[K] extends DurationSpec | ContextValueSpec ? never : K]: number | undefined;
+};
 
 /** `{ [Name]: Content }`, or `unknown` (a no-op in an intersection) when there is nothing to pass */
 type InputPart<Name extends string, Content> = keyof Content extends never ? unknown : { [N in Name]: Content };

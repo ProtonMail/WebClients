@@ -11,7 +11,7 @@ import { tracker } from '@proton/telemetry-tracker/lib/tracker';
 
 import type { OnlineServicesKey } from '../components/onboarding/checklist/constants';
 import { ONLINE_SERVICES } from '../components/onboarding/checklist/constants';
-import { getPlanDimension } from './onboardingEvents';
+import { getPlanDimension } from './context';
 
 /**
  * The checklist is not a funnel: its items can be done in any order, over several days.

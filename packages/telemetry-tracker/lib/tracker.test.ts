@@ -5,6 +5,7 @@ import type { Api } from '@proton/shared/lib/interfaces/Api';
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import { mockTracker } from '../testing';
+import { defineContext } from './context';
 import { defineEvent } from './defineEvent';
 import { allowed, bool, duration, number, topValues } from './dimensions';
 import { defineTimer } from './timers';
@@ -39,7 +40,7 @@ const funnelEvent = defineEvent({
 });
 const noInputEvent = defineEvent({ target: 'telemetry', group, event });
 
-const api = jest.fn() as unknown as Api;
+const api: Api = jest.fn();
 
 describe('tracker', () => {
     afterEach(() => {
@@ -110,7 +111,7 @@ describe('tracker', () => {
 
         it('never throws when sending fails', () => {
             initTracker({ api });
-            (sendTelemetryReport as jest.Mock).mockImplementationOnce(() => {
+            jest.mocked(sendTelemetryReport).mockImplementationOnce(() => {
                 throw new Error('boom');
             });
             expect(() => tracker.emit(noInputEvent)).not.toThrow();
@@ -159,7 +160,7 @@ describe('tracker', () => {
 
         it('still sends to analytics when Telemetry throws', () => {
             initTracker({ api });
-            (sendTelemetryReport as jest.Mock).mockImplementationOnce(() => {
+            jest.mocked(sendTelemetryReport).mockImplementationOnce(() => {
                 throw new Error('boom');
             });
             tracker.emit(both, { dimensions: { isBYOE: false } });
@@ -259,5 +260,110 @@ describe('tracker', () => {
             tracker.emit(funnelEvent, { ...input, values: { durationMs: 5 } });
             restore();
         });
+    });
+});
+
+describe('context values', () => {
+    it('reads numeric values at emit time and omits unknown and non-finite values for both targets', () => {
+        const context = defineContext<{ plan: string; accountAge: number | undefined }>({
+            plan: 'unknown',
+            accountAge: undefined,
+        });
+        const eventWithContext = defineEvent({
+            target: 'both',
+            group,
+            event,
+            name: 'context-test',
+            dimensions: { plan: context.dimension('plan') },
+            values: {
+                accountAge: context.value('accountAge'),
+                count: number(),
+            },
+        });
+        const mock = mockTracker();
+        tracker.emit(eventWithContext, { values: { count: 1 } });
+        context.set({ accountAge: 42 });
+        tracker.emit(eventWithContext, { values: { count: 2 } });
+        context.set({ accountAge: Infinity });
+        tracker.emit(eventWithContext, { values: { count: 3 } });
+        expect(mock.reports.map((report) => report.values)).toEqual([
+            { count: 1 },
+            { accountAge: 42, count: 2 },
+            { count: 3 },
+        ]);
+        expect(mock.analyticsEvents[1]).toEqual({
+            name: 'context-test',
+            data: { plan: 'unknown', accountAge: 42, count: 2 },
+        });
+        context.reset();
+        expect(context.get('accountAge')).toBeUndefined();
+        mock.restore();
+    });
+
+    it('enforces context key and emit input types', () => {
+        const context = defineContext({ plan: 'free', accountAge: 0 });
+        const eventWithContext = defineEvent({
+            target: 'telemetry',
+            group,
+            event,
+            values: { age: context.value('accountAge') },
+        });
+        const mock = mockTracker();
+        tracker.emit(eventWithContext);
+        // @ts-expect-error a context value is supplied by the tracker
+        tracker.emit(eventWithContext, { values: { age: 10 } });
+        defineEvent({
+            target: 'telemetry',
+            group,
+            event,
+            // @ts-expect-error numeric context values cannot be dimensions
+            dimensions: { age: context.value('accountAge') },
+        });
+        // @ts-expect-error numeric keys cannot be dimensions
+        context.dimension('accountAge');
+        // @ts-expect-error string keys cannot be numeric values
+        context.value('plan');
+        mock.restore();
+    });
+});
+
+describe('context dimensions', () => {
+    const testContext = defineContext({ plan: 'unknown' });
+    const contextEvent = defineEvent({
+        target: 'telemetry',
+        group,
+        event,
+        dimensions: {
+            step: allowed(['done']),
+            plan: testContext.dimension('plan'),
+        },
+    });
+
+    afterEach(() => testContext.reset());
+
+    it('fills the dimension from the latest context, not from the call site', () => {
+        const mock = mockTracker();
+        tracker.emit(contextEvent, { dimensions: { step: 'done' } });
+        testContext.set({ plan: 'bundle2022' });
+        tracker.emit(contextEvent, { dimensions: { step: 'done' } });
+        expect(mock.reports.map((r) => r.dimensions)).toEqual([
+            { step: 'done', plan: 'unknown' },
+            { step: 'done', plan: 'bundle2022' },
+        ]);
+        mock.restore();
+    });
+
+    it('cannot be passed from the call site', () => {
+        const mock = mockTracker();
+        // @ts-expect-error the context dimension is filled by the tracker
+        tracker.emit(contextEvent, { dimensions: { step: 'done', plan: 'forged' } });
+        expect(mock.reports[0].dimensions).toEqual({ step: 'done', plan: 'unknown' });
+        mock.restore();
+    });
+
+    it('keeps handles independent', () => {
+        const other = defineContext({ plan: 'other' });
+        testContext.set({ plan: 'x' });
+        expect(other.get('plan')).toBe('other');
     });
 });

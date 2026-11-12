@@ -4,11 +4,24 @@
  * input expected at `tracker.emit()` call sites.
  */
 export interface DimensionSpec<T extends string | boolean = string | boolean> {
-    readonly kind: 'allowed' | 'topValues' | 'bool';
+    readonly kind: 'allowed' | 'topValues' | 'bool' | 'context';
     /** Hardcoded list of accepted values (`allowed` only) */
     readonly values?: readonly string[];
     /** Type-level only, never set at runtime */
-    readonly _type: T;
+    readonly _type?: T;
+}
+
+/**
+ * Dimension filled by the tracker from a context handle (see `defineContext`), never passed at the call site.
+ * The `_context` brand lets `defineEvent` remove it from the emit input.
+ */
+export interface ContextDimensionSpec<T extends string | boolean = string | boolean> extends DimensionSpec<T> {
+    readonly kind: 'context';
+    readonly key: string;
+    /** Read at emit time, so the value is always the latest one */
+    readonly source: { get(key: string): string | boolean | undefined };
+    /** Type-level only, never set at runtime */
+    readonly _context: true;
 }
 
 export interface NumberSpec {
@@ -20,7 +33,15 @@ export interface DurationSpec {
     readonly kind: 'duration';
 }
 
-export type ValueSpec = NumberSpec | DurationSpec;
+/** Numeric value read from a context handle at emit time. */
+export interface ContextValueSpec {
+    readonly kind: 'contextValue';
+    readonly key: string;
+    readonly source: { get(key: string): number | undefined };
+    readonly _context: true;
+}
+
+export type ValueSpec = NumberSpec | DurationSpec | ContextValueSpec;
 
 export type DimensionsSpec = Record<string, DimensionSpec>;
 export type ValuesSpec = Record<string, ValueSpec>;
@@ -32,7 +53,6 @@ export type ValuesSpec = Record<string, ValueSpec>;
 export const allowed = <const V extends string>(values: readonly V[]): DimensionSpec<V> => ({
     kind: 'allowed',
     values,
-    _type: undefined as unknown as V,
 });
 
 /**
@@ -40,7 +60,6 @@ export const allowed = <const V extends string>(values: readonly V[]): Dimension
  */
 export const topValues = (): DimensionSpec<string> => ({
     kind: 'topValues',
-    _type: undefined as unknown as string,
 });
 
 /**
@@ -48,7 +67,6 @@ export const topValues = (): DimensionSpec<string> => ({
  */
 export const bool = (): DimensionSpec<boolean> => ({
     kind: 'bool',
-    _type: undefined as unknown as boolean,
 });
 
 /**

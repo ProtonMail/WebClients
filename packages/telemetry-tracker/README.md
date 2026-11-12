@@ -2,7 +2,7 @@
 
 One tracker, reachable from anywhere, with type-safe event definitions owned by each consumer. No hook per measurement group.
 
-- Entry points: `/lib/defineEvent`, `/lib/dimensions` and `/lib/timers` (define events and timers), `/lib/tracker` (`initTracker`, `tracker`), `/testing`. No barrels.
+- Entry points: `/lib/defineEvent`, `/lib/dimensions`, `/lib/timers` and `/lib/context` (define events, timers and contexts), `/lib/tracker` (`initTracker`, `tracker`), `/testing`. No barrels.
 - Initialised once in the app bootstrap: `initTracker({ api })` (account: `applications/account/src/app/private-app/bootstrap.ts`).
 - Sending, batching, random delay and the user opt-out are delegated to `sendTelemetryReport` (`@proton/shared/lib/helpers/metrics`). No feature flag logic here.
 - Used before `initTracker`: throws outside of production, reports once to Sentry and no-ops in production.
@@ -75,6 +75,41 @@ tracker.cancelTimer(importTimer); // abandoned funnel
 ```
 
 If the timer was not started (or was cancelled), the value is omitted. `durationFrom` is a type error on events without a `duration()` value.
+
+## Context dimensions and values
+
+### Why
+
+The tracker exists so an event can be sent from anywhere, without a hook. Some data breaks that: the plan, the account age or a setting must be on every event, and the only way to have them at the call site was a hook subscribing to the user or the subscriptions. The measurement then needed React again, and each call site had to read the value and pass it down.
+
+Contexts split the two concerns:
+
+- **Events say what they carry.** An event declares `plan: mailContext.dimension('plan')` once. Call sites only pass what is specific to them, so they can't forget the plan, send it inconsistently, or pass a wrong one.
+- **The owner says where the value comes from.** The value is written where the data already lives (a Redux listener), once per change, not once per render and per call site.
+- **The tracker stays generic.** It knows no key. Each app or package defines its own context, so one app can't read or overwrite another's values.
+
+Values change over time (a user upgrades), so the context holds the latest value and is read at emit time, never captured when the event is defined. Until the source has loaded, the context holds a safe placeholder (`unknown`).
+
+### How
+
+The owner (an app or a package) declares a context once, keeps it up to date where the data lives, and events read it at emit time.
+
+```ts
+// telemetry/context.ts
+export const mailContext = defineContext({ plan: 'unknown', accountAge: undefined as number | undefined });
+
+// events file
+const stepLoad = defineEvent({
+    ...,
+    dimensions: { step: allowed([...]), plan: mailContext.dimension('plan') },
+    values: { accountAge: mailContext.value('accountAge') },
+});
+
+// anywhere, no hook
+tracker.emit(stepLoad, { dimensions: { step: 'welcome' } });
+```
+
+Keep the context in sync with the source of truth in a Redux listener (`startListening`), which runs once per change and not per render: `mailContext.set({ plan, accountAge })`. Pick an initial value that is safe while the data loads (`unknown` for a dimension or `undefined` for an omitted numeric value, never a default that looks real). Dimensions accept strings and booleans; numeric values use `value()`. Non-finite numeric values are omitted. `reset()` restores the initial state (tests).
 
 ## Options
 
