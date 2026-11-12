@@ -60,6 +60,7 @@ import {
     getGuestLoggerKey,
     holdGuestLoggerLock,
 } from './utils/meetLogger';
+import { openDesktopAppOnLoad } from './utils/openDesktopAppOnLoad';
 import { startMeetingInfoPreload } from './utils/startMeetingInfoPreload';
 import { installWaitingRoomCallbackNamespaces } from './utils/wasmUtils';
 import { DirectMeetCoreClient } from './wasm/DirectMeetCoreClient';
@@ -334,6 +335,7 @@ const completeAppBootstrap = async ({
         cryptoPromise,
         measureLoadPhase('unleashMs', bootstrap.unleashReady({ unleashClient })).catch(noop),
     ]);
+    openDesktopAppOnLoad({ unleashClient, userId: userData.user.ID });
     initializeLogger({
         api,
         unleashClient,
@@ -521,6 +523,7 @@ export const bootstrapGuestApp = async (
     });
 
     await measureLoadPhase('unleashMs', unleashClient.start());
+    openDesktopAppOnLoad({ unleashClient });
 
     initializeLogger({
         api,

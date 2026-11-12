@@ -6,6 +6,7 @@ import { selectIsGuest, selectUserId } from '@proton/meet/store/slices/userSlice
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import type * as DesktopAppDetector from '../../utils/desktopAppDetector';
 import { getDesktopAppPreference, saveDesktopAppPreference, tryOpenInDesktopApp } from '../../utils/desktopAppDetector';
 import { OpenInDesktopApp } from './OpenInDesktopApp';
 
@@ -45,6 +46,7 @@ const getDesktopAppPreferenceMock = getDesktopAppPreference as unknown as Mock;
 describe('OpenInDesktopApp', () => {
     beforeEach(() => {
         vi.clearAllMocks();
+        localStorage.clear();
         useFlagMock.mockReturnValue(true);
         getDesktopAppPreferenceMock.mockReturnValue(false);
     });
@@ -129,6 +131,19 @@ describe('OpenInDesktopApp', () => {
         rerender(<OpenInDesktopApp />);
 
         expect(tryOpenInDesktopApp).toHaveBeenCalledTimes(1);
+    });
+
+    it('waits for a click when the browser was preferred, even with the flag on', async () => {
+        const { getDesktopAppPreference: readDesktopAppPreference, saveBrowserPreference } = await vi.importActual<
+            typeof DesktopAppDetector
+        >('../../utils/desktopAppDetector');
+        getDesktopAppPreferenceMock.mockImplementation(readDesktopAppPreference);
+        saveBrowserPreference('openInDesktopApp.user.user-1');
+
+        render(<OpenInDesktopApp />);
+
+        expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
+        expect(screen.queryByText(HINT_TITLE)).not.toBeInTheDocument();
     });
 
     it('waits for a click when the flag is off, even with a remembered choice', () => {
