@@ -637,7 +637,7 @@
         "Renomear"
       ],
       "Rename document": [
-        "Alterar o nome do documento"
+        "Renomear documento"
       ],
       "Report a problem": [
         "Relatar um problema"
@@ -2884,14 +2884,23 @@
       "Calendar limit reached": [
         "Chegou ao número limite de calendários"
       ],
+      "Cannot download a folder": [
+        "Não é possível transferir uma pasta"
+      ],
       "Cannot export this contact": [
         "Não é possível exportar este contacto"
       ],
       "Cannot find move target": [
         "Não é possível encontrar o destino do movimento"
       ],
+      "Cannot share root folder": [
+        "Não é possível partilhar a pasta raiz"
+      ],
       "Cannot verify the author of this file": [
         "Não é possível verificar o autor deste ficheiro"
+      ],
+      "Cannot verify who uploaded this file": [
+        "Não é possível verificar quem enviou este ficheiro"
       ],
       "Contact could not be saved": [
         "Não foi possível guardar o contacto."
@@ -2902,11 +2911,23 @@
       "Contact signature not verified": [
         "Assinatura do contacto não verificada"
       ],
+      "Copy operation aborted": [
+        "Operação de cópia cancelada"
+      ],
       "Copying item to a non-folder is not allowed": [
         "Não é permitido copiar um item para um local que não seja uma pasta"
       ],
+      "Could not find an available name": [
+        "Não foi possível encontrar um nome disponível"
+      ],
       "Could not load sharing details": [
         "Não foi possível carregar os detalhes da partilha"
+      ],
+      "Could not load the image preview: ${ message }": [
+        "Não foi possível carregar a pré-visualização de imagem: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Não foi possível ler parte deste ficheiro: ${ message }"
       ],
       "Could not unlock the parent folder": [
         "Não foi possível desbloquear a pasta principal"
@@ -2924,6 +2945,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Desmarque pelo menos ${ calendarsToFixCount } calendário ou",
         "Desmarque pelo menos ${ calendarsToFixCount } calendários ou"
+      ],
+      "Device not found": [
+        "Dispositivo não encontrado"
       ],
       "Domain not available, try again later": [
         "Domínio indisponível, tente novamente mais tarde"
@@ -2957,6 +2981,9 @@
       ],
       "Failed to decrypt bookmark password: ${ message }": [
         "Não foi possível descodificar a palavra-passe do marcador: ${ message }"
+      ],
+      "Failed to decrypt content key: ${ message }": [
+        "Não foi possível desencriptar a chave do conteúdo: ${ message }"
       ],
       "Failed to expand folder": [
         "Falha ao expandir a pasta"
@@ -2993,6 +3020,12 @@
       ],
       "Failed to update public share node": [
         "Erro ao atualizar o nó de partilha público"
+      ],
+      "Failed to verify invitation": [
+        "Não foi possível verificar o convite"
+      ],
+      "File download failed due to empty response": [
+        "A transferência do ficheiro falhou devido a uma resposta em branco"
       ],
       "File has no revision": [
         "O ficheiro não tem nenhuma revisão"
@@ -3039,6 +3072,12 @@
       "Invalid verification code": [
         "O código de verificação não é válido."
       ],
+      "Invitation not found": [
+        "Convite não foi encontrado."
+      ],
+      "Item not found": [
+        "Item não encontrado"
+      ],
       "Label name cannot be empty.": [
         "O nome da etiqueta não pode estar vazio."
       ],
@@ -3064,6 +3103,9 @@
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "O nome deve ter, no máximo, ${ MAX_NODE_NAME_LENGTH } carácter",
         "O nome deve ter, no máximo, ${ MAX_NODE_NAME_LENGTH } caracteres"
+      ],
+      "Name must not be empty": [
+        "O nome não deve estar em branco"
       ],
       "No calendars found to import": [
         "Não foi encontrado nenhum calendário para importação."
@@ -3094,8 +3136,14 @@
         "Um dos grupos não tem contactos: ${ noContactGroupList }",
         "Alguns grupos não têm contactos: ${ noContactGroupList } "
       ],
+      "Only admins can convert external invitations": [
+        "Só os administradores podem converter convites externos"
+      ],
       "Operation aborted": [
         "Operação cancelada"
+      ],
+      "Operation failed, try again later": [
+        "Operação falhou, tente novamente mais tarde"
       ],
       "Organization key is not decrypted": [
         "A chave da organização não está encriptada."
@@ -3114,6 +3162,12 @@
       ],
       "Passwords do not match": [
         "As palavras-passe não correspondem."
+      ],
+      "Photo is already in the target album": [
+        "A fotografia já está no álbum de destino"
+      ],
+      "Photo not found": [
+        "Fotografia não encontrada"
       ],
       "Please enter a valid postal code": [
         "Introduza um código postal válido"
@@ -3170,6 +3224,9 @@
       ],
       "Some contacts could not be deleted": [
         "Não foi possível eliminar alguns contactos"
+      ],
+      "Some file data failed to upload. Please try again.": [
+        "Não foi possível enviar alguns dados do ficheiro. Por favor, tente novamente."
       ],
       "Some groups could not be deleted": [
         "Alguns grupos não puderam ser eliminados"
@@ -3234,6 +3291,9 @@
       "The link to your item failed to be deleted": [
         "Falha ao eliminar a ligação ao item"
       ],
+      "The uploaded file does not match the original. Please try again.": [
+        "O ficheiro enviado não corresponde com o original. Por favor, tente novamente."
+      ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Há pastas demais na sua conta externa. Personalize a importação para excluir algumas pastas."
       ],
@@ -3255,11 +3315,20 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requer um mínimo de ${ minimumLength } carateres."
       ],
+      "This file has missing crypto material": [
+        "Este ficheiro tem material cripto em falta"
+      ],
       "This file has no version available to download": [
         "Este ficheiro não tem nenhuma versão disponível para descarregar"
       ],
+      "This file version could not be uploaded": [
+        "Não foi possível enviar esta versão de ficheiro"
+      ],
       "This folder name is not available. Please choose a different name.": [
         "Este nome de pasta não está disponível. Escolha um nome diferente."
+      ],
+      "This item has no image preview": [
+        "Este item não tem pré-visualização de imagem"
       ],
       "This item is no longer shared": [
         "Este item já não está partilhado"
@@ -3272,6 +3341,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Esta mensagem pode conter algumas ligações URL que não podem ser abertas corretamente pelo seu navegador actual."
+      ],
+      "Too many server requests, please try again later": [
+        "Demasiados pedidos de servidor. Por favor, tente novamente mais tarde"
       ],
       "Try using only letters, numerals, and _.-": [
         "Tente utilizar apenas letras, números e _.-"
@@ -3286,7 +3358,7 @@
         "Erro inesperado, não podemos importar os contactos"
       ],
       "Unexpected error, we can't import the files": [
-        "Erro inesperado, não conseguimos importar os ficheiros"
+        "Erro inesperado, nós não podemos importar os ficheiros"
       ],
       "Unknown error": [
         "Erro desconhecido"
@@ -3326,6 +3398,9 @@
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Frase de recuperação incorreta. Tente novamente ou utilize outro método de recuperação."
+      ],
+      "You can update a public link for your own files only": [
+        "Pode atualizar uma hiperligação pública apenas para os seus próprios ficheiros"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Não pode enviar um e-mail para mais de ${ maxContacts } destinatário.",
@@ -4320,6 +4395,9 @@
       "Attention required": [
         "Atenção Requerida"
       ],
+      "Author is not provided on public link": [
+        "O autor não é fornecido na hiperligação pública"
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique a sua pasta de spam e verifique que ${ strong } é o endereço correto."
       ],
@@ -4533,7 +4611,7 @@
         "O ficheiro \"${ name }\" foi eliminado durante a transferência."
       ],
       "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
-        "Apenas ficheiros (sem fotos, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) até 100 GB no total, 100.000 ficheiros e 50 GB por ficheiro"
+        "Apenas ficheiros (sem fotografias, ${ DOCS_APP_NAME } ou ${ SHEETS_APP_NAME }) até 100 GB no total, 100.000 ficheiros e 50 GB por ficheiro"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "A pasta \"${ link.name }\" foi eliminada durante a transferência."
@@ -5805,6 +5883,9 @@
     "Link": {
       "clearing your browser cache": [
         "limpar a memória do navegador"
+      ],
+      "Customer Support": [
+        "Apoio ao Cliente"
       ],
       "Enforcing 2FA for organizations": [
         "Aplicação da A2F para as organizações"
@@ -7479,6 +7560,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Depois, será renovado automaticamente por ${ renewPriceStr } durante ${ renewalLength } mês. Pode cancelar a qualquer momento.",
         "Depois, será renovado automaticamente por ${ renewPriceStr } durante ${ renewalLength } meses. Pode cancelar a qualquer momento."
+      ],
+      "You already own a Born Private account.": [
+        "Já possui uma conta Born Private."
       ]
     },
     "PGP key encryption warning": {
@@ -7642,6 +7726,15 @@
     "Property": {
       "attributes": [
         "atributos"
+      ],
+      "content key": [
+        "chave de conteúdo"
+      ],
+      "key": [
+        "chave"
+      ],
+      "name": [
+        "nome"
       ]
     },
     "Property type": {

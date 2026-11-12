@@ -3153,7 +3153,7 @@
         "Aucun contact n'a été trouvé pour l'importation."
       ],
       "No drive found to import": [
-        "Aucun disque à importer détecté"
+        "Aucun disque à importer n'a été détecté."
       ],
       "No emails found to import - the account does not have an inbox": [
         "Aucun message n'a été trouvé pour l'importation, le compte n'a pas de boite de réception."
@@ -3418,7 +3418,7 @@
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
       ],
       "Unexpected error, we can't import the files": [
-        "Une erreur inattendue est survenue, les fichiers n'ont pas pu être importés"
+        "Une erreur inattendue est survenue, les fichiers ne peuvent être importés"
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -4534,12 +4534,6 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Connectez-vous à ${ VPN_APP_NAME } pour surfer en privé."
       ],
-      "Connected": [
-        "Connecté"
-      ],
-      "Connecting…": [
-        "Connexion en cours…"
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Le contact a été ajouté au groupe ${ contactGroupName }."
       ],
@@ -4605,9 +4599,6 @@
       "Decrypting your document": [
         "Déchiffrement de votre document en cours"
       ],
-      "Disconnected": [
-        "Déconnecté"
-      ],
       "Display word count": [
         "Afficher le nombre de mots"
       ],
@@ -4647,9 +4638,6 @@
       "Edit email address": [
         "Modifier l'adresse e-mail"
       ],
-      "Editing is temporarily unavailable.": [
-        "La fonction d'édition est temporairement indisponible."
-      ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hébergement de messagerie n'est disponible que pour les noms de domaines que vous possédez déjà. L'enregistrement de nom de domaine par l'intermédiaire de ${ BRAND_NAME } n'est pas disponible pour le moment. Vous pouvez héberger des messageries pour des noms de domaines enregistrés sur n'importe quel registraire de domaine."
       ],
@@ -4688,6 +4676,9 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Saisissez votre propre mot de passe (en tant que contacts de confiance)."
+      ],
+      "Error syncing": [
+        "Erreur de synchronisation"
       ],
       "Error Syncing": [
         "Erreur de synchronisation"
@@ -4864,6 +4855,9 @@
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Il semble que vous soyez hors ligne. Le document ne peut pas être modifié lorsque vous êtes hors ligne. Veuillez vérifier la connectivité de votre appareil."
       ],
+      "Looks like you're offline. You can keep editing: your changes are saved once you are back online.": [
+        "On dirait que vous n'êtes pas connecté. Vous pouvez continuer à modifier le texte : vos modifications seront enregistrées dès que vous serez de nouveau connecté."
+      ],
       "Low Priority": [
         "Priorité basse"
       ],
@@ -4942,6 +4936,9 @@
       ],
       "Opening...": [
         "Ouverture..."
+      ],
+      "Opening…": [
+        "Ouverture en cours…"
       ],
       "Organization size": [
         "Taille de l’organisation"
@@ -5058,6 +5055,9 @@
       "Saving...": [
         "Enregistrement..."
       ],
+      "Saving…": [
+        "Enregistrement en cours…"
+      ],
       "Scan the QR code with your mobile device": [
         "Scannez le QR code avec votre appareil mobile."
       ],
@@ -5105,6 +5105,9 @@
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Certains gouvernements bloquent ou restreignent l'accès à certains sites internet. Un VPN permet de contourner la censure tout en préservant la confidentialité de vos activités et de votre identité."
+      ],
+      "Some of the document could not be read, so it can't be edited.": [
+        "Une partie du document n'a pas pu être lue, il n'est donc pas possible de le modifier."
       ],
       "Some of the document's content could not be read.": [
         "Certaines parties du contenu du document n'ont pas pu être lues."
@@ -5167,9 +5170,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Le propriétaire de cette adresse a désactivé le chiffrement de bout en bout. Il doit réactiver le chiffrement de bout en bout pour pouvoir envoyer des messages chiffrés à cette adresse."
       ],
-      "The server is busy.": [
-        "Le serveur est occupé."
-      ],
       "There are no documents in the trash.": [
         "Il n'y a aucun document dans la corbeille."
       ],
@@ -5178,6 +5178,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Cette adresse est désactivée. Pour pouvoir envoyer des messages à cette adresse, son propriétaire doit d’abord l’activer."
+      ],
+      "This document can't be edited right now.": [
+        "Ce document ne peut pas être modifié pour le moment."
       ],
       "This document has grown too large to edit. You can remove older revisions to continue editing.": [
         "Ce document est devenu trop volumineux pour être modifié. Vous pouvez supprimer les anciennes révisions pour continuer à le modifier."
@@ -5190,6 +5193,9 @@
       ],
       "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
         "Ce document compte de nombreux collaborateurs actifs. L'édition en temps réel est temporairement indisponible. Actualisez pour afficher les dernières mises à jour."
+      ],
+      "This document has reached its maximum size, so it can't be edited.": [
+        "Ce document a atteint sa taille maximale, il n'est donc plus possible de le modifier."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Ce document n'existe peut-être pas ou nous rencontrons des difficultés à le charger. Veuillez recharger la page et réessayer."
@@ -5498,9 +5504,6 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement chaque mois."
-      ],
-      "Your session has expired. Reload the page to continue.": [
-        "Votre session a expiré. Actualisez la page pour continuer."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Votre abonnement sera automatiquement renouvelé le ${ renewalTime }."
@@ -9119,7 +9122,7 @@
         "${ emailsCount } adresses e-mail"
       ],
       "${ LUMO_SHORT_APP_NAME } writing assistant": [
-        "Assistant conversationnel ${ LUMO_SHORT_APP_NAME }"
+        "Assistant d'aide à la rédaction ${ LUMO_SHORT_APP_NAME }"
       ],
       "Account recovery": [
         "Récupération du compte"
@@ -9333,6 +9336,9 @@
       ],
       "Enter your password": [
         "Saisissez votre mot de passe"
+      ],
+      "Error syncing": [
+        "Erreur de synchronisation"
       ],
       "Error Syncing": [
         "Erreur de synchronisation"

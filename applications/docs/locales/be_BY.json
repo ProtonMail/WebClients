@@ -186,6 +186,9 @@
       "Collapse list of pending invitations": [
         "Згарнуць спіс запрашэнняў, якія чакаюць разгляду"
       ],
+      "Comments": [
+        "Каментарыі"
+      ],
       "Compose": [
         "Напісаць"
       ],
@@ -4732,14 +4735,11 @@
       "Close this screen to exit.": [
         "Закрыйце гэта акно, каб выйсці."
       ],
+      "Comments are not available yet": [
+        "Каментарыі пакуль недаступны"
+      ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Падключыцеся да ${ VPN_APP_NAME } для прыватнага прагляду"
-      ],
-      "Connected": [
-        "Падключана"
-      ],
-      "Connecting…": [
-        "Падключэнне…"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Кантакт прызначаны групе ${ contactGroupName }"
@@ -4815,9 +4815,6 @@
       ],
       "Decrypting your document": [
         "Расшыфроўка ваша дакумента"
-      ],
-      "Disconnected": [
-        "Адключана"
       ],
       "Display word count": [
         "Паказваць колькасць слоў"
@@ -4902,6 +4899,9 @@
       ],
       "Error loading document: ${ errorDetail }": [
         "Памылка загрузкі дакумента: ${ errorDetail }"
+      ],
+      "Error syncing": [
+        "Памылка сінхранізацыі"
       ],
       "Error Syncing": [
         "Памылка сінхранізацыі"
@@ -5140,6 +5140,9 @@
       "Not a valid URL": [
         "Несапраўдны URL-адрас"
       ],
+      "Not available yet": [
+        "Пакуль недаступна"
+      ],
       "Not connected": [
         "Не падключана"
       ],
@@ -5163,6 +5166,9 @@
       ],
       "Opening...": [
         "Адкрыццё..."
+      ],
+      "Opening…": [
+        "Адкрыццё…"
       ],
       "Organization size": [
         "Памер арганізацыі"
@@ -5281,6 +5287,9 @@
       "Saving...": [
         "Захаванне..."
       ],
+      "Saving…": [
+        "Захаванне…"
+      ],
       "Scan the QR code with your mobile device": [
         "Адсканіруйце QR-код з дапамогай мабільнай прылады"
       ],
@@ -5329,6 +5338,9 @@
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Некаторыя ўрады блакіруюць або абмяжоўваюць доступ да пэўных вэб-сайтаў. VPN дапамагае абысці цэнзуру, захоўваючы вашу актыўнасць і асобу ў таямніцы."
       ],
+      "Some of the document's content could not be read.": [
+        "Не ўдалося прачытаць частку змесціва ў дакуменце."
+      ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Некаторыя вэб-сайты і сэрвісы з трансляцыямі блакіруюць змесціва па рэгіёнах. VPN дазваляе абысці гэтыя абмежаванні і атрымаць свабодны доступ у інтэрнэт."
       ],
@@ -5374,8 +5386,11 @@
       "The Beginning": [
         "Пачатак"
       ],
-      "The connection to the server was lost.": [
-        "Падключэнне да сервера страчана."
+      "The document could not be loaded.": [
+        "Не ўдалося загрузіць дакумент."
+      ],
+      "The editor could not be loaded.": [
+        "Не ўдалося загрузіць рэдактар."
       ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Адбылася ўцечка скампраметаваных звестак са старонняга сэрвісу. Гэта не закранула звесткі вашага ўліковага запісу ${ BRAND_NAME }, бо яны зашыфраваны і знаходзяцца ў бяспецы. ${ learnMoreLink }"
@@ -5394,6 +5409,9 @@
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Гэты адрас адключаны. Каб мець магчымасць адпраўляць лісты на гэты адрас, спачатку ён павінен быць уключаны ўладальнікам."
+      ],
+      "This document does not exist, or it was deleted.": [
+        "Гэты дакумент не існуе або ён быў выдалены."
       ],
       "This document has grown too large to edit. You can remove older revisions to continue editing.": [
         "Гэты дакумент стаў занадта вялікім для рэдагавання. Вы можаце выдаліць больш старыя версіі, каб працягнуць рэдагаванне."
@@ -8140,6 +8158,9 @@
       "terms and conditions": [
         "умовамі выкарыстання"
       ],
+      "The Born Private initiative requires a donation.": [
+        "Ініцыятыва Born Private патрабуе ахвяравання."
+      ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэння.",
         "Скідка дзейнічае для ${ renewalsWithCoupon } падаўжэнняў.",
@@ -9774,6 +9795,9 @@
       "Enter your password": [
         "Увядзіце свой пароль"
       ],
+      "Error syncing": [
+        "Памылка сінхранізацыі"
+      ],
       "Error Syncing": [
         "Памылка сінхранізацыі"
       ],
@@ -10214,6 +10238,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Імпартаванне пачнецца з самых апошніх паведамленняў."
+      ],
+      "This link has expired. Please extend expiration date": [
+        "Гэта спасылка пратэрмінавана. Пашырце тэрмін яе дзеяння"
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Зашыфраваныя паролі (нават скампраметаваныя) застануцца ў бяспецы, пакуль не будуць расшыфраваны."

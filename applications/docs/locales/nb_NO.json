@@ -184,6 +184,9 @@
       "Collapse list of pending invitations": [
         "Skjul liste over ventende invitasjoner"
       ],
+      "Comments": [
+        "Kommentarer"
+      ],
       "Compose": [
         "Skriv"
       ],
@@ -407,6 +410,9 @@
       ],
       "Go back": [
         "Gå tilbake"
+      ],
+      "Go to ${ DOCS_SHORT_APP_NAME } home": [
+        "Gå til ${ DOCS_SHORT_APP_NAME } startside"
       ],
       "Go to ${ planOrAppName }": [
         "Gå til ${ planOrAppName }"
@@ -3354,6 +3360,9 @@
       "Some items could not be loaded": [
         "Kunne ikke laste inn enkelte dokumenter"
       ],
+      "Some of the document could not be read, so your changes can't be saved.": [
+        "Noe av dokumentet kunne ikke leses, så endringene dine kan ikke lagres."
+      ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Noen av dine mappenavn er utilgjengelige. Tilpass importen for å redigere disse navnene."
       ],
@@ -3368,6 +3377,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense.Tilpass importen for å redigere disse navnene."
+      ],
+      "Some of your recent changes could not be saved, so editing is disabled. Copy any work you need, then reload.": [
+        "Noen av de siste endringene dine kunne ikke lagres, så redigering er deaktivert. Kopier alt du trenger, og last deretter inn på nytt."
       ],
       "Some trashed documents could not be loaded": [
         "Kunne ikke laste inn enkelte dokumenter i papirkurven"
@@ -3426,6 +3438,9 @@
       "There was an error when exporting the contacts vCards": [
         "Det oppsto en feil under eksport av kontaktenes vCards."
       ],
+      "This document is too large to copy. Download it to keep a copy of your work.": [
+        "Dette dokumentet er for stort til å kopiere. Last det ned for å beholde en kopi av det du jobber med."
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette feltet overskrider maksimalt tillatt ${ maximumLength } tegn."
       ],
@@ -3464,6 +3479,9 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne meldingen kan inneholde noen koblinger til nettadresser som ikke kan åpnes riktig av din nåværende nettleser."
+      ],
+      "This version could not be loaded. Close the history and try again.": [
+        "Denne versjonen kunne ikke lastes inn. Lukk historikken og prøv igjen."
       ],
       "Too many server errors, please try again later": [
         "For mange serverfeil. Prøv igjen senere."
@@ -3564,6 +3582,9 @@
       ],
       "Your import will not be processed.": [
         "Importen din blir ikke behandlet."
+      ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "Den siste endringen din er for stor til å lagres, så redigering er slått av. Kopier det du trenger, og last deretter inn på nytt."
       ],
       "⚠️ Undecryptable device": [
         "⚠️ Enhet som ikke kan dekrypteres"
@@ -4612,12 +4633,6 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Koble til ${ VPN_APP_NAME } for å surfe privat"
       ],
-      "Connected": [
-        "Tilkoblet"
-      ],
-      "Connecting…": [
-        "Kobler til..."
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilordnet gruppe ${ contactGroupName }"
       ],
@@ -4688,9 +4703,6 @@
       ],
       "Decrypting your document": [
         "Dekrypterer dokumentet ditt"
-      ],
-      "Disconnected": [
-        "Frakoblet"
       ],
       "Display word count": [
         "Vis antall ord"
@@ -4775,6 +4787,9 @@
       ],
       "Error loading document: ${ errorDetail }": [
         "Feil ved lasting av dokument: ${ errorDetail }"
+      ],
+      "Error syncing": [
+        "Feil ved synkronisering"
       ],
       "Error Syncing": [
         "Feil ved synkronisering"
@@ -4960,6 +4975,9 @@
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Det ser ut som du er frakoblet. Dokumentet kan ikke redigeres mens du er frakoblet. Kontroller enhetens tilkobling."
       ],
+      "Looks like you're offline. You can keep editing: your changes are saved once you are back online.": [
+        "Det ser ut til at du er frakoblet. Du kan fortsette å redigere: endringene dine lagres når du er tilbake på nett."
+      ],
       "Low Priority": [
         "Lav prioritet"
       ],
@@ -5018,6 +5036,9 @@
       "Not a valid URL": [
         "Ikke en gyldig nettadresse"
       ],
+      "Not available yet": [
+        "Ikke tilgjengelig ennå"
+      ],
       "Not connected": [
         "Ikke tilkoblet"
       ],
@@ -5041,6 +5062,9 @@
       ],
       "Opening...": [
         "Åpner..."
+      ],
+      "Opening…": [
+        "Åpner…"
       ],
       "Organization size": [
         "Organisasjonsstørrelse"
@@ -5157,6 +5181,9 @@
       "Saving...": [
         "Lagrer..."
       ],
+      "Saving…": [
+        "Lagrer…"
+      ],
       "Scan the QR code with your mobile device": [
         "Skann QR-koden med mobilenheten din"
       ],
@@ -5205,6 +5232,12 @@
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Noen myndigheter blokkerer eller begrenser tilgangen til visse nettsteder. Et VPN hjelper til med å omgå sensur samtidig som aktiviteten og identiteten din holdes privat."
       ],
+      "Some of the document could not be read, so it can't be edited.": [
+        "Noe av dokumentet kunne ikke leses, så det kan ikke redigeres."
+      ],
+      "Some of the document's content could not be read.": [
+        "Noe av dokumentets innhold kunne ikke leses."
+      ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
         "Noen nettsteder og strømmetjenester blokkerer innhold etter region. Et VPN lar deg omgå disse begrensningene og gir fri tilgang til internett."
       ],
@@ -5251,14 +5284,17 @@
       "The document could not be created.": [
         "Dokumentet kunne ikke opprettes."
       ],
+      "The document could not be loaded.": [
+        "Dokumentet kunne ikke lastes inn."
+      ],
+      "The editor could not be loaded.": [
+        "Editoren kunne ikke lastes inn."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "Den eksponerte informasjonen ble lekket fra en tredjepartstjeneste. ${ BRAND_NAME }-kontoinformasjonen din forblir sikker og kryptert. ${ learnMoreLink }."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Eieren av denne adressen har deaktivert ende-til-ende-kryptering. For å kunne sende krypterte e-poster til denne adressen, må eieren aktivere ende-til-ende kryptering på nytt."
-      ],
-      "The server is busy.": [
-        "Serveren er opptatt"
       ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "Nettadressen du skrev inn, ser ut til å være kopiert feil fra Slack. Når du kopierer lange koblinger fra Slack, høyreklikker du på koblingen og velger \"Kopier kobling\" i stedet for å kopiere den avkortede URL-teksten direkte."
@@ -5272,8 +5308,17 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adressen er deaktivert. For å kunne sende til denne adressen, må eieren først aktivere adressen."
       ],
+      "This document can't be edited right now.": [
+        "Dette dokumentet kan ikke redigeres akkurat nå."
+      ],
+      "This document does not exist, or it was deleted.": [
+        "Dette dokumentet eksisterer ikke, eller det ble slettet."
+      ],
       "This document has grown too large to edit. You can remove older revisions to continue editing.": [
         "Dette dokumentet har blitt for stort til å redigere. Du kan fjerne eldre revisjoner for å fortsette å redigere."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Copy any work you need to keep it.": [
+        "Dette dokumentet har blitt for stort, og de siste endringene dine kunne ikke lagres. Kopier alt du trenger for å beholde det."
       ],
       "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
         "Dette dokumentet har blitt for stort, og de siste endringene dine kunne ikke lagres. Last ned en kopi for å beholde arbeidet ditt."
@@ -5284,6 +5329,9 @@
       "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
         "Dette dokumentet har mange aktive samarbeidspartnere. Redigering i sanntid er midlertidig utilgjengelig. Oppdater for å se de siste endringene."
       ],
+      "This document has reached its maximum size, so it can't be edited.": [
+        "Dette dokumentet har nådd sin maksimale størrelse, så det kan ikke redigeres."
+      ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Dette dokumentet eksisterer kanskje ikke, eller vi har problemer med å laste det inn. Last inn siden på nytt og prøv igjen."
       ],
@@ -5292,6 +5340,9 @@
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Dette er et navn eller kallenavn for organisasjonen din som brukerne dine vil se. Du kan endre det når som helst."
+      ],
+      "This link is not supported on this page.": [
+        "Denne lenken støttes ikke på denne siden."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Denne koblingen fører til et nettsted som kanskje prøver å stjele informasjonen din, for eksempel passord og kredittkortdetaljer."
@@ -5778,6 +5829,9 @@
       "Country": [
         "Land"
       ],
+      "Created by ${ displayName }": [
+        "Opprettet av ${ displayName }"
+      ],
       "Delete": [
         "Slett"
       ],
@@ -5789,6 +5843,9 @@
       ],
       "Disable this link on a specific date": [
         "Deaktiver denne koblingen på en bestemt dato"
+      ],
+      "Document": [
+        "Dokument"
       ],
       "Don't ask again": [
         "Ikke spør igjen"
@@ -5901,6 +5958,9 @@
       "Last month only": [
         "Kun siste måned"
       ],
+      "Location ${ locationLabel }": [
+        "Plassering: ${ locationLabel }"
+      ],
       "Log in or sign up ": [
         "Logg på eller registrer deg "
       ],
@@ -5991,6 +6051,12 @@
       "Reveal password": [
         "Avslør passord"
       ],
+      "Select ${ document.name }": [
+        "Velg ${ document.name }"
+      ],
+      "Select all": [
+        "Velg alle"
+      ],
       "Selected": [
         "Valgt"
       ],
@@ -6005,6 +6071,9 @@
       ],
       "Skip feedback": [
         "Hopp over tilbakemelding"
+      ],
+      "Spreadsheet": [
+        "Regneark"
       ],
       "Stop sharing": [
         "Avslutt deling"
@@ -7421,11 +7490,17 @@
       "Failed to accept share invitation": [
         "Kunne ikke godta delingsinvitasjonen"
       ],
+      "Failed to apply file. Check the file and try again.": [
+        "Kunne ikke bruke filen. Sjekk filen og prøv igjen."
+      ],
       "Failed to delete document": [
         "Kunne ikke slette dokumentet"
       ],
       "Failed to load invitation details": [
         "Kunne ikke laste inn invitasjonsdetaljer"
+      ],
+      "Failed to load saved items": [
+        "Kunne ikke laste lagrede elementer"
       ],
       "Failed to load sharing details": [
         "Kunne ikke laste inn delingsdetaljene"
@@ -7441,6 +7516,9 @@
       ],
       "Failed to restore document": [
         "Kunne ikke gjenopprette dokumentet"
+      ],
+      "Failed to save for later": [
+        "Kunne ikke lagre til senere"
       ],
       "Failed to submit report": [
         "Kunne ikke sende inn rapporten"
@@ -9419,6 +9497,9 @@
       "Enter your password": [
         "Skriv inn passordet"
       ],
+      "Error syncing": [
+        "Feil ved synkronisering"
+      ],
       "Error Syncing": [
         "Feil ved synkronisering"
       ],
@@ -9935,6 +10016,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Denne brukeren får administratorrettigheter neste gang brukeren logger på."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Oppgrader til en støttet plan for å bruke administratorroller."
       ],
@@ -10076,6 +10160,9 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mye data som mulig, og starter med de nyeste meldingene dine."
       ],
+      "A change from another editor could not be read and is missing from this page.": [
+        "En endring fra en annen som redigerer, kunne ikke leses og mangler på denne siden."
+      ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Er du sikker på at du ønsker å slette ${ count } kontakt permanent?",
         "Er du sikker på at du ønsker å slette ${ count } kontakter permanent?"
@@ -10103,6 +10190,9 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Noen av kontaktene som skal slås sammen, viser feil. Gjennomgå dem individuelt."
+      ],
+      "Some of the document could not be read, so editing is disabled.": [
+        "Noe av dokumentet kunne ikke leses, så redigering er deaktivert."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kontaktdataene er skadet og kan ikke vises."

@@ -3446,9 +3446,6 @@
       "There was an error when exporting the contacts vCards": [
         "Der opstod en fejl under eksport af kontakternes vCards"
       ],
-      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
-        "Dette dokument har nået dets maksimale størrelse, så dine seneste ændringer blev ikke gemt, og redigering er deaktiveret."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Dette felt overskrider det maksimale antal tegn på ${ maximumLength }."
       ],
@@ -4641,12 +4638,6 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Forbind til ${ VPN_APP_NAME } for at browse privat"
       ],
-      "Connected": [
-        "Forbundet"
-      ],
-      "Connecting…": [
-        "Forbinder…"
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Kontakt tilføjet til gruppen ${ contactGroupName }"
       ],
@@ -4718,9 +4709,6 @@
       "Decrypting your document": [
         "Dekrypterer dit dokument"
       ],
-      "Disconnected": [
-        "Frakoblet"
-      ],
       "Display word count": [
         "Vis antal ord"
       ],
@@ -4759,9 +4747,6 @@
       ],
       "Edit email address": [
         "Rediger e-mailadresse"
-      ],
-      "Editing is temporarily unavailable.": [
-        "Redigering er midlertidigt utilgængeligt."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "E-mailhosting er kun tilgængelig for domæner, du allerede ejer. Domæneregistrering er ikke tilgængelig i øjeblikket via ${ BRAND_NAME }. Du kan hoste e-mail for domæner, der er registreret hos en hvilken som helst domæneregistrator."
@@ -4807,6 +4792,9 @@
       ],
       "Error loading document: ${ errorDetail }": [
         "Fejl ved indlæsning af dokument: ${ errorDetail }"
+      ],
+      "Error syncing": [
+        "Fejl ved synkronisering"
       ],
       "Error Syncing": [
         "Fejlsynkronisering"
@@ -4992,6 +4980,9 @@
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Det ser ud til, at du er offline. Dokumentet kan ikke redigeres, mens du er offline. Tjek enhedens tilslutningsmuligheder."
       ],
+      "Looks like you're offline. You can keep editing: your changes are saved once you are back online.": [
+        "Det ser ud til, at du er offline. Du kan fortsætte med at redigere – dine ændringer gemmes når du igen er online."
+      ],
       "Low Priority": [
         "Lav prioritet"
       ],
@@ -5056,9 +5047,6 @@
       "Not connected": [
         "Ikke forbundet"
       ],
-      "Not connected. Editing resumes once you are back.": [
-        "Du er ikke forbundet. Redigering aktiveres igen så snart du er tilbage."
-      ],
       "Numbers": [
         "Tal"
       ],
@@ -5078,6 +5066,9 @@
         "Åbn vejledningen for anbefalede handlinger og nyttige links."
       ],
       "Opening...": [
+        "Åbner..."
+      ],
+      "Opening…": [
         "Åbner..."
       ],
       "Organization size": [
@@ -5195,6 +5186,9 @@
       "Saving...": [
         "Gemmer..."
       ],
+      "Saving…": [
+        "Gemmer..."
+      ],
       "Scan the QR code with your mobile device": [
         "Scan QR-koden med din mobilenhed"
       ],
@@ -5243,6 +5237,9 @@
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Nogle regeringer blokerer eller begrænser adgangen til visse websteder. En VPN hjælper med at omgå censur, samtidig med at din aktivitet og identitet holdes privat."
       ],
+      "Some of the document could not be read, so it can't be edited.": [
+        "Noget af dokumentet kunne ikke læses, så det kan ikke redigeres."
+      ],
       "Some of the document's content could not be read.": [
         "Noget af dokumentets indhold kunne ikke indlæses."
       ],
@@ -5289,12 +5286,6 @@
       "The Beginning": [
         "Begyndelsen"
       ],
-      "The connection to the server was lost.": [
-        "Forbindelsen til serveren blev afbrudt."
-      ],
-      "The document could not be brought up to date.": [
-        "Dokumentet kunne ikke opdateres."
-      ],
       "The document could not be created.": [
         "Dokumentet kunne ikke oprettes."
       ],
@@ -5310,9 +5301,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Ejeren af denne adresse har deaktiveret end-to-end-kryptering. For at kunne sende krypterede e-mails til denne adresse, skal ejeren genaktivere end-to-end-kryptering."
       ],
-      "The server is busy.": [
-        "Serveren er optaget."
-      ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "Den URL, du indtastede, ser ud til at være blevet kopieret forkert fra Slack. Når du kopierer lange links fra Slack, højreklik på linket, vælg så \"Kopiér link\" i stedet for at kopiere den afkortede URL-tekst direkte."
       ],
@@ -5325,8 +5313,17 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Denne adresse er deaktiveret. Vil du kunne sende til denne adreses, skal ejeren først aktivere den."
       ],
+      "This document can't be edited right now.": [
+        "Dette dokument kan ikke redigeres lige nu."
+      ],
+      "This document does not exist, or it was deleted.": [
+        "Dette dokumentet eksisterer ikke, eller er blevet slettet."
+      ],
       "This document has grown too large to edit. You can remove older revisions to continue editing.": [
         "Dette dokument er blevet for stort til at redigere. Du kan fjerne ældre revisioner for at fortsætte redigeringen."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Copy any work you need to keep it.": [
+        "Dette dokument er blevet for stort, og dine seneste ændringer kunne ikke gemmes. Kopiér det arbejde som du skal bruge for at beholde det."
       ],
       "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
         "Dette dokument er blevet for stort, og dine seneste ændringer kunne ikke gemmes. Download en kopi for at beholde dit arbejde."
@@ -5336,6 +5333,9 @@
       ],
       "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
         "Der er mange der redigerer dette dokument. Redigering i realtid er midlertidigt utilgængeligt. Opdater siden for at se de seneste ændringer."
+      ],
+      "This document has reached its maximum size, so it can't be edited.": [
+        "Dette dokument har nået dets maksimale størrelse, så det kan ikke redigeres."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Dette dokument eksisterer muligvis ikke, eller vi har problemer med at indlæse det. Genindlæs siden, og prøv igen."
@@ -5363,9 +5363,6 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Denne unikke kode kan bruges af websteder og ISPs (internetudbydere) til at forbinde din placering og browserhistorik til din enhed."
-      ],
-      "This version of the app is no longer supported. Reload the page to update it.": [
-        "Denne version af appen understøttes ikke længere. Gendindlæs siden for at opdatere den."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Dette vil logge dig ud af alle kontoer, der i øjeblikket er logget ind."
@@ -5544,9 +5541,6 @@
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Du har muligvis ikke de nødvendige tilladelser til at se det med din valgte konto. Prøv en anden konto, eller kontakt ejeren for at få adgang."
       ],
-      "You were disconnected after a period of inactivity.": [
-        "Din forbindelse blev afbrudt på grund af inaktivitet."
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Du vil miste adgang til ${ planTitle }-funktioner på denne dato."
       ],
@@ -5587,9 +5581,6 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Dit ${ plan }-abonnement vil blive erstattet af ${ PASS_SHORT_APP_NAME } Lifetime. Den resterende del af dit abonnement vil blive tilføjet til din konto. ${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }."
       ],
-      "Your access to this document has changed. Reload the page to continue.": [
-        "Din adgang til dette dokument er blev ændret. Genindlæs siden for at fortsætte."
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
       ],
@@ -5598,9 +5589,6 @@
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Dine ændringer bliver synkroniseret til Drive. Du må ikke lukke webstedet."
-      ],
-      "Your changes could not be encrypted. Reload the page to continue.": [
-        "Dine ændringer kunne ikke krypteres. Genindlæs siden for at forsætte."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Dine ændringer kunne ikke synkroniseres. Drive vil forsøge at gemme ændringerne automatisk. Luk ikke websiden."
@@ -5662,9 +5650,6 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Dit planlagte abonnement starter den ${ renewalTime } og fornyes automatisk hver måned."
-      ],
-      "Your session has expired. Reload the page to continue.": [
-        "Din session er udløbet. Genindlæs siden for at fortsætte."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Dit abonnement vil automatisk blive fornyet den ${ renewalTime }."
@@ -9531,6 +9516,9 @@
       ],
       "Enter your password": [
         "Indtast din adgangskode"
+      ],
+      "Error syncing": [
+        "Fejl ved synkronisering"
       ],
       "Error Syncing": [
         "Fejlsynkronisering"

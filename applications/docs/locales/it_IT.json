@@ -2898,6 +2898,9 @@
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
+      "A message is required when reporting copyright infringement or stolen data": [
+        "É richiesto inserire un messaggio quando si segnala una violazione del copyright o di dati rubati"
+      ],
       "Address could not be added.": [
         "Impossibile aggiungere l'indirizzo."
       ],
@@ -2934,14 +2937,29 @@
       "Because this document was in a shared folder, only the folder owner can restore it": [
         "Poiché questo documento si trovava in una cartella condivisa, solo il proprietario della cartella può ripristinarlo."
       ],
+      "Bookmark password is not available": [
+        "La password dell'elemento preferito non è disponibile"
+      ],
       "Calendar limit reached": [
         "Limite calendario raggiunto"
+      ],
+      "Cannot add photo to album without a valid name": [
+        "Impossibile aggiungere una foto all'album senza un nome valido"
+      ],
+      "Cannot download a folder": [
+        "Non è possibile scaricare una cartella"
       ],
       "Cannot export this contact": [
         "Impossibile esportare questo contatto"
       ],
       "Cannot find move target": [
         "Impossibile trovare la destinazione dello spostamento"
+      ],
+      "Cannot move item without a valid name, please rename the item first": [
+        "Non è possibile spostare un elemento senza un nome valido, rinomina l'elemento prima di continuare"
+      ],
+      "Cannot share root folder": [
+        "Impossibile condividere cartella principale"
       ],
       "Cannot verify the author of this file": [
         "Impossibile verificare l'autore di questo file"
@@ -2958,8 +2976,14 @@
       "Contact signature not verified": [
         "Firma del contatto non verificata"
       ],
+      "Copy operation aborted": [
+        "Copia interrotta"
+      ],
       "Copying item to a non-folder is not allowed": [
         "Non è possibile copiare l'elemento in un elemento che non è una cartella"
+      ],
+      "Could not find an available name": [
+        "Impossibile trovare un nome disponibile"
       ],
       "Could not grant access to the organization key": [
         "Impossibile concedere l'accesso alla chiave dell'organizzazione"
@@ -2967,11 +2991,23 @@
       "Could not load sharing details": [
         "Impossibile caricare i dettagli della condivisione"
       ],
+      "Could not load the image preview: ${ message }": [
+        "Impossibile caricare l'immagine di anteprima: ${ message }"
+      ],
+      "Could not read part of this file: ${ message }": [
+        "Impossibile leggere parte di questo file: ${ message }"
+      ],
       "Could not unlock the parent folder": [
         "Impossibile sbloccare la cartella principale."
       ],
       "Could not unlock this item": [
         "Impossibile sbloccare questo elemento."
+      ],
+      "Creating documents in non-folders is not allowed": [
+        "Non è permesso creare documenti al di fuori delle cartelle"
+      ],
+      "Creating files in non-folders is not allowed": [
+        "Creare file al di fuori delle cartelle non è consentito"
       ],
       "Creating folders in non-folders is not allowed": [
         "Non è possibile creare cartelle all'interno di elementi che non sono cartelle"
@@ -2983,6 +3019,9 @@
       "Deselect at least ${ calendarsToFixCount } calendar or": [
         "Deseleziona almeno ${ calendarsToFixCount } calendario o",
         "Deseleziona almeno ${ calendarsToFixCount } calendari o"
+      ],
+      "Device not found": [
+        "Dispositivo non trovato"
       ],
       "Domain not available, try again later": [
         "Dominio non disponibile, riprovare più tardi"
@@ -3002,6 +3041,9 @@
       "Error decrypting a computer": [
         "Errore durante la decriptografia di un computer"
       ],
+      "Expiration date cannot be in the past": [
+        "La data di scadenza non può essere nel passato"
+      ],
       "External invitations are temporarily disabled.": [
         "Gli inviti esterni sono temporaneamente disabilitati."
       ],
@@ -3014,11 +3056,26 @@
       "Failed to create public share node": [
         "Impossibile creare il nodo di condivisione pubblico"
       ],
+      "Failed to decrypt bookmark key: ${ message }": [
+        "Impossibile decifrare chiave preferita: ${ message }"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Impossibile decriptare il nome dell'elemento preferito: ${ message }"
+      ],
       "Failed to decrypt bookmark password: ${ message }": [
         "Impossibile decrittografare la password del segnalibro: ${ message }"
       ],
       "Failed to decrypt content key: ${ message }": [
         "Impossibile decrittografare la chiave del contenuto: ${ message }"
+      ],
+      "Failed to decrypt item name: ${ message }": [
+        "Impossibile decifrare nome elemento: ${ message }"
+      ],
+      "Failed to decrypt node key: ${ message }": [
+        "Impossibile decriptare la chiave del nodo: ${ message }"
+      ],
+      "Failed to decrypt revision metadata": [
+        "Impossibile decriptare i metadati di revisione"
       ],
       "Failed to expand folder": [
         "Impossibile espandere la cartella"
@@ -3028,6 +3085,9 @@
       ],
       "Failed to fetch sharing info": [
         "Impossibile recuperare le informazioni di condivisione"
+      ],
+      "Failed to get inviter keys": [
+        "Impossibile ottenere le chiavi dell'invitante"
       ],
       "Failed to load 'My files' folder": [
         "Impossibile caricare la cartella \"I miei file\""
@@ -3058,6 +3118,9 @@
       ],
       "Failed to update public share node": [
         "Impossibile aggiornare il nodo di condivisione pubblico"
+      ],
+      "Failed to verify invitation": [
+        "Impossibile verificare l'invito"
       ],
       "File download failed due to empty response": [
         "Download del file non riuscito a causa di una risposta vuota."
@@ -3107,6 +3170,12 @@
       "Invalid verification code": [
         "Codice di verifica non valido"
       ],
+      "Invitation not found": [
+        "Invito non trovato"
+      ],
+      "Item not found": [
+        "Elemento non trovato"
+      ],
       "Label name cannot be empty.": [
         "Il nome dell'etichetta non può essere vuoto."
       ],
@@ -3129,9 +3198,24 @@
       "Missing signature": [
         "Firma mancante"
       ],
+      "Missing signature for ${ signatureType }": [
+        "Firma per ${ signatureType } mancante"
+      ],
+      "Move operation aborted": [
+        "Spostamento annullato"
+      ],
+      "Moving item to a non-folder is not allowed": [
+        "Impossibile spostare l'elemento: la destinazione non è una cartella."
+      ],
+      "Moving root item is not allowed": [
+        "Non è consentito spostare un elemento principale"
+      ],
       "Name must be ${ MAX_NODE_NAME_LENGTH } character long at most": [
         "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri.",
         "Il nome deve contenere al massimo ${ MAX_NODE_NAME_LENGTH } caratteri."
+      ],
+      "Name must not be empty": [
+        "Il campo \"nome\" non può essere vuoto"
       ],
       "No calendars found to import": [
         "Nessun calendario trovato da importare"
@@ -3161,6 +3245,9 @@
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Uno dei gruppi non ha contatti: ${ noContactGroupList }",
         "Alcuni gruppi non hanno contatti: ${ noContactGroupList } "
+      ],
+      "Only admins can convert external invitations": [
+        "Solo gli admin possono convertire inviti esterni"
       ],
       "Operation aborted": [
         "Operazione interrotta"
@@ -3230,6 +3317,12 @@
         "Invitato duplicato rimosso: ${ joinedInvitee }",
         "Invitati duplicati rimossi: ${ joinedInvitee }"
       ],
+      "Renaming root item is not allowed": [
+        "Non è consentito rinominare un elemento chiave"
+      ],
+      "Request aborted": [
+        "Richiesta annullata"
+      ],
       "Request timed out": [
         "Timeout della richiesta"
       ],
@@ -3245,14 +3338,32 @@
       "Signature verification failed": [
         "Verifica della firma non riuscita"
       ],
+      "Signature verification failed: ${ errorMessage }": [
+        "Verifica della firma non riuscita: ${ errorMessage }"
+      ],
+      "Signature verification for ${ signatureType } failed": [
+        "Verifica della firma per ${ signatureType } fallita"
+      ],
+      "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
+        "Verifica della firma per  ${ signatureType } non riuscita: ${ errorMessage }"
+      ],
       "Some contacts could not be deleted": [
         "Impossibile eliminare alcuni contatti"
       ],
       "Some documents could not be loaded": [
         "Non è stato possibile caricare alcuni documenti"
       ],
+      "Some file data failed to upload. Please try again.": [
+        "L'upload di alcuni file è fallito. Prova di nuovo."
+      ],
+      "Some file parts failed to upload. Please try again.": [
+        "L'upload di alcune parti del file non è stato completato. Riprova."
+      ],
       "Some groups could not be deleted": [
         "Impossibile eliminare alcuni gruppi"
+      ],
+      "Some items could not be loaded": [
+        "Alcuni elementi non sono stati caricati"
       ],
       "Some of the document could not be read, so your changes can't be saved.": [
         "Una parte del documento non è stata letta, pertanto non è possibile salvare le modifiche apportate."
@@ -3332,8 +3443,8 @@
       "There was an error when exporting the contacts vCards": [
         "Si è verificato un errore nell'esportazione delle vCard dei contatti"
       ],
-      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
-        "Questo documento ha raggiunto la dimensione massima consentita, pertanto l'ultima modifica non è stata salvata e la modifica è disabilitata."
+      "This document is too large to copy. Download it to keep a copy of your work.": [
+        "Questo documento è troppo grande per essere copiato. Scaricalo per conservare una copia del tuo lavoro."
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Questo campo supera il numero massimo di ${ maximumLength } caratteri."
@@ -3359,6 +3470,9 @@
       "This folder name is not available. Please choose a different name.": [
         "Questo nome della cartella non è disponibile. Scegli un nome diverso."
       ],
+      "This item has no image preview": [
+        "Questo elemento non ha un'immagine di anteprima"
+      ],
       "This item is no longer shared": [
         "Questo elemento non è più condiviso"
       ],
@@ -3373,6 +3487,9 @@
       ],
       "This version could not be loaded. Close the history and try again.": [
         "Impossibile caricare questa versione. Chiudi la cronologia e riprova."
+      ],
+      "Too many server errors, please try again later": [
+        "Troppi errori del server, riprova più tardi"
       ],
       "Too many server requests, please try again later": [
         "Troppe richieste. Riprova più tardi"
@@ -3437,6 +3554,12 @@
       "You can create public links for your own files only": [
         "Puoi creare link pubblici solo per i tuoi file."
       ],
+      "You can only leave items that are shared with you": [
+        "Puoi lasciare soltanto gli oggetti che sono stati condivisi con te"
+      ],
+      "You can only upload a new version to a file": [
+        "È possibile caricare solo nuove versioni ad un file"
+      ],
       "You can update a public link for your own files only": [
         "Puoi aggiornare un link pubblico solo per i tuoi file."
       ],
@@ -3446,6 +3569,9 @@
       ],
       "You do not have access to this item": [
         "Non hai accesso a questo elemento"
+      ],
+      "You do not have access to this shared item": [
+        "Accesso non consentito a questo elemento condiviso"
       ],
       "You have reached the maximum number of calendars.": [
         "Hai raggiunto il numero massimo di calendari."
@@ -4512,12 +4638,6 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Connettiti a ${ VPN_APP_NAME } per navigare in privato"
       ],
-      "Connected": [
-        "Connesso"
-      ],
-      "Connecting…": [
-        "Connessione…"
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Il contatto è assegnato al gruppo ${ contactGroupName }."
       ],
@@ -4589,9 +4709,6 @@
       "Decrypting your document": [
         "Decrittografia del tuo documento in corso"
       ],
-      "Disconnected": [
-        "Disconnesso"
-      ],
       "Display word count": [
         "Visualizza il conteggio delle parole"
       ],
@@ -4630,9 +4747,6 @@
       ],
       "Edit email address": [
         "Modifica l'indirizzo email"
-      ],
-      "Editing is temporarily unavailable.": [
-        "La funzione di modifica è temporaneamente non disponibile."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "L'hosting di posta elettronica è disponibile solo per i domini che già possiedi. La registrazione del dominio non è attualmente disponibile tramite ${ BRAND_NAME }. Puoi ospitare email per domini registrati su qualsiasi registrar di domini."
@@ -4678,6 +4792,9 @@
       ],
       "Error loading document: ${ errorDetail }": [
         "Errore durante caricamento del documento: ${ errorDetail }"
+      ],
+      "Error syncing": [
+        "Errore durante la sincronizzazione"
       ],
       "Error Syncing": [
         "Errore nella sincronizzazione"
@@ -4863,6 +4980,9 @@
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Sembra che tu sia offline. Il documento non può essere modificato mentre sei offline. Controlla la connettività del tuo dispositivo."
       ],
+      "Looks like you're offline. You can keep editing: your changes are saved once you are back online.": [
+        "Sembra che tu non sia in linea. Puoi continuare a modificare: le tue modifiche verranno salvate non appena tornerai in linea."
+      ],
       "Low Priority": [
         "Priorità bassa"
       ],
@@ -4927,9 +5047,6 @@
       "Not connected": [
         "Non connesso"
       ],
-      "Not connected. Editing resumes once you are back.": [
-        "Non connesso. La modifica riprenderà non appena ti sarai ricollegato."
-      ],
       "Numbers": [
         "Numeri"
       ],
@@ -4950,6 +5067,9 @@
       ],
       "Opening...": [
         "Apertura in corso..."
+      ],
+      "Opening…": [
+        "Apertura in corso…"
       ],
       "Organization size": [
         "Dimensione dell'organizzazione"
@@ -5066,6 +5186,9 @@
       "Saving...": [
         "Salvataggio..."
       ],
+      "Saving…": [
+        "Salvataggio in corso…"
+      ],
       "Scan the QR code with your mobile device": [
         "Scansiona il codice QR con il tuo dispositivo mobile"
       ],
@@ -5114,6 +5237,9 @@
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Alcuni governi bloccano o limitano l'accesso a determinati siti web. Una VPN aiuta a bypassare la censura mantenendo private la tua attività e la tua identità."
       ],
+      "Some of the document could not be read, so it can't be edited.": [
+        "Una parte del documento non è stata letta, quindi non è possibile modificarlo."
+      ],
       "Some of the document's content could not be read.": [
         "Non è stato possibile leggere parte del contenuto del documento."
       ],
@@ -5160,12 +5286,6 @@
       "The Beginning": [
         "L'inizio"
       ],
-      "The connection to the server was lost.": [
-        "La connessione al server è stata interrotta."
-      ],
-      "The document could not be brought up to date.": [
-        "Non è stato possibile aggiornare il documento."
-      ],
       "The document could not be created.": [
         "Non è stato possibile creare il documento."
       ],
@@ -5181,9 +5301,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Il proprietario di questo indirizzo ha disabilitato la crittografia end-to-end. Per poter inviare email crittografate a questo indirizzo, il proprietario deve abilitare nuovamente la crittografia end-to-end."
       ],
-      "The server is busy.": [
-        "Il server è occupato."
-      ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "L'URL inserito non sembra essere stato copiato correttamente. Quando copi link lunghi da Slack, usa tasto destro e \"Copia link\" invece di copiarlo direttamente."
       ],
@@ -5196,8 +5313,17 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Questo indirizzo è disabilitato. Per poter inviare a questo indirizzo il proprietario deve prima abilitarlo."
       ],
+      "This document can't be edited right now.": [
+        "Al momento non è possibile modificare questo documento."
+      ],
+      "This document does not exist, or it was deleted.": [
+        "Il documento richiesto non esiste o è stato rimosso."
+      ],
       "This document has grown too large to edit. You can remove older revisions to continue editing.": [
         "Questo documento è diventato troppo grande per essere modificato. Puoi rimuovere le versioni precedenti per continuare a modificare."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Copy any work you need to keep it.": [
+        "Il documento ha superato le dimensioni massime e non è possibile salvare le ultime modifiche. Scaricane una copia per conservarla."
       ],
       "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
         "Questo documento è diventato troppo grande e non è stato possibile salvare le tue ultime modifiche. Scarica una copia per conservare il tuo lavoro."
@@ -5207,6 +5333,9 @@
       ],
       "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
         "Questo documento ha molti collaboratori attivi. La modifica in tempo reale è temporaneamente non disponibile. Aggiorna per visualizzare gli ultimi aggiornamenti."
+      ],
+      "This document has reached its maximum size, so it can't be edited.": [
+        "Questo documento ha raggiunto la dimensione massima consentita, pertanto non è possibile modificarlo."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Questo documento potrebbe non esistere oppure ci sono problemi nel caricarlo. Ricarica la pagina e riprova."
@@ -5234,9 +5363,6 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Questo codice univoco può essere utilizzato dai siti Web e dagli ISP (fornitori di servizi Internet) per collegare la tua posizione e la cronologia di navigazione al tuo dispositivo"
-      ],
-      "This version of the app is no longer supported. Reload the page to update it.": [
-        "Questa versione dell'app non è più supportata. Aggiorna la pagina per ottenere la versione più recente."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Verrai disconnesso da tutti gli account attualmente connessi."
@@ -5415,9 +5541,6 @@
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "Potresti non avere le autorizzazioni necessarie per visualizzarlo con l'account selezionato. Prova un account diverso o contatta il proprietario per l'accesso."
       ],
-      "You were disconnected after a period of inactivity.": [
-        "La connessione è stata interrotta a seguito di un periodo di inattività."
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Perderai l'accesso alle funzionalità del piano ${ planTitle } a partire da questa data."
       ],
@@ -5458,9 +5581,6 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Il tuo abbonamento a ${ plan } verrà sostituito con ${ PASS_SHORT_APP_NAME } a vita. Il saldo rimanente del tuo abbonamento verrà aggiunto al tuo account. L'offerta a vita di ${ PASS_SHORT_APP_NAME } non ha prezzo di rinnovo, è un pagamento una tantum per l'accesso illimitato a ${ PASS_SHORT_APP_NAME }."
       ],
-      "Your access to this document has changed. Reload the page to continue.": [
-        "Le modalità di accesso a questo documento sono cambiate. Aggiorna la pagina per continuare."
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
       ],
@@ -5469,9 +5589,6 @@
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Sincronizzazione delle modifiche con Drive. Non chiudere la pagina web."
-      ],
-      "Your changes could not be encrypted. Reload the page to continue.": [
-        "Non è stato possibile crittografare le modifiche apportate. Aggiorna la pagina per continuare."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Le modifiche non sono state sincronizzate. Drive tenterà automaticamente di salvare le modifiche. Non chiudere la pagina web."
@@ -5533,9 +5650,6 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Il tuo piano programmato inizia il ${ renewalTime } e si rinnoverà automaticamente ogni mese."
-      ],
-      "Your session has expired. Reload the page to continue.": [
-        "La tua sessione è scaduta. Aggiorna la pagina per continuare."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Il tuo abbonamento si rinnoverà automaticamente il ${ renewalTime }."
@@ -8098,8 +8212,17 @@
       "attributes": [
         "Attributi"
       ],
+      "content key": [
+        "Chiave del contenuto"
+      ],
+      "hash key": [
+        "chiave hash"
+      ],
       "key": [
         "chiave"
+      ],
+      "membership": [
+        "abbonamento"
       ],
       "name": [
         "nome"
@@ -9393,6 +9516,9 @@
       ],
       "Enter your password": [
         "Inserisci la tua password"
+      ],
+      "Error syncing": [
+        "Errore durante la sincronizzazione"
       ],
       "Error Syncing": [
         "Errore nella sincronizzazione"

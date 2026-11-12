@@ -1118,6 +1118,11 @@
         "Premium Менеджер паролів"
       ]
     },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Гарантія повернення коштів протягом 30 днів. Ви можете скасувати покупку протягом 30 днів і звернутися до ${ customerSupportLink } для повернення коштів."
+      ]
+    },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Програма ${ MAIL_APP_NAME } для комп'ютера"
@@ -3534,6 +3539,9 @@
       "Your import will not be processed.": [
         "Ваш імпорт не буде оброблений."
       ],
+      "Your last change is too large to save, so editing is disabled. Copy any work you need, then reload.": [
+        "Ваші останні зміни занадто великі, щоб їх зберегти, тому редагування вимкнено. Скопіюйте необхідні зміни, а потім перезавантажте сторінку."
+      ],
       "⚠️ Undecryptable device": [
         "⚠️ Нерозшифровний пристрій"
       ],
@@ -4808,6 +4816,9 @@
       "Get a professional @your-company.com email, 1 TB of secure storage per user, longer video calls, and more with ${ BRAND_NAME } Workspace.": [
         "Отримайте професійну електронну пошту @your-company.com, 1 ТБ безпечного сховища на кожного користувача, довші відеодзвінки та багато іншого з ${ BRAND_NAME } Workspace."
       ],
+      "Get Notified About Comments": [
+        "Отримувати сповіщення про коментарі"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Уряди та ISP можуть відстежувати ваші дії онлайн. Завдяки приховуванню вашої справжньої IP-адреси та шифруванню дій ваш перегляд стає приватним."
       ],
@@ -4945,6 +4956,9 @@
       ],
       "Low Priority": [
         "Низький пріоритет"
+      ],
+      "Making a copy...": [
+        "Створення копії..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символ",
@@ -5228,6 +5242,9 @@
       "The Beginning": [
         "Початок"
       ],
+      "The document could not be created.": [
+        "Не вдалося створити документ."
+      ],
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "На сторонньому сервісі стався витік даних. Інформація вашого облікового запису ${ BRAND_NAME } у безпеці та зашифрована. ${ learnMoreLink }"
       ],
@@ -5263,6 +5280,9 @@
       ],
       "This is a name or nickname for your organization that your users will see. You can change it anytime.": [
         "Це назва або псевдонім вашої організації, які бачитимуть ваші користувачі. Ви можете змінити її будь-коли."
+      ],
+      "This link is not supported on this page.": [
+        "Це посилання не підтримується на цій сторінці."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Це посилання веде на вебсайт, який, можливо, намагається викрасти ваші дані, як-от паролі та дані кредитної картки."
@@ -6079,6 +6099,9 @@
     "Link": {
       "clearing your browser cache": [
         "очищення кешу браузера"
+      ],
+      "Customer Support": [
+        "Клієнтська підтримка"
       ],
       "Enforcing 2FA for organizations": [
         "Обов'язкова 2FA для організацій"
@@ -7807,6 +7830,9 @@
       "Amount due after trial on ${ formattedDate }": [
         "Сума до сплати після закінчення пробного періоду ${ formattedDate }"
       ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "Власники чинної передплати не мають можливості придбати облікові записи Born Private."
+      ],
       "Renewal pricing subject to change according to ${ termsAndConditionsLink }.": [
         "Вартість подовження може змінюватися відповідно до ${ termsAndConditionsLink }."
       ],
@@ -7815,6 +7841,9 @@
       ],
       "terms and conditions": [
         "умови та положення"
+      ],
+      "The Born Private initiative requires a donation.": [
+        "Для участі в програмі Born Private необхідна пожертва."
       ],
       "The discount is valid for ${ renewalsWithCoupon } renewal.": [
         "Знижка дійсна для ${ renewalsWithCoupon } поновлення.",
@@ -7857,6 +7886,12 @@
         "Після цього її буде автоматично продовжено за ${ renewPriceStr } на ${ renewalLength } місяці. Ви можете скасувати передплату в будь-який момент.",
         "Після цього її буде автоматично продовжено за ${ renewPriceStr } на ${ renewalLength } місяців. Ви можете скасувати передплату в будь-який момент.",
         "Після цього її буде автоматично продовжено за ${ renewPriceStr } на ${ renewalLength } місяця. Ви можете скасувати передплату в будь-який момент."
+      ],
+      "You already own a Born Private account.": [
+        "Ви вже маєте обліковий запис Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "Ваш обліковий запис надто давній для участі в програмі Born Private."
       ]
     },
     "PGP key encryption warning": {
@@ -9579,6 +9614,9 @@
       "Report a problem": [
         "Повідомити про проблему"
       ],
+      "Report issue": [
+        "Повідомити про проблему"
+      ],
       "Request new code": [
         "Запитати новий код"
       ],
@@ -9911,6 +9949,9 @@
       ]
     },
     "user_modal": {
+      "This user gets administrator rights the next time they sign in.": [
+        "Цей користувач отримає права адміністратора при наступному вході."
+      ],
       "Upgrade to a supported plan to use admin roles.": [
         "Перейдіть на тарифний план, що підтримує цю функцію, щоб користуватися ролями адміністратора."
       ],

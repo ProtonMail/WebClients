@@ -3471,9 +3471,6 @@
       "There was an error when exporting the contacts vCards": [
         "A apărut o eroare la exportarea cărților de vizită a contactelor („vCards”)."
       ],
-      "This document has reached its maximum size, so your last change was not saved and editing is disabled.": [
-        "Acest document a atins dimensiunea maximă, astfel că ultima modificare nu a fost salvată, iar editarea este dezactivată."
-      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Acest câmp depășește maximul de ${ maximumLength } de caractere."
       ],
@@ -4704,12 +4701,6 @@
       "Connect to ${ VPN_APP_NAME } to browse privately": [
         "Conectați-vă la ${ VPN_APP_NAME } pentru a naviga privat"
       ],
-      "Connected": [
-        "Conectat"
-      ],
-      "Connecting…": [
-        "Se conectează…"
-      ],
       "Contact assigned to group ${ contactGroupName }": [
         "Contactul a fost adăugat la grupul ${ contactGroupName }."
       ],
@@ -4783,9 +4774,6 @@
       "Decrypting your document": [
         "Se decriptează documentul"
       ],
-      "Disconnected": [
-        "Deconectat"
-      ],
       "Display word count": [
         "Afișare număr cuvinte"
       ],
@@ -4824,9 +4812,6 @@
       ],
       "Edit email address": [
         "Editare adresă de e-mail"
-      ],
-      "Editing is temporarily unavailable.": [
-        "Editarea nu este disponibilă momentan."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through ${ BRAND_NAME }. You can host email for domains registered on any domain registrar.": [
         "Găzduirea pentru e-mail este disponibilă numai pentru domeniile pe care le dețineți deja. Înregistrarea domeniului nu este disponibilă în prezent prin ${ BRAND_NAME }. Puteți găzdui e-mail pentru domenii înregistrate cu orice înregistrator de domenii."
@@ -4872,6 +4857,9 @@
       ],
       "Error loading document: ${ errorDetail }": [
         "Eroare la încărcarea documentului: ${ errorDetail }"
+      ],
+      "Error syncing": [
+        "Eroare sincronizare"
       ],
       "Error Syncing": [
         "Eroare la sincronizare."
@@ -5058,6 +5046,9 @@
       "Looks like you're offline. The document can not be edited while you are offline. Please check your device's connectivity.": [
         "Se pare ca nu aveți conexiune. Documentul nu poate fi editat fără a avea conexiune. Verificați starea de conectare a dispozitivului la internet."
       ],
+      "Looks like you're offline. You can keep editing: your changes are saved once you are back online.": [
+        "Se pare că ești nu aveți conexiune. Puteți continua să editați: modificările vă vor fi salvate imediat ce revine conexiunea."
+      ],
       "Low Priority": [
         "Prioritate scăzută"
       ],
@@ -5123,9 +5114,6 @@
       "Not connected": [
         "Neconectat"
       ],
-      "Not connected. Editing resumes once you are back.": [
-        "Nu există conexiune. Editarea se va relua imediat după reconectare."
-      ],
       "Numbers": [
         "Cifre"
       ],
@@ -5146,6 +5134,9 @@
       ],
       "Opening...": [
         "Se deschide..."
+      ],
+      "Opening…": [
+        "Se deschide…"
       ],
       "Organization size": [
         "Mărime organizație"
@@ -5263,6 +5254,9 @@
       "Saving...": [
         "Se salvează..."
       ],
+      "Saving…": [
+        "Se salvează…"
+      ],
       "Scan the QR code with your mobile device": [
         "Scanați codul QR cu dispozitivul mobil"
       ],
@@ -5311,6 +5305,9 @@
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Unele guverne blochează sau restricționează accesul la anumite site-uri web. Un VPN vă ajută să ocoliți cenzura, păstrându-vă în același timp activitatea și identitatea privată."
       ],
+      "Some of the document could not be read, so it can't be edited.": [
+        "O parte din document nu a putut fi citită, așa că acesta nu poate fi editat."
+      ],
       "Some of the document's content could not be read.": [
         "O parte din conținutul documentului nu a putut fi citită."
       ],
@@ -5358,12 +5355,6 @@
       "The Beginning": [
         "Începutul"
       ],
-      "The connection to the server was lost.": [
-        "Conexiunea cu serverul a fost pierdută."
-      ],
-      "The document could not be brought up to date.": [
-        "Documentul nu a putut fi adus la zi."
-      ],
       "The document could not be created.": [
         "Documentul nu a putut fi creat."
       ],
@@ -5379,9 +5370,6 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Proprietarul acestei adrese a dezactivat criptarea bilaterală. Pentru a putea trimite mesaje criptate la această adresă, proprietarul trebuie să reactiveze criptarea bilaterală."
       ],
-      "The server is busy.": [
-        "Serverul este ocupat."
-      ],
       "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
         "Adresa URL introdusă pare să fi fost copiată incorect din Slack. Când copiați legături web lungi din Slack, faceți clic dreapta pe legătura web, apoi alegeți „Copiere legătură” în loc să copiați direct textul trunchiat al adresei URL."
       ],
@@ -5394,8 +5382,17 @@
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Această adresă este dezactivată. Pentru a putea trimite la această adresă, proprietarul trebuie s-o activeze mai întâi."
       ],
+      "This document can't be edited right now.": [
+        "Acest document nu poate fi editat în acest moment."
+      ],
+      "This document does not exist, or it was deleted.": [
+        "Acest document nu există sau a fost șters."
+      ],
       "This document has grown too large to edit. You can remove older revisions to continue editing.": [
         "Acest document a devenit prea mare pentru editare. Puteți elimina reviziile mai vechi pentru a continua editarea."
+      ],
+      "This document has grown too large, and your latest changes couldn’t be saved. Copy any work you need to keep it.": [
+        "Acest document a devenit prea mare, iar ultimele modificări nu au putut fi salvate. Copiați tot ce doriți să păstrați."
       ],
       "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
         "Acest document a devenit prea mare, iar cele mai recente modificări nu au putut fi salvate. Descărcați o copie pentru a vă păstra datele."
@@ -5405,6 +5402,9 @@
       ],
       "This document has many active collaborators. Real-time editing is temporarily unavailable. Refresh to view the latest updates.": [
         "Acest document are mulți colaboratori activi. Editarea în timp real este indisponibilă temporar. Împrospătați pagina pentru a vizualiza cele mai recente actualizări."
+      ],
+      "This document has reached its maximum size, so it can't be edited.": [
+        "Acest document a atins dimensiunea maximă, prin urmare nu mai poate fi editat."
       ],
       "This document may not exist, or we are having issues loading it. Please reload the page and try again.": [
         "Acest document s-ar putea să nu existe sau sunt probleme cu încărcarea sa. Reîncărcați pagina și reîncercați."
@@ -5432,9 +5432,6 @@
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
         "Acest cod unic poate fi folosit de către site-uri web și ISP (furnizorii de servicii de internet) pentru a vă corela locul și istoricul de navigare cu dispozitivul utilizat."
-      ],
-      "This version of the app is no longer supported. Reload the page to update it.": [
-        "Această versiune a aplicației nu mai este susținută. Reîncărcați pagina pentru a o actualiza."
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Aceasta vă va deconectat din toate conturile conectate acum."
@@ -5613,9 +5610,6 @@
       "You may not have the necessary permissions to view it with your selected account. Try a different account or contact the owner for access.": [
         "S-ar putea să nu aveți permisiunile necesare pentru a-l vizualiza cu contul selectat. Încercați un alt cont sau contactați proprietarul pentru a-l accesa."
       ],
-      "You were disconnected after a period of inactivity.": [
-        "Conexiunea a fost deconectată după o perioadă de inactivitate."
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Veți pierde accesul la funcțiile planului ${ planTitle } la această dată."
       ],
@@ -5657,9 +5651,6 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Abonamentul ${ plan } va fi înlocuit cu ${ PASS_SHORT_APP_NAME } pe viață. Soldul rămas din abonament va fi restituit în cont. Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
       ],
-      "Your access to this document has changed. Reload the page to continue.": [
-        "Accesul la acest document s-a modificat. Reîncărcați pagina pentru a continua."
-      ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
       ],
@@ -5668,9 +5659,6 @@
       ],
       "Your changes are being synced to Drive. Please do not close the web page.": [
         "Modificările vă sunt sincronizate cu Drive. Nu închideți pagina web."
-      ],
-      "Your changes could not be encrypted. Reload the page to continue.": [
-        "Modificările nu au putut fi criptate. Reîncărcați pagina pentru a continua."
       ],
       "Your changes failed to sync. Drive will automatically try to save the changes. Please do not close the web page.": [
         "Modificările nu s-au sincronizat. Drive va încerca automat să salveze modificările. Nu închideți pagina web."
@@ -5733,9 +5721,6 @@
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Planul planificat începe ${ renewalTime } și se va reînnoi automat lunar."
-      ],
-      "Your session has expired. Reload the page to continue.": [
-        "Sesiunea a expirat. Reîncărcați pagina pentru a continua."
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "Abonamentu se va reînnoi automat la ${ renewalTime }."
@@ -9704,6 +9689,9 @@
       ],
       "Enter your password": [
         "Introduceți parola"
+      ],
+      "Error syncing": [
+        "Eroare la sincronizare"
       ],
       "Error Syncing": [
         "Eroare la sincronizare"
