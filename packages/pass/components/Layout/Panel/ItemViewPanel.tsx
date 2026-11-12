@@ -27,6 +27,9 @@ import { UpsellRef } from '../../../constants';
 import type { ItemActions } from '../../../hooks/items/useItemActions';
 import { useItemActions } from '../../../hooks/items/useItemActions';
 import { useItemState } from '../../../hooks/items/useItemState';
+import { ItemMonitorChecksProvider } from '../../../hooks/monitor/ItemMonitorChecksContext';
+import { useGlobalMonitorButton } from '../../../hooks/monitor/useGlobalMonitorButton';
+import { useItemMonitorChecks } from '../../../hooks/monitor/useItemMonitorChecks';
 import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
 import { useItemLoading } from '../../../hooks/useItemLoading';
 import { isVaultShare } from '../../../lib/shares/share.predicates';
@@ -83,6 +86,12 @@ export const ItemViewPanel: FC<Props> = ({
 
     const itemState = useItemState(revision, share);
     const itemActions = useItemActions(revision);
+    const perCheckExclusionEnabled = useFeatureFlag(PassFeature.PassMonitorPerCheckExclusion);
+    const loginMonitorChecksEnabled = perCheckExclusionEnabled && itemState.canMonitor && type === 'login';
+    const loginMonitorChecks = useItemMonitorChecks(revision, loginMonitorChecksEnabled);
+    const globalMonitorButton = useGlobalMonitorButton(revision, share, {
+        checks: loginMonitorChecksEnabled ? loginMonitorChecks : undefined,
+    });
 
     const { owner, targetMembers } = share;
 
@@ -109,12 +118,10 @@ export const ItemViewPanel: FC<Props> = ({
 
     const monitorActions = itemState.canMonitor && (
         <DropdownMenuButton
-            disabled={actionsDisabled}
-            onClick={itemActions.onToggleFlags}
-            icon={itemState.isMonitored ? IcEyeSlash : IcEye}
-            label={
-                itemState.isMonitored ? c('Action').t`Exclude from monitoring` : c('Action').t`Include in monitoring`
-            }
+            disabled={actionsDisabled || globalMonitorButton.loading || !itemState.canUpdateMonitorFlags || !online}
+            onClick={globalMonitorButton.onClick}
+            icon={globalMonitorButton.mode === 'include' ? IcEye : IcEyeSlash}
+            label={globalMonitorButton.label}
         />
     );
 
@@ -134,55 +141,198 @@ export const ItemViewPanel: FC<Props> = ({
         : () => itemActions.onShare();
 
     return (
-        <Panel
-            className={itemTypeToSubThemeClassName[type]}
-            header={
-                <PanelHeader
-                    title={
-                        <h2 className="text-2xl text-bold text-ellipsis mb-0-5" title={name}>
-                            {name}
-                        </h2>
-                    }
-                    actions={(() => {
-                        if (failed) {
+        <ItemMonitorChecksProvider value={loginMonitorChecksEnabled ? loginMonitorChecks : null}>
+            <Panel
+                className={itemTypeToSubThemeClassName[type]}
+                header={
+                    <PanelHeader
+                        title={
+                            <h2 className="text-2xl text-bold text-ellipsis mb-0-5" title={name}>
+                                {name}
+                            </h2>
+                        }
+                        actions={(() => {
+                            if (failed) {
+                                return [
+                                    <Button
+                                        key="dismiss-item-button"
+                                        pill
+                                        className="mr-1"
+                                        color="danger"
+                                        shape="outline"
+                                        onClick={itemActions.onDismiss}
+                                    >
+                                        {c('Action').t`Dismiss`}
+                                    </Button>,
+                                    <Button key="retry-item-button" pill color="norm" onClick={itemActions.onRetry}>
+                                        {c('Action').t`Retry`}
+                                    </Button>,
+                                ];
+                            }
+
+                            if (itemState.isTrashed) {
+                                return [
+                                    <QuickActionsDropdown
+                                        key="item-quick-actions-dropdown"
+                                        color="weak"
+                                        shape="ghost"
+                                        disabled={actionsDisabled}
+                                    >
+                                        <DropdownMenuButton
+                                            onClick={itemActions.onRestore}
+                                            label={c('Action').t`Restore item`}
+                                            icon={IcArrowsRotate}
+                                            disabled={itemState.isReadOnly}
+                                        />
+
+                                        <DropdownMenuButton
+                                            onClick={itemActions.onDelete}
+                                            label={c('Action').t`Delete permanently`}
+                                            icon={IcTrashCross}
+                                            disabled={itemState.isReadOnly}
+                                        />
+
+                                        {itemState.canLeave && (
+                                            <DropdownMenuButton
+                                                onClick={itemActions.onLeave}
+                                                label={c('Action').t`Leave`}
+                                                icon={IcArrowOutFromRectangle}
+                                            />
+                                        )}
+
+                                        {monitorActions}
+                                    </QuickActionsDropdown>,
+                                ];
+                            }
+
                             return [
                                 <Button
-                                    key="dismiss-item-button"
+                                    className="flex text-sm"
+                                    key="edit-item-button"
                                     pill
-                                    className="mr-1"
-                                    color="danger"
-                                    shape="outline"
-                                    onClick={itemActions.onDismiss}
+                                    shape="solid"
+                                    color="weak"
+                                    onClick={itemActions.onEdit}
+                                    disabled={actionsDisabled || itemState.isReadOnly}
                                 >
-                                    {c('Action').t`Dismiss`}
+                                    <IcPencil className="mr-1" />
+                                    <span>{c('Action').t`Edit`}</span>
                                 </Button>,
-                                <Button key="retry-item-button" pill color="norm" onClick={itemActions.onRetry}>
-                                    {c('Action').t`Retry`}
-                                </Button>,
-                            ];
-                        }
 
-                        if (itemState.isTrashed) {
-                            return [
+                                ...extraActions,
+
+                                showSharing && (
+                                    <QuickActionsDropdown
+                                        key="share-item-button"
+                                        color="weak"
+                                        shape="solid"
+                                        pill
+                                        icon={IcUsersPlus}
+                                        menuClassName="flex flex-column"
+                                        dropdownHeader={c('Label').t`Share`}
+                                        disabled={!online || actionsDisabled}
+                                        badge={accessCount > 1 ? accessCount : undefined}
+                                        dropdownSize={{
+                                            height: DropdownSizeUnit.Dynamic,
+                                            width: DropdownSizeUnit.Dynamic,
+                                            maxHeight: DropdownSizeUnit.Viewport,
+                                            maxWidth: '20rem',
+                                        }}
+                                    >
+                                        {itemState.canItemShare && (
+                                            <DropdownMenuButton
+                                                onClick={onItemShare}
+                                                label={
+                                                    <DropdownMenuLabel
+                                                        title={c('Action').t`With other ${BRAND_NAME} users`}
+                                                        subtitle={c('Label').t`Useful for permanent sharing`}
+                                                    />
+                                                }
+                                                icon={IcUserPlus}
+                                                extra={itemState.isFree && <PassPlusPromotionButton className="ml-2" />}
+                                            />
+                                        )}
+
+                                        {itemState.canLinkShare && (
+                                            <DropdownMenuButton
+                                                onClick={onSecureLink}
+                                                label={
+                                                    <DropdownMenuLabel
+                                                        title={c('Action').t`Via secure link`}
+                                                        subtitle={c('Label').t`For a one-off sharing`}
+                                                    />
+                                                }
+                                                icon={IcLink}
+                                                extra={itemState.isFree && <PassPlusPromotionButton className="ml-2" />}
+                                            />
+                                        )}
+
+                                        {itemState.canManageAccess && (
+                                            <DropdownMenuButton
+                                                onClick={onManageItem}
+                                                title={c('Action').t`See members`}
+                                                icon={IcUsers}
+                                                label={
+                                                    <DropdownMenuLabel
+                                                        title={c('Action').t`Manage access`}
+                                                        subtitle={c('Label').t`See member and permission overview`}
+                                                    />
+                                                }
+                                            />
+                                        )}
+                                    </QuickActionsDropdown>
+                                ),
+
                                 <QuickActionsDropdown
                                     key="item-quick-actions-dropdown"
-                                    color="weak"
-                                    shape="ghost"
+                                    color="norm"
                                     disabled={actionsDisabled}
+                                    shape="ghost"
+                                    signaled={signalQuickActions}
                                 >
+                                    {itemState.canMove && (
+                                        <DropdownMenuButton
+                                            onClick={itemActions.onMove}
+                                            label={c('Action').t`Move to`}
+                                            icon={IcFolderArrowIn}
+                                        />
+                                    )}
+
+                                    {itemState.canClone && (
+                                        <DropdownMenuButton
+                                            onClick={itemActions.onClone}
+                                            label={c('Action').t`Duplicate`}
+                                            icon={IcSquaresPlus}
+                                            disabled={itemState.isReadOnly}
+                                        />
+                                    )}
+
+                                    {quickActions}
+
                                     <DropdownMenuButton
-                                        onClick={itemActions.onRestore}
-                                        label={c('Action').t`Restore item`}
-                                        icon={IcArrowsRotate}
+                                        onClick={itemActions.onPin}
+                                        label={itemState.isPinned ? c('Action').t`Unpin item` : c('Action').t`Pin item`}
+                                        icon={itemState.isPinned ? IcPinAngledSlash : IcPinAngled}
+                                        disabled={!itemState.canTogglePinned}
+                                        loading={!itemState.canTogglePinned}
+                                    />
+
+                                    {itemState.canHistory && (
+                                        <DropdownMenuButton
+                                            onClick={itemActions.onHistory}
+                                            label={c('Action').t`View history`}
+                                            icon={IcClockRotateLeft}
+                                        />
+                                    )}
+
+                                    <DropdownMenuButton
+                                        onClick={itemActions.onTrash}
+                                        label={c('Action').t`Move to Trash`}
+                                        icon={IcTrash}
                                         disabled={itemState.isReadOnly}
                                     />
 
-                                    <DropdownMenuButton
-                                        onClick={itemActions.onDelete}
-                                        label={c('Action').t`Delete permanently`}
-                                        icon={IcTrashCross}
-                                        disabled={itemState.isReadOnly}
-                                    />
+                                    {monitorActions}
 
                                     {itemState.canLeave && (
                                         <DropdownMenuButton
@@ -191,166 +341,25 @@ export const ItemViewPanel: FC<Props> = ({
                                             icon={IcArrowOutFromRectangle}
                                         />
                                     )}
-
-                                    {monitorActions}
                                 </QuickActionsDropdown>,
                             ];
+                        })()}
+                        subtitle={
+                            isVault && (hasMultipleVaults || revision.folderId) ? (
+                                <FolderBreadcrumb
+                                    shareId={share.shareId}
+                                    folderId={revision.folderId}
+                                    vaultName={share.content.name}
+                                    vaultColor={share.content.display.color}
+                                    vaultIcon={share.content.display.icon ?? VaultIcon.ICON1}
+                                />
+                            ) : undefined
                         }
-
-                        return [
-                            <Button
-                                className="flex text-sm"
-                                key="edit-item-button"
-                                pill
-                                shape="solid"
-                                color="weak"
-                                onClick={itemActions.onEdit}
-                                disabled={actionsDisabled || itemState.isReadOnly}
-                            >
-                                <IcPencil className="mr-1" />
-                                <span>{c('Action').t`Edit`}</span>
-                            </Button>,
-
-                            ...extraActions,
-
-                            showSharing && (
-                                <QuickActionsDropdown
-                                    key="share-item-button"
-                                    color="weak"
-                                    shape="solid"
-                                    pill
-                                    icon={IcUsersPlus}
-                                    menuClassName="flex flex-column"
-                                    dropdownHeader={c('Label').t`Share`}
-                                    disabled={!online || actionsDisabled}
-                                    badge={accessCount > 1 ? accessCount : undefined}
-                                    dropdownSize={{
-                                        height: DropdownSizeUnit.Dynamic,
-                                        width: DropdownSizeUnit.Dynamic,
-                                        maxHeight: DropdownSizeUnit.Viewport,
-                                        maxWidth: '20rem',
-                                    }}
-                                >
-                                    {itemState.canItemShare && (
-                                        <DropdownMenuButton
-                                            onClick={onItemShare}
-                                            label={
-                                                <DropdownMenuLabel
-                                                    title={c('Action').t`With other ${BRAND_NAME} users`}
-                                                    subtitle={c('Label').t`Useful for permanent sharing`}
-                                                />
-                                            }
-                                            icon={IcUserPlus}
-                                            extra={itemState.isFree && <PassPlusPromotionButton className="ml-2" />}
-                                        />
-                                    )}
-
-                                    {itemState.canLinkShare && (
-                                        <DropdownMenuButton
-                                            onClick={onSecureLink}
-                                            label={
-                                                <DropdownMenuLabel
-                                                    title={c('Action').t`Via secure link`}
-                                                    subtitle={c('Label').t`For a one-off sharing`}
-                                                />
-                                            }
-                                            icon={IcLink}
-                                            extra={itemState.isFree && <PassPlusPromotionButton className="ml-2" />}
-                                        />
-                                    )}
-
-                                    {itemState.canManageAccess && (
-                                        <DropdownMenuButton
-                                            onClick={onManageItem}
-                                            title={c('Action').t`See members`}
-                                            icon={IcUsers}
-                                            label={
-                                                <DropdownMenuLabel
-                                                    title={c('Action').t`Manage access`}
-                                                    subtitle={c('Label').t`See member and permission overview`}
-                                                />
-                                            }
-                                        />
-                                    )}
-                                </QuickActionsDropdown>
-                            ),
-
-                            <QuickActionsDropdown
-                                key="item-quick-actions-dropdown"
-                                color="norm"
-                                disabled={actionsDisabled}
-                                shape="ghost"
-                                signaled={signalQuickActions}
-                            >
-                                {itemState.canMove && (
-                                    <DropdownMenuButton
-                                        onClick={itemActions.onMove}
-                                        label={c('Action').t`Move to`}
-                                        icon={IcFolderArrowIn}
-                                    />
-                                )}
-
-                                {itemState.canClone && (
-                                    <DropdownMenuButton
-                                        onClick={itemActions.onClone}
-                                        label={c('Action').t`Duplicate`}
-                                        icon={IcSquaresPlus}
-                                        disabled={itemState.isReadOnly}
-                                    />
-                                )}
-
-                                {quickActions}
-
-                                <DropdownMenuButton
-                                    onClick={itemActions.onPin}
-                                    label={itemState.isPinned ? c('Action').t`Unpin item` : c('Action').t`Pin item`}
-                                    icon={itemState.isPinned ? IcPinAngledSlash : IcPinAngled}
-                                    disabled={!itemState.canTogglePinned}
-                                    loading={!itemState.canTogglePinned}
-                                />
-
-                                {itemState.canHistory && (
-                                    <DropdownMenuButton
-                                        onClick={itemActions.onHistory}
-                                        label={c('Action').t`View history`}
-                                        icon={IcClockRotateLeft}
-                                    />
-                                )}
-
-                                <DropdownMenuButton
-                                    onClick={itemActions.onTrash}
-                                    label={c('Action').t`Move to Trash`}
-                                    icon={IcTrash}
-                                    disabled={itemState.isReadOnly}
-                                />
-
-                                {monitorActions}
-
-                                {itemState.canLeave && (
-                                    <DropdownMenuButton
-                                        onClick={itemActions.onLeave}
-                                        label={c('Action').t`Leave`}
-                                        icon={IcArrowOutFromRectangle}
-                                    />
-                                )}
-                            </QuickActionsDropdown>,
-                        ];
-                    })()}
-                    subtitle={
-                        isVault && (hasMultipleVaults || revision.folderId) ? (
-                            <FolderBreadcrumb
-                                shareId={share.shareId}
-                                folderId={revision.folderId}
-                                vaultName={share.content.name}
-                                vaultColor={share.content.display.color}
-                                vaultIcon={share.content.display.icon ?? VaultIcon.ICON1}
-                            />
-                        ) : undefined
-                    }
-                />
-            }
-        >
-            {children(itemActions)}
-        </Panel>
+                    />
+                }
+            >
+                {children(itemActions)}
+            </Panel>
+        </ItemMonitorChecksProvider>
     );
 };

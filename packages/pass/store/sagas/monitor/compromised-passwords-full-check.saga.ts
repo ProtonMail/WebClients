@@ -4,6 +4,7 @@ import { api } from '../../../lib/api/api';
 import { getItemKey, intoSelectedItem } from '../../../lib/items/item.utils';
 import { checkPasswordCompromised, getLastChangeTimestamp } from '../../../lib/monitor/compromised-password.request';
 import type { CompromisedPasswordEntry } from '../../../lib/monitor/types';
+import { MonitorCheckType } from '../../../lib/monitor/types';
 import { isOnline } from '../../../lib/network/connectivity.utils';
 import { PassFeature } from '../../../types/api/features';
 import type { ItemRevision, UniqueItem } from '../../../types/data/items';
@@ -21,7 +22,7 @@ import {
     selectCanCheckCompromisedPasswords,
     selectCompromisedPasswordsCache,
     selectLastSyncedChange,
-    selectMonitoredLogins,
+    selectLoginsEligibleForMonitorCheck,
 } from '../../selectors/monitor';
 import { selectFeatureFlag } from '../../selectors/user';
 
@@ -36,7 +37,9 @@ function* checkCompromisedPasswordsWorker(payload: CompromisedPasswordsCheckDTO)
         if (!(yield select(selectFeatureFlag(PassFeature.PassCompromisedPasswords)))) return [];
         if (!(yield select(selectCanCheckCompromisedPasswords))) return [];
 
-        const logins: ReturnType<ReturnType<typeof selectMonitoredLogins>> = yield select(selectMonitoredLogins(payload.shareIds));
+        const logins: ReturnType<ReturnType<typeof selectLoginsEligibleForMonitorCheck>> = yield select(
+            selectLoginsEligibleForMonitorCheck(MonitorCheckType.COMPROMISED, payload.shareIds)
+        );
         const candidates = logins.filter((item) => item.data.content.password.v.length);
 
         const cache: ReturnType<typeof selectCompromisedPasswordsCache> = yield select(selectCompromisedPasswordsCache);

@@ -74,8 +74,14 @@ export const useItemActions: UseItemActions = (item) => {
             onRetry: () => failure !== undefined && dispatch(failure.action),
             onShare: () => inviteActions.createItemInvite(shareId, itemId),
             onToggleFlags: () => {
-                const SkipHealthCheck = isMonitored(item);
-                dispatch(setItemFlags.intent({ shareId, itemId, SkipHealthCheck }));
+                dispatch(
+                    setItemFlags.intent({
+                        shareId,
+                        itemId,
+                        flags: { SkipHealthCheck: isMonitored(item) },
+                        context: 'global-toggle',
+                    })
+                );
             },
             onTrash: () => itemActions.trash(item),
         }),

@@ -1,10 +1,13 @@
 import type { FC } from 'react';
 
 import { useAutotypeShortcut } from '../../../hooks/autotype/useAutotypeShortcut';
-import { isMonitored } from '../../../lib/items/item.predicates';
+import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
+import { isActive, isMonitored } from '../../../lib/items/item.predicates';
+import { PassFeature } from '../../../types/api/features';
 import { FileAttachmentsContentView } from '../../FileAttachments/FileAttachmentsView';
 import { MoreInfoDropdown } from '../../Layout/Dropdown/MoreInfoDropdown';
 import { ItemViewPanel } from '../../Layout/Panel/ItemViewPanel';
+import { ItemChecks } from '../../Monitor/Item/ItemChecks';
 import { ItemReport } from '../../Monitor/Item/ItemReport';
 import { SecureLinkCardList } from '../../SecureLink/SecureLinkCardList';
 import type { ItemViewProps } from '../../Views/types';
@@ -16,6 +19,7 @@ export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
     const { revision, share } = itemViewProps;
     const { vaultId } = share;
     const { createTime, lastUseTime, modifyTime, revision: revisionNumber, shareId, itemId, data } = revision;
+    const perCheckExclusionEnabled = useFeatureFlag(PassFeature.PassMonitorPerCheckExclusion);
 
     useAutotypeShortcut(data, shareId);
 
@@ -31,7 +35,11 @@ export const LoginView: FC<ItemViewProps<'login'>> = (itemViewProps) => {
         >
             {({ onHistory }) => (
                 <>
-                    {isMonitored(revision) && <ItemReport shareId={shareId} itemId={itemId} />}
+                    {perCheckExclusionEnabled && isActive(revision) ? (
+                        <ItemChecks revision={revision} share={share} />
+                    ) : (
+                        isMonitored(revision) && <ItemReport shareId={shareId} itemId={itemId} />
+                    )}
                     <SecureLinkCardList shareId={shareId} itemId={itemId} />
                     <LoginContent revision={revision} />
                     <FileAttachmentsContentView revision={revision} />

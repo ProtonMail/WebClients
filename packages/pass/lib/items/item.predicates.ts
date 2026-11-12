@@ -4,6 +4,7 @@ import { ItemFlag, ItemState } from '../../types/data/items';
 import type { ItemType } from '../../types/protobuf';
 import { and, not, oneOf, or } from '../../utils/fp/predicates';
 import { deobfuscate } from '../../utils/obfuscate/xor';
+import { MONITOR_CHECK_CONFIG, MonitorCheckType } from '../monitor/types';
 import { isAutofillTargetMode } from '../urls/utils/autofill';
 
 export const isAliasItem = (item: Item): item is Item<'alias'> => item.type === 'alias';
@@ -71,6 +72,28 @@ export const isDisabledAlias = hasItemFlag(ItemFlag.AliasDisabled);
 export const hasAttachments = hasItemFlag(ItemFlag.HasAttachments);
 export const hasHadAttachments = hasItemFlag(ItemFlag.HasHadAttachments);
 export const isDisabledAliasItem = (item: ItemRevision) => isAliasItem(item.data) && isDisabledAlias(item);
+
+export const isWeakPasswordCheckSkipped = hasItemFlag(ItemFlag.SkipWeakPasswordCheck);
+export const isCompromisedPasswordCheckSkipped = hasItemFlag(ItemFlag.SkipCompromisedPasswordCheck);
+export const isReusedPasswordCheckSkipped = hasItemFlag(ItemFlag.SkipReusedPasswordCheck);
+export const is2FACheckSkipped = hasItemFlag(ItemFlag.Skip2FACheck);
+
+/** Global item exclusion from Pass Monitor (`SkipHealthCheck`). */
+export const isFullyExcluded = (item: ItemRevision) => isHealthCheckSkipped(item);
+
+const isPerCheckSkipped = (type: MonitorCheckType) => hasItemFlag(MONITOR_CHECK_CONFIG[type].flag);
+
+/** Whether a specific monitor check is ignored (global exclusion or per-check skip). */
+export const isCheckIgnored = (type: MonitorCheckType) => (item: ItemRevision) =>
+    isHealthCheckSkipped(item) || isPerCheckSkipped(type)(item);
+
+export const hasAnyPerCheckIgnored = (item: ItemRevision) =>
+    Object.values(MonitorCheckType).some((type) => isPerCheckSkipped(type)(item));
+
+export const hasAnyExclusion = (item: ItemRevision) => isHealthCheckSkipped(item) || hasAnyPerCheckIgnored(item);
+
+/** Active login eligible for a specific monitor check (not globally or per-check ignored). */
+export const isEligibleForMonitorCheck = (type: MonitorCheckType) => and(isActive, not(isCheckIgnored(type)));
 
 export const isActiveMonitored = and(isActive, isMonitored);
 export const isExcluded = and(isActive, not(isMonitored));

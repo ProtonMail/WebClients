@@ -2,35 +2,64 @@ import type { Store } from 'redux';
 
 import chunk from '@proton/utils/chunk';
 
-import { selectMonitoredLogins } from '../../store/selectors/monitor';
+import { selectLoginsEligibleForMonitorCheck } from '../../store/selectors/monitor';
 import type { State } from '../../store/types';
 import type { ShareId } from '../../types/crypto/pass-types';
-import type { UniqueItem } from '../../types/data/items';
+import type { ItemRevision, LoginItem, UniqueItem } from '../../types/data/items';
 import { and, not, or } from '../../utils/fp/predicates';
 import { seq } from '../../utils/fp/promises';
 import { deobfuscate } from '../../utils/obfuscate/xor';
 import { WASM_PROCEDURE_BATCH_SIZE } from '../core/constants';
 import type { PassCoreProxy } from '../core/core.types';
 import { hasDomain, hasOTP, hasPasskeys } from '../items/item.predicates';
-import { intoSelectedItem } from '../items/item.utils';
+import { getItemKey, intoSelectedItem } from '../items/item.utils';
 import { getAutofillUrls } from '../urls/utils/autofill';
+import { MonitorCheckType } from './types';
 
 type MonitorCheckOptions = {
     shareIds?: ShareId[];
 };
 export interface MonitorService {
+    checkMissing2FAForItem: (revision: ItemRevision) => Promise<boolean>;
     checkMissing2FAs: (options?: MonitorCheckOptions) => Promise<UniqueItem[]>;
+    checkWeakPasswordForItem: (revision: ItemRevision) => Promise<boolean>;
     checkWeakPasswords: (options?: MonitorCheckOptions) => Promise<UniqueItem[]>;
 }
 
 /** MonitorService provides `PassMonitor` methods that rely
  * on the `PassRustCore` module */
 export const createMonitorService = (core: PassCoreProxy, store: Store<State>): MonitorService => {
-    const getLoginItems = (shareIds?: ShareId[]) => selectMonitoredLogins(shareIds)(store.getState());
+    const getLoginItems = (checkType: MonitorCheckType, shareIds?: ShareId[]) =>
+        selectLoginsEligibleForMonitorCheck(checkType, shareIds)(store.getState());
+
+    const isLoginEligible = (checkType: MonitorCheckType, revision: ItemRevision) => {
+        if (revision.data.type !== 'login') return false;
+        const key = getItemKey(revision);
+        return getLoginItems(checkType).some((item) => getItemKey(item) === key);
+    };
 
     const service: MonitorService = {
+        checkMissing2FAForItem: async (revision) => {
+            if (revision.data.type !== 'login' || !isLoginEligible(MonitorCheckType.MISSING_2FA, revision)) {
+                return false;
+            }
+
+            const login = revision as LoginItem;
+
+            if (!and(hasDomain, not(or(hasOTP, hasPasskeys)))(login)) return false;
+
+            const domains = getAutofillUrls(login.data.content.autofillUrls);
+            if (domains.length === 0) return false;
+
+            const chunks = chunk(domains, WASM_PROCEDURE_BATCH_SIZE);
+            const results = await seq(chunks, core.twofa_domains_eligible);
+            const eligible = new Map(results.flatMap((dic) => Array.from(dic.entries())));
+
+            return domains.some((url) => eligible.get(url) === true);
+        },
+
         checkMissing2FAs: async (options) => {
-            const logins = getLoginItems(options?.shareIds);
+            const logins = getLoginItems(MonitorCheckType.MISSING_2FA, options?.shareIds);
             /** Valid 2FAs : OTPs or Passkeys */
             const candidates = logins.filter(and(hasDomain, not(or(hasOTP, hasPasskeys))));
 
@@ -46,8 +75,21 @@ export const createMonitorService = (core: PassCoreProxy, store: Store<State>): 
                 .map(intoSelectedItem);
         },
 
+        checkWeakPasswordForItem: async (revision) => {
+            if (!isLoginEligible(MonitorCheckType.WEAK, revision) || revision.data.type !== 'login') {
+                return false;
+            }
+
+            if (!revision.data.content.password.v.length) return false;
+
+            const password = deobfuscate(revision.data.content.password);
+            const scores = await core.check_password_scores([password]);
+
+            return scores[0] !== 'Strong';
+        },
+
         checkWeakPasswords: async (options) => {
-            const logins = getLoginItems(options?.shareIds);
+            const logins = getLoginItems(MonitorCheckType.WEAK, options?.shareIds);
             const candidates = logins.filter((item) => item.data.content.password.v.length);
             const passwords = candidates.map((item) => deobfuscate(item.data.content.password));
             const chunks = chunk(passwords, WASM_PROCEDURE_BATCH_SIZE);

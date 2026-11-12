@@ -46,3 +46,5 @@ export const useMonitor = (): MonitorContextValue => {
     if (!ctx) throw new Error('MonitorContext not initialized');
     return ctx;
 };
+
+export const useOptionalMonitor = (): MaybeNull<MonitorContextValue> => useContext(MonitorContext);
