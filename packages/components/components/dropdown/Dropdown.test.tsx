@@ -98,7 +98,9 @@ describe('<Dropdown />', () => {
             <div>
                 <div data-testid="outside">outside dropdown</div>
                 <Test data-testid="dropdown-open" dropdownProps={{ 'data-testid': 'dropdown' }}>
-                    <button data-testid="dropdown-inner">Hello world</button>
+                    <button type="button" data-testid="dropdown-inner">
+                        Hello world
+                    </button>
                 </Test>
             </div>
         );
@@ -135,7 +137,9 @@ describe('<Dropdown />', () => {
                             checked={state === '2'}
                             onChange={() => setState('2')}
                         />
-                        <button data-testid="dropdown-inner-button">Submit</button>
+                        <button type="button" data-testid="dropdown-inner-button">
+                            Submit
+                        </button>
                     </Test>
                 </div>
             );
@@ -172,25 +176,27 @@ describe('<Dropdown />', () => {
             );
         };
 
+        // `initial` on a custom property computes to nothing, so those are read from the inline style.
         it('should should set initial on viewport max size', async () => {
             const { getByTestId } = render(
                 <Test size={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }} />
             );
-            expect(getByTestId('dropdown')).toHaveStyle('--custom-max-width: initial; --custom-max-height: initial');
+            expect(getByTestId('dropdown').style.getPropertyValue('--custom-max-width')).toBe('initial');
+            expect(getByTestId('dropdown').style.getPropertyValue('--custom-max-height')).toBe('initial');
         });
 
         it('should should set custom max height', async () => {
             const { getByTestId } = render(<Test size={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: '13em' }} />);
-            expect(getByTestId('dropdown')).toHaveStyle('--custom-max-width: initial; --custom-max-height: 13em');
+            expect(getByTestId('dropdown')).toHaveStyle('--custom-max-height: 13em');
+            expect(getByTestId('dropdown').style.getPropertyValue('--custom-max-width')).toBe('initial');
         });
 
         it('should should set custom height', async () => {
             const { getByTestId } = render(
                 <Test size={{ height: '15px', maxWidth: DropdownSizeUnit.Viewport, maxHeight: '13em' }} />
             );
-            expect(getByTestId('dropdown')).toHaveStyle(
-                '--height: 15px; --custom-max-width: initial; --custom-max-height: 13em'
-            );
+            expect(getByTestId('dropdown')).toHaveStyle('--height: 15px; --custom-max-height: 13em');
+            expect(getByTestId('dropdown').style.getPropertyValue('--custom-max-width')).toBe('initial');
         });
 
         it('should should set custom width', async () => {
@@ -204,9 +210,8 @@ describe('<Dropdown />', () => {
                     }}
                 />
             );
-            expect(getByTestId('dropdown')).toHaveStyle(
-                '--width: 13px; --height: 15px; --custom-max-width: 13em; --custom-max-height: initial'
-            );
+            expect(getByTestId('dropdown')).toHaveStyle('--width: 13px; --height: 15px; --custom-max-width: 13em');
+            expect(getByTestId('dropdown').style.getPropertyValue('--custom-max-height')).toBe('initial');
         });
     });
 });
