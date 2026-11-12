@@ -2,6 +2,7 @@ import type { ReferralData } from '../../interfaces/referral';
 import type { BillingAddress } from '../../payments/billing-address';
 import type { CYCLE, PLANS } from '../../payments/constants';
 import type { Currency, PlanIDs } from '../../payments/interface';
+import { hasPlanIDs } from '../../payments/plan/helpers';
 
 interface GetReferralsProps {
     Offset?: number;
@@ -66,13 +67,14 @@ export interface ReferralRegistrationPlan {
     cycle: CYCLE;
 }
 
-const getPlanData = (plan: ReferralRegistrationPlan | undefined) => {
+const getPlanData = (plan: ReferralRegistrationPlan | undefined, hasPlanIDs: boolean) => {
     if (!plan) {
         return {};
     }
 
     return {
-        Plan: plan.name,
+        // The API rejects `Plan` and `Plans` together; `Plans` supersedes `Plan` when present.
+        ...(hasPlanIDs ? {} : { Plan: plan.name }),
         Cycle: plan.cycle,
     };
 };
@@ -93,17 +95,22 @@ export const postReferralRegistration = ({
     plan: ReferralRegistrationPlan | undefined;
     referralData: ReferralData;
     referralRegistrationSubscription: ReferralRegistrationSubscription | undefined;
-}) => ({
-    method: 'post',
-    url: `core/v4/referrals/register`,
-    data: {
-        ...getPlanData(plan),
-        ReferralIdentifier: referralData.referralIdentifier,
-        ReferralID: referralData.referralID,
-        PaymentToken: referralRegistrationSubscription?.paymentToken,
-        BillingAddress: referralRegistrationSubscription?.billingAddress,
-        Codes: referralRegistrationSubscription?.code ? [referralRegistrationSubscription.code] : undefined,
-        Currency: referralRegistrationSubscription?.currency,
-        Plans: referralRegistrationSubscription?.planIDs,
-    },
-});
+}) => {
+    const planIDs = referralRegistrationSubscription?.planIDs;
+    const sendPlanIDs = !!planIDs && hasPlanIDs(planIDs);
+
+    return {
+        method: 'post',
+        url: `core/v4/referrals/register`,
+        data: {
+            ...getPlanData(plan, sendPlanIDs),
+            ReferralIdentifier: referralData.referralIdentifier,
+            ReferralID: referralData.referralID,
+            PaymentToken: referralRegistrationSubscription?.paymentToken,
+            BillingAddress: referralRegistrationSubscription?.billingAddress,
+            Codes: referralRegistrationSubscription?.code ? [referralRegistrationSubscription.code] : undefined,
+            Currency: referralRegistrationSubscription?.currency,
+            Plans: sendPlanIDs ? planIDs : undefined,
+        },
+    };
+};
