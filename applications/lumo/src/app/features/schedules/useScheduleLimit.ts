@@ -6,15 +6,30 @@ import { useModalStateObject } from '@proton/components/components/modalTwo/useM
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useLumoSelector } from '../../redux/hooks';
 import { selectSchedules } from '../../redux/selectors';
+import { getScheduleLimit } from './scheduleEntitlements';
+
+export type ScheduleLimitModalState = {
+    scheduleLimit: number;
+    upgradePath: 'checkout' | 'admin' | 'none';
+};
 
 export function useScheduleLimit() {
-    const { hasLumoPlus, isLumoPlanLoading } = useLumoPlan();
+    const plan = useLumoPlan();
+    const { isLumoPlanLoading } = plan;
     const schedules = useLumoSelector(selectSchedules);
     const { createNotification } = useNotifications();
     const scheduleLimitModal = useModalStateObject();
 
     const scheduleCount = Object.keys(schedules).length;
-    const scheduleLimit = hasLumoPlus ? 10 : 1;
+    const scheduleLimit = getScheduleLimit(plan);
+
+    let upgradePath: ScheduleLimitModalState['upgradePath'] = 'none';
+    if (plan.canShowLumoUpsellFree || plan.canShowLumoUpsellB2C || plan.canShowLumoUpsellB2B) {
+        upgradePath = 'checkout';
+    } else if (plan.canShowTalkToAdminLumoUpsell && !plan.hasLumoPlus) {
+        upgradePath = 'admin';
+    }
+
     const canCreateSchedule = !isLumoPlanLoading && scheduleCount < scheduleLimit;
 
     const checkCanCreateSchedule = () => {
@@ -27,17 +42,16 @@ export function useScheduleLimit() {
             return false;
         }
 
-        if (!hasLumoPlus) {
-            scheduleLimitModal.openModal(true);
-            return false;
-        }
-
-        // translator: Shown when creating a scheduled task at the plan limit. ${scheduleLimit} is the maximum number of scheduled tasks allowed by the user's plan.
-        const message = c('collider_2025:Error')
-            .t`You've reached your plan's scheduled task limit (${scheduleLimit}). Delete a task to create another.`;
-        createNotification({ type: 'error', text: message });
+        scheduleLimitModal.openModal(true);
         return false;
     };
 
-    return { checkCanCreateSchedule, scheduleLimitModal };
+    return {
+        checkCanCreateSchedule,
+        scheduleLimitModal,
+        scheduleLimitModalState: {
+            scheduleLimit,
+            upgradePath,
+        } satisfies ScheduleLimitModalState,
+    };
 }

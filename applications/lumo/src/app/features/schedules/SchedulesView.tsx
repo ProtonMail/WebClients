@@ -28,7 +28,7 @@ export const SchedulesView = () => {
     const dispatch = useLumoDispatch();
     const schedules = useLumoSelector(selectSchedules);
     const { createNotification } = useNotifications();
-    const { checkCanCreateSchedule, scheduleLimitModal } = useScheduleLimit();
+    const { checkCanCreateSchedule, scheduleLimitModal, scheduleLimitModalState } = useScheduleLimit();
     const [{ data, ...scheduledTaskEditorModalProps }, openScheduledTaskEditorModal, renderScheduledTaskEditorModal] =
         useModalStateWithData<{
             initialValues: ScheduleDetails;
@@ -93,7 +93,9 @@ export const SchedulesView = () => {
                 <ScheduleTemplateGrid onSelect={handleSelectTemplate} />
             </div>
 
-            {scheduleLimitModal.render && <ScheduleLimitModal {...scheduleLimitModal.modalProps} />}
+            {scheduleLimitModal.render && (
+                <ScheduleLimitModal {...scheduleLimitModal.modalProps} {...scheduleLimitModalState} />
+            )}
 
             {renderScheduledTaskEditorModal && data && (
                 <ScheduledTaskEditorModal
