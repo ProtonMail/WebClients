@@ -16,6 +16,7 @@ export const BusinessUpgradeBanner = () => {
                     className="my-1"
                     color="norm"
                     size="small"
+                    fullWidth
                 >
                     {c('Action').t`Contact sales`}
                 </ButtonLike>
