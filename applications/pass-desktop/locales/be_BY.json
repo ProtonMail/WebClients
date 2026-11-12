@@ -861,6 +861,12 @@
       ],
       "Try again": [
         "Паўтарыце спробу"
+      ],
+      "Open the browser again": [
+        "Адкрыць браўзер зноў"
+      ],
+      "Sign in in the app instead": [
+        "Замест гэтага ўвайдзіце ў праграму"
       ]
     },
     "Activity": {
@@ -904,6 +910,9 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "Выдаліць ${ PASS_APP_NAME }"
+      ],
+      "Back": [
+        "Назад"
       ]
     },
     "Browser": {
@@ -1082,10 +1091,10 @@
         "Збой аўтэнтыфікацыі. Пацвердзіце ваш другі пароль, каб працягнуць экспартаванне"
       ],
       "Biometric authentication cancelled.": [
-        "Біяметрычная аўтэнтыфікацыя скасавана."
+        "Біяметрычнай аўтэнтыфікацыі скасавана."
       ],
       "Biometric authentication failed.": [
-        "Збой аўтэнтыфікацыі біяметрыі."
+        "Збой біяметрычнай аўтэнтыфікацыі."
       ],
       "Biometric lock credentials do not match.": [
         "Уліковыя даныя біяметрычнай блакіроўкі не супадаюць."
@@ -1602,6 +1611,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN-код быў выдалены ў іншым кліенце ${ PASS_APP_NAME }"
+      ],
+      "Biometric authentication failed": [
+        "Збой біяметрычнай аўтэнтыфікацыі"
+      ],
+      "Biometric authentication is not available": [
+        "Біяметрычная аўтэнтыфікацыя недаступна"
       ]
     },
     "Error message": {
@@ -2391,10 +2406,7 @@
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да выдалення яго бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -3148,6 +3160,27 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
+      ],
+      "Canceled by user": [
+        "Скасавана карыстальнікам"
+      ],
+      "Choose how you want to sign in": [
+        "Выберыце спосаб уваходу"
+      ],
+      "Disabled by your organization": [
+        "Адключана вашай арганізацыяй"
+      ],
+      "Only cards are shown": [
+        "Паказаны толькі карткі"
+      ],
+      "Only custom items are shown": [
+        "Паказаны толькі карыстальніцкія элементы"
+      ],
+      "Only notes are shown": [
+        "Паказаны толькі нататкі"
+      ],
+      "The folder is already here": [
+        "Папка ўжо тут"
       ]
     },
     "Keyboard key": {
@@ -5676,6 +5709,18 @@
       ],
       "Something went wrong": [
         "Нешта пайшло не так"
+      ],
+      "Add an account": [
+        "Дадаць уліковы запіс"
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Перамясціць усе элементы ў «${ target }»?"
+      ],
+      "Sign in timed out": [
+        "Перавышаны час чакання ўваходу"
+      ],
+      "Signing you in": [
+        "Адбываецца ўваход"
       ]
     },
     "Title_cloned_item": {

@@ -861,6 +861,12 @@
       ],
       "Try again": [
         "Skús znova"
+      ],
+      "Open the browser again": [
+        "Otvorte prehliadač znova"
+      ],
+      "Sign in in the app instead": [
+        "Radšej sa prihlásiť v aplikácii"
       ]
     },
     "Activity": {
@@ -904,6 +910,9 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "Odinštalovať ${ PASS_APP_NAME }"
+      ],
+      "Back": [
+        "Späť"
       ]
     },
     "Browser": {
@@ -1608,6 +1617,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš PIN kód bol odstránený iným klientom ${ PASS_APP_NAME }"
+      ],
+      "Biometric authentication failed": [
+        "Biometrické overenie zlyhalo"
+      ],
+      "Biometric authentication is not available": [
+        "Biometrické overenie nie je k dispozícii"
       ]
     },
     "Error message": {
@@ -2409,10 +2424,7 @@
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -3193,6 +3205,33 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Vaša organizácia vyžaduje, aby ste zabezpečili svoj prístup k ${ PASS_APP_NAME }"
+      ],
+      "Canceled by user": [
+        "Zrušené používateľom"
+      ],
+      "Choose how you want to sign in": [
+        "Vyberte si spôsob prihlásenia"
+      ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Prihláste sa a potvrďte to v okne prehliadača, ktoré sa práve otvorilo. ${ PASS_APP_NAME } sa automaticky vyplní, akonáhle to dokončíte."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Na spustenie ${ PASS_APP_NAME } v režime offline budete vaše ${ BRAND_NAME } heslo."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Na spustenie ${ PASS_APP_NAME } v režime offline budete potrebovať vaše záložné heslo."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Na spustenie ${ PASS_APP_NAME } v režime offline budete potrebovať dodatočné heslo."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Na spustenie ${ PASS_APP_NAME } v režime offline budete potrebovať vaše druhé heslo."
+      ],
+      "The sign in was not confirmed in time.": [
+        "Prihlásenie nebolo včas potvrdené."
+      ],
+      "Your session could not be authorized.": [
+        "Vašu reláciu sa nepodarilo autorizovať."
       ]
     },
     "Keyboard key": {
@@ -5721,6 +5760,18 @@
       ],
       "Something went wrong": [
         "Niečo sa pokazilo"
+      ],
+      "Add an account": [
+        "Pridať účet"
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Presunúť všetky položky do \"${ target }\"?"
+      ],
+      "Sign in timed out": [
+        "Čas prihlásenia vypršal"
+      ],
+      "Signing you in": [
+        "Prihlasujeme vás"
       ]
     },
     "Title_cloned_item": {

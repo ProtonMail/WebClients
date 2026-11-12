@@ -242,7 +242,7 @@
         "Criar uma identidade"
       ],
       "Create item": [
-        "Criar um item"
+        "Criar item"
       ],
       "Create login": [
         "Criar um início de sessão"
@@ -793,7 +793,7 @@
         "Verificar"
       ],
       "Via secure link": [
-        "Via uma ligação segura"
+        "Via hiperligação segura"
       ],
       "View agent activity": [
         "Ver atividade do agente"
@@ -805,7 +805,7 @@
         "Mostrar o histórico"
       ],
       "View item history": [
-        "Ver o histórico do item"
+        "Ver histórico do item"
       ],
       "View older history": [
         "Ver o histórico antigo"
@@ -824,6 +824,21 @@
       ],
       "Try again": [
         "Tentar novamente"
+      ],
+      "Clear sort filter": [
+        "Limpar filtro de ordenação"
+      ],
+      "Hide passwords": [
+        "Ocultar palavras-passe"
+      ],
+      "Open the browser again": [
+        "Abrir o navegador de novo"
+      ],
+      "Reset filters": [
+        "Redefinir filtros"
+      ],
+      "Sign in in the app instead": [
+        "Em vez disso inicie sessão na aplicação"
       ]
     },
     "Activity": {
@@ -867,6 +882,9 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "Desinstalar o ${ PASS_APP_NAME }"
+      ],
+      "Back": [
+        "Retroceder"
       ]
     },
     "Button": {
@@ -1515,6 +1533,16 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "O Seu código PIN foi removido por outro cliente ${ PASS_APP_NAME }."
+      ],
+      "Failed to delete folder": [
+        "Não foi possível eliminar a pasta",
+        "Não foi possível eliminar as pastas"
+      ],
+      "Failed to update folder": [
+        "Não foi possível atualizar a pasta"
+      ],
+      "Regex invalid": [
+        "Regex inválido"
       ]
     },
     "Error message": {
@@ -2229,8 +2257,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras.",
-        "Mover itens para outro cofre apagará as suas ligações seguras."
+        "Mover um item para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"
@@ -2924,6 +2951,45 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "A sua organização exige que proteja o seu acesso ao ${ PASS_APP_NAME }."
+      ],
+      "Choose how you want to sign in": [
+        "Selecione como prefere iniciar sessão"
+      ],
+      "Disabled by your organization": [
+        "Desativado para a sua organização"
+      ],
+      "Folder deleted": [
+        "Pasta eliminada"
+      ],
+      "Important:": [
+        "Importante:"
+      ],
+      "iOS and Android Apps": [
+        "Aplicações de Android e iOS"
+      ],
+      "Only aliases are shown": [
+        "Só são mostrados os pseudónimos"
+      ],
+      "Only cards are shown": [
+        "Só são mostrados os cartões"
+      ],
+      "Only identities are shown": [
+        "Só são mostradas as identidades"
+      ],
+      "Only notes are shown": [
+        "Só são mostradas as notas"
+      ],
+      "Scan to download": [
+        "Digitalize para transferir"
+      ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Inicie sessão e confirme na janela do navegador que abriu. ${ PASS_APP_NAME } será selecionada automaticamente quando terminar."
+      ],
+      "The sign in was not confirmed in time.": [
+        "O início de sessão não pode ser confirmado dentro do tempo."
+      ],
+      "Your session could not be authorized.": [
+        "A sua sessão não pode ser autorizada."
       ]
     },
     "Keyboard key": {
@@ -3913,7 +3979,7 @@
         "Código de segurança"
       ],
       "See member and permission overview": [
-        "Ver todos os membros e permissões"
+        "Ver sinopse dos membros e permissões"
       ],
       "Seed Phrase": [
         "Frase de recuperação"
@@ -4226,6 +4292,12 @@
       ],
       "ZIP or Postal code": [
         "Código postal"
+      ],
+      "Allow viewers to see passwords": [
+        "Permitir que os visualizadores vejam as palavras-passe"
+      ],
+      "Create a folder": [
+        "Criar uma pasta"
       ]
     },
     "Link": {
@@ -4580,6 +4652,12 @@
       ],
       "Used on ${ url }": [
         "Utilizado no ${ url }"
+      ],
+      "Folder name": [
+        "Nome da pasta"
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Volte a digitar \"${ name }\" para confirmar a eliminação"
       ]
     },
     "Result": {
@@ -4588,6 +4666,9 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Este URL NÃO será bloqueado do preenchimento automático"
+      ],
+      "URL matches the rule": [
+        "O URL corresponde à regra"
       ]
     },
     "Security Center - Info": {
@@ -4615,7 +4696,7 @@
         "Se não fez este pedido, cancele-o agora."
       ],
       "Invalid confirmation code": [
-        "O código de confirmação não é válido."
+        "Código de confirmação inválido"
       ],
       "No, it wasn’t me": [
         "Não, não fui eu."
@@ -5293,6 +5374,30 @@
       ],
       "Something went wrong": [
         "Ocorreu um erro"
+      ],
+      "Add an account": [
+        "Adicionar uma conta"
+      ],
+      "Delete folder \"${ name }\"?": [
+        "Eliminar a pasta \"${ name }\"?"
+      ],
+      "Delete vault \"${ name }\"?": [
+        "Eliminar o cofre \"${ name }\"?"
+      ],
+      "Get mobile and desktop apps": [
+        "Obtenha as aplicações para PC e dispositivo móvel"
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Mover todos os itens para \"${ target }\"?"
+      ],
+      "Rename folder": [
+        "Renomear pasta"
+      ],
+      "Sign in timed out": [
+        "Tempo de sessão expirado"
+      ],
+      "Signing you in": [
+        "Iniciando sessão"
       ]
     },
     "Title_cloned_item": {

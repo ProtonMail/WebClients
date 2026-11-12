@@ -859,6 +859,12 @@
       ],
       "Try again": [
         "Reîncercați"
+      ],
+      "Open the browser again": [
+        "Redeschidere navigator web"
+      ],
+      "Sign in in the app instead": [
+        "Conectare în aplicație"
       ]
     },
     "Activity": {
@@ -902,6 +908,9 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "Dezinstalare ${ PASS_APP_NAME }"
+      ],
+      "Back": [
+        "Înapoi"
       ]
     },
     "Browser": {
@@ -1602,6 +1611,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Codul dvs. PIN a fost eliminat de către alt utilizator al ${ PASS_APP_NAME }."
+      ],
+      "Biometric authentication failed": [
+        "Autentificarea biometrică a eșuat."
+      ],
+      "Biometric authentication is not available": [
+        "Autentificarea biometrică nu este disponibilă."
       ]
     },
     "Error message": {
@@ -2382,9 +2397,7 @@
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+        "Mutarea unui element într-un alt seif îi va șterge linkurile securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -3157,6 +3170,33 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizația vă solicită să vă securizați accesul la ${ PASS_APP_NAME }"
+      ],
+      "Canceled by user": [
+        "Anulat de utilizator"
+      ],
+      "Choose how you want to sign in": [
+        "Alege cum doriți să vă conectați"
+      ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Conectați-vă și confirmați în fereastra navigatorului web care tocmai s-a deschis. ${ PASS_APP_NAME } va prelua automat procesul imediat ce ați terminat."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Pentru pornirea ${ PASS_APP_NAME } în mod local, va fi necesară parola ${ BRAND_NAME }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Pentru pornirea ${ PASS_APP_NAME } în mod local, va fi necesară parola de rezervă."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Pentru pornirea ${ PASS_APP_NAME } în mod local, va fi necesară parola suplimentară."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Pentru pornirea ${ PASS_APP_NAME } în mod local, va fi necesară parola secundară."
+      ],
+      "The sign in was not confirmed in time.": [
+        "Autentificarea nu a fost confirmată la timp."
+      ],
+      "Your session could not be authorized.": [
+        "Sesiunea nu a putut fi autorizată."
       ]
     },
     "Keyboard key": {
@@ -5660,6 +5700,18 @@
       ],
       "Something went wrong": [
         "Ceva nu a mers bine."
+      ],
+      "Add an account": [
+        "Adăugare cont"
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Mutați toate articolele în „${ target }”?"
+      ],
+      "Sign in timed out": [
+        "Sesiunea de autentificare a expirat"
+      ],
+      "Signing you in": [
+        "Vă conectăm în"
       ]
     },
     "Title_cloned_item": {

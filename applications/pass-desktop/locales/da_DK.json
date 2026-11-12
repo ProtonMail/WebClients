@@ -857,6 +857,12 @@
       ],
       "Try again": [
         "Prøv igen"
+      ],
+      "Open the browser again": [
+        "Åbn browseren igen"
+      ],
+      "Sign in in the app instead": [
+        "Log ind i appen i stedet"
       ]
     },
     "Activity": {
@@ -900,6 +906,9 @@
       ],
       "Uninstall ${ PASS_APP_NAME }": [
         "Afinstallér ${ PASS_APP_NAME }"
+      ],
+      "Back": [
+        "Tilbage"
       ]
     },
     "Browser": {
@@ -1596,6 +1605,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din pinkode blev fjernet af en anden ${ PASS_APP_NAME }-klient"
+      ],
+      "Biometric authentication failed": [
+        "Biometrisk godkendelse mislykkedes"
+      ],
+      "Biometric authentication is not available": [
+        "Biometrisk godkendelse er ikke tilgængeligt"
       ]
     },
     "Error message": {
@@ -2355,8 +2370,7 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
+        "Hvis du flytter et element til en anden boks, slettes dets sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -3121,6 +3135,33 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Din organisation kræver, at du sikrer din adgang til ${ PASS_APP_NAME }"
+      ],
+      "Canceled by user": [
+        "Annulleret af brugeren"
+      ],
+      "Choose how you want to sign in": [
+        "Vælg hvordan du vil logge ind"
+      ],
+      "Sign in and confirm in the browser window that just opened. ${ PASS_APP_NAME } will pick up automatically once you're done.": [
+        "Log ind og bekræft og i browservinduet, som lige åbnede. ${ PASS_APP_NAME } fortsætter automatisk fra hvor du slap når du er færdig."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Det kræver din ${ BRAND_NAME }-adgangskode for at starte ${ PASS_APP_NAME } offline."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Det kræver din backupadgangskode for at starte ${ PASS_APP_NAME } offline."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Det kræver din ekstra adgangskode for at starte ${ PASS_APP_NAME } offline."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Det kræver din anden adgangskode for at starte ${ PASS_APP_NAME } offline."
+      ],
+      "The sign in was not confirmed in time.": [
+        "Login-forsøget blev ikke bekræftet i tide."
+      ],
+      "Your session could not be authorized.": [
+        "Din session kunne ikke godkendes."
       ]
     },
     "Keyboard key": {
@@ -5599,6 +5640,18 @@
       ],
       "Something went wrong": [
         "Et eller andet gik galt"
+      ],
+      "Add an account": [
+        "Tilføj en konto"
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Flyt alle elementer til \"${ target }\"?"
+      ],
+      "Sign in timed out": [
+        "Login udløb"
+      ],
+      "Signing you in": [
+        "Logger dig ind"
       ]
     },
     "Title_cloned_item": {
