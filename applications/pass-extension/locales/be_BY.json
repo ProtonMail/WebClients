@@ -727,6 +727,9 @@
       "Sign back in": [
         "Увайсці яшчэ раз"
       ],
+      "Sign in in the app instead": [
+        "Замест гэтага ўвайдзіце ў праграму"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Увайсці з ${ BRAND_NAME }"
       ],
@@ -1064,10 +1067,10 @@
         "Збой аўтэнтыфікацыі: ${ message }"
       ],
       "Biometric authentication cancelled.": [
-        "Біяметрычная аўтэнтыфікацыя скасавана."
+        "Біяметрычнай аўтэнтыфікацыі скасавана."
       ],
       "Biometric authentication failed.": [
-        "Збой аўтэнтыфікацыі біяметрыі."
+        "Збой біяметрычнай аўтэнтыфікацыі."
       ],
       "Biometric lock credentials do not match.": [
         "Уліковыя даныя біяметрычнай блакіроўкі не супадаюць."
@@ -2204,6 +2207,9 @@
       "Can view this item.": [
         "Можа праглядаць гэты элемент."
       ],
+      "Canceled by user": [
+        "Скасавана карыстальнікам"
+      ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Выбраць захаваны ключ доступу для ўваходу ў ${ domain }"
       ],
@@ -2275,6 +2281,9 @@
       ],
       "Didn't receive the code?": [
         "Не атрымалі код?"
+      ],
+      "Disabled by your organization": [
+        "Адключана вашай арганізацыяй"
       ],
       "Disabling auto-lock": [
         "Адключэнне аўтаблакіроўкі"
@@ -2610,10 +2619,7 @@
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да выдалення яго бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -3073,6 +3079,9 @@
       ],
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Для выкарыстання ${ PASS_APP_NAME } спатрэбіцца дадатковы пароль. Ён дзейнічае як дадатковы пароль паверх вашага пароля ${ BRAND_NAME }."
+      ],
+      "The folder is already here": [
+        "Папка ўжо тут"
       ],
       "The following ${ totalIgnored } item could not be imported:": [
         "Не ўдалося імпартаваць наступны ${ totalIgnored } элемент:",
@@ -5622,8 +5631,8 @@
         "Перамясціць ${ trashedItemsCount } элементаў у сметніцу?",
         "Перамясціць ${ trashedItemsCount } элементаў у сметніцу?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Перамясціць усе элементы ў \"${ vaultName }\"?"
+      "Move all items to \"${ target }\"?": [
+        "Перамясціць усе элементы ў «${ target }»?"
       ],
       "Move all items?": [
         "Перамясціць усе элементы?"

@@ -727,6 +727,9 @@
       "Sign back in": [
         "Wieder anmelden"
       ],
+      "Sign in in the app instead": [
+        "Stattdessen in der App anmelden"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Mit ${ BRAND_NAME } anmelden"
       ],
@@ -2161,6 +2164,9 @@
       "Can view this item.": [
         "Darf dieses Element anzeigen."
       ],
+      "Canceled by user": [
+        "Vom Benutzer abgebrochen"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "${ compromised.progress.completed } von ${ compromised.progress.total } Passwörter werden überprüft"
       ],
@@ -2565,8 +2571,7 @@
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
-        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
+        "Wenn du einen Eintrag in einen anderen Tresor verschiebst, werden seine sicheren Links gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
@@ -2975,6 +2980,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Wenn du das nächste Mal einen Alias brauchst, verwende einfach ${ emailBold }: Er wird ${ automaticallyBold } erstellt, wenn er das erste Mal eine E-Mail erhält. Für eine noch feinere Steuerung kannst du auch ${ rulesHyperLink } definieren."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Um ${ PASS_APP_NAME } ohne Internetverbindung starten zu können, wird dein ${ BRAND_NAME }-Passwort benötigt."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Um ${ PASS_APP_NAME } ohne Internetverbindung starten zu können, wird dein Backup-Passwort benötigt."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Um ${ PASS_APP_NAME } ohne Internetverbindung starten zu können, benötigst du dein zusätzliches Passwort."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Um ${ PASS_APP_NAME } ohne Internetverbindung starten zu können, wird dein zweites Passwort benötigt."
       ],
       "Successfully exported all your items": [
         "Alle Einträge erfolgreich exportiert."
@@ -5533,8 +5550,8 @@
         "${ trashedItemsCount } Eintrag in den Papierkorb verschieben?",
         "${ trashedItemsCount } Einträge in den Papierkorb verschieben?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Alle Einträge zu \"${ vaultName }\" verschieben?"
+      "Move all items to \"${ target }\"?": [
+        "Alle Einträge nach „${ target }“ verschieben?"
       ],
       "Move all items?": [
         "Alle Einträge verschieben?"

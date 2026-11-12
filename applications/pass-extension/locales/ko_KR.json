@@ -2309,7 +2309,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -5140,9 +5140,6 @@
       ],
       "Move ${ trashedItemsCount } item to trash?": [
         "${ trashedItemsCount }개의 항목을 휴지통으로 이동시키시겠습니까?"
-      ],
-      "Move all items to \"${ vaultName }\"?": [
-        "\"${ vaultName }\"(으)로 모든 항목을 이동할까요?"
       ],
       "Move all items?": [
         "모든 항목 이동을 이동하시겠습니까?"

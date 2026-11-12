@@ -727,6 +727,9 @@
       "Sign back in": [
         "Yeniden oturum aç"
       ],
+      "Sign in in the app instead": [
+        "Bunun yerine uygulamada oturum açın"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "${ BRAND_NAME } ile oturum aç"
       ],
@@ -2161,6 +2164,9 @@
       "Can view this item.": [
         "Bu ögeyi görüntüleyebilir."
       ],
+      "Canceled by user": [
+        "Kullanıcı tarafından iptal edildi"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "${ compromised.progress.completed } / ${ compromised.progress.total } parola denetleniyor"
       ],
@@ -2565,8 +2571,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2975,6 +2980,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Bir dahaki sefere bir takma ada gerek duyduğunuzda ${ emailBold } adresini kullanın: İlk kez bir e-posta aldığında ${ automaticallyBold } oluşturulur. Daha ayrıntılı bir denetim için, ${ rulesHyperLink } de tanımlayabilirsiniz."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "${ PASS_APP_NAME } uygulamasını çevrim dışı başlatmak için ${ BRAND_NAME } parolanız gerekecek."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "${ PASS_APP_NAME } uygulamasını çevrim dışı başlatmak için yedek parolanız gerekecek."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "${ PASS_APP_NAME } uygulamasını çevrim dışı başlatmak için ek parolanız gerekecek."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "${ PASS_APP_NAME } uygulamasını çevrim dışı başlatmak için ikinci parolanız gerekecek."
       ],
       "Successfully exported all your items": [
         "Tüm ögeleriniz dışa aktarıldı"
@@ -5533,8 +5550,8 @@
         "${ trashedItemsCount } öge çöpe atılsın mı?",
         "${ trashedItemsCount } öge çöpe atılsın mı?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Tüm ögeler \"${ vaultName }\" kasasına taşınsın mı?"
+      "Move all items to \"${ target }\"?": [
+        "Tüm ögeler \"${ target }\" kasasına taşınsın mı?"
       ],
       "Move all items?": [
         "Tüm ögeler taşınsın mı?"

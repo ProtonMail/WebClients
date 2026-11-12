@@ -1928,6 +1928,9 @@
       "Can view this item.": [
         "Kan dit item bekijken"
       ],
+      "Canceled by user": [
+        "Geannuleerd door gebruiker"
+      ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Kies een opgeslagen toegangssleutel om aan te melden bij ${ domain }"
       ],
@@ -2296,8 +2299,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2677,6 +2679,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Gebruik gewoon ${ emailBold } volgende keer dat u een alias nodig hebt: het wordt ${ automaticallyBold } aangemaakt de eerste keer dat het een e-mail ontvangt. Voor een fijnmazigere controle kunt u ook ${ rulesHyperLink } definiëren."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Als u ${ PASS_APP_NAME } offline wilt starten, is uw ${ BRAND_NAME }-wachtwoord vereist."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Als u ${ PASS_APP_NAME } offline start, is uw back-upwachtwoord vereist."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Om ${ PASS_APP_NAME } offline te gebruiken, is uw extra wachtwoord vereist."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Als u ${ PASS_APP_NAME } offline wilt starten, heeft u uw tweede wachtwoord nodig."
       ],
       "Successfully exported all your items": [
         "Alle items succesvol geëxporteerd"
@@ -5089,9 +5103,6 @@
       "Move ${ trashedItemsCount } item to trash?": [
         "${ trashedItemsCount } item naar prullenbak verplaatsen?",
         "${ trashedItemsCount } items naar prullenbak verplaatsen?"
-      ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Alle items verplaatsen naar \"${ vaultName }\"?"
       ],
       "MX record": [
         "MX-record"

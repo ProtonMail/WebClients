@@ -727,6 +727,9 @@
       "Sign back in": [
         "Torna a entrar"
       ],
+      "Sign in in the app instead": [
+        "Inicieu sessió a l'aplicació en lloc d'això"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Inicia sessió amb ${ BRAND_NAME }"
       ],
@@ -2161,6 +2164,9 @@
       "Can view this item.": [
         "Pot veure aquest element."
       ],
+      "Canceled by user": [
+        "S'ha cancel·lat per l'usuari"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "S'estan comprovant ${ compromised.progress.completed } de ${ compromised.progress.total } contrasenyes"
       ],
@@ -2565,8 +2571,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2975,6 +2980,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Només cal que utilitzeu ${ emailBold } la pròxima vegada que necessiteu un àlies: es crearà ${ automaticallyBold } la primera vegada que rebi un correu electrònic. Per tenir un control més detallat, també podeu definir ${ rulesHyperLink }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya de ${ BRAND_NAME }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya de còpia de seguretat."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la contrasenya addicional."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Per iniciar ${ PASS_APP_NAME } en mode sense connexió us caldrà la segona contrasenya."
       ],
       "Successfully exported all your items": [
         "S'han exportat tots els elements"
@@ -5533,8 +5550,8 @@
         "Voleu moure ${ trashedItemsCount } element a la paperera?",
         "Voleu moure ${ trashedItemsCount } elements a la paperera?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Voleu moure tots els elements a «${ vaultName }»?"
+      "Move all items to \"${ target }\"?": [
+        "Voleu moure tots els elements a \"${ target }\"?"
       ],
       "Move all items?": [
         "Voleu moure tots els elements?"

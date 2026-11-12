@@ -727,6 +727,9 @@
       "Sign back in": [
         "Συνδεθείτε ξανά"
       ],
+      "Sign in in the app instead": [
+        "Συνδεθείτε μέσω της εφαρμογής"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Σύνδεση με ${ BRAND_NAME }"
       ],
@@ -2161,6 +2164,9 @@
       "Can view this item.": [
         "Μπορεί να προβάλλει αυτό το στοιχείο."
       ],
+      "Canceled by user": [
+        "Ακυρώθηκε από τον χρήστη"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Έλεγχος ${ compromised.progress.completed } από ${ compromised.progress.total } κωδικούς πρόσβασης"
       ],
@@ -2565,8 +2571,7 @@
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
-        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του."
       ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
@@ -2975,6 +2980,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Απλώς χρησιμοποιήστε το ${ emailBold } την επόμενη φορά που θα χρειαστείτε ένα ψευδώνυμο: αυτό θα δημιουργηθεί ${ automaticallyBold } την πρώτη φορά που θα λάβει κάποιο email. Για πιο λεπτομερή έλεγχο, μπορείτε επιπλέον να ορίσετε ${ rulesHyperLink }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Η έναρξη του ${ PASS_APP_NAME } εκτός διαδικτύου θα απαιτήσει τον κωδικό πρόσβασής σας για το ${ BRAND_NAME }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Η έναρξη του ${ PASS_APP_NAME } εκτός διαδικτύου θα απαιτήσει τον εφεδρικό κωδικό πρόσβασής σας."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Η έναρξη του ${ PASS_APP_NAME } εκτός διαδικτύου θα απαιτήσει τον πρόσθετο κωδικό πρόσβασής σας."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Η έναρξη του ${ PASS_APP_NAME } εκτός διαδικτύου θα απαιτήσει τον δεύτερο κωδικό πρόσβασής σας."
       ],
       "Successfully exported all your items": [
         "Επιτυχής εξαγωγή όλων των στοιχείων σας"
@@ -5533,8 +5550,8 @@
         "Μετακίνηση στον κάδο απορριμμάτων ${ trashedItemsCount } στοιχείο;",
         "Μετακίνηση στον κάδο απορριμμάτων ${ trashedItemsCount } στοιχεία;"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Μετακίνηση όλων των στοιχείων σε \"${ vaultName }\";"
+      "Move all items to \"${ target }\"?": [
+        "Μετακίνηση όλων των στοιχείων στο \"${ target }\";"
       ],
       "Move all items?": [
         "Μετακίνηση όλων των στοιχείων;"

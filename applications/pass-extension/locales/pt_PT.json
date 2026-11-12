@@ -139,6 +139,9 @@
       "Clear search": [
         "Limpar a pesquisa"
       ],
+      "Clear sort filter": [
+        "Limpar filtro de ordenação"
+      ],
       "Close": [
         "Fechar"
       ],
@@ -239,7 +242,7 @@
         "Criar uma identidade"
       ],
       "Create item": [
-        "Criar um item"
+        "Criar item"
       ],
       "Create login": [
         "Criar um início de sessão"
@@ -396,6 +399,9 @@
       ],
       "Hide": [
         "Ocultar"
+      ],
+      "Hide passwords": [
+        "Ocultar palavras-passe"
       ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Como exporto os meus dados do ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
@@ -601,6 +607,9 @@
       "Reset": [
         "Redefinir"
       ],
+      "Reset filters": [
+        "Redefinir filtros"
+      ],
       "Reset history": [
         "Redefinir o histórico"
       ],
@@ -691,11 +700,17 @@
       "Sign back in": [
         "Inicie sessão novamente"
       ],
+      "Sign in in the app instead": [
+        "Em vez disso inicie sessão na aplicação"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Iniciar sessão com o ${ BRAND_NAME }"
       ],
       "Sign out": [
         "Terminar sessão"
+      ],
+      "Skip for now": [
+        "Ignorar por agora"
       ],
       "Start from scratch": [
         "Começar do zero"
@@ -775,7 +790,7 @@
         "Verificar"
       ],
       "Via secure link": [
-        "Via uma ligação segura"
+        "Via hiperligação segura"
       ],
       "View agent activity": [
         "Ver atividade do agente"
@@ -790,7 +805,7 @@
         "Mostrar o histórico"
       ],
       "View item history": [
-        "Ver o histórico do item"
+        "Ver histórico do item"
       ],
       "View older history": [
         "Ver o histórico antigo"
@@ -906,7 +921,7 @@
         "Mantenha as suas informações mais seguras e privadas com estes guias e dicas."
       ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
-        "Lista de domínios onde determinadas funções automáticas no ${ PASS_SHORT_APP_NAME } (preenchimento automático, sugestão automática, gravação automática) não devem ser executadas. ${ infoText }"
+        "A lista de domínios onde determinadas funções automáticas no ${ PASS_SHORT_APP_NAME } (Autopreenchimento, sugestão automática, guardar automático) não deverão ser executadas. ${ infoText }"
       ],
       "Our cutting-edge AI-driven security solution designed for users seeking heightened protection for their accounts. ${ learnMoreLink }": [
         "A nossa solução de segurança de ponta baseada em IA, concebida para utilizadores que procuram uma maior proteção para as suas contas. ${ learnMoreLink }"
@@ -1151,6 +1166,10 @@
       "Failed to delete email address from monitoring": [
         "Erro ao eliminar o endereço de e-mail da monitorização"
       ],
+      "Failed to delete folder": [
+        "Não foi possível eliminar a pasta",
+        "Não foi possível eliminar as pastas"
+      ],
       "Failed to delete selected items": [
         "Erro ao eliminar os itens selecionados"
       ],
@@ -1231,6 +1250,9 @@
       ],
       "Failed to update domain name.": [
         "Erro ao atualizar o nome de domínio."
+      ],
+      "Failed to update folder": [
+        "Não foi possível atualizar a pasta"
       ],
       "Failed to update monitoring settings": [
         "Erro ao atualizar as definições da monitorização"
@@ -1339,6 +1361,9 @@
       ],
       "PIN codes do not match": [
         "Os códigos PIN não correspondem"
+      ],
+      "Regex invalid": [
+        "Regex inválido"
       ],
       "Registration failure: ${ message }": [
         "Erro no registo: ${ message }"
@@ -1594,6 +1619,95 @@
         "Utilize as setas Acima e Abaixo para aceder e pesquisar sugestões após a entrada. Prima la tecla Enter para confirmar a sua escolha ou la tecla Esc para fechar a caixa de sugestões."
       ]
     },
+    "Import Tutorial": {
+      "Choose JSON downloads": [
+        "Escolher transferências em JSON"
+      ],
+      "Choose the file format → Select ${ exportLabel }.": [
+        "Escolha o formato de ficheiro → Selecione ${ exportLabel }."
+      ],
+      "Export": [
+        "Exportar"
+      ],
+      "Export Data": [
+        "Exportar Dados"
+      ],
+      "Export file format: 1PUX": [
+        "Formato de ficheiro de exportação: 1PUX"
+      ],
+      "Export items": [
+        "Exportar itens"
+      ],
+      "Export passwords": [
+        "Exportar palavras-passe"
+      ],
+      "Export to CSV": [
+        "Exportar para CSV"
+      ],
+      "Go to the settings to locate the export action.": [
+        "Vá para as definições para localizar a ação de exportação."
+      ],
+      "Go to ☰ → ⚙ ${ settings } → Click ${ downloadFile }.": [
+        "Vá para ☰ → ⚙ ${ settings } → Clique em ${ downloadFile }."
+      ],
+      "Identify your password manager.": [
+        "Identifique o seu gestor de palavras-passe."
+      ],
+      "Manage your vault": [
+        "Gerir o seu cofre"
+      ],
+      "More actions": [
+        "Mais ações"
+      ],
+      "Open ${ name } and go to ${ file } → ${ exportLabel } → your 1Password username.": [
+        "Abra ${ name } e vá para ${ file } → ${ exportLabel } → o seu nome de utilizador de 1Password."
+      ],
+      "Open ${ name } and go to ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }.": [
+        "Abra ${ name } e vá para ⋮ → ${ passwordsAndAutofill } → ${ googlePasswordManager }."
+      ],
+      "Open ${ name } and select ${ settings }.": [
+        "Abra ${ name } e selecione ${ settings }."
+      ],
+      "Open ${ name } and select ⋯.": [
+        "Abra ${ name } e selecione ⋯."
+      ],
+      "Open ${ name } and select ☰ → ${ passwords }.": [
+        "Abra ${ name } e selecione ☰ → ${ passwords }."
+      ],
+      "Passwords and Autofill": [
+        "Palavras-passe e Autopreenchimento"
+      ],
+      "Passwords and autofill": [
+        "Palavras-passe e autopreenchimento"
+      ],
+      "Select ${ menu } → ${ option }.": [
+        "Selecionar ${ menu } → ${ option }."
+      ],
+      "Select ${ option }.": [
+        "Selecionar ${ option }."
+      ],
+      "Select the export format CSV.": [
+        "Selecione o formato de exportação CSV."
+      ],
+      "Select ⋯ → ${ exportPasswords }.": [
+        "Selecionar ⋯ → ${ exportPasswords }."
+      ],
+      "Settings": [
+        "Definições"
+      ],
+      "Submit": [
+        "Submeter"
+      ],
+      "Vault": [
+        "Cofre"
+      ],
+      "Vault options": [
+        "Opções de cofre"
+      ],
+      "your username": [
+        "O seu nome de utilizador"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "O item «${ payload.itemName }» foi descartado."
@@ -1620,6 +1734,9 @@
       "${ forwardedEmailsCount } forwarded": [
         "${ forwardedEmailsCount } encaminhado",
         "${ forwardedEmailsCount } encaminhados"
+      ],
+      "${ imported } of ${ total } (${ percentage }%)": [
+        "${ imported } de ${ total } (${ percentage }%)"
       ],
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } deseja partilhar um item com um grupo que o utilizador administra."
@@ -1964,6 +2081,9 @@
       "Didn't receive the code?": [
         "Não recebeu o código?"
       ],
+      "Disabled by your organization": [
+        "Desativado para a sua organização"
+      ],
       "Disabling auto-lock": [
         "Desativando o bloqueio automático"
       ],
@@ -1978,6 +2098,9 @@
       ],
       "Domain: ${ domainPath } or @": [
         "Domínio: ${ domainPath } ou @"
+      ],
+      "Don’t close this tab": [
+        "Não fechar este separador"
       ],
       "Download pass-cli from ${ passCliLink }.": [
         "Transfira o pass-cli a partir de ${ passCliLink }."
@@ -2090,6 +2213,9 @@
       "Fill in the CSV with your data": [
         "Preencha o ficheiro CSV com os seus dados"
       ],
+      "Folder deleted": [
+        "Pasta eliminada"
+      ],
       "Follow those steps to import your data with a generic CSV:": [
         "Siga estes passos para importar os seus dados com um ficheiro CSV genérico:"
       ],
@@ -2137,6 +2263,9 @@
       "Import the CSV file below.": [
         "Importe o ficheiro CSV abaixo."
       ],
+      "Important:": [
+        "Importante:"
+      ],
       "Imported on ${ date }": [
         "Importado em ${ date }"
       ],
@@ -2163,6 +2292,9 @@
       ],
       "invites you to access items in": [
         "convida-o a aceder a itens em"
+      ],
+      "iOS and Android Apps": [
+        "Aplicações de Android e iOS"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Parece que já iniciou sessão em ${ PASS_APP_NAME }. Se estiver a tentar iniciar sessão com uma conta diferente, termine primeiro a sessão na extensão."
@@ -2263,8 +2395,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras.",
-        "Mover itens para outro cofre apagará as suas ligações seguras."
+        "Mover um item para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"
@@ -2334,6 +2465,12 @@
       ],
       "Open the ${ PASS_APP_NAME } popup": [
         "Abrir o pop-up do ${ PASS_APP_NAME }"
+      ],
+      "Open the extension here.": [
+        "Abra a extensão aqui."
+      ],
+      "Open the extension to unlock it": [
+        "Abra a extensão para a desbloquear"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Abra as definições do Safari, encontre o ${ PASS_APP_NAME }, vá a \"Permissões\" e ative as permissões do sítio web."
@@ -2581,6 +2718,9 @@
       ],
       "Save passkey": [
         "Guardar a chave de acesso"
+      ],
+      "Scan to download": [
+        "Digitalize para transferir"
       ],
       "Secure links": [
         "Ligações seguras"
@@ -3196,6 +3336,9 @@
       "All items": [
         "Todos os itens"
       ],
+      "Allow viewers to see passwords": [
+        "Permitir que os visualizadores vejam as palavras-passe"
+      ],
       "Alphabetical": [
         "Em ordem alfabética"
       ],
@@ -3327,6 +3470,9 @@
       ],
       "Create a custom item": [
         "Criar um item personalizado"
+      ],
+      "Create a folder": [
+        "Criar uma pasta"
       ],
       "Create a hide-my-email alias": [
         "Crie um alias Hide-my-email"
@@ -3950,7 +4096,7 @@
         "Código de segurança"
       ],
       "See member and permission overview": [
-        "Ver todos os membros e permissões"
+        "Ver sinopse dos membros e permissões"
       ],
       "Seed Phrase": [
         "Frase de recuperação"
@@ -3975,6 +4121,9 @@
       ],
       "Server": [
         "Servidor"
+      ],
+      "Service": [
+        "Serviço"
       ],
       "Settings": [
         "Definições"
@@ -4358,6 +4507,9 @@
       "Download": [
         "Transferir"
       ],
+      "Download \"${ filename }\"": [
+        "Transferir \"${ filename }\""
+      ],
       "Download file": [
         "Transferir o ficheiro"
       ],
@@ -4500,6 +4652,9 @@
       "Enter username": [
         "Introduza o nome de utilizador"
       ],
+      "Folder name": [
+        "Nome da pasta"
+      ],
       "Full Name": [
         "Nome completo"
       ],
@@ -4526,6 +4681,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Descreva o problema e inclua quaisquer mensagens de erro."
+      ],
+      "Retype \"${ name }\" to confirm deletion": [
+        "Volte a digitar \"${ name }\" para confirmar a eliminação"
       ],
       "Search ${ pluralItemType } in ${ vaultName }": [
         "Pesquisar ${ pluralItemType } em ${ vaultName }"
@@ -4564,6 +4722,9 @@
       ],
       "This URL will NOT be blocked from autofill": [
         "Este URL NÃO será bloqueado do preenchimento automático"
+      ],
+      "URL matches the rule": [
+        "O URL corresponde à regra"
       ]
     },
     "Security Center - Info": {
@@ -4591,7 +4752,7 @@
         "Se não fez este pedido, cancele-o agora."
       ],
       "Invalid confirmation code": [
-        "O código de confirmação não é válido."
+        "Código de confirmação inválido"
       ],
       "No, it wasn’t me": [
         "Não, não fui eu."
@@ -4767,6 +4928,9 @@
       "Add mailbox": [
         "Adicionar uma caixa de correio"
       ],
+      "Add one account": [
+        "Adicionar uma conta"
+      ],
       "Adjust autofill behaviors to change where logins are suggested.": [
         "Ajuste os comportamentos de preenchimento automático para alterar onde os inícios de sessão são sugeridos."
       ],
@@ -4839,6 +5003,9 @@
       "Create PIN code": [
         "Criar o PIN"
       ],
+      "Create your first login": [
+        "Crie a sua primeira autenticação"
+      ],
       "Created": [
         "Criação"
       ],
@@ -4873,11 +5040,17 @@
       "Delete domain": [
         "Eliminar o domínio"
       ],
+      "Delete folder \"${ name }\"?": [
+        "Eliminar a pasta \"${ name }\"?"
+      ],
       "Delete mailbox": [
         "Eliminar a caixa de correio"
       ],
       "Delete this item?": [
         "Eliminar este item?"
+      ],
+      "Delete vault \"${ name }\"?": [
+        "Eliminar o cofre \"${ name }\"?"
       ],
       "Did you know?": [
         "Sabia?"
@@ -4930,14 +5103,23 @@
       "Export": [
         "Exportar"
       ],
+      "Export from ${ provider.title }": [
+        "Exportar de ${ provider.title }"
+      ],
       "Fill & copy password": [
         "Preencher e copiar a palavra-passe"
       ],
       "Fill password": [
         "Preencher a palavra-passe"
       ],
+      "First login created": [
+        "Criada primeira autenticação"
+      ],
       "Folder options": [
         "Opções de pasta"
+      ],
+      "Get mobile and desktop apps": [
+        "Obtenha as aplicações para PC e dispositivo móvel"
       ],
       "Get Started": [
         "Começar"
@@ -4966,11 +5148,20 @@
       "Import - ${ date }": [
         "Importar - ${ date }"
       ],
+      "Import completed with warnings": [
+        "Importação concluída com avisos"
+      ],
       "Import failed": [
         "Erro na importação"
       ],
+      "Import successful": [
+        "Importação bem-sucedida"
+      ],
       "Import to vault(s)": [
         "Importar para o(s) cofre(s)"
+      ],
+      "Imported from:": [
+        "Importado de:"
       ],
       "Importing your data": [
         "A importar os seus dados"
@@ -5033,8 +5224,11 @@
         "Mover ${ trashedItemsCount } item para o lixo?",
         "Mover ${ trashedItemsCount } itens para o lixo?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Mover todos os itens para «${ vaultName }»?"
+      "Move all items to \"${ target }\"?": [
+        "Mover todos os itens para \"${ target }\"?"
+      ],
+      "Move everything at once": [
+        "Mover tudo de uma vez"
       ],
       "MX record": [
         "Registo MX"
@@ -5127,6 +5321,9 @@
       "Remove secure link?": [
         "Remover a ligação segura?"
       ],
+      "Rename folder": [
+        "Renomear pasta"
+      ],
       "Reset history for this item?": [
         "Redefinir o histórico deste item?"
       ],
@@ -5155,6 +5352,9 @@
       "Select the default domain for aliases": [
         "Selecione o domínio predefinido para os aliases"
       ],
+      "Select your password manager": [
+        "Selecione o seu gestor de palavras-passe"
+      ],
       "Set access level": [
         "Definir o nível de acesso"
       ],
@@ -5181,6 +5381,9 @@
       ],
       "SPF (Optional)": [
         "SPF (opcional)"
+      ],
+      "Starting the extension": [
+        "A iniciar a extensão"
       ],
       "Status": [
         "Estado"
@@ -5280,6 +5483,9 @@
       ],
       "Your welcome gift": [
         "Aproveite o seu período de teste gratuito"
+      ],
+      "You’re a step away from autofill magic!": [
+        "Está a um passo da magia do autopreenchimento!"
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Está prestes a eliminar permanentemente ${ aliasCount } alias.",

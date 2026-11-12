@@ -553,6 +553,9 @@
       "Open navigation": [
         "Ouvrir la navigation"
       ],
+      "Open platform selection dropdown": [
+        "Ouvrir le menu déroulant"
+      ],
       "Organize vaults": [
         "Organiser les coffres-forts"
       ],
@@ -720,6 +723,9 @@
       ],
       "Sign back in": [
         "Se reconnecter"
+      ],
+      "Sign in in the app instead": [
+        "Se connecter plutôt via l'application"
       ],
       "Sign in with ${ BRAND_NAME }": [
         "Se connecter avec ${ BRAND_NAME }"
@@ -2053,6 +2059,9 @@
       "Can view this item.": [
         "Peut afficher cet élément."
       ],
+      "Canceled by user": [
+        "Annulé par l'utilisateur"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Vérification de ${ compromised.progress.completed } mots de passe sur ${ compromised.progress.total }"
       ],
@@ -2451,8 +2460,7 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2786,6 +2794,9 @@
       ],
       "Save passkey": [
         "Enregistrer la clé d'accès"
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Scannez le QR code pour télécharger ${ PASS_APP_NAME } pour iOS et Android."
       ],
       "Secure links": [
         "Liens sécurisés"
@@ -5368,8 +5379,8 @@
         "Voulez-vous mettre ${ trashedItemsCount } élément à la corbeille ?",
         "Voulez-vous mettre ${ trashedItemsCount } éléments à la corbeille ?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Déplacer tous les éléments vers « ${ vaultName } » ?"
+      "Move all items to \"${ target }\"?": [
+        "Déplacer tous les éléments vers « ${ target } » ?"
       ],
       "Move all items?": [
         "Déplacer tous les éléments ?"

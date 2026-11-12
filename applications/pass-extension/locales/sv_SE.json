@@ -718,6 +718,9 @@
       "Sign back in": [
         "Logga in igen"
       ],
+      "Sign in in the app instead": [
+        "Logga in i appen istället"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Logga in med ${ BRAND_NAME }"
       ],
@@ -2098,6 +2101,9 @@
       "Can view this item.": [
         "Kan visa detta objekt."
       ],
+      "Canceled by user": [
+        "Avbruten av användare"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Kontrollerar ${ compromised.progress.completed } av ${ compromised.progress.total } lösenord"
       ],
@@ -2484,8 +2490,7 @@
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+        "Att flytta ett objekt till ett annat valv kommer att radera dess säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -2868,6 +2873,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Använd bara ${ emailBold } nästa gång du behöver ett alias: det kommer att skapas ${ automaticallyBold } första gången det tar emot ett e-postmeddelande. För att få bättre kontroll så kan du också skapa ${ rulesHyperLink }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Att starta ${ PASS_APP_NAME } offline kommer att kräva ditt ${ BRAND_NAME } lösenord."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Att starta ${ PASS_APP_NAME } offline kommer att kräva ditt backup-lösenord."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Att starta ${ PASS_APP_NAME } offline kommer att kräva ditt extra lösenord."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Att starta ${ PASS_APP_NAME } offline kommer att kräva ditt andra lösenord."
       ],
       "Successfully exported all your items": [
         "Alla dina objekt har exporterats"
@@ -5378,8 +5395,8 @@
         "Flytta ${ trashedItemsCount } objekt till papperskorg?",
         "Flytta ${ trashedItemsCount } objekt till papperskorg?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "Flytta alla objekt till ”${ vaultName }”?"
+      "Move all items to \"${ target }\"?": [
+        "Flytta alla objekt till “${ target }“?"
       ],
       "Move all items?": [
         "Flytta alla objekt?"

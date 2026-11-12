@@ -727,6 +727,9 @@
       "Sign back in": [
         "Volver al inicio de sesión"
       ],
+      "Sign in in the app instead": [
+        "Use la aplicación para iniciar sesión"
+      ],
       "Sign in with ${ BRAND_NAME }": [
         "Iniciar sesión con ${ BRAND_NAME }"
       ],
@@ -2161,6 +2164,9 @@
       "Can view this item.": [
         "Puede ver este elemento."
       ],
+      "Canceled by user": [
+        "Cancelado por el usuario"
+      ],
       "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
         "Comprobando ${ compromised.progress.completed } de ${ compromised.progress.total } contraseñas"
       ],
@@ -2565,8 +2571,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
-        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -2975,6 +2980,18 @@
       ],
       "Simply use ${ emailBold } next time you need an alias: it'll be ${ automaticallyBold } created the first time it receives an email. To have more fine-grained control, you can also define ${ rulesHyperLink }.": [
         "Simplemente usa ${ emailBold } la próxima vez que necesites un alias: se creará ${ automaticallyBold } la primera vez que reciba un correo electrónico. Para tener un control más detallado, también puedes definir ${ rulesHyperLink }."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your ${ BRAND_NAME } password.": [
+        "Comenar ${ PASS_APP_NAME } offline requerirá tu ${ BRAND_NAME } contraseña.\n/fe-pass/source-file-full.xliff\nbd85466333415fc4f216b8a44acb15aa47b5d529\ncontexto: Info\nSOCIEDAD:\n- Contraseña\nArchivos:\n- packages/pass/components/Settings/LockSetup.tsx:55\n\n* No se guarda ninguna clave en el disco si no está ligada a la app: al iniciar sin conexión te pide la contraseña\nFile: Browser extension"
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your backup password.": [
+        "Iniciar ${ PASS_APP_NAME } sin conexión requerirá tu contraseña de respaldo."
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your extra password.": [
+        "Comenzar ${ PASS_APP_NAME } offline requerirá contraseña adicional.\n\n/fe-pass/source-file-full.xliff\n4bed79e2fcda19f186f694ea7d9be747f359a5d5\ncontexto: Info\nSOCIEDAD:\n- Contraseña\nArchivos:\n- packages/pass/components/Settings/LockSetup.tsx:53\n\n* No se guarda ninguna clave en el disco si no está ligada a la app: en caso de inicio sin conexión, se recurre a la contraseña.\nArchivo: Browser extension"
+      ],
+      "Starting ${ PASS_APP_NAME } offline will require your second password.": [
+        "Iniciar ${ PASS_APP_NAME } sin conexión requerirá tu segunda contraseña."
       ],
       "Successfully exported all your items": [
         "Se han exportado correctamente todos tus elementos."
@@ -5533,8 +5550,8 @@
         "¿Mover ${ trashedItemsCount } elemento a la papelera?",
         "¿Mover ${ trashedItemsCount } elementos a la papelera?"
       ],
-      "Move all items to \"${ vaultName }\"?": [
-        "¿Mover todos los elementos a «${ vaultName }»?"
+      "Move all items to \"${ target }\"?": [
+        "¿Mover todos los elementos a «${ target }»?"
       ],
       "Move all items?": [
         "¿Mover todos los elementos?"
