@@ -1,5 +1,7 @@
+// @vitest-environment happy-dom
 import { combineReducers } from '@reduxjs/toolkit';
 import { waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
@@ -22,7 +24,7 @@ const setup = ({
     user = {},
 }: {
     availableApps?: APP_NAMES[];
-    api: jest.Mock;
+    api: Mock;
     user?: Partial<UserModel>;
 }) => {
     const extraThunkArguments = { api } as unknown as ProtonThunkArguments;
@@ -54,7 +56,7 @@ describe('getAvailableAppsFromResponse', () => {
 
 describe('fetchAvailableApps', () => {
     it('stores the apps from the API, in app switcher order', async () => {
-        const api = jest.fn(async () => toResponse(['Drive', 'Mail', 'Calendar']));
+        const api = vi.fn(async () => toResponse(['Drive', 'Mail', 'Calendar']));
         const { store } = setup({ api });
 
         await store.dispatch(fetchAvailableApps());
@@ -64,7 +66,7 @@ describe('fetchAvailableApps', () => {
     });
 
     it('stores no apps in an MSP session, without asking the API', async () => {
-        const api = jest.fn(async () => toResponse(['Mail']));
+        const api = vi.fn(async () => toResponse(['Mail']));
         const { store } = setup({ api, user: { Flags: { ...buildUser().Flags, 'org-access': true } } });
 
         await store.dispatch(fetchAvailableApps());
@@ -74,7 +76,7 @@ describe('fetchAvailableApps', () => {
     });
 
     it('keeps the last list when the API fails', async () => {
-        const api = jest.fn(async () => {
+        const api = vi.fn(async () => {
             throw new Error('Offline');
         });
         const { store } = setup({ api, availableApps: [APPS.PROTONMAIL, APPS.PROTONCALENDAR] });
@@ -87,7 +89,7 @@ describe('fetchAvailableApps', () => {
 
 describe('availableAppsListener', () => {
     it('fetches the apps at bootstrap', async () => {
-        const api = jest.fn(async () => toResponse(['Mail', 'Drive']));
+        const api = vi.fn(async () => toResponse(['Mail', 'Drive']));
         const { store, startListening } = setup({ api });
         availableAppsListener(startListening);
 

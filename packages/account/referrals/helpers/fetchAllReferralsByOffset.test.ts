@@ -9,14 +9,14 @@ interface ApiResults {
 
 describe('fetchAllReferralsByOffset', () => {
     it('Should make 1 call if total is inferior to limit', async () => {
-        const apiSpy = jest.fn<Promise<ApiResults>, [Api]>(() =>
+        const apiSpy = vi.fn<(api: Api) => Promise<ApiResults>>(() =>
             Promise.resolve({
                 Total: 10,
                 Referrals: new Array(10),
             })
         );
 
-        const { Referrals } = await fetchAllReferralsByOffset(apiSpy as Api);
+        const { Referrals } = await fetchAllReferralsByOffset(apiSpy as unknown as Api);
 
         expect(apiSpy).toHaveBeenCalledTimes(1);
         expect(Referrals?.length).toBe(10);
@@ -26,14 +26,14 @@ describe('fetchAllReferralsByOffset', () => {
         const LIMIT = 5;
         const TOTAL = 10;
         const CALLS_NUMBER = 2;
-        const apiSpy = jest.fn<Promise<ApiResults>, [Api]>(() =>
+        const apiSpy = vi.fn<(api: Api) => Promise<ApiResults>>(() =>
             Promise.resolve({
                 Total: 10,
                 Referrals: new Array(LIMIT),
             })
         );
 
-        const { Referrals } = await fetchAllReferralsByOffset(apiSpy as Api, { Limit: LIMIT, Offset: 0 });
+        const { Referrals } = await fetchAllReferralsByOffset(apiSpy as unknown as Api, { Limit: LIMIT, Offset: 0 });
 
         expect(Referrals?.length).toBe(TOTAL);
         expect(apiSpy).toHaveBeenCalledTimes(CALLS_NUMBER);
@@ -43,7 +43,7 @@ describe('fetchAllReferralsByOffset', () => {
         const TOTAL = 460;
         const CALLS_NUMBER = 5;
         let calls = 0;
-        const apiSpy = jest.fn<Promise<ApiResults>, [Api]>(() => {
+        const apiSpy = vi.fn<(api: Api) => Promise<ApiResults>>(() => {
             calls += 1;
             return Promise.resolve({
                 Total: TOTAL,
@@ -51,7 +51,7 @@ describe('fetchAllReferralsByOffset', () => {
             });
         });
 
-        const { Referrals } = await fetchAllReferralsByOffset(apiSpy as Api);
+        const { Referrals } = await fetchAllReferralsByOffset(apiSpy as unknown as Api);
 
         expect(Referrals?.length).toBe(TOTAL);
         expect(apiSpy).toHaveBeenCalledTimes(CALLS_NUMBER);

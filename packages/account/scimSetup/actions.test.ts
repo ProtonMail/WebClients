@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
 import { scheduleOrgKeyDemotions } from '@proton/shared/lib/api/members';
@@ -28,7 +30,7 @@ const getMembersState = (value: EnhancedMember[]): MembersState['members'] => ({
     unprivatization: { members: {}, loading: { approval: false, automatic: false } },
 });
 
-const setup = ({ members, api }: { members: EnhancedMember[]; api: jest.Mock }) => {
+const setup = ({ members, api }: { members: EnhancedMember[]; api: Mock }) => {
     const { store } = getTestStore({
         reducer: { ...membersReducer },
         preloadedState: { members: getMembersState(members) },
@@ -43,7 +45,7 @@ const setup = ({ members, api }: { members: EnhancedMember[]; api: jest.Mock }) 
             pendingMembersByGroup: {},
             membersToDemote,
             api,
-            getMemberPublicKeys: jest.fn(),
+            getMemberPublicKeys: vi.fn(),
             dispatch: store.dispatch as unknown as Parameters<typeof approveScimChanges>[0]['dispatch'],
         })) {
             updates.push(update);
@@ -59,7 +61,7 @@ const setup = ({ members, api }: { members: EnhancedMember[]; api: jest.Mock }) 
 
 // The roles endpoint, with every requested member's demotion task now scheduled
 const getApi = ({ demotion = () => Promise.resolve({ Code: 1000 }) } = {}) =>
-    jest.fn((config: { url: string; data?: { MemberIDs: string[] } }) => {
+    vi.fn((config: { url: string; data?: { MemberIDs: string[] } }) => {
         if (config.url === scheduleOrgKeyDemotions([]).url) {
             return demotion();
         }

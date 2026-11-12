@@ -1,7 +1,8 @@
-import { expect } from '@jest/globals';
+// @vitest-environment happy-dom
 import { CryptoProxy } from '@protontech/crypto';
 import { combineReducers } from '@reduxjs/toolkit';
 import { waitFor } from '@testing-library/react';
+import type { MockedFunction, MockedObject } from 'vitest';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
@@ -20,22 +21,22 @@ import { userKeysReducer } from '../userKeys';
 import { addressKeysFulfilledAction, addressKeysReducer, addressKeysThunk, selectAddressKeys } from './index';
 import { addressKeysListener } from './listener';
 
-jest.mock('./index', () => {
-    const actual = jest.requireActual('./index');
+vi.mock('./index', async () => {
+    const actual = await vi.importActual<Record<string, any>>('./index');
     return {
         ...actual,
-        addressKeysThunk: jest.fn(actual.addressKeysThunk),
+        addressKeysThunk: vi.fn(actual.addressKeysThunk),
     };
 });
 
-const mockedAddressKeysThunk = jest.mocked(addressKeysThunk);
+const mockedAddressKeysThunk = vi.mocked(addressKeysThunk);
 
-jest.mock('@protontech/crypto/srp', () => {});
-jest.mock('@protontech/crypto', () => {
+vi.mock('@protontech/crypto/srp', () => ({}));
+vi.mock('@protontech/crypto', async () => {
     return {
         CryptoProxy: {
-            clearKey: jest.fn(),
-            getKeyInfo: jest.fn(() =>
+            clearKey: vi.fn(),
+            getKeyInfo: vi.fn(() =>
                 Promise.resolve({
                     fingerprint: 'fingerprint',
                 })
@@ -43,14 +44,14 @@ jest.mock('@protontech/crypto', () => {
         },
     };
 });
-jest.mock('@proton/shared/lib/keys/getDecryptedAddressKeys', () => {
+vi.mock('@proton/shared/lib/keys/getDecryptedAddressKeys', async () => {
     return {
-        getDecryptedAddressKeysHelper: jest.fn(),
+        getDecryptedAddressKeysHelper: vi.fn(),
     };
 });
-jest.mock('@proton/shared/lib/keys/getDecryptedUserKeys', () => {
+vi.mock('@proton/shared/lib/keys/getDecryptedUserKeys', async () => {
     return {
-        getDecryptedUserKeysHelper: jest.fn(),
+        getDecryptedUserKeysHelper: vi.fn(),
     };
 });
 
@@ -105,11 +106,11 @@ const setup = (preloadedState?: Partial<typeof reducer>) => {
     };
 };
 
-const mockedCryptoProxy = CryptoProxy as jest.MockedObject<any>;
+const mockedCryptoProxy = CryptoProxy as MockedObject<any>;
 mockedCryptoProxy.clearKey.mockImplementation(async () => {});
 
-const mockedGetDecryptedAddressKeysHelper = getDecryptedAddressKeysHelper as jest.MockedFunction<any>;
-const mockedGetDecryptedUserKeysHelper = getDecryptedUserKeysHelper as jest.MockedFunction<any>;
+const mockedGetDecryptedAddressKeysHelper = getDecryptedAddressKeysHelper as MockedFunction<any>;
+const mockedGetDecryptedUserKeysHelper = getDecryptedUserKeysHelper as MockedFunction<any>;
 
 const getKey = (id: number) => ({ ID: id.toString(), privateKey: id, publicKey: id }) as unknown as DecryptedAddressKey;
 

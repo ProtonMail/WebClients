@@ -1,4 +1,3 @@
-import { expect } from '@jest/globals';
 import { render, renderHook, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
@@ -8,16 +7,16 @@ import type { KeyReactivationRequest } from '@proton/shared/lib/keys/reactivatio
 import { useInactiveKeys } from '../../../inactiveKeys/hooks';
 import { OutgoingLockedDataWarning, useShouldShowLockedDataWarning } from './OutgoingLockedDataWarning';
 
-jest.mock('../../../inactiveKeys/hooks', () => ({
-    useInactiveKeys: jest.fn(),
+vi.mock('../../../inactiveKeys/hooks', () => ({
+    useInactiveKeys: vi.fn(),
 }));
 
-jest.mock('@proton/features/useFeature', () => ({
+vi.mock('@proton/features/useFeature', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-jest.mock('@proton/components/containers/keys/reactivateKeys/ReactivateKeysModal', () => ({
+vi.mock('@proton/components/containers/keys/reactivateKeys/ReactivateKeysModal', () => ({
     __esModule: true,
     default: ({ open, keyReactivationRequests }: { open: boolean; keyReactivationRequests: unknown[] }) =>
         open ? <div data-testid="reactivate-keys-modal">{keyReactivationRequests.length} requests</div> : null,
@@ -26,7 +25,7 @@ jest.mock('@proton/components/containers/keys/reactivateKeys/ReactivateKeysModal
 const keyReactivationRequests = [{}, {}] as unknown as KeyReactivationRequest[];
 
 const renderWarning = (props: Partial<Parameters<typeof OutgoingLockedDataWarning>[0]> = {}) => {
-    const onAddContact = jest.fn();
+    const onAddContact = vi.fn();
     render(
         <OutgoingLockedDataWarning
             title="Locked title."
@@ -40,7 +39,7 @@ const renderWarning = (props: Partial<Parameters<typeof OutgoingLockedDataWarnin
 
 describe('OutgoingLockedDataWarning', () => {
     beforeEach(() => {
-        jest.mocked(useInactiveKeys).mockReturnValue(keyReactivationRequests);
+        vi.mocked(useInactiveKeys).mockReturnValue(keyReactivationRequests);
     });
 
     it('renders the title and description', () => {
@@ -87,8 +86,8 @@ describe('useShouldShowLockedDataWarning', () => {
         inactiveKeys: KeyReactivationRequest[];
         dismissedRecoverDataCard: boolean | undefined;
     }) => {
-        jest.mocked(useInactiveKeys).mockReturnValue(inactiveKeys);
-        jest.mocked(useFeature).mockReturnValue({
+        vi.mocked(useInactiveKeys).mockReturnValue(inactiveKeys);
+        vi.mocked(useFeature).mockReturnValue({
             feature: dismissedRecoverDataCard === undefined ? undefined : { Value: dismissedRecoverDataCard },
         } as ReturnType<typeof useFeature>);
     };

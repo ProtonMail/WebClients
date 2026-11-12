@@ -57,7 +57,7 @@ describe('hasLegacyAdminAccess', () => {
 
 describe('userPermissionsThunk with AdminRoleMVP off', () => {
     const setup = ({ user }: { user: UserModel }) => {
-        const api = jest.fn(async () => ({ Roles: [], Permissions: [] }));
+        const api = vi.fn(async () => ({ Roles: [], Permissions: [] }));
         const extraThunkArguments = {
             api,
             unleashClient: { isEnabled: () => false },
@@ -127,7 +127,7 @@ describe('userPermissionsThunk', () => {
     };
 
     it('does not call the API for a user without an organization', async () => {
-        const api = jest.fn(async () => ({ Roles: [], Permissions: ['account.user.read'] }));
+        const api = vi.fn(async () => ({ Roles: [], Permissions: ['account.user.read'] }));
         const { store } = setupWithApi({
             user: { Subscribed: 0, isAdmin: false, isSelf: true, Role: USER_ROLES.FREE_ROLE } as UserModel,
             api,

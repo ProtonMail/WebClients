@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
+import type { Mock } from 'vitest';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 
 import { paymentsInitReducer, paymentsInitThunk, selectPaymentsInit } from './index';
 
-const setupStore = (api: jest.Mock) =>
+const setupStore = (api: Mock) =>
     configureStore({
         reducer: paymentsInitReducer,
         middleware: (getDefaultMiddleware) =>
@@ -15,7 +16,7 @@ const setupStore = (api: jest.Mock) =>
 
 describe('paymentsInitThunk', () => {
     it('should fetch and cache payments init data', async () => {
-        const api = jest.fn().mockResolvedValue({
+        const api = vi.fn().mockResolvedValue({
             User: {
                 Code: 1000,
                 PostedInvoices: [{ ID: 'invoice-1', CreateTime: 1700001000, DueTime: 1700004000 }],
@@ -37,7 +38,7 @@ describe('paymentsInitThunk', () => {
     });
 
     it('should resolve with fallback data instead of throwing when the fetch fails', async () => {
-        const api = jest.fn().mockRejectedValue(new Error('network down'));
+        const api = vi.fn().mockRejectedValue(new Error('network down'));
 
         const store = setupStore(api);
 

@@ -1,16 +1,18 @@
+import type { Mock } from 'vitest';
+
 import { readFeatureFlagCookieEntries, writeFeatureFlagCookieEntries } from '@proton/unleash/UnleashCookiesProvider';
 
 import { resolveStaticExperiments } from './resolve';
 import type { StaticExperimentConfig } from './types';
 
-jest.mock('@proton/unleash/UnleashCookiesProvider', () => ({
-    ...jest.requireActual('@proton/unleash/UnleashCookiesProvider'),
-    readFeatureFlagCookieEntries: jest.fn(),
-    writeFeatureFlagCookieEntries: jest.fn(),
+vi.mock('@proton/unleash/UnleashCookiesProvider', async () => ({
+    ...(await vi.importActual('@proton/unleash/UnleashCookiesProvider')),
+    readFeatureFlagCookieEntries: vi.fn(),
+    writeFeatureFlagCookieEntries: vi.fn(),
 }));
 
-const mockedReadEntries = readFeatureFlagCookieEntries as jest.Mock;
-const mockedWriteEntries = writeFeatureFlagCookieEntries as jest.Mock;
+const mockedReadEntries = readFeatureFlagCookieEntries as Mock;
+const mockedWriteEntries = writeFeatureFlagCookieEntries as Mock;
 
 const buildConfig = (overrides: Partial<StaticExperimentConfig> = {}): StaticExperimentConfig => ({
     enabled: true,
@@ -20,7 +22,7 @@ const buildConfig = (overrides: Partial<StaticExperimentConfig> = {}): StaticExp
 });
 
 const mockRoll = (value: number) => {
-    jest.spyOn(crypto, 'getRandomValues').mockImplementation((buf) => {
+    vi.spyOn(crypto, 'getRandomValues').mockImplementation((buf) => {
         new Uint32Array(buf!.buffer)[0] = value;
         return buf;
     });
@@ -28,13 +30,13 @@ const mockRoll = (value: number) => {
 
 describe('resolveStaticExperiments', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockedReadEntries.mockReturnValue(new Map());
         mockRoll(0);
     });
 
     afterEach(() => {
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('returns disabled and clears any existing cookie entry when the experiment is disabled', () => {
@@ -49,7 +51,7 @@ describe('resolveStaticExperiments', () => {
     });
 
     it('returns disabled when no schedule entry has started yet', () => {
-        jest.spyOn(Date, 'now').mockReturnValue(new Date('2000-01-01T00:00:00Z').getTime());
+        vi.spyOn(Date, 'now').mockReturnValue(new Date('2000-01-01T00:00:00Z').getTime());
 
         const result = resolveStaticExperiments({
             MyExperiment: buildConfig({
@@ -96,7 +98,7 @@ describe('resolveStaticExperiments', () => {
     });
 
     it('picks the latest due schedule entry, ignoring ones that have not started yet', () => {
-        jest.spyOn(Date, 'now').mockReturnValue(new Date('2020-06-01T00:00:00Z').getTime());
+        vi.spyOn(Date, 'now').mockReturnValue(new Date('2020-06-01T00:00:00Z').getTime());
 
         const result = resolveStaticExperiments({
             MyExperiment: buildConfig({
@@ -112,7 +114,7 @@ describe('resolveStaticExperiments', () => {
     });
 
     it('returns disabled once the only schedule entry has ended', () => {
-        jest.spyOn(Date, 'now').mockReturnValue(new Date('2020-06-01T00:00:00Z').getTime());
+        vi.spyOn(Date, 'now').mockReturnValue(new Date('2020-06-01T00:00:00Z').getTime());
 
         const result = resolveStaticExperiments({
             MyExperiment: buildConfig({
@@ -124,7 +126,7 @@ describe('resolveStaticExperiments', () => {
     });
 
     it('falls back to an earlier still-active entry once a later entry has ended', () => {
-        jest.spyOn(Date, 'now').mockReturnValue(new Date('2020-06-01T00:00:00Z').getTime());
+        vi.spyOn(Date, 'now').mockReturnValue(new Date('2020-06-01T00:00:00Z').getTime());
 
         const result = resolveStaticExperiments({
             MyExperiment: buildConfig({
@@ -140,7 +142,7 @@ describe('resolveStaticExperiments', () => {
 
     it('treats an entry as active up to but not including its endsAt', () => {
         const endsAt = '2020-01-01T00:00:00Z';
-        jest.spyOn(Date, 'now').mockReturnValue(new Date(endsAt).getTime());
+        vi.spyOn(Date, 'now').mockReturnValue(new Date(endsAt).getTime());
 
         const result = resolveStaticExperiments({
             MyExperiment: buildConfig({
@@ -153,7 +155,7 @@ describe('resolveStaticExperiments', () => {
 
     it('preserves unrelated cookie entries when writing back', () => {
         mockedReadEntries.mockReturnValue(new Map([['OtherFlag', 'X']]));
-        jest.spyOn(Date, 'now').mockReturnValue(0);
+        vi.spyOn(Date, 'now').mockReturnValue(0);
 
         resolveStaticExperiments({
             MyExperiment: buildConfig({ schedule: [{ startsAt: '1970-01-01T00:00:00Z', weights: { A: 100 } }] }),
@@ -169,7 +171,7 @@ describe('resolveStaticExperiments', () => {
 
     it('resolves multiple experiments in a single read/write pass', () => {
         mockedReadEntries.mockReturnValue(new Map());
-        jest.spyOn(Date, 'now').mockReturnValue(0);
+        vi.spyOn(Date, 'now').mockReturnValue(0);
 
         const result = resolveStaticExperiments({
             ExperimentA: buildConfig({ schedule: [{ startsAt: '1970-01-01T00:00:00Z', weights: { A: 100 } }] }),

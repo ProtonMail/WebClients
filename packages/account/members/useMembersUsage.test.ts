@@ -1,16 +1,18 @@
+// @vitest-environment happy-dom
 import { renderHook, waitFor } from '@testing-library/react';
+import type { MockedFunction } from 'vitest';
 
 import { useApi } from '@proton/app-context/useApi';
 import type { MembersUsageResponse } from '@proton/shared/lib/api/members';
 
 import { useMembersUsage } from './useMembersUsage';
 
-jest.mock('@proton/app-context/useApi');
-jest.mock('@proton/shared/lib/api/helpers/customConfig', () => ({
+vi.mock('@proton/app-context/useApi');
+vi.mock('@proton/shared/lib/api/helpers/customConfig', () => ({
     getSilentApi: (api: unknown) => api,
 }));
 
-const mockedUseApi = useApi as jest.MockedFunction<typeof useApi>;
+const mockedUseApi = useApi as MockedFunction<typeof useApi>;
 
 const response: MembersUsageResponse = {
     Code: 1000,
@@ -27,11 +29,11 @@ const membersAB: string[] = ['a', 'b'];
 
 describe('useMembersUsage', () => {
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('does not call the API when there are no member IDs', () => {
-        const api = jest.fn().mockResolvedValue(response);
+        const api = vi.fn().mockResolvedValue(response);
         mockedUseApi.mockReturnValue(api);
 
         const { result } = renderHook(() => useMembersUsage(noMembers));
@@ -42,7 +44,7 @@ describe('useMembersUsage', () => {
     });
 
     it('does not call the API when disabled', () => {
-        const api = jest.fn().mockResolvedValue(response);
+        const api = vi.fn().mockResolvedValue(response);
         mockedUseApi.mockReturnValue(api);
 
         const { result } = renderHook(() => useMembersUsage(membersAB, false));
@@ -53,7 +55,7 @@ describe('useMembersUsage', () => {
     });
 
     it('fetches once it becomes enabled', async () => {
-        const api = jest.fn().mockResolvedValue(response);
+        const api = vi.fn().mockResolvedValue(response);
         mockedUseApi.mockReturnValue(api);
 
         const { result, rerender } = renderHook(
@@ -70,7 +72,7 @@ describe('useMembersUsage', () => {
     });
 
     it('sends the visible member IDs in the request body', async () => {
-        const api = jest.fn().mockResolvedValue(response);
+        const api = vi.fn().mockResolvedValue(response);
         mockedUseApi.mockReturnValue(api);
 
         const { result } = renderHook(() => useMembersUsage(membersAB));
@@ -87,7 +89,7 @@ describe('useMembersUsage', () => {
     });
 
     it('exposes columnDisplay + usageByMemberID from the response', async () => {
-        const api = jest.fn().mockResolvedValue(response);
+        const api = vi.fn().mockResolvedValue(response);
         mockedUseApi.mockReturnValue(api);
 
         const { result } = renderHook(() => useMembersUsage(membersAB));
@@ -100,7 +102,7 @@ describe('useMembersUsage', () => {
     });
 
     it('refetches when the member ID set changes', async () => {
-        const api = jest.fn().mockResolvedValue(response);
+        const api = vi.fn().mockResolvedValue(response);
         mockedUseApi.mockReturnValue(api);
 
         const { result, rerender } = renderHook(({ ids }: { ids: string[] }) => useMembersUsage(ids), {
@@ -115,7 +117,7 @@ describe('useMembersUsage', () => {
     });
 
     it('does not refetch when re-rendered with the same member IDs', async () => {
-        const api = jest.fn().mockResolvedValue(response);
+        const api = vi.fn().mockResolvedValue(response);
         mockedUseApi.mockReturnValue(api);
 
         const { result, rerender } = renderHook(() => useMembersUsage(membersAB));
@@ -129,7 +131,7 @@ describe('useMembersUsage', () => {
     });
 
     it('does not refetch when a member is edited (new array, same IDs)', async () => {
-        const api = jest.fn().mockResolvedValue(response);
+        const api = vi.fn().mockResolvedValue(response);
         mockedUseApi.mockReturnValue(api);
 
         const { result, rerender } = renderHook(({ ids }: { ids: string[] }) => useMembersUsage(ids), {
@@ -146,7 +148,7 @@ describe('useMembersUsage', () => {
     });
 
     it('exposes the error and does not throw when the request fails', async () => {
-        const api = jest.fn().mockRejectedValue(new Error('boom'));
+        const api = vi.fn().mockRejectedValue(new Error('boom'));
         mockedUseApi.mockReturnValue(api);
 
         const { result } = renderHook(() => useMembersUsage(memberA));
@@ -158,7 +160,7 @@ describe('useMembersUsage', () => {
 
     it('ignores an aborted (stale) request so it cannot overwrite fresher data', async () => {
         // The stale request only settles by rejecting when aborted (mirrors the real api honouring the signal).
-        const api = jest.fn().mockImplementation((config) => {
+        const api = vi.fn().mockImplementation((config) => {
             if (config.data.MemberIDs.join(',') === 'b') {
                 return Promise.resolve(response);
             }

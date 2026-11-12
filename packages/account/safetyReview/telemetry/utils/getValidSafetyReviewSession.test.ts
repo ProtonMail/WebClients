@@ -4,7 +4,7 @@ import { SafetyReviewCohort } from './getCohort';
 import { type SafetyReviewTelemetrySession, getValidSafetyReviewSession } from './getValidSafetyReviewSession';
 
 const today = new Date('2005-05-25');
-jest.useFakeTimers().setSystemTime(today);
+vi.useFakeTimers().setSystemTime(today);
 
 describe('getValidSafetyReviewSession', () => {
     test('returns new session if current session is undefined', () => {

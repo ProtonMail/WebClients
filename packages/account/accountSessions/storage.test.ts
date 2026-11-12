@@ -1,3 +1,4 @@
+// @vitest-environment happy-dom
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 import type { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
@@ -10,7 +11,7 @@ import { readAccountSessions, writeAccountSessions } from './storage';
 /** jsdom won't accept a cookie for the second level domain, so the cookie is held here instead. */
 const cookie: { value?: string } = {};
 
-jest.mock('@proton/shared/lib/helpers/cookies', () => ({
+vi.mock('@proton/shared/lib/helpers/cookies', () => ({
     setCookie: ({ cookieValue }: { cookieValue: string }) => {
         cookie.value = cookieValue;
     },

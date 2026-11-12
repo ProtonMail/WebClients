@@ -1,3 +1,4 @@
+// @vitest-environment happy-dom
 import { renderHook } from '@testing-library/react';
 
 import { PLANS } from '@proton/payments/core/constants';
@@ -21,36 +22,36 @@ import { useOrganization } from '../organization/hooks';
 import { useUser } from '../user/hooks';
 import { useEntitlementChecksForOrgAndUser } from './hooks';
 
-const mockUseEntitlementCatalog = jest.fn();
-const mockUseAllEntitlements = jest.mocked(useAllEntitlements);
-const mockUseAllSubscriptions = jest.mocked(useAllSubscriptions);
-const mockUseUser = jest.mocked(useUser);
-const mockUseOrganization = jest.mocked(useOrganization);
+const mockUseEntitlementCatalog = vi.fn();
+const mockUseAllEntitlements = vi.mocked(useAllEntitlements);
+const mockUseAllSubscriptions = vi.mocked(useAllSubscriptions);
+const mockUseUser = vi.mocked(useUser);
+const mockUseOrganization = vi.mocked(useOrganization);
 
-jest.mock('@proton/account/user/hooks', () => ({
-    useUser: jest.fn(),
-    useGetUser: jest.fn(),
+vi.mock('@proton/account/user/hooks', () => ({
+    useUser: vi.fn(),
+    useGetUser: vi.fn(),
 }));
 
-jest.mock('@proton/account/organization/hooks', () => ({
-    useOrganization: jest.fn(),
-    useGetOrganization: jest.fn(),
+vi.mock('@proton/account/organization/hooks', () => ({
+    useOrganization: vi.fn(),
+    useGetOrganization: vi.fn(),
 }));
 
-jest.mock('@proton/account/entitlements/hooks', () => ({
-    useAllEntitlements: jest.fn(),
-    useGetAllEntitlements: jest.fn(),
+vi.mock('@proton/account/entitlements/hooks', () => ({
+    useAllEntitlements: vi.fn(),
+    useGetAllEntitlements: vi.fn(),
 }));
 
-jest.mock('@proton/account/allSubscriptions/hooks', () => ({
-    useAllSubscriptions: jest.fn(),
-    useGetAllSubscriptions: jest.fn(),
+vi.mock('@proton/account/allSubscriptions/hooks', () => ({
+    useAllSubscriptions: vi.fn(),
+    useGetAllSubscriptions: vi.fn(),
 }));
 
-jest.mock('@proton/redux-utilities/hooks', () => ({
+vi.mock('@proton/redux-utilities/hooks', () => ({
     createHooks: () => ({
         useValue: (...args: any[]) => mockUseEntitlementCatalog(...args),
-        useGet: jest.fn(),
+        useGet: vi.fn(),
     }),
 }));
 

@@ -31,7 +31,7 @@ describe('domains', () => {
         userPermissions?: UserPermission;
         isOwner?: boolean;
     }) => {
-        const api = jest.fn(async () => {
+        const api = vi.fn(async () => {
             return { Domains: [{ ID: '1' }] };
         });
         const extraThunkArguments = { api } as unknown as ProtonThunkArguments;

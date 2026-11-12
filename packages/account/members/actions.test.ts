@@ -1,3 +1,5 @@
+import type { Mock } from 'vitest';
+
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { MEMBER_ROLE } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
@@ -17,46 +19,46 @@ import {
 import { deleteRequestUnprivatization, requestUnprivatization } from './unprivatizeActions';
 import { updateOwnerRole } from './updateOwnerRole';
 
-jest.mock('./getMember', () => ({
-    getMember: jest.fn(async () => ({ ID: 'member-id' })),
+vi.mock('./getMember', () => ({
+    getMember: vi.fn(async () => ({ ID: 'member-id' })),
 }));
 
-jest.mock('../organization', () => ({
-    ...jest.requireActual('../organization'),
-    organizationThunk: jest.fn(() => 'organizationThunk'),
+vi.mock('../organization', async () => ({
+    ...(await vi.importActual('../organization')),
+    organizationThunk: vi.fn(() => 'organizationThunk'),
 }));
 
-jest.mock('../organizationKey/actions', () => ({
-    ...jest.requireActual('../organizationKey/actions'),
-    getMemberEditPayload: jest.fn(() => 'getMemberEditPayload'),
+vi.mock('../organizationKey/actions', async () => ({
+    ...(await vi.importActual('../organizationKey/actions')),
+    getMemberEditPayload: vi.fn(() => 'getMemberEditPayload'),
 }));
 
-jest.mock('./unprivatizeActions', () => ({
-    ...jest.requireActual('./unprivatizeActions'),
-    requestUnprivatization: jest.fn(() => 'requestUnprivatization'),
-    deleteRequestUnprivatization: jest.fn(() => 'deleteRequestUnprivatization'),
+vi.mock('./unprivatizeActions', async () => ({
+    ...(await vi.importActual('./unprivatizeActions')),
+    requestUnprivatization: vi.fn(() => 'requestUnprivatization'),
+    deleteRequestUnprivatization: vi.fn(() => 'deleteRequestUnprivatization'),
 }));
 
-jest.mock('./updateOwnerRole', () => ({
-    ...jest.requireActual('./updateOwnerRole'),
-    updateOwnerRole: jest.fn(() => 'updateOwnerRole'),
+vi.mock('./updateOwnerRole', async () => ({
+    ...(await vi.importActual('./updateOwnerRole')),
+    updateOwnerRole: vi.fn(() => 'updateOwnerRole'),
 }));
 
-jest.mock('../organizationRoles', () => ({
-    ...jest.requireActual('../organizationRoles'),
-    organizationRolesThunk: jest.fn(() => 'organizationRolesThunk'),
+vi.mock('../organizationRoles', async () => ({
+    ...(await vi.importActual('../organizationRoles')),
+    organizationRolesThunk: vi.fn(() => 'organizationRolesThunk'),
 }));
 
-jest.mock('../organizationKey', () => ({
-    ...jest.requireActual('../organizationKey'),
-    organizationKeyThunk: jest.fn(() => 'organizationKeyThunk'),
+vi.mock('../organizationKey', async () => ({
+    ...(await vi.importActual('../organizationKey')),
+    organizationKeyThunk: vi.fn(() => 'organizationKeyThunk'),
 }));
 
-jest.mock('./index', () => ({
-    ...jest.requireActual('./index'),
-    updateMemberRoles: jest.fn(() => 'updateMemberRoles'),
-    membersThunk: jest.fn(() => 'membersThunk'),
-    getMemberRoles: jest.fn(() => 'getMemberRoles'),
+vi.mock('./index', async () => ({
+    ...(await vi.importActual('./index')),
+    updateMemberRoles: vi.fn(() => 'updateMemberRoles'),
+    membersThunk: vi.fn(() => 'membersThunk'),
+    getMemberRoles: vi.fn(() => 'getMemberRoles'),
 }));
 
 const ownerRole = {
@@ -75,12 +77,12 @@ const pendingAdminMember = {
     },
 } as EnhancedMember;
 
-const api = jest.fn() as unknown as Api;
+const api = vi.fn() as unknown as Api;
 
-const getState = jest.fn();
+const getState = vi.fn();
 const extra = {} as ProtonThunkArguments;
 
-const dispatch: jest.Mock = jest.fn(async (action: unknown) => {
+const dispatch: Mock = vi.fn(async (action: unknown) => {
     if (typeof action === 'function') {
         return action(dispatch, getState, extra);
     }
@@ -101,7 +103,7 @@ const dispatch: jest.Mock = jest.fn(async (action: unknown) => {
 
 describe('member role actions with a pending admin invitation', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('assigns a role requiring the org key without promoting the member again', async () => {
@@ -141,7 +143,7 @@ describe('setRole for an SSO member who has not signed in', () => {
         member: ssoMember,
     };
 
-    const setRoleDispatch: jest.Mock = jest.fn(async (action: unknown) => {
+    const setRoleDispatch: Mock = vi.fn(async (action: unknown) => {
         if (typeof action === 'function') {
             return action(setRoleDispatch, getState, extra);
         }
@@ -160,7 +162,7 @@ describe('setRole for an SSO member who has not signed in', () => {
     const getDispatchedActions = () => setRoleDispatch.mock.calls.map(([action]) => action);
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('assigns the owner role before requesting admin access when the owner role is synced', async () => {
@@ -215,7 +217,7 @@ describe('removing roles from a member with a pending admin request', () => {
         member: pendingAdminMember,
     };
 
-    const roleDispatch: jest.Mock = jest.fn(async (action: unknown) => {
+    const roleDispatch: Mock = vi.fn(async (action: unknown) => {
         if (typeof action === 'function') {
             return action(roleDispatch, getState, extra);
         }
@@ -250,7 +252,7 @@ describe('removing roles from a member with a pending admin request', () => {
         roleDispatch.mock.calls.map(([action]) => action).filter((action) => typeof action === 'string');
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('deletes the pending admin request before removing the last role requiring the org key', async () => {
@@ -297,7 +299,7 @@ describe('removing roles from a member with a pending admin request', () => {
             member,
             makeAdmin: false,
             api,
-            confirm: jest.fn(async () => true),
+            confirm: vi.fn(async () => true),
         })(roleDispatch as any, getState, extra);
 
         expect(result).toEqual({ confirmed: true, changed: true, desiredRoleIds: new Set() });

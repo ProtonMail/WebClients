@@ -1,5 +1,5 @@
-import { expect } from '@jest/globals';
 import { combineReducers } from '@reduxjs/toolkit';
+import type { MockedFunction } from 'vitest';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
@@ -31,8 +31,8 @@ import { addressKeysReducer } from './index';
 
 // The heavy crypto/network processes are the leaves we assert against - the thunk's job is to pick
 // the right one based on the user/member/organization-key state, not to actually generate keys.
-jest.mock('@proton/shared/lib/keys/memberKeys', () => {
-    const { MEMBER_PRIVATE: MOCK_MEMBER_PRIVATE } = require('@proton/shared/lib/constants');
+vi.mock('@proton/shared/lib/keys/memberKeys', async () => {
+    const { MEMBER_PRIVATE: MOCK_MEMBER_PRIVATE } = await import('@proton/shared/lib/constants');
 
     // Mirrors packages/shared/lib/keys/memberKeys.ts so the real branching logic is exercised
     // without pulling in the crypto import chain.
@@ -47,52 +47,52 @@ jest.mock('@proton/shared/lib/keys/memberKeys', () => {
     return {
         getCanGenerateMemberKeys,
         getShouldSetupMemberKeys,
-        setupMemberKeys: jest.fn(async () => ({})),
+        setupMemberKeys: vi.fn(async () => ({})),
     };
 });
-jest.mock('@proton/shared/lib/keys/missingKeysSelfProcess', () => ({
-    missingKeysSelfProcess: jest.fn(async () => []),
+vi.mock('@proton/shared/lib/keys/missingKeysSelfProcess', () => ({
+    missingKeysSelfProcess: vi.fn(async () => []),
 }));
-jest.mock('@proton/shared/lib/keys/missingKeysMemberProcess', () => ({
-    missingKeysMemberProcess: jest.fn(async () => []),
+vi.mock('@proton/shared/lib/keys/missingKeysMemberProcess', () => ({
+    missingKeysMemberProcess: vi.fn(async () => []),
 }));
 
-jest.mock('@proton/shared/lib/organization/helper', () => {
+vi.mock('@proton/shared/lib/organization/helper', async () => {
     return {
-        getOrganizationKeyInfo: jest.fn(() => ({})),
-        validateOrganizationKey: jest.fn(() => undefined),
+        getOrganizationKeyInfo: vi.fn(() => ({})),
+        validateOrganizationKey: vi.fn(() => undefined),
     };
 });
 
-jest.mock('@proton/key-transparency/helpers/createKTVerifier', () => {
+vi.mock('@proton/key-transparency/helpers/createKTVerifier', async () => {
     return {
-        createKTVerifier: jest.fn(() => ({
-            keyTransparencyVerify: jest.fn(async () => {}),
-            keyTransparencyCommit: jest.fn(async () => {}),
+        createKTVerifier: vi.fn(() => ({
+            keyTransparencyVerify: vi.fn(async () => {}),
+            keyTransparencyCommit: vi.fn(async () => {}),
         })),
     };
 });
 
-jest.mock('@proton/account/members', () => {
-    const actual = jest.requireActual('@proton/account/members');
+vi.mock('@proton/account/members', async () => {
+    const actual = await vi.importActual<Record<string, any>>('../members');
     return {
         ...actual,
         // The member-address fetch hits the network; the thunk only cares that it resolves.
-        getMemberAddresses: jest.fn(() => async () => []),
-        upsertMember: jest.fn(() => ({ type: 'test/upsert-member' })),
+        getMemberAddresses: vi.fn(() => async () => []),
+        upsertMember: vi.fn(() => ({ type: 'test/upsert-member' })),
     };
 });
 
-jest.mock('@proton/account/members/getMember', () => {
+vi.mock('@proton/account/members/getMember', async () => {
     return {
-        getMember: jest.fn(async () => ({ ID: 'member-id' })),
+        getMember: vi.fn(async () => ({ ID: 'member-id' })),
     };
 });
 
-const mockedMissingKeysSelfProcess = missingKeysSelfProcess as jest.MockedFunction<any>;
-const mockedMissingKeysMemberProcess = missingKeysMemberProcess as jest.MockedFunction<any>;
-const mockedSetupMemberKeys = setupMemberKeys as jest.MockedFunction<any>;
-const mockedValidateOrganizationKey = validateOrganizationKey as jest.MockedFunction<any>;
+const mockedMissingKeysSelfProcess = missingKeysSelfProcess as MockedFunction<any>;
+const mockedMissingKeysMemberProcess = missingKeysMemberProcess as MockedFunction<any>;
+const mockedSetupMemberKeys = setupMemberKeys as MockedFunction<any>;
+const mockedValidateOrganizationKey = validateOrganizationKey as MockedFunction<any>;
 
 const reducer = combineReducers({
     ...userReducer,
@@ -162,7 +162,7 @@ const setup = ({
     organizationKey?: CachedOrganizationKey;
     member?: Member;
 }) => {
-    const api = jest.fn(async () => ({ Addresses: [], Total: 0 }));
+    const api = vi.fn(async () => ({ Addresses: [], Total: 0 }));
 
     const extraThunkArguments = {
         api,
@@ -205,7 +205,7 @@ const dispatchCreate = async (
 
 describe('createAddressKeysThunk', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         // Default: organization key validation passes; individual tests override when needed.
         mockedValidateOrganizationKey.mockReturnValue(undefined);
     });

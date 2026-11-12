@@ -302,14 +302,17 @@
         "./userSettings": "./userSettings/index.ts",
         "./userSettings/hooks": "./userSettings/hooks.ts",
         "./userSettings/listener": "./userSettings/listener.ts",
-        "./welcomeFlags": "./welcomeFlags/index.ts"
+        "./welcomeFlags": "./welcomeFlags/index.ts",
+        "./testing/vitest/mockUseOrganization": "./testing/vitest/mockUseOrganization.ts",
+        "./testing/vitest/mockUseSubscription": "./testing/vitest/mockUseSubscription.ts",
+        "./testing/vitest/mockUseUser": "./testing/vitest/mockUseUser.ts",
+        "./testing/vitest/mockUseUserSettings": "./testing/vitest/mockUseUserSettings.ts"
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
         "lint": "oxlint --quiet",
-        "test": "jest",
-        "test:ci": "jest --runInBand --logHeapUsage",
-        "test:watch": "jest --watch"
+        "test": "TZ=UTC vitest",
+        "test:ci": "TZ=UTC vitest run"
     },
     "dependencies": {
         "@proton/app-context": "workspace:^",
@@ -341,16 +344,14 @@
         "unleash-proxy-client": "^3.8.0"
     },
     "devDependencies": {
-        "@jest/globals": "catalog:",
-        "@proton/jest-env": "workspace:^",
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
+        "@proton/polyfill": "workspace:^",
+        "@proton/vitest-config": "workspace:^",
         "@testing-library/jest-dom": "catalog:",
         "@testing-library/react": "^15.0.7",
         "@testing-library/user-event": "catalog:",
         "@types/deep-freeze": "^0.1.5",
         "@types/history": "catalog:",
-        "@types/jest": "catalog:",
         "@types/lodash": "catalog:",
         "@types/node": "catalog:",
         "@types/react": "catalog:",
@@ -358,11 +359,13 @@
         "@types/react-router-dom": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
-        "jest": "catalog:",
+        "@vitejs/plugin-react": "^6.2.1",
+        "happy-dom": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "react-redux": "catalog:",
-        "typescript": "catalog:"
+        "typescript": "catalog:",
+        "vitest": "catalog:"
     },
     "peerDependencies": {
         "@proton/components": "*",

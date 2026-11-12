@@ -1,4 +1,3 @@
-/** @jest-environment node */
 import { importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 
 import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/fork/blob';
@@ -11,7 +10,7 @@ const qrCodePayload = { version: 0, userCode: 'ABCD2345', encodedBytes: bytes.to
 const offlineKey = { password: 'offline-password', salt: 'offline-salt' };
 
 const push = async (payloadType?: 'offline' | 'default') => {
-    const api = jest.fn(async () => ({}));
+    const api = vi.fn(async () => ({}));
     await signInWithAnotherDevicePush({
         api: api as unknown as Api,
         qrCodePayload,

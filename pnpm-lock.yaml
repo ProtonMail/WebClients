@@ -4929,18 +4929,15 @@ importers:
         specifier: ^3.8.0
         version: 3.8.0
     devDependencies:
-      '@jest/globals':
-        specifier: 'catalog:'
-        version: 30.5.2(supports-color@11.0.0)
-      '@proton/jest-env':
-        specifier: workspace:^
-        version: link:../jest-env
-      '@proton/jest-swc-preset':
-        specifier: workspace:^
-        version: link:../jest-swc-preset
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../oxlint-config
+      '@proton/polyfill':
+        specifier: workspace:^
+        version: link:../polyfill
+      '@proton/vitest-config':
+        specifier: workspace:^
+        version: link:../vitest-config
       '@testing-library/jest-dom':
         specifier: 'catalog:'
         version: 6.9.1
@@ -4956,9 +4953,6 @@ importers:
       '@types/history':
         specifier: 'catalog:'
         version: 4.7.11
-      '@types/jest':
-        specifier: 'catalog:'
-        version: 30.0.0
       '@types/lodash':
         specifier: 'catalog:'
         version: 4.17.27
@@ -4980,9 +4974,12 @@ importers:
       '@typescript/native':
         specifier: 'catalog:'
         version: typescript@7.0.2
-      jest:
+      '@vitejs/plugin-react':
+        specifier: ^6.2.1
+        version: 6.2.1(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      happy-dom:
         specifier: 'catalog:'
-        version: 30.5.2(@types/node@24.19.2)(supports-color@11.0.0)(ts-node@10.9.2(@swc/core@1.16.22(@swc/helpers@0.5.17))(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
+        version: 21.0.4
       oxlint:
         specifier: 'catalog:'
         version: 1.92.0(oxlint-tsgolint@7.0.2006)
@@ -4995,6 +4992,9 @@ importers:
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
+      vitest:
+        specifier: 'catalog:'
+        version: 5.1.0(@opentelemetry/api@1.9.1)(@types/node@24.19.2)(@vitest/browser-playwright@5.1.0)(@vitest/coverage-v8@5.1.0)(@vitest/ui@5.1.0)(happy-dom@21.0.4)(jsdom@26.1.0(supports-color@11.0.0))(msw@2.12.14(@types/node@24.19.2)(@typescript/typescript6@6.0.2))(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
 
   packages/activation:
     dependencies:

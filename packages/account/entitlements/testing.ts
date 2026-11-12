@@ -41,7 +41,7 @@ export const businessGranted = asEntitlements([entitlement(EntitlementName.Busin
 export const setupEntitlementsStore = (initialServerEntitlements: Entitlements = businessGranted) => {
     let serverEntitlements = initialServerEntitlements;
 
-    const api = jest.fn().mockImplementation(({ url }: { url: string }) => {
+    const api = vi.fn().mockImplementation(({ url }: { url: string }) => {
         if (url === ENTITLEMENTS_URL) {
             return Promise.resolve(serverEntitlements);
         }
@@ -64,7 +64,6 @@ export const setupEntitlementsStore = (initialServerEntitlements: Entitlements =
         setServerEntitlements: (next: Entitlements) => {
             serverEntitlements = next;
         },
-        urlsCalled: (url: string) =>
-            api.mock.calls.map(([request]: [{ url: string }]) => request.url).filter((called) => called === url),
+        urlsCalled: (url: string) => api.mock.calls.map(([request]) => request.url).filter((called) => called === url),
     };
 };

@@ -1,3 +1,4 @@
+// @vitest-environment happy-dom
 import { act, renderHook } from '@testing-library/react';
 
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -5,7 +6,7 @@ import noop from '@proton/utils/noop';
 
 import { useFido2Action } from './useFido2Action';
 
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({ captureMessage: jest.fn() }));
+vi.mock('@proton/shared/lib/helpers/sentry', () => ({ captureMessage: vi.fn() }));
 
 const fail = async (error: Error, afterMs: number) => {
     const { result } = renderHook(() => useFido2Action());
@@ -14,23 +15,23 @@ const fail = async (error: Error, afterMs: number) => {
             () => new Promise((_, reject) => setTimeout(() => reject(error), afterMs)),
             'auth'
         );
-        jest.advanceTimersByTime(afterMs);
+        vi.advanceTimersByTime(afterMs);
         await expect(run).rejects.toBe(error);
     });
     expect(result.current.fidoError).toBe(error.name);
-    return jest.mocked(captureMessage).mock.calls[0][1];
+    return vi.mocked(captureMessage).mock.calls[0][1];
 };
 
 describe('useFido2Action', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
-        jest.mocked(captureMessage).mockClear();
-        jest.spyOn(console, 'error').mockImplementation(noop);
+        vi.useFakeTimers();
+        vi.mocked(captureMessage).mockClear();
+        vi.spyOn(console, 'error').mockImplementation(noop);
     });
 
     afterEach(() => {
-        jest.useRealTimers();
-        jest.restoreAllMocks();
+        vi.useRealTimers();
+        vi.restoreAllMocks();
     });
 
     it('groups an instant rejection apart from a user cancel', async () => {
@@ -41,7 +42,7 @@ describe('useFido2Action', () => {
             tags: { fido2Error: 'NotAllowedError', fido2Timing: 'instant', fido2Extension: false },
         });
 
-        jest.mocked(captureMessage).mockClear();
+        vi.mocked(captureMessage).mockClear();
 
         expect(await fail(error, 1500)).toMatchObject({
             fingerprint: ['Security key auth', 'NotAllowedError', 'user'],
@@ -61,7 +62,7 @@ describe('useFido2Action', () => {
     });
 
     it('reads the focus before the security key prompt opens', async () => {
-        jest.spyOn(document, 'hasFocus').mockReturnValueOnce(false).mockReturnValue(true);
+        vi.spyOn(document, 'hasFocus').mockReturnValueOnce(false).mockReturnValue(true);
 
         expect(await fail(new DOMException('Not allowed', 'NotAllowedError'), 100)).toMatchObject({
             extra: { hasFocusAtStart: false },

@@ -1,7 +1,8 @@
-import { expect } from '@jest/globals';
+// @vitest-environment happy-dom
 import { CryptoProxy } from '@protontech/crypto';
 import { combineReducers } from '@reduxjs/toolkit';
 import { waitFor } from '@testing-library/react';
+import type { MockedFunction, MockedObject } from 'vitest';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
@@ -14,26 +15,26 @@ import { userReducer } from '../user';
 import { selectUserKeys, userKeysReducer, userKeysThunk } from './index';
 import { userKeysListener } from './listener';
 
-jest.mock('./index', () => {
-    const actual = jest.requireActual('./index');
+vi.mock('./index', async () => {
+    const actual = await vi.importActual<Record<string, any>>('./index');
     return {
         ...actual,
-        userKeysThunk: jest.fn(actual.userKeysThunk),
+        userKeysThunk: vi.fn(actual.userKeysThunk),
     };
 });
 
-const mockedUserKeysThunk = jest.mocked(userKeysThunk);
-jest.mock('@protontech/crypto/srp', () => {});
-jest.mock('@protontech/crypto', () => {
+const mockedUserKeysThunk = vi.mocked(userKeysThunk);
+vi.mock('@protontech/crypto/srp', () => ({}));
+vi.mock('@protontech/crypto', async () => {
     return {
         CryptoProxy: {
-            clearKey: jest.fn(),
+            clearKey: vi.fn(),
         },
     };
 });
-jest.mock('@proton/shared/lib/keys/getDecryptedUserKeys', () => {
+vi.mock('@proton/shared/lib/keys/getDecryptedUserKeys', async () => {
     return {
-        getDecryptedUserKeysHelper: jest.fn().mockReturnValue([]),
+        getDecryptedUserKeysHelper: vi.fn().mockReturnValue([]),
     };
 });
 
@@ -73,8 +74,8 @@ const setup = (preloadedState?: Partial<ReturnType<typeof reducer>>) => {
     };
 };
 
-const mockedGetDecryptedUserKeysHelper = getDecryptedUserKeysHelper as jest.MockedFunction<any>;
-const mockedCryptoProxy = CryptoProxy as jest.MockedObject<any>;
+const mockedGetDecryptedUserKeysHelper = getDecryptedUserKeysHelper as MockedFunction<any>;
+const mockedCryptoProxy = CryptoProxy as MockedObject<any>;
 mockedCryptoProxy.clearKey.mockImplementation(async () => {});
 
 const getKey = (id: number) => ({ privateKey: id, publicKey: id });

@@ -17,39 +17,39 @@ import { getMemberRoles } from './index';
 import { unprivatizeMember, unprivatizeSelfForMsp } from './unprivatizeActions';
 import { updateOwnerRole } from './updateOwnerRole';
 
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({
-    ...jest.requireActual('@proton/shared/lib/helpers/sentry'),
-    captureMessage: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/sentry', async () => ({
+    ...(await vi.importActual('@proton/shared/lib/helpers/sentry')),
+    captureMessage: vi.fn(),
 }));
 
-jest.mock('../userKeys', () => ({
-    ...jest.requireActual('../userKeys'),
-    userKeysThunk: jest.fn(() => 'userKeysThunk'),
+vi.mock('../userKeys', async () => ({
+    ...(await vi.importActual('../userKeys')),
+    userKeysThunk: vi.fn(() => 'userKeysThunk'),
 }));
 
-jest.mock('../organizationKey', () => ({
-    ...jest.requireActual('../organizationKey'),
-    organizationKeyThunk: jest.fn(() => 'organizationKeyThunk'),
+vi.mock('../organizationKey', async () => ({
+    ...(await vi.importActual('../organizationKey')),
+    organizationKeyThunk: vi.fn(() => 'organizationKeyThunk'),
 }));
 
-jest.mock('./index', () => ({
-    ...jest.requireActual('./index'),
-    getMemberAddresses: jest.fn(() => 'getMemberAddresses'),
-    getMemberRoles: jest.fn(() => 'getMemberRoles'),
+vi.mock('./index', async () => ({
+    ...(await vi.importActual('./index')),
+    getMemberAddresses: vi.fn(() => 'getMemberAddresses'),
+    getMemberRoles: vi.fn(() => 'getMemberRoles'),
 }));
 
-jest.mock('./unprivatization', () => ({
-    ...jest.requireActual('./unprivatization'),
-    getUnprivatizeMemberPayload: jest.fn(() => Promise.resolve({})),
+vi.mock('./unprivatization', async () => ({
+    ...(await vi.importActual('./unprivatization')),
+    getUnprivatizeMemberPayload: vi.fn(() => Promise.resolve({})),
 }));
 
-jest.mock('./updateOwnerRole', () => ({
-    updateOwnerRole: jest.fn(() => 'updateOwnerRole'),
+vi.mock('./updateOwnerRole', () => ({
+    updateOwnerRole: vi.fn(() => 'updateOwnerRole'),
 }));
 
-const captureMessageMock = jest.mocked(captureMessage);
+const captureMessageMock = vi.mocked(captureMessage);
 
-const api = jest.fn();
+const api = vi.fn();
 
 const setup = () => {
     const { store } = getTestStore({
@@ -69,7 +69,7 @@ const setup = () => {
 
 describe('unprivatizeSelfForMsp', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         api.mockImplementation(({ url }: { url: string }) => {
             if (url === ENTITLEMENTS_URL) {
                 return Promise.resolve(asEntitlements([]));
@@ -131,10 +131,10 @@ describe('unprivatizeMember', () => {
             },
         }) as MemberReadyForAutomaticUnprivatization;
 
-    const unprivatizeApi = jest.fn(() => Promise.resolve({}));
+    const unprivatizeApi = vi.fn(() => Promise.resolve({}));
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it.each([
@@ -145,7 +145,7 @@ describe('unprivatizeMember', () => {
             member: getMember(Admin),
             ktUserContext: {} as KTUserContext,
             api: unprivatizeApi as unknown as Api,
-        })(jest.fn() as any, jest.fn(), {} as ProtonThunkArguments);
+        })(vi.fn() as any, vi.fn(), {} as ProtonThunkArguments);
 
         expect(getMemberRoles).not.toHaveBeenCalled();
         expect(updateOwnerRole).not.toHaveBeenCalled();

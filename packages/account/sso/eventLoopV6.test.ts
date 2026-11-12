@@ -27,7 +27,7 @@ const update = (ID: string) => ({ ID, Action: ActionEventV6.Update });
 
 describe('authDevicesLoop', () => {
     const setup = ({ loaded }: { loaded: boolean }) => {
-        const api = jest.fn().mockImplementation(({ url }: { url: string }) => {
+        const api = vi.fn().mockImplementation(({ url }: { url: string }) => {
             if (url === AUTH_DEVICES_URL) {
                 return Promise.resolve({ AuthDevices: [authDevice('listed')] });
             }
@@ -71,7 +71,7 @@ describe('authDevicesLoop', () => {
                 api: api as unknown as Api,
             });
 
-        const urlsCalled = () => api.mock.calls.map(([request]: [{ url: string }]) => request.url);
+        const urlsCalled = () => api.mock.calls.map(([request]) => request.url);
 
         return { store, fire, urlsCalled };
     };

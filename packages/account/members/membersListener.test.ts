@@ -1,3 +1,4 @@
+// @vitest-environment happy-dom
 import { combineReducers } from '@reduxjs/toolkit';
 import { waitFor } from '@testing-library/react';
 
@@ -18,15 +19,15 @@ import { membersListener } from './membersListener';
 // Mirrors the private ValueType enum in ./index (dummy = free/unprivileged cache, complete = fetched list).
 const ValueType = { dummy: 0, complete: 1 } as const;
 
-jest.mock('./index', () => {
-    const actual = jest.requireActual('./index');
+vi.mock('./index', async () => {
+    const actual = await vi.importActual<Record<string, any>>('./index');
     return {
         ...actual,
-        canFetchMembers: jest.fn(actual.canFetchMembers),
+        canFetchMembers: vi.fn(actual.canFetchMembers),
     };
 });
 
-const canFetchMembersSpy = jest.mocked(canFetchMembers);
+const canFetchMembersSpy = vi.mocked(canFetchMembers);
 
 const reducer = combineReducers({
     ...userReducer,
@@ -59,7 +60,7 @@ const setup = ({
     members: MembersState['members'];
     permissions?: string[];
 }) => {
-    const api = jest.fn(async () => ({ Roles: [], Permissions: permissions }));
+    const api = vi.fn(async () => ({ Roles: [], Permissions: permissions }));
     const extraThunkArguments = {
         api,
         unleashClient: { isEnabled: () => true },

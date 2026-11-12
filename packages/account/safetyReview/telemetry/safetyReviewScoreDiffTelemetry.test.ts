@@ -1,3 +1,4 @@
+// @vitest-environment happy-dom
 import { renderHook } from '@testing-library/react';
 
 import { TelemetryMeasurementGroups, TelemetrySafetyReviewScoreDiffEvents } from '@proton/shared/lib/api/telemetry';
@@ -5,19 +6,19 @@ import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/
 
 import { useSafetyReviewScoreDiffTelemetry } from './useSafetyReviewScoreDiffTelemetry';
 
-const mockApi = jest.fn();
+const mockApi = vi.fn();
 
-jest.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }));
-jest.mock('@proton/shared/lib/helpers/metrics', () => ({
-    sendTelemetryReport: jest.fn(),
-    telemetryReportsBatchQueue: { flush: jest.fn() },
+vi.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }));
+vi.mock('@proton/shared/lib/helpers/metrics', () => ({
+    sendTelemetryReport: vi.fn(),
+    telemetryReportsBatchQueue: { flush: vi.fn() },
 }));
 
-const sendTelemetryReportMock = jest.mocked(sendTelemetryReport);
-const flushMock = jest.mocked(telemetryReportsBatchQueue.flush);
+const sendTelemetryReportMock = vi.mocked(sendTelemetryReport);
+const flushMock = vi.mocked(telemetryReportsBatchQueue.flush);
 
 beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 });
 
 describe('useSafetyReviewScoreDiffTelemetry', () => {

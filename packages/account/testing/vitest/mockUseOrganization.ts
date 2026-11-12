@@ -56,3 +56,10 @@ export const mockUseGetOrganization = (value: Partial<OrganizationExtended> = {}
     );
     return spy;
 };
+
+export const mockUseOrganization = (value: [Partial<OrganizationExtended>?, boolean?] = []) => {
+    const [organization = {}, cached = false] = value;
+    const mockedOrganization = vi.spyOn(useOrganizationModule, 'useOrganization');
+    mockedOrganization.mockReturnValue([organization as OrganizationExtended, Boolean(cached)]);
+    return mockedOrganization;
+};

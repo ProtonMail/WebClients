@@ -25,7 +25,7 @@ const setup = ({
     permissions: Permission[];
     adminRoleMVP: boolean;
 }) => {
-    const api = jest.fn(async (config: any) => {
+    const api = vi.fn(async (config: any) => {
         if (config?.url === 'core/v4/members') {
             return { Members: [{ ID: 'm1' }], Total: 1 };
         }
