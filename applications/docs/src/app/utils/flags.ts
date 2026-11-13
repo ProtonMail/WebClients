@@ -6,7 +6,7 @@ import { isDevOrBlack } from '@proton/shared/lib/env'
 SDK switch flags:
 - DocsInvitationsDriveSDK - no dependencies
 - DocsDriveCompatSDK - no dependencies
-- DocsRealtimeSdkEnabled - no dependencies
+- DocsRealtimeSdkEnabled - no dependencies, always on in dev and black
 
 Other flags:
 - DocsHomepageBulkTrash - no dependencies
@@ -23,7 +23,7 @@ export function useDriveCompatSDK() {
 }
 
 export function useRealtimeSdkEnabled() {
-  return useFlag('DocsRealtimeSdkEnabled')
+  return useFlag('DocsRealtimeSdkEnabled') || isDevOrBlack()
 }
 
 // Other flags
