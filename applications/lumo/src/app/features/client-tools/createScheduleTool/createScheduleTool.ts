@@ -42,6 +42,9 @@ const createScheduleTool = {
             'Set the ask_user_questions allowMultiple parameter to false for a single run time, and true when multiple weekdays or monthly dates can apply. ' +
             'If the user skips a run time question, you may choose a reasonable run time; preserve any timing they already supplied and show the chosen timing in the review draft. ' +
             'Dismissing questions supplies no answers; clarify essential missing timing unless the user asks you to choose. ' +
+            '\n\nSkills and task instructions:\n' +
+            'When the user asks to run a /skill, preserve that reference in instructions along with any task-specific inputs, requirements, and desired output that are not already in the skill description or instructions. ' +
+            'Do not copy, paraphrase, or expand the skill description or instructions into the scheduled prompt; the skill should remain the source of those instructions as it is updated. ' +
             '\n\nRecurrence and timezone:\n' +
             'Before calling create_schedule, resolve the complete requested recurrence: repetition interval, calendar constraints, run time, and timezone. ' +
             'Call this tool only when recurrenceRule can represent every constraint exactly. Each schedule supports one run time: once on a specific date, daily, every week on selected weekdays, or every month on fixed numbered dates. ' +
