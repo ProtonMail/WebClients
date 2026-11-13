@@ -28,6 +28,9 @@
         "applications/pass-desktop/native/**",
         "applications/pass-desktop/macOS/**"
     ],
+    "gitlabci": {
+        "managerFilePatterns": ["/\\.gitlab-ci\\.ya?ml$/", "/^ci/jobs/.+\\.ya?ml$/"]
+    },
     "customManagers": [
         {
             "customType": "regex",
@@ -55,6 +58,12 @@
         {
             "groupName": "Playwright",
             "matchPackageNames": ["/playwright/", "!@vitest/**"]
+        },
+        {
+            "description": "Playwright image mirrored in Harbor, kept in the Playwright group because its tag must match the npm playwright version. Harbor gives its tags no release timestamp, so minimumReleaseAge would hold every version back.",
+            "groupName": "Playwright",
+            "matchPackageNames": ["harbor.protontech.ch/mcr.microsoft.com/playwright"],
+            "minimumReleaseAge": null
         },
         {
             "groupName": "msw",

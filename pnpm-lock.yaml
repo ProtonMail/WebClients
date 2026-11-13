@@ -4344,8 +4344,8 @@ importers:
         version: 5.112.2(@swc/core@1.16.22(@swc/helpers@0.5.17))(clean-css@5.3.3)(csso@5.0.5)(esbuild@0.28.2)(html-minifier-terser@6.1.0)(lightningcss@1.33.0)(postcss@8.5.32)(sharp@0.35.5(@types/node@24.19.2))(svgo@4.1.0)(webpack-cli@7.3.1)
     devDependencies:
       '@playwright/test':
-        specifier: ^1.64.1
-        version: 1.64.1
+        specifier: ^1.65.0
+        version: 1.65.0
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../../packages/oxlint-config
@@ -9979,7 +9979,7 @@ importers:
         version: typescript@7.0.2
       '@vitest/browser-playwright':
         specifier: ^5.1.0
-        version: 5.1.0(msw@2.12.14(@types/node@24.19.2)(@typescript/typescript6@6.0.2))(playwright@1.64.1)(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(vitest@5.1.0)
+        version: 5.1.0(msw@2.12.14(@types/node@24.19.2)(@typescript/typescript6@6.0.2))(playwright@1.65.0)(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(vitest@5.1.0)
       '@vitest/coverage-v8':
         specifier: 'catalog:'
         version: 5.1.0(@vitest/browser@5.1.0)(vitest@5.1.0)
@@ -9993,8 +9993,8 @@ importers:
         specifier: 'catalog:'
         version: 7.0.2006
       playwright:
-        specifier: ^1.64.1
-        version: 1.64.1
+        specifier: ^1.65.0
+        version: 1.65.0
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -10547,13 +10547,13 @@ importers:
     dependencies:
       '@axe-core/playwright':
         specifier: ^4.14.0
-        version: 4.14.0(playwright-core@1.64.1)
+        version: 4.14.0(playwright-core@1.65.0)
       '@inquirer/prompts':
         specifier: ^7.10.1
         version: 7.10.1(@types/node@24.19.2)
       '@playwright/test':
-        specifier: ^1.64.1
-        version: 1.64.1
+        specifier: ^1.65.0
+        version: 1.65.0
       '@prometheus-io/client':
         specifier: ^0.16.1
         version: 0.16.1
@@ -10583,16 +10583,16 @@ importers:
         version: 0.2.1(encoding@0.1.13)(supports-color@11.0.0)
       '@tpe/measurement-sdk':
         specifier: 0.2.2
-        version: 0.2.2(@playwright/test@1.64.1)(encoding@0.1.13)(supports-color@11.0.0)
+        version: 0.2.2(@playwright/test@1.65.0)(encoding@0.1.13)(supports-color@11.0.0)
       '@tpe/minimum-test-set':
         specifier: 0.2.0
         version: 0.2.0(supports-color@11.0.0)
       '@tpe/mock-proxy-web-client':
         specifier: 1.1.1
-        version: 1.1.1(@playwright/test@1.64.1)
+        version: 1.1.1(@playwright/test@1.65.0)
       '@tpe/quark-client':
         specifier: 1.23.1
-        version: 1.23.1(@playwright/test@1.64.1)
+        version: 1.23.1(@playwright/test@1.65.0)
       adm-zip:
         specifier: ^0.6.1
         version: 0.6.1
@@ -10676,8 +10676,8 @@ importers:
         specifier: 'catalog:'
         version: 10.1.0
       eslint-plugin-playwright:
-        specifier: ^2.12.0
-        version: 2.12.0(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))
+        specifier: ^2.12.2
+        version: 2.12.2(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0))
       openpgp:
         specifier: npm:@protontech/openpgp@^6.3.1
         version: '@protontech/openpgp@6.3.1(@openpgp/web-stream-tools@0.3.1(@types/node@24.19.2)(@typescript/typescript6@6.0.2))'
@@ -10688,8 +10688,8 @@ importers:
         specifier: 'catalog:'
         version: 7.0.2006
       playwright:
-        specifier: ^1.64.1
-        version: 1.64.1
+        specifier: ^1.65.0
+        version: 1.65.0
       tsx:
         specifier: 'catalog:'
         version: 4.23.15
@@ -10764,8 +10764,8 @@ importers:
         version: 18.3.1(react@18.3.1)
     devDependencies:
       '@playwright/test':
-        specifier: ^1.64.1
-        version: 1.64.1
+        specifier: ^1.65.0
+        version: 1.65.0
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../../packages/oxlint-config
@@ -10840,8 +10840,8 @@ importers:
         version: 18.3.1(react@18.3.1)
     devDependencies:
       '@playwright/test':
-        specifier: ^1.64.1
-        version: 1.64.1
+        specifier: ^1.65.0
+        version: 1.65.0
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../../packages/oxlint-config
@@ -11277,8 +11277,8 @@ importers:
         version: 0.7.7
     devDependencies:
       '@playwright/test':
-        specifier: ^1.64.1
-        version: 1.64.1
+        specifier: ^1.65.0
+        version: 1.65.0
       '@proton/oxlint-config':
         specifier: workspace:^
         version: link:../../packages/oxlint-config
@@ -16264,8 +16264,8 @@ packages:
     resolution: {integrity: sha512-SEeaJLb3qBNF/OaXnaR1NmmBbFYk1zC0ZH/52fATcRPLFg/p791YrcyFFy44Bo9sLaGuSuLp5Q6axbb/O+v/RA==}
     engines: {node: ^14.18.0 || >=16.0.0}
 
-  '@playwright/test@1.64.1':
-    resolution: {integrity: sha512-IaYGml/nSOiZWROfPtuIL7neuu9qDOZ3TNvNljUIrhDMxiGTgPjzj/g9p9RxpS2tSepPDRY+UwAaEeiKtUvIAg==}
+  '@playwright/test@1.65.0':
+    resolution: {integrity: sha512-iGURLGuKDLakSEl7Pgfv8h7f+XLT+V861Wfhz0zlEl5nyFuKUopdkFBPKqTllTUp06aOwPuH8iuUEb3yp3MpbQ==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -21258,8 +21258,8 @@ packages:
     peerDependencies:
       eslint: ^9.0.0 || ^10.0.0
 
-  eslint-plugin-playwright@2.12.0:
-    resolution: {integrity: sha512-7HpSKR/D2oCH4RKRauFskcrnDrHvLQKopW7Nen8lqrFZtx/SB+FgqVaH+zyQd32noZSZy9Lrsa+DsYrVUpn6hg==}
+  eslint-plugin-playwright@2.12.2:
+    resolution: {integrity: sha512-sYRCyAEACD3URVoFTfldZcvZNdlJ1r5414gilOTsDCu26PY7l4dUl/3o9ohIEltZgaDS1VXD1mG5xU1KlIGJSw==}
     engines: {node: '>=16.9.0'}
     peerDependencies:
       eslint: '>=8.40.0'
@@ -25193,13 +25193,13 @@ packages:
   platform@1.3.6:
     resolution: {integrity: sha512-fnWVljUchTro6RiCFvCXBbNhJc2NijN7oIQxbwsyL0buWJPG85v81ehlHI9fXrJsMNgTofEoWIQeClKpgxFLrg==}
 
-  playwright-core@1.64.1:
-    resolution: {integrity: sha512-BC4s8y6SEVA6Q1rSxZTto8hI1KUI3xXlHGZgvGqP4IqPdI/a6FX9H29IDNz7vKo9l21b6LfYosScPL6M3xxyDQ==}
+  playwright-core@1.65.0:
+    resolution: {integrity: sha512-vNSKgH6YqtN7cdT/L334zo0a+YwkrpicyrHJlWWPIm/Q+Nn2SWInil01oT0mbu96U4GgoRtCYQD9CzJQgju+lA==}
     engines: {node: '>=20'}
     hasBin: true
 
-  playwright@1.64.1:
-    resolution: {integrity: sha512-HCrVhHr5QQuwYoswEUGTb7gGp522yflbv/ST8nF4sFWGuLjQCt17Q/EubpGGSNKYn1tsTCPZxqHhHCfVURu7UA==}
+  playwright@1.65.0:
+    resolution: {integrity: sha512-F3AMWcR44qMBt4kq+6Kb6mX7bjGXshktKFOPULd7reED6ZJWevjbNRqysP7q+AATE9kdPEZBibex1BYsvpVoeA==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -28893,10 +28893,10 @@ snapshots:
       is-docker: 4.0.0
       package-manager-detector: 1.9.0
 
-  '@axe-core/playwright@4.14.0(playwright-core@1.64.1)':
+  '@axe-core/playwright@4.14.0(playwright-core@1.65.0)':
     dependencies:
       axe-core: 4.14.0
-      playwright-core: 1.64.1
+      playwright-core: 1.65.0
 
   '@babel/code-frame@7.29.7':
     dependencies:
@@ -33968,9 +33968,9 @@ snapshots:
 
   '@pkgr/core@0.3.6': {}
 
-  '@playwright/test@1.64.1':
+  '@playwright/test@1.65.0':
     dependencies:
-      playwright: 1.64.1
+      playwright: 1.65.0
 
   '@pmmmwh/react-refresh-webpack-plugin@0.6.3(react-refresh@0.19.0)(type-fest@5.10.0)(webpack-dev-server@6.1.0)(webpack-hot-middleware@2.26.1)(webpack@5.112.2)':
     dependencies:
@@ -35582,9 +35582,9 @@ snapshots:
       - encoding
       - supports-color
 
-  '@tpe/measurement-sdk@0.2.2(@playwright/test@1.64.1)(encoding@0.1.13)(supports-color@11.0.0)':
+  '@tpe/measurement-sdk@0.2.2(@playwright/test@1.65.0)(encoding@0.1.13)(supports-color@11.0.0)':
     dependencies:
-      '@playwright/test': 1.64.1
+      '@playwright/test': 1.65.0
       '@tpe/loki-client': 0.2.1(encoding@0.1.13)(supports-color@11.0.0)
     transitivePeerDependencies:
       - encoding
@@ -35597,14 +35597,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@tpe/mock-proxy-web-client@1.1.1(@playwright/test@1.64.1)':
+  '@tpe/mock-proxy-web-client@1.1.1(@playwright/test@1.65.0)':
     dependencies:
-      '@playwright/test': 1.64.1
+      '@playwright/test': 1.65.0
       ajv: 8.20.0
 
-  '@tpe/quark-client@1.23.1(@playwright/test@1.64.1)':
+  '@tpe/quark-client@1.23.1(@playwright/test@1.65.0)':
     dependencies:
-      '@playwright/test': 1.64.1
+      '@playwright/test': 1.65.0
       chance: 1.1.13
       date-fns: 4.1.0
       js-yaml: 5.5.0
@@ -36542,11 +36542,11 @@ snapshots:
       '@rolldown/pluginutils': 1.0.1
       vite: 8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
 
-  '@vitest/browser-playwright@5.1.0(msw@2.12.14(@types/node@24.19.2)(@typescript/typescript6@6.0.2))(playwright@1.64.1)(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(vitest@5.1.0)':
+  '@vitest/browser-playwright@5.1.0(msw@2.12.14(@types/node@24.19.2)(@typescript/typescript6@6.0.2))(playwright@1.65.0)(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(vitest@5.1.0)':
     dependencies:
       '@vitest/browser': 5.1.0(msw@2.12.14(@types/node@24.19.2)(@typescript/typescript6@6.0.2))(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(vitest@5.1.0)
       '@vitest/mocker': 5.1.0(msw@2.12.14(@types/node@24.19.2)(@typescript/typescript6@6.0.2))(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
-      playwright: 1.64.1
+      playwright: 1.65.0
       tinyrainbow: 3.2.0
       vitest: 5.1.0(@opentelemetry/api@1.9.1)(@types/node@24.19.2)(@vitest/browser-playwright@5.1.0)(@vitest/coverage-v8@5.1.0)(@vitest/ui@5.1.0)(happy-dom@21.0.4)(jsdom@31.0.0(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@24.19.2)(@typescript/typescript6@6.0.2))(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
     transitivePeerDependencies:
@@ -39652,7 +39652,7 @@ snapshots:
       lodash.memoize: 4.1.2
       semver: 7.8.6
 
-  eslint-plugin-playwright@2.12.0(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0)):
+  eslint-plugin-playwright@2.12.2(eslint@10.12.0(jiti@2.7.0)(supports-color@11.0.0)):
     dependencies:
       eslint: 10.12.0(jiti@2.7.0)(supports-color@11.0.0)
       globals: 17.4.0
@@ -44787,11 +44787,11 @@ snapshots:
 
   platform@1.3.6: {}
 
-  playwright-core@1.64.1: {}
+  playwright-core@1.65.0: {}
 
-  playwright@1.64.1:
+  playwright@1.65.0:
     dependencies:
-      playwright-core: 1.64.1
+      playwright-core: 1.65.0
 
   plist@3.1.1:
     dependencies:
@@ -48309,7 +48309,7 @@ snapshots:
     optionalDependencies:
       '@opentelemetry/api': 1.9.1
       '@types/node': 24.19.2
-      '@vitest/browser-playwright': 5.1.0(msw@2.12.14(@types/node@24.19.2)(@typescript/typescript6@6.0.2))(playwright@1.64.1)(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(vitest@5.1.0)
+      '@vitest/browser-playwright': 5.1.0(msw@2.12.14(@types/node@24.19.2)(@typescript/typescript6@6.0.2))(playwright@1.65.0)(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(vitest@5.1.0)
       '@vitest/coverage-v8': 5.1.0(@vitest/browser@5.1.0)(vitest@5.1.0)
       '@vitest/ui': 5.1.0(vitest@5.1.0)
       happy-dom: 21.0.4
