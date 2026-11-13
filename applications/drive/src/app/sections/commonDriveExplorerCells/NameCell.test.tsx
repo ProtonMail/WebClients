@@ -60,6 +60,6 @@ describe('NameCell', () => {
 
     it('applies grayscale filter to thumbnail for invitations', () => {
         renderWithProviders(<NameCell {...defaultProps} thumbnailUrl="blob:thumb" isInvitation />);
-        expect(screen.getByAltText('report.pdf')).toHaveStyle({ filter: 'grayscale(100%)' });
+        expect(screen.getByAltText('report.pdf')).toHaveStyle({ filter: 'grayscale(1)' });
     });
 });
