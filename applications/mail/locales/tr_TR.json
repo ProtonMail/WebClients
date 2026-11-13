@@ -1583,8 +1583,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven",
-        "Anahtarlara güven"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -4469,6 +4468,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Unlimited tarifesine geçin."
+      ],
+      "High-performance model for complex tasks": [
+        "Karmaşık görevler için yüksek başarımlı model"
+      ],
+      "Lightweight model for everyday tasks": [
+        "Günlük işler için hafif model"
       ]
     },
     "description": {
@@ -5860,6 +5865,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Bu tarayıcı güvenlik anahtarlarını desteklemiyor. Lütfen başka bir tarayıcı deneyin."
       ]
     },
     "fido2: Info": {
@@ -9777,6 +9785,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "${ LUMO_SHORT_APP_NAME } ile sohbet ederek e-postalarınızı arayın, okuyun, düzenleyin ve taslaklarını hazırlayın."
       ]
     },
     "info": {
@@ -11159,6 +11170,12 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } yapay zeka yardımcısı"
+      ],
+      "Model": [
+        "Model"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15974,6 +15991,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Aboneliğinizi iptal ettiniz."
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } yapay zeka yardımcısı kapalı"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } yapay zeka yardımcısı açık"
       ]
     },
     "Success notification": {

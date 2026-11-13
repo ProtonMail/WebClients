@@ -1591,10 +1591,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -4533,6 +4530,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
+      ],
+      "High-performance model for complex tasks": [
+        "Vysoko výkonný model pre zložité úlohy"
+      ],
+      "Lightweight model for everyday tasks": [
+        "Ľahký model na každodenné úlohy"
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Ak chcete používať ${ LUMO_SHORT_APP_NAME } v aplikácii ${ MAIL_APP_NAME }, pridajte ju do svojho predplatného."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Ak chcete používať ${ LUMO_SHORT_APP_NAME } v aplikácii ${ MAIL_APP_NAME }, požiadajte svojho správcu o prístup."
       ]
     },
     "description": {
@@ -5956,6 +5965,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Tento prehliadač nepodporuje bezpečnostné kľúče. Skúste použiť iný prehliadač, prosím."
       ]
     },
     "fido2: Info": {
@@ -10111,6 +10123,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Komunikujte s aplikáciou ${ LUMO_SHORT_APP_NAME } a vyhľadávajte, čítajte, usporiadajte a pripravte si svoje emaily."
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Jedným kliknutím skopírujte jednorazové kódy z nedávnych emailov"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Po skopírovaní presunúť emaily s jednorazovým kódom do koša"
       ]
     },
     "info": {
@@ -11505,6 +11526,18 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } AI asistent"
+      ],
+      "Model": [
+        "Model"
+      ],
+      "Move to Trash": [
+        "Presunúť do koša"
+      ],
+      "One-time codes": [
+        "Jednorazové kódy"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16556,6 +16589,18 @@
       ],
       "You have successfully canceled your subscription.": [
         "Úspešne ste zrušili svoje predplatné."
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } AI asistent deaktivovaný"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } AI asistent povolený"
+      ],
+      "One-time codes disabled": [
+        "Jednorazové kódy sú deaktivované"
+      ],
+      "One-time codes enabled": [
+        "Jednorazové kódy sú povolené"
       ]
     },
     "Success notification": {

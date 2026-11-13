@@ -365,7 +365,7 @@
         "Copiar o número da versão para a área de transferência"
       ],
       "Create a booking page": [
-        "Criar uma página de agendamento"
+        "Criar uma página de reserva"
       ],
       "Create a new contact group": [
         "Criar um grupo de contactos"
@@ -1556,7 +1556,6 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar na chave",
         "Confiar na chave"
       ],
       "Trust public key": [
@@ -6846,7 +6845,7 @@
         "1 cofre por utilizador"
       ],
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
-        "Garantia de reembolso em 30 dias: cancele até 30 dias depois da compra e contacte o nosso ${ customerSupportLink } para solicitar um reembolso."
+        "Garantia de reembolso do dinheiro em 30 dias: cancele até 30 dias da sua compra e contacte o nosso ${ customerSupportLink } para obter um reembolso."
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Um número de telemóvel pode ser utilizado para verificar apenas uma conta ${ BRAND_NAME }"
@@ -9106,7 +9105,7 @@
         "Atingiu o número máximo de endereços no grupo de contacto."
       ],
       "You've reached the maximum number of booking pages available in your plan.": [
-        "Atingiu o número máximo de páginas de agendamento disponíveis no seu plano."
+        "Atingiu o número máximo de páginas de reserva disponíveis no seu plano."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "A sua conta ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as ligações de partilha do Drive serão bloqueadas e não poderá carregar novos ficheiros. Para retomar o serviço normal, efetue o pagamento das faturas em atraso."
@@ -9217,6 +9216,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a alguns cliques de ter uma caixa de entrada organizada"
+      ],
+      "Star emails": [
+        "Mensagens com estrela"
       ]
     },
     "info": {
@@ -12970,6 +12972,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "A sua subscrição beneficia atualmente de um desconto. Ao aderir a esta nova promoção, o desconto atual deixará de ser aplicado."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "As contas de Born Private não podem ser compradas com uma subscrição ativa."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "A iniciativa Born Private requer uma doação."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "A sua conta é muito antiga para a iniciativa de Born Private."
       ]
     },
     "Payments.Error": {
@@ -16610,6 +16621,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Poderá atribuir cargos assim que o utilizador aceitar o convite."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Este utilizador obtém direitos de administrador na próxima vez que se autenticar."
       ]
     },
     "Validation": {
@@ -17070,6 +17084,16 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantia de reembolso do dinheiro em 30 dias: cancele até 30 dias da sua compra e contacte o nosso ${ customerSupportLink } para obter um reembolso."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Conta Bancária"
       ]
     }
   }

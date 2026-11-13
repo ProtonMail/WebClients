@@ -1580,8 +1580,7 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Faire confiance à cette clé",
-        "Faire confiance à ces clés"
+        "Clé de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -1781,6 +1780,9 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Write ${ count } logs": [
+        "Écrire ${ count } entrées de journal"
       ]
     },
     "action": {
@@ -4452,6 +4454,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ],
+      "High-performance model for complex tasks": [
+        "Modèle haute performance pour les tâches complexes"
+      ],
+      "Lightweight model for everyday tasks": [
+        "Modèle léger pour les tâches quotidiennes"
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Pour utiliser ${ LUMO_SHORT_APP_NAME } dans ${ MAIL_APP_NAME }, ajoutez-le à votre abonnement."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Pour utiliser ${ LUMO_SHORT_APP_NAME } dans ${ MAIL_APP_NAME }, demandez l'accès à votre admin."
       ]
     },
     "description": {
@@ -5446,6 +5460,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
+      ],
+      "Embedded images could not be removed. The message was not switched to plain text.": [
+        "Les images intégrées ne peuvent pas être supprimées. Le message n'a pas été transformé en texte brut."
       ]
     },
     "error": {
@@ -5840,6 +5857,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Ce navigateur ne prend pas en charge les clés de sécurité. Veuillez essayer un autre navigateur."
       ]
     },
     "fido2: Info": {
@@ -9706,6 +9726,42 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "Change how your mail is grouped": [
+        "Changez la manière dont vos messages sont regroupés"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Discutez avec ${ LUMO_SHORT_APP_NAME } pour rechercher, lire, organiser et rédiger vos messages."
+      ],
+      "Document in foundation-search index": [
+        "Document figurant dans l'index « foundation-search »"
+      ],
+      "Label ${ emails } as ${ names }": [
+        "Marquer ${ emails } comme ${ names }"
+      ],
+      "Leave Big Tech": [
+        "Quitter les géants de la tech"
+      ],
+      "Opened ${ location }": [
+        "${ location } ouvert"
+      ],
+      "Read open email “${ subject }”": [
+        "Lire l'e-mail ouvert « ${ subject } »"
+      ],
+      "Star ${ emails }": [
+        "Marquer ${ emails } d'une étoile"
+      ],
+      "Stop companies reading my emails": [
+        "Bloquer les sociétés qui lisent mes messages"
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Cette adresse Gmail est associée à un autre compte ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } et autres). Nous travaillons à rendre cette connexion plus fluide, mais pour l'instant, vous devrez suivre quelques étapes."
+      ],
+      "We found some mailing lists that you don't read. You can unsubscribe from them in one click.": [
+        "Nous avons trouvé quelques listes de diffusion que vous ne lisez pas. Vous pouvez vous en désinscrire en un clic."
+      ],
+      "Writes ${ REALISTIC_ENTRIES } realistic log lines trickling in over a minute, like an actual session, instead of all at once. Takes about a minute to run. Keep this tab focused: frame measurements pause in the background.": [
+        "Affiche ${ REALISTIC_ENTRIES } lignes de journal réalistes au fur et à mesure pendant une minute, comme lors d'une véritable session, plutôt que toutes en même temps. L'exécution prend environ une minute. Veillez à ce que cet onglet reste actif : les mesures sont mises en pause en arrière-plan."
       ]
     },
     "info": {
@@ -11069,6 +11125,25 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "Assistant IA ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Model": [
+        "Modèle"
+      ],
+      "Select all ${ count } unused sender": [
+        "Sélectionnez ${ count } expéditeur inutilisé.",
+        "Sélectionnez ${ count } expéditeurs inutilisés."
+      ],
+      "Sum of write() calls": [
+        "Somme des appels en écriture"
+      ],
+      "Write (whole session)": [
+        "Ecrire la session complète"
+      ],
+      "Write-chain drain after last line": [
+        "Vider la chaîne d'écriture après la dernière ligne"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12733,7 +12808,7 @@
     },
     "ngc_access_banner: action": {
       "Try it now": [
-        "Essayez-la maintenant"
+        "Essayez-le maintenant"
       ]
     },
     "ngc_access_banner: info": {
@@ -13010,7 +13085,7 @@
         "navigateur"
       ],
       "Clear out deleted and spam emails after 30 days.": [
-        "Supprimez les e-mails dans la corbeille et les spams après 30 jours."
+        "Effacer les e-mails dans la corbeille et les indésirables/spam après 30 jours."
       ],
       "Continue": [
         "Continuer"
@@ -14750,6 +14825,9 @@
       ],
       "Snooze ${ emails } until ${ wakeTime }": [
         "Mettre en attente ${ emails } jusqu'à ${ wakeTime }"
+      ],
+      "Snooze ${ emails }": [
+        "Remettre ${ emails } à plus tard"
       ]
     },
     "Snooze message": {
@@ -15875,6 +15953,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Vous avez résilié votre abonnement."
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "L'assistant IA ${ LUMO_SHORT_APP_NAME } a été désactivé"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "L'assistant IA ${ LUMO_SHORT_APP_NAME } a été activé"
       ]
     },
     "Success notification": {
@@ -17079,7 +17163,7 @@
         "Mise à niveau vers ${ planName }"
       ],
       "Upgrade to keep your premium benefits.": [
-        "Passez à la version supérieure pour conserver vos avantages premium."
+        "Changer d'abonnement pour conserver vos avantages premium."
       ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Améliorez votre productivité pour ${ formattedPrice } avec ${ planName }"
@@ -17183,6 +17267,9 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Start with a cleaner Inbox": [
+        "Commencez par nettoyer votre boite de réception"
       ]
     },
     "Title header for keys table": {

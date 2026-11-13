@@ -1577,8 +1577,7 @@
         "भरोसा करें"
       ],
       "Trust key": [
-        "ट्रस्ट की",
-        "ट्रस्ट कीज़"
+        "ट्रस्ट की"
       ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
@@ -4440,6 +4439,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "आप पहले ही 10 छद्म बना चुके हैं। ${ BRAND_NAME } Unlimited के साथ असीमित छद्म और 500 जीबी स्टोरेज प्राप्त करें।"
+      ],
+      "High-performance model for complex tasks": [
+        "कठिन कार्यों के लिए उच्च-प्रदर्शन वाला मॉडल"
+      ],
+      "Lightweight model for everyday tasks": [
+        "रोज़ाना के कामों के लिए लाइटवेट मॉडल"
       ]
     },
     "description": {
@@ -5816,6 +5821,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "आपकी सुरक्षा चाबी के साथ प्रमाणीकरण करते समय कुछ गड़बड़ हो गई। कृपया पुनः प्रयास करें।"
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "यह ब्राउज़र सिक्योरिटी कीज़ को सपोर्ट नहीं करता है। कृपया कोई दूसरा ब्राउज़र आज़माएं।"
       ]
     },
     "fido2: Info": {
@@ -9687,6 +9695,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "आप एक व्यवस्थित और साफ इन्बॉक्स से बस कुछ ही क्लिक दूर हैं"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "अपने ईमेल खोजने, पढ़ने, व्यवस्थित करने और ड्राफ्ट करने के लिए ${ LUMO_SHORT_APP_NAME } के साथ चैट करें।"
       ]
     },
     "info": {
@@ -11069,6 +11080,12 @@
       ],
       "ZIP code": [
         "ZIP कोड"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } AI असिस्टेंट"
+      ],
+      "Model": [
+        "मॉडल"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15793,6 +15810,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "आपने अपनी सदस्यता सफलतापूर्वक रद्द कर दी है।"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } AI असिस्टेंट अक्षम है"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } AI असिस्टेंट सक्षम है"
       ]
     },
     "Success notification": {

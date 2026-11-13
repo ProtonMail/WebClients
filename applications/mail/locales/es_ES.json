@@ -1583,8 +1583,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
+        "Confiar"
       ],
       "Trust public key": [
         "Confiar en la clave pública"
@@ -4463,6 +4462,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya has creado 10 alias. Obtén alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Unlimited."
+      ],
+      "High-performance model for complex tasks": [
+        "Modelo de alto rendimiento para tareas complejas"
+      ],
+      "Lightweight model for everyday tasks": [
+        "Modelo ligero para las tareas de todos los días"
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Para usar ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, añádelo a tu suscripción."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Para usar ${ LUMO_SHORT_APP_NAME } en ${ MAIL_APP_NAME }, solicita acceso a tu administrador."
       ]
     },
     "description": {
@@ -5854,6 +5865,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Algo salió mal al autenticar con tu clave de seguridad. Inténtalo de nuevo."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Este navegador no admite llaves de seguridad. Prueba con otro navegador."
       ]
     },
     "fido2: Info": {
@@ -9771,6 +9785,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Estás a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Chatea con ${ LUMO_SHORT_APP_NAME } para buscar, leer, organizar y redactar tus correos."
       ]
     },
     "info": {
@@ -11153,6 +11170,12 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } asistente de IA"
+      ],
+      "Model": [
+        "Modelo"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15968,6 +15991,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "La suscripción ha sido cancelada."
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } asistente de IA desactivado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } asistente de IA activado"
       ]
     },
     "Success notification": {

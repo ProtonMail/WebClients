@@ -1583,8 +1583,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -4469,6 +4468,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
+      ],
+      "High-performance model for complex tasks": [
+        "Modelo de alto desempenho para tarefas complexas"
+      ],
+      "Lightweight model for everyday tasks": [
+        "Modelo leve para tarefas do dia a dia"
       ]
     },
     "description": {
@@ -5860,6 +5865,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ocorreu um erro ao autenticar com sua chave de segurança. Tente novamente."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Este navegador não suporta chaves de segurança. Tente um navegador diferente."
       ]
     },
     "fido2: Info": {
@@ -9777,6 +9785,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Você está a alguns cliques de distância de ter uma caixa de entrada organizada"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Bate-papo com o ${ LUMO_SHORT_APP_NAME } para pesquisar, ler, organizar e redigir seus e-mails."
       ]
     },
     "info": {
@@ -11159,6 +11170,12 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "Assistente de IA da ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Model": [
+        "Modelo"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15980,6 +15997,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Você cancelou sua assinatura com sucesso."
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "Assistente de IA do ${ LUMO_SHORT_APP_NAME } desativado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "Assistente de IA do ${ LUMO_SHORT_APP_NAME } ativado"
       ]
     },
     "Success notification": {

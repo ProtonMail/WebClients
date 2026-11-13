@@ -1583,8 +1583,7 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Κλειδί Εμπιστοσύνης",
-        "Κλειδιά Εμπιστοσύνης"
+        "Εμπιστοσύνη στο κλειδί"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -4469,6 +4468,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
+      ],
+      "High-performance model for complex tasks": [
+        "Μοντέλο υψηλών επιδόσεων για σύνθετες εργασίες"
+      ],
+      "Lightweight model for everyday tasks": [
+        "Ελαφρύ μοντέλο για καθημερινές εργασίες"
       ]
     },
     "description": {
@@ -5860,6 +5865,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει κλειδιά ασφαλείας. Δοκιμάστε ένα άλλο πρόγραμμα περιήγησης."
       ]
     },
     "fido2: Info": {
@@ -9777,6 +9785,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Συνομιλήστε με το ${ LUMO_SHORT_APP_NAME } για να αναζητήσετε, να διαβάσετε, να οργανώσετε και να συντάξετε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας."
       ]
     },
     "info": {
@@ -11159,6 +11170,12 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } βοηθός ΤΝ"
+      ],
+      "Model": [
+        "Μοντέλο"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15974,6 +15991,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Ακυρώσατε επιτυχώς τη συνδρομή σας."
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "Ο βοηθός ΤΝ ${ LUMO_SHORT_APP_NAME } είναι απενεργοποιημένος"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "Ο βοηθός ΤΝ ${ LUMO_SHORT_APP_NAME } είναι ενεργοποιημένος"
       ]
     },
     "Success notification": {

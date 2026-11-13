@@ -1568,8 +1568,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1769,6 +1768,12 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Cancel trial": [
+        "Avbryt provperioden"
+      ],
+      "Move ${ LUMO_SHORT_APP_NAME } to the right": [
+        "Flytta ${ LUMO_SHORT_APP_NAME } till höger"
       ]
     },
     "action": {
@@ -4416,6 +4421,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ],
+      "High-performance model for complex tasks": [
+        "Högpresterande modell för komplexa uppgifter"
+      ],
+      "Lightweight model for everyday tasks": [
+        "Lättviktsmodell för vardagsuppdrag"
       ]
     },
     "description": {
@@ -5801,6 +5812,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Den här webbläsaren stödjer inte säkerhetsnycklar. Var vänlig försök med en annan webbläsare."
       ]
     },
     "fido2: Info": {
@@ -9523,6 +9537,57 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Chatta med  ${ LUMO_SHORT_APP_NAME } för att söka, läsa, organisera och göra utkast till din e-post."
+      ],
+      "Choose all that apply.": [
+        "Välj alla som är tillämpliga."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatterna beräknas utifrån ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
+      ],
+      "forward": [
+        "framåt"
+      ],
+      "I didn't have one": [
+        "Jag har ingen"
+      ],
+      "I'll go through last week's mail and pull out what actually needs a reply, so you can deal with it in one go.": [
+        "Jag ska gå igenom förra veckans e-post och ta fram vad som faktiskt behöver besvaras, så du kan hantera allt på en gång."
+      ],
+      "No booking pages yet": [
+        "Inga bokningssidor än"
+      ],
+      "No emails selected": [
+        "Inga e-postmeddelanden valda"
+      ],
+      "Read open email “${ subject }”": [
+        "Läs öppen e-post “${ subject }”"
+      ],
+      "Remove the star from ${ emails }": [
+        "Ta bort stjärnan från ${ emails }"
+      ],
+      "Rename this label": [
+        "Byt namn på den här etiketten"
+      ],
+      "Turn off your away message": [
+        "Slå av ditt frånvaromeddelande"
+      ],
+      "What needs handling?": [
+        "Vad behöver hanteras?"
+      ],
+      "Work or business": [
+        "Arbete eller företag"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en öppen faktura ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en öppen faktura på ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "You'll choose a new username": [
+        "Du får välja ett nytt användarnamn"
       ]
     },
     "info": {
@@ -10504,7 +10569,7 @@
         "Meddelanden är inaktiverade, för att aktivera dem ändrar du webbläsarinställningarna."
       ],
       "One-time codes": [
-        "Engångs-kodeks"
+        "Engångskoder"
       ],
       "Operating system": [
         "Operativsystem"
@@ -10869,6 +10934,21 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } AI-assistent "
+      ],
+      "At": [
+        "Vid"
+      ],
+      "Cc": [
+        "Cc"
+      ],
+      "IndexedDB store": [
+        "IndexedDB-datalager"
+      ],
+      "Model": [
+        "Modell"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11219,6 +11299,12 @@
       ],
       "You need to reactivate your keys to see the updated invitation": [
         "Du måste återaktivera dina nycklar för att se den uppdaterade inbjudan"
+      ],
+      "Advanced auto-reply options": [
+        "Avancerade alternativ för automatiskt svar"
+      ],
+      "Pay it": [
+        "Betala den"
       ]
     },
     "Link to calendar event": {
@@ -12729,6 +12815,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Obegränsat antal alias för att skydda din identitet"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me e-postadress"
       ]
     },
     "Onboarding List Placeholder": {
@@ -13385,6 +13474,21 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } är endast tillgängligt på företagspaket."
+      ],
+      "An organization is required for this plan.": [
+        "En organisation krävs för den här planen."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Det valda paketet stöder inte tillräckligt med adresser för ditt konto."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Detta paket stöder inte medlemmar på ditt konto."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Denna prenumeration kan inte slutföras just nu. Försök igen."
       ]
     },
     "Payments.Error": {
@@ -15505,10 +15609,10 @@
         "Flyttad till ${ label }. Liknande meddelanden kommer att kategoriseras där i framtiden."
       ],
       "One-time codes disabled": [
-        "Engångs-kodeks inaktiverade"
+        "Engångskoder inaktiverade"
       ],
       "One-time codes enabled": [
-        "Engångs-kodeks inaktiverade"
+        "Engångskoder aktiverade"
       ],
       "Password copied to clipboard": [
         "Lösenord kopierat till urklipp"
@@ -15566,6 +15670,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Du har avbrutit din prenumeration."
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } AI-assistent inaktiverad"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } AI-assistent aktiverad"
       ]
     },
     "Success notification": {
@@ -16874,6 +16984,9 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "Make Categories work better for you": [
+        "Få Kategorier att fungera bättre för dig"
       ]
     },
     "Title header for keys table": {

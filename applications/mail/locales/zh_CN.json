@@ -4428,6 +4428,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "要在 ${ MAIL_APP_NAME } 中使用 ${ LUMO_SHORT_APP_NAME }，请将其添加到您的订阅中。"
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "要在 ${ MAIL_APP_NAME } 中使用 ${ LUMO_SHORT_APP_NAME }，请向您的管理员申请访问权限。"
       ]
     },
     "description": {
@@ -9592,6 +9598,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "只需几步即可拥有清爽收件箱"
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "一键从最近的邮件中复制一次性验证码"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "复制后请将一次性验证码邮件移至回收站"
       ]
     },
     "info": {
@@ -10959,6 +10971,12 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Move to Trash": [
+        "移至回收站"
+      ],
+      "One-time codes": [
+        "一次性验证码"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15647,6 +15665,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "您已成功取消订阅"
+      ],
+      "One-time codes disabled": [
+        "一次性验证码已停用"
+      ],
+      "One-time codes enabled": [
+        "一次性验证码已启用"
       ]
     },
     "Success notification": {

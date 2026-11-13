@@ -1583,8 +1583,7 @@
         "Considera attendibile"
       ],
       "Trust key": [
-        "chiave attendibile",
-        "chiavi attendibili"
+        "Affida chiave"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -4364,7 +4363,7 @@
         "Per iniziare, dai un nome alla tua organizzazione."
       ],
       "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
-        "Per utilizzare ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, aggiungilo alla tua iscrizione."
+        "Per utilizzare ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, aggiungilo al tuo abbonamento."
       ],
       "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
         "Per utilizzare ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, richiedi l'accesso al tuo amministratore."
@@ -4469,6 +4468,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Hai già creato 10 alias. Ottieni alias illimitati e 500 GB di spazio di archiviazione con ${ BRAND_NAME } Unlimited."
+      ],
+      "High-performance model for complex tasks": [
+        "Modello ad alte prestazioni per attività complesse"
+      ],
+      "Lightweight model for everyday tasks": [
+        "Modello leggero per le attività quotidiane"
       ]
     },
     "description": {
@@ -5860,6 +5865,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Questo browser non supporta le chiavi di sicurezza. Provare con un altro browser."
       ]
     },
     "fido2: Info": {
@@ -7396,7 +7404,7 @@
         "Copiato negli appunti"
       ],
       "Copy one-time codes from recent emails in one click": [
-        "Copia i codici monouso dalle e-mail recenti con un solo clic"
+        "Copia i codici monouso dalle email recenti con un solo clic"
       ],
       "Copy the link to clipboard": [
         "Copia il link negli appunti"
@@ -8169,7 +8177,7 @@
         "Sposta qui"
       ],
       "Move one-time code emails to Trash on copy": [
-        "Sposta le e-mail con codice monouso nel Cestino al momento della copia"
+        "Sposta le email con codice monouso nel Cestino al momento della copia"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Dai un nome alla tua cartella e seleziona la cartella principale nella quale verrà contenuta. Se non selezioni una cartella principale, questa nuova cartella verrà creata come una cartella di primo livello."
@@ -9765,6 +9773,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Conversa con ${ LUMO_SHORT_APP_NAME } per cercare, leggere, organizzare e redigere le email."
       ]
     },
     "info": {
@@ -11147,6 +11158,12 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "Assistente IA ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Model": [
+        "Modello"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15962,6 +15979,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Hai annullato l'abbonamento con successo."
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "Assistente IA ${ LUMO_SHORT_APP_NAME } disabilitato"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "Assistente IA ${ LUMO_SHORT_APP_NAME } abilitato"
       ]
     },
     "Success notification": {
