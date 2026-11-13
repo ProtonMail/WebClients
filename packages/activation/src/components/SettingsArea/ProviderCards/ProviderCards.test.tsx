@@ -1,6 +1,7 @@
 import { fireEvent, screen, waitFor } from '@testing-library/dom';
 import { HttpResponse, http } from 'msw';
 import { setupServer } from 'msw/node';
+import { type Mock, type MockedFunction, vi } from 'vitest';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -9,7 +10,7 @@ import { ADDRESS_FLAGS, APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/l
 
 import { headers } from '../../../../msw.header';
 import useBYOEAddressesCounts from '../../../hooks/useBYOEAddressesCounts';
-import useBYOEFeatureStatus from '../../../hooks/useBYOEFeatureStatus';
+import type useBYOEFeatureStatus from '../../../hooks/useBYOEFeatureStatus';
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '../../../interface';
 import { easySwitchRender } from '../../../tests/render';
 import ProviderCard from './ProviderCard';
@@ -62,7 +63,7 @@ const calendars = [
     },
 ];
 
-jest.mock('@proton/mail/store/importerConfig/hooks', () => ({
+vi.mock('@proton/mail/store/importerConfig/hooks', () => ({
     useApiEnvironmentConfig: () => [
         {
             'oauth.google.client_id': 'string',
@@ -73,13 +74,13 @@ jest.mock('@proton/mail/store/importerConfig/hooks', () => ({
     ],
 }));
 
-jest.mock('../../../hooks/useBYOEAddressesCounts');
-const mockUseBYOEAddressesCounts = useBYOEAddressesCounts as jest.MockedFunction<typeof useBYOEAddressesCounts>;
+vi.mock('../../../hooks/useBYOEAddressesCounts');
+const mockUseBYOEAddressesCounts = useBYOEAddressesCounts as MockedFunction<typeof useBYOEAddressesCounts>;
 
-jest.mock('@proton/account/user/hooks');
-const mockUseUser = useUser as jest.MockedFunction<any>;
+vi.mock('@proton/account/user/hooks');
+const mockUseUser = useUser as MockedFunction<any>;
 
-jest.mock('../../../oles/useOLESFeatureStatus', () => ({
+vi.mock('../../../oles/useOLESFeatureStatus', () => ({
     __esModule: true,
     default: () => ({
         featureSupported: false,
@@ -90,20 +91,19 @@ jest.mock('../../../oles/useOLESFeatureStatus', () => ({
     }),
 }));
 
-jest.mock('@proton/calendar/calendars/hooks', () => {});
-jest.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
+vi.mock('@proton/calendar/calendarUserSettings/hooks', () => ({
     useCalendarUserSettings: () => [],
     useGetCalendarUserSettings: () => () => [],
 }));
-jest.mock('@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider', () => ({
-    useCalendarModelEventManager: jest.fn(() => ({
-        subscribe: jest.fn(),
+vi.mock('@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider', () => ({
+    useCalendarModelEventManager: vi.fn(() => ({
+        subscribe: vi.fn(),
     })),
 }));
-jest.mock('@proton/calendar/calendars/hooks', () => ({
-    useCalendars: jest.fn(() => [calendars, false]),
-    useWriteableCalendars: jest.fn(() => [calendars, false]),
-    useGetCalendars: jest.fn(),
+vi.mock('@proton/calendar/calendars/hooks', () => ({
+    useCalendars: vi.fn(() => [calendars, false]),
+    useWriteableCalendars: vi.fn(() => [calendars, false]),
+    useGetCalendars: vi.fn(),
 }));
 
 const server = setupServer(
@@ -121,13 +121,14 @@ const server = setupServer(
     })
 );
 
-jest.mock('@proton/account/addresses/hooks');
-const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
+vi.mock('@proton/account/addresses/hooks');
+const mockUseAddresses = useAddresses as MockedFunction<any>;
 
-jest.mock('../../../hooks/useBYOEFeatureStatus');
-const mockUseBYOEFeatureStatus = useBYOEFeatureStatus as jest.MockedFunction<typeof useBYOEFeatureStatus>;
+// useBYOEFeatureStatus is already mocked by easySwitchRender (src/tests/render.tsx): read that mock lazily
+let mockUseBYOEFeatureStatus: MockedFunction<typeof useBYOEFeatureStatus>;
 
-beforeEach(() => {
+beforeEach(async () => {
+    mockUseBYOEFeatureStatus = vi.mocked((await import('../../../hooks/useBYOEFeatureStatus')).default);
     mockUseBYOEFeatureStatus.mockReturnValue([false, false] as const);
     mockUseAddresses.mockReturnValue([[], false]);
 });
@@ -272,7 +273,7 @@ describe('Provider cards process testing', () => {
     });
 
     it('Should disable calendar checkbox in advanced import when user has no calendar', async () => {
-        (useWriteableCalendars as jest.Mock).mockReturnValueOnce([[], false]);
+        (useWriteableCalendars as Mock).mockReturnValueOnce([[], false]);
         mockUseUser.mockReturnValue(defaultUseUser);
         easySwitchRender(<ProviderCard app={APPS.PROTONMAIL} source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} />);
 

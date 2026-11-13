@@ -1,13 +1,14 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { ClaimableAddressModal } from './ClaimableAddressModal';
 
 describe('ClaimableAddressModal', () => {
     const emailAddress = 'test@gmail.com';
-    const onClaim = jest.fn().mockResolvedValue(true);
+    const onClaim = vi.fn().mockResolvedValue(true);
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should display the email address', () => {
@@ -16,8 +17,8 @@ describe('ClaimableAddressModal', () => {
                 emailAddress={emailAddress}
                 onClaim={onClaim}
                 open
-                onClose={jest.fn()}
-                onExit={jest.fn()}
+                onClose={vi.fn()}
+                onExit={vi.fn()}
             />
         );
 
@@ -25,14 +26,14 @@ describe('ClaimableAddressModal', () => {
     });
 
     it('should claim the address then close the modal when clicking the connect button', async () => {
-        const onClose = jest.fn();
+        const onClose = vi.fn();
         render(
             <ClaimableAddressModal
                 emailAddress={emailAddress}
                 onClaim={onClaim}
                 open
                 onClose={onClose}
-                onExit={jest.fn()}
+                onExit={vi.fn()}
             />
         );
 
@@ -43,7 +44,7 @@ describe('ClaimableAddressModal', () => {
     });
 
     it('should keep the modal open when the claim fails', async () => {
-        const onClose = jest.fn();
+        const onClose = vi.fn();
         onClaim.mockResolvedValueOnce(false);
         render(
             <ClaimableAddressModal
@@ -51,7 +52,7 @@ describe('ClaimableAddressModal', () => {
                 onClaim={onClaim}
                 open
                 onClose={onClose}
-                onExit={jest.fn()}
+                onExit={vi.fn()}
             />
         );
 
@@ -63,7 +64,7 @@ describe('ClaimableAddressModal', () => {
     });
 
     it('should not close on Escape while the claim is in progress', async () => {
-        const onClose = jest.fn();
+        const onClose = vi.fn();
         let resolveClaim: (value: boolean) => void = () => {};
         onClaim.mockReturnValueOnce(new Promise<boolean>((resolve) => (resolveClaim = resolve)));
         render(
@@ -72,7 +73,7 @@ describe('ClaimableAddressModal', () => {
                 onClaim={onClaim}
                 open
                 onClose={onClose}
-                onExit={jest.fn()}
+                onExit={vi.fn()}
             />
         );
 
@@ -86,14 +87,14 @@ describe('ClaimableAddressModal', () => {
     });
 
     it('should open the help link without closing the modal', () => {
-        const onClose = jest.fn();
+        const onClose = vi.fn();
         render(
             <ClaimableAddressModal
                 emailAddress={emailAddress}
                 onClaim={onClaim}
                 open
                 onClose={onClose}
-                onExit={jest.fn()}
+                onExit={vi.fn()}
             />
         );
 

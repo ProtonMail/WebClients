@@ -1,23 +1,26 @@
 import { renderHook } from '@testing-library/react';
+import { vi } from 'vitest';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
 import { ADDRESS_FLAGS, ADDRESS_RECEIVE, ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import { ApiSyncState } from '../api/api.interface';
 import { ImportType } from '../interface';
+import { useEasySwitchSelector } from '../logic/store';
 import type { Sync } from '../logic/sync/sync.interface';
 import { useSyncsTableRows } from './useSyncsTableRows';
 
-jest.mock('@proton/account/addresses/hooks', () => ({
-    useAddresses: jest.fn(),
+vi.mock('@proton/account/addresses/hooks', () => ({
+    useAddresses: vi.fn(),
 }));
 
-jest.mock('../logic/store', () => ({
-    useEasySwitchSelector: jest.fn(),
+vi.mock('../logic/store', () => ({
+    useEasySwitchSelector: vi.fn(),
 }));
 
-jest.mock('../logic/sync/sync.selectors', () => ({
-    getAllSync: jest.fn(),
+vi.mock('../logic/sync/sync.selectors', () => ({
+    getAllSync: vi.fn(),
 }));
 
 const byoeAddress = {
@@ -61,11 +64,11 @@ const nonByoeSync2: Sync = {
 };
 
 describe('useSyncsTableRows', () => {
-    const mockUseAddresses = require('@proton/account/addresses/hooks').useAddresses;
-    const mockUseEasySwitchSelector = require('../logic/store').useEasySwitchSelector;
+    const mockUseAddresses = vi.mocked(useAddresses) as any;
+    const mockUseEasySwitchSelector = vi.mocked(useEasySwitchSelector) as any;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should filter out syncs linked to a BYOE address', () => {

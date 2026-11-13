@@ -1,4 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
+import { type Mock, vi } from 'vitest';
 
 import { buildAddress } from '@proton/account/testing/buildAddress';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
@@ -9,33 +10,33 @@ import { loadSyncList } from '../logic/sync/sync.actions';
 import { updateBYOEAddressConnection } from '../thunks/updateBYOEAddressConnection';
 import { useDisconnectBYOEAddress } from './useDisconnectBYOEAddress';
 
-jest.mock('@proton/account/addresses/hooks', () => ({ useAddresses: jest.fn(() => [[]]) }));
-jest.mock('@proton/account/user/hooks', () => ({ useUser: jest.fn(() => [{}]) }));
+vi.mock('@proton/account/addresses/hooks', () => ({ useAddresses: vi.fn(() => [[]]) }));
+vi.mock('@proton/account/user/hooks', () => ({ useUser: vi.fn(() => [{}]) }));
 
-const mockEntitlements = jest.fn();
-jest.mock('@proton/account/entitlementCatalog/hooks', () => ({
+const mockEntitlements = vi.fn();
+vi.mock('@proton/account/entitlementCatalog/hooks', () => ({
     useEntitlementChecksForOrgAndUser: () => mockEntitlements(),
 }));
 
-const mockDispatch = jest.fn();
-jest.mock('@proton/redux-shared-store/sharedProvider', () => ({ useDispatch: () => mockDispatch }));
+const mockDispatch = vi.fn();
+vi.mock('@proton/redux-shared-store/sharedProvider', () => ({ useDispatch: () => mockDispatch }));
 
-const mockEasySwitchDispatch = jest.fn();
-jest.mock('../logic/store', () => ({ useEasySwitchDispatch: () => mockEasySwitchDispatch }));
+const mockEasySwitchDispatch = vi.fn();
+vi.mock('../logic/store', () => ({ useEasySwitchDispatch: () => mockEasySwitchDispatch }));
 
-jest.mock('../logic/sync/sync.actions', () => ({ loadSyncList: jest.fn(() => 'loadSyncList') }));
-jest.mock('../thunks/updateBYOEAddressConnection', () => ({
-    updateBYOEAddressConnection: jest.fn((args) => ({ thunk: args })),
+vi.mock('../logic/sync/sync.actions', () => ({ loadSyncList: vi.fn(() => 'loadSyncList') }));
+vi.mock('../thunks/updateBYOEAddressConnection', () => ({
+    updateBYOEAddressConnection: vi.fn((args) => ({ thunk: args })),
 }));
-jest.mock('@proton/telemetry-tracker/lib/tracker', () => ({
-    tracker: { emit: jest.fn() },
+vi.mock('@proton/telemetry-tracker/lib/tracker', () => ({
+    tracker: { emit: vi.fn() },
 }));
 
-jest.mock('@proton/shared/lib/helpers/address', () => ({ getIsBYOEOnlyAccount: jest.fn() }));
-jest.mock('@proton/shared/lib/user/helpers', () => ({ isAdmin: jest.fn() }));
+vi.mock('@proton/shared/lib/helpers/address', () => ({ getIsBYOEOnlyAccount: vi.fn() }));
+vi.mock('@proton/shared/lib/user/helpers', () => ({ isAdmin: vi.fn() }));
 
-const mockGetIsBYOEOnlyAccount = getIsBYOEOnlyAccount as jest.Mock;
-const mockIsAdmin = isAdmin as jest.Mock;
+const mockGetIsBYOEOnlyAccount = getIsBYOEOnlyAccount as Mock;
+const mockIsAdmin = isAdmin as Mock;
 
 const address = buildAddress({ ID: 'address-id', Email: 'jane@gmail.com' });
 
@@ -53,7 +54,7 @@ const setup = ({
 
 describe('useDisconnectBYOEAddress', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockDispatch.mockResolvedValue(undefined);
     });
 

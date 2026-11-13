@@ -1,5 +1,5 @@
-import { setLocation } from '@proton/jest-env/setLocation';
 import { GOOGLE_OAUTH_PATH } from '@proton/shared/lib/api/activation';
+import { setLocation } from '@proton/vitest-config/setLocation';
 
 import { getScopeFromProvider } from '../components/Modals/OAuth/OAuthModal.helpers';
 import { EASY_SWITCH_FEATURES, ImportProvider, ImportType, OAUTH_PROVIDER } from '../interface';

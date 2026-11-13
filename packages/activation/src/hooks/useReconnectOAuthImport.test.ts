@@ -1,4 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { createToken, getTokensByFeature, resumeImport, updateImport } from '../api/api';
 import { ApiImportProvider } from '../api/api.interface';
@@ -13,22 +14,22 @@ import {
 import type { Importer } from '../logic/importers/importers.interface';
 import { useReconnectOAuthImport } from './useReconnectOAuthImport';
 
-const mockApi = jest.fn();
-jest.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }));
+const mockApi = vi.fn();
+vi.mock('@proton/app-context/useApi', () => ({ useApi: () => mockApi }));
 
-const mockCall = jest.fn();
-jest.mock('@proton/components/hooks/useEventManager', () => ({
+const mockCall = vi.fn();
+vi.mock('@proton/components/hooks/useEventManager', () => ({
     __esModule: true,
     default: () => ({ call: mockCall }),
 }));
 
-const mockCreateNotification = jest.fn();
-jest.mock('@proton/app-context/useNotifications', () => ({
+const mockCreateNotification = vi.fn();
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
 
-const mockTriggerOAuthPopup = jest.fn();
-jest.mock('./useOAuthPopup', () => ({
+const mockTriggerOAuthPopup = vi.fn();
+vi.mock('./useOAuthPopup', () => ({
     __esModule: true,
     default: () => ({ triggerOAuthPopup: mockTriggerOAuthPopup, loadingConfig: false }),
 }));
@@ -63,7 +64,7 @@ const reconnect = async (source: EASY_SWITCH_SOURCES, product: ImportType) => {
 
 describe('useReconnectOAuthImport', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('resumes with the existing token without opening the OAuth popup', async () => {

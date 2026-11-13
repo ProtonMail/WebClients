@@ -1,12 +1,13 @@
 import { fireEvent, screen, waitFor } from '@testing-library/dom';
+import { type MockedFunction, vi } from 'vitest';
 
 import useAvailableAddresses from '../../../hooks/useAvailableAddresses';
 import { generateMockAddressArray } from '../../../tests/data/addresses';
 import { easySwitchRender } from '../../../tests/render';
 import CustomizeMailImportModalAddresses from './CustomizeMailImportModalAddresses';
 
-jest.mock('../../../hooks/useAvailableAddresses');
-const mockUseAvailableAddresses = useAvailableAddresses as jest.MockedFunction<any>;
+vi.mock('../../../hooks/useAvailableAddresses');
+const mockUseAvailableAddresses = useAvailableAddresses as MockedFunction<any>;
 
 const addresses = generateMockAddressArray(3, true);
 
@@ -17,7 +18,7 @@ describe('CustomizeMailImportModalAddresses', () => {
             loading: false,
             defaultAddress: addresses[0],
         });
-        const onSubmit = jest.fn();
+        const onSubmit = vi.fn();
 
         easySwitchRender(<CustomizeMailImportModalAddresses selectedAddressID={addresses[0].ID} onChange={onSubmit} />);
 

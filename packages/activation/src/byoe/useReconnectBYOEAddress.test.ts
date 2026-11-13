@@ -1,4 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
+import { type MockedFunction, vi } from 'vitest';
 
 import { buildAddress } from '@proton/account/testing/buildAddress';
 import { tracker } from '@proton/telemetry-tracker/lib/tracker';
@@ -11,46 +12,46 @@ import { updateBYOEAddressConnection } from '../thunks/updateBYOEAddressConnecti
 import type { ReconnectBYOEAddressResult } from './reconnectBYOEAddress.interface';
 import { useReconnectBYOEAddress } from './useReconnectBYOEAddress';
 
-const mockEasySwitchDispatch = jest.fn();
-jest.mock('../logic/store', () => ({
+const mockEasySwitchDispatch = vi.fn();
+vi.mock('../logic/store', () => ({
     useEasySwitchDispatch: () => mockEasySwitchDispatch,
 }));
 
-const mockDispatch = jest.fn();
-jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
+const mockDispatch = vi.fn();
+vi.mock('@proton/redux-shared-store/sharedProvider', () => ({
     __esModule: true,
     useDispatch: () => mockDispatch,
 }));
 
-const mockApi = jest.fn();
-jest.mock('@proton/app-context/useApi', () => ({
+const mockApi = vi.fn();
+vi.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
     useApi: () => mockApi,
 }));
 
-jest.mock('../hooks/useBYOEFeatureStatus');
-const mockUseBYOEFeatureStatus = useBYOEFeatureStatus as jest.MockedFunction<typeof useBYOEFeatureStatus>;
+vi.mock('../hooks/useBYOEFeatureStatus');
+const mockUseBYOEFeatureStatus = useBYOEFeatureStatus as MockedFunction<typeof useBYOEFeatureStatus>;
 
-jest.mock('../logic/sync/sync.actions', () => ({
+vi.mock('../logic/sync/sync.actions', () => ({
     WRONG_ACCOUNT_ERROR: 'wrong_account',
     SyncTokenStrategy: { create: 'create', useExisting: 'useExisting' },
     createSyncItem: Object.assign(
-        jest.fn((props) => ({ type: 'sync/create', props })),
+        vi.fn((props) => ({ type: 'sync/create', props })),
         { rejected: { match: (action: { type: string }) => action.type.endsWith('rejected') } }
     ),
-    deleteSyncItem: jest.fn((props) => ({ type: 'sync/delete', props })),
-    loadSyncList: jest.fn(() => ({ type: 'sync/load' })),
+    deleteSyncItem: vi.fn((props) => ({ type: 'sync/delete', props })),
+    loadSyncList: vi.fn(() => ({ type: 'sync/load' })),
 }));
 
-jest.mock('../api/api', () => ({
-    getTokensByFeature: jest.fn((params) => ({ url: 'tokens', method: 'GET', params })),
+vi.mock('../api/api', () => ({
+    getTokensByFeature: vi.fn((params) => ({ url: 'tokens', method: 'GET', params })),
 }));
 
-jest.mock('../thunks/updateBYOEAddressConnection', () => ({
-    updateBYOEAddressConnection: jest.fn((props) => ({ type: 'address/reconnect', props })),
+vi.mock('../thunks/updateBYOEAddressConnection', () => ({
+    updateBYOEAddressConnection: vi.fn((props) => ({ type: 'address/reconnect', props })),
 }));
-jest.mock('@proton/telemetry-tracker/lib/tracker', () => ({
-    tracker: { emit: jest.fn() },
+vi.mock('@proton/telemetry-tracker/lib/tracker', () => ({
+    tracker: { emit: vi.fn() },
 }));
 
 const mockToken: ImportToken = {
@@ -92,7 +93,7 @@ describe('useReconnectBYOEAddress', () => {
     };
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
         mockEasySwitchDispatch.mockImplementation(async (action: { type: string }) =>
             action.type === 'sync/create'

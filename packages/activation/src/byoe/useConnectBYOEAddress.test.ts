@@ -1,5 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 import { getUnixTime } from 'date-fns';
+import { type Mock, type MockedFunction, vi } from 'vitest';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { buildAddress } from '@proton/account/testing/buildAddress';
@@ -30,61 +31,59 @@ import { useConnectBYOEAddress } from './useConnectBYOEAddress';
  * The method takes a token, so there is no error input.
  */
 
-const mockEasySwitchDispatch = jest.fn();
-jest.mock('../logic/store', () => ({
+const mockEasySwitchDispatch = vi.fn();
+vi.mock('../logic/store', () => ({
     useEasySwitchDispatch: () => mockEasySwitchDispatch,
 }));
 
-const mockDispatch = jest.fn();
-jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
+const mockDispatch = vi.fn();
+vi.mock('@proton/redux-shared-store/sharedProvider', () => ({
     __esModule: true,
     useDispatch: () => mockDispatch,
 }));
 
-const mockApi = jest.fn();
-jest.mock('@proton/app-context/useApi', () => ({
+const mockApi = vi.fn();
+vi.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
     useApi: () => mockApi,
 }));
 
-jest.mock('@proton/account/addresses/hooks');
-const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
+vi.mock('@proton/account/addresses/hooks');
+const mockUseAddresses = useAddresses as MockedFunction<any>;
 
-jest.mock('@proton/unleash/useFlag', () => ({
+vi.mock('@proton/unleash/useFlag', () => ({
     __esModule: true,
-    useFlag: jest.fn(() => false),
+    useFlag: vi.fn(() => false),
 }));
-const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
+const mockUseFlag = useFlag as MockedFunction<typeof useFlag>;
 
-jest.mock('../hooks/useBYOEFeatureStatus');
-const mockUseBYOEFeatureStatus = useBYOEFeatureStatus as jest.MockedFunction<typeof useBYOEFeatureStatus>;
+vi.mock('../hooks/useBYOEFeatureStatus');
+const mockUseBYOEFeatureStatus = useBYOEFeatureStatus as MockedFunction<typeof useBYOEFeatureStatus>;
 
-jest.mock('../logic/sync/sync.actions', () => ({
+vi.mock('../logic/sync/sync.actions', () => ({
     WRONG_ACCOUNT_ERROR: 'wrong_account',
-    createTokenItem: jest.fn((props) => ({ type: 'token/create', props })),
-    loadSyncList: jest.fn(() => ({ type: 'sync/load' })),
+    createTokenItem: vi.fn((props) => ({ type: 'token/create', props })),
+    loadSyncList: vi.fn(() => ({ type: 'sync/load' })),
 }));
-const mockCreateTokenItem = createTokenItem as unknown as jest.Mock;
+const mockCreateTokenItem = createTokenItem as unknown as Mock;
 
-jest.mock('../thunks/byoeAddresses', () => ({
-    createBYOEAddress: jest.fn(),
-    convertBYOEAddress: jest.fn(),
-}));
-
-jest.mock('../api/api', () => ({
-    startEasySwitchSignupImportTask: jest.fn(),
-    checkExternalAddressClaimable: jest.fn((Email: string) => ({ url: 'claimable', method: 'POST', Email })),
+vi.mock('../thunks/byoeAddresses', () => ({
+    createBYOEAddress: vi.fn(),
+    convertBYOEAddress: vi.fn(),
 }));
 
-jest.mock('@proton/shared/lib/helpers/address', () => ({
-    findUserAddress: jest.fn(),
-    getIsBYOEAddress: jest.fn(),
+vi.mock('../api/api', () => ({
+    startEasySwitchSignupImportTask: vi.fn(),
+    checkExternalAddressClaimable: vi.fn((Email: string) => ({ url: 'claimable', method: 'POST', Email })),
 }));
-const mockFindUserAddress = findUserAddress as jest.MockedFunction<typeof findUserAddress>;
-const mockGetIsBYOEAddress = getIsBYOEAddress as jest.MockedFunction<typeof getIsBYOEAddress>;
-const mockStartImportTask = startEasySwitchSignupImportTask as jest.MockedFunction<
-    typeof startEasySwitchSignupImportTask
->;
+
+vi.mock('@proton/shared/lib/helpers/address', () => ({
+    findUserAddress: vi.fn(),
+    getIsBYOEAddress: vi.fn(),
+}));
+const mockFindUserAddress = findUserAddress as MockedFunction<typeof findUserAddress>;
+const mockGetIsBYOEAddress = getIsBYOEAddress as MockedFunction<typeof getIsBYOEAddress>;
+const mockStartImportTask = startEasySwitchSignupImportTask as MockedFunction<typeof startEasySwitchSignupImportTask>;
 
 const mockToken: ImportToken = {
     ID: 'token-id',
@@ -114,7 +113,7 @@ const connect = async (args: { importEmails?: boolean; importPeriod?: TIME_PERIO
 describe('useConnectBYOEAddress', () => {
     describe('connectBYOEAddress', () => {
         beforeEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
             mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
             mockUseAddresses.mockReturnValue([[], false]);
             mockFindUserAddress.mockReturnValue(undefined);
@@ -166,14 +165,14 @@ describe('useConnectBYOEAddress', () => {
         });
 
         it('should send the StartTime matching the selected import period', async () => {
-            jest.useFakeTimers().setSystemTime(new Date('2026-10-01T12:00:00Z'));
+            vi.useFakeTimers().setSystemTime(new Date('2026-10-01T12:00:00Z'));
 
             await connect({ importPeriod: TIME_PERIOD.LAST_3_MONTHS });
 
             expect(mockStartImportTask).toHaveBeenCalledWith(
                 expect.objectContaining({ StartTime: getUnixTime(new Date('2026-07-01T12:00:00Z')) })
             );
-            jest.useRealTimers();
+            vi.useRealTimers();
         });
 
         it('should send no StartTime when importEmails is false, even if a period is given', async () => {
@@ -385,7 +384,7 @@ describe('useConnectBYOEAddress', () => {
     });
     describe('connectBYOEAddressWithCode', () => {
         beforeEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
             mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
             mockUseAddresses.mockReturnValue([[], false]);
             mockFindUserAddress.mockReturnValue(undefined);
@@ -447,7 +446,7 @@ describe('useConnectBYOEAddress', () => {
         });
 
         it('should report the account of the token once the code is exchanged', async () => {
-            const onAccountResolved = jest.fn();
+            const onAccountResolved = vi.fn();
 
             await connectWithCode({ onAccountResolved });
 
@@ -460,7 +459,7 @@ describe('useConnectBYOEAddress', () => {
                 meta: { requestStatus: 'rejected' },
                 payload: { Code: 2000, Error: 'Invalid code' },
             });
-            const onAccountResolved = jest.fn();
+            const onAccountResolved = vi.fn();
 
             await connectWithCode({ onAccountResolved });
 
@@ -519,7 +518,7 @@ describe('useConnectBYOEAddress', () => {
 
     describe('creation funnel telemetry', () => {
         beforeEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
             mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
             mockUseAddresses.mockReturnValue([[], false]);
             mockFindUserAddress.mockReturnValue(undefined);
@@ -647,7 +646,7 @@ describe('useConnectBYOEAddress', () => {
         };
 
         beforeEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
             mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
             mockUseAddresses.mockReturnValue([[], false]);
             mockFindUserAddress.mockReturnValue(undefined);

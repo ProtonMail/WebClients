@@ -1,22 +1,23 @@
 import { renderHook } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { ApiImportProvider } from '../api/api.interface';
 import { ImportType } from '../interface';
 import { useTrackImportAction } from './useTrackImportAction';
 
-const mockGetIsBYOE = jest.fn();
+const mockGetIsBYOE = vi.fn();
 
-jest.mock('./useGetIsBYOE', () => ({
+vi.mock('./useGetIsBYOE', () => ({
     useGetIsBYOE: () => mockGetIsBYOE,
 }));
 
-jest.mock('@proton/telemetry-tracker/lib/tracker', () => ({
-    tracker: { emit: jest.fn() },
+vi.mock('@proton/telemetry-tracker/lib/tracker', () => ({
+    tracker: { emit: vi.fn() },
 }));
 
 describe('useTrackImportAction', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should emit the import report action with the import dimensions', async () => {

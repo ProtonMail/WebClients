@@ -1,33 +1,34 @@
 import { renderHook } from '@testing-library/react-hooks';
+import { type MockedFunction, vi } from 'vitest';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { hookWrapper } from '@proton/components/testing/hocs/helpers';
-import { withApi } from '@proton/components/testing/hocs/with-api';
+import { withApi } from '@proton/components/testing/vitest/with-api';
 import { ADDRESS_FLAGS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { ClaimableAddressType } from '@proton/shared/lib/keys/setupAddress';
-import { addApiMock } from '@proton/test-api/api';
+import { addApiMock } from '@proton/test-api/vitest/api';
 
 import useBYOEAddressData from './useBYOEAddressData';
 
 const wrapper = hookWrapper(withApi());
 
-jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
+vi.mock('@proton/redux-shared-store/sharedProvider', () => ({
     __esModule: true,
-    useDispatch: () => jest.fn(),
+    useDispatch: () => vi.fn(),
 }));
 
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('@proton/app-context/useNotifications', () => ({
     __esModule: true,
-    useNotifications: () => ({ createNotification: jest.fn() }),
+    useNotifications: () => ({ createNotification: vi.fn() }),
 }));
 
-jest.mock('@proton/account/addresses/hooks');
-const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
+vi.mock('@proton/account/addresses/hooks');
+const mockUseAddresses = useAddresses as MockedFunction<any>;
 
-jest.mock('@proton/account/user/hooks', () => ({
+vi.mock('@proton/account/user/hooks', () => ({
     useUser: () => [{ ID: 'byoe' } as User],
 }));
 
@@ -57,7 +58,7 @@ describe('useBYOEAddressData', () => {
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should be possible to claim an address with a free username', async () => {

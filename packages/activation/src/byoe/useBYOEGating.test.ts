@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+import { type Mock, vi } from 'vitest';
 
 import { useUser } from '@proton/account/user/hooks';
 import { PRODUCT_BIT } from '@proton/shared/lib/constants';
@@ -9,15 +10,15 @@ import useBYOEAddressesCounts from '../hooks/useBYOEAddressesCounts';
 import useBYOEFeatureStatus from '../hooks/useBYOEFeatureStatus';
 import { useBYOEGating } from './useBYOEGating';
 
-jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/unleash/useFlag');
-jest.mock('../hooks/useBYOEAddressesCounts');
-jest.mock('../hooks/useBYOEFeatureStatus');
+vi.mock('@proton/account/user/hooks');
+vi.mock('@proton/unleash/useFlag');
+vi.mock('../hooks/useBYOEAddressesCounts');
+vi.mock('../hooks/useBYOEFeatureStatus');
 
-const mockUseUser = useUser as jest.Mock;
-const mockUseFlag = useFlag as jest.Mock;
-const mockUseCounts = useBYOEAddressesCounts as jest.Mock;
-const mockUseFeatureStatus = useBYOEFeatureStatus as jest.Mock;
+const mockUseUser = useUser as Mock;
+const mockUseFlag = useFlag as Mock;
+const mockUseCounts = useBYOEAddressesCounts as Mock;
+const mockUseFeatureStatus = useBYOEFeatureStatus as Mock;
 
 describe('useBYOEGating', () => {
     it('should be ok for a user with access and room', () => {

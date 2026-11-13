@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { type MockedFunction, vi } from 'vitest';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -14,57 +15,57 @@ import { EASY_SWITCH_SOURCES } from '../../interface';
 import type { Sync } from '../../logic/sync/sync.interface';
 import ConnectGmailButton from './ConnectGmailButton';
 
-jest.mock('@proton/app-context/useConfig', () => ({
+vi.mock('@proton/app-context/useConfig', () => ({
     useConfig: () => ({
         APP_NAME: 'proton-mail',
     }),
 }));
 
-jest.mock('@proton/account/user/hooks');
-const mockUseUser = useUser as jest.MockedFunction<any>;
+vi.mock('@proton/account/user/hooks');
+const mockUseUser = useUser as MockedFunction<any>;
 
-jest.mock('@proton/account/addresses/hooks');
-const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
+vi.mock('@proton/account/addresses/hooks');
+const mockUseAddresses = useAddresses as MockedFunction<any>;
 
-jest.mock('../../hooks/useSetupGmailBYOEAddress');
-const mockUseSetupGmailBYOEAddress = useSetupGmailBYOEAddress as jest.MockedFunction<any>;
+vi.mock('../../hooks/useSetupGmailBYOEAddress');
+const mockUseSetupGmailBYOEAddress = useSetupGmailBYOEAddress as MockedFunction<any>;
 
-jest.mock('../../hooks/useBYOEAddressesCounts');
-const mockUseBYOEAddressesCount = useBYOEAddressesCounts as jest.MockedFunction<any>;
+vi.mock('../../hooks/useBYOEAddressesCounts');
+const mockUseBYOEAddressesCount = useBYOEAddressesCounts as MockedFunction<any>;
 
-jest.mock('../../logic/store', () => ({
-    useEasySwitchDispatch: () => jest.fn(),
+vi.mock('../../logic/store', () => ({
+    useEasySwitchDispatch: () => vi.fn(),
 }));
 
 // mocking modals because they contain too many hooks
-jest.mock('../Modals/GmailSyncModal/GmailSyncModal', () => ({
+vi.mock('../Modals/GmailSyncModal/GmailSyncModal', () => ({
     __esModule: true,
     default: (props: any) => <div data-testid="GmailSyncModal" {...props} />,
 }));
 
-jest.mock('@proton/components/components/upsell/UpsellModal/UpsellModal', () => ({
+vi.mock('@proton/components/components/upsell/UpsellModal/UpsellModal', () => ({
     __esModule: true,
     default: (props: any) => <div data-testid="UpsellModal" {...props} />,
 }));
 
-jest.mock('../../hooks/useBYOEFeatureStatus', () => ({
+vi.mock('../../hooks/useBYOEFeatureStatus', () => ({
     __esModule: true,
     default: () => {
         return [true, false] as const;
     },
 }));
 
-jest.mock('@proton/unleash/useFlag', () => ({
-    useFlag: jest.fn(),
+vi.mock('@proton/unleash/useFlag', () => ({
+    useFlag: vi.fn(),
 }));
 
-jest.mock('@proton/app-context/useNotifications', () => ({
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({
-        createNotification: jest.fn(),
+        createNotification: vi.fn(),
     }),
 }));
 
-const mockUseFlag = useFlag as jest.MockedFunction<any>;
+const mockUseFlag = useFlag as MockedFunction<any>;
 
 describe('ConnectGmailButton', () => {
     beforeEach(() => {
@@ -73,7 +74,7 @@ describe('ConnectGmailButton', () => {
         mockUseAddresses.mockReturnValue([[], false]);
         mockUseSetupGmailBYOEAddress.mockReturnValue({
             isInMaintenance: false,
-            handleSyncCallback: jest.fn(),
+            handleSyncCallback: vi.fn(),
             allSyncs: [],
         });
         mockUseBYOEAddressesCount.mockReturnValue({

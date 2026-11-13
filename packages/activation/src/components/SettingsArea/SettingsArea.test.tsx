@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/dom';
 import { c } from 'ttag';
+import { type MockedFunction, vi } from 'vitest';
 
 import { useUser } from '@proton/account/user/hooks';
 import { APPS } from '@proton/shared/lib/constants';
@@ -30,10 +31,10 @@ const subsections = [
     },
 ];
 
-jest.mock('@proton/account/user/hooks');
-const mockUseUser = useUser as jest.MockedFunction<any>;
+vi.mock('@proton/account/user/hooks');
+const mockUseUser = useUser as MockedFunction<any>;
 
-jest.mock('../../oles/useOLESFeatureStatus', () => ({
+vi.mock('../../oles/useOLESFeatureStatus', () => ({
     __esModule: true,
     default: () => ({
         featureSupported: false,

@@ -71,9 +71,9 @@
         "i18n:validate": "proton-i18n validate lint-functions",
         "lint": "oxlint --quiet",
         "pretty": "oxfmt --write \"src/app/**/*.{js,ts,tsx}\"",
-        "test": "jest",
-        "test:ci": "jest --runInBand --logHeapUsage",
-        "test:dev": "jest --watch --coverage=false --watchAll"
+        "test": "vitest",
+        "test:ci": "pnpm run test --run",
+        "test:dev": "vitest --watch"
     },
     "dependencies": {
         "@proton/account": "workspace:^",
@@ -98,7 +98,6 @@
         "@proton/utils": "workspace:^",
         "@protontech/drive-sdk": "catalog:",
         "@reduxjs/toolkit": "catalog:",
-        "@types/jest": "catalog:",
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
         "date-fns": "^2.30.0",
@@ -111,10 +110,9 @@
     },
     "devDependencies": {
         "@proton/i18n": "workspace:^",
-        "@proton/jest-env": "workspace:^",
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
         "@proton/test-api": "workspace:^",
+        "@proton/vitest-config": "workspace:^",
         "@testing-library/dom": "catalog:",
         "@testing-library/jest-dom": "catalog:",
         "@testing-library/react": "catalog:",
@@ -126,15 +124,17 @@
         "@types/react-router-dom": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
+        "@vitejs/plugin-react": "^6.2.1",
+        "@vitest/coverage-v8": "catalog:",
+        "happy-dom": "catalog:",
         "history": "catalog:",
-        "jest": "catalog:",
-        "jest-junit": "catalog:",
         "msw": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "react-router": "catalog:",
         "react-router-dom": "catalog:",
-        "typescript": "catalog:"
+        "typescript": "catalog:",
+        "vitest": "catalog:"
     },
     "peerDependencies": {
         "@types/react-router-dom": "^5.3.3",

@@ -1,11 +1,12 @@
 import { fireEvent, screen } from '@testing-library/dom';
+import { vi } from 'vitest';
 
 import { easySwitchRender } from '../../../../tests/render';
 import { DriveInstructionsStep } from './DriveInstructionsStep';
 
 describe('DriveInstructionsStep', () => {
     it('cancels without starting OAuth', () => {
-        const triggerOAuth = jest.fn();
+        const triggerOAuth = vi.fn();
 
         easySwitchRender(<DriveInstructionsStep triggerOAuth={triggerOAuth} />);
         fireEvent.click(screen.getByText('Maybe later'));
@@ -14,7 +15,7 @@ describe('DriveInstructionsStep', () => {
     });
 
     it('moves to the sign-in tutorial on Continue, which triggers OAuth on Google sign-in', () => {
-        const triggerOAuth = jest.fn();
+        const triggerOAuth = vi.fn();
 
         easySwitchRender(<DriveInstructionsStep triggerOAuth={triggerOAuth} />);
         fireEvent.click(screen.getByText('Continue'));

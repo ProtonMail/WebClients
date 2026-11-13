@@ -1,4 +1,5 @@
 import { fireEvent, screen } from '@testing-library/dom';
+import { vi } from 'vitest';
 
 import { MailImportPayloadError } from '../../../../../interface';
 import { easySwitchRender } from '../../../../../tests/render';
@@ -10,8 +11,8 @@ describe('ManageFoldersRowInput', () => {
             <ManageFolderRowInput
                 disabled={false}
                 errors={[]}
-                handleChange={jest.fn}
-                handleSave={jest.fn}
+                handleChange={vi.fn()}
+                handleSave={vi.fn()}
                 hasError={false}
                 inputValue={''}
                 inputRef={null}
@@ -25,8 +26,8 @@ describe('ManageFoldersRowInput', () => {
             <ManageFolderRowInput
                 disabled={false}
                 errors={[MailImportPayloadError.FOLDER_NAMES_TOO_LONG]}
-                handleChange={jest.fn}
-                handleSave={jest.fn}
+                handleChange={vi.fn()}
+                handleSave={vi.fn()}
                 hasError={true}
                 inputValue={'Testing'}
                 inputRef={null}
@@ -42,8 +43,8 @@ describe('ManageFoldersRowInput', () => {
             <ManageFolderRowInput
                 disabled={false}
                 errors={[MailImportPayloadError.UNAVAILABLE_NAMES]}
-                handleChange={jest.fn}
-                handleSave={jest.fn}
+                handleChange={vi.fn()}
+                handleSave={vi.fn()}
                 hasError={true}
                 inputValue={'Testing'}
                 inputRef={null}
@@ -59,8 +60,8 @@ describe('ManageFoldersRowInput', () => {
             <ManageFolderRowInput
                 disabled={false}
                 errors={[MailImportPayloadError.EMPTY]}
-                handleChange={jest.fn}
-                handleSave={jest.fn}
+                handleChange={vi.fn()}
+                handleSave={vi.fn()}
                 hasError={true}
                 inputValue={'Testing'}
                 inputRef={null}
@@ -76,8 +77,8 @@ describe('ManageFoldersRowInput', () => {
             <ManageFolderRowInput
                 disabled={false}
                 errors={[MailImportPayloadError.RESERVED_NAMES]}
-                handleChange={jest.fn}
-                handleSave={jest.fn}
+                handleChange={vi.fn()}
+                handleSave={vi.fn()}
                 hasError={true}
                 inputValue={'Testing'}
                 inputRef={null}
@@ -89,13 +90,13 @@ describe('ManageFoldersRowInput', () => {
     });
 
     it('Should run save method when enter is pressed', async () => {
-        const handleSave = jest.fn();
+        const handleSave = vi.fn();
 
         easySwitchRender(
             <ManageFolderRowInput
                 disabled={false}
                 errors={[]}
-                handleChange={jest.fn}
+                handleChange={vi.fn()}
                 handleSave={handleSave}
                 hasError={false}
                 inputValue={'Testing'}
@@ -111,13 +112,13 @@ describe('ManageFoldersRowInput', () => {
     });
 
     it('Should not run save method when enter is pressed and component has error', async () => {
-        const handleSave = jest.fn();
+        const handleSave = vi.fn();
 
         easySwitchRender(
             <ManageFolderRowInput
                 disabled={false}
                 errors={[MailImportPayloadError.EMPTY]}
-                handleChange={jest.fn}
+                handleChange={vi.fn()}
                 handleSave={handleSave}
                 hasError={true}
                 inputValue={'Testing'}

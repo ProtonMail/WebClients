@@ -1,4 +1,5 @@
 import type { ProtonDriveClient } from '@protontech/drive-sdk';
+import { type Mock, vi } from 'vitest';
 
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
@@ -6,15 +7,15 @@ import type { LaunchImportPayload } from '../../../../interface';
 import { IMPORT_ERROR } from '../../../../interface';
 import { startDriveImportTask } from './driveImportTask';
 
-const BASE64_PASSPHRASE = new TextEncoder().encode('clear-passphrase').toBase64();
+const BASE64_PASSPHRASE = Buffer.from('clear-passphrase').toString('base64');
 
 // The SDK prepares the crypto material for an orphaned import folder; we fake it.
 const makeDriveClient = (folderOverrides: Record<string, unknown> = {}) =>
     ({
-        getMyFilesRootFolder: jest.fn().mockResolvedValue({ uid: 'vol-1~node-1' }),
-        getAvailableName: jest.fn().mockImplementation(async (_parent: unknown, name: string) => name),
+        getMyFilesRootFolder: vi.fn().mockResolvedValue({ uid: 'vol-1~node-1' }),
+        getAvailableName: vi.fn().mockImplementation(async (_parent: unknown, name: string) => name),
         experimental: {
-            prepareImportFolder: jest.fn().mockResolvedValue({
+            prepareImportFolder: vi.fn().mockResolvedValue({
                 encryptedName: 'enc-name',
                 hash: 'folder-hash',
                 armoredNodePassphrase: 'passphrase',
@@ -33,10 +34,10 @@ const importPayload: LaunchImportPayload = { ImporterID: 'importer-1' };
 
 const setup = ({
     drive = makeDriveClient(),
-    api = jest.fn().mockResolvedValue({}),
+    api = vi.fn().mockResolvedValue({}),
     importedEmail = 'me@gmail.com',
-}: { drive?: ProtonDriveClient; api?: jest.Mock; importedEmail?: string } = {}) => {
-    const onPrepareFolderError = jest.fn();
+}: { drive?: ProtonDriveClient; api?: Mock; importedEmail?: string } = {}) => {
+    const onPrepareFolderError = vi.fn();
     const run = () =>
         startDriveImportTask({
             api: api as unknown as Api,
@@ -98,10 +99,10 @@ describe('startDriveImportTask', () => {
 
     it('retries with the next available folder name when the import folder name is taken', async () => {
         const drive = makeDriveClient();
-        (drive.getAvailableName as jest.Mock).mockResolvedValue('google-drive-me (1)');
+        (drive.getAvailableName as Mock).mockResolvedValue('google-drive-me (1)');
         const { run, api } = setup({
             drive,
-            api: jest.fn().mockRejectedValueOnce(alreadyExistsError).mockResolvedValue({}),
+            api: vi.fn().mockRejectedValueOnce(alreadyExistsError).mockResolvedValue({}),
         });
 
         await run();
@@ -115,7 +116,7 @@ describe('startDriveImportTask', () => {
 
     it('does not retry on errors other than already-exists', async () => {
         const error = { status: 500, data: { Code: 2000, Error: 'Server error' } };
-        const { run, api, drive } = setup({ api: jest.fn().mockRejectedValue(error) });
+        const { run, api, drive } = setup({ api: vi.fn().mockRejectedValue(error) });
 
         await expect(run()).rejects.toBe(error);
 
@@ -126,7 +127,7 @@ describe('startDriveImportTask', () => {
     it('reports folder preparation errors and does not start the import', async () => {
         const error = new Error('sdk failed');
         const drive = makeDriveClient();
-        (drive.getMyFilesRootFolder as jest.Mock).mockRejectedValue(error);
+        (drive.getMyFilesRootFolder as Mock).mockRejectedValue(error);
         const { run, api, onPrepareFolderError } = setup({ drive });
 
         await expect(run()).rejects.toBe(error);

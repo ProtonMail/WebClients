@@ -4,6 +4,7 @@
     "type": "module",
     "exports": {
         "./api": "./src/api.ts",
+        "./vitest/api": "./src/vitest/api.ts",
         "./flush-promises": "./src/flush-promises.ts",
         "./mockApiWithServer": "./src/mockApiWithServer.ts",
         "./mockRandomValues": "./src/mockRandomValues.ts"
@@ -25,9 +26,19 @@
         "@typescript/native": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "typescript": "catalog:"
+        "typescript": "catalog:",
+        "vitest": "catalog:"
     },
     "peerDependencies": {
-        "@jest/globals": "^30.5.2"
+        "@jest/globals": "^30.5.2",
+        "vitest": "^5.1.0"
+    },
+    "peerDependenciesMeta": {
+        "@jest/globals": {
+            "optional": true
+        },
+        "vitest": {
+            "optional": true
+        }
     }
 }

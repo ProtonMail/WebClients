@@ -3,6 +3,7 @@ import { Router } from 'react-router';
 
 import { render as originalRender } from '@testing-library/react';
 import { createMemoryHistory } from 'history';
+import { vi } from 'vitest';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { NotificationsContext } from '@proton/app-context/notifications/notificationsContext';
@@ -12,7 +13,7 @@ import ConfigProvider from '@proton/components/containers/config/Provider';
 import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
 import ModalsChildren from '@proton/components/containers/modals/Children';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
-import { getFeatureFlagsState } from '@proton/features/testing/features';
+import { getFeatureFlagsState } from '@proton/features/testing/vitest/features';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
 import { APPS } from '@proton/shared/lib/constants';
@@ -27,11 +28,11 @@ import { setupStore } from './protonStore';
 /**
  * Mocks
  */
-jest.mock('@proton/components/hooks/useEventManager', () => {
-    const subscribe = jest.fn();
-    const call = jest.fn();
-    const stop = jest.fn();
-    const start = jest.fn();
+vi.mock('@proton/components/hooks/useEventManager', () => {
+    const subscribe = vi.fn();
+    const call = vi.fn();
+    const stop = vi.fn();
+    const start = vi.fn();
 
     const result = () => {
         return { subscribe, call, stop, start };
@@ -42,11 +43,11 @@ jest.mock('@proton/components/hooks/useEventManager', () => {
     result.stop = stop;
     result.start = start;
 
-    return result;
+    return { default: result };
 });
 
-jest.mock('../hooks/useBYOEFeatureStatus', () => {
-    return jest.fn(() => [false, false] as const);
+vi.mock('../hooks/useBYOEFeatureStatus', () => {
+    return { default: vi.fn(() => [false, false] as const) };
 });
 
 const config = {

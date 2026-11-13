@@ -1,4 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
+import { type Mock, vi } from 'vitest';
 
 import { buildAddress } from '@proton/account/testing/buildAddress';
 
@@ -7,35 +8,35 @@ import { getBYOEAddressLimit } from '../helpers/byoeAddresses';
 import { type ImportToken, OAUTH_PROVIDER, type OAuthProps } from '../interface';
 import useReconnectSync from './useReconnectSync';
 
-const mockCreateNotification = jest.fn();
-jest.mock('@proton/app-context/useNotifications', () => ({
+const mockCreateNotification = vi.fn();
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
 
-jest.mock('@proton/account/user/hooks', () => ({ useUser: jest.fn(() => [{}]) }));
-jest.mock('@proton/app-context/useApi', () => ({ useApi: () => jest.fn() }));
-jest.mock('../logic/store', () => ({
-    useEasySwitchDispatch: () => jest.fn(),
+vi.mock('@proton/account/user/hooks', () => ({ useUser: vi.fn(() => [{}]) }));
+vi.mock('@proton/app-context/useApi', () => ({ useApi: () => vi.fn() }));
+vi.mock('../logic/store', () => ({
+    useEasySwitchDispatch: () => vi.fn(),
     useEasySwitchSelector: () => undefined,
 }));
-jest.mock('./useBYOEAddressesCounts', () => ({
+vi.mock('./useBYOEAddressesCounts', () => ({
     __esModule: true,
     default: () => ({ activeBYOEAddresses: [] }),
 }));
 
-jest.mock('../helpers/byoeAddresses', () => ({ getBYOEAddressLimit: jest.fn() }));
-const mockGetBYOEAddressLimit = getBYOEAddressLimit as jest.Mock;
+vi.mock('../helpers/byoeAddresses', () => ({ getBYOEAddressLimit: vi.fn() }));
+const mockGetBYOEAddressLimit = getBYOEAddressLimit as Mock;
 
-const mockTriggerOAuthPopup = jest.fn();
-jest.mock('./useOAuthPopup', () => ({
+const mockTriggerOAuthPopup = vi.fn();
+vi.mock('./useOAuthPopup', () => ({
     __esModule: true,
     default: () => ({ triggerOAuthPopup: mockTriggerOAuthPopup, loadingConfig: false }),
 }));
 
-const mockGetExistingToken = jest.fn();
-const mockReconnectWithToken = jest.fn();
-const mockReconnectWithCode = jest.fn();
-jest.mock('../byoe/useReconnectBYOEAddress', () => ({
+const mockGetExistingToken = vi.fn();
+const mockReconnectWithToken = vi.fn();
+const mockReconnectWithCode = vi.fn();
+vi.mock('../byoe/useReconnectBYOEAddress', () => ({
     useReconnectBYOEAddress: () => ({
         getExistingToken: mockGetExistingToken,
         reconnectWithToken: mockReconnectWithToken,
@@ -47,13 +48,13 @@ const address = buildAddress({ ID: 'address-id', Email: 'jane@gmail.com' });
 const token = { ID: 'token-id', Account: 'jane@gmail.com' } as ImportToken;
 const success: ReconnectBYOEAddressResult = { status: 'success', address };
 
-const withLoading = jest.fn((promise: Promise<unknown> | (() => Promise<unknown>)) => {
+const withLoading = vi.fn((promise: Promise<unknown> | (() => Promise<unknown>)) => {
     return typeof promise === 'function' ? promise() : promise;
 });
 
 const setup = () => {
-    const setUpsellModalOpen = jest.fn();
-    const setLimitModalOpen = jest.fn();
+    const setUpsellModalOpen = vi.fn();
+    const setLimitModalOpen = vi.fn();
     const { result } = renderHook(() => useReconnectSync(address));
     const reconnect = () =>
         act(() =>
@@ -69,7 +70,7 @@ const setup = () => {
 
 describe('useReconnectSync handleReconnect', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockGetBYOEAddressLimit.mockReturnValue(undefined);
         mockGetExistingToken.mockResolvedValue(undefined);
         mockReconnectWithToken.mockResolvedValue(success);

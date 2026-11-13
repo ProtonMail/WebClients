@@ -1,12 +1,14 @@
+import { vi } from 'vitest';
+
 import getDefaultLabel from './useStepPrepareImap.helpers';
 
 const defaultDate = '01-01-2025 00:00';
 
-jest.mock('date-fns', () => {
-    const originalModule = jest.requireActual('date-fns');
+vi.mock('date-fns', async () => {
+    const originalModule = await vi.importActual<Record<string, unknown>>('date-fns');
     return {
         ...originalModule,
-        format: jest.fn().mockReturnValue('01-01-2025 00:00'),
+        format: vi.fn().mockReturnValue('01-01-2025 00:00'),
     };
 });
 

@@ -1,4 +1,5 @@
 import { fireEvent, screen } from '@testing-library/dom';
+import { type MockedFunction, vi } from 'vitest';
 
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { CALENDAR_DISPLAY, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
@@ -68,9 +69,9 @@ const derivedValuesNoErrors: DerivedCalendarType = {
     calendarsToBeMergedCount: 2,
 };
 
-jest.mock('../../../../../logic/draft/oauthDraft/oauthDraft.selector', () => ({
-    ...jest.requireActual('../../../../../logic/draft/oauthDraft/oauthDraft.selector'),
-    selectOauthImportStateImporterData: jest.fn(),
+vi.mock('../../../../../logic/draft/oauthDraft/oauthDraft.selector', async () => ({
+    ...(await vi.importActual('../../../../../logic/draft/oauthDraft/oauthDraft.selector')),
+    selectOauthImportStateImporterData: vi.fn(),
 }));
 
 const addresses = generateMockAddressArray(3, true);
@@ -80,11 +81,11 @@ const mockUseAddressValue = {
     defaultAddress: addresses[0],
 };
 
-jest.mock('../../../../../hooks/useAvailableAddresses');
-const mockUseAvailableAddresses = useAvailableAddresses as jest.MockedFunction<any>;
+vi.mock('../../../../../hooks/useAvailableAddresses');
+const mockUseAvailableAddresses = useAvailableAddresses as MockedFunction<any>;
 
-const mockSelectorImporterData = selectOauthImportStateImporterData as any as jest.Mock<
-    ReturnType<typeof selectOauthImportStateImporterData>
+const mockSelectorImporterData = selectOauthImportStateImporterData as any as MockedFunction<
+    typeof selectOauthImportStateImporterData
 >;
 
 describe('CustomizeCalendarImportModal', () => {

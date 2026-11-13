@@ -1,4 +1,5 @@
 import { fireEvent, screen } from '@testing-library/dom';
+import { type Mock, vi } from 'vitest';
 
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import { SubscriptionModalContext } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
@@ -9,16 +10,16 @@ import { DriveImportStorageWarningStep } from './DriveImportStorageWarningStep';
 
 // useSettingsLink pulls in navigation/authentication context this test doesn't set up - stub it,
 // the rest of the component (Redux dispatch, store) stays real.
-jest.mock('@proton/components/components/link/useSettingsLink', () => ({
+vi.mock('@proton/components/components/link/useSettingsLink', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-const mockUseSettingsLink = useSettingsLink as jest.Mock;
+const mockUseSettingsLink = useSettingsLink as Mock;
 
 describe('DriveImportStorageWarningStep', () => {
     it('lets the user ignore the warning without navigating away', () => {
-        const goToSettings = jest.fn();
+        const goToSettings = vi.fn();
         mockUseSettingsLink.mockReturnValue(goToSettings);
 
         easySwitchRender(<DriveImportStorageWarningStep />);
@@ -28,7 +29,7 @@ describe('DriveImportStorageWarningStep', () => {
     });
 
     it('lets the user upgrade, navigating to the upgrade page', () => {
-        const goToSettings = jest.fn();
+        const goToSettings = vi.fn();
         mockUseSettingsLink.mockReturnValue(goToSettings);
 
         easySwitchRender(<DriveImportStorageWarningStep />);
@@ -38,8 +39,8 @@ describe('DriveImportStorageWarningStep', () => {
     });
 
     it('lets the user upgrade in the plan selection modal when the app provides it', () => {
-        const goToSettings = jest.fn();
-        const openSubscriptionModal = jest.fn();
+        const goToSettings = vi.fn();
+        const openSubscriptionModal = vi.fn();
         mockUseSettingsLink.mockReturnValue(goToSettings);
 
         easySwitchRender(

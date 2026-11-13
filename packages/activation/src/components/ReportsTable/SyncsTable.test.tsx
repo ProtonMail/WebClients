@@ -1,6 +1,7 @@
 import { fireEvent, screen, waitFor } from '@testing-library/dom';
 import { HttpResponse, http } from 'msw';
 import { setupServer } from 'msw/node';
+import { vi } from 'vitest';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { ADDRESS_FLAGS, ADDRESS_RECEIVE, ADDRESS_STATUS } from '@proton/shared/lib/constants';
@@ -12,7 +13,7 @@ import { SyncsTable } from './SyncsTable';
 
 const server = setupServer();
 
-jest.mock('@proton/mail/store/importerConfig/hooks', () => ({
+vi.mock('@proton/mail/store/importerConfig/hooks', () => ({
     useApiEnvironmentConfig: () => [
         {
             'oauth.google.client_id': 'string',
@@ -57,7 +58,7 @@ describe('Syncs table testing', () => {
             ],
         };
 
-        const importersSpy = jest.fn();
+        const importersSpy = vi.fn();
 
         server.use(
             http.get('importer/v1/sync', () => {

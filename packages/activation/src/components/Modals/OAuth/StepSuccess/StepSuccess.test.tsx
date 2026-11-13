@@ -1,13 +1,14 @@
 import { useLocation } from 'react-router-dom';
 
 import { fireEvent, screen } from '@testing-library/dom';
+import { type Mock, vi } from 'vitest';
 
 import { easySwitchRender } from '../../../../tests/render';
 import StepSuccess from './StepSuccess';
 
-jest.mock('react-router-dom', () => ({ ...jest.requireActual('react-router-dom'), useLocation: jest.fn() }));
+vi.mock('react-router-dom', async () => ({ ...(await vi.importActual('react-router-dom')), useLocation: vi.fn() }));
 
-const mockedUseLocation = useLocation as jest.Mock;
+const mockedUseLocation = useLocation as Mock;
 
 describe('StepSuccess tests', () => {
     it('Should render simple success step, no settings button while in settings', async () => {

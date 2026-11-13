@@ -1,27 +1,29 @@
+import { vi } from 'vitest';
+
 import { hasInboxDesktopFeature, invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 
 import { notifyDesktopOAuthPopupFinished, notifyDesktopOAuthPopupStarted } from './oauthDesktopSession';
 
-jest.mock('@proton/shared/lib/desktop/ipcHelpers', () => ({
-    invokeInboxDesktopIPC: jest.fn(),
-    hasInboxDesktopFeature: jest.fn(),
+vi.mock('@proton/shared/lib/desktop/ipcHelpers', () => ({
+    invokeInboxDesktopIPC: vi.fn(),
+    hasInboxDesktopFeature: vi.fn(),
 }));
-jest.mock('@proton/shared/lib/helpers/browser', () => ({
-    getIsIframe: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/browser', () => ({
+    getIsIframe: vi.fn(),
 }));
 
 const AUTHORIZATION_URL = 'https://zoom.example/oauth/authorize?client_id=client';
 const SESSION_ID = 'session-id';
 
 const setupEnvironment = ({ hasV2Feature, isIframe }: { hasV2Feature: boolean; isIframe: boolean }) => {
-    jest.mocked(hasInboxDesktopFeature).mockReturnValue(hasV2Feature);
-    jest.mocked(getIsIframe).mockReturnValue(isIframe);
+    vi.mocked(hasInboxDesktopFeature).mockReturnValue(hasV2Feature);
+    vi.mocked(getIsIframe).mockReturnValue(isIframe);
 };
 
 describe('oauthDesktopSession', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it.each([

@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react';
+import { type Mock, vi } from 'vitest';
 
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useUser } from '@proton/account/user/hooks';
@@ -14,13 +15,13 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import useBYOEFeatureStatus from './useBYOEFeatureStatus';
 
-jest.mock('@proton/account/entitlementCatalog/hooks');
-jest.mock('@proton/account/user/hooks');
-jest.mock('@proton/unleash/useFlag');
+vi.mock('@proton/account/entitlementCatalog/hooks');
+vi.mock('@proton/account/user/hooks');
+vi.mock('@proton/unleash/useFlag');
 
-const mockUseEntitlementChecks = useEntitlementChecksForOrgAndUser as jest.Mock;
-const mockUseUser = useUser as jest.Mock;
-const mockUseFlag = useFlag as jest.Mock;
+const mockUseEntitlementChecks = useEntitlementChecksForOrgAndUser as Mock;
+const mockUseUser = useUser as Mock;
+const mockUseFlag = useFlag as Mock;
 
 const memberUser = { Role: USER_ROLES.MEMBER_ROLE, Type: UserType.PROTON, Flags: {} };
 
