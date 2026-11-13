@@ -10,7 +10,7 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
+import ModalTwo, { ModalContext } from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
@@ -589,7 +589,8 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
 
     return (
         <ModalTwo size="xlarge" enableCloseWhenClickOutside className="lumo-settings-modal" {...modalProps}>
-            <ModalTwoContent>
+            {/* Keep the interactive settings body out of the dialog's accessible description. */}
+            <ModalTwoContent id={undefined}>
                 {/* Close button in top-right corner */}
                 <Button
                     icon
@@ -622,10 +623,16 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                         <div className="flex flex-column flex-nowrap flex-1 content-container">
                             {/* Mobile: settings title */}
                             <div className="mobile-section-header md:hidden">
-                                <h1 className="text-2xl text-bold m-0">{
-                                    // translator: Heading of the app settings panel.
-                                    c('collider_2025:Label').t`Settings`
-                                }</h1>
+                                <ModalContext.Consumer>
+                                    {({ id }) => (
+                                        <h1 id={id} className="text-2xl text-bold m-0">
+                                            {
+                                                // translator: Heading of the app settings panel.
+                                                c('collider_2025:Label').t`Settings`
+                                            }
+                                        </h1>
+                                    )}
+                                </ModalContext.Consumer>
                             </div>
 
                             {/* Desktop: top bar with active panel name */}
