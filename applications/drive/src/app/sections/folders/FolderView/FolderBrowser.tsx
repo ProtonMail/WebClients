@@ -1,7 +1,9 @@
-import { type ReactNode, useCallback, useEffect, useRef } from 'react';
+import { type ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
+import { DriveImportOngoingStep } from '@proton/activation/src/components/Modals/OAuth/Drive/DriveImportOngoingStep';
+import { DriveImportPausedStep } from '@proton/activation/src/components/Modals/OAuth/Drive/DriveImportPausedStep';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { useMoveNodes } from '@proton/drive/modules/moveNodes';
 import type { MoveNodesItemMap } from '@proton/drive/modules/moveNodes';
@@ -59,6 +61,14 @@ export function FolderBrowser({
     const contextMenu = useContextMenuStore();
     const { viewportWidth } = useActiveBreakpoint();
     const { navigateToLink, navigateToRoot } = useDriveNavigation();
+    const [openedImportingFolderUid, setOpenedImportingFolderUid] = useState<string>();
+    const openedImportingFolder = useFolderStore((state) =>
+        openedImportingFolderUid ? state.importingFolders.get(openedImportingFolderUid) : undefined
+    );
+    // Import finished or cancelled --> forget the opened folder so the modal never reopens by itself.
+    if (openedImportingFolderUid && !openedImportingFolder) {
+        setOpenedImportingFolderUid(undefined);
+    }
 
     const { permissions, isLoading, folder, hasEverLoaded, sortField, sortDirection } = useFolderStore(
         useShallow((state) => ({
@@ -128,7 +138,7 @@ export function FolderBrowser({
 
     // Close context menu when navigating to a different folder
     useEffect(() => {
-        contextMenu.close();
+        useContextMenuStore.getState().close();
     }, [shareId, linkId]);
 
     const handleClick = useCallback(
@@ -139,6 +149,11 @@ export function FolderBrowser({
             }
             const { nodeId } = splitNodeUid(uid);
             document.getSelection()?.removeAllRanges();
+
+            if (useFolderStore.getState().importingFolders.has(uid)) {
+                setOpenedImportingFolderUid(uid);
+                return;
+            }
 
             const openInDocsInfo = getOpenInDocsInfo(item.mimeType);
             if (openInDocsInfo && openInDocsInfo.isNative) {
@@ -354,6 +369,19 @@ export function FolderBrowser({
             {modals.sharingModal}
             {modals.fileSharingModal}
             {modals.reportAbuseModal}
+            {openedImportingFolder &&
+                (openedImportingFolder.pausedImport ? (
+                    <DriveImportPausedStep
+                        importer={openedImportingFolder.pausedImport.importer}
+                        errorCode={openedImportingFolder.pausedImport.errorCode}
+                        onClose={() => setOpenedImportingFolderUid(undefined)}
+                    />
+                ) : (
+                    <DriveImportOngoingStep
+                        importedBytes={openedImportingFolder.importedBytes}
+                        onClose={() => setOpenedImportingFolderUid(undefined)}
+                    />
+                ))}
         </>
     );
 }

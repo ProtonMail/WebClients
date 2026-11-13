@@ -12,6 +12,7 @@ import { NameCell, defaultNameCellConfig } from '../commonDriveExplorerCells/Nam
 import { ShareOptionsCell, defaultShareOptionsCellConfig } from '../commonDriveExplorerCells/ShareOptionsCell';
 import { SizeCell, defaultSizeCellConfig } from '../commonDriveExplorerCells/SizeCell';
 import { defaultModifiedTimeCellConfig } from '../commonDriveExplorerCells/modifiedTimeCellConfig';
+import { ImportNameCell } from './driveExplorerCells/ImportNameCell';
 import { useFolderStore } from './useFolder.store';
 
 const ShareOptionsCellComponent = ({ uid }: { uid: string }) => {
@@ -57,9 +58,14 @@ export const getFolderCells = ({
                     })
                 );
                 const thumbnail = useThumbnail(activeRevisionUid);
+                const importingFolder = useFolderStore((state) => state.importingFolders.get(uid));
 
                 if (!name || !type) {
                     return null;
+                }
+
+                if (importingFolder) {
+                    return <ImportNameCell name={name} importingFolder={importingFolder} />;
                 }
 
                 return (

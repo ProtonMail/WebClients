@@ -71,6 +71,40 @@ describe('normalizeImporter', () => {
         expect(activeImporters[0].importedBytes).toBe(0);
     });
 
+    it('Should map the Drive import folder once the API sends both IDs', () => {
+        const apiImporter = buildImporter({
+            Active: {
+                [ImportType.DRIVE]: {
+                    CreateTime: 1601053249,
+                    State: ApiImporterState.RUNNING,
+                    ImportFolderVolumeID: 'volume-id',
+                    ImportFolderLinkID: 'link-id',
+                },
+            },
+        });
+
+        const { activeImporters } = normalizeImporter(apiImporter);
+
+        expect(activeImporters[0].importFolder).toEqual({ volumeID: 'volume-id', linkID: 'link-id' });
+    });
+
+    it('Should leave the Drive import folder undefined while one of its IDs is missing', () => {
+        const apiImporter = buildImporter({
+            Active: {
+                [ImportType.DRIVE]: {
+                    CreateTime: 1601053249,
+                    State: ApiImporterState.RUNNING,
+                    ImportFolderVolumeID: 'volume-id',
+                    ImportFolderLinkID: null,
+                },
+            },
+        });
+
+        const { activeImporters } = normalizeImporter(apiImporter);
+
+        expect(activeImporters[0].importFolder).toBeUndefined();
+    });
+
     it('Should return no active importers when Active is absent', () => {
         const { activeImporters } = normalizeImporter(buildImporter({ Active: undefined }));
 

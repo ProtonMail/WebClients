@@ -2,6 +2,8 @@ import { useCallback, useEffect } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
+import { selectOngoingDriveImports } from '@proton/activation/src/logic/importers/importers.selectors';
+import { useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import Loader from '@proton/components/components/loader/Loader';
 import useAppTitle from '@proton/components/hooks/useAppTitle';
 import { type MoveNodesItemMap, useMoveNodes } from '@proton/drive/modules/moveNodes';
@@ -16,6 +18,7 @@ import { SortField as StoredSortField } from '../../../modules/userSettings/type
 import { UploadDragDrop } from '../../../statelessComponents/UploadDragDrop/UploadDragDrop';
 import { FolderViewBreadcrumbs } from '../FolderViewBreadcrumbs';
 import { getFolderSortConfig } from '../folder.sorting';
+import { getImportingFolders } from '../getImportingFolders';
 import { useFolder } from '../useFolder';
 import { useFolderStore } from '../useFolder.store';
 import { FolderBrowser } from './FolderBrowser';
@@ -44,6 +47,11 @@ export function FolderView({ shareId, nodeUid }: FolderViewProps) {
     );
 
     useAppTitle(!isRootFolder ? folderName : undefined);
+
+    const ongoingDriveImports = useEasySwitchSelector(selectOngoingDriveImports);
+    useEffect(() => {
+        useFolderStore.getState().setImportingFolders(getImportingFolders(ongoingDriveImports));
+    }, [ongoingDriveImports]);
 
     const { layout, sort, changeSort } = useUserSettings();
     // Initialize folder sort from user settings on first mount

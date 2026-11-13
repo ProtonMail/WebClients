@@ -1,7 +1,7 @@
 import { ApiImporterError, ApiImporterState } from '../../api/api.interface';
 import { ImportType } from '../../interface';
 import type { EasySwitchState } from '../store';
-import { selectActiveImportersErrors } from './importers.selectors';
+import { selectActiveImportersErrors, selectOngoingDriveImports } from './importers.selectors';
 
 const pausedImportState = (product: ImportType, errorCode: ApiImporterError) =>
     ({
@@ -37,4 +37,35 @@ describe('selectActiveImportersErrors', () => {
             expect(importErrors).toEqual([]);
         }
     );
+});
+
+describe('selectOngoingDriveImports', () => {
+    const stateWithImports = (imports: { product: ImportType; importState: ApiImporterState }[]) =>
+        ({
+            importers: {
+                importers: { 'importer-id': { ID: 'importer-id', account: 'user@gmail.com', products: [] } },
+                activeImporters: Object.fromEntries(
+                    imports.map(({ product, importState }, index) => [
+                        `importer-id-${index}`,
+                        { localID: `importer-id-${index}`, importerID: 'importer-id', product, importState },
+                    ])
+                ),
+                loading: 'success',
+            },
+        }) as unknown as EasySwitchState;
+
+    it('keeps running and paused Drive imports, drops finished and non-Drive ones', () => {
+        const ongoingImports = selectOngoingDriveImports(
+            stateWithImports([
+                { product: ImportType.DRIVE, importState: ApiImporterState.RUNNING },
+                { product: ImportType.DRIVE, importState: ApiImporterState.PAUSED },
+                { product: ImportType.DRIVE, importState: ApiImporterState.FAILED },
+                { product: ImportType.MAIL, importState: ApiImporterState.RUNNING },
+            ])
+        );
+
+        expect(ongoingImports.map(({ activeImporter }) => activeImporter.importState).sort()).toEqual(
+            [ApiImporterState.RUNNING, ApiImporterState.PAUSED].sort()
+        );
+    });
 });
