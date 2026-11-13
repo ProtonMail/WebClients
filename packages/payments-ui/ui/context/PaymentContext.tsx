@@ -13,7 +13,6 @@ import { useApi } from '@proton/app-context/useApi';
 import { useConfig } from '@proton/app-context/useConfig';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { useHandler } from '@proton/hooks/useHandler';
-import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import {
     type InitializeProps,
@@ -34,7 +33,7 @@ import { loadInitialBillingAddress } from '@proton/payments/core/billing-address
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { computeOptimisticCheckResult } from '@proton/payments/core/computeOptimisticCheckResult';
 import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
-import { mainCurrencies } from '@proton/payments/core/currencies';
+import { getAvailableCurrencies, getPreferredCurrency, mainCurrencies } from '@proton/payments/core/currencies';
 import { emptyEntitlementCatalog } from '@proton/payments/core/entitlements/empty-entitlement-catalog';
 import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
 import type {
@@ -68,7 +67,7 @@ import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
-import { getPlanFromPlanIDs, hasFreePlanIDs } from '@proton/shared/lib/payments/plan/helpers';
+import { getPlanFromPlanIDs, getPlanNameFromIDs, hasFreePlanIDs } from '@proton/shared/lib/payments/plan/helpers';
 import type { FreePlanDefault, Plan } from '@proton/shared/lib/payments/plan/interface';
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
@@ -103,6 +102,16 @@ interface PaymentsContextProviderState {
     vatNumber: string | undefined;
     loading: boolean;
 }
+
+const toMultiSubscriptionContext = (
+    lumoMultiSubscriptions: boolean,
+    { subscription, entitlementCatalog }: Pick<PaymentsContextProviderState, 'subscription' | 'entitlementCatalog'>
+): MultiSubscriptionContext =>
+    createMultiSubscriptionContext({
+        lumoMultiSubscriptions,
+        subscription,
+        entitlementCatalog: entitlementCatalog === emptyEntitlementCatalog ? undefined : entitlementCatalog,
+    });
 
 const selectInitialPaymentData = createSelector(
     [selectUser, selectSubscription, selectPlans, selectPaymentStatus, selectEntitlementCatalog],
@@ -141,21 +150,18 @@ export const PaymentsContextProvider = ({
     const dispatch = useDispatch();
     const lumoMultiSubscriptions = useFlag('LumoMultiSubscriptions');
 
-    const { getPreferredCurrency, getAvailableCurrencies } = useCurrencies();
-
     const getLocalizedPlansMapParametrized = (params: {
         paramCurrency?: Currency;
         paymentStatus: PaymentStatus | undefined;
-        subscription: Subscription | FreeSubscription;
+        multiSubscriptionContext: MultiSubscriptionContext;
         plans: Plan[];
     }) => {
         return getPreferredPlansMap({
             currencyFallback: false,
-            getPreferredCurrency,
             currencyOverrides: params.paramCurrency ? { paramCurrency: params.paramCurrency } : undefined,
             user,
             paymentStatus: params.paymentStatus,
-            subscription: params.subscription,
+            multiSubscriptionContext: params.multiSubscriptionContext,
             plans: params.plans,
         }).plansMap;
     };
@@ -176,16 +182,20 @@ export const PaymentsContextProvider = ({
                 ? getBillingAddressFromPaymentStatus(paymentStatus, { shouldRestoreZipCode: !authenticated })
                 : DEFAULT_TAX_BILLING_ADDRESS;
 
+            const initialMultiSubscriptionContext = toMultiSubscriptionContext(lumoMultiSubscriptions, {
+                subscription,
+                entitlementCatalog,
+            });
             const autoCurrency = getPreferredCurrency({
                 user,
-                subscription,
+                multiSubscriptionContext: initialMultiSubscriptionContext,
                 plans: plansData.plans,
                 paymentStatus,
             });
             const plansMap = getLocalizedPlansMapParametrized({
                 paramCurrency: autoCurrency,
                 paymentStatus,
-                subscription,
+                multiSubscriptionContext: initialMultiSubscriptionContext,
                 plans: plansData.plans,
             });
 
@@ -243,6 +253,9 @@ export const PaymentsContextProvider = ({
         })()
     );
 
+    const getMultiSubscriptionContext = (): MultiSubscriptionContext =>
+        toMultiSubscriptionContext(lumoMultiSubscriptions, stateRef.current);
+
     const setState = (newState: Partial<PaymentsContextProviderState>) => {
         stateRef.current = { ...stateRef.current, ...newState };
         rerender({});
@@ -255,7 +268,7 @@ export const PaymentsContextProvider = ({
         return getLocalizedPlansMapParametrized({
             ...params,
             paymentStatus: stateRef.current.paymentStatus,
-            subscription: stateRef.current.subscription,
+            multiSubscriptionContext: getMultiSubscriptionContext(),
             plans: stateRef.current.plansData.plans,
         });
     };
@@ -305,15 +318,6 @@ export const PaymentsContextProvider = ({
         const plansMap = getLocalizedPlansMap({ paramCurrency: planToCheck.currency });
         return computeOptimisticCheckResult({ plansMap, ...planToCheck }, stateRef.current.subscription, {
             isTrial: planToCheck.trial || getShouldPassTrial(planToCheck.planIDs, planToCheck.cycle, true),
-        });
-    };
-
-    const getMultiSubscriptionContext = (): MultiSubscriptionContext => {
-        const { subscription, entitlementCatalog } = stateRef.current;
-        return createMultiSubscriptionContext({
-            lumoMultiSubscriptions,
-            subscription: subscription,
-            entitlementCatalog: entitlementCatalog === emptyEntitlementCatalog ? undefined : entitlementCatalog,
         });
     };
 
@@ -430,8 +434,19 @@ export const PaymentsContextProvider = ({
         );
     };
 
-    const selectNewPlan = async (newPlanToCheck: PlanToCheck) => {
+    const selectNewPlan = async (requestedPlanToCheck: PlanToCheck) => {
         const selectedPlan = getCurrentSelectedPlan();
+        const newPlanToCheck: PlanToCheck = {
+            ...requestedPlanToCheck,
+            currency: getPreferredCurrency({
+                paramCurrency: requestedPlanToCheck.currency,
+                paramPlanName: getPlanNameFromIDs(requestedPlanToCheck.planIDs),
+                paymentStatus: stateRef.current.paymentStatus,
+                plans: stateRef.current.plansData.plans,
+                user,
+                multiSubscriptionContext: getMultiSubscriptionContext(),
+            }),
+        };
 
         const action: EstimationChangeAction | null = (() => {
             const newSelectedPlan = new SelectedPlan(
@@ -533,16 +548,21 @@ export const PaymentsContextProvider = ({
         const { plansData, paymentStatus: status, subscription } = await preloadPaymentsData({ api });
         const plans = plansData.plans;
 
+        const selectedPlanName = planToCheckParam ? getPlanNameFromIDs(planToCheckParam.planIDs) : undefined;
         let preferredCurrency = getPreferredCurrency({
             paramCurrency,
+            paramPlanName: selectedPlanName,
             paymentStatus: status,
             plans,
+            multiSubscriptionContext: getMultiSubscriptionContext(),
         });
 
         const availableCurrencies = getAvailableCurrencies({
             paramCurrency,
+            selectedPlanName,
             paymentStatus: status,
             plans,
+            multiSubscriptionContext: getMultiSubscriptionContext(),
         });
 
         setState({
@@ -556,11 +576,10 @@ export const PaymentsContextProvider = ({
 
         const localizedPlansMap = getPreferredPlansMap({
             currencyFallback: false,
-            getPreferredCurrency,
             currencyOverrides: { paramCurrency: preferredCurrency },
             user,
             paymentStatus: stateRef.current.paymentStatus,
-            subscription: stateRef.current.subscription,
+            multiSubscriptionContext: getMultiSubscriptionContext(),
             plans: stateRef.current.plansData.plans,
         }).plansMap;
 
@@ -824,7 +843,7 @@ export const PaymentsContextProvider = ({
                 selectedPlanName,
                 paymentStatus: stateRef.current.paymentStatus,
                 user,
-                subscription: stateRef.current.subscription,
+                multiSubscriptionContext: getMultiSubscriptionContext(),
                 plans: stateRef.current.plansData.plans,
                 paramCurrency: stateRef.current.planToCheck.currency,
             }),
@@ -834,7 +853,7 @@ export const PaymentsContextProvider = ({
                 paramPlanName: selectedPlanName,
                 paymentStatus: stateRef.current.paymentStatus,
                 user,
-                subscription: stateRef.current.subscription,
+                multiSubscriptionContext: getMultiSubscriptionContext(),
                 plans: stateRef.current.plansData.plans,
             }),
         selectNewPlan,

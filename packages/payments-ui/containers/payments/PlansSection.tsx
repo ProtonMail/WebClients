@@ -200,7 +200,6 @@ const PlansSectionInner = ({ app }: Props) => {
                 paymentStatus={paymentStatus}
                 cycle={cycle}
                 onChangeCycle={setCycle}
-                planIDs={currentPlanIDs}
                 hasPlanSelectionComparison={false}
                 subscription={subscription}
                 onChangePlanIDs={handlePlanChange}

@@ -2,18 +2,22 @@ import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import type { Currency, FreeSubscription } from '@proton/payments/core/interface';
-import type { FullPlansMap, Subscription } from '@proton/payments/core/subscription/interface';
+import { getPreferredCurrency } from '@proton/payments/core/currencies';
+import type { Currency } from '@proton/payments/core/interface';
+import type { FullPlansMap } from '@proton/payments/core/subscription/interface';
+import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlansMap as getPlansMapInner } from '@proton/payments/core/subscription/plans-map-wrapper';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 
-import { type GetPreferredCurrencyParamsHook, useCurrencies } from '../../client-extensions/useCurrencies';
+import { useMultiSubscriptionContext } from '../../react-extensions/useMultiSubscriptionContext';
+
+type PreferredCurrencyOverrides = Partial<Parameters<typeof getPreferredCurrency>[0]>;
 
 type PreferredPlansMapHook = {
     plansMapLoading: boolean;
     plansMap: FullPlansMap;
-    getPlansMap: (overrides?: GetPreferredCurrencyParamsHook) => {
+    getPlansMap: (overrides?: PreferredCurrencyOverrides) => {
         plansMap: FullPlansMap;
         preferredCurrency: Currency;
     };
@@ -23,24 +27,22 @@ type PreferredPlansMapHook = {
 export const getPreferredPlansMap = ({
     currencyOverrides,
     currencyFallback,
-    getPreferredCurrency,
     user,
-    subscription,
+    multiSubscriptionContext,
     plans,
     paymentStatus,
 }: {
     currencyFallback?: boolean;
-    currencyOverrides?: GetPreferredCurrencyParamsHook;
-    getPreferredCurrency: ReturnType<typeof useCurrencies>['getPreferredCurrency'];
+    currencyOverrides?: PreferredCurrencyOverrides;
     user: UserModel | undefined;
-    subscription?: Subscription | FreeSubscription;
+    multiSubscriptionContext: MultiSubscriptionContext;
     plans: Plan[];
     paymentStatus: ReturnType<typeof usePaymentStatus>[0];
 }) => {
     const preferredCurrency = getPreferredCurrency({
         ...currencyOverrides,
         user,
-        subscription,
+        multiSubscriptionContext,
         plans,
         paymentStatus,
     });
@@ -54,17 +56,16 @@ export const getPreferredPlansMap = ({
 export const usePreferredPlansMap = (currencyFallback?: boolean): PreferredPlansMapHook => {
     const [plansData, plansLoading] = usePlans();
     const [status, statusLoading] = usePaymentStatus();
-    const [subscription, subscriptionLoading] = useSubscription();
+    const [, subscriptionLoading] = useSubscription();
+    const multiSubscriptionContext = useMultiSubscriptionContext();
     const [user] = useUser();
-    const { getPreferredCurrency } = useCurrencies();
 
-    const getPlansMap = (overrides: GetPreferredCurrencyParamsHook = {}) => {
+    const getPlansMap = (overrides: PreferredCurrencyOverrides = {}) => {
         return getPreferredPlansMap({
             currencyFallback,
             currencyOverrides: overrides,
-            getPreferredCurrency,
             user,
-            subscription,
+            multiSubscriptionContext,
             plans: plansData?.plans ?? [],
             paymentStatus: status,
         });

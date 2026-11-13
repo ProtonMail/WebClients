@@ -16,7 +16,6 @@ import CheckoutRow from '@proton/components/containers/payments/subscription/mod
 import { getDisableCurrencySelector } from '@proton/components/containers/payments/subscription/modal-components/helpers/getDisableCurrencySelector';
 import { getWhatsIncluded } from '@proton/components/containers/payments/subscription/modal-components/helpers/included';
 import { show30DaysMoneyBackGuarantee } from '@proton/components/containers/payments/subscription/modal-components/helpers/show30DaysMoneyBackGuarantee';
-import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
 import { GuardBanner } from '@proton/payments-hooks/ui/components/GuardBanner';
 import {
     IdealAuthorizationText,
@@ -25,6 +24,7 @@ import {
 import type { CouponConfigRendered } from '@proton/payments-hooks/ui/coupon-config/interface';
 import type { CheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
 import { PLANS } from '@proton/payments/core/constants';
+import { getAvailableCurrencies } from '@proton/payments/core/currencies';
 import type { Currency, Cycle, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import type {
     FullPlansMap,
@@ -32,6 +32,7 @@ import type {
     SubscriptionCheckForbiddenReason,
     SubscriptionEstimation,
 } from '@proton/payments/core/subscription/interface';
+import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -48,17 +49,16 @@ import { PlanDescription } from './helpers/PlanDescription';
 
 export const useAvailableCurrenciesForPlan = (
     plan: Plan | undefined,
-    subscription: Subscription | FreeSubscription
+    multiSubscriptionContext: MultiSubscriptionContext
 ) => {
     const [user] = useUser();
     const [paymentStatus] = usePaymentStatus();
     const [plansResult] = usePlans();
     const plans: Plan[] = plansResult?.plans ?? [];
-    const { getAvailableCurrencies } = useCurrencies();
 
     return getAvailableCurrencies({
         paymentStatus,
-        subscription,
+        multiSubscriptionContext,
         user,
         plans,
         selectedPlanName: plan?.Name,
@@ -84,6 +84,7 @@ type Props = {
     paymentFacade: PaymentFacade;
     taxCountry: TaxCountryHook;
     paymentForbiddenReason: SubscriptionCheckForbiddenReason;
+    multiSubscriptionContext: MultiSubscriptionContext;
 };
 
 export type SubscriptionCheckoutProps = Props & CheckoutModifiers;
@@ -107,6 +108,7 @@ const SubscriptionCheckout = ({
     paymentFacade,
     taxCountry,
     paymentForbiddenReason,
+    multiSubscriptionContext,
     ...checkoutModifiers
 }: SubscriptionCheckoutProps) => {
     const { APP_NAME } = useConfig();
@@ -114,7 +116,7 @@ const SubscriptionCheckout = ({
     const scribeToLumo = useFlag(MailFeatureFlag.ScribeToLumo);
 
     const plan = getPlanFromPlanIDs(plansMap, planIDs);
-    const currencies = useAvailableCurrenciesForPlan(plan, subscription);
+    const currencies = useAvailableCurrenciesForPlan(plan, multiSubscriptionContext);
 
     if (!checkResult) {
         return null;
@@ -122,7 +124,8 @@ const SubscriptionCheckout = ({
 
     const isPassBasic = !!planIDs[PLANS.PASS_BASIC];
     const list = getWhatsIncluded({ planIDs, plansMap, freePlan, scribeToLumo });
-    const disableCurrencySelector = getDisableCurrencySelector(user, planIDs, couponConfig, loading);
+    const disableCurrencySelector =
+        getDisableCurrencySelector(user, planIDs, couponConfig, loading) || currencies.length <= 1;
 
     const perMonthSuffix = <span className="color-weak text-sm">{c('Suffix').t`/month`}</span>;
 

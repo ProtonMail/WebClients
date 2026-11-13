@@ -17,7 +17,6 @@ import { sortMethodsBasedOnDevice } from '@proton/payments-ui/client-extensions/
 import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import { useAvailableCurrenciesForPlan } from '@proton/payments-ui/containers/payments/subscription/modal-components/SubscriptionCheckout';
 import { ProrationMode } from '@proton/payments/core/api/api';
-import { FREE_SUBSCRIPTION } from '@proton/payments/core/constants';
 import type { PaymentMethodType } from '@proton/payments/core/interface';
 import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
@@ -59,6 +58,7 @@ const useSubscriptionCheckout = ({ onStepChange, onSubscribed, onUnsubscribed }:
         telemetryContext,
         coupon,
         reRunPaymentChecks,
+        multiSubscriptionContext,
     } = usePayments();
     const { planName, planIDs, cycle, currency } = checkoutUi;
     const [subscribing, withSubscribing] = useLoading();
@@ -70,7 +70,7 @@ const useSubscriptionCheckout = ({ onStepChange, onSubscribed, onUnsubscribed }:
     const [calendarDowngradeModal, showCalendarDowngradeModal] = useModalTwoPromise();
     const eventManager = useEventManager();
 
-    const availableCurrencies = useAvailableCurrenciesForPlan(plansMap[planName], subscription ?? FREE_SUBSCRIPTION);
+    const availableCurrencies = useAvailableCurrenciesForPlan(plansMap[planName], multiSubscriptionContext);
 
     const handleSubscribe = async (
         operations: Operations,
@@ -198,7 +198,7 @@ const useSubscriptionCheckout = ({ onStepChange, onSubscribed, onUnsubscribed }:
 
     const isLifetimeWithCredits = user.Credit > 0 && isLifetimePlanSelected(planIDs);
 
-    const disableCurrencySelector = isLifetimeWithCredits || loading;
+    const disableCurrencySelector = isLifetimeWithCredits || loading || availableCurrencies.length <= 1;
 
     return {
         paymentFacade,

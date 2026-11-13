@@ -8,7 +8,7 @@ import {
     multiSubscriptionTestCatalog,
 } from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
-import { getLongTestPlans, getTestPlansMap } from '@proton/payments/testing/data-plans';
+import { getLongTestPlans, getTestPlans, getTestPlansMap } from '@proton/payments/testing/data-plans';
 import type { ActiveSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, USER_ROLES } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
@@ -348,6 +348,7 @@ describe('getUserInfo entitlement catalog for a signed-in user', () => {
         getUserInfo({
             lumoMultiSubscriptions,
             getEntitlementCatalog,
+            paymentStatus: undefined,
             api: signedInApi,
             audience: Audience.B2C,
             paymentsApi: { checkSubscription } as unknown as PaymentsApi,
@@ -429,6 +430,7 @@ describe('getUserInfo cycle for a signed-in user', () => {
         getUserInfo({
             lumoMultiSubscriptions: false,
             getEntitlementCatalog: jest.fn(),
+            paymentStatus: undefined,
             api: jest.fn() as unknown as Api,
             audience: Audience.B2C,
             paymentsApi,
@@ -521,6 +523,7 @@ describe('getSubscriptionData guards', () => {
 
 describe('getUserInfo with the Lumo purchase rules', () => {
     const plansMap = getTestPlansMap('EUR');
+    const plansInEurAndUsd = [...(Object.values(plansMap) as Plan[]), ...getTestPlans('USD')];
     const lumoPlanIDs = { [PLANS.LUMO]: 1 };
     const user = { ID: 'user-id', Role: USER_ROLES.ADMIN_ROLE, Subscribed: 1 } as User;
 
@@ -570,13 +573,14 @@ describe('getUserInfo with the Lumo purchase rules', () => {
                 VatId: undefined,
             },
             plansMap,
-            plans: Object.values(plansMap) as Plan[],
+            plans: plansInEurAndUsd,
             planParameters: { defined: true, planIDs: selectedPlanIDs, plan: plansMap[selectedPlanName] as Plan },
             signupParameters: {} as SignupParameters2,
             toApp: APPS.PROTONLUMO,
             availableCycles: [CYCLE.MONTHLY, CYCLE.YEARLY],
             lumoMultiSubscriptions,
             getEntitlementCatalog: jest.fn().mockResolvedValue(multiSubscriptionTestCatalog),
+            paymentStatus: undefined,
         });
 
         return { subscriptionData, upsell, checkSubscription };
@@ -625,5 +629,22 @@ describe('getUserInfo with the Lumo purchase rules', () => {
             [PLANS.FAMILY]: 1,
             [ADDON_NAMES.LUMO_FAMILY]: 1,
         });
+    });
+
+    it('buys Lumo in the currency of the web subscription it runs next to, with the flag on', async () => {
+        const subscription = buildSubscription(PLANS.MAIL, { Currency: 'USD' });
+
+        const { subscriptionData, checkSubscription } = await runGetUserInfo(subscription, true);
+
+        expect(subscriptionData.currency).toBe('USD');
+        expect(checkSubscription).toHaveBeenCalledWith(expect.objectContaining({ Currency: 'USD' }), expect.anything());
+    });
+
+    it('keeps the requested currency with the flag off', async () => {
+        const subscription = buildSubscription(PLANS.MAIL, { Currency: 'USD' });
+
+        const { subscriptionData } = await runGetUserInfo(subscription, false);
+
+        expect(subscriptionData.currency).toBe('EUR');
     });
 });

@@ -8,6 +8,7 @@ import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { buildMultiSubscriptionContextFromSubscription } from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getTestPlansMap } from '@proton/payments/testing/data-plans';
 import { SubscriptionMode, TaxMode } from '@proton/shared/lib/payments/subscription/constants';
@@ -48,11 +49,19 @@ jest.mock('@proton/components/containers/payments/Checkout', () => {
     };
 });
 
-const WrappedSubscriptionCheckout = (props: Omit<SubscriptionCheckoutProps, 'taxCountry'>) => {
+const WrappedSubscriptionCheckout = (
+    props: Omit<SubscriptionCheckoutProps, 'taxCountry' | 'multiSubscriptionContext'>
+) => {
     const taxCountry = useTaxCountry({
         telemetryContext: 'other',
     });
-    return <SubscriptionCheckout {...props} taxCountry={taxCountry} />;
+    return (
+        <SubscriptionCheckout
+            {...props}
+            taxCountry={taxCountry}
+            multiSubscriptionContext={buildMultiSubscriptionContextFromSubscription(props.subscription)}
+        />
+    );
 };
 
 describe('SubscriptionCheckout', () => {

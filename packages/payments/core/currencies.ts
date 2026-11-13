@@ -1,12 +1,16 @@
 import type { User, UserModel } from '@proton/shared/lib/interfaces/User';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import type { FeatureFlag } from '@proton/unleash/Flags';
+import { getStandaloneUnleashClient } from '@proton/unleash/standaloneClient';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { BillingAddress } from './billing-address/billing-address';
 import { type ADDON_NAMES, PLANS } from './constants';
-import type { Currency, FreeSubscription, PaymentStatus } from './interface';
+import type { Currency, PaymentStatus } from './interface';
+import { getWebSubscriptions } from './subscription/helpers/external-management';
 import type { Subscription } from './subscription/interface';
+import type { MultiSubscriptionContext } from './subscription/multi-subscription-context';
+import { getPurchaseOutcome } from './subscription/purchase-outcome';
 import { isValidPlanName } from './type-guards';
 
 interface CurrencyFormattingConfig {
@@ -123,7 +127,15 @@ export function isRegionalCurrency(currency: Currency): boolean {
     return !isMainCurrency(currency);
 }
 
-export const NEW_BATCH_CURRENCIES_FEATURE_FLAG: FeatureFlag | undefined = undefined;
+const NEW_BATCH_CURRENCIES_FEATURE_FLAG: FeatureFlag | undefined = undefined;
+
+function getIsNewBatchCurrenciesEnabled(): boolean {
+    if (!NEW_BATCH_CURRENCIES_FEATURE_FLAG) {
+        return true;
+    }
+
+    return getStandaloneUnleashClient()?.isEnabled(NEW_BATCH_CURRENCIES_FEATURE_FLAG) ?? true;
+}
 
 function isNewBatchRegionalCurrency(currency: Currency | undefined): boolean {
     if (!currency) {
@@ -177,13 +189,12 @@ function getMaybeRegionalPlansCurrency(
 
 export function getStatusCurrency(
     paymentStatus: PaymentStatus | undefined,
-    user: User | undefined,
-    enableNewBatchCurrencies: boolean
+    user: User | undefined
 ): Currency | undefined {
     const statusCurrency = paymentStatus ? mapCountryToRegionalCurrency(paymentStatus.CountryCode) : undefined;
     const newBatchCurrency = isNewBatchRegionalCurrency(statusCurrency);
 
-    return !user || enableNewBatchCurrencies || !newBatchCurrency ? statusCurrency : undefined;
+    return !user || !newBatchCurrency || getIsNewBatchCurrenciesEnabled() ? statusCurrency : undefined;
 }
 
 export function getSupportedRegionalCurrencies({
@@ -191,21 +202,19 @@ export function getSupportedRegionalCurrencies({
     plans,
     selectedPlanName,
     user,
-    subscription,
-    enableNewBatchCurrencies,
+    subscriptions,
 }: {
     paymentStatus?: PaymentStatus;
     plans?: Plan[];
     selectedPlanName?: PLANS | ADDON_NAMES;
     user?: User;
-    subscription?: Subscription | FreeSubscription;
-    enableNewBatchCurrencies: boolean;
+    subscriptions: Subscription[];
 }): Currency[] {
-    const statusCurrency = getStatusCurrency(paymentStatus, user, enableNewBatchCurrencies);
+    const statusCurrency = getStatusCurrency(paymentStatus, user);
 
     const currencies = [
         statusCurrency,
-        subscription?.Currency,
+        ...subscriptions.map((subscription) => subscription.Currency),
         user?.Currency,
         getMaybeRegionalPlansCurrency(plans, paymentStatus),
     ]
@@ -223,15 +232,54 @@ export function getSupportedRegionalCurrencies({
     return Array.from(new Set(currencies));
 }
 
+/**
+ * With two web subscriptions the lock applies to any selected plan, including plans that can't run next to them, such as
+ * business plans opened with ?plan=mailpro2022. Those are sold in USD, EUR and CHF only, so locking to a regional
+ * currency would price the checkout in a currency the plan has no price in. The lock is skipped for a plan without a
+ * price in the locked currency, and subscription/check refuses the purchase. Every plan that can run next to another
+ * subscription is sold in the same currencies today. If one ever isn't, refuse that purchase instead of picking another
+ * currency: all subscriptions must share one currency.
+ */
+const getLockedCurrency = (
+    multiSubscriptionContext: MultiSubscriptionContext,
+    selectedPlanName: string | undefined,
+    plans: Plan[] | undefined
+): Currency | undefined => {
+    const webSubscriptions = getWebSubscriptions(multiSubscriptionContext.subscriptions);
+    const [anyWebSubscription] = webSubscriptions;
+    if (!multiSubscriptionContext.lumoMultiSubscriptions || !anyWebSubscription) {
+        return undefined;
+    }
+
+    const lockedCurrency = anyWebSubscription.Currency;
+    const selectedPlanCurrencies =
+        plans?.filter((plan) => plan.Name === selectedPlanName).map((plan) => plan.Currency) ?? [];
+    if (selectedPlanCurrencies.length > 0 && !selectedPlanCurrencies.includes(lockedCurrency)) {
+        return undefined;
+    }
+
+    if (webSubscriptions.length >= 2) {
+        return lockedCurrency;
+    }
+
+    if (!selectedPlanName || !isValidPlanName(selectedPlanName)) {
+        return undefined;
+    }
+
+    const createsSubscriptionNextToIt =
+        getPurchaseOutcome(multiSubscriptionContext, { [selectedPlanName]: 1 }).type === 'new-subscription';
+
+    return createsSubscriptionNextToIt ? lockedCurrency : undefined;
+};
+
 export function getPreferredCurrency({
     paymentStatus,
     plans,
     paramCurrency,
     paramPlanName,
     user,
-    subscription,
+    multiSubscriptionContext,
     selectedPlan,
-    enableNewBatchCurrencies,
 }: {
     paymentStatus?: PaymentStatus;
     plans?: Plan[];
@@ -239,10 +287,14 @@ export function getPreferredCurrency({
     paramCurrency?: Currency;
     paramPlanName?: string;
     user?: UserModel;
-    subscription?: Subscription | FreeSubscription | null;
-    enableNewBatchCurrencies: boolean;
+    multiSubscriptionContext: MultiSubscriptionContext;
 }): Currency {
-    const statusCurrency = getStatusCurrency(paymentStatus, user, enableNewBatchCurrencies);
+    const lockedCurrency = getLockedCurrency(multiSubscriptionContext, selectedPlan?.Name ?? paramPlanName, plans);
+    if (lockedCurrency) {
+        return lockedCurrency;
+    }
+
+    const statusCurrency = getStatusCurrency(paymentStatus, user);
 
     const userCurrency =
         !!user && (isRegionalCurrency(user?.Currency) || !!user?.isPaid || user?.Credit !== 0)
@@ -251,7 +303,7 @@ export function getPreferredCurrency({
 
     const usedCurrencies = [
         userCurrency,
-        subscription?.Currency,
+        ...multiSubscriptionContext.subscriptions.map((subscription) => subscription.Currency),
         statusCurrency,
         getMaybeRegionalPlansCurrency(plans, paymentStatus),
     ].filter(isTruthy);
@@ -308,20 +360,23 @@ export function getPreferredCurrency({
 export function getAvailableCurrencies({
     paymentStatus,
     user,
-    subscription,
+    multiSubscriptionContext,
     plans,
     selectedPlanName,
     paramCurrency,
-    enableNewBatchCurrencies,
 }: {
     paymentStatus?: PaymentStatus;
     user?: User;
-    subscription?: Subscription | FreeSubscription;
+    multiSubscriptionContext: MultiSubscriptionContext;
     plans?: Plan[];
     selectedPlanName?: PLANS | ADDON_NAMES;
     paramCurrency?: Currency;
-    enableNewBatchCurrencies: boolean;
 }): readonly Currency[] {
+    const lockedCurrency = getLockedCurrency(multiSubscriptionContext, selectedPlanName, plans);
+    if (lockedCurrency) {
+        return [lockedCurrency];
+    }
+
     if (paramCurrency && isMainCurrency(paramCurrency)) {
         return mainCurrencies;
     }
@@ -331,8 +386,7 @@ export function getAvailableCurrencies({
         plans,
         selectedPlanName,
         user,
-        subscription,
-        enableNewBatchCurrencies,
+        subscriptions: multiSubscriptionContext.subscriptions,
     });
 
     return [...mainCurrencies, ...regionalCurrencies];

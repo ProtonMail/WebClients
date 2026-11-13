@@ -45,7 +45,6 @@ describe('useAccessiblePlans', () => {
             subscription: FREE_SUBSCRIPTION,
             plans,
             currency: 'USD',
-            planIDs: {},
             app: APPS.PROTONMAIL,
             paymentStatus: {
                 CountryCode: 'CH',
@@ -104,7 +103,6 @@ describe('useAccessiblePlans', () => {
             subscription: FREE_SUBSCRIPTION,
             plans,
             currency: 'USD',
-            planIDs: {},
             app: APPS.PROTONMAIL,
             paymentStatus: {
                 CountryCode: 'CH',
@@ -163,7 +161,6 @@ describe('useAccessiblePlans', () => {
             subscription: FREE_SUBSCRIPTION,
             plans,
             currency: 'USD',
-            planIDs: {},
             app: APPS.PROTONMAIL,
             paymentStatus: {
                 CountryCode: 'CH',
@@ -220,7 +217,6 @@ describe('useAccessiblePlans', () => {
             subscription: FREE_SUBSCRIPTION,
             plans,
             currency: 'BRL',
-            planIDs: {},
             app: APPS.PROTONMAIL,
             paymentStatus: {
                 CountryCode: 'BR',
@@ -274,7 +270,6 @@ describe('useAccessiblePlans', () => {
             subscription: FREE_SUBSCRIPTION,
             plans,
             currency: 'USD',
-            planIDs: {},
             app: APPS.PROTONMAIL,
             paymentStatus: {
                 CountryCode: 'BR',
@@ -331,7 +326,6 @@ describe('useAccessiblePlans', () => {
             subscription: FREE_SUBSCRIPTION,
             plans,
             currency: 'USD',
-            planIDs: {},
             app: APPS.PROTONMAIL,
             paymentStatus: {
                 CountryCode: 'CH',
@@ -392,7 +386,6 @@ describe('useAccessiblePlans', () => {
             } as any,
             plans,
             currency: 'USD',
-            planIDs: {},
             app: APPS.PROTONMAIL,
             paymentStatus: {
                 CountryCode: 'BR',
@@ -435,7 +428,7 @@ describe('useAccessiblePlans', () => {
         });
     });
 
-    it('should render old bundle pro if user already has it', () => {
+    it('should render the new bundle pro to a user who has the old one', () => {
         const plans = [...getTestPlans('USD'), ...getTestPlans('CHF'), ...getTestPlans('EUR')];
 
         const props: AccessiblePlansHookProps = {
@@ -451,9 +444,6 @@ describe('useAccessiblePlans', () => {
             } as any,
             plans,
             currency: 'USD',
-            planIDs: {
-                [PLANS.BUNDLE_PRO]: 1,
-            },
             app: APPS.PROTONMAIL,
             paymentStatus: {
                 CountryCode: 'CH',
@@ -488,7 +478,7 @@ describe('useAccessiblePlans', () => {
             B2BPlans: [
                 getPlanByName(plans, PLANS.MAIL_PRO, 'USD', undefined, false),
                 getPlanByName(plans, PLANS.MAIL_BUSINESS, 'USD', undefined, false),
-                getPlanByName(plans, PLANS.BUNDLE_PRO, 'USD', undefined, false),
+                getPlanByName(plans, PLANS.BUNDLE_PRO_2024, 'USD', undefined, false),
             ],
             isVpnSettingsApp: false,
             isVpnB2bPlans: false,
@@ -511,9 +501,6 @@ describe('useAccessiblePlans', () => {
             } as any,
             plans,
             currency: 'USD',
-            planIDs: {
-                [PLANS.BUNDLE_PRO_2024]: 1,
-            },
             app: APPS.PROTONMAIL,
             paymentStatus: {
                 CountryCode: 'CH',
@@ -567,7 +554,6 @@ describe('useAccessiblePlans', () => {
             subscription: FREE_SUBSCRIPTION,
             plans,
             currency: 'USD',
-            planIDs: {},
             app: APPS.PROTONMAIL,
             paymentStatus: {
                 CountryCode: 'CH',
@@ -633,7 +619,6 @@ describe('useAccessiblePlans', () => {
             subscription: FREE_SUBSCRIPTION,
             plans,
             currency: 'USD',
-            planIDs: {},
             app: APPS.PROTONMAIL,
             paymentStatus: {
                 CountryCode: 'CH',
@@ -667,7 +652,6 @@ describe('useAccessiblePlans', () => {
             subscription: FREE_SUBSCRIPTION,
             plans,
             currency: 'USD',
-            planIDs: {},
             app: APPS.PROTONPASS,
             paymentStatus: {
                 CountryCode: 'CH',
@@ -703,7 +687,6 @@ describe('useAccessiblePlans', () => {
             subscription: FREE_SUBSCRIPTION,
             plans: getTestPlans('USD'),
             currency: 'USD',
-            planIDs: {},
             app: APPS.PROTONPASS,
             paymentStatus: {
                 CountryCode: 'CH',
@@ -763,6 +746,18 @@ describe('useAccessiblePlans', () => {
             expect(result.current.isPassLifetimeEligible).toBe(false);
         });
 
+        it('should be false when Pass Lifetime is not sold in the selected currency', () => {
+            const plansWithoutLifetimeInJpy = getTestPlans('JPY').filter((plan) => plan.Name !== PLANS.PASS_LIFETIME);
+            const props = {
+                ...defaultProps,
+                plans: [...getTestPlans('USD'), ...plansWithoutLifetimeInJpy],
+                currency: 'JPY' as const,
+                paymentStatus: { CountryCode: 'JP', VendorStates: {} as any },
+            };
+            const { result } = renderHook(() => useAccessiblePlans(props));
+            expect(result.current.isPassLifetimeEligible).toBe(false);
+        });
+
         it('should be false when current plan is Pass Family', () => {
             const subscription: Subscription = buildSubscription({
                 [PLANS.PASS_FAMILY]: 1,
@@ -785,6 +780,85 @@ describe('useAccessiblePlans', () => {
             };
             const { result } = renderHook(() => useAccessiblePlans(props));
             expect(result.current.isPassLifetimeEligible).toBe(false);
+        });
+    });
+
+    describe('currencies of each tab', () => {
+        const mainCurrencyPlans = [...getTestPlans('USD'), ...getTestPlans('EUR'), ...getTestPlans('CHF')];
+
+        const getTabCurrencies = (props: Partial<AccessiblePlansHookProps>) => {
+            const { result } = renderHook(() =>
+                useAccessiblePlans({
+                    selectedProductPlans: { b2c: PLANS.MAIL, b2b: PLANS.MAIL_PRO, family: PLANS.FAMILY },
+                    subscription: FREE_SUBSCRIPTION,
+                    plans: mainCurrencyPlans,
+                    currency: 'USD',
+                    app: APPS.PROTONMAIL,
+                    paymentStatus: { CountryCode: 'CH', VendorStates: {} as any },
+                    user: buildUser({ Currency: 'USD' }),
+                    audience: Audience.B2C,
+                    multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(FREE_SUBSCRIPTION),
+                    ...props,
+                })
+            );
+            return result.current.availableCurrenciesByAudience;
+        };
+
+        it('offers a regional currency only in the tabs that have a card sold in it', () => {
+            const duoAndFamilyInJpy = getTestPlans('JPY').filter(
+                (plan) => plan.Name === PLANS.DUO || plan.Name === PLANS.FAMILY
+            );
+
+            expect(
+                getTabCurrencies({
+                    app: APPS.PROTONWALLET,
+                    plans: [...mainCurrencyPlans, ...duoAndFamilyInJpy],
+                    paymentStatus: { CountryCode: 'JP', VendorStates: {} as any },
+                })
+            ).toEqual({
+                [Audience.B2C]: ['USD', 'EUR', 'CHF'],
+                [Audience.FAMILY]: ['USD', 'EUR', 'CHF', 'JPY'],
+                [Audience.B2B]: ['USD', 'EUR', 'CHF'],
+            });
+        });
+
+        it('offers no currency to a tab whose cards are not sold in the locked currency', () => {
+            const mailPlus = buildSubscription(PLANS.MAIL, { Currency: 'BRL' });
+            const lumoPlus = buildSubscription(PLANS.LUMO, { Currency: 'BRL' });
+            const b2cPlansInBrl = getTestPlans('BRL').filter((plan) =>
+                [PLANS.MAIL, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY].includes(plan.Name as PLANS)
+            );
+
+            expect(
+                getTabCurrencies({
+                    subscription: mailPlus,
+                    plans: [...mainCurrencyPlans, ...b2cPlansInBrl],
+                    currency: 'BRL',
+                    paymentStatus: { CountryCode: 'BR', VendorStates: {} as any },
+                    user: buildUser({ Currency: 'BRL' }),
+                    multiSubscriptionContext: buildMultiSubscriptionContext([mailPlus, lumoPlus]),
+                })
+            ).toEqual({
+                [Audience.B2C]: ['BRL'],
+                [Audience.FAMILY]: ['BRL'],
+                [Audience.B2B]: [],
+            });
+        });
+
+        it('offers only the currency of the web subscriptions when there are two of them', () => {
+            const mailPlus = buildSubscription(PLANS.MAIL, { Currency: 'USD' });
+            const lumoPlus = buildSubscription(PLANS.LUMO, { Currency: 'USD' });
+
+            expect(
+                getTabCurrencies({
+                    subscription: mailPlus,
+                    multiSubscriptionContext: buildMultiSubscriptionContext([mailPlus, lumoPlus]),
+                })
+            ).toEqual({
+                [Audience.B2C]: ['USD'],
+                [Audience.FAMILY]: ['USD'],
+                [Audience.B2B]: ['USD'],
+            });
         });
     });
 });
@@ -853,7 +927,6 @@ describe('getMaximumCycle', () => {
                 subscription,
                 plans,
                 currency: 'USD',
-                planIDs: {},
                 app: APPS.PROTONLUMO,
                 paymentStatus: { CountryCode: 'CH', VendorStates: {} as any },
                 user: buildUser({ Currency: 'USD' }),

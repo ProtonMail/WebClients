@@ -24,7 +24,6 @@ import { IcServers } from '@proton/icons/icons/IcServers';
 import metrics from '@proton/metrics/metricsInstance';
 import observeApiError from '@proton/metrics/observeApiError';
 import type { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
-import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import { usePaymentFacade } from '@proton/payments-ui/client-extensions/usePaymentFacade';
 import PaymentWrapper from '@proton/payments-ui/containers/payments/PaymentWrapper';
@@ -34,6 +33,7 @@ import type { FullBillingAddressFlat } from '@proton/payments/core/billing-addre
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { type PaymentsCheckoutUI, getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { COUPON_CODES, CYCLE, PAYMENT_METHOD_TYPES, PLANS, TRIAL_DURATION_DAYS } from '@proton/payments/core/constants';
+import { getAvailableCurrencies } from '@proton/payments/core/currencies';
 import type {
     Currency,
     Cycle,
@@ -45,6 +45,7 @@ import type {
 import type { PaymentProcessorHook } from '@proton/payments/core/payment-processors/interface';
 import { getHas2025OfferCoupon } from '@proton/payments/core/subscription/helpers';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { noSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { isV5PaymentToken } from '@proton/payments/core/type-guards';
 import { v5PaymentTokenToLegacyPaymentToken } from '@proton/payments/core/utils';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
@@ -228,7 +229,6 @@ const Step1 = ({
     const [loadingSignup, withLoadingSignup] = useLoading();
     const [loadingPaymentDetails, withLoadingPaymentDetails] = useLoading();
     const [changingCurrency, withChangingCurrency] = useLoading();
-    const { getAvailableCurrencies } = useCurrencies();
 
     const { plansMap } = model;
     const isLoadingModelDeps = model.loadingDependencies;
@@ -1012,6 +1012,7 @@ const Step1 = ({
                 plans: model.plans,
                 selectedPlanName: selectedPlan.Name,
                 paramCurrency: currencyUrlParam,
+                multiSubscriptionContext: noSubscriptionContext,
             })}
             mode="select-two"
             currency={options.currency}

@@ -97,6 +97,7 @@ function buildDeps(
             setCheckResult: jest.fn(),
             setModel: jest.fn(),
             setVatReverseChargeErrorModal: jest.fn(),
+            fitCurrencyToSelection: jest.fn((_planIDs, currency) => currency),
         },
         callbacks: {
             runAdditionalEstimations: jest.fn().mockResolvedValue(undefined),
@@ -658,7 +659,10 @@ describe('useSubscriptionCheck', () => {
             const previousCheckResult = buildCheckResult({ AmountDue: 999 });
             const deps = buildDeps({
                 checkResult: previousCheckResult,
-                refs: { plansMapRef: { current: {} as any }, giftCodeRef: { current: { focus: focusMock } } },
+                refs: {
+                    plansMapRef: { current: {} as any },
+                    giftCodeRef: { current: { focus: focusMock } },
+                },
                 paymentsApi: {
                     checkSubscription: jest.fn().mockResolvedValue(buildCheckResult({ Gift: 0, Coupon: null })),
                 } as any,

@@ -5,9 +5,8 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
-import { getFallbackCurrency, isRegionalCurrency } from '@proton/payments/core/currencies';
+import { getAvailableCurrencies, getFallbackCurrency, isRegionalCurrency } from '@proton/payments/core/currencies';
 import type {
     Currency,
     Cycle,
@@ -21,7 +20,6 @@ import { switchPlan } from '@proton/payments/core/planIDs';
 import { getIpPricePerMonth } from '@proton/payments/core/price-helpers';
 import {
     getAutoCoupon,
-    getBundleProPlanToUse,
     getCanAccessFamilyPlans,
     getCanSubscriptionAccessDuoPlan,
     getIsB2BAudienceFromSubscription,
@@ -99,7 +97,6 @@ interface Tab {
 
 interface Props {
     app: ProductParam;
-    planIDs: PlanIDs;
     currency: Currency;
     hasPlanSelectionComparison?: boolean;
     cycle: Cycle;
@@ -203,7 +200,6 @@ export type AccessiblePlansHookProps = {
     | 'app'
     | 'selectedProductPlans'
     | 'subscription'
-    | 'planIDs'
     | 'paymentStatus'
     | 'plans'
     | 'currency'
@@ -225,7 +221,6 @@ function getCanChangeToLumoPlus(
 export function useAccessiblePlans({
     selectedProductPlans,
     subscription,
-    planIDs,
     app,
     paymentStatus,
     user,
@@ -247,7 +242,6 @@ export function useAccessiblePlans({
     const plansMap = getPlansMap(plans, currency, true);
 
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
-    const { getAvailableCurrencies } = useCurrencies();
 
     const enabledProductB2CPlanNames = (
         isGenericSettingsApp
@@ -323,27 +317,26 @@ export function useAccessiblePlans({
     // after the release of vpnpassbiz2025, please remove this check, assuming that this condition will always be true.
     const shouldShowVpnPassBiz2025Plan =
         !!plansMap[PLANS.VPN_PASS_BUNDLE_BUSINESS] && getIsB2BAudienceFromSubscription(subscription);
-    const bundleProPlan = getBundleProPlanToUse({ plansMap, planIDs });
     const passB2BPlans = filterPlans([
         shouldShowVpnPassBiz2025Plan ? null : plansMap[PLANS.PASS_PRO],
         plansMap[PLANS.PASS_BUSINESS],
         shouldShowVpnPassBiz2025Plan ? plansMap[PLANS.VPN_PASS_BUNDLE_BUSINESS] : null,
-        plansMap[bundleProPlan],
+        plansMap[PLANS.BUNDLE_PRO_2024],
     ]);
 
     const driveB2BPlans = filterPlans([
         plansMap[PLANS.DRIVE_BUSINESS],
-        plansMap[bundleProPlan],
+        plansMap[PLANS.BUNDLE_PRO_2024],
         plansMap[PLANS.BUNDLE_BIZ_2025],
     ]);
 
-    const walletB2BPlans = filterPlans([plansMap[bundleProPlan]]);
+    const walletB2BPlans = filterPlans([plansMap[PLANS.BUNDLE_PRO_2024]]);
 
     const lumoB2BPlans = filterPlans([plansMap[PLANS.LUMO_BUSINESS]]);
 
     const meetB2BPlans = filterPlans([
         hasMeet(subscription) ? null : plansMap[PLANS.MEET_BUSINESS],
-        plansMap[bundleProPlan],
+        plansMap[PLANS.BUNDLE_PRO_2024],
         isNewB2BPlanEnabled ? plansMap[PLANS.BUNDLE_BIZ_2025] : null,
     ]);
 
@@ -394,8 +387,8 @@ export function useAccessiblePlans({
         }
 
         const plans = isNewB2BPlanEnabled
-            ? [plansMap[PLANS.MAIL_PRO], plansMap[bundleProPlan], plansMap[PLANS.BUNDLE_BIZ_2025]]
-            : [plansMap[PLANS.MAIL_PRO], plansMap[PLANS.MAIL_BUSINESS], plansMap[bundleProPlan]];
+            ? [plansMap[PLANS.MAIL_PRO], plansMap[PLANS.BUNDLE_PRO_2024], plansMap[PLANS.BUNDLE_BIZ_2025]]
+            : [plansMap[PLANS.MAIL_PRO], plansMap[PLANS.MAIL_BUSINESS], plansMap[PLANS.BUNDLE_PRO_2024]];
 
         return filterPlans(plans);
     })();
@@ -405,41 +398,24 @@ export function useAccessiblePlans({
         isPassSettingsApp &&
         !user.hasPassLifetime &&
         audience === Audience.B2C &&
-        !!plansMap[PLANS.PASS_LIFETIME] &&
+        plans.some((plan) => plan.Name === PLANS.PASS_LIFETIME && plan.Currency === currency) &&
         currentPlan?.Name !== PLANS.PASS_FAMILY &&
         !getIsB2BAudienceFromPlan(currentPlan?.Name);
 
-    const accessiblePlans = [
-        ...IndividualPlans,
-        ...FamilyPlans,
-        ...B2BPlans,
-        ...enabledProductB2CPlans,
-        ...(isPassLifetimeEligible ? [plansMap[PLANS.PASS_LIFETIME]] : []),
-    ]
-        .filter(isTruthy)
-        .filter((it): it is Plan => !isShortPlanLike(it));
+    const getTabCurrencies = (tabPlans: (Plan | ShortPlanLike | null | undefined)[]) => {
+        const tabPlanNames = tabPlans
+            .filter(isTruthy)
+            .filter((plan): plan is Plan => !isShortPlanLike(plan))
+            .map((plan) => plan.Name);
+        const tabPlansInEveryCurrency = plans.filter((plan) => tabPlanNames.includes(plan.Name));
 
-    const accessiblePlansWithAllCurrencies = filterPlans(
-        accessiblePlans.flatMap((renderedPlan) =>
-            plans.filter((availablePlan) => availablePlan.Name === renderedPlan.Name)
-        )
-    );
-
-    const accessiblePlansB2c = accessiblePlansWithAllCurrencies.filter((it) => !getIsB2BAudienceFromPlan(it.Name));
-    const availableCurrenciesB2c = getAvailableCurrencies({
-        paymentStatus,
-        user,
-        subscription,
-        plans: accessiblePlansB2c,
-    });
-
-    const accessiblePlansB2b = accessiblePlansWithAllCurrencies.filter((it) => getIsB2BAudienceFromPlan(it.Name));
-    const availableCurrenciesB2b = getAvailableCurrencies({
-        paymentStatus,
-        user,
-        subscription,
-        plans: accessiblePlansB2b,
-    });
+        return getAvailableCurrencies({
+            paymentStatus,
+            user,
+            multiSubscriptionContext,
+            plans: tabPlansInEveryCurrency,
+        }).filter((tabCurrency) => tabPlansInEveryCurrency.some((plan) => plan.Currency === tabCurrency));
+    };
 
     const result = {
         enabledProductB2CPlans,
@@ -451,9 +427,12 @@ export function useAccessiblePlans({
         isPassSettingsApp,
         isVpnB2bPlans,
         availableCurrenciesByAudience: {
-            [Audience.B2C]: availableCurrenciesB2c,
-            [Audience.FAMILY]: availableCurrenciesB2c,
-            [Audience.B2B]: availableCurrenciesB2b,
+            [Audience.B2C]: getTabCurrencies([
+                ...IndividualPlans,
+                isPassLifetimeEligible ? plansMap[PLANS.PASS_LIFETIME] : null,
+            ]),
+            [Audience.FAMILY]: getTabCurrencies(FamilyPlans),
+            [Audience.B2B]: getTabCurrencies(B2BPlans),
         },
         isPassLifetimeEligible,
     };
@@ -526,14 +505,17 @@ const PlanSelection = (props: Props) => {
 
     const isMeetSettingsApp = app === APPS.PROTONMEET;
 
+    const isTabShown = (tabAudience: Audience, tabPlans: (Plan | ShortPlanLike)[]) =>
+        tabPlans.length > 0 && availableCurrenciesByAudience[tabAudience].length > 0;
+
     const audience = (() => {
         // Some apps don't display all plans. This is a problem on for example meet, where it only displays B2B plans.
         // This is problematic for regional currencies since it only uses main currencies. If the audience is wrong (b2c by default)
         // it would display a blank page.
         const availableAudiences = [
-            IndividualPlans.length > 0 && Audience.B2C,
-            FamilyPlans.length > 0 && Audience.FAMILY,
-            B2BPlans.length > 0 && Audience.B2B,
+            isTabShown(Audience.B2C, IndividualPlans) && Audience.B2C,
+            isTabShown(Audience.FAMILY, FamilyPlans) && Audience.FAMILY,
+            isTabShown(Audience.B2B, B2BPlans) && Audience.B2B,
         ].filter(isTruthy);
         // Attempt to normalize the audience to what is actually available
         if (availableAudiences.length > 0 && !availableAudiences.includes(maybeAudience)) {
@@ -570,11 +552,11 @@ const PlanSelection = (props: Props) => {
     const [lifetimeSelected, setLifetimeSelected] = useState(false);
     useEffect(
         function unselectLifetimeTab() {
-            if (audience !== Audience.B2C || user.hasPassLifetime) {
+            if (audience !== Audience.B2C || !isPassLifetimeEligible) {
                 setLifetimeSelected(false);
             }
         },
-        [audience, user.hasPassLifetime]
+        [audience, isPassLifetimeEligible]
     );
 
     const isSignupMode = mode === 'signup';
@@ -780,7 +762,7 @@ const PlanSelection = (props: Props) => {
     const passLifetimePlan = plansMap[PLANS.PASS_LIFETIME];
 
     const tabs: Tab[] = [
-        IndividualPlans.length > 0 && {
+        isTabShown(Audience.B2C, IndividualPlans) && {
             title: c('Tab subscription modal').t`For individuals`,
             content: (
                 <>
@@ -821,7 +803,7 @@ const PlanSelection = (props: Props) => {
             audience: Audience.B2C,
             plans: IndividualPlans,
         },
-        FamilyPlans.length > 0 && {
+        isTabShown(Audience.FAMILY, FamilyPlans) && {
             title: c('Tab subscription modal').t`For families`,
             content: (
                 <div
@@ -839,7 +821,7 @@ const PlanSelection = (props: Props) => {
             audience: Audience.FAMILY,
             plans: FamilyPlans,
         },
-        B2BPlans.length > 0 && {
+        isTabShown(Audience.B2B, B2BPlans) && {
             title: c('Tab subscription modal').t`For businesses`,
             content: (
                 <div
@@ -875,7 +857,7 @@ const PlanSelection = (props: Props) => {
     });
 
     useEffect(() => {
-        if (!availableCurrencies.includes(currency)) {
+        if (availableCurrencies.length > 0 && !availableCurrencies.includes(currency)) {
             onChangeCurrency(availableCurrencies[0]);
         }
     }, [availableCurrencies, currency]);
@@ -891,7 +873,7 @@ const PlanSelection = (props: Props) => {
                     currencies={availableCurrencies}
                     currency={currency}
                     onSelect={onChangeCurrency}
-                    disabled={loading}
+                    disabled={loading || availableCurrencies.length <= 1}
                 />
             </div>
         </div>

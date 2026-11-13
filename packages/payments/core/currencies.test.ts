@@ -1,6 +1,13 @@
 import type { User, UserModel } from '@proton/shared/lib/interfaces/User';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
 
+import {
+    buildLumoSubscription,
+    buildMultiSubscriptionContext,
+    buildMultiSubscriptionContextFromSubscription,
+} from '../testing/buildMultiSubscriptionContext';
+import { buildSubscription } from '../testing/buildSubscription';
 import { getTestPlans } from '../testing/data-plans';
 import { DEFAULT_PAYMENT_VENDOR_STATES, FREE_SUBSCRIPTION, PLANS } from './constants';
 import {
@@ -21,6 +28,7 @@ import {
 } from './currencies';
 import type { Currency, PaymentStatus } from './interface';
 import type { Subscription } from './subscription/interface';
+import { noSubscriptionContext, toSubscriptionList } from './subscription/multi-subscription-context';
 
 describe('currencies', () => {
     describe('getPreferredCurrency', () => {
@@ -32,9 +40,9 @@ describe('currencies', () => {
 
             expect(
                 getPreferredCurrency({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     paramCurrency: currency,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(currency);
         });
@@ -51,10 +59,10 @@ describe('currencies', () => {
 
             expect(
                 getPreferredCurrency({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     paramCurrency: 'BRL',
                     user,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('BRL');
         });
@@ -67,9 +75,9 @@ describe('currencies', () => {
 
             expect(
                 getPreferredCurrency({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     paramCurrency: 'BRL',
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('BRL');
         });
@@ -82,9 +90,9 @@ describe('currencies', () => {
 
             expect(
                 getPreferredCurrency({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     paramCurrency: 'BRL',
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('USD');
         });
@@ -106,10 +114,10 @@ describe('currencies', () => {
 
                 expect(
                     getPreferredCurrency({
+                        multiSubscriptionContext: noSubscriptionContext,
                         paymentStatus: status,
                         paramCurrency: Currency,
                         user,
-                        enableNewBatchCurrencies: false,
                     })
                 ).toEqual(Currency);
             }
@@ -137,8 +145,7 @@ describe('currencies', () => {
                         paymentStatus: status,
                         paramCurrency: Currency,
                         user,
-                        subscription,
-                        enableNewBatchCurrencies: false,
+                        multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(subscription),
                     })
                 ).toEqual(Currency);
             }
@@ -161,9 +168,9 @@ describe('currencies', () => {
 
             expect(
                 getPreferredCurrency({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     plans,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('BRL');
         });
@@ -189,10 +196,10 @@ describe('currencies', () => {
 
             expect(
                 getPreferredCurrency({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     user,
                     plans,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('BRL');
         });
@@ -211,9 +218,9 @@ describe('currencies', () => {
 
             expect(
                 getPreferredCurrency({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     plans,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('USD');
         });
@@ -232,9 +239,9 @@ describe('currencies', () => {
 
             expect(
                 getPreferredCurrency({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     plans,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('USD');
         });
@@ -256,9 +263,9 @@ describe('currencies', () => {
 
             expect(
                 getPreferredCurrency({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     plans,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('USD');
         });
@@ -276,8 +283,7 @@ describe('currencies', () => {
             expect(
                 getPreferredCurrency({
                     paymentStatus: status,
-                    subscription,
-                    enableNewBatchCurrencies: false,
+                    multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(subscription),
                 })
             ).toEqual('USD');
         });
@@ -305,8 +311,7 @@ describe('currencies', () => {
                 getPreferredCurrency({
                     paymentStatus: status,
                     plans,
-                    subscription,
-                    enableNewBatchCurrencies: false,
+                    multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(subscription),
                 })
             ).toEqual('JPY');
         });
@@ -324,9 +329,9 @@ describe('currencies', () => {
 
             expect(
                 getPreferredCurrency({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     user,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('USD');
         });
@@ -344,9 +349,9 @@ describe('currencies', () => {
 
             expect(
                 getPreferredCurrency({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     user,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('BRL');
         });
@@ -365,9 +370,9 @@ describe('currencies', () => {
 
             expect(
                 getPreferredCurrency({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     user,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('USD');
         });
@@ -386,9 +391,9 @@ describe('currencies', () => {
 
             expect(
                 getPreferredCurrency({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     user,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('BRL');
         });
@@ -415,10 +420,10 @@ describe('currencies', () => {
 
             expect(
                 getPreferredCurrency({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     plans,
                     user,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('JPY');
         });
@@ -442,10 +447,10 @@ describe('currencies', () => {
 
             expect(
                 getPreferredCurrency({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     plans,
                     paramPlanName: PLANS.VPN_BUSINESS,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('USD');
         });
@@ -469,11 +474,11 @@ describe('currencies', () => {
 
             expect(
                 getPreferredCurrency({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     plans,
                     paramPlanName: PLANS.VPN_BUSINESS,
                     paramCurrency: 'BRL',
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('USD');
         });
@@ -530,11 +535,10 @@ describe('currencies', () => {
             expect(
                 getPreferredCurrency({
                     paymentStatus: status,
-                    subscription,
+                    multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(subscription),
                     user,
                     plans,
                     paramPlanName,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('USD');
         });
@@ -562,9 +566,8 @@ describe('currencies', () => {
                 getPreferredCurrency({
                     user,
                     plans,
-                    subscription,
+                    multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(subscription),
                     paymentStatus: status,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('CHF');
         });
@@ -579,10 +582,10 @@ describe('currencies', () => {
 
             expect(
                 getPreferredCurrency({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     plans,
                     paramPlanName: PLANS.FREE,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual('BRL');
         });
@@ -597,8 +600,8 @@ describe('currencies', () => {
 
             expect(
                 getAvailableCurrencies({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -615,9 +618,9 @@ describe('currencies', () => {
 
             expect(
                 getAvailableCurrencies({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     user,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -636,9 +639,9 @@ describe('currencies', () => {
 
             expect(
                 getAvailableCurrencies({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     plans,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['USD', 'EUR', 'CHF']);
         });
@@ -657,9 +660,9 @@ describe('currencies', () => {
 
             expect(
                 getAvailableCurrencies({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     plans,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -676,9 +679,9 @@ describe('currencies', () => {
 
             expect(
                 getAvailableCurrencies({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     user,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -701,10 +704,10 @@ describe('currencies', () => {
 
             expect(
                 getAvailableCurrencies({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     user,
                     plans,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['USD', 'EUR', 'CHF']);
         });
@@ -727,10 +730,10 @@ describe('currencies', () => {
 
             expect(
                 getAvailableCurrencies({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     user,
                     plans,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -748,8 +751,7 @@ describe('currencies', () => {
             expect(
                 getAvailableCurrencies({
                     paymentStatus: status,
-                    subscription,
-                    enableNewBatchCurrencies: false,
+                    multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(subscription),
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -773,9 +775,8 @@ describe('currencies', () => {
             expect(
                 getAvailableCurrencies({
                     paymentStatus: status,
-                    subscription,
+                    multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(subscription),
                     plans,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['USD', 'EUR', 'CHF']);
         });
@@ -799,9 +800,8 @@ describe('currencies', () => {
             expect(
                 getAvailableCurrencies({
                     paymentStatus: status,
-                    subscription,
+                    multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(subscription),
                     plans,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL']);
         });
@@ -818,9 +818,9 @@ describe('currencies', () => {
 
             expect(
                 getAvailableCurrencies({
+                    multiSubscriptionContext: noSubscriptionContext,
                     paymentStatus: status,
                     user,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['USD', 'EUR', 'CHF', 'BRL', 'ARS']);
         });
@@ -839,10 +839,10 @@ describe('currencies', () => {
 
                 expect(
                     getAvailableCurrencies({
+                        multiSubscriptionContext: noSubscriptionContext,
                         paymentStatus: status,
                         user,
                         paramCurrency: mainCurrencyParam,
-                        enableNewBatchCurrencies: false,
                     })
                 ).toEqual(['USD', 'EUR', 'CHF']);
             }
@@ -858,8 +858,8 @@ describe('currencies', () => {
 
             expect(
                 getSupportedRegionalCurrencies({
+                    subscriptions: [],
                     paymentStatus: status,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['BRL']);
         });
@@ -876,9 +876,9 @@ describe('currencies', () => {
 
             expect(
                 getSupportedRegionalCurrencies({
+                    subscriptions: [],
                     paymentStatus: status,
                     user,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['BRL']);
         });
@@ -895,9 +895,9 @@ describe('currencies', () => {
 
             expect(
                 getSupportedRegionalCurrencies({
+                    subscriptions: [],
                     paymentStatus: status,
                     user,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['BRL']);
         });
@@ -915,8 +915,7 @@ describe('currencies', () => {
             expect(
                 getSupportedRegionalCurrencies({
                     paymentStatus: status,
-                    subscription,
-                    enableNewBatchCurrencies: false,
+                    subscriptions: toSubscriptionList(subscription),
                 })
             ).toEqual(['BRL']);
         });
@@ -935,9 +934,9 @@ describe('currencies', () => {
 
             expect(
                 getSupportedRegionalCurrencies({
+                    subscriptions: [],
                     paymentStatus: status,
                     plans,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['BRL']);
         });
@@ -956,9 +955,9 @@ describe('currencies', () => {
 
             expect(
                 getSupportedRegionalCurrencies({
+                    subscriptions: [],
                     paymentStatus: status,
                     plans,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual([]);
         });
@@ -977,9 +976,9 @@ describe('currencies', () => {
 
             expect(
                 getSupportedRegionalCurrencies({
+                    subscriptions: [],
                     paymentStatus: status,
                     plans,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual([]);
         });
@@ -1152,9 +1151,8 @@ describe('currencies', () => {
                 getSupportedRegionalCurrencies({
                     paymentStatus: status,
                     user,
-                    subscription,
+                    subscriptions: toSubscriptionList(subscription),
                     plans,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(expected);
         });
@@ -1195,9 +1193,8 @@ describe('currencies', () => {
                 getSupportedRegionalCurrencies({
                     paymentStatus: status,
                     user,
-                    subscription,
+                    subscriptions: toSubscriptionList(subscription),
                     plans,
-                    enableNewBatchCurrencies: false,
                 })
             ).toEqual(['GBP', 'BRL']);
         });
@@ -1521,7 +1518,7 @@ describe('getNaiveCurrencyRate', () => {
 describe('getStatusCurrency', () => {
     it('should return undefined if paymentStatus is undefined', () => {
         const user = {} as User;
-        expect(getStatusCurrency(undefined, user, false)).toBeUndefined();
+        expect(getStatusCurrency(undefined, user)).toBeUndefined();
     });
 
     it('should return the currency from the status if user is undefined', () => {
@@ -1529,11 +1526,11 @@ describe('getStatusCurrency', () => {
             CountryCode: 'BR',
             VendorStates: {} as any,
         };
-        expect(getStatusCurrency(status, undefined, false)).toEqual('BRL');
+        expect(getStatusCurrency(status, undefined)).toEqual('BRL');
     });
 
     it('should return undefined if both paymentStatus and user are undefined', () => {
-        expect(getStatusCurrency(undefined, undefined, false)).toBeUndefined();
+        expect(getStatusCurrency(undefined, undefined)).toBeUndefined();
     });
 
     it('should return regional currency if both paymentStatus and user exist and country has regional currency', () => {
@@ -1543,7 +1540,7 @@ describe('getStatusCurrency', () => {
         };
         const user = {} as User;
 
-        expect(getStatusCurrency(status, user, false)).toBe('BRL');
+        expect(getStatusCurrency(status, user)).toBe('BRL');
     });
 
     it('should return GBP for GB country code', () => {
@@ -1553,7 +1550,7 @@ describe('getStatusCurrency', () => {
         };
         const user = {} as User;
 
-        expect(getStatusCurrency(status, user, false)).toBe('GBP');
+        expect(getStatusCurrency(status, user)).toBe('GBP');
     });
 
     it('should return undefined if country does not have regional currency', () => {
@@ -1563,7 +1560,7 @@ describe('getStatusCurrency', () => {
         };
         const user = {} as User;
 
-        expect(getStatusCurrency(status, user, false)).toBeUndefined();
+        expect(getStatusCurrency(status, user)).toBeUndefined();
     });
 
     it('should return undefined if country code is undefined', () => {
@@ -1573,6 +1570,168 @@ describe('getStatusCurrency', () => {
         };
         const user = {} as User;
 
-        expect(getStatusCurrency(status, user, false)).toBeUndefined();
+        expect(getStatusCurrency(status, user)).toBeUndefined();
+    });
+});
+
+describe('locked currency for multiple subscriptions', () => {
+    const webMailPlusInUsd = buildSubscription(PLANS.MAIL, { Currency: 'USD' });
+    const webLumoPlusInUsd = buildLumoSubscription(PLANS.LUMO, { Currency: 'USD' });
+    const paymentStatus = { CountryCode: 'CH', VendorStates: {} } as unknown as PaymentStatus;
+
+    it('ignores the URL currency when Lumo is added next to web Mail Plus', () => {
+        const multiSubscriptionContext = buildMultiSubscriptionContext([webMailPlusInUsd]);
+
+        expect(
+            getPreferredCurrency({
+                paramCurrency: 'EUR',
+                paramPlanName: PLANS.LUMO,
+                paymentStatus,
+                multiSubscriptionContext,
+            })
+        ).toBe('USD');
+        expect(
+            getAvailableCurrencies({
+                selectedPlanName: PLANS.LUMO,
+                paymentStatus,
+                multiSubscriptionContext,
+            })
+        ).toEqual(['USD']);
+    });
+
+    it('keeps the existing currency for any change with two web subscriptions', () => {
+        const multiSubscriptionContext = buildMultiSubscriptionContext([webMailPlusInUsd, webLumoPlusInUsd]);
+
+        expect(
+            getPreferredCurrency({
+                paramCurrency: 'CHF',
+                paymentStatus,
+                multiSubscriptionContext,
+            })
+        ).toBe('USD');
+        expect(getAvailableCurrencies({ paymentStatus, multiSubscriptionContext })).toEqual(['USD']);
+    });
+
+    it('skips the lock for a plan without a price in the locked currency', () => {
+        const webMailPlusInBrl = buildSubscription(PLANS.MAIL, { Currency: 'BRL' });
+        const webLumoPlusInBrl = buildLumoSubscription(PLANS.LUMO, { Currency: 'BRL' });
+        const multiSubscriptionContext = buildMultiSubscriptionContext([webMailPlusInBrl, webLumoPlusInBrl]);
+        const plans = [...getTestPlans('USD'), ...getTestPlans('BRL').filter((plan) => plan.Name !== PLANS.MAIL_PRO)];
+        const brazil = { CountryCode: 'BR', VendorStates: {} } as unknown as PaymentStatus;
+
+        expect(
+            getPreferredCurrency({
+                paramPlanName: PLANS.MAIL_PRO,
+                plans,
+                paymentStatus: brazil,
+                multiSubscriptionContext,
+            })
+        ).toBe('USD');
+        expect(
+            getAvailableCurrencies({
+                selectedPlanName: PLANS.MAIL_PRO,
+                plans,
+                paymentStatus: brazil,
+                multiSubscriptionContext,
+            })
+        ).toEqual(['USD', 'EUR', 'CHF']);
+        expect(
+            getPreferredCurrency({ paramPlanName: PLANS.MAIL, plans, paymentStatus: brazil, multiSubscriptionContext })
+        ).toBe('BRL');
+    });
+
+    it('keeps the URL currency when the purchase replaces the only web subscription', () => {
+        const multiSubscriptionContext = buildMultiSubscriptionContext([webMailPlusInUsd]);
+
+        expect(
+            getPreferredCurrency({
+                paramCurrency: 'EUR',
+                paramPlanName: PLANS.PASS,
+                plans: getTestPlans('EUR'),
+                paymentStatus,
+                multiSubscriptionContext,
+            })
+        ).toBe('EUR');
+    });
+});
+
+describe('regional currencies of the selected plan', () => {
+    const paymentStatus = { CountryCode: 'BR', VendorStates: {} } as unknown as PaymentStatus;
+    const b2cPlansInUsdAndBrl = [...getTestPlans('USD'), ...getTestPlans('BRL')].filter(
+        (plan) => plan.Name === PLANS.MAIL || plan.Name === PLANS.BUNDLE
+    );
+
+    it('drops a regional currency the selected plan is not sold in', () => {
+        const mailPlusInUsdOnly = b2cPlansInUsdAndBrl.filter(
+            (plan) => plan.Name !== PLANS.MAIL || plan.Currency === 'USD'
+        );
+
+        expect(
+            getAvailableCurrencies({
+                paymentStatus,
+                multiSubscriptionContext: noSubscriptionContext,
+                plans: mailPlusInUsdOnly,
+                selectedPlanName: PLANS.MAIL,
+            })
+        ).toEqual(['USD', 'EUR', 'CHF']);
+    });
+});
+
+describe('getPreferredCurrency when the selected plan changes', () => {
+    const webMailPlusInUsd = buildSubscription(PLANS.MAIL, { Currency: 'USD' });
+    const webMailPlusInBrl = buildSubscription(PLANS.MAIL, { Currency: 'BRL' });
+    const webLumoPlusInUsd = buildLumoSubscription(PLANS.LUMO, { Currency: 'USD' });
+    const iosLumoPlus = buildLumoSubscription(PLANS.LUMO, { External: SubscriptionPlatform.iOS });
+    const paymentStatus = { CountryCode: 'BR', VendorStates: {} } as unknown as PaymentStatus;
+    const plans = [...getTestPlans('USD'), ...getTestPlans('EUR'), ...getTestPlans('CHF'), ...getTestPlans('BRL')];
+    const plansWithoutBrlForBusiness = plans.filter(
+        (plan) => !(plan.Currency === 'BRL' && plan.Name === PLANS.BUNDLE_PRO_2024)
+    );
+
+    const getCurrency = (
+        subscriptions: Subscription[],
+        currentCurrency: Currency,
+        selectedPlanName: PLANS | undefined,
+        { lumoMultiSubscriptions = true, availablePlans = plans } = {}
+    ) =>
+        getPreferredCurrency({
+            paramCurrency: currentCurrency,
+            paramPlanName: selectedPlanName,
+            paymentStatus,
+            plans: availablePlans,
+            multiSubscriptionContext: buildMultiSubscriptionContext(subscriptions, lumoMultiSubscriptions),
+        });
+
+    it('keeps the current currency while it is offered for the selection', () => {
+        expect(getCurrency([webMailPlusInUsd], 'EUR', PLANS.PASS)).toBe('EUR');
+        expect(getCurrency([webMailPlusInBrl], 'BRL', PLANS.BUNDLE)).toBe('BRL');
+    });
+
+    it('switches to the web subscription currency when Lumo is added next to it', () => {
+        expect(getCurrency([webMailPlusInUsd], 'EUR', PLANS.LUMO)).toBe('USD');
+    });
+
+    it('lets a regional subscriber replace the only web subscription with a business plan in a main currency', () => {
+        expect(
+            getCurrency([webMailPlusInBrl], 'BRL', PLANS.BUNDLE_PRO_2024, {
+                availablePlans: plansWithoutBrlForBusiness,
+            })
+        ).toBe('USD');
+    });
+
+    it('keeps the existing currency for any change with two web subscriptions', () => {
+        expect(getCurrency([webMailPlusInUsd, webLumoPlusInUsd], 'CHF', PLANS.PASS)).toBe('USD');
+        expect(getCurrency([webMailPlusInUsd, webLumoPlusInUsd], 'CHF', undefined)).toBe('USD');
+    });
+
+    it('ignores store subscriptions', () => {
+        expect(getCurrency([iosLumoPlus], 'EUR', PLANS.MAIL)).toBe('EUR');
+    });
+
+    it('locks nothing with the flag off', () => {
+        expect(getCurrency([webMailPlusInUsd], 'EUR', PLANS.LUMO, { lumoMultiSubscriptions: false })).toBe('EUR');
+        expect(
+            getCurrency([webMailPlusInUsd, webLumoPlusInUsd], 'CHF', PLANS.PASS, { lumoMultiSubscriptions: false })
+        ).toBe('CHF');
     });
 });

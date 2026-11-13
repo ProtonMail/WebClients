@@ -2,10 +2,13 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
-import { getCurrencyFormattingConfig, getNaiveCurrencyRate } from '@proton/payments/core/currencies';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
+import {
+    getAvailableCurrencies,
+    getCurrencyFormattingConfig,
+    getNaiveCurrencyRate,
+} from '@proton/payments/core/currencies';
 import type { Currency, PaymentStatus } from '@proton/payments/core/interface';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 
@@ -31,9 +34,8 @@ const PaymentSelector = ({
     disableCurrencySelector,
     paymentStatus,
 }: Props) => {
-    const [subscription] = useSubscription();
+    const multiSubscriptionContext = useMultiSubscriptionContext();
     const [user] = useUser();
-    const { getAvailableCurrencies } = useCurrencies();
 
     const [inputValue, setInputValue] = useState('');
 
@@ -104,7 +106,7 @@ const PaymentSelector = ({
                 </div>
                 <div className="md:flex-1 mb-2 md:mb-0">
                     <CurrencySelector
-                        currencies={getAvailableCurrencies({ paymentStatus, user, subscription })}
+                        currencies={getAvailableCurrencies({ paymentStatus, user, multiSubscriptionContext })}
                         mode="select-two"
                         className="w-full"
                         id="id_desc_currency"

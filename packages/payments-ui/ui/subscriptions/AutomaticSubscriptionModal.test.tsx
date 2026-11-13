@@ -9,7 +9,6 @@ import { mockStatusApi } from '@proton/components/hooks/helpers/tests/usePayment
 import { mockPlansApi } from '@proton/components/hooks/helpers/tests/usePlans';
 import { mockSubscriptionApi } from '@proton/components/hooks/helpers/tests/useSubscription';
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
-import type { useCurrencies } from '@proton/payments-hooks/ui/hooks/useCurrencies';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import {
@@ -22,7 +21,6 @@ import {
     DEFAULT_PAYMENT_VENDOR_STATES,
     PLANS,
 } from '@proton/payments/core/constants';
-import { getPreferredCurrency } from '@proton/payments/core/currencies';
 import type { PaymentStatus } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { GUARD_ERROR_CODES } from '@proton/payments/core/subscription/guard';
@@ -30,6 +28,7 @@ import { getPlanName } from '@proton/payments/core/subscription/helpers';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
+import { buildMultiSubscriptionContextFromSubscription } from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
 import { getUserMock } from '@proton/payments/testing/data-user';
@@ -52,14 +51,19 @@ const paymentStatus: PaymentStatus = {
     State: null,
     VendorStates: DEFAULT_PAYMENT_VENDOR_STATES,
 };
-const getPreferredCurrencyHook = (params: Parameters<ReturnType<typeof useCurrencies>['getPreferredCurrency']>[0]) =>
-    getPreferredCurrency({ ...params, enableNewBatchCurrencies: true });
 
 const callGetParameters = (search: string, overrides: { subscription?: any } = {}) => {
     const subscription =
         overrides.subscription ?? buildSubscription({ planName: PLANS.BUNDLE, currency: 'CHF', cycle: CYCLE.YEARLY });
 
-    return getParameters(search, plans, subscription, userDefault, getPreferredCurrencyHook, paymentStatus);
+    return getParameters({
+        search,
+        plans,
+        subscription,
+        user: userDefault,
+        paymentStatus,
+        multiSubscriptionContext: buildMultiSubscriptionContextFromSubscription(subscription),
+    });
 };
 
 describe('getParameters', () => {

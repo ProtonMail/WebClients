@@ -16,18 +16,19 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import metrics from '@proton/metrics/metricsInstance';
 import observeApiError from '@proton/metrics/observeApiError';
-import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
 import { usePaymentsTelemetry } from '@proton/payments-hooks/client-extensions/usePaymentsTelemetry';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import { VatReverseChargeErrorModal } from '@proton/payments-ui/ui/billing-address/containers/VatReverseChargeErrorModal';
 import { loadInitialBillingAddress } from '@proton/payments/core/billing-address/load-initial-billing-address';
 import { DEFAULT_CYCLE, PAYMENT_METHOD_TYPES, PLANS } from '@proton/payments/core/constants';
+import { getPreferredCurrency } from '@proton/payments/core/currencies';
 import type { Currency, PaymentMethodFlow } from '@proton/payments/core/interface';
 import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
 import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { getHas2025OfferCoupon, getPlanIDs } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap } from '@proton/payments/core/subscription/interface';
+import { noSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
@@ -240,7 +241,6 @@ const SingleSignupContainerV2 = ({
     const { getPaymentsApi } = usePaymentsApi();
     const getPlans = useGetPlans();
     const getPaymentStatus = useGetPaymentStatus();
-    const { getPreferredCurrency } = useCurrencies();
     const { reportPaymentSuccess, reportPaymentFailure } = usePaymentsTelemetry({
         flow: 'signup-pass',
     });
@@ -481,19 +481,35 @@ const SingleSignupContainerV2 = ({
         }
     };
 
-    const changeCurrency = async (newCurrency: Currency): Promise<FullPlansMap> => {
-        const plansMap = getPlansMap(model.plans, newCurrency, false);
+    const getPlansInCurrency = async (
+        currency: Currency,
+        dependencies: Omit<
+            Parameters<typeof getSubscriptionDataCycleMapping>[0],
+            'plansMap' | 'signupConfiguration'
+        > & {
+            plans: typeof model.plans;
+        }
+    ) => {
+        const { plans, ...cycleMappingDependencies } = dependencies;
+        const plansMap = getPlansMap(plans, currency, false);
+        const subscriptionDataCycleMapping = await getSubscriptionDataCycleMapping({
+            ...cycleMappingDependencies,
+            plansMap,
+            signupConfiguration,
+        });
 
+        return { plansMap, subscriptionDataCycleMapping };
+    };
+
+    const changeCurrency = async (newCurrency: Currency): Promise<FullPlansMap> => {
         // if there is session, then use auth api, if there is no, then use unauth
         const silentApi = getSilentApi(
             model.session ? getUIDApi(model.session.resumedSessionResult.UID, unauthApi) : unauthApi
         );
-        const paymentsApi = getPaymentsApi(silentApi);
 
-        const subscriptionDataCycleMapping = await getSubscriptionDataCycleMapping({
-            paymentsApi,
-            plansMap,
-            signupConfiguration,
+        const { plansMap, subscriptionDataCycleMapping } = await getPlansInCurrency(newCurrency, {
+            plans: model.plans,
+            paymentsApi: getPaymentsApi(silentApi),
             coupon: signupParameters.coupon,
             billingAddress: model.subscriptionData.billingAddress,
         });
@@ -582,6 +598,7 @@ const SingleSignupContainerV2 = ({
                 paramCurrency: signupParameters.currency,
                 paramPlanName: signupParameters.preSelectedPlan,
                 user: resumedSession?.User ? formatUser(resumedSession?.User) : undefined,
+                multiSubscriptionContext: noSubscriptionContext,
             });
 
             const modifiedSignupParameters = await getTemporarySignupParameters({
@@ -658,6 +675,7 @@ const SingleSignupContainerV2 = ({
                 getUserInfo({
                     lumoMultiSubscriptions,
                     getEntitlementCatalog,
+                    paymentStatus,
                     audience,
                     api: silentApi,
                     paymentsApi,
@@ -692,6 +710,16 @@ const SingleSignupContainerV2 = ({
                     billingAddress: initialBillingAddress,
                 }),
             ]);
+
+            const plansInSubscriptionCurrency =
+                subscriptionData.currency === currency
+                    ? { plansMap, subscriptionDataCycleMapping }
+                    : await getPlansInCurrency(subscriptionData.currency, {
+                          plans,
+                          paymentsApi,
+                          coupon: planParameters.defined ? null : coupon,
+                          billingAddress: initialBillingAddress,
+                      });
 
             let session: SessionData | undefined;
             if (resumedSession) {
@@ -757,9 +785,9 @@ const SingleSignupContainerV2 = ({
                 upsell,
                 plans,
                 planParameters,
-                plansMap,
+                plansMap: plansInSubscriptionCurrency.plansMap,
                 freePlan,
-                subscriptionDataCycleMapping,
+                subscriptionDataCycleMapping: plansInSubscriptionCurrency.subscriptionDataCycleMapping,
                 referralData,
                 inviteData: signupParameters.invite?.type === 'generic' ? signupParameters.invite.data : undefined,
                 paymentStatus,
@@ -873,6 +901,7 @@ const SingleSignupContainerV2 = ({
             const userInfoPromise = getUserInfo({
                 lumoMultiSubscriptions,
                 getEntitlementCatalog,
+                paymentStatus: model.paymentStatus,
                 audience,
                 api: silentApi,
                 paymentsApi,
@@ -986,6 +1015,7 @@ const SingleSignupContainerV2 = ({
             const { subscriptionData, upsell, ...userInfo } = await getUserInfo({
                 lumoMultiSubscriptions,
                 getEntitlementCatalog,
+                paymentStatus: model.paymentStatus,
                 api: silentApi,
                 audience,
                 paymentsApi: getPaymentsApi(silentApi),
@@ -1016,12 +1046,23 @@ const SingleSignupContainerV2 = ({
                 ...userInfo,
             };
 
+            const plansInSubscriptionCurrency =
+                subscriptionData.currency === currency
+                    ? {}
+                    : await getPlansInCurrency(subscriptionData.currency, {
+                          plans: model.plans,
+                          paymentsApi: getPaymentsApi(silentApi),
+                          coupon: signupParameters.coupon,
+                          billingAddress: model.subscriptionData.billingAddress,
+                      });
+
             setModelDiff({
                 optimistic: {},
                 session,
                 cache: undefined,
                 subscriptionData,
                 upsell,
+                ...plansInSubscriptionCurrency,
             });
 
             triggerModals({ planParameters: model.planParameters, session, upsell, subscriptionData });

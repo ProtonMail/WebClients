@@ -8,9 +8,10 @@ import { previousSubscriptionThunk } from '@proton/account/previousSubscription'
 import { subscriptionThunk } from '@proton/account/subscription';
 import { userThunk } from '@proton/account/user';
 import { useConfig } from '@proton/app-context/useConfig';
-import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import { CYCLE, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { getPreferredCurrency } from '@proton/payments/core/currencies';
+import { createMultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getSubscriptionForApp } from '@proton/payments/core/subscription/subscription-for-app';
 import type { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
@@ -44,7 +45,6 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
     const openSubscriptionModal = useOptionalSubscriptionModalRaw();
     const dispatch = useDispatch();
     const getFlag = useGetFlag();
-    const { getPreferredCurrency } = useCurrencies();
 
     useEffect(() => {
         let isConfigFetched = false;
@@ -101,7 +101,11 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
                     user,
                     plans,
                     paymentStatus,
-                    subscription,
+                    multiSubscriptionContext: createMultiSubscriptionContext({
+                        lumoMultiSubscriptions: getFlag('LumoMultiSubscriptions'),
+                        subscription,
+                        entitlementCatalog,
+                    }),
                 });
 
                 // Get user currency
