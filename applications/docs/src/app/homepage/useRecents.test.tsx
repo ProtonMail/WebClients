@@ -19,10 +19,6 @@ class ApiError extends Error {}
 const mockTraceError = jest.fn()
 const errorTracking: ErrorTracking = { traceError: mockTraceError, addBreadcrumb: jest.fn(), isReportable: () => true }
 
-jest.mock('@proton/account/addresses/hooks', () => ({
-  useAddresses: () => [undefined, false],
-}))
-
 const DOC_MIMETYPE = 'application/vnd.proton.doc'
 
 describe('useRecents', () => {

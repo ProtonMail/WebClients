@@ -85,6 +85,10 @@ export type HomepageViewProviderProps = {
   errorTracking: ErrorTracking
   /** Keep it the same object while the flags don't change: the context value depends on it. */
   featureFlags: FeatureFlags
+  /** The user's addresses, undefined while they load. */
+  addresses: UserAddress[] | undefined
+  /** The user's contacts, undefined while they load. */
+  contactEmails: OwnerContact[] | undefined
 }
 
 function useQueryState<T extends string | undefined>(name: string, defaultValue: T, allowedValues?: readonly T[]) {

@@ -5,10 +5,8 @@ import { c } from 'ttag'
 import { RecentDocumentsItem } from './recentDocumentsItem'
 import type { RecentDocumentsItemValue } from './recentDocumentsItem'
 import type { NodeEntity } from '@protontech/drive-sdk'
-import { useContactEmails } from '@proton/account/contactEmails/hooks'
 import type { ProtonDocumentType } from './utils/mimetype'
 import type { OwnerContact } from './get-owner-name'
-import { useAddresses } from '@proton/account/addresses/hooks'
 import type { UserAddress } from './is-my-document'
 
 import {
@@ -55,11 +53,11 @@ export function HomepageViewProvider({
   dateLocaleCode,
   errorTracking,
   featureFlags,
+  addresses,
+  contactEmails,
 }: HomepageViewProviderProps) {
   const [search, setSearch] = useSearch()
   const [recentsSort, setRecentsSort] = useRecentsSort()
-  const [contactEmails] = useContactEmails()
-  const [addresses] = useAddresses()
   const [type] = useType()
 
   const guardedApi = useUnloadGuardedApi(api)
@@ -204,6 +202,8 @@ export function HomepageViewProvider({
       dateFormatter,
       errorTracking,
       featureFlags,
+      addresses,
+      contactEmails,
     }),
     [
       state,
@@ -227,6 +227,8 @@ export function HomepageViewProvider({
       dateFormatter,
       errorTracking,
       featureFlags,
+      addresses,
+      contactEmails,
     ],
   )
 

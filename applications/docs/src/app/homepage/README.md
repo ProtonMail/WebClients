@@ -4,7 +4,7 @@ The purpose of this module is to provide a dependency-free implementation of Doc
 
 The module never imports `@proton/docs-shared` or `@proton/docs-core`, in types, tests and mocks too.
 
-It never imports `@proton/shared`, `@proton/utils`, `@proton/hooks` or `@proton/payments-ui` either. It keeps its own copies of their helpers, such as `utils/clsx.ts` and `utils/mimetype.ts`. What needs host state is injected through `HomepageViewProvider`'s props, such as the API, logger, telemetry, notifications, `getAppHref` with the user's local ID, the date locale, error tracking (Sentry) and feature flags.
+It never imports `@proton/shared`, `@proton/utils`, `@proton/hooks`, `@proton/payments-ui` or `@proton/account` either. It keeps its own copies of their helpers, such as `utils/clsx.ts` and `utils/mimetype.ts`. What needs host state is injected through `HomepageViewProvider`'s props, such as the API, logger, telemetry, notifications, `getAppHref` with the user's local ID, the date locale, error tracking (Sentry), feature flags and the user's addresses and contacts.
 
 The host injects values and functions, never hooks. It runs its own hooks and passes what they return: the pending invitations and the functions that accept, decline and reload them through `HomepageViewProvider`, and the functions that open the share and move modals through `DocumentActionsProvider`. The host renders those modals itself.
 
