@@ -1,6 +1,8 @@
 import { fireEvent, screen } from '@testing-library/dom';
 
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
+import { SubscriptionModalContext } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 
 import { easySwitchRender } from '../../../../tests/render';
 import { DriveImportStorageWarningStep } from './DriveImportStorageWarningStep';
@@ -33,5 +35,21 @@ describe('DriveImportStorageWarningStep', () => {
         fireEvent.click(screen.getByText('Upgrade'));
 
         expect(goToSettings).toHaveBeenCalledWith('/upgrade');
+    });
+
+    it('lets the user upgrade in the plan selection modal when the app provides it', () => {
+        const goToSettings = jest.fn();
+        const openSubscriptionModal = jest.fn();
+        mockUseSettingsLink.mockReturnValue(goToSettings);
+
+        easySwitchRender(
+            <SubscriptionModalContext.Provider value={[openSubscriptionModal, false, true]}>
+                <DriveImportStorageWarningStep />
+            </SubscriptionModalContext.Provider>
+        );
+        fireEvent.click(screen.getByText('Upgrade'));
+
+        expect(openSubscriptionModal).toHaveBeenCalledWith({ step: SUBSCRIPTION_STEPS.PLAN_SELECTION });
+        expect(goToSettings).not.toHaveBeenCalled();
     });
 });

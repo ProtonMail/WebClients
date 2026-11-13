@@ -1,6 +1,8 @@
 import { fireEvent, screen, waitFor } from '@testing-library/dom';
 
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
+import { SubscriptionModalContext } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 
 import { ApiImportProvider, ApiImporterError } from '../../../../api/api.interface';
 import { useReconnectOAuthImport } from '../../../../hooks/useReconnectOAuthImport';
@@ -54,6 +56,24 @@ describe('DriveImportPausedStep', () => {
 
         expect(onClose).toHaveBeenCalled();
         expect(goToSettings).toHaveBeenCalledWith('/upgrade');
+    });
+
+    it('lets the user upgrade in the plan selection modal when the app provides it', () => {
+        const goToSettings = jest.fn();
+        const openSubscriptionModal = jest.fn();
+        const onClose = jest.fn();
+        mockUseSettingsLink.mockReturnValue(goToSettings);
+
+        easySwitchRender(
+            <SubscriptionModalContext.Provider value={[openSubscriptionModal, false, true]}>
+                <DriveImportPausedStep importer={importer} onClose={onClose} />
+            </SubscriptionModalContext.Provider>
+        );
+        fireEvent.click(screen.getByText('Upgrade'));
+
+        expect(onClose).toHaveBeenCalled();
+        expect(openSubscriptionModal).toHaveBeenCalledWith({ step: SUBSCRIPTION_STEPS.PLAN_SELECTION });
+        expect(goToSettings).not.toHaveBeenCalled();
     });
 
     it('asks the user to reconnect when the import was paused by a connection error', async () => {
