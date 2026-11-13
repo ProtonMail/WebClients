@@ -281,6 +281,33 @@ describe('getProduceForkLoginResult', () => {
         });
     });
 
+    describe('a fork with prompt=login', () => {
+        const data: ProduceForkData = {
+            type: SSOType.Proton,
+            payload: {
+                forkParameters: { app: APPS.PROTONPASS, state: 'state', prompt: 'login' } as ProduceForkParametersFull,
+            },
+        };
+        const run = (flow: AuthSession['flow']) =>
+            getProduceForkLoginResult({
+                api: jest.fn() as unknown as Api,
+                data,
+                session: { ...getSession(SessionSource.Proton, {}), flow },
+                paths,
+            });
+
+        it.each(['switch', 'auto-resume', 'sign-in-with-another-device'] as const)(
+            'asks to re-authenticate after the %s flow',
+            async (flow) => {
+                expect((await run(flow)).type).toBe('reauth');
+            }
+        );
+
+        it('does not ask to re-authenticate after the password was just entered', async () => {
+            expect((await run('login')).type).toBe('done');
+        });
+    });
+
     it('lets an external account that cannot create a Proton address fork to Drive', async () => {
         const result = await setup({ user: externalUserWithoutProtonAddressCreation, app: APPS.PROTONDRIVE });
 

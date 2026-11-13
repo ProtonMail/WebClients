@@ -6,7 +6,14 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 export type { OnLoginCallbackResult };
 
-export type AuthFlows = 'signup' | 'reset' | 'switch' | 'login' | 'auto-resume' | undefined;
+export type AuthFlows =
+    | 'signup'
+    | 'reset'
+    | 'switch'
+    | 'login'
+    | 'auto-resume'
+    | 'sign-in-with-another-device'
+    | undefined;
 
 export type AuthInterruption = 'fork-redirect-consent' | 'desktop-fork-consent' | 'oauth-consent' | 'reauth';
 
