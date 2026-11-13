@@ -54,6 +54,7 @@ interface Props {
     preventScroll?: boolean;
     disableRestoreByPointer?: boolean;
     enableInitialFocus?: boolean;
+    includeShadowRoots?: boolean;
 }
 
 const useFocusTrap = ({
@@ -62,6 +63,7 @@ const useFocusTrap = ({
     restoreFocus = true,
     preventScroll = true,
     disableRestoreByPointer = true,
+    includeShadowRoots = false,
     rootRef,
 }: Props) => {
     const [id] = useState({});
@@ -146,18 +148,22 @@ const useFocusTrap = ({
                 return;
             }
             const { current: rootElement } = rootRef;
-            const tabbableElements = tabbable(rootElement, { includeContainer: false });
+            const tabbableElements = tabbable(rootElement, {
+                includeContainer: false,
+                getShadowRoot: includeShadowRoots,
+            });
             if (tabbableElements.length === 0) {
                 focusElement(rootElement);
                 return;
             }
             const firstTabbableNode = tabbableElements[0];
             const lastTabbableNode = tabbableElements[tabbableElements.length - 1];
-            if (event.shiftKey && event.target === firstTabbableNode) {
+            const [focusedElement] = event.composedPath();
+            if (event.shiftKey && focusedElement === firstTabbableNode) {
                 event.preventDefault();
                 focusElement(lastTabbableNode, rootElement);
             }
-            if (!event.shiftKey && event.target === lastTabbableNode) {
+            if (!event.shiftKey && focusedElement === lastTabbableNode) {
                 event.preventDefault();
                 focusElement(firstTabbableNode, rootElement);
             }

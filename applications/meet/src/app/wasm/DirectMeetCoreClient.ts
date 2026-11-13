@@ -170,6 +170,14 @@ export class DirectMeetCoreClient implements MeetCoreClient {
         };
     }
 
+    public getAvailableEmojiReactions(): Promise<string[]> {
+        return Promise.resolve([...this.app.getAvailableEmojiReactions()]);
+    }
+
+    public isValidEmojiReaction(...args: Parameters<App['isValidEmojiReaction']>): Promise<boolean> {
+        return Promise.resolve(this.app.isValidEmojiReaction(...args));
+    }
+
     public logStartToJoinRoom(): Promise<void> {
         return this.app.logStartToJoinRoom();
     }

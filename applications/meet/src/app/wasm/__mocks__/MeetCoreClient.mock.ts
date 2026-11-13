@@ -44,6 +44,8 @@ const createDefaultMocks = () =>
         setWebsocketMaxPingFailures: vi.fn().mockResolvedValue(undefined),
         encryptMessage: vi.fn().mockResolvedValue(undefined),
         decryptMessage: vi.fn().mockResolvedValue(undefined),
+        getAvailableEmojiReactions: vi.fn().mockResolvedValue([]),
+        isValidEmojiReaction: vi.fn().mockResolvedValue(true),
         logStartToJoinRoom: vi.fn().mockResolvedValue(undefined),
         logJoinedRoom: vi.fn().mockResolvedValue(undefined),
         logJoinedRoomFailed: vi.fn().mockResolvedValue(undefined),

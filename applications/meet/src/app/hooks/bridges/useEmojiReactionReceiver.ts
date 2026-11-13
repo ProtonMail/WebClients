@@ -10,7 +10,6 @@ import { binaryStringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { PublishableDataTypes } from '../../types';
 import { dispatchTimedReaction } from '../../utils/dispatchTimedReaction';
-import { EMOJI_REACTIONS } from './useEmojiReaction';
 
 export const useEmojiReactionReceiver = () => {
     const room = useRoomContext();
@@ -67,7 +66,7 @@ export const useEmojiReactionReceiver = () => {
 
                 const emoji = decrypted.message;
 
-                if (!emoji || !(EMOJI_REACTIONS as readonly string[]).includes(emoji)) {
+                if (!emoji || !(await meetCoreClient.isValidEmojiReaction(emoji))) {
                     return;
                 }
 

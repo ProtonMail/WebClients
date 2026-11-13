@@ -59,6 +59,7 @@ export const ChatThread = ({
     const headerRef = useRef<HTMLDivElement>(null);
     // Roots taller than MAX_STICKY_ROOT_HEIGHT_RATIO of the chat area are excluded from pinning.
     const [isRootTooTall, setIsRootTooTall] = useState(false);
+    const [rootHeight, setRootHeight] = useState(0);
 
     // Compare the root header height against the visible chat area and keep it in sync as either
     // resizes, so a long root message releases from the pin line instead of hiding its replies.
@@ -75,6 +76,7 @@ export const ChatThread = ({
                 return;
             }
             setIsRootTooTall(header.offsetHeight > containerHeight * MAX_STICKY_ROOT_HEIGHT_RATIO);
+            setRootHeight(header.offsetHeight);
         };
 
         measure();
@@ -125,7 +127,10 @@ export const ChatThread = ({
     const threadRepliesId = `chat-thread-replies-${rootMessage.id}`;
 
     return (
-        <div className={clsx('chat-thread', isStuck && 'chat-thread--stuck')}>
+        <div
+            className={clsx('chat-thread', isStuck && 'chat-thread--stuck')}
+            style={{ '--chat-thread-root-height': `${rootHeight}px` }}
+        >
             {/* Root + collapse toggle stick together at the top while replies scroll under them.
                 A root taller than 60% of the chat area is left unpinned so it can't hide its replies. */}
             <div

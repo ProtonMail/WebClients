@@ -1,5 +1,6 @@
-import type { FocusEvent } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import type { FocusEvent, MouseEvent } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
+import { flushSync } from 'react-dom';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
@@ -8,6 +9,7 @@ import { useAnnounce } from '@proton/components/components/liveAnnouncer/useAnno
 import { useToolbarRovingFocus } from '@proton/hooks/useToolbarRovingFocus';
 import { IcArrowUpAndLeft } from '@proton/icons/icons/IcArrowUpAndLeft';
 import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
+import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import {
     selectLocalParticipantIdentity,
@@ -25,16 +27,19 @@ import { ParticipantAvatar } from '../../atoms/ParticipantAvatar/ParticipantAvat
 import { useChatMessage } from '../../hooks/bridges/useChatMessage';
 import { useChatMessageReaction } from '../../hooks/bridges/useChatMessageReaction';
 import { useMessagePlainText } from '../../hooks/useMessagePlainText';
+import { useStableCallback } from '../../hooks/useStableCallback';
 import { getAgentDisplayInfo } from '../../utils/getAgentDisplayInfo';
 import { formatIntlInTimeZone, getDeviceTimeZone } from '../../utils/zonedTime';
 import { ChatMessageContent } from '../ChatMessageContent';
 import { announcementMessages } from '../MeetingAnnouncer/messages';
 import { ChatMessageFailedActions } from './ChatMessageFailedActions';
+import { ChatMessageReactionPicker } from './ChatMessageReactionPicker';
 import { ChatMessageReactions } from './ChatMessageReactions';
 
 import './ChatItem.scss';
 
-const QUICK_REACTIONS = ['👍', '❤️', '😂', '😮', '🥲', '👎'];
+const QUICK_REACTIONS = ['👍', '💜', '😂', '😮'];
+const LEGACY_QUICK_REACTIONS = ['👍', '❤️', '😂', '😮', '🥲', '👎'];
 
 interface ChatItemProps {
     meetingName?: string;
@@ -75,6 +80,8 @@ export const ChatItem = ({ meetingName, item, displayDate = true, variant = 'def
     const { retryMessage, discardMessage } = useChatMessage();
 
     const isChatThreadsEnabled = useFlag('MeetChatThreads');
+    const isCustomReactionsEnabled = useFlag('MeetCustomReactions');
+    const quickReactions = isCustomReactionsEnabled ? QUICK_REACTIONS : LEGACY_QUICK_REACTIONS;
 
     const isPending = isMeetChatMessage(item) && item.status === 'pending';
     const isFailed = isMeetChatMessage(item) && item.status === 'failed';
@@ -103,6 +110,27 @@ export const ChatItem = ({ meetingName, item, displayDate = true, variant = 'def
 
     const [areActionsVisible, setAreActionsVisible] = useState(false);
 
+    const reactionPickerId = useId();
+    const actionsRef = useRef<HTMLDivElement>(null);
+    const moreReactionsButtonRef = useRef<HTMLButtonElement>(null);
+    const [isReactionPickerOpen, setIsReactionPickerOpen] = useState(false);
+
+    const toggleReactionPicker = () => {
+        // The picker closes once its actions toolbar is out of view, so it must be in view before it opens.
+        if (!isReactionPickerOpen) {
+            actionsRef.current?.scrollIntoView({ block: 'nearest' });
+        }
+        setIsReactionPickerOpen(!isReactionPickerOpen);
+    };
+
+    // The picker's focus trap would take focus back while it is mounted, so it unmounts before the trigger is focused.
+    const closeReactionPicker = useStableCallback(({ restoreFocus = false }: { restoreFocus?: boolean } = {}) => {
+        flushSync(() => setIsReactionPickerOpen(false));
+        if (restoreFocus) {
+            moreReactionsButtonRef.current?.focus({ preventScroll: true });
+        }
+    });
+
     useEffect(() => {
         if (!areActionsVisible) {
             return;
@@ -129,7 +157,12 @@ export const ChatItem = ({ meetingName, item, displayDate = true, variant = 'def
         });
     };
 
-    const handleRowClick = () => {
+    const handleRowClick = (event: MouseEvent<HTMLDivElement>) => {
+        // Clicks in the portaled reaction picker bubble here through the React tree.
+        if (!event.currentTarget.contains(event.target as Node)) {
+            return;
+        }
+
         const supportsHover = typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches;
 
         if (showReactionControls && !supportsHover) {
@@ -145,7 +178,7 @@ export const ChatItem = ({ meetingName, item, displayDate = true, variant = 'def
             className={clsx(
                 'chat-item flex gap-2 height-custom flex-nowrap shrink-0 mr-2 py-2 px-1',
                 showReactionControls && 'chat-item--with-reactions',
-                areActionsVisible && 'chat-item--actions-visible',
+                (areActionsVisible || isReactionPickerOpen) && 'chat-item--actions-visible',
                 isThreadItem && 'chat-item--thread'
             )}
             style={{ '--height-custom': 'fit-content' }}
@@ -217,6 +250,7 @@ export const ChatItem = ({ meetingName, item, displayDate = true, variant = 'def
                         {showReactionControls && (
                             // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                             <div
+                                ref={actionsRef}
                                 className="chat-item-quick-reactions flex flex-nowrap items-center absolute gap-1 p-1.5 border rounded-full"
                                 role="group"
                                 aria-label={c('Info').t`Message actions`}
@@ -241,7 +275,7 @@ export const ChatItem = ({ meetingName, item, displayDate = true, variant = 'def
                                     aria-label={c('Info').t`Quick reactions`}
                                     {...emojiToolbarProps}
                                 >
-                                    {QUICK_REACTIONS.map((emoji) => (
+                                    {quickReactions.map((emoji) => (
                                         <button
                                             key={emoji}
                                             type="button"
@@ -260,8 +294,41 @@ export const ChatItem = ({ meetingName, item, displayDate = true, variant = 'def
                                             {emoji}
                                         </button>
                                     ))}
+                                    {isCustomReactionsEnabled && (
+                                        <button
+                                            ref={moreReactionsButtonRef}
+                                            type="button"
+                                            className="chat-item-emoji-reaction-btn color-norm rounded-full border flex items-center justify-center shrink-0 w-custom h-custom p-custom cursor-pointer"
+                                            style={{
+                                                '--w-custom': '1.875rem',
+                                                '--h-custom': '1.875rem',
+                                                '--p-custom': '0.375rem',
+                                            }}
+                                            aria-label={c('Action').t`More reactions`}
+                                            aria-describedby={messageA11yDescriptionId}
+                                            aria-haspopup="dialog"
+                                            aria-expanded={isReactionPickerOpen}
+                                            aria-controls={isReactionPickerOpen ? reactionPickerId : undefined}
+                                            onClick={toggleReactionPicker}
+                                        >
+                                            <IcThreeDotsHorizontal size={4} />
+                                        </button>
+                                    )}
                                 </div>
                             </div>
+                        )}
+                        {showReactionControls && isCustomReactionsEnabled && (
+                            <ChatMessageReactionPicker
+                                id={reactionPickerId}
+                                isOpen={isReactionPickerOpen}
+                                anchorRef={actionsRef}
+                                triggerRef={moreReactionsButtonRef}
+                                onClose={closeReactionPicker}
+                                onReact={(emoji) => {
+                                    setAreActionsVisible(false);
+                                    void sendReaction(item.id, emoji);
+                                }}
+                            />
                         )}
                         {showReactionControls && (
                             <ChatMessageReactions

@@ -5,7 +5,7 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import { EmojiReactionButton } from './EmojiReactionButton';
 
 vi.mock('../../hooks/bridges/useEmojiReaction', () => ({
-    EMOJI_REACTIONS: ['👍'],
+    useAvailableEmojiReactions: () => ['👍'],
     useEmojiReaction: () => vi.fn(),
 }));
 

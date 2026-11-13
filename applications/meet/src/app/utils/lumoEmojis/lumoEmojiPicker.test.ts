@@ -4,7 +4,10 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { getLumoEmojiPickerOptions } from './lumoEmojiPicker';
 
-const openPicker = () => init({ data, ...getLumoEmojiPickerOptions(vi.fn(), true) });
+const composerSettings = { isLumoEmojisEnabled: true, showLumoSection: true };
+const reactionSettings = { isLumoEmojisEnabled: true, showLumoSection: false };
+
+const openPicker = () => init({ data, ...getLumoEmojiPickerOptions(vi.fn(), composerSettings) });
 
 const searchIds = async (query: string) => {
     const results: { id: string }[] = await SearchIndex.search(query);
@@ -16,7 +19,7 @@ describe('getLumoEmojiPickerOptions', () => {
     it('hands the native character of a native emoji to the callback', () => {
         const onSelectText = vi.fn();
 
-        getLumoEmojiPickerOptions(onSelectText, true).onEmojiSelect({ id: 'rocket', native: '🚀' });
+        getLumoEmojiPickerOptions(onSelectText, composerSettings).onEmojiSelect({ id: 'rocket', native: '🚀' });
 
         expect(onSelectText).toHaveBeenCalledWith('🚀');
     });
@@ -24,13 +27,30 @@ describe('getLumoEmojiPickerOptions', () => {
     it('hands the token of a Lumo emoji to the callback', () => {
         const onSelectText = vi.fn();
 
-        getLumoEmojiPickerOptions(onSelectText, true).onEmojiSelect({ id: 'lumo-rocket' });
+        getLumoEmojiPickerOptions(onSelectText, composerSettings).onEmojiSelect({ id: 'lumo-rocket' });
 
         expect(onSelectText).toHaveBeenCalledWith('[lumo_emoji:rocket]');
     });
 
-    it('leaves the picker without the Lumo section when it is turned off', () => {
-        expect(Object.keys(getLumoEmojiPickerOptions(vi.fn(), false))).toEqual(['onEmojiSelect']);
+    it('leaves the picker without Lumo emojis when the flag is off', () => {
+        const options = getLumoEmojiPickerOptions(vi.fn(), { isLumoEmojisEnabled: false, showLumoSection: true });
+
+        expect(Object.keys(options)).toEqual(['onEmojiSelect']);
+    });
+
+    it('registers the Lumo emojis and shows their section when the flag is on', () => {
+        const { custom, categories } = getLumoEmojiPickerOptions(vi.fn(), composerSettings);
+
+        expect(custom?.map(({ id }) => id)).toEqual(['lumo']);
+        expect(categories).toContain('lumo');
+    });
+
+    it('registers the Lumo emojis but hides their section when the picker leaves it out', () => {
+        const { custom, categories } = getLumoEmojiPickerOptions(vi.fn(), reactionSettings);
+
+        expect(custom?.map(({ id }) => id)).toEqual(['lumo']);
+        expect(categories).toContain('people');
+        expect(categories).not.toContain('lumo');
     });
 
     it('finds Lumo emojis by their English name', async () => {
@@ -56,6 +76,42 @@ describe('getLumoEmojiPickerOptions', () => {
     });
 });
 
+describe('pickers sharing emoji-mart state', () => {
+    // emoji-mart keeps its categories in module state, so each order needs a fresh copy of it.
+    const openPickersInOrder = async (order: ('reaction' | 'composer')[]) => {
+        vi.resetModules();
+
+        const emojiMart = await import('emoji-mart');
+        const { default: freshData } = await import('@emoji-mart/data');
+        const { getLumoEmojiPickerOptions: getFreshOptions } = await import('./lumoEmojiPicker');
+        const settingsByPicker = { reaction: reactionSettings, composer: composerSettings };
+
+        const categoryIdsByPicker: Record<string, string[]> = {};
+
+        for (const picker of [...order, ...order]) {
+            await emojiMart.init({
+                data: freshData,
+                set: 'twitter',
+                ...getFreshOptions(vi.fn(), settingsByPicker[picker]),
+            });
+            categoryIdsByPicker[picker] = emojiMart.Data.categories.map(({ id }: { id: string }) => id);
+        }
+
+        return categoryIdsByPicker;
+    };
+
+    it.each([
+        ['reaction picker first', ['reaction', 'composer'] as const],
+        ['composer first', ['composer', 'reaction'] as const],
+    ])('shows the Lumo section only in the composer picker when the %s opens', async (_, order) => {
+        const { reaction, composer } = await openPickersInOrder([...order]);
+
+        expect(composer?.at(-1)).toBe('lumo');
+        expect(reaction).not.toContain('lumo');
+        expect(reaction).toContain('people');
+    });
+});
+
 describe('Lumo section images', () => {
     const defaultMatchMedia = window.matchMedia;
 
@@ -67,7 +123,7 @@ describe('Lumo section images', () => {
         vi.resetModules();
 
         const { getLumoEmojiPickerOptions: getFreshLumoEmojiPickerOptions } = await import('./lumoEmojiPicker');
-        const [lumoCategory] = getFreshLumoEmojiPickerOptions(vi.fn(), true).custom ?? [];
+        const [lumoCategory] = getFreshLumoEmojiPickerOptions(vi.fn(), composerSettings).custom ?? [];
 
         return lumoCategory?.emojis.find(({ id }) => id === 'lumo-rocket')?.skins;
     };

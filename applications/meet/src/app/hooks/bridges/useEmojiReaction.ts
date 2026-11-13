@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import { useRoomContext } from '@livekit/components-react';
 import { c } from 'ttag';
 
@@ -11,9 +13,50 @@ import { uint8ArrayToBinaryString } from '@proton/shared/lib/helpers/encoding';
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { PublishableDataTypes } from '../../types';
 import { dispatchTimedReaction } from '../../utils/dispatchTimedReaction';
+import type { MeetCoreClient } from '../../wasm/MeetCoreClient';
+import { MeetCoreRestartedError } from '../../wasm/meetCoreStallRecovery';
 
-export const EMOJI_REACTIONS = ['👍', '👎', '👏', '😁', '❤️', '🎉', '🙌'] as const;
-export type EmojiReaction = (typeof EMOJI_REACTIONS)[number];
+const availableEmojiReactionsRequests = new WeakMap<MeetCoreClient, Promise<string[]>>();
+
+const getAvailableEmojiReactions = (meetCoreClient: MeetCoreClient) => {
+    const existingRequest = availableEmojiReactionsRequests.get(meetCoreClient);
+    if (existingRequest) {
+        return existingRequest;
+    }
+
+    const request = meetCoreClient.getAvailableEmojiReactions();
+    availableEmojiReactionsRequests.set(meetCoreClient, request);
+    request.catch(() => availableEmojiReactionsRequests.delete(meetCoreClient));
+    return request;
+};
+
+export const useAvailableEmojiReactions = () => {
+    const meetCoreClient = useMeetCoreClient();
+    const { reportMeetError } = useMeetErrorReporting();
+    const [emojiReactions, setEmojiReactions] = useState<string[]>([]);
+
+    useEffect(() => {
+        let cancelled = false;
+
+        getAvailableEmojiReactions(meetCoreClient)
+            .then((available) => {
+                if (!cancelled) {
+                    setEmojiReactions(available);
+                }
+            })
+            .catch((error: unknown) => {
+                if (!(error instanceof MeetCoreRestartedError)) {
+                    reportMeetError('Failed to load the available emoji reactions', error);
+                }
+            });
+
+        return () => {
+            cancelled = true;
+        };
+    }, [meetCoreClient, reportMeetError]);
+
+    return emojiReactions;
+};
 
 export const useEmojiReaction = () => {
     const room = useRoomContext();
@@ -36,8 +79,22 @@ export const useEmojiReaction = () => {
         });
     };
 
-    const sendEmojiReaction = async (emoji: EmojiReaction) => {
+    const sendEmojiReaction = async (emoji: string) => {
         if (!room) {
+            return false;
+        }
+
+        let isValid: boolean;
+
+        try {
+            isValid = await meetCoreClient.isValidEmojiReaction(emoji);
+        } catch {
+            handleError('Failed to validate emoji reaction');
+            return false;
+        }
+
+        if (!isValid) {
+            reportMeetError('Emoji reaction rejected by meet-core', { level: 'error' });
             return false;
         }
 
