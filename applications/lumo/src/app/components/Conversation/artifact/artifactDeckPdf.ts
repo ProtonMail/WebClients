@@ -18,8 +18,8 @@ type Html2CanvasFn = (element: HTMLElement, options: Record<string, unknown>) =>
 
 /**
  * Image pages for decks whose text the built-in PDF fonts can't show (D26). Slides are captured from an
- * element in this document, not the shared export iframe: html2canvas 1.4.1 crops and zooms iframe
- * captures above scale 1. Each slide is rendered by React straight into that element, never through an
+ * element in this document. The html2canvas 1.4.1 iframe scaling bug is patched separately (LUMO-988).
+ * Each slide is rendered by React straight into that element, never through an
  * HTML string, so deck text stays text even though the element shares the app's origin.
  */
 const captureDeckPdfImages = async (laidOut: LaidOutDeck, onProgress?: PdfExportProgressCallback) => {
