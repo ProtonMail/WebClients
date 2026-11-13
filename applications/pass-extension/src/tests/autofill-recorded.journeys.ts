@@ -27,7 +27,8 @@ type LoginPage = { page: RecordedPage; url: string; password: boolean };
  * geometry gets its form detected as `noop` where a real browser sees a login */
 const RECORDED_LOGIN_PAGES: LoginPage[] = [
     { page: 'amazon', url: 'https://www.amazon.es/', password: false },
-    { page: 'bitwarden', url: 'https://vault.bitwarden.com/', password: true },
+    // Username-first: the page hides its password field with `tw-hidden` until the email is given.
+    { page: 'bitwarden', url: 'https://vault.bitwarden.com/', password: false },
     { page: 'booking', url: 'https://account.booking.com/', password: false },
     { page: 'coursera', url: 'https://www.coursera.org/login', password: true },
     { page: 'discord', url: 'https://discord.com/login', password: true },

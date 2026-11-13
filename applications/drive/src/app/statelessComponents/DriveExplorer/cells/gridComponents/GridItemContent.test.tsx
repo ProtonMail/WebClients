@@ -58,7 +58,7 @@ describe('GridItemContent', () => {
 
     it('applies grayscale filter to the icon for invitations', () => {
         const { container } = renderWithProviders(<GridItemContent {...defaultProps} isInvitation />);
-        expect(container.querySelector('svg')).toHaveStyle({ filter: 'grayscale(100%)' });
+        expect(container.querySelector('svg')).toHaveStyle({ filter: 'grayscale(1)' });
     });
 
     it('wraps content in a button when onClick is provided', () => {

@@ -514,7 +514,7 @@
     },
     "dependencies": {
         "@proton/oxfmt-config": "workspace:^",
-        "jsdom": "^29.1.1",
+        "jsdom": "catalog:",
         "mustache": "^4.2.0",
         "react": "catalog:"
     },

@@ -61,7 +61,7 @@ describe('transformStylesheet', () => {
 
         transformStylesheet(element);
         const styleTag = element.querySelector('style');
-        expect(styleTag?.textContent).toBe('article {padding: 1rem;}\n');
+        expect(styleTag?.textContent).toBe('article { padding: 1rem; }\n');
     });
 
     it('should remove height-dependant container queries', () => {
@@ -85,7 +85,7 @@ describe('transformStylesheet', () => {
 
         transformStylesheet(element);
         const styleTag = element.querySelector('style');
-        expect(styleTag?.textContent).toBe('article {padding: 1rem;}\n');
+        expect(styleTag?.textContent).toBe('article { padding: 1rem; }\n');
     });
 
     it('should neutralize a </style> breakout re-introduced when reconstructing height-query styles', () => {

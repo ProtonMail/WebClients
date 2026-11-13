@@ -61,7 +61,8 @@ describe('ScheduledTaskRunPanel', () => {
                 />
             </MemoryRouter>
         );
-        expect(screen.getByRole('button', { name: 'Runs 2' })).toHaveAttribute('aria-expanded', 'true');
+        // The count is an inline span right after the label, so nothing separates them in the name.
+        expect(screen.getByRole('button', { name: 'Runs2' })).toHaveAttribute('aria-expanded', 'true');
         expect(screen.getByRole('link', { name: /On schedule/ })).toHaveAttribute('aria-current', 'page');
         expect(screen.getByRole('link', { name: /Ran manually/ })).not.toHaveAttribute('aria-current');
         fireEvent.click(screen.getByRole('button', { name: 'Run now' }));

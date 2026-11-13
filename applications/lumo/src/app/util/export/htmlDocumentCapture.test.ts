@@ -48,7 +48,8 @@ describe('captureElementToCanvas', () => {
             document.body.appendChild(clonedFrame);
             const render = jest.fn(async (_target: HTMLElement, options: Record<string, unknown>) => {
                 const onclone = options.onclone as
-                    ((document: Document, target: HTMLElement) => Promise<void>) | undefined;
+                    | ((document: Document, target: HTMLElement) => Promise<void>)
+                    | undefined;
                 await onclone?.(document, clonedFrame);
                 return canvas;
             });
@@ -64,8 +65,9 @@ describe('captureElementToCanvas', () => {
             expect(clonedFrame.width).toBe('794');
             expect(clonedFrame.height).toBe(String(slice?.height ?? 200));
             expect(clonedFrame.contentDocument?.compatMode).toBe('CSS1Compat');
+            // jsdom serializes a zero second argument away.
             expect(clonedFrame.contentDocument?.documentElement.style.transform).toBe(
-                `translate(0px, ${-(slice?.y ?? 0)}px)`
+                slice?.y ? `translate(0px, ${-slice.y}px)` : 'translate(0px)'
             );
             expect(render.mock.calls[0]![1]).toEqual(
                 expect.objectContaining({
