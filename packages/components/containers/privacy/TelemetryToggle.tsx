@@ -5,9 +5,10 @@ import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import metrics from '@proton/metrics/metricsInstance';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateTelemetry } from '@proton/shared/lib/api/settings';
-import { setSentryEnabled } from '@proton/shared/lib/helpers/sentry';
+import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import noop from '@proton/utils/noop';
 
@@ -35,7 +36,8 @@ const TelemetryToggle = ({ id }: Props) => {
                         updateTelemetry({ Telemetry: Number(value) })
                     );
                     dispatch(userSettingsActions.update({ UserSettings }));
-                    setSentryEnabled(value);
+                    setMetricsEnabled(value);
+                    metrics.setReportMetrics(value);
                     notifyPreferenceSaved();
                 };
                 void withLoadingTelemetry(handleChange(target.checked)).catch(noop);

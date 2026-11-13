@@ -4,22 +4,23 @@ import { act, renderHook } from '@testing-library/react';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
+import type { Fido2ActionContext } from './useFido2Action';
 import { useFido2Action } from './useFido2Action';
 
 vi.mock('@proton/shared/lib/helpers/sentry', () => ({ captureMessage: vi.fn() }));
 
-const fail = async (error: Error, afterMs: number) => {
+const fail = async (error: Error, afterMs: number, context: Fido2ActionContext = 'auth') => {
     const { result } = renderHook(() => useFido2Action());
     await act(async () => {
         const run = result.current.runFido2Action(
             () => new Promise((_, reject) => setTimeout(() => reject(error), afterMs)),
-            'auth'
+            context
         );
         vi.advanceTimersByTime(afterMs);
         await expect(run).rejects.toBe(error);
     });
     expect(result.current.fidoError).toBe(error.name);
-    return vi.mocked(captureMessage).mock.calls[0][1];
+    return vi.mocked(captureMessage).mock.calls[0]?.[1];
 };
 
 describe('useFido2Action', () => {
@@ -58,6 +59,17 @@ describe('useFido2Action', () => {
         expect(await fail(error, 100)).toMatchObject({
             fingerprint: ['Security key auth', 'extension', 'instant'],
             tags: { fido2Error: 'Error', fido2Extension: true },
+        });
+    });
+
+    it('does not report a cancelled registration, which the backend metrics count', async () => {
+        const error = new DOMException('Not allowed', 'NotAllowedError');
+
+        await fail(error, 1500, 'registration');
+        expect(captureMessage).not.toHaveBeenCalled();
+
+        expect(await fail(error, 100, 'registration')).toMatchObject({
+            fingerprint: ['Security key registration', 'NotAllowedError', 'instant'],
         });
     });
 

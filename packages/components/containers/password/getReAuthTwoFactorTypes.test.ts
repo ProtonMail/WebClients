@@ -79,4 +79,15 @@ describe('getReAuthTwoFactorTypes', () => {
             })
         ).toThrow('Security key sign-in is not supported on this application, please use https://account.proton.me');
     });
+
+    it('should not report unsupported fido2 to Sentry', () => {
+        expect(() =>
+            getReAuthTwoFactorTypes({
+                scope: 'password',
+                infoResult: { ['2FA']: { Enabled: 2, FIDO2: null, TOTP: 0 } } as InfoAuthedResponse,
+                userSettings: { ['2FA']: { Enabled: 2 } } as UserSettings,
+                app: APPS.PROTONVPN_SETTINGS,
+            })
+        ).toThrow(expect.objectContaining({ trace: false }));
+    });
 });

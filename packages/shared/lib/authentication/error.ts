@@ -26,6 +26,18 @@ export class TOTPError extends Error {
     }
 }
 
+/** Security key sign-in can't be used on this application or device, an expected limit that the user is told about. */
+export class UnsupportedFido2Error extends Error {
+    name = 'UnsupportedFido2Error';
+
+    trace = false;
+
+    constructor(message: string) {
+        super(message);
+        Object.setPrototypeOf(this, UnsupportedFido2Error.prototype);
+    }
+}
+
 /** A wrong email or SMS verification code; callers let the user try again. Its message is the API's. */
 export class InvalidCodeError extends Error {
     name = 'InvalidCodeError';
