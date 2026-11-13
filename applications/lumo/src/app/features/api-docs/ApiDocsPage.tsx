@@ -70,6 +70,9 @@ type ApiModelsState =
     | { status: 'success'; models: ApiModel[] }
     | { status: 'error'; models: ApiModel[] };
 
+// Keep browser requests on the existing host until CSP allows the public API host.
+const API_DOCS_MODELS_BASE_URL = 'https://lumo.proton.me/api/ai/v1';
+
 const StatusBadge = ({ status }: { status: 'ga' | 'beta' }) =>
     status === 'ga' ? (
         <span className="text-2xs uppercase font-bold px-1.5 py-0.5 rounded-sm bg-success color-norm">
@@ -124,7 +127,7 @@ export const ApiDocsPage = () => {
         const abortController = new AbortController();
         setApiModelsState((current) => ({ status: 'loading', models: current.models }));
 
-        void fetchApiModels(spec.apiBaseUrl, abortController.signal)
+        void fetchApiModels(API_DOCS_MODELS_BASE_URL, abortController.signal)
             .then((models) => setApiModelsState({ status: 'success', models }))
             .catch((error: unknown) => {
                 if (error instanceof DOMException && error.name === 'AbortError') {
@@ -134,7 +137,7 @@ export const ApiDocsPage = () => {
             });
 
         return () => abortController.abort();
-    }, [apiModelsReload, spec.apiBaseUrl]);
+    }, [apiModelsReload]);
 
     const flatEndpoints = useMemo(
         () => spec.endpointGroups.flatMap((g) => g.endpoints.map((ep) => ({ groupId: g.id, ...ep }))),
