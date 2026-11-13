@@ -551,7 +551,7 @@ describe('getAllowedCycles', () => {
                     }))
                 )
             )
-            .filter(({ sourcePlan, targetPlan }) => sourcePlan !== targetPlan)
+            .filter(({ sourcePlan, targetPlan }) => sourcePlan !== targetPlan && targetPlan !== PLANS.DRIVE)
     )(
         'should show 1m, 12m, 24m cycles when user is on $sourcePlan with $cycle cycle and selects $targetPlan',
         ({ sourcePlan, targetPlan, cycle }) => {
@@ -669,7 +669,10 @@ describe('getAllowedCycles', () => {
     it.each(
         b2cPlusPlans
             .flatMap((sourcePlan) => b2cPlusPlans.map((targetPlan) => ({ sourcePlan, targetPlan })))
-            .filter(({ targetPlan }) => targetPlan !== PLANS.VPN2024 && targetPlan !== PLANS.MAIL)
+            .filter(
+                ({ targetPlan }) =>
+                    targetPlan !== PLANS.VPN2024 && targetPlan !== PLANS.MAIL && targetPlan !== PLANS.DRIVE
+            )
             .filter(({ sourcePlan, targetPlan }) => sourcePlan !== targetPlan)
     )(
         'should show 1m, 12m, 24m cycles when user is on $sourcePlan with 24m cycle and selects $targetPlan',
@@ -751,7 +754,10 @@ describe('getAllowedCycles', () => {
     it.each(
         [...b2cPlusPlans, ...b2cBundlePlans].flatMap((sourcePlan) =>
             b2cPlusPlans
-                .filter((targetPlan) => targetPlan !== PLANS.VPN2024 && targetPlan !== PLANS.MAIL)
+                .filter(
+                    (targetPlan) =>
+                        targetPlan !== PLANS.VPN2024 && targetPlan !== PLANS.MAIL && targetPlan !== PLANS.DRIVE
+                )
                 .map((targetPlan) => ({
                     sourcePlan,
                     targetPlan,
@@ -848,7 +854,7 @@ describe('getAllowedCycles', () => {
     );
 
     // when free user opens any (non-VPN) app then they should see 1m, 12m, 24m for bundle b2c plans
-    it.each([...b2cBundlePlans, ...b2cPlusPlans])(
+    it.each([...b2cBundlePlans, ...b2cPlusPlans.filter((plan) => plan !== PLANS.DRIVE)])(
         'should show correct cycles for free users: user selects %s',
         (plan) => {
             const planIDs: PlanIDs = {
@@ -1076,7 +1082,7 @@ describe('defaultCycles', () => {
 
 describe('cap and backend availability', () => {
     const dimensions = {
-        plans: [PLANS.DUO, PLANS.MAIL, PLANS.DRIVE],
+        plans: [PLANS.DUO, PLANS.MAIL],
         currencies: ['JPY', 'BRL'] as Currency[],
     };
 
@@ -1220,5 +1226,77 @@ describe('planSupportsIrregularCycle', () => {
         },
     ])('should return false when $description', ({ cycle, planIDs, plansWithIrregularCycles }) => {
         expect(planSupportsIrregularCycle({ cycle, planIDs }, plansWithIrregularCycles)).toBe(false);
+    });
+});
+
+describe('Drive Plus 200 GB', () => {
+    const getCycles = ({
+        planName,
+        subscription,
+        cycleParam,
+    }: {
+        planName: PLANS;
+        subscription?: ReturnType<typeof buildSubscription>;
+        cycleParam?: CYCLE;
+    }) =>
+        getAllowedCycles({
+            subscription: subscription ?? FREE_SUBSCRIPTION,
+            planIDs: { [planName]: 1 },
+            plansMap: PLANS_MAP,
+            currency: getDefaultMainCurrency(),
+            cycleParam,
+            app: APPS.PROTONDRIVE,
+        });
+
+    it('offers 12 and 1 months', () => {
+        expect(getCycles({ planName: PLANS.DRIVE })).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
+    });
+
+    it.each([PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY])('keeps 24 months for %s in the Drive app', (planName) => {
+        expect(getCycles({ planName })).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
+    });
+
+    it('offers 24 months when the checkout is opened with cycle=24', () => {
+        expect(getCycles({ planName: PLANS.DRIVE, cycleParam: CYCLE.TWO_YEARS })).toEqual([
+            CYCLE.TWO_YEARS,
+            CYCLE.YEARLY,
+            CYCLE.MONTHLY,
+        ]);
+    });
+
+    it.each([PLANS.PASS, PLANS.VPN2024, PLANS.MAIL, PLANS.BUNDLE, PLANS.DUO, PLANS.FAMILY, PLANS.VISIONARY])(
+        'offers 12 and 1 months to a user switching from a 24-month %s subscription',
+        (sourcePlan) => {
+            const subscription = buildSubscription();
+            subscription.Cycle = CYCLE.TWO_YEARS;
+            subscription.Plans[0].Name = sourcePlan;
+
+            expect(getCycles({ planName: PLANS.DRIVE, subscription })).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
+        }
+    );
+
+    it.each(['JPY', 'BRL'] as Currency[])('offers 12 and 1 months in %s', (currency) => {
+        expect(
+            getAllowedCycles({
+                subscription: undefined,
+                planIDs: { [PLANS.DRIVE]: 1 },
+                plansMap: getPlansMap(getLongTestPlans(currency), currency, false),
+                currency,
+            })
+        ).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
+    });
+
+    it('keeps 24 months for a user already on a 24-month Drive Plus subscription', () => {
+        const subscription = buildSubscription({
+            planName: PLANS.DRIVE,
+            cycle: CYCLE.TWO_YEARS,
+            currency: getDefaultMainCurrency(),
+        });
+
+        expect(getCycles({ planName: PLANS.DRIVE, subscription })).toEqual([
+            CYCLE.TWO_YEARS,
+            CYCLE.YEARLY,
+            CYCLE.MONTHLY,
+        ]);
     });
 });
