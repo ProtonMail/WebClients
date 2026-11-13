@@ -254,7 +254,8 @@ export const buildLumoMailConfig = (
               definitions: allDefinitions.map((definition) => toStandaloneDefinition(definition, deps)),
               serverPrompt: true,
               clientType: LumoClientType.LumoMail,
-              turnContext: () => buildMailContext(deps.store.getState(), new Date(), getTimezone()),
+              turnContext: (references) =>
+                  buildMailContext(deps.store.getState(), references, new Date(), getTimezone()),
           }
         : { definitions: allDefinitions, productRules: () => MAIL_RULES };
 

@@ -977,6 +977,28 @@ describe('useLumoAgent', () => {
             ]);
         });
 
+        it('lets a tool act on a reference the turn context named, with no read issuing it first', async () => {
+            let opened = '';
+            const turnContext: LumoAgentConfig['turnContext'] = (references) => {
+                opened = references.referenceFor('email', 'm1');
+                return `Open in the reading pane: email ${opened}`;
+            };
+            script = async ({ executor }) => {
+                await executor.execute([
+                    { id: '1', name: 'move_items', arguments: JSON.stringify({ target: 'Archive', ids: [opened] }) },
+                ]);
+            };
+
+            const { result } = renderHook(() => useLumoAgent({ ...standalone, turnContext }));
+            const { chain } = await sendAndPinConfirm(result);
+            await act(async () => {
+                result.current.confirm({ target: 'Archive', ids: [opened] });
+                await chain;
+            });
+
+            expect(handlerCalls).toEqual([{ name: 'move_items', params: { target: 'Archive', ids: [opened] } }]);
+        });
+
         it('tells the transport which client is calling, so the backend can pick its prompt', async () => {
             await sendOnce({ ...standalone, clientType: LumoClientType.LumoMail });
 

@@ -174,8 +174,10 @@ describe('the Mail config with the standalone prompt flag on', () => {
     it('opens every user turn with the mail context of the moment it is sent', () => {
         jest.useFakeTimers({ now: new Date(2026, 8, 30, 9, 5) });
 
-        expect(config.turnContext?.()).toBe(
-            buildMailContext(promptDeps.store.getState(), new Date(2026, 8, 30, 9, 5), getTimezone())
+        const references = createReferenceRegistry();
+
+        expect(config.turnContext?.(references)).toBe(
+            buildMailContext(promptDeps.store.getState(), references, new Date(2026, 8, 30, 9, 5), getTimezone())
         );
     });
 
