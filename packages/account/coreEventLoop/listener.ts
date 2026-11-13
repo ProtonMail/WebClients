@@ -14,7 +14,6 @@ import { membersLoop } from '../members/eventLoopV6';
 import { organizationLoop } from '../organization/eventLoopV6';
 import { paymentMethodsLoop } from '../paymentMethods/eventLoopV6';
 import { samlSSOLoop } from '../samlSSO/eventLoopV6';
-import { authDevicesLoop } from '../sso/eventLoopV6';
 import { subscriptionLoop } from '../subscription/eventLoopV6';
 import { userLoop } from '../user/eventLoopV6';
 import { userInvitationsLoops } from '../userInvitations/eventLoopV6';
@@ -38,11 +37,23 @@ const loops: CoreEventLoopV6Callback[] = [
     groupOwnerInvitesLoop,
     delegatedAccessLoop,
     entitlementsLoop,
-    authDevicesLoop,
 ];
 Object.freeze(loops);
 
-export const coreEventLoopV6Listener = (startListening: SharedStartListening<CoreEventLoopV6RequiredState>) => {
+export interface CoreEventLoopV6ListenerOptions<ExtraState> {
+    /** Handlers owned by packages above account, run after the built-in ones in the given order */
+    loops?: readonly CoreEventLoopV6Callback<CoreEventLoopV6RequiredState & ExtraState>[];
+}
+
+export const coreEventLoopV6Listener = <ExtraState = {}>(
+    startListening: SharedStartListening<CoreEventLoopV6RequiredState & ExtraState>,
+    { loops: extraLoops = [] }: CoreEventLoopV6ListenerOptions<ExtraState> = {}
+) => {
+    const allLoops: readonly CoreEventLoopV6Callback<CoreEventLoopV6RequiredState & ExtraState>[] = [
+        ...loops,
+        ...extraLoops,
+    ];
+
     startListening({
         actionCreator: coreEventLoopV6,
         effect: async (action, { dispatch, getState, extra }) => {
@@ -56,7 +67,7 @@ export const coreEventLoopV6Listener = (startListening: SharedStartListening<Cor
             let apiCallsCount = 0;
             let apiFailuresCount = 0;
 
-            loops.forEach((callback) => {
+            allLoops.forEach((callback) => {
                 const promise = callback({ event, state, dispatch, api });
 
                 if (promise) {

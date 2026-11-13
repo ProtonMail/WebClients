@@ -7,12 +7,11 @@ import type { Domain } from '@proton/shared/lib/interfaces/Domain';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { AuthDeviceOutput, MemberAuthDeviceOutput } from '@proton/shared/lib/keys/device';
 
-import type { CoreEventLoopV6RequiredState } from '../coreEventLoop/interface';
 import { type DomainsState, domainsReducer } from '../domains';
 import { getModelState } from '../testing/getModelState';
 import { userReducer } from '../user';
 import { authDevicesReducer } from './authDevices';
-import { authDevicesLoop } from './eventLoopV6';
+import { type AuthDevicesLoopState, authDevicesLoop } from './eventLoopV6';
 import { memberAuthDevicesReducer } from './memberAuthDevices';
 
 const AUTH_DEVICES_URL = 'auth/v4/devices';
@@ -66,7 +65,7 @@ describe('authDevicesLoop', () => {
         const fire = (event: Partial<CoreEventV6Response>) =>
             authDevicesLoop({
                 event: anEvent(event),
-                state: store.getState() as unknown as CoreEventLoopV6RequiredState,
+                state: store.getState() as unknown as AuthDevicesLoopState,
                 dispatch: store.dispatch,
                 api: api as unknown as Api,
             });
