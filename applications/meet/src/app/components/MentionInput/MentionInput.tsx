@@ -271,7 +271,7 @@ export const MentionInput = ({
                     {isEmpty && (
                         <div
                             aria-hidden="true"
-                            className="absolute top-0 start-0 color-hint text-nowrap pointer-events-none user-select-none"
+                            className="absolute top-0 start-0 end-0 color-hint text-ellipsis pointer-events-none user-select-none"
                             style={{ paddingBlock: `${verticalPadding}rem`, lineHeight: `${LINE_HEIGHT_REM}rem` }}
                         >
                             {placeholder}

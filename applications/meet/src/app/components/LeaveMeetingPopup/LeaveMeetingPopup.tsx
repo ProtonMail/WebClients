@@ -5,7 +5,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
+import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useLoading from '@proton/hooks/useLoading';
+import { IcMeetPhone } from '@proton/icons/icons/IcMeetPhone';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
     selectHasAnotherAdmin,
@@ -45,6 +47,9 @@ export const LeaveMeetingPopup = () => {
     const hostIsPresent = useMeetSelector(selectHostIsPresent);
     const isLocalParticipantHost = useMeetSelector(selectIsLocalParticipantHost);
     const isLocalParticipantAdmin = useMeetSelector(selectIsLocalParticipantAdmin);
+
+    const { viewportWidth } = useActiveBreakpoint();
+    const isXSmallScreen = viewportWidth.xsmall;
 
     const popupState = useMeetSelector(selectPopupState);
     const [loadingEndMeeting, withLoadingEndMeeting] = useLoading();
@@ -94,7 +99,7 @@ export const LeaveMeetingPopup = () => {
             <Button
                 ref={anchorRef}
                 className="leave-button border-none shrink-0 px-0 w-custom h-custom"
-                style={{ '--w-custom': '6.875rem', '--h-custom': '3.5rem' }}
+                style={{ '--w-custom': isXSmallScreen ? '3.5rem' : '6.875rem', '--h-custom': '3.5rem' }}
                 pill={true}
                 size="large"
                 onClick={handleButtonClick}
@@ -102,7 +107,7 @@ export const LeaveMeetingPopup = () => {
                 aria-expanded={popupState[PopUpControls.LeaveMeeting]}
                 aria-haspopup="dialog"
             >
-                {c('Action').t`Leave`}
+                {isXSmallScreen ? <IcMeetPhone size={6} /> : c('Action').t`Leave`}
             </Button>
             <Dropdown
                 className="leave-meeting-popup meet-radius"

@@ -191,7 +191,7 @@ export const MeetingBody = ({
                     {isSideBarOpen && (
                         <div
                             className="h-full shrink-0 min-w-custom"
-                            style={{ flexGrow: 3, flexBasis: 0, '--min-w-custom': '20rem' }}
+                            style={{ flexGrow: 3, flexBasis: 0, '--min-w-custom': 'min(20rem, 100%)' }}
                         >
                             <ParticipantList />
                             <Settings />
