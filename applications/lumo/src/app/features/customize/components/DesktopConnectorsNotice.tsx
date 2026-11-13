@@ -2,52 +2,39 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { LUMO_SHORT_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { getBlogURL } from '@proton/shared/lib/helpers/url';
 
-import { LumoIcon } from '../../../components/LumoIcon/LumoIcon';
-import lumoAppIcon from './lumo-app-icon.png';
+import { type IconName, LumoIcon } from '../../../components/LumoIcon/LumoIcon';
+import { CustomizeNotice } from './CustomizeNotice';
 
-import './DesktopConnectorsNotice.scss';
+const DESKTOP_DOWNLOAD_URL = 'https://proton.me/lumo/download';
+const CONNECTORS_LEARN_MORE_URL = getBlogURL('/lumo-desktop-features');
 
-export const DESKTOP_DOWNLOAD_URL = 'https://proton.me/lumo/download';
-export const CONNECTORS_LEARN_MORE_URL = getKnowledgeBaseUrl('/lumo-desktop-connectors');
+export const getConnectorsSellingPoints = (): { icon: IconName; text: string }[] => [
+    {
+        icon: 'Search',
+        text: c('collider_2025:Info').t`Find documents, bookings and messages without switching apps`,
+    },
+    {
+        icon: 'ShieldCheck',
+        text: c('collider_2025:Info').t`You decide what ${LUMO_SHORT_APP_NAME} does on its own and what needs your OK`,
+    },
+    {
+        icon: 'Lock',
+        text: c('collider_2025:Info').t`Your data is never used to train AI`,
+    },
+];
 
 /** Shown on the web, where connectors can't run: they need the desktop app's access to this computer. */
-export const DesktopConnectorsNotice = () => {
-    const points = [
-        c('collider_2025:Info').t`Files and apps are read on your computer, not the cloud`,
-        c('collider_2025:Info').t`Sign-ins and keys stay in your computer's keychain`,
-        c('collider_2025:Info').t`You choose exactly what each connector can access`,
-    ];
-
-    return (
-        <div
-            className="desktop-connectors-notice flex flex-column flex-nowrap items-center gap-4 text-center"
-            role="note"
-        >
-            <img className="desktop-connectors-notice__app-icon" src={lumoAppIcon} alt="" width={88} height={88} />
-            <h2 className="mt-4 text-semibold desktop-connectors-notice__title">
-                {c('collider_2025:Title').t`Connectors run in the ${LUMO_SHORT_APP_NAME} desktop app`}
-            </h2>
-            <p className="m-0 color-weak desktop-connectors-notice__description">
-                {c('collider_2025:Info')
-                    .t`Connectors let ${LUMO_SHORT_APP_NAME} answer using your files, ${MAIL_APP_NAME}, the web and more.`}
-            </p>
-            <ul className="desktop-connectors-notice__points m-0 py-2 px-0 list-none flex flex-column flex-nowrap gap-2 text-left">
-                {points.map((point) => (
-                    <li key={point} className="flex flex-nowrap items-center gap-2">
-                        <LumoIcon
-                            aria-hidden
-                            name="ShieldCheck"
-                            size={16}
-                            strokeWidth={1.4}
-                            className="shrink-0 color-primary"
-                        />
-                        <span>{point}</span>
-                    </li>
-                ))}
-            </ul>
-            <div className="flex flex-wrap justify-center gap-2 pt-2">
+export const DesktopConnectorsNotice = () => (
+    <CustomizeNotice
+        icon="desktop"
+        title={c('collider_2025:Title').t`Bring your apps and files into ${LUMO_SHORT_APP_NAME}`}
+        description={c('collider_2025:Info')
+            .t`With the ${LUMO_SHORT_APP_NAME} desktop app, connect ${MAIL_APP_NAME}, your files, Jira, Linear and more, so ${LUMO_SHORT_APP_NAME} can work with the things you already use.`}
+        points={getConnectorsSellingPoints()}
+        actions={
+            <>
                 <ButtonLike as="a" color="norm" href={DESKTOP_DOWNLOAD_URL} target="_blank" rel="noopener noreferrer">
                     <LumoIcon aria-hidden name="Download" size={16} strokeWidth={1.4} className="mr-2" />
                     {c('collider_2025:Action').t`Download the desktop app`}
@@ -62,11 +49,9 @@ export const DesktopConnectorsNotice = () => {
                 >
                     {c('collider_2025:Action').t`Learn more`}
                 </ButtonLike>
-            </div>
-            <p className="m-0 text-sm color-weak">
-                {c('collider_2025:Info')
-                    .t`Already have it? Open the ${LUMO_SHORT_APP_NAME} desktop app and go to Customize › Connectors.`}
-            </p>
-        </div>
-    );
-};
+            </>
+        }
+        footnote={c('collider_2025:Info')
+            .t`Already have it? Open the ${LUMO_SHORT_APP_NAME} desktop app and go to Customize › Connectors.`}
+    />
+);

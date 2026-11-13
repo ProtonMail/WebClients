@@ -1,6 +1,18 @@
-@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib' as *;
 
-.desktop-connectors-notice {
+@keyframes customize-notice-icon-pop {
+	from {
+		opacity: 0;
+		transform: scale(0.7) rotate(-8deg);
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+.customize-notice {
 	padding: rem(40);
 	border: 1px solid var(--border-weak);
 	border-radius: rem(16);
@@ -9,8 +21,26 @@
 	// The icon artwork has transparent padding around the squircle (~72px of 88px is visible).
 	&__app-icon {
 		margin-block: rem(-8);
+
 		// drop-shadow follows the squircle's alpha, so the shadow hugs the icon rather than its square box.
 		filter: drop-shadow(0 rem(2) rem(4) rgb(0 0 0 / 0.18)) drop-shadow(0 rem(8) rem(16) rgb(83 52 200 / 0.48));
+	}
+
+	&__icon {
+		border-radius: rem(16);
+		box-shadow: 0 rem(6) rem(16) rgb(83 52 200 / 0.16);
+	}
+
+	// The card itself stays put when switching tabs; only its contents animate.
+	@media (prefers-reduced-motion: no-preference) {
+		&__app-icon,
+		&__icon {
+			animation: customize-notice-icon-pop 0.5s easing(ease-out-back) 0.05s both;
+		}
+
+		> :not(img) {
+			animation: customize-rise-in 0.3s easing(ease-out-cubic) 0.08s both;
+		}
 	}
 
 	&__title {

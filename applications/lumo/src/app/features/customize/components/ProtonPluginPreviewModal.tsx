@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -13,27 +15,30 @@ import { PluginExample, PluginIcon, getPluginMeta } from './ProtonPluginCard';
 
 interface ProtonPluginPreviewModalProps extends ModalStateProps {
     plugin: ProtonPlugin;
-    added: boolean;
-    adding: boolean;
+    added?: boolean;
+    adding?: boolean;
     onAdd?: () => void;
     onUpgrade?: () => void;
-    onOpen: () => void;
+    onOpen?: () => void;
+    /** Replaces the Open / Add / Upgrade button, e.g. a sign-up button for guests. */
+    primaryAction?: ReactNode;
 }
 
 export const ProtonPluginPreviewModal = ({
     plugin,
-    added,
-    adding,
+    added = false,
+    adding = false,
     onAdd,
     onUpgrade,
     onOpen,
+    primaryAction,
     ...modalProps
 }: ProtonPluginPreviewModalProps) => (
     <ModalTwo size="large" {...modalProps}>
         <ModalTwoHeader title={plugin.getTitle()} subline={getPluginMeta(plugin)} />
         <ModalTwoContent>
             <div className="flex flex-nowrap items-start gap-3 mb-6">
-                <PluginIcon plugin={plugin} large />
+                <PluginIcon plugin={plugin} size="large" />
                 <div className="flex flex-column flex-nowrap gap-2 min-w-0">
                     <p className="m-0">{plugin.getDescription()}</p>
                     <PluginExample plugin={plugin} />
@@ -51,7 +56,7 @@ export const ProtonPluginPreviewModal = ({
         </ModalTwoContent>
         <ModalTwoFooter>
             <Button onClick={modalProps.onClose}>{c('collider_2025:Action').t`Close`}</Button>
-            {added ? (
+            {primaryAction ?? (added ? (
                 <Button color="norm" onClick={onOpen}>
                     {c('collider_2025:Action').t`Open`}
                 </Button>
@@ -72,7 +77,7 @@ export const ProtonPluginPreviewModal = ({
                         {c('collider_2025:Action').t`Upgrade to add`}
                     </span>
                 </Button>
-            ) : null}
+            ) : null)}
         </ModalTwoFooter>
     </ModalTwo>
 );

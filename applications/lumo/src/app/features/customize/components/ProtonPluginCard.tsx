@@ -30,18 +30,34 @@ export const getPluginMeta = (plugin: ProtonPlugin) => {
     );
 };
 
-export const PluginIcon = ({ plugin, large = false }: { plugin: ProtonPlugin; large?: boolean }) => (
-    <div
-        className={clsx(
-            'customize-plugin-icon flex shrink-0 items-center justify-center rounded-xl w-custom h-custom',
-            `customize-plugin-icon--${plugin.accent}`
-        )}
-        style={{ '--w-custom': large ? '3rem' : '2.75rem', '--h-custom': large ? '3rem' : '2.75rem' }}
-        aria-hidden
-    >
-        <ProjectIcon iconId={plugin.icon} size={large ? 24 : 22} />
-    </div>
-);
+const PLUGIN_ICON_SIZES = {
+    small: { box: '1.75rem', icon: 16, radius: 'rounded-lg' },
+    medium: { box: '2.75rem', icon: 22, radius: 'rounded-xl' },
+    large: { box: '3rem', icon: 24, radius: 'rounded-xl' },
+};
+
+export const PluginIcon = ({
+    plugin,
+    size = 'medium',
+}: {
+    plugin: ProtonPlugin;
+    size?: keyof typeof PLUGIN_ICON_SIZES;
+}) => {
+    const { box, icon, radius } = PLUGIN_ICON_SIZES[size];
+    return (
+        <div
+            className={clsx(
+                'customize-plugin-icon flex shrink-0 items-center justify-center w-custom h-custom',
+                radius,
+                `customize-plugin-icon--${plugin.accent}`
+            )}
+            style={{ '--w-custom': box, '--h-custom': box }}
+            aria-hidden
+        >
+            <ProjectIcon iconId={plugin.icon} size={icon} />
+        </div>
+    );
+};
 
 export const PluginExample = ({ plugin }: { plugin: ProtonPlugin }) => {
     const example = plugin.getExample();
