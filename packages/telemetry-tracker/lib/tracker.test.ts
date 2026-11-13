@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import { TelemetryAccountImportFlowEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import * as sentry from '@proton/shared/lib/helpers/sentry';
@@ -11,9 +13,9 @@ import { allowed, bool, duration, number, topValues } from './dimensions';
 import { defineTimer } from './timers';
 import { NOT_INITIALIZED_MESSAGE, initTracker, setTrackerInstance, tracker } from './tracker';
 
-jest.mock('@proton/shared/lib/helpers/metrics', () => ({ sendTelemetryReport: jest.fn() }));
-jest.mock('@proton/shared/lib/telemetry', () => ({ telemetry: { sendCustomEvent: jest.fn() } }));
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({ captureMessage: jest.fn(), traceError: jest.fn() }));
+vi.mock('@proton/shared/lib/helpers/metrics', () => ({ sendTelemetryReport: vi.fn() }));
+vi.mock('@proton/shared/lib/telemetry', () => ({ telemetry: { sendCustomEvent: vi.fn() } }));
+vi.mock('@proton/shared/lib/helpers/sentry', () => ({ captureMessage: vi.fn(), traceError: vi.fn() }));
 
 const group = TelemetryMeasurementGroups.accountImportFlow;
 const event = TelemetryAccountImportFlowEvents.stepCompleted;
@@ -40,19 +42,19 @@ const funnelEvent = defineEvent({
 });
 const noInputEvent = defineEvent({ target: 'telemetry', group, event });
 
-const api: Api = jest.fn();
+const api: Api = vi.fn();
 
 describe('tracker', () => {
     afterEach(() => {
         setTrackerInstance(undefined);
-        jest.useRealTimers();
-        jest.restoreAllMocks();
-        jest.clearAllMocks();
+        vi.useRealTimers();
+        vi.restoreAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('before init', () => {
         it('warns once and does not throw outside of production', () => {
-            const warn = jest.spyOn(console, 'warn').mockImplementation(() => {});
+            const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
             expect(() => tracker.emit(noInputEvent)).not.toThrow();
             expect(() => tracker.startTimer(funnelTimer)).not.toThrow();
             expect(warn).toHaveBeenCalledTimes(1);
@@ -111,7 +113,7 @@ describe('tracker', () => {
 
         it('never throws when sending fails', () => {
             initTracker({ api });
-            jest.mocked(sendTelemetryReport).mockImplementationOnce(() => {
+            vi.mocked(sendTelemetryReport).mockImplementationOnce(() => {
                 throw new Error('boom');
             });
             expect(() => tracker.emit(noInputEvent)).not.toThrow();
@@ -160,7 +162,7 @@ describe('tracker', () => {
 
         it('still sends to analytics when Telemetry throws', () => {
             initTracker({ api });
-            jest.mocked(sendTelemetryReport).mockImplementationOnce(() => {
+            vi.mocked(sendTelemetryReport).mockImplementationOnce(() => {
                 throw new Error('boom');
             });
             tracker.emit(both, { dimensions: { isBYOE: false } });
@@ -205,7 +207,7 @@ describe('tracker', () => {
         const input = { dimensions: { step: 'done' } } as const;
 
         it('adds a rounded duration only when durationFrom is passed', () => {
-            jest.spyOn(performance, 'now').mockReturnValueOnce(1000).mockReturnValueOnce(3400.4);
+            vi.spyOn(performance, 'now').mockReturnValueOnce(1000).mockReturnValueOnce(3400.4);
             const { reports } = mockTracker();
 
             tracker.startTimer(funnelTimer);
@@ -225,7 +227,7 @@ describe('tracker', () => {
         });
 
         it('keeps the original start unless restarted, and stopTimer removes it', () => {
-            const now = jest.spyOn(performance, 'now');
+            const now = vi.spyOn(performance, 'now');
             const { reports } = mockTracker();
             now.mockReturnValueOnce(0);
             tracker.startTimer(funnelTimer);
@@ -237,7 +239,7 @@ describe('tracker', () => {
         });
 
         it('resumes a timer that began earlier, and exposes the elapsed time', () => {
-            const now = jest.spyOn(performance, 'now');
+            const now = vi.spyOn(performance, 'now');
             const { reports } = mockTracker();
             now.mockReturnValueOnce(5000);
             tracker.startTimer(funnelTimer, { elapsedMs: 3000 });

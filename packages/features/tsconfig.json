@@ -1,3 +1,7 @@
 {
-    "extends": "../../tsconfig.base.json"
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "types": ["@proton/types", "global-types-monorepo", "webpack-env", "vitest/globals"]
+    },
+    "exclude": ["node_modules", "testing/features.ts", "testing/mockUseFeature.ts"]
 }

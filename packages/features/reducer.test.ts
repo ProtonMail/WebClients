@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import { DAY } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
@@ -14,9 +16,9 @@ const getMockFeature = (data: Pick<Feature, 'Code' | 'Value' | 'Type'> & Partial
 describe('reducer tests', () => {
     it('should return the initial state', async () => {
         const now = Date.now();
-        jest.useFakeTimers({ now });
+        vi.useFakeTimers({ now });
 
-        const api = jest.fn<Promise<FeaturesResponse>, any>();
+        const api = vi.fn<() => Promise<FeaturesResponse>>();
         const extraThunkArguments = { api: api as Api };
         const store = setupStore({ extraThunkArguments });
 
@@ -47,7 +49,7 @@ describe('reducer tests', () => {
         const result2 = await store.dispatch(fetchFeatures([FeatureCode.EarlyAccessScope]));
         await validateResult(result2);
 
-        await jest.advanceTimersByTimeAsync(DAY * 3);
+        await vi.advanceTimersByTimeAsync(DAY * 3);
 
         const result3 = await store.dispatch(fetchFeatures([FeatureCode.EarlyAccessScope]));
         await validateResult(result3);
@@ -57,9 +59,9 @@ describe('reducer tests', () => {
 
     it('should clear out archived features', async () => {
         const now = Date.now();
-        jest.useFakeTimers({ now });
+        vi.useFakeTimers({ now });
 
-        const api = jest.fn<Promise<FeaturesResponse>, any>();
+        const api = vi.fn<() => Promise<FeaturesResponse>>();
         const extraThunkArguments = { api: api as Api };
         const archivedFeature = getMockFeature({
             Code: FeatureCode.BlockSenderInToolbar,
@@ -106,7 +108,7 @@ describe('reducer tests', () => {
         const result1 = await store.dispatch(fetchFeatures([FeatureCode.EarlyAccessScope]));
         await validateResult(result1, mockFeature1);
 
-        await jest.advanceTimersByTimeAsync(DAY * 14);
+        await vi.advanceTimersByTimeAsync(DAY * 14);
 
         const mockFeature2 = getMockFeature({
             Code: FeatureCode.EarlyAccessScope,
