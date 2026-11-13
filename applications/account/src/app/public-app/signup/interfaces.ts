@@ -24,10 +24,12 @@ import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import type { User } from '@proton/shared/lib/interfaces/User';
 
 import type { AddressGeneration } from '../../private-app/setup-address/addressGeneration';
-import type { AppIntent, AuthSession } from '../authSession';
+import type { AppIntent, AuthFlows, AuthSession } from '../authSession';
 
 export interface SessionData {
     resumedSessionResult: ResumedSessionResult;
+    /** How the session was signed in, so that a fork from it can ask to re-authenticate */
+    flow: AuthFlows;
     paymentMethods: SavedPaymentMethod[] | undefined;
     defaultPaymentMethod: PAYMENT_METHOD_TYPES | undefined;
     subscription: Subscription | FreeSubscription | undefined;
