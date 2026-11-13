@@ -4,7 +4,9 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import CrashReportsToggle from '@proton/components/containers/privacy/CrashReportsToggle';
+import DataCollectionDescription from '@proton/components/containers/privacy/DataCollectionDescription';
 import TelemetryToggle from '@proton/components/containers/privacy/TelemetryToggle';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 
@@ -36,8 +38,22 @@ const AccountSettings = ({
     return layout(
         <>
             <div className="mobile-settings">
-                <MobileSection>
-                    {canShowAddressSection && <MobileAddressSection />}
+                {canShowAddressSection && (
+                    <MobileSection>
+                        <MobileAddressSection />
+                    </MobileSection>
+                )}
+                <div className="account-recovery mb-8">
+                    <AccountRecoverySection />
+                </div>
+                <MobileSection
+                    title={c('Title').t`Data collection`}
+                    description={
+                        <SettingsParagraph>
+                            <DataCollectionDescription />
+                        </SettingsParagraph>
+                    }
+                >
                     <MobileSectionRow>
                         <MobileSectionLabel htmlFor="crashReports">{c('Label')
                             .t`Send crash reports`}</MobileSectionLabel>
@@ -45,14 +61,11 @@ const AccountSettings = ({
                     </MobileSectionRow>
                     <MobileSectionRow>
                         <MobileSectionLabel htmlFor="telemetry">
-                            {c('Label').t`Collect usage diagnostics`}
+                            {c('Label').t`Collect anonymous usage diagnostics`}
                         </MobileSectionLabel>
                         <TelemetryToggle id="telemetry" />
                     </MobileSectionRow>
                 </MobileSection>
-                <div className="account-recovery">
-                    <AccountRecoverySection />
-                </div>
             </div>
         </>,
         { className: 'overflow-auto' }

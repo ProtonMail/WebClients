@@ -981,10 +981,10 @@ export const getAccountAppRoutes = ({
                         variant: SettingsLayoutVariant.Card,
                     },
                     {
-                        text: c('Title').t`Privacy and data collection`,
-                        id: 'privacy',
+                        text: c('Title').t`Data collection`,
+                        id: 'data-collection',
                         keywords: [
-                            c('Label').t`Collect usage diagnostics`,
+                            c('Label').t`Collect anonymous usage diagnostics`,
                             c('Label').t`Send crash reports`,
                             c('account_search_index').t`Telemetry`,
                         ],

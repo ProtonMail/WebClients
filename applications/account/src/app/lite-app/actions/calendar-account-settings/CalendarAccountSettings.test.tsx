@@ -3,7 +3,10 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUpdateAccountRecovery } from '@proton/account/recovery/useUpdateAccountRecovery';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import ConfigProvider from '@proton/components/containers/config/Provider';
+import { APPS } from '@proton/shared/lib/constants';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 import CalendarAccountSettings from './CalendarAccountSettings';
 
@@ -58,7 +61,12 @@ const mockRecovery = (loading = false) => {
     } as any);
 };
 
-const renderPage = () => render(<CalendarAccountSettings layout={(children) => children} loader={<div>loader</div>} />);
+const renderPage = () =>
+    render(
+        <ConfigProvider config={{ APP_NAME: APPS.PROTONACCOUNT } as ProtonConfig}>
+            <CalendarAccountSettings layout={(children) => children} loader={<div>loader</div>} />
+        </ConfigProvider>
+    );
 
 const controlIds = [
     'addressSelector',
@@ -107,7 +115,7 @@ describe('CalendarAccountSettings', () => {
     it('renders every account setting', () => {
         const { container } = renderPage();
 
-        ['Email address', 'Privacy', 'Account recovery'].forEach((title) => {
+        ['Email address', 'Account recovery', 'Data collection'].forEach((title) => {
             expect(screen.getByRole('heading', { name: title })).toBeInTheDocument();
         });
         controlIds.forEach((id) => {

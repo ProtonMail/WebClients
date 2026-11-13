@@ -343,8 +343,8 @@ export const getRoutes = ({
                     variant: SettingsLayoutVariant.Card,
                 },
                 {
-                    text: c('Title').t`Privacy and data collection`,
-                    id: 'privacy',
+                    text: c('Title').t`Data collection`,
+                    id: 'data-collection',
                     variant: SettingsLayoutVariant.Card,
                 },
             ],
