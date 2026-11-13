@@ -193,6 +193,19 @@ describe('getBillingAddressFromPaymentStatus', () => {
         expect(result).not.toBe(billingAddress); // Should be a new object
     });
 
+    it('should not copy the payment status fields into the billing address', () => {
+        const paymentStatus = {
+            CountryCode: 'CH',
+            State: null,
+            ZipCode: null,
+            Code: 1000,
+            VendorStates: { Card: true },
+        } as BillingAddress;
+
+        const result = getBillingAddressFromPaymentStatus(paymentStatus, { shouldRestoreZipCode: true });
+        expect(Object.keys(result).sort()).toEqual(['CountryCode', 'State', 'ZipCode']);
+    });
+
     it('should assign default state when state is missing for US', () => {
         // Get the first US state code for expectations
         const firstUSStateCode = getDefaultState('US');
