@@ -833,6 +833,15 @@
       ],
       "Sign in in the app instead": [
         "Inicieu sessió a l'aplicació en lloc d'això"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Plegar les alertes de Pass Monitor"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Desplegar les alertes de Pass Monitor"
+      ],
+      "Ignore": [
+        "Ignora"
       ]
     },
     "Activity": {
@@ -990,6 +999,13 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "La vostra informació personal s'ha filtrat en una violació de les dades d'un servei de tercers."
+      ],
+      "${ count } more": [
+        "${ count } més",
+        "${ count } més"
+      ],
+      "This login uses the same password as another item.": [
+        "Aquest inici de sessió utilitza la mateixa contrasenya que un altre element."
       ]
     },
     "Email": {
@@ -1549,6 +1565,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Un altre client de ${ PASS_APP_NAME } ha eliminat el codi PIN"
+      ],
+      "Failed updating monitoring status for this item": [
+        "No s'ha pogut actualitzar l'estat de monitoratge d'aquest element"
       ]
     },
     "Error message": {
@@ -3036,6 +3055,12 @@
       ],
       "The sign in was not confirmed in time.": [
         "L'inici de sessió no s'ha confirmat a temps."
+      ],
+      "Alert restored": [
+        "S'ha restaurat l'alerta"
+      ],
+      "Check ignored": [
+        "Comprovar els ignorats"
       ]
     },
     "Keyboard key": {
@@ -5446,6 +5471,15 @@
       ],
       "Signing you in": [
         "S'està iniciant la sessió."
+      ],
+      "Missing 2FA": [
+        "Falta el 2FA"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Reused password": [
+        "Contrasenya reutilitzada"
       ]
     },
     "Title_cloned_item": {

@@ -833,6 +833,15 @@
       ],
       "Sign in in the app instead": [
         "Use la aplicación para iniciar sesión"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Contraer las alertas de Pass Monitor"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Expandir las alertas de Pass Monitor"
+      ],
+      "Ignore": [
+        "Ignorar"
       ]
     },
     "Activity": {
@@ -990,6 +999,13 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Tu información personal fue filtrada en una vulneración de datos de un servicio de terceros."
+      ],
+      "${ count } more": [
+        "${ count } más\n\nEn las dos formas iguales, Uno y Otro, porque en español “más” no cambia con el número.",
+        "${ count } más"
+      ],
+      "This login uses the same password as another item.": [
+        "Este inicio de sesión usa la misma contraseña que otro elemento."
       ]
     },
     "Email": {
@@ -1549,6 +1565,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Se ha eliminado el código PIN desde otro cliente de ${ PASS_APP_NAME }."
+      ],
+      "Failed updating monitoring status for this item": [
+        "No se pudo actualizar el estado de monitoreo de este elemento"
       ]
     },
     "Error message": {
@@ -3036,6 +3055,12 @@
       ],
       "Your session could not be authorized.": [
         "Tu sesión no ha podido ser autorizada."
+      ],
+      "Alert restored": [
+        "Alerta restaurada"
+      ],
+      "Check ignored": [
+        "Comprobación ignorada"
       ]
     },
     "Keyboard key": {
@@ -5446,6 +5471,15 @@
       ],
       "Signing you in": [
         "Iniciando sesión"
+      ],
+      "Missing 2FA": [
+        "Falta la autenticación en dos pasos"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Reused password": [
+        "Contraseña reutilizada"
       ]
     },
     "Title_cloned_item": {

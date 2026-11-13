@@ -833,6 +833,15 @@
       ],
       "Try again": [
         "Erneut versuchen"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Warnmeldungen von „Pass Monitor“ einklappen"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Warnmeldungen von „Pass Monitor“ erweitern"
+      ],
+      "Ignore": [
+        "Ignorieren"
       ]
     },
     "Activity": {
@@ -990,6 +999,13 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Deine persönlichen Daten wurden durch ein Datenleck bei einem Drittanbieterdienst bekannt."
+      ],
+      "${ count } more": [
+        "${ count } weitere",
+        "${ count } weitere"
+      ],
+      "This login uses the same password as another item.": [
+        "Für diese Anmeldung wird dasselbe Passwort wie für einen anderen Eintrag verwendet."
       ]
     },
     "Email": {
@@ -1549,6 +1565,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Dein PIN-Code wurde von einem anderen ${ PASS_APP_NAME }-Client entfernt"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Fehler beim Aktualisieren des Überwachungsstatus für diesen Eintrag"
       ]
     },
     "Error message": {
@@ -3036,6 +3055,12 @@
       ],
       "Starting ${ PASS_APP_NAME } offline will require your second password.": [
         "Um ${ PASS_APP_NAME } ohne Internetverbindung starten zu können, wird dein zweites Passwort benötigt."
+      ],
+      "Alert restored": [
+        "Warnmeldung wiederhergestellt"
+      ],
+      "Check ignored": [
+        "Überprüfung ignoriert"
       ]
     },
     "Keyboard key": {
@@ -5446,6 +5471,15 @@
       ],
       "Move all items to \"${ target }\"?": [
         "Alle Einträge nach „${ target }“ verschieben?"
+      ],
+      "Missing 2FA": [
+        "2FA fehlt"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Reused password": [
+        "Wiederverwendetes Passwort"
       ]
     },
     "Title_cloned_item": {

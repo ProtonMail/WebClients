@@ -833,6 +833,15 @@
       ],
       "Sign in in the app instead": [
         "Συνδεθείτε μέσω της εφαρμογής"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Σύμπτυξη ειδοποιήσεων του Pass Monitor"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Ανάπτυξη ειδοποιήσεων του Pass Monitor"
+      ],
+      "Ignore": [
+        "Αγνόηση"
       ]
     },
     "Activity": {
@@ -990,6 +999,13 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Τα προσωπικά σας στοιχεία διέρρευσαν σε παραβίαση δεδομένων μιας υπηρεσίας τρίτου μέρους."
+      ],
+      "${ count } more": [
+        "${ count } άλλο",
+        "${ count } άλλα"
+      ],
+      "This login uses the same password as another item.": [
+        "Αυτά τα στοιχεία σύνδεσης χρησιμοποιούν τον ίδιο κωδικό πρόσβασης με ένα άλλο στοιχείο."
       ]
     },
     "Email": {
@@ -1549,6 +1565,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ο κωδικός PIN σας καταργήθηκε από μία άλλη ${ PASS_APP_NAME } εφαρμογή"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Απέτυχε η ενημέρωση της κατάστασης παρακολούθησης για αυτό το στοιχείο"
       ]
     },
     "Error message": {
@@ -3036,6 +3055,12 @@
       ],
       "Your session could not be authorized.": [
         "Δεν ήταν δυνατή η εξουσιοδότηση της συνεδρίας."
+      ],
+      "Alert restored": [
+        "Η ειδοποίηση αποκαταστάθηκε"
+      ],
+      "Check ignored": [
+        "Ο έλεγχος αγνοήθηκε"
       ]
     },
     "Keyboard key": {
@@ -5446,6 +5471,15 @@
       ],
       "Signing you in": [
         "Γίνεται σύνδεση"
+      ],
+      "Missing 2FA": [
+        "Λείπει το 2FA"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Reused password": [
+        "Επαναχρησιμοποιημένος κωδικός πρόσβασης"
       ]
     },
     "Title_cloned_item": {

@@ -833,6 +833,9 @@
       ],
       "Sign in in the app instead": [
         "Entrar pelo aplicativo"
+      ],
+      "Ignore": [
+        "Ignorar"
       ]
     },
     "Activity": {
@@ -990,6 +993,10 @@
       ],
       "This login password appears in a data breach. Please visit the service and change the password.": [
         "A senha deste login foi encontrada em um vazamento de dados. Acesse o serviço e altere a senha."
+      ],
+      "${ count } more": [
+        "${ count } mais",
+        "${ count } mais"
       ]
     },
     "Email": {
@@ -5443,6 +5450,15 @@
       ],
       "Upgrade to check for reused passwords": [
         "Faça upgrade para verificar senhas reutilizadas"
+      ],
+      "Missing 2FA": [
+        "Falta de A2F"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Reused password": [
+        "Senha reutilizada"
       ]
     },
     "Title_cloned_item": {
