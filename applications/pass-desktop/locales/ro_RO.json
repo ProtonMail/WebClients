@@ -868,6 +868,12 @@
       ],
       "Ignore": [
         "Ignorare"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Restrângere alerte Pass Monitor"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Extendere alerte Pass Monitor"
       ]
     },
     "Activity": {
@@ -1052,6 +1058,14 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Informațiile personale v-au fost divulgate într-o compromitere a datelor a unui serviciu terță parte."
+      ],
+      "${ count } more": [
+        "Încă ${ count }",
+        "Încă ${ count }",
+        "Încă ${ count }"
+      ],
+      "This login uses the same password as another item.": [
+        "Această autentificare folosește aceeași parolă ca un alt articol."
       ]
     },
     "Email": {
@@ -1620,6 +1634,9 @@
       ],
       "Biometric authentication is not available": [
         "Autentificarea biometrică nu este disponibilă."
+      ],
+      "Failed updating monitoring status for this item": [
+        "Actualizarea stării de monitorizare pentru acest articol a eșuat."
       ]
     },
     "Error message": {
@@ -3200,6 +3217,12 @@
       ],
       "Your session could not be authorized.": [
         "Sesiunea nu a putut fi autorizată."
+      ],
+      "Alert restored": [
+        "Alertă restaurată"
+      ],
+      "Check ignored": [
+        "Verificare ignorată"
       ]
     },
     "Keyboard key": {
@@ -5715,6 +5738,15 @@
       ],
       "Signing you in": [
         "Vă conectăm în"
+      ],
+      "Missing 2FA": [
+        "Lipsește A2F"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Reused password": [
+        "Parolă refolosită"
       ]
     },
     "Title_cloned_item": {

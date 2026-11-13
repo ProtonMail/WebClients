@@ -866,6 +866,12 @@
       ],
       "Ignore": [
         "Ignorar"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Contraer alertas de Pass Monitor"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Expandir alertas de Pass Monitor"
       ]
     },
     "Activity": {
@@ -1049,6 +1055,13 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Su información personal fue filtrada en una vulneración de datos de un servicio de terceros."
+      ],
+      "${ count } more": [
+        "${ count } más",
+        "${ count } más"
+      ],
+      "This login uses the same password as another item.": [
+        "Este inicio de sesión usa la misma contraseña que otro elemento."
       ]
     },
     "Email": {
@@ -1614,6 +1627,9 @@
       ],
       "Biometric authentication is not available": [
         "La autenticación biométrica no está disponible"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Error al actualizar el estado de monitoreo para este elemento"
       ]
     },
     "Error message": {
@@ -3165,6 +3181,12 @@
       ],
       "Your session could not be authorized.": [
         "No se pudo autorizar su sesión."
+      ],
+      "Alert restored": [
+        "Alerta restaurada"
+      ],
+      "Check ignored": [
+        "Comprobación ignorada"
       ]
     },
     "Keyboard key": {
@@ -5655,6 +5677,15 @@
       ],
       "Signing you in": [
         "Iniciando sesión"
+      ],
+      "Missing 2FA": [
+        "Falta el 2FA"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Reused password": [
+        "Contraseña reusada"
       ]
     },
     "Title_cloned_item": {

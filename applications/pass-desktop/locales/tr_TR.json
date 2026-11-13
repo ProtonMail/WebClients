@@ -866,6 +866,12 @@
       ],
       "Ignore": [
         "Yok say"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Pass Monitor uyarılarını daralt"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Pass Monitor uyarılarını genişlet"
       ]
     },
     "Activity": {
@@ -1049,6 +1055,13 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Kişisel bilgileriniz üçüncü taraf bir hizmetin verilerinin sızdırılması nedeniyle ele geçirildi."
+      ],
+      "${ count } more": [
+        "${ count } diğer",
+        "${ count } diğer"
+      ],
+      "This login uses the same password as another item.": [
+        "Bu oturum açma kaydı başka bir öge ile aynı parolayı kullanıyor."
       ]
     },
     "Email": {
@@ -1614,6 +1627,9 @@
       ],
       "Biometric authentication is not available": [
         "Biyometrik kimlik doğrulama kullanılamıyor"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Bu ögenin izlenme durumu güncellenemedi"
       ]
     },
     "Error message": {
@@ -3165,6 +3181,12 @@
       ],
       "Your session could not be authorized.": [
         "Oturumunuza yetki verilemedi."
+      ],
+      "Alert restored": [
+        "Uyarı geri yüklendi"
+      ],
+      "Check ignored": [
+        "Denetim yok sayıldı"
       ]
     },
     "Keyboard key": {
@@ -5655,6 +5677,15 @@
       ],
       "Signing you in": [
         "Oturumunuz açılıyor"
+      ],
+      "Missing 2FA": [
+        "İki adımlı kimlik doğrulama eksik"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Reused password": [
+        "Parola yeniden kullanılmış"
       ]
     },
     "Title_cloned_item": {

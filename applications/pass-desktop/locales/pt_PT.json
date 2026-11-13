@@ -842,6 +842,12 @@
       ],
       "Ignore": [
         "Ignorar"
+      ],
+      "Download for Linux": [
+        "Transferir para Linux"
+      ],
+      "Move folder": [
+        "Mover pasta"
       ]
     },
     "Activity": {
@@ -1005,6 +1011,15 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "As suas informações pessoais foram divulgadas numa violação de dados de um serviço de terceiros."
+      ],
+      "Change these passwords immediately": [
+        "Altere estas palavras-passe imediatamente"
+      ],
+      "Check if your passwords have been exposed": [
+        "Verifique se as suas palavras-passe foram comprometidas"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "A verificar ${ compromised.progress.completed } de ${ compromised.progress.total }"
       ]
     },
     "Email": {
@@ -2996,6 +3011,15 @@
       ],
       "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
         "Digitalise para transferir o ${ PASS_APP_NAME } para Android e iOS"
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Adicione um método de pagamento, e assim, a sua subscrição continua quando o teste terminar."
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Mover itens para outro cofre apagará as suas hiperligações seguras."
+      ],
+      "The folder is already here": [
+        "A pasta já está aqui"
       ]
     },
     "Keyboard key": {
@@ -5404,6 +5428,12 @@
       ],
       "Signing you in": [
         "Iniciando sessão"
+      ],
+      "Continue in your browser": [
+        "Continuar no seu navegador"
+      ],
+      "Upgrade to check for compromised passwords": [
+        "Atualize para procurar por palavras-passe comprometidas "
       ]
     },
     "Title_cloned_item": {
@@ -5766,6 +5796,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "A sua subscrição não lhe permite criar vários cofres. Todos os itens serão importados para o seu primeiro cofre. Para importar para vários cofres, melhore a sua subscrição."
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Não é possível mover uma pasta para dentro da mesma ou para dentro das suas subpastas."
       ]
     }
   }
