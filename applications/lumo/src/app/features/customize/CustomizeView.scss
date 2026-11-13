@@ -1,5 +1,33 @@
 @use '~@proton/styles/scss/lib' as *;
 
+@keyframes customize-fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes customize-rise-in {
+	from {
+		opacity: 0;
+		transform: translateY(rem(4));
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.customize-tab-panel {
+		animation: customize-fade-in 0.2s easing(ease-out-quad) both;
+	}
+}
+
 .customize-discover-hero {
 	border: 1px solid var(--border-weak);
 	background:

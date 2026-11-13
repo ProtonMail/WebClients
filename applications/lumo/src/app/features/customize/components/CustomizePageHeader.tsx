@@ -78,6 +78,17 @@ const Segmented = <T extends string>({ value, onChange, options }: SegmentedProp
     />
 );
 
+export const CustomizeTabs = ({ value, onChange }: { value: CustomizeTab; onChange: (tab: CustomizeTab) => void }) => (
+    <Segmented
+        value={value}
+        onChange={onChange}
+        options={[
+            { value: 'skills', label: c('collider_2025:Tab').t`Skills` },
+            { value: 'connectors', label: c('collider_2025:Tab').t`Connectors` },
+        ]}
+    />
+);
+
 export const CustomizePageHeader = ({
     activeTab,
     onTabChange,
@@ -101,14 +112,7 @@ export const CustomizePageHeader = ({
         <header className="flex flex-column flex-nowrap gap-5 mb-6">
             <h1 className="text-3xl text-bold m-0">{c('collider_2025:Title').t`Customize`}</h1>
             <div className="flex flex-wrap items-center gap-3 w-full">
-                <Segmented
-                    value={activeTab}
-                    onChange={onTabChange}
-                    options={[
-                        { value: 'skills', label: c('collider_2025:Tab').t`Skills` },
-                        { value: 'connectors', label: c('collider_2025:Tab').t`Connectors` },
-                    ]}
-                />
+                <CustomizeTabs value={activeTab} onChange={onTabChange} />
                 {activeTab === 'skills' && (
                     <>
                         <Vr aria-hidden="true" className="h-custom shrink-0" style={{ '--h-custom': '1.5rem' }} />
