@@ -697,6 +697,7 @@ const SingleSignupContainerV2 = ({
             if (resumedSession) {
                 session = {
                     resumedSessionResult: resumedSession,
+                    flow: 'auto-resume',
                     ...userInfo,
                 };
             }
@@ -1013,6 +1014,7 @@ const SingleSignupContainerV2 = ({
 
             const session: SessionData = {
                 resumedSessionResult: authSession.data,
+                flow: authSession.flow,
                 ...userInfo,
             };
 
@@ -1057,7 +1059,7 @@ const SingleSignupContainerV2 = ({
             });
             if (resumedSession) {
                 return await handleSignIn(
-                    { data: resumedSession },
+                    { data: resumedSession, flow: 'switch' },
                     {
                         ignore: true,
                         restoreParameters: true,
@@ -1152,7 +1154,7 @@ const SingleSignupContainerV2 = ({
 
             const loginResult = await onLogin({
                 data: cache.session.resumedSessionResult,
-                flow: 'login',
+                flow: cache.session.flow,
             });
 
             metrics.core_single_signup_complete_total.increment({

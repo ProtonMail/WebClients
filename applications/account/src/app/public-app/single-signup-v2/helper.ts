@@ -893,6 +893,7 @@ export const getSessionDataFromSignup = (cache: SignupCacheResult): SessionData 
     }
     return {
         resumedSessionResult: setupData.session,
+        flow: 'signup',
         subscription: undefined,
         organization: undefined,
         multiSubscriptionContext: noSubscriptionContext,
