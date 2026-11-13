@@ -250,6 +250,10 @@ const handleRpcRequest = async (request: MeetCoreRpcRequestMessage): Promise<Mee
             return activeApp.isWebsocketHasReconnected();
         case 'getWsState':
             return activeApp.getWsState();
+        case 'getAvailableEmojiReactions':
+            return activeApp.getAvailableEmojiReactions();
+        case 'isValidEmojiReaction':
+            return activeApp.isValidEmojiReaction(...request.params);
         case 'setMlsGroupUpdateHandler':
             return activeApp.setMlsGroupUpdateHandler();
         case 'setMlsSyncStateUpdateHandler':

@@ -14,6 +14,13 @@
 		background-color: var(--background-card);
 	}
 
+	// Replies scroll under the pinned root, so the reaction picker scrolls a reply's toolbar in below it.
+	.chat-thread-header--sticky + .chat-thread-body .chat-item-quick-reactions {
+		scroll-margin-block-start: calc(
+			var(--side-bar-header-height, var(--message-list-header-offset)) + var(--chat-thread-root-height, 0px)
+		);
+	}
+
 	.chat-thread-toggle {
 		inline-size: fit-content;
 		background: transparent !important;

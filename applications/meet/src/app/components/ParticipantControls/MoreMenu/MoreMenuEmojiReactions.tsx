@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
-import { EMOJI_REACTIONS, type EmojiReaction, useEmojiReaction } from '../../../hooks/bridges/useEmojiReaction';
+import { useAvailableEmojiReactions, useEmojiReaction } from '../../../hooks/bridges/useEmojiReaction';
 
 interface Props {
     buttonSize?: string;
@@ -11,10 +11,11 @@ interface Props {
 
 export const MoreMenuEmojiReactions = ({ buttonSize = '2.75rem', className }: Props) => {
     const sendEmojiReaction = useEmojiReaction();
+    const emojiReactions = useAvailableEmojiReactions();
 
     return (
         <div className={clsx('w-full flex flex-nowrap justify-space-between gap-1', className)}>
-            {EMOJI_REACTIONS.map((emoji: EmojiReaction) => (
+            {emojiReactions.map((emoji) => (
                 <button
                     key={emoji}
                     type="button"

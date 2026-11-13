@@ -11,6 +11,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { PublishableDataTypes } from '../../types';
+import { isSingleGrapheme } from '../../utils/isSingleGrapheme';
 
 /**
  * Legacy chat reaction receiver (MeetNewChatHandling disabled). When the new chat
@@ -80,7 +81,7 @@ export const useChatMessageReactionReceiver = () => {
                     !messageId ||
                     typeof emoji !== 'string' ||
                     !emoji ||
-                    emoji.length > 10
+                    !isSingleGrapheme(emoji)
                 ) {
                     return;
                 }

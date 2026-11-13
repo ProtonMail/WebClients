@@ -18,7 +18,7 @@ interface EmojiMartSelection {
 
 const LUMO_CATEGORY_ID = 'lumo';
 
-const PICKER_CATEGORY_IDS = [
+const NATIVE_CATEGORY_IDS = [
     'frequent',
     'people',
     'nature',
@@ -28,8 +28,9 @@ const PICKER_CATEGORY_IDS = [
     'objects',
     'symbols',
     'flags',
-    LUMO_CATEGORY_ID,
 ];
+
+const CATEGORY_IDS_WITH_LUMO = [...NATIVE_CATEGORY_IDS, LUMO_CATEGORY_ID];
 
 const getPickerEmojiId = (id: LumoEmojiId) => `lumo-${id}`;
 
@@ -55,10 +56,20 @@ const createLumoCategory = () => {
 
 let lumoCategory: ReturnType<typeof createLumoCategory> | undefined;
 
-export const getLumoEmojiPickerOptions = (onSelectText: (text: string) => void, showLumoSection: boolean) => ({
-    ...(showLumoSection && {
+interface LumoEmojiPickerSettings {
+    isLumoEmojisEnabled: boolean;
+    showLumoSection: boolean;
+}
+
+export const getLumoEmojiPickerOptions = (
+    onSelectText: (text: string) => void,
+    { isLumoEmojisEnabled, showLumoSection }: LumoEmojiPickerSettings
+) => ({
+    ...(isLumoEmojisEnabled && {
+        // emoji-mart keeps its categories in module state and only keeps the `custom` categories of the first
+        // picker that opens, so every picker registers the Lumo emojis and only `categories` hides them.
         custom: [(lumoCategory ??= createLumoCategory())],
-        categories: PICKER_CATEGORY_IDS,
+        categories: showLumoSection ? CATEGORY_IDS_WITH_LUMO : NATIVE_CATEGORY_IDS,
     }),
     onEmojiSelect: ({ id, native }: EmojiMartSelection) => {
         const text = native ?? lumoEmojiTokenByPickerEmojiId.get(id);

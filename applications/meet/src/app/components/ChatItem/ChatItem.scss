@@ -1,5 +1,11 @@
 @use '~@proton/styles/scss/lib/rem' as *;
 
+// Portaled to the body, so it sits outside .chat-item.
+.chat-message-reaction-picker {
+	// Meet sets --shadow-default-color to white, so the design-system shadows would glow.
+	--emoji-picker-shadow: 0 0 3rem rgb(0 0 0 / 0.4);
+}
+
 .chat-item {
 	overflow: visible;
 
@@ -23,6 +29,9 @@
 		transform: translateY(-100%);
 		z-index: 1;
 		background: var(--interaction-weak-minor-1);
+
+		// The panel header covers the top of the list, so the reaction picker scrolls the toolbar in below it.
+		scroll-margin-block-start: var(--side-bar-header-height, var(--message-list-header-offset));
 
 		// Kept mounted but hidden so the buttons stay in the tab order; revealing
 		// via opacity (not display/visibility) is what lets keyboard focus trigger

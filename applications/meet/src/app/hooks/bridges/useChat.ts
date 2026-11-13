@@ -24,6 +24,7 @@ import { useMeetCoreClient } from '../../contexts/MeetCoreClientContext';
 import { PublishableDataTypes } from '../../types';
 import { clampChatMessageLength } from '../../utils/clampChatMessageLength';
 import { decryptMessageWithRetry } from '../../utils/decryptMessageWithRetry';
+import { isSingleGrapheme } from '../../utils/isSingleGrapheme';
 import { isValidMessageString } from '../../utils/isValidMessageString';
 import { retry } from '../../utils/retry';
 import type { ChatIncomingEventInfoData } from '../../wasm/MeetCoreClient';
@@ -101,7 +102,7 @@ export const useChat = () => {
                     const messageId = event.target_id;
                     const emoji = event.emoji;
 
-                    if (!messageId || !emoji || emoji.length > 10) {
+                    if (!messageId || !emoji || !isSingleGrapheme(emoji)) {
                         return;
                     }
 

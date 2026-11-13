@@ -1,7 +1,5 @@
 import React, { useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 
-import data from '@emoji-mart/data';
-import { Picker } from 'emoji-mart';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
@@ -30,60 +28,19 @@ import {
 import { TelemetryMeetActionsEvents, sendMeetActionsEvent } from '@proton/meet/telemetry/meetTelemetry';
 import { splitMessageIntoMentionSegments } from '@proton/meet/utils/mentions/mentionToken';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { CHAT_MESSAGE_MAX_LENGTH } from '../../constants';
 import { useParticipantDisplayColors } from '../../hooks/useParticipantDisplayColors';
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
-import { getLumoEmojiPickerOptions } from '../../utils/lumoEmojis/lumoEmojiPicker';
 import { trimMessage } from '../../utils/trim-message';
+import { EmojiPicker } from '../EmojiPicker/EmojiPicker';
 import type { MentionInputHandle } from '../MentionInput/MentionInput';
 import { MentionInput } from '../MentionInput/MentionInput';
 import { useMobileEmojiPickerStyle } from './useMobileEmojiPickerPosition';
 
 import './ChatMessage.scss';
-import emojiPickerStyles from './EmojiPicker.raw.scss';
-
-const EmojiPicker = ({
-    autoFocus,
-    onEmojiSelect,
-    set,
-    skinTonePosition,
-    previewPosition,
-    perLine,
-}: {
-    autoFocus: boolean;
-    onEmojiSelect: (text: string) => void;
-    set: string;
-    skinTonePosition: string;
-    previewPosition: string;
-    perLine: number;
-}) => {
-    const ref = useRef<HTMLDivElement>(null);
-    const isLumoEmojisEnabled = useFlag('MeetChatLumoEmojis');
-
-    useEffect(() => {
-        const picker = new Picker({
-            ...getLumoEmojiPickerOptions(onEmojiSelect, isLumoEmojisEnabled),
-            autoFocus,
-            set,
-            skinTonePosition,
-            previewPosition,
-            perLine,
-            data,
-            ref,
-            theme: 'dark',
-        }) as unknown as HTMLElement;
-
-        const style = document.createElement('style');
-        style.textContent = emojiPickerStyles;
-        picker.shadowRoot?.appendChild(style);
-    }, [autoFocus, isLumoEmojisEnabled, onEmojiSelect, perLine, previewPosition, set, skinTonePosition]);
-
-    return <div ref={ref} />;
-};
 
 // Avatar shown next to the thread reply field. Kept as a dedicated component so the default
 // composer never subscribes to participant state it doesn't render.

@@ -323,7 +323,7 @@ describe('useChat', () => {
             );
         });
 
-        it('should add a reaction to an existing message', async () => {
+        it.each(['👍', '🏴󠁧󠁢󠁥󠁮󠁧󠁿', '👨‍👩‍👧‍👦'])('should add a %s reaction to an existing message', async (emoji) => {
             const room = createMockRoom();
             useRoomContextMock.mockReturnValue(room);
 
@@ -333,7 +333,7 @@ describe('useChat', () => {
                 sender_participant_id: SENDER,
                 received_at_ms: 2_000n,
                 target_id: 'msg-1',
-                emoji: '👍',
+                emoji,
             } as ChatIncomingEventInfoData;
 
             const store = createStore();
@@ -349,7 +349,36 @@ describe('useChat', () => {
             });
 
             const message = getMessages(store).find((m) => m.id === 'msg-1');
-            expect(message?.reactions).toEqual({ '👍': [SENDER] });
+            expect(message?.reactions).toEqual({ [emoji]: [SENDER] });
+        });
+
+        it('should ignore a reaction made of more than one emoji', async () => {
+            const room = createMockRoom();
+            useRoomContextMock.mockReturnValue(room);
+
+            const event: ChatIncomingEventInfoData = {
+                kind: ChatEventKind.Reaction,
+                id: 'reaction-1',
+                sender_participant_id: SENDER,
+                received_at_ms: 2_000n,
+                target_id: 'msg-1',
+                emoji: '👍👍',
+            } as ChatIncomingEventInfoData;
+
+            const store = createStore();
+            store.dispatch(addChatMessages([{ id: 'msg-1', identity: 'other', message: 'Hi', timestamp: 1_000 }]));
+            const client = createMeetCoreClient({ decodeChat: vi.fn().mockResolvedValue(event) });
+
+            renderHook(() => useChat(), { wrapper: createWrapper(store, client) });
+
+            const handler = getDataReceivedHandler(room);
+
+            await act(async () => {
+                await handler(encode({ type: 'message' }), participant);
+            });
+
+            const message = getMessages(store).find((m) => m.id === 'msg-1');
+            expect(message?.reactions ?? {}).toEqual({});
         });
 
         it('should retry decoding and add the message once decoding succeeds', async () => {

@@ -3304,8 +3304,8 @@ importers:
         specifier: ^0.10.35
         version: 0.10.35
       '@proton-meet/proton-meet-core':
-        specifier: 1.3.12
-        version: 1.3.12
+        specifier: 1.3.14
+        version: 1.3.14
       '@proton/account':
         specifier: workspace:^
         version: link:../../packages/account
@@ -16512,8 +16512,8 @@ packages:
       y-protocols: ^1.0.6
       yjs: ^13.6.15
 
-  '@proton-meet/proton-meet-core@1.3.12':
-    resolution: {integrity: sha512-oZnBPuignKF5OkUnhPzAg+lIyBUZxMPc4yDoLJuSu0ZJD+rJSrVqZ6kMfmAf77RowL+eS40rbWtQwCB8tWFJnw==}
+  '@proton-meet/proton-meet-core@1.3.14':
+    resolution: {integrity: sha512-IIHLH7MSx5EiSASaqDgwij9ibiR6bbkZtYofXjOEBDPU7OqVcm7wFcYmpUFuuSy/dDfps4Pi4RvBAA7v6ZWEJw==}
 
   '@proton/proton-foundation-search@2.0.0':
     resolution: {integrity: sha1-J3gG0qex9OaAvj6LrRf8l93dd+E=}
@@ -34246,7 +34246,7 @@ snapshots:
       - '@types/react'
       - use-sync-external-store
 
-  '@proton-meet/proton-meet-core@1.3.12': {}
+  '@proton-meet/proton-meet-core@1.3.14': {}
 
   '@proton/proton-foundation-search@2.0.0': {}
 

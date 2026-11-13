@@ -104,6 +104,8 @@ export interface MeetCoreClient {
     setWebsocketMaxPingFailures(...args: Parameters<App['setWebsocketMaxPingFailures']>): Promise<void>;
     encryptMessage(...args: Parameters<App['encryptMessage']>): Promise<Uint8Array<ArrayBuffer>>;
     decryptMessage(...args: Parameters<App['decryptMessage']>): Promise<DecryptedMessageInfoData>;
+    getAvailableEmojiReactions(): Promise<string[]>;
+    isValidEmojiReaction(...args: Parameters<App['isValidEmojiReaction']>): Promise<boolean>;
     logStartToJoinRoom(): Promise<void>;
     logJoinedRoom(...args: Parameters<App['logJoinedRoom']>): Promise<void>;
     logJoinedRoomFailed(...args: Parameters<App['logJoinedRoomFailed']>): Promise<void>;

@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import clsx from '@proton/utils/clsx';
 
 import { RAISE_HAND_EMOJI } from '../../constants';
-import { EMOJI_REACTIONS, type EmojiReaction, useEmojiReaction } from '../../hooks/bridges/useEmojiReaction';
+import { useAvailableEmojiReactions, useEmojiReaction } from '../../hooks/bridges/useEmojiReaction';
 import { useRaiseHand } from '../../hooks/bridges/useRaiseHand';
 
 import './EmojiReactionPopup.scss';
@@ -16,12 +16,13 @@ interface Props {
 
 export const EmojiReactionPopup = ({ onClose }: Props) => {
     const sendEmojiReaction = useEmojiReaction();
+    const emojiReactions = useAvailableEmojiReactions();
     const { isHandRaised, toggleHand } = useRaiseHand();
 
     return (
         <div className="emoji-reaction-popup p-2 flex" role="toolbar" aria-label={c('Label').t`Emoji reactions`}>
             <div className="flex gap-2 items-center">
-                {EMOJI_REACTIONS.map((emoji: EmojiReaction) => (
+                {emojiReactions.map((emoji) => (
                     <button
                         key={emoji}
                         type="button"

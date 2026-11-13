@@ -347,6 +347,7 @@ enum MeetFeatureFlag {
     MeetCoreWorker = 'MeetCoreWorker',
     MeetCountdownUpsell = 'MeetCountdownUpsell',
     MeetCpuOptimizations = 'MeetCpuOptimizations',
+    MeetCustomReactions = 'MeetCustomReactions',
     MeetCustomVirtualBackground = 'MeetCustomVirtualBackground',
     MeetDebugMode = 'MeetDebugMode',
     MeetDeepFilterNet = 'MeetDeepFilterNet',

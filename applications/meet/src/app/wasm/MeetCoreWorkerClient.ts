@@ -221,6 +221,14 @@ export class MeetCoreWorkerClient implements MeetCoreClient {
         return this.request('decryptMessage', args);
     }
 
+    public getAvailableEmojiReactions(): Promise<string[]> {
+        return this.request('getAvailableEmojiReactions', []);
+    }
+
+    public isValidEmojiReaction(...args: Parameters<MeetCoreClient['isValidEmojiReaction']>): Promise<boolean> {
+        return this.request('isValidEmojiReaction', args);
+    }
+
     public logStartToJoinRoom(): Promise<void> {
         return this.request('logStartToJoinRoom', []);
     }

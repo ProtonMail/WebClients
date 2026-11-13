@@ -67,7 +67,7 @@ describe('FocusTrap', () => {
             const props = useFocusTrap({ rootRef });
             return (
                 <div ref={rootRef} {...props} data-testid="root">
-                    <button autoFocus />
+                    <button type="button" aria-label="Button" autoFocus />
                 </div>
             );
         };
@@ -82,7 +82,7 @@ describe('FocusTrap', () => {
             return (
                 <div ref={rootRef} {...props} data-testid="root">
                     <div data-testid="div" data-focus-trap-fallback="0" tabIndex={-1} />
-                    <button data-testid="button" />
+                    <button type="button" aria-label="Button" data-testid="button" />
                 </div>
             );
         };
@@ -97,7 +97,13 @@ describe('FocusTrap', () => {
             const props = useFocusTrap({ active, rootRef });
             return (
                 <div ref={rootRef} {...props} data-testid="root">
-                    <button data-testid="button" autoFocus onClick={() => setActive(!active)} />
+                    <button
+                        type="button"
+                        aria-label="Button"
+                        data-testid="button"
+                        autoFocus
+                        onClick={() => setActive(!active)}
+                    />
                 </div>
             );
         };
@@ -131,10 +137,15 @@ describe('FocusTrap', () => {
             const props = useFocusTrap({ rootRef, active: open });
             return (
                 <div>
-                    <button data-testid="button" onClick={() => setOpen(true)} />
+                    <button type="button" aria-label="Button" data-testid="button" onClick={() => setOpen(true)} />
                     {open && (
                         <div {...props} ref={rootRef}>
-                            <button data-testid="close" onClick={() => setOpen(false)} />
+                            <button
+                                type="button"
+                                aria-label="Button"
+                                data-testid="close"
+                                onClick={() => setOpen(false)}
+                            />
                             <input autoFocus data-testid="input" />
                         </div>
                     )}
@@ -162,7 +173,7 @@ describe('FocusTrap', () => {
             const props = useFocusTrap({ rootRef, active: open });
             return (
                 <div>
-                    <button data-testid="button" onClick={() => setOpen(true)} />
+                    <button type="button" aria-label="Button" data-testid="button" onClick={() => setOpen(true)} />
                     {open && (
                         <div {...props} ref={rootRef}>
                             <input autoFocus data-testid="input" onKeyDown={() => setOpen(false)} />
@@ -203,11 +214,16 @@ describe('FocusTrap', () => {
             const [open2nd, setOpen2nd] = useState(false);
             return (
                 <div>
-                    <button data-testid="button1" onClick={() => setOpen(!open)} />
+                    <button type="button" aria-label="Button" data-testid="button1" onClick={() => setOpen(!open)} />
                     <Dropdown open={open}>
                         <input autoFocus data-testid="input1" />
                     </Dropdown>
-                    <button data-testid="button2" onClick={() => setOpen2nd(!open2nd)} />
+                    <button
+                        type="button"
+                        aria-label="Button"
+                        data-testid="button2"
+                        onClick={() => setOpen2nd(!open2nd)}
+                    />
                     <Dropdown open={open2nd}>
                         <input autoFocus data-testid="input2" />
                     </Dropdown>
@@ -243,12 +259,12 @@ describe('FocusTrap', () => {
             const props = useFocusTrap({ rootRef });
             return (
                 <div>
-                    <button data-testid="outside-1" />
+                    <button type="button" aria-label="Button" data-testid="outside-1" />
                     <div {...props} ref={rootRef} data-testid="root">
-                        <button data-testid="1" />
-                        <button data-testid="2" autoFocus />
+                        <button type="button" aria-label="Button" data-testid="1" />
+                        <button type="button" aria-label="Button" data-testid="2" autoFocus />
                     </div>
-                    <button data-testid="outside-2" />
+                    <button type="button" aria-label="Button" data-testid="outside-2" />
                 </div>
             );
         };
@@ -265,6 +281,30 @@ describe('FocusTrap', () => {
         expect(getByTestId('2')).toHaveFocus();
     });
 
+    it('should contain focus when tabbing between controls in an open shadow root', () => {
+        const Component = () => {
+            const rootRef = useRef<HTMLDivElement>(null);
+            const props = useFocusTrap({ rootRef, includeShadowRoots: true });
+            return (
+                <div {...props} ref={rootRef}>
+                    <div data-testid="host" />
+                </div>
+            );
+        };
+        const { getByTestId } = render(<Component />);
+        const shadowRoot = getByTestId('host').attachShadow({ mode: 'open' });
+        const firstShadowButton = document.createElement('button');
+        const lastShadowButton = document.createElement('button');
+        shadowRoot.append(firstShadowButton, lastShadowButton);
+
+        lastShadowButton.focus();
+        fireEvent.keyDown(lastShadowButton, { key: 'Tab' });
+        expect(shadowRoot.activeElement).toBe(firstShadowButton);
+
+        fireEvent.keyDown(firstShadowButton, { key: 'Tab', shiftKey: true });
+        expect(shadowRoot.activeElement).toBe(lastShadowButton);
+    });
+
     it('should contain focus when elements are deleted', async () => {
         jest.useFakeTimers();
 
@@ -274,7 +314,15 @@ describe('FocusTrap', () => {
             const props = useFocusTrap({ rootRef });
             return (
                 <div {...props} ref={rootRef} data-testid="root">
-                    {!hidden && <button data-testid="1" autoFocus onClick={() => setHidden(true)} />}
+                    {!hidden && (
+                        <button
+                            type="button"
+                            aria-label="Button"
+                            data-testid="1"
+                            autoFocus
+                            onClick={() => setHidden(true)}
+                        />
+                    )}
                 </div>
             );
         };

@@ -8,6 +8,7 @@
 
 	block-size: min(435px, var(--emoji-picker-max-height, 435px));
 	min-block-size: 0;
+	box-shadow: var(--emoji-picker-shadow, var(--shadow));
 }
 
 #root {
