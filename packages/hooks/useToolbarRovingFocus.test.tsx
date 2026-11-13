@@ -34,6 +34,16 @@ const ToolbarWithDialog = () => {
     );
 };
 
+const ToolbarWithoutRole = () => {
+    const { toolbarProps } = useToolbarRovingFocus();
+    return (
+        <div {...toolbarProps}>
+            <button type="button">First</button>
+            <button type="button">Second</button>
+        </div>
+    );
+};
+
 const button = (name: string) => screen.getByRole('button', { name });
 
 describe('useToolbarRovingFocus', () => {
@@ -115,6 +125,17 @@ describe('useToolbarRovingFocus', () => {
         expect(document.activeElement).toBe(button('Sheet second'));
         expect(button('First').tabIndex).toBe(0);
         expect(button('Sheet second').tabIndex).toBe(0);
+    });
+
+    it('keeps the roving focus when the toolbar element has no toolbar role', () => {
+        render(<ToolbarWithoutRole />);
+
+        expect(button('First').tabIndex).toBe(0);
+        expect(button('Second').tabIndex).toBe(-1);
+
+        button('First').focus();
+        fireEvent.keyDown(button('First'), { key: 'ArrowRight' });
+        expect(document.activeElement).toBe(button('Second'));
     });
 
     it('uses the up and down arrows only for a vertical toolbar', () => {
