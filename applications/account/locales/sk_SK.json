@@ -2356,6 +2356,9 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Manage subscriptions": [
+        "Spravovať predplatné"
       ]
     },
     "action": {
@@ -9230,6 +9233,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Pri registrácii vášho bezpečnostného kľúča sa vyskytla chyba. Prosím, skúste to znova."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Tento prehliadač nepodporuje bezpečnostné kľúče. Skúste použiť iný prehliadač, prosím."
+      ],
+      "This security key is already registered to your account.": [
+        "Tento bezpečnostný kľúč je už priradený k vášmu účtu."
       ]
     },
     "fido2: Info": {
@@ -9292,6 +9301,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Váš dvojstupňový overovací kľúč je pripravený na použitie."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Použite odtlačok prsta, rozpoznanie tváre, PIN alebo uzamknutie obrazovky tohto zariadenia"
       ]
     },
     "fido2: Label": {
@@ -14874,6 +14886,9 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "Review and export the data for reporting or client invoicing.": [
+        "Prezerajte a exportujte údaje na účely vykazovania alebo fakturácie klientom."
       ]
     },
     "info": {
@@ -17307,6 +17322,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Billed average": [
+        "Priemerne fakturované"
       ]
     },
     "label": {
@@ -22117,6 +22135,27 @@
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Ideálny plán pre náročných používateľov dbajúcich na súkromie."
+      ],
+      "Confidential video conferencing for your business.": [
+        "Dôverné videokonferencie pre vašu firmu."
+      ],
+      "Essential privacy and security suite for your business.": [
+        "Základný balík nástrojov na ochranu súkromia a bezpečnosti pre vašu firmu."
+      ],
+      "Next-level password management for your business.": [
+        "Správa hesiel nového typu pre vašu firmu."
+      ],
+      "Premium privacy and security suite for your business.": [
+        "Špičková sada nástrojov na ochranu súkromia a bezpečnosti pre vašu firmu."
+      ],
+      "Privacy-first AI writing assistant for your business.": [
+        "AI asistent na tvorbu textov, ktorý kladie dôraz na ochranu súkromia, pre vašu firmu."
+      ],
+      "Secure cloud storage and file sharing for your business.": [
+        "Bezpečné cloudové úložisko a zdieľanie súborov pre vašu firmu."
+      ],
+      "Secure, high-speed VPN access for your business.": [
+        "Bezpečný a vysokorýchlostný prístup cez VPN pre vašu firmu."
       ]
     },
     "Plans": {
@@ -24449,6 +24488,87 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Buďte súčasťou viac ako 100 miliónov ľudí, ktorí sa rozhodli mať kontrolu nad svojimi údajmi vďaka šifrovanému ekosystému ${ BRAND_NAME }."
+      ],
+      "${ renewalPriceElement } after the first 12 months": [
+        "${ renewalPriceElement } po uplynutí prvých 12 mesiacov"
+      ],
+      "Billed yearly": [
+        "Účtované ročne"
+      ],
+      "Billed yearly, renews on ${ renewalTime }": [
+        "Fakturácia je ročná, predĺženie nastane dňa ${ renewalTime }"
+      ],
+      "Business information": [
+        "Informácie o spoločnosti"
+      ],
+      "Checkout": [
+        "Pokladňa"
+      ],
+      "Claim your additional ${ referralDiscountPercent }% discount": [
+        "Využite svoju dodatočnú zľavu vo výške ${ referralDiscountPercent } %"
+      ],
+      "Confirmation": [
+        "Potvrdenie"
+      ],
+      "Coupon": [
+        "Kupón"
+      ],
+      "Create account": [
+        "Vytvorte účet"
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Vytvorte svoj ${ BRAND_NAME } účet"
+      ],
+      "Creating your account": [
+        "Vytvárame váš účet"
+      ],
+      "Discount": [
+        "Zľava"
+      ],
+      "Encrypted solutions to protect": [
+        "Šifrované riešenia na ochranu"
+      ],
+      "For ${ countryElement }": [
+        "Za ${ countryElement }"
+      ],
+      "Get an additional ${ referralDiscountPercent }% off your first year of ${ BRAND_NAME } for Business": [
+        "Získajte dodatočnú zľavu vo výške ${ referralDiscountPercent } % z ceny za prvý rok služby ${ BRAND_NAME } pre firmy"
+      ],
+      "Pick a plan to get started.": [
+        "Vyberte plán, ktorý chcete začať používať."
+      ],
+      "Something went wrong": [
+        "Niečo sa pokazilo"
+      ],
+      "Summary": [
+        "Súhrn"
+      ],
+      "Taxes may apply.": [
+        "Môžu sa uplatňovať dane."
+      ],
+      "Unlimited vaults for your passwords": [
+        "Neobmedzené trezory na vaše heslá"
+      ],
+      "Users": [
+        "Používatelia"
+      ],
+      "We couldn't finish setting up your account. Please contact support.": [
+        "Nepodarilo sa nám dokončiť nastavenie vášho účtu. Obráťte sa na technickú podporu, prosím."
+      ],
+      "WS Premium": [
+        "WS Premium"
+      ],
+      "WS Standard": [
+        "WS Standard"
+      ],
+      "You're invited to join 100,000+ organizations that protect their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "Pozývame vás, aby ste sa pridali k viac ako 100 000 organizáciám, ktoré chránia svoje údaje pomocou šifrovaného ekosystému spoločnosti ${ BRAND_NAME }."
+      ],
+      "Your account has been created, but we couldn't sign you in.": [
+        "Váš účet bol vytvorený, ale nepodarilo sa nám prihlásiť vás."
+      ],
+      "your entire business": [
+        "pre celú vašu firmu"
       ]
     },
     "Signup label": {
@@ -26441,6 +26561,9 @@
       ],
       "/year": [
         "/rok"
+      ],
+      "/user/month": [
+        "/používateľ/mesiac"
       ]
     },
     "Suffix for price": {
@@ -28901,6 +29024,12 @@
       ],
       "Your subscriptions": [
         "Vaše predplatné"
+      ],
+      "Billing periods": [
+        "Fakturačný intervaly"
+      ],
+      "Monthly cost": [
+        "Mesačné náklady"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -30677,6 +30806,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročne, ${ untilString }"
+      ]
+    },
+    "Business signup action": {
+      "Start using ${ planTitle } now": [
+        "Začnite používať ${ planTitle } teraz"
       ]
     }
   }

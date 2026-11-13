@@ -2296,6 +2296,9 @@
       ],
       "Restrict sign-in": [
         "Begränsa inloggning"
+      ],
+      "Cancel trial": [
+        "Avbryt provperioden"
       ]
     },
     "action": {
@@ -13929,6 +13932,18 @@
       ],
       "Review and export the data for reporting or client invoicing.": [
         "Granska och exportera datan för rapportering eller klientfakturering."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatterna beräknas utifrån ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en öppen faktura ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en öppen faktura på ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "You'll choose a new username": [
+        "Du får välja ett nytt användarnamn"
       ]
     },
     "info": {
@@ -16729,6 +16744,9 @@
       ],
       "What’s this?": [
         "Vad är detta?"
+      ],
+      "Pay it": [
+        "Betala den"
       ]
     },
     "Link (Scribe)": {
@@ -19093,6 +19111,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Obegränsat antal alias för att skydda din identitet"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me e-postadress"
       ]
     },
     "Onboarding": {
@@ -20370,6 +20391,9 @@
       ],
       "This subscription can’t be completed right now. Please try again.": [
         "Denna prenumeration kan inte slutföras just nu. Försök igen."
+      ],
+      "An organization is required for this plan.": [
+        "En organisation krävs för den här planen."
       ]
     },
     "Payments.Error": {
