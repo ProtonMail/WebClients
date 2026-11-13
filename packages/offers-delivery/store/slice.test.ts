@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+import type { Mock } from 'vitest';
 
 import { type Campaign, CampaignCtaType, CampaignEventAction, CampaignVariant } from '../interface';
 import {
@@ -37,11 +38,11 @@ const seed = (campaign: MaybeNullCampaign): { offersDelivery: OffersDeliverySlic
 
 describe('offersDelivery reducer', () => {
     beforeEach(() => {
-        jest.useFakeTimers().setSystemTime(NOW_MS);
+        vi.useFakeTimers().setSystemTime(NOW_MS);
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('endActiveCampaign clears the campaign and latches its key', () => {
@@ -84,17 +85,17 @@ describe('offersDelivery selectors', () => {
 
 describe('sendCampaignEventThunk', () => {
     beforeEach(() => {
-        jest.useFakeTimers().setSystemTime(NOW_MS);
+        vi.useFakeTimers().setSystemTime(NOW_MS);
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     const runThunk = async (campaign: MaybeNullCampaign, action: CampaignEventAction) => {
         let state = seed(campaign);
         const dispatched: unknown[] = [];
-        const api = jest.fn().mockResolvedValue(undefined);
+        const api = vi.fn().mockResolvedValue(undefined);
         const dispatch = (dispatchable: unknown) => {
             dispatched.push(dispatchable);
             if (typeof dispatchable === 'object' && dispatchable !== null && 'type' in dispatchable) {
@@ -122,7 +123,7 @@ describe('sendCampaignEventThunk', () => {
     });
 
     it('sends the campaign keys and action to the event route', async () => {
-        const api = jest.fn().mockResolvedValue(undefined);
+        const api = vi.fn().mockResolvedValue(undefined);
 
         await sendCampaignEventThunk(CampaignEventAction.CTA_CLICKED)(
             () => {},
@@ -153,7 +154,7 @@ describe('sendCampaignEventThunk', () => {
      * surface unmounting and remounting, which a ref did not. */
     it('reports SEEN once per campaign key, however many times it is asked', async () => {
         let state = seed(makeCampaign());
-        const api = jest.fn().mockResolvedValue(undefined);
+        const api = vi.fn().mockResolvedValue(undefined);
         const dispatch = (dispatchable: unknown) => {
             if (typeof dispatchable === 'object' && dispatchable !== null && 'type' in dispatchable) {
                 state = { offersDelivery: reducer(state.offersDelivery, dispatchable as any) };
@@ -171,7 +172,7 @@ describe('sendCampaignEventThunk', () => {
 
     it('reports SEEN again for a different campaign key', async () => {
         let state = seed(makeCampaign());
-        const api = jest.fn().mockResolvedValue(undefined);
+        const api = vi.fn().mockResolvedValue(undefined);
         const dispatch = (dispatchable: unknown) => {
             if (typeof dispatchable === 'object' && dispatchable !== null && 'type' in dispatchable) {
                 state = { offersDelivery: reducer(state.offersDelivery, dispatchable as any) };
@@ -191,7 +192,7 @@ describe('sendCampaignEventThunk', () => {
      * double-count the impression the moment the request succeeds. */
     it('keeps the key deduped when the SEEN request itself fails', async () => {
         let state = seed(makeCampaign());
-        const api = jest.fn().mockRejectedValue(new Error('gateway down'));
+        const api = vi.fn().mockRejectedValue(new Error('gateway down'));
         const dispatch = (dispatchable: unknown) => {
             if (typeof dispatchable === 'object' && dispatchable !== null && 'type' in dispatchable) {
                 state = { offersDelivery: reducer(state.offersDelivery, dispatchable as any) };
@@ -207,7 +208,7 @@ describe('sendCampaignEventThunk', () => {
 
     it('swallows a failed terminal event after having already hidden the campaign', async () => {
         let state = seed(makeCampaign());
-        const api = jest.fn().mockRejectedValue(Object.assign(new Error('gateway down'), { status: 503 }));
+        const api = vi.fn().mockRejectedValue(Object.assign(new Error('gateway down'), { status: 503 }));
         const dispatch = (dispatchable: unknown) => {
             if (typeof dispatchable === 'object' && dispatchable !== null && 'type' in dispatchable) {
                 state = { offersDelivery: reducer(state.offersDelivery, dispatchable as any) };
@@ -247,11 +248,7 @@ const rawCampaign = (campaignKey = 'campaign-a') => ({
  * lives in the thunk's interaction with `cacheHelper`. Every case here awaits
  * its dispatch to settle, which is what keeps the thunk's module-level promise
  * store from leaking an in-flight fetch into the next test. */
-const buildRealStore = (
-    isEnabled: jest.Mock,
-    api: jest.Mock,
-    preloadedState?: { offersDelivery: OffersDeliverySliceState }
-) =>
+const buildRealStore = (isEnabled: Mock, api: Mock, preloadedState?: { offersDelivery: OffersDeliverySliceState }) =>
     configureStore({
         reducer: offersDeliveryReducer,
         preloadedState,
@@ -263,8 +260,8 @@ const buildRealStore = (
 
 describe('campaignThunk cold-session cache-poisoning regression', () => {
     it('rejects without poisoning the cache when the flag is off, then actually fetches once it flips on', async () => {
-        const isEnabled = jest.fn().mockReturnValue(false);
-        const api = jest.fn().mockResolvedValue({ Campaign: rawCampaign(), Code: 1000 });
+        const isEnabled = vi.fn().mockReturnValue(false);
+        const api = vi.fn().mockResolvedValue({ Campaign: rawCampaign(), Code: 1000 });
         const store = buildRealStore(isEnabled, api);
 
         await expect(store.dispatch(campaignThunk() as any)).rejects.toThrow('CentralisedOffersDelivery is disabled');
@@ -281,8 +278,8 @@ describe('campaignThunk cold-session cache-poisoning regression', () => {
     });
 
     it('requests the gateway evaluate route', async () => {
-        const api = jest.fn().mockResolvedValue({ Campaign: rawCampaign(), Code: 1000 });
-        const store = buildRealStore(jest.fn().mockReturnValue(true), api);
+        const api = vi.fn().mockResolvedValue({ Campaign: rawCampaign(), Code: 1000 });
+        const store = buildRealStore(vi.fn().mockReturnValue(true), api);
 
         await store.dispatch(campaignThunk() as any);
 
@@ -292,11 +289,11 @@ describe('campaignThunk cold-session cache-poisoning regression', () => {
 
 describe('campaignThunk revalidation throttle', () => {
     beforeEach(() => {
-        jest.useFakeTimers().setSystemTime(NOW_MS);
+        vi.useFakeTimers().setSystemTime(NOW_MS);
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     const seedFetched = (fetchedAt: number) => ({
@@ -309,10 +306,10 @@ describe('campaignThunk revalidation throttle', () => {
     });
 
     it('serves the cached campaign without a request inside the expiry window', async () => {
-        const api = jest.fn().mockResolvedValue({ Campaign: rawCampaign('campaign-fresh'), Code: 1000 });
-        const store = buildRealStore(jest.fn().mockReturnValue(true), api, seedFetched(NOW_MS));
+        const api = vi.fn().mockResolvedValue({ Campaign: rawCampaign('campaign-fresh'), Code: 1000 });
+        const store = buildRealStore(vi.fn().mockReturnValue(true), api, seedFetched(NOW_MS));
 
-        jest.setSystemTime(NOW_MS + 9 * MINUTE_MS);
+        vi.setSystemTime(NOW_MS + 9 * MINUTE_MS);
         const campaign = await store.dispatch(campaignThunk() as any);
 
         expect(api).not.toHaveBeenCalled();
@@ -322,10 +319,10 @@ describe('campaignThunk revalidation throttle', () => {
     /* Seeded `fetchedAt` carries no jitter. A value written by `handleAsyncModel`
      * gets 0-5 minutes added by `getFetchedAt`, so the live interval is 10-15. */
     it('refetches once the cached campaign is past the expiry window', async () => {
-        const api = jest.fn().mockResolvedValue({ Campaign: rawCampaign('campaign-fresh'), Code: 1000 });
-        const store = buildRealStore(jest.fn().mockReturnValue(true), api, seedFetched(NOW_MS));
+        const api = vi.fn().mockResolvedValue({ Campaign: rawCampaign('campaign-fresh'), Code: 1000 });
+        const store = buildRealStore(vi.fn().mockReturnValue(true), api, seedFetched(NOW_MS));
 
-        jest.setSystemTime(NOW_MS + 11 * MINUTE_MS);
+        vi.setSystemTime(NOW_MS + 11 * MINUTE_MS);
         const campaign = await store.dispatch(campaignThunk() as any);
 
         expect(api).toHaveBeenCalledTimes(1);
@@ -336,11 +333,11 @@ describe('campaignThunk revalidation throttle', () => {
 
 describe('terminal event racing an in-flight revalidation', () => {
     beforeEach(() => {
-        jest.useFakeTimers().setSystemTime(NOW_MS);
+        vi.useFakeTimers().setSystemTime(NOW_MS);
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     const seedEnded = (endedCampaignKey: string | null) => ({
@@ -359,7 +356,7 @@ describe('terminal event racing an in-flight revalidation', () => {
         const pending = new Promise((resolve) => {
             settle = resolve;
         });
-        const api = jest
+        const api = vi
             .fn()
             .mockImplementation((config: { method: string }) =>
                 config.method === 'get' ? pending : Promise.resolve(undefined)
@@ -371,7 +368,7 @@ describe('terminal event racing an in-flight revalidation', () => {
      * showing the stale campaign until `fulfilled` overwrites it. */
     const dismissMidFlight = async (responseKey: string) => {
         const { api, settle } = deferredFetch();
-        const store = buildRealStore(jest.fn().mockReturnValue(true), api, {
+        const store = buildRealStore(vi.fn().mockReturnValue(true), api, {
             offersDelivery: {
                 value: makeCampaign({ endTime: null }),
                 error: undefined,
@@ -381,7 +378,7 @@ describe('terminal event racing an in-flight revalidation', () => {
         });
         const selectActive = () => selectActiveCampaign(NOW_EPOCH)(store.getState() as any);
 
-        jest.setSystemTime(NOW_MS + 11 * MINUTE_MS);
+        vi.setSystemTime(NOW_MS + 11 * MINUTE_MS);
         const inFlight = store.dispatch(campaignThunk() as any);
         const staleWhileFetching = selectActive();
 
@@ -420,23 +417,23 @@ describe('terminal event racing an in-flight revalidation', () => {
      * in the session, however long past expiry -- not just the one response it
      * was set to catch. */
     it('keeps an ended key suppressed across later refetches', async () => {
-        const api = jest.fn().mockResolvedValue({ Campaign: rawCampaign('campaign-a'), Code: 1000 });
-        const store = buildRealStore(jest.fn().mockReturnValue(true), api, seedEnded('campaign-a'));
+        const api = vi.fn().mockResolvedValue({ Campaign: rawCampaign('campaign-a'), Code: 1000 });
+        const store = buildRealStore(vi.fn().mockReturnValue(true), api, seedEnded('campaign-a'));
 
         await store.dispatch(campaignThunk() as any);
 
         expect(selectActiveCampaign(NOW_EPOCH)(store.getState() as any)).toBeUndefined();
 
         /* Past the expiry with room for the 0-5 minute jitter `getFetchedAt` adds. */
-        jest.setSystemTime(NOW_MS + 20 * MINUTE_MS);
+        vi.setSystemTime(NOW_MS + 20 * MINUTE_MS);
         await store.dispatch(campaignThunk() as any);
 
         expect(selectActiveCampaign(NOW_EPOCH)(store.getState() as any)).toBeUndefined();
     });
 
     it('surfaces a differently-keyed campaign past an ended key', async () => {
-        const api = jest.fn().mockResolvedValue({ Campaign: rawCampaign('campaign-fresh'), Code: 1000 });
-        const store = buildRealStore(jest.fn().mockReturnValue(true), api, seedEnded('campaign-a'));
+        const api = vi.fn().mockResolvedValue({ Campaign: rawCampaign('campaign-fresh'), Code: 1000 });
+        const store = buildRealStore(vi.fn().mockReturnValue(true), api, seedEnded('campaign-a'));
 
         await store.dispatch(campaignThunk() as any);
 
@@ -444,8 +441,8 @@ describe('terminal event racing an in-flight revalidation', () => {
     });
 
     it('keeps the campaign hidden when the revalidation rejects', async () => {
-        const api = jest.fn().mockRejectedValue(new Error('gateway down'));
-        const store = buildRealStore(jest.fn().mockReturnValue(true), api, seedEnded('campaign-a'));
+        const api = vi.fn().mockRejectedValue(new Error('gateway down'));
+        const store = buildRealStore(vi.fn().mockReturnValue(true), api, seedEnded('campaign-a'));
 
         await expect(store.dispatch(campaignThunk() as any)).rejects.toThrow('gateway down');
 
