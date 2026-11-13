@@ -169,7 +169,7 @@ export interface WasmBalance {
     /**
      * Get sum of trusted_pending and confirmed coins.
      *
-     * This is the balance you can spend right now that shouldn\'t get cancelled via another party
+     * This is the balance you can spend right now that shouldn't get cancelled via another party
      * double spending it.
      */
     trusted_spendable: number;
@@ -1022,7 +1022,8 @@ export class WasmScript {
     free(): void;
     [Symbol.dispose](): void;
     toAddress(network: WasmNetwork): WasmAddress;
-    0: Uint8Array;
+    get 0(): Uint8Array;
+    set 0(value: Uint8Array | number[]);
 }
 
 export enum WasmScriptType {
@@ -1153,8 +1154,8 @@ export class WasmTxBuilder {
      *
      */
     setFeeRate(sat_per_vb: bigint): WasmTxBuilder;
-    updateRecipient(index: number, address_str?: string | null, amount?: bigint | null): WasmTxBuilder;
     updateRecipientAmountToMax(index: number): Promise<WasmTxBuilder>;
+    updateRecipient(index: number, address_str?: string | null, amount?: bigint | null): WasmTxBuilder;
 }
 
 export class WasmTxOut {
@@ -1226,18 +1227,18 @@ export class WasmWalletClient {
     free(): void;
     [Symbol.dispose](): void;
     addEmailAddress(wallet_id: string, wallet_account_id: string, email_address_id: string): Promise<WasmWalletAccountData>;
-    createWallet(name: string, is_imported: boolean, wallet_type: number, has_passphrase: boolean, user_key_id: string, wallet_key: string, wallet_key_signature: string, mnemonic?: string | null, fingerprint?: string | null, public_key?: string | null, is_auto_created?: boolean | null): Promise<WasmApiWalletData>;
     createWalletAccount(wallet_id: string, derivation_path: WasmDerivationPath, label: string, script_type: WasmScriptType): Promise<WasmWalletAccountData>;
     createWalletTransaction(wallet_id: string, wallet_account_id: string, payload: WasmCreateWalletTransactionPayload): Promise<WasmApiWalletTransactionData>;
-    deleteWallet(wallet_id: string): Promise<void>;
+    createWallet(name: string, is_imported: boolean, wallet_type: number, has_passphrase: boolean, user_key_id: string, wallet_key: string, wallet_key_signature: string, mnemonic?: string | null, fingerprint?: string | null, public_key?: string | null, is_auto_created?: boolean | null): Promise<WasmApiWalletData>;
     deleteWalletAccount(wallet_id: string, wallet_account_id: string): Promise<void>;
-    deleteWalletTransaction(wallet_id: string, wallet_account_id: string, wallet_transaction_id: string): Promise<void>;
     deleteWalletTransactionFlag(wallet_id: string, wallet_account_id: string, wallet_transaction_id: string, flag: WasmWalletTransactionFlag): Promise<WasmApiWalletTransactionData>;
+    deleteWalletTransaction(wallet_id: string, wallet_account_id: string, wallet_transaction_id: string): Promise<void>;
+    deleteWallet(wallet_id: string): Promise<void>;
     disableShowWalletRecovery(wallet_id: string): Promise<void>;
     getWalletAccountAddresses(wallet_id: string, wallet_account_id: string): Promise<WasmApiWalletAccountAddresses>;
     getWalletAccounts(wallet_id: string): Promise<WasmApiWalletAccounts>;
-    getWalletTransactions(wallet_id: string, wallet_account_id?: string | null, hashed_txids?: string[] | null): Promise<WasmApiWalletTransactions>;
     getWalletTransactionsToHash(wallet_id: string, wallet_account_id?: string | null): Promise<WasmApiWalletTransactions>;
+    getWalletTransactions(wallet_id: string, wallet_account_id?: string | null, hashed_txids?: string[] | null): Promise<WasmApiWalletTransactions>;
     getWallets(): Promise<WasmApiWalletsData>;
     migrate(wallet_id: string, migrated_wallet: WasmMigratedWallet, migrated_wallet_accounts: WasmMigratedWalletAccounts, migrated_wallet_transactions: WasmMigratedWalletTransactions): Promise<void>;
     removeEmailAddress(wallet_id: string, wallet_account_id: string, email_address_id: string): Promise<WasmWalletAccountData>;

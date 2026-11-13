@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { setPanicHook } from '@proton/andromeda';
 import { useConfig } from '@proton/app-context/useConfig';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
@@ -13,6 +12,7 @@ import { BitcoinBlockchainContextProvider } from '../contexts/BitcoinBlockchainC
 import { ResponsiveContainerContextProvider } from '../contexts/ResponsiveContainerContext/ResponsiveContainerContextProvider';
 import { WalletDrawerContextProvider } from '../contexts/WalletDrawerContext/WalletDrawerContextProvider';
 import { WalletSetupModalContextProvider } from '../contexts/WalletSetupModalContext/WalletSetupModalContextProvider';
+import { installWasmPanicCapture } from '../utils/wasmPanic';
 import { AccountContainer } from './AccountContainer';
 import { DiscoverContainer } from './DiscoverContainer';
 import { EmptyViewContainer } from './EmptyViewContainer';
@@ -24,7 +24,7 @@ const MainContainer = () => {
     const { APP_NAME } = useConfig();
 
     useEffect(() => {
-        setPanicHook();
+        installWasmPanicCapture();
     }, []);
 
     return (

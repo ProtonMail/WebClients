@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
+import { logger } from '@protontech/logger';
 import compact from 'lodash/compact';
 import uniq from 'lodash/uniq';
 
@@ -193,7 +194,7 @@ export const useBitcoinAddresses = ({
                         addressData
                     );
                 } catch (e) {
-                    console.error('Could not update bitcoin address', e);
+                    logger.error('Could not update bitcoin address', e);
                 }
             }
         },
@@ -225,7 +226,7 @@ export const useBitcoinAddresses = ({
                 try {
                     await api.bitcoin_address.addBitcoinAddresses(walletId, walletAccountId, addressesPoolPayload);
                 } catch (e) {
-                    console.error('Could not add new bitcoin addresses', e);
+                    logger.error('Could not add new bitcoin addresses', e);
                 }
             }
         },
