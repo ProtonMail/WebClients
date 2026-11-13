@@ -3,6 +3,8 @@ import { useRef, useState } from 'react';
 import { getSrp } from '@protontech/crypto/srp';
 import { c } from 'ttag';
 
+import { useDispatch } from '@proton/account/store/hooks';
+import { userThunk } from '@proton/account/user';
 import { useApi } from '@proton/app-context/useApi';
 import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
@@ -24,9 +26,6 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
-
-import { useDispatch } from '../store/hooks';
-import { userThunk } from '../user';
 
 const PASS_INCORRECT_PASSWORD_CODE = 2011;
 const PASS_LOGOUT_CODE = 2026;

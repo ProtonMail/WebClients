@@ -1,5 +1,7 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
+import { authDevicesReducer } from '@proton/account-security/sso/authDevices';
+import { memberAuthDevicesReducer } from '@proton/account-security/sso/memberAuthDevices';
 import { allowAddressDeletionReducer } from '@proton/account/allowAddressDeletion';
 import { appNameReducer } from '@proton/account/appName';
 import { domainsAddressesReducer } from '@proton/account/domainsAddresses';
@@ -8,8 +10,6 @@ import { passwordPoliciesReducer } from '@proton/account/passwordPolicies';
 import { retentionPoliciesReducer } from '@proton/account/retentionPolicies';
 import { safetyReviewTelemetryReducer } from '@proton/account/safetyReview/telemetry/safetyReviewTelemetrySlice';
 import { samlReducer } from '@proton/account/samlSSO';
-import { authDevicesReducer } from '@proton/account/sso/authDevices';
-import { memberAuthDevicesReducer } from '@proton/account/sso/memberAuthDevices';
 import { userOrganizationsReducer } from '@proton/account/userOrganizations';
 import { oauthTokenReducer } from '@proton/activation/src/logic/oauthToken';
 import { calendarsBootstrapReducer } from '@proton/calendar/calendarBootstrap';

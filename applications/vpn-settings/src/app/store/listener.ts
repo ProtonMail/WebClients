@@ -1,10 +1,10 @@
+import { authDevicesLoop } from '@proton/account-security/sso/eventLoopV6';
 import { groupKeysListener } from '@proton/account/groups/groupKeysListener';
 import { membersListener } from '@proton/account/members/membersListener';
 import { unprivatizeMembersListener } from '@proton/account/members/unprivatizeMembersListener';
 import { convertAddressesListener } from '@proton/account/organizationKey/convertAddressesListener';
 import { organizationKeysManagementListener } from '@proton/account/organizationKey/listener';
 import { resetOrganizationKeyListener } from '@proton/account/organizationKey/resetOrganizationKeyListener';
-import { authDevicesLoop } from '@proton/account/sso/eventLoopV6';
 import { startListeningToPlanNameChange } from '@proton/account/subscription/startListeningToPlanNameChange';
 import { startCoreEventLoopV6Listening } from '@proton/redux-shared-store/eventLoop/coreEventLoopV6';
 import { startSharedListening } from '@proton/redux-shared-store/sharedListeners';

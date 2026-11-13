@@ -2,6 +2,10 @@ import { CryptoProxy } from '@protontech/crypto';
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { getMemberAddresses } from '@proton/account/members';
+import { getIsMemberInManualApproveState } from '@proton/account/members/memberUnprivatization';
+import { unprivatizeMembersManual } from '@proton/account/members/unprivatizeMembers';
+import { organizationKeyThunk } from '@proton/account/organizationKey';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { activateMemberAuthDeviceConfig, rejectMemberAuthDeviceConfig } from '@proton/shared/lib/api/authDevice';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -20,10 +24,6 @@ import { getMemberKeys } from '@proton/shared/lib/keys/memberKeys';
 import { generatePassword } from '@proton/shared/lib/password';
 import noop from '@proton/utils/noop';
 
-import { getMemberAddresses } from '../members';
-import { getIsMemberInManualApproveState } from '../members/memberUnprivatization';
-import { unprivatizeMembersManual } from '../members/unprivatizeMembers';
-import { organizationKeyThunk } from '../organizationKey';
 import type { MemberAuthDevicesState, PendingAdminActivation } from './memberAuthDevices';
 import { memberAuthDeviceActions } from './memberAuthDevices';
 

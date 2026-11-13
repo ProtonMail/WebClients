@@ -5,6 +5,9 @@ import { Redirect, Switch, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import SignInRestrictionSection from '@proton/account-security/signInRestriction/SignInRestrictionSection';
+import AuthDevicesSettings from '@proton/account-security/sso/AuthDevicesSettings';
+import MembersAuthDevicesTopBanner from '@proton/account-security/sso/MembersAuthDevicesTopBanner';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
@@ -14,9 +17,6 @@ import { useIsDataRecoveryAvailable } from '@proton/account/recovery/dataRecover
 import { useIsSessionRecoveryAvailable } from '@proton/account/recovery/sessionRecoveryHooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { SafetyReviewRoute } from '@proton/account/safetyReview/components/SafetyReviewRoute';
-import SignInRestrictionSection from '@proton/account/signInRestriction/SignInRestrictionSection';
-import AuthDevicesSettings from '@proton/account/sso/AuthDevicesSettings';
-import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { EMPTY_ORG_PERMISSIONS } from '@proton/account/userPermissions';

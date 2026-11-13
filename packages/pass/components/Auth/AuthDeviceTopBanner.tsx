@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { AbstractAuthDevicesModal } from '@proton/account/sso/AbstractAuthDeviceModal';
+import { AbstractAuthDevicesModal } from '@proton/account-security/sso/AbstractAuthDeviceModal';
 import { Button } from '@proton/atoms/Button/Button';
 import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
 

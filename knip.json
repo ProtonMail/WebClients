@@ -35,7 +35,7 @@
                 "stylelint-config-standard-scss",
                 "stylelint-use-logical-spec",
                 "oxfmt",
-                "^@proton/(account|activation|calendar|components|docs-core|nav|payments|payments-hooks|payments-ui|redux-shared-store|shared|types)$|^@types/global-types-monorepo$"
+                "^@proton/(account|account-security|activation|calendar|components|docs-core|nav|payments|payments-hooks|payments-ui|redux-shared-store|shared|types)$|^@types/global-types-monorepo$"
             ]
         },
         "applications/account": {
@@ -198,6 +198,10 @@
                 "testing/vitest/mockUseOrganization.ts",
                 "testing/vitest/mockUseUser.ts"
             ]
+        },
+        "packages/account-security": {
+            "entry": [],
+            "project": ["**/*.{ts,tsx}"]
         },
         "packages/activation": {
             "entry": [],

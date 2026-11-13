@@ -1,5 +1,8 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
+import { addressKeysThunk } from '@proton/account/addressKeys';
+import { addressesThunk } from '@proton/account/addresses';
+import { userThunk } from '@proton/account/user';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { deleteAllOtherAuthDeviceConfig, rejectAuthDeviceConfig } from '@proton/shared/lib/api/authDevice';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -11,9 +14,6 @@ import {
     validateAuthDevice,
 } from '@proton/shared/lib/keys/deviceConfirm';
 
-import { addressKeysThunk } from '../addressKeys';
-import { addressesThunk } from '../addresses';
-import { userThunk } from '../user';
 import { type AuthDevicesState, authDeviceActions } from './authDevices';
 
 export const confirmPendingAuthDevice = ({

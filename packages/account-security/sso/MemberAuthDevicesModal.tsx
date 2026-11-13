@@ -3,6 +3,7 @@ import { useState } from 'react';
 import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { getMemberAddresses } from '@proton/account/members';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
@@ -23,7 +24,6 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getValidActivation } from '@proton/shared/lib/keys/device';
 import noop from '@proton/utils/noop';
 
-import { getMemberAddresses } from '../members';
 import AuthDeviceConfirmCodeInput from './AuthDeviceConfirmCodeInput';
 import { IconItem, getAuthDevicePlatformIcon, getAuthDevicePlatformIconComponent } from './AuthDeviceItem';
 import ConfirmDenyMemberAuthDevice from './ConfirmDenyMemberAuthDevice';

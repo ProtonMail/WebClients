@@ -3,10 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import SignInRestrictionSection from '@proton/account-security/signInRestriction/SignInRestrictionSection';
+import AuthDevicesSettings from '@proton/account-security/sso/AuthDevicesSettings';
 import { EmergencyContactSection } from '@proton/account/delegatedAccess/emergencyContact/EmergencyContactSection';
 import { RecoveryContactSection } from '@proton/account/delegatedAccess/recoveryContact/RecoveryContactSection';
-import SignInRestrictionSection from '@proton/account/signInRestriction/SignInRestrictionSection';
-import AuthDevicesSettings from '@proton/account/sso/AuthDevicesSettings';
 import EasySwitchSettingsArea from '@proton/activation/src/components/SettingsArea/SettingsArea';
 import { ThirdPartySection } from '@proton/calendar-video-conferencing/thirdParty/ThirdPartySection';
 import SettingsMaintenanceLayoutWrapper from '@proton/components/components/maintenanceLayout/SettingsMaintenanceLayoutWrapper';

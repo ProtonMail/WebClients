@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import { c, msgid } from 'ttag';
 
+import { membersThunk } from '@proton/account/members';
+import { organizationKeyThunk } from '@proton/account/organizationKey';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import TopBanner from '@proton/components/containers/topBanners/TopBanner';
@@ -10,8 +12,6 @@ import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store/Prot
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import noop from '@proton/utils/noop';
 
-import { membersThunk } from '../members';
-import { organizationKeyThunk } from '../organizationKey';
 import MembersAuthDevicesModal from './MembersAuthDevicesModal';
 import {
     type MemberAuthDevicesState,

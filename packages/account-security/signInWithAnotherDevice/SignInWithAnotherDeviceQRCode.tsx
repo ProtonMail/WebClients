@@ -9,6 +9,7 @@ import protonQRLogo from './proton-qr-logo.svg';
 const SignInWithAnotherDeviceQRCode = ({ data }: { data: string }) => {
     const { createNotification } = useNotifications();
     return (
+        // eslint-disable-next-line jsx-a11y/no-static-element-interactions
         <div
             onMouseDown={(e) =>
                 /* preventDefault to avoid double click causing a selection highlight*/

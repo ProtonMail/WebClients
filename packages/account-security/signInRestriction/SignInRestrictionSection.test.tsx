@@ -1,6 +1,11 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
+import { TestStoreProvider } from '@proton/account/testing/TestStoreProvider';
+import { buildAddress } from '@proton/account/testing/buildAddress';
+import { mockUseAddresses } from '@proton/account/testing/vitest/mockUseAddresses';
+import { mockUseUser } from '@proton/account/testing/vitest/mockUseUser';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { mockUseApi } from '@proton/app-context/testing/vitest/mockUseApi';
 import { mockUseNotifications } from '@proton/app-context/testing/vitest/mockUseNotifications';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
@@ -12,14 +17,9 @@ import {
     RESTRICTED_LOGIN_IDENTIFIER_POLICY,
 } from '@proton/shared/lib/interfaces/UserSettings';
 
-import { TestStoreProvider } from '../testing/TestStoreProvider';
-import { buildAddress } from '../testing/buildAddress';
-import { mockUseAddresses } from '../testing/vitest/mockUseAddresses';
-import { mockUseUser } from '../testing/vitest/mockUseUser';
-import { useUserSettings } from '../userSettings/hooks';
 import SignInRestrictionSection from './SignInRestrictionSection';
 
-vi.mock('../userSettings/hooks');
+vi.mock('@proton/account/userSettings/hooks');
 const mockedUseUserSettings = useUserSettings as Mock;
 
 const renderSection = () => {

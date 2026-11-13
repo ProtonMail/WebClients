@@ -1,5 +1,11 @@
 import { c } from 'ttag';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
+import { getIsSignInRestricted, getSignInIdentifiers } from '@proton/account/signInRestriction/helpers';
+import { useDispatch } from '@proton/account/store/hooks';
+import { useUser } from '@proton/account/user/hooks';
+import { userSettingsActions } from '@proton/account/userSettings';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -19,13 +25,7 @@ import {
     RESTRICTED_LOGIN_IDENTIFIER_POLICY,
 } from '@proton/shared/lib/interfaces/UserSettings';
 
-import { useAddresses } from '../addresses/hooks';
-import { useDispatch } from '../store/hooks';
-import { useUser } from '../user/hooks';
-import { userSettingsActions } from '../userSettings';
-import { useUserSettings } from '../userSettings/hooks';
 import SignInRestrictionConfirmModal from './SignInRestrictionConfirmModal';
-import { getIsSignInRestricted, getSignInIdentifiers } from './helpers';
 
 const getUsernameAndAddressesDescription = (username: string, signInDomains: string[]) => {
     const [firstEmail, secondEmail, thirdEmail] = signInDomains.map((domain) => `${username}@${domain}`);

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import AuthDeviceItem from '@proton/account/sso/AuthDeviceItem';
+import AuthDeviceItem from '@proton/account-security/sso/AuthDeviceItem';
 import { Button } from '@proton/atoms/Button/Button';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';

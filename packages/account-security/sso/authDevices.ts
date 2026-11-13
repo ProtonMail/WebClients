@@ -6,6 +6,11 @@ import {
     createSlice,
 } from '@reduxjs/toolkit';
 
+import type { AddressKeysState } from '@proton/account/addressKeys';
+import { selectAddresses } from '@proton/account/addresses';
+import { serverEvent } from '@proton/account/eventLoop';
+import { userThunk } from '@proton/account/user';
+import type { UserKeysState } from '@proton/account/userKeys';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
@@ -23,12 +28,6 @@ import {
     getAuthDevice,
     getValidActivation,
 } from '@proton/shared/lib/keys/device';
-
-import type { AddressKeysState } from '../addressKeys';
-import { selectAddresses } from '../addresses';
-import { serverEvent } from '../eventLoop';
-import { userThunk } from '../user';
-import type { UserKeysState } from '../userKeys';
 
 const name = 'authDevices' as const;
 
