@@ -13,7 +13,6 @@ import assignedModelId from './assigned-model-id';
 import compromisedPasswords from './compromised-passwords';
 import files from './files';
 import filters from './filters';
-import folderExpanded from './folder-expanded';
 import folders from './folders';
 import groups from './groups';
 import importReducer from './import';
@@ -48,7 +47,6 @@ export const reducerMap = {
     alias,
     assignedModelId,
     compromisedPasswords,
-    folderExpanded,
     files,
     filters,
     groups,

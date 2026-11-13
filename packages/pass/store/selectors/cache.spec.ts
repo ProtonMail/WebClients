@@ -2,6 +2,9 @@ import { SyncStrategy } from '../../lib/sync/types';
 import type { Invite } from '../../types/data/invites';
 import { InviteType } from '../../types/data/invites';
 import { uniqueId } from '../../utils/string/unique-id';
+import { folderDelete } from '../actions/creators/folders';
+import { setUIStateValue } from '../actions/creators/ui';
+import { vaultDeleteSuccess } from '../actions/creators/vault';
 import { default as rootReducer } from '../reducers';
 import type { State } from '../types';
 import { selectCachableState } from './cache';
@@ -35,9 +38,26 @@ describe('selectCachableState', () => {
         expect(selectCachableState(state).assignedModelId).toBeNull();
     });
 
-    test('never caches `ui`', () => {
-        const state = { ...stateFor(SyncStrategy.USER_EVENTS), ui: { values: { key: true } } };
-        expect(selectCachableState(state).ui).toEqual({ values: {} });
+    test('never caches `ui.session`', () => {
+        const state = { ...stateFor(SyncStrategy.USER_EVENTS), ui: { session: { noteExpanded: { itemKey: false } }, persisted: {} } };
+        expect(selectCachableState(state).ui.session).toEqual({});
+    });
+
+    test('caches `ui.persisted.menuExpanded` only for vaults and folders that still exist', () => {
+        let state: State = {
+            ...stateFor(SyncStrategy.USER_EVENTS),
+            shares: { shareId: {} as any, deletedShareId: {} as any },
+            folders: { shareId: { folderId: {} as any, deletedFolderId: {} as any } },
+        };
+
+        ['shareId', 'deletedShareId', 'folderId', 'deletedFolderId'].forEach((key) => {
+            state = rootReducer(state, setUIStateValue({ namespace: 'menuExpanded', key, value: true, persist: true }));
+        });
+
+        state = rootReducer(state, vaultDeleteSuccess('vault-delete', { shareId: 'deletedShareId', content: {} as any }));
+        state = rootReducer(state, folderDelete.success('folder-delete', { shareId: 'shareId', folderIds: ['deletedFolderId'] }));
+
+        expect(selectCachableState(state).ui.persisted.menuExpanded).toEqual({ shareId: true, folderId: true });
     });
 
     test('never caches `compromisedPasswords.progress`, but keeps `lastSyncedChange`/`items`', () => {

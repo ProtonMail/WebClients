@@ -19,7 +19,17 @@ export const selectCachableState = (state: State) => {
     cachable.files = {};
     cachable.accessTokens = getInitialPATState();
     cachable.assignedModelId = null;
-    cachable.ui = { values: {} };
+    cachable.ui = {
+        session: {},
+        persisted: {
+            ...cachable.ui.persisted,
+            /** Drop vaults and folders that no longer exist */
+            menuExpanded: objectFilter(
+                cachable.ui.persisted.menuExpanded ?? {},
+                (id) => id in cachable.shares || Object.values(cachable.folders).some((folders) => id in folders)
+            ),
+        },
+    };
     cachable.compromisedPasswords = { ...cachable.compromisedPasswords, progress: { completed: 0, total: 0 } };
 
     /** V2 user events provide granular invite updates, safe to cache */
