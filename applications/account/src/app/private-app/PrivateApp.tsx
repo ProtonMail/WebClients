@@ -3,7 +3,7 @@ import { Router } from 'react-router-dom';
 
 import { logger } from '@protontech/logger';
 
-import { PassScopeApiModal } from '@proton/account/pass/PassScopeApiModal';
+import { PassScopeApiModal } from '@proton/account-security/pass/PassScopeApiModal';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import ProtonApp from '@proton/components/containers/app/ProtonApp';

@@ -1,10 +1,9 @@
 import { c } from 'ttag';
 
+import type { getSignInIdentifiers } from '@proton/account/signInRestriction/helpers';
 import { Button } from '@proton/atoms/Button/Button';
 import Prompt, { type PromptProps } from '@proton/components/components/prompt/Prompt';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-
-import type { getSignInIdentifiers } from './helpers';
 
 interface Props extends Omit<PromptProps, 'children' | 'buttons' | 'title'> {
     identifiers: ReturnType<typeof getSignInIdentifiers>;

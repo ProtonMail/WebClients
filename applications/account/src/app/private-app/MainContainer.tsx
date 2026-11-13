@@ -3,6 +3,8 @@ import { Redirect, matchPath, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import AuthDevicesTopBanner from '@proton/account-security/sso/AuthDevicesTopBanner';
+import MembersAuthDevicesTopBanner from '@proton/account-security/sso/MembersAuthDevicesTopBanner';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useAllSubscriptions } from '@proton/account/allSubscriptions/hooks';
 import { useAvailableApps } from '@proton/account/availableApps/hooks';
@@ -20,8 +22,6 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useIsDataRecoveryAvailable } from '@proton/account/recovery/dataRecovery';
 import { useIsSessionRecoveryAvailable } from '@proton/account/recovery/sessionRecoveryHooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
-import AuthDevicesTopBanner from '@proton/account/sso/AuthDevicesTopBanner';
-import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserInvitations } from '@proton/account/userInvitations/hooks';

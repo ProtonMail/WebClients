@@ -5,7 +5,7 @@ import { useMachine } from '@xstate/react';
 import isDeepEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
-import SignInWithAnotherDeviceQRCode from '@proton/account/signInWithAnotherDevice/SignInWithAnotherDeviceQRCode';
+import SignInWithAnotherDeviceQRCode from '@proton/account-security/signInWithAnotherDevice/SignInWithAnotherDeviceQRCode';
 import {
     GiveUpError,
     IncorrectPayloadError,

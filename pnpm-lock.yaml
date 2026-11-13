@@ -685,6 +685,9 @@ importers:
       '@proton/account':
         specifier: workspace:^
         version: link:packages/account
+      '@proton/account-security':
+        specifier: workspace:^
+        version: link:packages/account-security
       '@proton/activation':
         specifier: workspace:^
         version: link:packages/activation
@@ -766,6 +769,9 @@ importers:
       '@proton/account':
         specifier: workspace:^
         version: link:../../packages/account
+      '@proton/account-security':
+        specifier: workspace:^
+        version: link:../../packages/account-security
       '@proton/activation':
         specifier: workspace:^
         version: link:../../packages/activation
@@ -4512,6 +4518,9 @@ importers:
       '@proton/account':
         specifier: workspace:^
         version: link:../../packages/account
+      '@proton/account-security':
+        specifier: workspace:^
+        version: link:../../packages/account-security
       '@proton/activation':
         specifier: workspace:^
         version: link:../../packages/activation
@@ -5028,6 +5037,118 @@ importers:
       react-redux:
         specifier: 'catalog:'
         version: 9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1)
+      typescript:
+        specifier: 'catalog:'
+        version: '@typescript/typescript6@6.0.2'
+      vitest:
+        specifier: 'catalog:'
+        version: 5.1.0(@opentelemetry/api@1.9.1)(@types/node@24.19.2)(@vitest/browser-playwright@5.1.0)(@vitest/coverage-v8@5.1.0)(@vitest/ui@5.1.0)(happy-dom@21.0.4)(jsdom@31.0.0(@noble/hashes@2.4.0))(msw@2.12.14(@types/node@24.19.2)(@typescript/typescript6@6.0.2))(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/account-security:
+    dependencies:
+      '@proton/account':
+        specifier: workspace:^
+        version: link:../account
+      '@proton/app-context':
+        specifier: workspace:^
+        version: link:../app-context
+      '@proton/atoms':
+        specifier: workspace:^
+        version: link:../atoms
+      '@proton/components':
+        specifier: workspace:^
+        version: link:../components
+      '@proton/hooks':
+        specifier: workspace:^
+        version: link:../hooks
+      '@proton/icons':
+        specifier: workspace:^
+        version: link:../icons
+      '@proton/react-redux-store':
+        specifier: workspace:^
+        version: link:../react-redux-store
+      '@proton/redux-shared-store-types':
+        specifier: workspace:^
+        version: link:../redux-shared-store-types
+      '@proton/redux-utilities':
+        specifier: workspace:^
+        version: link:../redux-utilities
+      '@proton/shared':
+        specifier: workspace:^
+        version: link:../shared
+      '@proton/utils':
+        specifier: workspace:^
+        version: link:../utils
+      '@protontech/crypto':
+        specifier: 'catalog:'
+        version: 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
+      '@reduxjs/toolkit':
+        specifier: 'catalog:'
+        version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
+      date-fns:
+        specifier: ^2.30.0
+        version: 2.30.0
+      react:
+        specifier: 'catalog:'
+        version: 18.3.1
+      ttag:
+        specifier: 'catalog:'
+        version: 1.8.12
+    devDependencies:
+      '@proton/oxlint-config':
+        specifier: workspace:^
+        version: link:../oxlint-config
+      '@proton/polyfill':
+        specifier: workspace:^
+        version: link:../polyfill
+      '@proton/unleash':
+        specifier: workspace:^
+        version: link:../unleash
+      '@proton/vitest-config':
+        specifier: workspace:^
+        version: link:../vitest-config
+      '@testing-library/dom':
+        specifier: 'catalog:'
+        version: 10.4.2
+      '@testing-library/jest-dom':
+        specifier: 'catalog:'
+        version: 6.9.1
+      '@testing-library/react':
+        specifier: 'catalog:'
+        version: 16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@18.3.7(@types/react@18.3.31))(@types/react@18.3.31)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@testing-library/user-event':
+        specifier: 'catalog:'
+        version: 14.6.8(@testing-library/dom@10.4.2)
+      '@types/node':
+        specifier: 'catalog:'
+        version: 24.19.2
+      '@types/react':
+        specifier: 'catalog:'
+        version: 18.3.31
+      '@types/react-dom':
+        specifier: 'catalog:'
+        version: 18.3.7(@types/react@18.3.31)
+      '@types/webpack-env':
+        specifier: 'catalog:'
+        version: 1.18.8
+      '@typescript/native':
+        specifier: 'catalog:'
+        version: typescript@7.0.2
+      '@vitejs/plugin-react':
+        specifier: ^6.2.1
+        version: 6.2.1(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+      happy-dom:
+        specifier: 'catalog:'
+        version: 21.0.4
+      oxlint:
+        specifier: 'catalog:'
+        version: 1.92.0(oxlint-tsgolint@7.0.2006)
+      oxlint-tsgolint:
+        specifier: 'catalog:'
+        version: 7.0.2006
+      react-dom:
+        specifier: 'catalog:'
+        version: 18.3.1(react@18.3.1)
       typescript:
         specifier: 'catalog:'
         version: '@typescript/typescript6@6.0.2'
@@ -8689,6 +8810,9 @@ importers:
       '@proton/account':
         specifier: workspace:^
         version: link:../account
+      '@proton/account-security':
+        specifier: workspace:^
+        version: link:../account-security
       '@proton/app-context':
         specifier: workspace:^
         version: link:../app-context
@@ -9678,6 +9802,9 @@ importers:
       '@proton/account':
         specifier: workspace:^
         version: link:../account
+      '@proton/account-security':
+        specifier: workspace:^
+        version: link:../account-security
       '@proton/activation':
         specifier: workspace:^
         version: link:../activation

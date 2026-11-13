@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import type { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
+import { userThunk } from '@proton/account/user';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import { Badge } from '@proton/components/components/badge/Badge';
@@ -29,7 +30,6 @@ import {
 } from '@proton/shared/lib/keys/device';
 import noop from '@proton/utils/noop';
 
-import { userThunk } from '../user';
 import { AuthDevicesModal } from './AuthDevicesModal';
 import ConfirmRejectAuthDevice from './ConfirmRejectAuthDevice';
 import ConfirmRemoveAuthDevice from './ConfirmRemoveAuthDevice';

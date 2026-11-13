@@ -1,4 +1,5 @@
-import type { CoreEventLoopV6Callback } from '../coreEventLoop/interface';
+import type { CoreEventLoopV6Callback } from '@proton/account/coreEventLoop/interface';
+
 import { type AuthDevicesState, authDevicesEventLoopV6Thunk, selectAuthDevices } from './authDevices';
 import {
     type MemberAuthDevicesState,

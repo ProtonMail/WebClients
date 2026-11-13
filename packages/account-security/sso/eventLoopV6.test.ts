@@ -1,3 +1,6 @@
+import { type DomainsState, domainsReducer } from '@proton/account/domains';
+import { getModelState } from '@proton/account/testing/getModelState';
+import { userReducer } from '@proton/account/user';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
 import { getTestStore } from '@proton/redux-utilities/testing/getTestStore';
@@ -7,9 +10,6 @@ import type { Domain } from '@proton/shared/lib/interfaces/Domain';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { AuthDeviceOutput, MemberAuthDeviceOutput } from '@proton/shared/lib/keys/device';
 
-import { type DomainsState, domainsReducer } from '../domains';
-import { getModelState } from '../testing/getModelState';
-import { userReducer } from '../user';
 import { authDevicesReducer } from './authDevices';
 import { type AuthDevicesLoopState, authDevicesLoop } from './eventLoopV6';
 import { memberAuthDevicesReducer } from './memberAuthDevices';

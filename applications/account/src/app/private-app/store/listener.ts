@@ -1,3 +1,4 @@
+import { authDevicesLoop } from '@proton/account-security/sso/eventLoopV6';
 import { startHostAccountSessionsListener } from '@proton/account/accountSessions/hostListener';
 import { startAccountSessionsListener } from '@proton/account/accountSessions/listener';
 import { authenticationListener } from '@proton/account/authenticationService/authenticationListener';
@@ -13,7 +14,6 @@ import { resetOrganizationKeyListener } from '@proton/account/organizationKey/re
 import { startPersistListener } from '@proton/account/persist/listener';
 import { deviceRecoveryListener } from '@proton/account/recovery/deviceRecovery';
 import { safetyReviewTelemetryListener } from '@proton/account/safetyReview/telemetry/safetyReviewTelemetryListener';
-import { authDevicesLoop } from '@proton/account/sso/eventLoopV6';
 import { startListeningToPlanNameChange } from '@proton/account/subscription/startListeningToPlanNameChange';
 import { startCalendarEventListener } from '@proton/calendar/calendars/listener';
 import { startHolidaysDirectoryListener } from '@proton/calendar/holidaysDirectory/listener';

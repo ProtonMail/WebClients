@@ -6,6 +6,14 @@ import {
     createSlice,
 } from '@reduxjs/toolkit';
 
+import type { AddressKeysState } from '@proton/account/addressKeys';
+import { type DomainsState, domainsThunk } from '@proton/account/domains';
+import { serverEvent } from '@proton/account/eventLoop';
+import type { MembersState } from '@proton/account/members';
+import { selectMembers } from '@proton/account/members';
+import { type OrganizationKeyState, selectOrganizationKey } from '@proton/account/organizationKey';
+import { userThunk } from '@proton/account/user';
+import type { UserKeysState } from '@proton/account/userKeys';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities/creator';
 import { getInitialModelState } from '@proton/redux-utilities/initialModelState';
@@ -21,15 +29,6 @@ import type { EnhancedMember } from '@proton/shared/lib/interfaces/Member';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import type { MemberAuthDeviceOutput } from '@proton/shared/lib/keys/device';
 import { AuthDeviceState, getMemberAuthDevice, getPendingMemberAuthDevices } from '@proton/shared/lib/keys/device';
-
-import type { AddressKeysState } from '../addressKeys';
-import { type DomainsState, domainsThunk } from '../domains';
-import { serverEvent } from '../eventLoop';
-import type { MembersState } from '../members';
-import { selectMembers } from '../members';
-import { type OrganizationKeyState, selectOrganizationKey } from '../organizationKey';
-import { userThunk } from '../user';
-import type { UserKeysState } from '../userKeys';
 
 const name = 'memberAuthDevices' as const;
 
