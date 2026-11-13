@@ -1,6 +1,4 @@
 import { Avatar } from '@proton/atoms/Avatar/Avatar'
-import { Button } from '@proton/atoms/Button/Button'
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
 import { IcArrowToCenterHorizontal } from '@proton/icons/icons/IcArrowToCenterHorizontal'
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark'
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown'
@@ -18,6 +16,7 @@ import * as Table from './table'
 import type { AcceptInvitation, ExtendedInvitationDetails } from '../invitationTypes'
 import { useOpenInvitedDocument } from './useOpenInvitedDocument'
 import { TelemetryEvent } from '../utils/telemetry'
+import { IconButton } from '../components/ui'
 
 const MAX_INVITES_WHEN_COLLAPSED = 3
 const WAIT_AFTER_ACCEPT_INVITE = 5000 // ms
@@ -219,33 +218,27 @@ function InviteActions({ invite, onRejectInvite, acceptInvite, openInvitedDocume
 
   return (
     <div className="flex flex-nowrap gap-[.625rem]">
-      <Tooltip title={c('Action').t`Accept invitation`}>
-        <Button
-          size="medium"
-          icon
-          color="weak"
-          disabled={invite.isLocked || isAcceptingInvite}
-          loading={isAcceptingInvite}
-          onClick={() => handleAcceptInvite(invite)}
-          aria-label={c('Action').t`Accept invitation to document`}
-          data-testid="accept-invite-button"
-        >
-          <IcCheckmark />
-        </Button>
-      </Tooltip>
-      <Tooltip title={c('Action').t`Decline invitation`}>
-        <Button
-          size="medium"
-          icon
-          color="weak"
-          disabled={invite.isLocked}
-          onClick={() => handleRejectInvite(invite)}
-          aria-label={c('Action').t`Decline invitation to document`}
-          data-testid="reject-invite-button"
-        >
-          <IcCross />
-        </Button>
-      </Tooltip>
+      <IconButton
+        label={c('Action').t`Accept invitation`}
+        shape="outline"
+        disabled={invite.isLocked || isAcceptingInvite}
+        loading={isAcceptingInvite}
+        onClick={() => handleAcceptInvite(invite)}
+        aria-label={c('Action').t`Accept invitation to document`}
+        data-testid="accept-invite-button"
+      >
+        <IcCheckmark />
+      </IconButton>
+      <IconButton
+        label={c('Action').t`Decline invitation`}
+        shape="outline"
+        disabled={invite.isLocked}
+        onClick={() => handleRejectInvite(invite)}
+        aria-label={c('Action').t`Decline invitation to document`}
+        data-testid="reject-invite-button"
+      >
+        <IcCross />
+      </IconButton>
     </div>
   )
 }
@@ -254,17 +247,15 @@ type CollapseButtonProps = { collapse: () => void }
 
 function CollapseButton({ collapse }: CollapseButtonProps) {
   return (
-    <Tooltip title={c('Action').t`Collapse list`}>
-      <Button
-        icon
-        onClick={collapse}
-        aria-label={c('Action').t`Collapse list of pending invitations`}
-        shape="ghost"
-        className="ml-auto shrink-0 px-2"
-      >
-        <IcArrowToCenterHorizontal className="shrink-0 rotate-90" />
-      </Button>
-    </Tooltip>
+    <IconButton
+      label={c('Action').t`Collapse list`}
+      onClick={collapse}
+      aria-label={c('Action').t`Collapse list of pending invitations`}
+      shape="ghost"
+      className="ml-auto shrink-0 px-2"
+    >
+      <IcArrowToCenterHorizontal className="shrink-0 rotate-90" />
+    </IconButton>
   )
 }
 

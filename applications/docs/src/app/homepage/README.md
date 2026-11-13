@@ -12,6 +12,8 @@ The host loads the invitations when the homepage opens and keeps them current. T
 
 It reads no feature flags itself (no `~/utils/flags` or `@proton/unleash`): the host resolves the ones it needs into `featureFlags`. Sheets is always enabled; the module ignores the `DocsSheetsDisabled` kill switch.
 
+UI components are built with Ariakit and Tailwind in `components/`, copied from the realtime repo's docs-editor: `atoms.tsx` styles them and `ui.tsx` adds their Ariakit behaviour. Use the `Button`, `IconButton` and `Tooltip` of `components/ui.tsx`, never `@proton/atoms`' `Button` or `Tooltip`. `HomepageStyleScope`, rendered by `HomepageLayout`, roots the module's Ariakit portals, as the editors' style scopes do.
+
 Files inside this path import each other with relative paths, never through the `~/homepage` alias.
 
 Drive SDK: the `ProtonDriveClient` instance (from `getDrive`) is injected by the host. Everything else (functions, enums, error classes, types) is imported from `@protontech/drive-sdk`, never from `@proton/drive`.
