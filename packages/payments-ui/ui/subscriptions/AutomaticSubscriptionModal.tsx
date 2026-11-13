@@ -17,7 +17,6 @@ import type { OpenCallbackProps } from '@proton/components/containers/payments/s
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoad from '@proton/components/hooks/useLoad';
 import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
-import { useCurrencies } from '@proton/payments-hooks/ui/hooks/useCurrencies';
 import {
     ADDON_PREFIXES,
     ADDON_TOTAL_PARAM_NAMES,
@@ -25,9 +24,11 @@ import {
     type PLANS,
     URL_CONFIGURABLE_ADDON_PREFIXES,
 } from '@proton/payments/core/constants';
+import { getPreferredCurrency } from '@proton/payments/core/currencies';
 import type { FreeSubscription, PaymentStatus } from '@proton/payments/core/interface';
 import { getPlanName } from '@proton/payments/core/subscription/helpers';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
+import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { extractSubscriptionSearchParams } from '@proton/payments/core/subscription/search-params';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
@@ -102,14 +103,21 @@ const UpsellPrompt = ({ discount, planCombination: { plan, cycle }, onConfirm, .
     );
 };
 
-export const getParameters = (
-    search: string,
-    plans: Plan[],
-    subscription: Subscription | FreeSubscription,
-    user: UserModel,
-    getPreferredCurrency: ReturnType<typeof useCurrencies>['getPreferredCurrency'],
-    paymentStatus: PaymentStatus
-) => {
+export const getParameters = ({
+    search,
+    plans,
+    subscription,
+    user,
+    paymentStatus,
+    multiSubscriptionContext,
+}: {
+    search: string;
+    plans: Plan[];
+    subscription: Subscription | FreeSubscription;
+    user: UserModel;
+    paymentStatus: PaymentStatus;
+    multiSubscriptionContext: MultiSubscriptionContext;
+}) => {
     const {
         coupon,
         plan: planParam,
@@ -135,8 +143,9 @@ export const getParameters = (
 
     const preferredCurrency = getPreferredCurrency({
         paramCurrency: parsedCurrency,
+        paramPlanName: planParam,
         user,
-        subscription,
+        multiSubscriptionContext,
         plans,
         paymentStatus,
     });
@@ -198,7 +207,6 @@ export const AutomaticSubscriptionModal = () => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
     const [unavailableModalProps, setUnavailableModal, renderUnavailableModal] = useModalState();
     const [promotionAppliedProps, setPromotionAppliedModal, renderPromotionAppliedModal] = useModalState();
-    const { getPreferredCurrency } = useCurrencies();
     const [paymentStatus, loadingPaymentStatus] = usePaymentStatus();
 
     const goToApp = useAppLink();
@@ -232,7 +240,14 @@ export const AutomaticSubscriptionModal = () => {
             totals,
             preferredCurrency,
             upsellRef,
-        } = getParameters(search ?? '', plans, subscription, user, getPreferredCurrency, paymentStatus);
+        } = getParameters({
+            search: search ?? '',
+            plans,
+            subscription,
+            user,
+            paymentStatus,
+            multiSubscriptionContext,
+        });
 
         if (!plan) {
             return;

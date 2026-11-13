@@ -4,8 +4,9 @@ import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import { ADDON_PREFIXES, PLANS, PLAN_NAMES } from '@proton/payments/core/constants';
+import { getPreferredCurrency } from '@proton/payments/core/currencies';
 import { hasAddonFromPlanIDs } from '@proton/payments/core/plan/addons';
 import { getSimplePriceString } from '@proton/payments/core/price-format';
 import { getHasMeetIncludedInPlan, getPlanIDs, getPlanName } from '@proton/payments/core/subscription/helpers';
@@ -26,11 +27,11 @@ const MeetAddonBanner = ({ app }: UpsellSectionBaseProps) => {
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
     const [subscription] = useSubscription();
+    const multiSubscriptionContext = useMultiSubscriptionContext();
     const [plansResult] = usePlans();
-    const { getPreferredCurrency } = useCurrencies();
 
     const plans = plansResult?.plans ?? [];
-    const preferredCurrency = subscription ? getPreferredCurrency({ subscription, plans }) : undefined;
+    const preferredCurrency = subscription ? getPreferredCurrency({ multiSubscriptionContext, plans }) : undefined;
     const plansMap = preferredCurrency ? getPlansMap(plans, preferredCurrency, true) : undefined;
 
     const currentPlanName = subscription ? getPlanName(subscription) : undefined;

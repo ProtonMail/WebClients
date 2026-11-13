@@ -2,13 +2,14 @@ import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { getPreferredCurrency } from '@proton/payments/core/currencies';
 
-import { useCurrencies } from './useCurrencies';
+import { useMultiSubscriptionContext } from '../react-extensions/useMultiSubscriptionContext';
 
 export const useAutomaticCurrency = () => {
-    const { getPreferredCurrency } = useCurrencies();
     const [user, userLoading] = useUser();
     const [subscription, subscriptionLoading] = useSubscription();
+    const multiSubscriptionContext = useMultiSubscriptionContext(subscription);
     const [plans, plansLoading] = usePlans();
     const [status, statusLoading] = usePaymentStatus();
 
@@ -18,7 +19,7 @@ export const useAutomaticCurrency = () => {
         user,
         plans: plans?.plans,
         paymentStatus: status,
-        subscription,
+        multiSubscriptionContext,
     });
 
     return [currency, loading] as const;

@@ -6,12 +6,13 @@ import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { IcLightLightbulb } from '@proton/icons/icons/IcLightLightbulb';
-import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import { getPreferredCurrency } from '@proton/payments/core/currencies';
 import { getSimplePriceString } from '@proton/payments/core/price-format';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { noSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { DRIVE_PRICING_PAGE, DRIVE_SIGNUP } from '@proton/shared/lib/drive/urls';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -20,7 +21,6 @@ interface UseDriveFreePromoProps {
 }
 
 function useDriveFreePromo({ codes }: UseDriveFreePromoProps) {
-    const { getPreferredCurrency } = useCurrencies();
     const { paymentsApi } = usePaymentsApi();
     const [plansResult] = usePlans();
     const [paymentStatus] = usePaymentStatus();
@@ -32,6 +32,7 @@ function useDriveFreePromo({ codes }: UseDriveFreePromoProps) {
         paymentStatus,
         plans: plansResult?.plans,
         paramPlanName: PLANS.DRIVE,
+        multiSubscriptionContext: noSubscriptionContext,
     });
 
     useEffect(() => {

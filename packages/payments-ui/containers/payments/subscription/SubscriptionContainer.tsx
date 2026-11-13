@@ -45,7 +45,6 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import { useHandler } from '@proton/hooks/useHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { IcGift } from '@proton/icons/icons/IcGift';
-import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
 import type { TelemetryPaymentFlow } from '@proton/payments-hooks/client-extensions/usePaymentsTelemetry';
 import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import type { Operations, OperationsSubscriptionData } from '@proton/payments-hooks/react-extensions/usePaymentFacade';
@@ -59,6 +58,7 @@ import { getCheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
 import { ADDON_PREFIXES, PLANS } from '@proton/payments/core/constants';
 import { getStaticCouponConfig } from '@proton/payments/core/coupon-config/get-static-coupon-config';
 import { isCSCoupon } from '@proton/payments/core/coupon-config/helpers';
+import { getPreferredCurrency } from '@proton/payments/core/currencies';
 import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
 import { DisplayablePaymentError } from '@proton/payments/core/errors';
 import { captureWrongPlanIDs, captureWrongPlanName } from '@proton/payments/core/helpers';
@@ -92,6 +92,7 @@ import type {
     SubscriptionCheckForbiddenReason,
     SubscriptionEstimation,
 } from '@proton/payments/core/subscription/interface';
+import type { MultiSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
@@ -164,14 +165,14 @@ const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
  */
 const usePlansMapRef = ({
     user,
-    subscription,
+    multiSubscriptionContext,
     plans,
     maybeCurrency,
     paymentStatus,
     plan,
 }: {
     user: UserModel;
-    subscription: Subscription | FreeSubscription;
+    multiSubscriptionContext: MultiSubscriptionContext;
     plans: Plan[];
     maybeCurrency?: Currency;
     paymentStatus: PaymentStatus;
@@ -179,12 +180,10 @@ const usePlansMapRef = ({
 }) => {
     const [, rerender] = useState({});
 
-    const { getPreferredCurrency } = useCurrencies();
-
     const preferredCurrencyRef = useRef<Currency>(
         getPreferredCurrency({
             user,
-            subscription,
+            multiSubscriptionContext,
             plans,
             paramCurrency: maybeCurrency,
             paymentStatus,
@@ -194,13 +193,31 @@ const usePlansMapRef = ({
 
     const plansMapRef = useRef<FullPlansMap>(getPlansMap(plans, preferredCurrencyRef.current));
 
+    const setPreferredCurrency = (currency: Currency) => {
+        preferredCurrencyRef.current = currency;
+        plansMapRef.current = getPlansMap(plans, currency);
+        rerender({});
+    };
+
+    const fitCurrencyToSelection = (planIDs: PlanIDs, currentCurrency: Currency): Currency => {
+        const currency = getPreferredCurrency({
+            paramCurrency: currentCurrency,
+            paramPlanName: getPlanNameFromIDs(planIDs),
+            paymentStatus,
+            plans,
+            user,
+            multiSubscriptionContext,
+        });
+        if (currency !== currentCurrency) {
+            setPreferredCurrency(currency);
+        }
+        return currency;
+    };
+
     return {
         plansMapRef,
-        setPreferredCurrency: (currency: Currency) => {
-            preferredCurrencyRef.current = currency;
-            plansMapRef.current = getPlansMap(plans, currency);
-            rerender({});
-        },
+        setPreferredCurrency,
+        fitCurrencyToSelection,
         preferredCurrencyRef,
     };
 };
@@ -284,7 +301,12 @@ type SubscriptionContainerOpenCallbackPropKeys =
     | 'allowedAddonTypes';
 
 type OpenCallbackPropsModalOnlyKeys =
-    'hasClose' | 'onClose' | 'onMount' | 'disableCloseOnEscape' | 'fullscreen' | 'upsellTelemetryContext';
+    | 'hasClose'
+    | 'onClose'
+    | 'onMount'
+    | 'disableCloseOnEscape'
+    | 'fullscreen'
+    | 'upsellTelemetryContext';
 
 type AssertExact<T, U> = [T] extends [U] ? ([U] extends [T] ? true : never) : never;
 
@@ -375,9 +397,9 @@ const SubscriptionContainerInner = ({
     const latestSubscription = subscription.UpcomingSubscription ?? subscription;
     const multiSubscriptionContext = useMultiSubscriptionContext(subscription, entitlementCatalog);
 
-    const { plansMapRef, setPreferredCurrency, preferredCurrencyRef } = usePlansMapRef({
+    const { plansMapRef, setPreferredCurrency, fitCurrencyToSelection, preferredCurrencyRef } = usePlansMapRef({
         user,
-        subscription,
+        multiSubscriptionContext,
         plans,
         maybeCurrency,
         paymentStatus,
@@ -867,7 +889,7 @@ const SubscriptionContainerInner = ({
         skipPlanTransitionChecks: skipPlanTransitionChecks ?? false,
         multiSubscriptionContext,
         refs: { plansMapRef, giftCodeRef },
-        setters: { setCheckResult, setModel, setVatReverseChargeErrorModal },
+        setters: { setCheckResult, setModel, setVatReverseChargeErrorModal, fitCurrencyToSelection },
         callbacks: {
             runAdditionalEstimations,
             shouldPassIsTrial,
@@ -1215,7 +1237,6 @@ const SubscriptionContainerInner = ({
                     cycle={model.cycle}
                     maximumCycle={maximumCycle}
                     minimumCycle={minimumCycle}
-                    planIDs={model.planIDs}
                     mode={modeType}
                     subscription={subscription}
                     onChangePlanIDs={(planIDs, cycle, currency) => {
@@ -1394,6 +1415,7 @@ const SubscriptionContainerInner = ({
                                 user={user}
                                 couponConfig={couponConfig}
                                 trial={shouldPassIsTrial(model, false)}
+                                multiSubscriptionContext={multiSubscriptionContext}
                                 {...checkoutModifiers}
                             />
                         </div>

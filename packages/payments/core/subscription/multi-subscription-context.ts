@@ -30,3 +30,9 @@ export const createMultiSubscriptionContext = ({
     subscriptions: toSubscriptionList(subscription),
     entitlementCatalog,
 });
+
+export const noSubscriptionContext = createMultiSubscriptionContext({
+    lumoMultiSubscriptions: false,
+    subscription: undefined,
+    entitlementCatalog: undefined,
+});

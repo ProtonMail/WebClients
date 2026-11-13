@@ -23,6 +23,9 @@ export const getSubscriptionsArray = (subscription: Subscription): Subscription[
     return [subscription, ...(subscription.SecondarySubscriptions ?? [])];
 };
 
+export const getWebSubscriptions = (subscriptions: Subscription[]): Subscription[] =>
+    subscriptions.filter((subscription) => !isManagedExternally(subscription));
+
 export function hasNoExternallyManagedLumoSubscription(subscription: Subscription | FreeSubscription): boolean {
     if (isFreeSubscription(subscription)) {
         return true;

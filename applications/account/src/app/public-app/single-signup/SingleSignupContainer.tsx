@@ -11,17 +11,18 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import metrics from '@proton/metrics/metricsInstance';
 import observeApiError from '@proton/metrics/observeApiError';
-import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
 import { usePaymentsTelemetry } from '@proton/payments-hooks/client-extensions/usePaymentsTelemetry';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { ADDON_NAMES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import { getPreferredCurrency } from '@proton/payments/core/currencies';
 import type { Currency, PlanIDs } from '@proton/payments/core/interface';
 import type { PaymentProcessorType } from '@proton/payments/core/payment-processors/interface';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { getHas2025OfferCoupon, getIsVPNPassPromotion, getPlanIDs } from '@proton/payments/core/subscription/helpers';
+import { noSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
@@ -75,7 +76,6 @@ import {
     getOptimisticPlanCardsSubscriptionData,
     getPlanCardSubscriptionData,
     getSubscriptionData,
-    noSubscriptionContext,
 } from '../single-signup-v2/helper';
 import type { SignupDefaults } from '../single-signup-v2/interface';
 import { Steps } from '../single-signup-v2/interface';
@@ -176,8 +176,6 @@ const SingleSignupContainer = ({
     const activeBreakpoint = useActiveBreakpoint();
 
     const getPlans = useGetPlans();
-
-    const { getPreferredCurrency } = useCurrencies();
 
     useMetaTags(metaTags);
 
@@ -435,6 +433,7 @@ const SingleSignupContainer = ({
             paramCurrency: currency,
             paymentStatus: model.paymentStatus,
             plans: plans,
+            multiSubscriptionContext: noSubscriptionContext,
         });
 
         const { plansMap, subscriptionData, cycleData, subscriptionDataCycleMapping } = await checkPlans({
@@ -481,6 +480,7 @@ const SingleSignupContainer = ({
                 plans,
                 paramCurrency: signupParameters.currency,
                 paramPlanName: signupParameters.preSelectedPlan,
+                multiSubscriptionContext: noSubscriptionContext,
             });
 
             const mode = getSignupMode(signupParameters.coupon, preferredCurrency);

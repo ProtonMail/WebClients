@@ -12,13 +12,14 @@ import {
     type PAYMENT_METHOD_TYPES,
     PLANS,
 } from '@proton/payments/core/constants';
-import { getDefaultMainCurrency } from '@proton/payments/core/currencies';
+import { getDefaultMainCurrency, getPreferredCurrency } from '@proton/payments/core/currencies';
 import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
 import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
 import type {
     Currency,
     CycleMapping,
     FreeSubscription,
+    PaymentStatus,
     PaymentsApi,
     PlanIDs,
     SavedPaymentMethod,
@@ -42,8 +43,9 @@ import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton
 import {
     type MultiSubscriptionContext,
     createMultiSubscriptionContext,
+    noSubscriptionContext,
 } from '@proton/payments/core/subscription/multi-subscription-context';
-import { hasCycle } from '@proton/payments/core/subscription/plans-map-wrapper';
+import { getPlansMap, hasCycle } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { getPurchaseOutcome } from '@proton/payments/core/subscription/purchase-outcome';
 import { SelectedPlan } from '@proton/payments/core/subscription/selected-plan';
 import { isFreeSubscription, isValidPlanName } from '@proton/payments/core/type-guards';
@@ -66,6 +68,7 @@ import {
 } from '@proton/shared/lib/payments/plan/helpers';
 import type { Plan, PlansMap, StrictPlan, SubscriptionPlan } from '@proton/shared/lib/payments/plan/interface';
 import {
+    formatUser,
     canPay as getCanPay,
     isAdmin as getIsAdmin,
     hasPaidDrive,
@@ -99,12 +102,6 @@ export const getFreeSubscriptionData = (
         payment: undefined,
     };
 };
-
-export const noSubscriptionContext = createMultiSubscriptionContext({
-    lumoMultiSubscriptions: false,
-    subscription: undefined,
-    entitlementCatalog: undefined,
-});
 
 export const getSubscriptionData = async (
     paymentsApi: PaymentsApi,
@@ -681,6 +678,7 @@ export const getUserInfo = async ({
     availableCycles,
     lumoMultiSubscriptions,
     getEntitlementCatalog,
+    paymentStatus,
 }: {
     api: Api;
     paymentsApi: PaymentsApi;
@@ -696,6 +694,7 @@ export const getUserInfo = async ({
     availableCycles: CYCLE[];
     lumoMultiSubscriptions: boolean;
     getEntitlementCatalog: GetEntitlementCatalog;
+    paymentStatus: PaymentStatus | undefined;
 }): Promise<{
     paymentMethods: SavedPaymentMethod[];
     subscription: Subscription | FreeSubscription | undefined;
@@ -852,6 +851,19 @@ export const getUserInfo = async ({
     }
     if (replacePlanIfChangeIsForbidden?.planIDs) {
         optionsWithSubscriptionDefaults.planIDs = replacePlanIfChangeIsForbidden.planIDs;
+    }
+
+    const currency = getPreferredCurrency({
+        paramCurrency: optionsWithSubscriptionDefaults.currency,
+        paramPlanName: getPlanNameFromIDs(optionsWithSubscriptionDefaults.planIDs ?? {}),
+        paymentStatus,
+        plans,
+        user: formatUser(user),
+        multiSubscriptionContext,
+    });
+    if (currency !== optionsWithSubscriptionDefaults.currency) {
+        optionsWithSubscriptionDefaults.currency = currency;
+        optionsWithSubscriptionDefaults.plansMap = getPlansMap(plans, currency, false);
     }
 
     if (

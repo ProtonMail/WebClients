@@ -6,8 +6,9 @@ import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
+import { useMultiSubscriptionContext } from '@proton/payments-hooks/react-extensions/useMultiSubscriptionContext';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import { getPreferredCurrency } from '@proton/payments/core/currencies';
 import type { Currency } from '@proton/payments/core/interface';
 import { getPriceStartsFrom } from '@proton/payments/core/price-helpers';
 import { getCanSubscriptionAccessDuoPlan } from '@proton/payments/core/subscription/helpers';
@@ -99,7 +100,7 @@ const AccountLockedUpsellModal = ({ onSubscribed, ...rest }: AccountLockedUpsell
     const [user] = useUser();
     const [paymentStatus] = usePaymentStatus();
     const [subscription] = useSubscription();
-    const { getPreferredCurrency } = useCurrencies();
+    const multiSubscriptionContext = useMultiSubscriptionContext();
 
     const upsellRef = getUpsellRef({
         app: APP_UPSELL_REF_PATH.MAIL_UPSELL_REF_PATH,
@@ -117,14 +118,14 @@ const AccountLockedUpsellModal = ({ onSubscribed, ...rest }: AccountLockedUpsell
     });
 
     const handleUpgrade = () => {
-        upsellConfig.onUpgrade?.();
+        void upsellConfig.onUpgrade?.();
     };
 
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
     const currency = getPreferredCurrency({
         user,
         paymentStatus,
-        subscription,
+        multiSubscriptionContext,
         plans: plansResult?.plans,
     });
     const plansMap = getPlansMap(plansResult?.plans ?? [], currency);

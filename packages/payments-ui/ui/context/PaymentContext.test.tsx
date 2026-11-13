@@ -4,16 +4,24 @@ import { getModelState } from '@proton/account/testing/getModelState';
 import { getStoreWrapper } from '@proton/payments-hooks/testing/renderWithProviders';
 import { type PaymentsContextType, usePayments } from '@proton/payments-hooks/ui/context/paymentsContext';
 import { CYCLE, PLANS } from '@proton/payments/core/constants';
+import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
 import type { PaymentsApi } from '@proton/payments/core/interface';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { GUARD_ERROR_CODES, type GuardError } from '@proton/payments/core/subscription/guard';
-import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { multiSubscriptionTestCatalog } from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
+import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { PaymentsContextProvider } from './PaymentContext';
 
 const checkSubscription = jest.fn();
+
+jest.mock('@proton/unleash/useFlag', () => ({
+    useFlag: jest.fn().mockReturnValue(false),
+}));
 
 jest.mock('@proton/payments-hooks/react-extensions/usePaymentsApi', () => {
     const paymentsApi = {
@@ -73,12 +81,26 @@ const driveYearly = { planIDs: { [PLANS.DRIVE]: 1 }, cycle: CYCLE.YEARLY, curren
 const vpnYearly = { planIDs: { [PLANS.VPN2024]: 1 }, cycle: CYCLE.YEARLY, currency: 'CHF' as const };
 const vpnTwoYears = { ...vpnYearly, cycle: CYCLE.TWO_YEARS };
 
-const currentSubscriptionState = {
-    ...getModelState(buildSubscription({ planName: PLANS.DRIVE, cycle: CYCLE.YEARLY, currency: 'CHF' })),
+const getSubscriptionState = (subscription: Subscription) => ({
+    ...getModelState(subscription),
     meta: { fetchedAt: 0, fetchedEphemeral: undefined, type: 1 },
-};
+});
 
-const renderContext = ({ withGuards }: { withGuards?: boolean } = {}) => {
+const currentSubscriptionState = getSubscriptionState(
+    buildSubscription({ planName: PLANS.DRIVE, cycle: CYCLE.YEARLY, currency: 'CHF' })
+);
+
+const renderContext = ({
+    withGuards,
+    subscriptionState = currentSubscriptionState,
+    plans = getLongTestPlans('CHF'),
+    entitlementCatalog,
+}: {
+    withGuards?: boolean;
+    subscriptionState?: ReturnType<typeof getSubscriptionState>;
+    plans?: Plan[];
+    entitlementCatalog?: EntitlementCatalog;
+} = {}) => {
     const contextRef: { current: PaymentsContextType | undefined } = { current: undefined };
 
     const Probe = () => {
@@ -88,8 +110,9 @@ const renderContext = ({ withGuards }: { withGuards?: boolean } = {}) => {
 
     const { Wrapper } = getStoreWrapper({
         preloadedState: {
-            plans: getModelState({ plans: getLongTestPlans('CHF'), freePlan: FREE_PLAN }),
-            subscription: currentSubscriptionState,
+            plans: getModelState({ plans, freePlan: FREE_PLAN }),
+            subscription: subscriptionState,
+            ...(entitlementCatalog && { entitlementCatalog: getModelState(entitlementCatalog) }),
         },
     });
 
@@ -380,5 +403,47 @@ describe('PaymentsContext subscription guards', () => {
 
         expect(sentData()[2]).toMatchObject({ ValidateGuards: true });
         expect(getContext().checkResult.GuardResult).toEqual([guardError]);
+    });
+});
+
+describe('PaymentsContext currency for the selection', () => {
+    const webMailPlusInUsdState = getSubscriptionState(
+        buildSubscription({ planName: PLANS.MAIL, cycle: CYCLE.YEARLY, currency: 'USD' })
+    );
+    const lumoMonthlyInChf = { planIDs: { [PLANS.LUMO]: 1 }, cycle: CYCLE.MONTHLY, currency: 'CHF' as const };
+
+    const renderWithWebMailPlusInUsd = () =>
+        renderContext({
+            subscriptionState: webMailPlusInUsdState,
+            plans: [...getLongTestPlans('CHF'), ...getLongTestPlans('USD')],
+            entitlementCatalog: multiSubscriptionTestCatalog,
+        });
+
+    beforeEach(() => {
+        jest.clearAllMocks();
+        checkSubscription.mockImplementation((data, { signal } = {}) =>
+            respondWith(signal, Promise.resolve(buildCheckResult({ Currency: data.Currency })))
+        );
+    });
+
+    afterEach(() => {
+        jest.mocked(useFlag).mockReturnValue(false);
+    });
+
+    it('checks Lumo added next to web Mail Plus in the Mail Plus currency', async () => {
+        jest.mocked(useFlag).mockImplementation((flag) => flag === 'LumoMultiSubscriptions');
+        const { select } = renderWithWebMailPlusInUsd();
+
+        await select(lumoMonthlyInChf);
+
+        expect(sentData()[0]).toEqual(expect.objectContaining({ Plans: { [PLANS.LUMO]: 1 }, Currency: 'USD' }));
+    });
+
+    it('checks in the requested currency with the flag off', async () => {
+        const { select } = renderWithWebMailPlusInUsd();
+
+        await select(lumoMonthlyInChf);
+
+        expect(sentData()[0]).toEqual(expect.objectContaining({ Plans: { [PLANS.LUMO]: 1 }, Currency: 'CHF' }));
     });
 });

@@ -21,14 +21,13 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useHandler } from '@proton/hooks/useHandler';
 import useLoading from '@proton/hooks/useLoading';
 import metrics from '@proton/metrics/metricsInstance';
-import { useCurrencies } from '@proton/payments-hooks/client-extensions/useCurrencies';
 import { usePaymentsApi } from '@proton/payments-hooks/react-extensions/usePaymentsApi';
 import { useCouponConfig } from '@proton/payments-ui/ui/coupon-config/useCouponConfig';
 import { createCheckoutView } from '@proton/payments-ui/ui/headless-checkout/checkout-view';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { getCheckoutUi, getOptimisticCheckResult, getOptimisticCheckout } from '@proton/payments/core/checkout';
 import { COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
-import { getFallbackCurrency, isRegionalCurrency } from '@proton/payments/core/currencies';
+import { getAvailableCurrencies, getFallbackCurrency, isRegionalCurrency } from '@proton/payments/core/currencies';
 import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
 import type {
     AvailablePaymentMethod,
@@ -41,6 +40,7 @@ import { switchPlan } from '@proton/payments/core/planIDs';
 import { FREE_PLAN } from '@proton/payments/core/subscription/freePlans';
 import { isSubscriptionCheckForbidden } from '@proton/payments/core/subscription/helpers';
 import type { FullPlansMap, Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
+import { noSubscriptionContext } from '@proton/payments/core/subscription/multi-subscription-context';
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type {
@@ -91,13 +91,7 @@ import { ProvisioningDetails } from './ProvisioningDetails';
 import RightSummary from './RightSummary';
 import { useSignupV2Theme } from './SignupV2ThemeProvider';
 import { Step1OfferBanner } from './components/Step1OfferBanner';
-import {
-    getAccessiblePlans,
-    getFreeSubscriptionData,
-    getSubscriptionMapping,
-    getUpdatedPlanIDs,
-    noSubscriptionContext,
-} from './helper';
+import { getAccessiblePlans, getFreeSubscriptionData, getSubscriptionMapping, getUpdatedPlanIDs } from './helper';
 import {
     type Measure,
     type OnOpenLogin,
@@ -233,7 +227,6 @@ const Step1 = ({
     const accountDetailsRef = useRef<AccountStepDetailsRef>();
     const accountStepPaymentRef = useRef<AccountStepPaymentRef>();
     const signupV2Theme = useSignupV2Theme();
-    const { getAvailableCurrencies } = useCurrencies();
     const [changingCurrency, withChangingCurrency] = useLoading();
 
     const { viewportWidth } = useActiveBreakpoint();
@@ -273,7 +266,7 @@ const Step1 = ({
         paymentStatus: model.paymentStatus,
         plans: getAccessiblePlans({ planCards, audience, plans: model.plans }),
         user: model.session?.resumedSessionResult.User,
-        subscription: model.session?.subscription,
+        multiSubscriptionContext: model.session?.multiSubscriptionContext ?? noSubscriptionContext,
         paramCurrency: signupParameters.currency,
         selectedPlanName: selectedPlan.Name,
     });

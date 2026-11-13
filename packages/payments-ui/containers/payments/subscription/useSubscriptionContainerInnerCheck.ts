@@ -11,7 +11,13 @@ import { ProrationMode } from '@proton/payments/core/api/api';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
-import type { FreeSubscription, PaymentsApi, PlainPaymentMethodType } from '@proton/payments/core/interface';
+import type {
+    Currency,
+    FreeSubscription,
+    PaymentsApi,
+    PlainPaymentMethodType,
+    PlanIDs,
+} from '@proton/payments/core/interface';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
 import { getIsPlanTransitionForbidden } from '@proton/payments/core/subscription/forbidden-plan-transition';
 import { getFreeCheckResult } from '@proton/payments/core/subscription/freePlans';
@@ -47,7 +53,8 @@ interface NormalizeModelProps {
     skipPlanTransitionChecks: boolean;
     multiSubscriptionContext: MultiSubscriptionContext;
     subscription: Subscription | FreeSubscription;
-    plansMap: FullPlansMap;
+    plansMapRef: { current: FullPlansMap };
+    fitCurrencyToSelection: (planIDs: PlanIDs, currency: Currency) => Currency;
     currentStep: SUBSCRIPTION_STEPS;
     callbacks: PlanTransitionCallbacks;
 }
@@ -69,6 +76,7 @@ export interface UseSubscriptionContainerInnerCheckProps {
         setCheckResult: (result: SubscriptionEstimation) => void;
         setModel: (model: Model) => void;
         setVatReverseChargeErrorModal: (open: boolean) => void;
+        fitCurrencyToSelection: (planIDs: PlanIDs, currency: Currency) => Currency;
     };
     callbacks: {
         runAdditionalEstimations: (
@@ -98,7 +106,7 @@ async function normalizeModel(newModel: Model, props: NormalizeModelProps): Prom
         const latestSubscription = props.subscription.UpcomingSubscription ?? props.subscription;
         const planTransitionForbidden = getIsPlanTransitionForbidden({
             subscription: props.subscription,
-            plansMap: props.plansMap,
+            plansMap: props.plansMapRef.current,
             planIDs: newModel.planIDs,
             multiSubscriptionContext: props.multiSubscriptionContext,
         });
@@ -113,13 +121,15 @@ async function normalizeModel(newModel: Model, props: NormalizeModelProps): Prom
                 selectedPlanIDs: newModel.planIDs,
                 currency: newModel.currency,
                 subscription: props.subscription,
-                plansMap: props.plansMap,
+                plansMap: props.plansMapRef.current,
             });
         }
 
         if (planTransitionForbidden?.type === 'plus-to-plus') {
             props.callbacks.onPlusToPlusTransition(
-                planTransitionForbidden.newPlanName ? props.plansMap[planTransitionForbidden.newPlanName] : undefined
+                planTransitionForbidden.newPlanName
+                    ? props.plansMapRef.current[planTransitionForbidden.newPlanName]
+                    : undefined
             );
             newModel.planIDs = getPlanIDs(latestSubscription);
             newModel.cycle = switchCycle({
@@ -127,7 +137,7 @@ async function normalizeModel(newModel: Model, props: NormalizeModelProps): Prom
                 selectedPlanIDs: newModel.planIDs,
                 currency: newModel.currency,
                 subscription: props.subscription,
-                plansMap: props.plansMap,
+                plansMap: props.plansMapRef.current,
             });
             newModel.step = props.currentStep;
         }
@@ -143,10 +153,12 @@ async function normalizeModel(newModel: Model, props: NormalizeModelProps): Prom
         }
     }
 
+    newModel.currency = props.fitCurrencyToSelection(newModel.planIDs, newModel.currency);
+
     newModel.planIDs =
         forceAddonsMinMaxConstraints({
             selectedPlanIDs: newModel.planIDs,
-            plansMap: props.plansMap,
+            plansMap: props.plansMapRef.current,
             currency: newModel.currency,
             subscription: props.subscription,
         }) ?? newModel.planIDs;
@@ -204,7 +216,8 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
             skipPlanTransitionChecks: props.skipPlanTransitionChecks,
             multiSubscriptionContext: props.multiSubscriptionContext,
             subscription: props.subscription,
-            plansMap: props.refs.plansMapRef.current,
+            plansMapRef: props.refs.plansMapRef,
+            fitCurrencyToSelection: props.setters.fitCurrencyToSelection,
             currentStep: props.model.step,
             callbacks: props.callbacks,
         });

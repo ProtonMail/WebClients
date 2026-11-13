@@ -15,6 +15,10 @@ import type { SubscriptionEstimation } from '@proton/payments/core/subscription/
 import { getPlansMap } from '@proton/payments/core/subscription/plans-map-wrapper';
 import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 import { buildEntitlementCatalog } from '@proton/payments/testing/buildEntitlementCatalog';
+import {
+    buildLumoSubscription,
+    multiSubscriptionTestCatalog,
+} from '@proton/payments/testing/buildMultiSubscriptionContext';
 import { buildSubscription } from '@proton/payments/testing/buildSubscription';
 import { getLongTestPlans } from '@proton/payments/testing/data-plans';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -216,6 +220,43 @@ describe('SubscriptionContainer', () => {
         // Should NOT have changed to "Confirm" or "Pay"
         expect(screen.queryByText('Confirm')).not.toBeInTheDocument();
         expect(screen.queryByText(/Pay .* now/)).not.toBeInTheDocument();
+    });
+
+    it('keeps the web Lumo currency for Mail Plus, also back on plan selection', async () => {
+        jest.spyOn(require('@proton/unleash/useFlag'), 'useFlag').mockImplementation(
+            (flag) => flag === 'LumoMultiSubscriptions'
+        );
+        mockCheckResult();
+        props.step = SUBSCRIPTION_STEPS.CHECKOUT;
+        props.planIDs = { [PLANS.MAIL]: 1 };
+        props.currency = 'EUR';
+        props.subscription = buildLumoSubscription(PLANS.LUMO, { Currency: 'USD' });
+        props.entitlementCatalog = multiSubscriptionTestCatalog;
+
+        renderWithProviders(<ContextSubscriptionContainer {...props} />);
+        await waitUntilChecked();
+
+        await waitFor(() => {
+            expect(apiMock).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    url: 'payments/v5/subscription/check',
+                    data: expect.objectContaining({ Currency: 'USD' }),
+                })
+            );
+        });
+        await waitFor(() => {
+            expect(screen.getByTestId('currency-selector')).toHaveTextContent('USD');
+        });
+        expect(screen.getByTestId('currency-selector')).toBeDisabled();
+
+        fireEvent.click(screen.getByText('Back'));
+
+        await waitFor(() => {
+            expect(screen.getByText('Select a plan')).toBeInTheDocument();
+        });
+        for (const currencySelector of screen.getAllByTestId('currency-selector')) {
+            expect(currencySelector).toHaveTextContent('USD');
+        }
     });
 });
 

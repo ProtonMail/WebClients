@@ -2,7 +2,7 @@ import type { EntitlementCatalog } from '../entitlements/interface';
 import { type ProductFlag, productFlags } from '../entitlements/product-flags';
 import { createEntitlementResolverForSelection } from '../entitlements/resolver';
 import type { PlanIDs } from '../interface';
-import { isManagedExternally } from './helpers/external-management';
+import { getWebSubscriptions, isManagedExternally } from './helpers/external-management';
 import type { Subscription } from './interface';
 import { canRunAlongside } from './lumo-purchase-rules';
 import type { MultiSubscriptionContext } from './multi-subscription-context';
@@ -30,7 +30,7 @@ const sharesAProduct = (
 };
 
 const getOnlyWebSubscription = (subscriptions: Subscription[]): Subscription | undefined => {
-    const webSubscriptions = subscriptions.filter((subscription) => !isManagedExternally(subscription));
+    const webSubscriptions = getWebSubscriptions(subscriptions);
     return webSubscriptions.length === 1 ? webSubscriptions[0] : undefined;
 };
 

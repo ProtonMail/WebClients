@@ -770,20 +770,6 @@ export function shouldHaveUpcomingSubscription(subscription: Subscription | Free
     return (subscription.RenewCycle ?? subscription.Cycle) !== subscription.Cycle;
 }
 
-export const getBundleProPlanToUse = ({ plansMap, planIDs }: { plansMap: PlansMap; planIDs: PlanIDs | undefined }) => {
-    // If the user is on the bundlepro2022 plan, we keep showing that
-    if (planIDs?.[PLANS.BUNDLE_PRO]) {
-        return PLANS.BUNDLE_PRO;
-    }
-    if (plansMap[PLANS.BUNDLE_PRO_2024]) {
-        return PLANS.BUNDLE_PRO_2024;
-    }
-    if (plansMap[PLANS.BUNDLE_PRO]) {
-        return PLANS.BUNDLE_PRO;
-    }
-    return PLANS.BUNDLE_PRO_2024;
-};
-
 export const getIsVPNPassPromotion = (coupon: string | undefined, currency: Currency | undefined) => {
     return VPN_PASS_PROMOTION_COUPONS.includes(coupon as any) && (!currency || !isRegionalCurrency(currency));
 };
