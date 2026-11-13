@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom'
+import * as Ariakit from '@ariakit/react'
 import { RecentDocumentsItem } from '../../../recentDocumentsItem'
 import { ServerTime } from '../../../utils/serverTime'
 import { render, screen } from '@testing-library/react'
@@ -30,7 +31,13 @@ function renderWithActions(node: ReactNode, actions: Partial<DocumentActionsCont
     deletePermanently: jest.fn(),
     ...actions,
   } as unknown as DocumentActionsContextValue
-  render(<DocumentActionsContext.Provider value={value}>{node}</DocumentActionsContext.Provider>)
+  render(
+    <DocumentActionsContext.Provider value={value}>
+      <Ariakit.MenuProvider open>
+        <Ariakit.MenuList>{node}</Ariakit.MenuList>
+      </Ariakit.MenuProvider>
+    </DocumentActionsContext.Provider>,
+  )
 }
 
 function deferred() {
@@ -60,14 +67,14 @@ describe.each([
     const run = jest.fn().mockReturnValue(running.promise)
     renderWithActions(button, { [action]: run })
 
-    await userEvent.click(screen.getByRole('button', { name: label }))
+    await userEvent.click(screen.getByRole('menuitem', { name: label }))
 
     expect(run).toHaveBeenCalledWith(recentDocument)
-    expect(screen.getByRole('button', { name: loadingLabel })).toBeDisabled()
+    expect(screen.getByRole('menuitem', { name: loadingLabel })).toBeDisabled()
 
     running.resolve()
 
-    expect(await screen.findByRole('button', { name: label })).toBeEnabled()
+    expect(await screen.findByRole('menuitem', { name: label })).toBeEnabled()
   })
 })
 
@@ -79,7 +86,7 @@ describe('DeletePermanentlyButton', () => {
       deletePermanently,
     })
 
-    await userEvent.click(screen.getByRole('button', { name: 'Delete permanently' }))
+    await userEvent.click(screen.getByRole('menuitem', { name: 'Delete permanently' }))
 
     expect(close).toHaveBeenCalledTimes(1)
     expect(deletePermanently).toHaveBeenCalledWith(recentDocument)

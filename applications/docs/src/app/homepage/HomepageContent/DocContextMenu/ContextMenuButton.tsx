@@ -1,34 +1,27 @@
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
-import type { ComponentPropsWithoutRef, PropsWithChildren, ReactElement } from 'react'
+import type { ReactElement } from 'react'
 
-import { clsx } from '../../utils/clsx'
+import { DropdownMenuItem } from '../menu'
 
-export interface ContextMenuButtonProps extends ComponentPropsWithoutRef<'button'> {
+export interface ContextMenuButtonProps {
   name: string
   icon: ReactElement<any>
   action: () => void
   close: () => void
+  disabled?: boolean
 }
 
-export function ContextMenuButton({
-  name,
-  icon,
-  action,
-  close,
-  children,
-  ...props
-}: PropsWithChildren<ContextMenuButtonProps>) {
+export function ContextMenuButton({ name, icon, action, close, disabled }: ContextMenuButtonProps) {
   return (
-    <DropdownMenuButton
-      key={name}
+    <DropdownMenuItem
+      // Ariakit renders the item's children, its label, inside the button.
+      // eslint-disable-next-line jsx-a11y/control-has-associated-label
+      render={<button type="button" />}
+      disabled={disabled}
+      // The item closes the menu through `close`, which "Move to trash" leaves empty to show "Trashing...".
+      hideOnClick={false}
       onContextMenu={(e) => e.stopPropagation()}
-      {...props}
-      className={clsx('justify-space-between flex flex-nowrap items-center', props.className)}
       onClick={(e) => {
-        props.onClick?.(e)
-        if (e.defaultPrevented) {
-          return
-        }
+        // Proton's dropdown closes on any other click inside it.
         e.stopPropagation()
         action()
         close()
@@ -38,7 +31,6 @@ export function ContextMenuButton({
         {icon}
         {name}
       </div>
-      {children}
-    </DropdownMenuButton>
+    </DropdownMenuItem>
   )
 }

@@ -359,6 +359,82 @@ describe('HomepageContent', () => {
     expect(mockOpen).toHaveBeenCalledWith(expect.objectContaining(MOCK_DATA[0]))
   })
 
+  describe('row menu', () => {
+    // JSDOM has no layout; Ariakit checks visibility before it moves focus.
+    beforeEach(() => jest.spyOn(HTMLElement.prototype, 'offsetWidth', 'get').mockReturnValue(1))
+    afterEach(() => jest.restoreAllMocks())
+
+    const openMenuWithActions = async () => {
+      const actions = (await screen.findAllByRole('button', { name: /Actions/ }))[0]
+      act(() => actions.focus())
+      await userEvent.keyboard('{Enter}')
+      return { actions, menu: await screen.findByRole('menu') }
+    }
+
+    test('is a menu of menu items in groups, and takes focus', async () => {
+      renderWithProviders(<HomepageContent />)
+      const { menu } = await openMenuWithActions()
+
+      const items = within(menu).getAllByRole('menuitem')
+      expect(items.map((item) => item.textContent)).toEqual([
+        'Open',
+        'Share',
+        'Move',
+        'Open folder',
+        'Rename',
+        'Move to trash',
+      ])
+      expect(within(menu).getAllByRole('separator')).toHaveLength(2)
+      await waitFor(() => expect(menu).toHaveFocus())
+    })
+
+    test('opens below the Actions button when a key presses it', async () => {
+      renderWithProviders(<HomepageContent />)
+      const actions = (await screen.findAllByRole('button', { name: /Actions/ }))[0]
+      jest.spyOn(actions, 'getBoundingClientRect').mockReturnValue(new DOMRect(500, 200, 32, 32))
+      // The viewport the menu is placed in, which JSDOM leaves empty.
+      jest.spyOn(document.documentElement, 'clientWidth', 'get').mockReturnValue(1024)
+      jest.spyOn(document.documentElement, 'clientHeight', 'get').mockReturnValue(768)
+
+      const { menu } = await openMenuWithActions()
+
+      await waitFor(() => expect(menu.parentElement).toHaveStyle({ transform: 'translate3d(500px,233px,0)' }))
+    })
+
+    test('Escape closes it and gives focus back to the Actions button', async () => {
+      renderWithProviders(<HomepageContent />)
+      const { actions } = await openMenuWithActions()
+
+      await userEvent.keyboard('{Escape}')
+
+      await waitFor(() => expect(screen.queryByRole('menu')).toBeNull())
+      await waitFor(() => expect(actions).toHaveFocus())
+    })
+
+    test('a click outside its items, or another right-click, closes it', async () => {
+      renderWithProviders(<HomepageContent />)
+      const first = await openMenuWithActions()
+      await userEvent.click(within(first.menu).getAllByRole('separator')[0])
+      await waitFor(() => expect(screen.queryByRole('menu')).toBeNull())
+
+      const second = await openMenuWithActions()
+      fireEvent.contextMenu(second.menu)
+      await waitFor(() => expect(screen.queryByRole('menu')).toBeNull())
+    })
+
+    test('Move to trash stays open, disabled as "Trashing...", while it trashes', async () => {
+      const { mockTrash } = renderWithProviders(<HomepageContent />)
+      mockTrash.mockReturnValue(new Promise(() => {}))
+      const { menu } = await openMenuWithActions()
+
+      await userEvent.click(within(menu).getByRole('menuitem', { name: 'Move to trash' }))
+
+      expect(mockTrash).toHaveBeenCalledWith(expect.objectContaining(MOCK_DATA[0]))
+      expect(within(menu).getByRole('menuitem', { name: 'Trashing...' })).toBeDisabled()
+      expect(screen.getByRole('menu')).toBe(menu)
+    })
+  })
+
   describe('bulk selection', () => {
     beforeEach(() => {
       bulkTrashEnabled = true
@@ -470,6 +546,18 @@ describe('HomepageContent', () => {
       await selectAll()
       await userEvent.keyboard('{Escape}')
       expect(screen.queryByTestId('bulk-selected-count')).toBeNull()
+    })
+
+    test('clicking the row its menu was opened on closes the menu', async () => {
+      renderWithProviders(<HomepageContent />)
+      const row = await findRow('Document1')
+      await userEvent.click(row)
+      fireEvent.contextMenu(row)
+      await screen.findByRole('menu')
+
+      await userEvent.click(row)
+
+      await waitFor(() => expect(screen.queryByRole('menu')).toBeNull())
     })
 
     test('clicking empty space clears the selection', async () => {
@@ -791,10 +879,8 @@ describe('HomepageContent', () => {
 
       describe('row menu with several documents selected', () => {
         const openMenu = async (name: string) => fireEvent.contextMenu(await findRow(name))
-        const findMenuItemNames = async () => {
-          await screen.findByText('Move to trash')
-          return [...document.querySelectorAll('.dropdown-item-button')].map((button) => button.textContent)
-        }
+        const findMenuItems = async () => within(await screen.findByRole('menu')).getAllByRole('menuitem')
+        const findMenuItemNames = async () => (await findMenuItems()).map((item) => item.textContent)
         const DOCUMENT_MENU = ['Open', 'Share', 'Move', 'Open folder', 'Rename', 'Move to trash']
 
         test('offers only Move and Move to trash, for the whole selection', async () => {
@@ -838,8 +924,9 @@ describe('HomepageContent', () => {
           mockIsTrashing = true
           await openMenu('Document1')
 
-          expect(await findMenuItemNames()).toEqual(['Move', 'Move to trash'])
-          document.querySelectorAll('.dropdown-item-button').forEach((button) => expect(button).toBeDisabled())
+          const items = await findMenuItems()
+          expect(items.map((item) => item.textContent)).toEqual(['Move', 'Move to trash'])
+          items.forEach((item) => expect(item).toBeDisabled())
         })
 
         test('offers only Move to trash when the selection includes a document shared with the user', async () => {

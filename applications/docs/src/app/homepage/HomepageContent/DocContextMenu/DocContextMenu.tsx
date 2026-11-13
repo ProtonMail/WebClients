@@ -1,12 +1,10 @@
-import ContextMenu from '@proton/components/components/contextMenu/ContextMenu'
-import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator'
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils'
-import type { ReactNode } from 'react'
-import { useEffect } from 'react'
+import * as Ariakit from '@ariakit/react'
+import type { ReactNode, RefObject } from 'react'
+import { useEffect, useRef } from 'react'
 
 import { OpenButton } from './buttons/OpenButton'
 import type { RecentDocumentsItem } from '../../recentDocumentsItem'
-import type { ContextMenuProps } from '@proton/components/components/contextMenu/ContextMenu'
+import { DropdownMenu, DropdownMenuSeparator } from '../menu'
 import { OpenFolderButton } from './buttons/OpenFolderButton'
 import { ShareButton } from './buttons/ShareButton'
 import { MoveToTrashButton } from './buttons/MoveToTrashButton'
@@ -22,21 +20,24 @@ import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross'
 import { IcTrash } from '@proton/icons/icons/IcTrash'
 import { c } from 'ttag'
 import { ContextMenuButton } from './ContextMenuButton'
+import type { MenuPosition } from './context'
 
 type SelectionActions = { move?: () => void; trash: () => void; disabled: boolean }
 
-export type DocContextMenuProps = Omit<ContextMenuProps, 'children'> & {
+export type DocContextMenuProps = {
+  isOpen: boolean
+  /** Where the menu opens: the pointer, or the "Actions" button when a key pressed it. */
+  position: MenuPosition | undefined
+  close: () => void
   currentDocument: RecentDocumentsItem | undefined
   /** Replaces the document's actions when the menu acts on the whole selection. */
   selectionActions?: SelectionActions
-  // NOTE: copied from packages/drive-store/components/sections/ContextMenu/ItemContextMenu.tsx
-  // Unsure why it's necessary if the base ContextMenu doesn't take this prop. Its purpose may
-  // be related to the effect below.
+  // NOTE: copied from packages/drive-store/components/sections/ContextMenu/ItemContextMenu.tsx, for the
+  // effect below that reopens the menu at a new position.
   open: () => void
 }
 
 export function DocContextMenu({
-  anchorRef,
   isOpen,
   position,
   open,
@@ -58,11 +59,33 @@ export function DocContextMenu({
   })
   const top = position?.top
   const left = position?.left
+  const width = position?.width
+  const height = position?.height
+  // Kept while the menu fades out, after `close` has cleared `position`.
+  const anchorRect = useRef({ x: 0, y: 0, width: 0, height: 0 })
+  // Proton's dropdown gives focus back to what had it when it opened, unless a pointer closed it.
+  const focusBeforeOpen = useRef<HTMLElement | null>(null)
+  // Proton's dropdown focuses itself on open. Ariakit only focuses a menu on its own when a `MenuButton` opened it.
+  const menuRef = useRef<HTMLDivElement>(null)
+  const closedByPointer = useCloseLikeProtonContextMenu(isOpen, close, menuRef)
   useEffect(() => {
     if (top !== undefined && left !== undefined) {
+      anchorRect.current = { x: left, y: top, width: width ?? 0, height: height ?? 0 }
+      focusBeforeOpen.current = document.activeElement instanceof HTMLElement ? document.activeElement : null
       reopen()
     }
-  }, [top, left, reopen])
+  }, [top, left, width, height, reopen])
+
+  const menu = Ariakit.useMenuStore({
+    open: isOpen,
+    setOpen: (nextOpen) => {
+      if (!nextOpen) {
+        close()
+      }
+    },
+    placement: 'bottom-start',
+    focusLoop: true,
+  })
 
   const {
     updateRecentDocuments,
@@ -107,24 +130,30 @@ export function DocContextMenu({
   }
 
   return (
-    <>
-      <ContextMenu
-        isOpen={isOpen}
-        close={close}
-        position={position}
-        size={{ maxHeight: DropdownSizeUnit.Viewport, maxWidth: DropdownSizeUnit.Viewport }}
-        anchorRef={anchorRef}
+    <Ariakit.MenuProvider store={menu}>
+      <DropdownMenu
+        ref={menuRef}
+        initialFocus={menuRef}
+        gutter={1}
+        // Proton's corner placements, in its popper's fallback order from `bottom-start`.
+        flip="bottom-end top-start top-end right-start right-end left-end left-start"
+        getAnchorRect={() => anchorRect.current}
+        finalFocus={focusBeforeOpen}
+        autoFocusOnHide={() => !closedByPointer.current}
+        onContextMenu={(e) => e.stopPropagation()}
+        // Proton's dropdown closes on a click its items don't stop, such as on a separator.
+        onClick={close}
       >
         {menuItems}
-      </ContextMenu>
-    </>
+      </DropdownMenu>
+    </Ariakit.MenuProvider>
   )
 }
 
 type DocumentMenuItemsProps = { currentDocument: RecentDocumentsItem; close: () => void }
 
 function DocumentMenuItems({ currentDocument, close }: DocumentMenuItemsProps) {
-  const separator = <ContextSeparator className="my-1" />
+  const separator = <DropdownMenuSeparator />
 
   return (
     <>
@@ -167,7 +196,7 @@ function SelectionMenuItems({ actions: { move, trash, disabled }, close }: Selec
             close={close}
             disabled={disabled}
           />
-          <ContextSeparator className="my-1" />
+          <DropdownMenuSeparator />
         </>
       ) : null}
       <ContextMenuButton
@@ -192,4 +221,37 @@ export function canTrash(document: RecentDocumentsItem) {
 // `MemberRole` is imported as type only, so the Drive SDK isn't loaded at runtime.
 function isAdmin(role: `${MemberRole}` | undefined) {
   return role === 'admin'
+}
+
+/**
+ * As Proton's `ContextMenu` (packages/components/components/contextMenu/ContextMenu.tsx) and its dropdown: any
+ * right-click and any click outside the menu close it, and the dropdown's focus trap tells whether a pointer or a key
+ * came last. Ariakit's own outside check skips the element focused when the menu opened, such as the row.
+ */
+function useCloseLikeProtonContextMenu(isOpen: boolean, close: () => void, menuRef: RefObject<HTMLElement>) {
+  const closedByPointer = useRef(false)
+  useEffect(() => {
+    if (!isOpen) {
+      return
+    }
+    closedByPointer.current = false
+    const closeOnClickOutside = ({ target }: MouseEvent) => {
+      if (!(target instanceof Node && menuRef.current?.contains(target))) {
+        close()
+      }
+    }
+    const onMouseUp = () => (closedByPointer.current = true)
+    const onKeyDown = () => (closedByPointer.current = false)
+    document.addEventListener('contextmenu', close, true)
+    document.addEventListener('click', closeOnClickOutside, true)
+    document.addEventListener('mouseup', onMouseUp, true)
+    document.addEventListener('keydown', onKeyDown, true)
+    return () => {
+      document.removeEventListener('contextmenu', close, true)
+      document.removeEventListener('click', closeOnClickOutside, true)
+      document.removeEventListener('mouseup', onMouseUp, true)
+      document.removeEventListener('keydown', onKeyDown, true)
+    }
+  }, [isOpen, close, menuRef])
+  return closedByPointer
 }
