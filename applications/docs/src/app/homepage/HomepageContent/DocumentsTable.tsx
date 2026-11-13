@@ -52,7 +52,6 @@ export type DocumentsTableProps = { itemsSections: ItemsSection[]; variant: Tabl
 
 export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) {
   const { type, state, myFilesRootUid, featureFlags } = useHomepageView()
-  const contextMenuAnchorRef = useRef<HTMLDivElement>(null)
   const contextMenu = useContextMenu()
   const isRecents = variant.startsWith('recents')
   const isSearch = variant === 'search'
@@ -177,7 +176,6 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
             ? { move: canBulkMove ? moveSelection : undefined, trash: trashSelection, disabled: isTrashing }
             : undefined
         }
-        anchorRef={contextMenuAnchorRef}
         close={contextMenu.close}
         isOpen={contextMenu.isOpen}
         open={contextMenu.open}

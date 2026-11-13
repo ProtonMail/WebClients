@@ -2,12 +2,15 @@ import type { RecentDocumentsItem } from '../../recentDocumentsItem'
 import type { ReactNode } from 'react'
 import { createContext, useCallback, useContext, useRef, useState } from 'react'
 
+/** Where the row menu opens: a point, or the rect of the element a key pressed. */
+export type MenuPosition = { top: number; left: number; width?: number; height?: number }
+
 // NOTE: taken from packages/drive-store/components/FileBrowser/hooks/useContextMenuControls.ts
 const DROPDOWN_ANIMATION_TIME = 200 // ms
 function useContextMenuControls() {
   const lastCloseTime = useRef<number>()
   const [isOpen, setIsOpen] = useState(false)
-  const [position, setPosition] = useState<{ top: number; left: number }>()
+  const [position, setPosition] = useState<MenuPosition>()
 
   // NOTE: this was copied verbatim - is it necessary here at all?
   const open = useCallback(() => {
@@ -32,6 +35,13 @@ function useContextMenuControls() {
     e.stopPropagation()
     e.preventDefault()
 
+    // A click from Enter or Space has no pointer, and its coordinates are 0: open from the button, as Proton's
+    // dropdown opens from its anchor.
+    if (e.type === 'click' && e.detail === 0) {
+      const { top, left, width, height } = e.currentTarget.getBoundingClientRect()
+      setPosition({ top, left, width, height })
+      return
+    }
     setPosition({ top: e.clientY, left: e.clientX })
   }
 
