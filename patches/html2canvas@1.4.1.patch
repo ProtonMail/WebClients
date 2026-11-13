@@ -1,0 +1,28 @@
+diff --git a/dist/html2canvas.esm.js b/dist/html2canvas.esm.js
+index dab56ad9b2319b51aea92c3f6cd8929ec8536e4a..bb96a29f5d8882649238e0eca58473cdd8bf1916 100644
+--- a/dist/html2canvas.esm.js
++++ b/dist/html2canvas.esm.js
+@@ -6874,7 +6874,8 @@ var CanvasRenderer = /** @class */ (function (_super) {
+                     case 13:
+                         canvas = _c.sent();
+                         if (container.width && container.height) {
+-                            this.ctx.drawImage(canvas, 0, 0, container.width, container.height, container.bounds.left, container.bounds.top, container.bounds.width, container.bounds.height);
++                            // The source rectangle uses bitmap pixels; CSS dimensions crop scaled iframe canvases.
++                            this.ctx.drawImage(canvas, 0, 0, canvas.width, canvas.height, container.bounds.left, container.bounds.top, container.bounds.width, container.bounds.height);
+                         }
+                         _c.label = 14;
+                     case 14:
+diff --git a/dist/html2canvas.js b/dist/html2canvas.js
+index 84cb30d701da7baf13f14107fb28b3ea42db49f6..ca977c7239fe998e5e21d69efd413f4b3703bb9b 100644
+--- a/dist/html2canvas.js
++++ b/dist/html2canvas.js
+@@ -6880,7 +6880,8 @@
+                         case 13:
+                             canvas = _c.sent();
+                             if (container.width && container.height) {
+-                                this.ctx.drawImage(canvas, 0, 0, container.width, container.height, container.bounds.left, container.bounds.top, container.bounds.width, container.bounds.height);
++                                // The source rectangle uses bitmap pixels; CSS dimensions crop scaled iframe canvases.
++                                this.ctx.drawImage(canvas, 0, 0, canvas.width, canvas.height, container.bounds.left, container.bounds.top, container.bounds.width, container.bounds.height);
+                             }
+                             _c.label = 14;
+                         case 14:

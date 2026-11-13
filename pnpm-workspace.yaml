@@ -104,6 +104,8 @@ catalog:
     happy-dom: ^21.0.4
     history: ^4.10.1
     html-webpack-plugin: ^5.6.8
+    # Keep Lumo and its export tests on the version targeted by the patch below.
+    html2canvas: 1.4.1
     idb: ^8.0.4
     jest: ^30.5.2
     jest-environment-jsdom: ^30.5.2
@@ -200,6 +202,11 @@ patchedDependencies:
     '@lexical/table@0.31.2': patches/@lexical__table@0.31.2.patch
     '@mlc-ai/web-llm@0.2.32': patches/@mlc-ai__web-llm@0.2.32.patch
     '@pdf-lib/standard-fonts@1.0.0': patches/@pdf-lib__standard-fonts@1.0.0.patch
+    # LUMO-988: copy the full scaled iframe bitmap instead of its top-left quarter.
+    # Reassess on upgrades: remove only when the unpatched replacement passes
+    # tests/lumo/iframe-capture.test.ts in Chromium and WebKit at scales 1 and 2;
+    # otherwise update the patch for the replacement version.
+    html2canvas@1.4.1: patches/html2canvas@1.4.1.patch
     # Preserve email autolinking without unsupported negative lookbehind on Safari <16.4.
     # https://github.com/syntax-tree/mdast-util-gfm-autolink-literal/issues/10
     mdast-util-gfm-autolink-literal@2.0.1: patches/mdast-util-gfm-autolink-literal@2.0.1.patch
