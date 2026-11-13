@@ -262,6 +262,7 @@ enum LumoFeatureFlag {
     LumoAnswerNow = 'LumoAnswerNow',
     LumoAnswerNowQuietThreshold = 'LumoAnswerNowQuietThreshold',
     LumoAnswerNowFallback = 'LumoAnswerNowFallback',
+    LumoDesktopExperimentalConnectors = 'LumoDesktopExperimentalConnectors',
     LumoDictationV2 = 'LumoDictationV2',
     LumoImageTools = 'LumoImageTools',
     LumoMaxAvailableFree = 'LumoMaxAvailableFree',
