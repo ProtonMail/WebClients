@@ -19418,9 +19418,6 @@ packages:
   bcp-47-match@2.0.3:
     resolution: {integrity: sha512-JtTezzbAibu8G0R9op9zb3vcWZd9JF6M0xOYGPn0fNCd7wOpRB1mU2mH9T8gaBGbAAyIIVgB2G7xG0GP98zMAQ==}
 
-  bcp-47@2.1.0:
-    resolution: {integrity: sha512-9IIS3UPrvIa1Ej+lVDdDwO7zLehjqsaByECw0bu2RRGP73jALm6FYbzI5gWbgHLvNdkvfXB5YrSbocZdOS0c0w==}
-
   bcp-47@2.1.2:
     resolution: {integrity: sha512-wsv86UuNFuPnVieKLyECTT+CP1WSAHeoIg5P3xu2kA9Z+7fVPoKt7dxzSeEhtJel0AI+NW3fIW3KtTKQKUCngg==}
 
@@ -27285,10 +27282,6 @@ packages:
     resolution: {integrity: sha512-nlLsUzgm1kfLXSXfRZMc1KLAugd4hqJHDTvc2hDIwS3mZAfMEuMbc03SujMF+GEcpaX/qboeycw6iO8JwVv2+g==}
     engines: {node: '>=0.8'}
 
-  tough-cookie@6.0.1:
-    resolution: {integrity: sha512-LktZQb3IeoUWB9lqR5EWTHgW/VTITCXg4D21M+lvybRVdylLrRMnqaIONLVb5mav8vM19m44HIcGq4qASeu2Qw==}
-    engines: {node: '>=16'}
-
   tough-cookie@6.1.0:
     resolution: {integrity: sha512-FTxc8u8Kl2tz0Lat1u8ksvcy8bwHRyEMawwTWybo51JqaC6O7SvfuhAKg+Ld6VqyIe2QRJBzY9HA7y2WyFRT2w==}
     engines: {node: '>=16'}
@@ -28869,7 +28862,7 @@ snapshots:
       '@types/mdast': 4.0.4
       astro: 7.4.7(@netlify/blobs@11.1.7(supports-color@11.0.0))(@types/node@24.19.2)(esbuild@0.28.2)(idb-keyval@6.3.0)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1)
       astro-expressive-code: 0.44.0(astro@7.4.7(@netlify/blobs@11.1.7(supports-color@11.0.0))(@types/node@24.19.2)(esbuild@0.28.2)(idb-keyval@6.3.0)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
-      bcp-47: 2.1.0
+      bcp-47: 2.1.2
       hast-util-format: 1.1.0
       hast-util-select: 6.0.4
       hast-util-to-html: 9.0.5
@@ -37608,12 +37601,6 @@ snapshots:
 
   bcp-47-match@2.0.3: {}
 
-  bcp-47@2.1.0:
-    dependencies:
-      is-alphabetical: 2.0.1
-      is-alphanumerical: 2.0.1
-      is-decimal: 2.0.1
-
   bcp-47@2.1.2:
     dependencies:
       is-alphabetical: 2.0.1
@@ -43711,7 +43698,7 @@ snapshots:
       rettime: 0.10.1
       statuses: 2.0.2
       strict-event-emitter: 0.5.1
-      tough-cookie: 6.0.1
+      tough-cookie: 6.1.0
       type-fest: 5.10.0
       until-async: 3.0.2
       yargs: 17.7.3
@@ -47314,10 +47301,6 @@ snapshots:
     dependencies:
       psl: 1.15.0
       punycode: 2.3.1
-
-  tough-cookie@6.0.1:
-    dependencies:
-      tldts: 7.4.19
 
   tough-cookie@6.1.0:
     dependencies:
