@@ -4534,6 +4534,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Ce navigateur ne prend pas en charge les clés de sécurité. Veuillez essayer un autre navigateur."
       ]
     },
     "fido2: Info": {
@@ -8811,7 +8814,7 @@
     },
     "ngc_access_banner: action": {
       "Try it now": [
-        "Essayez-la maintenant"
+        "Essayez-le maintenant"
       ]
     },
     "ngc_access_banner: info": {
@@ -12261,7 +12264,7 @@
         "Mise à niveau vers ${ planName }"
       ],
       "Upgrade to keep your premium benefits.": [
-        "Passez à la version supérieure pour conserver vos avantages premium."
+        "Changer d'abonnement pour conserver vos avantages premium."
       ],
       "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
         "Améliorez votre productivité pour ${ formattedPrice } avec ${ planName }"

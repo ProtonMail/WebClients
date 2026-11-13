@@ -4542,6 +4542,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Bei der Authentifizierung mit deinem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte versuche es erneut."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Dieser Browser unterstützt keine Sicherheitsschlüssel. Bitte versuchen Sie es mit einem anderen Browser."
       ]
     },
     "fido2: Info": {
@@ -7233,7 +7236,7 @@
         "Sekundäre Zeitzone"
       ],
       "Securely share parts of your schedule through a booking page you can send to anyone.": [
-        "Teile deines Zeitplans über eine Buchungsseite teilen, die du an jeden senden kannst."
+        "Teile Ausschnitte deines Zeitplans sicher über eine Buchungsseite, die du an jeden senden kannst."
       ],
       "Show others when I'm busy": [
         "Anderen zeigen, wann ich beschäftigt bin"

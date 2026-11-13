@@ -208,7 +208,7 @@
         "Confirmar"
       ],
       "Confirm booking": [
-        "Confirmar agendamento"
+        "Confirmar reserva"
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Confirmar a abertura da hiperligação ${ linkToShow }"
@@ -244,7 +244,7 @@
         "Copiar o endereço"
       ],
       "Copy booking page link": [
-        "Copiar ligação da página de agendamento"
+        "Copiar hiperligação da página de reserva"
       ],
       "Copy email address": [
         "Copiar o endereço de e-mail"
@@ -268,7 +268,7 @@
         "Criar"
       ],
       "Create a booking page": [
-        "Criar uma página de agendamento"
+        "Criar uma página de reserva"
       ],
       "Create a free account": [
         "Criar uma conta gratuita"
@@ -369,7 +369,7 @@
         "Editar o endereço da fatura"
       ],
       "Edit booking page": [
-        "Editar página de agendamento"
+        "Editar página de reserva"
       ],
       "Edit email address": [
         "Editar o endereço de e-mail"
@@ -3209,7 +3209,7 @@
         "A sua conta gratuita do ${ MAIL_APP_NAME } tem armazenamento limitado, pelo que apenas iremos importar os seus e-mails mais recentes do Gmail."
       ],
       "You’ll get a secure email with the details shortly.": [
-        "Irá receber em breve um e-mail seguro com os detalhes."
+        "Em breve, irá receber uma mensagem segura com os detalhes."
       ]
     },
     "description": {
@@ -3562,7 +3562,7 @@
         "Erro ao enviar o cancelamento"
       ],
       "Cannot create a booking with a disabled address": [
-        "Não é possível criar um agendamento com um endereço desativado"
+        "Não é possível criar uma reserva com um endereço desativado"
       ],
       "Cannot export this contact": [
         "Não é possível exportar este contacto"
@@ -5116,7 +5116,7 @@
         "1 cofre por utilizador"
       ],
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
-        "Garantia de reembolso em 30 dias: cancele até 30 dias depois da compra e contacte o nosso ${ customerSupportLink } para solicitar um reembolso."
+        "Garantia de reembolso do dinheiro em 30 dias: cancele até 30 dias da sua compra e contacte o nosso ${ customerSupportLink } para obter um reembolso."
       ],
       "A cancellation email will be sent to removed participants.": [
         "Será enviada uma mensagem de cancelamento aos participantes removidos."
@@ -5218,7 +5218,7 @@
         "Qualquer um com esta ligação pode ver no seu calendário se está livre ou não. Não podem ver os detalhes do evento, como título, localização ou participantes."
       ],
       "Appointment duration": [
-        "Duração do compromisso"
+        "Duração da consulta"
       ],
       "Are you sure you want to delete this booking page?": [
         "Tem a certeza de que deseja eliminar esta página de agendamento?"
@@ -5263,7 +5263,7 @@
         "Página de agendamento eliminada"
       ],
       "Booking page example": [
-        "Exemplo de página de agendamento"
+        "Exemplo de página de reserva"
       ],
       "Booking updated successfully": [
         "Agendamento atualizado com sucesso"
@@ -5592,7 +5592,7 @@
         "No passo seguinte, poderá efetuar um depósito utilizando um endereço Bitcoin."
       ],
       "In which calendar should bookings appear?": [
-        "Em que calendário devem aparecer os agendamentos?"
+        "Em que calendário deverão aparecer as reservas?"
       ],
       "Included": [
         "Incluído"
@@ -5676,7 +5676,7 @@
         "Prioridade baixa"
       ],
       "Manage booking page": [
-        "Gerir página de agendamento"
+        "Gerir página de reserva"
       ],
       "Manage your calendars": [
         "Gerir os seus calendários"
@@ -5721,7 +5721,7 @@
         "Nenhum compromisso disponível esta semana"
       ],
       "No calendar available; please delete the booking page.": [
-        "Nenhum calendário disponível; por favor elimine a página de agendamento."
+        "Nenhum calendário disponível; por favor, elimine a página de reserva."
       ],
       "No contacts added yet": [
         "Ainda não adicionou contactos"
@@ -5730,7 +5730,7 @@
         "Sem endereço de e-mail"
       ],
       "No future appointments available": [
-        "Nenhum compromisso futuro disponível"
+        "Não estão disponíveis consultas de futuro"
       ],
       "No group found": [
         "Nenhum grupo encontrado"
@@ -5875,7 +5875,7 @@
         "As modificações anteriores desta série serão perdidas."
       ],
       "Previously booked events won't be deleted.": [
-        "Os eventos agendados anteriormente não serão eliminados."
+        "Os eventos reservados anteriormente não serão eliminados."
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "O preço inclui todos os descontos aplicáveis com base no ciclo e cupões não expirados guardados na sua conta."
@@ -5951,7 +5951,7 @@
         "A configurar o seu novo endereço…"
       ],
       "Share this page to let others book time in your calendar. You can find and edit it in the sidebar under Booking pages.": [
-        "Partilhe esta página para permitir que outros marquem reuniões no seu calendário. Pode encontrá-la e editá-la na barra lateral sob Páginas de agendamento."
+        "Partilhe esta página para permitir que outros reservem tempo no seu calendário. Pode encontrá-la e editá-la na barra lateral em Páginas de \"Reserva\"."
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Alguns governos bloqueiam ou restringem o acesso a determinados sítios web. Uma VPN ajuda a contornar a censura, mantendo a sua atividade e identidade privadas."
@@ -6051,7 +6051,7 @@
         "Esta página de agendamento não pode ser editada, o calendário associado está desativado"
       ],
       "This booking was made via ${ CALENDAR_APP_NAME }, part of ${ BRAND_NAME }'s suite of privacy-first products.": [
-        "Este agendamento foi feito através do ${ CALENDAR_APP_NAME }, que faz parte da suite de produtos focados na privacidade da ${ BRAND_NAME }."
+        "Esta reserva foi efetuada através do ${ CALENDAR_APP_NAME }, parte do conjunto de produtos focados na privacidade da ${ BRAND_NAME }."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "Este evento foi atualizado pelo organizador. Deseja alterar a sua resposta só para esta ocorrência da série?"
@@ -6216,7 +6216,7 @@
         "As vistas semanal e mensal só se aplicam à área de trabalho."
       ],
       "What do you want to call this booking page?": [
-        "Como deseja chamar esta página de agendamento?"
+        "Como deseja chamar esta página de reserva?"
       ],
       "When can appointments be booked?": [
         "Quando podem ser marcados compromissos?"
@@ -6381,7 +6381,7 @@
         "Atingiu o número máximo de endereços no grupo de contacto."
       ],
       "You've reached the maximum number of booking pages available in your plan.": [
-        "Atingiu o número máximo de páginas de agendamento disponíveis no seu plano."
+        "Atingiu o número máximo de páginas de reserva disponíveis no seu plano."
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "A sua conta ${ BRAND_NAME } está atualmente suspensa. Após 28 dias, os e-mails deixarão de ser entregues na sua caixa de entrada, as ligações de partilha do Drive serão bloqueadas e não poderá carregar novos ficheiros. Para retomar o serviço normal, efetue o pagamento das faturas em atraso."
@@ -6484,7 +6484,7 @@
         "Ainda poderá ver os seus dados de conta, mas todas as contas de utilizador serão removidas da sua organização."
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
-        "Atingiu o limite de vagas de agendamento (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+        "Atingiu o limite de vagas de reserva (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ]
     },
     "info": {
@@ -7241,10 +7241,10 @@
         "Data do intervalo de agendamento"
       ],
       "End time of the booking range": [
-        "Hora de término do intervalo de agendamento"
+        "Hora de término do intervalo de reserva"
       ],
       "How long should an appointment last?": [
-        "Quanto tempo deve durar um compromisso?"
+        "Quanto tempo deverá durar uma consulta?"
       ],
       "Start time of the booking range": [
         "Hora de início do intervalo de agendamento"
@@ -9446,6 +9446,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "A sua subscrição beneficia atualmente de um desconto. Ao aderir a esta nova promoção, o desconto atual deixará de ser aplicado."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "As contas de Born Private não podem ser compradas com uma subscrição ativa."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "A iniciativa Born Private requer uma doação."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "A sua conta é muito antiga para a iniciativa de Born Private."
       ]
     },
     "Payments.Error": {
@@ -9631,7 +9640,7 @@
         "Ex., "
       ],
       "Email for booking confirmation": [
-        "E-mail para confirmação de agendamento"
+        "E-mail para confirmação da reserva"
       ],
       "Enter a name": [
         "Introduza um nome"
@@ -11272,7 +11281,7 @@
     },
     "Text": {
       "No bookings available.": [
-        "Nenhum agendamento disponível."
+        "Não há reservas disponíveis."
       ],
       "Please check the link and try again.": [
         "Por favor, verifique a ligação e tente novamente."
@@ -11411,7 +11420,7 @@
         "Aplicar código de oferta"
       ],
       "Appointment details": [
-        "Detalhes do compromisso"
+        "Detalhes da consulta"
       ],
       "Are you sure?": [
         "Tem a certeza?"
@@ -11966,13 +11975,13 @@
         "Resumo"
       ],
       "The booking feature is currently unavailable.": [
-        "A funcionalidade de agendamento está atualmente indisponível."
+        "A funcionalidade de reserva está atualmente indisponível."
       ],
       "This booking page can’t be shown.": [
         "Esta página de agendamento não pode ser mostrada."
       ],
       "This booking page has expired.": [
-        "Esta página de agendamento expirou."
+        "Esta página de reserva  expirou."
       ],
       "Time": [
         "Hora"
@@ -12295,6 +12304,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Poderá atribuir cargos assim que o utilizador aceitar o convite."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Este utilizador obtém direitos de administrador na próxima vez que se autenticar."
       ]
     },
     "Validation": {
@@ -12753,6 +12765,16 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantia de reembolso do dinheiro em 30 dias: cancele até 30 dias da sua compra e contacte o nosso ${ customerSupportLink } para obter um reembolso."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Conta Bancária"
       ]
     }
   }

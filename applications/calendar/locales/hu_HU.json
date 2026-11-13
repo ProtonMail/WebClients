@@ -944,6 +944,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Az asztali alkalmazás ingyenes kipróbálásának vége: ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Explore ${ MEET_SHORT_APP_NAME }": [
+        "Fedezze fel a ${ MEET_SHORT_APP_NAME } szolgáltatást"
       ]
     },
     "action": {
@@ -3804,6 +3807,9 @@
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
+      ],
+      "Failed to add existing ${ MEET_APP_NAME } video conference": [
+        "Nem sikerült hozzáadni a ${ MEET_APP_NAME } meetinget"
       ]
     },
     "error": {
@@ -5966,6 +5972,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Továbbra is megtekintheti saját fiókadatait, de az összes felhasználói fiók eltávolításra kerül a szervezetéből."
+      ],
+      "Files only (no photos, ${ DOCS_APP_NAME } or ${ SHEETS_APP_NAME }) - up to 100 GB total, 100,000 files, and 50 GB per file": [
+        "Csak fájlok (nem képek, ${ DOCS_APP_NAME } vagy ${ SHEETS_APP_NAME })) - max. 100GB, 100.000 fájl, 50GB fájlonként"
+      ],
+      "We automatically added a ${ MEET_APP_NAME } link": [
+        "Automatikusan hozzáadtunk egy ${ MEET_APP_NAME } hivatkozást"
       ]
     },
     "info": {
@@ -6641,6 +6653,12 @@
       ],
       "Zoom meeting": [
         "Zoom találkozó"
+      ],
+      "Add notice period": [
+        "Emlékeztető hozzáadása"
+      ],
+      "Check additional calendars for availability": [
+        "További elérhető naptár keresése"
       ]
     },
     "Label for contact group color": {
