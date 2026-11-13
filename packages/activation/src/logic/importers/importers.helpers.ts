@@ -25,6 +25,10 @@ export const normalizeImporter = (apiImporter: ApiImporter) => {
                     mapping: value.Mapping,
                     total: value.Total,
                     importedBytes: value.ImportedBytes,
+                    importFolder:
+                        value.ImportFolderVolumeID && value.ImportFolderLinkID
+                            ? { volumeID: value.ImportFolderVolumeID, linkID: value.ImportFolderLinkID }
+                            : undefined,
                 };
 
                 activeImporters.push(formattedReport);

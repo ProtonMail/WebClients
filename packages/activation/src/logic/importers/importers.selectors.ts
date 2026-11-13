@@ -82,6 +82,14 @@ const selectIsDriveImportRunning = createSelector(selectActiveImporters, (active
     )
 );
 
+export const selectOngoingDriveImports = createSelector(selectActiveImporterEntriesByDate, (entries) =>
+    entries.filter(
+        ({ activeImporter: { product, importState } }) =>
+            product === ImportType.DRIVE &&
+            (DRIVE_IMPORT_RUNNING_STATES.includes(importState) || importState === ApiImporterState.PAUSED)
+    )
+);
+
 const selectPausedDriveImport = createSelector(selectActiveImporterEntriesByDate, (entries) =>
     entries.find(
         ({ activeImporter }) =>

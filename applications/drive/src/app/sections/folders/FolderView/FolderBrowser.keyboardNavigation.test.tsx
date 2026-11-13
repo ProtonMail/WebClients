@@ -1,6 +1,8 @@
-import { act, waitFor } from '@testing-library/react';
+import { act, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { ApiImportProvider, ApiImporterError } from '@proton/activation/src/api/api.interface';
+import { ImportType } from '@proton/activation/src/interface';
 import { renderWithProviders } from '@proton/components/testing/renderWithProviders';
 import { featureFlagStore } from '@proton/drive/modules/flags';
 import { MemberRole, NodeType } from '@proton/drive/sdk';
@@ -8,6 +10,7 @@ import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings'
 
 import { useContextMenuStore } from '../../../modules/contextMenu';
 import { useSelectionStore } from '../../../modules/selection';
+import type { ImportingFolder } from '../getImportingFolders';
 import type { FolderViewItem } from '../useFolder.store';
 import { useFolderStore } from '../useFolder.store';
 import { FolderBrowser } from './FolderBrowser';
@@ -143,8 +146,13 @@ function getContextMenuButton(uid: string): HTMLElement {
     return queryRequired(getRow(uid), '[data-testid="column-options"] button', 'Context menu button');
 }
 
-function renderBrowser(items: FolderViewItem[], layout: LayoutSetting = LayoutSetting.List) {
+function renderBrowser(
+    items: FolderViewItem[],
+    layout: LayoutSetting = LayoutSetting.List,
+    importingFolders: ImportingFolder[] = []
+) {
     seedFolder(items);
+    act(() => useFolderStore.getState().setImportingFolders(importingFolders));
     return renderWithProviders(
         <FolderBrowser
             activeFolder={{ shareId: 'share-1', linkId: 'link-1', volumeId: 'vol-1' }}
@@ -157,6 +165,7 @@ function renderBrowser(items: FolderViewItem[], layout: LayoutSetting = LayoutSe
 
 const resetStores = () => {
     act(() => {
+        useFolderStore.getState().setImportingFolders([]);
         useFolderStore.getState().reset();
         useSelectionStore.getState().clearSelections();
         useContextMenuStore.getState().close();
@@ -169,6 +178,8 @@ describe('FolderBrowser keyboard a11y (cell content)', () => {
         featureFlagStore.setState({ isEnabled: () => false });
         Object.defineProperty(HTMLElement.prototype, 'offsetHeight', { configurable: true, value: 800 });
         Object.defineProperty(HTMLElement.prototype, 'offsetWidth', { configurable: true, value: 1024 });
+        // jsdom has no Web Animations API, used by the import progress illustration.
+        Object.defineProperty(Element.prototype, 'animate', { configurable: true, value: () => ({ cancel() {} }) });
     });
 
     beforeEach(() => {
@@ -191,6 +202,108 @@ describe('FolderBrowser keyboard a11y (cell content)', () => {
         await user.keyboard('{Enter}');
 
         expect(mockNavigateToLink).toHaveBeenCalledWith('share-1', 'link-0', false);
+    });
+
+    it('Enter on the folder of a running import shows the import progress instead of opening it', async () => {
+        const folder = makeFolderItem(0, {
+            isFile: false,
+            type: NodeType.Folder,
+            mimeType: 'application/vnd.proton.folder',
+        });
+        renderBrowser([folder, makeFolderItem(1)], LayoutSetting.List, [{ uid: folder.uid, importedBytes: 2048 }]);
+        const user = userEvent.setup();
+
+        getActivator(folder.uid).focus();
+        await user.keyboard('{Enter}');
+
+        expect(mockNavigateToLink).not.toHaveBeenCalled();
+        expect(screen.getByText('Your import is in progress')).toBeInTheDocument();
+        expect(screen.getByText('2.00 KB')).toBeInTheDocument();
+    });
+
+    it('shows the progress of the opened import when several imports run', async () => {
+        const firstImport = makeFolderItem(0, {
+            isFile: false,
+            type: NodeType.Folder,
+            mimeType: 'application/vnd.proton.folder',
+        });
+        const secondImport = makeFolderItem(1, {
+            isFile: false,
+            type: NodeType.Folder,
+            mimeType: 'application/vnd.proton.folder',
+        });
+        renderBrowser([firstImport, secondImport], LayoutSetting.List, [
+            { uid: firstImport.uid, importedBytes: 2048 },
+            { uid: secondImport.uid, importedBytes: 4096 },
+        ]);
+        const user = userEvent.setup();
+
+        getActivator(secondImport.uid).focus();
+        await user.keyboard('{Enter}');
+
+        expect(mockNavigateToLink).not.toHaveBeenCalled();
+        expect(screen.getByText('4.00 KB')).toBeInTheDocument();
+    });
+
+    it.each([
+        {
+            errorCode: ApiImporterError.ERROR_CODE_QUOTA_LIMIT,
+            tooltip: 'More storage needed',
+            modalTitle: 'More storage needed to finish your import',
+        },
+        {
+            errorCode: ApiImporterError.ERROR_CODE_IMAP_CONNECTION,
+            tooltip: 'Reconnect Google Drive',
+            modalTitle: 'Reconnect to finish your import',
+        },
+    ])(
+        'shows why the import paused and opens the matching modal ($tooltip)',
+        async ({ errorCode, tooltip, modalTitle }) => {
+            const folder = makeFolderItem(0, {
+                isFile: false,
+                type: NodeType.Folder,
+                mimeType: 'application/vnd.proton.folder',
+            });
+            const importer = {
+                ID: 'importer-id',
+                account: 'user@example.com',
+                products: [ImportType.DRIVE],
+                provider: ApiImportProvider.GOOGLE,
+            };
+            renderBrowser([folder, makeFolderItem(1)], LayoutSetting.List, [
+                { uid: folder.uid, importedBytes: 0, pausedImport: { importer, errorCode } },
+            ]);
+            const user = userEvent.setup();
+
+            await user.hover(within(getRow(folder.uid)).getByTestId('import-error-icon'));
+            expect(await screen.findByText(new RegExp(tooltip), undefined, { timeout: 3000 })).toBeInTheDocument();
+
+            getActivator(folder.uid).focus();
+            await user.keyboard('{Enter}');
+
+            expect(mockNavigateToLink).not.toHaveBeenCalled();
+            expect(screen.getByText(modalTitle)).toBeInTheDocument();
+        }
+    );
+
+    it('does not reopen the import progress when the import stops and runs again', async () => {
+        const folder = makeFolderItem(0, {
+            isFile: false,
+            type: NodeType.Folder,
+            mimeType: 'application/vnd.proton.folder',
+        });
+        const importingFolder = { uid: folder.uid, importedBytes: 2048 };
+        renderBrowser([folder, makeFolderItem(1)], LayoutSetting.List, [importingFolder]);
+        const user = userEvent.setup();
+
+        getActivator(folder.uid).focus();
+        await user.keyboard('{Enter}');
+        expect(screen.getByText('Your import is in progress')).toBeInTheDocument();
+
+        act(() => useFolderStore.getState().setImportingFolders([]));
+        act(() => useFolderStore.getState().setImportingFolders([importingFolder]));
+
+        expect(screen.queryByText('Your import is in progress')).not.toBeInTheDocument();
     });
 
     // Helpers: tests below ONLY focus the row activator (the keyboard entry point) and
