@@ -29,7 +29,7 @@ const useShowBYOESpotlightModal = () => {
     const { feature, update, loading: loadingFeature } = useFeature(FeatureCode.BYOESpotlightModal);
     const { notify } = useMailGlobalModals();
 
-    const [hasAccessToBYOE, loadingBYOEFeatureStatus] = useBYOEFeatureStatus(false);
+    const [hasAccessToBYOE, loadingBYOEFeatureStatus] = useBYOEFeatureStatus();
 
     const isLoading =
         loadingUser || loadingAddresses || loadingUserSettings || loadingFeature || loadingBYOEFeatureStatus;
