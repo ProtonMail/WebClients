@@ -74,7 +74,8 @@ export function useDocumentSession(
       const pending = client.createSession({
         documentType: 'doc',
         nodeMeta: { volumeId, linkId },
-        // As /doc squashes on dev and black (GetCommitDULimit in packages/docs-core/lib/Types/SquashingConstants.ts).
+        // As /doc squashes on dev and black. Mirrors `packages/docs-core/lib/Types/SquashingConstants.ts`, its
+        // `GetCommitDULimit`.
         ...(isDevOrBlack() && { commitDuLimit: 50 }),
       })
       const unreadableBaseStateUuids: string[] = []

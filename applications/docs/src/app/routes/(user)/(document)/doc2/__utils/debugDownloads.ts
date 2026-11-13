@@ -8,7 +8,10 @@ import type { RecordedUpdate } from './UpdateRecorder'
 // The debug menu's downloads, in /doc's file formats. They hold document content: build them only on a click, and
 // never log them.
 
-/** Every update the recorder holds, as docs-core `AuthenticatedDocController.getAllUpdatesAsZip` names them */
+/**
+ * Every update the recorder holds, named as /doc names them. Adapted from
+ * `packages/docs-core/lib/AuthenticatedDocController/AuthenticatedDocController.ts`, its `getAllUpdatesAsZip`.
+ */
 export async function getAllUpdatesZip(updates: RecordedUpdate[]): Promise<Blob> {
   const zip = await createZip()
   for (const { timestamp, content } of updates) {
@@ -17,7 +20,10 @@ export async function getAllUpdatesZip(updates: RecordedUpdate[]): Promise<Blob>
   return zip.generateAsync({ type: 'blob' })
 }
 
-/** As docs-core `EditorController.getBaseCommitAsZip`. An update the SDK could not read has no plaintext to give. */
+/**
+ * Adapted from `packages/docs-core/lib/EditorController/EditorController.ts`, its `getBaseCommitAsZip`. An update the
+ * SDK could not read has no plaintext to give.
+ */
 export async function getBaseCommitZip(baseCommit: DebugArtifacts['baseCommit']): Promise<Blob> {
   const zip = await createZip()
   for (const { decrypted } of baseCommit.updates) {
@@ -30,7 +36,10 @@ export async function getBaseCommitZip(baseCommit: DebugArtifacts['baseCommit'])
 
 type LogsSource = Pick<EditorInvoker, 'getYDocAsJSON' | 'getCurrentEditorState'>
 
-/** As `~/utils/downloadLogs.ts` for a document, which takes docs-core's editor controller */
+/**
+ * The document's logs, as /doc downloads them. Adapted from `applications/docs/src/app/utils/downloadLogs.ts`, its
+ * `getLogsAsJSON` and `downloadLogsAsZip`, which take docs-core's editor controller.
+ */
 export async function downloadLogs(editorInvoker: LogsSource): Promise<void> {
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
   downloadFile(await getLogsZip(editorInvoker, timestamp), `document-logs-${timestamp}.zip`)

@@ -13,9 +13,9 @@ import { EditorInvoker } from './EditorInvoker'
 import type { ClientHandler } from './createClientHandler'
 
 /**
- * The client side of the bridge to the editor iframe, after docs-core `Bridge/ClientToEditorBridge.ts`: replies from
- * the editor go to the invoker, and calls from the editor to the client handler. A call the handler has no method for,
- * or whose method throws, gets no reply.
+ * Adapted from `packages/docs-core/lib/Bridge/ClientToEditorBridge.ts`, which doc2 must not import: the client side of
+ * the bridge to the editor iframe. Replies from the editor go to the invoker, and calls from the editor to the client
+ * handler. A call the handler has no method for, or whose method throws, gets no reply.
  */
 export class ClientEditorBridge {
   readonly editorInvoker: EditorInvoker

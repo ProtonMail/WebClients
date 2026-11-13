@@ -29,8 +29,8 @@ function reload() {
   window.location.reload()
 }
 
-// Copied from /doc's `~/components/document/DocumentViewer/DocumentErrorFallback.tsx`, which reports the error to
-// docs-core's user state. Two changes: no report, and an `actionButton` of `null` shows no action button.
+// Copied from `applications/docs/src/app/components/document/DocumentViewer/DocumentErrorFallback.tsx`, which reports
+// the error to docs-core's user state. Two changes: no report, and an `actionButton` of `null` shows no action button.
 
 export type DocumentError = {
   title?: string

@@ -15,6 +15,8 @@ export type OpenActionErrorReason =
   | 'unreadableUpdate'
   | 'editorFailed'
 
+// Copied from `applications/docs/src/app/routes/(user)/(document)/doc/page.tsx`, its `invalid_open_action` branch: the
+// invalid URL and Slack messages, and the test id.
 const messages: Record<OpenActionErrorReason, () => string> = {
   invalidUrl: () => c('Info').t`No document supplied in URL. Return to ${DRIVE_APP_NAME} and select a document.`,
   slackTruncated: () =>

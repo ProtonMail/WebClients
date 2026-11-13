@@ -16,9 +16,10 @@ export type UpdateReplayToolProps = {
 }
 
 /**
- * Copied from /doc's `components/document/DocumentViewer/UpdateReplayTool.tsx`, which takes docs-core's editor
- * controller, for a text document: it applies the updates of a file, such as "Download all updates", to the editor
- * one at a time or several at once. Left out: the spreadsheet time travel, and the multi-tab sync over a local relay.
+ * Adapted from `applications/docs/src/app/components/document/DocumentViewer/UpdateReplayTool.tsx`, which takes
+ * docs-core's editor controller, for a text document: it applies the updates of a file, such as "Download all updates",
+ * to the editor one at a time or several at once. Left out: the spreadsheet time travel, and the multi-tab sync over a
+ * local relay.
  */
 export default function UpdateReplayTool({ onClose, editorInvoker, persistUpdate }: UpdateReplayToolProps) {
   const { logger } = useApplication()

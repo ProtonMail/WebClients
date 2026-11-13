@@ -119,12 +119,12 @@ export async function getDriveFolderPath(node: DocumentNode): Promise<string> {
   return constructDriveFolderUrl(parentLinkId, root?.deprecatedShareId, self ? getIsSharedWithMe(self) : false)
 }
 
-// Copied from docs-core `DriveSDK/trash.tsx`, which doc2 must not import.
+// Copied from `packages/docs-core/lib/DriveSDK/trash.tsx`, which doc2 must not import.
 export async function trashNode(nodeUid: string): Promise<void> {
   await throwOnFailure(getDrive().trashNodes([nodeUid]))
 }
 
-// Copied from docs-core `DriveSDK/trash.tsx`, which doc2 must not import.
+// Copied from `packages/docs-core/lib/DriveSDK/trash.tsx`, which doc2 must not import.
 export async function restoreNode(nodeUid: string): Promise<void> {
   await throwOnFailure(getDrive().restoreNodes([nodeUid]))
 }

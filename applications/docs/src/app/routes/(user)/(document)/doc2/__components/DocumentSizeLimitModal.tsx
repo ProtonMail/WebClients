@@ -15,9 +15,9 @@ export type DocumentSizeLimitModalProps = {
 }
 
 /**
- * Adapted from /doc's `~/components/document/DocumentSizeLimitModal.tsx`, which imports docs-core: explains the
- * document size limit the first time the SDK refuses an edit for it, in place of a toast. It offers no "remove older revisions", since the SDK
- * has no `squashEverything` until Phase 3 (ADR-0011).
+ * Adapted from `applications/docs/src/app/components/document/DocumentSizeLimitModal.tsx`, which imports docs-core:
+ * explains the document size limit the first time the SDK refuses an edit for it, in place of a toast. It offers no
+ * "remove older revisions", since the SDK has no `squashEverything` until Phase 3 (ADR-0011).
  */
 export function DocumentSizeLimitModal({ session, onDownloadCopy }: DocumentSizeLimitModalProps) {
   const [isOpen, setIsOpen] = useState(false)

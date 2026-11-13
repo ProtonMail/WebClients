@@ -39,9 +39,10 @@ function isWorthSquashing(updateCount: number) {
 }
 
 /**
- * /doc's debug menu (`components/document/DocumentViewer/DebugMenu.tsx`) for doc2, on the realtime SDK. Like /doc's, it
- * is in English only, for the engineers who turn debug mode on. It reads the document only on a click, and logs none
- * of it. /doc's Commit with RTS, Close Connection and Create Initial Commit are left out: the SDK has no API for them.
+ * /doc's debug menu for doc2, on the realtime SDK. Adapted from
+ * `applications/docs/src/app/components/document/DocumentViewer/DebugMenu.tsx`. Like /doc's, it is in English only, for
+ * the engineers who turn debug mode on. It reads the document only on a click, and logs none of it. /doc's Commit with
+ * RTS, Close Connection and Create Initial Commit are left out: the SDK has no API for them.
  */
 export function DocumentDebugMenu({ session, snapshot, editorInvoker, recorder, sendUpdate }: DocumentDebugMenuProps) {
   const { logger } = useApplication()

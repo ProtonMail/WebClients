@@ -25,9 +25,10 @@ export type DocumentActiveUsersProps = {
 const NumberOfVisibleUsers = 5
 
 /**
- * Copied from the docs app's `DocumentLayout/DocumentHeader/DocumentActiveUsers.tsx`, which reads docs-core's event bus
- * and synced state: an avatar per user among the session's participants, the first five shown and the rest in a +N
- * dropdown, each scrolling to the user's cursor on click. Shows nothing while the user is alone.
+ * Copied from `applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentActiveUsers.tsx`,
+ * which reads docs-core's event bus and synced state: an avatar per user among the session's participants, the first
+ * five shown and the rest in a +N dropdown, each scrolling to the user's cursor on click. Shows nothing while the user
+ * is alone.
  */
 export function DocumentActiveUsers({ participants, editorInvoker, className }: DocumentActiveUsersProps) {
   const { logger } = useApplication()

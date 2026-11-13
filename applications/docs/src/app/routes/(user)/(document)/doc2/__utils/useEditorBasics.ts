@@ -18,13 +18,14 @@ export function useIsEditorDarkMode() {
 /**
  * Gives the editor what /doc gives it once it is there: dark mode, the user's settings (not in a public-link session),
  * Suggesting turned off, and the user's name, which its presence carries. The editor is initialized only later, so the
- * name is there by then.
+ * name is there by then. Adapted from
+ * `applications/docs/src/app/components/document/DocumentViewer/DocumentViewer.tsx`.
  */
 export function useEditorBasics(editorInvoker: EditorInvoker | undefined, isDarkMode: boolean) {
   const { isPublicMode, logger } = useApplication()
   const getUserSettings = useGetUserSettings()
   const [user] = useUser()
-  // As /doc's PrivateHookChangesToEvents
+  // Adapted from `applications/docs/src/app/routes/(user)/(document)/doc/__components/PrivateHookChangesToEvents.tsx`
   const userName = user.DisplayName || user.Name || user.Email
 
   useEffect(() => {

@@ -3,7 +3,7 @@ import { DocumentExportMimeTypes } from '@proton/docs-shared/ExportableDataType'
 
 import type { EditorInvoker } from './EditorInvoker'
 
-/** Copied from docs-core `UseCase/ExportAndDownload.ts`, which doc2 must not import. */
+/** Copied from `packages/docs-core/lib/UseCase/ExportAndDownload.ts`, which doc2 must not import. */
 export function downloadExport(
   data: Uint8Array<ArrayBuffer>,
   docName: string,
@@ -20,7 +20,7 @@ export function downloadExport(
   a.remove()
 }
 
-// After docs-core's `EditorController.exportAndDownload`
+// Adapted from `packages/docs-core/lib/EditorController/EditorController.ts`, its `exportAndDownload`
 export async function exportAndDownload(
   editorInvoker: Pick<EditorInvoker, 'exportData'>,
   docName: string,

@@ -1,6 +1,6 @@
 import type { NodeEntity } from '@proton/drive/sdk'
 
-// Copied from docs-core `DriveSDK/getNodeName.ts`, which doc2 must not import.
+// Copied from `packages/docs-core/lib/DriveSDK/getNodeName.ts`, which doc2 must not import.
 export function getNodeName(node: Pick<NodeEntity, 'name'>): string | undefined {
   if (typeof node.name === 'string') {
     return node.name

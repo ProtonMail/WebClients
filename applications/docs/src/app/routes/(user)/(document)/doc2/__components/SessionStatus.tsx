@@ -12,9 +12,17 @@ import { Pill } from '~/components/document/DocumentLayout/DocumentHeader/Pill'
 import { PopoverPill } from '~/components/document/DocumentLayout/DocumentHeader/PopoverPill'
 import { ArrowsRotate, CloudSlashIcon } from '~/components/document/DocumentLayout/DocumentHeader/icons'
 
-/** As /doc's `ConnectionStatus.tsx`: no spinner for a session that opens fast */
+/**
+ * No spinner for a session that opens fast. Mirrors
+ * `applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/ConnectionStatus.tsx`, its
+ * `DURATION_BEFORE_CONNECTING_STATUS_SHOWN`.
+ */
 export const OPENING_SHOWN_AFTER_MS = 1_000
-/** As /doc's `websocket-status.tsx`: no flicker from Saving… to saved and back */
+/**
+ * No flicker from Saving… to saved and back. Mirrors
+ * `applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/websocket-status.tsx`, its
+ * `MINIMUM_DURATION_SAVING_MUST_BE_SHOWN`.
+ */
 export const SAVING_SHOWN_FOR_AT_LEAST_MS = 1_000
 
 /** A pill's label, which /doc's header hides on narrow screens, leaving the icon */
@@ -27,12 +35,12 @@ export type SessionStatusProps = {
 }
 
 /**
- * /doc's header pills (`ConnectionStatus.tsx`, which imports docs-core), mapped from the session's snapshot: its
- * connection, whether it can be edited, and how far its edits are delivered. The element carries the snapshot's
- * `data-status` and `data-delivery` as they are, for verification. A stopped session shows /doc's Offline pill, as /doc
- * does whatever closed its connection, with the condition as its disconnection code, and a retry when the SDK calls the
- * stop retryable; what doc2 does past that for some conditions, such as an alert or a retry, happens in
- * `useStopFollowUps`.
+ * Adapted from `applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/ConnectionStatus.tsx`,
+ * which imports docs-core: /doc's header pills, mapped from the session's snapshot: its connection, whether it can be
+ * edited, and how far its edits are delivered. The element carries the snapshot's `data-status` and `data-delivery` as
+ * they are, for verification. A stopped session shows /doc's Offline pill, as /doc does whatever closed its connection,
+ * with the condition as its disconnection code, and a retry when the SDK calls the stop retryable; what doc2 does past
+ * that for some conditions, such as an alert or a retry, happens in `useStopFollowUps`.
  */
 export function SessionStatus({ snapshot, onRetry }: SessionStatusProps) {
   const { status, delivery } = snapshot

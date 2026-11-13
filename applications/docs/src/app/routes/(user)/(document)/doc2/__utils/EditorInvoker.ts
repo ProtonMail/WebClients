@@ -38,7 +38,8 @@ type EditorMethodsCalledByDoc2 = Pick<
   | 'toggleDebugTreeView'
 >
 
-// Copied from docs-core `Bridge/EditorInvoker.ts`, which doc2 must not import, with only the methods doc2 calls.
+// Copied from `packages/docs-core/lib/Bridge/EditorInvoker.ts`, which doc2 must not import, with only the methods doc2
+// calls.
 // Unlike it, a call the editor doesn't answer within EDITOR_CALL_TIMEOUT_MS rejects instead of waiting forever.
 export class EditorInvoker implements EditorMethodsCalledByDoc2 {
   private pendingMessages = new Map<string, (returnValue: unknown) => void>()

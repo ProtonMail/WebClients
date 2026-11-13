@@ -9,7 +9,7 @@ import type { Api } from '@proton/shared/lib/interfaces/Api'
 import type { ShareMeta } from '@proton/shared/lib/interfaces/drive/share'
 import type { DocumentKeys, PrivateNodeMeta } from '@proton-docs/realtime-sdk'
 
-// Ported from docs-core `Crypto/useGetMemberAddressKeys.ts`, which doc2 must not import.
+// Adapted from `packages/docs-core/lib/Crypto/useGetMemberAddressKeys.ts`, which doc2 must not import.
 // Like Drive SDK signing keys: the user's member address of the share at the root of the node hierarchy, never the primary address.
 export function useGetMemberAddressKeys(api: Api) {
   const getAddresses = useGetAddresses()

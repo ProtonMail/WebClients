@@ -22,8 +22,10 @@ export type TrashedDocumentModalProps = {
 }
 
 /**
- * Copied from /doc's `DocumentTitleDropdown/TrashedDocumentModal.tsx`, which takes docs-core types: the blocking modal
- * over a trashed document. It stays open while restoring, with the restore button disabled.
+ * Copied from
+ * `applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentTitleDropdown/TrashedDocumentModal.tsx`,
+ * which takes docs-core types: the blocking modal over a trashed document. It stays open while restoring, with the
+ * restore button disabled.
  */
 export function TrashedDocumentModal({
   documentTitle,

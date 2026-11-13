@@ -8,7 +8,7 @@ const DOCS_API_TIMEOUT_MS = 120_000
 /**
  * The SDK's Docs API fetch over the app's `useApi()`, so its calls get the app's 401 refresh, 429 wait, headers and
  * modals. Every HTTP answer resolves as a `Response`, 4xx and 5xx included; a rejection means no answer came.
- * Pattern copied from Drive's `fetchJson` in packages/drive/internal/useHttpClient.ts, which is not exported.
+ * Adapted from `packages/drive/internal/useHttpClient.ts`, its `fetchJson`, which is not exported.
  */
 export function createDocsApiFetch(api: Api, apiUrl: string): DocsApiFetch {
   const prefix = `${apiUrl}/`
