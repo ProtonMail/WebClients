@@ -3,6 +3,7 @@ import { APPS, PASSWORD_MODE } from '../constants';
 import { hasBit } from '../helpers/bitset';
 import { SETTINGS_2FA_ENABLED } from '../interfaces/UserSettings';
 import { getHasWebAuthnSupport } from '../webauthn/helper';
+import { UnsupportedFido2Error } from './error';
 import type { AuthResponse } from './interface';
 
 /**
@@ -42,12 +43,12 @@ const assertTwoFactorSupport = ({
     // For example, it's not supported on account.protonvpn.com atm.
     if (fido2) {
         if (!twoFactorSupport.fido2.application) {
-            throw new Error(
+            throw new UnsupportedFido2Error(
                 'Security key sign-in is not supported on this application, please use https://account.proton.me'
             );
         }
         if (!twoFactorSupport.fido2.webAuthnSupport) {
-            throw new Error('WebAuthn support is not available on this device');
+            throw new UnsupportedFido2Error('WebAuthn support is not available on this device');
         }
     }
 

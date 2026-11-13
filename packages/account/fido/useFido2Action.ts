@@ -23,13 +23,17 @@ const reportFido2Error = (
     // Browsers merge cancels, timeouts and missing keys into NotAllowedError, timing separates refused requests
     const timing = durationMs < 1000 ? 'instant' : 'user';
     const extension = error instanceof Error && /-extension:\/\/|webkit-masked-url:\/\//.test(error.stack || '');
-    captureMessage(SENTRY_MESSAGE[context], {
-        level: 'error',
-        // Password manager extensions throw plain errors too, keep them apart from ours
-        fingerprint: [SENTRY_MESSAGE[context], extension ? 'extension' : name, timing],
-        tags: { fido2Error: name, fido2Timing: timing, fido2Extension: extension },
-        extra: { error, durationMs, hasFocusAtStart, visibility: document.visibilityState },
-    });
+    // Cancelled or timed out registrations are measured by the backend's fido2_registration_* metrics instead
+    const isRegistrationCancel = context === 'registration' && name === 'NotAllowedError' && timing === 'user';
+    if (!isRegistrationCancel) {
+        captureMessage(SENTRY_MESSAGE[context], {
+            level: 'error',
+            // Password manager extensions throw plain errors too, keep them apart from ours
+            fingerprint: [SENTRY_MESSAGE[context], extension ? 'extension' : name, timing],
+            tags: { fido2Error: name, fido2Timing: timing, fido2Extension: extension },
+            extra: { error, durationMs, hasFocusAtStart, visibility: document.visibilityState },
+        });
+    }
     // Purposefully logging the error for somewhat easier debugging
     // eslint-disable-next-line no-console
     console.error(error);
