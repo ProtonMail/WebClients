@@ -2,12 +2,14 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
-import { INDEXING_STATUS } from './constants';
+import { INDEXING_STATUS, defaultESStatus } from './constants';
 import { getIndexKey } from './esHelpers/esBuild';
+import { syncItemEvents } from './esHelpers/esSync';
 import { readEnabled, readLimited } from './esIDB/configObjectStore';
 import { deleteESDB, hasESDB } from './esIDB/indexedDB';
 import { contentIndexingProgress, metadataIndexingProgress } from './esIDB/indexingProgress';
 import { useEncryptedSearch } from './useEncryptedSearch';
+import { useEncryptedSearchStatus } from './useEncryptedSearchStatus';
 
 jest.mock('@proton/shared/lib/helpers/sentry', () => ({
     ...jest.requireActual('@proton/shared/lib/helpers/sentry'),
@@ -48,8 +50,10 @@ jest.mock('@proton/app-context/useNotifications', () => ({
 }));
 
 jest.mock('./useSearchTelemetry', () => ({
+    ...jest.requireActual('./useSearchTelemetry'),
     useSearchTelemetry: jest.fn().mockReturnValue({
         sendDeleteESDataReport: jest.fn(),
+        sendPerformSearchReport: jest.fn(),
     }),
 }));
 
@@ -84,6 +88,26 @@ jest.mock('./esIDB/indexingProgress', () => {
         },
     };
 });
+
+jest.mock('./esHelpers/esSync', () => ({
+    ...jest.requireActual('./esHelpers/esSync'),
+    syncItemEvents: jest.fn(),
+}));
+
+jest.mock('./esHelpers/esCache', () => ({
+    ...jest.requireActual('./esHelpers/esCache'),
+    refreshESCache: jest.fn(),
+}));
+
+jest.mock('./esHelpers/esRetries', () => ({
+    ...jest.requireActual('./esHelpers/esRetries'),
+    retryAPICalls: jest.fn(),
+}));
+
+jest.mock('./esIDB/events', () => ({
+    ...jest.requireActual('./esIDB/events'),
+    writeAllEvents: jest.fn(),
+}));
 
 jest.mock('./esHelpers/esBuild', () => ({
     ...jest.requireActual('./esHelpers/esBuild'),
@@ -205,6 +229,109 @@ describe('useEncryptedSearch', () => {
             await initialize(onStateSettled);
 
             expect(onStateSettled).not.toHaveBeenCalled();
+        });
+    });
+
+    // The same query runs again when an event invalidates the mail list. If that event is still being
+    // synced into the results, handing them back early puts a message just moved out of them (e.g. to
+    // Trash) back in the list.
+    describe('encryptedSearch - same query while an event is syncing', () => {
+        it('should hand back the results only once the event is synced', async () => {
+            const kept = { ID: 'kept' };
+            const moved = { ID: 'moved' };
+            const permanentResults = [kept, moved];
+            jest.mocked(useEncryptedSearchStatus).mockReturnValue([
+                {
+                    ...defaultESStatus,
+                    dbExists: true,
+                    esEnabled: true,
+                    isSearchPartial: false,
+                    previousESSearchParams: {},
+                    permanentResults,
+                    cachedIndexKey: {} as CryptoKey,
+                },
+                jest.fn(),
+            ] as any);
+            jest.mocked(contentIndexingProgress.read).mockResolvedValue(undefined);
+            jest.mocked(readLimited).mockResolvedValue(false);
+
+            let finishSync = () => {};
+            jest.mocked(syncItemEvents).mockImplementation(
+                () =>
+                    new Promise((resolve) => {
+                        finishSync = () => {
+                            permanentResults.splice(permanentResults.indexOf(moved), 1);
+                            resolve(false);
+                        };
+                    })
+            );
+
+            const { result } = renderHook(() =>
+                useEncryptedSearch({
+                    refreshMask: 1,
+                    esCallbacks: {
+                        ...mockedESCallback,
+                        getSearchParams: jest.fn().mockReturnValue({ isSearch: true, esSearchParams: {} }),
+                        shouldOnlySortResults: jest.fn().mockReturnValue(true),
+                    },
+                })
+            );
+
+            await result.current.handleEvent({ Items: [{}], eventsToStore: {}, Refresh: 0 } as any);
+            const setResultsList = jest.fn();
+            const search = result.current.encryptedSearch(setResultsList);
+            await new Promise((resolve) => setTimeout(resolve, 0));
+
+            expect(setResultsList).not.toHaveBeenCalled();
+
+            finishSync();
+
+            await expect(search).resolves.toBe(true);
+            expect(setResultsList).toHaveBeenCalledTimes(1);
+            expect(setResultsList).toHaveBeenCalledWith([kept]);
+        });
+
+        // A failing sync retries itself indefinitely, so the wait is capped
+        it('should hand back the results anyway when the sync takes too long', async () => {
+            jest.useFakeTimers();
+            const permanentResults = [{ ID: 'kept' }, { ID: 'moved' }];
+            jest.mocked(useEncryptedSearchStatus).mockReturnValue([
+                {
+                    ...defaultESStatus,
+                    dbExists: true,
+                    esEnabled: true,
+                    isSearchPartial: false,
+                    previousESSearchParams: {},
+                    permanentResults,
+                    cachedIndexKey: {} as CryptoKey,
+                },
+                jest.fn(),
+            ] as any);
+            jest.mocked(syncItemEvents).mockReturnValue(new Promise(() => {}));
+
+            const { result } = renderHook(() =>
+                useEncryptedSearch({
+                    refreshMask: 1,
+                    esCallbacks: {
+                        ...mockedESCallback,
+                        getSearchParams: jest.fn().mockReturnValue({ isSearch: true, esSearchParams: {} }),
+                        shouldOnlySortResults: jest.fn().mockReturnValue(true),
+                    },
+                })
+            );
+
+            await result.current.handleEvent({ Items: [{}], eventsToStore: {}, Refresh: 0 } as any);
+            const setResultsList = jest.fn();
+            const search = result.current.encryptedSearch(setResultsList);
+
+            await jest.advanceTimersByTimeAsync(1000);
+            expect(setResultsList).not.toHaveBeenCalled();
+
+            await jest.advanceTimersByTimeAsync(1000);
+            await expect(search).resolves.toBe(true);
+            expect(setResultsList).toHaveBeenCalledWith(permanentResults);
+
+            jest.useRealTimers();
         });
     });
 });

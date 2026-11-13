@@ -15,6 +15,7 @@ import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { SentryCommonInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
+import noop from '@proton/utils/noop';
 
 import {
     ES_EXTRA_RESULTS_LIMIT,
@@ -101,6 +102,9 @@ interface Props<ESItemMetadata, ESSearchParameters, ESItemContent = void> {
     /** Called when a first full mailbox indexing pass begins — pairs with `onIndexCompleted`, which measures `durationMs` from here. */
     onIndexingStarted?: () => void;
 }
+
+// How long a re-run of the same query waits for event syncing before handing back its cached results
+const RESULTS_SYNC_TIMEOUT = 2 * SECOND;
 
 /**
  * Provide the core functionalities of ES.
@@ -1071,7 +1075,11 @@ export const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParame
         if (!wasSearchPartial && previousESSearchParams) {
             const shouldSortOnly = esCallbacks.shouldOnlySortResults(esSearchParams, previousESSearchParams);
             if (shouldSortOnly) {
-                setResultsList(permanentResults);
+                const { signal } = abortSearchingRef.current;
+                await Promise.race([waitForSyncing().catch(noop), wait(RESULTS_SYNC_TIMEOUT)]);
+                if (!signal.aborted) {
+                    setResultsList(permanentResults);
+                }
                 return true;
             }
         }
