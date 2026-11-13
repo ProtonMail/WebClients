@@ -51,7 +51,7 @@ const useInitRooster = ({
     isPastedImageAllowed,
     openEmojiPicker,
 }: Props) => {
-    const editorRef = useRef<IEditor>();
+    const editorRef = useRef<IEditor>(undefined);
     const isMounted = useIsMounted();
     const theme = useTheme();
     const themeCSSVariables = theme.information.style;

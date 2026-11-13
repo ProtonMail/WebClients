@@ -21,7 +21,7 @@ export const useAutoUnlock = ({ loading, onUnlock, error = false }: Props) => {
     const history = useHistory<MaybeNull<AuthRouteState>>();
     const { unlockDeclined = false } = useAppState();
     const [isError, setIsError] = useState(false);
-    const focusRetry = useRef<Maybe<() => void>>();
+    const focusRetry = useRef<Maybe<() => void>>(undefined);
 
     const cancelFocusRetry = () => {
         if (focusRetry.current) window.removeEventListener('focus', focusRetry.current);

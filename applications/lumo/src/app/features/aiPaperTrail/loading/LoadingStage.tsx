@@ -71,7 +71,7 @@ export const LoadingStage = () => {
 
     const [lesson, setLesson] = useState(0);
     const [lessonVisible, setLessonVisible] = useState(true);
-    const swapTimeout = useRef<ReturnType<typeof setTimeout>>();
+    const swapTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
 
     useEffect(() => {
         const id = setInterval(() => {

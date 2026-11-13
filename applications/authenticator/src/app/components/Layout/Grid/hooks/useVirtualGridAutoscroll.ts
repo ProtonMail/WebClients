@@ -18,7 +18,7 @@ export const useVirtualGridAutoscroll = (
     virtualizer: Virtualizer<HTMLDivElement, Element>
 ) => {
     const [dragY, setDragY] = useState<number | null>(null);
-    const scrollRef = useRef<number>();
+    const scrollRef = useRef<number>(undefined);
 
     useEffect(() => {
         if (!active) return;

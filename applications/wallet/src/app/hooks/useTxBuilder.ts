@@ -16,7 +16,7 @@ const initialTxBuilder = new WasmTxBuilder().clearRecipients();
  */
 export const useTxBuilder = () => {
     // Used to decoupled updater from state and avoid side effect in useEffects
-    const txBuilderRef = useRef<WasmTxBuilder>();
+    const txBuilderRef = useRef<WasmTxBuilder>(undefined);
     const [txBuilder, setTxBuilder] = useState(initialTxBuilder);
 
     const updatersRef = useRef<AsyncTxBuilderUpdater[]>([]);

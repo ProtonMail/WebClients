@@ -13,7 +13,7 @@ export type Props = Omit<ModalProps, 'children'> & {
 
 export const SidebarModal: FC<Props> = ({ children, className, ...props }) => {
     const [didEnter, setDidEnter] = useState(false);
-    const timer = useRef<NodeJS.Timeout>();
+    const timer = useRef<NodeJS.Timeout>(undefined);
 
     useEffect(() => {
         if (!props.open) setDidEnter(false);

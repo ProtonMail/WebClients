@@ -32,7 +32,7 @@ export const OTPDonut = forwardRef<IOtpRenderer, Props>(
     ({ colors = DEFAULT_OTP_COLORS, enabled, thickness = 3 }, ref) => {
         const wrapperRef = useRef<HTMLDivElement>(null);
         const canvasRef = useRef<HTMLCanvasElement>(null);
-        const colorsRef = useRef<OTPDonutColorConfig<string>>();
+        const colorsRef = useRef<OTPDonutColorConfig<string>>(undefined);
 
         const getColors = useCallback(
             (canvas: HTMLCanvasElement): OTPDonutColorConfig<string> => {

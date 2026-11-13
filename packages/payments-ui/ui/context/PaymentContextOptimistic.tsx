@@ -54,10 +54,10 @@ interface PaymentsContextOptimisticProviderProps {
 const InnerPaymentsContextOptimisticProvider = ({ children }: PaymentsContextOptimisticProviderProps) => {
     const paymentsContext = usePayments();
 
-    const cacheRef = useRef<{ availablePlans?: InitializeProps['availablePlans'] }>();
+    const cacheRef = useRef<{ availablePlans?: InitializeProps['availablePlans'] }>(undefined);
     const [, rerender] = useState<any>();
 
-    const latestOptimisticRef = useRef<any>();
+    const latestOptimisticRef = useRef<any>(undefined);
     const [optimistic, setOptimistic] = useState<Partial<OptimisticOptions>>({});
     const [loadingPaymentDetails, setLoadingPaymentDetails] = useState(false);
     const [initializationStatus, setInitializationStatus] = useState<InitializationStatus>({

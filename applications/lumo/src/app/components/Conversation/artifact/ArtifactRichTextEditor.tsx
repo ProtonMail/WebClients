@@ -395,7 +395,7 @@ const EditorBody = forwardRef<ArtifactRichTextEditorHandle, EditorBodyProps>(fun
     }, []);
     const onChangeRef = useRef(onChange);
     onChangeRef.current = onChange;
-    const changeTimerRef = useRef<ReturnType<typeof setTimeout>>();
+    const changeTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
     const editor = useEditor({
         extensions,

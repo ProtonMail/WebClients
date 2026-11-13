@@ -136,13 +136,13 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
 
     const isWalletFullSync = useFlag('WalletFullSync');
 
-    const pollingIdRef = useRef<string>();
+    const pollingIdRef = useRef<string>(undefined);
 
     const getNetwork = useGetBitcoinNetwork();
 
     const [walletsChainData, setWalletsChainData] = useState<WalletChainDataByWalletId>();
 
-    const walletsChainDataRef = useRef<WalletChainDataByWalletId>();
+    const walletsChainDataRef = useRef<WalletChainDataByWalletId>(undefined);
 
     const walletSubsetData = useMemo(() => formatToSubset(apiWalletsData), [apiWalletsData]);
 

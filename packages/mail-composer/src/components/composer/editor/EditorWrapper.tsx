@@ -116,7 +116,7 @@ const EditorWrapper = ({
      *  can export the reply in that window and drop the quoted original. Refs are updated
      *  synchronously, so every handler version reads the current values.
      */
-    const blockquoteSavedRef = useRef<string>();
+    const blockquoteSavedRef = useRef<string>(undefined);
     const blockquoteExpandedRef = useRef(editorMetadata.blockquoteExpanded);
     useLayoutEffect(() => {
         blockquoteExpandedRef.current = editorMetadata.blockquoteExpanded;
@@ -128,7 +128,7 @@ const EditorWrapper = ({
     // Inline images removed by this composer, by CID, so that undo can restore them
     const removedInlineImagesRef = useRef<Map<string, DecryptedAttachment>>(new Map());
 
-    const editorActionsRef = useRef<EditorActions>();
+    const editorActionsRef = useRef<EditorActions>(undefined);
     const handleEditorReady = useCallback((editorActions: EditorActions) => {
         setEditorReady(true);
         editorActionsRef.current = editorActions;

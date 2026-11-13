@@ -240,7 +240,7 @@ const TimeGrid = ({
         [actionRef, now]
     );
 
-    const handleMouseDownRef = useRef<(e: MouseEvent) => void>();
+    const handleMouseDownRef = useRef<(e: MouseEvent) => void>(undefined);
 
     handleMouseDownRef.current = (e: MouseEvent) => {
         if (!onMouseDown) {

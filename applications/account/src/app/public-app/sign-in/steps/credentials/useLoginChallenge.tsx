@@ -13,7 +13,7 @@ import noop from '@proton/utils/noop';
  * Attach `usernameRef` to the current form's username input.
  */
 export const useLoginChallenge = () => {
-    const challengeRef = useRef<ChallengeRef>();
+    const challengeRef = useRef<ChallengeRef>(undefined);
     const usernameInputRef = useRef<HTMLInputElement | null>(null);
 
     // The forms own their fields' state, so the input mounts and changes without re-rendering the frame, which only

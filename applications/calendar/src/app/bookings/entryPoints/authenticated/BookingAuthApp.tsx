@@ -30,7 +30,7 @@ export const BookingAuthApp = () => {
 
     const [error, setError] = useState<string | null>(null);
 
-    const bootstrapRef = useRef<BookingBootstrapResult>();
+    const bootstrapRef = useRef<BookingBootstrapResult>(undefined);
 
     useEffect(() => {
         const initializeApp = async () => {

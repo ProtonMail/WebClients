@@ -64,7 +64,7 @@ export const PassReports = ({ upgradeRequired }: { upgradeRequired: boolean }) =
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const [exportingMonitor, withExportingMonitor] = useLoading();
     const [exportingUsage, withExportingUsage] = useLoading();
-    const sectionLoading = useRef<'monitor' | 'usage'>();
+    const sectionLoading = useRef<'monitor' | 'usage'>(undefined);
     const didLoad = useRef(false);
     const [reports, setReports] = useState<Reports>(new Map());
     const [totalMemberCount, setTotalMemberCount] = useState<number>(0);

@@ -133,7 +133,7 @@ const HeaderMoreDropdown = ({
     const { applyLocation } = useApplyLocation();
     const [user] = useUser();
     const { feature } = useFeature(FeatureCode.SetExpiration);
-    const closeDropdown = useRef<() => void>();
+    const closeDropdown = useRef<() => void>(undefined);
     const [folders = []] = useFolders();
     const { markAs } = useMarkAs();
     const getMessageKeys = useGetMessageKeys();

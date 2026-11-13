@@ -156,7 +156,7 @@ const SrpAuthModal = ({
             app: APP_NAME,
         })
     );
-    const twoFactorAuthRef = useRef<TwoFactorAuthRef>();
+    const twoFactorAuthRef = useRef<TwoFactorAuthRef>(undefined);
 
     const [password, setPassword] = useState('');
     const [rerender, setRerender] = useState(0);

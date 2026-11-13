@@ -49,8 +49,8 @@ const StreamingMarkdownRenderer: React.FC<StreamingMarkdownProps> = React.memo(
     }) => {
         const [displayContent, setDisplayContent] = useState(content || '');
         const contentRef = useRef(content);
-        const frameRef = useRef<number>();
-        const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+        const frameRef = useRef<number>(undefined);
+        const timeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
         const lastUpdateRef = useRef<number>(0);
 
         // Lock isStreaming while tokens are arriving to avoid remount flicker, but unlock once

@@ -224,8 +224,8 @@ const Step1 = ({
     const [loadingSignup, withLoadingSignup] = useLoading();
     const [loadingSignout, withLoadingSignout] = useLoading();
     const [loadingPaymentDetails, setLoadingPaymentDetails] = useState(false);
-    const accountDetailsRef = useRef<AccountStepDetailsRef>();
-    const accountStepPaymentRef = useRef<AccountStepPaymentRef>();
+    const accountDetailsRef = useRef<AccountStepDetailsRef>(undefined);
+    const accountStepPaymentRef = useRef<AccountStepPaymentRef>(undefined);
     const signupV2Theme = useSignupV2Theme();
     const [changingCurrency, withChangingCurrency] = useLoading();
 
@@ -271,7 +271,7 @@ const Step1 = ({
         selectedPlanName: selectedPlan.Name,
     });
 
-    const latestRef = useRef<any>();
+    const latestRef = useRef<any>(undefined);
     const check = async (values: {
         currency: Currency;
         planIDs: PlanIDs;
@@ -362,7 +362,7 @@ const Step1 = ({
         }
     };
 
-    const selectedMethodRef = useRef<AvailablePaymentMethod>();
+    const selectedMethodRef = useRef<AvailablePaymentMethod>(undefined);
     const reportEstimationChange = (action: EstimationChangeAction, overrides: Partial<EstimationChangePayload>) => {
         const nonEmptyOverrides = Object.fromEntries(
             Object.entries(overrides).filter(([_, value]) => value !== undefined)

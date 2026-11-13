@@ -136,7 +136,7 @@ const Composer = (
     // Needed to prevent edition while data is not ready
     const [editorReady, setEditorReady] = useState(false);
 
-    const editorRef = useRef<ExternalEditorActions>();
+    const editorRef = useRef<ExternalEditorActions>(undefined);
     const handleEditorReady = useCallback((editorActions: ExternalEditorActions) => {
         setEditorReady(true);
         editorRef.current = editorActions;

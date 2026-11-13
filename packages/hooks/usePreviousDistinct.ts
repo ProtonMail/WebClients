@@ -5,7 +5,7 @@ export type Predicate<T> = (prev: T | undefined, next: T) => boolean;
 const strictEquals = <T>(prev: T | undefined, next: T) => prev === next;
 
 export default function usePreviousDistinct<T>(value: T, compare: Predicate<T> = strictEquals): T | undefined {
-    const prevRef = useRef<T>();
+    const prevRef = useRef<T>(undefined);
     const curRef = useRef<T>(value);
     const isFirstMount = useRef(true);
 

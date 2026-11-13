@@ -30,7 +30,7 @@ export interface ContactExportingProps {
 type Props = ContactExportingProps & ModalProps;
 
 const ContactExportingModal = ({ contactGroupID: LabelID, onSave = noop, inputContactsIds, ...rest }: Props) => {
-    const abortController = useRef<AbortController | undefined>();
+    const abortController = useRef<AbortController | undefined>(undefined);
     const api = useApi();
     const [contacts = [], loadingContacts] = useContacts();
     const contactsToDownload = useMemo(() => {

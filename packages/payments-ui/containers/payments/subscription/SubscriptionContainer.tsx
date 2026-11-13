@@ -1198,7 +1198,7 @@ const SubscriptionContainerInner = ({
         user,
         isLiteApp: isAccountLiteApp,
     });
-    const optimisticPlanIDsRef = useRef<any | undefined>();
+    const optimisticPlanIDsRef = useRef<any | undefined>(undefined);
 
     const handleChangePlanIDs = useHandler(
         (planIDs: PlanIDs, id: any) => {

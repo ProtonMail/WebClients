@@ -27,7 +27,7 @@ import type { BookingGuestBootstrapResult } from '../interface';
 import { bookingGuestBootstrap } from './bookingGuestBootstrap';
 
 export const BookingGuestApp = () => {
-    const bootstrapRef = useRef<BookingGuestBootstrapResult>();
+    const bootstrapRef = useRef<BookingGuestBootstrapResult>(undefined);
 
     const [initialized, setInitialized] = useState(false);
     const [error, setError] = useState<string | null>(null);

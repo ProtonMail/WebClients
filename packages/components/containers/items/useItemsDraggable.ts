@@ -31,7 +31,7 @@ const useItemsDraggable = <Item extends AbstractItem>(
     selectAll?: boolean
 ) => {
     // HTML reference to the drag element
-    const dragElementRef = useRef<HTMLDivElement>();
+    const dragElementRef = useRef<HTMLDivElement>(undefined);
 
     // List of currently dragged item ids
     const [draggedIDs, setDraggedIDs] = useState<string[]>([]);

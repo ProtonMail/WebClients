@@ -59,7 +59,7 @@ const AlarmWatcher = ({ alarms = [], tzid, calendarsEventsCacheRef }: Props) => 
     const hasSuspendedCounter = useHasSuspendedCounter({ refreshInterval: MINUTE, tolerance: MINUTE / 2 });
     const { contactEmailsMap } = useContactEmailsCache();
     const getCalendarEventRaw = useGetCalendarEventRaw(contactEmailsMap);
-    const cacheRef = useRef<Set<string>>();
+    const cacheRef = useRef<Set<string>>(undefined);
 
     useEffect(() => {
         let timeoutHandle = 0;

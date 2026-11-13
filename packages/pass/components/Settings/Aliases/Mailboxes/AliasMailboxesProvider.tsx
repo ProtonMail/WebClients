@@ -30,7 +30,7 @@ export const AliasMailboxesProvider: FC<PropsWithChildren> = ({ children }) => {
     const upsell = useUpselling();
     const canManage = useSelector(selectCanManageAlias);
     const [action, setAction] = useState<MaybeNull<AliasMailboxAction>>(null);
-    const timeout = useRef<Maybe<NodeJS.Timeout>>();
+    const timeout = useRef<Maybe<NodeJS.Timeout>>(undefined);
 
     const mailboxes = useSelector(selectAliasMailboxes);
     const sync = useRequest(getMailboxes, { loading: true });

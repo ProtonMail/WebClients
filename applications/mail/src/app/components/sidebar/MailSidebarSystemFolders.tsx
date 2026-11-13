@@ -72,9 +72,9 @@ const MailSidebarSystemFolders = ({
 
     const dispatch = useDispatch();
 
-    const lastDragTimeRef = useRef<number>();
-    const isDragging = useRef<boolean>();
-    const dragOverlay = useRef<HTMLDivElement>();
+    const lastDragTimeRef = useRef<number>(undefined);
+    const isDragging = useRef<boolean>(undefined);
+    const dragOverlay = useRef<HTMLDivElement>(undefined);
     const [draggedElementId, setDraggedElementId] = useState<MAILBOX_LABEL_IDS | undefined>();
     const [dragOveredElementId, setDragOveredElementId] = useState<string | undefined>();
     const [isOverMoreFolder, setIsOverMoreFolder] = useState<boolean>();

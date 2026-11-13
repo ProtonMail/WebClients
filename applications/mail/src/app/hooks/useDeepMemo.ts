@@ -8,7 +8,7 @@ import isDeepEqual from 'lodash/isEqual';
  * Compare deeply a new one to the previous and keep the reference if there is no changes
  */
 export const useDeepMemo = <T>(factory: () => T, deps: DependencyList): T => {
-    const previousValue = useRef<T>();
+    const previousValue = useRef<T>(undefined);
 
     return useMemo(() => {
         const newValue = factory();

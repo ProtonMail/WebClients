@@ -59,7 +59,7 @@ const SearchOverlay = ({
 
     const contentRef = useRef<HTMLDivElement>(null);
 
-    const anchorRectRef = useRef<DOMRect | undefined>();
+    const anchorRectRef = useRef<DOMRect | undefined>(undefined);
 
     const focusTrapProps = useFocusTrap({ rootRef, active: isOpen && !disableFocusTrap, enableInitialFocus: false });
 

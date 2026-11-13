@@ -26,7 +26,7 @@ export const useAddressValidator = (shareId: string): MaybeNull<InviteAddressVal
     /** keeps track of valid/invalid email addresses in a map
      * in order to only request new emails to validate*/
     const cache = useRef<InviteAddressesCache>(new Map());
-    const pending = useRef<Awaiter<void>>();
+    const pending = useRef<Awaiter<void>>(undefined);
 
     const { loading, revalidate } = useActionRequest<
         typeof inviteAddressesValidateIntent,

@@ -81,7 +81,7 @@ export function useModalTwoPromise<PassedProps, ReturnValue = void>(
     const [modalStateProps, setOpen, render] = useModalState();
     const [passedProps, setPassedProps] = useState(initialState);
     type PromiseRefValue = PromiseRef<ReturnValue>;
-    const promiseRef = useRef<PromiseRefValue>();
+    const promiseRef = useRef<PromiseRefValue>(undefined);
 
     const handleShowModal = useCallback((passedProps: PassedProps) => {
         promiseRef.current?.onReject();

@@ -16,8 +16,8 @@ interface UseDragMoveParams {
 }
 
 function useDragMove({ dragging, setDragging, format = 'text/plain', formatter = (str) => str }: UseDragMoveParams) {
-    const container = useRef<HTMLDivElement>();
-    const transferData = useRef<any>();
+    const container = useRef<HTMLDivElement>(undefined);
+    const transferData = useRef<any>(undefined);
 
     const handleDragStart = (event: DragEvent<HTMLTableRowElement>) => {
         if (!container.current) {

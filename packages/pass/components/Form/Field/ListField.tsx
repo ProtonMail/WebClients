@@ -76,7 +76,7 @@ export const ListField = <
 
     /** Keep a ref for formik's array helper in order to properly memoise
      * `ListFieldItem` components when dealing with very large arrays */
-    const helpers = useRef<ArrayHelpers>();
+    const helpers = useRef<ArrayHelpers>(undefined);
     const fieldValues = useStatefulRef(values);
     const [, startTransition] = useTransition();
 

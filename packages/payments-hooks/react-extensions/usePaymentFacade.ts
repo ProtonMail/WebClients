@@ -184,7 +184,7 @@ function getOperations(
  * Perhaps will be changed in the future.
  */
 const usePaymentContext = () => {
-    const subscriptionData = useRef<OperationsSubscriptionData>();
+    const subscriptionData = useRef<OperationsSubscriptionData>(undefined);
 
     return {
         setSubscriptionData: (data: OperationsSubscriptionData | undefined) => {

@@ -19,7 +19,7 @@ export const ContextMenuSubButton = ({ name, icon, children }: Props) => {
     const buttonRef = useRef<HTMLDivElement>(null);
     const openViaKeyboardRef = useRef(false);
 
-    const closeTimerRef = useRef<ReturnType<typeof setTimeout>>();
+    const closeTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
     const dropdownContentRef = useRef<HTMLDivElement>(null);
 
     const open = () => {

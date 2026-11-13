@@ -21,7 +21,7 @@ const DesktopNotificationTopBanner = () => {
     const onMobile = useRef(isMobile());
     const [userSettings] = useUserSettings();
 
-    const initialUserSettings = useRef<UserSettings>();
+    const initialUserSettings = useRef<UserSettings>(undefined);
 
     const { AppWelcome = {} } = initialUserSettings.current || {};
     const { Calendar = [], Mail = [] } = AppWelcome;

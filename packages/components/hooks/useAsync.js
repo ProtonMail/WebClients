@@ -32,7 +32,7 @@ const reducer = (state, action) => {
 const useAsync = (setResults = true) => {
     const [{ loading, result, error }, dispatch] = useReducer(reducer, DEFAULT_STATE);
     const isMounted = useIsMounted();
-    const promiseRef = useRef();
+    const promiseRef = useRef(undefined);
 
     const run = useCallback(async (promise) => {
         const isCurrentPromise = () => promiseRef.current === promise;

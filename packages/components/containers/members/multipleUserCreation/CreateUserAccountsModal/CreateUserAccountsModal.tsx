@@ -119,7 +119,7 @@ const CreateUserAccountsModal = ({
     const [subscription] = useSubscription();
     const hasVpnB2bPlan = getHasVpnB2BPlan(subscription);
 
-    const abortControllerRef = useRef<AbortController>();
+    const abortControllerRef = useRef<AbortController>(undefined);
     const { createNotification } = useNotifications();
 
     const [step, setStep] = useState<STEPS>(STEPS.SELECT_USERS);

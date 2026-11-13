@@ -22,7 +22,7 @@ import {
 } from './helper';
 
 const usePreviousValue = <T,>(value: T) => {
-    const ref = useRef<T>();
+    const ref = useRef<T>(undefined);
     useEffect(() => {
         ref.current = value;
     }, [value]);

@@ -37,7 +37,7 @@ enum SendingStep {
 
 const SendingMessageNotification = ({ manager, scheduledAt }: SendingMessageNotificationProps) => {
     const [state, setState] = useState(SendingStep.sending);
-    const onUndoRef = useRef<() => Promise<void> | undefined>();
+    const onUndoRef = useRef<() => Promise<void> | undefined>(undefined);
     const isMounted = useIsMounted();
 
     const getScheduledNotification = (scheduledAt: number, onUndo: (() => Promise<void> | undefined) | undefined) => {

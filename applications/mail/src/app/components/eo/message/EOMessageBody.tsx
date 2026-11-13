@@ -37,7 +37,7 @@ const EOMessageBody = ({
     const bodyRef = useRef<HTMLDivElement>(null);
     const [isIframeContentSet, setIsIframeContentSet] = useState(false);
     const iframeRef = useRef<HTMLIFrameElement>(null);
-    const iframeRootDivRef = useRef<HTMLDivElement>();
+    const iframeRootDivRef = useRef<HTMLDivElement>(undefined);
     const theme = useTheme();
     const plain = isPlainText(message.data);
 

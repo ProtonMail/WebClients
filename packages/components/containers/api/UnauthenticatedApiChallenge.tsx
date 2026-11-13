@@ -11,7 +11,7 @@ interface Props {
 }
 
 const UnauthenticatedApiChallenge = ({ unauthenticatedApi }: Props) => {
-    const challengeRefLogin = useRef<ChallengeV4Ref>();
+    const challengeRefLogin = useRef<ChallengeV4Ref>(undefined);
 
     useEffect(() => {
         challengeRefLogin.current

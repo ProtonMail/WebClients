@@ -20,7 +20,7 @@ function CollapsedBreadcrumb({ breadcrumbs }: Props) {
 
     const { anchorRef, isOpen, toggle, open, close } = usePopperAnchor<HTMLLIElement>();
 
-    const closeTimeout = useRef<any>();
+    const closeTimeout = useRef<any>(undefined);
     const mouseEnterCounter = useRef(0);
 
     const closeWithTimeout = () => {

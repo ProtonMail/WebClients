@@ -40,7 +40,7 @@ const EditAddressesSection = ({ address }: Props) => {
     const { viewportWidth } = useActiveBreakpoint();
 
     const editorWrapperRef = useRef<HTMLDivElement>(null);
-    const editorRef = useRef<SimpleEditorActions>();
+    const editorRef = useRef<SimpleEditorActions>(undefined);
     const SimpleEditor = useSimpleEditor();
 
     const handleReady = (actions: SimpleEditorActions) => {

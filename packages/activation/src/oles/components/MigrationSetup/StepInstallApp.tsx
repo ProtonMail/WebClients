@@ -43,7 +43,7 @@ const StepInstallApp: FC<StepComponentProps> = ({ model, onNext }) => {
     })();
 
     /** Lets us close the consent popup and stop polling when the admin leaves this step */
-    const consentAbortController = useRef<AbortController>();
+    const consentAbortController = useRef<AbortController>(undefined);
 
     useEffect(() => () => consentAbortController.current?.abort(), []);
 

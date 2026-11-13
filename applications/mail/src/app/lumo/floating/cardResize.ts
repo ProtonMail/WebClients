@@ -27,7 +27,7 @@ interface CardResizeDrag {
 }
 
 export const useCardResize = ({ startWidth, handlePosition, onResize }: CardResizeDrag) => {
-    const stopActiveResizeRef = useRef<() => void>();
+    const stopActiveResizeRef = useRef<() => void>(undefined);
 
     useEffect(() => {
         return () => stopActiveResizeRef.current?.();

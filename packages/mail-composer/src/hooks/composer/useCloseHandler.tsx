@@ -59,7 +59,7 @@ export const useCloseHandler = ({
         }
     };
 
-    const notficationRef = useRef<SavingDraftNotificationAction>();
+    const notficationRef = useRef<SavingDraftNotificationAction>(undefined);
 
     const handleManualSaveAfterUploads = useHandler(async (notificationID: number) => {
         try {
