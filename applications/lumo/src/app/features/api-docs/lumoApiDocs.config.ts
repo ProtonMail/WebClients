@@ -49,7 +49,7 @@ export interface LumoApiDocsSpec {
 
 export const LUMO_API_DOCS_SPEC: LumoApiDocsSpec = {
     versionLabel: 'v1',
-    apiBaseUrl: 'https://lumo.proton.me/api/ai/v1',
+    apiBaseUrl: 'https://lumo-api.proton.me/v1',
     endpointGroups: [
         {
             id: 'chat',
@@ -131,7 +131,7 @@ export const LUMO_API_DOCS_SPEC: LumoApiDocsSpec = {
     ],
     chatExamples: {
         basic: {
-            curl: `curl https://lumo.proton.me/api/ai/v1/chat/completions \\
+            curl: `curl https://lumo-api.proton.me/v1/chat/completions \\
   -H "Authorization: Bearer $LUMO_API_KEY" \\
   -H 'Content-Type: application/json' \\
   -d '{
@@ -141,7 +141,7 @@ export const LUMO_API_DOCS_SPEC: LumoApiDocsSpec = {
             python: `import os
 import requests
 
-url = "https://lumo.proton.me/api/ai/v1/chat/completions"
+url = "https://lumo-api.proton.me/v1/chat/completions"
 headers = {
     "Authorization": "Bearer " + os.environ["LUMO_API_KEY"],
     "Content-Type": "application/json",
@@ -153,7 +153,7 @@ payload = {
 r = requests.post(url, headers=headers, json=payload, timeout=120)
 r.raise_for_status()
 print(r.json()["choices"][0]["message"]["content"])`,
-            typescript: `const url = "https://lumo.proton.me/api/ai/v1/chat/completions";
+            typescript: `const url = "https://lumo-api.proton.me/v1/chat/completions";
 const response = await fetch(url, {
   method: "POST",
   headers: {
@@ -175,7 +175,7 @@ use serde_json::json;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
     let res = client
-        .post("https://lumo.proton.me/api/ai/v1/chat/completions")
+        .post("https://lumo-api.proton.me/v1/chat/completions")
         .header("Authorization", "Bearer " + std::env::var("LUMO_API_KEY")?)
         .header("Content-Type", "application/json")
         .json(&json!({
@@ -193,7 +193,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 }`,
         },
         tool_call: {
-            curl: `curl https://lumo.proton.me/api/ai/v1/chat/completions \\
+            curl: `curl https://lumo-api.proton.me/v1/chat/completions \\
   -H "Authorization: Bearer $LUMO_API_KEY" \\
   -H 'Content-Type: application/json' \\
   -d '{
@@ -204,7 +204,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             python: `import os
 import requests
 
-url = "https://lumo.proton.me/api/ai/v1/chat/completions"
+url = "https://lumo-api.proton.me/v1/chat/completions"
 headers = {
     "Authorization": "Bearer" + os.environ["LUMO_API_KEY"],
     "Content-Type": "application/json",
@@ -216,7 +216,7 @@ payload = {
 }
 r = requests.post(url, headers=headers, json=payload, timeout=120)
 r.raise_for_status()`,
-            typescript: `const url = "https://lumo.proton.me/api/ai/v1/chat/completions";
+            typescript: `const url = "https://lumo-api.proton.me/v1/chat/completions";
 const response = await fetch(url, {
   method: "POST",
   headers: {
@@ -238,7 +238,7 @@ use serde_json::json;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
     let res = client
-        .post("https://lumo.proton.me/api/ai/v1/chat/completions")
+        .post("https://lumo-api.proton.me/v1/chat/completions")
         .header("Authorization", std::env::var("LUMO_API_KEY")?)
         .header("Content-Type", "application/json")
         .json(&json!({
@@ -255,7 +255,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         },
     },
     authExamples: {
-        curl: `curl https://lumo.proton.me/api/ai/v1/chat/completions \\
+        curl: `curl https://lumo-api.proton.me/v1/chat/completions \\
   -H "Authorization: Bearer $LUMO_API_KEY" \\
   -H 'Content-Type: application/json' \\
   -d '{"model": "lumo-lite", "messages": [{"role": "user", "content": "Hello"}]}'`,
@@ -264,7 +264,7 @@ import requests
 
 # Send your API key on every request (never commit it to source control)
 r = requests.post(
-    "https://lumo.proton.me/api/ai/v1/chat/completions",
+    "https://lumo-api.proton.me/v1/chat/completions",
     headers={
         "Authorization": "Bearer " + os.environ["LUMO_API_KEY"],
         "Content-Type": "application/json",
@@ -277,7 +277,7 @@ r = requests.post(
 )
 r.raise_for_status()
 print(r.json())`,
-        typescript: `const res = await fetch("https://lumo.proton.me/api/ai/v1/chat/completions", {
+        typescript: `const res = await fetch("https://lumo-api.proton.me/v1/chat/completions", {
   method: "POST",
   headers: {
     "Authorization": "Bearer " + process.env.LUMO_API_KEY!,
@@ -296,7 +296,7 @@ use serde_json::json;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
     let res = client
-        .post("https://lumo.proton.me/api/ai/v1/chat/completions")
+        .post("https://lumo-api.proton.me/v1/chat/completions")
         .header("Authorization", "Bearer " + std::env::var("LUMO_API_KEY")?)
         .header("Content-Type", "application/json")
         .json(&json!({
