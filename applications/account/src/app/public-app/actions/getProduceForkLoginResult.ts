@@ -54,8 +54,10 @@ export const getProduceForkLoginResult = async ({
         const { app, redirectUrl } = forkParameters;
 
         if (
-            // Reauth is only triggered through the switch or auto flow as in other scenarios the user enters their password
-            (session.flow === 'switch' || session.flow === 'auto-resume') &&
+            // Reauth is only triggered when the user hasn't entered their password in this flow
+            (session.flow === 'switch' ||
+                session.flow === 'auto-resume' ||
+                session.flow === 'sign-in-with-another-device') &&
             // The prompt comes from the fork url and does not change between passes, so without this the
             // session would be sent back to reauth every time it comes back through here
             !hasInterruption(session, 'reauth') &&

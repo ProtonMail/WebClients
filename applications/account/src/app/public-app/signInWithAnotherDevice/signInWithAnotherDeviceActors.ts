@@ -66,7 +66,7 @@ export const createSignInWithAnotherDeviceActors = (services: SignInWithAnotherD
         metrics.core_edm_pull_total.increment({ status: 'success' });
         metrics.core_edm_pull_histogram.observe({ Value: Math.round(input.forkDurationTime / SECOND), Labels: {} });
         await metrics.processAllRequests().catch(noop);
-        await services.login({ data: input.session });
+        await services.login({ data: input.session, flow: 'sign-in-with-another-device' });
     }),
 });
 
