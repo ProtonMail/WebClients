@@ -304,7 +304,6 @@ export enum MailFeatureFlag {
     // Category view flags, used to control the whole category view
     CategoryOnboardingDisableCategorize = 'CategoryOnboardingDisableCategorize',
     CategoryReportUnreadCountDisabled = 'CategoryReportUnreadCountDisabled',
-    CategoryView = 'CategoryView',
     UseUserEmbedding = 'UseUserEmbedding',
     MailStoreDebugMode = 'MailStoreDebugMode',
     // Attempt to fix the unability to save/send drafts on huge accounts
@@ -321,6 +320,7 @@ export enum MailFeatureFlag {
 }
 
 enum MailKillSwitchFlag {
+    CategoryViewDisabled = 'CategoryViewDisabled',
     CategoryViewConversationPrefetchDisabled = 'CategoryViewConversationPrefetchDisabled',
     ComposerCcBccTabStopDisabled = 'ComposerCcBccTabStopDisabled',
     ComposerInlineImageReuploadDisabled = 'ComposerInlineImageReuploadDisabled',

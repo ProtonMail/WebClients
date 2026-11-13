@@ -15,7 +15,7 @@ const mockUseOrganization = useOrganization as jest.Mock;
 
 // We assume the flag is always enabled
 jest.mock('@proton/unleash/useFlag');
-jest.mocked(useFlag).mockReturnValue(true);
+jest.mocked(useFlag).mockReturnValue(false);
 
 jest.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: jest.fn().mockReturnValue({ createNotification: jest.fn() }),
