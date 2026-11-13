@@ -14,14 +14,8 @@ import type { ExtendedInvitationDetails } from '../invitationTypes'
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '../utils/mimetype'
 import { DateFormatter } from '../utils/dateFormatter'
 import { TelemetryEvent } from '../utils/telemetry'
-
-jest.mock('@proton/account/contactEmails/hooks', () => ({
-  useContactEmails: () => [[], false],
-}))
-
-jest.mock('@proton/account/addresses/hooks', () => ({
-  useAddresses: () => [[], false],
-}))
+import type { UserAddress } from '../is-my-document'
+import type { OwnerContact } from '../get-owner-name'
 
 let bulkTrashEnabled = false
 let bulkMoveEnabled = false
@@ -119,6 +113,8 @@ const DEVICE_DOCUMENT = createMockRecentDocument({
 })
 
 let mockItems = MOCK_DATA
+let mockAddresses: UserAddress[] | undefined = []
+let mockContactEmails: OwnerContact[] | undefined = []
 let mockMyFilesRootUid: string | undefined = MY_FILES_ROOT_UID
 
 describe('HomepageContent', () => {
@@ -135,6 +131,31 @@ describe('HomepageContent', () => {
     const rows = within(tbody).getAllByRole('row')
     rows.forEach((row, i) => {
       checkRowContents(row, MOCK_DATA[i].name, MOCK_DATA[i].createdBy ?? '', MOCK_DATA[i].location)
+    })
+  })
+
+  describe('owner', () => {
+    afterEach(() => {
+      mockItems = MOCK_DATA
+      mockAddresses = []
+      mockContactEmails = []
+    })
+
+    test('Shows the owner from the injected addresses and contact emails', async () => {
+      mockItems = [
+        createMockRecentDocument({ name: 'Mine', linkId: 'mine', createdBy: 'self@proton.me' }),
+        createMockRecentDocument({ name: 'Contact', linkId: 'contact', createdBy: 'friend@proton.me' }),
+        createMockRecentDocument({ name: 'Stranger', linkId: 'stranger', createdBy: 'stranger@proton.me' }),
+      ]
+      mockAddresses = [{ Email: 'self@proton.me' }]
+      mockContactEmails = [{ Email: 'friend@proton.me', Name: 'Friend' }]
+      renderWithProviders(<HomepageContent />)
+      const table = await screen.findByRole('table')
+      const rows = within(within(table).getAllByRole('rowgroup')[1]).getAllByRole('row')
+
+      checkRowContents(rows[0], 'Mine', 'Me')
+      checkRowContents(rows[1], 'Contact', 'Friend')
+      checkRowContents(rows[2], 'Stranger', 'stranger@proton.me')
     })
   })
 
@@ -943,6 +964,8 @@ describe('HomepageContent', () => {
           dateFormatter: new DateFormatter('en-US'),
           errorTracking: { traceError: jest.fn(), addBreadcrumb: jest.fn(), isReportable: () => true },
           featureFlags: { bulkTrash: bulkTrashEnabled, bulkMove: bulkMoveEnabled },
+          addresses: mockAddresses,
+          contactEmails: mockContactEmails,
         }}
       >
         {children}

@@ -6,6 +6,8 @@ import { useApi } from '@proton/app-context/useApi'
 import { useConfig } from '@proton/app-context/useConfig'
 import { useNotifications } from '@proton/app-context/useNotifications'
 import useAuthentication from '@proton/components/hooks/useAuthentication'
+import { useAddresses } from '@proton/account/addresses/hooks'
+import { useContactEmails } from '@proton/account/contactEmails/hooks'
 import { getAppHref } from '@proton/shared/lib/apps/helper'
 import type { APP_NAMES } from '@proton/shared/lib/constants'
 import { dateLocale } from '@proton/shared/lib/i18n'
@@ -58,6 +60,8 @@ export function HomepageHost({ application }: HomepageHostProps) {
     () => ({ bulkTrash: isBulkTrashEnabled, bulkMove: isBulkMoveEnabled }),
     [isBulkTrashEnabled, isBulkMoveEnabled],
   )
+  const [addresses] = useAddresses()
+  const [contactEmails] = useContactEmails()
   const {
     invitations,
     reloadInvitations,
@@ -90,6 +94,8 @@ export function HomepageHost({ application }: HomepageHostProps) {
             dateLocaleCode={dateLocale.code}
             errorTracking={homepageErrorTracking}
             featureFlags={featureFlags}
+            addresses={addresses}
+            contactEmails={contactEmails}
             openShareModal={showSharingModal}
             openMoveItemsModal={showMoveItemsModal}
             reportDescriptionContext={reportDescriptionContext}

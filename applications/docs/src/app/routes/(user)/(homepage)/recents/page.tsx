@@ -30,6 +30,8 @@ export default function HomepagePage({
   dateLocaleCode,
   errorTracking,
   featureFlags,
+  addresses,
+  contactEmails,
   openShareModal,
   openMoveItemsModal,
   reportDescriptionContext,
@@ -54,6 +56,8 @@ export default function HomepagePage({
       dateLocaleCode={dateLocaleCode}
       errorTracking={errorTracking}
       featureFlags={featureFlags}
+      addresses={addresses}
+      contactEmails={contactEmails}
     >
       <DocumentActionsProvider drive={drive} openShareModal={openShareModal} openMoveItemsModal={openMoveItemsModal}>
         {/* The header's offers (useFetchOffer in @proton/components) read their renewal notice from it */}

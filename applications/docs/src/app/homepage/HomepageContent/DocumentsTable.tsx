@@ -1,4 +1,3 @@
-import { useAddresses } from '@proton/account/addresses/hooks'
 import { Avatar } from '@proton/atoms/Avatar/Avatar'
 import { Button } from '@proton/atoms/Button/Button'
 import { Input } from '@proton/atoms/Input/Input'
@@ -24,7 +23,6 @@ import { IcTrash } from '@proton/icons/icons/IcTrash'
 import { IcUser } from '@proton/icons/icons/IcUser'
 import { IcUserFilled } from '@proton/icons/icons/IcUserFilled'
 import { IcUsers } from '@proton/icons/icons/IcUsers'
-import { useContactEmails } from '@proton/account/contactEmails/hooks'
 import { APPS } from '../utils/apps'
 import type { ProtonDocumentType } from '../utils/mimetype'
 import { getInitials } from './getInitials'
@@ -36,7 +34,7 @@ import { useEvent } from '../utils/useEvent'
 import { useDocumentActions } from '../documentActionsContext'
 import type { RecentsSort } from '../homepageViewContext'
 import { useHomepageView, type ItemsSection, type ItemsSectionId } from '../homepageViewContext'
-import { isMyDocument, type UserAddress } from '../is-my-document'
+import { isMyDocument } from '../is-my-document'
 import { useRowSelection, type RowSelection } from './useRowSelection'
 import { DocContextMenu, canTrash } from './DocContextMenu/DocContextMenu'
 import { useContextMenu } from './DocContextMenu/context'
@@ -61,7 +59,6 @@ export type TableVariant =
 export type DocumentsTableProps = { itemsSections: ItemsSection[]; variant: TableVariant }
 
 export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) {
-  const [addresses] = useAddresses()
   const { type, state, myFilesRootUid, featureFlags } = useHomepageView()
   const contextMenuAnchorRef = useRef<HTMLDivElement>(null)
   const contextMenu = useContextMenu()
@@ -172,7 +169,6 @@ export function DocumentsTable({ itemsSections, variant }: DocumentsTableProps) 
               <Body
                 variant={variant}
                 items={items}
-                addresses={addresses}
                 selection={bulkEnabled ? selection : undefined}
                 selectableIdsSet={selectableIdsSet}
                 isTrashing={isTrashing}
@@ -462,14 +458,13 @@ function getDateHeaderLabel(variant: TableVariant): string {
 type BodyProps = {
   items: RecentDocumentsItem[]
   variant: TableVariant
-  addresses: UserAddress[] | undefined
   selection?: RowSelection
   selectableIdsSet: Set<string>
   isTrashing: boolean
   openOnDoubleClick: boolean
 }
 
-function Body({ items, variant, addresses, selection, selectableIdsSet, isTrashing, openOnDoubleClick }: BodyProps) {
+function Body({ items, variant, selection, selectableIdsSet, isTrashing, openOnDoubleClick }: BodyProps) {
   return (
     <Table.Body className="divide-weak divide-y">
       {items.map((recentDocument) => (
@@ -477,7 +472,6 @@ function Body({ items, variant, addresses, selection, selectableIdsSet, isTrashi
           variant={variant}
           key={recentDocument.uniqueId()}
           document={recentDocument}
-          addresses={addresses}
           selection={selection}
           isSelectable={selectableIdsSet.has(recentDocument.uniqueId())}
           isTrashing={isTrashing}
@@ -500,17 +494,16 @@ const RAISED = 'relative z-[1]'
 type RowProps = {
   document: RecentDocumentsItem
   variant: TableVariant
-  addresses: UserAddress[] | undefined
   selection?: RowSelection
   isSelectable?: boolean
   isTrashing?: boolean
   openOnDoubleClick?: boolean
 }
 
-function Row({ document, variant, addresses, selection, isSelectable, isTrashing, openOnDoubleClick }: RowProps) {
+function Row({ document, variant, selection, isSelectable, isTrashing, openOnDoubleClick }: RowProps) {
   const documentActions = useDocumentActions()
   const { location } = document
-  const { displayName, avatarContent } = useNameAndAvatar(document, addresses)
+  const { displayName, avatarContent } = useNameAndAvatar(document)
   const { updateRenamedDocumentInCache, createNotification, getAppHref, dateFormatter, errorTracking, featureFlags } =
     useHomepageView()
 
@@ -862,8 +855,8 @@ function selectOnClick(selection: RowSelection, id: string, { shiftKey, ctrlKey,
   }
 }
 
-function useNameAndAvatar(document: RecentDocumentsItem, addresses: UserAddress[] | undefined) {
-  const [contactEmails] = useContactEmails()
+function useNameAndAvatar(document: RecentDocumentsItem) {
+  const { addresses, contactEmails } = useHomepageView()
 
   const isMine = isMyDocument(document, addresses)
   const displayName = getOwnerName(document, isMine, contactEmails)
