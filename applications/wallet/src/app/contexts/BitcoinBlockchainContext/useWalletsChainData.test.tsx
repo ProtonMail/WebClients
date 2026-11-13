@@ -1,5 +1,6 @@
 import type { PropsWithChildren } from 'react';
 
+import { logger } from '@protontech/logger';
 import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import type { MockedFunction } from 'vitest';
@@ -187,6 +188,56 @@ describe('useWalletsChainData', () => {
             await result.current.syncSingleWallet({ walletId: '0' });
 
             expect(mockedFullSync).toHaveBeenCalledTimes(0);
+        });
+    });
+
+    describe('when wasm sync fails', () => {
+        it('should log the error with the failing step', async () => {
+            const error = new Error('wasm failure');
+            mockedFullSync.mockRejectedValue(error);
+            const loggerErrorSpy = vi.spyOn(logger, 'error');
+            const store = setupStore();
+
+            function Wrapper({ children }: PropsWithChildren<{}>): React.JSX.Element {
+                return <ProtonStoreProvider store={store}>{children}</ProtonStoreProvider>;
+            }
+
+            const { result } = renderHook(() => useWalletsChainData(apiWalletsData), {
+                wrapper: Wrapper,
+            });
+
+            await waitFor(() =>
+                expect(loggerErrorSpy).toHaveBeenCalledWith(
+                    'Wallet account sync failed',
+                    expect.objectContaining({ walletId: '0', accountId: '8', step: 'fullSync' }),
+                    error
+                )
+            );
+            await waitFor(() => expect(result.current.isSyncing('0', '8')).toBe(false));
+        });
+
+        it('should warn when a sync step never settles', async () => {
+            mockedFullSync.mockReturnValue(new Promise(() => {}));
+            const loggerWarnSpy = vi.spyOn(logger, 'warn');
+            const store = setupStore();
+
+            function Wrapper({ children }: PropsWithChildren<{}>): React.JSX.Element {
+                return <ProtonStoreProvider store={store}>{children}</ProtonStoreProvider>;
+            }
+
+            renderHook(() => useWalletsChainData(apiWalletsData), {
+                wrapper: Wrapper,
+            });
+
+            await waitFor(() => expect(mockedFullSync).toHaveBeenCalledTimes(5));
+            expect(loggerWarnSpy).not.toHaveBeenCalled();
+
+            vi.advanceTimersByTime(5 * MINUTE);
+
+            expect(loggerWarnSpy).toHaveBeenCalledWith(
+                'Wallet account sync is still pending, a wasm call may be hanging',
+                expect.objectContaining({ walletId: '0', accountId: '8', step: 'fullSync' })
+            );
         });
     });
 

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
+import { logger } from '@protontech/logger';
 import { isBefore, sub } from 'date-fns';
 import isEqual from 'lodash/isEqual';
 import pick from 'lodash/pick';
@@ -45,6 +46,9 @@ export type SyncingMetadata = {
 };
 
 const POLLING_UID_PREFIX = 'polling';
+
+// A Rust panic inside an async wasm call leaves its promise pending forever, so a hanging sync never throws
+const SLOW_SYNC_WARNING_DELAY = 5 * MINUTE;
 
 const getKey = (walletId: string, walletAccountID: string) => {
     return `${walletId}-${walletAccountID}`;
@@ -173,6 +177,11 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                             },
                         };
                     } catch (e: any) {
+                        logger.error(
+                            'Failed to add wasm wallet account',
+                            { walletId: ID, accountId: account.ID, scriptType: account.ScriptType },
+                            e
+                        );
                         clearChangeSet(wasmWallet.getFingerprint());
                         throw e;
                     }
@@ -268,6 +277,17 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
             const fingerprint = walletsChainDataRef.current?.[walletId]?.wallet.getFingerprint() ?? '';
 
             if (account && canSync) {
+                const context = { walletId, accountId, manual: Boolean(manual) };
+                let step = 'init';
+                const startedAt = Date.now();
+                const slowSyncTimer = setTimeout(() => {
+                    logger.warn('Wallet account sync is still pending, a wasm call may be hanging', {
+                        ...context,
+                        step,
+                        elapsedMs: Date.now() - startedAt,
+                    });
+                }, SLOW_SYNC_WARNING_DELAY);
+
                 try {
                     const fullSyncDone = isFullSyncDone(fingerprint, derivationPath);
 
@@ -277,20 +297,31 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
 
                     const wasmWalletSync = new WasmAccountSyncer(blockchainClient, wasmAccount);
 
+                    logger.info('Wallet account sync started', context);
+
                     // If syncing is manual, we do a full sync
                     if (isWalletFullSync && !fullSyncDone) {
+                        step = 'initialFullSync';
                         await wasmWalletSync.fullSync(500);
+                        step = 'partialSync';
                         await wasmWalletSync.partialSync();
                         setFullSyncDone(fingerprint, derivationPath);
-                    } else if ((await wasmAccount.hasSyncData()) && !manual) {
-                        await wasmWalletSync.partialSync();
                     } else {
-                        // before full sync, we check the stop gap
-                        const stopGap = getDefaultStopGap() + account.poolSize;
-                        await wasmWalletSync.fullSync(stopGap);
-                        await wasmWalletSync.partialSync();
+                        step = 'hasSyncData';
+                        if ((await wasmAccount.hasSyncData()) && !manual) {
+                            step = 'partialSync';
+                            await wasmWalletSync.partialSync();
+                        } else {
+                            // before full sync, we check the stop gap
+                            const stopGap = getDefaultStopGap() + account.poolSize;
+                            step = 'fullSync';
+                            await wasmWalletSync.fullSync(stopGap);
+                            step = 'partialSync';
+                            await wasmWalletSync.partialSync();
+                        }
                     }
 
+                    step = 'getBalance';
                     const balance = await wasmAccount.getBalance();
                     const hasConfirmedFunds = balance.data.trusted_spendable > 0;
                     const metrics = getWalletAccountMetrics(accountId);
@@ -301,22 +332,35 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
                             metrics.lastBalanceActivityTime < getYesterday().getTime())
                     ) {
                         updateWalletAccountActivityMetrics(accountId, hasConfirmedFunds);
-                        void walletApi.wallet.sendWalletAccountMetrics(walletId, accountId, hasConfirmedFunds);
+                        walletApi.wallet
+                            .sendWalletAccountMetrics(walletId, accountId, hasConfirmedFunds)
+                            .catch((error) => logger.warn('Failed to send wallet account metrics', context, error));
                     }
 
                     incrementSyncKey(walletId, accountId);
+                    logger.info('Wallet account sync done', { ...context, durationMs: Date.now() - startedAt });
                 } catch (error: any) {
+                    logger.error(
+                        'Wallet account sync failed',
+                        { ...context, step, durationMs: Date.now() - startedAt },
+                        error
+                    );
                     const message =
                         error?.error ?? c('Wallet').t`An error occurred whilst syncing your wallet. Please try again.`;
                     syncingFailed(walletId, accountId, message);
                 } finally {
+                    step = 'getTransactions';
                     const wasmAccount = account.account;
                     const transactions = await wasmAccount
                         .getTransactions({ skip: 0, take: 1 }, WasmTransactionFilter.All)
-                        .catch(() => undefined);
+                        .catch((error) => {
+                            logger.error('Failed to read wallet account transactions after sync', context, error);
+                            return undefined;
+                        });
                     const txs = transactions?.[0] ?? [];
                     const hasTransaction = txs.length > 0;
                     removeSyncing(walletId, accountId, hasTransaction);
+                    clearTimeout(slowSyncTimer);
                 }
             }
         },
@@ -358,8 +402,11 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
 
             // This ensure that if another poll is start (via calling this fn), previous one will be stoped: uuid won't match anymore
             while (pollingIdRef.current == pollingId) {
+                // Errors are caught here so that a single failure does not silently stop the polling
                 await syncManyWallets({
                     walletIds: Object.keys(init),
+                }).catch((error) => {
+                    logger.error('Wallets polling sync failed', error);
                 });
 
                 await wait(10 * MINUTE);
@@ -379,7 +426,9 @@ export const useWalletsChainData = (apiWalletsData?: IWasmApiWalletData[]) => {
             }
         };
 
-        void run();
+        run().catch((error) => {
+            logger.error('Failed to initialise wallets chain data, syncing did not start', error);
+        });
     }, [getWalletsChainDataInit, walletSubsetData, previousWalletSubsetData, startPolling]);
 
     // We need this reversed map to reconciliate WalletId+DerivationPath -> AccountId

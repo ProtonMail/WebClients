@@ -4762,6 +4762,9 @@ importers:
       '@protontech/crypto':
         specifier: 'catalog:'
         version: 2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2)
+      '@protontech/logger':
+        specifier: 'catalog:'
+        version: 1.0.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
       '@ramp-network/ramp-instant-sdk':
         specifier: ^4.0.8
         version: 4.0.8

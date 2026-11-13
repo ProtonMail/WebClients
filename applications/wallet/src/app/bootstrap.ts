@@ -1,3 +1,6 @@
+import { logger } from '@protontech/logger';
+import { ALL_CONSOLE_LEVELS } from '@protontech/logger/constants';
+
 import { addressesThunk } from '@proton/account/addresses';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
@@ -15,6 +18,7 @@ import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
+import { generateLoggerKey } from '@proton/shared/lib/authentication/loggerKey';
 import {
     getPersistedSession,
     registerSessionRemovalListener,
@@ -24,6 +28,7 @@ import { getIsAuthorizedApp } from '@proton/shared/lib/drawer/helpers';
 import { getAppVersionStr } from '@proton/shared/lib/fetch/headers';
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
+import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
@@ -124,6 +129,37 @@ export const bootstrapApp = async ({
             bootstrap.loadCrypto({ appName, unleashClient }),
             unleashPromise,
         ]);
+        // Wasm failures (wallet syncing especially) never reach the API, these logs are what users can attach to a bug report
+        if (unleashClient.isEnabled('CollectLogs')) {
+            generateLoggerKey(authentication)
+                .then(({ key: loggerKey, ID: loggerID }) =>
+                    logger.initialize({
+                        encryptionKey: loggerKey,
+                        appName,
+                        loggerID,
+                        loggerName: 'wallet',
+                        consoleLevels: isProduction(window.location.host) ? undefined : ALL_CONSOLE_LEVELS,
+                    })
+                )
+                .catch((error) => {
+                    // eslint-disable-next-line no-console
+                    console.error('Failed to initialize the proton logger', error);
+                });
+
+            api.addEventListener((event) => {
+                if (event.type === 'api-error') {
+                    // Ping event can be noisy as they are triggered every 5000ms while offline
+                    const isPing = event.payload.apiInfo.url === 'tests/ping';
+                    if (!isPing) {
+                        logger.error(event.payload.apiInfo.url || 'unknown URL', event.payload);
+                    }
+                }
+
+                // Passive observer for all events, return false so we never claim to handle any of them.
+                return false;
+            });
+        }
+
         // Needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
         // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
@@ -142,6 +178,10 @@ export const bootstrapApp = async ({
         // Register callback to clear settings entries on logout
         registerSessionRemovalListener(async () => {
             clearSettings();
+            // The encryption key is session bound, so the logs are unreadable after a logout anyway.
+            if (logger.isInitialized()) {
+                await logger.clearLogs();
+            }
         });
 
         return {
