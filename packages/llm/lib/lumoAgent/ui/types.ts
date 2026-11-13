@@ -7,7 +7,14 @@ import type { ServerToolSource } from '@proton/lumo-ui/shared-components/ServerT
 import type { WelcomeSuggestionCard } from '@proton/lumo-ui/shared-components/WelcomeSuggestions/WelcomeSuggestions';
 import type { IconComponent } from '@proton/lumo-ui/types/IconComponent';
 
-import type { ActionRequest, ReferenceLabels, ToolDefinition, ToolHandlers, ToolName } from '../contracts/types';
+import type {
+    ActionRequest,
+    ReferenceLabels,
+    ReferenceRegistry,
+    ToolDefinition,
+    ToolHandlers,
+    ToolName,
+} from '../contracts/types';
 
 /** `APPLYING` exists so the tile can record the outcome rather than the click that started it. */
 export enum ConfirmStatus {
@@ -111,8 +118,11 @@ export interface LumoAgentConfig {
      * turn is sent: no protocol base, no {@link productRules}. Switches on standalone-prompt mode.
      */
     serverPrompt?: boolean;
-    /** Standalone-prompt mode only: prepended to each user message the model reads, so the turn carries the moment it was sent. */
-    turnContext?: () => string;
+    /**
+     * Standalone-prompt mode only: prepended to each user message the model reads, so the turn carries the moment it was sent.
+     * Gets the session's registry, so a reference it names is one the model may pass straight to a tool.
+     */
+    turnContext?: (references: ReferenceRegistry) => string;
     /** Forwarded to the transport as `clientType`. */
     clientType?: LumoClientType;
     /** Read once per send and forwarded to the transport as `modelTier`; the transport's default model when absent. */

@@ -305,10 +305,12 @@ const useLumoAgent = (config: LumoAgentConfig) => {
 
     const stop = useCallback(() => abandonChain(LumoChainEnd.STOPPED), [abandonChain]);
 
-    // Built once per session (per `sessionKey`); holds the reference registry + loaded-guide set so
-    // they persist across messages. Confirmations resolve the executor's `ConfirmController` promise.
+    // Per session, shared by the executor and the turn context, so a reference the context names resolves in a tool call.
+    const references = useMemo(() => createReferenceRegistry(), [sessionKey]);
+
+    // Built once per session (per `sessionKey`); holds the loaded-guide set so it persists across
+    // messages. Confirmations resolve the executor's `ConfirmController` promise.
     const executor = useMemo(() => {
-        const references = createReferenceRegistry();
         const byName = new Map(config.definitions.map((definition) => [definition.name, definition]));
         return createClientToolExecutor({
             definitions: config.definitions,
@@ -340,7 +342,7 @@ const useLumoAgent = (config: LumoAgentConfig) => {
                 });
             },
         });
-    }, [config, standalonePrompt, sessionKey, nextId, pushItem, finalizeReply, advanceLastConfirm]);
+    }, [config, standalonePrompt, references, nextId, pushItem, finalizeReply, advanceLastConfirm]);
 
     /**
      * Bank what the chain produced, as the transport reports it rather than as the bubbles on screen
@@ -566,13 +568,24 @@ const useLumoAgent = (config: LumoAgentConfig) => {
             finalizeReply();
             pushItem({ id: nextId(), kind: 'user', text });
             // The model reads the moment the message was sent; the bubble on screen shows only what was typed.
-            const turnContext = standalonePrompt ? config.turnContext?.() : undefined;
+            const turnContext = standalonePrompt ? config.turnContext?.(references) : undefined;
             const content = turnContext ? `${turnContext}\n\n${text}` : text;
             transcriptRef.current.push({ role: USER, content });
 
             await runChain([...buildSystemTurns(), ...historyRef.current, { role: USER, content }], content);
         },
-        [config, standalonePrompt, buildSystemTurns, isBusy, finalizeReply, nextId, pushItem, runChain, abandonChain]
+        [
+            config,
+            standalonePrompt,
+            references,
+            buildSystemTurns,
+            isBusy,
+            finalizeReply,
+            nextId,
+            pushItem,
+            runChain,
+            abandonChain,
+        ]
     );
 
     /**

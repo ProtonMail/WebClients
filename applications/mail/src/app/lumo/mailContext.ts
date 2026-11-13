@@ -1,5 +1,6 @@
 import { format } from 'date-fns';
 
+import type { ReferenceRegistry } from '@proton/llm/lib/lumoAgent/contracts/types';
 import { messageByID } from '@proton/mail-message/store/messages/messagesSelectors';
 import { selectCategories } from '@proton/mail/store/labels';
 import type { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -13,6 +14,7 @@ import { getStandardFolders } from '../helpers/labels';
 import { selectParams } from '../store/elements/elementsSelectors';
 import type { MailState } from '../store/store';
 import { formatLocalDateTime } from './helpers/formatting';
+import { conversationReferenceFor, messageReferenceFor } from './helpers/references';
 
 const NO_SUBJECT = '(no subject)';
 
@@ -36,7 +38,8 @@ const describeList = (state: MailState): string => {
     );
 };
 
-const describeReadingPane = (state: MailState): string => {
+// Names the open element by a reference the model can act on ("snooze this") without reading it first.
+const describeReadingPane = (state: MailState, references: ReferenceRegistry): string => {
     const { elementID, conversationMode } = selectParams(state);
     if (!elementID) {
         return 'nothing';
@@ -47,14 +50,25 @@ const describeReadingPane = (state: MailState): string => {
         const conversation =
             state.conversations[elementID]?.Conversation ?? (isElementConversation(element) ? element : undefined);
         const count = conversation?.NumMessages ?? 1;
-        return `conversation ${quote(conversation?.Subject)}, ${count} ${count === 1 ? 'message' : 'messages'}`;
+        // No label until it has loaded: a placeholder title would overwrite the one an earlier read stored.
+        const reference = conversationReferenceFor(
+            references,
+            elementID,
+            conversation ? { title: conversation.Subject || NO_SUBJECT } : undefined
+        );
+        return `conversation ${reference} ${quote(conversation?.Subject)}, ${count} ${count === 1 ? 'message' : 'messages'}`;
     }
 
     const message = state.messages[elementID]?.data ?? (isElementMessage(element) ? element : undefined);
     const sender = message?.Sender
         ? ` from ${recipientToInput({ ...message.Sender, Name: neutralise(message.Sender.Name || message.Sender.Address) })}`
         : '';
-    return `email ${quote(message?.Subject)}${sender}`;
+    const reference = messageReferenceFor(
+        references,
+        elementID,
+        message ? { title: message.Subject || NO_SUBJECT } : undefined
+    );
+    return `email ${reference} ${quote(message?.Subject)}${sender}`;
 };
 
 const describeOpenComposers = (state: MailState): string => {
@@ -64,13 +78,18 @@ const describeOpenComposers = (state: MailState): string => {
     return subjects.length ? subjects.join(', ') : 'none';
 };
 
-export const buildMailContext = (state: MailState, now: Date, timezone: string): string =>
+export const buildMailContext = (
+    state: MailState,
+    references: ReferenceRegistry,
+    now: Date,
+    timezone: string
+): string =>
     [
         '<mail_context>',
         `Current date and time: ${format(now, 'EEEE', { locale: enUSLocale })}, ${formatLocalDateTime(now)}`,
         `Timezone: ${timezone}`,
         `Open in the list: ${describeList(state)}`,
-        `Open in the reading pane: ${describeReadingPane(state)}`,
+        `Open in the reading pane: ${describeReadingPane(state, references)}`,
         `Open composers: ${describeOpenComposers(state)}`,
         '</mail_context>',
     ].join('\n');
