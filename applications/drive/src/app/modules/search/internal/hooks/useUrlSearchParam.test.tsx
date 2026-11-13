@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import { MemoryRouter } from 'react-router-dom-v5-compat';
 
 import { act, renderHook } from '@testing-library/react-hooks';

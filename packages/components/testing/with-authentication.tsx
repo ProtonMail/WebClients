@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react';
+import type { ComponentType, JSX } from 'react';
 
 import type { Props as AuthenticationProviderProps } from '../containers/authentication/Provider';
 import AuthenticationProvider from '../containers/authentication/Provider';

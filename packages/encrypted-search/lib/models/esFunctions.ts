@@ -1,4 +1,4 @@
-import type { MutableRefObject } from 'react';
+import type { JSX, MutableRefObject } from 'react';
 
 import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 

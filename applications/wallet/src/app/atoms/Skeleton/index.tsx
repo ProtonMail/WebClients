@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import { cloneElement } from 'react';
 
 import clsx from '@proton/utils/clsx';

@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react';
+import type { ComponentType, JSX } from 'react';
 
 import { CacheContext } from '@proton/app-context/cacheContext';
 import createCache from '@proton/shared/lib/helpers/cache';

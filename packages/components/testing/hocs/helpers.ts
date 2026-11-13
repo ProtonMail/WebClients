@@ -1,4 +1,4 @@
-import type { ComponentType, ReactNode } from 'react';
+import type { ComponentType, JSX, ReactNode } from 'react';
 import { createElement } from 'react';
 
 import type { WrapperComponent } from '@testing-library/react-hooks';

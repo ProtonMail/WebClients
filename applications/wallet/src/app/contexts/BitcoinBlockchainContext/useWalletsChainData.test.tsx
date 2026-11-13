@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from 'react';
+import type { JSX, PropsWithChildren } from 'react';
 
 import { logger } from '@protontech/logger';
 import { waitFor } from '@testing-library/react';
@@ -105,7 +105,7 @@ describe('useWalletsChainData', () => {
     it('should sync accounts every 10 minutes, when needed', async () => {
         const store = setupStore();
 
-        function Wrapper({ children }: PropsWithChildren<{}>): React.JSX.Element {
+        function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
             return <ProtonStoreProvider store={store}>{children}</ProtonStoreProvider>;
         }
 
@@ -136,7 +136,7 @@ describe('useWalletsChainData', () => {
         it('should return helpers to trigger manually sync for single account, when needed', async () => {
             const store = setupStore();
 
-            function Wrapper({ children }: PropsWithChildren<{}>): React.JSX.Element {
+            function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
                 return <ProtonStoreProvider store={store}>{children}</ProtonStoreProvider>;
             }
 
@@ -165,7 +165,7 @@ describe('useWalletsChainData', () => {
         it('should return helpers to trigger manually sync for single wallet, when needed', async () => {
             const store = setupStore();
 
-            function Wrapper({ children }: PropsWithChildren<{}>): React.JSX.Element {
+            function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
                 return <ProtonStoreProvider store={store}>{children}</ProtonStoreProvider>;
             }
 
@@ -198,7 +198,7 @@ describe('useWalletsChainData', () => {
             const loggerErrorSpy = vi.spyOn(logger, 'error');
             const store = setupStore();
 
-            function Wrapper({ children }: PropsWithChildren<{}>): React.JSX.Element {
+            function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
                 return <ProtonStoreProvider store={store}>{children}</ProtonStoreProvider>;
             }
 
@@ -221,7 +221,7 @@ describe('useWalletsChainData', () => {
             const loggerWarnSpy = vi.spyOn(logger, 'warn');
             const store = setupStore();
 
-            function Wrapper({ children }: PropsWithChildren<{}>): React.JSX.Element {
+            function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
                 return <ProtonStoreProvider store={store}>{children}</ProtonStoreProvider>;
             }
 
@@ -245,7 +245,7 @@ describe('useWalletsChainData', () => {
         it('should stop polling on hook unmount', async () => {
             const store = setupStore();
 
-            function Wrapper({ children }: PropsWithChildren<{}>): React.JSX.Element {
+            function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
                 return <ProtonStoreProvider store={store}>{children}</ProtonStoreProvider>;
             }
 

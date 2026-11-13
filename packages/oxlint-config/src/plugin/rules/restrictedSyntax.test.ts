@@ -1,8 +1,11 @@
 import { RuleTester } from 'oxlint/plugins-dev';
 
+import { jsxNamespaceSelectors } from '../../jsxNamespace.ts';
 import rule from './restrictedSyntax.ts';
 
 const ruleTester = new RuleTester({ languageOptions: { parserOptions: { lang: 'ts' } } });
+
+const [globalJsx, reactJsx] = jsxNamespaceSelectors;
 
 const brand = {
     selector:
@@ -36,8 +39,48 @@ ruleTester.run('restricted-syntax', rule, {
         { code: "store.referenceFor('conversation', id);", options: [emailReference] },
         { code: 'test.only("x", () => {});', options: [focusedTest] },
         { code: 'const anything = 1;' },
+        { code: "import type { JSX } from 'react'; let a: JSX.Element;", options: jsxNamespaceSelectors },
+        {
+            code: "import type { JSX, ReactNode } from 'react'; let a: keyof JSX.IntrinsicElements;",
+            options: jsxNamespaceSelectors,
+        },
+        { code: 'let a: Other.JSX.Element;', options: jsxNamespaceSelectors },
+        {
+            code: "import type { JSX } from 'react'; interface A extends JSX.IntrinsicAttributes {}",
+            options: jsxNamespaceSelectors,
+        },
     ],
     invalid: [
+        {
+            code: 'interface A extends JSX.IntrinsicAttributes {}',
+            options: jsxNamespaceSelectors,
+            errors: [{ messageId: 'restrictedSyntax', data: { message: globalJsx.message } }],
+        },
+        {
+            code: 'class A implements JSX.ElementClass { render() {} }',
+            options: jsxNamespaceSelectors,
+            errors: [{ messageId: 'restrictedSyntax', data: { message: globalJsx.message } }],
+        },
+        {
+            code: "import React from 'react'; interface A extends React.JSX.IntrinsicAttributes {}",
+            options: jsxNamespaceSelectors,
+            errors: [{ messageId: 'restrictedSyntax', data: { message: reactJsx.message } }],
+        },
+        {
+            code: 'let a: JSX.Element;',
+            options: jsxNamespaceSelectors,
+            errors: [{ messageId: 'restrictedSyntax', data: { message: globalJsx.message } }],
+        },
+        {
+            code: "import type { ReactNode } from 'react'; let a: keyof JSX.IntrinsicElements;",
+            options: jsxNamespaceSelectors,
+            errors: [{ messageId: 'restrictedSyntax', data: { message: globalJsx.message } }],
+        },
+        {
+            code: "import React from 'react'; let a: React.JSX.Element;",
+            options: jsxNamespaceSelectors,
+            errors: [{ messageId: 'restrictedSyntax', data: { message: reactJsx.message } }],
+        },
         {
             code: 'c("Info").t`Welcome to Proton`;',
             options: [brand, mail],

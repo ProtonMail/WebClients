@@ -1,4 +1,4 @@
-import type { ComponentPropsWithoutRef, DragEvent as ReactDragEvent, ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, DragEvent as ReactDragEvent, JSX, ReactNode } from 'react';
 import { cloneElement } from 'react';
 
 import useDragOver from '../../hooks/useDragOver';

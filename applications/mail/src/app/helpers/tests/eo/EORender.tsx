@@ -1,4 +1,4 @@
-import type { PropsWithChildren, ReactElement, ReactNode } from 'react';
+import type { JSX, PropsWithChildren, ReactElement, ReactNode } from 'react';
 import { Router } from 'react-router';
 import { Route } from 'react-router-dom';
 

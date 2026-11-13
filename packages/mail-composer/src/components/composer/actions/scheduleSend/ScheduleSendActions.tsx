@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import { forwardRef, useMemo } from 'react';
 
 import { addDays, addSeconds, format, fromUnixTime, getUnixTime, isEqual, nextMonday, set } from 'date-fns';

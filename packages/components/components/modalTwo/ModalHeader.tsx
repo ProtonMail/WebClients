@@ -1,4 +1,4 @@
-import type { ComponentPropsWithRef, ReactElement, ReactNode, SVGProps } from 'react';
+import type { ComponentPropsWithRef, JSX, ReactElement, ReactNode, SVGProps } from 'react';
 import { cloneElement, useContext } from 'react';
 
 import { c } from 'ttag';

@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react';
+import type { ComponentType, JSX } from 'react';
 
 import { CacheProvider } from '../containers/cache/Provider';
 import { mockCache } from './cache';

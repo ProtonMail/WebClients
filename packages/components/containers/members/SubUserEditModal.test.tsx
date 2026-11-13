@@ -1,3 +1,5 @@
+import type { JSX } from 'react';
+
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { assignMemberRoles } from '@proton/account/members/actions';

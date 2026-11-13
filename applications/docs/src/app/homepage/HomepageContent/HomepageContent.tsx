@@ -1,3 +1,4 @@
+import type { JSX } from 'react'
 import { IcBrandProtonDocs } from '@proton/icons/icons/IcBrandProtonDocs'
 import { IcBrandProtonSheets } from '@proton/icons/icons/IcBrandProtonSheets'
 import { CircleLoader } from '../components/CircleLoader'

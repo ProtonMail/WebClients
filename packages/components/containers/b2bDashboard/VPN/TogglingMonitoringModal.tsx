@@ -1,3 +1,5 @@
+import type { JSX } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';

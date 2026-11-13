@@ -1,4 +1,4 @@
-import type { ReactElement, ReactNode } from 'react';
+import type { JSX, ReactElement, ReactNode } from 'react';
 import React, { cloneElement, useContext } from 'react';
 
 import type { HotkeyTuple } from '@proton/hooks/useHotkeys';

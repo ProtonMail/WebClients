@@ -1,4 +1,4 @@
-import type { KeyboardEvent } from 'react';
+import type { JSX, KeyboardEvent } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';

@@ -1,3 +1,5 @@
+import type { JSX } from 'react';
+
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
