@@ -1,6 +1,12 @@
 import { renderHook } from '@testing-library/react'
+import { isDevOrBlack } from '@proton/shared/lib/env'
 import { useFlag } from '@proton/unleash/useFlag'
 import { useBulkMoveEnabled, useBulkTrashEnabled, useRealtimeSdkEnabled } from './flags'
+
+jest.mock('@proton/shared/lib/env', () => ({
+  ...jest.requireActual('@proton/shared/lib/env'),
+  isDevOrBlack: jest.fn(() => false),
+}))
 
 describe('useBulkTrashEnabled', () => {
   test.each([
@@ -37,10 +43,13 @@ describe('useBulkMoveEnabled', () => {
 
 describe('useRealtimeSdkEnabled', () => {
   test.each([
-    [{ DocsRealtimeSdkEnabled: true }, true],
-    [{ DocsRealtimeSdkEnabled: false }, false],
-  ])('%j -> %s', (flags: Record<string, boolean>, expected) => {
+    [{ DocsRealtimeSdkEnabled: true }, false, true],
+    [{ DocsRealtimeSdkEnabled: false }, false, false],
+    [{ DocsRealtimeSdkEnabled: true }, true, true],
+    [{ DocsRealtimeSdkEnabled: false }, true, true],
+  ])('%j, dev or black %s -> %s', (flags: Record<string, boolean>, devOrBlack, expected) => {
     jest.mocked(useFlag).mockImplementation((name) => flags[name])
+    jest.mocked(isDevOrBlack).mockReturnValue(devOrBlack)
 
     const { result } = renderHook(() => useRealtimeSdkEnabled())
 
