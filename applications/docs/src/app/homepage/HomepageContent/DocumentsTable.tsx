@@ -1,10 +1,6 @@
 import * as Ariakit from '@ariakit/react'
 import { Avatar, Input } from '../components/atoms'
-import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
 import { Button, IconButton, Tooltip, TooltipProvider } from '../components/ui'
-import Dropdown from '@proton/components/components/dropdown/Dropdown'
-import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu'
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
 import Checkbox from '@proton/components/components/input/Checkbox'
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint'
 import type { RecentDocumentsItem } from '../recentDocumentsItem'
@@ -12,9 +8,7 @@ import type { DateFormatter } from '../utils/dateFormatter'
 import { SDK_SWITCH_INITIATIVE } from '../utils/errorTracking'
 import type { IconComponent } from '@proton/icons/component'
 import { IcArrowDown } from '@proton/icons/icons/IcArrowDown'
-import { IcArrowDownArrowUp } from '@proton/icons/icons/IcArrowDownArrowUp'
 import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross'
-import { IcCheckmark } from '@proton/icons/icons/IcCheckmark'
 import { IcFolder } from '@proton/icons/icons/IcFolder'
 import { IcInbox } from '@proton/icons/icons/IcInbox'
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical'
@@ -31,10 +25,10 @@ import { Fragment, useEffect, useRef, useState } from 'react'
 import { c, msgid } from 'ttag'
 import { useEvent } from '../utils/useEvent'
 import { useDocumentActions } from '../documentActionsContext'
-import type { RecentsSort } from '../homepageViewContext'
 import { useHomepageView, type ItemsSection, type ItemsSectionId } from '../homepageViewContext'
 import { isMyDocument } from '../is-my-document'
 import { useRowSelection, type RowSelection } from './useRowSelection'
+import { SortSelect } from './SortSelect'
 import { DocContextMenu, canTrash } from './DocContextMenu/DocContextMenu'
 import { useContextMenu } from './DocContextMenu/context'
 import { COLOR_BY_TYPE, ContentSheet, ICON_BY_TYPE } from './shared'
@@ -42,7 +36,6 @@ import * as Table from './table'
 
 import { getOwnerName } from '../get-owner-name'
 import { useDoubleClick } from '../utils/useDoubleClick'
-import { TelemetryEvent } from '../utils/telemetry'
 
 // table
 // -----
@@ -339,63 +332,6 @@ function SectionLabel({ sectionId, hasCheckbox }: SectionLabelProps) {
         </span>
       </Table.Header>
     </Table.Row>
-  )
-}
-
-const SORT_SELECT_OPTIONS = [
-  { value: 'viewed', label: () => c('Sort menu options').t`Last viewed first` },
-  // TODO: re-enable once "last modified" is supported.
-  // { value: 'modified', label: () => c('Actions').t`Last modified first` },
-  { value: 'name', label: () => c('Sort menu options').t`Name` },
-  { value: 'owner', label: () => c('Sort menu options').t`Created by` },
-  { value: 'location', label: () => c('Sort menu options').t`Location` },
-] satisfies { value: RecentsSort; label: () => string }[]
-
-const TELEMETRY_EVENT_BY_SORT: Record<RecentsSort, TelemetryEvent> = {
-  viewed: TelemetryEvent.sorting_changed_to_time,
-  //   modified: TelemetryEvent.sorting_changed_to_modified,
-  name: TelemetryEvent.sorting_changed_to_name,
-  owner: TelemetryEvent.sorting_changed_to_owner,
-  location: TelemetryEvent.sorting_changed_to_location,
-}
-
-function SortSelect() {
-  const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>()
-  const { state, setRecentsSort, reportTelemetry } = useHomepageView()
-  const sortValue = state.view === 'recents' ? state.sort : undefined
-
-  return (
-    <>
-      <IconButton
-        label={c('Action').t`Sort by`}
-        onClick={toggle}
-        aria-label={c('Action').t`Change sort order`}
-        ref={anchorRef}
-        shape="ghost"
-        className={clsx('ml-auto shrink-0 px-2', isOpen && 'bg-[--interaction-default-active]')}
-      >
-        <IcArrowDownArrowUp className="shrink-0" />
-      </IconButton>
-      <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
-        <DropdownMenu>
-          <p className="px-4 py-2 text-[.875rem] font-bold">Sort by</p>
-          {SORT_SELECT_OPTIONS.map(({ label, value }) => (
-            <DropdownMenuButton
-              key={value}
-              onClick={() => {
-                setRecentsSort(value)
-                close()
-                reportTelemetry(TELEMETRY_EVENT_BY_SORT[value])
-              }}
-              className="flex items-center gap-2"
-            >
-              <span>{label()}</span>
-              {sortValue === value ? <IcCheckmark /> : null}
-            </DropdownMenuButton>
-          ))}
-        </DropdownMenu>
-      </Dropdown>
-    </>
   )
 }
 
@@ -775,8 +711,9 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
 // Like Drive's `useArrowKeyNavigation`: arrows move focus between rows, Space selects.
 function moveRowFocus(event: KeyboardEvent<HTMLElement>) {
   const { key, target, currentTarget } = event
-  // `contains` skips keys bubbling from portals (e.g. the sort dropdown).
-  if (!(target instanceof Element) || !currentTarget.contains(target)) {
+  // `contains` skips keys bubbling from portals (e.g. the sort menu), `defaultPrevented` keys a control
+  // inside the table already handled (e.g. the arrows that open the sort menu).
+  if (event.defaultPrevented || !(target instanceof Element) || !currentTarget.contains(target)) {
     return
   }
   const activators = [...currentTarget.querySelectorAll<HTMLElement>('[data-item-activator]')]

@@ -324,7 +324,7 @@ describe('HomepageContent', () => {
       renderWithProviders(<HomepageContent />)
 
       fireEvent.click(await screen.findByRole('button', { name: 'Change sort order' }))
-      fireEvent.click(await screen.findByRole('button', { name: option }))
+      fireEvent.click(await screen.findByRole('menuitem', { name: option }))
 
       expect(mockReportTelemetry).toHaveBeenCalledWith(event)
     })
@@ -583,6 +583,21 @@ describe('HomepageContent', () => {
 
       await userEvent.keyboard('{Home}')
       expect(await findRow('Document1')).toHaveFocus()
+    })
+
+    test('ArrowDown on the sort button opens its menu, not a row, and Escape returns to the button', async () => {
+      renderWithProviders(<HomepageContent />)
+      const sortButton = await screen.findByRole('button', { name: 'Change sort order' })
+      // JSDOM has no layout; Ariakit checks visibility before restoring focus.
+      Object.defineProperty(sortButton, 'offsetWidth', { value: 1 })
+      act(() => sortButton.focus())
+
+      await userEvent.keyboard('{ArrowDown}')
+      await waitFor(() => expect(screen.getByRole('menuitem', { name: 'Last viewed first' })).toHaveFocus())
+      expect(sortButton).toHaveAttribute('aria-expanded', 'true')
+      await userEvent.keyboard('{Escape}')
+
+      await waitFor(() => expect(sortButton).toHaveFocus())
     })
 
     test('on mobile, the selection controls are in the head', async () => {
