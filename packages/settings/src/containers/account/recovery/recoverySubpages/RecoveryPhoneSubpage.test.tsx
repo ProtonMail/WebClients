@@ -1,14 +1,14 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
+import { useUpdateAccountRecovery } from '@proton/account-recovery/recovery/useUpdateAccountRecovery';
 import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
-import { useUpdateAccountRecovery } from '@proton/account/recovery/useUpdateAccountRecovery';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useMyCountry from '@proton/components/hooks/useMyCountry';
 
 import RecoveryPhoneSubpage from './RecoveryPhoneSubpage';
 
 jest.mock('@proton/account/recovery/sentinelHooks');
-jest.mock('@proton/account/recovery/useUpdateAccountRecovery');
+jest.mock('@proton/account-recovery/recovery/useUpdateAccountRecovery');
 jest.mock('@proton/components/containers/themes/ThemeProvider');
 jest.mock('@proton/components/hooks/useMyCountry');
 jest.mock('@proton/components/containers/recovery/phone/RecoveryPhone', () => ({

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import PasswordReminderModal from '@proton/account/passwordReminder/PasswordReminderModal';
+import PasswordReminderModal from '@proton/account-recovery/passwordReminder/PasswordReminderModal';
 import { usePasswordReminder } from '@proton/account/passwordReminder/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';

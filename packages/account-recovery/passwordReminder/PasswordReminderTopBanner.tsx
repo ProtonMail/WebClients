@@ -2,6 +2,10 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { dismissPasswordReminder, passwordReminderActions } from '@proton/account/passwordReminder';
+import { usePasswordReminder } from '@proton/account/passwordReminder/hooks';
+import { usePasswordReminderTelemetry } from '@proton/account/passwordReminder/passwordReminderTelemetry';
+import { useDispatch } from '@proton/account/store/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -9,11 +13,7 @@ import TopBanner from '@proton/components/containers/topBanners/TopBanner';
 import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { useDispatch } from '../store/hooks';
 import PasswordReminderModal from './PasswordReminderModal';
-import { usePasswordReminder } from './hooks';
-import { dismissPasswordReminder, passwordReminderActions } from './index';
-import { usePasswordReminderTelemetry } from './passwordReminderTelemetry';
 
 const PasswordReminderTopBanner = () => {
     const dispatch = useDispatch();

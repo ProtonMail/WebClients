@@ -1,11 +1,20 @@
 import { c } from 'ttag';
 
-import { useUpdateAccountRecovery } from '@proton/account/recovery/useUpdateAccountRecovery';
+import { useUpdateAccountRecovery } from '@proton/account-recovery/recovery/useUpdateAccountRecovery';
 import { useUser } from '@proton/account/user/hooks';
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useApi } from '@proton/app-context/useApi';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import Info from '@proton/components/components/link/Info';
+import SettingsLink from '@proton/components/components/link/SettingsLink';
+import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
+import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
+import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
+import SettingsSection from '@proton/components/containers/account/SettingsSection';
+import ToggleAssistantContainer from '@proton/components/containers/general/ToggleAssistant/ToggleAssistantContainer';
+import DailyEmailNotificationToggle from '@proton/components/containers/recovery/DailyEmailNotificationToggle';
+import RecoveryEmail from '@proton/components/containers/recovery/email/RecoveryEmail';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { patchNews } from '@proton/shared/lib/api/settings';
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -17,16 +26,6 @@ import {
 } from '@proton/shared/lib/helpers/newsletter';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces/UserSettings';
-
-import Info from '../../components/link/Info';
-import SettingsLink from '../../components/link/SettingsLink';
-import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
-import SettingsSection from '../account/SettingsSection';
-import ToggleAssistantContainer from '../general/ToggleAssistant/ToggleAssistantContainer';
-import DailyEmailNotificationToggle from '../recovery/DailyEmailNotificationToggle';
-import RecoveryEmail from '../recovery/email/RecoveryEmail';
 
 const MessagesGeneralSection = () => {
     const [userSettings] = useUserSettings();

@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
+import { useUpdateAccountRecovery } from '@proton/account-recovery/recovery/useUpdateAccountRecovery';
 import { useAddresses } from '@proton/account/addresses/hooks';
-import { useUpdateAccountRecovery } from '@proton/account/recovery/useUpdateAccountRecovery';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import ConfigProvider from '@proton/components/containers/config/Provider';
 import { APPS } from '@proton/shared/lib/constants';
@@ -14,7 +14,9 @@ const mockEmailToggle = jest.fn();
 
 jest.mock('@proton/account/addresses/hooks', () => ({ useAddresses: jest.fn() }));
 jest.mock('@proton/account/userSettings/hooks', () => ({ useUserSettings: jest.fn() }));
-jest.mock('@proton/account/recovery/useUpdateAccountRecovery', () => ({ useUpdateAccountRecovery: jest.fn() }));
+jest.mock('@proton/account-recovery/recovery/useUpdateAccountRecovery', () => ({
+    useUpdateAccountRecovery: jest.fn(),
+}));
 jest.mock('@proton/components/hooks/useMyCountry', () => ({ __esModule: true, default: () => 'CH' }));
 jest.mock('@proton/shared/lib/helpers/address', () => ({ getIsBYOEOnlyAccount: jest.fn() }));
 jest.mock('../../components/Address/useDefaultAddress', () => ({

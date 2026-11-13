@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { useUpdateRecoveryFile } from '@proton/account-recovery/recovery/useUpdateRecoveryFile';
 import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
-import { useUpdateRecoveryFile } from '@proton/account/recovery/useUpdateRecoveryFile';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';

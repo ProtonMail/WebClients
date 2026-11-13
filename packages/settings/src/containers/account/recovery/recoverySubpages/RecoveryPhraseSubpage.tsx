@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { useUpdateRecoveryKit } from '@proton/account-recovery/recovery/recoveryKit/useUpdateRecoveryKit';
 import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
-import { useUpdateRecoveryKit } from '@proton/account/recovery/recoveryKit/useUpdateRecoveryKit';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';

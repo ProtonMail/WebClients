@@ -5,6 +5,8 @@ import { Redirect, Switch, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import PasswordReminderTopBanner from '@proton/account-recovery/passwordReminder/PasswordReminderTopBanner';
+import VerifyPasswordButton from '@proton/account-recovery/passwordReminder/VerifyPasswordButton';
 import SignInRestrictionSection from '@proton/account-security/signInRestriction/SignInRestrictionSection';
 import AuthDevicesSettings from '@proton/account-security/sso/AuthDevicesSettings';
 import MembersAuthDevicesTopBanner from '@proton/account-security/sso/MembersAuthDevicesTopBanner';
@@ -225,6 +227,7 @@ const MainContainer: FunctionComponent = () => {
 
     const top = (
         <TopBanners app={APPS.PROTONVPN_SETTINGS}>
+            <PasswordReminderTopBanner />
             <SSODomainUnverifiedBanner app={APPS.PROTONVPN_SETTINGS} />
             <MembersAuthDevicesTopBanner />
         </TopBanners>
@@ -393,7 +396,7 @@ const MainContainer: FunctionComponent = () => {
                                         maxWidth={SettingsCardMaxWidth.Narrow}
                                     >
                                         <UsernameSection app={app} />
-                                        <PasswordsSection />
+                                        <PasswordsSection verifyPasswordButton={<VerifyPasswordButton />} />
                                         <>
                                             <LanguageSection locales={locales} />
                                             <LanguageTranslationHelp />

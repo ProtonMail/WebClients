@@ -3,6 +3,7 @@ import { Redirect, matchPath, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import PasswordReminderTopBanner from '@proton/account-recovery/passwordReminder/PasswordReminderTopBanner';
 import AuthDevicesTopBanner from '@proton/account-security/sso/AuthDevicesTopBanner';
 import MembersAuthDevicesTopBanner from '@proton/account-security/sso/MembersAuthDevicesTopBanner';
 import { useAddresses } from '@proton/account/addresses/hooks';
@@ -278,6 +279,7 @@ const MainContainer = () => {
 
     const top = (
         <TopBanners app={app}>
+            <PasswordReminderTopBanner />
             <IncomingRecoveryContactTopBanner />
             <OutgoingRecoveryContactTopBanner />
             <OutgoingEmergencyContactTopBanner />

@@ -2,6 +2,14 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
+import {
+    RecoveryKitContent,
+    type RecoveryKitContentProps,
+} from '@proton/account/recovery/recoveryKit/RecoveryKitContent';
+import type { DeferredMnemonicData } from '@proton/account/recovery/recoveryKit/generateDeferredMnemonicData';
+import { generateRecoveryKitData, setRecoveryPhrase } from '@proton/account/recovery/recoveryKit/recoveryPhraseActions';
+import { useDispatch, useSelector } from '@proton/account/store/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
 import Loader from '@proton/components/components/loader/Loader';
@@ -13,12 +21,6 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';
-
-import { useDispatch, useSelector } from '../../store/hooks';
-import { selectMnemonicData } from '../mnemonic';
-import { RecoveryKitContent, type RecoveryKitContentProps } from './RecoveryKitContent';
-import type { DeferredMnemonicData } from './generateDeferredMnemonicData';
-import { generateRecoveryKitData, setRecoveryPhrase } from './recoveryPhraseActions';
 
 interface Props extends Omit<ModalProps<'div'>, 'children' | 'buttons'> {
     onSuccess?: () => void;

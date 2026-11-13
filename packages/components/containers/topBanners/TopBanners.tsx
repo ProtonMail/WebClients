@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 
-import PasswordReminderTopBanner from '@proton/account/passwordReminder/PasswordReminderTopBanner';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import ErrorBoundary from '../app/ErrorBoundary';
@@ -37,7 +36,6 @@ const TopBanners = ({ children, app }: Props) => {
             <PendingInvitationTopBanner />
             <SubscriptionEndsBanner app={app} />
             <SessionRecoveryBanners />
-            <PasswordReminderTopBanner />
             <NGCAccessTopBanner />
             <PostedInvoiceTopBanner />
             {children}

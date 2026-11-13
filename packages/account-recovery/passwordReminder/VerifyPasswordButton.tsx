@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import PasswordReminderModal from '@proton/account/passwordReminder/PasswordReminderModal';
 import { usePasswordReminder } from '@proton/account/passwordReminder/hooks';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 
-import useModalState from '../../components/modalTwo/useModalState';
+import PasswordReminderModal from './PasswordReminderModal';
 
 const VerifyPasswordButton = () => {
     const [passwordReminderModalProps, setPasswordReminderModalOpen, renderPasswordReminderModal] = useModalState();
