@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
 import { useDeobfuscatedValue } from '../../../hooks/useDeobfuscatedValue';
+import { useUIState } from '../../../hooks/useUIState';
 import { deobfuscateExtraFields } from '../../../lib/items/item.obfuscation';
 import { getItemKey } from '../../../lib/items/item.utils';
 import { ExtraFieldsControl } from '../../Form/Field/Control/ExtraFieldsControl';
@@ -8,7 +9,6 @@ import { FieldBox } from '../../Form/Field/Layout/FieldBox';
 import { FieldsetCluster } from '../../Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '../../Form/legacy/TextAreaReadonly';
 import type { ItemContentProps } from '../../Views/types';
-import { useItemFieldExpansion } from '../Containers/ItemFieldExpansion';
 
 export const NoteContent: FC<ItemContentProps<'note'>> = ({
     revision: { data, itemId, shareId, revision },
@@ -16,7 +16,7 @@ export const NoteContent: FC<ItemContentProps<'note'>> = ({
 }) => {
     const note = useDeobfuscatedValue(data.metadata.note);
     const extraFields = deobfuscateExtraFields(data.extraFields);
-    const [expanded, setExpanded] = useItemFieldExpansion(getItemKey({ shareId, itemId }), true);
+    const [expanded, setExpanded] = useUIState('noteExpanded', getItemKey({ shareId, itemId }), true);
 
     return (
         <>

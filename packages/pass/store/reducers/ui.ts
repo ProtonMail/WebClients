@@ -1,25 +1,28 @@
-import type { Action, Reducer } from 'redux';
+import { type Reducer, combineReducers } from 'redux';
 
 import { objectDelete } from '../../utils/object/delete';
 import { setUIStateValue, unsetUIStateValue } from '../actions/creators/ui';
 
-/** Keep to JSON-serializable primitives : values cross the popup/worker
- * port boundary. Deliberately excluded from the persisted cache */
+/** Keep to JSON-serializable primitives : values cross the popup/worker port boundary */
 export type UIStateValue = boolean | number | string;
-type UIState = { values: Record<string, UIStateValue> };
+export type UIStateNamespace = 'menuExpanded' | 'noteExpanded';
+type UIStateBucket = Partial<Record<UIStateNamespace, Record<string, UIStateValue>>>;
 
-const getInitialState = (): UIState => ({ values: {} });
+/** `session` is never cached. `persisted` is cached: see `selectCachableState` */
+const createBucketReducer =
+    (persist: boolean): Reducer<UIStateBucket> =>
+    (state = {}, action) => {
+        if (setUIStateValue.match(action) && action.payload.persist === persist) {
+            const { namespace, key, value } = action.payload;
+            return { ...state, [namespace]: { ...state[namespace], [key]: value } };
+        }
 
-const uiReducer: Reducer<UIState> = (state = getInitialState(), action: Action) => {
-    if (setUIStateValue.match(action)) {
-        return { values: { ...state.values, [action.payload.key]: action.payload.value } };
-    }
+        if (unsetUIStateValue.match(action) && action.payload.persist === persist) {
+            const { namespace, key } = action.payload;
+            return { ...state, [namespace]: objectDelete(state[namespace] ?? {}, key) };
+        }
 
-    if (unsetUIStateValue.match(action)) {
-        return { values: objectDelete(state.values, action.payload.key) };
-    }
+        return state;
+    };
 
-    return state;
-};
-
-export default uiReducer;
+export default combineReducers({ session: createBucketReducer(false), persisted: createBucketReducer(true) });

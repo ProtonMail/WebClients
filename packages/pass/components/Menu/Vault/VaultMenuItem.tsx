@@ -18,9 +18,9 @@ import noop from '@proton/utils/noop';
 
 import { UpsellRef } from '../../../constants';
 import { useFeatureFlag } from '../../../hooks/useFeatureFlag';
-import { useFolderExpanded } from '../../../hooks/useFolderExpanded';
 import { useItemDrop } from '../../../hooks/useItemDrag';
 import { useMemoSelector } from '../../../hooks/useMemoSelector';
+import { useUIState } from '../../../hooks/useUIState';
 import { isMemberLimitReached } from '../../../lib/access/access.predicates';
 import { intoBulkSelection } from '../../../lib/items/item.utils';
 import { isWritableVault } from '../../../lib/vaults/vault.predicates';
@@ -86,7 +86,7 @@ export const VaultMenuItem = memo(
         withExpandButton,
         onAction = noop,
     }: Props) => {
-        const [isExpanded, setIsExpanded] = useFolderExpanded(vault.shareId);
+        const [isExpanded, setIsExpanded] = useUIState('menuExpanded', vault.shareId, false, { persist: true });
 
         const foldersEnabled = useFeatureFlag(PassFeature.PassFolder);
         const vaultActions = useVaultActions();

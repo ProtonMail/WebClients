@@ -1,7 +1,7 @@
-import type { UIStateValue } from '../reducers';
+import type { UIStateNamespace, UIStateValue } from '../reducers';
 import type { State } from '../types';
 
 export const selectUIStateValue =
-    (key: string) =>
+    (namespace: UIStateNamespace, key: string, persist: boolean) =>
     (state: State): UIStateValue | undefined =>
-        state.ui.values[key];
+        state.ui[persist ? 'persisted' : 'session'][namespace]?.[key];
