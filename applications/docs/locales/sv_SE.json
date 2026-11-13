@@ -3865,6 +3865,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Den här webbläsaren stödjer inte säkerhetsnycklar. Var vänlig försök med en annan webbläsare."
       ]
     },
     "fido2: Info": {
@@ -7840,6 +7843,15 @@
       ],
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Du äger redan ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } är endast tillgängligt på företagspaket."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Det valda paketet stöder inte tillräckligt med adresser för ditt konto."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Detta paket stöder inte medlemmar på ditt konto."
       ]
     },
     "PGP key encryption warning": {

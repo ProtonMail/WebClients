@@ -52,7 +52,7 @@
         "Afegeix"
       ],
       "Add a payment method": [
-        "Afegiu un mètode de pagament"
+        "Afegeix un mètode de pagament"
       ],
       "Add account": [
         "Afegeix un compte"
@@ -2652,7 +2652,7 @@
         "El vostre compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem ${ newUserStorageText } dels vostres missatges més recents de Gmail"
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
-        "El vostre compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem els vostres correus electrònics més recents de Gmail."
+        "El compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem els vostres correus electrònics més recents de Gmail."
       ]
     },
     "description": {
@@ -3933,6 +3933,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Alguna cosa ha anat malament en autenticar-vos amb la clau de seguretat. Torneu-ho a provar."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Aquest navegador no admet claus de seguretat. Proveu amb un altre navegador."
       ]
     },
     "fido2: Info": {
@@ -5416,7 +5419,7 @@
         "Milloreu de pla o allibereu espai en qualsevol moment per portar la resta"
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
-        "Actualitzeu el pla per conservar els vostres avantatges de ${ planTitle }."
+        "Actualitzeu el pla per a conservar els vostres avantatges de ${ planTitle }."
       ],
       "Uppercase and lowercase letters": [
         "Lletres majúscules i minúscules"
@@ -8346,7 +8349,7 @@
         "**Si us subscriviu abans d'aquesta data,** rebreu **${ referrerRewardAmount }** en crèdits."
       ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
-        "Després d'aquesta data, el vostre compte baixarà de categoria a **${ BRAND_NAME } Gratuït**. Si canvieu d'opinió, podreu **reactivar la vostra subscripció** per mantenir l'accés a les funcions prèmium."
+        "Després d'aquesta data, el vostre compte baixarà de categoria a **${ BRAND_NAME } Free**. Si canvieu d'opinió, podreu **reactivar la subscripció** per a mantenir l'accés a les característiques prèmium."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Guanyeu fins a ${ maxRewardAmount } en crèdits. Rebreu ${ referrerRewardAmount } quan la persona que convideu se subscrigui a un pla de ${ BRAND_NAME }."

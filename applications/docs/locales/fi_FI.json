@@ -4191,7 +4191,7 @@
         "**Automaattinen yhdistäminen**: Avaa ja muodostaa VPN-yhteyden heti, kun käynnistät laitteen."
       ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Kutsu kaverisi** ${ BRAND_NAME }:iin suosittelulinkilläsi."
+        "**Kutsu kaverisi** ${ BRAND_NAME }iin henkilökohtaisella suosittelulinkillä."
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Tappokytkin**: Estää tietovuodot katkaisemalla Internet-yhteytesi, jos VPN-yhteys katkeaa yllättäen."
@@ -5280,6 +5280,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
+      ],
+      "Error syncing": [
+        "Synkronointivirhe"
+      ],
+      "Opening…": [
+        "Avataan..."
+      ],
+      "Reconnecting…": [
+        "Yhdistetään uudelleen..."
       ]
     },
     "info": {
@@ -5751,6 +5760,9 @@
       ],
       "Your password (trusted contact)": [
         "Salasananne (luotettu yhteystieto)"
+      ],
+      "Created by ${ displayName }": [
+        "Luonut ${ displayName }"
       ]
     },
     "Label for contact group color": {
@@ -7143,6 +7155,9 @@
       ],
       "Your settings have been changed successfully": [
         "Tekemäsi asetusmuutokset on tallennettu"
+      ],
+      "Failed to load saved items": [
+        "Tallennettujen kohteiden lataus epäonnistui"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9283,6 +9298,9 @@
       ],
       "Your exposed information": [
         "Paljastuneet tietosi"
+      ],
+      "Error syncing": [
+        "Synkronointivirhe"
       ]
     },
     "Title header for keys table": {

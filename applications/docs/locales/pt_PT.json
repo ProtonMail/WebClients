@@ -7563,6 +7563,15 @@
       ],
       "You already own a Born Private account.": [
         "Já possui uma conta Born Private."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "As contas de Born Private não podem ser compradas com uma subscrição ativa."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "A iniciativa Born Private requer uma doação."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "A sua conta é muito antiga para a iniciativa de Born Private."
       ]
     },
     "PGP key encryption warning": {
@@ -9529,6 +9538,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Poderá atribuir cargos assim que o utilizador aceitar o convite."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Este utilizador obtém direitos de administrador na próxima vez que se autenticar."
       ]
     },
     "Validation": {
@@ -9728,6 +9740,11 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "O seu período experimental termina em ${ textDate }. Não lhe será cobrado qualquer valor se cancelar antes de ${ textDate }. ${ action }"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantia de reembolso do dinheiro em 30 dias: cancele até 30 dias da sua compra e contacte o nosso ${ customerSupportLink } para obter um reembolso."
       ]
     }
   }
