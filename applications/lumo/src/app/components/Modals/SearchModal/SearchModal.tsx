@@ -230,7 +230,7 @@ const SearchModalInner = ({ onClose, scope }: SearchModalInnerProps) => {
     const [documentPreview, setDocumentPreview] = useState<Attachment | null>(null);
     const [isLoadingPreview] = useState(false);
     const searchInputRef = useRef<HTMLInputElement>(null);
-    const searchTimeoutRef = useRef<NodeJS.Timeout>();
+    const searchTimeoutRef = useRef<NodeJS.Timeout>(undefined);
     // Guard against double-invocation in React 18 StrictMode (dev) to prevent duplicate loads
     const hasLoadedOnceRef = useRef(false);
 

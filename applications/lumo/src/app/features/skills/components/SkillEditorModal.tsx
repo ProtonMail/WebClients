@@ -82,7 +82,7 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
     const [lumoRequest, setLumoRequest] = useState('');
     const [generating, setGenerating] = useState(false);
     const [undoDraft, setUndoDraft] = useState<GeneratedSkill>();
-    const generationRef = useRef<AbortController>();
+    const generationRef = useRef<AbortController>(undefined);
 
     useEffect(() => () => generationRef.current?.abort(), []);
 

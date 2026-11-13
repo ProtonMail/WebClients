@@ -29,7 +29,7 @@ const downloadLogs = (logs: string[]) => {
 
 export const ApplicationLogs: FC<Props> = ({ opened, style }) => {
     const { getLogs } = usePassCore();
-    const intervalRef = useRef<Maybe<NodeJS.Timeout>>();
+    const intervalRef = useRef<Maybe<NodeJS.Timeout>>(undefined);
 
     const [showLogs, setShowLogs] = useState(opened ?? false);
     const [logs, setLogs] = useState<string[]>([]);

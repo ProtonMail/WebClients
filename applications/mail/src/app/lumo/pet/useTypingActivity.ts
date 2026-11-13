@@ -4,7 +4,7 @@ const TYPING_IDLE_MS = 1500;
 
 export const useTypingActivity = () => {
     const [isTyping, setIsTyping] = useState(false);
-    const idleTimeoutRef = useRef<number>();
+    const idleTimeoutRef = useRef<number>(undefined);
 
     const noteKeystroke = useCallback(() => {
         setIsTyping(true);

@@ -115,7 +115,7 @@ const ImagePreview = ({
     const [fullImageDimensions, setFullImageDimensions] = useState<{ width: number; height: number } | null>(null);
     const [isFallbackToThumbnail, setIsFallbackToThumbnail] = useState(false);
 
-    const timeoutId = useRef<ReturnType<typeof setTimeout>>();
+    const timeoutId = useRef<ReturnType<typeof setTimeout>>(undefined);
 
     const handleZoomOut = () => setImageScale((zoom) => (zoom ? zoom * 0.9 : 1));
 

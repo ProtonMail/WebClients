@@ -58,8 +58,8 @@ const FolderTreeViewList = ({ items = [] }: Props) => {
     const [loading, withLoading] = useLoading();
     const [grabbed, setGrabbed] = useState<Folder>();
     const [position, setPosition] = useState<string>();
-    const overRef = useRef<Folder>();
-    const timeoutRef = useRef<NodeJS.Timeout>();
+    const overRef = useRef<Folder>(undefined);
+    const timeoutRef = useRef<NodeJS.Timeout>(undefined);
     const parents = getParents(items);
     const rootFolders = items.filter(({ ParentID = ROOT_FOLDER }) => ParentID === ROOT_FOLDER);
 

@@ -11,7 +11,7 @@ export const useZendeskChat = (user: UserModel) => {
     const history = useHistory();
     const canAccessZendeskChat = useCanAccessZendeskChat(user);
     const [showZendeskChat, setShowZendeskChat] = useState({ autoLaunch: false, render: false });
-    const zendeskRef = useRef<ZendeskRef>();
+    const zendeskRef = useRef<ZendeskRef>(undefined);
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);

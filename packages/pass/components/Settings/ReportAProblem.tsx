@@ -43,7 +43,7 @@ const validate = ({ description }: FormValues): FormikErrors<FormValues> => {
 export const ReportAProblem: FC = () => {
     const { config } = usePassCore();
     const user = useSelector(selectUser);
-    const formRef = useRef<FormikContextType<FormValues>>();
+    const formRef = useRef<FormikContextType<FormValues>>(undefined);
     const reportBug = useActionRequest(reportBugIntent, { onSuccess: () => formRef.current?.resetForm() });
 
     const form = useFormik<FormValues>({

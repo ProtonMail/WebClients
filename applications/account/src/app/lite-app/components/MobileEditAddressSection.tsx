@@ -31,7 +31,7 @@ const MobileEditAddressSection = ({ address, onAddressUpdate, isSavingAddressUpd
     const [displayName, setDisplayName] = useState(address.DisplayName);
     const [signatureUpdated, setSignatureUpdated] = useState(false);
 
-    const editorRef = useRef<SimpleEditorActions>();
+    const editorRef = useRef<SimpleEditorActions>(undefined);
 
     const handleReady = (actions: SimpleEditorActions) => {
         actions.setContent(address.Signature);

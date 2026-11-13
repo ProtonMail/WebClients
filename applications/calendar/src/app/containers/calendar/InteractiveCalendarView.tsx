@@ -417,7 +417,7 @@ const InteractiveCalendarView = ({
         createEventModal,
     } = modalsMap;
 
-    const confirm = useRef<{ resolve: (param?: any) => void; reject: (error: EscapeTryBlockError) => void }>();
+    const confirm = useRef<{ resolve: (param?: any) => void; reject: (error: EscapeTryBlockError) => void }>(undefined);
 
     const contacts = useContactEmails()[0] || [];
     const displayNameEmailMap = useMemo(() => {
@@ -2240,7 +2240,7 @@ const InteractiveCalendarView = ({
         eventInPopoverUniqueIdRef.current = temporaryEvent?.uniqueId || targetEvent?.uniqueId;
     }, [targetEvent, temporaryEvent]);
 
-    const autoCloseRef = useRef<({ ask }: { ask: boolean }) => void>();
+    const autoCloseRef = useRef<({ ask }: { ask: boolean }) => void>(undefined);
     autoCloseRef.current = ({ ask }) => {
         handleConfirmDeleteTemporary({ ask }).then(resetInteractiveData).catch(noop);
     };

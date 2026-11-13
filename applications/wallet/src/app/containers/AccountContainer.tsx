@@ -45,7 +45,7 @@ export const AccountContainer = () => {
     const { apiWalletsData, getSyncingData } = useBitcoinBlockchainContext();
 
     const { createNotification, removeNotification } = useNotifications();
-    const notificationRef = useRef<number>();
+    const notificationRef = useRef<number>(undefined);
 
     const { openDrawer } = useWalletDrawerContext();
 

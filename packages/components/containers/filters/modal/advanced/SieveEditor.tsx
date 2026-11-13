@@ -32,7 +32,7 @@ const customLint: Linter<{}> = (content = '') => {
 };
 
 const SieveEditor = ({ value, issues = [], onChange, theme }: Props) => {
-    const editorRef = useRef<Editor>();
+    const editorRef = useRef<Editor>(undefined);
     const options: EditorConfiguration = {
         mode: 'sieve',
         lineNumbers: true,

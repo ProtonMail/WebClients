@@ -110,7 +110,7 @@ const LogsSection = () => {
         downloadFile(blob, filename);
     };
 
-    const latestRef = useRef<any>();
+    const latestRef = useRef<any>(undefined);
 
     const fetchAndSetState = async () => {
         const latest = {};

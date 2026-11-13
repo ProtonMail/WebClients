@@ -80,7 +80,7 @@ const OtherCalendarsSection = ({
     const [subscribedCalendarModal, setIsSubscribedCalendarModalOpen, renderSubscribedCalendarModal] = useModalState();
     const [holidaysCalendarModal, setHolidaysCalendarModalOpen, renderHolidaysCalendarModal] = useModalState();
 
-    const confirm = useRef<{ resolve: (param?: any) => any; reject: () => any }>();
+    const confirm = useRef<{ resolve: (param?: any) => any; reject: () => any }>(undefined);
 
     const { modalsMap, updateModal, closeModal } = useModalsMap<ModalsMap>({
         calendarModal: { isOpen: false },

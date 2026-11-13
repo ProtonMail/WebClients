@@ -8,7 +8,7 @@ import { drawMessageOverlay, drawVideoWithAspectRatio } from './drawingUtils';
 import type { PiPOverlayMessage, TrackInfo } from './types';
 
 export function usePiPRenderer() {
-    const animationFrameRef = useRef<number>();
+    const animationFrameRef = useRef<number>(undefined);
     const videoElementsRef = useRef<Map<string, HTMLVideoElement>>(new Map());
 
     const cleanupVideoElement = useCallback((videoElement: HTMLVideoElement) => {

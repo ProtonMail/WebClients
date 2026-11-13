@@ -15,7 +15,7 @@ export const DriveImportOutcomeModal = () => {
     const summaries = useEasySwitchSelector(selectReportsSummariesMap);
     const reportsLoading = useEasySwitchSelector(selectReportsLoading);
     const oauthStep = useEasySwitchSelector(selectOauthImportStateStep);
-    const previousSummaries = useRef<ReportSummariesMap>();
+    const previousSummaries = useRef<ReportSummariesMap>(undefined);
     const [outcome, setOutcome] = useState<'success' | 'failed'>();
 
     useEffect(

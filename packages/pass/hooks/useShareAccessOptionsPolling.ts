@@ -8,7 +8,7 @@ import type { Maybe } from '../types/utils';
 import { useRequest } from './useRequest';
 
 export const useShareAccessOptionsPolling = (shareId: string, itemId?: string) => {
-    const timer = useRef<Maybe<ReturnType<typeof setTimeout>>>();
+    const timer = useRef<Maybe<ReturnType<typeof setTimeout>>>(undefined);
     const { loading, dispatch, revalidate } = useRequest(getShareAccessOptions, { initial: { shareId, itemId } });
 
     const wasLoading = usePrevious(loading);

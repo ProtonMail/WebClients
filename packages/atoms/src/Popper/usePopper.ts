@@ -82,7 +82,7 @@ export const usePopper = ({
     const floating = useRef<HTMLElement | null>(null);
     const cleanupRef = useRef<(() => void) | void | null>(null);
     const isMountedRef = useRef(false);
-    const iterationRef = useRef<Symbol>();
+    const iterationRef = useRef<Symbol>(undefined);
 
     const fallbackPlacements = useMemo(() => {
         return getFallbackPlacements(originalPlacement, availablePlacements);

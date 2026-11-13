@@ -73,7 +73,7 @@ const CalendarSearchProvider = ({ children }: Props) => {
     const searchParams = extractSearchParameters(history.location);
     const keyword = searchParams?.keyword || '';
 
-    const lastNonSearchViewRef = useRef<VIEWS>();
+    const lastNonSearchViewRef = useRef<VIEWS>(undefined);
     const [hasSearchedCounter, setHasSearchedCounter] = useState(0);
     const [renderCounter, setRenderCounter] = useState(0);
     const isInitialSearching = fromUrlParams(history.location.pathname).view === VIEWS.SEARCH;

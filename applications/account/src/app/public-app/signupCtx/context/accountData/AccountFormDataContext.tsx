@@ -407,7 +407,7 @@ export const AccountFormDataContextProvider = ({
     const inputValuesRef = useRef({ email: false, username: false });
 
     // HTML refs
-    const challengeRef = useRef<ChallengeV4Ref>();
+    const challengeRef = useRef<ChallengeV4Ref>(undefined);
     const formRef = useRef<HTMLFormElement>(null);
     const emailRef = useRef<HTMLInputElement>(null);
     const usernameRef = useRef<HTMLInputElement>(null);

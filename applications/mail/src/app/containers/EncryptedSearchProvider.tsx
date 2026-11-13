@@ -98,7 +98,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     // when it changes (see `ContentSearchVersionToggle`), so this is settled for the session.
     const isV2Active = isContentSearchEnabled && searchVersion === 'v2';
 
-    const metricService = useRef<MetricService>();
+    const metricService = useRef<MetricService>(undefined);
     if (!metricService.current) {
         metricService.current = new MetricService(api, logger, isV2Active ? SEARCH_VERSION_V2 : SEARCH_VERSION_V1);
     }

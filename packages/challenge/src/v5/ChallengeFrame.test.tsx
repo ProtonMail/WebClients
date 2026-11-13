@@ -14,7 +14,7 @@ type FormProps = Partial<ComponentProps<typeof ChallengeFrame>> & { withInput?: 
 /** Stands in for a form that renders elsewhere in the tree and hands the frame a ref to itself. */
 const Form = ({ withInput = true, ...props }: FormProps) => {
     const formRef = useRef<HTMLDivElement>(null);
-    const challengeRef = useRef<ChallengeRef>();
+    const challengeRef = useRef<ChallengeRef>(undefined);
 
     return (
         <>

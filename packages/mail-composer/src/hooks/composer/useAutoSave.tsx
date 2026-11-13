@@ -21,7 +21,7 @@ export const useAutoSave = ({ onMessageAlreadySent }: AutoSaveArgs) => {
     const pendingAutoSave = usePromise<void>();
     const pendingSave = usePromise<void>();
     const pauseDebouncer = useRef<boolean>(false);
-    const lastCall = useRef<MessageState>();
+    const lastCall = useRef<MessageState>(undefined);
 
     const { useSaveDraft, useDeleteDraft } = useComposerMessageHost();
 

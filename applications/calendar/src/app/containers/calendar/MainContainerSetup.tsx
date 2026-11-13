@@ -64,7 +64,7 @@ const MainContainerSetup = ({ user, addresses, calendars, drawerView, hasReactiv
     useCalendarsAlarmsEventListeners(calendarAlarmsCacheRef, allCalendarIDs);
 
     const [eventTargetAction, setEventTargetAction] = useState<EventTargetAction>();
-    const shareCalendarInvitationRef = useRef<{ calendarID: string; invitationID: string }>();
+    const shareCalendarInvitationRef = useRef<{ calendarID: string; invitationID: string }>(undefined);
 
     const activeAddresses = useMemo(() => {
         return getActiveAddresses(addresses);

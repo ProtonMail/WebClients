@@ -24,7 +24,7 @@ export const BYOEMobileConnections = () => {
     const { loading: loadingAddresses } = useBYOEAddresses();
 
     // Latest request, used to ignore the outcome of a request that was aborted or replaced
-    const requestRef = useRef<{ abort: () => void }>();
+    const requestRef = useRef<{ abort: () => void }>(undefined);
 
     // Loads the importers, reports and syncs and keep track of state for the loading indicator and the error
     const load = async () => {

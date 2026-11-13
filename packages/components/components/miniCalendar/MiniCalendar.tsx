@@ -94,7 +94,7 @@ const MiniCalendar = ({
 }: Props) => {
     const [temporaryDate, setTemporaryDate] = useState<Date | undefined>();
     const [cellWidth, setCellWidth] = useState(0);
-    const unsubscribeRef = useRef<() => void | undefined>();
+    const unsubscribeRef = useRef<() => void | undefined>(undefined);
 
     useEffect(() => {
         return () => {

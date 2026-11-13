@@ -50,7 +50,7 @@ const ChallengeFrame = ({
     challengeTimeout,
 }: Props) => {
     const iframeRef = useRef<HTMLIFrameElement>(null);
-    const controllerRef = useRef<ChallengeFrameController>();
+    const controllerRef = useRef<ChallengeFrameController>(undefined);
 
     const callbacksRef = useRef({ onSuccess, onError });
     callbacksRef.current = { onSuccess, onError };

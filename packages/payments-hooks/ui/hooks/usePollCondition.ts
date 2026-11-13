@@ -32,7 +32,7 @@ const helper = async (counter: number, cb: () => Promise<boolean>, signal?: Abor
  * This time isn't predictable due to async nature of the backend system, so we need to poll for the updated data.
  * */
 export const usePollCondition = () => {
-    const abortController = useRef<AbortController>();
+    const abortController = useRef<AbortController>(undefined);
     useEffect(() => {
         return () => {
             abortController.current?.abort();

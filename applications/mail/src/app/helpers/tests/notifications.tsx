@@ -19,7 +19,7 @@ interface Props {
  */
 const NotificationsTestProvider = ({ children }: Props) => {
     const [notifications, setNotifications] = useLongLivingState<Notification[]>([]);
-    const managerRef = useRef<ReturnType<typeof createNotificationManager>>();
+    const managerRef = useRef<ReturnType<typeof createNotificationManager>>(undefined);
 
     if (!managerRef.current) {
         managerRef.current = createNotificationManager(setNotifications as any, noop);

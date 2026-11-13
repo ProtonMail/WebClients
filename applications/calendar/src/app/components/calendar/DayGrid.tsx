@@ -79,7 +79,7 @@ const DayGrid = ({
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-2F656D
     }, [firstRowRect, dateRange]);
 
-    const handleMouseDownRef = useRef<(e: MouseEvent) => void>();
+    const handleMouseDownRef = useRef<(e: MouseEvent) => void>(undefined);
 
     handleMouseDownRef.current = (e: MouseEvent) => {
         if (!rowsWrapperRef.current) {

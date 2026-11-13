@@ -67,7 +67,7 @@ const EOComposer = ({ referenceMessage, encryptionKey, outsideKey, header, rende
     );
 
     // Get a ref on the editor to trigger insertion of embedded images
-    const editorActionsRef = useRef<ExternalEditorActions>();
+    const editorActionsRef = useRef<ExternalEditorActions>(undefined);
 
     // Manage focus from the container yet keeping logic in each component
     const contentFocusRef = useRef<() => void>(noop);

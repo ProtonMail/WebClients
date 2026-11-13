@@ -58,7 +58,7 @@ export const AutoReplySection = () => {
     const { model, updateModel, toAutoResponder } = useAutoReplyForm(AutoResponder);
 
     const SimpleEditor = useSimpleEditor();
-    const editorActionsRef = useRef<SimpleEditorActions>();
+    const editorActionsRef = useRef<SimpleEditorActions>(undefined);
     const composerRef = useRef<HTMLDivElement>(null);
 
     const messageLimitReached = model.message.length > AUTO_REPLY_MAX_LENGTH;

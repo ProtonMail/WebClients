@@ -12,8 +12,8 @@ import type { MaybeNull } from '../types/utils';
 export const useFieldMask = <Opts extends FactoryOpts>({ form, field }: FieldProps, options: Opts) => {
     const { value, name } = field;
     const [maskedValue, setMaskedValue] = useState<string>('');
-    const maskRef = useRef<MaybeNull<InputMask<Opts>>>();
-    const inputRef = useRef<InputMaskElement>();
+    const maskRef = useRef<MaybeNull<InputMask<Opts>>>(undefined);
+    const inputRef = useRef<InputMaskElement>(undefined);
 
     useEffect(() => {
         if (inputRef.current) {

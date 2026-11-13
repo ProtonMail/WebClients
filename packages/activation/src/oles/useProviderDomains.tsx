@@ -40,7 +40,7 @@ const Context = createContext<{
 
 export const ProviderDomainsProvider = ({ children }: { children: ReactNode }) => {
     const [data, setData] = useState<StateData>({ loading: false });
-    const fetchedKeyRef = useRef<string>();
+    const fetchedKeyRef = useRef<string>(undefined);
 
     return <Context.Provider value={{ data, setData, fetchedKeyRef }}>{children}</Context.Provider>;
 };

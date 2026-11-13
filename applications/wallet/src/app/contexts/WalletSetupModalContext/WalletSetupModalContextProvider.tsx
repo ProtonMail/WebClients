@@ -32,7 +32,7 @@ const getPrimaryEmail = (wallet?: IWasmApiWalletData[]) => {
 };
 
 export const WalletSetupModalContextProvider = ({ children }: Props) => {
-    const onCloseRef = useRef<() => void>();
+    const onCloseRef = useRef<() => void>(undefined);
     const [subscription] = useSubscription();
     const isVisionary = hasVisionary(subscription);
 

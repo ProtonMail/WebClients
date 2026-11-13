@@ -116,7 +116,7 @@ const PassPolicies = ({ upgradeRequired }: { upgradeRequired: boolean }) => {
 
     const policies = getPolicies();
 
-    const touched = useRef<keyof OrganizationSettings>();
+    const touched = useRef<keyof OrganizationSettings>(undefined);
     const didLoad = useRef(false);
 
     useEffect(() => {

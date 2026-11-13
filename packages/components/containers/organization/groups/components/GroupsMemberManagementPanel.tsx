@@ -23,7 +23,7 @@ const FormContainer = ({ children }: { children: React.ReactNode }) => {
     const { selectedGroup, actions } = useGroupsManagement();
     const breakpoints = useActiveBreakpoint();
     const [isVisible, setIsVisible] = useState(!!selectedGroup);
-    const timerRef = useRef<ReturnType<typeof setTimeout>>();
+    const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
     useEffect(() => {
         setIsVisible(!!selectedGroup);

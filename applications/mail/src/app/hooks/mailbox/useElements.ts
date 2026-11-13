@@ -148,7 +148,7 @@ export const useElements: UseElements = ({
     const dispatch = useMailDispatch();
     const canReactToSettingsUpdate = useRef(false);
 
-    const abortControllerRef = useRef<AbortController>();
+    const abortControllerRef = useRef<AbortController>(undefined);
     const location = useLocation();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();

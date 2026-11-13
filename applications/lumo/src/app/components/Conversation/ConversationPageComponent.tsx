@@ -65,7 +65,7 @@ const ConversationPageComponentInner = () => {
     const messageAttachmentIds = useLumoSelector(selectMessageAttachmentIds);
     const messageAttachmentIdsRef = useRef(messageAttachmentIds);
     messageAttachmentIdsRef.current = messageAttachmentIds;
-    const prevConversationIdRef = useRef<ConversationId | undefined>();
+    const prevConversationIdRef = useRef<ConversationId | undefined>(undefined);
     // ?q= auto-send is guest-only; signed-in users ignore it (param is still stripped from the URL).
     const urlQuery = useQueryParam('q', true, 'both', isGuest);
     // The desktop quick-ask shortcut hands its question over through the shell, never through `q`.

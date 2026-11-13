@@ -36,7 +36,7 @@ const WhatsNew = () => {
         features,
         whatsNew && isWhatsNewReady
     );
-    const timerRef = useRef<number>();
+    const timerRef = useRef<number>(undefined);
     const isMountedRef = useRef(false);
     const previousFeatureIdRef = useRef<string | null>(null);
     const currentFeatureRef = useRef(currentFeature);

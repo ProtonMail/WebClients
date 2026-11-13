@@ -41,7 +41,7 @@ const useInitIframeContent = ({
     iframeCSSStyles,
 }: Props) => {
     const [initStatus, setInitStatus] = useState<'start' | 'done'>('start');
-    const iframeRootDivRef = useRef<HTMLDivElement>();
+    const iframeRootDivRef = useRef<HTMLDivElement>(undefined);
     const prevContentRef = useRef<string>(content);
     const themeIndex = theme.information.theme;
     const themeCSSVariables = theme.information.style;

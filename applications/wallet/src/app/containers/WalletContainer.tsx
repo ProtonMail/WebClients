@@ -46,7 +46,7 @@ export const WalletContainer = () => {
     const { apiWalletsData, getSyncingData } = useBitcoinBlockchainContext();
 
     const { createNotification, removeNotification } = useNotifications();
-    const notificationRef = useRef<number>();
+    const notificationRef = useRef<number>(undefined);
 
     const walletIndex = useMemo(
         () => apiWalletsData?.findIndex(({ Wallet }) => Wallet.ID === walletId),

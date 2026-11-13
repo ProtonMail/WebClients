@@ -51,7 +51,7 @@ const MergeTableBodyRow = ({
         index,
         disabled: disableSort,
     });
-    const rowRef = useRef<HTMLTableRowElement | null>();
+    const rowRef = useRef<HTMLTableRowElement | null>(undefined);
     const [isIntersecting, setIsIntersecting] = useState(false);
     const { Name, emails } = Contact;
     const [userKeysList] = useUserKeys();

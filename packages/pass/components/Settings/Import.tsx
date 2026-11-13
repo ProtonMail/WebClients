@@ -33,7 +33,7 @@ export const Import: FC = () => {
     const offline = useOffline();
 
     const [importData, setImportData] = useState<MaybeNull<ImportPayload>>(null);
-    const willSubmitResolver = useRef<(value: OnWillSubmitImportResult) => void>();
+    const willSubmitResolver = useRef<(value: OnWillSubmitImportResult) => void>(undefined);
     const passphraseModal = useAsyncModalHandles<OnPassphraseImportResult>({ getInitialModalState: () => ({}) });
 
     const onWillSubmit = useCallback<OnWillSubmitImport>(

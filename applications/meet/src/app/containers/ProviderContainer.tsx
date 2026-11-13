@@ -34,9 +34,9 @@ export const ProviderContainer = ({ children }: { children: ReactNode }) => {
 
     const notificationsManager = useNotifications();
 
-    const storeRef = useRef<MeetStore>();
+    const storeRef = useRef<MeetStore>(undefined);
 
-    const extraThunkArgumentsRef = useRef<ExtraThunkArguments>();
+    const extraThunkArgumentsRef = useRef<ExtraThunkArguments>(undefined);
     const meetCoreClientRef = useRef<MeetCoreClient | null>(null);
 
     useEffect(() => {

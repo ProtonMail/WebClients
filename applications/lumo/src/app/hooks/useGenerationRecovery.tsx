@@ -274,7 +274,7 @@ export function useGenerationRecovery(conversationId: string | undefined, ready:
     const [hydrated, setHydrated] = useState(false);
     const [resumeAttempt, setResumeAttempt] = useState(0);
     const [pausedConversation, setPausedConversation] = useState<string>();
-    const retryResolver = useRef<(approved: boolean) => void>();
+    const retryResolver = useRef<(approved: boolean) => void>(undefined);
     const [confirmRetry, setConfirmRetry] = useState<(approved: boolean) => void>();
 
     useEffect(() => {

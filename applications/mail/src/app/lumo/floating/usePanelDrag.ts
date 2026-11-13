@@ -17,7 +17,7 @@ interface Options {
 export const usePanelDrag = ({ bounds, shownSide, isRTL, isEnabled, onDrop }: Options) => {
     const [isDragging, setIsDragging] = useState(false);
     const [pointerSide, setPointerSide] = useState<PanelSide | null>(null);
-    const stopActiveDragRef = useRef<() => void>();
+    const stopActiveDragRef = useRef<() => void>(undefined);
     // The listeners outlive the render that started the drag, and a composer can force the side mid-drag
     const latestRef = useRef({ bounds, shownSide, isRTL, onDrop });
     latestRef.current = { bounds, shownSide, isRTL, onDrop };

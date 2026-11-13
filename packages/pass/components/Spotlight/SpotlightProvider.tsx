@@ -39,7 +39,7 @@ export const SpotlightProvider: FC<PropsWithChildren> = ({ children }) => {
     const pendingShareAccess = useSelector(selectHasPendingShareAccess);
     const pendingShareAccessModalOpened = state.pendingShareAccess && pendingShareAccess && !latestInvite;
 
-    const timer = useRef<NodeJS.Timeout>();
+    const timer = useRef<NodeJS.Timeout>(undefined);
     const messageRef = useStatefulRef(state.message);
 
     const setMessage = useCallback((next: MaybeNull<SpotlightMessageDefinition>) => {

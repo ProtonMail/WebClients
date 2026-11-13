@@ -46,7 +46,7 @@ const AttachmentList = ({
     const [manuallyExpanded, setManuallyExpanded] = useState(false);
     const [verifiedAttachments, setVerifiedAttachments] = useState<SimpleMap<MAIL_VERIFICATION_STATUS>>({});
 
-    const previewRef = useRef<AttachmentPreviewControls>();
+    const previewRef = useRef<AttachmentPreviewControls>(undefined);
 
     const isNumAttachmentsWithoutEmbedded = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded).feature?.Value;
 

@@ -22,7 +22,7 @@ export function useEncryptedTextAnimation(
     const previousTriggerRef = useRef(false);
     const isInitialMountRef = useRef(true);
     const isAnimatingRef = useRef(false);
-    const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+    const timeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
     useEffect(() => {
         const triggerRisingEdge = trigger === true && !previousTriggerRef.current;

@@ -274,7 +274,7 @@ const useCalendarsEventsReader = ({
     const { contactEmailsMap } = useContactEmailsCache();
     const getCalendarEventRaw = useGetCalendarEventRaw(contactEmailsMap);
     const api = useApi();
-    const abortControllerRef = useRef<AbortController>();
+    const abortControllerRef = useRef<AbortController>(undefined);
     const [calendarEvents, setCalendarEvents] = useState<CalendarViewEvent[]>([]);
 
     useEffect(() => {

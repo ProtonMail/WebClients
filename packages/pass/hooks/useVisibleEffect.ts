@@ -9,7 +9,7 @@ export const isDocumentVisible = () => document.visibilityState === 'visible';
 const isDocumentFocused = () => document.hasFocus();
 
 export const useVisibleEffect = (effect: (visible: boolean) => void, deps: any[] = []) => {
-    const timer = useRef<Maybe<NodeJS.Timeout>>();
+    const timer = useRef<Maybe<NodeJS.Timeout>>(undefined);
     const active = useRef<boolean>(false);
     const onVisibilityChange = useStatefulRef(effect);
 

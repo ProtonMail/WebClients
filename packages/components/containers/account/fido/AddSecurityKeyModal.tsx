@@ -59,7 +59,7 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
     const { validator, onFormSubmit, reset } = useFormErrors();
     const [name, setName] = useState('');
     const { fidoError, awaitingTouch, runFido2Action, abort } = useFido2Action();
-    const registrationPayloadRef = useRef<RegisterCredentialsPayload>();
+    const registrationPayloadRef = useRef<RegisterCredentialsPayload>(undefined);
     const [allowPlatformKeys, setAllowPlatformKeys] = useState(false);
 
     const getRegistrationPayload = () => {

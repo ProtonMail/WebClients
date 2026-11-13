@@ -35,7 +35,7 @@ const Context = createContext<{
 export const ProviderUsersProvider = ({ children }: { children: ReactNode }) => {
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState<ApiImporterOrganizationUsers>();
-    const fetchedKeyRef = useRef<string>();
+    const fetchedKeyRef = useRef<string>(undefined);
 
     return (
         <Context.Provider value={{ loading, setLoading, data, setData, fetchedKeyRef }}>{children}</Context.Provider>

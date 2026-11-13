@@ -11,7 +11,7 @@ const ORIGIN = 'https://challenge.test';
 const PAST_THE_TIMEOUT = 30000;
 
 const Harness = ({ onError, onSuccess }: { onError?: jest.Mock; onSuccess?: jest.Mock }) => {
-    const challengeRef = useRef<ChallengeRef>();
+    const challengeRef = useRef<ChallengeRef>(undefined);
 
     return (
         <Challenge

@@ -24,7 +24,7 @@ interface Props extends ModalProps {
 }
 
 const MessagePrintModal = ({ labelID, message, ...rest }: Props) => {
-    const iframeRef = useRef<HTMLIFrameElement | null>();
+    const iframeRef = useRef<HTMLIFrameElement | null>(undefined);
     const { onClose } = rest;
 
     const handlePrint = async () => {

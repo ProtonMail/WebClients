@@ -57,7 +57,7 @@ const buildSafeMailto = (mailtoString: string): string => {
 const useMailtoHash = ({ isSearch }: { isSearch: boolean }) => {
     const onMailTo = useOnMailTo();
     const { hash } = useLocation();
-    const lastMailtoRef = useRef<string>();
+    const lastMailtoRef = useRef<string>(undefined);
 
     useEffect(() => {
         if (isSearch) {

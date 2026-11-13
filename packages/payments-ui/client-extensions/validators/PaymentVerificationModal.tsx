@@ -65,8 +65,8 @@ const PaymentVerificationModal = ({
 
     const [step, setStep] = useState(() => STEPS.REDIRECT);
     const [error, setError] = useState<{ tryAgain?: boolean }>({});
-    const abortRef = useRef<AbortController>();
-    const timeoutRef = useRef<number>();
+    const abortRef = useRef<AbortController>(undefined);
+    const timeoutRef = useRef<number>(undefined);
 
     const handleCancel = () => {
         abortRef.current?.abort();

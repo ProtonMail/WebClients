@@ -244,7 +244,7 @@ const LiveChatZendesk = ({ zendeskRef, autoLaunch, locale, tags, userEmail }: Pr
 const LiveChatZendeskSingleton = ({ zendeskRef, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const [isActive, setIsActive] = useState(() => !getIsActiveInAnotherWindow());
-    const actualZendeskRef = useRef<ZendeskRef>();
+    const actualZendeskRef = useRef<ZendeskRef>(undefined);
 
     useEffect(() => {
         const interval = window.setInterval(() => {

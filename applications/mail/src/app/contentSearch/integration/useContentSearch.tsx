@@ -116,7 +116,7 @@ export const useContentSearch = ({
     // per-render deps (esCallbacks/esLibraryFunctionsV1, which change most renders) are refreshed
     // onto it below — rather than recreating it, which is what encoding them as memo deps would do.
     // It only depends on the userID which doesn't change within the lifetime of the app.
-    const adapterRef = useRef<ESAdapter>();
+    const adapterRef = useRef<ESAdapter>(undefined);
     if (!adapterRef.current) {
         const indexService = getSharedIndexService(user.ID, getUserKeys, logger);
         // A settable field, not a constructor dependency — see `IndexService.metricService`.

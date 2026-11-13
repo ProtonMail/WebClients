@@ -8,7 +8,7 @@ import './ApiBaseUrlBar.scss';
 
 export const ApiBaseUrlBar = ({ url }: { url: string }) => {
     const [copied, setCopied] = useState(false);
-    const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+    const timeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
     useEffect(() => () => clearTimeout(timeoutRef.current), []);
 
