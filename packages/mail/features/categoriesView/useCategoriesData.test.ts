@@ -35,8 +35,8 @@ interface FlagOptions {
 
 const mockFlags = ({ categoryView = false }: FlagOptions = {}) => {
     jest.mocked(useFlag).mockImplementation((flag) => {
-        if (flag === 'CategoryView') {
-            return categoryView;
+        if (flag === 'CategoryViewDisabled') {
+            return !categoryView;
         }
         return false;
     });

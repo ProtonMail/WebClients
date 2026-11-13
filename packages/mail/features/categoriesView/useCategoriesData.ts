@@ -14,7 +14,8 @@ const EMPTY_ARRAY: CategoryTab[] = [];
 
 export const useCategoriesData = () => {
     const { flagsReady } = useFlagsStatus();
-    const categoryViewFlag = useFlag('CategoryView');
+    const isCategoryViewDisabled = useFlag('CategoryViewDisabled');
+    const categoryViewFlag = !isCategoryViewDisabled;
 
     const isLoading = baseUseSelector(selectCategoryViewLoading);
     const settingAccess = baseUseSelector(selectCategoryViewSettingAccess);
