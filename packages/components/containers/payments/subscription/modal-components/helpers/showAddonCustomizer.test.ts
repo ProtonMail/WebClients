@@ -182,6 +182,52 @@ describe('showAddonCustomizer', () => {
         });
     });
 
+    describe('Drive Plus 200 GB', () => {
+        it('should hide meet', () => {
+            expect(
+                showAddonCustomizer(ADDON_PREFIXES.MEET, {
+                    subscription: FREE_SUBSCRIPTION,
+                    couponConfig: undefined,
+                    planIDs: { [PLANS.DRIVE]: 1 },
+                    app: APPS.PROTONDRIVE,
+                })
+            ).toBe(false);
+        });
+
+        it('should still show lumo', () => {
+            expect(
+                showAddonCustomizer(ADDON_PREFIXES.LUMO, {
+                    subscription: FREE_SUBSCRIPTION,
+                    couponConfig: undefined,
+                    planIDs: { [PLANS.DRIVE]: 1 },
+                    app: APPS.PROTONDRIVE,
+                })
+            ).toBe(true);
+        });
+
+        it('should show meet to a user whose subscription already has it', () => {
+            expect(
+                showAddonCustomizer(ADDON_PREFIXES.MEET, {
+                    subscription: buildSubscription({ [PLANS.DRIVE]: 1, [ADDON_NAMES.MEET_DRIVE]: 1 }),
+                    couponConfig: undefined,
+                    planIDs: { [PLANS.DRIVE]: 1 },
+                    app: APPS.PROTONDRIVE,
+                })
+            ).toBe(true);
+        });
+
+        it('should still show meet on Proton Unlimited in the Drive app', () => {
+            expect(
+                showAddonCustomizer(ADDON_PREFIXES.MEET, {
+                    subscription: FREE_SUBSCRIPTION,
+                    couponConfig: undefined,
+                    planIDs: { [PLANS.BUNDLE]: 1 },
+                    app: APPS.PROTONDRIVE,
+                })
+            ).toBe(true);
+        });
+    });
+
     describe('app context', () => {
         it.each([
             [ADDON_PREFIXES.LUMO, APPS.PROTONMAIL],

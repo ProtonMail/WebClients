@@ -5,7 +5,7 @@ import { getIsB2BAudienceFromPlanIDs } from '@proton/shared/lib/payments/plan/he
 
 import { ADDON_PREFIXES, MAX_MEET_ADDON, MAX_MEMBER_MEET_ADDON, TRIAL_MAX_MEET_SEATS } from '../../constants';
 import type { AddonConfig } from '../interfaces';
-import { notInMailOrCalendarContext, passesCouponGate, planSupportsAddon } from '../visibility';
+import { notInMailOrCalendarContext, notOfferedOnDrivePlus, passesCouponGate, planSupportsAddon } from '../visibility';
 
 export const MEET_ADDON_CONFIG: AddonConfig = {
     addonType: ADDON_PREFIXES.MEET,
@@ -29,6 +29,7 @@ export const MEET_ADDON_CONFIG: AddonConfig = {
             planSupportsAddon(ADDON_PREFIXES.MEET),
             passesCouponGate(ADDON_PREFIXES.MEET),
             notInMailOrCalendarContext(ADDON_PREFIXES.MEET),
+            notOfferedOnDrivePlus(ADDON_PREFIXES.MEET),
         ],
     },
     transferStrategy: 'meet',
