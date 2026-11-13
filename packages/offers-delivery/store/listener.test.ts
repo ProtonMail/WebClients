@@ -1,4 +1,6 @@
 import { configureStore, createAction, createListenerMiddleware } from '@reduxjs/toolkit';
+import { setImmediate } from 'node:timers';
+import type { MockInstance } from 'vitest';
 
 import { CampaignCtaType, CampaignVariant } from '../interface';
 import { startOffersDeliveryListener } from './listener';
@@ -31,12 +33,12 @@ const rawCampaign = () => ({
 });
 
 /* Real microtasks, since the fetch chain is promise-based even under fake timers. */
-const flush = () => new Promise((resolve) => jest.requireActual('timers').setImmediate(resolve));
+const flush = () => new Promise((resolve) => setImmediate(resolve));
 
 type UnleashUpdate = () => void;
 
 const build = ({ isEnabled = true }: { isEnabled?: boolean } = {}) => {
-    const api = jest.fn(async (config: { url: string }) =>
+    const api = vi.fn(async (config: { url: string }) =>
         config.url === GET_CAMPAIGN_URL ? { Campaign: rawCampaign(), Code: 1000 } : undefined
     );
 
@@ -100,12 +102,12 @@ describe('startOffersDeliveryListener', () => {
      * a handler left behind fetches into its own store first and parks the
      * result in the thunk's module-level promise store, which the next test's
      * dispatch would then be handed instead of calling its own api. */
-    let addEventListenerSpy: jest.SpyInstance;
+    let addEventListenerSpy: MockInstance;
 
     beforeEach(() => {
-        jest.useFakeTimers().setSystemTime(NOW_MS);
+        vi.useFakeTimers().setSystemTime(NOW_MS);
         setVisibility('visible');
-        addEventListenerSpy = jest.spyOn(document, 'addEventListener');
+        addEventListenerSpy = vi.spyOn(document, 'addEventListener');
     });
 
     afterEach(() => {
@@ -113,7 +115,7 @@ describe('startOffersDeliveryListener', () => {
             document.removeEventListener(type as string, handler as EventListener);
         });
         addEventListenerSpy.mockRestore();
-        jest.useRealTimers();
+        vi.useRealTimers();
         setVisibility('visible');
     });
 
@@ -160,7 +162,7 @@ describe('startOffersDeliveryListener', () => {
 
         /* Past 15 minutes rather than 10: `getFetchedAt` adds up to 5 minutes of
          * jitter to `fetchedAt`, so 10 alone is not reliably expired. */
-        jest.setSystemTime(NOW_MS + 16 * MINUTE_MS);
+        vi.setSystemTime(NOW_MS + 16 * MINUTE_MS);
         await returnToTab();
 
         expect(getCampaignCalls()).toHaveLength(2);

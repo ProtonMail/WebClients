@@ -32,7 +32,7 @@ const bannerCampaign = () => ({
     EndTime: null,
 });
 
-const apiReturning = (value: unknown) => jest.fn().mockResolvedValue(value);
+const apiReturning = (value: unknown) => vi.fn().mockResolvedValue(value);
 
 describe('getCampaign', () => {
     it('normalizes a banner campaign and resolves the flagged variant body', async () => {
@@ -235,7 +235,7 @@ describe('sendCampaignEvent', () => {
     });
 
     it('propagates a backend rejection without re-sending', async () => {
-        const api = jest.fn().mockRejectedValue(rejectedRequest());
+        const api = vi.fn().mockRejectedValue(rejectedRequest());
 
         await expect(sendCampaignEvent(api, routes, dto)).rejects.toThrow('bad request');
         expect(api).toHaveBeenCalledTimes(1);

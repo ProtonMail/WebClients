@@ -4,8 +4,8 @@ import { CampaignVariant } from '../interface';
 import { OfferNavbarButton, type OfferNavbarButtonProps } from './OfferNavbarButton';
 import type { ActiveOffer } from './useActiveOffer';
 
-// jsdom can't compute the pseudo-element style the real hook reads breakpoints from.
-jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
+// happy-dom can't compute the pseudo-element style the real hook reads breakpoints from.
+vi.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
     __esModule: true,
     default: () => ({
         viewportWidth: { '<=small': false, '>=large': true },
@@ -23,10 +23,10 @@ const makeOffer = (overrides: Partial<ActiveOffer> = {}): ActiveOffer => {
             cta: { text: 'Get the deal', kind: 'internal' },
             message: { title: 'One plan, full power', body: 'Body copy', ctaText: 'Get the deal', imageUrl: null },
         },
-        onAction: jest.fn(),
-        onDismiss: jest.fn(),
-        seenRef: jest.fn(),
-        reportSeen: jest.fn(),
+        onAction: vi.fn(),
+        onDismiss: vi.fn(),
+        seenRef: vi.fn(),
+        reportSeen: vi.fn(),
         ...overrides,
     };
 };
@@ -35,7 +35,7 @@ const renderButton = (props: Partial<OfferNavbarButtonProps> = {}) => {
     return render(
         <OfferNavbarButton
             offer={makeOffer()}
-            onClick={jest.fn()}
+            onClick={vi.fn()}
             label="Special Offer"
             icon={null}
             backgroundColor="black"
@@ -47,7 +47,7 @@ const renderButton = (props: Partial<OfferNavbarButtonProps> = {}) => {
 
 describe('OfferNavbarButton', () => {
     it('reports SEEN via the button', () => {
-        const seenRef = jest.fn();
+        const seenRef = vi.fn();
         renderButton({ offer: makeOffer({ seenRef }) });
 
         expect(seenRef).toHaveBeenCalledWith(screen.getByTestId('offer-navbar-button'));
@@ -55,7 +55,7 @@ describe('OfferNavbarButton', () => {
 
     it('calls onClick without acting on or dismissing the campaign', () => {
         const offer = makeOffer();
-        const onClick = jest.fn();
+        const onClick = vi.fn();
         renderButton({ offer, onClick });
 
         fireEvent.click(screen.getByTestId('offer-navbar-button'));

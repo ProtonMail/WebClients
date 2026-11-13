@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 
 import { configureStore } from '@reduxjs/toolkit';
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import type { Mock } from 'vitest';
 
 import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 import { CommonFeatureFlag } from '@proton/unleash/Flags';
@@ -14,9 +15,9 @@ import type { RawCampaign } from '../lib/api';
 import { campaignThunk, offersDeliveryReducer } from '../store/slice';
 import { type ActiveOffer, type UseActiveOfferOptions, useActiveOffer } from './useActiveOffer';
 
-jest.mock('@proton/unleash/useFlag');
+vi.mock('@proton/unleash/useFlag');
 
-const mockUseFlag = jest.mocked(useFlag);
+const mockUseFlag = vi.mocked(useFlag);
 
 const GET_CAMPAIGN_URL = 'inapp/evaluate';
 const SEND_EVENT_URL = 'inapp/campaign/event';
@@ -45,7 +46,7 @@ const rawCampaign = (variant: CampaignVariant): RawCampaign => {
 };
 
 const buildStore = (raw: RawCampaign) => {
-    const api = jest.fn(async (config: { url: string; data?: unknown }) => {
+    const api = vi.fn(async (config: { url: string; data?: unknown }) => {
         if (config.url === GET_CAMPAIGN_URL) {
             return { Campaign: raw, Code: 1000 };
         }
@@ -68,7 +69,7 @@ const seedCampaign = async (store: ReturnType<typeof buildStore>['store']) => {
     await store.dispatch(campaignThunk() as any);
 };
 
-const seenEventCalls = (api: jest.Mock) =>
+const seenEventCalls = (api: Mock) =>
     api.mock.calls.filter(
         ([config]) => config.url === SEND_EVENT_URL && (config.data as any)?.Action === CampaignEventAction.SEEN
     );
@@ -112,7 +113,7 @@ describe('useActiveOffer', () => {
     });
 
     afterEach(() => {
-        jest.resetAllMocks();
+        vi.resetAllMocks();
     });
 
     it('surfaces a BANNER campaign to useActiveOffer(BANNER) but not to useActiveOffer(MODAL)', async () => {
@@ -329,7 +330,7 @@ describe('useActiveOffer', () => {
     it('routes an upgrade cta through onUpgrade and reports CtaClicked first', async () => {
         const { store, api } = buildStore(rawCampaign(CampaignVariant.BANNER));
         await seedCampaign(store);
-        const onUpgrade = jest.fn();
+        const onUpgrade = vi.fn();
         let latestOffer: ActiveOffer | null = null;
 
         render(

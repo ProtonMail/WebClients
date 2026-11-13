@@ -20,10 +20,10 @@ const makeOffer = (overrides: Partial<ActiveOffer> = {}): ActiveOffer => {
                 imageUrl: 'https://cdn.proton.me/offer.png',
             },
         },
-        onAction: jest.fn(),
-        onDismiss: jest.fn(),
-        seenRef: jest.fn(),
-        reportSeen: jest.fn(),
+        onAction: vi.fn(),
+        onDismiss: vi.fn(),
+        seenRef: vi.fn(),
+        reportSeen: vi.fn(),
         ...overrides,
     };
 };
@@ -62,7 +62,7 @@ describe('OfferDealModal', () => {
 
     it('routes the CTA through onAction and closes, without dismissing', () => {
         const offer = makeOffer();
-        const onClose = jest.fn();
+        const onClose = vi.fn();
         render(<OfferDealModal offer={offer} onClose={onClose} />);
 
         fireEvent.click(screen.getByTestId('offer-deal-modal:cta'));
@@ -74,7 +74,7 @@ describe('OfferDealModal', () => {
 
     it('closes without dismissing, so the entry point stays', () => {
         const offer = makeOffer();
-        const onClose = jest.fn();
+        const onClose = vi.fn();
         render(<OfferDealModal offer={offer} onClose={onClose} />);
 
         fireEvent.click(screen.getByRole('button', { name: 'Close', hidden: true }));
@@ -85,7 +85,7 @@ describe('OfferDealModal', () => {
 
     it('dismisses the campaign and closes on "Don\'t show this offer again"', () => {
         const offer = makeOffer();
-        const onClose = jest.fn();
+        const onClose = vi.fn();
         render(<OfferDealModal offer={offer} onClose={onClose} />);
 
         fireEvent.click(screen.getByTestId('offer-deal-modal:dismiss'));
