@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react';
+import type { ComponentType, JSX } from 'react';
 
 import { ConfigContext } from '@proton/app-context/configContext';
 import { CLIENT_TYPES } from '@proton/shared/lib/constants';

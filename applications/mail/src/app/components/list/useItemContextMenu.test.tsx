@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import { createRef } from 'react';
 
 import { act, renderHook } from '@testing-library/react';

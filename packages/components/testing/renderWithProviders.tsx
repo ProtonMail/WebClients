@@ -1,4 +1,4 @@
-import type { PropsWithChildren, ReactElement } from 'react';
+import type { JSX, PropsWithChildren, ReactElement } from 'react';
 
 import type { RenderOptions } from '@testing-library/react';
 import { render as originalRender } from '@testing-library/react';

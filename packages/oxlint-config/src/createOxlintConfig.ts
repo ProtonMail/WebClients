@@ -3,6 +3,7 @@ import { type OxlintOverride, defineConfig } from 'oxlint';
 import { brandNameSelectors } from './brandNames.ts';
 import { createExtraneousDependenciesRule } from './extraneousDependencies.ts';
 import { allGlobs, typescriptGlobs } from './globs.ts';
+import { jsxNamespaceSelectors } from './jsxNamespace.ts';
 import { getLocalOverlayConfig } from './localOverlay.ts';
 import { namingConventionOptions } from './namingConvention.ts';
 import { type RestrictedImportsOptions, createRestrictedImportRule } from './restrictedImports.ts';
@@ -106,7 +107,7 @@ export const base = defineConfig({
                 'proton/no-extraneous-dependencies': createExtraneousDependenciesRule(),
                 // Base restrictions only, clients add their own with `createRestrictedImportRule` (restrictedImports.ts)
                 'proton/restricted-imports': 'error',
-                'proton/restricted-syntax': ['error', ...brandNameSelectors],
+                'proton/restricted-syntax': ['error', ...brandNameSelectors, ...jsxNamespaceSelectors],
             },
         },
         {

@@ -1,4 +1,4 @@
-import type { AnimationEvent, HTMLAttributes, ReactNode } from 'react';
+import type { AnimationEvent, HTMLAttributes, JSX, ReactNode } from 'react';
 
 import clsx from '@proton/utils/clsx';
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import type { JSX } from 'react';
 
 import type { IconSize } from '@proton/icons/types';
 import {
@@ -42,7 +42,7 @@ import WalletLogo from '../logo/WalletLogo';
 interface AppLogo {
     title: string;
     shortTitle: string;
-    Logo: ({ ...props }: LogoProps) => React.JSX.Element;
+    Logo: ({ ...props }: LogoProps) => JSX.Element;
 }
 
 type SupportedApp =

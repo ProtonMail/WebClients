@@ -1,4 +1,4 @@
-import React from 'react';
+import type { JSX } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,7 +11,7 @@ import lumoDrive from '@proton/styles/assets/img/lumo/lumo-drive.svg';
 //     loading: boolean;
 // }
 
-export const DriveErrorState: ({ onRetry, loading }: { onRetry: any; loading: any }) => React.JSX.Element = ({
+export const DriveErrorState: ({ onRetry, loading }: { onRetry: any; loading: any }) => JSX.Element = ({
     onRetry,
     loading,
 }) => {

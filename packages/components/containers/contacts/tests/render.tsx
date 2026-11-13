@@ -1,4 +1,4 @@
-import type { PropsWithChildren, ReactElement, ReactNode } from 'react';
+import type { JSX, PropsWithChildren, ReactElement, ReactNode } from 'react';
 import { Router } from 'react-router';
 
 import type { CryptoApiInterface } from '@protontech/crypto';

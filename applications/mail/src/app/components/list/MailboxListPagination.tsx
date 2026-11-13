@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import { memo, useMemo } from 'react';
 
 import { c } from 'ttag';
@@ -113,7 +114,7 @@ const MailboxListPagination = ({
                         <IcChevronLeft className="block" alt={c('Action').t`Go to previous page`} />
                     </Button>
                 </Tooltip>
-                {pageNumbersToDisplay.reduce((acc: React.JSX.Element[], pageNumber: number, index: number) => {
+                {pageNumbersToDisplay.reduce((acc: JSX.Element[], pageNumber: number, index: number) => {
                     const isActive = pageNumber === page;
                     const needsEllispsis = index > 0 && pageNumber - pageNumbersToDisplay[index - 1] > 1;
                     const buttonTitle = goToPageTitle(pageNumber);

@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react';
+import type { ComponentType, JSX } from 'react';
 import { Router } from 'react-router';
 
 import { createMemoryHistory } from 'history';

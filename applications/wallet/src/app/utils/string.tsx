@@ -1,6 +1,8 @@
+import type { JSX } from 'react';
+
 export const multilineStrToOnelineJsx = (str: string, prefix = 'oneline-str') =>
     str.split('\n').reduce(
-        (acc: React.JSX.Element[], cur, index) => [
+        (acc: JSX.Element[], cur, index) => [
             ...acc,
             cur ? (
                 <span key={`${prefix}-${index}`}>{cur}</span>
@@ -10,7 +12,7 @@ export const multilineStrToOnelineJsx = (str: string, prefix = 'oneline-str') =>
                 </span>
             ),
         ],
-        [] as React.JSX.Element[]
+        [] as JSX.Element[]
     );
 
 export const formatReadableNameAndEmail = (name: string, email: string) => {

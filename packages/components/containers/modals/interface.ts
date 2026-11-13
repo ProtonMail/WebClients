@@ -1,3 +1,5 @@
+import type { JSX } from 'react';
+
 export interface Modal {
     id: string;
     content: JSX.Element | undefined;

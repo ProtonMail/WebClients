@@ -1,4 +1,4 @@
-import type { ComponentType, Reducer } from 'react';
+import type { ComponentType, JSX, Reducer } from 'react';
 import { useReducer, useState } from 'react';
 
 import type { Notification, NotificationOffset } from '@proton/app-context/notifications/interfaces';

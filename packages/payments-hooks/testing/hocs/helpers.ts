@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react';
+import type { ComponentType, JSX } from 'react';
 import { createElement } from 'react';
 
 interface HOC<T> {
@@ -14,6 +14,8 @@ export const applyHOCs = <T extends JSX.IntrinsicAttributes>(...hocs: HOC<T>[]) 
     return (Component: ComponentType<T>) => {
         const WrappedComponent = reducedHoc(Component);
 
-        return (props: T & JSX.IntrinsicAttributes) => createElement<T>(WrappedComponent, props);
+        const HOC = (props: T & JSX.IntrinsicAttributes) => createElement<T>(WrappedComponent, props);
+
+        return HOC;
     };
 };

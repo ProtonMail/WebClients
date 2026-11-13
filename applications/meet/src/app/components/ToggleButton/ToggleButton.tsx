@@ -1,4 +1,4 @@
-import type { ReactNode, RefObject } from 'react';
+import type { JSX, ReactNode, RefObject } from 'react';
 import { useRef } from 'react';
 
 import { c } from 'ttag';

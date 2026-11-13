@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { JSX, ReactNode } from 'react';
 
 import type { FeatureTourStepId } from '@proton/account/featuresTour/interface';
 import type { SharedStore } from '@proton/redux-shared-store/sharedStore';

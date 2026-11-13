@@ -1,3 +1,5 @@
+import type { JSX } from 'react';
+
 import type { PLANS } from '@proton/payments/core/constants';
 
 import type { PlanCardFeatureIcon } from '../../features/interface';

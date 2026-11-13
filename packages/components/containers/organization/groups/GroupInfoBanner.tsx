@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { JSX, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,7 +7,7 @@ import { Href } from '@proton/atoms/Href/Href';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 interface Props {
-    icon: React.JSX.Element;
+    icon: JSX.Element;
     knowledgeBaseUrlPath: string;
     children: ReactNode;
 }

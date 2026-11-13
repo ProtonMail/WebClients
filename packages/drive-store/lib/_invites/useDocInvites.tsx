@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import { useCallback, useMemo, useState } from 'react';
 
 import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal';

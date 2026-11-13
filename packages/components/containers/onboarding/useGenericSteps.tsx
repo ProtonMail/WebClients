@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import React from 'react';
 
 import { useOrganization } from '@proton/account/organization/hooks';
@@ -26,7 +27,7 @@ const useGenericSteps = ({
     hideDiscoverApps,
     hideOrganizationSetup,
     genericSteps,
-}: UseGenericStepsProps): (React.JSX.Element | null)[] => {
+}: UseGenericStepsProps): (JSX.Element | null)[] => {
     const { APP_NAME } = useConfig();
     const [user] = useUser();
     const [organization, loadingOrganization] = useOrganization();

@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import React, { type FC, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
@@ -348,7 +349,7 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
     const activeStep = flatSteps[stepIndex.get(state.currentStep)!];
     const isLastStep = state.currentStep === flatSteps.at(-1)!.id;
 
-    const stepStatusIcon = (step: Step): React.JSX.Element => {
+    const stepStatusIcon = (step: Step): JSX.Element => {
         const defaultIcon = <IcExclamationCircle className="color-weak shrink-0 visibility-hidden" />;
 
         const stepConfig = stepConfigs[step.id];

@@ -1,3 +1,5 @@
+import type { JSX } from 'react';
+
 import camelCase from 'lodash/camelCase';
 import { c } from 'ttag';
 
@@ -114,7 +116,7 @@ export const getDisabledString = (reason: string) => {
 export const getUpsellText = (
     sample: SampleBreach | null,
     total: number | null,
-    link: React.JSX.Element,
+    link: JSX.Element,
     inAccountSettings?: boolean
 ) => {
     if (!sample || !total) {

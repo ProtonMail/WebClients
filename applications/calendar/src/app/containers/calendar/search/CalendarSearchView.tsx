@@ -1,5 +1,5 @@
-import type { MouseEvent, MutableRefObject } from 'react';
-import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import type { JSX, MouseEvent, MutableRefObject } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { getYear, isSameYear, startOfDay } from 'date-fns';
 import { c } from 'ttag';
@@ -47,7 +47,7 @@ const formatListWithAnd = (items: string[]) => {
         return <i className="text-nowrap">{items[0]}</i>;
     }
 
-    const firstItems = items.slice(0, items.length - 1).reduce((acc: React.JSX.Element[], cur: string) => {
+    const firstItems = items.slice(0, items.length - 1).reduce((acc: JSX.Element[], cur: string) => {
         return acc.length
             ? [...acc, <span>{', '}</span>, <i className="text-nowrap">{cur}</i>]
             : [...acc, <i className="text-nowrap">{cur}</i>];
@@ -284,7 +284,7 @@ const CalendarSearchView = ({
 
             {hasResults ? (
                 <div className="w-full flex-1 overflow-auto reset4print">
-                    {maybeWithEmptyToday.reduce((acc: React.JSX.Element[], dailyEvents, index) => {
+                    {maybeWithEmptyToday.reduce((acc: JSX.Element[], dailyEvents, index) => {
                         const isEmptyDay = !dailyEvents.length;
                         const utcStartDate = isEmptyDay ? startOfDay(new Date()) : dailyEvents[0]?.fakeUTCStartDate;
                         const previousDailyEvents = maybeWithEmptyToday[index - 1];

@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from 'react';
+import type { JSX, PropsWithChildren } from 'react';
 
 import { renderHook } from '@testing-library/react-hooks';
 import type { MockedFunction } from 'vitest';

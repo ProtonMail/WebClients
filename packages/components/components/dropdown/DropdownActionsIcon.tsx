@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { JSX, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
@@ -14,7 +14,7 @@ import SimpleDropdown from './SimpleDropdown';
 
 interface Props extends ButtonProps {
     list: DropdownActionProps[];
-    iconElement: React.JSX.Element;
+    iconElement: JSX.Element;
     loading?: boolean;
     disabled?: boolean;
     className?: string;

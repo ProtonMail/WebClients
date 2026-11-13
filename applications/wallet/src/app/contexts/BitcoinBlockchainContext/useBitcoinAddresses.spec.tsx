@@ -1,4 +1,4 @@
-import type { PropsWithChildren } from 'react';
+import type { JSX, PropsWithChildren } from 'react';
 
 import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
@@ -83,7 +83,7 @@ describe('useBitcoinAddresses', () => {
     it('should generate correct address', async () => {
         const store = setupStore();
 
-        function Wrapper({ children }: PropsWithChildren<{}>): React.JSX.Element {
+        function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
             return <ProtonStoreProvider store={store}>{children}</ProtonStoreProvider>;
         }
 
@@ -119,7 +119,7 @@ describe('useBitcoinAddresses', () => {
     it('should take LastUsedIndex into account', async () => {
         const store = setupStore();
 
-        function Wrapper({ children }: PropsWithChildren<{}>): React.JSX.Element {
+        function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
             return <ProtonStoreProvider store={store}>{children}</ProtonStoreProvider>;
         }
 
@@ -176,7 +176,7 @@ describe('useBitcoinAddresses', () => {
         it('should generate correct addresses', async () => {
             const store = setupStore();
 
-            function Wrapper({ children }: PropsWithChildren<{}>): React.JSX.Element {
+            function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
                 return <ProtonStoreProvider store={store}>{children}</ProtonStoreProvider>;
             }
 

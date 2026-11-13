@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { JSX, ReactNode } from 'react';
 import { Fragment, cloneElement, isValidElement, useState } from 'react';
 
 import { c } from 'ttag';

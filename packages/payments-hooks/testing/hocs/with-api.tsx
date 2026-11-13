@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react';
+import type { ComponentType, JSX } from 'react';
 
 import { ApiContext } from '@proton/app-context/apiContext';
 import { apiMock } from '@proton/test-api/api';

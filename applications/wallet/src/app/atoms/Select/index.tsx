@@ -1,4 +1,4 @@
-import type { MutableRefObject, ReactNode } from 'react';
+import type { JSX, MutableRefObject, ReactNode } from 'react';
 import { useRef } from 'react';
 
 import { verticalPopperPlacements } from '@proton/atoms/Popper/utils';
