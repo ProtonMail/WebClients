@@ -24,7 +24,7 @@ const ToolbarWithDialog = () => {
     return (
         <div role="toolbar" {...toolbarProps}>
             <button type="button">First</button>
-            {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role -- Meet's More options sheet is a div with role="dialog" */}
+            {/* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */}
             <div role="dialog" aria-label="Sheet">
                 <button type="button">Sheet first</button>
                 <button type="button">Sheet second</button>

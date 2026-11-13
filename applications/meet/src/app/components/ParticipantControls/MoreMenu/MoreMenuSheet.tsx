@@ -32,14 +32,8 @@ export const MoreMenuSheet = ({ onClose, toggles, actions, layout }: Props) => {
         disableRestoreByPointer: false,
     });
 
-    // React events bubble through portals: Escape in the layout dropdown must not close the sheet.
     const handleKeyDown = (event: KeyboardEvent<HTMLElement>) => {
-        if (
-            event.key !== 'Escape' ||
-            isImeComposing(event) ||
-            event.defaultPrevented ||
-            !event.currentTarget.contains(event.target as Node)
-        ) {
+        if (event.key !== 'Escape' || isImeComposing(event) || event.defaultPrevented) {
             return;
         }
         event.preventDefault();
@@ -50,7 +44,6 @@ export const MoreMenuSheet = ({ onClose, toggles, actions, layout }: Props) => {
 
     return (
         <SlideClosable onClose={onClose}>
-            {/* Escape bubbling from any control in the sheet closes it; the sheet itself is not a control. */}
             {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
             <div
                 ref={sheetRef}
