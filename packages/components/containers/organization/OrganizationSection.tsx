@@ -43,6 +43,9 @@ interface Props {
     organization?: Organization;
 }
 
+// Console is Account's successor for organizations, so it shows the logo where Account does.
+const isAccountOrConsole = (appName: APP_NAMES) => appName === APPS.PROTONACCOUNT || appName === APPS.PROTONCONSOLE;
+
 const OrganizationSection = ({ app, organization }: Props) => {
     const { APP_NAME } = useConfig();
     const [organizationKey] = useOrganizationKey();
@@ -60,7 +63,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
         useModalState();
 
     const organizationTheme = useOrganizationTheme();
-    const canAccessLightLabelling = organizationTheme.access && APP_NAME === APPS.PROTONACCOUNT;
+    const canAccessLightLabelling = organizationTheme.access && isAccountOrConsole(APP_NAME);
     const organizationIdentity = useOrganizationIdentity();
 
     useSearchParamsEffect((params) => {
@@ -198,7 +201,7 @@ const OrganizationSection = ({ app, organization }: Props) => {
                     </SettingsLayout>
                 )}
 
-                {app === APPS.PROTONACCOUNT && (
+                {isAccountOrConsole(app) && (
                     <OrganizationLogoUploadUpsellBanner
                         organization={organization}
                         canAccessLightLabelling={canAccessLightLabelling}

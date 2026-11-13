@@ -4,6 +4,7 @@ import { getIsSystemGroup } from '@proton/account/groups/groupFlags';
 import type { SectionConfig, SidebarConfig } from '@proton/components/containers/layout/interface';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
 import { getAccessControlPageAvailability } from '@proton/console/organization/getAccessControlPageAvailability';
+import { getOrganizationKeysPageAvailability } from '@proton/console/organization/getOrganizationKeysPageAvailability';
 import { getSecurityPageAvailability } from '@proton/console/organization/getSecurityPageAvailability';
 import { getSingleSignOnPageAvailability } from '@proton/console/organization/getSingleSignOnPageAvailability';
 import { IcArchiveBox } from '@proton/icons/icons/IcArchiveBox';
@@ -156,6 +157,11 @@ export const getOrganizationAppRoutes = ({
         isOrganizationOneOf(organization, [PLANS.BUNDLE_BIZ_2025, PLANS.VISIONARY, PLANS.BUNDLE_PRO_2024]);
 
     const securityPageAvailability = getSecurityPageAvailability({ organization, entitlements, permissions });
+    const organizationKeysPageAvailability = getOrganizationKeysPageAvailability({
+        organization,
+        entitlements,
+        permissions,
+    });
 
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`
@@ -257,13 +263,7 @@ export const getOrganizationAppRoutes = ({
             text: subMenuTitle,
             to: '/organization-keys',
             icon: IcBuildings,
-            available:
-                canManageOrganization &&
-                (isPartOfFamily
-                    ? hasActiveOrganization //Show this section once the family is setup (only requires a name)
-                    : (hasActiveOrganizationKey || hasActiveOrganization) &&
-                      organization &&
-                      !!organization.RequiresKey),
+            available: organizationKeysPageAvailability.organizationKeys,
             subsections: [
                 {
                     id: 'schedule-call',
@@ -286,7 +286,7 @@ export const getOrganizationAppRoutes = ({
                 {
                     text: c('Title').t`Organization key`,
                     id: 'password-keys',
-                    available: hasMemberCapablePlan && hasActiveOrganizationKey,
+                    available: organizationKeysPageAvailability.passwordKeys,
                     keywords: [
                         c('Header').t`Organization key fingerprint`,
                         c('passwordless').t`Change organization key`,
