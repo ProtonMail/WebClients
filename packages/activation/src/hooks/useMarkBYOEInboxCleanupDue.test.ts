@@ -1,24 +1,25 @@
 import { renderHook } from '@testing-library/react-hooks';
+import { type Mock, type MockedFunction, vi } from 'vitest';
 
 import { FeatureCode } from '@proton/features/interface';
-import { mockUseFeature } from '@proton/features/testing/mockUseFeature';
+import { mockUseFeature } from '@proton/features/testing/vitest/mockUseFeature';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useMarkBYOEInboxCleanupDue from './useMarkBYOEInboxCleanupDue';
 
-jest.mock('@proton/unleash/useFlag', () => ({
+vi.mock('@proton/unleash/useFlag', () => ({
     __esModule: true,
-    useFlag: jest.fn(() => false),
+    useFlag: vi.fn(() => false),
 }));
-const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
+const mockUseFlag = useFlag as MockedFunction<typeof useFlag>;
 
 describe('useMarkBYOEInboxCleanupDue', () => {
-    let mockUpdate: jest.Mock;
+    let mockUpdate: Mock;
     let mockedUseFeature: ReturnType<typeof mockUseFeature>;
 
     beforeEach(() => {
-        jest.clearAllMocks();
-        mockUpdate = jest.fn().mockResolvedValue(undefined);
+        vi.clearAllMocks();
+        mockUpdate = vi.fn().mockResolvedValue(undefined);
         mockedUseFeature = mockUseFeature({ update: mockUpdate });
         mockUseFlag.mockImplementation((flag) => flag === 'InboxBringYourOwnEmailCleanup');
     });

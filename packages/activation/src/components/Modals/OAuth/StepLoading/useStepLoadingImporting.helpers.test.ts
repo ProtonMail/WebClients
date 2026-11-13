@@ -1,4 +1,5 @@
 import type { ProtonDriveClient } from '@protontech/drive-sdk';
+import { type Mock, vi } from 'vitest';
 
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
@@ -14,18 +15,18 @@ import { mockAccountImportFlowTracker } from '../../../../telemetry/mockTrackerO
 import { createImporterTask } from './useStepLoadingImporting.helpers';
 
 // We only need splitNodeUid - node UIDs are `${volumeId}~${nodeId}`.
-jest.mock('@proton/shared/lib/helpers/sentry', () => ({
-    ...jest.requireActual('@proton/shared/lib/helpers/sentry'),
-    captureMessage: jest.fn(),
-    traceError: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/sentry', async () => ({
+    ...(await vi.importActual('@proton/shared/lib/helpers/sentry')),
+    captureMessage: vi.fn(),
+    traceError: vi.fn(),
 }));
 
 // The ImportFolder payload itself is covered in driveImportTask.test.ts.
 const makeDriveClient = () =>
     ({
-        getMyFilesRootFolder: jest.fn().mockResolvedValue({ uid: 'vol-1~node-1' }),
+        getMyFilesRootFolder: vi.fn().mockResolvedValue({ uid: 'vol-1~node-1' }),
         experimental: {
-            prepareImportFolder: jest.fn().mockResolvedValue({ encryptedName: 'enc-name' }),
+            prepareImportFolder: vi.fn().mockResolvedValue({ encryptedName: 'enc-name' }),
         },
     }) as unknown as ProtonDriveClient;
 
@@ -34,18 +35,18 @@ interface Overrides {
     importerData?: ImporterData;
     driveClient?: ProtonDriveClient;
     availableAddresses?: Address[];
-    api?: jest.Mock;
+    api?: Mock;
 }
 
 const setup = (overrides: Overrides = {}) => {
-    const api = overrides.api ?? jest.fn().mockResolvedValue({});
-    const dispatch = jest.fn();
-    const call = jest.fn().mockResolvedValue(undefined);
-    const errorHandler = jest.fn();
-    const setIsCreatingCalendar = jest.fn();
-    const setIsCreatingImportTask = jest.fn();
-    const setCalendarsToBeCreated = jest.fn();
-    const increaseCalendarCount = jest.fn();
+    const api = overrides.api ?? vi.fn().mockResolvedValue({});
+    const dispatch = vi.fn();
+    const call = vi.fn().mockResolvedValue(undefined);
+    const errorHandler = vi.fn();
+    const setIsCreatingCalendar = vi.fn();
+    const setIsCreatingImportTask = vi.fn();
+    const setCalendarsToBeCreated = vi.fn();
+    const increaseCalendarCount = vi.fn();
 
     const props = {
         provider: ImportProvider.OUTLOOK,
@@ -54,7 +55,7 @@ const setup = (overrides: Overrides = {}) => {
         importerData: overrides.importerData ?? { importerId: 'importer-1', importedEmail: 'me@gmail.com' },
         api: api as unknown as Api,
         driveClient: overrides.driveClient,
-        getAddressKeys: jest.fn() as unknown as GetAddressKeys,
+        getAddressKeys: vi.fn() as unknown as GetAddressKeys,
         dispatch,
         availableAddresses: overrides.availableAddresses ?? [{ ID: 'addr-1' } as Address],
         calendars: [] as Calendar[],
@@ -69,18 +70,18 @@ const setup = (overrides: Overrides = {}) => {
     return { props, api, dispatch, call, errorHandler, setIsCreatingImportTask };
 };
 
-const getStartCalls = (api: jest.Mock) =>
+const getStartCalls = (api: Mock) =>
     api.mock.calls
         .map(([req]) => req)
         .filter((req) => typeof req?.url === 'string' && req.url.includes('importers/start'));
 
 // The only api call in the non-calendar paths is the start-import request.
-const getStartPayload = (api: jest.Mock): LaunchImportPayload | undefined => getStartCalls(api)[0]?.data;
+const getStartPayload = (api: Mock): LaunchImportPayload | undefined => getStartCalls(api)[0]?.data;
 
 const alreadyExistsError = { status: 422, data: { Code: IMPORT_ERROR.ALREADY_EXISTS, Error: 'Already exists' } };
 
 afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 });
 
 describe('createImporterTask', () => {
@@ -107,7 +108,7 @@ describe('createImporterTask', () => {
     });
 
     it('does not retry on an already-exists error when Drive is not imported', async () => {
-        const api = jest.fn().mockRejectedValue(alreadyExistsError);
+        const api = vi.fn().mockRejectedValue(alreadyExistsError);
         const { props, errorHandler } = setup({ products: [ImportType.CONTACTS], api });
 
         await createImporterTask(props);
@@ -129,7 +130,7 @@ describe('createImporterTask', () => {
         const error = new Error('boom');
         const { props, dispatch, errorHandler } = setup({
             products: [ImportType.CONTACTS],
-            api: jest.fn().mockRejectedValue(error),
+            api: vi.fn().mockRejectedValue(error),
         });
 
         await createImporterTask(props);
@@ -142,7 +143,7 @@ describe('createImporterTask', () => {
     it('reports Drive folder errors to Sentry once, with context', async () => {
         const error = new Error('sdk failed');
         const driveClient = makeDriveClient();
-        (driveClient.getMyFilesRootFolder as jest.Mock).mockRejectedValue(error);
+        (driveClient.getMyFilesRootFolder as Mock).mockRejectedValue(error);
         const { props, api, dispatch, errorHandler } = setup({ products: [ImportType.DRIVE], driveClient });
 
         await createImporterTask(props);
@@ -218,7 +219,7 @@ describe('createImporterTask', () => {
             const { reports } = mockAccountImportFlowTracker();
             const { props } = setup({
                 products: [ImportType.CONTACTS],
-                api: jest.fn().mockRejectedValue(alreadyExistsError),
+                api: vi.fn().mockRejectedValue(alreadyExistsError),
             });
 
             await createImporterTask(props);

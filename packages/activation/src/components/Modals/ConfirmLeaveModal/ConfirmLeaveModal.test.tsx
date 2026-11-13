@@ -1,12 +1,13 @@
 import { fireEvent, screen } from '@testing-library/dom';
+import { vi } from 'vitest';
 
 import { easySwitchRender } from '../../../tests/render';
 import ConfirmLeaveModal from './ConfirmLeaveModal';
 
 describe('Test confirm leave modal', () => {
     it('Should trigger close events', () => {
-        const handleClose = jest.fn();
-        const handleContinue = jest.fn();
+        const handleClose = vi.fn();
+        const handleContinue = vi.fn();
 
         easySwitchRender(<ConfirmLeaveModal handleClose={handleClose} handleContinue={handleContinue} />);
 
@@ -18,8 +19,8 @@ describe('Test confirm leave modal', () => {
     });
 
     it('Should trigger continue events', () => {
-        const handleClose = jest.fn();
-        const handleContinue = jest.fn();
+        const handleClose = vi.fn();
+        const handleContinue = vi.fn();
 
         easySwitchRender(<ConfirmLeaveModal handleClose={handleClose} handleContinue={handleContinue} />);
 

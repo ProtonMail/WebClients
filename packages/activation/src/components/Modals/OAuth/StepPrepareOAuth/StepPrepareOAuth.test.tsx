@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/dom';
+import { type MockedFunction, vi } from 'vitest';
 
 import type { ApiMailImporterFolder } from '../../../../api/api.interface';
 import MailImportFoldersParser from '../../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
@@ -12,19 +13,19 @@ import StepPrepare from './StepPrepareOAuth';
 import useStepPrepare from './hooks/useStepPrepareOAuth';
 import useStepPrepareEmailSummary from './hooks/useStepPrepareOAuthEmailSummary';
 
-jest.mock('./hooks/useStepPrepareOAuth', () => ({
+vi.mock('./hooks/useStepPrepareOAuth', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-jest.mock('./hooks/useStepPrepareOAuthEmailSummary', () => ({
+vi.mock('./hooks/useStepPrepareOAuthEmailSummary', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
-jest.mock('../../../../logic/draft/oauthDraft/oauthDraft.selector', () => ({
-    ...jest.requireActual('../../../../logic/draft/oauthDraft/oauthDraft.selector'),
-    selectOauthImportStateImporterData: jest.fn(),
+vi.mock('../../../../logic/draft/oauthDraft/oauthDraft.selector', async () => ({
+    ...(await vi.importActual('../../../../logic/draft/oauthDraft/oauthDraft.selector')),
+    selectOauthImportStateImporterData: vi.fn(),
 }));
 
 const isLabelMapping = false;
@@ -53,12 +54,12 @@ const emailSummary = {
     handleSubmitCustomizeModal: () => {},
 };
 
-const mockedUseStepPrepare = useStepPrepare as jest.Mock<ReturnType<typeof useStepPrepare>>;
-const mockedUseStepPrepareEmailSummary = useStepPrepareEmailSummary as jest.Mock<
-    ReturnType<typeof useStepPrepareEmailSummary>
+const mockedUseStepPrepare = useStepPrepare as any as MockedFunction<typeof useStepPrepare>;
+const mockedUseStepPrepareEmailSummary = useStepPrepareEmailSummary as any as MockedFunction<
+    typeof useStepPrepareEmailSummary
 >;
-const mockSelectorImporterData = selectOauthImportStateImporterData as any as jest.Mock<
-    ReturnType<typeof selectOauthImportStateImporterData>
+const mockSelectorImporterData = selectOauthImportStateImporterData as any as MockedFunction<
+    typeof selectOauthImportStateImporterData
 >;
 
 describe('StepPrepare test the product display, only selected products should be displayed', () => {

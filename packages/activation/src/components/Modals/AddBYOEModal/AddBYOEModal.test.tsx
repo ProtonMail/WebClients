@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -6,24 +7,24 @@ import noop from '@proton/utils/noop';
 
 import AddBYOEModal from './AddBYOEModal';
 
-jest.mock('@proton/unleash/useFlag', () => ({
+vi.mock('@proton/unleash/useFlag', () => ({
     __esModule: true,
-    useFlag: jest.fn(() => true),
+    useFlag: vi.fn(() => true),
 }));
 
-jest.mock('@proton/unleash/useVariant', () => ({
+vi.mock('@proton/unleash/useVariant', () => ({
     __esModule: true,
-    useVariant: jest.fn(() => ({ name: 'Treatment', enabled: true })),
+    useVariant: vi.fn(() => ({ name: 'Treatment', enabled: true })),
 }));
 
 describe('AddBYOEModal', () => {
     beforeEach(() => {
-        jest.mocked(useFlag).mockReturnValue(true);
+        vi.mocked(useFlag).mockReturnValue(true);
     });
 
     it('should hide the import period and not send it when the feature flag is off', () => {
-        jest.mocked(useFlag).mockReturnValue(false);
-        const onSubmit = jest.fn();
+        vi.mocked(useFlag).mockReturnValue(false);
+        const onSubmit = vi.fn();
         render(<AddBYOEModal onSubmit={onSubmit} isLoading={false} open />);
 
         expect(screen.queryByTestId('AddBYOEModal:importPeriod')).toBeNull();

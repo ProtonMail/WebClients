@@ -1,3 +1,5 @@
+import { type Mock, vi } from 'vitest';
+
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
@@ -17,7 +19,7 @@ const buildCandidates = (count: number): MigrationCandidate[] =>
         address: { ID: `address-${i}`, Email: `user-${i}@example.com` } as Address,
     }));
 
-const getRequestedAddressIds = (api: jest.Mock) => api.mock.calls.map(([config]) => config.data.AddressIds);
+const getRequestedAddressIds = (api: Mock) => api.mock.calls.map(([config]) => config.data.AddressIds);
 
 describe('resolveMigrationCandidates', () => {
     const buildUser = (ID: string, Email: string) => ({ ID, Email }) as ApiImporterOrganizationUser;
@@ -56,7 +58,7 @@ describe('resolveMigrationCandidates', () => {
 
 describe('submitMigrations', () => {
     it('does not call the API when there are no candidates', async () => {
-        const api = jest.fn();
+        const api = vi.fn();
 
         const result = await submitMigrations(api as unknown as Api, IMPORTER_ORGANIZATION_ID, []);
 
@@ -65,7 +67,7 @@ describe('submitMigrations', () => {
     });
 
     it('sends a single request when candidates fit within the limit', async () => {
-        const api = jest.fn().mockResolvedValue({});
+        const api = vi.fn().mockResolvedValue({});
         const candidates = buildCandidates(MAX_ADDRESSES_PER_MIGRATION_REQUEST);
 
         const result = await submitMigrations(api as unknown as Api, IMPORTER_ORGANIZATION_ID, candidates);
@@ -87,7 +89,7 @@ describe('submitMigrations', () => {
         [MAX_ADDRESSES_PER_MIGRATION_REQUEST + 1, [50, 1]],
         [120, [50, 50, 20]],
     ])('splits %i candidates into requests of %j addresses', async (count, expectedSizes) => {
-        const api = jest.fn().mockResolvedValue({});
+        const api = vi.fn().mockResolvedValue({});
         const candidates = buildCandidates(count);
 
         const result = await submitMigrations(api as unknown as Api, IMPORTER_ORGANIZATION_ID, candidates);
@@ -101,7 +103,7 @@ describe('submitMigrations', () => {
 
     it('keeps submitting after a failed request and reports the failed candidates', async () => {
         const error = new Error('Migration already exists for some users');
-        const api = jest.fn().mockResolvedValueOnce({}).mockRejectedValueOnce(error).mockResolvedValueOnce({});
+        const api = vi.fn().mockResolvedValueOnce({}).mockRejectedValueOnce(error).mockResolvedValueOnce({});
         const candidates = buildCandidates(120);
 
         const result = await submitMigrations(api as unknown as Api, IMPORTER_ORGANIZATION_ID, candidates);

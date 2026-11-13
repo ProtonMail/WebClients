@@ -1,4 +1,5 @@
 import { differenceInMonths, fromUnixTime } from 'date-fns';
+import { vi } from 'vitest';
 
 import type { ApiMailImporterFolder } from '../../../../../api/api.interface';
 import MailImportFoldersParser from '../../../../../helpers/MailImportFoldersParser/MailImportFoldersParser';
@@ -13,7 +14,7 @@ import { formatPrepareStepPayload } from './StepPrepareImap.helpers';
 import type { StepPrepareData } from './useStepPrepareImap';
 
 // used in MailFoldersMapping.getRandomLabelColor.
-jest.mock('@proton/utils/randomIntFromInterval', () => () => 0);
+vi.mock('@proton/utils/randomIntFromInterval', () => ({ default: () => 0 }));
 
 const address = generateMockAddress(1, true);
 

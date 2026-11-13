@@ -1,8 +1,10 @@
+import { vi } from 'vitest';
+
 import { EASY_SWITCH_FEATURES, EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '../../interface';
 import { createTokenItem } from './sync.actions';
 
-const mockApi = jest.fn();
-const mockCreateNotification = jest.fn();
+const mockApi = vi.fn();
+const mockCreateNotification = vi.fn();
 
 const errorNotification = { type: 'error', text: 'Address could not be added.' } as const;
 
@@ -15,7 +17,7 @@ const run = (props: { expectedEmailAddress?: string; silent?: boolean }) =>
         Features: [EASY_SWITCH_FEATURES.BYOE],
         errorNotification,
         ...props,
-    })(jest.fn(), jest.fn(), {
+    })(vi.fn(), vi.fn(), {
         api: mockApi,
         notificationManager: { createNotification: mockCreateNotification },
         eventManager: {},
@@ -23,7 +25,7 @@ const run = (props: { expectedEmailAddress?: string; silent?: boolean }) =>
 
 describe('createTokenItem', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         mockApi.mockResolvedValue({ Token: { ID: 'token-id', Account: 'test@gmail.com' } });
     });
 
@@ -36,7 +38,9 @@ describe('createTokenItem', () => {
     });
 
     describe('when the api fails', () => {
-        beforeEach(() => mockApi.mockRejectedValue({ data: { Code: 2000, Error: 'Invalid code' } }));
+        beforeEach(() => {
+            mockApi.mockRejectedValue({ data: { Code: 2000, Error: 'Invalid code' } });
+        });
 
         it('should show the error notification', async () => {
             const result = await run({});

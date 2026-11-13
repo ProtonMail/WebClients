@@ -1,4 +1,5 @@
 import { fireEvent, screen } from '@testing-library/dom';
+import { vi } from 'vitest';
 
 import { appLink } from '@proton/shared/lib/apps/appLink';
 import { APPS } from '@proton/shared/lib/constants';
@@ -8,7 +9,7 @@ import { ImportType } from '../../../interface';
 import { easySwitchRender } from '../../../tests/render';
 import ReportRowActions from './ReportRowActions';
 
-jest.mock('@proton/shared/lib/apps/appLink', () => ({ appLink: jest.fn() }));
+vi.mock('@proton/shared/lib/apps/appLink', () => ({ appLink: vi.fn() }));
 
 const IMPORT_FOLDER = { volumeID: 'volume-id', linkID: 'link-id' };
 

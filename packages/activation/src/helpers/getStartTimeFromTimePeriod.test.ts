@@ -1,15 +1,16 @@
 import { getUnixTime } from 'date-fns';
+import { vi } from 'vitest';
 
 import { TIME_PERIOD } from '../interface';
 import { getStartTimeFromTimePeriod } from './getStartTimeFromTimePeriod';
 
 describe('getStartTimeFromTimePeriod', () => {
     beforeEach(() => {
-        jest.useFakeTimers().setSystemTime(new Date('2026-10-01T12:00:00Z'));
+        vi.useFakeTimers().setSystemTime(new Date('2026-10-01T12:00:00Z'));
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should return undefined when importing all messages', () => {

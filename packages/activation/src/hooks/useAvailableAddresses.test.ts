@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
+import { type MockedFunction, vi } from 'vitest';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
@@ -6,8 +7,8 @@ import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { generateMockAddress, generateMockAddressArray } from '../tests/data/addresses';
 import useAvailableAddresses from './useAvailableAddresses';
 
-jest.mock('@proton/account/addresses/hooks');
-const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
+vi.mock('@proton/account/addresses/hooks');
+const mockUseAddresses = useAddresses as MockedFunction<any>;
 
 describe('useAvailableAddresses', () => {
     it('Should return empty addresses', () => {

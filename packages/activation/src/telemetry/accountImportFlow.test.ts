@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '../constants';
 import { EASY_SWITCH_SOURCES, ImportProvider, ImportType, TIME_PERIOD } from '../interface';
 import {
@@ -202,7 +204,7 @@ describe('account import flow telemetry', () => {
         });
 
         it('keeps the time across a page reload', () => {
-            const now = jest.spyOn(Date, 'now').mockReturnValue(100_000);
+            const now = vi.spyOn(Date, 'now').mockReturnValue(100_000);
             const { reports } = mockAccountImportFlowTracker();
             expect(getAccountImportBYOEStartedAt()).toBeUndefined();
 

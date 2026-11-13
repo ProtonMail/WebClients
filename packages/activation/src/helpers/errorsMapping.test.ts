@@ -325,6 +325,4 @@ describe('Activation errors mapping', () => {
             expect(res).toBe(true);
         });
     });
-
-    describe('hasMergeWarning', () => {});
 });

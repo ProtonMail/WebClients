@@ -1,4 +1,5 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -7,43 +8,43 @@ import { mockAccountImportFlowTracker } from '../../../telemetry/mockTrackerOfGr
 import { easySwitchRender } from '../../../tests/render';
 import GmailSyncModal from './GmailSyncModal';
 
-jest.mock('@proton/unleash/useFlag', () => ({
+vi.mock('@proton/unleash/useFlag', () => ({
     __esModule: true,
-    useFlag: jest.fn(() => true),
+    useFlag: vi.fn(() => true),
 }));
 
-jest.mock('@proton/unleash/useVariant', () => ({
+vi.mock('@proton/unleash/useVariant', () => ({
     __esModule: true,
-    useVariant: jest.fn(() => ({ name: 'Treatment', enabled: true })),
+    useVariant: vi.fn(() => ({ name: 'Treatment', enabled: true })),
 }));
 
-jest.mock('../../../logic/StoreProvider', () => ({
+vi.mock('../../../logic/StoreProvider', () => ({
     __esModule: true,
     default: ({ children }: any) => children,
 }));
 
-const mockDispatch = jest.fn();
+const mockDispatch = vi.fn();
 
-jest.mock('../../../logic/store', () => ({
+vi.mock('../../../logic/store', () => ({
     useEasySwitchDispatch: () => mockDispatch,
-    useEasySwitchSelector: jest.fn(() => undefined),
+    useEasySwitchSelector: vi.fn(() => undefined),
 }));
 
-jest.mock('../../../hooks/useOAuthPopup', () => ({
+vi.mock('../../../hooks/useOAuthPopup', () => ({
     __esModule: true,
     default: () => ({
-        triggerOAuthPopup: jest.fn().mockImplementation(async ({ callback }: { callback: Function }) => {
+        triggerOAuthPopup: vi.fn().mockImplementation(async ({ callback }: { callback: Function }) => {
             await callback({ Code: 'auth-code', Provider: 'google', RedirectUri: 'http://redirect' });
         }),
         loadingConfig: false,
     }),
 }));
 
-jest.mock('../../../logic/sync/sync.actions', () => ({
-    ...jest.requireActual('../../../logic/sync/sync.actions'),
-    changeCreateLoadingState: jest.fn(),
-    createSyncItem: jest.fn(() => ({ type: 'sync/create/fulfilled' })),
-    createTokenItem: jest.fn(() => ({ type: 'token/create/fulfilled' })),
+vi.mock('../../../logic/sync/sync.actions', async () => ({
+    ...(await vi.importActual('../../../logic/sync/sync.actions')),
+    changeCreateLoadingState: vi.fn(),
+    createSyncItem: vi.fn(() => ({ type: 'sync/create/fulfilled' })),
+    createTokenItem: vi.fn(() => ({ type: 'token/create/fulfilled' })),
 }));
 
 describe('GmailSyncModal', () => {
@@ -141,8 +142,8 @@ describe('GmailSyncModal', () => {
     });
 
     it('should call onBYOECallback with importEmails true when the checkbox is ticked', async () => {
-        const mockSyncCallback = jest.fn();
-        const mockBYOEWithImportCallback = jest.fn();
+        const mockSyncCallback = vi.fn();
+        const mockBYOEWithImportCallback = vi.fn();
 
         easySwitchRender(
             <GmailSyncModal
@@ -168,8 +169,8 @@ describe('GmailSyncModal', () => {
     });
 
     it('should call onBYOECallback with importEmails false when the checkbox is unticked', async () => {
-        const mockSyncCallback = jest.fn();
-        const mockBYOEWithImportCallback = jest.fn();
+        const mockSyncCallback = vi.fn();
+        const mockBYOEWithImportCallback = vi.fn();
 
         easySwitchRender(
             <GmailSyncModal
@@ -196,7 +197,7 @@ describe('GmailSyncModal', () => {
         });
     });
     it('should call onBYOECallback with the selected import period', async () => {
-        const mockBYOEWithImportCallback = jest.fn();
+        const mockBYOEWithImportCallback = vi.fn();
 
         easySwitchRender(
             <GmailSyncModal

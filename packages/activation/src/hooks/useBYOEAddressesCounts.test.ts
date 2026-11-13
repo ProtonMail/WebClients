@@ -1,5 +1,8 @@
 import { renderHook } from '@testing-library/react';
+import { vi } from 'vitest';
 
+import { useAddresses } from '@proton/account/addresses/hooks';
+import { useUser } from '@proton/account/user/hooks';
 import {
     ADDRESS_FLAGS,
     ADDRESS_RECEIVE,
@@ -12,23 +15,25 @@ import type { Address } from '@proton/shared/lib/interfaces/Address';
 import { ApiSyncState } from '../api/api.interface';
 import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '../constants';
 import { ImportType } from '../interface';
+import { useEasySwitchSelector } from '../logic/store';
 import type { Sync } from '../logic/sync/sync.interface';
 import useBYOEAddressesCounts from './useBYOEAddressesCounts';
 
-jest.mock('@proton/account/addresses/hooks', () => ({
-    useAddresses: jest.fn(),
+vi.mock('@proton/account/addresses/hooks', () => ({
+    useAddresses: vi.fn(),
 }));
 
-jest.mock('@proton/account/user/hooks', () => ({
-    useUser: jest.fn(),
+vi.mock('@proton/account/user/hooks', () => ({
+    useUser: vi.fn(),
 }));
 
-jest.mock('../logic/store', () => ({
-    useEasySwitchSelector: jest.fn(),
+vi.mock('../logic/store', () => ({
+    useEasySwitchSelector: vi.fn(),
 }));
 
-jest.mock('../logic/sync/sync.selectors', () => ({
-    getAllSync: jest.fn(),
+vi.mock('../logic/sync/sync.selectors', () => ({
+    getAllSync: vi.fn(),
+    selectSyncListLoadingState: vi.fn(),
 }));
 
 const enabledBYOEAddress = {
@@ -89,12 +94,12 @@ const syncCustomDomain = {
 };
 
 describe('useBYOEAddressesCounts', () => {
-    const mockUseAddresses = require('@proton/account/addresses/hooks').useAddresses;
-    const mockUseUser = require('@proton/account/user/hooks').useUser;
-    const mockUseEasySwitchSelector = require('../logic/store').useEasySwitchSelector;
+    const mockUseAddresses = vi.mocked(useAddresses) as any;
+    const mockUseUser = vi.mocked(useUser) as any;
+    const mockUseEasySwitchSelector = vi.mocked(useEasySwitchSelector) as any;
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('should return expected data for free user', () => {

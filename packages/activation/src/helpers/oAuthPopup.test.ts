@@ -1,43 +1,45 @@
 import { renderToStaticMarkup } from 'react-dom/server';
 
+import { vi } from 'vitest';
+
 import { GOOGLE_OAUTH_PATH } from '@proton/shared/lib/api/activation';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 
 import { OAUTH_PROVIDER } from '../interface';
 import { openOAuthPopup } from './oAuthPopup';
 
-jest.mock('@proton/shared/lib/desktop/ipcHelpers', () => ({
-    invokeInboxDesktopIPC: jest.fn(),
-    hasInboxDesktopFeature: jest.fn(),
+vi.mock('@proton/shared/lib/desktop/ipcHelpers', () => ({
+    invokeInboxDesktopIPC: vi.fn(),
+    hasInboxDesktopFeature: vi.fn(),
 }));
-jest.mock('@proton/shared/lib/helpers/uid', () => ({
-    generateProtonWebUID: jest.fn(() => 'mock-uid'),
+vi.mock('@proton/shared/lib/helpers/uid', () => ({
+    generateProtonWebUID: vi.fn(() => 'mock-uid'),
 }));
-jest.mock('../hooks/useOAuthPopup.helpers', () => ({
-    getProviderNumber: jest.fn(() => 42),
+vi.mock('../hooks/useOAuthPopup.helpers', () => ({
+    getProviderNumber: vi.fn(() => 42),
 }));
 
-const mockCreateNotification = jest.fn();
-jest.mock('@proton/app-context/useNotifications', () => ({
+const mockCreateNotification = vi.fn();
+vi.mock('@proton/app-context/useNotifications', () => ({
     useNotifications: () => ({
         createNotification: mockCreateNotification,
     }),
 }));
 
-const mockCallback = jest.fn();
+const mockCallback = vi.fn();
 
 const setupWindowOpen = (override: Partial<Window> = {}) => {
     const mockWindow: any = {
         document: {
             URL: '',
         },
-        close: jest.fn(),
-        focus: jest.fn(),
+        close: vi.fn(),
+        focus: vi.fn(),
         closed: false,
         ...override,
     };
 
-    window.open = jest.fn(() => mockWindow);
+    window.open = vi.fn(() => mockWindow);
     return mockWindow;
 };
 
@@ -47,12 +49,12 @@ describe('openOAuthPopup', () => {
     const errorMessage = 'Something went wrong';
 
     beforeEach(() => {
-        jest.useFakeTimers();
-        jest.clearAllMocks();
+        vi.useFakeTimers();
+        vi.clearAllMocks();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should open a popup with correct parameters', async () => {
@@ -90,7 +92,7 @@ describe('openOAuthPopup', () => {
             callback: mockCallback,
         });
 
-        jest.advanceTimersByTime(200);
+        vi.advanceTimersByTime(200);
 
         expect(mockWindow.close).toHaveBeenCalled();
         expect(mockCallback).toHaveBeenCalledWith({
@@ -115,7 +117,7 @@ describe('openOAuthPopup', () => {
             callback: mockCallback,
         });
 
-        jest.advanceTimersByTime(200);
+        vi.advanceTimersByTime(200);
 
         // Notification content contains a React element, so we need to check the text manually
         const notificationCall = mockCreateNotification.mock.calls[0][0];
@@ -141,7 +143,7 @@ describe('openOAuthPopup', () => {
             callback: mockCallback,
         });
 
-        jest.advanceTimersByTime(200);
+        vi.advanceTimersByTime(200);
 
         // Notification content contains a React element, so we need to check the text manually
         const notificationCall = mockCreateNotification.mock.calls[0][0];
@@ -164,7 +166,7 @@ describe('openOAuthPopup', () => {
         });
 
         mockWindow.closed = true;
-        jest.advanceTimersByTime(200);
+        vi.advanceTimersByTime(200);
 
         expect(invokeInboxDesktopIPC).toHaveBeenCalledWith({
             type: 'oauthPopupOpened',

@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/dom';
+import { type MockedFunction, vi } from 'vitest';
 
 import { IMPORT_ERROR } from '../../../../interface';
 import {
@@ -12,22 +13,22 @@ import { DriveImportProcessModal } from './DriveImportProcessModal';
 
 // Only stub the state read by this component and the helper that would hit the API - dispatch
 // and the store itself stay real, so no other Redux wiring needs mocking.
-jest.mock('../../../../logic/draft/oauthDraft/oauthDraft.selector', () => ({
+vi.mock('../../../../logic/draft/oauthDraft/oauthDraft.selector', () => ({
     __esModule: true,
-    selectOauthDraftProvider: jest.fn(),
-    selectOauthImportStateStep: jest.fn(),
-    selectOauthImportStateImporterData: jest.fn(),
+    selectOauthDraftProvider: vi.fn(),
+    selectOauthImportStateStep: vi.fn(),
+    selectOauthImportStateImporterData: vi.fn(),
 }));
 
-jest.mock('../StepLoading/useStepLoadingImporting.helpers', () => ({
+vi.mock('../StepLoading/useStepLoadingImporting.helpers', () => ({
     __esModule: true,
-    createImporterTask: jest.fn(),
+    createImporterTask: vi.fn(),
 }));
 
-const mockStep = selectOauthImportStateStep as any as jest.Mock<ReturnType<typeof selectOauthImportStateStep>>;
-const mockProvider = selectOauthDraftProvider as any as jest.Mock<ReturnType<typeof selectOauthDraftProvider>>;
-const mockImporterData = selectOauthImportStateImporterData as any as jest.Mock<
-    ReturnType<typeof selectOauthImportStateImporterData>
+const mockStep = selectOauthImportStateStep as any as MockedFunction<typeof selectOauthImportStateStep>;
+const mockProvider = selectOauthDraftProvider as any as MockedFunction<typeof selectOauthDraftProvider>;
+const mockImporterData = selectOauthImportStateImporterData as any as MockedFunction<
+    typeof selectOauthImportStateImporterData
 >;
 
 const setState = (
@@ -41,7 +42,7 @@ const setState = (
 
 describe('DriveImportProcessModal', () => {
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('shows a disabled in-progress state while the import is being set up', () => {

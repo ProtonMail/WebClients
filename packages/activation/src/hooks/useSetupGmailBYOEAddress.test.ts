@@ -1,5 +1,6 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 import { getUnixTime } from 'date-fns';
+import { type MockedFunction, vi } from 'vitest';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { findUserAddress, getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
@@ -12,84 +13,82 @@ import { mockAccountImportFlowTracker } from '../telemetry/mockTrackerOfGroup';
 import useBYOEFeatureStatus from './useBYOEFeatureStatus';
 import useSetupGmailBYOEAddress from './useSetupGmailBYOEAddress';
 
-jest.mock('../logic/StoreProvider', () => ({
+vi.mock('../logic/StoreProvider', () => ({
     __esModule: true,
     default: ({ children }: any) => children,
 }));
 
-const mockEasySwitchDispatch = jest.fn();
-jest.mock('../logic/store', () => ({
+const mockEasySwitchDispatch = vi.fn();
+vi.mock('../logic/store', () => ({
     useEasySwitchDispatch: () => mockEasySwitchDispatch,
-    useEasySwitchSelector: jest.fn(() => []),
+    useEasySwitchSelector: vi.fn(() => []),
 }));
 
-const mockDispatch = jest.fn();
-jest.mock('@proton/redux-shared-store/sharedProvider', () => ({
+const mockDispatch = vi.fn();
+vi.mock('@proton/redux-shared-store/sharedProvider', () => ({
     __esModule: true,
     useDispatch: () => mockDispatch,
 }));
 
-const mockApi = jest.fn();
-jest.mock('@proton/app-context/useApi', () => ({
+const mockApi = vi.fn();
+vi.mock('@proton/app-context/useApi', () => ({
     __esModule: true,
     useApi: () => mockApi,
 }));
 
-jest.mock('@proton/account/user/hooks', () => ({
+vi.mock('@proton/account/user/hooks', () => ({
     __esModule: true,
     useUser: () => [{ Subscribed: 0 }],
 }));
 
-jest.mock('@proton/account/addresses/hooks');
-const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
+vi.mock('@proton/account/addresses/hooks');
+const mockUseAddresses = useAddresses as MockedFunction<any>;
 
-const mockCreateNotification = jest.fn();
-jest.mock('@proton/app-context/useNotifications', () => ({
+const mockCreateNotification = vi.fn();
+vi.mock('@proton/app-context/useNotifications', () => ({
     __esModule: true,
     useNotifications: () => ({ createNotification: mockCreateNotification }),
 }));
 
-const mockErrorHandler = jest.fn();
-jest.mock('@proton/components/hooks/useErrorHandler', () => ({
+const mockErrorHandler = vi.fn();
+vi.mock('@proton/components/hooks/useErrorHandler', () => ({
     __esModule: true,
     default: () => mockErrorHandler,
 }));
 
-jest.mock('@proton/unleash/useFlag', () => ({
+vi.mock('@proton/unleash/useFlag', () => ({
     __esModule: true,
-    useFlag: jest.fn(() => false),
+    useFlag: vi.fn(() => false),
 }));
 
-const mockUseFlag = useFlag as jest.MockedFunction<typeof useFlag>;
+const mockUseFlag = useFlag as MockedFunction<typeof useFlag>;
 
-jest.mock('./useBYOEFeatureStatus');
-const mockUseBYOEFeatureStatus = useBYOEFeatureStatus as jest.MockedFunction<typeof useBYOEFeatureStatus>;
+vi.mock('./useBYOEFeatureStatus');
+const mockUseBYOEFeatureStatus = useBYOEFeatureStatus as MockedFunction<typeof useBYOEFeatureStatus>;
 
-const mockMarkInboxCleanupDue = jest.fn();
-jest.mock('./useMarkBYOEInboxCleanupDue', () => ({
+const mockMarkInboxCleanupDue = vi.fn();
+vi.mock('./useMarkBYOEInboxCleanupDue', () => ({
     __esModule: true,
     default: () => mockMarkInboxCleanupDue,
 }));
 
-jest.mock('../thunks/byoeAddresses', () => ({
-    createBYOEAddress: jest.fn(),
-    convertBYOEAddress: jest.fn(),
+vi.mock('../thunks/byoeAddresses', () => ({
+    createBYOEAddress: vi.fn(),
+    convertBYOEAddress: vi.fn(),
 }));
 
-jest.mock('../api/api', () => ({
-    startEasySwitchSignupImportTask: jest.fn(),
-    checkExternalAddressClaimable: jest.fn((Email: string) => ({ url: 'claimable', method: 'POST', Email })),
+vi.mock('../api/api', () => ({
+    startEasySwitchSignupImportTask: vi.fn(),
+    checkExternalAddressClaimable: vi.fn((Email: string) => ({ url: 'claimable', method: 'POST', Email })),
 }));
 
-jest.mock('@proton/shared/lib/helpers/address', () => ({
-    findUserAddress: jest.fn(),
-    getIsBYOEAddress: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/address', () => ({
+    findUserAddress: vi.fn(),
+    getIsBYOEAddress: vi.fn(),
 }));
-const mockFindUserAddress = findUserAddress as jest.MockedFunction<typeof findUserAddress>;
-const mockGetIsBYOEAddress = getIsBYOEAddress as jest.MockedFunction<typeof getIsBYOEAddress>;
-const mockStartImportTask = startEasySwitchSignupImportTask as jest.MockedFunction<
-    typeof startEasySwitchSignupImportTask
->;
+const mockFindUserAddress = findUserAddress as MockedFunction<typeof findUserAddress>;
+const mockGetIsBYOEAddress = getIsBYOEAddress as MockedFunction<typeof getIsBYOEAddress>;
+const mockStartImportTask = startEasySwitchSignupImportTask as MockedFunction<typeof startEasySwitchSignupImportTask>;
 
 const mockToken: ImportToken = {
     ID: 'token-id',
@@ -102,7 +101,7 @@ const mockToken: ImportToken = {
 describe('useSetupGmailBYOEAddress', () => {
     describe('handleBYOEWithImportCallback', () => {
         beforeEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
             mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
             mockUseAddresses.mockReturnValue([[], false]);
             mockFindUserAddress.mockReturnValue(undefined);
@@ -113,14 +112,14 @@ describe('useSetupGmailBYOEAddress', () => {
         });
 
         it('should do nothing when hasError is true', async () => {
-            const mockShowSuccessModal = jest.fn();
+            const mockShowSuccessModal = vi.fn();
             const { result } = renderHook(() =>
                 useSetupGmailBYOEAddress({
                     showSuccessModal: mockShowSuccessModal,
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
-                    showAddressLinkedToAnotherAccountModal: jest.fn(),
-                    showClaimableAddressModal: jest.fn(),
-                    onComplete: jest.fn(),
+                    showAddressLinkedToAnotherAccountModal: vi.fn(),
+                    showClaimableAddressModal: vi.fn(),
+                    onComplete: vi.fn(),
                 })
             );
 
@@ -141,14 +140,14 @@ describe('useSetupGmailBYOEAddress', () => {
 
         it('should do nothing when hasAccessToBYOE is false', async () => {
             mockUseBYOEFeatureStatus.mockReturnValue([false, false] as const);
-            const mockShowSuccessModal = jest.fn();
+            const mockShowSuccessModal = vi.fn();
             const { result } = renderHook(() =>
                 useSetupGmailBYOEAddress({
                     showSuccessModal: mockShowSuccessModal,
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
-                    showAddressLinkedToAnotherAccountModal: jest.fn(),
-                    showClaimableAddressModal: jest.fn(),
-                    onComplete: jest.fn(),
+                    showAddressLinkedToAnotherAccountModal: vi.fn(),
+                    showClaimableAddressModal: vi.fn(),
+                    onComplete: vi.fn(),
                 })
             );
 
@@ -167,14 +166,14 @@ describe('useSetupGmailBYOEAddress', () => {
         });
 
         it('should create address, call import API and show success modal', async () => {
-            const mockShowSuccessModal = jest.fn();
+            const mockShowSuccessModal = vi.fn();
             const { result } = renderHook(() =>
                 useSetupGmailBYOEAddress({
                     showSuccessModal: mockShowSuccessModal,
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
-                    showAddressLinkedToAnotherAccountModal: jest.fn(),
-                    showClaimableAddressModal: jest.fn(),
-                    onComplete: jest.fn(),
+                    showAddressLinkedToAnotherAccountModal: vi.fn(),
+                    showClaimableAddressModal: vi.fn(),
+                    onComplete: vi.fn(),
                 })
             );
 
@@ -198,11 +197,11 @@ describe('useSetupGmailBYOEAddress', () => {
         it('should send no StartTime when importing all messages', async () => {
             const { result } = renderHook(() =>
                 useSetupGmailBYOEAddress({
-                    showSuccessModal: jest.fn(),
+                    showSuccessModal: vi.fn(),
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
-                    showAddressLinkedToAnotherAccountModal: jest.fn(),
-                    showClaimableAddressModal: jest.fn(),
-                    onComplete: jest.fn(),
+                    showAddressLinkedToAnotherAccountModal: vi.fn(),
+                    showClaimableAddressModal: vi.fn(),
+                    onComplete: vi.fn(),
                 })
             );
 
@@ -221,11 +220,11 @@ describe('useSetupGmailBYOEAddress', () => {
         it('should send no StartTime when importing without a period (import period flag off)', async () => {
             const { result } = renderHook(() =>
                 useSetupGmailBYOEAddress({
-                    showSuccessModal: jest.fn(),
+                    showSuccessModal: vi.fn(),
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
-                    showAddressLinkedToAnotherAccountModal: jest.fn(),
-                    showClaimableAddressModal: jest.fn(),
-                    onComplete: jest.fn(),
+                    showAddressLinkedToAnotherAccountModal: vi.fn(),
+                    showClaimableAddressModal: vi.fn(),
+                    onComplete: vi.fn(),
                 })
             );
 
@@ -244,14 +243,14 @@ describe('useSetupGmailBYOEAddress', () => {
         });
 
         it('should send the StartTime matching the selected import period', async () => {
-            jest.useFakeTimers().setSystemTime(new Date('2026-10-01T12:00:00Z'));
+            vi.useFakeTimers().setSystemTime(new Date('2026-10-01T12:00:00Z'));
             const { result } = renderHook(() =>
                 useSetupGmailBYOEAddress({
-                    showSuccessModal: jest.fn(),
+                    showSuccessModal: vi.fn(),
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
-                    showAddressLinkedToAnotherAccountModal: jest.fn(),
-                    showClaimableAddressModal: jest.fn(),
-                    onComplete: jest.fn(),
+                    showAddressLinkedToAnotherAccountModal: vi.fn(),
+                    showClaimableAddressModal: vi.fn(),
+                    onComplete: vi.fn(),
                 })
             );
 
@@ -267,17 +266,17 @@ describe('useSetupGmailBYOEAddress', () => {
             expect(mockStartImportTask).toHaveBeenCalledWith(
                 expect.objectContaining({ StartTime: getUnixTime(new Date('2026-07-01T12:00:00Z')) })
             );
-            jest.useRealTimers();
+            vi.useRealTimers();
         });
 
         it('should send no StartTime when importEmails is false, even if a period is given', async () => {
             const { result } = renderHook(() =>
                 useSetupGmailBYOEAddress({
-                    showSuccessModal: jest.fn(),
+                    showSuccessModal: vi.fn(),
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
-                    showAddressLinkedToAnotherAccountModal: jest.fn(),
-                    showClaimableAddressModal: jest.fn(),
-                    onComplete: jest.fn(),
+                    showAddressLinkedToAnotherAccountModal: vi.fn(),
+                    showClaimableAddressModal: vi.fn(),
+                    onComplete: vi.fn(),
                 })
             );
 
@@ -296,14 +295,14 @@ describe('useSetupGmailBYOEAddress', () => {
         });
 
         it('should create address but not start an automatic import when importEmails is false', async () => {
-            const mockShowSuccessModal = jest.fn();
+            const mockShowSuccessModal = vi.fn();
             const { result } = renderHook(() =>
                 useSetupGmailBYOEAddress({
                     showSuccessModal: mockShowSuccessModal,
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
-                    showAddressLinkedToAnotherAccountModal: jest.fn(),
-                    showClaimableAddressModal: jest.fn(),
-                    onComplete: jest.fn(),
+                    showAddressLinkedToAnotherAccountModal: vi.fn(),
+                    showClaimableAddressModal: vi.fn(),
+                    onComplete: vi.fn(),
                 })
             );
 
@@ -324,14 +323,14 @@ describe('useSetupGmailBYOEAddress', () => {
         it('should show error notification and not call import API when address already exists and is a BYOE address', async () => {
             mockFindUserAddress.mockReturnValue({ Email: 'test@gmail.com' } as any);
             mockGetIsBYOEAddress.mockReturnValue(true);
-            const mockShowSuccessModal = jest.fn();
+            const mockShowSuccessModal = vi.fn();
             const { result } = renderHook(() =>
                 useSetupGmailBYOEAddress({
                     showSuccessModal: mockShowSuccessModal,
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
-                    showAddressLinkedToAnotherAccountModal: jest.fn(),
-                    showClaimableAddressModal: jest.fn(),
-                    onComplete: jest.fn(),
+                    showAddressLinkedToAnotherAccountModal: vi.fn(),
+                    showClaimableAddressModal: vi.fn(),
+                    onComplete: vi.fn(),
                 })
             );
 
@@ -354,16 +353,16 @@ describe('useSetupGmailBYOEAddress', () => {
             mockApi.mockRejectedValue({
                 data: { Code: BYOE_ADDRESS_ERROR.ADDRESS_ALREADY_EXISTS, Error: 'Address already exists' },
             });
-            const mockShowAddressLinkedToAnotherAccountModal = jest.fn();
-            const mockShowSuccessModal = jest.fn();
+            const mockShowAddressLinkedToAnotherAccountModal = vi.fn();
+            const mockShowSuccessModal = vi.fn();
 
             const { result } = renderHook(() =>
                 useSetupGmailBYOEAddress({
                     showSuccessModal: mockShowSuccessModal,
                     showAddressLinkedToAnotherAccountModal: mockShowAddressLinkedToAnotherAccountModal,
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
-                    showClaimableAddressModal: jest.fn(),
-                    onComplete: jest.fn(),
+                    showClaimableAddressModal: vi.fn(),
+                    onComplete: vi.fn(),
                 })
             );
 
@@ -396,15 +395,15 @@ describe('useSetupGmailBYOEAddress', () => {
                 mockApi.mockImplementation((config: any) =>
                     config.url === 'claimable' ? checkResult() : Promise.reject(rejectWith2011())
                 );
-                const showClaimable = jest.fn();
-                const showLegacy = jest.fn();
+                const showClaimable = vi.fn();
+                const showLegacy = vi.fn();
                 const { result } = renderHook(() =>
                     useSetupGmailBYOEAddress({
-                        showSuccessModal: jest.fn(),
+                        showSuccessModal: vi.fn(),
                         showAddressLinkedToAnotherAccountModal: showLegacy,
                         showClaimableAddressModal: showClaimable,
                         source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
-                        onComplete: jest.fn(),
+                        onComplete: vi.fn(),
                     })
                 );
                 await act(async () => {
@@ -446,14 +445,14 @@ describe('useSetupGmailBYOEAddress', () => {
             });
 
             it('should never call the claimable endpoint when the import succeeds', async () => {
-                const showClaimable = jest.fn();
+                const showClaimable = vi.fn();
                 const { result } = renderHook(() =>
                     useSetupGmailBYOEAddress({
-                        showSuccessModal: jest.fn(),
+                        showSuccessModal: vi.fn(),
                         showClaimableAddressModal: showClaimable,
                         source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
-                        showAddressLinkedToAnotherAccountModal: jest.fn(),
-                        onComplete: jest.fn(),
+                        showAddressLinkedToAnotherAccountModal: vi.fn(),
+                        onComplete: vi.fn(),
                     })
                 );
                 await act(async () => {
@@ -476,16 +475,16 @@ describe('useSetupGmailBYOEAddress', () => {
                     Error: 'Source is required',
                 },
             });
-            const mockShowAddressLinkedToAnotherAccountModal = jest.fn();
-            const mockShowSuccessModal = jest.fn();
+            const mockShowAddressLinkedToAnotherAccountModal = vi.fn();
+            const mockShowSuccessModal = vi.fn();
 
             const { result } = renderHook(() =>
                 useSetupGmailBYOEAddress({
                     showSuccessModal: mockShowSuccessModal,
                     showAddressLinkedToAnotherAccountModal: mockShowAddressLinkedToAnotherAccountModal,
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
-                    showClaimableAddressModal: jest.fn(),
-                    onComplete: jest.fn(),
+                    showClaimableAddressModal: vi.fn(),
+                    onComplete: vi.fn(),
                 })
             );
 
@@ -511,14 +510,14 @@ describe('useSetupGmailBYOEAddress', () => {
             mockFindUserAddress.mockReturnValue(existingAddress);
             mockGetIsBYOEAddress.mockReturnValue(false);
             mockDispatch.mockResolvedValue({ Email: 'test@gmail.com', ID: 'addr-id' });
-            const mockShowSuccessModal = jest.fn();
+            const mockShowSuccessModal = vi.fn();
             const { result } = renderHook(() =>
                 useSetupGmailBYOEAddress({
                     showSuccessModal: mockShowSuccessModal,
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
-                    showAddressLinkedToAnotherAccountModal: jest.fn(),
-                    showClaimableAddressModal: jest.fn(),
-                    onComplete: jest.fn(),
+                    showAddressLinkedToAnotherAccountModal: vi.fn(),
+                    showClaimableAddressModal: vi.fn(),
+                    onComplete: vi.fn(),
                 })
             );
 
@@ -541,14 +540,14 @@ describe('useSetupGmailBYOEAddress', () => {
             mockFindUserAddress.mockReturnValue(existingAddress);
             mockGetIsBYOEAddress.mockReturnValue(false);
             mockDispatch.mockRejectedValue(new Error('Conversion failed'));
-            const mockShowSuccessModal = jest.fn();
+            const mockShowSuccessModal = vi.fn();
             const { result } = renderHook(() =>
                 useSetupGmailBYOEAddress({
                     showSuccessModal: mockShowSuccessModal,
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
-                    showAddressLinkedToAnotherAccountModal: jest.fn(),
-                    showClaimableAddressModal: jest.fn(),
-                    onComplete: jest.fn(),
+                    showAddressLinkedToAnotherAccountModal: vi.fn(),
+                    showClaimableAddressModal: vi.fn(),
+                    onComplete: vi.fn(),
                 })
             );
 
@@ -570,22 +569,22 @@ describe('useSetupGmailBYOEAddress', () => {
 
     describe('handleClaimAddress', () => {
         const setup = () => {
-            const mockShowSuccessModal = jest.fn();
-            const mockOnComplete = jest.fn();
+            const mockShowSuccessModal = vi.fn();
+            const mockOnComplete = vi.fn();
             const { result } = renderHook(() =>
                 useSetupGmailBYOEAddress({
                     showSuccessModal: mockShowSuccessModal,
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
                     onComplete: mockOnComplete,
-                    showAddressLinkedToAnotherAccountModal: jest.fn(),
-                    showClaimableAddressModal: jest.fn(),
+                    showAddressLinkedToAnotherAccountModal: vi.fn(),
+                    showClaimableAddressModal: vi.fn(),
                 })
             );
             return { result, mockShowSuccessModal, mockOnComplete };
         };
 
         beforeEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
             mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
             mockUseAddresses.mockReturnValue([[], false]);
             mockFindUserAddress.mockReturnValue(undefined);
@@ -662,11 +661,11 @@ describe('useSetupGmailBYOEAddress', () => {
         const setup = () => {
             const { result } = renderHook(() =>
                 useSetupGmailBYOEAddress({
-                    showSuccessModal: jest.fn(),
+                    showSuccessModal: vi.fn(),
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
-                    onComplete: jest.fn(),
-                    showAddressLinkedToAnotherAccountModal: jest.fn(),
-                    showClaimableAddressModal: jest.fn(),
+                    onComplete: vi.fn(),
+                    showAddressLinkedToAnotherAccountModal: vi.fn(),
+                    showClaimableAddressModal: vi.fn(),
                 })
             );
             return result;
@@ -687,7 +686,7 @@ describe('useSetupGmailBYOEAddress', () => {
             });
 
         beforeEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
             mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
             mockUseAddresses.mockReturnValue([[], false]);
             mockFindUserAddress.mockReturnValue(undefined);
@@ -816,15 +815,15 @@ describe('useSetupGmailBYOEAddress', () => {
 
     describe('inbox cleanup', () => {
         const setup = () => {
-            const mockShowSuccessModal = jest.fn();
-            const mockOnComplete = jest.fn();
+            const mockShowSuccessModal = vi.fn();
+            const mockOnComplete = vi.fn();
             const { result } = renderHook(() =>
                 useSetupGmailBYOEAddress({
                     showSuccessModal: mockShowSuccessModal,
                     source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
                     onComplete: mockOnComplete,
-                    showAddressLinkedToAnotherAccountModal: jest.fn(),
-                    showClaimableAddressModal: jest.fn(),
+                    showAddressLinkedToAnotherAccountModal: vi.fn(),
+                    showClaimableAddressModal: vi.fn(),
                 })
             );
             return { result, mockShowSuccessModal, mockOnComplete };
@@ -847,7 +846,7 @@ describe('useSetupGmailBYOEAddress', () => {
             });
 
         beforeEach(() => {
-            jest.clearAllMocks();
+            vi.clearAllMocks();
             mockUseBYOEFeatureStatus.mockReturnValue([true, false] as const);
             mockUseAddresses.mockReturnValue([[], false]);
             mockFindUserAddress.mockReturnValue(undefined);

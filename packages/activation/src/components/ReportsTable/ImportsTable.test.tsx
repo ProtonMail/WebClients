@@ -1,6 +1,7 @@
 import { fireEvent, screen, waitFor } from '@testing-library/dom';
 import { HttpResponse, http } from 'msw';
 import { setupServer } from 'msw/node';
+import { vi } from 'vitest';
 
 import { headers } from '../../../msw.header';
 import { easySwitchRender } from '../../tests/render';
@@ -8,15 +9,15 @@ import ImportsTable from './ImportsTable';
 
 const server = setupServer();
 
-jest.mock('../../hooks/useGetIsBYOE', () => ({
-    useGetIsBYOE: () => jest.fn().mockResolvedValue(false),
+vi.mock('../../hooks/useGetIsBYOE', () => ({
+    useGetIsBYOE: () => vi.fn().mockResolvedValue(false),
 }));
 
-jest.mock('@proton/telemetry-tracker/lib/tracker', () => ({
-    tracker: { emit: jest.fn() },
+vi.mock('@proton/telemetry-tracker/lib/tracker', () => ({
+    tracker: { emit: vi.fn() },
 }));
 
-jest.mock('@proton/mail/store/importerConfig/hooks', () => ({
+vi.mock('@proton/mail/store/importerConfig/hooks', () => ({
     useApiEnvironmentConfig: () => [
         {
             'oauth.google.client_id': 'string',
@@ -131,8 +132,8 @@ describe('Imports table testing', () => {
             },
         };
 
-        const importersSpy = jest.fn();
-        const singleImporterSpy = jest.fn();
+        const importersSpy = vi.fn();
+        const singleImporterSpy = vi.fn();
 
         server.use(
             http.get('/importer/v1/mail/importers/authinfo', () => {

@@ -1,4 +1,5 @@
 import { fireEvent, screen, waitFor } from '@testing-library/dom';
+import { type Mock, vi } from 'vitest';
 
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import { SubscriptionModalContext } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
@@ -12,19 +13,19 @@ import { easySwitchRender } from '../../../../tests/render';
 import { DriveImportPausedStep } from './DriveImportPausedStep';
 
 // useSettingsLink pulls in navigation/authentication context this test doesn't set up - stub it.
-jest.mock('@proton/components/components/link/useSettingsLink', () => ({
+vi.mock('@proton/components/components/link/useSettingsLink', () => ({
     __esModule: true,
-    default: jest.fn(),
+    default: vi.fn(),
 }));
 
 // The reconnect flow calls the API and opens the Google OAuth popup - stub it.
-jest.mock('../../../../hooks/useReconnectOAuthImport', () => ({
-    useReconnectOAuthImport: jest.fn(),
+vi.mock('../../../../hooks/useReconnectOAuthImport', () => ({
+    useReconnectOAuthImport: vi.fn(),
 }));
 
-const mockUseSettingsLink = useSettingsLink as jest.Mock;
-const reconnectOAuthImport = jest.fn();
-jest.mocked(useReconnectOAuthImport).mockReturnValue({ reconnectOAuthImport, loadingConfig: false });
+const mockUseSettingsLink = useSettingsLink as Mock;
+const reconnectOAuthImport = vi.fn();
+vi.mocked(useReconnectOAuthImport).mockReturnValue({ reconnectOAuthImport, loadingConfig: false });
 
 const importer: Importer = {
     ID: 'importer-id',
@@ -35,8 +36,8 @@ const importer: Importer = {
 
 describe('DriveImportPausedStep', () => {
     it('lets the user dismiss the modal without navigating away', () => {
-        const goToSettings = jest.fn();
-        const onClose = jest.fn();
+        const goToSettings = vi.fn();
+        const onClose = vi.fn();
         mockUseSettingsLink.mockReturnValue(goToSettings);
 
         easySwitchRender(<DriveImportPausedStep importer={importer} onClose={onClose} />);
@@ -47,8 +48,8 @@ describe('DriveImportPausedStep', () => {
     });
 
     it('lets the user upgrade, closing the modal and navigating to the upgrade page', () => {
-        const goToSettings = jest.fn();
-        const onClose = jest.fn();
+        const goToSettings = vi.fn();
+        const onClose = vi.fn();
         mockUseSettingsLink.mockReturnValue(goToSettings);
 
         easySwitchRender(<DriveImportPausedStep importer={importer} onClose={onClose} />);
@@ -59,9 +60,9 @@ describe('DriveImportPausedStep', () => {
     });
 
     it('lets the user upgrade in the plan selection modal when the app provides it', () => {
-        const goToSettings = jest.fn();
-        const openSubscriptionModal = jest.fn();
-        const onClose = jest.fn();
+        const goToSettings = vi.fn();
+        const openSubscriptionModal = vi.fn();
+        const onClose = vi.fn();
         mockUseSettingsLink.mockReturnValue(goToSettings);
 
         easySwitchRender(
@@ -77,7 +78,7 @@ describe('DriveImportPausedStep', () => {
     });
 
     it('asks the user to reconnect when the import was paused by a connection error', async () => {
-        const onClose = jest.fn();
+        const onClose = vi.fn();
         reconnectOAuthImport.mockResolvedValue(undefined);
 
         easySwitchRender(

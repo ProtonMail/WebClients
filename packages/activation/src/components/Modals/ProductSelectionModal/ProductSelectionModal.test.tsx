@@ -1,4 +1,5 @@
 import { fireEvent, screen, waitFor } from '@testing-library/dom';
+import { type Mock, vi } from 'vitest';
 
 import { getModelState } from '@proton/account/testing/getModelState';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
@@ -12,39 +13,39 @@ import { mockAccountImportFlowTracker } from '../../../telemetry/mockTrackerOfGr
 import { easySwitchRender } from '../../../tests/render';
 import { ProductSelectionModal } from './ProductSelectionModal';
 
-const mockHandleSubmit = jest.fn();
+const mockHandleSubmit = vi.fn();
 
-jest.mock('@proton/unleash/useFlag', () => ({
+vi.mock('@proton/unleash/useFlag', () => ({
     __esModule: true,
-    useFlag: jest.fn(),
+    useFlag: vi.fn(),
 }));
 
-jest.mock('../../../logic/driveContext', () => ({
-    ...jest.requireActual('../../../logic/driveContext'),
-    useDriveSdk: jest.fn(),
+vi.mock('../../../logic/driveContext', async () => ({
+    ...(await vi.importActual('../../../logic/driveContext')),
+    useDriveSdk: vi.fn(),
 }));
 
 // Avoid the submit hook's OAuth/config dependencies - not needed to render the product list.
-jest.mock('./useProductSelectionSubmit', () => ({
+vi.mock('./useProductSelectionSubmit', () => ({
     __esModule: true,
     useProductSelectionSubmit: () => ({ handleSubmit: mockHandleSubmit, loadingConfig: false }),
 }));
 
-jest.mock('@proton/calendar/calendars/hooks', () => ({
-    ...jest.requireActual('@proton/calendar/calendars/hooks'),
-    useWriteableCalendars: jest.fn(),
+vi.mock('@proton/calendar/calendars/hooks', async () => ({
+    ...(await vi.importActual('@proton/calendar/calendars/hooks')),
+    useWriteableCalendars: vi.fn(),
 }));
 
 // Stub the claim-address modal - it pulls auth/telemetry/silent-api deps we don't need here;
 // we only assert that the product modal opens it.
-jest.mock('../BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal', () => ({
+vi.mock('../BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal', () => ({
     __esModule: true,
     default: () => <div data-testid="byoeClaimProtonAddressModal" />,
 }));
 
-const mockedUseFlag = useFlag as jest.Mock;
-const mockedUseWriteableCalendars = useWriteableCalendars as jest.Mock;
-const mockedUseDriveSdk = useDriveSdk as jest.Mock;
+const mockedUseFlag = useFlag as Mock;
+const mockedUseWriteableCalendars = useWriteableCalendars as Mock;
+const mockedUseDriveSdk = useDriveSdk as Mock;
 
 const setDriveFlag = (enabled: boolean) =>
     mockedUseFlag.mockImplementation((flag: string) => (flag === 'EasySwitchB2CForDriveWeb' ? enabled : false));
@@ -85,7 +86,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
 });
 
 describe('ProductSelectionModal - product selection', () => {
@@ -163,7 +164,7 @@ describe('ProductSelectionModal - product selection', () => {
     });
 
     it('submits the selected provider and source, then runs onComplete', async () => {
-        const onComplete = jest.fn().mockResolvedValue(undefined);
+        const onComplete = vi.fn().mockResolvedValue(undefined);
         renderModal(ImportProvider.GOOGLE, { onComplete });
 
         fireEvent.click(screen.getByText('Continue'));
@@ -177,7 +178,7 @@ describe('ProductSelectionModal - product selection', () => {
     });
 
     it('calls onClose without submitting when Cancel is clicked', () => {
-        const onClose = jest.fn();
+        const onClose = vi.fn();
         renderModal(ImportProvider.GOOGLE, { onClose });
 
         fireEvent.click(screen.getByText('Cancel'));

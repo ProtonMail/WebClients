@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import { IMPORT_ERROR, ImportProvider } from '../../../../../../interface';
 import { getDefaultImap, getDefaultPort, validateStepForm } from './useStepForm.helpers';
 import type { StepFormBlur, StepFormState } from './useStepForm.interface';
@@ -18,8 +20,8 @@ describe('useStepForm', () => {
             port: false,
         };
 
-        const setErrors = jest.fn();
-        const setHasErrors = jest.fn();
+        const setErrors = vi.fn();
+        const setHasErrors = vi.fn();
 
         validateStepForm(formValue, blurred, setErrors, setHasErrors);
         expect(setErrors).toHaveBeenCalledTimes(1);
@@ -43,8 +45,8 @@ describe('useStepForm', () => {
             port: true,
         };
 
-        const setErrors = jest.fn();
-        const setHasErrors = jest.fn();
+        const setErrors = vi.fn();
+        const setHasErrors = vi.fn();
 
         validateStepForm(formValue, blurred, setErrors, setHasErrors);
         expect(setErrors).toHaveBeenCalledTimes(1);
@@ -73,8 +75,8 @@ describe('useStepForm', () => {
             port: false,
         };
 
-        const setErrors = jest.fn();
-        const setHasErrors = jest.fn();
+        const setErrors = vi.fn();
+        const setHasErrors = vi.fn();
 
         validateStepForm(
             formValue,

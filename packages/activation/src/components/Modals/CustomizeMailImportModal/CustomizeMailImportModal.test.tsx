@@ -1,4 +1,5 @@
 import { fireEvent, screen, waitFor } from '@testing-library/dom';
+import { vi } from 'vitest';
 
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 
@@ -141,7 +142,7 @@ describe('Customize modal tests', () => {
     });
 
     it('Should display the customize label modal', async () => {
-        const onSubmit = jest.fn();
+        const onSubmit = vi.fn();
 
         easySwitchRender(
             <CustomizeMailImportModal
@@ -190,7 +191,7 @@ describe('Customize modal tests', () => {
             importAddress: address,
             importCategoriesDestination: MailImportDestinationFolder.ALL_DRAFTS,
         };
-        const onSubmit = jest.fn();
+        const onSubmit = vi.fn();
 
         easySwitchRender(
             <CustomizeMailImportModal
@@ -227,7 +228,7 @@ describe('Customize modal tests', () => {
             importCategoriesDestination: MailImportDestinationFolder.ALL_DRAFTS,
         };
 
-        const onSubmit = jest.fn();
+        const onSubmit = vi.fn();
 
         easySwitchRender(
             <CustomizeMailImportModal
@@ -276,7 +277,7 @@ describe('Customize modal tests', () => {
     });
 
     it('Should update the payload when the selected period changes', () => {
-        const onSubmit = jest.fn();
+        const onSubmit = vi.fn();
 
         easySwitchRender(
             <CustomizeMailImportModal
@@ -306,7 +307,7 @@ describe('Customize modal tests', () => {
     });
 
     it('Should display warning when cancelling changes in modal', () => {
-        const onSubmit = jest.fn();
+        const onSubmit = vi.fn();
 
         easySwitchRender(
             <CustomizeMailImportModal
@@ -355,7 +356,7 @@ describe('Customize modal tests', () => {
             importCategoriesDestination: MailImportDestinationFolder.ALL_DRAFTS,
         };
 
-        const onSubmit = jest.fn();
+        const onSubmit = vi.fn();
 
         easySwitchRender(
             <CustomizeMailImportModal
@@ -411,7 +412,7 @@ describe('Customize modal tests', () => {
             importCategoriesDestination: MailImportDestinationFolder.ALL_DRAFTS,
         };
 
-        const onSubmit = jest.fn();
+        const onSubmit = vi.fn();
 
         easySwitchRender(
             <CustomizeMailImportModal

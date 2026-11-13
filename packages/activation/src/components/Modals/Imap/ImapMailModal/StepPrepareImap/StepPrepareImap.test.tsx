@@ -1,4 +1,5 @@
 import { fireEvent, screen } from '@testing-library/dom';
+import { type MockedFunction, vi } from 'vitest';
 
 import useAvailableAddresses from '../../../../../hooks/useAvailableAddresses';
 import type { MailImportState } from '../../../../../logic/draft/imapDraft/imapDraft.interface';
@@ -15,15 +16,15 @@ const data: MailImportState = {
     port: '993',
 };
 
-jest.mock('react-redux', () => ({
-    ...jest.requireActual('react-redux'),
-    useSelector: jest.fn(() => ({ mailImport: data })),
+vi.mock('react-redux', async () => ({
+    ...(await vi.importActual('react-redux')),
+    useSelector: vi.fn(() => ({ mailImport: data })),
 }));
 
 const addresses = generateMockAddressArray(3, true);
 
-jest.mock('../../../../../hooks/useAvailableAddresses');
-const mockUseAvailableAddresses = useAvailableAddresses as jest.MockedFunction<any>;
+vi.mock('../../../../../hooks/useAvailableAddresses');
+const mockUseAvailableAddresses = useAvailableAddresses as MockedFunction<any>;
 
 describe('Step prepare basic rendering testing', () => {
     it('Should correctly render the step prepare', () => {

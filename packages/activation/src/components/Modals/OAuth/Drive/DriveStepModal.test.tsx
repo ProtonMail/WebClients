@@ -1,11 +1,12 @@
 import { fireEvent, screen } from '@testing-library/dom';
+import { vi } from 'vitest';
 
 import { easySwitchRender } from '../../../../tests/render';
 import { DriveStepModal } from './DriveStepModal';
 
 describe('DriveStepModal', () => {
     it('renders the media and content, and triggers the primary action on click', () => {
-        const onClick = jest.fn();
+        const onClick = vi.fn();
 
         easySwitchRender(
             <DriveStepModal media={<div>media content</div>} primaryAction={{ label: 'Continue', onClick }}>
@@ -28,7 +29,7 @@ describe('DriveStepModal', () => {
         );
         expect(screen.queryByText('Cancel')).toBeNull();
 
-        const onSecondaryClick = jest.fn();
+        const onSecondaryClick = vi.fn();
         easySwitchRender(
             <DriveStepModal
                 media={null}
@@ -43,7 +44,7 @@ describe('DriveStepModal', () => {
     });
 
     it('disables the close button while closeDisabled is set, and forwards onClose otherwise', () => {
-        const onClose = jest.fn();
+        const onClose = vi.fn();
 
         easySwitchRender(
             <DriveStepModal

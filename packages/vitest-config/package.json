@@ -3,6 +3,7 @@
     "description": "Shared vitest configuration for workspace packages",
     "type": "module",
     "exports": {
+        "./setLocation": "./src/setLocation.ts",
         "./shared": "./src/shared.ts"
     },
     "scripts": {
