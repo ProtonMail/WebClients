@@ -1410,6 +1410,12 @@
       ],
       "Go to folder": [
         "Zum Ordner wechseln"
+      ],
+      "Don't show this offer again": [
+        "Dieses Angebot nicht erneut anzeigen"
+      ],
+      "Special Offer": [
+        "Sonderangebot"
       ]
     },
     "Action: Docs": {
@@ -5010,6 +5016,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Bei der Authentifizierung mit deinem Sicherheitsschlüssel ist ein Fehler aufgetreten. Bitte versuche es erneut."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Dieser Browser unterstützt keine Sicherheitsschlüssel. Bitte versuchen Sie es mit einem anderen Browser."
       ]
     },
     "fido2: Info": {
@@ -8156,6 +8165,15 @@
       ],
       "${ claimedAuthor } (unverified sender)": [
         "${ claimedAuthor } (nicht verifizierter Absender)"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Die Rabatte beziehen sich auf die regulären monatlichen Preise. Dein Abonnement verlängert sich nach Ablauf des Abrechnungszeitraums zum regulären Jahrespreis."
+      ],
+      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
+        "Dein Import kann auch unter ${ easySwitchSettingsLink } abgebrochen werden."
+      ],
+      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
+        "Dein Import-Vorgang wurde unterbrochen, da der Zugriff auf dein Google-Konto nicht mehr möglich ist. Stelle die Verbindung erneut her, um die verbliebenen Dateien zu importieren."
       ]
     },
     "info": {
@@ -13727,6 +13745,9 @@
       ],
       "Invoice paid": [
         "Rechnung bezahlt"
+      ],
+      "Resuming import": [
+        "Import wird fortgesetzt"
       ]
     },
     "Suffix": {
@@ -15114,6 +15135,9 @@
       ],
       "Subscribe to ${ planTitle }": [
         "${ planTitle } abonnieren"
+      ],
+      "Reconnect to finish your import": [
+        "Stelle die Verbindung erneut her, um den Import abschließen zu können"
       ]
     },
     "Today icon tooltip in mini calendar": {

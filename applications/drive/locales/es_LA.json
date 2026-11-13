@@ -1410,6 +1410,12 @@
       ],
       "Go to folder": [
         "Ir a la carpeta"
+      ],
+      "Don't show this offer again": [
+        "No volver a mostrar esta oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
       ]
     },
     "Action: Docs": {
@@ -5010,6 +5016,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Este navegador no admite claves de seguridad. Intente con otro navegador."
       ]
     },
     "fido2: Info": {
@@ -8159,6 +8168,15 @@
       ],
       "${ claimedAuthor } (unverified sender)": [
         "${ claimedAuthor } (remitente no verificado)"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en los precios mensuales estándar. Su suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ],
+      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
+        "También puede cancelar la importación en ${ easySwitchSettingsLink }."
+      ],
+      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
+        "La importación se pausó porque se perdió el acceso a su cuenta de Google. Vuelva a conectarla para importar el resto de sus archivos."
       ]
     },
     "info": {
@@ -13733,6 +13751,9 @@
       ],
       "Invoice paid": [
         "Factura pagada"
+      ],
+      "Resuming import": [
+        "Reanudando la importación"
       ]
     },
     "Suffix": {
@@ -15123,6 +15144,9 @@
       ],
       "Subscribe to ${ planTitle }": [
         "Suscribirse a ${ planTitle }"
+      ],
+      "Reconnect to finish your import": [
+        "Vuelva a conectar para finalizar la importación"
       ]
     },
     "Today icon tooltip in mini calendar": {

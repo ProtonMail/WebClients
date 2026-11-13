@@ -1376,6 +1376,12 @@
       ],
       "Import paused": [
         "इम्पोर्ट रोका गया"
+      ],
+      "Don't show this offer again": [
+        "ये ऑफर दोबारा न दिखाएं"
+      ],
+      "Special Offer": [
+        "विशेष ऑफ़र"
       ]
     },
     "Actions": {
@@ -7608,6 +7614,12 @@
       ],
       "Your import is blocked. Upgrade now to bring the rest of your files over.": [
         "आपका इम्पोर्ट ब्लॉक हो गया है। अपनी बाकी फ़ाइलें लाने के लिए अभी अपग्रेड करें।"
+      ],
+      "${ claimedAuthor } (unverified sender)": [
+        "${ claimedAuthor }, प्रेषक असत्यापित"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "छूट मानक मासिक प्राइसिंग पर आधारित हैं। बिल साइकिल खत्म होने पर आपकी सदस्यता मानक वार्षिक दर पर रिन्यू हो जाएगी।"
       ]
     },
     "info": {
@@ -12526,6 +12538,9 @@
       ],
       "Invoice paid": [
         "रसीद का भुगतान हो गया"
+      ],
+      "Resuming import": [
+        "आयात फिर से शुरू"
       ]
     },
     "Suffix": {
@@ -14346,6 +14361,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "आपकी सुरक्षा चाबी के साथ प्रमाणीकरण करते समय कुछ गड़बड़ हो गई। कृपया पुनः प्रयास करें।"
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "यह ब्राउज़र सिक्योरिटी कीज़ को सपोर्ट नहीं करता है। कृपया कोई दूसरा ब्राउज़र आज़माएं।"
       ]
     },
     "Info for cash payment method": {

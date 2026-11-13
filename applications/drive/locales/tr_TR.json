@@ -1410,6 +1410,12 @@
       ],
       "Go to folder": [
         "Klasöre git"
+      ],
+      "Don't show this offer again": [
+        "Bu teklif bir daha görüntülenmesin"
+      ],
+      "Special Offer": [
+        "Özel teklif"
       ]
     },
     "Action: Docs": {
@@ -5010,6 +5016,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Güvenlik anahtarı ile kimlik doğrulaması yapılırken bir sorun çıktı. Lütfen yeniden deneyin."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Bu tarayıcı güvenlik anahtarlarını desteklemiyor. Lütfen başka bir tarayıcı deneyin."
       ]
     },
     "fido2: Info": {
@@ -8171,6 +8180,15 @@
       ],
       "${ claimedAuthor } (unverified sender)": [
         "${ claimedAuthor } (doğrulanmamış gönderici)"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlandırma üzerinden hesaplanır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret ile yenilenir."
+      ],
+      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
+        "İçe aktarmanızı ${ easySwitchSettingsLink } içinde iptal de edebilirsiniz."
+      ],
+      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
+        "Google hesabınıza erişimimiz kesildiğinden içe aktarmanız duraklatıldı. Dosyalarınızın geri kalanını almak için yeniden bağlanın."
       ]
     },
     "info": {
@@ -13685,6 +13703,9 @@
       ],
       "Invoice paid": [
         "Fatura ödendi"
+      ],
+      "Resuming import": [
+        "İçe aktarma sürdürülüyor"
       ]
     },
     "Suffix": {
@@ -15075,6 +15096,9 @@
       ],
       "Subscribe to ${ planTitle }": [
         "${ planTitle } tarifesine abone olun"
+      ],
+      "Reconnect to finish your import": [
+        "İçe aktarmayı tamamlamak için yeniden bağlanın"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1398,6 +1398,12 @@
       ],
       "Preview logs": [
         "Mostra anteprima log."
+      ],
+      "Don't show this offer again": [
+        "Non mostrare più quest'offerta"
+      ],
+      "Special Offer": [
+        "Offerta speciale"
       ]
     },
     "Action: Docs": {
@@ -8055,6 +8061,15 @@
       ],
       "${ claimedAuthor } (unverified sender)": [
         "${ claimedAuthor } (mittente non verificato)"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Gli sconti si basano sui prezzi mensili standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
+      ],
+      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
+        "Puoi anche annullare l'importazione in ${ easySwitchSettingsLink }."
+      ],
+      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
+        "L'importazione è in pausa perché è stato perso l'accesso all'account Google. Riconnettilo per trasferire i rimanenti file."
       ]
     },
     "info": {
@@ -13596,6 +13611,9 @@
       ],
       "Invoice paid": [
         "Fattura pagata"
+      ],
+      "Resuming import": [
+        "Ripresa importazione"
       ]
     },
     "Suffix": {
@@ -14965,6 +14983,9 @@
       ],
       "We weren’t able to confirm that the file content was uploaded by ${ claimedContentAuthor }. The reason is: ${ node.activeRevision.contentAuthor.error.error }": [
         "Non siamo riusciti a confermare che il file è stato caricato da ${ claimedContentAuthor }. Il motivo è: ${ node.activeRevision.contentAuthor.error.error }"
+      ],
+      "Reconnect to finish your import": [
+        "Riconnetti l'account per completare l'importazione"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15536,6 +15557,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Questo browser non supporta le chiavi di sicurezza. Provare con un altro browser."
       ]
     },
     "Provider option": {
