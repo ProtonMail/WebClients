@@ -2,12 +2,13 @@ import type { ClientToolResult } from '@proton/lumo-api-client/core/client-tools
 
 import { buildChangeDigest } from '../../../lib/attachments/pdfChangeMarkup';
 import { type Attachment, type Conversation, type Message, Role } from '../../../types';
+import { countAnalysisCalls } from './fileAnalysis';
 import { formatFileCard, formatRetrievalInstructions } from './instructions';
 import { PAGE_CHARS, splitIntoPages } from './pages';
 import {
     MAX_ANALYSES_PER_REPLY,
-    MAX_READ_CHARS_PER_REPLY,
     MAX_READS_PER_REPLY,
+    MAX_READ_CHARS_PER_REPLY,
     MAX_RETRIEVAL_CALLS_PER_REPLY,
     type RetrievalContext,
     type RetrievalIndex,
@@ -633,7 +634,11 @@ describe('per-reply limits', () => {
 });
 
 describe('analyze_file', () => {
-    const longFile = attachment('long', 'long.md', Array.from({ length: 7 }, (_, i) => `PAGE-${i + 1} ${'x '.repeat(PAGE_CHARS / 2 - 12)}`).join('\n\n'));
+    const longFile = attachment(
+        'long',
+        'long.md',
+        Array.from({ length: 7 }, (_, i) => `PAGE-${i + 1} ${'x '.repeat(PAGE_CHARS / 2 - 12)}`).join('\n\n')
+    );
     const analyzeContext = (reply: (prompt: string) => string = () => 'a note on page 2') => {
         const prompts: string[] = [];
         const context = makeContext({
@@ -675,10 +680,51 @@ describe('analyze_file', () => {
         const executor = createRetrievalToolExecutor(context);
 
         expect((await call(executor, ANALYZE_FILE_TOOL_NAME, { file_name: 'long', goal: 'g' })).body.ok).toBe(true);
-        for (const args of [{ file_id: 'long' }, { file_id: 'long', goal: '  ' }, { goal: 'g' }, { file_id: 'nope', goal: 'g' }]) {
+        for (const args of [
+            { file_id: 'long' },
+            { file_id: 'long', goal: '  ' },
+            { goal: 'g' },
+            { file_id: 'nope', goal: 'g' },
+        ]) {
             const bad = await call(executor, ANALYZE_FILE_TOOL_NAME, args);
             expect(bad.result.is_error).toBe(true);
         }
+    });
+
+    it('does not read the file when the allowance does not cover it, and tells the model to answer without it', async () => {
+        const { context, prompts } = analyzeContext();
+        const asked: { fileName: string; calls: number }[] = [];
+        context.checkAnalysisAllowance = (fileName, calls) => {
+            asked.push({ fileName, calls });
+            return { fileNames: [fileName], needed: calls, remaining: 1 };
+        };
+
+        const { result, body } = await call(context, ANALYZE_FILE_TOOL_NAME, {
+            file_id: 'long',
+            goal: 'list the risks',
+        });
+
+        expect(prompts).toHaveLength(0);
+        expect(asked).toEqual([{ fileName: 'long.md', calls: countAnalysisCalls(7) }]);
+        expect(result.is_error).toBe(true);
+        expect(body.error).toContain('Not read');
+        expect(body.error).not.toMatch(/\d+ left|at least \d/);
+        expect(body.error).toContain('Do not call analyze_file again');
+        expect(body.error).toContain('could not read the whole file this time');
+        expect(body.error).toContain('do not mention plans, limits, numbers or upgrades');
+        expect(body.error).toContain('do not read the file page by page');
+    });
+
+    it('reads the file when the allowance covers it', async () => {
+        const { context, prompts } = analyzeContext();
+        context.checkAnalysisAllowance = () => {
+            return undefined;
+        };
+
+        const { body } = await call(context, ANALYZE_FILE_TOOL_NAME, { file_id: 'long', goal: 'g' });
+
+        expect(body.ok).toBe(true);
+        expect(prompts).toHaveLength(countAnalysisCalls(7));
     });
 
     it('tells the model which pages the helper missed, and fails clearly when it read nothing', async () => {
@@ -766,7 +812,13 @@ describe('reading several pages', () => {
             page_count: 4,
         });
 
-        expect(body).toMatchObject({ ok: true, page: 3, last_page: 6, next_page: 7, pages: splitIntoPages(book.markdown!).length });
+        expect(body).toMatchObject({
+            ok: true,
+            page: 3,
+            last_page: 6,
+            next_page: 7,
+            pages: splitIntoPages(book.markdown!).length,
+        });
         expect(pagesIn(body.content)).toEqual([3, 4, 5, 6]);
     });
 
@@ -802,11 +854,15 @@ describe('reading several pages', () => {
         const seen: number[] = [];
 
         while (next !== undefined) {
-            const { body, result }: { body: any; result: ClientToolResult } = await call(executor, READ_KNOWLEDGE_TOOL_NAME, {
-                file_id: 'book',
-                page: next,
-                page_count: 5,
-            });
+            const { body, result }: { body: any; result: ClientToolResult } = await call(
+                executor,
+                READ_KNOWLEDGE_TOOL_NAME,
+                {
+                    file_id: 'book',
+                    page: next,
+                    page_count: 5,
+                }
+            );
             if (result.is_error) {
                 expect(body.error).toContain('Read limit');
                 break;
@@ -850,7 +906,9 @@ describe('pages and cards', () => {
     });
 
     it('tells a PDF card its real page count apart from the pages read_knowledge counts', () => {
-        const markdown = ['[Page 1]', 'text '.repeat(3_000), '[Page 2]', 'text '.repeat(3_000), '[Page 3]', 'end'].join('\n');
+        const markdown = ['[Page 1]', 'text '.repeat(3_000), '[Page 2]', 'text '.repeat(3_000), '[Page 3]', 'end'].join(
+            '\n'
+        );
         const card = formatFileCard({ id: 'pdf', filename: 'a.pdf', markdown, tokenCount: 7_600 });
 
         expect(card).toContain('3 PDF pages');

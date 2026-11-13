@@ -3,12 +3,12 @@
  * model decides to call. The notes go to the model with the request; they are kept in memory only,
  * for the later turns and retries of the same chat, and never stored.
  */
-import { clearAnalysisProgress, setAnalysisProgress } from '../../../services/analysisProgressStore';
 import { countPdfPages } from '../../../lib/attachments/pdfChangeMarkup';
 import { countAttachmentToken } from '../../../llm/utils';
+import { clearAnalysisProgress, setAnalysisProgress } from '../../../services/analysisProgressStore';
 import type { Attachment } from '../../../types';
 import type { RetrievalExclusions } from './exclusions';
-import { type AskModel, analyzeFile } from './fileAnalysis';
+import { type AskModel, analyzeFile, countAnalysisCalls } from './fileAnalysis';
 import { fileCardPolicy } from './instructions';
 import { describeFileSize, splitIntoPages } from './pages';
 import { MAX_GOAL_CHARS } from './schema';
@@ -94,6 +94,21 @@ export function selectFilesToAnalyze({
         .slice(0, MAX_PREFETCHED_FILES);
 }
 
+/**
+ * Model calls `prefetchFileNotes` will make for these files and this goal, at least: files already
+ * read for the same goal cost nothing.
+ */
+export function countPrefetchCalls(files: Attachment[], goal: string): number {
+    const wanted = goal.trim().slice(0, MAX_GOAL_CHARS);
+    return files
+        .filter((file) => {
+            return remembered.get(file.id)?.goal !== wanted;
+        })
+        .reduce((total, file) => {
+            return total + countAnalysisCalls(splitIntoPages(file.markdown!).length);
+        }, 0);
+}
+
 export type PrefetchCall = { callId: string; fileId: string; fileName: string; goal: string };
 
 /**
@@ -105,6 +120,7 @@ export async function prefetchFileNotes({
     goal,
     ask,
     signal,
+    reserveCalls,
     onStart,
     onFinish,
 }: {
@@ -112,6 +128,8 @@ export async function prefetchFileNotes({
     goal: string;
     ask: AskModel;
     signal?: AbortSignal;
+    /** Asked before merging notes; see analyzeFile. */
+    reserveCalls?: (calls: number) => boolean;
     onStart: (call: PrefetchCall) => void;
     onFinish: (call: PrefetchCall, result: PrefetchResult) => void;
 }): Promise<void> {
@@ -136,6 +154,7 @@ export async function prefetchFileNotes({
                 goal: wanted,
                 ask,
                 signal,
+                reserveCalls,
                 onProgress: (step) => setAnalysisProgress(call.callId, step),
             });
             if (analysis.failedPages.length < analysis.parts) {

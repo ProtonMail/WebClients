@@ -97,6 +97,15 @@ async function mapLimited<T, R>(items: T[], limit: number, task: (item: T) => Pr
     return results;
 }
 
+/**
+ * Model calls needed to read a file of `pageCount` retrieval pages: one per part. Merging the notes
+ * can add a few more, but how many depends on how long the notes turn out, so this is the minimum;
+ * analyzeFile asks for the merge calls separately (`reserveCalls`) once it knows how many it needs.
+ */
+export const countAnalysisCalls = (pageCount: number): number => {
+    return Math.min(Math.ceil(pageCount / PAGES_PER_PART), MAX_ANALYSIS_PARTS);
+};
+
 const isEmptyNotes = (notes: string) => !notes.trim() || notes.trim().toUpperCase().startsWith(NO_NOTES);
 
 /** Groups notes, in order, so each group stays under `limit` characters. */
@@ -126,6 +135,7 @@ export async function analyzeFile({
     ask,
     onProgress,
     signal,
+    reserveCalls,
 }: {
     pages: string[];
     fileName: string;
@@ -135,6 +145,11 @@ export async function analyzeFile({
     onProgress?: (step: AnalysisStep) => void;
     /** Stops reading when the user stops the reply. */
     signal?: AbortSignal;
+    /**
+     * Asked before each merge round with the model calls it takes; false skips merging, and the notes
+     * are cut to fit instead. Absent: merging is not limited.
+     */
+    reserveCalls?: (calls: number) => boolean;
 }): Promise<FileAnalysis> {
     const allParts = toParts(pages);
     const parts = allParts.slice(0, MAX_ANALYSIS_PARTS);
@@ -174,6 +189,13 @@ export async function analyzeFile({
     for (let round = 0; round < MAX_MERGE_ROUNDS && notes.join('\n\n').length > MAX_NOTES_CHARS; round += 1) {
         const batches = batchNotes(notes, MERGE_BATCH_CHARS);
         if (batches.length === notes.length) {
+            break;
+        }
+        // A batch of one note is kept as it is, without a call.
+        const mergeCalls = batches.filter((batch) => {
+            return batch.length > 1;
+        }).length;
+        if (reserveCalls && !reserveCalls(mergeCalls)) {
             break;
         }
         onProgress?.({ phase: 'merging', done: parts.length, total: parts.length });

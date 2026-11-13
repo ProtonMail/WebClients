@@ -10,22 +10,24 @@ import LumoTierErrorUpsellButtons from '../composed/LumoTierErrorUpsellButtons';
 
 import './UpsellCard.scss';
 
-const UpsellCardWrapper = ({
-    children,
-    error,
-    showSadCat = true,
-    onDismiss,
-}: {
+interface WrapperProps {
     children: React.ReactNode;
     error: TierError;
     showSadCat?: boolean;
+    /** In the chat rather than above the composer: no upward nudge over the content above. */
+    inChat?: boolean;
     onDismiss?: () => void;
-}) => {
+}
+
+const UpsellCardWrapper = ({ children, error, showSadCat = true, inChat = false, onDismiss }: WrapperProps) => {
     return (
         <div
             className={clsx(
-                'upsell-card flex flex-nowrap flex-column lg:flex-row gap-4 lg:gap-2 p-3 rounded-xl mb-4 w-full relative',
-                onDismiss && 'upsell-card--dismissible'
+                'upsell-card flex flex-nowrap flex-column lg:flex-row rounded-xl mb-4 w-full relative',
+                // Without the image, more room around the text and between text and actions, centred on one line.
+                showSadCat ? 'gap-4 lg:gap-2 p-3' : 'gap-3 lg:gap-6 p-4 lg:items-center',
+                onDismiss && 'upsell-card--dismissible',
+                inChat && 'upsell-card--in-chat mt-2'
             )}
         >
             {showSadCat && (
@@ -42,7 +44,7 @@ const UpsellCardWrapper = ({
                 <p className="error-card-title text-bold m-0">{error.errorTitle}</p>
                 <p className="error-card-message m-0">{error.errorMessage}</p>
             </div>
-            <div className="flex flex-column flex-nowrap gap-2 my-auto">{children}</div>
+            <div className={clsx('flex flex-column flex-nowrap gap-2', showSadCat && 'my-auto')}>{children}</div>
             {onDismiss && (
                 <Button
                     icon
@@ -67,17 +69,16 @@ const UpsellCardWrapper = ({
 
 UpsellCardWrapper.displayName = 'UpsellCardWrapper';
 
-const UpsellCard = ({
-    error,
-    showSadCat = true,
-    onDismiss,
-}: {
+interface Props {
     error: TierError;
     showSadCat?: boolean;
+    inChat?: boolean;
     onDismiss?: () => void;
-}) => {
+}
+
+const UpsellCard = ({ error, showSadCat = true, inChat = false, onDismiss }: Props) => {
     return (
-        <UpsellCardWrapper error={error} showSadCat={showSadCat} onDismiss={onDismiss}>
+        <UpsellCardWrapper error={error} showSadCat={showSadCat} inChat={inChat} onDismiss={onDismiss}>
             <LumoTierErrorUpsellButtons />
         </UpsellCardWrapper>
     );

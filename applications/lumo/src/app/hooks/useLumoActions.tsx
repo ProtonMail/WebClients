@@ -39,6 +39,11 @@ import type { MessageMap } from '../redux/slices/core/messages';
 import { addMessage, createDate, newMessageId, pushMessageRequest } from '../redux/slices/core/messages';
 import type { ConversationError } from '../redux/slices/meta/errors';
 import { useActionErrorHandler } from '../services/errors/useActionErrorHandler';
+import {
+    clearFileAnalysisLimitNotice,
+    isFileAnalysisLimitError,
+    setFileAnalysisLimitNotice,
+} from '../services/fileAnalysisAllowance';
 import { SEND_PAGE_IMAGES_MAX_WAIT_MS, ensureRecentPdfPageImages } from '../services/files/pdfPageImages';
 import { cancelConversationGeneration, isAbortError } from '../services/generation/abortGeneration';
 import { OPERATION_IN_PROGRESS_MESSAGE, generationRegistry } from '../services/generation/generationRegistry';
@@ -698,6 +703,7 @@ export const useLumoActions = ({
             throw error;
         }
         const { signal } = abortController;
+        clearFileAnalysisLimitNotice(finalConversationId);
 
         // Create error context with guaranteed conversationId
         const errorContext: ErrorContext = {
@@ -749,6 +755,12 @@ export const useLumoActions = ({
                 dispatch((d, getState) =>
                     cancelConversationGeneration(d, getState, finalConversationId, { skipSignalAbort: true })
                 );
+            } else if (isFileAnalysisLimitError(error)) {
+                // Nothing was sent to the model: close the empty reply as Stop would, and explain why.
+                dispatch((d, getState) =>
+                    cancelConversationGeneration(d, getState, finalConversationId, { skipSignalAbort: true })
+                );
+                setFileAnalysisLimitNotice(finalConversationId, error.shortfall);
             } else {
                 handleActionError(error, errorContext);
             }

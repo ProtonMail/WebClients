@@ -6,6 +6,7 @@ import { countPdfPages } from '../../../lib/attachments/pdfChangeMarkup';
 import { isImageAttachment } from '../../../llm/attachments';
 import type { LumoState } from '../../../redux/store';
 import { clearAnalysisProgress, setAnalysisProgress } from '../../../services/analysisProgressStore';
+import type { FileAnalysisShortfall } from '../../../services/fileAnalysisAllowance';
 import { BM25Index } from '../../../services/search/bm25Index';
 import type { SearchService } from '../../../services/search/searchService';
 import { STOPWORDS } from '../../../services/search/stopwords';
@@ -21,7 +22,7 @@ import {
     isTextBlock,
 } from '../../../types';
 import type { RetrievalExclusions } from './exclusions';
-import { type AskModel, analyzeFile } from './fileAnalysis';
+import { type AskModel, analyzeFile, countAnalysisCalls } from './fileAnalysis';
 import {
     MAX_MENTIONED_FILES,
     type NamedFile,
@@ -120,6 +121,17 @@ export type RetrievalContext = {
      * whole file read for it (analyze_file); without it the tool is not offered.
      */
     analyze?: AskModel;
+    /**
+     * Called before a file is read through with the model calls it takes. Returns the shortfall when
+     * the user does not have enough Lite questions left: the file is then not read and the model is
+     * told to answer without it. Absent: no check (Lumo Plus, or no limits to check against).
+     */
+    checkAnalysisAllowance?: (fileName: string, analysisCalls: number) => FileAnalysisShortfall | undefined;
+    /**
+     * Called before a reading merges its notes, with the model calls the merge takes. False when they
+     * do not fit in the Lite questions left: the notes are cut instead. Absent: merging is not limited.
+     */
+    reserveAnalysisCalls?: (calls: number) => boolean;
     /** Stops the reply; a file analysis in progress throws instead of reporting what it had read. */
     signal?: AbortSignal;
 };
@@ -769,12 +781,19 @@ export const createRetrievalToolExecutor = (
         }
         const pages = pagesOf(`file:${file.id}`, file.text);
         const pdfPages = countPdfPages(file.text);
+        const shortfall = context.checkAnalysisAllowance?.(file.name, countAnalysisCalls(pages.length));
+        if (shortfall) {
+            return errorResult(
+                `Not read: "${file.name}" is too large to read in full on the user's current plan right now. Do not call analyze_file again in this reply, and do not read the file page by page with read_knowledge to make up for it: every step of your reply also uses one of the user's questions. Answer from what is already in this conversation (a single search_knowledge for one specific detail is fine). Say in one short sentence that you could not read the whole file this time; the app shows the user why, with an upgrade option, so do not mention plans, limits, numbers or upgrades. Do not guess at what the parts you have not seen say.`
+            );
+        }
         const analysis = await analyzeFile({
             pages,
             fileName: file.name,
             goal,
             ask: context.analyze!,
             signal: context.signal,
+            reserveCalls: context.reserveAnalysisCalls,
             onProgress: callId ? (step) => setAnalysisProgress(callId, step) : undefined,
         }).finally(() => callId && clearAnalysisProgress(callId));
         if (analysis.failedPages.length === analysis.parts) {
