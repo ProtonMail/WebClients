@@ -2,6 +2,7 @@ import type { Organization } from '@proton/shared/lib/interfaces/Organization';
 import type { EitherOr } from '@proton/shared/lib/interfaces/utils';
 import { getPlanNameFromIDs, isMultiUserPersonalPlan } from '@proton/shared/lib/payments/plan/helpers';
 import type { Plan } from '@proton/shared/lib/payments/plan/interface';
+import { hasLumo } from '@proton/shared/lib/payments/subscription/helpers/plan-matching';
 
 import { ALL_ADDON_PREFIXES, getAddonConfigByName, getTransferOrder } from './addon/addons';
 import type { AddonTransferStrategy } from './addon/interfaces';
@@ -12,7 +13,6 @@ import { getSupportedAddons, isAddonType } from './plan/addons';
 import { getPlanFeatureLimit, getPlansLimit } from './plan/feature-limits';
 import { getSubscriptionsArray, isManagedExternally } from './subscription/helpers/external-management';
 import { getPlanIDs } from './subscription/helpers/plan-ids';
-import { hasLumo } from './subscription/helpers/plan-matching';
 import type { Subscription } from './subscription/interface';
 import { isLumoAddonExcluded } from './subscription/lumo-purchase-rules';
 import type { MultiSubscriptionContext } from './subscription/multi-subscription-context';

@@ -20,6 +20,13 @@ import {
     getPlanName,
     getPlanTitle,
 } from '@proton/shared/lib/payments/subscription/helpers/plan-info';
+import {
+    hasBundle,
+    hasBundlePro,
+    hasBundlePro2024,
+    hasFree,
+    hasLumo,
+} from '@proton/shared/lib/payments/subscription/helpers/plan-matching';
 import isTruthy from '@proton/utils/isTruthy';
 
 import {
@@ -47,7 +54,6 @@ import { isFreeSubscription } from '../type-guards';
 import { FREE_PLAN } from './freePlans';
 import { getSubscriptionsArray, hasLumoMobileSubscription, isManagedExternally } from './helpers/external-management';
 import { getPlanIDs } from './helpers/plan-ids';
-import { hasBundle, hasBundlePro, hasBundlePro2024, hasFree, hasLumo } from './helpers/plan-matching';
 import type {
     MaybeFreeSubscription,
     Subscription,
@@ -65,7 +71,10 @@ export {
     hasNoExternallyManagedLumoSubscription,
     isManagedExternally,
 } from './helpers/external-management';
-export { getAudienceFromSubscription, getIsB2BAudienceFromSubscription } from './helpers/plan-audience';
+export {
+    getAudienceFromSubscription,
+    getIsB2BAudienceFromSubscription,
+} from '@proton/shared/lib/payments/subscription/helpers/plan-audience';
 export {
     getHasConsumerVpnPlan,
     getHasDriveB2BPlan,
@@ -76,7 +85,7 @@ export {
     getHasPassB2BPlan,
     getHasVpnB2BPlan,
     getHasVpnOnlyB2BPlan,
-} from './helpers/plan-b2b';
+} from '@proton/shared/lib/payments/subscription/helpers/plan-b2b';
 export { getPlanIDs } from './helpers/plan-ids';
 export {
     getAddons,
@@ -84,7 +93,7 @@ export {
     getPlanName,
     getPlanTitle,
 } from '@proton/shared/lib/payments/subscription/helpers/plan-info';
-export * from './helpers/plan-matching';
+export * from '@proton/shared/lib/payments/subscription/helpers/plan-matching';
 export {
     hasCancellablePlan,
     hasTrialExpiredLessThan4Weeks,

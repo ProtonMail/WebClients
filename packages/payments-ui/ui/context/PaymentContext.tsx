@@ -33,6 +33,7 @@ import { loadInitialBillingAddress } from '@proton/payments/core/billing-address
 import { getCheckoutUi } from '@proton/payments/core/checkout';
 import { computeOptimisticCheckResult } from '@proton/payments/core/computeOptimisticCheckResult';
 import { CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/payments/core/constants';
+import { getStaticCouponConfig } from '@proton/payments/core/coupon-config/get-static-coupon-config';
 import { getAvailableCurrencies, getPreferredCurrency, mainCurrencies } from '@proton/payments/core/currencies';
 import { emptyEntitlementCatalog } from '@proton/payments/core/entitlements/empty-entitlement-catalog';
 import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
@@ -72,7 +73,6 @@ import type { FreePlanDefault, Plan } from '@proton/shared/lib/payments/plan/int
 import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
-import { getStaticCouponConfig } from '../coupon-config/get-static-coupon-config';
 import { useCouponConfig } from '../coupon-config/useCouponConfig';
 import { checkMultiplePlans, getPlanToCheck, getSubscriptionDataFromPlanToCheck } from './helpers';
 
@@ -144,9 +144,8 @@ export const PaymentsContextProvider = ({
         subscription: subscriptionInitial,
         plans: plansInitial,
         entitlementCatalog: entitlementCatalogInitial,
-    } =
-        // Avoid using model hooks to avoid fetching data
-        useSelector(selectInitialPaymentData);
+    } = // Avoid using model hooks to avoid fetching data
+    useSelector(selectInitialPaymentData);
     const dispatch = useDispatch();
     const lumoMultiSubscriptions = useFlag('LumoMultiSubscriptions');
 

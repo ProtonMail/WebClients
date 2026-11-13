@@ -1,9 +1,9 @@
 import { SubscriptionPlatform } from '@proton/shared/lib/payments/subscription/constants';
+import { hasLumo } from '@proton/shared/lib/payments/subscription/helpers/plan-matching';
 
 import type { FreeSubscription } from '../../interface';
 import { isFreeSubscription } from '../../type-guards';
 import type { Subscription } from '../interface';
-import { hasLumo } from './plan-matching';
 
 export const isManagedExternally = (
     subscription: Subscription | FreeSubscription | undefined | Pick<Subscription, 'External'> | null
