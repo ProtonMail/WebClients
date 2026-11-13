@@ -1,3 +1,5 @@
+import { flushSync } from 'react-dom';
+
 import { c } from 'ttag';
 
 import { Popper } from '@proton/atoms/Popper/Popper';
@@ -169,6 +171,12 @@ export const MoreMenu = ({ variant, onOpenMeetingDebug, showMeetingActions }: Pr
         toggle();
     };
 
+    // The sheet's focus trap would take focus back while it is mounted, so it unmounts before the button is focused.
+    const closeSheet = () => {
+        flushSync(close);
+        anchorRef.current?.focus();
+    };
+
     return (
         <>
             {recording.isVisible && recording.checked && (
@@ -196,7 +204,7 @@ export const MoreMenu = ({ variant, onOpenMeetingDebug, showMeetingActions }: Pr
                     showMeetingActions={showMeetingActions}
                 />
             ) : (
-                isOpen && <MoreMenuSheet onClose={close} toggles={toggles} actions={actions} layout={layout} />
+                isOpen && <MoreMenuSheet onClose={closeSheet} toggles={toggles} actions={actions} layout={layout} />
             )}
             <Popper
                 className="fixed w-fit-content h-fit-content z-up"

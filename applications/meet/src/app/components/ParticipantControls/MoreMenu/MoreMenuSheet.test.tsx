@@ -33,7 +33,7 @@ describe('MoreMenuSheet', () => {
         expect(screen.getByRole('dialog', { name: 'More options' })).toBeInTheDocument();
     });
 
-    it('takes focus when it opens and gives it back to the opener when it closes', () => {
+    it('takes focus when it opens', () => {
         const Opener = ({ isOpen }: { isOpen: boolean }) => (
             <>
                 <button type="button">More options</button>
@@ -41,14 +41,11 @@ describe('MoreMenuSheet', () => {
             </>
         );
         const { rerender } = render(<Opener isOpen={false} />);
-        const opener = screen.getByRole('button', { name: 'More options' });
-        opener.focus();
+        screen.getByRole('button', { name: 'More options' }).focus();
 
         rerender(<Opener isOpen />);
-        expect(screen.getByRole('dialog', { name: 'More options' })).toHaveFocus();
 
-        rerender(<Opener isOpen={false} />);
-        expect(opener).toHaveFocus();
+        expect(screen.getByRole('dialog', { name: 'More options' })).toHaveFocus();
     });
 
     it('closes on Escape', () => {

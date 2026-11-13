@@ -29,7 +29,7 @@ export const MoreMenuSheet = ({ onClose, toggles, actions, layout }: Props) => {
 
     const focusTrapProps = useFocusTrap({
         rootRef: sheetRef,
-        disableRestoreByPointer: false,
+        restoreFocus: false,
     });
 
     const handleKeyDown = (event: KeyboardEvent<HTMLElement>) => {
@@ -48,7 +48,6 @@ export const MoreMenuSheet = ({ onClose, toggles, actions, layout }: Props) => {
             <div
                 ref={sheetRef}
                 role="dialog"
-                aria-modal="true"
                 aria-label={c('Alt').t`More options`}
                 className="more-menu-sheet w-full border border-norm large-meet-radius user-select-none outline-none"
                 {...focusTrapProps}
