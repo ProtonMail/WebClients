@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
@@ -6,6 +6,10 @@ import { IcMeetCamera } from '@proton/icons/icons/IcMeetCamera';
 import { CircleButton } from './CircleButton';
 
 describe('CircleButton', () => {
+    afterEach(() => {
+        vi.useRealTimers();
+    });
+
     it('should call onClick and not be aria-disabled when it is not loading', async () => {
         const onClick = vi.fn();
 
@@ -52,5 +56,56 @@ describe('CircleButton', () => {
         expect(button).toHaveFocus();
         expect(button).toHaveAttribute('aria-disabled', 'true');
         expect(onClick).not.toHaveBeenCalled();
+    });
+
+    it('keeps the same focused button when its tooltip is disabled and enabled again', () => {
+        const renderButton = (tooltipDisabled: boolean) => (
+            <CircleButton
+                IconComponent={IcMeetCamera}
+                ariaLabel="More options"
+                tooltipTitle="More options"
+                tooltipDisabled={tooltipDisabled}
+            />
+        );
+        const { rerender } = render(renderButton(false));
+        const button = screen.getByRole('button', { name: 'More options' });
+        act(() => button.focus());
+
+        rerender(renderButton(true));
+        expect(screen.getByRole('button', { name: 'More options' })).toBe(button);
+        expect(button).toHaveFocus();
+
+        rerender(renderButton(false));
+        expect(screen.getByRole('button', { name: 'More options' })).toBe(button);
+        expect(button).toHaveFocus();
+    });
+
+    it('shows its tooltip on hover only while the tooltip is not disabled', async () => {
+        vi.useFakeTimers({ shouldAdvanceTime: true });
+        const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+        const renderButton = (tooltipDisabled: boolean) => (
+            <CircleButton
+                IconComponent={IcMeetCamera}
+                ariaLabel="More options"
+                tooltipTitle="Show more options"
+                tooltipDisabled={tooltipDisabled}
+            />
+        );
+        const { rerender } = render(renderButton(true));
+        const button = screen.getByRole('button', { name: 'More options' });
+
+        await user.hover(button);
+        act(() => {
+            vi.advanceTimersByTime(1000);
+        });
+        expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
+
+        await user.unhover(button);
+        rerender(renderButton(false));
+        await user.hover(button);
+        act(() => {
+            vi.advanceTimersByTime(1000);
+        });
+        expect(screen.getByRole('tooltip')).toHaveTextContent('Show more options');
     });
 });

@@ -14,11 +14,12 @@ interface UseToolbarRovingFocusOptions {
 /**
  * Returns every enabled, currently visible button inside the toolbar, in DOM order.
  * Visibility is checked via `offsetParent` so controls hidden through responsive
- * CSS (e.g. `hidden lg:flex`) are excluded from the roving order.
+ * CSS (e.g. `hidden lg:flex`) are excluded from the roving order. Buttons of a
+ * dialog or toolbar nested inside it keep their own tab order.
  */
 const getFocusableItems = (toolbar: HTMLElement): HTMLElement[] =>
     Array.from(toolbar.querySelectorAll<HTMLElement>('button:not([disabled])')).filter(
-        (el) => el.offsetParent !== null
+        (el) => el.offsetParent !== null && el.closest('[role="toolbar"], [role="dialog"]') === toolbar
     );
 
 /**

@@ -29,6 +29,7 @@ interface CircleButtonProps {
     ariaHasPopup?: React.AriaAttributes['aria-haspopup'];
     noBorder?: boolean;
     tooltipTitle?: string;
+    tooltipDisabled?: boolean;
     tooltipClassName?: string;
     tooltipPlacement?: PopperPlacement;
     anchorRef?: RefObject<HTMLButtonElement>;
@@ -53,6 +54,7 @@ export const CircleButton = ({
     ariaHasPopup,
     noBorder = true,
     tooltipTitle,
+    tooltipDisabled = false,
     tooltipClassName,
     tooltipPlacement,
     anchorRef,
@@ -82,7 +84,7 @@ export const CircleButton = ({
             placement={tooltipPlacement}
             tooltipClassName={clsx('meet-tooltip bg-strong color-norm', tooltipClassName)}
             tooltipStyle={{ '--meet-tooltip-bg': 'var(--background-strong)' }}
-            isOpen={tooltipTitle ? undefined : false}
+            isOpen={tooltipTitle && !tooltipDisabled ? undefined : false}
             openDelay={750}
             closeDelay={0}
             focusVisibleOnly

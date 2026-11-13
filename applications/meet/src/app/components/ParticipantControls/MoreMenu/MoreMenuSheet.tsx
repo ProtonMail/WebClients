@@ -1,11 +1,13 @@
+import type { KeyboardEvent } from 'react';
 import { useRef } from 'react';
 
 import { c } from 'ttag';
 
+import useFocusTrap from '@proton/components/components/focus/useFocusTrap';
 import { IcCross } from '@proton/icons/icons/IcCross';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { isImeComposing } from '../../../utils/isImeComposing';
 import type { LayoutOptionsState } from '../../ParticipantsLayout/LayoutSelector/useLayoutOptions';
 import { SlideClosable } from '../../SlideClosable/SlideClosable';
 import { LayoutDropdownItem } from './LayoutDropdownItem';
@@ -22,29 +24,57 @@ interface Props {
 
 export const MoreMenuSheet = ({ onClose, toggles, actions, layout }: Props) => {
     const { participants, chat, raiseHand, screenShare } = useMeetingActions();
+    const sheetRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
+
+    const focusTrapProps = useFocusTrap({
+        rootRef: sheetRef,
+        disableRestoreByPointer: false,
+    });
+
+    // React events bubble through portals: Escape in the layout dropdown must not close the sheet.
+    const handleKeyDown = (event: KeyboardEvent<HTMLElement>) => {
+        if (
+            event.key !== 'Escape' ||
+            isImeComposing(event) ||
+            event.defaultPrevented ||
+            !event.currentTarget.contains(event.target as Node)
+        ) {
+            return;
+        }
+        event.preventDefault();
+        onClose();
+    };
 
     const meetingActions: MoreMenuAction[] = [participants, chat, raiseHand, screenShare].filter(isTruthy);
 
     return (
         <SlideClosable onClose={onClose}>
-            <div className="more-menu-sheet w-full border border-norm large-meet-radius user-select-none">
+            {/* Escape bubbling from any control in the sheet closes it; the sheet itself is not a control. */}
+            {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
+            <div
+                ref={sheetRef}
+                role="dialog"
+                aria-modal="true"
+                aria-label={c('Alt').t`More options`}
+                className="more-menu-sheet w-full border border-norm large-meet-radius user-select-none outline-none"
+                {...focusTrapProps}
+                onKeyDown={handleKeyDown}
+            >
                 <div
                     ref={contentRef}
                     className="more-menu-sheet-content large-meet-radius w-full pt-8 flex flex-column flex-nowrap max-h-custom"
                     style={{ '--max-h-custom': 'calc(100dvh - 6rem)' }}
                 >
                     <div className="shrink-0 px-4 flex flex-column flex-nowrap gap-2">
-                        {!isMobile() && (
-                            <button
-                                type="button"
-                                onClick={onClose}
-                                aria-label={c('Action').t`Close`}
-                                className="ml-auto cursor-pointer"
-                            >
-                                <IcCross className="color-hint" size={5} />
-                            </button>
-                        )}
+                        <button
+                            type="button"
+                            onClick={onClose}
+                            aria-label={c('Action').t`Close`}
+                            className="ml-auto cursor-pointer"
+                        >
+                            <IcCross className="color-hint" size={5} />
+                        </button>
 
                         <div className="color-weak">{c('Title').t`Quick reactions`}</div>
                         <MoreMenuEmojiReactions />
