@@ -2,13 +2,20 @@ import { ApiImporterState } from '@proton/activation/src/api/api.interface';
 import { ImportType } from '@proton/activation/src/interface';
 import type { Report, ReportSummary } from '@proton/activation/src/logic/reports/reports.interface';
 import type { Feature } from '@proton/features/interface';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getNewsletterSubscription } from '@proton/shared/lib/api/newsletterSubscription';
+import {
+    applyNewsletterSubscriptionFilter,
+    getNewsletterSubscription,
+    unsubscribeNewsletterSubscription,
+} from '@proton/shared/lib/api/newsletterSubscription';
+import { HTTP_STATUS_CODE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 import type {
+    ApplyNewsletterSubscriptionsFilter,
     GetNewsletterSubscriptionsApiResponse,
     NewsletterSubscription,
 } from '@proton/shared/lib/interfaces/NewsletterSubscription';
@@ -37,6 +44,102 @@ export const getBYOEInboxCleanupSenders = async (api: Api): Promise<NewsletterSu
     const sendersToDisplay = oneClickSenders.slice(0, MAX_BYOE_INBOX_CLEANUP_SENDERS);
 
     return sendersToDisplay;
+};
+
+interface BYOEInboxCleanupSenderProgress {
+    unsubscribed: boolean;
+    archived: boolean;
+}
+
+/**
+ * What has already been done for each sender, by subscription ID, so pressing "Unsubscribe" again only redoes what failed.
+ */
+export type BYOEInboxCleanupProgress = Map<string, BYOEInboxCleanupSenderProgress>;
+
+type SilentApi = ReturnType<typeof getSilentApi>;
+
+const getArchiveFilter = (
+    subscription: NewsletterSubscription,
+    ApplyTo: ApplyNewsletterSubscriptionsFilter['ApplyTo']
+): ApplyNewsletterSubscriptionsFilter => {
+    return { ApplyTo, DestinationFolder: MAILBOX_LABEL_IDS.ARCHIVE, MarkAsRead: !!subscription.MarkAsRead };
+};
+
+/**
+ * With `applyToFuture`, also creates a rule for the sender's future mail. Any 422 on the rule is taken as the
+ * person having reached their limit on rules, and their existing mail is archived without one.
+ */
+const archiveSender = async (silentApi: SilentApi, subscription: NewsletterSubscription, applyToFuture: boolean) => {
+    if (!applyToFuture) {
+        await silentApi(applyNewsletterSubscriptionFilter(subscription.ID, getArchiveFilter(subscription, 'Existing')));
+        return;
+    }
+
+    try {
+        await silentApi(applyNewsletterSubscriptionFilter(subscription.ID, getArchiveFilter(subscription, 'All')));
+    } catch (error) {
+        const isRuleRefused = getApiError(error).status === HTTP_STATUS_CODE.UNPROCESSABLE_ENTITY;
+        if (!isRuleRefused) {
+            throw error;
+        }
+        await silentApi(applyNewsletterSubscriptionFilter(subscription.ID, getArchiveFilter(subscription, 'Existing')));
+    }
+};
+
+interface CleanUpSenderOptions {
+    silentApi: SilentApi;
+    subscription: NewsletterSubscription;
+    archive: boolean;
+    applyToFuture: boolean;
+    progress: BYOEInboxCleanupProgress;
+}
+
+const cleanUpSender = async ({ silentApi, subscription, archive, applyToFuture, progress }: CleanUpSenderOptions) => {
+    const senderProgress = progress.get(subscription.ID) ?? { unsubscribed: false, archived: false };
+    progress.set(subscription.ID, senderProgress);
+
+    if (!senderProgress.unsubscribed) {
+        await silentApi(unsubscribeNewsletterSubscription(subscription.ID));
+        senderProgress.unsubscribed = true;
+    }
+
+    if (archive && !senderProgress.archived) {
+        await archiveSender(silentApi, subscription, applyToFuture);
+        senderProgress.archived = true;
+    }
+};
+
+interface CleanUpBYOEInboxSendersOptions {
+    api: Api;
+    subscriptions: NewsletterSubscription[];
+    archive: boolean;
+    applyToFuture: boolean;
+    progress: BYOEInboxCleanupProgress;
+}
+
+/**
+ * Unsubscribes every sender at once and, when `archive` is set, archives the mail of each one whose unsubscribe worked.
+ * Skips whatever `progress` says is already done, and records each step as it succeeds.
+ * Resolves to whether every sender is now done; a failed sender never stops the others.
+ */
+export const cleanUpBYOEInboxSenders = async ({
+    api,
+    subscriptions,
+    archive,
+    applyToFuture,
+    progress,
+}: CleanUpBYOEInboxSendersOptions): Promise<boolean> => {
+    const silentApi = getSilentApi(api);
+
+    const results = await Promise.allSettled(
+        subscriptions.map((subscription) => {
+            return cleanUpSender({ silentApi, subscription, archive, applyToFuture, progress });
+        })
+    );
+
+    return results.every(({ status }) => {
+        return status === 'fulfilled';
+    });
 };
 
 interface ReportEntry {
