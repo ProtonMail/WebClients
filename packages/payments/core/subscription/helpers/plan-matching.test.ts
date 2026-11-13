@@ -1,6 +1,7 @@
+import { hasLumo, hasSomeAddonOrPlan } from '@proton/shared/lib/payments/subscription/helpers/plan-matching';
+
 import { buildSubscription } from '../../../testing/buildSubscription';
 import { ADDON_NAMES, FREE_SUBSCRIPTION, PLANS } from '../../constants';
-import { hasLumo, hasSomeAddonOrPlan } from './plan-matching';
 
 describe('hasSomeAddonOrPlan', () => {
     it('matches a plan or addon in the subscription', () => {

@@ -1,5 +1,6 @@
 import { getHasPlusPlan, getPlanFromPlanIDs, getPlanNameFromIDs } from '@proton/shared/lib/payments/plan/helpers';
 import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
+import { hasVisionary } from '@proton/shared/lib/payments/subscription/helpers/plan-matching';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { type ADDON_NAMES, ADDON_PREFIXES, PLANS } from '../constants';
@@ -10,7 +11,6 @@ import { isFreeSubscription } from '../type-guards';
 import { getPlan } from './helpers';
 import { isManagedExternally } from './helpers/external-management';
 import { getPlanIDs } from './helpers/plan-ids';
-import { hasVisionary } from './helpers/plan-matching';
 import type { Subscription } from './interface';
 import { shouldReplaceB2CLumoPlanWithAddon } from './lumo-purchase-rules';
 import type { MultiSubscriptionContext } from './multi-subscription-context';

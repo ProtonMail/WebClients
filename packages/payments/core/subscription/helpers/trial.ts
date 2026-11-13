@@ -1,13 +1,13 @@
 import { addWeeks, fromUnixTime, isAfter, isBefore, subWeeks } from 'date-fns';
 
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
+import { getHasVpnB2BPlan } from '@proton/shared/lib/payments/subscription/helpers/plan-b2b';
 import { getPlanName } from '@proton/shared/lib/payments/subscription/helpers/plan-info';
 
 import { type ADDON_NAMES, ADDON_PREFIXES, PLANS } from '../../constants';
 import { isAddonType } from '../../plan/addons';
 import { isFreeSubscription, isPaidSubscription } from '../../type-guards';
 import type { MaybeFreeSubscription, Subscription } from '../interface';
-import { getHasVpnB2BPlan } from './plan-b2b';
 import { getPlanIDs } from './plan-ids';
 
 export const isTrial = (subscription: MaybeFreeSubscription, plan?: PLANS): boolean => {

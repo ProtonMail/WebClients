@@ -1,17 +1,17 @@
 import type { CouponConfig } from '@proton/payments-hooks/ui/coupon-config/interface';
 import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS } from '@proton/payments/core/constants';
+import { getStaticCouponConfig } from '@proton/payments/core/coupon-config/get-static-coupon-config';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { PlansMap } from '@proton/shared/lib/payments/plan/interface';
 
-import { getStaticCouponConfig } from '../../coupon-config/get-static-coupon-config';
 import { createHeadlessCheckoutContextInner, getHeadlessCheckout } from '../get-headless-checkout';
 import { createAddonItem } from './addons';
 import { defaultApp as app, makeAddon, makeCheckResult, makePlan, makePricing } from './test-helpers';
 
 // Decouple the integration test from live coupon configs: it supplies its own mockCouponDiscountBreakdown so it
 // exercises the breakdown→checkout pipeline, not whatever data a real campaign config happens to carry.
-jest.mock('../../coupon-config/get-static-coupon-config', () => ({
+jest.mock('@proton/payments/core/coupon-config/get-static-coupon-config', () => ({
     getStaticCouponConfig: jest.fn(),
 }));
 
