@@ -2,7 +2,9 @@ import { c } from 'ttag';
 
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
+import { useOptionalSubscriptionModalRaw } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
 import useLoading from '@proton/hooks/useLoading';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
 
 import { ApiImporterError } from '../../../../api/api.interface';
 import { useReconnectOAuthImport } from '../../../../hooks/useReconnectOAuthImport';
@@ -20,11 +22,16 @@ interface Props {
 
 export const DriveImportPausedStep = ({ importer, errorCode, onClose }: Props) => {
     const settingsLink = useSettingsLink();
+    const openSubscriptionModal = useOptionalSubscriptionModalRaw();
     const { reconnectOAuthImport, loadingConfig } = useReconnectOAuthImport(EASY_SWITCH_SOURCES.DRIVE_WEB_SIDEBAR);
     const [loadingReconnect, withLoadingReconnect] = useLoading();
 
     const handleUpgrade = () => {
         onClose();
+        if (openSubscriptionModal) {
+            void openSubscriptionModal({ step: SUBSCRIPTION_STEPS.PLAN_SELECTION });
+            return;
+        }
         settingsLink('/upgrade');
     };
 

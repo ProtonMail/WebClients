@@ -292,20 +292,20 @@ const MainContainer: FunctionComponent = () => {
         return <LoaderPage />;
     }
     return (
-        <EasySwitchProvider drive={getDrive()} oauthViews={driveOAuthViewsOverride}>
-            <GlobalLoaderProvider>
-                <GlobalLoader />
-                <LocationErrorBoundary location={location}>
-                    <DriveProvider>
-                        <SubscriptionModalProvider app={config.APP_NAME}>
+        <SubscriptionModalProvider app={config.APP_NAME}>
+            <EasySwitchProvider drive={getDrive()} oauthViews={driveOAuthViewsOverride}>
+                <GlobalLoaderProvider>
+                    <GlobalLoader />
+                    <LocationErrorBoundary location={location}>
+                        <DriveProvider>
                             <QuickSettingsRemindersProvider>
                                 <InitContainer />
                             </QuickSettingsRemindersProvider>
-                        </SubscriptionModalProvider>
-                    </DriveProvider>
-                </LocationErrorBoundary>
-            </GlobalLoaderProvider>
-        </EasySwitchProvider>
+                        </DriveProvider>
+                    </LocationErrorBoundary>
+                </GlobalLoaderProvider>
+            </EasySwitchProvider>
+        </SubscriptionModalProvider>
     );
 };
 
