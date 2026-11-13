@@ -22,7 +22,11 @@ const reportFido2Error = (
     const name = getFido2ErrorName(error);
     // Browsers merge cancels, timeouts and missing keys into NotAllowedError, timing separates refused requests
     const timing = durationMs < 1000 ? 'instant' : 'user';
-    const extension = error instanceof Error && /-extension:\/\/|webkit-masked-url:\/\//.test(error.stack || '');
+    const extension =
+        error instanceof Error &&
+        (/-extension:\/\/|webkit-masked-url:\/\//.test(error.stack || '') ||
+            // Chrome's extension messaging errors have no extension URL in their stack
+            /Receiving end does not exist|message channel closed/.test(error.message));
     // Cancelled or timed out registrations are measured by the backend's fido2_registration_* metrics instead
     const isRegistrationCancel = context === 'registration' && name === 'NotAllowedError' && timing === 'user';
     if (!isRegistrationCancel) {

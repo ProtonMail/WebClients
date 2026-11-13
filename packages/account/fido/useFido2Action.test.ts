@@ -62,6 +62,19 @@ describe('useFido2Action', () => {
         });
     });
 
+    it.each([
+        'Could not establish connection. Receiving end does not exist.',
+        'A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received',
+    ])('groups the extension messaging error "%s" as an extension error', async (message) => {
+        const error = new Error(message);
+        error.stack = `Error: ${message}`;
+
+        expect(await fail(error, 100)).toMatchObject({
+            fingerprint: ['Security key auth', 'extension', 'instant'],
+            tags: { fido2Extension: true },
+        });
+    });
+
     it('does not report a cancelled registration, which the backend metrics count', async () => {
         const error = new DOMException('Not allowed', 'NotAllowedError');
 
