@@ -30,9 +30,9 @@ import { IcTrash } from '@proton/icons/icons/IcTrash'
 import { APPS, DRIVE_APP_NAME } from './utils/apps'
 
 import { c } from 'ttag'
-import { Button } from '@proton/atoms/Button/Button'
 import { Input } from '@proton/atoms/Input/Input'
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
+import { IconButton } from './components/ui'
+import { HomepageStyleScope } from './HomepageStyleScope'
 import './HomepageLayout.css'
 import type { HomepageViewState } from './homepageViewContext'
 import { useHomepageView } from './homepageViewContext'
@@ -65,25 +65,27 @@ export function HomepageLayout({ children, reportDescriptionContext, quickSettin
   const { state: expanded, toggle: toggleExpanded, set: setExpanded } = useToggle()
   usePageTitle()
   return (
-    <PrivateAppContainer
-      containerRef={(el) => el?.classList.add('is-homepage')}
-      top={<TopBanners app={APPS.PROTONDOCS} />}
-      header={
-        <Header
-          toggleHeaderExpanded={toggleExpanded}
-          isHeaderExpanded={expanded}
-          reportDescriptionContext={reportDescriptionContext}
-        />
-      }
-      sidebar={
-        <Sidebar expanded={expanded} onToggle={toggleExpanded} setExpanded={setExpanded} appVersion={appVersion} />
-      }
-      drawerApp={<DrawerApp customAppSettings={quickSettings} />}
-    >
-      <PrivateMainArea className="!border-t-0 small:ps-1 [&>div]:[block-size:100%]" hasToolbar>
-        {children}
-      </PrivateMainArea>
-    </PrivateAppContainer>
+    <HomepageStyleScope>
+      <PrivateAppContainer
+        containerRef={(el) => el?.classList.add('is-homepage')}
+        top={<TopBanners app={APPS.PROTONDOCS} />}
+        header={
+          <Header
+            toggleHeaderExpanded={toggleExpanded}
+            isHeaderExpanded={expanded}
+            reportDescriptionContext={reportDescriptionContext}
+          />
+        }
+        sidebar={
+          <Sidebar expanded={expanded} onToggle={toggleExpanded} setExpanded={setExpanded} appVersion={appVersion} />
+        }
+        drawerApp={<DrawerApp customAppSettings={quickSettings} />}
+      >
+        <PrivateMainArea className="!border-t-0 small:ps-1 [&>div]:[block-size:100%]" hasToolbar>
+          {children}
+        </PrivateMainArea>
+      </PrivateAppContainer>
+    </HomepageStyleScope>
   )
 }
 
@@ -241,11 +243,9 @@ function MobileSearch({ value, onChange, type, className }: SearchProps) {
           <div className="grow font-[.875rem] font-semibold">
             {isRecentsRoute ? c('Info').t`Recents` : c('Info').t`Trash`}
           </div>
-          <Tooltip title={placeholder}>
-            <Button size="medium" icon shape="outline" color="weak" onClick={() => setActive(true)}>
-              <IcMagnifier size={4} />
-            </Button>
-          </Tooltip>
+          <IconButton label={placeholder} shape="outline" onClick={() => setActive(true)}>
+            <IcMagnifier size={4} />
+          </IconButton>
         </>
       )}
     </div>
@@ -299,30 +299,27 @@ function Sidebar({ expanded, onToggle, setExpanded, appVersion: hostAppVersion }
           <div className="px-3 !text-xs text-[#8F8D8A] [[data-theme-mode=dark]_&]:!text-[--text-weak]">
             {c('Info').t`Recents`}
           </div>
-          <Tooltip title={c('Info').t`Update recent documents`}>
-            <Button
-              aria-label={c('Info').t`Update recent documents`}
-              icon
-              size="small"
-              shape="ghost"
-              className="-mr-1"
-              disabled={isRecentsUpdating}
-              onClick={async (e) => {
-                e.stopPropagation()
-                e.preventDefault()
-                if (!isRecents) {
-                  history.push('/recents')
-                }
-                await reloadRecents()
-                setExpanded(false)
-              }}
-            >
-              <IcArrowRotateRight
-                data-updating={isRecentsUpdating ? '' : undefined}
-                className="data-[updating]:animate-spin"
-              />
-            </Button>
-          </Tooltip>
+          <IconButton
+            label={c('Info').t`Update recent documents`}
+            size="small"
+            shape="ghost"
+            className="-mr-1"
+            disabled={isRecentsUpdating}
+            onClick={async (e) => {
+              e.stopPropagation()
+              e.preventDefault()
+              if (!isRecents) {
+                history.push('/recents')
+              }
+              await reloadRecents()
+              setExpanded(false)
+            }}
+          >
+            <IcArrowRotateRight
+              data-updating={isRecentsUpdating ? '' : undefined}
+              className="data-[updating]:animate-spin"
+            />
+          </IconButton>
         </div>
         <SidebarList>
           <SidebarListItem onClick={() => setExpanded(false)}>

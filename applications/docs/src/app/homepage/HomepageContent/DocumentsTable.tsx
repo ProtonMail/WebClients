@@ -1,8 +1,8 @@
 import { Avatar } from '@proton/atoms/Avatar/Avatar'
-import { Button } from '@proton/atoms/Button/Button'
+import * as Ariakit from '@ariakit/react'
 import { Input } from '@proton/atoms/Input/Input'
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip'
+import { Button, IconButton, Tooltip, TooltipProvider } from '../components/ui'
 import Dropdown from '@proton/components/components/dropdown/Dropdown'
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu'
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton'
@@ -240,19 +240,16 @@ type BulkMoveButtonProps = { onMove: () => void; disabled: boolean }
 
 function BulkMoveButton({ onMove, disabled }: BulkMoveButtonProps) {
   return (
-    <Tooltip title={c('Action').t`Move`}>
-      <Button
-        icon
-        shape="ghost"
-        className="shrink-0 px-2"
-        disabled={disabled}
-        aria-label={c('Action').t`Move`}
-        onClick={onMove}
-        data-testid="bulk-move-button"
-      >
-        <IcArrowsCross className="shrink-0" />
-      </Button>
-    </Tooltip>
+    <IconButton
+      label={c('Action').t`Move`}
+      shape="ghost"
+      className="shrink-0 px-2"
+      disabled={disabled}
+      onClick={onMove}
+      data-testid="bulk-move-button"
+    >
+      <IcArrowsCross className="shrink-0" />
+    </IconButton>
   )
 }
 
@@ -260,20 +257,16 @@ type BulkTrashButtonProps = { onTrash: () => Promise<void>; isTrashing: boolean 
 
 function BulkTrashButton({ onTrash, isTrashing }: BulkTrashButtonProps) {
   return (
-    <Tooltip title={c('Action').t`Move to trash`}>
-      <Button
-        icon
-        shape="ghost"
-        className="shrink-0 px-2"
-        loading={isTrashing}
-        disabled={isTrashing}
-        aria-label={c('Action').t`Move to trash`}
-        onClick={onTrash}
-        data-testid="bulk-trash-button"
-      >
-        <IcTrash className="shrink-0" />
-      </Button>
-    </Tooltip>
+    <IconButton
+      label={c('Action').t`Move to trash`}
+      shape="ghost"
+      className="shrink-0 px-2"
+      loading={isTrashing}
+      onClick={onTrash}
+      data-testid="bulk-trash-button"
+    >
+      <IcTrash className="shrink-0" />
+    </IconButton>
   )
 }
 
@@ -374,18 +367,16 @@ function SortSelect() {
 
   return (
     <>
-      <Tooltip title={c('Action').t`Sort by`}>
-        <Button
-          icon
-          onClick={toggle}
-          aria-label={c('Action').t`Change sort order`}
-          ref={anchorRef}
-          shape="ghost"
-          className={clsx('ml-auto shrink-0 px-2', isOpen && '!bg-[--button-active-background-color]')}
-        >
-          <IcArrowDownArrowUp className="shrink-0" />
-        </Button>
-      </Tooltip>
+      <IconButton
+        label={c('Action').t`Sort by`}
+        onClick={toggle}
+        aria-label={c('Action').t`Change sort order`}
+        ref={anchorRef}
+        shape="ghost"
+        className={clsx('ml-auto shrink-0 px-2', isOpen && 'bg-[--interaction-default-active]')}
+      >
+        <IcArrowDownArrowUp className="shrink-0" />
+      </IconButton>
       <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
         <DropdownMenu>
           <p className="px-4 py-2 text-[.875rem] font-bold">Sort by</p>
@@ -555,7 +546,12 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
     </Button>
   )
   if (isLocationPath) {
-    locationContent = <Tooltip title={location?.path?.join(' / ')}>{locationContent}</Tooltip>
+    locationContent = (
+      <TooltipProvider>
+        <Ariakit.TooltipAnchor render={locationContent} />
+        <Tooltip>{location?.path?.join(' / ')}</Tooltip>
+      </TooltipProvider>
+    )
   }
 
   const contextMenu = useContextMenu()
@@ -715,27 +711,27 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
       <Table.DataCell target="medium">
         <div className="-ms-2 flex w-full flex-nowrap justify-between">
           {locationContent}
-          <Tooltip title={c('Action').t`Actions`}>
-            <Button
-              onClick={(event) => {
-                event.stopPropagation()
-                if (featureFlags.bulkMove && !isTrashing) {
-                  if (isSelectable) {
-                    selection?.select(document.uniqueId())
-                  } else {
-                    selection?.clear()
-                  }
+          <IconButton
+            label={c('Action').t`Actions`}
+            // A text button's padding, as before, so the row keeps its height.
+            icon={false}
+            onClick={(event) => {
+              event.stopPropagation()
+              if (featureFlags.bulkMove && !isTrashing) {
+                if (isSelectable) {
+                  selection?.select(document.uniqueId())
+                } else {
+                  selection?.clear()
                 }
-                contextMenu.setCurrentDocument(document)
-                contextMenu.handleContextMenu(event)
-              }}
-              shape="ghost"
-              className={clsx('ml-auto shrink-0 px-2', RAISED, showActionsOnHover && 'mouse:group-hover:opacity-100')}
-              aria-label={c('Action').t`Actions`}
-            >
-              <IcThreeDotsVertical />
-            </Button>
-          </Tooltip>
+              }
+              contextMenu.setCurrentDocument(document)
+              contextMenu.handleContextMenu(event)
+            }}
+            shape="ghost"
+            className={clsx('ml-auto shrink-0 px-2', RAISED, showActionsOnHover && 'mouse:group-hover:opacity-100')}
+          >
+            <IcThreeDotsVertical />
+          </IconButton>
         </div>
       </Table.DataCell>
 
