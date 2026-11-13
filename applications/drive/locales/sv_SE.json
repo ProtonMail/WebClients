@@ -1398,6 +1398,12 @@
       ],
       "Go to folder": [
         "Gå till mapp"
+      ],
+      "Don't show this offer again": [
+        "Visa inte detta erbjudande igen"
+      ],
+      "Special Offer": [
+        "Specialerbjudande"
       ]
     },
     "Action: Docs": {
@@ -4943,6 +4949,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Den här webbläsaren stödjer inte säkerhetsnycklar. Var vänlig försök med en annan webbläsare."
       ]
     },
     "fido2: Info": {
@@ -7930,6 +7939,12 @@
       ],
       "${ claimedAuthor } (unverified sender)": [
         "${ claimedAuthor }(obekräftad avsändare)"
+      ],
+      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
+        "Du kan också avbryta din import om ${ easySwitchSettingsLink }."
+      ],
+      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
+        "Din import är pausad eftersom vi förlorade åtkomst till ditt Google-konto. Anslut igen för att överföra resten av dina filer."
       ]
     },
     "info": {
@@ -11565,6 +11580,18 @@
       ],
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Du äger redan ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } är endast tillgängligt på företagspaket."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Det valda paketet stöder inte tillräckligt med adresser för ditt konto."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Detta paket stöder inte medlemmar på ditt konto."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Denna prenumeration kan inte slutföras just nu. Försök igen."
       ]
     },
     "Payments.Error": {
@@ -13381,6 +13408,9 @@
       ],
       "Invoice paid": [
         "Faktura betald"
+      ],
+      "Resuming import": [
+        "Återupptar import"
       ]
     },
     "Suffix": {
@@ -14756,6 +14786,9 @@
       ],
       "More storage needed to finish your import": [
         "Mer lagringsutrymme behövs för att slutföra din import"
+      ],
+      "Reconnect to finish your import": [
+        "Anslut igen för att slutföra din import"
       ]
     },
     "Today icon tooltip in mini calendar": {

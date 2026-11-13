@@ -1417,6 +1417,12 @@
       ],
       "Go to folder": [
         "Accesare folder"
+      ],
+      "Don't show this offer again": [
+        "Nu mai afișa această ofertă"
+      ],
+      "Special Offer": [
+        "Ofertă specială"
       ]
     },
     "Action: Docs": {
@@ -5052,6 +5058,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ceva nu a funcționat corect la autentificarea cu cheia de securitate. Reîncercați."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Acest navigator web nu acceptă chei de securitate. Încercați un alt navigator web."
       ]
     },
     "fido2: Info": {
@@ -8292,6 +8301,18 @@
       ],
       "UnionPay logo": [
         "Logo UnionPay"
+      ],
+      "${ claimedAuthor } (unverified sender)": [
+        "${ claimedAuthor } (expeditor neverificat)"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Reducerile se bazează pe prețurile lunare standard. Abonamentul se va reînnoi la tariful anual standard la sfârșitul ciclului de facturare."
+      ],
+      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
+        "Puteți anula importarea și în ${ easySwitchSettingsLink }."
+      ],
+      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
+        "Importarea este întreruptă deoarece s-a pierdut accesul la contul Google. Reconectași-vă pentru a transfera și restul fișierelor."
       ]
     },
     "info": {
@@ -13932,6 +13953,9 @@
       ],
       "Invoice paid": [
         "Factură plătită"
+      ],
+      "Resuming import": [
+        "Reluare importare"
       ]
     },
     "Suffix": {
@@ -15338,6 +15362,9 @@
       ],
       "Subscribe to ${ planTitle }": [
         "Abonare la ${ planTitle }"
+      ],
+      "Reconnect to finish your import": [
+        "Reconectați-vă pentru a finaliza importarea"
       ]
     },
     "Today icon tooltip in mini calendar": {

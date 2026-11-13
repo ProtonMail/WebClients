@@ -1359,6 +1359,9 @@
       ],
       "Import paused": [
         "Importação pausada"
+      ],
+      "Special Offer": [
+        "Oferta Especial"
       ]
     },
     "Actions": {
@@ -1528,6 +1531,9 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "Garantia de devolução do seu dinheiro em até 30 dias"
+      ],
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantia de reembolso do dinheiro em 30 dias: cancele até 30 dias da sua compra e contacte o nosso ${ customerSupportLink } para obter um reembolso."
       ]
     },
     "bf2023: Tooltip": {
@@ -7396,7 +7402,7 @@
         "Lembra-se da sua palavra-passe?"
       ],
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
-        "Garantia de reembolso em 30 dias: cancele até 30 dias depois da compra e contacte o nosso ${ customerSupportLink } para solicitar um reembolso."
+        "Garantia de reembolso do dinheiro em 30 dias: cancele até 30 dias da sua compra e contacte o nosso ${ customerSupportLink } para obter um reembolso."
       ],
       "Author is not provided on public link": [
         "O autor não é fornecido na hiperligação pública"
@@ -10873,6 +10879,15 @@
       ],
       "You already own a Born Private account.": [
         "Já possui uma conta Born Private."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "As contas de Born Private não podem ser compradas com uma subscrição ativa."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "A iniciativa Born Private requer uma doação."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "A sua conta é muito antiga para a iniciativa de Born Private."
       ]
     },
     "Payments.Error": {
@@ -12591,6 +12606,9 @@
       ],
       "Invoice paid": [
         "Fatura paga"
+      ],
+      "Resuming import": [
+        "Retomar a importação"
       ]
     },
     "Suffix": {
@@ -14827,6 +14845,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Poderá atribuir cargos assim que o utilizador aceitar o convite."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Este utilizador obtém direitos de administrador na próxima vez que se autenticar."
       ]
     },
     "Role": {

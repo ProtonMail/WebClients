@@ -1407,6 +1407,12 @@
       ],
       "Add payment method": [
         "Adicionar forma de pagamento"
+      ],
+      "Don't show this offer again": [
+        "Não mostrar mais esta oferta"
+      ],
+      "Special Offer": [
+        "Oferta especial"
       ]
     },
     "Action: Docs": {
@@ -4998,6 +5004,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Ocorreu um erro ao autenticar com sua chave de segurança. Tente novamente."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Este navegador não suporta chaves de segurança. Tente um navegador diferente."
       ]
     },
     "fido2: Info": {
@@ -8090,6 +8099,15 @@
       ],
       "Your import is blocked. Upgrade now to bring the rest of your files over.": [
         "Sua importação está bloqueada. Mude para um plano superior agora para importar o restante dos seus arquivos."
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Os descontos são baseados no preço mensal padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
+      ],
+      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
+        "Você também pode cancelar sua importação em ${ easySwitchSettingsLink }."
+      ],
+      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
+        "Sua importação foi pausada porque perdemos o acesso à sua conta do Google. Reconecte-se para importar o restante dos seus arquivos."
       ]
     },
     "info": {
@@ -13655,6 +13673,9 @@
       ],
       "Invoice paid": [
         "Fatura paga"
+      ],
+      "Resuming import": [
+        "Retomando a importação"
       ]
     },
     "Suffix": {
@@ -15039,6 +15060,9 @@
       ],
       "We could not find anything to import": [
         "Não encontramos nada para importar"
+      ],
+      "Reconnect to finish your import": [
+        "Reconecte-se para concluir sua importação"
       ]
     },
     "Today icon tooltip in mini calendar": {

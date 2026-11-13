@@ -1410,6 +1410,12 @@
       ],
       "Go to folder": [
         "Μετάβαση στο φάκελο"
+      ],
+      "Don't show this offer again": [
+        "Να μην εμφανιστεί ξανά αυτή η προσφορά"
+      ],
+      "Special Offer": [
+        "Ειδική Προσφορά"
       ]
     },
     "Action: Docs": {
@@ -5010,6 +5016,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει κλειδιά ασφαλείας. Δοκιμάστε ένα άλλο πρόγραμμα περιήγησης."
       ]
     },
     "fido2: Info": {
@@ -8171,6 +8180,15 @@
       ],
       "${ claimedAuthor } (unverified sender)": [
         "${ claimedAuthor } (μη επαληθευμένος αποστολέας)"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Οι εκπτώσεις βασίζονται στην τυπική μηνιαία τιμολόγηση. Η συνδρομή σας θα ανανεωθεί με την τυπική ετήσια χρέωση όταν λήξει ο κύκλος χρέωσης."
+      ],
+      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
+        "Μπορείτε επίσης να ακυρώσετε την εισαγωγή σας μέσω του ${ easySwitchSettingsLink }."
+      ],
+      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
+        "Η εισαγωγή σας βρίσκεται σε παύση επειδή χάθηκε η πρόσβαση στον λογαριασμό Google σας. Συνδεθείτε ξανά για να μεταφέρετε και τα υπόλοιπα αρχεία σας."
       ]
     },
     "info": {
@@ -13589,6 +13607,9 @@
       ],
       "Invoice paid": [
         "Το τιμολόγιο πληρώθηκε"
+      ],
+      "Resuming import": [
+        "Γίνεται συνέχιση εισαγωγής"
       ]
     },
     "Suffix": {
@@ -14979,6 +15000,9 @@
       ],
       "Subscribe to ${ planTitle }": [
         "Εγγραφείτε στο ${ planTitle }"
+      ],
+      "Reconnect to finish your import": [
+        "Συνδεθείτε ξανά για να ολοκληρώσετε την εισαγωγή σας"
       ]
     },
     "Today icon tooltip in mini calendar": {

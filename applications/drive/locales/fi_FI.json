@@ -1167,7 +1167,7 @@
         "Lähetä tietokoneestasi"
       ],
       "Upload photos": [
-        "Tallenna kuvia"
+        "Lähetä kuvia"
       ],
       "Upload picture": [
         "Lataa kuva"
@@ -5710,7 +5710,7 @@
         "Tilin alennus katkaisee kaikki yhteydet maksullisiin ${ VPN_APP_NAME } -palvelimiin."
       ],
       "Download ${ name } app": [
-        "Lataa ${ name }-sovellus"
+        "Lataa käyttöjärjestelmälle ${ name }"
       ],
       "Download current logs": [
         "Lataa nykyiset lokitiedot"
@@ -5873,7 +5873,7 @@
         "Geoblokkaus"
       ],
       "Get the app to backup photos from your phone or upload them here.": [
-        "Hanki sovellus varmuuskopioidaksesi laitteesi kuvat tai tallentaaksesi niitä tänne."
+        "Varmuuskopioi laitteesi kuvat tai lähetä niitä tänne hankkimalla sovellus."
       ],
       "Get the desktop app to sync files from your computer.": [
         "Hanki työpöytäsovellus synkronoidaksesi tietokoneesi tiedostoja."
@@ -5985,7 +5985,7 @@
         "On parempi olla:"
       ],
       "Items in the trash will stay here until you delete them permanently": [
-        "Roskakorissa olevat kohteet säilyvät siellä kunnes poistat ne pysyvästi"
+        "Roskakorissa olevat kohteet säilytetään siellä kunnes poistat ne pysyvästi"
       ],
       "Items moved to the trash will stay here until deleted": [
         "Roskakoriin siirretyt kohteet pysyvät täällä, kunnes ne poistetaan"
@@ -6353,7 +6353,7 @@
         "Jonossa"
       ],
       "Ready to add some photos?": [
-        "Oletko valmis lisäämään kuvia?"
+        "Valmiina lisäämään kuvia?"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Palautustiedot säilyvät tällä laitteella, kunnes poistat ne."
@@ -6404,7 +6404,7 @@
         "Skannaa QR-koodi mobiililaitteellasi"
       ],
       "Scan to download": [
-        "Skannaa ladataksesi"
+        "Lataa lukemalla koodi"
       ],
       "Search cannot be enabled in this browser": [
         "Hakua ei voida käyttää tässä selaimessa"
@@ -6841,7 +6841,7 @@
         "VPN:n IP-osoite"
       ],
       "Want to sync files faster?": [
-        "Haluatko synkronoida tiedostot nopeammin?"
+        "Haluatko synkronoida tiedostoja nopeammin?"
       ],
       "Warning": [
         "Varoitus"
@@ -7193,7 +7193,7 @@
         "Organisaation omien VPN-palvelinten määrä"
       ],
       "Shared with you": [
-        "Jaettu kanssasi"
+        "Jaettu sinulle"
       ],
       "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
         "Kiitos että valitsit ${ BRAND_NAME }n turvataksesi organisaatiosi."
@@ -7304,7 +7304,7 @@
         "${ VPN_SHORT_APP_NAME } piilottaa tietoliikenteesi, ${ PASS_SHORT_APP_NAME } henkilöllisyytesi\n— Rajattomasti **hide-my-email-aliaksia** ja **pimeän verkon hälytykset**, jos tietosi vuotavat."
       ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Kutsu kaverisi** ${ BRAND_NAME }:iin suosittelulinkilläsi."
+        "**Kutsu kaverisi** ${ BRAND_NAME }iin henkilökohtaisella suosittelulinkillä."
       ],
       "**They get ${ refereeRewardAmount }** in credits if they subscribe.": [
         "**He saavat ${ refereeRewardAmount }** krediittiä, mikäli he tilaavat."
@@ -10627,7 +10627,7 @@
         "Suojaa talousdokumentit, henkilöllisyystodistukset, projektitiedostot, valokuvat ja paljon muuta päästä päähän -salauksella."
       ],
       "Scan the QR code to install the mobile app": [
-        "Skannaa QR-koodi asentaaksesi mobiilisovelluksen"
+        "Asenna mobiilisovellus lukemalla QR-koodi"
       ],
       "Secure your files": [
         "Varmista tiedostosi"
@@ -12685,7 +12685,7 @@
         "Suosikkikuvasi näkyvät tässä"
       ],
       "Your Live Photos will appear here": [
-        "Live Photo -kuvasi näkyvät tässä"
+        "Live-kuvat näytetään tässä"
       ],
       "Your panorama photos will appear here": [
         "Panoraamakuvasi näkyvät tässä"
@@ -12703,7 +12703,7 @@
         "Kuvankaappauksesi näkyvät tässä"
       ],
       "Your selfies photos will appear here": [
-        "Selfie-kuvasi näkyvät tässä"
+        "Omakuvat näytetään tässä"
       ],
       "Your tagged photos will appear here": [
         "Tunnistein merkityt kuvasi näkyvät tässä."
@@ -12812,6 +12812,9 @@
       ],
       "Invoice paid": [
         "Lasku on maksettu"
+      ],
+      "Resuming import": [
+        "Jatketaan tuontia"
       ]
     },
     "Suffix": {
@@ -12930,7 +12933,7 @@
         "Suosikit"
       ],
       "Live Photos": [
-        "Live Photo -kuvat"
+        "Live-kuvat"
       ],
       "Panoramas": [
         "Panoraamat"
@@ -12945,7 +12948,7 @@
         "Kuvakaappaukset"
       ],
       "Selfies": [
-        "Selfiet"
+        "Omakuvat"
       ],
       "Videos": [
         "Videot"
@@ -13519,7 +13522,7 @@
         "Ei suosikkeja"
       ],
       "No Live Photos": [
-        "Ei Live Photo -kuvia"
+        "Ei live-kuvia"
       ],
       "No panorama": [
         "Ei panoraamoja"
@@ -13540,7 +13543,7 @@
         "Ei kuvakaappauksia"
       ],
       "No selfies": [
-        "Ei selfieitä"
+        "Ei omakuvia"
       ],
       "No shared albums": [
         "Ei jaettuja albumeja"
