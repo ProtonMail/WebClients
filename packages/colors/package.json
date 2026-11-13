@@ -34,9 +34,9 @@
         "check:types": "tsc --checkers 1",
         "generate": "ts-node -P tsconfig.generate.json gen-themes-cli",
         "lint": "oxlint --quiet",
-        "test": "NODE_OPTIONS=--experimental-vm-modules jest",
-        "test:ci": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand --ci --logHeapUsage",
-        "test:watch": "jest --watch"
+        "test": "vitest",
+        "test:ci": "pnpm run test --run",
+        "test:watch": "pnpm run test --watch"
     },
     "dependencies": {
         "@proton/oxfmt-config": "workspace:^",
@@ -46,20 +46,19 @@
         "tinycolor2": "catalog:"
     },
     "devDependencies": {
-        "@jest/globals": "catalog:",
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
         "@proton/types": "workspace:^",
+        "@proton/vitest-config": "workspace:^",
         "@types/css-tree": "^2.3.11",
-        "@types/jest": "catalog:",
         "@types/tinycolor2": "catalog:",
         "@typescript/native": "catalog:",
-        "jest": "catalog:",
+        "@vitest/coverage-v8": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "ts-loader": "catalog:",
         "ts-node": "catalog:",
         "typescript": "catalog:",
+        "vitest": "catalog:",
         "webpack": "catalog:",
         "webpack-cli": "^7.3.1"
     }

@@ -1,13 +1,15 @@
+import { type Mock, vi } from 'vitest';
+
 import { eventLoopTimingTracker } from '../eventLoopMetrics';
 import metrics from '../metricsInstance';
 
 describe('EventLoopTimingTracker', () => {
-    let mockHistogramObserve: jest.Mock;
+    let mockHistogramObserve: Mock;
     let mockTime = 0;
 
     beforeEach(() => {
         // Mock the histogram observe method
-        mockHistogramObserve = jest.fn();
+        mockHistogramObserve = vi.fn();
         metrics.core_event_loop_five_processing_time_histogram.observe = mockHistogramObserve as any;
         metrics.core_event_loop_six_processing_time_histogram.observe = mockHistogramObserve as any;
 

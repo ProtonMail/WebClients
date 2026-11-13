@@ -1,6 +1,8 @@
+import { vi } from 'vitest';
+
 import observeApiError, { observeError } from '../lib/observeApiError';
 
-const metricObserver = jest.fn();
+const metricObserver = vi.fn();
 
 describe('observeApiError', () => {
     it('ignores reporting if error is undefined', () => {

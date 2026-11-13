@@ -1,10 +1,12 @@
+import { vi } from 'vitest';
+
 import { HTTP_STATUS_CODE, SECOND } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { METRICS_DEFAULT_RETRY_SECONDS, METRICS_MAX_ATTEMPTS, METRICS_REQUEST_TIMEOUT_SECONDS } from '../constants';
 import MetricsApi from '../lib/MetricsApi';
 
-jest.mock('@proton/shared/lib/helpers/promise');
+vi.mock('@proton/shared/lib/helpers/promise');
 
 function getHeader(headers: HeadersInit | undefined, headerName: string) {
     // @ts-ignore
@@ -227,7 +229,7 @@ describe('MetricsApi', () => {
 
         describe('retry', () => {
             const getRetryImplementation = (url: string, retrySeconds?: string) => async (req: Request) => {
-                if (req.url === url) {
+                if (new URL(req.url, 'http://localhost').pathname === url) {
                     return retrySeconds === undefined
                         ? { status: HTTP_STATUS_CODE.TOO_MANY_REQUESTS }
                         : {
@@ -320,21 +322,21 @@ describe('MetricsApi', () => {
 
         describe('timeout', () => {
             beforeAll(() => {
-                jest.useFakeTimers();
+                vi.useFakeTimers();
             });
 
             beforeEach(() => {
-                jest.clearAllTimers();
+                vi.clearAllTimers();
             });
 
             afterAll(() => {
-                jest.useRealTimers();
+                vi.useRealTimers();
             });
 
             const timeoutRequestMock = () =>
                 new Promise<{ body: string }>((resolve) => {
                     setTimeout(() => resolve({ body: 'ok' }), METRICS_REQUEST_TIMEOUT_SECONDS * SECOND + 1);
-                    jest.advanceTimersByTime(METRICS_REQUEST_TIMEOUT_SECONDS * SECOND + 1);
+                    vi.advanceTimersByTime(METRICS_REQUEST_TIMEOUT_SECONDS * SECOND + 1);
                 });
 
             it('retries request if request aborts', async () => {

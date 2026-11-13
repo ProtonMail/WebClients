@@ -1,12 +1,14 @@
+import { vi } from 'vitest';
+
 import Histogram from '../lib/Histogram';
 import MetricsApi from '../lib/MetricsApi';
 import MetricsRequestService from '../lib/MetricsRequestService';
 import type MetricSchema from '../lib/types/MetricSchema';
 
-jest.mock('../lib/MetricsApi');
+vi.mock('../lib/MetricsApi');
 const metricsApi = new MetricsApi();
 
-jest.mock('../lib/MetricsRequestService');
+vi.mock('../lib/MetricsRequestService');
 const metricsRequestService = new MetricsRequestService(metricsApi, { reportMetrics: true });
 
 interface DefaultMetricSchema extends MetricSchema {
@@ -19,16 +21,16 @@ const time = new Date('2020-01-01');
 
 describe('Histogram', () => {
     beforeAll(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     beforeEach(() => {
-        jest.clearAllTimers();
-        jest.setSystemTime(time);
+        vi.clearAllTimers();
+        vi.setSystemTime(time);
     });
 
     afterAll(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('construct correct metric report', () => {

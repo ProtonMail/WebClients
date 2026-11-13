@@ -1,6 +1,6 @@
 {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
-        "types": ["@proton/types", "global-types-monorepo", "jest", "node"]
+        "types": ["@proton/types", "global-types-monorepo", "vitest/globals", "node"]
     }
 }
