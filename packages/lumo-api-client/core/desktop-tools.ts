@@ -94,6 +94,10 @@ export type DesktopConnectorCatalog = {
     connectors: DesktopCatalogEntry[];
 };
 
+export type DesktopFeatureFlags = {
+    experimentalConnectors: boolean;
+};
+
 export type LumoConnectorsApi = DesktopExternalTools & {
     getOpenAITools?: () => ChatCompletionsFunctionTool[];
     ensureOpenAIToolShape?: (
@@ -107,6 +111,7 @@ export type LumoConnectorsApi = DesktopExternalTools & {
     /** Older desktop builds ignore `connectorId` and open the tab. */
     openSettings?: (tab?: DesktopSettingsTab, connectorId?: string) => Promise<void>;
     getCatalog?: () => DesktopConnectorCatalog;
+    setFeatureFlags?: (flags: DesktopFeatureFlags) => Promise<void>;
 };
 
 export type DesktopSettingsTab = 'general' | 'connectors';
@@ -267,6 +272,11 @@ export function normalizeDesktopToolResult(
 
 export function getDesktopConnectorsApi(): LumoConnectorsApi | null {
     return window.LumoConnectors ?? null;
+}
+
+/** Reports frontend-evaluated flags when supported by the desktop bridge. */
+export async function setDesktopFeatureFlags(flags: DesktopFeatureFlags): Promise<void> {
+    await getDesktopConnectorsApi()?.setFeatureFlags?.(flags);
 }
 
 export async function respondDesktopToolApproval(requestId: string, approved: boolean): Promise<void> {

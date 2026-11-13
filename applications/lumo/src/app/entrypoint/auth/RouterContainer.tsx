@@ -6,6 +6,7 @@ import SubscriptionModalProvider from '@proton/payments-ui/containers/payments/s
 
 import { ChatRetentionEnforcer } from '../../components/ChatRetentionEnforcer';
 import { ConversationIndexer } from '../../components/ConversationIndexer';
+import { DesktopFeatureFlags } from '../../components/DesktopFeatureFlags';
 import { SafeUserProvider } from '../../contexts/SafeUserContext';
 import { ConversationProvider } from '../../providers/ConversationProvider';
 import { DeviceSettingsProvider } from '../../providers/DeviceSettingsProvider';
@@ -34,6 +35,7 @@ const RouterContainer = () => {
                             <LumoPlanProvider>
                                 <ScheduleServiceProvider>
                                     <LumoUpsellModalProvider>
+                                        <DesktopFeatureFlags />
                                         <UsageLimitsTierSync />
                                         <ChatRetentionEnforcer />
                                         <ConversationIndexer />
