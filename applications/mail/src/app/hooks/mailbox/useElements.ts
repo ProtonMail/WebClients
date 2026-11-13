@@ -35,7 +35,6 @@ import {
     filterFromUrl,
     filterToString,
     sortFromUrl,
-    sortToString,
 } from '../../helpers/mailboxUrl';
 import { pageCount } from '../../helpers/paging';
 import type { Element } from '../../models/element';
@@ -65,6 +64,7 @@ import {
     totalReturned as totalReturnedSelector,
 } from '../../store/elements/elementsSelectors';
 import { getTotal } from '../../store/elements/helpers/elementTotal';
+import { getParamsTransition } from '../../store/elements/helpers/elementsParamsTransition';
 import { useMailDispatch, useMailSelector, useMailStore } from '../../store/hooks';
 import type { MailState } from '../../store/store';
 import { useElementsEvents } from '../events/useElementsEvents';
@@ -230,34 +230,24 @@ export const useElements: UseElements = ({
         const isSearching = isSearch(search);
         const conversationMode = isConversationMode(labelID, mailSettings, location);
 
-        const isNavigatingToNewsletterView =
-            stateParams.newsletterSubscriptionID !== undefined && labelID !== undefined;
+        const transition = getParamsTransition({
+            previous: {
+                sort: stateParams.sort,
+                searchKeyword: stateParams.search.keyword,
+                newsletterSubscriptionID: stateParams.newsletterSubscriptionID,
+            },
+            next: { labelID, sort, searchKeyword: search.keyword, isSearching },
+            encryptedSearch: {
+                esEnabled,
+                previousEsEnabled: esEnabledRef.current,
+                dbExists,
+                previousDbExists: dbExistsRef.current,
+            },
+            pageIsConsecutive,
+            page,
+        });
 
-        // Define the core reset conditions
-        const hasSearchKeywordChange = search.keyword !== stateParams.search.keyword;
-        // Both flags decide whether a search goes to the index or to the server (see `isES`), and they
-        // are read from IDB by different writers at startup - `esEnabled` by the ES config read,
-        // `dbExists` later by `initializeES`. Watching only the first means a search running in
-        // between is answered by the server and never retried against the index.
-        const hasESChange =
-            (esEnabled !== esEnabledRef.current || dbExists !== dbExistsRef.current) && isSearch(search);
-        const hasPageJump = !pageIsConsecutive;
-        const hasSortChange = sortToString(sort) !== sortToString(stateParams.sort);
-
-        const shouldResetElementsState =
-            // Always reset for search keyword changes (even in newsletter view)
-            hasSearchKeywordChange ||
-            // For other changes, only reset if not in newsletter view
-            (!isNavigatingToNewsletterView && (hasESChange || hasPageJump || hasSortChange));
-
-        /* When switching between encrypted and backend search, we have to reset the page in case the user is not on the first one
-         * We have to do this BEFORE triggering a reset.
-         * If we reset too early, it will trigger a loading on the previous page, which is wrong
-         * The flow will be the following:
-         * - Pass 1, page !== 0, navigate to page 0 and early return
-         * - Pass 2, the location change triggers a reset, which is triggering a loading of the first page
-         */
-        if (hasESChange && page !== 0) {
+        if (transition === 'goToFirstPage') {
             onPage(0);
             return;
         }
@@ -281,7 +271,7 @@ export const useElements: UseElements = ({
         esEnabledRef.current = esEnabled;
         dbExistsRef.current = dbExists;
 
-        if (shouldResetElementsState) {
+        if (transition === 'reset') {
             dispatch(
                 reset({
                     page,
@@ -304,7 +294,13 @@ export const useElements: UseElements = ({
             // In some cases we cannot predict the total, for example when applying the has file filter
             const locationTotal =
                 !filterToString(filter) && !isSearching
-                    ? getTotal({ counts: countValues, labelID, categoryIDs, filter, bypassFilterCount: 0 }) || undefined
+                    ? getTotal({
+                          counts: countValues,
+                          labelID,
+                          categoryIDs,
+                          filter,
+                          bypassFilterCount: 0,
+                      }) || undefined
                     : undefined;
 
             dispatch(
