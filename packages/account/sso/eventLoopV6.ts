@@ -1,8 +1,14 @@
 import type { CoreEventLoopV6Callback } from '../coreEventLoop/interface';
-import { authDevicesEventLoopV6Thunk, selectAuthDevices } from './authDevices';
-import { memberAuthDevicesEventLoopV6Thunk, selectMemberAuthDevices } from './memberAuthDevices';
+import { type AuthDevicesState, authDevicesEventLoopV6Thunk, selectAuthDevices } from './authDevices';
+import {
+    type MemberAuthDevicesState,
+    memberAuthDevicesEventLoopV6Thunk,
+    selectMemberAuthDevices,
+} from './memberAuthDevices';
 
-export const authDevicesLoop: CoreEventLoopV6Callback = ({ event, state, dispatch, api }) => {
+export type AuthDevicesLoopState = AuthDevicesState & MemberAuthDevicesState;
+
+export const authDevicesLoop: CoreEventLoopV6Callback<AuthDevicesLoopState> = ({ event, state, dispatch, api }) => {
     const promises = [];
     if (event.AuthDevices?.length && selectAuthDevices(state)?.value) {
         promises.push(dispatch(authDevicesEventLoopV6Thunk({ event, api })));

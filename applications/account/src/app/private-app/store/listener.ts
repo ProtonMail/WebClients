@@ -13,6 +13,7 @@ import { resetOrganizationKeyListener } from '@proton/account/organizationKey/re
 import { startPersistListener } from '@proton/account/persist/listener';
 import { deviceRecoveryListener } from '@proton/account/recovery/deviceRecovery';
 import { safetyReviewTelemetryListener } from '@proton/account/safetyReview/telemetry/safetyReviewTelemetryListener';
+import { authDevicesLoop } from '@proton/account/sso/eventLoopV6';
 import { startListeningToPlanNameChange } from '@proton/account/subscription/startListeningToPlanNameChange';
 import { startCalendarEventListener } from '@proton/calendar/calendars/listener';
 import { startHolidaysDirectoryListener } from '@proton/calendar/holidaysDirectory/listener';
@@ -34,7 +35,7 @@ export const start = ({
     mode: 'public' | 'lite' | 'default';
 }) => {
     if (mode === 'default') {
-        startCoreEventLoopV6Listening(startListening);
+        startCoreEventLoopV6Listening(startListening, { loops: [authDevicesLoop] });
         startMailEventLoopV6Listening(startListening);
         startContactEventLoopV6Listening(startListening);
         startCalendarEventLoopV6Listening(startListening);
