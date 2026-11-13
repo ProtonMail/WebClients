@@ -30,7 +30,8 @@ export type ClientHandlerDependencies = {
 }
 
 /**
- * Answers every call from the editor for a text document, after docs-core `Bridge/EditorToClientRequestHandler.ts`.
+ * Answers every call from the editor for a text document. Adapted from
+ * `packages/docs-core/lib/Bridge/EditorToClientRequestHandler.ts`, which doc2 must not import.
  * The editor never times out a call to the client, so each one gets a reply. With no comments yet, the calls for those
  * change nothing and answer as if there were none.
  */

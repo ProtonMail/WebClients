@@ -4,8 +4,9 @@ import { forgeImageURL } from '@proton/shared/lib/helpers/image'
 export type ImageProxyParams = { apiUrl: string; uid: string }
 
 /**
- * After docs-core `Api/DocsApi.ts`, which doc2 must not import: an external image the editor exports, fetched through
- * the image proxy as a data URL, or undefined when it isn't an image or can't be fetched, so the export leaves it out.
+ * Adapted from `packages/docs-core/lib/Api/DocsApi.ts`, its `fetchExternalImageAsBase64`, which doc2 must not import:
+ * an external image the editor exports, fetched through the image proxy as a data URL, or undefined when it isn't an
+ * image or can't be fetched, so the export leaves it out.
  */
 export async function fetchExternalImageAsBase64(
   url: string,

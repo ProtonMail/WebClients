@@ -41,7 +41,8 @@ function waitForBackdropToHide(): Promise<void> {
 export type ExportToPDFModalProps = ModalStateProps
 
 /**
- * Copied from /doc's `~/components/document/DocumentLayout/DocumentHeader/DocumentTitleDropdown/ExportToPDFModal.tsx`:
+ * Copied from
+ * `applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentTitleDropdown/ExportToPDFModal.tsx`:
  * explains how to save as PDF from the browser's print dialog, which `onClose` opens.
  */
 export function ExportToPDFModal({ onClose, onExit, open, ...modalProps }: ExportToPDFModalProps) {

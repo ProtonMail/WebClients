@@ -1,0 +1,417 @@
+[
+  {
+    "doc2": "__components/DocumentActiveUsers.tsx",
+    "kind": "copy",
+    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentActiveUsers.tsx",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "a67a1da824169e6e7e2aa4e2237c27d8a820c7ad",
+    "notes": "The avatars, the +N dropdown and click-to-scroll, fed by the session's participants instead of docs-core's event bus and synced state. The avatar is not a button, as it sits in one."
+  },
+  {
+    "doc2": "__components/DocumentCreator.tsx",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/routes/(user)/(document)/doc/page.tsx",
+    "sourceSymbol": "the creating_new_document phase",
+    "sourceCommit": "d610fdb3fe057349e716722da68a85a20046d935",
+    "copiedIn": "3b111c8a7c9d351265288a6c77483a68822526de",
+    "notes": "The loader and its string; no sheets string."
+  },
+  {
+    "doc2": "__components/DocumentDebugMenu.tsx",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/components/document/DocumentViewer/DebugMenu.tsx",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "6a6b12657b5adba4c37c317f42ae61e77056b3bc",
+    "notes": "The menu's layout, items and downloads, on the SDK session and the UpdateRecorder. Commit with RTS, Close Connection and Create Initial Commit left out: the SDK has no API for them."
+  },
+  {
+    "doc2": "__components/DocumentErrorFallback.tsx",
+    "kind": "copy",
+    "source": "applications/docs/src/app/components/document/DocumentViewer/DocumentErrorFallback.tsx",
+    "sourceCommit": "53874fc893123e2dc194fdaac0c9e15e82484619",
+    "copiedIn": "6df02b0f3f5cd088f66796bec0934c9f96003100",
+    "notes": "No report to docs-core's user state, and an actionButton of null shows no action button."
+  },
+  {
+    "doc2": "__components/DocumentHeaderV2.tsx",
+    "doc2Symbol": "LimitedAvailabilityPill",
+    "kind": "copy",
+    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/ConnectionStatus.tsx",
+    "sourceSymbol": "ConnectionStatus",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "a67a1da824169e6e7e2aa4e2237c27d8a820c7ad",
+    "notes": "The limited-availability pill only, shown from the session's participant limit."
+  },
+  {
+    "doc2": "__components/DocumentHeaderV2.tsx",
+    "doc2Symbol": "ViewOnlyPill",
+    "kind": "copy",
+    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentHeader.tsx",
+    "sourceSymbol": "ViewOnlyPill",
+    "sourceCommit": "068a15c952ea72df34c8e663c6f72bfdb0a61ea8",
+    "copiedIn": "e9d9094265f2b5eed14614224bcdca1e068553b3",
+    "notes": "The view-only pill, unchanged."
+  },
+  {
+    "doc2": "__components/DocumentShell.tsx",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentLayout.tsx",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "e9d9094265f2b5eed14614224bcdca1e068553b3",
+    "notes": "The app container tree verbatim. No public branches, size modal or debug provider."
+  },
+  {
+    "doc2": "__components/DocumentSizeLimitModal.tsx",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/components/document/DocumentSizeLimitModal.tsx",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "6df02b0f3f5cd088f66796bec0934c9f96003100",
+    "notes": "Opens the first time the SDK refuses an edit for the size limit, in place of a toast. No \"remove older revisions\": the SDK has no squashEverything until Phase 3 (ADR-0011)."
+  },
+  {
+    "doc2": "__components/DocumentTitleMenu.tsx",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentTitleDropdown/DocumentTitleDropdown.tsx",
+    "sourceCommit": "e485f5ff7a350db5dbdd68c1ebbffbef08ffe5ff",
+    "copiedIn": "e9d9094265f2b5eed14614224bcdca1e068553b3",
+    "notes": "The menu, its test ids, the version and debug key chords and the word-count submenu, extended in later doc2 commits with the source unchanged. Sheets items dropped; items not built for doc2 yet are stubs."
+  },
+  {
+    "doc2": "__components/ErrorHeader.tsx",
+    "doc2Symbol": "ErrorHeader",
+    "kind": "copy",
+    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentHeader.tsx",
+    "sourceSymbol": "DocsHeaderNoDocument",
+    "sourceCommit": "068a15c952ea72df34c8e663c6f72bfdb0a61ea8",
+    "copiedIn": "e9d9094265f2b5eed14614224bcdca1e068553b3",
+    "notes": "The logo, app switcher and user menu, unchanged."
+  },
+  {
+    "doc2": "__components/ExportToPDFModal.tsx",
+    "kind": "copy",
+    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentTitleDropdown/ExportToPDFModal.tsx",
+    "sourceCommit": "f7ab3baa8b357a847de986f4af016fefbeb5ad98",
+    "copiedIn": "6802af2d1ceaf734e4ef4b260ae210ed05d04e54",
+    "notes": "The modal and its strings; prints only once the modal and the backdrop have finished exiting."
+  },
+  {
+    "doc2": "__components/OpenActionError.tsx",
+    "doc2Symbol": "messages",
+    "kind": "copy",
+    "source": "applications/docs/src/app/routes/(user)/(document)/doc/page.tsx",
+    "sourceSymbol": "the invalid_open_action phase",
+    "sourceCommit": "d610fdb3fe057349e716722da68a85a20046d935",
+    "copiedIn": "660aee3e77269b1a2ed252946b2728e232f8a027",
+    "notes": "The Slack-truncation and missing-document strings and the test id; doc2 adds its own reasons and buttons."
+  },
+  {
+    "doc2": "__components/SessionStatus.tsx",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/ConnectionStatus.tsx",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "710e9cb2cecc1707b39748e4270ddb38ee32d364",
+    "notes": "The pills and their strings, extended in 6df02b0f3f5 with the source unchanged. Driven by the SDK's session snapshot; no retry on hover."
+  },
+  {
+    "doc2": "__components/SessionStatus.tsx",
+    "doc2Symbol": "OPENING_SHOWN_AFTER_MS",
+    "kind": "mirror",
+    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/ConnectionStatus.tsx",
+    "sourceSymbol": "DURATION_BEFORE_CONNECTING_STATUS_SHOWN",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "710e9cb2cecc1707b39748e4270ddb38ee32d364",
+    "notes": "The 1 s before the connecting pill shows, so a session that opens fast shows no spinner."
+  },
+  {
+    "doc2": "__components/SessionStatus.tsx",
+    "doc2Symbol": "SAVING_SHOWN_FOR_AT_LEAST_MS",
+    "kind": "mirror",
+    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/websocket-status.tsx",
+    "sourceSymbol": "MINIMUM_DURATION_SAVING_MUST_BE_SHOWN",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "710e9cb2cecc1707b39748e4270ddb38ee32d364",
+    "notes": "The 1 s Saving\u2026 stays shown at least, so the pill doesn't flicker."
+  },
+  {
+    "doc2": "__components/TrashedDocumentModal.tsx",
+    "kind": "copy",
+    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentTitleDropdown/TrashedDocumentModal.tsx",
+    "sourceCommit": "e485f5ff7a350db5dbdd68c1ebbffbef08ffe5ff",
+    "copiedIn": "87b8e44918b9b57f261730e0eea537ca142c4313",
+    "notes": "Takes doc2's own props in place of docs-core types; stays open while restoring, with the restore button disabled."
+  },
+  {
+    "doc2": "__components/UpdateReplayTool.tsx",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/components/document/DocumentViewer/UpdateReplayTool.tsx",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "6a6b12657b5adba4c37c317f42ae61e77056b3bc",
+    "notes": "Text documents only, through the EditorInvoker. Left out: the spreadsheet time travel, and the multi-tab sync over a local relay."
+  },
+  {
+    "doc2": "__components/WordCount.tsx",
+    "doc2Symbol": "WordCountOverlay",
+    "kind": "copy",
+    "source": "applications/docs/src/app/components/document/WordCount.tsx",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "e9d9094265f2b5eed14614224bcdca1e068553b3",
+    "notes": "Takes the counts as a prop instead of reading docs-core's event bus."
+  },
+  {
+    "doc2": "__utils/ClientEditorBridge.ts",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/Bridge/ClientToEditorBridge.ts",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "3b111c8a7c9d351265288a6c77483a68822526de",
+    "notes": "Message dispatch near-verbatim. No synced-state subscriptions, orchestrator or devtools filter."
+  },
+  {
+    "doc2": "__utils/EditorInvoker.ts",
+    "kind": "copy",
+    "source": "packages/docs-core/lib/Bridge/EditorInvoker.ts",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "3b111c8a7c9d351265288a6c77483a68822526de",
+    "notes": "Only the methods doc2 calls, added as doc2 needed them through 6802af2d1ce with the source unchanged. A call the editor doesn't answer within EDITOR_CALL_TIMEOUT_MS rejects instead of waiting forever."
+  },
+  {
+    "doc2": "__utils/UpdateRecorder.ts",
+    "doc2Symbol": "OWN_UPDATES_WINDOW_MS",
+    "kind": "mirror",
+    "source": "packages/docs-core/lib/Services/Websockets/Debouncer/UpdateDebouncer.ts",
+    "sourceSymbol": "SINGLE_PLAYER_DEBOUNCE_PERIOD",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "6a6b12657b5adba4c37c317f42ae61e77056b3bc",
+    "notes": "The 2.5 s window doc2's own updates are merged into, so the recorded timeline has /doc's granularity."
+  },
+  {
+    "doc2": "__utils/createClientHandler.ts",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/Bridge/EditorToClientRequestHandler.ts",
+    "sourceCommit": "7eaae00c69cae4c831e516739643f42f4ff9ab53",
+    "copiedIn": "3b111c8a7c9d351265288a6c77483a68822526de",
+    "notes": "Six method bodies verbatim; the comment and sheets methods stubbed. The source's later 952608e316c only retypes storeSpreadsheetPatches, which doc2 stubs."
+  },
+  {
+    "doc2": "__utils/createDocsApiFetch.ts",
+    "kind": "adaptation",
+    "source": "packages/drive/internal/useHttpClient.ts",
+    "sourceSymbol": "fetchJson",
+    "sourceCommit": "5fac39215f8d688fcc02459a7e1c107b9ddcc09b",
+    "copiedIn": "e7794c486635f3f44723cea1ab6ca5cc21b4e596",
+    "notes": "The pattern of fetchJson, which is not exported: the app's api with output raw. Every HTTP answer resolves as a Response, and the timeout is longer for squash uploads."
+  },
+  {
+    "doc2": "__utils/debugDownloads.ts",
+    "doc2Symbol": "downloadLogs, getLogsZip",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/utils/downloadLogs.ts",
+    "sourceSymbol": "getLogsAsJSON, downloadLogsAsZip",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "6a6b12657b5adba4c37c317f42ae61e77056b3bc",
+    "notes": "The logs zip, its file names and its timestamp, for a text document only: no sheets JSON, and no download of individual files."
+  },
+  {
+    "doc2": "__utils/debugDownloads.ts",
+    "doc2Symbol": "getAllUpdatesZip",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/AuthenticatedDocController/AuthenticatedDocController.ts",
+    "sourceSymbol": "getAllUpdatesAsZip",
+    "sourceCommit": "2022294005602363e784246bae18c436aaf14a6e",
+    "copiedIn": "6a6b12657b5adba4c37c317f42ae61e77056b3bc",
+    "notes": "The zip of every update and its file names, from the UpdateRecorder's plaintext updates; no download of its own."
+  },
+  {
+    "doc2": "__utils/debugDownloads.ts",
+    "doc2Symbol": "getBaseCommitZip",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/EditorController/EditorController.ts",
+    "sourceSymbol": "getBaseCommitAsZip",
+    "sourceCommit": "7eaae00c69cae4c831e516739643f42f4ff9ab53",
+    "copiedIn": "6a6b12657b5adba4c37c317f42ae61e77056b3bc",
+    "notes": "The base commit zip and its file names, from the SDK's debug artifacts; an update the SDK could not read is left out."
+  },
+  {
+    "doc2": "__utils/documentFileActions.ts",
+    "doc2Symbol": "trashNode, restoreNode",
+    "kind": "copy",
+    "source": "packages/docs-core/lib/DriveSDK/trash.tsx",
+    "sourceSymbol": "trashDocument, restoreDocument",
+    "sourceCommit": "2022294005602363e784246bae18c436aaf14a6e",
+    "copiedIn": "87b8e44918b9b57f261730e0eea537ca142c4313",
+    "notes": "Trash and restore only, on the app's Drive client; no delete, and no error report."
+  },
+  {
+    "doc2": "__utils/downloadExport.ts",
+    "doc2Symbol": "exportAndDownload",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/EditorController/EditorController.ts",
+    "sourceSymbol": "exportAndDownload",
+    "sourceCommit": "7eaae00c69cae4c831e516739643f42f4ff9ab53",
+    "copiedIn": "6802af2d1ceaf734e4ef4b260ae210ed05d04e54",
+    "notes": "The export then download flow, on the EditorInvoker and the given name; no check for a missing invoker."
+  },
+  {
+    "doc2": "__utils/downloadExport.ts",
+    "doc2Symbol": "downloadExport",
+    "kind": "copy",
+    "source": "packages/docs-core/lib/UseCase/ExportAndDownload.ts",
+    "sourceSymbol": "downloadExport",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "6802af2d1ceaf734e4ef4b260ae210ed05d04e54",
+    "notes": "Verbatim."
+  },
+  {
+    "doc2": "__utils/fetchExternalImageAsBase64.ts",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/Api/DocsApi.ts",
+    "sourceSymbol": "fetchExternalImageAsBase64",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "6802af2d1ceaf734e4ef4b260ae210ed05d04e54",
+    "notes": "The image proxy fetch and the image check; resolves undefined instead of a failed Result, and counts no in-flight request."
+  },
+  {
+    "doc2": "__utils/getNodeName.ts",
+    "kind": "copy",
+    "source": "packages/docs-core/lib/DriveSDK/getNodeName.ts",
+    "sourceCommit": "0713a849b27425986b207ed0b4d57d8e227b0bc2",
+    "copiedIn": "e9d9094265f2b5eed14614224bcdca1e068553b3",
+    "notes": "Verbatim."
+  },
+  {
+    "doc2": "__utils/getWebSocketServerURL.ts",
+    "kind": "copy",
+    "source": "packages/docs-core/lib/Realtime/getWebSocketServerURL.ts",
+    "sourceCommit": "db940b4c45d61f4a4db7e8dbbc3335afe1fa9465",
+    "copiedIn": "0bf4f142e55744267deccc51e5af8b9f86e13303",
+    "notes": "Verbatim, all 16 lines."
+  },
+  {
+    "doc2": "__utils/getWindowLocationExcludingDomain.ts",
+    "kind": "copy",
+    "source": "applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentHeader.tsx",
+    "sourceSymbol": "getWindowLocationExcludingDomain",
+    "sourceCommit": "068a15c952ea72df34c8e663c6f72bfdb0a61ea8",
+    "copiedIn": "e9d9094265f2b5eed14614224bcdca1e068553b3",
+    "notes": "Verbatim, exported."
+  },
+  {
+    "doc2": "__utils/isRunningInNativeMobileWeb.ts",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/Bridge/EditorToClientRequestHandler.ts",
+    "sourceSymbol": "getAppPlatform",
+    "sourceCommit": "7eaae00c69cae4c831e516739643f42f4ff9ab53",
+    "copiedIn": "e9d9094265f2b5eed14614224bcdca1e068553b3",
+    "notes": "One platform check, retyped, returning a boolean."
+  },
+  {
+    "doc2": "__utils/resolveOpenAction.ts",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/routes/(user)/(document)/doc/page.tsx",
+    "sourceSymbol": "the content phase and its effect",
+    "sourceCommit": "d610fdb3fe057349e716722da68a85a20046d935",
+    "copiedIn": "660aee3e77269b1a2ed252946b2728e232f8a027",
+    "notes": "The Slack marker and the mode mapping, as a pure function."
+  },
+  {
+    "doc2": "__utils/signRealtimeDocumentUpdate.ts",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/Services/Encryption/EncryptionService.ts",
+    "sourceSymbol": "signAndEncryptData",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "0bf4f142e55744267deccc51e5af8b9f86e13303",
+    "notes": "The same signing options; the SDK supplies the signature context; no encryption step."
+  },
+  {
+    "doc2": "__utils/useCreateDocument.ts",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/routes/(user)/(document)/doc/page.tsx",
+    "sourceSymbol": "createNewDocInRoot",
+    "sourceCommit": "d610fdb3fe057349e716722da68a85a20046d935",
+    "copiedIn": "3b111c8a7c9d351265288a6c77483a68822526de",
+    "notes": "The name template and the Drive compat creation flow; no sheets."
+  },
+  {
+    "doc2": "__utils/useDocumentFileActions.tsx",
+    "doc2Symbol": "getCopyFailedAlert",
+    "kind": "copy",
+    "source": "packages/docs-core/lib/AuthenticatedDocController/AuthenticatedDocController.ts",
+    "sourceSymbol": "duplicateDocument",
+    "sourceCommit": "2022294005602363e784246bae18c436aaf14a6e",
+    "copiedIn": "0ffe7358b6d1a34363d58f190034cc184f6bbad8",
+    "notes": "The generic failure message only; doc2 adds its own message for a copy too large to seed."
+  },
+  {
+    "doc2": "__utils/useDocumentFileActions.tsx",
+    "doc2Symbol": "makeACopy",
+    "kind": "mirror",
+    "source": "packages/docs-core/lib/UseCase/DuplicateDocument.ts",
+    "sourceSymbol": "executePrivate",
+    "sourceCommit": "d610fdb3fe057349e716722da68a85a20046d935",
+    "copiedIn": "0ffe7358b6d1a34363d58f190034cc184f6bbad8",
+    "notes": "The copy's name, \"<name> (copy <date>)\", untranslated as /doc's is."
+  },
+  {
+    "doc2": "__utils/useDocumentSession.ts",
+    "doc2Symbol": "commitDuLimit",
+    "kind": "mirror",
+    "source": "packages/docs-core/lib/Types/SquashingConstants.ts",
+    "sourceSymbol": "GetCommitDULimit",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "e7794c486635f3f44723cea1ab6ca5cc21b4e596",
+    "notes": "A commit DU limit of 50 on dev and black, so the SDK squashes when /doc does; the SDK's own default holds elsewhere."
+  },
+  {
+    "doc2": "__utils/useEditorBasics.ts",
+    "doc2Symbol": "useIsEditorDarkMode, useEditorBasics",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/components/document/DocumentViewer/DocumentViewer.tsx",
+    "sourceCommit": "e485f5ff7a350db5dbdd68c1ebbffbef08ffe5ff",
+    "copiedIn": "e9d9094265f2b5eed14614224bcdca1e068553b3",
+    "notes": "The dark mode and user settings effects, re-expressed as hooks over the EditorInvoker."
+  },
+  {
+    "doc2": "__utils/useEditorBasics.ts",
+    "doc2Symbol": "useEditorBasics",
+    "kind": "adaptation",
+    "source": "applications/docs/src/app/routes/(user)/(document)/doc/__components/PrivateHookChangesToEvents.tsx",
+    "sourceCommit": "6fb4e7768e0daa3ca732bad6bfc6710aa6ca96a7",
+    "copiedIn": "e9d9094265f2b5eed14614224bcdca1e068553b3",
+    "notes": "The user name the editor's presence carries, synced through the EditorInvoker."
+  },
+  {
+    "doc2": "__utils/useGetMemberAddressKeys.ts",
+    "kind": "adaptation",
+    "source": "packages/docs-core/lib/Crypto/useGetMemberAddressKeys.ts",
+    "sourceCommit": "d610fdb3fe057349e716722da68a85a20046d935",
+    "copiedIn": "0bf4f142e55744267deccc51e5af8b9f86e13303",
+    "notes": "getRootShare and the address lookup inlined, typed with the SDK's DocumentKeys; no error tracing."
+  },
+  {
+    "doc2": "__utils/useStopFollowUps.ts",
+    "doc2Symbol": "useStopFollowUps",
+    "kind": "copy",
+    "source": "packages/docs-core/lib/Services/Websockets/WebsocketService.ts",
+    "sourceSymbol": "encryptMessage",
+    "sourceCommit": "b40af496a3403a74e064bbb73ad6b8af7116ae32",
+    "copiedIn": "6df02b0f3f5cd088f66796bec0934c9f96003100",
+    "notes": "Only the encryptionFailed alert's message text."
+  },
+  {
+    "doc2": "page.tsx",
+    "kind": "copy",
+    "source": "applications/docs/src/app/routes/(user)/(document)/doc/page.tsx",
+    "sourceSymbol": "isRedirectBackToPublicContext",
+    "sourceCommit": "d610fdb3fe057349e716722da68a85a20046d935",
+    "copiedIn": "497a39eaf01752940e27d51e5b014af17d166e38",
+    "notes": "The open-url-reauth redirect call only."
+  },
+  {
+    "doc2": "page.tsx",
+    "kind": "copy",
+    "source": "applications/docs/src/app/routes/(user)/(document)/doc/page.tsx",
+    "sourceSymbol": "shouldDownload",
+    "sourceCommit": "d610fdb3fe057349e716722da68a85a20046d935",
+    "copiedIn": "6802af2d1ceaf734e4ef4b260ae210ed05d04e54",
+    "notes": "The download mode's updateParameters call, so a reload opens the document instead of downloading it again."
+  }
+]

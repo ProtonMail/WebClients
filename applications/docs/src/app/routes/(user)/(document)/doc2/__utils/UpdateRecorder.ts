@@ -1,7 +1,10 @@
 import type { BaseState, DecryptedDocumentUpdate } from '@proton-docs/realtime-sdk'
 import { mergeUpdates } from 'yjs'
 
-/** About /doc's single-player flush period (docs-core `UpdateDebouncer`), so the timeline matches its granularity */
+/**
+ * /doc's single-player flush period, so the timeline matches its granularity. Mirrors
+ * `packages/docs-core/lib/Services/Websockets/Debouncer/UpdateDebouncer.ts`, its `SINGLE_PLAYER_DEBOUNCE_PERIOD`.
+ */
 export const OWN_UPDATES_WINDOW_MS = 2_500
 
 export type RecordedUpdate = {

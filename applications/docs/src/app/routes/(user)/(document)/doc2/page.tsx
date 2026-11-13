@@ -40,6 +40,7 @@ export default function DocumentPageV2({ driveCompat }: DocumentPageV2Props) {
     application.logger.info('Resolved open action', { resolution })
   }, [application.logger, resolution])
 
+  // Copied from `applications/docs/src/app/routes/(user)/(document)/doc/page.tsx`, its `open-url-reauth` redirect
   useEffect(() => {
     if (resolution.kind === 'redirect' && openAction?.mode === 'open-url-reauth') {
       navigateToAction({ ...openAction, mode: 'open-url', urlPassword: getUrlPassword() }, 'public')
@@ -48,7 +49,8 @@ export default function DocumentPageV2({ driveCompat }: DocumentPageV2Props) {
 
   // Here, not in the viewer, which a retry remounts: once downloaded, a retry doesn't download it again
   const [downloadedOnOpen, setDownloadedOnOpen] = useState<string>()
-  // As /doc does: the address bar opens the document from now on, so a reload doesn't download it again
+  // Copied from `applications/docs/src/app/routes/(user)/(document)/doc/page.tsx`, its download mode: the address bar
+  // opens the document from now on, so a reload doesn't download it again
   const downloadOnOpen = resolution.kind === 'open' && resolution.downloadOnOpen === true
   useEffect(() => {
     if (downloadOnOpen && openAction?.mode === 'download') {

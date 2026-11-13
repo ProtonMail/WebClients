@@ -109,7 +109,8 @@ function CommentsButtonStub() {
   )
 }
 
-// Copied from `DocumentHeader.tsx`, which imports docs-core.
+// Copied from `applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentHeader.tsx`, which
+// imports docs-core.
 function ViewOnlyPill() {
   return (
     <PopoverPill
@@ -129,7 +130,8 @@ function ViewOnlyPill() {
   )
 }
 
-// Copied from `ConnectionStatus.tsx`, which imports docs-core.
+// Copied from `applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/ConnectionStatus.tsx`, which
+// imports docs-core.
 function LimitedAvailabilityPill() {
   return (
     <PopoverPill

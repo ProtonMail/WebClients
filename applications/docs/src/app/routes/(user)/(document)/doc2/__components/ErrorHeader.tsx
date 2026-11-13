@@ -10,8 +10,8 @@ import { c } from 'ttag'
 import { getDocsReportContextLines } from '~/utils/report-context'
 import { getWindowLocationExcludingDomain } from '../__utils/getWindowLocationExcludingDomain'
 
-// Copied from `DocsHeaderNoDocument` in `~/components/document/DocumentLayout/DocumentHeader/DocumentHeader.tsx`, which
-// imports docs-core.
+// Copied from `applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentHeader.tsx`, its
+// `DocsHeaderNoDocument`, which imports docs-core.
 /** The header when there is no document to show: the logo, the app switcher and the user menu. */
 export function ErrorHeader() {
   const { viewportWidth } = useActiveBreakpoint()

@@ -9,6 +9,7 @@ import { OpenActionError } from './OpenActionError'
 
 export type DocumentCreatorProps = { parent?: NodeMeta; driveCompat: DriveCompat; onRetry: () => void }
 
+// Adapted from `applications/docs/src/app/routes/(user)/(document)/doc/page.tsx`, its `creating_new_document` phase.
 export function DocumentCreator({ parent, driveCompat, onRetry }: DocumentCreatorProps) {
   const { failed } = useCreateDocument(parent, driveCompat)
 

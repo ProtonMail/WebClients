@@ -24,7 +24,8 @@ export function useWordCountState(): [WordCount, (counts: WordCountInfoCollectio
 
 export type WordCountOverlayProps = { wordCount: WordCount }
 
-// Copied from `~/components/document/WordCount.tsx`, which reads the counts from docs-core's event bus.
+// Copied from `applications/docs/src/app/components/document/WordCount.tsx`, which reads the counts from docs-core's
+// event bus.
 export function WordCountOverlay({ wordCount: { selection, document, isShown } }: WordCountOverlayProps) {
   const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>()
   const [activeCountInfo, setActiveCountInfo] = useState<'word' | 'character'>('word')

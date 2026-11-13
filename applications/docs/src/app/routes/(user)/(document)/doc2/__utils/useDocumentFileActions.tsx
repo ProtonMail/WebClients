@@ -157,7 +157,8 @@ export function useDocumentFileActions({
     setIsMakingACopy(true)
     // Opened on the click, so no popup blocker stops it after the copy is made
     const newWindow = getNewWindow()
-    // The name /doc gives a copy (docs-core `UseCase/DuplicateDocument.ts`), untranslated as there
+    // The name /doc gives a copy, untranslated as there. Mirrors `packages/docs-core/lib/UseCase/DuplicateDocument.ts`,
+    // its `executePrivate`
     const copyName = `${name} (copy ${getPlatformFriendlyDateForFileName()})`
     exportInvoker
       .exportData('yjs')
@@ -286,6 +287,8 @@ export function useDocumentFileActions({
   }
 }
 
+// Copied from `packages/docs-core/lib/AuthenticatedDocController/AuthenticatedDocController.ts`, its `duplicateDocument`:
+// the generic failure message
 function getCopyFailedAlert(error: unknown): AlertProps {
   if (error instanceof SeedError) {
     return {

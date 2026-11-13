@@ -12,8 +12,8 @@ import { isRunningInNativeMobileWeb } from '../__utils/isRunningInNativeMobileWe
 export type DocumentShellProps = { header: ReactNode; children: ReactNode }
 
 /**
- * /doc's app shell (`DocumentLayout.tsx`): the banners, `header`, and the drawer with the quick settings. The native
- * app's webview shows no header.
+ * Adapted from `applications/docs/src/app/components/document/DocumentLayout/DocumentLayout.tsx`, /doc's app shell:
+ * the banners, `header`, and the drawer with the quick settings. The native app's webview shows no header.
  */
 export function DocumentShell({ header, children }: DocumentShellProps) {
   return (

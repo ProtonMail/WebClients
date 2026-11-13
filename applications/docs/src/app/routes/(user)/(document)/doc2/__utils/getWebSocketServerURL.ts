@@ -1,3 +1,4 @@
+// Copied from `packages/docs-core/lib/Realtime/getWebSocketServerURL.ts`, which doc2 must not import.
 const WebSocketServerSubdomain = 'docs-rts'
 
 export const getWebSocketServerURL = () => {

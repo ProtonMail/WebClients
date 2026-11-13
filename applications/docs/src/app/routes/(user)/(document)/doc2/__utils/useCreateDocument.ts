@@ -14,6 +14,7 @@ import { DOCUMENT_V2_PATH } from '~/utils/docs-url-bar'
  * Creates a text document in `parent`, or in My files without one, then replaces the URL with the doc2 URL that opens
  * it. Runs once per mount: unmounting during creation leaves the URL alone, even if the document got created.
  * Creation goes through Drive compat whatever `DocsDriveCompatSDK` says, so doc2 adds no document-creation crypto.
+ * Adapted from `applications/docs/src/app/routes/(user)/(document)/doc/page.tsx`, its `createNewDocInRoot`.
  */
 export function useCreateDocument(parent: NodeMeta | undefined, driveCompat: DriveCompat) {
   const { logger } = useApplication()

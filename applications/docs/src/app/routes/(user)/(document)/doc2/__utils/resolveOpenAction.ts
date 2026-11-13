@@ -7,7 +7,10 @@ export type OpenResolution =
   | { kind: 'redirect'; to: 'public' }
   | { kind: 'error'; reason: 'invalidUrl' | 'slackTruncated' | 'unsupported' }
 
-/** What the doc2 page does for a URL, given `parseOpenAction`'s result for it and its query string. */
+/**
+ * What the doc2 page does for a URL, given `parseOpenAction`'s result for it and its query string. Adapted from
+ * `applications/docs/src/app/routes/(user)/(document)/doc/page.tsx`, its content phase and the effect that acts on it.
+ */
 export function resolveOpenAction(openAction: DocumentAction | null, search: string): OpenResolution {
   // Before the action: a link cut inside an ID still parses, with the marker in the ID.
   if (search.includes('[%E2%80%A6]')) {

@@ -56,7 +56,8 @@ export type DocumentTitleMenuProps = {
   node: Pick<NodeEntity, 'uid' | 'parentUid' | 'name'>
   role: DocumentRole
   editorInvoker:
-    Pick<EditorInvoker, 'setTableOfContentsVisible' | 'getYDocAsJSON' | 'getCurrentEditorState'> | undefined
+    | Pick<EditorInvoker, 'setTableOfContentsVisible' | 'getYDocAsJSON' | 'getCurrentEditorState'>
+    | undefined
   /** The editor once it shows the document; until then Make a copy, Print, Download and Copy as markdown are disabled */
   exportInvoker: Pick<EditorInvoker, 'getCurrentSelection'> | undefined
   wordCount: WordCount
@@ -67,7 +68,8 @@ export type DocumentTitleMenuProps = {
 }
 
 /**
- * The document name, which opens /doc's title menu (`DocumentTitleDropdown.tsx`) with every docs item in its order.
+ * The document name, which opens /doc's title menu with every docs item in its order. Adapted from
+ * `applications/docs/src/app/components/document/DocumentLayout/DocumentHeader/DocumentTitleDropdown/DocumentTitleDropdown.tsx`.
  * See version history is a stub; the sheets-only items are left out.
  */
 export function DocumentTitleMenu({

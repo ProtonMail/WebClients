@@ -9,8 +9,8 @@ export type AlertProps = { title: string; translatedMessage: string }
 
 /**
  * What /doc does past its "Offline" pill when a session stops for some conditions:
- * - `encryptionFailed`: /doc's alert for an edit it could not encrypt (docs-core `WebsocketService`, shown by
- *   `DocumentViewer.tsx`), with its copy.
+ * - `encryptionFailed`: /doc's alert for an edit it could not encrypt, shown by `DocumentViewer.tsx`. Copied from
+ *   `packages/docs-core/lib/Services/Websockets/WebsocketService.ts`, its message.
  * - `authExpired`: the SDK's Docs API calls already go through the app's 401 refresh (`createDocsApiFetch`), which
  *   takes the user to the app's sign-in when it fails, so no app session check is needed here. The session is still
  *   retried once: the SDK reconnects once itself before it stops for expired credentials, except when its reconnect
