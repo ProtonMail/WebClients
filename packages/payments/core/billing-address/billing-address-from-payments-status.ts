@@ -65,7 +65,12 @@ export function getBillingAddressFromPaymentStatus(
     billingAddress: BillingAddress,
     { shouldRestoreZipCode }: { shouldRestoreZipCode: boolean }
 ): BillingAddress {
-    const normalized = { ...billingAddress };
+    // Pick the address fields only: callers pass a whole PaymentStatus, and its VendorStates must not end up in API payloads
+    const normalized: BillingAddress = {
+        CountryCode: billingAddress.CountryCode,
+        State: billingAddress.State,
+        ZipCode: billingAddress.ZipCode,
+    };
 
     restoreDefaultsIfCountryIsMissing(normalized);
     restoreState(normalized);
