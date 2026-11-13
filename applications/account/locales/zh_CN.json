@@ -2356,6 +2356,9 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Manage subscriptions": [
+        "管理订阅"
       ]
     },
     "action": {
@@ -9094,6 +9097,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "您的双因素身份验证密钥已就绪，可以使用了。"
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "使用此设备的指纹、面容、PIN 或屏幕锁定"
       ]
     },
     "fido2: Label": {
@@ -14397,6 +14403,24 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "Adds a Meet link to events with at least one participant.": [
+        "为至少有一位参与者的事件添加 Meet 链接。"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "为确保您账户的最高安全性，请停用**密保邮箱**。"
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "为确保您账户的最高安全性，请停用**密保手机**。"
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "为确保您账户的最高安全性，请停用**密保邮箱**。"
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "为确保您账户的最高安全性，请停用**密保手机**。"
+      ],
+      "You still need to reply for the organizer to see your response.": [
+        "您仍需回复，组织者才能看到您的答复。"
       ]
     },
     "info": {
@@ -21403,6 +21427,27 @@
       ],
       "The ideal plan for privacy-conscious power users.": [
         "适合注重隐私的高级用户的理想套餐"
+      ],
+      "Confidential video conferencing for your business.": [
+        "为企业提供的保密视频会议。"
+      ],
+      "Essential privacy and security suite for your business.": [
+        "为企业提供的基础隐私与安全套件。"
+      ],
+      "Next-level password management for your business.": [
+        "为企业提供更高水平的密码管理。"
+      ],
+      "Premium privacy and security suite for your business.": [
+        "为企业打造的优质隐私与安全套件。"
+      ],
+      "Privacy-first AI writing assistant for your business.": [
+        "为企业打造的隐私优先 AI 写作助手。"
+      ],
+      "Secure cloud storage and file sharing for your business.": [
+        "为企业提供的安全云存储和文件共享。"
+      ],
+      "Secure, high-speed VPN access for your business.": [
+        "为企业提供的安全高速 VPN 访问。"
       ]
     },
     "Plans": {
@@ -23597,6 +23642,87 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "您受邀加入 1 亿多名用户的行列，通过 ${ BRAND_NAME } 的加密生态系统掌握自己数据的控制权。"
+      ],
+      "${ renewalPriceElement } after the first 12 months": [
+        "首 12 个月后为 ${ renewalPriceElement }"
+      ],
+      "Billed yearly": [
+        "按年计费"
+      ],
+      "Billed yearly, renews on ${ renewalTime }": [
+        "按年计费，将于 ${ renewalTime } 续订"
+      ],
+      "Business information": [
+        "企业信息"
+      ],
+      "Checkout": [
+        "结账"
+      ],
+      "Claim your additional ${ referralDiscountPercent }% discount": [
+        "领取额外的 ${ referralDiscountPercent }% 折扣"
+      ],
+      "Confirmation": [
+        "确认"
+      ],
+      "Coupon": [
+        "优惠券"
+      ],
+      "Create account": [
+        "创建账户"
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "创建 ${ BRAND_NAME } 账户"
+      ],
+      "Creating your account": [
+        "正在为您创建账户"
+      ],
+      "Discount": [
+        "折扣"
+      ],
+      "Encrypted solutions to protect": [
+        "加密解决方案，保护"
+      ],
+      "For ${ countryElement }": [
+        "适用于 ${ countryElement }"
+      ],
+      "Get an additional ${ referralDiscountPercent }% off your first year of ${ BRAND_NAME } for Business": [
+        "您的 ${ BRAND_NAME } 企业版首年可额外享受 ${ referralDiscountPercent }% 折扣"
+      ],
+      "Pick a plan to get started.": [
+        "请选择一个套餐开始使用！"
+      ],
+      "Something went wrong": [
+        "出现问题"
+      ],
+      "Summary": [
+        "概览"
+      ],
+      "Taxes may apply.": [
+        "税收可能包含在内。"
+      ],
+      "Unlimited vaults for your passwords": [
+        "不限数量的密码保险库"
+      ],
+      "Users": [
+        "用户"
+      ],
+      "We couldn't finish setting up your account. Please contact support.": [
+        "我们无法完成您的账户设置，请联系支持人员。"
+      ],
+      "WS Premium": [
+        "WS 高级版"
+      ],
+      "WS Standard": [
+        "WS 普通版"
+      ],
+      "You're invited to join 100,000+ organizations that protect their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "诚邀您加入 100,000+ 家使用 ${ BRAND_NAME } 加密生态系统保护数据的组织。"
+      ],
+      "Your account has been created, but we couldn't sign you in.": [
+        "您的账户已创建，但我们无法为您登录。"
+      ],
+      "your entire business": [
+        "您的整个企业"
       ]
     },
     "Signup label": {
@@ -25472,6 +25598,9 @@
       ],
       "/year": [
         "/年"
+      ],
+      "/user/month": [
+        "/用户/月"
       ]
     },
     "Suffix for price": {
@@ -27875,6 +28004,9 @@
       ],
       "Your subscriptions": [
         "您的账户等级"
+      ],
+      "Email address": [
+        "邮箱地址"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29504,6 +29636,11 @@
       ],
       "Yearly, ${ untilString }": [
         "每一年，${ untilString }"
+      ]
+    },
+    "Business signup action": {
+      "Start using ${ planTitle } now": [
+        "立即开始使用 ${ planTitle }"
       ]
     }
   }

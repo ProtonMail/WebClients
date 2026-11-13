@@ -9108,6 +9108,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Etwas ist beim Registrieren deines Sicherheitsschlüssels schief gelaufen. Bitte versuche es erneut."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Dieser Browser unterstützt keine Sicherheitsschlüssel. Bitte versuchen Sie es mit einem anderen Browser."
+      ],
+      "This security key is already registered to your account.": [
+        "Dieser Sicherheitsschlüssel ist bereits in deinem Konto registriert."
       ]
     },
     "fido2: Info": {
@@ -13996,7 +14002,7 @@
         "Wenn diese Funktion deaktiviert ist, verhindert sie, dass Bilddateien ohne dein Wissen auf dein Gerät geladen werden."
       ],
       "When disabled, this prevents remote images from loading without your knowledge.": [
-        "Wenn dies deaktiviert ist, wird verhindert, dass entferne Bilder ohne dein Wissen geladen werden."
+        "Wenn dies deaktiviert ist, wird verhindert, dass Bilder aus externen Quellen ohne dein Wissen geladen werden."
       ],
       "When enabled, members cannot opt out of password check-ins in their own settings.": [
         "Wenn aktiviert, können Mitglieder die Passwort-Check-ins nicht in ihren eigenen Einstellungen abmelden."
@@ -14579,6 +14585,9 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "Review and export the data for reporting or client invoicing.": [
+        "Überprüfe und exportiere die Daten für die Auswertung oder die Rechnungsstellung an Kunden."
       ]
     },
     "info": {
@@ -16994,6 +17003,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Billed average": [
+        "Durchschnittlicher Rechnungsbetrag"
       ]
     },
     "label": {
@@ -28347,6 +28359,12 @@
       ],
       "Your subscriptions": [
         "Deine Abonnements"
+      ],
+      "Billing periods": [
+        "Abrechnungszeiträume"
+      ],
+      "Monthly cost": [
+        "Monatliche Kosten"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

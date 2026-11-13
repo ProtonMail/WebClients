@@ -111,6 +111,12 @@
       ],
       "Verify domain": [
         "Vahvista verkkotunnus"
+      ],
+      "Export messages": [
+        "Vie viestejä"
+      ],
+      "iOS and Android apps": [
+        "iOS- ja Android-sovellukset"
       ]
     },
     "Accounts": {
@@ -294,7 +300,7 @@
         "Estä"
       ],
       "Bold": [
-        "Lihavointi"
+        "Lihavoi"
       ],
       "Cancel": [
         "Peruuta"
@@ -1065,7 +1071,7 @@
         "Laskuasetukset"
       ],
       "Italic": [
-        "Kursivointi"
+        "Kursivoi"
       ],
       "Keep": [
         "Säilytä"
@@ -1707,7 +1713,7 @@
         "Lopeta kertakirjautumisen käyttö"
       ],
       "Strikethrough": [
-        "Yliviivaus"
+        "Yliviivaa"
       ],
       "Submit": [
         "Lähetä"
@@ -1773,7 +1779,7 @@
         "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"
       ],
       "Underline": [
-        "Alleviivaus"
+        "Alleviivaa"
       ],
       "Undo import": [
         "Kumoa tuonti"
@@ -9517,7 +9523,7 @@
         "**Tuo olemassa olevat koodisi** muista 2FA-sovelluksista, kuten Google Authenticatorista"
       ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Kutsu kaverisi** ${ BRAND_NAME }:iin suosittelulinkilläsi."
+        "**Kutsu kaverisi** ${ BRAND_NAME }iin henkilökohtaisella suosittelulinkillä."
       ],
       "**Sync codes** to all your devices": [
         "**Synkronoi koodit** kaikkiin laitteisiisi"
@@ -13261,7 +13267,7 @@
         "Uusi viesti"
       ],
       "Next period": [
-        "Seuraava kausi"
+        "Seuraava jakso"
       ],
       "Open command panel": [
         "Avaa ohjauspaneeli"
@@ -13279,7 +13285,7 @@
         "Avaa tämä ruutu"
       ],
       "Previous period": [
-        "Edellinen kausi"
+        "Edellinen jakso"
       ],
       "Reply": [
         "Vastaus"
@@ -13360,7 +13366,7 @@
         "Viestien pikanäppäimet"
       ],
       "View options": [
-        "Näytä vaihtoehdot"
+        "Näkymän valinta"
       ]
     },
     "Keys actions": {
@@ -15804,7 +15810,7 @@
         "Yrityksille"
       ],
       "For individuals": [
-        "Yksityisille"
+        "Yksityishenkilöille"
       ]
     },
     "mail_signup_2025: Info": {
@@ -23642,7 +23648,7 @@
     },
     "Title": {
       "${ appName } keyboard shortcuts": [
-        "${ appName }-pikanäppäimet"
+        "${ appName } -pikanäppäimet"
       ],
       "${ BRAND_NAME } Account password rules": [
         "${ BRAND_NAME }-tilin salasanasäännöt"
@@ -25140,7 +25146,7 @@
         "Lähetetäänkö muistutuksia sähköpostitse?"
       ],
       "Send new invite?": [
-        "Lähetä uusi kutsu?"
+        "Lähetetäänkö uusi kutsu?"
       ],
       "Service": [
         "Palvelu"

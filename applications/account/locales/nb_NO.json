@@ -2605,6 +2605,9 @@
       ],
       "Permission revoked": [
         "Tillatelse tilbakekalt"
+      ],
+      "Sign-in": [
+        "Logg på"
       ]
     },
     "Admin": {
@@ -9155,6 +9158,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Tofaktorautentiseringsnøkkelen er klar til bruk."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Bruk enhetens fingeravtrykk, ansiktsgjenkjenning, PIN-kode eller skjermlås"
       ]
     },
     "fido2: Label": {
@@ -16963,6 +16969,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Billed average": [
+        "Fakturert gjennomsnitt"
       ]
     },
     "label": {
@@ -21615,6 +21624,27 @@
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Den ideelle planen for avanserte brukere som prioriterer personvern."
+      ],
+      "Confidential video conferencing for your business.": [
+        "Konfidensielle videokonferanser for din bedrift."
+      ],
+      "Essential privacy and security suite for your business.": [
+        "Viktig personvern- og sikkerhetspakke for bedriften din."
+      ],
+      "Next-level password management for your business.": [
+        "Neste nivå innen passordhåndtering for bedriften din."
+      ],
+      "Premium privacy and security suite for your business.": [
+        "Premium pakke med personvern- og sikkerhetsløsninger for bedriften din."
+      ],
+      "Privacy-first AI writing assistant for your business.": [
+        "AI-skriveassistent med personvern i fokus for din bedrift."
+      ],
+      "Secure cloud storage and file sharing for your business.": [
+        "Sikker skylagring og fildeling for bedriften din."
+      ],
+      "Secure, high-speed VPN access for your business.": [
+        "Sikker, høyhastighets VPN-tilgang for bedriften din."
       ]
     },
     "Plans": {
@@ -23891,6 +23921,51 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Du er invitert til å bli med over 100 millioner mennesker som valgte å beholde kontrollen over dataene sine med ${ BRAND_NAME }s krypterte økosystem."
+      ],
+      "Business information": [
+        "Bedriftsinformasjon"
+      ],
+      "Checkout": [
+        "Til kassen"
+      ],
+      "Claim your additional ${ referralDiscountPercent }% discount": [
+        "Gjør krav på din ekstra rabatt på ${ referralDiscountPercent } %"
+      ],
+      "Confirmation": [
+        "Bekreftelse"
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Opprett din ${ BRAND_NAME }-konto"
+      ],
+      "Encrypted solutions to protect": [
+        "Krypterte løsninger for å beskytte"
+      ],
+      "For ${ countryElement }": [
+        "For ${ countryElement }"
+      ],
+      "Get an additional ${ referralDiscountPercent }% off your first year of ${ BRAND_NAME } for Business": [
+        "Få ytterligere ${ referralDiscountPercent } % rabatt på ditt første år med ${ BRAND_NAME } for Business"
+      ],
+      "Taxes may apply.": [
+        "Det kan påløpe avgifter."
+      ],
+      "Unlimited vaults for your passwords": [
+        "Ubegrenset antall passordhvelv"
+      ],
+      "We couldn't finish setting up your account. Please contact support.": [
+        "Vi kunne ikke fullføre oppsettet av kontoen din. Ta kontakt med kundestøtte."
+      ],
+      "WS Premium": [
+        "WS premium"
+      ],
+      "WS Standard": [
+        "WS Standard"
+      ],
+      "You're invited to join 100,000+ organizations that protect their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "Du er invitert til å bli en av mer enn 100 000 organisasjoner som beskytter dataene sine med ${ BRAND_NAME }s krypterte økosystem."
+      ],
+      "your entire business": [
+        "Hele bedriften din"
       ]
     },
     "Signup label": {
@@ -25805,6 +25880,9 @@
       ],
       "/year": [
         "/år"
+      ],
+      "/user/month": [
+        "/bruker/måned"
       ]
     },
     "Suffix for price": {
@@ -28229,6 +28307,12 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Billing periods": [
+        "Faktureringsperioder"
+      ],
+      "Monthly cost": [
+        "Månedlig kostnad"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29909,6 +29993,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Årlig, ${ untilString }"
+      ]
+    },
+    "Business signup action": {
+      "Start using ${ planTitle } now": [
+        "Begynn å bruke ${ planTitle } nå"
       ]
     }
   }

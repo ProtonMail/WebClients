@@ -2293,6 +2293,9 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Restrict sign-in": [
+        "Begränsa inloggning"
       ]
     },
     "action": {
@@ -2871,6 +2874,9 @@
       ],
       "Premium versions of all ${ BRAND_NAME } services": [
         "Premiumversioner av alla ${ BRAND_NAME }-tjänster"
+      ],
+      "The ${ planName } plan is back for a limited time only": [
+        "Paketet ${ planName } är tillbaka endast under en begränsad tid"
       ]
     },
     "bf2023: info": {
@@ -8843,6 +8849,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Något gick fel när din säkerhetsnyckel registrerades. Försök igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Den här webbläsaren stödjer inte säkerhetsnycklar. Var vänlig försök med en annan webbläsare."
+      ],
+      "This security key is already registered to your account.": [
+        "Den här säkerhetsnyckeln är redan registrerad på ditt konto."
       ]
     },
     "fido2: Info": {
@@ -13914,6 +13926,9 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "Review and export the data for reporting or client invoicing.": [
+        "Granska och exportera datan för rapportering eller klientfakturering."
       ]
     },
     "info": {
@@ -16276,6 +16291,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Billed average": [
+        "Fakturerat genomsnitt"
       ]
     },
     "label": {
@@ -20340,6 +20358,18 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } är endast tillgängligt på företagspaket."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Det valda paketet stöder inte tillräckligt med adresser för ditt konto."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Detta paket stöder inte medlemmar på ditt konto."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Denna prenumeration kan inte slutföras just nu. Försök igen."
       ]
     },
     "Payments.Error": {
@@ -20778,7 +20808,7 @@
         "Säker molnlagring och samarbete för team."
       ],
       "Secure cloud storage and file sharing for your business.": [
-        "Säker molnlagring och fildelning för din verksamhet."
+        "Säker molnlagring och fildelning för ditt företag."
       ],
       "Secure, high-speed VPN access for your business.": [
         "Säkra, hög-hastighets VPNtillgång för din verksamhet."
@@ -22731,7 +22761,7 @@
         "Paket"
       ],
       "Business information": [
-        "Verksamhetsinformation"
+        "Företagsinformation"
       ],
       "Checkout": [
         "Kassa"
@@ -22776,7 +22806,7 @@
         "Skapa konto"
       ],
       "Create your ${ BRAND_NAME } account": [
-        "Skapa ditt ${ BRAND_NAME } konto "
+        "Skapa ditt ${ BRAND_NAME }-konto"
       ],
       "Creating your account": [
         "Skapar ditt konto"
@@ -22866,7 +22896,7 @@
         "Lösenordsskyddade meddelanden"
       ],
       "Pick a plan to get started.": [
-        "Välj en plan för att komma igång."
+        "Välj ett paket för att komma igång."
       ],
       "Pick a service to get started.": [
         "Välj en tjänst för att komma igång."
@@ -27321,6 +27351,15 @@
       ],
       "Your subscriptions": [
         "Din prenumeration"
+      ],
+      "Billing periods": [
+        "Faktureringsperioder"
+      ],
+      "Monthly cost": [
+        "Månadskostnad"
+      ],
+      "Restrict sign-in?": [
+        "Begränsa inloggning?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

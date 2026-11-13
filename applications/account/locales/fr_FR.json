@@ -8731,6 +8731,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Une erreur s'est produite lors de l'enregistrement de votre clé de sécurité. Nous vous invitons à réessayer."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Ce navigateur ne prend pas en charge les clés de sécurité. Veuillez essayer un autre navigateur."
+      ],
+      "This security key is already registered to your account.": [
+        "Cette clé de sécurité est déjà associée à votre compte."
       ]
     },
     "fido2: Info": {
@@ -13964,6 +13970,12 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "Review and export the data for reporting or client invoicing.": [
+        "Consultez et exportez les données à des fins de reporting ou de facturation des clients."
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Cette adresse Gmail est associée à un autre compte ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } et autres). Nous travaillons à rendre cette connexion plus fluide, mais pour l'instant, vous devrez suivre quelques étapes."
       ]
     },
     "info": {
@@ -16350,6 +16362,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Billed average": [
+        "Moyenne de facturation"
       ]
     },
     "label": {
@@ -18820,7 +18835,7 @@
     },
     "ngc_access_banner: action": {
       "Try it now": [
-        "Essayez-la maintenant"
+        "Essayez-le maintenant"
       ]
     },
     "ngc_access_banner: info": {
@@ -22927,7 +22942,7 @@
         "Créer un compte"
       ],
       "Creating your account": [
-        "Création de votre compte"
+        "Création de votre compte en cours"
       ],
       "Custom email domain": [
         "Domaine de messagerie personnalisé"
@@ -27168,7 +27183,7 @@
         "Mise à niveau vers ${ planName }"
       ],
       "Upgrade to keep your premium benefits.": [
-        "Passez à la version supérieure pour conserver vos avantages premium."
+        "Changer d'abonnement pour conserver vos avantages premium."
       ],
       "Upgrade your network protection with dedicated servers": [
         "Améliorez la protection de votre réseau avec des serveurs dédiés"
@@ -27373,6 +27388,12 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "Billing periods": [
+        "Période de facturation"
+      ],
+      "Monthly cost": [
+        "Coût mensuel"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

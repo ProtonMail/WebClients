@@ -9108,6 +9108,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Qualcosa è andato storto durante la registrazione della tua chiave di sicurezza. Per favore riprova."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Questo browser non supporta le chiavi di sicurezza. Provare con un altro browser."
+      ],
+      "This security key is already registered to your account.": [
+        "Questa chiave di sicurezza è già registrata al tuo account."
       ]
     },
     "fido2: Info": {
@@ -14579,6 +14585,9 @@
       ],
       "Zoom meeting": [
         "Meeting Zoom"
+      ],
+      "Review and export the data for reporting or client invoicing.": [
+        "Controlla ed esporta i dati per la rendicontazione o la fatturazione ai clienti."
       ]
     },
     "info": {
@@ -16994,6 +17003,9 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Billed average": [
+        "Tariffa media fatturata"
       ]
     },
     "label": {
@@ -21651,7 +21663,7 @@
         "Sconfiggi spam, tracciamento e annunci con un'email crittografata e un calendario sicuro."
       ],
       "Essential privacy and security suite for your business.": [
-        "Una suite indispensabile per la privacy e la sicurezza della tua azienda."
+        "Un pacchetto indispensabile per la riservatezza e la sicurezza della tua azienda."
       ],
       "For next-level password management and identity protection.": [
         "Per una gestione delle password e protezione dell'identità di livello superiore."
@@ -21666,19 +21678,19 @@
         "Perfetto per iniziare con l'archiviazione cloud sicura."
       ],
       "Premium privacy and security suite for your business.": [
-        "Suite premium per la privacy e la sicurezza della tua azienda."
+        "Pacchetto esclusivo per la riservatezza e la sicurezza della tua azienda."
       ],
       "Privacy suite with premium services and ${ unlimitedPlanMaxSpace } of encrypted cloud storage, all in one bundle.": [
         "Suite per la privacy con servizi premium e ${ unlimitedPlanMaxSpace } di archiviazione cloud crittografata, tutto in un unico pacchetto."
       ],
       "Privacy-first AI writing assistant for your business.": [
-        "Un assistente di scrittura basato sull'intelligenza artificiale che mette al primo posto la privacy per la tua azienda."
+        "Un assistente di scrittura basato sull'intelligenza artificiale che mette al primo posto la riservatezza per la tua azienda."
       ],
       "Secure cloud storage and collaboration for teams.": [
         "Archiviazione cloud sicura e collaborazione per i team."
       ],
       "Secure cloud storage and file sharing for your business.": [
-        "Archiviazione sicura su cloud e condivisione di file per la tua azienda."
+        "Archiviazione sicura sulla nuvola digitale e condivisione di file per la tua azienda."
       ],
       "Secure, high-speed VPN access for your business.": [
         "Accesso VPN sicuro e ad alta velocità per la tua azienda."
@@ -25919,7 +25931,7 @@
         "/utente al mese"
       ],
       "/user/month": [
-        "/ utente/mese"
+        "/utente/mese"
       ],
       "/year": [
         "/anno"
@@ -28347,6 +28359,12 @@
       ],
       "Your subscriptions": [
         "I tuoi abbonamenti"
+      ],
+      "Billing periods": [
+        "Periodo di fatturazione"
+      ],
+      "Monthly cost": [
+        "Costo mensile"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

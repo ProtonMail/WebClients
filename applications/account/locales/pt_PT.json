@@ -5551,7 +5551,7 @@
     },
     "drive_signup_2024: Info": {
       "**Collaborative:** online document editor": [
-        "**Colaborativo:** editor de documento on-line"
+        "**Colaborativa:** editor de documento ''on-line''"
       ],
       "**GDPR** and **HIPAA** compliant": [
         "Conformidade com o **RGPD** e **HIPAA**"
@@ -5560,16 +5560,16 @@
         "**Certificação** ISO 27001"
       ],
       "**Secure:** end-to-end encryption": [
-        "**Seguro:** encriptação de ponta a ponta"
+        "**Segura:** encriptação de ponta a ponta"
       ],
       "**Simple and user-friendly:** import your files and setup in minutes": [
-        "**Simples e intuitivo**: importe os seus ficheiros e configure tudo em poucos minutos."
+        "**Simples e intuitiva**: importe os seus ficheiros e configure em poucos minutos"
       ],
       "Advanced protection that goes beyond industry standards": [
         "Proteção avançada que ultrapassa os padrões da indústria"
       ],
       "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
-        "Junte-se às mais de 50,0000 organizações que já se beneficiam da segurança da ${ BRAND_NAME }"
+        "Junte-se às mais de 50,0000 organizações que já beneficiam da segurança da ${ BRAND_NAME }"
       ],
       "Protect sensitive business information and collaborate securely": [
         "Proteja as informações sensíveis do seu negócio e colabore com segurança"
@@ -9746,7 +9746,7 @@
         "Reembolso garantido durante 30 dias"
       ],
       "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
-        "Garantia de reembolso em 30 dias: cancele até 30 dias depois da compra e contacte o nosso ${ customerSupportLink } para solicitar um reembolso."
+        "Garantia de reembolso do dinheiro em 30 dias: cancele até 30 dias da sua compra e contacte o nosso ${ customerSupportLink } para obter um reembolso."
       ],
       "A ${ protonSubdomain } is hosted by ${ BRAND_NAME }, which allows you to quickly set up a subdomain. ${ learnMoreLink }": [
         "Um ${ protonSubdomain } é alojado por a ${ BRAND_NAME }, o que lhe permite configurar rapidamente um subdomínio. ${ learnMoreLink }"
@@ -13028,6 +13028,12 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "If disabled, organization members won't be able to add 2FA codes to their items, and existing ones won't be generated or autofilled. Nothing is deleted.": [
+        "Se desativada, a opção impedirá os membros da organização de adicionar códigos de autenticação de dois fatores (2FA) aos seus itens, e os códigos existentes não serão gerados nem preenchidos automaticamente. Nada será eliminado."
+      ],
+      "If disabled, organization members won't be able to save passkeys in ${ PASS_APP_NAME } or sign in with them. Nothing is deleted.": [
+        "Se desativada, os membros da organização não poderão guardar as chaves de acesso no ${ PASS_APP_NAME } ou autenticarem-se. Nada será eliminado."
       ]
     },
     "info": {
@@ -13794,7 +13800,7 @@
         "Permitir armazenamento de códigos de 2FA"
       ],
       "Allow storing passkeys": [
-        "Permitir armazenamento de códigos de acesso"
+        "Permitir armazenamento de chaves de acesso"
       ],
       "Allowed Domain": [
         "Domínio permitido"
@@ -19282,6 +19288,15 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "A sua subscrição beneficia atualmente de um desconto. Ao aderir a esta nova promoção, o desconto atual deixará de ser aplicado."
+      ],
+      "Born Private accounts can’t be purchased with an active subscription.": [
+        "As contas de Born Private não podem ser compradas com uma subscrição ativa."
+      ],
+      "The Born Private initiative requires a donation.": [
+        "A iniciativa Born Private requer uma doação."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "A sua conta é muito antiga para a iniciativa de Born Private."
       ]
     },
     "Payments.Error": {
@@ -21897,7 +21912,7 @@
         "Funcionalidades de segurança avançadas do ${ BRAND_NAME }"
       ],
       "Advanced sharing security": [
-        "Segurança avançada de partilha"
+        "Segurança de partilha avançada"
       ],
       "Apps for all devices": [
         "Aplicações para todos os dispositivos"
@@ -26725,6 +26740,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Poderá atribuir cargos assim que o utilizador aceitar o convite."
+      ],
+      "This user gets administrator rights the next time they sign in.": [
+        "Este utilizador obtém direitos de administrador na próxima vez que se autenticar."
       ]
     },
     "Users table: badge": {
@@ -27376,6 +27394,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee: cancel within 30 days of your purchase and contact our ${ customerSupportLink } to obtain a refund.": [
+        "Garantia de reembolso do dinheiro em 30 dias: cancele até 30 dias da sua compra e contacte o nosso ${ customerSupportLink } para obter um reembolso."
       ]
     }
   }

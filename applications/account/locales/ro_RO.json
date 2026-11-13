@@ -2356,6 +2356,9 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Manage subscriptions": [
+        "Gestionare abonamente"
       ]
     },
     "action": {
@@ -9165,6 +9168,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Ceva a funcționat greșit la înregistrarea cheii de securitate. Reîncercați."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Acest navigator web nu acceptă chei de securitate. Încercați un alt navigator web."
+      ],
+      "This security key is already registered to your account.": [
+        "Această cheie de securitate este deja înregistrată în cont."
       ]
     },
     "fido2: Info": {
@@ -9226,6 +9235,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Cheia de autentificare cu doi factori este pregătită de utilizare."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Folosiți amprenta, fața, PIN-ul sau blocarea ecranului dispozitivului"
       ]
     },
     "fido2: Label": {
@@ -14698,6 +14710,27 @@
       ],
       "Zoom meeting": [
         "o conferință pe Zoom"
+      ],
+      "Adds a Meet link to events with at least one participant.": [
+        "Adaugă o legătură web Meet la evenimentele cu cel puțin un participant."
+      ],
+      "Review and export the data for reporting or client invoicing.": [
+        "Revizuiți și exportați datele pentru raportare sau facturare către clienți."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by email**.": [
+        "Pentru a asigura cea mai înaltă securitate posibilă a contului, dezactivați **Recuperarea prin e-mail**."
+      ],
+      "To ensure the highest possible security of your account, disable **Recovery by phone**.": [
+        "Pentru a asigura cea mai înaltă securitate posibilă a contului, dezactivați **Recuperarea prin număr de telefon**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by email** disabled.": [
+        "Pentru a vă asigura cel mai înalt nivel posibil de securitate a contului, mențineți dezactivată opțiunea **Recuperare prin e-mail**."
+      ],
+      "To ensure the highest possible security of your account, keep **Recovery by phone** disabled.": [
+        "Pentru a vă asigura cel mai înalt nivel posibil de securitate a contului, mențineți dezactivată opțiunea **Recuperare prin număr de telefon**."
+      ],
+      "You still need to reply for the organizer to see your response.": [
+        "Trebuie totuși să răspundeți, pentru ca organizatorul să vă poată vedea răspunsul."
       ]
     },
     "info": {
@@ -15554,7 +15587,7 @@
         "Aplicare regulă la"
       ],
       "Ask members to set up 2FA": [
-        "Solicitați membrilor să-și activeze A2F"
+        "Solicitați membrilor activarea A2F"
       ],
       "Assertion Consumer Service URL": [
         "URL ACS (Assertion Consumer Service)"
@@ -17122,6 +17155,9 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Billed average": [
+        "Media facturată"
       ]
     },
     "label": {
@@ -20169,7 +20205,7 @@
         "Adăugare la grup existent"
       ],
       "Allowed ${ defaultLabel }": [
-        "${ defaultLabel } permis"
+        "Permis ${ defaultLabel }"
       ],
       "Allowed (default)": [
         "Permis (implicit)"
@@ -20268,7 +20304,7 @@
         "Activat"
       ],
       "Optional ${ defaultLabel }": [
-        "${ defaultLabel } opțional"
+        "Opțional ${ defaultLabel }"
       ],
       "Organization only": [
         "Doar de la organizație"
@@ -21862,6 +21898,27 @@
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Planul ideal pentru utilizatorii avansați preocupați de confidențialitate."
+      ],
+      "Confidential video conferencing for your business.": [
+        "Conferințe video confidențiale pentru afacerea proprie."
+      ],
+      "Essential privacy and security suite for your business.": [
+        "Suită esențială de confidențialitate și securitate pentru afacerea proprie."
+      ],
+      "Next-level password management for your business.": [
+        "Următorul nivel de gestionare a parolelor pentru afaceri."
+      ],
+      "Premium privacy and security suite for your business.": [
+        "Suită premium de confidențialitate și securitate pentru afacerea proprie."
+      ],
+      "Privacy-first AI writing assistant for your business.": [
+        "Asistent de scriere bazat pe IA, cu confidențialitate prioritară, pentru afacerea proprie."
+      ],
+      "Secure cloud storage and file sharing for your business.": [
+        "Stocare în cloud și partajare de fișiere securizate pentru afacerea proprie."
+      ],
+      "Secure, high-speed VPN access for your business.": [
+        "Acces la VPN securizat și de mare viteză pentru afacerea proprie."
       ]
     },
     "Plans": {
@@ -24148,6 +24205,87 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Vă invităm să vă alăturați celor peste 100 de milioane de persoane care au ales să-și păstreze controlul datelor cu ecosistemul criptat al ${ BRAND_NAME }."
+      ],
+      "${ renewalPriceElement } after the first 12 months": [
+        "${ renewalPriceElement } după primele 12 luni"
+      ],
+      "Billed yearly": [
+        "Facturat anual"
+      ],
+      "Billed yearly, renews on ${ renewalTime }": [
+        "Facturat anual, se reînnoiește la ${ renewalTime }"
+      ],
+      "Business information": [
+        "Date companie"
+      ],
+      "Checkout": [
+        "Finalizare"
+      ],
+      "Claim your additional ${ referralDiscountPercent }% discount": [
+        "Revendicați reducerea suplimentară de ${ referralDiscountPercent } %"
+      ],
+      "Confirmation": [
+        "Confirmare"
+      ],
+      "Coupon": [
+        "Cupon"
+      ],
+      "Create account": [
+        "Creare cont"
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Creați-vă contul ${ BRAND_NAME }"
+      ],
+      "Creating your account": [
+        "Creare cont"
+      ],
+      "Discount": [
+        "Reducere"
+      ],
+      "Encrypted solutions to protect": [
+        "Aplicații criptate pentru protecție"
+      ],
+      "For ${ countryElement }": [
+        "Cu ${ countryElement }"
+      ],
+      "Get an additional ${ referralDiscountPercent }% off your first year of ${ BRAND_NAME } for Business": [
+        "Obțineți o reducere suplimentară de ${ referralDiscountPercent } % pentru primul an de ${ BRAND_NAME } for Business"
+      ],
+      "Pick a plan to get started.": [
+        "Alegeți un plan pentru a începe."
+      ],
+      "Something went wrong": [
+        "Ceva nu a funcționat corect"
+      ],
+      "Summary": [
+        "Rezumat"
+      ],
+      "Taxes may apply.": [
+        "Se pot aplica taxe."
+      ],
+      "Unlimited vaults for your passwords": [
+        "Seifuri nelimitate pentru parole"
+      ],
+      "Users": [
+        "Utilizatori"
+      ],
+      "We couldn't finish setting up your account. Please contact support.": [
+        "Nu vi s-a putut finaliza configurarea contului. Contactați serviciul de asistență."
+      ],
+      "WS Premium": [
+        "WS Premium"
+      ],
+      "WS Standard": [
+        "WS Standard"
+      ],
+      "You're invited to join 100,000+ organizations that protect their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "Vă invităm să vă alăturați celor peste 100.000 de organizații care își protejează datele cu ajutorul ecosistemului criptat oferit de către ${ BRAND_NAME }."
+      ],
+      "Your account has been created, but we couldn't sign you in.": [
+        "Contul v-a fost creat, dar nu v-am putut autentifica."
+      ],
+      "your entire business": [
+        "întreaga afacere"
       ]
     },
     "Signup label": {
@@ -26101,6 +26239,9 @@
       ],
       "/year": [
         "/an"
+      ],
+      "/user/month": [
+        "/utilizator/lună"
       ]
     },
     "Suffix for price": {
@@ -28540,6 +28681,15 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "Billing periods": [
+        "Perioade de facturare"
+      ],
+      "Email address": [
+        "Adresa de e-mail"
+      ],
+      "Monthly cost": [
+        "Cheltuieli lunare"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -30268,6 +30418,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Anual, ${ untilString }"
+      ]
+    },
+    "Business signup action": {
+      "Start using ${ planTitle } now": [
+        "Începeți să utilizați ${ planTitle } acum"
       ]
     }
   }
