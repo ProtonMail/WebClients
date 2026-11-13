@@ -858,6 +858,12 @@
       ],
       "Ignore": [
         "Ignorovať"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Zatvoriť upozornenia systému Pass Monitor"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Otovirť upozornenia systému Pass Monitor"
       ]
     },
     "Activity": {
@@ -1031,6 +1037,15 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Vaše osobné údaje boli zverejnené pri úniku údajov zo služby tretej strany."
+      ],
+      "${ count } more": [
+        "${ count } ďalší",
+        "${ count } ďalšie",
+        "${ count } ďalších",
+        "${ count } ďalších"
+      ],
+      "This login uses the same password as another item.": [
+        "Toto prihlásenie používa rovnaké heslo ako iná položka."
       ]
     },
     "Email": {
@@ -1623,6 +1638,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš PIN kód bol odstránený iným klientom ${ PASS_APP_NAME }"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Aktualizácia stavu monitorovania tejto položky zlyhala"
       ]
     },
     "Error message": {
@@ -1883,6 +1901,15 @@
       ],
       "your username": [
         "vaše používateľské meno"
+      ],
+      "Click ${ exportLabel }.": [
+        "Kliknite na ${ exportLabel }"
+      ],
+      "CSV...": [
+        "CSV..."
+      ],
+      "Open ${ name } and select ${ file } → ${ exportLabel } → ${ csv }.": [
+        "Otvorte ${ name } a vyberte ${ file } → ${ exportLabel } → ${ csv }."
       ]
     },
     "Info": {
@@ -3466,6 +3493,12 @@
       ],
       "Starting ${ PASS_APP_NAME } offline will require your second password.": [
         "Na spustenie ${ PASS_APP_NAME } v režime offline budete potrebovať vaše druhé heslo."
+      ],
+      "Alert restored": [
+        "Varovanie bolo obnovené"
+      ],
+      "Check ignored": [
+        "Kontrola bola ignorovaná"
       ]
     },
     "Keyboard key": {
@@ -5990,6 +6023,15 @@
       ],
       "Move all items to \"${ target }\"?": [
         "Presunúť všetky položky do \"${ target }\"?"
+      ],
+      "Missing 2FA": [
+        "Chýbajúca 2FA"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Reused password": [
+        "Viacnásobne použité heslo"
       ]
     },
     "Title_cloned_item": {

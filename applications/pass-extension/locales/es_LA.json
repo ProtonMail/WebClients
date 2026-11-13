@@ -854,6 +854,12 @@
       ],
       "Ignore": [
         "Ignorar"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Contraer alertas de Pass Monitor"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Expandir alertas de Pass Monitor"
       ]
     },
     "Activity": {
@@ -1023,6 +1029,13 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Su información personal fue filtrada en una vulneración de datos de un servicio de terceros."
+      ],
+      "${ count } more": [
+        "${ count } más",
+        "${ count } más"
+      ],
+      "This login uses the same password as another item.": [
+        "Este inicio de sesión usa la misma contraseña que otro elemento."
       ]
     },
     "Email": {
@@ -1609,6 +1622,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Se eliminó el código PIN desde otro cliente de ${ PASS_APP_NAME }."
+      ],
+      "Failed updating monitoring status for this item": [
+        "Error al actualizar el estado de monitoreo para este elemento"
       ]
     },
     "Error message": {
@@ -1855,6 +1871,15 @@
       ],
       "your username": [
         "su nombre de usuario"
+      ],
+      "Click ${ exportLabel }.": [
+        "Pulse ${ exportLabel }."
+      ],
+      "CSV...": [
+        "CSV..."
+      ],
+      "Open ${ name } and select ${ file } → ${ exportLabel } → ${ csv }.": [
+        "Abra ${ name } y seleccione ${ file } → ${ exportLabel } → ${ csv }."
       ]
     },
     "Info": {
@@ -3390,6 +3415,12 @@
       ],
       "Starting ${ PASS_APP_NAME } offline will require your second password.": [
         "Iniciar ${ PASS_APP_NAME } sin conexión requerirá su segunda contraseña."
+      ],
+      "Alert restored": [
+        "Alerta restaurada"
+      ],
+      "Check ignored": [
+        "Comprobación ignorada"
       ]
     },
     "Keyboard key": {
@@ -5864,6 +5895,15 @@
       ],
       "Move all items to \"${ target }\"?": [
         "¿Mover todos los elementos a «${ target }»?"
+      ],
+      "Missing 2FA": [
+        "Falta el 2FA"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Reused password": [
+        "Contraseña reusada"
       ]
     },
     "Title_cloned_item": {

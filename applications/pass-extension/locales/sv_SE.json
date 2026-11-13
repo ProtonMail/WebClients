@@ -845,6 +845,12 @@
       ],
       "Ignore": [
         "Ignorera"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Komprimera varningar från Pass Monitor"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Expandera Pass Monitor varningar"
       ]
     },
     "Activity": {
@@ -1011,6 +1017,13 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Din personliga information läckte i ett dataintrång från en tredjepartstjänst."
+      ],
+      "${ count } more": [
+        "${ count } mer",
+        "${ count } mer"
+      ],
+      "This login uses the same password as another item.": [
+        "Den här inloggningen använder samma lösenord som ett annat objekt."
       ]
     },
     "Email": {
@@ -1597,6 +1610,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Din PIN-kod togs bort av en annan ${ PASS_APP_NAME }-klient"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Misslyckades att uppdatera övervakningsstatus för det här objektet"
       ]
     },
     "Error message": {
@@ -3268,6 +3284,12 @@
       ],
       "Starting ${ PASS_APP_NAME } offline will require your second password.": [
         "Att starta ${ PASS_APP_NAME } offline kommer att kräva ditt andra lösenord."
+      ],
+      "Alert restored": [
+        "Varningen återställd"
+      ],
+      "Check ignored": [
+        "Koll ignorerades"
       ]
     },
     "Keyboard key": {
@@ -5691,6 +5713,15 @@
       ],
       "Move all items to \"${ target }\"?": [
         "Flytta alla objekt till “${ target }“?"
+      ],
+      "Missing 2FA": [
+        "Saknar 2FA"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Reused password": [
+        "Återanvänt lösenord"
       ]
     },
     "Title_cloned_item": {

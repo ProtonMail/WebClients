@@ -854,6 +854,12 @@
       ],
       "Ignore": [
         "Ignora"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Comprimi gli avvisi di Pass Monitor"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Espandi gli avvisi di Pass Monitor"
       ]
     },
     "Activity": {
@@ -1023,6 +1029,13 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Le tue informazioni personali sono state rese pubbliche a causa di una violazione di dati di un servizio di terze parti."
+      ],
+      "${ count } more": [
+        "${ count } in più",
+        "${ count } in più"
+      ],
+      "This login uses the same password as another item.": [
+        "Questo login utilizza la stessa password di un altro elemento."
       ]
     },
     "Email": {
@@ -1609,6 +1622,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Il tuo codice PIN è stato rimosso da un altro client ${ PASS_APP_NAME }"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Aggiornamento dello stato di monitoraggio per questo elemento non riuscito"
       ]
     },
     "Error message": {
@@ -3399,6 +3415,12 @@
       ],
       "Starting ${ PASS_APP_NAME } offline will require your second password.": [
         "Per avviare ${ PASS_APP_NAME } offline, sarà necessaria la tua seconda password."
+      ],
+      "Alert restored": [
+        "Avviso ripristinato"
+      ],
+      "Check ignored": [
+        "Controllo ignorato"
       ]
     },
     "Keyboard key": {
@@ -5873,6 +5895,15 @@
       ],
       "Move all items to \"${ target }\"?": [
         "Spostare tutti gli elementi in \"${ target }\"?"
+      ],
+      "Missing 2FA": [
+        "Autenticazione a due fattori mancante"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Reused password": [
+        "Password riutilizzata"
       ]
     },
     "Title_cloned_item": {

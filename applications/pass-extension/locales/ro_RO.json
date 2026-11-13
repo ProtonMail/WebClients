@@ -856,6 +856,12 @@
       ],
       "Ignore": [
         "Ignorare"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Restrângere alerte Pass Monitor"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Extendere alerte Pass Monitor"
       ]
     },
     "Activity": {
@@ -1027,6 +1033,14 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Informațiile personale v-au fost divulgate într-o compromitere a datelor a unui serviciu terță parte."
+      ],
+      "${ count } more": [
+        "Încă ${ count }",
+        "Încă ${ count }",
+        "Încă ${ count }"
+      ],
+      "This login uses the same password as another item.": [
+        "Această autentificare folosește aceeași parolă ca un alt articol."
       ]
     },
     "Email": {
@@ -1616,6 +1630,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Codul dvs. PIN a fost eliminat de către alt utilizator al ${ PASS_APP_NAME }."
+      ],
+      "Failed updating monitoring status for this item": [
+        "Actualizarea stării de monitorizare pentru acest articol a eșuat."
       ]
     },
     "Error message": {
@@ -1869,6 +1886,15 @@
       ],
       "your username": [
         "numele de utilizator"
+      ],
+      "Click ${ exportLabel }.": [
+        "Clic ${ exportLabel }."
+      ],
+      "CSV...": [
+        "CSV..."
+      ],
+      "Open ${ name } and select ${ file } → ${ exportLabel } → ${ csv }.": [
+        "Deschideți ${ name } și accesați ${ file } → ${ exportLabel } → ${ csv }."
       ]
     },
     "Info": {
@@ -3428,6 +3454,12 @@
       ],
       "Starting ${ PASS_APP_NAME } offline will require your second password.": [
         "Pentru pornirea ${ PASS_APP_NAME } în mod local, va fi necesară parola secundară."
+      ],
+      "Alert restored": [
+        "Alertă restaurată"
+      ],
+      "Check ignored": [
+        "Verificare ignorată"
       ]
     },
     "Keyboard key": {
@@ -5927,6 +5959,15 @@
       ],
       "Move all items to \"${ target }\"?": [
         "Mutați toate articolele în „${ target }”?"
+      ],
+      "Missing 2FA": [
+        "Lipsește A2F"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Reused password": [
+        "Parolă refolosită"
       ]
     },
     "Title_cloned_item": {

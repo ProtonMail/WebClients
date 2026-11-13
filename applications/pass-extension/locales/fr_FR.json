@@ -848,6 +848,12 @@
       ],
       "Ignore": [
         "Ignorer"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Réduire les alertes de Pass Monitor"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Développer les alertes de Pass Monitor"
       ]
     },
     "Activity": {
@@ -1014,6 +1020,9 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Vos informations personnelles ont été divulguées dans une fuite de données provenant d'un service tiers."
+      ],
+      "This login uses the same password as another item.": [
+        "Cet identifiant utilise le même mot de passe qu'un autre élément."
       ]
     },
     "Email": {
@@ -1600,6 +1609,9 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Votre code PIN a été retiré par un autre client de ${ PASS_APP_NAME }."
+      ],
+      "Failed updating monitoring status for this item": [
+        "L'état de surveillance de cet élément n'a pas pu être mis à jour."
       ]
     },
     "Error message": {
@@ -1756,6 +1768,15 @@
       ],
       "your username": [
         "votre nom d’utilisateur"
+      ],
+      "Click ${ exportLabel }.": [
+        "Cliquez sur ${ exportLabel }."
+      ],
+      "CSV...": [
+        "CSV..."
+      ],
+      "Open ${ name } and select ${ file } → ${ exportLabel } → ${ csv }.": [
+        "Ouvrez ${ name } et sélectionnez ${ file } → ${ exportLabel } → ${ csv }."
       ]
     },
     "Info": {
@@ -3249,6 +3270,12 @@
       ],
       "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
         "Scannez le QR code pour télécharger ${ PASS_APP_NAME } pour iOS et Android."
+      ],
+      "Alert restored": [
+        "L'alerte a été restaurée."
+      ],
+      "Check ignored": [
+        "La vérification a été ignorée"
       ]
     },
     "Keyboard key": {
@@ -5669,6 +5696,15 @@
       ],
       "Move all items to \"${ target }\"?": [
         "Déplacer tous les éléments vers « ${ target } » ?"
+      ],
+      "Missing 2FA": [
+        "A2F manquante"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Reused password": [
+        "Mots de passe réutilisés"
       ]
     },
     "Title_cloned_item": {

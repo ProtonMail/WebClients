@@ -1025,6 +1025,12 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Адбылася ўцечка вашых асабістых звестак са старонняга сэрвісу."
+      ],
+      "${ count } more": [
+        "яшчэ ${ count }",
+        "яшчэ ${ count }",
+        "яшчэ ${ count }",
+        "яшчэ ${ count }"
       ]
     },
     "Email": {
@@ -1877,6 +1883,9 @@
       ],
       "your username": [
         "ваша імя карыстальніка"
+      ],
+      "CSV...": [
+        "CSV..."
       ]
     },
     "Info": {
@@ -3427,6 +3436,12 @@
       ],
       "The folder is already here": [
         "Папка ўжо тут"
+      ],
+      "Alert restored": [
+        "Абвестка адноўлена"
+      ],
+      "Check ignored": [
+        "Праверка праігнаравана"
       ]
     },
     "Keyboard key": {
@@ -5951,6 +5966,15 @@
       ],
       "Move all items to \"${ target }\"?": [
         "Перамясціць усе элементы ў «${ target }»?"
+      ],
+      "Missing 2FA": [
+        "Адсутнічае 2ФА"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Reused password": [
+        "Пароль выкарыстаны паўторна"
       ]
     },
     "Title_cloned_item": {
