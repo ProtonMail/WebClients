@@ -1,4 +1,4 @@
-import cssTree from 'css-tree';
+import * as cssTree from 'css-tree';
 import fs from 'fs';
 import tiny from 'tinycolor2';
 

@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import Counter from '../lib/Counter';
 import Histogram from '../lib/Histogram';
 import MetricsApi from '../lib/MetricsApi';
@@ -46,17 +48,17 @@ const time = new Date('2020-01-01');
 
 describe('metrics', () => {
     beforeAll(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     beforeEach(() => {
         fetchMock.resetMocks();
-        jest.clearAllTimers();
-        jest.setSystemTime(time);
+        vi.clearAllTimers();
+        vi.setSystemTime(time);
     });
 
     afterAll(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     describe('counter requests', () => {

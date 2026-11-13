@@ -1,20 +1,23 @@
+import { vi } from 'vitest';
+
 import MetricsApi from '../lib/MetricsApi';
 import MetricsBase from '../lib/MetricsBase';
 import MetricsRequestService from '../lib/MetricsRequestService';
 
-jest.mock('../lib/MetricsApi');
+vi.mock('../lib/MetricsApi');
 const metricsApi = new MetricsApi();
 
-jest.mock('../lib/MetricsRequestService', () => {
-    return jest.fn().mockImplementation(() => {
-        return {
-            api: metricsApi,
-            setReportMetrics: jest.fn(),
-            processAllRequests: jest.fn(),
-            stopBatchingProcess: jest.fn(),
-            startBatchingProcess: jest.fn(),
-        };
-    });
+vi.mock('../lib/MetricsRequestService', () => {
+    return {
+        default: class {
+            // Read lazily: `metricsApi` is only initialised once the module body runs
+            api = metricsApi;
+            setReportMetrics = vi.fn();
+            processAllRequests = vi.fn();
+            stopBatchingProcess = vi.fn();
+            startBatchingProcess = vi.fn();
+        },
+    };
 });
 
 const metricsRequestService = new MetricsRequestService(metricsApi, { reportMetrics: true });

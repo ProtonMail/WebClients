@@ -25,9 +25,9 @@
         "generate-metrics": "ts-node -P scripts/tsconfig.metrics-scripts.json ./scripts/generate-metrics.ts",
         "generate-schema-types": "bash scripts/generate-schema-types.sh",
         "lint": "oxlint --quiet",
-        "test": "jest",
-        "test:ci": "jest --runInBand --ci --logHeapUsage",
-        "test:watch": "jest --watch",
+        "test": "vitest",
+        "test:ci": "pnpm run test --run",
+        "test:watch": "pnpm run test --watch",
         "update-metrics": "rimraf json-schema-registry types && git clone $SCHEMA_REPOSITORY && pnpm run generate-schema-types && pnpm run generate-metrics"
     },
     "dependencies": {
@@ -37,18 +37,19 @@
         "web-vitals": "^4.2.4"
     },
     "devDependencies": {
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
-        "@types/jest": "catalog:",
+        "@proton/vitest-config": "workspace:^",
         "@types/node": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
-        "jest": "catalog:",
-        "jest-fetch-mock": "^3.2.0",
+        "@vitest/coverage-v8": "catalog:",
+        "happy-dom": "catalog:",
         "json-schema-to-typescript": "^13.1.2",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "rimraf": "^5.0.10",
-        "ts-node": "catalog:"
+        "ts-node": "catalog:",
+        "vitest": "catalog:",
+        "vitest-fetch-mock": "^0.4.5"
     }
 }

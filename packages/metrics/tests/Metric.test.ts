@@ -1,12 +1,14 @@
+import { vi } from 'vitest';
+
 import Metric from '../lib/Metric';
 import MetricsApi from '../lib/MetricsApi';
 import MetricsRequestService from '../lib/MetricsRequestService';
 import type MetricSchema from '../lib/types/MetricSchema';
 
-jest.mock('../lib/MetricsApi');
+vi.mock('../lib/MetricsApi');
 const metricsApi = new MetricsApi();
 
-jest.mock('../lib/MetricsRequestService');
+vi.mock('../lib/MetricsRequestService');
 const metricsRequestService = new MetricsRequestService(metricsApi, { reportMetrics: true });
 
 class MetricInstance<D extends MetricSchema> extends Metric<D> {}
