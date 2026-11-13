@@ -1,6 +1,6 @@
 import { IcBrandProtonDocs } from '@proton/icons/icons/IcBrandProtonDocs'
 import { IcBrandProtonSheets } from '@proton/icons/icons/IcBrandProtonSheets'
-import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
+import { CircleLoader } from '../components/CircleLoader'
 import type { TableVariant } from './DocumentsTable'
 import { DocumentsTable } from './DocumentsTable'
 import { InvitesTable } from './InvitesTable'

@@ -1,0 +1,50 @@
+/* Copy of drive/docs/realtime's packages/sheets-editor/src/components/CircleLoader/CircleLoader.css. */
+
+.homepage-circle-loader {
+  --homepage-circle-loader-total-length: 43.699px;
+  --homepage-circle-loader-looping-length: 26.2194px;
+  --homepage-circle-loader-stroke-width: 2;
+
+  display: inline-block;
+  inline-size: 1em;
+  block-size: 1em;
+  transform-origin: 50%;
+  font-size: 1em;
+  vertical-align: middle;
+}
+
+.homepage-circle-loader__track,
+.homepage-circle-loader__circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: var(--stroke-width, var(--homepage-circle-loader-stroke-width));
+}
+
+.homepage-circle-loader__track {
+  opacity: 0.2;
+}
+
+.homepage-circle-loader__circle {
+  animation: homepage-circle-loader-stroke 1s linear infinite;
+  stroke-dasharray:
+    var(--homepage-circle-loader-looping-length),
+    calc(var(--homepage-circle-loader-total-length) - var(--homepage-circle-loader-looping-length));
+}
+
+.homepage-circle-loader--large {
+  --homepage-circle-loader-stroke-width: 1;
+
+  /* Proton's em(48): 48px on the homepage's 14px text, where sheets-editor's 3em assumes 16px. */
+  font-size: calc(48em / 14);
+}
+
+@keyframes homepage-circle-loader-stroke {
+  from {
+    stroke-dashoffset: var(--homepage-circle-loader-total-length);
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}

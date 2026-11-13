@@ -1,4 +1,4 @@
-import { Avatar } from '@proton/atoms/Avatar/Avatar'
+import { Avatar } from '../components/atoms'
 import { IcArrowToCenterHorizontal } from '@proton/icons/icons/IcArrowToCenterHorizontal'
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark'
 import { IcChevronDown } from '@proton/icons/icons/IcChevronDown'
@@ -127,17 +127,7 @@ export function InvitesTable(props: InvitesTableProps) {
                 </Table.DataCell>
                 <Table.DataCell target="medium">
                   <span className="flex flex-nowrap items-center gap-2 overflow-hidden">
-                    <Avatar
-                      color="weak"
-                      className="min-w-custom max-w-custom max-h-custom bg-[--interaction-default-hover]"
-                      style={{
-                        '--min-w-custom': '28px',
-                        '--max-w-custom': '28px',
-                        '--max-h-custom': '28px',
-                      }}
-                    >
-                      {getInitials(invite.invitation.inviterEmail)}
-                    </Avatar>
+                    <Avatar>{getInitials(invite.invitation.inviterEmail)}</Avatar>
                     <span
                       className="text-pre flex-1 text-ellipsis"
                       data-testid="invite-shared-by"

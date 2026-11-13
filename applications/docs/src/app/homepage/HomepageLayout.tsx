@@ -30,7 +30,7 @@ import { IcTrash } from '@proton/icons/icons/IcTrash'
 import { APPS, DRIVE_APP_NAME } from './utils/apps'
 
 import { c } from 'ttag'
-import { Input } from '@proton/atoms/Input/Input'
+import { Input } from './components/atoms'
 import { IconButton } from './components/ui'
 import { HomepageStyleScope } from './HomepageStyleScope'
 import './HomepageLayout.css'
@@ -168,7 +168,7 @@ function Search({ value, onChange, type, className }: SearchProps) {
   return (
     <div className={className}>
       <Input
-        className="border-weak w-[clamp(21.25rem,100vw*.35-1.25rem,32.5rem)] focus-within:!border-[#bcb9b6] hover:!border-[#bcb9b6] [[data-theme-mode=dark]_&]:!border-[--background-weak] [[data-theme-mode=dark]_&]:!bg-[--background-weak] [[data-theme-mode=dark]_&]:focus-within:!border-[--border-norm] [[data-theme-mode=dark]_&]:hover:!border-[--border-norm]"
+        className="w-[clamp(21.25rem,100vw*.35-1.25rem,32.5rem)] border-[--border-weak] focus-within:!border-[#bcb9b6] hover:!border-[#bcb9b6] [[data-theme-mode=dark]_&]:!border-[--background-weak] [[data-theme-mode=dark]_&]:!bg-[--background-weak] [[data-theme-mode=dark]_&]:focus-within:!border-[--border-norm] [[data-theme-mode=dark]_&]:hover:!border-[--border-norm]"
         inputClassName="h-[32px] small:h-auto"
         onKeyDown={(event) => {
           if (event.key === 'Escape') {
@@ -227,7 +227,7 @@ function MobileSearch({ value, onChange, type, className }: SearchProps) {
               onChange(undefined)
             }
           }}
-          className="border-weak w-full max-w-[21.25rem] focus-within:!border-[#bcb9b6] hover:!border-[#bcb9b6] [[data-theme-mode=dark]_&]:!border-[--background-weak] [[data-theme-mode=dark]_&]:!bg-[--background-weak] [[data-theme-mode=dark]_&]:focus-within:!border-[--border-norm] [[data-theme-mode=dark]_&]:hover:!border-[--border-norm]"
+          className="w-full max-w-[21.25rem] border-[--border-weak] focus-within:!border-[#bcb9b6] hover:!border-[#bcb9b6] [[data-theme-mode=dark]_&]:!border-[--background-weak] [[data-theme-mode=dark]_&]:!bg-[--background-weak] [[data-theme-mode=dark]_&]:focus-within:!border-[--border-norm] [[data-theme-mode=dark]_&]:hover:!border-[--border-norm]"
           inputClassName="h-[32px] small:h-auto"
           prefix={
             <span>
