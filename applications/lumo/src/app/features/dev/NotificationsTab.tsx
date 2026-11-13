@@ -20,6 +20,15 @@ import {
 } from '../../redux/slices/meta/errors';
 import { isNativeComposerBridgeAvailable, onLimitReachedError } from '../../remote/nativeComposerBridgeHelpers';
 import { handleGenerationError } from '../../services/errors/errorHandling';
+import {
+    type FileAnalysisLimitNotice,
+    type FileAnalysisShortfall,
+    clearFileAnalysisLimitNotice,
+    setDebugStagedFileAnalysisShortfall,
+    setFileAnalysisLimitNotice,
+    useDebugStagedFileAnalysisShortfall,
+    useFileAnalysisLimitNotice,
+} from '../../services/fileAnalysisAllowance';
 import type { DebugMaxModelOverride } from '../../services/usageLimitsStore';
 import {
     getRemainingForModelTier,
@@ -52,6 +61,9 @@ const overrideLabel = (override: DebugLimitOverride) => {
 
 type Resource = 'messages' | 'assets' | 'conversations' | 'spaces';
 
+/** What the large-file upsell previews show: a file that needs more Lite questions than are left. */
+const SAMPLE_FILE_SHORTFALL: FileAnalysisShortfall = { fileNames: ['large-report.pdf'], needed: 12, remaining: 3 };
+
 interface NotificationsTabProps {
     currentConversationId: ConversationId | undefined;
     currentSpaceId: SpaceId | undefined;
@@ -66,6 +78,21 @@ export const NotificationsTab = ({ currentConversationId, currentSpaceId }: Noti
     const debugModelLimitsExhausted = useDebugModelLimitsExhausted();
     const remainingLimits = useRemainingLimits();
     const remainingMax = getRemainingForModelTier('lumo-max', remainingLimits);
+    const debugStagedShortfall = useDebugStagedFileAnalysisShortfall();
+    const fileAnalysisNotice = useFileAnalysisLimitNotice(currentConversationId);
+
+    const showFileAnalysisNotice = (stage: FileAnalysisLimitNotice['stage']) => {
+        if (currentConversationId) {
+            setFileAnalysisLimitNotice(currentConversationId, SAMPLE_FILE_SHORTFALL, stage);
+        }
+    };
+
+    const clearFileAnalysisPreviews = () => {
+        setDebugStagedFileAnalysisShortfall(undefined);
+        if (currentConversationId) {
+            clearFileAnalysisLimitNotice(currentConversationId);
+        }
+    };
 
     const triggerLimitError = (resource: Resource, limit: number) => {
         dispatch(
@@ -297,6 +324,47 @@ export const NotificationsTab = ({ currentConversationId, currentSpaceId }: Noti
                 <div className="debug-view-hint">
                     {c('lumo: Debug View')
                         .t`Forces Lite and Max pools to zero so you can preview the model-limit UpsellCard above the composer. Hidden for Plus accounts. Persists across reloads until switched off.`}
+                </div>
+            </div>
+
+            <div className="debug-view-header" style={{ marginTop: '12px' }}>
+                <span className="debug-view-header-icon">📄</span>
+                {c('lumo: Debug View').t`Large file upsell`}
+            </div>
+            <div className="debug-view-actions">
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() =>
+                        setDebugStagedFileAnalysisShortfall(debugStagedShortfall ? undefined : SAMPLE_FILE_SHORTFALL)
+                    }
+                >
+                    📎 {c('lumo: Debug View').t`Composer card`}:{' '}
+                    {debugStagedShortfall ? c('lumo: Debug View').t`on` : c('lumo: Debug View').t`off`}
+                </button>
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => showFileAnalysisNotice('stopped')}
+                    disabled={!currentConversationId}
+                >
+                    ✋ {c('lumo: Debug View').t`Show in chat: send stopped`}
+                </button>
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={() => showFileAnalysisNotice('skipped')}
+                    disabled={!currentConversationId}
+                >
+                    💬 {c('lumo: Debug View').t`Show in chat: answered without reading`}
+                </button>
+                <button
+                    className="debug-view-btn debug-view-btn--secondary"
+                    onClick={clearFileAnalysisPreviews}
+                    disabled={!debugStagedShortfall && !fileAnalysisNotice}
+                >
+                    🧹 {c('lumo: Debug View').t`Clear`}
+                </button>
+                <div className="debug-view-hint">
+                    {c('lumo: Debug View')
+                        .t`Previews the "Upgrade to work with larger files" card with a sample file. Composer card: shown above the composer as when a large file is attached, and Send is held back while it is on. In chat: the card under the conversation, for a send stopped before reading or a reply given without reading the whole file (open a conversation first). Hidden for Plus accounts. Not persisted.`}
                 </div>
             </div>
 

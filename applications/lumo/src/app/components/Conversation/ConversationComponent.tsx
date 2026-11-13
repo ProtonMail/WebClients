@@ -25,6 +25,7 @@ import { FilePreviewPanel } from '../Files/Common/FilePreviewPanel';
 import { FloatingRetryPanel } from '../FloatingRetryPanel';
 import ErrorCard from '../Notifications/ErrorCard';
 import { ConversationSurvey } from '../Survey/ConversationSurvey';
+import { FileAnalysisLimitUpsell } from './FileAnalysisLimitUpsell';
 import { ImageLimitNotice } from './ImageLimitNotice';
 import { ArtifactProvider, useArtifactContext } from './artifact/ArtifactContext';
 import ArtifactPanel from './artifact/ArtifactPanel';
@@ -341,6 +342,7 @@ const ConversationLayout = ({
                         {conversationErrors.length > 0 && (
                             <ErrorCard error={conversationErrors[0]} index={0} onRetry={handleRetryGeneration} />
                         )}
+                        <FileAnalysisLimitUpsell conversationId={conversationId} />
                         <ConversationSurvey isGenerating={isGenerating} />
                         <div
                             ref={composerContainerRef}

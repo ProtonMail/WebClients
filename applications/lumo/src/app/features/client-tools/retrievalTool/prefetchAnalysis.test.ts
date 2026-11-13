@@ -1,9 +1,11 @@
 import type { Attachment } from '../../../types';
-import { PAGE_CHARS } from './pages';
+import { countAnalysisCalls } from './fileAnalysis';
+import { PAGE_CHARS, splitIntoPages } from './pages';
 import {
     MAX_PREFETCHED_FILES,
     type PrefetchCall,
     type PrefetchResult,
+    countPrefetchCalls,
     forgetFileNotes,
     formatPrefetchedNotes,
     isLargeTextFile,
@@ -13,13 +15,23 @@ import {
 
 const filler = (n: number) => `PAGE-${n} ${'x '.repeat(PAGE_CHARS / 2 - 12)}`;
 const file = (id: string, filename: string, tokenCount: number, markdown = filler(1)) =>
-    ({ id, filename, markdown, tokenCount, uploadedAt: new Date().toISOString(), mimeType: 'application/pdf' }) as Attachment;
+    ({
+        id,
+        filename,
+        markdown,
+        tokenCount,
+        uploadedAt: new Date().toISOString(),
+        mimeType: 'application/pdf',
+    }) as Attachment;
 
 const prospectus = file('p', 'Verkaufsprospekt-2025.pdf', 90_000);
 const memo = file('m', 'memo.md', 300, 'short');
 const exclusions = { attachmentIds: new Set<string>(), documentIds: new Set<string>() };
-const select = (message: { content: string; attachmentIds: string[] }, chatAttachments = [prospectus, memo], ex = exclusions) =>
-    selectFilesToAnalyze({ chatAttachments, exclusions: ex, message }).map((attachment) => attachment.id);
+const select = (
+    message: { content: string; attachmentIds: string[] },
+    chatAttachments = [prospectus, memo],
+    ex = exclusions
+) => selectFilesToAnalyze({ chatAttachments, exclusions: ex, message }).map((attachment) => attachment.id);
 
 beforeEach(() => forgetFileNotes());
 
@@ -165,5 +177,37 @@ describe('prefetchFileNotes', () => {
 
         expect(finished).toEqual([{ ok: false }]);
         expect(formatPrefetchedNotes(['p'], 'goal')).toBeUndefined();
+    });
+});
+
+describe('countPrefetchCalls', () => {
+    const pagesFile = (id: string, pages: number) =>
+        file(id, `${id}.pdf`, 90_000, Array.from({ length: pages }, (_, i) => filler(i + 1)).join('\n'));
+
+    it('counts the reading calls for every file', () => {
+        const big = pagesFile('big', 7);
+        const small = pagesFile('small', 2);
+
+        expect(countPrefetchCalls([big], 'g')).toBe(countAnalysisCalls(splitIntoPages(big.markdown!).length));
+        expect(countPrefetchCalls([big, small], 'g')).toBe(
+            countAnalysisCalls(splitIntoPages(big.markdown!).length) +
+                countAnalysisCalls(splitIntoPages(small.markdown!).length)
+        );
+    });
+
+    it('counts nothing for a file already read for the same goal', async () => {
+        const big = pagesFile('big', 7);
+        await prefetchFileNotes({
+            files: [big],
+            goal: 'every change',
+            ask: async () => {
+                return 'a note';
+            },
+            onStart: () => {},
+            onFinish: () => {},
+        });
+
+        expect(countPrefetchCalls([big], 'every change')).toBe(0);
+        expect(countPrefetchCalls([big], 'something else')).toBeGreaterThan(0);
     });
 });

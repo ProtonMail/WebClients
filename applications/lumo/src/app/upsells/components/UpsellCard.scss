@@ -19,6 +19,10 @@
 		color: var(--text-error-banner-button);
 	}
 
+	&.upsell-card--in-chat {
+		inset-block-end: 0;
+	}
+
 	&.upsell-card--dismissible {
 		padding-inline-end: 3rem;
 	}

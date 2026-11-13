@@ -14,6 +14,7 @@ import { findAgentById } from '../../features/agents/registry';
 import { collectRetrievalExclusions } from '../../features/client-tools/retrievalTool/exclusions';
 import { formatRetrievalInstructions } from '../../features/client-tools/retrievalTool/instructions';
 import {
+    countPrefetchCalls,
     formatPrefetchedNotes,
     isLargeTextFile,
     prefetchFileNotes,
@@ -40,6 +41,7 @@ import { ENABLE_U2L_ENCRYPTION } from '../../llm/config';
 import type { ContextFilter } from '../../llm/contextFilter';
 import { resolveRequestBudget } from '../../llm/requestBudget';
 import { getMessageContent } from '../../messageHelpers';
+import type { ModelTier } from '../../providers/modelTierConstants';
 import { selectMessagesByConversationId, selectRemoteIdFromLocal } from '../../redux/selectors';
 import { clearPendingAgent, clearPendingArtifactCreation } from '../../redux/slices/composerActions';
 import type { AttachmentMap } from '../../redux/slices/core/attachments';
@@ -66,6 +68,11 @@ import type { Memory } from '../../redux/slices/lumoUserSettings';
 import type { PersonalizationSettings } from '../../redux/slices/personalization';
 import type { LumoDispatch as AppDispatch, LumoDispatch, LumoState } from '../../redux/store';
 import { createGenerationError, getErrorTypeFromMessage } from '../../services/errors/errorHandling';
+import {
+    FileAnalysisLimitError,
+    createFileAnalysisAllowance,
+    setFileAnalysisLimitNotice,
+} from '../../services/fileAnalysisAllowance';
 import { throwIfAborted } from '../../services/generation/abortGeneration';
 import { maybeAutoSaveMemoriesFromChats } from '../../services/memoryAutoSave';
 import { SearchService } from '../../services/search/searchService';
@@ -185,6 +192,7 @@ async function resolveRetrieval({
     api,
     signal,
     prefetch,
+    modelTier,
 }: {
     enabled: boolean;
     /**
@@ -192,6 +200,8 @@ async function resolveRetrieval({
      * a step of this assistant message. Only for a new message: retries and regenerations reuse the notes.
      */
     prefetch?: { assistantMessageId: MessageId; dispatch: LumoDispatch };
+    /** Tier the user picked, to count whether the reply needs a Lite question too when a file is read. */
+    modelTier?: ModelTier | 'auto';
     /** Lets the model have a whole file read by a small model (analyze_file). */
     api: Api;
     signal: AbortSignal;
@@ -220,6 +230,9 @@ async function resolveRetrieval({
     );
     // Replaced by the chain actually sent once the compaction flow runs (see compactionFlow).
     const visibleMessageIds = new Set(collapseCompactedChain(chain, messageMap).chain.map((message) => message.id));
+    // Every reading in this send (the pre-reading, then analyze_file calls in the reply) is checked
+    // against the Lite questions left, counting what the send has already spent.
+    const allowance = createFileAnalysisAllowance({ hasLumoPlus, modelTier });
     const tools: RetrievalContext = {
         conversationId,
         spaceId,
@@ -237,6 +250,16 @@ async function resolveRetrieval({
         index,
         signal,
         analyze: createRetrievalAnalysis(api, signal),
+        checkAnalysisAllowance: (fileName, analysisCalls) => {
+            const shortfall = allowance([fileName], analysisCalls);
+            if (shortfall) {
+                setFileAnalysisLimitNotice(conversationId, shortfall, 'skipped');
+            }
+            return shortfall;
+        },
+        reserveAnalysisCalls: (calls) => {
+            return allowance([], calls) === undefined;
+        },
     };
     const latestUserMessage = chain.findLast((message) => message.role === Role.User);
     if (prefetch && tools.analyze && latestUserMessage) {
@@ -249,11 +272,20 @@ async function resolveRetrieval({
             },
         });
         const { assistantMessageId, dispatch } = prefetch;
+        // Stop before any Lite question is spent when the reading would run out of them part way.
+        const shortfall = allowance(
+            files.map((file) => file.filename),
+            countPrefetchCalls(files, getMessageContent(latestUserMessage))
+        );
+        if (shortfall) {
+            throw new FileAnalysisLimitError(shortfall);
+        }
         await prefetchFileNotes({
             files,
             goal: getMessageContent(latestUserMessage),
             ask: tools.analyze,
             signal,
+            reserveCalls: tools.reserveAnalysisCalls,
             onStart: ({ callId, fileId, goal }) => {
                 dispatch(
                     setToolCall({
@@ -1056,6 +1088,7 @@ export function executeConversationTurn({
                 api: a.api,
                 signal: a.signal,
                 prefetch: { assistantMessageId: assistantMessage.id, dispatch },
+                modelTier: ui.modelTier,
             });
 
             const buildTurns = (chain: Message[]) =>
@@ -1309,6 +1342,7 @@ export function regenerateMessage({
                 chatAttachments: c.allConversationAttachments,
                 contextFilters: c.contextFilters,
                 hasLumoPlus: !!s.hasLumoPlus,
+                modelTier: ui.modelTier,
                 api: a.api,
                 signal: a.signal,
             });
@@ -1587,6 +1621,7 @@ export function retrySendMessage({
             chatAttachments: c2.allConversationAttachments,
             contextFilters: c2.contextFilters,
             hasLumoPlus: !!s.hasLumoPlus,
+            modelTier: ui.modelTier,
             api: a.api,
             signal: a.signal,
         });

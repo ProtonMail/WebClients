@@ -21,6 +21,7 @@ import type { DriveSDKMethods } from '../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../hooks/useDriveSDK';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
 import { useMessagesLimitStatus } from '../../hooks/useResourceLimitStatus';
+import { useStagedFileAnalysisShortfall } from '../../hooks/useStagedFileAnalysisShortfall';
 import { useDragArea } from '../../providers/DragAreaProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
@@ -35,6 +36,7 @@ import type { DictationLanguage } from '../../util/dictationLanguages';
 import { base64ToFile } from '../../util/imageHelpers';
 import { notifyMobileAppLoaded } from '../../util/mobileAppNotification';
 import { createAttachmentFromPastedContent, getPasteConversionMessage } from '../../util/pastedContentHelper';
+import { FileAnalysisLimitCard } from '../Conversation/FileAnalysisLimitUpsell';
 import GuestDisclaimer from '../Notifications/GuestDisclaimer';
 import { GuestNotificationCard } from '../Notifications/GuestNotificationCard';
 import { ModelSwitchNotificationCard } from '../Notifications/ModelSwitchNotificationCard';
@@ -154,6 +156,9 @@ const ComposerComponentInner = ({
     const { createNotification } = useNotifications();
     const isGuest = useIsGuest();
     const { isBlocked: isChatLimitBlocked, ensureTierError } = useChatLimitGate();
+    // A staged file whose reading needs more Lite questions than are left: explain, and hold the send.
+    const stagedFileAnalysisShortfall = useStagedFileAnalysisShortfall(provisionalAttachments);
+    const isFileAnalysisBlocked = stagedFileAnalysisShortfall !== undefined;
     const conversationId = messageChain?.[0]?.conversationId;
     const { isAtLimit: isMessageLimitReached } = useMessagesLimitStatus(conversationId);
     const isConversationClosed = Boolean(conversationId) && isMessageLimitReached;
@@ -289,6 +294,9 @@ const ComposerComponentInner = ({
                 ensureTierError();
                 return;
             }
+            if (isFileAnalysisBlocked) {
+                return;
+            }
             composerInput.clear();
             await handleSendMessage(value, isWebSearchButtonToggled, buildImageOptions());
         },
@@ -301,6 +309,7 @@ const ComposerComponentInner = ({
             isProcessingAttachment,
             buildImageOptions,
             isChatLimitBlocked,
+            isFileAnalysisBlocked,
             isConversationClosed,
             ensureTierError,
             hasAttachments,
@@ -410,7 +419,8 @@ const ComposerComponentInner = ({
 
     const canSubmit = !isEmpty || hasAttachments;
     const sendIsDisabled =
-        !(isGenerating ?? false) && (!canSubmit || isProcessingAttachment || isChatLimitBlocked || isDictating);
+        !(isGenerating ?? false) &&
+        (!canSubmit || isProcessingAttachment || isChatLimitBlocked || isFileAnalysisBlocked || isDictating);
     const canShowSendButton = (isGenerating ?? false) || canSubmit;
 
     // Update parent component when empty state changes
@@ -494,6 +504,10 @@ const ComposerComponentInner = ({
             <ModelSwitchNotificationCard messageChain={messageChain} isGenerating={isGenerating} />
 
             <ComposerModelLimitUpsell composerMode={composerMode} />
+
+            {stagedFileAnalysisShortfall && (
+                <FileAnalysisLimitCard shortfall={stagedFileAnalysisShortfall} stage="staged" />
+            )}
 
             <ComposerLimitBanner
                 conversationId={messageChain?.[0]?.conversationId}
