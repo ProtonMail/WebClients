@@ -1,6 +1,5 @@
-import { Avatar } from '@proton/atoms/Avatar/Avatar'
 import * as Ariakit from '@ariakit/react'
-import { Input } from '@proton/atoms/Input/Input'
+import { Avatar, Input } from '../components/atoms'
 import { usePopperAnchor } from '@proton/atoms/Popper/usePopperAnchor'
 import { Button, IconButton, Tooltip, TooltipProvider } from '../components/ui'
 import Dropdown from '@proton/components/components/dropdown/Dropdown'
@@ -693,17 +692,7 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
 
       <Table.DataCell target="medium">
         <span className="flex flex-nowrap items-center gap-2 overflow-hidden" title={displayName}>
-          <Avatar
-            color="weak"
-            className="min-w-custom max-w-custom max-h-custom bg-[--interaction-default-hover]"
-            style={{
-              '--min-w-custom': '28px',
-              '--max-w-custom': '28px',
-              '--max-h-custom': '28px',
-            }}
-          >
-            {avatarContent}
-          </Avatar>
+          <Avatar>{avatarContent}</Avatar>
           <span className="text-pre flex-1 text-ellipsis">{displayName}</span>
         </span>
       </Table.DataCell>

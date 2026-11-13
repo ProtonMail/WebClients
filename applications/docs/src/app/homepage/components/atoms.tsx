@@ -1,11 +1,12 @@
-// Copy of drive/docs/realtime's packages/docs-editor/src/Components/atoms.tsx (Tooltip and Button),
-// with Proton's `outline` shape and `loading` state added to Button. Dropped what the homepage doesn't use:
-// Tooltip's `trailingSlot` for shortcut hints and Button's `pill`.
+// Copy of drive/docs/realtime's packages/docs-editor/src/Components/atoms.tsx (Tooltip, Button and Avatar),
+// with Proton's `outline` shape and `loading` state added to Button, and Proton's `Input`.
+// Dropped what the homepage doesn't use: Tooltip's `trailingSlot` for shortcut hints, Button's `pill`
+// and Avatar's author colours.
 
 import * as Ariakit from '@ariakit/react'
-import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
-import { forwardRef } from 'react'
+import { type ComponentPropsWithoutRef, forwardRef, type ReactNode } from 'react'
 import { clsx } from '../utils/clsx'
+import { CircleLoader } from './CircleLoader'
 
 export interface TooltipProps extends Ariakit.RoleProps {}
 export const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(function Tooltip(props, ref) {
@@ -115,7 +116,7 @@ const buttonPaddingClassNames: Record<
 /**
  * Whether `className` has a utility, without a variant such as `hover:`, starting with one of `prefixes`.
  * Tailwind orders two utilities for the same property by its own rules, not by class order,
- * so the button drops each default the caller sets.
+ * so a component drops each default the caller sets.
  */
 function classNameSetsUtility(className: string | undefined, prefixes: string[]) {
   return className?.split(/\s+/).some((token) => prefixes.some((prefix) => token.startsWith(prefix))) ?? false
@@ -174,5 +175,91 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
         </span>
       )}
     </Ariakit.Role.button>
+  )
+})
+
+export interface AvatarProps extends Ariakit.RoleProps<'span'> {}
+
+/**
+ * Initials or an icon in the 1.75rem square Proton's weak `Avatar` draws.
+ * Hidden from screen readers, as Proton's is, since a name goes beside it.
+ */
+export const Avatar = forwardRef<HTMLSpanElement, AvatarProps>(function Avatar(props, ref) {
+  return (
+    <Ariakit.Role.span
+      ref={ref}
+      aria-hidden="true"
+      {...props}
+      className={clsx(
+        'flex h-[1.75rem] w-[1.75rem] shrink-0 select-none items-center justify-center overflow-hidden rounded-[--border-radius-md] bg-[--background-strong] text-[.75rem] text-[--text-norm]',
+        props.className,
+      )}
+    />
+  )
+})
+
+export interface InputProps extends Omit<ComponentPropsWithoutRef<'input'>, 'prefix'> {
+  /** Shown before the field, such as a search icon. */
+  prefix?: ReactNode
+  /** Classes for the `<input>`. `className` styles the bordered box around it, and a `border-[--…]` class replaces its border colour. */
+  inputClassName?: string
+}
+
+/** Proton's `Input`: a text field in a bordered box, with an optional prefix. It keeps Proton's test ids. */
+export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
+  { prefix, inputClassName, className, disabled, ...props },
+  ref,
+) {
+  return (
+    <div
+      data-testid="input-root"
+      className={clsx(
+        // `border-[1px]`, not `border`: Proton's global `.border` loads after Tailwind and would set its own colour.
+        'relative flex flex-1 flex-nowrap items-stretch rounded-[--border-radius-md] border-[1px] border-solid',
+        '[transition:0.15s_cubic-bezier(0.22,1,0.36,1),visibility_0s]',
+        disabled
+          ? 'border-[--field-disabled] bg-[--field-disabled-background-color] text-[--field-disabled-text-color]'
+          : clsx(
+              !classNameSetsUtility(className, ['border-[--']) && 'border-[--field-norm]',
+              'bg-[--field-background-color] text-[--field-text-color]',
+              // Tailwind puts `hover:` after `focus-within:`, so hover skips a focused field, which keeps its focus look.
+              '[&:hover:not(:focus-within)]:border-[--field-hover] [&:hover:not(:focus-within)]:bg-[--field-hover-background-color] [&:hover:not(:focus-within)]:text-[--field-hover-text-color]',
+              'focus-within:border-[--focus-outline] focus-within:bg-[--field-focus-background-color] focus-within:text-[--field-focus-text-color] focus-within:shadow-[0_0_0_0.1875rem_var(--focus-ring)]',
+            ),
+        className,
+      )}
+    >
+      {prefix && (
+        <div
+          data-testid="input-prefix"
+          className={clsx(
+            'ms-3 flex max-w-[60%] shrink-0 flex-nowrap items-center gap-2',
+            !disabled && 'text-[--text-weak]',
+          )}
+        >
+          {prefix}
+        </div>
+      )}
+      <div className="flex flex-1">
+        <input
+          ref={ref}
+          autoComplete="off"
+          autoCapitalize="off"
+          autoCorrect="off"
+          spellCheck="false"
+          disabled={disabled}
+          data-testid="input-input-element"
+          {...props}
+          className={clsx(
+            'min-h-[2.125rem] w-full rounded-[--border-radius-md] py-[calc(7em/14)] [background:none] [color:inherit] [filter:none] [outline:none]',
+            // Below `small` the text is at least 16px, so iOS doesn't zoom in on focus.
+            'text-[max(16px,1em)] small:text-[1em]',
+            'pe-[calc(8em/14)] xsmall:pe-[calc(12em/14)]',
+            prefix ? 'ps-[.5em]' : 'ps-[calc(8em/14)] xsmall:ps-[calc(12em/14)]',
+            inputClassName,
+          )}
+        />
+      </div>
+    </div>
   )
 })
