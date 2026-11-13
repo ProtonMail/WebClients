@@ -1,6 +1,6 @@
 import type { Cycle, PlanIDs } from '@proton/payments/core/interface';
 
-import type { AvailablePlan } from '../context/SignupContext';
+import type { AvailablePlan } from '../state-machine/signupActors';
 
 const getAvailablePlansWithCycles = (plans: { planIDs: PlanIDs }[], cycles: Cycle[]): AvailablePlan[] => {
     const availablePlans: AvailablePlan[] = [];
