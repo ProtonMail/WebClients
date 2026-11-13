@@ -488,9 +488,9 @@ const routesDefinition = {
                             },
                         },
                         {
-                            id: 'my-account.security-and-privacy.privacy',
-                            text: () => c('Title').t`Privacy and data collection`,
-                            to: 'privacy',
+                            id: 'my-account.security-and-privacy.data-collection',
+                            text: () => c('Title').t`Data collection`,
+                            to: 'data-collection',
                         },
                     ],
                 },

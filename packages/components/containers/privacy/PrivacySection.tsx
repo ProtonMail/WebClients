@@ -6,19 +6,19 @@ import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import SettingsParagraph from '../account/SettingsParagraph';
 import SettingsSectionWide from '../account/SettingsSectionWide';
 import CrashReportsToggle from './CrashReportsToggle';
+import DataCollectionDescription from './DataCollectionDescription';
 import TelemetryToggle from './TelemetryToggle';
 
 const PrivacySection = () => {
     return (
         <SettingsSectionWide>
             <SettingsParagraph>
-                {c('Info')
-                    .t`To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.`}
+                <DataCollectionDescription />
             </SettingsParagraph>
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="telemetry" className="text-semibold">
-                        <span className="mr-2">{c('Label').t`Collect usage diagnostics`}</span>
+                        <span className="mr-2">{c('Label').t`Collect anonymous usage diagnostics`}</span>
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight isToggleContainer>

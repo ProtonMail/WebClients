@@ -67,7 +67,7 @@ const WalletSettings = ({
                 <MobileSection title={c('Title').t`Security logs`}>
                     <LogsSection />
                 </MobileSection>
-                <MobileSection title={c('Title').t`Privacy and data collection`}>
+                <MobileSection title={c('Title').t`Data collection`}>
                     <PrivacySection />
                 </MobileSection>
             </SubscriptionModalProvider>

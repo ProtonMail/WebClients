@@ -11,11 +11,13 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import CrashReportsToggle from '@proton/components/containers/privacy/CrashReportsToggle';
+import DataCollectionDescription from '@proton/components/containers/privacy/DataCollectionDescription';
 import TelemetryToggle from '@proton/components/containers/privacy/TelemetryToggle';
 import RecoveryEmail from '@proton/components/containers/recovery/email/RecoveryEmail';
 import RecoveryPhone from '@proton/components/containers/recovery/phone/RecoveryPhone';
 import { useQrCodeSignInToggle } from '@proton/components/containers/recovery/useQrCodeSignInToggle';
 import useMyCountry from '@proton/components/hooks/useMyCountry';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
@@ -68,15 +70,6 @@ const CalendarAccountSettings = ({ layout, loader }: Props) => {
                 </LiteSettingsSection>
             )}
 
-            <LiteSettingsSection title={c('Title').t`Privacy`}>
-                <LiteSettingsRow htmlFor="crashReports" label={c('Label').t`Send crash reports`}>
-                    <CrashReportsToggle id="crashReports" />
-                </LiteSettingsRow>
-                <LiteSettingsRow htmlFor="telemetry" label={c('Label').t`Collect usage diagnostics`}>
-                    <TelemetryToggle id="telemetry" />
-                </LiteSettingsRow>
-            </LiteSettingsSection>
-
             <LiteSettingsSection title={c('Title').t`Account recovery`}>
                 <LiteSettingsRow
                     htmlFor="edmToggle"
@@ -101,6 +94,23 @@ const CalendarAccountSettings = ({ layout, loader }: Props) => {
                 </LiteSettingsRow>
                 <LiteSettingsRow htmlFor="passwordPhoneResetToggle" label={c('Label').t`Allow recovery by phone`}>
                     <Toggle id="passwordPhoneResetToggle" {...accountRecovery.recoveryPhone.toggleProps} />
+                </LiteSettingsRow>
+            </LiteSettingsSection>
+
+            <LiteSettingsSection title={c('Title').t`Data collection`} description={<DataCollectionDescription />}>
+                <LiteSettingsRow
+                    htmlFor="crashReports"
+                    label={c('Label').t`Send crash reports`}
+                    description={c('Info').t`Share error logs with ${BRAND_NAME}`}
+                >
+                    <CrashReportsToggle id="crashReports" />
+                </LiteSettingsRow>
+                <LiteSettingsRow
+                    htmlFor="telemetry"
+                    label={c('Label').t`Collect anonymous usage diagnostics`}
+                    description={c('Info').t`Share performance data and usage statistics with ${BRAND_NAME}`}
+                >
+                    <TelemetryToggle id="telemetry" />
                 </LiteSettingsRow>
             </LiteSettingsSection>
         </LiteSettingsPage>,

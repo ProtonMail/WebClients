@@ -6,14 +6,14 @@ import SettingsLayout from '@proton/components/containers/account/SettingsLayout
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import CrashReportsToggle from '@proton/components/containers/privacy/CrashReportsToggle';
+import DataCollectionDescription from '@proton/components/containers/privacy/DataCollectionDescription';
 import TelemetryToggle from '@proton/components/containers/privacy/TelemetryToggle';
 
 const DataCollectionSection = () => {
     return (
         <SettingsSectionWide>
             <SettingsParagraph>
-                {c('Info')
-                    .t`To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.`}
+                <DataCollectionDescription />
             </SettingsParagraph>
             <SettingsLayout>
                 <InputFieldStackedGroup classname="w-full">
@@ -25,7 +25,7 @@ const DataCollectionSection = () => {
                     >
                         <div className="flex items-center justify-space-between">
                             <label htmlFor="telemetry" className="text-semibold">
-                                {c('Label').t`Collect usage diagnostics`}
+                                {c('Label').t`Collect anonymous usage diagnostics`}
                             </label>
                             <TelemetryToggle id="telemetry" />
                         </div>

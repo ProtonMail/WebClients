@@ -56,6 +56,23 @@
 		color: var(--lite-settings-glyph-mid);
 	}
 
+	.lite-settings-section-description {
+		margin: 0;
+		padding-block-end: rem(8);
+		padding-inline: rem(16);
+		font-size: rem(14);
+		line-height: rem(20);
+		color: var(--lite-settings-glyph-mid);
+
+		strong {
+			color: var(--lite-settings-glyph);
+		}
+
+		a {
+			color: var(--lite-settings-switch-on);
+		}
+	}
+
 	.lite-settings-panel {
 		overflow: hidden;
 		border-radius: rem(24);
