@@ -1,8 +1,10 @@
+import { vi } from 'vitest';
+
 import randomIntFromInterval from './randomIntFromInterval';
 
 describe('randomIntFromInterval()', () => {
     it('should be able to return min', () => {
-        jest.spyOn(Math, 'random').mockReturnValue(0);
+        vi.spyOn(Math, 'random').mockReturnValue(0);
         const min = 1;
         const max = 100;
 
@@ -12,7 +14,7 @@ describe('randomIntFromInterval()', () => {
     });
 
     it('should be able to return max', () => {
-        jest.spyOn(Math, 'random').mockReturnValue(
+        vi.spyOn(Math, 'random').mockReturnValue(
             // Math.random does not output 1
             0.9999999999999999
         );
@@ -25,7 +27,7 @@ describe('randomIntFromInterval()', () => {
     });
 
     it('should return an evenish distribution', () => {
-        jest.spyOn(Math, 'random').mockReturnValue(0.5);
+        vi.spyOn(Math, 'random').mockReturnValue(0.5);
         const min = 1;
         const max = 100;
 

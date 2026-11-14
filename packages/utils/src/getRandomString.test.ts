@@ -1,9 +1,11 @@
+import { vi } from 'vitest';
+
 import getRandomString, { DEFAULT_CHARSET } from './getRandomString';
 
 describe('getRandomString()', () => {
     const getConsecutiveArray = (length: number) => [...Array(length).keys()];
 
-    const mockedRandomValues = jest
+    const mockedRandomValues = vi
         .fn()
         .mockImplementation((array: Uint32Array) => Uint32Array.from(getConsecutiveArray(array.length)));
 

@@ -1,12 +1,14 @@
+import { vi } from 'vitest';
+
 import isLastWeek from './isLastWeek';
 
 describe('isLastWeek', () => {
     beforeEach(() => {
-        jest.useFakeTimers().setSystemTime(new Date('2023-03-27T20:00:00'));
+        vi.useFakeTimers().setSystemTime(new Date('2023-03-27T20:00:00'));
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should return true if the date is in the last week', () => {

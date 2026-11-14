@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import shuffle from './shuffle';
 
 describe('shuffle()', () => {
@@ -32,7 +34,7 @@ describe('shuffle()', () => {
     });
 
     it('shuffles as expected when random values are mocked', () => {
-        jest.spyOn(Math, 'random')
+        vi.spyOn(Math, 'random')
             .mockReturnValueOnce(0.8824154514152932)
             .mockReturnValueOnce(0.22451795440520217)
             .mockReturnValueOnce(0.5352346169904075)
@@ -51,7 +53,7 @@ describe('shuffle()', () => {
 
     describe('when array is of length 2', () => {
         it('swaps items when random value is < 0.5', () => {
-            jest.spyOn(Math, 'random').mockReturnValue(0.49);
+            vi.spyOn(Math, 'random').mockReturnValue(0.49);
             const input = [0, 1];
 
             const result = shuffle(input);
@@ -60,7 +62,7 @@ describe('shuffle()', () => {
         });
 
         it('does not swap items when random value is = 0.5', () => {
-            jest.spyOn(Math, 'random').mockReturnValue(0.5);
+            vi.spyOn(Math, 'random').mockReturnValue(0.5);
             const input = [0, 1];
 
             const result = shuffle(input);
@@ -69,7 +71,7 @@ describe('shuffle()', () => {
         });
 
         it('does not swap items when random value is > 0.5', () => {
-            jest.spyOn(Math, 'random').mockReturnValue(0.51);
+            vi.spyOn(Math, 'random').mockReturnValue(0.51);
             const input = [0, 1];
 
             const result = shuffle(input);
