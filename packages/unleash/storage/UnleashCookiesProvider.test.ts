@@ -1,4 +1,5 @@
 import { addDays, endOfDay } from 'date-fns';
+import { vi } from 'vitest';
 
 import * as cookiesModule from '@proton/shared/lib/helpers/cookies';
 
@@ -8,10 +9,10 @@ import saveAllowlistedFlagInCookies, { UNLEASH_FLAG_COOKIE_NAME } from './Unleas
 // ------------------------------
 // Mocks
 // ------------------------------
-jest.mock('@proton/shared/lib/helpers/cookies', () => ({
-    getCookie: jest.fn(),
-    setCookie: jest.fn(),
-    deleteCookie: jest.fn(),
+vi.mock('@proton/shared/lib/helpers/cookies', () => ({
+    getCookie: vi.fn(),
+    setCookie: vi.fn(),
+    deleteCookie: vi.fn(),
 }));
 
 // ------------------------------
@@ -19,9 +20,9 @@ jest.mock('@proton/shared/lib/helpers/cookies', () => ({
 // ------------------------------
 const getCookieSpys = () => {
     return {
-        getCookie: jest.spyOn(cookiesModule, 'getCookie'),
-        setCookie: jest.spyOn(cookiesModule, 'setCookie'),
-        deleteCookie: jest.spyOn(cookiesModule, 'deleteCookie'),
+        getCookie: vi.spyOn(cookiesModule, 'getCookie'),
+        setCookie: vi.spyOn(cookiesModule, 'setCookie'),
+        deleteCookie: vi.spyOn(cookiesModule, 'deleteCookie'),
     };
 };
 
@@ -51,7 +52,7 @@ describe('UnleashCookiesProvider', () => {
     });
 
     beforeEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('Whitelisted flag with variant', () => {

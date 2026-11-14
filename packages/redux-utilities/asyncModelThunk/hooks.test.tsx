@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react';
 import { Provider } from 'react-redux';
 
-import { describe, expect, test } from '@jest/globals';
 import { type Action, configureStore, createSlice } from '@reduxjs/toolkit';
 import { act, render, waitFor } from '@testing-library/react';
 import type { Store } from 'redux';
+import { vi } from 'vitest';
 
 import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
 
@@ -111,7 +111,7 @@ describe('hooks', () => {
     test('only dispatches on undefined values', async () => {
         const { getNewStore, thunkActionCreator } = setup(async () => 42);
         const store = getNewStore();
-        const spy = jest.spyOn(thunkActionCreator, 'thunk');
+        const spy = vi.spyOn(thunkActionCreator, 'thunk');
         const hooks = createHooks(thunkActionCreator.thunk, selectState);
 
         const Component = () => {
@@ -145,7 +145,7 @@ describe('hooks', () => {
     test('re-dispatches when value becomes undefined', async () => {
         const { getNewStore, thunkActionCreator, slice } = setup(async () => 42);
         const store = getNewStore();
-        const spy = jest.spyOn(thunkActionCreator, 'thunk');
+        const spy = vi.spyOn(thunkActionCreator, 'thunk');
         const hooks = createHooks(thunkActionCreator.thunk, selectState);
 
         const Component = () => {

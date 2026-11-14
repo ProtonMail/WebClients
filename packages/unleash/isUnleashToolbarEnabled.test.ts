@@ -1,13 +1,14 @@
-/** @jest-environment jsdom */
+import { vi } from 'vitest';
+
 import { isDevOrBlackHost } from '@proton/shared/lib/env';
 
 import { ENABLE_UNLEASH_TOOLBAR_KEY, isUnleashToolbarEnabled } from './isUnleashToolbarEnabled';
 
-jest.mock('@proton/shared/lib/env', () => ({
-    isDevOrBlackHost: jest.fn(),
+vi.mock('@proton/shared/lib/env', () => ({
+    isDevOrBlackHost: vi.fn(),
 }));
 
-const mockIsDevOrBlackHost = jest.mocked(isDevOrBlackHost);
+const mockIsDevOrBlackHost = vi.mocked(isDevOrBlackHost);
 
 const setWebDriver = (value: boolean) => {
     Object.defineProperty(window.navigator, 'webdriver', { value, configurable: true });
@@ -29,7 +30,7 @@ describe('isUnleashToolbarEnabled', () => {
     afterEach(() => {
         setNodeEnv(originalNodeEnv as string);
         window.localStorage.clear();
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     it('returns true in a development build without opting in', () => {

@@ -19,15 +19,15 @@
         "./UnleashCookiesProvider": "./storage/UnleashCookiesProvider.ts",
         "./testing/mockUnleash": "./testing/mockUnleash.ts",
         "./testing/mockUseFlag": "./testing/mockUseFlag.ts",
-        "./testing/vitest/mockUnleash": "./testing/vitest/mockUnleash.ts"
+        "./testing/vitest/mockUnleash": "./testing/vitest/mockUnleash.ts",
+        "./testing/vitest/mockUseFlag": "./testing/vitest/mockUseFlag.ts"
     },
     "scripts": {
         "check:types": "tsc --checkers 1",
         "lint": "oxlint --quiet",
         "pretty": "oxfmt --write \"**/*.{js,ts,tsx}\"",
-        "test": "jest",
-        "test:ci": "jest --runInBand --ci --logHeapUsage",
-        "test:watch": "jest --watch"
+        "test": "vitest",
+        "test:ci": "pnpm run test --run"
     },
     "dependencies": {
         "@proton/shared": "workspace:^",
@@ -38,17 +38,16 @@
         "unleash-proxy-client": "^3.8.0"
     },
     "devDependencies": {
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
-        "@types/jest": "catalog:",
+        "@proton/vitest-config": "workspace:^",
         "@types/node": "catalog:",
         "@types/react": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
-        "jest": "catalog:",
-        "jest-environment-jsdom": "catalog:",
+        "happy-dom": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "typescript": "catalog:"
+        "typescript": "catalog:",
+        "vitest": "catalog:"
     }
 }

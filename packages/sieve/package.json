@@ -14,26 +14,23 @@
         "check:types": "tsc --checkers 1",
         "lint": "oxlint --quiet",
         "pretty": "oxfmt --write \"src/**/*.ts\" \"fixtures/**/*.ts\"",
-        "test": "jest",
-        "test:ci": "pnpm run test",
-        "test:watch": "jest --watch --coverage=false --watchAll"
+        "test": "vitest",
+        "test:ci": "pnpm run test --run"
     },
     "dependencies": {
         "@proton/utils": "workspace:^",
         "lodash": "catalog:"
     },
     "devDependencies": {
-        "@proton/jest-env": "workspace:^",
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
-        "@types/jest": "catalog:",
+        "@proton/vitest-config": "workspace:^",
         "@types/lodash": "catalog:",
         "@types/node": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
-        "jest": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "typescript": "catalog:"
+        "typescript": "catalog:",
+        "vitest": "catalog:"
     }
 }
