@@ -1,3 +1,6 @@
+import type { Mock, MockInstance } from 'vitest';
+import { vi } from 'vitest';
+
 import ChallengeFrameController from './ChallengeFrameController';
 import type { ChallengeEvent } from './interface';
 
@@ -15,10 +18,10 @@ const makeEvent = (overrides: Partial<ChallengeEvent> = {}): ChallengeEvent => (
 
 describe('ChallengeFrameController', () => {
     let iframe: HTMLIFrameElement;
-    let postMessage: jest.SpyInstance;
+    let postMessage: MockInstance;
     let controller: ChallengeFrameController | undefined;
-    let onSuccess: jest.Mock;
-    let onError: jest.Mock;
+    let onSuccess: Mock;
+    let onError: Mock;
 
     /** Simulates a message coming back from the frame. */
     const emit = (data: unknown, origin = ORIGIN) => {
@@ -45,19 +48,19 @@ describe('ChallengeFrameController', () => {
     const postedMessages = () => postMessage.mock.calls.map(([message]) => message);
 
     beforeEach(() => {
-        jest.useFakeTimers();
-        onSuccess = jest.fn();
-        onError = jest.fn();
+        vi.useFakeTimers();
+        onSuccess = vi.fn();
+        onError = vi.fn();
         iframe = document.createElement('iframe');
         document.body.appendChild(iframe);
-        postMessage = jest.spyOn(iframe.contentWindow!, 'postMessage').mockImplementation(() => {});
+        postMessage = vi.spyOn(iframe.contentWindow!, 'postMessage').mockImplementation(() => {});
     });
 
     afterEach(() => {
         controller?.destroy();
         controller = undefined;
         iframe.remove();
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     describe('handshake', () => {
@@ -75,7 +78,7 @@ describe('ChallengeFrameController', () => {
         it('errors if the frame never initializes', () => {
             create({ errorTimeout: 1000 });
 
-            jest.advanceTimersByTime(1000);
+            vi.advanceTimersByTime(1000);
 
             expect(onError).toHaveBeenCalledTimes(1);
             expect(onError.mock.calls[0][0]).toContainEqual(
@@ -87,7 +90,7 @@ describe('ChallengeFrameController', () => {
             create({ errorTimeout: 1000 });
             load();
 
-            jest.advanceTimersByTime(5000);
+            vi.advanceTimersByTime(5000);
 
             expect(onError).not.toHaveBeenCalled();
         });
@@ -111,7 +114,7 @@ describe('ChallengeFrameController', () => {
             controller!.sendEvent(makeEvent({ key: 'b' }));
             expect(postMessage).not.toHaveBeenCalled();
 
-            jest.advanceTimersByTime(0);
+            vi.advanceTimersByTime(0);
 
             expect(postMessage).toHaveBeenCalledTimes(1);
             expect(postMessage).toHaveBeenCalledWith(
@@ -125,7 +128,7 @@ describe('ChallengeFrameController', () => {
 
             controller!.sendEvent(makeEvent({ key: 'a' }));
             controller!.sendEvent(makeEvent({ key: 'b' }));
-            jest.advanceTimersByTime(0);
+            vi.advanceTimersByTime(0);
             expect(postMessage).not.toHaveBeenCalled();
 
             load();
@@ -139,12 +142,12 @@ describe('ChallengeFrameController', () => {
             create({ errorTimeout: 1000 });
 
             controller!.sendEvent(makeEvent({ key: 'a' }));
-            jest.advanceTimersByTime(1000);
+            vi.advanceTimersByTime(1000);
             expect(onError).toHaveBeenCalledTimes(1);
 
             // Nothing is delivered late, even if the frame turns up afterwards.
             load();
-            jest.advanceTimersByTime(0);
+            vi.advanceTimersByTime(0);
 
             expect(postMessage).not.toHaveBeenCalled();
         });
@@ -155,7 +158,7 @@ describe('ChallengeFrameController', () => {
             controller!.destroy();
 
             controller!.sendEvent(makeEvent({ key: 'b' }));
-            jest.advanceTimersByTime(0);
+            vi.advanceTimersByTime(0);
 
             expect(postMessage).not.toHaveBeenCalled();
         });
@@ -176,7 +179,7 @@ describe('ChallengeFrameController', () => {
 
         const type = (el: Element, key: string) => {
             el.dispatchEvent(new KeyboardEvent('keydown', { key, bubbles: true }));
-            jest.advanceTimersByTime(0);
+            vi.advanceTimersByTime(0);
         };
 
         const forwardedIds = () =>
@@ -327,7 +330,7 @@ describe('ChallengeFrameController', () => {
             load();
 
             const promise = controller!.getChallenge();
-            jest.advanceTimersByTime(1000);
+            vi.advanceTimersByTime(1000);
 
             await expect(promise).rejects.toThrow('Challenge timeout');
         });
@@ -368,14 +371,14 @@ describe('ChallengeFrameController', () => {
             create({ errorTimeout: 1000 });
 
             const promise = controller!.getChallenge();
-            jest.advanceTimersByTime(1000);
+            vi.advanceTimersByTime(1000);
 
             await expect(promise).rejects.toThrow('Challenge failed');
         });
 
         it('fails immediately once the frame has errored', async () => {
             create({ errorTimeout: 1000 });
-            jest.advanceTimersByTime(1000);
+            vi.advanceTimersByTime(1000);
 
             await expect(controller!.getChallenge()).rejects.toThrow('Challenge failed');
         });
@@ -385,7 +388,7 @@ describe('ChallengeFrameController', () => {
             load();
 
             const promise = controller!.getChallenge();
-            jest.advanceTimersByTime(1000);
+            vi.advanceTimersByTime(1000);
             await expect(promise).rejects.toThrow('Challenge timeout');
 
             // The frame answering late must not be taken for an answer to anything.
@@ -403,7 +406,7 @@ describe('ChallengeFrameController', () => {
             create({ challengeTimeout: 1000 });
 
             void controller!.getChallenge().catch(() => {});
-            jest.advanceTimersByTime(1000);
+            vi.advanceTimersByTime(1000);
 
             load();
 
