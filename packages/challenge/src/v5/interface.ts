@@ -13,7 +13,16 @@ export interface ChallengeRef {
 }
 
 export type ChallengeEventType =
-    'keydown' | 'keyup' | 'input' | 'change' | 'focus' | 'blur' | 'click' | 'paste' | 'copy' | 'cut';
+    | 'keydown'
+    | 'keyup'
+    | 'input'
+    | 'change'
+    | 'focus'
+    | 'blur'
+    | 'click'
+    | 'paste'
+    | 'copy'
+    | 'cut';
 
 /** Structured-cloneable wire shape for `postMessage`. */
 export interface ChallengeEvent {

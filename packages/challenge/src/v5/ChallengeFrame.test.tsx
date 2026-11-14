@@ -2,6 +2,7 @@ import type { ComponentProps, MutableRefObject } from 'react';
 import { createRef, useRef } from 'react';
 
 import { act, render } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import ChallengeFrame from './ChallengeFrame';
 import type { ChallengeRef } from './interface';
@@ -26,10 +27,10 @@ const Form = ({ withInput = true, ...props }: FormProps) => {
 
 describe('ChallengeFrame', () => {
     const setup = (props: FormProps = {}) => {
-        const onSuccess = jest.fn();
+        const onSuccess = vi.fn();
         const result = render(<Form onSuccess={onSuccess} {...props} />);
         const iframe = result.container.querySelector('iframe')!;
-        const postMessage = jest.spyOn(iframe.contentWindow!, 'postMessage').mockImplementation(() => {});
+        const postMessage = vi.spyOn(iframe.contentWindow!, 'postMessage').mockImplementation(() => {});
 
         /** Simulates a message coming back from the frame. */
         const emit = (data: unknown) => {
@@ -51,7 +52,7 @@ describe('ChallengeFrame', () => {
                 result.container
                     .querySelector('#email')!
                     .dispatchEvent(new KeyboardEvent('keydown', { key, bubbles: true }));
-                jest.advanceTimersByTime(0);
+                vi.advanceTimersByTime(0);
             });
         };
 
@@ -70,7 +71,7 @@ describe('ChallengeFrame', () => {
     it('clears the ref on unmount rather than leaving a destroyed controller behind', () => {
         const challengeRef = createRef<ChallengeRef>() as MutableRefObject<ChallengeRef | undefined>;
         const { container, unmount } = render(<ChallengeFrame challengeRef={challengeRef} src={SRC} />);
-        jest.spyOn(container.querySelector('iframe')!.contentWindow!, 'postMessage').mockImplementation(() => {});
+        vi.spyOn(container.querySelector('iframe')!.contentWindow!, 'postMessage').mockImplementation(() => {});
 
         expect(challengeRef.current).toBeDefined();
 
@@ -82,7 +83,7 @@ describe('ChallengeFrame', () => {
     it('leaves a ref that a remount has already claimed alone', () => {
         const challengeRef = createRef<ChallengeRef>() as MutableRefObject<ChallengeRef | undefined>;
         const { container, rerender } = render(<ChallengeFrame key="a" challengeRef={challengeRef} src={SRC} />);
-        jest.spyOn(container.querySelector('iframe')!.contentWindow!, 'postMessage').mockImplementation(() => {});
+        vi.spyOn(container.querySelector('iframe')!.contentWindow!, 'postMessage').mockImplementation(() => {});
 
         rerender(<ChallengeFrame key="b" challengeRef={challengeRef} src={SRC} />);
 
@@ -111,7 +112,7 @@ describe('ChallengeFrame', () => {
         const challengeRef = createRef<ChallengeRef>() as MutableRefObject<ChallengeRef | undefined>;
         const { container } = render(<ChallengeFrame challengeRef={challengeRef} src={SRC} />);
         const iframe = container.querySelector('iframe')!;
-        const postMessage = jest.spyOn(iframe.contentWindow!, 'postMessage').mockImplementation(() => {});
+        const postMessage = vi.spyOn(iframe.contentWindow!, 'postMessage').mockImplementation(() => {});
 
         expect(challengeRef.current?.getChallenge).toBeInstanceOf(Function);
         expect(challengeRef.current?.sendEvent).toBeInstanceOf(Function);
@@ -126,8 +127,8 @@ describe('ChallengeFrame', () => {
     });
 
     describe('observing', () => {
-        beforeEach(() => jest.useFakeTimers());
-        afterEach(() => jest.useRealTimers());
+        beforeEach(() => vi.useFakeTimers());
+        afterEach(() => vi.useRealTimers());
 
         it('forwards interactions inside the observed element', () => {
             const { load, type, postMessage } = setup();
@@ -166,22 +167,22 @@ describe('ChallengeFrame', () => {
             postMessage.mockClear();
 
             input.dispatchEvent(new KeyboardEvent('keydown', { key: 'a', bubbles: true }));
-            jest.advanceTimersByTime(0);
+            vi.advanceTimersByTime(0);
 
             expect(postMessage).not.toHaveBeenCalled();
         });
     });
 
     it('calls the callbacks from the latest render, not the first', () => {
-        const first = jest.fn();
-        const second = jest.fn();
+        const first = vi.fn();
+        const second = vi.fn();
         const challengeRef = createRef<ChallengeRef>() as MutableRefObject<ChallengeRef | undefined>;
 
         const { container, rerender } = render(
             <ChallengeFrame challengeRef={challengeRef} src={SRC} onSuccess={first} />
         );
         const iframe = container.querySelector('iframe')!;
-        jest.spyOn(iframe.contentWindow!, 'postMessage').mockImplementation(() => {});
+        vi.spyOn(iframe.contentWindow!, 'postMessage').mockImplementation(() => {});
 
         rerender(<ChallengeFrame challengeRef={challengeRef} src={SRC} onSuccess={second} />);
 

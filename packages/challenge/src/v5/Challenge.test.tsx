@@ -1,6 +1,8 @@
 import { useRef } from 'react';
 
 import { act, render } from '@testing-library/react';
+import type { Mock } from 'vitest';
+import { vi } from 'vitest';
 
 import Challenge from './Challenge';
 import type { ChallengeRef } from './interface';
@@ -10,7 +12,7 @@ const ORIGIN = 'https://challenge.test';
 /** Longer than the largest retry timeout, which tops out at 25s. */
 const PAST_THE_TIMEOUT = 30000;
 
-const Harness = ({ onError, onSuccess }: { onError?: jest.Mock; onSuccess?: jest.Mock }) => {
+const Harness = ({ onError, onSuccess }: { onError?: Mock; onSuccess?: Mock }) => {
     const challengeRef = useRef<ChallengeRef>(undefined);
 
     return (
@@ -24,16 +26,16 @@ const Harness = ({ onError, onSuccess }: { onError?: jest.Mock; onSuccess?: jest
 };
 
 describe('Challenge', () => {
-    beforeEach(() => jest.useFakeTimers());
-    afterEach(() => jest.useRealTimers());
+    beforeEach(() => vi.useFakeTimers());
+    afterEach(() => vi.useRealTimers());
 
     const fail = () =>
         act(() => {
-            jest.advanceTimersByTime(PAST_THE_TIMEOUT);
+            vi.advanceTimersByTime(PAST_THE_TIMEOUT);
         });
 
     it('reloads the frame on failure', () => {
-        const onError = jest.fn();
+        const onError = vi.fn();
         const { container } = render(<Harness onError={onError} />);
 
         expect(container.querySelector('iframe')!.src).toContain('Retry=0');
@@ -47,7 +49,7 @@ describe('Challenge', () => {
     });
 
     it('gives up after the last retry, reporting every log it collected', () => {
-        const onError = jest.fn();
+        const onError = vi.fn();
         const { container } = render(<Harness onError={onError} />);
 
         fail();
@@ -63,10 +65,10 @@ describe('Challenge', () => {
     });
 
     it('reports success without retrying', () => {
-        const onSuccess = jest.fn();
+        const onSuccess = vi.fn();
         const { container } = render(<Harness onSuccess={onSuccess} />);
         const iframe = container.querySelector('iframe')!;
-        jest.spyOn(iframe.contentWindow!, 'postMessage').mockImplementation(() => {});
+        vi.spyOn(iframe.contentWindow!, 'postMessage').mockImplementation(() => {});
 
         act(() => {
             [{ type: 'init' }, { type: 'onload' }].forEach((data) => {
