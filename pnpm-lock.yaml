@@ -359,6 +359,12 @@ catalogs:
     '@vercel/webpack-asset-relocator-loader':
       specifier: 1.7.3
       version: 1.7.3
+    '@vitejs/plugin-react':
+      specifier: ^6.2.1
+      version: 6.2.1
+    '@vitest/browser-playwright':
+      specifier: ^5.1.0
+      version: 5.1.0
     '@vitest/coverage-v8':
       specifier: ^5.1.0
       version: 5.1.0
@@ -3492,7 +3498,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@vitejs/plugin-react':
-        specifier: ^6.2.1
+        specifier: 'catalog:'
         version: 6.2.1(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       '@vitest/coverage-v8':
         specifier: 'catalog:'
@@ -4662,7 +4668,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@vitejs/plugin-react':
-        specifier: ^6.2.1
+        specifier: 'catalog:'
         version: 6.2.1(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       '@vitest/coverage-v8':
         specifier: 'catalog:'
@@ -4852,7 +4858,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@vitejs/plugin-react':
-        specifier: ^6.2.1
+        specifier: 'catalog:'
         version: 6.2.1(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       happy-dom:
         specifier: 'catalog:'
@@ -5030,7 +5036,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@vitejs/plugin-react':
-        specifier: ^6.2.1
+        specifier: 'catalog:'
         version: 6.2.1(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       happy-dom:
         specifier: 'catalog:'
@@ -5142,7 +5148,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@vitejs/plugin-react':
-        specifier: ^6.2.1
+        specifier: 'catalog:'
         version: 6.2.1(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       happy-dom:
         specifier: 'catalog:'
@@ -5305,7 +5311,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@vitejs/plugin-react':
-        specifier: ^6.2.1
+        specifier: 'catalog:'
         version: 6.2.1(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       '@vitest/coverage-v8':
         specifier: 'catalog:'
@@ -5539,7 +5545,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@vitejs/plugin-react':
-        specifier: ^6.2.1
+        specifier: 'catalog:'
         version: 6.2.1(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       '@vitest/coverage-v8':
         specifier: 'catalog:'
@@ -5997,7 +6003,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@vitejs/plugin-react':
-        specifier: ^6.2.1
+        specifier: 'catalog:'
         version: 6.2.1(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       '@vitest/coverage-v8':
         specifier: 'catalog:'
@@ -6408,7 +6414,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@vitejs/plugin-react':
-        specifier: ^6.2.1
+        specifier: 'catalog:'
         version: 6.2.1(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       '@vitest/coverage-v8':
         specifier: 'catalog:'
@@ -8356,7 +8362,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@vitejs/plugin-react':
-        specifier: ^6.2.1
+        specifier: 'catalog:'
         version: 6.2.1(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       '@vitest/coverage-v8':
         specifier: 'catalog:'
@@ -8560,7 +8566,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@vitejs/plugin-react':
-        specifier: ^6.2.1
+        specifier: 'catalog:'
         version: 6.2.1(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       '@vitest/coverage-v8':
         specifier: 'catalog:'
@@ -10097,7 +10103,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@vitest/browser-playwright':
-        specifier: ^5.1.0
+        specifier: 'catalog:'
         version: 5.1.0(msw@2.12.14(@types/node@24.19.2)(@typescript/typescript6@6.0.2))(playwright@1.65.0)(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))(vitest@5.1.0)
       '@vitest/coverage-v8':
         specifier: 'catalog:'
@@ -10509,7 +10515,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@vitejs/plugin-react':
-        specifier: ^6.2.1
+        specifier: 'catalog:'
         version: 6.2.1(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       '@vitest/coverage-v8':
         specifier: 'catalog:'
@@ -10636,7 +10642,7 @@ importers:
         specifier: 'catalog:'
         version: typescript@7.0.2
       '@vitejs/plugin-react':
-        specifier: ^6.2.1
+        specifier: 'catalog:'
         version: 6.2.1(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       '@vitest/coverage-v8':
         specifier: 'catalog:'
@@ -10901,7 +10907,7 @@ importers:
         specifier: 'catalog:'
         version: 18.3.7(@types/react@18.3.31)
       '@vitejs/plugin-react':
-        specifier: ^6.2.1
+        specifier: 'catalog:'
         version: 6.2.1(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       glob:
         specifier: ^14.0.4
@@ -10974,7 +10980,7 @@ importers:
         specifier: 'catalog:'
         version: 18.3.7(@types/react@18.3.31)
       '@vitejs/plugin-react':
-        specifier: ^6.2.1
+        specifier: 'catalog:'
         version: 6.2.1(vite@8.3.6(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.97.1)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
       glob:
         specifier: ^14.0.4
