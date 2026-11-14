@@ -16,8 +16,8 @@
     "scripts": {
         "check:types": "tsc --checkers 1",
         "lint": "oxlint --quiet",
-        "test": "jest --runInBand",
-        "test:ci": "pnpm run test"
+        "test": "vitest",
+        "test:ci": "pnpm run test --run"
     },
     "dependencies": {
         "@proton/react-redux-store": "workspace:^",
@@ -29,23 +29,21 @@
         "redux-thunk": "catalog:"
     },
     "devDependencies": {
-        "@jest/globals": "catalog:",
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
+        "@proton/vitest-config": "workspace:^",
         "@testing-library/dom": "catalog:",
         "@testing-library/jest-dom": "catalog:",
         "@testing-library/react": "catalog:",
-        "@types/jest": "catalog:",
         "@types/node": "catalog:",
         "@types/react": "catalog:",
         "@types/react-dom": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
-        "jest": "catalog:",
-        "jest-environment-jsdom": "catalog:",
+        "happy-dom": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
         "react-dom": "catalog:",
-        "typescript": "catalog:"
+        "typescript": "catalog:",
+        "vitest": "catalog:"
     }
 }

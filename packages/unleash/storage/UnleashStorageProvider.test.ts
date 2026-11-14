@@ -1,4 +1,5 @@
 import { UnleashClient } from 'unleash-proxy-client';
+import { vi } from 'vitest';
 
 import type { UnleashStorage } from './UnleashStorageProvider';
 import ProtonUnleashStorageProvider, { featureFlagStorageKey } from './UnleashStorageProvider';
@@ -18,7 +19,7 @@ const mockFeatureFlags = {
 };
 
 const getFetchMock = () => {
-    return jest.fn().mockResolvedValue({
+    return vi.fn().mockResolvedValue({
         ok: true,
         status: 200,
         json: async () => mockFeatureFlags,
@@ -32,16 +33,16 @@ const getStorageMock = () => {
     const localStorageMock: { [key: string]: any } = {};
     // Implements the `UnleashStorage` interface required by ProtonUnleashStorageProvider
     const mock: UnleashStorage = {
-        setItem: jest.fn().mockImplementation((key: string, value: any) => {
+        setItem: vi.fn().mockImplementation((key: string, value: any) => {
             localStorageMock[key] = value;
         }),
-        getItem: jest.fn().mockImplementation((key: string) => {
+        getItem: vi.fn().mockImplementation((key: string) => {
             return localStorageMock[key] || null;
         }),
-        removeItem: jest.fn().mockImplementation((key: string) => {
+        removeItem: vi.fn().mockImplementation((key: string) => {
             delete localStorageMock[key];
         }),
-        getKeys: jest.fn().mockImplementation(() => Object.keys(localStorageMock)),
+        getKeys: vi.fn().mockImplementation(() => Object.keys(localStorageMock)),
     };
     return { mock, storageProvider: new ProtonUnleashStorageProvider(mock) };
 };

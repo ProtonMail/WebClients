@@ -1,20 +1,23 @@
+import type { Mock } from 'vitest';
+import { vi } from 'vitest';
+
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { createCustomFetch } from './UnleashFlagProvider';
 
 describe('createCustomFetch', () => {
-    let mockApi: jest.MockedFunction<Api>;
+    let mockApi: Mock & Api;
 
     beforeEach(() => {
-        mockApi = jest.fn().mockResolvedValue({
+        mockApi = vi.fn().mockResolvedValue({
             ok: true,
             status: 200,
             json: async () => ({}),
-        });
+        }) as unknown as Mock & Api;
     });
 
     afterEach(() => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
     });
 
     describe('config.body parsing', () => {
@@ -178,7 +181,7 @@ describe('createCustomFetch', () => {
         });
 
         it('should set data to undefined when body parsing fails', async () => {
-            const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation();
+            const consoleErrorSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
             const customFetch = createCustomFetch(mockApi);
             const invalidBody = 'this is not valid JSON {';
 

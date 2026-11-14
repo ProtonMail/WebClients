@@ -1,5 +1,5 @@
-import { describe, expect, test } from '@jest/globals';
 import { configureStore, createSlice } from '@reduxjs/toolkit';
+import { vi } from 'vitest';
 
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from './creator';
 import { getFetchedEphemeral } from './fetchedAt';
@@ -53,7 +53,7 @@ describe('creator', () => {
         }
     ) => {
         const fetchedEphemeral = getFetchedEphemeral();
-        const getFetchedAt = jest.fn(() => 0);
+        const getFetchedAt = vi.fn(() => 0);
 
         const thunkActionCreator = createAsyncModelThunk<T, StoreState<T>, undefined>('myState/fetch', {
             miss,
@@ -136,7 +136,7 @@ describe('creator', () => {
 
     test("successfully returns previous value when it's been set", async () => {
         const value = 42;
-        const fn = jest.fn(async () => value);
+        const fn = vi.fn(async () => value);
 
         const { getNewStore, thunkActionCreator, getFetchedAt } = setup(fn);
 
@@ -150,7 +150,7 @@ describe('creator', () => {
 
     test("successfully re-fetches when it's expired", async () => {
         const value = 42;
-        const fn = jest.fn(async () => value);
+        const fn = vi.fn(async () => value);
 
         const { getNewStore, thunkActionCreator, getFetchedAt } = setup(fn);
 
@@ -245,7 +245,7 @@ describe('creator', () => {
     });
 
     test('successfully re-fetches when fetchedEphemeral is unset', async () => {
-        const fn = jest.fn(async () => 43);
+        const fn = vi.fn(async () => 43);
         const { getNewStore, thunkActionCreator, getFetchedAt } = setup(fn, {
             value: 42,
             error: undefined,
@@ -266,7 +266,7 @@ describe('creator', () => {
     });
 
     test('does not refetch when ephmeral is set and fetchedAt is good', async () => {
-        const fn = jest.fn(async () => 43);
+        const fn = vi.fn(async () => 43);
         const now = Date.now();
         const { getNewStore, thunkActionCreator, getFetchedAt } = setup(fn, {
             value: 42,

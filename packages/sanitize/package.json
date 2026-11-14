@@ -10,24 +10,22 @@
     "scripts": {
         "check:types": "tsc --checkers 1",
         "lint": "oxlint --quiet",
-        "test": "jest",
-        "test:ci": "pnpm run test --ci --runInBand --logHeapUsage",
-        "test:watch": "pnpm run test --watch"
+        "test": "vitest",
+        "test:ci": "pnpm run test --run"
     },
     "dependencies": {
         "dompurify": "catalog:"
     },
     "devDependencies": {
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
-        "@types/jest": "catalog:",
+        "@proton/vitest-config": "workspace:^",
         "@types/node": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
-        "jest": "catalog:",
-        "jest-environment-jsdom": "catalog:",
+        "jsdom": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "typescript": "catalog:"
+        "typescript": "catalog:",
+        "vitest": "catalog:"
     }
 }
