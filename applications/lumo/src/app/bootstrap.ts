@@ -29,6 +29,7 @@ import noop from '@proton/utils/noop';
 import { GUEST_MIGRATION_STORAGE_KEYS } from './constants/guestMigration';
 import { LUMO_ROUTES } from './entrypoint/lumoRoutes';
 import { DbApi } from './indexedDb/db';
+import { initLumo } from './initLumo';
 import locales from './locales';
 import { lumoEventLoop } from './redux/eventLoop';
 import { createLumoListenerMiddleware } from './redux/listeners';
@@ -160,7 +161,7 @@ export const bootstrapApp = async ({ config }: { config: ProtonConfig }) => {
 
     const searchParams = new URLSearchParams(window.location.search);
     const authentication = bootstrap.createAuthentication();
-    bootstrap.init({ config, authentication, locales });
+    initLumo({ config, authentication, locales });
     initializeConsoleOverride();
     const appName = config.APP_NAME;
 

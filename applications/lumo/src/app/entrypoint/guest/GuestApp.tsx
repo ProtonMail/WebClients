@@ -3,7 +3,7 @@ import { Suspense, lazy, useState } from 'react';
 import { FlagProvider } from '@unleash/proxy-client-react';
 
 import * as bootstrap from '@proton/account/bootstrap';
-import { createAuthentication, createUnauthenticatedApi, createUnleash, init } from '@proton/account/bootstrap';
+import { createAuthentication, createUnauthenticatedApi, createUnleash } from '@proton/account/bootstrap';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
@@ -30,6 +30,7 @@ import LumoLoader from '../../components/Loading/LumoLoader';
 import ProtectGuestRouteGuard from '../../components/ProtectGuestRouteGuard/ProtectGuestRouteGuard';
 import config from '../../config';
 import { isIndexedDBAvailable } from '../../indexedDb/util';
+import { initLumo } from '../../initLumo';
 import locales from '../../locales';
 import { LumoThemeProvider } from '../../providers';
 import { OnboardingProvider } from '../../providers/OnboardingProvider';
@@ -66,7 +67,7 @@ const defaultState: {
 const bootstrapApp = async () => {
     const api = createApi({ config });
     const authentication = createAuthentication({ initialAuth: false });
-    init({ config, authentication, locales });
+    initLumo({ config, authentication, locales });
 
     await loadLocales({
         locale: getBrowserLocale(),
