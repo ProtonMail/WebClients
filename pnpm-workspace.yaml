@@ -85,6 +85,8 @@ catalog:
     '@types/webpack-env': ^1.18.8
     '@typescript/native': npm:typescript@^7.0.2
     '@vercel/webpack-asset-relocator-loader': 1.7.3
+    '@vitejs/plugin-react': ^6.2.1
+    '@vitest/browser-playwright': ^5.1.0
     '@vitest/coverage-v8': ^5.1.0
     '@vitest/ui': ^5.1.0
     babel-jest: ^30.4.1
