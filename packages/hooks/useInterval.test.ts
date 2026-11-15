@@ -1,29 +1,30 @@
 import { renderHook } from '@testing-library/react-hooks';
+import type { Mock, MockInstance } from 'vitest';
 
 import useInterval from './useInterval';
 
 describe('useInterval', () => {
-    let callback: jest.Mock<any, any>;
-    let setInterval: jest.SpyInstance<any, any>;
-    let clearInterval: jest.SpyInstance<any, any>;
+    let callback: Mock;
+    let setInterval: MockInstance;
+    let clearInterval: MockInstance;
 
     beforeEach(() => {
-        callback = jest.fn();
-        setInterval = jest.spyOn(window, 'setInterval');
-        clearInterval = jest.spyOn(window, 'clearInterval');
+        callback = vi.fn();
+        setInterval = vi.spyOn(window, 'setInterval');
+        clearInterval = vi.spyOn(window, 'clearInterval');
     });
 
     beforeAll(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
         callback.mockRestore();
-        jest.clearAllTimers();
+        vi.clearAllTimers();
     });
 
     afterAll(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     it('should init hook with no delay', () => {
@@ -52,31 +53,33 @@ describe('useInterval', () => {
         expect(callback).not.toHaveBeenCalled();
 
         // fast-forward time until 1 millisecond before it should be executed
-        jest.advanceTimersByTime(199);
+        vi.advanceTimersByTime(199);
         expect(callback).not.toHaveBeenCalled();
 
         // fast-forward until 1st call should be executed
-        jest.advanceTimersByTime(1);
+        vi.advanceTimersByTime(1);
         expect(callback).toHaveBeenCalledTimes(1);
 
         // fast-forward until next timer should be executed
-        jest.advanceTimersToNextTimer();
+        vi.advanceTimersToNextTimer();
         expect(callback).toHaveBeenCalledTimes(2);
 
         // fast-forward until 3 more timers should be executed
-        jest.advanceTimersToNextTimer(3);
+        for (let i = 0; i < 3; i++) {
+            vi.advanceTimersToNextTimer();
+        }
         expect(callback).toHaveBeenCalledTimes(5);
     });
 
     it('should clear interval on unmount', () => {
         const { unmount } = renderHook(() => useInterval(callback, 200));
-        const initialTimerCount = jest.getTimerCount();
+        const initialTimerCount = vi.getTimerCount();
         expect(clearInterval).not.toHaveBeenCalled();
 
         unmount();
 
         expect(clearInterval).toHaveBeenCalledTimes(1);
-        expect(jest.getTimerCount()).toBe(initialTimerCount - 1);
+        expect(vi.getTimerCount()).toBe(initialTimerCount - 1);
     });
 
     it('should handle new interval when delay is updated', () => {
@@ -85,7 +88,7 @@ describe('useInterval', () => {
         expect(callback).not.toHaveBeenCalled();
 
         // fast-forward initial delay
-        jest.advanceTimersByTime(200);
+        vi.advanceTimersByTime(200);
         expect(callback).toHaveBeenCalledTimes(1);
 
         // update delay by increasing previous one
@@ -93,11 +96,11 @@ describe('useInterval', () => {
         rerender();
 
         // fast-forward initial delay again but this time it should not execute the cb
-        jest.advanceTimersByTime(200);
+        vi.advanceTimersByTime(200);
         expect(callback).toHaveBeenCalledTimes(1);
 
         // fast-forward remaining time for new delay
-        jest.advanceTimersByTime(300);
+        vi.advanceTimersByTime(300);
         expect(callback).toHaveBeenCalledTimes(2);
     });
 
@@ -105,13 +108,13 @@ describe('useInterval', () => {
         let delay = 200;
         const { rerender } = renderHook(() => useInterval(callback, delay));
         expect(clearInterval).not.toHaveBeenCalled();
-        const initialTimerCount = jest.getTimerCount();
+        const initialTimerCount = vi.getTimerCount();
 
         // update delay while there is a pending interval
         delay = 500;
         rerender();
 
         expect(clearInterval).toHaveBeenCalledTimes(1);
-        expect(jest.getTimerCount()).toBe(initialTimerCount);
+        expect(vi.getTimerCount()).toBe(initialTimerCount);
     });
 });

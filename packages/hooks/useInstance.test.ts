@@ -20,7 +20,7 @@ describe('useInstance()', () => {
     });
 
     it('only executes the passed callback once', () => {
-        const callback = jest.fn(() => 'initial');
+        const callback = vi.fn(() => 'initial');
 
         renderHook(() => useInstance(callback));
 
@@ -72,8 +72,8 @@ describe('useInstance()', () => {
     });
 
     it('callback is not called again even after re-renders with different callback', () => {
-        const callback1 = jest.fn(() => 'value1');
-        const callback2 = jest.fn(() => 'value2');
+        const callback1 = vi.fn(() => 'value1');
+        const callback2 = vi.fn(() => 'value2');
 
         const hook = renderHook(({ fn }) => useInstance(fn), { initialProps: { fn: callback1 } });
 

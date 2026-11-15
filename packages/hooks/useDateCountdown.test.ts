@@ -6,15 +6,15 @@ import useDateCountdown from './useDateCountdown';
 
 describe('useDateCountdown', () => {
     beforeAll(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jest.clearAllTimers();
+        vi.clearAllTimers();
     });
 
     afterAll(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     describe('interval', () => {
@@ -35,13 +35,13 @@ describe('useDateCountdown', () => {
 
             // fast-forward time until 1 millisecond before it should be updated
             act(() => {
-                jest.advanceTimersByTime(SECOND - 1);
+                vi.advanceTimersByTime(SECOND - 1);
             });
             expect(result.current).toStrictEqual(initialExpectedValue);
 
             // fast-forward until 1st update should be
             act(() => {
-                jest.advanceTimersByTime(1);
+                vi.advanceTimersByTime(1);
             });
             expect(result.current).toStrictEqual({ ...initialExpectedValue, diff: diff - SECOND, seconds: 35 });
         });
@@ -64,13 +64,13 @@ describe('useDateCountdown', () => {
 
             // fast-forward time until 1 millisecond before it should be updated
             act(() => {
-                jest.advanceTimersByTime(interval - 1);
+                vi.advanceTimersByTime(interval - 1);
             });
             expect(result.current).toStrictEqual(initialExpectedValue);
 
             // fast-forward until 1st update should be
             act(() => {
-                jest.advanceTimersByTime(1);
+                vi.advanceTimersByTime(1);
             });
             expect(result.current).toStrictEqual({ ...initialExpectedValue, diff: diff - interval });
         });
@@ -110,7 +110,7 @@ describe('useDateCountdown', () => {
 
             const advanceBy = 1 * DAY + 2 * HOUR + 3 * MINUTE + 4 * SECOND;
             act(() => {
-                jest.advanceTimersByTime(advanceBy);
+                vi.advanceTimersByTime(advanceBy);
             });
 
             expect(result.current).toStrictEqual({
@@ -140,7 +140,7 @@ describe('useDateCountdown', () => {
 
         // fast-forward time 1 Day
         act(() => {
-            jest.advanceTimersByTime(DAY);
+            vi.advanceTimersByTime(DAY);
         });
         diff -= DAY;
         expect(result.current).toStrictEqual({
@@ -154,7 +154,7 @@ describe('useDateCountdown', () => {
 
         // fast-forward time 1 Hour
         act(() => {
-            jest.advanceTimersByTime(HOUR);
+            vi.advanceTimersByTime(HOUR);
         });
         diff -= HOUR;
         expect(result.current).toStrictEqual({
@@ -168,7 +168,7 @@ describe('useDateCountdown', () => {
 
         // fast-forward time 1 Minute
         act(() => {
-            jest.advanceTimersByTime(MINUTE);
+            vi.advanceTimersByTime(MINUTE);
         });
         diff -= MINUTE;
         expect(result.current).toStrictEqual({
@@ -182,7 +182,7 @@ describe('useDateCountdown', () => {
 
         // fast-forward time 1 Second
         act(() => {
-            jest.advanceTimersByTime(SECOND);
+            vi.advanceTimersByTime(SECOND);
         });
         diff -= SECOND;
         expect(result.current).toStrictEqual({
@@ -196,7 +196,7 @@ describe('useDateCountdown', () => {
 
         // fast-forward rest
         act(() => {
-            jest.advanceTimersByTime(1 * DAY + 11 * HOUR + 2 * MINUTE + 31 * SECOND);
+            vi.advanceTimersByTime(1 * DAY + 11 * HOUR + 2 * MINUTE + 31 * SECOND);
         });
         expect(result.current).toStrictEqual({
             diff: 0,
@@ -209,7 +209,7 @@ describe('useDateCountdown', () => {
 
         // fast-forward to past expiry
         act(() => {
-            jest.advanceTimersByTime(1 * DAY + 2 * HOUR + 3 * MINUTE + 4 * SECOND);
+            vi.advanceTimersByTime(1 * DAY + 2 * HOUR + 3 * MINUTE + 4 * SECOND);
         });
         expect(result.current).toStrictEqual({
             diff: -93784000,

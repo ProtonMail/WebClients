@@ -14,7 +14,7 @@ const withProvider = (value: [boolean, Dispatch<SetStateAction<boolean>>]) => {
 
 describe('useRightToLeft', () => {
     it('should return the state provided by the closest provider', () => {
-        const setRightToLeft = jest.fn();
+        const setRightToLeft = vi.fn();
 
         const hook = renderHook(() => useRightToLeft(), { wrapper: withProvider([true, setRightToLeft]) });
 

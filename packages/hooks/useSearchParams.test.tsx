@@ -2,13 +2,13 @@ import { act, renderHook } from '@testing-library/react';
 
 import { useSearchParams } from './useSearchParams';
 
-const mockHistory = {
-    push: jest.fn(),
-    replace: jest.fn(),
-};
+const mockHistory = vi.hoisted(() => ({
+    push: vi.fn(),
+    replace: vi.fn(),
+}));
 let mockLocation = { pathname: '/users', search: '?tab=all', hash: '#section' };
 
-jest.mock('react-router-dom', () => ({
+vi.mock('react-router-dom', () => ({
     useHistory: () => mockHistory,
     useLocation: () => mockLocation,
 }));
@@ -109,7 +109,7 @@ describe('useSearchParams', () => {
     });
 
     it('supports a functional updater receiving the current search params', () => {
-        const updater = jest.fn((current: URLSearchParams) => ({ tab: `${current.get('tab')}+new` }));
+        const updater = vi.fn((current: URLSearchParams) => ({ tab: `${current.get('tab')}+new` }));
         const { result } = renderHook(() => useSearchParams());
         const [, setSearchParams] = result.current;
 

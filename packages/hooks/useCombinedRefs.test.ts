@@ -6,7 +6,7 @@ import useCombinedRefs from './useCombinedRefs';
 
 describe('useCombinedRefs', () => {
     it('should correctly combine refs into one ref', async () => {
-        const cbRef = jest.fn();
+        const cbRef = vi.fn();
         const refs: { a: null | HTMLDivElement; b: null | HTMLDivElement } = { a: null, b: null };
 
         const Test = () => {
