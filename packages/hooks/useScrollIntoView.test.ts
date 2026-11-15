@@ -1,24 +1,25 @@
 import { createRef } from 'react';
 
 import { renderHook } from '@testing-library/react-hooks';
+import type { Mock } from 'vitest';
 
 import createScrollIntoView from '@proton/shared/lib/helpers/createScrollIntoView';
 
 import useScrollIntoView from './useScrollIntoView';
 
-jest.mock('@proton/shared/lib/helpers/createScrollIntoView', () => jest.fn());
+vi.mock('@proton/shared/lib/helpers/createScrollIntoView', () => ({ default: vi.fn() }));
 
-const mockedCreateScrollIntoView = createScrollIntoView as jest.MockedFunction<typeof createScrollIntoView>;
+const mockedCreateScrollIntoView = vi.mocked(createScrollIntoView);
 
 describe('useScrollIntoView()', () => {
-    let cancel: jest.Mock;
+    let cancel: Mock;
     let target: HTMLDivElement;
     let scroller: HTMLDivElement;
 
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
 
-        cancel = jest.fn();
+        cancel = vi.fn();
         mockedCreateScrollIntoView.mockReturnValue(cancel);
 
         // jsdom does no layout, so the scroll parent has to be told it overflows.
@@ -33,7 +34,7 @@ describe('useScrollIntoView()', () => {
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
         document.body.innerHTML = '';
     });
 
@@ -84,7 +85,7 @@ describe('useScrollIntoView()', () => {
         render(true);
         expect(cancel).not.toHaveBeenCalled();
 
-        jest.advanceTimersByTime(10_000);
+        vi.advanceTimersByTime(10_000);
 
         expect(cancel).toHaveBeenCalled();
     });

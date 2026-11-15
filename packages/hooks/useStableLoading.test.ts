@@ -7,14 +7,14 @@ import { DEFAULT_DELAY, default as useStableLoading } from './useStableLoading';
 
 describe('useStableLoading', () => {
     beforeEach(() => {
-        jest.useFakeTimers();
+        vi.useFakeTimers();
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
 
         // clearing the spies for clearTimeout
-        jest.restoreAllMocks();
+        vi.restoreAllMocks();
     });
 
     it('should initialize with given initial state', () => {
@@ -63,7 +63,7 @@ describe('useStableLoading', () => {
 
         // Advance timers by delay (300ms by default)
         act(() => {
-            jest.advanceTimersByTime(DEFAULT_DELAY);
+            vi.advanceTimersByTime(DEFAULT_DELAY);
         });
 
         // Should no longer be loading after delay
@@ -81,13 +81,13 @@ describe('useStableLoading', () => {
 
         // Should still be loading after 300ms (default delay)
         act(() => {
-            jest.advanceTimersByTime(DEFAULT_DELAY);
+            vi.advanceTimersByTime(DEFAULT_DELAY);
         });
         expect(result.current).toBe(true);
 
         // Should no longer be loading after custom delay
         act(() => {
-            jest.advanceTimersByTime(customDelay - DEFAULT_DELAY);
+            vi.advanceTimersByTime(customDelay - DEFAULT_DELAY);
         });
         expect(result.current).toBe(false);
     });
@@ -99,7 +99,7 @@ describe('useStableLoading', () => {
 
         // Since array has no true values, it should transition to non-loading
         act(() => {
-            jest.advanceTimersByTime(DEFAULT_DELAY);
+            vi.advanceTimersByTime(DEFAULT_DELAY);
         });
         expect(result.current).toBe(false);
 
@@ -115,14 +115,14 @@ describe('useStableLoading', () => {
 
         // Should not be loading after the delay
         act(() => {
-            jest.advanceTimersByTime(DEFAULT_DELAY);
+            vi.advanceTimersByTime(DEFAULT_DELAY);
         });
         expect(result.current).toBe(false);
     });
 
     it('should handle function input correctly', () => {
         // Create a function that returns false
-        const initialFunction = jest.fn().mockReturnValue(false);
+        const initialFunction = vi.fn().mockReturnValue(false);
 
         // Render the hook with the function
         const { result, rerender } = renderHook(({ fn }) => useStableLoading(fn, { initialState: false }), {
@@ -134,7 +134,7 @@ describe('useStableLoading', () => {
         expect(result.current).toBe(false);
 
         // Create a new function that returns true and rerender
-        const trueFunction = jest.fn().mockReturnValue(true);
+        const trueFunction = vi.fn().mockReturnValue(true);
         rerender({ fn: trueFunction });
 
         // New function should be called and result should immediately be true
@@ -142,7 +142,7 @@ describe('useStableLoading', () => {
         expect(result.current).toBe(true);
 
         // Create a function that returns false and rerender
-        const falseFunction = jest.fn().mockReturnValue(false);
+        const falseFunction = vi.fn().mockReturnValue(false);
         rerender({ fn: falseFunction });
 
         // New function should be called
@@ -153,13 +153,13 @@ describe('useStableLoading', () => {
 
         // Should not be loading after the delay
         act(() => {
-            jest.advanceTimersByTime(DEFAULT_DELAY);
+            vi.advanceTimersByTime(DEFAULT_DELAY);
         });
         expect(result.current).toBe(false);
     });
 
     it('should clear timeout when unmounted', () => {
-        jest.spyOn(global, 'clearTimeout');
+        vi.spyOn(global, 'clearTimeout');
 
         const { unmount, rerender } = renderHook((props) => useStableLoading(props), {
             initialProps: true,
@@ -176,7 +176,7 @@ describe('useStableLoading', () => {
     });
 
     it('should clear previous timeout when condition changes', () => {
-        jest.spyOn(global, 'clearTimeout');
+        vi.spyOn(global, 'clearTimeout');
 
         const { rerender } = renderHook((props) => useStableLoading(props), {
             initialProps: true,

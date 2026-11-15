@@ -32,9 +32,9 @@
     "scripts": {
         "check:types": "tsc --checkers 1",
         "lint": "oxlint --quiet",
-        "test": "jest",
-        "test:ci": "jest --runInBand --ci --logHeapUsage",
-        "test:watch": "jest --watch"
+        "test": "vitest",
+        "test:ci": "pnpm run test --run",
+        "test:watch": "pnpm run test --watch"
     },
     "dependencies": {
         "@proton/shared": "workspace:^",
@@ -50,18 +50,20 @@
         "react-test-renderer": "^18.3.1"
     },
     "devDependencies": {
-        "@proton/jest-swc-preset": "workspace:^",
         "@proton/oxlint-config": "workspace:^",
-        "@types/jest": "catalog:",
+        "@proton/vitest-config": "workspace:^",
         "@types/lodash": "catalog:",
         "@types/node": "catalog:",
         "@types/react": "catalog:",
         "@types/react-router-dom": "catalog:",
         "@types/webpack-env": "catalog:",
         "@typescript/native": "catalog:",
-        "jest": "catalog:",
+        "jsdom": "catalog:",
+        "@vitejs/plugin-react": "catalog:",
+        "@vitest/coverage-v8": "catalog:",
         "oxlint": "catalog:",
         "oxlint-tsgolint": "catalog:",
-        "typescript": "catalog:"
+        "typescript": "catalog:",
+        "vitest": "catalog:"
     }
 }

@@ -104,7 +104,7 @@ describe('usePersistedState', () => {
     });
 
     it('should keep working in memory when storage writes throw', () => {
-        jest.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+        vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
             throw new Error('QuotaExceededError');
         });
         const { result } = renderHook(() => usePersistedState<string>(KEY));
