@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import {
@@ -41,5 +41,32 @@ describe('SendWithErrorsConfirmationModal', () => {
                 isOpen={true}
             />
         );
+    });
+
+    it.each([true, false])('shows a "Got it" button that closes the modal when isProtonProtonInvite is %s', (isPP) => {
+        const vevent = veventBuilder({});
+        const onClose = jest.fn();
+        render(
+            <SendWithErrorsConfirmationModal
+                sendPreferencesMap={{
+                    'alice@pm.me': sendPreferencesMap,
+                }}
+                inviteActions={
+                    {
+                        selfAddress: undefined,
+                        type: INVITE_ACTION_TYPES.CHANGE_PARTSTAT,
+                        isProtonProtonInvite: isPP,
+                    } as any
+                }
+                vevent={vevent}
+                cancelVevent={vevent}
+                onClose={onClose}
+                onConfirm={noop}
+                isOpen={true}
+            />
+        );
+        expect(screen.queryByRole('button', { name: 'OK' })).toBeNull();
+        fireEvent.click(screen.getByRole('button', { name: 'Got it' }));
+        expect(onClose).toHaveBeenCalled();
     });
 });

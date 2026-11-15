@@ -30,13 +30,13 @@ const getModalContent = (
             return {
                 title: c('Title').t`Organizer cannot be notified`,
                 warningText: c('Info').t`The organizer could not be notified that you changed your answer:`,
-                close: <Button className="ml-auto" color="norm" onClick={onClose}>{c('Action').t`OK`}</Button>,
+                close: <Button className="ml-auto" color="norm" onClick={onClose}>{c('Action').t`Got it`}</Button>,
             };
         }
         return {
             title: c('Title').t`Organizer cannot be notified`,
             warningText: c('Info').t`The organizer cannot be notified that you want to change your answer:`,
-            close: <Button className="ml-auto" color="norm" onClick={onClose}>{c('Action').t`OK`}</Button>,
+            close: <Button className="ml-auto" color="norm" onClick={onClose}>{c('Action').t`Got it`}</Button>,
         };
     }
     if (originalInviteActions.type === INVITE_ACTION_TYPES.DECLINE_INVITATION) {
