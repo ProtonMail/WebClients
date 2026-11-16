@@ -4,6 +4,8 @@ import { Redirect, Route, BrowserRouter as Router, Switch, useRouteMatch } from 
 import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
 
 import ConversationSkeleton from '../components/ConversationSkeleton';
+import { DesktopAppOnboardingProvider } from '../features/desktopAppOnboarding/DesktopAppOnboardingProvider';
+import { DesktopOnboardingProvider } from '../features/desktopOnboarding/DesktopOnboardingProvider';
 import DebugView from '../features/dev/DebugView';
 import { useSkillsSync } from '../features/skills/useSkillsSync';
 import { useLumoFlags } from '../hooks/useLumoFlags';
@@ -56,64 +58,84 @@ export function InnerApp() {
 
     return (
         <PandocProvider>
-            <Router basename={url}>
-                <Switch>
-                    {/* Standalone full-screen experience, rendered without the Lumo sidebar/header. */}
-                    {aiPaperTrailRoute && (
-                        <Route exact path={LUMO_ROUTES.AI_PAPER_TRAIL}>
-                            <GhostChatProvider>
-                                <Suspense fallback={<ConversationSkeleton />}>
-                                    <AiPaperTrailView />
-                                </Suspense>
-                            </GhostChatProvider>
-                        </Route>
-                    )}
-                    <Route>
-                        <MainLayout>
-                            <Suspense fallback={<ConversationSkeleton />}>
-                                <Switch>
-                                    <Route exact path="/projects" component={ProjectsView} />
-                                    <Route path="/projects/:projectId" component={ProjectDetailView} />
-                                    {artifactsView && <Route exact path="/library" component={ConversationPage} />}
-                                    {imageTools && !artifactsView && (
-                                        <Route exact path="/images" component={ConversationPage} />
-                                    )}
-                                    {/* With artifacts view, Images and Creations are Library tabs. */}
-                                    {artifactsView && imageTools && (
-                                        <Redirect
-                                            exact
-                                            from="/images"
-                                            to={{ pathname: '/library', search: '?tab=images' }}
-                                        />
-                                    )}
-                                    {artifactsView && <Redirect exact from="/creations" to="/library" />}
-                                    {!artifactsView && imageTools && <Redirect exact from="/library" to="/images" />}
-                                    {apiKeyManagement && <Route exact path="/docs/api" component={ApiDocsPage} />}
-                                    <Route exact path="/chats" component={AllChatsView} />
-                                    {schedules && isDesktopEnvironment() && (
-                                        <Route exact path="/schedules" component={SchedulesView} />
-                                    )}
-                                    {schedules && isDesktopEnvironment() && (
-                                        <Route exact path="/schedules/:scheduleId" component={ScheduleHomeView} />
-                                    )}
-                                    {showCustomize && <Route exact path="/customize" component={CustomizeView} />}
-                                    {showCustomize && isGuest && <Redirect from="/customize" to="/customize" />}
-                                    {showCustomize && !isGuest && (
-                                        <Route exact path="/customize/upload" component={UploadSkillView} />
-                                    )}
-                                    {showCustomize && !isGuest && (
-                                        <Route exact path="/customize/skills/:skillId" component={SkillDetailView} />
-                                    )}
+            <DesktopOnboardingProvider>
+                <Router basename={url}>
+                    <DesktopAppOnboardingProvider>
+                        <Switch>
+                            {/* Standalone full-screen experience, rendered without the Lumo sidebar/header. */}
+                            {aiPaperTrailRoute && (
+                                <Route exact path={LUMO_ROUTES.AI_PAPER_TRAIL}>
+                                    <GhostChatProvider>
+                                        <Suspense fallback={<ConversationSkeleton />}>
+                                            <AiPaperTrailView />
+                                        </Suspense>
+                                    </GhostChatProvider>
+                                </Route>
+                            )}
+                            <Route>
+                                <MainLayout>
+                                    <Suspense fallback={<ConversationSkeleton />}>
+                                        <Switch>
+                                            <Route exact path="/projects" component={ProjectsView} />
+                                            <Route path="/projects/:projectId" component={ProjectDetailView} />
+                                            {artifactsView && (
+                                                <Route exact path="/library" component={ConversationPage} />
+                                            )}
+                                            {imageTools && !artifactsView && (
+                                                <Route exact path="/images" component={ConversationPage} />
+                                            )}
+                                            {/* With artifacts view, Images and Creations are Library tabs. */}
+                                            {artifactsView && imageTools && (
+                                                <Redirect
+                                                    exact
+                                                    from="/images"
+                                                    to={{ pathname: '/library', search: '?tab=images' }}
+                                                />
+                                            )}
+                                            {artifactsView && <Redirect exact from="/creations" to="/library" />}
+                                            {!artifactsView && imageTools && (
+                                                <Redirect exact from="/library" to="/images" />
+                                            )}
+                                            {apiKeyManagement && (
+                                                <Route exact path="/docs/api" component={ApiDocsPage} />
+                                            )}
+                                            <Route exact path="/chats" component={AllChatsView} />
+                                            {schedules && isDesktopEnvironment() && (
+                                                <Route exact path="/schedules" component={SchedulesView} />
+                                            )}
+                                            {schedules && isDesktopEnvironment() && (
+                                                <Route
+                                                    exact
+                                                    path="/schedules/:scheduleId"
+                                                    component={ScheduleHomeView}
+                                                />
+                                            )}
+                                            {showCustomize && (
+                                                <Route exact path="/customize" component={CustomizeView} />
+                                            )}
+                                            {showCustomize && isGuest && <Redirect from="/customize" to="/customize" />}
+                                            {showCustomize && !isGuest && (
+                                                <Route exact path="/customize/upload" component={UploadSkillView} />
+                                            )}
+                                            {showCustomize && !isGuest && (
+                                                <Route
+                                                    exact
+                                                    path="/customize/skills/:skillId"
+                                                    component={SkillDetailView}
+                                                />
+                                            )}
 
-                                    <Route exact path="/" component={ConversationPage} />
-                                    <Route path="/c/:conversationId" component={ConversationPage} />
-                                </Switch>
-                            </Suspense>
-                        </MainLayout>
-                        <DebugView />
-                    </Route>
-                </Switch>
-            </Router>
+                                            <Route exact path="/" component={ConversationPage} />
+                                            <Route path="/c/:conversationId" component={ConversationPage} />
+                                        </Switch>
+                                    </Suspense>
+                                </MainLayout>
+                                <DebugView />
+                            </Route>
+                        </Switch>
+                    </DesktopAppOnboardingProvider>
+                </Router>
+            </DesktopOnboardingProvider>
         </PandocProvider>
     );
 }

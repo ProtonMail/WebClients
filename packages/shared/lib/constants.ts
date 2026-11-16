@@ -848,6 +848,7 @@ export enum LUMO_UPSELL_PATHS {
     COMPOSER_IMAGE_SELECTOR = 'composer-image-selector',
     GALLERY_IMAGE_LIMIT = 'gallery-image-limit',
     CUSTOM_AGENTS = 'custom-agents',
+    DESKTOP_APP_ONBOARDING = 'desktop-app-onboarding',
 }
 
 export enum SHARED_UPSELL_PATHS {

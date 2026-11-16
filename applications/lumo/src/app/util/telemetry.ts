@@ -419,7 +419,9 @@ const ARTIFACT_LANGUAGE_ALIASES = {
 } as const satisfies Record<string, string>;
 
 export type ArtifactLanguageBucket =
-    (typeof ARTIFACT_LANGUAGE_ALIASES)[keyof typeof ARTIFACT_LANGUAGE_ALIASES] | 'other' | 'none';
+    | (typeof ARTIFACT_LANGUAGE_ALIASES)[keyof typeof ARTIFACT_LANGUAGE_ALIASES]
+    | 'other'
+    | 'none';
 
 const artifactLanguageLookup: Record<string, ArtifactLanguageBucket | undefined> = ARTIFACT_LANGUAGE_ALIASES;
 
@@ -793,4 +795,114 @@ export const sendLibraryOpenedEvent = ({ tab, hasCreations }: { tab: LibraryTabN
         tab,
         ...(hasCreations !== undefined && { hasCreations }),
     });
+};
+
+/*
+ * Desktop app introduction (web, mobile web and the iOS/Android apps).
+ * `surface` says where it was shown; `platform` is the computer we picked an installer for
+ * ('unknown' when we send people to the download page instead, 'mobile' on phones).
+ */
+export type DesktopOnboardingSurface = 'web' | 'mobile-web' | 'ios-app' | 'android-app';
+export type DesktopOnboardingPlatform = 'macos' | 'windows' | 'linux' | 'unknown' | 'mobile';
+export type DesktopOnboardingDismissMethod = 'not-now' | 'got-it' | 'close';
+export type DesktopOnboardingDownloadResult = 'installer' | 'download-page';
+
+const sendLumoDesktopOnboardingEvent = (eventType: string, eventData: Record<string, string>) => {
+    sendLumoCustomEvent('lumo-desktop-onboarding-event', {
+        eventType,
+        ...eventData,
+    });
+};
+
+export const sendDesktopOnboardingShownEvent = ({
+    surface,
+    platform,
+}: {
+    surface: DesktopOnboardingSurface;
+    platform: DesktopOnboardingPlatform;
+}) => {
+    sendLumoDesktopOnboardingEvent('shown', { surface, platform });
+};
+
+/** "Download the desktop app" was clicked; `result` says whether an installer or the download page opened. */
+export const sendDesktopOnboardingDownloadEvent = ({
+    surface,
+    platform,
+    result,
+}: {
+    surface: DesktopOnboardingSurface;
+    platform: DesktopOnboardingPlatform;
+    result: DesktopOnboardingDownloadResult;
+}) => {
+    sendLumoDesktopOnboardingEvent('download-clicked', { surface, platform, result });
+};
+
+/** Closed without downloading: "Not now", "Got it", or Escape / clicking outside ('close'). */
+export const sendDesktopOnboardingDismissedEvent = ({
+    surface,
+    method,
+}: {
+    surface: DesktopOnboardingSurface;
+    method: DesktopOnboardingDismissMethod;
+}) => {
+    sendLumoDesktopOnboardingEvent('dismissed', { surface, method });
+};
+
+/*
+ * First-launch tour inside the desktop app. `finalStep` is 'upsell' for free users and 'connector'
+ * for everyone else; `stepCount` is 5 when the notifications step was skipped (already granted).
+ */
+export type DesktopAppOnboardingStepName =
+    | 'welcome'
+    | 'connectors'
+    | 'skills'
+    | 'schedules'
+    | 'notifications'
+    | 'final';
+export type DesktopAppOnboardingFinalStep = 'upsell' | 'connector';
+export type DesktopAppOnboardingEndMethod = 'close' | 'start-chatting' | 'get-lumo-plus' | 'set-up-connector';
+export type DesktopAppOnboardingNotificationResult = 'granted' | 'not-granted' | 'opened-settings' | 'not-now';
+
+const sendLumoDesktopAppOnboardingEvent = (eventType: string, eventData: Record<string, string>) => {
+    sendLumoCustomEvent('lumo-desktop-app-onboarding-event', {
+        eventType,
+        ...eventData,
+    });
+};
+
+export const sendDesktopAppOnboardingShownEvent = ({
+    finalStep,
+    stepCount,
+}: {
+    finalStep: DesktopAppOnboardingFinalStep;
+    stepCount: number;
+}) => {
+    sendLumoDesktopAppOnboardingEvent('shown', { finalStep, stepCount: String(stepCount) });
+};
+
+/** Sent each time a step comes into view, Back included, so drop-off per step can be read. */
+export const sendDesktopAppOnboardingStepViewedEvent = ({ step }: { step: DesktopAppOnboardingStepName }) => {
+    sendLumoDesktopAppOnboardingEvent('step-viewed', { step });
+};
+
+/** The notifications step: what the OS said, or that settings opened, or "Not now". */
+export const sendDesktopAppOnboardingNotificationsEvent = ({
+    result,
+}: {
+    result: DesktopAppOnboardingNotificationResult;
+}) => {
+    sendLumoDesktopAppOnboardingEvent('notifications', { result });
+};
+
+/** How the tour ended and on which step: × / Escape ('close'), or one of the last step's buttons. */
+export const sendDesktopAppOnboardingEndedEvent = ({
+    step,
+    method,
+    finalStep,
+}: {
+    step: DesktopAppOnboardingStepName;
+    method: DesktopAppOnboardingEndMethod;
+    finalStep: DesktopAppOnboardingFinalStep;
+}) => {
+    sendLumoDesktopAppOnboardingEvent('ended', { step, method, finalStep });
 };
