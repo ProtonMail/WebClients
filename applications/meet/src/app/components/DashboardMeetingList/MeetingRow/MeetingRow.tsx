@@ -22,7 +22,6 @@ import { APPS } from '@proton/shared/lib/constants';
 import { fromUTCDateToTimezone } from '@proton/shared/lib/date/timezone';
 import { type Meeting, MeetingType, WaitingRoomState } from '@proton/shared/lib/interfaces/Meet';
 import type { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces/UserSettings';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import type { JoinLocationState } from '../../../types';
@@ -57,8 +56,6 @@ export const MeetingRow = ({
     handleRotatePersonalMeeting,
     loadingRotatePersonalMeeting = false,
 }: MeetingRowProps) => {
-    const isPersonalMeetingRotationEnabled = useFlag('PersonalMeetingRotation');
-
     const history = useHistory();
     const [isDeleteMeetingModalOpen, setIsDeleteMeetingModalOpen] = useState(false);
     const notifications = useNotifications();
@@ -264,14 +261,12 @@ export const MeetingRow = ({
                             </Button>
                         </Tooltip>
 
-                        {meeting.Type === MeetingType.PERSONAL &&
-                            isPersonalMeetingRotationEnabled &&
-                            !!handleRotatePersonalMeeting && (
-                                <PersonalMeetingRotationButton
-                                    loadingRotatePersonalMeeting={loadingRotatePersonalMeeting}
-                                    handleRotatePersonalMeeting={handleRotatePersonalMeeting}
-                                />
-                            )}
+                        {meeting.Type === MeetingType.PERSONAL && !!handleRotatePersonalMeeting && (
+                            <PersonalMeetingRotationButton
+                                loadingRotatePersonalMeeting={loadingRotatePersonalMeeting}
+                                handleRotatePersonalMeeting={handleRotatePersonalMeeting}
+                            />
+                        )}
                     </div>
                     <Tooltip title={isRoom ? c('Action').t`Copy room link` : c('Action').t`Copy meeting link`}>
                         <Button

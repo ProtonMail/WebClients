@@ -20,8 +20,6 @@ export const MeetingSnackbarItem = ({ snackbar, onClose }: Props) => {
     );
 
     const isChatThreadsEnabled = useFlag('MeetChatThreads');
-    const isOpenMessageFromPreviewEnabled = useFlag('MeetOpenMessageFromPreview');
-
     if (snackbar.type === 'event') {
         return <MeetingUpdateSnackbar update={snackbar.event} onClose={onClose} />;
     }
@@ -40,11 +38,9 @@ export const MeetingSnackbarItem = ({ snackbar, onClose }: Props) => {
         dispatch(openChatAtMessage(id));
     };
 
-    const onOpen = isOpenMessageFromPreviewEnabled ? handleOpen : undefined;
-
     return snackbar.type === 'mention' ? (
-        <MentionSnackbar message={message} onClose={onClose} onOpen={onOpen} />
+        <MentionSnackbar message={message} onClose={onClose} onOpen={handleOpen} />
     ) : (
-        <MeetingUpdateSnackbar update={message} onClose={onClose} onOpen={onOpen} />
+        <MeetingUpdateSnackbar update={message} onClose={onClose} onOpen={handleOpen} />
     );
 };

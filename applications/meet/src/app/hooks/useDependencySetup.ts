@@ -1,6 +1,5 @@
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsGuest } from '@proton/meet/store/slices/userSlice';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { MeetingListStatus, useMeetingList } from './useMeetingList';
 
@@ -22,9 +21,8 @@ const useUnauthenticatedDependencySetup = () => {
 };
 
 export const useDependencySetup = () => {
-    const isEarlyAccess = useFlag('MeetEarlyAccess');
     const isGuest = useMeetSelector(selectIsGuest);
-    const useSetup = isGuest || !isEarlyAccess ? useUnauthenticatedDependencySetup : useAuthenticatedDependencySetup;
+    const useSetup = isGuest ? useUnauthenticatedDependencySetup : useAuthenticatedDependencySetup;
 
     return useSetup();
 };

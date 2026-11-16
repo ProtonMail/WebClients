@@ -157,7 +157,7 @@ beforeEach(() => {
     mocks.isIpad.mockReturnValue(false);
     mocks.isSafari.mockReturnValue(false);
     mocks.isFirefox.mockReturnValue(false);
-    mocks.flags = { MeetOpenDesktopAppOnLoad: false, MeetOpenLinksInDesktopApp: true };
+    mocks.flags = { MeetOpenDesktopAppOnLoad: false };
     mocks.isHost = false;
     mocks.waitingRoomEnabled = false;
     mocks.isGuest = false;
@@ -484,14 +484,6 @@ describe('PreJoinDetails on other desktop browsers with MeetOpenDesktopAppOnLoad
         });
     });
 
-    it('offers one "Join meeting" button and no desktop app button with MeetOpenLinksInDesktopApp off', () => {
-        mocks.flags.MeetOpenLinksInDesktopApp = false;
-        renderPreJoinDetails();
-
-        expect(screen.getAllByRole('button', { name: 'Join meeting' })).toHaveLength(1);
-        expect(screen.queryByRole('button', { name: OPEN_IN_DESKTOP_APP })).not.toBeInTheDocument();
-    });
-
     describe('with the browser preferred', () => {
         beforeEach(() => {
             saveBrowserPreference(USER_STORAGE_KEY);
@@ -501,7 +493,7 @@ describe('PreJoinDetails on other desktop browsers with MeetOpenDesktopAppOnLoad
             { role: 'participant', isHost: false, action: 'Join in browser' },
             { role: 'host', isHost: true, action: 'Start meeting in browser' },
         ])(
-            'offers the $role "$action" and the desktop app button, without opening the app or its hint even with MeetOpenLinksInDesktopApp on',
+            'offers the $role "$action" and the desktop app button, without opening the app or its hint',
             ({ isHost, action }) => {
                 mocks.isHost = isHost;
                 renderPreJoinDetails();

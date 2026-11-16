@@ -48,7 +48,6 @@ export class CameraTrackSubscriptionManager {
     private entriesByTrackSid = new Map<string, CacheEntry>();
     private pendingSubscriptionWorkTrackSids: string[] = [];
     private reconcileInterval: NodeJS.Timeout | null = null;
-    private allowResettingFrozenVideoTracks = false;
     private lastFramesDecodedByTrackSid = new Map<string, number>();
     private checksWithoutFramesDecodedByTrackSid = new Map<string, number>();
     private frozenTrackResetsByTrackSid = new Map<string, number>();
@@ -99,12 +98,6 @@ export class CameraTrackSubscriptionManager {
         this.participantQuality = participantQuality;
 
         void this.reconcileHeldEntries();
-    }
-
-    setAllowResettingFrozenVideoTracks(allowResettingFrozenVideoTracks: boolean) {
-        this.allowResettingFrozenVideoTracks = allowResettingFrozenVideoTracks;
-        this.lastFramesDecodedByTrackSid.clear();
-        this.checksWithoutFramesDecodedByTrackSid.clear();
     }
 
     setSpotlightParticipantIdentity(spotlightParticipantIdentity: string | undefined) {
@@ -446,9 +439,7 @@ export class CameraTrackSubscriptionManager {
             this.processSubscriptionQueueWhenSettled();
         }
 
-        if (this.allowResettingFrozenVideoTracks) {
-            void this.resetFrozenVideoTracks(pinnedCameraTrackPublications);
-        }
+        void this.resetFrozenVideoTracks(pinnedCameraTrackPublications);
     };
 
     /**

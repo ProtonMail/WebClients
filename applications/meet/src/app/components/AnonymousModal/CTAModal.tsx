@@ -1,7 +1,6 @@
 import type { ComponentType } from 'react';
 
 import { UpsellModalTypes } from '@proton/meet/types/types';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { FreeAccountModal } from './end-call/FreeAccountModal';
 import { GuestAccountModal } from './end-call/GuestAccountModal';
@@ -35,12 +34,6 @@ const MODAL_COMPONENTS: Record<UpsellModalTypes, ComponentType<CTAModalBaseProps
 };
 
 export const CTAModal = ({ ctaModalType, ...props }: CTAModalProps) => {
-    const showUpsellModalAfterMeeting = useFlag('MeetShowUpsellModalAfterMeeting');
-
-    if (!showUpsellModalAfterMeeting) {
-        return null;
-    }
-
     const ModalComponent = MODAL_COMPONENTS[ctaModalType];
 
     return <ModalComponent {...props} upsellModalType={ctaModalType} />;

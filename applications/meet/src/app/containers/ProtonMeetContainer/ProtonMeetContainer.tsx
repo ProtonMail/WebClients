@@ -87,8 +87,6 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
     const isLocalParticipantAdminOrHost = useMeetSelector(selectIsLocalParticipantAdminOrHost);
     const hasAnotherAdmin = useMeetSelector(selectHasAnotherAdmin);
 
-    const promptOnTabClose = useFlag('MeetPromptOnTabClose');
-    const showUpsellModalAfterMeeting = useFlag('MeetShowUpsellModalAfterMeeting');
     const meetUpsellEnabled = useFlag('MeetUpsell');
 
     useWakeLock();
@@ -314,7 +312,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
             return;
         }
 
-        if (!showUpsellModalAfterMeeting || !meetUpsellEnabled) {
+        if (!meetUpsellEnabled) {
             if (isGuest) {
                 history.push(meetingLinkRef.current as string);
             } else {
@@ -405,12 +403,7 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         }
     });
 
-    // Warn user before leaving if in a meeting
     useEffect(() => {
-        if (!promptOnTabClose) {
-            return;
-        }
-
         const handleBeforeUnload = (e: BeforeUnloadEvent) => {
             if (joinedRoom) {
                 e.preventDefault();
@@ -422,9 +415,8 @@ export const ProtonMeetContainer = ({ keyProvider }: ProtonMeetContainerProps) =
         return () => {
             window.removeEventListener('beforeunload', handleBeforeUnload);
         };
-    }, [joinedRoom, promptOnTabClose]);
+    }, [joinedRoom]);
 
-    // Actually disconnect when page unloads (after user confirms)
     useEffect(() => {
         const handleUnload = () => {
             if (joinedRoom) {

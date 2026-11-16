@@ -41,10 +41,6 @@ vi.mock('@proton/meet/store/hooks/useMeetings', () => ({
     ],
 }));
 
-vi.mock('@proton/unleash/useFlag', () => ({
-    useFlag: (flag: string) => flag === 'MeetShowMLSLogs',
-}));
-
 const createMockStore = ({ sideBarOpen = false, keyRotationLogs = initialCurrentMeetingState.keyRotationLogs }) => {
     return configureStore({
         // @ts-expect-error - mock data
