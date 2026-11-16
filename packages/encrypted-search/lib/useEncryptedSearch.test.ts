@@ -166,6 +166,31 @@ describe('useEncryptedSearch', () => {
             expect(deleteESDB).toHaveBeenCalled();
             expect(traceInitiativeError).not.toHaveBeenCalled();
         });
+
+        it('should delete the database if the index key is missing', async () => {
+            jest.mocked(deleteESDB).mockClear();
+            jest.mocked(traceInitiativeError).mockClear();
+            jest.mocked(hasESDB).mockResolvedValue(true);
+            jest.mocked(metadataIndexingProgress.read).mockResolvedValue({
+                status: INDEXING_STATUS.ACTIVE,
+            } as any);
+            jest.mocked(getIndexKey).mockResolvedValue(undefined);
+
+            const { result } = renderHook(() =>
+                useEncryptedSearch({
+                    refreshMask: 1,
+                    esCallbacks: { ...mockedESCallback },
+                })
+            );
+
+            const returnValue = await result.current.initializeES();
+            expect(returnValue).toBe(undefined);
+            expect(deleteESDB).toHaveBeenCalled();
+            expect(traceInitiativeError).toHaveBeenCalledWith(
+                expect.anything(),
+                expect.objectContaining({ message: expect.stringContaining('initializeES - No index key') })
+            );
+        });
     });
 
     // What callers wait on to know whether the index can serve searches. It has to come before the

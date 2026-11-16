@@ -4,6 +4,8 @@ export type Logger = Pick<BaseLogger, 'trace' | 'debug' | 'info' | 'warn' | 'err
 
 const PREFIX = '[ContentSearch] ';
 
+export type LogLevel = 'trace' | 'debug' | 'info' | 'warn' | 'error' | 'log';
+
 export class LoggerProxy implements Logger {
     constructor(private readonly logger: BaseLogger | undefined) {}
     trace(message: string, ...args: unknown[]): void {

@@ -35,7 +35,7 @@ const AUTOREPLY_HEADERS = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', '
 /**
  * Check if a message has a mime type
  */
-const hasMimeType = (type: MIME_TYPES) => (message?: Partial<Message>) => message?.MIMEType === type;
+const hasMimeType = (type: MIME_TYPES) => (message?: Partial<Pick<Message, 'MIMEType'>>) => message?.MIMEType === type;
 
 export const isMIME = hasMimeType(MIME);
 export const isPlainText = hasMimeType(PLAINTEXT);
@@ -44,7 +44,8 @@ export const isPlainText = hasMimeType(PLAINTEXT);
  * Check if a message has a flag in the flags bitmap
  */
 export const hasFlag = (flag: number) => (message?: Partial<Message>) => hasBit(message?.Flags, flag);
-const hasBigFlag = (flag: bigint) => (message?: Partial<Message>) => hasBitBigInt(BigInt(message?.Flags || 0), flag);
+const hasBigFlag = (flag: bigint) => (message?: object & Partial<Pick<Message, 'Flags'>>) =>
+    hasBitBigInt(BigInt(message?.Flags || 0), flag);
 export const setFlag = (flag: number) => (message?: Partial<Message>) => setBit(message?.Flags, flag);
 export const clearFlag = (flag: number) => (message?: Partial<Message>) => clearBit(message?.Flags, flag);
 export const toggleFlag = (flag: number) => (message?: Partial<Message>) => toggleBit(message?.Flags, flag);

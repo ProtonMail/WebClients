@@ -57,12 +57,14 @@ export class EncryptedBlobTransaction implements OpenBlobTransaction, SealedBlob
         private revision: number
     ) {}
 
-    static async start(
+    static async start<Stores extends DatabaseStores>(
         cache: BlobCache | undefined,
         db: IDBPDatabase<Database>,
-        indexKey: CryptoKey
+        indexKey: CryptoKey,
+        idbTxn: ReadTransaction<Stores, 'config'> | undefined = undefined
     ): Promise<OpenBlobTransaction> {
-        const revision = await EncryptedBlobTransaction.readRevision(db.transaction('config').store);
+        const configStore = idbTxn ? idbTxn.objectStore('config') : db.transaction('config').store;
+        const revision = await EncryptedBlobTransaction.readRevision(configStore);
         return new EncryptedBlobTransaction(cache, db, indexKey, revision);
     }
 

@@ -1,7 +1,7 @@
 import type { ESIndexingState, ESTimepoint } from '@proton/encrypted-search/models/interfaces';
 
-import type { ImportHandle, ImportOutcome } from '../import/ImportHandle';
-import type { IndexService } from '../indexation/IndexService';
+import type { ImportHandle, ImportOutcome } from '../../import/ImportHandle';
+import type { IndexService } from '../../indexation/IndexService';
 import type { ESStatusConcrete } from './ESAdapter';
 
 /**
@@ -210,7 +210,7 @@ export class IndexingJob {
                 // The outcome, not the progress, is what ends the job: progress reaching its end says
                 // nothing about whether the index is complete. `done` also resolves for a run that
                 // ended before we got here, so there's no replay gap to catch up on.
-                void handle.done.then((outcome) => {
+                return handle.done.then((outcome) => {
                     // Ignore a handle we've moved on from — paused and then resumed with a new one.
                     if (this.abandoned || this.handle !== handle) {
                         return;

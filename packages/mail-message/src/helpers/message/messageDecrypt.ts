@@ -10,9 +10,9 @@ import { c } from 'ttag';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
-import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import type { BatchMessage, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-import { getParsedHeadersFirstValue, getSender, isAutoForwardee, isMIME } from '@proton/shared/lib/mail/messages';
+import { getParsedHeadersFirstValue, isAutoForwardee, isMIME } from '@proton/shared/lib/mail/messages';
 import { getMailVerificationStatus } from '@proton/shared/lib/mail/signature';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
@@ -28,17 +28,32 @@ const binaryToString = (data: Uint8Array<ArrayBuffer>) =>
 
 export type { DecryptMessageResult };
 
+/**
+ * Require decoding the BatchMessage body since it's difficult to reliably distinguish
+ * a Message from a BatchMessage object given that the former does not always respect
+ * the TS definitions.
+ */
+type BatchMessageWithDecodedBodyAndFlags = Omit<BatchMessage, 'Body'> & {
+    Body: Uint8Array<ArrayBuffer>;
+    Flags: number;
+};
+const isBatchMessageWithDecodedBody = (
+    message: Message | BatchMessageWithDecodedBodyAndFlags
+): message is BatchMessageWithDecodedBodyAndFlags => message.Body instanceof Uint8Array;
+const getMessageBodyForOpenPGP = (message: Message | BatchMessageWithDecodedBodyAndFlags) =>
+    isBatchMessageWithDecodedBody(message) ? { binaryMessage: message.Body } : { armoredMessage: message.Body };
+
 const decryptMimeMessage = async (
-    message: Message,
+    message: Message | BatchMessageWithDecodedBodyAndFlags,
     privateKeys: PrivateKeyReference[],
     onUpdateAttachment?: (ID: string, attachment: DecryptedAttachment) => void
 ): Promise<DecryptMessageResult> => {
     const headerFilename = c('Encrypted Headers').t`Encrypted Headers filename`;
-    const sender = getSender(message)?.Address;
+    const sender = message?.Sender?.Address;
 
     try {
         const decryption = await CryptoProxy.decryptMessage({
-            armoredMessage: message.Body,
+            ...getMessageBodyForOpenPGP(message),
             decryptionKeys: privateKeys,
             verificationKeys: [],
             format: 'binary',
@@ -65,7 +80,10 @@ const decryptMimeMessage = async (
         return {
             decryptedBody: processing.body,
             decryptedRawContent,
-            attachments: onUpdateAttachment ? convert(message, processing.attachments, onUpdateAttachment) : undefined,
+            attachments:
+                !isBatchMessageWithDecodedBody(message) && onUpdateAttachment
+                    ? convert(message, processing.attachments, onUpdateAttachment)
+                    : undefined,
             decryptedSubject: processing.encryptedSubject,
             signature: decryption.signatures[0],
             mimetype: processing.mimeType as MIME_TYPES,
@@ -88,7 +106,7 @@ const decryptMimeMessage = async (
  * It will be done separately when public keys will be ready
  */
 export const decryptMessage = async (
-    message: Message,
+    message: Message | BatchMessageWithDecodedBodyAndFlags,
     privateKeys: PrivateKeyReference[],
     onUpdateAttachment?: (ID: string, attachment: DecryptedAttachment) => void,
     password?: string
@@ -99,7 +117,7 @@ export const decryptMessage = async (
 
     try {
         const decryption = await CryptoProxy.decryptMessage({
-            armoredMessage: message.Body,
+            ...getMessageBodyForOpenPGP(message),
             decryptionKeys: privateKeys,
             verificationKeys: [],
             passwords: password, // EO messages

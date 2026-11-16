@@ -22,6 +22,21 @@ interface Props {
     esIndexingProgressState: ESIndexingState;
 }
 
+function calculateEtaMessage(estimatedMinutes: number) {
+    if (estimatedMinutes <= 1) {
+        return c('Info').t`Estimated time remaining: Less than a minute`;
+    } else if (estimatedMinutes === Infinity) {
+        return c('Info').t`Estimating time remaining...`;
+    } else {
+        // translator: the variable is a positive integer (written in digits) always strictly bigger than 1
+        return c('Info').ngettext(
+            msgid`Estimated time remaining: ${estimatedMinutes} minute`,
+            `Estimated time remaining: ${estimatedMinutes} minutes`,
+            estimatedMinutes
+        );
+    }
+}
+
 const EncryptedSearchField = ({ esIndexingProgressState }: Props) => {
     const { enableContentSearch, esStatus, progressRecorderRef, pauseContentIndexing, toggleEncryptedSearch } =
         useEncryptedSearchContext();
@@ -149,15 +164,7 @@ const EncryptedSearchField = ({ esIndexingProgressState }: Props) => {
         );
     }
 
-    const etaMessage =
-        estimatedMinutes <= 1
-            ? c('Info').t`Estimated time remaining: Less than a minute`
-            : // translator: the variable is a positive integer (written in digits) always strictly bigger than 1
-              c('Info').ngettext(
-                  msgid`Estimated time remaining: ${estimatedMinutes} minute`,
-                  `Estimated time remaining: ${estimatedMinutes} minutes`,
-                  estimatedMinutes
-              );
+    const etaMessage = calculateEtaMessage(estimatedMinutes);
     const progressBar = (
         <Progress
             value={progressValue || 0}

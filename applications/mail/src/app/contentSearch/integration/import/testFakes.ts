@@ -1,10 +1,10 @@
 import type { ESSettledState } from '@proton/encrypted-search/models/esFunctions';
 
-import type { ImportHandle, ImportOutcome } from '../import/ImportHandle';
-import type { IndexService } from '../indexation/IndexService';
-import type { MetricService } from '../metrics/MetricService';
+import type { ImportHandle, ImportOutcome } from '../../import/ImportHandle';
+import type { IndexService } from '../../indexation/IndexService';
+import type { MetricService } from '../../metrics/MetricService';
+import type { FunctionsV1 } from '../useContentSearch';
 import type { ESStatusConcrete } from './ESAdapter';
-import type { FunctionsV1 } from './useContentSearch';
 
 /** Lets a test resolve a promise the code under test is waiting on. */
 export const deferred = <T>() => {
@@ -40,11 +40,13 @@ export const fakeImportHandle = () => {
 
 export const fakeMetricService = () =>
     ({
-        sendQueryCompletedReport: jest.fn(),
-        startMailboxIndexing: jest.fn(),
-        sendMailboxIndexCompletedReport: jest.fn(),
+        searchCompleted: jest.fn(),
+        startIndexing: jest.fn(),
+        mailboxIndexCompleted: jest.fn(),
         startSearchSession: jest.fn(),
         endSearchSession: jest.fn(),
+        resultOpened: jest.fn(),
+        resultActionPerformed: jest.fn(),
     }) as unknown as MetricService;
 
 /** An {@link IndexService} that hands out one controllable import. */

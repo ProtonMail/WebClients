@@ -1,7 +1,7 @@
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 
 import { DatabaseLock } from '../db/DatabaseLock';
-import { deferred, flushPromises } from '../integration/testFakes';
+import { deferred, flushPromises } from '../integration/import/testFakes';
 import type { MetricService } from '../metrics/MetricService';
 import { LoggerProxy } from '../utils/logger';
 import type { SearchOutcome } from './Search';
@@ -41,10 +41,11 @@ describe('SearchService metrics', () => {
             async () => [],
             new DatabaseLock(),
             new LoggerProxy(undefined),
-            metricService
+            metricService,
+            true
         );
         // The worker is only handed to `Search`, which is faked here.
-        jest.spyOn(searchService as any, 'getWorker').mockResolvedValue(undefined);
+        jest.spyOn(searchService as any, 'getWorkerAndMessageCacheDeps').mockResolvedValue(undefined);
     });
 
     it('starts a session and a search for each new search', () => {

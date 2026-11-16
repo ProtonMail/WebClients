@@ -2,10 +2,14 @@ import type { IDBPDatabase } from 'idb';
 
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { getItem } from '@proton/shared/lib/helpers/storage';
+import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
-import type { ESBaseMessage } from '../../models/encryptedSearch';
+import { BlobCache } from '../cache/BlobCache.ts';
+import { EncryptedBlobTransaction } from '../crypto/EncryptedBlobTransaction.ts';
 import type { Database } from '../db/schema.ts';
-import { IndexWriter } from '../indexation/IndexWriter.ts';
+import { createMailSearchEngine } from '../engine/create.ts';
+import { MailDelegate } from '../indexation/worker/MailDelegate.ts';
+import { EngineWrapper } from '../indexation/worker/wrapper.ts';
 import { IndexReader } from '../search/IndexReader.ts';
 import type { BatchReader, EncryptedSearchReader } from './EncryptedSearchReader.ts';
 
@@ -148,8 +152,9 @@ export class Import {
     public async run() {
         await this.applyRefreshIfNeeded();
         const dstReader = new IndexReader(this.db, this.indexKey);
-        const dstWriter = new IndexWriter(this.db, this.indexKey);
         let idsToProcess: Awaited<ReturnType<Import['getIdsToProcess']>>;
+        const blobCache = new BlobCache();
+        const engine = new EngineWrapper(createMailSearchEngine(), new MailDelegate());
         try {
             while ((idsToProcess = await this.getIdsToProcess(dstReader))) {
                 this.notifications.onTotalAvailable(idsToProcess.inserted.length);
@@ -158,9 +163,9 @@ export class Import {
                     totalCompleted += completed;
                     this.notifications.onCompleted(totalCompleted);
                 };
-                await this.deleteMessages(idsToProcess.deleted, dstWriter);
+                await this.deleteMessages(idsToProcess.deleted, engine, blobCache);
                 const srcBatchReader = this.srcReader.createBatchReader(idsToProcess.inserted);
-                const importedIds = await this.importMessages(srcBatchReader, dstWriter, onMessageCompleted);
+                const importedIds = await this.importMessages(srcBatchReader, engine, blobCache, onMessageCompleted);
                 for (const id of idsToProcess.inserted) {
                     if (!importedIds.has(id)) {
                         this.skippedIds.add(id);
@@ -168,24 +173,35 @@ export class Import {
                 }
             }
         } finally {
-            // this closes the db
-            dstWriter.dispose();
+            blobCache.free();
+            engine.dispose();
+            this.db.close();
         }
     }
 
     private async applyRefreshIfNeeded() {
         if ((await this.db.get('outdated_import_ids', 'refresh')) !== undefined) {
             const txn = this.db.transaction(['config', 'index_blobs', 'outdated_import_ids'], 'readwrite');
-            new IndexWriter(this.db, this.indexKey).clear(txn);
+            void txn.objectStore('config').delete('blobs_revision');
+            void txn.objectStore('index_blobs').clear();
             void txn.objectStore('outdated_import_ids').clear();
             await txn.done;
         }
     }
 
-    private async deleteMessages(ids: string[], dstWriter: IndexWriter) {
-        const blobTxn = await dstWriter.deleteByIds(ids);
+    private async deleteMessages(ids: string[], engine: EngineWrapper, blobCache: BlobCache) {
+        const blobTxn = await EncryptedBlobTransaction.start(blobCache, this.db, this.indexKey);
+        const write = engine.write();
+        try {
+            for (const id of ids) {
+                write.remove(id);
+            }
+            await write.execute(blobTxn);
+        } finally {
+            write.dispose();
+        }
         // cleanup before writing, otherwise index grows enormous
-        await dstWriter.cleanup(blobTxn);
+        await engine.cleanup(blobTxn);
         const sealedTxn = await blobTxn.encrypt();
         const txn = this.db.transaction(['config', 'index_blobs', 'outdated_import_ids'], 'readwrite');
         const outdatedStore = txn.objectStore('outdated_import_ids');
@@ -204,15 +220,24 @@ export class Import {
     /** @returns the ids actually written, so the caller can tell which ones were skipped */
     private async importMessages(
         src: BatchReader,
-        dstWriter: IndexWriter,
+        engine: EngineWrapper,
+        blobCache: BlobCache,
         onMessageCompleted: (completed: number) => void
     ): Promise<Set<string>> {
         const importedIds = new Set<string>();
-        let messages: { metadata: ESBaseMessage; body: string }[] | undefined;
+        let messages: { metadata: MessageMetadata; body: string }[] | undefined;
         while ((messages = await src.readNextBatch(this.batchSize, (issue) => this.notifications.onIssue(issue)))) {
-            const blobTxn = await dstWriter.writeBatch(messages);
-            // cleanup before writing, otherwise index grows enormous
-            await dstWriter.cleanup(blobTxn);
+            const blobTxn = await EncryptedBlobTransaction.start(blobCache, this.db, this.indexKey);
+            const write = engine.write();
+            try {
+                for (const m of messages) {
+                    write.insertMessage(m.metadata, m.body);
+                }
+                await write.execute(blobTxn);
+            } finally {
+                write.dispose();
+            }
+            await engine.cleanup(blobTxn);
             const sealedTxn = await blobTxn.encrypt();
             const txn = this.db.transaction(['config', 'index_blobs', 'outdated_import_ids'], 'readwrite');
             try {

@@ -5,15 +5,12 @@ import { logger } from '@protontech/logger';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useWelcomeFlags } from '@proton/account/welcomeFlags';
 import { useApi } from '@proton/app-context/useApi';
 import { useSubscribeEventManager } from '@proton/components/hooks/useHandler';
 import { useLocalStateSync } from '@proton/components/hooks/useLocalStateSync';
-import { getIndexKey } from '@proton/encrypted-search/esHelpers/esBuild';
 import { setESLogger } from '@proton/encrypted-search/esHelpers/esLogger';
 import { hasESDB } from '@proton/encrypted-search/esIDB/indexedDB';
-import { contentIndexingProgress } from '@proton/encrypted-search/esIDB/indexingProgress';
 import { wrappedGetOldestInfo } from '@proton/encrypted-search/esIDB/metadata';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 import { useEncryptedSearch } from '@proton/encrypted-search/useEncryptedSearch';
@@ -63,7 +60,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const history = useHistory();
     const [user] = useUser();
     const getMessageKeys = useGetMessageKeys();
-    const getUserKeys = useGetUserKeys();
     const getMessageCounts = useGetMessageCounts();
     const api = useApi();
     const { welcomeFlags } = useWelcomeFlags();
@@ -93,6 +89,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     // selected by the `ContentSearch` flag. `useContentSearch` mirrors `useEncryptedSearch`'s
     // API but resolves results from the content-search-v2 index instead of the legacy ES flow.
     const isContentSearchEnabled = useFlag('ContentSearch');
+    const isContentSearchIndexationEnabled = useFlag('ContentSearchIndexation');
     const [searchVersion] = useLocalStateSync<'v1' | 'v2'>('v2', 'OVERRIDE_SEARCH_V2');
     // Which engine is in charge this session. The `OVERRIDE_SEARCH_V2` debug toggle reloads the app
     // when it changes (see `ContentSearchVersionToggle`), so this is settled for the session.
@@ -260,41 +257,23 @@ const EncryptedSearchProvider = ({ children }: Props) => {
             });
         }
 
-        // Existence of IDB is checked since the following operations interact with it
-        if (!(await hasESDB(user.ID))) {
-            return;
-        }
-
-        const contentProgress = await contentIndexingProgress.read(user.ID);
-        if (!contentProgress) {
-            return esLibraryFunctions.initializeES({ onStateSettled: markStartupSettled });
-        }
-
-        // We need to cache the metadata directly, since the library is
-        // not yet initialised, i.e. the flags in memory are not yet set.
-        // The reason for not initialising the library just yet is that
-        // in case an upgrade/downgrade is needed, the flags would be set
-        // incorrectly due to the way we encode the latter
-        const userKeys = await getUserKeys();
-        const indexKey = await getIndexKey(userKeys, user.ID);
-        if (!indexKey) {
-            return esLibraryFunctions.esDelete();
-        }
-
+        // Whether there is an index to resume, and in what state, is up to the engine in charge
         return esLibraryFunctions.initializeES({ onStateSettled: markStartupSettled });
     };
 
     useSubscribeEventManager(async (event: Event) => {
         ESDeletedConversationsCache.listenEvents(event);
-        // Events go to v2's handler whenever content search is enabled, even when the debug toggle
-        // points searches at v1: v2 forwards every event to v1 first, so v1's index stays in sync
-        // either way, and then records which messages changed. That recording is what lets a later
-        // v2 session import the updates and deletions it slept through — the import's own src/dst
-        // diff only finds messages that were never imported, not ones that changed or went away.
-        // Without the flag v2 must not be touched at all: its handler creates the v2 database.
-        const handleEvent = isContentSearchEnabled
-            ? esLibraryFunctionsV2.handleEvent
-            : esLibraryFunctionsV1.handleEvent;
+        // Import path (`ContentSearchIndexation` off): events go to v2's handler whenever content
+        // search is enabled, even when the debug toggle points searches at v1. It forwards every event
+        // to v1 first, so v1's index stays in sync either way, and then records which messages changed.
+        // That recording is what lets a later v2 session import the updates and deletions it slept
+        // through — the import's own src/dst diff only finds messages that were never imported, not
+        // ones that changed or went away.
+        // Indexation path (`ContentSearchIndexation` on): v2's indexer doesn't forward events to v1,
+        // so events only go to v2 when it is the active engine, and to v1 otherwise.
+        // Without the `ContentSearch` flag v2 must not be touched at all: its handler creates the v2 database.
+        const shouldRouteEventsToV2 = isContentSearchEnabled && (isV2Active || !isContentSearchIndexationEnabled);
+        const handleEvent = shouldRouteEventsToV2 ? esLibraryFunctionsV2.handleEvent : esLibraryFunctionsV1.handleEvent;
         void handleEvent(convertEventType(event, addresses?.length || 0));
     });
 

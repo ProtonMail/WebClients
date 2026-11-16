@@ -4,6 +4,7 @@
  * Search operations can interrupt indexing operations, as they are higher priority
  * for the user. If indexing is interrupted by search, it will be automatically
  * retried by running the runIndexing callback again */
+import { isAbortedFrom } from '../utils/AsyncAbort';
 
 export class DatabaseLock {
     private indexingAbortController: AbortController | undefined;
@@ -50,7 +51,7 @@ export class DatabaseLock {
             try {
                 await callback(this.indexingAbortController.signal);
             } catch (err) {
-                if (err instanceof Error && err.name === 'AbortError') {
+                if (isAbortedFrom(err, this.indexingAbortController.signal)) {
                     interrupted = true;
                 } else {
                     throw err;

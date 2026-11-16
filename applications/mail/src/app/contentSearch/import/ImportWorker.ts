@@ -1,3 +1,5 @@
+import initText2HtmlWasm from '@protontech/mail-html-to-text-fast-wasm';
+
 import { openContentSearchDB } from '../db/open';
 import { initWasm } from '../init';
 import { EncryptedSearchReader } from './EncryptedSearchReader';
@@ -21,7 +23,7 @@ export default class ImportWorker {
         }
         this.running = true;
         try {
-            await initWasm();
+            await Promise.all([initWasm(), initText2HtmlWasm()]);
             const esReader = await EncryptedSearchReader.openWithIndexKey(userId, keys.indexV1Key);
             // No v1 index to import from. `IndexService.importFromEncryptedSearch` already checks this
             // before spawning the worker, but guard here too so we never proceed without a source.
