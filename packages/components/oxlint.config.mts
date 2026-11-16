@@ -9,7 +9,23 @@ export default createOxlintConfig({
     ignorePatterns: ['**/iwad/**'],
     restrictedImports: {
         // Replaces `import/no-internal-modules` (forbid `./index`), which oxlint's import plugin does not have.
-        patterns: [{ group: ['./index'], message: 'Import from the module directly instead of `./index`.' }],
+        patterns: [
+            { group: ['./index'], message: 'Import from the module directly instead of `./index`.' },
+            {
+                // The account domain UI packages depend on this package; apps pass their pieces in as children or props.
+                group: [
+                    '@proton/account-recovery',
+                    '@proton/account-recovery/*',
+                    '@proton/account-security',
+                    '@proton/account-security/*',
+                    '@proton/delegated-access',
+                    '@proton/delegated-access/*',
+                    '@proton/safety-review',
+                    '@proton/safety-review/*',
+                ],
+                message: '@proton/components must not import the account domain packages.',
+            },
+        ],
     },
     overrides: [
         refObjectNullOverride,
