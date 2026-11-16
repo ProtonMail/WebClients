@@ -12,8 +12,6 @@ vi.mock('@proton/shared/lib/helpers/browser', async (importOriginal) => ({
     isFirefox: mocks.isFirefox,
 }));
 
-// ModalTwo renders <dialog> without `open` and shows it through the app's CSS, which happy-dom does not load,
-// so happy-dom's default `display: none` for a <dialog> without `open` would hide it from role queries.
 beforeAll(() => {
     const style = document.createElement('style');
     style.textContent = 'dialog { display: block; }';
@@ -40,7 +38,6 @@ describe('WebRtcUnsupportedModal', () => {
 
         const dialog = screen.getByRole('dialog', { name: 'Browser not supported' });
 
-        // dom-accessibility-api pads inline elements with spaces, so the computed description reads "true ."
         expect(dialog).toHaveAccessibleDescription(
             expect.stringContaining(
                 `${generalAdvice} In Firefox, open about:config and set media.peerconnection.enabled to true`

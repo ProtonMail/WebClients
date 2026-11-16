@@ -3,8 +3,6 @@ import userEvent from '@testing-library/user-event';
 
 import { MeetingLockedModal } from './MeetingLockedModal';
 
-// ModalTwo renders <dialog> without `open` and shows it through the app's CSS, which happy-dom does not load,
-// so happy-dom's default `display: none` for a <dialog> without `open` would hide it from role queries.
 beforeAll(() => {
     const style = document.createElement('style');
     style.textContent = 'dialog { display: block; }';
