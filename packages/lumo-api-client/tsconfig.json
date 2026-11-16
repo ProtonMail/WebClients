@@ -1,7 +1,8 @@
 {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
-        "noUncheckedIndexedAccess": false
+        "noUncheckedIndexedAccess": false,
+        "types": ["@proton/types", "global-types-monorepo", "webpack-env", "node", "vitest/globals"]
     },
     "exclude": ["**/node_modules", "**/*.spec.ts"]
 }

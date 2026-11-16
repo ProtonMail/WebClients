@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import { LumoClientType } from '../types-api';
 import {
     LUMO_LIMITS_ENDPOINT,
@@ -12,7 +14,7 @@ import { newRecoveryState } from './recovery';
 describe('fetchUsageLimits', () => {
     it('calls GET ai/v1/limits and returns limits', async () => {
         const limits = { lite: 99, max: 20, images: 19 };
-        const api = jest.fn().mockResolvedValue({ limits });
+        const api = vi.fn().mockResolvedValue({ limits });
 
         await expect(fetchUsageLimits(api)).resolves.toEqual(limits);
         expect(api).toHaveBeenCalledWith({
@@ -34,7 +36,7 @@ describe('fetchModels', () => {
                 max_context_length: 262_144,
             },
         ];
-        const api = jest.fn().mockResolvedValue({ object: 'list', data });
+        const api = vi.fn().mockResolvedValue({ object: 'list', data });
 
         await expect(fetchModels(api)).resolves.toEqual(data);
         expect(api).toHaveBeenCalledWith({
@@ -47,7 +49,7 @@ describe('fetchModels', () => {
 
 describe('generation recovery transport', () => {
     it('sends the per-job capability separately from the encryption request ID', async () => {
-        const api = jest.fn().mockResolvedValue('stream');
+        const api = vi.fn().mockResolvedValue('stream');
         const recovery = newRecoveryState([], 'message');
         const payload = {
             model: 'lumo',
@@ -80,7 +82,7 @@ describe('generation recovery transport', () => {
     });
 
     it('does not opt ordinary requests into buffering', async () => {
-        const api = jest.fn().mockResolvedValue('stream');
+        const api = vi.fn().mockResolvedValue('stream');
         const payload = { model: 'lumo', messages: [], stream: true };
         await callChatEndpoint(api, payload);
         expect(api.mock.calls[0][0].data).toEqual(payload);

@@ -1,3 +1,5 @@
+import { type MockedFunction, vi } from 'vitest';
+
 import type { Api } from '@proton/shared/lib/interfaces/Api';
 
 import type { ChatCompletionsRequest } from '../types-api';
@@ -12,25 +14,23 @@ import { GenerationInterruptedError, ToolRetryConfirmationRequiredError, newReco
 import type { GenerationRecoveryState } from './recovery';
 import { type EncryptedTurn, Role, type Turn } from './types';
 
-jest.mock('uuid', () => ({ v4: () => 'request-id' }));
-jest.mock('./encryption', () => ({ DEFAULT_LUMO_PUB_KEY: 'pub-key', encryptTurns: jest.fn() }));
-jest.mock('./encryptionParams', () => ({ RequestEncryptionParams: { create: jest.fn() } }));
-jest.mock('./transforms/decrypt', () => ({
+vi.mock('uuid', () => ({ v4: () => 'request-id' }));
+vi.mock('./encryption', () => ({ DEFAULT_LUMO_PUB_KEY: 'pub-key', encryptTurns: vi.fn() }));
+vi.mock('./encryptionParams', () => ({ RequestEncryptionParams: { create: vi.fn() } }));
+vi.mock('./transforms/decrypt', () => ({
     decryptToolCallArguments: async (calls: unknown) => calls,
     makeDecryptionTransformStream: () => new TransformStream(),
 }));
 
-jest.mock('./network', () => ({
+vi.mock('./network', () => ({
     LUMO_CHAT_ENDPOINT: 'ai/v1/chat/completions',
-    callChatEndpoint: jest.fn(),
-    resumeChatEndpoint: jest.fn(),
+    callChatEndpoint: vi.fn(),
+    resumeChatEndpoint: vi.fn(),
 }));
 
-const mockedCallChatEndpoint = callChatEndpoint as jest.MockedFunction<typeof callChatEndpoint>;
-const mockedEncryptTurns = encryptTurns as jest.MockedFunction<typeof encryptTurns>;
-const mockedCreateEncryption = RequestEncryptionParams.create as jest.MockedFunction<
-    typeof RequestEncryptionParams.create
->;
+const mockedCallChatEndpoint = callChatEndpoint as MockedFunction<typeof callChatEndpoint>;
+const mockedEncryptTurns = encryptTurns as MockedFunction<typeof encryptTurns>;
+const mockedCreateEncryption = RequestEncryptionParams.create as MockedFunction<typeof RequestEncryptionParams.create>;
 
 const enableFakeEncryption = () => {
     mockedCreateEncryption.mockResolvedValue({
@@ -137,7 +137,7 @@ describe('callAssistant client type', () => {
                 const isMessage = (payload as ChatCompletionsRequest).lumo?.target === 'message';
                 return isMessage && messageRounds++ === 0 ? toolCallResponse('search') : proseResponse('Here it is.');
             });
-            const recordRequestCallback = jest.fn();
+            const recordRequestCallback = vi.fn();
 
             await newClient().callAssistant(api, userTurns, {
                 clientToolExecutor: executor,
@@ -187,7 +187,7 @@ test('uses whole-file transport only for filesystem reads and preserves explicit
     const original = Object.getOwnPropertyDescriptor(globalThis, 'window');
     Object.defineProperty(globalThis, 'window', {
         configurable: true,
-        value: { __TAURI__: { external_tools: { completeFileRead: jest.fn() } } },
+        value: { __TAURI__: { external_tools: { completeFileRead: vi.fn() } } },
     });
     try {
         const call = { id: 'read', name: 'filesystem__fs_read', arguments: '{"path":"/data.csv"}' };
@@ -230,13 +230,13 @@ describe('callAssistant client tool rounds', () => {
             structuredContent: { title: 'Page title' },
             isError: false,
         });
-        const execute = jest.fn(async () => [
+        const execute = vi.fn(async () => [
             normalizeDesktopToolResult({
                 content: '',
                 fileTransfer: { type: 'lumo_tool_result', text, files: [file], isError: false },
             }),
         ]);
-        const processToolFile = jest.fn(async () => ({
+        const processToolFile = vi.fn(async () => ({
             content: 'Image read from Chrome screenshot',
             images: [
                 {
@@ -251,11 +251,11 @@ describe('callAssistant client tool rounds', () => {
         mockedCallChatEndpoint
             .mockResolvedValueOnce(toolCallResponse('mcp-chrome-devtools__take_screenshot'))
             .mockImplementation(async () => proseResponse('Here it is.'));
-        const chunkCallback = jest.fn();
+        const chunkCallback = vi.fn();
         const original = Object.getOwnPropertyDescriptor(globalThis, 'window');
         Object.defineProperty(globalThis, 'window', {
             configurable: true,
-            value: { __TAURI__: { external_tools: { completeFileRead: jest.fn(async (_id, value) => value) } } },
+            value: { __TAURI__: { external_tools: { completeFileRead: vi.fn(async (_id, value) => value) } } },
         });
         let returned: Awaited<ReturnType<LumoApiClient['callAssistant']>>;
         try {
@@ -305,8 +305,8 @@ describe('callAssistant client tool rounds', () => {
         const original = Object.getOwnPropertyDescriptor(globalThis, 'window');
         Reflect.deleteProperty(globalThis, 'window');
         try {
-            const execute = jest.fn(async () => [{ content: 'raw file text' }]);
-            const processToolFile = jest.fn();
+            const execute = vi.fn(async () => [{ content: 'raw file text' }]);
+            const processToolFile = vi.fn();
             mockedCallChatEndpoint
                 .mockResolvedValueOnce(toolCallResponse('filesystem__fs_read'))
                 .mockImplementation(async () => proseResponse('Here it is.'));
@@ -329,7 +329,7 @@ describe('callAssistant client tool rounds', () => {
             configurable: true,
             value: {
                 __TAURI__: {
-                    external_tools: { completeFileRead: jest.fn(async (_id, value) => value) },
+                    external_tools: { completeFileRead: vi.fn(async (_id, value) => value) },
                 },
             },
         });
@@ -345,14 +345,14 @@ describe('callAssistant client tool rounds', () => {
                 size: 4,
                 data: btoa('a,b\n'),
             });
-            const execute = jest.fn(async () => [
+            const execute = vi.fn(async () => [
                 normalizeDesktopToolResult({ content: '', fileTransfer: JSON.parse(content) }),
             ]);
-            const processToolFile = jest.fn(async () => ({ content: 'converted CSV' }));
+            const processToolFile = vi.fn(async () => ({ content: 'converted CSV' }));
             mockedCallChatEndpoint
                 .mockResolvedValueOnce(toolCallResponse('filesystem__fs_read'))
                 .mockImplementation(async () => proseResponse('Here it is.'));
-            const chunkCallback = jest.fn();
+            const chunkCallback = vi.fn();
             await new LumoApiClient({
                 enableU2LEncryption: false,
                 enableSmoothing: false,
@@ -423,7 +423,7 @@ describe('callAssistant client tool rounds', () => {
             canExecute: () => true,
             execute: async () => [{ content: 'Image read from /cat.png', images: [JSON.parse(content)] }],
         };
-        const chunkCallback = jest.fn();
+        const chunkCallback = vi.fn();
         const { turns } = await newClient().callAssistant(api, userTurns, {
             clientToolExecutor: imageExecutor,
             chunkCallback,
@@ -578,7 +578,7 @@ describe('callAssistant recordRequestCallback', () => {
     it('receives the request as it was before encryption, while the wire request stays encrypted', async () => {
         enableFakeEncryption();
         mockedCallChatEndpoint.mockImplementation(async () => proseResponse('Here it is.'));
-        const recordRequestCallback = jest.fn();
+        const recordRequestCallback = vi.fn();
 
         await newClient().callAssistant(api, userTurns, {
             clientTools: [searchTool],
@@ -601,7 +601,7 @@ describe('callAssistant recordRequestCallback', () => {
 
     it('fires once per round, the last one carrying the tool results', async () => {
         callsToolsFor(3);
-        const recordRequestCallback = jest.fn();
+        const recordRequestCallback = vi.fn();
 
         await newClient().callAssistant(api, userTurns, {
             clientToolExecutor: executor,
@@ -616,7 +616,7 @@ describe('callAssistant recordRequestCallback', () => {
 
     it('fires before sending, so a failed generation is still recorded', async () => {
         mockedCallChatEndpoint.mockRejectedValue(new Error('network down'));
-        const recordRequestCallback = jest.fn();
+        const recordRequestCallback = vi.fn();
 
         await expect(newClient().callAssistant(api, userTurns, { recordRequestCallback })).rejects.toThrow(
             'network down'
@@ -684,7 +684,7 @@ describe('auxiliary generation isolation', () => {
                 }
                 return proseResponse('Auxiliary response');
             });
-            const chunkCallback = jest.fn((message) => {
+            const chunkCallback = vi.fn((message) => {
                 if (message.type === 'token_data' && message.target === target) {
                     finishMain();
                 }
@@ -717,7 +717,7 @@ describe('auxiliary generation isolation', () => {
 describe('generation recovery', () => {
     it('saves the job before posting and preserves an incomplete stream for recovery', async () => {
         const checkpoints: GenerationRecoveryState[] = [];
-        const finish = jest.fn();
+        const finish = vi.fn();
         mockedCallChatEndpoint.mockImplementation(async (_api, _body, options) => {
             expect(checkpoints[0].jobId).toBe(options?.recovery?.jobId);
             expect(checkpoints[0].turns).toEqual(userTurns);
@@ -742,7 +742,7 @@ describe('generation recovery', () => {
         const resume = newRecoveryState(userTurns, 'message');
         const chunks: string[] = [];
         const checkpoints: GenerationRecoveryState[] = [];
-        jest.mocked(resumeChatEndpoint).mockResolvedValueOnce(proseResponse('Recovered answer'));
+        vi.mocked(resumeChatEndpoint).mockResolvedValueOnce(proseResponse('Recovered answer'));
         const result = await newClient().callAssistant(api, userTurns, {
             resume,
             recovery: {
@@ -757,7 +757,7 @@ describe('generation recovery', () => {
             },
         });
         expect(mockedCallChatEndpoint).not.toHaveBeenCalled();
-        expect(jest.mocked(resumeChatEndpoint)).toHaveBeenCalledWith(api, resume, undefined);
+        expect(vi.mocked(resumeChatEndpoint)).toHaveBeenCalledWith(api, resume, undefined);
         expect(chunks.join('')).toBe('Recovered answer');
         expect(result.status).toBe('succeeded');
         expect(checkpoints.at(-1)?.phase).toBe('completed');
@@ -768,7 +768,7 @@ describe('generation recovery', () => {
         const requestKey = { type: 'AesGcmCryptoKey' as const, encryptKey: {} as CryptoKey };
         const resume = newRecoveryState(userTurns, 'message');
         const images: string[] = [];
-        jest.mocked(resumeChatEndpoint).mockResolvedValueOnce(
+        vi.mocked(resumeChatEndpoint).mockResolvedValueOnce(
             stream(
                 sse({
                     object: 'lumo.image_data',
@@ -820,8 +820,8 @@ describe('generation recovery', () => {
             phase: 'tool-running',
             pendingCalls: [{ id: 'call_search', name: 'search', arguments: '{}' }],
         };
-        const execute = jest.fn();
-        const confirm = jest.fn(async () => false);
+        const execute = vi.fn();
+        const confirm = vi.fn(async () => false);
         await expect(
             newClient().callAssistant(api, userTurns, {
                 resume,
@@ -840,7 +840,7 @@ describe('generation recovery', () => {
             phase: 'tool-running',
             pendingCalls: [{ id: 'call_search', name: 'search', arguments: '{}' }],
         };
-        const execute = jest.fn(async () => [{ content: 'Recovered tool result' }]);
+        const execute = vi.fn(async () => [{ content: 'Recovered tool result' }]);
         const checkpoints: GenerationRecoveryState[] = [];
         mockedCallChatEndpoint.mockImplementation(async () => {
             expect(
@@ -875,7 +875,7 @@ describe('generation recovery', () => {
             { role: Role.Assistant, content: '' },
         ];
         const resume = { ...newRecoveryState(completedTurns, 'message'), phase: 'ready' as const };
-        const execute = jest.fn();
+        const execute = vi.fn();
         mockedCallChatEndpoint.mockResolvedValueOnce(proseResponse('Final answer'));
         const result = await newClient().callAssistant(api, userTurns, {
             resume,
@@ -890,8 +890,8 @@ describe('generation recovery', () => {
 
 describe('recovery stream lifecycle', () => {
     it('finishes and cancels the HTTP reader on DONE without waiting for EOF', async () => {
-        const cancel = jest.fn();
-        jest.mocked(resumeChatEndpoint).mockResolvedValueOnce(
+        const cancel = vi.fn();
+        vi.mocked(resumeChatEndpoint).mockResolvedValueOnce(
             new ReadableStream({
                 start(controller) {
                     controller.enqueue(
@@ -905,7 +905,7 @@ describe('recovery stream lifecycle', () => {
         );
         const chunks: string[] = [];
         const checkpoints: GenerationRecoveryState[] = [];
-        const finish = jest.fn();
+        const finish = vi.fn();
         const result = await newClient().callAssistant(api, userTurns, {
             resume: newRecoveryState(userTurns, 'message'),
             recovery: {
@@ -928,7 +928,7 @@ describe('recovery stream lifecycle', () => {
     it('preserves application callback errors instead of silently reconnecting', async () => {
         mockedCallChatEndpoint.mockResolvedValueOnce(proseResponse('Answer'));
         const error = new TypeError('Application callback failed');
-        const finish = jest.fn();
+        const finish = vi.fn();
         await expect(
             newClient().callAssistant(api, userTurns, {
                 recovery: { checkpoint: async () => {} },
@@ -944,7 +944,7 @@ describe('recovery stream lifecycle', () => {
     it('preserves terminal HTTP failures instead of silently reconnecting', async () => {
         const error = { status: 503, data: { error: { code: 'rejected' } } };
         mockedCallChatEndpoint.mockRejectedValueOnce(error);
-        const finish = jest.fn();
+        const finish = vi.fn();
         await expect(
             newClient().callAssistant(api, userTurns, {
                 recovery: { checkpoint: async () => {} },
@@ -962,7 +962,7 @@ describe('recovery stream lifecycle', () => {
                 },
             })
         );
-        const finish = jest.fn();
+        const finish = vi.fn();
         await expect(
             newClient().callAssistant(api, userTurns, {
                 recovery: { checkpoint: async () => {} },
@@ -976,8 +976,8 @@ describe('recovery stream lifecycle', () => {
 describe('recovery before response headers', () => {
     it.each([false, true])('keeps fetch failures recoverable when resuming is %s', async (resuming) => {
         const error = new TypeError('Failed to fetch');
-        const finish = jest.fn();
-        const endpoint = resuming ? jest.mocked(resumeChatEndpoint) : mockedCallChatEndpoint;
+        const finish = vi.fn();
+        const endpoint = resuming ? vi.mocked(resumeChatEndpoint) : mockedCallChatEndpoint;
         endpoint.mockRejectedValueOnce(error);
         await expect(
             newClient().callAssistant(api, userTurns, {
@@ -991,7 +991,7 @@ describe('recovery before response headers', () => {
 
     it('preserves fetch failures when recovery is disabled', async () => {
         const error = new TypeError('Failed to fetch');
-        const finish = jest.fn();
+        const finish = vi.fn();
         mockedCallChatEndpoint.mockRejectedValueOnce(error);
         await expect(newClient().callAssistant(api, userTurns, { finishCallback: finish })).rejects.toBe(error);
         expect(finish).toHaveBeenCalledWith('failed');
@@ -1002,7 +1002,7 @@ describe('recoverable tools that end the turn', () => {
     it.each([true, false])('does not resume a terminal or stopped tool round (endTurn: %s)', async (endTurn) => {
         mockedCallChatEndpoint.mockResolvedValueOnce(toolCallResponse('search'));
         const controller = new AbortController();
-        const execute = jest.fn(async () => {
+        const execute = vi.fn(async () => {
             if (!endTurn) {
                 controller.abort();
             }
@@ -1028,7 +1028,7 @@ describe('recoverable tools that end the turn', () => {
 });
 
 describe('stopping recovered client tools', () => {
-    beforeEach(() => jest.mocked(resumeChatEndpoint).mockClear());
+    beforeEach(() => vi.mocked(resumeChatEndpoint).mockClear());
     it.each([
         ['tool-pending', 'preparation'],
         ['tool-running', 'confirmation'],
@@ -1037,9 +1037,9 @@ describe('stopping recovered client tools', () => {
         ['tool-running', 'checkpoint'],
     ] as const)('does not dispatch %s tools after Stop during %s', async (phase, stopDuring) => {
         const controller = new AbortController();
-        const execute = jest.fn(async () => [{ content: 'should not run' }]);
+        const execute = vi.fn(async () => [{ content: 'should not run' }]);
         const checkpoints: GenerationRecoveryState[] = [];
-        const finished = jest.fn();
+        const finished = vi.fn();
         const resume: GenerationRecoveryState = {
             ...newRecoveryState(userTurns, 'message'),
             phase,
@@ -1086,7 +1086,7 @@ describe('stopping recovered client tools', () => {
 
 it('keeps tools recoverable when the connection detaches during checkpoint persistence', async () => {
     const controller = new AbortController();
-    const execute = jest.fn();
+    const execute = vi.fn();
     const resume: GenerationRecoveryState = {
         ...newRecoveryState(userTurns, 'message'),
         phase: 'tool-pending',
@@ -1116,9 +1116,9 @@ it.each([true, false])(
     async (resuming) => {
         const error = Object.assign(new Error('Too many replay readers'), { status: 429 });
         const state = newRecoveryState(userTurns, 'message');
-        jest.mocked(resumeChatEndpoint).mockRejectedValueOnce(error);
+        vi.mocked(resumeChatEndpoint).mockRejectedValueOnce(error);
         mockedCallChatEndpoint.mockRejectedValueOnce(error);
-        const finish = jest.fn();
+        const finish = vi.fn();
         const result = newClient().callAssistant(api, userTurns, {
             ...(resuming ? { resume: state } : {}),
             recovery: { checkpoint: async () => {} },
@@ -1135,8 +1135,8 @@ it.each([true, false])(
 );
 
 it('disables recovery before posting once when the initial checkpoint is unavailable', async () => {
-    jest.mocked(resumeChatEndpoint).mockClear();
-    const checkpoint = jest.fn(async () => 'disabled' as const);
+    vi.mocked(resumeChatEndpoint).mockClear();
+    const checkpoint = vi.fn(async () => 'disabled' as const);
     mockedCallChatEndpoint.mockResolvedValue(proseResponse('Ordinary answer'));
     const result = await newClient().callAssistant(api, userTurns, { recovery: { checkpoint } });
     expect(result.status).toBe('succeeded');
@@ -1144,12 +1144,12 @@ it('disables recovery before posting once when the initial checkpoint is unavail
     expect(checkpoint).toHaveBeenCalledTimes(1);
     expect(mockedCallChatEndpoint).toHaveBeenCalledTimes(1);
     expect(mockedCallChatEndpoint.mock.calls[0][2]?.recovery).toBeUndefined();
-    expect(jest.mocked(resumeChatEndpoint)).not.toHaveBeenCalled();
+    expect(vi.mocked(resumeChatEndpoint)).not.toHaveBeenCalled();
 });
 
 it('refuses to disable checkpoints after a tool request has been generated', async () => {
-    const checkpoint = jest.fn().mockResolvedValueOnce(undefined).mockResolvedValue('disabled');
-    const execute = jest.fn(async () => [{ content: 'tool result' }]);
+    const checkpoint = vi.fn().mockResolvedValueOnce(undefined).mockResolvedValue('disabled');
+    const execute = vi.fn(async () => [{ content: 'tool result' }]);
     mockedCallChatEndpoint.mockResolvedValue(toolCallResponse('search'));
     await expect(
         newClient().callAssistant(api, userTurns, {

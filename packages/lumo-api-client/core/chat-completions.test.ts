@@ -1,3 +1,5 @@
+import { vi } from 'vitest';
+
 import type { ChatCompletionsFunctionTool } from '../types-api';
 import { LumoClientType, Role } from '../types-api';
 import {
@@ -328,7 +330,7 @@ describe('client type environment defaults', () => {
     it.each([
         ['web', {}],
         ['iOS', { webkit: { messageHandlers: {} } }],
-        ['Android', { Android: { postMessage: jest.fn() } }],
+        ['Android', { Android: { postMessage: vi.fn() } }],
         ['Tauri without the Lumo bridge', { __TAURI__: {} }],
     ])('keeps the frontend default in %s', (_name, nonDesktopWindow) => {
         Object.defineProperty(globalThis, 'window', { configurable: true, value: nonDesktopWindow });
