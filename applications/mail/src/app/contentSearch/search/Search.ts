@@ -1,17 +1,53 @@
 import * as Comlink from 'comlink';
+import type { IDBPDatabase } from 'idb';
 import isDeepEqual from 'lodash/isEqual';
 
-import type { ESItem } from '@proton/encrypted-search/models/interfaces';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 import createListeners from '@proton/shared/lib/helpers/listeners';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 
-import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch.ts';
 import type { DatabaseLock } from '../db/DatabaseLock';
-import type { EncryptedSearchReader } from '../import/EncryptedSearchReader';
+import { openContentSearchDB } from '../db/open.ts';
+import type { Database } from '../db/schema.ts';
+import { EncryptedSearchReader } from '../import/EncryptedSearchReader.ts';
+import { MessageCache, type MessageCacheEntry } from '../indexation/MessageCache.ts';
 import type { Logger } from '../utils/logger.ts';
 import type SearchWorker from './SearchWorker';
 
-type SearchResult = ESItem<ESBaseMessage, ESMessageContent>;
+interface SearchMessageCache {
+    readMessages(ids: string[], db: IDBPDatabase<Database>): Promise<Map<string, MessageCacheEntry>>;
+    close(): void;
+}
+
+class V2MessageCache implements SearchMessageCache {
+    constructor(private readonly messageCache: MessageCache) {}
+
+    readMessages(ids: string[], db: IDBPDatabase<Database>): Promise<Map<string, MessageCacheEntry>> {
+        return this.messageCache.readMessages(ids, db);
+    }
+
+    close() {}
+}
+
+class V1MessageCache implements SearchMessageCache {
+    constructor(private readonly encryptedReader: EncryptedSearchReader) {}
+
+    async readMessages(ids: string[]): Promise<Map<string, MessageCacheEntry>> {
+        const messages = await this.encryptedReader.readMessages(ids);
+        const messagesWithBody = messages.filter((m) => m.decryptedBody !== undefined);
+        return new Map(
+            messagesWithBody.map((m) => {
+                return [m.ID, m as MessageCacheEntry];
+            })
+        );
+    }
+
+    close() {
+        this.encryptedReader.close();
+    }
+}
+
+type SearchResult = MessageCacheEntry;
 
 /**
  * How a search ended. `no-index` means the query never ran because there was nothing to run it
@@ -34,9 +70,17 @@ export class Search {
     constructor(
         private params: NormalizedSearchParams,
         private dbLock: DatabaseLock,
-        private workerPromise: Promise<Comlink.Remote<SearchWorker> | undefined>,
-        private readonly logger: Logger,
-        private openESReader: () => Promise<EncryptedSearchReader | undefined>
+        private workerPromise: Promise<
+            | {
+                  worker: Comlink.Remote<SearchWorker>;
+                  indexKey: CryptoKey;
+                  useV2Indexing: boolean;
+                  userKeys: DecryptedKey[] | undefined;
+              }
+            | undefined
+        >,
+        private readonly userId: string,
+        private readonly logger: Logger
     ) {
         this.done = new Promise((resolve) => {
             this.resolveDone = resolve;
@@ -78,8 +122,8 @@ export class Search {
                 this.resolveDone?.(outcome);
             })
             .catch((err) => {
-                this.resolveDone?.('failed');
                 this.onError.notify(err as Error);
+                this.resolveDone?.('failed');
             });
     }
 
@@ -92,30 +136,38 @@ export class Search {
     private async execute(): Promise<SearchOutcome> {
         const promises: Promise<void>[] = [];
 
-        const worker = await this.workerPromise;
+        const result = await this.workerPromise;
         // The index doesn't exist yet. Report that rather than notifying an empty result set: no
         // results were *found*, the query simply never ran, and only the caller can decide where to
         // send it instead.
-        if (!worker) {
+        if (!result) {
             return 'no-index';
         }
+        const { worker, indexKey, useV2Indexing, userKeys } = result;
 
-        // Open the legacy store only once we know the v2 index exists (the reader never creates the v1
-        // DB — see EncryptedSearchReader.open). If it's somehow missing there's nothing to resolve.
-        const oldStore = await this.openESReader();
-        if (!oldStore) {
-            return 'no-index';
+        let messageCache: SearchMessageCache;
+        if (useV2Indexing) {
+            messageCache = new V2MessageCache(new MessageCache(indexKey));
+        } else {
+            const reader = await EncryptedSearchReader.open(this.userId, userKeys!);
+            if (reader) {
+                messageCache = new V1MessageCache(reader);
+            } else {
+                return 'no-index';
+            }
         }
 
-        const fetchMessagesForIDs = async (ids: string[]) => {
-            const storeMessages = await oldStore.readMessages(ids);
-            this.unfilteredResults = this.unfilteredResults
-                ? this.unfilteredResults.concat(storeMessages)
-                : storeMessages;
-            this.applyFilters();
-        };
-
+        const db = await openContentSearchDB(this.userId);
         try {
+            const fetchMessagesForIDs = async (ids: string[]) => {
+                const storeMessages = await messageCache.readMessages(ids, db);
+                const foundMessages = ids.map((id) => storeMessages.get(id)).filter((m) => m !== undefined);
+                this.unfilteredResults = this.unfilteredResults
+                    ? this.unfilteredResults.concat(foundMessages)
+                    : foundMessages;
+                this.applyFilters();
+            };
+
             performance.mark('search-worker-start');
             await this.dbLock.runSearch(() =>
                 worker.search(
@@ -128,7 +180,8 @@ export class Search {
             await Promise.all(promises);
             this.logger.info(`ran search with ${this.unfilteredResults?.length} results`);
         } finally {
-            oldStore.close();
+            messageCache.close();
+            db.close();
         }
         return 'completed';
     }

@@ -61,7 +61,7 @@ async function generateKey(db: IDBPDatabase<Database>, userKeys: DecryptedKey[])
     const encryptedKey = await encryptKey(keyBytes, userKeys);
     const txn = db.transaction('config', 'readwrite');
     // check again the key doesn't exist now we have the write txn open
-    const existingKeyString = await txn.store.get('indexKey');
+    const existingKeyString = (await txn.store.get('indexKey')) as string | undefined;
     if (!existingKeyString) {
         void txn.store.put(encryptedKey, 'indexKey');
         await txn.done;
@@ -73,7 +73,7 @@ async function generateKey(db: IDBPDatabase<Database>, userKeys: DecryptedKey[])
 }
 
 async function readKey(db: IDBPDatabase<Database>, userKeys: DecryptedKey[]): Promise<AesGcmCryptoKey | undefined> {
-    const keyString = await db.get('config', 'indexKey');
+    const keyString = (await db.get('config', 'indexKey')) as string | undefined;
     if (!keyString) {
         return undefined;
     }

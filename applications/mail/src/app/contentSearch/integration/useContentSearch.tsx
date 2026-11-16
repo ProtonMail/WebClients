@@ -1,16 +1,22 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
+import { c } from 'ttag';
+
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
+import { useApi } from '@proton/app-context/useApi';
+import { useNotifications } from '@proton/app-context/useNotifications';
 import { defaultESIndexingState, defaultESStatus } from '@proton/encrypted-search/constants';
 import type { IndexingMetrics } from '@proton/encrypted-search/esHelpers/esProgress';
 import type { ESCallbacks } from '@proton/encrypted-search/models/esCallbacks';
 import type { EncryptedSearchFunctions } from '@proton/encrypted-search/models/esFunctions';
 import type { ESIndexingState, ESTimepoint } from '@proton/encrypted-search/models/interfaces';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { isSearch } from '../../helpers/elements';
+import { useGetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
 import { esSearching, selectSearch } from '../../store/elements/elementsSelectors';
 import { useMailSelector } from '../../store/hooks';
@@ -18,17 +24,18 @@ import { getSharedIndexService } from '../indexation/IndexService';
 import type { MetricService } from '../metrics/MetricService';
 import { SearchService } from '../search/SearchService';
 import { logger } from '../utils/logger';
-import { ESAdapter, type ESStatusConcrete } from './ESAdapter';
+import { ESAdapter as IndexESAdapter } from './ESAdapter';
+import { ESAdapter as ImportESAdapter, type ESStatusConcrete as ImportESStatusConcrete } from './import/ESAdapter';
 
 export type FunctionsV1 = EncryptedSearchFunctions<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
 // The reactive surface (esStatus/esIndexingProgressState/progressRecorderRef) is owned by the hook,
 // not the adapter, so the hook can rebuild the functions object when it changes — mirroring V1.
 export type FunctionsV2 = Omit<FunctionsV1, 'esStatus' | 'esIndexingProgressState' | 'progressRecorderRef'> & {
     /** v2-only: not part of the generic `EncryptedSearchFunctions` surface v1 also implements. */
-    reportResultOpened: ESAdapter['reportResultOpened'];
-    reportResultAction: ESAdapter['reportResultAction'];
-    endSearchSession: ESAdapter['endSearchSession'];
-    startSearchSession: ESAdapter['startSearchSession'];
+    reportResultOpened: ImportESAdapter['reportResultOpened'];
+    reportResultAction: ImportESAdapter['reportResultAction'];
+    endSearchSession: ImportESAdapter['endSearchSession'];
+    startSearchSession: ImportESAdapter['startSearchSession'];
 };
 /** `useContentSearch`'s return type: the generic v1 surface plus the v2-only additions above. */
 export type ContentSearchFunctions = FunctionsV1 &
@@ -56,10 +63,10 @@ interface Props {
 /**
  * The provider spreads the returned functions into the context value, and consumers destructure and
  * call them detached (e.g. `const { encryptedSearch } = useEncryptedSearchContext()`). Both require
- * own, `this`-bound properties, so we expose the {@link ESAdapter} (whose methods live on the
+ * own, `this`-bound properties, so we expose the {@link ImportESAdapter} (whose methods live on the
  * prototype) as a plain object literal of instance-bound methods.
  */
-const toBoundFunctions = (adapter: ESAdapter): FunctionsV2 => ({
+const toBoundFunctions = (adapter: ImportESAdapter | IndexESAdapter): FunctionsV2 => ({
     encryptedSearch: adapter.encryptedSearch.bind(adapter),
     cacheIndexedDB: adapter.cacheIndexedDB.bind(adapter),
     handleEvent: adapter.handleEvent.bind(adapter),
@@ -85,7 +92,7 @@ const toBoundFunctions = (adapter: ESAdapter): FunctionsV2 => ({
 
 /**
  * Content-search counterpart of {@link useEncryptedSearch}. It exposes the same
- * {@link EncryptedSearchFunctions} surface — implemented, hook-free, in {@link ESAdapter} — so it can
+ * {@link EncryptedSearchFunctions} surface — implemented, hook-free, in {@link ImportESAdapter} — so it can
  * be swapped in behind the `ContentSearch` feature flag. This hook owns the adapter's lifecycle and,
  * mirroring V1, the reactive surface (esStatus/esIndexingProgressState/progressRecorderRef): the
  * adapter drives these through the setters passed at construction, and the hook rebuilds the returned
@@ -97,15 +104,18 @@ export const useContentSearch = ({
     isActive,
     metricService,
 }: Props): ContentSearchFunctions => {
+    const api = useApi();
     const [user] = useUser();
     const getUserKeys = useGetUserKeys();
     const [addresses] = useAddresses();
+    const getMessageKeys = useGetMessageKeys();
+    const { createNotification } = useNotifications();
 
     // The reactive surface, owned by the hook. The adapter pushes updates into these via the setters
     // passed at construction (see below). progressRecorderRef stays a ref like in V1 — it's the raw
     // [indexed, total] counter — but it's paired with the esIndexingProgressState state update so a
     // progress tick still triggers a re-render (a ref write alone wouldn't).
-    const [esStatus, setESStatus] = useState<ESStatusConcrete>(defaultESStatus);
+    const [esStatus, setESStatus] = useState<ImportESStatusConcrete>(defaultESStatus);
     const [esIndexingProgressState, setESIndexingProgressState] = useState<ESIndexingState>(defaultESIndexingState);
     const progressRecorderRef = useRef<ESTimepoint>([0, 0]);
 
@@ -116,34 +126,61 @@ export const useContentSearch = ({
     // per-render deps (esCallbacks/esLibraryFunctionsV1, which change most renders) are refreshed
     // onto it below — rather than recreating it, which is what encoding them as memo deps would do.
     // It only depends on the userID which doesn't change within the lifetime of the app.
-    const adapterRef = useRef<ESAdapter>(undefined);
+    const isFFContentSearchIndexation = useFlag('ContentSearchIndexation');
+    const adapterRef = useRef<ImportESAdapter | IndexESAdapter>(undefined);
     if (!adapterRef.current) {
-        const indexService = getSharedIndexService(user.ID, getUserKeys, logger);
-        // A settable field, not a constructor dependency — see `IndexService.metricService`.
-        indexService.metricService = metricService;
-        const searchService = new SearchService(user.ID, getUserKeys, indexService.dbLock, logger, metricService);
-
-        adapterRef.current = new ESAdapter({
-            searchService,
-            indexService,
+        const indexService = getSharedIndexService(user.ID, api, getUserKeys, getMessageKeys, logger);
+        const searchService = new SearchService(
+            user.ID,
+            getUserKeys,
+            indexService.dbLock,
+            logger,
             metricService,
-            esCallbacks,
-            esLibraryFunctionsV1,
-            updateESStatus: setESStatus,
-            updateESProgress: (timepoint, progressState) => {
-                progressRecorderRef.current = timepoint;
-                setESIndexingProgressState(progressState);
-            },
-        });
+            isFFContentSearchIndexation
+        );
+        if (isFFContentSearchIndexation) {
+            adapterRef.current = new IndexESAdapter({
+                searchService,
+                indexService,
+                metricService,
+                esCallbacks,
+                updateESStatus: setESStatus,
+                updateESProgress: (timepoint, progressState) => {
+                    progressRecorderRef.current = timepoint;
+                    setESIndexingProgressState(progressState);
+                },
+                notifyIndexingFailed: () => {
+                    createNotification({
+                        text: c('Error').t`A problem occurred, please try again.`,
+                        type: 'error',
+                    });
+                },
+                logger,
+            });
+        } else {
+            adapterRef.current = new ImportESAdapter({
+                searchService,
+                indexService,
+                metricService,
+                esCallbacks,
+                esLibraryFunctionsV1,
+                updateESStatus: setESStatus,
+                updateESProgress: (timepoint, progressState) => {
+                    progressRecorderRef.current = timepoint;
+                    setESIndexingProgressState(progressState);
+                },
+            });
+        }
     }
     const adapter = adapterRef.current;
-
     // Refresh the per-render dependencies on the (stable) adapter so its bound methods never read
     // stale values — esLibraryFunctionsV1's identity changes when V1's esStatus does.
-    adapter.esCallbacks = esCallbacks;
-    adapter.esLibraryFunctionsV1 = esLibraryFunctionsV1;
+    adapter.updateESCallbacks(esCallbacks);
     adapter.metricService.addresses = addresses;
-    adapter.isActive = isActive;
+    if (adapter instanceof ImportESAdapter) {
+        adapter.esLibraryFunctionsV1 = esLibraryFunctionsV1;
+        adapter.isActive = isActive;
+    }
 
     // Observe V1's status and progress and forward them into the adapter, which decides what to push
     // back out through the setters above. Kept as two channels so the import-on-completion side effect
@@ -153,13 +190,13 @@ export const useContentSearch = ({
     const v1ProgressState = esLibraryFunctionsV1.esIndexingProgressState;
 
     useEffect(() => {
-        if (isActive) {
+        if (isActive && adapter instanceof ImportESAdapter) {
             adapter.onV1StatusUpdate(v1Status);
         }
     }, [isActive, adapter, v1Status]);
 
     useEffect(() => {
-        if (isActive) {
+        if (isActive && adapter instanceof ImportESAdapter) {
             adapter.onV1ProgressUpdate(v1Timepoint, v1ProgressState);
         }
     }, [isActive, adapter, v1Timepoint, v1ProgressState]);

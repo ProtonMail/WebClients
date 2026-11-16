@@ -1,6 +1,8 @@
+import { html_to_text_fast } from '@protontech/mail-html-to-text-fast-wasm';
+
 import { type Document, Value } from '@proton/proton-foundation-search';
 
-import type { ESBaseMessage } from '../../models/encryptedSearch.ts';
+import type { ESBaseMessage } from '../../../models/encryptedSearch';
 
 export class MailDelegate {
     stageMetadata(metadata: ESBaseMessage, doc: Document) {
@@ -23,6 +25,7 @@ export class MailDelegate {
     }
 
     stageBody(body: string, doc: Document) {
-        doc.addAttribute('body', Value.text(body));
+        const strippedBody = html_to_text_fast(body);
+        doc.addAttribute('body', Value.text(strippedBody));
     }
 }

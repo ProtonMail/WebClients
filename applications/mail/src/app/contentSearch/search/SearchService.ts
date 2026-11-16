@@ -6,7 +6,6 @@ import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
 import { getIndexKey } from '../crypto/indexKey';
 import type { DatabaseLock } from '../db/DatabaseLock';
 import { openContentSearchDB } from '../db/open';
-import { EncryptedSearchReader } from '../import/EncryptedSearchReader';
 import type { MetricService } from '../metrics/MetricService';
 import type { ContentSearchEndReason } from '../metrics/interface';
 import type { Logger } from '../utils/logger';
@@ -32,7 +31,9 @@ const reportSearchOutcome = (search: Search, outcome: SearchOutcome, metricServi
 
 /** public interface into search functionality */
 export class SearchService {
-    private workerReadyPromise: Promise<Comlink.Remote<SearchWorker> | undefined> | undefined;
+    private workerReadyPromise:
+        | Promise<{ worker: Comlink.Remote<SearchWorker>; indexKey: CryptoKey } | undefined>
+        | undefined;
     /** The most recent search; only its completion is reported — see `search()`. */
     private currentSearch: Search | undefined;
 
@@ -41,7 +42,8 @@ export class SearchService {
         private readonly getUserKeys: () => Promise<DecryptedKey[]>,
         private readonly dbLock: DatabaseLock,
         private readonly logger: Logger,
-        private readonly metricService: MetricService
+        private readonly metricService: MetricService,
+        private readonly useV2Indexing: boolean
     ) {}
 
     /**
@@ -50,25 +52,38 @@ export class SearchService {
      * before they submit their query. Idempotent: a no-op once the worker is ready.
      */
     async warmUp() {
-        await this.getWorker();
+        await this.getWorkerAndMessageCacheDeps();
     }
 
     search(params: NormalizedSearchParams): Search {
-        const search = new Search(params, this.dbLock, this.getWorker(), this.logger, async () =>
-            EncryptedSearchReader.open(this.userId, await this.getUserKeys())
-        );
+        const workerCacheParamsPromise = this.getWorkerAndMessageCacheDeps().then(async (result) => {
+            if (!result) {
+                return undefined;
+            }
+            const { worker, indexKey } = result;
+            let userKeys: DecryptedKey[] | undefined;
+            if (!this.useV2Indexing) {
+                userKeys = await this.getUserKeys();
+            }
+            return { userKeys, indexKey, worker, useV2Indexing: this.useV2Indexing };
+        });
+        const search = new Search(params, this.dbLock, workerCacheParamsPromise, this.userId, this.logger);
         search.start();
         this.currentSearch = search;
         this.startSearchSession();
         this.metricService.searchStarted();
 
-        void search.done.then((outcome) => {
-            // A superseded search isn't cancelled (see `Search.dispose`) and still completes; its
-            // session and start time have been replaced by the newer search's, so don't report it.
-            if (search === this.currentSearch) {
-                reportSearchOutcome(search, outcome, this.metricService);
-            }
-        });
+        search.done
+            .then((outcome) => {
+                // A superseded search isn't cancelled (see `Search.dispose`) and still completes; its
+                // session and start time have been replaced by the newer search's, so don't report it.
+                if (search === this.currentSearch) {
+                    reportSearchOutcome(search, outcome, this.metricService);
+                }
+            })
+            .catch((err) => {
+                this.logger.error('failed to report search outcome', err);
+            });
         return search;
     }
 
@@ -88,20 +103,20 @@ export class SearchService {
         this.metricService.resultActionPerformed(...args);
     }
 
-    private getWorker(): Promise<Comlink.Remote<SearchWorker> | undefined> {
+    private getWorkerAndMessageCacheDeps() {
         if (!this.workerReadyPromise) {
             this.workerReadyPromise = this.createAndInitNewWorkerInstance()
-                .then((worker) => {
+                .then((workerSetup) => {
                     // "There is no index yet" is a moment in time, not a result to cache. The v2
                     // database and its key are created by the first import, and the warm-up usually
                     // runs before that — the indexing progress is shown *inside* the search dropdown,
                     // so the dropdown tends to be open while the index is still being built. Caching
                     // that would leave every search for the rest of the session answering from no
                     // index at all, long after the import has finished.
-                    if (!worker) {
+                    if (!workerSetup) {
                         this.workerReadyPromise = undefined;
                     }
-                    return worker;
+                    return workerSetup;
                 })
                 .catch((error) => {
                     // Don't cache a failed init: clear the promise so the next call (search or warmup)
@@ -113,10 +128,9 @@ export class SearchService {
         return this.workerReadyPromise;
     }
 
-    private async createAndInitNewWorkerInstance(): Promise<Comlink.Remote<SearchWorker> | undefined> {
+    private async createAndInitNewWorkerInstance() {
         performance.mark('search-get-worker-start');
         const indexKey = await this.getIndexKey();
-        // the index doesn't exist yet
         if (!indexKey) {
             return;
         }
@@ -129,7 +143,8 @@ export class SearchService {
             const worker = Comlink.wrap<SearchWorker>(rawWorker);
             await worker.init(this.userId, indexKey);
             performance.measure('search-get-worker', 'search-get-worker-start');
-            return worker;
+            // return the worker, but also the index key for the message cache since we have it already
+            return { worker, indexKey };
         } catch (error) {
             rawWorker.terminate();
             throw error;

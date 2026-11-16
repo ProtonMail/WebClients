@@ -95,6 +95,7 @@ export interface MessageMetadata {
 }
 
 export interface Message extends MessageMetadata {
+    /** Body in OpenPGP armored format */
     Body: string;
     Header: string;
     ParsedHeaders: { [key: string]: string | string[] | undefined };
@@ -108,6 +109,30 @@ export interface Message extends MessageMetadata {
     RightToLeft?: number;
     EORecipient?: Recipient;
 }
+
+/** From mail/v4/messages/batch route */
+export type BatchMessage = Required<
+    Pick<
+        Message,
+        | 'ID'
+        | 'ToList'
+        | 'CCList'
+        | 'BCCList'
+        | 'Time'
+        | 'Size'
+        | 'LabelIDs'
+        | 'NumAttachments'
+        | 'Subject'
+        | 'MIMEType'
+        | 'CategoryID'
+    >
+> & {
+    Sender?: Message['Sender'] | null;
+    ExternalID?: Message['ExternalID'] | null;
+    Unread: boolean; // Message uses `number`
+    /** Body in base64 format */
+    Body: string;
+};
 
 export interface GetMessageResponse {
     Code: number;

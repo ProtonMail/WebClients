@@ -10,9 +10,10 @@ import type {
     EncryptedSearchDB,
 } from '@proton/encrypted-search/models/interfaces';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces/Key';
+import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import isTruthy from '@proton/utils/isTruthy';
 
-import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
+import type { ESMessageContent } from '../../models/encryptedSearch';
 import type { ImportIssue } from './Import';
 import { ImportIssueSeverity } from './Import';
 
@@ -36,7 +37,7 @@ export class BatchReader {
     async readNextBatch(
         batchSize: number,
         reportCallback: ((err: ImportIssue) => void) | undefined
-    ): Promise<undefined | { metadata: ESBaseMessage; body: string }[]> {
+    ): Promise<undefined | { metadata: MessageMetadata; body: string }[]> {
         const batchIds = this.ids.slice(this.offset, this.offset + batchSize);
         // signal exhaustion with undefined; an empty array is truthy and would spin the caller's loop.
         if (batchIds.length === 0) {
@@ -48,7 +49,10 @@ export class BatchReader {
     }
 }
 
-function validateMetadata(metadata: ESBaseMessage, reportCallback: ((err: ImportIssue) => void) | undefined): boolean {
+function validateMetadata(
+    metadata: MessageMetadata,
+    reportCallback: ((err: ImportIssue) => void) | undefined
+): boolean {
     if (!metadata.Sender?.Address) {
         reportCallback?.({ message: 'no sender address', id: metadata.ID, severity: ImportIssueSeverity.Error });
         return false;
@@ -88,12 +92,12 @@ export class EncryptedSearchReader {
         return new EncryptedSearchReader(db, indexKey);
     }
 
-    getTotalMessageCount(): Promise<number | undefined> {
+    async getTotalMessageCount(): Promise<number | undefined> {
         return this.db.transaction('metadata').store.count();
     }
 
     /** read messages to display them in the search result set, uses same message return type for that reason */
-    async readMessages(ids: string[]): Promise<ESItem<ESBaseMessage, ESMessageContent>[]> {
+    async readMessages(ids: string[]): Promise<ESItem<MessageMetadata, ESMessageContent>[]> {
         const results = await this.createBatchReader(ids).readNextBatch(ids.length, undefined);
         if (!results) {
             return [];
@@ -127,7 +131,7 @@ export class EncryptedSearchReader {
     private async readBatch(
         ids: string[],
         reportCallback: ((err: ImportIssue) => void) | undefined
-    ): Promise<undefined | { metadata: ESBaseMessage; body: string }[]> {
+    ): Promise<undefined | { metadata: MessageMetadata; body: string }[]> {
         const txn = this.db.transaction(['metadata', 'content'], 'readonly');
         const metadataStore = txn.objectStore('metadata');
         const contentStore = txn.objectStore('content');
@@ -181,9 +185,9 @@ export class EncryptedSearchReader {
         id: string,
         encryptedMetadata: EncryptedMetadataItem,
         encryptedContent: ESCiphertext | undefined
-    ): Promise<{ metadata: ESBaseMessage; content: ESMessageContent | undefined }> {
+    ): Promise<{ metadata: MessageMetadata; content: ESMessageContent | undefined }> {
         const [metadataResult, contentResult] = await Promise.allSettled([
-            decryptFromDB<ESBaseMessage>({
+            decryptFromDB<MessageMetadata>({
                 aesGcmCiphertext: encryptedMetadata.aesGcmCiphertext,
                 indexKey: this.indexKey,
                 source: 'readMetadataItem',

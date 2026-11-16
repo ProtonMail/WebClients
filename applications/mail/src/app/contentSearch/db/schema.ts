@@ -1,14 +1,34 @@
 import type { DBSchema, IDBPTransaction, StoreNames } from 'idb';
 
+export type IndexStatus = 'enabled' | 'paused' | 'disabled';
+
 export function getDBName(userId: string): string {
     return `content_search_v2_user:${userId}`;
 }
 
-export interface Database extends DBSchema {
-    config: {
-        key: string;
-        value: any;
+export type Anchor = {
+    position?: {
+        time: number;
+        remoteId: string;
+        processed: number;
     };
+    eof?: true;
+};
+
+export interface Database extends DBSchema {
+    config:
+        | {
+              key: 'indexKey';
+              value: string;
+          }
+        | {
+              key: 'blobs_revision';
+              value: number;
+          }
+        | {
+              key: 'status';
+              value: IndexStatus;
+          };
     index_blobs: {
         key: string;
         value: Uint8Array<ArrayBuffer>;
@@ -29,6 +49,20 @@ export interface Database extends DBSchema {
               key: 'refresh';
               value: '';
           };
+    anchors: {
+        key: 'historic';
+        value: Anchor;
+    };
+    event_cursor: {
+        key: 'event_cursor';
+        value: {
+            eventID?: string;
+        };
+    };
+    message_cache: {
+        key: string; // message id
+        value: Uint8Array<ArrayBuffer>; // encrypted message and decrypted body
+    };
 }
 
 /** The scope of a `Database` transaction: any array of its store names. */

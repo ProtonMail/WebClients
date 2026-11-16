@@ -3114,6 +3114,9 @@ importers:
       '@protontech/logger':
         specifier: 'catalog:'
         version: 1.0.0(@protontech/crypto@2.2.0(@types/node@24.19.2)(@typescript/typescript6@6.0.2))
+      '@protontech/mail-html-to-text-fast-wasm':
+        specifier: ^0.1.2
+        version: 0.1.2
       '@reduxjs/toolkit':
         specifier: 'catalog:'
         version: 2.14.0(@types/react@18.3.31)(react-redux@9.3.1(@types/react@18.3.31)(react@18.3.1)(redux@5.0.1))(react@18.3.1)
@@ -16576,6 +16579,9 @@ packages:
     resolution: {integrity: sha512-Plgc+hND4ngpj1+LP+rLhvbD7CYiDZ3agwVZ8/rx0G6oT3mRSLfDMNKnyi+6W0qEYDLKNrP5cy8O8hJynUGWxQ==}
     peerDependencies:
       '@protontech/crypto': ^2.2.0
+
+  '@protontech/mail-html-to-text-fast-wasm@0.1.2':
+    resolution: {integrity: sha512-6WE46O8xzgkYZ7vuRnoualdVEhtjaUApItZzmah7JswZLWyx4mfbE8MzA7CwwzvheDAfuzzxgPXhTjMFC5HUMg==}
 
   '@protontech/mimemessage@1.1.4':
     resolution: {integrity: sha512-GboE1mfTF4TIyJ+qAP/MbiLWpf/UmEbLYON4PopTJH4G0Vkn7Wl86gRhDg5ZxXEJAgN2sTSvUnSeLbsStOa/sA==}
@@ -34382,6 +34388,8 @@ snapshots:
       comlink: 4.4.2
       core-js: 3.51.0
       idb: 8.0.4
+
+  '@protontech/mail-html-to-text-fast-wasm@0.1.2': {}
 
   '@protontech/mimemessage@1.1.4(supports-color@11.0.0)':
     dependencies:

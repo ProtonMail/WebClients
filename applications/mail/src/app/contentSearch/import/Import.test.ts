@@ -19,7 +19,7 @@ import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSear
 import { getOrGenerateIndexKey } from '../crypto/indexKey';
 import { openContentSearchDB } from '../db/open';
 import { IndexReader } from '../search/IndexReader';
-import { initFoundationWasm } from '../testing/initFoundationWasm';
+import { initContentSearchWasm } from '../testing/initContentSearchWasm';
 import { EncryptedSearchReader } from './EncryptedSearchReader';
 import {
     BATCH_SIZE,
@@ -170,7 +170,7 @@ describe('Importer', () => {
 
     beforeAll(async () => {
         await setupCryptoProxyForTesting();
-        await initFoundationWasm();
+        await initContentSearchWasm();
         const generated = await generateKeys('Tester', 'tester@proton.me');
         userKeys = getStoredUserKey(generated) as unknown as DecryptedKey<PrivateKeyReference>[];
     });

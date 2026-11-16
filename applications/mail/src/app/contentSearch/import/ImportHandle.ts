@@ -3,7 +3,7 @@ import * as Comlink from 'comlink';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 
 import type { DatabaseLock } from '../db/DatabaseLock';
-import { AsyncAbort } from '../utils/AsyncAbort';
+import { AsyncAbort, isAbortedFrom } from '../utils/AsyncAbort';
 import type { Logger } from '../utils/logger';
 import {
     type ImportIssue,
@@ -83,12 +83,9 @@ export class ImportHandle {
                 );
                 await Promise.race([asyncAbort.promise, workerPromise]);
             } catch (err) {
-                if (err instanceof DOMException && err.name === 'AbortError') {
+                if (!isAbortedFrom(err, this.stopAbortController.signal)) {
                     // don't forward the error from the stopAbortController
-                    if (abortSignal.aborted) {
-                        throw err;
-                    }
-                } else {
+                    // but do forward the abortSignal error or any other error
                     throw err;
                 }
             } finally {
@@ -101,6 +98,7 @@ export class ImportHandle {
         this.importPromise = runPromise
             .then((): ImportOutcome => (this.stopAbortController.signal.aborted ? 'stopped' : 'completed'))
             .catch((err): ImportOutcome => {
+                this.logger.error('import failed', err);
                 this._issues.push({ message: err.message, id: 'none', severity: ImportIssueSeverity.Fatal });
                 this.onIssue.notify(this._issues);
                 return 'failed';

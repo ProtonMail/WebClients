@@ -1,6 +1,6 @@
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 
-import { initFoundationWasm } from '../testing/initFoundationWasm';
+import { initContentSearchWasm } from '../testing/initContentSearchWasm';
 import { buildQuery } from './query';
 
 // buildQuery produces a wasm `Expression`; asserting on its `toString()` keeps the tests readable
@@ -17,7 +17,7 @@ const q = (over: Partial<NormalizedSearchParams> & { search?: NormalizedSearchPa
 
 describe('buildQuery', () => {
     beforeAll(async () => {
-        await initFoundationWasm();
+        await initContentSearchWasm();
     });
 
     describe('keywords', () => {

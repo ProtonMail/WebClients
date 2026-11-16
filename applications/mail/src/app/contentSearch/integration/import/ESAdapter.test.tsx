@@ -1,8 +1,8 @@
 import type { ESCallbacks } from '@proton/encrypted-search/models/esCallbacks';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 
-import type { ESBaseMessage, ESMessageContent } from '../../models/encryptedSearch';
-import type { SearchService } from '../search/SearchService';
+import type { ESBaseMessage, ESMessageContent } from '../../../models/encryptedSearch';
+import type { SearchService } from '../../search/SearchService';
 import { ESAdapter } from './ESAdapter';
 import { fakeImportHandle, fakeIndexService, fakeMetricService, fakeV1Functions, flushPromises } from './testFakes';
 

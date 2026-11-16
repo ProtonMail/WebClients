@@ -2,7 +2,7 @@ import type { PrivateKeyReference, PrivateKeyReferenceV4, PublicKeyReference, Se
 import { CryptoProxy } from '@protontech/crypto';
 
 import { getModelState } from '@proton/account/testing/getModelState';
-import type { MessageKeys } from '@proton/mail-message/store/messages/messagesTypes';
+import type { PublicPrivateKey as MessageKeysPublicPrivateKey } from '@proton/mail-message/store/messages/messagesTypes';
 import { generatePassphrase } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES, KEY_FLAG } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
@@ -80,7 +80,7 @@ export const generateKeys = async (name: string, email: string, passphrase = 'pa
     };
 };
 
-export const fromGeneratedKeysToMessageKeys = (generatedKeys: GeneratedKey): MessageKeys => ({
+export const fromGeneratedKeysToMessageKeys = (generatedKeys: GeneratedKey): MessageKeysPublicPrivateKey => ({
     type: 'publicPrivate',
     encryptionKey: generatedKeys.privateKeys[0],
     signingKeys: [generatedKeys.privateKeys[0]],

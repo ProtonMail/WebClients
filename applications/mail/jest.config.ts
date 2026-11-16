@@ -18,6 +18,7 @@ const jestConfig: Config = {
     resolver: './jest.resolver.js',
     transformIgnorePatterns: getTransformIgnorePatterns([
         '@proton/proton-foundation-search',
+        '@protontech/mail-html-to-text-fast-wasm',
         'msw',
         '@mswjs',
         'until-async',

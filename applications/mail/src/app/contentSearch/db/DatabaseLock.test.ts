@@ -15,8 +15,9 @@ const deferred = <T = void>() => {
     return { promise, resolve, reject };
 };
 
-/** what an aborted idb/worker operation throws, and what runIndexing keys off of */
-const abortError = () => Object.assign(new Error('aborted'), { name: 'AbortError' });
+/** what an aborted idb/worker operation throws, and what runIndexing keys off of: the error
+ * must be the signal's own reason, as that is how AsyncAbort rejects and how runIndexing
+ * recognizes its own abort rather than a genuine failure */
 
 /** let pending microtasks _and_ timers run, so anything that can settle has settled */
 const flush = async (turns = 5) => {
@@ -46,7 +47,7 @@ const track = <T>(promise: Promise<T>) => {
 const abortableIndexing = (onStart?: () => void) => async (signal: AbortSignal) => {
     onStart?.();
     await new Promise<void>((_, reject) => {
-        signal.addEventListener('abort', () => reject(abortError()));
+        signal.addEventListener('abort', () => reject(signal.reason));
     });
 };
 
@@ -137,14 +138,14 @@ describe('DatabaseLock', () => {
             const letIndexingFinishAborting = deferred();
             let runs = 0;
             const indexing = track(
-                lock.runIndexing(async () => {
+                lock.runIndexing(async (signal) => {
                     runs++;
                     if (runs === 1) {
                         started.resolve();
                         // an indexing run that is mid-transaction when the abort arrives:
                         // it only throws once it has wound down
                         await letIndexingFinishAborting.promise;
-                        throw abortError();
+                        throw signal.reason;
                     }
                 })
             );

@@ -82,6 +82,12 @@ export const getMessage = (messageID: string) => ({
     url: `mail/v4/messages/${messageID}`,
 });
 
+export const getMessagesBatch = (messageIDs: string[]) => ({
+    method: 'post',
+    url: `mail/v4/messages/batch`,
+    data: { MessageIDs: messageIDs },
+});
+
 export const sendMessageForm = (messageID: string, data: any, sendingFrom?: string) => ({
     method: 'post',
     url: `mail/v4/messages/${messageID}`,

@@ -3,12 +3,24 @@ import type * as Comlink from 'comlink';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
 
 import { DatabaseLock } from '../db/DatabaseLock';
-import type { EncryptedSearchReader } from '../import/EncryptedSearchReader';
+import { openContentSearchDB } from '../db/open';
+import type { MessageCacheEntry } from '../indexation/MessageCache';
 import { LoggerProxy } from '../utils/logger';
 import { Search } from './Search';
 import type SearchWorker from './SearchWorker';
 
-type SearchResult = Parameters<Parameters<Search['onResults']['subscribe']>[0]>[0][number];
+type SearchResult = MessageCacheEntry;
+
+const userId = 'user1';
+
+// Search opens the DB itself and builds a MessageCache on it to resolve the hit ids, so both are
+// stubbed here: no IndexedDB, no crypto.
+const openDBMock = jest.mocked(openContentSearchDB);
+const messageCacheMock = { readMessages: jest.fn() };
+jest.mock('../db/open', () => ({ openContentSearchDB: jest.fn() }));
+jest.mock('../indexation/MessageCache', () => ({
+    MessageCache: jest.fn().mockImplementation(() => messageCacheMock),
+}));
 
 const params = (over: Partial<NormalizedSearchParams> = {}): NormalizedSearchParams =>
     ({
@@ -23,46 +35,59 @@ const params = (over: Partial<NormalizedSearchParams> = {}): NormalizedSearchPar
 const message = (ID: string, Unread: number): SearchResult => ({ ID, Unread }) as unknown as SearchResult;
 
 /**
- * Builds a Search whose worker returns `ids` and whose reader resolves those ids into `messages`,
- * then runs the initial search so `unfilteredResults` is populated by the time it resolves.
+ * Builds a Search whose worker returns `ids` and whose message cache resolves those ids into
+ * `messages`, then runs the initial search so the filtered results are populated by the time it
+ * resolves.
  */
 const startedSearch = async (initial: NormalizedSearchParams, messages: SearchResult[]) => {
     const workerSearch = jest.fn(async (params, callback) => {
         const ids = messages.map((m) => m.ID);
         await callback(ids);
-        return ids;
     });
     const worker = { search: workerSearch } as unknown as Comlink.Remote<SearchWorker>;
-    const readMessages = jest.fn(async () => messages);
-    const close = jest.fn();
-    const openESReader = jest.fn(async () => ({ readMessages, close }) as unknown as EncryptedSearchReader);
-
-    const search = new Search(
-        initial,
-        new DatabaseLock(),
-        Promise.resolve(worker),
-        new LoggerProxy(undefined),
-        openESReader
+    messageCacheMock.readMessages.mockImplementation(
+        async (ids: string[]) => new Map(ids.map((id) => [id, messages.find((m) => m.ID === id)]))
     );
+    const close = jest.fn();
+    openDBMock.mockResolvedValue({ close } as unknown as Awaited<ReturnType<typeof openContentSearchDB>>);
+
+    const deps = Promise.resolve({
+        worker,
+        indexKey: {} as CryptoKey,
+        useV2Indexing: true,
+        userKeys: undefined,
+    });
+
+    const search = new Search(initial, new DatabaseLock(), deps, userId, new LoggerProxy(undefined));
     const onResults = jest.fn();
 
     search.onResults.subscribe(onResults);
 
-    const firstResults = new Promise<SearchResult[]>((resolve) => {
+    const firstResults = new Promise<SearchResult[]>((resolve, reject) => {
         const unsubscribe = search.onResults.subscribe((results) => {
             unsubscribe();
             resolve(results);
+        });
+        search.onError.subscribe(reject);
+        void search.done.then((outcome) => {
+            if (outcome !== 'completed') {
+                reject(new Error(`search ended with ${outcome}`));
+            }
         });
     });
     search.start();
     await firstResults;
 
-    return { search, onResults, workerSearch, readMessages };
+    return { search, onResults, workerSearch, readMessages: messageCacheMock.readMessages };
 };
 
 describe('Search.update', () => {
     const unread = message('unread', 1);
     const read = message('read', 0);
+
+    beforeEach(() => {
+        jest.clearAllMocks();
+    });
 
     it('returns true and does not re-run the search when the new params are identical', async () => {
         const { search, onResults, workerSearch } = await startedSearch(params(), [unread, read]);
@@ -102,13 +127,13 @@ describe('Search.update', () => {
     });
 
     it('returns true without notifying when results have not loaded yet', () => {
-        // worker/reader promises never resolve, so execute() never populates unfilteredResults
+        // worker promise never resolves, so execute() never populates unfilteredResults
         const search = new Search(
             params({ filter: { Unread: 1 } }),
             new DatabaseLock(),
             new Promise(() => {}),
-            new LoggerProxy(undefined),
-            () => new Promise(() => {})
+            userId,
+            new LoggerProxy(undefined)
         );
         const onResults = jest.fn();
         search.onResults.subscribe(onResults);

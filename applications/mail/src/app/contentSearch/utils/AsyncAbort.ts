@@ -1,9 +1,9 @@
 export class AsyncAbort {
     private handler: ((evt: Event) => void) | undefined;
-    public readonly promise: Promise<void>;
+    public readonly promise: Promise<never>;
 
     constructor(private readonly abortSignals: AbortSignal[]) {
-        this.promise = new Promise((_, reject) => {
+        this.promise = new Promise<never>((_, reject) => {
             const alreadyAborted = this.abortSignals.find((s) => s.aborted);
             if (alreadyAborted) {
                 reject(alreadyAborted.reason);
@@ -23,4 +23,8 @@ export class AsyncAbort {
             }
         }
     }
+}
+
+export function isAbortedFrom(err: unknown, abortSignal: AbortSignal) {
+    return abortSignal.aborted && abortSignal.reason === err;
 }

@@ -1,0 +1,410 @@
+import { highlightJSX, insertMarks } from '@proton/encrypted-search/esHelpers/esHighlight';
+import type { ESCallbacks } from '@proton/encrypted-search/models/esCallbacks';
+import type {
+    ESInitializeOptions,
+    ESSetResultsList,
+    ESSettledState,
+} from '@proton/encrypted-search/models/esFunctions';
+import type { ESEvent, ESIndexingState, ESStatus, ESTimepoint } from '@proton/encrypted-search/models/interfaces';
+import type { NormalizedSearchParams } from '@proton/encrypted-search/models/mail';
+import noop from '@proton/utils/noop';
+
+import type { ESBaseMessage, ESMessageContent } from '../../../models/encryptedSearch';
+import type { IndexService } from '../../indexation/IndexService';
+import type { MetricService } from '../../metrics/MetricService';
+import type { ContentSearchEndReason } from '../../metrics/interface';
+import type { SearchService } from '../../search/SearchService';
+import { SearchAdapter } from '../SearchAdapter';
+import type { FunctionsV1, FunctionsV2 } from '../useContentSearch';
+import { IndexingJob, type JobMode } from './IndexingJob';
+
+export type ESStatusConcrete = ESStatus<ESBaseMessage, ESMessageContent, NormalizedSearchParams>;
+
+/**
+ * Adapts the content-search-v2 index to the {@link EncryptedSearchFunctions} surface so it can be
+ * swapped in behind the `ContentSearch` feature flag (see `useContentSearch` / `EncryptedSearchProvider`).
+ */
+export class ESAdapter implements FunctionsV2 {
+    private readonly searchService: SearchService;
+    private readonly indexService: IndexService;
+    /** Public so `useContentSearch` can refresh `metricService.addresses` directly — see there. */
+    public readonly metricService: MetricService;
+    /** Per-render dependency, refreshed by `useContentSearch` — provides getSearchParams/getKeywords. */
+    public esCallbacks: ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
+    /** Per-render dependency, refreshed by `useContentSearch` — the legacy `useEncryptedSearch` instance. */
+    public esLibraryFunctionsV1: FunctionsV1;
+    /**
+     * Whether v2 is the engine in charge this session (see `useContentSearch`'s `isActive`). Only
+     * `handleEvent` is reachable while this is false, and then it records without importing.
+     */
+    public isActive = false;
+    private readonly searchAdapter: SearchAdapter;
+
+    private isV1ContentIndexingDone = false;
+    /** Set when an import failed and left the v2 index partial; searches go to the server from then on. */
+    private isV2IndexIncomplete = false;
+    /** The current v1+v2 indexing job, if one is ongoing (a fresh index or a post-event refresh). */
+    private job?: IndexingJob;
+    /** Latest v1 status, kept so a job can be seeded with it (e.g. a refresh started from an event). */
+    private lastV1Status?: ESStatusConcrete;
+    /** Pushes a new status to the hook, triggering a re-render. Called on V1 updates and, later, on self-driven ones. */
+    private updateESStatus: (status: ESStatusConcrete) => void;
+    /** Pushes a new progress snapshot to the hook (raw counter + derived state), triggering a re-render. */
+    private updateESProgress: (timepoint: ESTimepoint, progressState: ESIndexingState) => void;
+
+    constructor({
+        searchService,
+        indexService,
+        metricService,
+        esCallbacks,
+        esLibraryFunctionsV1,
+        updateESStatus,
+        updateESProgress,
+    }: {
+        searchService: SearchService;
+        indexService: IndexService;
+        metricService: MetricService;
+        /** Per-render dependency, refreshed by `useContentSearch` — provides getSearchParams/getKeywords. */
+        esCallbacks: ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent>;
+        /** Per-render dependency, refreshed by `useContentSearch` — the legacy `useEncryptedSearch` instance. */
+        esLibraryFunctionsV1: FunctionsV1;
+        updateESStatus: (status: ESStatusConcrete) => void;
+        updateESProgress: (timepoint: ESTimepoint, progressState: ESIndexingState) => void;
+    }) {
+        this.searchService = searchService;
+        this.indexService = indexService;
+        this.metricService = metricService;
+        this.esCallbacks = esCallbacks;
+        this.esLibraryFunctionsV1 = esLibraryFunctionsV1;
+        this.updateESStatus = updateESStatus;
+        this.updateESProgress = updateESProgress;
+        this.searchAdapter = new SearchAdapter({ searchService, metricService, esCallbacks });
+    }
+
+    waitForSyncing?: (() => Promise<void>) | undefined;
+
+    /**
+     * Whether the v2 index can answer searches. It can't while a fresh index is being built — it is
+     * incomplete by definition until the import finishes — nor after an import failed and left it
+     * partial. Searches degrade to the server in both cases, never to v1's index, so results always
+     * come from either the v2 index or the API and never a mix of engines. While a job runs, the job's
+     * status already keeps queries away (it reports content search as off); this guard is what covers
+     * a failed import, once the job is gone and v1's status is all we have.
+     */
+    private get isV2IndexUsable(): boolean {
+        return !this.isV2IndexIncomplete && this.job?.mode !== 'index';
+    }
+
+    /**
+     * Report v1's status, but never claim a finished index while the v2 one is known to be partial: v1
+     * has its own complete index and says so, yet searches are going to the server (see
+     * {@link isV2IndexUsable}), and `contentIndexingDone` is what the UI and
+     * `useContentSearchReadyNotification` read as "content search is ready". Nothing here re-drives the
+     * import, so this holds for the rest of the session; the next startup imports again and clears it.
+     */
+    private forwardV1Status(v1Status: ESStatusConcrete) {
+        this.updateESStatus(this.isV2IndexIncomplete ? { ...v1Status, contentIndexingDone: false } : v1Status);
+    }
+
+    async cacheIndexedDB() {
+        // `cacheIndexedDB` is the legacy ES warmup hook; the search UI already calls it when the user
+        // opens the search box (see `MailSearch.handleOpen`). We repurpose it to spin up the v2 worker
+        // ahead of time, so the cold start overlaps with the user typing their query instead of being
+        // paid on the first search.
+        await this.searchService.warmUp();
+    }
+
+    /** Forwards a search-result open to the v2 metrics pipeline; see `EncryptedSearchProvider.reportResultOpened`. */
+    reportResultOpened(...args: Parameters<MetricService['resultOpened']>) {
+        this.searchService.reportResultOpened(...args);
+    }
+
+    /** Forwards a search-result action to the v2 metrics pipeline; see `EncryptedSearchProvider.reportResultAction`. */
+    reportResultAction(...args: Parameters<MetricService['resultActionPerformed']>) {
+        this.searchService.reportResultAction(...args);
+    }
+
+    startSearchSession() {
+        this.metricService.startSearchSession();
+    }
+
+    /** v2 counterpart of `endSearchSession`; see `EncryptedSearchProvider.endSearchSession`. */
+    endSearchSession(endReason: ContentSearchEndReason) {
+        this.searchService.endSession(endReason);
+    }
+
+    async encryptedSearch(setResultsList: ESSetResultsList<ESBaseMessage, ESMessageContent>) {
+        // Nothing to search yet — reporting failure hands the query to the server, which is the only
+        // fallback: an incomplete v2 index would silently return too few results.
+        if (!this.isV2IndexUsable) {
+            return false;
+        }
+        return this.searchAdapter.encryptedSearch(setResultsList);
+    }
+
+    isSearchResult(ID: string) {
+        return this.searchAdapter.isSearchResult(ID);
+    }
+
+    leaveSearch() {
+        this.searchAdapter.leaveSearch();
+    }
+
+    updateESCallbacks(esCallbacks: ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent>) {
+        this.esCallbacks = esCallbacks;
+        this.searchAdapter.esCallbacks = esCallbacks;
+    }
+
+    private get canTriggerImport(): boolean {
+        return this.isV1ContentIndexingDone;
+    }
+
+    private startIndexingJob(mode: JobMode): IndexingJob {
+        if (mode === 'index') {
+            // A fresh index is a new attempt at a complete v2 index, so a previous failure no longer
+            // describes it — its own outcome will.
+            this.isV2IndexIncomplete = false;
+        }
+        const job = new IndexingJob(
+            {
+                indexService: this.indexService,
+                initialV1Status: this.lastV1Status!,
+                updateESStatus: this.updateESStatus,
+                updateESProgress: this.updateESProgress,
+                // Read the current v1 instance at call time — its identity changes per render.
+                waitForV1Sync: async () => {
+                    await this.esLibraryFunctionsV1.waitForSyncing?.();
+                },
+            },
+            mode
+        );
+        this.job = job;
+        job.ended
+            .then((outcome) => {
+                if (this.job === job) {
+                    this.job = undefined;
+                }
+                // A fresh index whose import failed leaves the v2 index incomplete, with nothing scheduled
+                // to complete it. Keep searches on the server for the rest of the session rather than
+                // answering from a partial index; the next startup re-drives the import and can clear this.
+                // A failed *refresh* is not disqualifying: the index is whole except for the messages one
+                // event touched, and the next event retries.
+                if (mode === 'index' && outcome === 'failed') {
+                    this.isV2IndexIncomplete = true;
+                }
+            })
+            .catch((err) => {
+                console.error(err);
+            });
+        return job;
+    }
+
+    /**
+     * Observe a V1 status update. While an indexing job is live the job owns status (it synthesizes a
+     * coherent one spanning v1 + the v2 import); otherwise we forward V1 verbatim and, at the start of
+     * a fresh index, spin up the job that takes over from here.
+     */
+    onV1StatusUpdate(v1Status: FunctionsV1['esStatus']) {
+        this.lastV1Status = v1Status;
+        const wasContentIndexingDone = this.isV1ContentIndexingDone;
+        this.isV1ContentIndexingDone = v1Status?.contentIndexingDone ?? false;
+
+        // v1 wipes its own index when it hits an error it can't recover from (`dbCorruptError` ->
+        // `esDelete`), which resets its status to the default: no DB, nothing indexed, i.e. "search is
+        // off, enable it again". A live job would paper over that with the synthesized status it holds
+        // during the v1 -> import handoff — either an "enabling" state that never completes (v1 will
+        // never report `contentIndexingDone` now) or, if the import happens to end, a "done" state on
+        // top of a wiped v1. So tear the job down and forward v1's own status, like we do when idle.
+        if (this.job && !v1Status?.dbExists) {
+            this.job.dispose();
+            this.job = undefined;
+            this.forwardV1Status(v1Status);
+            return;
+        }
+
+        if (this.job) {
+            this.job.onV1Status(v1Status);
+            return;
+        }
+
+        // Start the initial job when v1 begins content indexing, or — for an import-only session where
+        // v1 was already indexed in a previous run — on the content-done false→true transition. The job
+        // then drives the v1→import handoff itself.
+        if (v1Status?.isEnablingContentSearch || (!wasContentIndexingDone && this.isV1ContentIndexingDone)) {
+            this.startIndexingJob('index');
+            this.job!.onV1Status(v1Status);
+        } else {
+            this.forwardV1Status(v1Status);
+        }
+    }
+
+    /** Observe a V1 progress update. Routed to the job while one is live, else forwarded verbatim. */
+    onV1ProgressUpdate(timepoint: ESTimepoint, progressState: ESIndexingState) {
+        if (this.job) {
+            this.job.onV1Progress(timepoint, progressState);
+        } else {
+            this.updateESProgress(timepoint, progressState);
+        }
+    }
+
+    // Highlighting is purely keyword-driven (no index access), so it is ported verbatim from
+    // `useEncryptedSearch`: pull the keywords from the current search params and delegate to the
+    // shared `insertMarks` / `highlightJSX` helpers.
+    shouldHighlight() {
+        const { isSearch, esSearchParams } = this.esCallbacks.getSearchParams();
+        if (!isSearch || !esSearchParams) {
+            return false;
+        }
+
+        const keywords = this.esCallbacks.getKeywords(esSearchParams);
+
+        return typeof keywords !== 'undefined' && !!keywords.length;
+    }
+
+    highlightString(content: string, setAutoScroll: boolean) {
+        const { esSearchParams } = this.esCallbacks.getSearchParams();
+        if (!esSearchParams) {
+            return content;
+        }
+
+        const keywords = this.esCallbacks.getKeywords(esSearchParams);
+        if (!keywords) {
+            return content;
+        }
+
+        return insertMarks(content, keywords, setAutoScroll);
+    }
+
+    highlightMetadata(metadata: string, isBold?: boolean, trim?: boolean) {
+        const noData = {
+            numOccurrences: 0,
+            resultJSX: <span>{metadata}</span>,
+        };
+
+        const { esSearchParams } = this.esCallbacks.getSearchParams();
+        if (!esSearchParams) {
+            return noData;
+        }
+
+        const keywords = this.esCallbacks.getKeywords(esSearchParams);
+        if (!keywords) {
+            return noData;
+        }
+
+        return highlightJSX(metadata, keywords, isBold, trim);
+    }
+
+    async handleEvent(event: ESEvent<ESBaseMessage> | undefined) {
+        await this.esLibraryFunctionsV1.handleEvent(event);
+        if (event) {
+            // Record which messages the event touched so the import knows what to refresh. Most events
+            // touch none — the event loop ticks regardless of whether any message changed — and then
+            // there is nothing to import.
+            const hasMessagesToRefresh = await this.indexService.recordOutdatedMessages(event);
+            // Import the affected messages into the v2 index. Presented as v1's "refreshing" UI (no
+            // counted bar). The job waits for v1's syncing queue to drain before importing (see
+            // `waitForV1Sync`). Skip if content indexing hasn't finished yet, or if a job is already
+            // live (the initial index will pick these up when it imports).
+            // While v2 isn't the active engine we stop after the recording above: the import would
+            // run for a session that never queries the v2 index, and its job would push status and
+            // progress the provider isn't showing. The ids stay in `outdated_import_ids` until a v2
+            // session imports them.
+            if (hasMessagesToRefresh && this.isActive && this.canTriggerImport && !this.job) {
+                this.startIndexingJob('refresh');
+            }
+        }
+    }
+
+    enableEncryptedSearch(options?: {
+        isRefreshed?: boolean;
+        isBackgroundIndexing?: boolean;
+        showErrorNotification?: boolean;
+        notify?: boolean;
+    }) {
+        return this.esLibraryFunctionsV1.enableEncryptedSearch(options);
+    }
+
+    async enableContentSearch(options?: { isRefreshed?: boolean; isBackgroundIndexing?: boolean; notify?: boolean }) {
+        // Doubles as Resume. If we paused the import ourselves, resuming it is all that's left to do —
+        // v1 finished its own phase long before.
+        if (this.job?.resumeImport()) {
+            return;
+        }
+        return this.esLibraryFunctionsV1.enableContentSearch(options);
+    }
+
+    async esDelete() {
+        this.job?.dispose();
+        this.job = undefined;
+        await this.esLibraryFunctionsV1.esDelete();
+        await this.indexService.deleteIndex();
+    }
+
+    /**
+     * The caller's `onStateSettled` is deliberately not passed on: v1 reports through it because its
+     * promise resolves long after its status is final, whereas this one resolves exactly when we are
+     * ready to be searched, so returning is the report. Two outcomes matter here. Either v1's index
+     * can't serve searches - still indexing, disabled, not there - in which case neither can ours and
+     * there is nothing to wait for; or it is ready, and the import that copies it into our index is
+     * about to run. A query answered mid-import silently misses everything the import hasn't written
+     * yet, so we hold until it ends. That's affordable because the import resumes where the last
+     * session stopped rather than starting over.
+     */
+    async initializeES(_options?: ESInitializeOptions) {
+        let reportV1Settled = (_state?: ESSettledState) => {};
+        const v1Settled = new Promise<ESSettledState | undefined>((resolve) => {
+            reportV1Settled = resolve;
+        });
+        const v1Startup = this.esLibraryFunctionsV1
+            .initializeES({ onStateSettled: reportV1Settled })
+            // A branch that returns without concluding anything - no database, a corrupt one - has
+            // nothing for us to import from, which is the same answer as an index that isn't ready.
+            .then(() => undefined);
+        // Whichever comes first: v1 reports as soon as its checks are done, but its promise only
+        // resolves once indexing it resumed has finished.
+        const v1State = await Promise.race([v1Settled, v1Startup]);
+        // A failure after that report is v1's to handle, but it may not surface as an unhandled one.
+        void v1Startup.catch(noop);
+
+        if (!v1State?.contentIndexingDone) {
+            return;
+        }
+
+        // v1 is ready, so start the import now rather than when its status reaches us a render later.
+        // A job may already be running - a refresh triggered by an early event - in which case that is
+        // the import to wait for; the one this would start is guarded against by `onV1StatusUpdate`.
+        const job = this.job ?? this.startIndexingJob('index');
+        // What hands the job to its import phase, and the only reason we need the state v1 just
+        // reported: the status we last saw is a render behind and still says content isn't indexed.
+        job.onV1Status({ ...this.lastV1Status!, ...v1State });
+        await Promise.race([job.ended, job.paused]);
+    }
+
+    async pauseContentIndexing() {
+        // Pausing means "stop downloading and indexing", and past the handoff the import is what's
+        // doing that — v1 is done. Let the job stop it, and don't forward: v1's `pauseContentIndexing`
+        // would overwrite the `ACTIVE` progress row it just wrote with `PAUSED`.
+        if (this.job?.pauseImport()) {
+            return;
+        }
+        return this.esLibraryFunctionsV1.pauseContentIndexing();
+    }
+
+    pauseMetadataIndexing() {
+        return this.esLibraryFunctionsV1.pauseMetadataIndexing();
+    }
+
+    correctDecryptionErrors() {
+        return this.esLibraryFunctionsV1.correctDecryptionErrors();
+    }
+
+    toggleEncryptedSearch() {
+        return this.esLibraryFunctionsV1.toggleEncryptedSearch();
+    }
+
+    getCache() {
+        return new Map();
+    }
+
+    resetCache() {}
+}
