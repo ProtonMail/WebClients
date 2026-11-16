@@ -63,7 +63,9 @@ const mockPayments = (GuardResult?: GuardError[] | null) =>
         ),
     } as unknown as PaymentsValue);
 
-const blocked: GuardError[] = [{ Code: GUARD_ERROR_CODES.TOO_LITTLE_SPACE, Message: 'raw backend message' }];
+const blocked: GuardError[] = [
+    { Code: GUARD_ERROR_CODES.TOO_LITTLE_SPACE, Message: 'Your plan doesn’t include enough storage.' },
+];
 
 const section = () => (
     <SubscriptionCheckoutPaymentSection
@@ -79,12 +81,11 @@ describe('SubscriptionCheckoutPaymentSection guards', () => {
         mockPayments(blocked);
         render(section());
 
-        const banner = screen.getByText(/enough storage for your account/i);
+        const banner = screen.getByText(/doesn’t include enough storage/i);
         const confirm = screen.getByTestId('confirm');
 
         expect(confirm).toBeDisabled();
         expect(banner.compareDocumentPosition(confirm) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-        expect(screen.queryByText('raw backend message')).not.toBeInTheDocument();
         expect(document.querySelectorAll('[role="dialog"]')).toHaveLength(0);
     });
 
@@ -102,7 +103,7 @@ describe('SubscriptionCheckoutPaymentSection guards', () => {
             mockPayments(GuardResult);
             render(section());
 
-            expect(screen.queryByText(/enough storage for your account/i)).not.toBeInTheDocument();
+            expect(screen.queryByText(/doesn’t include enough storage/i)).not.toBeInTheDocument();
             expect(screen.getByTestId('confirm')).toBeEnabled();
         }
     );
@@ -114,12 +115,12 @@ describe('SubscriptionCheckoutPaymentSection guards', () => {
 
         mockPayments([]);
         rerender(section());
-        expect(screen.queryByText(/enough storage for your account/i)).not.toBeInTheDocument();
+        expect(screen.queryByText(/doesn’t include enough storage/i)).not.toBeInTheDocument();
         expect(screen.getByTestId('confirm')).toBeEnabled();
 
         mockPayments(blocked);
         rerender(section());
-        expect(screen.getByText(/enough storage for your account/i)).toBeInTheDocument();
+        expect(screen.getByText(/doesn’t include enough storage/i)).toBeInTheDocument();
         expect(screen.getByTestId('confirm')).toBeDisabled();
     });
 

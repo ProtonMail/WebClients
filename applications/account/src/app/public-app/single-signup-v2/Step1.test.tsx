@@ -466,8 +466,11 @@ describe('Step1 - paymentless B2B trial', () => {
 
 describe('Step1 - subscription guards', () => {
     const CHECK_URL = 'payments/v5/subscription/check';
-    const STORAGE_COPY = /enough storage for your account/i;
-    const blocked = { GuardResult: 'raw backend message', GuardResultCode: GUARD_ERROR_CODES.TOO_LITTLE_SPACE };
+    const STORAGE_COPY = /doesn’t include enough storage/i;
+    const blocked = {
+        GuardResult: 'Your plan doesn’t include enough storage.',
+        GuardResultCode: GUARD_ERROR_CODES.TOO_LITTLE_SPACE,
+    };
 
     type CheckRequest = {
         data: any;
@@ -618,7 +621,6 @@ describe('Step1 - subscription guards', () => {
         await act(async () => (await nextRequest(0)).resolve(blocked));
 
         expect(await screen.findByText(STORAGE_COPY)).toBeInTheDocument();
-        expect(screen.queryByText('raw backend message')).not.toBeInTheDocument();
         expect(screen.getByTestId('check-result-amount')).toHaveTextContent('1234');
     });
 

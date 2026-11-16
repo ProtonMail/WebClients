@@ -115,52 +115,12 @@ describe('GuardBanner', () => {
 
         expect(status.querySelectorAll('li')).toHaveLength(2);
         expect(status.textContent).toContain('Plan switch is incompatible for the following reasons:');
-        expect(status.textContent).not.toContain('raw 1');
-        expect(status.textContent).not.toContain('raw 2');
-    });
-
-    it('shows a single generic message when no error is mapped', () => {
-        render(
-            <GuardBanner
-                telemetry={undefined}
-                errors={[
-                    { Code: 9999991 as GuardError['Code'], Message: 'raw 1' },
-                    { Code: 9999992 as GuardError['Code'], Message: 'raw 2' },
-                ]}
-            />
-        );
-
-        const status = screen.getByTestId('banner');
-
-        expect(status.querySelectorAll('li')).toHaveLength(1);
-        expect(status.textContent).toContain('can’t be completed');
-        expect(status.textContent).not.toContain('incompatible for the following reasons');
-        expect(status.textContent).not.toContain('raw 1');
-        expect(status.textContent).not.toContain('raw 2');
-    });
-
-    it('drops unmapped errors when at least one error is mapped', () => {
-        render(
-            <GuardBanner
-                telemetry={undefined}
-                errors={[
-                    { Code: GUARD_ERROR_CODES.TOO_FEW_MEMBERS, Message: 'raw 1' },
-                    { Code: 9999999 as GuardError['Code'], Message: 'raw 2' },
-                ]}
-            />
-        );
-
-        const status = screen.getByTestId('banner');
-
-        expect(status.querySelectorAll('li')).toHaveLength(1);
-        expect(status.textContent).not.toContain('can’t be completed');
-        expect(status.textContent).not.toContain('raw 2');
+        expect(status.textContent).toContain('raw 1');
+        expect(status.textContent).toContain('raw 2');
     });
 
     it('announces the banner to assistive technology and does not rely on colour alone', () => {
-        const { container } = render(
-            <GuardBanner telemetry={undefined} errors={[{ Code: 9999999 as GuardError['Code'], Message: 'x' }]} />
-        );
+        const { container } = render(<GuardBanner telemetry={undefined} errors={[{ Message: '' }]} />);
         const status = screen.getByTestId('banner');
 
         expect(status).toHaveAttribute('role', 'alert');
@@ -180,5 +140,27 @@ describe('GuardBanner', () => {
         );
 
         expect(document.querySelector('[role="dialog"]')).toBeNull();
+    });
+});
+
+describe('GuardBanner messages', () => {
+    it('shows the backend messages once each', () => {
+        render(
+            <GuardBanner
+                errors={[
+                    { Message: 'Too little space' },
+                    { Code: 1, Message: 'Too little space' },
+                    { Message: 'Too few members' },
+                ]}
+                telemetry={undefined}
+            />
+        );
+        expect(screen.getAllByText('Too little space')).toHaveLength(1);
+        expect(screen.getByText('Too few members')).toBeInTheDocument();
+    });
+
+    it('shows the generic line when no message is usable', () => {
+        render(<GuardBanner errors={[{ Code: 1, Message: '' }]} telemetry={undefined} />);
+        expect(screen.getByText(/can’t be completed right now/)).toBeInTheDocument();
     });
 });

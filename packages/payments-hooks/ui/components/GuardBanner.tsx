@@ -4,12 +4,13 @@ import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import type { FreeSubscription } from '@proton/payments/core/interface';
-import { GUARD_ERROR_MESSAGES, type GuardError } from '@proton/payments/core/subscription/guard';
+import type { GuardError } from '@proton/payments/core/subscription/guard';
 import { getSubscriptionsArray } from '@proton/payments/core/subscription/helpers';
 import type { Subscription, SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { GuardShownTelemetryPayload } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
+import isTruthy from '@proton/utils/isTruthy';
 
 export interface GuardBannerTelemetry {
     /** The `subscription/check` response the banner displays */
@@ -80,7 +81,7 @@ interface Props {
 /**
  * Lists every subscription-guard refusal from a `subscription/check` response in one view.
  * Announced via role="alert"; the Banner icon pairs with the text so meaning is not
- * carried by colour alone. Mapped codes render their localised copy; if no code is mapped, a
+ * carried by colour alone. Shows the backend messages (already translated), deduplicated; with none, a
  * single generic message is shown instead. Placement is up to the caller — this component never
  * opens a modal.
  *
@@ -96,9 +97,7 @@ export const GuardBanner = ({ errors, telemetry, className }: Props) => {
     if (!errors.length) {
         return null;
     }
-    const errorsMessages = errors
-        .map(({ Code }) => (Code === undefined ? undefined : GUARD_ERROR_MESSAGES.get(Code)))
-        .filter((message): message is () => string => message !== undefined);
+    const errorsMessages = [...new Set(errors.map(({ Message }) => Message?.trim()).filter(isTruthy))];
 
     return (
         <Banner role="alert" variant={BannerVariants.WARNING} className={className}>
@@ -107,7 +106,7 @@ export const GuardBanner = ({ errors, telemetry, className }: Props) => {
             )}
             <ul className="m-0 pl-4">
                 {errorsMessages.length > 0 ? (
-                    errorsMessages.map((error, index) => <li key={index}>{error()}</li>)
+                    errorsMessages.map((message) => <li key={message}>{message}</li>)
                 ) : (
                     <li>{c('Payments').t`This subscription can’t be completed right now. Please try again.`}</li>
                 )}
