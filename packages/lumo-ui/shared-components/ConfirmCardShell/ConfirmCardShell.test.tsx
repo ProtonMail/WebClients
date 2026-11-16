@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn';
 
@@ -6,8 +7,8 @@ import ConfirmCardShell from './ConfirmCardShell';
 
 describe('ConfirmCardShell', () => {
     it('renders the sentence and the body, and wires apply/cancel', () => {
-        const onApply = jest.fn();
-        const onCancel = jest.fn();
+        const onApply = vi.fn();
+        const onCancel = vi.fn();
         render(
             <ConfirmCardShell
                 icon={IcFolderArrowIn}
@@ -34,8 +35,8 @@ describe('ConfirmCardShell', () => {
                 icon={IcFolderArrowIn}
                 sentence="Move"
                 applyDisabled
-                onApply={jest.fn()}
-                onCancel={jest.fn()}
+                onApply={vi.fn()}
+                onCancel={vi.fn()}
             />
         );
         expect(screen.getByRole('button', { name: 'Apply' })).toBeDisabled();
@@ -43,14 +44,14 @@ describe('ConfirmCardShell', () => {
 
     it('omits the scrolling body region when there is no body', () => {
         const { container } = render(
-            <ConfirmCardShell icon={IcFolderArrowIn} sentence="Move" onApply={jest.fn()} onCancel={jest.fn()} />
+            <ConfirmCardShell icon={IcFolderArrowIn} sentence="Move" onApply={vi.fn()} onCancel={vi.fn()} />
         );
         expect(container.querySelector('.lumo-confirm-card__body')).toBeNull();
     });
 
     it('mounts the body inside a scrolling region', () => {
         const { container } = render(
-            <ConfirmCardShell icon={IcFolderArrowIn} sentence="Move" onApply={jest.fn()} onCancel={jest.fn()}>
+            <ConfirmCardShell icon={IcFolderArrowIn} sentence="Move" onApply={vi.fn()} onCancel={vi.fn()}>
                 <p>body</p>
             </ConfirmCardShell>
         );
