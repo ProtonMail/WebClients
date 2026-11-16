@@ -11473,6 +11473,9 @@ importers:
       glob:
         specifier: ^14.0.4
         version: 14.0.4
+      jszip:
+        specifier: 'catalog:'
+        version: 3.10.2
       lodash:
         specifier: 'catalog:'
         version: 4.18.1
