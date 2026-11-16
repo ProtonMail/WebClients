@@ -422,7 +422,6 @@ describe('CameraTrackSubscriptionCache', () => {
     it('should reset a held track that decoded no new frame between two reconciles', async () => {
         const manager = new CameraTrackSubscriptionManager(10, mockRoom);
         manager.setPolicy(lowQualityPolicy);
-        manager.setAllowResettingFrozenVideoTracks(true);
 
         const pub = createCameraPublication('track-1');
         manager.register(pub, 'p1');
@@ -459,7 +458,6 @@ describe('CameraTrackSubscriptionCache', () => {
         vi.useFakeTimers();
         const manager = new CameraTrackSubscriptionManager(10, mockRoom);
         manager.setPolicy(lowQualityPolicy);
-        manager.setAllowResettingFrozenVideoTracks(true);
 
         const pub = createCameraPublication('track-1');
         manager.register(pub, 'p1');
@@ -484,7 +482,6 @@ describe('CameraTrackSubscriptionCache', () => {
     it('should not reset a frozen track that the server paused', async () => {
         const manager = new CameraTrackSubscriptionManager(10, mockRoom);
         manager.setPolicy(lowQualityPolicy);
-        manager.setAllowResettingFrozenVideoTracks(true);
 
         const pub = createCameraPublication('track-1');
         manager.register(pub, 'p1');
@@ -508,35 +505,9 @@ describe('CameraTrackSubscriptionCache', () => {
         expect(setSubscribedSpy).not.toHaveBeenCalled();
     });
 
-    it('should not reset a frozen track when resetting frozen tracks is not allowed', async () => {
-        const manager = new CameraTrackSubscriptionManager(10, mockRoom);
-        manager.setPolicy(lowQualityPolicy);
-
-        const pub = createCameraPublication('track-1');
-        manager.register(pub, 'p1');
-        await waitFor(() => {
-            expect(pub.isSubscribed).toBe(true);
-        });
-
-        defineWritable(pub, 'track', {
-            receiver: {
-                getStats: async () => new Map([['inbound', { type: 'inbound-rtp', framesDecoded: 10 }]]),
-            },
-        });
-        const setSubscribedSpy = vi.spyOn(pub, 'setSubscribed');
-
-        manager.reconcileCameraTracks();
-        await flushPendingWork();
-        manager.reconcileCameraTracks();
-        await flushPendingWork();
-
-        expect(setSubscribedSpy).not.toHaveBeenCalled();
-    });
-
     it('should not reset a frozen track that is disabled', async () => {
         const manager = new CameraTrackSubscriptionManager(10, mockRoom);
         manager.setPolicy(lowQualityPolicy);
-        manager.setAllowResettingFrozenVideoTracks(true);
 
         const pub = createCameraPublication('track-1');
         manager.register(pub, 'p1');
@@ -563,7 +534,6 @@ describe('CameraTrackSubscriptionCache', () => {
     it('should not reset a frozen track that is muted', async () => {
         const manager = new CameraTrackSubscriptionManager(10, mockRoom);
         manager.setPolicy(lowQualityPolicy);
-        manager.setAllowResettingFrozenVideoTracks(true);
 
         const pub = createCameraPublication('track-1');
         manager.register(pub, 'p1');
@@ -592,10 +562,9 @@ describe('CameraTrackSubscriptionCache', () => {
             vi.useFakeTimers();
         });
 
-        const setUpHeldTrackWithoutStats = async ({ allowResettingFrozenVideoTracks = true } = {}) => {
+        const setUpHeldTrackWithoutStats = async () => {
             const manager = new CameraTrackSubscriptionManager(10, mockRoom);
             manager.setPolicy(lowQualityPolicy);
-            manager.setAllowResettingFrozenVideoTracks(allowResettingFrozenVideoTracks);
 
             const pub = createCameraPublication('track-1');
             manager.register(pub, 'p1');
@@ -696,16 +665,6 @@ describe('CameraTrackSubscriptionCache', () => {
             await check(15);
 
             expect(countResets()).toBe(3);
-        });
-
-        it('should not reset a track without stats when resetting frozen tracks is not allowed', async () => {
-            const { setSubscribedSpy, check } = await setUpHeldTrackWithoutStats({
-                allowResettingFrozenVideoTracks: false,
-            });
-
-            await check(4);
-
-            expect(setSubscribedSpy).not.toHaveBeenCalled();
         });
 
         it('should need 3 more checks without stats before resetting a track a second time', async () => {
@@ -833,7 +792,6 @@ describe('CameraTrackSubscriptionCache', () => {
         vi.useFakeTimers();
         const manager = new CameraTrackSubscriptionManager(10, mockRoom);
         manager.setPolicy(lowQualityPolicy);
-        manager.setAllowResettingFrozenVideoTracks(true);
 
         const frozenPub = createCameraPublication('track-1');
         manager.register(frozenPub, 'p1');

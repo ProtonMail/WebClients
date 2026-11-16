@@ -2,7 +2,6 @@ import { useRoomContext } from '@livekit/components-react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import { useIsAudioPlaybackBlocked } from './useIsAudioPlaybackBlocked';
@@ -10,12 +9,10 @@ import { useIsAudioPlaybackBlocked } from './useIsAudioPlaybackBlocked';
 import './AudioPlaybackPrompt.scss';
 
 export const AudioPlaybackPrompt = () => {
-    const unblockAudioButtonEnabled = useFlag('MeetUnblockAudioButton');
-
     const room = useRoomContext();
     const isAudioPlaybackBlocked = useIsAudioPlaybackBlocked();
 
-    if (!isAudioPlaybackBlocked || !unblockAudioButtonEnabled) {
+    if (!isAudioPlaybackBlocked) {
         return null;
     }
 

@@ -334,7 +334,6 @@ enum MailKillSwitchFlag {
 }
 
 enum MeetFeatureFlag {
-    EnableAccessibilityAnnouncements = 'EnableAccessibilityAnnouncements',
     MeetAdaptiveStream = 'MeetAdaptiveStream',
     MeetAdminLowerHand = 'MeetAdminLowerHand',
     MeetAllowMLSLogExport = 'MeetAllowMLSLogExport',
@@ -363,8 +362,6 @@ enum MeetFeatureFlag {
     MeetE2eeDisableRecovery = 'MeetE2eeDisableRecovery',
     MeetE2eeRecoveryAggressive = 'MeetE2eeRecoveryAggressive',
     MeetE2eeReplayActiveKeyOnly = 'MeetE2eeReplayActiveKeyOnly',
-    MeetEarlyAccess = 'MeetEarlyAccess',
-    MeetEarlyAccessPublic = 'MeetEarlyAccessPublic',
     MeetEnableAudioMixing = 'MeetEnableAudioMixing',
     MeetEnableScreenShareAudio = 'MeetEnableScreenShareAudio',
     MeetEnableSpatialAudio = 'MeetEnableSpatialAudio',
@@ -380,11 +377,8 @@ enum MeetFeatureFlag {
     MeetNewChatHandling = 'MeetNewChatHandling',
     MeetNewJoinFunctions = 'MeetNewJoinFunctions',
     MeetOpenDesktopAppOnLoad = 'MeetOpenDesktopAppOnLoad',
-    MeetOpenLinksInDesktopApp = 'MeetOpenLinksInDesktopApp',
-    MeetOpenMessageFromPreview = 'MeetOpenMessageFromPreview',
     MeetParticipantsLayouts = 'MeetParticipantsLayouts',
     MeetPastMeetings = 'MeetPastMeetings',
-    MeetPromptOnTabClose = 'MeetPromptOnTabClose',
     MeetProtonCalendarDeepLink = 'MeetProtonCalendarDeepLink',
     MeetQualityTelemetry = 'MeetQualityTelemetry',
     MeetQualityTelemetryKillSwitch = 'MeetQualityTelemetryKillSwitch',
@@ -398,13 +392,10 @@ enum MeetFeatureFlag {
     MeetScheduleInAdvance = 'MeetScheduleInAdvance',
     MeetScreenShareAudioSupportedElectronVersion = 'MeetScreenShareAudioSupportedElectronVersion',
     MeetSeamlessKeyRotationEnabled = 'MeetSeamlessKeyRotationEnabled',
-    MeetShowMLSLogs = 'MeetShowMLSLogs',
     MeetShowReconnectionBannerIfServerConnectionLost = 'MeetShowReconnectionBannerIfServerConnectionLost',
     MeetShowReloadTrackButton = 'MeetShowReloadTrackButton',
-    MeetShowUpsellModalAfterMeeting = 'MeetShowUpsellModalAfterMeeting',
     MeetSimulcast = 'MeetSimulcast',
     MeetSoundNotificationsEnabled = 'MeetSoundNotificationsEnabled',
-    MeetUnblockAudioButton = 'MeetUnblockAudioButton',
     MeetUpsell = 'MeetUpsell',
     MeetUseCachedServerTime = 'MeetUseCachedServerTime',
     MeetUseMessageQueues = 'MeetUseMessageQueues',
@@ -413,13 +404,11 @@ enum MeetFeatureFlag {
     MeetWaitingRoom = 'MeetWaitingRoom',
     MeetWaitingRoomJoin = 'MeetWaitingRoomJoin',
     MeetWebClientDebug = 'MeetWebClientDebug',
-    PersonalMeetingRotation = 'PersonalMeetingRotation',
     MeetParticipantCountMismatch = 'MeetParticipantCountMismatch',
     MeetTranscription = 'MeetTranscription',
     MeetExtendedTelemetry = 'MeetExtendedTelemetry',
     MeetHandleStalledLiveKitReconnect = 'MeetHandleStalledLiveKitReconnect',
     MeetJoinLeaveSoundsNotifications = 'MeetJoinLeaveSoundsNotifications',
-    MeetAllowResettingFrozenVideoTracks = 'MeetAllowResettingFrozenVideoTracks',
 }
 
 enum PaymentsFeatureFlag {

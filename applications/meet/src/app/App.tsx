@@ -11,7 +11,6 @@ import { isWasmSupported } from '@proton/shared/lib/helpers/isWasmSupported';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
-import { ComingSoon } from './components/ComingSoon/ComingSoon';
 import { MacSigningMigrationTopBanner } from './components/MacSigningMigrationTopBanner/MacSigningMigrationTopBanner';
 import { WasmUnsupportedError } from './components/WasmUnsupportedError';
 import config from './config';
@@ -21,7 +20,6 @@ import { GuestContainer } from './containers/GuestContainer';
 import { ManageRecordingsContainer } from './containers/ManageRecordingsContainer/ManageRecordingsContainer';
 import { WrappedProtonMeetContainer } from './containers/ProtonMeetContainer/WrappedProtonMeetContainer';
 import { ProviderContainer } from './containers/ProviderContainer';
-import { getUrlMeetingLinkName } from './hooks/srp/getUrlMeetingParams';
 import { useMeetFunnelTelemetry } from './hooks/useMeetFunnelTelemetry';
 import { useIsRecordingSupported } from './hooks/useMeetingRecorder/hooks/useIsRecordingSupported';
 
@@ -51,25 +49,6 @@ const useMeetRoutes = () => {
 };
 
 const landingPageRoute = '/start-free-meeting';
-
-const ComingSoonWrapper = ({ children }: { children: React.ReactNode }) => {
-    const isJoin = window.location.pathname.includes('join'); // The /join path is both for instant meeting and joining a meeting
-
-    const meetingLinkName = getUrlMeetingLinkName();
-
-    const isEarlyAccess = useFlag('MeetEarlyAccess');
-    const isEarlyAccessPublic = useFlag('MeetEarlyAccessPublic');
-
-    const isOnJoinMeetingPageAndHasAccess = isJoin && meetingLinkName && isEarlyAccessPublic;
-
-    const shouldDisplayComingSoonPage = !isEarlyAccess && !isOnJoinMeetingPageAndHasAccess && !isElectronApp;
-
-    if (shouldDisplayComingSoonPage) {
-        return <ComingSoon />;
-    }
-
-    return children;
-};
 
 const RedirectWrapper = ({ children }: { children: React.ReactNode }) => {
     const isGuest = useMeetSelector(selectIsGuest);
@@ -149,10 +128,8 @@ export const App = () => {
                     <GuestContainer>
                         <AppLayout>
                             <RedirectWrapper>
-                                <ComingSoonWrapper>
-                                    <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
-                                    <Route path="/dashboard" component={GuestDashboardContainer} />
-                                </ComingSoonWrapper>
+                                <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
+                                <Route path="/dashboard" component={GuestDashboardContainer} />
                             </RedirectWrapper>
                         </AppLayout>
                     </GuestContainer>
@@ -161,11 +138,9 @@ export const App = () => {
                         <MeetAppTelemetry />
                         <AppLayout>
                             <RedirectWrapper>
-                                <ComingSoonWrapper>
-                                    <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
-                                    <Route path="/dashboard" component={DashboardContainer} />
-                                    <Route path="/manage-recordings" component={ManageRecordingsContainer} />
-                                </ComingSoonWrapper>
+                                <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
+                                <Route path="/dashboard" component={DashboardContainer} />
+                                <Route path="/manage-recordings" component={ManageRecordingsContainer} />
                             </RedirectWrapper>
                         </AppLayout>
                     </ProviderContainer>

@@ -48,7 +48,6 @@ const ValueWithInfo = ({ value, info }: { value: ReactNode; info: string }) => (
 
 export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting }) => {
     const dispatch = useMeetDispatch();
-    const isMeetShowMLSLogsEnabled = useFlag('MeetShowMLSLogs');
     const isMeetAllowMLSLogExportEnabled = useFlag('MeetAllowMLSLogExport');
     const copyTextToClipboard = useCopyTextToClipboard();
 
@@ -270,52 +269,50 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                     )}
                 </div>
 
-                {isMeetShowMLSLogsEnabled && (
-                    <div className="meeting-info-wrapper meeting-info-mls-wrapper meet-radius overflow-hidden p-4">
-                        <div className="mb-4 flex justify-space-between items-center w-full">
-                            <h3 className="text-semibold text-rg">{c('Title').t`Activity events`}</h3>
-                            {isMeetAllowMLSLogExportEnabled && (
-                                <Tooltip title={c('Label').t`Copy all activity events`}>
-                                    <button
-                                        className="color-primary cursor-pointer unstyled p-0 m-0"
-                                        onClick={() => {
-                                            void copyTextToClipboard(getEncryptionLogs());
-                                        }}
-                                    >
-                                        <IcMeetCopy alt={c('Label').t`Copy all activity events`} />
-                                    </button>
-                                </Tooltip>
-                            )}
-                        </div>
-                        <Table className="mb-0">
-                            <TableBody>
-                                {keyRotationLogs.map((log: KeyRotationLog, index: number) => {
-                                    const errorMessage =
-                                        log.type === 'error' ? c('Title').t`Error at epoch ${log.epoch}` : '';
-                                    const prevLog = keyRotationLogs[index - 1] ?? null;
-                                    const logMessage =
-                                        index === 0
-                                            ? c('Title').t`Joined at epoch ${log.epoch}`
-                                            : c('Title').t`Epoch ${prevLog.epoch} → ${log.epoch}`;
-
-                                    const content = log.type === 'error' ? errorMessage : logMessage;
-                                    return (
-                                        <TableRow key={log.timestamp}>
-                                            <TableCell type="header" scope="row" className="color-weak w-1/3 pl-0">
-                                                <time dateTime={log.timestamp.toString()}>
-                                                    {formatInTimeZone(log.timestamp, getDeviceTimeZone(), 'HH:mm:ss', {
-                                                        locale: dateLocale,
-                                                    })}
-                                                </time>
-                                            </TableCell>
-                                            <TableCell>{content}</TableCell>
-                                        </TableRow>
-                                    );
-                                })}
-                            </TableBody>
-                        </Table>
+                <div className="meeting-info-wrapper meeting-info-mls-wrapper meet-radius overflow-hidden p-4">
+                    <div className="mb-4 flex justify-space-between items-center w-full">
+                        <h3 className="text-semibold text-rg">{c('Title').t`Activity events`}</h3>
+                        {isMeetAllowMLSLogExportEnabled && (
+                            <Tooltip title={c('Label').t`Copy all activity events`}>
+                                <button
+                                    className="color-primary cursor-pointer unstyled p-0 m-0"
+                                    onClick={() => {
+                                        void copyTextToClipboard(getEncryptionLogs());
+                                    }}
+                                >
+                                    <IcMeetCopy alt={c('Label').t`Copy all activity events`} />
+                                </button>
+                            </Tooltip>
+                        )}
                     </div>
-                )}
+                    <Table className="mb-0">
+                        <TableBody>
+                            {keyRotationLogs.map((log: KeyRotationLog, index: number) => {
+                                const errorMessage =
+                                    log.type === 'error' ? c('Title').t`Error at epoch ${log.epoch}` : '';
+                                const prevLog = keyRotationLogs[index - 1] ?? null;
+                                const logMessage =
+                                    index === 0
+                                        ? c('Title').t`Joined at epoch ${log.epoch}`
+                                        : c('Title').t`Epoch ${prevLog.epoch} → ${log.epoch}`;
+
+                                const content = log.type === 'error' ? errorMessage : logMessage;
+                                return (
+                                    <TableRow key={log.timestamp}>
+                                        <TableCell type="header" scope="row" className="color-weak w-1/3 pl-0">
+                                            <time dateTime={log.timestamp.toString()}>
+                                                {formatInTimeZone(log.timestamp, getDeviceTimeZone(), 'HH:mm:ss', {
+                                                    locale: dateLocale,
+                                                })}
+                                            </time>
+                                        </TableCell>
+                                        <TableCell>{content}</TableCell>
+                                    </TableRow>
+                                );
+                            })}
+                        </TableBody>
+                    </Table>
+                </div>
             </section>
         </SideBar>
     );

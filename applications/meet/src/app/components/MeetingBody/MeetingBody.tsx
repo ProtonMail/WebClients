@@ -82,8 +82,6 @@ export const MeetingBody = ({
 
     const { handleRotateCamera, isVideoEnabled } = useMediaManagementContext();
 
-    const isEarlyAccess = useFlag('MeetEarlyAccess');
-
     const isSideBarOpen = useMeetSelector(selectIsSideBarOpen);
 
     const isWebsocketReconnecting = useMeetSelector(selectIsWebsocketReconnecting);
@@ -198,7 +196,7 @@ export const MeetingBody = ({
                             <Chat />
                             <AssignHostSidebar />
                             <Backgrounds />
-                            {isGuest || !isEarlyAccess ? <MeetingDetails /> : <WrappedMeetingDetails />}
+                            {isGuest ? <MeetingDetails /> : <WrappedMeetingDetails />}
                         </div>
                     )}
                 </div>

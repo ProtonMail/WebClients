@@ -110,8 +110,8 @@ describe('openDesktopAppOnLoad', () => {
         expect(tryOpenInDesktopApp).toHaveBeenCalledTimes(1);
     });
 
-    it('does not open the app when MeetOpenDesktopAppOnLoad is off, even with MeetOpenLinksInDesktopApp on', () => {
-        loadPage({ flags: { MeetOpenDesktopAppOnLoad: false, MeetOpenLinksInDesktopApp: true }, userId: USER_ID });
+    it('does not open the app when MeetOpenDesktopAppOnLoad is off', () => {
+        loadPage({ flags: { MeetOpenDesktopAppOnLoad: false }, userId: USER_ID });
 
         expect(tryOpenInDesktopApp).not.toHaveBeenCalled();
     });

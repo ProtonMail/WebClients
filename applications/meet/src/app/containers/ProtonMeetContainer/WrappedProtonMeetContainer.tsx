@@ -3,13 +3,13 @@ import { useEffect, useState } from 'react';
 import { RoomContext } from '@livekit/components-react';
 import { LogLevel, Room, setLogLevel } from 'livekit-client';
 
+import { LiveAnnouncerProvider } from '@proton/components/components/liveAnnouncer/LiveAnnouncerProvider';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { resetActiveDevices } from '@proton/meet/store/slices/deviceManagementSlice';
 import { isDevOrBlack } from '@proton/shared/lib/env';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { MeetingAnnouncerProvider } from '../../components/MeetingAnnouncer/MeetingAnnouncer';
 import { MediaManagementProvider } from '../../contexts/MediaManagementProvider/MediaManagementProvider';
 import { SortedParticipantsProvider } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { SubscriptionManagementProvider } from '../../contexts/SubscriptionManagementProvider';
@@ -122,13 +122,13 @@ export const WrappedProtonMeetContainer = () => {
         <MeetingAnalyticsProvider sampleRate={meetAudioContext.audioContext.sampleRate}>
             <RoomContext.Provider value={room}>
                 <SubscriptionManagementProvider>
-                    <MeetingAnnouncerProvider>
+                    <LiveAnnouncerProvider>
                         <MediaManagementProvider meetAudioContext={meetAudioContext}>
                             <SortedParticipantsProvider>
                                 <ProtonMeetContainer keyProvider={keyProvider} />
                             </SortedParticipantsProvider>
                         </MediaManagementProvider>
-                    </MeetingAnnouncerProvider>
+                    </LiveAnnouncerProvider>
                 </SubscriptionManagementProvider>
             </RoomContext.Provider>
         </MeetingAnalyticsProvider>
