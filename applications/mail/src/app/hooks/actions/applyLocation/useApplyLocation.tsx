@@ -8,6 +8,7 @@ import { getHumanLabelID, isCategoryLabel, isCustomFolder, isSystemFolder } from
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
+import { trackPendingAction } from '@proton/shared/lib/eventNotifier/pendingActions';
 import { SentryMailInitiatives, captureInitiativeMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
@@ -517,7 +518,9 @@ export const useApplyLocation = () => {
             const tokens = await Promise.all(promises);
             const allTokens = tokens.flat();
             const filteredTokens = getFilteredUndoTokens(allTokens);
-            await Promise.all(filteredTokens.map((token) => api({ ...undoActions(token), silence: true })));
+            await trackPendingAction(
+                Promise.all(filteredTokens.map((token) => api({ ...undoActions(token), silence: true })))
+            );
             await call();
 
             // Remove the notification once the undo process is complete
