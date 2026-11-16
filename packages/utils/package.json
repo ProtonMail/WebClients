@@ -60,7 +60,7 @@
         "test:watch": "pnpm run test --watch"
     },
     "dependencies": {
-        "date-fns": "^2.30.0"
+        "date-fns": "catalog:"
     },
     "devDependencies": {
         "@proton/oxlint-config": "workspace:^",
