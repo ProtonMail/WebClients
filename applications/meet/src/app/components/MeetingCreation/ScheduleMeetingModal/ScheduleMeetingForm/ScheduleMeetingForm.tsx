@@ -172,8 +172,7 @@ export const ScheduleMeetingForm = ({
         () =>
             QUARTERS_OF_HOURS.map(({ hour, minute }) => ({
                 value: `${hour}:${minute}`,
-                // create a date object with a random date, only hour and minute matter
-                label: formatTimeHHMM(new Date(1900, 0, 1, +hour, +minute), timeFormat),
+                label: formatTimeHHMM(+hour, +minute, timeFormat),
             })),
         [timeFormat]
     );

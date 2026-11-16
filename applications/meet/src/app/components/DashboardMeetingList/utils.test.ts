@@ -235,6 +235,14 @@ describe('formatMeetingDate', () => {
             expect(formatWithNuuk('2027-03-27', SETTINGS_DATE_FORMAT.MMDDYYYY, true)).toBe('Tomorrow — March 27');
         });
 
+        it('should show the day whose midnight is skipped by the daylight saving change', async () => {
+            vi.stubEnv('TZ', 'America/Santiago');
+            vi.resetModules();
+            const { formatMeetingDate: formatWithSantiago } = await import('./utils');
+
+            expect(formatWithSantiago('2026-09-06', SETTINGS_DATE_FORMAT.MMDDYYYY)).toBe('September 6');
+        });
+
         describe('browser with outdated time zone rules', () => {
             it('should show "Tomorrow" for the next Vancouver day on a night the outdated rules move the clock', async () => {
                 vi.stubEnv('TZ', 'America/Los_Angeles');
