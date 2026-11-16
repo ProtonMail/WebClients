@@ -866,6 +866,15 @@
       ],
       "Ignore": [
         "Ignorer"
+      ],
+      "Add address": [
+        "Legg til adresse"
+      ],
+      "Collapse Pass Monitor alerts": [
+        "Skjul Pass Monitor-varsler"
+      ],
+      "Expand Pass Monitor alerts": [
+        "Vis Pass Monitor-varsler"
       ]
     },
     "Activity": {
@@ -1049,6 +1058,13 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Din personlige informasjon ble lekket i et datainnbrudd på en tredjepartstjeneste."
+      ],
+      "${ count } more": [
+        "${ count } til",
+        "${ count } til"
+      ],
+      "This login uses the same password as another item.": [
+        "Denne påloggingen bruker samme passord som et annet element."
       ]
     },
     "Email": {
@@ -1614,6 +1630,9 @@
       ],
       "Biometric authentication is not available": [
         "Biometrisk autentisering er ikke tilgjengelig"
+      ],
+      "Failed updating monitoring status for this item": [
+        "Kunne ikke oppdatere overvåkingsstatus for dette elementet"
       ]
     },
     "Error message": {
@@ -3165,6 +3184,12 @@
       ],
       "Your session could not be authorized.": [
         "Økten din kunne ikke autoriseres."
+      ],
+      "Alert restored": [
+        "Varselet er gjenopprettet"
+      ],
+      "Check ignored": [
+        "Sjekk ignorert"
       ]
     },
     "Keyboard key": {
@@ -5655,6 +5680,15 @@
       ],
       "Signing you in": [
         "Logger deg på"
+      ],
+      "Missing 2FA": [
+        "Mangler 2FA"
+      ],
+      "Pass Monitor": [
+        "Pass Monitor"
+      ],
+      "Reused password": [
+        "Gjenbrukt passord"
       ]
     },
     "Title_cloned_item": {

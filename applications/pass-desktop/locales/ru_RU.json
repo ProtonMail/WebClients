@@ -831,6 +831,33 @@
       ],
       "Ignore": [
         "Игнорировать"
+      ],
+      "Add address": [
+        "Добавить адрес"
+      ],
+      "Bulk select items": [
+        "Множественный выбор элементов"
+      ],
+      "Download for Linux": [
+        "Скачать для Linux"
+      ],
+      "Hide passwords": [
+        "Скрыть пароли"
+      ],
+      "Move folder": [
+        "Переместить папку"
+      ],
+      "Multiple select": [
+        "Множественный выбор"
+      ],
+      "Open the browser again": [
+        "Откройте браузер снова"
+      ],
+      "Reset filters": [
+        "Сбросить фильтры"
+      ],
+      "Switch vault": [
+        "Переключить хранилище"
       ]
     },
     "Activity": {
@@ -993,6 +1020,15 @@
       ],
       "Your personal info was leaked in a data breach of a third-party service.": [
         "Ваша личная информация стала известна в результате утечки данных из сторонней службы."
+      ],
+      "Change these passwords immediately": [
+        "Немедленно смените эти пароли"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total }": [
+        "Проверка ${ compromised.progress.completed } из ${ compromised.progress.total }"
+      ],
+      "This login uses the same password as another item.": [
+        "Этот логин использует тот же пароль, что и другой элемент."
       ]
     },
     "Email": {
@@ -1371,7 +1407,7 @@
         "Время запроса истекло"
       ],
       "Requesting alias options failed": [
-        "Сбой при запросе вариантов псевдонимов"
+        "Сбой при запросе параметров псевдонимов"
       ],
       "Restoring item failed": [
         "Ошибка при восстановлении элемента"
@@ -1528,6 +1564,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN был удален другим клиентом ${ PASS_APP_NAME }"
+      ],
+      "Failed to move folder": [
+        "Не удалось переместить папку"
+      ],
+      "Unsupported file type": [
+        "Неподдерживаемый тип файла"
       ]
     },
     "Error message": {
@@ -2179,7 +2221,7 @@
         "приглашает вас получить доступ к элементам в"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
-        "Похоже, вы уже вошли в ${ PASS_APP_NAME }. Если ты пытаешься войти с другой учётной записью, пожалуйста, сначала выйдите из расширения."
+        "Похоже, вы уже вошли в ${ PASS_APP_NAME }. Если вы пытаетесь войти с другого аккаунта, пожалуйста, сначала выйдите из расширения."
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Элемент \"${ payload.item.data.metadata.name }\" создан"
@@ -2990,6 +3032,42 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша организация требует, чтобы вы обеспечили защищенный доступ к ${ PASS_APP_NAME }"
+      ],
+      "Add a payment method so your subscription continues when your trial ends.": [
+        "Добавьте способ оплаты, чтобы ваша подписка сохранялась после окончания пробного периода."
+      ],
+      "Canceled by user": [
+        "Отменено пользователем"
+      ],
+      "Checking ${ compromised.progress.completed } of ${ compromised.progress.total } passwords": [
+        "Проверка ${ compromised.progress.completed } из ${ compromised.progress.total } паролей"
+      ],
+      "Choose how you want to sign in": [
+        "Выбери способ входа"
+      ],
+      "Field hidden. You can still autofill it.": [
+        "Поле скрыто. Вы по-прежнему можете использовать автозаполнение."
+      ],
+      "Folder \"${ payload.folder.name }\" moved": [
+        "Папка \"${ payload.folder.name }\" перемещена"
+      ],
+      "Important:": [
+        "Важно:"
+      ],
+      "Moving items to another vault will erase their secure links.": [
+        "Перемещение элементов в другое хранилище удалит их защищенные ссылки."
+      ],
+      "Password hidden. You can still autofill it.": [
+        "Пароль скрыт. Вы по-прежнему можете использовать автозаполнение."
+      ],
+      "Scan to download ${ PASS_APP_NAME } for iOS and Android": [
+        "Отсканируйте, чтобы загрузить приложение ${ PASS_APP_NAME } для iOS и Android"
+      ],
+      "The folder is already here": [
+        "Папка уже здесь"
+      ],
+      "Your session could not be authorized.": [
+        "Ваш сеанс не может быть авторизован."
       ]
     },
     "Keyboard key": {
@@ -4323,6 +4401,18 @@
       ],
       "ZIP or Postal code": [
         "ZIP-код или почтовый индекс"
+      ],
+      "Add a payment method": [
+        "Добавить способ оплаты"
+      ],
+      "Linux": [
+        "Linux"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Link": {
@@ -5410,6 +5500,39 @@
       ],
       "Something went wrong": [
         "Что-то пошло не так"
+      ],
+      "Add an account": [
+        "Добавить аккаунт"
+      ],
+      "Compromised password": [
+        "Пароль под угрозой"
+      ],
+      "Compromised passwords": [
+        "Пароли под угрозой"
+      ],
+      "Continue in your browser": [
+        "Продолжите в браузере"
+      ],
+      "Get mobile apps": [
+        "Получить мобильные приложения"
+      ],
+      "Keep your subscription active": [
+        "Сохраните свою подписку"
+      ],
+      "Move \"${ folderName }\" to": [
+        "Переместить \"${ folderName }\" в"
+      ],
+      "Move all items to \"${ target }\"?": [
+        "Переместить все элементы в \"${ target }\"?"
+      ],
+      "No compromised passwords": [
+        "Нет паролей под угрозой"
+      ],
+      "Sign in timed out": [
+        "Время ожидания на вход истекло"
+      ],
+      "Signing you in": [
+        "Выполняется вход"
       ]
     },
     "Title_cloned_item": {
@@ -5784,6 +5907,12 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша подписка не позволяет создавать несколько хранилищ. Все элементы будут импортированы в ваше первое хранилище. Для импорта в несколько хранилищ обновите подписку."
+      ],
+      "Moving the folder here would exceed the maximum folder nesting level": [
+        "Перемещение папки сюда превысит максимальный уровень вложенности папок"
+      ],
+      "You can't move a folder into itself or its subfolders": [
+        "Вы не можете переместить папку саму в себя или в ее подпапки"
       ]
     }
   }
