@@ -23,6 +23,7 @@ import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
 import noop from '@proton/utils/noop';
 
+import { usePaypalFirstSort } from '../../../../../signup/usePaypalFirstSort';
 import Terms from '../../../../components/Terms';
 import { useSignup } from '../../../../context/SignupContext';
 import AccountDetailsForm from './AccountDetailsForm';
@@ -47,7 +48,9 @@ const CheckoutForm = ({ onPaymentTokenProcessed }: Props) => {
 
     const companyRef = useRef<string | undefined>(undefined);
 
+    const sortNewMethods = usePaypalFirstSort();
     const paymentFacade = usePaymentFacade({
+        sortNewMethods,
         checkResult: options.checkResult,
         amount: options.checkResult.AmountDue,
         currency: options.currency,

@@ -21,6 +21,7 @@ import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
 
+import { usePaypalFirstSort } from '../../../../signup/usePaypalFirstSort';
 import { useSignup } from '../../../context/SignupContext';
 import { Layout } from '../components/Layout';
 import { passPlus } from '../plans';
@@ -40,7 +41,9 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
     const amountDue = getSimplePriceString(payments.selectedPlan.currency, options.checkResult.AmountDue);
     const monthlyPrice = getSimplePriceString(payments.selectedPlan.currency, payments.checkoutUi.withDiscountPerMonth);
 
+    const sortNewMethods = usePaypalFirstSort();
     const paymentFacade = usePaymentFacade({
+        sortNewMethods,
         checkResult: options.checkResult,
         amount: options.checkResult.AmountDue,
         currency: options.currency,

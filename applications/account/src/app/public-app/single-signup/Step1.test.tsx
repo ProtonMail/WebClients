@@ -154,7 +154,7 @@ describe('single-signup Step1 subscription check payload', () => {
      * full check payload Step1 sends when the cycle changes, a code is applied and a code is removed.
      */
     it('sends the full check payload when the cycle changes', async () => {
-        renderWithProviders(<Harness />, { preloadedState: {} });
+        renderWithProviders(<Harness />, { preloadedState: { staticExperiments: { PaypalFirst: 'disabled' } } });
 
         await userEvent.click(await screen.findByText('change cycle'));
 
@@ -169,7 +169,7 @@ describe('single-signup Step1 subscription check payload', () => {
     });
 
     it('sends the full check payload with the code when a code is applied', async () => {
-        renderWithProviders(<Harness />, { preloadedState: {} });
+        renderWithProviders(<Harness />, { preloadedState: { staticExperiments: { PaypalFirst: 'disabled' } } });
 
         await userEvent.click(await screen.findByText('apply code'));
 
@@ -178,7 +178,7 @@ describe('single-signup Step1 subscription check payload', () => {
     });
 
     it('sends the full check payload without a code when the code is removed', async () => {
-        renderWithProviders(<Harness />, { preloadedState: {} });
+        renderWithProviders(<Harness />, { preloadedState: { staticExperiments: { PaypalFirst: 'disabled' } } });
 
         await userEvent.click(await screen.findByText('remove code'));
 

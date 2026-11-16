@@ -54,7 +54,9 @@ export const resolveStaticExperiments = (config: Record<string, StaticExperiment
             continue;
         }
 
-        const activeWeights = experimentConfig.enabled ? getActiveWeights(experimentConfig, Date.now()) : undefined;
+        const isEnabled =
+            typeof experimentConfig.enabled === 'function' ? experimentConfig.enabled() : experimentConfig.enabled;
+        const activeWeights = isEnabled ? getActiveWeights(experimentConfig, Date.now()) : undefined;
 
         if (!activeWeights) {
             cookieEntries.delete(name);

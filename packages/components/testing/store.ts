@@ -1,5 +1,6 @@
 import { combineReducers, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
+import { staticExperimentsReducer } from '@proton/account/staticExperiments/slice';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types/interface';
 import { sharedReducers } from '@proton/redux-shared-store/sharedReducers';
 import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
@@ -14,6 +15,7 @@ const listenerMiddleware = createListenerMiddleware();
 
 const rootReducer = combineReducers({
     ...sharedReducers,
+    ...staticExperimentsReducer,
 });
 export type RootState = ReturnType<typeof rootReducer>;
 export const setupStore = ({ preloadedState }: { preloadedState: Partial<RootState> }) => {
