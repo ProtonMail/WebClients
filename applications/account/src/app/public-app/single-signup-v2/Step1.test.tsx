@@ -68,6 +68,7 @@ jest.mock('./AccountStepPayment', () => {
 const renderStep1 = (overrides?: Partial<React.ComponentProps<typeof Step1>>) => {
     const defaultProps = {
         initialSessionsLength: false,
+        signInPath: '/switch',
         signupConfiguration: createMockSignupConfiguration(),
         signupParameters: createMockSignupParameters(),
         isLargeViewport: true,
@@ -519,6 +520,7 @@ describe('Step1 - subscription guards', () => {
             return (
                 <Step1
                     initialSessionsLength={false}
+                    signInPath="/switch"
                     signupConfiguration={createMockSignupConfiguration()}
                     signupParameters={createMockSignupParameters()}
                     isLargeViewport

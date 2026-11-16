@@ -1,5 +1,4 @@
 import { Fragment, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import { useMachine } from '@xstate/react';
 import { c } from 'ttag';
@@ -13,7 +12,7 @@ import { InputField as InputFieldTwo } from '@proton/components/components/v2/fi
 import GenericError, { GenericErrorDisplay } from '@proton/components/containers/error/GenericError';
 import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import { APPS, type APP_NAMES, BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 
 import type { OnLoginCallback } from '../authSession';
 import JoinOrganizationAdminItem from '../components/JoinOrganizationAdminItem';
@@ -26,7 +25,7 @@ import { usePublicAppAuth } from '../publicAppAuth';
 import ExpiredError from '../standalone/ExpiredError';
 import { PublicAppContext } from '../state-machine/PublicAppContext';
 import { usePublicAppServices } from '../state-machine/PublicAppServices';
-import { getPublicAppPaths, selectPreAppIntent } from '../state-machine/publicAppStateMachine';
+import { selectPreAppIntent } from '../state-machine/publicAppStateMachine';
 import { runLogin } from '../state-machine/runLogin';
 import { createJoinMagicLinkActors } from './joinMagicLinkActors';
 import { joinMagicLinkStateMachine } from './joinMagicLinkStateMachine';
@@ -49,16 +48,9 @@ const getTerms = (app: APP_NAMES) => {
 const JoinMagicLinkContainer = () => {
     const services = usePublicAppServices();
     const { onPreSubmit, onPreload } = usePublicAppAuth();
-    const history = useHistory();
     const publicApp = PublicAppContext.useActorRef();
     const toApp = PublicAppContext.useSelector(selectPreAppIntent);
     const onLogin: OnLoginCallback = (session) => runLogin(publicApp, session);
-    const onUsed = () => {
-        const { context } = publicApp.getSnapshot();
-        history.replace(
-            (context.activeSessions || []).length >= 1 ? SSO_PATHS.SWITCH : getPublicAppPaths(context).login
-        );
-    };
     const { APP_NAME: appName } = useConfig();
     const handleError = useErrorHandler();
     const { createNotification } = useNotifications();
@@ -75,7 +67,7 @@ const JoinMagicLinkContainer = () => {
                 onPreSubmit,
                 login: onLogin,
             }),
-            actions: { redirectToSignIn: onUsed },
+            actions: { redirectToSignIn: () => publicApp.send({ type: 'signIn.requested' }) },
         })
     );
 

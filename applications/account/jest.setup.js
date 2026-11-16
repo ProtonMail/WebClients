@@ -1,5 +1,4 @@
 import '@testing-library/jest-dom';
-
 import '@proton/app-context/testing/mockTelemetry';
 import '@proton/components/testing/mockFlagSvg';
 import '@proton/components/testing/mockMatchMedia';
@@ -38,7 +37,8 @@ jest.mock('./src/app/public-app/localePrefix.ts', () => ({
         localePrefix: 'en',
         pathname: pathname.replace(/^\/\w{2,3}(-\w{2})?\//, '') || '/',
     }),
-    getLocaleMapping: (localeCode) => localeCode,
+    // English has no path prefix, as in the app
+    getLocaleMapping: (localeCode) => (localeCode === 'en_US' ? undefined : localeCode),
 }));
 
 // That's an unresolved issue of jsdom https://github.com/jsdom/jsdom/issues/918

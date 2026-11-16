@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { continueToPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';
 
 import Content from '../layout/Content';
@@ -22,10 +22,7 @@ const OAuthConfirmForkContainer = ({ consent }: Props) => {
     const loading = PublicAppContext.useSelector(selectLoggingIn);
     const image = consent.payload.data.payload.oauthData.clientInfo.Logo;
     const onConfirm = () => publicApp.send({ type: 'consent.confirmed', consent });
-    const onCancel = () => {
-        // Force a hard refresh to get active sessions to refresh when signing up
-        window.location.pathname = SSO_PATHS.SWITCH;
-    };
+    const onCancel = () => publicApp.send({ type: 'consent.cancelled', consent });
     const children = (
         <Main>
             <Header

@@ -1,9 +1,6 @@
-import { useHistory } from 'react-router-dom';
-
 import isDeepEqual from 'lodash/isEqual';
 
 import { getIsSpacesApp } from '@proton/shared/lib/authentication/apps';
-import { SSO_PATHS } from '@proton/shared/lib/constants';
 
 import type { OnLoginCallback } from '../authSession';
 import { setupVPN, usePublicAppAuth } from '../publicAppAuth';
@@ -22,7 +19,6 @@ import { getLoginMeta } from './loginPagesJson';
 
 const PublicAppSignIn = () => {
     const { onPreSubmit, onStartAuth, onSessionExpired } = usePublicAppAuth();
-    const history = useHistory();
     const publicApp = PublicAppContext.useActorRef();
     const initialSearchParams = PublicAppContext.useSelector((state) => state.context.initialSearchParams);
     const productParam = PublicAppContext.useSelector((state) => state.context.productParam);
@@ -41,7 +37,7 @@ const PublicAppSignIn = () => {
         productParam,
         showContinueTo: !!toOAuthName,
         onLogin,
-        onBack: hasBackToSwitch ? () => history.push(SSO_PATHS.SWITCH) : undefined,
+        onBack: hasBackToSwitch ? () => publicApp.send({ type: 'switch.requested' }) : undefined,
         setupVPN,
         paths,
         onPreSubmit,

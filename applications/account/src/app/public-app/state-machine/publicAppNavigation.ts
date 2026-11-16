@@ -34,4 +34,5 @@ export const createPublicAppNavigation = (history: H.History) => ({
     },
     replaceLocation: (_: unknown, { path, state }: { path: string; state?: SignInLocationState }) =>
         navigate(() => history.replace(path, state)),
+    pushLocation: (_: unknown, { path }: { path: string }) => navigate(() => history.push(path)),
 });

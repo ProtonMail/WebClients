@@ -103,7 +103,7 @@ export const getActiveSessionLoginResult = async ({
         return {
             type: 'sessions-switcher',
             payload: null,
-            location: sessionsResult.sessions.length >= 1 ? SSO_PATHS.SWITCH : paths.login,
+            location: sessionsResult.sessions.length >= 1 ? paths.switch : paths.login,
         };
     }
 
@@ -135,6 +135,6 @@ export const getActiveSessionLoginResult = async ({
     return {
         type: 'sessions-switcher',
         payload: null,
-        location: sessionsResult.sessions.length >= 1 ? SSO_PATHS.SWITCH : paths.login,
+        location: sessionsResult.sessions.length >= 1 ? paths.switch : paths.login,
     };
 };

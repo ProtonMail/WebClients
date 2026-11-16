@@ -38,7 +38,7 @@ import Activation from './signupCtx/flows/bornPrivate/activation/Activation';
 import Recovery from './signupCtx/flows/bornPrivate/recovery/Recovery';
 import { PublicAppContext } from './state-machine/PublicAppContext';
 import { usePublicAppServices } from './state-machine/PublicAppServices';
-import { loginPaths, selectHasBackToSwitch, selectPaths } from './state-machine/publicAppStateMachine';
+import { loginPaths, selectSignInPath } from './state-machine/publicAppStateMachine';
 import { runLogin as runMachineLogin } from './state-machine/runLogin';
 import SwitchAccountContainer from './switchAccount/SwitchAccountContainer';
 import { TvContainerGetVpnPlus } from './tv/TvContainerGetVpnPlus';
@@ -52,8 +52,7 @@ const PublicAppMainRoutes = () => {
     const publicApp = PublicAppContext.useActorRef();
     const locationState = PublicAppContext.useSelector((state) => state.context.locationState);
     const productParam = PublicAppContext.useSelector((state) => state.context.productParam);
-    const loginPath = PublicAppContext.useSelector((state) => selectPaths(state).login);
-    const hasBackToSwitch = PublicAppContext.useSelector(selectHasBackToSwitch);
+    const signInPath = PublicAppContext.useSelector(selectSignInPath);
     const loader = <AccountLoaderPage />;
 
     const runLogin: OnLoginCallback = (session) => runMachineLogin(publicApp, session);
@@ -180,7 +179,7 @@ const PublicAppMainRoutes = () => {
                                 )}
                                 <Redirect
                                     to={{
-                                        pathname: hasBackToSwitch ? SSO_PATHS.SWITCH : loginPath,
+                                        pathname: signInPath,
                                         state: {
                                             ...(typeof location.state === 'object' ? location.state : {}),
                                             from: location,

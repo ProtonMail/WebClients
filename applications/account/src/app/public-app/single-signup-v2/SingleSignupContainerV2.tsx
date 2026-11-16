@@ -91,6 +91,8 @@ import {
     sendSignupSubscriptionTelemetryEvent,
 } from '../signup/signupTelemetry';
 import ExpiredError from '../standalone/ExpiredError';
+import { PublicAppContext } from '../state-machine/PublicAppContext';
+import { selectSignInPath } from '../state-machine/publicAppStateMachine';
 import Layout from './Layout';
 import LoginModal from './LoginModal';
 import { SignupV2ThemeProvider, getSignupV2Theme } from './SignupV2ThemeProvider';
@@ -200,6 +202,7 @@ const SingleSignupContainerV2 = ({
     const isNewB2BPlanEnabled = useFlag('NewProtonBusinessBundlePlans');
     const lumoMultiSubscriptions = useFlag('LumoMultiSubscriptions');
     const getEntitlementCatalog = useGetEntitlementCatalog();
+    const signInPath = PublicAppContext.useSelector(selectSignInPath);
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
@@ -1603,6 +1606,7 @@ const SingleSignupContainerV2 = ({
             {model.step === Steps.Account && (
                 <Step1
                     initialSessionsLength={initialSessionsLength}
+                    signInPath={signInPath}
                     signupConfiguration={signupConfiguration}
                     activeSessions={activeSessions}
                     signupParameters={signupParameters}

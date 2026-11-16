@@ -64,6 +64,7 @@ const getPaths = (maybeLocalePrefix: string): Paths => {
         reset: `${prefix}${publicRoutes.reset}`,
         forgotUsername: `${prefix}${publicRoutes.forgotUsername}`,
         reauth: '',
+        switch: '',
         appSwitcher: '',
         signinAnotherDevice: '',
         tvSignup: VPN_TV_SIGNUP_REDIRECT,

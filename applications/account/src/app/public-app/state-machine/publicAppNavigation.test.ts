@@ -38,6 +38,18 @@ describe('createPublicAppNavigation', () => {
         expect(order).toEqual([SSO_PATHS.SWITCH, 'render']);
     });
 
+    it('pushes a location, so going back returns to the page it left', async () => {
+        const history = createMemoryHistory({ initialEntries: [SSO_PATHS.APP_SWITCHER] });
+        const { pushLocation } = createPublicAppNavigation(history);
+
+        pushLocation(undefined, { path: SSO_PATHS.SWITCH });
+        await Promise.resolve();
+        expect(history.location.pathname).toBe(SSO_PATHS.SWITCH);
+        history.goBack();
+
+        expect(history.location.pathname).toBe(SSO_PATHS.APP_SWITCHER);
+    });
+
     it('replaces a fork URL it leaves, so going back skips it', async () => {
         const history = createMemoryHistory({ initialEntries: ['/start', SSO_PATHS.AUTHORIZE] });
         const { followLoginResult } = createPublicAppNavigation(history);

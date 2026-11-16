@@ -1,6 +1,5 @@
 import type { ReactElement } from 'react';
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -19,7 +18,7 @@ import { getForbiddenApps } from '@proton/shared/lib/apps/apps';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Organization } from '@proton/shared/lib/interfaces/Organization';
@@ -122,12 +121,11 @@ interface Props {
 }
 
 const AppSwitcherContainer = ({ state }: Props) => {
-    const history = useHistory();
     const publicApp = PublicAppContext.useActorRef();
     const loading = PublicAppContext.useSelector(selectLoggingIn);
     // Without a request id, a failed login shows as an error on the page
     const onLogin = (session: AuthSession) => publicApp.send({ type: 'login.requested', session });
-    const onSwitch = () => history.push(SSO_PATHS.SWITCH);
+    const onSwitch = () => publicApp.send({ type: 'switch.requested' });
     const [exploredApp, setExploredApp] = useState<APP_NAMES>();
     const session = state.session;
     const error = state.error;

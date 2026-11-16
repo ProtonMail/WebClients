@@ -123,10 +123,16 @@ export type PublicAppMachineEvent =
     | { type: 'login.resulted'; result: LoginResult }
     | { type: 'login.requested'; session: AuthSession; requestId?: string }
     | { type: 'consent.confirmed'; consent: ConsentState }
+    /** The user refused the consent: sign in again, without the fork unless the desktop app still waits for it. */
+    | { type: 'consent.cancelled'; consent: ConsentState }
     | { type: 'sessions.updated'; sessions: ActiveSession[] }
     | { type: 'sessions.signedOut'; sessions: ActiveSession[]; clearDeviceRecovery: boolean }
     /** The account switcher opened. */
     | { type: 'switch.opened' }
+    /** A page sends the user to sign in, such as an invitation link that was already used. */
+    | { type: 'signIn.requested' }
+    /** The user asks for the account switcher, to pick another account. */
+    | { type: 'switch.requested' }
     /** The partner's account is already a Proton account, or the partner sign-in failed: sign in with Proton. */
     | { type: 'oauthPartners.credentialsRequested'; email: string; sessions: ActiveSession[] | undefined }
     /** An identity provider handed back a token for the SSO sign-in. */
@@ -207,6 +213,12 @@ export const selectClientType = ({ context }: PublicAppSnapshot) => {
 export const selectHasBackToSwitch = ({ context }: { context: PublicAppMachineContext }) =>
     context.activeSessions === undefined ? context.initialSessionsLength > 0 : context.activeSessions.length >= 1;
 
+/** Where signing in starts: the account switcher when the browser has sessions, else the login page. */
+export const selectSignInPath = ({ context }: PublicAppSnapshot) => {
+    const paths = getPublicAppPaths(context);
+    return selectHasBackToSwitch({ context }) ? paths.switch : paths.login;
+};
+
 type PublicAppMachineSnapshot = SnapshotFrom<typeof publicAppStateMachine>;
 
 /** The page shows its loader, or the error that stopped it, instead of its pages. */
@@ -281,6 +293,18 @@ const getRemainingSessions = (sessions: ActiveSession[] | undefined, localIDs: n
 const leaveSwitcher = {
     type: 'replaceLocation' as const,
     params: ({ context }: { context: PublicAppMachineContext }) => ({ path: getPublicAppPaths(context).login }),
+};
+
+/** Sign in: on the account switcher when the browser has sessions, else on the login page. */
+const goToSignIn = {
+    type: 'replaceLocation' as const,
+    params: ({ context }: { context: PublicAppMachineContext }) => ({ path: selectSignInPath({ context }) }),
+};
+
+/** A consent has a signed-in session behind it, so the switcher has an account to show, even before the list loads. */
+const goToSwitcher = {
+    type: 'replaceLocation' as const,
+    params: ({ context }: { context: PublicAppMachineContext }) => ({ path: getPublicAppPaths(context).switch }),
 };
 
 type SignedOutEvent = { event: { sessions: ActiveSession[] } };
@@ -369,6 +393,7 @@ export const publicAppStateMachine = setup({
         followLoginResult: (_, _params: { result: LoginResult }) => unprovidedAction('followLoginResult'),
         replaceLocation: (_, _params: { path: string; state?: SignInLocationState }) =>
             unprovidedAction('replaceLocation'),
+        pushLocation: (_, _params: { path: string }) => unprovidedAction('pushLocation'),
         updateSessions: assign(({ context }, { sessions }: { sessions: ActiveSession[] | undefined }) => ({
             activeSessions: sessions ?? context.activeSessions,
         })),
@@ -376,6 +401,9 @@ export const publicAppStateMachine = setup({
             activeSessions: getRemainingSessions(context.activeSessions, localIDs),
         })),
         assignPickedSession: assign((_, { localID }: { localID: number }) => ({ pickedLocalID: localID })),
+        dropConsent: assign({ locationState: null }),
+        /** Stops the fork, as a reload of the page would. */
+        dropFork: assign({ forkState: null }),
         notifySessionExpired: emit({ type: 'session.expired' as const }),
         /** Clears the signed-out sessions from the browser and revokes them, in the background. */
         signOut: spawnChild('signOut', {
@@ -410,9 +438,12 @@ export const publicAppStateMachine = setup({
                 context.pathname === '/' ||
                 [...loginPaths, ...ephemeralLoginPaths].some((pathname) => context.pathname === pathname)),
         isLoginDone: (_, { result }: { result: LoginResult }) => result.type === 'done',
-        /** Only the consent the page shows can be confirmed. */
+        /** Only the consent the page shows can be confirmed or cancelled. */
         isShownConsent: ({ context, event }) =>
-            event.type === 'consent.confirmed' && event.consent === context.locationState,
+            (event.type === 'consent.confirmed' || event.type === 'consent.cancelled') &&
+            event.consent === context.locationState,
+        isDesktopConsent: ({ event }) =>
+            event.type === 'consent.cancelled' && event.consent.type === 'desktop-fork-consent',
         hasNoSessionList: ({ context }) => context.activeSessions === undefined,
         hasNoSessions: (_, { sessions }: { sessions: ActiveSession[] | undefined }) => sessions?.length === 0,
         leavesNoSessions: ({ context }, { localIDs }: { localIDs: number[] }) =>
@@ -466,6 +497,11 @@ export const publicAppStateMachine = setup({
             },
             { actions: signedOutActions },
         ],
+        'signIn.requested': { actions: goToSignIn },
+        'switch.requested': {
+            // Pushed, so Back returns to the page the user asked from
+            actions: { type: 'pushLocation', params: ({ context }) => ({ path: getPublicAppPaths(context).switch }) },
+        },
         'oauthPartners.credentialsRequested': {
             actions: [
                 { type: 'updateSessions', params: ({ event }) => ({ sessions: event.sessions }) },
@@ -546,6 +582,14 @@ export const publicAppStateMachine = setup({
                             target: 'loggingIn',
                             actions: { type: 'assignLoginRequest', params: { requestId: undefined } },
                         },
+                        'consent.cancelled': [
+                            // The desktop app still waits for a sign-in: keep its fork so another account can be picked
+                            {
+                                guard: and(['isShownConsent', 'isDesktopConsent']),
+                                actions: ['dropConsent', goToSwitcher],
+                            },
+                            { guard: 'isShownConsent', actions: ['dropFork', 'dropConsent', goToSwitcher] },
+                        ],
                         'switch.opened': [
                             { guard: 'hasNoSessionList', target: '.loadingSessions' },
                             {

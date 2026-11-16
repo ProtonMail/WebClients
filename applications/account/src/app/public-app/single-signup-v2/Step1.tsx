@@ -140,6 +140,7 @@ const Step1 = ({
         defaults,
     },
     initialSessionsLength,
+    signInPath,
     signupParameters,
     currentPlan,
     onComplete,
@@ -161,6 +162,7 @@ const Step1 = ({
     telemetryContext,
 }: {
     initialSessionsLength: boolean;
+    signInPath: string;
     signupConfiguration: SignupConfiguration;
     signupParameters: SignupParameters2;
     isLargeViewport: boolean;
@@ -1429,7 +1431,7 @@ const Step1 = ({
                                                                                             <Link
                                                                                                 key="signin"
                                                                                                 className="link link-focus text-nowrap"
-                                                                                                to={`${SSO_PATHS.SWITCH}?${searchParams.toString()}`}
+                                                                                                to={`${signInPath}?${searchParams.toString()}`}
                                                                                             >
                                                                                                 {c('Link').t`Sign in`}
                                                                                             </Link>

@@ -11,12 +11,14 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { disableUser } from '@proton/shared/lib/api/user';
-import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import accountIllustration from '../assets/account-illustration.svg';
 import PublicFooter from '../components/PublicFooter';
 import PublicLayout from '../components/PublicLayout';
+import { PublicAppContext } from '../state-machine/PublicAppContext';
+import { selectSignInPath } from '../state-machine/publicAppStateMachine';
 import ExpiredError from './ExpiredError';
 import { stripQueryParams } from './jwt';
 
@@ -31,6 +33,7 @@ enum ErrorType {
 
 const DisableAccount = () => {
     const api = useApi();
+    const signInPath = PublicAppContext.useSelector(selectSignInPath);
     const [error, setError] = useState<{ type: ErrorType } | null>(null);
     const [loading, withLoading] = useLoading(true);
     const location = useLocation();
@@ -55,7 +58,7 @@ const DisableAccount = () => {
         <main className="main-area h-full">
             {(() => {
                 const signIn = (
-                    <a key="1" href={SSO_PATHS.SWITCH} target="_self">
+                    <a key="1" href={signInPath} target="_self">
                         {c('Disable account').t`sign in`}
                     </a>
                 );
