@@ -1,17 +1,23 @@
 import { ES_SYNC_ACTIONS } from '@proton/encrypted-search/constants';
 import type { ESEvent, ESItemEvent } from '@proton/encrypted-search/models/interfaces';
+import { EVENT_ERRORS } from '@proton/shared/lib/errors';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 
 import { MAIL_EVENTLOOP_NAME } from '../../constants';
 import type { ESBaseMessage } from '../../models/encryptedSearch';
 import type { Logger } from '../utils/logger';
-import type { EventUpdate, EventUpdateItem } from './worker/tasks/IncrementalIndexer';
+import type { EventUpdate, EventUpdateItem } from './worker/EventUpdateWriter';
 
 /** Turns an event loop event into the update the incremental indexer applies to the index. */
 export class EventUpdateMapper {
     constructor(private readonly logger: Logger) {}
 
+    /**
+     * Returns an update for every event with an id, even one without message changes:
+     * its id still moves the event cursor forward.
+     */
     map(event: ESEvent<ESBaseMessage> | undefined): EventUpdate | undefined {
-        if (!event || !event.Items?.length) {
+        if (!event) {
             return undefined;
         }
         const eventID = event.eventsToStore[MAIL_EVENTLOOP_NAME];
@@ -20,15 +26,15 @@ export class EventUpdateMapper {
             return;
         }
 
-        const updates: EventUpdateItem[] = [];
-        for (const item of event.Items) {
+        const items: EventUpdateItem[] = [];
+        for (const item of event.Items ?? []) {
             const update = this.mapItem(item);
             if (update) {
-                updates.push(update);
+                items.push(update);
             }
         }
 
-        return updates.length ? { items: updates, eventID } : undefined;
+        return { eventID, items, refresh: hasBit(event.Refresh, EVENT_ERRORS.MAIL) };
     }
 
     private mapItem(item: ESItemEvent<ESBaseMessage>): EventUpdateItem | undefined {

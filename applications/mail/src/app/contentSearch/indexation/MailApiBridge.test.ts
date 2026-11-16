@@ -1,4 +1,4 @@
-import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { EVENT_ACTIONS, MIME_TYPES } from '@proton/shared/lib/constants';
 
 import { buildMessageBatchResponse, buildMessageMetadata } from '../testing/messages';
 import { type BatchMessageDecryptionFunction, MailApiBridge } from './MailApiBridge';
@@ -104,6 +104,86 @@ describe('MailApiBridge', () => {
 
             expect([...bodies.keys()]).toEqual(['a']);
             expect(logger.error).toHaveBeenCalledWith(expect.stringContaining('missing'));
+        });
+    });
+
+    describe('fetchEventUpdate', () => {
+        const eventApi = (event: object) => {
+            return jest.fn(async () => {
+                return { Code: 1000, ...event };
+            });
+        };
+
+        it('should request the events following the cursor', async () => {
+            const api = eventApi({ EventID: 'event-2', More: 0, Refresh: 0 });
+            const bridge = new MailApiBridge(api as any, decryptBody, makeLogger());
+
+            await bridge.fetchEventUpdate(1, 'event-1');
+
+            expect(api).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    url: 'core/v5/events/event-1',
+                    params: expect.objectContaining({ CalledFrom: 'EncryptedSearch' }),
+                    silence: true,
+                })
+            );
+        });
+
+        it('should map the message events', async () => {
+            const metadata = buildMessageMetadata({ ID: 'created' });
+            const api = eventApi({
+                EventID: 'event-2',
+                More: 1,
+                Refresh: 0,
+                Messages: [
+                    { ID: 'created', Action: EVENT_ACTIONS.CREATE, Message: metadata },
+                    { ID: 'deleted', Action: EVENT_ACTIONS.DELETE },
+                ],
+                Conversations: [{ ID: 'conversation', Action: EVENT_ACTIONS.DELETE }],
+            });
+            const bridge = new MailApiBridge(api as any, decryptBody, makeLogger());
+
+            const response = await bridge.fetchEventUpdate(1, 'event-1');
+
+            expect(response).toEqual({
+                eventID: 'event-2',
+                more: true,
+                refresh: false,
+                items: [
+                    { metadata: expect.objectContaining({ ID: 'created' }), fetchBodyId: 'created' },
+                    { deleteId: 'deleted' },
+                ],
+            });
+        });
+
+        it('should return no items when no message changed', async () => {
+            const bridge = new MailApiBridge(
+                eventApi({ EventID: 'event-1', More: 0, Refresh: 0 }) as any,
+                decryptBody,
+                makeLogger()
+            );
+
+            const response = await bridge.fetchEventUpdate(1, 'event-1');
+
+            expect(response).toEqual({ eventID: 'event-1', more: false, refresh: false, items: [] });
+        });
+
+        it('should report a refresh', async () => {
+            const bridge = new MailApiBridge(
+                eventApi({ EventID: 'event-9', More: 0, Refresh: 255 }) as any,
+                decryptBody,
+                makeLogger()
+            );
+
+            const response = await bridge.fetchEventUpdate(1, 'event-1');
+
+            expect(response).toEqual({ eventID: 'event-9', more: false, refresh: true, items: [] });
+        });
+
+        it('should throw when the response has no event id', async () => {
+            const bridge = new MailApiBridge(eventApi({ More: 0 }) as any, decryptBody, makeLogger());
+
+            await expect(bridge.fetchEventUpdate(1, 'event-1')).rejects.toThrow();
         });
     });
 });

@@ -9,7 +9,7 @@ import type { MailDelegate } from './MailDelegate';
 
 /** wrappers to the foundation-search classes that deal with the interaction with the EncryptedBlobTransaction */
 
-class WriteWrapper {
+export class WriteWrapper {
     private disposed = false;
     constructor(
         private readonly fsWrite: FSWrite,

@@ -47,6 +47,12 @@ export class IndexService {
     private pauseController?: AbortController;
     private worker?: Comlink.Remote<IndexWorker>;
     private workerQueue: WorkerCallback[] = [];
+    /**
+     * Until a catch-up ran to its end, a live update first requests one: a catch-up that failed or was stopped
+     * is lost with its worker, and the live update would move the cursor past the events it hasn't replayed.
+     * Reset when a worker fails, as the live updates it had queued are lost with it, but still past the cursor.
+     */
+    private catchupCompleted = false;
     private readonly apiBridge: MailApiBridge;
     private status?: IndexStatus;
     private readonly listeners: IndexListener[] = [];
@@ -79,10 +85,20 @@ export class IndexService {
             return;
         }
         const batchUpdate = this.eventUpdateMapper.map(event);
-        if (!batchUpdate) {
+        // an update without items would interrupt historic indexing only to move the cursor,
+        // but a refresh must reach the worker, or a later update would move the cursor past it
+        if (!batchUpdate || (batchUpdate.items.length === 0 && !batchUpdate.refresh)) {
             return;
         }
-        this.runWithWorker((worker) => worker.pushIncrementalUpdate(batchUpdate));
+        this.runWithWorker(async (worker) => {
+            // ensure catchup has ran before running incremental, or we miss events
+            if (!this.catchupCompleted) {
+                if (!(await worker.pushCatchup())) {
+                    return false;
+                }
+            }
+            return worker.pushIncrementalUpdate(batchUpdate);
+        });
     }
 
     /**
@@ -198,10 +214,10 @@ export class IndexService {
         const { status, historicalFinished } = statusAndHistoricalFinished;
         this.status = status;
         if (status === 'enabled') {
-            // Nothing to resume once the historic pass reached eof, new messages come in through `handleEvent`.
-            if (!historicalFinished) {
-                this.runWithWorker((worker) => worker.pushStartupAction());
-            } else {
+            // Catch-up runs even in a finished index, for what changed while the app was closed or indexing paused.
+            // It doesn't change readiness: search waits for the historic pass only, as v1 doesn't wait for catch-up.
+            this.runWithWorker((worker) => worker.pushStartupAction());
+            if (historicalFinished) {
                 this.listeners.forEach((l) => l.reportIndexComplete());
             }
         }
@@ -243,6 +259,7 @@ export class IndexService {
             this.indexationPromise = this.runWorker()
                 .catch((err) => {
                     this.logger.error('index worker stopped because of error', err);
+                    this.catchupCompleted = false;
                     this.listeners.forEach((l) => l.reportError(err));
                 })
                 .finally(() => {
@@ -324,8 +341,11 @@ export class IndexService {
                 reportTaskStarted: (taskName: TaskName) => {
                     this.listeners.forEach((l) => l.reportTaskStarted(taskName));
                 },
-                reportTaskCompleted: (taskName: TaskName) => {
-                    this.listeners.forEach((l) => l.reportTaskCompleted(taskName));
+                reportTaskCompleted: (taskName: TaskName, success: boolean) => {
+                    if (taskName === 'catchup' && success) {
+                        this.catchupCompleted = true;
+                    }
+                    this.listeners.forEach((l) => l.reportTaskCompleted(taskName, success));
                 },
                 log: (level: LogLevel, message: string) => {
                     this.logger[level](message);

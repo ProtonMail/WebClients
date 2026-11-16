@@ -6,7 +6,7 @@ import type { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message
 import chunk from '@proton/utils/chunk';
 
 import type { Anchor } from '../../db/schema';
-import type { BodyRequest, MailApiBridge } from '../MailApiBridge';
+import type { BodyRequest, EventUpdateResponse, MailApiBridge } from '../MailApiBridge';
 import type { MessageCacheContent } from '../MessageCache';
 
 const BODY_BATCH_MAX_MESSAGES = 20;
@@ -86,6 +86,17 @@ export class IndexApi {
     async fetchLatestEventId(abortSignal: AbortSignal): Promise<string | undefined> {
         const response = await this.apiWithAbortSignal<{ EventID?: string }>(getLatestID(), abortSignal);
         return response.EventID;
+    }
+
+    async fetchEventUpdate(eventID: string, abortSignal: AbortSignal): Promise<EventUpdateResponse> {
+        const { abortId, release } = this.abortSignalToId(abortSignal);
+        try {
+            return await this.api.fetchEventUpdate(abortId, eventID);
+        } catch (err) {
+            throw abortSignal.aborted ? abortSignal.reason : err;
+        } finally {
+            release();
+        }
     }
 
     private async fetchAndDecryptBatch(batch: BodyRequest[], abortSignal: AbortSignal) {

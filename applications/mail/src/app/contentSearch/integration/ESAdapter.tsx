@@ -46,6 +46,7 @@ function pausedIndexingStatus(): Partial<ESStatusConcrete> {
 
 function startedIndexingStatus(): Partial<ESStatusConcrete> {
     return {
+        contentIndexingDone: false,
         isEnablingContentSearch: true,
         isContentIndexingPaused: false,
         dbExists: true,
@@ -219,8 +220,8 @@ export class ESAdapter implements FunctionsV2 {
         await this.reportFinishedIfHistoricalDone();
     }
 
-    /** The worker isn't started when the historic pass already reached eof, so no `reportIndexComplete`
-     * will come: push the finished status ourselves. */
+    /** Once the historic pass reached eof, the worker only runs catch-up, and its `reportIndexComplete` comes
+     * when that's done: push the finished status ourselves, as search doesn't wait for catch-up. */
     private async reportFinishedIfHistoricalDone() {
         const isHistoricalFinished = await this.indexService.isHistoricalFinished();
         if (this.indexService.isEnabled && isHistoricalFinished) {
@@ -265,13 +266,23 @@ export class ESAdapter implements FunctionsV2 {
                 if (taskName === 'historic') {
                     timeEstimation = new TimeEstimation(performance.now());
                     this.updateESStatus(startedIndexingStatus());
-                } else {
+                } else if (taskName === 'catchup') {
+                    // like v1 while catching up on events, live updates don't show as refreshing
                     this.updateESStatus({ isRefreshing: true });
+                    // Catch-up has no meaningful progress, but without any `EncryptedSearchField` shows
+                    // "Estimating time remaining..." instead of "Updating message content search...".
+                    // Report it as complete: historic indexing reports its own progress when it runs.
+                    this.updateESProgress([1, 1], {
+                        esProgress: 1,
+                        totalIndexingItems: 1,
+                        estimatedMinutes: 0,
+                        currentProgressValue: 100,
+                    });
                 }
             },
             reportTaskCompleted: (taskName: TaskName) => {
                 this.logger.info(`task completed: ${taskName}`);
-                if (taskName !== 'historic') {
+                if (taskName === 'catchup') {
                     this.updateESStatus({ isRefreshing: false });
                 }
             },
@@ -280,10 +291,22 @@ export class ESAdapter implements FunctionsV2 {
                 this.emitStatus(status);
             },
             reportError: () => {
-                this.updateESStatus(failedIndexingStatus());
-                this.notifyIndexingFailed();
+                this.reportIndexingError().catch((err) => {
+                    this.logger.error('failed to report indexing error', err);
+                });
             },
         });
+    }
+
+    /** Once the historic pass is done, a failed catch-up or live update leaves the index usable, only behind:
+     * the next worker catches up again, so search stays available. */
+    private async reportIndexingError() {
+        if (await this.indexService.isHistoricalFinished()) {
+            this.logger.warn('index worker failed after the historic pass finished, keeping search available');
+            return;
+        }
+        this.updateESStatus(failedIndexingStatus());
+        this.notifyIndexingFailed();
     }
 
     private emitStatus(status: IndexStatus | undefined) {
