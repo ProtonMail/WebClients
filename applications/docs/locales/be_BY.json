@@ -941,6 +941,9 @@
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
         "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам"
+      ],
+      "Go to ${ DOCS_SHORT_APP_NAME } home": [
+        "Перайсці на галоўную старонку ${ DOCS_SHORT_APP_NAME }"
       ]
     },
     "Actions message": {
@@ -5754,6 +5757,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Вы ўсё яшчэ зможаце праглядаць даныя свайго ўласнага ўліковага запісу, але ўсе ўліковыя запісы карыстальнікаў будуць выдалены з вашай арганізацыі."
+      ],
+      "The document could not be created.": [
+        "Не ўдалося стварыць дакумент."
+      ],
+      "This document can't be edited right now.": [
+        "Гэты дакумент цяпер нельга адрэдагаваць."
       ]
     },
     "info": {
@@ -7487,7 +7496,7 @@
         "Выкарыстоўвайце свой уласны карыстальніцкі дамен электроннай пошты. Напрыклад, you@yourname.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Мы не пакідаем журналы выкарыстання сеансаў з вашымі дзеяннямі ў інтэрнэце, а таксама нас не цікавяць метадыныя, якія могуць скампраметаваць вашу прыватнасць"
+        "У нашым сэрвісе адсутнічаюць журналы выкарыстання сеансаў з вашымі дзеяннямі ў інтэрнэце, а таксама нас не цікавяць метадыныя, якія могуць скампраметаваць вашу прыватнасць"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Мы лічым сваім абавязкова дапамагаць кліентам у адпаведнасці з прававымі нормамі HIPAA/HITECH у дачыненні абароненай інфармацыі аб здароўі (PHI). Падпісаныя пагадненні аб дзелавым партнёрстве даступны для ўсіх кліентаў ${ BRAND_NAME } у сферы бізнесу."
@@ -7778,6 +7787,12 @@
       ],
       "Your settings have been changed successfully": [
         "Вашы налады былі паспяхова зменены"
+      ],
+      "${ count } item could not be moved to trash": [
+        "Не ўдалося перамясціць ${ count } элемент у сметніцу",
+        "Не ўдалося перамясціць ${ count } элементы ў сметніцу",
+        "Не ўдалося перамясціць ${ count } элементаў у сметніцу",
+        "Не ўдалося перамясціць ${ count } элементаў у сметніцу"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8244,6 +8259,9 @@
       ],
       "You already own a Born Private account.": [
         "Вы ўжо валодаеце ўліковым запісам Born Private."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "У вас занадта стары ўліковы запіс для ініцыятывы Born Private."
       ]
     },
     "PGP key encryption warning": {

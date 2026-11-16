@@ -919,6 +919,9 @@
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter",
         "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
+      ],
+      "Cancel trial": [
+        "Avbryt provperioden"
       ]
     },
     "Actions message": {
@@ -1021,6 +1024,9 @@
       ],
       "Writing assistant seats": [
         "Användarplatser för skrivassistent"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Visar sätt att få hjälp med verifiering"
       ]
     },
     "Alert": {
@@ -3531,6 +3537,15 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Odekrypterbart namn"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Misslyckades avkryptera bokmärksnamn: ${ message }"
+      ],
+      "Move operation aborted": [
+        "Flyttningsåtgärd avbröts"
+      ],
+      "This file has missing crypto material": [
+        "Den här filen har saknat kryptomaterial"
       ]
     },
     "error": {
@@ -3865,6 +3880,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Något gick fel vid autentisering med din säkerhetsnyckel. Försök igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Den här webbläsaren stödjer inte säkerhetsnycklar. Var vänlig försök med en annan webbläsare."
       ]
     },
     "fido2: Info": {
@@ -5230,13 +5248,13 @@
         "Det här dokumentet kan inte redigeras just nu."
       ],
       "This document does not exist, or it was deleted.": [
-        "Det här dokumentet existerar inte, eller det tots bort."
+        "Det här dokumentet existerar inte eller så det togs bort."
       ],
       "This document has grown too large to edit. You can remove older revisions to continue editing.": [
         "Detta dokument har blivit för stort för att redigera. Du kan ta bort äldre versioner för att fortsätta redigera."
       ],
       "This document has grown too large, and your latest changes couldn’t be saved. Copy any work you need to keep it.": [
-        "Det här dokumentet har blivit för stort och dina senaste ändringar kund inte sparas. Kopiera det arbete du behöver för att behålla det."
+        "Det här dokumentet har blivit för stort och dina senaste ändringar kunde inte sparas. Kopiera det arbete du behöver för att behålla det."
       ],
       "This document has grown too large, and your latest changes couldn’t be saved. Download a copy to keep your work.": [
         "Detta dokument har blivit för stort och dina senaste ändringar kunde inte sparas. Ladda ner en kopia för att behålla ditt arbete."
@@ -5563,6 +5581,18 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kommer fortfarande att kunna se dina egna kontodata, men alla användarkonton kommer att tas bort från din organisation."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Om du har förlorat tillgången till din auteniseringsapp, kan du använda 1 av16 återställningskoder som tillhandahölls när du konfigurerade  tvåfaktorssautenisering. ${ learnMoreLink }"
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en öppen faktura ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en öppen faktura på ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "Du kommer inte att kunna dela \"${ fileName }\" efter att din åtkomst har ändrats till visningsbehörighet. Ägaren eller en redigerare med behörighet kan återställa ditt redigeringsbehörighet. Du kan inte ångra den här ändringen på egen hand."
       ]
     },
     "info": {
@@ -6180,6 +6210,9 @@
       ],
       "What’s this?": [
         "Vad är detta?"
+      ],
+      "Pay it": [
+        "Betala den"
       ]
     },
     "List title": {
@@ -7618,6 +7651,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Obegränsat antal alias för att skydda din identitet"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me e-postadress"
       ]
     },
     "Onboarding Trial": {
@@ -7840,6 +7876,30 @@
       ],
       "You already own ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }.": [
         "Du äger redan ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }"
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } är endast tillgängligt på företagspaket."
+      ],
+      "An organization is required for this plan.": [
+        "En organisation krävs för den här planen."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Det valda paketet stöder inte tillräckligt med adresser för ditt konto."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Den valda prenumerationen erbjuder inte nog med domäner för ditt konto."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Den valda prenumerationen erbjuder inte nog lagringsutrymme för ditt konto."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Detta paket stöder inte medlemmar på ditt konto."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Testprenumerationer har inte stöd för ${ LUMO_SHORT_APP_NAME } användarplatser."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Testabonnemang stöder inte Scribe-licenser"
       ]
     },
     "PGP key encryption warning": {
@@ -8015,6 +8075,9 @@
       ],
       "name": [
         "namn"
+      ],
+      "content key": [
+        "innehållsnyckel"
       ]
     },
     "Property type": {
@@ -9827,6 +9890,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du kommer att kunna tilldela roller när användaren har accepterat inbjudan."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Du kan inte ändra dina egna roller. Be en annan administratör att ändra dem."
       ]
     },
     "Validation": {

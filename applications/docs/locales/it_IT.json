@@ -3345,7 +3345,7 @@
         "Verifica della firma per ${ signatureType } fallita"
       ],
       "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
-        "Verifica della firma per  ${ signatureType } non riuscita: ${ errorMessage }"
+        "Verifica della firma per ${ signatureType } non riuscita: ${ errorMessage }"
       ],
       "Some contacts could not be deleted": [
         "Impossibile eliminare alcuni contatti"
@@ -3486,7 +3486,7 @@
         "Questo messaggio potrebbe contenere alcuni link URL che non possono essere aperti correttamente dal browser attuale."
       ],
       "This version could not be loaded. Close the history and try again.": [
-        "Impossibile caricare questa versione. Chiudi la cronologia e riprova."
+        "Impossibile caricare questa versione. Chiudere la cronologia e riprovare."
       ],
       "Too many server errors, please try again later": [
         "Troppi errori del server, riprova più tardi"
@@ -3930,6 +3930,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Si è verificato un errore durante l'autenticazione con la tua chiave di sicurezza. Per favore riprova."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Questo browser non supporta le chiavi di sicurezza. Provare con un altro browser."
       ]
     },
     "fido2: Info": {

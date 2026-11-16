@@ -3305,6 +3305,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nimen salausta ei pysty purkamaan"
+      ],
+      "Legacy public link cannot be updated. Please re-create a new public link.": [
+        "Vanhanmallista julkista linkkiä ei voida päivittää. Luo uusi julkinen linkki."
       ]
     },
     "error": {
@@ -4191,7 +4194,7 @@
         "**Automaattinen yhdistäminen**: Avaa ja muodostaa VPN-yhteyden heti, kun käynnistät laitteen."
       ],
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
-        "**Kutsu kaverisi** ${ BRAND_NAME }:iin suosittelulinkilläsi."
+        "**Kutsu kaverisi** ${ BRAND_NAME }iin henkilökohtaisella suosittelulinkillä."
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Tappokytkin**: Estää tietovuodot katkaisemalla Internet-yhteytesi, jos VPN-yhteys katkeaa yllättäen."
@@ -4212,13 +4215,13 @@
         "Käyttäjä tarkoittaa tiliä, joka on liitetty yksittäiseen käyttäjätunnukseen, postilaatikkoon ja henkilöön."
       ],
       "A VPN encrypts your connection and hides your IP address, making it much harder for anyone to track or monitor your browsing.": [
-        "VPN salaa yhteytesi ja piilottaa IP-osoitteesi, mikä vaikeuttaa huomattavasti selaamisesi seuraamista tai valvomista."
+        "VPN salaa yhteyden ja piilottaa IP-osoitteen, mikä vaikeuttaa huomattavasti selaamisen seuraamista tai valvomista."
       ],
       "A VPN hides your IP address and encrypts your browsing activity, making it harder for websites, advertisers, and ISPs to track you over time.": [
-        "VPN piilottaa IP-osoitteesi ja salaa selaustoimintasi, jolloin verkkosivustojen, mainostajien ja Internet-palveluntarjoajien on vaikeampi seurata sinua ajan mittaan."
+        "VPN piilottaa IP-osoitteen ja salaa selaustoiminnan, jolloin verkkosivustojen, mainostajien ja Internet-palveluntarjoajien on vaikeampi seurata selaustoimintaa ajan mittaan."
       ],
       "A VPN is a secure tunnel between your device and the internet. It hides your location and activity from your internet service provider (ISP) and the websites you visit.": [
-        "VPN on suojattu tunneli laitteesi ja Internetin välillä. Se piilottaa sijaintisi ja toimintasi Internet-palveluntarjoajaltasi (ISP) ja verkkosivustoilta, joilla vierailet."
+        "VPN on suojattu tunneli laitteen ja Internetin välillä. Se piilottaa sijainnin ja toiminnan verkkoyhteyden tarjoajalta ja verkkosivustoilta."
       ],
       "Accept/decline": [
         "Hyväksy/kieltäydy"
@@ -4230,7 +4233,7 @@
         "Osoitteen varmennus luotetuilla avaimilla on käytössä tälle osoitteelle. Jotta voit lähettää tähän osoitteeseen, luota ensin lähetykseen käytettäviin julkisiin avaimiin."
       ],
       "Advertisers track your browsing to show targeted ads. ${ VPN_APP_NAME } blocks trackers and ads, making your connection faster and improving your online experience.": [
-        "Mainostajat seuraavat selauskäyttäytymistäsi näyttääkseen kohdennettuja mainoksia. ${ VPN_APP_NAME } estää seurannan ja mainokset, nopeuttaen yhteyttäsi ja parantaen käyttökokemustasi."
+        "Mainostajat seuraavat verkkoselailua voidakseen näyttää kohdennettuja mainoksia. ${ VPN_APP_NAME } estää seurannan ja mainokset, nopeuttaa verkkoyhteyttä ja tekee internetin käytöstä sujuvampaa."
       ],
       "All": [
         "Kaikki"
@@ -4317,7 +4320,7 @@
         "Poistu sulkemalla tämä ruutu."
       ],
       "Connect to ${ VPN_APP_NAME } to browse privately": [
-        "Yhdistä ${ VPN_APP_NAME }:ään selataksesi yksityisesti"
+        "Aloita yksityinen verkkoselaus yhdistämällä ${ VPN_APP_NAME }:ään"
       ],
       "Contact assigned to group ${ contactGroupName }": [
         "Yhteystieto lisättiin ryhmään ${ contactGroupName }"
@@ -4892,7 +4895,7 @@
         "Jotkut viranomaiset estävät tai rajoittavat pääsyä tietyille verkkosivustoille. VPN auttaa ohittamaan sensuurin ja pitämään toimintasi ja identiteettisi yksityisenä."
       ],
       "Some websites and streaming services block content by region. A VPN lets you bypass these restrictions and access the internet freely.": [
-        "Jotkin verkkosivustot ja suoratoistopalvelut estävät sisältöä aluekohtaisesti. VPN:n avulla voit kiertää nämä rajoitukset ja käyttää Internetiä vapaasti."
+        "Jotkut verkkosivustot ja suoratoistopalvelut estävät sisältöä aluekohtaisesti. VPN:llä voi kiertää nämä rajoitukset ja käyttää Internetiä vapaasti."
       ],
       "Something went wrong": [
         "Jotain meni pieleen"
@@ -4980,13 +4983,13 @@
         "Linkki saattaa olla homografiahyökkäys. Vahvista linkin olevan sivusto, jolla haluat vierailla, tai älä avaa sitä."
       ],
       "This means that your ISP and the websites you visit can’t connect your personal information with your online activity.": [
-        "Tämä tarkoittaa, että Internet-palveluntarjoajasi ja vierailemasi verkkosivustot eivät voi yhdistää henkilötietojasi verkkotoimintaasi."
+        "Internet-palveluntarjoaja ja verkkosivustot eivät voi yhdistää henkilötietojasi verkkotoimintaasi."
       ],
       "This message will be presented again later": [
         "Tämä viesti näytetään myöhemmin uudelleen"
       ],
       "This unique code can be used by websites and ISPs (internet service providers) to link your location and browsing history to your device": [
-        "Verkkosivustot ja Internet-palveluntarjoajat (ISP) voivat käyttää tätä yksilöllistä koodia yhdistääkseen sijaintisi ja selaushistoriasi laitteeseesi"
+        "Verkkosivustot ja Internet-palveluntarjoajat voivat käyttää tällä yksilöllisellä koodilla yhdistää maantieteellisen sijainnin ja selaushistorian tähän laitteeseen"
       ],
       "This will sign you out of all accounts currently logged in.": [
         "Tämä kirjaa sinut ulos kaikilta tileiltä, jolle olet tällä hetkellä kirjautunut."
@@ -5094,7 +5097,7 @@
         "Etätyöskennellessä"
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
-        "Kun yhdistät VPN:ään, se käyttää salaustekniikkaa IP-osoitteesi (laitteellesi annettu yksilöllinen koodi) salaamiseen."
+        "VPN käyttää salaustekniikkaa IP-osoitteen eli laitteelle annettu yksilöllisen koodin salaamiseen."
       ],
       "Who has access": [
         "Kenellä on pääsy"
@@ -5280,6 +5283,15 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Voit silti tarkastella omia tilitietojasi, mutta kaikki käyttäjätilit poistetaan organisaatiostasi."
+      ],
+      "Error syncing": [
+        "Synkronointivirhe"
+      ],
+      "Opening…": [
+        "Avataan..."
+      ],
+      "Reconnecting…": [
+        "Yhdistetään uudelleen..."
       ]
     },
     "info": {
@@ -5751,6 +5763,9 @@
       ],
       "Your password (trusted contact)": [
         "Salasananne (luotettu yhteystieto)"
+      ],
+      "Created by ${ displayName }": [
+        "Luonut ${ displayName }"
       ]
     },
     "Label for contact group color": {
@@ -5839,7 +5854,7 @@
         "Miten jaat sähköpostitse"
       ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
-        "Miten ${ DARK_WEB_MONITORING_NAME } toimii"
+        "Näin ${ DARK_WEB_MONITORING_NAME } toimii"
       ],
       "How to use ${ PASS_APP_NAME } for Business": [
         "Miten käytät ${ PASS_APP_NAME } for Businessia"
@@ -7143,6 +7158,9 @@
       ],
       "Your settings have been changed successfully": [
         "Tekemäsi asetusmuutokset on tallennettu"
+      ],
+      "Failed to load saved items": [
+        "Tallennettujen kohteiden lataus epäonnistui"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -7482,7 +7500,7 @@
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
         "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäisen ${ subscriptionLength } kuukauden.",
-        "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäiset ${ subscriptionLength } kuukautta."
+        "Erikoisalennettu hinta ${ priceWithDiscount } on voimassa ensimmäiset ${ subscriptionLength } kuukautta."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua sen milloin tahansa."
@@ -7776,18 +7794,18 @@
         "Tämän päivän jälkeen tilisi alennetaan **${ BRAND_NAME } Free -tilaukseen**. Jos muutat mieltäsi, voit **uudelleenaktivoida tilauksesi** säilyttääksesi pääsyn premium-ominaisuuksiin."
       ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
-        "Ansaitse jopa ${ maxRewardAmount } krediitteinä. Saat ${ referrerRewardAmount }, kun kutsumasi henkilö hankkii ${ BRAND_NAME } -tilauksen."
+        "Ansaitse jopa ${ maxRewardAmount } krediitteinä. Saat ${ referrerRewardAmount }, kun kutsumasi henkilö hankkii ${ BRAND_NAME }-tilauksen."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Nauti tilauksesta **${ planTitle }** maksutta päivään **${ textDate }** asti."
       ],
       "Friend joined": [
         "Kaveri liittyi",
-        "Kaveria liittyi"
+        "kaveria on liittynyt"
       ],
       "Friend subscribed": [
         "Kaveri on tilannut",
-        "Kaverit tilasivat"
+        "kaveria on tilannut"
       ],
       "Invite friends. Get credits.": [
         "Kutsu kavereita. Hanki krediittejä."
@@ -9246,7 +9264,7 @@
         "Vahvista salasananne"
       ],
       "VPN explained": [
-        "VPNnän selitys"
+        "VPN-pikaopas"
       ],
       "Warning": [
         "Varoitus"
@@ -9258,7 +9276,7 @@
         "Tervetuloa ${ BRAND_NAME } for Businessiin"
       ],
       "What can a VPN protect you from?": [
-        "Miltä VPN voi suojata sinua?"
+        "Miltä VPN voi suojata?"
       ],
       "What is a VPN?": [
         "Mikä on VPN?"
@@ -9283,6 +9301,9 @@
       ],
       "Your exposed information": [
         "Paljastuneet tietosi"
+      ],
+      "Error syncing": [
+        "Synkronointivirhe"
       ]
     },
     "Title header for keys table": {

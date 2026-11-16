@@ -3596,6 +3596,9 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Navn, der ikke kan dekrypteres"
+      ],
+      "This document is too large to copy. Download it to keep a copy of your work.": [
+        "Dokumentet er for stort til at kopiere. Download det for at beholde en kopi af dit arbejde."
       ]
     },
     "error": {
@@ -3930,6 +3933,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Din browser understøtter ikke sikkerhedsnøgler. Prøv en anden browser."
       ]
     },
     "fido2: Info": {
@@ -7995,7 +8001,7 @@
         "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "Den særligt nedsatte pris gælder for den første måned på ${ subscriptionLength }.",
+        "Den særligt nedsatte pris gælder den første ${ subscriptionLength } måned.",
         "Den særligt nedsatte pris gælder for de første ${ subscriptionLength } måneder."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
