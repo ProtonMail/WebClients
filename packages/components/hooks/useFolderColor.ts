@@ -17,22 +17,27 @@ const useFolderColor = (folder: Folder) => {
 
     const folderMap = toMap(folders);
 
-    const getParentFolderColor = ({ ParentID, Color }: Folder): string | undefined => {
-        // ParentID is undefined for root folder
-        if (!ParentID) {
-            return Color;
+    const visitedParentIDs = new Set<string | number>();
+    let current = folder;
+
+    // ParentID is undefined for root folder
+    while (current.ParentID) {
+        // A cycle in the parent chain would never reach a root folder
+        if (visitedParentIDs.has(current.ParentID)) {
+            return undefined;
+        }
+        visitedParentIDs.add(current.ParentID);
+
+        const parent = folderMap[current.ParentID];
+
+        if (!parent) {
+            return undefined;
         }
 
-        const folder = folderMap[ParentID];
+        current = parent;
+    }
 
-        if (folder) {
-            return getParentFolderColor(folder);
-        }
-
-        return undefined;
-    };
-
-    return getParentFolderColor(folder);
+    return current.Color;
 };
 
 export default useFolderColor;

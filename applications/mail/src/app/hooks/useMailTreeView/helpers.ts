@@ -14,18 +14,27 @@ export const getParentFolderColor = ({ folders, folder, mailSettings }: FolderCo
         return folder.Color;
     }
 
-    if (!folder.ParentID) {
-        return folder.Color;
-    }
-
     const folderMap = toMap(folders);
-    const folderTmp = folderMap[folder.ParentID];
+    const visitedParentIDs = new Set<string | number>();
+    let current = folder;
 
-    if (folderTmp) {
-        return getParentFolderColor({ folders, folder: folderTmp, mailSettings });
+    while (current.ParentID) {
+        // A cycle in the parent chain would never reach a root folder
+        if (visitedParentIDs.has(current.ParentID)) {
+            return undefined;
+        }
+        visitedParentIDs.add(current.ParentID);
+
+        const parent = folderMap[current.ParentID];
+
+        if (!parent) {
+            return undefined;
+        }
+
+        current = parent;
     }
 
-    return undefined;
+    return current.Color;
 };
 
 export const folderReducer = ({ acc, folder, folders, mailSettings, level }: FolderReducerProps): FolderItem[] => {
