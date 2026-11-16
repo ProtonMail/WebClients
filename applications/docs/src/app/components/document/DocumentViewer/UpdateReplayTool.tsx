@@ -12,6 +12,22 @@ import { createStore, useStore } from 'zustand'
 
 const canSyncOverWebSocket = () => isLocalEnvironment()
 
+/**
+ * Time travel's snapshot of the sheet, fetched only while time travel is on. The editor sends the whole sheet over the
+ * bridge, which copies it, so fetching one after every update with time travel off made applying a large sheet's
+ * updates about twice as slow. Time travel can be switched off while the editor answers, so it's checked again after.
+ */
+const fetchTimeTravelSnapshot = async (
+  editorController: EditorControllerInterface,
+  isTimeTravelEnabled: () => boolean,
+): Promise<{ snapshot: unknown } | undefined> => {
+  if (!isTimeTravelEnabled()) {
+    return undefined
+  }
+  const snapshot = await editorController.getLocalSpreadsheetStateJSON()
+  return isTimeTravelEnabled() ? { snapshot } : undefined
+}
+
 const createUpdateReplayToolStore = (editorController: EditorControllerInterface) => {
   return createStore<{
     fileHash: string
@@ -81,9 +97,9 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
         updates.push(new Uint8Array(update))
       }
       set({ fileHash: hash, updatesToApply: updates, appliedUpdates: 0, timeTravelIndex: 0 })
-      const initialState = await editorController.getLocalSpreadsheetStateJSON()
-      if (get().isTimeTravelEnabled) {
-        set({ snapshots: [initialState] })
+      const initialSnapshot = await fetchTimeTravelSnapshot(editorController, () => get().isTimeTravelEnabled)
+      if (initialSnapshot) {
+        set({ snapshots: [initialSnapshot.snapshot] })
       }
       const store = get()
       if (broadcastToWS && store.ws && store.ws.readyState === WebSocket.OPEN) {
@@ -110,9 +126,9 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
         return
       }
       await editorController.applyUpdate(update, store.shouldPersistAppliedUpdates)
-      const snapshot = await editorController.getLocalSpreadsheetStateJSON()
+      const timeTravelSnapshot = await fetchTimeTravelSnapshot(editorController, () => get().isTimeTravelEnabled)
       set((state) => ({
-        snapshots: get().isTimeTravelEnabled ? [...state.snapshots, snapshot] : state.snapshots,
+        snapshots: timeTravelSnapshot ? [...state.snapshots, timeTravelSnapshot.snapshot] : state.snapshots,
         appliedUpdates: state.appliedUpdates + 1,
         timeTravelIndex: state.appliedUpdates + 1,
       }))
@@ -125,8 +141,10 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
           continue
         }
         await editorController.applyUpdate(update, store.shouldPersistAppliedUpdates)
-        const snapshot = await editorController.getLocalSpreadsheetStateJSON()
-        set((state) => ({ snapshots: get().isTimeTravelEnabled ? [...state.snapshots, snapshot] : state.snapshots }))
+        const timeTravelSnapshot = await fetchTimeTravelSnapshot(editorController, () => get().isTimeTravelEnabled)
+        if (timeTravelSnapshot) {
+          set((state) => ({ snapshots: [...state.snapshots, timeTravelSnapshot.snapshot] }))
+        }
       }
       const newAppliedUpdates = store.appliedUpdates + count
       set({ appliedUpdates: newAppliedUpdates, timeTravelIndex: newAppliedUpdates })
@@ -137,8 +155,10 @@ const createUpdateReplayToolStore = (editorController: EditorControllerInterface
       const updates = store.updatesToApply.slice(store.appliedUpdates, store.appliedUpdates + count)
       const mergedUpdate = mergeUpdates(updates) as Uint8Array<ArrayBuffer>
       await editorController.applyUpdate(mergedUpdate, store.shouldPersistAppliedUpdates)
-      const snapshot = await editorController.getLocalSpreadsheetStateJSON()
-      set((state) => ({ snapshots: get().isTimeTravelEnabled ? [...state.snapshots, snapshot] : state.snapshots }))
+      const timeTravelSnapshot = await fetchTimeTravelSnapshot(editorController, () => get().isTimeTravelEnabled)
+      if (timeTravelSnapshot) {
+        set((state) => ({ snapshots: [...state.snapshots, timeTravelSnapshot.snapshot] }))
+      }
       const newAppliedUpdates = store.appliedUpdates + count
       set({ appliedUpdates: newAppliedUpdates, timeTravelIndex: newAppliedUpdates })
       return newAppliedUpdates
