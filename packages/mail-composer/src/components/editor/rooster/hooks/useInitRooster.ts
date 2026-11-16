@@ -7,6 +7,7 @@ import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useSyncIframeStyles from '@proton/components/containers/themes/useSyncIframeStyles';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import {
     EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID,
@@ -55,6 +56,8 @@ const useInitRooster = ({
     const isMounted = useIsMounted();
     const theme = useTheme();
     const themeCSSVariables = theme.information.style;
+    // Read once, as initRooster runs on mount only: a flag change applies to the next editor
+    const isRoosterV9 = useFlag('MailComposerRoosterV9');
 
     useSyncIframeStyles(iframeRef.current?.contentWindow?.document.documentElement, document.documentElement);
 
@@ -121,6 +124,7 @@ const useInitRooster = ({
             onPasteFiles,
             isPastedImageAllowed,
             openEmojiPicker,
+            isRoosterV9,
         });
 
         // Prevent setState execution in case component is unmounted

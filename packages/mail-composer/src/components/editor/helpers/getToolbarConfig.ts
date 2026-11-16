@@ -1,4 +1,5 @@
-import type { Alignment, FormatState, IEditor } from 'roosterjs-editor-types';
+import type { IEditor } from 'roosterjs-editor-types';
+import { ChangeSource } from 'roosterjs-editor-types';
 
 import type { Optional } from '@proton/shared/lib/interfaces/utils';
 import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
@@ -6,7 +7,7 @@ import type { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import { DEFAULT_BACKGROUND, DEFAULT_FONT_COLOR } from '../constants';
 import type { ModalDefaultFontProps, ModalImageProps, ModalLinkProps } from '../hooks/interface';
 import type { EditorMetadata } from '../interface';
-import { getRoosterDirection } from '../rooster/helpers/initRoosterEditor';
+import { type Alignment, loadRoosterFormatApi } from '../rooster/helpers/roosterFormatApi';
 import type { Emoji } from '../toolbar/ToolbarEmojiDropdown';
 import rgbToHex from './rgbToHex';
 
@@ -60,8 +61,11 @@ interface Options {
 const cleanRoosterFont = (font: string | undefined) => font?.replaceAll('"', '');
 
 export const getToolbarConfig = async (editorInstance: IEditor | undefined, options: Options) => {
+    if (!editorInstance) {
+        return;
+    }
+
     const {
-        CompatibleChangeSource,
         clearFormat,
         createLink,
         getFormatState,
@@ -80,12 +84,12 @@ export const getToolbarConfig = async (editorInstance: IEditor | undefined, opti
         toggleNumbering,
         toggleUnderline,
         toggleStrikethrough,
-    } = await import(/* webpackChunkName: "roosterjs", webpackPrefetch: true */ 'roosterjs');
-    if (!editorInstance || editorInstance.isDisposed()) {
+    } = await loadRoosterFormatApi(editorInstance);
+    if (editorInstance.isDisposed()) {
         return;
     }
 
-    let formatState: FormatState;
+    let formatState: ReturnType<typeof getFormatState>;
     try {
         formatState = getFormatState(editorInstance);
     } catch {
@@ -209,7 +213,7 @@ export const getToolbarConfig = async (editorInstance: IEditor | undefined, opti
         },
         textDirection: {
             setValue: (nextDirection) => {
-                setDirection(editorInstance, getRoosterDirection(nextDirection));
+                setDirection(editorInstance, nextDirection);
                 options.onChangeMetadata?.({ rightToLeft: nextDirection });
             },
         },
@@ -217,7 +221,7 @@ export const getToolbarConfig = async (editorInstance: IEditor | undefined, opti
             insert: (emoji) => {
                 editorInstance.addUndoSnapshot(() => {
                     editorInstance.insertContent(emoji.native);
-                }, CompatibleChangeSource.SetContent);
+                }, ChangeSource.SetContent);
             },
         },
     };
