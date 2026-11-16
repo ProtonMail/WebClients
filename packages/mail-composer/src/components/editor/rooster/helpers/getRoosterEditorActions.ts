@@ -13,7 +13,7 @@ import type { EditorActions } from '../../interface';
  */
 const getRoosterEditorActions = (
     editorInstance: IEditor,
-    iframeRef: RefObject<HTMLIFrameElement>,
+    iframeRef: RefObject<HTMLIFrameElement | null>,
     clearUndoHistory: () => void,
     setTextDirection: (direction: DIRECTION) => void,
     showModalLink: () => void,

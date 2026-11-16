@@ -13,7 +13,7 @@ export interface InitRoosterOptions {
     onEditorEvent: OnEditorEventListened;
     initialContent?: string;
     showModalLink: (props: ModalLinkProps) => void;
-    iframeRef: RefObject<HTMLIFrameElement>;
+    iframeRef: RefObject<HTMLIFrameElement | null>;
     mailSettings?: MailSettings;
     onPasteFiles: (files: File[]) => void;
     isPastedImageAllowed?: (image: HTMLImageElement) => boolean;

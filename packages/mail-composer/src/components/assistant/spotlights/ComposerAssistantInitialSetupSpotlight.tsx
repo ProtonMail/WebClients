@@ -11,7 +11,7 @@ import { FeatureCode } from '@proton/features/interface';
 import { useAssistant } from '@proton/llm/lib/hooks/useAssistant';
 
 interface Props {
-    anchorRef: RefObject<HTMLElement>;
+    anchorRef: RefObject<HTMLElement | null>;
     children: ReactNode;
 }
 

@@ -1,7 +1,8 @@
-import type { Dispatch, ReactNode, RefObject, SetStateAction } from 'react';
+import type { Dispatch, ReactNode, SetStateAction } from 'react';
 import { useCallback, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import { useLabels } from '@proton/mail/store/labels/hooks';
 
 import { pageFromUrl } from '../../helpers/mailboxUrl';
@@ -26,8 +27,8 @@ interface MailboxListProps {
     overrideColumnMode?: boolean;
 
     toolbar?: ReactNode;
-    listRef?: RefObject<HTMLDivElement>;
-    scrollContainerRef?: RefObject<HTMLDivElement>;
+    listRef?: RefObjectReact18Compat<HTMLDivElement>;
+    scrollContainerRef?: RefObjectReact18Compat<HTMLDivElement>;
     noBorder?: boolean;
     setFocusID?: Dispatch<SetStateAction<string | undefined>>;
     noPlaceholder?: boolean;

@@ -3,7 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 
 const isDragFile = (event: DragEvent) => event.dataTransfer?.types.includes('Files');
 
-const useComposerDrag = (iframeRef: RefObject<HTMLIFrameElement>, onAddAttachments?: (files: File[]) => void) => {
+const useComposerDrag = (
+    iframeRef: RefObject<HTMLIFrameElement | null>,
+    onAddAttachments?: (files: File[]) => void
+) => {
     const counter = useRef(0);
     const [dragStatus, setDragState] = useState<'inside' | 'outside'>('outside');
 

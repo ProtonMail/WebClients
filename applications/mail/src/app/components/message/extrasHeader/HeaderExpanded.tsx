@@ -76,7 +76,7 @@ interface Props {
     labelDropdownToggleRef: React.MutableRefObject<() => void>;
     moveDropdownToggleRef: React.MutableRefObject<() => void>;
     filterDropdownToggleRef: React.MutableRefObject<() => void>;
-    parentMessageRef: React.RefObject<HTMLElement>;
+    parentMessageRef: React.RefObject<HTMLElement | null>;
     conversationIndex?: number;
 }
 

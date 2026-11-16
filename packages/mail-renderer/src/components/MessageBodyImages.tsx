@@ -7,7 +7,7 @@ import MessageBodyImage from './MessageBodyImage';
 
 interface Props {
     messageImages: MessageImages | undefined;
-    iframeRef: RefObject<HTMLIFrameElement>;
+    iframeRef: RefObject<HTMLIFrameElement | null>;
     isPrint: boolean;
     onImagesLoaded?: () => void;
     onMessageImageLoadError: OnMessageImageLoadError;

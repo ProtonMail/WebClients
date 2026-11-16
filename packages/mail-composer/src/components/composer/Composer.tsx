@@ -65,14 +65,14 @@ export interface ComposerAction {
 
 interface Props {
     composerID: string;
-    composerFrameRef: RefObject<HTMLDivElement>;
+    composerFrameRef: RefObject<HTMLDivElement | null>;
     toggleMinimized: () => void;
     toggleMaximized: () => void;
     onFocus: () => void;
     onClose: () => void;
     onSubject: (subject: string) => void;
     isFocused: boolean;
-    minimizeButtonRef: RefObject<HTMLButtonElement>;
+    minimizeButtonRef: RefObject<HTMLButtonElement | null>;
 }
 
 const Composer = (

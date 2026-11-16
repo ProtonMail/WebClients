@@ -1,4 +1,3 @@
-import type { RefObject } from 'react';
 import { useEffect, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
@@ -7,6 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import ErrorZone from '@proton/components/components/text/ErrorZone';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
@@ -23,7 +23,7 @@ import ComposerAssistantInitialSetupSpotlight from '../spotlights/ComposerAssist
 interface Props {
     assistantID: string;
     prompt: string;
-    composerAssistantInitialSetupSpotlightRef: RefObject<ComposerAssistantInitialSetupSpotlightRef>;
+    composerAssistantInitialSetupSpotlightRef: RefObjectReact18Compat<ComposerAssistantInitialSetupSpotlightRef>;
 }
 
 const ComposerAssistantStatusText = ({ assistantID, prompt, composerAssistantInitialSetupSpotlightRef }: Props) => {

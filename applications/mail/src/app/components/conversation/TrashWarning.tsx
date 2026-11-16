@@ -14,7 +14,7 @@ interface Props {
 }
 
 const TrashWarning = ({ inTrash, filter, onToggle }: Props, ref: React.Ref<HTMLDivElement>) => {
-    useHotkeys(ref as React.RefObject<HTMLDivElement>, [
+    useHotkeys(ref as React.RefObject<HTMLDivElement | null>, [
         [
             'Enter',
             (e) => {

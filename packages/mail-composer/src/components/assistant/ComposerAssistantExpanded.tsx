@@ -1,4 +1,3 @@
-import type { RefObject } from 'react';
 import { useRef } from 'react';
 
 import { c } from 'ttag';
@@ -8,6 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import Copy from '@proton/components/components/button/Copy';
 import useAssistantTelemetry from '@proton/components/hooks/assistant/useAssistantTelemetry';
 import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
@@ -27,8 +27,8 @@ interface Props {
     assistantID: string;
     isComposerPlainText: boolean;
     generationResult: string;
-    assistantResultRef: RefObject<HTMLElement>;
-    assistantResultChildRef: RefObject<HTMLElement>;
+    assistantResultRef: RefObjectReact18Compat<HTMLElement>;
+    assistantResultChildRef: RefObjectReact18Compat<HTMLElement>;
     onSelectionChange: () => void;
     checkScrollButtonDisplay: () => void;
     showArrow: boolean;

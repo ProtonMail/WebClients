@@ -19,10 +19,10 @@ interface Props {
     messageID: string | undefined;
     content: string;
     message: MessageState;
-    iframeRef: RefObject<HTMLIFrameElement>;
+    iframeRef: RefObject<HTMLIFrameElement | null>;
     isPlainText: boolean;
     onContentLoaded: (iframeRootDiv: HTMLDivElement) => void;
-    onReady?: (iframe: RefObject<HTMLIFrameElement>) => void;
+    onReady?: (iframe: RefObject<HTMLIFrameElement | null>) => void;
     isPrint: boolean;
     theme: ThemeContextInterface;
     iframeCSSStyles: string;

@@ -22,7 +22,7 @@ interface MailboxListProviderProps {
     placeholderCount?: number;
     onCheck: (IDs: string[], checked: boolean, replace: boolean) => void;
     handlePage: (page: number) => void;
-    anchorRef?: RefObject<HTMLElement>;
+    anchorRef?: RefObject<HTMLElement | null>;
     customActions?: {
         onMarkAs?: (status: MARK_AS_STATUS, sourceAction: SOURCE_ACTION) => void;
         onDelete?: (sourceAction: SOURCE_ACTION) => void;
@@ -113,7 +113,7 @@ export const MailboxListProvider = ({
         checkedIDs,
         onCheck,
         conversationMode,
-        anchorRef: anchorRef as RefObject<HTMLElement>,
+        anchorRef: anchorRef as RefObject<HTMLElement | null>,
         customActions,
     });
 

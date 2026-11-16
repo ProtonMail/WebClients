@@ -31,7 +31,7 @@ const applyDensity = (bar: HTMLElement, density: TabsDensity) => {
     });
 };
 
-export const useCategoriesTabsDensity = (barRef: RefObject<HTMLElement>, tabs: CategoryTab[]) => {
+export const useCategoriesTabsDensity = (barRef: RefObject<HTMLElement | null>, tabs: CategoryTab[]) => {
     const [density, setDensity] = useState<TabsDensity>('default');
 
     // The tabs array is a new reference on every render, only its content matters here.

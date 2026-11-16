@@ -25,7 +25,7 @@ interface Props {
     /**
      * Container ref on which rooster instanciate
      */
-    iframeRef: RefObject<HTMLIFrameElement>;
+    iframeRef: RefObject<HTMLIFrameElement | null>;
     onReady: (editorActions: EditorActions) => void;
     onFocus?: () => void;
     /**

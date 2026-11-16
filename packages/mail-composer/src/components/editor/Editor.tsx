@@ -1,6 +1,7 @@
-import type { ReactNode, RefObject } from 'react';
+import type { ReactNode } from 'react';
 import { useCallback } from 'react';
 
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
 import type { DropzoneContentProps } from '@proton/components/components/dropzone/DropzoneContent';
 import type { MailSettings } from '@proton/shared/lib/interfaces/MailSettings';
@@ -53,7 +54,7 @@ export interface EditorProps {
      */
     userSettings?: UserSettings;
     isPlainText?: boolean;
-    openEmojiPickerRef: RefObject<() => void>;
+    openEmojiPickerRef: RefObjectReact18Compat<() => void>;
     toolbarConfig?: ToolbarConfig;
     setToolbarConfig: SetEditorToolbarConfig;
     modalLink: any;

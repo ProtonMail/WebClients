@@ -1,8 +1,9 @@
-import type { Ref, RefObject } from 'react';
+import type { Ref } from 'react';
 import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
 import type { MessageState, MessageStateWithData, OutsideKey } from '@proton/mail-message/store/messages/messagesTypes';
@@ -39,7 +40,7 @@ interface Props extends Pick<EditorProps, 'onMouseUp' | 'onKeyUp' | 'onFocus' | 
     editorMetadata: EditorMetadata;
     isInert?: boolean;
     isAssistantExpanded?: boolean;
-    toolbarWrapperRef?: RefObject<HTMLDivElement>;
+    toolbarWrapperRef?: RefObjectReact18Compat<HTMLDivElement>;
     onExpandBlockquotes?: () => void;
     onUploadAttachments?: (data: AddAttachmentsParams) => void;
     getStoreState?: () => ComposerStoreState;

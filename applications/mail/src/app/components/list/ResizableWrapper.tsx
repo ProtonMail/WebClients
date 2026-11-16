@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
 
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import clsx from '@proton/utils/clsx';
 
 import type { ResizableOptions } from '../../hooks/useResizableUtils';
@@ -71,7 +72,7 @@ interface ResizableWrapperProps extends ResizableOptions {
      * Optional external ref for the resize handle
      * Useful when integrating with existing context providers
      */
-    resizeHandleRef?: React.RefObject<HTMLButtonElement>;
+    resizeHandleRef?: RefObjectReact18Compat<HTMLButtonElement>;
     /**
      * Force disable resizing. e.g. when you want to force row mode. When true, disables resizing and renders children directly.
      * @default false

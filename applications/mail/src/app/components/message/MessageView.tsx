@@ -50,12 +50,12 @@ interface Props {
     onBack: () => void;
     hasFocus?: boolean;
     onFocus?: (messageId: number) => void;
-    onBlur?: (event: FocusEvent<HTMLElement>, messageRef: RefObject<HTMLElement>) => void;
+    onBlur?: (event: FocusEvent<HTMLElement>, messageRef: RefObject<HTMLElement | null>) => void;
     onMessageReady?: () => void;
     columnLayout?: boolean;
     isComposerOpened: boolean;
-    containerRef?: React.RefObject<HTMLElement>;
-    wrapperRef?: React.RefObject<HTMLDivElement>;
+    containerRef?: React.RefObject<HTMLElement | null>;
+    wrapperRef?: React.RefObject<HTMLDivElement | null>;
     onReadMessage?: (messageID?: string) => void;
 }
 

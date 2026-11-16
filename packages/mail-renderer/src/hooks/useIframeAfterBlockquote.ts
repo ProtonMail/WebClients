@@ -5,7 +5,7 @@ import { MESSAGE_IFRAME_AFTER_BLOCKQUOTE_ID } from '../constants';
 import { getIframeDocument } from '../helpers/getIframeDocument';
 
 interface Props {
-    iframeRef: RefObject<HTMLIFrameElement>;
+    iframeRef: RefObject<HTMLIFrameElement | null>;
     initStatus: 'start' | 'base_content' | 'done';
     afterBlockquoteContent: string;
 }

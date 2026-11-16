@@ -69,7 +69,7 @@ interface Props {
     image: MessageImage;
     anchor: HTMLElement;
     isPrint?: boolean;
-    iframeRef: RefObject<HTMLIFrameElement>;
+    iframeRef: RefObject<HTMLIFrameElement | null>;
     onMessageImageLoadError: OnMessageImageLoadError;
 }
 

@@ -11,7 +11,7 @@ export interface ComposerAssistantSelection {
 }
 
 interface Props {
-    assistantResultRef: RefObject<HTMLDivElement>;
+    assistantResultRef: RefObject<HTMLDivElement | null>;
     composerSelectedText?: string;
     onResetRequest?: () => void;
     assistantID: string;

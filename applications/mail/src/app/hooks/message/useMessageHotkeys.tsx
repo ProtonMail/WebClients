@@ -46,7 +46,7 @@ interface MessageHotkeysContext {
     draft: boolean;
     conversationMode: boolean;
     mailSettings: MailSettings;
-    messageRef: React.RefObject<HTMLElement>;
+    messageRef: React.RefObject<HTMLElement | null>;
 }
 
 interface MessageHotkeysHandlers {
@@ -58,7 +58,7 @@ interface MessageHotkeysHandlers {
 }
 
 export const useMessageHotkeys = (
-    elementRef: React.RefObject<HTMLElement | undefined>,
+    elementRef: React.RefObject<HTMLElement | undefined | null>,
     {
         labelID,
         message,
@@ -136,7 +136,7 @@ export const useMessageHotkeys = (
     };
 
     const openMessageToolbarDropdown = (
-        toolbarDropdownButtonRef: RefObject<() => void>,
+        toolbarDropdownButtonRef: RefObject<(() => void) | null>,
         keyboardEvent: KeyboardEvent,
         shouldScrollIntoView = false
     ) => {

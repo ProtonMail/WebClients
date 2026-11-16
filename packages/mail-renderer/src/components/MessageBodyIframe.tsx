@@ -5,6 +5,7 @@ import { createPortal } from 'react-dom';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import type { ThemeContextInterface } from '@proton/components/containers/themes/ThemeProvider';
 import useSyncIframeStyles from '@proton/components/containers/themes/useSyncIframeStyles';
 import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
@@ -21,7 +22,7 @@ import useObserveIframeHeight from '../hooks/useObserveIframeHeight';
 import MessageBodyImages from './MessageBodyImages';
 
 interface Props {
-    iframeRef: RefObject<HTMLIFrameElement>;
+    iframeRef: RefObjectReact18Compat<HTMLIFrameElement>;
     content: string;
     className?: string;
     showBlockquote: boolean;
@@ -33,7 +34,7 @@ interface Props {
     onContentLoaded: (iframeRootDivRef: HTMLDivElement) => void;
     isPrint?: boolean;
     message: MessageState;
-    onReady?: (iframeRef: RefObject<HTMLIFrameElement>) => void;
+    onReady?: (iframeRef: RefObject<HTMLIFrameElement | null>) => void;
     onFocus?: () => void;
     onMessageImageLoadError: OnMessageImageLoadError;
     theme: ThemeContextInterface;

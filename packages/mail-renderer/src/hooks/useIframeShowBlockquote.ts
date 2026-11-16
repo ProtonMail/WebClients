@@ -5,7 +5,7 @@ import { MESSAGE_IFRAME_BLOCKQUOTE_ID, MESSAGE_IFRAME_TOGGLE_ID } from '../const
 import { getIframeDocument } from '../helpers/getIframeDocument';
 
 interface Props {
-    iframeRef: RefObject<HTMLIFrameElement>;
+    iframeRef: RefObject<HTMLIFrameElement | null>;
     initStatus: 'start' | 'base_content' | 'done';
     showBlockquoteProp: boolean;
     showBlockquoteToggle: boolean;

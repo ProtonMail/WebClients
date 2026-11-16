@@ -46,7 +46,7 @@ const canDispatchEvent = (event: Event): boolean => {
  * Trigger some events manually because of Iframe stopping bubbling.
  * @param iframeRef
  */
-const useBubbleIframeEvents = (iframeRef: RefObject<HTMLIFrameElement>) => {
+const useBubbleIframeEvents = (iframeRef: RefObject<HTMLIFrameElement | null>) => {
     const handleBubble = useCallback((event: Event) => {
         const canDispatch = canDispatchEvent(event);
         preventKeyboardEvents(event);

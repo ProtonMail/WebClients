@@ -40,8 +40,8 @@ export interface MailboxHotkeysContext {
     columnLayout: boolean;
     isMessageOpening: boolean;
     location: Location;
-    labelDropdownToggleRefProps: React.RefObject<() => void>;
-    moveDropdownToggleRefProps: React.RefObject<() => void>;
+    labelDropdownToggleRefProps: React.RefObject<(() => void) | null>;
+    moveDropdownToggleRefProps: React.RefObject<(() => void) | null>;
 }
 
 export interface MailboxHotkeysHandlers {

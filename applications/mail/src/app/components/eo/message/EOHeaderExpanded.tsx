@@ -27,7 +27,7 @@ interface Props {
     messageLoaded: boolean;
     onLoadRemoteImages: () => void;
     onLoadEmbeddedImages: () => void;
-    parentMessageRef: React.RefObject<HTMLElement>;
+    parentMessageRef: React.RefObject<HTMLElement | null>;
 }
 
 const EOHeaderExpanded = ({

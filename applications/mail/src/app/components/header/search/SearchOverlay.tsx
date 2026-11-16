@@ -4,6 +4,7 @@ import type {
     HTMLAttributes,
     MouseEvent as ReactMouseEvent,
     ReactNode,
+    Ref,
     RefObject,
 } from 'react';
 import { useLayoutEffect, useRef } from 'react';
@@ -20,11 +21,11 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 interface ContentProps extends HTMLAttributes<HTMLDivElement> {
-    ref?: RefObject<HTMLDivElement>;
+    ref?: Ref<HTMLDivElement>;
 }
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-    anchorRef: RefObject<HTMLElement>;
+    anchorRef: RefObject<HTMLElement | null>;
     children: ReactNode;
     className?: string;
     style?: CSSProperties;

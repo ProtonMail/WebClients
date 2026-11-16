@@ -20,7 +20,7 @@ export const useListActions = ({
     checkedIDs?: string[];
     onCheck: (IDs: string[], checked: boolean, replace: boolean) => void;
     conversationMode?: boolean;
-    anchorRef: RefObject<HTMLElement>;
+    anchorRef: RefObject<HTMLElement | null>;
     customActions?: {
         onMarkAs?: (status: any, sourceAction: SOURCE_ACTION) => void;
         onDelete?: (sourceAction: SOURCE_ACTION) => void;

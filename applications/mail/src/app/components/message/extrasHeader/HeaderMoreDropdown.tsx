@@ -97,7 +97,7 @@ interface Props {
     onBack: () => void;
     onToggle: () => void;
     onSourceMode: (sourceMode: boolean) => void;
-    parentMessageRef: React.RefObject<HTMLElement>;
+    parentMessageRef: React.RefObject<HTMLElement | null>;
     mailSettings: MailSettings;
     messageViewIcons: MessageViewIcons;
     onContactDetails: (contactID: string) => void;

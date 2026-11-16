@@ -26,7 +26,7 @@ import { checkSizeAndLength, uploadEO } from '../../helpers/attachment/attachmen
 interface Props {
     message: MessageState;
     onChange: MessageChange;
-    editorActionsRef: RefObject<ExternalEditorActions | undefined>;
+    editorActionsRef: RefObject<ExternalEditorActions | undefined | null>;
     encryptionKey?: PublicKeyReference;
 }
 
