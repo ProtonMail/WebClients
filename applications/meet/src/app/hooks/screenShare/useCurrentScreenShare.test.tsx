@@ -4,15 +4,16 @@ import { Provider } from 'react-redux';
 import { supportsScreenSharing } from '@livekit/components-core';
 import { useLocalParticipant, useParticipants, useRoomContext } from '@livekit/components-react';
 import { configureStore } from '@reduxjs/toolkit';
-import { renderHook } from '@testing-library/react';
+import { act, renderHook } from '@testing-library/react';
 import { Track } from 'livekit-client';
 import type { Mock } from 'vitest';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { deviceManagementReducer } from '@proton/meet/store/slices/deviceManagementSlice';
+import { PermissionsModalType } from '@proton/meet/store/slices/deviceManagementSlice/types';
 import { screenShareStatusReducer } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { ProtonStoreContext } from '@proton/react-redux-store/ProtonStoreContext';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { isChrome, isFirefox, isMac, isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { useCurrentScreenShare } from './useCurrentScreenShare';
 
@@ -57,6 +58,7 @@ vi.mock('@proton/shared/lib/helpers/browser', () => {
         isMobile: vi.fn().mockReturnValue(false),
         isSafari: vi.fn().mockReturnValue(false),
         isChrome: vi.fn().mockReturnValue(true),
+        isFirefox: vi.fn().mockReturnValue(false),
         isMac: vi.fn().mockReturnValue(false),
         isLinux: vi.fn().mockReturnValue(false),
         getBrowser: vi.fn().mockReturnValue({ name: 'Chrome', version: '141.0.0.0' }),
@@ -252,26 +254,144 @@ describe('useCurrentScreenShare', () => {
             (useNotifications as Mock).mockReturnValue({ createNotification });
 
             const { result } = renderUseCurrentScreenShare();
-            await result.current.startScreenShare();
+            await act(() => result.current.startScreenShare());
 
-            return createNotification;
+            return { result, createNotification };
         };
 
         it('stays silent in the desktop app', async () => {
             desktopState.isElectronApp = true;
 
-            const createNotification = await startWithError();
+            const { result, createNotification } = await startWithError();
 
+            expect(result.current.screenShareError).toBeNull();
             expect(createNotification).not.toHaveBeenCalled();
         });
 
-        it('still reports the failure in the browser', async () => {
-            const createNotification = await startWithError();
+        it('reports a failed screen share in the browser', async () => {
+            const { result, createNotification } = await startWithError();
 
-            expect(createNotification).toHaveBeenCalledWith({
-                type: 'error',
-                text: 'Failed to start screen share',
-            });
+            expect(result.current.screenShareError).toBe('failed');
+            expect(createNotification).not.toHaveBeenCalled();
+        });
+    });
+
+    describe('when the screen share fails', () => {
+        const startWithError = async (error: Error) => {
+            useParticipantsMock.mockReturnValue([mockLocalParticipant]);
+            (isMobile as Mock).mockReturnValue(false);
+            mockLocalParticipant.setScreenShareEnabled.mockRejectedValueOnce(error);
+
+            const createNotification = vi.fn();
+            (useNotifications as Mock).mockReturnValue({ createNotification });
+
+            const rendered = renderUseCurrentScreenShare();
+            await act(() => rendered.result.current.startScreenShare());
+
+            return { result: rendered.result, createNotification };
+        };
+
+        const namedError = (name: string, message: string) => Object.assign(new Error(message), { name });
+
+        const safariDeniedError = namedError(
+            'NotAllowedError',
+            'The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.'
+        );
+
+        afterEach(() => {
+            (isChrome as Mock).mockReturnValue(true);
+            (isFirefox as Mock).mockReturnValue(false);
+            (isMac as Mock).mockReturnValue(false);
+            vi.restoreAllMocks();
+        });
+
+        it('reports that screen recording is off when Firefox on macOS finds no source', async () => {
+            (isFirefox as Mock).mockReturnValue(true);
+            (isMac as Mock).mockReturnValue(true);
+
+            const { result, createNotification } = await startWithError(
+                namedError('NotFoundError', 'The object can not be found here.')
+            );
+
+            expect(result.current.screenShareError).toBe('screenRecordingOff');
+            expect(createNotification).not.toHaveBeenCalled();
+        });
+
+        it('reports that there is nothing to share when another browser finds no source', async () => {
+            const { result, createNotification } = await startWithError(
+                namedError('NotFoundError', 'Requested device not found')
+            );
+
+            expect(result.current.screenShareError).toBe('nothingToShare');
+            expect(createNotification).not.toHaveBeenCalled();
+        });
+
+        it('reports that there is nothing to share when Firefox on another system finds no source', async () => {
+            (isFirefox as Mock).mockReturnValue(true);
+
+            const { result } = await startWithError(namedError('NotFoundError', 'The object can not be found here.'));
+
+            expect(result.current.screenShareError).toBe('nothingToShare');
+        });
+
+        it('reports a failed screen share when the source cannot be read', async () => {
+            const { result, createNotification } = await startWithError(
+                namedError('NotReadableError', 'Could not start video source')
+            );
+
+            expect(result.current.screenShareError).toBe('failed');
+            expect(createNotification).not.toHaveBeenCalled();
+        });
+
+        it('reports nothing when the person declines the Safari prompt', async () => {
+            (isChrome as Mock).mockReturnValue(false);
+            let now = 0;
+            vi.spyOn(performance, 'now').mockImplementation(() => (now += 1000));
+
+            const { result, createNotification } = await startWithError(safariDeniedError);
+
+            expect(result.current.screenShareError).toBeNull();
+            expect(createNotification).not.toHaveBeenCalled();
+            expect(store.getState().deviceManagement.uiModals.permissionsModal).not.toBe(
+                PermissionsModalType.PERMISSIONS_BLOCKED_SCREEN_SHARE_MODAL
+            );
+        });
+
+        it('shows the blocked modal when Safari rejects the request at once', async () => {
+            (isChrome as Mock).mockReturnValue(false);
+            vi.spyOn(performance, 'now').mockReturnValue(0);
+
+            const { result } = await startWithError(safariDeniedError);
+
+            expect(result.current.screenShareError).toBeNull();
+            expect(store.getState().deviceManagement.uiModals.permissionsModal).toBe(
+                PermissionsModalType.PERMISSIONS_BLOCKED_SCREEN_SHARE_MODAL
+            );
+        });
+
+        it('reports nothing when the person cancels the picker', async () => {
+            const { result, createNotification } = await startWithError(
+                namedError('NotAllowedError', 'Permission denied by user')
+            );
+
+            expect(result.current.screenShareError).toBeNull();
+            expect(createNotification).not.toHaveBeenCalled();
+        });
+
+        it('clears the error when dismissed', async () => {
+            const { result } = await startWithError(namedError('NotReadableError', 'Could not start video source'));
+
+            act(() => result.current.dismissScreenShareError());
+
+            expect(result.current.screenShareError).toBeNull();
+        });
+
+        it('clears the error when the next attempt succeeds', async () => {
+            const { result } = await startWithError(namedError('NotReadableError', 'Could not start video source'));
+
+            await act(() => result.current.startScreenShare());
+
+            expect(result.current.screenShareError).toBeNull();
         });
     });
 

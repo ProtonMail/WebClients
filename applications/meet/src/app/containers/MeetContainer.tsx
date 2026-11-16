@@ -18,6 +18,7 @@ import { AutoCloseMeetingModal } from '../components/AutoCloseMeetingModal/AutoC
 import { DebugOverlay, useDebugOverlay } from '../components/DebugOverlay/DebugOverlay';
 import { MeetingAnnouncer } from '../components/MeetingAnnouncer/MeetingAnnouncer';
 import { MeetingBody } from '../components/MeetingBody/MeetingBody';
+import { ScreenShareErrorModal } from '../components/ScreenShareErrorModal/ScreenShareErrorModal';
 import { DebugOverlayContext } from '../contexts/DebugOverlayContext';
 import { MeetContext } from '../contexts/MeetContext';
 import { useMeetingRecorderContext } from '../contexts/MeetingRecorderContext';
@@ -77,7 +78,7 @@ export const MeetContainer = ({
     const debugOverlay = useDebugOverlay();
     const dispatch = useMeetDispatch();
 
-    const { startScreenShare, stopScreenShare } = useCurrentScreenShare({
+    const { startScreenShare, stopScreenShare, screenShareError, dismissScreenShareError } = useCurrentScreenShare({
         stopPiP,
         startPiP,
         preparePictureInPicture,
@@ -205,6 +206,15 @@ export const MeetContainer = ({
                         />
                     </MeetContext.Provider>
                     <AutoCloseMeetingModal participantCount={totalParticipantCount} onLeave={handleLeave} />
+                    {screenShareError && (
+                        <ScreenShareErrorModal
+                            error={screenShareError}
+                            onRetry={() => {
+                                void startScreenShare();
+                            }}
+                            onClose={dismissScreenShareError}
+                        />
+                    )}
                 </MeetingAnnouncer>
             </div>
         </DebugOverlayContext.Provider>
