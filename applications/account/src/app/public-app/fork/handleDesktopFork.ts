@@ -73,12 +73,14 @@ export const handleDesktopFork = async ({ api }: { api: Api; paths: Paths }): Pr
     };
 
     // Create synthetic fork parameters so that we can reuse most of the logic for standard web forks.
+    const isPass = desktopForkParameters.app === APPS.PROTONPASS;
     const syntheticForkParameters: ProduceForkParametersFull = {
         ...forkParameters,
         localID: undefined,
         app: desktopForkParameters.app,
-        // Force reauth for all Pass clients
-        prompt: desktopForkParameters.app === APPS.PROTONPASS ? 'login' : forkParameters.prompt,
+        // Force reauth for all Pass clients, with the offline key so that sessions without one (e.g. QR sign-in) get it
+        prompt: isPass ? 'login' : forkParameters.prompt,
+        promptType: isPass ? 'offline' : forkParameters.promptType,
     };
 
     return {
