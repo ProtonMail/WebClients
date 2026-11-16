@@ -66,6 +66,7 @@ export const ConversationListItem = memo(
             >
                 {isRenaming ? (
                     <Input
+                        dir="auto"
                         ref={renameInputRef}
                         className="sidebar-conversation-rename-input relative z-1"
                         value={draftTitle}
@@ -79,16 +80,17 @@ export const ConversationListItem = memo(
                         to={`/c/${conversation.id}`}
                         className={clsx(
                             'absolute inset-0 flex items-center gap-1.5 min-w-0 overflow-hidden pl-1.5 hover:text-primary',
-                            showDropdown ? 'pr-8' : 'pr-2'
+                            showDropdown ? 'pr-10' : 'pr-2'
                         )}
                         onClick={onItemClick}
                     >
                         <ConversationExpirationIndicator conversation={conversation} />
                         <span
                             className={clsx(
-                                'sidebar-nav-list--label text-ellipsis min-w-0 flex-1',
+                                'sidebar-nav-list--label text-ellipsis',
                                 isGenerating && 'sidebar-chat-generating'
                             )}
+                            dir="auto"
                             title={label}
                         >
                             {label}

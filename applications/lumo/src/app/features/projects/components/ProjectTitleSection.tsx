@@ -65,6 +65,7 @@ export const ProjectTitleSection = ({
             <ProjectIcon iconId={categoryIcon} size={24} className="project-detail-title-icon shrink-0" />
             {isEditingTitle ? (
                 <input
+                    dir="auto"
                     {...titleField.bind}
                     // Remount per edit (conditional render) keeps defaultValue in sync with the latest name
                     defaultValue={projectName}
@@ -78,6 +79,7 @@ export const ProjectTitleSection = ({
                 <>
                     {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */}
                     <h1
+                        dir="auto"
                         className="project-detail-title text-2xl text-ellipsis"
                         onClick={handleStartEditing}
                         title={c('collider_2025:Action').t`Click to edit title`}

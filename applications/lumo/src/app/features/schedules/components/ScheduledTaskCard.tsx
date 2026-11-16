@@ -48,7 +48,15 @@ export const ScheduledTaskCard = ({ onDelete, onEdit, schedule, scheduleId }: Sc
         <>
             <div className="scheduled-task-card flex flex-column h-full px-5 py-4 border rounded-xl bg-norm">
                 <div className="flex flex-nowrap items-center gap-2 w-full">
-                    <h4 className="scheduled-task-card__title flex-1 m-0 text-semibold">{schedule.name}</h4>
+                    <h4
+                        dir="auto"
+                        className="scheduled-task-card__title flex-1 m-0 text-semibold"
+                        style={{
+                            textAlign: document.dir === 'rtl' ? 'right' : 'left',
+                        }}
+                    >
+                        {schedule.name}
+                    </h4>
                     {isRunning ? (
                         <LumoIcon
                             aria-hidden
@@ -155,7 +163,9 @@ export const ScheduledTaskCard = ({ onDelete, onEdit, schedule, scheduleId }: Sc
                     </div>
                 </div>
 
-                <p className="m-0 text-rg text-ellipsis-two-lines color-weak">{schedule.instructions}</p>
+                <p dir="auto" className="m-0 text-rg text-ellipsis-two-lines color-weak">
+                    {schedule.instructions}
+                </p>
 
                 <div className="flex flex-nowrap items-center justify-space-between gap-2 w-full mt-auto">
                     <ScheduleRunPrimaryLabel chip rule={recurrenceRule} scheduleId={scheduleId} />

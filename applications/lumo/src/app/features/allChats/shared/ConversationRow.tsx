@@ -144,6 +144,7 @@ export const ConversationRow = memo(
                         // The wrapper keeps Input's own flex-1 from collapsing its height in this column.
                         <div className="all-chats-row-interactive">
                             <Input
+                                dir="auto"
                                 ref={renameInputRef}
                                 inputClassName="text-sm py-0.5 px-2"
                                 value={draftTitle}
@@ -155,7 +156,7 @@ export const ConversationRow = memo(
                         </div>
                     ) : (
                         <div className="flex flex-nowrap items-center gap-2 min-w-0">
-                            <span className="text-ellipsis color-norm" data-testid="all-chats-row-title">
+                            <span dir="auto" className="text-ellipsis color-norm" data-testid="all-chats-row-title">
                                 {label}
                             </span>
                             {conversation.starred ? (

@@ -54,6 +54,7 @@ export const ProjectInstructionsModal = ({
             <ModalTwoHeader title={c('collider_2025:Title').t`Edit Instructions`} />
             <ModalTwoContent>
                 <TextAreaTwo
+                    dir="auto"
                     {...instructions.bind}
                     id="project-instructions"
                     className={'project-instruction-edit-area'}

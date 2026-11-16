@@ -167,6 +167,7 @@ export const ScheduledTaskEditorModal = ({
                     <div className="flex flex-column flex-nowrap gap-6">
                         {/* Name input field */}
                         <InputFieldTwo
+                            dir="auto"
                             assistContainerClassName={fieldErrors.name ? undefined : 'hidden'}
                             className="border-weak rounded"
                             error={fieldErrors.name}
@@ -186,6 +187,7 @@ export const ScheduledTaskEditorModal = ({
 
                         {/* Instructions input field */}
                         <InputFieldTwo
+                            dir="auto"
                             as={TextAreaTwo}
                             assistContainerClassName={fieldErrors.instructions ? undefined : 'hidden'}
                             className="block px-3 border-weak rounded"

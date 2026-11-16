@@ -34,6 +34,7 @@ export const AllChatsHeaderSearch = ({ searchQuery, onSearchQueryChange }: Props
         // screens, 280px beside the title above that.
         <div className="w-full md:w-custom shrink-0" style={{ '--md-w-custom': '17.5rem' }}>
             <Input
+                dir="auto"
                 ref={inputRef}
                 value={searchQuery}
                 onValue={onSearchQueryChange}

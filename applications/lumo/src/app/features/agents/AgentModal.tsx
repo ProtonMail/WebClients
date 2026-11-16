@@ -125,6 +125,7 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
                         <div className="flex flex-nowrap items-center border border-weak rounded-lg p-1">
                             <IconPicker selectedIcon={selectedIcon} onSelectIcon={handleIconSelect} />
                             <InputFieldTwo
+                                dir="auto"
                                 id="agent-name"
                                 placeholder={c('collider_2025:Placeholder').t`Fluffy McFluff Face`}
                                 value={name}
@@ -141,6 +142,7 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
                                 {c('collider_2025:Label').t`Description (optional)`}
                             </label>
                             <InputFieldTwo
+                                dir="auto"
                                 id="agent-description"
                                 placeholder={c('collider_2025:Placeholder')
                                     .t`Help with login, password and recovery issues.`}
@@ -157,6 +159,7 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
                                 {c('collider_2025:Label').t`Instructions`}
                             </label>
                             <TextAreaTwo
+                                dir="auto"
                                 id="agent-instructions"
                                 placeholder={c('collider_2025:Placeholder')
                                     .t`Describe the role, scope, and behavior you want ${LUMO_SHORT_APP_NAME} to adopt.`}
@@ -181,6 +184,7 @@ export const AgentModal = ({ agentId, onAgentCreated, ...modalProps }: AgentModa
                                     return (
                                         <div key={index} className="flex flex-nowrap items-center gap-2">
                                             <InputFieldTwo
+                                                dir="auto"
                                                 placeholder={c('collider_2025:Placeholder')
                                                     .t`Add a conversation starter`}
                                                 value={starter}

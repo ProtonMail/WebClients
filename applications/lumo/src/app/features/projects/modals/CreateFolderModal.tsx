@@ -71,6 +71,7 @@ export const CreateFolderModal = ({ open, folderId, driveBrowserRef, onClose }: 
             <ModalTwoHeader closeButtonProps={{ disabled: loading }} title={c('Title').t`Create a new folder`} />
             <ModalTwoContent>
                 <InputFieldTwo
+                    dir="auto"
                     {...folderName.bind}
                     id="folder-name"
                     autoFocus

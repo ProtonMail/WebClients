@@ -66,14 +66,14 @@ describe('ArtifactTitleMenu', () => {
         const { onOpen, onSelectVersion } = renderMenu();
 
         expect(onOpen).toHaveBeenCalledTimes(1);
-        const rows = screen.getAllByText(/^v\d · /).map((node) => {
-            return node.textContent;
-        });
-        expect(rows).toEqual(['v2 · Password Manager Memo (latest)', 'v1 · Comparison Report']);
+        const rows = screen.getAllByRole('button', { name: /^v\d\s+·/ });
+        expect(rows).toHaveLength(2);
+        expect(rows[0]).toHaveTextContent(/^v2 · Password Manager Memo \(latest\)/);
+        expect(rows[1]).toHaveTextContent(/^v1 · Comparison Report/);
         expect(screen.getByText(/^You · /)).toBeInTheDocument();
         expect(screen.getByText(/^Lumo · /)).toBeInTheDocument();
 
-        fireEvent.click(screen.getByText('v1 · Comparison Report'));
+        fireEvent.click(rows[1]);
         expect(onSelectVersion).toHaveBeenCalledWith(0);
     });
 

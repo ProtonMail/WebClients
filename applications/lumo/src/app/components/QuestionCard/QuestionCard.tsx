@@ -75,9 +75,13 @@ export const QuestionCard = ({ questions, onSubmit, onDismiss }: QuestionCardPro
             <div className="flex flex-nowrap items-start gap-3 p-4 pb-2 pl-5">
                 <h3
                     ref={titleRef}
+                    dir="auto"
                     className="question-card__title flex-1 min-w-0 m-0 text-rg text-semibold"
                     id={`${id}-title`}
                     tabIndex={-1}
+                    style={{
+                        textAlign: document.dir === 'rtl' ? 'right' : 'left',
+                    }}
                 >
                     {question.title}
                 </h3>

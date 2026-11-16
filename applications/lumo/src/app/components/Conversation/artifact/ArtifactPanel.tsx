@@ -207,7 +207,7 @@ export const PanelHeader = ({
         }
         return (
             <span className="text-semibold text-ellipsis overflow-hidden whitespace-nowrap min-w-0 flex-1 color-norm ml-1">
-                {title}
+                <span dir="auto">{title}</span>
                 {typeLabel && <span className="color-hint font-normal">{` · ${typeLabel}`}</span>}
             </span>
         );

@@ -441,6 +441,7 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
                     />
                 )}
                 <InputFieldTwo
+                    dir="auto"
                     label={
                         isPlugin ? c('collider_2025:Label').t`Skill set name` : c('collider_2025:Label').t`Skill name`
                     }
@@ -457,6 +458,7 @@ export const SkillEditorModal = ({ skillId, onSaved, ...modalProps }: SkillEdito
                     dense
                 />
                 <InputFieldTwo
+                    dir="auto"
                     as={TextAreaTwo}
                     rows={2}
                     label={c('collider_2025:Label').t`Description`}

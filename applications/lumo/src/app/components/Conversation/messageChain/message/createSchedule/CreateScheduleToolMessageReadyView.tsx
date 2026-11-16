@@ -141,7 +141,9 @@ export const CreateScheduleToolMessageReadyView = ({ draft }: { draft: CreateSch
                 <span aria-hidden className="color-weak">
                     ·
                 </span>
-                <span className="min-w-0 text-break">{schedule.name}</span>
+                <span dir="auto" className="min-w-0 text-break">
+                    {schedule.name}
+                </span>
             </div>
 
             <Scroll className="create-schedule-card__body flex flex-column flex-nowrap overflow-hidden" scrollContained>
@@ -206,6 +208,7 @@ export const CreateScheduleToolMessageReadyView = ({ draft }: { draft: CreateSch
                         }</span>
                     </Button>
                     <div
+                        dir="auto"
                         className="create-schedule-card__instructions mb-1 p-4 border border-weak rounded-xl text-sm text-break text-pre-wrap color-weak"
                         hidden={!showDetails}
                         id={`${id}-details`}

@@ -81,7 +81,7 @@ export const ArtifactChipShell = ({
                     visualState === 'superseded' ? 'color-hint' : 'color-norm text-semibold'
                 )}
             >
-                {title}
+                <span dir="auto">{title}</span>
             </span>
             {subtitle ? <span className="w-full min-w-0">{subtitle}</span> : null}
         </>

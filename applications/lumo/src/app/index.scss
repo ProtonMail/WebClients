@@ -10,6 +10,10 @@
 im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
+textarea[dir='auto'] {
+	unicode-bidi: normal;
+}
+
 :root {
 	// Override the design system's default InterVariable with OpenRunde.
 	// The --optional-font-family variable is the intended app-level hook in

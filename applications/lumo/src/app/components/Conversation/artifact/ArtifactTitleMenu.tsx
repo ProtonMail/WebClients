@@ -9,8 +9,8 @@ import type { DropdownSize } from '@proton/components/components/dropdown/utils'
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 
 import { LumoIcon } from '../../LumoIcon/LumoIcon';
-import { ArtifactActionsDropdown, ArtifactMenuSectionLabel } from './ArtifactActionsDropdown';
 import type { ArtifactMenuAction, ArtifactMenuControls, ArtifactMenuFormatOption } from './ArtifactActionsDropdown';
+import { ArtifactActionsDropdown, ArtifactMenuSectionLabel } from './ArtifactActionsDropdown';
 import type { ArtifactVersion } from './artifactRegistry';
 import {
     formatArtifactVersionTime,
@@ -110,8 +110,11 @@ export const ArtifactTitleMenu = ({
                                 <span className="shrink-0 w-custom flex" style={{ '--w-custom': '1rem' }}>
                                     {isSelected && <IcCheckmark size={4} className="color-primary" />}
                                 </span>
-                                <span className="flex-1 min-w-0 text-ellipsis color-norm">
-                                    {`v${index + 1} · ${versionTitle}`}
+                                <span className="flex flex-nowrap items-center min-w-0 color-norm">
+                                    <span className="shrink-0">{`v${index + 1}`}&nbsp;·&nbsp;</span>
+                                    <span className="flex-1 text-ellipsis" dir="auto">
+                                        {versionTitle}
+                                    </span>
                                     {index === latestIndex && versions.length > 1 && (
                                         <span className="sr-only">{` ${c('collider_2025:Info').t`(latest)`}`}</span>
                                     )}
@@ -146,7 +149,7 @@ export const ArtifactTitleMenu = ({
                 }}
             >
                 <span className="text-semibold text-ellipsis overflow-hidden whitespace-nowrap min-w-0">
-                    {title}
+                    <span dir="auto">{title}</span>
                     {typeLabel && <span className="color-hint font-normal">{` · ${typeLabel}`}</span>}
                 </span>
                 <LumoIcon name="ChevronDown" size={16} className="shrink-0 color-weak" />

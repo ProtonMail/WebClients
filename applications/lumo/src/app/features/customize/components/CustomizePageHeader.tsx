@@ -129,6 +129,7 @@ export const CustomizePageHeader = ({
                 <div className="flex-1 min-w-4" />
                 <div className="w-custom max-w-full shrink-0" style={{ '--w-custom': '16.25rem' }}>
                     <Input
+                        dir="auto"
                         value={searchQuery}
                         onValue={onSearchQueryChange}
                         placeholder={searchPlaceholder}

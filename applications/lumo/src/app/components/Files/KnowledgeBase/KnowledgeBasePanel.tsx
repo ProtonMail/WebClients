@@ -544,7 +544,10 @@ export const KnowledgeBasePanel = ({
                     <div className="shrink-0 mb-4">
                         <div className="flex flex-row items-center justify-space-between gap-2 min-w-0">
                             <div className="flex flex-row flex-nowrap flex-1 items-center gap-1 min-w-0">
-                                <h2 className="min-w-0 m-0 overflow-hidden text-xl text-bold text-ellipsis whitespace-nowrap">
+                                <h2
+                                    dir={title ? 'auto' : undefined}
+                                    className="min-w-0 m-0 overflow-hidden text-xl text-bold text-ellipsis whitespace-nowrap"
+                                >
                                     {title ?? c('collider_2025: Info').t`All files in this chat`}
                                 </h2>
                             </div>

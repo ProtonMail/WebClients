@@ -27,7 +27,7 @@ export const ScheduleBreadcrumbs = ({ scheduleId, scheduleName, createdAt }: Sch
                     /
                 </span>
                 <LumoIcon aria-hidden className="shrink-0 color-primary" name="Zap" size={14} />
-                <LumoLink className="min-w-0 text-semibold text-ellipsis" to={`/schedules/${scheduleId}`}>
+                <LumoLink dir="auto" className="min-w-0 text-semibold text-ellipsis" to={`/schedules/${scheduleId}`}>
                     {scheduleName}
                 </LumoLink>
                 {createdAt && (

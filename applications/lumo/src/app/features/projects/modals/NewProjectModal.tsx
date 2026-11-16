@@ -93,6 +93,7 @@ export const NewProjectModal = ({
                         <div className="flex flex-nowrap items-center border border-weak rounded-lg p-1">
                             <IconPicker selectedIcon={selectedIcon} onSelectIcon={handleIconSelect} />
                             <InputFieldTwo
+                                dir="auto"
                                 {...projectName.bind}
                                 id="project-name"
                                 placeholder={c('collider_2025:Placeholder').t`Holiday planner`}
@@ -112,6 +113,7 @@ export const NewProjectModal = ({
                                 {c('collider_2025:Label').t`Project Instructions (optional)`}
                             </label>
                             <TextAreaTwo
+                                dir="auto"
                                 {...projectInstructions.bind}
                                 id="project-instructions"
                                 placeholder={c('collider_2025:Placeholder')

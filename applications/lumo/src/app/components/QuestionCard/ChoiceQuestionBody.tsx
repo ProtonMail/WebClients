@@ -78,15 +78,25 @@ export const ChoiceQuestionBody = ({ idPrefix, question, titleId, value, onChang
                     name={`${idPrefix}-answer`}
                     onChange={(event) => handleOptionCheck(option.id, event.target.checked)}
                 >
-                    <span className="flex flex-column flex-1 gap-0.5 min-w-0">
+                    <span
+                        className="flex flex-column flex-1 gap-0.5 min-w-0"
+                        style={{
+                            textAlign: document.dir === 'rtl' ? 'right' : 'left',
+                        }}
+                    >
                         <span
+                            dir="auto"
                             className="choice-question-body__option-title"
                             id={`${idPrefix}-option-${optionIndex}-label`}
                         >
                             {option.label}
                         </span>
                         {option.description && (
-                            <span className="text-sm color-weak" id={`${idPrefix}-option-${optionIndex}-description`}>
+                            <span
+                                dir="auto"
+                                className="text-sm color-weak"
+                                id={`${idPrefix}-option-${optionIndex}-description`}
+                            >
                                 {option.description}
                             </span>
                         )}
@@ -106,6 +116,7 @@ export const ChoiceQuestionBody = ({ idPrefix, question, titleId, value, onChang
                         onChange={(event) => handleCustomAnswerCheck(event.target.checked)}
                     />
                     <InputField
+                        dir="auto"
                         assistContainerClassName="hidden"
                         id={`${idPrefix}-custom-answer`}
                         dense={true}

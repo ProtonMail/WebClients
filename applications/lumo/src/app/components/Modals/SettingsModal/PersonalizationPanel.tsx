@@ -305,6 +305,7 @@ const PersonalizationPanel = () => {
                             {/* Nickname */}
                             <div className="personalization-field">
                                 <InputFieldTwo
+                                    dir="auto"
                                     label={c('Label').t`What should ${LUMO_SHORT_APP_NAME} call you?`}
                                     placeholder={nicknamePlaceholders[placeholderIndices.nickname]}
                                     value={personalization.nickname}
@@ -316,6 +317,7 @@ const PersonalizationPanel = () => {
                             {/* Job/Role */}
                             <div className="personalization-field mt-2">
                                 <InputFieldTwo
+                                    dir="auto"
                                     label={c('Label').t`What do you do?`}
                                     placeholder={jobPlaceholders[placeholderIndices.job]}
                                     value={personalization.jobRole}
@@ -328,6 +330,7 @@ const PersonalizationPanel = () => {
                             <div className="personalization-field mt-2">
                                 <div className="flex flex-column gap-2">
                                     <InputFieldTwo
+                                        dir="auto"
                                         as={TextAreaTwo}
                                         label={c('Label')
                                             .t`Anything else ${LUMO_SHORT_APP_NAME} should know about you?`}
@@ -344,6 +347,7 @@ const PersonalizationPanel = () => {
                             <div className="personalization-field mt-2">
                                 {/* Lumo Traits Text Area - shows selected traits */}
                                 <InputFieldTwo
+                                    dir="auto"
                                     as={TextAreaTwo}
                                     label={c('Label').t`How should ${LUMO_SHORT_APP_NAME} behave?`}
                                     placeholder={c('Placeholder').t`Selected traits will appear here automatically`}
