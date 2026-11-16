@@ -86,7 +86,7 @@ export function HomepageViewProvider({
 
   const isTrashRoute = Boolean(useRouteMatch(HOMEPAGE_TRASH_PATH))
 
-  const abortLoad = useRef<AbortController>()
+  const abortLoad = useRef<AbortController>(undefined)
   const loadData = useCallback(() => {
     abortLoad.current?.abort()
     abortLoad.current = new AbortController()

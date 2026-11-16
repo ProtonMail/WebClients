@@ -26,7 +26,7 @@ export const useDocInvites: DocInvitesHook = () => {
   const convertedInvitations = useDocInvitationsStore((state) => state.convertedInvitations)
   const [recentlyAcceptedInvites, setRecentlyAcceptedInvites] = useState<ExtendedInvitationDetails[]>([])
 
-  const abortReload = useRef<AbortController>()
+  const abortReload = useRef<AbortController>(undefined)
   const fetchAndStoreInvitations = useCallback(async () => {
     abortReload.current?.abort()
     const abort = new AbortController()

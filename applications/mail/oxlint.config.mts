@@ -1,5 +1,6 @@
 import { createOxlintConfig } from '@proton/oxlint-config/createOxlintConfig';
 import { allGlobs } from '@proton/oxlint-config/globs';
+import { react19Selectors } from '@proton/oxlint-config/react19';
 import { createRestrictedImportRule } from '@proton/oxlint-config/restrictedImports';
 
 /**
@@ -51,7 +52,7 @@ export default createOxlintConfig({
                 'no-nested-ternary': 'off',
                 'typescript/no-misused-promises': 'off',
                 'react/exhaustive-deps': 'error',
-                'proton/restricted-syntax': ['error', noEnumDestructuring],
+                'proton/restricted-syntax': ['error', ...react19Selectors, noEnumDestructuring],
             },
         },
         {
@@ -64,6 +65,7 @@ export default createOxlintConfig({
             rules: {
                 'proton/restricted-syntax': [
                     'error',
+                    ...react19Selectors,
                     noEnumDestructuring,
                     {
                         selector: "CallExpression[callee.property.name='referenceFor'][arguments.0.value='email']",
@@ -81,7 +83,12 @@ export default createOxlintConfig({
                 'src/app/helpers/tests/**/*.tsx',
             ],
             rules: {
-                'proton/restricted-syntax': ['error', noEnumDestructuring, ...noRealTimeWaitInTests],
+                'proton/restricted-syntax': [
+                    'error',
+                    ...react19Selectors,
+                    noEnumDestructuring,
+                    ...noRealTimeWaitInTests,
+                ],
             },
         },
         {

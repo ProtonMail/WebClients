@@ -4,6 +4,7 @@ import {
     extraneousDependenciesDevDependencies,
 } from '@proton/oxlint-config/extraneousDependencies';
 import { allGlobs } from '@proton/oxlint-config/globs';
+import { react19Selectors } from '@proton/oxlint-config/react19';
 
 export default createOxlintConfig({
     overrides: [
@@ -12,6 +13,7 @@ export default createOxlintConfig({
             rules: {
                 'proton/restricted-syntax': [
                     'error',
+                    ...react19Selectors,
                     {
                         selector: "VariableDeclarator[id.type='ObjectPattern'][init.name=/^[A-Z_]+$/]",
                         message:

@@ -16,8 +16,8 @@ const TOUCH_MOVE_TOLERANCE_PX = 10
  */
 export function useDoubleClick(onDoubleClick: () => void) {
   const tapStartRef = useRef<{ x: number; y: number } | null>(null)
-  const tapTimerRef = useRef<ReturnType<typeof setTimeout>>()
-  const openedByTouchTimerRef = useRef<ReturnType<typeof setTimeout>>()
+  const tapTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined)
+  const openedByTouchTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined)
   const openedByTouchRef = useRef(false)
 
   useEffect(

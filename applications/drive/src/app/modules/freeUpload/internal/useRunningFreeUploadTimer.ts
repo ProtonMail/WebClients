@@ -75,7 +75,7 @@ export function useRunningFreeUploadTimer(createTime?: number) {
     const [freeUploadOverModal, showFreeUploadOverModal] = useFreeUploadOverModal();
 
     // Manage internal timer
-    const interval = useRef<Timeout>();
+    const interval = useRef<Timeout>(undefined);
     useEffect(() => {
         if (!isFreeUploadInProgress) {
             if (interval.current) {
