@@ -40,6 +40,7 @@ import type { Plan } from '@proton/shared/lib/payments/plan/interface';
 import { SubscriptionMode } from '@proton/shared/lib/payments/subscription/constants';
 import noop from '@proton/utils/noop';
 
+import { usePaypalFirstSort } from '../signup/usePaypalFirstSort';
 import AccountStepPaymentSummary from './AccountStepPaymentSummary';
 import Guarantee from './Guarantee';
 import { useSignupV2Theme } from './SignupV2ThemeProvider';
@@ -176,7 +177,7 @@ const AccountStepPayment = ({
     const user = model.session?.resumedSessionResult.User;
 
     const isTrial = model.subscriptionData.checkResult.SubscriptionMode === SubscriptionMode.Trial;
-
+    const sortNewMethods = usePaypalFirstSort();
     const paymentFacade = usePaymentFacade({
         checkResult: model.subscriptionData.checkResult,
         amount: model.subscriptionData.checkResult.AmountDue,
@@ -184,6 +185,7 @@ const AccountStepPayment = ({
         selectedPlanName: selectedPlan.Name,
         flow,
         paymentMethods: model.session?.paymentMethods,
+        sortNewMethods,
         paymentStatus: model.paymentStatus,
         api: normalApi,
         theme: signupV2Theme,

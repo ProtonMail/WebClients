@@ -62,6 +62,25 @@ describe('resolveStaticExperiments', () => {
         expect(result).toEqual({ MyExperiment: 'disabled' });
     });
 
+    it('returns disabled and clears the cookie entry when enabled is a function returning false', () => {
+        mockedReadEntries.mockReturnValue(new Map([['MyExperiment', 'A']]));
+
+        const result = resolveStaticExperiments({
+            MyExperiment: buildConfig({ enabled: () => false }),
+        });
+
+        expect(result).toEqual({ MyExperiment: 'disabled' });
+        expect(mockedWriteEntries).toHaveBeenCalledWith(new Map());
+    });
+
+    it('rolls a variant when enabled is a function returning true', () => {
+        const result = resolveStaticExperiments({
+            MyExperiment: buildConfig({ enabled: () => true }),
+        });
+
+        expect(result).toEqual({ MyExperiment: 'A' });
+    });
+
     it('reuses an existing cookie value if it is still a valid variant', () => {
         mockedReadEntries.mockReturnValue(new Map([['MyExperiment', 'B']]));
 

@@ -262,6 +262,7 @@
         "./staticExperiments/resolve": "./staticExperiments/resolve.ts",
         "./staticExperiments/slice": "./staticExperiments/slice.ts",
         "./store/hooks": "./store/hooks.ts",
+        "./staticExperiments/useStaticExperiment": "./staticExperiments/useStaticExperiment.ts",
         "./subscription": "./subscription/index.ts",
         "./subscription/hooks": "./subscription/hooks.ts",
         "./subscription/startListeningToPlanNameChange": "./subscription/startListeningToPlanNameChange.ts",

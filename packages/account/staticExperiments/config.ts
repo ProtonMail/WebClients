@@ -1,6 +1,8 @@
-import type { FeatureFlag } from '@proton/unleash/Flags';
+import type { FeatureFlag} from '@proton/unleash/Flags';
 
 import type { StaticExperimentConfig } from './types';
+
+const GERMAN_TIME_ZONES = ['Europe/Berlin', 'Europe/Busingen'];
 
 export const staticExperimentsConfig = {
     /**
@@ -15,6 +17,25 @@ export const staticExperimentsConfig = {
             {
                 startsAt: '2026-01-01T00:00:00.000Z',
                 weights: { v4: 0, v5: 100 },
+            },
+        ],
+    },
+    PaypalFirst: {
+        enabled: () => {
+            try {
+                const { timeZone } = Intl.DateTimeFormat().resolvedOptions();
+
+                return GERMAN_TIME_ZONES.includes(timeZone);
+            } catch {
+                return false;
+            }
+        },
+        owner: 'payments',
+        schedule: [
+            {
+                startsAt: '2026-11-12T00:00:00.000Z',
+                endsAt: '2026-12-31T00:00:00.000Z',
+                weights: { with: 50, without: 50 },
             },
         ],
     },

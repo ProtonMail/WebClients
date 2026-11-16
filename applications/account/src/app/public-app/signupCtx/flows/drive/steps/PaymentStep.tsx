@@ -23,6 +23,7 @@ import { Audience } from '@proton/shared/lib/interfaces/Subscription';
 import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
 import noop from '@proton/utils/noop';
 
+import { usePaypalFirstSort } from '../../../../signup/usePaypalFirstSort';
 import Terms from '../../../components/Terms';
 import { useSignup } from '../../../context/SignupContext';
 import { Aside } from '../components/Layout/Aside';
@@ -50,7 +51,9 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
 
     const { options } = payments;
 
+    const sortNewMethods = usePaypalFirstSort();
     const paymentFacade = usePaymentFacade({
+        sortNewMethods,
         checkResult: options.checkResult,
         amount: options.checkResult.AmountDue,
         currency: options.currency,

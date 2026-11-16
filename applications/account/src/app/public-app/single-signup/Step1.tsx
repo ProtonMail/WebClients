@@ -80,6 +80,7 @@ import { getSubscriptionPrices } from '../signup/helper';
 import type { SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import { SignupType } from '../signup/interfaces';
 import type { getSignupSearchParams } from '../signup/searchParams';
+import { usePaypalFirstSort } from '../signup/usePaypalFirstSort';
 import { AccountFormDataContextProvider } from '../signupCtx/context/accountData/AccountFormDataContext';
 import type { AccountStepDetailsRef } from '../single-signup-v2/AccountStepDetails';
 import AccountStepDetails from '../single-signup-v2/AccountStepDetails';
@@ -337,7 +338,9 @@ const Step1 = ({
         return true;
     };
 
+    const sortNewMethods = usePaypalFirstSort();
     const paymentFacade = usePaymentFacade({
+        sortNewMethods,
         checkResult: options.checkResult,
         amount: options.checkResult.AmountDue,
         currency: options.currency,

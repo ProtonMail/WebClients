@@ -21,6 +21,7 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/payments/plan/helpers';
 import noop from '@proton/utils/noop';
 
+import { usePaypalFirstSort } from '../../../../signup/usePaypalFirstSort';
 import { useSignup } from '../../../context/SignupContext';
 import { Aside } from '../components/Layout/Aside';
 import { Footer } from '../components/Layout/Footer';
@@ -54,7 +55,9 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
     const isVPNPlanWithoutTrial = useIsVPNPlanWithoutTrialVariant(payments.selectedPlan.name);
     const startTrial = useShouldStartTrial(payments.selectedPlan.name);
 
+    const sortNewMethods = usePaypalFirstSort();
     const paymentFacade = usePaymentFacade({
+        sortNewMethods,
         // since we are not charging anything when starting a trial and we just want to validate the credit card, we set the amount to 0.
         // Chargebee might still create an authorization transaction typically 0.01$ or 0.5$ which will be immediately
         // refunded.
