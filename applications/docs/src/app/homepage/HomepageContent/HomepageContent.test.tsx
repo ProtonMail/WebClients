@@ -21,9 +21,9 @@ let bulkTrashEnabled = false
 let bulkMoveEnabled = false
 
 let mockIsNarrow = false
-jest.mock('@proton/components/hooks/useActiveBreakpoint', () => ({
+jest.mock('../utils/useIsNarrow', () => ({
   __esModule: true,
-  default: () => ({ viewportWidth: { '<=small': mockIsNarrow } }),
+  useIsNarrow: () => mockIsNarrow,
 }))
 
 const mockBulkTrash = jest.fn()

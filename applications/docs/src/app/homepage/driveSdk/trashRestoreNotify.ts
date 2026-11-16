@@ -1,4 +1,3 @@
-import NotificationButton from '@proton/components/containers/notifications/NotificationButton'
 import { c, msgid } from 'ttag'
 import type { ProtonDriveClient } from '@protontech/drive-sdk'
 import { trashDocument, restoreDocument, reportTrashError } from './trash'
@@ -40,12 +39,8 @@ export async function trashAndNotify(
 
   createNotification({
     type: 'success',
-    text: (
-      <>
-        <span>{c('Notification').t`Document moved to trash`}</span>
-        <NotificationButton onClick={undo}>{c('Action').t`Undo`}</NotificationButton>
-      </>
-    ),
+    text: c('Notification').t`Document moved to trash`,
+    action: undoAction(undo),
   })
 }
 
@@ -86,18 +81,12 @@ export async function trashManyAndNotify(
     const numberOfItems = succeeded.length
     createNotification({
       type: 'success',
-      text: (
-        <>
-          <span>
-            {c('Notification').ngettext(
-              msgid`${numberOfItems} item moved to trash`,
-              `${numberOfItems} items moved to trash`,
-              numberOfItems,
-            )}
-          </span>
-          <NotificationButton onClick={undo}>{c('Action').t`Undo`}</NotificationButton>
-        </>
+      text: c('Notification').ngettext(
+        msgid`${numberOfItems} item moved to trash`,
+        `${numberOfItems} items moved to trash`,
+        numberOfItems,
       ),
+      action: undoAction(undo),
     })
   }
 
@@ -140,13 +129,13 @@ export async function restoreAndNotify(
 
   createNotification({
     type: 'success',
-    text: (
-      <>
-        <span>{c('Notification').t`Document restored from trash`}</span>
-        <NotificationButton onClick={undo}>{c('Action').t`Undo`}</NotificationButton>
-      </>
-    ),
+    text: c('Notification').t`Document restored from trash`,
+    action: undoAction(undo),
   })
+}
+
+function undoAction(onClick: () => void) {
+  return { label: c('Action').t`Undo`, onClick }
 }
 
 function isRestorePermissionError(error: Error) {

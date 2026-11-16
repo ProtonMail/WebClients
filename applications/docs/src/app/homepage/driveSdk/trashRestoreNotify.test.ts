@@ -1,6 +1,3 @@
-import '@testing-library/jest-dom'
-import { render, screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import { reportTrashError, restoreDocument, trashDocument } from './trash'
 import type { ProtonDriveClient } from '@protontech/drive-sdk'
 import { restoreDocuments, trashDocuments } from './trashMany'
@@ -21,9 +18,10 @@ const errorTracking = {} as ErrorTracking
 const onRestored = jest.fn()
 
 async function clickUndo(callIndex = 0) {
-  render(<>{createNotification.mock.calls[callIndex][0].text}</>)
-  await userEvent.click(screen.getByTestId('notification:undo-button'))
+  await createNotification.mock.calls[callIndex][0].action.onClick()
 }
+
+const undoAction = { label: 'Undo', onClick: expect.any(Function) }
 
 const reportedErrors = () => jest.mocked(reportTrashError).mock.calls.map(([, error]) => error)
 
@@ -67,10 +65,11 @@ describe('trashAndNotify', () => {
 
     expect(trashDocument).toHaveBeenCalledWith(drive, 'a')
     expect(createNotification).toHaveBeenCalledTimes(1)
-    expect(createNotification).toHaveBeenCalledWith(expect.objectContaining({ type: 'success' }))
-    render(<>{createNotification.mock.calls[0][0].text}</>)
-    expect(screen.getByText('Document moved to trash')).toBeInTheDocument()
-    expect(screen.getByTestId('notification:undo-button')).toHaveTextContent('Undo')
+    expect(createNotification).toHaveBeenCalledWith({
+      type: 'success',
+      text: 'Document moved to trash',
+      action: undoAction,
+    })
   })
 
   it('does not notify when trashing fails', async () => {
@@ -120,10 +119,11 @@ describe('restoreAndNotify', () => {
 
     expect(restoreDocument).toHaveBeenCalledWith(drive, 'a')
     expect(createNotification).toHaveBeenCalledTimes(1)
-    expect(createNotification).toHaveBeenCalledWith(expect.objectContaining({ type: 'success' }))
-    render(<>{createNotification.mock.calls[0][0].text}</>)
-    expect(screen.getByText('Document restored from trash')).toBeInTheDocument()
-    expect(screen.getByTestId('notification:undo-button')).toHaveTextContent('Undo')
+    expect(createNotification).toHaveBeenCalledWith({
+      type: 'success',
+      text: 'Document restored from trash',
+      action: undoAction,
+    })
   })
 
   it('does not notify when restoring fails', async () => {
@@ -173,9 +173,11 @@ describe('trashManyAndNotify', () => {
     const result = await trashManyAndNotify(drive, createNotification, errorTracking, ['a', 'b'], onRestored)
 
     expect(createNotification).toHaveBeenCalledTimes(1)
-    expect(createNotification).toHaveBeenCalledWith(expect.objectContaining({ type: 'success' }))
-    render(<>{createNotification.mock.calls[0][0].text}</>)
-    expect(screen.getByText('2 items moved to trash')).toBeInTheDocument()
+    expect(createNotification).toHaveBeenCalledWith({
+      type: 'success',
+      text: '2 items moved to trash',
+      action: undoAction,
+    })
     expect(reportTrashError).not.toHaveBeenCalled()
     expect(result).toEqual(batch)
   })
@@ -193,9 +195,11 @@ describe('trashManyAndNotify', () => {
     await trashManyAndNotify(drive, createNotification, errorTracking, ['a', 'b', 'c', 'd'], onRestored)
 
     expect(createNotification).toHaveBeenCalledTimes(2)
-    expect(createNotification.mock.calls[0][0].type).toBe('success')
-    render(<>{createNotification.mock.calls[0][0].text}</>)
-    expect(screen.getByText('1 item moved to trash')).toBeInTheDocument()
+    expect(createNotification).toHaveBeenNthCalledWith(1, {
+      type: 'success',
+      text: '1 item moved to trash',
+      action: undoAction,
+    })
     expect(createNotification).toHaveBeenLastCalledWith({ type: 'error', text: '3 items could not be moved to trash' })
     expect(reportedErrors()).toEqual([e1, e2])
   })

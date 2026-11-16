@@ -1,5 +1,5 @@
-import { useConfirmActionModal } from '@proton/components/components/confirmActionModal/ConfirmActionModal'
 import type { RecentDocumentsItem } from './recentDocumentsItem'
+import { DeletePermanentlyDialog } from './DeletePermanentlyDialog'
 import { APPS } from './utils/apps'
 import { type ReactNode, useCallback, useMemo, useState } from 'react'
 import { constructDriveFolderUrl } from './driveFolderUrl'
@@ -40,7 +40,7 @@ export function DocumentActionsProvider({
   const [currentlyRestoringId, setCurrentlyRestoringId] = useState<string | undefined>(undefined)
 
   const { updateMovedDocuments, reportTelemetry, createNotification, getAppHref, errorTracking } = useHomepageView()
-  const [confirmDeleteModal, showConfirmDeleteModal] = useConfirmActionModal()
+  const [documentToDelete, setDocumentToDelete] = useState<RecentDocumentsItem>()
   const { trash: bulkTrash, isTrashing: isBulkTrashing } = useBulkTrash({ drive })
   const { move: bulkMove } = useBulkMove({ openMoveItemsModal })
 
@@ -173,30 +173,26 @@ export function DocumentActionsProvider({
   })
 
   const deletePermanently = useEvent(async (document: RecentDocumentsItem) => {
-    const itemName = document.name
-    showConfirmDeleteModal({
-      title: c('Title').t`Delete permanently`,
-      submitText: c('Action').t`Delete permanently`,
-      message: c('Info').t`Are you sure you want to permanently delete "${itemName}" from trash?`,
-      onSubmit: async () => {
-        try {
-          const nodeUid = generateNodeUid(document.volumeId, document.linkId)
-          await deleteDocument(drive, nodeUid)
-        } catch (error) {
-          reportTrashError(errorTracking, error)
-          createNotification({
-            type: 'error',
-            text: c('Notification').t`Failed to delete document`,
-          })
-          return
-        }
-        createNotification({
-          type: 'success',
-          text: c('Notification').t`"Document deleted permanently`,
-        })
-        reportTelemetry(TelemetryEvent.document_permanently_deleted)
-      },
+    setDocumentToDelete(document)
+  })
+
+  const deleteDocumentPermanently = useEvent(async (document: RecentDocumentsItem) => {
+    try {
+      const nodeUid = generateNodeUid(document.volumeId, document.linkId)
+      await deleteDocument(drive, nodeUid)
+    } catch (error) {
+      reportTrashError(errorTracking, error)
+      createNotification({
+        type: 'error',
+        text: c('Notification').t`Failed to delete document`,
+      })
+      return
+    }
+    createNotification({
+      type: 'success',
+      text: c('Notification').t`"Document deleted permanently`,
     })
+    reportTelemetry(TelemetryEvent.document_permanently_deleted)
   })
 
   const value = useMemo(
@@ -246,7 +242,13 @@ export function DocumentActionsProvider({
   return (
     <DocumentActionsContext.Provider value={value}>
       {children}
-      {confirmDeleteModal}
+      {documentToDelete && (
+        <DeletePermanentlyDialog
+          documentName={documentToDelete.name}
+          onDelete={() => deleteDocumentPermanently(documentToDelete)}
+          onClose={() => setDocumentToDelete(undefined)}
+        />
+      )}
     </DocumentActionsContext.Provider>
   )
 }
