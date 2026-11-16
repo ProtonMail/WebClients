@@ -7,8 +7,6 @@ import VerifyPasswordButton from '@proton/account-recovery/passwordReminder/Veri
 import NonPrivateRecoverySection from '@proton/account-recovery/recovery/NonPrivateRecoveySection';
 import SignInRestrictionSection from '@proton/account-security/signInRestriction/SignInRestrictionSection';
 import AuthDevicesSettings from '@proton/account-security/sso/AuthDevicesSettings';
-import { EmergencyContactSection } from '@proton/account/delegatedAccess/emergencyContact/EmergencyContactSection';
-import { RecoveryContactSection } from '@proton/account/delegatedAccess/recoveryContact/RecoveryContactSection';
 import EasySwitchSettingsArea from '@proton/activation/src/components/SettingsArea/SettingsArea';
 import { ThirdPartySection } from '@proton/calendar-video-conferencing/thirdParty/ThirdPartySection';
 import SettingsMaintenanceLayoutWrapper from '@proton/components/components/maintenanceLayout/SettingsMaintenanceLayoutWrapper';
@@ -53,6 +51,8 @@ import SessionsSection from '@proton/components/containers/sessions/SessionsSect
 import ThemesSection from '@proton/components/containers/themes/ThemesSection';
 import { VpnAlsoInYourPlanSection } from '@proton/components/containers/vpn/VpnAlsoInYourPlanSection/VpnAlsoInYourPlanSection';
 import { VpnBlogSection } from '@proton/components/containers/vpn/VpnBlogSection/VpnBlogSection';
+import { EmergencyContactSection } from '@proton/delegated-access/emergencyContact/EmergencyContactSection';
+import { RecoveryContactSection } from '@proton/delegated-access/recoveryContact/RecoveryContactSection';
 import InvoicesSection from '@proton/payments-ui/containers/invoices/InvoicesSection';
 import CreditsSection from '@proton/payments-ui/containers/payments/CreditsSection';
 import PlansSection from '@proton/payments-ui/containers/payments/PlansSection';

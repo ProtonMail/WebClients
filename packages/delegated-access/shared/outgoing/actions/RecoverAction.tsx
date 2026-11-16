@@ -1,0 +1,121 @@
+import { useCallback, useEffect, useState } from 'react';
+
+import { c } from 'ttag';
+
+import RetrySignedKeyListError from '@proton/account/delegatedAccess/RetrySignedKeyListError';
+import {
+    recoverDelegatedAccessStep1Thunk,
+    recoverDelegatedAccessStep2Thunk,
+} from '@proton/account/delegatedAccess/outgoingActions';
+import { useOutgoingController } from '@proton/account/delegatedAccess/shared/OutgoingDelegatedAccessProvider';
+import type {
+    EnrichedOutgoingDelegatedAccess,
+    RecoverActionPayload,
+} from '@proton/account/delegatedAccess/shared/outgoing/interface';
+import { useDispatch } from '@proton/account/store/hooks';
+import { useNotifications } from '@proton/app-context/useNotifications';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import noop from '@proton/utils/noop';
+
+import { RecoverOutgoingRecoveryContactModal } from '../../../recoveryContact/outgoing/modals/RecoverOutgoingRecoveryContactModal';
+import { RetryWarningRecoverOutgoingRecoveryContactModal } from '../../../recoveryContact/outgoing/modals/RetryWarningRecoverOutgoingRecoveryContactModal';
+
+export const RecoverAction = () => {
+    const { subscribe } = useOutgoingController();
+    const [modal, setModalOpen, renderModal] = useModalState();
+    const [warningModal, setWarningModalOpen, renderWarningModal] = useModalState();
+    const [errorDetails, setErrorDetails] = useState<string | null>(null);
+
+    const handleError = useErrorHandler();
+    const dispatch = useDispatch();
+    const { createNotification } = useNotifications();
+
+    const [tmpOutgoingDelegatedAccess, setTmpOutgoingDelegatedAccess] =
+        useState<EnrichedOutgoingDelegatedAccess | null>(null);
+
+    const recoverStep1 = useCallback(async (value: RecoverActionPayload['value']) => {
+        try {
+            setTmpOutgoingDelegatedAccess(null);
+            await dispatch(
+                recoverDelegatedAccessStep1Thunk({ outgoingDelegatedAccess: value.outgoingDelegatedAccess })
+            );
+            setTmpOutgoingDelegatedAccess(value);
+            setModalOpen(true);
+        } catch (e) {
+            handleError(e);
+        }
+    }, []);
+
+    const recoverStep2 = useCallback(
+        async (value: RecoverActionPayload['value'], options?: { ignoreVerification: boolean }) => {
+            try {
+                setTmpOutgoingDelegatedAccess(null);
+                await dispatch(
+                    recoverDelegatedAccessStep2Thunk({
+                        outgoingDelegatedAccess: value.outgoingDelegatedAccess,
+                        ignoreVerification: options?.ignoreVerification ?? false,
+                    })
+                );
+
+                createNotification({
+                    text: c('emergency_access')
+                        .t`Data successfully recovered. You can now decrypt your existing data and encrypted files.`,
+                });
+            } catch (e) {
+                if (e instanceof RetrySignedKeyListError) {
+                    setTmpOutgoingDelegatedAccess(value);
+                    setErrorDetails(e.message);
+                    setWarningModalOpen(true);
+                    return;
+                }
+                handleError(e);
+            }
+        },
+        []
+    );
+
+    useEffect(() => {
+        return subscribe((payload) => {
+            if (payload.type === 'recover') {
+                recoverStep1(payload.value).catch(noop);
+            }
+            if (payload.type === 'recover-token') {
+                recoverStep2(payload.value).catch(noop);
+            }
+            if (payload.type === 'recover-info') {
+                setTmpOutgoingDelegatedAccess(payload.value);
+                setModalOpen(true);
+            }
+        });
+    }, []);
+
+    return (
+        <>
+            {renderModal && tmpOutgoingDelegatedAccess && (
+                <RecoverOutgoingRecoveryContactModal
+                    {...modal}
+                    value={tmpOutgoingDelegatedAccess}
+                    onExit={() => {
+                        modal.onExit();
+                        setTmpOutgoingDelegatedAccess(null);
+                    }}
+                />
+            )}
+            {renderWarningModal && tmpOutgoingDelegatedAccess && (
+                <RetryWarningRecoverOutgoingRecoveryContactModal
+                    {...warningModal}
+                    errorDetails={errorDetails}
+                    onProceed={() => {
+                        recoverStep2(tmpOutgoingDelegatedAccess, { ignoreVerification: true }).catch(noop);
+                    }}
+                    value={tmpOutgoingDelegatedAccess}
+                    onExit={() => {
+                        modal.onExit();
+                        setTmpOutgoingDelegatedAccess(null);
+                    }}
+                />
+            )}
+        </>
+    );
+};

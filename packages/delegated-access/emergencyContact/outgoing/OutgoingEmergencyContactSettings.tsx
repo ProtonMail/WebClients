@@ -1,0 +1,335 @@
+import { useEffect, useState } from 'react';
+
+import { c, msgid } from 'ttag';
+
+import { DateCountdown } from '@proton/account/delegatedAccess/emergencyContact/DateCountdown';
+import {
+    getFormattedAccessibleAtDate,
+    getFormattedTriggerDelay,
+} from '@proton/account/delegatedAccess/emergencyContact/date';
+import { ContactCell } from '@proton/account/delegatedAccess/shared/ContactCell';
+import {
+    type OutgoingDelegatedAccessProviderValue,
+    useOutgoingController,
+} from '@proton/account/delegatedAccess/shared/OutgoingDelegatedAccessProvider';
+import { getMetaOutgoingDelegatedAccess } from '@proton/account/delegatedAccess/shared/outgoing/helper';
+import type { MetaIncomingDelegatedAccess } from '@proton/account/delegatedAccess/shared/outgoing/interface';
+import { useConfig } from '@proton/app-context/useConfig';
+import { Banner } from '@proton/atoms/Banner/Banner';
+import { Button } from '@proton/atoms/Button/Button';
+import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
+import { Pill } from '@proton/atoms/Pill/Pill';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import PromotionButton from '@proton/components/components/button/PromotionButton/PromotionButton';
+import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
+import Info from '@proton/components/components/link/Info';
+import Loader from '@proton/components/components/loader/Loader';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
+import TableRow from '@proton/components/components/table/TableRow';
+import { LastChanged } from '@proton/components/containers/recovery/LastChanged';
+import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { IcCalendarGrid } from '@proton/icons/icons/IcCalendarGrid';
+import { IcHourglass } from '@proton/icons/icons/IcHourglass';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
+import { APPS, SECOND } from '@proton/shared/lib/constants';
+import isTruthy from '@proton/utils/isTruthy';
+
+import shieldPurple from '../../shared/shield-purple.svg';
+import OutgoingEmergencyContactBanners from './OutgoingEmergencyContactBanners';
+
+type ItemValue = OutgoingDelegatedAccessProviderValue['outgoingDelegatedAccess']['emergencyContacts']['items'][0];
+
+interface OutgoingItemProps {
+    labels: string[];
+    value: ItemValue;
+    notify: OutgoingDelegatedAccessProviderValue['notify'];
+    meta: MetaIncomingDelegatedAccess;
+}
+
+const OutgoingDelegatedAccessCell = ({
+    value: {
+        parsedOutgoingDelegatedAccess: { accessibleAtDate, isDisabled },
+    },
+    meta: { hasRequestedAccess, canRejectAccess },
+}: Pick<OutgoingItemProps, 'value' | 'meta'>) => {
+    if (isDisabled) {
+        return (
+            <Pill color="#5C5958" backgroundColor="#E5E4E1" rounded="rounded-sm" className="text-semibold">{c(
+                'emergency_access'
+            ).t`Disabled`}</Pill>
+        );
+    }
+
+    if (hasRequestedAccess) {
+        const formattedAccessibleAt = getFormattedAccessibleAtDate(accessibleAtDate);
+        const tooltip = formattedAccessibleAt
+            ? c('emergency_access').t`Access will be granted on ${formattedAccessibleAt}`
+            : undefined;
+        return (
+            <div className="flex items-center justify-start gap-1">
+                <Tooltip title={tooltip}>
+                    <Pill
+                        color="#5C3700"
+                        backgroundColor="#F5D4A2"
+                        rounded="rounded-sm"
+                        className="text-semibold mr-1 text-center"
+                    >{c('emergency_access').t`Requesting access`}</Pill>
+                </Tooltip>
+                {tooltip && accessibleAtDate !== null && (
+                    <span title={tooltip} className="inline-flex items-center">
+                        <IcHourglass className="color-weak shrink-0 mr-1" />
+                        <DateCountdown date={accessibleAtDate} />
+                    </span>
+                )}
+            </div>
+        );
+    }
+
+    if (canRejectAccess) {
+        const formattedAccessibleAt = getFormattedAccessibleAtDate(accessibleAtDate);
+        const aside = formattedAccessibleAt ? (
+            <span className="inline-flex items-center">
+                <IcCalendarGrid className="color-weak shrink-0 mr-1" />
+                {formattedAccessibleAt}
+            </span>
+        ) : undefined;
+        return (
+            <div className="flex items-center justify-start gap-1">
+                <Pill
+                    color="#164616"
+                    backgroundColor="#C9E9C9"
+                    rounded="rounded-sm"
+                    className="text-semibold mr-1 text-center"
+                >{c('emergency_access').t`Access granted`}</Pill>
+                {aside}
+            </div>
+        );
+    }
+};
+
+const OutgoingItem = ({
+    notify,
+    labels,
+    value,
+    value: {
+        parsedOutgoingDelegatedAccess: { contact, createdAtDate, accessibleTriggerDelayMs },
+        loading,
+    },
+    meta,
+    meta: { canReEnable, canGrantAccess, canRevokeAccess, canRefuseAccess, canDelete, canChangeWaitTime },
+}: OutgoingItemProps) => {
+    return (
+        <TableRow labels={labels}>
+            <TableCell>
+                <ContactCell {...contact} createdAtDate={createdAtDate} />
+            </TableCell>
+            <TableCell label={c('emergency_access').t`Wait time for access`}>
+                <div>{getFormattedTriggerDelay(accessibleTriggerDelayMs)}</div>
+            </TableCell>
+            <TableCell>
+                <OutgoingDelegatedAccessCell value={value} meta={meta} />
+            </TableCell>
+            <TableCell>
+                <div className="inline-flex">
+                    <DropdownActions
+                        list={[
+                            canReEnable && {
+                                text: c('emergency_access').t`Enable`,
+                                onClick: () => notify({ type: 'enable-emergency-contact', value }),
+                                loading: loading.enable,
+                            },
+                            canRevokeAccess && {
+                                text: c('emergency_access').t`Revoke access`,
+                                onClick: () => notify({ type: 'revoke-access', value }),
+                            },
+                            canRefuseAccess && {
+                                text: c('emergency_access').t`Refuse access`,
+                                onClick: () => notify({ type: 'refuse-access', value }),
+                            },
+                            canGrantAccess && {
+                                text: c('emergency_access').t`Give access now`,
+                                onClick: () => notify({ type: 'grant-access', value }),
+                            },
+                            canDelete && {
+                                text: c('Action').t`Remove`,
+                                onClick: () => notify({ type: 'delete-emergency-contact', value }),
+                            },
+                            canChangeWaitTime && {
+                                text: c('emergency_access').t`Change wait time`,
+                                onClick: () => notify({ type: 'change-wait-time', value }),
+                            },
+                        ].filter(isTruthy)}
+                        size="small"
+                    />
+                </div>
+            </TableCell>
+        </TableRow>
+    );
+};
+
+const OutgoingTable = ({ controller }: { controller: OutgoingDelegatedAccessProviderValue }) => {
+    const [, rerender] = useState<any>();
+
+    useEffect(() => {
+        // Rerender every 30 seconds so that we compute the remaining days based on `now` correctly
+        const handle = setInterval(() => rerender({}), 30 * SECOND);
+        return () => {
+            clearInterval(handle);
+        };
+    }, []);
+
+    const now = Date.now();
+
+    const headerCells = [
+        { title: c('Title').t`Name`, className: 'w-1/3' },
+        {
+            title: c('emergency_access').t`Wait time`,
+            info: c('emergency_access').t`Time required before automatically granting them access`,
+        },
+        { title: '' },
+        { title: '' },
+    ];
+
+    const labels = headerCells.map((column) => column.title);
+
+    return (
+        <Table
+            hasActions
+            responsive="stacked"
+            lastRowNoBorder
+            noInlinePadding
+            className="mb-0"
+            data-testid="outgoing-emergency-access-table"
+        >
+            <TableHeader>
+                <TableRow>
+                    {headerCells.map(({ title, info, className }) => (
+                        <TableHeaderCell key={title} className={className}>
+                            <div className="flex items-center flex-nowrap">
+                                {title}
+                                {info && (
+                                    <span className="ml-2 inline-flex">
+                                        <Info className="shrink-0" title={info} />
+                                    </span>
+                                )}
+                            </div>
+                        </TableHeaderCell>
+                    ))}
+                </TableRow>
+            </TableHeader>
+            <TableBody loading={controller.outgoingDelegatedAccess.loading} colSpan={5}>
+                {controller.outgoingDelegatedAccess.emergencyContacts.items.map((value) => {
+                    const meta = getMetaOutgoingDelegatedAccess({
+                        now,
+                        value,
+                        hasKeysToReactivate: controller.outgoingDelegatedAccess.hasKeysToReactivate,
+                    });
+                    return (
+                        <OutgoingItem
+                            key={value.outgoingDelegatedAccess.DelegatedAccessID}
+                            labels={labels}
+                            value={value}
+                            meta={meta}
+                            notify={controller.notify}
+                        />
+                    );
+                })}
+            </TableBody>
+        </Table>
+    );
+};
+
+export const OutgoingEmergencyContactSettings = () => {
+    const controller = useOutgoingController();
+    const { APP_NAME } = useConfig();
+
+    if (!controller.outgoingDelegatedAccess.isAvailable) {
+        return null;
+    }
+
+    const limit = controller.outgoingDelegatedAccess.emergencyContacts.limit;
+
+    if (controller.outgoingDelegatedAccess.loading) {
+        return <Loader />;
+    }
+
+    return (
+        <>
+            <OutgoingEmergencyContactBanners />
+            {controller.outgoingDelegatedAccess.emergencyContacts.hasAccess &&
+                !controller.outgoingDelegatedAccess.emergencyContacts.hasReachedLimit && (
+                    <div className="mb-2">
+                        <Button
+                            color="norm"
+                            className="inline-flex gap-2 items-center"
+                            onClick={() => {
+                                controller.notify({ type: 'add', value: 'emergency-contact' });
+                            }}
+                        >
+                            <IcPlus className="shrink-0" />
+                            {c('emergency_access').t`Add emergency contact`}
+                        </Button>
+                    </div>
+                )}
+
+            {controller.outgoingDelegatedAccess.emergencyContacts.hasUpsell &&
+                (APP_NAME === APPS.PROTONACCOUNTLITE ? (
+                    <div
+                        className="rounded-xl bg-elevated p-4 flex flex-row items-center flex-nowrap gap-4 text-left"
+                        style={{
+                            background:
+                                'linear-gradient(30.74deg, rgba(109, 74, 255, 0.15) 16.88%, rgba(70, 26, 255, 0.04) 79.59%)',
+                        }}
+                    >
+                        <img src={shieldPurple} alt="" width={35} height={40} />
+                        <div className="color-primary">
+                            {getBoldFormattedText(
+                                c('emergency_access')
+                                    .t`**Protect your legacy.** Upgrade your plan to add emergency contacts.`
+                            )}
+                        </div>
+                    </div>
+                ) : (
+                    <div>
+                        <PromotionButton
+                            iconComponent={IcUpgrade}
+                            onClick={() => {
+                                controller.notify({ type: 'upsell' });
+                            }}
+                        >{c('emergency_access').t`Add emergency contact`}</PromotionButton>
+                    </div>
+                ))}
+
+            {controller.outgoingDelegatedAccess.emergencyContacts.items.length > 0 && (
+                <DashboardCard>
+                    <DashboardCardContent>
+                        <h3 className="text-semibold text-rg mb-3">{c('emergency_access').t`People I trust`}</h3>
+                        <p className="mt-0 mb-4 color-weak">
+                            {c('emergency_access').t`They may ask to access your account in case of an emergency.`}
+                        </p>
+                        {controller.outgoingDelegatedAccess.emergencyContacts.hasReachedLimit && (
+                            <Banner variant="info">
+                                {c('emergency_access').ngettext(
+                                    msgid`You reached the maximum of ${limit} emergency contact.`,
+                                    `You reached the maximum of ${limit} emergency contacts.`,
+                                    limit
+                                )}
+                            </Banner>
+                        )}
+                        <OutgoingTable controller={controller} />
+                    </DashboardCardContent>
+                </DashboardCard>
+            )}
+            <LastChanged
+                className="block mt-2"
+                date={controller.outgoingDelegatedAccess.emergencyContacts.lastModifiedTime}
+                data-testid="account:recovery:emergency-contacts:last-changed-date"
+            />
+        </>
+    );
+};
