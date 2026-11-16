@@ -22,7 +22,7 @@ import { AuthType } from '../../../auth/interface';
 import { ClaimedAddressNoMatchError, loginWithClaimedAddress, loginWithPassword } from '../../../auth/passwordLogin';
 import { clearSSOPersistent, saveSSOPersistent } from '../../../ssoPersistedState';
 import type { SignInActorServices } from '../../../state-machine/signInActors';
-import { rethrowCredentialsError, rethrowSSOTokenError } from './credentialsErrors';
+import { rethrowCredentialsError, rethrowPasswordLoginError, rethrowSSOTokenError } from './credentialsErrors';
 
 /** What the username step (auto) and the SSO form submit: the server decides how the account signs in. */
 export interface UsernameFormValues {
@@ -134,7 +134,7 @@ export const createCredentialsActors = (services: SignInActorServices) => {
                     }
                     throw error;
                 })
-                .catch(rethrowCredentialsError);
+                .catch(rethrowPasswordLoginError);
             return {
                 authType: AuthType.Srp,
                 authResponse: result,

@@ -7,7 +7,13 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { ClaimedAddressNoMatchError, loginWithClaimedAddress, loginWithPassword } from '../../../auth/passwordLogin';
 import type { SignInActorServices } from '../../../state-machine/signInActors';
 import { createCredentialsActors } from './credentialsActors';
-import { InvalidLoginError, SSOSignInRejectedError, SwitchToSRPError, SwitchToSSOError } from './credentialsErrors';
+import {
+    InvalidLoginError,
+    InvalidUsernameError,
+    SSOSignInRejectedError,
+    SwitchToSRPError,
+    SwitchToSSOError,
+} from './credentialsErrors';
 
 jest.mock('../../../auth/passwordLogin', () => ({
     ...jest.requireActual('../../../auth/passwordLogin'),
@@ -262,6 +268,38 @@ describe('createCredentialsActors', () => {
             mockLoginWithPassword.mockRejectedValueOnce(invalidLogin);
 
             await expect(run()).rejects.toThrow(InvalidLoginError);
+        });
+
+        it('fails with a username the API cannot accept as its own error, with its message', async () => {
+            mockLoginWithPassword.mockRejectedValueOnce({
+                status: 422,
+                data: { Code: API_CUSTOM_ERROR_CODES.INVALID_VALUE, Error: 'Invalid username' },
+            });
+
+            const signIn = run();
+            await expect(signIn).rejects.toThrow(InvalidUsernameError);
+            await expect(signIn).rejects.toThrow('Invalid username');
+        });
+
+        it('fails with an account the API does not allow to sign in as a wrong password, with its message', async () => {
+            mockLoginWithPassword.mockRejectedValueOnce({
+                status: 422,
+                data: { Code: API_CUSTOM_ERROR_CODES.NOT_ALLOWED, Error: 'Account setup incomplete' },
+            });
+
+            await expect(run()).rejects.toEqual(
+                expect.objectContaining({ name: 'InvalidLoginError', message: 'Account setup incomplete' })
+            );
+        });
+
+        it('fails with its other invalid values as they are', async () => {
+            const invalidInput = {
+                status: 400,
+                data: { Code: API_CUSTOM_ERROR_CODES.INVALID_VALUE, Error: 'Invalid input' },
+            };
+            mockLoginWithPassword.mockRejectedValueOnce(invalidInput);
+
+            await expect(run()).rejects.toBe(invalidInput);
         });
 
         it('signs in again on the new session, with its own auth info, when the session expired under it', async () => {
