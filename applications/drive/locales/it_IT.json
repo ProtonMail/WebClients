@@ -4486,7 +4486,7 @@
         "Verifica della firma per ${ signatureType } fallita"
       ],
       "Signature verification for ${ signatureType } failed: ${ errorMessage }": [
-        "Verifica della firma per  ${ signatureType } non riuscita: ${ errorMessage }"
+        "Verifica della firma per ${ signatureType } non riuscita: ${ errorMessage }"
       ],
       "Some file data failed to upload. Please try again.": [
         "L'upload di alcuni file è fallito. Prova di nuovo."
@@ -8070,6 +8070,27 @@
       ],
       "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
         "L'importazione è in pausa perché è stato perso l'accesso all'account Google. Riconnettilo per trasferire i rimanenti file."
+      ],
+      "${ importedSize } imported": [
+        "${ importedSize } importati"
+      ],
+      "Import interrupted": [
+        "Importazione interrotta"
+      ],
+      "Import paused": [
+        "Importazione in pausa"
+      ],
+      "Importing from Google Drive…": [
+        "Importazione da Google Drive in corso..."
+      ],
+      "More storage needed": [
+        "Serve più spazio di archiviazione"
+      ],
+      "Reconnect Google Drive": [
+        "Riconnetti Google Drive"
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "È possibile aprire questa cartella al termine dell'importazione. Finora sono stati importati ${ importedSize }. Verrà inviata un'email al termine dell'operazione."
       ]
     },
     "info": {
@@ -14986,6 +15007,9 @@
       ],
       "Reconnect to finish your import": [
         "Riconnetti l'account per completare l'importazione"
+      ],
+      "Your import is in progress": [
+        "L'importazione è in corso"
       ]
     },
     "Today icon tooltip in mini calendar": {

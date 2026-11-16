@@ -7430,6 +7430,27 @@
       ],
       "Read this file": [
         "Leia este ficheiro"
+      ],
+      "${ importedSize } imported": [
+        "${ importedSize } importado"
+      ],
+      "Import interrupted": [
+        "Importação interrompida"
+      ],
+      "Import paused": [
+        "Importação pausada"
+      ],
+      "Importing from Google Drive…": [
+        "A importar de Google Drive…"
+      ],
+      "More storage needed": [
+        "É necessário mais armazenamento"
+      ],
+      "Reconnect Google Drive": [
+        "Religar Google Drive"
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "Pode abrir esta pasta quando a importação tiver terminada. Até agora, nós importamos ${ importedSize }. Nós iremos envia-lhe uma mensagem quando esta tiver terminado."
       ]
     },
     "info": {
@@ -13903,6 +13924,9 @@
       ],
       "Preparing your import": [
         "A preparar a sua importação"
+      ],
+      "Your import is in progress": [
+        "A sua importação está em progresso"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15041,6 +15065,11 @@
     "collider_2025: Error": {
       "This conversation is too long to continue. Start a new chat to keep ${ LUMO_SHORT_APP_NAME } purring and responsive.": [
         "Esta conversa é demasiado longa para continuar. Inicie uma nova conversa para manter o ${ LUMO_SHORT_APP_NAME } a funcionar na perfeição e de forma responsiva."
+      ]
+    },
+    "Payment Method": {
+      "Bank Account": [
+        "Conta Bancária"
       ]
     }
   }

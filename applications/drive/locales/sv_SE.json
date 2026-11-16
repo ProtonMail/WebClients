@@ -453,7 +453,7 @@
         "aktivera aviseringar för stationär dator"
       ],
       "Enable drive search": [
-        "Aktivera enhets-sökning"
+        "Aktivera sökning i Drive"
       ],
       "Encrypted": [
         "Krypterad"
@@ -1404,6 +1404,12 @@
       ],
       "Special Offer": [
         "Specialerbjudande"
+      ],
+      "Cancel trial": [
+        "Avbryt provperioden"
+      ],
+      "Detach": [
+        "Koppla från"
       ]
     },
     "Action: Docs": {
@@ -1521,6 +1527,9 @@
       "${ quantity } custom domain": [
         "${ quantity } anpassad domän",
         "${ quantity } anpassade domäner"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Visar sätt att få hjälp med verifiering"
       ]
     },
     "Alert": {
@@ -4282,7 +4291,7 @@
         "Ingen drive hittades att importera"
       ],
       "Something went wrong during folder listing": [
-        "Något gick fel när mappen skulle listas"
+        "Någonting gick fel vid listning av mappar"
       ],
       "We couldn’t send a verification code using this method.": [
         "Vi kunde inte skicka en verifieringskod med den här metoden."
@@ -4530,6 +4539,18 @@
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Fel återställningsfras. Försök igen eller använd en annan återställningsmetod."
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Misslyckades avkryptera bokmärksnamn: ${ message }"
+      ],
+      "Move operation aborted": [
+        "Flyttningsåtgärd avbröts"
+      ],
+      "Not enough browser storage": [
+        "Inte nog med webbläsarutrymme"
+      ],
+      "This file has missing crypto material": [
+        "Den här filen har saknat kryptomaterial"
       ]
     },
     "error": {
@@ -7760,7 +7781,7 @@
         "Du är för närvarande inloggad som ${ username } för (${ organizationName }."
       ],
       "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
-        "${ BRAND_NAME } Workspace ger ditt team möjlighet att samarbeta effektivt utan att någonsin riskera ditt företags data."
+        "${ BRAND_NAME } Workspace bemyndigar ditt team att samarbeta effektivt utan att någonsin riskera ditt företags data."
       ],
       "${ DRIVE_APP_NAME } detected that the local search index is corrupted and can no longer be used. Rebuild the index to restore search.": [
         "${ DRIVE_APP_NAME } upptäckte att det lokala sökindexet är skadat och inte längre kan användas. Bygg om indexet för att återställa sökfunktionen."
@@ -7781,7 +7802,7 @@
         "Indexeringen stötte på ett oväntat tillstånd och kan inte fortsätta. Bygg om indexet för att återställa."
       ],
       "No populator states found.": [
-        "Inga populator-tillstånd hittades."
+        "Inga befolkningstillstånd hittade."
       ],
       "One encrypted suite. Full business protection.": [
         "En krypterad svit. Fullt företagsskydd."
@@ -7945,6 +7966,57 @@
       ],
       "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
         "Din import är pausad eftersom vi förlorade åtkomst till ditt Google-konto. Anslut igen för att överföra resten av dina filer."
+      ],
+      "${ importedSize } imported": [
+        "${ importedSize } importerades"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatterna beräknas utifrån ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
+      ],
+      "Drag your files and folders here or use the \"New\" button to upload": [
+        "Dra och släpp dina filer och mappar här eller klicka på den \"Nya\" knappen för att ladda upp"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Om du har förlorat tillgången till din auteniseringsapp, kan du använda 1 av16 återställningskoder som tillhandahölls när du konfigurerade  tvåfaktorssautenisering. ${ learnMoreLink }"
+      ],
+      "Import interrupted": [
+        "Import avbröts"
+      ],
+      "Import paused": [
+        "Import pausad"
+      ],
+      "Importing from Google Drive…": [
+        "Importerar från Google Drive"
+      ],
+      "Know when it's done": [
+        "Vet när det är klart"
+      ],
+      "More storage needed": [
+        "Mer lagringsutrymme behövs"
+      ],
+      "Reconnect Google Drive": [
+        "Återkoppla Google Drive"
+      ],
+      "Some older files aren't indexed because your Drive is too large to index fully.": [
+        "Några gamla filer indexeras inte eftersom din Drive är för full för att indexera helt."
+      ],
+      "We'll email you when your import is complete.": [
+        "Vi skickar e-post till dig när importen är klar."
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "Du kan öppna den här mappen är importen är klar. Hittills har vi importerat ${ importedSize }.  Vi skickar e-post till dig när det är klart."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en öppen faktura ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en öppen faktura på ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing your access to viewer. The owner or an editor with sharing access can restore your edit access. You can’t undo this change yourself.": [
+        "Du kommer inte att kunna dela \"${ fileName }\" efter att din åtkomst har ändrats till visningsbehörighet. Ägaren eller en redigerare med behörighet kan återställa ditt redigeringsbehörighet. Du kan inte ångra den här ändringen på egen hand."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Dina filer har framgångsrikt blivit importerade och krypterade från Google Drive till ${ DRIVE_APP_NAME }."
       ]
     },
     "info": {
@@ -9041,6 +9113,9 @@
       ],
       "Customer Support": [
         "Kundtjänst"
+      ],
+      "Pay it": [
+        "Betala den"
       ]
     },
     "List title": {
@@ -11024,6 +11099,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Obegränsat antal alias för att skydda din identitet"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me e-postadress"
       ]
     },
     "Onboarding": {
@@ -11592,6 +11670,21 @@
       ],
       "This subscription can’t be completed right now. Please try again.": [
         "Denna prenumeration kan inte slutföras just nu. Försök igen."
+      ],
+      "An organization is required for this plan.": [
+        "En organisation krävs för den här planen."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Den valda prenumerationen erbjuder inte nog med domäner för ditt konto."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Den valda prenumerationen erbjuder inte nog lagringsutrymme för ditt konto."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Testprenumerationer har inte stöd för ${ LUMO_SHORT_APP_NAME } användarplatser."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Testabonnemang stöder inte Scribe-licenser"
       ]
     },
     "Payments.Error": {
@@ -14707,7 +14800,7 @@
         "Ändra behörighet till visare?"
       ],
       "Index populators": [
-        "Index-populatorer"
+        "Befolkningsindex"
       ],
       "Users and addresses": [
         "Användare och adresser"
@@ -14789,6 +14882,9 @@
       ],
       "Reconnect to finish your import": [
         "Anslut igen för att slutföra din import"
+      ],
+      "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
+        "För dina Google Drive filer till ${ DRIVE_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15403,6 +15499,9 @@
     "user_modal": {
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du kommer att kunna tilldela roller när användaren har accepterat inbjudan."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Du kan inte ändra dina egna roller. Be en annan administratör att ändra dem."
       ]
     },
     "Role": {
@@ -15459,6 +15558,9 @@
       ],
       "hash key": [
         "hash-nyckel"
+      ],
+      "content key": [
+        "innehållsnyckel"
       ]
     },
     "Filter": {
@@ -15719,6 +15821,11 @@
     "Payment Method": {
       "Bank Account": [
         "Bankkonto"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Genom att bekräfta, ger du ${ BRAND_NAME } och Stripe, vår betalningstjänsteleverantör, tillstånd att dra framtida betalningar för din prenumeration från detta bankkontot via SEPA-autogiro, och din bank tillstånd att genomföra dessa dragningar. Din första betalning sker nu via ${ IDEAL_WERO_BRAND_NAME }. Din prenumeration förnyas automatiskt, tills du säger upp den; vi meddelar dig inför varje dragning. Vid betalningar via autogiro kan du i enlighet med villkoren i ditt avtal med banken begära återbetalning från din bank inom 8 veckor från dragningsdatumet. Detta gäller inte den betalning via ${ IDEAL_WERO_BRAND_NAME } som du genomför nu."
       ]
     }
   }

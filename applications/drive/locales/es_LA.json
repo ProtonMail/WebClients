@@ -8177,6 +8177,27 @@
       ],
       "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
         "La importación se pausó porque se perdió el acceso a su cuenta de Google. Vuelva a conectarla para importar el resto de sus archivos."
+      ],
+      "${ importedSize } imported": [
+        "${ importedSize } importado"
+      ],
+      "Import interrupted": [
+        "Importación interrumpida"
+      ],
+      "Import paused": [
+        "importación en pausa"
+      ],
+      "Importing from Google Drive…": [
+        "Importando desde Google Drive…"
+      ],
+      "More storage needed": [
+        "Se necesita más almacenamiento"
+      ],
+      "Reconnect Google Drive": [
+        "Volver a conectar Google Drive"
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "Esta carpeta podrá abrirse cuando la importación haya terminado. De momento, se ha importado ${ importedSize }. Un correo será enviado al finalizar."
       ]
     },
     "info": {
@@ -15107,7 +15128,7 @@
         "¡Su importación finalizó!"
       ],
       "Your import is in progress": [
-        "Su importación está en progreso"
+        "Importación en proceso"
       ],
       "Your import is starting": [
         "La importación está empezando"

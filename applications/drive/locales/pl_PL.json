@@ -7599,6 +7599,27 @@
       ],
       "We'll get back to you shortly.": [
         "Skontaktujemy się z Tobą wkrótce."
+      ],
+      "${ importedSize } imported": [
+        "Zaimportowano: ${ importedSize }"
+      ],
+      "Import interrupted": [
+        "Importowanie zostało przerwane"
+      ],
+      "Import paused": [
+        "Wstrzymano importowanie"
+      ],
+      "Importing from Google Drive…": [
+        "Trwa importowanie z Dysku Google…"
+      ],
+      "More storage needed": [
+        "Potrzeba więcej przestrzeni dyskowej"
+      ],
+      "Reconnect Google Drive": [
+        "Ponownie połącz Dysk Google"
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "Ten folder będzie można otworzyć po ukończeniu importowania. Na ten moment zaimportowano ${ importedSize }. Wyślemy ci email, gdy proces dobiegnie końca."
       ]
     },
     "info": {
@@ -14445,6 +14466,9 @@
       ],
       "Welcome to ${ DRIVE_APP_NAME }": [
         "Witaj w ${ DRIVE_APP_NAME }"
+      ],
+      "Your import is in progress": [
+        "Trwa importowanie"
       ]
     },
     "Today icon tooltip in mini calendar": {

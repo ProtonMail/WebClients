@@ -8356,6 +8356,27 @@
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Скідкі разлічваюцца на падставе стандартнай платы за месяц. Ваша падпіска будзе аўтаматычна падаўжацца па стандартнай гадавой стаўцы пасля заканчэння перыяду аплаты."
+      ],
+      "${ claimedAuthor } (unverified sender)": [
+        "${ claimedAuthor } (неправераны адпраўнік)"
+      ],
+      "${ importedSize } imported": [
+        "${ importedSize } імпартавана"
+      ],
+      "Import interrupted": [
+        "Імпарт перарваны"
+      ],
+      "Import paused": [
+        "Імпарт прыпынены"
+      ],
+      "Importing from Google Drive…": [
+        "Імпартаванне з Google Drive"
+      ],
+      "More storage needed": [
+        "Патрабуецца больш сховішча"
+      ],
+      "Reconnect Google Drive": [
+        "Перападключэнне Google Drive"
       ]
     },
     "info": {
@@ -10894,7 +10915,7 @@
         "Выкарыстоўвайце свой уласны карыстальніцкі дамен электроннай пошты. Напрыклад, you@yourname.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Мы не пакідаем журналы выкарыстання сеансаў з вашымі дзеяннямі ў інтэрнэце, а таксама нас не цікавяць метадыныя, якія могуць скампраметаваць вашу прыватнасць"
+        "У нашым сэрвісе адсутнічаюць журналы выкарыстання сеансаў з вашымі дзеяннямі ў інтэрнэце, а таксама нас не цікавяць метадыныя, якія могуць скампраметаваць вашу прыватнасць"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Мы лічым сваім абавязкова дапамагаць кліентам у адпаведнасці з прававымі нормамі HIPAA/HITECH у дачыненні абароненай інфармацыі аб здароўі (PHI). Падпісаныя пагадненні аб дзелавым партнёрстве даступны для ўсіх кліентаў ${ BRAND_NAME } у сферы бізнесу."
@@ -12260,6 +12281,9 @@
       ],
       "The Born Private initiative requires a donation.": [
         "Ініцыятыва Born Private патрабуе ахвяравання."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "У вас занадта стары ўліковы запіс для ініцыятывы Born Private."
       ]
     },
     "Payments.Error": {
@@ -15484,6 +15508,12 @@
       ],
       "Bring your Google Drive files to ${ DRIVE_APP_NAME }": [
         "Перанясіце свае файлы з Google Drive у ${ DRIVE_APP_NAME }"
+      ],
+      "Reconnect to finish your import": [
+        "Перападключыцца, каб завяршыць імпарт"
+      ],
+      "Your import is in progress": [
+        "Адбываецца імпартаванне"
       ]
     },
     "Today icon tooltip in mini calendar": {

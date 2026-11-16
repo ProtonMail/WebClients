@@ -3316,7 +3316,7 @@
         "Desbloquegeu 15 GB d'emmagatzematge per només ${ config.offerPrice }."
       ],
       "We will pause imports at 80% storage to reserve space for new messages.": [
-        "Aturarem les importacions al 80% de l'emmagatzematge per reservar espai per missatges nous."
+        "Posarem en pausa les importacions al 80% de l'emmagatzematge a fi de reservar espai per a missatges nous."
       ],
       "We've started importing your emails from Gmail. We'll let you know when it's done.": [
         "Hem començat a importar els vostres correus electrònics des de Gmail. Us avisarem quan hagi acabat."
@@ -6980,7 +6980,7 @@
         "Fi de la subscripció: reactiveu-la abans del ${ byDate } per a mantenir els vostres beneficis de ${ planName }. ${ reactivateLink }"
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
-        "La vostra subscripció és a punt de finalitzar: per mantenir els avantatges del pla ${ planName }, reinicieu-la a Apple App Store abans del ${ byDate }. ${ reactivateLink }"
+        "La vostra subscripció està a punt de finalitzar. Per a mantenir els avantatges de ${ planName }, reinicieu-la a Apple App Store abans del ${ byDate }. ${ reactivateLink }"
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "La vostra subscripció és a punt de finalitzar: per mantenir els avantatges del pla ${ planName }, reinicieu-la a Google Play Store abans del ${ byDate }. ${ reactivateLink }"
@@ -7536,7 +7536,7 @@
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "El vostre compte està configurat actualment per aplicar el règim de facturació inversa. Això no és compatible amb el pla seleccionat. Per continuar, o bé elimineu el número d'IVA de l'adreça de facturació o bé seleccioneu un pla diferent."
+        "El vostre compte està configurat actualment per a aplicar el règim de facturació inversa. Això no és compatible amb el pla seleccionat. Per a continuar, o bé elimineu el número d'IVA de l'adreça de facturació o bé seleccioneu un pla diferent."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "El vostre navegador actual no permet la descàrrega de múltiples fitxers o molt grans. Baixeu l'aplicació d'escriptori per poder-ho fer."
@@ -7648,7 +7648,7 @@
         "per ${ price }"
       ],
       "Everything in ${ planOrAppName }, plus:": [
-        "Tot el que inclou ${ planOrAppName }, i a més:"
+        "Tot el que inclou ${ planOrAppName } i, a més:"
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Afig ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
@@ -7760,7 +7760,7 @@
         "El navegador s'ha quedat sense espai mentre s'indexaven els fitxers per a la cerca. Allibereu espai d'emmagatzematge i després reconstruïu l'índex."
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
-        "${ VPN_SHORT_APP_NAME } amaga el vostre trànsit. ${ PASS_SHORT_APP_NAME } amaga la vostra identitat— àlies de **hide-my-email** il·limitats i **alertes de la web fosca** si les vostres dades es filtren."
+        "${ VPN_SHORT_APP_NAME } amaga el trànsit. ${ PASS_SHORT_APP_NAME } amaga la identitat — àlies de **hide-my-email** il·limitats i **alertes del web fosc** si les vostres dades es filtren."
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
         "Afegeix ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
@@ -7797,7 +7797,7 @@
         "Milloreu el pla en qualsevol moment per portar la resta"
       ],
       "Upgrade or clear space anytime to bring over the rest": [
-        "Milloreu de pla o allibereu espai en qualsevol moment per portar la resta"
+        "Milloreu el pla o allibereu espai en qualsevol moment per a portar la resta"
       ],
       "${ BRAND_NAME } Workspace empowers your team to collaborate efficiently without ever putting your company's data at risk.": [
         "${ BRAND_NAME } Workspace capacita el vostre equip per a col·laborar de manera eficient sense posar mai en risc les dades de l'empresa."
@@ -8189,6 +8189,27 @@
       ],
       "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
         "La importació s'ha pausat perquè hem perdut l'accés al vostre compte de Google. Torneu-vos a connectar per transferir la resta de fitxers."
+      ],
+      "${ importedSize } imported": [
+        "S'han importat ${ importedSize }"
+      ],
+      "Import interrupted": [
+        "S'ha interromput la importació"
+      ],
+      "Import paused": [
+        "S'ha pausat la importació"
+      ],
+      "Importing from Google Drive…": [
+        "S'està important des de Google Drive…"
+      ],
+      "More storage needed": [
+        "Cal més espai d'emmagatzematge"
+      ],
+      "Reconnect Google Drive": [
+        "Torneu a connectar Google Drive"
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "Podreu obrir aquesta carpeta quan s'acabi la importació. Fins ara, s'han importat ${ importedSize }. Us enviarem un correu electrònic quan s'hagi completat."
       ]
     },
     "info": {
@@ -8282,7 +8303,7 @@
         "Signant actiu"
       ],
       "Fallback": [
-        "Recursos alternatius"
+        "Alternativa"
       ]
     },
     "Label": {
@@ -8317,7 +8338,7 @@
         "Accés"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
-        "Accediu a ${ PASS_APP_NAME } de manera segura des del terminal, és ideal per scripts, automatització i fluxos de treball de desenvolupament."
+        "Accediu a ${ PASS_APP_NAME } de manera segura des del terminal. És ideal per a scripts, automatització i fluxos de treball de desenvolupament."
       ],
       "Account holder": [
         "Titular del compte"
@@ -10104,7 +10125,7 @@
         "Correus protegits amb contrasenya"
       ],
       "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
-        "Suport telefònic (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ usuaris)"
+        "Suport telefònic (almenys ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } usuaris)"
       ],
       "Priority email support": [
         "Suport prioritari per correu electrònic"
@@ -11826,7 +11847,7 @@
         "La vostra subscripció ja té un descompte aplicat. Canviar a aquesta nova promoció implica que el descompte actual ja no s'aplicarà."
       ],
       "Edit billing address": [
-        "Editar l'adreça de facturació"
+        "Edita l'adreça de facturació"
       ],
       "Pay with ${ IDEAL_BRAND_NAME }": [
         "Pagueu amb ${ IDEAL_BRAND_NAME }"

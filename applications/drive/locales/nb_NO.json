@@ -5007,6 +5007,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Denne nettleseren støtter ikke sikkerhetsnøkler. Prøv en annen nettleser."
       ]
     },
     "fido2: Info": {
@@ -8138,6 +8141,33 @@
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Rabatter er basert på standard månedspris. Abonnementet ditt fornyes til standard årspris når faktureringssyklusen utløper."
+      ],
+      "${ importedSize } imported": [
+        "${ importedSize } importert"
+      ],
+      "Import interrupted": [
+        "Import avbrutt"
+      ],
+      "Import paused": [
+        "Import satt på vent"
+      ],
+      "Importing from Google Drive…": [
+        "Importerer fra Google Disk…"
+      ],
+      "More storage needed": [
+        "Mer lagring nødvendig"
+      ],
+      "Reconnect Google Drive": [
+        "Koble til Google Disk på nytt"
+      ],
+      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
+        "Du kan også avbryte importen i ${ easySwitchSettingsLink }."
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "Du kan åpne denne mappen når importen er fullført. Så langt har vi importert ${ importedSize }. Vi sender deg en e-post når det er ferdig."
+      ],
+      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
+        "Importen er satt på pause fordi vi mistet tilgangen til Google-kontoen din. Koble til på nytt for å hente resten av filene."
       ]
     },
     "info": {
@@ -15060,6 +15090,12 @@
       ],
       "Preparing your import": [
         "Forbereder importen"
+      ],
+      "Reconnect to finish your import": [
+        "Koble til på nytt for å fullføre importen din"
+      ],
+      "Your import is in progress": [
+        "Importen pågår"
       ]
     },
     "Today icon tooltip in mini calendar": {

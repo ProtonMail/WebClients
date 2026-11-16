@@ -5100,6 +5100,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Skúste to znova, prosím."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Tento prehliadač nepodporuje bezpečnostné kľúče. Skúste použiť iný prehliadač, prosím."
       ]
     },
     "fido2: Info": {
@@ -8410,6 +8413,33 @@
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Zľavy sa vzťahujú na štandardné mesačné ceny. Vaše predplatné sa po skončení fakturačného cyklu obnoví za štandardnú ročnú sadzbu."
+      ],
+      "${ importedSize } imported": [
+        "${ importedSize } importovaných"
+      ],
+      "Import interrupted": [
+        "Import prerušený"
+      ],
+      "Import paused": [
+        "Import pozastavený"
+      ],
+      "Importing from Google Drive…": [
+        "Import z Google Drive…"
+      ],
+      "More storage needed": [
+        "Je potrebný väčší úložný priestor"
+      ],
+      "Reconnect Google Drive": [
+        "Znovu pripojiť Google Drive"
+      ],
+      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
+        "Import môžete zrušiť aj v ${ easySwitchSettingsLink }."
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "Tento priečinok si môžete otvoriť po dokončení importu. Zatiaľ sme importovali ${ importedSize }. Akonáhle bude import hotový, pošleme vám email."
+      ],
+      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
+        "Import je pozastavený, pretože sme stratili prístup k vášmu účtu Google. Znovu sa prihláste, aby ste mohli preniesť zvyšné súbory."
       ]
     },
     "info": {
@@ -15505,6 +15535,9 @@
       ],
       "Subscribe to ${ planTitle }": [
         "Odoberať ${ planTitle }"
+      ],
+      "Reconnect to finish your import": [
+        "Znovu sa pripojte, aby ste dokončili import"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -7987,7 +7987,7 @@
         "1 dispositivo por usuário"
       ],
       "1 vault per user": [
-        "1 cofres por usuário"
+        "1 cofre por usuário"
       ],
       "You have an open invoice ${ payInvoiceLink }": [
         "Você tem uma fatura em aberta ${ payInvoiceLink }"
@@ -8108,6 +8108,27 @@
       ],
       "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
         "Sua importação foi pausada porque perdemos o acesso à sua conta do Google. Reconecte-se para importar o restante dos seus arquivos."
+      ],
+      "${ importedSize } imported": [
+        "${ importedSize } importado"
+      ],
+      "Import interrupted": [
+        "Importação interrompida"
+      ],
+      "Import paused": [
+        "Iportação pausada"
+      ],
+      "Importing from Google Drive…": [
+        "Importando do Google Drive…"
+      ],
+      "More storage needed": [
+        "Mais armazenamento necessário"
+      ],
+      "Reconnect Google Drive": [
+        "Reconectar Google Drive"
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "Você pode abrir esta pasta quando a importação for concluída. Até agora, importamos ${ importedSize }. Enviaremos um e-mail para você quando estiver pronto."
       ]
     },
     "info": {
@@ -15682,7 +15703,7 @@
         "Faça upgrade para um plano suportado para usar funções de administrador."
       ],
       "You can't change your own roles. Ask another admin to change them.": [
-        "Você não pode mudar seus próprios papéis. Peça a outro administrador para alterá-los."
+        "Você não pode alterar seus próprios papéis. Peça a outro administrador que os altere."
       ],
       "This user gets administrator rights the next time they sign in.": [
         "Este usuário receberá direitos de administrador na próxima vez que entrar."

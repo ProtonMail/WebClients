@@ -714,7 +714,7 @@
         "Déplacer dans la corbeille"
       ],
       "Name your album": [
-        "Attribuez un nom à l'album"
+        "Attribuez un nom à votre album"
       ],
       "New": [
         "Nouveau"
@@ -921,7 +921,7 @@
         "Réessayer les éléments qui n'ont pas abouti."
       ],
       "Run diagnostics": [
-        "Exécuter des diagnostics"
+        "Lancer les diagnostics"
       ],
       "Save": [
         "Enregistrer"
@@ -3999,7 +3999,7 @@
         "La requête a expiré."
       ],
       "Search failed": [
-        "La recherche n'a pas abouti."
+        "La recherche a échoué"
       ],
       "Signature not verified": [
         "La signature n'est pas vérifiée."
@@ -4645,7 +4645,7 @@
         "L'application n'est pas disponible actuellement."
       ],
       "Brace yourself till we get the error fixed.": [
-        "Nous vous invitons à patienter jusqu'à ce que nous corrigions l'erreur."
+        "Merci de patienter jusqu'à ce que nous corrigions l'erreur."
       ],
       "Error: ${ errorMessage }": [
         "Erreur : ${ errorMessage }"
@@ -6173,7 +6173,7 @@
         "Téléchargez l'application pour sauvegarder vos photos depuis votre téléphone ou importez-les ici."
       ],
       "Get the desktop app to sync files from your computer.": [
-        "Utilisez l'application de bureau pour synchroniser les fichiers de votre ordinateur."
+        "Téléchargez l'application de bureau pour synchroniser les fichiers de votre ordinateur."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 3 GB storage bonus! Take action today.": [
         "Découvrez ${ DRIVE_APP_NAME } et gagnez votre bonus de 3 Go d'espace de stockage !"
@@ -7084,7 +7084,7 @@
         "Corbeille"
       ],
       "Trash is empty": [
-        "Le dossier Corbeille est vide."
+        "La corbeille est vide"
       ],
       "Try ${ DRIVE_APP_NAME }: Free forever": [
         "Essayez ${ DRIVE_APP_NAME } : gratuit pour toujours"
@@ -7258,7 +7258,7 @@
         "Qui a accès"
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
-        "sera restauré dans sa version datée du ${ formattedRevisionDate }. Toutes les autres versions seront conservées."
+        "sera restauré dans sa version du ${ formattedRevisionDate }. Toutes les autres versions seront conservées."
       ],
       "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
         "Grâce à ${ DRIVE_APP_NAME }, vos données sont protégées par le chiffrement de bout en bout."
@@ -7801,7 +7801,7 @@
         "Assistant d'écriture ${ LUMO_SHORT_APP_NAME }"
       ],
       "To enable search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally, and we'll let you know when indexing is done. If you leave this page, indexing will pause and resume when you come back.": [
-        "Pour activer la recherche, nous devons indexer vos fichiers localement. Vous pouvez continuer à utiliser ${ DRIVE_APP_NAME } normalement, nous vous informerons lorsque l’indexation sera terminée. Si vous quittez cette page, l’indexation sera mise en pause et reprendra lorsque vous reviendrez."
+        "Pour activer la recherche, nous devons indexer vos fichiers localement. Vous pouvez continuer à utiliser ${ DRIVE_APP_NAME } normalement, nous vous informerons lorsque l’indexation sera terminée. Si vous quittez cette page, l’indexation sera mise en pause et reprendra lorsque vous y reviendrez."
       ],
       "Thinking about this": [
         "Réflexion en cours..."
@@ -8049,6 +8049,27 @@
       ],
       "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
         "Votre import est suspendu car nous n'avons plus accès à votre compte Google. Reconnectez-vous pour importer le reste de vos fichiers."
+      ],
+      "${ importedSize } imported": [
+        "${ importedSize } importé"
+      ],
+      "Import interrupted": [
+        "L'import a été interrompu."
+      ],
+      "Import paused": [
+        "L'import a été mis en pause."
+      ],
+      "Importing from Google Drive…": [
+        "Importation en cours depuis Google Drive…"
+      ],
+      "More storage needed": [
+        "Plus d'espace de stockage nécessaire"
+      ],
+      "Reconnect Google Drive": [
+        "Reconnecter Google Drive"
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "Vous pourrez ouvrir ce dossier une fois l'import terminé. Pour le moment, ${ importedSize } fichiers ont été importés. Vous recevrez un e-mail une fois l'opération finalisée."
       ]
     },
     "info": {
@@ -8841,7 +8862,7 @@
         "Recherchable"
       ],
       "User opted in": [
-        "L'utilisateur a accepté"
+        "L'utilisateur a donné son accord"
       ],
       "Visible columns:": [
         "Colonnes visibles :"
@@ -8925,7 +8946,7 @@
         "Très insatisfaisant"
       ],
       "Indexing": [
-        "Indexation en cours"
+        "Indexation"
       ],
       "Exact host matching": [
         "Correspondance exacte de l'hôte"
@@ -10983,8 +11004,8 @@
         "${ addedUids.length } photos ont été ajoutées à « ${ albumName } »."
       ],
       "${ removed } photo have been removed from \"${ albumName }\"": [
-        "${ removed } photo a été retirée de « ${ albumName } ».",
-        "${ removed } photos ont étés retirés de « ${ albumName } »."
+        "${ removed } photo a été supprimée de \"${ albumName }\"",
+        "${ removed } photos ont été supprimées de \"${ albumName }\""
       ],
       "Failed to load sharing details": [
         "Les informations du partage n'ont pas pu être chargés"
@@ -11256,7 +11277,7 @@
         "Patientez un instant."
       ],
       "Invitation accepted": [
-        "L'invitation a été acceptée."
+        "Invitation acceptée"
       ],
       "Invitation received": [
         "L'invitation a été reçue."
@@ -11792,6 +11813,9 @@
       ],
       "This subscription can’t be completed right now. Please try again.": [
         "La souscription ne peut aboutir pour le moment. Merci de réessayer ultérieurement."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Cet abonnement ne comprend pas de support pour les fonctionnalités gérées sur votre compte."
       ]
     },
     "Payments.Error": {
@@ -13643,7 +13667,7 @@
         "Créez des identifiants de connexion sécurisés sur tous vos appareils. Profitez d'un nombre illimité d'alias, de 20 coffres-forts, de l'authentification à deux facteurs (A2F) intégrée, du remplissage automatique des cartes de paiement et de bien d'autres fonctionnalités."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Comprend 2 950 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
+        "L'abonnement inclut 2 950 serveurs basés dans plus de 65 pays, la possibilité de connecter votre compte à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
@@ -14826,7 +14850,7 @@
         "Vous avez 5 Go d'espace de stockage."
       ],
       "Change access to viewer?": [
-        "Modifier les droits d'accès en lecture seule ?"
+        "Passer les droits d'accès en lecture seule ?"
       ],
       "Remove your access?": [
         "Retirer votre accès ?"
@@ -15003,7 +15027,7 @@
         "S’abonner à ${ planTitle }"
       ],
       "Reconnect to finish your import": [
-        "Reconnectez-vous pour terminer votre import"
+        "Reconnectez-vous pour terminer l'import"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15401,7 +15425,7 @@
         "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
       ],
       "This browser doesn't support security keys. Please try a different browser.": [
-        "Ce navigateur ne prend pas en charge les clés de sécurité. Veuillez essayer un autre navigateur."
+        "Ce navigateur ne prend pas en charge les clés de sécurité. Veuillez réessayer sur un autre navigateur."
       ]
     },
     "BOSS": {

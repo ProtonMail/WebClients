@@ -8313,6 +8313,27 @@
       ],
       "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
         "Importarea este întreruptă deoarece s-a pierdut accesul la contul Google. Reconectași-vă pentru a transfera și restul fișierelor."
+      ],
+      "${ importedSize } imported": [
+        "Importate: ${ importedSize }"
+      ],
+      "Import interrupted": [
+        "Importare întreruptă."
+      ],
+      "Import paused": [
+        "Importare suspendată."
+      ],
+      "Importing from Google Drive…": [
+        "Se importă din Google Drive…"
+      ],
+      "More storage needed": [
+        "Este necesar mai mult spațiu de stocare."
+      ],
+      "Reconnect Google Drive": [
+        "Reconectare Google Drive."
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "Puteți deschide acest folder după finalizarea importării. Până acum, s-a importat ${ importedSize }. Veți primi un e-mail când procesul va fi încheiat."
       ]
     },
     "info": {
@@ -15328,7 +15349,7 @@
         "Importarea s-a finalizat!"
       ],
       "Your import is in progress": [
-        "Importarea este în desfășurare"
+        "Importarea este în desfășurare."
       ],
       "Welcome to ${ DRIVE_APP_NAME }": [
         "Bun venit la ${ DRIVE_APP_NAME }"

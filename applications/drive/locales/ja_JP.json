@@ -7760,6 +7760,33 @@
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "割引は通常の月払い料金を基準としています。請求サイクルが終了すると、サブスクリプションは通常の年額料金で更新されます。"
+      ],
+      "${ importedSize } imported": [
+        "${ importedSize } をインポート済み"
+      ],
+      "Import interrupted": [
+        "インポートが中断されました"
+      ],
+      "Import paused": [
+        "インポートが一時停止されました"
+      ],
+      "Importing from Google Drive…": [
+        "Google Drive からインポート中…"
+      ],
+      "More storage needed": [
+        "追加のストレージが必要です"
+      ],
+      "Reconnect Google Drive": [
+        "Google Drive に再接続"
+      ],
+      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
+        "${ easySwitchSettingsLink } からインポートをキャンセルすることもできます。"
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "インポートが完了すると、このフォルダーを開くことができます。現在までに${ importedSize } をインポートしました。完了したらメールでお知らせします。"
+      ],
+      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
+        "Googleアカウントへのアクセスが失われたためインポートを一時停止しました。残りのファイルを取り込むには再接続してください。"
       ]
     },
     "info": {
@@ -14417,6 +14444,12 @@
       ],
       "Subscribe to ${ planTitle }": [
         "${ planTitle } を登録"
+      ],
+      "Reconnect to finish your import": [
+        "再接続してインポートを完了してください"
+      ],
+      "Your import is in progress": [
+        "インポートを実行中です"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14738,6 +14771,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "セキュリティキーの認証に失敗しました。もう一度お試しください。"
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "このブラウザーはセキュリティキーに対応していません。別のブラウザーをお試しください。"
       ]
     },
     "meet_2025: Addon": {

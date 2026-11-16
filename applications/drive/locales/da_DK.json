@@ -8155,6 +8155,36 @@
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "Rabatter beregnes ud fra den normale månedspris. Dit abonnement fornyes til den årlige standardpris når faktureringsperioden udløber."
+      ],
+      "${ claimedAuthor } (unverified sender)": [
+        "${ claimedAuthor } (ubekræftet afsender)"
+      ],
+      "${ importedSize } imported": [
+        "${ importedSize } importeret"
+      ],
+      "Import interrupted": [
+        "Import afbrudt"
+      ],
+      "Import paused": [
+        "Import sat på pause"
+      ],
+      "Importing from Google Drive…": [
+        "Importerer fra Google Drive..."
+      ],
+      "More storage needed": [
+        "Mere lagerplads kræves"
+      ],
+      "Reconnect Google Drive": [
+        "Forbind Google Drive igen"
+      ],
+      "You can also cancel your import in ${ easySwitchSettingsLink }.": [
+        "Du kan også annullere din import i ${ easySwitchSettingsLink }."
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "Du kan åbne denne mappe når importen er færdig. Vi har hidtil importeret ${ importedSize }. Vi sender dig en e-mail når den er færdig."
+      ],
+      "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
+        "Din import er sat på pause fordi vi mistede adgangen til din Google-konto. Forbind den igen for at overføre resten af dine filer."
       ]
     },
     "info": {
@@ -11671,7 +11701,7 @@
         "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "Den særligt nedsatte pris gælder for den første måned på ${ subscriptionLength }.",
+        "Den særligt nedsatte pris gælder den første ${ subscriptionLength } måned.",
         "Den særligt nedsatte pris gælder for de første ${ subscriptionLength } måneder."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
@@ -15062,6 +15092,9 @@
       ],
       "Subscribe to ${ planTitle }": [
         "Abonnér på ${ planTitle }"
+      ],
+      "Reconnect to finish your import": [
+        "Genforbind for at afslutte din import"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15407,6 +15440,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Din browser understøtter ikke sikkerhedsnøgler. Prøv en anden browser."
       ]
     },
     "Import provider": {

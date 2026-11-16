@@ -7592,6 +7592,27 @@
       ],
       "Read folder context": [
         "Preberi vsebino mape"
+      ],
+      "${ importedSize } imported": [
+        "${ importedSize } uvoženo"
+      ],
+      "Import interrupted": [
+        "Uvoz je bil prekinjen"
+      ],
+      "Import paused": [
+        "Uvoz je začasno zaustavljen"
+      ],
+      "Importing from Google Drive…": [
+        "Uvažanje iz Google Drive …"
+      ],
+      "More storage needed": [
+        "Potrebujete več prostora za shranjevanje"
+      ],
+      "Reconnect Google Drive": [
+        "Znova poveži Google Drive"
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "To mapo lahko odprete, ko bo uvoz končan. Do zdaj smo uvozili ${ importedSize }. Ko bo uvoz zaključen, vam bomo poslali e-poštno sporočilo."
       ]
     },
     "info": {
@@ -13958,6 +13979,9 @@
       ],
       "Black Friday": [
         "Črni petek"
+      ],
+      "Your import is in progress": [
+        "Vaš uvoz je v teku"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -8174,6 +8174,27 @@
       ],
       "Your import is paused because we lost access to your Google account. Reconnect to bring the rest of your files over.": [
         "Dein Import-Vorgang wurde unterbrochen, da der Zugriff auf dein Google-Konto nicht mehr möglich ist. Stelle die Verbindung erneut her, um die verbliebenen Dateien zu importieren."
+      ],
+      "${ importedSize } imported": [
+        "${ importedSize } importiert"
+      ],
+      "Import interrupted": [
+        "Import unterbrochen"
+      ],
+      "Import paused": [
+        "Import angehalten"
+      ],
+      "Importing from Google Drive…": [
+        "Aus Google Drive wird importiert …"
+      ],
+      "More storage needed": [
+        "Mehr Speicherplatz erforderlich"
+      ],
+      "Reconnect Google Drive": [
+        "Mit Google Drive erneut verbinden"
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "Dieser Ordner kann nach Abschluss des Imports geöffnet werden. Bislang wurde ${ importedSize } importiert. Du wirst per E-Mail benachrichtigt, sobald der Vorgang abgeschlossen ist."
       ]
     },
     "info": {
@@ -15101,7 +15122,7 @@
         "Dein Import ist abgeschlossen."
       ],
       "Your import is in progress": [
-        "Dein Import läuft gerade"
+        "Import wird ausgeführt"
       ],
       "Welcome to ${ DRIVE_APP_NAME }": [
         "Willkommen bei ${ DRIVE_APP_NAME }"

@@ -7620,6 +7620,27 @@
       ],
       "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
         "छूट मानक मासिक प्राइसिंग पर आधारित हैं। बिल साइकिल खत्म होने पर आपकी सदस्यता मानक वार्षिक दर पर रिन्यू हो जाएगी।"
+      ],
+      "${ importedSize } imported": [
+        "${ importedSize } आयातित"
+      ],
+      "Import interrupted": [
+        "आयात बाधित हुआ"
+      ],
+      "Import paused": [
+        "आयात रुक गया"
+      ],
+      "Importing from Google Drive…": [
+        "Google Drive से आयात हो रहा है…"
+      ],
+      "More storage needed": [
+        "अधिक स्टोरेज की ज़रूरत है"
+      ],
+      "Reconnect Google Drive": [
+        "Google Drive फिर से कनेक्ट करें"
+      ],
+      "You can open this folder when the import is finished. So far, we've imported ${ importedSize }. We'll email you when it's done.": [
+        "आयात पूरा होने पर आप इस फोल्डर को खोल सकते हैं। अब तक ${ importedSize } आयातित हो चुका है। आयात पूरा होने पर हम आपको ईमेल करे देंगे।"
       ]
     },
     "info": {
@@ -13874,6 +13895,9 @@
       ],
       "Subscribe to ${ planTitle }": [
         "${ planTitle } की सदस्यता लें"
+      ],
+      "Your import is in progress": [
+        "आपका आयात प्रक्रिया में है"
       ]
     },
     "Today icon tooltip in mini calendar": {
