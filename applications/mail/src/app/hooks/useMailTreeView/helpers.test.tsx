@@ -72,5 +72,46 @@ describe('useMailFolderTreeView', () => {
 
             expect(result).toBe('pink');
         });
+
+        describe('when the parent chain contains a cycle', () => {
+            const mailSettings = {
+                EnableFolderColor: FOLDER_COLOR.ENABLED,
+                InheritParentFolderColor: INHERIT_PARENT_FOLDER_COLOR.ENABLED,
+            } as unknown as MailSettings;
+
+            it('Should return undefined if a folder is its own parent', () => {
+                const cyclicFolders = [
+                    { ID: 'self', Name: 'Self', Color: 'red', ParentID: 'self' },
+                ] as FolderWithSubFolders[];
+
+                const result = getParentFolderColor({ folders: cyclicFolders, folder: cyclicFolders[0], mailSettings });
+
+                expect(result).toBe(undefined);
+            });
+
+            it('Should return undefined if two folders are each other parent', () => {
+                const cyclicFolders = [
+                    { ID: 'a', Name: 'A', Color: 'red', ParentID: 'b' },
+                    { ID: 'b', Name: 'B', Color: 'blue', ParentID: 'a' },
+                ] as FolderWithSubFolders[];
+
+                const result = getParentFolderColor({ folders: cyclicFolders, folder: cyclicFolders[0], mailSettings });
+
+                expect(result).toBe(undefined);
+            });
+
+            it('Should return undefined for a folder outside of a longer cycle that leads into it', () => {
+                const cyclicFolders = [
+                    { ID: 'a', Name: 'A', Color: 'red', ParentID: 'c' },
+                    { ID: 'b', Name: 'B', Color: 'blue', ParentID: 'a' },
+                    { ID: 'c', Name: 'C', Color: 'green', ParentID: 'b' },
+                    { ID: 'leaf', Name: 'Leaf', Color: 'pink', ParentID: 'a' },
+                ] as FolderWithSubFolders[];
+
+                const result = getParentFolderColor({ folders: cyclicFolders, folder: cyclicFolders[3], mailSettings });
+
+                expect(result).toBe(undefined);
+            });
+        });
     });
 });
