@@ -1,18 +1,18 @@
 import { c } from 'ttag';
 
-import { IncomingRecoveryContactParams } from '@proton/account/delegatedAccess/recoveryContact/incoming/IncomingRecoveryContactParams';
-import { IncomingRecoveryContactSettings } from '@proton/account/delegatedAccess/recoveryContact/incoming/IncomingRecoveryContactSettings';
-import { OutgoingRecoveryContactParams } from '@proton/account/delegatedAccess/recoveryContact/outgoing/OutgoingRecoveryContactParams';
-import { OutgoingRecoveryContactSettings } from '@proton/account/delegatedAccess/recoveryContact/outgoing/OutgoingRecoveryContactSettings';
-import { IncomingDelegatedAccessActions } from '@proton/account/delegatedAccess/shared/IncomingDelegatedAccessActions';
 import { IncomingDelegatedAccessProvider } from '@proton/account/delegatedAccess/shared/IncomingDelegatedAccessProvider';
-import { OutgoingDelegatedAccessActions } from '@proton/account/delegatedAccess/shared/OutgoingDelegatedAccessActions';
 import { OutgoingDelegatedAccessProvider } from '@proton/account/delegatedAccess/shared/OutgoingDelegatedAccessProvider';
 import { selectAvailableRecoveryMethods } from '@proton/account/recovery/sessionRecoverySelectors';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
 import SettingsDescription from '@proton/components/containers/account/SettingsDescription';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import { IncomingRecoveryContactParams } from '@proton/delegated-access/recoveryContact/incoming/IncomingRecoveryContactParams';
+import { IncomingRecoveryContactSettings } from '@proton/delegated-access/recoveryContact/incoming/IncomingRecoveryContactSettings';
+import { OutgoingRecoveryContactParams } from '@proton/delegated-access/recoveryContact/outgoing/OutgoingRecoveryContactParams';
+import { OutgoingRecoveryContactSettings } from '@proton/delegated-access/recoveryContact/outgoing/OutgoingRecoveryContactSettings';
+import { IncomingDelegatedAccessActions } from '@proton/delegated-access/shared/IncomingDelegatedAccessActions';
+import { OutgoingDelegatedAccessActions } from '@proton/delegated-access/shared/OutgoingDelegatedAccessActions';
 import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

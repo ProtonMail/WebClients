@@ -1,0 +1,95 @@
+import { useCallback, useEffect, useState } from 'react';
+
+import { useOutgoingController } from '@proton/account/delegatedAccess/shared/OutgoingDelegatedAccessProvider';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import {
+    type Upsell,
+    isUpsellWithPlan,
+} from '@proton/components/containers/payments/subscription/helpers/dashboard-upsells';
+import { useGetUpsell } from '@proton/components/containers/payments/subscription/helpers/useGetUpsell';
+import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/subscriptionModalContext';
+import { SUBSCRIPTION_STEPS } from '@proton/payments/core/subscription/subscription-modal-constants';
+import {
+    type APP_NAMES,
+    APP_UPSELL_REF_PATH,
+    SHARED_UPSELL_PATHS,
+    UPSELL_COMPONENT,
+} from '@proton/shared/lib/constants';
+import { getUpsellRef } from '@proton/shared/lib/helpers/ref';
+import noop from '@proton/utils/noop';
+
+import { UpsellOutgoingEmergencyContactModal } from './modals/UpsellOutgoingEmergencyContactModal';
+
+interface Props {
+    app: APP_NAMES;
+}
+
+const OutgoingEmergencyContactUpsellContent = ({ app }: Props) => {
+    const { subscribe } = useOutgoingController();
+    const [modal, setModalOpen, renderModal] = useModalState();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
+    const [upsell, setUpsell] = useState<Upsell | null>(null);
+    const getUpsell = useGetUpsell();
+
+    const handle = useCallback(async () => {
+        const resolvedUpsell = await getUpsell(app);
+        if (!resolvedUpsell) {
+            return;
+        }
+        setUpsell(resolvedUpsell);
+        setModalOpen(true);
+    }, []);
+
+    useEffect(() => {
+        return subscribe((payload) => {
+            if (payload.type === 'upsell') {
+                handle().catch(noop);
+            }
+        });
+    }, []);
+
+    const upsellRef = getUpsellRef({
+        app: APP_UPSELL_REF_PATH.ACCOUNT_UPSELL_REF_PATH,
+        component: UPSELL_COMPONENT.MODAL,
+        feature: SHARED_UPSELL_PATHS.EMERGENCY_ACCESS,
+    });
+
+    if (!upsell || !isUpsellWithPlan(upsell)) {
+        return null;
+    }
+
+    return (
+        <>
+            {renderModal && (
+                <UpsellOutgoingEmergencyContactModal
+                    {...modal}
+                    upsell={upsell}
+                    loadingSubscriptionModal={loadingSubscriptionModal}
+                    onUpgrade={(type) => {
+                        let step: SUBSCRIPTION_STEPS | undefined;
+                        if (type === 'explore') {
+                            step = SUBSCRIPTION_STEPS.PLAN_SELECTION;
+                        } else {
+                            step = SUBSCRIPTION_STEPS.CHECKOUT;
+                        }
+                        modal.onClose();
+                        openSubscriptionModal({
+                            step,
+                            plan: upsell.plan,
+                            cycle: upsell.cycle,
+                            upsellRef,
+                        }).catch(noop);
+                    }}
+                />
+            )}
+        </>
+    );
+};
+
+export const OutgoingEmergencyContactUpsell = (props: Props) => {
+    const { outgoingDelegatedAccess } = useOutgoingController();
+    if (!outgoingDelegatedAccess.emergencyContacts.hasUpsell) {
+        return null;
+    }
+    return <OutgoingEmergencyContactUpsellContent {...props} />;
+};

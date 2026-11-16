@@ -13,9 +13,6 @@ import {
     getIsIncomingDelegatedAccessAvailable,
     getIsOutgoingDelegatedAccessAvailable,
 } from '@proton/account/delegatedAccess/available';
-import { OutgoingEmergencyContactTopBanner } from '@proton/account/delegatedAccess/emergencyContact/outgoing/OutgoingEmergencyContactTopBanner';
-import { IncomingRecoveryContactTopBanner } from '@proton/account/delegatedAccess/recoveryContact/incoming/IncomingRecoveryContactTopBanner';
-import { OutgoingRecoveryContactTopBanner } from '@proton/account/delegatedAccess/recoveryContact/outgoing/OutgoingRecoveryContactTopBanner';
 import { useEntitlementChecksForOrgAndUser } from '@proton/account/entitlementCatalog/hooks';
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import { useGroups } from '@proton/account/groups/hooks';
@@ -57,6 +54,9 @@ import { useIsGroupOwner } from '@proton/components/hooks/useIsGroupOwner';
 import useRecoveryNotification from '@proton/components/hooks/useRecoveryNotification';
 import useShowThemeSelection from '@proton/components/hooks/useShowThemeSelection';
 import useShowVPNDashboard from '@proton/components/hooks/useShowVPNDashboard';
+import { OutgoingEmergencyContactTopBanner } from '@proton/delegated-access/emergencyContact/outgoing/OutgoingEmergencyContactTopBanner';
+import { IncomingRecoveryContactTopBanner } from '@proton/delegated-access/recoveryContact/incoming/IncomingRecoveryContactTopBanner';
+import { OutgoingRecoveryContactTopBanner } from '@proton/delegated-access/recoveryContact/outgoing/OutgoingRecoveryContactTopBanner';
 import useToggle from '@proton/hooks/useToggle';
 import { IcBoltFilled } from '@proton/icons/icons/IcBoltFilled';
 import { useCategoriesData } from '@proton/mail/features/categoriesView/useCategoriesData';

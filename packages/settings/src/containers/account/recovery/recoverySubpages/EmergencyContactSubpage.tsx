@@ -1,17 +1,17 @@
 import { c } from 'ttag';
 
-import { IncomingEmergencyContactSettings } from '@proton/account/delegatedAccess/emergencyContact/incoming/IncomingEmergencyContactSettings';
-import { OutgoingEmergencyContactSearchParams } from '@proton/account/delegatedAccess/emergencyContact/outgoing/OutgoingEmergencyAccessParams';
-import { OutgoingEmergencyContactSettings } from '@proton/account/delegatedAccess/emergencyContact/outgoing/OutgoingEmergencyContactSettings';
-import { OutgoingEmergencyContactUpsell } from '@proton/account/delegatedAccess/emergencyContact/outgoing/OutgoingEmergencyContactUpsell';
-import { IncomingDelegatedAccessActions } from '@proton/account/delegatedAccess/shared/IncomingDelegatedAccessActions';
 import { IncomingDelegatedAccessProvider } from '@proton/account/delegatedAccess/shared/IncomingDelegatedAccessProvider';
-import { OutgoingDelegatedAccessActions } from '@proton/account/delegatedAccess/shared/OutgoingDelegatedAccessActions';
 import { OutgoingDelegatedAccessProvider } from '@proton/account/delegatedAccess/shared/OutgoingDelegatedAccessProvider';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
 import SettingsDescription from '@proton/components/containers/account/SettingsDescription';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
+import { IncomingEmergencyContactSettings } from '@proton/delegated-access/emergencyContact/incoming/IncomingEmergencyContactSettings';
+import { OutgoingEmergencyContactSearchParams } from '@proton/delegated-access/emergencyContact/outgoing/OutgoingEmergencyAccessParams';
+import { OutgoingEmergencyContactSettings } from '@proton/delegated-access/emergencyContact/outgoing/OutgoingEmergencyContactSettings';
+import { OutgoingEmergencyContactUpsell } from '@proton/delegated-access/emergencyContact/outgoing/OutgoingEmergencyContactUpsell';
+import { IncomingDelegatedAccessActions } from '@proton/delegated-access/shared/IncomingDelegatedAccessActions';
+import { OutgoingDelegatedAccessActions } from '@proton/delegated-access/shared/OutgoingDelegatedAccessActions';
 import { PaymentsContextProvider } from '@proton/payments-ui/ui/context/PaymentContext';
 import { type APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

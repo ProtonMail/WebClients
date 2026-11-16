@@ -1,0 +1,250 @@
+import { useEffect, useState } from 'react';
+
+import { c } from 'ttag';
+
+import { DateCountdown } from '@proton/account/delegatedAccess/emergencyContact/DateCountdown';
+import {
+    getFormattedAccessibleAtDate,
+    getFormattedTriggerDelay,
+} from '@proton/account/delegatedAccess/emergencyContact/date';
+import { ContactCell } from '@proton/account/delegatedAccess/shared/ContactCell';
+import {
+    type IncomingDelegatedAccessProviderValue,
+    useIncomingController,
+} from '@proton/account/delegatedAccess/shared/IncomingDelegatedAccessProvider';
+import { getMetaIncomingDelegatedAccess } from '@proton/account/delegatedAccess/shared/incoming/helper';
+import type { MetaIncomingDelegatedAccess } from '@proton/account/delegatedAccess/shared/incoming/interface';
+import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
+import { Pill } from '@proton/atoms/Pill/Pill';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
+import Info from '@proton/components/components/link/Info';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
+import TableRow from '@proton/components/components/table/TableRow';
+import { IcHourglass } from '@proton/icons/icons/IcHourglass';
+import { SECOND } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
+import isTruthy from '@proton/utils/isTruthy';
+
+type ItemValue = IncomingDelegatedAccessProviderValue['items']['emergencyContacts'][0];
+
+interface IncomingItemProps {
+    value: ItemValue;
+    notify: IncomingDelegatedAccessProviderValue['notify'];
+    labels: string[];
+    meta: MetaIncomingDelegatedAccess;
+}
+
+const IncomingDelegatedAccessCell = ({
+    value: {
+        parsedIncomingDelegatedAccess: { accessibleAtDate, isDisabled },
+    },
+    meta: { canLogin, hasRequestedAccess },
+}: Pick<IncomingItemProps, 'value' | 'meta'>) => {
+    if (isDisabled) {
+        return (
+            <Pill color="#5C5958" backgroundColor="#E5E4E1" rounded="rounded-sm" className="text-semibold">{c(
+                'emergency_access'
+            ).t`Disabled`}</Pill>
+        );
+    }
+
+    if (canLogin) {
+        const formattedAccessibleAt = getFormattedAccessibleAtDate(accessibleAtDate);
+        const tooltip = formattedAccessibleAt
+            ? c('emergency_access').t`Access granted on ${formattedAccessibleAt}`
+            : undefined;
+        return (
+            <Tooltip title={tooltip}>
+                <Pill
+                    color="#164616"
+                    backgroundColor="#C9E9C9"
+                    rounded="rounded-sm"
+                    className="text-semibold text-center"
+                >{c('emergency_access').t`Access granted`}</Pill>
+            </Tooltip>
+        );
+    }
+
+    if (hasRequestedAccess) {
+        const formattedAccessibleAt = getFormattedAccessibleAtDate(accessibleAtDate);
+        const tooltip = c('emergency_access').t`Access will be granted on ${formattedAccessibleAt}`;
+        return (
+            <div className="flex items-center justify-start gap-1">
+                <Tooltip title={tooltip}>
+                    <Pill
+                        color="#093E53"
+                        backgroundColor="#C0E4F2"
+                        rounded="rounded-sm"
+                        className="text-semibold mr-1 text-center"
+                    >{c('emergency_access').t`Access requested`}</Pill>
+                </Tooltip>
+                {accessibleAtDate && (
+                    <span title={tooltip} className="inline-flex items-center">
+                        <IcHourglass className="color-weak shrink-0 mr-1" />
+                        <DateCountdown date={accessibleAtDate} />
+                    </span>
+                )}
+            </div>
+        );
+    }
+};
+
+const IncomingDelegatedAccessActions = ({
+    value,
+    meta: { canRequestAccess, canCancelRequestAccess, canLogin, canDelete },
+    notify,
+}: Pick<IncomingItemProps, 'value' | 'meta' | 'notify'>) => {
+    return (
+        <div className="inline-flex">
+            <DropdownActions
+                list={[
+                    canRequestAccess && {
+                        text: c('emergency_access').t`Request access`,
+                        onClick: () => notify({ type: 'request-access', value }),
+                    },
+                    canCancelRequestAccess && {
+                        text: c('emergency_access').t`Cancel request`,
+                        onClick: () => notify({ type: 'cancel-request-access', value }),
+                    },
+                    canLogin && {
+                        loading: value.loading.access,
+                        text: c('emergency_access').t`Access account`,
+                        onClick: () => notify({ type: 'access', value }),
+                    },
+                    canDelete && {
+                        actionType: 'delete' as const,
+                        text: c('emergency_access').t`Stop being trusted contact`,
+                        onClick: () => notify({ type: 'delete-emergency-contact', value }),
+                    },
+                ].filter(isTruthy)}
+                size="small"
+            />
+        </div>
+    );
+};
+
+const IncomingItem = ({
+    value,
+    value: {
+        parsedIncomingDelegatedAccess: { contact, createdAtDate, accessibleTriggerDelayMs },
+    },
+    meta,
+    labels,
+    notify,
+}: IncomingItemProps) => {
+    return (
+        <TableRow labels={labels}>
+            <TableCell>
+                <ContactCell {...contact} createdAtDate={createdAtDate} />
+            </TableCell>
+            <TableCell label={c('emergency_access').t`Wait time for access`}>
+                <div>{getFormattedTriggerDelay(accessibleTriggerDelayMs)}</div>
+            </TableCell>
+            <TableCell>
+                <IncomingDelegatedAccessCell value={value} meta={meta} />
+            </TableCell>
+            <TableCell>
+                <IncomingDelegatedAccessActions value={value} meta={meta} notify={notify} />
+            </TableCell>
+        </TableRow>
+    );
+};
+
+const IncomingTable = ({ controller }: { controller: IncomingDelegatedAccessProviderValue }) => {
+    const [, rerender] = useState<any>();
+
+    useEffect(() => {
+        // Rerender every 30 seconds so that we compute the remaining days based on `now` correctly
+        const handle = setInterval(() => rerender({}), 30 * SECOND);
+        return () => {
+            clearInterval(handle);
+        };
+    }, []);
+
+    const now = Date.now();
+
+    const headerCells = [
+        { title: c('Title').t`Name`, className: 'w-1/3' },
+        {
+            title: c('emergency_access').t`Wait time`,
+            info: c('emergency_access').t`Time required before automatically giving you access`,
+        },
+        { title: '' },
+        { title: '' },
+    ];
+
+    const headerLabels = headerCells.map((cell) => cell.title);
+
+    return (
+        <Table
+            hasActions
+            responsive="stacked"
+            lastRowNoBorder
+            noInlinePadding
+            className="mb-0"
+            data-testid="incoming-emergency-access-table"
+        >
+            <TableHeader>
+                <TableRow>
+                    {headerCells.map(({ title, info, className }) => (
+                        <TableHeaderCell key={title} className={className}>
+                            <div className="flex items-center flex-nowrap">
+                                {title}
+                                {info && (
+                                    <span className="ml-2 inline-flex">
+                                        <Info className="shrink-0" title={info} />
+                                    </span>
+                                )}
+                            </div>
+                        </TableHeaderCell>
+                    ))}
+                </TableRow>
+            </TableHeader>
+            <TableBody loading={controller.loading} colSpan={5}>
+                {controller.items.emergencyContacts.map((value) => {
+                    const meta = getMetaIncomingDelegatedAccess({ now, value });
+                    return (
+                        <IncomingItem
+                            key={value.incomingDelegatedAccess.DelegatedAccessID}
+                            labels={headerLabels}
+                            value={value}
+                            meta={meta}
+                            notify={controller.notify}
+                        />
+                    );
+                })}
+            </TableBody>
+        </Table>
+    );
+};
+
+interface Props {
+    hideEmptyIncomingHelpText: boolean;
+}
+export const IncomingEmergencyContactSettings = ({ hideEmptyIncomingHelpText }: Props) => {
+    const controller = useIncomingController();
+
+    if (controller.loading || (hideEmptyIncomingHelpText && !controller.items.emergencyContacts.length)) {
+        return null;
+    }
+
+    return (
+        <DashboardCard>
+            <DashboardCardContent>
+                <h3 className="text-semibold text-rg mb-3">{c('emergency_access').t`People who trust me`}</h3>
+                <p className={clsx(controller.items.emergencyContacts.length ? 'mt-0 mb-4' : 'm-0', 'color-weak')}>
+                    {controller.items.emergencyContacts.length
+                        ? c('emergency_access')
+                              .t`They added you as trusted contact. You can access their account in case of an emergency.`
+                        : c('emergency_access').t`You have not been designated as an emergency contact for anyone yet.`}
+                </p>
+                {!!controller.items.emergencyContacts.length && <IncomingTable controller={controller} />}
+            </DashboardCardContent>
+        </DashboardCard>
+    );
+};
