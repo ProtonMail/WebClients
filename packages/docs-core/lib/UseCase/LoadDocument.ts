@@ -12,13 +12,9 @@ import {
   type DocumentEntitlements,
   type PublicDocumentEntitlements,
 } from '../Types/DocumentEntitlements'
-import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import type { GetDocumentKeys } from './GetDocumentKeys'
-import type { GetDocumentMeta } from './GetDocumentMeta'
 import type { GetNode } from './GetNode'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
-import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
-import type { PublicDriveCompat } from '@proton/drive-store/lib/usePublicDriveCompat'
 import type { NodeMeta, PublicNodeMeta } from '@proton/docs-shared/BasicTypes'
 import type { FetchMetaAndRawCommit } from './FetchMetaAndRawCommit'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
@@ -44,8 +40,6 @@ type ErrorResult = {
  */
 export class LoadDocument {
   constructor(
-    private compatWrapper: DriveCompatWrapper<DriveCompat | PublicDriveCompat>,
-    private getDocumentMeta: GetDocumentMeta,
     private getNode: GetNode,
     private decryptCommit: DecryptCommit,
     private loadMetaAndCommit: FetchMetaAndRawCommit,
@@ -205,23 +199,18 @@ export class LoadDocument {
     publicEditingEnabled: boolean,
     primaryAddressKeys?: PrimaryAddressKeys,
   ): Promise<Result<LoadDocumentResult<PublicDocumentState>>> {
-    const compat = this.compatWrapper.getPublicCompat()
-    const permissions = compat ? compat.permissions : getPublicLinkInfo().permissions
+    const { permissions } = getPublicLinkInfo()
 
     if (!permissions) {
       return Result.fail('Permissions not yet loaded')
     }
 
     try {
-      const keysPromise = compat
-        ? compat.getDocumentKeys(nodeMeta)
-        : getPublicDocumentKeys(nodeMeta, primaryAddressKeys)
-
       const [nodeResult, keysResult, metaResult] = await Promise.all([
         this.getNode.execute(nodeMeta, { useCache: false }).catch((error) => {
           throw new Error(`Failed to load public node: ${error}`)
         }),
-        keysPromise.catch((error) => {
+        getPublicDocumentKeys(nodeMeta, primaryAddressKeys).catch((error) => {
           throw new Error(`Failed to load public keys: ${error}`)
         }),
         this.loadMetaAndCommit.execute(nodeMeta).catch((error) => {
@@ -246,16 +235,11 @@ export class LoadDocument {
 
       /**
        * We attempt to determine if the current public session user has direct access to this document.
-       * Legacy tries to load the actual document meta via the authenticated API.
-       * SDK uses the public link info, and only checks the document itself when that is not enough.
+       * This uses the public link info, and only checks the document itself when that is not enough.
        *
        * If the user has some sort of access to this document, they can perform actions like duplicating it.
        */
-      const doesHaveAccessToDoc = compat
-        ? await this.getDocumentMeta
-            .execute({ volumeId: serverBasedMeta.volumeId, linkId: nodeMeta.linkId })
-            .then((result) => !result.isFailed())
-        : await hasDirectAccessToPublicNode(nodeMeta)
+      const doesHaveAccessToDoc = await hasDirectAccessToPublicNode(nodeMeta)
 
       const role = (() => {
         if (publicEditingEnabled && getCanWrite(permissions)) {

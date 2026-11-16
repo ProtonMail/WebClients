@@ -2,11 +2,8 @@ import { ApiResult } from '@proton/docs-shared/ApiResult'
 import { DynamicResult } from '@proton/docs-shared/DynamicResult'
 import { Result } from '@proton/docs-shared/Result'
 import type { DecryptCommit } from './DecryptCommit'
-import type { PublicDriveCompat } from '@proton/drive-store/lib/usePublicDriveCompat'
 import type { NodeMeta } from '@proton/docs-shared/BasicTypes'
-import type { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import type { GetDocumentKeys } from './GetDocumentKeys'
-import type { GetDocumentMeta } from './GetDocumentMeta'
 import type { GetNode } from './GetNode'
 import type { GetNodePermissions } from './GetNodePermissions'
 import type { FetchMetaAndRawCommit } from './FetchMetaAndRawCommit'
@@ -20,17 +17,26 @@ import { SHARE_MEMBER_PERMISSIONS, SHARE_URL_PERMISSIONS } from '@proton/shared/
 import type { RealtimeTokenPayload } from './FetchRealtimeToken'
 import { rawPermissionToRole } from '../Types/DocumentEntitlements'
 import { DocsApiErrorCode } from '@proton/shared/lib/api/docs'
+import { setPublicLinkInfo, type PublicLinkInfo } from '../DriveSDK/getPublicDrive'
+import { getPublicDocumentKeys } from '../DriveSDK/getDocumentKeys'
+import { hasDirectAccessToPublicNode } from '../DriveSDK/hasDirectAccessToPublicNode'
 
 jest.mock('jwt-decode', () => ({
   jwtDecode: jest.fn(),
+}))
+
+jest.mock('../DriveSDK/getDocumentKeys', () => ({
+  getPublicDocumentKeys: jest.fn(),
+}))
+
+jest.mock('../DriveSDK/hasDirectAccessToPublicNode', () => ({
+  hasDirectAccessToPublicNode: jest.fn(),
 }))
 
 const mockJwtDecode = jest.mocked(jwtDecode)
 
 describe('LoadDocument', () => {
   let loadDocument: LoadDocument
-  let mockCompatWrapper: jest.Mocked<DriveCompatWrapper>
-  let mockGetDocumentMeta: jest.Mocked<GetDocumentMeta>
   let mockGetNode: jest.Mocked<GetNode>
   let mockDecryptCommit: jest.Mocked<DecryptCommit>
   let mockLoadMetaAndCommit: jest.Mocked<FetchMetaAndRawCommit>
@@ -47,13 +53,6 @@ describe('LoadDocument', () => {
 
   beforeEach(() => {
     jest.spyOn(LoadLogger, 'logEventRelativeToLoadTime').mockImplementation(jest.fn())
-    mockCompatWrapper = {
-      getPublicCompat: jest.fn(),
-    } as unknown as jest.Mocked<DriveCompatWrapper>
-
-    mockGetDocumentMeta = {
-      execute: jest.fn().mockResolvedValue(Result.ok({})),
-    } as unknown as jest.Mocked<GetDocumentMeta>
 
     mockGetNode = {
       execute: jest.fn(),
@@ -84,8 +83,6 @@ describe('LoadDocument', () => {
     } satisfies RealtimeTokenPayload)
 
     loadDocument = new LoadDocument(
-      mockCompatWrapper,
-      mockGetDocumentMeta,
       mockGetNode,
       mockDecryptCommit,
       mockLoadMetaAndCommit,
@@ -202,22 +199,25 @@ describe('LoadDocument', () => {
       linkId: 'link-1',
     }
 
-    let mockPublicCompat: jest.Mocked<PublicDriveCompat>
+    const publicLinkInfo: PublicLinkInfo = {
+      customPassword: '',
+      linkId: 'link-1',
+      volumeId: 'volume-1',
+      isSharedUrlAFolder: false,
+      permissions: SHARE_URL_PERMISSIONS.EDITOR,
+      hasDirectAccess: false,
+    }
 
     beforeEach(() => {
-      mockPublicCompat = {
-        permissions: SHARE_URL_PERMISSIONS.EDITOR,
-        getDocumentKeys: jest.fn(),
-      } as unknown as jest.Mocked<PublicDriveCompat>
-
-      mockCompatWrapper.getPublicCompat.mockReturnValue(mockPublicCompat)
+      setPublicLinkInfo(publicLinkInfo)
       mockGetNode.execute.mockResolvedValue(
         Result.ok({
           node: { name: 'public-doc', trashed: false },
           fromCache: false,
         } as any),
       )
-      mockPublicCompat.getDocumentKeys.mockResolvedValue({ documentContentKey: 'public-key' as any })
+      jest.mocked(getPublicDocumentKeys).mockResolvedValue({ documentContentKey: 'public-key' as any })
+      jest.mocked(hasDirectAccessToPublicNode).mockResolvedValue(false)
       mockLoadMetaAndCommit.execute.mockResolvedValue(
         DynamicResult.ok({
           serverBasedMeta: { latestCommitId: () => 'commit-1' },
@@ -241,7 +241,7 @@ describe('LoadDocument', () => {
     })
 
     it('should fail if permissions are not loaded', async () => {
-      mockPublicCompat.permissions = undefined
+      setPublicLinkInfo({ ...publicLinkInfo, permissions: undefined as unknown as SHARE_URL_PERMISSIONS })
 
       const result = await loadDocument.executePublic(publicNodeMeta as any, true)
 

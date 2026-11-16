@@ -4,7 +4,6 @@ import {
   PublicDriveStoreProviderWithAuthenticatedUser,
 } from '@proton/drive-store/lib/DriveStoreProvider'
 import { PublicApplicationContent } from './PublicApplicationContent'
-import { PublicCompatProvider, usePublicDriveCompat } from '@proton/drive-store/lib/usePublicDriveCompat'
 import { Button } from '@proton/atoms/Button/Button'
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { c } from 'ttag'
@@ -19,8 +18,6 @@ import { useGetUser } from '@proton/account/user/hooks'
 import { traceErrorSDK } from '@proton/docs-core/DriveSDK/traceErrorSDK'
 import type { ProviderType } from '../../../provider-type'
 import { DocsUrlContextProvider } from '~/utils/docs-url-bar'
-import { useDriveCompatSDK } from '~/utils/flags'
-import { useFlagsStatus } from '@unleash/proxy-client-react'
 import { getDrive, useDrive } from '@proton/drive/sdk'
 import config from '~/config'
 import { loggerForSDK, sharedLogger } from '~/drive-sdk/logger'
@@ -58,30 +55,16 @@ export function PublicAppRootContainer({
     ? PublicDriveStoreProviderWithAuthenticatedUser
     : PublicDriveStoreProvider
 
-  const { flagsReady, flagsError } = useFlagsStatus()
-  const replaceDriveCompat = useDriveCompatSDK()
-  // Switching paths after flags load leaves legacy handshake running, taking the custom password from Drive window
-  if (!flagsReady && !flagsError) {
-    return <DocumentLoader />
-  }
-
-  const RenderApplicationWhenReady = replaceDriveCompat ? RenderWithoutDriveCompat : RenderWithDriveCompat
-  const content = (
-    <RenderApplicationWhenReady
-      providerType={useAuthenticatedProvider ? 'public-authenticated' : 'public-unauthenticated'}
-    />
-  )
-
   return (
     <LocationErrorBoundary>
       <ApplicableDriveStoreProvider>
-        {replaceDriveCompat ? content : <PublicCompatProvider session={session}>{content}</PublicCompatProvider>}
+        <RenderPublicLink providerType={useAuthenticatedProvider ? 'public-authenticated' : 'public-unauthenticated'} />
       </ApplicableDriveStoreProvider>
     </LocationErrorBoundary>
   )
 }
 
-function RenderWithoutDriveCompat({ providerType }: { providerType: ProviderType }) {
+function RenderPublicLink({ providerType }: { providerType: ProviderType }) {
   const { publicLinkState, submitPublicLinkPassword } = usePublicLink(providerType)
   const { user, isUserReady } = usePublicUser(providerType)
 
@@ -91,12 +74,11 @@ function RenderWithoutDriveCompat({ providerType }: { providerType: ProviderType
       user={user}
       state={{ ...publicLinkState, isReady: publicLinkState.isReady && isUserReady }}
       submitPassword={submitPublicLinkPassword}
-      isPublicDocsEnabled
     />
   )
 }
 
-// Legacy sets the user during its handshake, which does not run here. The session may be undefined even when signed in.
+// The session may be undefined even when signed in, so the user is loaded here.
 function usePublicUser(providerType: ProviderType) {
   const getUser = useGetUser()
   const isAuthenticated = providerType === 'public-authenticated'
@@ -115,49 +97,31 @@ function usePublicUser(providerType: ProviderType) {
   return { user, isUserReady }
 }
 
-function RenderWithDriveCompat({ providerType }: { providerType: ProviderType }) {
-  const publicDriveCompat = usePublicDriveCompat()
-
-  return (
-    <RenderApplication
-      providerType={providerType}
-      publicDriveCompat={publicDriveCompat}
-      state={publicDriveCompat}
-      submitPassword={publicDriveCompat.submitPassword}
-      isPublicDocsEnabled={publicDriveCompat.isPublicDocsEnabled}
-    />
-  )
-}
-
 function RenderApplication({
   providerType,
-  publicDriveCompat,
   user,
   state: { isReady, isError, error, isPasswordNeeded, isWaitingForPasswordFromDriveWindow, vendorType },
   submitPassword,
-  isPublicDocsEnabled,
 }: {
   providerType: ProviderType
-  publicDriveCompat?: ReturnType<typeof usePublicDriveCompat>
   user?: UserModel
   state: PublicLinkState
   submitPassword: (password: string) => Promise<void>
-  isPublicDocsEnabled: boolean
 }) {
   const hasRenderedContentRef = useRef(false)
   const isPathCorrect = useIsPathCorrectForVendorType(vendorType, hasRenderedContentRef.current)
 
   useEffect(() => {
-    const shouldRenderContent = isReady && !isError && isPublicDocsEnabled && !isPasswordNeeded && isPathCorrect
+    const shouldRenderContent = isReady && !isError && !isPasswordNeeded && isPathCorrect
     if (hasRenderedContentRef.current && !shouldRenderContent) {
       throw new Error('Invalid state transition: PublicApplicationContent is being unmounted after being mounted')
     }
     hasRenderedContentRef.current = shouldRenderContent
-  }, [isReady, isError, isPublicDocsEnabled, isPasswordNeeded, isPathCorrect])
+  }, [isReady, isError, isPasswordNeeded, isPathCorrect])
 
   useEffect(() => {
     if (error) {
-      console.error('publicDriveCompat error', error)
+      console.error('Public link error', error)
     }
   }, [error])
 
@@ -178,17 +142,6 @@ function RenderApplication({
     )
   }
 
-  if (isReady && !isPublicDocsEnabled) {
-    return (
-      <div className="flex-column absolute left-0 top-0 flex h-full w-full items-center justify-center">
-        <h1 className="text-lg font-bold">{c('Info').t`Something went wrong`}</h1>
-        <div className="mt-1 max-w-lg whitespace-pre-line text-center">
-          {c('Info').t`Public documents are not yet enabled for your organization.`}
-        </div>
-      </div>
-    )
-  }
-
   if (isPasswordNeeded && !isWaitingForPasswordFromDriveWindow) {
     return <PasswordPage submitPassword={submitPassword} />
   }
@@ -199,7 +152,7 @@ function RenderApplication({
 
   return (
     <DocsUrlContextProvider>
-      <PublicApplicationContent publicDriveCompat={publicDriveCompat} user={user} providerType={providerType} />
+      <PublicApplicationContent user={user} providerType={providerType} />
     </DocsUrlContextProvider>
   )
 }

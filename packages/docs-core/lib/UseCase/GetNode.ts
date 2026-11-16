@@ -79,8 +79,7 @@ export class GetNode implements UseCaseInterface<GetNodeResult> {
     try {
       let node: DecryptedNode
       if (isPublicNodeMeta(nodeMeta)) {
-        const publicCompat = this.compatWrapper.getPublicCompat()
-        node = publicCompat ? await publicCompat.getNode(nodeMeta) : await getPublicDecryptedNode(nodeMeta)
+        node = await getPublicDecryptedNode(nodeMeta)
       } else if (options.forceFetch) {
         if (isDriveCompatSDKEnabled(this.unleashClient)) {
           node = await getDecryptedNode(nodeMeta)

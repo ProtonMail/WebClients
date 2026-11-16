@@ -17,7 +17,6 @@ import { RedirectAction } from '@proton/docs-shared/DocumentAction'
 import { useDocsUrlPublicToken } from '@proton/docs-shared/Hooks/useDocsUrlPublicToken'
 import { TooltipKey, useTooltipOnce } from '@proton/docs-shared/Hooks/useTooltipOnce'
 import { useDocsBookmarks } from './useDocsBookmarks'
-import { useDocsBookmarks as useLegacyDocsBookmarks } from '@proton/drive-store/lib/_views/useDocsBookmarks'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
 import useLoading from '@proton/hooks/useLoading'
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled'
@@ -36,7 +35,6 @@ import { useApplication } from '~/utils/application-context'
 import { useDocsUrlBar } from '~/utils/docs-url-bar'
 import { getPublicLinkUrlParams } from '@proton/docs-shared/URL/getPublicLinkUrlParams'
 import { getPublicLinkInfo } from '@proton/docs-core/DriveSDK/getPublicDrive'
-import type { PublicDriveCompat } from '@proton/drive-store/lib/usePublicDriveCompat'
 import { useDocsContext } from '../context'
 import { CommentsButton } from '../DocumentLayout/DocumentHeader/CommentsButton'
 import { DocumentActiveUsers } from '../DocumentLayout/DocumentHeader/DocumentActiveUsers'
@@ -126,22 +124,9 @@ export type HeaderPublicOptionsProps = {
   documentType: DocumentType | ProtonDocumentType
 }
 
-// Separate components so a flag change remounts instead of swapping hooks in place
 export function HeaderPublicOptions(props: HeaderPublicOptionsProps) {
   const { surePublicContext } = useDocsContext()
-  const Header = surePublicContext.compat ? HeaderWithLegacyBookmarks : HeaderWithBookmarks
-  return <Header {...props} />
-}
-
-function HeaderWithBookmarks(props: HeaderPublicOptionsProps) {
-  const { surePublicContext } = useDocsContext()
-  const bookmarks = useDocsBookmarks({ ...getLinkDetails(surePublicContext.compat), user: surePublicContext.user })
-  return <HeaderPublicOptionsContent {...props} bookmarks={bookmarks} />
-}
-
-function HeaderWithLegacyBookmarks(props: HeaderPublicOptionsProps) {
-  const { surePublicContext } = useDocsContext()
-  const bookmarks = useLegacyDocsBookmarks(getLinkDetails(surePublicContext.compat))
+  const bookmarks = useDocsBookmarks({ ...getLinkDetails(), user: surePublicContext.user })
   return <HeaderPublicOptionsContent {...props} bookmarks={bookmarks} />
 }
 
@@ -156,7 +141,7 @@ function HeaderPublicOptionsContent({
   const application = useApplication()
   const role = documentState.getProperty('userRole')
 
-  const { token, linkId, urlPassword, isSharedUrlAFolder } = getLinkDetails(surePublicContext.compat)
+  const { token, linkId, urlPassword, isSharedUrlAFolder } = getLinkDetails()
   const { user, openParams } = surePublicContext
   const { createCopy } = usePublicDocumentCopying({
     context: surePublicContext,
@@ -364,11 +349,7 @@ function HeaderPublicOptionsContent({
   )
 }
 
-function getLinkDetails(compat: PublicDriveCompat | undefined) {
-  if (compat) {
-    const { token, linkId, urlPassword, customPassword, isSharedUrlAFolder } = compat
-    return { token, linkId, urlPassword, customPassword, isSharedUrlAFolder }
-  }
+function getLinkDetails() {
   const { token, urlPassword } = getPublicLinkUrlParams(window.location)
   const { linkId, customPassword, isSharedUrlAFolder } = getPublicLinkInfo()
   return { token, linkId, urlPassword, customPassword, isSharedUrlAFolder }

@@ -173,10 +173,7 @@ export class EncryptionService<C extends EncryptionContext> {
   async getVerificationKey(email: string): Promise<Result<PublicKeyReference[]>> {
     try {
       if (this.driveCompat.getCompatType() === 'public') {
-        const publicCompat = this.driveCompat.getPublicCompat()
-        const value = publicCompat
-          ? await publicCompat.getPublicKeysForEmail(email)
-          : await getPublicKeysForEmail(this.api, email)
+        const value = await getPublicKeysForEmail(this.api, email)
         if (!value) {
           return Result.fail(`Failed to get public keys for email in public context`)
         }

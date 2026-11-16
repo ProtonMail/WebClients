@@ -25,7 +25,6 @@ import type { LoadDocument } from '../../UseCase/LoadDocument'
 import type { LoadThreads } from '../../UseCase/LoadThreads'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import type { MetricService } from '../Metrics/MetricService'
-import type { PublicDriveCompat } from '@proton/drive-store/lib/usePublicDriveCompat'
 import type { WebsocketServiceInterface } from '../Websockets/WebsocketServiceInterface'
 import { PublicRenameController } from '../../RenameController/RenameController'
 import type { GetNode } from '../../UseCase/GetNode'
@@ -44,7 +43,6 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
   private readonly statusObservers: DocLoaderStatusObserver<PublicDocumentState>[] = []
 
   constructor(
-    private driveCompat: PublicDriveCompat | undefined,
     private websocketSerivce: WebsocketServiceInterface,
     private docsApi: DocsApi,
     private loadDocument: LoadDocument,
@@ -108,11 +106,7 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
       void OpenTracer.trace('boot_public_doc_loader_redirect_to_authed_document_start')
       const meta = { volumeId: documentState.getProperty('documentMeta').volumeId, linkId: nodeMeta.linkId }
       const type = isProtonDocsSpreadsheet(mimeType) ? 'sheet' : 'doc'
-      if (this.driveCompat) {
-        this.driveCompat.redirectToAuthedDocument(meta, type)
-      } else {
-        window.location.assign(getDocumentActionUrl({ ...meta, type, mode: 'open' }, localID))
-      }
+      window.location.assign(getDocumentActionUrl({ ...meta, type, mode: 'open' }, localID))
       return
     }
 
@@ -172,7 +166,7 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
       this.metricService,
     )
 
-    this.renameController = new PublicRenameController(documentState, this.driveCompat, this.getNode, this.logger)
+    this.renameController = new PublicRenameController(documentState, this.getNode, this.logger)
 
     this.statusObservers.forEach((observer) => {
       if (this.orchestrator) {

@@ -302,8 +302,6 @@ export class AppDependencies extends DependencyContainer {
 
     this.bind(App_TYPES.LoadDocument, () => {
       return new LoadDocument(
-        compatWrapper,
-        this.get<GetDocumentMeta>(App_TYPES.GetDocumentMeta),
         this.get<GetNode>(App_TYPES.GetNode),
         this.get<DecryptCommit>(App_TYPES.DecryptCommit),
         this.get<FetchMetaAndRawCommit>(App_TYPES.FetchMetaAndRawCommit),
@@ -365,7 +363,6 @@ export class AppDependencies extends DependencyContainer {
 
     this.bind(App_TYPES.PublicDocLoader, () => {
       return new PublicDocLoader(
-        compatWrapper.getPublicCompat(),
         this.get<WebsocketService>(App_TYPES.WebsocketService),
         this.get<DocsApi>(App_TYPES.DocsApi),
         this.get<LoadDocument>(App_TYPES.LoadDocument),

@@ -8,7 +8,6 @@ import * as aesGcm from '@protontech/crypto/subtle/aesGcm.ts'
 import { EncryptionContext } from './EncryptionContext'
 import { DriveCompatWrapper } from '@proton/drive-store/lib/DriveCompatWrapper'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
-import type { PublicDriveCompat } from '@proton/drive-store/lib/usePublicDriveCompat'
 
 jest.mock('@protontech/crypto', () => ({
   CryptoProxy: {
@@ -213,28 +212,13 @@ describe('EncryptionService', () => {
     })
 
     describe('public context', () => {
-      const mockPublicCompat = { getPublicKeysForEmail: jest.fn() }
       const mockImportedKey = { key: 'imported-key' }
-      const publicCompatWrapper = new DriveCompatWrapper({
-        publicCompat: mockPublicCompat as unknown as PublicDriveCompat,
-      })
 
       beforeEach(() => {
         ;(CryptoProxy.importPublicKey as jest.Mock).mockResolvedValue(mockImportedKey)
       })
 
-      it('should get public keys from public compat without SDK', async () => {
-        mockPublicCompat.getPublicKeysForEmail.mockResolvedValue(['armored-key'])
-        const publicService = new EncryptionService(mockContext, publicCompatWrapper, mockApi)
-
-        const result = await publicService.getVerificationKey(mockEmail)
-
-        expect(result.getValue()).toEqual([mockImportedKey])
-        expect(mockPublicCompat.getPublicKeysForEmail).toHaveBeenCalledWith(mockEmail)
-        expect(mockApi).not.toHaveBeenCalled()
-      })
-
-      it('should get public keys from api with SDK', async () => {
+      it('should get public keys from api', async () => {
         mockApi.mockResolvedValue({ Address: { Keys: [{ PublicKey: 'armored-key' }] } })
         const publicService = new EncryptionService(mockContext, new DriveCompatWrapper({}), mockApi)
 
@@ -242,7 +226,6 @@ describe('EncryptionService', () => {
 
         expect(result.getValue()).toEqual([mockImportedKey])
         expect(CryptoProxy.importPublicKey).toHaveBeenCalledWith({ armoredKey: 'armored-key' })
-        expect(mockPublicCompat.getPublicKeysForEmail).not.toHaveBeenCalled()
       })
     })
   })
