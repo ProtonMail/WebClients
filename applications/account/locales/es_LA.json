@@ -9111,6 +9111,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Hubo un problema al registrar la llave de seguridad. Intente nuevamente."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Este navegador no admite claves de seguridad. Intente con otro navegador."
+      ],
+      "This security key is already registered to your account.": [
+        "Esta clave de seguridad ya está registrada en su cuenta."
       ]
     },
     "fido2: Info": {
@@ -14582,6 +14588,18 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "Review and export the data for reporting or client invoicing.": [
+        "Revise y exporte los datos para generar informes o facturar a los clientes."
+      ],
+      "Share error logs with ${ BRAND_NAME }": [
+        "Compartir los registros de errores con ${ BRAND_NAME }"
+      ],
+      "Share performance data and usage statistics with ${ BRAND_NAME }": [
+        "Compartir datos de rendimiento y estadísticas de uso con ${ BRAND_NAME }"
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "Para mejorar continuamente nuestros servicios, a veces recopilamos datos para controlar el funcionamiento correcto de nuestras aplicaciones. **Esta información no se comparte con ningún servicio de terceros.**"
       ]
     },
     "info": {
@@ -16997,6 +17015,12 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Billed average": [
+        "Promedio facturado"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "Recolección de diagnósticos de uso"
       ]
     },
     "label": {
@@ -21392,7 +21416,7 @@
     },
     "Personal calendar section description": {
       "Create a calendar to stay on top of your schedule while keeping your data secure.": [
-        "Cree un calendario para mantenerse al tanto de el agenda mientras mantiene los datos seguros."
+        "Cree un calendario para mantenerse al tanto de su agenda mientras mantiene sus datos seguros."
       ]
     },
     "PGP key warning": {
@@ -28350,6 +28374,12 @@
       ],
       "Your subscriptions": [
         "Sus suscripciones"
+      ],
+      "Billing periods": [
+        "Periodos de facturación"
+      ],
+      "Monthly cost": [
+        "Costo mensual"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

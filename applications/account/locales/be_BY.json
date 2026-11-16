@@ -5829,6 +5829,9 @@
         "Ваш тарыфны план агулам падтрымлівае ${ MAX_SYNC_PAID_USER } адрасы Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail"
+      ],
+      "Bring over your files and folders from another provider.": [
+        "Перанясіце свае файлы і папкі ад іншага пастаўшчыка."
       ]
     },
     "description": {
@@ -8356,6 +8359,12 @@
       ],
       "Zero keys reactivated": [
         "Нуль ключоў паўторна актывавана"
+      ],
+      "The session has expired. Please try again.": [
+        "Час сеанса пратэрмінаваны. Паўтарыце спробу."
+      ],
+      "We couldn't disconnect this address. Please try again.": [
+        "Немагчыма адключыць гэтыя адрасы. Паўтарыце спробу."
       ]
     },
     "error": {
@@ -9159,6 +9168,9 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Нешта пайшло не так з рэгістрацыяй вашага ключа бяспекі. Паўтарыце спробу."
+      ],
+      "This security key is already registered to your account.": [
+        "Гэты ключ бяспекі ўжо зарэгістраваны ў вашым уліковым запісе."
       ]
     },
     "fido2: Info": {
@@ -9218,6 +9230,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Ваш двухфактарны ключ аўтэнтыфікацыі гатовы да выкарыстання."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Выкарыстоўваць адбітак пальца, распазнаванне твару, PIN-код або блакіроўку экрана гэтай прылады"
       ]
     },
     "fido2: Label": {
@@ -14593,6 +14608,12 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "Adds a Meet link to events with at least one participant.": [
+        "Дадае спасылку на Meet да падзей з хаця б адным удзельнікам."
+      ],
+      "Share error logs with ${ BRAND_NAME }": [
+        "Абагульванне журналаў з дапамогай ${ BRAND_NAME }"
       ]
     },
     "info": {
@@ -17026,6 +17047,12 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Billed average": [
+        "Сярэдняя аплата"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "Збіраць ананімную дыягностыку выкарыстання"
       ]
     },
     "label": {
@@ -19456,7 +19483,7 @@
         "Выкарыстоўвайце свой уласны карыстальніцкі дамен электроннай пошты. Напрыклад, you@yourname.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Мы не пакідаем журналы выкарыстання сеансаў з вашымі дзеяннямі ў інтэрнэце, а таксама нас не цікавяць метадыныя, якія могуць скампраметаваць вашу прыватнасць"
+        "У нашым сэрвісе адсутнічаюць журналы выкарыстання сеансаў з вашымі дзеяннямі ў інтэрнэце, а таксама нас не цікавяць метадыныя, якія могуць скампраметаваць вашу прыватнасць"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Мы лічым сваім абавязкова дапамагаць кліентам у адпаведнасці з прававымі нормамі HIPAA/HITECH у дачыненні абароненай інфармацыі аб здароўі (PHI). Падпісаныя пагадненні аб дзелавым партнёрстве даступны для ўсіх кліентаў ${ BRAND_NAME } у сферы бізнесу."
@@ -21372,6 +21399,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
+      ],
+      "Your account is too old for the Born Private initiative.": [
+        "У вас занадта стары ўліковы запіс для ініцыятывы Born Private."
       ]
     },
     "Payments.Error": {
@@ -21801,6 +21831,12 @@
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Ідэальны тарыфны план для дасведчаных карыстальнікаў, якія клапоцяцца аб прыватнасці."
+      ],
+      "Essential privacy and security suite for your business.": [
+        "Асноўны пакет прыватнасці і бяспекі для вашага бізнесу."
+      ],
+      "Secure cloud storage and file sharing for your business.": [
+        "Бяспечнае воблачнае сховішча і абагульванне файлаў для вашага бізнесу."
       ]
     },
     "Plans": {
@@ -23071,6 +23107,9 @@
       ],
       "What to expect now that group sync is enabled": [
         "Чаго цяпер чакаць, калі сінхранізацыя групы ўключана"
+      ],
+      "Final approval needed to revoke their organization keys.": [
+        "Для таго, каб адклікаць іх ключы арганізацыі патрабуецца канчатковае ўхваленне."
       ]
     },
     "scim: Action": {
@@ -24124,6 +24163,69 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Вас запрашаюць далучыцца да больш чым 100 мільёнаў чалавек, якія вырашылі пакінуць сабе кантроль над сваімі данымі з зашыфраванай экасістэмай ${ BRAND_NAME }."
+      ],
+      "Billed yearly": [
+        "Аплачваецца штогод"
+      ],
+      "Billed yearly, renews on ${ renewalTime }": [
+        "Аплачваецца штогод, падаўжаецца ${ renewalTime }"
+      ],
+      "Business information": [
+        "Інфармацыя аб бізнесе"
+      ],
+      "Checkout": [
+        "Завяршэнне пакупкі"
+      ],
+      "Confirmation": [
+        "Пацвярджэнне"
+      ],
+      "Coupon": [
+        "Купон"
+      ],
+      "Create account": [
+        "Стварыць уліковы запіс"
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Стварыце ўліковы запіс ${ BRAND_NAME }"
+      ],
+      "Creating your account": [
+        "Стварэнне вашага ўліковага запісу"
+      ],
+      "Discount": [
+        "Скідка"
+      ],
+      "Encrypted solutions to protect": [
+        "Зашыфраваныя рашэнні для абароны"
+      ],
+      "For ${ countryElement }": [
+        "За ${ countryElement }"
+      ],
+      "Pick a plan to get started.": [
+        "Выберыце тарыфны план, каб пачаць."
+      ],
+      "Something went wrong": [
+        "Нешта пайшло не так"
+      ],
+      "Summary": [
+        "Зводка"
+      ],
+      "Taxes may apply.": [
+        "Могуць прымяняцца падаткі."
+      ],
+      "Unlimited vaults for your passwords": [
+        "Неабмежаваная колькасць сховішчаў для вашых пароляў"
+      ],
+      "Users": [
+        "Карыстальнікі"
+      ],
+      "WS Premium": [
+        "WS Premium"
+      ],
+      "WS Standard": [
+        "WS Standard"
+      ],
+      "your entire business": [
+        "увесь ваш бізнес"
       ]
     },
     "Signup label": {
@@ -25138,6 +25240,12 @@
       ],
       "Total due today": [
         "Агульная сума да аплаты сёння"
+      ],
+      "${ planDiscountItem.discountPercent }% discount applied": [
+        "Прыменена скідка ў памеры ${ planDiscountItem.discountPercent }%"
+      ],
+      "${ planDiscountItem.discountPercent }% off": [
+        "${ planDiscountItem.discountPercent }% скідкай"
       ]
     },
     "Subscription attribute": {
@@ -26107,6 +26215,9 @@
       ],
       "/year": [
         "/год"
+      ],
+      "/user/month": [
+        "/карыстальнік/месяц"
       ]
     },
     "Suffix for price": {
@@ -28564,6 +28675,12 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "Billing periods": [
+        "Разліковыя перыяды"
+      ],
+      "Monthly cost": [
+        "Штомесячны кошт"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -30307,6 +30424,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Штогод, ${ untilString }"
+      ]
+    },
+    "Business signup action": {
+      "Start using ${ planTitle } now": [
+        "Пачаць выкарыстоўваць ${ planTitle }"
       ]
     }
   }

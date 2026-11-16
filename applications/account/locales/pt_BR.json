@@ -9111,6 +9111,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Algo deu errado ao registrar sua chave de segurança. Tente novamente."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Este navegador não suporta chaves de segurança. Tente um navegador diferente."
+      ],
+      "This security key is already registered to your account.": [
+        "Esta chave de segurança já está registrada na sua conta."
       ]
     },
     "fido2: Info": {
@@ -10692,7 +10698,7 @@
         "1 dispositivo por usuário"
       ],
       "1 vault per user": [
-        "1 cofres por usuário"
+        "1 cofre por usuário"
       ],
       "2FA disabled": [
         "A2F desativado"
@@ -14372,7 +14378,7 @@
         "Você então será cobrado a cada ${ renewCycle } meses em ${ renewAmountStr }.Você pode cancelar a qualquer momento."
       ],
       "You'll use it to sign in from then on. That's the only change.": [
-        "Você vai usá-lo para entrar a partir de então. Essa é a única mudança."
+        "A partir de agora, você o usará para fazer login. Essa é a única mudança."
       ],
       "You're about to sign in to your ${ BRAND_NAME } Account at this address:": [
         "Você está prestes a entrar na sua ${ BRAND_NAME } Conta neste endereço:"
@@ -14582,6 +14588,18 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "Review and export the data for reporting or client invoicing.": [
+        "Revise e exporte os dados para relatórios ou faturamento de clientes."
+      ],
+      "Share error logs with ${ BRAND_NAME }": [
+        "Compartilhar registros de erros com a ${ BRAND_NAME }"
+      ],
+      "Share performance data and usage statistics with ${ BRAND_NAME }": [
+        "Compartilhe dados de desempenho e estatísticas de uso com a ${ BRAND_NAME }"
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "Para melhorar continuamente nossos serviços, às vezes coletamos dados para monitorar o funcionamento adequado de nossos aplicativos. **Essas informações não são compartilhadas com nenhum serviço de terceiros.**"
       ]
     },
     "info": {
@@ -16997,6 +17015,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "Colete diagnósticos anônimos de uso"
       ]
     },
     "label": {
@@ -28368,6 +28389,12 @@
       ],
       "Your subscriptions": [
         "Suas assinaturas"
+      ],
+      "Billing periods": [
+        "Períodos de faturamento"
+      ],
+      "Monthly cost": [
+        "Custo mensal"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -29356,7 +29383,7 @@
         "Assistente de escrita"
       ],
       "You can't change your own roles. Ask another admin to change them.": [
-        "Você não pode mudar seus próprios papéis. Peça a outro administrador para alterá-los."
+        "Você não pode alterar seus próprios papéis. Peça a outro administrador que os altere."
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Você poderá atribuir funções assim que o usuário aceitar o convite."

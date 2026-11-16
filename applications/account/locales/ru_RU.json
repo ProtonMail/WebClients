@@ -1856,6 +1856,18 @@
       ],
       "Zoom out": [
         "Уменьшить масштаб"
+      ],
+      "Cancel ${ planTitle }": [
+        "Отменить ${ planTitle }"
+      ],
+      "Instructions": [
+        "Инструкции"
+      ],
+      "OneDrive": [
+        "OneDrive"
+      ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Начните использовать ${ PASS_APP_NAME }"
       ]
     },
     "action": {
@@ -1881,6 +1893,9 @@
     "Action subscription": {
       "Reactivate": [
         "Возобновить"
+      ],
+      "Cancel subscription": [
+        "Отменить подписку"
       ]
     },
     "Action: Sheets": {
@@ -12897,6 +12912,9 @@
       ],
       "Zoom meeting": [
         "Конференция в Zoom "
+      ],
+      "Disconnected": [
+        "Отключено"
       ]
     },
     "info": {
@@ -15151,6 +15169,15 @@
       ],
       "ZIP code": [
         "Почтовый индекс"
+      ],
+      "Billing period": [
+        "Период оплаты"
+      ],
+      "Invitation link": [
+        "Пригласительная ссылка"
+      ],
+      "Payment terms": [
+        "Условия оплаты"
       ]
     },
     "label": {
@@ -15626,6 +15653,9 @@
       ],
       "Your import is starting": [
         "Ваш импорт начался"
+      ],
+      "Loading your organization data": [
+        "Загрузка данных вашей организации"
       ]
     },
     "locked_state_storage_banner: info": {
@@ -19566,6 +19596,9 @@
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Идеальный тариф для опытных пользователей, заботящихся о конфиденциальности."
+      ],
+      "Premium privacy and security suite for your business.": [
+        "Премиальный пакет по обеспечению конфиденциальности и безопасности для вашего бизнеса."
       ]
     },
     "Plans": {
@@ -23551,6 +23584,15 @@
       ],
       "Your address has been activated": [
         "Ваш адрес активирован"
+      ],
+      "Domain added": [
+        "Домен добавлен"
+      ],
+      "Migration started for ${ n } user": [
+        "Началась миграция для ${ n } пользователя",
+        "Началась миграция для ${ n } пользователей",
+        "Началась миграция для ${ n } пользователей",
+        "Началась миграция для ${ n } пользователей"
       ]
     },
     "Success message": {
@@ -25796,6 +25838,9 @@
       ],
       "Your subscriptions": [
         "Ваши подписки"
+      ],
+      "Grant access": [
+        "Предоставить доступ"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -26201,6 +26246,15 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Возможно, ваш внешний аккаунт достиг 24-часового лимита пропускной способности. ${ BRAND_NAME } постарается возобновить импорт как можно скорее."
+      ],
+      "Expand invitation message": [
+        "Развернуть пригласительное сообщение"
+      ],
+      "Install the migration app in your ${ providerName } account to start a migration": [
+        "Установите приложение для миграции свой аккаунт ${ providerName }, чтобы начать миграцию"
+      ],
+      "This setting is managed by your organization": [
+        "Этой настройкой управляет ваша организация."
       ]
     },
     "tooltip": {
@@ -26730,6 +26784,9 @@
       ],
       "Writing assistant": [
         "Помощник по написанию"
+      ],
+      "Pending": [
+        "Ожидание"
       ]
     },
     "Validation": {
@@ -27441,6 +27498,30 @@
       ],
       "Yearly, ${ untilString }": [
         "Ежегодно ${ untilString }"
+      ]
+    },
+    "account_search_index": {
+      "Account events": [
+        "События аккаунта"
+      ],
+      "Add address": [
+        "Добавить адрес"
+      ],
+      "Join organization": [
+        "Присоединиться к организации"
+      ],
+      "Leave group": [
+        "Покинуть группу"
+      ]
+    },
+    "claimed address": {
+      "Verify it's you": [
+        "Подтвердите, что это вы"
+      ]
+    },
+    "Subscription term": {
+      "${ startTime } – ${ endTime }": [
+        "${ startTime } – ${ endTime }"
       ]
     }
   }

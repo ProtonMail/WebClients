@@ -2353,6 +2353,12 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Manage subscriptions": [
+        "Administrer abonnementer"
+      ],
+      "Migrate": [
+        "Migrér"
       ]
     },
     "action": {
@@ -8299,6 +8305,21 @@
       ],
       "Zero keys reactivated": [
         "Nul nøgler genaktiveret"
+      ],
+      "Address is already used by a user outside of your organization. Please contact customer support to resolve this": [
+        "Adressen bruges allerede af en bruger uden for din organisation. Kontakt kundesupporten for at få løst problemet"
+      ],
+      "Member address not found. Please contact customer support to resolve this": [
+        "Medlemsadressen blev ikke fundet. Kontakt kundesupporten for at få løst problemet"
+      ],
+      "Missing organization private key": [
+        "Organisationens private nøgle mangler"
+      ],
+      "Organization does not have enough seats available": [
+        "Organisationen har ikke nok ledige brugerlicenser."
+      ],
+      "Organization does not have enough storage available": [
+        "Organisationen har ikke tilstrækkelig ledig lagerplads"
       ]
     },
     "error": {
@@ -9085,6 +9106,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Noget gik galt med registreringen af din sikkerhedsnøgle. Prøv venligst igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Din browser understøtter ikke sikkerhedsnøgler. Prøv en anden browser."
+      ],
+      "This security key is already registered to your account.": [
+        "Denne sikkerhedsnøgle er allerede registreret på din konto."
       ]
     },
     "fido2: Info": {
@@ -9145,6 +9172,9 @@
       ],
       "Your two-factor authentication key is ready to use.": [
         "Din to-faktor-godkendelsesnøgle er klar til brug."
+      ],
+      "Use this device's fingerprint, face, PIN or screen lock": [
+        "Brug denne enheds fingeraftryk, ansigt, PIN eller skærmlås"
       ]
     },
     "fido2: Label": {
@@ -9218,6 +9248,24 @@
     "Filter": {
       "Activated": [
         "Aktiveret"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "Errors": [
+        "Fejl"
+      ],
+      "In progress": [
+        "I gang"
+      ],
+      "Migrated": [
+        "Migreret"
+      ],
+      "Not activated": [
+        "Ikke aktiveret"
+      ],
+      "Pending": [
+        "Afventer"
       ]
     },
     "Filter Actions": {
@@ -10209,6 +10257,12 @@
       "Skipped ${ count } event due to incompatibilities": [
         "Sprang ${ count } begivenhed over på grund af inkompatibilitet",
         "Sprang ${ count } begivenheder over på grund af inkompatibilitet"
+      ],
+      "Has errors": [
+        "Fejlbehæftet"
+      ],
+      "Pending": [
+        "Afventer"
       ]
     },
     "Import type": {
@@ -14496,6 +14550,51 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "Find out what can be migrated.": [
+        "Find ud af, hvad der kan migreres."
+      ],
+      "No users to display": [
+        "Ingen brugere at vise"
+      ],
+      "Review and export the data for reporting or client invoicing.": [
+        "Gennemgå og eksportér dataen til rapportering eller fakturering."
+      ],
+      "Share error logs with ${ BRAND_NAME }": [
+        "Del fejllogfiler med ${ BRAND_NAME }"
+      ],
+      "Share performance data and usage statistics with ${ BRAND_NAME }": [
+        "Del brugsstatistik og data om ydelse med ${ BRAND_NAME }"
+      ],
+      "This user can not be migrated because their email address is not available on ${ BRAND_NAME }.": [
+        "Denne bruger kan ikke migreres, fordi e-mailadressen ikke er tilgængelig på ${ BRAND_NAME }."
+      ],
+      "This user can not be migrated due to platform incompatibilities.": [
+        "Denne bruger kan ikke migreres på grund af inkompatibilitet mellem platformene."
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "For løbende at forbedre vores tjenester indsamler vi nogle gange data for at kontrollere, at vores applikationer fungerer korrekt. **Disse oplysninger deles ikke med nogen tredjepartstjenester.**"
+      ],
+      "To migrate this user, add and verify the email domain under ${ domainNamesLink }": [
+        "For at migrere denne bruger skal du tilføje og bekræfte e-maildomænet under ${ domainNamesLink }"
+      ],
+      "To migrate this user, enable their account in your ${ provider.adminConsoleName }.": [
+        "For at migrere denne bruger skal du aktivere kontoen under ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, enable their account under ${ usersAddressesLink }.": [
+        "For at migrere denne bruger skal du aktivere kontoen under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, enable their address under ${ usersAddressesLink }.": [
+        "For at migrere denne bruger skal du aktivere adressen under ${ usersAddressesLink }."
+      ],
+      "To migrate this user, they need to accept their invitation to join ${ BRAND_NAME }.": [
+        "Brugeren skal acceptere sin invitation til at tilslutte sig ${ BRAND_NAME }, før den kan migreres."
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "For at migrere denne bruger skal du ophæve brugerens arkivering i ${ provider.adminConsoleName }."
+      ],
+      "To migrate this user, unsuspend them in your ${ provider.adminConsoleName }.": [
+        "For at migrere denne bruger skal du ophæve brugerens suspendering i ${ provider.adminConsoleName }."
       ]
     },
     "info": {
@@ -16911,6 +17010,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Billed average": [
+        "Faktureret gennemsnit"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "Indsaml anonymt brugsdiagnostik"
       ]
     },
     "label": {
@@ -21049,7 +21154,7 @@
         "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "Den særligt nedsatte pris gælder for den første måned på ${ subscriptionLength }.",
+        "Den særligt nedsatte pris gælder den første ${ subscriptionLength } måned.",
         "Den særligt nedsatte pris gælder for de første ${ subscriptionLength } måneder."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
@@ -21581,6 +21686,27 @@
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Det ideelle abonnement til privatlivsbevidste superbrugere."
+      ],
+      "Confidential video conferencing for your business.": [
+        "Fortrolige videokonferencer til din virksomhed."
+      ],
+      "Essential privacy and security suite for your business.": [
+        "Grundlæggende privatliv og sikkerhedssuite til din virksomhed."
+      ],
+      "Next-level password management for your business.": [
+        "Avanceret adgangskodestyring til din virksomhed."
+      ],
+      "Premium privacy and security suite for your business.": [
+        "Premium privatliv og sikkerhedssuite til din virksomhed."
+      ],
+      "Privacy-first AI writing assistant for your business.": [
+        "AI-skriveassistent med privatliv som førsteprioritet til din virksomhed"
+      ],
+      "Secure cloud storage and file sharing for your business.": [
+        "Sikker cloud-lagring og fildeling til din virksomhed."
+      ],
+      "Secure, high-speed VPN access for your business.": [
+        "Sikker, lynhurtig VPN-adgang til din virksomhed."
       ]
     },
     "Plans": {
@@ -23821,6 +23947,87 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Du er inviteret til at slutte dig til over 100 mio. mennesker, der har valgt at bevare kontrollen over deres data med ${ BRAND_NAME }s krypterede økosystem."
+      ],
+      "${ renewalPriceElement } after the first 12 months": [
+        "${ renewalPriceElement } efter de første 12 måneder"
+      ],
+      "Billed yearly": [
+        "Faktureres årligt"
+      ],
+      "Billed yearly, renews on ${ renewalTime }": [
+        "Faktureres årligt, fornyes den ${ renewalTime }"
+      ],
+      "Business information": [
+        "Virksomhedsoplysninger"
+      ],
+      "Checkout": [
+        "Til kassen"
+      ],
+      "Claim your additional ${ referralDiscountPercent }% discount": [
+        "Indløs yderligere ${ referralDiscountPercent }% rabat"
+      ],
+      "Confirmation": [
+        "Bekræftelse"
+      ],
+      "Coupon": [
+        "Rabatkode"
+      ],
+      "Create account": [
+        "Opret konto"
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Opret din ${ BRAND_NAME }-konto"
+      ],
+      "Creating your account": [
+        "Opretter din konto"
+      ],
+      "Discount": [
+        "Rabat"
+      ],
+      "Encrypted solutions to protect": [
+        "Krypterede løsninger der giver beskyttelse"
+      ],
+      "For ${ countryElement }": [
+        "Til ${ countryElement }"
+      ],
+      "Get an additional ${ referralDiscountPercent }% off your first year of ${ BRAND_NAME } for Business": [
+        "Få yderligere ${ referralDiscountPercent }% rabat på din første år med ${ BRAND_NAME } for Business"
+      ],
+      "Pick a plan to get started.": [
+        "Vælg et abonnement for at komme i gang."
+      ],
+      "Something went wrong": [
+        "Noget gik galt"
+      ],
+      "Summary": [
+        "Oversigt"
+      ],
+      "Taxes may apply.": [
+        "Der kan gælde afgifter."
+      ],
+      "Unlimited vaults for your passwords": [
+        "Ubegrænsede bokse til dine adgangskoder"
+      ],
+      "Users": [
+        "Brugere"
+      ],
+      "We couldn't finish setting up your account. Please contact support.": [
+        "Vi kunne ikke færdiggøre opsætningen af din konto. Kontakt support."
+      ],
+      "WS Premium": [
+        "WS Premium"
+      ],
+      "WS Standard": [
+        "WS Standard"
+      ],
+      "You're invited to join 100,000+ organizations that protect their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "Du er inviteret til at slutte dig til over 100.000 organisationer, som beskytter deres data med ${ BRAND_NAME }s krypterede økosystem."
+      ],
+      "Your account has been created, but we couldn't sign you in.": [
+        "Din konto blev oprettet, men vi kunne ikke logge dig ind."
+      ],
+      "your entire business": [
+        "hele din virksomhed"
       ]
     },
     "Signup label": {
@@ -25735,6 +25942,9 @@
       ],
       "/year": [
         "/år"
+      ],
+      "/user/month": [
+        "/bruger/måned"
       ]
     },
     "Suffix for price": {
@@ -25794,6 +26004,15 @@
       ],
       "Status": [
         "Status"
+      ],
+      "Activated": [
+        "Aktiveret"
+      ],
+      "Migration status": [
+        "Migrationsstatus"
+      ],
+      "User": [
+        "Bruger"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -28138,6 +28357,24 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Billing periods": [
+        "Faktureringsperioder"
+      ],
+      "Configure migration": [
+        "Konfigurér migrering"
+      ],
+      "Email address": [
+        "E-mailadresse"
+      ],
+      "Monthly cost": [
+        "Månedlig pris"
+      ],
+      "Select users to migrate": [
+        "Vælg brugere til migrering"
+      ],
+      "What are you migrating?": [
+        "Hvad vil du migrere?"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -28594,6 +28831,12 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Din eksterne konto har muligvis nået sin 24-timers båndbreddegrænse. ${ BRAND_NAME } vil forsøge at genoptage importen så hurtig som muligt."
+      ],
+      "Data migration status from ${ providerName } to ${ BRAND_NAME }": [
+        "Status for datamigrering fra ${ providerName } til ${ BRAND_NAME }"
+      ],
+      "Users who have accessed their ${ BRAND_NAME } account": [
+        "Brugere, der har tilgået deres ${ BRAND_NAME }-konto"
       ]
     },
     "tooltip": {
@@ -29812,6 +30055,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligt, ${ untilString }"
+      ]
+    },
+    "Business signup action": {
+      "Start using ${ planTitle } now": [
+        "Begynd at bruge ${ planTitle } nu"
       ]
     }
   }

@@ -402,7 +402,7 @@
         "Afegeix"
       ],
       "Add ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }": [
-        "Afegiu ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
+        "Afegeix ${ BRAND_NAME } ${ PASS_SHORT_APP_NAME }"
       ],
       "Add ${ BRAND_NAME } Account": [
         "Afegeix un compte de ${ BRAND_NAME }"
@@ -414,7 +414,7 @@
         "Afegeix ${ name }"
       ],
       "Add a payment method": [
-        "Afegiu un mètode de pagament"
+        "Afegeix un mètode de pagament"
       ],
       "Add account": [
         "Afegeix un compte"
@@ -5793,7 +5793,7 @@
         "El vostre compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem ${ newUserStorageText } dels vostres missatges més recents de Gmail"
       ],
       "Your free ${ MAIL_APP_NAME } account comes with limited storage so we'll only import your most recent Gmail emails.": [
-        "El vostre compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem els vostres correus electrònics més recents de Gmail."
+        "El compte gratuït de ${ MAIL_APP_NAME } ve amb emmagatzematge limitat, de manera que només importarem els vostres correus electrònics més recents de Gmail."
       ],
       "Your other sessions have been ended. You can now sign in on this device.": [
         "S'han tancat les vostres altres sessions. Ara podeu iniciar la sessió en aquest dispositiu."
@@ -9108,6 +9108,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Alguna cosa ha anat malament en registrar la vostra clau de seguretat. Torneu a provar."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Aquest navegador no admet claus de seguretat. Proveu amb un altre navegador."
+      ],
+      "This security key is already registered to your account.": [
+        "Aquest dispositiu de seguretat ja està registrat al vostre compte."
       ]
     },
     "fido2: Info": {
@@ -9160,7 +9166,7 @@
         "Toqueu la clau de seguretat per a continuar."
       ],
       "Use this device's fingerprint, face, PIN or screen lock": [
-        "Utilitzar l'empremta digital, el rostre, el PIN o el bloqueig de pantalla d'aquest dispositiu"
+        "Utilitza l'empremta digital, el rostre, el PIN o el bloqueig de pantalla d'aquest dispositiu"
       ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Confirmeu la vostra identitat amb una clau de seguretat física U2F o FIDO2."
@@ -10426,7 +10432,7 @@
         "${ MAIL_APP_NAME } també es pot usar amb una sola contrasenya que reemplaça tant la contrasenya d'inici de sessió com la segona contrasenya. Per a canviar al mode de contrasenya única, introduïu la contrasenya que voleu utilitzar i feu clic a Desa."
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
-        "${ MEET_APP_NAME } és una aplicació de videoconferència amb xifratge d'extrem a extrem. Afegiu-la al vostre pla per allotjar reunions segures."
+        "${ MEET_APP_NAME } és una aplicació de videoconferència amb xifratge d'extrem a extrem. Afegiu-la al vostre pla per a allotjar reunions segures."
       ],
       "${ MEET_APP_NAME } seats": [
         "Llicències de ${ MEET_APP_NAME }"
@@ -10588,7 +10594,7 @@
         "S'ha eliminat ${ url }."
       ],
       "${ VPN_SHORT_APP_NAME } hides your traffic. ${ PASS_SHORT_APP_NAME } hides your identity\n— unlimited **hide-my-email aliases** and **dark-web alerts** if your data is ever leaked.": [
-        "${ VPN_SHORT_APP_NAME } amaga el vostre trànsit. ${ PASS_SHORT_APP_NAME } amaga la vostra identitat— àlies de **hide-my-email** il·limitats i **alertes de la web fosca** si les vostres dades es filtren."
+        "${ VPN_SHORT_APP_NAME } amaga el trànsit. ${ PASS_SHORT_APP_NAME } amaga la identitat — àlies de **hide-my-email** il·limitats i **alertes del web fosc** si les vostres dades es filtren."
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Es requereix ${ vpnPlus } per a la conexió a nivell de país."
@@ -10809,7 +10815,7 @@
         "S'ha copiat l'adreça al porta-retalls."
       ],
       "Adds a Meet link to events with at least one participant.": [
-        "Afegiu un enllaç de Meet als esdeveniments amb almenys un participant."
+        "Afegeix un enllaç de Meet als esdeveniments amb almenys un participant."
       ],
       "Admin account allocation": [
         "Assignació del compte d'administrador"
@@ -11783,7 +11789,7 @@
         "Tot a ${ planOrAppName }"
       ],
       "Everything in ${ planOrAppName }, plus:": [
-        "Tot el que inclou ${ planOrAppName }, i a més:"
+        "Tot el que inclou ${ planOrAppName } i, a més:"
       ],
       "Example: ${ spfExample }": [
         "Exemple: ${ spfExample }"
@@ -13170,7 +13176,7 @@
         "Fi de la subscripció: reactiveu-la abans del ${ byDate } per a mantenir els vostres beneficis de ${ planName }. ${ reactivateLink }"
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Apple App Store by ${ byDate }. ${ reactivateLink }": [
-        "La vostra subscripció és a punt de finalitzar: per mantenir els avantatges del pla ${ planName }, reinicieu-la a Apple App Store abans del ${ byDate }. ${ reactivateLink }"
+        "La vostra subscripció està a punt de finalitzar. Per a mantenir els avantatges de ${ planName }, reinicieu-la a Apple App Store abans del ${ byDate }. ${ reactivateLink }"
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "La vostra subscripció és a punt de finalitzar: per mantenir els avantatges del pla ${ planName }, reinicieu-la a Google Play Store abans del ${ byDate }. ${ reactivateLink }"
@@ -13711,7 +13717,7 @@
         "Milloreu el pla ara per veure l'activitat de ${ PASS_APP_NAME } a tota la vostra organització."
       ],
       "Upgrade or clear space anytime to bring over the rest": [
-        "Milloreu de pla o allibereu espai en qualsevol moment per portar la resta"
+        "Milloreu el pla o allibereu espai en qualsevol moment per a portar la resta"
       ],
       "Upgrade required": [
         "Es requereix la millora del pla"
@@ -13723,7 +13729,7 @@
         "Milloreu el pla per definir directives per a la vostra organització."
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
-        "Actualitzeu el pla per conservar els vostres avantatges de ${ planTitle }."
+        "Actualitzeu el pla per a conservar els vostres avantatges de ${ planTitle }."
       ],
       "Upgrade to unlock": [
         "Milloreu de pla per a desbloquejar-ho"
@@ -14305,7 +14311,7 @@
         "Hauríeu d'exportar una còpia de seguretat d'aquesta clau per si heu de restaurar dades que hagi xifrat."
       ],
       "You still need to reply for the organizer to see your response.": [
-        "Afegiu un enllaç de Meet als esdeveniments amb almenys un participant."
+        "Encara heu de respondre perquè l'organitzador vegi la vostra resposta."
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Encara heu de respondre a les invitacions perquè l'amfitrió vegi la vostra resposta."
@@ -14353,7 +14359,7 @@
         "No podreu recuperar dades bloquejades utilitzant els fitxers de recuperació descarregats. També es desactivarà la recuperació basada en dispositiu."
       ],
       "You'll choose a new username": [
-        "Triareu un nou nom d'usuari"
+        "Triareu un nom d'usuari nou"
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Rebreu la recompensa en crèdit un mes després que el vostre amic se subscrigui a un pla anual i dos mesos després que ho faci a un pla mensual."
@@ -14415,7 +14421,7 @@
         "S'ha actualitzat el vostre compte."
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "El vostre compte està configurat actualment per aplicar el règim de facturació inversa. Això no és compatible amb el pla seleccionat. Per continuar, o bé elimineu el número d'IVA de l'adreça de facturació o bé seleccioneu un pla diferent."
+        "El vostre compte està configurat actualment per a aplicar el règim de facturació inversa. Això no és compatible amb el pla seleccionat. Per a continuar, o bé elimineu el número d'IVA de l'adreça de facturació o bé seleccioneu un pla diferent."
       ],
       "Your account was created, but we couldn't finish setting up your plan.": [
         "S'ha creat el vostre compte, però no hem pogut completar la configuració del pla."
@@ -14579,6 +14585,18 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "Review and export the data for reporting or client invoicing.": [
+        "Reviseu-ho i exporteu les dades per a informes o facturació de clients."
+      ],
+      "Share error logs with ${ BRAND_NAME }": [
+        "Compartir els registres d'errors amb ${ BRAND_NAME }"
+      ],
+      "Share performance data and usage statistics with ${ BRAND_NAME }": [
+        "Compartir dades de rendiment i estadístiques d'ús amb ${ BRAND_NAME }"
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "Per tal de millorar contínuament els nostres serveis, a vegades recopilem dades per controlar el bon funcionament de les nostres aplicacions. **Aquesta informació no es comparteix amb serveis de tercers.**"
       ]
     },
     "info": {
@@ -15260,7 +15278,7 @@
         "6 comptes Pass Plus"
       ],
       "Access ${ PASS_APP_NAME } securely from the terminal, ideal for scripting, automation, and development workflows.": [
-        "Accediu a ${ PASS_APP_NAME } de manera segura des del terminal, és ideal per scripts, automatització i fluxos de treball de desenvolupament."
+        "Accediu a ${ PASS_APP_NAME } de manera segura des del terminal. És ideal per a scripts, automatització i fluxos de treball de desenvolupament."
       ],
       "Account credit": [
         "Crèdit del compte"
@@ -16994,6 +17012,12 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Billed average": [
+        "Mitjana facturada"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "Recopilar diagnòstics d'ús anònims"
       ]
     },
     "label": {
@@ -18746,7 +18770,7 @@
         "Correus protegits amb contrasenya"
       ],
       "Phone support (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ users)": [
-        "Suport telefònic (${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT }+ usuaris)"
+        "Suport telefònic (almenys ${ MIN_REQUIRED_MEMBERS_FOR_B2B_PHONE_SUPPORT } usuaris)"
       ],
       "Priority email support": [
         "Suport prioritari per correu electrònic"
@@ -21025,7 +21049,7 @@
         "Durant aquest temps, no podreu modificar ni cancel·lar la subscripció. Espereu fins que s'hagi completat el pagament abans d'intentar qualsevol canvi. Gràcies per la vostra paciència."
       ],
       "Edit billing address": [
-        "Editar l'adreça de facturació"
+        "Edita l'adreça de facturació"
       ],
       "Got it": [
         "Entesos"
@@ -21645,7 +21669,7 @@
         "Paquet complet de privadesa i seguretat."
       ],
       "Confidential video conferencing for your business.": [
-        "Videoconferència confidencial per a la vostra empresa."
+        "Videoconferències confidencials per a la vostra empresa."
       ],
       "Defeat spam, tracking, and ads with encrypted email and a secure calendar.": [
         "Derroteu el correu brossa, el seguiment i els anuncis amb el correu electrònic xifrat i un calendari segur."
@@ -22161,7 +22185,7 @@
         "**Si us subscriviu abans d'aquesta data,** rebreu **${ referrerRewardAmount }** en crèdits."
       ],
       "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
-        "Després d'aquesta data, el vostre compte baixarà de categoria a **${ BRAND_NAME } Gratuït**. Si canvieu d'opinió, podreu **reactivar la vostra subscripció** per mantenir l'accés a les funcions prèmium."
+        "Després d'aquesta data, el vostre compte baixarà de categoria a **${ BRAND_NAME } Free**. Si canvieu d'opinió, podreu **reactivar la subscripció** per a mantenir l'accés a les característiques prèmium."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Gaudiu de **${ planTitle }** de franc fins al **${ textDate }**."
@@ -23679,7 +23703,7 @@
         "Paquet"
       ],
       "Business information": [
-        "Informació professional"
+        "Informació de l'empresa"
       ],
       "Checkout": [
         "Pagament"
@@ -23778,7 +23802,7 @@
         "aconseguiu una adreça segura de ${ MAIL_APP_NAME }."
       ],
       "Get an additional ${ referralDiscountPercent }% off your first year of ${ BRAND_NAME } for Business": [
-        "Aconseguiu un descompte addicional del ${ referralDiscountPercent }% durant el primer any de ${ BRAND_NAME } per a empreses"
+        "Aconseguiu un descompte addicional del ${ referralDiscountPercent }% en el primer any de ${ BRAND_NAME } per a empreses"
       ],
       "Gifted by **${ referrerName }**": [
         "Regalat per **${ referrerName }**"
@@ -23899,7 +23923,7 @@
         "Sincronitzeu fitxers entre dispositius i usuaris"
       ],
       "Taxes may apply.": [
-        "Es poden aplicar impostos."
+        "Pot ser que s'apliquin impostos."
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "El nom de l'organització serà visible per als vostres usuaris mentre tinguin la sessió iniciada."
@@ -23993,7 +24017,7 @@
         "Us convidem a unir-vos a més de 100.000 organitzacions que protegeixen les seves dades amb l'ecosistema xifrat de ${ BRAND_NAME }."
       ],
       "Your account has been created, but we couldn't sign you in.": [
-        "S'ha creat el vostre compte, però no hem pogut iniciar la vostra sessió."
+        "S'ha creat el vostre compte, però no hem pogut iniciar sessió."
       ],
       "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
         "El vostre compte inclou accés a funcions gratuïtes a ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ LUMO_SHORT_APP_NAME }."
@@ -28350,6 +28374,12 @@
       ],
       "Your subscriptions": [
         "Les vostres subscripcions"
+      ],
+      "Billing periods": [
+        "Períodes de facturació"
+      ],
+      "Monthly cost": [
+        "Cost mensual"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

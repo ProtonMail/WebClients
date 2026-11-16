@@ -8275,6 +8275,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "セキュリティキーの登録に失敗しました。もう一度お試しください。"
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "このブラウザーはセキュリティキーに対応していません。別のブラウザーをお試しください。"
+      ],
+      "This security key is already registered to your account.": [
+        "このセキュリティキーは、すでにアカウントに登録されています。"
       ]
     },
     "fido2: Info": {
@@ -12956,6 +12962,15 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ],
+      "Share error logs with ${ BRAND_NAME }": [
+        "${ BRAND_NAME } とエラーログを共有する"
+      ],
+      "Share performance data and usage statistics with ${ BRAND_NAME }": [
+        "${ BRAND_NAME } とパフォーマンスデータおよび使用統計を共有する"
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "サービスの継続的な改善のためアプリケーションが正常に動作しているかを確認する目的でデータを収集することがあります。**この情報が第三者のサービスと共有されることはありません。**"
       ]
     },
     "info": {
@@ -15207,6 +15222,12 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Billed average": [
+        "平均請求額"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "匿名の使用状況診断データを収集する"
       ]
     },
     "label": {
@@ -25587,6 +25608,12 @@
       ],
       "Your subscriptions": [
         "あなたのサブスクリプション"
+      ],
+      "Billing periods": [
+        "請求期間"
+      ],
+      "Monthly cost": [
+        "月額費用"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

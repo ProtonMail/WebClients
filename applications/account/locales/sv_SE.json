@@ -312,6 +312,9 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ],
+      "Hide my email": [
+        "Dölj min e-post"
       ]
     },
     "Accounts": {
@@ -2293,6 +2296,12 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Cancel trial": [
+        "Avbryt provperioden"
+      ],
+      "Restrict sign-in": [
+        "Begränsa inloggning"
       ]
     },
     "action": {
@@ -2424,6 +2433,9 @@
       ],
       "Writing assistant seats": [
         "Användarplatser för skrivassistent"
+      ],
+      "Organizations with the Managed Service Provider addon can create and manage subsidiary organizations.": [
+        "Visar sätt att få hjälp med verifiering"
       ]
     },
     "Address action": {
@@ -2793,6 +2805,9 @@
       ],
       "You have reached the trial limit.": [
         "Du har nått provperiodsgränsen."
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period.": [
+        "När du avbryter kommer din gratis provperiod inte att omvandlas till en betald prenumeration, men du kan fortfarande dra nytta av paketförmåner fram till slutet av provperioden."
       ]
     },
     "b2b_trials_Action": {
@@ -2871,6 +2886,9 @@
       ],
       "Premium versions of all ${ BRAND_NAME } services": [
         "Premiumversioner av alla ${ BRAND_NAME }-tjänster"
+      ],
+      "The ${ planName } plan is back for a limited time only": [
+        "Paketet ${ planName } är tillbaka endast under en begränsad tid"
       ]
     },
     "bf2023: info": {
@@ -3014,6 +3032,10 @@
       ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Förnyas automatiskt med ${ subscriptionManagerName }"
+      ],
+      "Renews automatically at ${ price }, for ${ cycle } month": [
+        "Förnyas automatiskt med ${ price }, för ${ cycle } månad",
+        "Förnyas automatiskt med ${ price }, för ${ cycle } månader"
       ]
     },
     "Billing cycle option": {
@@ -3794,6 +3816,12 @@
       ],
       "Your new address": [
         "Din nya adress"
+      ],
+      "You're all set": [
+        "Du är klar"
+      ],
+      "Your address has been claimed": [
+        "Din adress har aktiverats"
       ]
     },
     "Collapsible tooltip": {
@@ -5619,6 +5647,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Ditt paket stöder totalt ${ MAX_SYNC_PAID_USER } Gmail-adress",
         "Ditt paket stöder ett totalt antal av ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "The link to sign out on all your devices has expired. Try signing in again to receive a new one.": [
+        "Länken för att logga ut på alla dina enheterhar gått ut. Försök logga in igen för att få en ny."
       ]
     },
     "description": {
@@ -8057,6 +8088,15 @@
       ],
       "Zero keys reactivated": [
         "Noll nycklar återaktiverade"
+      ],
+      "Failed to decrypt bookmark name: ${ message }": [
+        "Misslyckades avkryptera bokmärksnamn: ${ message }"
+      ],
+      "Move operation aborted": [
+        "Flyttningsåtgärd avbröts"
+      ],
+      "This file has missing crypto material": [
+        "Den här filen har saknat kryptomaterial"
       ]
     },
     "error": {
@@ -8843,6 +8883,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Något gick fel när din säkerhetsnyckel registrerades. Försök igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Den här webbläsaren stödjer inte säkerhetsnycklar. Var vänlig försök med en annan webbläsare."
+      ],
+      "This security key is already registered to your account.": [
+        "Den här säkerhetsnyckeln är redan registrerad på ditt konto."
       ]
     },
     "fido2: Info": {
@@ -8988,6 +9034,9 @@
       ],
       "Not activated": [
         "Inte aktiverad"
+      ],
+      "Pending": [
+        "Väntar"
       ]
     },
     "Filter Actions": {
@@ -9959,6 +10008,14 @@
       "Skipped ${ count } event due to incompatibilities": [
         "Hoppade över ${ count } händelse på grund av inkompatibiliteter",
         "Hoppade över ${ count } händelser på grund av inkompatibiliteter"
+      ],
+      "Skipped ${ count } contact due to incompatibilities": [
+        "Hoppade över ${ count } kontakt på grund av inkompatibiliteter",
+        "Hoppade över ${ count } kontakter på grund av inkompatibiliteter"
+      ],
+      "Skipped ${ count } email due to incompatibilities": [
+        "Hoppade över ${ count } e-post på grund av inkompatibiliteter",
+        "Hoppade över ${ count } e-post på grund av inkompatibiliteter"
       ]
     },
     "Import type": {
@@ -13914,6 +13971,60 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "**${ emailAddress }** is also used to sign in to a separate ${ BRAND_NAME } account, outside of ${ MAIL_APP_NAME }.": [
+        "**${ emailAddress }** används också för att logga in på ett separat ${ BRAND_NAME } konto, utanför ${ MAIL_APP_NAME }."
+      ],
+      "Allow your organization to use the ${ LUMO_APP_NAME } API": [
+        "Tillåt din organisation att använda ${ LUMO_APP_NAME } API"
+      ],
+      "Configure Always-on VPN": [
+        "Konfigurera Alltid-på VPN"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Rabatterna beräknas utifrån ordinarie månadspris. Din prenumeration förnyas till ordinarie årspris när faktureringscykeln löper ut."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when you set up two-factor authentication. ${ learnMoreLink }": [
+        "Om du har förlorat tillgången till din auteniseringsapp, kan du använda 1 av16 återställningskoder som tillhandahölls när du konfigurerade  tvåfaktorssautenisering. ${ learnMoreLink }"
+      ],
+      "Know when it's done": [
+        "Vet när det är klart"
+      ],
+      "Review and export the data for reporting or client invoicing.": [
+        "Granska och exportera datan för rapportering eller klientfakturering."
+      ],
+      "Share error logs with ${ BRAND_NAME }": [
+        "Dela felloggar med  ${ BRAND_NAME }"
+      ],
+      "Share performance data and usage statistics with ${ BRAND_NAME }": [
+        "Dela prestandadata och användningsstatistik med ${ BRAND_NAME }"
+      ],
+      "Smart Routing": [
+        "Smart Routing"
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "För att kontinuerligt förbättra våra tjänster samlar vi ibland in data för att övervaka att våra applikationer fungerar korrekt.  **Denna information delas inte med några tredjepartstjänster.**"
+      ],
+      "To migrate this user, unarchive them in your ${ provider.adminConsoleName }.": [
+        "För att migrera denna användare, upphäv deras arkivering från ditt ${ provider.adminConsoleName }."
+      ],
+      "We'll email you when your import is complete.": [
+        "Vi skickar e-post till dig när importen är klar."
+      ],
+      "You have an open invoice ${ payInvoiceLink }": [
+        "Du har en öppen faktura ${ payInvoiceLink }"
+      ],
+      "You have an open invoice on ${ dueDate } ${ payInvoiceLink }": [
+        "Du har en öppen faktura på ${ dueDate } ${ payInvoiceLink }"
+      ],
+      "You'll choose a new username": [
+        "Du får välja ett nytt användarnamn"
+      ],
+      "You'll use it to sign in from then on. That's the only change.": [
+        "Du använder den för att logga in från och med nu. Det är den enda förändringen."
+      ],
+      "Your files have been successfully imported and encrypted from Google Drive to ${ DRIVE_APP_NAME }.": [
+        "Dina filer har framgångsrikt blivit importerade och krypterade från Google Drive till ${ DRIVE_APP_NAME }."
       ]
     },
     "info": {
@@ -16276,6 +16387,15 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Auto-delete trash and spam": [
+        "Automatisk radering av skräp och skräppost"
+      ],
+      "Billed average": [
+        "Fakturerat genomsnitt"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "Samla in anonym användningsdiagnostik"
       ]
     },
     "label": {
@@ -16711,6 +16831,9 @@
       ],
       "What’s this?": [
         "Vad är detta?"
+      ],
+      "Pay it": [
+        "Betala den"
       ]
     },
     "Link (Scribe)": {
@@ -19075,6 +19198,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Obegränsat antal alias för att skydda din identitet"
+      ],
+      "Short @pm.me address": [
+        "Kort @pm.me e-postadress"
       ]
     },
     "Onboarding": {
@@ -20340,6 +20466,33 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
+      ],
+      "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } is only available on business plans.": [
+        "${ PLAN_NAMES[PLANS.PASS_LIFETIME] } är endast tillgängligt på företagspaket."
+      ],
+      "An organization is required for this plan.": [
+        "En organisation krävs för den här planen."
+      ],
+      "The selected plan doesn’t offer enough addresses for your account.": [
+        "Det valda paketet stöder inte tillräckligt med adresser för ditt konto."
+      ],
+      "The selected plan doesn’t offer enough domains for your account.": [
+        "Den valda prenumerationen erbjuder inte nog med domäner för ditt konto."
+      ],
+      "The selected plan doesn’t offer enough storage for your account.": [
+        "Den valda prenumerationen erbjuder inte nog lagringsutrymme för ditt konto."
+      ],
+      "This plan doesn’t support the members on your account.": [
+        "Detta paket stöder inte medlemmar på ditt konto."
+      ],
+      "This subscription can’t be completed right now. Please try again.": [
+        "Denna prenumeration kan inte slutföras just nu. Försök igen."
+      ],
+      "Trial plans don’t support ${ LUMO_SHORT_APP_NAME } seats.": [
+        "Testprenumerationer har inte stöd för ${ LUMO_SHORT_APP_NAME } användarplatser."
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "Testabonnemang stöder inte Scribe-licenser"
       ]
     },
     "Payments.Error": {
@@ -20778,7 +20931,7 @@
         "Säker molnlagring och samarbete för team."
       ],
       "Secure cloud storage and file sharing for your business.": [
-        "Säker molnlagring och fildelning för din verksamhet."
+        "Säker molnlagring och fildelning för ditt företag."
       ],
       "Secure, high-speed VPN access for your business.": [
         "Säkra, hög-hastighets VPNtillgång för din verksamhet."
@@ -20910,6 +21063,9 @@
       ],
       "name": [
         "namn"
+      ],
+      "content key": [
+        "innehållsnyckel"
       ]
     },
     "Property type": {
@@ -22731,7 +22887,7 @@
         "Paket"
       ],
       "Business information": [
-        "Verksamhetsinformation"
+        "Företagsinformation"
       ],
       "Checkout": [
         "Kassa"
@@ -22776,7 +22932,7 @@
         "Skapa konto"
       ],
       "Create your ${ BRAND_NAME } account": [
-        "Skapa ditt ${ BRAND_NAME } konto "
+        "Skapa ditt ${ BRAND_NAME }-konto"
       ],
       "Creating your account": [
         "Skapar ditt konto"
@@ -22866,7 +23022,7 @@
         "Lösenordsskyddade meddelanden"
       ],
       "Pick a plan to get started.": [
-        "Välj en plan för att komma igång."
+        "Välj ett paket för att komma igång."
       ],
       "Pick a service to get started.": [
         "Välj en tjänst för att komma igång."
@@ -27321,6 +27477,21 @@
       ],
       "Your subscriptions": [
         "Din prenumeration"
+      ],
+      "Billing periods": [
+        "Faktureringsperioder"
+      ],
+      "Configure Always-on VPN device profile": [
+        "Konfigurera Alltid-på VPN enhetsprofil"
+      ],
+      "Monthly cost": [
+        "Månadskostnad"
+      ],
+      "Restrict sign-in?": [
+        "Begränsa inloggning?"
+      ],
+      "Upgrade to enable Always-on": [
+        "Uppgradera för att aktivera Alltid-på"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27765,6 +27936,9 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "Ditt externa konto kan ha nått sin bandbreddsgräns för det här dygnet. ${ BRAND_NAME } kommer att försöka återuppta importen så snart som möjligt."
+      ],
+      "Install the migration app in your ${ providerName } account to start a migration": [
+        "Installera migrationsappen i ditt ${ providerName } konto för att påbörja en migrering"
       ]
     },
     "tooltip": {
@@ -28274,6 +28448,9 @@
       ],
       "You'll be able to assign roles once the user has accepted the invitation.": [
         "Du kommer att kunna tilldela roller när användaren har accepterat inbjudan."
+      ],
+      "You can't change your own roles. Ask another admin to change them.": [
+        "Du kan inte ändra dina egna roller. Be en annan administratör att ändra dem."
       ]
     },
     "Users table: badge": {
@@ -28688,6 +28865,9 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Din provperiod slutar den ${ textDate }. Du debiteras inte om du avbryter före ${ textDate }. ${ action }"
+      ],
+      "We were unable to verify access, please check that you have granted access in your ${ providerName } account and try again.": [
+        "Vi kunde inte verifiera tillträde, kontrollera att du har beviljats tillträde i ditt ${ providerName }-konto och försök igen."
       ]
     },
     "Warning for domain modal": {
@@ -28943,6 +29123,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligen, ${ untilString }"
+      ]
+    },
+    "Payments.iDEAL": {
+      "By confirming, you authorise ${ BRAND_NAME } and Stripe, our payment service provider, to collect future payments for your subscription from this bank account by SEPA Direct Debit, and your bank to debit those payments. Your first payment is made now by ${ IDEAL_WERO_BRAND_NAME }. Your plan auto renews, until you cancel; we'll notify you before each collection. For direct debit collections you can request a refund from your bank within 8 weeks of the debit date, under the terms of your agreement with your bank. This does not apply to the ${ IDEAL_WERO_BRAND_NAME } payment you're making now.": [
+        "Genom att bekräfta, ger du ${ BRAND_NAME } och Stripe, vår betalningstjänsteleverantör, tillstånd att dra framtida betalningar för din prenumeration från detta bankkontot via SEPA-autogiro, och din bank tillstånd att genomföra dessa dragningar. Din första betalning sker nu via ${ IDEAL_WERO_BRAND_NAME }. Din prenumeration förnyas automatiskt, tills du säger upp den; vi meddelar dig inför varje dragning. Vid betalningar via autogiro kan du i enlighet med villkoren i ditt avtal med banken begära återbetalning från din bank inom 8 veckor från dragningsdatumet. Detta gäller inte den betalning via ${ IDEAL_WERO_BRAND_NAME } som du genomför nu."
       ]
     }
   }

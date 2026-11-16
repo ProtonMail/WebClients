@@ -7620,7 +7620,7 @@
         "Le régime de TVA intracommunautaire n'est pas pris en charge pour cet abonnement."
       ],
       "Role assignment could not be completed for ${ errors.length } member": [
-        "L'attribution des rôles n'a pas pu être effectuée pour ${ errors.length } membre",
+        "L'attribution des rôles n'a pas pu être effectuée pour ${ errors.length } membre.",
         "L'attribution des rôles n'a pas pu être effectuée pour ${ errors.length } membres"
       ],
       "Role assignment could not be completed for ${ failedCount } group": [
@@ -8731,6 +8731,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Une erreur s'est produite lors de l'enregistrement de votre clé de sécurité. Nous vous invitons à réessayer."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Ce navigateur ne prend pas en charge les clés de sécurité. Veuillez réessayer sur un autre navigateur."
+      ],
+      "This security key is already registered to your account.": [
+        "Cette clé de sécurité est déjà enregistrée sur votre compte."
       ]
     },
     "fido2: Info": {
@@ -9942,7 +9948,7 @@
         "${ emailAddress } n'est pas valide."
       ],
       "${ emailAddress } is used to sign in to another ${ BRAND_NAME } account. We are making the connection seamless, but for now you will need to take a few steps.": [
-        "L'adresse ${ emailAddress } est utilisée pour se connecter à un autre compte ${ BRAND_NAME }. Nous sommes en train de simplifier la connexion, mais vous devez tout d'abord suivre quelques étapes."
+        "L'adresse ${ emailAddress } est utilisée pour se connecter à un autre compte ${ BRAND_NAME }. Nous allons simplifier la connexion, mais vous devez tout d'abord suivre quelques étapes."
       ],
       "${ emails.length } member added to the group": [
         "${ emails.length } membre ajouté au groupe",
@@ -12768,7 +12774,7 @@
         "Le nom sera visible par vos utilisateurs quand ils seront connectés."
       ],
       "The process was interrupted for ${ pausedCount } ${ roleAssignmentSource }. Click Continue to resume assigning roles.": [
-        "Le processus a été interrompu pour le groupe ${ pausedCount } ${ roleAssignmentSource }. Cliquez sur Continuer pour reprendre l'attribution des rôles.",
+        "Le processus a été interrompu pour le groupe ${ pausedCount } ${ roleAssignmentSource }. Cliquez sur continuer pour reprendre l'attribution des rôles.",
         "Le processus a été interrompu pour les groupes ${ pausedCount } ${ roleAssignmentSource }. Cliquez sur Continuer pour reprendre l'attribution des rôles."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
@@ -13964,6 +13970,21 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "Review and export the data for reporting or client invoicing.": [
+        "Consultez et exportez les données à des fins de reporting ou de facturation des clients."
+      ],
+      "Share error logs with ${ BRAND_NAME }": [
+        "Partager les journaux d'erreurs avec ${ BRAND_NAME }"
+      ],
+      "Share performance data and usage statistics with ${ BRAND_NAME }": [
+        "Partager des données de performance des services et des statistiques d'utilisation avec ${ BRAND_NAME }"
+      ],
+      "This Gmail address is registered with another ${ BRAND_NAME } account (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } AI, and others). We're working to make this connection seamless, but for now you'll need to take a few steps.": [
+        "Cette adresse Gmail est associée à un autre compte ${ BRAND_NAME } (${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ WALLET_SHORT_APP_NAME }, ${ LUMO_SHORT_APP_NAME } et autres). Nous travaillons à rendre cette connexion plus fluide, mais pour l'instant, vous devrez suivre quelques étapes."
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "Afin d'améliorer continuellement nos services, nous collectons parfois des données pour surveiller le bon fonctionnement de nos applications. **Ces informations ne sont pas partagées avec des services tiers.**"
       ]
     },
     "info": {
@@ -16350,6 +16371,12 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Billed average": [
+        "Moyenne de facturation"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "Recueillir les diagnostics d'utilisation anonymes"
       ]
     },
     "label": {
@@ -18820,7 +18847,7 @@
     },
     "ngc_access_banner: action": {
       "Try it now": [
-        "Essayez-la maintenant"
+        "Essayez-le maintenant"
       ]
     },
     "ngc_access_banner: info": {
@@ -20486,6 +20513,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
+      ],
+      "This plan doesn’t support the managed features on your account.": [
+        "Cet abonnement ne comprend pas de support pour les fonctionnalités gérées sur votre compte."
       ]
     },
     "Payments.Error": {
@@ -22927,7 +22957,7 @@
         "Créer un compte"
       ],
       "Creating your account": [
-        "Création de votre compte"
+        "Création de votre compte en cours"
       ],
       "Custom email domain": [
         "Domaine de messagerie personnalisé"
@@ -25068,7 +25098,7 @@
         "Créez des identifiants de connexion sécurisés sur tous vos appareils. Profitez d'un nombre illimité d'alias, de 20 coffres-forts, de l'authentification à deux facteurs (A2F) intégrée, du remplissage automatique des cartes de paiement et de bien d'autres fonctionnalités."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Comprend 2 950 serveurs répartis dans plus de 65 pays, la possibilité de connecter jusqu'à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
+        "L'abonnement inclut 2 950 serveurs basés dans plus de 65 pays, la possibilité de connecter votre compte à 10 appareils, l'accès aux services de streaming du monde entier, un bloqueur de logiciels malveillants et de publicités et bien d'autres fonctionnalités."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Comprend l'historique des versions, le partage de fichiers chiffrés et de bien d'autres fonctionnalités."
@@ -26972,7 +27002,7 @@
         "Connecté au compte membre"
       ],
       "Signed-in reset": [
-        "Réinitialisation lorsque connecté"
+        "Réinitialiser la connexion"
       ],
       "Simplify email distribution": [
         "Simplifiez la distribution des messages"
@@ -27168,7 +27198,7 @@
         "Mise à niveau vers ${ planName }"
       ],
       "Upgrade to keep your premium benefits.": [
-        "Passez à la version supérieure pour conserver vos avantages premium."
+        "Changer d'abonnement pour conserver vos avantages premium."
       ],
       "Upgrade your network protection with dedicated servers": [
         "Améliorez la protection de votre réseau avec des serveurs dédiés"
@@ -27373,6 +27403,12 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "Billing periods": [
+        "Périodes de facturation"
+      ],
+      "Monthly cost": [
+        "Coût mensuel"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

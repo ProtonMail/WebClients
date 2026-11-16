@@ -1871,6 +1871,12 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Learn how this works": [
+        "了解運作方式"
+      ],
+      "Switch to ${ planName }": [
+        "切換至 ${ planName }"
       ]
     },
     "action": {
@@ -3271,6 +3277,9 @@
       ],
       "Total": [
         "總共"
+      ],
+      "Amount due after trial": [
+        "試用後的欠款"
       ]
     },
     "Collapsible tooltip": {
@@ -12248,7 +12257,7 @@
         "準備好啟用該位址時，請掃描 QR Code 或使用兌換券中的連結。"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "當您的訂購授權要續約前，我們會先從可用的餘額扣除，若仍須補齊款項，最後才會以上面的腳款方式扣款。"
+        "當您的訂購授權要續約前，我們會先從可用的餘額扣除，若仍須補齊款項，最後才會以上面的付款方式扣款。"
       ],
       "Whole organization": [
         "整個組織"
@@ -12687,6 +12696,9 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
+      ],
+      "You'll choose a new username": [
+        "您將選擇個新的使用者名稱"
       ]
     },
     "info": {
@@ -13144,6 +13156,9 @@
       ],
       "Week view": [
         "週檢視"
+      ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "開啟 ${ LUMO_SHORT_APP_NAME } / 專注輸入"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -18798,6 +18813,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "您的訂閱已套用現有折扣。若轉換至新的促銷方案，現有折扣將不再套用。"
+      ],
+      "Trial plans don’t support Scribe seats.": [
+        "試用方案不支援 Scribe 座席。"
       ]
     },
     "Payments.Error": {
@@ -25175,6 +25193,9 @@
       ],
       "Your subscriptions": [
         "您的訂購授權"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "訂閱至 ${ planTitle }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

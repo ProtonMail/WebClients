@@ -8323,6 +8323,12 @@
       ],
       "Something went wrong registering your security key. Please try again.": [
         "Під час реєстрації вашого ключа безпеки щось пішло не так. Будь ласка, спробуйте знову."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Цей браузер не підтримує ключі безпеки. Спробуйте скористатися іншим браузером."
+      ],
+      "This security key is already registered to your account.": [
+        "Цей ключ безпеки вже зареєстрований у вашому обліковому записі."
       ]
     },
     "fido2: Info": {
@@ -13169,6 +13175,18 @@
       ],
       "Zoom meeting": [
         "зустріч у Zoom"
+      ],
+      "Review and export the data for reporting or client invoicing.": [
+        "Перегляньте та експортуйте дані для складання звітів або виставлення рахунків клієнтам."
+      ],
+      "Share error logs with ${ BRAND_NAME }": [
+        "Надіслати журнали помилок до ${ BRAND_NAME }"
+      ],
+      "Share performance data and usage statistics with ${ BRAND_NAME }": [
+        "Поділіться даними про ефективність та статистикою використання з ${ BRAND_NAME }"
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. **This information is not shared with any 3rd-party services.**": [
+        "З метою постійного вдосконалення наших послуг ми іноді збираємо дані для моніторингу належного функціонування наших додатків. **Ця інформація не передається жодним стороннім сервісам.**"
       ]
     },
     "info": {
@@ -15429,6 +15447,12 @@
       ],
       "ZIP code": [
         "Поштовий індекс"
+      ],
+      "Billed average": [
+        "Середня сума рахунку"
+      ],
+      "Collect anonymous usage diagnostics": [
+        "Збирати анонімні дані діагностики використання"
       ]
     },
     "label": {
@@ -19865,6 +19889,27 @@
       ],
       "The ideal plan for privacy-conscious power users.": [
         "Ідеальний тарифний план для досвідчених користувачів, які дбають про приватність."
+      ],
+      "Confidential video conferencing for your business.": [
+        "Конфіденційні відеоконференції для вашого бізнесу."
+      ],
+      "Essential privacy and security suite for your business.": [
+        "Основний пакет із приватності й безпеки для вашого бізнесу."
+      ],
+      "Next-level password management for your business.": [
+        "Керування паролями нового рівня для вашого бізнесу."
+      ],
+      "Premium privacy and security suite for your business.": [
+        "Преміумпакет із приватності й безпеки для вашого бізнесу."
+      ],
+      "Privacy-first AI writing assistant for your business.": [
+        "Зосереджений на приватності помічник із написання на основі ШІ для вашого бізнесу."
+      ],
+      "Secure cloud storage and file sharing for your business.": [
+        "Захищене хмарне сховище та спільний доступ до файлів для вашого бізнесу."
+      ],
+      "Secure, high-speed VPN access for your business.": [
+        "Захищений і високошвидкісний доступ VPN для вашого бізнесу."
       ]
     },
     "Plans": {
@@ -22105,6 +22150,87 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Вас запрошено приєднатися до понад 100 млн людей, які вирішили контролювати свої дані за допомогою зашифрованої екосистеми ${ BRAND_NAME }."
+      ],
+      "${ renewalPriceElement } after the first 12 months": [
+        "${ renewalPriceElement } після перших 12 місяців."
+      ],
+      "Billed yearly": [
+        "Сплачується щорічно"
+      ],
+      "Billed yearly, renews on ${ renewalTime }": [
+        "Сплачується щороку, поновлюється ${ renewalTime }"
+      ],
+      "Business information": [
+        "Інформація про бізнес"
+      ],
+      "Checkout": [
+        "Оплатити"
+      ],
+      "Claim your additional ${ referralDiscountPercent }% discount": [
+        "Отримайте додаткову знижку ${ referralDiscountPercent } %."
+      ],
+      "Confirmation": [
+        "Підтвердити"
+      ],
+      "Coupon": [
+        "Купон"
+      ],
+      "Create account": [
+        "Створити обліковий запис"
+      ],
+      "Create your ${ BRAND_NAME } account": [
+        "Створіть ваш обліковий запис ${ BRAND_NAME }"
+      ],
+      "Creating your account": [
+        "Створення облікового запису"
+      ],
+      "Discount": [
+        "Знижка"
+      ],
+      "Encrypted solutions to protect": [
+        "Рішення з шифруванням для захисту"
+      ],
+      "For ${ countryElement }": [
+        "Для ${ countryElement }"
+      ],
+      "Get an additional ${ referralDiscountPercent }% off your first year of ${ BRAND_NAME } for Business": [
+        "Отримайте додаткову знижку ${ referralDiscountPercent } % на передплату за перший рік ${ BRAND_NAME } для Business"
+      ],
+      "Pick a plan to get started.": [
+        "Для початку виберіть тарифний план."
+      ],
+      "Something went wrong": [
+        "Сталася помилка"
+      ],
+      "Summary": [
+        "Підсумок"
+      ],
+      "Taxes may apply.": [
+        "Можливе нарахування податків."
+      ],
+      "Unlimited vaults for your passwords": [
+        "Необмежена кількість сховищ для ваших паролів."
+      ],
+      "Users": [
+        "Користувачі"
+      ],
+      "We couldn't finish setting up your account. Please contact support.": [
+        "Не вдалося завершити налаштування вашого облікового запису. Зверніться до служби підтримки."
+      ],
+      "WS Premium": [
+        "WS Premium"
+      ],
+      "WS Standard": [
+        "WS Standard"
+      ],
+      "You're invited to join 100,000+ organizations that protect their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
+        "Запрошуємо вас приєднатися до понад 100 000 організацій, які використовують зашифровану екосистему ${ BRAND_NAME } для захисту своїх даних."
+      ],
+      "Your account has been created, but we couldn't sign you in.": [
+        "Ваш обліковий запис створено, але не вдалося виконати вхід."
+      ],
+      "your entire business": [
+        "Увесь ваш бізнес"
       ]
     },
     "Signup label": {
@@ -23958,6 +24084,9 @@
       ],
       "/year": [
         "/рік"
+      ],
+      "/user/month": [
+        "/user/month"
       ]
     },
     "Suffix for price": {
@@ -26121,6 +26250,12 @@
       ],
       "Your subscriptions": [
         "Ваші передплати"
+      ],
+      "Billing periods": [
+        "Період оплати"
+      ],
+      "Monthly cost": [
+        "Щомісячна вартість"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -27769,6 +27904,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Щороку, ${ untilString }"
+      ]
+    },
+    "Business signup action": {
+      "Start using ${ planTitle } now": [
+        "Почніть використовувати ${ planTitle }"
       ]
     }
   }
