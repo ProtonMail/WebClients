@@ -80,6 +80,59 @@ describe('exportArtifactPdf', () => {
         expect(downloadHtmlAsPdf).toHaveBeenCalledWith(expect.any(String), 'Meeting notes.pdf', expect.any(Object));
     });
 
+    describe('in the desktop shell', () => {
+        afterEach(() => {
+            delete window.LumoConnectors;
+        });
+
+        it('saves through the native export and skips print and image paths', async () => {
+            const exportPdf = jest.fn(async () => {
+                return { status: 'saved' as const };
+            });
+            window.LumoConnectors = { exportPdf };
+
+            await expect(exportArtifactPdf(documentArtifact)).resolves.toBe('native_saved');
+
+            expect(exportPdf).toHaveBeenCalledWith(expect.stringContaining('<h1>Summary</h1>'), {
+                fileName: 'Meeting notes.pdf',
+                title: 'Meeting notes',
+            });
+            expect(printHtmlDocument).not.toHaveBeenCalled();
+            expect(downloadHtmlAsPdf).not.toHaveBeenCalled();
+        });
+
+        it('reports cancelled without downloading anything', async () => {
+            window.LumoConnectors = {
+                exportPdf: jest.fn(async () => {
+                    return { status: 'cancelled' as const };
+                }),
+            };
+
+            await expect(exportArtifactPdf(documentArtifact)).resolves.toBe('cancelled');
+
+            expect(downloadHtmlAsPdf).not.toHaveBeenCalled();
+        });
+
+        it.each([
+            ['returns failed', () => Promise.resolve({ status: 'failed' as const })],
+            ['throws', () => Promise.reject(new Error('bridge error'))],
+        ])('downloads an image-page PDF when the native export %s', async (_name, impl) => {
+            window.LumoConnectors = { exportPdf: jest.fn(impl) };
+            jest.mocked(printHtmlDocument).mockResolvedValueOnce(false);
+
+            await expect(exportArtifactPdf(documentArtifact)).resolves.toBe('image_fallback');
+            expect(downloadHtmlAsPdf).toHaveBeenCalledWith(expect.any(String), 'Meeting notes.pdf', expect.any(Object));
+        });
+
+        it('downloads an image-page PDF when the shell has no native export', async () => {
+            window.LumoConnectors = {};
+            jest.mocked(printHtmlDocument).mockResolvedValueOnce(false);
+
+            await expect(exportArtifactPdf(documentArtifact)).resolves.toBe('image_fallback');
+            expect(downloadHtmlAsPdf).toHaveBeenCalled();
+        });
+    });
+
     it('fails when neither the print dialog nor the image fallback works', async () => {
         jest.mocked(printHtmlDocument).mockResolvedValueOnce(false);
         jest.mocked(downloadHtmlAsPdf).mockRejectedValueOnce(new Error('capture failed'));

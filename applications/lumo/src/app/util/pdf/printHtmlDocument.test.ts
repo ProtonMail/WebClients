@@ -45,6 +45,38 @@ describe('printHtmlDocument', () => {
         expect(printSpy).toBeUndefined();
     });
 
+    describe('in the desktop shell', () => {
+        afterEach(() => {
+            delete window.LumoConnectors;
+            delete window.__TAURI__;
+        });
+
+        it.each([
+            [
+                'LumoConnectors',
+                () => {
+                    window.LumoConnectors = {};
+                },
+            ],
+            [
+                '__TAURI__.external_tools',
+                () => {
+                    window.__TAURI__ = { external_tools: {} };
+                },
+            ],
+        ])('returns false without printing when the bridge is injected (%s)', async (_name, inject) => {
+            jest.spyOn(navigator, 'userAgent', 'get').mockReturnValue(
+                'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko)'
+            );
+            inject();
+
+            await expect(printHtmlDocument('<html><body><p>Report</p></body></html>')).resolves.toBe(false);
+
+            expect(getPrintFrame()).toBeNull();
+            expect(printSpy).toBeUndefined();
+        });
+    });
+
     it.each([
         'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 Version/26.0 Safari/605.1.15',
         'Mozilla/5.0 (iPhone; CPU iPhone OS 26_0 like Mac OS X) AppleWebKit/605.1.15 Version/26.0 Mobile Safari/604.1',

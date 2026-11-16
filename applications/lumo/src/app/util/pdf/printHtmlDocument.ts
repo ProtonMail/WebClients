@@ -1,3 +1,5 @@
+import { isDesktopEnvironment } from '@proton/lumo-api-client/core/desktop-tools';
+
 import { getNativeAppInfo } from '../userAgent';
 
 /**
@@ -51,12 +53,17 @@ async function waitForPrintResources(ownerDocument: Document): Promise<void> {
  * is required for `print()` to work in a sandboxed frame.
  *
  * Resolves `true` when the print call returns without throwing (not confirmation that a dialog
- * appeared), `false` when printing isn't available so the caller can fall back.
+ * appeared), `false` when printing isn't available (native apps, the desktop shell) so the caller can fall back.
  */
 export async function printHtmlDocument(html: string, options: PrintHtmlDocumentOptions = {}): Promise<boolean> {
     // Native shells use the downloadable PDF fallback instead of the browser print dialog.
     const platform = getNativeAppInfo()?.platform;
     if (platform === 'ios' || platform === 'android') {
+        return false;
+    }
+
+    // The desktop shell (Tauri) has no print handling: `print()` returns without throwing but opens nothing.
+    if (isDesktopEnvironment()) {
         return false;
     }
 
