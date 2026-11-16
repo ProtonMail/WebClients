@@ -2,6 +2,7 @@ import type { ReferralData } from '../../interfaces/referral';
 import type { BillingAddress } from '../../payments/billing-address';
 import type { CYCLE, PLANS } from '../../payments/constants';
 import type { Currency, PlanIDs } from '../../payments/interface';
+import { hasPlanIDs } from '../../payments/plan/helpers';
 
 interface GetReferralsProps {
     Offset?: number;
@@ -66,17 +67,6 @@ export interface ReferralRegistrationPlan {
     cycle: CYCLE;
 }
 
-const getPlanData = (plan: ReferralRegistrationPlan | undefined) => {
-    if (!plan) {
-        return {};
-    }
-
-    return {
-        Plan: plan.name,
-        Cycle: plan.cycle,
-    };
-};
-
 export interface ReferralRegistrationSubscription {
     paymentToken: string;
     billingAddress: BillingAddress;
@@ -84,6 +74,18 @@ export interface ReferralRegistrationSubscription {
     currency?: Currency;
     planIDs?: PlanIDs;
 }
+
+export const getPlans = (planName: PLANS | undefined, planIDs: PlanIDs | undefined): PlanIDs | undefined => {
+    if (planIDs && hasPlanIDs(planIDs)) {
+        return planIDs;
+    }
+
+    if (planName === undefined) {
+        return undefined;
+    }
+
+    return { [planName]: 1 };
+};
 
 export const postReferralRegistration = ({
     plan,
@@ -97,9 +99,8 @@ export const postReferralRegistration = ({
     method: 'post',
     url: `core/v4/referrals/register`,
     data: {
-        // Intentionally only `Plan` + `Cycle`, never `Plans`: the API rejects both together and the
-        // multi-seat (b2c2b) flow that needs `Plans` isn't released yet. Restore `Plans` when b2c2b ships.
-        ...getPlanData(plan),
+        Plans: getPlans(plan?.name, referralRegistrationSubscription?.planIDs),
+        Cycle: plan?.cycle,
         ReferralIdentifier: referralData.referralIdentifier,
         ReferralID: referralData.referralID,
         PaymentToken: referralRegistrationSubscription?.paymentToken,
