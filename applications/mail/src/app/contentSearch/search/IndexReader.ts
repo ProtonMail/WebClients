@@ -11,6 +11,7 @@ import { createMailSearchEngine } from '../engine/create';
 import { isLoadEvent } from '../utils/eventTypeGuards';
 import { SearchLoop } from './SearchLoop';
 import { createLocalSearchQueryOptions } from './queryOptions';
+import { generateTimeBuckets } from './timeBuckets';
 
 // The values are the same as what mobile has set in their codebase
 const SMALLISH_CARDINALITY = 80;
@@ -115,14 +116,7 @@ export class IndexReader {
         resultCallback: (results: string[]) => void,
         abortSignal: AbortSignal
     ) {
-        function* bucketGenerator(min: bigint, max: bigint, windowSize: bigint) {
-            for (let high = max; high > min; high -= windowSize) {
-                const low = high - windowSize;
-                yield { low: low < min ? min : low, high };
-            }
-        }
-
-        const buckets = bucketGenerator(range.low, range.high, BUCKET_SIZE_SECONDS);
+        const buckets = generateTimeBuckets(range.low, range.high, BUCKET_SIZE_SECONDS);
         let anyBucketHadHits = false;
         for (const bucket of buckets) {
             const searchLoop = new SearchLoop(this.engine, txn, exp.clone(), createLocalSearchQueryOptions());
