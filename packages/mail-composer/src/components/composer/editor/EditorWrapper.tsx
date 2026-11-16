@@ -332,7 +332,11 @@ const EditorWrapper = ({
             handleSetContent(message);
 
             if (rightToLeft === DIRECTION.RIGHT_TO_LEFT) {
+                // The default direction is part of opening the draft, so its content change must not autosave it.
+                // Rooster reports the change synchronously, and the flag must not swallow the user's first edit.
+                skipNextInputRef.current = true;
                 editorActionsRef.current?.setTextDirection?.(DIRECTION.RIGHT_TO_LEFT);
+                skipNextInputRef.current = false;
             }
 
             const isInitialContentSetInEditor = editorReady && !isPlainText;
@@ -409,7 +413,8 @@ const EditorWrapper = ({
         skipNextInputRef.current = true;
         if (editorActionsRef.current && blockquoteSaved) {
             editorActionsRef.current.insertContent(blockquoteSaved, {
-                position: ContentPosition.End,
+                // After the signature, not in its last block: roosterjs 9 empties that block, which then takes the quote
+                position: ContentPosition.DomEnd,
                 updateCursor: false,
             });
         }
