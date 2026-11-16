@@ -854,7 +854,7 @@ describe('<AutomaticSubscriptionModal /> subscription guards', () => {
                     plansMap: getPlansMap(plans, data.Currency, false),
                 }),
                 AmountDue: 999,
-                GuardResult: 'raw backend message',
+                GuardResult: 'Your plan doesn’t include enough storage.',
                 GuardResultCode: GUARD_ERROR_CODES.TOO_LITTLE_SPACE,
             }),
             'post'
@@ -864,12 +864,11 @@ describe('<AutomaticSubscriptionModal /> subscription guards', () => {
 
         await waitFor(() => {
             expect(screen.getByTestId('subscription-amout-due')).toBeInTheDocument();
-            expect(screen.getByText(/enough storage for your account/i)).toBeInTheDocument();
+            expect(screen.getByText(/doesn’t include enough storage/i)).toBeInTheDocument();
         });
 
         expect(screen.getByTestId('price')).toBeInTheDocument();
         expect(screen.getByTestId('confirm')).toBeDisabled();
-        expect(screen.queryByText('raw backend message')).not.toBeInTheDocument();
         expect(screen.getAllByTestId('plansModal')).toHaveLength(1);
     });
 
@@ -901,7 +900,7 @@ describe('<AutomaticSubscriptionModal /> subscription guards', () => {
                     if (guardedCheckCount === 1) {
                         return {
                             ...response,
-                            GuardResult: 'raw',
+                            GuardResult: 'Your plan doesn’t include enough storage.',
                             GuardResultCode: GUARD_ERROR_CODES.TOO_LITTLE_SPACE,
                         };
                     }
@@ -917,13 +916,13 @@ describe('<AutomaticSubscriptionModal /> subscription guards', () => {
         renderAutomaticSubscriptionModal('?plan=drive1tb2025&target=checkout');
 
         await waitFor(() => {
-            expect(screen.getByText(/enough storage for your account/i)).toBeInTheDocument();
+            expect(screen.getByText(/doesn’t include enough storage/i)).toBeInTheDocument();
         });
 
         fireEvent.click(screen.getByTestId(`cycle-${CYCLE.MONTHLY}`).querySelector('button')!);
 
         await waitFor(() => {
-            expect(screen.queryByText(/enough storage for your account/i)).not.toBeInTheDocument();
+            expect(screen.queryByText(/doesn’t include enough storage/i)).not.toBeInTheDocument();
         });
         expect(screen.getByTestId('confirm')).toBeEnabled();
 
@@ -967,7 +966,7 @@ describe('<AutomaticSubscriptionModal /> subscription guards', () => {
             expect(screen.getByTestId('confirm')).toBeEnabled();
         });
 
-        expect(screen.queryByText(/enough storage for your account/i)).not.toBeInTheDocument();
+        expect(screen.queryByText(/doesn’t include enough storage/i)).not.toBeInTheDocument();
     });
 
     // Race safety (only the latest in-flight check may commit) is covered by

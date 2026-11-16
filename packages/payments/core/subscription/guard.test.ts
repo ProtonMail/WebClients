@@ -41,6 +41,19 @@ describe('normalizeGuardResult', () => {
         expect(normalizeGuardResult(buildResponse({ GuardResult: error }))?.GuardResult).toEqual([error]);
     });
 
+    it('wraps an array of strings and objects, trimming messages', () => {
+        const result = normalizeGuardResult(
+            buildResponse({ GuardResult: ['Storage ', { Code: 1, Message: 'Members' }] })
+        );
+        expect(result.GuardResult).toEqual([{ Message: 'Storage' }, { Code: 1, Message: 'Members' }]);
+    });
+
+    it('keeps a refusal whose message is empty so checkout stays blocked', () => {
+        expect(
+            normalizeGuardResult(buildResponse({ GuardResult: '', GuardResultCode: 801005005 })).GuardResult
+        ).toEqual([{ Code: 801005005, Message: '' }]);
+    });
+
     it('does not modify the input response', () => {
         const response = buildResponse({ GuardResult: 'refusal', GuardResultCode: 801005005 });
         const result = normalizeGuardResult(response);

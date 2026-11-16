@@ -334,7 +334,7 @@ describe('SubscriptionContainer subscription guards', () => {
 
     it('shows guard failure near the CTA, keeps pricing visible, and disables Continue', async () => {
         mockCheckResult({
-            GuardResult: 'raw backend message',
+            GuardResult: 'Your plan doesn’t include enough storage.',
             GuardResultCode: GUARD_ERROR_CODES.TOO_LITTLE_SPACE,
         });
         enableSepaFeatureFlag();
@@ -343,13 +343,12 @@ describe('SubscriptionContainer subscription guards', () => {
 
         await waitFor(() => {
             expect(screen.getByTestId('subscription-amout-due')).toBeInTheDocument();
-            expect(screen.getByText(/enough storage for your account/i)).toBeInTheDocument();
+            expect(screen.getByText(/doesn’t include enough storage/i)).toBeInTheDocument();
         });
 
         expect(screen.getByTestId('price')).toBeInTheDocument();
         expect(screen.getByTestId('billed-cycle-text')).toBeInTheDocument();
         expect(screen.getByTestId('confirm')).toBeDisabled();
-        expect(screen.queryByText('raw backend message')).not.toBeInTheDocument();
         expect(document.querySelectorAll('[role="dialog"]')).toHaveLength(0);
     });
 
@@ -381,7 +380,7 @@ describe('SubscriptionContainer subscription guards', () => {
                     if (guardedCheckCount === 1) {
                         return {
                             ...response,
-                            GuardResult: 'raw',
+                            GuardResult: 'Your plan doesn’t include enough storage.',
                             GuardResultCode: GUARD_ERROR_CODES.TOO_LITTLE_SPACE,
                         };
                     }
@@ -398,13 +397,13 @@ describe('SubscriptionContainer subscription guards', () => {
         renderWithProviders(<ContextSubscriptionContainer {...props} />);
 
         await waitFor(() => {
-            expect(screen.getByText(/enough storage for your account/i)).toBeInTheDocument();
+            expect(screen.getByText(/doesn’t include enough storage/i)).toBeInTheDocument();
         });
 
         fireEvent.click(screen.getByTestId(`cycle-${CYCLE.MONTHLY}`).querySelector('button')!);
 
         await waitFor(() => {
-            expect(screen.queryByText(/enough storage for your account/i)).not.toBeInTheDocument();
+            expect(screen.queryByText(/doesn’t include enough storage/i)).not.toBeInTheDocument();
             expect(screen.getByTestId('confirm')).toBeEnabled();
         });
 
@@ -440,7 +439,7 @@ describe('SubscriptionContainer subscription guards', () => {
         await waitFor(() => {
             expect(screen.getByTestId('confirm')).toBeEnabled();
         });
-        expect(screen.queryByText(/enough storage for your account/i)).not.toBeInTheDocument();
+        expect(screen.queryByText(/doesn’t include enough storage/i)).not.toBeInTheDocument();
     });
 
     it('disables Continue after a check error and does not claim the purchase is allowed', async () => {
@@ -459,7 +458,7 @@ describe('SubscriptionContainer subscription guards', () => {
             expect(screen.getByTestId('confirm')).toBeDisabled();
         });
 
-        expect(screen.queryByText(/enough storage for your account/i)).not.toBeInTheDocument();
+        expect(screen.queryByText(/doesn’t include enough storage/i)).not.toBeInTheDocument();
     });
 
     it('enables Continue again when a later check succeeds', async () => {
@@ -546,7 +545,7 @@ describe('SubscriptionContainer subscription guards', () => {
                 if (data.ValidateGuards) {
                     return {
                         ...response,
-                        GuardResult: 'raw',
+                        GuardResult: 'Your plan doesn’t include enough storage.',
                         GuardResultCode: GUARD_ERROR_CODES.TOO_LITTLE_SPACE,
                     };
                 }
@@ -560,7 +559,7 @@ describe('SubscriptionContainer subscription guards', () => {
         renderWithProviders(<ContextSubscriptionContainer {...props} />);
 
         await waitFor(() => {
-            expect(screen.getByText(/enough storage for your account/i)).toBeInTheDocument();
+            expect(screen.getByText(/doesn’t include enough storage/i)).toBeInTheDocument();
         });
         expect(screen.getByTestId('confirm')).toBeDisabled();
 
@@ -583,7 +582,7 @@ describe('SubscriptionContainer subscription guards', () => {
             expect(screen.getByTestId('currency-selector')).toHaveTextContent('USD');
         });
 
-        expect(screen.getByText(/enough storage for your account/i)).toBeInTheDocument();
+        expect(screen.getByText(/doesn’t include enough storage/i)).toBeInTheDocument();
         expect(screen.getByTestId('confirm')).toBeDisabled();
     });
 
@@ -614,7 +613,7 @@ describe('SubscriptionContainer subscription guards', () => {
                 if (data.ValidateGuards) {
                     return {
                         ...response,
-                        GuardResult: 'raw',
+                        GuardResult: 'Your plan doesn’t include enough storage.',
                         GuardResultCode: GUARD_ERROR_CODES.TOO_LITTLE_SPACE,
                     };
                 }
@@ -628,7 +627,7 @@ describe('SubscriptionContainer subscription guards', () => {
         renderWithProviders(<ContextSubscriptionContainer {...props} />);
 
         await waitFor(() => {
-            expect(screen.getByText(/enough storage for your account/i)).toBeInTheDocument();
+            expect(screen.getByText(/doesn’t include enough storage/i)).toBeInTheDocument();
         });
         expect(screen.getByTestId('confirm')).toBeDisabled();
 
@@ -641,7 +640,7 @@ describe('SubscriptionContainer subscription guards', () => {
 
         await waitFor(() => {
             expect(screen.getByTestId('subscription-checkout')).toBeInTheDocument();
-            expect(screen.queryByText(/enough storage for your account/i)).not.toBeInTheDocument();
+            expect(screen.queryByText(/doesn’t include enough storage/i)).not.toBeInTheDocument();
         });
     });
 });
