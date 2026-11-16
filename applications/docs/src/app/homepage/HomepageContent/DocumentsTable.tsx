@@ -431,7 +431,7 @@ function Row({ document, variant, selection, isSelectable, isTrashing, openOnDou
 
   // Force re-render every REFRESH_DATE_INTERVAL milliseconds
   const [, setState] = useState(false)
-  const intervalRef = useRef<ReturnType<typeof setInterval>>()
+  const intervalRef = useRef<ReturnType<typeof setInterval>>(undefined)
   useEffect(() => {
     intervalRef.current = setInterval(() => setState((prev) => !prev), REFRESH_DATE_INTERVAL)
     return () => clearInterval(intervalRef.current)

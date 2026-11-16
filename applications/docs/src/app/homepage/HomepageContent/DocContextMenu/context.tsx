@@ -8,7 +8,7 @@ export type MenuPosition = { top: number; left: number; width?: number; height?:
 // NOTE: taken from packages/drive-store/components/FileBrowser/hooks/useContextMenuControls.ts
 const DROPDOWN_ANIMATION_TIME = 200 // ms
 function useContextMenuControls() {
-  const lastCloseTime = useRef<number>()
+  const lastCloseTime = useRef<number>(undefined)
   const [isOpen, setIsOpen] = useState(false)
   const [position, setPosition] = useState<MenuPosition>()
 

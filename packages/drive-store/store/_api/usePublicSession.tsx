@@ -44,7 +44,7 @@ function usePublicSessionProvider() {
     const api = useApi();
     const debouncedRequest = useDebouncedRequest();
     const [hasSession, setHasSession] = useState(false);
-    const sessionInfo = useRef<SessionInfo>();
+    const sessionInfo = useRef<SessionInfo>(undefined);
     const auth = useAuthentication();
     const [user, setUser] = useState<UserModel>();
     const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });

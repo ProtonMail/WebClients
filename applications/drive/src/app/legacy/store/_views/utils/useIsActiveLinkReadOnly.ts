@@ -25,7 +25,7 @@ export const useIsActiveLinkReadOnly = () => {
     const [isReadOnly, setIsReadOnly] = useState<boolean | undefined>(undefined);
     const [isRoot, setIsRoot] = useState<boolean | undefined>(undefined);
     const [isInDeviceShare, setIsInDeviceShare] = useState<boolean | undefined>(undefined);
-    const ongoingRequestAc = useRef<AbortController>();
+    const ongoingRequestAc = useRef<AbortController>(undefined);
 
     useEffect(() => {
         const ac = new AbortController();

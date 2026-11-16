@@ -3,7 +3,7 @@ import { useCallback, useRef, useState } from 'react';
 const DROPDOWN_ANIMATION_TIME = 200; // ms
 
 export function useContextMenuControls() {
-    const lastCloseTime = useRef<number>();
+    const lastCloseTime = useRef<number>(undefined);
     const [isOpen, setIsOpen] = useState(false);
     const [position, setPosition] = useState<{ top: number; left: number }>();
 

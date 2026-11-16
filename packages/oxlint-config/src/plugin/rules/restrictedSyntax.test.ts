@@ -1,11 +1,13 @@
 import { RuleTester } from 'oxlint/plugins-dev';
 
 import { jsxNamespaceSelectors } from '../../jsxNamespace.ts';
+import { useRefInitialValueSelectors } from '../../useRefInitialValue.ts';
 import rule from './restrictedSyntax.ts';
 
 const ruleTester = new RuleTester({ languageOptions: { parserOptions: { lang: 'ts' } } });
 
 const [globalJsx, reactJsx] = jsxNamespaceSelectors;
+const [useRefInitialValue] = useRefInitialValueSelectors;
 
 const brand = {
     selector:
@@ -39,6 +41,9 @@ ruleTester.run('restricted-syntax', rule, {
         { code: "store.referenceFor('conversation', id);", options: [emailReference] },
         { code: 'test.only("x", () => {});', options: [focusedTest] },
         { code: 'const anything = 1;' },
+        { code: 'const a = useRef<number>(undefined);', options: useRefInitialValueSelectors },
+        { code: 'const a = React.useRef(null);', options: useRefInitialValueSelectors },
+        { code: 'const a = useRefresh();', options: useRefInitialValueSelectors },
         { code: "import type { JSX } from 'react'; let a: JSX.Element;", options: jsxNamespaceSelectors },
         {
             code: "import type { JSX, ReactNode } from 'react'; let a: keyof JSX.IntrinsicElements;",
@@ -51,6 +56,16 @@ ruleTester.run('restricted-syntax', rule, {
         },
     ],
     invalid: [
+        {
+            code: 'const a = useRef<number>();',
+            options: useRefInitialValueSelectors,
+            errors: [{ messageId: 'restrictedSyntax', data: { message: useRefInitialValue.message } }],
+        },
+        {
+            code: 'const a = React.useRef();',
+            options: useRefInitialValueSelectors,
+            errors: [{ messageId: 'restrictedSyntax', data: { message: useRefInitialValue.message } }],
+        },
         {
             code: 'interface A extends JSX.IntrinsicAttributes {}',
             options: jsxNamespaceSelectors,
