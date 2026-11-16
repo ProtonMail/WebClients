@@ -1,6 +1,6 @@
-import { PandocConverter } from '../../lib/attachments/pandoc-wasm';
-import pdfParse from '../../lib/attachments/pdfParse';
+import type { PandocConverter } from '../../lib/attachments/pandoc-wasm';
 import { getProcessingCategory, mimeTypeToPandocFormat } from '../../util/filetypes';
+import { importWithRetry } from '../../util/importWithRetry';
 import type {
     ExcelSheetsListRequest,
     FileData,
@@ -8,8 +8,11 @@ import type {
     FileProcessingResponse,
     ProcessingError,
 } from '../fileProcessingService';
-import { convertXlsxToMarkdown, getExcelSheetsFromFileData } from '../files/excelSheets';
 import type { InternalFileResult, InternalTextResult, TruncationResult } from '../files/types';
+
+const loadPdfParse = () => importWithRetry(() => import('../../lib/attachments/pdfParse'));
+const loadExcelSheets = () => importWithRetry(() => import('../files/excelSheets'));
+const loadPandoc = () => importWithRetry(() => import('../../lib/attachments/pandoc-wasm'));
 
 // Safe logger for worker context (avoids console.warn/console.error that are forbidden in tests)
 const workerLogger = {
@@ -44,6 +47,7 @@ function truncateContent(content: string, maxChars: number = 500000): Truncation
 
 async function getPandocConverter(): Promise<PandocConverter> {
     if (!pandocConverter) {
+        const { PandocConverter } = await loadPandoc();
         pandocConverter = new PandocConverter();
         await pandocConverter.ready;
     }
@@ -53,6 +57,7 @@ async function getPandocConverter(): Promise<PandocConverter> {
 async function convertExcelToText(fileData: FileData, selectedExcelSheetNames?: string[]) {
     try {
         console.log(`Converting Excel file: ${fileData.name} (${(fileData.size / 1024 / 1024).toFixed(2)} MB)`);
+        const { convertXlsxToMarkdown } = await loadExcelSheets();
         const result = await convertXlsxToMarkdown(fileData, selectedExcelSheetNames);
         console.log(`Excel file converted: ${result.rowCount} rows`);
         return result;
@@ -116,6 +121,7 @@ async function processPdfFile(
     pagesOnly: boolean
 ): Promise<InternalTextResult> {
     try {
+        const { default: pdfParse } = await loadPdfParse();
         const parseResult = await pdfParse(fileData.data, {
             renderPageImages: includePageImages || pagesOnly,
             pagesOnly,
@@ -252,6 +258,7 @@ self.addEventListener(
             const { id, file } = event.data;
 
             try {
+                const { getExcelSheetsFromFileData } = await loadExcelSheets();
                 const sheets = await getExcelSheetsFromFileData(file);
                 sendResponse({ id, type: 'excel-sheets', sheets });
             } catch (error) {
@@ -276,7 +283,13 @@ self.addEventListener(
         } = event.data as FileProcessingRequest;
 
         try {
-            const result = await processFile(file, isLumoPaid, selectedExcelSheetNames, includePdfPageImages, pdfPagesOnly);
+            const result = await processFile(
+                file,
+                isLumoPaid,
+                selectedExcelSheetNames,
+                includePdfPageImages,
+                pdfPagesOnly
+            );
 
             // Add id to result and send
             const response: FileProcessingResponse = { id, ...result };

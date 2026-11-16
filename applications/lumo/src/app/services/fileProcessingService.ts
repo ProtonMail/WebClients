@@ -1,6 +1,7 @@
 import { ThumbnailType } from '@protontech/drive-sdk';
 
 import { generateThumbnail } from '@proton/drive/public/thumbnails';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import type { PdfPageImage } from '../types';
 import { getProcessingCategory } from '../util/filetypes';
@@ -78,7 +79,10 @@ export interface ProcessingError {
 }
 
 export type FileProcessingResponse =
-    TextProcessingResult | ImageProcessingResult | ProcessingError | ExcelSheetsListResult;
+    | TextProcessingResult
+    | ImageProcessingResult
+    | ProcessingError
+    | ExcelSheetsListResult;
 
 async function reduceImageSize(
     fileData: FileData
@@ -225,7 +229,12 @@ export class FileProcessingService {
     }
 
     private onError(error: ErrorEvent) {
+        // Handled here: without this the browser also reports the worker error on the page as uncaught
+        error.preventDefault();
         console.error('[FileProcessingService] Worker error:', error.message);
+        traceError(new Error(`File processing worker error: ${error.message}`), {
+            tags: { source: 'lumo-file-processing-worker' },
+        });
 
         // Worker failed to initialize - mark it as dead
         this.worker = null;
@@ -325,7 +334,9 @@ export class FileProcessingService {
 
             // Convert file to ArrayBuffer and send to worker
             this.makeRequest(id, file, options)
-                .then((request) => this.process(request, options?.transferFileData && options.fileData ? [request.file.data] : []))
+                .then((request) =>
+                    this.process(request, options?.transferFileData && options.fileData ? [request.file.data] : [])
+                )
                 .catch((error) => {
                     // Clean up pending request on error
                     this.pendingRequests.delete(id);
