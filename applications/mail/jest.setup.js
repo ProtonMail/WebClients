@@ -63,6 +63,10 @@ jest.mock('@proton/mail-composer/helpers/upload', () => jest.requireActual('./sr
 global.MutationObserver = class {
     disconnect() {}
     observe() {}
+    // roosterjs 9 flushes pending mutations
+    takeRecords() {
+        return [];
+    }
 };
 
 // Mock window.getComputedStyle to prevent "Not implemented" errors in jsdom, as it's required by useActiveBreakpoint to determine the active breakpoint.
