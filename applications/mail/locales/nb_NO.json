@@ -1583,8 +1583,7 @@
         "Klarér"
       ],
       "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
+        "Klarer nøkkel"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -4464,6 +4463,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
+      ],
+      "High-performance model for complex tasks": [
+        "Høyytelsesmodell for komplekse oppgaver"
+      ],
+      "Lightweight model for everyday tasks": [
+        "Lettvektsmodell for hverdagslige oppgaver"
       ]
     },
     "description": {
@@ -5855,6 +5860,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noe gikk galt med autentiseringen av sikkerhetsnøkkelen din. Prøv igjen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Denne nettleseren støtter ikke sikkerhetsnøkler. Prøv en annen nettleser."
       ]
     },
     "fido2: Info": {
@@ -9763,6 +9771,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Chat med ${ LUMO_SHORT_APP_NAME } for å søke, lese, organisere og skrive utkast til e-postene dine."
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Flytt e-poster med engangskoder til papirkurven når koden kopieres"
       ]
     },
     "info": {
@@ -11145,6 +11159,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } KI-assistent"
+      ],
+      "Model": [
+        "Modell"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15945,6 +15965,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "Du har sagt opp abonnementet."
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } KI-assistent deaktivert"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } KI-assistent aktivert"
       ]
     },
     "Success notification": {

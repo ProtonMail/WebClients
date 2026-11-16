@@ -1519,10 +1519,7 @@
         "Zaufaj"
       ],
       "Trust key": [
-        "Zaufany klucz",
-        "Zaufane klucze",
-        "Zaufanych kluczy",
-        "Zaufane klucze"
+        "Zaufaj kluczowi"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -2989,7 +2986,7 @@
     },
     "Composer email icon": {
       "End-to-end encrypted": [
-        "Szyfrowany end-to-end"
+        "Zaszyfrowana end-to-end"
       ],
       "End-to-end encrypted to verified recipient": [
         "Zaszyfrowana end-to-end do zweryfikowanego odbiorcy"
@@ -6806,7 +6803,7 @@
         "${ MAIL_APP_NAME } może chronić również Twój biznes."
       ],
       "${ MAIL_APP_NAME } now automatically sorts your emails into categories like Primary, Social, Promotions, and more, helping you find and manage messages more easily.": [
-        "${ MAIL_APP_NAME } automatycznie sortuje teraz Twoje wiadomości na kategorie, takie jak Główne, Społeczności, Oferty i inne, ułatwiając Ci znajdowanie wiadomości i zarządzanie nimi."
+        "${ MAIL_APP_NAME } automatycznie sortuje wiadomości na kategorie, takie jak Główne, Społeczności, Oferty i inne, ułatwiając ich znajdowanie i zarządzanie."
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
         "${ MEET_APP_NAME } to rozwiązanie do wideokonferencji zaszyfrowane end-to-end. Dodaj je do swojego planu, aby organizować bezpieczne spotkania."
@@ -9351,6 +9348,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od uporządkowanej skrzynki odbiorczej dzieli Cię kilka kliknięć"
+      ],
+      "Today": [
+        "Dzisiaj"
       ]
     },
     "info": {
@@ -10069,16 +10069,16 @@
         "Przejdź do Newsletterów"
       ],
       "Go to Primary": [
-        "Przejdź do Głównej"
+        "Przejdź do Główne"
       ],
       "Go to Promotions": [
-        "Przejdź do Promocji"
+        "Przejdź do Oferty"
       ],
       "Go to Social": [
         "Przejdź do Społeczności"
       ],
       "Go to Transactions": [
-        "Przejdź do Transakcji"
+        "Przejdź do Płatności"
       ],
       "Go to Updates": [
         "Przejdź do Aktualizacji"
@@ -10333,10 +10333,10 @@
         "Główne – wszystko, co wymaga Twojej uwagi, oraz wiadomości z wyłączonych kategorii"
       ],
       "Promotions": [
-        "Promocje"
+        "Oferty"
       ],
       "Promotions - Deals, offers, and marketing emails": [
-        "Oferty – promocje, oferty i wiadomości marketingowe"
+        "Oferty – promocje i wiadomości marketingowe"
       ],
       "Proration": [
         "Dzielenie proporcjonalne"
@@ -10492,10 +10492,10 @@
         "Pasek narzędzi"
       ],
       "Transactions": [
-        "Transakcje"
+        "Płatności"
       ],
       "Transactions - Receipts, bookings, bills, and orders": [
-        "Transakcje – rachunki, rezerwacje, faktury i zamówienia"
+        "Płatności – rachunki, rezerwacje, faktury i zamówienia"
       ],
       "Trash": [
         "Kosz"
@@ -13907,7 +13907,7 @@
         "Zaszyfrowana przez ${ MAIL_APP_NAME } do zweryfikowanego odbiorcy"
       ],
       "End-to-end encrypted": [
-        "Szyfrowany end-to-end"
+        "Zaszyfrowana end-to-end"
       ],
       "End-to-end encrypted to PGP recipient": [
         "Zaszyfrowana end-to-end do odbiorcy PGP"
@@ -16832,7 +16832,7 @@
         "Podfoldery systemowe będą widoczne jako oddzielne foldery w poczcie ${ MAIL_APP_NAME }"
       ],
       "The image could not be loaded": [
-        "Obraz nie mógł zostać załadowany"
+        "Zdjęcie nie mogło zostać załadowane"
       ],
       "The image could not be loaded using proxy": [
         "Obraz nie mógł zostać załadowany przy użyciu proxy"

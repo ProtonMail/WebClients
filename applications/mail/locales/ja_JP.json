@@ -4419,6 +4419,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
+      ],
+      "High-performance model for complex tasks": [
+        "複雑なタスクに適した高性能モデル"
+      ],
+      "Lightweight model for everyday tasks": [
+        "日常的なタスク向けの軽量モデル"
       ]
     },
     "description": {
@@ -5788,6 +5794,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "セキュリティキーの認証に失敗しました。もう一度お試しください。"
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "このブラウザーはセキュリティキーに対応していません。別のブラウザーをお試しください。"
       ]
     },
     "fido2: Info": {
@@ -9490,6 +9499,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "${ LUMO_SHORT_APP_NAME } とチャットして、メールの検索、閲覧、整理、下書きを作成できます。"
       ]
     },
     "info": {
@@ -10854,6 +10866,12 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } AI アシスタント"
+      ],
+      "Model": [
+        "モデル"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15534,6 +15552,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "サブスクリプションが正常にキャンセルされました。"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } AI アシスタントが無効になりました"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } AIアシスタントを有効にしました"
       ]
     },
     "Success notification": {

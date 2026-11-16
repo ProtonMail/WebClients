@@ -1591,10 +1591,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -4528,6 +4525,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ],
+      "High-performance model for complex tasks": [
+        "Высокапрадукцыйная мадэль для складаных задач"
+      ],
+      "Lightweight model for everyday tasks": [
+        "Палегчаная мадэль для штодзённых задач"
       ]
     },
     "description": {
@@ -10064,6 +10067,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Перамясціць лісты з аднаразовым кодам у сметніцу пры капіяванні"
       ]
     },
     "info": {
@@ -11455,6 +11461,18 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "Памочнік ШІ ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Model": [
+        "Мадэль"
+      ],
+      "Select all ${ count } unused sender": [
+        "Выбраць ${ count } нявыкарыстанага адпраўніка",
+        "Выбраць ${ count } нявыкарыстаных адпраўнікоў",
+        "Выбраць ${ count } нявыкарыстаных адпраўнікоў",
+        "Выбраць ${ count } нявыкарыстаных адпраўнікоў"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13150,7 +13168,7 @@
         "Выкарыстоўвайце свой уласны карыстальніцкі дамен электроннай пошты. Напрыклад, you@yourname.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Мы не пакідаем журналы выкарыстання сеансаў з вашымі дзеяннямі ў інтэрнэце, а таксама нас не цікавяць метадыныя, якія могуць скампраметаваць вашу прыватнасць"
+        "У нашым сэрвісе адсутнічаюць журналы выкарыстання сеансаў з вашымі дзеяннямі ў інтэрнэце, а таксама нас не цікавяць метадыныя, якія могуць скампраметаваць вашу прыватнасць"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Мы лічым сваім абавязкова дапамагаць кліентам у адпаведнасці з прававымі нормамі HIPAA/HITECH у дачыненні абароненай інфармацыі аб здароўі (PHI). Падпісаныя пагадненні аб дзелавым партнёрстве даступны для ўсіх кліентаў ${ BRAND_NAME } у сферы бізнесу."
@@ -16501,6 +16519,9 @@
       ],
       "You have successfully canceled your subscription.": [
         "Вы паспяхова скасавалі сваю падпіску."
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "Памочнік ШІ ${ LUMO_SHORT_APP_NAME } адключаны"
       ]
     },
     "Success notification": {

@@ -1583,8 +1583,7 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Betroet nøgle",
-        "Betroede nøgler"
+        "Stol på nøgle"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -4463,6 +4462,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
+      ],
+      "High-performance model for complex tasks": [
+        "Kraftig model til komplekse opgaver"
+      ],
+      "Lightweight model for everyday tasks": [
+        "Let model til hverdagsopgaver"
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, add it to your subscription.": [
+        "Tilføj det til dit abonnement for at bruge ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }."
+      ],
+      "To use ${ LUMO_SHORT_APP_NAME } in ${ MAIL_APP_NAME }, request access from your admin.": [
+        "Anmod om adgang fra din administrator for at bruge ${ LUMO_SHORT_APP_NAME } i ${ MAIL_APP_NAME }."
       ]
     },
     "description": {
@@ -5854,6 +5865,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Din browser understøtter ikke sikkerhedsnøgler. Prøv en anden browser."
       ]
     },
     "fido2: Info": {
@@ -9765,6 +9779,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er få klik fra en ryddelig indbakke."
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Chat med ${ LUMO_SHORT_APP_NAME } for at søge, læse, organisere og skrive udkast fra dine e-mails."
+      ],
+      "Copy one-time codes from recent emails in one click": [
+        "Kopiér engangskoder fra de seneste e-mails med ét klik"
+      ],
+      "Move one-time code emails to Trash on copy": [
+        "Flyt e-mails med engangskoder til Papirkurven når der bliver kopieret"
       ]
     },
     "info": {
@@ -11141,6 +11164,18 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "${ LUMO_SHORT_APP_NAME } AI-assistent"
+      ],
+      "Model": [
+        "Model"
+      ],
+      "Move to Trash": [
+        "Flyt til Papirkurv"
+      ],
+      "One-time codes": [
+        "Engangskoder"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13664,7 +13699,7 @@
         "Den særligt nedsatte pris er gyldig i ${ couponRedemptions } måneder. Derefter fornys den automatisk til ${ renewPriceStr } for 1 måned. Du kan opsige når som helst."
       ],
       "The specially discounted price is valid for the first ${ subscriptionLength } month.": [
-        "Den særligt nedsatte pris gælder for den første måned på ${ subscriptionLength }.",
+        "Den særligt nedsatte pris gælder den første ${ subscriptionLength } måned.",
         "Den særligt nedsatte pris gælder for de første ${ subscriptionLength } måneder."
       ],
       "The specially discounted price is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
@@ -15950,6 +15985,18 @@
       ],
       "You have successfully canceled your subscription.": [
         "Du har nu opsagt dit abonnement."
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "${ LUMO_SHORT_APP_NAME } AI-assistent deaktiveret"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "${ LUMO_SHORT_APP_NAME } AI-assistent aktiveret"
+      ],
+      "One-time codes disabled": [
+        "Engangskoder deaktiveret"
+      ],
+      "One-time codes enabled": [
+        "Engangskoder aktiveret"
       ]
     },
     "Success notification": {

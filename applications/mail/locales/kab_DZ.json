@@ -1233,6 +1233,12 @@
       ],
       "Zoom out": [
         "Semẓi"
+      ],
+      "Remove from list": [
+        "Kkes seg tebdart"
+      ],
+      "Trust key": [
+        "Tasarut yettwamanen"
       ]
     },
     "action": {
@@ -3600,6 +3606,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ddeqs n igmaḍ i d-yerra unadi-ik. Ma ulac aɣilif, err talast i unadi-inek sakin ɛreḍ tikelt- nniḍen."
+      ],
+      "Add at least one action": [
+        "Arnu xarṣum yiwet n tigawt"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -5657,6 +5666,31 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uṭṭun-ik n tiliɣṛi ad yettwaseqdec kan tikkelt deg usenqed-agi."
+      ],
+      "${ unreadCount } newsletter": [
+        "Aɣmis ${ unreadCount }",
+        "${ unreadCount } n tebratin n yisallen"
+      ],
+      "Create a filter": [
+        "Snulfu-d tastayt"
+      ],
+      "Create filter": [
+        "Snulfu-d tastayt"
+      ],
+      "Mark all as unread": [
+        "Creḍ meṛṛa amzun ur ttwaɣran ara"
+      ],
+      "newsletter": [
+        "Tabrat n yisallen"
+      ],
+      "Unread conversations": [
+        "Idiwenniyen ur nettwaɣra ara"
+      ],
+      "Unread messages": [
+        "Iznan ur nettwaɣra ara"
+      ],
+      "Update the filter ${ filter }": [
+        "mucceḍ tastayt ${ filter }"
       ]
     },
     "info": {
@@ -6507,6 +6541,30 @@
       ],
       "ZIP code": [
         "Tangalt Zip"
+      ],
+      "Enable filter": [
+        "Sermed tastayt"
+      ],
+      "Filter": [
+        "Tastayt"
+      ],
+      "Filter name": [
+        "Isem n testayt"
+      ],
+      "Filters": [
+        "Tistayin"
+      ],
+      "Go to Social": [
+        "Ddu ɣer Unmetti"
+      ],
+      "Newsletters": [
+        "Tibratin n yisallen"
+      ],
+      "Sieve script": [
+        "Sekles askript"
+      ],
+      "Social": [
+        "Anmetti"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -8047,6 +8105,9 @@
       ],
       "Smallest first": [
         "Ameẓẓyan maḍi qbel"
+      ],
+      "Sort by": [
+        "Smizzwer s"
       ]
     },
     "specialoffer: Action": {
@@ -8562,6 +8623,9 @@
     "Success notification": {
       "${ label.Name } removed": [
         "${ label.Name } yettwakkes"
+      ],
+      "The filter is active again": [
+        "Tastayt tettwarmed tikkelt nniḍen"
       ]
     },
     "Suffix": {
@@ -9346,6 +9410,33 @@
       ],
       "Your plan": [
         "Aɣawas-ik·im"
+      ],
+      "A filter name is required": [
+        "Isem n testayt yettwasra"
+      ],
+      "Filter on": [
+        "Tastayt termed"
+      ],
+      "Loading...": [
+        "Asali..."
+      ],
+      "Mark all messages as read": [
+        "Creḍ meṛṛa iznan amzun ttwaɣren"
+      ],
+      "Mark conversations as unread": [
+        "Creḍ idiwenniyen amzun ur tatwaɣran ara"
+      ],
+      "Newsletters": [
+        "Tibratin n yisallen"
+      ],
+      "Newsletters view": [
+        "Taskant n tebratin n yisallen"
+      ],
+      "Remove from list?": [
+        "Kkes seg tebdart?"
+      ],
+      "Trash all messages?": [
+        "Smutti meṛṛa iznan ɣer tqecwalt n yiḍumman?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -9845,6 +9936,26 @@
       ],
       "Yearly, ${ untilString }": [
         "S useggas, ${ untilString }"
+      ]
+    },
+    "Filter": {
+      "Filter": [
+        "Tastayt"
+      ],
+      "Filter and sort emails": [
+        "Tastayt d usmizzwer n yimaylen"
+      ],
+      "Has attachments": [
+        "Yesɛa imeddayen"
+      ],
+      "Read": [
+        "Yettwaɣra"
+      ],
+      "Reset": [
+        "Ales awennez"
+      ],
+      "Unread": [
+        "Ur yettwaɣri ara"
       ]
     }
   }

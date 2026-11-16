@@ -1733,6 +1733,12 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Learn how this works": [
+        "了解運作方式"
+      ],
+      "Switch to ${ planName }": [
+        "切換至 ${ planName }"
       ]
     },
     "action": {
@@ -2692,6 +2698,9 @@
       ],
       "Total": [
         "總共"
+      ],
+      "Amount due after trial": [
+        "試用後的欠款"
       ]
     },
     "Collapsible tooltip": {
@@ -9148,6 +9157,24 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "輕點幾下滑鼠，即可擁有整潔的收件匣"
+      ],
+      "${ currentStep } of ${ steps }": [
+        "目前使用 ${ currentStep }，共 ${ steps }"
+      ],
+      "A specific feature (tell us)": [
+        "一個特定功能(告訴我們)"
+      ],
+      "Dismiss": [
+        "忽略"
+      ],
+      "Next": [
+        "下一個"
+      ],
+      "Which provider?": [
+        "哪個供應商?"
+      ],
+      "You'll choose a new username": [
+        "您將選擇個新的使用者名稱"
       ]
     },
     "info": {
@@ -9400,6 +9427,9 @@
       ],
       "Star": [
         "標注星號"
+      ],
+      "Open ${ LUMO_SHORT_APP_NAME } / focus input": [
+        "開啟 ${ LUMO_SHORT_APP_NAME } / 專注輸入"
       ]
     },
     "Keyboard shortcut name, switch to Calendar": {
@@ -10437,6 +10467,15 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Move to Trash": [
+        "移到垃圾桶"
+      ],
+      "Select all ${ count } unused sender": [
+        "選取全部 ${ count } 未使用的寄件者"
+      ],
+      "Until time": [
+        "直到時間"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14976,6 +15015,9 @@
       ],
       "You have successfully canceled your subscription.": [
         "您已完成取消訂購授權。"
+      ],
+      "One-time codes enabled": [
+        "單次代碼已啟用"
       ]
     },
     "Success notification": {
@@ -16246,6 +16288,9 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Subscribe to ${ planTitle }": [
+        "訂閱至 ${ planTitle }"
       ]
     },
     "Title header for keys table": {

@@ -1583,8 +1583,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave",
-        "Confiar claves"
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -4469,6 +4468,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ya ha creado 10 alias. Obtenga alias ilimitados y 500 GB de almacenamiento con ${ BRAND_NAME } Ilimitado."
+      ],
+      "High-performance model for complex tasks": [
+        "Modelo de alto rendimiento para tareas complejas"
+      ],
+      "Lightweight model for everyday tasks": [
+        "Modelo ligero para tareas diarias"
       ]
     },
     "description": {
@@ -5860,6 +5865,9 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Error al autenticar con su clave de seguridad. Inténtelo de nuevo."
+      ],
+      "This browser doesn't support security keys. Please try a different browser.": [
+        "Este navegador no admite claves de seguridad. Intente con otro navegador."
       ]
     },
     "fido2: Info": {
@@ -9777,6 +9785,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "Chat with ${ LUMO_SHORT_APP_NAME } to search, read, organize and draft your emails.": [
+        "Converse con ${ LUMO_SHORT_APP_NAME } para buscar, leer, organizar y redactar sus correos."
       ]
     },
     "info": {
@@ -11159,6 +11170,12 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant": [
+        "Asistente de IA ${ LUMO_SHORT_APP_NAME }"
+      ],
+      "Model": [
+        "Modelo"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -15974,6 +15991,12 @@
       ],
       "You have successfully canceled your subscription.": [
         "La suscripción ha sido cancelada."
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant disabled": [
+        "Asistente IA ${ LUMO_SHORT_APP_NAME } desactivado"
+      ],
+      "${ LUMO_SHORT_APP_NAME } AI assistant enabled": [
+        "Asistente IA ${ LUMO_SHORT_APP_NAME } activado"
       ]
     },
     "Success notification": {
