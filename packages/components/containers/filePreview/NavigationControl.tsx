@@ -10,7 +10,7 @@ import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 interface Props {
     current: number;
     total: number;
-    rootRef: RefObject<HTMLDivElement>;
+    rootRef: RefObject<HTMLDivElement | null>;
     onNext: () => void;
     onPrev: () => void;
 }

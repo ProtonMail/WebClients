@@ -69,7 +69,10 @@ export const createObserver = (
     };
 };
 
-const useElementRect = <E extends HTMLElement>(ref: RefObject<E> | null, maybeRateLimiter?: RateLimiter | null) => {
+const useElementRect = <E extends HTMLElement>(
+    ref: RefObject<E | null> | null,
+    maybeRateLimiter?: RateLimiter | null
+) => {
     const [elementRect, setElementRect] = useState<DOMRect | null>(null);
 
     useLayoutEffect(() => {

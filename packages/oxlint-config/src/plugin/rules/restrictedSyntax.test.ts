@@ -1,6 +1,7 @@
 import { RuleTester } from 'oxlint/plugins-dev';
 
 import { jsxNamespaceSelectors } from '../../jsxNamespace.ts';
+import { refObjectNullSelectors } from '../../refObjectNull.ts';
 import { useRefInitialValueSelectors } from '../../useRefInitialValue.ts';
 import rule from './restrictedSyntax.ts';
 
@@ -8,6 +9,7 @@ const ruleTester = new RuleTester({ languageOptions: { parserOptions: { lang: 't
 
 const [globalJsx, reactJsx] = jsxNamespaceSelectors;
 const [useRefInitialValue] = useRefInitialValueSelectors;
+const [refObjectNull] = refObjectNullSelectors;
 
 const brand = {
     selector:
@@ -41,6 +43,10 @@ ruleTester.run('restricted-syntax', rule, {
         { code: "store.referenceFor('conversation', id);", options: [emailReference] },
         { code: 'test.only("x", () => {});', options: [focusedTest] },
         { code: 'const anything = 1;' },
+        { code: 'let a: RefObject<HTMLElement | null>;', options: refObjectNullSelectors },
+        { code: 'let a: React.RefObject<HTMLElement | undefined | null>;', options: refObjectNullSelectors },
+        { code: 'let a: RefObject<any>;', options: refObjectNullSelectors },
+        { code: 'let a: Ref<HTMLElement>; let b: MutableRefObject<HTMLElement>;', options: refObjectNullSelectors },
         { code: 'const a = useRef<number>(undefined);', options: useRefInitialValueSelectors },
         { code: 'const a = React.useRef(null);', options: useRefInitialValueSelectors },
         { code: 'const a = useRefresh();', options: useRefInitialValueSelectors },
@@ -56,6 +62,21 @@ ruleTester.run('restricted-syntax', rule, {
         },
     ],
     invalid: [
+        {
+            code: 'let a: RefObject<HTMLElement>;',
+            options: refObjectNullSelectors,
+            errors: [{ messageId: 'restrictedSyntax', data: { message: refObjectNull.message } }],
+        },
+        {
+            code: 'let a: React.RefObject<HTMLElement | undefined>;',
+            options: refObjectNullSelectors,
+            errors: [{ messageId: 'restrictedSyntax', data: { message: refObjectNull.message } }],
+        },
+        {
+            code: 'let a: RefObject<Map<string, HTMLElement | null>>;',
+            options: refObjectNullSelectors,
+            errors: [{ messageId: 'restrictedSyntax', data: { message: refObjectNull.message } }],
+        },
         {
             code: 'const a = useRef<number>();',
             options: useRefInitialValueSelectors,

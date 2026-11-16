@@ -36,7 +36,7 @@ interface Props extends Omit<InputProps, 'value'> {
     onKeyDown?: (e: KeyboardEvent<HTMLInputElement>) => void;
     onAddRecipients: (recipients: Recipient[]) => void;
     recipients: Recipient[];
-    anchorRef: RefObject<HTMLElement>;
+    anchorRef: RefObject<HTMLElement | null>;
     contactEmails?: ContactEmail[];
     contactGroups?: ContactGroup[];
     contactEmailsMap?: SimpleMap<ContactEmail>;

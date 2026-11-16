@@ -13,7 +13,7 @@ export const SortableList = ({
     onSortEnd?: (event: { oldIndex: number; newIndex: number }) => void;
     onActiveId?: (id: string | null) => void;
     children: ReactNode;
-    containerRef?: RefObject<HTMLElement>;
+    containerRef?: RefObject<HTMLElement | null>;
 }) => {
     const handleDragEnd = (event: DragEndEvent) => {
         const { operation } = event;

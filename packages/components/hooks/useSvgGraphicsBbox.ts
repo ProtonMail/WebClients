@@ -8,7 +8,7 @@ const DEFAULT = {
     width: 100,
     height: 100,
 };
-const useSvgGraphicsBbox = (ref: RefObject<SVGGraphicsElement>, deps: any[] = []) => {
+const useSvgGraphicsBbox = (ref: RefObject<SVGGraphicsElement | null>, deps: any[] = []) => {
     const [bbox, setBbox] = useState(DEFAULT);
 
     useLayoutEffect(() => {

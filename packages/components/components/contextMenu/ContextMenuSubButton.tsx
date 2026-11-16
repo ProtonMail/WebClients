@@ -77,7 +77,7 @@ export const ContextMenuSubButton = ({ name, icon, children }: Props) => {
                 </DropdownMenuButton>
             </div>
             <Dropdown
-                anchorRef={buttonRef as unknown as React.RefObject<HTMLElement>}
+                anchorRef={buttonRef as unknown as React.RefObject<HTMLElement | null>}
                 isOpen={isOpen}
                 onClose={() => setIsOpen(false)}
                 originalPlacement="right-start"

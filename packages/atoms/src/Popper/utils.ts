@@ -185,7 +185,7 @@ export const arrowOffset = (): Middleware => {
     };
 };
 
-export const anchorOffset = (ref: RefObject<HTMLElement> | undefined): Middleware => {
+export const anchorOffset = (ref: RefObject<HTMLElement | null> | undefined): Middleware => {
     return {
         name: 'anchorOffset',
         fn({ x, y }: MiddlewareArguments): MiddlewareReturn {

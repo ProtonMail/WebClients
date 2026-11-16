@@ -6,7 +6,7 @@ import { ReferralSpotlight } from './ReferralSpotlight';
 
 interface Props {
     children?: ReactElement;
-    anchorRef?: RefObject<HTMLElement>;
+    anchorRef?: RefObject<HTMLElement | null>;
 }
 
 export const SettingsReferralSpotlight = ({ children, anchorRef }: Props) => {

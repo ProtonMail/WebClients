@@ -49,7 +49,7 @@ export interface Props<T> extends Omit<InputProps, 'value' | 'onChange' | 'onSel
      * Suggestions dropdown will have the input as anchor by default.
      * Set that ref if your want to anchor them differently.
      */
-    suggestionsRef?: RefObject<HTMLElement>;
+    suggestionsRef?: RefObject<HTMLElement | null>;
     /**
      * Additional classes to pass to the dropdown.
      */

@@ -84,7 +84,7 @@ const normalizeMetaControl = (initalTuple: HotkeyTuple) => {
 };
 
 export const useHotkeys = (
-    ref: RefObject<HTMLElement | Document | undefined>,
+    ref: RefObject<HTMLElement | Document | undefined | null>,
     hotkeyTupleArray: HotkeyTuple[],
     options?: HotKeysOptions
 ) => {

@@ -16,7 +16,7 @@ import useLoadContactImage from '../../../hooks/useLoadContactImage';
 interface Props {
     photo: string;
     name: string;
-    loadImageDirectRef: RefObject<() => void>;
+    loadImageDirectRef: RefObject<(() => void) | null>;
     onToggleLoadDirectBanner: (show: boolean) => void;
 }
 

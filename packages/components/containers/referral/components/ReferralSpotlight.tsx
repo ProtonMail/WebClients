@@ -11,7 +11,7 @@ import illustration from '../illustrations/spotlight.svg';
 
 interface Props {
     children?: ReactElement;
-    anchorRef?: RefObject<HTMLElement>;
+    anchorRef?: RefObject<HTMLElement | null>;
     show: boolean;
     onDisplayed?: () => void;
     onClose: () => void;

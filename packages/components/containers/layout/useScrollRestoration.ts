@@ -25,7 +25,7 @@ class BoundedMap<K, V> {
 
 const scrollPositions = new BoundedMap<string, number>();
 
-export const useScrollRestoration = (mainAreaRef: RefObject<HTMLDivElement>) => {
+export const useScrollRestoration = (mainAreaRef: RefObject<HTMLDivElement | null>) => {
     const { pathname, key, hash } = useLocation();
 
     useLayoutEffect(() => {

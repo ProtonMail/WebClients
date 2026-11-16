@@ -26,7 +26,7 @@ interface UseLinkHandlerOptions {
     isPhishingAttempt?: boolean;
 }
 type UseLinkHandler = (
-    wrapperRef: RefObject<HTMLDivElement | undefined>,
+    wrapperRef: RefObject<HTMLDivElement | undefined | null>,
     mailSettings?: MailSettings,
     options?: UseLinkHandlerOptions
 ) => { modal: ReactNode };

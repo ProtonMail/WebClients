@@ -3,6 +3,7 @@ import {
     createExtraneousDependenciesRule,
     extraneousDependenciesDevDependencies,
 } from '@proton/oxlint-config/extraneousDependencies';
+import { refObjectNullOverride } from '@proton/oxlint-config/react19';
 
 export default createOxlintConfig({
     restrictedImports: {
@@ -14,6 +15,7 @@ export default createOxlintConfig({
         ],
     },
     overrides: [
+        refObjectNullOverride,
         {
             // create-atom is a dev-only CLI, so its tools (commander, mustache) are dev dependencies.
             files: ['create-atom/**'],

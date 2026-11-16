@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import type { Ref } from 'react';
 import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
@@ -48,7 +48,7 @@ interface Props {
     onLimitReached: (props: ContactGroupLimitReachedProps) => void;
     onUpgrade: () => void;
     onSelectEmails: (props: SelectEmailsProps) => Promise<ContactEmail[]>;
-    searchInputRef?: RefObject<HTMLInputElement>;
+    searchInputRef?: Ref<HTMLInputElement>;
     onExport: (props: ContactExportingProps) => void;
 }
 
