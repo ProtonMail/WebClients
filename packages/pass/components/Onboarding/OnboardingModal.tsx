@@ -46,7 +46,14 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
 
     const backButton =
         step > 0 ? (
-            <Button className="mr-auto z-1" icon pill shape="ghost" onClick={() => onStep(-1)}>
+            <Button
+                aria-label={c('Action').t`Back`}
+                className="mr-auto z-1"
+                icon
+                pill
+                shape="ghost"
+                onClick={() => onStep(-1)}
+            >
                 <IcArrowLeft />
             </Button>
         ) : undefined;

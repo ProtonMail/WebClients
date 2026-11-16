@@ -225,6 +225,7 @@ export const SharingModalView = ({
 
     const settingsButton = (
         <Button
+            aria-label={c('Action').t`Settings`}
             icon
             shape="ghost"
             onClick={() =>

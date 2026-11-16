@@ -142,6 +142,7 @@ const CalendarsSettingsSidebarList = ({ prefix, calendarsSection }: Props) => {
                     exact
                     onClick={() => setIsExpanded(true)}
                     id={headerId}
+                    aria-label={calendarsSection.text}
                 >
                     <SidebarListItemContent
                         left={<CalendarsSectionIcon className={navigationIconClassName} />}
@@ -160,6 +161,7 @@ const CalendarsSettingsSidebarList = ({ prefix, calendarsSection }: Props) => {
                                 color="weak"
                                 size="small"
                                 icon
+                                aria-label={c('Action').t`Toggle calendar list`}
                                 aria-expanded={isExpanded}
                                 className="calendar-list-header-icon-button"
                                 aria-describedby={headerId}

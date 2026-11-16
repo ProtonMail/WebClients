@@ -1,5 +1,7 @@
 import type { FC, MouseEvent } from 'react';
 
+import { c } from 'ttag';
+
 import { Button } from '@proton/atoms/Button/Button';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
@@ -33,7 +35,14 @@ export const BreachUsageRow: FC<Props> = ({ item }) => {
             <TableCell className="text-ellipsis">{epochToDate(item.modifyTime)}</TableCell>
             <TableCell>
                 <div className="flex justify-end">
-                    <Button pill size="small" shape="ghost" type="button" onClick={handleClick}>
+                    <Button
+                        aria-label={c('Action').t`Open item`}
+                        pill
+                        size="small"
+                        shape="ghost"
+                        type="button"
+                        onClick={handleClick}
+                    >
                         <IcChevronRight />
                     </Button>
                 </div>

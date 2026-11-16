@@ -76,6 +76,7 @@ const BaseRecoveryKitAction = ({
                 </div>
             </div>
             <Button
+                aria-label={c('Action').t`Download recovery kit`}
                 color={hasSentPayload ? 'weak' : 'norm'}
                 shape={hasSentPayload ? 'outline' : 'solid'}
                 icon

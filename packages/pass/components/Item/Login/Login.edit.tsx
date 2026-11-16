@@ -238,6 +238,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, share
                                         valueClassName="cursor-default"
                                         actions={[
                                             <Button
+                                                aria-label={c('Action').t`Remove passkey`}
                                                 className="mt-1"
                                                 shape="ghost"
                                                 pill

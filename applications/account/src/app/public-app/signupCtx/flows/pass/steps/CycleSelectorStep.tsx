@@ -125,7 +125,7 @@ export const CycleSelectorStep: FC<Props> = ({ onContinue, onBack }) => {
         <Layout>
             <section className="max-w-custom w-2/3" style={{ '--max-w-custom': '38rem' }}>
                 <div className="flex flex-nowrap items-center mb-12">
-                    <Button shape="ghost" icon pill onClick={onBack}>
+                    <Button aria-label={c('Action').t`Back`} shape="ghost" icon pill onClick={onBack}>
                         <IcArrowLeft size={6} />
                     </Button>
                     <div className="text-center w-full">

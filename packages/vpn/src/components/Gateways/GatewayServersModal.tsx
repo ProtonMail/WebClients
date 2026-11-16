@@ -66,6 +66,16 @@ export const GatewayServersModal = ({
     const [deleted, setDeleted] = useState<Record<string, boolean>>({});
     const [added, setAdded] = useState<Record<string, number>>({});
     const [loading, setLoading] = useState(false);
+    const getServerLocation = (country: string, city: string) =>
+        getLocalizedCountryByAbbr(country, countryOptions) + ' - ' + city;
+    const getDeleteServerLabel = (country: string, city: string) => {
+        const serverLocation = getServerLocation(country, city);
+        return c('Action').t`Delete server ${serverLocation}`;
+    };
+    const getRemovePendingServerLabel = (country: string, city: string) => {
+        const serverLocation = getServerLocation(country, city);
+        return c('Action').t`Remove pending server ${serverLocation}`;
+    };
     const remainingCount = ownedCount - usedCount;
     const previousServers = gateway.Logicals.filter((l) => !l.Servers?.length || l.Visible);
     const previousNumberOfServers = previousServers.length;
@@ -267,7 +277,13 @@ export const GatewayServersModal = ({
                                               ]
                                             : []),
                                         ...(showLoad ? [getFormattedLoad(logical.Servers)] : []),
-                                        <Button icon size="small" key="delete" onClick={handleDelete(logical)}>
+                                        <Button
+                                            aria-label={getDeleteServerLabel(logical.ExitCountry, logical.City)}
+                                            icon
+                                            size="small"
+                                            key="delete"
+                                            onClick={handleDelete(logical)}
+                                        >
                                             <IcTrash />
                                         </Button>,
                                     ]}
@@ -340,7 +356,13 @@ export const GatewayServersModal = ({
                                         ),
                                         ...(showIP ? ['-'] : []),
                                         ...(showLoad ? ['-'] : []),
-                                        <Button icon size="small" key="delete" onClick={handleDelete(logical)}>
+                                        <Button
+                                            aria-label={getDeleteServerLabel(logical.ExitCountry, logical.City)}
+                                            icon
+                                            size="small"
+                                            key="delete"
+                                            onClick={handleDelete(logical)}
+                                        >
                                             <IcTrash />
                                         </Button>,
                                     ]}
@@ -371,6 +393,10 @@ export const GatewayServersModal = ({
                                                     1 + Number(showIP) + Number(showLoad)
                                                 ),
                                                 <Button
+                                                    aria-label={getRemovePendingServerLabel(
+                                                        location.Country,
+                                                        location.TranslatedCity
+                                                    )}
                                                     icon
                                                     size="small"
                                                     key="delete"

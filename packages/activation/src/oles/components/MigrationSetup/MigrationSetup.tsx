@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useSilentApi } from '@proton/app-context/useSilentApi';
 import { Button } from '@proton/atoms/Button/Button';
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import { IcChevronUpFilled } from '@proton/icons/icons/IcChevronUpFilled';
@@ -461,6 +462,7 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
                                 isCurrentStep={state.currentStep === step.id}
                                 disabled={stepConfigs[step.id].isDisabled}
                                 onClick={() => changeStep(step.id)}
+                                aria-labelledby={`migration-step-${step.id}-label`}
                             >
                                 <MigrationNavigationListStepNumber isCurrentStep={state.currentStep === step.id}>
                                     {ix + 1}
@@ -471,24 +473,30 @@ const MigrationSetup: FC<MigrationSetupProps> = ({ model, onSubmit }) => {
                                         state.currentStep === step.id ? 'color-primary' : 'color-weak'
                                     )}
                                 >
-                                    <span className="flex-1">{stepConfigs[step.id].text}</span>
+                                    <span className="flex-1" id={`migration-step-${step.id}-label`}>
+                                        {stepConfigs[step.id].text}
+                                    </span>
                                     {step.steps && (
-                                        <Button
-                                            icon
-                                            size="tiny"
-                                            shape="ghost"
-                                            className="p-0 shrink-0 mr-1"
-                                            onClick={(e) => {
-                                                e.stopPropagation();
-                                                toggleStepExpanded(step.id);
-                                            }}
-                                        >
-                                            {isStepExpanded(step.id) ? (
-                                                <IcChevronUpFilled title={c('Action').t`Collapse step`} />
-                                            ) : (
-                                                <IcChevronDownFilled title={c('Action').t`Expand step`} />
-                                            )}
-                                        </Button>
+                                        <Tooltip title={c('Action').t`Toggle substeps`} describeChild={false}>
+                                            <Button
+                                                icon
+                                                aria-label={c('Action').t`Toggle substeps`}
+                                                aria-expanded={isStepExpanded(step.id)}
+                                                size="tiny"
+                                                shape="ghost"
+                                                className="p-0 shrink-0 mr-1"
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    toggleStepExpanded(step.id);
+                                                }}
+                                            >
+                                                {isStepExpanded(step.id) ? (
+                                                    <IcChevronUpFilled />
+                                                ) : (
+                                                    <IcChevronDownFilled />
+                                                )}
+                                            </Button>
+                                        </Tooltip>
                                     )}
                                 </span>
 

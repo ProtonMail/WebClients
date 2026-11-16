@@ -1,5 +1,7 @@
 import type { FC, ReactNode } from 'react';
 
+import { c } from 'ttag';
+
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import clsx from '@proton/utils/clsx';
@@ -25,7 +27,14 @@ export const TopBar: FC<TopBarProps> = ({ breakpoint, children, className, visib
         <div className={clsx('pass-top-bar flex gap-2 shrink-0 flex-1 items-center px-3 py-2', className)}>
             {children}
             {onClose && (
-                <Button className="ml-auto" pill size="small" shape="ghost" onClick={onClose}>
+                <Button
+                    aria-label={c('Action').t`Close`}
+                    className="ml-auto"
+                    pill
+                    size="small"
+                    shape="ghost"
+                    onClick={onClose}
+                >
                     <IcCross />
                 </Button>
             )}

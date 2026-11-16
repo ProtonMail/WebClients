@@ -35,6 +35,12 @@ export interface Props extends Omit<HTMLProps<HTMLElement>, 'title' | 'children'
     updateAnimationFrame?: boolean;
     tooltipClassName?: string;
     tooltipStyle?: CSSProperties;
+    /**
+     * Wire the tooltip text as the child's accessible description (`aria-describedby`).
+     * Turn it off when the child is already named by the same text, such as an icon-only button
+     * with an `aria-label` matching the tooltip, so screen readers don't announce it twice.
+     */
+    describeChild?: boolean;
 }
 
 const getTooltipTypeClass = (type: TooltipTypeEnum) => {
@@ -104,6 +110,7 @@ const TooltipBase = (
         updateAnimationFrame,
         tooltipClassName,
         tooltipStyle,
+        describeChild = true,
         ...rest
     }: Props,
     ref: Ref<HTMLElement>
@@ -174,7 +181,8 @@ const TooltipBase = (
                 ref: mergedRef,
                 ...rest,
                 ...mergeCallbacks(tooltipHandlers, child.props),
-                'aria-describedby': [child.props['aria-describedby'], uid].filter(isTruthy).join(' '),
+                'aria-describedby':
+                    [child.props['aria-describedby'], describeChild && uid].filter(isTruthy).join(' ') || undefined,
             })}
             <Popper
                 divRef={floating}
