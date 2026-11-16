@@ -16,6 +16,7 @@ import { createMailSearchEngine } from './engine/create';
 import { MailDelegate } from './indexation/worker/MailDelegate';
 import { EngineWrapper } from './indexation/worker/wrapper';
 import { IndexReader } from './search/IndexReader';
+import { SearchLoop } from './search/SearchLoop';
 import { buildQuery } from './search/query';
 import { initContentSearchWasm } from './testing/initContentSearchWasm';
 
@@ -130,5 +131,66 @@ describe('EngineWrapper + IndexReader roundtrip', () => {
         ]);
         // a window covering neither returns nothing.
         expect(await search(reader, { keyword: 'shared', begin: 5_000, end: 6_000 })).toEqual([]);
+    });
+
+    describe('with more matches than the bucketing threshold', () => {
+        const MATCH_COUNT = 90;
+        const BUCKET_SIZE_SECONDS = 60 * 60 * 24 * 90;
+        const BASE_TIME = 1_700_000_000;
+
+        const writeMatchingMessages = async (timeForIndex: (index: number) => number) => {
+            const messages = Array.from({ length: MATCH_COUNT }, (_, index) => {
+                return makeMessage(`msg-${index}`, 'Bulk seed message', 'routing checks', timeForIndex(index));
+            });
+            await writeMessages(messages);
+            return messages.map(({ metadata }) => {
+                return metadata.ID;
+            });
+        };
+
+        let bucketedSearchSpy: jest.SpyInstance;
+
+        beforeEach(() => {
+            bucketedSearchSpy = jest.spyOn(SearchLoop.prototype, 'runBucketedSearch');
+        });
+
+        afterEach(() => {
+            bucketedSearchSpy.mockRestore();
+        });
+
+        it('returns every match when all messages share the same time', async () => {
+            const ids = await writeMatchingMessages(() => {
+                return BASE_TIME;
+            });
+
+            const results = await search(new IndexReader(db, key), { keyword: 'routing' });
+
+            expect(bucketedSearchSpy).toHaveBeenCalledTimes(1);
+            expect(results.sort()).toEqual(ids.sort());
+        });
+
+        it('returns every match when different times fall into a single bucket', async () => {
+            const ids = await writeMatchingMessages((index) => {
+                return BASE_TIME + index * 60;
+            });
+
+            const results = await search(new IndexReader(db, key), { keyword: 'routing' });
+
+            expect(bucketedSearchSpy).toHaveBeenCalledTimes(1);
+            expect(results.sort()).toEqual(ids.sort());
+        });
+
+        it('returns every match exactly once when times span several buckets', async () => {
+            // a third of the messages sit exactly one bucket below the newest, on a bucket boundary
+            const ids = await writeMatchingMessages((index) => {
+                return BASE_TIME + (index % 3) * BUCKET_SIZE_SECONDS;
+            });
+
+            const results = await search(new IndexReader(db, key), { keyword: 'routing' });
+
+            expect(bucketedSearchSpy.mock.calls.length).toBeGreaterThan(1);
+            expect(results.length).toBe(MATCH_COUNT);
+            expect(results.sort()).toEqual(ids.sort());
+        });
     });
 });
