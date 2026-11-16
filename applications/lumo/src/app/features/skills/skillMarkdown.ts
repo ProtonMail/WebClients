@@ -89,6 +89,16 @@ export const buildSkillMarkdown = ({
     return `---\n${frontmatter}\n---\n\n${instructions.trim()}\n`;
 };
 
+/** Sets the `name` of a SKILL.md's frontmatter, leaving the rest of the file as written. */
+export const setSkillMarkdownName = (markdown: string, name: string): string => {
+    const match = FRONTMATTER_PATTERN.exec(markdown);
+    if (!match || !/^name:.*$/m.test(match[0])) {
+        return markdown;
+    }
+    const frontmatter = match[0].replace(/^name:.*$/m, () => `name: ${toYamlScalar(name)}`);
+    return `${frontmatter}${markdown.slice(match[0].length)}`;
+};
+
 /** Lowercases and drops accents from Latin letters only, so `Café` matches `cafe` but other scripts keep their marks. */
 export const foldSkillHandleText = (text: string): string =>
     text

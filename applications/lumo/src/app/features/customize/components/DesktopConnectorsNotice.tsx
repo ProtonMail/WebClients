@@ -35,7 +35,14 @@ export const DesktopConnectorsNotice = () => (
         points={getConnectorsSellingPoints()}
         actions={
             <>
-                <ButtonLike as="a" color="norm" href={DESKTOP_DOWNLOAD_URL} target="_blank" rel="noopener noreferrer">
+                <ButtonLike
+                    as="a"
+                    className="flex items-center"
+                    color="norm"
+                    href={DESKTOP_DOWNLOAD_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <LumoIcon aria-hidden name="Download" size={16} strokeWidth={1.4} className="mr-2" />
                     {c('collider_2025:Action').t`Download the desktop app`}
                 </ButtonLike>

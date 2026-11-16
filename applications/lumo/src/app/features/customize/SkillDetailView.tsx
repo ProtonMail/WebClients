@@ -281,7 +281,7 @@ export const SkillDetailView = () => {
     const renderContents = () =>
         activeFile ? (
             <div className="skill-detail__contents flex flex-nowrap">
-                <SkillFileTree files={workspaceFiles} activePath={activeFile.path} onSelect={setActivePath} />
+                <SkillFileTree files={workspaceFiles} activePath={activeFile.path} onSelectFile={setActivePath} />
                 <div className="flex flex-column flex-nowrap flex-1 min-w-0">
                     <div className="skill-detail__file-header flex flex-nowrap items-center gap-3">
                         <nav
