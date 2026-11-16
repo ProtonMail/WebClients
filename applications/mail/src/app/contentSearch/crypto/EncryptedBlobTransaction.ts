@@ -2,7 +2,7 @@ import { decryptData, encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
 import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 import type { IDBPDatabase, IDBPObjectStore } from 'idb';
 
-import type { CleanupEvent, ExportEvent, QueryEvent, WriteEvent } from '@proton/proton-foundation-search';
+import type { CleanupEvent, ExportEvent, SearchEvent, WriteEvent } from '@proton/proton-foundation-search';
 import { SerDes } from '@proton/proton-foundation-search';
 
 import type { BlobCache } from '../cache/BlobCache';
@@ -74,7 +74,7 @@ export class EncryptedBlobTransaction implements OpenBlobTransaction, SealedBlob
         }
     }
 
-    async handleLoadEvent(event: OfKind<QueryEvent | WriteEvent | ExportEvent | CleanupEvent, typeof Kind.Load>) {
+    async handleLoadEvent(event: OfKind<SearchEvent | WriteEvent | ExportEvent | CleanupEvent, typeof Kind.Load>) {
         this.assertNotConsumed();
         const id = event.id().toString();
         const cached = this.cache?.get(id);

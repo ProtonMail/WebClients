@@ -2,7 +2,7 @@
  * The search engine drives blob storage by emitting events (Load / Save / Release / …)
  * that the `EncryptedBlobTransaction` handlers act on. Each event's kind is a runtime
  * value read via `kind()`, and it is NOT reflected in the event's type — every
- * `CleanupEvent`, `QueryEvent`, etc. looks identical to the compiler regardless of kind.
+ * `CleanupEvent`, `SearchEvent`, etc. looks identical to the compiler regardless of kind.
  *
  * That means nothing stops you from handing, say, a Save event to `handleLoadEvent`; the
  * mistake would only surface at runtime when the wrong `kind()`-specific method throws.
@@ -13,10 +13,10 @@
  * dispatch site (where the runtime `kind()` check already lives), so no extra runtime check
  * is introduced — the safety is purely at the type level.
  */
-import type { CleanupEvent, ExportEvent, QueryEvent, WriteEvent } from '@proton/proton-foundation-search';
-import { CleanupEventKind, ExportEventKind, QueryEventKind, WriteEventKind } from '@proton/proton-foundation-search';
+import type { CleanupEvent, ExportEvent, SearchEvent, WriteEvent } from '@proton/proton-foundation-search';
+import { CleanupEventKind, ExportEventKind, SearchEventKind, WriteEventKind } from '@proton/proton-foundation-search';
 
-export type BlobEvent = CleanupEvent | QueryEvent | WriteEvent | ExportEvent;
+export type BlobEvent = CleanupEvent | SearchEvent | WriteEvent | ExportEvent;
 
 /** The low discriminants shared by every *EventKind enum, named so they can be used
  *  in place of bare numbers in the event types and guards below. */
@@ -26,7 +26,7 @@ export const Kind = { Load: 0, Save: 1, Release: 2 } as const;
 // single `Kind` value stand in for a kind across every event type. These lines fail to
 // compile if any enum ever drifts from the shared value.
 CleanupEventKind.Load satisfies typeof Kind.Load;
-QueryEventKind.Load satisfies typeof Kind.Load;
+SearchEventKind.Load satisfies typeof Kind.Load;
 WriteEventKind.Load satisfies typeof Kind.Load;
 ExportEventKind.Load satisfies typeof Kind.Load;
 CleanupEventKind.Save satisfies typeof Kind.Save;
