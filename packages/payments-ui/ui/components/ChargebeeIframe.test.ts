@@ -168,11 +168,43 @@ describe('getUnhandledIframeErrorLevel', () => {
     );
 });
 
-describe('validateSavedCreditCard', () => {
-    const paymentIntent = { id: 'payment-intent-1' } as PaymentIntent;
+const flushPromises = () => act(() => jest.advanceTimersByTimeAsync(0));
 
-    const flushPromises = () => act(() => jest.advanceTimersByTimeAsync(0));
+const setup = () => {
+    const iframe = document.createElement('iframe');
+    document.body.appendChild(iframe);
+    const contentWindow = iframe.contentWindow as Window;
+    const postMessage = jest.spyOn(contentWindow, 'postMessage').mockImplementation(() => {});
 
+    const { result, unmount } = renderHook(() => useCbIframe());
+    result.current.iframeRef.current = iframe;
+
+    const getPostedMessages = () => postMessage.mock.calls.map(([message]) => JSON.parse(message));
+    const getPostedMessageTypes = () => getPostedMessages().map(({ type }) => type);
+
+    const respondTo = (type: string, status: 'success' | 'failure') => {
+        const { correlationId } = getPostedMessages().findLast((message) => message.type === type);
+        window.dispatchEvent(
+            new MessageEvent('message', {
+                source: contentWindow,
+                data: JSON.stringify({ type: `${type}-response`, correlationId, status }),
+            })
+        );
+    };
+    const respondSuccessTo = (type: string) => respondTo(type, 'success');
+    const respondFailureTo = (type: string) => respondTo(type, 'failure');
+
+    return {
+        cbIframe: result.current,
+        getPostedMessages,
+        getPostedMessageTypes,
+        respondSuccessTo,
+        respondFailureTo,
+        unmount,
+    };
+};
+
+describe('validateCardForm', () => {
     beforeEach(() => {
         jest.useFakeTimers();
     });
@@ -182,30 +214,163 @@ describe('validateSavedCreditCard', () => {
         jest.useRealTimers();
     });
 
-    const setup = () => {
-        const iframe = document.createElement('iframe');
-        document.body.appendChild(iframe);
-        const contentWindow = iframe.contentWindow as Window;
-        const postMessage = jest.spyOn(contentWindow, 'postMessage').mockImplementation(() => {});
+    it('should wait for the card form setup before validating it', async () => {
+        const { cbIframe, getPostedMessageTypes, respondSuccessTo, unmount } = setup();
 
-        const { result, unmount } = renderHook(() => useCbIframe());
-        result.current.iframeRef.current = iframe;
+        cbIframe.notifyIframeLoaded();
+        void cbIframe.handles.initializeCreditCard({ isNarrow: false });
+        await flushPromises();
+        const validation = cbIframe.handles.validateCardForm();
+        await flushPromises();
 
-        const getPostedMessages = () => postMessage.mock.calls.map(([message]) => JSON.parse(message));
-        const getPostedMessageTypes = () => getPostedMessages().map(({ type }) => type);
+        expect(getPostedMessageTypes()).toEqual(['set-configuration']);
 
-        const respondSuccessTo = (type: string) => {
-            const { correlationId } = getPostedMessages().findLast((message) => message.type === type);
-            window.dispatchEvent(
-                new MessageEvent('message', {
-                    source: contentWindow,
-                    data: JSON.stringify({ type: `${type}-response`, correlationId, status: 'success' }),
-                })
-            );
-        };
+        respondSuccessTo('set-configuration');
+        await flushPromises();
 
-        return { cbIframe: result.current, getPostedMessages, getPostedMessageTypes, respondSuccessTo, unmount };
-    };
+        expect(getPostedMessageTypes()).toEqual(['set-configuration', 'validate-form']);
+
+        respondSuccessTo('validate-form');
+
+        await expect(validation).resolves.toEqual(
+            expect.objectContaining({ type: 'validate-form-response', status: 'success' })
+        );
+
+        unmount();
+    });
+
+    it('should still ask the iframe after the card form setup failed', async () => {
+        const { cbIframe, getPostedMessageTypes, respondFailureTo, unmount } = setup();
+
+        cbIframe.notifyIframeLoaded();
+        cbIframe.handles.initializeCreditCard({ isNarrow: false }).catch(() => {});
+        await flushPromises();
+        void cbIframe.handles.validateCardForm();
+        await flushPromises();
+
+        expect(getPostedMessageTypes()).toEqual(['set-configuration']);
+
+        respondFailureTo('set-configuration');
+        await flushPromises();
+
+        expect(getPostedMessageTypes()).toEqual(['set-configuration', 'validate-form']);
+
+        unmount();
+    });
+
+    it('should wait for the iframe to load and the card form setup to settle before validating it', async () => {
+        const { cbIframe, getPostedMessageTypes, respondSuccessTo, unmount } = setup();
+
+        void cbIframe.handles.validateCardForm();
+        await flushPromises();
+
+        expect(getPostedMessageTypes()).toEqual([]);
+
+        cbIframe.notifyIframeLoaded();
+        void cbIframe.handles.initializeCreditCard({ isNarrow: false });
+        await flushPromises();
+
+        expect(getPostedMessageTypes()).toEqual(['set-configuration']);
+
+        respondSuccessTo('set-configuration');
+        await flushPromises();
+
+        expect(getPostedMessageTypes()).toEqual(['set-configuration', 'validate-form']);
+
+        unmount();
+    });
+
+    it('should fail the validation when the iframe does not load in time', async () => {
+        const { cbIframe, getPostedMessageTypes, unmount } = setup();
+
+        const validation = cbIframe.handles.validateCardForm();
+        const rejection = expect(validation).rejects.toEqual({
+            type: 'validate-form-response',
+            status: 'failure',
+            error: 'Timeout exceeded',
+        });
+        await act(() => jest.advanceTimersByTimeAsync(20000));
+
+        await rejection;
+        expect(getPostedMessageTypes()).toEqual([]);
+
+        unmount();
+    });
+
+    it('should fail the validation 20s after it was asked even when the card form setup is still running', async () => {
+        const { cbIframe, getPostedMessageTypes, unmount } = setup();
+
+        const validation = cbIframe.handles.validateCardForm();
+        const rejection = expect(validation).rejects.toEqual({
+            type: 'validate-form-response',
+            status: 'failure',
+            error: 'Timeout exceeded',
+        });
+        await act(() => jest.advanceTimersByTimeAsync(15000));
+        cbIframe.notifyIframeLoaded();
+        cbIframe.handles.initializeCreditCard({ isNarrow: false }).catch(() => {});
+        await act(() => jest.advanceTimersByTimeAsync(5000));
+
+        await rejection;
+        expect(getPostedMessageTypes()).toEqual(['set-configuration']);
+
+        unmount();
+    });
+
+    it('should give the iframe only the time left until 20s after the validation was asked', async () => {
+        const { cbIframe, getPostedMessageTypes, respondSuccessTo, unmount } = setup();
+
+        cbIframe.notifyIframeLoaded();
+        void cbIframe.handles.initializeCreditCard({ isNarrow: false });
+        const validation = cbIframe.handles.validateCardForm();
+        let settled = false;
+        validation.catch(() => {}).finally(() => (settled = true));
+        await act(() => jest.advanceTimersByTimeAsync(15000));
+        respondSuccessTo('set-configuration');
+        await flushPromises();
+
+        expect(getPostedMessageTypes()).toEqual(['set-configuration', 'validate-form']);
+
+        await act(() => jest.advanceTimersByTimeAsync(4900));
+        expect(settled).toBe(false);
+        await act(() => jest.advanceTimersByTimeAsync(200));
+
+        await expect(validation).rejects.toEqual(
+            expect.objectContaining({ type: 'validate-form-response', error: 'Timeout exceeded' })
+        );
+
+        unmount();
+    });
+
+    it('should not wait for a card form setup started before the iframe reloaded', async () => {
+        const { cbIframe, getPostedMessageTypes, unmount } = setup();
+
+        cbIframe.notifyIframeLoaded();
+        void cbIframe.handles.initializeCreditCard({ isNarrow: false });
+        await flushPromises();
+        cbIframe.notifyIframeUnloaded();
+        cbIframe.notifyIframeLoaded();
+
+        void cbIframe.handles.validateCardForm();
+        await flushPromises();
+
+        expect(getPostedMessageTypes()).toEqual(['set-configuration', 'validate-form']);
+
+        unmount();
+    });
+});
+
+describe('validateSavedCreditCard', () => {
+    const paymentIntent = { id: 'payment-intent-1' } as PaymentIntent;
+
+    beforeEach(() => {
+        jest.useFakeTimers();
+    });
+
+    afterEach(() => {
+        jest.clearAllTimers();
+        jest.useRealTimers();
+    });
 
     it('should wait for the iframe to load and the saved card setup to settle before verifying the card', async () => {
         const { cbIframe, getPostedMessages, getPostedMessageTypes, respondSuccessTo, unmount } = setup();

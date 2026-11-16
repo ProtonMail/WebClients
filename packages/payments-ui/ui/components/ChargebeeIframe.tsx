@@ -77,6 +77,7 @@ import { promiseWithTimeout } from '@proton/shared/lib/helpers/promise';
 import { getSentryError } from '@proton/shared/lib/helpers/sentry';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { ColorScheme } from '@proton/shared/lib/themes/constants';
+import noop from '@proton/utils/noop';
 
 /**
  * Small helper to identify the messages sent to iframe.
@@ -140,6 +141,8 @@ const getTimeoutExceededUserMessage = () => c('Payments').t`Timeout exceeded`;
 const IFRAME_REPLY_TIMEOUT_ERROR = 'Timeout exceeded';
 
 const IFRAME_LOADING_TIMEOUT = 20000;
+
+const MIN_VALIDATE_FORM_REPLY_TIMEOUT = 1000;
 
 /**
  * `onLoad()` can fail two ways: with a reply from the iframe, or with an error thrown here on the
@@ -292,6 +295,7 @@ function useChargebeeHandles(
     const iframeLoadedRef = useRef(false);
 
     const savedCardInitializationRef = useRef<Promise<unknown> | null>(null);
+    const cardInitializationRef = useRef<Promise<unknown> | null>(null);
 
     // Function to notify that iframe has loaded
     const notifyIframeLoaded = () => {
@@ -305,6 +309,7 @@ function useChargebeeHandles(
     const notifyIframeUnloaded = () => {
         iframeLoadedRef.current = false;
         savedCardInitializationRef.current = null;
+        cardInitializationRef.current = null;
     };
 
     const signal = chargebeeConfigurationAbortControllerRef.current.signal;
@@ -390,19 +395,24 @@ function useChargebeeHandles(
                 throw error;
             }
         },
-        initializeCreditCard: async ({ isNarrow }: InitializeCreditCardOptions) => {
-            const chargebeeInstanceConfig = await getConfig();
+        initializeCreditCard: ({ isNarrow }: InitializeCreditCardOptions) => {
+            const initialization = (async () => {
+                const chargebeeInstanceConfig = await getConfig();
 
-            const config: CbIframeConfig = {
-                paymentMethodType: 'card',
-                renderMode: isNarrow ? 'two-line' : 'one-line',
-                cssVariables: getCssVariables(),
-                translations: getChargebeeCardTranslations(),
-                themeType,
-                ...chargebeeInstanceConfig,
-            };
+                const config: CbIframeConfig = {
+                    paymentMethodType: 'card',
+                    renderMode: isNarrow ? 'two-line' : 'one-line',
+                    cssVariables: getCssVariables(),
+                    translations: getChargebeeCardTranslations(),
+                    themeType,
+                    ...chargebeeInstanceConfig,
+                };
 
-            return iframeAction('set-configuration', config, iframeRef, targetOrigin, signal);
+                return iframeAction('set-configuration', config, iframeRef, targetOrigin, signal);
+            })();
+            cardInitializationRef.current = initialization;
+
+            return initialization;
         },
         initializeSavedCreditCard: () => {
             const initialization = (async () => {
@@ -478,7 +488,24 @@ function useChargebeeHandles(
         },
         getHeight: () => iframeAction('get-height', {}, iframeRef, targetOrigin, signal),
         getBin: () => iframeAction('get-bin', {}, iframeRef, targetOrigin, signal),
-        validateCardForm: () => iframeAction('validate-form', {}, iframeRef, targetOrigin, signal),
+        validateCardForm: async () => {
+            const replyDeadline = Date.now() + IFRAME_LOADING_TIMEOUT;
+            const cardFormSettled = waitForIframeLoaded()
+                .then(() => cardInitializationRef.current)
+                .catch(noop);
+            const settledInTime = await promiseWithTimeout({
+                promise: cardFormSettled.then(() => true),
+                timeoutMs: IFRAME_LOADING_TIMEOUT,
+            }).catch(() => false);
+
+            if (!settledInTime) {
+                throw { type: 'validate-form-response', status: 'failure', error: IFRAME_REPLY_TIMEOUT_ERROR };
+            }
+
+            return iframeAction('validate-form', {}, iframeRef, targetOrigin, signal, {
+                timeout: Math.max(replyDeadline - Date.now(), MIN_VALIDATE_FORM_REPLY_TIMEOUT),
+            });
+        },
         changeRenderMode: (renderMode: CardFormRenderMode) =>
             iframeAction('change-render-mode', { renderMode }, iframeRef, targetOrigin, signal),
         updateFields: () => {
