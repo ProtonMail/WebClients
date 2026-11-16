@@ -1,3 +1,4 @@
+import { getAddonConfigByType } from '@proton/payments/core/addon/addons';
 import {
     ADDON_NAMES,
     ADDON_PREFIXES,
@@ -16,6 +17,7 @@ import { PLANS_MAP } from '@proton/payments/testing/data-plans';
 import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 
 import { computeAddonCustomizerItems, getAddonCustomizerProperties } from './addonCustomizerHelpers';
+import { IncreaseBlockedReason } from './helpers';
 
 const onChangeMock = jest.fn();
 
@@ -489,7 +491,7 @@ describe('getAddonCustomizerProperties – non-trial mode', () => {
             addonFlags: {},
         });
 
-        expect(sharedAddonCustomizerProps.increaseBlockedReasons).not.toContain('trial-limit');
+        expect(sharedAddonCustomizerProps.increaseBlockedReasons).not.toContain(IncreaseBlockedReason.TRIAL_LIMIT);
         expect(sharedAddonCustomizerProps.increaseBlockedReasonText).toBeUndefined();
     });
 });
@@ -515,7 +517,7 @@ describe('getAddonCustomizerProperties – trial mode', () => {
         });
 
         expect(sharedAddonCustomizerProps.max).toBe(TRIAL_MAX_USERS);
-        expect(sharedAddonCustomizerProps.increaseBlockedReasons).toContain('trial-limit');
+        expect(sharedAddonCustomizerProps.increaseBlockedReasons).toContain(IncreaseBlockedReason.TRIAL_LIMIT);
     });
 
     it('caps domain addon at TRIAL_MAX_EXTRA_CUSTOM_DOMAINS', () => {
@@ -534,7 +536,7 @@ describe('getAddonCustomizerProperties – trial mode', () => {
         });
 
         expect(sharedAddonCustomizerProps.max).toBe(TRIAL_MAX_EXTRA_CUSTOM_DOMAINS);
-        expect(sharedAddonCustomizerProps.increaseBlockedReasons).toContain('trial-limit');
+        expect(sharedAddonCustomizerProps.increaseBlockedReasons).toContain(IncreaseBlockedReason.TRIAL_LIMIT);
     });
 
     it('caps IP addon at TRIAL_MAX_DEDICATED_IPS', () => {
@@ -553,7 +555,7 @@ describe('getAddonCustomizerProperties – trial mode', () => {
         });
 
         expect(sharedAddonCustomizerProps.max).toBe(TRIAL_MAX_DEDICATED_IPS);
-        expect(sharedAddonCustomizerProps.increaseBlockedReasons).toContain('trial-limit');
+        expect(sharedAddonCustomizerProps.increaseBlockedReasons).toContain(IncreaseBlockedReason.TRIAL_LIMIT);
     });
 
     it('caps scribe addon at TRIAL_MAX_SCRIBE_SEATS', () => {
@@ -576,7 +578,7 @@ describe('getAddonCustomizerProperties – trial mode', () => {
         });
 
         expect(sharedAddonCustomizerProps.max).toBe(TRIAL_MAX_SCRIBE_SEATS);
-        expect(sharedAddonCustomizerProps.increaseBlockedReasons).toContain('trial-limit');
+        expect(sharedAddonCustomizerProps.increaseBlockedReasons).toContain(IncreaseBlockedReason.TRIAL_LIMIT);
     });
 
     it('trial max is the effective cap when lower than the uncapped computed max', () => {
@@ -745,6 +747,270 @@ describe('syncAlwaysAddons', () => {
             [PLANS.MAIL_PRO]: 1,
             [ADDON_NAMES.MEMBER_MAIL_PRO]: 2,
             [ADDON_NAMES.MEET_MAIL_PRO]: 2, // unchanged — flag disabled
+        });
+    });
+});
+
+describe('Scribe row with ScribeToLumo', () => {
+    const buildSelectedPlan = (planIDs: PlanIDs) => {
+        return SelectedPlan.createNormalized(planIDs, PLANS_MAP, CYCLE.MONTHLY, 'EUR');
+    };
+
+    const addonFlags = {
+        [ADDON_PREFIXES.SCRIBE]: true,
+        [ADDON_PREFIXES.LUMO]: true,
+    };
+
+    // 3 users, no Scribe seats
+    const noScribePlanIDs: PlanIDs = {
+        [PLANS.MAIL_PRO]: 1,
+        [ADDON_NAMES.MEMBER_MAIL_PRO]: 2,
+    };
+
+    // 3 users, 3 Scribe seats
+    const heldScribePlanIDs: PlanIDs = {
+        [PLANS.MAIL_PRO]: 1,
+        [ADDON_NAMES.MEMBER_MAIL_PRO]: 2,
+        [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 3,
+    };
+
+    const getItemNames = ({
+        planIDs,
+        latestSubscription,
+        isTrialMode = false,
+        isSignup = false,
+        scribeToLumo,
+    }: {
+        planIDs: PlanIDs;
+        latestSubscription: Parameters<typeof computeAddonCustomizerItems>[0]['latestSubscription'];
+        isTrialMode?: boolean;
+        isSignup?: boolean;
+        scribeToLumo: boolean;
+    }) =>
+        computeAddonCustomizerItems({
+            normalizedSelectedPlan: buildSelectedPlan(planIDs),
+            plansMap: PLANS_MAP,
+            cycle: CYCLE.MONTHLY,
+            loading: false,
+            latestSubscription,
+            isTrialMode,
+            onChangePlanIDs: onChangeMock,
+            addonFlags,
+            scribeToLumo,
+            isSignup,
+        }).map((item) => item.addonName);
+
+    const getProps = ({
+        addonName,
+        cartPlanIDs,
+        heldPlanIDs,
+        isTrialMode = false,
+        scribeToLumo,
+    }: {
+        addonName: ADDON_NAMES;
+        cartPlanIDs: PlanIDs;
+        heldPlanIDs: PlanIDs;
+        isTrialMode?: boolean;
+        scribeToLumo: boolean;
+    }) =>
+        getAddonCustomizerProperties({
+            addonName,
+            plansMap: PLANS_MAP,
+            loading: false,
+            latestSubscription: buildSubscription(heldPlanIDs),
+            isTrialMode,
+            selectedPlan: buildSelectedPlan(cartPlanIDs),
+            onChangePlanIDs: onChangeMock,
+            scribeToLumo,
+            addonFlags,
+        }).sharedAddonCustomizerProps;
+
+    it('hides the Scribe row when the subscription holds no Scribe seats', () => {
+        const addonNames = getItemNames({
+            planIDs: noScribePlanIDs,
+            latestSubscription: buildSubscription(noScribePlanIDs),
+            scribeToLumo: true,
+        });
+
+        expect(addonNames).not.toContain(ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO);
+        expect(addonNames).toContain(ADDON_NAMES.LUMO_MAIL_PRO);
+    });
+
+    it('keeps the Scribe row with no held Scribe seats when the flag is off', () => {
+        const addonNames = getItemNames({
+            planIDs: noScribePlanIDs,
+            latestSubscription: buildSubscription(noScribePlanIDs),
+            scribeToLumo: false,
+        });
+
+        expect(addonNames).toContain(ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO);
+    });
+
+    it('keeps the Scribe row when the subscription holds Scribe seats and the cart has none', () => {
+        const addonNames = getItemNames({
+            planIDs: noScribePlanIDs,
+            latestSubscription: buildSubscription(heldScribePlanIDs),
+            scribeToLumo: true,
+        });
+
+        expect(addonNames).toContain(ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO);
+    });
+
+    it('hides the Scribe row in signup', () => {
+        const addonNames = getItemNames({
+            planIDs: { [PLANS.MAIL_PRO]: 1 },
+            latestSubscription: FREE_SUBSCRIPTION,
+            isSignup: true,
+            scribeToLumo: true,
+        });
+
+        expect(addonNames).not.toContain(ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO);
+    });
+
+    it('caps the Scribe row at the held Scribe seats with the retired reason', () => {
+        const props = getProps({
+            addonName: ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO,
+            // 5 users, so the user count is not the binding cap
+            cartPlanIDs: { ...heldScribePlanIDs, [ADDON_NAMES.MEMBER_MAIL_PRO]: 4 },
+            heldPlanIDs: heldScribePlanIDs,
+            scribeToLumo: true,
+        });
+
+        expect(props.max).toBe(3);
+        expect(props.increaseBlockedReasons).toEqual([IncreaseBlockedReason.SCRIBE_RETIRED]);
+        expect(props.increaseBlockedReasonText).toBe(
+            getAddonConfigByType(ADDON_PREFIXES.SCRIBE)?.increaseBlockedReasonText?.()
+        );
+        expect(props.increaseBlockedReasonText).toBeDefined();
+    });
+
+    it('caps the Scribe row at the held Scribe seats after the cart reduces them', () => {
+        const props = getProps({
+            addonName: ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO,
+            cartPlanIDs: {
+                ...heldScribePlanIDs,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 4,
+                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 1,
+            },
+            heldPlanIDs: heldScribePlanIDs,
+            scribeToLumo: true,
+        });
+
+        expect(props.max).toBe(3);
+    });
+
+    it('caps the Scribe row at the user count when the flag is off', () => {
+        const props = getProps({
+            addonName: ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO,
+            cartPlanIDs: { ...heldScribePlanIDs, [ADDON_NAMES.MEMBER_MAIL_PRO]: 4 },
+            heldPlanIDs: heldScribePlanIDs,
+            scribeToLumo: false,
+        });
+
+        expect(props.max).toBe(5);
+        expect(props.increaseBlockedReasons).toEqual([]);
+        expect(props.increaseBlockedReasonText).toBeUndefined();
+    });
+
+    it('caps the Scribe row at the user count when it is below the held Scribe seats', () => {
+        const props = getProps({
+            addonName: ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO,
+            // 2 users, 2 Scribe seats in the cart
+            cartPlanIDs: {
+                [PLANS.MAIL_PRO]: 1,
+                [ADDON_NAMES.MEMBER_MAIL_PRO]: 1,
+                [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 2,
+            },
+            heldPlanIDs: heldScribePlanIDs,
+            scribeToLumo: true,
+        });
+
+        expect(props.max).toBe(2);
+    });
+
+    it('caps the Scribe row in trial at the lower of the trial cap and the held Scribe seats', () => {
+        const trialPlanIDs: PlanIDs = {
+            [PLANS.MAIL_PRO]: 1,
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 4,
+            [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 2,
+        };
+
+        const props = getProps({
+            addonName: ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO,
+            cartPlanIDs: trialPlanIDs,
+            heldPlanIDs: trialPlanIDs,
+            isTrialMode: true,
+            scribeToLumo: true,
+        });
+
+        expect(props.max).toBe(Math.min(TRIAL_MAX_SCRIBE_SEATS, 2));
+        expect(props.increaseBlockedReasons).toEqual([IncreaseBlockedReason.SCRIBE_RETIRED]);
+    });
+
+    it('hides the Scribe row in trial when the subscription holds no Scribe seats', () => {
+        const addonNames = getItemNames({
+            planIDs: noScribePlanIDs,
+            latestSubscription: buildSubscription(noScribePlanIDs),
+            isTrialMode: true,
+            scribeToLumo: true,
+        });
+
+        expect(addonNames).not.toContain(ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO);
+    });
+
+    it('never raises Scribe seats when Lumo seats go up', () => {
+        // 10 users, so the pool has room for both and nothing gets trimmed
+        const cartPlanIDs: PlanIDs = { ...heldScribePlanIDs, [ADDON_NAMES.MEMBER_MAIL_PRO]: 9 };
+
+        const props = getProps({
+            addonName: ADDON_NAMES.LUMO_MAIL_PRO,
+            cartPlanIDs,
+            heldPlanIDs: heldScribePlanIDs,
+            scribeToLumo: true,
+        });
+
+        props.onChange?.(4);
+
+        expect(onChangeMock).toHaveBeenCalledWith({ ...cartPlanIDs, [ADDON_NAMES.LUMO_MAIL_PRO]: 4 });
+    });
+
+    it('keeps Scribe when users go up and syncs it when users go down', () => {
+        const props = getProps({
+            addonName: ADDON_NAMES.MEMBER_MAIL_PRO,
+            cartPlanIDs: heldScribePlanIDs,
+            heldPlanIDs: heldScribePlanIDs,
+            scribeToLumo: true,
+        });
+
+        props.onChange?.(4);
+        props.onChange?.(2);
+
+        expect(onChangeMock).toHaveBeenNthCalledWith(1, {
+            [PLANS.MAIL_PRO]: 1,
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+            [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 3,
+        });
+        expect(onChangeMock).toHaveBeenNthCalledWith(2, {
+            [PLANS.MAIL_PRO]: 1,
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 1,
+            [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 2,
+        });
+    });
+
+    it('raises Scribe with users when the flag is off', () => {
+        const props = getProps({
+            addonName: ADDON_NAMES.MEMBER_MAIL_PRO,
+            cartPlanIDs: heldScribePlanIDs,
+            heldPlanIDs: heldScribePlanIDs,
+            scribeToLumo: false,
+        });
+
+        props.onChange?.(4);
+
+        expect(onChangeMock).toHaveBeenCalledWith({
+            [PLANS.MAIL_PRO]: 1,
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 3,
+            [ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO]: 4,
         });
     });
 });

@@ -40,6 +40,7 @@ export const SCRIBE_ADDON_CONFIG: AddonConfig = {
                   .t`You can have up to ${TRIAL_MAX_SCRIBE_SEATS} ${LUMO_SHORT_APP_NAME} writing assistant seats during the trial period.`
             : c('b2b_trials_2025_Info')
                   .t`You can have up to ${TRIAL_MAX_SCRIBE_SEATS} Scribe seats during the trial period.`,
+    increaseBlockedReasonText: () => c('Info').t`Writing assistant seats are no longer sold.`,
     isPerMemberCapped: true,
     displayOrder: 4,
     featureLimit: { kind: 'synthetic', key: 'MaxAI', grants: { MaxAI: 1 }, pool: { group: 'ai' } },

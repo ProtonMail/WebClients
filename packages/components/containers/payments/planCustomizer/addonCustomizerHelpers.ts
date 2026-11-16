@@ -14,7 +14,7 @@ import { type ADDON_NAMES, ADDON_PREFIXES, FREE_SUBSCRIPTION } from '@proton/pay
 import type { CouponConfigMetadata } from '@proton/payments/core/coupon-config/interface';
 import type { EntitlementCatalog } from '@proton/payments/core/entitlements/interface';
 import type { Cycle, PlanIDs } from '@proton/payments/core/interface';
-import { getAddonType } from '@proton/payments/core/plan/addons';
+import { getAddonType, isAddonType } from '@proton/payments/core/plan/addons';
 import { getAddonMultiplier } from '@proton/payments/core/plan/feature-limits';
 import { setQuantity } from '@proton/payments/core/planIDs';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
@@ -27,7 +27,8 @@ import { Renew } from '@proton/shared/lib/payments/subscription/constants';
 import { showAddonCustomizer } from '../subscription/modal-components/helpers/showAddonCustomizer';
 import type { NumberCustomiserProps } from './NumberCustomiser';
 import { getForcedFeatureLimitations } from './forced-addon-limits';
-import type { DecreaseBlockedReason, IncreaseBlockedReason } from './helpers';
+import type { DecreaseBlockedReason } from './helpers';
+import { IncreaseBlockedReason } from './helpers';
 
 export interface AddonCustomizerProperties {
     sharedAddonCustomizerProps: SharedAddonCustomizerProps;
@@ -61,8 +62,19 @@ const getPreferredAddonTypeForPool = (addonName: ADDON_NAMES): ADDON_PREFIXES | 
     return addonType && getAddonSeatGroup(addonType) ? addonType : undefined;
 };
 
+const scribeAddonConfig = getAddonConfigByType(ADDON_PREFIXES.SCRIBE);
+
+const getScribeAddonSeats = (plan: SelectedPlan): number => {
+    const featureLimitKey = scribeAddonConfig?.featureLimit.key;
+    if (!featureLimitKey) {
+        return 0;
+    }
+    return plan.getCountInAddons(featureLimitKey, ADDON_PREFIXES.SCRIBE);
+};
+
 type AddonCustomizerTrialProps =
-    {} | Pick<NumberCustomiserProps, 'max' | 'increaseBlockedReasons' | 'increaseBlockedReasonText'>;
+    | {}
+    | Pick<NumberCustomiserProps, 'max' | 'increaseBlockedReasons' | 'increaseBlockedReasonText'>;
 
 const getTrialProps = (
     isTrialMode: boolean,
@@ -79,7 +91,7 @@ const getTrialProps = (
 
     return {
         max,
-        increaseBlockedReasons: ['trial-limit'],
+        increaseBlockedReasons: [IncreaseBlockedReason.TRIAL_LIMIT],
         increaseBlockedReasonText,
     };
 };
@@ -242,15 +254,25 @@ export const getAddonCustomizerProperties = ({
     const trialConstraints = getTrialProps(isTrialMode, addonName, scribeToLumo);
 
     // The total number of scribe, lumo, or meet addons can't be higher than the total number of members
-    const max = getMaxAddonAmount(addonName, trialConstraints, {
+    const memberCappedMax = getMaxAddonAmount(addonName, trialConstraints, {
         selectedPlanTotalMembers,
         forcedMax,
         addonMultiplier,
     });
-    const increaseBlockedReasons: IncreaseBlockedReason[] =
+
+    // Scribe seats are no longer sold: an org can keep or reduce the seats it holds, never add more.
+    const isScribeRetired = scribeToLumo && isAddonType(addonName, ADDON_PREFIXES.SCRIBE);
+    const max = isScribeRetired ? Math.min(memberCappedMax, getScribeAddonSeats(currentPlan)) : memberCappedMax;
+    const trialIncreaseBlockedReasons: IncreaseBlockedReason[] =
         'increaseBlockedReasons' in trialConstraints ? trialConstraints.increaseBlockedReasons : [];
-    const increaseBlockedReasonText: string | undefined =
+    const increaseBlockedReasons = isScribeRetired
+        ? [IncreaseBlockedReason.SCRIBE_RETIRED]
+        : trialIncreaseBlockedReasons;
+    const trialIncreaseBlockedReasonText: string | undefined =
         'increaseBlockedReasonText' in trialConstraints ? trialConstraints.increaseBlockedReasonText : undefined;
+    const increaseBlockedReasonText = isScribeRetired
+        ? scribeAddonConfig?.increaseBlockedReasonText?.()
+        : trialIncreaseBlockedReasonText;
 
     // For any plan with members (Duo, Family, B2B plans, etc.), Meet seats must equal the number of users.
     // Lock the input so the user can't change the count after adding.
@@ -268,7 +290,11 @@ export const getAddonCustomizerProperties = ({
             const addonConfig = getAddonConfigByName(addonName);
             if (addonConfig?.addonType === ADDON_PREFIXES.MEMBER) {
                 const supportedAddonNames = selectedPlan.getSupportedAddonNames();
-                onChangePlanIDs(syncAddonsWithMembers(supportedAddonNames, newPlanIDs, value, newQuantity, addonFlags));
+                const syncedAddonNames =
+                    scribeToLumo && newQuantity > value
+                        ? supportedAddonNames.filter((name) => !isAddonType(name, ADDON_PREFIXES.SCRIBE))
+                        : supportedAddonNames;
+                onChangePlanIDs(syncAddonsWithMembers(syncedAddonNames, newPlanIDs, value, newQuantity, addonFlags));
                 return;
             }
 
@@ -362,11 +388,17 @@ export function computeAddonCustomizerItems({
         return addonType !== null && allowedAddonTypes.includes(addonType);
     };
 
+    const hidesScribe =
+        scribeToLumo && getScribeAddonSeats(SelectedPlan.createFromSubscription(latestSubscription, plansMap)) === 0;
+
     return normalizedSelectedPlan
         .getSupportedAddonNames()
         .filter((addonName) => {
             const addonType = getAddonType(addonName);
             if (addonType !== null && !enabledAddonTypes.has(addonType)) {
+                return false;
+            }
+            if (hidesScribe && isAddonType(addonName, ADDON_PREFIXES.SCRIBE)) {
                 return false;
             }
             // Some cycles don't support some addons. For example, if user buys vpn2024 6m then 1lumo-vpn2024 doesn't

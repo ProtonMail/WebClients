@@ -36,7 +36,7 @@ import { getPaymentStatusState, getSubscriptionState } from '@proton/payments/te
 import type { UserSettings } from '@proton/shared/lib/interfaces/UserSettings';
 import { getAddonNameByPlan } from '@proton/shared/lib/payments/plan/helpers';
 import { addApiMock, apiMock } from '@proton/test-api/api';
-import type { FeatureFlag } from '@proton/unleash/Flags';
+import { type FeatureFlag, MailFeatureFlag } from '@proton/unleash/Flags';
 
 import SubscriptionModalProvider from '../../containers/payments/subscription/SubscriptionModalProvider';
 import { PaymentsContextProvider } from '../context/PaymentContext';
@@ -505,6 +505,33 @@ describe('<AutomaticSubscriptionModal />', () => {
                 [domainAddonName]: 5,
                 [scribeAddonName]: 3,
                 [lumoAddonName]: 2,
+            });
+        });
+
+        describe('with ScribeToLumo on', () => {
+            let useFlagSpy: jest.SpyInstance;
+
+            beforeEach(() => {
+                useFlagSpy = jest.spyOn(require('@proton/unleash/useFlag'), 'useFlag');
+                useFlagSpy.mockImplementation((flag) => flag === MailFeatureFlag.ScribeToLumo);
+            });
+
+            afterEach(() => {
+                useFlagSpy.mockRestore();
+            });
+
+            it('ignores totalScribe and still applies the other totalX params', async () => {
+                renderModal('?plan=bundlepro2024&totalMember=5&totalScribe=3&totalLumo=2');
+
+                await waitFor(() => expect(mockOpenSubscriptionModal).toHaveBeenCalledTimes(1));
+                const props = mockOpenSubscriptionModal.mock.calls[0][0];
+
+                expect(props.plan).toBeUndefined();
+                expect(props.planIDs).toEqual({
+                    [PLANS.BUNDLE_PRO_2024]: 1,
+                    [memberAddonName]: 4,
+                    [lumoAddonName]: 2,
+                });
             });
         });
 
