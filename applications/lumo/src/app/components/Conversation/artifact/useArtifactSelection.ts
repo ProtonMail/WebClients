@@ -18,7 +18,7 @@ export interface ArtifactSelection {
  * used by Mail's composer assistant (`useComposerAssistantSelectedText.ts`), adapted here
  * as a standalone hook with no composer-specific dependencies.
  */
-export function useArtifactSelection(containerRef: RefObject<HTMLDivElement>) {
+export function useArtifactSelection(containerRef: RefObject<HTMLDivElement | null>) {
     const [selection, setSelection] = useState<ArtifactSelection | null>(null);
 
     const clearSelection = useCallback(() => {

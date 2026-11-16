@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import { DRIVE_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
@@ -28,7 +29,7 @@ interface DriveKnowledgeProps {
     linkedDriveFolder: LinkedDriveFolder;
     breadcrumbs: BreadcrumbItem[];
     isRootFolder: boolean;
-    driveBrowserRef: React.RefObject<DriveBrowserHandle>;
+    driveBrowserRef: RefObjectReact18Compat<DriveBrowserHandle>;
     onBreadcrumbClick: (breadcrumb: BreadcrumbItem) => void;
     onBreadcrumbsChange: (newBreadcrumbs: BreadcrumbItem[]) => void;
     onCreateFolder: () => void;

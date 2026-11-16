@@ -77,7 +77,7 @@ function restoreCursor(textarea: HTMLTextAreaElement | null, pos: number) {
 }
 
 export const useFileMentionAutocomplete = (
-    textareaRef: React.RefObject<HTMLTextAreaElement>,
+    textareaRef: React.RefObject<HTMLTextAreaElement | null>,
     value: string,
     setValue: (v: string) => void,
     spaceId?: SpaceId,

@@ -85,7 +85,7 @@ const FormatOptions = ({ options, onSelected }: FormatOptionsProps) => {
 };
 
 interface Props {
-    anchorRef: RefObject<HTMLElement>;
+    anchorRef: RefObject<HTMLElement | null>;
     isOpen: boolean;
     onClose: () => void;
     size: DropdownSize;

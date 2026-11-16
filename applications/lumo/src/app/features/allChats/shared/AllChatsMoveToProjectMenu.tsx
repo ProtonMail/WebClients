@@ -19,7 +19,7 @@ import '../../../layouts/sidepanel/ConversationSidebarActions.scss';
 
 interface Props {
     isOpen: boolean;
-    anchorRef: RefObject<HTMLElement>;
+    anchorRef: RefObject<HTMLElement | null>;
     onClose: () => void;
     onSelect: (spaceId: string, projectName: string) => void;
     placement?: DropdownProps['originalPlacement'];

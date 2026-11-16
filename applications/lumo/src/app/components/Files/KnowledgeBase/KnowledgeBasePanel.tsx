@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/app-context/useNotifications';
 import { Button } from '@proton/atoms/Button/Button';
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import { IcBrandProtonDrive } from '@proton/icons/icons/IcBrandProtonDrive';
 import { DRIVE_SHORT_APP_NAME, LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -342,7 +343,7 @@ const ExcludedFilesSection = ({
 
 interface KnowledgeBasePanelProps {
     messageChain: Message[];
-    filesContainerRef: React.RefObject<HTMLDivElement>;
+    filesContainerRef: RefObjectReact18Compat<HTMLDivElement>;
     onClose: () => void;
     isModal: boolean;
     onViewFile?: (attachment: any) => void;

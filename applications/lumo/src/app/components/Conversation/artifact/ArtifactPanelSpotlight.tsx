@@ -31,7 +31,7 @@ const ArtifactPanelSpotlightContent = ({ isGuest }: ArtifactPanelSpotlightConten
 };
 
 interface Props {
-    anchorRef: RefObject<HTMLElement>;
+    anchorRef: RefObject<HTMLElement | null>;
     children: ReactElement;
     onClose: MouseEventHandler;
     onDisplayed: () => void;

@@ -20,7 +20,7 @@ export type MessageChainComponentProps = {
     handleOpenFilePreview: (attachment: Attachment) => void;
     isGenerating?: boolean;
     onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
-    composerContainerRef: React.RefObject<HTMLDivElement>;
+    composerContainerRef: React.RefObject<HTMLDivElement | null>;
     /** Extra classes for the scrollable message container (e.g. top spacing in minimal mode). */
     className?: string;
     conversationId?: ConversationId;

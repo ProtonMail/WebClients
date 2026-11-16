@@ -13,7 +13,7 @@ import { useDeviceLoading } from '../../hooks/useDeviceLoading';
 import { VideoSettingsDropdown } from './VideoSettingsDropdown';
 
 interface VideoSettingsProps {
-    anchorRef: RefObject<HTMLButtonElement>;
+    anchorRef: RefObject<HTMLButtonElement | null>;
     onClose: () => void;
     anchorPosition?: PopperPosition;
 }

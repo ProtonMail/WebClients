@@ -15,7 +15,7 @@ import { MoreMenuButtonItem } from './MoreMenuItems';
 
 interface Props extends LayoutOptionsState {
     /** The dropdown matches the width of this element. */
-    containerRef: RefObject<HTMLElement>;
+    containerRef: RefObject<HTMLElement | null>;
     onLayoutSelected: () => void;
 }
 

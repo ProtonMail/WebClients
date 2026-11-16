@@ -20,7 +20,7 @@ import { useUncontrolledField } from '../../../hooks/useUncontrolledField';
 interface CreateFolderModalProps {
     open: boolean;
     folderId: string;
-    driveBrowserRef: React.RefObject<DriveBrowserHandle>;
+    driveBrowserRef: React.RefObject<DriveBrowserHandle | null>;
     onClose: () => void;
 }
 

@@ -16,7 +16,7 @@ import { useMeetingActions } from './useMeetingActions';
 
 interface Props {
     isOpen: boolean;
-    anchorRef: RefObject<HTMLButtonElement>;
+    anchorRef: RefObject<HTMLButtonElement | null>;
     onClose: () => void;
     toggles: MoreMenuToggle[];
     actions: MoreMenuAction[];

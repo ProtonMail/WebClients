@@ -10,7 +10,7 @@ import { useEffect, useRef } from 'react';
  */
 export const useEditorQuery = (
     query: string | undefined,
-    textareaRef: React.RefObject<HTMLTextAreaElement>,
+    textareaRef: React.RefObject<HTMLTextAreaElement | null>,
     setValue: (value: string) => void,
     isProcessingAttachment: boolean,
     onReady?: () => void

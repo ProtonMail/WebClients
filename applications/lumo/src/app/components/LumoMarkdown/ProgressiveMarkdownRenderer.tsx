@@ -8,6 +8,7 @@ import { c } from 'ttag';
 import { visit } from 'unist-util-visit';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import { isIos, isIpad, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import type { SearchItem } from '../../lib/toolCall/types';
@@ -230,7 +231,7 @@ const RefLink = React.memo(function RefLink({
     id: string;
     children: React.ReactNode;
     toolCallResults?: SearchItem[] | null;
-    sourcesContainerRef?: React.RefObject<HTMLDivElement>;
+    sourcesContainerRef?: React.RefObject<HTMLDivElement | null>;
     handleLinkClick?: HandleLinkClick;
 }) {
     useEffect(() => {
@@ -297,9 +298,9 @@ interface ProgressiveMarkdownProps {
     isStreaming: boolean;
     handleLinkClick?: HandleLinkClick;
     toolCallResults?: SearchItem[] | null;
-    sourcesContainerRef?: React.RefObject<HTMLDivElement>;
+    sourcesContainerRef?: React.RefObject<HTMLDivElement | null>;
     message: any;
-    messageContentContainerRef?: React.RefObject<HTMLDivElement>;
+    messageContentContainerRef?: RefObjectReact18Compat<HTMLDivElement>;
     /** When false, Vega code fences render as static highlighted code (untrusted previews). */
     enableVegaCharts?: boolean;
 }
@@ -314,7 +315,7 @@ const MarkdownBlock: React.FC<{
     content: string;
     handleLinkClick?: HandleLinkClick;
     toolCallResults?: SearchItem[] | null;
-    sourcesContainerRef?: React.RefObject<HTMLDivElement>;
+    sourcesContainerRef?: React.RefObject<HTMLDivElement | null>;
     message: any;
     enableVegaCharts: boolean;
 }> = React.memo(

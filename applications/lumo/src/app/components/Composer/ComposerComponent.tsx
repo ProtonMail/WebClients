@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/app-context/useNotifications';
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -88,7 +89,7 @@ export type ComposerComponentProps = {
     isGenerating?: boolean;
     isProcessingAttachment: boolean;
     className?: string;
-    inputContainerRef?: React.RefObject<HTMLDivElement>;
+    inputContainerRef?: RefObjectReact18Compat<HTMLDivElement>;
     setIsEditorFocused?: (isEditorFocused: boolean) => void;
     isEditorFocused?: boolean;
     setIsEditorEmpty?: (isEditorEmpty: boolean) => void;

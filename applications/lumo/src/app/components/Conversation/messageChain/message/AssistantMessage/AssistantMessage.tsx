@@ -71,7 +71,7 @@ interface AssistantActionToolbarProps {
     onToggleFilesManagement: (message?: Message) => void;
     markdownContainerRef: React.MutableRefObject<HTMLDivElement | null>;
     onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
-    retryButtonRef: React.RefObject<HTMLButtonElement>;
+    retryButtonRef: React.RefObject<HTMLButtonElement | null>;
     isLastMessage: boolean;
     isGenerating: boolean;
     toolCallName?: ToolCallName | 'create_artifact';

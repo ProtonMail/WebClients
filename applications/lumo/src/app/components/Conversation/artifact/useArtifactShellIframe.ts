@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
+
 import { ARTIFACT_HTML_MESSAGE, ARTIFACT_RESIZE_MESSAGE, getArtifactShellUrl } from './artifactShell';
 
 interface UseArtifactShellIframeResult {
-    iframeRef: React.RefObject<HTMLIFrameElement>;
-    containerRef: React.RefObject<HTMLDivElement>;
+    iframeRef: RefObjectReact18Compat<HTMLIFrameElement>;
+    containerRef: RefObjectReact18Compat<HTMLDivElement>;
     shellSrc: string;
     onIframeLoad: () => void;
     ready: boolean;

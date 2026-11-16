@@ -3,6 +3,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import type { RefObjectReact18Compat } from '@proton/atoms/helpers/RefObjectReact18Compat';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import lumoDrive from '@proton/styles/assets/img/lumo/lumo-drive.svg';
 
@@ -10,7 +11,7 @@ import { LumoIcon } from '../LumoIcon/LumoIcon';
 import { GuestSignInState } from './GuestSignInState/GuestSignInState';
 
 interface KnowledgeBaseGuestDriveUpsellProps {
-    filesContainerRef: React.RefObject<HTMLDivElement>;
+    filesContainerRef: RefObjectReact18Compat<HTMLDivElement>;
     isModal: boolean;
     isMediumScreen: boolean;
     onBack?: () => void;

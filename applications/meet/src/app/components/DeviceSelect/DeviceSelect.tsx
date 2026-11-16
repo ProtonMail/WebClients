@@ -16,7 +16,7 @@ interface DeviceSelectProps<T extends object> {
     disabled?: boolean;
     isOpen?: boolean;
     setIsOpen: (isOpen: boolean) => void;
-    Content?: (props: T & { anchorRef: RefObject<HTMLButtonElement>; onClose: () => void }) => React.ReactNode;
+    Content?: (props: T & { anchorRef: RefObject<HTMLButtonElement | null>; onClose: () => void }) => React.ReactNode;
     contentProps: T;
 }
 

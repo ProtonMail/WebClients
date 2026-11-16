@@ -12,7 +12,7 @@ import type { LayoutOptionsState } from '../../ParticipantsLayout/LayoutSelector
 import { MoreMenuButtonItem } from './MoreMenuItems';
 
 interface Props extends LayoutOptionsState {
-    menuRef: RefObject<HTMLElement>;
+    menuRef: RefObject<HTMLElement | null>;
     onOpenChange: (isOpen: boolean) => void;
     onCloseMenu: () => void;
 }
