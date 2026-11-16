@@ -99,7 +99,7 @@ When a term has more than one meaning in code, the **Ambiguous** note says which
 - **RTS**: the Real-Time Server. The client connects over websockets (`WebsocketService`, `core/Services/Websockets/`) using a realtime token (API route name: "valet token"). **`receivedEverythingFromRTS`** means the initial sync finished.
 - **Conversion**: importing a non-native file (`DocsConversionType`: docx, odt, md, xlsx, csv...) into a new document. An empty document is created (`CreateEmptyDocumentForConversion`), then the editor converts the content.
 - **AAD**: additional authenticated data bound to each encrypted DU or comment. `core/UseCase/GetAdditionalEncryptionData.ts`.
-- **Drive compat / Drive SDK**: two paths for Drive operations. `DriveCompat` / `PublicDriveCompat` (`packages/drive-store`) is the legacy path; `@proton/drive` (`core/DriveSDK/`, `app/drive-sdk/`) is the new one, rolled out behind the SDK flags listed in `app/utils/flags.ts`. The homepage keeps its own copies of the helpers it needs in `app/homepage/driveSdk/`.
+- **Drive compat / Drive SDK**: two paths for Drive operations. `DriveCompat` (`packages/drive-store`) is the legacy path; `@proton/drive` (`core/DriveSDK/`, `app/drive-sdk/`) is the new one, rolled out behind the SDK flags listed in `app/utils/flags.ts`. Public links always use the Drive SDK. The homepage keeps its own copies of the helpers it needs in `app/homepage/driveSdk/`.
 
 ## Collaboration
 

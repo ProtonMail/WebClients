@@ -150,7 +150,8 @@ export function DocumentViewer({
   }, [bridge, isDarkMode])
 
   const isPrivateNode = isPrivateNodeMeta(nodeMeta)
-  const replaceDriveCompat = isPrivateNode ? isDriveCompatSDKFlagOn : !application.compatWrapper.getPublicCompat()
+  // Public links always use the Drive SDK
+  const replaceDriveCompat = !isPrivateNode || isDriveCompatSDKFlagOn
   const nodeUid = isPrivateNode ? generateNodeUid(nodeMeta.volumeId, nodeMeta.linkId) : null
 
   const { flagsReady } = useFlagsStatus()
@@ -743,19 +744,14 @@ export function DocumentViewer({
         if (isPublicNodeMeta(nodeMeta)) {
           void OpenTracer.trace('boot_doc_viewer_invite_accept_public_redirect')
           const meta = { volumeId: result.acceptedNodeMeta.volumeId, linkId: result.acceptedNodeMeta.linkId }
-          const publicCompat = application.compatWrapper.getPublicCompat()
-          if (publicCompat) {
-            publicCompat.redirectToAuthedDocument(meta)
-          } else {
-            documentWindowAction({ ...meta, type: 'doc', mode: 'open', window })
-          }
+          documentWindowAction({ ...meta, type: 'doc', mode: 'open', window })
         } else {
           void OpenTracer.trace('boot_doc_viewer_invite_accept_reload')
           window.location.reload()
         }
       }
     },
-    [application.compatWrapper, application.logger, nodeMeta, documentWindowAction],
+    [application.logger, nodeMeta, documentWindowAction],
   )
 
   /**

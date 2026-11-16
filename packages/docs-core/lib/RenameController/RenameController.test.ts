@@ -16,7 +16,6 @@ const publicNodeMeta = { token: 'token', linkId: 'link-id' }
 const parentMeta = { volumeId: 'volume-id', linkId: 'parent-id' }
 
 describe('PublicRenameController', () => {
-  const compat = { renamePublicDocument: jest.fn() }
   const getNode = { updateNodeNameInCache: jest.fn() }
   const logger = { error: jest.fn() }
   const documentState = {
@@ -24,10 +23,9 @@ describe('PublicRenameController', () => {
     setProperty: jest.fn(),
   }
 
-  const createController = (withCompat: boolean) =>
+  const createController = () =>
     new PublicRenameController(
       documentState as unknown as PublicDocumentState,
-      withCompat ? (compat as unknown as ConstructorParameters<typeof PublicRenameController>[1]) : undefined,
       getNode as unknown as GetNode,
       logger as unknown as LoggerInterface,
     )
@@ -36,23 +34,15 @@ describe('PublicRenameController', () => {
     jest.clearAllMocks()
   })
 
-  it('renames with compat when available', async () => {
-    const result = await createController(true).renameDocument('New name')
-
-    expect(result.isFailed()).toBe(false)
-    expect(compat.renamePublicDocument).toHaveBeenCalledWith(publicNodeMeta, 'New name')
-    expect(renamePublicNode).not.toHaveBeenCalled()
-  })
-
-  it('renames with SDK when compat is not available', async () => {
-    const result = await createController(false).renameDocument('New name')
+  it('renames with SDK', async () => {
+    const result = await createController().renameDocument('New name')
 
     expect(result.isFailed()).toBe(false)
     expect(renamePublicNode).toHaveBeenCalledWith(publicNodeMeta, 'New name')
   })
 
   it('updates document name and node cache on success', async () => {
-    await createController(false).renameDocument('New name')
+    await createController().renameDocument('New name')
 
     expect(documentState.setProperty).toHaveBeenCalledWith('documentName', 'New name')
     expect(getNode.updateNodeNameInCache).toHaveBeenCalledWith(publicNodeMeta, 'New name')
@@ -61,7 +51,7 @@ describe('PublicRenameController', () => {
   it('logs and returns failure when rename fails', async () => {
     jest.mocked(renamePublicNode).mockRejectedValueOnce(new Error('Rename failed'))
 
-    const result = await createController(false).renameDocument('New name')
+    const result = await createController().renameDocument('New name')
 
     expect(result.isFailed()).toBe(true)
     expect(logger.error).toHaveBeenCalled()

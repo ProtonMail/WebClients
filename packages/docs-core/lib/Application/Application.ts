@@ -20,7 +20,6 @@ import type { UnleashClient } from '@proton/unleash/UnleashClient'
 import { UserState } from '../State/UserState'
 import type { DocumentState, PublicDocumentState } from '../State/DocumentState'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
-import type { PublicDriveCompat } from '@proton/drive-store/lib/usePublicDriveCompat'
 import type { APP_NAMES } from '@proton/shared/lib/constants'
 import type { DocsApi } from '../Api/DocsApi'
 
@@ -55,7 +54,7 @@ export class Application implements ApplicationInterface {
     this.deps.get<MetricService>(App_TYPES.MetricService).initialize()
   }
 
-  public updateCompatInstance(dto: { userCompat?: DriveCompat; publicCompat?: PublicDriveCompat }) {
+  public updateCompatInstance(dto: { userCompat?: DriveCompat }) {
     this.compatWrapper.updateCompatInstance(dto)
   }
 

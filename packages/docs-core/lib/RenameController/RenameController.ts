@@ -2,7 +2,6 @@ import { getErrorString } from '@proton/docs-shared/GetErrorString'
 import { TranslatedResult } from '@proton/docs-shared/TranslatedResult'
 import type { DocumentState, PublicDocumentState } from '../State/DocumentState'
 import type { DriveCompat } from '@proton/drive-store/lib/useDriveCompat'
-import type { PublicDriveCompat } from '@proton/drive-store/lib/usePublicDriveCompat'
 import type { GetNode } from '../UseCase/GetNode'
 import type { LoggerInterface } from '@proton/shared/lib/logs'
 import { c } from 'ttag'
@@ -19,7 +18,6 @@ export interface RenameControllerInterface {
 export class PublicRenameController implements RenameControllerInterface {
   constructor(
     private readonly documentState: PublicDocumentState,
-    private compat: PublicDriveCompat | undefined,
     readonly _getNode: GetNode,
     readonly logger: LoggerInterface,
   ) {}
@@ -28,11 +26,7 @@ export class PublicRenameController implements RenameControllerInterface {
     try {
       const nodeMeta = this.documentState.getProperty('entitlements').nodeMeta
 
-      if (this.compat) {
-        await this.compat.renamePublicDocument(nodeMeta, newName)
-      } else {
-        await renamePublicNode(nodeMeta, newName)
-      }
+      await renamePublicNode(nodeMeta, newName)
 
       this.documentState.setProperty('documentName', newName)
       void this._getNode.updateNodeNameInCache(nodeMeta, newName)
