@@ -2,17 +2,18 @@ import { renderHook, waitFor } from '@testing-library/react';
 
 import { useApi } from '@proton/app-context/useApi';
 
-import type { UsageSummaryBreakdownRow } from '../remote/usage';
+import type { UsageEntry } from '../remote/usage';
 import { getLastUtcDates, getTokenUsageDays, useAllPersonalAccessTokensUsage } from './usePersonalAccessTokenUsage';
 
 jest.mock('@proton/app-context/useApi');
 
-const row = (overrides: Partial<UsageSummaryBreakdownRow>): UsageSummaryBreakdownRow => ({
-    Date: '2026-11-01',
-    TokensIn: 0,
-    TokensInCached: 0,
-    TokensGenerated: 0,
-    ApiCalls: 0,
+const entry = (overrides: Partial<UsageEntry>): UsageEntry => ({
+    ClientType: 'api',
+    Model: 'lumo-lite',
+    InputTokens: 0,
+    OutputTokens: 0,
+    Calls: 0,
+    CostMicros: 0,
     ...overrides,
 });
 
@@ -41,11 +42,15 @@ describe('useAllPersonalAccessTokensUsage', () => {
         jest.useRealTimers();
     });
 
-    it('requests each key over the padded days and keeps a failing key to its own card', async () => {
+    it('requests each key over the last days and keeps a failing key to its own card', async () => {
         jest.useFakeTimers({ now: new Date('2026-11-09T12:00:00Z') });
+        const days = [
+            { Date: '2026-11-08', Usage: [] },
+            { Date: '2026-11-09', Usage: [entry({ InputTokens: 5, OutputTokens: 2, Calls: 3 })] },
+        ];
         const api = jest.fn(({ params }) =>
             params.PersonalAccessTokenID === 'key-a'
-                ? Promise.resolve({ Code: 1000, Breakdown: [row({ Date: '2026-11-09', TokensIn: 5 })] })
+                ? Promise.resolve({ Code: 1000, Days: days })
                 : Promise.reject(new Error('404'))
         );
         (useApi as jest.Mock).mockReturnValue(api);
@@ -65,6 +70,9 @@ describe('useAllPersonalAccessTokensUsage', () => {
         expect(result.current.byId['key-a']).toMatchObject({
             error: false,
             totalInputTokenCount: 5,
+            totalOutputTokenCount: 2,
+            totalTokenCount: 7,
+            totalApiCalls: 3,
             days: [{ Date: '2026-11-08' }, { Date: '2026-11-09' }],
         });
         expect(result.current.byId['key-b']).toMatchObject({ error: true, isLoading: false });
@@ -72,29 +80,27 @@ describe('useAllPersonalAccessTokensUsage', () => {
 });
 
 describe('getTokenUsageDays', () => {
-    it('counts cached tokens as input tokens', () => {
-        expect(
-            getTokenUsageDays(
-                [row({ TokensIn: 10, TokensInCached: 5, TokensGenerated: 20, ApiCalls: 2 })],
-                ['2026-11-01']
-            )
-        ).toEqual([{ Date: '2026-11-01', InputTokenCount: 15, OutputTokenCount: 20, TokenCount: 35, ApiCalls: 2 }]);
-    });
-
     it('sums the models of the same day', () => {
         expect(
-            getTokenUsageDays(
-                [
-                    row({ TokensIn: 10, TokensGenerated: 1, ApiCalls: 1 }),
-                    row({ TokensIn: 30, TokensGenerated: 3, ApiCalls: 2 }),
-                ],
-                ['2026-11-01']
-            )
+            getTokenUsageDays([
+                {
+                    Date: '2026-11-01',
+                    Usage: [
+                        entry({ InputTokens: 10, OutputTokens: 1, Calls: 1 }),
+                        entry({ Model: 'lumo-max', InputTokens: 30, OutputTokens: 3, Calls: 2 }),
+                    ],
+                },
+            ])
         ).toEqual([{ Date: '2026-11-01', InputTokenCount: 40, OutputTokenCount: 4, TokenCount: 44, ApiCalls: 3 }]);
     });
 
-    it('fills days without usage with zeros', () => {
-        expect(getTokenUsageDays([row({ Date: '2026-11-02', TokensIn: 7 })], ['2026-11-01', '2026-11-02'])).toEqual([
+    it('keeps each day’s usage on its own day, with zeros for a day without usage', () => {
+        expect(
+            getTokenUsageDays([
+                { Date: '2026-11-01', Usage: [] },
+                { Date: '2026-11-02', Usage: [entry({ InputTokens: 7 })] },
+            ])
+        ).toEqual([
             { Date: '2026-11-01', InputTokenCount: 0, OutputTokenCount: 0, TokenCount: 0, ApiCalls: 0 },
             { Date: '2026-11-02', InputTokenCount: 7, OutputTokenCount: 0, TokenCount: 7, ApiCalls: 0 },
         ]);

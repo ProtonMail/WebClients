@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useApi } from '@proton/app-context/useApi';
 import { DAY } from '@proton/shared/lib/constants';
 
-import type { UsageSummaryBreakdownRow, UsageSummaryResponse } from '../remote/usage';
+import type { UsageDay, UsageSummaryResponse } from '../remote/usage';
 import { getUsageSummaryRequest } from '../remote/usage';
 
 export interface TokenUsageDay {
@@ -29,17 +29,16 @@ const toISODate = (date: Date) => date.toISOString().slice(0, 10);
 export const getLastUtcDates = (dayCount: number, now: Date): string[] =>
     Array.from({ length: dayCount }, (_, i) => toISODate(new Date(now.getTime() - (dayCount - 1 - i) * DAY)));
 
-export const getTokenUsageDays = (breakdown: UsageSummaryBreakdownRow[], dates: string[]): TokenUsageDay[] =>
-    dates.map((date) => {
-        const rows = breakdown.filter((row) => row.Date === date);
-        const inputTokenCount = rows.reduce((sum, row) => sum + row.TokensIn + row.TokensInCached, 0);
-        const outputTokenCount = rows.reduce((sum, row) => sum + row.TokensGenerated, 0);
+export const getTokenUsageDays = (days: UsageDay[]): TokenUsageDay[] =>
+    days.map((day) => {
+        const inputTokenCount = day.Usage.reduce((sum, entry) => sum + entry.InputTokens, 0);
+        const outputTokenCount = day.Usage.reduce((sum, entry) => sum + entry.OutputTokens, 0);
         return {
-            Date: date,
+            Date: day.Date,
             InputTokenCount: inputTokenCount,
             OutputTokenCount: outputTokenCount,
             TokenCount: inputTokenCount + outputTokenCount,
-            ApiCalls: rows.reduce((sum, row) => sum + row.ApiCalls, 0),
+            ApiCalls: day.Usage.reduce((sum, entry) => sum + entry.Calls, 0),
         };
     });
 
@@ -59,13 +58,13 @@ const fetchPersonalAccessTokenUsage = async (
             silence: true,
         });
 
-        const paddedDays = getTokenUsageDays(response.Breakdown, dates);
-        const totalTokenCount = paddedDays.reduce((sum, day) => sum + day.TokenCount, 0);
-        const totalInputTokenCount = paddedDays.reduce((sum, day) => sum + day.InputTokenCount, 0);
-        const totalOutputTokenCount = paddedDays.reduce((sum, day) => sum + day.OutputTokenCount, 0);
-        const totalApiCalls = paddedDays.reduce((sum, day) => sum + day.ApiCalls, 0);
+        const usageDays = getTokenUsageDays(response.Days);
+        const totalTokenCount = usageDays.reduce((sum, day) => sum + day.TokenCount, 0);
+        const totalInputTokenCount = usageDays.reduce((sum, day) => sum + day.InputTokenCount, 0);
+        const totalOutputTokenCount = usageDays.reduce((sum, day) => sum + day.OutputTokenCount, 0);
+        const totalApiCalls = usageDays.reduce((sum, day) => sum + day.ApiCalls, 0);
         return {
-            days: paddedDays,
+            days: usageDays,
             totalTokenCount,
             totalInputTokenCount,
             totalOutputTokenCount,

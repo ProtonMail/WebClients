@@ -12,6 +12,9 @@ jest.mock('@proton/account/paymentStatus/hooks');
 jest.mock('@proton/account/subscription/hooks');
 jest.mock('@proton/account/user/hooks');
 jest.mock('@proton/app-context/useApi');
+jest.mock('./useApiUsageSummary', () => ({
+    useApiUsageSummary: () => ({ dates: [], rows: [], isLoading: false, error: false }),
+}));
 jest.mock('@proton/account/bootstrap', () => ({
     coreEventManagerV6: () => ({ subscribe: () => () => {}, start: () => {}, reset: () => {} }),
 }));
